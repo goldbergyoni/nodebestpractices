@@ -7,7 +7,7 @@ Node.JS Best Practices
 Welcome 
 -------------
 
-Some text here around
+Some text here around. Ido: testing icon from StackEdit: <i class="icon-folder-open"></i>
 
 
 Project Setup Practices
