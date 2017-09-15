@@ -13,7 +13,7 @@ Some text here around
 Project Setup Practices
 =======================
 
-![enter image description here](https://cdn3.iconfinder.com/data/icons/ui-glynh-blue-02-of-5/100/UI_Blue_2_of_3_20-128.png) 1. Do something important 
+:white_check_mark: 1. Do something important 
 -------------------------
 
 **TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
