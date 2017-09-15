@@ -1,8 +1,5 @@
-Node.JS Best Practices
-======================
-
-
-![enter image description here](https://ak9.picdn.net/shutterstock/videos/14238368/thumb/1.jpg)
+#Node.JS Best Practices
+(https://imgur.com/yfnsDuT)
 
 Welcome 
 -------------
