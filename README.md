@@ -1,5 +1,5 @@
 #Node.JS Best Practices
-(https://imgur.com/yfnsDuT)
+![header](https://imgur.com/yfnsDuT)
 
 Welcome 
 -------------
