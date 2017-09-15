@@ -1,5 +1,8 @@
 Node.JS Best Practices
-===================
+======================
+
+
+![enter image description here](https://ak9.picdn.net/shutterstock/videos/14238368/thumb/1.jpg)
 
 Welcome 
 -------------
@@ -10,12 +13,20 @@ Some text here around
 Project Setup Practices
 =======================
 
-![enter image description here](http://clipart-library.com/images/gceEeg9Mi.png)1. Do something important 
+![enter image description here](https://cdn3.iconfinder.com/data/icons/ui-glynh-blue-02-of-5/100/UI_Blue_2_of_3_20-128.png) 1. Do something important 
 -------------------------
 
 **TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
 
 **Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
+
+![enter image description here](https://cdn3.iconfinder.com/data/icons/ui-glynh-blue-02-of-5/100/UI_Blue_2_of_3_20-128.png) 2. Do other thing
+-------------------------
+
+**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
+
+**Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
+
 
 Code Style Practices
 -------------
