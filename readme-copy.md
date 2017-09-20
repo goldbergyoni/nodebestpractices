@@ -2,7 +2,7 @@
 
 ![Node.js Best Practices](assets/images/banner-1.png)
 
-##**`Welcome`**
+## **`Welcome`**
 
 Some text here around. 
 Ido: testing icon from StackEdit: <i class="icon-folder-open"></i>
