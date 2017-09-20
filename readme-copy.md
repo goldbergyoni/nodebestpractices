@@ -1,5 +1,7 @@
 # **Node.JS Best Practices**
 
+<img src="https://img.shields.io/badge/%E2%9C%94-53%20items-brightgreen.svg" alt="53 items">
+
 ![Node.js Best Practices](assets/images/banner-1.png)
 
 ## **`Welcome`**
