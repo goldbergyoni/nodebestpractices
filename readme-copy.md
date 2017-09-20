@@ -1,6 +1,6 @@
 # **Node.JS Best Practices**
 
-<img src="https://img.shields.io/badge/%E2%9C%94%20Count%20-53%20items-brightgreen.svg" alt="53 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%206%20days%20ago-green.svg alt="Last update: 7 days ago"> <img src="https://img.shields.io/badge/Updated%20For%20Version-Node%208.4-green.svg" alt="Updated for Node v.8.4">
+<img src="https://img.shields.io/badge/%E2%9C%94%20Count%20-53%20items-brightgreen.svg" alt="53 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%206%20days%20ago-green.svg" alt="Last update: 7 days ago"> <img src="https://img.shields.io/badge/Updated%20For%20Version%20-%20Node%208.4-green.svg" alt="Updated for Node v.8.4">
 
 ![Node.js Best Practices](assets/images/banner-1.png)
 
