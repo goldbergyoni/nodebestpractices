@@ -1,10 +1,14 @@
-# `Node.JS Best Practices`
-![header](https://i.imgur.com/yfnsDuT.jpg)
+#**Node.JS Best Practices**
+<p align="center">
+  <a href="https://www.meetup.com/Angular-Medellin/">
+    <img width=100% src="assets/images/banner-1.png">
+  </a>
+</p>
+![Node.js Best Practices](https://www.meetup.com/Angular-Medellin/)
 
-Welcome 
--------------
-
-Some text here around. Ido: testing icon from StackEdit: <i class="icon-folder-open"></i>
+##**`Welcome`**
+Some text here around. 
+Ido: testing icon from StackEdit: <i class="icon-folder-open"></i>
 
 
 Project Setup Practices
