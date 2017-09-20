@@ -1,4 +1,4 @@
-#Node.JS Best Practices
+# **Node.JS Best Practices**
 
 ![Node.js Best Practices](assets/images/banner-1.png)
 
