@@ -4,14 +4,17 @@
 
 ![Node.js Best Practices](assets/images/banner-1.png)
 
-## **`Welcome`**
+## **Welcome**
 
-Some text here around. 
-Ido: testing icon from StackEdit: <i class="icon-folder-open"></i>
+This repository summarizes and curates most of the knowledge gathered to date on Node.js best practices. It contains more than 53 quotes, code examples and diagrams from the highest ranked blog posts and StackOverflow threads.
+
+## List of Topics
+* [Project Setup Practices](#project-setup-practices)
 
 
-Project Setup Practices
-=======================
+
+# Project Setup Practices
+
 
 :white_check_mark: 1. Do something important 
 -------------------------
