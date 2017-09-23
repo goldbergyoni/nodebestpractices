@@ -33,10 +33,10 @@ This repository summarizes and curates most of the knowledge gathered to date on
 **Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
 
 
-# Code Style Practices
+# `Code Style Practices`
 
 
-# Error Handling Practices
+# `Error Handling Practices`
 
 ## ☑ Use async-await for async error handling
 
@@ -47,11 +47,11 @@ This repository summarizes and curates most of the knowledge gathered to date on
 🔗 [**Use async-await for async error handling**](/sections/errorhandling/asyncawait.md)
 
 
-# Going To Production Practices
+# `Going To Production Practices`
 
 
-# Deployment Practices
+# `Deployment Practices`
 
 
-# Security Practices
+# `Security Practices`
 
