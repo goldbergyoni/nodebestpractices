@@ -17,7 +17,7 @@ This repository summarizes and curates most of the knowledge gathered to date on
 * [Security Practices](#security-practices)
 
 
-# Project Setup Practices
+# `**Project Setup Practices**`
 
 
 ## ☑ 1. Do something important 
