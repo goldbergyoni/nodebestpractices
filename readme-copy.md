@@ -44,7 +44,7 @@ This repository summarizes and curates most of the knowledge gathered to date on
 
 **Otherwise:** Node.JS callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting and awkward coding patterns
 
-🔗 [Further Reading: Use async-await for async error handling](/sections/errorhandling/asyncawait.md)
+🔗 [**Use async-await for async error handling**](/sections/errorhandling/asyncawait.md)
 
 
 # Going To Production Practices
