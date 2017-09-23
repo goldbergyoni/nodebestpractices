@@ -31,17 +31,11 @@ This repository summarizes and curates most of the knowledge gathered to date on
 
 **Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
 
-
-
-
-
-
+<br/><br/>
 # `Code Style Practices`
 
 
-
-
-
+<br/><br/>
 # `Error Handling Practices`
 
 ## ✔ Use async-await for async error handling
@@ -54,17 +48,14 @@ This repository summarizes and curates most of the knowledge gathered to date on
 
 
 
-
-
-
+<br/><br/>
 # `Going To Production Practices`
 
 
-
-
-
+<br/><br/>
 # `Deployment Practices`
 
 
+<br/><br/>
 # `Security Practices`
 
