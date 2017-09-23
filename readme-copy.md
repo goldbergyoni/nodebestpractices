@@ -10,7 +10,10 @@ This repository summarizes and curates most of the knowledge gathered to date on
 
 ## List of Topics
 * [Project Setup Practices](#project-setup-practices)
-
+* [Code Style Practices](#code-style-practices)
+* [Going To Production Practices](#going-to-production-practices)
+* [Deployment Practices](#deployment-practices)
+* [Security Practices](#security-practices)
 
 
 # Project Setup Practices
@@ -31,20 +34,19 @@ This repository summarizes and curates most of the knowledge gathered to date on
 **Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
 
 
-Code Style Practices
--------------
+# Code Style Practices
 
-Error Handling Practices
--------------
 
-Going To Production Practices
--------------
+# Error Handling Practices
 
-Deployment Practices
--------------
 
-Security Practices
--------------
+# Going To Production Practices
+
+
+# Deployment Practices
+
+
+# Security Practices
 
 
 
