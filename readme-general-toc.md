@@ -5,7 +5,7 @@
 
 <!--- ![Node.js Best Practices](assets/images/banner-1.png) -->
 
-## **Welcome**
+# Welcome to Node.js Best Practices
 
 This repository summarizes and curates most of the knowledge gathered to date on Node.js best practices. It contains more than 53 quotes, code examples and diagrams from the highest ranked blog posts and StackOverflow threads.
 
