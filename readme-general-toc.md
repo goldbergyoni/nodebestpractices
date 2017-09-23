@@ -43,7 +43,7 @@ This repository summarizes and curates most of the knowledge gathered to date on
 
 <br/><br/><br/>
 # `Error Handling Practices`
-<p align="right">[Table of Contents](#table-of-contents)</p>
+[Table of Contents](#table-of-contents)
 
 ## ✔ Use async-await for async error handling
 
