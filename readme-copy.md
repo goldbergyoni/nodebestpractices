@@ -19,15 +19,13 @@ This repository summarizes and curates most of the knowledge gathered to date on
 # Project Setup Practices
 
 
-:white_check_mark: 1. Do something important 
--------------------------
+## :white_check_mark: 1. Do something important 
 
 **TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
 
 **Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
 
-![enter image description here](https://cdn3.iconfinder.com/data/icons/ui-glynh-blue-02-of-5/100/UI_Blue_2_of_3_20-128.png) 2. Do other thing
--------------------------
+## 2. Do other thing
 
 **TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
 
@@ -38,6 +36,10 @@ This repository summarizes and curates most of the knowledge gathered to date on
 
 
 # Error Handling Practices
+## [Use async-await for async error handling](/sections/errorhandling/asyncawait.md)
+**TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using instead a reputable promise library or async-await which provides much compact and familiar code syntax like try-catch
+
+**Otherwise:** Node.JS callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting and awkward coding patterns
 
 
 # Going To Production Practices
