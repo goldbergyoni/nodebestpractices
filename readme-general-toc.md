@@ -43,7 +43,7 @@ This repository summarizes and curates most of the knowledge gathered to date on
 
 <br/><br/><br/>
 # `Error Handling Practices`
-<p align="right"><a href="#table-of-contents">Up</a></p>
+<p align="right"><a href="#table-of-contents">☝ Return to top</a></p>
 
 ## ✔ Use async-await for async error handling
 
