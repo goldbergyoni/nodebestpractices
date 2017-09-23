@@ -8,7 +8,7 @@
 
 This repository summarizes and curates most of the knowledge gathered to date on Node.js best practices. It contains more than 53 quotes, code examples and diagrams from the highest ranked blog posts and StackOverflow threads.
 
-## List of Topics
+## Table of Contents
 * [Project Setup Practices](#project-setup-practices)
 * [Code Style Practices](#code-style-practices)
 * [Error Handling Practices](#error-handling-practices)
