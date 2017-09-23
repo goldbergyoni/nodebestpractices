@@ -39,4 +39,13 @@ getData(someParameter, function(err, result){
  
  > …And in fact, callbacks do something even more sinister: they deprive us of the stack, which is something we usually take for granted in programming languages. Writing code without a stack is a lot like driving a car without a brake pedal: you don’t realize how badly you need it, until you reach for it and it’s not there. The whole point of promises is to give us back the language fundamentals we lost when we went async: return, throw, and the stack. But you have to know how to use promises correctly in order to take advantage of them.
  
+ ### API error handling
+![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/swaggerDoc.png "API error handling")
+
+### Blog Quote: "The promises method is much more compact"
+ From the blog gosquared.com, ranked 5 for the keywords “Node.JS error handling”
+ 
+ > …The promises method is much more compact, clearer and quicker to write. If an error or exception occurs within any of the ops it is handled by the single .catch() handler. Having this single place to handle all errors means you don’t need to write error checking for each stage of the work
+ 
+ 
 
