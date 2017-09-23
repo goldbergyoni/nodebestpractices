@@ -20,7 +20,7 @@ This repository summarizes and curates most of the knowledge gathered to date on
 * [Deployment Practices](#deployment-practices)
 * [Security Practices](#security-practices)
 
-
+<br/><br/>
 # `Project Setup Practices`
 
 ## ✔ 1. Do something important 
@@ -29,18 +29,21 @@ This repository summarizes and curates most of the knowledge gathered to date on
 
 **Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
 
+<br/>
+
 ## ✔ 2. Do other thing
 
 **TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
 
 **Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
 
-<br/><br/>
+<br/><br/><br/>
 # `Code Style Practices`
 
 
-<br/><br/>
+<br/><br/><br/>
 # `Error Handling Practices`
+<p align="right">[Go back up](#table-of-contents)</p>
 
 ## ✔ Use async-await for async error handling
 
@@ -52,14 +55,14 @@ This repository summarizes and curates most of the knowledge gathered to date on
 
 
 
-<br/><br/>
+<br/><br/><br/>
 # `Going To Production Practices`
 
 
-<br/><br/>
+<br/><br/><br/>
 # `Deployment Practices`
 
 
-<br/><br/>
+<br/><br/><br/>
 # `Security Practices`
 
