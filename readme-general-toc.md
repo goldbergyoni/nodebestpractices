@@ -1,8 +1,9 @@
-# Node.JS Best Practices
+<!--- # Node.JS Best Practices -->
+[Node.js Best Practices](assets/images/banner-2.png)
 
 <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2053%20Best%20practices-blue.svg" alt="53 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%206%20days%20ago-green.svg" alt="Last update: 7 days ago"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.4-brightgreen.svg" alt="Updated for Node v.8.4">
 
-![Node.js Best Practices](assets/images/banner-1.png)
+<!--- ![Node.js Best Practices](assets/images/banner-1.png) -->
 
 ## **Welcome**
 
