@@ -23,7 +23,7 @@ This repository summarizes and curates most of the knowledge gathered to date on
 <br/><br/>
 # `Project Setup Practices`
 
-## ![](assets/images/checkbox-small.PNG) 1. Do something important 
+## ![](assets/images/checkbox-sm.png) 1. Do something important 
 
 **TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
 
@@ -31,7 +31,7 @@ This repository summarizes and curates most of the knowledge gathered to date on
 
 <br/>
 
-## ![](assets/images/checkbox-small.PNG) 2. Do other thing
+## ![](assets/images/checkbox-sm.png) 2. Do other thing
 
 **TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
 
@@ -45,7 +45,7 @@ This repository summarizes and curates most of the knowledge gathered to date on
 # `Error Handling Practices`
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-## ✔ Use async-await for async error handling
+## ![](assets/images/checkbox-sm.png) Use async-await for async error handling
 
 **TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using instead a reputable promise library or async-await which provides much compact and familiar code syntax like try-catch
 
