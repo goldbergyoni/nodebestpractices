@@ -45,7 +45,7 @@ This repository summarizes and curates most of the knowledge gathered to date on
 # `Error Handling Practices`
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-## ![](assets/images/checkbox-sm.png) Use async-await for async error handling
+## <img src="assets/images/checkbox-sm.png"> Use async-await for async error handling
 
 **TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using instead a reputable promise library or async-await which provides much compact and familiar code syntax like try-catch
 
