@@ -41,13 +41,52 @@ Welcome to the biggest compilation of Node.JS best practices, based on our check
 
 🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncawait.md)
 
+<br/>
+
+## ![](assets/images/checkbox-sm.png) 3. Configure ESLint with node-specific plugins
+
+**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
+
+**Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
+
+🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncawait.md)
+
+
+
+<br/>
+
+## Additional 15 bullets will appear here
+
 <br/><br/><br/>
 # `Code Style Practices`
 
+## ![](assets/images/checkbox-sm.png) 1. Use async-await
+
+**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
+
+**Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
+
+🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncawait.md)
+
+## ![](assets/images/checkbox-sm.png) 2. Break into small classes or objects
+
+**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
+
+**Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
+
+🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncawait.md)
 
 <br/><br/><br/>
 # `Error Handling Practices`
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+
+## <img src="assets/images/checkbox-sm.png"> Use async-await for async error handling
+
+**TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using instead a reputable promise library or async-await which provides much compact and familiar code syntax like try-catch
+
+**Otherwise:** Node.JS callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting and awkward coding patterns
+
+🔗 [**Use async-await for async error handling**](/sections/errorhandling/asyncawait.md)
 
 ## <img src="assets/images/checkbox-sm.png"> Use async-await for async error handling
 
