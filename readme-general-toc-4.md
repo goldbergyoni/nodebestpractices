@@ -31,7 +31,7 @@ Welcome to the biggest compilation of Node.JS best practices, based on our check
 
 🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncawait.md)
 
-<br/>
+<br/><br/>
 
 ## ![](assets/images/checkbox-sm.png) 2. Layer your app, keep Express within its boundaries
 
@@ -41,7 +41,7 @@ Welcome to the biggest compilation of Node.JS best practices, based on our check
 
 🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncawait.md)
 
-<br/>
+<br/><br/>
 
 ## ![](assets/images/checkbox-sm.png) 3. Configure ESLint with node-specific plugins
 
@@ -53,7 +53,7 @@ Welcome to the biggest compilation of Node.JS best practices, based on our check
 
 
 
-<br/>
+<br/><br/>
 
 ## Additional 15 bullets will appear here
 
@@ -67,6 +67,8 @@ Welcome to the biggest compilation of Node.JS best practices, based on our check
 **Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
 
 🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncawait.md)
+
+<br/><br/>
 
 ## ![](assets/images/checkbox-sm.png) 2. Break into small classes or objects
 
@@ -87,6 +89,8 @@ Welcome to the biggest compilation of Node.JS best practices, based on our check
 **Otherwise:** Node.JS callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting and awkward coding patterns
 
 🔗 [**Use async-await for async error handling**](/sections/errorhandling/asyncawait.md)
+
+<br/><br/>
 
 ## <img src="assets/images/checkbox-sm.png"> Use async-await for async error handling
 
