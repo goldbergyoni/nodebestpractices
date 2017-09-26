@@ -10,15 +10,16 @@
 
 # Welcome to Node.js Best Practices
 
-This repository summarizes and curates most of the knowledge gathered to date on Node.js best practices. It contains more than 53 quotes, code examples and diagrams from the highest ranked blog posts and StackOverflow threads.
+Welcome to the biggest compilation of Node.JS best practices. The content below was gathered from all top ranked books and posts and is updated constantly - when you read here rest assure that no significant tip slipped away. Feel at home - we love to discuss via PRs, issues or Gitter.
 
 ## Table of Contents
-* [Project Setup Practices](#project-setup-practices)
-* [Code Style Practices](#code-style-practices)
-* [Error Handling Practices](#error-handling-practices)
-* [Going To Production Practices](#going-to-production-practices)
-* [Deployment Practices](#deployment-practices)
-* [Security Practices](#security-practices)
+* [Project Setup Practices (18)](#project-setup-practices)
+* [Code Style Practices (11) ](#code-style-practices)
+* [Error Handling Practices (14) ](#error-handling-practices)
+* [Going To Production Practices (21) ](#going-to-production-practices)
+* [Testing Practices (9) ](#deployment-practices)
+* [Security Practices (8) ](#security-practices)
+
 
 <br/><br/>
 # `Project Setup Practices`
