@@ -19,11 +19,13 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 <br/><br/>
 # `Project Setup Practices`
 
-## ✔ 1. Do something important 
+## ✔ 1. Structure your solution by feature ('microservices')
 
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
+**TL&DR:** The worst large applications pitfal is a huge code base where hundreds of dependencies slow down developers as try to incorporate new features. Partioning into small units ensures that each unit is kept simple and very easy to maintain. This strategy pushes the complexity to the higher level - designing the cross-component interactions. 
 
-**Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
+**Otherwise:** Developing a new feature with a change to few objects demands to evaluate how this changes might affect dozends of dependants and ach deployment becomes a fear.
+
+🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncawait.md)
 
 <br/>
 
