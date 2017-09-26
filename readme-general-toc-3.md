@@ -10,32 +10,34 @@
 
 # Welcome to Node.js Best Practices
 
-This repository summarizes and curates most of the knowledge gathered to date on Node.js best practices. It contains more than 53 quotes, code examples and diagrams from the highest ranked blog posts and StackOverflow threads.
-
+Welcome to the biggest compilation of Node.JS best practices, based on our check it's also the largest collection on any programming language (more than 53 items). The content below was gathered from all top ranked books and posts and is updated constantly - if you read here you can rest assure that no significant tip slipped away. Feel at home - we love to discuss via PRs, issues or Gitter.
+<br/><br/>
 ## Table of Contents
-* [Project Setup Practices](#project-setup-practices)
-* [Code Style Practices](#code-style-practices)
-* [Error Handling Practices](#error-handling-practices)
-* [Going To Production Practices](#going-to-production-practices)
-* [Deployment Practices](#deployment-practices)
-* [Security Practices](#security-practices)
+* [Project Setup Practices (18)](#project-setup-practices)
+* [Code Style Practices (11) ](#code-style-practices)
+* [Error Handling Practices (14) ](#error-handling-practices)
+* [Going To Production Practices (21) ](#going-to-production-practices)
+* [Testing Practices (9) ](#deployment-practices)
+* [Security Practices (8) ](#security-practices)
 
 <br/><br/>
 # `Project Setup Practices`
 
-## ✔ 1. Do something important 
+## ✔ 1. Structure your solution by feature ('microservices')
 
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
+**TL&DR:** The worst large applications pitfal is a huge code base where hundreds of dependencies slow down developers as try to incorporate new features. Partioning into small units ensures that each unit is kept simple and very easy to maintain. This strategy pushes the complexity to the higher level - designing the cross-component interactions. 
 
-**Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
+**Otherwise:** Developing a new feature with a change to few objects demands to evaluate how this changes might affect dozends of dependants and ach deployment becomes a fear.
 
-<br/>
+<br/><br/>
 
 ## ✔ 2. Do other thing
 
 **TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
 
 **Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
+
+🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncawait.md)
 
 <br/><br/><br/>
 # `Code Style Practices`
