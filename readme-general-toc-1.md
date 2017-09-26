@@ -34,11 +34,11 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 <br/><br/>
 
-## ✔ 2. Do other thing
+## ✔ 2. Layer your app, keep Express within its boundaries
 
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
+**TL&DR:** It's very common to see Express API passes the express objects (req, res) to business logic and data layers, sometimes even to every function - this makes your application depedant on and accessible by Express only. What if your code should be reached by testing console or CRON job? instead create your own context object with cross-cutting-concern properties like the user roles and inject into other layers, or use 'thread-level variables' libraries like continuation local storage
 
-**Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
+**Otherwise:** Application can be accessed by Express only and require to create complex testing mocks
 
 <br/><br/><br/>
 # `Code Style Practices`
