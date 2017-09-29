@@ -53,7 +53,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncawait.md)
 
 
-<br/><br/><br/>
+<br/><br/>
 # `Code Style Practices`
 
 
@@ -69,35 +69,46 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 🔗 [**Read More: text*](/sections/errorhandling/asyncerrorhandling.md)
 
-## ✔ 2. Monitoring!
+<br/><br/>
 
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+## ✔ 2. Use only the built-in Error object
 
-**Otherwise:** Failure === disappointed customers. Simple.
+**TL&DR:** Many throws errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw exception or emit error – using only the built-in Error object will increases uniformity and prevents loss of information
+
+
+**Otherwise:** When invoking some component, being uncertain which type of errors come in return – makes it much harder to handle errors properly. Even worth, using custom types to describe errors might lead to loss of critical error information like the stack trace!
+
+🔗 [**Read More: text*](/sections/errorhandling/useonlythebuiltinerror.md)
+
+<br/><br/>
+
+## ✔ 3. Distinguish operational vs programmer errors
+
+**TL&DR:** Operational errors (e.g. API received an invalid input) refer to known cases where the error impact is fully understood and can be handled thoughtfully. On the other hand, programmer error (e.g. trying to read undefined variable) refers to unknown code failures that dictate to gracefully restart the application
+
+**Otherwise:** You may always restart the application when an error appear, but why letting ~5000 online users down because of a minor, predicted, operational error? the opposite is also not ideal – keeping the application up when unknown issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
+
+  🔗 [**Read More: text*](/sections/errorhandling/operationalvsprogrammererror.md)
+
+<br/><br/>
+
+## ✔ 4. Handle errors centrally, not within an Express middleware
+
+**TL&DR:** Error handling logic such as mail to admin and logging should be encapsulated in a dedicated and centralized object that all end-points (e.g. Express middleware, cron jobs, unit-testing) call when an error comes in.
+
+**Otherwise:** Not handling errors within a single place will lead to code duplication and probably to errors that are handled improperly
 
 🔗 [**Read More: text*](/sections/errorhandling/monitoring)
 
-## ✔ 3. Monitoring!
-
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
-
-**Otherwise:** Failure === disappointed customers. Simple.
-
-🔗 [**Read More: text*](/sections/errorhandling/monitoring)
-
-## ✔ 4. Monitoring!
-
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
-
-**Otherwise:** Failure === disappointed customers. Simple.
-
-🔗 [**Read More: text*](/sections/errorhandling/monitoring)
+<br/><br/>
 
 ## ✔ 5. Monitoring!
 
 **TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
 
 **Otherwise:** Failure === disappointed customers. Simple.
+
+<br/><br/>
 
 🔗 [**Read More: text*](/sections/errorhandling/monitoring)
 
@@ -107,6 +118,8 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 **Otherwise:** Failure === disappointed customers. Simple.
 
+<br/><br/>
+
 🔗 [**Read More: text*](/sections/errorhandling/monitoring)
 
 ## ✔ 7. Monitoring!
@@ -114,6 +127,8 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 **TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
 
 **Otherwise:** Failure === disappointed customers. Simple.
+
+<br/><br/>
 
 🔗 [**Read More: text*](/sections/errorhandling/monitoring)
 
@@ -123,6 +138,8 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 **Otherwise:** Failure === disappointed customers. Simple.
 
+<br/><br/>
+
 🔗 [**Read More: text*](/sections/errorhandling/monitoring)
 
 ## ✔ 9. Monitoring!
@@ -131,6 +148,8 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 **Otherwise:** Failure === disappointed customers. Simple.
 
+<br/><br/>
+
 🔗 [**Read More: text*](/sections/errorhandling/monitoring)
 
 ## ✔ 10. Monitoring!
@@ -138,6 +157,8 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 **TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
 
 **Otherwise:** Failure === disappointed customers. Simple.
+
+<br/><br/>
 
 🔗 [**Read More: text*](/sections/errorhandling/monitoring)
 
@@ -149,6 +170,8 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 🔗 [**Read More: text*](/sections/errorhandling/monitoring)
 
+<br/><br/>
+
 ## ✔ 12. Monitoring!
 
 **TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
@@ -157,6 +180,8 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 🔗 [**Read More: text*](/sections/errorhandling/monitoring)
 
+<br/><br/>
+
 ## ✔ 13. Monitoring!
 
 **TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
@@ -164,7 +189,6 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 **Otherwise:** Failure === disappointed customers. Simple.
 
 🔗 [**Read More: text*](/sections/errorhandling/monitoring)
-
 
 
 
