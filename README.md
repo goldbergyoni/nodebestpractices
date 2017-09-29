@@ -73,11 +73,11 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 <br/><br/><br/>
 # `Going To Production Practices`
-## ✔ 1. Title
+## ✔ 1. Monitoring!
 
-**TL&DR:** text
+**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
 
-**Otherwise:** text
+**Otherwise:** Failure === disappointed customers. Simple.
 
 🔗 [**Read More: text*](/sections/errorhandling/monitoring)
 
