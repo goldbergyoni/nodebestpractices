@@ -67,7 +67,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 **Otherwise:** Node.JS callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting and awkward coding patterns
 
-🔗 [**Read More: text*](/sections/errorhandling/asyncerrorhandling.md)
+🔗 [**Read More: avoiding callbacks*](/sections/errorhandling/asyncerrorhandling.md)
 
 <br/><br/>
 
@@ -78,7 +78,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 **Otherwise:** When invoking some component, being uncertain which type of errors come in return – makes it much harder to handle errors properly. Even worth, using custom types to describe errors might lead to loss of critical error information like the stack trace!
 
-🔗 [**Read More: text*](/sections/errorhandling/useonlythebuiltinerror.md)
+🔗 [**Read More: using the built-in error object*](/sections/errorhandling/useonlythebuiltinerror.md)
 
 <br/><br/>
 
@@ -88,7 +88,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 **Otherwise:** You may always restart the application when an error appear, but why letting ~5000 online users down because of a minor, predicted, operational error? the opposite is also not ideal – keeping the application up when unknown issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
 
-  🔗 [**Read More: text*](/sections/errorhandling/operationalvsprogrammererror.md)
+  🔗 [**Read More: operational vs programmer error*](/sections/errorhandling/operationalvsprogrammererror.md)
 
 <br/><br/>
 
@@ -98,98 +98,86 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 **Otherwise:** Not handling errors within a single place will lead to code duplication and probably to errors that are handled improperly
 
-🔗 [**Read More: text*](/sections/errorhandling/monitoring)
+🔗 [**Read More: handling errors in a centralized place*](/sections/errorhandling/centralizedhandling.md)
 
 <br/><br/>
 
-## ✔ 5. Monitoring!
+## ✔ 5. Document API errors using Swagger
 
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+**TL&DR:** Let your API callers know which errors might come in return so they can handle these thoughtfully without crashing. This is usually done with REST API documentation frameworks like Swagger
 
-**Otherwise:** Failure === disappointed customers. Simple.
+**Otherwise:** An API client might decide to crash and restart only because he received back an error he couldn’t understand. Note: the caller of your API might be you (very typical in a microservices environment)
 
-<br/><br/>
 
-🔗 [**Read More: text*](/sections/errorhandling/monitoring)
-
-## ✔ 6. Monitoring!
-
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
-
-**Otherwise:** Failure === disappointed customers. Simple.
+🔗 [**Read More: documenting errors in Swagger*](/sections/errorhandling/documentingusingswagger.md)
 
 <br/><br/>
 
-🔗 [**Read More: text*](/sections/errorhandling/monitoring)
+## ✔ 6. Shut the process gracefully when a stranger comes to town
 
-## ✔ 7. Monitoring!
+**TL&DR:** When an unknown error occurs (a developer error, see best practice number #3)- there is uncertainty about the application healthiness. A common practice suggests restarting the process carefully using a ‘restarter’ tool like Forever and PM2
 
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+**Otherwise:** When an unfamiliar exception is caught, some object might be in a faulty state (e.g an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
 
-**Otherwise:** Failure === disappointed customers. Simple.
-
-<br/><br/>
-
-🔗 [**Read More: text*](/sections/errorhandling/monitoring)
-
-## ✔ 8. Monitoring!
-
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
-
-**Otherwise:** Failure === disappointed customers. Simple.
+🔗 [**Read More: shutting the process*](/sections/errorhandling/shuttingtheprocess.md)
 
 <br/><br/>
 
-🔗 [**Read More: text*](/sections/errorhandling/monitoring)
 
-## ✔ 9. Monitoring!
 
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+## ✔ 7. Use a mature logger to increase errors visibility
 
-**Otherwise:** Failure === disappointed customers. Simple.
+**TL&DR:** A set of mature logging tools like Winston, Bunyan or Log4J, will speed-up error discovery and understanding. So forget about console.log.
 
-<br/><br/>
+**Otherwise:** Skimming through console.logs or manually through messy text file without querying tools or a decent log viewer might keep you busy at work until late
 
-🔗 [**Read More: text*](/sections/errorhandling/monitoring)
+🔗 [**Read More: using a mature logger*](/sections/errorhandling/usematurelogger.md)
 
-## ✔ 10. Monitoring!
-
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
-
-**Otherwise:** Failure === disappointed customers. Simple.
 
 <br/><br/>
 
-🔗 [**Read More: text*](/sections/errorhandling/monitoring)
 
-## ✔ 11. Monitoring!
+## ✔ 8. Test error flows using your favorite test framework
 
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+**TL&DR:** Whether professional automated QA or plain manual developer testing – Ensure that your code not only satisfies positive scenario but also handle and return the right errors. Testing framework like Mocha & Chai can handle this easily (see code examples within the "Gist popup")
 
-**Otherwise:** Failure === disappointed customers. Simple.
+**Otherwise:** Without testing, whether automatically or manually, you can’t rely on our code to return the right errors. Without meaningful errors – there’s no error handling
 
-🔗 [**Read More: text*](/sections/errorhandling/monitoring)
 
-<br/><br/>
-
-## ✔ 12. Monitoring!
-
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
-
-**Otherwise:** Failure === disappointed customers. Simple.
-
-🔗 [**Read More: text*](/sections/errorhandling/monitoring)
+🔗 [**Read More: testing error flows*](/sections/errorhandling/testingerrorflows.md)
 
 <br/><br/>
 
-## ✔ 13. Monitoring!
+## ✔ 9. Discover errors and downtime using APM products
 
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+**TL&DR:** Monitoring and performance products (a.k.a APM) proactively gauge your codebase or API so they can auto-magically highlight errors, crashes and slow parts that you were missing
 
-**Otherwise:** Failure === disappointed customers. Simple.
+**Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which are your slowest code parts under real world scenario and how these affects the UX
 
-🔗 [**Read More: text*](/sections/errorhandling/monitoring)
 
+🔗 [**Read More: using APM products*](/sections/errorhandling/apmproducts.md)
+
+<br/><br/>
+
+
+## ✔ 10. Catch unhandled promise rejections
+
+**TL&DR:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explictly handle. Even if you’re code is subscribed to process.uncaughtException! Overcome this by registering to the event process.unhandledRejection
+
+**Otherwise:** Your errors will get swallowed and leave no trace. Nothing to worry about
+
+
+🔗 [**Read More: catching unhandled promise rejection *](/sections/errorhandling/catchunhandledpromiserejection.md)
+
+<br/><br/>
+
+## ✔ 11. Fail fast, validate arguments using a dedicated library
+
+**TL&DR:** This should be part of your Express best practices – Assert API input to avoid nasty bugs that are much harder to track later. Validation code is usually tedious unless using a very cool helper libraries like Joi
+
+**Otherwise:** Consider this – your function expects a numeric argument “Discount” which the caller forgets to pass, later on your code checks if Discount!=0 (amount of allowed discount is greater than zero), then it will allow the user to enjoy a discount. OMG, what a nasty bug. Can you see it?
+
+🔗 [**Read More: failing fast*](/sections/errorhandling/failfast.md)
 
 
 <br/><br/><br/>
