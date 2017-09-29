@@ -79,7 +79,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 **Otherwise:** text
 
-🔗 [**Read More: text*](/sections/errorhandling/monitoring.md)
+🔗 [**Read More: text*](/sections/errorhandling/monitoring)
 
 
 
