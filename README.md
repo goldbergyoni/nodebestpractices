@@ -188,7 +188,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 **Otherwise:** Failure === disappointed customers. Simple.
 
-🔗 [**Read More: text*](/sections/errorhandling/monitoring)
+🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
 
 
 
