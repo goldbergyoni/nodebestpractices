@@ -226,95 +226,97 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 <br/><br/>
 
-## ✔ 5. Monitoring!
+## ✔ 5. Guard process uptime using the right tool
 
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+**TL&DR:** The process must go on and get restarted upon failures. For simple scenario, ‘restarter’ tools like PM2 might be enough but in today ‘dockerized’ world – a cluster management tools should be considered as well
 
-**Otherwise:** Failure === disappointed customers. Simple.
+**Otherwise:** Running dozens of instances without clear strategy and too many tools together (cluster management, docker, PM2) might lead to a devops chaos
 
 
-🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+🔗 [**Read More: monitoring*](/sections/errorhandling/guardprocess.md)
+
+ 
+<br/><br/>
+
+## ✔ 6. Utilize all CPU cores
+
+**TL&DR:** At its basic form, a Node app runs over a single CPU core while as all other are left idle. It’s your duty to replicate the Node process and utilize all CPUs – For small-medium apps you may use Node Cluster or PM2. For a larger app consider replicating the process using some Docker cluster (e.g. K8S, ECS) or deployment scripts that are based on Linux init system (e.g. systemd)
+
+**Otherwise:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.JS utilizes only 1 (even using PaaS services like AWS beanstalk!)
+
+
+🔗 [**Read More: monitoring*](/sections/errorhandling/utilizecpu.md)
 
 <br/><br/>
 
-## ✔ 6. Monitoring!
+## ✔ 7. Create a ‘maintenance endpoint’
 
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+**TL&DR:** Expose a set of system-related information, like memory usage and REPL, etc in a secured API. Although it’s highly recommended to rely on standard and battle-tests tools, some valuable information and operations are easier done using code
 
-**Otherwise:** Failure === disappointed customers. Simple.
-
-
-🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
-
-<br/><br/>
-
-## ✔ 7. Monitoring!
-
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
-
-**Otherwise:** Failure === disappointed customers. Simple.
+**Otherwise:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
 
 
-🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+🔗 [**Read More: monitoring*](/sections/production/createmaintenanceendpoint.md)
 
 <br/><br/>
 
-## ✔ 8. Monitoring!
+## ✔ 8. Discover errors and downtime using APM products
 
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+**TL&DR:** Monitoring and performance products (a.k.a APM) proactively gauge codebase and API so they can auto-magically go beyond traditional monitoring and measure the overall user-experience across services and tiers. For example, some APM products can highlight a transaction that loads too slow on the end-users side while suggesting the root cause
 
-**Otherwise:** Failure === disappointed customers. Simple.
-
-
-🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
-
-<br/><br/>
+**Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real world scenario and how these affects the UX
 
 
-## ✔ 9. Monitoring!
+🔗 [**Read More: monitoring*](/sections/errorhandling/apmproducts.md)
 
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
-
-**Otherwise:** Failure === disappointed customers. Simple.
-
-
-🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
 
 <br/><br/>
 
 
-## ✔ 10. Monitoring!
+## ✔ 9. Make your code production-ready
 
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+**TL&DR:** Code with the end in mind, plan for production from day 1. This sounds a bit vague so I’ve compiled inside (click Gist below) few development tips that are closely related to production maintenance
 
-**Otherwise:** Failure === disappointed customers. Simple.
+**Otherwise:** A world champion IT/devops guy won’t save a system that is badly written
 
 
-🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+🔗 [**Read More: monitoring*](/sections/errorhandling/productoncode.md)
+
+<br/><br/>
+
+## ✔ 10. Measure and guard the memory usage
+
+**TL&DR:** Node.js has controversial relationships with memory: the v8 engine has soft limits on memory usage (1.4GB) and there are known paths to leaks memory in Node’s code – thus watching Node’s process memory is a must. In small apps you may gauge memory  periodically using shell commands but in medium-large app consider baking your memory watch into a robust monitoring system
+
+**Otherwise:** Your process memory might leak a hundred megabytes a day like happened in Wallmart
+
+
+🔗 [**Read More: monitoring*](/sections/errorhandling/measurememory.md)
 
 <br/><br/>
 
 
-## ✔ 11. Monitoring!
+## ✔ 11. Get your frontend assets out of Node
 
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+**TL&DR:** Serve frontend content using dedicated middleware (nginx, S3, CDN) because Node performance really get hurts when dealing with many static files due to its single threaded model
 
-**Otherwise:** Failure === disappointed customers. Simple.
+**Otherwise:** Your single Node thread will keep busy streaming hundreds of html/images/angular/react files instead of  allocating all its resources for the task it was born for – serving dynamic content
 
 
-🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+🔗 [**Read More: monitoring*](/sections/errorhandling/frontendout.md)
 
 <br/><br/>
 
 
-## ✔ 12. Monitoring!
+## ✔ 12. Be stateless, kill your Servers almost every day
 
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+**TL&DR:** Store any type of data (e.g. users session, cache, uploaded files) within external data stores. Consider ‘killing’ your servers periodically or use ‘serverless’ platform (e.g. AWS Lambda) that explicitly enforces a stateless behavior
 
-**Otherwise:** Failure === disappointed customers. Simple.
+**Otherwise:** Failure at a given server will result in application downtime instead of a just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
 
 
-🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+🔗 [**Read More: monitoring*](/sections/errorhandling/bestateless.md)
+
 
 <br/><br/>
 
