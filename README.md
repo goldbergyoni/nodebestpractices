@@ -321,99 +321,66 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 <br/><br/>
 
 
-## ✔ 13. Monitoring!
+## ✔ 13. Use tools that automatically detect vulnerabilities
 
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+**TL&DR:** Even the most reputable dependencies such as Express have known vulnerabilities from time to time that put a system at risk. This can get easily tamed using community and commercial tools that constantly check for vulnerabilities and warn (locally or at GitHub), some can even patch them immediately
 
-**Otherwise:** Failure === disappointed customers. Simple.
-
-
-🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
-
-<br/><br/>
+**Otherwise:** Otherwise: Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
 
 
-## ✔ 14. Monitoring!
-
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
-
-**Otherwise:** Failure === disappointed customers. Simple.
-
-
-🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+🔗 [**Read More: monitoring*](/sections/errorhandling/detectvulerabilities.md)
 
 <br/><br/>
 
 
-## ✔ 15. Monitoring!
+## ✔ 14. Assign ‘TransactionId’ to each log statement
 
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+**TL&DR:** Assign the same identifier, transaction-id: {some value}, to each log entry within a single request. Then when inspecting errors in logs, easily conclude what happened before and after. Unfortunately, this is not easy to achieve in Node due its async nature, see code examples inside
 
-**Otherwise:** Failure === disappointed customers. Simple.
-
-
-🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
-
-<br/><br/>
+**Otherwise:** Looking at a production error log without the context – what happened before – makes it much harder and slower to reason about the issue
 
 
-## ✔ 16. Monitoring!
-
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
-
-**Otherwise:** Failure === disappointed customers. Simple.
-
-
-🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+🔗 [**Read More: monitoring*](/sections/errorhandling/assigntransactionid.md)
 
 <br/><br/>
 
 
-## ✔ 17. Monitoring!
+## ✔ 15. Set NODE_ENV=production
 
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+**TL&DR:** Set the environment variable NODE_ENV to ‘production’ or ‘development’ to flag whether production optimizations should get activated – many NPM packages determining the current environment and optimize their code for production
 
-**Otherwise:** Failure === disappointed customers. Simple.
+**Otherwise:** Omitting this simple property might greatly degrade performance. For example, when using Express for server side rendering omitting NODE_ENV makes the slower by a factor of three!
 
 
 🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+
 
 <br/><br/>
 
 
-## ✔ 18. Monitoring!
+## ✔ 16. Design automated, atomic and zero-downtime deployments
 
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+**TL&DR:** Researches show that teams who perform many deployments – lowers the probability of severe production issues. Fast and automated deployments that don’t require risky manual steps and service downtime significantly improves the deployment process. You should probably achieve that using Docker combined with CI tools as they became the industry standard for streamlined deployment
 
-**Otherwise:** Failure === disappointed customers. Simple.
+**Otherwise:** Long deployments -> production down time & human-related error -> team unconfident and in making deployment -> less deployments and features
 
 
-🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+🔗 [**Read More: monitoring*](/sections/errorhandling/automateddeployment.md)
+
 
 <br/><br/>
 
 
-## ✔ 19. Monitoring!
+## ✔ 17. Bump your NPM version in each deployment
 
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+**TL&DR:** Anytime a new version is released, increase the package.json version attribute so that it will become clear in production which version is deployed. All the more so in MicroService environment where different servers might hold different versions. The command “npm version” can achieve that for you automatically
 
-**Otherwise:** Failure === disappointed customers. Simple.
+**Otherwise:** Frequently developers try to hunt a production bug within a distributed system (i.e.multiple versions of multiple services) only to realize that the presumed version is not deployed where they look at
 
 
-🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+🔗 [**Read More: monitoring*](/sections/errorhandling/bumpversion.md)
 
 <br/><br/>
-
-
-## ✔ 20. Monitoring!
-
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
-
-**Otherwise:** Failure === disappointed customers. Simple.
-
-
-🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
-
 <br/><br/>
 
 
