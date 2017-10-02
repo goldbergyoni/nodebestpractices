@@ -188,8 +188,243 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 **Otherwise:** Failure === disappointed customers. Simple.
 
+
 🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
 
+<br/><br/>
+
+## ✔ 2. Increase transparency using smart logging
+
+**TL&DR:** Logs can be a dumb warehouse of debug statements or the enabler of a beautiful dashboard that tells the story of your app. Plan your logging platform from day  1: how logs are collected, stored and analyzed to ensure that the desired information (e.g. error rate, following an entire transaction through services and servers, etc) can really be extracted
+
+**Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
+
+
+🔗 [**Read More: monitoring*](/sections/errorhandling/smartlogging.md)
+	
+<br/><br/>
+
+## ✔ 3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy
+
+**TL&DR:** Node is awfully bad at doing CPU intensive tasks like gzipping, SSL termination, etc. Instead, use a ‘real’ middleware services like nginx, HAproxy or cloud vendor services
+
+**Otherwise:** Your poor single thread will keep busy doing networking tasks instead of dealing with your application core and performance will degrade accordingly
+
+
+🔗 [**Read More: monitoring*](/sections/errorhandling/delegatetoproxy.md)
+
+<br/><br/>
+
+## ✔ 4. Lock dependencies
+
+**TL&DR:** Your code must be identical across all environments but amazingly NPM lets dependencies drift across environments be default – when you install packages at various environments it tries to fetch packages’ latest patch version. Overcome this by using NPM config files , .npmrc, that tell each environment to save the exact (not the latest) version of each package. Alternatively, for finer grain control use NPM” shrinkwrap”. *Update: as of NPM5 , dependencies are locked by default. The new package manager in town, Yarn, also got us covered by default
+
+**Otherwise:** QA will thoroughly test the code and approve a version that will behave differently at production. Even worse, different servers at the same production cluster might run different code
+
+
+🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+
+<br/><br/>
+
+## ✔ 5. Monitoring!
+
+**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+
+**Otherwise:** Failure === disappointed customers. Simple.
+
+
+🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+
+<br/><br/>
+
+## ✔ 6. Monitoring!
+
+**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+
+**Otherwise:** Failure === disappointed customers. Simple.
+
+
+🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+
+<br/><br/>
+
+## ✔ 7. Monitoring!
+
+**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+
+**Otherwise:** Failure === disappointed customers. Simple.
+
+
+🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+
+<br/><br/>
+
+## ✔ 8. Monitoring!
+
+**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+
+**Otherwise:** Failure === disappointed customers. Simple.
+
+
+🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+
+<br/><br/>
+
+
+## ✔ 9. Monitoring!
+
+**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+
+**Otherwise:** Failure === disappointed customers. Simple.
+
+
+🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+
+<br/><br/>
+
+
+## ✔ 10. Monitoring!
+
+**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+
+**Otherwise:** Failure === disappointed customers. Simple.
+
+
+🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+
+<br/><br/>
+
+
+## ✔ 11. Monitoring!
+
+**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+
+**Otherwise:** Failure === disappointed customers. Simple.
+
+
+🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+
+<br/><br/>
+
+
+## ✔ 12. Monitoring!
+
+**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+
+**Otherwise:** Failure === disappointed customers. Simple.
+
+
+🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+
+<br/><br/>
+
+
+## ✔ 13. Monitoring!
+
+**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+
+**Otherwise:** Failure === disappointed customers. Simple.
+
+
+🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+
+<br/><br/>
+
+
+## ✔ 14. Monitoring!
+
+**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+
+**Otherwise:** Failure === disappointed customers. Simple.
+
+
+🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+
+<br/><br/>
+
+
+## ✔ 15. Monitoring!
+
+**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+
+**Otherwise:** Failure === disappointed customers. Simple.
+
+
+🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+
+<br/><br/>
+
+
+## ✔ 16. Monitoring!
+
+**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+
+**Otherwise:** Failure === disappointed customers. Simple.
+
+
+🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+
+<br/><br/>
+
+
+## ✔ 17. Monitoring!
+
+**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+
+**Otherwise:** Failure === disappointed customers. Simple.
+
+
+🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+
+<br/><br/>
+
+
+## ✔ 18. Monitoring!
+
+**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+
+**Otherwise:** Failure === disappointed customers. Simple.
+
+
+🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+
+<br/><br/>
+
+
+## ✔ 19. Monitoring!
+
+**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+
+**Otherwise:** Failure === disappointed customers. Simple.
+
+
+🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+
+<br/><br/>
+
+
+## ✔ 20. Monitoring!
+
+**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+
+**Otherwise:** Failure === disappointed customers. Simple.
+
+
+🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+
+<br/><br/>
+
+
+## ✔ 21. Monitoring!
+
+**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+
+**Otherwise:** Failure === disappointed customers. Simple.
+
+
+🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+
+<br/><br/>
 
 
 <br/><br/><br/>
