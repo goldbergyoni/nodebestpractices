@@ -34,15 +34,11 @@ code here
 ```
 
 <br/><br/>
-### Blog Quote: "Title"
- From the blog pouchdb.com, ranked 11 for the keywords “Node Promises”
- 
- > …text here
+### What Other Bloggers Say
+From the blog Rising Stack:
 
- <br/><br/>
- 
- ### Image title
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/swaggerDoc.png "API error handling")
-
- 
-<br/><br/>
+> …We recommend you to watch these signals for all of your services:
+> Error Rate: Because errors are user facing and immediately affect your customers.
+> Response time: Because the latency directly affects your customers and business.
+> Throughput: The traffic helps you to understand the context of increased error rates and the latency too.
+> Saturation: It tells how “full” your service is. If the CPU usage is 90%, can your system handle more traffic? …
