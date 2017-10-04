@@ -249,7 +249,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 **Otherwise:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.JS utilizes only 1 (even using PaaS services like AWS beanstalk!)
 
 
-🔗 [**Read More: monitoring*](/sections/errorhandling/utilizecpu.md)
+🔗 [**Read More: Utilize all CPU cores**](/sections/production/utilizecpu.md)
 
 <br/><br/>
 
@@ -260,7 +260,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 **Otherwise:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
 
 
-🔗 [**Read More: monitoring*](/sections/production/createmaintenanceendpoint.md)
+🔗 [**Read More: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
 
 <br/><br/>
 
@@ -271,7 +271,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 **Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real world scenario and how these affects the UX
 
 
-🔗 [**Read More: monitoring*](/sections/errorhandling/apmproducts.md)
+🔗 [**Read More: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
 
 
 <br/><br/>
@@ -284,7 +284,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 **Otherwise:** A world champion IT/devops guy won’t save a system that is badly written
 
 
-🔗 [**Read More: monitoring*](/sections/errorhandling/productoncode.md)
+🔗 [**Read More: Make your code production-ready**](/sections/production/productoncode.md)
 
 <br/><br/>
 
@@ -295,7 +295,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 **Otherwise:** Your process memory might leak a hundred megabytes a day like happened in Wallmart
 
 
-🔗 [**Read More: monitoring*](/sections/errorhandling/measurememory.md)
+🔗 [**Read More: Measure and guard the memory usage**](/sections/production/measurememory.md)
 
 <br/><br/>
 
