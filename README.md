@@ -17,8 +17,10 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 * [Code Style Practices (11) ](#code-style-practices)
 * [Error Handling Practices (14) ](#error-handling-practices)
 * [Going To Production Practices (21) ](#going-to-production-practices)
-* [Testing Practices (9) ](#deployment-practices)
-* [Security Practices (8) ](#security-practices)
+* [Testing And Overall Quality Practices (9) ](#testing-practices)
+* [Security Practices (soon) ](#security-practices)
+* [Performance Practices (soon) ](#performance-practices)
+* [API Practices (soon) ](#API-practices)
 
 
 <br/><br/>
@@ -368,38 +370,135 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 🔗 [**Read More: monitoring*](/sections/errorhandling/automateddeployment.md)
 
 
+<br/><br/><br/>
+# `Testing And Overall Quality Practices`
+
+## ✔ 1. At the very least, write API (component) testing
+
+**TL&DR:** text here
+
+**Otherwise:** text here
+
+🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
+
+<br/><br/>
+
+## ✔ 2. At the very least, write API (component) testing
+
+**TL&DR:** text here
+
+**Otherwise:** text here
+
+🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
+
+<br/><br/>
+
+## ✔ 2. At the very least, write API (component) testing
+
+**TL&DR:** text here
+
+**Otherwise:** text here
+
+🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
+
+<br/><br/>
+
+## ✔ 2. At the very least, write API (component) testing
+
+**TL&DR:** text here
+
+**Otherwise:** text here
+
+🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
+
+<br/><br/>
+
+## ✔ 2. At the very least, write API (component) testing
+
+**TL&DR:** text here
+
+**Otherwise:** text here
+
+🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
+
+<br/><br/>
+
+## ✔ 3. At the very least, write API (component) testing
+
+**TL&DR:** text here
+
+**Otherwise:** text here
+
+🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
+
+<br/><br/>
+
+## ✔ 4. At the very least, write API (component) testing
+
+**TL&DR:** text here
+
+**Otherwise:** text here
+
+🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
+
+<br/><br/>
+
+## ✔ 4. At the very least, write API (component) testing
+
+**TL&DR:** text here
+
+**Otherwise:** text here
+
+🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
+
+<br/><br/>
+
+## ✔ 5. At the very least, write API (component) testing
+
+**TL&DR:** text here
+
+**Otherwise:** text here
+
+🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
+
+<br/><br/>
+
+## ✔ 6. At the very least, write API (component) testing
+
+**TL&DR:** text here
+
+**Otherwise:** text here
+
+🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
+
 <br/><br/>
 
 
-## ✔ 17. Bump your NPM version in each deployment
+## ✔ 7. Bump your NPM version in each deployment
 
 **TL&DR:** Anytime a new version is released, increase the package.json version attribute so that it will become clear in production which version is deployed. All the more so in MicroService environment where different servers might hold different versions. The command “npm version” can achieve that for you automatically
 
 **Otherwise:** Frequently developers try to hunt a production bug within a distributed system (i.e.multiple versions of multiple services) only to realize that the presumed version is not deployed where they look at
 
 
-🔗 [**Read More: monitoring*](/sections/errorhandling/bumpversion.md)
+🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
 
 <br/><br/>
-<br/><br/>
-
-
-## ✔ 21. Monitoring!
-
-**TL&DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
-
-**Otherwise:** Failure === disappointed customers. Simple.
-
-
-🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
-
-<br/><br/>
-
-
-<br/><br/><br/>
-# `Deployment Practices`
 
 
 <br/><br/><br/>
 # `Security Practices`
+
+## our contributirs working on this section, would you like to join?
+
+<br/><br/><br/>
+# `Performance Practices`
+
+## our contributirs working on this section, would you like to join?
+
+<br/><br/><br/>
+# `API Practices`
+
+## our contributirs working on this section, would you like to join?
+
 
