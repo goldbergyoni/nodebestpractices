@@ -20,7 +20,7 @@ Achieving the advanced features demands lengthy setup or buying a commercial pro
 
 ### Monitoring example: StackDriver default dashboard. Hard to extract in-app metrics
 
-![StackDriver default dashboard. Hard to extract in-app metrics](/assets/images/monitoring2.png)
+![StackDriver default dashboard. Hard to extract in-app metrics](/assets/images/monitoring2.jpg)
 
 <br/><br/>
 
