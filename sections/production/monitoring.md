@@ -1,4 +1,4 @@
-# `**Monitoring!**`
+# **`Monitoring!`**
 
 At the very basic level, monitoring means you can *easily identify when bad things happen at production. For example, by getting notified by email or Slack. The challenge is to choose the right set of tools that will satisfy your requirements without breaking your bank. May I suggest, start with defining the core set of metrics that must be watched to ensure a healthy state – CPU, server RAM,  Node process RAM (less than 1.4GB), the amount of errors in the last minute, number of process restarts, average response time. Then go over some advanced features you might fancy and add to your wish list. Some examples of luxury monitoring feature: DB profiling, cross-service measuring (i.e. measure business transaction), frontend integration, expose raw data to custom BI clients, Slack notifications and many others.
 
