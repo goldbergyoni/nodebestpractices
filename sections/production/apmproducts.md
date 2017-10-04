@@ -1,40 +1,27 @@
-# Title here
+# Sure user experience with APM products
 
 <br/><br/>
 
 
 ### One Paragraph Explainer
 
-Text
+APM, application performance monitoring refers to a familiy of products that aims to monitor application performance from end to end, also from the customer persepective. While traditional monitoring solutions focuses on Exceptions and standlone technical metrics (e.g. error tracking, slow server endpoints, etc), in real world our app might create disappointed users without any code exceptions, for example if some middleware service performed real slow. APM products measure the user experience from end to end, for example, given a system that encompass frontend UI and multiple distirbuted services – some APM products can tell how fast a transaction that spans multiple tiers last. It can tell whether the user experience is solid and point to the problem. This attractive offering comes with a relativelly high price tag hence it’s recommended for large-scale and complex products that require to go beyond straightforwd monitoring.
 
 <br/><br/>
 
 
-### Code Example – explanation
+### APM example – a commercial product that visualize cross-service app performance
 
-```javascript
-code here
-```
+![APM example](/assets/images/apm1.png "APM example")
 
 <br/><br/>
 
-### Code Example – another
+### APM example – a commercial product that emphasize the user experience score
 
-```javascript
-code here
-```
+![APM example](/assets/images/apm2.png "APM example")
 
 <br/><br/>
 
-### Blog Quote: "Title"
- From the blog pouchdb.com, ranked 11 for the keywords “Node Promises”
- 
- > …text here
+### APM example – a commercial product that highlights slow code paths
 
- <br/><br/>
- 
- ### Image title
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/swaggerDoc.png "API error handling")
-
- 
-<br/><br/>
+![APM example](/assets/images/apm3.png "APM example")
