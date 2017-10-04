@@ -226,7 +226,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 **Otherwise:** QA will thoroughly test the code and approve a version that will behave differently at production. Even worse, different servers at the same production cluster might run different code
 
 
-🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+🔗 [**Read More: monitoring**](/sections/production/lockdependencies.md)
 
 <br/><br/>
 
@@ -237,7 +237,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 **Otherwise:** Running dozens of instances without clear strategy and too many tools together (cluster management, docker, PM2) might lead to a devops chaos
 
 
-🔗 [**Read More: monitoring*](/sections/errorhandling/guardprocess.md)
+🔗 [**Read More: monitoring**](/sections/production/guardprocess.md)
 
  
 <br/><br/>
