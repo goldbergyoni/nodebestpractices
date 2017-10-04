@@ -16,20 +16,24 @@ It’s very tempting to cargo-cult Express and use its rich middleware offering 
 gzip on;
 #defining gzip compression
 gzip_comp_level 6;
-gzip_vary on;upstream myApplication {
-server 127.0.0.1:3000;
-server 127.0.0.1:3001;
-keepalive 64;
-}#defining web server
+gzip_vary on;
+upstream myApplication {
+    server 127.0.0.1:3000;
+    server 127.0.0.1:3001;
+    keepalive 64;
+}
+
+#defining web server
 server {
-listen 80;
-listen 443 ssl;ssl_certificate /some/location/sillyfacesociety.com.bundle.crt;
-error_page 502 /errors/502.html;
-#handling static content
-location ~ ^/(images/|img/|javascript/|js/|css/|stylesheets/|flash/|media/|static/|robots.txt|humans.txt|favicon.ico) {
-root /usr/local/silly_face_society/node/public;
-access_log off;
-expires max;
+    listen 80;
+    listen 443 ssl;
+    ssl_certificate /some/location/sillyfacesociety.com.bundle.crt;
+    error_page 502 /errors/502.html;
+    #handling static content
+    location ~ ^/(images/|img/|javascript/|js/|css/|stylesheets/|flash/|media/|static/|robots.txt|humans.txt|favicon.ico) {
+    root /usr/local/silly_face_society/node/public;
+    access_log off;
+    expires max;
 }
 ```
 
@@ -37,10 +41,10 @@ expires max;
 
 ### What Other Bloggers Say
 
-From the blog [Mubaloo](http://mubaloo.com/best-practices-deploying-node-js-applications):
+* From the blog [Mubaloo](http://mubaloo.com/best-practices-deploying-node-js-applications):
 > …It’s very easy to fall into this trap – You see a package like Express and think “Awesome! Let’s get started” – you code away and you’ve got an application that does what you want. This is excellent and, to be honest, you’ve won a lot of the battle. However, you will lose the war if you upload your app to a server and have it listen on your HTTP port, because you’ve forgotten a very crucial thing: Node is not a web server. **As soon as any volume of traffic starts to hit your application, you’ll notice that things start to go wrong: connections are dropped, assets stop being served or, at the very worst, your server crashes. What you’re doing is attempting to have Node deal with all of the complicated things that a proven web server does really well. Why reinvent the wheel?**
 > **This is just for one request, for one image and bearing in mind this is memory that your application could be using for important stuff like reading a database or handling complicated logic; why would you cripple your application for the sake of convenience?**
 
 
-From the blog [Argteam](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load):
+* From the blog [Argteam](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load):
 > Although express.js has built in static file handling through some connect middleware, you should never use it. **Nginx can do a much better job of handling static files and can prevent requests for non-dynamic content from clogging our node processes**…
