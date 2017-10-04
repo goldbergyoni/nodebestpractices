@@ -47,7 +47,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 <br/><br/>
 
-## ![✔][✔] 3. Configure ESLint with node-specific plugins
+## ![✔] 3. Configure ESLint with node-specific plugins
 
 **TL;DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
 
