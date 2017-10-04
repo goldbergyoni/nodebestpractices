@@ -184,6 +184,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 
 <br/><br/><br/>
+
 # `Going To Production Practices`
 ## ✔ 1. Monitoring!
 
@@ -192,7 +193,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 **Otherwise:** Failure === disappointed customers. Simple.
 
 
-🔗 [**Read More: monitoring*](/sections/errorhandling/monitoring.md)
+🔗 [**Read More: Monitoring!**](/sections/production/monitoring.md)
 
 <br/><br/>
 
@@ -203,7 +204,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 **Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
 
 
-🔗 [**Read More: monitoring*](/sections/errorhandling/smartlogging.md)
+🔗 [**Read More: Increase transparency using smart logging**](/sections/production/smartlogging.md)
 	
 <br/><br/>
 
@@ -214,7 +215,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 **Otherwise:** Your poor single thread will keep busy doing networking tasks instead of dealing with your application core and performance will degrade accordingly
 
 
-🔗 [**Read More: monitoring*](/sections/errorhandling/delegatetoproxy.md)
+🔗 [**Read More: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
 
 <br/><br/>
 
