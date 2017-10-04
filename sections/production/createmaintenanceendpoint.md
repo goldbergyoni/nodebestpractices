@@ -28,8 +28,8 @@ router.get('/ops/headump', (req, res, next) => {
 
 <br/><br/>
 
-### 📺 Recommended Watch
+### Recommended Watch
 
-▶ 📺 [Getting your Node.js app production ready](http://mubaloo.com/best-practices-deploying-node-js-applications)
+▶ [Getting your Node.js app production ready](http://mubaloo.com/best-practices-deploying-node-js-applications)
 
 ![Getting your Node.js app production ready](/assets/images/createmaintenanceendpoint1.png "Getting your Node.js app production ready")
