@@ -30,7 +30,7 @@ Achieving the advanced features demands lengthy setup or buying a commercial pro
 
 <br/><br/>
 ### What Other Bloggers Say
-From the blog Rising Stack:
+From the blog [Rising Stack](http://mubaloo.com/best-practices-deploying-node-js-applications/):
 
 > …We recommend you to watch these signals for all of your services:
 > Error Rate: Because errors are user facing and immediately affect your customers.
