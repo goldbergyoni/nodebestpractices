@@ -4,14 +4,20 @@
 <h1 align="center">
   <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices" />
 </h1>
-
+<br/><br/>
 <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2053%20Best%20practices-blue.svg" alt="53 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%206%20days%20ago-green.svg" alt="Last update: 7 days ago"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.4-brightgreen.svg" alt="Updated for Node v.8.4">
 
+<br/><br/><br/>
+
 <!--- ![Node.js Best Practices](assets/images/banner-1.png) -->
+
+<br/><br/><br/>
 
 # Welcome to Node.js Best Practices
 
 Welcome to the biggest compilation of Node.JS best practices. The content below was gathered from all top ranked books and posts and is updated constantly - when you read here rest assure that no significant tip slipped away. Feel at home - we love to discuss via PRs, issues or Gitter.
+
+<br/><br/><br/>
 
 ## Table of Contents
 * [Project Setup Practices (18)](#project-setup-practices)
@@ -24,7 +30,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 * [API Practices (soon) ](#API-practices)
 
 
-<br/><br/>
+<br/><br/><br/>
 # `Project Setup Practices`
 
 ## 1. Structure your solution by feature ('microservices')
