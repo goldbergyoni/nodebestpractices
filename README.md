@@ -9,10 +9,6 @@
 
 <br/><br/><br/>
 
-<!--- ![Node.js Best Practices](assets/images/banner-1.png) -->
-
-<br/><br/><br/>
-
 # Welcome to Node.js Best Practices
 
 Welcome to the biggest compilation of Node.JS best practices. The content below was gathered from all top ranked books and posts and is updated constantly - when you read here rest assure that no significant tip slipped away. Feel at home - we love to discuss via PRs, issues or Gitter.
