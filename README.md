@@ -18,18 +18,18 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 <br/><br/><br/>
 
 ## Table of Contents
-* [Project Setup Practices (18)](#project-setup-practices)
-* [Code Style Practices (11) ](#code-style-practices)
-* [Error Handling Practices (14) ](#error-handling-practices)
-* [Going To Production Practices (21) ](#going-to-production-practices)
-* [Testing And Overall Quality Practices (9) ](#testing-practices)
+* [Project structure Practices (6)](#project-setup-practices)
+* [Code Style Practices (9) ](#code-style-practices)
+* [Error Handling Practices (11) ](#error-handling-practices)
+* [Going To Production Practices (17) ](#going-to-production-practices)
+* [Testing And Overall Quality Practices (6) ](#testing-practices)
 * [Security Practices (soon) ](#security-practices)
 * [Performance Practices (soon) ](#performance-practices)
 * [API Practices (soon) ](#API-practices)
 
 
 <br/><br/><br/>
-# `Project Setup Practices`
+# `Project Structure Practices`
 
 ## 1. Structure your solution by feature ('microservices')
 
@@ -51,7 +51,39 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 <br/><br/>
 
-## ![✔] 3. Configure ESLint with node-specific plugins
+## ![✔] 3. Keep components thin enough
+
+**TL;DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
+
+**Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
+
+🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncawait.md)
+
+## ![✔] 4. Separate and wrap common utilities (i.e cross cutting concern)
+
+**TL;DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
+
+**Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
+
+🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncawait.md)
+
+## ![✔] 5. Separate and wrap common utilities (i.e cross cutting concern)
+
+**TL;DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
+
+**Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
+
+🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncawait.md)
+
+## ![✔] 6. Use environment aware, secure and hirearchical config
+
+**TL;DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
+
+**Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
+
+🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncawait.md)
+
+## ![✔] 7. Pass context object between the layers
 
 **TL;DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
 
