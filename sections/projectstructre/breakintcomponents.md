@@ -34,4 +34,4 @@ code here
 
 <br/><br/> 
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/app-dynamics-dashboard.png "end to end monitoring combined with code instrumentation")
+![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebyroles.png "end to end monitoring combined with code instrumentation")
