@@ -31,13 +31,13 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 <br/><br/><br/>
 # `Project Structure Practices`
 
-## 1. Structure your solution by feature ('microservices')
+## 1. Structure your solution by components
 
-✔ **TL;DR:** The worst large applications pitfal is a huge code base where hundreds of dependencies slow down developers as try to incorporate new features. Partioning into small units ensures that each unit is kept simple and very easy to maintain. This strategy pushes the complexity to the higher level - designing the cross-component interactions. 
+✔ **TL;DR:** The worst large applications pitfal is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as try to incorporate new features. Partioning into small units, components or microservices, ensures that each unit is kept simple and very easy to maintain. This strategy however pushes the complexity to the higher level - designing the cross-component interactions.
 
-✔ **Otherwise:** Developing a new feature with a change to few objects demands to evaluate how this changes might affect dozends of dependants and ach deployment becomes a fear.
+✔ **Otherwise:** When developers who code new features fear to break other dependant components, deployments become slower and more risky. Also, a single code base is harder to scale-out.
 
-🔗 [**Read More: Structure by feature**](/sections/errorhandling/asyncawait.md)
+🔗 [**Read More: Structure by components**](/sections/projectstructre/breakintcomponents.md)
 
 <br/><br/>
 
@@ -59,6 +59,8 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncawait.md)
 
+<br/><br/>
+
 ## ![✔] 4. Separate and wrap common utilities (i.e cross cutting concern)
 
 **TL;DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
@@ -69,11 +71,13 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 ## ![✔] 5. Separate and wrap common utilities (i.e cross cutting concern)
 
-**TL;DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
+**TL;DR:** Anything that is being used widely by multpile components - logger, configuration reader, or any other cross cutting concern utility - brings dependency management challenges to the table. Luckily we alrady have a package manager, NPM, let's use it by treating any utility as an NPM package, declare it within package.json and host it in NPM repository (local, online-private or public). For small project you may use NPM local modules which allows to benefit each NPM feature using plain folder.
 
-**Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
+**Otherwise:** Your solution will become one big monolith pile where all the dependencies are hard-coded withih the code. In a microservices environment you'll have to think hard how to share common code among microservices 
 
-🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncawait.md)
+🔗 [**Read More: Structure by feature*](/sections/errorhandling/makeutilitiesnpmpackage.md)
+
+<br/><br/>
 
 ## ![✔] 6. Use environment aware, secure and hirearchical config
 
@@ -82,6 +86,8 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 **Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
 
 🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncawait.md)
+
+<br/><br/>
 
 ## ![✔] 7. Pass context object between the layers
 
@@ -92,7 +98,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncawait.md)
 
 
-<br/><br/>
+<br/><br/><br/>
 # `Code Style Practices`
 
 
