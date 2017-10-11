@@ -33,9 +33,9 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 ## 1. Structure your solution by components
 
-✔ **TL;DR:** The worst large applications pitfal is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as try to incorporate new features. Partioning into small units, components or microservices, ensures that each unit is kept simple and very easy to maintain. This strategy however pushes the complexity to the higher level - designing the cross-component interactions.
+✔ **TL;DR:** The worst large applications pitfal is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as try to incorporate new features. Partioning into small units, components or microservices, ensures that each unit is kept simple and very easy to maintain. There no neccessity to start with full-blown 'microservices' architecture, even using a single codebase it's possible to achieve low complexity as long as you partition your code into self-contained components
 
-✔ **Otherwise:** When developers who code new features fear to break other dependant components, deployments become slower and more risky. Also, a single code base is harder to scale-out.
+✔ **Otherwise:** When developers who code new features fear to break other dependant components, deployments become slower and more risky. Also, a single code base is harder to scale-out
 
 🔗 [**Read More: Structure by components**](/sections/projectstructre/breakintcomponents.md)
 
