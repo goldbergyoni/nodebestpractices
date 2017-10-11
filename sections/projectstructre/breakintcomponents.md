@@ -32,4 +32,4 @@ code here
 ### Bad: Structuring solution by technical roles
 ![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebyroles.png "Structuring solution by technical roles")
 
-<br/><br/>
+![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/app-dynamics-dashboard.png "end to end monitoring combined with code instrumentation")
