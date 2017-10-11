@@ -26,10 +26,6 @@ code here
 
  <br/><br/>
  
- ### Structuring solution by components
 ![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebycomponents.png "Structuring solution by components")
 
-### Bad: Structuring solution by technical roles
 ![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebyroles.png "Structuring solution by technical roles")
-
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/app-dynamics-dashboard.png "end to end monitoring combined with code instrumentation")
