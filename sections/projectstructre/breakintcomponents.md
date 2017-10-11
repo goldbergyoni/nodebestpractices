@@ -26,12 +26,8 @@ code here
 
  <br/><br/>
  
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebycomponents.png "Structuring solution by components")
+![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Structuring solution by components")
 
  <br/><br/> 
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebyroles.png "Structuring solution by technical roles")
-
-<br/><br/> 
-
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebyroles.png "end to end monitoring combined with code instrumentation")
+![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebyroles.PNG "Structuring solution by technical roles")
