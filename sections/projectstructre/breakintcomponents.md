@@ -28,4 +28,6 @@ code here
  
 ![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebycomponents.png "Structuring solution by components")
 
+ <br/><br/>
+
 ![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebyroles.png "Structuring solution by technical roles")
