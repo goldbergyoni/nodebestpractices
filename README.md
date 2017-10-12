@@ -18,14 +18,14 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 <br/><br/><br/>
 
 ## Table of Contents
-1 [Project structure Practices (6)](#project-setup-practices)
-2 [Code Style Practices (9) ](#code-style-practices)
-3 [Error Handling Practices (11) ](#error-handling-practices)
-4 [Going To Production Practices (17) ](#going-to-production-practices)
-5 [Testing And Overall Quality Practices (6) ](#testing-practices)
-6 [Security Practices (soon) ](#security-practices)
-7 [Performance Practices (soon) ](#performance-practices)
-8 [API Practices (soon) ](#API-practices)
+1. [Project structure Practices (6)](#project-setup-practices)
+2. [Code Style Practices (9) ](#code-style-practices)
+3. [Error Handling Practices (11) ](#error-handling-practices)
+4. [Going To Production Practices (17) ](#going-to-production-practices)
+5. [Testing And Overall Quality Practices (6) ](#testing-practices)
+6. [Security Practices (soon) ](#security-practices)
+7. [Performance Practices (soon) ](#performance-practices)
+8. [API Practices (soon) ](#API-practices)
 
 
 <br/><br/><br/>
