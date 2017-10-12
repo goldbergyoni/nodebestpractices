@@ -41,11 +41,11 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 <br/><br/>
 
-## ✔ Layer your app, keep Express within its boundaries
+## ✔ Layer your components, keep Express within its boundaries
 
-**TL;DR:** Keep layer, Node.JS is no other... which layers to create... why it's good... testableIt's very common to see Express API passes the express objects (req, res) to business logic and data layers, sometimes even to every function - this makes your application depedant on and accessible by Express only. What if your code should be reached by testing console or CRON job? instead create your own context object with cross-cutting-concern properties like the user roles and inject into other layers, or use 'thread-level variables' libraries like continuation local storage
+**TL;DR:** Grouping code by technical concerns is a common universal pattern and Node JS apps should be no different. At its most basic level, each component should contain a web, service/logic and data access layers. This not only draws a clean separation of concerns but also significantly ease testing and mocking the system. Though this is a very common pattern, commonly API developers mix layers by passing the express objects (req, res) to business logic and data layers - this makes your application dependant on and accessible by Express only
 
-**Otherwise:** Application can be accessed by Express only and require to create complex testing mocks
+**Otherwise:** App that mixes web objects with other layers can not be accessed by testing harness, CRON jobs and other non-Express callers
 
 🔗 [**Read More: Structure by feature**](/sections/projectstructre/createlayers.md)
 
