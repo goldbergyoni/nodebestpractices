@@ -18,20 +18,20 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 <br/><br/><br/>
 
 ## Table of Contents
-* [Project structure Practices (6)](#project-setup-practices)
-* [Code Style Practices (9) ](#code-style-practices)
-* [Error Handling Practices (11) ](#error-handling-practices)
-* [Going To Production Practices (17) ](#going-to-production-practices)
-* [Testing And Overall Quality Practices (6) ](#testing-practices)
-* [Security Practices (soon) ](#security-practices)
-* [Performance Practices (soon) ](#performance-practices)
-* [API Practices (soon) ](#API-practices)
+1 [Project structure Practices (6)](#project-setup-practices)
+2 [Code Style Practices (9) ](#code-style-practices)
+3 [Error Handling Practices (11) ](#error-handling-practices)
+4 [Going To Production Practices (17) ](#going-to-production-practices)
+5 [Testing And Overall Quality Practices (6) ](#testing-practices)
+6 [Security Practices (soon) ](#security-practices)
+7 [Performance Practices (soon) ](#performance-practices)
+8 [API Practices (soon) ](#API-practices)
 
 
 <br/><br/><br/>
 # `Project Structure Practices`
 
-## 1. Structure your solution by components
+## 1.1 Structure your solution by components
 
 ✔ **TL;DR:** The worst large applications pitfal is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Partioning into small units, components or microservices, ensures that each unit is kept simple and very easy to maintain. There no neccessity to start with full-blown 'microservices' architecture, even using a single codebase it's possible to achieve low complexity as long as you partition your code into self-contained components
 
@@ -41,7 +41,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 <br/><br/>
 
-## ✔ Layer your components, keep Express within its boundaries
+## ✔ 1.2 Layer your components, keep Express within its boundaries
 
 **TL;DR:** Grouping code by technical concerns, layering, is a common pattern among all platforms and Node JS apps should be no different. At its most basic level, each component should contain a web, service/logic and data access layers. This not only draws a clean separation of concerns but also significantly ease mocking and testing the system. Though this is a very common pattern, API developers tend to mix layers by passing the express objects (req, res) to business logic and data layers - this makes your application dependant on and accessible by Express only
 
@@ -51,7 +51,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 <br/><br/>
 
-## ![✔] 3. Keep components thin enough
+## ![✔] 1.3 Keep components thin enough
 
 **TL;DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
 
@@ -61,15 +61,15 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 <br/><br/>
 
-## ![✔] 4. Separate and wrap common utilities (i.e cross cutting concern)
+## ![✔] 1.4 Wrap common utilities as NPM packages
 
-**TL;DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
+**TL;DR:** Once your app grows and different components resides on different servers, utilities like logger should be reused in multiple locations. This poses a challenge of how to manage the dependency, versioning and deployment of this utilities among different code bases and servers? let's stick to the standards and tools we have, wrap your cross cutting concern utilities as private NPM packages and benefit a free package management framework. Keep you packages private using local NPM modules, local NPM database or private modules within NPM online
 
-**Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
+**Otherwise:** You'll have to invent your own deployment and dependency wheel
 
 🔗 [**Read More: Structure by feature*](/sections/projectstructre/wraputilities.md)
 
-## ![✔] 5. Separate Express 'app' and 'server'
+## ![✔] 1.5 Separate Express 'app' and 'server'
 
 **TL;DR:** Anything that is being used widely by multpile components - logger, configuration reader, or any other cross cutting concern utility - brings dependency management challenges to the table. Luckily we alrady have a package manager, NPM, let's use it by treating any utility as an NPM package, declare it within package.json and host it in NPM repository (local, online-private or public). For small project you may use NPM local modules which allows to benefit each NPM feature using plain folder.
 
@@ -79,7 +79,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 <br/><br/>
 
-## ![✔] 6. Use environment aware, secure and hirearchical config
+## ![✔] 1.6 Use environment aware, secure and hirearchical config
 
 **TL;DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
 
