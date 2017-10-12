@@ -33,9 +33,9 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 ## 1. Structure your solution by components
 
-✔ **TL;DR:** The worst large applications pitfal is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as try to incorporate new features. Partioning into small units, components or microservices, ensures that each unit is kept simple and very easy to maintain. There no neccessity to start with full-blown 'microservices' architecture, even using a single codebase it's possible to achieve low complexity as long as you partition your code into self-contained components
+✔ **TL;DR:** The worst large applications pitfal is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Partioning into small units, components or microservices, ensures that each unit is kept simple and very easy to maintain. There no neccessity to start with full-blown 'microservices' architecture, even using a single codebase it's possible to achieve low complexity as long as you partition your code into self-contained components
 
-✔ **Otherwise:** When developers who code new features fear to break other dependant components, deployments become slower and more risky. Also, a single code base is harder to scale-out
+✔ **Otherwise:** When developers who code new features fear to break other dependant components, deployments become slower and more risky
 
 🔗 [**Read More: Structure by components**](/sections/projectstructre/breakintcomponents.md)
 
@@ -43,11 +43,11 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 ## ✔ Layer your app, keep Express within its boundaries
 
-**TL;DR:** It's very common to see Express API passes the express objects (req, res) to business logic and data layers, sometimes even to every function - this makes your application depedant on and accessible by Express only. What if your code should be reached by testing console or CRON job? instead create your own context object with cross-cutting-concern properties like the user roles and inject into other layers, or use 'thread-level variables' libraries like continuation local storage
+**TL;DR:** Keep layer, Node.JS is no other... which layers to create... why it's good... testableIt's very common to see Express API passes the express objects (req, res) to business logic and data layers, sometimes even to every function - this makes your application depedant on and accessible by Express only. What if your code should be reached by testing console or CRON job? instead create your own context object with cross-cutting-concern properties like the user roles and inject into other layers, or use 'thread-level variables' libraries like continuation local storage
 
 **Otherwise:** Application can be accessed by Express only and require to create complex testing mocks
 
-🔗 [**Read More: Structure by feature**](/sections/errorhandling/asyncawait.md)
+🔗 [**Read More: Structure by feature**](/sections/projectstructre/createlayers.md)
 
 <br/><br/>
 
@@ -57,7 +57,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 **Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
 
-🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncawait.md)
+🔗 [**Read More: Structure by feature*](/sections/projectstructre/thincomponents.md)
 
 <br/><br/>
 
@@ -67,15 +67,15 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 **Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
 
-🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncawait.md)
+🔗 [**Read More: Structure by feature*](/sections/projectstructre/wraputilities.md)
 
-## ![✔] 5. Separate and wrap common utilities (i.e cross cutting concern)
+## ![✔] 5. Separate Express 'app' and 'server'
 
 **TL;DR:** Anything that is being used widely by multpile components - logger, configuration reader, or any other cross cutting concern utility - brings dependency management challenges to the table. Luckily we alrady have a package manager, NPM, let's use it by treating any utility as an NPM package, declare it within package.json and host it in NPM repository (local, online-private or public). For small project you may use NPM local modules which allows to benefit each NPM feature using plain folder.
 
 **Otherwise:** Your solution will become one big monolith pile where all the dependencies are hard-coded withih the code. In a microservices environment you'll have to think hard how to share common code among microservices 
 
-🔗 [**Read More: Structure by feature*](/sections/errorhandling/makeutilitiesnpmpackage.md)
+🔗 [**Read More: Structure by feature*](/sections/errorhandling/separateexpress.md)
 
 <br/><br/>
 
@@ -85,18 +85,9 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 **Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
 
-🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncawait.md)
+🔗 [**Read More: Structure by feature*](/sections/errorhandling/configguide.md)
 
 <br/><br/>
-
-## ![✔] 7. Pass context object between the layers
-
-**TL;DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
-
-**Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
-
-🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncawait.md)
-
 
 <br/><br/><br/>
 # `Code Style Practices`
