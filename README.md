@@ -37,17 +37,17 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 ✔ **Otherwise:** When developers who code new features fear to break other dependant components, deployments become slower and more risky
 
-🔗 [**Read More: Structure by components**](/sections/projectstructre/breakintcomponents.md)
+🔗 [**Read More: structure by components**](/sections/projectstructre/breakintcomponents.md)
 
 <br/><br/>
 
 ## ✔ Layer your components, keep Express within its boundaries
 
-**TL;DR:** Grouping code by technical concerns is a common universal pattern and Node JS apps should be no different. At its most basic level, each component should contain a web, service/logic and data access layers. This not only draws a clean separation of concerns but also significantly ease testing and mocking the system. Though this is a very common pattern, commonly API developers mix layers by passing the express objects (req, res) to business logic and data layers - this makes your application dependant on and accessible by Express only
+**TL;DR:** Grouping code by technical concerns, layering, is a common pattern among all platforms and Node JS apps should be no different. At its most basic level, each component should contain a web, service/logic and data access layers. This not only draws a clean separation of concerns but also significantly ease mocking and testing the system. Though this is a very common pattern, API developers tend to mix layers by passing the express objects (req, res) to business logic and data layers - this makes your application dependant on and accessible by Express only
 
-**Otherwise:** App that mixes web objects with other layers can not be accessed by testing harness, CRON jobs and other non-Express callers
+**Otherwise:** App that mixes web objects with other layers can not be accessed by testing code, CRON jobs and other non-Express callers
 
-🔗 [**Read More: Structure by feature**](/sections/projectstructre/createlayers.md)
+🔗 [**Read More: layer your app**](/sections/projectstructre/createlayers.md)
 
 <br/><br/>
 
