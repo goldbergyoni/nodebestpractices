@@ -77,7 +77,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 **Otherwise:** Your API will be accessible via networks calls only so in-process testing (faster and can generate coverage reports) won't be possible. It will also probably won't be a big pleasure to maintain hundreds of lines of code in a single file
 
-🔗 [**Read More: Structure by feature*](/sections/errorhandling/separateexpress.md)
+🔗 [**Read More: Structure by feature*](/sections/projectstructre/separateexpress.md)
 
 <br/><br/>
 
