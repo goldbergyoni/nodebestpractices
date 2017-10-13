@@ -69,6 +69,8 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 🔗 [**Read More: Structure by feature*](/sections/projectstructre/wraputilities.md)
 
+<br/><br/>
+
 ## ![✔] 1.5 Separate Express 'app' and 'server'
 
 **TL;DR:** Avoid the nasty habit of defining the Express app in a single huge file - separate your 'Express' definition to at least two files: the API declaration (app.js) and the networking concerns (WWW). Even better, locate your app declaration within components
