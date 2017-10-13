@@ -71,9 +71,9 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 ## ![✔] 1.5 Separate Express 'app' and 'server'
 
-**TL;DR:** Anything that is being used widely by multpile components - logger, configuration reader, or any other cross cutting concern utility - brings dependency management challenges to the table. Luckily we alrady have a package manager, NPM, let's use it by treating any utility as an NPM package, declare it within package.json and host it in NPM repository (local, online-private or public). For small project you may use NPM local modules which allows to benefit each NPM feature using plain folder.
+**TL;DR:** Avoid the nasty habit of defining the Express app in a single huge file - separate your 'Express' definition to at least two files: the API declaration (app.js) and the networking concerns (WWW). Even better, locate your app declaration within components
 
-**Otherwise:** Your solution will become one big monolith pile where all the dependencies are hard-coded withih the code. In a microservices environment you'll have to think hard how to share common code among microservices 
+**Otherwise:** Your API will be accessible via networks calls only so in-process testing (faster and can generate coverage reports) won't be possible. It will also probably won't be a big pleasure to maintain hundreds of lines of code in a single file
 
 🔗 [**Read More: Structure by feature*](/sections/errorhandling/separateexpress.md)
 
