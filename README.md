@@ -13,7 +13,9 @@
 
 # Welcome! 3 Things You Ought To Know:
 **1. When you read here, you actually reading dozens of the best Node.JS articles -** this is a summary and curation of the top-ranked content on Node JS best practices
+
 **2. It's the largest compilation of NodeJS tips -** currently, more than 50 practices, style guide, and architectural tips are presented
+
 **3. Always updated and grow -** we welcome issues and PR to ever keep this live book updated. We'd love to see you contributing here, whether fixing some minor code mistake or suggesting brilliant new ideas - be part of the Node.JS best practices book
 
 <br/><br/><br/>
