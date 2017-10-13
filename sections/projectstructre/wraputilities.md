@@ -11,4 +11,4 @@ Once you start growing and have different components on different servers which 
 
 
  ### Sharing your own common utilities across environments and components
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Structuring solution by components")
+![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/Privatenpm.png "Structuring solution by components")
