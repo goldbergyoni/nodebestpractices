@@ -63,7 +63,7 @@ Welcome to the biggest compilation of Node.JS best practices. The content below 
 
 ## ![✔] 1.4 Wrap common utilities as NPM packages
 
-**TL;DR:** Once your app grows and different components resides on different servers, utilities like logger should be reused in multiple locations. This poses a challenge of how to manage the dependency, versioning and deployment of this utilities among different code bases and servers? let's stick to the standards and tools we have, wrap your cross cutting concern utilities as private NPM packages and benefit a free package management framework. Keep you packages private using local NPM modules, local NPM database or private modules within NPM online
+**TL;DR:** In large app that constitues multiple code base, cross-cutting-conern utilities like logger, encryption and a like, should be wrapped by your own code as private NPM packages and get shared among environments using NPM registry
 
 **Otherwise:** You'll have to invent your own deployment and dependency wheel
 
