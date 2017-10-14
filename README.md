@@ -137,7 +137,7 @@ function doSomething() {
 }
 ```
 
-In this example, you would expect the `doSomething()` function to return the object `{key: "value"}`. However, the function will actually will not return anything! this is why:
+In this example, you would expect the `doSomething()` function to return the object `{key: "value"}`. However, the function will actually not return anything! This is why:
 
 ```javascript
 function doSomething() {
