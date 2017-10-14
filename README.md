@@ -346,7 +346,7 @@
 **Otherwise:** Your single Node thread will keep busy streaming hundreds of html/images/angular/react files instead of  allocating all its resources for the task it was born for – serving dynamic content
 
 
-🔗 [**Read More: monitoring*](/sections/errorhandling/frontendout.md)
+🔗 [*Read More: Get your frontend assets out of Node*](/sections/production/frontendout.md)
 
 <br/><br/>
 
@@ -358,7 +358,7 @@
 **Otherwise:** Failure at a given server will result in application downtime instead of a just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
 
 
-🔗 [**Read More: monitoring*](/sections/errorhandling/bestateless.md)
+🔗 [*Read More: Be Stateless*](/sections/production/bestateless.md)
 
 
 <br/><br/>
