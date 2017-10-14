@@ -21,7 +21,7 @@
 <br/><br/><br/>
 
 ## Table of Contents
-1. [Project structure Practices (6)](#project-structure-practices)
+1. [Project structure Practices (5)](#project-structure-practices)
 2. [Code Style Practices (9) ](#code-style-practices)
 3. [Error Handling Practices (11) ](#error-handling-practices)
 4. [Going To Production Practices (17) ](#going-to-production-practices)
@@ -35,11 +35,11 @@
 <br/><br/><br/>
 # `Project Structure Practices`
 
-## 1.1 Structure your solution by components
+## ✔ 1.1 Structure your solution by components
 
-✔ **TL;DR:** The worst large applications pitfal is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Partioning into small units, components or microservices, ensures that each unit is kept simple and very easy to maintain. There no neccessity to start with full-blown 'microservices' architecture, even using a single codebase it's possible to achieve low complexity as long as you partition your code into self-contained components
+ **TL;DR:** The worst large applications pitfal is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Instead, partition your code into components (a.k.a microservices), each gets its own folder or a dedicated codebase, and ensure that each unit is kept small and simple
 
-✔ **Otherwise:** When developers who code new features fear to break other dependant components, deployments become slower and more risky
+**Otherwise:** When developers who code new features fear to break other dependant components, deployments become slower and more risky. It's also considered harder to scale-out when all the business units are not separated
 
 🔗 [**Read More: structure by components**](/sections/projectstructre/breakintcomponents.md)
 
@@ -55,17 +55,7 @@
 
 <br/><br/>
 
-## ![✔] 1.3 Keep components thin enough
-
-**TL;DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my sug
-
-**Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
-
-🔗 [**Read More: Structure by feature*](/sections/projectstructre/thincomponents.md)
-
-<br/><br/>
-
-## ![✔] 1.4 Wrap common utilities as NPM packages
+## ![✔] 1.3 Wrap common utilities as NPM packages
 
 **TL;DR:** In large app that constitues multiple code base, cross-cutting-conern utilities like logger, encryption and a like, should be wrapped by your own code as private NPM packages and get shared among environments using NPM registry
 
@@ -75,7 +65,7 @@
 
 <br/><br/>
 
-## ![✔] 1.5 Separate Express 'app' and 'server'
+## ![✔] 1.4 Separate Express 'app' and 'server'
 
 **TL;DR:** Avoid the nasty habit of defining the Express app in a single huge file - separate your 'Express' definition to at least two files: the API declaration (app.js) and the networking concerns (WWW). Even better, locate your app declaration within components
 
@@ -85,7 +75,7 @@
 
 <br/><br/>
 
-## ![✔] 1.6 Use environment aware, secure and hirearchical config
+## ![✔] 1.5 Use environment aware, secure and hirearchical config
 
 **TL;DR:** The perfect and flawless configuration setup must include (a) keys that can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are only a few packages that can help tick all those boxes
 
