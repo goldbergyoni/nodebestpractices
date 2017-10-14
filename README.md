@@ -102,19 +102,81 @@ Text here...
 
 ## ✔ Don't Forget the Semicolon
 
-Text here...
+Javascript's interpeter auto adds semicolon at the end of a statement if there isn't one. This can lead to some undesired results.
 
 <br/><br/>
 
 ## ✔ Start a Codeblock's Curly Braces in the Same Line 
 
-Text here...
+The opening curly braces of a code block should be in the same line of the opening statement.
+Javascript's interpeter auto adds semicolon at the end of a statement if there isn't one. This can lead to some undesired results.
+
+Recommended:
+```javascript
+function doSomthing() {
+  // code here
+}
+```
+
+Avoid:
+```javascript
+function doSomthing() 
+{
+  // code here
+}
+```
+
+### Example:
+See the following code:
+```javascript
+function doSomething() {
+  return
+  { 
+    key : "value"
+  };
+}
+```
+
+In this example, you would expect the `doSomething()` function to return the object `{key: "value"}`. However, the function will actually will not return anything! this is why:
+
+```javascript
+function doSomething() {
+  return; // <<= this semicolon is inserted autumatically
+  { 
+    key : "value"
+  };
+}
+```
+
+a semicolong is inserted automatically after the `return`. To avoid this, the curly braces should be right after it and not in a new line:
+
+```javascript
+function doSomething() {
+  return { 
+    key : "value"
+  };
+}
+```
 
 <br/><br/>
 
 ## ✔ Name Your Functions
 
-Text here...
+This is especially useful when profiling a node app. Naming all functions will allow you to easily understand what you're looking at when cheking a memory dump.
+
+Recommended:
+```javascript
+getSomeData(aParameter, function handleRespone(response) {
+  // ...
+});
+```
+
+Avoid:
+```javascript
+getSomeData(parameters, function(response) {
+  // ...
+});
+```
 
 <br/><br/>
 
@@ -124,9 +186,9 @@ Text here...
 
 <br/><br/>
 
-## ✔ Put All `Require`s at the top 
+## ✔ Put All Requires at the top 
 
-Text here...
+This simple best practice will help you easily and quickly tell the dependencies of a file right at the beginning.
 
 
 <br/><br/><br/>
