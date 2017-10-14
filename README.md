@@ -148,7 +148,7 @@ function doSomething() {
 }
 ```
 
-a semicolong is inserted automatically after the `return`. To avoid this, the curly braces should be right after it and not in a new line:
+A semicolong is inserted automatically after the `return`. To avoid that, the opening curly brace should be right after it and not in a new line:
 
 ```javascript
 function doSomething() {
