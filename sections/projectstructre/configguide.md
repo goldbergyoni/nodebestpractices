@@ -1,26 +1,34 @@
-# Structure your solution by components
+# Use environment aware, secure and hirearchical config
 
 <br/><br/>
 
 
 ### One Paragraph Explainer
 
-For medium sized apps and above, monoliths are really bad - a one big software with many dependencies is just hard to reason about and often lead to code spaghetti. Even those smart architects who are skilled to tame the beast and 'modulurize' it - spend great mental effort on design and each change requires to carefully evaluate the impact on other dependant objects. The ultimate solution is to develop small software: divide the whole stack into self-contained components that don't share files with others, each constitute very few files (e.g. API, service, data access, test, etc) so that it's very easy to reason about it. Some may call this 'microservices' architecture - it's important to understand that microservices is not a spec which you must follow rather a set of principles. You may adopt many principles into a full-blown microservices architecture or adopt only few. Both are good as long as you keep the software complexity low. The very least you should do is create a basic borders between components, assign a folder in your project root for each business component and make it self contained - other components are allowed to consumeits functionality only through its public interface or API. This is the foundation for keeping your components simple, avoid dependencies hell and pave the way to full-blown microservices in the future once your app grows
+When dealing with configuration data, many things can just annoy and slow down: (1) setting all the keys using process environment variables becomes very tedious when in need to inject 100 keys (instead of just committing those in a config file), however when dealing with files only the devops admins can not alter the behaviour without changing the code. A reliable config solution must combine both configuration files + overrides from the process variables (b) when specifying all keys in a flat JSON, it become frustrating to find and modify entries when the list grows big. An hirearchical JSON files that is grouped into section can overcome this issue + few config libraries allows to store the configuration in multiple files and take care to union all in runtime. See example below (3) storing sensitive information like DB password is obviously not recommended but no quick and handy solution exists for this challenge. Some configuraiton library allows to encrypt files, others encrypt those entries during GIT commits or simple don't store real values for those entries and specify the actual value during deployment via environment variables. (4) some advanced config scenario demand to inject configuration value via command line (vargs) or sync configuration info via centralized cache like Redis so different servers won't hold different data. 
+
+Some configuration libraries can provide most of these features for free, have a look at NPM libraries like [nconf](https://www.npmjs.com/package/nconf) and [config](https://www.npmjs.com/package/config) which tick many of these requirements.
 
 <br/><br/>
 
+### Code Example – hirearchical config helps to find entries and maintain huge config files
 
-### Blog Quote: "Scaling requires scaling of the entire application"
- From the blog MartinFowler.com
- 
- > Monolithic applications can be successful, but increasingly people are feeling frustrations with them - especially as more applications are being deployed to the cloud . Change cycles are tied together - a change made to a small part of the application, requires the entire monolith to be rebuilt and deployed. Over time it's often hard to keep a good modular structure, making it harder to keep changes that ought to only affect one module within that module. Scaling requires scaling of the entire application rather than parts of it that require greater resource.
+```javascript
+{
+  // Customer module configs 
+  "Customer": {
+    "dbConfig": {
+      "host": "localhost",
+      "port": 5984,
+      "dbName": "customers"
+    },
+    "credit": {
+      "initialLimit": 100,
+      // Set low for development 
+      "initialDays": 1
+    }
+  }
+}
+```
 
- <br/><br/>
- 
- ### Good: Structure your solution by self-contained components
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Structuring solution by components")
-
- <br/><br/> 
-
-### Bad: Group your files by technical role
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebyroles.PNG "Structuring solution by technical roles")
+<br/><br/>
