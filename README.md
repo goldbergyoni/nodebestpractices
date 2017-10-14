@@ -408,9 +408,6 @@
 **Otherwise:** Long deployments -> production down time & human-related error -> team unconfident and in making deployment -> less deployments and features
 
 
-🔗 [**Read More: Design automated, atomic and zero-downtime deployments**](/sections/production/automateddeployment.md)
-
-
 <br/><br/><br/>
 # `Testing And Overall Quality Practices`
 
