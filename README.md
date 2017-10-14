@@ -395,7 +395,7 @@
 **Otherwise:** Omitting this simple property might greatly degrade performance. For example, when using Express for server side rendering omitting NODE_ENV makes the slower by a factor of three!
 
 
-🔗 [*Read More: Set NODE_ENV=production*](/sections/production/monitoring.md)
+🔗 [*Read More: Set NODE_ENV=production*](/sections/production/setnodeenv.md)
 
 
 <br/><br/>
