@@ -371,7 +371,7 @@
 **Otherwise:** Otherwise: Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
 
 
-🔗 [*Read More: Use tools that automatically detect vulnerabilities*](/sections/production/detectvulerabilities.md)
+🔗 [*Read More: Use tools that automatically detect vulnerabilities*](/sections/production/detectvulnerabilities.md)
 
 <br/><br/>
 
