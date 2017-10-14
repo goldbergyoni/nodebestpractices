@@ -88,6 +88,46 @@
 <br/><br/><br/>
 # `Code Style Practices`
 
+## ✔ Use ESLint
+
+Text here...
+
+<br/><br/>
+
+## ✔ Node JS Specific Plugins
+
+Text here...
+
+<br/><br/>
+
+## ✔ Don't Forget the Semicolon
+
+Text here...
+
+<br/><br/>
+
+## ✔ Start a Codeblock's Curly Braces in the Same Line 
+
+Text here...
+
+<br/><br/>
+
+## ✔ Name Your Functions
+
+Text here...
+
+<br/><br/>
+
+## ✔ Prefer `CONST` over `Let`. Ditch the `Var`s
+
+Text here...
+
+<br/><br/>
+
+## ✔ Put All `Require`s at the top 
+
+Text here...
+
 
 <br/><br/><br/>
 # `Error Handling Practices`
@@ -530,46 +570,3 @@
 ## our contributirs working on this section, would you like to join?
 
 <br/><br/><br/>
-# `Style Guide`
-
-## ✔ Use ESLint
-
-Text here...
-
-<br/><br/>
-
-## ✔ Node JS Specific Plugins
-
-Text here...
-
-<br/><br/>
-
-## ✔ Don't Forget the Semicolon
-
-Text here...
-
-<br/><br/>
-
-## ✔ Start a Codeblock's Curly Braces in the Same Line 
-
-Text here...
-
-<br/><br/>
-
-## ✔ Name Your Functions
-
-Text here...
-
-<br/><br/>
-
-## ✔ Prefer `CONST` over `Let`. Ditch the `Var`s
-
-Text here...
-
-<br/><br/>
-
-## ✔ Put All `Require`s at the top 
-
-Text here...
-
-<br/><br/>
