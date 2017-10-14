@@ -346,7 +346,7 @@
 **Otherwise:** Your single Node thread will keep busy streaming hundreds of html/images/angular/react files instead of  allocating all its resources for the task it was born for – serving dynamic content
 
 
-🔗 [*Read More: Get your frontend assets out of Node*](/sections/production/frontendout.md)
+🔗 [**Read More: Get your frontend assets out of Node**](/sections/production/frontendout.md)
 
 <br/><br/>
 
@@ -358,7 +358,7 @@
 **Otherwise:** Failure at a given server will result in application downtime instead of a just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
 
 
-🔗 [*Read More: Be stateless, kill your Servers almost every day*](/sections/production/bestateless.md)
+🔗 [**Read More: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
 
 
 <br/><br/>
@@ -371,7 +371,7 @@
 **Otherwise:** Otherwise: Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
 
 
-🔗 [*Read More: Use tools that automatically detect vulnerabilities*](/sections/production/detectvulnerabilities.md)
+🔗 [**Read More: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
 
 <br/><br/>
 
@@ -383,7 +383,7 @@
 **Otherwise:** Looking at a production error log without the context – what happened before – makes it much harder and slower to reason about the issue
 
 
-🔗 [*Read More: Assign ‘TransactionId’ to each log statement*](/sections/production/assigntransactionid.md)
+🔗 [**Read More: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
 
 <br/><br/>
 
@@ -395,7 +395,7 @@
 **Otherwise:** Omitting this simple property might greatly degrade performance. For example, when using Express for server side rendering omitting NODE_ENV makes the slower by a factor of three!
 
 
-🔗 [*Read More: Set NODE_ENV=production*](/sections/production/setnodeenv.md)
+🔗 [**Read More: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
 
 
 <br/><br/>
@@ -408,7 +408,7 @@
 **Otherwise:** Long deployments -> production down time & human-related error -> team unconfident and in making deployment -> less deployments and features
 
 
-🔗 [*Read More: Design automated, atomic and zero-downtime deployments*](/sections/production/automateddeployment.md)
+🔗 [**Read More: Design automated, atomic and zero-downtime deployments**](/sections/production/automateddeployment.md)
 
 
 <br/><br/><br/>
