@@ -143,7 +143,7 @@ In this example, you would expect the `doSomething()` function to return the obj
 function doSomething() {
   return; // <<= this semicolon is inserted autumatically
   { 
-    key : "value"
+    key : "value" // unreachable code
   };
 }
 ```
