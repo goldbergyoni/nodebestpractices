@@ -21,7 +21,7 @@
 <br/><br/><br/>
 
 ## Table of Contents
-1. [Project structure Practices (6)](#project-setup-practices)
+1. [Project structure Practices (6)](#project-structure-practices)
 2. [Code Style Practices (9) ](#code-style-practices)
 3. [Error Handling Practices (11) ](#error-handling-practices)
 4. [Going To Production Practices (17) ](#going-to-production-practices)
