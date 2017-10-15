@@ -501,119 +501,74 @@ This simple best practice will help you easily and quickly tell the dependencies
 
 
 <br/><br/><br/>
-# `Testing And Overall Quality Practices`
+# `5. Testing And Overall Quality Practices`
 
-## ✔ 1. At the very least, write API (component) testing
+## ✔ 5.1 At the very least, write API (component) testing
 
-**TL;DR:** text here
+**TL;DR:** Most projects just don't have any automated testing due to short time tables or often the 'testing project' run out of control and being abandoned. For that reason, prioritize and start with API testing which are the easiest to write and provide more coverage than unit testing (you may even craft API tests without code tools like [Postman](https://www.getpostman.com/). Afterwards, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc 
 
-**Otherwise:** text here
-
-🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
+**Otherwise:** You may spend long days on writing unit tests to find out that you got only 20% system coverage
 
 <br/><br/>
 
-## ✔ 2. At the very least, write API (component) testing
+## ✔ 5.2 Detect code issues with ESLint + specific Node plugin rules
 
-**TL;DR:** text here
+**TL;DR:** ESLint is the de-facto standard for checking code style,  not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. On top of ESLint standard rules that cover vanilla JS only, add Node-specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
-**Otherwise:** text here
+**Otherwise:** Many faulty Node.JS code patterns might escape under the radar. For example, developers might require(variableAsPath) files with a variable given as path which allows attackers to execute any JS script. Node.JS linters can detect such patterns and complain early
 
-🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
 
 <br/><br/>
 
-## ✔ 2. At the very least, write API (component) testing
+## ✔ 5.3 Carefully choose your CI platform (Jenkins vs Rest of the world)
 
-**TL;DR:** text here
+**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it better come with a vibrant echo-system of plugins. [Jenkins](https://jenkins.io/) is the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Its rivals, online SaaS like [Travis](https://travis-ci.org/) and [CircleCI](https://circleci.com), are much easier to setup without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
 
-**Otherwise:** text here
+**Otherwise:** Choosing some lightweight SaaS vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
 
-🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
 
 <br/><br/>
 
-## ✔ 2. At the very least, write API (component) testing
+## ✔ 5.4 Constantly inspect for vulenerable dependencies
 
-**TL;DR:** text here
+**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [nsp](https://github.com/nodesecurity/nsp) that can be invoked from your CI on every build
 
-**Otherwise:** text here
-
-🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
+**Otherwise:** Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
 
 <br/><br/>
 
-## ✔ 2. At the very least, write API (component) testing
+## ✔ 5.5 Tag your tests
 
-**TL;DR:** text here
+**TL;DR:**  Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/):  mocha --grep 'sanity'
 
-**Otherwise:** text here
-
-🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
+**Otherwise:** Running all the tests, including tests that perform dozens of DB queries, any time a developer makes a small change can be extremly slow and keep developers away for running tests
 
 <br/><br/>
 
-## ✔ 3. At the very least, write API (component) testing
+## ✔ 5.6 Check your test coverage, it helps to identify wrong test patterns
 
-**TL;DR:** text here
+**TL;DR:** Code coverage tools like [Istanbul/NYC ](https://github.com/gotwarlost/istanbul)are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
 
-**Otherwise:** text here
+**Otherwise:** There won't be any automated metric that tells you when large portion of your code is not covered by testing
 
-🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
 
-<br/><br/>
-
-## ✔ 4. At the very least, write API (component) testing
-
-**TL;DR:** text here
-
-**Otherwise:** text here
-
-🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
 
 <br/><br/>
 
-## ✔ 4. At the very least, write API (component) testing
+## ✔ 5.7 Inspect for outdated packages
 
-**TL;DR:** text here
+**TL;DR:** Use your preferred tool (e.g. 'npm outdated' or [npm-check-udpates](https://www.npmjs.com/package/npm-check-updates) to detect installed packages which are outdated, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a sever scenario might be when an installed package lag by 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
 
-**Otherwise:** text here
-
-🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
+**Otherwise:** Your production will run packages that have been explicitly tagged by their author as risky 
 
 <br/><br/>
 
-## ✔ 5. At the very least, write API (component) testing
+## ✔ 5.8 Use docker-compos for e2e testing
 
-**TL;DR:** text here
-
-**Otherwise:** text here
-
-🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
-
-<br/><br/>
-
-## ✔ 6. At the very least, write API (component) testing
-
-**TL;DR:** text here
-
-**Otherwise:** text here
-
-🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
-
-<br/><br/>
+**TL;DR:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Docker-compos turns this problem into a breeze by crafting production-like environment using a simple text file and easy commands. It allows crafting all the dependent services, DB and isolated network for e2e testing. Last but not least, it can keep a stateless environment that is invoked before each test suite and dies right after
 
 
-## ✔ 7. Bump your NPM version in each deployment
-
-**TL;DR:** Anytime a new version is released, increase the package.json version attribute so that it will become clear in production which version is deployed. All the more so in MicroService environment where different servers might hold different versions. The command “npm version” can achieve that for you automatically
-
-**Otherwise:** Frequently developers try to hunt a production bug within a distributed system (i.e.multiple versions of multiple services) only to realize that the presumed version is not deployed where they look at
-
-
-🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
-
-<br/><br/>
+**Otherwise:** Without docker-compose teams must maintain a testing DB for each testing environment including developers machines, keep all those DBs in sync so test results won't vary across environments
 
 
 <br/><br/><br/>
