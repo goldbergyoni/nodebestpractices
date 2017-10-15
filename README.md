@@ -552,7 +552,6 @@ This simple best practice will help you easily and quickly tell the dependencies
 **Otherwise:** There won't be any automated metric that tells you when large portion of your code is not covered by testing
 
 
-🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
 
 <br/><br/>
 
@@ -561,51 +560,18 @@ This simple best practice will help you easily and quickly tell the dependencies
 **TL;DR:** Use your favorite tool (e.g. 'npm outdated' or [npm-check-udpates](https://www.npmjs.com/package/npm-check-updates) to detect installed packages which are outdated, inject into your CI pipeline and even make a build fail in a severe scenario. For example, when an installed package is 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
 
 
-**Otherwise:** Your production will run packages that have been explicitly tagged by their author as risky 
 
 🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
 
 <br/><br/>
 
-## ✔ 5.8 At the very least, write API (component) testing
+## ✔ 5.8 Use docker-compos for e2e testing
 
-**TL;DR:** text here
-
-**Otherwise:** text here
-
-🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
-
-<br/><br/>
-
-## ✔ 5.9 At the very least, write API (component) testing
-
-**TL;DR:** text here
-
-**Otherwise:** text here
-
-🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
-
-<br/><br/>
-
-## ✔ 6. At the very least, write API (component) testing
-
-**TL;DR:** text here
-
-**Otherwise:** text here
-
-🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
-
-<br/><br/>
+**TL;DR:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Docker-compos turns this problem into a breeze by crafting production-like environment using a simple text file and easy commands. It allows crafting all the dependent services, DB and isolated network for e2e testing. Last but not least, it can keep a stateless environment that is invoked before each test suite and dies right after
 
 
-## ✔ 7. Bump your NPM version in each deployment
+**Otherwise:** Without docker-compose teams must maintain a testing DB for each testing environment including developers machines, keep all those DBs in sync so test results won't vary across environments
 
-**TL;DR:** Anytime a new version is released, increase the package.json version attribute so that it will become clear in production which version is deployed. All the more so in MicroService environment where different servers might hold different versions. The command “npm version” can achieve that for you automatically
-
-**Otherwise:** Frequently developers try to hunt a production bug within a distributed system (i.e.multiple versions of multiple services) only to realize that the presumed version is not deployed where they look at
-
-
-🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
 
 <br/><br/>
 
