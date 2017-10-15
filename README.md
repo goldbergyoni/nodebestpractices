@@ -24,7 +24,7 @@
 1. [Project structure Practices (5)](#1-project-structure-practices)
 2. [Error Handling Practices (11) ](#2-error-handling-practices)
 3. [Code Style Practices (9) ](#3-code-style-practices)
-4. [Testing And Overall Quality Practices (6) ](#4-testing-practices)
+4. [Testing And Overall Quality Practices (8) ](#4-testing-and-overall-quality-practices)
 5. [Going To Production Practices (17) ](#5-going-to-production-practices)
 6. Security Practices (soon)
 7. Performance Practices (soon)
@@ -228,11 +228,10 @@ Javascript's interpeter auto adds semicolon at the end of a statement if there i
 
 <br/><br/>
 
-## ✔ 3.4 Don't start a codeblock in a new line
+## ✔ 3.4 Start a Codeblock's Curly Braces in the Same Line 
 
-**TL;DR:** The opening curly braces of a code block should be in the same line of the opening statement. This is the common practice in pretty much every JS style guide, including Douglas Crockford's [Code Conventions for the JavaScript Programming Language](http://javascript.crockford.com/code.html). 
-
-**Otherwise:** Javascript's interpeter auto adds semicolon at the end of a statement if there isn't one. This can lead to some undesired results. 
+The opening curly braces of a code block should be in the same line of the opening statement.
+Javascript's interpeter auto adds semicolon at the end of a statement if there isn't one. This can lead to some undesired results.
 
 🔗 [**Further reading:** "Why does a results vary based on curly brace placement?" (Stackoverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
