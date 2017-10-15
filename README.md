@@ -529,31 +529,28 @@ This simple best practice will help you easily and quickly tell the dependencies
 
 <br/><br/>
 
-## ✔ 5.4 Constantly inspect for vulenerable dependencies using your CI framework
+## ✔ 5.4 Constantly inspect for vulenerable dependencies
 
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities from time to time that put a system at risk. This can get easily tamed using community and commercial tools that constantly check for vulnerabilities and warn (locally or at GitHub), some can even patch them immediately. 
+**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [nsp](https://github.com/nodesecurity/nsp) that can be invoked from your CI on every build
 
 **Otherwise:** Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
 
-🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
+<br/><br/>
+
+## ✔ 5.5 Tag your tests
+
+**TL;DR:** You'll probably need to run different tests on a different scenario: quick smoke, IO-less, tests when a developer saves/commits a file, full end-to-end tests when a new pull request is submitted, etc. This can be achieved by tagging  each test with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke some tests with Mocha:  mocha --grep 'sanity'
+
+**Otherwise:** Running all the tests, including tests that perform dozens of DB queries, every time a developer makes a small change is NOT a great motivator for developers to check themselves with tests
 
 <br/><br/>
 
-## ✔ 5.5 At the very least, write API (component) testing
+## ✔ 5.6 Check your test coverage, also to identify test patterns
 
-**TL;DR:** text here
+**TL;DR:** Code coverage tools like [Istanbul/NYC ](https://github.com/gotwarlost/istanbul)are great for 3 reasons: it's free (no code changes are required), it helps to identify decrease in testing coverage and it also highlights testing mismatches: by looking at colored code coverage reports you may notice code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls within certain threshold
 
-**Otherwise:** text here
+**Otherwise:** There won't be any automated metric that tells you when large portion of your code is not covered by testing
 
-🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
-
-<br/><br/>
-
-## ✔ 5.6 At the very least, write API (component) testing
-
-**TL;DR:** text here
-
-**Otherwise:** text here
 
 🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
 
