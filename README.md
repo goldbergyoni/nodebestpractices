@@ -12,28 +12,28 @@
 <br/>
 
 # Welcome! 3 Things You Ought To Know:
-**1. When you read here, you actually reading dozens of the best Node.JS articles -** this is a summary and curation of the top-ranked content on Node JS best practices
+**1. When you read here, you actually read dozens of the best Node.JS articles -** this is a summary and curation of the top-ranked content on Node JS best practices
 
-**2. It's the largest compilation of NodeJS tips -** currently, more than 50 practices, style guide, and architectural tips are presented
+**2. It's the largest compilation, and it growing every week -** currently, more than 50 practices, style guide, and architectural tips are presented. We welcome issues and PR to ever keep this live book updated. We'd love to see you contributing here, whether fixing some minor code mistake or suggesting brilliant new ideas - be part of the Node.JS best practices book
 
-**3. Always updated and grow -** we welcome issues and PR to ever keep this live book updated. We'd love to see you contributing here, whether fixing some minor code mistake or suggesting brilliant new ideas - be part of the Node.JS best practices book
+**3. Most bullets have additional info -** nearby most best practice bullets you'll find **🔗Read More** link that will present you with code examples, quotes from selected blogs and more info
 
 <br/><br/><br/>
 
 ## Table of Contents
 1. [Project structure Practices (5)](#project-structure-practices)
-2. [Code Style Practices (9) ](#code-style-practices)
-3. [Error Handling Practices (11) ](#error-handling-practices)
-4. [Going To Production Practices (17) ](#going-to-production-practices)
-5. [Testing And Overall Quality Practices (6) ](#5-testing-and-overall-quality-practices)
+2. [Error Handling Practices (11) ](#error-handling-practices)
+3. [Code Style Practices (9) ](#code-style-practices)
+4. [Testing And Overall Quality Practices (6) ](#testing-practices)
+5. [Going To Production Practices (17) ](#going-to-production-practices)
+***
 6. [Security Practices (soon) ](#security-practices)
 7. [Performance Practices (soon) ](#performance-practices)
 8. [API Practices (soon) ](#API-practices)
-9. [Style Guide](#style-guide)
 
 
 <br/><br/><br/>
-# `Project Structure Practices`
+# `1. Project Structure Practices`
 
 ## ✔ 1.1 Structure your solution by components
 
@@ -83,12 +83,135 @@
 
 🔗 [**Read More: configuration best practices*](/sections/projectstructre/configguide.md)
 
-<br/><br/>
 
 <br/><br/><br/>
-# `Code Style Practices`
 
-## ✔ Use ESLint
+# `2. Error Handling Practices`
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+
+## ✔ 2.1  Use Async-Await or promises for async error handling
+
+**TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using instead a reputable promise library or async-await which provides much compact and familiar code syntax like try-catch
+
+**Otherwise:** Node.JS callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting and awkward coding patterns
+
+🔗 [**Read More: avoiding callbacks*](/sections/errorhandling/asyncerrorhandling.md)
+
+<br/><br/>
+
+## ✔ 2.2 Use only the built-in Error object
+
+**TL;DR:** Many throws errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw exception or emit error – using only the built-in Error object will increases uniformity and prevents loss of information
+
+
+**Otherwise:** When invoking some component, being uncertain which type of errors come in return – makes it much harder to handle errors properly. Even worth, using custom types to describe errors might lead to loss of critical error information like the stack trace!
+
+🔗 [**Read More: using the built-in error object*](/sections/errorhandling/useonlythebuiltinerror.md)
+
+<br/><br/>
+
+## ✔ 2.3 Distinguish operational vs programmer errors
+
+**TL;DR:** Operational errors (e.g. API received an invalid input) refer to known cases where the error impact is fully understood and can be handled thoughtfully. On the other hand, programmer error (e.g. trying to read undefined variable) refers to unknown code failures that dictate to gracefully restart the application
+
+**Otherwise:** You may always restart the application when an error appear, but why letting ~5000 online users down because of a minor, predicted, operational error? the opposite is also not ideal – keeping the application up when unknown issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
+
+  🔗 [**Read More: operational vs programmer error*](/sections/errorhandling/operationalvsprogrammererror.md)
+
+<br/><br/>
+
+## ✔ 2.4 Handle errors centrally, not within an Express middleware
+
+**TL;DR:** Error handling logic such as mail to admin and logging should be encapsulated in a dedicated and centralized object that all end-points (e.g. Express middleware, cron jobs, unit-testing) call when an error comes in.
+
+**Otherwise:** Not handling errors within a single place will lead to code duplication and probably to errors that are handled improperly
+
+🔗 [**Read More: handling errors in a centralized place*](/sections/errorhandling/centralizedhandling.md)
+
+<br/><br/>
+
+## ✔ 2.5 Document API errors using Swagger
+
+**TL;DR:** Let your API callers know which errors might come in return so they can handle these thoughtfully without crashing. This is usually done with REST API documentation frameworks like Swagger
+
+**Otherwise:** An API client might decide to crash and restart only because he received back an error he couldn’t understand. Note: the caller of your API might be you (very typical in a microservices environment)
+
+
+🔗 [**Read More: documenting errors in Swagger*](/sections/errorhandling/documentingusingswagger.md)
+
+<br/><br/>
+
+## ✔ 2.6 Shut the process gracefully when a stranger comes to town
+
+**TL;DR:** When an unknown error occurs (a developer error, see best practice number #3)- there is uncertainty about the application healthiness. A common practice suggests restarting the process carefully using a ‘restarter’ tool like Forever and PM2
+
+**Otherwise:** When an unfamiliar exception is caught, some object might be in a faulty state (e.g an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
+
+🔗 [**Read More: shutting the process*](/sections/errorhandling/shuttingtheprocess.md)
+
+<br/><br/>
+
+
+
+## ✔ 2.7 Use a mature logger to increase errors visibility
+
+**TL;DR:** A set of mature logging tools like Winston, Bunyan or Log4J, will speed-up error discovery and understanding. So forget about console.log.
+
+**Otherwise:** Skimming through console.logs or manually through messy text file without querying tools or a decent log viewer might keep you busy at work until late
+
+🔗 [**Read More: using a mature logger*](/sections/errorhandling/usematurelogger.md)
+
+
+<br/><br/>
+
+
+## ✔ 2.8 Test error flows using your favorite test framework
+
+**TL;DR:** Whether professional automated QA or plain manual developer testing – Ensure that your code not only satisfies positive scenario but also handle and return the right errors. Testing framework like Mocha & Chai can handle this easily (see code examples within the "Gist popup")
+
+**Otherwise:** Without testing, whether automatically or manually, you can’t rely on our code to return the right errors. Without meaningful errors – there’s no error handling
+
+
+🔗 [**Read More: testing error flows*](/sections/errorhandling/testingerrorflows.md)
+
+<br/><br/>
+
+## ✔ 2.9 Discover errors and downtime using APM products
+
+**TL;DR:** Monitoring and performance products (a.k.a APM) proactively gauge your codebase or API so they can auto-magically highlight errors, crashes and slow parts that you were missing
+
+**Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which are your slowest code parts under real world scenario and how these affects the UX
+
+
+🔗 [**Read More: using APM products*](/sections/errorhandling/apmproducts.md)
+
+<br/><br/>
+
+
+## ✔ 2.10 Catch unhandled promise rejections
+
+**TL;DR:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explictly handle. Even if you’re code is subscribed to process.uncaughtException! Overcome this by registering to the event process.unhandledRejection
+
+**Otherwise:** Your errors will get swallowed and leave no trace. Nothing to worry about
+
+
+🔗 [**Read More: catching unhandled promise rejection *](/sections/errorhandling/catchunhandledpromiserejection.md)
+
+<br/><br/>
+
+## ✔ 2.11 Fail fast, validate arguments using a dedicated library
+
+**TL;DR:** This should be part of your Express best practices – Assert API input to avoid nasty bugs that are much harder to track later. Validation code is usually tedious unless using a very cool helper libraries like Joi
+
+**Otherwise:** Consider this – your function expects a numeric argument “Discount” which the caller forgets to pass, later on your code checks if Discount!=0 (amount of allowed discount is greater than zero), then it will allow the user to enjoy a discount. OMG, what a nasty bug. Can you see it?
+
+🔗 [**Read More: failing fast*](/sections/errorhandling/failfast.md)
+
+<br/><br/><Br/>
+
+# `3. Code Style Practices`
+
+## ✔ 3.1 Use ESLint
 
 Text here...
 
@@ -143,7 +266,7 @@ In this example, you would expect the `doSomething()` function to return the obj
 function doSomething() {
   return; // <<= this semicolon is inserted autumatically
   { 
-    key : "value" // unreachable code
+    key : "value"
   };
 }
 ```
@@ -192,132 +315,83 @@ This simple best practice will help you easily and quickly tell the dependencies
 
 
 <br/><br/><br/>
-# `Error Handling Practices`
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
-
-## ✔ 1.  Use Async-Await or promises for async error handling
-
-**TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using instead a reputable promise library or async-await which provides much compact and familiar code syntax like try-catch
-
-**Otherwise:** Node.JS callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting and awkward coding patterns
-
-🔗 [**Read More: avoiding callbacks*](/sections/errorhandling/asyncerrorhandling.md)
-
-<br/><br/>
-
-## ✔ 2. Use only the built-in Error object
-
-**TL;DR:** Many throws errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw exception or emit error – using only the built-in Error object will increases uniformity and prevents loss of information
 
 
-**Otherwise:** When invoking some component, being uncertain which type of errors come in return – makes it much harder to handle errors properly. Even worth, using custom types to describe errors might lead to loss of critical error information like the stack trace!
+# `4. Testing And Overall Quality Practices`
 
-🔗 [**Read More: using the built-in error object*](/sections/errorhandling/useonlythebuiltinerror.md)
+## ✔ 4.1 At the very least, write API (component) testing
+
+**TL;DR:** Most projects just don't have any automated testing due to short time tables or often the 'testing project' run out of control and being abandoned. For that reason, prioritize and start with API testing which are the easiest to write and provide more coverage than unit testing (you may even craft API tests without code tools like [Postman](https://www.getpostman.com/). Afterwards, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc 
+
+**Otherwise:** You may spend long days on writing unit tests to find out that you got only 20% system coverage
 
 <br/><br/>
 
-## ✔ 3. Distinguish operational vs programmer errors
+## ✔ 4.2 Detect code issues with ESLint + specific Node plugin rules
 
-**TL;DR:** Operational errors (e.g. API received an invalid input) refer to known cases where the error impact is fully understood and can be handled thoughtfully. On the other hand, programmer error (e.g. trying to read undefined variable) refers to unknown code failures that dictate to gracefully restart the application
+**TL;DR:** ESLint is the de-facto standard for checking code style,  not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. On top of ESLint standard rules that cover vanilla JS only, add Node-specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
-**Otherwise:** You may always restart the application when an error appear, but why letting ~5000 online users down because of a minor, predicted, operational error? the opposite is also not ideal – keeping the application up when unknown issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
-
-  🔗 [**Read More: operational vs programmer error*](/sections/errorhandling/operationalvsprogrammererror.md)
-
-<br/><br/>
-
-## ✔ 4. Handle errors centrally, not within an Express middleware
-
-**TL;DR:** Error handling logic such as mail to admin and logging should be encapsulated in a dedicated and centralized object that all end-points (e.g. Express middleware, cron jobs, unit-testing) call when an error comes in.
-
-**Otherwise:** Not handling errors within a single place will lead to code duplication and probably to errors that are handled improperly
-
-🔗 [**Read More: handling errors in a centralized place*](/sections/errorhandling/centralizedhandling.md)
-
-<br/><br/>
-
-## ✔ 5. Document API errors using Swagger
-
-**TL;DR:** Let your API callers know which errors might come in return so they can handle these thoughtfully without crashing. This is usually done with REST API documentation frameworks like Swagger
-
-**Otherwise:** An API client might decide to crash and restart only because he received back an error he couldn’t understand. Note: the caller of your API might be you (very typical in a microservices environment)
-
-
-🔗 [**Read More: documenting errors in Swagger*](/sections/errorhandling/documentingusingswagger.md)
-
-<br/><br/>
-
-## ✔ 6. Shut the process gracefully when a stranger comes to town
-
-**TL;DR:** When an unknown error occurs (a developer error, see best practice number #3)- there is uncertainty about the application healthiness. A common practice suggests restarting the process carefully using a ‘restarter’ tool like Forever and PM2
-
-**Otherwise:** When an unfamiliar exception is caught, some object might be in a faulty state (e.g an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
-
-🔗 [**Read More: shutting the process*](/sections/errorhandling/shuttingtheprocess.md)
-
-<br/><br/>
-
-
-
-## ✔ 7. Use a mature logger to increase errors visibility
-
-**TL;DR:** A set of mature logging tools like Winston, Bunyan or Log4J, will speed-up error discovery and understanding. So forget about console.log.
-
-**Otherwise:** Skimming through console.logs or manually through messy text file without querying tools or a decent log viewer might keep you busy at work until late
-
-🔗 [**Read More: using a mature logger*](/sections/errorhandling/usematurelogger.md)
+**Otherwise:** Many faulty Node.JS code patterns might escape under the radar. For example, developers might require(variableAsPath) files with a variable given as path which allows attackers to execute any JS script. Node.JS linters can detect such patterns and complain early
 
 
 <br/><br/>
 
+## ✔ 4.3 Carefully choose your CI platform (Jenkins vs Rest of the world)
 
-## ✔ 8. Test error flows using your favorite test framework
+**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it better come with a vibrant echo-system of plugins. [Jenkins](https://jenkins.io/) is the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Its rivals, online SaaS like [Travis](https://travis-ci.org/) and [CircleCI](https://circleci.com), are much easier to setup without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
 
-**TL;DR:** Whether professional automated QA or plain manual developer testing – Ensure that your code not only satisfies positive scenario but also handle and return the right errors. Testing framework like Mocha & Chai can handle this easily (see code examples within the "Gist popup")
+**Otherwise:** Choosing some lightweight SaaS vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
 
-**Otherwise:** Without testing, whether automatically or manually, you can’t rely on our code to return the right errors. Without meaningful errors – there’s no error handling
-
-
-🔗 [**Read More: testing error flows*](/sections/errorhandling/testingerrorflows.md)
 
 <br/><br/>
 
-## ✔ 9. Discover errors and downtime using APM products
+## ✔ 4.4 Constantly inspect for vulenerable dependencies
 
-**TL;DR:** Monitoring and performance products (a.k.a APM) proactively gauge your codebase or API so they can auto-magically highlight errors, crashes and slow parts that you were missing
+**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [nsp](https://github.com/nodesecurity/nsp) that can be invoked from your CI on every build
 
-**Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which are your slowest code parts under real world scenario and how these affects the UX
-
-
-🔗 [**Read More: using APM products*](/sections/errorhandling/apmproducts.md)
+**Otherwise:** Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
 
 <br/><br/>
 
+## ✔ 4.5 Tag your tests
 
-## ✔ 10. Catch unhandled promise rejections
+**TL;DR:**  Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/):  mocha --grep 'sanity'
 
-**TL;DR:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explictly handle. Even if you’re code is subscribed to process.uncaughtException! Overcome this by registering to the event process.unhandledRejection
-
-**Otherwise:** Your errors will get swallowed and leave no trace. Nothing to worry about
-
-
-🔗 [**Read More: catching unhandled promise rejection *](/sections/errorhandling/catchunhandledpromiserejection.md)
+**Otherwise:** Running all the tests, including tests that perform dozens of DB queries, any time a developer makes a small change can be extremly slow and keep developers away for running tests
 
 <br/><br/>
 
-## ✔ 11. Fail fast, validate arguments using a dedicated library
+## ✔ 4.6 Check your test coverage, it helps to identify wrong test patterns
 
-**TL;DR:** This should be part of your Express best practices – Assert API input to avoid nasty bugs that are much harder to track later. Validation code is usually tedious unless using a very cool helper libraries like Joi
+**TL;DR:** Code coverage tools like [Istanbul/NYC ](https://github.com/gotwarlost/istanbul)are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
 
-**Otherwise:** Consider this – your function expects a numeric argument “Discount” which the caller forgets to pass, later on your code checks if Discount!=0 (amount of allowed discount is greater than zero), then it will allow the user to enjoy a discount. OMG, what a nasty bug. Can you see it?
+**Otherwise:** There won't be any automated metric that tells you when large portion of your code is not covered by testing
 
-🔗 [**Read More: failing fast*](/sections/errorhandling/failfast.md)
+
+
+<br/><br/>
+
+## ✔ 4.7 Inspect for outdated packages
+
+**TL;DR:** Use your preferred tool (e.g. 'npm outdated' or [npm-check-udpates](https://www.npmjs.com/package/npm-check-updates) to detect installed packages which are outdated, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a sever scenario might be when an installed package lag by 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
+
+**Otherwise:** Your production will run packages that have been explicitly tagged by their author as risky 
+
+<br/><br/>
+
+## ✔ 4.8 Use docker-compos for e2e testing
+
+**TL;DR:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Docker-compos turns this problem into a breeze by crafting production-like environment using a simple text file and easy commands. It allows crafting all the dependent services, DB and isolated network for e2e testing. Last but not least, it can keep a stateless environment that is invoked before each test suite and dies right after
+
+
+**Otherwise:** Without docker-compose teams must maintain a testing DB for each testing environment including developers machines, keep all those DBs in sync so test results won't vary across environments
 
 
 <br/><br/><br/>
 
+
 # `Going To Production Practices`
-## ✔ 1. Monitoring!
+## ✔ 1 Monitoring!
 
 **TL;DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
 
@@ -498,78 +572,6 @@ This simple best practice will help you easily and quickly tell the dependencies
 **TL;DR:** Researches show that teams who perform many deployments – lowers the probability of severe production issues. Fast and automated deployments that don’t require risky manual steps and service downtime significantly improves the deployment process. You should probably achieve that using Docker combined with CI tools as they became the industry standard for streamlined deployment
 
 **Otherwise:** Long deployments -> production down time & human-related error -> team unconfident and in making deployment -> less deployments and features
-
-
-<br/><br/><br/>
-# `5. Testing And Overall Quality Practices`
-
-## ✔ 5.1 At the very least, write API (component) testing
-
-**TL;DR:** Most projects just don't have any automated testing due to short time tables or often the 'testing project' run out of control and being abandoned. For that reason, prioritize and start with API testing which are the easiest to write and provide more coverage than unit testing (you may even craft API tests without code tools like [Postman](https://www.getpostman.com/). Afterwards, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc 
-
-**Otherwise:** You may spend long days on writing unit tests to find out that you got only 20% system coverage
-
-<br/><br/>
-
-## ✔ 5.2 Detect code issues with ESLint + specific Node plugin rules
-
-**TL;DR:** ESLint is the de-facto standard for checking code style,  not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. On top of ESLint standard rules that cover vanilla JS only, add Node-specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
-
-**Otherwise:** Many faulty Node.JS code patterns might escape under the radar. For example, developers might require(variableAsPath) files with a variable given as path which allows attackers to execute any JS script. Node.JS linters can detect such patterns and complain early
-
-
-<br/><br/>
-
-## ✔ 5.3 Carefully choose your CI platform (Jenkins vs Rest of the world)
-
-**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it better come with a vibrant echo-system of plugins. [Jenkins](https://jenkins.io/) is the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Its rivals, online SaaS like [Travis](https://travis-ci.org/) and [CircleCI](https://circleci.com), are much easier to setup without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
-
-**Otherwise:** Choosing some lightweight SaaS vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
-
-
-<br/><br/>
-
-## ✔ 5.4 Constantly inspect for vulenerable dependencies
-
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [nsp](https://github.com/nodesecurity/nsp) that can be invoked from your CI on every build
-
-**Otherwise:** Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
-
-<br/><br/>
-
-## ✔ 5.5 Tag your tests
-
-**TL;DR:**  Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/):  mocha --grep 'sanity'
-
-**Otherwise:** Running all the tests, including tests that perform dozens of DB queries, any time a developer makes a small change can be extremly slow and keep developers away for running tests
-
-<br/><br/>
-
-## ✔ 5.6 Check your test coverage, it helps to identify wrong test patterns
-
-**TL;DR:** Code coverage tools like [Istanbul/NYC ](https://github.com/gotwarlost/istanbul)are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
-
-**Otherwise:** There won't be any automated metric that tells you when large portion of your code is not covered by testing
-
-
-
-<br/><br/>
-
-## ✔ 5.7 Inspect for outdated packages
-
-**TL;DR:** Use your preferred tool (e.g. 'npm outdated' or [npm-check-udpates](https://www.npmjs.com/package/npm-check-updates) to detect installed packages which are outdated, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a sever scenario might be when an installed package lag by 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
-
-**Otherwise:** Your production will run packages that have been explicitly tagged by their author as risky 
-
-<br/><br/>
-
-## ✔ 5.8 Use docker-compos for e2e testing
-
-**TL;DR:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Docker-compos turns this problem into a breeze by crafting production-like environment using a simple text file and easy commands. It allows crafting all the dependent services, DB and isolated network for e2e testing. Last but not least, it can keep a stateless environment that is invoked before each test suite and dies right after
-
-
-**Otherwise:** Without docker-compose teams must maintain a testing DB for each testing environment including developers machines, keep all those DBs in sync so test results won't vary across environments
-
 
 <br/><br/><br/>
 # `Security Practices`
