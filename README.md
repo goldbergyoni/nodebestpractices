@@ -21,10 +21,10 @@
 <br/><br/><br/>
 
 ## Table of Contents
-1. [Project structure Practices (5)](#project-structure-practices)
-2. [Error Handling Practices (11) ](#error-handling-practices)
-3. [Code Style Practices (9) ](#code-style-practices)
-4. [Testing And Overall Quality Practices (6) ](#testing-practices)
+1. [Project structure Practices (5)](#1-project-structure-practices)
+2. [Error Handling Practices (11) ](#2-error-handling-practices)
+3. [Code Style Practices (9) ](#3-code-style-practices)
+4. [Testing And Overall Quality Practices (6) ](#4-testing-practices)
 5. [Going To Production Practices (17) ](#5-going-to-production-practices)
 ***
 6. [Security Practices (soon) ](#security-practices)
@@ -217,19 +217,19 @@ Text here...
 
 <br/><br/>
 
-## ✔ Node JS Specific Plugins
+## ✔ 3.2 Node JS Specific Plugins
 
 Text here...
 
 <br/><br/>
 
-## ✔ Don't Forget the Semicolon
+## ✔ 3.3 Don't Forget the Semicolon
 
 Javascript's interpeter auto adds semicolon at the end of a statement if there isn't one. This can lead to some undesired results.
 
 <br/><br/>
 
-## ✔ Start a Codeblock's Curly Braces in the Same Line 
+## ✔ 3.4 Start a Codeblock's Curly Braces in the Same Line 
 
 The opening curly braces of a code block should be in the same line of the opening statement.
 Javascript's interpeter auto adds semicolon at the end of a statement if there isn't one. This can lead to some undesired results.
@@ -283,35 +283,22 @@ function doSomething() {
 
 <br/><br/>
 
-## ✔ Name Your Functions
+## ✔ 3.5 Name Your Functions
 
-This is especially useful when profiling a node app. Naming all functions will allow you to easily understand what you're looking at when cheking a memory dump.
+**TL;DR:** Name all functions, including closures and callbacks. Avoid anonymous functions. This is especially useful when profiling a node app. Naming all functions will allow you to easily understand what you're looking at when cheking a memory dump.
 
-Recommended:
-```javascript
-getSomeData(aParameter, function handleRespone(response) {
-  // ...
-});
-```
-
-Avoid:
-```javascript
-getSomeData(parameters, function(response) {
-  // ...
-});
-```
 
 <br/><br/>
 
-## ✔ Prefer `CONST` over `Let`. Ditch the `Var`s
+## ✔ 3.6 Prefer `CONST` over `Let`. Ditch the `Var`s
 
 Text here...
 
 <br/><br/>
 
-## ✔ Put All Requires at the top 
+## ✔ 3.7 Put All Requires at the top 
 
-This simple best practice will help you easily and quickly tell the dependencies of a file right at the beginning.
+**TL;DR:** This simple best practice will help you easily and quickly tell the dependencies of a file right at the beginning.
 
 
 <br/><br/><br/>
