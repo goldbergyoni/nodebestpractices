@@ -26,12 +26,8 @@
 3. [Code Style Practices (9) ](#3-code-style-practices)
 4. [Testing And Overall Quality Practices (6) ](#4-testing-practices)
 5. [Going To Production Practices (17) ](#5-going-to-production-practices)
-***
-###Being written now
 6. Security Practices (soon)
-
 7. Performance Practices (soon)
-
 8. API Practices (soon)
 
 
