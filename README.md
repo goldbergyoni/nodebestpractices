@@ -296,7 +296,7 @@ Text here...
 
 <br/><br/>
 
-## ✔ 3.7 Requires come first.
+## ✔ 3.7 Requires come first, and not from within a function.
 
 **TL;DR:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice not only will help you easily and quickly tell the dependencies of a file right at the top, but also avoid a couple of potentail problems.
 
