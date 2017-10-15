@@ -27,9 +27,10 @@
 4. [Testing And Overall Quality Practices (6) ](#4-testing-practices)
 5. [Going To Production Practices (17) ](#5-going-to-production-practices)
 ***
-6. [Security Practices (soon) ](#security-practices)
-7. [Performance Practices (soon) ](#performance-practices)
-8. [API Practices (soon) ](#API-practices)
+###Being written now:
+6. Security Practices (soon)
+7. Performance Practices (soon)
+8. API Practices (soon)
 
 
 <br/><br/><br/>
@@ -37,9 +38,9 @@
 
 ## ✔ 1.1 Structure your solution by components
 
- **TL;DR:** The worst large applications pitfal is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Instead, partition your code into components (a.k.a microservices), each gets its own folder or a dedicated codebase, and ensure that each unit is kept small and simple
+ **TL;DR:** The worst large applications pitfal is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Instead, partition your code into components, each gets its own folder or a dedicated codebase, and ensure that each unit is kept small and simple. Visit 'Read More' below to see examples of correct project structure
 
-**Otherwise:** When developers who code new features fear to break other dependant components, deployments become slower and more risky. It's also considered harder to scale-out when all the business units are not separated
+**Otherwise:** When developers who code new features struggle to realize the impact of their change and fear to break other dependant components - deployments become slower and more risky. It's also considered harder to scale-out when all the business units are not separated
 
 🔗 [**Read More: structure by components**](/sections/projectstructre/breakintcomponents.md)
 
@@ -47,7 +48,7 @@
 
 ## ✔ 1.2 Layer your components, keep Express within its boundaries
 
-**TL;DR:** Grouping code by technical concerns, layering, is a common pattern among all platforms and Node JS apps should be no different. At its most basic level, each component should contain a web, service/logic and data access layers. This not only draws a clean separation of concerns but also significantly ease mocking and testing the system. Though this is a very common pattern, API developers tend to mix layers by passing the express objects (req, res) to business logic and data layers - this makes your application dependant on and accessible by Express only
+**TL;DR:** Each component should contain 'layers' - a dedicated object for the web, logic and data access code. This not only draws a clean separation of concerns but also significantly ease mocking and testing the system. Though this is a very common pattern, API developers tend to mix layers by passing the web layer objects (Express req, res) to business logic and data layers - this makes your application dependant on and accessible by Express only
 
 **Otherwise:** App that mixes web objects with other layers can not be accessed by testing code, CRON jobs and other non-Express callers
 
@@ -57,7 +58,7 @@
 
 ## ![✔] 1.3 Wrap common utilities as NPM packages
 
-**TL;DR:** In large app that constitues multiple code base, cross-cutting-conern utilities like logger, encryption and a like, should be wrapped by your own code as private NPM packages and get shared among environments using NPM registry
+**TL;DR:** In a large app that constitues multiple code base, cross-cutting-conern utilities like logger, encryption and a like, should be wrapped by your own code and exposed as private NPM packages. This makes it shared among multiple code bases and projects
 
 **Otherwise:** You'll have to invent your own deployment and dependency wheel
 
@@ -67,9 +68,9 @@
 
 ## ![✔] 1.4 Separate Express 'app' and 'server'
 
-**TL;DR:** Avoid the nasty habit of defining the Express app in a single huge file - separate your 'Express' definition to at least two files: the API declaration (app.js) and the networking concerns (WWW). Even better, locate your app declaration within components
+**TL;DR:** Avoid the nasty habit of defining the [Express](https://expressjs.com/) app in a single huge file - separate your 'Express' definition to at least two files: the API declaration (app.js) and the networking concerns (WWW). Even better, locate your app declaration within components
 
-**Otherwise:** Your API will be accessible via networks calls only so in-process testing (faster and can generate coverage reports) won't be possible. It will also probably won't be a big pleasure to maintain hundreds of lines of code in a single file
+**Otherwise:** Your API will be accessible for testing via HTTP calls only (slower and much harder to generate coverage reports). It will also probably won't be a big pleasure to maintain hundreds of lines of code in a single file
 
 🔗 [**Read More: separate Express 'app' and 'server'*](/sections/projectstructre/separateexpress.md)
 
@@ -79,7 +80,7 @@
 
 **TL;DR:** The perfect and flawless configuration setup must include (a) keys that can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are only a few packages that can help tick all those boxes
 
-**Otherwise:** Failing to satisfy any of the config requirements will simply bog down the development or devpos team, or both
+**Otherwise:** Failing to satisfy any of the config requirements will simply bog down the development team or devpos team. Probably both
 
 🔗 [**Read More: configuration best practices*](/sections/projectstructre/configguide.md)
 
