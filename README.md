@@ -298,7 +298,7 @@ Text here...
 
 ## ✔ 3.7 Requires come first, and not from within a function.
 
-**TL;DR:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice not only will help you easily and quickly tell the dependencies of a file right at the top, but also avoid a couple of potentail problems.
+**TL;DR:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top, but also avoids a couple of potential problems.
 
 **Otherwise:** Requiers are run syncronously by Node JS. If they are called from withing a function, it may block other requests from being handled at a more critical time. Also, if a required module (or any of its own dependencies) throws an error and crashes the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function.
 
