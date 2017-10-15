@@ -513,9 +513,9 @@ This simple best practice will help you easily and quickly tell the dependencies
 
 ## ✔ 5.2 Check your code style with ESLint + specific Node rules
 
-**TL;DR:** text here
+**TL;DR:** ESLint is the de-facto standard for checking code style,  not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. On top of ESLint standard rules that cover vanilla JS only, add Node-specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
-**Otherwise:** text here
+**Otherwise:** Many faulty Node.JS code patterns might escape under the radar. For example, developers might require(variableAsPath) files with a variable given as path which allows attackers to execute any JS script. Node.JS linters can detect such patterns and complain
 
 
 <br/><br/>
@@ -556,11 +556,12 @@ This simple best practice will help you easily and quickly tell the dependencies
 
 <br/><br/>
 
-## ✔ 5.7 At the very least, write API (component) testing
+## ✔ 5.7 Inspect for outdated packages
 
-**TL;DR:** text here
+**TL;DR:** Use your favorite tool (e.g. 'npm outdated' or [npm-check-udpates](https://www.npmjs.com/package/npm-check-updates) to detect installed packages which are outdated, inject into your CI pipeline and even make a build fail in a severe scenario. For example, when an installed package is 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
 
-**Otherwise:** text here
+
+**Otherwise:** Your production will run packages that have been explicitly tagged by their author as risky 
 
 🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
 
