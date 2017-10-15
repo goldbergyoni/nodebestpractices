@@ -505,24 +505,24 @@ This simple best practice will help you easily and quickly tell the dependencies
 
 ## ✔ 5.1 At the very least, write API (component) testing
 
-**TL;DR:** Most projects just don't have any testing due to lack of time or the 'testing project' run out of control and being abandoned. For that reason, prioritize and start with API testing which are the easiest to write (you may even craft tesing using no-code tools like Postman) and provide more coverage than unit testing. Then, if you do have more resources and time, continue to more advanced test types like unit testing, DB testing, performance testing, etc 
+**TL;DR:** Most projects just don't have any automated testing due to short time tables or often the 'testing project' run out of control and being abandoned. For that reason, prioritize and start with API testing which are the easiest to write and provide more coverage than unit testing (you may even craft API tests without code tools like [Postman](https://www.getpostman.com/). Afterwards, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc 
 
-**Otherwise:** You may spend long days on writing unit tests and get only 20% system coverage
+**Otherwise:** You may spend long days on writing unit tests to find out that you got only 20% system coverage
 
 <br/><br/>
 
-## ✔ 5.2 Check your code style with ESLint + specific Node rules
+## ✔ 5.2 Detect code issues with ESLint + specific Node plugin rules
 
 **TL;DR:** ESLint is the de-facto standard for checking code style,  not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. On top of ESLint standard rules that cover vanilla JS only, add Node-specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
-**Otherwise:** Many faulty Node.JS code patterns might escape under the radar. For example, developers might require(variableAsPath) files with a variable given as path which allows attackers to execute any JS script. Node.JS linters can detect such patterns and complain
+**Otherwise:** Many faulty Node.JS code patterns might escape under the radar. For example, developers might require(variableAsPath) files with a variable given as path which allows attackers to execute any JS script. Node.JS linters can detect such patterns and complain early
 
 
 <br/><br/>
 
 ## ✔ 5.3 Carefully choose your CI platform (Jenkins vs Rest of the world)
 
-**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint)and must have a vibrant echo-system of plugins. Jenkins is the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Its rivals, online SaaS, are much easier to setup without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
+**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it better come with a vibrant echo-system of plugins. [Jenkins](https://jenkins.io/) is the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Its rivals, online SaaS like [Travis](https://travis-ci.org/) and [CircleCI](https://circleci.com), are much easier to setup without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
 
 **Otherwise:** Choosing some lightweight SaaS vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
 
