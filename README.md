@@ -229,57 +229,13 @@ Javascript's interpeter auto adds semicolon at the end of a statement if there i
 
 <br/><br/>
 
-## ✔ 3.4 Start a Codeblock's Curly Braces in the Same Line 
+## ✔ 3.4 Don't start a codeblock in a new line
 
-The opening curly braces of a code block should be in the same line of the opening statement.
-Javascript's interpeter auto adds semicolon at the end of a statement if there isn't one. This can lead to some undesired results.
+**TL;DR:** The opening curly braces of a code block should be in the same line of the opening statement. This is the common practice in pretty much every JS style guide, including Douglas Crockford's [Code Conventions for the JavaScript Programming Language](http://javascript.crockford.com/code.html). 
 
-Recommended:
-```javascript
-function doSomthing() {
-  // code here
-}
-```
+**Otherwise:** Javascript's interpeter auto adds semicolon at the end of a statement if there isn't one. This can lead to some undesired results. 
 
-Avoid:
-```javascript
-function doSomthing() 
-{
-  // code here
-}
-```
-
-### Example:
-See the following code:
-```javascript
-function doSomething() {
-  return
-  { 
-    key : "value"
-  };
-}
-```
-
-In this example, you would expect the `doSomething()` function to return the object `{key: "value"}`. However, the function will actually not return anything! This is why:
-
-```javascript
-function doSomething() {
-  return; // <<= this semicolon is inserted autumatically
-  { 
-    key : "value"
-  };
-}
-```
-
-A semicolong is inserted automatically after the `return`. To avoid that, the opening curly brace should be right after it and not in a new line:
-
-```javascript
-function doSomething() {
-  return { 
-    key : "value"
-  };
-}
-```
+🔗 [**Further reading: "Why does a results vary based on curly brace placement?" (Stackoverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
 <br/><br/>
 
