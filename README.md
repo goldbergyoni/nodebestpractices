@@ -539,15 +539,15 @@ This simple best practice will help you easily and quickly tell the dependencies
 
 ## ✔ 5.5 Tag your tests
 
-**TL;DR:** You'll probably need to run different tests on a different scenario: quick smoke, IO-less, tests when a developer saves/commits a file, full end-to-end tests when a new pull request is submitted, etc. This can be achieved by tagging  each test with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke some tests with Mocha:  mocha --grep 'sanity'
+**TL;DR:**  Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/):  mocha --grep 'sanity'
 
-**Otherwise:** Running all the tests, including tests that perform dozens of DB queries, every time a developer makes a small change is NOT a great motivator for developers to check themselves with tests
+**Otherwise:** Running all the tests, including tests that perform dozens of DB queries, any time a developer makes a small change can be extremly slow and keep developers away for running tests
 
 <br/><br/>
 
-## ✔ 5.6 Check your test coverage, also to identify test patterns
+## ✔ 5.6 Check your test coverage, it helps to identify wrong test patterns
 
-**TL;DR:** Code coverage tools like [Istanbul/NYC ](https://github.com/gotwarlost/istanbul)are great for 3 reasons: it's free (no code changes are required), it helps to identify decrease in testing coverage and it also highlights testing mismatches: by looking at colored code coverage reports you may notice code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls within certain threshold
+**TL;DR:** Code coverage tools like [Istanbul/NYC ](https://github.com/gotwarlost/istanbul)are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
 
 **Otherwise:** There won't be any automated metric that tells you when large portion of your code is not covered by testing
 
@@ -557,11 +557,8 @@ This simple best practice will help you easily and quickly tell the dependencies
 
 ## ✔ 5.7 Inspect for outdated packages
 
-**TL;DR:** Use your favorite tool (e.g. 'npm outdated' or [npm-check-udpates](https://www.npmjs.com/package/npm-check-updates) to detect installed packages which are outdated, inject into your CI pipeline and even make a build fail in a severe scenario. For example, when an installed package is 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
+**TL;DR:** Use your preferred tool (e.g. 'npm outdated' or [npm-check-udpates](https://www.npmjs.com/package/npm-check-updates) to detect installed packages which are outdated, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a sever scenario might be when an installed package lag by 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
 
-
-
-🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
 
 <br/><br/>
 
@@ -571,9 +568,6 @@ This simple best practice will help you easily and quickly tell the dependencies
 
 
 **Otherwise:** Without docker-compose teams must maintain a testing DB for each testing environment including developers machines, keep all those DBs in sync so test results won't vary across environments
-
-
-<br/><br/>
 
 
 <br/><br/><br/>
