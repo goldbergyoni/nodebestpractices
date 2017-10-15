@@ -501,9 +501,45 @@ This simple best practice will help you easily and quickly tell the dependencies
 
 
 <br/><br/><br/>
-# `Testing And Overall Quality Practices`
+# `5. Testing And Overall Quality Practices`
 
-## ✔ 1. At the very least, write API (component) testing
+## ✔ 5.1 At the very least, write API (component) testing
+
+**TL;DR:** Most projects just don't have any testing due to lack of time or the 'testing project' run out of control and being abandoned. For that reason, prioritize and start with API testing which are the easiest to write (you may even craft tesing using no-code tools like Postman) and provide more coverage than unit testing. Then, if you do have more resources and time, continue to more advanced test types like unit testing, DB testing, performance testing, etc 
+
+**Otherwise:** You may spend long days on writing unit tests and get only 20% system coverage
+
+<br/><br/>
+
+## ✔ 5.2 Check your code style with ESLint + specific Node rules
+
+**TL;DR:** text here
+
+**Otherwise:** text here
+
+
+<br/><br/>
+
+## ✔ 5.3 Carefully choose your CI platform (Jenkins vs Rest of the world)
+
+**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint)and must have a vibrant echo-system of plugins. Jenkins is the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Its rivals, online SaaS, are much easier to setup without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
+
+**Otherwise:** Choosing some lightweight SaaS vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
+
+
+<br/><br/>
+
+## ✔ 5.4 Constantly inspect for vulenerable dependencies using your CI framework
+
+**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities from time to time that put a system at risk. This can get easily tamed using community and commercial tools that constantly check for vulnerabilities and warn (locally or at GitHub), some can even patch them immediately. 
+
+**Otherwise:** Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
+
+🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
+
+<br/><br/>
+
+## ✔ 5.5 At the very least, write API (component) testing
 
 **TL;DR:** text here
 
@@ -513,7 +549,7 @@ This simple best practice will help you easily and quickly tell the dependencies
 
 <br/><br/>
 
-## ✔ 2. At the very least, write API (component) testing
+## ✔ 5.6 At the very least, write API (component) testing
 
 **TL;DR:** text here
 
@@ -523,7 +559,7 @@ This simple best practice will help you easily and quickly tell the dependencies
 
 <br/><br/>
 
-## ✔ 2. At the very least, write API (component) testing
+## ✔ 5.7 At the very least, write API (component) testing
 
 **TL;DR:** text here
 
@@ -533,7 +569,7 @@ This simple best practice will help you easily and quickly tell the dependencies
 
 <br/><br/>
 
-## ✔ 2. At the very least, write API (component) testing
+## ✔ 5.8 At the very least, write API (component) testing
 
 **TL;DR:** text here
 
@@ -543,47 +579,7 @@ This simple best practice will help you easily and quickly tell the dependencies
 
 <br/><br/>
 
-## ✔ 2. At the very least, write API (component) testing
-
-**TL;DR:** text here
-
-**Otherwise:** text here
-
-🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
-
-<br/><br/>
-
-## ✔ 3. At the very least, write API (component) testing
-
-**TL;DR:** text here
-
-**Otherwise:** text here
-
-🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
-
-<br/><br/>
-
-## ✔ 4. At the very least, write API (component) testing
-
-**TL;DR:** text here
-
-**Otherwise:** text here
-
-🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
-
-<br/><br/>
-
-## ✔ 4. At the very least, write API (component) testing
-
-**TL;DR:** text here
-
-**Otherwise:** text here
-
-🔗 [**Read More: monitoring*](/sections/testingandquality/bumpversion.md)
-
-<br/><br/>
-
-## ✔ 5. At the very least, write API (component) testing
+## ✔ 5.9 At the very least, write API (component) testing
 
 **TL;DR:** text here
 
