@@ -1,4 +1,4 @@
-[✔]: assets/images/viconblue.PNG "✔"
+[✔]: assets/images/checkmark-green.png
 <h1 align="center">
   <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices" />
 </h1>
