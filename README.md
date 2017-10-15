@@ -1,4 +1,4 @@
-[✔]: assets/images/checkmark-green.png "✔"
+[✔]: assets/images/viconblue.PNG "✔"
 <h1 align="center">
   <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices" />
 </h1>
@@ -88,7 +88,7 @@
 # `2. Error Handling Practices`
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-## ✔ 2.1  Use Async-Await or promises for async error handling
+## [✔] 2.1  Use Async-Await or promises for async error handling
 
 **TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using instead a reputable promise library or async-await which provides much compact and familiar code syntax like try-catch
 
@@ -98,7 +98,7 @@
 
 <br/><br/>
 
-## ✔ 2.2 Use only the built-in Error object
+## [✔] 2.2 Use only the built-in Error object
 
 **TL;DR:** Many throws errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw exception or emit error – using only the built-in Error object will increases uniformity and prevents loss of information
 
@@ -109,7 +109,7 @@
 
 <br/><br/>
 
-## ✔ 2.3 Distinguish operational vs programmer errors
+## [✔] 2.3 Distinguish operational vs programmer errors
 
 **TL;DR:** Operational errors (e.g. API received an invalid input) refer to known cases where the error impact is fully understood and can be handled thoughtfully. On the other hand, programmer error (e.g. trying to read undefined variable) refers to unknown code failures that dictate to gracefully restart the application
 
@@ -228,13 +228,12 @@ Javascript's interpeter auto adds semicolon at the end of a statement if there i
 
 <br/><br/>
 
-## ✔ 3.4 Don't put codeblocks in a new line
+## ✔ 3.4 Start a Codeblock's Curly Braces in the Same Line 
 
-**TL;DR:** The opening curly braces of a code block should be in the same line of the opening statement. This is the common practice in pretty much every JS style guide, including Douglas Crockford's [Code Conventions for the JavaScript Programming Language](http://javascript.crockford.com/code.html). 
+The opening curly braces of a code block should be in the same line of the opening statement.
+Javascript's interpeter auto adds semicolon at the end of a statement if there isn't one. This can lead to some undesired results.
 
-**Otherwise:** Javascript's interpeter auto adds semicolon at the end of a statement if there isn't one. This can lead to some undesired results. 
-
-🔗 [**Read more:** "Why does a results vary based on curly brace placement?" (Stackoverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
+🔗 [**Further reading:** "Why does a results vary based on curly brace placement?" (Stackoverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
 <br/><br/>
 
@@ -251,7 +250,7 @@ Text here...
 
 <br/><br/>
 
-## ✔ 3.7 Requires come first, and not inside functions.
+## ✔ 3.7 Requires come first, and not from within a function.
 
 **TL;DR:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top, but also avoids a couple of potential problems.
 
