@@ -25,7 +25,7 @@
 2. [Error Handling Practices (11) ](#error-handling-practices)
 3. [Code Style Practices (9) ](#code-style-practices)
 4. [Testing And Overall Quality Practices (6) ](#testing-practices)
-5. [Going To Production Practices (17) ](#going-to-production-practices)
+5. [Going To Production Practices (17) ](#5-going-to-production-practices)
 ***
 6. [Security Practices (soon) ](#security-practices)
 7. [Performance Practices (soon) ](#performance-practices)
@@ -390,8 +390,8 @@ This simple best practice will help you easily and quickly tell the dependencies
 <br/><br/><br/>
 
 
-# `Going To Production Practices`
-## ✔ 1 Monitoring!
+# `5. Going To Production Practices`
+## ✔ 5.1. Monitoring!
 
 **TL;DR:** Monitoring is a game of finding out issues before our customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
 
@@ -402,7 +402,7 @@ This simple best practice will help you easily and quickly tell the dependencies
 
 <br/><br/>
 
-## ✔ 2. Increase transparency using smart logging
+## ✔ 5.2. Increase transparency using smart logging
 
 **TL;DR:** Logs can be a dumb warehouse of debug statements or the enabler of a beautiful dashboard that tells the story of your app. Plan your logging platform from day  1: how logs are collected, stored and analyzed to ensure that the desired information (e.g. error rate, following an entire transaction through services and servers, etc) can really be extracted
 
@@ -413,7 +413,7 @@ This simple best practice will help you easily and quickly tell the dependencies
 	
 <br/><br/>
 
-## ✔ 3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy
+## ✔ 5.3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy
 
 **TL;DR:** Node is awfully bad at doing CPU intensive tasks like gzipping, SSL termination, etc. Instead, use a ‘real’ middleware services like nginx, HAproxy or cloud vendor services
 
@@ -424,7 +424,7 @@ This simple best practice will help you easily and quickly tell the dependencies
 
 <br/><br/>
 
-## ✔ 4. Lock dependencies
+## ✔ 5.4. Lock dependencies
 
 **TL;DR:** Your code must be identical across all environments but amazingly NPM lets dependencies drift across environments be default – when you install packages at various environments it tries to fetch packages’ latest patch version. Overcome this by using NPM config files , .npmrc, that tell each environment to save the exact (not the latest) version of each package. Alternatively, for finer grain control use NPM” shrinkwrap”. *Update: as of NPM5 , dependencies are locked by default. The new package manager in town, Yarn, also got us covered by default
 
@@ -435,7 +435,7 @@ This simple best practice will help you easily and quickly tell the dependencies
 
 <br/><br/>
 
-## ✔ 5. Guard process uptime using the right tool
+## ✔ 5.5. Guard process uptime using the right tool
 
 **TL;DR:** The process must go on and get restarted upon failures. For simple scenario, ‘restarter’ tools like PM2 might be enough but in today ‘dockerized’ world – a cluster management tools should be considered as well
 
@@ -447,7 +447,7 @@ This simple best practice will help you easily and quickly tell the dependencies
  
 <br/><br/>
 
-## ✔ 6. Utilize all CPU cores
+## ✔ 5.6. Utilize all CPU cores
 
 **TL;DR:** At its basic form, a Node app runs over a single CPU core while as all other are left idle. It’s your duty to replicate the Node process and utilize all CPUs – For small-medium apps you may use Node Cluster or PM2. For a larger app consider replicating the process using some Docker cluster (e.g. K8S, ECS) or deployment scripts that are based on Linux init system (e.g. systemd)
 
@@ -458,7 +458,7 @@ This simple best practice will help you easily and quickly tell the dependencies
 
 <br/><br/>
 
-## ✔ 7. Create a ‘maintenance endpoint’
+## ✔ 5.7. Create a ‘maintenance endpoint’
 
 **TL;DR:** Expose a set of system-related information, like memory usage and REPL, etc in a secured API. Although it’s highly recommended to rely on standard and battle-tests tools, some valuable information and operations are easier done using code
 
@@ -469,7 +469,7 @@ This simple best practice will help you easily and quickly tell the dependencies
 
 <br/><br/>
 
-## ✔ 8. Discover errors and downtime using APM products
+## ✔ 5.8. Discover errors and downtime using APM products
 
 **TL;DR:** Monitoring and performance products (a.k.a APM) proactively gauge codebase and API so they can auto-magically go beyond traditional monitoring and measure the overall user-experience across services and tiers. For example, some APM products can highlight a transaction that loads too slow on the end-users side while suggesting the root cause
 
@@ -482,7 +482,7 @@ This simple best practice will help you easily and quickly tell the dependencies
 <br/><br/>
 
 
-## ✔ 9. Make your code production-ready
+## ✔ 5.9. Make your code production-ready
 
 **TL;DR:** Code with the end in mind, plan for production from day 1. This sounds a bit vague so I’ve compiled inside (click Gist below) few development tips that are closely related to production maintenance
 
@@ -493,7 +493,7 @@ This simple best practice will help you easily and quickly tell the dependencies
 
 <br/><br/>
 
-## ✔ 10. Measure and guard the memory usage
+## ✔ 5.10. Measure and guard the memory usage
 
 **TL;DR:** Node.js has controversial relationships with memory: the v8 engine has soft limits on memory usage (1.4GB) and there are known paths to leaks memory in Node’s code – thus watching Node’s process memory is a must. In small apps you may gauge memory  periodically using shell commands but in medium-large app consider baking your memory watch into a robust monitoring system
 
@@ -505,7 +505,7 @@ This simple best practice will help you easily and quickly tell the dependencies
 <br/><br/>
 
 
-## ✔ 11. Get your frontend assets out of Node
+## ✔ 5.11. Get your frontend assets out of Node
 
 **TL;DR:** Serve frontend content using dedicated middleware (nginx, S3, CDN) because Node performance really get hurts when dealing with many static files due to its single threaded model
 
@@ -517,7 +517,7 @@ This simple best practice will help you easily and quickly tell the dependencies
 <br/><br/>
 
 
-## ✔ 12. Be stateless, kill your Servers almost every day
+## ✔ 5.12. Be stateless, kill your Servers almost every day
 
 **TL;DR:** Store any type of data (e.g. users session, cache, uploaded files) within external data stores. Consider ‘killing’ your servers periodically or use ‘serverless’ platform (e.g. AWS Lambda) that explicitly enforces a stateless behavior
 
@@ -530,7 +530,7 @@ This simple best practice will help you easily and quickly tell the dependencies
 <br/><br/>
 
 
-## ✔ 13. Use tools that automatically detect vulnerabilities
+## ✔ 5.13. Use tools that automatically detect vulnerabilities
 
 **TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities from time to time that put a system at risk. This can get easily tamed using community and commercial tools that constantly check for vulnerabilities and warn (locally or at GitHub), some can even patch them immediately
 
@@ -542,7 +542,7 @@ This simple best practice will help you easily and quickly tell the dependencies
 <br/><br/>
 
 
-## ✔ 14. Assign ‘TransactionId’ to each log statement
+## ✔ 5.14. Assign ‘TransactionId’ to each log statement
 
 **TL;DR:** Assign the same identifier, transaction-id: {some value}, to each log entry within a single request. Then when inspecting errors in logs, easily conclude what happened before and after. Unfortunately, this is not easy to achieve in Node due its async nature, see code examples inside
 
@@ -554,7 +554,7 @@ This simple best practice will help you easily and quickly tell the dependencies
 <br/><br/>
 
 
-## ✔ 15. Set NODE_ENV=production
+## ✔ 5.15. Set NODE_ENV=production
 
 **TL;DR:** Set the environment variable NODE_ENV to ‘production’ or ‘development’ to flag whether production optimizations should get activated – many NPM packages determining the current environment and optimize their code for production
 
@@ -567,7 +567,7 @@ This simple best practice will help you easily and quickly tell the dependencies
 <br/><br/>
 
 
-## ✔ 16. Design automated, atomic and zero-downtime deployments
+## ✔ 5.16. Design automated, atomic and zero-downtime deployments
 
 **TL;DR:** Researches show that teams who perform many deployments – lowers the probability of severe production issues. Fast and automated deployments that don’t require risky manual steps and service downtime significantly improves the deployment process. You should probably achieve that using Docker combined with CI tools as they became the industry standard for streamlined deployment
 
