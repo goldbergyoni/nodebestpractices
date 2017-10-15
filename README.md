@@ -234,7 +234,7 @@ Javascript's interpeter auto adds semicolon at the end of a statement if there i
 
 **Otherwise:** Javascript's interpeter auto adds semicolon at the end of a statement if there isn't one. This can lead to some undesired results. 
 
-🔗 [**Further reading: "Why does a results vary based on curly brace placement?" (Stackoverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
+🔗 [**Further reading:** "Why does a results vary based on curly brace placement?" (Stackoverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
 <br/><br/>
 
