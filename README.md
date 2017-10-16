@@ -276,7 +276,7 @@ text here
 
 **Otherwise** [Callback hell 🔥](http://icompile.eladkarako.com/wp-content/uploads/2016/01/icompile.eladkarako.com_callback_hell.gif)
 
-[**More reading:** Guide to async await 1.0](https://github.com/yortus/asyncawait)
+🔗[**Read more:** Guide to async await 1.0](https://github.com/yortus/asyncawait)
 
 <br/><br/>
 
