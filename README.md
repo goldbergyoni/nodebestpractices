@@ -261,6 +261,26 @@ Text here...
 ## ✔ 3.8 Naming conventions for variables, constants, functions and classes
 
 **TL;DR:** Use ***lowerCamelCase*** when naming variables and functions, ***UpperCamelCase*** (capital first letter as well) when naming classes and ***UPPERCASE*** for constants. This will help you to easily distinguish between plain functions and classes that require instantioation. Use descriptive names, but try to keep them short.
+
+<br/><br/>
+
+## ✔ 3.9 Use the `===` operator
+
+text here
+
+<br/><br/>
+
+## ✔ 3.9 Use Async Await, avoid callbacks
+
+**TL;DR:** Node 8 LTS now has full support for Async/Await. This is a new way of dealing with asyncronous code which supercedes callbacks and promises (while actualy relying on promises). Async Await is non blocking, and it makes asynchronous code looks more synchronous 
+
+**Otherwise** [Callback hell 🔥](http://icompile.eladkarako.com/wp-content/uploads/2016/01/icompile.eladkarako.com_callback_hell.gif)
+
+[**More reading:** Guide to async await 1.0](https://github.com/yortus/asyncawait)
+
+<br/><br/>
+
+
 <br/><br/><br/>
 
 
