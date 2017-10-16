@@ -274,7 +274,7 @@ text here
 
 **TL;DR:** Node 8 LTS now has full support for Async/Await. This is a new way of dealing with asyncronous code which supercedes callbacks and promises (while actualy relying on promises). Async Await is non blocking, and it makes asynchronous code looks more synchronous 
 
-**Otherwise** [Callback hell 🔥](http://icompile.eladkarako.com/wp-content/uploads/2016/01/icompile.eladkarako.com_callback_hell.gif)
+**Otherwise** [Callback hell](http://icompile.eladkarako.com/wp-content/uploads/2016/01/icompile.eladkarako.com_callback_hell.gif)🔥
 
 🔗[**Read more:** Guide to async await 1.0](https://github.com/yortus/asyncawait)
 
