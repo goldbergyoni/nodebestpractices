@@ -280,6 +280,12 @@ text here
 
 <br/><br/>
 
+## ✔ 3.10 Use => Arrow Functions 
+
+text here
+
+<br/><br/>
+
 
 <br/><br/><br/>
 
