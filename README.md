@@ -265,7 +265,7 @@ Text here...
 ### Code Example ###
 ```javascript
   // for class name we use UpperCamelCase
-  class SomeClass () { 
+  class SomeClassExample () { 
     
     // for const name we use UPPERCASE
     const CONFIG = {
@@ -273,7 +273,7 @@ Text here...
     };
     
     // for variables and functions names we use lowerCamelCase
-    let someVariable = 'value';
+    let someVariableExample = 'value';
     function doSomething() {
       
     }
