@@ -264,7 +264,7 @@ Javascript's interpeter auto adds semicolon at the end of a statement if there i
 
 **TL;DR:** Take advantage of ES6's `const` declaration to implement the [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single_responsibility_principle) to your variables. Using const means that once a variable is assigned, it cannot be reassigned. Using const it will help you to not be tempted to use the same variable for different uses, and make your code clearer. If a variable needs to be reassigned, in a for loop for example, use `let` to declare it. Another important aspect of let is that a variable declared using let is only available in the block scope in which it was defined. `var` is function scoped and not block scoped, and [sholdn't be used in ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) now that you have const and let at your disposal.
 
-🔗[**Read more: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
+🔗 [**Read more: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
 
 <br/><br/>
 
