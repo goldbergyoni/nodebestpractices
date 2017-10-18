@@ -224,13 +224,7 @@
 
 <br/><br/>
 
-## ✔ 3.3 Don't Forget the Semicolon
-
-Javascript's interpeter auto adds semicolon at the end of a statement if there isn't one. This can lead to some undesired results.
-
-<br/><br/>
-
-## ✔ 3.4 Start a Codeblock's Curly Braces in the Same Line 
+## ✔ 3.3 Start a Codeblock's Curly Braces in the Same Line 
 
 **TL;DR:** The opening curly braces of a code block should be in the same line of the opening statement.
 Javascript's interpeter auto adds semicolon at the end of a statement if there isn't one. This can lead to some undesired results.
@@ -249,7 +243,13 @@ Javascript's interpeter auto adds semicolon at the end of a statement if there i
   }
 ```
 
-🔗 [**Further reading:** "Why does a results vary based on curly brace placement?" (Stackoverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
+🔗 [**Read more:** "Why does a results vary based on curly brace placement?" (Stackoverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
+
+<br/><br/>
+
+## ✔ 3.4 Don't Forget the Semicolon
+
+**TL;DR:** While not unanimously agreed upon, it is still recommended to put a semicolon at the end of each statement. This will make your code more readable and explicit to other developers who read it. Also, as seen in the previous section, Javascript's interpeter auto adds semicolon at the end of a statement if there isn't one which can lead to some undesired results.
 
 <br/><br/>
 
