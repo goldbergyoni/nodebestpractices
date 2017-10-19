@@ -11,10 +11,10 @@
 
 <br/>
 
-# Welcome! 3 Things You Ought To Know:
-**1. When you read here, you actually read dozens of the best Node.JS articles -** this is a summary and curation of the top-ranked content on Node JS best practices
+# Welcome! 3 Things You Ought To Know First:
+**1. When you read here, you in fact read dozens of the best Node.JS articles -** this is a summary and curation of the top-ranked content on Node JS best practices
 
-**2. It's the largest compilation, and it growing every week -** currently, more than 50 practices, style guide, and architectural tips are presented. We welcome issues and PR to ever keep this live book updated. We'd love to see you contributing here, whether fixing some minor code mistake or suggesting brilliant new ideas - be part of the Node.JS best practices book
+**2. It's the largest compilation, and it growing every week -** currently, more than 50 practices, style guide, and architectural tips are presented. We welcome issues and PR to ever keep this live book updated. We'd love to see you contributing here, whether fixing some  code mistake or suggesting brilliant new ideas - be part of the Node.JS best practices book
 
 **3. Most bullets have additional info -** nearby most best practice bullets you'll find **🔗Read More** link that will present you with code examples, quotes from selected blogs and more info
 
@@ -26,9 +26,8 @@
 3. [Code Style Practices (9) ](#3-code-style-practices)
 4. [Testing And Overall Quality Practices (8) ](#4-testing-and-overall-quality-practices)
 5. [Going To Production Practices (17) ](#5-going-to-production-practices)
-6. Security Practices (soon)
-7. Performance Practices (soon)
-8. API Practices (soon)
+6. Security Practices (coming soon)
+7. Performance Practices (coming soon)
 
 
 <br/><br/><br/>
