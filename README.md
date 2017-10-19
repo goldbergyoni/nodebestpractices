@@ -1,7 +1,7 @@
 [✔]: assets/images/checkbox-small-blue.png
 
 <p align="right">
-  [![**@nodepractices**](assets/images/twitter.png)](https://twitter.com/nodepractices/)
+  ![@nodepractices](assets/images/twitter.png)
 </p>
 
 <h1 align="center">
