@@ -1,9 +1,5 @@
 [✔]: assets/images/checkbox-small-blue.png
 
-
-  [![nodepractices](/assets/images/twitter.png)](https://twitter.com/nodepractices/)
-
-
 <h1 align="center">
   <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices" />
 </h1>
@@ -15,6 +11,9 @@
 	</div>
 
 <br/>
+
+ **Follow uas on Twitter!** [![nodepractices](/assets/images/twitter.png)](https://twitter.com/nodepractices/) [**@nodepractices**](https://twitter.com/nodepractices/)
+ <br/>
 
 # Welcome! 3 Things You Ought To Know First:
 **1. When you read here, you in fact read dozens of the best Node.JS articles -** this is a summary and curation of the top-ranked content on Node JS best practices
