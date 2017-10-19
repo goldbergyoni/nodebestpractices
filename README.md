@@ -1,4 +1,4 @@
-[✔]: assets/images/checkmark-green-small.png
+[✔]: assets/images/checkbox-small-blue.png
 <h1 align="center">
   <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices" />
 </h1>
