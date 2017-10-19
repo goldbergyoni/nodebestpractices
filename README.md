@@ -1,8 +1,8 @@
 [✔]: assets/images/checkbox-small-blue.png
 
-<p align="right">
+
   ![nodepractices](/assets/images/twitter.png)
-</p>
+
 
 <h1 align="center">
   <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices" />
