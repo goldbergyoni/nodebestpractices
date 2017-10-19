@@ -53,7 +53,7 @@
 
 <br/><br/>
 
-## ![✔] 1.3 Wrap common utilities as NPM packages
+## <img style="float: right;margin-right:20px" src="src="/i0natan/nodebestpractices/raw/master/assets/images/checkmark-green-small.png"> 1.3 Wrap common utilities as NPM packages
 
 **TL;DR:** In a large app that constitues multiple code base, cross-cutting-conern utilities like logger, encryption and a like, should be wrapped by your own code and exposed as private NPM packages. This makes it shared among multiple code bases and projects
 
