@@ -213,6 +213,8 @@
 
 **TL;DR:** ESLint is the de-facto standard for checking code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Using ESLint and following the rest of the code style practices below means following the same styles used by the rest of the community, as well as the same code styles used in the core products themselves.
 
+**Otherwise:** developers will focus on tedious spacing and line-width concerns
+
 <br/><br/>
 
 ## ![✔] 3.2 Node JS Specific Plugins
@@ -226,7 +228,6 @@
 ## ![✔] 3.3 Start a Codeblock's Curly Braces in the Same Line 
 
 **TL;DR:** The opening curly braces of a code block should be in the same line of the opening statement.
-Javascript's interpeter auto adds semicolon at the end of a statement if there isn't one. This can lead to some undesired results.
 
 ### Code Example
 ```javascript
@@ -242,42 +243,33 @@ Javascript's interpeter auto adds semicolon at the end of a statement if there i
   }
 ```
 
+**Otherwise:** Deferring from this best practice might lead to unexpected results, as can be seen in the Stackoverflow thread below:
+
 🔗 [**Read more:** "Why does a results vary based on curly brace placement?" (Stackoverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
 <br/><br/>
 
 ## ![✔] 3.4 Don't Forget the Semicolon
 
-**TL;DR:** While not unanimously agreed upon, it is still recommended to put a semicolon at the end of each statement. This will make your code more readable and explicit to other developers who read it. Also, as seen in the previous section, Javascript's interpeter auto adds semicolon at the end of a statement if there isn't one which can lead to some undesired results.
+**TL;DR:** While not unanimously agreed upon, it is still recommended to put a semicolon at the end of each statement. This will make your code more readable and explicit to other developers who read it.
+
+**TL;DR:** As seen in the previous section, Javascript's interpeter auto adds semicolon at the end of a statement if there isn't one which can lead to some undesired results.
 
 <br/><br/>
 
 ## ![✔] 3.5 Name Your Functions
 
-**TL;DR:** Name all functions, including closures and callbacks. Avoid anonymous functions. This is especially useful when profiling a node app. Naming all functions will allow you to easily understand what you're looking at when cheking a memory dump.
+**TL;DR:** Name all functions, including closures and callbacks. Avoid anonymous functions. This is especially useful when profiling a node app. Naming all functions will allow you to easily understand what you're looking at when cheking a memory snapshot.
 
-
-<br/><br/>
-
-## ![✔] 3.6 Prefer const over let. Ditch the var
-
-**TL;DR:** Take advantage of ES6's `const` declaration to implement the [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single_responsibility_principle) to your variables. Using const means that once a variable is assigned, it cannot be reassigned. Using const it will help you to not be tempted to use the same variable for different uses, and make your code clearer. If a variable needs to be reassigned, in a for loop for example, use `let` to declare it. Another important aspect of let is that a variable declared using let is only available in the block scope in which it was defined. `var` is function scoped and not block scoped, and [sholdn't be used in ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) now that you have const and let at your disposal.
-
-🔗 [**Read more: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
+**Otherwise:** Debugging production issues using a core dump (memory snapshot) might become challenging as you notice significant memory consumption from functions with no name.
 
 <br/><br/>
 
-## ![✔] 3.7 Requires come first, and not inside functions.
-
-**TL;DR:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top, but also avoids a couple of potential problems.
-
-**Otherwise:** Requiers are run syncronously by Node JS. If they are called from withing a function, it may block other requests from being handled at a more critical time. Also, if a required module (or any of its own dependencies) throws an error and crashes the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function.
-
-<br/><br/>
-
-## ![✔] 3.8 Naming conventions for variables, constants, functions and classes
+## ![✔] 3.6 Naming conventions for variables, constants, functions and classes
 
 **TL;DR:** Use ***lowerCamelCase*** when naming variables and functions, ***UpperCamelCase*** (capital first letter as well) when naming classes and ***UPPERCASE*** for constants. This will help you to easily distinguish between plain variables / functions, and classes that require instantiation. Use descriptive names, but try to keep them short.
+
+**Otherwise:** Javascript is the only language in the world which allows to invoke a constructor ("Class") directly without instantiating it first. Consequently, Classes and function-constructors are differentiated by starting with UpperCamelCase.
 
 ### Code Example ###
 ```javascript
@@ -300,25 +292,66 @@ Javascript's interpeter auto adds semicolon at the end of a statement if there i
 
 <br/><br/>
 
-## ![✔] 3.9 Use the `===` operator
+## ![✔] 3.7 Prefer const over let. Ditch the var
+
+**TL;DR:** Take advantage of ES6's `const` declaration to implement the [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single_responsibility_principle) to your variables. Using const means that once a variable is assigned, it cannot be reassigned. Using const it will help you to not be tempted to use the same variable for different uses, and make your code clearer. If a variable needs to be reassigned, in a for loop for example, use `let` to declare it. Another important aspect of let is that a variable declared using let is only available in the block scope in which it was defined. `var` is function scoped and not block scoped, and [sholdn't be used in ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) now that you have const and let at your disposal.
+
+🔗 [**Read more: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
+
+<br/><br/>
+
+## ![✔] 3.8 Requires come first, and not inside functions.
+
+**TL;DR:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top, but also avoids a couple of potential problems.
+
+**Otherwise:** Requiers are run syncronously by Node JS. If they are called from withing a function, it may block other requests from being handled at a more critical time. Also, if a required module (or any of its own dependencies) throws an error and crashes the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function.
+
+<br/><br/>
+
+## ![✔] 3.9 Do Require on folders, not directly on files
+
+**TL;DR:** When developing a module/library in a folder, place an index.js file that exposes the module's
+internals so every consumer will pass through it. This will serves as 'interface' to your module and ease
+future changes without breaking the contract.
+
+**Otherwise:** Changing to the internal structure of files or the signature may break the interface with
+clients.
+
+### Code example
+```javascript
+  // Do
+  module.exports.SMSProvider = require('./SMSProvider');
+  module.exports.SMSNumberResolver = require('./SMSNumberResolver');
+
+  // Avoid
+  module.exports.SMSProvider = require('./SMSProvider/SMSProvider.js');
+  module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolver.js');
+```
+
+<br/><br/>
+
+
+## ![✔] 3.10 Use the `===` operator
 
 text here
 
 <br/><br/>
 
-## ![✔] 3.9 Use Async Await, avoid callbacks
+## ![✔] 3.11 Use Async Await, avoid callbacks
 
-**TL;DR:** Node 8 LTS now has full support for Async/Await. This is a new way of dealing with asyncronous code which supercedes callbacks and promises (while actualy relying on promises). Async Await is non blocking, and it makes asynchronous code looks more synchronous 
+**TL;DR:** Node 8 LTS now has full support for Async-await. This is a new way of dealing with asyncronous code which supercedes callbacks and promises. Async-await is non blocking, and it makes asynchronous code looks more synchronous. The best gift you can give to your code is using async-await which provides much compact and familiar code syntax like try-catch.
 
-**Otherwise** [Callback hell](http://icompile.eladkarako.com/wp-content/uploads/2016/01/icompile.eladkarako.com_callback_hell.gif)
+**Otherwise:** Handling async errors in callback style is probably the fastest way to hell - this style forces to check errors all over, deal with akward code nesting and make it difficult to reason about the code flow.
 
 🔗[**Read more:** Guide to async await 1.0](https://github.com/yortus/asyncawait)
 
 <br/><br/>
 
-## ![✔] 3.10 Use => Arrow Functions 
+## ![✔] 3.12 Use => Arrow Functions 
 
-text here
+**TL;DR:** Though it's recommended to use async-await and avoid function parameters, when dealing with older API that accept promises or callbacks - arrow functions makes the code structure more compact and keeps the lexical context of the root function (i.e. 'this').
+
+**Otherwise:** 
 
 <br/><br/>
 
