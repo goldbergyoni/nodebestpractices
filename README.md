@@ -12,7 +12,7 @@
 
 <br/>
 
- **Follow uas on Twitter!** [![nodepractices](/assets/images/twitter.png)](https://twitter.com/nodepractices/) [**@nodepractices**](https://twitter.com/nodepractices/)
+ [![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Follow uas on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
  <br/>
 
 # Welcome! 3 Things You Ought To Know First:
