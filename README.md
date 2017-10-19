@@ -55,7 +55,7 @@
 
 ## ![✔] 1.3 Wrap common utilities as NPM packages
 
-**TL;DR:** In a large app that constitues multiple code base, cross-cutting-conern utilities like logger, encryption and a like, should be wrapped by your own code and exposed as private NPM packages. This makes it shared among multiple code bases and projects
+**TL;DR:** In a large app that constitues multiple code base, cross-cutting-conern utilities like logger, encryption and a like, should be wrapped by your own code and exposed as private NPM packages. This allows sharing them among multiple code bases and projects
 
 **Otherwise:** You'll have to invent your own deployment and dependency wheel
 
@@ -65,7 +65,7 @@
 
 ## ![✔] 1.4 Separate Express 'app' and 'server'
 
-**TL;DR:** Avoid the nasty habit of defining the [Express](https://expressjs.com/) app in a single huge file - separate your 'Express' definition to at least two files: the API declaration (app.js) and the networking concerns (WWW). Even better, locate your app declaration within components
+**TL;DR:** Avoid the nasty habit of defining the entire [Express](https://expressjs.com/) app in a single huge file - separate your 'Express' definition to at least two files: the API declaration (app.js) and the networking concerns (WWW).For even better structure, locate your API declaration within components
 
 **Otherwise:** Your API will be accessible for testing via HTTP calls only (slower and much harder to generate coverage reports). It will also probably won't be a big pleasure to maintain hundreds of lines of code in a single file
 
@@ -75,7 +75,7 @@
 
 ## ![✔] 1.5 Use environment aware, secure and hirearchical config
 
-**TL;DR:** The perfect and flawless configuration setup must include (a) keys that can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are only a few packages that can help tick all those boxes
+**TL;DR:** The perfect and flawless configuration setup must include (a) keys that can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are only a few packages that can help tick most of those boxes like [nconf](https://www.npmjs.com/package/nconf) and [config](https://www.npmjs.com/package/config)
 
 **Otherwise:** Failing to satisfy any of the config requirements will simply bog down the development team or devpos team. Probably both
 
