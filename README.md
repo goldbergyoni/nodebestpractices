@@ -381,8 +381,6 @@ All statements above will return false if used with `===`
 
 **Otherwise:** 
 
-<br/><br/>
-
 
 <br/><br/><br/>
 
