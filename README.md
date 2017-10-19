@@ -339,7 +339,26 @@ clients.
 
 ## ![✔] 3.10 Use the `===` operator
 
-text here
+**TL;DR:** Prefer the strict equality operator `===` over the weaker abstract equality operator `==`. `==` is type agnostic, meaning it will compare the two variables while disregarding their type. There is not type conversion in `===`, and both variables must be of the same type to return true.
+
+**Otherwise:** Unequal variables might return true when compared with the `==` operator.
+
+### Code example
+```javascript
+'' == '0'           // false
+0 == ''             // true
+0 == '0'            // true
+
+false == 'false'    // false
+false == '0'        // true
+
+false == undefined  // false
+false == null       // false
+null == undefined   // true
+
+' \t\r\n ' == 0     // true
+```
+All statements above will return false if used with `===`
 
 <br/><br/>
 
