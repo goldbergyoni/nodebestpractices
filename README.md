@@ -342,7 +342,7 @@ clients.
 
 ## ![✔] 3.10 Use the `===` operator
 
-**TL;DR:** Prefer the strict equality operator `===` over the weaker abstract equality operator `==`. `==` is type agnostic, meaning it will compare the two variables while disregarding their type. There is not type conversion in `===`, and both variables must be of the same type to return true.
+**TL;DR:** Prefer the strict equality operator `===` over the weaker abstract equality operator `==`. `==` will compare two variables after converting them to a common type. There is not type conversion in `===`, and both variables must be of the same type to be equal.
 
 **Otherwise:** Unequal variables might return true when compared with the `==` operator.
 
