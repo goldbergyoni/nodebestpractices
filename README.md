@@ -6,7 +6,7 @@
 <br/>
 
 <div align="center">
-<img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2053%20Best%20practices-blue.svg" alt="53 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%206%20days%20ago-green.svg" alt="Last update: 7 days ago"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.4-brightgreen.svg" alt="Updated for Node v.8.4">
+<img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2053%20Best%20practices-blue.svg" alt="50 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%206%20days%20ago-green.svg" alt="Last update: 7 days ago"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.4-brightgreen.svg" alt="Updated for Node v.8.4">
 	</div>
 
 <br/>
@@ -23,9 +23,9 @@
 ## Table of Contents
 1. [Project structure Practices (5)](#1-project-structure-practices)
 2. [Error Handling Practices (11) ](#2-error-handling-practices)
-3. [Code Style Practices (9) ](#3-code-style-practices)
+3. [Code Style Practices (10) ](#3-code-style-practices)
 4. [Testing And Overall Quality Practices (8) ](#4-testing-and-overall-quality-practices)
-5. [Going To Production Practices (17) ](#5-going-to-production-practices)
+5. [Going To Production Practices (16) ](#5-going-to-production-practices)
 6. Security Practices (coming soon)
 7. Performance Practices (coming soon)
 
