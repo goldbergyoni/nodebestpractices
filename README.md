@@ -1,7 +1,7 @@
 [✔]: assets/images/checkbox-small-blue.png
 
 <p align="right">
-  <a href="https://twitter.com/nodepractices?ref_src=github" class="twitter-follow-button" data-show-count="false">Follow @nodepractices</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  [![**@nodepractices**](assets/images/twitter.png)](https://twitter.com/nodepractices/)
 </p>
 
 <h1 align="center">
