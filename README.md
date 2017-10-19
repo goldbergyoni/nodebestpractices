@@ -635,6 +635,7 @@ text here
 <br/><br/><br/>
 # Contributors
 ## `Yoni Goldberg`
-Developer & consultant, Backend expert, JavaScript enthusiasnt, focused on Node.JS. Many of the bullets was first published on his blog post [http://www.goldbergyoni.com](http://www.goldbergyoni.com)
+Developer & consultant, Backend expert, JavaScript enthusiast, focused on Node.JS. Many of the bullets was first published on his blog post [http://www.goldbergyoni.com](http://www.goldbergyoni.com)
 
 ## `Ido Richter`
+👨‍💻 Software engineer, 🌐 web developer, 🤖 emojis enthusiast.
