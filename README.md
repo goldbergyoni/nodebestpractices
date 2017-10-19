@@ -88,8 +88,9 @@
 
 <br/><br/><br/>
 
-# `2. Error Handling Practices`
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+
+# `2. Error Handling Practices`
 
 ## ![✔] 2.1  Use Async-Await or promises for async error handling
 
@@ -209,7 +210,9 @@
 
 🔗 [**Read More: failing fast**](/sections/errorhandling/failfast.md)
 
-<br/><br/><Br/>
+<br/><br/><br/>
+
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
 # `3. Code Style Practices`
 
@@ -383,6 +386,8 @@ All statements above will return false if used with `===`
 
 <br/><br/><br/>
 
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+
 
 # `4. Testing And Overall Quality Practices`
 
@@ -456,6 +461,7 @@ All statements above will return false if used with `===`
 
 <br/><br/><br/>
 
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
 # `5. Going To Production Practices`
 ## ![✔] 5.1. Monitoring!
@@ -641,6 +647,9 @@ All statements above will return false if used with `===`
 **Otherwise:** Long deployments -> production down time & human-related error -> team unconfident and in making deployment -> less deployments and features
 
 <br/><br/><br/>
+
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+
 # `Security Practices`
 
 ## our contributirs working on this section, would you like to join?
