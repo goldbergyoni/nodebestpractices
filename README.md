@@ -260,7 +260,7 @@
 
 **TL;DR:** While not unanimously agreed upon, it is still recommended to put a semicolon at the end of each statement. This will make your code more readable and explicit to other developers who read it.
 
-**TL;DR:** As seen in the previous section, Javascript's interpeter auto adds semicolon at the end of a statement if there isn't one which can lead to some undesired results.
+**Otherwise:** As seen in the previous section, Javascript's interpeter auto adds semicolon at the end of a statement if there isn't one which can lead to some undesired results.
 
 <br/><br/>
 
@@ -313,7 +313,7 @@
 
 **TL;DR:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top, but also avoids a couple of potential problems.
 
-**Otherwise:** Requiers are run syncronously by Node JS. If they are called from withing a function, it may block other requests from being handled at a more critical time. Also, if a required module (or any of its own dependencies) throws an error and crashes the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function.
+**Otherwise:** Requiers are run syncronously by Node JS. If they are called from withing a function, it may block other requests from being handled at a more critical time. Also, if a required module or any of its own dependencies throw an error and crashes the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function.
 
 <br/><br/>
 
@@ -379,7 +379,9 @@ All statements above will return false if used with `===`
 
 **TL;DR:** Though it's recommended to use async-await and avoid function parameters, when dealing with older API that accept promises or callbacks - arrow functions makes the code structure more compact and keeps the lexical context of the root function (i.e. 'this').
 
-**Otherwise:** 
+**Otherwise:** Longer code (in ES5 functions) is more prone to bugs and cumbersome to read.
+
+🔗 [**Read mode: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
 
 
 <br/><br/><br/>
