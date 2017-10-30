@@ -48,7 +48,9 @@ function appError(name, httpCode, description, isOperational) {
     this.name = name;
     //...other properties assigned here
 };
+
 appError.prototype.__proto__ = Error.prototype;
+
 module.exports.appError = appError;
  
 //client throwing an exception
