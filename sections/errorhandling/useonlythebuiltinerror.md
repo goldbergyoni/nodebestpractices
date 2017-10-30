@@ -42,7 +42,7 @@ if(!productToAdd)
 
 ```javascript
 //centralized error object that derives from Node’s Error
-function name, httpCode, description, isOperational) {
+function appError(name, httpCode, description, isOperational) {
     Error.call(this);
     Error.captureStackTrace(this);
     this.name = name;
