@@ -40,6 +40,33 @@ async function main() {
 main().catch(console.error.bind(console))
 ```
 
+### Code Example – using async/await w/ helpers to avoid increasing nesting
+
+
+```javascript
+import to from 'await-to-ts' // see https://github.com/phra/await-to-ts
+
+async function main() {
+  const [err, res] = await to(doWork()
+    .then(doWork)
+    .then(doOtherWork)
+    .then((result) => doWork))
+
+  if (err) {
+    // manage error or simply throw it
+    throw err
+  }
+
+  const [err1, res1] = await to(verify(res))
+  if (err1) {
+    // manage error or simply throw it
+    throw err
+  }
+  // res1 -> final result
+}
+
+main().catch(console.error.bind(console))
+```
 
 ### Anti pattern code example – callback style error handling
 
