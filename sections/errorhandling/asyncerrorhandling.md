@@ -26,15 +26,14 @@ doWork()
 
 ```javascript
 async function main() {
-  // res -> final result
-  const res = await doWork().then(doWork)
+  const res = await doWork()
+  .then(doWork)
   .then(doOtherWork)
-  .then((result) => doWork)
-  .catch((error) => throw error)
-  .then(verify)
-  .then((res) => {
-    // res -> final result
-  });
+  .then((result) => doWork(result))
+  .catch((error) => { throw error })
+
+  const res1 = await verify(res).catch((error) => { throw error })
+  // res1 -> final result
 }
 
 main().catch(console.error.bind(console))
@@ -50,7 +49,7 @@ async function main() {
   const [err, res] = await to(doWork()
     .then(doWork)
     .then(doOtherWork)
-    .then((result) => doWork))
+    .then((result) => doWork(result)))
 
   if (err) {
     // manage error or simply throw it
