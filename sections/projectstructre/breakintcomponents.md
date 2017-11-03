@@ -1,4 +1,4 @@
-# Structure your solution by components
+# Estructura tu solución en componentes Structure your solution by components
 
 <br/><br/>
 
