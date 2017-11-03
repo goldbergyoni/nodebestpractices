@@ -1,16 +1,14 @@
-# Separate Express 'app' and 'server'
+# Separar 'servidor' y 'aplicación' de express
 
 <br/><br/>
 
+### Un párrafo explicativo
 
-### One Paragraph Explainer
-
-The latest Express generator comes with a great practice that is worth to keep - the API declaration is separated from the network related configuration (port, protocol, etc). This allows testing the API in-process, without performing network calls, with all the benefits that it brings to the table: fast testing execution and getting coverage metrics of the code. It also allows deploying the same API under flexible and different network conditions. Bonus: better separation of concerns and cleaner code
+El último generador de Express viene con una gran práctica que vale la pena mantener: la declaración del API está separada de la configuración relacionada con la red (puerto, protocolo, etc.). Esto permite probar el API en proceso, sin realizar llamadas de red, con todos los beneficios que trae a la mesa: ejecución de prueba rápida y obtención de métricas de cobertura del código. También permite implementar la misma API bajo condiciones de red flexibles y diferentes. Bonificación: mejor separación de conceptos y código más limpio
 
 <br/><br/>
 
-### Code example: API declaration, should reside in app.js
-
+### Ejemplo de código: Declaración del API, debe residiir en app.js
 ```javascript
 var app = express();
 app.use(bodyParser.json());
@@ -18,11 +16,9 @@ app.use("/api/events", events.API);
 app.use("/api/forms", forms);
 
 ```
-
 <br/><br/>
 
-### Code example: Server network declaration, should reside in /bin/www
-
+### Ejemplo de código: Declaración de red del servidor, debe residir en /bin/www
 ```javascript
 var app = require('../app');
 var http = require('http');
@@ -41,7 +37,5 @@ app.set('port', port);
 var server = http.createServer(app);
 
 ```
-
-
-### Example: test your API in-process using supertest (popular testing package)
+### Ejemplo: prueba tu API en proceso usanso supertest (paquete de testing popular)
 ![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/supertestinprocess.PNG "In process testing with Supertest")

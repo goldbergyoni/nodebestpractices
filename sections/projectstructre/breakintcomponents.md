@@ -2,25 +2,24 @@
 
 <br/><br/>
 
+### Un párrafo explicativo
 
-### One Paragraph Explainer
-
-For medium sized apps and above, monoliths are really bad - a one big software with many dependencies is just hard to reason about and often lead to code spaghetti. Even those smart architects who are skilled to tame the beast and 'modulurize' it - spend great mental effort on design and each change requires to carefully evaluate the impact on other dependant objects. The ultimate solution is to develop small software: divide the whole stack into self-contained components that don't share files with others, each constitute very few files (e.g. API, service, data access, test, etc) so that it's very easy to reason about it. Some may call this 'microservices' architecture - it's important to understand that microservices is not a spec which you must follow rather a set of principles. You may adopt many principles into a full-blown microservices architecture or adopt only few. Both are good as long as you keep the software complexity low. The very least you should do is create a basic borders between components, assign a folder in your project root for each business component and make it self contained - other components are allowed to consumeits functionality only through its public interface or API. This is the foundation for keeping your components simple, avoid dependencies hell and pave the way to full-blown microservices in the future once your app grows
+Para aplicaciones medianas y superiores, los monolitos son realmente malos: un software grande con muchas dependencias es simplemente difícil de entender y a menudo conduce a código espagueti. Incluso aquellos arquitectos inteligentes que están capacitados para domesticar a la bestia y "modularla": dedican un gran esfuerzo mental al diseño y cada cambio requiere evaluar cuidadosamente el impacto en otros objetos dependientes. La solución definitiva es desarrollar software pequeño: divide el stack completo en componentes independientes que no compartan archivos con otros, cada componente constituye muy pocos archivos (por ejemplo, API, servicio, acceso a datos, test, etc.) para que sea muy fácil entender. Algunos pueden llamar a esto 'arquitectura de microservicios': es importante entender que los microservicios no son una especificación que debas seguir sino un conjunto de principios. Puedes adoptar muchos principios en una arquitectura de microservicios en toda regla o adoptar solo unos pocos. Ambos son buenos siempre y cuando mantengas baja la complejidad del software. Lo mínimo que debes hacer es crear una frontera básica entre los componentes, asignar una carpeta en la raíz del proyecto para cada componente de negocio y hacerlo autónomo: otros componentes pueden consumir su funcionalidad solo a través de su interfaz pública o API. Esta es la base para mantener tus componentes simples, evitar las dependencias y allanar el camino a los microservicios en el futuro una vez que tu aplicación crezca
 
 <br/><br/>
 
 
-### Blog Quote: "Scaling requires scaling of the entire application"
- From the blog MartinFowler.com
+### Cita de Blog: "El escalado requiere escalar toda la aplicación"
+ De el blog MartinFowler.com
  
- > Monolithic applications can be successful, but increasingly people are feeling frustrations with them - especially as more applications are being deployed to the cloud . Change cycles are tied together - a change made to a small part of the application, requires the entire monolith to be rebuilt and deployed. Over time it's often hard to keep a good modular structure, making it harder to keep changes that ought to only affect one module within that module. Scaling requires scaling of the entire application rather than parts of it that require greater resource.
+ > Las aplicaciones monolíticas pueden ser exitosas, pero cada vez más personas sienten frustraciones con ellas, especialmente a medida que se implementan más aplicaciones en la nube. Los ciclos de cambio están unidos: un cambio realizado en una pequeña parte de la aplicación requiere que se reconstruya y despliegue todo el monolito. Con el tiempo, a menudo es difícil mantener una buena estructura modular, lo que hace más difícil mantener los cambios que solo deberían afectar a un módulo dentro de ese módulo. El escalado requiere escalar toda la aplicación en lugar de partes de ella que requieren un mayor recurso.
 
  <br/><br/>
  
- ### Good: Structure your solution by self-contained components
+ ### Bien: Estructura tu solución en componentes autónomos
 ![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Structuring solution by components")
 
  <br/><br/> 
 
-### Bad: Group your files by technical role
+### Bad: Agrupa tus archivos por rol técnico
 ![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebyroles.PNG "Structuring solution by technical roles")

@@ -1,17 +1,17 @@
-# Use environment aware, secure and hirearchical config
+# Usar una configuración segura, jerárquica y consciente del entorno
 
 <br/><br/>
 
 
-### One Paragraph Explainer
+### Un párrafo explicativo
 
-When dealing with configuration data, many things can just annoy and slow down: (1) setting all the keys using process environment variables becomes very tedious when in need to inject 100 keys (instead of just committing those in a config file), however when dealing with files only the devops admins can not alter the behaviour without changing the code. A reliable config solution must combine both configuration files + overrides from the process variables (b) when specifying all keys in a flat JSON, it become frustrating to find and modify entries when the list grows big. An hirearchical JSON files that is grouped into section can overcome this issue + few config libraries allows to store the configuration in multiple files and take care to union all in runtime. See example below (3) storing sensitive information like DB password is obviously not recommended but no quick and handy solution exists for this challenge. Some configuraiton library allows to encrypt files, others encrypt those entries during GIT commits or simple don't store real values for those entries and specify the actual value during deployment via environment variables. (4) some advanced config scenario demand to inject configuration value via command line (vargs) or sync configuration info via centralized cache like Redis so different servers won't hold different data. 
+Cuando se trata de datos de configuración, muchas cosas pueden molestar y ralentizar: (1) configurar todas las claves utilizando variables de entorno de proceso resulta muy tedioso cuando se necesitan inyectar 100 claves (en lugar de solo confirmarlas en un archivo de configuración), pero cuando tratas solo con archivos los administradores de devops no pueden alterar el comportamiento sin cambiar el código. Una solución de configuración confiable debe combinar los archivos de configuración y las sobre escrituras de las variables de proceso (b) al especificar todas las claves en un JSON plano, resulta frustrante encontrar y modificar entradas cuando la lista crece. Un archivo JSON jerárquico que está agrupado en una sección puede resolver este problema + pocas bibliotecas de configuración permiten almacenar la configuración en múltiples archivos y cuidar la unión en tiempo de ejecución. Ve el siguiente ejemplo (3) que almacena información confidencial como la contraseña de la base de datos, obviamente, no se recomienda, pero no existe una solución rápida y práctica para este desafío. Algunas bibliotecas de configuraciones permiten cifrar archivos, otras cifran esas entradas durante los commits de GIT o simplemente no almacenan valores reales para esas entradas y especifican el valor real durante la implementación a través de variables de entorno. (4) Algunos escenarios de configuración avanzada exigen inyectar el valor de configuración a través de la línea de comando (vargs) o sincronizar información de configuración a través de la caché centralizada como Redis para que los diferentes servidores no contengan datos diferentes.
 
-Some configuration libraries can provide most of these features for free, have a look at NPM libraries like [nconf](https://www.npmjs.com/package/nconf) and [config](https://www.npmjs.com/package/config) which tick many of these requirements.
+Algunas bibliotecas de configuración pueden proporcionar la mayoría de estas características de forma gratuita, echa un vistazo a las bibliotecas de NPM como [nconf](https://www.npmjs.com/package/nconf) y [config](https://www.npmjs.com/package/config) que validan muchos de estos requisitos.
 
 <br/><br/>
 
-### Code Example – hirearchical config helps to find entries and maintain huge config files
+### Ejemplo de código – la configuración jerárquica ayuda a encontrar entradas y mantener enormes archivos de configuración
 
 ```javascript
 {
