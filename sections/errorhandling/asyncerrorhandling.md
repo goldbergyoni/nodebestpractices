@@ -15,8 +15,31 @@ doWork()
  .then(doOtherWork)
  .then((result) => doWork)
  .catch((error) => throw error)
- .then(verify);
+ .then(verify)
+ .then((res) => {
+   // res -> final result
+ });
 ```
+
+### Code Example – using async/await to manage promises
+
+
+```javascript
+async function main() {
+  // res -> final result
+  const res = await doWork().then(doWork)
+  .then(doOtherWork)
+  .then((result) => doWork)
+  .catch((error) => throw error)
+  .then(verify)
+  .then((res) => {
+    // res -> final result
+  });
+}
+
+main().catch(console.error.bind(console))
+```
+
 
 ### Anti pattern code example – callback style error handling
 
