@@ -654,12 +654,12 @@ All statements above will return false if used with `===`
 
 # `Security Practices`
 
-## our contributirs working on this section, would you like to join?
+## Our contributors are working on this section. Would you like to join?
 
 <br/><br/><br/>
 # `Performance Practices`
 
-## our contributirs working on this section, would you like to join?
+## Our contributors are working on this section. Would you like to join?
 
 
 <br/><br/><br/>
