@@ -6,7 +6,68 @@
 Callbacks don’t scale as they are not familiar to most programmers, force to check errors all over, deal with nasty code nesting and make it difficult to reason about the code flow. Promise libraries like BlueBird, async, and Q pack a standard code style using RETURN and THROW to control the program flow. Specifically, they support the favorite try-catch error handling style which allows freeing the main code path from dealing with errors in every function
 
 
-### Code Example – using promises to catch errors
+### Code Example - simple promise
+
+```javascript
+function iPromise(shouldThrow) {
+  return new Promise((resolve, reject) => {
+    if (shouldThrow) {
+      return reject(new Error('ERROR'))
+    }
+
+    resolve(42)
+  })
+}
+
+const successfulPromise = iPromise(true)
+const failingPromise = iPromise(true)
+
+// register success handler
+successfulPromise.then((res) => {
+  console.log(res) // 42
+})
+
+successfulPromise.catch((err) => {
+  console.error(err) // WON'T BE CALLED
+})
+
+failingPromise.then((res) => {
+  console.log(res) // WON'T BE CALLED
+})
+
+// register failure handler
+failingPromise.catch((err) => {
+  console.error(err) // ERROR
+})
+
+
+```
+
+### Code Example - nested promise
+
+```javascript
+// You can also return a new promise in the success handler, like the following example
+function iPromise() {
+  return new Promise((resolve, reject) => {
+    resolve(42)
+  })
+}
+
+const promise = iPromise()
+
+// register success handler
+const innerPromise = promise.then((res) => {
+  console.log(res) // Promise
+  return Promise.resolve(res) // assigned to innerPromise
+}).catch(console.error.bind(console))
+
+innerPromise.then((res) => {
+  console.log(res) // 42
+}).catch(console.error.bind(console))
+
+```
+
+### Code Example – use promise calls to save lines
 
 
 ```javascript
