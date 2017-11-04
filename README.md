@@ -20,7 +20,7 @@
 # Welcome! 3 Things You Ought To Know First:
 **1. When you read here, you in fact read dozens of the best Node.JS articles -** this is a summary and curation of the top-ranked content on Node JS best practices
 
-**2. It's the largest compilation, and it growing every week -** currently, more than 50 practices, style guide, and architectural tips are presented. We welcome issues and PR to ever keep this live book updated. We'd love to see you contributing here, whether fixing some  code mistake or suggesting brilliant new ideas - be part of the Node.JS best practices book
+**2. It's the largest compilation, and it's growing every week -** currently, more than 50 best practices, style guides, and architectural tips are presented. We welcome issues and PR to ever keep this live book updated. We'd love to see you contributing here, whether fixing some  code mistake or suggesting brilliant new ideas - be part of the Node.JS best practices book
 
 **3. Most bullets have additional info -** nearby most best practice bullets you'll find **🔗Read More** link that will present you with code examples, quotes from selected blogs and more info
 
@@ -61,7 +61,7 @@
 
 ## ![✔] 1.3 Wrap common utilities as NPM packages
 
-**TL;DR:** In a large app that constitues multiple code base, cross-cutting-conern utilities like logger, encryption and a like, should be wrapped by your own code and exposed as private NPM packages. This allows sharing them among multiple code bases and projects
+**TL;DR:** In a large app that constitutes a large code base, cross-cutting-concern utilities like logger, encryption and alike, should be wrapped by your own code and exposed as private NPM packages. This allows sharing them among multiple code bases and projects
 
 **Otherwise:** You'll have to invent your own deployment and dependency wheel
 
@@ -71,19 +71,19 @@
 
 ## ![✔] 1.4 Separate Express 'app' and 'server'
 
-**TL;DR:** Avoid the nasty habit of defining the entire [Express](https://expressjs.com/) app in a single huge file - separate your 'Express' definition to at least two files: the API declaration (app.js) and the networking concerns (WWW).For even better structure, locate your API declaration within components
+**TL;DR:** Avoid the nasty habit of defining the entire [Express](https://expressjs.com/) app in a single huge file - separate your 'Express' definition to at least two files: the API declaration (app.js) and the networking concerns (WWW). For even better structure, locate your API declaration within components
 
-**Otherwise:** Your API will be accessible for testing via HTTP calls only (slower and much harder to generate coverage reports). It will also probably won't be a big pleasure to maintain hundreds of lines of code in a single file
+**Otherwise:** Your API will be accessible for testing via HTTP calls only (slower and much harder to generate coverage reports). It probably won't be a big pleasure to maintain hundreds of lines of code in a single file
 
 🔗 [**Read More: separate Express 'app' and 'server'**](/sections/projectstructre/separateexpress.md)
 
 <br/><br/>
 
-## ![✔] 1.5 Use environment aware, secure and hirearchical config
+## ![✔] 1.5 Use environment aware, secure and hierarchical config
 
-**TL;DR:** The perfect and flawless configuration setup must include (a) keys that can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are only a few packages that can help tick most of those boxes like [nconf](https://www.npmjs.com/package/nconf) and [config](https://www.npmjs.com/package/config)
+**TL;DR:** The perfect and flawless configuration setup should ensure (a) keys can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are only a few packages that can help tick most of those boxes like [nconf](https://www.npmjs.com/package/nconf) and [config](https://www.npmjs.com/package/config)
 
-**Otherwise:** Failing to satisfy any of the config requirements will simply bog down the development team or devpos team. Probably both
+**Otherwise:** Failing to satisfy any of the config requirements will simply bog down the development or devops team. Probably both
 
 🔗 [**Read More: configuration best practices**](/sections/projectstructre/configguide.md)
 
@@ -96,7 +96,7 @@
 
 ## ![✔] 2.1  Use Async-Await or promises for async error handling
 
-**TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using instead a reputable promise library or async-await which provides much compact and familiar code syntax like try-catch
+**TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using a reputable promise library or async-await instead which enables a much more compact and familiar code syntax like try-catch
 
 **Otherwise:** Node.JS callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting and awkward coding patterns
 
@@ -106,10 +106,10 @@
 
 ## ![✔] 2.2 Use only the built-in Error object
 
-**TL;DR:** Many throws errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw exception or emit error – using only the built-in Error object will increases uniformity and prevents loss of information
+**TL;DR:** Many throws errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw exception or emit error – using only the built-in Error object will increase uniformity and prevent loss of information
 
 
-**Otherwise:** When invoking some component, being uncertain which type of errors come in return – makes it much harder to handle errors properly. Even worse, using custom types to describe errors might lead to loss of critical error information like the stack trace!
+**Otherwise:** When invoking some component, being uncertain which type of errors come in return – it makes proper error handling much harder. Even worse, using custom types to describe errors might lead to loss of critical error information like the stack trace!
 
 🔗 [**Read More: using the built-in error object**](/sections/errorhandling/useonlythebuiltinerror.md)
 
@@ -119,7 +119,7 @@
 
 **TL;DR:** Operational errors (e.g. API received an invalid input) refer to known cases where the error impact is fully understood and can be handled thoughtfully. On the other hand, programmer error (e.g. trying to read undefined variable) refers to unknown code failures that dictate to gracefully restart the application
 
-**Otherwise:** You may always restart the application when an error appear, but why letting ~5000 online users down because of a minor, predicted, operational error? the opposite is also not ideal – keeping the application up when unknown issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
+**Otherwise:** You may always restart the application when an error appears, but why let ~5000 online users down because of a minor, predicted, operational error? the opposite is also not ideal – keeping the application up when an unknown issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
 
   🔗 [**Read More: operational vs programmer error**](/sections/errorhandling/operationalvsprogrammererror.md)
 
@@ -127,9 +127,9 @@
 
 ## ![✔] 2.4 Handle errors centrally, not within an Express middleware
 
-**TL;DR:** Error handling logic such as mail to admin and logging should be encapsulated in a dedicated and centralized object that all end-points (e.g. Express middleware, cron jobs, unit-testing) call when an error comes in.
+**TL;DR:** Error handling logic such as mail to admin and logging should be encapsulated in a dedicated and centralized object that all endpoints (e.g. Express middleware, cron jobs, unit-testing) call when an error comes in.
 
-**Otherwise:** Not handling errors within a single place will lead to code duplication and probably to errors that are handled improperly
+**Otherwise:** Not handling errors within a single place will lead to code duplication and probably to improperly handled errors
 
 🔗 [**Read More: handling errors in a centralized place**](/sections/errorhandling/centralizedhandling.md)
 
@@ -139,7 +139,7 @@
 
 **TL;DR:** Let your API callers know which errors might come in return so they can handle these thoughtfully without crashing. This is usually done with REST API documentation frameworks like Swagger
 
-**Otherwise:** An API client might decide to crash and restart only because he received back an error he couldn’t understand. Note: the caller of your API might be you (very typical in a microservices environment)
+**Otherwise:** An API client might decide to crash and restart only because he received back an error he couldn’t understand. Note: the caller of your API might be you (very typical in a microservice environment)
 
 
 🔗 [**Read More: documenting errors in Swagger**](/sections/errorhandling/documentingusingswagger.md)
@@ -158,7 +158,7 @@
 
 
 
-## ![✔] 2.7 Use a mature logger to increase errors visibility
+## ![✔] 2.7 Use a mature logger to increase error visibility
 
 **TL;DR:** A set of mature logging tools like Winston, Bunyan or Log4J, will speed-up error discovery and understanding. So forget about console.log.
 
@@ -172,7 +172,7 @@
 
 ## ![✔] 2.8 Test error flows using your favorite test framework
 
-**TL;DR:** Whether professional automated QA or plain manual developer testing – Ensure that your code not only satisfies positive scenario but also handle and return the right errors. Testing framework like Mocha & Chai can handle this easily (see code examples within the "Gist popup")
+**TL;DR:** Whether professional automated QA or plain manual developer testing – Ensure that your code not only satisfies positive scenario but also handle and return the right errors. Testing frameworks like Mocha & Chai can handle this easily (see code examples within the "Gist popup")
 
 **Otherwise:** Without testing, whether automatically or manually, you can’t rely on our code to return the right errors. Without meaningful errors – there’s no error handling
 
@@ -195,12 +195,12 @@
 
 ## ![✔] 2.10 Catch unhandled promise rejections
 
-**TL;DR:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explictly handle. Even if you’re code is subscribed to process.uncaughtException! Overcome this by registering to the event process.unhandledRejection
+**TL;DR:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explictly handle. Even if your code is subscribed to process.uncaughtException! Overcome this by registering to the event process.unhandledRejection
 
 **Otherwise:** Your errors will get swallowed and leave no trace. Nothing to worry about
 
 
-🔗 [**Read More: catching unhandled promise rejection **](/sections/errorhandling/catchunhandledpromiserejection.md)
+🔗 [**Read More: catching unhandled promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.md)
 
 <br/><br/>
 
@@ -234,7 +234,7 @@
 
 <br/><br/>
 
-## ![✔] 3.3 Start a Codeblock's Curly Braces in the Same Line 
+## ![✔] 3.3 Start a Codeblock's Curly Braces in the Same Line
 
 **TL;DR:** The opening curly braces of a code block should be in the same line of the opening statement.
 
@@ -252,7 +252,7 @@
   }
 ```
 
-**Otherwise:** Deferring from this best practice might lead to unexpected results, as can be seen in the Stackoverflow thread below:
+**Otherwise:** Deferring from this best practice might lead to unexpected results, as seen in the Stackoverflow thread below:
 
 🔗 [**Read more:** "Why does a results vary based on curly brace placement?" (Stackoverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
@@ -262,15 +262,15 @@
 
 **TL;DR:** While not unanimously agreed upon, it is still recommended to put a semicolon at the end of each statement. This will make your code more readable and explicit to other developers who read it.
 
-**Otherwise:** As seen in the previous section, Javascript's interpeter auto adds semicolon at the end of a statement if there isn't one which can lead to some undesired results.
+**Otherwise:** As seen in the previous section, JavaScript's interpeter automatically adds a semicolon at the end of a statement if there isn't one which might lead to some undesired results.
 
 <br/><br/>
 
 ## ![✔] 3.5 Name Your Functions
 
-**TL;DR:** Name all functions, including closures and callbacks. Avoid anonymous functions. This is especially useful when profiling a node app. Naming all functions will allow you to easily understand what you're looking at when cheking a memory snapshot.
+**TL;DR:** Name all functions, including closures and callbacks. Avoid anonymous functions. This is especially useful when profiling a node app. Naming all functions will allow you to easily understand what you're looking at when checking a memory snapshot.
 
-**Otherwise:** Debugging production issues using a core dump (memory snapshot) might become challenging as you notice significant memory consumption from functions with no name.
+**Otherwise:** Debugging production issues using a core dump (memory snapshot) might become challenging as you notice significant memory consumption from anonymous functions.
 
 <br/><br/>
 
@@ -311,11 +311,11 @@
 
 <br/><br/>
 
-## ![✔] 3.8 Requires come first, and not inside functions.
+## ![✔] 3.8 Requires come first, and not inside functions
 
 **TL;DR:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top, but also avoids a couple of potential problems.
 
-**Otherwise:** Requiers are run syncronously by Node JS. If they are called from within a function, it may block other requests from being handled at a more critical time. Also, if a required module or any of its own dependencies throw an error and crashes the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function.
+**Otherwise:** Requires are run synchronously by NodeJS. If they are called from within a function, it may block other requests from being handled at a more critical time. Also, if a required module or any of its own dependencies throw an error and crash the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function.
 
 <br/><br/>
 
@@ -369,7 +369,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 3.11 Use Async Await, avoid callbacks
 
-**TL;DR:** Node 8 LTS now has full support for Async-await. This is a new way of dealing with asyncronous code which supercedes callbacks and promises. Async-await is non blocking, and it makes asynchronous code looks more synchronous. The best gift you can give to your code is using async-await which provides much compact and familiar code syntax like try-catch.
+**TL;DR:** Node 8 LTS now has full support for Async-await. This is a new way of dealing with asyncronous code which supersedes callbacks and promises. Async-await is non-blocking, and it makes asynchronous code look synchronous. The best gift you can give to your code is using async-await which provides a much more compact and familiar code syntax like try-catch.
 
 **Otherwise:** Handling async errors in callback style is probably the fastest way to hell - this style forces to check errors all over, deal with akward code nesting and make it difficult to reason about the code flow.
 
@@ -377,9 +377,9 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 3.12 Use Fat (=>) Arrow Functions 
+## ![✔] 3.12 Use Fat (=>) Arrow Functions
 
-**TL;DR:** Though it's recommended to use async-await and avoid function parameters, when dealing with older API that accept promises or callbacks - arrow functions makes the code structure more compact and keeps the lexical context of the root function (i.e. 'this').
+**TL;DR:** Though it's recommended to use async-await and avoid function parameters, when dealing with older API that accept promises or callbacks - arrow functions make the code structure more compact and keep the lexical context of the root function (i.e. 'this').
 
 **Otherwise:** Longer code (in ES5 functions) is more prone to bugs and cumbersome to read.
 
@@ -395,7 +395,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 4.1 At the very least, write API (component) testing
 
-**TL;DR:** Most projects just don't have any automated testing due to short time tables or often the 'testing project' run out of control and being abandoned. For that reason, prioritize and start with API testing which are the easiest to write and provide more coverage than unit testing (you may even craft API tests without code using tools like [Postman](https://www.getpostman.com/). Afterwards, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc 
+**TL;DR:** Most projects just don't have any automated testing due to short time tables or often the 'testing project' run out of control and being abandoned. For that reason, prioritize and start with API testing which are the easiest to write and provide more coverage than unit testing (you may even craft API tests without code using tools like [Postman](https://www.getpostman.com/). Afterwards, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc
 
 **Otherwise:** You may spend long days on writing unit tests to find out that you got only 20% system coverage
 
@@ -412,7 +412,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 4.3 Carefully choose your CI platform (Jenkins vs Rest of the world)
 
-**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it better come with a vibrant echo-system of plugins. [Jenkins](https://jenkins.io/) is the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Its rivals, online SaaS tools like [Travis](https://travis-ci.org/) and [CircleCI](https://circleci.com), are much easier to setup, without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
+**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it should come with a vibrant ecosystem of plugins. [Jenkins](https://jenkins.io/) is the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Its rivals, online SaaS tools like [Travis](https://travis-ci.org/) and [CircleCI](https://circleci.com), are much easier to set up, without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
 
 **Otherwise:** Choosing some lightweight SaaS vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
 
@@ -431,15 +431,15 @@ All statements above will return false if used with `===`
 
 **TL;DR:**  Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/):  mocha --grep 'sanity'
 
-**Otherwise:** Running all the tests, including tests that perform dozens of DB queries, any time a developer makes a small change can be extremly slow and keep developers away for running tests
+**Otherwise:** Running all the tests, including tests that perform dozens of DB queries, any time a developer makes a small change can be extremly slow and keeps developers away from running tests
 
 <br/><br/>
 
 ## ![✔] 4.6 Check your test coverage, it helps to identify wrong test patterns
 
-**TL;DR:** Code coverage tools like [Istanbul/NYC ](https://github.com/gotwarlost/istanbul)are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
+**TL;DR:** Code coverage tools like [Istanbul/NYC ](https://github.com/gotwarlost/istanbul)are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but not least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
 
-**Otherwise:** There won't be any automated metric that tells you when large portion of your code is not covered by testing
+**Otherwise:** There won't be any automated metric telling you when a large portion of your code is not covered by testing
 
 
 
@@ -447,9 +447,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 4.7 Inspect for outdated packages
 
-**TL;DR:** Use your preferred tool (e.g. 'npm outdated' or [npm-check-udpates](https://www.npmjs.com/package/npm-check-updates) to detect installed packages which are outdated, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a sever scenario might be when an installed package lag by 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
+**TL;DR:** Use your preferred tool (e.g. 'npm outdated' or [npm-check-udpates](https://www.npmjs.com/package/npm-check-updates) to detect installed packages which are outdated, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a severe scenario might be when an installed package is 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
 
-**Otherwise:** Your production will run packages that have been explicitly tagged by their author as risky 
+**Otherwise:** Your production will run packages that have been explicitly tagged by their author as risky
 
 <br/><br/>
 
@@ -468,7 +468,7 @@ All statements above will return false if used with `===`
 # `5. Going To Production Practices`
 ## ![✔] 5.1. Monitoring!
 
-**TL;DR:** Monitoring is a game of finding out issues before customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that tick all boxes. Click ‘The Gist’ below for overview of solutions
+**TL;DR:** Monitoring is a game of finding out issues before customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that ticks all boxes. Click ‘The Gist’ below for overview of solutions
 
 **Otherwise:** Failure === disappointed customers. Simple.
 
@@ -501,7 +501,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.4. Lock dependencies
 
-**TL;DR:** Your code must be identical across all environments, but amazingly NPM lets dependencies drift across environments be default – when you install packages at various environments it tries to fetch packages’ latest patch version. Overcome this by using NPM config files , .npmrc, that tell each environment to save the exact (not the latest) version of each package. Alternatively, for finer grain control use NPM” shrinkwrap”. *Update: as of NPM5 , dependencies are locked by default. The new package manager in town, Yarn, also got us covered by default
+**TL;DR:** Your code must be identical across all environments, but amazingly NPM lets dependencies drift across environments by default – when you install packages at various environments it tries to fetch packages’ latest patch version. Overcome this by using NPM config files , .npmrc, that tell each environment to save the exact (not the latest) version of each package. Alternatively, for finer grain control use NPM” shrinkwrap”. *Update: as of NPM5 , dependencies are locked by default. The new package manager in town, Yarn, also got us covered by default
 
 **Otherwise:** QA will thoroughly test the code and approve a version that will behave differently at production. Even worse, different servers at the same production cluster might run different code
 
@@ -524,7 +524,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.6. Utilize all CPU cores
 
-**TL;DR:** At its basic form, a Node app runs over a single CPU core while as all other are left idle. It’s your duty to replicate the Node process and utilize all CPUs – For small-medium apps you may use Node Cluster or PM2. For a larger app consider replicating the process using some Docker cluster (e.g. K8S, ECS) or deployment scripts that are based on Linux init system (e.g. systemd)
+**TL;DR:** At its basic form, a Node app runs on a single CPU core while all other are left idling. It’s your duty to replicate the Node process and utilize all CPUs – For small-medium apps you may use Node Cluster or PM2. For a larger app consider replicating the process using some Docker cluster (e.g. K8S, ECS) or deployment scripts that are based on Linux init system (e.g. systemd)
 
 **Otherwise:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.JS utilizes only 1 (even using PaaS services like AWS beanstalk!)
 
@@ -559,7 +559,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.9. Make your code production-ready
 
-**TL;DR:** Code with the end in mind, plan for production from day 1. This sounds a bit vague so I’ve compiled inside (click Gist below) few development tips that are closely related to production maintenance
+**TL;DR:** Code with the end in mind, plan for production from day 1. This sounds a bit vague so I’ve compiled a few development tips that are closely related to production maintenance (click Gist below)
 
 **Otherwise:** A world champion IT/devops guy won’t save a system that is badly written
 
@@ -582,9 +582,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.11. Get your frontend assets out of Node
 
-**TL;DR:** Serve frontend content using dedicated middleware (nginx, S3, CDN) because Node performance really get hurts when dealing with many static files due to its single threaded model
+**TL;DR:** Serve frontend content using dedicated middleware (nginx, S3, CDN) because Node performance really gets hurt when dealing with many static files due to its single threaded model
 
-**Otherwise:** Your single Node thread will keep busy streaming hundreds of html/images/angular/react files instead of  allocating all its resources for the task it was born for – serving dynamic content
+**Otherwise:** Your single Node thread will be busy streaming hundreds of html/images/angular/react files instead of  allocating all its resources for the task it was born for – serving dynamic content
 
 
 🔗 [**Read More: Get your frontend assets out of Node**](/sections/production/frontendout.md)
@@ -596,7 +596,7 @@ All statements above will return false if used with `===`
 
 **TL;DR:** Store any type of data (e.g. users session, cache, uploaded files) within external data stores. Consider ‘killing’ your servers periodically or use ‘serverless’ platform (e.g. AWS Lambda) that explicitly enforces a stateless behavior
 
-**Otherwise:** Failure at a given server will result in application downtime instead of a just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
+**Otherwise:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
 
 
 🔗 [**Read More: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
