@@ -19,7 +19,7 @@ function iPromise(shouldThrow) {
   })
 }
 
-const successfulPromise = iPromise(true)
+const successfulPromise = iPromise(false)
 const failingPromise = iPromise(true)
 
 // register success handler
@@ -43,7 +43,7 @@ failingPromise.catch((err) => {
 
 ```
 
-### Code Example - nested promise
+### Code Example - chaining promises
 
 ```javascript
 // You can also return a new promise in the success handler, like the following example
@@ -57,17 +57,17 @@ const promise = iPromise()
 
 // register success handler
 const innerPromise = promise.then((res) => {
-  console.log(res) // Promise
-  return Promise.resolve(res) // assigned to innerPromise
+  console.log(res) // 42
+  return Promise.resolve(res + 8) // assigned to innerPromise
 }).catch(console.error.bind(console))
 
 innerPromise.then((res) => {
-  console.log(res) // 42
+  console.log(res) // 50
 }).catch(console.error.bind(console))
 
 ```
 
-### Code Example – use promise calls to save lines
+### Code Example – use promise chaining to save lines
 
 
 ```javascript
@@ -81,6 +81,75 @@ doWork()
    // res -> final result
  });
 ```
+
+### Code Example - simple async function
+```javascript
+// async function always wrap the returned value in a promise
+async function iPromise(shouldThrow) {
+  if (shouldThrow) {
+    throw new Error('ERROR')
+  }
+
+  return 42
+}
+
+const successfulPromise = iPromise(false)
+const failingPromise = iPromise(true)
+
+// register success handler
+successfulPromise.then((res) => {
+  console.log(res) // 42
+})
+
+successfulPromise.catch((err) => {
+  console.error(err) // WON'T BE CALLED
+})
+
+failingPromise.then((res) => {
+  console.log(res) // WON'T BE CALLED
+})
+
+// register failure handler
+failingPromise.catch((err) => {
+  console.error(err) // ERROR
+})
+```
+
+### Code Example - simple async/await
+```javascript
+function iPromise(shouldThrow) {
+  return new Promise((resolve, reject) => {
+    if (shouldThrow) {
+      return reject(new Error('ERROR'))
+    }
+
+    resolve(42)
+  })
+}
+
+// we can use await only inside an async function
+async function main() {
+  const successfulPromise = iPromise(false)
+  const failingPromise = iPromise(true)
+  // always register a failure handler in order to avoid memory leaks
+  successfulPromise.catch((err) => {
+    throw err // won't be called
+  })
+
+  const res = await successfulPromise
+  console.log(res) // 42
+
+  failingPromise.catch((err) => {
+    throw err // execution will be interrupted here (2)
+  })
+
+  const res = await failingPromise // execution will be interrupted here (1)
+  console.log(res) // won't be called
+}
+
+main().catch(console.error.bind(console))
+```
+
 
 ### Code Example – using async/await to manage promises
 
