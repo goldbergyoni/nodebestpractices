@@ -40,6 +40,8 @@ process.on('uncaughtException', function (error) {
  From the blog James Nelson
  
  > Let’s test your understanding. Which of the following would you expect to print an error to the console?
+
+```javascript
 Promise.resolve(‘promised value’).then(function() {
 throw new Error(‘error’);
 });
@@ -51,8 +53,6 @@ throw new Error(‘error’);
 new Promise(function(resolve, reject) {
 throw new Error(‘error’);
 });
+```
 
-I don’t know about you, but my answer is that I’d expect all of them to print an error. However, the reality is that a number of modern JavaScript environments won’t print errors for any of them.The problem with being human is that if you can make a mistake, at some point you will. Keeping this in mind, it seems obvious that we should design things in such a way that mistakes hurt as little as possible, and that means handling errors by default, not discarding them
-Close GIST window Skip to toolbar
-About WordPress
-
+> I don’t know about you, but my answer is that I’d expect all of them to print an error. However, the reality is that a number of modern JavaScript environments won’t print errors for any of them.The problem with being human is that if you can make a mistake, at some point you will. Keeping this in mind, it seems obvious that we should design things in such a way that mistakes hurt as little as possible, and that means handling errors by default, not discarding them.
