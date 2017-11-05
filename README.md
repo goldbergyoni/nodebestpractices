@@ -81,7 +81,7 @@
 
 ## ![✔] 1.5 Use environment aware, secure and hirearchical config
 
-**TL;DR:** The perfect and flawless configuration setup must include (a) keys that can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are only a few packages that can help tick most of those boxes like [nconf](https://www.npmjs.com/package/nconf) and [config](https://www.npmjs.com/package/config)
+**TL;DR:** A perfect and flawless configuration setup must include (a) keys that can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are only a few packages that can help tick most of those boxes like [nconf](https://www.npmjs.com/package/nconf) and [config](https://www.npmjs.com/package/config)
 
 **Otherwise:** Failing to satisfy any of the config requirements will simply bog down the development team or devpos team. Probably both
 
