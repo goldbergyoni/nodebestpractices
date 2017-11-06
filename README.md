@@ -417,6 +417,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
 
+🔗 [**Read More: Choosing CI platform**](/sections/testingandquality/citools.md)
 
 <br/><br/>
 
