@@ -3,7 +3,7 @@
 
 ### One Paragraph Explainer
 
-Somewhere within your code, an error handler object is responsible for deciding how to proceed when an error comes in – if the error is trusted (i.e. operational error, see further explanation within best practice #3) then writing to log file might be enough. Things get hairy if the error is not familiar – this means that some component might be in a fault state and all future requests are subject to failure. For example, assuming a singleton, stateful token issuer service that threw an exception and lost its state – from now it might behave unexpectedly and cause all requests to fail. Under this scenario, kill the process and use a ‘Restarter tool’ (like Forever, PM2, etc) to start with a clean slate.
+Somewhere within your code, an error handler object is responsible for deciding how to proceed when an error is thrown – if the error is trusted (i.e. operational error, see further explanation within best practice #3) then writing to log file might be enough. Things get hairy if the error is not familiar – this means that some component might be in a faulty state and all future requests are subject to failure. For example, assuming a singleton, stateful token issuer service that threw an exception and lost its state – from now it might behave unexpectedly and cause all requests to fail. Under this scenario, kill the process and use a ‘Restarter tool’ (like Forever, PM2, etc) to start over with a clean slate.
 
 
 
@@ -19,7 +19,7 @@ process.on('uncaughtException', function(error) {
 });
  
  
-//centralized error handler encapsulates error-handling related logic 
+//centralized error handler encapsulates error-handling related logic
 function errorHandler(){
  this.handleError = function (error) {
  return logger.logError(err).then(sendMailToAdminIfCritical).then(saveInOpsQueueIfCritical).then(determineIfOperationalError);
@@ -34,7 +34,7 @@ function errorHandler(){
 
 
 ### Blog Quote: "The best way is to crash"
- FFrom the blog Joyent
+ From the blog Joyent
  
  > …The best way to recover from programmer errors is to crash immediately. You should run your programs using a restarter that will automatically restart the program in the event of a crash. With a restarter in place, crashing is the fastest way to restore reliable service in the face of a transient programmer error…  
 
