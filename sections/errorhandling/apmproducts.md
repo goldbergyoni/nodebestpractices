@@ -16,14 +16,14 @@ APM products constitues 3 major segments:
 
 1. Website or API monitoring – external services that constantly monitor uptime and performance via HTTP requests. Can be setup in few minutes. Following are few selected contenders: Pingdom, Uptime Robot, and New Relic
 
-2. Code instrumetation – products family which require to embed an agent within the application to benefit feature slow code detection, exceptions statistics, performance monitoring and many more. Following are few selected contenders: New Relic, App Dynamics
+2. Code instrumentation – products family which require to embed an agent within the application to benefit feature slow code detection, exceptions statistics, performance monitoring and many more. Following are few selected contenders: New Relic, App Dynamics
 
-3. Operational intelligence dashboard – these line of products are focused on fasciliatitating the ops team with metrics and curated content that helps to easily stay on top of application peroformance. This is usually involves aggregating multiple sources of information (application logs, DB logs, servers log, etc) and upfront dashboard design work. Following are few selected contenders: Datadog, Splunk    
+3. Operational intelligence dashboard – these line of products are focused on facilitating the ops team with metrics and curated content that helps to easily stay on top of application peroformance. This usually involves aggregating multiple sources of information (application logs, DB logs, servers log, etc) and upfront dashboard design work. Following are few selected contenders: Datadog, Splunk    
 
 
 
  ### Example: UpTimeRobot.Com – Website monitoring dashboard
 ![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/uptimerobot.jpg "Website monitoring dashboard")
 
- ### Example: AppDynamic.Com – end to end monitoring combined with code instrumentation
+ ### Example: AppDynamics.Com – end to end monitoring combined with code instrumentation
 ![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/app-dynamics-dashboard.png "end to end monitoring combined with code instrumentation")
