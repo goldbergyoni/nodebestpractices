@@ -1,0 +1,21 @@
+console.log('Starting');
+
+let x = 0;
+
+const doSomething = () => {
+    setTimeout(function() {
+        console.log('After timeout');
+        x++;
+        if(x < 1e10)
+            doSomething();
+     }, 0);
+     
+}
+
+setImmediate(()=>{
+    console.log('Immediate');
+})
+
+doSomething();
+
+console.log('Ending');

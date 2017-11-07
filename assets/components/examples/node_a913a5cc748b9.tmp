@@ -1,0 +1,19 @@
+console.log('Starting');
+
+
+
+const doSomething = () => {
+    setTimeout(function() {
+        console.log('After timeout');
+        doSomething();
+     }, 0);
+     
+}
+
+setImmediate(()=>{
+    console.log('Immediate');
+})
+
+doSomething();
+
+console.log('Ending');
