@@ -1,0 +1,25 @@
+<html>
+
+<head></head>
+
+<Script>
+    function blockUI() {
+        console.log(`Starting`);
+        for (i = 0; i < 30; i++) {
+            console.log(`Running the ${i}`);
+            var request = new XMLHttpRequest();
+            request.open('GET', 'https://jsonplaceholder.typicode.com', false);
+            request.send(null);
+        }
+    }
+</Script>
+
+<body>
+    <h1>Can pure JS without external APIs decouple the UI thread? </h1>
+    <br/>
+    <button onclick="blockUI()">Start Doing Many Network Calls</button>
+    <br/><br/>
+    <button>Am I Responsive?</button>
+</body>
+
+</html>

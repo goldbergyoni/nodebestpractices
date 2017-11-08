@@ -2,20 +2,18 @@ console.log('Starting');
 
 const startingDate = new Date();
 setTimeout(function() {
-    console.log(`After 50ms timeout, it took ${new Date() - startingDate}`) 
-}, 50);
+   console.log(`After timeout, it took ${new Date() - startingDate}`) 
+}, 1)
 
-setTimeout(function() {
-    console.log(`After 20ms timeout, it took ${new Date() - startingDate}`) 
-}, 20);
+setImmediate(()=>{console.log("immediate")})
+
+function doSomething(){
+    process.nextTick(()=>{console.log('tick');doSomething()})
+}
+
+doSomething();
 
 console.log('Starting sync task');
-while(new Date() - startingDate < 8000){
-
-}
-console.log('Ended the sync task');
-
-
 
 
 
