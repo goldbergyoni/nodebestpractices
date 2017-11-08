@@ -697,7 +697,7 @@ The usual expected input should look like
     
 🔗 [**Read More: Defending against query selector injection attack**](https://thecodebarbarian.wordpress.com/2014/09/04/defending-against-query-selector-injection-attacks/)
 
-<br/><br/><br/>
+<br/><br/>
 
 ## Our contributors are working on this section. Would you like to join?
 
