@@ -284,7 +284,7 @@
 ### Code Example ###
 ```javascript
   // for class name we use UpperCamelCase
-  class SomeClassExample () { 
+  class SomeClassExample { 
     
     // for const name we use UPPERCASE
     const CONFIG = {
