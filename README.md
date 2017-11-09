@@ -32,7 +32,7 @@
 3. [Code Style Practices (12) ](#3-code-style-practices)
 4. [Testing And Overall Quality Practices (8) ](#4-testing-and-overall-quality-practices)
 5. [Going To Production Practices (16) ](#5-going-to-production-practices)
-6. Security Practices (coming soon)
+6. [Security Practices (1) ](#6-security-practices)
 7. Performance Practices (coming soon)
 
 
@@ -654,7 +654,50 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `Security Practices`
+# `6. Security Practices`
+
+## ![✔] 6.1. Defend against query selector injection attack
+
+**TL;DR:** Not validating the input data and and doing [mongoose](mongoosejs.com/docs/index.html) queries can be dangerous. The adviced method is to use a framework like [ValidateJS](https://validatejs.org/), but casting the user input manually should do the job in most cases. 
+
+    // right
+    const user = String(req.body.username);
+    
+    // wrong
+    const user = req.body.username;
+
+
+**Otherwise:** Let's look at the following authentication code, which is expected to return an user on match:
+
+    app.post("/loginUser", async function(req, res) {
+        const user = User.findOne({
+            user: req.body.user,
+            password: req.body.password,
+        });
+
+        if (!user) {
+            throw new Error("Invalid credentials");
+        }
+
+        res.json(user);
+    });
+
+The usual expected input should look like
+
+    {
+        "user": "admin",
+        "password": "damnsecret"
+    }
+    
+    # but if the attacker modify the request, he'll be able to login:
+    {
+        "user": "admin",
+        "password": { "$ne": "notexistingpassword" }
+    }
+    
+🔗 [**Read More: Defending against query selector injection attack**](https://thecodebarbarian.wordpress.com/2014/09/04/defending-against-query-selector-injection-attacks/)
+
+<br/><br/>
 
 ## Our contributors are working on this section. Would you like to join?
 
