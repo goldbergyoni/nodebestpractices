@@ -3,8 +3,8 @@
 
 ### One Paragraph Explainer
 
-We all loovve console.log but obviously a reputable and persisted Logger like Winston, Bunyan or L4JS is mandatory for serious projects. A set of practices and tools will help to reason about errors much quicker – (1) log frequently using different levels (debug, info, error), (2) when logging, provide contextual information as JSON objects, see example below. (3) watch and filter logs using a log querying API (built-in in most loggers) or a log viewer software 
-(4) Expose and curate log statement for the operation team using operational intelligence tool like Splunk
+We all love console.log but obviously a reputable and persisted Logger like Winston, Bunyan or L4JS is mandatory for serious projects. A set of practices and tools will help to reason about errors much quicker – (1) log frequently using different levels (debug, info, error), (2) when logging, provide contextual information as JSON objects, see example below. (3) watch and filter logs using a log querying API (built-in in most loggers) or a log viewer software 
+(4) Expose and curate log statements for the operation team using operational intelligence tools like Splunk
 
 
 
