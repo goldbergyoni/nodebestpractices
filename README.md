@@ -668,7 +668,7 @@ All statements above will return false if used with `===`
 
 # Contributors
 ## `Yoni Goldberg`
-Developer & consultant, Backend expert, JavaScript enthusiast, focused on Node.JS. Many of the bullets was first published on his blog post [http://www.goldbergyoni.com](http://www.goldbergyoni.com)
+Independent Node.JS consultant who works with customers at USA, Europe and Israel on building large-scale scalable Node applications. Many of the best practices above were first published on his blog post at [http://www.goldbergyoni.com](http://www.goldbergyoni.com). Reach Yoni at @goldbergyoni or me@goldbergyoni.com
 
 ## `Ido Richter`
 👨‍💻 Software engineer, 🌐 web developer, 🤖 emojis enthusiast.
