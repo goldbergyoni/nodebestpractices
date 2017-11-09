@@ -5,7 +5,7 @@
 
 ### One Paragraph Explainer
 
-Since anyway you print out log statements and obviously in a need of some interface that wraps up production information where you can trace errors and core metrics (e.g. how many errors happen every hour and which is your slowest API end-point) why not invest some moderate effort in a robust logging framework that will tick all boxes? Achieving that requires a thoughtful decision on three steps:
+Since you print out log statements anyway and you're obviously in a need of some interface that wraps up production information where you can trace errors and core metrics (e.g. how many errors happen every hour and which is your slowest API end-point) why not invest some moderate effort in a robust logging framework that will tick all boxes? Achieving that requires a thoughtful decision on three steps:
 
 **1. smart logging** – at the bare minimum you need to use a reputable logging library like [Winston](https://github.com/winstonjs/winston), [Bunyan](https://github.com/trentm/node-bunyan) and write meaningful information at each transaction start and end. Consider to also format log statements as JSON and provide all the contextual properties (e.g. user id, operation type, etc) so that the operations team can act on those fields. Include also a unique transaction ID at each log line, for more information refer to the bullet below “Write transaction-id to log”. One last point to consider is also including an agent that logs the system resource like memory and CPU like Elastic Beat.
 
