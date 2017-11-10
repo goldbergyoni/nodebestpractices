@@ -246,8 +246,8 @@
     // code block
   }
 
-  //Avoid
-  function someFunction
+  // Avoid
+  function someFunction()
   {
     // code block
   }
