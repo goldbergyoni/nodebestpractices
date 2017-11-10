@@ -14,7 +14,7 @@ doWork()
  .then(doWork)
  .then(doOtherWork)
  .then((result) => doWork)
- .catch((error) => throw error)
+ .catch((error) => {throw error;})
  .then(verify);
 ```
 
