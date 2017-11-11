@@ -22,8 +22,8 @@ var memberSchema = Joi.object().keys({
  
 function addNewMember(newMember)
 {
- //assertions comes first
- if(Joi.validate(newMember), memberSchema, (err, value) => throw Error("Invalid input));
+ //assertions come first
+ Joi.assert(newMember, memberSchema); //throws if validation fails
  //other logic here
 }
 
