@@ -676,3 +676,6 @@ Independent Node.JS consultant who works with customers at USA, Europe and Israe
 ## `Refael Ackermann` [@refack](https://github.com/refack) &lt;refack@gmail.com&gt; (he/him)
 Node.js Core Collaborator, been noding since 0.4, and have noded in multiple production sites. Founded `node4good` home of [`lodash-contrib`](https://github.com/node4good/lodash-contrib), [`formage`](https://github.com/node4good/formage), and [`asynctrace`](https://github.com/node4good/asynctrace). 
 `refack` on freenode, Twitter, GitHub, GMail, and many other platforms. DMs are open, happy to help.
+
+## `Bruno Scheufler` 
+💻 full-stack web developer and Node.js enthusiast.
