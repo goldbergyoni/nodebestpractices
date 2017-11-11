@@ -650,6 +650,19 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Long deployments -> production down time & human-related error -> team unconfident and in making deployment -> less deployments and features
 
+<br/><br/>
+
+
+## ![✔] 5.17. Expose a healthcheck endpoint for dependent systems
+
+**TL;DR:** While a simple ping endpoint can tell you if an application is running, it can be more difficult if it is able to handle requests. All applications in a distributed system should expose a healthcheck endpoint that returns the overall health of the system. Such an endpoint can perform a number of different checks, such as database access, available disk space and more. A monitoring service can then periodically query that endpoint and build an overall view of the health of the system.
+
+**Otherwise:** When a distributed system grows, it can become difficult to get an accurate picture of the overall system health.
+
+
+🔗 [**Read More: Expose a healthcheck endpoint for dependent systems**](/sections/production/healthcheckendpoint.md)
+
+
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
