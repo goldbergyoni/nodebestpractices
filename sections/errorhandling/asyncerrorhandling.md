@@ -6,7 +6,68 @@
 Callbacks don’t scale as they are not familiar to most programmers, force to check errors all over, deal with nasty code nesting and make it difficult to reason about the code flow. Promise libraries like BlueBird, async, and Q pack a standard code style using RETURN and THROW to control the program flow. Specifically, they support the favorite try-catch error handling style which allows freeing the main code path from dealing with errors in every function
 
 
-### Code Example – using promises to catch errors
+### Code Example - simple promise
+
+```javascript
+function iPromise(shouldThrow) {
+  return new Promise((resolve, reject) => {
+    if (shouldThrow) {
+      return reject(new Error('ERROR'))
+    }
+
+    resolve(42)
+  })
+}
+
+const successfulPromise = iPromise(false)
+const failingPromise = iPromise(true)
+
+// register success handler
+successfulPromise.then((res) => {
+  console.log(res) // 42
+})
+
+successfulPromise.catch((err) => {
+  console.error(err) // WON'T BE CALLED
+})
+
+failingPromise.then((res) => {
+  console.log(res) // WON'T BE CALLED
+})
+
+// register failure handler
+failingPromise.catch((err) => {
+  console.error(err) // ERROR
+})
+
+
+```
+
+### Code Example - chaining promises
+
+```javascript
+// You can also return a new promise in the success handler, like the following example
+function iPromise() {
+  return new Promise((resolve, reject) => {
+    resolve(42)
+  })
+}
+
+const promise = iPromise()
+
+// register success handler
+const innerPromise = promise.then((res) => {
+  console.log(res) // 42
+  return Promise.resolve(res + 8) // assigned to innerPromise
+}).catch(console.error.bind(console))
+
+innerPromise.then((res) => {
+  console.log(res) // 50
+}).catch(console.error.bind(console))
+
+```
+
+### Code Example – use promise chaining to save lines
 
 
 ```javascript
@@ -15,7 +76,125 @@ doWork()
  .then(doOtherWork)
  .then((result) => doWork)
  .catch((error) => throw error)
- .then(verify);
+ .then(verify)
+ .then((res) => {
+   // res -> final result
+ });
+```
+
+### Code Example - simple async function
+```javascript
+// async function always wrap the returned value in a promise
+async function iPromise(shouldThrow) {
+  if (shouldThrow) {
+    throw new Error('ERROR')
+  }
+
+  return 42
+}
+
+const successfulPromise = iPromise(false)
+const failingPromise = iPromise(true)
+
+// register success handler
+successfulPromise.then((res) => {
+  console.log(res) // 42
+})
+
+successfulPromise.catch((err) => {
+  console.error(err) // WON'T BE CALLED
+})
+
+failingPromise.then((res) => {
+  console.log(res) // WON'T BE CALLED
+})
+
+// register failure handler
+failingPromise.catch((err) => {
+  console.error(err) // ERROR
+})
+```
+
+### Code Example - simple async/await
+```javascript
+function iPromise(shouldThrow) {
+  return new Promise((resolve, reject) => {
+    if (shouldThrow) {
+      return reject(new Error('ERROR'))
+    }
+
+    resolve(42)
+  })
+}
+
+// we can use await only inside an async function
+async function main() {
+  const successfulPromise = iPromise(false)
+  const failingPromise = iPromise(true)
+  // always register a failure handler in order to avoid memory leaks
+  successfulPromise.catch((err) => {
+    throw err // won't be called
+  })
+
+  const res = await successfulPromise
+  console.log(res) // 42
+
+  failingPromise.catch((err) => {
+    throw err // execution will be interrupted here (2)
+  })
+
+  const res = await failingPromise // execution will be interrupted here (1)
+  console.log(res) // won't be called
+}
+
+main().catch(console.error.bind(console))
+```
+
+
+### Code Example – using async/await to manage promises
+
+
+```javascript
+async function main() {
+  const res = await doWork()
+  .then(doWork)
+  .then(doOtherWork)
+  .then((result) => doWork(result))
+  .catch((error) => { throw error })
+
+  const res1 = await verify(res).catch((error) => { throw error })
+  // res1 -> final result
+}
+
+main().catch(console.error.bind(console))
+```
+
+### Code Example – using async/await w/ helpers to avoid increasing nesting
+
+
+```javascript
+import to from 'await-to-ts' // see https://github.com/phra/await-to-ts
+
+async function main() {
+  const [err, res] = await to(doWork()
+    .then(doWork)
+    .then(doOtherWork)
+    .then((result) => doWork(result)))
+
+  if (err) {
+    // manage error or simply throw it
+    throw err
+  }
+
+  const [err1, res1] = await to(verify(res))
+  if (err1) {
+    // manage error or simply throw it
+    throw err
+  }
+  // res1 -> final result
+}
+
+main().catch(console.error.bind(console))
 ```
 
 ### Anti pattern code example – callback style error handling
