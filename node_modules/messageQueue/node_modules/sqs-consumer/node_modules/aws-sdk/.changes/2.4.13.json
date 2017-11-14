@@ -1,0 +1,27 @@
+[
+    {
+        "type": "feature",
+        "category": "ApplicationAutoScaling",
+        "description": "CORS support added. Now a default service in the browser build of the JavaScript SDK."
+    },
+    {
+        "type": "feature",
+        "category": "AutoScaling",
+        "description": "CORS support added. Now a default service in the browser build of the JavaScript SDK."
+    },
+    {
+        "type": "feature",
+        "category": "CodeDeploy",
+        "description": "CORS support added. Now a default service in the browser build of the JavaScript SDK."
+    },
+    {
+        "type": "feature",
+        "category": "GameLift",
+        "description": "Provides a new Search API for GameLift, which allows game developers to retrieve filtered and sorted lists of their GameSessions."
+    },
+    {
+        "type": "feature",
+        "category": "RDS",
+        "description": "You can now use the AWS Management Console to easily move your DB instance to a different VPC, or to a different subnet group in the same VPC. For more information, see Updating the VPC for a DB Instance. If your DB instance is not in a VPC, you can now use the AWS Management Console to easily move your DB instance into a VPC. You can now copy the source files from a MySQL database to an Amazon Simple Storage Service (Amazon S3) bucket, and then restore an Amazon Aurora DB cluster from those files. This option can be considerably faster than migrating data using mysqldump."
+    }
+]

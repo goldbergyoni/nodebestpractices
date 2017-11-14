@@ -1,0 +1,11 @@
+var ru = {};
+module['exports'] = ru;
+ru.title = "Russian";
+ru.separator = " и ";
+ru.address = require("./address");
+ru.internet = require("./internet");
+ru.name = require("./name");
+ru.phone_number = require("./phone_number");
+ru.commerce = require("./commerce");
+ru.company = require("./company");
+ru.date = require("./date");

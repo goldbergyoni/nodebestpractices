@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "Lambda",
+        "description": "The Lambda Invoke API will now throw new exception InvalidRuntimeException (status code 502) for invokes with deprecated runtimes."
+    }
+]

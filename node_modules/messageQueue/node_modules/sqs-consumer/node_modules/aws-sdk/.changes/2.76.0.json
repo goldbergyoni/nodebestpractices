@@ -1,0 +1,27 @@
+[
+    {
+        "type": "feature",
+        "category": "CodePipeline",
+        "description": "A new API, ListPipelineExecutions, enables you to retrieve summary information about the most recent executions in a pipeline, including pipeline execution ID, status, start time, and last updated time. You can request information for a maximum of 100 executions. Pipeline execution data is available for the most recent 12 months of activity."
+    },
+    {
+        "type": "feature",
+        "category": "DMS",
+        "description": "Added tagging for DMS certificates."
+    },
+    {
+        "type": "feature",
+        "category": "ELB",
+        "description": "Add retry error state to InstanceInService waiter for ElasticLoadBalancer"
+    },
+    {
+        "type": "feature",
+        "category": "Lightsail",
+        "description": "This release adds a new nextPageToken property to the result of the GetOperationsForResource API. Developers can now get the next set of items in a list by making subsequent calls to GetOperationsForResource API with the token from the previous call. This release also deprecates the nextPageCount property, which previously returned null (use the nextPageToken property instead). This release also deprecates the customImageName property on the CreateInstancesRequest class, which was previously ignored by the API."
+    },
+    {
+        "type": "feature",
+        "category": "Route53",
+        "description": "This release reintroduces the HealthCheckInUse exception."
+    }
+]

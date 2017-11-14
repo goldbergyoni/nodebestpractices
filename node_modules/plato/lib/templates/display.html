@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Plato - JavaScript Introspection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script>
+    var __options = <%= JSON.stringify(options) %>
+  </script>
+
+  <link href="assets/css/vendor/bootstrap.css" rel="stylesheet">
+  <link href="assets/css/vendor/font-awesome.css" rel="stylesheet">
+  <link href="assets/css/vendor/morris.css" rel="stylesheet">
+  <link href="assets/css/plato.css" rel="stylesheet">
+  <link href="assets/css/plato-display.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+    <h1><%= options.title || 'JavaScript Source Analysis' %></h1>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="reportBlock lineCount">
+                <div class="reportContent">
+                    <small class="chart-label">Total / Average Lines</small>
+                    <h1><%= report.summary.total.sloc %> / <%= report.summary.average.sloc %></h1>
+                </div>
+                <div id="chart_historical_sloc" class="chart js-chart"></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="reportBlock maintainability">
+                <div class="reportContent">
+                    <small class="chart-label">Average Maintainability</small>
+                    <h1><%= report.summary.average.maintainability %></h1>
+                </div>
+                <div id="chart_historical_maint" class="chart js-chart"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="reportBlock maintainabilityList">
+                <h2 class="reportTitle">Worst Maintainability Scores</h2>
+                <ul class="list-unstyled">
+<% _.each(_.take(_.sortBy(report.reports, function (report) { return report.complexity.maintainability; }), 5), function(report, i) { %>
+                    <li>
+                        <strong><%= report.complexity.maintainability.toFixed(0) %> score</strong>
+                        <small><%= report.info.fileShort %></small>
+                    </li>
+<% }); %>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="reportBlock locList">
+                <h2 class="reportTitle">Largest Files</h2>
+                <ul class="list-unstyled">
+<% _.each(_.take(_.sortBy(report.reports, function (report) { return -1 * report.complexity.methodAggregate.sloc.physical }), 5), function(report, i) { %>
+                    <li>
+                        <strong><%= report.complexity.methodAggregate.sloc.physical %> lines</strong>
+                        <small><%= report.info.fileShort %></small>
+                    </li>
+<% }); %>
+                </ul>
+            </div>
+        </div>
+        <% if (report.summary.total.jshint) { %>
+        <div class="col-md-4">
+            <div class="reportBlock lintList">
+                <h2 class="reportTitle">Lint Warnings</h2>
+                <ul class="list-unstyled">
+<% _.each(_.take(_.sortBy(report.reports, function (report) { return -1 * report.jshint.messages }), 5), function(report, i) { %>
+                    <li>
+                        <strong><%= report.jshint.messages %> lint errors</strong>
+                        <small><%= report.info.fileShort %></small>
+                   </li>
+<% }); %>
+                </ul>
+            </div>
+        </div>
+        <% } %>
+    </div>
+</div>
+
+<script type="text/javascript" src="assets/scripts/bundles/core-bundle.js"></script>
+<script type="text/javascript" src="report.js"></script>
+<script type="text/javascript" src="report.history.js"></script>
+<script type="text/javascript" src="assets/scripts/plato-display.js"></script>
+
+</body>
+</html>

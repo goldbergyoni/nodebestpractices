@@ -1,0 +1,35 @@
+language: node_js
+sudo: false
+dist: trusty
+before_script:
+  - node script/create-test-tables.js pg://postgres@127.0.0.1:5432/postgres
+env:
+  - CC=clang CXX=clang++ npm_config_clang=1 PGUSER=postgres PGDATABASE=postgres
+
+matrix:
+  include:
+    - node_js: "lts/argon"
+      addons:
+        postgresql: "9.6"
+    - node_js: "lts/boron"
+      addons:
+        postgresql: "9.1"
+      dist: precise
+    - node_js: "lts/boron"
+      addons:
+        postgresql: "9.2"
+    - node_js: "lts/boron"
+      addons:
+        postgresql: "9.3"
+    - node_js: "lts/boron"
+      addons:
+        postgresql: "9.4"
+    - node_js: "lts/boron"
+      addons:
+        postgresql: "9.5"
+    - node_js: "lts/boron"
+      addons:
+        postgresql: "9.6"
+    - node_js: "8"
+      addons:
+        postgresql: "9.6"

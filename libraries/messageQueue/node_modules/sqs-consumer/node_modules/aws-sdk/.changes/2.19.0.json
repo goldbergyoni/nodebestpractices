@@ -1,0 +1,17 @@
+[
+    {
+        "type": "bugfix",
+        "category": "XHR",
+        "description": "Fixes an issue where the callback provided to an operation would not fire if a request was aborted after being sent. The bug only affected the browser SDK."
+    },
+    {
+        "type": "feature",
+        "category": "S3",
+        "description": "Added an instance method to S3 clients to create POST form data with presigned upload policies"
+    },
+    {
+        "type": "feature",
+        "category": "DynamoDB",
+        "description": "Expose DynamoDB DocumentClient marshaller/unmarshaller as AWS.DynamoDB.Converter"
+    }
+]

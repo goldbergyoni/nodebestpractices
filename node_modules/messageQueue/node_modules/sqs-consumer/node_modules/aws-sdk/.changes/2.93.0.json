@@ -1,0 +1,17 @@
+[
+    {
+        "type": "feature",
+        "category": "DynamoDB",
+        "description": "Add a `wrapNumbers` option to the Document Client to direct the client not to convert number attributes to JavaScript numbers."
+    },
+    {
+        "type": "feature",
+        "category": "Inspector",
+        "description": "Inspector's StopAssessmentRun API has been updated with a new input option - stopAction. This request parameter can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value, and the previous behavior) stops the AWS agent data collection and begins the results evaluation for findings generation based on the data collected so far. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated."
+    },
+    {
+        "type": "feature",
+        "category": "SSM",
+        "description": "Adds a SendAutomationSignal API to SSM Service. This API is used to send a signal to an automation execution to change the current behavior or status of the execution."
+    }
+]

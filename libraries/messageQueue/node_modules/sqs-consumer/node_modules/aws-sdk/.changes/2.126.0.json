@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "EC2",
+        "description": "This release includes service updates to AWS VPN."
+    },
+    {
+        "type": "feature",
+        "category": "SSM",
+        "description": "EC2 Systems Manager support for tagging SSM Documents. Also support for tag-based permissions to restrict access to SSM Documents based on these tags."
+    }
+]

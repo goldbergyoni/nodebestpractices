@@ -1,0 +1,7 @@
+{
+    "extends": "peerigon/es5tests",
+    "env": {
+        "node": true
+    },
+    "root": true
+}

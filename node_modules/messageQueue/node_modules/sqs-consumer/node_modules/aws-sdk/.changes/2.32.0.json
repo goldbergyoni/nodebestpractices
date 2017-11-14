@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "S3",
+        "description": "Adds a means of specifying tags to apply to objects of any size uploaded with AWS.S3.ManagedUploader"
+    },
+    {
+        "type": "feature",
+        "category": "ApplicationAutoScaling",
+        "description": "Application AutoScaling is launching support for a new target resource (AppStream 2.0 Fleets) as a scalable target."
+    }
+]

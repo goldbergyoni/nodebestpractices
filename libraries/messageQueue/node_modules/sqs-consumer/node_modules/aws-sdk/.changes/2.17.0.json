@@ -1,0 +1,12 @@
+[
+    {
+        "type": "bugfix",
+        "category": "TypeScript",
+        "description": "Enable the configuration credentials to be nulled so that the global config is not used."
+    },
+    {
+        "type": "feature",
+        "category": "EC2",
+        "description": "Added the billingProduct parameter to the RegisterImage API."
+    }
+]

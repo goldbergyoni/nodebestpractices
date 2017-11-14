@@ -1,0 +1,40 @@
+{
+  "name": "async",
+  "description": "Higher-order functions and common patterns for asynchronous code",
+  "version": "1.0.0",
+  "main": "lib/async.js",
+  "keywords": [
+    "async",
+    "callback",
+    "utility",
+    "module"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caolan/async.git"
+  },
+  "devDependencies": {
+    "benchmark": "~1.0.0",
+    "jshint": "~2.7.0",
+    "lodash": ">=2.4.1",
+    "mkdirp": "~0.5.1",
+    "nodeunit": ">0.0.0",
+    "uglify-js": "1.2.x"
+  },
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "authors": [
+    "Caolan McMahon"
+  ]
+}

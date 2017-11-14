@@ -1,0 +1,29 @@
+{
+  "name": "ipaddr.js",
+  "version": "1.5.2",
+  "homepage": "https://github.com/whitequark/ipaddr.js",
+  "authors": [
+    "whitequark <whitequark@whitequark.org>"
+  ],
+  "description": "IP address manipulation library in JavaScript (CoffeeScript, actually)",
+  "main": "lib/ipaddr.js",
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "javscript",
+    "ip",
+    "address",
+    "ipv4",
+    "ipv6"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

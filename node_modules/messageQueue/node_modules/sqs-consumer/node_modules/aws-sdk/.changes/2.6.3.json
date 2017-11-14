@@ -1,0 +1,17 @@
+[
+    {
+        "type": "bugfix",
+        "category": "Node_Https",
+        "description": "Fixes an issue caused when https.globalAgent is set to false."
+    },
+    {
+        "type": "feature",
+        "category": "Iot",
+        "description": "Updates registerCertificate operation, and allows users to specify cannedAcl for S3 action."
+    },
+    {
+        "type": "feature",
+        "category": "RDS",
+        "description": "Updates describeDbCluster operation to allow specifying a ReaderEndpoint for accessing cluster readers."
+    }
+]

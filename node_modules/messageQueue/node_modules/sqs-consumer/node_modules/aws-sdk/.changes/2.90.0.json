@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "CloudDirectory",
+        "description": "Cloud Directory adds support for additional batch operations."
+    },
+    {
+        "type": "feature",
+        "category": "CloudFormation",
+        "description": "AWS CloudFormation StackSets enables you to manage stacks across multiple accounts and regions."
+    }
+]

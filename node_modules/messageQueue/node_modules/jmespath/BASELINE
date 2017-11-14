@@ -1,0 +1,15 @@
+master:
+
+Mean time: 0.002530msec Parser#single_expr x 395,306 ops/sec ±1.89% (79 runs sampled)
+Mean time: 0.005492msec Parser#single_subexpr x 182,084 ops/sec ±1.99% (84 runs sampled)
+Mean time: 0.126803msec Parser#deeply_nested_50 x 7,886 ops/sec ±2.44% (80 runs sampled)
+Mean time: 0.166790msec Parser#deeply_nested_50_index x 5,996 ops/sec ±5.08% (75 runs sampled)
+Mean time: 0.008347msec Parser#basic_list_projection x 119,798 ops/sec ±2.33% (79 runs sampled)
+
+
+
+Mean time: 0.002779msec Parser#single_expr x 359,839 ops/sec ±4.15% (80 runs sampled)
+Mean time: 0.005235msec Parser#single_subexpr x 191,026 ops/sec ±2.62% (78 runs sampled)
+Mean time: 0.104357msec Parser#deeply_nested_50 x 9,582 ops/sec ±4.34% (72 runs sampled)
+Mean time: 0.178837msec Parser#deeply_nested_50_index x 5,592 ops/sec ±3.35% (77 runs sampled)
+Mean time: 0.009614msec Parser#basic_list_projection x 104,012 ops/sec ±2.97% (79 runs sampled)

@@ -1,5 +1,0 @@
-function doSomething(){
-    process.nextTick(()=>{doSomething()})
-}
-
-doSomething();

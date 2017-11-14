@@ -1,0 +1,12 @@
+[
+    {
+        "type": "bugfix",
+        "category": "ReactNative",
+        "description": "Requests will always have a Content-Type header if they also have a body. Works around an issue caused by React Native's Android XMLHttpRequest implementation that requires the Content-Type header to be present if there is a request body."
+    },
+    {
+        "type": "feature",
+        "category": "ResourceGroupsTaggingAPI",
+        "description": "You can now specify the number of resources returned per page in GetResources operation, as an optional parameter, to easily manage the list of resources returned by your queries."
+    }
+]

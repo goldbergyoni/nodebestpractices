@@ -1,0 +1,32 @@
+[
+    {
+        "type": "bugfix",
+        "category": "ReactNative",
+        "description": "Fixes issue where binary responses were empty in iOS (e.g. s3.getObject)"
+    },
+    {
+        "type": "feature",
+        "category": "ELB",
+        "description": "Add a new API to allow customers to describe their account limits, such as load balancer limit, target group limit etc."
+    },
+    {
+        "type": "feature",
+        "category": "ELBv2",
+        "description": "Add a new API to allow customers to describe their account limits, such as load balancer limit, target group limit etc."
+    },
+    {
+        "type": "feature",
+        "category": "LexModelBuildingService",
+        "description": "Releasing new DeleteBotVersion, DeleteIntentVersion and DeleteSlotTypeVersion APIs."
+    },
+    {
+        "type": "feature",
+        "category": "Organizations",
+        "description": "AWS Organizations APIs that return an Account object now include the email address associated with the account’s root user."
+    },
+    {
+        "type": "bugfix",
+        "category": "Request",
+        "description": "Updates node.js request handling to obey socket read timeouts after response headers have been received. Previously timeouts were being ignored once headers were received, sometimes causing connections to hang."
+    }
+]

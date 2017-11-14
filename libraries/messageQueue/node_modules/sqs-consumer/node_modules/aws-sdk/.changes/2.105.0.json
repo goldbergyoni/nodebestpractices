@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "ConfigService",
+        "description": "Increased the internal size limit of resourceId"
+    },
+    {
+        "type": "feature",
+        "category": "EC2",
+        "description": "Provides capability to add secondary CIDR blocks to a VPC."
+    }
+]

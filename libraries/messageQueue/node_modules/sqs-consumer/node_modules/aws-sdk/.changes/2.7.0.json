@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "TypeScript",
+        "description": "Adds typescript definition files to the SDK."
+    },
+    {
+        "type": "feature",
+        "category": "CloudWatchLogs",
+        "description": "Amazon CloudWatch Metrics to Logs is a capability that helps pivot from your logs-extracted metrics directly to the corresponding logs."
+    }
+]

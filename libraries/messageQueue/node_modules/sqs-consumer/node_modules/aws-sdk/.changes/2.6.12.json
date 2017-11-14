@@ -1,0 +1,22 @@
+[
+    {
+        "type": "feature",
+        "category": "CredentialProviderChain",
+        "description": "Adds promise support for the `resolve` method on the AWS.CredentialProviderChain class. Corresponding promise method is called `resolvePromise`."
+    },
+    {
+        "type": "feature",
+        "category": "Credentials",
+        "description": "Adds promise support for the `get` and `refresh` methods of the AWS.Credentials class. Corresponding promise methods are called `getPromise` and `refreshPromise`."
+    },
+    {
+        "type": "feature",
+        "category": "ManagedUpload",
+        "description": "Adds promise support for S3.ManagedUpload. Calling `s3.upload(params).promise()` will return a promise."
+    },
+    {
+        "type": "feature",
+        "category": "SMS",
+        "description": "AWS Server Migration Service (SMS) is an agentless service which makes it easier and faster for you to migrate thousands of on-premises workloads to AWS. AWS SMS allows you to automate, schedule, and track incremental replications of live server volumes, making it easier for you to coordinate large-scale server migrations."
+    }
+]

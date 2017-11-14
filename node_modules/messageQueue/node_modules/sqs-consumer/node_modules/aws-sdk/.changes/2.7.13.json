@@ -1,0 +1,17 @@
+[
+    {
+        "type": "feature",
+        "category": "CloudFront",
+        "description": " Add lambda function associations to cache behaviors."
+    },
+    {
+        "type": "feature",
+        "category": "RDS",
+        "description": "Add cluster create data to DBCluster APIs."
+    },
+    {
+        "type": "feature",
+        "category": "WAFRegional",
+        "description": "With this new feature, customers can use AWS WAF directly on Application Load Balancers in a VPC within available regions to protect their websites and web services from malicious attacks such as SQL injection, Cross Site Scripting, bad bots, etc."
+    }
+]

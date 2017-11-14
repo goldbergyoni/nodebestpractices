@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "KMS",
+        "description": "This release of AWS Key Management Service introduces the ability to tag keys. Tagging keys can help you organize your keys and track your KMS costs in the cost allocation report. This release also increases the maximum length of a key ID to accommodate ARNs that include a long key alias."
+    }
+]

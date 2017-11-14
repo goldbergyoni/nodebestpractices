@@ -1,0 +1,13 @@
+{
+  "name": "DBAccessServices",
+  "version": "0.0.6",
+  "private": true,
+  "main": "./index",
+  "dependencies": {
+    "join-js": "0.4.1",
+    "knex": "0.13.0",
+    "pg-pool": "2.0.3",
+    "pg": "7.4.0",
+    "configurationManager": "*"
+  }
+}

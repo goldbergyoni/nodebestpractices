@@ -1,0 +1,10 @@
+language: node_js
+
+matrix:
+  include:
+    - node_js: "4"
+      addons:
+        postgresql: "9.1"
+    - node_js: "6"
+      addons:
+        postgresql: "9.4"

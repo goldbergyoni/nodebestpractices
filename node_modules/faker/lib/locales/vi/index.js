@@ -1,0 +1,10 @@
+var vi = {};
+module['exports'] = vi;
+vi.title = "Vietnamese";
+vi.address = require("./address");
+vi.internet = require("./internet");
+vi.phone_number = require("./phone_number");
+vi.cell_phone = require("./cell_phone");
+vi.name = require("./name");
+vi.company = require("./company");
+vi.lorem = require("./lorem");

@@ -1,0 +1,35 @@
+#!/usr/bin/env node
+
+var util = require('./util');
+
+var input = process.argv[2];
+var version;
+
+switch (input) {
+	case 'major':
+		version = util.bumpMajor();
+		break;
+	case 'minor':
+		version = util.bumpMinor();
+		break;
+	case 'patch':
+	case undefined:
+		version = util.bumpPatch();
+		break;
+	default:
+		version = util.checkAndNormalizeVersion(input);
+}
+
+var nextReleaseFiles = util.listNextReleaseFiles();
+
+var versionJSON = nextReleaseFiles.reduce(function(changes, filepath) {
+	return changes.concat(util.readChangesFromJSON(filepath));
+}, []);
+
+util.writeToVersionJSON(version, versionJSON);
+
+util.clearNextReleaseDir();
+
+util.addVersionJSONToChangelog(version, versionJSON);
+
+util.writeToChangelog();

@@ -1,0 +1,17 @@
+[
+    {
+        "type": "bugfix",
+        "category": "JSON",
+        "description": "Fixes issue caused when trying to unmarshall null binary shapes."
+    },
+    {
+        "type": "bugfix",
+        "category": "TypeScript",
+        "description": "Add `credentialProvider` as an optional parameter of `ConfigurationOptions`."
+    },
+    {
+        "type": "feature",
+        "category": "LexRuntime",
+        "description": "Amazon Lex is a service for building conversational interactions into any application using voice or text."
+    }
+]

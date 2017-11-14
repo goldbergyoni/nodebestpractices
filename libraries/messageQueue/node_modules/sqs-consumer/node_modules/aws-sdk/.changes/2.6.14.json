@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "SES",
+        "description": "Amazon Simple Email Service (Amazon SES) now enables you to track your bounce, complaint, delivery, sent, and rejected email metrics with fine-grained granularity."
+    }
+]

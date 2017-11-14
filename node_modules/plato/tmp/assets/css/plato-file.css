@@ -1,0 +1,88 @@
+.historical .chart {
+  height: 200px;
+}
+
+.CodeMirror {
+  height: auto;
+}
+
+.CodeMirror-scroll {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.CodeMirror-lines {
+  cursor:default;
+}
+
+.plato-mark {
+  background-color:rgb(212, 250, 236);
+  border: 1px dashed red;
+  border-width:1px 0 1px 0;
+  cursor:pointer;
+}
+
+.plato-mark.focus {
+  background-color: rgb(235, 250, 166);
+}
+.plato-mark.active {
+  background-color: rgb(158, 180, 255);
+}
+
+.plato-mark-start {
+  border-left-width:1px;
+  padding-left:1px;
+}
+.plato-mark-end {
+  border-right-width:1px;
+  padding-right:1px;
+}
+.plato-gutter {
+}
+
+.plato-gutter-icon {
+  font-size:16px;
+  cursor:pointer;
+  color: #800000;
+  text-align:center;
+}
+
+.plato-gutter-jshint, .plato-gutter-complexity {
+  width:14px;
+}
+
+.charts {
+  margin-top:1em;
+}
+
+.charts .header {
+  font-weight:normal;
+  text-align:center;
+}
+
+.chart-header {
+  font-weight:normal;
+  text-align:center;
+}
+
+.CodeMirror pre {
+  z-index:4;
+}
+
+.CodeMirror-linewidget {
+  background-color: hsl(240, 20%, 96%);
+  font-size:12px;
+  box-shadow:inset 10px 10px 10px -12px hsl(240, 20%, 17%);
+  margin-top:10px;
+  padding-top:5px;
+  padding-left:5px;
+  padding-bottom:2px;
+}
+
+.CodeMirror-linewidget ~ .CodeMirror-linewidget{
+  box-shadow:inset 10px 0px 10px -12px hsl(240, 20%, 17%);
+  margin-top:0px;
+  padding-top:0px;
+}
+
+.plato-line-widget {
+}

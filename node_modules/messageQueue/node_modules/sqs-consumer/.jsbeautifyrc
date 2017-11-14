@@ -1,0 +1,6 @@
+{
+  "space_after_anon_function": true,
+  "keep_array_indentation": true,
+  "indent_size": 2,
+  "end_with_newline": true
+}

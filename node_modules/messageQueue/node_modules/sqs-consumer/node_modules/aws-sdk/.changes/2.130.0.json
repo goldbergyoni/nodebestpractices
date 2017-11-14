@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "ConfigService",
+        "description": "Revert: Added missing enumeration values for ConfigurationItemStatus"
+    }
+]

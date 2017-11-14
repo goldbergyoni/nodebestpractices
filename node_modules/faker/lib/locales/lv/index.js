@@ -1,0 +1,13 @@
+var lv = {};
+module['exports'] = lv;
+lv.title = "Latvian";
+lv.separator = " un ";
+lv.name = require("./name");
+lv.date = require("./date");
+lv.address = require("./address");
+lv.phone_number = require("./phone_number");
+lv.cell_phone = require("./cell_phone");
+lv.commerce = require("./commerce");
+lv.company = require("./company");
+lv.internet = require("./internet");
+lv.lorem = require("./lorem");

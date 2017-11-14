@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+var Translator = require('./lib/translator');
+var util = require('util');
+
+var basePath = __dirname + '/../apis/';
+var paths = fs.readdirSync(basePath);
+var modelName = process.argv[2] || '';
+
+paths.forEach(function (path) {
+  if (path.match(new RegExp(modelName + ".+\\.normal\\.json$"))) {
+    var opath = path.replace(/\.normal\.json$/, '.min.json');
+    var data = JSON.parse(fs.readFileSync(basePath + path).toString());
+    var translated = new Translator(data, {documentation: false});
+    var json = JSON.stringify(translated, null, '  ');
+    fs.writeFileSync(basePath + opath, json);
+  }
+});

@@ -1,0 +1,17 @@
+[
+    {
+        "type": "feature",
+        "category": "IAM",
+        "description": "The unique ID and access key lengths were extended from 32 to 128"
+    },
+    {
+        "type": "feature",
+        "category": "STS",
+        "description": "The unique ID and access key lengths were extended from 32 to 128."
+    },
+    {
+        "type": "feature",
+        "category": "StorageGateway",
+        "description": "Two Storage Gateway data types, Tape and TapeArchive, each have a new response element, TapeUsedInBytes. This element helps you manage your virtual tapes. By using TapeUsedInBytes, you can see the amount of data written to each virtual tape."
+    }
+]

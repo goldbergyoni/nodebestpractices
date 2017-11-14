@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "LexRuntime",
+        "description": "Adds support to PostContent for speech input"
+    }
+]

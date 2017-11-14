@@ -1,0 +1,12 @@
+var credit_card = {};
+module['exports'] = credit_card;
+credit_card.visa = require("./visa");
+credit_card.mastercard = require("./mastercard");
+credit_card.discover = require("./discover");
+credit_card.american_express = require("./american_express");
+credit_card.diners_club = require("./diners_club");
+credit_card.jcb = require("./jcb");
+credit_card.switch = require("./switch");
+credit_card.solo = require("./solo");
+credit_card.maestro = require("./maestro");
+credit_card.laser = require("./laser");

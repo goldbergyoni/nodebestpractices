@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "WorkDocs",
+        "description": "This release provides a new API to retrieve the activities performed by WorkDocs users."
+    }
+]

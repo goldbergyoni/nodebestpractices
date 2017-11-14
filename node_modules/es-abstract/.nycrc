@@ -1,0 +1,15 @@
+{
+	"all": true,
+	"check": true,
+	"reporter": ["text-summary", "text", "html", "json"],
+	"lines": 98,
+	"statements": 97,
+	"functions": 93,
+	"branches": 94,
+	"exclude": [
+		"coverage",
+		"operations",
+		"test"
+	],
+	"xreport-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov"
+}

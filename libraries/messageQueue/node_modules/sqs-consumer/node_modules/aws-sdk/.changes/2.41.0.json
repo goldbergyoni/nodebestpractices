@@ -1,0 +1,22 @@
+[
+    {
+        "type": "feature",
+        "category": "APIGateway",
+        "description": "API Gateway request validators"
+    },
+    {
+        "type": "feature",
+        "category": "Batch",
+        "description": "API Update for AWS Batch: Customer provided AMI for MANAGED Compute Environment "
+    },
+    {
+        "type": "feature",
+        "category": "GameLift",
+        "description": "Allows developers to utilize an improved workflow when calling our Queues API and introduces a new feature that allows developers to specify a maximum allowable latency per Queue."
+    },
+    {
+        "type": "feature",
+        "category": "OpsWorks",
+        "description": "Cloudwatch Logs agent configuration can now be attached to OpsWorks Layers using CreateLayer and UpdateLayer. OpsWorks will then automatically install and manage the CloudWatch Logs agent on the instances part of the OpsWorks Layer."
+    }
+]

@@ -1,0 +1,41 @@
+  Usage: nodemon [options] [script.js] [args]
+
+  Options:
+
+  --config file ............ alternate nodemon.json config file to use
+  -e, --ext ................ extensions to look for, ie. js,jade,hbs.
+  -x, --exec app ........... execute script with "app", ie. -x "python -v".
+  -w, --watch dir........... watch directory "dir" or files. use once for
+                             each directory or file to watch.
+  -i, --ignore ............. ignore specific files or directories.
+  -q, --quiet .............. minimise nodemon messages to start/stop only.
+  -V, --verbose ............ show detail on what is causing restarts.
+  -I, --no-stdin ........... don't try to read from stdin.
+  -C, --on-change-only ..... execute script on change only, not startup
+  --no-colors .............. disable color output
+  -d, --delay n ............ debounce restart for "n" seconds.
+  --exitcrash .............. exit on crash, allows use of nodemon with daemon
+                             tools like forever.js.
+  -v, --version ............ current nodemon version.
+  -h, --help ............... you're looking at it.
+  --help <topic> ........... help on a specific feature. Try "--help topics".
+  -- <your args> ........... to tell nodemon stop slurping arguments.
+
+  Note: if the script is omitted, nodemon will try to read "main" from
+  package.json and without a nodemon.json, nodemon will monitor .js, .coffee,
+  and .litcoffee by default.
+
+  To learn more about nodemon.json config: nodemon --help config
+  See also the sample: https://github.com/remy/nodemon/wiki/Sample-nodemon.json
+
+  Examples:
+
+  $ nodemon server.js
+  $ nodemon --config my/custom/nodemon.json server.js
+  $ nodemon -w ../foo server.js apparg1 apparg2
+  $ PORT=8000 nodemon --debug-brk server.js
+  $ nodemon --exec python app.py
+  $ nodemon --exec "make build" -e "styl hbs"
+  $ nodemon app.js -- -v
+
+  For more details see http://github.com/remy/nodemon/

@@ -1,0 +1,618 @@
+{
+  "version": "1.0",
+  "examples": {
+    "AddPermission": [
+      {
+        "input": {
+          "AWSAccountIds": [
+            "12345EXAMPLE"
+          ],
+          "Actions": [
+            "SendMessage"
+          ],
+          "Label": "SendMessagesFromMyQueue",
+          "QueueUrl": "https://sqs.us-east-1.amazonaws.com/80398EXAMPLE/MyQueue"
+        },
+        "output": {
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example allows the specified AWS account to send messages to the specified queue.",
+        "id": "to-add-a-permission-to-a-queue-1472079068305",
+        "title": "To add a permission to a queue"
+      }
+    ],
+    "ChangeMessageVisibility": [
+      {
+        "input": {
+          "QueueUrl": "https://sqs.us-east-1.amazonaws.com/80398EXAMPLE/MyQueue",
+          "ReceiptHandle": "AQEBTpyI...t6HyQg==",
+          "VisibilityTimeout": 36000
+        },
+        "output": {
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example changes the visibility timeout of the specified message to 10 hours (10 hours * 60 minutes * 60 seconds).",
+        "id": "to-change-the-visibility-timeout-of-a-single-message-1472079046292",
+        "title": "To change the visibility timeout of a single message"
+      }
+    ],
+    "ChangeMessageVisibilityBatch": [
+      {
+        "input": {
+          "Entries": [
+            {
+              "Id": "FirstMessage",
+              "ReceiptHandle": "AQEBhz2q...Jf3kaw==",
+              "VisibilityTimeout": 36000
+            },
+            {
+              "Id": "SecondMessage",
+              "ReceiptHandle": "AQEBkTUH...HifSnw==",
+              "VisibilityTimeout": 36000
+            }
+          ],
+          "QueueUrl": "https://sqs.us-east-1.amazonaws.com/80398EXAMPLE/MyQueue"
+        },
+        "output": {
+          "Failed": [
+
+          ],
+          "Successful": [
+
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example changes the visibility timeout of the two specified messages to 10 hours (10 hours * 60 minutes * 60 seconds).",
+        "id": "to-change-the-visibility-timeout-of-multiple-messages-1472079027081",
+        "title": "To change the visibility timeout of multiple messages"
+      }
+    ],
+    "CreateQueue": [
+      {
+        "input": {
+          "Attributes": {
+            "MessageRetentionPeriod": "259200",
+            "RedrivePolicy": "{\"deadLetterTargetArn\":\"arn:aws:sqs:us-east-1:80398EXAMPLE:MyDeadLetterQueue\",\"maxReceiveCount\":\"1000\"}"
+          },
+          "QueueName": "MyQueue"
+        },
+        "output": {
+          "QueueUrl": "https://queue.amazonaws.com/80398EXAMPLE/MyQueue"
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "The following operation creates an Amazon SQS queue named MyQueue.",
+        "id": "to-create-an-sqs-queue-1472078982579",
+        "title": "To create an Amazon SQS queue"
+      }
+    ],
+    "DeleteMessage": [
+      {
+        "input": {
+          "QueueUrl": "https://sqs.us-east-1.amazonaws.com/80398EXAMPLE/MyQueue",
+          "ReceiptHandle": "AQEBRXTo...q2doVA=="
+        },
+        "output": {
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example deletes the specified message.",
+        "id": "to-delete-a-single-message-1472078961585",
+        "title": "To delete a single message"
+      }
+    ],
+    "DeleteMessageBatch": [
+      {
+        "input": {
+          "Entries": [
+            {
+              "Id": "FirstMessage",
+              "ReceiptHandle": "AQEB1mgl...Z4GuLw=="
+            },
+            {
+              "Id": "SecondMessage",
+              "ReceiptHandle": "AQEBLsYM...VQubAA=="
+            }
+          ],
+          "QueueUrl": "https://sqs.us-east-1.amazonaws.com/80398EXAMPLE/MyQueue"
+        },
+        "output": {
+          "Failed": [
+
+          ],
+          "Successful": [
+            {
+              "Id": "FirstMessage"
+            },
+            {
+              "Id": "SecondMessage"
+            }
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example deletes the two specified messages.",
+        "id": "to-delete-multiple-messages-1472078930327",
+        "title": "To delete multiple messages"
+      }
+    ],
+    "DeleteQueue": [
+      {
+        "input": {
+          "QueueUrl": "https://sqs.us-east-1.amazonaws.com/80398EXAMPLE/MyNewerQueue"
+        },
+        "output": {
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example deletes the specified queue.",
+        "id": "to-delete-a-queue-1472151853558",
+        "title": "To delete a queue"
+      }
+    ],
+    "GetQueueAttributes": [
+      {
+        "input": {
+          "AttributeNames": [
+            "All"
+          ],
+          "QueueUrl": "https://sqs.us-east-1.amazonaws.com/80398EXAMPLE/MyQueue"
+        },
+        "output": {
+          "Attributes": {
+            "ApproximateNumberOfMessages": "0",
+            "ApproximateNumberOfMessagesDelayed": "0",
+            "ApproximateNumberOfMessagesNotVisible": "0",
+            "CreatedTimestamp": "1442426968",
+            "DelaySeconds": "0",
+            "LastModifiedTimestamp": "1442426968",
+            "MaximumMessageSize": "262144",
+            "MessageRetentionPeriod": "345600",
+            "QueueArn": "arn:aws:sqs:us-east-1:80398EXAMPLE:MyNewQueue",
+            "ReceiveMessageWaitTimeSeconds": "0",
+            "RedrivePolicy": "{\"deadLetterTargetArn\":\"arn:aws:sqs:us-east-1:80398EXAMPLE:MyDeadLetterQueue\",\"maxReceiveCount\":1000}",
+            "VisibilityTimeout": "30"
+          }
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example gets all attributes of the specified queue.",
+        "id": "to-get-the-attributes-of-a-queue-1472149421128",
+        "title": "To get the attributes of a queue"
+      },
+      {
+        "input": {
+          "AttributeNames": [
+            "MaximumMessageSize VisibilityTimeout"
+          ],
+          "QueueUrl": "https://sqs.us-east-1.amazonaws.com/80398EXAMPLE/MyNewQueue"
+        },
+        "output": {
+          "Attributes": {
+            "MaximumMessageSize": "262144",
+            "VisibilityTimeout": "30"
+          }
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example gets only the specified queue's maximum message size and visibility timeout attributes.",
+        "id": "to-get-the-attributes-of-a-queue-1472517012839",
+        "title": "To get the attributes of a queue"
+      }
+    ],
+    "GetQueueUrl": [
+      {
+        "input": {
+          "QueueName": "MyQueue",
+          "QueueOwnerAWSAccountId": "123456789101"
+        },
+        "output": {
+          "QueueUrl": "https://queue.amazonaws.com/123456789101/MyQueue"
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example gets the URL of the specified queue.",
+        "id": "to-get-the-url-of-a-queue-1472078901091",
+        "title": "To get the URL of a queue"
+      }
+    ],
+    "ListDeadLetterSourceQueues": [
+      {
+        "input": {
+          "QueueUrl": "https://sqs.us-east-1.amazonaws.com/80398EXAMPLE/MyDeadLetterQueue"
+        },
+        "output": {
+          "queueUrls": [
+            "https://queue.amazonaws.com/80398EXAMPLE/MyQueue",
+            "https://queue.amazonaws.com/80398EXAMPLE/MyOtherQueue"
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example lists the source queues associated with the specified dead letter queue.",
+        "id": "to-list-the-source-queues-of-a-dead-letter-queue-1472150435081",
+        "title": "To list the source queues of a dead letter queue"
+      }
+    ],
+    "ListQueues": [
+      {
+        "input": {
+          "QueueNamePrefix": ""
+        },
+        "output": {
+          "QueueUrls": [
+            "https://queue.amazonaws.com/80398EXAMPLE/MyDeadLetterQueue",
+            "https://queue.amazonaws.com/80398EXAMPLE/MyQueue",
+            "https://queue.amazonaws.com/80398EXAMPLE/MyOtherQueue",
+            "https://queue.amazonaws.com/80398EXAMPLE/TestQueue1",
+            "https://queue.amazonaws.com/80398EXAMPLE/TestQueue2"
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example lists all queues.",
+        "id": "to-list-queues-1472150595914",
+        "title": "To list queues"
+      },
+      {
+        "input": {
+          "QueueNamePrefix": "My"
+        },
+        "output": {
+          "QueueUrls": [
+            "https://queue.amazonaws.com/80398EXAMPLE/MyDeadLetterQueue",
+            "https://queue.amazonaws.com/80398EXAMPLE/MyQueue",
+            "https://queue.amazonaws.com/80398EXAMPLE/MyOtherQueue"
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example lists only queues that start with &quot;Ty&quot;.",
+        "id": "to-list-queues-1472517240103",
+        "title": "To list queues"
+      }
+    ],
+    "PurgeQueue": [
+      {
+        "input": {
+          "QueueUrl": "https://sqs.us-east-1.amazonaws.com/80398EXAMPLE/MyNewQueue"
+        },
+        "output": {
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example deletes all messages in the specified queue.",
+        "id": "to-purge-a-queue-1472150819702",
+        "title": "To purge a queue"
+      }
+    ],
+    "ReceiveMessage": [
+      {
+        "input": {
+          "AttributeNames": [
+            "All"
+          ],
+          "MaxNumberOfMessages": 10,
+          "MessageAttributeNames": [
+            "All"
+          ],
+          "QueueUrl": "https://sqs.us-east-1.amazonaws.com/80398EXAMPLE/MyQueue",
+          "VisibilityTimeout": 123,
+          "WaitTimeSeconds": 123
+        },
+        "output": {
+          "Messages": [
+            {
+              "Attributes": {
+                "ApproximateFirstReceiveTimestamp": "1442428276921",
+                "ApproximateReceiveCount": "5",
+                "SenderId": "AIDAIAZKMSNQ7TEXAMPLE",
+                "SentTimestamp": "1442428276921"
+              },
+              "Body": "My first message.",
+              "MD5OfBody": "1000f835...a35411fa",
+              "MD5OfMessageAttributes": "9424c491...26bc3ae7",
+              "MessageAttributes": {
+                "City": {
+                  "DataType": "String",
+                  "StringValue": "Any City"
+                },
+                "PostalCode": {
+                  "DataType": "String",
+                  "StringValue": "ABC123"
+                }
+              },
+              "MessageId": "d6790f8d-d575-4f01-bc51-40122EXAMPLE",
+              "ReceiptHandle": "AQEBzbVv...fqNzFw=="
+            }
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example receives up to 10 available messages, returning all available attributes.",
+        "id": "to-receive-a-message-1472151462717",
+        "title": "To receive a message"
+      },
+      {
+        "input": {
+          "AttributeNames": [
+            "SenderId SentTimestamp"
+          ],
+          "MaxNumberOfMessages": 123,
+          "MessageAttributeNames": [
+            "PostalCode"
+          ],
+          "QueueUrl": "https://sqs.us-east-1.amazonaws.com/80398EXAMPLE/MyQueue",
+          "VisibilityTimeout": 123,
+          "WaitTimeSeconds": 123
+        },
+        "output": {
+          "Messages": [
+            {
+              "Attributes": {
+                "SenderId": "AIDAIAZKMSNQ7TEXAMPLE",
+                "SentTimestamp": "1442428276921"
+              },
+              "Body": "My first message.",
+              "MD5OfBody": "1000f835...a35411fa",
+              "MD5OfMessageAttributes": "b8e89563...e088e74f",
+              "MessageAttributes": {
+                "PostalCode": {
+                  "DataType": "String",
+                  "StringValue": "ABC123"
+                }
+              },
+              "MessageId": "d6790f8d-d575-4f01-bc51-40122EXAMPLE",
+              "ReceiptHandle": "AQEB6nR4...HzlvZQ=="
+            }
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example receives the next available message, returning only the SenderId and SentTimestamp attributes and the PostalCode message attribute.",
+        "id": "to-receive-a-message-1472517398871",
+        "title": "To receive a message"
+      }
+    ],
+    "RemovePermission": [
+      {
+        "input": {
+          "Label": "SendMessagesFromMyQueue",
+          "QueueUrl": "https://sqs.us-east-1.amazonaws.com/80398EXAMPLE/MyQueue"
+        },
+        "output": {
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example removes the permission with the specified label from the specified queue.",
+        "id": "to-remove-a-permission-from-a-queue-1472151967252",
+        "title": "To remove a permission from a queue"
+      }
+    ],
+    "SendMessage": [
+      {
+        "input": {
+          "DelaySeconds": 10,
+          "MessageAttributes": {
+            "City": {
+              "DataType": "String",
+              "StringValue": "Any City"
+            },
+            "Greeting": {
+              "BinaryValue": "Hello, World!",
+              "DataType": "Binary"
+            },
+            "Population": {
+              "DataType": "Number",
+              "StringValue": "1250800"
+            }
+          },
+          "MessageBody": "Information about the largest city in Any Region.",
+          "QueueUrl": "https://sqs.us-east-1.amazonaws.com/80398EXAMPLE/MyQueue"
+        },
+        "output": {
+          "MD5OfMessageAttributes": "00484c68...59e48f06",
+          "MD5OfMessageBody": "51b0a325...39163aa0",
+          "MessageId": "da68f62c-0c07-4bee-bf5f-7e856EXAMPLE"
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example sends a message with the specified message body, delay period, and message attributes to the specified queue.",
+        "id": "to-send-a-message-to-a-queue-1472152022619",
+        "title": "To send a message to a queue"
+      }
+    ],
+    "SendMessageBatch": [
+      {
+        "input": {
+          "Entries": [
+            {
+              "DelaySeconds": 10,
+              "Id": "FuelReport-0001-2015-09-16T140731Z",
+              "MessageAttributes": {
+                "City": {
+                  "DataType": "String",
+                  "StringValue": "Any City"
+                },
+                "PostalCode": {
+                  "DataType": "String",
+                  "StringValue": "99065"
+                },
+                "PricePerGallon": {
+                  "DataType": "Number",
+                  "StringValue": "1.99"
+                },
+                "Region": {
+                  "DataType": "String",
+                  "StringValue": "WA"
+                },
+                "SellerName": {
+                  "DataType": "String",
+                  "StringValue": "Example Store"
+                }
+              },
+              "MessageBody": "Fuel report for account 0001 on 2015-09-16 at 02:07:31 PM."
+            },
+            {
+              "DelaySeconds": 10,
+              "Id": "FuelReport-0002-2015-09-16T140930Z",
+              "MessageAttributes": {
+                "City": {
+                  "DataType": "String",
+                  "StringValue": "North Town"
+                },
+                "PostalCode": {
+                  "DataType": "String",
+                  "StringValue": "99123"
+                },
+                "PricePerGallon": {
+                  "DataType": "Number",
+                  "StringValue": "1.87"
+                },
+                "Region": {
+                  "DataType": "String",
+                  "StringValue": "WA"
+                },
+                "SellerName": {
+                  "DataType": "String",
+                  "StringValue": "Example Fuels"
+                }
+              },
+              "MessageBody": "Fuel report for account 0002 on 2015-09-16 at 02:09:30 PM."
+            }
+          ],
+          "QueueUrl": "https://sqs.us-east-1.amazonaws.com/80398EXAMPLE/MyQueue"
+        },
+        "output": {
+          "Failed": [
+
+          ],
+          "Successful": [
+            {
+              "Id": "FuelReport-0001-2015-09-16T140731Z",
+              "MD5OfMessageAttributes": "10809b55...baf283ef",
+              "MD5OfMessageBody": "203c4a38...7943237e",
+              "MessageId": "d175070c-d6b8-4101-861d-adeb3EXAMPLE"
+            },
+            {
+              "Id": "FuelReport-0002-2015-09-16T140930Z",
+              "MD5OfMessageAttributes": "55623928...ae354a25",
+              "MD5OfMessageBody": "2cf0159a...c1980595",
+              "MessageId": "f9b7d55d-0570-413e-b9c5-a9264EXAMPLE"
+            }
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example sends two messages with the specified message bodies, delay periods, and message attributes to the specified queue.",
+        "id": "to-send-multiple-messages-1472152282144",
+        "title": "To send multiple messages"
+      }
+    ],
+    "SetQueueAttributes": [
+      {
+        "input": {
+          "Attributes": {
+            "DelaySeconds": "10",
+            "MaximumMessageSize": "131072",
+            "MessageRetentionPeriod": "259200",
+            "ReceiveMessageWaitTimeSeconds": "20",
+            "RedrivePolicy": "{\"deadLetterTargetArn\":\"arn:aws:sqs:us-east-1:80398EXAMPLE:MyDeadLetterQueue\",\"maxReceiveCount\":\"1000\"}",
+            "VisibilityTimeout": "60"
+          },
+          "QueueUrl": "https://sqs.us-east-1.amazonaws.com/80398EXAMPLE/MyNewQueue"
+        },
+        "output": {
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example sets the specified queue to a delivery delay of 10 seconds, a maximum message size of 128 KB (128 KB * 1,024 bytes), a message retention period of 3 days (3 days * 24 hours * 60 minutes * 60 seconds), a receive message wait time of 20 seconds, and a default visibility timeout of 60 seconds. This example also associates the specified dead letter queue with a maximum receive count of 1,000 messages.",
+        "id": "to-set-the-attributes-of-a-queue-1472152379646",
+        "title": "To set the attributes of a queue"
+      }
+    ]
+  }
+}

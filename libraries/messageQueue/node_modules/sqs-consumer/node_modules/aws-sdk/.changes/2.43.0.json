@@ -1,0 +1,42 @@
+[
+    {
+        "type": "feature",
+        "category": "APIGateway",
+        "description": "Add support for \"embed\" property."
+    },
+    {
+        "type": "feature",
+        "category": "CodeStar",
+        "description": "AWS CodeStar is a cloud-based service for creating, managing, and working with software development projects on AWS. An AWS CodeStar project creates and integrates AWS services for your project development toolchain. AWS CodeStar also manages the permissions required for project users."
+    },
+    {
+        "type": "feature",
+        "category": "EC2",
+        "description": "Adds support for creating an Amazon FPGA Image (AFI) from a specified design checkpoint (DCP)."
+    },
+    {
+        "type": "feature",
+        "category": "IAM",
+        "description": "This changes introduces a new IAM role type, Service Linked Role, which works like a normal role but must be managed via services' control. "
+    },
+    {
+        "type": "feature",
+        "category": "Lambda",
+        "description": "Lambda integration with CloudDebugger service to enable customers to enable tracing for the Lambda functions and send trace information to the CloudDebugger service."
+    },
+    {
+        "type": "feature",
+        "category": "LexModelBuildingService",
+        "description": "Amazon Lex is a service for building conversational interfaces into any application using voice and text."
+    },
+    {
+        "type": "feature",
+        "category": "Polly",
+        "description": "API Update for Amazon Polly: Add support for speech marks"
+    },
+    {
+        "type": "feature",
+        "category": "Rekognition",
+        "description": "Given an image, the API detects explicit or suggestive adult content in the image and returns a list of corresponding labels with confidence scores, as well as a taxonomy (parent-child relation) for each label."
+    }
+]

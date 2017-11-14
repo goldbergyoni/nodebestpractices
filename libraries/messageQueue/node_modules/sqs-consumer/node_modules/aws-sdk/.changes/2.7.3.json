@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "Route53",
+        "description": "Adds support for cross account VPC association."
+    },
+    {
+        "type": "feature",
+        "category": "ServiceCatalog",
+        "description": "This release enables Service Catalog users to perform administer operations via API."
+    }
+]

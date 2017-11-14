@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Documentation Index</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.simplex.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">Documentation</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="faker.html">faker</a></li><li><a href="faker.address.html">faker.address</a></li><li><a href="faker.commerce.html">faker.commerce</a></li><li><a href="faker.company.html">faker.company</a></li><li><a href="faker.date.html">faker.date</a></li><li><a href="faker.finance.html">faker.finance</a></li><li><a href="faker.hacker.html">faker.hacker</a></li><li><a href="faker.helpers.html">faker.helpers</a></li><li><a href="faker.image.html">faker.image</a></li><li><a href="faker.internet.html">faker.internet</a></li><li><a href="faker.lorem.html">faker.lorem</a></li><li><a href="faker.name.html">faker.name</a></li><li><a href="faker.phone.html">faker.phone</a></li><li><a href="faker.random.html">faker.random</a></li><li><a href="faker.system.html">faker.system</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+		<div class="col-sm-3 col-md-3">
+            <form class="navbar-form" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+    <section class="readme-section">
+        <article><h1>faker.js - generate massive amounts of fake data in the browser and node.js</h1><p><img src="http://imgur.com/KiinQ.png" alt="Faker.js"></p>
+<p><a href="https://travis-ci.org/Marak/faker.js"><img src="https://travis-ci.org/Marak/faker.js.svg?branch=master" alt="Build Status"></a></p>
+<p><a href="http://badge.fury.io/js/faker"><img src="https://badge.fury.io/js/faker.svg" alt="npm version"></a></p>
+<h2>Demo</h2><p><a href="http://marak.com/faker.js/">http://marak.com/faker.js/</a></p>
+<h2>Hosted API Microservice</h2><p><a href="http://faker.hook.io/">http://faker.hook.io</a></p>
+<ul>
+<li>Supports all Faker API Methods</li>
+<li>Full-Featured Microservice</li>
+<li>Hosted by <a href="http://hook.io">hook.io</a></li>
+</ul>
+<pre class="prettyprint source lang-bash"><code>curl http://faker.hook.io?property=name.findName&locale=de</code></pre><h2>Usage</h2><h3>Browser</h3><pre class="prettyprint source"><code>&lt;script src = &quot;faker.js&quot; type = &quot;text/javascript&quot;>&lt;/script>
+&lt;script>
+  var randomName = faker.name.findName(); // Caitlyn Kerluke
+  var randomEmail = faker.internet.email(); // Rusty@arne.info
+  var randomCard = faker.helpers.createCard(); // random contact card containing many properties
+&lt;/script></code></pre><h3>Node.js</h3><pre class="prettyprint source"><code>var faker = require('faker');
+
+var randomName = faker.name.findName(); // Rowan Nikolaus
+var randomEmail = faker.internet.email(); // Kassandra.Haley@erich.biz
+var randomCard = faker.helpers.createCard(); // random contact card containing many properties</code></pre><h2>API</h2><h3>Faker.fake()</h3><p>faker.js contains a super useful generator method <code>Faker.fake</code> for combining faker API methods using a mustache string format.</p>
+<p><strong>Example:</strong></p>
+<pre class="prettyprint source lang-js"><code>console.log(faker.fake(&quot;{{name.lastName}}, {{name.firstName}} {{name.suffix}}&quot;));
+// outputs: &quot;Marks, Dean Sr.&quot;</code></pre><p>This will interpolate the format string with the value of methods <code>name.lastName()</code>, <code>name.firstName()</code>, and <code>name.suffix()</code></p>
+<h3>JSDoc API Browser</h3><p><a href="http://marak.github.io/faker.js/">http://marak.github.io/faker.js/</a></p>
+<h3>API Methods</h3><ul>
+<li>address<ul>
+<li>zipCode</li>
+<li>city</li>
+<li>cityPrefix</li>
+<li>citySuffix</li>
+<li>streetName</li>
+<li>streetAddress</li>
+<li>streetSuffix</li>
+<li>streetPrefix</li>
+<li>secondaryAddress</li>
+<li>county</li>
+<li>country</li>
+<li>countryCode</li>
+<li>state</li>
+<li>stateAbbr</li>
+<li>latitude</li>
+<li>longitude</li>
+</ul>
+</li>
+<li>commerce<ul>
+<li>color</li>
+<li>department</li>
+<li>productName</li>
+<li>price</li>
+<li>productAdjective</li>
+<li>productMaterial</li>
+<li>product</li>
+</ul>
+</li>
+<li>company<ul>
+<li>suffixes</li>
+<li>companyName</li>
+<li>companySuffix</li>
+<li>catchPhrase</li>
+<li>bs</li>
+<li>catchPhraseAdjective</li>
+<li>catchPhraseDescriptor</li>
+<li>catchPhraseNoun</li>
+<li>bsAdjective</li>
+<li>bsBuzz</li>
+<li>bsNoun</li>
+</ul>
+</li>
+<li>date<ul>
+<li>past</li>
+<li>future</li>
+<li>between</li>
+<li>recent</li>
+<li>month</li>
+<li>weekday</li>
+</ul>
+</li>
+<li>fake</li>
+<li>finance<ul>
+<li>account</li>
+<li>accountName</li>
+<li>mask</li>
+<li>amount</li>
+<li>transactionType</li>
+<li>currencyCode</li>
+<li>currencyName</li>
+<li>currencySymbol</li>
+<li>bitcoinAddress</li>
+</ul>
+</li>
+<li>hacker<ul>
+<li>abbreviation</li>
+<li>adjective</li>
+<li>noun</li>
+<li>verb</li>
+<li>ingverb</li>
+<li>phrase</li>
+</ul>
+</li>
+<li>helpers<ul>
+<li>randomize</li>
+<li>slugify</li>
+<li>replaceSymbolWithNumber</li>
+<li>replaceSymbols</li>
+<li>shuffle</li>
+<li>mustache</li>
+<li>createCard</li>
+<li>contextualCard</li>
+<li>userCard</li>
+<li>createTransaction</li>
+</ul>
+</li>
+<li>image<ul>
+<li>image</li>
+<li>avatar</li>
+<li>imageUrl</li>
+<li>abstract</li>
+<li>animals</li>
+<li>business</li>
+<li>cats</li>
+<li>city</li>
+<li>food</li>
+<li>nightlife</li>
+<li>fashion</li>
+<li>people</li>
+<li>nature</li>
+<li>sports</li>
+<li>technics</li>
+<li>transport</li>
+</ul>
+</li>
+<li>internet<ul>
+<li>avatar</li>
+<li>email</li>
+<li>exampleEmail</li>
+<li>userName</li>
+<li>protocol</li>
+<li>url</li>
+<li>domainName</li>
+<li>domainSuffix</li>
+<li>domainWord</li>
+<li>ip</li>
+<li>userAgent</li>
+<li>color</li>
+<li>mac</li>
+<li>password</li>
+</ul>
+</li>
+<li>lorem<ul>
+<li>word</li>
+<li>words</li>
+<li>sentence</li>
+<li>sentences</li>
+<li>paragraph</li>
+<li>paragraphs</li>
+<li>text</li>
+<li>lines</li>
+</ul>
+</li>
+<li>name<ul>
+<li>firstName</li>
+<li>lastName</li>
+<li>findName</li>
+<li>jobTitle</li>
+<li>prefix</li>
+<li>suffix</li>
+<li>title</li>
+<li>jobDescriptor</li>
+<li>jobArea</li>
+<li>jobType</li>
+</ul>
+</li>
+<li>phone<ul>
+<li>phoneNumber</li>
+<li>phoneNumberFormat</li>
+<li>phoneFormats</li>
+</ul>
+</li>
+<li>random<ul>
+<li>number</li>
+<li>arrayElement</li>
+<li>objectElement</li>
+<li>uuid</li>
+<li>boolean</li>
+<li>word</li>
+<li>words</li>
+<li>image</li>
+<li>locale</li>
+<li>alphaNumeric</li>
+</ul>
+</li>
+<li>system<ul>
+<li>fileName</li>
+<li>commonFileName</li>
+<li>mimeType</li>
+<li>commonFileType</li>
+<li>commonFileExt</li>
+<li>fileType</li>
+<li>fileExt</li>
+<li>directoryPath</li>
+<li>filePath</li>
+<li>semver</li>
+</ul>
+</li>
+</ul>
+<h2>Localization</h2><p>As of version <code>v2.0.0</code> faker.js has support for multiple localities.</p>
+<p>The default language locale is set to English.</p>
+<p>Setting a new locale is simple:</p>
+<pre class="prettyprint source lang-js"><code>// sets locale to de
+faker.locale = &quot;de&quot;;</code></pre><ul>
+<li>de</li>
+<li>de_AT</li>
+<li>de_CH</li>
+<li>en</li>
+<li>en_AU</li>
+<li>en_BORK</li>
+<li>en_CA</li>
+<li>en_GB</li>
+<li>en_IE</li>
+<li>en_IND</li>
+<li>en_US</li>
+<li>en_au_ocker</li>
+<li>es</li>
+<li>es_MX</li>
+<li>fa</li>
+<li>fr</li>
+<li>fr_CA</li>
+<li>ge</li>
+<li>id_ID</li>
+<li>it</li>
+<li>ja</li>
+<li>ko</li>
+<li>nb_NO</li>
+<li>nep</li>
+<li>nl</li>
+<li>pl</li>
+<li>pt_BR</li>
+<li>ru</li>
+<li>sk</li>
+<li>sv</li>
+<li>tr</li>
+<li>uk</li>
+<li>vi</li>
+<li>zh_CN</li>
+<li>zh_TW</li>
+</ul>
+<h3>Individual Localization Packages</h3><p>As of vesion <code>v3.0.0</code> faker.js supports incremental loading of locales. </p>
+<p>By default, requiring <code>faker</code> will include <em>all</em> locale data.</p>
+<p>In a production environment, you may only want to include the locale data for a specific set of locales.</p>
+<pre class="prettyprint source lang-js"><code>// loads only de locale
+var faker = require('faker/locale/de');</code></pre><h2>Tests</h2><pre class="prettyprint source"><code>npm install .
+make test</code></pre><p>You can view a code coverage report generated in coverage/lcov-report/index.html.</p>
+<h2>Projects Built with faker.js</h2><h3>Fake JSON Schema</h3><p>Use faker generators to populate JSON Schema samples.
+See: https://github.com/pateketrueke/json-schema-faker/</p>
+<h3>CLI</h3><p>Run faker generators from Command Line.
+See: https://github.com/lestoni/faker-cli</p>
+<p><strong>Want to see your project added here? Let us know!</strong></p>
+<h3>Meteor</h3><h4>Meteor Installation</h4><pre class="prettyprint source"><code>meteor add practicalmeteor:faker</code></pre><h4>Meteor Usage, both client and server</h4><pre class="prettyprint source lang-js"><code>var randomName = faker.name.findName(); // Rowan Nikolaus
+var randomEmail = faker.internet.email(); // Kassandra.Haley@erich.biz
+var randomCard = faker.helpers.createCard(); // random contact card containing many properties</code></pre><h2>Building faker.js</h2><p>faker uses <a href="http://gulpjs.com/">gulp</a> to automate it's build process. Running the following build command will generate new browser builds, documentation, and code examples for the project.</p>
+<pre class="prettyprint source"><code>npm run-script build</code></pre><h2>Building JSDocs</h2><pre class="prettyprint source"><code>npm run-script doc</code></pre><h2>Version Release Schedule</h2><p>faker.js is a popular project used by many organizations and individuals in production settings. Major and Minor version releases are generally on a monthly schedule. Bugs fixes are addressed by severity and fixed as soon as possible.</p>
+<p>If you require the absolute latest version of <code>faker.js</code> the <code>master</code> branch @ http://github.com/marak/faker.js/ should always be up to date and working.</p>
+<h2>Maintainer</h2><h4>Marak Squires</h4><p>faker.js - Copyright (c) 2016
+Matthew Bergman &amp; Marak Squires
+http://github.com/marak/faker.js/</p>
+<p>faker.js was inspired by and has used data definitions from:</p>
+<ul>
+<li>https://github.com/stympy/faker/ - Copyright (c) 2007-2010 Benjamin Curtis</li>
+<li>http://search.cpan.org/~jasonk/Data-Faker-0.07/ - Copyright 2004-2005 by Jason Kohles</li>
+</ul>
+<p>Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+&quot;Software&quot;), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p></article>
+    </section>
+
+
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+<div class="modal fade" id="searchResults">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Search results</h4>
+      </div>
+      <div class="modal-body"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
+	
+		on 2016-03-20T21:12:53-04:00
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+<script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : false,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			var id = $( heading ).attr( "id" );
+			return id && id.replace(/\~/g, '-inner-').replace(/\./g, '-static-') || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		SearcherDisplay.init();
+	});
+</script>
+
+</body>
+</html>

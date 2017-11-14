@@ -1,0 +1,17 @@
+[
+    {
+        "type": "bugfix",
+        "category": "SharedIniFileCredentials",
+        "description": "This fix reverts a regression introduced in version 2.44.0 in which the value returned by os.homedir would be used in preference over the value of the HOME environment variable"
+    },
+    {
+        "type": "feature",
+        "category": "RDS",
+        "description": "With Amazon Relational Database Service (Amazon RDS) running MySQL or Amazon Aurora, you can now authenticate to your DB instance using IAM database authentication."
+    },
+    {
+        "type": "feature",
+        "category": "RDS",
+        "description": "Adds AWS.RDS.Signer class to generate auth tokens for connecting to a database."
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "type": "bugfix",
+        "category": "apiVersion",
+        "description": "Fixes an issue where some service clients would fail to instantiate if an older apiVersion was specified."
+    },
+    {
+        "type": "feature",
+        "category": "CloudFormation",
+        "description": "Adds support for specifying an IAM service role for CloudFormation stack operations."
+    }
+]

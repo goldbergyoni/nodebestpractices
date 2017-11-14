@@ -1,0 +1,22 @@
+[
+    {
+        "type": "feature",
+        "category": "CloudFormation",
+        "description": "List-imports API is to list all stacks of user's namespace that are using a specific output."
+    },
+    {
+        "type": "feature",
+        "category": "Glacier",
+        "description": "Allow customers to retrieve their data with different tiers."
+    },
+    {
+        "type": "feature",
+        "category": "Route53",
+        "description": "Expand current IPAddress field to accept IPv6 address."
+    },
+    {
+        "type": "feature",
+        "category": "S3",
+        "description": "Allow customers to specify different restore tiers when accessing their data."
+    }
+]

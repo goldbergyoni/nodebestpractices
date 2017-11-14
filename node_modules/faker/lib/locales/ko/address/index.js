@@ -1,0 +1,11 @@
+var address = {};
+module['exports'] = address;
+address.postcode = require("./postcode");
+address.state = require("./state");
+address.state_abbr = require("./state_abbr");
+address.city_suffix = require("./city_suffix");
+address.city_name = require("./city_name");
+address.city = require("./city");
+address.street_root = require("./street_root");
+address.street_suffix = require("./street_suffix");
+address.street_name = require("./street_name");

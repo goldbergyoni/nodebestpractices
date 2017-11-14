@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "RDS",
+        "description": "API Update for RDS: this update enables copy-on-write, a new Aurora MySQL Compatible Edition feature that allows users to restore their database, and support copy of TDE enabled snapshot cross region."
+    },
+    {
+        "type": "feature",
+        "category": "S3",
+        "description": "Switches S3 to use signatureVersion \"v4\" by default. To continue using signatureVersion \"v2\", set the signatureVersion: \"v2\" option in the S3 service client configuration. Presigned URLs will continue using \"v2\" by default."
+    }
+]

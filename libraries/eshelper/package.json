@@ -1,0 +1,11 @@
+{
+  "name": "eshelper",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./index",
+  "dependencies": {
+    "elasticsearch": "13.3.1",
+    "configurationManager": "*",
+    "logger": "*"
+  }
+}

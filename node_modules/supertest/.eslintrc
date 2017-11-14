@@ -1,0 +1,23 @@
+{
+  "extends": "airbnb/legacy",
+  "env": {
+    "node": true,
+    "mocha": true
+  },
+  "rules": {
+    // disabled - disagree with airbnb
+    "func-names": [0],
+    "space-before-function-paren": [0],
+    "consistent-return": [0],
+
+    // Disabled but may want to refactor code eventually
+    "no-proto": [1],
+    "no-shadow": [1],
+    "no-use-before-define": [2, "nofunc"],
+    "no-underscore-dangle": [0],
+
+    // IMHO, more sensible overrides to existing airbnb error definitions
+    "max-len": [2, 100, 4, {"ignoreComments": true, "ignoreUrls": true}],
+    "no-unused-expressions": [2, { "allowShortCircuit": true, "allowTernary": true }]
+  }
+}

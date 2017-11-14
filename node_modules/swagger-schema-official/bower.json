@@ -1,0 +1,15 @@
+{
+  "name": "swagger-schema",
+  "version": "2.0.0-96305d9",
+  "homepage": "https://github.com/swagger-api/swagger-schema",
+  "authors": [
+    "''"
+  ],
+  "description": "Swagger JSON Schema",
+  "keywords": [
+    "swagger",
+    "schema",
+    "api"
+  ],
+  "license": "MIT"
+}

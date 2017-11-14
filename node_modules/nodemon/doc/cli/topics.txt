@@ -1,0 +1,6 @@
+
+  config ................... default config options using nodemon.json
+  authors .................. contributors to this project
+  whoami ................... I, AM, NODEMON \o/
+
+  Please contribute http://github.com/remy/nodemon/

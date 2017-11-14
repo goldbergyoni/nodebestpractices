@@ -1,0 +1,17 @@
+[
+    {
+        "type": "feature",
+        "category": "CloudFront",
+        "description": "Amazon CloudFront now supports tagging for Web and Streaming distributions. Tags make it easier for you to allocate costs and optimize spending by categorizing and grouping AWS resources."
+    },
+    {
+        "type": "feature",
+        "category": "ECR",
+        "description": "Adds filtering of ListImages requests based on whether an image is tagged or untagged."
+    },
+    {
+        "type": "feature",
+        "category": "MarketplaceCommerceAnalytics",
+        "description": "Adds the `startSupportDataExport` operation."
+    }
+]

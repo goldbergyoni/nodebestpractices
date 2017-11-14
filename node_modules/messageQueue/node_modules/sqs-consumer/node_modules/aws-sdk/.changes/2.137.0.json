@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "SQS",
+        "description": "Added support for tracking cost allocation by adding, updating, removing, and listing the metadata tags of Amazon SQS queues."
+    },
+    {
+        "type": "feature",
+        "category": "SSM",
+        "description": "EC2 Systems Manager versioning support for Parameter Store. Also support for referencing parameter versions in SSM Documents."
+    }
+]

@@ -1,0 +1,18 @@
+{
+   "title": "typhonjs-escomplex-commons",
+   "source": "src",
+   "destination": "docs",
+   "access": ["public", "private", "protected"],
+   "unexportIdentifier": true,
+   "plugins":
+   [
+      { "name": "esdoc-plugin-enhanced-navigation" }
+   ],
+   "manual": { "changelog": ["./CHANGELOG.md"] },
+   "test":
+   {
+      "type": "mocha",
+      "source": "test/src",
+      "includes": [".js$"]
+   }
+}

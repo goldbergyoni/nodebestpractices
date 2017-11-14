@@ -1,0 +1,13 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"complexity": [2, 13],
+		"id-length": [2, { "min": 1, "max": 24, "properties": "never" }],
+		"max-statements": [2, 20],
+		"new-cap": [2, { "capIsNewExceptions": ["GetMethod"] }],
+		"no-extra-parens": [2, "functions"]
+	}
+}

@@ -1,0 +1,10 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "toString": true,
+    "hasOwnProperty": true
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "pagination": {
+    "ListCertificates": {
+      "limit_key": "MaxItems",
+      "input_token": "NextToken",
+      "output_token": "NextToken",
+      "result_key": "CertificateSummaryList"
+    }
+  }
+}

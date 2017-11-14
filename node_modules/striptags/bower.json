@@ -1,0 +1,24 @@
+{
+  "name": "striptags",
+  "description": "PHP strip_tags in Node.js",
+  "main": "striptags.js",
+  "authors": [
+    "Eric Norris (https://github.com/ericnorris)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "striptags",
+    "strip_tags",
+    "html",
+    "strip",
+    "tags"
+  ],
+  "homepage": "https://github.com/ericnorris/striptags",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

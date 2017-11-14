@@ -1,0 +1,17 @@
+[
+    {
+        "type": "bugfix",
+        "category": "clock skew",
+        "description": "put the updating clock skew logic to each service client instead of using global config"
+    },
+    {
+        "type": "feature",
+        "category": "CodeBuild",
+        "description": "Supporting Parameter Store in environment variables for AWS CodeBuild"
+    },
+    {
+        "type": "feature",
+        "category": "ServiceCatalog",
+        "description": "This release of Service Catalog adds API support to copy products."
+    }
+]

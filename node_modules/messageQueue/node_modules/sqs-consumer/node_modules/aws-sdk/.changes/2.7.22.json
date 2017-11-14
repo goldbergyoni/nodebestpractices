@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "CUR",
+        "description": "The AWS Cost and Usage Report Service API allows you to enable and disable the Cost & Usage report, as well as modify the report name, the data granularity, and the delivery preferences."
+    },
+    {
+        "type": "bugfix",
+        "category": "DynamoDB.DocumentClient",
+        "description": "Allows objects created using Object.create(null) to be properly serialized by the DDB document client."
+    }
+]

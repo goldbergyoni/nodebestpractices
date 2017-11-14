@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "WorkDocs",
+        "description": "Amazon WorkDocs API provides full administrator level access to WorkDocs site resources, allowing developers to integrate their applications to manage WorkDocs users, content and permissions programmatically."
+    }
+]

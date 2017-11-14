@@ -1,0 +1,88 @@
+
+body {
+  background: #222222;
+  margin: 20px;
+}
+
+.reportBlock {
+  background: #34495e;
+  color: #ecf0f1;
+  height: 300px;
+  position: relative;
+}
+
+.chart {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  top: 0; left: 0;
+  z-index: 0;
+}
+
+.reportContent {
+  z-index: 10;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+}
+
+h2.reportTitle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #7F8181;
+  font-size: 14px;
+  font-weight: 200;
+  padding: 10px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.reportBlock.lineCount { background-color: #272727; }
+.reportBlock.maintainability { background-color: #272727; }
+.reportBlock.maintainabilityList,
+.reportBlock.locList,
+.reportBlock.lintList {
+  background-color: #2A2A2A;
+  margin-top: 15px;
+  padding: 20px 5px;
+}
+
+.reportBlock .chart-label {
+  display: block;
+  padding-top: 100px;
+  text-align: center;
+  color: #7F8181;
+  font-size: 14px;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.reportBlock strong {
+  display: block;
+  font-size: 90%;
+}
+
+.reportBlock li {
+  border-bottom: 1px solid #323232;
+}
+
+.reportBlock h1 {
+  margin: 0;
+  font-size: 60px;
+  text-align: center;
+}
+
+.reportBlock ul {
+  margin: 15px !important;
+}
+.reportBlock h3 {
+  margin: 5px 15px 0;
+}
+
+.reportBlock li {
+  line-height: 22px;
+  font-size: 16px;
+}

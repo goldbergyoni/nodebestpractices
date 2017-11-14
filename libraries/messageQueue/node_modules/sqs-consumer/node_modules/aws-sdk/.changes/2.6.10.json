@@ -1,0 +1,17 @@
+[
+    {
+        "type": "feature",
+        "category": "CloudFront",
+        "description": "Ability to use Amazon CloudFront to deliver your content both via IPv6 and IPv4 using HTTP/HTTPS."
+    },
+    {
+        "type": "feature",
+        "category": "IoT",
+        "description": "Updates IoT API to the latest available version."
+    },
+    {
+        "type": "feature",
+        "category": "RDS",
+        "description": "Updates RDS to support accessing other AWS services by gassociating an IAM role with necessary permissions to your DB cluster."
+    }
+]

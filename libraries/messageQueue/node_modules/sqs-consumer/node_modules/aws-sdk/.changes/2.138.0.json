@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "EC2",
+        "description": "Adding pagination support for DescribeSecurityGroups for EC2 Classic and VPC Security Groups"
+    }
+]

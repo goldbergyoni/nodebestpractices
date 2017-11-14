@@ -1,0 +1,24 @@
+# Run on new travis container (docker) based infrastructure
+sudo: false
+language: node_js
+node_js:
+  - "5"
+  - "5.1"
+  - "4"
+  - "4.2"
+  - "4.1"
+  - "4.0"
+  - "0.12"
+  - "0.11"
+  - "0.10"
+  - "iojs"
+
+before_install:
+  # Install meteor and spacejam, a meteor command line package tester
+  - 'if [ "$(node -v)" = "v0.10.36" ]; then curl https://install.meteor.com | /bin/sh; fi'
+  - 'if [ "$(node -v)" = "v0.10.36" ]; then npm install -g spacejam; fi'
+  - 'if [ "$(node -v)" = "v0.10.36" ]; then export PATH="$HOME/.meteor:$PATH"; fi'
+
+script:
+  - "npm test"
+  - 'if [ "$(node -v)" = "v0.10.36" ]; then spacejam test-packages --mongo-url=dummy ./; fi'

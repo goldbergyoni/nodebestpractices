@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "Discovery",
+        "description": "Adding feature to the Export API for Discovery Service to allow filters for the export task to allow export based on per agent id."
+    },
+    {
+        "type": "feature",
+        "category": "EC2",
+        "description": "New EC2 GPU Graphics instance"
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "type": "feature",
+        "category": "CloudFormation",
+        "description": "API update for CloudFormation: New optional parameter ClientRequestToken which can be used as an idempotency token to safely retry certain operations as well as tagging StackEvents."
+    },
+    {
+        "type": "feature",
+        "category": "RDS",
+        "description": "The DescribeDBClusterSnapshots API now returns a SourceDBClusterSnapshotArn field which identifies the source DB cluster snapshot of a copied snapshot."
+    },
+    {
+        "type": "feature",
+        "category": "React Native",
+        "description": "Adds support for running the SDK in React Native. See the README for instructions."
+    },
+    {
+        "type": "feature",
+        "category": "Rekognition",
+        "description": "Fix for missing file type check"
+    },
+    {
+        "type": "feature",
+        "category": "SQS",
+        "description": "Adding server-side encryption (SSE) support to SQS by integrating with AWS KMS; adding new queue attributes to SQS CreateQueue, SetQueueAttributes and GetQueueAttributes APIs to support SSE."
+    },
+    {
+        "type": "feature",
+        "category": "Snowball",
+        "description": "The Snowball API has a new exception that can be thrown for list operation requests."
+    }
+]

@@ -1,0 +1,7 @@
+.DS_Store
+/format-util.js
+/test/spec.js
+*.bak
+node_modules
+coverage
+target

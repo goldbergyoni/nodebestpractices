@@ -1,0 +1,27 @@
+[
+    {
+        "type": "bugfix",
+        "category": "s3",
+        "description": "Propagate an error from a stream to s3.upload callback #1169"
+    },
+    {
+        "type": "feature",
+        "category": "S3",
+        "description": "Adds support for using dualstack with accelerate endpoints."
+    },
+    {
+        "type": "feature",
+        "category": "ACM",
+        "description": "This change allows users to import third-party SSL/TLS certificates into ACM."
+    },
+    {
+        "type": "feature",
+        "category": "ElasticBeanstalk",
+        "description": "Adds CodeCommit integraion. DescribeApplicationVersions updated to support pagination."
+    },
+    {
+        "type": "feature",
+        "category": "GameLift",
+        "description": "New APIs to protect game developer resource (builds, alias, fleets, instances, game sessions and player sessions) against abuse."
+    }
+]

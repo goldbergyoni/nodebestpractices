@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "KinesisAnalytics",
+        "description": "Kinesis Analytics publishes error messages CloudWatch logs in case of application misconfigurations"
+    },
+    {
+        "type": "feature",
+        "category": "WorkDocs",
+        "description": "This release includes new APIs to manage tags and custom metadata on resources and also new APIs to add and retrieve comments at the document level."
+    }
+]

@@ -1,0 +1,22 @@
+[
+    {
+        "type": "feature",
+        "category": "CognitoIdentityCredentials",
+        "description": "Adds `clientConfig` as an optional parameter to the `CognitoIdentityCredentials` constructor. This parameter can be used to pass in client configuration to the underlying service clients."
+    },
+    {
+        "type": "feature",
+        "category": "TemporaryCredentials",
+        "description": "Allows passing of master credentials to the TemporaryCredentials provider."
+    },
+    {
+        "type": "feature",
+        "category": "CodeCommit",
+        "description": "Added new API to list the different files between 2 commits"
+    },
+    {
+        "type": "feature",
+        "category": "ECS",
+        "description": "Amazon ECS now supports a state for container instances that can be used to drain a container instance in preparation for maintenance or cluster scale down."
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "CodeDeploy",
+        "description": "CodeDeploy supports IAM Session Arns in addition to IAM User Arns for on premise host authentication."
+    },
+    {
+        "type": "feature",
+        "category": "ECS",
+        "description": "Amazon EC2 Container Service (ECS) now supports the ability to customize the placement of tasks on container instances."
+    }
+]

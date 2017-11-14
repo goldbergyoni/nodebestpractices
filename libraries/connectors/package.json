@@ -1,0 +1,11 @@
+{
+  "name": "connectors",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./index",
+  "dependencies": {
+    "logger": "*",
+    "utils": "*",
+    "jsforce": "1.8.0"
+  }
+}

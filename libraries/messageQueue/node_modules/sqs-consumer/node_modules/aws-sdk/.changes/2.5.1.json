@@ -1,0 +1,17 @@
+[
+    {
+        "type": "feature",
+        "category": "ACM",
+        "description": "Increase tagging limit from 10 to 50."
+    },
+    {
+        "type": "feature",
+        "category": "APIGateway",
+        "description": "Amazon API Gateway now supports API usage plans. Usage plans allows you to easily manage and monetize your APIs for your API-based business."
+    },
+    {
+        "type": "feature",
+        "category": "ECS",
+        "description": "Adds support for memory reservation and network mode on task definitions. Also adds splunk as a supported log driver."
+    }
+]

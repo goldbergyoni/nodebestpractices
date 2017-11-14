@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "ES",
+        "description": "This release adds support for VPC access to Amazon Elasticsearch Service."
+    }
+]

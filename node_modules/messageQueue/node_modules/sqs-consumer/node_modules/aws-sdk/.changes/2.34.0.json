@@ -1,0 +1,12 @@
+[
+    {
+        "type": "features",
+        "category": "Batch",
+        "description": "Customers can now provide a retryStrategy as part of the RegisterJobDefinition and SubmitJob API calls."
+    },
+    {
+        "type": "features",
+        "category": "EC2",
+        "description": "Customers can now tag their Amazon EC2 Instances and Amazon EBS Volumes at the time of their creation."
+    }
+]

@@ -1,0 +1,21 @@
+; EditorConfig file: http://EditorConfig.org
+; Install the "EditorConfig" plugin into your editor to use
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+
+# Matches the exact files either package.json or .travis.yml
+[{package.json, .travis.yml}]
+indent_style = space
+indent_size = 2
+
+; Needed if doing `git add --patch` to edit patches
+[*.diff]
+trim_trailing_whitespace = false

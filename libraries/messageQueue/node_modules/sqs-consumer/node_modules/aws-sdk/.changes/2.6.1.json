@@ -1,0 +1,7 @@
+[
+    {
+        "type": "bugfix",
+        "category": "SDK",
+        "description": "Fixes an issue that caused all services to be loaded into memory when requiring the SDK. This issue was introduced in version `2.6.0` of the SDK, and address #1124."
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "type": "bugfix",
+        "category": "S3",
+        "description": "Updates S3 client to no longer attempt to determine a bucket's region when a request is aborted."
+    },
+    {
+        "type": "feature",
+        "category": "APIGateway",
+        "description": "Adds support for management of gateway responses."
+    },
+    {
+        "type": "feature",
+        "category": "EC2",
+        "description": "X-ENI (or Cross-Account ENI) is a new feature that allows the attachment or association of Elastic Network Interfaces (ENI) between VPCs in different AWS accounts located in the same availability zone. With this new capability, service providers and partners can deliver managed solutions in a variety of new architectural patterns where the provider and consumer of the service are in different AWS accounts."
+    }
+]

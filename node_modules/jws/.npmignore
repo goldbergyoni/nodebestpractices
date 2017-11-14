@@ -1,0 +1,4 @@
+Makefile
+test/
+.travis.yml
+.jshintrc

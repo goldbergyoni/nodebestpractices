@@ -1,0 +1,6 @@
+-u bdd
+--recursive
+--bail
+--check-leaks
+--reporter list 
+-A

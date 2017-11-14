@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "RDS",
+        "description": "Adds new operation describeSourceRegions to provide list of all the source region names and endpoints for any region. Source regions are the regions where current region can get a replica or copy a snapshot from."
+    }
+]

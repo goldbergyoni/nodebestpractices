@@ -1,0 +1,20 @@
+language: node_js
+
+sudo: false
+
+node_js:
+  # https://github.com/nodejs/LTS
+  - "4" # ends April 2018
+  - "6" # ends April 2019
+  - "8" # ends December 2019
+
+env:
+  global:
+    - SAUCE_USERNAME=sinonjs
+    - secure: "Szc/biR+MJFC/r4IFzDVXJkIt1COglrCyCd/drmBrXj4AE70J2qn8QlU0n3uQUhrDH5k0NtSWnZHcfxuUTHpasvh9yPFGtqnNeqgftZjXQyJFS+rYye4i04cyYGEmc1qxhpljfAXbvCJV+bHDFmWxIF6KSHWMsVk6IbhoD0/Dis="
+
+script:
+  - "./script/ci-test.sh"
+  - 'if [ "x$TRAVIS_NODE_VERSION" = "x4.2" ]; then npm run lint; fi'
+  - 'if [ "x$TRAVIS_NODE_VERSION" = "x4.2" ] && [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then npm run test-cloud; fi'
+

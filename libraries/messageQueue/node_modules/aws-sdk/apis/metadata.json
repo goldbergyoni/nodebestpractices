@@ -1,0 +1,348 @@
+{
+  "acm": {
+    "name": "ACM",
+    "cors": true
+  },
+  "apigateway": {
+    "name": "APIGateway",
+    "cors": true
+  },
+  "applicationautoscaling": {
+    "prefix": "application-autoscaling",
+    "name": "ApplicationAutoScaling",
+    "cors": true
+  },
+  "autoscaling": {
+    "name": "AutoScaling",
+    "cors": true
+  },
+  "budgets": {
+    "name": "Budgets"
+  },
+  "cloudformation": {
+    "name": "CloudFormation",
+    "cors": true
+  },
+  "cloudfront": {
+    "name": "CloudFront",
+    "versions": [
+      "2013-05-12*",
+      "2013-11-11*",
+      "2014-05-31*",
+      "2014-10-21*",
+      "2014-11-06*",
+      "2015-04-17*",
+      "2015-07-27*",
+      "2015-09-17*",
+      "2016-01-13*",
+      "2016-01-28*",
+      "2016-08-01*",
+      "2016-08-20*",
+      "2016-09-07*"
+    ],
+    "cors": true
+  },
+  "cloudhsm": {
+    "name": "CloudHSM",
+    "cors": true
+  },
+  "cloudsearch": {
+    "name": "CloudSearch"
+  },
+  "cloudsearchdomain": {
+    "name": "CloudSearchDomain"
+  },
+  "cloudtrail": {
+    "name": "CloudTrail",
+    "cors": true
+  },
+  "cloudwatch": {
+    "prefix": "monitoring",
+    "name": "CloudWatch",
+    "cors": true
+  },
+  "cloudwatchevents": {
+    "prefix": "events",
+    "name": "CloudWatchEvents",
+    "versions": [
+      "2014-02-03*"
+    ],
+    "cors": true
+  },
+  "cloudwatchlogs": {
+    "prefix": "logs",
+    "name": "CloudWatchLogs",
+    "cors": true
+  },
+  "codecommit": {
+    "name": "CodeCommit",
+    "cors": true
+  },
+  "codedeploy": {
+    "name": "CodeDeploy",
+    "cors": true
+  },
+  "codepipeline": {
+    "name": "CodePipeline",
+    "cors": true
+  },
+  "cognitoidentity": {
+    "prefix": "cognito-identity",
+    "name": "CognitoIdentity",
+    "cors": true
+  },
+  "cognitoidentityserviceprovider": {
+    "prefix": "cognito-idp",
+    "name": "CognitoIdentityServiceProvider",
+    "cors": true
+  },
+  "cognitosync": {
+    "prefix": "cognito-sync",
+    "name": "CognitoSync",
+    "cors": true
+  },
+  "configservice": {
+    "prefix": "config",
+    "name": "ConfigService",
+    "cors": true
+  },
+  "datapipeline": {
+    "name": "DataPipeline"
+  },
+  "devicefarm": {
+    "name": "DeviceFarm",
+    "cors": true
+  },
+  "directconnect": {
+    "name": "DirectConnect",
+    "cors": true
+  },
+  "directoryservice": {
+    "prefix": "ds",
+    "name": "DirectoryService"
+  },
+  "discovery": {
+    "name": "Discovery"
+  },
+  "dms": {
+    "name": "DMS"
+  },
+  "dynamodb": {
+    "name": "DynamoDB",
+    "cors": true
+  },
+  "dynamodbstreams": {
+    "prefix": "streams.dynamodb",
+    "name": "DynamoDBStreams",
+    "cors": true
+  },
+  "ec2": {
+    "name": "EC2",
+    "versions": [
+      "2013-06-15*",
+      "2013-10-15*",
+      "2014-02-01*",
+      "2014-05-01*",
+      "2014-06-15*",
+      "2014-09-01*",
+      "2014-10-01*",
+      "2015-03-01*",
+      "2015-04-15*",
+      "2015-10-01*",
+      "2016-04-01*"
+    ],
+    "cors": true
+  },
+  "ecr": {
+    "name": "ECR",
+    "cors": true
+  },
+  "ecs": {
+    "name": "ECS",
+    "cors": true
+  },
+  "efs": {
+    "prefix": "elasticfilesystem",
+    "name": "EFS"
+  },
+  "elasticache": {
+    "name": "ElastiCache",
+    "versions": [
+      "2012-11-15*",
+      "2014-03-24*",
+      "2014-07-15*",
+      "2014-09-30*"
+    ],
+    "cors": true
+  },
+  "elasticbeanstalk": {
+    "name": "ElasticBeanstalk",
+    "cors": true
+  },
+  "elb": {
+    "prefix": "elasticloadbalancing",
+    "name": "ELB",
+    "cors": true
+  },
+  "elbv2": {
+    "prefix": "elasticloadbalancingv2",
+    "name": "ELBv2",
+    "cors": true
+  },
+  "emr": {
+    "prefix": "elasticmapreduce",
+    "name": "EMR",
+    "cors": true
+  },
+  "es": {
+    "name": "ES"
+  },
+  "elastictranscoder": {
+    "name": "ElasticTranscoder",
+    "cors": true
+  },
+  "firehose": {
+    "name": "Firehose",
+    "cors": true
+  },
+  "gamelift": {
+    "name": "GameLift",
+    "cors": true
+  },
+  "glacier": {
+    "name": "Glacier"
+  },
+  "iam": {
+    "name": "IAM"
+  },
+  "importexport": {
+    "name": "ImportExport"
+  },
+  "inspector": {
+    "name": "Inspector",
+    "versions": [
+      "2015-08-18*"
+    ],
+    "cors": true
+  },
+  "iot": {
+    "name": "Iot",
+    "cors": true
+  },
+  "iotdata": {
+    "prefix": "iot-data",
+    "name": "IotData",
+    "cors": true
+  },
+  "kinesis": {
+    "name": "Kinesis",
+    "cors": true
+  },
+  "kinesisanalytics": {
+    "name": "KinesisAnalytics"
+  },
+  "kms": {
+    "name": "KMS",
+    "cors": true
+  },
+  "lambda": {
+    "name": "Lambda",
+    "cors": true
+  },
+  "machinelearning": {
+    "name": "MachineLearning",
+    "cors": true
+  },
+  "marketplacecommerceanalytics": {
+    "name": "MarketplaceCommerceAnalytics",
+    "cors": true
+  },
+  "marketplacemetering": {
+    "prefix": "meteringmarketplace",
+    "name": "MarketplaceMetering"
+  },
+  "mobileanalytics": {
+    "name": "MobileAnalytics",
+    "cors": true
+  },
+  "opsworks": {
+    "name": "OpsWorks",
+    "cors": true
+  },
+  "rds": {
+    "name": "RDS",
+    "versions": [
+      "2014-09-01*"
+    ],
+    "cors": true
+  },
+  "redshift": {
+    "name": "Redshift",
+    "cors": true
+  },
+  "route53": {
+    "name": "Route53",
+    "cors": true
+  },
+  "route53domains": {
+    "name": "Route53Domains",
+    "cors": true
+  },
+  "s3": {
+    "name": "S3",
+    "dualstackAvailable": true,
+    "cors": true
+  },
+  "servicecatalog": {
+    "name": "ServiceCatalog",
+    "cors": true
+  },
+  "ses": {
+    "prefix": "email",
+    "name": "SES",
+    "cors": true
+  },
+  "simpledb": {
+    "prefix": "sdb",
+    "name": "SimpleDB"
+  },
+  "sms": {
+    "name": "SMS"
+  },
+  "snowball": {
+    "name": "Snowball"
+  },
+  "sns": {
+    "name": "SNS",
+    "cors": true
+  },
+  "sqs": {
+    "name": "SQS",
+    "cors": true
+  },
+  "ssm": {
+    "name": "SSM",
+    "cors": true
+  },
+  "storagegateway": {
+    "name": "StorageGateway",
+    "cors": true
+  },
+  "sts": {
+    "name": "STS",
+    "cors": true
+  },
+  "support": {
+    "name": "Support"
+  },
+  "swf": {
+    "name": "SWF"
+  },
+  "waf": {
+    "name": "WAF",
+    "cors": true
+  },
+  "workspaces": {
+    "name": "WorkSpaces"
+  }
+}

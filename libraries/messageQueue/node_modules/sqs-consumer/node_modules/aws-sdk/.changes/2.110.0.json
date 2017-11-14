@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "Budgets",
+        "description": "Add an optional \"thresholdType\" to notifications to support percentage or absolute value thresholds."
+    }
+]

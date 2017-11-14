@@ -1,0 +1,27 @@
+[
+    {
+        "type": "feature",
+        "category": "DynamoDB",
+        "description": "Adds ability to customize retry delays for DynamoDB. This previously worked for all services except DynamoDB. Also adds jitter to DynamoDB retries. See `AWS.Config.retryDelayOptions` for more information."
+    },
+    {
+        "type": "feature",
+        "category": "Waiter",
+        "description": "Allow customization of a waiter using a special `$waiter` key"
+    },
+    {
+        "type": "feature",
+        "category": "Lambda",
+        "description": "Adds support for new runtime Node.js v6.10 for AWS Lambda service. :tada:"
+    },
+    {
+        "type": "feature",
+        "category": "ELBv2",
+        "description": "Adding waiters for Elastic Load Balancing V2"
+    },
+    {
+        "type": "feature",
+        "category": "Discovery",
+        "description": "Adds export configuration options to the API."
+    }
+]

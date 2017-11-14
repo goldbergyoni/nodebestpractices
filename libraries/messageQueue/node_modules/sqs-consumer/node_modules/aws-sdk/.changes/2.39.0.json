@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "ElastiCache",
+        "description": "ElastiCache added support for testing the Elasticache Multi-AZ feature with Automatic Failover."
+    },
+    {
+        "type": "feature",
+        "category": "Http",
+        "description": "Adds a connectTimeout option that allows slow-to-establish socket connections to be quickly abandoned"
+    }
+]

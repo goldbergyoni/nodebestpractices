@@ -1,0 +1,17 @@
+[
+    {
+        "type": "bugfix",
+        "category": "RDS",
+        "description": "Fixes issue wherein the wrong parameter name was used for cross region presigned urls."
+    },
+    {
+        "type": "feature",
+        "category": "ELBv2",
+        "description": "Application Load Balancers now support native Internet Protocol version 6 (IPv6) in an Amazon Virtual Private Cloud (VPC). With this ability, clients can now connect to the Application Load Balancer in a dual-stack mode via either IPv4 or IPv6."
+    },
+    {
+        "type": "feature",
+        "category": "RDS",
+        "description": "Adds cross region read replica copying."
+    }
+]

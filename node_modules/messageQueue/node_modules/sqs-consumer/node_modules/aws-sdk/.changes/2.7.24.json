@@ -1,0 +1,12 @@
+[
+    {
+        "type": "bugfix",
+        "category": "HTTP",
+        "description": "Ensure that buffers are not created with Buffer.from in node 4.0-4.4"
+    },
+    {
+        "type": "bugfix",
+        "category": "core",
+        "description": "Deprecate v2.7.23"
+    }
+]

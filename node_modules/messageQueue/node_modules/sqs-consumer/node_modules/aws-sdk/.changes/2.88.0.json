@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "EMR",
+        "description": "Amazon EMR now includes the ability to use a custom Amazon Linux AMI and adjustable root volume size when launching a cluster."
+    }
+]

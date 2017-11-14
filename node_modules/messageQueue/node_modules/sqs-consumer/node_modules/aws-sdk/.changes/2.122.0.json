@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "ConfigService",
+        "description": "AWS Config support for DynamoDB tables and Auto Scaling resource types"
+    },
+    {
+        "type": "feature",
+        "category": "ECS",
+        "description": "Amazon ECS users can now add and drop Linux capabilities to their containers through the use of docker's cap-add and cap-drop features. Customers can specify the capabilities they wish to add or drop for each container in their task definition. "
+    }
+]

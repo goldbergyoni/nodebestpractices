@@ -1,0 +1,17 @@
+[
+    {
+        "type": "feature",
+        "category": "DocumentClient",
+        "description": "Add a constructor option to convert empty strings, sets, and binary strings to a Dynamo NULL typed field"
+    },
+    {
+        "type": "feature",
+        "category": "Discovery",
+        "description": "Adds new APIs to group discovered servers into Applications with get summary and neighbors. Includes additional filters for ListConfigurations and DescribeAgents API."
+    },
+    {
+        "type": "feature",
+        "category": "CognitoIdentity",
+        "description": "Added fine-grained role-based access control for Cognito identity pools. Developers can configure an identity pool to get the IAM role from an authenticated user's token, or they can configure rules that will map a user to a different role"
+    }
+]

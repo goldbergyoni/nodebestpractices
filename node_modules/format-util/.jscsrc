@@ -1,0 +1,20 @@
+{
+    "fileExtensions": [".js", "jscs"],
+    "requireSemicolons": false,
+    "requireParenthesesAroundIIFE": true,
+    "maximumLineLength": 80,
+    "validateLineBreaks": "LF",
+    "validateIndentation": 2,
+    "requireMultipleVarDecl": false,
+    "disallowTrailingComma": true,
+    "disallowSpacesInConditionalExpression": false,
+    "disallowSpaceAfterKeywords": false,
+    "disallowSpaceBeforeBlockStatements": false,
+    "disallowSpacesInsideObjectBrackets": null,
+    "excludeFiles": [
+      "node_modules",
+      "coverage",
+      "format-util.js",
+      "test/spec.js"
+    ]
+}

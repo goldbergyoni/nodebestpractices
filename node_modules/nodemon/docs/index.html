@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width">
+<title>nodemon</title>
+<style id="jsbin-css">
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Roboto Thin'), local('Roboto-Thin'), url(https://themes.googleusercontent.com/static/fonts/roboto/v9/vzIUHo9z-oJ4WgkpPOtg13YhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(https://themes.googleusercontent.com/static/fonts/roboto/v9/Hgo13k-tfSpn0qi1SFdUfbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(https://themes.googleusercontent.com/static/fonts/roboto/v9/RxZJdnzeo3R5zSexge8UUbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+
+body, html {
+  margin: 0;
+  min-height: 100%;
+  background: #2B2922;
+  color: #eee;
+  font-family: 'Roboto', serif;
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 1.5;
+}
+
+html {
+  margin-bottom: 20px;
+}
+
+header, footer {
+  background: #76d04b;
+  padding: 10px;
+  position: relative;
+  /* background: white; */
+}
+
+svg {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  padding: 80px 0 0;
+  border: 1px solid #77d04b;
+  display: block;
+  fill: #4F4D3F;
+}
+
+header, footer a, footer p {
+  color: #4F4D3F;
+}
+
+h1 {
+  padding: 40px 0 0 0;
+  font-weight: 300;
+}
+
+h2 {
+  font-weight: 100;
+}
+
+header strong {
+  font-weight: 500;
+  font-size: 110%;
+}
+
+header h1, header h2 {
+  text-align: center;
+}
+
+body > p, h2, ul {
+  margin: 20px 48px;
+}
+
+ul {
+  padding-left: 23px;
+}
+
+code {
+  font-weight: 100;
+  font-size: 22px;
+  font-family: 'courier new';
+}
+
+pre code {
+  font-family: courier;
+}
+
+pre {
+  white-space: pre-wrap;
+  background: #000;
+  border-radius: 3px;
+  padding: 20px 48px;
+}
+
+a {
+  color: #fff;
+  font-weight: 400;
+}
+
+footer {
+  margin-top: 40px;
+  padding: 10px 28px;
+}
+
+footer p {
+  font-size: 80%;
+  margin: 5px 10px;
+}
+
+footer a {
+  padding: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  body > p, h2, ul {
+    margin: 20px 10px;
+  }
+
+  pre {
+    padding: 20px 12px;
+  }
+
+  footer {
+    padding: 10px 12px;
+  }
+
+  pre, pre code {
+    margin: 10px 0;
+  }
+}
+</style>
+</head>
+<body>
+  <header>
+    <svg version="1.1" id="template" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" x="0px" y="0px" width="160" height="180"
+     viewBox="0 0 160 185" xml:space="preserve">
+      <path d="M158.156,60.461l-5.326-3.066
+                c8.189-12.08,13.084-30.242,6.947-57.395c0,0-13.82,38.733-41.602,37.449L85.645,18.73c-1.227-0.728-2.602-1.103-3.992-1.159
+                c-0.125,0-0.648,0-0.75,0c-1.387,0.057-2.76,0.432-4.004,1.159L44.367,37.449C16.586,38.738,2.762,0,2.762,0
+                c-6.141,27.152-1.238,45.314,6.949,57.395l-5.324,3.066C1.682,62.018,0,64.914,0,68.072l0.16,112.363
+                c0,1.568,0.812,3.021,2.188,3.783c1.344,0.812,3.008,0.812,4.35,0l43.094-24.676c2.727-1.619,4.385-4.477,4.385-7.6V99.449
+                c0-3.129,1.658-6.031,4.373-7.582l18.35-10.568c1.367-0.795,2.863-1.182,4.391-1.182c1.492,0,3.027,0.387,4.356,1.182
+                l18.344,10.568c2.715,1.551,4.379,4.453,4.379,7.582v52.494c0,3.123,1.68,6.002,4.391,7.6l43.082,24.676
+                c1.352,0.812,3.039,0.812,4.379,0c1.336-0.762,2.176-2.215,2.176-3.783l0.141-112.363
+                C162.535,64.914,160.879,62.018,158.156,60.461z"/>
+    </svg>
+    <h1><strong>nodemon</strong> reload, automatically.</h1>
+
+  </header>
+
+  <p>Nodemon is a utility that will monitor for any changes in your source and automatically restart your server. Perfect for development. Install it using <a href="https://npmjs.org/package/nodemon">npm</a>.</p>
+
+  <p>Just use <code>nodemon</code> instead of <code>node</code> to run your code, and now your process will automatically restart when your code changes. To install, get <a href="https://nodejs.org" target="_blank">node.js</a>, then from your terminal run:</p>
+
+  <pre><code>npm install -g nodemon</code></pre>
+
+
+  <h2>Features</h2>
+
+  <ul>
+    <li>Automatic restarting of application.</li>
+    <li>Detects default file extension to monitor.</li>
+    <li>Default support for node &amp; coffeescript, but easy to run any executable (such as python, make, etc).</li>
+    <li>Ignoring specific files or directories.</li>
+    <li>Watch specific directories.</li>
+    <li>Works with server applications or one time run utilities and REPLs.</li>
+    <li>Requirable in node apps.</li>
+    <li>Open source and available on <a href="https://github.com/remy/nodemon/">github</a>.</li>
+  </ul>
+
+  <p>Read the full <a href="https://github.com/remy/nodemon#nodemon">documentation</a>.</p>
+
+  <footer>
+    <p><a href="https://github.com/remy/nodemon/issues">issues</a> &bull; <a href="https://github.com/remy/nodemon/">source code</a>  &bull; <a href="https://twitter.com/rem">built by @rem</a></p>
+  </footer>
+</body>
+</html>

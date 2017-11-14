@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "CloudDirectory",
+        "description": "Enable BatchDetachPolicy"
+    },
+    {
+        "type": "feature",
+        "category": "CodeBuild",
+        "description": "Supporting Bitbucket as source type in AWS CodeBuild."
+    }
+]

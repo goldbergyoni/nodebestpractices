@@ -1,0 +1,13 @@
+{
+  "pagination": {
+    "DescribeDomains": {
+      "result_key": "DomainStatusList"
+    },
+    "DescribeIndexFields": {
+      "result_key": "IndexFields"
+    },
+    "DescribeRankExpressions": {
+      "result_key": "RankExpressions"
+    }
+  }
+}

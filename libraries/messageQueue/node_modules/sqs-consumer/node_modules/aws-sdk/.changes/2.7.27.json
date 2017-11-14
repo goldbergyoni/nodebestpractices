@@ -1,0 +1,12 @@
+[
+    {
+        "type": "bugfix",
+        "category": "Performance",
+        "description": "This change reverts a request body cast in the node HTTP handler that caused a performance regression."
+    },
+    {
+        "type": "feature",
+        "category": "ACM",
+        "description": "Updated response elements for DescribeCertificate API in support of managed renewal."
+    }
+]

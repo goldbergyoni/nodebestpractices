@@ -1,0 +1,27 @@
+[
+    {
+        "type": "feature",
+        "category": "DAX",
+        "description": "Amazon DynamoDB Accelerator (DAX) is a fully managed, highly available, in-memory cache for DynamoDB that delivers up to a 10x performance improvement - from milliseconds to microseconds - even at millions of requests per second. DAX does all the heavy lifting required to add in-memory acceleration to your DynamoDB tables, without requiring developers to manage cache invalidation, data population, or cluster management."
+    },
+    {
+        "type": "feature",
+        "category": "Route53",
+        "description": "Amazon Route 53 now supports multivalue answers in response to DNS queries, which lets you route traffic approximately randomly to multiple resources, such as web servers. Create one multivalue answer record for each resource and, optionally, associate an Amazon Route 53 health check with each record, and Amazon Route 53 responds to DNS queries with up to eight healthy records."
+    },
+    {
+        "type": "feature",
+        "category": "S3",
+        "description": "Allows forward slashes in Bucket names when using SigV4 to create or retrieve objects. This is to maintain compatibility with behavior when using SigV2. In new code, Buckets should not contain forward slashes. Instead, directories should be part of an object's key."
+    },
+    {
+        "type": "feature",
+        "category": "SSM",
+        "description": "Adding hierarchy support to the SSM Parameter Store API. Added support tor tagging. New APIs: GetParameter - retrieves one parameter, DeleteParameters - deletes multiple parameters (max number 10), GetParametersByPath - retrieves parameters located in the hierarchy. Updated APIs: PutParameter - added ability to enforce parameter value by applying regex (AllowedPattern), DescribeParameters - modified to support Tag filtering."
+    },
+    {
+        "type": "feature",
+        "category": "WAFRegional",
+        "description": "You can now create, edit, update, and delete a new type of WAF rule with a rate tracking component."
+    }
+]

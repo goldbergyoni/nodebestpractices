@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "Rekognition",
+        "description": "Update the enum value of LandmarkType and GenderType to be consistent with service response"
+    }
+]

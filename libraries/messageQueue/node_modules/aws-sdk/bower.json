@@ -1,0 +1,9 @@
+{
+  "name": "aws-sdk",
+  "ignore": [
+    "apis", "doc-src", "dist-tools", "eslint-rules", "features", "lib",
+    "scripts", "tasks", "test", "Gemfile*", "configuration*",
+    "Rakefile", "package.json", "testem.json", ".*", "index.js"
+  ],
+  "main": "dist/aws-sdk.js"
+}

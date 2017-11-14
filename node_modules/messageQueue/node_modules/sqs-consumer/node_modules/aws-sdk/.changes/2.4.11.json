@@ -1,0 +1,32 @@
+[
+    {
+        "type": "feature",
+        "category": "APIGateway",
+        "description": "Adds support for authentication through Cognito User Pools."
+    },
+    {
+        "type": "feature",
+        "category": "CognitoIdentityServiceProvider",
+        "description": "Introduces support for Your User Pools."
+    },
+    {
+        "type": "feature",
+        "category": "DirectoryService",
+        "description": "Enables routing to on-premises public IP for Microsoft Active Directory."
+    },
+    {
+        "type": "feature",
+        "category": "EC2",
+        "description": "Enables resolution of DNS queries from a peered VPC to a private IP address."
+    },
+    {
+        "type": "feature",
+        "category": "ES",
+        "description": "Updates to Elasticsearch version 2.3, which offers improved performance, memory management, and security. It also offers several new features includinng pipeline aggregations to perform advanced analytics like moving averages and derivatives, and enhancements to geospatial queries."
+    },
+    {
+        "type": "feature",
+        "category": "Waiter",
+        "description": "Adds Waiters for AWS.CodeDeploy."
+    }
+]

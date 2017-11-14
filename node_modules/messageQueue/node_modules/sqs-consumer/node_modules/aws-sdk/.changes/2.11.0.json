@@ -1,0 +1,17 @@
+[
+    {
+        "type": "bugfix",
+        "category": "TypeScript",
+        "description": "Add `endpoint` property to AWS.S3 instance declaration."
+    },
+    {
+        "type": "feature",
+        "category": "EC2",
+        "description": "This feature allows customers to associate an IAM profile to running instances that do not have any."
+    },
+    {
+        "type": "feature",
+        "category": "Rekognition",
+        "description": "DetectFaces and IndexFaces operations now return an estimate of the age of the face as an age range."
+    }
+]

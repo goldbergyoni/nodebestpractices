@@ -1,0 +1,16 @@
+{
+  "name": "utils",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./index",
+  "dependencies": {
+    "bcryptjs": "2.4.3",
+    "configurationManager": "*",
+    "errorManagement": "*",
+    "fs": "0.0.1-security",
+    "jsonwebtoken": "8.1.0",
+    "logger": "*",
+    "nodemailer": "4.3.1",
+    "random-number": "0.0.9"
+  }
+}

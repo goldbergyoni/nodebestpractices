@@ -1,0 +1,22 @@
+[
+    {
+        "type": "feature",
+        "category": "CognitoIdentityServiceProvider",
+        "description": "Adds support for bulk import of users."
+    },
+    {
+        "type": "feature",
+        "category": "GameLift",
+        "description": "Adds Linux support."
+    },
+    {
+        "type": "feature",
+        "category": "Iot",
+        "description": "Adds Iot as a default service in the browser distribution of the AWS SDK for JavaScript."
+    },
+    {
+        "type": "feature",
+        "category": "RDS",
+        "description": "Adds information in response of describeOptionGroupOptions about options that conflict with each other."
+    }
+]

@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+
+'use strict';
+
+// Internal libs.
+var cli = require('../lib/cli');
+var info = require('../lib/info');
+
+if (cli.args.v) {
+  info.version();
+  process.exit();
+}
+
+if (cli.args.h) {
+  info.help();
+  process.exit();
+}
+
+cli.exec(function(){
+  console.log('Done!');
+});

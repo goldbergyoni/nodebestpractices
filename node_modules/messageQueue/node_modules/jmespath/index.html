@@ -1,0 +1,93 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>JMESPath Demo</title>
+  <meta name="description" content="JMESPath Demo">
+<!--
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+-->
+  <script src="artifacts/jmespath.min.js"></script>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="hero-unit">
+      <h1>JSONPath Online Evaluator</h1>
+      <div id="info">
+        <p>Author: <a href="http://ashphy.com/">Kazuki Hamasaki</a> [ashphy@ashphy.com]</p>
+        <p>This evaluator uses <a href="http://goessner.net/articles/JsonPath/">JSONPath - XPath for JSON</a></p>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span6">
+        <h2>Inputs</h2>
+        <form>
+          <label>JSONPath Syntax</label>
+          <input type="text" placeholder="Put JSONPath syntax" value="$.phoneNumbers[:1].type" />
+          <span class="help-block">Example '$.phoneNumbers[*].type' See also <a href="http://goessner.net/articles/JsonPath/index.html#e2">JSONPath expressions</a></span>
+          <label>JSON</label>
+          <textarea rows="30" cols="80">
+{
+     "firstName": "John",
+     "lastName" : "doe",
+     "age"      : 26,
+     "address"  :
+     {
+         "streetAddress": "naist street",
+         "city"         : "Nara",
+         "postalCode"   : "630-0192"
+     },
+     "phoneNumbers":
+     [
+         {
+           "type"  : "iPhone",
+           "number": "0123-4567-8888"
+         },
+         {
+           "type"  : "home",
+           "number": "0123-4567-8910"
+         }
+     ]
+ }
+          </textarea>
+        </form>
+      </div>
+      <div class="span6 ">
+        <h2>Evaluation Results</h2>
+        <pre class="result">false</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.7.2.min.js"><\/script>')</script>
+  <script src="js/vendor/jquery.textchange.min.js"></script>
+  
+  <script>
+    var evaluate = function(event, previousText){
+        var query = $("input").val();
+        var json = JSON.parse($("textarea").val().replace(/(\r\n|\n|\r)/gm,""));
+        var result = jsonPath(json, query);
+        $(".result").empty();
+        if(result) {
+          $(".result").append(dump(result));
+        }
+    }
+    
+    $(document).ready(function(){
+      $('input').bind('textchange', evaluate);
+      $('textarea').bind('textchange', evaluate);
+      evaluate();
+    });
+  </script>
+</body>
+</html>
+

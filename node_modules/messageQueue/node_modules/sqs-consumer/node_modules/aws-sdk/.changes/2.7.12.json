@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "S3",
+        "description": "Add the Version ID field to the Get and Put object tagging operations."
+    }
+]

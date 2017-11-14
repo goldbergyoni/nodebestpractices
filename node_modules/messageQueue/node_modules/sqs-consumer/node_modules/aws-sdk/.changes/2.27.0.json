@@ -1,0 +1,17 @@
+[
+    {
+        "type": "bugfix",
+        "category": "TemporaryCredentials",
+        "description": "Ensure master credentials are not expired before using them to refresh temporary credentials"
+    },
+    {
+        "type": "feature",
+        "category": "CodeDeploy",
+        "description": "Add paginators for Codedeploy"
+    },
+    {
+        "type": "feature",
+        "category": "EMR",
+        "description": "This release includes support for instance fleets in Amazon EMR"
+    }
+]

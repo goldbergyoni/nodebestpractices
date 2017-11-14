@@ -1,0 +1,22 @@
+[
+    {
+        "type": "bugfix",
+        "category": "REST-JSON serialization",
+        "description": "Automatically add a content-type header of application/json to requests with a JSON body"
+    },
+    {
+        "type": "feature",
+        "category": "CodeDeploy",
+        "description": "Adds support for specifying Application Load Balancers in deployment groups, for both in-place and blue/green deployments."
+    },
+    {
+        "type": "feature",
+        "category": "CognitoIdentityServiceProvider",
+        "description": "We have added support for features for Amazon Cognito User Pools that enable application developers to easily add and customize a sign-up and sign-in user experience, use OAuth 2.0, and integrate with Facebook, Google, Login with Amazon, and SAML-based identity providers."
+    },
+    {
+        "type": "feature",
+        "category": "EC2",
+        "description": "Provides customers an opportunity to recover an EIP that was released"
+    }
+]

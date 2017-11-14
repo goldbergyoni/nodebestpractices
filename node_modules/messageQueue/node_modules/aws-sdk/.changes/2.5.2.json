@@ -1,0 +1,22 @@
+[
+    {
+        "type": "bugfix",
+        "category": "Waiter",
+        "description": "Fixes bug in `clusterDeleted` waiter for AWS.Redshift."
+    },
+    {
+        "type": "feature",
+        "category": "EC2",
+        "description": "Adds  new APIs supporting dedicated host reservations. Also adds new property to response of `describeSpotFleetRequests` to indicate  the activity status of spot fleet requests."
+    },
+    {
+        "type": "feature",
+        "category": "Request",
+        "description": "eachItem method stops iteration on returning false (like eachPage)"
+    },
+    {
+        "type": "feature",
+        "category": "WorkSpaces",
+        "description": "Adds new APIs to support the launch and management of WorkSpaces that are paid for and used by the hour."
+    }
+]

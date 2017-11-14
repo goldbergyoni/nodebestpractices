@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "EC2",
+        "description": "Fixed bug in EC2 clients preventing HostReservation from being set"
+    }
+]

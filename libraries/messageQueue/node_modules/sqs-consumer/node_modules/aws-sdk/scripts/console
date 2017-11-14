@@ -1,0 +1,119 @@
+#!/usr/bin/env node
+
+var repl = require('repl').start('aws-sdk> '),
+    replEval = repl.eval,
+    defaultOptions = {
+      logger: process.stdout,
+      region: process.env.AWS_REGION || 'us-east-1'
+    };
+
+
+function customEval(cmd, context, filename, callback) {
+  replEval(cmd, context, filename, function(err, value) {
+    if (err) {
+      callback(err, null);
+      return;
+    }
+
+    function consoleDataExtraction(resp) {
+      context.data = resp.data;
+      context.error = resp.error;
+      callback(resp.error, resp.data);
+    }
+    
+    if (value && value.constructor === AWS.Request && !value.__hasBeenEval__) {
+      
+      try {
+        value.__hasBeenEval__ = true;
+        if (value.response) value.response.__hasBeenEval__ = true;
+        context.request = value;
+        context.response = value.response || null;
+        context.data = null;
+        context.error = null;
+        if (value._asm.currentState === 'complete' && value.response) {
+          context.data = value.response.data || null;
+          context.error = value.response.error || null;
+          callback(value.response.error, value.response.data);
+        } else {
+          value.on('complete', consoleDataExtraction);
+          if (!value.__hasBeenSent__) {
+            if (context.autoSend) {
+              value.send();
+            } else {
+              callback(null, value);
+            }
+          }
+        }
+      } catch (err2) {
+        callback(err2, null);
+        return;
+      }
+
+    } else if (value && value.constructor === AWS.Response && !value.__hasBeenEval__) {
+      try {
+        value.__hasBeenEval__ = true;
+        context.response = value;
+        context.request = value.request || null;
+        context.data = value.data || null;
+        context.error = value.error || null;
+        if (value.request) {
+          value.request.__hasBeenEval__ = true;
+          if (value.request._asm.currentState === 'complete') {
+            callback(value.error, value.data);
+          } else {
+            value.request.on('complete', consoleDataExtraction);
+          }
+        }
+      } catch (err2) {
+        callback(err2, null);
+        return;
+      }
+    } else {
+      callback(null, value);
+    }
+  });
+}
+
+var AWS = repl.context.AWS = require('../lib/aws');
+repl.eval = customEval;
+
+// context variables
+repl.context.data = null;
+repl.context.error = null;
+repl.context.request = null;
+repl.context.response = null;
+
+// setup REPL history
+try {
+  var replHistory = require('repl.history');
+  replHistory(repl, process.env.HOME + '/.node_history');
+} catch (e) {
+  console.log("Missing repl.history package, history will not be supported.");
+  console.log("  Type `npm install repl.history` to enable history.");
+}
+
+// modify Request.prototype.send listener to track if the listener has been called
+var sendListener = AWS.Request.prototype.send;
+AWS.Request.prototype.send = function(callback) {
+  this.__hasBeenSent__ = true;
+  return sendListener.call(this, callback);
+};
+
+// flag to indicate that requests should be sent when callback is not provided
+// by default this is on, but can be turned off by setting `autoSend = false`
+repl.context.autoSend = true;
+
+// load services as defined instances
+for (var key in AWS) {
+  var id = AWS[key].serviceIdentifier;
+  if (id) {
+    if (id === 'cloudsearchdomain' || id === 'iotdata') continue; // this required an explicit endpoint
+
+    var svcClass = AWS[key];
+    var svc = new svcClass(defaultOptions);
+    svc.with = function(config) {
+      return new this.constructor.__super__(AWS.util.merge(this.config, config));
+    };
+    repl.context[svcClass.serviceIdentifier] = svc;
+  }
+}

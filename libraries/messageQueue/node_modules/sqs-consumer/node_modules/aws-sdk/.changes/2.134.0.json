@@ -1,0 +1,32 @@
+[
+    {
+        "type": "feature",
+        "category": "CORS",
+        "description": "The LexModelBuildingService supports CORS. This change adds the service to the browser version of the SDK by default."
+    },
+    {
+        "type": "feature",
+        "category": "EC2",
+        "description": "You can now change the tenancy of your VPC from dedicated to default with a single API operation. For more details refer to the documentation for changing VPC tenancy."
+    },
+    {
+        "type": "feature",
+        "category": "ES",
+        "description": "AWS Elasticsearch adds support for enabling slow log publishing. Using slow log publishing options customers can configure and enable index/query slow log publishing of their domain to preferred AWS Cloudwatch log group."
+    },
+    {
+        "type": "feature",
+        "category": "RDS",
+        "description": "Adds waiters for DBSnapshotAvailable and DBSnapshotDeleted."
+    },
+    {
+        "type": "feature",
+        "category": "WAF",
+        "description": "This release adds support for regular expressions as match conditions in rules, and support for geographical location by country of request IP address as a match condition in rules."
+    },
+    {
+        "type": "feature",
+        "category": "WAFRegional",
+        "description": "This release adds support for regular expressions as match conditions in rules, and support for geographical location by country of request IP address as a match condition in rules."
+    }
+]

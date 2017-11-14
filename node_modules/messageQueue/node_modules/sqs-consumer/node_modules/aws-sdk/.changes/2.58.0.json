@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "AppStream",
+        "description": "Support added for persistent user storage, backed by S3."
+    },
+    {
+        "type": "feature",
+        "category": "Rekognition",
+        "description": "Updated the CompareFaces API response to include orientation information, unmatched faces, landmarks, pose, and quality of the compared faces."
+    }
+]

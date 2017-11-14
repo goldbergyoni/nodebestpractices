@@ -1,0 +1,12 @@
+[
+    {
+        "type": "bugfix",
+        "category": "S3",
+        "description": "Convert string bodies to buffers to ensure correct encoding is used"
+    },
+    {
+        "type": "feature",
+        "category": "DynamoDB",
+        "description": "Adds support for tagging tables and indexes."
+    }
+]

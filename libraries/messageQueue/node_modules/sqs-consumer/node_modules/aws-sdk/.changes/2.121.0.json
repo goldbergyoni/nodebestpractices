@@ -1,0 +1,17 @@
+[
+    {
+        "type": "feature",
+        "category": "Budgets",
+        "description": "Including \"DuplicateRecordException\" in UpdateNotification and UpdateSubscriber. "
+    },
+    {
+        "type": "feature",
+        "category": "CloudWatchLogs",
+        "description": "Adds support for associating LogGroups with KMS Keys."
+    },
+    {
+        "type": "feature",
+        "category": "EC2",
+        "description": "Add EC2 APIs to copy Amazon FPGA Images (AFIs) within the same region and across multiple regions, delete AFIs, and modify AFI attributes. AFI attributes include name, description and granting/denying other AWS accounts to load the AFI."
+    }
+]

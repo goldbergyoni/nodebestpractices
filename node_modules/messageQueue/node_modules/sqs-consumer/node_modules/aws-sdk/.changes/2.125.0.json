@@ -1,0 +1,27 @@
+[
+    {
+        "type": "feature",
+        "category": "AppStream",
+        "description": "Includes APIs for managing and accessing image builders, and deleting images."
+    },
+    {
+        "type": "feature",
+        "category": "CodeBuild",
+        "description": "Adding support for Building GitHub Pull Requests in AWS CodeBuild"
+    },
+    {
+        "type": "feature",
+        "category": "MTurk",
+        "description": "Today, Amazon Mechanical Turk (MTurk) supports SQS Notifications being delivered to Customers' SQS queues when different stages of the MTurk workflow are complete.  We are going to create new functionality so that Customers can leverage SNS topics as a destination for notification messages when various stages of the MTurk workflow are complete. "
+    },
+    {
+        "type": "feature",
+        "category": "Organizations",
+        "description": "This release flags the HandshakeParty structure's Type and Id fields as 'required'. They effectively were required in the past, as you received an error if you did not include them. This is now reflected at the API definition level. "
+    },
+    {
+        "type": "feature",
+        "category": "Route53",
+        "description": "This change allows customers to reset elements of health check."
+    }
+]

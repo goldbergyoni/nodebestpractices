@@ -1,0 +1,42 @@
+[
+    {
+        "type": "feature",
+        "category": "CloudFormation",
+        "description": "CORS support added. Now a default service in the browser build of the JavaScript SDK."
+    },
+    {
+        "type": "feature",
+        "category": "CloudHSM",
+        "description": "CORS support added. Now a default service in the browser build of the JavaScript SDK."
+    },
+    {
+        "type": "feature",
+        "category": "DeviceFarm",
+        "description": "Adds session-based APIs."
+    },
+    {
+        "type": "feature",
+        "category": "EMR",
+        "description": "CORS support added. Now a default service in the browser build of the JavaScript SDK."
+    },
+    {
+        "type": "feature",
+        "category": "ElastiCache",
+        "description": "CORS support added. Now a default service in the browser build of the JavaScript SDK."
+    },
+    {
+        "type": "feature",
+        "category": "ElasticBeanstalk",
+        "description": "CORS support added. Now a default service in the browser build of the JavaScript SDK."
+    },
+    {
+        "type": "feature",
+        "category": "Redshift",
+        "description": "CORS support added. Now a default service in the browser build of the JavaScript SDK."
+    },
+    {
+        "type": "feature",
+        "category": "SSM",
+        "description": "Adds notification support."
+    }
+]

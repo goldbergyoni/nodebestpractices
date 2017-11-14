@@ -1,0 +1,15 @@
+{
+  "critics": {
+    "//": "bitHound only supports running eslint rules greater than 1.0 but lower than 2.0.",
+    "lint": {"engine": "none"}
+  },
+
+  "ignore": [
+    "lolex.js",
+    "script",
+    "**/node_modules/**"
+  ],
+  "test": [
+    "test/**"
+  ]
+}

@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "EC2",
+        "description": "Adding support for EC2 Convertible RIs and the EC2 RI regional benefit."
+    },
+    {
+        "type": "feature",
+        "category": "S3",
+        "description": "S3 API update with partNumber extension and a bug fix to address list-objects command failing when a bucket is marked with request-pays."
+    }
+]

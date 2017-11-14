@@ -1,0 +1,9 @@
+var ko = {};
+module['exports'] = ko;
+ko.title = "Korean";
+ko.address = require("./address");
+ko.phone_number = require("./phone_number");
+ko.company = require("./company");
+ko.internet = require("./internet");
+ko.lorem = require("./lorem");
+ko.name = require("./name");

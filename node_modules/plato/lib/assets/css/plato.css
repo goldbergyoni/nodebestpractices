@@ -1,0 +1,69 @@
+
+body {
+}
+
+.navbar {
+  margin-bottom:0;
+  padding: 0 20px;
+  background-color: #f2f2f2;
+  background-image: none;
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  line-height:10px;
+}
+
+.navbar-nav > .active > a {
+  background-color: rgb(233, 233, 233);
+}
+
+a:visited {
+  fill:inherit;
+}
+
+.jumbotron {
+  color:#333;
+}
+
+li {
+  line-height: 10px;
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .jumbotron h1 {
+    font-size: 40px;
+  }
+}
+
+.aggregate-stats {
+
+}
+
+.group-header {
+  text-align:center;
+}
+
+
+.aggregate-stats .header {
+  text-align: center;
+  color: #5a5a5a;
+  font-weight:lighter;
+}
+
+.aggregate-stats .stat {
+  text-align: center;
+  color: #5a5a5a;
+  font-size:55px;
+  line-height:70px;
+}
+
+i.icon[rel=popover] {
+  font-size:23px;
+  color: #0088cc;
+}
+
+.popover {
+  z-index:100000;
+}

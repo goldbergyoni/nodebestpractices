@@ -1,0 +1,17 @@
+[
+    {
+        "type": "feature",
+        "category": "ECS",
+        "description": "Exposes container instance registration time in ECS:DescribeContainerInstances."
+    },
+    {
+        "type": "feature",
+        "category": "Lambda",
+        "description": "Support for UpdateFunctionCode DryRun option"
+    },
+    {
+        "type": "feature",
+        "category": "MarketplaceEntitlementService",
+        "description": "AWS Marketplace Entitlement Service enables AWS Marketplace sellers to determine the capacity purchased by their customers."
+    }
+]

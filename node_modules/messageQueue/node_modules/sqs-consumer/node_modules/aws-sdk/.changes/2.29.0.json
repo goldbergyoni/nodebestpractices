@@ -1,0 +1,27 @@
+[
+    {
+        "type": "feature",
+        "category": "protocol",
+        "description": "The SDK can now support JSON-value string shapes in headers"
+    },
+    {
+        "type": "feature",
+        "category": "Pinpoint",
+        "description": "Added ability to segment endpoints by user attributes in addition to endpoint attributes."
+    },
+    {
+        "type": "feature",
+        "category": "Pinpoint",
+        "description": "Added functionality to publish raw app analytics and campaign events data as events streams to Kinesis and Kinesis Firehose."
+    },
+    {
+        "type": "feature",
+        "category": "ELBv2",
+        "description": "Adding waiters for LoadBalancers in ELBv2."
+    },
+    {
+        "type": "feature",
+        "category": "MarketplaceCommerceAnalytics",
+        "description": "This update adds a new data set, us_sales_and_use_tax_records, which enables AWS Marketplace sellers to programmatically access to their U.S. Sales and Use Tax report data."
+    }
+]

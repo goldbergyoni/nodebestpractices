@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "CognitoIdentityServiceProvider",
+        "description": "Added new operation \"AdminCreateUser\" that creates a new user in the specified user pool and sends a welcome message via email or phone (SMS)."
+    },
+    {
+        "type": "feature",
+        "category": "Route53",
+        "description": "Retries PriorRequestNotComplete errors."
+    }
+]

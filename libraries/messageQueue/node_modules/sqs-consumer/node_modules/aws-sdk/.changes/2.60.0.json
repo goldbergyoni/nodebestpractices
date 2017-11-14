@@ -1,0 +1,12 @@
+[
+    {
+        "type": "bugfix",
+        "category": "Core",
+        "description": "Fixes issue where some TimeStamp shapes had an incorrect timestampFormat. Specifically affects S3.putBucketLifecycleConfiguration when using Date fields."
+    },
+    {
+        "type": "feature",
+        "category": "RDS",
+        "description": "Amazon RDS customers can now easily and quickly stop and start their DB instances."
+    }
+]

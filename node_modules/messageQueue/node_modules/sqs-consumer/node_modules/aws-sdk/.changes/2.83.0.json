@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "AutoScaling",
+        "description": "Auto Scaling now supports a new type of scaling policy called target tracking scaling policies that you can use to set up dynamic scaling for your application."
+    }
+]

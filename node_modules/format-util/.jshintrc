@@ -1,0 +1,13 @@
+{
+  "laxcomma"                : true,
+  "laxbreak"                : true,
+  "node"                    : true,
+  "curly"                   : true,
+  "bitwise"                 : false,
+  "undef"                   : true,
+  "eqeqeq"                  : true,
+  "noarg"                   : true,
+  "mocha"                   : true,
+  "unused"                  : true,
+  "asi"                     : true
+}

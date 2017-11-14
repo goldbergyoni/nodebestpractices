@@ -1,0 +1,10 @@
+var de = {};
+module['exports'] = de;
+de.title = "German";
+de.address = require("./address");
+de.company = require("./company");
+de.internet = require("./internet");
+de.lorem = require("./lorem");
+de.name = require("./name");
+de.phone_number = require("./phone_number");
+de.cell_phone = require("./cell_phone");

@@ -1,0 +1,14 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"id-length": [2, { "min": 1, "max": 25, "properties": "never" }],
+		"max-nested-callbacks": [2, 3],
+		"max-statements": [2, 19],
+		"new-cap": [2, { "capIsNewExceptions": ["ToLength", "ToString", "RequireObjectCoercible"] }],
+		"no-invalid-this": [1],
+		"no-magic-numbers": [0]
+	}
+}

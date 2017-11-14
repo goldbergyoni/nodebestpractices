@@ -1,0 +1,18 @@
+{
+  "name": "babel-polyfill",
+  "version": "6.23.0",
+  "lockfileVersion": 1,
+  "requires": true,
+  "dependencies": {
+    "core-js": {
+      "version": "2.5.0",
+      "resolved": "https://registry.npmjs.org/core-js/-/core-js-2.5.0.tgz",
+      "integrity": "sha1-VpwFCRi+ZIazg3VSAorgRmtxcIY="
+    },
+    "regenerator-runtime": {
+      "version": "0.10.5",
+      "resolved": "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.10.5.tgz",
+      "integrity": "sha1-M2w+/BIgrc7dosn6tntaeVWjNlg="
+    }
+  }
+}

@@ -1,0 +1,25 @@
+/*
+ * Comments in jshintrc. Used to test stripping of them.
+ */
+
+{
+  "curly": false, // requires you to always put curly braces around blocks
+  "eqeqeq": true, // This options prohibits the use of == and != in favor of === and !==
+  "immed": true,  // prohibits the use of immediate function invocations without wrapping them in parentheses
+  "latedef": false,
+  "newcap": true,
+  "noarg": true,
+  "sub": true,
+  "undef": true,
+  "unused": true,
+  "boss": true,
+  "eqnull": true,
+  "node": true,
+  "es5": true
+}
+
+/* foo */
+/*
+  bar
+   baz
+*/

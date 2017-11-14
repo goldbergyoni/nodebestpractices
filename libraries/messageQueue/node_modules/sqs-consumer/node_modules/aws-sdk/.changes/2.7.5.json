@@ -1,0 +1,32 @@
+[
+    {
+        "type": "bugfix",
+        "category": "TypeScript",
+        "description": "Stubs DOM interfaces and removes type reference to node."
+    },
+    {
+        "type": "feature",
+        "category": "ElasticTranscoder",
+        "description": "Support for multiple media input files that can be stitched together."
+    },
+    {
+        "type": "feature",
+        "category": "Lambda",
+        "description": "Adds support for Environment variables."
+    },
+    {
+        "type": "feature",
+        "category": "Gamelift",
+        "description": "Provide the ability to remote access into GameLift managed servers."
+    },
+    {
+        "type": "feature",
+        "category": "EMR",
+        "description": "Automatic Scaling of EMR clusters based on metrics. Adds support for cancelling a pending Amazon EMR step."
+    },
+    {
+        "type": "feature",
+        "category": "ApplicationAutoScaling",
+        "description": "Adds support for a new target resource (EMR Instance Groups) as a scalable target."
+    }
+]

@@ -1,0 +1,7 @@
+Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 5.2; Trident/4.0; Media Center PC 4.0; SLCC1; .NET CLR 3.0.04320)
+Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; SLCC1; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; .NET CLR 1.1.4322)
+Mozilla/5.0 (Windows; U; MSIE 7.0; Windows NT 5.2)
+Mozilla/5.0 (compatible; MSIE 7.0; Windows NT 6.0; en-US)
+Mozilla/4.0 (compatible; MSIE 6.1; Windows XP)
+Mozilla/5.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4325)
+Mozilla/5.0 (compatible; MSIE 6.0; Windows NT 5.1)

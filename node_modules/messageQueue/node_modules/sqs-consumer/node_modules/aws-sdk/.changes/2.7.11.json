@@ -1,0 +1,22 @@
+[
+    {
+        "type": "bugfix",
+        "category": "TypeScript",
+        "description": "Exposes typings for classes that live on service namespaces (i.e. DynamoDB.DocumentClient). Also exposes interfaces off of service namespaces to allow easier migration from some 3rd party typings. Interfaces will continue to be exposed via Service.Types as well."
+    },
+    {
+        "type": "bugfix",
+        "category": "TypeScript",
+        "description": "Removes remaining `reference` comments from definitions."
+    },
+    {
+        "type": "feature",
+        "category": "ConfigService",
+        "description": "Increases the number of config rules for all accounts from 25 to 50."
+    },
+    {
+        "type": "feature",
+        "category": "EC2",
+        "description": "Adds T2.xlarge, T2.2xlarge, and R4 instance types."
+    }
+]

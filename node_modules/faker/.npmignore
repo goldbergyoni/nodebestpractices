@@ -1,0 +1,7 @@
+.npm/
+build/
+doc/
+examples/
+meteor/
+test/
+logo.png

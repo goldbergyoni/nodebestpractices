@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "ECR",
+        "description": "DescribeImages is a new api used to expose image metadata which today includes image size and image creation timestamp."
+    },
+    {
+        "type": "feature",
+        "category": "ElastiCache",
+        "description": "Elasticache is launching a new major engine release of Redis, 3.2 (providing stability updates and new command sets over 2.8), as well as ElasticSupport for enabling Redis Cluster in 3.2, which provides support for multiple node groups to horizontally scale data, as well as superior engine failover capabilities."
+    }
+]

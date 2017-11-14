@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "Organizations",
+        "description": "This release supports integrating other AWS services with AWS Organizations through the use of an IAM service-linked role called AWSServiceRoleForOrganizations. Certain operations automatically create that role if it does not already exist."
+    }
+]

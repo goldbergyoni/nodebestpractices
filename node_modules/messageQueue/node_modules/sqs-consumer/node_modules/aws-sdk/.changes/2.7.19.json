@@ -1,0 +1,17 @@
+[
+    {
+        "type": "feature",
+        "category": "APIGateway",
+        "description": "This update introduces two new operations used to dynamically discover SDK types and what configuration each type accepts."
+    },
+    {
+        "type": "feature",
+        "category": "ElasticBeanstalk",
+        "description": "Adds a new feature for managing Application Version Lifecycle."
+    },
+    {
+        "type": "feature",
+        "category": "IAM",
+        "description": "Adds service-specific credentials to IAM service to make it easier to onboard CodeCommit customers. These are username/password credentials that work with a single service."
+    }
+]

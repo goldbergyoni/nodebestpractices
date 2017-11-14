@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "APIGateway",
+        "description": "Add a new enum \"REQUEST\" to '--type <value>' field in the current create-authorizer API, and make \"identitySource\" optional."
+    }
+]

@@ -1,0 +1,27 @@
+[
+    {
+        "type": "feature",
+        "category": "CodeCommit",
+        "description": "This release includes the DeleteBranch API and a change to the contents of a Commit object."
+    },
+    {
+        "type": "feature",
+        "category": "DMS",
+        "description": "This change includes addition of new optional parameter to an existing API"
+    },
+    {
+        "type": "feature",
+        "category": "ElasticBeanstalk",
+        "description": "Added the ability to add, delete or update Tags"
+    },
+    {
+        "type": "feature",
+        "category": "Polly",
+        "description": "Amazon Polly exposes two new voices: \"Matthew\" (US English) and \"Takumi\" (Japanese)"
+    },
+    {
+        "type": "feature",
+        "category": "RDS",
+        "description": "You can now call DescribeValidDBInstanceModifications to learn what modifications you can make to your DB instance. You can use this information when you call ModifyDBInstance."
+    }
+]

@@ -1,0 +1,10 @@
+var cz = {};
+module['exports'] = cz;
+cz.title = "Czech";
+cz.address = require("./address");
+cz.company = require("./company");
+cz.internet = require("./internet");
+cz.lorem = require("./lorem");
+cz.name = require("./name");
+cz.phone_number = require("./phone_number");
+cz.date = require("./date");

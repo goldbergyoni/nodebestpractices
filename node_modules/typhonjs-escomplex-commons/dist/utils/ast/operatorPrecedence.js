@@ -1,0 +1,32 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+   value: true
+});
+exports.default = {
+   '||': 3,
+   '&&': 4,
+   '|': 5,
+   '^': 6,
+   '&': 7,
+   '==': 8,
+   '!=': 8,
+   '===': 8,
+   '!==': 8,
+   '<': 9,
+   '>': 9,
+   '<=': 9,
+   '>=': 9,
+   'in': 9,
+   'instanceof': 9,
+   '<<': 10,
+   '>>': 10,
+   '>>>': 10,
+   '+': 11,
+   '-': 11,
+   '*': 12,
+   '%': 12,
+   '/': 12,
+   '**': 12
+};
+module.exports = exports['default'];

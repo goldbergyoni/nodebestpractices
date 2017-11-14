@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "Budgets",
+        "description": "Adds the AWS Budgets service API via AWS.Budgets."
+    }
+]

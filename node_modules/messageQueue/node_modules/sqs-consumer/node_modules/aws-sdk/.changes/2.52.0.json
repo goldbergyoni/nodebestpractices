@@ -1,0 +1,17 @@
+[
+    {
+        "type": "feature",
+        "category": "CodeDeploy",
+        "description": "This release introduces the previousRevision field in the responses to the GetDeployment and BatchGetDeployments actions. previousRevision provides information about the application revision that was deployed to the deployment group before the most recent successful deployment.  Also, the fileExistsBehavior parameter has been added for CreateDeployment action requests. In the past, if the AWS CodeDeploy agent detected files in a target location that weren't part of the application revision from the most recent successful deployment, it would fail the current deployment by default. This new parameter provides options for how the agent handles these files: fail the deployment, retain the content, or overwrite the content."
+    },
+    {
+        "type": "feature",
+        "category": "GameLift",
+        "description": "Allow developers to specify how metrics are grouped in CloudWatch for their GameLift fleets. Developers can also specify how many concurrent game sessions activate on a per-instance basis."
+    },
+    {
+        "type": "feature",
+        "category": "Inspector",
+        "description": "Adds ability to produce an assessment report that includes detailed and comprehensive results of a specified assessment run."
+    }
+]

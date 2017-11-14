@@ -1,0 +1,17 @@
+[
+    {
+        "type": "bugfix",
+        "category": "credentials",
+        "description": "add typescript definition for resolvePromise()"
+    },
+    {
+        "type": "bugfix",
+        "category": "typings",
+        "description": "add readablestream type to clients that support streaming"
+    },
+    {
+        "type": "feature",
+        "category": "ElasticBeanstalk",
+        "description": "Add support for paginating the result of DescribeEnvironments     Include the ARN of described environments in DescribeEnvironments output"
+    }
+]

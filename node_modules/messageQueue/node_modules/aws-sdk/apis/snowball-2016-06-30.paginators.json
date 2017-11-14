@@ -1,0 +1,16 @@
+{
+  "pagination": {
+    "ListJobs": {
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "input_token": "NextToken",
+      "result_key": "JobListEntries"
+    },
+    "DescribeAddresses": {
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "input_token": "NextToken",
+      "result_key": "Addresses"
+    }
+  }
+}

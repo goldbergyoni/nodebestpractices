@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "RDS",
+        "description": "Updates AWS.RDS API to the latest version."
+    }
+]

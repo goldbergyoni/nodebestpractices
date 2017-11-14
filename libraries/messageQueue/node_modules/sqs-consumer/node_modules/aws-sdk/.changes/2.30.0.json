@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "DynamoDb",
+        "description": "Allow objects with inheritance chains to be converted to MapAttributeValues instead of undefined"
+    },
+    {
+        "type": "bugfix",
+        "category": "CredentialsError",
+        "description": "Update AWS.Config.getCredentials to overwrite the name (in addition to message and code) of errors thrown by underlying credential providers."
+    }
+]

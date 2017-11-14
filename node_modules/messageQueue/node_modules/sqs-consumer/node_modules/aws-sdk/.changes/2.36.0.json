@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "CloudDirectory",
+        "description": "ListObjectAttributes now supports filtering by facet."
+    }
+]

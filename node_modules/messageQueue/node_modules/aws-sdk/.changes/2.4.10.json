@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "util",
+        "description": "Parse ini files containing comments using #"
+    },
+    {
+        "type": "feature",
+        "category": "Iot",
+        "description": "Adds support for thing types. Thing types are entities that store a description of common features of Things that are of the same logical type. Also adds support for `:` in Thing name. Adds a separator in Firehose action."
+    }
+]

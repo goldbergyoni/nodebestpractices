@@ -1,0 +1,169 @@
+#!/usr/bin/env node
+
+// set default exitCode for node 0.10
+process.exitCode = 0;
+
+var fs      = require("fs");
+var path    = require("path");
+var program = require("commander");
+var request = require("https").request;
+var package = require("./../package.json");
+var ZSchema = require("./../src/ZSchema");
+
+program
+  .version(package.version)
+  .usage("[options] <schema> <json1?> <json2?> <json3?>")
+  .option("--asyncTimeout <n>", "default timeout for all async tasks", parseInt)
+  .option("--forceAdditional", "force additionalProperties and additionalItems to be defined on \"object\" and \"array\" types")
+  .option("--assumeAdditional", "assume additionalProperties and additionalItems are defined as \"false\" where appropriate")
+  .option("--forceItems", "force items to be defined on \"array\" types")
+  .option("--forceMinItems", "force minItems to be defined on \"array\" types")
+  .option("--forceMaxItems", "force maxItems to be defined on \"array\" types")
+  .option("--forceMinLength", "force minLength to be defined on \"string\" types")
+  .option("--forceMaxLength", "force maxLength to be defined on \"string\" types")  
+  .option("--forceProperties", "force properties or patternProperties to be defined on \"object\" types")
+  .option("--ignoreUnresolvableReferences", "ignore references that cannot be resolved (remote schemas)")
+  .option("--noExtraKeywords", "disallow usage of keywords that this validator can't handle")
+  .option("--noTypeless", "disallow usage of schema's without \"type\" defined")
+  .option("--noEmptyStrings", "disallow zero length strings in validated objects")
+  .option("--noEmptyArrays", "disallow zero length arrays in validated objects")
+  .option("--strictUris", "forces \"uri\" format to be in fully rfc3986 compliant")
+  .option("--strictMode", "turn on some of the above")
+  .option("--reportPathAsArray", "report error paths as an array of path segments to get to the offending node")
+  .option("--breakOnFirstError", "stops validation as soon as an error is found, true by default but can be turned off")
+  .option("--pedanticCheck", "check if schema follow best practices and common sence")
+  .option("--ignoreUnknownFormats", "ignore unknown formats (do not report them as an error)")
+  .parse(process.argv);
+  
+var options = {};  
+var defaultOptions = ZSchema.getDefaultOptions();
+
+for (var key in defaultOptions) {
+    if (program[key]) {
+        options[key] = program[key];
+    }
+}
+
+if (!program.args.length) {
+  program.help();
+}
+
+function readJson(fileName) {
+    var ret;
+    try {
+        ret = fs.readFileSync(fileName, { encoding: "utf8" });
+    } catch (e) {
+        console.error(e);
+        throw new Error("Couldn't read the file: " + fileName);
+    }
+    try {
+        ret = JSON.parse(ret);
+    } catch (e) {
+        console.error(e);
+        throw new Error("Couldn't parse the file as JSON: " + fileName);
+    }
+    return ret;
+}
+
+var validator = new ZSchema(options);
+var schemaFilePath = program.args.shift();
+var schema = readJson(schemaFilePath);
+
+function validateWithAutomaticDownloads(filePath, data, schema, callback) {
+
+    var lastResult;
+
+    function finish() {
+        callback(validator.getLastErrors(), lastResult);
+    }
+
+    function validate() {
+
+        if (data !== undefined) {
+            lastResult = validator.validate(data, schema);
+        } else {
+            lastResult = validator.validateSchema(schema);
+        }
+        
+        // console.log(lastResult);
+        // console.log(JSON.stringify(validator.getLastErrors(), null, 4));
+
+        var missingReferences = validator.getMissingRemoteReferences();
+        if (missingReferences.length > 0) {
+            var finished = 0;
+            missingReferences.forEach(function (url) {
+                var urlString = "request: " + url + " - ";
+
+                if (url.match(/^https?:/)) {
+                    request(url, function (response) {
+                        var body = "";
+                        response.on("data", function (chunk) { data += chunk; });
+                        response.on("end", function () {
+
+                            console.log(urlString + response.statusCode);
+
+                            validator.setRemoteReference(url, JSON.parse(body));
+                            finished++;
+                            if (finished === missingReferences.length) {
+                                validate();
+                            }
+                        });
+                    }).on("error", function (error) {
+                        console.error(urlString);
+                        console.error(error);
+                        process.exit(1);
+                    });
+                } else {
+                    // FUTURE: maybe else if (isFile(url)) later
+                    var referencePath = path.resolve(process.cwd(), path.dirname(filePath), url);
+                    var reference = readJson(referencePath);
+                    validator.setRemoteReference(url, reference);
+                    finished++;
+                    if (finished === missingReferences.length) {
+                        validate();
+                    }
+                }
+            });
+        } else {
+            finish();
+        }
+
+    }
+
+    validate();
+
+}
+
+var i = 0;
+function validateJsons() {
+    if (program.args.length === 0) {
+        process.exit(process.exitCode);
+        return;
+    }
+    i++;
+    
+    var filePath = program.args.shift();
+    var json = readJson(filePath);
+    validateWithAutomaticDownloads(filePath, json, schema, function (errs, isValid) {    
+        if (!isValid) {
+            console.log(JSON.stringify(validator.getLastErrors(), null, 4));
+            console.log("json #" + i + " validation failed");
+            process.exitCode = 1;
+        } else {
+            console.log("json #" + i + " validation passed");
+        }
+        validateJsons();
+    });
+}
+
+// validate schema
+validateWithAutomaticDownloads(schemaFilePath, undefined, schema, function (errs, isValid) {
+    if (!isValid) {
+        console.log(JSON.stringify(validator.getLastErrors(), null, 4));
+        console.log("schema validation failed");
+        process.exit(1);
+    } else {
+        console.log("schema validation passed");
+        validateJsons();
+    }    
+});

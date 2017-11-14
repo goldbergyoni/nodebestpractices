@@ -1,0 +1,12 @@
+[
+    {
+        "type": "bugfix",
+        "category": "S3",
+        "description": "Calling send multiple times on an S3 ManagedUpload with leavePartsOnError set to true should no longer result in truncated files being uploaded to S3. Calling send multiple times is not supported with streams."
+    },
+    {
+        "type": "feature",
+        "category": "Iot",
+        "description": "Update client side validation for SalesForce action."
+    }
+]

@@ -1,0 +1,21 @@
+sudo: false
+language: node_js
+#cache:
+#  directories:
+#    - node_modules
+notifications:
+  email: false
+node_js:
+  - 8
+  - 7
+  - 6
+  - 4
+before_install:
+  - npm i -g npm@^2.0.0
+before_script:
+  - npm prune
+  - 'curl -Lo travis_after_all.py https://git.io/vLSON'
+after_success:
+  - python travis_after_all.py
+  - export $(cat .to_export_back)
+  - npm run semantic-release

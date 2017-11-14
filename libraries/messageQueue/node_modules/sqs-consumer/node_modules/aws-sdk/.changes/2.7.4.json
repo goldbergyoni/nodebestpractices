@@ -1,0 +1,22 @@
+[
+    {
+        "type": "feature",
+        "category": "MarketplaceMetering",
+        "description": "Allows third parties to send metering records."
+    },
+    {
+        "type": "feature",
+        "category": "SQS",
+        "description": "Updates the latest version of the SQS API."
+    },
+    {
+        "type": "feature",
+        "category": "CloudWatch",
+        "description": "Amazon CloudWatch now supports Percentiles as a statistical function."
+    },
+    {
+        "type": "feature",
+        "category": "APIGateway",
+        "description": "Allows defining an encoding for the API per content type in order to support 'binary' use case."
+    }
+]

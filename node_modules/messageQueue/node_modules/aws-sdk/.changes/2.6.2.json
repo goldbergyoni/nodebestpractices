@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "ServiceCatalog",
+        "description": "Updates the API for AWS.ServiceCatalog."
+    }
+]

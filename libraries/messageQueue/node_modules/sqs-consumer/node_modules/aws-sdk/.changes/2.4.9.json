@@ -1,0 +1,22 @@
+[
+    {
+        "type": "feature",
+        "category": "ACM",
+        "description": "Adds reason for failure when describing certificates."
+    },
+    {
+        "type": "feature",
+        "category": "ConfigService",
+        "description": "Adds support for RDS and ACM resources types and introduces two new APIs: DeleteEvaluationResults and StartConfigRulesEvaluation. Updated PutConfigRule API can now create Config rules that are triggered by both configuration changes and periodicity."
+    },
+    {
+        "type": "feature",
+        "category": "ElasticTranscoder",
+        "description": "Adds WAV file format output support."
+    },
+    {
+        "type": "feature",
+        "category": "Paginator",
+        "description": "Adds paginator for SSM DescribeInstanceInformation operation."
+    }
+]

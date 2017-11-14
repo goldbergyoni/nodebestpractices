@@ -1,0 +1,27 @@
+[
+    {
+        "type": "feature",
+        "category": "DynamoDB",
+        "description": "Time to Live (TTL) is a feature that allows you to define when items in a table expire and can be purged from the database, so that you don't have to track expired data and delete it manually. With TTL enabled on a DynamoDB table, you can set a timestamp for deletion on a per-item basis, allowing you to limit storage usage to only those records that are relevant."
+    },
+    {
+        "type": "feature",
+        "category": "DynamoDBStreams",
+        "description": "Time to Live (TTL) is a feature that allows you to define when items in a table expire and can be purged from the database, so that you don't have to track expired data and delete it manually. With TTL enabled on a DynamoDB table, you can set a timestamp for deletion on a per-item basis, allowing you to limit storage usage to only those records that are relevant."
+    },
+    {
+        "type": "feature",
+        "category": "IAM",
+        "description": "This release adds support for AWS Organizations service control policies (SCPs) to SimulatePrincipalPolicy operation. If there are SCPs associated with the simulated user's account, their effect on the result is captured in the OrganizationDecisionDetail element in the EvaluationResult."
+    },
+    {
+        "type": "feature",
+        "category": "MechanicalTurkRequester",
+        "description": "Amazon Mechanical Turk is a web service that provides an on-demand, scalable, human workforce to complete jobs that humans can do better than computers, for example, recognizing objects in photos."
+    },
+    {
+        "type": "feature",
+        "category": "Organizations",
+        "description": "AWS Organizations is a web service that enables you to consolidate your multiple AWS accounts into an organization and centrally manage your accounts and their resources."
+    }
+]

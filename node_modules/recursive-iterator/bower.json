@@ -1,0 +1,30 @@
+{
+    "name": "recursive-iterator",
+    "description": "Iterates javascript object recursively. Supports ES6 iteration protocols.",
+    "homepage": "https://github.com/nervgh/recursive-iterator",
+    "license": "MIT",
+    "main": "dist/recursive-iterator.min.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nervgh/recursive-iterator.git"
+    },
+    "keywords": [
+        "js",
+        "javascript",
+        "walk",
+        "walker",
+        "recursive",
+        "recursion",
+        "iterator",
+        "iteratate",
+        "traverse",
+        "traversing",
+        "object",
+        "tree",
+        "json"
+    ],
+    "author": {
+        "name": "nerv",
+        "url": "https://github.com/nervgh"
+    }
+}

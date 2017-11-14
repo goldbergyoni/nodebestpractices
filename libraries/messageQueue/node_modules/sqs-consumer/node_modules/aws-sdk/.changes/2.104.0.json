@@ -1,0 +1,17 @@
+[
+    {
+        "type": "feature",
+        "category": "CloudFormation",
+        "description": "Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified."
+    },
+    {
+        "type": "feature",
+        "category": "GameLift",
+        "description": "Update spelling of MatchmakingTicket status values for internal consistency."
+    },
+    {
+        "type": "feature",
+        "category": "RDS",
+        "description": "Option group options now contain additional properties that identify requirements for certain options. Check these properties to determine if your DB instance must be in a VPC or have auto minor upgrade turned on before you can use an option. Check to see if you can downgrade the version of an option after you have installed it."
+    }
+]

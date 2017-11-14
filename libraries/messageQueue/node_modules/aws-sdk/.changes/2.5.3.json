@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "RDS",
+        "description": "Adds resource ARNs to Describe APIs."
+    }
+]

@@ -1,0 +1,22 @@
+[
+    {
+        "type": "feature",
+        "category": "CloudFront",
+        "description": "Adds HTTP2 support for Amazon CloudFront distributions."
+    },
+    {
+        "type": "feature",
+        "category": "MetadataService",
+        "description": "Adds retry logic to the EC2 Metadata Service, so that EC2MetadataCredentials will retry TimeoutError. This retry logic is also added to ECSCredentials. Resolves #692"
+    },
+    {
+        "type": "feature",
+        "category": "ServiceCatalog",
+        "description": "CORS support added. Now a default service in the browser build of the JavaScript SDK."
+    },
+    {
+        "type": "feature",
+        "category": "Tools",
+        "description": "Adds support for bundling the SDK with webpack. Also adds support for creating node.js bundles using webpack or browserify."
+    }
+]

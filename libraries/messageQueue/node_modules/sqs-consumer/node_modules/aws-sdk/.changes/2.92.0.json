@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "EC2",
+        "description": "The CreateDefaultVPC API enables you to create a new default VPC . You no longer need to contact AWS support, if your default VPC has been deleted."
+    },
+    {
+        "type": "feature",
+        "category": "KinesisAnalytics",
+        "description": "Added additional exception types and clarified documentation."
+    }
+]

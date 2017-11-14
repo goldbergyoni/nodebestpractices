@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "CloudWatchLogs",
+        "description": "Adds support for the PutResourcePolicy, DescribeResourcePolicy and DeleteResourcePolicy APIs."
+    }
+]

@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+var util = require('./util');
+
+var versions = util.listVersions();
+
+util.startNewChangelog();
+
+versions.forEach(util.readVersionJSONAndAddToChangelog);
+
+util.writeToChangelog();

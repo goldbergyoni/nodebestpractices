@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <Script>
+        var socket = io();
+
+        function tooFast() {
+
+            console.log(`Too fast`);
+            socket.emit('chat message', "boo");
+            console.log(`Too fast end`);
+        }
+    </Script>
+</head>
+
+
+
+<body>
+    <h1>Can pure JS without external APIs decouple the UI thread? </h1>
+    <br/>
+    <button onclick="tooFast()">Too Fast</button>
+    <br/>
+    <br/>
+    <button>Am I Responsive?</button>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+var es_MX = {};
+module['exports'] = es_MX;
+es_MX.title = "Spanish Mexico";
+es_MX.separator = " & ";
+es_MX.name = require("./name");
+es_MX.address = require("./address");
+es_MX.company = require("./company");
+es_MX.internet = require("./internet");
+es_MX.phone_number = require("./phone_number");
+es_MX.cell_phone = require("./cell_phone");
+es_MX.lorem = require("./lorem");
+es_MX.commerce = require("./commerce");
+es_MX.team = require("./team");

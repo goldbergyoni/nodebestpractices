@@ -1,0 +1,13 @@
+*.bat
+.htaccess
+
+xeno/**
+node_modules
+scripts/dist
+
+-p
+
+npm-debug.log
+!*.gitkeep
+
+pg

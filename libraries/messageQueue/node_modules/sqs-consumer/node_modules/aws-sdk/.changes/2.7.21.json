@@ -1,0 +1,22 @@
+[
+    {
+        "type": "feature",
+        "category": "ConfigService",
+        "description": "Updates putConfigRule to support using/writing rules based on the OversizedConfigurationItemChangeNotification message type."
+    },
+    {
+        "type": "feature",
+        "category": "MarketplaceCommerceAnalytics",
+        "description": "Added support for data set disbursed_amount_by_instance_hours, with historical data available starting 2012-09-04. New data is published to this data set every 30 days."
+    },
+    {
+        "type": "bugfix",
+        "category": "DynamoDB.DocumentClient",
+        "description": "Fixes issue where empty strings in nested members were not removed when convertEmptyValues was set."
+    },
+    {
+        "type": "bugfix",
+        "category": "CognitoIdentityCredentials",
+        "description": "Fixes issue where the cached identity id would sometimes not be retrieved when SDK is run while offline."
+    }
+]

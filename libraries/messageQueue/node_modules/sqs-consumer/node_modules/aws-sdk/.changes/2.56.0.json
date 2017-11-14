@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "DMS",
+        "description": "This release adds support for using Amazon S3 and Amazon DynamoDB as targets for database migration, and using MongoDB as a source for database migration. For more information, see the AWS Database Migration Service documentation."
+    }
+]

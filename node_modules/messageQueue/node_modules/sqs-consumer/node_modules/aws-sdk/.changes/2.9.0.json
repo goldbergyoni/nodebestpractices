@@ -1,0 +1,22 @@
+[
+    {
+        "type": "feature",
+        "category": "EC2",
+        "description": "Adds instance health check functionality to replace unhealthy EC2 Spot fleet instances with fresh ones"
+    },
+    {
+        "type": "feature",
+        "category": "CloudDirectory",
+        "description": "Amazon Cloud Directory is a highly scalable, high performance, multi-tenant directory service in the cloud. Its web-based directories make it easy for you to organize and manage application resources such as users, groups, locations, devices, policies, and the rich relationships between them."
+    },
+    {
+        "type": "feature",
+        "category": "CodeDeploy",
+        "description": "This release of AWS CodeDeploy introduces support for blue/green deployments. In a blue/green deployment, the current set of instances in a deployment group is replaced by new instances that have the latest application revision installed on them. After traffic is rerouted behind a load balancer to the replacement instances, the original instances can be terminated automatically or kept running for other uses."
+    },
+    {
+        "type": "feature",
+        "category": "RDS",
+        "description": "Added support for the `ModifyDBSnapshot` and `ModifyDBSnapshotMessage` operations"
+    }
+]

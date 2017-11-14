@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "core",
+        "description": "The SDK will now automatically provide a version 4 UUID for top-level operation parameters that are modeled with the `idempotencyToken` flag. Users may continue to provide their own tokens."
+    },
+    {
+        "type": "feature",
+        "category": "S3",
+        "description": "Updates the AWS.S3 API to the latest version."
+    }
+]

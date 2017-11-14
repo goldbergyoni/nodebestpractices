@@ -1,0 +1,27 @@
+[
+    {
+        "type": "bugfix",
+        "category": "Buffer",
+        "description": "Update base64 encode/decode to use Buffer.fill when available and throw an error if a number is provided."
+    },
+    {
+        "type": "bugfix",
+        "category": "XRay",
+        "description": "Add X-Amzn-Trace-Id to list of unsigned headers to prevent signature mismatch errors if the header value is modified while the request is in flight."
+    },
+    {
+        "type": "feature",
+        "category": "Cognito",
+        "description": "Add new regions and endpoints for Amazon Cognito Identity, Amazon Cognito Sync, and Amazon Cognito Identity Provider."
+    },
+    {
+        "type": "feature",
+        "category": "CognitoIdentityServiceProvider",
+        "description": "User Pools now offers groups as an easy way to manage users and their permissions."
+    },
+    {
+        "type": "feature",
+        "category": "SSM",
+        "description": "Add support for Patch Baseline and Patch Compliance APIs"
+    }
+]

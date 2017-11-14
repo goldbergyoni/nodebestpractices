@@ -1,0 +1,7 @@
+{
+  "browserify": {
+    "transform": [
+      "brfs"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "XRay",
+        "description": "Add a response time histogram to the services in response of GetServiceGraph API."
+    }
+]

@@ -1,0 +1,37 @@
+[
+    {
+        "type": "feature",
+        "category": "AutoScaling",
+        "description": "Adds 3 new APIs for ELB L7 integration: attachLoadBalancerTargetGroups, detachLoadBalancerTargetGroups, and describeLoadBalancerTargetGroups."
+    },
+    {
+        "type": "feature",
+        "category": "ECS",
+        "description": "Adds ECS support for ELBv2. Supports Application Load Balancer target groups to enable dynamic ports and path-based routing."
+    },
+    {
+        "type": "feature",
+        "category": "ELBv2",
+        "description": "Adds new backwards incompatible application load balancer API version.  Application load balancers are a new load balancer that is now supported by the Elastic Load Balancing service. Application load balancers support HTTP/2, WebSockets, routing based on URL path, and routing to multiple ports on a single instance."
+    },
+    {
+        "type": "feature",
+        "category": "KMS",
+        "description": "Adds support for importing customer-supplied cryptographic keys. New import key feature lets you import keys from your own key management infrastructure to KMS for greater control over generation and storage of keys and meeting compliance requirements of sensitive workloads."
+    },
+    {
+        "type": "feature",
+        "category": "KinesisAnalytics",
+        "description": "Adds the new service Amazon Kinesis Analytics, a fully managed service for continuously querying streaming data using standard SQL. With Kinesis Analytics, you can write standard SQL queries on streaming data and gain actionable insights in real-time, without having to learn any new programming skills. The service allows you to build applications that continuously read data from streaming data sources, process that data using standard SQL, and send the processed data to up to four destinations of your choice. Kinesis Analytics enables you to generate time-series analytics, feed a real-time dashboard, create real-time alarms and notifications, and much more."
+    },
+    {
+        "type": "feature",
+        "category": "S3",
+        "description": "Adds support for IPv6/IPv4 Dualstack endpoint. A new opt-in boolean  option `use Dualstack` can be specified for S3 service clients: `new AWS.S3({useDualstack: true})`. Alternatively, to configure it once for all subsequent S3 service clients: `AWS.config.update({s3: {useDualstack: true}})`."
+    },
+    {
+        "type": "feature",
+        "category": "Snowball",
+        "description": "Adds Amazon Snowball, a new job management service."
+    }
+]

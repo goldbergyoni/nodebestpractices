@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "DirectConnect",
+        "description": "AWS Direct Connect provides three new APIs to support basic tagging on Direct Connect resources."
+    }
+]

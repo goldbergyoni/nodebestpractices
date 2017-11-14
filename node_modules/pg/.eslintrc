@@ -1,0 +1,6 @@
+{
+  "extends": "standard",
+  "rules": {
+    "no-new-func": "off"
+  }
+}

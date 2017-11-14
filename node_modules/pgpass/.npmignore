@@ -1,0 +1,10 @@
+node_modules/
+*~
+#*
+lib-cov/
+coverage.*
+npm-debug.log
+
+.jshintrc
+.travis.yml
+test/

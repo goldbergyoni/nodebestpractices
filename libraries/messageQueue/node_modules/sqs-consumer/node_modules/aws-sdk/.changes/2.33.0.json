@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "core",
+        "description": "Adds support for 'v4' and 'v4-unsigned-body' authtype traits."
+    },
+    {
+        "type": "bugfix",
+        "category": "ManagedUpload",
+        "description": "Ensures multi-part upload locations are URI-decoded to match single-part upload locations."
+    }
+]

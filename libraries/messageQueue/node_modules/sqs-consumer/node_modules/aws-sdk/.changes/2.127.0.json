@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "KinesisAnalytics",
+        "description": "Kinesis Analytics now supports schema discovery on objects in S3.  Additionally, Kinesis Analytics now supports input data preprocessing through Lambda."
+    },
+    {
+        "type": "feature",
+        "category": "Route53Domains",
+        "description": "Added a new API that checks whether a domain name can be transferred to Amazon Route 53."
+    }
+]

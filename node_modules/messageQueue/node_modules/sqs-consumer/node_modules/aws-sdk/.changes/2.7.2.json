@@ -1,0 +1,17 @@
+[
+    {
+        "type": "feature",
+        "category": "ElastiCache",
+        "description": "Additional parameter to 2 create apis to provide an auth Token for Redis."
+    },
+    {
+        "type": "feature",
+        "category": "DirectoryService",
+        "description": "Adds support for SchemaExtensions."
+    },
+    {
+        "type": "feature",
+        "category": "Kinesis",
+        "description": "Adds DescribeLimits API which displays customer's current shard limit and the number of open shards that are being used. Also adds a 'display stream creation timestamp' feature to DescribeStream API."
+    }
+]

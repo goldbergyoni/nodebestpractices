@@ -1,0 +1,12 @@
+[
+    {
+        "type": "feature",
+        "category": "CognitoIdentityServiceProvider",
+        "description": "Adds schema attributes to CreateUserPool."
+    },
+    {
+        "type": "bugfix",
+        "category": "TypeScript",
+        "description": "Updates definitions to work when `noImplicitAny` and `strictNullChecks` are set to `true`."
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "type": "bugfix",
+        "category": "S3",
+        "description": "Update ManagedUploader body verification to allow empty strings"
+    },
+    {
+        "type": "feature",
+        "category": "CloudDirectory",
+        "description": "Cloud Directory has launched support for Typed Links, enabling customers to create object-to-object relationships that are not hierarchical in nature. Typed Links enable customers to quickly query for data along these relationships. Customers can also enforce referential integrity using Typed Links, ensuring data in use is not inadvertently deleted."
+    }
+]

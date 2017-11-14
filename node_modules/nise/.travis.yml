@@ -1,0 +1,12 @@
+language: node_js
+
+sudo: false
+
+node_js:
+  # https://github.com/nodejs/LTS
+  - "6" # ends April 2019
+  - "8" # ends December 2019
+
+script:
+  - "npm run lint"
+  - "npm test"

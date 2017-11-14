@@ -1,0 +1,72 @@
+[
+    {
+        "type": "feature",
+        "category": "APIGateway",
+        "description": "You can now publish your APIs on Amazon API Gateway as products on the AWS Marketplace. Use the SDK to associate your APIs on API Gateway with Marketplace Product Codes. API Gateway will then send metering data to the Marketplace Metering Service on your behalf. Also, API Gateway now supports documenting your API."
+    },
+    {
+        "type": "feature",
+        "category": "Appstream",
+        "description": "Announcing Amazon AppStream 2.0 - a secure, fully managed desktop application streaming service that provides users instant access to their apps from a web browser."
+    },
+    {
+        "type": "feature",
+        "category": "CodeBuild",
+        "description": "AWS CodeBuild is a fully-managed build service in the cloud. CodeBuild compiles source code, runs tests, and produces packages that are ready to deploy. CodeBuild eliminates the need to provision, manage, and scale your own build servers. CodeBuild scales continuously and processes multiple builds concurrently, so your builds are never waiting in a queue. You can get started quickly with CodeBuild’s prepackaged build environments, or you can use custom build environments to use your own build tools. With CodeBuild, you only pay by the minute."
+    },
+    {
+        "type": "feature",
+        "category": "DirectConnect",
+        "description": "API Update for IPv6 for Direct Connect."
+    },
+    {
+        "type": "feature",
+        "category": "EC2",
+        "description": "Adds IPv6 Support for EC2 and new F1 Instance types."
+    },
+    {
+        "type": "feature",
+        "category": "ElasticBeanstalk",
+        "description": "Integrates AWS CodeBuild into ElasticBeanstalk."
+    },
+    {
+        "type": "feature",
+        "category": "Health",
+        "description": "When your business is counting on the performance of your cloud solutions, having relevant and timely insights into events impacting your AWS resources is essential. The AWS Health API serves as the primary source for you to receive personalized information related to your AWS infrastructure, guiding your through scheduled changes, and accelerating the troubleshooting of issues impacting your AWS resources and accounts. At launch, the APIs will be available to Business and Enterprise Support customers."
+    },
+    {
+        "type": "feature",
+        "category": "Lambda",
+        "description": "Adds new API `getAccountSettings`, dotnetcore 1.0 runtime support, DeadLetterConfig, and event source mappings with kinesis streams."
+    },
+    {
+        "type": "feature",
+        "category": "OpsWorksCM",
+        "description": "AWS OpsWorks for Chef Automate gives customers a single tenant Chef Automate server. The Chef Automate server is fully managed by AWS and supports automatic backup, restore and upgrade operations."
+    },
+    {
+        "type": "feature",
+        "category": "Pinpoint",
+        "description": "Amazon Pinpoint makes it easy to run targeted campaigns to improve user engagement. Pinpoint helps you understand your users behavior, define who to target, what messages to send, when to deliver them, and tracks the results of the campaign."
+    },
+    {
+        "type": "feature",
+        "category": "Shield",
+        "description": "AWS Shield is a managed Distributed Denial of Service (DDoS) protection for web applications running on AWS."
+    },
+    {
+        "type": "feature",
+        "category": "SSM",
+        "description": "Amazon EC2 Systems Manager is a flexible and easy to use management service that enables enterprises to securely manage and administer their workloads running on-premises or in the AWS cloud, using a single unified experience. These tasks include collecting system inventory, AWSmaintaining consistent state, ad hoc remote execution, automating imaging creation, applying OS patches, and managing configuration parameters."
+    },
+    {
+        "type": "feature",
+        "category": "StepFunctions",
+        "description": "Adds support for the AWS Step Functions API."
+    },
+    {
+        "type": "feature",
+        "category": "XRay",
+        "description": "AWS X-Ray helps developers analyze and debug distributed applications. With X-Ray, you can understand how your application and its underlying services are performing to identify and troubleshoot the root cause of performance issues and errors."
+    }
+]

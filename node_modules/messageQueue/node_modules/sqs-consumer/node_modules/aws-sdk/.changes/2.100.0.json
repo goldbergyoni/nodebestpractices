@@ -1,0 +1,7 @@
+[
+    {
+        "type": "feature",
+        "category": "GameLift",
+        "description": "The Matchmaking Grouping Service is a new feature that groups player match requests for a given game together into game sessions based on developer configured rules."
+    }
+]
