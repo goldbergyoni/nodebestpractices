@@ -27,7 +27,7 @@
 <br/><br/><br/>
 
 ## Table of Contents
-1. [Project structure Practices (5)](#1-project-structure-practices)ote
+1. [Project structure Practices (5)](#1-project-structure-practices)
 2. [Error Handling Practices (11) ](#2-error-handling-practices)
 3. [Code Style Practices (12) ](#3-code-style-practices)
 4. [Testing And Overall Quality Practices (8) ](#4-testing-and-overall-quality-practices)
