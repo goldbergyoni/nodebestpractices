@@ -20,7 +20,7 @@
 # Welcome! 3 Things You Ought To Know First:
 **1. When you read here, you in fact read dozens of the best Node.JS articles -** this is a summary and curation of the top-ranked content on Node JS best practices
 
-**2. It is the largest compilation, and it is growing every week -** currently, more than 50 best practices, style guides, and architectural tips are presented. New issues and PR are created every day to keep this live book updated. We'd love to see you contributing here, whether fixing some  code mistake or suggesting brilliant new ideas. See our [milestones here] (https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
+**2. It is the largest compilation, and it is growing every week -** currently, more than 50 best practices, style guides, and architectural tips are presented. New issues and PR are created every day to keep this live book updated. We'd love to see you contributing here, whether fixing some  code mistake or suggesting brilliant new ideas. See our [milestones here](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
 
 **3. Most bullets have additional info -** nearby most best practice bullets you'll find **🔗Read More** link that will present you with code examples, quotes from selected blogs and more info
 
