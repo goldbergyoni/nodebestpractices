@@ -18,6 +18,15 @@ app.use('/api', router);
 
 io.on('connection', function (socket) {
     console.log('a user connected');
+    socket.on('feedback', function (data) {
+        // we tell the client to execute 'new message'
+        console.log(`feedback ${data}`);
+        socket.broadcast.emit('feedbackArrived', {
+          message: data
+        });
+        console.log(`Emitted ${data}`);
+      });
+    
     socket.on('disconnect', function () {
         console.log('user disconnected');
     });

@@ -5,11 +5,21 @@
     <Script>
         var socket = io();
 
-        function tooFast() {
+        socket.on('feedbackArrived', function (data) {
+            console.log('Feedback arrived');
+            if (window.Notification && Notification.permission !== "denied") {
+                Notification.requestPermission(function (status) { // status is "granted", if accepted by user
+                    var n = new Notification('Title', {
+                        body: 'I am the body text!',
+                        icon: '/path/to/icon.png' // optional
+                    });
+                });
+            }
+        });
 
+        function tooFast() {
             console.log(`Too fast`);
-            socket.emit('chat message', "boo");
-            console.log(`Too fast end`);
+            socket.emit('feedback', "toofast");
         }
     </Script>
 </head>
