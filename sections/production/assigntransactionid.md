@@ -30,7 +30,7 @@ class someService {
 }//Logger can now append transaction-id to each entry, so that entries from the same request will have the same value
 class logger{
     info (message)
-    {console.log(`message ${session.get('transactionId')}`);}
+    {console.log(`${message} ${session.get('transactionId')}`);}
 }
 ```
 
