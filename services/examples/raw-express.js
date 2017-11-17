@@ -14,6 +14,8 @@ app.use(requestLanguage({
     languages: ['en-US', 'zh-CN', 'de-CH', 'de']
 }));
 
+app.get('/', (req, res) => res.send("<img src='https://s3-eu-west-1.amazonaws.com/i0natan-general/funny-image.jpg'/>"));
+
 app.use((req, res, next)=>{
     console.log(`New message arrived from country ${req.language}`);
     const currencies = countries[req.language].currencies;
