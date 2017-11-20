@@ -656,9 +656,24 @@ All statements above will return false if used with `===`
 
 # `Security Practices`
 
-## Our contributors are working on this section. Would you like to join?
+## ![✔] 6.1. Comparing secret values and hashes securely
+
+**TL;DR:** When comparing secret values or hashes like HMAC digests, you should use the [```crypto.timingSafeEqual(a, b)```](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_timingsafeequal_a_b) function Node provides out of the box since Node.js v6.6.0. This method compares two given objects and keeps comparing even if data does not match. The default equality comparison methods would simply return after a character mismatch, allowing timing attacks based on the operation length.
+
+**Otherwise:** Using default equality comparison operators you might expose critical information based on the time taken to compare two objects
+
+<br/><br/>
+
+## ![✔] 6.2. Generating random strings using Node.js
+
+**TL;DR:** Using a custom-built function generating pseudo-random strings for tokens and other security-sensitive use cases might actually not be as random as you think, rendering your application vulnerable to cryptographic attacks. When you have to generate secure random strings, use the [```crypto.RandomBytes(size, [callback])```](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_randombytes_size_callback) function using available entropy provided by the system.
+
+**Otherwise:** When generating pseudo-random strings without cryptographically secure methods, attackers might predict and reproduce the generated results, rendering your application insecure
 
 <br/><br/><br/>
+
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+
 # `Performance Practices`
 
 ## Our contributors are working on this section. Would you like to join?
