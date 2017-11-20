@@ -351,7 +351,7 @@ clients.
 
 ### Code example
 ```javascript
-'' == '0'           // false
+'' == '0'           // true
 0 == ''             // true
 0 == '0'            // true
 
