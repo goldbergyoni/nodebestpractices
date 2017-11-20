@@ -18,6 +18,7 @@
   "homepage": "https://github.com/i0natan/nodebestpractices#readme",
   "dependencies": {
     "body-parser": "1.18.2",
+    "clarifai": "^2.5.0",
     "configurationManager": "file:libraries/configurationManager",
     "cookie-parser": "1.4.3",
     "country-data": "0.0.31",
@@ -28,7 +29,9 @@
     "expressMiddlewares": "file:libraries/expressMiddlewares",
     "geoip-lite": "^1.2.1",
     "joi": "13.0.2",
+    "jsonschema": "^1.2.0",
     "jsonwebtoken": "8.1.0",
+    "knex": "^0.14.0",
     "logger": "file:libraries/logger",
     "messageQueue": "file:libraries/messageQueue",
     "passport": "0.4.0",
