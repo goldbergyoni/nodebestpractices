@@ -21,9 +21,7 @@ io.on('connection', function (socket) {
     socket.on('feedback', function (data) {
         // we tell the client to execute 'new message'
         console.log(`feedback ${data}`);
-        socket.broadcast.emit('feedbackArrived', {
-          message: data
-        });
+        socket.broadcast.emit('feedbackArrived', data);
         console.log(`Emitted ${data}`);
       });
     
