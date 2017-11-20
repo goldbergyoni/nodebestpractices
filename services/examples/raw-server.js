@@ -5,8 +5,7 @@ http.createServer(function (request, response) {
         'Content-Type': 'text/plain'
     });
 
-    if(request.headers['token']))
-        
+    
     if (request.url == '/api/healthcheck') {
         response.end('Hello World\n');
 

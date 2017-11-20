@@ -2,7 +2,8 @@ const express = require('express');
 var bodyParser = require('body-parser');
 const app = express();
 const util = require('util');
-console.log('Starting');
+var Validator = require('jsonschema').Validator;
+
 //declaration and initialization
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -28,9 +29,28 @@ router.get('/', (req, res)=>{
 })
 
 router.post('/' , (req, res)=>{
-    console.log(`We got a new product ${util.inspect(req.body)}`);
-    //validation
-    //db query
+    console.log(`We got a new product now ${util.inspect(req.body)}`);
+    
+    var v = new Validator();
+    var schema = {
+        "id": "/Product",
+        "type": "object",
+        "properties": {
+          "name": {"type": "string"},
+          "numOfSales": {"type": "integer", "minimum": 1},
+          "type": { "type": { "enum": [ "home", "business" ] } },
+        },
+        
+        "required": ["name", "numOfSales"]
+      };
+
+      console.log(v.validate(req.body , schema))
+    if(v.validate(req.body , schema).errors.length > 0)
+      res.status(400).end();
+
+      
+    
+    
     res.json(req.body);
 })
 
