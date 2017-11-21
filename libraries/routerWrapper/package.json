@@ -1,9 +1,0 @@
-{
-  "name": "routerWrapper",
-  "version": "0.0.1",
-  "private": true,
-  "main": "./index",
-  "dependencies": {
-    "express": "4.16.2"
-  }
-}

@@ -7,9 +7,14 @@ const app = new Clarifai.App({
 });
 
 // predict the contents of an image by passing in a url
-app.models.predict(Clarifai.GENERAL_MODEL, 'http://d3pah2c10lnl36.cloudfront.net/images/menu_pop_lunch_01_.jpg').then(
+app.models.predict(Clarifai.GENERAL_MODEL, 'https://s3-eu-west-1.amazonaws.com/i0natan-general/lunch4.jpeg').then(
     function (response) {
-        console.log(util.inspect(response, {depth:7}));
+        response.outputs.forEach((element)=> {
+            element.data.concepts.forEach((object)=>{
+                console.log(object.name)
+            });
+        });
+        
     },
     function (err) {
         console.error(err);
