@@ -11,7 +11,6 @@
     "helmet": "3.9.0",
     "utils": "*",
     "configurationManager": "*",
-    "entityServices": "*",
     "errorManagement": "*"
   }
 }

@@ -4,6 +4,7 @@
   "description": "[✔]: assets/images/checkbox-small-blue.png",
   "main": "app.js",
   "scripts": {
+    "start": "node ./services/examples/slow-fast.js",
     "test": "test"
   },
   "repository": {
@@ -17,12 +18,12 @@
   },
   "homepage": "https://github.com/i0natan/nodebestpractices#readme",
   "dependencies": {
+    "axios": "^0.17.1",
     "body-parser": "1.18.2",
     "clarifai": "^2.5.0",
     "configurationManager": "file:libraries/configurationManager",
     "cookie-parser": "1.4.3",
     "country-data": "0.0.31",
-    "entityServices": "file:libraries/entityServices",
     "errorManagement": "file:libraries/errorManagement",
     "express": "4.16.2",
     "express-request-language": "^1.1.15",

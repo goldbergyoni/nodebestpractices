@@ -3,7 +3,8 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
-http.listen(8080, function () {
+console.log(`About to listen to port ${process.env.PORT}`);
+http.listen(process.env.PORT, function () {
     console.log('listening on *:8080')
 });
 
