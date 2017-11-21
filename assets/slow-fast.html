@@ -41,6 +41,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
     <Script>
         var socket = io();
+        var isOkToEmit = true;
 
         socket.on('feedbackArrived', function (data) {
             console.log('Feedback arrived');
@@ -60,21 +61,27 @@
         });
 
         function emit(type, emoji) {
-            socket.emit('feedback', {
-                type: type,
-                emoji: emoji,
-                name: document.getElementById('name').value,
-                comment: document.getElementById('comment').value
-            });
-            document.getElementById('comment').value = '';
+            if (isOkToEmit) {
+                socket.emit('feedback', {
+                    type: type,
+                    emoji: emoji,
+                    name: document.getElementById('name').value,
+                    comment: document.getElementById('comment').value
+                });
+                document.getElementById('comment').value = '';
+                isOkToEmit = false;
+                setTimeout(function() {
+                    isOkToEmit = true;
+                }, 5000)
+            }
         }
 
         function tooFast() {
-            emit('Too Fast!', '🐢');
+            emit('Too Fast!', '🐰');
         }
 
         function tooSlow() {
-            emit('Too Slow!', '🐰');
+            emit('Too Slow!', '🐢');
         }
 
         function allGood() {
@@ -100,7 +107,7 @@
         </div>
         <div class="row">
             <div class="col form-group">
-                <textarea id="comment" class="form-control" placeholder="Comment (optional)"></textarea>
+                <textarea id="comment" class="form-control" placeholder="Comment (optional)" maxlength="100"></textarea>
             </div>
         </div>
         <div class="row">
