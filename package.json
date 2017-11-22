@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node ./services/examples/slow-fast.js",
-    "test": "test"
+    "test": "mocha **/test.unit*.js"
   },
   "repository": {
     "type": "git",

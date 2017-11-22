@@ -12,6 +12,6 @@ app.use(bodyParser.json());
 
 app.use('/api/products', productComponent);
 app.use('/api/orders', ordersComponent);
-app.use('/api/users', accountComponent);
+app.use('/api/accounts', accountComponent);
 
 module.exports = app;

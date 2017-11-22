@@ -1,29 +1,33 @@
 "use strict";
-	
+const JSONValidator = require('jsonschema').Validator;
+const joi = require('joi');
+
 class Order {
 
-  constructor() {
-    this.id = 0;
-		this.user = 0;
-		this.product = 0;
-		this.status = 'New';
-		this.createdOn =  new Date();
+	constructor(id, user, product, status, createdOn) {
+		this.id = id || "0";
+		this.user = user || 0;
+		this.product = product || 0;
+		this.status = status || 'New';
+		this.createdOn = createdOn || new Date();
 	}
 
-	validate(){
-		return true;
+	validate() {
+		return joi.validate(this, this.constructor.schema, {allowUnknown: true}, (error, value) => {
+			console.log(error)
+			if (error !== null)
+				return false;
+			else
+				return true;
+		});
 	}
 
 	static get schema() {
-		const schema = Joi.object().keys({
-			password: Joi.string().required(),
-			salt: Joi.string(),
-			displayName: Joi.string().required(),
-			imageUrl: Joi.string().allow(''),
-			email: Joi.string().required(),
-			schema: Joi.any(),
-			createdOn: Joi.date().required(),
-			language: Joi.number().required()
+		const schema = joi.object().keys({
+			id: joi.number().required(),
+			user: joi.number().required(),
+			product: joi.number().required(),
+			status: joi.string().allow(''),
 		});
 
 		return schema;
@@ -31,7 +35,7 @@ class Order {
 
 
 
-  
+
 }
 
 module.exports = Order;

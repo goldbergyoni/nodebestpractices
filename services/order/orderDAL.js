@@ -9,7 +9,8 @@ class OrderDAL {
     }
     
     add(newOrder){
-
+        console.log(`About to save order in db ${newOrder}`)
+        Promise.resolve(true)
     }
 
 }
