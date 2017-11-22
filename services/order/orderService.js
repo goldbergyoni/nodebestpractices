@@ -2,17 +2,12 @@
 
 const DAL = require('./orderDAL'),
     errors = require('./orderErrors'),
-    errorManagement = require('errorManagement'),
-    appError = errorManagement.appError,
-    errorHandling = errorManagement.handling,
-    commonErrors = errorManagement.commonErrors,
     logger = require('logger'),
-    amqp = require('../../libraries/amqp/amqp'),
     axios = require('axios');
 
 class OrderService {
 
-    add(newOrder) {
+    async add(newOrder) {
         logger.info(`Order service is about to add new order ${newOrder}`);
 
         if (!newOrder.validate())
@@ -23,12 +18,12 @@ class OrderService {
         if (!existingUser)
             throw new Error('The user doesnt exist');
 
-        const theSavedOrder = await DAL.add(newOrder);
+        //const theSavedOrder = await DAL.add(newOrder);
 
         return theSavedOrder;
     }
 
-    
+
 
 }
 

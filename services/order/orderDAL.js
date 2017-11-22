@@ -1,6 +1,6 @@
 "use strict";
 var util = require('util'),
-    configProvider = require('configProvider'),
+    configProvider = require('configurationManager'),
     logger = require('logger');
 
 class OrderDAL {
@@ -9,7 +9,7 @@ class OrderDAL {
     }
     
     add(newOrder){
-        
+
     }
 
 }

@@ -2,7 +2,8 @@ const express = require('express');
 var bodyParser = require('body-parser');
 const app = express();
 const util = require('util');
-var Validator = require('jsonschema').Validator;
+const Validator = require('jsonschema').Validator;
+const knex = require('knex');
 
 //declaration and initialization
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -44,12 +45,14 @@ router.post('/' , (req, res)=>{
         "required": ["name", "numOfSales"]
       };
 
-      console.log(v.validate(req.body , schema))
-    if(v.validate(req.body , schema).errors.length > 0)
-      res.status(400).end();
-
+    console.log(v.validate(req.body , schema))
+    if(v.validate(req.body , schema).errors.length > 0){
+        res.status(400).end();
+    }
       
-    
+    knex(require('./knexfile')).insert(req.body).into("products").then((id) => {
+        console.log(id);
+      })
     
     res.json(req.body);
 })

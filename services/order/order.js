@@ -3,7 +3,6 @@
 class Order {
 
   constructor() {
-    super();
     this.id = 0;
 		this.user = 0;
 		this.product = 0;

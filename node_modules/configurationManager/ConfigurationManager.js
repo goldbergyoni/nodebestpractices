@@ -3,7 +3,7 @@
 if(!process.env.NODE_ENV)
   process.stdout.write("Config provider might face difficulties since process.env.NODE_ENV was not defined");
 
-const mainConfiguration = require(`../../config.${process.env.NODE_ENV}.js`);
+const mainConfiguration = require('../../config.development');
 
 let ConfigurationManager = new Proxy(mainConfiguration, {
 	get(target, property) {

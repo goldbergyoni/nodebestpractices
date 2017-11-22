@@ -25,7 +25,6 @@ app.use((req, res, next)=>{
     next();
 });
 
-
 app.use((req, res, next)=>{
     console.log(`New message arrived with IP: ${req.ip}, URL: ${req.originalUrl}`);
     next();

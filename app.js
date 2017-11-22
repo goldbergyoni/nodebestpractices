@@ -1,17 +1,17 @@
 const express = require('express'),
-  appMiddlewares = require('expressMiddlewares').app,
+ bodyParser = require('body-parser'),
   ordersComponent = require('./services/order').API,
   productComponent = require('./services/product').API,
-  accountComponent = require('./services/account').API,
-  errorHandling = require('errorManagement').handling,
-  accountService = require('./services/account'),
-  configurationManager = require('configurationManager');
+  accountComponent = require('./services/account').API;
 
-process.stdout.write(`App is currently starting in environment ${configurationManager.environment} and port ${configurationManager.settings.port}, further logs should appear in a log file. Current version is ${require('./package.json').version}`);
+console.log(`App is currently starting`);
 
 let app = express();
-app.use(...(new appMiddlewares(passport)));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-errorHandling.registerAndHandleAllErrors(app);
+app.use('/api/products', productComponent);
+app.use('/api/orders', ordersComponent);
+app.use('/api/users', accountComponent);
 
 module.exports = app;
