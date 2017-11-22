@@ -17,8 +17,12 @@ class OrderService {
         existingUser = await axios.get(`/account/${newOrder.user}`);
         if (!existingUser)
             throw new Error('The user doesnt exist');
+        
+        //check if product exists
 
         //const theSavedOrder = await DAL.add(newOrder);
+
+        //publish in mq
 
         return theSavedOrder;
     }
