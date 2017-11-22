@@ -14,7 +14,7 @@ app.use(requestLanguage({
     languages: ['en-US', 'zh-CN', 'de-CH', 'de']
 }));
 
-app.get('/', (req, res) => res.send("<img src='https://s3-eu-west-1.amazonaws.com/i0natan-general/funny-image.jpg'/>"));
+app.get('/', (req, res) => res.send("<img src='https://i.pinimg.com/originals/0d/68/02/0d68025b2cd9a144d201d6cea02e7f27.jpg'/>"));
 
 app.use((req, res, next)=>{
     console.log(`New message arrived from country ${req.language}`);

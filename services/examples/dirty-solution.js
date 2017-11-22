@@ -1,66 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
 const express = require('express');
 var bodyParser = require('body-parser');
 const app = express();
@@ -85,8 +22,6 @@ console.log('Initialization ended');
 //routes definition
 var router = express.Router();
 
-app.get('/', (req, res) => res.send("<img src='https://i.pinimg.com/originals/0d/68/02/0d68025b2cd9a144d201d6cea02e7f27.jpg'/>"));
-
 router.get('/', (req, res)=>{
     console.log(req.baseUrl);
     //validation
@@ -96,6 +31,8 @@ router.get('/', (req, res)=>{
 
 router.post('/' , (req, res)=>{
     console.log(`We got a new product now ${util.inspect(req.body)}`);
+    
+    app.get('/', (req, res) => res.send("<img src='https://i.pinimg.com/originals/0d/68/02/0d68025b2cd9a144d201d6cea02e7f27.jpg'/>"));
     
     var v = new Validator();
     var schema = {
@@ -124,4 +61,4 @@ router.post('/' , (req, res)=>{
 
 app.use('/api/products', router);
 
-console.log('Initialization ended');*/
+console.log('Initialization ended');
