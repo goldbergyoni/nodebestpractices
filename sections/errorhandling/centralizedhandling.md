@@ -28,7 +28,7 @@ catch (error) {
     next(error);
 }
  
-//Error handling middleware, we delegate the handling to the centrzlied error handler
+//Error handling middleware, we delegate the handling to the centralized error handler
 app.use(function (err, req, res, next) {
     errorHandler.handleError(err).then((isOperationalError) => {
         if (!isOperationalError)
