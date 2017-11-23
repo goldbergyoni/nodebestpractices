@@ -286,13 +286,13 @@
   // for class name we use UpperCamelCase
   class SomeClassExample { 
     
-    // for const name we use UPPERCASE
-    const CONFIG = {
-      key: 'value'
+    // for const name we use const keyword
+    const config = {
+      key: `value`
     };
     
     // for variables and functions names we use lowerCamelCase
-    let someVariableExample = 'value';
+    let someVariableExample = `value`;
     function doSomething() {
       
     }
