@@ -286,8 +286,8 @@
   // for class name we use UpperCamelCase
   class SomeClassExample { 
     
-    // for const name we use UPPERCASE
-    const CONFIG = {
+    // for const names we use the const keyword and lowerCamelCase
+    const config = {
       key: 'value'
     };
     
