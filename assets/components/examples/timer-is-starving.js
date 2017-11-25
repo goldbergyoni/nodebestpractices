@@ -1,13 +1,31 @@
-console.log('Starting');
+console.log('1');
+
+const startingDate = new Date();
+
+setTimeout(function() {
+    console.log(`After timeout, it took ${new Date() - startingDate}`)
+}, 50);
+
+const startingDate2 = new Date()
+while(new Date() - startingDate2 < 200){
+    
+ }
+
+ console.log('ending')
 
 
-setImmediate(() => {
-    console.log('Set Immediate Callback');
-})
 
 
-setTimeout(function () {
-    console.log('Set Timeout Callback');
-}, 1);
 
-console.log('Ending');
+
+
+// setImmediate(() => {
+//     console.log('Set Immediate Callback');
+// })
+
+
+// setTimeout(function () {
+//     console.log('Set Timeout Callback');
+// }, 1);
+
+// console.log('Ending');

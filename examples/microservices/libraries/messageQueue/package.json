@@ -1,0 +1,12 @@
+{
+  "name": "messageQueue",
+  "version": "0.0.1",
+  "private": true,
+  "main": "index.js",
+  "dependencies": {
+    "sqs-consumer": "3.8.0"
+  },
+  "peerDependencies": {
+    "aws-sdk": "2.149.0"
+  }
+}

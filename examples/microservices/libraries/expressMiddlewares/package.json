@@ -1,0 +1,16 @@
+{
+  "name": "expressMiddlewares",
+  "version": "0.0.1",
+  "private": true,
+   "dependencies": {
+    "body-parser": "1.18.2",
+    "cookie-parser": "1.4.3",
+    "passport": "0.4.0",
+    "passport-cookie": "1.0.4",
+    "passport-http-bearer": "1.0.1",
+    "helmet": "3.9.0",
+    "utils": "*",
+    "configurationManager": "*",
+    "errorManagement": "*"
+  }
+}

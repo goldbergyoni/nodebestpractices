@@ -26,7 +26,7 @@ class OrderService {
         logger.info(`About to save new order in DB`);
 
         const theSavedOrder = await DAL.add(newOrder);
-
+        
         //publish in mq
 
         return theSavedOrder;

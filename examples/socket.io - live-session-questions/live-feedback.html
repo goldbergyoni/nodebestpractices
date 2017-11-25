@@ -1,0 +1,140 @@
+<html>
+
+<head>
+    <title>Socket.io example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+    <meta name="theme-color" content="#8BC34A">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+    <style>
+            body {
+                background: #ECEFF1;
+                font-family: 'Open Sans';
+            }
+    
+            h1 {
+                font-weight: bold;
+                text-shadow: 2px 2px 0px #01579B;
+                color: #03A9F4;
+            }
+    
+            #log {
+                display: flex; flex-direction: column-reverse;
+            }
+    
+            #log > div {
+                padding: 10px 20px;
+                background: white;
+                box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+                border-radius: 5px;
+                margin-bottom: 10px; 
+            }
+        </style>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <Script>
+        var socket = io();
+        var isOkToEmit = true;
+
+        socket.on('feedbackArrived', function (data) {
+            console.log('Feedback arrived');
+            if (window.Notification && Notification.permission !== "denied") {
+                Notification.requestPermission(function (status) { // status is "granted", if accepted by user
+                    var n = new Notification(data.type, {
+                        body: ( data.name ? data.name + ': ' : '' ) + ( data.comment ? '"' + data.comment + '"' : ''),
+                        // icon: '/path/to/icon.png' // optional
+                    });
+                });
+            }
+            var newElement = document.createElement('div');
+            newElement.innerHTML = data.emoji + ' ' + 
+                ( data.name ? '<strong>' + data.name + ': </strong>' : '' ) +
+                '<i>"' + ( data.comment ? data.comment : data.type) + '"</i>';
+            document.getElementById('log').appendChild(newElement);
+        });
+
+        function emit(type, emoji) {
+            if (isOkToEmit) {
+                socket.emit('feedback', {
+                    type: type,
+                    emoji: emoji,
+                    name: document.getElementById('name').value,
+                    comment: document.getElementById('comment').value
+                });
+                document.getElementById('comment').value = '';
+                isOkToEmit = false;
+                setTimeout(function() {
+                    isOkToEmit = true;
+                }, 5000)
+            }
+        }
+
+        function tooFast() {
+            emit('Too Fast!', '🐰');
+        }
+
+        function tooSlow() {
+            emit('Clarify!', '🐢');
+        }
+
+        function allGood() {
+            emit('Everying is OK!', '👌');
+        }
+    </Script>
+</head>
+
+
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Clarify online </h1>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col form-group">
+                <input id="name" class="form-control" type="text" placeholder="Name (optional)">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col form-group">
+                <textarea id="comment" class="form-control" placeholder="Comment (optional)" maxlength="100"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-xs-12 form-group">
+                <button type="button" class="btn btn-lg btn-danger" style="width: 100%;" onclick="tooSlow()">Clarify!</button>
+            </div>
+            <div class="col-md-4 col-xs-12 form-group">
+                <button type="button" class="btn btn-lg btn-success" style="width: 100%;" onclick="allGood()">All Good</button>
+            </div>
+        </div>
+    </div>
+    
+    <br>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div id="log"></div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <br/>
+    <br/>
+    
+</body>
+
+</html>

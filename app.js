@@ -10,8 +10,9 @@ let app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use('/api/accounts', accountComponent);
 app.use('/api/products', productComponent);
 app.use('/api/orders', ordersComponent);
-app.use('/api/accounts', accountComponent);
+
 
 module.exports = app;

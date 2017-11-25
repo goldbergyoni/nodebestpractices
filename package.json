@@ -23,9 +23,11 @@
     "clarifai": "^2.5.0",
     "configurationManager": "file:libraries/configurationManager",
     "cookie-parser": "1.4.3",
+    "countries": "^0.1.1",
     "country-data": "0.0.31",
+    "country-list": "^1.1.0",
     "errorManagement": "file:libraries/errorManagement",
-    "express": "4.16.2",
+    "express": "^4.16.2",
     "express-request-language": "^1.1.15",
     "expressMiddlewares": "file:libraries/expressMiddlewares",
     "geoip-lite": "^1.2.1",
@@ -42,7 +44,8 @@
     "pretty-error": "2.1.1",
     "socket.io": "^2.0.4",
     "swagger-jsdoc": "1.9.7",
-    "swagger-ui-dist": "3.4.4"
+    "swagger-ui-dist": "3.4.4",
+    "which-country": "^1.0.0"
   },
   "devDependencies": {
     "chai": "4.1.2",

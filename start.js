@@ -1,6 +1,97 @@
+const express = require('express')
+const app = express();
+var bodyParser = require('body-parser');
+const Validator = require('jsonschema').Validator;
+const knex = require('knex')
+
+console.log('0')
+//initilization
+const port = process.env.PORT || 8080;
+app.listen(port);
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
+
+//custom logic
+app.get('/', (req, res) => {
+    console.log('3')
+    res.send("<img src='https://i.pinimg.com/originals/0d/68/02/0d68025b2cd9a144d201d6cea02e7f27.jpg'/>")
+})
+
+const logger = (req, res, next) => {
+    console.log(`New request ${req.url}`)
+    req.country = 'Israel'
+    next()
+}
+app.use(logger)
 
 
+var router = express.Router();
+router.get('/api/products', async(req, res) => {
+    throw new Error('ABC')
+    const promise = await new Promise((resolve, reject)=>{
+        setTimeout(function() {
+            reject(new Error('boo'))
+        }, 100);
+    })
 
+
+    if (req.country === 'Israel')
+        console.log('Yay israel')
+    res.json([{
+        name: 'iphone'
+    }, {
+        name: 'galaxy'
+    }])
+})
+
+app.use(function (err, req, res, next) {
+    console.log("Error caught")
+  })
+
+router.post('/api/products', (req, res) => {
+    console.log(`The product is ${req.body}`)
+    res.json(req.body)
+
+
+    var schema = {
+        "id": "/Product",
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string"
+            },
+            "numOfSales": {
+                "type": "integer",
+                "minimum": 1
+            },
+            "type": {
+                "type": {
+                    "enum": ["home", "business"]
+                }
+            },
+        },
+
+        "required": ["name", "numOfSales"]
+    };
+
+    var v = new Validator();
+
+    if (v.validate(req.body, schema).errors.length > 0) {
+        res.status(400).end();
+    }
+
+    knex(require('./knexfile')).insert(req.body).into("products").then((id) => {
+        console.log(id);
+      })
+
+});
+
+
+app.use(router);
+
+console.log('2')
 
 
 
