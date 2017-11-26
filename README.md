@@ -717,3 +717,5 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [lallenlowe](https://github.com/lallenlowe), 
 🌻 [Nathan Wells](https://github.com/nwwells), 
 🌻 [Paulo Vítor S Reis](https://github.com/paulovitin), 
+<br/><br/>
+##John Doe :star:## (be the first)
