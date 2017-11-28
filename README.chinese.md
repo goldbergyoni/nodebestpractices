@@ -1,6 +1,6 @@
 [✔]: assets/images/checkbox-small-blue.png
 
-# Node.js Best Practices
+# Node.js 最佳实践
 
 <h1 align="center">
   <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices" />
@@ -17,35 +17,35 @@
  [![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
  <br/>
 
-# Welcome! 3 Things You Ought To Know First:
-**1. When you read here, you in fact read dozens of the best Node.JS articles -** this is a summary and curation of the top-ranked content on Node JS best practices
+# 欢迎! 首先您应该知道的三件事情:
+**1. 当您读到这里，实际上您读了很多关于Node.JS的优秀文章 -** 这里是关于Node JS 最佳实践的优质内容的总结和管理
 
-**2. It is the largest compilation, and it is growing every week -** currently, more than 50 best practices, style guides, and architectural tips are presented. We welcome issues and PR to ever keep this live book updated. We'd love to see you contributing here, whether fixing some  code mistake or suggesting brilliant new ideas - be part of the Node.JS best practices book
+**2. 这里是最大的汇集，且每周都在增长 -** 当前，超过50个最佳实现，样式指南，架构建议已经呈现。我们欢迎议题和PR使这本在线书籍不断更新。我们也乐于见到您能在这里做出贡献，不管是修复一些代码的错误，或是建议卓越的新想法 - 作为Node.JS最佳实践这本书中的一部分
 
-**3. Most bullets have additional info -** nearby most best practice bullets you'll find **🔗Read More** link that will present you with code examples, quotes from selected blogs and more info
+**3. 大部分的条目包含额外的信息 -** 大部分的最佳实践条目的旁边，您将发现 **🔗Read More** 链接，它将呈现给您示例代码，博客引用和更多信息
 
 <br/><br/><br/>
 
-## Table of Contents
-1. [Project structure Practices (5)](#1-project-structure-practices)
-2. [Error Handling Practices (11) ](#2-error-handling-practices)
-3. [Code Style Practices (12) ](#3-code-style-practices)
-4. [Testing And Overall Quality Practices (8) ](#4-testing-and-overall-quality-practices)
+## 目录
+1. [项目结构实践 (5)](#1-project-structure-practices)
+2. [异常处理实践 (11) ](#2-error-handling-practices)
+3. [编码规范实践 (12) ](#3-code-style-practices)
+4. [测试和总体质量实践 (8) ](#4-testing-and-overall-quality-practices)
 5. [Going To Production Practices (16) ](#5-going-to-production-practices)
 6. Security Practices (coming soon)
 7. Performance Practices (coming soon)
 
 
 <br/><br/><br/>
-# `1. Project Structure Practices`
+# `1. 项目结构实践`
 
-## ![✔] 1.1 Structure your solution by components
+## ![✔] 1.1 组件式构建你的解决方案Structure your solution by components
 
- **TL;DR:** The worst large applications pitfall is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Instead, partition your code into components, each gets its own folder or a dedicated codebase, and ensure that each unit is kept small and simple. Visit 'Read More' below to see examples of correct project structure
+ **TL;DR:** 最大的项目隐患就是维护一个巨大的，含有几百个依赖的代码库 - 当开发人员准备整合新的需求的时候，这样一个庞然大物势必减缓了开发效率。反之，把您的代码拆分成组件，每一个组件有它自己的文件夹和代码库，并且确保每一个组件小而简单。查看正确的项目结构的例子请访问下面的 ‘更多’ 链接。
 
-**Otherwise:** When developers who code new features struggle to realize the impact of their change and fear to break other dependant components - deployments become slower and more risky. It's also considered harder to scale-out when all the business units are not separated
+**另外:** 当编写新需求的开发人员逐步意识到他所做改变的影响，并担心会破坏其他的依赖模块 - 部署会变得更慢，风险更大。当所有业务逻辑没有被分开，这也会被认为很难扩展
 
-🔗 [**Read More: structure by components**](/sections/projectstructre/breakintcomponents.chinese.md)
+🔗 [**更多: 组件结构**](/sections/projectstructre/breakintcomponents.chinese.md)
 
 <br/><br/>
 
