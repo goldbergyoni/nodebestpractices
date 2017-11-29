@@ -73,20 +73,19 @@
 
 **TL;DR:** 避免定义整个[Express](https://expressjs.com/)应用在一个单独的大文件的不好习惯 - 分离您的 'Express' 定义至少在两个文件中： API声明(app.js) 和 网络相关(WWW)。对于更好的结构，是把你的API声明放在组件中。
 
-**否者:** 您的API将只能通过HTTP的调用进行测试（慢，并且很难产生测试覆盖报告）。维护一个有着上百行代码的文件也不是一个令人开心的事情。
+**否则:** 您的API将只能通过HTTP的调用进行测试（慢，并且很难产生测试覆盖报告）。维护一个有着上百行代码的文件也不是一个令人开心的事情。
 
 🔗 [**更多: 分离 Express 'app' and 'server'**](/sections/projectstructre/separateexpress.md)
 
 <br/><br/>
 
-## ![✔] 1.5 Use environment aware, secure and hierarchical config
+## ![✔] 1.5 使用易于设置环境变量，安全和分级的配置
 
 
-**TL;DR:** A perfect and flawless configuration setup should ensure (a) keys can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are only a few packages that can help tick most of those boxes like [nconf](https://www.npmjs.com/package/nconf) and [config](https://www.npmjs.com/package/config).
+**TL;DR:** 一个完美无瑕的配置安装应该确保 (a) 元素可以从文件中，也可以从环境变量中读取 (b) 密码排除在提交的代码之外 (c) 为了易于检索，配置是分级的。仅有几个包可以满足这样的条件，比如[nconf](https://www.npmjs.com/package/nconf) 和 [config](https://www.npmjs.com/package/config)。
 
-**Otherwise:** Failing to satisfy any of the config requirements will simply bog down the development or devops team. Probably both
-
-🔗 [**Read More: configuration best practices**](/sections/projectstructre/configguide.md)
+**否则:** 不能满足任意的配置要求将会使开发，运维团队，或者两者，易于陷入泥潭。
+🔗 [**更多: 配置最佳实践**](/sections/projectstructre/configguide.md)
 
 
 <br/><br/><br/>
