@@ -43,7 +43,7 @@
 
  **TL;DR:** 最大的项目隐患就是维护一个巨大的，含有几百个依赖的代码库 - 当开发人员准备整合新的需求的时候，这样一个庞然大物势必减缓了开发效率。反之，把您的代码拆分成组件，每一个组件有它自己的文件夹和代码库，并且确保每一个组件小而简单。查看正确的项目结构的例子请访问下面的 ‘更多’ 链接。
 
-**另外:** 当编写新需求的开发人员逐步意识到他所做改变的影响，并担心会破坏其他的依赖模块 - 部署会变得更慢，风险更大。当所有业务逻辑没有被分开，这也会被认为很难扩展
+**否则:** 当编写新需求的开发人员逐步意识到他所做改变的影响，并担心会破坏其他的依赖模块 - 部署会变得更慢，风险更大。当所有业务逻辑没有被分开，这也会被认为很难扩展
 
 🔗 [**更多: 组件结构**](/sections/projectstructre/breakintcomponents.chinese.md)
 
@@ -53,7 +53,7 @@
 
 **TL;DR:** 每一个组件都应该包含'层级' - 一个专注的用于接入网络，逻辑，数据的概念。这样不仅获得一个清晰的分离考量，而且使仿真和测试系统变得异常容易。尽管这是一个普通的模式，但接口开发者易于混淆层级关系，比如把网络层的对象（Express req, res）传给业务逻辑和数据层 - 这会令您的应用彼此依赖，并且只能通过Express使用。
 
-**另外:** 对于混淆了网络层和其它层的应用，将不易于测试，执行CRON的任务，其它非-Express的调用者无法使用
+**否则:** 对于混淆了网络层和其它层的应用，将不易于测试，执行CRON的任务，其它非-Express的调用者无法使用
 
 🔗 [**更多: 应用分层**](/sections/projectstructre/createlayers.md)
 
@@ -61,11 +61,11 @@
 
 ## ![✔] 1.3 封装公共模块成为NPM的包
 
-**TL;DR:** In a large app that constitutes a large code base, cross-cutting-concern utilities like logger, encryption and alike, should be wrapped by your own code and exposed as private NPM packages. This allows sharing them among multiple code bases and projects
+**TL;DR:** 由大量代码构成的一个大型应用中，贯彻全局的，比如日志，加密和其它类似的公共组件，应该进行封装，并暴露成一个私有的NPM包。这将使其在更多的代码库和项目中被使用变成了可能。
 
-**Otherwise:** You'll have to invent your own deployment and dependency wheel
+**否则:** 您将不得不重造部署和依赖的轮子
 
-🔗 [**Read More: Structure by feature**](/sections/projectstructre/wraputilities.md)
+🔗 [**更多: 通过需求构建**](/sections/projectstructre/wraputilities.md)
 
 <br/><br/>
 
