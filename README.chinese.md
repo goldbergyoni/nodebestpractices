@@ -92,26 +92,26 @@
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `2. Error Handling Practices`
+# `2. 错误处理最佳实践`
 
-## ![✔] 2.1  Use Async-Await or promises for async error handling
+## ![✔] 2.1  使用 Async-Await 和 promises 用于异步错误处理
 
-**TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using a reputable promise library or async-await instead which enables a much more compact and familiar code syntax like try-catch
+**TL;DR:** 使用回调的方式处理异步错误可能是导致灾难的最快的方式(a.k.a the pyramid of doom)。对您的代码来说，最好的礼物就是使用规范的promise库或async-await来替代，这会使其像try-catch一样更加简洁，熟悉的代码结构。 
 
-**Otherwise:** Node.JS callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting and awkward coding patterns
+**否则:** Node.JS 回调特性, function(err, response), 是导致不可维护代码的一个必然的方式。究其原因，是由于混合了随意的错误处理代码，臃肿的内嵌，蹩脚的代码模式。
 
-🔗 [**Read More: avoiding callbacks**](/sections/errorhandling/asyncerrorhandling.md)
+🔗 [**更多: 避免回调**](/sections/errorhandling/asyncerrorhandling.md)
 
 <br/><br/>
 
-## ![✔] 2.2 Use only the built-in Error object
+## ![✔] 2.2 仅使用内建的错误对象
 
-**TL;DR:** Many throws errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw exception or emit error – using only the built-in Error object will increase uniformity and prevent loss of information
+**TL;DR:** 很多人抛出异常使用字符串类型或一些自定义类型 - 这会导致错误处理逻辑和模块间的调用复杂化。是否您reject一个promise，抛出异常或发出(emit)错误 - 使用内建的错误对象将会增加设计一致性，并防止信息的丢失。
 
 
 **Otherwise:** When invoking some component, being uncertain which type of errors come in return – it makes proper error handling much harder. Even worse, using custom types to describe errors might lead to loss of critical error information like the stack trace!
 
-🔗 [**Read More: using the built-in error object**](/sections/errorhandling/useonlythebuiltinerror.md)
+🔗 [**更多: 使用内建错误对象**](/sections/errorhandling/useonlythebuiltinerror.md)
 
 <br/><br/>
 
