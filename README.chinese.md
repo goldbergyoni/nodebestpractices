@@ -49,17 +49,17 @@
 
 <br/><br/>
 
-## ![✔] 1.2 Layer your components, keep Express within its boundaries
+## ![✔] 1.2 分层设计组件，保持Express在特定的区域
 
-**TL;DR:** Each component should contain 'layers' - a dedicated object for the web, logic and data access code. This not only draws a clean separation of concerns but also significantly ease mocking and testing the system. Though this is a very common pattern, API developers tend to mix layers by passing the web layer objects (Express req, res) to business logic and data layers - this makes your application dependant on and accessible by Express only
+**TL;DR:** 每一个组件都应该包含'层级' - 一个专注的用于接入网络，逻辑，数据的概念。这样不仅获得一个清晰的分离考量，而且使仿真和测试系统变得异常容易。尽管这是一个普通的模式，但接口开发者易于混淆层级关系，比如把网络层的对象（Express req, res）传给业务逻辑和数据层 - 这会令您的应用彼此依赖，并且只能通过Express使用。
 
-**Otherwise:** App that mixes web objects with other layers can not be accessed by testing code, CRON jobs and other non-Express callers
+**另外:** 对于混淆了网络层和其它层的应用，将不易于测试，执行CRON的任务，其它非-Express的调用者无法使用
 
-🔗 [**Read More: layer your app**](/sections/projectstructre/createlayers.md)
+🔗 [**更多: 应用分层**](/sections/projectstructre/createlayers.md)
 
 <br/><br/>
 
-## ![✔] 1.3 Wrap common utilities as NPM packages
+## ![✔] 1.3 封装公共模块成为NPM的包
 
 **TL;DR:** In a large app that constitutes a large code base, cross-cutting-concern utilities like logger, encryption and alike, should be wrapped by your own code and exposed as private NPM packages. This allows sharing them among multiple code bases and projects
 
