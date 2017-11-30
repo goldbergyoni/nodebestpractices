@@ -109,7 +109,7 @@
 **TL;DR:** 很多人抛出异常使用字符串类型或一些自定义类型 - 这会导致错误处理逻辑和模块间的调用复杂化。是否您reject一个promise，抛出异常或发出(emit)错误 - 使用内建的错误对象将会增加设计一致性，并防止信息的丢失。
 
 
-**Otherwise:** When invoking some component, being uncertain which type of errors come in return – it makes proper error handling much harder. Even worse, using custom types to describe errors might lead to loss of critical error information like the stack trace!
+**否则:** 调用某些模块，将不确定哪种错误类型会返回 - 这将会使恰当的错误处理更加困难。更坏的情况是，使用特定的类型描述错误，会导致重要的错误信息缺失，比如stack trace！
 
 🔗 [**更多: 使用内建错误对象**](/sections/errorhandling/useonlythebuiltinerror.md)
 
@@ -125,13 +125,13 @@
 
 <br/><br/>
 
-## ![✔] 2.4 Handle errors centrally, not within an Express middleware
+## ![✔] 2.4 集中处理错误，不要在Express中间件中处理错误
 
-**TL;DR:** Error handling logic such as mail to admin and logging should be encapsulated in a dedicated and centralized object that all endpoints (e.g. Express middleware, cron jobs, unit-testing) call when an error comes in.
+**TL;DR:** 错误处理逻辑，比如给管理员发送邮件，日志应该封装在一个特定的，集中的对象当中，这样当错误产生的时候，所有的终端（例如 Express中间件，cron任务，单元测试）都可以调用。
 
-**Otherwise:** Not handling errors within a single place will lead to code duplication and probably to improperly handled errors
+**否则:** 错误处理的逻辑不放在一起将会导致代码重复和非常可能不恰当的错误处理。
 
-🔗 [**Read More: handling errors in a centralized place**](/sections/errorhandling/centralizedhandling.md)
+🔗 [**更多: 集中处理错误**](/sections/errorhandling/centralizedhandling.md)
 
 <br/><br/>
 
@@ -146,13 +146,13 @@
 
 <br/><br/>
 
-## ![✔] 2.6 Shut the process gracefully when a stranger comes to town
+## ![✔] 2.6 当一个特殊的情况产生，停掉服务是得体的
 
-**TL;DR:** When an unknown error occurs (a developer error, see best practice number #3)- there is uncertainty about the application healthiness. A common practice suggests restarting the process carefully using a ‘restarter’ tool like Forever and PM2
+**TL;DR:** 当一个不确定错误产生（一个开发错误，最佳实践条款#3) - 这就意味着对应用运转健全的不确定。一个普通的实践将是建议仔细地重启进程，并使用一些‘启动器’工具，比如Forever和PM2。
 
-**Otherwise:** When an unfamiliar exception is caught, some object might be in a faulty state (e.g an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
+**否则:** 当一个未知的异常被抛出，意味着某些对象包含错误的状态（例如某个全局事件发生器由于某些内在的错误，不在产生事件），未来的请求可能失败或者行为异常。
 
-🔗 [**Read More: shutting the process**](/sections/errorhandling/shuttingtheprocess.md)
+🔗 [**更多: 停掉服务**](/sections/errorhandling/shuttingtheprocess.md)
 
 <br/><br/>
 
