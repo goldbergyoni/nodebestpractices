@@ -257,11 +257,11 @@
 
 <br/><br/>
 
-## ![✔] 3.4 Don't Forget the Semicolon
+## ![✔] 3.4 不要忘记分号
 
-**TL;DR:** While not unanimously agreed upon, it is still recommended to put a semicolon at the end of each statement. This will make your code more readable and explicit to other developers who read it.
+**TL;DR:** 即使没有获得一致的认同，但在每一个表达式后面放置分号还是值得推荐的。这将使您的代码, 对于其他阅读代码的开发者来说，可读性，明确性更强。
 
-**Otherwise:** As seen in the previous section, JavaScript's interpeter automatically adds a semicolon at the end of a statement if there isn't one which might lead to some undesired results.
+**否则:** 在前面的章节里面已经提到，如果表达式的末尾没有添加分号，JavaScript的解释器会在自动添加一个，这可能会导致一些意想不到的结果。
 
 <br/><br/>
 
