@@ -45,7 +45,7 @@
 
 **Otherwise:** When developers who code new features struggle to realize the impact of their change and fear to break other dependant components - deployments become slower and more risky. It's also considered harder to scale-out when all the business units are not separated
 
-🔗 [**Read More: structure by components**](/sections/projectstructre/breakintcomponents.korean.md)
+🔗 [**Read More: structure by components**](/sections/projectstructre/breakintcomponents.spanish.md)
 
 <br/><br/>
 
