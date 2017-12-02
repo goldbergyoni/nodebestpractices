@@ -670,6 +670,18 @@ All statements above will return false if used with `===`
 
 **Otherwise:** When generating pseudo-random strings without cryptographically secure methods, attackers might predict and reproduce the generated results, rendering your application insecure
 
+<br/><br/>
+
+## ![✔] 6.3. Using security-related headers to protect your application
+
+**TL;DR:** Your application should be using secure headers to prevent attackers from using common attacks like cross-site scripting (XSS), clickjacking and other malicious attacks.
+
+**Otherwise:** Attackers could perform attacks on your application's users, leading to insecurity
+
+
+🔗 [**Read More: Using secure headers in your application**](/sections/production/setnodeenv.md)
+
+
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
