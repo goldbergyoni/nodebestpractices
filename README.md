@@ -717,7 +717,10 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [lallenlowe](https://github.com/lallenlowe), 
 🌻 [Nathan Wells](https://github.com/nwwells), 
 🌻 [Paulo Vítor S Reis](https://github.com/paulovitin), 
-🌻 [syzer](https://github.com/syzer)
+🌻 [syzer](https://github.com/syzer),
+🌻 [David Sancho](https://github.com/davesnx)
+
+
 
 <br/><br/>
 ## :star: No Stars Yet, Waiting For The First To Suggest a New Bullet 
