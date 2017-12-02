@@ -717,7 +717,8 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [lallenlowe](https://github.com/lallenlowe), 
 🌻 [Nathan Wells](https://github.com/nwwells), 
 🌻 [Paulo Vítor S Reis](https://github.com/paulovitin), 
+🌻 [syzer](https://github.com/syzer)
 
 <br/><br/>
-## No Stars Yet :star:
+## :star: No Stars Yet, Waiting For The First To Suggest a New Bullet 
 
