@@ -718,7 +718,7 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Nathan Wells](https://github.com/nwwells), 
 🌻 [Paulo Vítor S Reis](https://github.com/paulovitin), 
 🌻 [syzer](https://github.com/syzer),
-🌻 [David Sancho](https://github.com/davesnx)
+🌻 [David Sancho](https://github.com/davesnx),
 🌻 [Robert Manolea](https://github.com/pupix)
 
 
