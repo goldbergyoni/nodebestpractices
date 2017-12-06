@@ -719,7 +719,8 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Paulo Vítor S Reis](https://github.com/paulovitin), 
 🌻 [syzer](https://github.com/syzer),
 🌻 [David Sancho](https://github.com/davesnx),
-🌻 [Robert Manolea](https://github.com/pupix)
+🌻 [Robert Manolea](https://github.com/pupix),
+🌻 [Xavier Ho](https://github.com/spaxe)
 
 
 
