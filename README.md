@@ -494,7 +494,7 @@ All statements above will return false if used with `===`
 
 **TL;DR:** Node is awfully bad at doing CPU intensive tasks like gzipping, SSL termination, etc. Instead, use a ‘real’ middleware services like nginx, HAproxy or cloud vendor services
 
-**Otherwise:** Your poor single thread will keep busy doing networking tasks instead of dealing with your application core and performance will degrade accordingly
+**Otherwise:** Your poor single thread will keep busy doing infrastructural tasks instead of dealing with your application core and performance will degrade accordingly
 
 
 🔗 [**Read More: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
