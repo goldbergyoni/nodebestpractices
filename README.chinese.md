@@ -219,9 +219,9 @@
 
 ## ![✔] 3.1 使用ESLint
 
-**TL;DR:** ESLint is the de-facto standard for checking code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Using ESLint and following the rest of the code style practices below means following the same styles used by the rest of the community, as well as the same code styles used in the core products themselves.
+**TL;DR:** ESLint是检查代码风格的事实上的标准，不仅要查明实际的间距问题，也要检测严重的反模式问题，像开发者没有分类的抛出异常。使用ESLint及下面列出的其他的代码风格实践，意味着和社区里的其他人保持同一种风格，以及用在核心产品本身相同的代码风格。
 
-**Otherwise:** developers will focus on tedious spacing and line-width concerns
+**否则:** 开发者必须专注于单调的间距和线宽的问题上。
 
 <br/><br/>
 
