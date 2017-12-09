@@ -227,33 +227,33 @@
 
 ## ![✔] 3.2 Node JS 特定的插件
 
-**TL;DR:** On top of ESLint standard rules that cover vanilla JS only, add Node-specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
+**TL;DR:** 除了仅仅涉及 vanilla JS 的 ESLint 标准规则，添加 Node 相关的插件，比如[eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
-**Otherwise:** Many faulty Node.JS code patterns might escape under the radar. For example, developers might require(variableAsPath) files with a variable given as path which allows attackers to execute any JS script. Node.JS linters can detect such patterns and complain early
+**否则:** 许多错误的Node.js代码模式可能在检测下逃生。例如，开发人员可能需要某些文件，把一个变量作为路径名 (variableAsPath) ，这会导致攻击者可以执行任何JS脚本。Node.JS linters可以检测这类模式，并及早预警。
 
 <br/><br/>
 
-## ![✔] 3.3 Start a Codeblock's Curly Braces in the Same Line
+## ![✔] 3.3 在同一行开始一个代码块的大括号
 
-**TL;DR:** The opening curly braces of a code block should be in the same line of the opening statement.
+**TL;DR:** 代码块的第一个大括号应该和声明的起始保持在同一行中。
 
-### Code Example
+### 代码示例
 ```javascript
-  // Do
+  // 建议
   function someFunction() {
-    // code block
+    // 代码块
   }
 
-  //Avoid
+  // 避免
   function someFunction
   {
-    // code block
+    // 代码块
   }
 ```
 
-**Otherwise:** Deferring from this best practice might lead to unexpected results, as seen in the Stackoverflow thread below:
+**否则:** 不遵守这项最佳实践可能导致意外的结果，在Stackoverflow的帖子中可以查看到，如下：
 
-🔗 [**Read more:** "Why does a results vary based on curly brace placement?" (Stackoverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
+🔗 [**更多:** "Why does a results vary based on curly brace placement?" (Stackoverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
 <br/><br/>
 
@@ -273,23 +273,23 @@
 
 <br/><br/>
 
-## ![✔] 3.6 Naming conventions for variables, constants, functions and classes
+## ![✔] 3.6 变量、常量、函数和类的命名约定
 
-**TL;DR:** Use ***lowerCamelCase*** when naming variables and functions, ***UpperCamelCase*** (capital first letter as well) when naming classes and ***UPPERCASE*** for constants. This will help you to easily distinguish between plain variables / functions, and classes that require instantiation. Use descriptive names, but try to keep them short.
+**TL;DR:** 当命名变量和方法的时候，使用 ***lowerCamelCase*** ， 当命名类的时候，使用***UpperCamelCase*** （首字母大写），对于常量，则***UPPERCASE***。这将帮助您轻松地区分普通变量/函数和需要实例化的类。使用描述性名称，但使它们尽量简短。
 
-**Otherwise:** Javascript is the only language in the world which allows to invoke a constructor ("Class") directly without instantiating it first. Consequently, Classes and function-constructors are differentiated by starting with UpperCamelCase.
+**否则:** JavaScript是世界上唯一一门不需要实例化，就可以直接调用构造函数（"Class"）的编码语言。因此，类和函数的构造函数由采用UpperCamelCase开始区分。
 
-### Code Example ###
+### 代码示例 ###
 ```javascript
-  // for class name we use UpperCamelCase
+  // 使用UpperCamelCase命名类名
   class SomeClassExample () { 
     
-    // for const name we use UPPERCASE
+    // 常量使用UPPERCASE
     const CONFIG = {
       key: 'value'
     };
     
-    // for variables and functions names we use lowerCamelCase
+    // 变量和方法使用lowerCamelCase
     let someVariableExample = 'value';
     function doSomething() {
       
@@ -300,13 +300,13 @@
 
 <br/><br/>
 
-## ![✔] 3.7 Prefer const over let. Ditch the var
+## ![✔] 3.7 使用const优于let，废弃var
 
-**TL;DR:** Using `const` means that once a variable is assigned, it cannot be reassigned. Prefering const will help you to not be tempted to use the same variable for different uses, and make your code clearer. If a variable needs to be reassigned, in a for loop for example, use `let` to declare it. Another important aspect of let is that a variable declared using let is only available in the block scope in which it was defined. `var` is function scoped, not block scoped, and [shouldn't be used in ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) now that you have const and let at your disposal.
+**TL;DR:** 使用` const `意味着一旦一个变量被分配，它不能被重新分配。使用const将帮助您免于使用相同的变量用于不同的用途，并使你的代码更清晰。如果一个变量需要被重新分配，以在一个循环为例，使用 `let` 声明它。let的另一个重要方面是，使用let声明的变量只在定义它的块作用域中可用。 `var` 是函数作用域，不是块级作用域，既然您有const和let让您随意使用，那么[不应该在ES6中使用var](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70)。
 
-**Otherwise:** Debugging becomes way more cumbersome when following a variable that frequently changes.
+**否则:** 当经常更改变量时，调试变得更麻烦了。
 
-🔗 [**Read more: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
+🔗 [**更多: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
 
 <br/><br/>
 
