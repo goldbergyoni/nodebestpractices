@@ -679,7 +679,19 @@ All statements above will return false if used with `===`
 **Otherwise:** Attackers could perform attacks on your application's users, leading to insecurity
 
 
-🔗 [**Read More: Using secure headers in your application**](/sections/production/setnodeenv.md)
+🔗 [**Read More: Using secure headers in your application**](/sections/security/secureheaders.md)
+
+
+<br/><br/>
+
+## ![✔] 6.4. Use HTTPS to encrypt the client-server connection
+
+**TL;DR:** In the times of [free SSL/TLS certificates](https://letsencrypt.org/) and easy configuration of those, you do no longer have to weigh advantages and disadvantages of using a secure server because the advantages such as security, support of modern technology and trust clearly outweigh the disadvantages like minimal overhead compared to pure http.
+
+**Otherwise:** Attackers could perform man-in-the-middle attacks, spy on your users' behaviour and perform even more malicious actions when the connection is unencrypted
+
+
+🔗 [**Read More: Running a secure Node.js server**](/sections/security/secureserver.md)
 
 
 <br/><br/><br/>
