@@ -312,28 +312,27 @@
 
 ## ![✔] 3.8 Requires come first, and not inside functions
 
-**TL;DR:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top, but also avoids a couple of potential problems.
+**TL;DR:** 在每个文件的起始位置，在任何函数的前面和外部 require 模块。这种简单的最佳实践，不仅能帮助您轻松快速地在文件顶部辨别出依赖关系，而且避免了一些潜在的问题。
 
-**Otherwise:** Requires are run synchronously by NodeJS. If they are called from within a function, it may block other requests from being handled at a more critical time. Also, if a required module or any of its own dependencies throw an error and crash the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function.
+**否则:** 在 NodeJs 中，require 是同步运行的。如果从函数中调用它们，它可能会阻塞其他请求，在更关键的时间得到处理。另外，如果所 require 的模块或它自己的任何依赖项抛出错误并使服务器崩溃，最好尽快查明它，如果该模块在函数中 require 的，则可能不是这样的情况。
 
 <br/><br/>
 
-## ![✔] 3.9 Do Require on the folders, not directly on the files
+## ![✔] 3.9 在文件夹上 require ，而不是直接在文件上
 
-**TL;DR:** When developing a module/library in a folder, place an index.js file that exposes the module's
-internals so every consumer will pass through it. This serves as an 'interface' to your module and ease
-future changes without breaking the contract.
+**TL;DR:** 当在一个文件夹中开发库/模块，放置一个文件index.js暴露模块的
+内部，这样每个消费者都会通过它。这将作为您模块的一个接口，并使
+未来的变化简单而不违反规则。
 
-**Otherwise:** Changing to the internal structure of files or the signature may break the interface with
-clients.
+**否则:** 更改文件内部结构或签名可能会破坏与客户端的接口。
 
-### Code example
+### 代码示例
 ```javascript
-  // Do
+  // 建议
   module.exports.SMSProvider = require('./SMSProvider');
   module.exports.SMSNumberResolver = require('./SMSNumberResolver');
 
-  // Avoid
+  // 避免
   module.exports.SMSProvider = require('./SMSProvider/SMSProvider.js');
   module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolver.js');
 ```
@@ -341,13 +340,13 @@ clients.
 <br/><br/>
 
 
-## ![✔] 3.10 Use the `===` operator
+## ![✔] 3.10 使用 `===` 操作符
 
-**TL;DR:** Prefer the strict equality operator `===` over the weaker abstract equality operator `==`. `==` will compare two variables after converting them to a common type. There is no type conversion in `===`, and both variables must be of the same type to be equal.
+**TL;DR:** 对比弱等于 `==`，优先使用严格的全等于 `===` 。`==`将在它们转换为普通类型后比较两个变量。在 `===` 中没有类型转换，并且两个变量必须是相同的类型。
 
-**Otherwise:** Unequal variables might return true when compared with the `==` operator.
+**否则:** 与 `==` 操作符比较，不相等的变量可能会返回true。
 
-### Code example
+### 代码示例
 ```javascript
 '' == '0'           // false
 0 == ''             // true
@@ -362,27 +361,27 @@ null == undefined   // true
 
 ' \t\r\n ' == 0     // true
 ```
-All statements above will return false if used with `===`
+如果使用`===`， 上面所有语句都将返回 false。
 
 <br/><br/>
 
-## ![✔] 3.11 Use Async Await, avoid callbacks
+## ![✔] 3.11 使用 Async Await, 避免回调
 
-**TL;DR:** Node 8 LTS now has full support for Async-await. This is a new way of dealing with asyncronous code which supersedes callbacks and promises. Async-await is non-blocking, and it makes asynchronous code look synchronous. The best gift you can give to your code is using async-await which provides a much more compact and familiar code syntax like try-catch.
+**TL;DR:** Node 8 LTS现已全面支持异步等待。这是一种新的方式处理异步请求，取代回调和promise。Async-await是非阻塞的，它使异步代码看起来像是同步的。你可以给你的代码的最好的礼物是用async-await提供了一个更紧凑的，熟悉的，类似try catch的代码语法。
 
-**Otherwise:** Handling async errors in callback style is probably the fastest way to hell - this style forces to check errors all over, deal with akward code nesting and make it difficult to reason about the code flow.
+**否则:** 使用回调的方式处理异步错误可能是陷入困境最快的方式 - 这种方式必须面对不停地检测错误，处理别扭的代码内嵌，难以推理编码流。
 
-🔗[**Read more:** Guide to async await 1.0](https://github.com/yortus/asyncawait)
+🔗[**更多:** async await 1.0 引导](https://github.com/yortus/asyncawait)
 
 <br/><br/>
 
-## ![✔] 3.12 Use Fat (=>) Arrow Functions
+## ![✔] 3.12 使用 (=>) 箭头函数
 
-**TL;DR:** Though it's recommended to use async-await and avoid function parameters, when dealing with older API that accept promises or callbacks - arrow functions make the code structure more compact and keep the lexical context of the root function (i.e. 'this').
+**TL;DR:** 尽管使用 async-await 和避免方法作为参数是被推荐的, 但当处理那些接受promise和回调的老的API的时候 - 箭头函数使代码结构更加紧凑，并保持了根方法上的语义上下文 (例如 'this')。
 
-**Otherwise:** Longer code (in ES5 functions) is more prone to bugs and cumbersome to read.
+**否则:** 更长的代码（在ES5方法中）更易于产生缺陷，并读起来很是笨重。
 
-🔗 [**Read mode: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
+🔗 [**更多: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
 
 
 <br/><br/><br/>
@@ -390,9 +389,9 @@ All statements above will return false if used with `===`
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
 
-# `4. Testing And Overall Quality Practices`
+# `4. 测试和总体的质量实践`
 
-## ![✔] 4.1 At the very least, write API (component) testing
+## ![✔] 4.1 至少，编写API（组件）测试
 
 **TL;DR:** Most projects just don't have any automated testing due to short time tables or often the 'testing project' run out of control and being abandoned. For that reason, prioritize and start with API testing which are the easiest to write and provide more coverage than unit testing (you may even craft API tests without code using tools like [Postman](https://www.getpostman.com/). Afterwards, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc
 
@@ -465,71 +464,71 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `5. Going To Production Practices`
-## ![✔] 5.1. Monitoring!
+# `5. 上线实践`
+## ![✔] 5.1. 监控!
 
-**TL;DR:** Monitoring is a game of finding out issues before customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that ticks all boxes. Click ‘The Gist’ below for overview of solutions
+**TL;DR:** 监控是一种在顾客之前发现问题的游戏 – 显然这应该被赋予前所未有的重要性。考虑从定义你必须遵循的基本度量标准开始（我的建议在里面），到检查附加的花哨特性并选择解决所有问题的解决方案。市场已经淹没其中。点击下面的 ‘The Gist’ ，了解解决方案的概述。
 
-**Otherwise:** Failure === disappointed customers. Simple.
+**否则:** 错误 === 失望的客户. 非常简单.
 
 
-🔗 [**Read More: Monitoring!**](/sections/production/monitoring.md)
+🔗 [**更多: 监控!**](/sections/production/monitoring.md)
 
 <br/><br/>
 
-## ![✔] 5.2. Increase transparency using smart logging
+## ![✔] 5.2. 使用智能日志增加透明度Increase transparency using smart logging
 
-**TL;DR:** Logs can be a dumb warehouse of debug statements or the enabler of a beautiful dashboard that tells the story of your app. Plan your logging platform from day  1: how logs are collected, stored and analyzed to ensure that the desired information (e.g. error rate, following an entire transaction through services and servers, etc) can really be extracted
+**TL;DR:** 日志可以是调试语句的一个不能说话的仓库，或者表述应用运行过程的一个漂亮仪表板的驱动。从第1天计划您的日志平台：如何收集、存储和分析日志，以确保所需信息（例如，错误率、通过服务和服务器等完成整个事务）都能被提取出来。
 
-**Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
+**否则:** 您最终像是面对一个黑盒，不知道发生了什么事情，然后你开始重新写日志语句添加额外的信息。
 
 
-🔗 [**Read More: Increase transparency using smart logging**](/sections/production/smartlogging.md)
+🔗 [**更多: Increase transparency using smart logging**](/sections/production/smartlogging.md)
 	
 <br/><br/>
 
-## ![✔] 5.3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy
+## ![✔] 5.3. 委托一切可能的（例如：gzip，SSL）给反向代理
 
-**TL;DR:** Node is awfully bad at doing CPU intensive tasks like gzipping, SSL termination, etc. Instead, use a ‘real’ middleware services like nginx, HAproxy or cloud vendor services
+**TL;DR:** node处理CPU密集型任务，如gzipping，SSL termination等，表现糟糕。相反，使用一个 ‘真正’ 的中间件服务像Nginx，HAProxy或者云供应商的服务。
 
-**Otherwise:** Your poor single thread will keep busy doing networking tasks instead of dealing with your application core and performance will degrade accordingly
-
-
-🔗 [**Read More: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
-
-<br/><br/>
-
-## ![✔] 5.4. Lock dependencies
-
-**TL;DR:** Your code must be identical across all environments, but amazingly NPM lets dependencies drift across environments by default – when you install packages at various environments it tries to fetch packages’ latest patch version. Overcome this by using NPM config files , .npmrc, that tell each environment to save the exact (not the latest) version of each package. Alternatively, for finer grain control use NPM” shrinkwrap”. *Update: as of NPM5 , dependencies are locked by default. The new package manager in town, Yarn, also got us covered by default
-
-**Otherwise:** QA will thoroughly test the code and approve a version that will behave differently at production. Even worse, different servers at the same production cluster might run different code
+**否则:** 单线程的node服务器将不幸地忙于处理网络任务，而不是处理应用程序核心，性能会相应降低。
 
 
-🔗 [**Read More: Lock dependencies**](/sections/production/lockdependencies.md)
+🔗 [**更多: 委托一切可能的（例如：gzip，SSL）给反向代理**](/sections/production/delegatetoproxy.md)
 
 <br/><br/>
 
-## ![✔] 5.5. Guard process uptime using the right tool
+## ![✔] 5.4. 锁住依赖
 
-**TL;DR:** The process must go on and get restarted upon failures. For simple scenario, ‘restarter’ tools like PM2 might be enough but in today ‘dockerized’ world – a cluster management tools should be considered as well
+**TL;DR:** 您的代码必须在所有的环境中是相同的，但是令人惊讶的是，NPM默认情况下会让依赖在不同环境下发生偏移 – 当在不同的环境中安装包的时候，它试图拿包的最新版本。克服这种问题可以利用NPM配置文件， .npmrc，告诉每个环境保存准确的（不是最新的）包的版本。另外，对于更精细的控制，使用NPM “shrinkwrap”。*更新：作为NPM5，依赖默认锁定。新的包管理工具，Yarn，也默认锁定。
 
-**Otherwise:** Running dozens of instances without clear strategy and too many tools together (cluster management, docker, PM2) might lead to a devops chaos
+**否则:** QA测试通过的代码和批准的版本，在生产中表现不一致。更糟糕的是，同一生产集群中的不同服务器可能运行不同的代码。
 
 
-🔗 [**Read More: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
+🔗 [**更多: 锁住依赖**](/sections/production/lockdependencies.md)
+
+<br/><br/>
+
+## ![✔] 5.5. 使用正确的工具保护进程正常运行
+
+**TL;DR:** 进程必须继续运行，并在失败时重新启动。对于简单的情况下，“重启”工具如PM2可能足够，但在今天的“Dockerized”世界 – 集群管理工具也值得考虑
+
+**否则:** 运行几十个实例没有明确的战略和太多的工具（集群管理，docker，PM2）可能导致一个DevOps混乱
+
+
+🔗 [**更多: 使用正确的工具保护进程正常运行**](/sections/production/guardprocess.md)
 
  
 <br/><br/>
 
-## ![✔] 5.6. Utilize all CPU cores
+## ![✔] 5.6. 利用CPU多核
 
-**TL;DR:** At its basic form, a Node app runs on a single CPU core while all other are left idling. It’s your duty to replicate the Node process and utilize all CPUs – For small-medium apps you may use Node Cluster or PM2. For a larger app consider replicating the process using some Docker cluster (e.g. K8S, ECS) or deployment scripts that are based on Linux init system (e.g. systemd)
+**TL;DR:** 在基本形式上，node应用程序运行在单个CPU核心上，而其他都处于空闲状态。复制node进程和利用多核，这是您的职责 – 对于中小应用，您可以使用Node Cluster和PM2. 对于一个大的应用，可以考虑使用一些Docker cluster（例如k8s，ECS）复制进程或基于Linux init system（例如systemd）的部署脚本
 
-**Otherwise:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.JS utilizes only 1 (even using PaaS services like AWS beanstalk!)
+**否则:** 您的应用可能只是使用了其可用资源中的25% (!)，甚至更少。注意，一台典型的服务器有4个或更多的CPU，默认的Node.JS部署仅仅用了一个CPU（甚至使用PaaS服务，比如AWS beanstalk，也一样）。
 
 
-🔗 [**Read More: Utilize all CPU cores**](/sections/production/utilizecpu.md)
+🔗 [**更多: 利用所有的CPU**](/sections/production/utilizecpu.md)
 
 <br/><br/>
 
