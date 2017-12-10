@@ -532,98 +532,98 @@ null == undefined   // true
 
 <br/><br/>
 
-## ![✔] 5.7. Create a ‘maintenance endpoint’
+## ![✔] 5.7. 创建一个“维护端点”
 
-**TL;DR:** Expose a set of system-related information, like memory usage and REPL, etc in a secured API. Although it’s highly recommended to rely on standard and battle-tests tools, some valuable information and operations are easier done using code
+**TL;DR:** 在一个安全的API中暴露一组系统相关的信息，比如内存使用情况和REPL等等。尽管这里强烈建议依赖标准和作战测试工具，但一些有价值的信息和操作更容易使用代码完成。
 
-**Otherwise:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
-
-
-🔗 [**Read More: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
-
-<br/><br/>
-
-## ![✔] 5.8. Discover errors and downtime using APM products
-
-**TL;DR:** Monitoring and performance products (a.k.a APM) proactively gauge codebase and API so they can auto-magically go beyond traditional monitoring and measure the overall user-experience across services and tiers. For example, some APM products can highlight a transaction that loads too slow on the end-users side while suggesting the root cause
-
-**Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real world scenario and how these affects the UX
+**否则:** 您会发现，您正在执行许多“诊断部署” — 将代码发送到生产中，仅仅只为了诊断目的提取一些信息。
 
 
-🔗 [**Read More: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
-
+🔗 [**更多: 创建一个 ‘维护端点’ **](/sections/production/createmaintenanceendpoint.md)
 
 <br/><br/>
 
+## ![✔] 5.8. 使用APM产品发现错误和宕机时间
 
-## ![✔] 5.9. Make your code production-ready
+**TL;DR:** 监控和性能的产品（即APM）先前一步地评估代码库和API，自动的超过传统的监测，并测量在服务和层级上的整体用户体验。例如，一些APM产品可以突显导致最终用户负载过慢的事务，同时指出根本原因。
 
-**TL;DR:** Code with the end in mind, plan for production from day 1. This sounds a bit vague so I’ve compiled a few development tips that are closely related to production maintenance (click Gist below)
-
-**Otherwise:** A world champion IT/devops guy won’t save a system that is badly written
-
-
-🔗 [**Read More: Make your code production-ready**](/sections/production/productoncode.md)
-
-<br/><br/>
-
-## ![✔] 5.10. Measure and guard the memory usage
-
-**TL;DR:** Node.js has controversial relationships with memory: the v8 engine has soft limits on memory usage (1.4GB) and there are known paths to leaks memory in Node’s code – thus watching Node’s process memory is a must. In small apps you may gauge memory  periodically using shell commands but in medium-large app consider baking your memory watch into a robust monitoring system
-
-**Otherwise:** Your process memory might leak a hundred megabytes a day like happened in Wallmart
+**否则:** 你可能会花大力气测量API性能和停机时间，也许你永远不会知道，真实场景下哪个是你最慢的代码部分，这些怎么影响用户体验。
 
 
-🔗 [**Read More: Measure and guard the memory usage**](/sections/production/measurememory.md)
-
-<br/><br/>
-
-
-## ![✔] 5.11. Get your frontend assets out of Node
-
-**TL;DR:** Serve frontend content using dedicated middleware (nginx, S3, CDN) because Node performance really gets hurt when dealing with many static files due to its single threaded model
-
-**Otherwise:** Your single Node thread will be busy streaming hundreds of html/images/angular/react files instead of  allocating all its resources for the task it was born for – serving dynamic content
-
-
-🔗 [**Read More: Get your frontend assets out of Node**](/sections/production/frontendout.md)
-
-<br/><br/>
-
-
-## ![✔] 5.12. Be stateless, kill your Servers almost every day
-
-**TL;DR:** Store any type of data (e.g. users session, cache, uploaded files) within external data stores. Consider ‘killing’ your servers periodically or use ‘serverless’ platform (e.g. AWS Lambda) that explicitly enforces a stateless behavior
-
-**Otherwise:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
-
-
-🔗 [**Read More: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
+🔗 [**更多: 使用APM产品发现错误和宕机时间**](/sections/production/apmproducts.md)
 
 
 <br/><br/>
 
 
-## ![✔] 5.13. Use tools that automatically detect vulnerabilities
+## ![✔] 5.9. 使您的代码保持生产环境就绪
 
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities (from time to time) that can put a system at risk. This can get easily tamed using community and commercial tools that constantly check for vulnerabilities and warn (locally or at GitHub), some can even patch them immediately
+**TL;DR:** 在意识中抱着最终上线的想法进行编码，从第1天开始计划上线。这听起来有点模糊，所以我编写了一些与生产维护密切相关的开发技巧（点击下面的要点）
 
-**Otherwise:** Otherwise: Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
+**否则:** 一个世界冠军级别的IT/运维人员也不能拯救一个编码低劣的系统。
 
 
-🔗 [**Read More: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
+🔗 [**更多: 使您的代码保持生产环境就绪**](/sections/production/productoncode.md)
+
+<br/><br/>
+
+## ![✔] 5.10. 测量和保护内存使用
+
+**TL;DR:** Node.js和内存有引起争论的联系：V8引擎对内存的使用有稍微的限制（1.4GB），在node的代码里面有内存泄漏的很多途径 – 因此监视node的进程内存是必须的。在小应用程序中，你可以使用shell命令周期性地测量内存，但在中等规模的应用程序中，考虑把内存监控建成一个健壮的监控系统。
+
+**否则:** 您的内存可能一天泄漏一百兆，就像曾发生在沃尔玛的一样。
+
+
+🔗 [**更多: 测量和保护内存使用**](/sections/production/measurememory.md)
 
 <br/><br/>
 
 
-## ![✔] 5.14. Assign ‘TransactionId’ to each log statement
+## ![✔] 5.11. Node外管理您的前端资源
 
-**TL;DR:** Assign the same identifier, transaction-id: {some value}, to each log entry within a single request. Then when inspecting errors in logs, easily conclude what happened before and after. Unfortunately, this is not easy to achieve in Node due its async nature, see code examples inside
+**TL;DR:** 使用专门的中间件（nginx，S3，CDN）服务前端内容，这是因为在处理大量静态文件的时候，由于node的单线程模型，它的性能很受影响。
 
-**Otherwise:** Looking at a production error log without the context – what happened before – makes it much harder and slower to reason about the issue
+**否则:** 您的单个node线程将忙于传输成百上千的html/图片/angular/react文件，而不是分配其所有的资源为了其擅长的任务 – 服务动态内容
 
 
-🔗 [**Read More: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
+🔗 [**更多: Node外管理您的前端资源**](/sections/production/frontendout.md)
+
+<br/><br/>
+
+
+## ![✔] 5.12. 保持无状态，几乎每天都要停下服务器
+
+**TL;DR:** 在外部数据存储上，存储任意类型数据（例如用户会话，缓存，上传文件）。考虑间隔地停掉您的服务器或者使用 ‘serverless’ 平台（例如 AWS Lambda），这是一个明确的强化无状态的行为。
+
+**否则:** 某个服务器上的故障将导致应用程序宕机，而不仅仅是停用故障机器。此外，由于依赖特定服务器，伸缩弹性会变得更具挑战性。
+
+
+🔗 [**Read More: 保持无状态，几乎每天都要停下服务器**](/sections/production/bestateless.md)
+
+
+<br/><br/>
+
+
+## ![✔] 5.13. 使用自动检测漏洞的工具
+
+**TL;DR:** 即使是最有信誉的依赖项，比如Express，会有使系统处于危险境地的已知漏洞（随着时间推移）。通过使用社区的或者商业工具，不时的检查漏洞和警告（本地或者Github上），这类问题很容易被抑制，有些问题甚至可以立即修补。
+
+**否则:** 否则: 在没有专用工具的情况下，使代码清除漏洞，需要不断地跟踪有关新威胁的在线出版物。相当繁琐。
+
+
+🔗 [**更多: 使用自动检测漏洞的工具**](/sections/production/detectvulnerabilities.md)
+
+<br/><br/>
+
+
+## ![✔] 5.14. 在每一个log语句中指明 ‘TransactionId’ 
+
+**TL;DR:** 在每一个请求的每一条log入口，指明同一个标识符，transaction-id: {某些值}。然后在检查日志中的错误时，很容易总结出前后发生的事情。不幸的是，由于Node异步的天性自然，这是不容易办到的，看下代码里面的例子
+
+**否则:** 在没有上下文的情况下查看生产错误日志，这会使问题变得更加困难和缓慢去解决。
+
+
+🔗 [**更多: 在每一个log语句中指明 ‘TransactionId’**](/sections/production/assigntransactionid.md)
 
 <br/><br/>
 
@@ -641,11 +641,11 @@ null == undefined   // true
 <br/><br/>
 
 
-## ![✔] 5.16. Design automated, atomic and zero-downtime deployments
+## ![✔] 5.16. 设计自动化、原子化和零停机时间部署
 
-**TL;DR:** Researches show that teams who perform many deployments – lowers the probability of severe production issues. Fast and automated deployments that don’t require risky manual steps and service downtime significantly improves the deployment process. You should probably achieve that using Docker combined with CI tools as they became the industry standard for streamlined deployment
+**TL;DR:** 研究表明，执行许多部署的团队降低了严重上线问题的可能性。不需要危险的手动步骤和服务停机时间的快速和自动化部署大大改善了部署过程。你应该达到使用Docker结合CI工具，使他们成为简化部署的行业标准。
 
-**Otherwise:** Long deployments -> production down time & human-related error -> team unconfident and in making deployment -> less deployments and features
+**否则:** 长时间部署 -> 线上宕机 & 和人相关的错误 -> 团队部署时不自信 -> 更少的部署和需求
 
 <br/><br/><br/>
 
