@@ -393,36 +393,36 @@ null == undefined   // true
 
 ## ![✔] 4.1 至少，编写API（组件）测试
 
-**TL;DR:** Most projects just don't have any automated testing due to short time tables or often the 'testing project' run out of control and being abandoned. For that reason, prioritize and start with API testing which are the easiest to write and provide more coverage than unit testing (you may even craft API tests without code using tools like [Postman](https://www.getpostman.com/). Afterwards, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc
+**TL;DR:** 大多数项目只是因为时间表太短而没有进行任何自动化测试，或者测试项目失控而正被遗弃。因此，优先从API测试开始，这是最简单的编写和提供比单元测试更多覆盖率的事情（你甚至可能不需要编码而进行API测试，像[Postman](https://www.getpostman.com/)。之后，如果您有更多的资源和时间，继续使用高级测试类型，如单元测试、DB测试、性能测试等。
 
-**Otherwise:** You may spend long days on writing unit tests to find out that you got only 20% system coverage
-
-<br/><br/>
-
-## ![✔] 4.2 Detect code issues with ESLint + specific Node plugin rules
-
-**TL;DR:** ESLint is the de-facto standard for checking code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. On top of ESLint standard rules that cover vanilla JS only, add Node-specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
-
-**Otherwise:** Many faulty Node.JS code patterns might escape under the radar. For example, developers might require(variableAsPath) files with a variable given as path which allows attackers to execute any JS script. Node.JS linters can detect such patterns and complain early
-
+**否则:** 您可能需要花很长时间编写单元测试，才发现只有20%的系统覆盖率。
 
 <br/><br/>
 
-## ![✔] 4.3 Carefully choose your CI platform (Jenkins vs CircleCI vs Travis vs Rest of the world)
+## ![✔] 4.2 检测代码问题使用ESLint + 特定node插件的规则
 
-**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it should come with a vibrant ecosystem of plugins. [Jenkins](https://jenkins.io/) used to be the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Nowdays, it became much easier to setup a CI solution using SaaS tools like [CircleCI](https://circleci.com) and others. These tools allow crafting a flexible CI pipeline without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully.
+**TL;DR:** ESLint是检查代码风格的事实上的标准，不仅要查明实际的间距问题，也要检测严重的反模式问题，像开发者没有分类的抛出异常。除了仅仅涉及 vanilla JS 的 ESLint 标准规则，添加 Node 相关的插件，比如[eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) 和 [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
-**Otherwise:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
+**否则:** 许多错误的Node.js代码模式可能在检测下逃生。例如，开发人员可能需要某些文件，把一个变量作为路径名 (variableAsPath) ，这会导致攻击者可以执行任何JS脚本。Node.JS linters可以检测这类模式，并及早预警。
 
-🔗 [**Read More: Choosing CI platform**](/sections/testingandquality/citools.md)
 
 <br/><br/>
 
-## ![✔] 4.4 Constantly inspect for vulnerable dependencies
+## ![✔] 4.3 仔细挑选您的持续集成（CI）平台
 
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [nsp](https://github.com/nodesecurity/nsp) that can be invoked from your CI on every build
+**TL;DR:** 您的持续集成平台（cicd）将集成各种质量工具（如测试、lint），所以它应该是一个充满活力的生态系统，包含各种插件。[jenkins](https://jenkins.io/)曾经是许多项目的默认选项，因为它有最大的社区，同时也是一个非常强大的平台，这样的代价是要求一个陡峭的学习曲线。如今，使用SaaS工具，比如[CircleCI](https://circleci.com)及其他，安装一套CI解决方案，相对是一件容易的事情。这些工具允许构建灵活的CI管道，而无需管理整个基础设施。最终，这是一个鲁棒性和速度之间的权衡 - 仔细选择您支持的方案。
 
-**Otherwise:** Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
+**否则:** 一旦您需要一些高级定制，选择一些细分市场供应商可能会让您停滞不前。另一方面，伴随着jenkins，可能会在基础设施设置上浪费宝贵的时间。
+
+🔗 [**更多: 挑选 CI 平台**](/sections/testingandquality/citools.md)
+
+<br/><br/>
+
+## ![✔] 4.4 经常检查易受攻击的依赖
+
+**TL;DR:** 即使是那些最有名的依赖模块，比如Express，也有已知的漏洞。使用社区和商业工具，比如 🔗 [nsp](https://github.com/nodesecurity/nsp) ，集成在您的CI平台上，在每一次构建的时候都会被调用，这样可以很容易地解决漏洞问题。
+
+**否则:** 在没有专用工具的情况下，使代码清除漏洞，需要不断地跟踪有关新威胁的在线出版物。相当繁琐。
 
 <br/><br/>
 
