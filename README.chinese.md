@@ -426,19 +426,19 @@ null == undefined   // true
 
 <br/><br/>
 
-## ![✔] 4.5 Tag your tests
+## ![✔] 4.5 测试标签化
 
-**TL;DR:**  Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/):  mocha --grep 'sanity'
+**TL;DR:**  不同的测试必须运行在不同的情景：quick smoke，IO-less，当开发者保存或提交一个文件，测试应该启动；完整的端到端的测试通常运行在一个新的pull request被提交之后，等等。这可以通过对测试用例设置标签，比如关键字像#cold #api #sanity，来完成。这样您可以对您的测试集进行grep，调用需要的子集。例如，这就是您通过[Mocha](https://mochajs.org/)仅仅调用sanity测试集所需要做的：mocha --grep 'sanity'。
 
-**Otherwise:** Running all the tests, including tests that perform dozens of DB queries, any time a developer makes a small change can be extremly slow and keeps developers away from running tests
+**否则:** 运行所有的测试，包括执行数据库查询的几十个测试，任何时候开发者进行小的改动都可能很慢，这使得开发者不愿意运行测试。
 
 <br/><br/>
 
-## ![✔] 4.6 Check your test coverage, it helps to identify wrong test patterns
+## ![✔] 4.6 检查测试覆盖率，它有助于识别错误的测试模式
 
-**TL;DR:** Code coverage tools like [Istanbul/NYC ](https://github.com/gotwarlost/istanbul)are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but not least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
+**TL;DR:** 代码覆盖工具比如[Istanbul/NYC ](https://github.com/gotwarlost/istanbul)，很好用有3个原因：它是免费的（获得这份报告不需要任何开销），它有助于确定测试覆盖率降低的部分，以及最后但非最不重要的是它指出了测试中的不匹配：通过查看颜色标记的代码覆盖报告您可以注意到，例如，从来不会被测到的代码片段像catch语句（即测试只是调用正确的路径，而不调用应用程序发生错误时的行为）。如果覆盖率低于某个阈值，则将其设置为失败的构建。
 
-**Otherwise:** There won't be any automated metric telling you when a large portion of your code is not covered by testing
+**否则:** 当你的大部分代码没有被测试覆盖时，就不会有任何自动化的度量指标告诉你了。
 
 
 
@@ -452,12 +452,12 @@ null == undefined   // true
 
 <br/><br/>
 
-## ![✔] 4.8 Use docker-compose for e2e testing
+## ![✔] 4.8 对于 e2e testing，使用 docker-compose
 
-**TL;DR:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Docker-compose turns this problem into a breeze by crafting production-like environment using a simple text file and easy commands. It allows crafting all the dependent services, DB and isolated network for e2e testing. Last but not least, it can keep a stateless environment that is invoked before each test suite and dies right after
+**TL;DR:** 端对端(e2e)测试包含现场数据，由于它依赖于很多重型服务如数据库，习惯被认为是CI过程中最薄弱的环节。Docker-compose通过制定类似生产的环境，并使用一个简单的文本文件和简单的命令，轻松化解了这个问题。它为了e2e测试，允许制作所有相关服务，数据库和隔离网络。最后但并非最不重要的一点是，它可以保持一个无状态环境，该环境在每个测试套件之前被调用，然后立即消失。
 
 
-**Otherwise:** Without docker-compose teams must maintain a testing DB for each testing environment including developers machines, keep all those DBs in sync so test results won't vary across environments
+**否则:** 没有docker-compose，团队必须维护一个测试数据库在每一个测试环境上，包含开发机器，保持所有数据同步，这样测试结果不会因环境不同而不同。
 
 
 <br/><br/><br/>
