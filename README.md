@@ -720,7 +720,8 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [syzer](https://github.com/syzer),
 🌻 [David Sancho](https://github.com/davesnx),
 🌻 [Robert Manolea](https://github.com/pupix),
-🌻 [Xavier Ho](https://github.com/spaxe)
+🌻 [Xavier Ho](https://github.com/spaxe),
+🌻 [Aaron Arney](https://github.com/ocularrhythm)
 
 
 
