@@ -219,11 +219,13 @@
 
 # `3. Code Style Practices`
 
-## ![✔] 3.1 Use ESLint
+## ![✔] 3.1 Use ESLint and Prettier
 
-**TL;DR:** ESLint is the de-facto standard for checking code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Using ESLint and following the rest of the code style practices below means following the same styles used by the rest of the community, as well as the same code styles used in the core products themselves.
+**TL;DR:** [ESLint](https://eslint.org) is the de-facto standard for checking possible code errors and fixing code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. While ESLint can automatically fix code styles, [Prettier](https://github.com/prettier/prettier) is a more powerful automatic code formatter. You and your team don't have to talk and research about their preferred code styles but instead, they can just rely on Prettier to automatically format their code. Prettier also uses the code styles preferred by most programmers. Also, it can be easily used alongside ESLint so you don't have to worry about having conflicts between the two libraries.
 
-**Otherwise:** developers will focus on tedious spacing and line-width concerns
+**Otherwise:** Developers will focus on tedious spacing and line-width concerns and time might be wasted overthinking about the project's code style.
+
+🔗 [**Read More: Using ESLint and Prettier**](/sections/codestylepractices/eslint_prettier.md)
 
 <br/><br/>
 
@@ -385,14 +387,6 @@ All statements above will return false if used with `===`
 **Otherwise:** Longer code (in ES5 functions) is more prone to bugs and cumbersome to read.
 
 🔗 [**Read mode: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
-
-<br/><br/>
-
-## ![✔] 3.13 Use Prettier to avoid overthinking your code styles
-
-**TL;DR:** Most teams always talk about their preferred code styles. Even individual programmers overthink their code styles. This leads to unproductive time debating or researching (Like using semicolons or not. Or even thinking if your team should split the code after the 80th column or not). With [Prettier](https://github.com/prettier/prettier), you or your team don't have to talk about their code styles. Prettier also uses the code styles preferred by most programmers. Prettier can also be used alongside ESLint so you don't have to worry about having conflicts between the two libraries.
-
-**Otherwise:** Time might be wasted overthinking about the project's code style
 
 
 <br/><br/><br/>
