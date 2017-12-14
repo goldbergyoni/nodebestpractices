@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-<img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2053%20Best%20practices-blue.svg" alt="50 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Oct%2020%202017-green.svg" alt="Last update: Oct 20, 2017"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.4-brightgreen.svg" alt="Updated for Node v.8.4">
+<img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2053%20Best%20practices-blue.svg" alt="53 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Nov%2015%202017-green.svg" alt="Last update: Nov 15, 2017"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.9-brightgreen.svg" alt="Updated for Node v.8.9">
 	</div>
 
 <br/>
@@ -20,7 +20,7 @@
 # Welcome! 3 Things You Ought To Know First:
 **1. When you read here, you in fact read dozens of the best Node.JS articles -** this is a summary and curation of the top-ranked content on Node JS best practices
 
-**2. It is the largest compilation, and it is growing every week -** currently, more than 50 best practices, style guides, and architectural tips are presented. We welcome issues and PR to ever keep this live book updated. We'd love to see you contributing here, whether fixing some  code mistake or suggesting brilliant new ideas - be part of the Node.JS best practices book
+**2. It is the largest compilation, and it is growing every week -** currently, more than 50 best practices, style guides, and architectural tips are presented. New issues and PR are created every day to keep this live book updated. We'd love to see you contributing here, whether fixing some  code mistake or suggesting brilliant new ideas. See our [milestones here](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
 
 **3. Most bullets have additional info -** nearby most best practice bullets you'll find **🔗Read More** link that will present you with code examples, quotes from selected blogs and more info
 
@@ -32,8 +32,8 @@
 3. [Code Style Practices (12) ](#3-code-style-practices)
 4. [Testing And Overall Quality Practices (8) ](#4-testing-and-overall-quality-practices)
 5. [Going To Production Practices (16) ](#5-going-to-production-practices)
-6. Security Practices (coming soon)
-7. Performance Practices (coming soon)
+6. Security Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
+7. Performance Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 
 
 <br/><br/><br/>
@@ -51,7 +51,7 @@
 
 ## ![✔] 1.2 Layer your components, keep Express within its boundaries
 
-**TL;DR:** Each component should contain 'layers' - a dedicated object for the web, logic and data access code. This not only draws a clean separation of concerns but also significantly ease mocking and testing the system. Though this is a very common pattern, API developers tend to mix layers by passing the web layer objects (Express req, res) to business logic and data layers - this makes your application dependant on and accessible by Express only
+**TL;DR:** Each component should contain 'layers' - a dedicated object for the web, logic and data access code. This not only draws a clean separation of concerns but also significantly eases mocking and testing the system. Though this is a very common pattern, API developers tend to mix layers by passing the web layer objects (Express req, res) to business logic and data layers - this makes your application dependant on and accessible by Express only
 
 **Otherwise:** App that mixes web objects with other layers can not be accessed by testing code, CRON jobs and other non-Express callers
 
@@ -82,7 +82,7 @@
 ## ![✔] 1.5 Use environment aware, secure and hierarchical config
 
 
-**TL;DR:** A perfect and flawless configuration setup should ensure (a) keys can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are only a few packages that can help tick most of those boxes like [nconf](https://www.npmjs.com/package/nconf) and [config](https://www.npmjs.com/package/config).
+**TL;DR:** A perfect and flawless configuration setup should ensure (a) keys can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are a few packages that can help tick most of those boxes like [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) and [config](https://www.npmjs.com/package/config).
 
 **Otherwise:** Failing to satisfy any of the config requirements will simply bog down the development or devops team. Probably both
 
@@ -196,7 +196,7 @@
 
 ## ![✔] 2.10 Catch unhandled promise rejections
 
-**TL;DR:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explictly handle. Even if your code is subscribed to process.uncaughtException! Overcome this by registering to the event process.unhandledRejection
+**TL;DR:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explicitly handle. Even if your code is subscribed to process.uncaughtException! Overcome this by registering to the event process.unhandledRejection
 
 **Otherwise:** Your errors will get swallowed and leave no trace. Nothing to worry about
 
@@ -246,8 +246,8 @@
     // code block
   }
 
-  //Avoid
-  function someFunction
+  // Avoid
+  function someFunction()
   {
     // code block
   }
@@ -263,7 +263,7 @@
 
 **TL;DR:** While not unanimously agreed upon, it is still recommended to put a semicolon at the end of each statement. This will make your code more readable and explicit to other developers who read it.
 
-**Otherwise:** As seen in the previous section, JavaScript's interpeter automatically adds a semicolon at the end of a statement if there isn't one which might lead to some undesired results.
+**Otherwise:** As seen in the previous section, JavaScript's interpreter automatically adds a semicolon at the end of a statement if there isn't one which might lead to some undesired results.
 
 <br/><br/>
 
@@ -277,17 +277,17 @@
 
 ## ![✔] 3.6 Naming conventions for variables, constants, functions and classes
 
-**TL;DR:** Use ***lowerCamelCase*** when naming variables and functions, ***UpperCamelCase*** (capital first letter as well) when naming classes and ***UPPERCASE*** for constants. This will help you to easily distinguish between plain variables / functions, and classes that require instantiation. Use descriptive names, but try to keep them short.
+**TL;DR:** Use ***lowerCamelCase*** when naming constants, variables and functions and ***UpperCamelCase*** (capital first letter as well) when naming classes. This will help you to easily distinguish between plain variables / functions, and classes that require instantiation. Use descriptive names, but try to keep them short.
 
 **Otherwise:** Javascript is the only language in the world which allows to invoke a constructor ("Class") directly without instantiating it first. Consequently, Classes and function-constructors are differentiated by starting with UpperCamelCase.
 
 ### Code Example ###
 ```javascript
   // for class name we use UpperCamelCase
-  class SomeClassExample () { 
+  class SomeClassExample { 
     
-    // for const name we use UPPERCASE
-    const CONFIG = {
+    // for const names we use the const keyword and lowerCamelCase
+    const config = {
       key: 'value'
     };
     
@@ -304,7 +304,7 @@
 
 ## ![✔] 3.7 Prefer const over let. Ditch the var
 
-**TL;DR:** Using `const` means that once a variable is assigned, it cannot be reassigned. Prefering const will help you to not be tempted to use the same variable for different uses, and make your code clearer. If a variable needs to be reassigned, in a for loop for example, use `let` to declare it. Another important aspect of let is that a variable declared using let is only available in the block scope in which it was defined. `var` is function scoped, not block scoped, and [shouldn't be used in ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) now that you have const and let at your disposal.
+**TL;DR:** Using `const` means that once a variable is assigned, it cannot be reassigned. Preferring const will help you to not be tempted to use the same variable for different uses, and make your code clearer. If a variable needs to be reassigned, in a for loop for example, use `let` to declare it. Another important aspect of let is that a variable declared using let is only available in the block scope in which it was defined. `var` is function scoped, not block scoped, and [shouldn't be used in ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) now that you have const and let at your disposal.
 
 **Otherwise:** Debugging becomes way more cumbersome when following a variable that frequently changes.
 
@@ -370,7 +370,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 3.11 Use Async Await, avoid callbacks
 
-**TL;DR:** Node 8 LTS now has full support for Async-await. This is a new way of dealing with asyncronous code which supersedes callbacks and promises. Async-await is non-blocking, and it makes asynchronous code look synchronous. The best gift you can give to your code is using async-await which provides a much more compact and familiar code syntax like try-catch.
+**TL;DR:** Node 8 LTS now has full support for Async-await. This is a new way of dealing with asynchronous code which supersedes callbacks and promises. Async-await is non-blocking, and it makes asynchronous code look synchronous. The best gift you can give to your code is using async-await which provides a much more compact and familiar code syntax like try-catch.
 
 **Otherwise:** Handling async errors in callback style is probably the fastest way to hell - this style forces to check errors all over, deal with akward code nesting and make it difficult to reason about the code flow.
 
@@ -402,18 +402,18 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.2 Detect code issues with ESLint + specific Node plugin rules
+## ![✔] 4.2 Detect code issues with a linter
 
-**TL;DR:** ESLint is the de-facto standard for checking code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. On top of ESLint standard rules that cover vanilla JS only, add Node-specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
+**TL;DR:** Use a code linter to check basic quality and detect anti-patterns early. Run it before any test and add it as a pre-commit git-hook to minimize the time needed to review and correct any issue. Also check [Section 3](https://github.com/i0natan/nodebestpractices#3-code-style-practices) on Code Style Practices
 
-**Otherwise:** Many faulty Node.JS code patterns might escape under the radar. For example, developers might require(variableAsPath) files with a variable given as path which allows attackers to execute any JS script. Node.JS linters can detect such patterns and complain early
+**Otherwise:** You may let pass some anti-pattern and possible vulnerable code to your production environment. 
 
 
 <br/><br/>
 
 ## ![✔] 4.3 Carefully choose your CI platform (Jenkins vs CircleCI vs Travis vs Rest of the world)
 
-**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it should come with a vibrant ecosystem of plugins. [Jenkins](https://jenkins.io/) used to be the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Nowdays, it became much easier to setup a CI solution using SaaS tools like [CircleCI](https://circleci.com) and others. These tools allow crafting a flexible CI pipeline without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully.
+**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it should come with a vibrant ecosystem of plugins. [Jenkins](https://jenkins.io/) used to be the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Nowadays, it became much easier to setup a CI solution using SaaS tools like [CircleCI](https://circleci.com) and others. These tools allow crafting a flexible CI pipeline without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully.
 
 **Otherwise:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
 
@@ -433,7 +433,7 @@ All statements above will return false if used with `===`
 
 **TL;DR:**  Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/):  mocha --grep 'sanity'
 
-**Otherwise:** Running all the tests, including tests that perform dozens of DB queries, any time a developer makes a small change can be extremly slow and keeps developers away from running tests
+**Otherwise:** Running all the tests, including tests that perform dozens of DB queries, any time a developer makes a small change can be extremely slow and keeps developers away from running tests
 
 <br/><br/>
 
@@ -492,9 +492,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy
 
-**TL;DR:** Node is awfully bad at doing CPU intensive tasks like gzipping, SSL termination, etc. Instead, use a ‘real’ middleware services like nginx, HAproxy or cloud vendor services
+**TL;DR:** Node is awfully bad at doing CPU intensive tasks like gzipping, SSL termination, etc. You should use ‘real’ middleware services like nginx, HAproxy or cloud vendor services instead
 
-**Otherwise:** Your poor single thread will keep busy doing networking tasks instead of dealing with your application core and performance will degrade accordingly
+**Otherwise:** Your poor single thread will stay busy doing infrastructural tasks instead of dealing with your application core and performance will degrade accordingly
 
 
 🔗 [**Read More: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
@@ -664,10 +664,67 @@ All statements above will return false if used with `===`
 ## Our contributors are working on this section. Would you like to join?
 
 
-<br/><br/><br/>
+<br/><br/>
+
+# Milestones
+To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/i0natan/nodebestpractices/milestones) and join the working groups if you want to contribute to this project.
+
+<br/><br/>
+
 # Contributors
 ## `Yoni Goldberg`
-Developer & consultant, Backend expert, JavaScript enthusiast, focused on Node.JS. Many of the bullets was first published on his blog post [http://www.goldbergyoni.com](http://www.goldbergyoni.com)
+Independent Node.JS consultant who works with customers at USA, Europe and Israel on building large-scale scalable Node applications. Many of the best practices above were first published on his blog post at [http://www.goldbergyoni.com](http://www.goldbergyoni.com). Reach Yoni at @goldbergyoni or me@goldbergyoni.com
 
 ## `Ido Richter`
 👨‍💻 Software engineer, 🌐 web developer, 🤖 emojis enthusiast.
+
+## `Refael Ackermann` [@refack](https://github.com/refack) &lt;refack@gmail.com&gt; (he/him)
+Node.js Core Collaborator, been noding since 0.4, and have noded in multiple production sites. Founded `node4good` home of [`lodash-contrib`](https://github.com/node4good/lodash-contrib), [`formage`](https://github.com/node4good/formage), and [`asynctrace`](https://github.com/node4good/asynctrace). 
+`refack` on freenode, Twitter, GitHub, GMail, and many other platforms. DMs are open, happy to help.
+
+## `Bruno Scheufler` 
+💻 full-stack web developer and Node.js enthusiast.
+
+
+<br/><br/>
+
+# Thank You Notes
+
+This repository is being kept up to date thanks to the help from the community. We appreciate any contribution, from a single word fix to a new best practice. Below is a list of everyone who contributed to this project. A :sunflower: marks a successful pull request and a :star: marks an approved new best practice.
+
+🌻 [Kevin Rambaud](https://github.com/kevinrambaud), 
+🌻 [Michael Fine](https://github.com/mfine15), 
+🌻 [Shreya Dahal](https://github.com/squgeim), 
+🌻 [ChangJoo Park](https://github.com/ChangJoo-Park), 
+🌻 [Matheus Cruz Rocha](https://github.com/matheusrocha89), 
+🌻 [Yog Mehta](https://github.com/BitYog), 
+🌻 [Kudakwashe Paradzayi](https://github.com/kudapara), 
+🌻 [t1st3](https://github.com/t1st3), 
+🌻 [mulijordan1976](https://github.com/mulijordan1976), 
+🌻 [Matan Kushner](https://github.com/matchai), 
+🌻 [Fabio Hiroki](https://github.com/fabiothiroki), 
+🌻 [James Sumners](https://github.com/jsumners), 
+🌻 [Chandan Rai](https://github.com/crowchirp), 
+🌻 [Dan Gamble](https://github.com/dan-gamble), 
+🌻 [PJ Trainor](https://github.com/trainorpj), 
+🌻 [Remek Ambroziak](https://github.com/reod), 
+🌻 [Yoni Jah](https://github.com/yonjah), 
+🌻 [Misha Khokhlov](https://github.com/hazolsky), 
+🌻 [Evgeny Orekhov](https://github.com/EvgenyOrekhov), 
+🌻 [Gediminas Petrikas](https://github.com/gediminasml), 
+🌻 [Isaac Halvorson](https://github.com/hisaac), 
+🌻 [Vedran Karačić](https://github.com/vkaracic), 
+🌻 [lallenlowe](https://github.com/lallenlowe), 
+🌻 [Nathan Wells](https://github.com/nwwells), 
+🌻 [Paulo Vítor S Reis](https://github.com/paulovitin), 
+🌻 [syzer](https://github.com/syzer),
+🌻 [David Sancho](https://github.com/davesnx),
+🌻 [Robert Manolea](https://github.com/pupix),
+🌻 [Xavier Ho](https://github.com/spaxe),
+🌻 [Aaron Arney](https://github.com/ocularrhythm)
+
+
+
+<br/><br/>
+## :star: No Stars Yet, Waiting For The First To Suggest a New Bullet 
+
