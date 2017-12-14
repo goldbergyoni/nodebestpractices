@@ -18,7 +18,7 @@ APM products constitues 3 major segments:
 
 2. Code instrumentation – products family which require to embed an agent within the application to benefit feature slow code detection, exceptions statistics, performance monitoring and many more. Following are few selected contenders: New Relic, App Dynamics
 
-3. Operational intelligence dashboard – these line of products are focused on facilitating the ops team with metrics and curated content that helps to easily stay on top of application peroformance. This usually involves aggregating multiple sources of information (application logs, DB logs, servers log, etc) and upfront dashboard design work. Following are few selected contenders: Datadog, Splunk    
+3. Operational intelligence dashboard – these line of products are focused on facilitating the ops team with metrics and curated content that helps to easily stay on top of application performance. This usually involves aggregating multiple sources of information (application logs, DB logs, servers log, etc) and upfront dashboard design work. Following are few selected contenders: Datadog, Splunk    
 
 
 
