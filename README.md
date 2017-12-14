@@ -219,9 +219,9 @@
 
 # `3. Code Style Practices`
 
-## ![✔] 3.1 Use ESLint and Prettier
+## ![✔] 3.1 Use ESLint
 
-**TL;DR:** [ESLint](https://eslint.org) is the de-facto standard for checking possible code errors and fixing code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. While ESLint can automatically fix code styles, [Prettier](https://github.com/prettier/prettier) is a more powerful automatic code formatter. You and your team don't have to talk and research about their preferred code styles but instead, they can just rely on Prettier to automatically format their code. Prettier also uses the code styles preferred by most programmers. Also, it can be easily used alongside ESLint so you don't have to worry about having conflicts between the two libraries.
+**TL;DR:** [ESLint](https://eslint.org) is the de-facto standard for checking possible code errors and fixing code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Though ESLint can automatically fix code styles, other tools are more powerful in formatting the result and can work in conjuction with ESLint
 
 **Otherwise:** Developers will focus on tedious spacing and line-width concerns and time might be wasted overthinking about the project's code style.
 
