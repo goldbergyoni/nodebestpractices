@@ -1,16 +1,16 @@
-# Delegate anything possible (e.g. static content, gzip) to a reverse proxy
+# 委托任何可能的 (例如静态内容, gzip) 到反向代理
 
 <br/><br/>
 
 
-### One Paragraph Explainer
+### 一段解释
 
-It’s very tempting to cargo-cult Express and use its rich middleware offering for networking related tasks like serving static files, gzip encoding, throttling requests, SSL termination, etc. This is a performance kill due to its single threaded model which will keep the CPU busy for long periods (Remember, Node’s execution model is optimized for short tasks or async IO related tasks). A better approach is to use a tool that expertise in networking tasks – the most popular are nginx and HAproxy which are also used by the biggest cloud vendors to lighten the incoming load on node.js processes.
+这是非常诱人的去过度使用(cargo-cult)Express和使用其丰富的中间件提供网络相关的任务, 如服务静态文件, gzip 编码, throttling requests, SSL termination等。由于它的单线程模型将使 CPU 长时间处于忙碌状态 (请记住, node的执行模型针对短任务或异步 IO 相关任务进行了优化), 因此这是一个性能消耗。一个更好的方法是使用一个专注于处理网络任务的工具 – 最流行的是 nginx 和 HAproxy, 也被最大的云供应商使用, 以减轻在node.js进程上的面临的负载。
 
 <br/><br/>
 
 
-### Code Example – explanation
+### 代码示例 – 说明
 
 ```javascript
 gzip on;
@@ -39,12 +39,12 @@ server {
 
 <br/><br/>
 
-### What Other Bloggers Say
+### 其他博客作者说什么
 
-* From the blog [Mubaloo](http://mubaloo.com/best-practices-deploying-node-js-applications):
-> …It’s very easy to fall into this trap – You see a package like Express and think “Awesome! Let’s get started” – you code away and you’ve got an application that does what you want. This is excellent and, to be honest, you’ve won a lot of the battle. However, you will lose the war if you upload your app to a server and have it listen on your HTTP port, because you’ve forgotten a very crucial thing: Node is not a web server. **As soon as any volume of traffic starts to hit your application, you’ll notice that things start to go wrong: connections are dropped, assets stop being served or, at the very worst, your server crashes. What you’re doing is attempting to have Node deal with all of the complicated things that a proven web server does really well. Why reinvent the wheel?**
-> **This is just for one request, for one image and bearing in mind this is memory that your application could be using for important stuff like reading a database or handling complicated logic; why would you cripple your application for the sake of convenience?**
+* 摘自博客 [Mubaloo](http://mubaloo.com/best-practices-deploying-node-js-applications):
+> …很容易落入这个陷阱 – 你看到一个包比如Express，并认为 "真棒!让我们开始吧" – 你编写了代码, 你实现了一个应用程序, 做你想要的。这很好, 老实说, 你赢得了很多的战斗。但是, 如果您将应用程序上传到服务器并让它侦听 HTTP 端口, 您将会输掉这场战争, 因为您忘记了一个非常关键的事情: node不是 web 服务器。**一旦任何流量开始访问你的应用程序,  你会发现事情开始出错:  连接被丢弃, 资源停止服务, 或在最坏的情况下, 你的服务器崩溃。你正在做的是试图让node处理所有复杂的事情, 而这些事情让一个已验证过了的 web 服务器来处理，再好也不会过。为什么要重新造轮子？It**
+> **这只是为了一个请求, 为了一个图像, 并铭记在脑海中, 您的应用程序可以用于重要的东西, 如读取数据库或处理复杂的逻辑; 为了方便起见, 你为什么要削弱你的应用？**
 
 
-* From the blog [Argteam](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load):
-> Although express.js has built in static file handling through some connect middleware, you should never use it. **Nginx can do a much better job of handling static files and can prevent requests for non-dynamic content from clogging our node processes**…
+* 摘自博客 [Argteam](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load):
+> 虽然 express.js 通过一些connect中间件处理静态文件, 但你不应该使用它。**Nginx 可以更好地处理静态文件, 并可以防止请求动态内容堵塞我们的node进程**…
