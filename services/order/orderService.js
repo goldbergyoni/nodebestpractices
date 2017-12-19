@@ -6,7 +6,7 @@ const DAL = require('./orderDAL'),
     axios = require('axios');
 
 class OrderService {
-    async add(newOrder) {
+        async add(newOrder) {
         logger.info(`Order service is about to add new order ${JSON.stringify(newOrder)}`);
 
         if (!newOrder.validate())

@@ -1,4 +1,4 @@
-console.log('1');
+console.log('Starting');
 
 const startingDate = new Date();
 
@@ -6,10 +6,32 @@ setTimeout(function() {
     console.log(`After timeout, it took ${new Date() - startingDate}`)
 }, 50);
 
-const startingDate2 = new Date()
-while(new Date() - startingDate2 < 200){
-    
- }
 
- console.log('ending')
+console.log('ending')
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// while(new Date() - startingDate < 200){
+//     //we occupy the CPU and starve the event loop
+// }
