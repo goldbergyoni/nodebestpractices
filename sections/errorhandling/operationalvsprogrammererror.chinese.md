@@ -27,25 +27,25 @@ throw new appError(errorManagement.commonErrors.InvalidInput, "Describe here wha
 ```
 
 ### 博客引用: "程序型错误是程序中的 bug"
-摘自博客 Joyent, 对于关键字“Node.JS error handling”排名第一
+ 摘自博客 Joyent, 对于关键字“Node.JS error handling”排名第一
  
  > …从程序型错误中恢复的最好方法是立即崩溃。您应该使用restarter运行程序, 以便在发生崩溃时自动重新启动程序。在一个使用了restarter的地方, 在面对一个瞬态程序型错误, 崩溃是最快的方式来恢复可靠的服务…
 
- ### 博客引用: "No safe way to leave without creating some undefined brittle state"
-摘自Node.JS官方文档
+ ### 博客引用: "不伴随着创建一些未定义的脆性状态，没有安全的方式可以离开"
+ 摘自Node.JS官方文档
  
- > …By the very nature of how throw works in JavaScript, there is almost never any way to safely “pick up where you left off”, without leaking references, or creating some other sort of undefined brittle state. The safest way to respond to a thrown error is to shut down the process. Of course, in a normal web server, you might have many connections open, and it is not reasonable to abruptly shut those down because an error was triggered by someone else. The better approach is to send an error response to the request that triggered the error, while letting the others finish in their normal time, and stop listening for new requests in that worker.  
+ > …在 JavaScript 中, throw的工作性质, 没有泄漏引用, 或者创建一些其他类型的未定义的脆性状态，几乎没有任何方法可以安全地 "在你离开的地方重新捡起"。对引发的错误进行响应的最安全方法是关闭进程。当然, 在普通的 web 服务器中, 您可能会打开许多连接, 并且由于其他人触发了错误而突然关闭这些连接是不合理的。更好的方法是向触发错误的请求发送错误响应, 同时让其他人在正常时间内完成, 并停止侦听该工作人员中的新请求。  
 
 
- ### Blog Quote: "Otherwise you risk the state of your application"
-From the blog debugable.com, ranked 3 for the keywords “Node.JS uncaught exception”
+ ### 博客引用: "否则，您置您应用的状态于风险之中"
+ 摘自博客 debugable.com, 对于关键字“Node.JS uncaught exception”排名第3
  
- > …So, unless you really know what you are doing, you should perform a graceful restart of your service after receiving an “uncaughtException” exception event. Otherwise you risk the state of your application, or that of 3rd party libraries to become inconsistent, leading to all kinds of crazy bugs…
+ > …所以, 除非你真的知道你在做什么, 否则你应该在收到一个 "uncaughtException" 异常事件之后, 对你的服务进行一次优雅的重新启动。否则, 您应用的状态, 或和第三方库的状态变得不一致, 都被置于风险之中，导致各种荒唐的错误…
 
- ### Blog Quote: "Blog Quote: There are three schools of thoughts on error handling"
-From the blog: JS Recipes
+ ### 博客引用: "对于错误处理，有三种学院派想法"
+ 摘自博客: JS Recipes
  
- > …There are primarily three schools of thoughts on error handling:
-1. Let the application crash and restart it.
-2. Handle all possible errors and never crash.
-3. Balanced approach between the two
+ > …对于错误处理，主要有三种学院派想法:
+1. 让应用崩溃并重启.
+2. 处理所有可能的错误，从不崩溃.
+3. 两者之间的折中方案

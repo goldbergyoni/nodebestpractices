@@ -35,22 +35,22 @@ getData(someParameter, function(err, result){
 });
 ```
 
-### 博客引用: "We have a problem with promises"
+### 博客引用: "我们使用promise有问题"
 摘自博客pouchdb.com
  
- > ……And in fact, callbacks do something even more sinister: they deprive us of the stack, which is something we usually take for granted in programming languages. Writing code without a stack is a lot like driving a car without a brake pedal: you don’t realize how badly you need it, until you reach for it and it’s not there. The whole point of promises is to give us back the language fundamentals we lost when we went async: return, throw, and the stack. But you have to know how to use promises correctly in order to take advantage of them.
+ > ……实际上, 回调会做一些更险恶的事情: 他们剥夺了我们的stack, 这是我们通常在编程语言中想当然的事情。编写没有堆栈的代码很像驾驶一辆没有刹车踏板的汽车: 你没有意识到你有多么需要它, 直到你伸手去找它, 而它不在那里。promise的全部目的是让我们回到我们在异步时丢失的语言基础: return，throw和stack。但你必须知道如何正确使用promise, 以便利用他们。
 
-### 博客引用: "The promises method is much more compact"
+### 博客引用: "promise方法更加紧凑"
 摘自博客gosquared.com
  
- > ………The promises method is much more compact, clearer and quicker to write. If an error or exception occurs within any of the ops it is handled by the single .catch() handler. Having this single place to handle all errors means you don’t need to write error checking for each stage of the work.
+ > ………promise的方法更紧凑, 更清晰, 写起来更快速。如果在任何 ops 中发生错误或异常, 则由单个 .catch () 处理程序操作处理。有这个单一的地方来处理所有的错误意味着你不需要为每个阶段的工作写错误检查。
 
-### 博客引用: "Promises are native ES6, can be used with generators"
+### 博客引用: "原生ES6支持promise，可以和generator一起使用"
 摘自博客StrongLoop
  
- > ….Callbacks have a lousy error-handling story. Promises are better. Marry the built-in error handling in Express with promises and significantly lower the chances of an uncaught exception. Promises are native ES6, can be used with generators, and ES7 proposals like async/await through compilers like Babel
+ > ….回调有一个糟糕的错误处理的报道。promise更好。将express内置的错误处理与promise结合起来, 大大降低了uncaught exception的几率。原生ES6支持promise, 通过编译器babel，它可以与generator，ES7提议的技术(比如async/await) 一起使用。
 
-### Blog Quote: "All those regular flow control constructs you are used to are completely broken"
+### 博客引用: "所有那些您所习惯的常规的流量控制结构, 完全被打破"
 摘自博客Benno’s
  
- > ……One of the best things about asynchronous, callback based programming is that basically all those regular flow control constructs you are used to are completely broken. However, the one I find most broken is the handling of exceptions. Javascript provides a fairly familiar try…catch construct for dealing with exceptions. The problems with exceptions is that they provide a great way of short-cutting errors up a call stack, but end up being completely useless of the error happens on a different stack…
+ > ……关于基于异步、回调编程的最好的事情之一是, 基本上您所习惯的所有那些常规的流量控制结构, 是可以完全被打破。然而, 我发现最易打破的是处理例外。Javascript 提供了一个相当熟悉的尝试... 捕获处理异常的构造函数。异常的问题是, 它们提供了在一个调用堆栈上 short-cutting 错误的很好的方法, 但最终由于不同堆栈上发生的错误导致完全无用…

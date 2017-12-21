@@ -64,20 +64,20 @@ app.use(function (err, req, res, next) {
 
 ```
 
-### 博客引用: "Sometimes lower levels can’t do anything useful except propagate the error to their caller"
- From the blog Joyent, ranked 1 for the keywords “Node.JS error handling”
+### 博客引用: "有时较低的级别不能做任何有用的事情, 除非将错误传播给他们的调用者"
+ 摘自博客 Joyent, 对应关键字 “Node.JS error handling” 排名第一
  
- > …You may end up handling the same error at several levels of the stack. This happens when lower levels can’t do anything useful except propagate the error to their caller, which propagates the error to its caller, and so on. Often, only the top-level caller knows what the appropriate response is, whether that’s to retry the operation, report an error to the user, or something else. But that doesn’t mean you should try to report all errors to a single top-level callback, because that callback itself can’t know in what context the error occurred…
+ > …您可能会在stack的多个级别上处理相同的错误。当较低级别不能执行任何有用的操作时, 就会发生这种情况, 除非将错误传播给其调用方, 从而将错误传播到其调用方, 等等。通常, 只有 top-level 调用方知道适当的响应是什么, 无论是重试操作、向用户报告错误还是其他事情。但这并不意味着您应该尝试将所有错误报告给单个 top-level 回调, 因为该回调本身无法知道错误发生在什么上下文中…
 
  
-### Blog Quote: "Handling each err individually would result in tremendous duplication"
- From the blog JS Recipes, ranked 17 for the keywords “Node.JS error handling”
+### 博客引用: "单独处理每个错误将导致大量的重复"
+ 摘自博客 JS Recipes, 对应关键字 “Node.JS error handling” 排名17
  
- > ……In Hackathon Starter api.js controller alone, there are over 79 occurences of error objects. Handling each err individually would result in tremendous amount of code duplication. The next best thing you can do is to delegate all error handling logic to an Express middleware…
+ > ……仅仅在Hackathon 启动 api.js 控制器中, 有超过79处重复的错误对象。单独处理每个错误将导致大量的代码重复。您可以做的下一个最好的事情是将所有错误处理逻辑委派给一个express中间件…
 
 
-### Blog Quote: "HTTP errors have no place in your database code"
- From the blog Daily JS, ranked 14 for the keywords “Node.JS error handling”
+### 博客引用: "HTTP errors have no place in your database code"
+ 摘自博客 Daily JS, 对应关键字 “Node.JS error handling” 排名14
  
- > ……You should set useful properties in error objects, but use such properties consistently. And, don’t cross the streams: HTTP errors have no place in your database code. Or for browser developers, Ajax errors have a place in code that talks to the server, but not code that processes Mustache templates…
+ > ……您应该在 error 对象中设置有用的属性, 但使用此类属性时应保持一致。而且, 不要越过流: HTTP 错误在您的数据库代码中没有一席之地。或者对于浏览器开发人员来说, Ajax 错误在与服务器对话的代码中有一席之地, 而不是处理Mustache模板的代码…
 
