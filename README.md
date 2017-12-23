@@ -221,9 +221,9 @@
 
 ## ![✔] 3.1 Use ESLint
 
-**TL;DR:** ESLint is the de-facto standard for checking code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Using ESLint and following the rest of the code style practices below means following the same styles used by the rest of the community, as well as the same code styles used in the core products themselves.
+**TL;DR:** [ESLint](https://eslint.org) is the de-facto standard for checking possible code errors and fixing code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Though ESLint can automatically fix code styles, other tools like [prettier](https://www.npmjs.com/package/prettier) and [beautify](https://www.npmjs.com/package/js-beautify) are more powerful in formatting the fix and work in conjunction with  ESLint
 
-**Otherwise:** developers will focus on tedious spacing and line-width concerns
+**Otherwise:** Developers will focus on tedious spacing and line-width concerns and time might be wasted overthinking about the project's code style.
 
 <br/><br/>
 
@@ -721,7 +721,9 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [David Sancho](https://github.com/davesnx),
 🌻 [Robert Manolea](https://github.com/pupix),
 🌻 [Xavier Ho](https://github.com/spaxe),
-🌻 [Aaron Arney](https://github.com/ocularrhythm)
+🌻 [Aaron Arney](https://github.com/ocularrhythm),
+🌻 [Jan Charles Maghirang Adona](https://github.com/septa97)
+
 
 
 
