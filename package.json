@@ -33,7 +33,7 @@
     "geoip-lite": "^1.2.1",
     "joi": "13.0.2",
     "jsonschema": "^1.2.0",
-    "jsonwebtoken": "8.1.0",
+    "jsonwebtoken": "^8.1.0",
     "knex": "^0.14.0",
     "loadtest": "^2.3.0",
     "logger": "file:libraries/logger",
