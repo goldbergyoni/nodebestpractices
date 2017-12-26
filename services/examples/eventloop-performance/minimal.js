@@ -20,7 +20,7 @@ app.post('/api/products' , async (req,res) =>{
 });
 
 function validateProduct(productToValidate){
-    for(i=0;i<1000;i++){
+    for(i=0;i<15000;i++){
         if(!productToValidate.name || !productToValidate.numOfSales){
             return false;
         }        

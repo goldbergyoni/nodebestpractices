@@ -6,13 +6,11 @@ setTimeout(function() {
     console.log(`After timeout, it took ${new Date() - startingDate}`)
 }, 50);
 
+while(new Date() - startingDate < 50){
+    //we occupy the CPU and starve the event loop
+}
 
-console.log('ending')
-
-
-
-
-
+console.log('Ending')
 
 
 
@@ -32,6 +30,8 @@ console.log('ending')
 
 
 
-// while(new Date() - startingDate < 200){
-//     //we occupy the CPU and starve the event loop
-// }
+
+
+
+
+
