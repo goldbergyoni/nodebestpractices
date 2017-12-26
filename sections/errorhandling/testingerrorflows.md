@@ -11,11 +11,11 @@ Testing ‘happy’ paths is no better than testing failures. Good testing code 
 
 ```javascript
 describe("Facebook chat", () => {
- it("Notifies on new chat message", () => {
- var chatService = new chatService();
- chatService.participants = getDisconnectedParticipants();
- expect(chatService.sendMessage.bind({message: "Hi"})).to.throw(ConnectionError);
- });
+  it("Notifies on new chat message", () => {
+    var chatService = new chatService();
+    chatService.participants = getDisconnectedParticipants();
+    expect(chatService.sendMessage.bind({ message: "Hi" })).to.throw(ConnectionError);
+  });
 });
 
 ```
@@ -24,14 +24,19 @@ describe("Facebook chat", () => {
 
 ```javascript
 it("Creates new Facebook group", function (done) {
- var invalidGroupInfo = {};
- httpRequest({method: 'POST', uri: "facebook.com/api/groups", resolveWithFullResponse: true, body: invalidGroupInfo, json: true
- }).then((response) => {
- //oh no if we reached here than no exception was thrown
- }).catch(function (response) {
- expect(400).to.equal(response.statusCode);
- done();
- });
- });
+  var invalidGroupInfo = {};
+  httpRequest({
+    method: 'POST',
+    uri: "facebook.com/api/groups",
+    resolveWithFullResponse: true,
+    body: invalidGroupInfo,
+    json: true
+  }).then((response) => {
+    //oh no if we reached here than no exception was thrown
+  }).catch(function (response) {
+    expect(400).to.equal(response.statusCode);
+    done();
+  });
+});
 
 ```

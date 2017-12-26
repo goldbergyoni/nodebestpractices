@@ -13,22 +13,21 @@ Somewhere within your code, an error handler object is responsible for deciding 
 //deciding whether to crash when an uncaught exception arrives
 //Assuming developers mark known operational errors with error.isOperational=true, read best practice #3
 process.on('uncaughtException', function(error) {
- errorManagement.handler.handleError(error);
- if(!errorManagement.handler.isTrustedError(error))
- process.exit(1)
+  errorManagement.handler.handleError(error);
+  if(!errorManagement.handler.isTrustedError(error))
+  process.exit(1)
 });
  
  
 //centralized error handler encapsulates error-handling related logic
 function errorHandler(){
- this.handleError = function (error) {
- return logger.logError(err).then(sendMailToAdminIfCritical).then(saveInOpsQueueIfCritical).then(determineIfOperationalError);
- }
+  this.handleError = function (error) {
+  return logger.logError(err).then(sendMailToAdminIfCritical).then(saveInOpsQueueIfCritical).then(determineIfOperationalError);
+}
  
- this.isTrustedError = function(error)
- {
- return error.isOperational;
- }
+this.isTrustedError = function (error) {
+  return error.isOperational;
+}
 
 ```
 

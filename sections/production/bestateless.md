@@ -17,9 +17,9 @@ This approach:
 
 ```javascript
 //Typical mistake 1: saving uploaded files locally in a server
-var multer  = require('multer') //express middleware for fetching uploads
-var upload = multer({ dest: 'uploads/' })
-app.post('/photos/upload', upload.array('photos', 12), function (req, res, next) {})
+var multer  = require('multer'); //express middleware for fetching uploads
+var upload = multer({ dest: 'uploads/' });
+app.post('/photos/upload', upload.array('photos', 12), function (req, res, next) {});
 //Typical mistake 2: storing authentication sessions (passport) in a local file or memory
 var FileStore = require('session-file-store')(session);
 app.use(session({
@@ -27,7 +27,7 @@ app.use(session({
     secret: 'keyboard cat'
 }));
 //Typical mistake3: storing information on the global object
-Global.someCacheLike.result = {somedata}
+Global.someCacheLike.result = { somedata };
 ```
 
 <br/><br/>

@@ -14,12 +14,12 @@ We all loovve console.log but obviously a reputable and persisted Logger like [W
 ```javascript
 //your centralized logger object
 var logger = new winston.Logger({
- level: 'info',
- transports: [
- new (winston.transports.Console)(),
- new (winston.transports.File)({ filename: 'somefile.log' })
- ]
- });
+  level: 'info',
+  transports: [
+    new (winston.transports.Console)(),
+    new (winston.transports.File)({ filename: 'somefile.log' })
+  ]
+});
 
 //custom code somewhere using the logger
 logger.log('info', 'Test Log Message with some parameter %s', 'some parameter', { anything: 'This is metadata' });
@@ -30,15 +30,19 @@ logger.log('info', 'Test Log Message with some parameter %s', 'some parameter', 
 
 ```javascript
 var options = {
-    from: new Date - 24 * 60 * 60 * 1000,    until: new Date,    limit: 10,    start: 0,
-    order: 'desc',    fields: ['message']
-  };
+  from: new Date - 24 * 60 * 60 * 1000,
+  until: new Date,
+  limit: 10,
+  start: 0,
+  order: 'desc',
+  fields: ['message']
+};
 
 
-  // Find items logged between today and yesterday.
-  winston.query(options, function (err, results) {
-    //callback with results
-  });
+// Find items logged between today and yesterday.
+winston.query(options, function (err, results) {
+  //callback with results
+});
 
 ```
 
