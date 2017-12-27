@@ -14,19 +14,20 @@ From the blog Ben Nadel, ranked 5 for the keywords “Node.JS error object”
 
 ```javascript
 //throwing an Error from typical function, whether sync or async
- if(!productToAdd)
- throw new Error("How can I add new product when no value provided?");
+if(!productToAdd)
+    throw new Error("How can I add new product when no value provided?");
  
 //'throwing' an Error from EventEmitter
 const myEmitter = new MyEmitter();
 myEmitter.emit('error', new Error('whoops!'));
  
 //'throwing' an Error from a Promise
- return new promise(function (resolve, reject) {
-	Return DAL.getProduct(productToAdd.id).then((existingProduct) =>{
+return new Promise(function (resolve, reject) {
+    Return DAL.getProduct(productToAdd.id).then((existingProduct) =>{
 		 if(existingProduct != null)
-			 reject(new Error("Why fooling us and trying to add an existing product?"));
-
+			reject(new Error("Why fooling us and trying to add an existing product?"));
+    })
+});
 ```
 
 ### Code example – Anti Pattern
@@ -55,7 +56,7 @@ module.exports.appError = appError;
  
 //client throwing an exception
 if(user == null)
-  throw new appError(commonErrors.resourceNotFound, commonHTTPErrors.notFound, "further explanation", true)
+    throw new appError(commonErrors.resourceNotFound, commonHTTPErrors.notFound, "further explanation", true)
 ```
 
 

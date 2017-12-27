@@ -722,7 +722,8 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Robert Manolea](https://github.com/pupix),
 🌻 [Xavier Ho](https://github.com/spaxe),
 🌻 [Aaron Arney](https://github.com/ocularrhythm),
-🌻 [Jan Charles Maghirang Adona](https://github.com/septa97)
+🌻 [Jan Charles Maghirang Adona](https://github.com/septa97),
+🌻 [Allen Fang](https://github.com/AllenFang)
 
 
 
