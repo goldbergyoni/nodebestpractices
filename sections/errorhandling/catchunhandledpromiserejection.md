@@ -11,8 +11,7 @@ Typically, most of modern Node.JS/Express application code runs within promises 
 ### Code example: these errors will not get caught by any error handler (except unhandledRejection)
 
 ```javascript
-DAL.getUserById(1).then((johnSnow) =>
-{
+DAL.getUserById(1).then((johnSnow) => {
         //this error will just vanish
 	if(johnSnow.isAlive == false)
 	    throw new Error('ahhhh');
@@ -23,11 +22,11 @@ DAL.getUserById(1).then((johnSnow) =>
 ### Code example: Catching unresolved and rejected promises
 
 ```javascript
-process.on('unhandledRejection', function (reason, p) {
+process.on('unhandledRejection', (reason, p) => {
   //I just caught an unhandled promise rejection, since we already have fallback handler for unhandled errors (see below), let throw and let him handle that
   throw reason;
 });
-process.on('uncaughtException', function (error) {
+process.on('uncaughtException', (error) => {
   //I just received an error that was never handled, time to handle it and then decide whether a restart is needed
   errorManagement.handler.handleError(error);
   if (!errorManagement.handler.isTrustedError(error))
@@ -42,16 +41,16 @@ process.on('uncaughtException', function (error) {
  > Let’s test your understanding. Which of the following would you expect to print an error to the console?
 
 ```javascript
-Promise.resolve(‘promised value’).then(function() {
-throw new Error(‘error’);
+Promise.resolve(‘promised value’).then(() => {
+  throw new Error(‘error’);
 });
 
-Promise.reject(‘error value’).catch(function() {
-throw new Error(‘error’);
+Promise.reject(‘error value’).catch(() => {
+  throw new Error(‘error’);
 });
 
-new Promise(function(resolve, reject) {
-throw new Error(‘error’);
+new Promise((resolve, reject) => {
+  throw new Error(‘error’);
 });
 ```
 
