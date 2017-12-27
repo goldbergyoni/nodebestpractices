@@ -284,20 +284,16 @@
 ### Code Example ###
 ```javascript
   // for class name we use UpperCamelCase
-  class SomeClassExample { 
+  class SomeClassExample {}
     
-    // for const names we use the const keyword and lowerCamelCase
-    const config = {
-      key: 'value'
-    };
-    
-    // for variables and functions names we use lowerCamelCase
-    let someVariableExample = 'value';
-    function doSomething() {
-      
-    }
+  // for const names we use the const keyword and lowerCamelCase
+  const config = {
+    key: 'value'
+  };
 
-  }
+  // for variables and functions names we use lowerCamelCase
+  let someVariableExample = 'value';
+  function doSomething() {}
 ```
 
 <br/><br/>
