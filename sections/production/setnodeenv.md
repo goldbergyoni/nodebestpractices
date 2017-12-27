@@ -5,7 +5,7 @@
 
 ### One Paragraph Explainer
 
-Process environment variables is a set of key-value pairs made available to any running program, usually for configuration purposes. Though any variables can be used, Node encourages the convention of using a variable called NODE_ENV to flag whether we’re in production right now. This determination allows components to provide better diagnostics during development , for example by disabling caching or emitting verbose log statements. Any modern deployment tool – Chef, Puppet, CloudFormation, others – support setting environment variables during deployment
+Process environment variables is a set of key-value pairs made available to any running program, usually for configuration purposes. Though any variables can be used, Node encourages the convention of using a variable called NODE_ENV to flag whether we’re in production right now. This determination allows components to provide better diagnostics during development, for example by disabling caching or emitting verbose log statements. Any modern deployment tool – Chef, Puppet, CloudFormation, others – support setting environment variables during deployment
 
 <br/><br/>
 
