@@ -10,13 +10,13 @@ Without one dedicated object for error handling, greater are the chances of impo
 ### Code Example – a typical error flow
 
 ```javascript
-//DAL layer, we don't handle errors here
+// DAL layer, we don't handle errors here
 DB.addDocument(newCustomer, (error, result) => {
     if (error)
         throw new Error("Great error explanation comes here", other useful parameters)
 });
  
-//API route code, we catch both sync and async errors and forward to the middleware
+// API route code, we catch both sync and async errors and forward to the middleware
 try {
     customerService.addNew(req.body).then((result) => {
         res.status(200).json(result);
@@ -28,7 +28,7 @@ catch (error) {
     next(error);
 }
  
-//Error handling middleware, we delegate the handling to the centralized error handler
+// Error handling middleware, we delegate the handling to the centralized error handler
 app.use((err, req, res, next) => {
     errorHandler.handleError(err).then((isOperationalError) => {
         if (!isOperationalError)
@@ -53,7 +53,7 @@ function errorHandler(){
 ### Code Example – Anti Pattern: handling errors within the middleware
 
 ```javascript
-//middleware handling the error directly, who will handle Cron jobs and testing errors?
+// middleware handling the error directly, who will handle Cron jobs and testing errors?
 app.use((err, req, res, next) => {
     logger.logError(err);
     if(err.severity == errors.high)
