@@ -71,7 +71,6 @@ function getOrders(username, callback) {
 }
 
 function logIn(user, password, callback) {
-    throw new Error("Foo")
   setTimeout(() => {
     callback(null, {
       username: "Ryan"

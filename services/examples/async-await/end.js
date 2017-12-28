@@ -85,9 +85,7 @@ function getOrders(username) {
 
 function logIn(user, password, callback) {
   return new Promise((resolve, reject) => {
-    throw new Error("foo");
     setTimeout(() => {
-    
       resolve({
         username: "Ryan"
       });
@@ -101,9 +99,12 @@ async function getUserProducts(OptionsJSON) {
     const user = await logIn("username", "password");
     const orders = await getOrders(user);
     const products = [];
-    orders.forEach(async order => {
-      if (options.Translate) products.push(await getProduct(order.id));
-      else products.push(await getTranslatedProduct(order.id));
+    await orders.forEach(async (order) => {
+      if (options.Translate) {
+        products.push(await getProduct(order.id));
+      } else {
+        products.push(await getTranslatedProduct(order.id));
+      }
     });
 
     return products;
@@ -119,5 +120,5 @@ function getProductPromise(orderId, method) {
 }
 
 getUserProducts(`{"Translate":"true"}`).then(products => {
-  console.log(products);
+  console.log(`Products: ${JSON.stringify(products)}`);
 });

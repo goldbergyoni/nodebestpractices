@@ -1,14 +1,110 @@
-const express = require("express");
-const app = express();
+const main = async () => {
+  let firstPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("First done");
+      resolve();
+    }, 10);
+  });
+  let secondPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("Second done");
+      resolve();
+    }, 5);
+  });
+  console.log("Before await");
+  let first = await firstPromise;
+  console.log("First");
+  let second = await secondPromise;
+  console.log("Second");
+  console.log("Finish");
+};
 
-const port = process.env.PORT || 8080;
-app.listen(port);
+const main2 = async () => {
+  let firstPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("First done");
+      resolve();
+    }, 10);
+  });
+  let secondPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("Second done");
+      resolve();
+    }, 5);
+  });
 
-var router = express.Router();
+  Promise.all([firstPromise, secondPromise]).then(() => {
+    console.log("All done");
+  });
 
-router.post("/api/products", (req, res) => {
-  console.log(`The product is ${req.body}`);
-  res.json(req.body);
+  console.log("Finish");
+};
+
+function callbackToPromise(method, ...args) {
+  return new Promise(function(resolve, reject) {
+    return method(...args, function(err, result) {
+      return err ? reject(err) : resolve(result);
+    });
+  });
+}
+
+function getProduct(orderId) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({
+        name: "Macbook Pro"
+      });
+    }, 100);
+  });
+}
+
+function getTranslatedProduct(orderId) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({
+        name: "Macbook Pro"
+      });
+    }, 100);
+  });
+}
+
+function getOrders(username) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve([
+        {
+          id: 1
+        },
+        {
+          id: 2
+        }
+      ]);
+    }, 100);
+  });
+}
+
+function logIn(user, password, callback) {
+  return new Promise((resolve, reject) => {
+    throw new Error("foo"));
+    setTimeout(() => {
+    
+      resolve({
+        username: "Ryan"
+      });
+    }, 100);
+  });
+}
+
+function getUserProducts(OptionsJSON) {
+  
+}
+
+function getProductPromise(orderId, method) {
+  return new Promise((resolve, reejct) => {
+    return method.bind(orderId);
+  });
+}
+
+getUserProducts(`{"Translate":"true"}`).then(products => {
+  console.log(products);
 });
-
-app.use(router);

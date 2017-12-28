@@ -1,41 +1,41 @@
-
 function getUserProducts(OptionsJSON, callback) {
+  const result = [];
   const options = JSON.parse(OptionsJSON);
+
+  //get user
   logIn("username", "password", (error, user) => {
     if (error) {
       return callback(error, null);
     }
 
+    //get user orders
     getOrders(user.username, (error, orders) => {
       if (error) {
         return callback(error, null);
       }
 
-      const result = [];
-      let count = 0;
+      //for each order - get products
       orders.forEach(order => {
+        //based on configuration - fetch different product API
         if (options.translate) {
           getTranslatedProduct(order.id, (error, product) => {
             if (error) {
               return callback(error, null);
             }
-            count++;
             result.push(product.name);
-            if (count === orders.length) callback(null, result);
           });
         } else {
           getProduct(order.id, (error, product) => {
             if (error) {
               return callback(error, null);
             }
-            count++;
             result.push(product.name);
-            if (count === orders.length) callback(null, result);
           });
         }
       });
     });
   });
+  callback(null, result);
 }
 
 function getProduct(orderId, callback) {
@@ -68,6 +68,7 @@ function getOrders(username, callback) {
 }
 
 function logIn(user, password, callback) {
+
   setTimeout(() => {
     callback(null, {
       username: "Ryan"
@@ -75,6 +76,6 @@ function logIn(user, password, callback) {
   }, 100);
 }
 
-getUserProducts(JSON.stringify({ Translate: true }), (error, products) => {
-  console.log(products);
+getUserProducts(`{"Translate":"true"}`, (error, products) => {
+  console.log(`Result products ${JSON.stringify(products)}`);
 });
