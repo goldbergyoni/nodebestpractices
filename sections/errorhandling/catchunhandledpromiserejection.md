@@ -4,7 +4,7 @@
 
 ### One Paragraph Explainer
 
-Typically, most of modern Node.JS/Express application code runs within promises – whether within the .then handler, a function callback or in a catch block. Suprisingly, unless a developer remembered to add a .catch clause, errors thrown at these places are not handled  by the uncaughtException event-handler and disappear.  Recent versions of Node added a warning message when an unhandled rejection pops, though this might help to notice when things go wrong but it's obviously not a proper error handling. The straightforward solution is to never forget adding .catch clause within each promise chain call and redirect to a centralized error handler. However building your error handling strategy only on developer’s discipline is somewhat fragile. Consequently, it’s highly recommended using a graceful fallback and subscribe to process.on(‘unhandledRejection’, callback) – this will ensure that any promise error, if not handled locally, will get its treatment.
+Typically, most of modern Node.JS/Express application code runs within promises – whether within the .then handler, a function callback or in a catch block. Suprisingly, unless a developer remembered to add a .catch clause, errors thrown at these places are not handled  by the uncaughtException event-handler and disappear.  Recent versions of Node added a warning message when an unhandled rejection pops, though this might help to notice when things go wrong but it's obviously not a proper error handling method. The straightforward solution is to never forget adding .catch clauses within each promise chain call and redirect to a centralized error handler. However building your error handling strategy only on developer’s discipline is somewhat fragile. Consequently, it’s highly recommended using a graceful fallback and subscribe to `process.on(‘unhandledRejection’, callback)` – this will ensure that any promise error, if not handled locally, will get its treatment.
 
 <br/><br/>
 
@@ -12,7 +12,7 @@ Typically, most of modern Node.JS/Express application code runs within promises 
 
 ```javascript
 DAL.getUserById(1).then((johnSnow) => {
-        //this error will just vanish
+  // this error will just vanish
 	if(johnSnow.isAlive == false)
 	    throw new Error('ahhhh');
 });
@@ -23,11 +23,11 @@ DAL.getUserById(1).then((johnSnow) => {
 
 ```javascript
 process.on('unhandledRejection', (reason, p) => {
-  //I just caught an unhandled promise rejection, since we already have fallback handler for unhandled errors (see below), let throw and let him handle that
+  // I just caught an unhandled promise rejection, since we already have fallback handler for unhandled errors (see below), let throw and let him handle that
   throw reason;
 });
 process.on('uncaughtException', (error) => {
-  //I just received an error that was never handled, time to handle it and then decide whether a restart is needed
+  // I just received an error that was never handled, time to handle it and then decide whether a restart is needed
   errorManagement.handler.handleError(error);
   if (!errorManagement.handler.isTrustedError(error))
     process.exit(1);
