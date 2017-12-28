@@ -1,29 +1,22 @@
 function getUserProducts(OptionsJSON) {
-  try {
-    return new Promise((resolve, reject) => {
-      const options = JSON.parse(OptionsJSON);
-      logIn("username", "password")
-        .then(user => getOrders(user.name))
-        .then(orders => {
-          const getProductPromises = [];
-          orders.forEach(order => {
-            if (options.translate) {
-              getProductPromises.push(getTranslatedProduct.bind(order.id)());
-            } else {
-              getProductPromises.push(getProduct.bind(order.id)());
-            }
-          });
-          Promise.all(getProductPromises).then(allProducts => {
-            resolve(allProducts);
-          });
-        })
-        .catch(error => {
-          console.log(`Promise error found ${error} ${error.stack}`);
+  return new Promise((resolve, reject) => {
+    const options = JSON.parse(OptionsJSON);
+    logIn("username", "password")
+      .then(user => getOrders(user.name))
+      .then(orders => {
+        const getProductPromises = [];
+        orders.forEach(order => {
+          if (options.translate) {
+            getProductPromises.push(getTranslatedProduct.bind(order.id)());
+          } else {
+            getProductPromises.push(getProduct.bind(order.id)());
+          }
         });
-    });
-  } catch (error) {
-    console.log(`Error found ${error} ${error.stack}`);
-  }
+        Promise.all(getProductPromises).then(allProducts => {
+          resolve(allProducts);
+        });
+      });
+  });
 }
 
 function getProduct(orderId) {
@@ -63,7 +56,6 @@ function getOrders(username) {
 
 function logIn(user, password, callback) {
   return new Promise((resolve, reject) => {
-    //throw new Error("foo");
     setTimeout(() => {
       resolve({
         username: "Ryan"
@@ -79,5 +71,5 @@ function getProductPromise(orderId, method) {
 }
 
 getUserProducts(`{"Translate":"true"}`).then(products => {
-  console.log(products);
+  console.log(`Result products ${JSON.stringify(products)}`);
 });
