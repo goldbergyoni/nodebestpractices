@@ -3,7 +3,7 @@
 ### One Paragraph Explainer
 
 We all loovve console.log but obviously a reputable and persisted Logger like [Winston][winston], [Bunyan][bunyan] (highly popular) or [Pino][pino] (the new kid in town which is focused on performance) is mandatory for serious projects. A set of practices and tools will help to reason about errors much quicker – (1) log frequently using different levels (debug, info, error), (2) when logging, provide contextual information as JSON objects, see example below. (3) watch and filter logs using a log querying API (built-in in most loggers) or a log viewer software
-(4) Expose and curate log statement for the operation team using operational intelligence tool like Splunk
+(4) Expose and curate log statement for the operation team using operational intelligence tools like Splunk
 
 [winston]: https://www.npmjs.com/package/winston
 [bunyan]: https://www.npmjs.com/package/bunyan
@@ -12,7 +12,7 @@ We all loovve console.log but obviously a reputable and persisted Logger like [W
 ### Code Example – Winston Logger in action
 
 ```javascript
-//your centralized logger object
+// your centralized logger object
 var logger = new winston.Logger({
   level: 'info',
   transports: [
@@ -21,7 +21,7 @@ var logger = new winston.Logger({
   ]
 });
 
-//custom code somewhere using the logger
+// custom code somewhere using the logger
 logger.log('info', 'Test Log Message with some parameter %s', 'some parameter', { anything: 'This is metadata' });
 
 ```
@@ -41,7 +41,7 @@ var options = {
 
 // Find items logged between today and yesterday.
 winston.query(options, function (err, results) {
-  //callback with results
+  // execute callback with results
 });
 
 ```
