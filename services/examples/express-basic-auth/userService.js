@@ -1,6 +1,7 @@
 const express = require("express");
 const  router = express.Router();
 const util = require("util");
+
 router.post("/login", (req, res) => {
   console.log(`Login details are ${util.inspect(req.body)}`);
   const user = getUserByName(req.body.username, req.body.password);
