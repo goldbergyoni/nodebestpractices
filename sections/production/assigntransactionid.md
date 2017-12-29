@@ -10,7 +10,7 @@ A typical log is a warehouse of entries from all components and requests. Upon d
 <br/><br/>
 
 
-### Code example: typical nginx configuration
+### Code example: typical Express configuration
 
 ```javascript
 // when receiving a new request, start a new isolated context and set a transaction Id. The following example is using the NPM library continuation-local-storage to isolate requests
