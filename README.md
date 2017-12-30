@@ -722,8 +722,15 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Allen Fang](https://github.com/AllenFang)
 
 
-
-
+<br/>
 <br/><br/>
-## :star: No Stars Yet, Waiting For The First To Suggest a New Bullet 
 
+
+
+
+
+# Sources
+List of websites, blog posts, articles and books which are curated in this repostiory
+
+* Martin Fowler, [Monolith First](martinfowler.com/bliki/MonolithFirst.html). [martinfowler.com](martinfowler.com), June 3, 2015
+* Uncle Bob, [8thlight.com/blog/uncle-bob/2011/09/30/Screaming-Architecture.html](Screaming Architecture). [8thlight blog](8thlight.com/blog), September 30, 2011
