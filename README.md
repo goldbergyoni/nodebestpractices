@@ -284,20 +284,16 @@
 ### Code Example ###
 ```javascript
   // for class name we use UpperCamelCase
-  class SomeClassExample { 
+  class SomeClassExample {}
     
-    // for const names we use the const keyword and lowerCamelCase
-    const config = {
-      key: 'value'
-    };
-    
-    // for variables and functions names we use lowerCamelCase
-    let someVariableExample = 'value';
-    function doSomething() {
-      
-    }
+  // for const names we use the const keyword and lowerCamelCase
+  const config = {
+    key: 'value'
+  };
 
-  }
+  // for variables and functions names we use lowerCamelCase
+  let someVariableExample = 'value';
+  function doSomething() {}
 ```
 
 <br/><br/>
@@ -722,7 +718,8 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Robert Manolea](https://github.com/pupix),
 🌻 [Xavier Ho](https://github.com/spaxe),
 🌻 [Aaron Arney](https://github.com/ocularrhythm),
-🌻 [Jan Charles Maghirang Adona](https://github.com/septa97)
+🌻 [Jan Charles Maghirang Adona](https://github.com/septa97),
+🌻 [Allen Fang](https://github.com/AllenFang)
 
 
 

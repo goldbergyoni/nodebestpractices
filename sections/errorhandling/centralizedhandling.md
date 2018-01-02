@@ -10,15 +10,15 @@ Without one dedicated object for error handling, greater are the chances of impo
 ### Code Example – a typical error flow
 
 ```javascript
-//DAL layer, we don't handle errors here
+// DAL layer, we don't handle errors here
 DB.addDocument(newCustomer, (error, result) => {
     if (error)
         throw new Error("Great error explanation comes here", other useful parameters)
 });
  
-//API route code, we catch both sync and async errors and forward to the middleware
+// API route code, we catch both sync and async errors and forward to the middleware
 try {
-    customerService.addNew(req.body).then(function (result) {
+    customerService.addNew(req.body).then((result) => {
         res.status(200).json(result);
     }).catch((error) => {
         next(error)
@@ -28,8 +28,8 @@ catch (error) {
     next(error);
 }
  
-//Error handling middleware, we delegate the handling to the centralized error handler
-app.use(function (err, req, res, next) {
+// Error handling middleware, we delegate the handling to the centralized error handler
+app.use((err, req, res, next) => {
     errorHandler.handleError(err).then((isOperationalError) => {
         if (!isOperationalError)
             next(err);
@@ -47,14 +47,14 @@ function errorHandler(){
     this.handleError = function (error) {
         return logger.logError(err).then(sendMailToAdminIfCritical).then(saveInOpsQueueIfCritical).then(determineIfOperationalError);
     }
-
+}
 ```
 
 ### Code Example – Anti Pattern: handling errors within the middleware
 
 ```javascript
-//middleware handling the error directly, who will handle Cron jobs and testing errors?
-app.use(function (err, req, res, next) {
+// middleware handling the error directly, who will handle Cron jobs and testing errors?
+app.use((err, req, res, next) => {
     logger.logError(err);
     if(err.severity == errors.high)
         mailer.sendMail(configuration.adminMail, "Critical error occured", err);
