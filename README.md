@@ -221,9 +221,9 @@
 
 ## ![✔] 3.1 Use ESLint
 
-**TL;DR:** ESLint is the de-facto standard for checking code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Using ESLint and following the rest of the code style practices below means following the same styles used by the rest of the community, as well as the same code styles used in the core products themselves.
+**TL;DR:** [ESLint](https://eslint.org) is the de-facto standard for checking possible code errors and fixing code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Though ESLint can automatically fix code styles, other tools like [prettier](https://www.npmjs.com/package/prettier) and [beautify](https://www.npmjs.com/package/js-beautify) are more powerful in formatting the fix and work in conjunction with  ESLint
 
-**Otherwise:** developers will focus on tedious spacing and line-width concerns
+**Otherwise:** Developers will focus on tedious spacing and line-width concerns and time might be wasted overthinking about the project's code style.
 
 <br/><br/>
 
@@ -402,11 +402,11 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.2 Detect code issues with ESLint + specific Node plugin rules
+## ![✔] 4.2 Detect code issues with a linter
 
-**TL;DR:** ESLint is the de-facto standard for checking code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. On top of ESLint standard rules that cover vanilla JS only, add Node-specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
+**TL;DR:** Use a code linter to check basic quality and detect anti-patterns early. Run it before any test and add it as a pre-commit git-hook to minimize the time needed to review and correct any issue. Also check [Section 3](https://github.com/i0natan/nodebestpractices#3-code-style-practices) on Code Style Practices
 
-**Otherwise:** Many faulty Node.JS code patterns might escape under the radar. For example, developers might require(variableAsPath) files with a variable given as path which allows attackers to execute any JS script. Node.JS linters can detect such patterns and complain early
+**Otherwise:** You may let pass some anti-pattern and possible vulnerable code to your production environment. 
 
 
 <br/><br/>
@@ -492,9 +492,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy
 
-**TL;DR:** Node is awfully bad at doing CPU intensive tasks like gzipping, SSL termination, etc. Instead, use a ‘real’ middleware services like nginx, HAproxy or cloud vendor services
+**TL;DR:** Node is awfully bad at doing CPU intensive tasks like gzipping, SSL termination, etc. You should use ‘real’ middleware services like nginx, HAproxy or cloud vendor services instead
 
-**Otherwise:** Your poor single thread will keep busy doing networking tasks instead of dealing with your application core and performance will degrade accordingly
+**Otherwise:** Your poor single thread will stay busy doing infrastructural tasks instead of dealing with your application core and performance will degrade accordingly
 
 
 🔗 [**Read More: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
@@ -717,5 +717,16 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [lallenlowe](https://github.com/lallenlowe), 
 🌻 [Nathan Wells](https://github.com/nwwells), 
 🌻 [Paulo Vítor S Reis](https://github.com/paulovitin), 
+🌻 [syzer](https://github.com/syzer),
+🌻 [David Sancho](https://github.com/davesnx),
+🌻 [Robert Manolea](https://github.com/pupix),
+🌻 [Xavier Ho](https://github.com/spaxe),
+🌻 [Aaron Arney](https://github.com/ocularrhythm),
+🌻 [Jan Charles Maghirang Adona](https://github.com/septa97)
+
+
+
+
 <br/><br/>
-## No Stars Yet :star:
+## :star: No Stars Yet, Waiting For The First To Suggest a New Bullet 
+
