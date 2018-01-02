@@ -10,13 +10,15 @@ It’s very tempting to cargo-cult Express and use its rich middleware offering 
 <br/><br/>
 
 
-### Code Example – explanation
+### Nginx Config Example – Using nginx to compress server responses
 
-```javascript
+```
+# configure gzip compression
 gzip on;
-#defining gzip compression
 gzip_comp_level 6;
 gzip_vary on;
+
+# configure upstream
 upstream myApplication {
     server 127.0.0.1:3000;
     server 127.0.0.1:3001;
@@ -25,11 +27,13 @@ upstream myApplication {
 
 #defining web server
 server {
+    # configure server with ssl and error pages
     listen 80;
     listen 443 ssl;
     ssl_certificate /some/location/sillyfacesociety.com.bundle.crt;
     error_page 502 /errors/502.html;
-    #handling static content
+
+    # handling static content
     location ~ ^/(images/|img/|javascript/|js/|css/|stylesheets/|flash/|media/|static/|robots.txt|humans.txt|favicon.ico) {
     root /usr/local/silly_face_society/node/public;
     access_log off;
