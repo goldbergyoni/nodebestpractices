@@ -7,7 +7,7 @@ We all know how checking arguments and failing fast is important to avoid hidden
 
 ### Wikipedia: Defensive Programming
 
-Defensive programming is an approach to improve software and source code, in terms of: General quality – reducing the number of software bugs and problems. Making the source code comprehensible – the source code should be readable and understandable so it is approved in a code audit. Making the software behave in a predictable manner despite unexpected inputs or user actions.  
+Defensive programming is an approach to improve software and source code, in terms of: General quality – reducing the number of software bugs and problems. Making the source code comprehensible – the source code should be readable and understandable so it is approved in a code audit. Making the software behave in a predictable manner despite unexpected inputs or user actions.
 
 
 
@@ -22,9 +22,9 @@ var memberSchema = Joi.object().keys({
  
 function addNewMember(newMember)
 {
- //assertions come first
+ // assertions come first
  Joi.assert(newMember, memberSchema); //throws if validation fails
- //other logic here
+ // other logic here
 }
 
 ```
@@ -32,7 +32,7 @@ function addNewMember(newMember)
 ### Anti-pattern: no validation yields nasty bugs
 
 ```javascript
-//if the discount is positive let's then redirect the user to pring his discount coupons
+// if the discount is positive let's then redirect the user to pring his discount coupons
 function redirectToPrintDiscount(httpResponse, member, discount)
 {
     if(discount != 0)
@@ -40,7 +40,7 @@ function redirectToPrintDiscount(httpResponse, member, discount)
 }
  
 redirectToPrintDiscount(httpResponse, someMember);
-//forgot to pass the parameter discount, why the heck was the user redirected to the discount screen?
+// forgot to pass the parameter discount, why the heck was the user redirected to the discount screen?
 
 ```
 

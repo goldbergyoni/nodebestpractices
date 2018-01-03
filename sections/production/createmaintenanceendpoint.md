@@ -16,10 +16,10 @@ A maintenance endpoint is a plain secured HTTP API that is part of the app code 
 var heapdump = require('heapdump');
  
 router.get('/ops/headump', (req, res, next) => {
-    logger.info(`About to generate headump`);
-    heapdump.writeSnapshot(function (err, filename) {
+    logger.info('About to generate headump');
+    heapdump.writeSnapshot((err, filename) => {
         console.log('headump file is ready to be sent to the caller', filename);
-        fs.readFile(filename, "utf-8", function (err, data) {
+        fs.readFile(filename, "utf-8", (err, data) => {
             res.end(data);
         });
     });
