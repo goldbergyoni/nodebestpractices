@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const util = require("util");
-const productService = require('./productService');
+const productService = require('./securedResource');
 const userService = require('./userService');
 
 const port = process.env.PORT || 8080;
@@ -28,7 +28,7 @@ const authenticate = (req, res, next) => {
   if (!userId) {
     res.status(401).end();
   } else {
-    req.user =  userService.getUserById(userId);
+    req.user = userService.getUserById(userId);
     next();
   }
 };

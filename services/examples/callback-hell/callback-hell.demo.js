@@ -1,41 +1,54 @@
+
 function getUserProducts(OptionsJSON, callback) {
-  const result = [];
-  const options = JSON.parse(OptionsJSON);
+  try {
+    const result = [];
 
-  //get user
-  logIn("username", "password", (error, user) => {
-    if (error) {
-      return callback(error, null);
-    }
+    const options = JSON.parse(OptionsJSON);
 
-    //get user orders
-    getOrders(user.username, (error, orders) => {
+    //get user
+    logIn("username", "password", (error, user) => {
       if (error) {
         return callback(error, null);
       }
 
-      //for each order - get products
-      orders.forEach(order => {
-        //based on configuration - fetch different product API
-        if (options.translate) {
-          getTranslatedProduct(order.id, (error, product) => {
-            if (error) {
-              return callback(error, null);
-            }
-            result.push(product.name);
-          });
-        } else {
-          getProduct(order.id, (error, product) => {
-            if (error) {
-              return callback(error, null);
-            }
-            result.push(product.name);
-          });
+      //get user orders
+      getOrders(user.username, (error, orders) => {
+        if (error) {
+          return callback(error, null);
         }
+
+        count = 0;
+        //for each order - get products
+        orders.forEach(order => {
+          //based on configuration - fetch different product API
+          if (options.translate) {
+            getTranslatedProduct(order.id, (error, product) => {
+              if (error) {
+                return callback(error, null);
+              }
+              console.log(product);
+
+              result.push(product.name);
+              count++;
+              if (count === orders.length) callback(null, result);
+            });
+          } else {
+            getProduct(order.id, (error, product) => {
+              if (error) {
+                return callback(error, null);
+              }
+              console.log(product);
+              result.push(product.name);
+              count++;
+              if (count === orders.length) callback(null, result);
+            });
+          }
+        });
       });
     });
-  });
-  callback(null, result);
+  } catch (error) {
+    console.log(`Error ${error}`);
+  }
 }
 
 function getProduct(orderId, callback) {
@@ -68,7 +81,7 @@ function getOrders(username, callback) {
 }
 
 function logIn(user, password, callback) {
-
+  callback(new Error('foo', null))
   setTimeout(() => {
     callback(null, {
       username: "Ryan"

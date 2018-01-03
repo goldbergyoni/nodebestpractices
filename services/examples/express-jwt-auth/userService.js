@@ -11,7 +11,7 @@ router.post("/login", (req, res) => {
     res.status(404).end();
   } else {
     //user exists
-    const tokenWithUserClaims = jwt.sign(user , 'secret');
+    const tokenWithUserClaims = jwt.sign(user , 'very-long-secret');
 
     res.setHeader("authorization", tokenWithUserClaims);
     console.log(`Authorization header is ${tokenWithUserClaims}`);

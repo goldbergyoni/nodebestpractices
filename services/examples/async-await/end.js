@@ -1,24 +1,3 @@
-const main = async () => {
-  let firstPromise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      console.log("First done");
-      resolve();
-    }, 10);
-  });
-  let secondPromise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      console.log("Second done");
-      resolve();
-    }, 5);
-  });
-  console.log("Before await");
-  let first = await firstPromise;
-  console.log("First");
-  let second = await secondPromise;
-  console.log("Second");
-  console.log("Finish");
-};
-
 const main2 = async () => {
   let firstPromise = new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -40,9 +19,9 @@ const main2 = async () => {
   console.log("Finish");
 };
 
-function callbackToPromise(method, ...args) {
+function callbackToPromise(callbackable, ...args) {
   return new Promise(function(resolve, reject) {
-    return method(...args, function(err, result) {
+    return callbackable(...args, function(err, result) {
       return err ? reject(err) : resolve(result);
     });
   });
@@ -99,13 +78,11 @@ async function getUserProducts(OptionsJSON) {
     const user = await logIn("username", "password");
     const orders = await getOrders(user);
     const products = [];
-    await orders.forEach(async (order) => {
-      if (options.Translate) {
-        products.push(await getProduct(order.id));
-      } else {
-        products.push(await getTranslatedProduct(order.id));
-      }
-    });
+
+    for (i = 0; i < orders.length; i++) {      
+      const productToAdd = await getProduct(orders[i].id);
+      products.push(productToAdd);
+    }
 
     return products;
   } catch (error) {

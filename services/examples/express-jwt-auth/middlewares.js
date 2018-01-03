@@ -1,7 +1,7 @@
 const middlewares = {};
 
 middlewares.authentication = (req, res, next) => {
-  const userClaims = jwt.verify(req.headers.authorization, "secret");
+  const userClaims = jwt.verify(req.headers.authorization, "very-long-secret");
   console.log(
     `Authorization header ${
       req.headers.authorization

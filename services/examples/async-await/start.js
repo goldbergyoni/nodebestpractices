@@ -1,54 +1,25 @@
-const main = async () => {
-  let firstPromise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      console.log("First done");
-      resolve();
-    }, 10);
-  });
-  let secondPromise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      console.log("Second done");
-      resolve();
-    }, 5);
-  });
-  console.log("Before await");
-  let first = await firstPromise;
-  console.log("First");
-  let second = await secondPromise;
-  console.log("Second");
-  console.log("Finish");
-};
+async function getUserProducts(OptionsJSON) {
+  try {
+    const options = JSON.parse(OptionsJSON);
+    const user = await logIn("user", "password");
+    const orders = await getOrders(user.id);
+    const weirdFunction = await nonPromiseAndNotAsync();
+    console.log(weirdFunction);
 
-const main2 = async () => {
-  let firstPromise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      console.log("First done");
-      resolve();
-    }, 10);
-  });
-  let secondPromise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      console.log("Second done");
-      resolve();
-    }, 5);
-  });
+    const result = [];
+    for (i = 0; i < orders.length; i++) {
+      result.push(await getProduct(orders[i].id));
+    }
 
-  Promise.all([firstPromise, secondPromise]).then(() => {
-    console.log("All done");
-  });
-
-  console.log("Finish");
-};
-
-function callbackToPromise(method, ...args) {
-  return new Promise(function(resolve, reject) {
-    return method(...args, function(err, result) {
-      return err ? reject(err) : resolve(result);
-    });
-  });
+    console.log(JSON.stringify(result));
+    return result;
+  } catch (error) {
+    console.log(`Error caught ${error}`)
+  }
 }
 
-function getProduct(orderId) {
+async function getProduct(orderId) {
+  console.log("Starting");
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve({
@@ -83,20 +54,19 @@ function getOrders(username) {
   });
 }
 
+function nonPromiseAndNotAsync() {
+  return 1;
+}
+
 function logIn(user, password, callback) {
   return new Promise((resolve, reject) => {
-    throw new Error("foo"));
     setTimeout(() => {
-    
+      
       resolve({
         username: "Ryan"
       });
     }, 100);
   });
-}
-
-function getUserProducts(OptionsJSON) {
-  
 }
 
 function getProductPromise(orderId, method) {
@@ -105,6 +75,5 @@ function getProductPromise(orderId, method) {
   });
 }
 
-getUserProducts(`{"Translate":"true"}`).then(products => {
-  console.log(products);
-});
+const products = getUserProducts(`{"Translate":"true"}`);
+console.log("Finished");
