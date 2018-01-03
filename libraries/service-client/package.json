@@ -1,0 +1,10 @@
+{
+  "name": "logger",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./logger",
+  "dependencies": {
+    "winston": "2.4.0",
+    "configurationManager": "*"
+  }
+}

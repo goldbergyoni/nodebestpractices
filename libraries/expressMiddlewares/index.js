@@ -6,7 +6,8 @@ const cookieParser = require('cookie-parser'),
   CORSMiddleware = require('./middlewares/CORS'),
   configurationManager = require('configurationManager'),
   authenticationMiddlewares = require('./middlewares/authentication'),
-  authenticatedRoutes = require('./middlewares/authenticatedRoutes');
+  authenticatedRoutes = require('./middlewares/authenticatedRoutes'),
+  context = require('./middlewares/contextMiddleware');
 
   module.exports.app = function(passport) {
 		const result = [];
@@ -16,6 +17,7 @@ const cookieParser = require('cookie-parser'),
 		result.push(cookieParser(configurationManager.auth.app.cookiePhrase));
     result.push(CORSMiddleware);
     result.push(authenticationMiddlewares(passport));
+    result.push(context);
 
 		return result;
 };

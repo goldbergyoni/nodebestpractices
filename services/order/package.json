@@ -1,5 +1,5 @@
 {
-  "name": "nodepractices",
+  "name": "order",
   "version": "1.0.0",
   "description": "[✔]: assets/images/checkbox-small-blue.png",
   "main": "app.js",
@@ -22,6 +22,7 @@
     "body-parser": "1.18.2",
     "clarifai": "^2.5.0",
     "configurationManager": "file:libraries/configurationManager",
+    "service-client": "file:libraries/service-client",
     "cookie-parser": "1.4.3",
     "countries": "^0.1.1",
     "country-data": "0.0.31",
