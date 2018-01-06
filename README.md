@@ -656,7 +656,13 @@ All statements above will return false if used with `===`
 
 # `6. Security Practices`
 
-## ![✔] 6.1. Protect your application endpoints using security-related headers
+## ![✔] 6.1. Use an ORM/ODM to prevent injection vulnerabilites
+
+## ![✔] 6.2. Avoid loading modules using a dynamic path
+
+## ![✔] 6.3. Use environment variables to store security-related data
+
+## ![✔] 6.4. Protect your application endpoints using security-related headers
 
 **TL;DR:** Your application should be using secure headers to prevent attackers from using common attacks like cross-site scripting (XSS), clickjacking and other malicious attacks. These can be configured easily using modules like [helmet](https://www.npmjs.com/package/helmet).
 
@@ -666,7 +672,7 @@ All statements above will return false if used with `===`
 🔗 [**Read More: Using secure headers in your application**](/sections/security/secureheaders.md)
 
 
-## ![✔] 6.2. Using common methods to secure your application
+## ![✔] 6.5. Using common methods to secure your application
 
 **TL;DR:** There are many built-in and external ways to secure your Node.js applications starting from simple steps like running your server with ssl/tls enabled to more advanced features.
 
