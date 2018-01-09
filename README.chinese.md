@@ -18,9 +18,9 @@
  <br/>
 
 # 欢迎! 首先您应该知道的三件事情:
-**1. 当您读到这里，实际上您读了很多关于Node.JS的优秀文章 -** 这里是关于Node JS 最佳实践的优质内容的总结和管理
+**1. 当您读到这里，实际上您读了很多关于Node.JS的优秀文章 -** 这是对Node JS 最佳实践中排名最高的内容的总结和分享
 
-**2. 这里是最大的汇集，且每周都在增长 -** 当前，超过50个最佳实现，样式指南，架构建议已经呈现。我们欢迎议题和PR使这本在线书籍不断更新。我们也乐于见到您能在这里做出贡献，不管是修复一些代码的错误，或是建议卓越的新想法 - 作为Node.JS最佳实践这本书中的一部分
+**2. 这里是最大的汇集，且每周都在增长 -** 当前，超过50个最佳实现，样式指南，架构建议已经呈现。每天都有新的issue和PR被创建，以使这本在线书籍不断更新。我们很乐于见到您能在这里做出贡献，不管是修复一些代码的错误，或是提出绝妙的新想法。请查看我们的[milestones 这里](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
 
 **3. 大部分的条目包含额外的信息 -** 大部分的最佳实践条目的旁边，您将发现 **🔗Read More** 链接，它将呈现给您示例代码，博客引用和更多信息
 
@@ -31,17 +31,17 @@
 2. [异常处理实践 (11) ](#2-error-handling-practices)
 3. [编码规范实践 (12) ](#3-code-style-practices)
 4. [测试和总体质量实践 (8) ](#4-testing-and-overall-quality-practices)
-5. [Going To Production Practices (16) ](#5-going-to-production-practices)
-6. Security Practices (coming soon)
-7. Performance Practices (coming soon)
+5. [进入生产实践 (16) ](#5-going-to-production-practices)
+6. Security Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
+7. Performance Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 
 
 <br/><br/><br/>
 # `1. 项目结构实践`
 
-## ![✔] 1.1 组件式构建你的解决方案Structure your solution by components
+## ![✔] 1.1 组件式构建你的解决方案
 
- **TL;DR:** 最大的项目隐患就是维护一个巨大的，含有几百个依赖的代码库 - 当开发人员准备整合新的需求的时候，这样一个庞然大物势必减缓了开发效率。反之，把您的代码拆分成组件，每一个组件有它自己的文件夹和代码库，并且确保每一个组件小而简单。查看正确的项目结构的例子请访问下面的 ‘更多’ 链接。
+ **TL;DR:** 最坏的大型项目隐患就是维护一个庞大的，含有几百个依赖的代码库 - 当开发人员准备整合新的需求的时候，这样一个庞然大物势必减缓了开发效率。反之，把您的代码拆分成组件，每一个组件有它自己的文件夹和代码库，并且确保每一个组件小而简单。查看正确的项目结构的例子请访问下面的 ‘更多’ 链接。
 
 **否则:** 当编写新需求的开发人员逐步意识到他所做改变的影响，并担心会破坏其他的依赖模块 - 部署会变得更慢，风险更大。当所有业务逻辑没有被分开，这也会被认为很难扩展
 
