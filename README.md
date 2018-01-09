@@ -85,7 +85,7 @@
 
 **De lo contrario:** No cumplir con ninguno de los requisitos de configuración simplemente frena al equipo de desarrollo o al equipo de devpos. Probablemente ambos
 
-🔗 [**Leer más: buenas prácticas de configuración **](/sections/projectstructre/configguide.md)
+🔗 [**Leer más: buenas prácticas de configuración**](/sections/projectstructre/configguide.md)
 
 
 <br/><br/><br/>
@@ -100,7 +100,7 @@
 
 **De lo contrario:** El estilo de callback de Node.JS, function (err, response), es una forma prometedora de código no mantenible debido a la combinación de manejo de errores con código accidentado, anidación excesiva y patrones de codificación incómodos
 
-🔗 [** Leer más: evitar callbacks **] (/sections/errorhandling/asyncerrorhandling.md)
+🔗 [**Leer más: evitar callbacks**](/sections/errorhandling/asyncerrorhandling.md)
 
 <br/><br/>
 
@@ -111,97 +111,97 @@
 
 **De lo contrario:** Al invocar algún componente, no estar seguro de qué tipo de errores son retornados, hace que sea mucho más difícil manejar los errores de forma adecuada. Peor aún, el uso de tipos personalizados para describir los errores puede conducir a la pérdida de información de error crítico como el seguimiento de la pila.
 
-🔗 [** Leer más: utilizando el objeto de Error incorporado **](/sections/errorhandling/useonlythebuiltinerror.md)
+🔗 [**Leer más: utilizando el objeto de Error incorporado**](/sections/errorhandling/useonlythebuiltinerror.md)
 
 <br/><br/>
 
-##! [✔] 2.3 Distinguir errores operacionales contra errores del programador
+## ![✔] 2.3 Distinguir errores operacionales contra errores del programador
 
 **TL;DR:** Los errores operacionales (por ejemplo, el API recibió una entrada no válida) se refieren a casos conocidos en los que el impacto del error se entiende completamente y se pueden manejar con cuidado. Por otro lado, el error del programador (por ejemplo, tratar de leer la variable no definida) se refiere a fallas desconocidas del código que ordenan reiniciar correctamente la aplicación
 
 **De lo contrario:** Siempre puedes reiniciar la aplicación cuando aparece un error, pero ¿por qué dejar ~5000 usuarios en línea abajo debido a un error operacional menor, previsto? lo contrario tampoco es ideal: mantener la aplicación activa cuando se produce un problema desconocido (error del programador) puede provocar un comportamiento imprevisto. La diferenciación de los dos permite actuar con tacto y aplicar un enfoque equilibrado basado en el contexto dado
 
-  🔗 [** Leer más: error operacional vs programador **](/sections/errorhandling/operationalvsprogrammererror.md)
+  🔗 [**Leer más: error operacional vs programador**](/sections/errorhandling/operationalvsprogrammererror.md)
 
 <br/><br/>
 
-##! [✔] 2.4 Manejar los errores centralmente, no dentro de un middleware Express
+## ![✔] 2.4 Manejar los errores centralmente, no dentro de un middleware Express
 
 **TL;DR:** La lógica de manejo de errores, como un correo al administrador y registro de logs, debe encapsularse en un objeto dedicado y centralizado al que todos los end-points (por ejemplo, Express middleware, cron jobs, unit-testing) llaman cuando se produce un error .
 
 **De lo contrario:** No manejar los errores dentro de un solo lugar dará lugar a la duplicación del código y, probablemente, a los errores que se manejan de forma incorrecta
 
-🔗 [** Leer más: manejo de errores en un lugar centralizado **](/sections/errorhandling/centralizedhandling.md)
+🔗 [**Leer más: manejo de errores en un lugar centralizado**](/sections/errorhandling/centralizedhandling.md)
 
 <br/><br/>
 
-##! [✔] 2.5 Errores del API Document con Swagger
+## ![✔] 2.5 Errores del API Document con Swagger
 
 **TL;DR:** Deja que los clientes de tu API sepan qué errores podrían presentarse como respuesta para que puedan manejarlos cuidadosamente sin fallar. Esto se hace generalmente con frameworks de documentación REST API como Swagger
 
 **De lo contrario:** Un cliente del API podría decidir bloquearse y reiniciarse solo porque recibió un error que no pudo entender. Nota: la persona que llama de su API puede ser tu (muy típico en un entorno de microservicios)
 
-🔗 [** Leer más: documentación de errores en Swagger **](/sections/errorhandling/documentingusingswagger.md)
+🔗 [**Leer más: documentación de errores en Swagger**](/sections/errorhandling/documentingusingswagger.md)
 
 <br/><br/>
 
-##! [✔] 2.6 Cerrar el proceso elegantemento cuando un extraño llega
+## ![✔] 2.6 Cerrar el proceso elegantemento cuando un extraño llega
 
 **TL; DR:** Cuando se produce un error desconocido (un error del desarrollador, consulta el número de práctica recomendada número #3): existe incertidumbre acerca del estado de la aplicación. Una práctica común sugiere reiniciar el proceso cuidadosamente usando una herramienta 'reiniciadora' como Forever y PM2.
 
 **De lo contrario:** Cuando se detecta una excepción desconocida, algunos objetos pueden estar en un estado defectuoso (por ejemplo, un emisor de eventos que se usa globalmente y que ya no se activan debido a fallas internas) y todas las solicitudes futuras pueden fallar o comportarse de manera loca
 
-🔗 [** Leer más: cerrar el proceso **] (/sections/errorhandling/shuttingtheprocess.md)
+🔗 [**Leer más: cerrar el proceso**](/sections/errorhandling/shuttingtheprocess.md)
 
 <br/><br/>
 
-##! [✔] 2.7 Usa un logger maduro para aumentar la visibilidad de los errores
+## ![✔] 2.7 Usa un logger maduro para aumentar la visibilidad de los errores
 
 **TL;DR:** Un conjunto de herramientas de registro maduras como Winston, Bunyan o Log4J acelerará el descubrimiento y la comprensión de errores. Así que olvídate de console.log.
 
 **De lo contrario:** Navegando a través de console.logs o manualmente a través de un archivo de texto desordenado sin consultar herramientas o un lector de registro decente puede mantenerte ocupado en el trabajo hasta tarde
 
-🔗 [** Leer más: utilizando un registrador maduro **] (/sections/errorhandling/usematurelogger.md)
+🔗 [**Leer más: utilizando un registrador maduro**](/sections/errorhandling/usematurelogger.md)
 
 <br/><br/>
 
-##! [✔] 2.8 Flujos de errores de prueba usando su test framework favorito
+## ![✔] 2.8 Flujos de errores de prueba usando su test framework favorito
 
 **TL;DR:** Ya sea que se trate de un profesional de QA automatizado o de una prueba de desarrollador manual: asegúrate de que tu código no solo satisfaga un escenario positivo sino que también maneje y devuelva los errores correctos. Frameworks de prueba como Mocha & Chai pueden manejar esto fácilmente (vea ejemplos de código dentro del "Gist emergente")
 
 **De lo contrario:** Sin pruebas, ya sea automática o manualmente, no puedes confiar en nuestro código para devolver los errores correctos. Sin errores significativos, no hay manejo de errores
 
-🔗 [** Leer más: probar los flujos de error **] (/sections/errorhandling/testingerrorflows.md)
+🔗 [**Leer más: probar los flujos de error**](/sections/errorhandling/testingerrorflows.md)
 
 <br/> <br/>
 
-##! [✔] 2.9 Descubre errores y tiempo de inactividad usando productos APM
+## ![✔] 2.9 Descubre errores y tiempo de inactividad usando productos APM
 
 **TL;DR:** Los productos de monitoreo y rendimiento (a.k.a APM) miden de forma proactiva tu base de código o API para auto-mágicamente resaltar errores, bloqueos y ralentizar automáticamente partes que echas en falta.
 
 **De lo contrario:** Es posible que dediques un gran esfuerzo a medir el rendimiento y los tiempos de inactividad de la API, probablemente nunca sabrás cuáles son las piezas de código más lentas en el escenario del mundo real y cómo afectan estas a la experiencia del usuario.
 
-🔗 [** Leer más: utilizando productos APM **] (/sections/errorhandling/apmproducts.md)
+🔗 [**Leer más: utilizando productos APM**](/sections/errorhandling/apmproducts.md)
 
 <br/><br/>
 
-##! [✔] 2.10 Captura rechazos de promesas no controladas
+## ![✔] 2.10 Captura rechazos de promesas no controladas
 
 **TL;DR:** Cualquier excepción lanzada dentro de una promesa será tragada y descartada a menos que un desarrollador no se olvide de manejarla de manera explícita. ¡Incluso si su código está suscrito a process.uncaughtException! Supera esto registrándose en el proceso del evento.
 
 **De lo contrario:** Tus errores serán tragados y no dejarán rastros. Nada de que preocuparse
 
-🔗 [** Leer más: captura rechazos de promesas no controladas **] (/sections/errorhandling/catchunhandledpromiserejection.md)
+🔗 [**Leer más: captura rechazos de promesas no controladas**](/sections/errorhandling/catchunhandledpromiserejection.md)
 
 <br/><br/>
 
-##! [✔] 2.11 Falla rápidamente, valida argumentos usando una biblioteca dedicada
+## ![✔] 2.11 Falla rápidamente, valida argumentos usando una biblioteca dedicada
 
 **TL; DR:** Esto debería ser parte de sus mejores prácticas para Express - API de Assert para evitar errores desagradables que son mucho más difíciles de seguir más adelante. El código de validación suele ser tedioso a menos que se utilicen bibliotecas muy interesantes como Joi
 
 **De lo contrario:** Considera esto: tu función espera un argumento numérico "Descuento" que la persona que llama olvida pasar, más adelante su código comprueba si Descuento!= 0 (cantidad de descuento permitido es mayor que cero), entonces permitirás el usuario que disfrute de un descuento. Dios mío, qué desagradable error. ¿Puedes verlo?
 
-🔗 [** Leer más: falla rapidamente **] (/sections/errorhandling/failfast.md)
+🔗 [**Leer más: falla rapidamente**](/sections/errorhandling/failfast.md)
 
 <br/><br/><br/>
 
