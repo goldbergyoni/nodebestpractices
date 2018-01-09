@@ -93,11 +93,11 @@ De lo contrario: no cumplir con ninguno de los requisitos de configuración simp
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Regresar arriba</a></p>
 
-# `2. Error Handling Practices`
+# `2. Prácticas en manejo de errores`
 
-## ![✔] 2.1  Use Async-Await or promises for async error handling
+## ![✔] 2.1  Usa Async-Await o promesas para manejo de errores asíncronos
 
 **TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using instead a reputable promise library or async-await which provides much compact and familiar code syntax like try-catch
 
