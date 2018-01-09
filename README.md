@@ -1,6 +1,6 @@
 [✔]: assets/images/checkbox-small-blue.png
 
-# Node.js Best Practices
+# Mejores prácticas de NodeJS
 
 <h1 align="center">
   <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices" />
@@ -14,207 +14,198 @@
 
 <br/>
 
- [![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
+ [![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **¡Síguenos en Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
  <br/>
 
-# Welcome! 3 Things You Ought To Know First:
-**1. When you read here, you in fact read dozens of the best Node.JS articles -** this is a summary and curation of the top-ranked content on Node JS best practices
+# ¡Bienvenido! 3 cosas que necesitas saber primero:
+**1. Cuando lees aquí, lees docenas de los mejores artículos de Node.JS -** este es un resumen y conservación del contenido mejor clasificado de las mejores prácticas de NodeJS
 
-**2. It's the largest compilation, and it growing every week -** currently, more than 50 practices, style guide, and architectural tips are presented. We welcome issues and PR to ever keep this live book updated. We'd love to see you contributing here, whether fixing some  code mistake or suggesting brilliant new ideas - be part of the Node.JS best practices book
+**2. Es la compilación más grande y crece cada semana -** actualmente, se presentan más de 50 prácticas, guías de estilo y consejos arquitectónicos. Damos la bienvenida a issues y pull requests para mantener este libro actualizado. Nos encantaría verte contribuir aquí, ya sea corrigiendo algunos errores de código o sugiriendo nuevas ideas brillantes: se parte del libro de mejores prácticas de Node.JS
 
-**3. Most bullets have additional info -** nearby most best practice bullets you'll find **🔗Read More** link that will present you with code examples, quotes from selected blogs and more info
-
-<br/><br/><br/>
-
-## Table of Contents
-1. [Project structure Practices (5)](#1-project-structure-practices)
-2. [Error Handling Practices (11) ](#2-error-handling-practices)
-3. [Code Style Practices (12) ](#3-code-style-practices)
-4. [Testing And Overall Quality Practices (8) ](#4-testing-and-overall-quality-practices)
-5. [Going To Production Practices (16) ](#5-going-to-production-practices)
-6. Security Practices (coming soon)
-7. Performance Practices (coming soon)
-
-
-<br/><br/><br/>
-# `1. Project Structure Practices`
-
-## ![✔] 1.1 Structure your solution by components
-
- **TL;DR:** The worst large applications pitfall is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Instead, partition your code into components, each gets its own folder or a dedicated codebase, and ensure that each unit is kept small and simple. Visit 'Read More' below to see examples of correct project structure
-
-**Otherwise:** When developers who code new features struggle to realize the impact of their change and fear to break other dependant components - deployments become slower and more risky. It's also considered harder to scale-out when all the business units are not separated
-
-🔗 [**Read More: structure by components**](/sections/projectstructre/breakintcomponents.md)
-
-<br/><br/>
-
-## ![✔] 1.2 Layer your components, keep Express within its boundaries
-
-**TL;DR:** Each component should contain 'layers' - a dedicated object for the web, logic and data access code. This not only draws a clean separation of concerns but also significantly ease mocking and testing the system. Though this is a very common pattern, API developers tend to mix layers by passing the web layer objects (Express req, res) to business logic and data layers - this makes your application dependant on and accessible by Express only
-
-**Otherwise:** App that mixes web objects with other layers can not be accessed by testing code, CRON jobs and other non-Express callers
-
-🔗 [**Read More: layer your app**](/sections/projectstructre/createlayers.md)
-
-<br/><br/>
-
-## ![✔] 1.3 Wrap common utilities as NPM packages
-
-**TL;DR:** In a large app that constitues multiple code base, cross-cutting-conern utilities like logger, encryption and a like, should be wrapped by your own code and exposed as private NPM packages. This allows sharing them among multiple code bases and projects
-
-**Otherwise:** You'll have to invent your own deployment and dependency wheel
-
-🔗 [**Read More: Structure by feature**](/sections/projectstructre/wraputilities.md)
-
-<br/><br/>
-
-## ![✔] 1.4 Separate Express 'app' and 'server'
-
-**TL;DR:** Avoid the nasty habit of defining the entire [Express](https://expressjs.com/) app in a single huge file - separate your 'Express' definition to at least two files: the API declaration (app.js) and the networking concerns (WWW).For even better structure, locate your API declaration within components
-
-**Otherwise:** Your API will be accessible for testing via HTTP calls only (slower and much harder to generate coverage reports). It will also probably won't be a big pleasure to maintain hundreds of lines of code in a single file
-
-🔗 [**Read More: separate Express 'app' and 'server'**](/sections/projectstructre/separateexpress.md)
-
-<br/><br/>
-
-## ![✔] 1.5 Use environment aware, secure and hirearchical config
-
-**TL;DR:** The perfect and flawless configuration setup must include (a) keys that can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are only a few packages that can help tick most of those boxes like [nconf](https://www.npmjs.com/package/nconf) and [config](https://www.npmjs.com/package/config)
-
-**Otherwise:** Failing to satisfy any of the config requirements will simply bog down the development team or devpos team. Probably both
-
-🔗 [**Read More: configuration best practices**](/sections/projectstructre/configguide.md)
-
+**3. La mayoría de los puntos tiene información adicional -** Encontrás cerca de los puntos de mejores prácticas el enlace **🔗Leer más** que te dará algunos ejemplos de código, citas de blogs seleccionados y mas información
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
-
-# `2. Error Handling Practices`
-
-## ![✔] 2.1  Use Async-Await or promises for async error handling
-
-**TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using instead a reputable promise library or async-await which provides much compact and familiar code syntax like try-catch
-
-**Otherwise:** Node.JS callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting and awkward coding patterns
-
-🔗 [**Read More: avoiding callbacks**](/sections/errorhandling/asyncerrorhandling.md)
-
-<br/><br/>
-
-## ![✔] 2.2 Use only the built-in Error object
-
-**TL;DR:** Many throws errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw exception or emit error – using only the built-in Error object will increases uniformity and prevents loss of information
+## Tabla de contenidos
+1. [Prácticas para estructura del proyecto (5)](#1-project-structure-practices)
+2. [Prácticas en manejo de errores (11) ](#2-error-handling-practices)
+3. [Prácticas de estilo de código (12) ](#3-code-style-practices)
+4. [Practicas de prueba y calidad en general (8) ](#4-testing-and-overall-quality-practices)
+5. [Prácticas de puesta en producción (16) ](#5-going-to-production-practices)
+6. Prácticas de Seguridad (próximamente)
+7. Prácticas de Rendimiento (próximamente)
 
 
-**Otherwise:** When invoking some component, being uncertain which type of errors come in return – makes it much harder to handle errors properly. Even worse, using custom types to describe errors might lead to loss of critical error information like the stack trace!
+<br/><br/><br/>
+# `1. Prácticas de estructura del proyecto`
 
-🔗 [**Read More: using the built-in error object**](/sections/errorhandling/useonlythebuiltinerror.md)
+## ![✔] 1.1 Estructura tu solución en componentes
+
+**TL;DR:** El peor inconveniente de las grandes aplicaciones es mantener una gran base de código con cientos de dependencias, un monolito que ralentiza a los desarrolladores que intentan incorporar nuevas características. En cambio, particiona tu código en componentes, cada uno obtiene su propia carpeta o una base de código dedicada, y asegúrate de que cada unidad se mantenga pequeña y simple. Visita 'Leer más' a continuación para ver ejemplos de la estructura correcta del proyecto
+
+**De lo contrario:** Cuando desarrolladores codifican nuevas características luchan por darse cuenta del impacto de su cambio y temen romper otros componentes dependientes - las implementaciones se vuelven más lentas y más riesgosas. También se considera más difícil escalar cuando todas las unidades de negocios no están separadas
+
+🔗 [**Leer más: estructura en componentes**](/sections/projectstructre/breakintcomponents.md)
 
 <br/><br/>
 
-## ![✔] 2.3 Distinguish operational vs programmer errors
+## ![✔] 1.2 Aplicar capas para componentes, mantén Express dentro de sus límites
 
-**TL;DR:** Operational errors (e.g. API received an invalid input) refer to known cases where the error impact is fully understood and can be handled thoughtfully. On the other hand, programmer error (e.g. trying to read undefined variable) refers to unknown code failures that dictate to gracefully restart the application
+**TL;DR:** Cada componente debería contener 'capas'- un objeto dedicado para la web, la lógica y código para acceso a datos. Esto no solo genera una clara separación de conceptos sino que también facilita significativamente los mocks y la pruebas del sistema. Aunque este es un patrón muy común, los desarrolladores de APIs tienden a mezclar capas pasando los objetos de la capa web (Express req, res) a la lógica de negocios y capas de datos, esto hace que su aplicación dependa y solo sea accesible por Express.
 
-**Otherwise:** You may always restart the application when an error appear, but why letting ~5000 online users down because of a minor, predicted, operational error? the opposite is also not ideal – keeping the application up when unknown issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
+**De lo contrario:** Una aplicación que mezcla objectos de web con otras capas no puede ser accedida por código de pruebas, CRON jobs y otras llamadas que no son de Express.
 
-  🔗 [**Read More: operational vs programmer error**](/sections/errorhandling/operationalvsprogrammererror.md)
-
-<br/><br/>
-
-## ![✔] 2.4 Handle errors centrally, not within an Express middleware
-
-**TL;DR:** Error handling logic such as mail to admin and logging should be encapsulated in a dedicated and centralized object that all end-points (e.g. Express middleware, cron jobs, unit-testing) call when an error comes in.
-
-**Otherwise:** Not handling errors within a single place will lead to code duplication and probably to errors that are handled improperly
-
-🔗 [**Read More: handling errors in a centralized place**](/sections/errorhandling/centralizedhandling.md)
+🔗 [**Leer más: Aplicar capas a tu aplicación**](/sections/projectstructre/createlayers.md)
 
 <br/><br/>
 
-## ![✔] 2.5 Document API errors using Swagger
+## ![✔] 1.3 Envuelve las utilidades comunes como paquetes de NPM
 
-**TL;DR:** Let your API callers know which errors might come in return so they can handle these thoughtfully without crashing. This is usually done with REST API documentation frameworks like Swagger
+**TL;DR:** En una aplicación grande que se constituye de múltples bases de código, utilidades transversales como los loggers, cifrado y similares, deben de estar envueltos por su propio código y expuestos como paquetes privados de NPM. Esto permite compartirlos entre múltiples base de código y proyectos.
 
-**Otherwise:** An API client might decide to crash and restart only because he received back an error he couldn’t understand. Note: the caller of your API might be you (very typical in a microservices environment)
+**De lo contrario:** Tendrás que inventar tu propia implementación y rueda de dependencia
 
-
-🔗 [**Read More: documenting errors in Swagger**](/sections/errorhandling/documentingusingswagger.md)
-
-<br/><br/>
-
-## ![✔] 2.6 Shut the process gracefully when a stranger comes to town
-
-**TL;DR:** When an unknown error occurs (a developer error, see best practice number #3)- there is uncertainty about the application healthiness. A common practice suggests restarting the process carefully using a ‘restarter’ tool like Forever and PM2
-
-**Otherwise:** When an unfamiliar exception is caught, some object might be in a faulty state (e.g an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
-
-🔗 [**Read More: shutting the process**](/sections/errorhandling/shuttingtheprocess.md)
+🔗 [**Leer más: Estructura por característica**](/sections/projectstructre/wraputilities.md)
 
 <br/><br/>
 
+## ![✔] 1.4 Separar 'servidor' y 'aplicación' de express
 
+**TL;DR:** Evite el desagradable hábito de definir toda la aplicación [Express](https://expressjs.com/) en un único archivo enorme; separa tú definición de 'Express' en al menos dos archivos: la declaración del API (app.js) y los características de red (WWW). Incluso para una mejor estructura, ubica tu declaración del API dentro de los componentes.
 
-## ![✔] 2.7 Use a mature logger to increase errors visibility
+**De lo contrario:** Se podrá acceder a tu API para realizar pruebas solo a través de llamadas HTTP (más lento y mucho más difícil para generar informes de cobertura). Probablemente tampoco sea un placer enorme mantener cientos de líneas de código en un solo archivo
 
-**TL;DR:** A set of mature logging tools like Winston, Bunyan or Log4J, will speed-up error discovery and understanding. So forget about console.log.
-
-**Otherwise:** Skimming through console.logs or manually through messy text file without querying tools or a decent log viewer might keep you busy at work until late
-
-🔗 [**Read More: using a mature logger**](/sections/errorhandling/usematurelogger.md)
-
+🔗 [**Leer más: separar 'servidor' y 'aplicación' de express**](/sections/projectstructre/separateexpress.md)
 
 <br/><br/>
 
+## ![✔] 1.5 Usar una configuración segura, jerárquica y consciente del entorno
 
-## ![✔] 2.8 Test error flows using your favorite test framework
+**TL;DR:** La configuración perfecta e impecable debe incluir (a) claves que se pueden leer desde el archivo Y desde la variable de entorno (b) los secretos se guardan fuera del código al que se ha hecho commit (c) config es jerárquica para facilitar la localización. Solo hay unos pocos paquetes que pueden ayudar a validar la mayoría de estos casos como [nconf](https://www.npmjs.com/package/nconf) y [config](https://www.npmjs.com/package/config)
 
-**TL;DR:** Whether professional automated QA or plain manual developer testing – Ensure that your code not only satisfies positive scenario but also handle and return the right errors. Testing framework like Mocha & Chai can handle this easily (see code examples within the "Gist popup")
+**De lo contrario:** No cumplir con ninguno de los requisitos de configuración simplemente frena al equipo de desarrollo o al equipo de devpos. Probablemente ambos
 
-**Otherwise:** Without testing, whether automatically or manually, you can’t rely on our code to return the right errors. Without meaningful errors – there’s no error handling
+🔗 [**Leer más: buenas prácticas de configuración **](/sections/projectstructre/configguide.md)
 
-
-🔗 [**Read More: testing error flows**](/sections/errorhandling/testingerrorflows.md)
-
-<br/><br/>
-
-## ![✔] 2.9 Discover errors and downtime using APM products
-
-**TL;DR:** Monitoring and performance products (a.k.a APM) proactively gauge your codebase or API so they can auto-magically highlight errors, crashes and slow parts that you were missing
-
-**Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which are your slowest code parts under real world scenario and how these affects the UX
-
-
-🔗 [**Read More: using APM products**](/sections/errorhandling/apmproducts.md)
-
-<br/><br/>
-
-
-## ![✔] 2.10 Catch unhandled promise rejections
-
-**TL;DR:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explictly handle. Even if you’re code is subscribed to process.uncaughtException! Overcome this by registering to the event process.unhandledRejection
-
-**Otherwise:** Your errors will get swallowed and leave no trace. Nothing to worry about
-
-
-🔗 [**Read More: catching unhandled promise rejection **](/sections/errorhandling/catchunhandledpromiserejection.md)
-
-<br/><br/>
-
-## ![✔] 2.11 Fail fast, validate arguments using a dedicated library
-
-**TL;DR:** This should be part of your Express best practices – Assert API input to avoid nasty bugs that are much harder to track later. Validation code is usually tedious unless using a very cool helper libraries like Joi
-
-**Otherwise:** Consider this – your function expects a numeric argument “Discount” which the caller forgets to pass, later on your code checks if Discount!=0 (amount of allowed discount is greater than zero), then it will allow the user to enjoy a discount. OMG, what a nasty bug. Can you see it?
-
-🔗 [**Read More: failing fast**](/sections/errorhandling/failfast.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Regresar arriba</a></p>
+
+# `2. Prácticas en manejo de errores`
+
+## ![✔] 2.1  Usa Async-Await o promesas para manejo de errores asíncronos
+
+**TL;DR:** El manejo de errores asincrónicos en el estilo de callback es probablemente la manera más rápida de ir al infierno (a.k.a, pyramid of doom o pirámide de la perdición). El mejor regalo que le puedes dar a tu código es utilizar una biblioteca de promesas seria o async-await que proporcione una sintaxis de código muy compacta y familiar como try-catch
+
+**De lo contrario:** El estilo de callback de Node.JS, function (err, response), es una forma prometedora de código no mantenible debido a la combinación de manejo de errores con código accidentado, anidación excesiva y patrones de codificación incómodos
+
+🔗 [** Leer más: evitar callbacks **] (/sections/errorhandling/asyncerrorhandling.md)
+
+<br/><br/>
+
+
+## ![✔] 2.2 Usa solo el objeto Error incorporado
+
+**TL;DR:** Muchos arrojan errores como una cadena o como un tipo personalizado; esto complica la lógica de manejo de errores y la interoperabilidad entre módulos. Ya sea que rechace una promesa, genere una excepción o emita un error, usar solo el objeto de Error incorporado aumentará la uniformidad y evitará la pérdida de información.
+
+**De lo contrario:** Al invocar algún componente, no estar seguro de qué tipo de errores son retornados, hace que sea mucho más difícil manejar los errores de forma adecuada. Peor aún, el uso de tipos personalizados para describir los errores puede conducir a la pérdida de información de error crítico como el seguimiento de la pila.
+
+🔗 [** Leer más: utilizando el objeto de Error incorporado **](/sections/errorhandling/useonlythebuiltinerror.md)
+
+<br/><br/>
+
+##! [✔] 2.3 Distinguir errores operacionales contra errores del programador
+
+**TL;DR:** Los errores operacionales (por ejemplo, el API recibió una entrada no válida) se refieren a casos conocidos en los que el impacto del error se entiende completamente y se pueden manejar con cuidado. Por otro lado, el error del programador (por ejemplo, tratar de leer la variable no definida) se refiere a fallas desconocidas del código que ordenan reiniciar correctamente la aplicación
+
+**De lo contrario:** Siempre puedes reiniciar la aplicación cuando aparece un error, pero ¿por qué dejar ~5000 usuarios en línea abajo debido a un error operacional menor, previsto? lo contrario tampoco es ideal: mantener la aplicación activa cuando se produce un problema desconocido (error del programador) puede provocar un comportamiento imprevisto. La diferenciación de los dos permite actuar con tacto y aplicar un enfoque equilibrado basado en el contexto dado
+
+  🔗 [** Leer más: error operacional vs programador **](/sections/errorhandling/operationalvsprogrammererror.md)
+
+<br/><br/>
+
+##! [✔] 2.4 Manejar los errores centralmente, no dentro de un middleware Express
+
+**TL;DR:** La lógica de manejo de errores, como un correo al administrador y registro de logs, debe encapsularse en un objeto dedicado y centralizado al que todos los end-points (por ejemplo, Express middleware, cron jobs, unit-testing) llaman cuando se produce un error .
+
+**De lo contrario:** No manejar los errores dentro de un solo lugar dará lugar a la duplicación del código y, probablemente, a los errores que se manejan de forma incorrecta
+
+🔗 [** Leer más: manejo de errores en un lugar centralizado **](/sections/errorhandling/centralizedhandling.md)
+
+<br/><br/>
+
+##! [✔] 2.5 Errores del API Document con Swagger
+
+**TL;DR:** Deja que los clientes de tu API sepan qué errores podrían presentarse como respuesta para que puedan manejarlos cuidadosamente sin fallar. Esto se hace generalmente con frameworks de documentación REST API como Swagger
+
+**De lo contrario:** Un cliente del API podría decidir bloquearse y reiniciarse solo porque recibió un error que no pudo entender. Nota: la persona que llama de su API puede ser tu (muy típico en un entorno de microservicios)
+
+🔗 [** Leer más: documentación de errores en Swagger **](/sections/errorhandling/documentingusingswagger.md)
+
+<br/><br/>
+
+##! [✔] 2.6 Cerrar el proceso elegantemento cuando un extraño llega
+
+**TL; DR:** Cuando se produce un error desconocido (un error del desarrollador, consulta el número de práctica recomendada número #3): existe incertidumbre acerca del estado de la aplicación. Una práctica común sugiere reiniciar el proceso cuidadosamente usando una herramienta 'reiniciadora' como Forever y PM2.
+
+**De lo contrario:** Cuando se detecta una excepción desconocida, algunos objetos pueden estar en un estado defectuoso (por ejemplo, un emisor de eventos que se usa globalmente y que ya no se activan debido a fallas internas) y todas las solicitudes futuras pueden fallar o comportarse de manera loca
+
+🔗 [** Leer más: cerrar el proceso **] (/sections/errorhandling/shuttingtheprocess.md)
+
+<br/><br/>
+
+##! [✔] 2.7 Usa un logger maduro para aumentar la visibilidad de los errores
+
+**TL;DR:** Un conjunto de herramientas de registro maduras como Winston, Bunyan o Log4J acelerará el descubrimiento y la comprensión de errores. Así que olvídate de console.log.
+
+**De lo contrario:** Navegando a través de console.logs o manualmente a través de un archivo de texto desordenado sin consultar herramientas o un lector de registro decente puede mantenerte ocupado en el trabajo hasta tarde
+
+🔗 [** Leer más: utilizando un registrador maduro **] (/sections/errorhandling/usematurelogger.md)
+
+<br/><br/>
+
+##! [✔] 2.8 Flujos de errores de prueba usando su test framework favorito
+
+**TL;DR:** Ya sea que se trate de un profesional de QA automatizado o de una prueba de desarrollador manual: asegúrate de que tu código no solo satisfaga un escenario positivo sino que también maneje y devuelva los errores correctos. Frameworks de prueba como Mocha & Chai pueden manejar esto fácilmente (vea ejemplos de código dentro del "Gist emergente")
+
+**De lo contrario:** Sin pruebas, ya sea automática o manualmente, no puedes confiar en nuestro código para devolver los errores correctos. Sin errores significativos, no hay manejo de errores
+
+🔗 [** Leer más: probar los flujos de error **] (/sections/errorhandling/testingerrorflows.md)
+
+<br/> <br/>
+
+##! [✔] 2.9 Descubre errores y tiempo de inactividad usando productos APM
+
+**TL;DR:** Los productos de monitoreo y rendimiento (a.k.a APM) miden de forma proactiva tu base de código o API para auto-mágicamente resaltar errores, bloqueos y ralentizar automáticamente partes que echas en falta.
+
+**De lo contrario:** Es posible que dediques un gran esfuerzo a medir el rendimiento y los tiempos de inactividad de la API, probablemente nunca sabrás cuáles son las piezas de código más lentas en el escenario del mundo real y cómo afectan estas a la experiencia del usuario.
+
+🔗 [** Leer más: utilizando productos APM **] (/sections/errorhandling/apmproducts.md)
+
+<br/><br/>
+
+##! [✔] 2.10 Captura rechazos de promesas no controladas
+
+**TL;DR:** Cualquier excepción lanzada dentro de una promesa será tragada y descartada a menos que un desarrollador no se olvide de manejarla de manera explícita. ¡Incluso si su código está suscrito a process.uncaughtException! Supera esto registrándose en el proceso del evento.
+
+**De lo contrario:** Tus errores serán tragados y no dejarán rastros. Nada de que preocuparse
+
+🔗 [** Leer más: captura rechazos de promesas no controladas **] (/sections/errorhandling/catchunhandledpromiserejection.md)
+
+<br/><br/>
+
+##! [✔] 2.11 Falla rápidamente, valida argumentos usando una biblioteca dedicada
+
+**TL; DR:** Esto debería ser parte de sus mejores prácticas para Express - API de Assert para evitar errores desagradables que son mucho más difíciles de seguir más adelante. El código de validación suele ser tedioso a menos que se utilicen bibliotecas muy interesantes como Joi
+
+**De lo contrario:** Considera esto: tu función espera un argumento numérico "Descuento" que la persona que llama olvida pasar, más adelante su código comprueba si Descuento!= 0 (cantidad de descuento permitido es mayor que cero), entonces permitirás el usuario que disfrute de un descuento. Dios mío, qué desagradable error. ¿Puedes verlo?
+
+🔗 [** Leer más: falla rapidamente **] (/sections/errorhandling/failfast.md)
+
+<br/><br/><br/>
+
+<p align="right"><a href="#table-of-contents">⬆ Regresar arriba</a></p>
 
 # `3. Code Style Practices`
 
