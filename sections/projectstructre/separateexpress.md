@@ -37,5 +37,5 @@ app.set('port', port);
 var server = http.createServer(app);
 
 ```
-### Ejemplo: prueba tu API en proceso usanso supertest (paquete de testing popular)
+### Ejemplo: prueba tu API en proceso usando supertest (paquete de testing popular)
 ![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/supertestinprocess.PNG "In process testing with Supertest")

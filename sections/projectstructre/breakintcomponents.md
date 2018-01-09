@@ -9,12 +9,19 @@ Para aplicaciones medianas y superiores, los monolitos son realmente malos: un s
 <br/><br/>
 
 
-### Cita de Blog: "El escalado requiere escalar toda la aplicación"
+### Cita de Blog: "Scaling requires scaling of the entire application"
  De el blog MartinFowler.com
  
  > Las aplicaciones monolíticas pueden ser exitosas, pero cada vez más personas sienten frustraciones con ellas, especialmente a medida que se implementan más aplicaciones en la nube. Los ciclos de cambio están unidos: un cambio realizado en una pequeña parte de la aplicación requiere que se reconstruya y despliegue todo el monolito. Con el tiempo, a menudo es difícil mantener una buena estructura modular, lo que hace más difícil mantener los cambios que solo deberían afectar a un módulo dentro de ese módulo. El escalado requiere escalar toda la aplicación en lugar de partes de ella que requieren un mayor recurso.
 
  <br/><br/>
+
+ ### Cita del blog: "So what does the architecture of your application scream?"
+
+Del blog uncle-bob
+
+> ... si estuvieras mirando la arquitectura de una biblioteca, es probable que veas una gran entrada, un área para salida/entrada de empleados, áreas de lectura, salas de conferencias pequeñas y galería tras galería capaz de sostener estanterías para todos los libros en la biblioteca. Esa arquitectura gritaría: Biblioteca.
+Entonces, ¿qué grita la arquitectura de tu aplicación? Cuando observas la estructura de directorios de nivel superior y los archivos de origen en el paquete de nivel superior; ¿gritan: Sistema de Cuidado de la Salud, o Sistema de Contabilidad, o Sistema de Gestión de Inventario? ¿O gritan: Rails o Spring / Hibernate o ASP?
  
  ### Bien: Estructura tu solución en componentes autónomos
 ![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Structuring solution by components")
