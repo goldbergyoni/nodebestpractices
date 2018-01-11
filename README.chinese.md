@@ -27,7 +27,7 @@
 <br/><br/><br/>
 
 ## 目录
-1. [项目结构实践 (5)](#1-project-structure-practices)
+1. [项目结构实践 (5) ](#1-project-structure-practices)
 2. [异常处理实践 (11) ](#2-error-handling-practices)
 3. [编码规范实践 (12) ](#3-code-style-practices)
 4. [测试和总体质量实践 (8) ](#4-testing-and-overall-quality-practices)
@@ -90,7 +90,7 @@
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
 # `2. 错误处理最佳实践`
 
@@ -213,7 +213,7 @@
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
 # `3. 编码风格实践`
 
@@ -310,7 +310,7 @@
 
 <br/><br/>
 
-## ![✔] 3.8 Requires come first, and not inside functions
+## ![✔] 3.8 先require, 而不是在方法内部
 
 **TL;DR:** 在每个文件的起始位置，在任何函数的前面和外部 require 模块。这种简单的最佳实践，不仅能帮助您轻松快速地在文件顶部辨别出依赖关系，而且避免了一些潜在的问题。
 
@@ -386,7 +386,7 @@ null == undefined   // true
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
 
 # `4. 测试和总体的质量实践`
@@ -444,11 +444,11 @@ null == undefined   // true
 
 <br/><br/>
 
-## ![✔] 4.7 Inspect for outdated packages
+## ![✔] 4.7 检查过期的依赖包
 
-**TL;DR:** Use your preferred tool (e.g. 'npm outdated' or [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) to detect installed packages which are outdated, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a severe scenario might be when an installed package is 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
+**TL;DR:** 使用您的首选工具 (例如 'npm outdated' or [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) 来检测已安装的过期依赖包, 将此检查注入您的 CI 管道, 甚至在严重的情况下使构建失败。例如, 当一个已安装的依赖包滞后5个补丁时 (例如:本地版本是1.3.1 的, 存储库版本是1.3.8 的), 或者它被其作者标记为已弃用, 可能会出现严重的情况 - 停掉这次构建并防止部署此版本。
 
-**Otherwise:** Your production will run packages that have been explicitly tagged by their author as risky
+**否则:** 您的生产环境将运行已被其作者明确标记为有风险的依赖包
 
 <br/><br/>
 
@@ -462,7 +462,7 @@ null == undefined   // true
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
 # `5. 上线实践`
 ## ![✔] 5.1. 监控!
@@ -649,7 +649,7 @@ null == undefined   // true
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
 # `Security Practices`
 
