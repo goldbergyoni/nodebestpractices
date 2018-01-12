@@ -23,7 +23,7 @@ myEmitter.emit('error', new Error('whoops!'));
  
 //从promise抛出错误
  return new promise(function (resolve, reject) {
-	Return DAL.getProduct(productToAdd.id).then((existingProduct) =>{
+	Return DAL.getProduct(productToAdd.id).then((existingProduct) => {
 		 if(existingProduct != null)
 			 reject(new Error("Why fooling us and trying to add an existing product?"));
 
@@ -67,9 +67,9 @@ if(user == null)
 ### 博客引用: "从Error对象继承不会增加太多的值"
  摘自博客 machadogj
  
- > …我对Error类的一个问题是不太容易扩展。当然, 您可以继承该类并创建自己的Error类, 如 HttpError、DbError 等。然而, 这需要时间, 并且不会增加太多的价值, 除非你是在做一些关于类型的事情。有时, 您只想添加一条消息, 并保留内部错误, 有时您可能希望使用参数扩展该错误, 等等…
+ > …我对Error类的一个问题是不太容易扩展。当然, 您可以继承该类并创建自己的Error类, 如HttpError、DbError等。然而, 这需要时间, 并且不会增加太多的价值, 除非你是在做一些关于类型的事情。有时, 您只想添加一条消息, 并保留内部错误, 有时您可能希望使用参数扩展该错误, 等等…
 
  ### 博客引用: "所有由node.js引发的 JavaScript 和系统错误继承自Error对象"
  摘自 Node.JS 官方文档
  
- > …所有由node.js引发的 JavaScript 和系统错误继承自，或是标准 JavaScript 错误类的实例, 这保证至少提供了该类的可用属性。一个通用的 JavaScript 错误对象, 它不表示为什么发生错误的任何特定环境。错误对象捕获一个 "stack trace", 详细说明了错误被实例化的代码中的点, 并可能提供错误的文本描述。由node.js生成的所有错误, 包括所有的系统和 JavaScript 错误, 都将是Errir类的实例, 或继承自Error类…
+ > …所有由node.js引发的JavaScript和系统错误继承自，或是JavaScript标准错误类的实例, 这保证至少提供了该类的可用属性。一个通用的JavaScript错误对象, 它不表示错误为什么发生的任何特定环境。错误对象捕获一个"stack trace", 详细说明了错误被实例化时在代码中的点, 并可能提供错误的文本描述。由node.js生成的所有错误, 包括所有的系统和JavaScript错误, 都将是Error类的实例, 或继承自Error类…
