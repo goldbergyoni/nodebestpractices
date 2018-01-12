@@ -2,8 +2,7 @@
 
 ### 一段解释
 
-我们都特别喜欢（loovve）console.log，但显而易见地，对于严肃的项目, 有信誉和持久的Logger是必需的，比如[Winston][winston], [Bunyan][bunyan] (非常流行) or [Pino][pino](专注于性能的新库)。一套实践和工具将有助于更快速地解释错误 – (1) 使用不同的级别（debug, info, error）频繁地log，(2) 在记录日志时, 以 JSON 对象的方式提供上下文信息, 请参见下面的示例。(3) 使用日志查询 API (在大多数logger中内置) 或日志查看程序软件监视和筛选日志
-(4) 使用操作智能工具 (如 Splunk) 为操作团队公开和管理日志语句。
+我们都特别喜欢（loovve）console.log，但显而易见地，对于严肃的项目, 有信誉和持久的Logger是必需的，比如[Winston][winston], [Bunyan][bunyan] (非常流行) or [Pino][pino](专注于性能的新库)。一套实践和工具将有助于更快速地解释错误 – (1)使用不同的级别（debug, info, error）频繁地log；(2)在记录日志时, 以 JSON 对象的方式提供上下文信息, 请参见下面的示例；(3)使用日志查询API(在大多数logger中内置)或日志查看程序软件监视和筛选日志；(4)使用操作智能工具(如 Splunk)为操作团队公开和管理日志语句。
 
 [winston]: https://www.npmjs.com/package/winston
 [bunyan]: https://www.npmjs.com/package/bunyan
@@ -14,12 +13,12 @@
 ```javascript
 //您的集中式logger对象
 var logger = new winston.Logger({
- level: 'info',
- transports: [
- new (winston.transports.Console)(),
- new (winston.transports.File)({ filename: 'somefile.log' })
- ]
- });
+  level: 'info',
+  transports: [
+    new (winston.transports.Console)(),
+    new (winston.transports.File)({ filename: 'somefile.log' })
+  ]
+});
 
 //在某个地方使用logger的自定义代码
 logger.log('info', 'Test Log Message with some parameter %s', 'some parameter', { anything: 'This is metadata' });
@@ -30,8 +29,12 @@ logger.log('info', 'Test Log Message with some parameter %s', 'some parameter', 
 
 ```javascript
 var options = {
-    from: new Date - 24 * 60 * 60 * 1000,    until: new Date,    limit: 10,    start: 0,
-    order: 'desc',    fields: ['message']
+    from: new Date - 24 * 60 * 60 * 1000,
+    until: new Date,
+    limit: 10,
+    start: 0,
+    order: 'desc',
+    fields: ['message']
   };
 
 
