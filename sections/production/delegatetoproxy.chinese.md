@@ -5,31 +5,35 @@
 
 ### 一段解释
 
-这是非常诱人的去过度使用(cargo-cult)Express和使用其丰富的中间件提供网络相关的任务, 如服务静态文件, gzip 编码, throttling requests, SSL termination等。由于它的单线程模型将使 CPU 长时间处于忙碌状态 (请记住, node的执行模型针对短任务或异步 IO 相关任务进行了优化), 因此这是一个性能消耗。一个更好的方法是使用一个专注于处理网络任务的工具 – 最流行的是 nginx 和 HAproxy, 也被最大的云供应商使用, 以减轻在node.js进程上的面临的负载。
+这是非常诱人的 —— 去过度使用(cargo-cult)Express和使用其丰富的中间件提供网络相关的任务, 如服务静态文件, gzip 编码, throttling requests, SSL termination等。由于它的单线程模型将使 CPU 长时间处于忙碌状态 (请记住, node的执行模型针对短任务或异步 IO 相关任务进行了优化), 因此这是一个性能消耗。一个更好的方法是使用一个专注于处理网络任务的工具 – 最流行的是 nginx 和 HAproxy, 也被最大的云供应商使用, 以减轻在node.js进程上的面临的负载。
 
 <br/><br/>
 
 
-### 代码示例 – 说明
+### 代码示例 – 使用 nginx 压缩服务器响应
 
-```javascript
+```
+# 配置 gzip 压缩
 gzip on;
-#defining gzip compression
 gzip_comp_level 6;
 gzip_vary on;
+
+# 配置 upstream
 upstream myApplication {
     server 127.0.0.1:3000;
     server 127.0.0.1:3001;
     keepalive 64;
 }
 
-#defining web server
+#定义 web server
 server {
+    # configure server with ssl and error pages
     listen 80;
     listen 443 ssl;
     ssl_certificate /some/location/sillyfacesociety.com.bundle.crt;
     error_page 502 /errors/502.html;
-    #handling static content
+
+    # handling static content
     location ~ ^/(images/|img/|javascript/|js/|css/|stylesheets/|flash/|media/|static/|robots.txt|humans.txt|favicon.ico) {
     root /usr/local/silly_face_society/node/public;
     access_log off;
