@@ -85,7 +85,9 @@
 **TL;DR:** 一个完美无瑕的配置安装应该确保 (a) 元素可以从文件中，也可以从环境变量中读取 (b) 密码排除在提交的代码之外 (c) 为了易于检索，配置是分级的。仅有几个包可以满足这样的条件，比如[nconf](https://www.npmjs.com/package/nconf) 和 [config](https://www.npmjs.com/package/config)。
 
 **否则:** 不能满足任意的配置要求将会使开发，运维团队，或者两者，易于陷入泥潭。
-🔗 [**更多: 配置最佳实践**](/sections/projectstructre/configguide.chinese.md)
+
+🔗 [**更多: 配置最佳实践**]
+(/sections/projectstructre/configguide.chinese.md)
 
 
 <br/><br/><br/>
@@ -476,14 +478,14 @@ null == undefined   // true
 
 <br/><br/>
 
-## ![✔] 5.2. 使用智能日志增加透明度Increase transparency using smart logging
+## ![✔] 5.2. 使用智能日志增加透明度
 
 **TL;DR:** 日志可以是调试语句的一个不能说话的仓库，或者表述应用运行过程的一个漂亮仪表板的驱动。从第1天计划您的日志平台：如何收集、存储和分析日志，以确保所需信息（例如，错误率、通过服务和服务器等完成整个事务）都能被提取出来。
 
 **否则:** 您最终像是面对一个黑盒，不知道发生了什么事情，然后你开始重新写日志语句添加额外的信息。
 
 
-🔗 [**更多: Increase transparency using smart logging**](/sections/production/smartlogging.chinese.md)
+🔗 [**更多: 使用智能日志增加透明度**](/sections/production/smartlogging.chinese.md)
 	
 <br/><br/>
 
@@ -539,7 +541,7 @@ null == undefined   // true
 **否则:** 您会发现，您正在执行许多“诊断部署” — 将代码发送到生产中，仅仅只为了诊断目的提取一些信息。
 
 
-🔗 [**更多: 创建一个 ‘维护端点’ **](/sections/production/createmaintenanceendpoint.chinese.md)
+🔗 [**更多: 创建一个 '维护端点'**](/sections/production/createmaintenanceendpoint.chinese.md)
 
 <br/><br/>
 
@@ -598,7 +600,7 @@ null == undefined   // true
 **否则:** 某个服务器上的故障将导致应用程序宕机，而不仅仅是停用故障机器。此外，由于依赖特定服务器，伸缩弹性会变得更具挑战性。
 
 
-🔗 [**Read More: 保持无状态，几乎每天都要停下服务器**](/sections/production/bestateless.chinese.md)
+🔗 [**更多: 保持无状态，几乎每天都要停下服务器**](/sections/production/bestateless.chinese.md)
 
 
 <br/><br/>
