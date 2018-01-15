@@ -71,7 +71,7 @@
 
 ## ![✔] 1.4 分离 Express 'app' and 'server'
 
-**TL;DR:** 避免定义整个[Express](https://expressjs.com/)应用在一个单独的大文件的不好习惯 - 分离您的 'Express' 定义至少在两个文件中： API声明(app.js) 和 网络相关(WWW)。对于更好的结构，是把你的API声明放在组件中。
+**TL;DR:** 避免定义整个[Express](https://expressjs.com/)应用在一个单独的大文件里， 这是一个不好的习惯 - 分离您的 'Express' 定义至少在两个文件中： API声明(app.js) 和 网络相关(WWW)。对于更好的结构，是把你的API声明放在组件中。
 
 **否则:** 您的API将只能通过HTTP的调用进行测试（慢，并且很难产生测试覆盖报告）。维护一个有着上百行代码的文件也不是一个令人开心的事情。
 
@@ -86,7 +86,7 @@
 
 **否则:** 不能满足任意的配置要求将会使开发，运维团队，或者两者，易于陷入泥潭。
 
-🔗 [**更多: 配置最佳实践**](/sections/projectstructre/configguide.md)
+🔗 [**更多: 配置最佳实践**](/sections/projectstructre/configguide.chinese.md)
 
 <br/><br/><br/>
 
@@ -96,7 +96,7 @@
 
 ## ![✔] 2.1  使用 Async-Await 和 promises 用于异步错误处理
 
-**TL;DR:** 使用回调的方式处理异步错误可能是导致灾难的最快的方式(a.k.a the pyramid of doom)。对您的代码来说，最好的礼物就是使用规范的promise库或async-await来替代，这会使其像try-catch一样更加简洁，熟悉的代码结构。 
+**TL;DR:** 使用回调的方式处理异步错误可能是导致灾难的最快的方式(a.k.a the pyramid of doom)。对您的代码来说，最好的礼物就是使用规范的promise库或async-await来替代，这会使其像try-catch一样更加简洁，具有熟悉的代码结构。 
 
 **否则:** Node.JS 回调特性, function(err, response), 是导致不可维护代码的一个必然的方式。究其原因，是由于混合了随意的错误处理代码，臃肿的内嵌，蹩脚的代码模式。
 
