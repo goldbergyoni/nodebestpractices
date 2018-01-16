@@ -566,20 +566,29 @@ function createClock(start, loopLimit) {
         var tickFrom = clock.now;
         var tickTo = clock.now + ms;
         var previous = clock.now;
-        var timer = firstTimerInRange(clock, tickFrom, tickTo);
-        var oldNow, firstException;
+        var timer, firstException, oldNow;
 
         clock.duringTick = true;
-        runJobs(clock);
 
+        // perform process.nextTick()s
+        oldNow = clock.now;
+        runJobs(clock);
+        if (oldNow !== clock.now) {
+            // compensate for any setSystemTime() call during process.nextTick() callback
+            tickFrom += clock.now - oldNow;
+            tickTo += clock.now - oldNow;
+        }
+
+        // perform each timer in the requested range
+        timer = firstTimerInRange(clock, tickFrom, tickTo);
         while (timer && tickFrom <= tickTo) {
             if (clock.timers[timer.id]) {
                 updateHrTime(timer.callAt);
                 tickFrom = timer.callAt;
                 clock.now = timer.callAt;
+                oldNow = clock.now;
                 try {
                     runJobs(clock);
-                    oldNow = clock.now;
                     callTimer(clock, timer);
                 } catch (e) {
                     firstException = firstException || e;
@@ -597,15 +606,32 @@ function createClock(start, loopLimit) {
             previous = tickFrom;
         }
 
+        // perform process.nextTick()s again
+        oldNow = clock.now;
         runJobs(clock);
+        if (oldNow !== clock.now) {
+            // compensate for any setSystemTime() call during process.nextTick() callback
+            tickFrom += clock.now - oldNow;
+            tickTo += clock.now - oldNow;
+        }
         clock.duringTick = false;
-        updateHrTime(tickTo);
-        clock.now = tickTo;
 
+        // corner case: during runJobs, new timers were scheduled which could be in the range [clock.now, tickTo]
+        timer = firstTimerInRange(clock, tickFrom, tickTo);
+        if (timer) {
+            try {
+                clock.tick(tickTo - clock.now); // do it all again - for the remainder of the requested range
+            } catch (e) {
+                firstException = firstException || e;
+            }
+        } else {
+            // no timers remaining in the requested range: move the clock all the way to the end
+            updateHrTime(tickTo);
+            clock.now = tickTo;
+        }
         if (firstException) {
             throw firstException;
         }
-
         return clock.now;
     };
 

@@ -1,4 +1,9 @@
 
+v2.3.1 / 2017-11-22
+==================
+
+  * bugfix for a setTimeout() or setSystemTime() within a nextTick() call. (#145)
+
 v2.3.0 / 2017-11-08
 ==================
 
