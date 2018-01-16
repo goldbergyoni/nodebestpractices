@@ -661,10 +661,69 @@ null == undefined   // true
 ## Our contributors are working on this section. Would you like to join?
 
 
-<br/><br/><br/>
+<br/><br/>
+
+# Milestones
+To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/i0natan/nodebestpractices/milestones) and join the working groups if you want to contribute to this project.
+
+<br/><br/>
+
 # Contributors
 ## `Yoni Goldberg`
-Developer & consultant, Backend expert, JavaScript enthusiast, focused on Node.JS. Many of the bullets was first published on his blog post [http://www.goldbergyoni.com](http://www.goldbergyoni.com)
+Independent Node.JS consultant who works with customers at USA, Europe and Israel on building large-scale scalable Node applications. Many of the best practices above were first published on his blog post at [http://www.goldbergyoni.com](http://www.goldbergyoni.com). Reach Yoni at @goldbergyoni or me@goldbergyoni.com
 
 ## `Ido Richter`
 👨‍💻 Software engineer, 🌐 web developer, 🤖 emojis enthusiast.
+
+## `Refael Ackermann` [@refack](https://github.com/refack) &lt;refack@gmail.com&gt; (he/him)
+Node.js Core Collaborator, been noding since 0.4, and have noded in multiple production sites. Founded `node4good` home of [`lodash-contrib`](https://github.com/node4good/lodash-contrib), [`formage`](https://github.com/node4good/formage), and [`asynctrace`](https://github.com/node4good/asynctrace). 
+`refack` on freenode, Twitter, GitHub, GMail, and many other platforms. DMs are open, happy to help.
+
+## `Bruno Scheufler` 
+💻 full-stack web developer and Node.js enthusiast.
+
+
+<br/><br/>
+
+# Thank You Notes
+
+This repository is being kept up to date thanks to the help from the community. We appreciate any contribution, from a single word fix to a new best practice. Below is a list of everyone who contributed to this project. A :sunflower: marks a successful pull request and a :star: marks an approved new best practice.
+
+🌻 [Kevin Rambaud](https://github.com/kevinrambaud), 
+🌻 [Michael Fine](https://github.com/mfine15), 
+🌻 [Shreya Dahal](https://github.com/squgeim), 
+🌻 [ChangJoo Park](https://github.com/ChangJoo-Park), 
+🌻 [Matheus Cruz Rocha](https://github.com/matheusrocha89), 
+🌻 [Yog Mehta](https://github.com/BitYog), 
+🌻 [Kudakwashe Paradzayi](https://github.com/kudapara), 
+🌻 [t1st3](https://github.com/t1st3), 
+🌻 [mulijordan1976](https://github.com/mulijordan1976), 
+🌻 [Matan Kushner](https://github.com/matchai), 
+🌻 [Fabio Hiroki](https://github.com/fabiothiroki), 
+🌻 [James Sumners](https://github.com/jsumners), 
+🌻 [Chandan Rai](https://github.com/crowchirp), 
+🌻 [Dan Gamble](https://github.com/dan-gamble), 
+🌻 [PJ Trainor](https://github.com/trainorpj), 
+🌻 [Remek Ambroziak](https://github.com/reod), 
+🌻 [Yoni Jah](https://github.com/yonjah), 
+🌻 [Misha Khokhlov](https://github.com/hazolsky), 
+🌻 [Evgeny Orekhov](https://github.com/EvgenyOrekhov), 
+🌻 [Gediminas Petrikas](https://github.com/gediminasml), 
+🌻 [Isaac Halvorson](https://github.com/hisaac), 
+🌻 [Vedran Karačić](https://github.com/vkaracic), 
+🌻 [lallenlowe](https://github.com/lallenlowe), 
+🌻 [Nathan Wells](https://github.com/nwwells), 
+🌻 [Paulo Vítor S Reis](https://github.com/paulovitin), 
+🌻 [syzer](https://github.com/syzer),
+🌻 [David Sancho](https://github.com/davesnx),
+🌻 [Robert Manolea](https://github.com/pupix),
+🌻 [Xavier Ho](https://github.com/spaxe),
+🌻 [Aaron Arney](https://github.com/ocularrhythm),
+🌻 [Jan Charles Maghirang Adona](https://github.com/septa97),
+🌻 [Allen Fang](https://github.com/AllenFang)
+
+
+
+
+<br/><br/>
+## :star: No Stars Yet, Waiting For The First To Suggest a New Bullet 
