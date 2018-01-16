@@ -18,30 +18,30 @@
  <br/>
 
 # 欢迎! 首先您应该知道的三件事情:
-**1. 当您读到这里，实际上您读了很多关于Node.JS的优秀文章 -** 这里是关于Node JS 最佳实践的优质内容的总结和管理
+**1. 当您读到这里，实际上您读了很多关于Node.JS的优秀文章 -** 这是对Node JS 最佳实践中排名最高的内容的总结和分享
 
-**2. 这里是最大的汇集，且每周都在增长 -** 当前，超过50个最佳实现，样式指南，架构建议已经呈现。我们欢迎议题和PR使这本在线书籍不断更新。我们也乐于见到您能在这里做出贡献，不管是修复一些代码的错误，或是建议卓越的新想法 - 作为Node.JS最佳实践这本书中的一部分
+**2. 这里是最大的汇集，且每周都在增长 -** 当前，超过50个最佳实现，样式指南，架构建议已经呈现。每天都有新的issue和PR被创建，以使这本在线书籍不断更新。我们很乐于见到您能在这里做出贡献，不管是修复一些代码的错误，或是提出绝妙的新想法。请查看我们的[milestones](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
 
 **3. 大部分的条目包含额外的信息 -** 大部分的最佳实践条目的旁边，您将发现 **🔗Read More** 链接，它将呈现给您示例代码，博客引用和更多信息
 
 <br/><br/><br/>
 
 ## 目录
-1. [项目结构实践 (5)](#1-project-structure-practices)
+1. [项目结构实践 (5) ](#1-project-structure-practices)
 2. [异常处理实践 (11) ](#2-error-handling-practices)
 3. [编码规范实践 (12) ](#3-code-style-practices)
 4. [测试和总体质量实践 (8) ](#4-testing-and-overall-quality-practices)
-5. [Going To Production Practices (16) ](#5-going-to-production-practices)
-6. Security Practices (coming soon)
-7. Performance Practices (coming soon)
+5. [进入生产实践 (16) ](#5-going-to-production-practices)
+6. Security Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
+7. Performance Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 
 
 <br/><br/><br/>
 # `1. 项目结构实践`
 
-## ![✔] 1.1 组件式构建你的解决方案Structure your solution by components
+## ![✔] 1.1 组件式构建你的解决方案
 
- **TL;DR:** 最大的项目隐患就是维护一个巨大的，含有几百个依赖的代码库 - 当开发人员准备整合新的需求的时候，这样一个庞然大物势必减缓了开发效率。反之，把您的代码拆分成组件，每一个组件有它自己的文件夹和代码库，并且确保每一个组件小而简单。查看正确的项目结构的例子请访问下面的 ‘更多’ 链接。
+ **TL;DR:** 最坏的大型项目的隐患就是维护一个庞大的，含有几百个依赖的代码库 - 当开发人员准备整合新的需求的时候，这样一个庞然大物势必减缓了开发效率。反之，把您的代码拆分成组件，每一个组件有它自己的文件夹和代码库，并且确保每一个组件小而简单。查看正确的项目结构的例子请访问下面的 ‘更多’ 链接。
 
 **否则:** 当编写新需求的开发人员逐步意识到他所做改变的影响，并担心会破坏其他的依赖模块 - 部署会变得更慢，风险更大。当所有业务逻辑没有被分开，这也会被认为很难扩展
 
@@ -55,7 +55,7 @@
 
 **否则:** 对于混淆了网络层和其它层的应用，将不易于测试，执行CRON的任务，其它非-Express的调用者无法使用
 
-🔗 [**更多: 应用分层**](/sections/projectstructre/createlayers.md)
+🔗 [**更多: 应用分层**](/sections/projectstructre/createlayers.chinese.md)
 
 <br/><br/>
 
@@ -65,17 +65,17 @@
 
 **否则:** 您将不得不重造部署和依赖的轮子
 
-🔗 [**更多: 通过需求构建**](/sections/projectstructre/wraputilities.md)
+🔗 [**更多: 通过需求构建**](/sections/projectstructre/wraputilities.chinese.md)
 
 <br/><br/>
 
 ## ![✔] 1.4 分离 Express 'app' and 'server'
 
-**TL;DR:** 避免定义整个[Express](https://expressjs.com/)应用在一个单独的大文件的不好习惯 - 分离您的 'Express' 定义至少在两个文件中： API声明(app.js) 和 网络相关(WWW)。对于更好的结构，是把你的API声明放在组件中。
+**TL;DR:** 避免定义整个[Express](https://expressjs.com/)应用在一个单独的大文件里， 这是一个不好的习惯 - 分离您的 'Express' 定义至少在两个文件中： API声明(app.js) 和 网络相关(WWW)。对于更好的结构，是把你的API声明放在组件中。
 
 **否则:** 您的API将只能通过HTTP的调用进行测试（慢，并且很难产生测试覆盖报告）。维护一个有着上百行代码的文件也不是一个令人开心的事情。
 
-🔗 [**更多: 分离 Express 'app' and 'server'**](/sections/projectstructre/separateexpress.md)
+🔗 [**更多: 分离 Express 'app' and 'server'**](/sections/projectstructre/separateexpress.chinese.md)
 
 <br/><br/>
 
@@ -85,22 +85,22 @@
 **TL;DR:** 一个完美无瑕的配置安装应该确保 (a) 元素可以从文件中，也可以从环境变量中读取 (b) 密码排除在提交的代码之外 (c) 为了易于检索，配置是分级的。仅有几个包可以满足这样的条件，比如[nconf](https://www.npmjs.com/package/nconf) 和 [config](https://www.npmjs.com/package/config)。
 
 **否则:** 不能满足任意的配置要求将会使开发，运维团队，或者两者，易于陷入泥潭。
-🔗 [**更多: 配置最佳实践**](/sections/projectstructre/configguide.md)
 
+🔗 [**更多: 配置最佳实践**](/sections/projectstructre/configguide.chinese.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
 # `2. 错误处理最佳实践`
 
 ## ![✔] 2.1  使用 Async-Await 和 promises 用于异步错误处理
 
-**TL;DR:** 使用回调的方式处理异步错误可能是导致灾难的最快的方式(a.k.a the pyramid of doom)。对您的代码来说，最好的礼物就是使用规范的promise库或async-await来替代，这会使其像try-catch一样更加简洁，熟悉的代码结构。 
+**TL;DR:** 使用回调的方式处理异步错误可能是导致灾难的最快的方式(a.k.a the pyramid of doom)。对您的代码来说，最好的礼物就是使用规范的promise库或async-await来替代，这会使其像try-catch一样更加简洁，具有熟悉的代码结构。 
 
 **否则:** Node.JS 回调特性, function(err, response), 是导致不可维护代码的一个必然的方式。究其原因，是由于混合了随意的错误处理代码，臃肿的内嵌，蹩脚的代码模式。
 
-🔗 [**更多: 避免回调**](/sections/errorhandling/asyncerrorhandling.md)
+🔗 [**更多: 避免回调**](/sections/errorhandling/asyncerrorhandling.chinese.md)
 
 <br/><br/>
 
@@ -111,7 +111,7 @@
 
 **否则:** 调用某些模块，将不确定哪种错误类型会返回 - 这将会使恰当的错误处理更加困难。更坏的情况是，使用特定的类型描述错误，会导致重要的错误信息缺失，比如stack trace！
 
-🔗 [**更多: 使用内建错误对象**](/sections/errorhandling/useonlythebuiltinerror.md)
+🔗 [**更多: 使用内建错误对象**](/sections/errorhandling/useonlythebuiltinerror.chinese.md)
 
 <br/><br/>
 
@@ -121,7 +121,7 @@
 
 **否则:** 当一个错误产生的时候，您总是得重启应用，但为什么要让 ~5000 个在线用户不能访问，仅仅是因为一个细微的，可以预测的，运行时错误？相反的方案，也不完美 – 当未知的问题（程序问题）产生的时候，使应用依旧可以访问，可能导致不可预测行为。区分两者会使处理更有技巧，并在给定的上下文下给出一个平衡的对策。
 
-🔗 [**更多: 运行错误和程序设计错误**](/sections/errorhandling/operationalvsprogrammererror.md)
+🔗 [**更多: 运行错误和程序设计错误**](/sections/errorhandling/operationalvsprogrammererror.chinese.md)
 
 <br/><br/>
 
@@ -131,17 +131,18 @@
 
 **否则:** 错误处理的逻辑不放在一起将会导致代码重复和非常可能不恰当的错误处理。
 
-🔗 [**更多: 集中处理错误**](/sections/errorhandling/centralizedhandling.md)
+🔗 [**更多: 集中处理错误**](/sections/errorhandling/centralizedhandling.chinese.md)
 
 <br/><br/>
 
 ## ![✔] 2.5 对API错误使用Swagger文档化
 
 **TL;DR:** 让你的API调用者知道哪种错误会返回，这样他们就能完全的处理这些错误，而不至于系统崩溃。Swagger，REST API的文档框架，通常处理这类问题。
+
 **否则:** 任何API的客户端可能决定崩溃并重启，仅仅因为它收到一个不能处理的错误。注意：API的调用者可能是你（在微服务环境中非常典型）。
 
 
-🔗 [**更多: 使用Swagger记录错误**](/sections/errorhandling/documentingusingswagger.md)
+🔗 [**更多: 使用Swagger记录错误**](/sections/errorhandling/documentingusingswagger.chinese.md)
 
 <br/><br/>
 
@@ -151,7 +152,7 @@
 
 **否则:** 当一个未知的异常被抛出，意味着某些对象包含错误的状态（例如某个全局事件发生器由于某些内在的错误，不在产生事件），未来的请求可能失败或者行为异常。
 
-🔗 [**更多: 停掉服务**](/sections/errorhandling/shuttingtheprocess.md)
+🔗 [**更多: 停掉服务**](/sections/errorhandling/shuttingtheprocess.chinese.md)
 
 <br/><br/>
 
@@ -163,7 +164,7 @@
 
 **否则:** 浏览console的log，和不通过查询工具或者一个好的日志查看器，手动浏览繁琐的文本文件，会使你忙于工作到很晚。
 
-🔗 [**更多: 使用好用的日志工具**](/sections/errorhandling/usematurelogger.md)
+🔗 [**更多: 使用好用的日志工具**](/sections/errorhandling/usematurelogger.chinese.md)
 
 
 <br/><br/>
@@ -176,7 +177,7 @@
 **否则:** 没有测试，不管自动还是手动，您不可能依赖代码去返回正确的错误。而没有可以理解的错误，那将毫无错误处理可言。
 
 
-🔗 [**更多: 测试错误流向**](/sections/errorhandling/testingerrorflows.md)
+🔗 [**更多: 测试错误流向**](/sections/errorhandling/testingerrorflows.chinese.md)
 
 <br/><br/>
 
@@ -187,7 +188,7 @@
 **否则:** 您花了很多的力气在测量API的性能和错误，但可能您从来没有意识到真实场景下您最慢的代码块和他们对UX的影响。
 
 
-🔗 [**更多: 使用APM产品**](/sections/errorhandling/apmproducts.md)
+🔗 [**更多: 使用APM产品**](/sections/errorhandling/apmproducts.chinese.md)
 
 <br/><br/>
 
@@ -199,7 +200,7 @@
 **否则:** 您的错误将被回收，无踪迹可循。没有什么可以需要考虑。
 
 
-🔗 [**更多: 捕获未处理的promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.md)
+🔗 [**更多: 捕获未处理的promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.chinese.md)
 
 <br/><br/>
 
@@ -209,11 +210,11 @@
 
 **否则:** 考虑这种情况 – 您的功能期望一个数字参数 “Discount” ，然而调用者忘记传值，之后在您的代码中检查是否 Discount!=0 （允许的折扣值大于零），这样它将允许用户使用一个折扣。OMG，多么不爽的一个漏洞。你能明白吗？
 
-🔗 [**更多: 快速查错**](/sections/errorhandling/failfast.md)
+🔗 [**更多: 快速查错**](/sections/errorhandling/failfast.chinese.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
 # `3. 编码风格实践`
 
@@ -267,7 +268,7 @@
 
 ## ![✔] 3.5 命名您的方法
 
-**TL;DR:** 命名所有的方法，包含闭包和回调。避免匿名方法。当剖析一个node应用的时候，这是特别有用的。命名所有的方法将会使您非常容易的理解内存快照中您正在查看的内容。
+**TL;DR:** 命名所有的方法，包含闭包和回调, 避免匿名方法。当剖析一个node应用的时候，这是特别有用的。命名所有的方法将会使您非常容易的理解内存快照中您正在查看的内容。
 
 **否则:** 使用一个核心dump（内存快照）调试线上问题，会是一项非常挑战的事项，因为你注意到的严重内存泄漏问题极有可能产生于匿名的方法。
 
@@ -275,7 +276,7 @@
 
 ## ![✔] 3.6 变量、常量、函数和类的命名约定
 
-**TL;DR:** 当命名变量和方法的时候，使用 ***lowerCamelCase*** ， 当命名类的时候，使用***UpperCamelCase*** （首字母大写），对于常量，则***UPPERCASE***。这将帮助您轻松地区分普通变量/函数和需要实例化的类。使用描述性名称，但使它们尽量简短。
+**TL;DR:** 当命名变量和方法的时候，使用 ***lowerCamelCase*** ，当命名类的时候，使用 ***UpperCamelCase*** （首字母大写），对于常量，则 ***UPPERCASE*** 。这将帮助您轻松地区分普通变量/函数和需要实例化的类。使用描述性名称，但使它们尽量简短。
 
 **否则:** JavaScript是世界上唯一一门不需要实例化，就可以直接调用构造函数（"Class"）的编码语言。因此，类和函数的构造函数由采用UpperCamelCase开始区分。
 
@@ -310,7 +311,7 @@
 
 <br/><br/>
 
-## ![✔] 3.8 Requires come first, and not inside functions
+## ![✔] 3.8 先require, 而不是在方法内部
 
 **TL;DR:** 在每个文件的起始位置，在任何函数的前面和外部 require 模块。这种简单的最佳实践，不仅能帮助您轻松快速地在文件顶部辨别出依赖关系，而且避免了一些潜在的问题。
 
@@ -321,8 +322,7 @@
 ## ![✔] 3.9 在文件夹上 require ，而不是直接在文件上
 
 **TL;DR:** 当在一个文件夹中开发库/模块，放置一个文件index.js暴露模块的
-内部，这样每个消费者都会通过它。这将作为您模块的一个接口，并使
-未来的变化简单而不违反规则。
+内部，这样每个消费者都会通过它。这将作为您模块的一个接口，并使未来的变化简单而不违反规则。
 
 **否则:** 更改文件内部结构或签名可能会破坏与客户端的接口。
 
@@ -367,7 +367,7 @@ null == undefined   // true
 
 ## ![✔] 3.11 使用 Async Await, 避免回调
 
-**TL;DR:** Node 8 LTS现已全面支持异步等待。这是一种新的方式处理异步请求，取代回调和promise。Async-await是非阻塞的，它使异步代码看起来像是同步的。你可以给你的代码的最好的礼物是用async-await提供了一个更紧凑的，熟悉的，类似try catch的代码语法。
+**TL;DR:** Node 8 LTS现已全面支持异步等待。这是一种新的方式处理异步请求，取代回调和promise。Async-await是非阻塞的，它使异步代码看起来像是同步的。您可以给你的代码的最好的礼物是用async-await提供了一个更紧凑的，熟悉的，类似try catch的代码语法。
 
 **否则:** 使用回调的方式处理异步错误可能是陷入困境最快的方式 - 这种方式必须面对不停地检测错误，处理别扭的代码内嵌，难以推理编码流。
 
@@ -381,12 +381,12 @@ null == undefined   // true
 
 **否则:** 更长的代码（在ES5方法中）更易于产生缺陷，并读起来很是笨重。
 
-🔗 [**更多: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
+🔗 [**更多: 这是拥抱箭头函数的时刻**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
 
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
 
 # `4. 测试和总体的质量实践`
@@ -414,7 +414,7 @@ null == undefined   // true
 
 **否则:** 一旦您需要一些高级定制，选择一些细分市场供应商可能会让您停滞不前。另一方面，伴随着jenkins，可能会在基础设施设置上浪费宝贵的时间。
 
-🔗 [**更多: 挑选 CI 平台**](/sections/testingandquality/citools.md)
+🔗 [**更多: 挑选 CI 平台**](/sections/testingandquality/citools.chinese.md)
 
 <br/><br/>
 
@@ -422,7 +422,7 @@ null == undefined   // true
 
 **TL;DR:** 即使是那些最有名的依赖模块，比如Express，也有已知的漏洞。使用社区和商业工具，比如 🔗 [nsp](https://github.com/nodesecurity/nsp) ，集成在您的CI平台上，在每一次构建的时候都会被调用，这样可以很容易地解决漏洞问题。
 
-**否则:** 在没有专用工具的情况下，使代码清除漏洞，需要不断地跟踪有关新威胁的在线出版物。相当繁琐。
+**否则:** 在没有专用工具的情况下，使代码清除漏洞，需要不断地跟踪有关新威胁的在线出版物，相当繁琐。
 
 <br/><br/>
 
@@ -444,11 +444,11 @@ null == undefined   // true
 
 <br/><br/>
 
-## ![✔] 4.7 Inspect for outdated packages
+## ![✔] 4.7 检查过期的依赖包
 
-**TL;DR:** Use your preferred tool (e.g. 'npm outdated' or [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) to detect installed packages which are outdated, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a severe scenario might be when an installed package is 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
+**TL;DR:** 使用您的首选工具 (例如 “npm outdated” or [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) 来检测已安装的过期依赖包, 将此检查注入您的 CI 管道, 甚至在严重的情况下使构建失败。例如, 当一个已安装的依赖包滞后5个补丁时 (例如:本地版本是1.3.1 的, 存储库版本是1.3.8 的), 或者它被其作者标记为已弃用, 可能会出现严重的情况 - 停掉这次构建并防止部署此版本。
 
-**Otherwise:** Your production will run packages that have been explicitly tagged by their author as risky
+**否则:** 您的生产环境将运行已被其作者明确标记为有风险的依赖包
 
 <br/><br/>
 
@@ -462,7 +462,7 @@ null == undefined   // true
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
 # `5. 上线实践`
 ## ![✔] 5.1. 监控!
@@ -472,18 +472,18 @@ null == undefined   // true
 **否则:** 错误 === 失望的客户. 非常简单.
 
 
-🔗 [**更多: 监控!**](/sections/production/monitoring.md)
+🔗 [**更多: 监控!**](/sections/production/monitoring.chinese.md)
 
 <br/><br/>
 
-## ![✔] 5.2. 使用智能日志增加透明度Increase transparency using smart logging
+## ![✔] 5.2. 使用智能日志增加透明度
 
 **TL;DR:** 日志可以是调试语句的一个不能说话的仓库，或者表述应用运行过程的一个漂亮仪表板的驱动。从第1天计划您的日志平台：如何收集、存储和分析日志，以确保所需信息（例如，错误率、通过服务和服务器等完成整个事务）都能被提取出来。
 
 **否则:** 您最终像是面对一个黑盒，不知道发生了什么事情，然后你开始重新写日志语句添加额外的信息。
 
 
-🔗 [**更多: Increase transparency using smart logging**](/sections/production/smartlogging.md)
+🔗 [**更多: 使用智能日志增加透明度**](/sections/production/smartlogging.chinese.md)
 	
 <br/><br/>
 
@@ -494,7 +494,7 @@ null == undefined   // true
 **否则:** 单线程的node服务器将不幸地忙于处理网络任务，而不是处理应用程序核心，性能会相应降低。
 
 
-🔗 [**更多: 委托一切可能的（例如：gzip，SSL）给反向代理**](/sections/production/delegatetoproxy.md)
+🔗 [**更多: 委托一切可能的（例如：gzip，SSL）给反向代理**](/sections/production/delegatetoproxy.chinese.md)
 
 <br/><br/>
 
@@ -505,7 +505,7 @@ null == undefined   // true
 **否则:** QA测试通过的代码和批准的版本，在生产中表现不一致。更糟糕的是，同一生产集群中的不同服务器可能运行不同的代码。
 
 
-🔗 [**更多: 锁住依赖**](/sections/production/lockdependencies.md)
+🔗 [**更多: 锁住依赖**](/sections/production/lockdependencies.chinese.md)
 
 <br/><br/>
 
@@ -516,7 +516,7 @@ null == undefined   // true
 **否则:** 运行几十个实例没有明确的战略和太多的工具（集群管理，docker，PM2）可能导致一个DevOps混乱
 
 
-🔗 [**更多: 使用正确的工具保护进程正常运行**](/sections/production/guardprocess.md)
+🔗 [**更多: 使用正确的工具保护进程正常运行**](/sections/production/guardprocess.chinese.md)
 
  
 <br/><br/>
@@ -528,7 +528,7 @@ null == undefined   // true
 **否则:** 您的应用可能只是使用了其可用资源中的25% (!)，甚至更少。注意，一台典型的服务器有4个或更多的CPU，默认的Node.JS部署仅仅用了一个CPU（甚至使用PaaS服务，比如AWS beanstalk，也一样）。
 
 
-🔗 [**更多: 利用所有的CPU**](/sections/production/utilizecpu.md)
+🔗 [**更多: 利用所有的CPU**](/sections/production/utilizecpu.chinese.md)
 
 <br/><br/>
 
@@ -536,10 +536,10 @@ null == undefined   // true
 
 **TL;DR:** 在一个安全的API中暴露一组系统相关的信息，比如内存使用情况和REPL等等。尽管这里强烈建议依赖标准和作战测试工具，但一些有价值的信息和操作更容易使用代码完成。
 
-**否则:** 您会发现，您正在执行许多“诊断部署” — 将代码发送到生产中，仅仅只为了诊断目的提取一些信息。
+**否则:** 您会发现，您正在执行许多“诊断部署” – 将代码发送到生产中，仅仅只为了诊断目的提取一些信息。
 
 
-🔗 [**更多: 创建一个 ‘维护端点’ **](/sections/production/createmaintenanceendpoint.md)
+🔗 [**更多: 创建一个 '维护端点'**](/sections/production/createmaintenanceendpoint.chinese.md)
 
 <br/><br/>
 
@@ -550,7 +550,7 @@ null == undefined   // true
 **否则:** 你可能会花大力气测量API性能和停机时间，也许你永远不会知道，真实场景下哪个是你最慢的代码部分，这些怎么影响用户体验。
 
 
-🔗 [**更多: 使用APM产品发现错误和宕机时间**](/sections/production/apmproducts.md)
+🔗 [**更多: 使用APM产品发现错误和宕机时间**](/sections/production/apmproducts.chinese.md)
 
 
 <br/><br/>
@@ -563,7 +563,7 @@ null == undefined   // true
 **否则:** 一个世界冠军级别的IT/运维人员也不能拯救一个编码低劣的系统。
 
 
-🔗 [**更多: 使您的代码保持生产环境就绪**](/sections/production/productoncode.md)
+🔗 [**更多: 使您的代码保持生产环境就绪**](/sections/production/productoncode.chinese.md)
 
 <br/><br/>
 
@@ -574,7 +574,7 @@ null == undefined   // true
 **否则:** 您的内存可能一天泄漏一百兆，就像曾发生在沃尔玛的一样。
 
 
-🔗 [**更多: 测量和保护内存使用**](/sections/production/measurememory.md)
+🔗 [**更多: 测量和保护内存使用**](/sections/production/measurememory.chinese.md)
 
 <br/><br/>
 
@@ -586,7 +586,7 @@ null == undefined   // true
 **否则:** 您的单个node线程将忙于传输成百上千的html/图片/angular/react文件，而不是分配其所有的资源为了其擅长的任务 – 服务动态内容
 
 
-🔗 [**更多: Node外管理您的前端资源**](/sections/production/frontendout.md)
+🔗 [**更多: Node外管理您的前端资源**](/sections/production/frontendout.chinese.md)
 
 <br/><br/>
 
@@ -598,7 +598,7 @@ null == undefined   // true
 **否则:** 某个服务器上的故障将导致应用程序宕机，而不仅仅是停用故障机器。此外，由于依赖特定服务器，伸缩弹性会变得更具挑战性。
 
 
-🔗 [**Read More: 保持无状态，几乎每天都要停下服务器**](/sections/production/bestateless.md)
+🔗 [**更多: 保持无状态，几乎每天都要停下服务器**](/sections/production/bestateless.chinese.md)
 
 
 <br/><br/>
@@ -611,7 +611,7 @@ null == undefined   // true
 **否则:** 否则: 在没有专用工具的情况下，使代码清除漏洞，需要不断地跟踪有关新威胁的在线出版物。相当繁琐。
 
 
-🔗 [**更多: 使用自动检测漏洞的工具**](/sections/production/detectvulnerabilities.md)
+🔗 [**更多: 使用自动检测漏洞的工具**](/sections/production/detectvulnerabilities.chinese.md)
 
 <br/><br/>
 
@@ -623,7 +623,7 @@ null == undefined   // true
 **否则:** 在没有上下文的情况下查看生产错误日志，这会使问题变得更加困难和缓慢去解决。
 
 
-🔗 [**更多: 在每一个log语句中指明 ‘TransactionId’**](/sections/production/assigntransactionid.md)
+🔗 [**更多: 在每一个log语句中指明 ‘TransactionId’**](/sections/production/assigntransactionid.chinese.md)
 
 <br/><br/>
 
@@ -635,7 +635,7 @@ null == undefined   // true
 **否则:** 遗漏这个简单的属性可能大幅减弱性能。例如，在使用Express作为服务端渲染页面的时候，如果未设置NODE_ENV，性能将会减慢大概三分之一！
 
 
-🔗 [**更多: 设置NODE_ENV=production**](/sections/production/setnodeenv.md)
+🔗 [**更多: 设置NODE_ENV=production**](/sections/production/setnodeenv.chinese.md)
 
 
 <br/><br/>
@@ -649,7 +649,7 @@ null == undefined   // true
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
 # `Security Practices`
 
@@ -661,10 +661,69 @@ null == undefined   // true
 ## Our contributors are working on this section. Would you like to join?
 
 
-<br/><br/><br/>
+<br/><br/>
+
+# Milestones
+To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/i0natan/nodebestpractices/milestones) and join the working groups if you want to contribute to this project.
+
+<br/><br/>
+
 # Contributors
 ## `Yoni Goldberg`
-Developer & consultant, Backend expert, JavaScript enthusiast, focused on Node.JS. Many of the bullets was first published on his blog post [http://www.goldbergyoni.com](http://www.goldbergyoni.com)
+Independent Node.JS consultant who works with customers at USA, Europe and Israel on building large-scale scalable Node applications. Many of the best practices above were first published on his blog post at [http://www.goldbergyoni.com](http://www.goldbergyoni.com). Reach Yoni at @goldbergyoni or me@goldbergyoni.com
 
 ## `Ido Richter`
 👨‍💻 Software engineer, 🌐 web developer, 🤖 emojis enthusiast.
+
+## `Refael Ackermann` [@refack](https://github.com/refack) &lt;refack@gmail.com&gt; (he/him)
+Node.js Core Collaborator, been noding since 0.4, and have noded in multiple production sites. Founded `node4good` home of [`lodash-contrib`](https://github.com/node4good/lodash-contrib), [`formage`](https://github.com/node4good/formage), and [`asynctrace`](https://github.com/node4good/asynctrace). 
+`refack` on freenode, Twitter, GitHub, GMail, and many other platforms. DMs are open, happy to help.
+
+## `Bruno Scheufler` 
+💻 full-stack web developer and Node.js enthusiast.
+
+
+<br/><br/>
+
+# Thank You Notes
+
+This repository is being kept up to date thanks to the help from the community. We appreciate any contribution, from a single word fix to a new best practice. Below is a list of everyone who contributed to this project. A :sunflower: marks a successful pull request and a :star: marks an approved new best practice.
+
+🌻 [Kevin Rambaud](https://github.com/kevinrambaud), 
+🌻 [Michael Fine](https://github.com/mfine15), 
+🌻 [Shreya Dahal](https://github.com/squgeim), 
+🌻 [ChangJoo Park](https://github.com/ChangJoo-Park), 
+🌻 [Matheus Cruz Rocha](https://github.com/matheusrocha89), 
+🌻 [Yog Mehta](https://github.com/BitYog), 
+🌻 [Kudakwashe Paradzayi](https://github.com/kudapara), 
+🌻 [t1st3](https://github.com/t1st3), 
+🌻 [mulijordan1976](https://github.com/mulijordan1976), 
+🌻 [Matan Kushner](https://github.com/matchai), 
+🌻 [Fabio Hiroki](https://github.com/fabiothiroki), 
+🌻 [James Sumners](https://github.com/jsumners), 
+🌻 [Chandan Rai](https://github.com/crowchirp), 
+🌻 [Dan Gamble](https://github.com/dan-gamble), 
+🌻 [PJ Trainor](https://github.com/trainorpj), 
+🌻 [Remek Ambroziak](https://github.com/reod), 
+🌻 [Yoni Jah](https://github.com/yonjah), 
+🌻 [Misha Khokhlov](https://github.com/hazolsky), 
+🌻 [Evgeny Orekhov](https://github.com/EvgenyOrekhov), 
+🌻 [Gediminas Petrikas](https://github.com/gediminasml), 
+🌻 [Isaac Halvorson](https://github.com/hisaac), 
+🌻 [Vedran Karačić](https://github.com/vkaracic), 
+🌻 [lallenlowe](https://github.com/lallenlowe), 
+🌻 [Nathan Wells](https://github.com/nwwells), 
+🌻 [Paulo Vítor S Reis](https://github.com/paulovitin), 
+🌻 [syzer](https://github.com/syzer),
+🌻 [David Sancho](https://github.com/davesnx),
+🌻 [Robert Manolea](https://github.com/pupix),
+🌻 [Xavier Ho](https://github.com/spaxe),
+🌻 [Aaron Arney](https://github.com/ocularrhythm),
+🌻 [Jan Charles Maghirang Adona](https://github.com/septa97),
+🌻 [Allen Fang](https://github.com/AllenFang)
+
+
+
+
+<br/><br/>
+## :star: No Stars Yet, Waiting For The First To Suggest a New Bullet 

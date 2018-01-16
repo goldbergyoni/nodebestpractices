@@ -9,21 +9,24 @@
 
 您的最佳解决方案可能是以下形式之一:
 1. 反向代理 – 您的静态文件将位于您的node应用的旁边, 只有对静态文件文件夹的请求才会由位于您的node应用前面的代理 (如 nginx) 提供服务。使用这种方法, 您的node应用负责部署静态文件, 而不是为它们提供服务。你的前端的同事会喜欢这种方法, 因为它可以防止 cross-origin-requests 的前端请求。
-2. 云存储 – 您的静态文件将不会是您的node应用内容的一部分, 否则他们将被上传到服务, 如 AWS S3, Azure BlobStorage, 或其他类似的服务, 这些服务为这个任务而生。使用这种方法, 您的node应用即不负责部署静态文件, 也不为它们服务, 因此, 在node和前端资源之间完全解耦, 这是由不同的团队处理。
+2. 云存储 – 您的静态文件将不会是您的node应用内容的一部分, 他们将被上传到服务, 如 AWS S3, Azure BlobStorage, 或其他类似的服务, 这些服务为这个任务而生。使用这种方法, 您的node应用即不负责部署静态文件, 也不为它们服务, 因此, 在node和前端资源之间完全解耦, 这是由不同的团队处理。
 
 <br/><br/>
 
 
 ### 代码示例: 对于静态文件，典型的nginx配置
 
-```javascript
+```
+# configure gzip compression
 gzip on;
-#defining gzip compression
 keepalive 64;
-}#defining web server
+
+# defining web server
 server {
 listen 80;
-listen 443 ssl;#handling static content
+listen 443 ssl;
+
+# handle static content
 location ~ ^/(images/|img/|javascript/|js/|css/|stylesheets/|flash/|media/|static/|robots.txt|humans.txt|favicon.ico) {
 root /usr/local/silly_face_society/node/public;
 access_log off;
