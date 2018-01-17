@@ -1,8 +1,6 @@
 class OrderService {
 
     add(order) {
-        if (!order)
-            throw new Error("Bad boy!")
 
         if (!order)
             throw new Error("Bad boy!")

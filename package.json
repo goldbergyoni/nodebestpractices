@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/i0natan/nodebestpractices#readme",
   "dependencies": {
+    "sanitize-html": "^1.11.1",
     "axios": "^0.17.1",
     "body-parser": "1.18.2",
     "clarifai": "^2.5.0",

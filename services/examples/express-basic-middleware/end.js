@@ -13,19 +13,25 @@ app.use(bodyParser.json());
 
 var router = express.Router();
 
+
+//upstream middleware: before API endpoint
 app.use((req, res, next) => {
-  console.log(`New request arrived ${req.url}`);
+  console.log(`Upstream middleware -> I'm about to log a new request  ${req.url}`);
   next();
 });
 
-app.use((req, res, next) => {
-  res.removeHeader("X-Powered-By");
-  next();
-});
-
-router.post("/api/products", (req, res) => {
+//API endpoint: is aspecial kind of middleware
+router.post("/api/products", (req, res, next) => {
   console.log(`The product is ${req.body}`);
   res.json(req.body);
+  next();
 });
 
 app.use(router);
+
+//downstream middleware: after API endpoint
+app.use((req, res, next) => {
+  console.log("Downstream middleware -> I'm about to log the request success status")
+  console.log(res.statusCode);
+  next();
+});

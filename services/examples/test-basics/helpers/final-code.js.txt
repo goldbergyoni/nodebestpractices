@@ -1,0 +1,111 @@
+const express = require("express");
+const app = express();
+const orderService = require('./orderService').orderService;
+
+const port = process.env.PORT || 8080;
+app.listen(port);
+var bodyParser = require("body-parser");
+app.use(
+  bodyParser.urlencoded({
+    extended: true
+  })
+);
+app.use(bodyParser.json());
+
+var router = express.Router();
+
+router.post("/api/orders", (req, res) => {
+  console.log(`The order is ${req.body}`);
+  res.json(new orderService().add(req.body));
+});
+
+app.use(router);
+
+module.exports = app;
+
+class OrderService {
+
+    add(order) {
+
+        if (!order)
+            throw new Error("Bad boy!")
+
+        const result = order
+
+        if (order.price > 1000) {
+            result.approved = false;
+        } else {
+            result.approved = true;
+        }
+
+        new DAL().save(order);
+
+        return result;
+    }
+}
+
+class DAL{
+    save(order){
+        return new Promise((resolve, reject) => {
+            console.log('Save DAL is running now')
+            setTimeout(() => {
+                resolve(order);
+            }, 1000);
+        });
+    }
+}
+
+module.exports.orderService = OrderService;
+module.exports.orderDAL = DAL;
+
+const request = require('supertest');
+
+describe('Order Service API #hot #api', () => {
+
+    describe('Adding new', () => {
+        it('Under 1000 order, expect to be approved', () => {
+            request(require('./orderAPI'))
+                .post('/api/orders')
+                .send({
+                    price: 100
+                })
+                .expect('Content-Type', /json/)
+                .expect(200)
+                .end(function (err, res) {cls
+                });
+        })
+    });
+});
+
+const expect = require('chai').expect;
+const sinon = require('sinon');
+const orderServiceUnderTest = require('./orderService').orderService;
+const orderDAL =  require('./orderService').orderDAL;
+
+describe('Order Service', () => {
+
+    before(() => {
+        sinon.stub(orderDAL.prototype, orderDAL.prototype.save.name).callsFake((order)=>{
+            console.log('Save stub is running now')
+            return order;
+        })
+    });
+
+    describe('Adding new', () => {
+        it('Under 1000 order, expect to be approved #cold', () => {
+            const result = new orderServiceUnderTest().add({});
+            expect(result.approved).to.be.true;
+        })
+
+        it('Price is higher than 1000, expect not approved #cold', () => {
+            const result = new orderServiceUnderTest().add({
+                price: 1500
+            });
+            expect(result.approved).to.be.false;
+        })
+
+        it('Proving empty order, expect an error #hot', () => {
+            expect(new orderServiceUnderTest().add).to.throw(Error);
+        })
+    });
+});

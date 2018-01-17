@@ -3,10 +3,12 @@ module.exports = () => {
       files: [
         '**/services/examples/test-basics/orderService.js',
         '!libraries/**/node_modules/**',
-        '!**/node_modules/'
+        '!**/node_modules/',
+        '!**/helpers/',
       ],
       tests: [
-        '**/services/examples/test-basics/test.orderService.unit.js'
+        '**/services/examples/test-basics/**/test.orderService.unit.js',
+        '!**/helpers/',
       ],  
       debug: true,
       setup: function (w) {
