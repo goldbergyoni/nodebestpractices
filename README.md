@@ -32,7 +32,7 @@
 3. [Code Style Practices (12) ](#3-code-style-practices)
 4. [Testing And Overall Quality Practices (8) ](#4-testing-and-overall-quality-practices)
 5. [Going To Production Practices (16) ](#5-going-to-production-practices)
-6. Security Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
+6. [Security Best Practices](#6-security-best-practices)
 7. Performance Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 
 
@@ -654,33 +654,163 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `6. Security Practices`
+# `6. Security Best Practices`
 
 ## ![✔] 6.1. Use an ORM/ODM to prevent injection vulnerabilites
 
+**TL;DR:**
+
+**Otherwise:**
+
+
+🔗 [**Read More:**](#)
+
+<br/><br/>
+
+
 ## ![✔] 6.2. Avoid loading modules using a dynamic path
+
+**TL;DR:**
+
+**Otherwise:**
+
+
+🔗 [**Read More:**](#)
+
+<br/><br/>
+
 
 ## ![✔] 6.3. Use environment variables to store security-related data
 
+**TL;DR:**
+
+**Otherwise:**
+
+
+🔗 [**Read More:**](#)
+
+<br/><br/>
+
+
 ## ![✔] 6.4. Protect your application endpoints using security-related headers
+
+**TL;DR:**
+
+**Otherwise:**
+
+
+🔗 [**Read More:**](#)
+
+<br/><br/>
+
 
 ## ![✔] 6.5. Prevent system failures caused by invalid input
 
+**TL;DR:**
+
+**Otherwise:**
+
+
+🔗 [**Read More:**](#)
+
+<br/><br/>
+
+
 ## ![✔] 6.6. Embrace linter security rules
+
+**TL;DR:**
+
+**Otherwise:**
+
+
+🔗 [**Read More:**](#)
+
+<br/><br/>
+
 
 ## ![✔] 6.7. Hide your framework-specific headers in production
 
+**TL;DR:**
+
+**Otherwise:**
+
+
+🔗 [**Read More:**](#)
+
+<br/><br/>
+
+
 ## ![✔] 6.8. Implement revocation of API tokens
+
+**TL;DR:**
+
+**Otherwise:**
+
+
+🔗 [**Read More:**](#)
+
+<br/><br/>
+
 
 ## ![✔] 6.9. Limit concurrent requests to avoid resource overload
 
+**TL;DR:**
+
+**Otherwise:**
+
+
+🔗 [**Read More:**](#)
+
+<br/><br/>
+
+
 ## ![✔] 6.10. Don't run your application with full admin privileges
+
+**TL;DR:**
+
+**Otherwise:**
+
+
+🔗 [**Read More:**](#)
+
+<br/><br/>
+
 
 ## ![✔] 6.11. Limit the incoming request body length
 
+**TL;DR:**
+
+**Otherwise:**
+
+
+🔗 [**Read More:**](#)
+
+<br/><br/>
+
+
 ## ![✔] 6.12. Run unsafe code in a sandbox
 
+**TL;DR:**
+
+**Otherwise:**
+
+
+🔗 [**Read More:**](#)
+
+<br/><br/>
+
+
 ## ![✔] 6.13. Avoid eval statements with unsanitized inputs
+
+**TL;DR:**
+
+**Otherwise:**
+
+
+🔗 [**Read More:**](#)
+
+<br/><br/>
+
 
 ## ![✔] 6.14. Protect your application endpoints using security-related headers
 
