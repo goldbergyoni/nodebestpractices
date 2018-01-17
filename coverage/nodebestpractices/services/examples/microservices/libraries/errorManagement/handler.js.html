@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for nodebestpractices/services/examples/microservices/libraries/errorManagement/handler.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\..\..\..\index.html">All files</a> / <a href="index.html">nodebestpractices/services/examples/microservices/libraries/errorManagement</a> handler.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/28</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+const util = <span class="cstat-no" title="statement not covered" >require('util');</span>
+const logger = <span class="cstat-no" title="statement not covered" >require('logger');</span>
+const operationalErrorDecider = <span class="cstat-no" title="statement not covered" >require('./operationalErrorDecider');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >module.exports = new errorHandler();</span>
+&nbsp;
+function <span class="fstat-no" title="function not covered" >errorHandler(</span>) {
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.registerAndHandleAllErrors = <span class="fstat-no" title="function not covered" >fu</span>nction (app) {</span>
+<span class="cstat-no" title="statement not covered" >		logger.debug(`Error handler now registers to handle all errors`);</span>
+<span class="cstat-no" title="statement not covered" >		app.use(<span class="fstat-no" title="function not covered" >(e</span>rr, req, res, next) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >			logger.info(`Exception was caught by express middleware`);</span>
+<span class="cstat-no" title="statement not covered" >			this.logAndNotifyAboutError(err);</span>
+<span class="cstat-no" title="statement not covered" >    res.status(err.httpCode).json(this.getFriendlyResponse(err));</span>
+			//since this error comes from an http request, we keep the process alive by taking a risky call that the error is probably operational
+<span class="cstat-no" title="statement not covered" >      next();</span>
+		});
+<span class="cstat-no" title="statement not covered" >		process.on('uncaughtException', <span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      logger.info(`Uncaught exception was caught with the following error ${error.name}: ${error.message}`);</span>
+<span class="cstat-no" title="statement not covered" >			this.logAndNotifyAboutError(error);</span>
+<span class="cstat-no" title="statement not covered" >			this.crashIfNotOperational(error);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		process.on('unhandledRejection', <span class="fstat-no" title="function not covered" >(r</span>eason, p) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >			logger.info(`Unhandled rejection was caught for the following promise ${util.inspect(p)}`);</span>
+<span class="cstat-no" title="statement not covered" >			this.logAndNotifyAboutError(reason);</span>
+<span class="cstat-no" title="statement not covered" >			this.crashIfNotOperational(reason);</span>
+		});
+	};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.crashIfNotOperational = <span class="fstat-no" title="function not covered" >fu</span>nction(error)</span>
+	{
+<span class="cstat-no" title="statement not covered" >    if (!operationalErrorDecider.isOperationalError(error)) {</span>
+<span class="cstat-no" title="statement not covered" >			logger.info(`Error handler concluded that this error is not trusted thus exiting`);</span>
+			//process.exit(1);
+		}
+	};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.logAndNotifyAboutError = <span class="fstat-no" title="function not covered" >fu</span>nction (error) {</span>
+<span class="cstat-no" title="statement not covered" >		if (!operationalErrorDecider.isOperationalError(error))</span>
+<span class="cstat-no" title="statement not covered" >      logger.info("A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully");</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    logger.error(`Error handler is reporting a new error: ${error}`);</span>
+	};
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.getFriendlyResponse = <span class="fstat-no" title="function not covered" >fu</span>nction (error) {</span>
+<span class="cstat-no" title="statement not covered" >    return {name: error.name, message: error.message}; </span>//||error.message if comes as status code
+	};
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jan 17 2018 10:28:01 GMT+0200 (Jerusalem Standard Time)
+</div>
+</div>
+<script src="..\..\..\..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\..\..\..\sorter.js"></script>
+</body>
+</html>

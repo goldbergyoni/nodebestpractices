@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for nodebestpractices/libraries/DBAccessServices/baseDAL.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">nodebestpractices/libraries/DBAccessServices</a> baseDAL.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/119</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/66</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/30</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/117</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">﻿'use strict';
+&nbsp;
+const dbAccess = <span class="cstat-no" title="statement not covered" >require('./dbAccess'),</span>
+  joiner = <span class="cstat-no" title="statement not covered" >require('join-js').default,</span>
+  logger = <span class="cstat-no" title="statement not covered" >require('logger'),</span>
+  utils = <span class="cstat-no" title="statement not covered" >require('utils'),</span>
+  configurationManager = <span class="cstat-no" title="statement not covered" >require('configurationManager');</span>
+&nbsp;
+class BaseDAL {
+&nbsp;
+<span class="fstat-no" title="function not covered" >  co</span>nstructor() {
+<span class="cstat-no" title="statement not covered" >    this.times = {};</span>
+<span class="cstat-no" title="statement not covered" >    this.count = 0;</span>
+<span class="cstat-no" title="statement not covered" >    this.onQueryHandler = this.onQuery.bind(this);</span>
+<span class="cstat-no" title="statement not covered" >    this.onQueryResponseHandler = this.onQueryResponse.bind(this);</span>
+<span class="cstat-no" title="statement not covered" >    this.onErrorHandler = this.onError.bind(this);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ge</span>tConfig() {
+<span class="cstat-no" title="statement not covered" >    return configurationManager.database;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ge</span>t knex() { <span class="cstat-no" title="statement not covered" >return dbAccess.getInstance(this.getConfig(), this.onQueryHandler, this.onQueryResponseHandler, this.onErrorHandler); </span>}
+&nbsp;
+<span class="fstat-no" title="function not covered" >  on</span>Query(query) {
+<span class="cstat-no" title="statement not covered" >    if (process.env.debugmode) {</span>
+      const uid = <span class="cstat-no" title="statement not covered" >query.__knexQueryUid;</span>
+<span class="cstat-no" title="statement not covered" >      this.times[uid] = {</span>
+        position: this.count,
+        query,
+        startTime: new Date(),
+        finished: false,
+      };
+<span class="cstat-no" title="statement not covered" >      this.count++;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      logger.debug(`Query: ${query.sql}`);</span>
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  on</span>QueryResponse(response, obj, builder) {
+<span class="cstat-no" title="statement not covered" >    if (process.env.debugmode) {</span>
+      const uid = <span class="cstat-no" title="statement not covered" >obj.__knexQueryUid;</span>
+<span class="cstat-no" title="statement not covered" >      this.times[uid].endTime = new Date();</span>
+<span class="cstat-no" title="statement not covered" >      this.times[uid].finished = true;</span>
+&nbsp;
+      const { startTime, endTime } = <span class="cstat-no" title="statement not covered" >this.times[uid];</span>
+      const elapsedTime = <span class="cstat-no" title="statement not covered" >endTime - startTime;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      logger.debug(`Actual Query: ${builder.toString()}  (${elapsedTime.toFixed(0)} ms)`);</span>
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  on</span>Error(err) {
+ //   if (process.env.debugmode) {
+<span class="cstat-no" title="statement not covered" >      logger.error(`*********   Query error: ${err.message}`);</span>
+ //   }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ap</span>plyOrganizationConstraint(query, workspace, orgIdField = <span class="branch-0 cbranch-no" title="branch not covered" >"org_id")</span> {
+<span class="cstat-no" title="statement not covered" >    if (!workspace.isMaster)</span>
+<span class="cstat-no" title="statement not covered" >      query.where(orgIdField, workspace.organizationId);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ap</span>plyDeletedConstraint(query, stateField = <span class="branch-0 cbranch-no" title="branch not covered" >"state")</span> {
+<span class="cstat-no" title="statement not covered" >    query.andWhereRaw(`${stateField} &amp; ? = 0`, [utils.enums.State.Deleted]);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ap</span>plyDisabledConstraint(query, stateField = <span class="branch-0 cbranch-no" title="branch not covered" >"state")</span> {
+<span class="cstat-no" title="statement not covered" >    query.andWhereRaw(`${stateField} &amp; ? = 0`, [utils.enums.State.Disabled]);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ap</span>plyInvalidConstraint(query, stateField = <span class="branch-0 cbranch-no" title="branch not covered" >"state")</span> {
+<span class="cstat-no" title="statement not covered" >    query.andWhereRaw(`${stateField} &amp; ? = 0`, [utils.enums.State.Invalid]);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  as</span>ync performJoinedQuery(queryToPerform, joinMap, mapName, resultItemConstructor, onEntityFetched) {
+    const DBFlatResult = <span class="cstat-no" title="statement not covered" >await queryToPerform;</span>
+    const nestedResult = <span class="cstat-no" title="statement not covered" >await this.convertFlatDBResultToNested(DBFlatResult, joinMap, mapName, resultItemConstructor, onEntityFetched);</span>
+<span class="cstat-no" title="statement not covered" >    return nestedResult;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  fi</span>rstOrNull(inputArray) {
+<span class="cstat-no" title="statement not covered" >    return (inputArray &amp;&amp; inputArray.length === 1) ? inputArray[0] : null;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ge</span>tAliasedFieldsNames(tableName, columns, columnPrefix) {
+    let res = <span class="cstat-no" title="statement not covered" >[],</span> i = <span class="cstat-no" title="statement not covered" >0,</span> len = <span class="cstat-no" title="statement not covered" >columns.length,</span> colName;
+<span class="cstat-no" title="statement not covered" >    for (; i &lt; len; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >      colName = columns[i];</span>
+<span class="cstat-no" title="statement not covered" >      res.push(`${tableName}.${colName} as ${columnPrefix + colName}`);</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return res;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ma</span>pEntitiesToRows(entities, mappingToColumns) {
+    let result = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >    for(let i=0; i&lt;entities.length;i++)</span>
+<span class="cstat-no" title="statement not covered" >      result.push(this.mapEntityToRow(entities[i], mappingToColumns));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return result;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ma</span>pEntityToRow(entityToMap, mappingToColumns) {
+    let result = <span class="cstat-no" title="statement not covered" >{},</span> value;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    for (let key in entityToMap) {</span>
+<span class="cstat-no" title="statement not covered" >      if (mappingToColumns[key]) {</span>
+<span class="cstat-no" title="statement not covered" >        value = entityToMap[key];</span>
+<span class="cstat-no" title="statement not covered" >        result[mappingToColumns[key]] = value === undefined ? null : value;</span>
+      }
+    }
+<span class="cstat-no" title="statement not covered" >    return result;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ma</span>pRowsToEntities(rows, resultItemConstructor, columnsMapping, onEntityFetched) {
+<span class="cstat-no" title="statement not covered" >    if (rows)</span>
+<span class="cstat-no" title="statement not covered" >      return rows.map(<span class="fstat-no" title="function not covered" >(r</span>ow) =&gt; {</span>
+        let resultItem = <span class="cstat-no" title="statement not covered" >new resultItemConstructor();</span>
+<span class="cstat-no" title="statement not covered" >        for (let key in columnsMapping) {</span>
+<span class="cstat-no" title="statement not covered" >          resultItem[key] = row[columnsMapping[key]];</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (onEntityFetched)</span>
+<span class="cstat-no" title="statement not covered" >          onEntityFetched(resultItem);</span>
+<span class="cstat-no" title="statement not covered" >        return resultItem;</span>
+      });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  co</span>nvertFlatDBResultToNested(flatResult, joinMap, mapName, resultItemConstructor, onEntityFetched) {
+<span class="cstat-no" title="statement not covered" >    return joiner.map(flatResult, joinMap, mapName, '').map(<span class="fstat-no" title="function not covered" >(t</span>ypelessRow) =&gt; {</span>
+      let resultItem = <span class="cstat-no" title="statement not covered" >new resultItemConstructor();</span>
+<span class="cstat-no" title="statement not covered" >      Object.assign(resultItem, typelessRow);</span>
+<span class="cstat-no" title="statement not covered" >      if (onEntityFetched)</span>
+<span class="cstat-no" title="statement not covered" >        onEntityFetched(resultItem);</span>
+<span class="cstat-no" title="statement not covered" >      return resultItem;</span>
+    });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  as</span>ync getObjectById(workspace, objId, tableName, columnsMap, resultItemConstructor, idFieldName) {
+<span class="cstat-no" title="statement not covered" >    if (!idFieldName)</span>
+<span class="cstat-no" title="statement not covered" >      idFieldName = columnsMap.id || "id";</span>
+&nbsp;
+    const query = <span class="cstat-no" title="statement not covered" >this.knex(tableName).where(idFieldName, objId);</span>
+<span class="cstat-no" title="statement not covered" >    this.applyOrganizationConstraint(query, workspace);</span>
+    const result = <span class="cstat-no" title="statement not covered" >await query;</span>
+<span class="cstat-no" title="statement not covered" >    return this.firstOrNull(this.mapRowsToEntities(result, resultItemConstructor, columnsMap));</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  as</span>ync insert(workspace, tableName, entity, columnsMap, returning, activeTransaction) {
+<span class="cstat-no" title="statement not covered" >    this.onBeforeInsert(workspace, tableName, entity, columnsMap);</span>
+    const entityRow = <span class="cstat-no" title="statement not covered" >this.mapEntityToRow(entity, columnsMap);</span>
+<span class="cstat-no" title="statement not covered" >    if (activeTransaction)</span>
+<span class="cstat-no" title="statement not covered" >      return await activeTransaction.returning(returning).insert(entityRow).into(tableName);</span>
+    else
+<span class="cstat-no" title="statement not covered" >      return await this.knex(tableName).insert(entityRow).returning(returning);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  as</span>ync update(workspace, tableName, columnsMap, id, entity, returning, activeTransaction) {
+<span class="cstat-no" title="statement not covered" >    this.onBeforeUpdate(workspace, tableName, entity, columnsMap);</span>
+    const entityRow = <span class="cstat-no" title="statement not covered" >this.mapEntityToRow(entity, columnsMap);</span>
+&nbsp;
+    const query = <span class="cstat-no" title="statement not covered" >activeTransaction ? activeTransaction.into(tableName) : this.knex(tableName);</span>
+<span class="cstat-no" title="statement not covered" >    this.applyOrganizationConstraint(query, workspace);</span>
+<span class="cstat-no" title="statement not covered" >    query.andWhere(columnsMap.id, id);</span>
+<span class="cstat-no" title="statement not covered" >    query.returning(returning);</span>
+<span class="cstat-no" title="statement not covered" >    query.update(entityRow);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    logger.debug(`Performing update: ${query.toString()}`);</span>
+<span class="cstat-no" title="statement not covered" >    return await query;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  as</span>ync delete(workspace, tableName, idFieldName, id, activeTransaction) {
+<span class="cstat-no" title="statement not covered" >    this.onBeforeDelete(workspace, tableName, idFieldName, id);</span>
+    const query = <span class="cstat-no" title="statement not covered" >activeTransaction ? activeTransaction.into(tableName) : this.knex(tableName);</span>
+<span class="cstat-no" title="statement not covered" >    this.applyOrganizationConstraint(query, workspace);</span>
+<span class="cstat-no" title="statement not covered" >    query.andWhere(idFieldName, id);</span>
+<span class="cstat-no" title="statement not covered" >    query.del();</span>
+<span class="cstat-no" title="statement not covered" >    await query;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  on</span>BeforeInsert(workspace, tableName, entity, columnsMap) {
+<span class="cstat-no" title="statement not covered" >    if (workspace)</span>
+<span class="cstat-no" title="statement not covered" >      workspace.verifyAuthorization(tableName, entity, workspace.actions.CREATE);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (entity &amp;&amp; columnsMap) {</span>
+<span class="cstat-no" title="statement not covered" >      if (columnsMap.hasOwnProperty("createdOn"))</span>
+<span class="cstat-no" title="statement not covered" >        entity["createdOn"] = new Date();</span>
+<span class="cstat-no" title="statement not covered" >      if (columnsMap.hasOwnProperty("updatedOn"))</span>
+<span class="cstat-no" title="statement not covered" >        entity["updatedOn"] = new Date();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (workspace) {</span>
+<span class="cstat-no" title="statement not covered" >        if (columnsMap.hasOwnProperty("createdBy"))</span>
+<span class="cstat-no" title="statement not covered" >          entity["createdBy"] = workspace.userId;</span>
+<span class="cstat-no" title="statement not covered" >        if (columnsMap.hasOwnProperty("updatedBy"))</span>
+<span class="cstat-no" title="statement not covered" >          entity["updatedBy"] = workspace.userId;</span>
+      }
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  on</span>BeforeUpdate(workspace, tableName, entity, columnsMap) {
+<span class="cstat-no" title="statement not covered" >    if (workspace)</span>
+<span class="cstat-no" title="statement not covered" >      workspace.verifyAuthorization(entity, tableName, workspace.actions.UPDATE);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (entity &amp;&amp; columnsMap) {</span>
+<span class="cstat-no" title="statement not covered" >      if (columnsMap.hasOwnProperty("updatedOn"))</span>
+<span class="cstat-no" title="statement not covered" >        entity["updatedOn"] = new Date();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (workspace) {</span>
+<span class="cstat-no" title="statement not covered" >        if (columnsMap.hasOwnProperty("updatedBy"))</span>
+<span class="cstat-no" title="statement not covered" >          entity["updatedBy"] = workspace.userId;</span>
+      }
+    }
+  }
+&nbsp;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  on</span>BeforeDelete(workspace, tableName, entity) {
+<span class="cstat-no" title="statement not covered" >    if (workspace)</span>
+<span class="cstat-no" title="statement not covered" >      workspace.verifyAuthorization(tableName, entity, workspace.actions.DELETE);</span>
+  }
+&nbsp;
+  // Backward compatibility - should be removed
+<span class="fstat-no" title="function not covered" >  as</span>ync query(query, parameters) {
+<span class="cstat-no" title="statement not covered" >    return await this.knex.raw(query, parameters);</span>
+  }
+<span class="fstat-no" title="function not covered" >  as</span>ync querySingle(query, parameters) {
+    let res = <span class="cstat-no" title="statement not covered" >await this.query(query, parameters);</span>
+<span class="cstat-no" title="statement not covered" >    return res.rows ? res.rows[0] : null;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  as</span>ync executeInTransaction(executeFunc){
+<span class="cstat-no" title="statement not covered" >    await this.knex.transaction(<span class="fstat-no" title="function not covered" >as</span>ync (activeTransaction) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      await executeFunc(activeTransaction);</span>
+    });
+&nbsp;
+  }
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >module.exports = BaseDAL;</span>
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jan 17 2018 10:28:01 GMT+0200 (Jerusalem Standard Time)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

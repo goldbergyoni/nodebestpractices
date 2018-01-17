@@ -1,0 +1,845 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for nodebestpractices/libraries/cache-manager/redis.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">nodebestpractices/libraries/cache-manager</a> redis.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/127</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/106</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/35</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/121</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+const redisPool = <span class="cstat-no" title="statement not covered" >require('sol-redis-pool'),</span>
+  eventsEmitter = <span class="cstat-no" title="statement not covered" >require('events').EventEmitter,</span>
+  zlib = <span class="cstat-no" title="statement not covered" >require('zlib');</span>
+&nbsp;
+function <span class="fstat-no" title="function not covered" >RedisCacheManager(</span>redisOptions = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+&nbsp;
+  const slidingCacheKeys = <span class="cstat-no" title="statement not covered" >{};</span>
+  const compressionCacheKeys = <span class="cstat-no" title="statement not covered" >{};</span>
+  const events = <span class="cstat-no" title="statement not covered" >new eventsEmitter();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  redisOptions.host = redisOptions.host || '127.0.0.1';</span>
+<span class="cstat-no" title="statement not covered" >  redisOptions.port = redisOptions.port || 6379;</span>
+<span class="cstat-no" title="statement not covered" >  redisOptions.db = redisOptions.db || 0;</span>
+<span class="cstat-no" title="statement not covered" >  redisOptions.ttl = redisOptions.ttl || 600; </span>// 10 minutes
+  // Set a redis client option.
+<span class="cstat-no" title="statement not covered" >  redisOptions.enable_offline_queue = true;</span>
+<span class="cstat-no" title="statement not covered" >  redisOptions.no_ready_check = true;</span>
+<span class="cstat-no" title="statement not covered" >  redisOptions.absolute_expiry = false;</span>
+<span class="cstat-no" title="statement not covered" >  redisOptions.retry_strategy = redisOptions.retry_strategy || <span class="fstat-no" title="function not covered" >fu</span>nction (options) {</span>
+<span class="cstat-no" title="statement not covered" >      return undefined;</span>
+  };
+&nbsp;
+  // default compression config
+<span class="cstat-no" title="statement not covered" >  redisOptions.detect_buffers = true;</span>
+  const defaultCompression = <span class="cstat-no" title="statement not covered" >{</span>
+    type: 'gzip',
+    params: {
+      level: zlib.Z_BEST_SPEED
+    }
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  redisOptions.compression = redisOptions.compression === true ? defaultCompression : redisOptions.compression || false;</span>
+&nbsp;
+  let poolSettings = <span class="cstat-no" title="statement not covered" >{</span>
+    // Set the max milliseconds a resource can go unused before it should be destroyed.
+    idleTimeoutMillis: 5000,
+    max: 5
+  };
+&nbsp;
+  const pool = <span class="cstat-no" title="statement not covered" >new redisPool(redisOptions, poolSettings);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  pool.on('error', <span class="fstat-no" title="function not covered" >fu</span>nction(err) {</span>
+<span class="cstat-no" title="statement not covered" >    events.emit('redisError', err);</span>
+  });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  pool.on('connected', <span class="fstat-no" title="function not covered" >fu</span>nction(){</span>
+<span class="cstat-no" title="statement not covered" >    events.emit('redisConnected');</span>
+  });
+&nbsp;
+  async function <span class="fstat-no" title="function not covered" >connect(</span>) {
+<span class="cstat-no" title="statement not covered" >    return new Promise(<span class="fstat-no" title="function not covered" >fu</span>nction(resolve, reject) {</span>
+<span class="cstat-no" title="statement not covered" >      pool.acquireDb(<span class="fstat-no" title="function not covered" >fu</span>nction(err, conn){</span>
+<span class="cstat-no" title="statement not covered" >        if (err)</span>
+<span class="cstat-no" title="statement not covered" >          reject(err);</span>
+        else
+<span class="cstat-no" title="statement not covered" >          resolve(conn);</span>
+      }, redisOptions.db);
+    });
+  }
+&nbsp;
+  function <span class="fstat-no" title="function not covered" >handleResponse(</span>conn, cb, options) {
+<span class="cstat-no" title="statement not covered" >    options = options || {};</span>
+<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >fu</span>nction(err, result) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (!err &amp;&amp; options.parse &amp;&amp; options.expire_ttl &gt; 0)</span>
+<span class="cstat-no" title="statement not covered" >        conn.expire(options.key, options.expire_ttl);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      pool.release(conn);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (err) {</span>
+<span class="cstat-no" title="statement not covered" >        return cb &amp;&amp; cb(err);</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (options.parse) {</span>
+<span class="cstat-no" title="statement not covered" >        if (result &amp;&amp; options.compression) {</span>
+<span class="cstat-no" title="statement not covered" >          return zlib.gunzip(result, options.compression.params || {}, <span class="fstat-no" title="function not covered" >fu</span>nction (gzErr, gzResult) {</span>
+<span class="cstat-no" title="statement not covered" >            if (gzErr) {</span>
+<span class="cstat-no" title="statement not covered" >              return cb &amp;&amp; cb(gzErr);</span>
+            }
+<span class="cstat-no" title="statement not covered" >            try {</span>
+<span class="cstat-no" title="statement not covered" >              gzResult = JSON.parse(gzResult);</span>
+            } catch (e) {
+<span class="cstat-no" title="statement not covered" >              return cb &amp;&amp; cb(e);</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            return cb &amp;&amp; cb(null, gzResult);</span>
+          });
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        try {</span>
+<span class="cstat-no" title="statement not covered" >          result = JSON.parse(result);</span>
+        } catch (e) {
+<span class="cstat-no" title="statement not covered" >          return cb &amp;&amp; cb(e);</span>
+        }
+      }
+<span class="cstat-no" title="statement not covered" >      return cb &amp;&amp; cb(null, result);</span>
+    };
+  }
+&nbsp;
+  function <span class="fstat-no" title="function not covered" >getCompression(</span>options) {
+    let compression = <span class="cstat-no" title="statement not covered" >(options.compression || options.compression === false) ? options.compression : redisOptions.compression;</span>
+<span class="cstat-no" title="statement not covered" >    if (compression === true)</span>
+<span class="cstat-no" title="statement not covered" >      return defaultCompression;</span>
+<span class="cstat-no" title="statement not covered" >    return compression;</span>
+  }
+&nbsp;
+  async function <span class="fstat-no" title="function not covered" >get(</span>key) {
+    let options = <span class="cstat-no" title="statement not covered" >Object.assign({}, redisOptions, {key: key, expire_ttl: slidingCacheKeys[key]});</span>
+<span class="cstat-no" title="statement not covered" >    return await getInternal(key, options);</span>
+  }
+&nbsp;
+  async function <span class="fstat-no" title="function not covered" >getInternal(</span>key, options = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+<span class="cstat-no" title="statement not covered" >    return new Promise(<span class="fstat-no" title="function not covered" >as</span>ync function(resolve, reject) {</span>
+<span class="cstat-no" title="statement not covered" >      options.parse = true;</span>
+<span class="cstat-no" title="statement not covered" >      options.compression = compressionCacheKeys.hasOwnProperty(key) ? compressionCacheKeys[key] : getCompression(options);</span>
+<span class="cstat-no" title="statement not covered" >      if (options.compression)</span>
+<span class="cstat-no" title="statement not covered" >        key = new Buffer(key);</span>
+      let cb = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>rr, result) =&gt; <span class="cstat-no" title="statement not covered" >err ? reject(err) : resolve(result);</span></span>
+      let conn = <span class="cstat-no" title="statement not covered" >await connect();</span>
+<span class="cstat-no" title="statement not covered" >      conn.get(key, handleResponse(conn, cb, options));</span>
+    });
+  }
+&nbsp;
+  async function <span class="fstat-no" title="function not covered" >set(</span>key, value, options = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+<span class="cstat-no" title="statement not covered" >    return new Promise(<span class="fstat-no" title="function not covered" >as</span>ync function(resolve, reject) {</span>
+&nbsp;
+      let cb = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>rr, result) =&gt; <span class="cstat-no" title="statement not covered" >err ? reject(err) : resolve(result);</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (!isCacheableValue(value)) {</span>
+<span class="cstat-no" title="statement not covered" >        return cb(new Error('value cannot be ' + value));</span>
+      }
+&nbsp;
+      let ttl = <span class="cstat-no" title="statement not covered" >(options.ttl || options.ttl === 0) ? options.ttl : redisOptions.ttl;</span>
+      let absolute_expiry = <span class="cstat-no" title="statement not covered" >(options.absolute_expiry || options.absolute_expiry === false) ? options.absolute_expiry : redisOptions.absolute_expiry;</span>
+      let compression = <span class="cstat-no" title="statement not covered" >getCompression(options);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (!absolute_expiry)</span>
+<span class="cstat-no" title="statement not covered" >        slidingCacheKeys[key] = ttl;</span>
+      else
+<span class="cstat-no" title="statement not covered" >        delete slidingCacheKeys[key];</span>
+&nbsp;
+      // Not default compression
+<span class="cstat-no" title="statement not covered" >      if (compression != redisOptions.compression)</span>
+<span class="cstat-no" title="statement not covered" >        compressionCacheKeys[key] = compression;</span>
+      else
+<span class="cstat-no" title="statement not covered" >        delete compressionCacheKeys[key];</span>
+&nbsp;
+      let conn = <span class="cstat-no" title="statement not covered" >await connect();</span>
+      let val = <span class="cstat-no" title="statement not covered" >JSON.stringify(value) || '"undefined"';</span>
+&nbsp;
+        // Refactored to remove duplicate code.
+      function <span class="fstat-no" title="function not covered" >persist(</span>pErr, pVal) {
+<span class="cstat-no" title="statement not covered" >        if (pErr) {</span>
+<span class="cstat-no" title="statement not covered" >          return cb(pErr);</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (ttl) {</span>
+<span class="cstat-no" title="statement not covered" >          conn.setex(key, ttl, pVal, handleResponse(conn, cb, options));</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >          conn.set(key, pVal, handleResponse(conn, cb, options));</span>
+        }
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (compression) {</span>
+<span class="cstat-no" title="statement not covered" >        zlib.gzip(val, compression.params || {}, persist);</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        persist(null, val);</span>
+      }
+    });
+  }
+&nbsp;
+  async function <span class="fstat-no" title="function not covered" >wrap(</span>key, fetchMethod, options) {
+    let value = <span class="cstat-no" title="statement not covered" >await get(key);</span>
+<span class="cstat-no" title="statement not covered" >    if (!value) {</span>
+<span class="cstat-no" title="statement not covered" >      try {</span>
+<span class="cstat-no" title="statement not covered" >        value = await fetchMethod();</span>
+<span class="cstat-no" title="statement not covered" >        await set(key, value, options);</span>
+      }
+      catch (err) {
+<span class="cstat-no" title="statement not covered" >        events.emit('fetchError', err);</span>
+      }
+    }
+<span class="cstat-no" title="statement not covered" >    return value;</span>
+  }
+&nbsp;
+  async function <span class="fstat-no" title="function not covered" >del(</span>key) {
+<span class="cstat-no" title="statement not covered" >    return new Promise(<span class="fstat-no" title="function not covered" >as</span>ync function(resolve, reject) {</span>
+      let cb = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>rr, result) =&gt; <span class="cstat-no" title="statement not covered" >err ? reject(err) : resolve(result);</span></span>
+<span class="cstat-no" title="statement not covered" >      delete slidingCacheKeys[key];</span>
+<span class="cstat-no" title="statement not covered" >      delete compressionCacheKeys[key];</span>
+      let conn = <span class="cstat-no" title="statement not covered" >await connect();</span>
+<span class="cstat-no" title="statement not covered" >      conn.del(key, handleResponse(conn, cb));</span>
+    });
+  }
+&nbsp;
+  async function <span class="fstat-no" title="function not covered" >reset(</span>) {
+<span class="cstat-no" title="statement not covered" >    return new Promise(<span class="fstat-no" title="function not covered" >as</span>ync function(resolve, reject) {</span>
+      let cb = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>rr, result) =&gt; <span class="cstat-no" title="statement not covered" >err ? reject(err) : resolve(result);</span></span>
+      let conn = <span class="cstat-no" title="statement not covered" >await connect();</span>
+<span class="cstat-no" title="statement not covered" >      conn.flushdb(handleResponse(conn, cb));</span>
+    });
+  }
+&nbsp;
+  async function <span class="fstat-no" title="function not covered" >ttl(</span>key) {
+<span class="cstat-no" title="statement not covered" >    return new Promise(<span class="fstat-no" title="function not covered" >as</span>ync function(resolve, reject) {</span>
+      let cb = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>rr, result) =&gt; <span class="cstat-no" title="statement not covered" >err ? reject(err) : resolve(result);</span></span>
+      let conn = <span class="cstat-no" title="statement not covered" >await connect();</span>
+<span class="cstat-no" title="statement not covered" >      conn.ttl(key, handleResponse(conn, cb));</span>
+    });
+  }
+&nbsp;
+  async function <span class="fstat-no" title="function not covered" >keys(</span>pattern) {
+<span class="cstat-no" title="statement not covered" >    return new Promise(<span class="fstat-no" title="function not covered" >as</span>ync function(resolve, reject) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      pattern = pattern || "*";</span>
+&nbsp;
+      let cb = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>rr, result) =&gt; <span class="cstat-no" title="statement not covered" >err ? reject(err) : resolve(result);</span></span>
+&nbsp;
+      let conn = <span class="cstat-no" title="statement not covered" >await connect();</span>
+<span class="cstat-no" title="statement not covered" >      conn.keys(pattern, handleResponse(conn, cb));</span>
+    });
+  }
+&nbsp;
+  function <span class="fstat-no" title="function not covered" >isCacheableValue(</span>value) {
+<span class="cstat-no" title="statement not covered" >    return value !== undefined &amp;&amp; value !== null;</span>
+  }
+&nbsp;
+  async function <span class="fstat-no" title="function not covered" >getClient(</span>) {
+    let conn = <span class="cstat-no" title="statement not covered" >await connect();</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      client: conn,
+      done: <span class="fstat-no" title="function not covered" >fu</span>nction(done) {
+        let args = <span class="cstat-no" title="statement not covered" >Array.prototype.slice.call(arguments, 1);</span>
+<span class="cstat-no" title="statement not covered" >        pool.release(conn);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (done &amp;&amp; typeof done === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >          done.apply(null, args);</span>
+        }
+      }
+    };
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return {</span>
+    wrap,
+    get,
+    set,
+    del,
+    ttl,
+    keys,
+    reset,
+    getClient,
+    pool,
+    isCacheableValue,
+    events
+  };
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >module.exports = RedisCacheManager;</span>
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jan 17 2018 10:28:01 GMT+0200 (Jerusalem Standard Time)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

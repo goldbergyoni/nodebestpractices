@@ -25,4 +25,8 @@ middlewares.roleBasedAuthorization = (requiredRole) => {
   };
 };
 
+middlewares.getDefaultList = ()=>{
+  return [];
+}
+
 module.exports = middlewares;

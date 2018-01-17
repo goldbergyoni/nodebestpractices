@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for nodebestpractices/libraries/entityServices/workspace.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">nodebestpractices/libraries/entityServices</a> workspace.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/45</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/30</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/45</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+const utils = <span class="cstat-no" title="statement not covered" >require('utils'),</span>
+      commonErrors = <span class="cstat-no" title="statement not covered" >require('errorManagement').commonErrors,</span>
+      Roles = <span class="cstat-no" title="statement not covered" >utils.enums.Roles;</span>
+&nbsp;
+class Workspace {
+&nbsp;
+<span class="fstat-no" title="function not covered" >  st</span>atic factorFromGist(workspaceGist)
+  {
+<span class="cstat-no" title="statement not covered" >    return new Workspace(workspaceGist.organizationId, workspaceGist.userId, workspaceGist.userRoles, workspaceGist.language);</span>
+  }
+<span class="fstat-no" title="function not covered" >  co</span>nstructor(organizationId, userId, userRoles, language) {
+<span class="cstat-no" title="statement not covered" >    this.organizationId = organizationId;</span>
+<span class="cstat-no" title="statement not covered" >    this.userId = userId;</span>
+<span class="cstat-no" title="statement not covered" >    this.userRoles = userRoles;</span>
+<span class="cstat-no" title="statement not covered" >    this.language = language;</span>
+<span class="cstat-no" title="statement not covered" >    this.isMaster = false;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.actions = {</span>
+      CREATE: 1,
+      READ: 2,
+      UPDATE: 3,
+      DELETE: 4,
+      VIEW: 5
+    };
+&nbsp;
+    // proxy the logger log methods to always pass them a metadata object
+<span class="cstat-no" title="statement not covered" >    this.proxyLogger();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  to</span>Gist()
+  {
+<span class="cstat-no" title="statement not covered" >    return { organizationId: this.organizationId , userId: this.userId, userRoles:this.userRoles};</span>
+  }
+&nbsp;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  pr</span>oxyLogger() {
+    let logger = <span class="cstat-no" title="statement not covered" >require('logger'),</span>
+      loggerLevels = <span class="cstat-no" title="statement not covered" >Object.assign({ "log": 9999 }, logger.levels),</span>
+      loggerMeta = <span class="cstat-no" title="statement not covered" >{ requestId: utils.general.generateRandomNumber(1111111, 9999999), organizationId: this.organizationId, userId: this.userId, userRoles: this.userRoles };</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.logger = new Proxy(logger, {</span>
+      get(target, property) {
+<span class="cstat-no" title="statement not covered" >        if (typeof (target[property]) === "function" &amp;&amp; loggerLevels[property] &gt;= 0)</span>
+<span class="cstat-no" title="statement not covered" >          return <span class="fstat-no" title="function not covered" >fu</span>nction (...params) {</span>
+<span class="cstat-no" title="statement not covered" >            return target[property](...params, loggerMeta);</span>
+          };
+<span class="cstat-no" title="statement not covered" >        return target[property];</span>
+      }
+    });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ve</span>rifyAuthorization(tableName, entity, action) {
+<span class="cstat-no" title="statement not covered" >    switch (action) {</span>
+      case this.actions.CREATE:
+<span class="cstat-no" title="statement not covered" >        this.verifyOrganizationIdMatch(tableName, entity);</span>
+<span class="cstat-no" title="statement not covered" >        this.verifyRolesOnCreate(tableName, entity);</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case this.actions.UPDATE:
+<span class="cstat-no" title="statement not covered" >        this.verifyOrganizationIdMatch(tableName, entity);</span>
+<span class="cstat-no" title="statement not covered" >        this.verifyRolesOnUpdate(tableName, entity);</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case this.actions.DELETE:
+<span class="cstat-no" title="statement not covered" >        this.verifyOrganizationIdMatch(tableName, entity);</span>
+<span class="cstat-no" title="statement not covered" >        this.verifyRolesOnDelete(tableName, entity);</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case this.actions.READ:
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case this.actions.VIEW:
+<span class="cstat-no" title="statement not covered" >        break;</span>
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ve</span>rifyOrganizationIdMatch(tableName, entity) {
+<span class="cstat-no" title="statement not covered" >    if (!this.isMaster &amp;&amp; entity &amp;&amp; entity.hasOwnProperty("organizationId")) {</span>
+<span class="cstat-no" title="statement not covered" >      if (entity.organizationId &amp;&amp; this.organizationId != entity.organizationId)</span>
+<span class="cstat-no" title="statement not covered" >        throw commonErrors.UnauthorizedError("Multi tenancy violation");</span>
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ve</span>rifyRolesOnCreate(tableName, entity) {
+<span class="cstat-no" title="statement not covered" >    if(tableName == "organizations") {</span>
+<span class="cstat-no" title="statement not covered" >      if(this.userRoles &lt; Roles.Admin)</span>
+<span class="cstat-no" title="statement not covered" >        throw commonErrors.UnauthorizedError("Unauthorized to create organization.");</span>
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ve</span>rifyRolesOnUpdate(tableName, entity) {
+<span class="cstat-no" title="statement not covered" >    if(tableName == "organizations") {</span>
+<span class="cstat-no" title="statement not covered" >      if(this.userRoles &lt; Roles.Admin)</span>
+<span class="cstat-no" title="statement not covered" >        throw commonErrors.UnauthorizedError("Unauthorized to update organization.");</span>
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ve</span>rifyRolesOnDelete(tableName, entity) {
+<span class="cstat-no" title="statement not covered" >    if(tableName == "organizations") {</span>
+<span class="cstat-no" title="statement not covered" >      if(this.userRoles &lt; Roles.Admin)</span>
+<span class="cstat-no" title="statement not covered" >        throw commonErrors.UnauthorizedError("Unauthorized to delete organization.");</span>
+    }
+  }
+&nbsp;
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >module.exports = Workspace;</span>
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jan 17 2018 10:28:01 GMT+0200 (Jerusalem Standard Time)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

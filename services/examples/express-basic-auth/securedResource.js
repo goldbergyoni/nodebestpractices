@@ -1,25 +1,26 @@
 const express = require("express");
 const router = express.Router();
-const middlewares = require("./middlewares");
+const middlewarePool = require('./middlewares');
 
 //for all endpoints
-router.use(middlewarePool.getDefaultList())
+//router.use(middlewarePool.getDefaultList())
 
 //public endpoints
-router.get('/user', (req,res)={
+router.get('/user', (req,res)=>{
   //busienss logic comes here
 })
 
-router.use(middlewarePool.JWTAuthenticator);
+//router.use(middlewarePool.JWTAuthenticator);
 
 //secured endpoints here
-router.get('/user/photos', (req,res)={
+router.get('/user/photos', (req,res)=>{
   //busienss logic comes here
 })
 
-router.put('/user/photos/delete', authroizer('admin'), (req,res)={
-  //busienss logic comes here
-})
+// router.put('/user/photos/delete', authroizer('admin'), (req,res)=>{
+//   //busienss logic comes here
+  
+// })
 
 
 

@@ -69,5 +69,23 @@
     "plato": "1.7.0",
     "sinon": "^4.1.2",
     "supertest": "3.0.0"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "per-file": true,
+    "lines": 99,
+    "statements": 99,
+    "functions": 99,
+    "branches": 99,
+    "include": [
+      "**/services/examples/test-basics/orderService.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "cache": true,
+    "all": true
   }
 }
+

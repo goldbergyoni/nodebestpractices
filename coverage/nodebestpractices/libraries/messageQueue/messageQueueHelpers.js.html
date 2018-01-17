@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for nodebestpractices/libraries/messageQueue/messageQueueHelpers.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">nodebestpractices/libraries/messageQueue</a> messageQueueHelpers.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/22</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">﻿'use strict';
+const configurationManager = <span class="cstat-no" title="statement not covered" >require('configurationManager');</span>
+const logger = <span class="cstat-no" title="statement not covered" >require('logger');</span>
+const errors = <span class="cstat-no" title="statement not covered" >require('errorManagement');</span>
+const util = <span class="cstat-no" title="statement not covered" >require('util');</span>
+const MessageQueueService = <span class="cstat-no" title="statement not covered" >require('./messageQueueService');</span>
+const Workspace = <span class="cstat-no" title="statement not covered" >require('entityServices').Workspace;</span>
+&nbsp;
+const workspaceMetaDataParamaterName = <span class="cstat-no" title="statement not covered" >'workspace';</span>
+&nbsp;
+//this class, unlike the service, is aware of Inflowz specific narratives like workspace and saves time for the callers
+//by bridging between custom app needs and the generic service
+class MessageQueueHelpers {
+&nbsp;
+<span class="fstat-no" title="function not covered" >  as</span>ync publishMessage(queueName, newMessage, workspace) {
+&nbsp;
+    const serializedWorkspace = <span class="cstat-no" title="statement not covered" >JSON.stringify(workspace.toGist());</span>
+    const messageMetaData = <span class="cstat-no" title="statement not covered" >{};</span>
+<span class="cstat-no" title="statement not covered" >    messageMetaData[workspaceMetaDataParamaterName] = {</span>
+      DataType: "String",
+      StringValue: serializedWorkspace
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return new MessageQueueService().publishMessage(queueName, newMessage, messageMetaData);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  as</span>ync publishToTopic(topicName, message, workspace) {
+&nbsp;
+    const serializedWorkspace = <span class="cstat-no" title="statement not covered" >JSON.stringify(workspace.toGist());</span>
+    const messageMetaData = <span class="cstat-no" title="statement not covered" >{};</span>
+<span class="cstat-no" title="statement not covered" >    messageMetaData[workspaceMetaDataParamaterName] = {</span>
+      DataType: "String",
+      StringValue: serializedWorkspace
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return new MessageQueueService().publishToTopic(topicName, message, messageMetaData);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  as</span>ync subscribeToNewMessages(queueName, callback) {
+<span class="cstat-no" title="statement not covered" >    return new MessageQueueService().subscribeToNewMessages(queueName, <span class="fstat-no" title="function not covered" >as</span>ync(messageContent, messageAttributes, done) =&gt; {</span>
+      let workspaceInMessage = <span class="cstat-no" title="statement not covered" >null;</span>
+<span class="cstat-no" title="statement not covered" >      if (messageAttributes[workspaceMetaDataParamaterName]) {</span>
+        const workspaceGist = <span class="cstat-no" title="statement not covered" >JSON.parse((messageAttributes[workspaceMetaDataParamaterName].StringValue));</span>
+<span class="cstat-no" title="statement not covered" >        workspaceInMessage = Workspace.factorFromGist(workspaceGist);</span>
+      }
+<span class="cstat-no" title="statement not covered" >      await callback(messageContent, workspaceInMessage);</span>
+    }, [workspaceMetaDataParamaterName]);
+  }
+&nbsp;
+  //this method will allow endpoints to register all their listeneres in one shot by providing something like:
+  //[{queueName , handler, formatter, onErrorStrategy}]
+<span class="fstat-no" title="function not covered" >  as</span>ync subscribeToMultipleQueues(subscriptionDefinitionArray) {
+&nbsp;
+  }
+}
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >module.exports = MessageQueueHelpers;</span>
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jan 17 2018 10:28:01 GMT+0200 (Jerusalem Standard Time)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

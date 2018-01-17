@@ -1,15 +1,12 @@
 module.exports = () => {
     return {
       files: [
-        'services/**/*.js',
-        'libraries/**/*.js',
-        './*.js',
-        './*.json',
+        '**/services/examples/test-basics/orderService.js',
         '!libraries/**/node_modules/**',
         '!**/node_modules/'
       ],
       tests: [
-        'test/**/*.js'
+        '**/services/examples/test-basics/test.orderService.unit.js'
       ],  
       debug: true,
       setup: function (w) {

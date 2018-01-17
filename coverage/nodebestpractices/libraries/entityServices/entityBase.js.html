@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for nodebestpractices/libraries/entityServices/entityBase.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">nodebestpractices/libraries/entityServices</a> entityBase.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/28</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">﻿const entityServices =<span class="cstat-no" title="statement not covered" > require('./entityServices')</span>,
+  utils = <span class="cstat-no" title="statement not covered" >require('utils'),</span>
+  Enums = <span class="cstat-no" title="statement not covered" >utils.enums,</span>
+  FlagHelper = <span class="cstat-no" title="statement not covered" >utils.general.flagHelper;</span>
+&nbsp;
+  const _defaultValueProperties = <span class="cstat-no" title="statement not covered" >Symbol('defaultValueProperties');</span>
+&nbsp;
+class entityBase {
+<span class="fstat-no" title="function not covered" >  co</span>nstructor() {
+<span class="cstat-no" title="statement not covered" >    this.createdOn = "";</span>
+<span class="cstat-no" title="statement not covered" >    this.updatedOn = "";</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this[_defaultValueProperties] = {};</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ge</span>t isDeleted() { <span class="cstat-no" title="statement not covered" >return !!this.state &amp;&amp; FlagHelper.hasFlag(this.state, Enums.State.Deleted); </span>}
+<span class="fstat-no" title="function not covered" >  ge</span>t isDisabled() { <span class="cstat-no" title="statement not covered" >return !!this.state &amp;&amp; FlagHelper.hasFlag(this.state, Enums.State.Disabled); </span>}
+<span class="fstat-no" title="function not covered" >  ge</span>t isValid() { <span class="cstat-no" title="statement not covered" >return !this.state || !FlagHelper.hasFlag(this.state, Enums.State.Invalid); </span>}
+<span class="fstat-no" title="function not covered" >  se</span>t isValid(value) { <span class="cstat-no" title="statement not covered" >this.state = (value === true) ? FlagHelper.removeFlag(this.state, Enums.State.Invalid) : FlagHelper.addFlag(this.state, Enums.State.Invalid); </span>}
+  
+<span class="fstat-no" title="function not covered" >  ha</span>sDefaultValue(propertyName) { <span class="cstat-no" title="statement not covered" >return this[_defaultValueProperties].hasOwnProperty(propertyName);}</span>
+<span class="fstat-no" title="function not covered" >  se</span>tHasDefaultValue(propertyName) { <span class="cstat-no" title="statement not covered" >return this[_defaultValueProperties][propertyName] = true;}</span>
+<span class="fstat-no" title="function not covered" >  cl</span>earHasDefaultValue(propertyName) { <span class="cstat-no" title="statement not covered" >return delete this[_defaultValueProperties][propertyName];}</span>
+  
+<span class="fstat-no" title="function not covered" >  va</span>lidate() {
+<span class="cstat-no" title="statement not covered" >    return new entityServices().validate(this, this.constructor.schema);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  as</span>sertIsValid() {
+<span class="cstat-no" title="statement not covered" >    return new entityServices().assertIsValid(this, this.constructor.schema);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  cu</span>stomValidate(objectToValidate, schema) {
+<span class="cstat-no" title="statement not covered" >    return new entityServices().validate(objectToValidate, schema);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ge</span>t isNew() {
+<span class="cstat-no" title="statement not covered" >    if (this.hasOwnProperty("id"))</span>
+<span class="cstat-no" title="statement not covered" >      return !(this.id &gt; 0);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    throw new Error("Cannot evaluate isNew, Entity has no id property.");</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  up</span>datePropertyIfExists(clientData, propertyName, forcedValue=<span class="branch-0 cbranch-no" title="branch not covered" >undefined)</span> {
+<span class="cstat-no" title="statement not covered" >    if(clientData.hasOwnProperty(propertyName))</span>
+<span class="cstat-no" title="statement not covered" >      this[propertyName] = forcedValue !== undefined ? forcedValue : clientData[propertyName];</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ge</span>tClientInfo() {
+    let res = <span class="cstat-no" title="statement not covered" >Object.assign({}, this);</span>
+<span class="cstat-no" title="statement not covered" >    delete res.state;</span>
+<span class="cstat-no" title="statement not covered" >    res.isDisabled = this.isDisabled;</span>
+<span class="cstat-no" title="statement not covered" >    return res;</span>
+  }
+&nbsp;
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >module.exports = entityBase;</span>
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jan 17 2018 10:28:01 GMT+0200 (Jerusalem Standard Time)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

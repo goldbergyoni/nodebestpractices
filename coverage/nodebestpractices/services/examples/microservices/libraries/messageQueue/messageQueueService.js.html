@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for nodebestpractices/services/examples/microservices/libraries/messageQueue/messageQueueService.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\..\..\..\index.html">All files</a> / <a href="index.html">nodebestpractices/services/examples/microservices/libraries/messageQueue</a> messageQueueService.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/48</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/48</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">﻿'use strict';
+const configurationManager = <span class="cstat-no" title="statement not covered" >require('configurationManager');</span>
+const logger = <span class="cstat-no" title="statement not covered" >require('logger');</span>
+const errors = <span class="cstat-no" title="statement not covered" >require('errorManagement');</span>
+const util = <span class="cstat-no" title="statement not covered" >require('util');</span>
+const SQSListener = <span class="cstat-no" title="statement not covered" >require('sqs-consumer');</span>
+const AWS = <span class="cstat-no" title="statement not covered" >require("aws-sdk");</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >process.env['AWS_SECRET_ACCESS_KEY'] = configurationManager.AWSGlobal.secret;</span>
+<span class="cstat-no" title="statement not covered" >process.env['AWS_ACCESS_KEY_ID'] = configurationManager.AWSGlobal.key;</span>
+<span class="cstat-no" title="statement not covered" >AWS.config.update({</span>
+  region: configurationManager.AWSGlobal.region
+});
+&nbsp;
+class MessageQueueService {
+  
+<span class="fstat-no" title="function not covered" >  as</span>ync createQueue(queueName) {
+<span class="cstat-no" title="statement not covered" >    logger.debug(`Message queue service is about to create the queue ${util.inspect(queueName)}`);</span>
+    const params = <span class="cstat-no" title="statement not covered" >{</span>
+      QueueName: queueName
+    };
+    const SQSService = <span class="cstat-no" title="statement not covered" >new AWS.SQS();</span>
+    
+    // console.log('ds ' + util.inspect(SQSService.endpoint));
+    // SQSService.endpoint.hostname = 'sqs.localhost:4576';
+    // SQSService.endpoint.port = 4576;
+    // SQSService.endpoint.protocol = 'http:';
+    // console.log('ds ' + util.inspect(SQSService.endpoint));
+    const response = <span class="cstat-no" title="statement not covered" >await SQSService.createQueue(params).promise();</span>
+<span class="cstat-no" title="statement not covered" >    logger.debug(`The following response arrived for queue creation  ${util.inspect(response)}`);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return response;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  as</span>ync publishMessage(queueName, newMessage, messageAttributes) {
+<span class="cstat-no" title="statement not covered" >    logger.debug(`Message queue service is about to send the message ${util.inspect(newMessage)} to the queue ${queueName}`);</span>
+    const params = <span class="cstat-no" title="statement not covered" >{</span>
+      MessageBody: JSON.stringify(newMessage),
+      QueueUrl: this.getQueueURL(queueName)
+    };
+<span class="cstat-no" title="statement not covered" >    if (messageAttributes)</span>
+<span class="cstat-no" title="statement not covered" >      params["MessageAttributes"] = messageAttributes;</span>
+<span class="cstat-no" title="statement not covered" >    logger.debug(this.getQueueURL(queueName));</span>
+    const messageAcknowledge = <span class="cstat-no" title="statement not covered" >await new AWS.SQS().sendMessage(params).promise();</span>
+<span class="cstat-no" title="statement not covered" >    logger.debug(`Message acknowledge received ${util.inspect(messageAcknowledge)} from the queue ${queueName}`);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return messageAcknowledge;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  as</span>ync publishToTopic(topicName, message, messageAttributes) {
+<span class="cstat-no" title="statement not covered" >    logger.debug(`About to publish the message ${message} to the topic ${topicName}`);</span>
+    const sns = <span class="cstat-no" title="statement not covered" >new AWS.SNS();</span>
+    const requestParams = <span class="cstat-no" title="statement not covered" >{</span>
+      Message: JSON.stringify(message),
+      TopicArn: topicName,
+    };
+<span class="cstat-no" title="statement not covered" >    if (messageAttributes)</span>
+<span class="cstat-no" title="statement not covered" >      requestParams["MessageAttributes"] = messageAttributes;</span>
+&nbsp;
+    const messageAcknowledge = <span class="cstat-no" title="statement not covered" >await sns.publish(requestParams).promise;</span>
+<span class="cstat-no" title="statement not covered" >    logger.debug(`Message acknowledge received ${util.inspect(messageAcknowledge)} from the topic ${topicName}`);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return messageAcknowledge;</span>
+  }
+&nbsp;
+  //TODO: promisify that
+<span class="fstat-no" title="function not covered" >  su</span>bscribeToNewMessages(queueName, callback, additionalMetadataKeys) {
+<span class="cstat-no" title="statement not covered" >    logger.info(`SQS listener is about to listen to the queue name ${queueName}`);</span>
+    const subscriberDefinition = <span class="cstat-no" title="statement not covered" >{</span>
+      queueUrl: this.getQueueURL(queueName),
+      handleMessage: <span class="fstat-no" title="function not covered" >as</span>ync function (messages, done) {
+<span class="cstat-no" title="statement not covered" >        logger.debug(`SQS listener just got from the queue ${queueName} a new message with the following payload ${util.inspect(messages)}`);</span>
+<span class="cstat-no" title="statement not covered" >        try {</span>
+          let messageWholeBody = <span class="cstat-no" title="statement not covered" >JSON.parse(messages.Body);</span>
+          //in case it's a topical message - the content is wrapped in a message property. In direct message - it's not
+          let messageContent = <span class="cstat-no" title="statement not covered" >messageWholeBody.Message ? JSON.parse(messageWholeBody.Message) : messageWholeBody;</span>
+<span class="cstat-no" title="statement not covered" >          await callback(messageContent, messages.MessageAttributes);</span>
+<span class="cstat-no" title="statement not covered" >          done();</span>
+        } catch (error) {
+<span class="cstat-no" title="statement not covered" >          throw new errors.appError(`Error occured while trying to process a new SQS message from the queue ${queueName}`, 500, "handleSQSMessageError", error);</span>
+        }
+      }
+    };
+<span class="cstat-no" title="statement not covered" >    if (additionalMetadataKeys)</span>
+<span class="cstat-no" title="statement not covered" >      subscriberDefinition.messageAttributeNames = additionalMetadataKeys;</span>
+&nbsp;
+    let subscriber = <span class="cstat-no" title="statement not covered" >SQSListener.create(subscriberDefinition);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    subscriber.start();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ge</span>tSQSBaseURL(){
+<span class="cstat-no" title="statement not covered" >    return `${configurationManager.messageQueue.MQBaseURL}`;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ge</span>tQueueURL(queueName) {
+<span class="cstat-no" title="statement not covered" >    return `${this.getSQSBaseURL()}${this.getFullQueueName(queueName)}`;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ge</span>tFullQueueName(queueName) {
+<span class="cstat-no" title="statement not covered" >    return `${configurationManager.messageQueue.queueNamePrefix}-${queueName}`;</span>
+  }
+}
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >module.exports = MessageQueueService;</span>
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jan 17 2018 10:28:01 GMT+0200 (Jerusalem Standard Time)
+</div>
+</div>
+<script src="..\..\..\..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\..\..\..\sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,1355 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for nodebestpractices/libraries/cache-manager/test/test.scenario.redis.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\..\index.html">All files</a> / <a href="index.html">nodebestpractices/libraries/cache-manager/test</a> test.scenario.redis.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/313</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/50</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/313</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const chai = <span class="cstat-no" title="statement not covered" >require('chai'),</span>
+  chaiAsPromised = <span class="cstat-no" title="statement not covered" >require("chai-as-promised"),</span>
+  expect = <span class="cstat-no" title="statement not covered" >chai.expect,</span>
+  superTestRequest = <span class="cstat-no" title="statement not covered" >require('supertest'),</span>
+  sinon = <span class="cstat-no" title="statement not covered" >require('sinon'),</span>
+  config = <span class="cstat-no" title="statement not covered" >require('configurationManager');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >chai.use(chaiAsPromised);</span>
+<span class="cstat-no" title="statement not covered" >config.redis.host = process.env.REDIS_HOST || "192.168.99.100";</span>
+&nbsp;
+const cacheManager = <span class="cstat-no" title="statement not covered" >require('../index');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >describe('Cache manager tests #hot #sanity #redis #scenario', <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  describe('Redis tests without compression', <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+&nbsp;
+    let oldCompressionValue, oldCacheManager;
+<span class="cstat-no" title="statement not covered" >    before(<span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      oldCompressionValue = config.redis.compress;</span>
+<span class="cstat-no" title="statement not covered" >      config.redis.compression = false;</span>
+<span class="cstat-no" title="statement not covered" >      oldCacheManager = cacheManager.cacheManager;</span>
+      let redisOptions = <span class="cstat-no" title="statement not covered" >Object.assign({}, config.redis);</span>
+<span class="cstat-no" title="statement not covered" >      cacheManager.cacheManager = require('../redis')(redisOptions);</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('Scenario: Test cache store and delete from cache without compression', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+      const cache_key = <span class="cstat-no" title="statement not covered" >"test_cache_store_wo_compression";</span>
+<span class="cstat-no" title="statement not covered" >      expect(config.redis.compression).to.be.equal(false);</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.del(cache_key);</span>
+      let object = <span class="cstat-no" title="statement not covered" >await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.be.null;</span>
+      let objectToStore = <span class="cstat-no" title="statement not covered" >{test: 1};</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.set(cache_key, objectToStore, 1, true);</span>
+<span class="cstat-no" title="statement not covered" >      objectToStore.test++;</span>
+<span class="cstat-no" title="statement not covered" >      expect(objectToStore).to.have.own.property("test").that.equal(2);</span>
+<span class="cstat-no" title="statement not covered" >      object = await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).not.to.be.null;</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.have.own.property("test").that.equal(1);</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.del(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      object = await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.be.null;</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('Scenario: Test cache store and delete from cache without compression - setting false does not affect test', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+      const cache_key = <span class="cstat-no" title="statement not covered" >"test_cache_store_wo_compression_and_flag";</span>
+<span class="cstat-no" title="statement not covered" >      expect(config.redis.compression).to.be.equal(false);</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.del(cache_key);</span>
+      let object = <span class="cstat-no" title="statement not covered" >await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.be.null;</span>
+      let objectToStore = <span class="cstat-no" title="statement not covered" >{test: 1};</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.set(cache_key, objectToStore, 1, true, false);</span>
+<span class="cstat-no" title="statement not covered" >      objectToStore.test++;</span>
+<span class="cstat-no" title="statement not covered" >      expect(objectToStore).to.have.own.property("test").that.equal(2);</span>
+<span class="cstat-no" title="statement not covered" >      object = await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).not.to.be.null;</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.have.own.property("test").that.equal(1);</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.del(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      object = await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.be.null;</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('Scenario: Test cache store and delete from cache without compression - testing overide flag set to true', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+      const cache_key = <span class="cstat-no" title="statement not covered" >"test_cache_store_wo_compression_and_flag";</span>
+<span class="cstat-no" title="statement not covered" >      expect(config.redis.compression).to.be.equal(false);</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.del(cache_key);</span>
+      let object = <span class="cstat-no" title="statement not covered" >await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.be.null;</span>
+      let objectToStore = <span class="cstat-no" title="statement not covered" >{test: 1};</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.set(cache_key, objectToStore, 1, true, true);</span>
+<span class="cstat-no" title="statement not covered" >      objectToStore.test++;</span>
+<span class="cstat-no" title="statement not covered" >      expect(objectToStore).to.have.own.property("test").that.equal(2);</span>
+<span class="cstat-no" title="statement not covered" >      object = await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).not.to.be.null;</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.have.own.property("test").that.equal(1);</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.del(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      object = await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.be.null;</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    after(<span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      config.redis.compress = oldCompressionValue;</span>
+<span class="cstat-no" title="statement not covered" >      cacheManager.cacheManager = oldCacheManager;</span>
+    });
+  });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  describe('Cache manager - no cache tests', <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    before(<span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      cacheManager.cacheType = cacheManager.noCache;</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('Scenario: Test get to return null', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+      const cache_key = <span class="cstat-no" title="statement not covered" >"test_cache_manager_no_cache";</span>
+      let object = <span class="cstat-no" title="statement not covered" >await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.be.null;</span>
+      let objectToStore = <span class="cstat-no" title="statement not covered" >{test: 1};</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.set(cache_key, objectToStore, 1, true);</span>
+<span class="cstat-no" title="statement not covered" >      objectToStore.test++;</span>
+<span class="cstat-no" title="statement not covered" >      expect(objectToStore).to.have.own.property("test").that.equal(2);</span>
+<span class="cstat-no" title="statement not covered" >      object = await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.be.null;</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.del(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      object = await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.be.null;</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('Scenario: Test wrap to return object', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+      const cache_key = <span class="cstat-no" title="statement not covered" >"test_wrapped_cache";</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.del(cache_key);</span>
+      const objectToStore = <span class="cstat-no" title="statement not covered" >{test: 1};</span>
+      let storedObject = <span class="cstat-no" title="statement not covered" >await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(storedObject).to.be.null;</span>
+<span class="cstat-no" title="statement not covered" >      storedObject = await getOrCreate(cache_key, objectToStore);</span>
+<span class="cstat-no" title="statement not covered" >      expect(storedObject.test).to.be.equal(1);</span>
+<span class="cstat-no" title="statement not covered" >      storedObject.test++;</span>
+<span class="cstat-no" title="statement not covered" >      expect(storedObject).to.have.own.property("test").that.equal(2);</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.del(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      storedObject = await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(storedObject).to.be.null;</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    after(<span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      cacheManager.cacheType = config.cacheType;</span>
+    });
+  });
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  describe('Redis tests with compression', <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    before(<span class="fstat-no" title="function not covered" >fu</span>nction () {</span>
+&nbsp;
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    afterEach(<span class="fstat-no" title="function not covered" >as</span>ync function () {</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.cacheManager.reset();</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('Scenario: Test the cache is empty', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+      const cache_key = <span class="cstat-no" title="statement not covered" >"deleted_cache_key";</span>
+      let object = <span class="cstat-no" title="statement not covered" >await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.be.null;</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('Scenario: Test flushdb', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+      const cache_key = <span class="cstat-no" title="statement not covered" >"flush_cache_key";</span>
+      let obj = <span class="cstat-no" title="statement not covered" >{test: 1};</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.set(cache_key, obj);</span>
+<span class="cstat-no" title="statement not covered" >      obj.test++;</span>
+      let object = <span class="cstat-no" title="statement not covered" >await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.have.own.property("test").that.equal(1);</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.cacheManager.reset();</span>
+<span class="cstat-no" title="statement not covered" >      object = await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.be.null;</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('Scenario: Test get all cache keys', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+      const cache_key1 = <span class="cstat-no" title="statement not covered" >"cache_key1";</span>
+      const cache_key2 = <span class="cstat-no" title="statement not covered" >"cache_key2";</span>
+      let obj = <span class="cstat-no" title="statement not covered" >{test: 1};</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.set(cache_key1, obj);</span>
+<span class="cstat-no" title="statement not covered" >      obj.test++;</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.set(cache_key2, obj);</span>
+      let keys = <span class="cstat-no" title="statement not covered" >await cacheManager.cacheManager.keys();</span>
+<span class="cstat-no" title="statement not covered" >      expect(keys).to.have.own.property("length").that.equal(2);</span>
+<span class="cstat-no" title="statement not covered" >      expect(keys).to.contain(cache_key2);</span>
+<span class="cstat-no" title="statement not covered" >      expect(keys).to.contain(cache_key1);</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('Scenario: Test get specific cache key', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+      const cache_key1 = <span class="cstat-no" title="statement not covered" >"cache_key1";</span>
+      const cache_key2 = <span class="cstat-no" title="statement not covered" >"cache_key2";</span>
+      let obj = <span class="cstat-no" title="statement not covered" >{test: 1};</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.set(cache_key1, obj);</span>
+<span class="cstat-no" title="statement not covered" >      obj.test++;</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.set(cache_key2, obj);</span>
+      let keys = <span class="cstat-no" title="statement not covered" >await cacheManager.cacheManager.keys("*key1");</span>
+<span class="cstat-no" title="statement not covered" >      expect(keys).to.have.own.property("length").that.equal(1);</span>
+<span class="cstat-no" title="statement not covered" >      expect(keys[0]).to.be.equal(cache_key1);</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('Scenario: Test no keys available after flushdb', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+      let keys = <span class="cstat-no" title="statement not covered" >await cacheManager.cacheManager.keys();</span>
+<span class="cstat-no" title="statement not covered" >      expect(keys).to.have.own.property("length").that.equal(0);</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('Scenario: Test cache store and delete from cache', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+      const cache_key = <span class="cstat-no" title="statement not covered" >"test_cache_store";</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.del(cache_key);</span>
+      let object = <span class="cstat-no" title="statement not covered" >await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.be.null;</span>
+      let objectToStore = <span class="cstat-no" title="statement not covered" >{test: 1};</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.set(cache_key, objectToStore, 1, true);</span>
+<span class="cstat-no" title="statement not covered" >      objectToStore.test++;</span>
+<span class="cstat-no" title="statement not covered" >      expect(objectToStore).to.have.own.property("test").that.equal(2);</span>
+<span class="cstat-no" title="statement not covered" >      object = await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).not.to.be.null;</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.have.own.property("test").that.equal(1);</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.del(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      object = await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.be.null;</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('Scenario: Test cache store and delete from cache without compression sent in the options', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+      const cache_key = <span class="cstat-no" title="statement not covered" >"test_cache_store";</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.del(cache_key);</span>
+      let object = <span class="cstat-no" title="statement not covered" >await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.be.null;</span>
+      let objectToStore = <span class="cstat-no" title="statement not covered" >{test: 1};</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.set(cache_key, objectToStore, 1, true, false);</span>
+<span class="cstat-no" title="statement not covered" >      objectToStore.test++;</span>
+<span class="cstat-no" title="statement not covered" >      expect(objectToStore).to.have.own.property("test").that.equal(2);</span>
+<span class="cstat-no" title="statement not covered" >      object = await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).not.to.be.null;</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.have.own.property("test").that.equal(1);</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.del(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      object = await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.be.null;</span>
+&nbsp;
+      // see that the same key can be used twice once with compression and once without
+<span class="cstat-no" title="statement not covered" >      await cacheManager.del(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      object = await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.be.null;</span>
+<span class="cstat-no" title="statement not covered" >      objectToStore = {test: 1};</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.set(cache_key, objectToStore, 1, true);</span>
+<span class="cstat-no" title="statement not covered" >      objectToStore.test++;</span>
+<span class="cstat-no" title="statement not covered" >      expect(objectToStore).to.have.own.property("test").that.equal(2);</span>
+<span class="cstat-no" title="statement not covered" >      object = await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).not.to.be.null;</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.have.own.property("test").that.equal(1);</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.del(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      object = await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(object).to.be.null;</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('Scenario: Test cache wrap method', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+      const cache_key = <span class="cstat-no" title="statement not covered" >"test_wrapped_cache";</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.del(cache_key);</span>
+      const objectToStore = <span class="cstat-no" title="statement not covered" >{test: 1};</span>
+      let storedObject = <span class="cstat-no" title="statement not covered" >await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(storedObject).to.be.null;</span>
+<span class="cstat-no" title="statement not covered" >      storedObject = await getOrCreate(cache_key, objectToStore);</span>
+<span class="cstat-no" title="statement not covered" >      expect(storedObject.test).to.be.equal(1);</span>
+<span class="cstat-no" title="statement not covered" >      storedObject.test++;</span>
+<span class="cstat-no" title="statement not covered" >      expect(storedObject).to.have.own.property("test").that.equal(2);</span>
+<span class="cstat-no" title="statement not covered" >      storedObject = await getOrCreate(cache_key, null);</span>
+<span class="cstat-no" title="statement not covered" >      expect(storedObject).not.to.be.null;</span>
+<span class="cstat-no" title="statement not covered" >      expect(storedObject).to.have.own.property("test").that.equal(1);</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.del(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      storedObject = await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(storedObject).to.be.null;</span>
+    });
+&nbsp;
+    async function <span class="fstat-no" title="function not covered" >testCache(</span>cache_key) {
+      const ttl = <span class="cstat-no" title="statement not covered" >1;</span>
+      let objectToStore = <span class="cstat-no" title="statement not covered" >{test: 1};</span>
+      let storedObject = <span class="cstat-no" title="statement not covered" >await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(storedObject).to.be.null;</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.set(cache_key, objectToStore, ttl);</span>
+<span class="cstat-no" title="statement not covered" >      objectToStore.test++;</span>
+<span class="cstat-no" title="statement not covered" >      await checkCacheExists(cache_key, (ttl*1000));</span>
+<span class="cstat-no" title="statement not covered" >      await checkThatCacheDoesNotExist(cache_key, (ttl*1000 + 10));</span>
+&nbsp;
+      function <span class="fstat-no" title="function not covered" >checkCacheExists(</span>cacheKey, timeout){
+        let index = <span class="cstat-no" title="statement not covered" >1;</span>
+<span class="cstat-no" title="statement not covered" >        return new Promise(<span class="fstat-no" title="function not covered" >fu</span>nction(fullfil, reject) {</span>
+          let interval = <span class="cstat-no" title="statement not covered" >setInterval(<span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+            let obj = <span class="cstat-no" title="statement not covered" >await cacheManager.get(cache_key);</span>
+            //console.log(index + " " + obj);
+<span class="cstat-no" title="statement not covered" >            if (!obj || obj.test != 1) {</span>
+<span class="cstat-no" title="statement not covered" >              clearInterval(interval);</span>
+<span class="cstat-no" title="statement not covered" >              reject();</span>
+            }
+            else <span class="cstat-no" title="statement not covered" >if (!index) {</span>
+<span class="cstat-no" title="statement not covered" >              clearInterval(interval);</span>
+<span class="cstat-no" title="statement not covered" >              fullfil();</span>
+            }
+<span class="cstat-no" title="statement not covered" >            index--;</span>
+          }, 550);
+        });
+      }
+&nbsp;
+      function <span class="fstat-no" title="function not covered" >checkThatCacheDoesNotExist(</span>cacheKey, timeout){
+<span class="cstat-no" title="statement not covered" >        return new Promise(<span class="fstat-no" title="function not covered" >fu</span>nction(fullfil, reject) {</span>
+<span class="cstat-no" title="statement not covered" >          setTimeout(<span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+            let obj = <span class="cstat-no" title="statement not covered" >await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >            if (!obj)</span>
+<span class="cstat-no" title="statement not covered" >              fullfil();</span>
+            else
+<span class="cstat-no" title="statement not covered" >              reject();</span>
+          }, timeout);
+        });
+      }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('Scenario: Add object to cache with absolute expiration of 10 seconds and see that it is returned', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+      const cache_key = <span class="cstat-no" title="statement not covered" >"test_ttl_cache";</span>
+      let objectToStore = <span class="cstat-no" title="statement not covered" >{test: 1};</span>
+      let storedObject = <span class="cstat-no" title="statement not covered" >await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(storedObject).to.be.null;</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.set(cache_key, objectToStore, 10, true);</span>
+      let ttl = <span class="cstat-no" title="statement not covered" >await cacheManager.cacheManager.ttl(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(ttl).to.be.equal(10);</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.del(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      ttl = await cacheManager.cacheManager.ttl(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(ttl).to.be.lessThan(0);</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('Scenario: Cache without ttl', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+      const cache_key = <span class="cstat-no" title="statement not covered" >"test_nottl_cache";</span>
+      let objectToStore = <span class="cstat-no" title="statement not covered" >{test: 1};</span>
+      let storedObject = <span class="cstat-no" title="statement not covered" >await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(storedObject).to.be.null;</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.set(cache_key, objectToStore, 0);</span>
+      let ttl = <span class="cstat-no" title="statement not covered" >await cacheManager.cacheManager.ttl(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(ttl).to.be.equal(-1);</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.del(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      ttl = await cacheManager.cacheManager.ttl(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(ttl).to.be.lessThan(0);</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('Scenario: Test store exception', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+      const cache_key = <span class="cstat-no" title="statement not covered" >"test_exception_cache";</span>
+<span class="cstat-no" title="statement not covered" >      expect(cacheManager.set(cache_key, null)).to.eventually.be.rejectedWith('value cannot be ' + null);</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('Scenario: test getClient', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+      const cache_key = <span class="cstat-no" title="statement not covered" >"test_getclient_cache";</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.set(cache_key, {}, 10, true);</span>
+      const client = <span class="cstat-no" title="statement not covered" >await cacheManager.cacheManager.getClient();</span>
+<span class="cstat-no" title="statement not covered" >      expect(client).to.have.property("done");</span>
+<span class="cstat-no" title="statement not covered" >      expect(client).to.have.property("client");</span>
+<span class="cstat-no" title="statement not covered" >      client.client.keys("*", <span class="fstat-no" title="function not covered" >fu</span>nction(err, result){</span>
+<span class="cstat-no" title="statement not covered" >        expect(err).to.be.null;</span>
+<span class="cstat-no" title="statement not covered" >        expect(result).to.have.property("length").that.is.equal(1);</span>
+<span class="cstat-no" title="statement not covered" >        expect(result).to.contain(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >        client.done(<span class="fstat-no" title="function not covered" >fu</span>nction(){</span>
+          // see that the callback is called
+<span class="cstat-no" title="statement not covered" >          expect(true).to.be.equal(true);</span>
+        });
+      });
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('Scenario: Add object to cache with sliding expiration and see it exists for 1 second from last touch', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      await testCache("test_sliding_cache", false);</span>
+    }).timeout(2500);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('Scenario: Add object to cache with absolute expiration and see it exists for 1 second', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+&nbsp;
+      const cache_key = <span class="cstat-no" title="statement not covered" >"test_absolute_cache";</span>
+      const ttl = <span class="cstat-no" title="statement not covered" >1;</span>
+      let objectToStore = <span class="cstat-no" title="statement not covered" >{test: 1};</span>
+      let storedObject = <span class="cstat-no" title="statement not covered" >await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(storedObject).to.be.null;</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.set(cache_key, objectToStore, ttl, true);</span>
+<span class="cstat-no" title="statement not covered" >      objectToStore.test++;</span>
+<span class="cstat-no" title="statement not covered" >      await getPromise(cache_key, ttl*1000);</span>
+&nbsp;
+      function <span class="fstat-no" title="function not covered" >getPromise(</span>cacheKey, timeout){
+        let index = <span class="cstat-no" title="statement not covered" >4;</span>
+<span class="cstat-no" title="statement not covered" >        return new Promise(<span class="fstat-no" title="function not covered" >fu</span>nction(fullfil, reject) {</span>
+          let interval = <span class="cstat-no" title="statement not covered" >setInterval(<span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+            let obj = <span class="cstat-no" title="statement not covered" >await cacheManager.get(cache_key);</span>
+            //console.log(index + " " + obj);
+<span class="cstat-no" title="statement not covered" >            if (index) {</span>
+<span class="cstat-no" title="statement not covered" >              if (!obj || obj.test != 1)</span>
+<span class="cstat-no" title="statement not covered" >                reject();</span>
+<span class="cstat-no" title="statement not covered" >              index--;</span>
+            }
+            else {
+<span class="cstat-no" title="statement not covered" >              clearInterval(interval);</span>
+<span class="cstat-no" title="statement not covered" >              if (!obj)</span>
+<span class="cstat-no" title="statement not covered" >                fullfil();</span>
+              else
+<span class="cstat-no" title="statement not covered" >                reject();</span>
+            }
+          }, timeout / (index +1));
+        });
+      }
+    });
+&nbsp;
+  });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  describe('Redis tests with wrong port - testing exceptions are not thrown', <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+&nbsp;
+    let oldRedisPortValue, oldCacheManager;
+<span class="cstat-no" title="statement not covered" >    before(<span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      oldRedisPortValue = config.redis.port;</span>
+<span class="cstat-no" title="statement not covered" >      config.redis.port = 1;</span>
+<span class="cstat-no" title="statement not covered" >      oldCacheManager = cacheManager.cacheManager;</span>
+      let redisOptions = <span class="cstat-no" title="statement not covered" >Object.assign({}, config.redis);</span>
+<span class="cstat-no" title="statement not covered" >      cacheManager.cacheManager = require('../redis')(redisOptions);</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('Scenario: delete from cache does not throw an error', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      expect(cacheManager.del("xxxx")).to.eventually.be.not.rejected;</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('Scenario: get key from cache does not throw an error', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      expect(cacheManager.get("xxxx")).to.eventually.be.not.rejected;</span>
+<span class="cstat-no" title="statement not covered" >      expect(await cacheManager.get("xxxx")).to.equal(null);</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('Scenario: set key in cache does not throw an error', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      expect(cacheManager.set("xxxx"), {}).to.eventually.be.not.rejected;</span>
+<span class="cstat-no" title="statement not covered" >      expect(await cacheManager.get("xxxx")).to.equal(null);</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('Scenario: wrap does not throw an error, but returns the sent value', <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+      const cache_key = <span class="cstat-no" title="statement not covered" >"test_wrapped_cache_wrong_port";</span>
+<span class="cstat-no" title="statement not covered" >      await cacheManager.del(cache_key);</span>
+      const objectToStore = <span class="cstat-no" title="statement not covered" >{test: 1};</span>
+      let storedObject = <span class="cstat-no" title="statement not covered" >await cacheManager.get(cache_key);</span>
+<span class="cstat-no" title="statement not covered" >      expect(storedObject).to.be.null;</span>
+<span class="cstat-no" title="statement not covered" >      storedObject = await getOrCreate(cache_key, objectToStore);</span>
+<span class="cstat-no" title="statement not covered" >      expect(storedObject.test).to.be.equal(1);</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    after(<span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      config.redis.port = oldRedisPortValue;</span>
+<span class="cstat-no" title="statement not covered" >      cacheManager.cacheManager = oldCacheManager;</span>
+    });
+  });
+&nbsp;
+  async function <span class="fstat-no" title="function not covered" >getOrCreate(</span>cache_key, returnObject) {
+<span class="cstat-no" title="statement not covered" >    return await cacheManager.wrap(cache_key, <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      return returnObject;</span>
+    }, 1, true);
+  }
+&nbsp;
+});
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jan 17 2018 10:28:01 GMT+0200 (Jerusalem Standard Time)
+</div>
+</div>
+<script src="..\..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\..\sorter.js"></script>
+</body>
+</html>

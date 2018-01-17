@@ -1,0 +1,3236 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for nodebestpractices/services/order/DB/migrations/20171105160257_v0.0.1.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\..\..\index.html">All files</a> / <a href="index.html">nodebestpractices/services/order/DB/migrations</a> 20171105160257_v0.0.1.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/7</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693
+694
+695
+696
+697
+698
+699
+700
+701
+702
+703
+704
+705
+706
+707
+708
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746
+747
+748
+749
+750
+751
+752
+753
+754
+755
+756
+757
+758
+759
+760
+761
+762
+763
+764
+765
+766
+767
+768
+769
+770
+771
+772
+773
+774
+775
+776
+777
+778
+779
+780
+781
+782
+783
+784
+785
+786
+787
+788
+789
+790
+791
+792
+793
+794
+795
+796
+797
+798
+799
+800
+801
+802
+803
+804
+805
+806
+807
+808
+809
+810
+811
+812
+813
+814
+815
+816
+817
+818
+819
+820
+821
+822
+823
+824
+825
+826
+827
+828
+829
+830
+831
+832
+833
+834
+835
+836
+837
+838
+839
+840
+841
+842
+843
+844
+845
+846
+847
+848
+849
+850
+851
+852
+853
+854
+855
+856
+857
+858
+859
+860
+861
+862
+863
+864
+865
+866
+867
+868
+869
+870
+871
+872
+873
+874
+875
+876
+877
+878
+879
+880
+881
+882
+883
+884
+885
+886
+887
+888
+889
+890
+891
+892
+893
+894
+895
+896
+897
+898
+899
+900
+901
+902
+903
+904
+905
+906
+907
+908
+909
+910
+911
+912
+913
+914
+915
+916
+917
+918
+919
+920
+921
+922
+923
+924
+925
+926
+927
+928
+929
+930
+931
+932
+933
+934
+935
+936
+937
+938
+939
+940
+941
+942
+943
+944
+945
+946
+947
+948
+949
+950
+951
+952
+953
+954
+955
+956
+957
+958
+959
+960
+961
+962
+963
+964
+965
+966
+967
+968
+969
+970
+971
+972
+973
+974
+975
+976
+977
+978
+979
+980
+981
+982
+983
+984
+985
+986
+987
+988
+989
+990
+991
+992
+993
+994
+995
+996
+997
+998
+999
+1000
+1001
+1002
+1003
+1004
+1005
+1006
+1007
+1008
+1009
+1010
+1011
+1012
+1013
+1014
+1015
+1016
+1017
+1018
+1019
+1020
+1021
+1022
+1023
+1024
+1025
+1026
+1027
+1028
+1029
+1030
+1031
+1032
+1033
+1034
+1035
+1036
+1037
+1038
+1039
+1040
+1041
+1042
+1043
+1044
+1045
+1046
+1047
+1048
+1049
+1050
+1051
+1052
+1053
+1054
+1055
+1056
+1057
+1058</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const logger = <span class="cstat-no" title="statement not covered" >require('logger');</span>
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >exports.up = <span class="fstat-no" title="function not covered" >fu</span>nction(knex, Promise) {</span>
+<span class="cstat-no" title="statement not covered" >    logger.info(`Migration is about to start now`);</span>
+    const raw = <span class="cstat-no" title="statement not covered" >`</span>
+---
+-- PostgreSQL database dump
+--
+&nbsp;
+-- Dumped from database version 9.6.5
+-- Dumped by pg_dump version 9.6.3
+&nbsp;
+-- Started on 2017-12-31 15:24:40 IST
+&nbsp;
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+&nbsp;
+--
+-- TOC entry 1 (class 3079 OID 12655)
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+&nbsp;
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2593 (class 0 OID 0)
+-- Dependencies: 1
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+&nbsp;
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+&nbsp;
+&nbsp;
+SET search_path = public, pg_catalog;
+&nbsp;
+--
+-- TOC entry 191 (class 1259 OID 52268)
+-- Name: integration_entities_id_seq; Type: SEQUENCE; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE SEQUENCE integration_entities_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+&nbsp;
+&nbsp;
+ALTER TABLE integration_entities_id_seq OWNER TO inflowz_db_user;
+&nbsp;
+SET default_tablespace = '';
+&nbsp;
+SET default_with_oids = false;
+&nbsp;
+--
+-- TOC entry 192 (class 1259 OID 52270)
+-- Name: integration_entities; Type: TABLE; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE TABLE integration_entities (
+    id integer DEFAULT nextval('integration_entities_id_seq'::regclass) NOT NULL,
+    external_api_name character varying NOT NULL,
+    api_name character varying NOT NULL,
+    label character varying(100) NOT NULL,
+    org_id integer NOT NULL,
+    integration_link_id integer NOT NULL,
+    state smallint DEFAULT 0 NOT NULL,
+    is_custom boolean DEFAULT false NOT NULL,
+    last_sync_date timestamp without time zone,
+    sync_options smallint DEFAULT 0 NOT NULL,
+    history_fields character varying(500),
+    last_objects_seed_date timestamp without time zone,
+    last_history_seed_date timestamp without time zone,
+    last_events_sync_date timestamp without time zone,
+    display_field_name character varying(100),
+    label_plural character varying(1000),
+    is_system boolean,
+    created_on timestamp without time zone DEFAULT now() NOT NULL,
+    updated_on timestamp without time zone DEFAULT now() NOT NULL,
+    created_by integer,
+    updated_by integer
+);
+&nbsp;
+&nbsp;
+ALTER TABLE integration_entities OWNER TO inflowz_db_user;
+&nbsp;
+--
+-- TOC entry 193 (class 1259 OID 52282)
+-- Name: integration_field_values_id_seq; Type: SEQUENCE; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE SEQUENCE integration_field_values_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+&nbsp;
+&nbsp;
+ALTER TABLE integration_field_values_id_seq OWNER TO inflowz_db_user;
+&nbsp;
+--
+-- TOC entry 194 (class 1259 OID 52284)
+-- Name: integration_field_values; Type: TABLE; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE TABLE integration_field_values (
+    id integer DEFAULT nextval('integration_field_values_id_seq'::regclass) NOT NULL,
+    external_api_name character varying NOT NULL,
+    api_name character varying NOT NULL,
+    label character varying(500) NOT NULL,
+    "order" integer DEFAULT 0 NOT NULL,
+    org_id integer NOT NULL,
+    field_api_name character varying NOT NULL,
+    entity_api_name character varying NOT NULL,
+    integration_link_id integer NOT NULL,
+    state smallint NOT NULL,
+    additional_info character varying(1000),
+    created_on timestamp without time zone DEFAULT now() NOT NULL,
+    updated_on timestamp without time zone DEFAULT now() NOT NULL,
+    created_by integer,
+    updated_by integer
+);
+&nbsp;
+&nbsp;
+ALTER TABLE integration_field_values OWNER TO inflowz_db_user;
+&nbsp;
+--
+-- TOC entry 195 (class 1259 OID 52294)
+-- Name: integration_fields_id_seq; Type: SEQUENCE; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE SEQUENCE integration_fields_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+&nbsp;
+&nbsp;
+ALTER TABLE integration_fields_id_seq OWNER TO inflowz_db_user;
+&nbsp;
+--
+-- TOC entry 196 (class 1259 OID 52296)
+-- Name: integration_fields; Type: TABLE; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE TABLE integration_fields (
+    id integer DEFAULT nextval('integration_fields_id_seq'::regclass) NOT NULL,
+    external_api_name character varying NOT NULL,
+    api_name character varying NOT NULL,
+    label character varying(100) NOT NULL,
+    org_id integer NOT NULL,
+    integration_link_id integer NOT NULL,
+    entity_api_name character varying,
+    state smallint DEFAULT 0 NOT NULL,
+    created_on timestamp without time zone DEFAULT now() NOT NULL,
+    updated_on timestamp without time zone DEFAULT now() NOT NULL,
+    reference_to character varying(10000),
+    data_type character varying(40) NOT NULL,
+    is_custom boolean DEFAULT false NOT NULL,
+    created_by integer,
+    updated_by integer
+);
+&nbsp;
+&nbsp;
+ALTER TABLE integration_fields OWNER TO inflowz_db_user;
+&nbsp;
+--
+-- TOC entry 197 (class 1259 OID 52307)
+-- Name: integration_link_id_seq; Type: SEQUENCE; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE SEQUENCE integration_link_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+&nbsp;
+&nbsp;
+ALTER TABLE integration_link_id_seq OWNER TO inflowz_db_user;
+&nbsp;
+--
+-- TOC entry 198 (class 1259 OID 52309)
+-- Name: integration_link; Type: TABLE; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE TABLE integration_link (
+    id integer DEFAULT nextval('integration_link_id_seq'::regclass) NOT NULL,
+    org_id integer NOT NULL,
+    type smallint NOT NULL,
+    data text NOT NULL,
+    created_on timestamp without time zone DEFAULT now() NOT NULL,
+    updated_on timestamp without time zone DEFAULT now() NOT NULL,
+    retry_count integer DEFAULT 0 NOT NULL,
+    last_error character varying(200),
+    state smallint DEFAULT 0,
+    last_connection_date timestamp without time zone,
+    last_metadata_sync_date timestamp without time zone,
+    last_metadata_history_sync_date timestamp without time zone,
+    created_by integer,
+    updated_by integer
+);
+&nbsp;
+&nbsp;
+ALTER TABLE integration_link OWNER TO inflowz_db_user;
+&nbsp;
+&nbsp;
+--
+-- TOC entry 199 (class 1259 OID 52320)
+-- Name: organizations; Type: TABLE; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE TABLE organizations (
+    id integer NOT NULL,
+    name character varying(45) NOT NULL,
+    created_on timestamp without time zone NOT NULL,
+    updated_on timestamp without time zone DEFAULT now() NOT NULL,
+    created_by integer,
+    updated_by integer
+);
+&nbsp;
+&nbsp;
+ALTER TABLE organizations OWNER TO inflowz_db_user;
+&nbsp;
+--
+-- TOC entry 200 (class 1259 OID 52324)
+-- Name: organizations_id_seq; Type: SEQUENCE; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE SEQUENCE organizations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+&nbsp;
+&nbsp;
+ALTER TABLE organizations_id_seq OWNER TO inflowz_db_user;
+&nbsp;
+--
+-- TOC entry 2595 (class 0 OID 0)
+-- Dependencies: 200
+-- Name: organizations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER SEQUENCE organizations_id_seq OWNED BY organizations.id;
+&nbsp;
+&nbsp;
+--
+-- TOC entry 201 (class 1259 OID 52326)
+-- Name: process_mapping_rule_id_seq; Type: SEQUENCE; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE SEQUENCE process_mapping_rule_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+&nbsp;
+&nbsp;
+ALTER TABLE process_mapping_rule_id_seq OWNER TO inflowz_db_user;
+&nbsp;
+--
+-- TOC entry 202 (class 1259 OID 52328)
+-- Name: process_mapping_rules; Type: TABLE; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE TABLE process_mapping_rules (
+    id integer DEFAULT nextval('process_mapping_rule_id_seq'::regclass) NOT NULL,
+    org_id integer NOT NULL,
+    process_mapping_id integer NOT NULL,
+    rule_type smallint NOT NULL,
+    criteria character varying(5000) NOT NULL,
+    criteria_outcome smallint NOT NULL,
+    label character varying(100),
+    limbo_hours integer,
+    limbo_display_unit smallint,
+    potential_lost_hours integer,
+    potential_lost_display_unit smallint,
+    state smallint DEFAULT 0 NOT NULL,
+    rule_sub_type smallint,
+    label_by smallint,
+    created_on timestamp without time zone DEFAULT now() NOT NULL,
+    updated_on timestamp without time zone DEFAULT now() NOT NULL,
+    created_by integer,
+    updated_by integer
+);
+&nbsp;
+&nbsp;
+ALTER TABLE process_mapping_rules OWNER TO inflowz_db_user;
+&nbsp;
+--
+-- TOC entry 203 (class 1259 OID 52338)
+-- Name: process_mappings_id_seq; Type: SEQUENCE; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE SEQUENCE process_mappings_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+&nbsp;
+&nbsp;
+ALTER TABLE process_mappings_id_seq OWNER TO inflowz_db_user;
+&nbsp;
+--
+-- TOC entry 204 (class 1259 OID 52340)
+-- Name: process_mappings; Type: TABLE; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE TABLE process_mappings (
+    id integer DEFAULT nextval('process_mappings_id_seq'::regclass) NOT NULL,
+    org_id integer NOT NULL,
+    name character varying(100) NOT NULL,
+    integration_link_id integer NOT NULL,
+    entity_api_name character varying,
+    progression_field_api_name character varying,
+    limbo_hours integer,
+    limbo_display_unit smallint,
+    potential_lost_hours integer,
+    potential_lost_display_unit smallint,
+    state smallint DEFAULT 0 NOT NULL,
+    lead_kpi_field_path character varying(256),
+    desired_outcome_values character varying[],
+    undesired_outcome_values character varying[],
+    created_on timestamp without time zone DEFAULT now() NOT NULL,
+    updated_on timestamp without time zone DEFAULT now() NOT NULL,
+    created_by integer,
+    updated_by integer
+);
+&nbsp;
+&nbsp;
+ALTER TABLE process_mappings OWNER TO inflowz_db_user;
+&nbsp;
+--
+-- TOC entry 188 (class 1259 OID 52262)
+-- Name: segmentation_id_seq; Type: SEQUENCE; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE SEQUENCE segmentation_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+&nbsp;
+&nbsp;
+ALTER TABLE segmentation_id_seq OWNER TO inflowz_db_user;
+&nbsp;
+--
+-- TOC entry 205 (class 1259 OID 52350)
+-- Name: segmentation; Type: TABLE; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE TABLE segmentation (
+    id integer DEFAULT nextval('segmentation_id_seq'::regclass) NOT NULL,
+    integration_link_id integer NOT NULL,
+    entity_api_name character varying NOT NULL,
+    org_id integer NOT NULL,
+    label character varying(100),
+    criteria character varying(500) NOT NULL,
+    options character varying(1000),
+    defaults character varying(1000),
+    created_on timestamp without time zone DEFAULT now() NOT NULL,
+    updated_on timestamp without time zone DEFAULT now() NOT NULL,
+    created_by integer,
+    updated_by integer
+);
+&nbsp;
+&nbsp;
+ALTER TABLE segmentation OWNER TO inflowz_db_user;
+&nbsp;
+--
+-- TOC entry 190 (class 1259 OID 52266)
+-- Name: segmentation_link_id_seq; Type: SEQUENCE; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE SEQUENCE segmentation_link_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+&nbsp;
+&nbsp;
+ALTER TABLE segmentation_link_id_seq OWNER TO inflowz_db_user;
+&nbsp;
+--
+-- TOC entry 206 (class 1259 OID 52359)
+-- Name: segmentation_link; Type: TABLE; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE TABLE segmentation_link (
+    id integer DEFAULT nextval('segmentation_link_id_seq'::regclass) NOT NULL,
+    process_mapping_id integer NOT NULL,
+    segmentation_id integer NOT NULL,
+    org_id integer NOT NULL,
+    label character varying(100),
+    criteria character varying(500),
+    main_segmentation_path character varying(500) NOT NULL,
+    options character varying(1000),
+    defaults character varying(1000),
+    created_on timestamp without time zone DEFAULT now() NOT NULL,
+    updated_on timestamp without time zone DEFAULT now() NOT NULL,
+    created_by integer,
+    updated_by integer
+);
+&nbsp;
+&nbsp;
+ALTER TABLE segmentation_link OWNER TO inflowz_db_user;
+&nbsp;
+--
+-- TOC entry 189 (class 1259 OID 52264)
+-- Name: space_id_seq; Type: SEQUENCE; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE SEQUENCE space_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+&nbsp;
+&nbsp;
+ALTER TABLE space_id_seq OWNER TO inflowz_db_user;
+&nbsp;
+--
+-- TOC entry 207 (class 1259 OID 52368)
+-- Name: space; Type: TABLE; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE TABLE space (
+    id integer DEFAULT nextval('space_id_seq'::regclass) NOT NULL,
+    segmentation_link_id integer NOT NULL,
+    org_id integer NOT NULL,
+    main_segmentation_value character varying,
+    label character varying(100),
+    criteria character varying(500),
+    options character varying(1000),
+    defaults character varying(1000),
+    state smallint DEFAULT 0 NOT NULL,
+    created_on timestamp without time zone DEFAULT now() NOT NULL,
+    updated_on timestamp without time zone DEFAULT now() NOT NULL,
+    created_by integer,
+    updated_by integer
+);
+&nbsp;
+&nbsp;
+ALTER TABLE space OWNER TO inflowz_db_user;
+&nbsp;
+--
+-- TOC entry 208 (class 1259 OID 52378)
+-- Name: user_org_link; Type: TABLE; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE TABLE user_org_link (
+    org_id integer NOT NULL,
+    user_id integer NOT NULL,
+    roles smallint,
+    created_on timestamp without time zone DEFAULT now() NOT NULL,
+    updated_on timestamp without time zone DEFAULT now() NOT NULL,
+    created_by integer,
+    updated_by integer
+);
+&nbsp;
+&nbsp;
+ALTER TABLE user_org_link OWNER TO inflowz_db_user;
+&nbsp;
+--
+-- TOC entry 209 (class 1259 OID 52383)
+-- Name: users; Type: TABLE; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE TABLE users (
+    user_id integer NOT NULL,
+    email character varying(150) NOT NULL,
+    display_name character varying(50) NOT NULL,
+    state smallint NOT NULL,
+    password character varying(100) NOT NULL,
+    salt character varying(50) NOT NULL,
+    image_url character varying(250),
+    last_login_date timestamp without time zone,
+    login_count bigint NOT NULL,
+    timezone_offset smallint,
+    language smallint DEFAULT 1 NOT NULL,
+    created_on timestamp without time zone DEFAULT now() NOT NULL,
+    updated_on timestamp without time zone DEFAULT now() NOT NULL,
+    created_by integer,
+    updated_by integer
+);
+&nbsp;
+&nbsp;
+ALTER TABLE users OWNER TO inflowz_db_user;
+&nbsp;
+--
+-- TOC entry 210 (class 1259 OID 52392)
+-- Name: users_user_id_seq; Type: SEQUENCE; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE SEQUENCE users_user_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+&nbsp;
+&nbsp;
+ALTER TABLE users_user_id_seq OWNER TO inflowz_db_user;
+&nbsp;
+--
+-- TOC entry 2596 (class 0 OID 0)
+-- Dependencies: 210
+-- Name: users_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER SEQUENCE users_user_id_seq OWNED BY users.user_id;
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2373 (class 2604 OID 52394)
+-- Name: organizations id; Type: DEFAULT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY organizations ALTER COLUMN id SET DEFAULT nextval('organizations_id_seq'::regclass);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2397 (class 2604 OID 52395)
+-- Name: users user_id; Type: DEFAULT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY users ALTER COLUMN user_id SET DEFAULT nextval('users_user_id_seq'::regclass);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2420 (class 2606 OID 52397)
+-- Name: process_mapping_rules ProcessMappingRules_pkey; Type: CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY process_mapping_rules
+    ADD CONSTRAINT "ProcessMappingRules_pkey" PRIMARY KEY (id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2404 (class 2606 OID 52405)
+-- Name: integration_entities integration_entities_pkey; Type: CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY integration_entities
+    ADD CONSTRAINT integration_entities_pkey PRIMARY KEY (id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2409 (class 2606 OID 52407)
+-- Name: integration_field_values integration_field_values_pkey; Type: CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY integration_field_values
+    ADD CONSTRAINT integration_field_values_pkey PRIMARY KEY (id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2413 (class 2606 OID 52409)
+-- Name: integration_fields integration_fields_pkey; Type: CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY integration_fields
+    ADD CONSTRAINT integration_fields_pkey PRIMARY KEY (id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2415 (class 2606 OID 52411)
+-- Name: integration_link integration_link_pkey; Type: CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY integration_link
+    ADD CONSTRAINT integration_link_pkey PRIMARY KEY (id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2418 (class 2606 OID 52413)
+-- Name: organizations organizations_pkey; Type: CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY organizations
+    ADD CONSTRAINT organizations_pkey PRIMARY KEY (id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2428 (class 2606 OID 52415)
+-- Name: process_mappings process_mappings_pkey; Type: CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY process_mappings
+    ADD CONSTRAINT process_mappings_pkey PRIMARY KEY (id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2438 (class 2606 OID 52401)
+-- Name: segmentation_link segmentation_link_pkey; Type: CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY segmentation_link
+    ADD CONSTRAINT segmentation_link_pkey PRIMARY KEY (id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2433 (class 2606 OID 52565)
+-- Name: segmentation segmentation_pkey; Type: CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY segmentation
+    ADD CONSTRAINT segmentation_pkey PRIMARY KEY (id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2442 (class 2606 OID 52399)
+-- Name: space space_pkey; Type: CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY space
+    ADD CONSTRAINT space_pkey PRIMARY KEY (id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2444 (class 2606 OID 52417)
+-- Name: user_org_link user_org_link_pkey; Type: CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY user_org_link
+    ADD CONSTRAINT user_org_link_pkey PRIMARY KEY (org_id, user_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2447 (class 2606 OID 52419)
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (user_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2445 (class 1259 OID 52420)
+-- Name: EmailUniqueness; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE UNIQUE INDEX "EmailUniqueness" ON users USING btree (email);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2416 (class 1259 OID 52421)
+-- Name: OrganizationNameUniqueness; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE UNIQUE INDEX "OrganizationNameUniqueness" ON organizations USING btree (name);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2400 (class 1259 OID 52422)
+-- Name: apiNameUniqueness; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE UNIQUE INDEX "apiNameUniqueness" ON integration_entities USING btree (api_name, integration_link_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2410 (class 1259 OID 52423)
+-- Name: fieldApiNameUniqueness; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE UNIQUE INDEX "fieldApiNameUniqueness" ON integration_fields USING btree (api_name, entity_api_name, integration_link_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2405 (class 1259 OID 52424)
+-- Name: fieldValueApiNameUniqueness; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE UNIQUE INDEX "fieldValueApiNameUniqueness" ON integration_field_values USING btree (api_name, label, field_api_name, entity_api_name, integration_link_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2411 (class 1259 OID 52433)
+-- Name: fki_fki_integration_fields_entity_id; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE INDEX fki_fki_integration_fields_entity_id ON integration_fields USING btree (entity_api_name, integration_link_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2406 (class 1259 OID 52434)
+-- Name: fki_integration_field_values_field_api_name; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE INDEX fki_integration_field_values_field_api_name ON integration_field_values USING btree (field_api_name, entity_api_name, integration_link_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2407 (class 1259 OID 52435)
+-- Name: fki_integration_field_values_integration_id; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE INDEX fki_integration_field_values_integration_id ON integration_field_values USING btree (integration_link_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2401 (class 1259 OID 52436)
+-- Name: fki_integration_link; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE INDEX fki_integration_link ON integration_entities USING btree (integration_link_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2402 (class 1259 OID 52437)
+-- Name: fki_org_id; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE INDEX fki_org_id ON integration_entities USING btree (org_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2423 (class 1259 OID 52438)
+-- Name: fki_process_mapping_entity; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE INDEX fki_process_mapping_entity ON process_mappings USING btree (entity_api_name, integration_link_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2421 (class 1259 OID 52439)
+-- Name: fki_process_mapping_id_process_mappings_id_fkey; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE INDEX fki_process_mapping_id_process_mappings_id_fkey ON process_mapping_rules USING btree (process_mapping_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2424 (class 1259 OID 52440)
+-- Name: fki_process_mapping_progression_field; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE INDEX fki_process_mapping_progression_field ON process_mappings USING btree (progression_field_api_name, entity_api_name, integration_link_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2422 (class 1259 OID 52441)
+-- Name: fki_process_mapping_rule_id_org_id_fkey; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE INDEX fki_process_mapping_rule_id_org_id_fkey ON process_mapping_rules USING btree (org_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2425 (class 1259 OID 52442)
+-- Name: fki_process_mappings_integration_link; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE INDEX fki_process_mappings_integration_link ON process_mappings USING btree (integration_link_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2426 (class 1259 OID 52443)
+-- Name: fki_process_mappings_org_id; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE INDEX fki_process_mappings_org_id ON process_mappings USING btree (org_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2429 (class 1259 OID 52427)
+-- Name: fki_segmentation_entity; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE INDEX fki_segmentation_entity ON segmentation USING btree (entity_api_name, integration_link_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2430 (class 1259 OID 52428)
+-- Name: fki_segmentation_integration_link; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE INDEX fki_segmentation_integration_link ON segmentation USING btree (integration_link_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2434 (class 1259 OID 52430)
+-- Name: fki_segmentation_link_org_id; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE INDEX fki_segmentation_link_org_id ON segmentation_link USING btree (org_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2435 (class 1259 OID 52431)
+-- Name: fki_segmentation_link_process_mapping; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE INDEX fki_segmentation_link_process_mapping ON segmentation_link USING btree (process_mapping_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2436 (class 1259 OID 52429)
+-- Name: fki_segmentation_link_segmentation; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE INDEX fki_segmentation_link_segmentation ON segmentation_link USING btree (segmentation_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2431 (class 1259 OID 52432)
+-- Name: fki_segmentation_org_id; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE INDEX fki_segmentation_org_id ON segmentation USING btree (org_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2439 (class 1259 OID 52426)
+-- Name: fki_space_org_id; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE INDEX fki_space_org_id ON space USING btree (org_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2440 (class 1259 OID 52425)
+-- Name: fki_space_segmentation_link_id; Type: INDEX; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+CREATE INDEX fki_space_segmentation_link_id ON space USING btree (segmentation_link_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2453 (class 2606 OID 52484)
+-- Name: integration_fields fki_integration_fields_entity_api_name; Type: FK CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY integration_fields
+    ADD CONSTRAINT fki_integration_fields_entity_api_name FOREIGN KEY (entity_api_name, integration_link_id) REFERENCES integration_entities(api_name, integration_link_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2448 (class 2606 OID 52489)
+-- Name: integration_entities integration_entities_integration_link; Type: FK CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY integration_entities
+    ADD CONSTRAINT integration_entities_integration_link FOREIGN KEY (integration_link_id) REFERENCES integration_link(id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2449 (class 2606 OID 52494)
+-- Name: integration_entities integration_entities_org_id; Type: FK CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY integration_entities
+    ADD CONSTRAINT integration_entities_org_id FOREIGN KEY (org_id) REFERENCES organizations(id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2450 (class 2606 OID 52499)
+-- Name: integration_field_values integration_field_values_field_api_name; Type: FK CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY integration_field_values
+    ADD CONSTRAINT integration_field_values_field_api_name FOREIGN KEY (field_api_name, entity_api_name, integration_link_id) REFERENCES integration_fields(api_name, entity_api_name, integration_link_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2451 (class 2606 OID 52504)
+-- Name: integration_field_values integration_field_values_integration_id; Type: FK CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY integration_field_values
+    ADD CONSTRAINT integration_field_values_integration_id FOREIGN KEY (integration_link_id) REFERENCES integration_link(id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2452 (class 2606 OID 52509)
+-- Name: integration_field_values integration_field_values_org_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY integration_field_values
+    ADD CONSTRAINT integration_field_values_org_id_fkey FOREIGN KEY (org_id) REFERENCES organizations(id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2454 (class 2606 OID 52514)
+-- Name: integration_fields integration_fields_integration_id; Type: FK CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY integration_fields
+    ADD CONSTRAINT integration_fields_integration_id FOREIGN KEY (integration_link_id) REFERENCES integration_link(id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2455 (class 2606 OID 52519)
+-- Name: integration_fields integration_fields_org_id; Type: FK CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY integration_fields
+    ADD CONSTRAINT integration_fields_org_id FOREIGN KEY (org_id) REFERENCES organizations(id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2458 (class 2606 OID 52524)
+-- Name: process_mappings process_mapping_entity; Type: FK CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY process_mappings
+    ADD CONSTRAINT process_mapping_entity FOREIGN KEY (entity_api_name, integration_link_id) REFERENCES integration_entities(api_name, integration_link_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2456 (class 2606 OID 52529)
+-- Name: process_mapping_rules process_mapping_id_process_mappings_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY process_mapping_rules
+    ADD CONSTRAINT process_mapping_id_process_mappings_id_fkey FOREIGN KEY (process_mapping_id) REFERENCES process_mappings(id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2459 (class 2606 OID 52534)
+-- Name: process_mappings process_mapping_progression_field; Type: FK CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY process_mappings
+    ADD CONSTRAINT process_mapping_progression_field FOREIGN KEY (progression_field_api_name, entity_api_name, integration_link_id) REFERENCES integration_fields(api_name, entity_api_name, integration_link_id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2457 (class 2606 OID 52539)
+-- Name: process_mapping_rules process_mapping_rule_org_id_organizations_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY process_mapping_rules
+    ADD CONSTRAINT process_mapping_rule_org_id_organizations_id_fkey FOREIGN KEY (org_id) REFERENCES organizations(id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2460 (class 2606 OID 52544)
+-- Name: process_mappings process_mappings_integration_link; Type: FK CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY process_mappings
+    ADD CONSTRAINT process_mappings_integration_link FOREIGN KEY (integration_link_id) REFERENCES integration_link(id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2461 (class 2606 OID 52549)
+-- Name: process_mappings process_mappings_org_id; Type: FK CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY process_mappings
+    ADD CONSTRAINT process_mappings_org_id FOREIGN KEY (org_id) REFERENCES organizations(id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2462 (class 2606 OID 52454)
+-- Name: segmentation segmentation_entity; Type: FK CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY segmentation
+    ADD CONSTRAINT segmentation_entity FOREIGN KEY (entity_api_name, integration_link_id) REFERENCES integration_entities(api_name, integration_link_id);
+--
+-- TOC entry 2464 (class 2606 OID 52459)
+-- Name: segmentation segmentation_integration_link; Type: FK CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY segmentation
+    ADD CONSTRAINT segmentation_integration_link FOREIGN KEY (integration_link_id) REFERENCES integration_link(id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2467 (class 2606 OID 52566)
+-- Name: segmentation_link segmentation_link_segmentation_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY segmentation_link
+    ADD CONSTRAINT segmentation_link_segmentation_id_fkey FOREIGN KEY (segmentation_id) REFERENCES segmentation(id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2463 (class 2606 OID 52469)
+-- Name: segmentation segmentation_org_id; Type: FK CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY segmentation
+    ADD CONSTRAINT segmentation_org_id FOREIGN KEY (org_id) REFERENCES organizations(id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2465 (class 2606 OID 52474)
+-- Name: segmentation_link segmentation_org_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY segmentation_link
+    ADD CONSTRAINT segmentation_org_id_fkey FOREIGN KEY (org_id) REFERENCES organizations(id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2466 (class 2606 OID 52479)
+-- Name: segmentation_link segmentation_process_mapping_fkey; Type: FK CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY segmentation_link
+    ADD CONSTRAINT segmentation_process_mapping_fkey FOREIGN KEY (process_mapping_id) REFERENCES process_mappings(id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2469 (class 2606 OID 52449)
+-- Name: space space_org_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY space
+    ADD CONSTRAINT space_org_id_fkey FOREIGN KEY (org_id) REFERENCES organizations(id);
+&nbsp;
+&nbsp;
+--
+-- TOC entry 2468 (class 2606 OID 52444)
+-- Name: space space_segmentation_link_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: inflowz_db_user
+--
+&nbsp;
+ALTER TABLE ONLY space
+    ADD CONSTRAINT space_segmentation_link_id_fkey FOREIGN KEY (segmentation_link_id) REFERENCES segmentation_link(id);
+&nbsp;
+&nbsp;
+-- Completed on 2017-12-31 15:24:40 IST
+&nbsp;
+--
+-- PostgreSQL database dump complete
+--
+&nbsp;
+&nbsp;
+    `;
+<span class="cstat-no" title="statement not covered" >    logger.info(`Migration ended successfully`);</span>
+<span class="cstat-no" title="statement not covered" >    return knex.schema.raw(raw);</span>
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >exports.down = <span class="fstat-no" title="function not covered" >fu</span>nction(knex, Promise) {</span>
+&nbsp;
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jan 17 2018 10:28:01 GMT+0200 (Jerusalem Standard Time)
+</div>
+</div>
+<script src="..\..\..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\..\..\sorter.js"></script>
+</body>
+</html>
