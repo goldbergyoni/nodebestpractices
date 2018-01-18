@@ -13,7 +13,6 @@ app.use(bodyParser.json());
 
 var router = express.Router();
 
-
 //upstream middleware: before API endpoint
 app.use((req, res, next) => {
   console.log(`Upstream middleware -> I'm about to log a new request  ${req.url}`);
@@ -35,3 +34,5 @@ app.use((req, res, next) => {
   console.log(res.statusCode);
   next();
 });
+
+console.log(`Starting`);

@@ -1,27 +1,30 @@
+const expect = require("chai").expect;
+const sinon = require("sinon");
 const orderServiceUnderTest = require("./orderService").orderService;
 const orderDAL = require("./orderService").orderDAL;
 
-it("Under 1000 order, expect to be approved", () => {
-  const result = new orderServiceUnderTest().add({});
-  if (!result.approved) throw new Error("Test failed");
-});
+describe("Order service", () => {
+  describe("Add new order #cold", () => {
+    it("Under 1000 order, expect to be approved", () => {
+      const result = new orderServiceUnderTest().add({});
+      expect(result.approved).to.be.true;
+    });
 
-it("Price is higher than 1000, expect not approved", () => {
-  const result = new orderServiceUnderTest().add({
-    price: 1500
+    it("Price is higher than 1000, expect not approved", () => {
+      const result = new orderServiceUnderTest().add({
+        price: 1500
+      });
+      expect(result.approved).to.be.false;
+    });
+
+    it("Proving empty order, expect an error", () => {
+      expect(new orderServiceUnderTest().add).to.throw(Error);
+    });
   });
-  if (result.approved) throw new Error("Test failed");
-});
 
-it("Proving empty order, expect an error", () => {
-    let errorFound = false;
-  try {
-    const result = new orderServiceUnderTest().add();
-  } catch (e) {
-    errorFound = true;
-  }
-  finally{
-    if(!errorFound)
-        throw new Error("Test failed");
-  }
+  describe("Delete order #hot", () => {
+    it("Proving empty order, expect an error", () => {
+      expect(new orderServiceUnderTest().add).to.throw(Error);
+    });
+  });
 });

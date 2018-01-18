@@ -5,7 +5,7 @@ class OrderService {
         if (!order)
             throw new Error("Bad boy!")
 
-        const result = order
+        const result = order;
 
         if (order.price > 1000) {
             result.approved = false;
@@ -14,6 +14,7 @@ class OrderService {
         }
 
         new DAL().save(order);
+
 
         return result;
     }

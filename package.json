@@ -79,7 +79,8 @@
     "functions": 99,
     "branches": 99,
     "include": [
-      "**/services/examples/test-basics/orderService.js"
+      "**/services/examples/test-basics/orderService.js",
+      "**/services/examples/test-basics/orderAPI.js"
     ],
     "reporter": [
       "lcov",
@@ -89,4 +90,3 @@
     "all": true
   }
 }
-

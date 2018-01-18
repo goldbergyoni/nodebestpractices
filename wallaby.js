@@ -1,19 +1,17 @@
 module.exports = () => {
     return {
       files: [
-        '**/services/examples/test-basics/orderService.js',
+        '**/services/examples/test-basics/helpers/final-result/orderService.js',
         '!libraries/**/node_modules/**',
         '!**/node_modules/',
-        '!**/helpers/',
       ],
       tests: [
-        '**/services/examples/test-basics/**/test.orderService.unit.js',
-        '!**/helpers/',
+        '**/services/examples/test-basics/helpers/final-result/test.orderService.unit.js',
       ],  
       debug: true,
       setup: function (w) {
         let mocha = w.testFramework;
-        mocha.grep('cold');
+        //mocha.grep('cold');
       },
       env: {
         type: 'node',
