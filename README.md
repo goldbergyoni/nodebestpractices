@@ -764,9 +764,9 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 
-## ![✔] 6.10. Don't run your application with full admin privileges
+## ![✔] 6.10. Run Node as noon-rooted user
 
-**TL;DR:**
+**TL;DR:** Here we will write about people tempting to run node as root to bind to port 80. Running on-behalf of the root account means that any hack gains full control to perform anything within the machine
 
 **Otherwise:**
 
@@ -776,9 +776,9 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 
-## ![✔] 6.11. Limit the incoming request body length
+## ![✔] 6.11. Limit incoming requests length using a reverse-proxy or Middleware
 
-**TL;DR:**
+**TL;DR:** Here we will talk about the easiness of exhausting the system using large payloads
 
 **Otherwise:**
 
@@ -790,7 +790,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 6.12. Run unsafe code in a sandbox
 
-**TL;DR:**
+**TL;DR:** Here we will write about the need to run un-trusted code, for example 3rd party components. In that case, we'd like to isolate our code from weakness of the 3rd party code. We can achieve that by running our code as a sandbox
 
 **Otherwise:**
 
