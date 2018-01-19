@@ -658,7 +658,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 6.1. Use an ORM/ODM to prevent SQL injection attack
 
-**TL;DR:** Here we will write about: not using Node DB raw driver rather a wrapper library/ORM that among other things prevents SQL injection attacks
+**TL;DR:** Here we will write about: not using the pure Node.js database driver but rather a wrapper library/ORM that among other things prevents SQL injection attacks
 
 **Otherwise:** 
 
@@ -670,7 +670,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 6.2. Avoid requiring('./...') modules using a dynamic path
 
-**TL;DR:**Here will write about never requiring/importing another file with a path that was given as parameter
+**TL;DR:** Here will write about never requiring/importing another file with a path that was given as parameter which can be mitigated using a linter rule
 
 **Otherwise:**
 
@@ -680,21 +680,9 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 
-## ![✔] 6.3. Pass secrets using env var or a vault
+## ![✔] 6.3. Pass secrets using environment variables or a vault
 
-**TL;DR:** Here we will write about never storing secrets in config files rather within vault/secrets frameworks that can inject the secured keys to the process without exposing them to disc and git
-
-**Otherwise:**
-
-
-🔗 [**Read More:**](#)
-
-<br/><br/>
-
-
-## ![✔] 6.4. Protect your application endpoints using security-related headers
-
-**TL;DR:** Bruno, what is this about?
+**TL;DR:** Here we will write about never storing secrets in configuration files rather within vault/secrets frameworks that can inject the secured keys to the process without exposing them to disk and version-control
 
 **Otherwise:**
 
@@ -704,9 +692,9 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 
-## ![✔] 6.5. Use middlewares that never crash due to invaldid input
+## ![✔] 6.4. Use middleware that never validates input rather than crashing your application
 
-**TL;DR:** Here will write about desigining and using middlewares that don't make the process crash when an invalid JSON is passed since it opens the door for easy DDOS attacks
+**TL;DR:** Here we will write about designing and using middleware that doesn't make the process crash when an invalid JSON is passed since it opens the door for easy DDOS attacks
 
 **Otherwise:**
 
@@ -716,7 +704,7 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 
-## ![✔] 6.6. Embrace linter security rules
+## ![✔] 6.5. Embrace linter security rules
 
 **TL;DR:** Here we will write about linting rules that detect security issues like using 'eval' 
 
@@ -728,21 +716,9 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 
-## ![✔] 6.7. Hide 'X-Powered-BY=Express/Koa/etc' headers
+## ![✔] 6.6. Hide 'X-Powered-BY=Express/Koa/etc' headers
 
-**TL;DR:** Here we will write about not exposing the name of our web framework since it allows attackers to exploit known vuleenrabilities
-
-**Otherwise:**
-
-
-🔗 [**Read More:**](#)
-
-<br/><br/>
-
-
-## ![✔] 6.8. Implement revocation of API tokens
-
-**TL;DR:** Here we will write about JWT tokens stateless mechanism which are not capable of black-listing tokens which have been stolen or used for attacks
+**TL;DR:** Here we will write about not exposing the name of our web framework since it allows attackers to exploit known vulnerabilities
 
 **Otherwise:**
 
@@ -752,21 +728,9 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 
-## ![✔] 6.9. Limit concurrent requests using rate limiting balancer or a Middleware
+## ![✔] 6.7. Implement revocation of API tokens
 
-**TL;DR:** Here we will write about limiting the amount of requests a single caller can perform per second to prevent DDOS attack. Small apps can use a Middleware 
-
-**Otherwise:**
-
-
-🔗 [**Read More:**](#)
-
-<br/><br/>
-
-
-## ![✔] 6.10. Run Node as noon-rooted user
-
-**TL;DR:** Here we will write about people tempting to run node as root to bind to port 80. Running on-behalf of the root account means that any hack gains full control to perform anything within the machine
+**TL;DR:** Here we will write about JWT tokens stateless concept which is not capable of blacklisting or disabling tokens which have been stolen or used for attacks by nature and therefore needs a custom implementation for blacklisting untrusted or invalid tokens
 
 **Otherwise:**
 
@@ -776,7 +740,31 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 
-## ![✔] 6.11. Limit incoming requests length using a reverse-proxy or Middleware
+## ![✔] 6.8. Limit concurrent requests using rate limiting balancer or a middleware
+
+**TL;DR:** Here we will write about limiting the amount of requests a single caller can perform per second to prevent DDOS attacks. Small apps can use a middleware for this task
+
+**Otherwise:**
+
+
+🔗 [**Read More:**](#)
+
+<br/><br/>
+
+
+## ![✔] 6.9. Run Node as non-root user
+
+**TL;DR:** Here we will write about people tempting to run node as root, for example to bind the application to port 80. Running on behalf of the root or full-privilege account means that any attacker can gain full control to perform anything within the machine if your application is compromised
+
+**Otherwise:**
+
+
+🔗 [**Read More:**](#)
+
+<br/><br/>
+
+
+## ![✔] 6.10. Limit incoming requests length using a reverse-proxy or middleware
 
 **TL;DR:** Here we will talk about the easiness of exhausting the system using large payloads
 
@@ -788,9 +776,9 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 
-## ![✔] 6.12. Run unsafe code in a sandbox
+## ![✔] 6.11. Run unsafe code in a sandbox
 
-**TL;DR:** Here we will write about the need to run un-trusted code, for example 3rd party components. In that case, we'd like to isolate our code from weakness of the 3rd party code. We can achieve that by running our code as a sandbox
+**TL;DR:** Here we will write about the need to run untrusted code, for example third-party components. In that case, we'd like to isolate our code from weakness of the 3rd party code. We can achieve that by running our code in a sandbox
 
 **Otherwise:**
 
@@ -800,7 +788,7 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 
-## ![✔] 6.13. Avoid eval statements with unsanitized inputs
+## ![✔] 6.12. Avoid eval statements with unsanitized inputs
 
 **TL;DR:**
 
@@ -812,7 +800,7 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 
-## ![✔] 6.14. Protect your application endpoints using security-related headers
+## ![✔] 6.13. Protect your application endpoints using security-related headers
 
 **TL;DR:** Your application should be using secure headers to prevent attackers from using common attacks like cross-site scripting (XSS), clickjacking and other malicious attacks. These can be configured easily using modules like [helmet](https://www.npmjs.com/package/helmet).
 
@@ -822,7 +810,7 @@ All statements above will return false if used with `===`
 🔗 [**Read More: Using secure headers in your application**](/sections/security/secureheaders.md)
 
 
-## ![✔] 6.15. Using common methods to secure your application
+## ![✔] 6.14. Using common methods to secure your application
 
 **TL;DR:** There are many built-in and external ways to secure your Node.js applications starting from simple steps like running your server with ssl/tls enabled to more advanced features.
 
