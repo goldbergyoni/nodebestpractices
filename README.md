@@ -656,9 +656,9 @@ All statements above will return false if used with `===`
 
 # `6. Security Best Practices`
 
-## ![✔] 6.1. Use an ORM/ODM to prevent SQL injection attack
+## ![✔] 6.1. Use an ORM/ODM to prevent SQL injection attacks
 
-**TL;DR:** Here we will write about: not using the pure Node.js database driver but rather a wrapper library/ORM that among other things prevents SQL injection attacks
+**TL;DR:** Here we will write about not using the pure Node.js database driver but rather a wrapper library/ORM that among other things prevents SQL injection attacks
 
 **Otherwise:** 
 
@@ -670,7 +670,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 6.2. Avoid requiring('./...') modules using a dynamic path
 
-**TL;DR:** Here will write about never requiring/importing another file with a path that was given as parameter which can be mitigated using a linter rule
+**TL;DR:** Here we will write about never requiring/importing another file with a path that was given as parameter which can be mitigated using a linter rule
 
 **Otherwise:**
 
@@ -682,7 +682,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 6.3. Pass secrets using environment variables or a vault
 
-**TL;DR:** Here we will write about never storing secrets in configuration files rather within vault/secrets frameworks that can inject the secured keys to the process without exposing them to disk and version-control
+**TL;DR:** Here we will write about never storing secrets in configuration files but rather within vault/secrets frameworks that can inject the secured keys to the process without exposing them to the disk and version-control systems like git
 
 **Otherwise:**
 
@@ -716,9 +716,9 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 
-## ![✔] 6.6. Hide 'X-Powered-BY=Express/Koa/etc' headers
+## ![✔] 6.6. Hide 'X-Powered-By=Express/Koa/etc' headers
 
-**TL;DR:** Here we will write about not exposing the name of our web framework since it allows attackers to exploit known vulnerabilities
+**TL;DR:** Here we will write about not exposing the name and version of our web framework since it allows attackers to exploit known vulnerabilities
 
 **Otherwise:**
 
@@ -742,7 +742,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 6.8. Limit concurrent requests using rate limiting balancer or a middleware
 
-**TL;DR:** Here we will write about limiting the amount of requests a single caller can perform per second to prevent DDOS attacks. Small apps can use a middleware for this task
+**TL;DR:** Here we will write about limiting the amount of requests a single caller can perform per second to prevent DDOS attacks. Small applications can use a middleware for this task
 
 **Otherwise:**
 
@@ -766,7 +766,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 6.10. Limit incoming requests length using a reverse-proxy or middleware
 
-**TL;DR:** Here we will talk about the easiness of exhausting the system using large payloads
+**TL;DR:** Here we will talk about the easiness of exhausting the system using large request payloads
 
 **Otherwise:**
 
