@@ -32,7 +32,7 @@
 3. [Code Style Practices (12) ](#3-code-style-practices)
 4. [Testing And Overall Quality Practices (8) ](#4-testing-and-overall-quality-practices)
 5. [Going To Production Practices (16) ](#5-going-to-production-practices)
-6. [Security Best Practices](#6-security-best-practices)
+6. [Security Best Practices - Draft (22) ](#6-security-best-practices)
 7. Performance Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 
 
@@ -656,9 +656,21 @@ All statements above will return false if used with `===`
 
 # `6. Security Best Practices`
 
-## ![✔] 6.1. Use an ORM/ODM to prevent injection vulnerabilites
+## ![✔] 6.1. Use an ORM/ODM to prevent SQL injection attack
 
-**TL;DR:**
+**TL;DR:** Here we will write about: not using Node DB raw driver rather a wrapper library/ORM that among other things prevents SQL injection attacks
+
+**Otherwise:** 
+
+
+🔗 [**Read More:**](#)
+
+<br/><br/>
+
+
+## ![✔] 6.2. Avoid requiring('./...') modules using a dynamic path
+
+**TL;DR:**Here will write about never requiring/importing another file with a path that was given as parameter
 
 **Otherwise:**
 
@@ -668,21 +680,9 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 
-## ![✔] 6.2. Avoid loading modules using a dynamic path
+## ![✔] 6.3. Pass secrets using env var or a vault
 
-**TL;DR:**
-
-**Otherwise:**
-
-
-🔗 [**Read More:**](#)
-
-<br/><br/>
-
-
-## ![✔] 6.3. Use environment variables to store security-related data
-
-**TL;DR:**
+**TL;DR:** Here we will write about never storing secrets in config files rather within vault/secrets frameworks that can inject the secured keys to the process without exposing them to disc and git
 
 **Otherwise:**
 
@@ -694,7 +694,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 6.4. Protect your application endpoints using security-related headers
 
-**TL;DR:**
+**TL;DR:** Bruno, what is this about?
 
 **Otherwise:**
 
@@ -704,9 +704,9 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 
-## ![✔] 6.5. Prevent system failures caused by invalid input
+## ![✔] 6.5. Use middlewares that never crash due to invaldid input
 
-**TL;DR:**
+**TL;DR:** Here will write about desigining and using middlewares that don't make the process crash when an invalid JSON is passed since it opens the door for easy DDOS attacks
 
 **Otherwise:**
 
@@ -718,7 +718,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 6.6. Embrace linter security rules
 
-**TL;DR:**
+**TL;DR:** Here we will write about linting rules that detect security issues like using 'eval' 
 
 **Otherwise:**
 
@@ -728,9 +728,9 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 
-## ![✔] 6.7. Hide your framework-specific headers in production
+## ![✔] 6.7. Hide 'X-Powered-BY=Express/Koa/etc' headers
 
-**TL;DR:**
+**TL;DR:** Here we will write about not exposing the name of our web framework since it allows attackers to exploit known vuleenrabilities
 
 **Otherwise:**
 
@@ -742,7 +742,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 6.8. Implement revocation of API tokens
 
-**TL;DR:**
+**TL;DR:** Here we will write about JWT tokens stateless mechanism which are not capable of black-listing tokens which have been stolen or used for attacks
 
 **Otherwise:**
 
@@ -752,9 +752,9 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 
-## ![✔] 6.9. Limit concurrent requests to avoid resource overload
+## ![✔] 6.9. Limit concurrent requests using rate limiting balancer or a Middleware
 
-**TL;DR:**
+**TL;DR:** Here we will write about limiting the amount of requests a single caller can perform per second to prevent DDOS attack. Small apps can use a Middleware 
 
 **Otherwise:**
 
