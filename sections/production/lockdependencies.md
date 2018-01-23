@@ -7,7 +7,7 @@
 
 
 
-Your code depends on many external packages, let’s say it ‘requires’ and use momentjs-2.1.4, then by default when you deploy to production NPM might fetch momentjs 2.1.5 which unfortunately brings some new bugs to the table. Using NPM config files and settings –save-exact=true instructs NPM to refer to the *exact* same version that was installed so the next time you run “NPM install” (at production or within a Docker container you plan to ship forward for testing) the same dependent version will be fetched. An alternative popular approach is using a .shrinkwrap file (easily generated using NPM) that states exactly which packages and versions should be installed so no environement can get tempt to fetch newer versions.
+Your code depends on many external packages, let’s say it ‘requires’ and use momentjs-2.1.4, then by default when you deploy to production NPM might fetch momentjs 2.1.5 which unfortunately brings some new bugs to the table. Using NPM config files and the argument ```–save-exact=true``` instructs NPM to refer to the *exact* same version that was installed so the next time you run ```npm install``` (in production or within a Docker container you plan to ship forward for testing) the same dependent version will be fetched. An alternative and popular approach is using a .shrinkwrap file (easily generated using NPM) that states exactly which packages and versions should be installed so no environement can get tempted to fetch newer versions than expected.
 
 * **Update:** as of NPM 5, dependencies are locked automatically using .shrinkwrap. Yarn, an emerging package manager, also locks down dependencies by default
 
@@ -17,8 +17,8 @@ Your code depends on many external packages, let’s say it ‘requires’ and u
 
 ### Code example: .npmrc file that instructs NPM to use exact versions
 
-```javascript
-//save this as .npmrc file on the project directory
+```
+// save this as .npmrc file on the project directory
 save-exact:true
 ```
 

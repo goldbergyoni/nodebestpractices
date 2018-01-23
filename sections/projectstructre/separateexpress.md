@@ -44,4 +44,20 @@ var server = http.createServer(app);
 
 
 ### Example: test your API in-process using supertest (popular testing package)
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/supertestinprocess.PNG "In process testing with Supertest")
+
+```javascript
+const app = express();
+
+app.get('/user', function(req, res) {
+  res.status(200).json({ name: 'tobi' });
+});
+
+request(app)
+  .get('/user')
+  .expect('Content-Type', /json/)
+  .expect('Content-Length', '15')
+  .expect(200)
+  .end(function(err, res) {
+    if (err) throw err;
+  });
+````

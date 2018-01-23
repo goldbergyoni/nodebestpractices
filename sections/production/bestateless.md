@@ -5,10 +5,11 @@
 
 ### One Paragraph Explainer
 
-Have you ever encountered a severe production issue where one server was missing some piece of configuration or data? That is probably due to some unnecessary dependency on some local asset that is not part of the deployment. Many successful products treat servers like a phoenix bird – it dies and rebirth periodically without any damage. In other words, a server is just a piece of hardware that executes your code for some time and then get replaced. 
-This approach:
-1. allows to scale by adding and removing servers dynamically without any side-affect 
-2. simplifies the maintenance as it frees our mind from evaluating each server state.
+Have you ever encountered a severe production issue where one server was missing some piece of configuration or data? That is probably due to some unnecessary dependency on some local asset that is not part of the deployment. Many successful products treat servers like a phoenix bird – it dies and is reborn periodically without any damage. In other words, a server is just a piece of hardware that executes your code for some time and is replaced after that.
+This approach
+
+- allows to scale by adding and removing servers dynamically without any side-affect 
+- simplifies the maintenance as it frees our mind from evaluating each server state.
 
 <br/><br/>
 
@@ -16,18 +17,21 @@ This approach:
 ### Code example: anti-patterns
 
 ```javascript
-//Typical mistake 1: saving uploaded files locally in a server
-var multer  = require('multer') //express middleware for fetching uploads
-var upload = multer({ dest: 'uploads/' })
-app.post('/photos/upload', upload.array('photos', 12), function (req, res, next) {})
-//Typical mistake 2: storing authentication sessions (passport) in a local file or memory
+// Typical mistake 1: saving uploaded files locally on a server
+var multer = require('multer'); // express middleware for handling multipart uploads
+var upload = multer({ dest: 'uploads/' });
+
+app.post('/photos/upload', upload.array('photos', 12), function (req, res, next) {});
+
+// Typical mistake 2: storing authentication sessions (passport) in a local file or memory
 var FileStore = require('session-file-store')(session);
 app.use(session({
     store: new FileStore(options),
     secret: 'keyboard cat'
 }));
-//Typical mistake3: storing information on the global object
-Global.someCacheLike.result = {somedata}
+
+// Typical mistake 3: storing information on the global object
+Global.someCacheLike.result = { somedata };
 ```
 
 <br/><br/>

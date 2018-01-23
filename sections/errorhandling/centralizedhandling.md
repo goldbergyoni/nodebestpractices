@@ -3,22 +3,22 @@
 
 ### One Paragraph Explainer
 
-Without one dedicated object for error handling, greater are the chances of important errors hiding under the radar due to improper handling. The error handler object is responsible for making the error visible, for example by writing to a well-formatted logger, sending events to some monitoring product or email to admin directly. A typical error flow might be: Some module throws an error -> API router catches the error -> it propagates the error to the middleware (e.g. Express, KOA) who is responsible for catching errors -> a centralized error handler is called -> the middleware is being told whether this error is untrusted error (not operational) so it can restart the app gracefully. Note that it’s a common, yet wrong, practice to handle error within Express middleware – doing so will not cover errors that are thrown in non-web interfaces
+Without one dedicated object for error handling, greater are the chances of important errors hiding under the radar due to improper handling. The error handler object is responsible for making the error visible, for example by writing to a well-formatted logger, sending events to some monitoring product or to an admin directly via email. A typical error handling flow might be: Some module throws an error -> API router catches the error -> it propagates the error to the middleware (e.g. Express, KOA) who is responsible for catching errors -> a centralized error handler is called -> the middleware is being told whether this error is an untrusted error (not operational) so it can restart the app gracefully. Note that it’s a common, yet wrong, practice to handle errors within Express middleware – doing so will not cover errors that are thrown in non-web interfaces
 
 
 
 ### Code Example – a typical error flow
 
 ```javascript
-//DAL layer, we don't handle errors here
+// DAL layer, we don't handle errors here
 DB.addDocument(newCustomer, (error, result) => {
     if (error)
         throw new Error("Great error explanation comes here", other useful parameters)
 });
  
-//API route code, we catch both sync and async errors and forward to the middleware
+// API route code, we catch both sync and async errors and forward to the middleware
 try {
-    customerService.addNew(req.body).then(function (result) {
+    customerService.addNew(req.body).then((result) => {
         res.status(200).json(result);
     }).catch((error) => {
         next(error)
@@ -28,8 +28,8 @@ catch (error) {
     next(error);
 }
  
-//Error handling middleware, we delegate the handling to the centrzlied error handler
-app.use(function (err, req, res, next) {
+// Error handling middleware, we delegate the handling to the centralized error handler
+app.use((err, req, res, next) => {
     errorHandler.handleError(err).then((isOperationalError) => {
         if (!isOperationalError)
             next(err);
@@ -47,14 +47,14 @@ function errorHandler(){
     this.handleError = function (error) {
         return logger.logError(err).then(sendMailToAdminIfCritical).then(saveInOpsQueueIfCritical).then(determineIfOperationalError);
     }
-
+}
 ```
 
 ### Code Example – Anti Pattern: handling errors within the middleware
 
 ```javascript
-//middleware handling the error directly, who will handle Cron jobs and testing errors?
-app.use(function (err, req, res, next) {
+// middleware handling the error directly, who will handle Cron jobs and testing errors?
+app.use((err, req, res, next) => {
     logger.logError(err);
     if(err.severity == errors.high)
         mailer.sendMail(configuration.adminMail, "Critical error occured", err);
