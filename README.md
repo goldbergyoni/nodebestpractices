@@ -221,9 +221,9 @@
 
 ## ![✔] 3.1 Use ESLint
 
-**TL;DR:** ESLint is the de-facto standard for checking code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Using ESLint and following the rest of the code style practices below means following the same styles used by the rest of the community, as well as the same code styles used in the core products themselves.
+**TL;DR:** [ESLint](https://eslint.org) is the de-facto standard for checking possible code errors and fixing code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Though ESLint can automatically fix code styles, other tools like [prettier](https://www.npmjs.com/package/prettier) and [beautify](https://www.npmjs.com/package/js-beautify) are more powerful in formatting the fix and work in conjunction with  ESLint
 
-**Otherwise:** developers will focus on tedious spacing and line-width concerns
+**Otherwise:** Developers will focus on tedious spacing and line-width concerns and time might be wasted overthinking about the project's code style.
 
 <br/><br/>
 
@@ -284,20 +284,16 @@
 ### Code Example ###
 ```javascript
   // for class name we use UpperCamelCase
-  class SomeClassExample { 
+  class SomeClassExample {}
     
-    // for const names we use the const keyword and lowerCamelCase
-    const config = {
-      key: 'value'
-    };
-    
-    // for variables and functions names we use lowerCamelCase
-    let someVariableExample = 'value';
-    function doSomething() {
-      
-    }
+  // for const names we use the const keyword and lowerCamelCase
+  const config = {
+    key: 'value'
+  };
 
-  }
+  // for variables and functions names we use lowerCamelCase
+  let someVariableExample = 'value';
+  function doSomething() {}
 ```
 
 <br/><br/>
@@ -372,7 +368,7 @@ All statements above will return false if used with `===`
 
 **TL;DR:** Node 8 LTS now has full support for Async-await. This is a new way of dealing with asynchronous code which supersedes callbacks and promises. Async-await is non-blocking, and it makes asynchronous code look synchronous. The best gift you can give to your code is using async-await which provides a much more compact and familiar code syntax like try-catch.
 
-**Otherwise:** Handling async errors in callback style is probably the fastest way to hell - this style forces to check errors all over, deal with akward code nesting and make it difficult to reason about the code flow.
+**Otherwise:** Handling async errors in callback style is probably the fastest way to hell - this style forces to check errors all over, deal with awkward code nesting and make it difficult to reason about the code flow.
 
 🔗[**Read more:** Guide to async await 1.0](https://github.com/yortus/asyncawait)
 
@@ -721,7 +717,10 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [David Sancho](https://github.com/davesnx),
 🌻 [Robert Manolea](https://github.com/pupix),
 🌻 [Xavier Ho](https://github.com/spaxe),
-🌻 [Aaron Arney](https://github.com/ocularrhythm)
+🌻 [Aaron Arney](https://github.com/ocularrhythm),
+🌻 [Jan Charles Maghirang Adona](https://github.com/septa97),
+🌻 [Allen Fang](https://github.com/AllenFang)
+
 
 
 
