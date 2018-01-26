@@ -719,7 +719,7 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Xavier Ho](https://github.com/spaxe),
 🌻 [Aaron Arney](https://github.com/ocularrhythm),
 🌻 [Jan Charles Maghirang Adona](https://github.com/septa97),
-🌻 [Allen Fang](https://github.com/AllenFang)
+🌻 [Allen Fang](https://github.com/AllenFang),
 🌻 [Leonardo Villela](https://github.com/leonardovillela)
 
 
