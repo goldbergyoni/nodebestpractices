@@ -1,13 +1,13 @@
-# 7 content writing guidelineso
+# 7 content writing guidelines
 
-##1. Simple is better than better
+## 1. Simple is better than better
 
 <br/>
 making it easy to read and agree is our mission, we curate content. As such we focus on transforming complex and exhausting topics into a simplified list, we may trade overloaded information with shortened and less-accurate details, avoid ‘flammable’ and controversial topics and escape subjective ideas
 
 <br/>
 
-##2. Evidence based
+## 2. Evidence based
 
 <br/>
 Our reader should almost have no doubt while he skims through our content, mostly because we include evidence, references and data. Practically, strive to include quotes from reliable sources, show benchmarks, related design patterns or any scientific measure to prove your claims
