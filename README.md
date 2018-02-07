@@ -824,11 +824,11 @@ All statements above will return false if used with `===`
 
 🔗 [**Read More:**](#)
 
-## ![✔] 6.16. Avoid self-written regular expressions 
+## ![✔] 6.16. Prevent malicious RegEx from overloading your single thread execution
 
 **TL;DR:** Regular Expressions, while being handy, pose a real threat to JavaScript applications at large, and the Node.js platform in particular due to the fact that they require CPU cycles to compute a pattern test. Use the aforementioned [validator.js](https://github.com/chriso/validator.js) package to validate data instead of writing your own, or make use of [safe-regex](https://github.com/substack/safe-regex) to detect vulnerable regex patterns.
 
-**Otherwise:** Poorly written regexes could be susceptible to Regular Expressions DoS attacks that will block the event loop completely.
+**Otherwise:** Poorly written regexes could be susceptible to Regular Expressions DoS attacks that will block the event loop completely. For example, the popular `moment` package was found vulnerable in Nov 2017.
 
 🔗 [**Read More:**](#)
 
