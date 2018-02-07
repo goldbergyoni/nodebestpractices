@@ -28,3 +28,7 @@ console.log(validator.isEmail('liran.tal@gmail.com'));
 ```
 
 <br/><br/>
+
+* Reference: [Essential Node.js Security](https://leanpub.com/nodejssecurity)
+> Often, programmers will use RegEx to validate that an input received from a user conforms to an expected condition. A vulnerable Regular Expression is known as one which applies repetition to a repeating capturing group, and where the string to match is composed of a suffix of a valid matching pattern plus characters that aren't matching the capturing group.
+
