@@ -1,7 +1,7 @@
 # Our content writing manifest
 How we enhance the reading and learning experience for our visitors
 
-## 1. Simplicity wins
+## 1. Simple is better than better
 
 <br/>
 Making it easy to read and absorb knowledge is our mission, we curate content. As such we focus on transforming complex and exhausting topics into a simplified list, trade overloaded information with shortened and less-accurate details, avoid ‘flammable’ and controversial topics and escape subjective ideas in favor of generally accepted practices
