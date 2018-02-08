@@ -830,7 +830,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Poorly written regexes could be susceptible to Regular Expressions DoS attacks that will block the event loop completely. For example, the popular `moment` package was found vulnerable in Nov 2017.
 
-🔗 [**Read More:**](#)
+🔗 [**Read More:**](/sections/security/regex.md)
 
 
 ## ![✔] 6.17. Avoid or take extra care when working with child processes
