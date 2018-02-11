@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/14</span>
+        <span class='fraction'>14/14</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/1</span>
+        <span class='fraction'>1/1</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/14</span>
+        <span class='fraction'>14/14</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -66,59 +66,59 @@
 21
 22
 23
-24</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+24</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const express = <span class="cstat-no" title="statement not covered" >require("express");</span>
-const app = <span class="cstat-no" title="statement not covered" >express();</span>
-const orderService = <span class="cstat-no" title="statement not covered" >require('./orderService').orderService;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">const express = require("express");
+const app = express();
+const orderService = require('./orderService').orderService;
 &nbsp;
-const port = <span class="cstat-no" title="statement not covered" >process.env.PORT || 8080;</span>
-<span class="cstat-no" title="statement not covered" >app.listen(port);</span>
-var bodyParser = <span class="cstat-no" title="statement not covered" >require("body-parser");</span>
-<span class="cstat-no" title="statement not covered" >app.use(</span>
+const port = process.env.PORT || 8080;
+app.listen(port);
+var bodyParser = require("body-parser");
+app.use(
   bodyParser.urlencoded({
     extended: true
   })
 );
-<span class="cstat-no" title="statement not covered" >app.use(bodyParser.json());</span>
+app.use(bodyParser.json());
 &nbsp;
-var router = <span class="cstat-no" title="statement not covered" >express.Router();</span>
+var router = express.Router();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >router.post("/api/orders", <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  console.log(`The order is ${req.body}`);</span>
-<span class="cstat-no" title="statement not covered" >  res.json(new orderService().add(req.body));</span>
+router.post("/api/orders", (req, res) =&gt; {
+  console.log(`The order is ${req.body}`);
+  res.json(new orderService().add(req.body));
 });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >app.use(router);</span>
+app.use(router);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >module.exports = app;</span></pre></td></tr>
+module.exports = app;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jan 17 2018 23:23:15 GMT+0200 (Jerusalem Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Jan 18 2018 16:27:45 GMT+0200 (Jerusalem Standard Time)
 </div>
 </div>
 <script src="prettify.js"></script>

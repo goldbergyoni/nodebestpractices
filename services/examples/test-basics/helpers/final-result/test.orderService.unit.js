@@ -14,7 +14,7 @@ describe('Order Service', () => {
 
     describe('Adding new', () => {
         it('Under 1000 order, expect to be approved #cold', () => {
-            const result = new orderServiceUnderTest().add({});
+            const result = new orderServiceUnderTest().add({});const orderDAL = require("./orderService").orderDAL;
             expect(result.approved).to.be.true;
         })
 

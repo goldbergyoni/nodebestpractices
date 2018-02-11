@@ -11,7 +11,7 @@ module.exports = () => {
       debug: true,
       setup: function (w) {
         let mocha = w.testFramework;
-        //mocha.grep('cold');
+        mocha.grep('cold');
       },
       env: {
         type: 'node',
