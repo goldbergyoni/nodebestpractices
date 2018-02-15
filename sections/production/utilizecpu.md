@@ -20,7 +20,7 @@ It might not come as a surprise that at its basic form, Node runs over a single 
 * From the [Node.JS documentation](https://nodejs.org/api/cluster.html#cluster_how_it_works):
 > ... The second approach, Node clusters, should, in theory, give the best performance. In practice however, distribution tends to be very unbalanced due to operating system scheduler vagaries. Loads have been observed where over 70% of all connections ended up in just two processes, out of a total of eight ...
 
-* From the blog [StrongLoop](From the blog StrongLoop):
+* From the blog [StrongLoop](https://strongloop.com/strongblog/best-practices-for-express-in-production-part-two-performance-and-reliability/):
 > ... Clustering is made possible with Node’s cluster module. This enables a master process to spawn worker processes and distribute incoming connections among the workers. However, rather than using this module directly, it’s far better to use one of the many tools out there that does it for you automatically; for example node-pm or cluster-service ...
 
 * From the Medium post [Node.js process load balance performance: comparing cluster module, iptables and Nginx](https://medium.com/@fermads/node-js-process-load-balancing-comparing-cluster-iptables-and-nginx-6746aaf38272)
