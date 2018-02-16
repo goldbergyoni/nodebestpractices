@@ -1,0 +1,1 @@
+xray('http://techcrunch.com', 'img.logo@src')(fn)

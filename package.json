@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/i0natan/nodebestpractices#readme",
   "dependencies": {
-    "sanitize-html": "^1.11.1",
     "axios": "^0.17.1",
     "body-parser": "1.18.2",
     "clarifai": "^2.5.0",
@@ -32,6 +31,7 @@
     "express-request-language": "^1.1.15",
     "expressMiddlewares": "file:libraries/expressMiddlewares",
     "geoip-lite": "^1.2.1",
+    "google": "^2.1.0",
     "joi": "13.0.2",
     "jsonschema": "^1.2.0",
     "jsonwebtoken": "^8.1.0",
@@ -44,11 +44,14 @@
     "passport-http-bearer": "1.0.1",
     "pg": "7.4.0",
     "pretty-error": "2.1.1",
+    "sanitize-html": "^1.11.1",
     "socket.io": "^2.0.4",
     "swagger-jsdoc": "1.9.7",
     "swagger-ui-dist": "3.4.4",
     "uuid": "^3.1.0",
-    "which-country": "^1.0.0"
+    "weather-js": "^2.0.0",
+    "which-country": "^1.0.0",
+    "x-ray": "^2.3.2"
   },
   "devDependencies": {
     "chai": "4.1.2",
