@@ -817,6 +817,12 @@ All statements above will return false if used with `===`
 
 🔗 [**Read More: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
 
+## ![✔] 6.15. Use cookies/sessions securely
+
+**TL;DR:** Using the default settings for session middleware can be expose your app to module and framework specific hijacking attacks in a similar way to the  `X-Powered-By` header.
+
+
+🔗 [**Read More: Cookie and session security**](/sections/security/sessions.md)
 
 <br/><br/><br/>
 
