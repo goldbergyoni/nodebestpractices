@@ -27,18 +27,18 @@ throw new appError(errorManagement.commonErrors.InvalidInput, "Describe here wha
 ```
 
 ### Blog Quote: "Programmer errors are bugs in the program"
-From the blog Joyent, ranked 1 for the keywords “Node.JS error handling”
+From the blog Joyent, ranked 1 for the keywords “Node.js error handling”
  
  > …The best way to recover from programmer errors is to crash immediately. You should run your programs using a restarter that will automatically restart the program in the event of a crash. With a restarter in place, crashing is the fastest way to restore reliable service in the face of a transient programmer error…
 
 ### Blog Quote: "No safe way to leave without creating some undefined brittle state"
-From Node.JS official documentation
+From Node.js official documentation
  
  > …By the very nature of how throw works in JavaScript, there is almost never any way to safely “pick up where you left off”, without leaking references, or creating some other sort of undefined brittle state. The safest way to respond to a thrown error is to shut down the process. Of course, in a normal web server, you might have many connections open, and it is not reasonable to abruptly shut those down because an error was triggered by someone else. The better approach is to send an error response to the request that triggered the error, while letting the others finish in their normal time, and stop listening for new requests in that worker.  
 
 
 ### Blog Quote: "Otherwise you risk the state of your application"
-From the blog debugable.com, ranked 3 for the keywords “Node.JS uncaught exception”
+From the blog debugable.com, ranked 3 for the keywords “Node.js uncaught exception”
  
  > …So, unless you really know what you are doing, you should perform a graceful restart of your service after receiving an “uncaughtException” exception event. Otherwise you risk the state of your application, or that of 3rd party libraries to become inconsistent, leading to all kinds of crazy bugs…
 
