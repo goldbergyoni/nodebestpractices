@@ -17,7 +17,7 @@ It might not come as a surprise that at its basic form, Node runs over a single 
 <br/><br/>
 
 ### What Other Bloggers Say
-* From the [Node.JS documentation](https://nodejs.org/api/cluster.html#cluster_how_it_works):
+* From the [Node.js documentation](https://nodejs.org/api/cluster.html#cluster_how_it_works):
 > ... The second approach, Node clusters, should, in theory, give the best performance. In practice however, distribution tends to be very unbalanced due to operating system scheduler vagaries. Loads have been observed where over 70% of all connections ended up in just two processes, out of a total of eight ...
 
 * From the blog [StrongLoop](https://strongloop.com/strongblog/best-practices-for-express-in-production-part-two-performance-and-reliability/):
