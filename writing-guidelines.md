@@ -20,8 +20,8 @@ Apart from the content being greatly edited and reliable, skimming through it sh
 ## 4. Consistent formatting
 The content is presented using fixed templates. Any future content must conform to the same template. If you wish to add new bullets copy a bullet format from an existing bullet and extend it to your needs. For additional information please view [this template](https://github.com/i0natan/nodebestpractices/blob/master/sections/template.md)
 
-## 5. It's About Node.JS
-Each advice should be related directly to Node.JS and not to software development in general. When we advise to implement generic pattern/rule in Node.JS, the content should focus on the Node implementation. For example, when we advise to sanitize all requests input for security reasons, Node-lingo should be used - ‘Use middleware to sanitize request input’
+## 5. It's About Node.js
+Each advice should be related directly to Node.js and not to software development in general. When we advise to implement generic pattern/rule in Node.js, the content should focus on the Node implementation. For example, when we advise to sanitize all requests input for security reasons, Node-lingo should be used - ‘Use middleware to sanitize request input’
 
 ## 6. Leading vendors only
 Sometimes it's useful to include names of vendors that can address certain challenges and problems like NPM packages, open source tools or even commercial products. To avoid overwhelmingly long lists or recommending non-reputable and unstable projects, we came up with the following rules:
