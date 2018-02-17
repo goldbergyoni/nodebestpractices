@@ -1,4 +1,4 @@
-# Use cookies/sessions securely
+# Modify the default session middlewares settings
 
 <br/><br/>
 
