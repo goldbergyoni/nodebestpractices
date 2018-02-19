@@ -815,7 +815,6 @@ All statements above will return false if used with `===`
 
 🔗 [**Read More: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
 
-
 ## ![✔] 6.15. Validating user input and perform output encoding
 
 **TL;DR:** Whether user input is used in querying the database, making API calls, or accessing system files - all user input should always be validated to expected type. You can use [validator.js](https://github.com/chriso/validator.js/) or [joi](https://github.com/hapijs/joi) to validate general user input or json schemas. The top frontend libraries handle output encoding well, but nevertheless you should always make sure to output encode your user generated data in the correct context, and can make use of libraries such as [node-esapi](https://github.com/ESAPI/node-esapi) or [escape-html](https://github.com/component/escape-html).
@@ -865,6 +864,14 @@ All statements above will return false if used with `===`
 **Otherwise:** Insecure dependencies can render an application completely vulnerable.
 
 🔗 [**Read More:**](#)
+
+## ![✔] 6.21. Modify the default session middleware settings
+
+**TL;DR:** Using the default settings for session middleware can be expose your app to module and framework specific hijacking attacks in a similar way to the  `X-Powered-By` header.
+
+**Otherwise:** Cookies could be sent over insecure connections, and an attacker can use session identification to identify the underlying framework of the web application, as well as module-specific vulnerabilities.
+
+🔗 [**Read More: Cookie and session security**](/sections/security/sessions.md)
 
 <br/><br/><br/>
 
