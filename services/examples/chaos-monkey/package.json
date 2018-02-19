@@ -1,0 +1,15 @@
+{
+  "name": "chaos-monkey",
+  "version": "1.0.0",
+  "description": "",
+  "main": "chaos-monkey.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express-remove-route": "^1.0.0",
+    "on-finished": "^2.3.0"
+  }
+}
