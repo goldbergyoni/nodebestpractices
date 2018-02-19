@@ -722,6 +722,8 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Allen Fang](https://github.com/AllenFang),
 🌻 [Leonardo Villela](https://github.com/leonardovillela),
 🌻 [Michal Zalecki](https://github.com/MichalZalecki)
+🌻 [Chris Nicola](https://github.com/chrisnicola)
+
 
 
 
