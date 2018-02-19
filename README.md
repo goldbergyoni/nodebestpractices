@@ -865,11 +865,11 @@ All statements above will return false if used with `===`
 
 🔗 [**Read More:**](#)
 
-## ![✔] 6.21. Modify the default session middlewares settings
+## ![✔] 6.21. Modify the default session middleware settings
 
 **TL;DR:** Using the default settings for session middleware can be expose your app to module and framework specific hijacking attacks in a similar way to the  `X-Powered-By` header.
 
-**Otherwise:** Cookies could be sent over insecure connections, andn attacker can use session identification to identify the underlying framework of the web application, as well as module specific vulnerabilities.
+**Otherwise:** Cookies could be sent over insecure connections, and an attacker can use session identification to identify the underlying framework of the web application, as well as module-specific vulnerabilities.
 
 🔗 [**Read More: Cookie and session security**](/sections/security/sessions.md)
 
