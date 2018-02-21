@@ -656,8 +656,9 @@ All statements above will return false if used with `===`
 
 # `6. Security Best Practices`
 
-## ![✔] 6.1. Use an ORM/ODM to prevent SQL/noSQL injection attacks
-**TL;DR:** To prevent SQL/noSQL injection attacks always make use of an ORM/ODM that escapes or supports parameters binding, and take care of validating user input for expected type.
+## ![✔] 6.1. Use an ORM/ODM or parameter binding database library to prevent SQL/noSQL injection attacks
+
+**TL;DR:** To prevent SQL/noSQL injection attacks *always* make use of an ORM/ODM or a database library that escapes or supports named or index parameters binding, and take care of validating user input for expected type. **Never** use JS template strings or string concatenation to inject values into queries.
 
 **Otherwise:** Un-validated user input could lead to operators injection when working with MongoDB for noSQL, and unescaped use of proper ORM/ODM will allow easy SQL injection attacks.
 
