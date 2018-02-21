@@ -1,0 +1,3 @@
+class TravelRecommender
+
+module.exports
