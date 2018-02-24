@@ -656,55 +656,7 @@ All statements above will return false if used with `===`
 
 # `6. Security Best Practices`
 
-## ![✔] 6.1. Use an ORM/ODM or parameter binding database library to prevent SQL/noSQL injection attacks
-
-**TL;DR:** To prevent SQL/noSQL injection attacks *always* make use of an ORM/ODM or a database library that escapes or supports named or index parameters binding, and take care of validating user input for expected type. **Never** use JS template strings or string concatenation to inject values into queries.
-
-**Otherwise:** Un-validated user input could lead to operators injection when working with MongoDB for noSQL, and unescaped use of proper ORM/ODM will allow easy SQL injection attacks.
-
-
-🔗 [**Read More:**](#)
-
-<br/><br/>
-
-
-## ![✔] 6.2. Avoid modules loading with require(pathToModule) using a variable
-
-**TL;DR:** Avoid requiring/importing another file with a path that was given as parameter due to the concern that it could have originated from user input. This rule can be extended for accessing files in general (i.e. `fs.readFile()`) or other sensitive resource access with dynamic variables originating from user input.
-
-**Otherwise:** Malicious user input could find its way to a parameter that is used to require tampered files, for example a previously uploaded files on the filesystem, or access already existing system files.
-
-
-🔗 [**Read More:**](#)
-
-<br/><br/>
-
-
-## ![✔] 6.3. Never store plain-text secrets in source control
-
-**TL;DR:** Never store plain-text secrets in configuration files or source code. Instead, make use of secrets management systems like Vault, Docker Secrets, or inject secrets as environment variables accessible to an application. As a last result, storing secrets in source control must be encrypted, and managed (rolling keys, expiring, auditing, etc). Make use of pre-commit/push hooks to check for accidental commit of secrets.
-
-**Otherwise:** Source control for even private repositories, can mistakenly be made public, at which point all secret has been exposed outside. Access to source control for an external party will inadvertently provide access to related systems (database, apis, etc).
-
-
-🔗 [**Read More:**](#)
-
-<br/><br/>
-
-
-## ![✔] 6.4. Use middleware that never validates input rather than crashing your application
-
-**TL;DR:** Here we will write about designing and using middleware that doesn't make the process crash when an invalid JSON is passed since it opens the door for easy DDOS attacks
-
-**Otherwise:**
-
-
-🔗 [**Read More:**](#)
-
-<br/><br/>
-
-
-## ![✔] 6.5. Embrace linter security rules and git hooks
+## ![✔] 6.1. Embrace linter security rules
 
 **TL;DR:** Make use of security linters such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to enforce a policy for secure code (e.g. no use of eval, require with variables, etc). Use of git hooks such as [pre-git](https://github.com/bahmutov/pre-git) allow to further enforce any rules on source control before they get distributed to remotes, one of which can be to check that no secrets were added to source control.
 
@@ -716,11 +668,21 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 
-## ![✔] 6.6. Hide 'X-Powered-By' Express/Koa/etc headers
+## ![✔] 6.2. Limit concurrent requests using a balancer or a middleware
 
-**TL;DR:** Hide the `X-Powered-By` header Express.js or other web application frameworks use to advertise their name or version over HTTP.
+**TL;DR:** Prefer off-loading rate limiting to external service, but if not possible you can use [express-limiter](https://github.com/ded/express-limiter) to implement rate limiting. One can explore the use of yahoo's [limits](https://github.com/yahoo/node-limits) for advanced limits.
 
-**Otherwise:** A basic check attackers will perform during their reconnaissance will be to fingerprint your services to be able to effectively target their attacks. Web servers, amongst them the Express.js framework, default to exposing their name or version through an `X-Powered-By` header.
+**Otherwise:** Implement rate limiting to avoid exhausting your system that would result in a denial of service where business logic is performing heavy operations.
+
+🔗 [**Read More:**](#)
+
+<br/><br/>
+
+## ![✔] 6.3 Extract secrets from config files or use NPM package that encrypts them
+
+**TL;DR:** Never store plain-text secrets in configuration files or source code. Instead, make use of secrets management systems like Vault, Docker Secrets, or inject secrets as environment variables accessible to an application. As a last result, storing secrets in source control must be encrypted, and managed (rolling keys, expiring, auditing, etc). Make use of pre-commit/push hooks to check for accidental commit of secrets.
+
+**Otherwise:** Source control for even private repositories, can mistakenly be made public, at which point all secret has been exposed outside. Access to source control for an external party will inadvertently provide access to related systems (database, apis, etc).
 
 
 🔗 [**Read More:**](#)
@@ -728,7 +690,75 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 
-## ![✔] 6.7. Implement revocation of API tokens
+## ![✔] 6.4. Prevent SQL/noSQL injection with ORM/ODM or any other DAL packages
+
+**TL;DR:** To prevent SQL/noSQL injection attacks *always* make use of an ORM/ODM or a database library that escapes or supports named or index parameters binding, and take care of validating user input for expected type. **Never** use JS template strings or string concatenation to inject values into queries.
+
+**Otherwise:** Un-validated user input could lead to operators injection when working with MongoDB for noSQL, and unescaped use of proper ORM/ODM will allow easy SQL injection attacks.
+
+<br/><br/>
+
+
+## ![✔] 6.5. Collection of common generic security best practices (15 items)
+
+**TL;DR:** There are many built-in and external ways to secure your Node.js applications starting from simple steps like running your server with ssl/tls enabled to more advanced features.
+
+
+🔗 [**Read More: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
+
+<br/><br/>
+
+## ![✔] 6.6. Adjust the response HTTP headers for enhanced security
+
+**TL;DR:** Your application should be using secure headers to prevent attackers from using common attacks like cross-site scripting (XSS), clickjacking and other malicious attacks. These can be configured easily using modules like [helmet](https://www.npmjs.com/package/helmet).
+
+**Otherwise:** Attackers could perform attacks on your application's users, leading to insecurity
+
+<br/><br/>
+
+## ![✔] 6.7. Constantly and automatlically inspect for vulnerable dependencies
+
+**TL;DR:** With the npm ecosystem is it common to have many dependencies for a project. Dependencies should always be kept in check as new vulnerabilities are found. Use tools like [nsp](https://nodesecurity.io/) or [snyk](https://snyk.io/) to track, monitor and patch for vulnerable dependencies. Integrate with these tools on CI so you catch a vulnerable dependency before it makes it to production.
+
+**Otherwise:** Insecure dependencies can render an application completely vulnerable.
+
+🔗 [**Read More:**](#)
+
+<br/><br/>
+
+
+## ![✔] 6.8. Avoid using the Node Crypto library for passwords, use Bcrypt
+
+**TL;DR:** Passwords or secrets (API keys) should be stored using a secure hash function like `bcrypt`, that should be a preferred choice over its javascript implementation due to performance reasons.
+
+**Otherwise:** Passwords or secrets that are persisted without using a secure hash function are vulnerable to brute forcing and dictionary attacks that will lead to their disclosure eventually.
+
+🔗 [**Read More:**](#)
+
+<br/><br/>
+
+## ![✔] 6.9. Use middleware that sanitize input and output
+
+**TL;DR:** Here will write about sanitizing/escaping/encoding both the input and output
+
+**Otherwise:** Failure to encode user generated when outputting it can result in XSS, Log Injection or other vulnerabilities. Input validation should always be performed to confirm one is working with expected types and data properties (length, range, etc).
+
+🔗 [**Read More:**](#)
+
+<br/><br/>
+
+## ![✔] 6.10. Validate the incoming JSON schemas
+
+**TL;DR:** Whether user input is used in querying the database, making API calls, or accessing system files - all user input should always be validated to expected type. You can use [validator.js](https://github.com/chriso/validator.js/) or [joi](https://github.com/hapijs/joi) to validate general user input or json schemas. The top frontend libraries handle output encoding well, but nevertheless you should always make sure to output encode your user generated data in the correct context, and can make use of libraries such as [node-esapi](https://github.com/ESAPI/node-esapi) or [escape-html](https://github.com/component/escape-html).
+
+**Otherwise:** Failure to encode user generated when outputting it can result in XSS, Log Injection or other vulnerabilities. Input validation should always be performed to confirm one is working with expected types and data properties (length, range, etc).
+
+🔗 [**Read More:**](#)
+
+<br/><br/>
+
+
+## ![✔] 6.11. Support JWT tokens blacklist (passport won't provide that by default)
 
 **TL;DR:** Here we will write about JWT tokens stateless concept which is not capable of blacklisting or disabling tokens which have been stolen or used for attacks by nature and therefore needs a custom implementation for blacklisting untrusted or invalid tokens
 
@@ -740,18 +770,19 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 
-## ![✔] 6.8. Limit concurrent requests using rate limiting balancer or a middleware
+## ![✔] 6.12. Avoid using middlewares that crash the process
 
-**TL;DR:** Prefer off-loading rate limiting to external service, but if not possible you can use [express-limiter](https://github.com/ded/express-limiter) to implement rate limiting. One can explore the use of yahoo's [limits](https://github.com/yahoo/node-limits) for advanced limits.
+**TL;DR:** Here we will write about designing and using middleware that doesn't make the process crash when an invalid JSON is passed since it opens the door for easy DDOS attacks
 
-**Otherwise:** Implement rate limiting to avoid exhausting your system that would result in a denial of service where business logic is performing heavy operations.
+**Otherwise:**
+
 
 🔗 [**Read More:**](#)
 
 <br/><br/>
 
 
-## ![✔] 6.9. Run Node as non-root user
+## ![✔] 6.13. Run Node as non-root user
 
 **TL;DR:** Running on behalf of the root or full-privilege account means that any attacker can gain full control to perform anything within the machine if your application is compromised.
 
@@ -763,7 +794,7 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 
-## ![✔] 6.10. Limit incoming requests length using a reverse-proxy or middleware
+## ![✔] 6.14. Limit payload size using a reverse-proxy or a middleware
 
 **TL;DR:** Here we will talk about the easiness of exhausting the system using large request payloads
 
@@ -775,19 +806,7 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 
-## ![✔] 6.11. Run unsafe code in a sandbox
-
-**TL;DR:** Here we will write about the need to run untrusted code, for example third-party components. In that case, we'd like to isolate our code from weakness of the 3rd party code. We can achieve that by running our code in a sandbox
-
-**Otherwise:**
-
-
-🔗 [**Read More:**](#)
-
-<br/><br/>
-
-
-## ![✔] 6.12. Avoid eval statements entirely, especially with un-sanitized inputs
+## ![✔] 6.15. Avoid JS eval statements
 
 **TL;DR:** `eval` may be used to evaluate javascript code during run-time, but it is not just a performance concern but also an important security concern due to malicious javascript code that may be sourced from user input. Another language feature that should be avoided is `new Function` constructor. `setTimeout` and `setInterval` should never be passed dynamic javascript code either.
 
@@ -799,30 +818,8 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 
-## ![✔] 6.13. Protect your application endpoints using security-related headers
-
-**TL;DR:** Your application should be using secure headers to prevent attackers from using common attacks like cross-site scripting (XSS), clickjacking and other malicious attacks. These can be configured easily using modules like [helmet](https://www.npmjs.com/package/helmet).
-
-**Otherwise:** Attackers could perform attacks on your application's users, leading to insecurity
-
-
 🔗 [**Read More: Using secure headers in your application**](/sections/security/secureheaders.md)
 
-
-## ![✔] 6.14. Using common methods to secure your application
-
-**TL;DR:** There are many built-in and external ways to secure your Node.js applications starting from simple steps like running your server with ssl/tls enabled to more advanced features.
-
-
-🔗 [**Read More: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
-
-## ![✔] 6.15. Validating user input and perform output encoding
-
-**TL;DR:** Whether user input is used in querying the database, making API calls, or accessing system files - all user input should always be validated to expected type. You can use [validator.js](https://github.com/chriso/validator.js/) or [joi](https://github.com/hapijs/joi) to validate general user input or json schemas. The top frontend libraries handle output encoding well, but nevertheless you should always make sure to output encode your user generated data in the correct context, and can make use of libraries such as [node-esapi](https://github.com/ESAPI/node-esapi) or [escape-html](https://github.com/component/escape-html).
-
-**Otherwise:** Failure to encode user generated when outputting it can result in XSS, Log Injection or other vulnerabilities. Input validation should always be performed to confirm one is working with expected types and data properties (length, range, etc).
-
-🔗 [**Read More:**](#)
 
 ## ![✔] 6.16. Prevent malicious RegEx from overloading your single thread execution
 
@@ -832,8 +829,32 @@ All statements above will return false if used with `===`
 
 🔗 [**Read More:**](/sections/security/regex.md)
 
+<br/><br/>
 
-## ![✔] 6.17. Avoid or take extra care when working with child processes
+## ![✔] 6.17. Avoid module loading require(someVariable) using a variable
+
+**TL;DR:** Avoid requiring/importing another file with a path that was given as parameter due to the concern that it could have originated from user input. This rule can be extended for accessing files in general (i.e. `fs.readFile()`) or other sensitive resource access with dynamic variables originating from user input.
+
+**Otherwise:** Malicious user input could find its way to a parameter that is used to require tampered files, for example a previously uploaded files on the filesystem, or access already existing system files.
+
+
+🔗 [**Read More:**](#)
+
+<br/><br/>
+
+## ![✔] 6.18. Run unsafe code in a sandbox
+
+**TL;DR:** Here we will write about the need to run untrusted code, for example third-party components. In that case, we'd like to isolate our code from weakness of the 3rd party code. We can achieve that by running our code in a sandbox
+
+**Otherwise:**
+
+
+🔗 [**Read More:**](#)
+
+<br/><br/>
+
+
+## ![✔] 6.19. Take extra care when working with child processes
 
 **TL;DR:** Avoid using `child_process.exec` when possible or validate and sanitize input to mitigate shell injection attacks. Prefer using `child_process.execFile` which by definition will only execute a single command with a set of attributes and will not allow shell parameter expansion.
 
@@ -841,16 +862,10 @@ All statements above will return false if used with `===`
 
 🔗 [**Read More:**](#)
 
+<br/><br/>
 
-## ![✔] 6.18. Store passwords or secrets in a secure manner
 
-**TL;DR:** Passwords or secrets (API keys) should be stored using a secure hash function like `bcrypt`, that should be a preferred choice over its javascript implementation due to performance reasons.
-
-**Otherwise:** Passwords or secrets that are persisted without using a secure hash function are vulnerable to brute forcing and dictionary attacks that will lead to their disclosure eventually.
-
-🔗 [**Read More:**](#)
-
-## ![✔] 6.19. Secure Dependency Management
+## ![✔] 6.20. Hide error details from client (e.g. default Express behaviour)
 
 **TL;DR:** With the npm ecosystem is it common to have many dependencies for a project. Dependencies should always be kept in check as new vulnerabilities are found. Use tools like [nsp](https://nodesecurity.io/) or [snyk](https://snyk.io/) to track, monitor and patch for vulnerable dependencies. Integrate with these tools on CI so you catch a vulnerable dependency before it makes it to production.
 
@@ -858,15 +873,9 @@ All statements above will return false if used with `===`
 
 🔗 [**Read More:**](#)
 
-## ![✔] 6.20. 
+<br/><br/>
 
-**TL;DR:** With the npm ecosystem is it common to have many dependencies for a project. Dependencies should always be kept in check as new vulnerabilities are found. Use tools like [nsp](https://nodesecurity.io/) or [snyk](https://snyk.io/) to track, monitor and patch for vulnerable dependencies. Integrate with these tools on CI so you catch a vulnerable dependency before it makes it to production.
-
-**Otherwise:** Insecure dependencies can render an application completely vulnerable.
-
-🔗 [**Read More:**](#)
-
-## ![✔] 6.21. Modify the default session middleware settings
+## ![✔] 6.21. Modify Passport middleware settings
 
 **TL;DR:** Using the default settings for session middleware can be expose your app to module and framework specific hijacking attacks in a similar way to the  `X-Powered-By` header.
 
