@@ -47,6 +47,6 @@ From the blog: JS Recipes
 
 
 ### Blog Quote: "No safe way to leave without creating some undefined brittle state"
-From Node.JS official documentation
+From Node.js official documentation
  
 > …By the very nature of how throw works in JavaScript, there is almost never any way to safely “pick up where you left off”, without leaking references, or creating some other sort of undefined brittle state. The safest way to respond to a thrown error is to shut down the process. Of course, in a normal web server, you might have many connections open, and it is not reasonable to abruptly shut those down because an error was triggered by someone else. The better approach is to send an error response to the request that triggered the error, while letting the others finish in their normal time, and stop listening for new requests in that worker.
