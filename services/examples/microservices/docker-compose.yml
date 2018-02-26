@@ -1,0 +1,106 @@
+version: "3"
+
+  services:
+  order:
+    container_name: order
+    working_dir: /usr/src/app
+    build: ./services/orders
+    ports:
+      - "5858:5858"
+      - "8443:8443"
+      - "8080:8080"
+    command: npm run start
+    environment:
+      - PORT=8080
+      - SSL_PORT=8443
+      - COMMAND_PARAMS
+      - COOKIE_DOMAIN=.inflowz.com
+      - NODE_ENV=development
+      - TQ_Url=192.168.99.100
+      - TQ_SNS_Port=4575
+      - MQ_Url=192.168.99.100
+      - MQ_SQS_Port=4576
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+      - /usr/src/app/libraries/utils/node_modules
+    depends_on:
+      - postgres
+    links:
+      - postgres
+    networks:
+      - base-network
+  user:
+  product:
+    container_name: product
+    working_dir: /usr/src/app
+    build: ./services/products
+    ports:
+      - "5858:5858"
+      - "8443:8443"
+      - "8080:8080"
+    command: npm run start
+    environment:
+      - PORT=8080
+      - SSL_PORT=8443
+      - COMMAND_PARAMS
+      - COOKIE_DOMAIN=.inflowz.com
+      - NODE_ENV=development
+      - TQ_Url=192.168.99.100
+      - TQ_SNS_Port=4575
+      - MQ_Url=192.168.99.100
+      - MQ_SQS_Port=4576
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+      - /usr/src/app/libraries/utils/node_modules
+    depends_on:
+      - postgres
+    links:
+      - postgres
+    networks:
+      - base-network
+  
+  postgres:
+    container_name: postgres
+    restart: on-failure
+    build:
+      context: ./delivery/services-config/postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=password1!
+      - POSTGRES_USER=inflowz_db_user
+      - POSTGRES_DB=inflowz
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - db-data:/var/lib/postgresql/data/pgdata
+    networks:
+      - base-network
+  redis:
+    container_name: redis
+    build: delivery/services-config/redis
+    ports:
+      - "6379:6379"
+    networks:
+      - base-network
+  aws:
+    container_name: aws
+    build: delivery/services-config/aws
+    ports:
+      - "8081:8081"
+      - "4567-4578:4567-4578"
+    environment:
+      - PORT_WEB_UI=8081
+      - SERVICES=sqs:4576,sns:4575
+    networks:
+      - base-network
+networks:
+  base-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.238.0/24
+volumes:
+  db-data:

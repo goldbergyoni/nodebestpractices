@@ -72,7 +72,6 @@ function logIn(user, password, callback) {
   });
 }
 
-
 async function getUserProducts(OptionsJSON) {
   try {
     const options = JSON.parse(OptionsJSON);
@@ -90,10 +89,6 @@ async function getUserProducts(OptionsJSON) {
     console.log(error);
   }
 }
-
-
-
-
 
 function getProductPromise(orderId, method) {
   return new Promise((resolve, reejct) => {

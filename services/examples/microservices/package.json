@@ -1,0 +1,95 @@
+{
+  "name": "nodepractices",
+  "version": "1.0.0",
+  "description": "[✔]: assets/images/checkbox-small-blue.png",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./services/examples/slow-fast.js",
+    "test": "mocha **/test.unit*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/i0natan/nodebestpractices.git"
+  },
+  "author": "Yoni Goldberg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/i0natan/nodebestpractices/issues"
+  },
+  "homepage": "https://github.com/i0natan/nodebestpractices#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "body-parser": "1.18.2",
+    "clarifai": "^2.5.0",
+    "configurationManager": "file:libraries/configurationManager",
+    "cookie-parser": "1.4.3",
+    "countries": "^0.1.1",
+    "country-data": "0.0.31",
+    "country-list": "^1.1.0",
+    "errorManagement": "file:libraries/errorManagement",
+    "express": "^4.16.2",
+    "express-request-language": "^1.1.15",
+    "expressMiddlewares": "file:libraries/expressMiddlewares",
+    "geoip-lite": "^1.2.1",
+    "google": "^2.1.0",
+    "joi": "13.0.2",
+    "jsonschema": "^1.2.0",
+    "jsonwebtoken": "^8.1.0",
+    "knex": "^0.14.0",
+    "loadtest": "^2.3.0",
+    "logger": "file:libraries/logger",
+    "messageQueue": "file:libraries/messageQueue",
+    "passport": "0.4.0",
+    "passport-cookie": "1.0.4",
+    "passport-http-bearer": "1.0.1",
+    "pg": "7.4.0",
+    "pretty-error": "2.1.1",
+    "sanitize-html": "^1.11.1",
+    "socket.io": "^2.0.4",
+    "swagger-jsdoc": "1.9.7",
+    "swagger-ui-dist": "3.4.4",
+    "uuid": "^3.1.0",
+    "weather-js": "^2.0.0",
+    "which-country": "^1.0.0",
+    "x-ray": "^2.3.2"
+  },
+  "devDependencies": {
+    "chai": "4.1.2",
+    "chai-as-promised": "7.1.1",
+    "eslint": "4.11.0",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-mocha": "4.11.0",
+    "eslint-plugin-node": "5.2.1",
+    "eslint-watch": "3.1.3",
+    "faker": "4.1.0",
+    "fs": "0.0.1-security",
+    "https": "1.0.0",
+    "license-checker": "15.0.0",
+    "mocha": "4.0.1",
+    "nodemon": "1.12.1",
+    "npm-run-all": "4.1.2",
+    "nsp": "3.1.0",
+    "nyc": "11.3.0",
+    "plato": "1.7.0",
+    "sinon": "^4.1.2",
+    "supertest": "3.0.0"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "per-file": true,
+    "lines": 99,
+    "statements": 99,
+    "functions": 99,
+    "branches": 99,
+    "include": [
+      "**/services/examples/test-basics/orderService.js",
+      "**/services/examples/test-basics/orderAPI.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "cache": true,
+    "all": true
+  }
+}

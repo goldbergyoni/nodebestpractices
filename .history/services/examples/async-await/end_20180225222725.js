@@ -73,6 +73,7 @@ function logIn(user, password, callback) {
 }
 
 
+
 async function getUserProducts(OptionsJSON) {
   try {
     const options = JSON.parse(OptionsJSON);

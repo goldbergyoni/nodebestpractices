@@ -15,6 +15,7 @@ function retry(counter) {
 
 function getUserProducts(OptionsJSON) {
   return new Promise((resolve, reject) => {
+    
     logIn("username", "password")
       .then(user => getOrders(user.name))
       .then(orders => {

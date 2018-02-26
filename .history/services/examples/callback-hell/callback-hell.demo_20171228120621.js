@@ -1,3 +1,4 @@
+
 function getUserProducts(OptionsJSON, callback) {
   try {
     const result = [];
@@ -80,7 +81,7 @@ function getOrders(username, callback) {
 }
 
 function logIn(user, password, callback) {
-  callback(new Error("foo", null));
+  callback(new Error('foo', null))
   setTimeout(() => {
     callback(null, {
       username: "Ryan"
