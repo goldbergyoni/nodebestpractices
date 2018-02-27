@@ -1,0 +1,16 @@
+{
+  "name": "the-travelling-recommender",
+  "version": "1.0.0",
+  "description": "",
+  "main": "final.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "all-the-cities": "^2.0.1",
+    "date-holidays": "^1.2.2",
+    "weather-js": "^2.0.0"
+  }
+}

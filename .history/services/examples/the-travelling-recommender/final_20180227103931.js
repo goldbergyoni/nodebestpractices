@@ -1,9 +1,8 @@
+const holidays = require("date-holidays");
 const weather = require("weather-js");
+const cities = require("all-the-cities")
 
-weather.find({ search: "USA", degreeType: "C" }, function(
-  err,
-  result
-) {
+weather.find({ search: "London", degreeType: "C" }, function(err, result) {
   let youNeedCoat = false;
   result.forEach(location => {
     location.forecast.forEach(specificDay => {

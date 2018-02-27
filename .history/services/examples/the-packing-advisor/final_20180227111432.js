@@ -1,6 +1,6 @@
 const weather = require("weather-js");
 
-weather.find({ search: "USA", degreeType: "C" }, function(
+weather.find({ search: "Israel", degreeType: "C" }, function(
   err,
   result
 ) {
