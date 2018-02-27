@@ -18,7 +18,7 @@
  <br/>
 
 # 欢迎! 首先您应该知道的三件事情:
-**1. 当您读到这里，实际上您读了很多关于Node.JS的优秀文章 -** 这是对Node JS 最佳实践中排名最高的内容的总结和分享
+**1. 当您读到这里，实际上您读了很多关于Node.js的优秀文章 -** 这是对Node JS 最佳实践中排名最高的内容的总结和分享
 
 **2. 这里是最大的汇集，且每周都在增长 -** 当前，超过50个最佳实现，样式指南，架构建议已经呈现。每天都有新的issue和PR被创建，以使这本在线书籍不断更新。我们很乐于见到您能在这里做出贡献，不管是修复一些代码的错误，或是提出绝妙的新想法。请查看我们的[milestones](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
 
@@ -98,7 +98,7 @@
 
 **TL;DR:** 使用回调的方式处理异步错误可能是导致灾难的最快的方式(a.k.a the pyramid of doom)。对您的代码来说，最好的礼物就是使用规范的promise库或async-await来替代，这会使其像try-catch一样更加简洁，具有熟悉的代码结构。 
 
-**否则:** Node.JS 回调特性, function(err, response), 是导致不可维护代码的一个必然的方式。究其原因，是由于混合了随意的错误处理代码，臃肿的内嵌，蹩脚的代码模式。
+**否则:** Node.js 回调特性, function(err, response), 是导致不可维护代码的一个必然的方式。究其原因，是由于混合了随意的错误处理代码，臃肿的内嵌，蹩脚的代码模式。
 
 🔗 [**更多: 避免回调**](/sections/errorhandling/asyncerrorhandling.chinese.md)
 
@@ -226,7 +226,7 @@
 
 <br/><br/>
 
-## ![✔] 3.2 Node JS 特定的插件
+## ![✔] 3.2 Node.js 特定的插件
 
 **TL;DR:** 除了仅仅涉及 vanilla JS 的 ESLint 标准规则，添加 Node 相关的插件，比如[eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
@@ -399,11 +399,11 @@ null == undefined   // true
 
 <br/><br/>
 
-## ![✔] 4.2 检测代码问题使用ESLint + 特定node插件的规则
+## ![✔] 4.2 使用一个linter检测代码问题
 
-**TL;DR:** ESLint是检查代码风格的事实上的标准，不仅要查明实际的间距问题，也要检测严重的反模式问题，像开发者没有分类的抛出异常。除了仅仅涉及 vanilla JS 的 ESLint 标准规则，添加 Node 相关的插件，比如[eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) 和 [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
+**TL;DR:** 使用代码linter检查基本质量并及早检测反模式。在任何测试之前运行它, 并将其添加为预提交的git钩子, 以最小化审查和更正任何问题所需的时间。也可在[Section 3](https://github.com/i0natan/nodebestpractices#3-code-style-practices)中查阅编码样式实践
 
-**否则:** 许多错误的Node.js代码模式可能在检测下逃生。例如，开发人员可能需要某些文件，把一个变量作为路径名 (variableAsPath) ，这会导致攻击者可以执行任何JS脚本。Node.JS linters可以检测这类模式，并及早预警。
+**否则:** 您可能让一些反模式和易受攻击的代码传递到您的生产环境中。
 
 
 <br/><br/>
@@ -525,7 +525,7 @@ null == undefined   // true
 
 **TL;DR:** 在基本形式上，node应用程序运行在单个CPU核心上，而其他都处于空闲状态。复制node进程和利用多核，这是您的职责 – 对于中小应用，您可以使用Node Cluster和PM2. 对于一个大的应用，可以考虑使用一些Docker cluster（例如k8s，ECS）复制进程或基于Linux init system（例如systemd）的部署脚本
 
-**否则:** 您的应用可能只是使用了其可用资源中的25% (!)，甚至更少。注意，一台典型的服务器有4个或更多的CPU，默认的Node.JS部署仅仅用了一个CPU（甚至使用PaaS服务，比如AWS beanstalk，也一样）。
+**否则:** 您的应用可能只是使用了其可用资源中的25% (!)，甚至更少。注意，一台典型的服务器有4个或更多的CPU，默认的Node.js部署仅仅用了一个CPU（甚至使用PaaS服务，比如AWS beanstalk，也一样）。
 
 
 🔗 [**更多: 利用所有的CPU**](/sections/production/utilizecpu.chinese.md)
@@ -670,7 +670,7 @@ To maintain this guide and keep it up to date, we are constantly updating and im
 
 # Contributors
 ## `Yoni Goldberg`
-Independent Node.JS consultant who works with customers at USA, Europe and Israel on building large-scale scalable Node applications. Many of the best practices above were first published on his blog post at [http://www.goldbergyoni.com](http://www.goldbergyoni.com). Reach Yoni at @goldbergyoni or me@goldbergyoni.com
+Independent Node.js consultant who works with customers at USA, Europe and Israel on building large-scale scalable Node applications. Many of the best practices above were first published on his blog post at [http://www.goldbergyoni.com](http://www.goldbergyoni.com). Reach Yoni at @goldbergyoni or me@goldbergyoni.com
 
 ## `Ido Richter`
 👨‍💻 Software engineer, 🌐 web developer, 🤖 emojis enthusiast.
@@ -720,7 +720,10 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Xavier Ho](https://github.com/spaxe),
 🌻 [Aaron Arney](https://github.com/ocularrhythm),
 🌻 [Jan Charles Maghirang Adona](https://github.com/septa97),
-🌻 [Allen Fang](https://github.com/AllenFang)
+🌻 [Allen Fang](https://github.com/AllenFang),
+🌻 [Leonardo Villela](https://github.com/leonardovillela),
+🌻 [Michal Zalecki](https://github.com/MichalZalecki)
+🌻 [Chris Nicola](https://github.com/chrisnicola)
 
 
 
