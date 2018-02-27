@@ -1,0 +1,1 @@
+var varName = require('module');
