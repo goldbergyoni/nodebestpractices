@@ -38,4 +38,4 @@ class travellingRecommender {
   }
 }
 
-new travellingRecommender().isItRecommended(["Germany", "Israel", ""], 3);
+new travellingRecommender().isItRecommended("Germany", 3);

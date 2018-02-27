@@ -4,7 +4,6 @@ const weather = require("weather-js");
 class travellingRecommender {
   isItRecommended(countries, numberOfDays) {
     //check each country and consolidate the result
-    //run with promise.all (array of checkSingleCountry)
     return false;
   }
 
@@ -38,4 +37,4 @@ class travellingRecommender {
   }
 }
 
-new travellingRecommender().isItRecommended(["Germany", "Israel", ""], 3);
+new travellingRecommender().isItRecommended("Germany", 3);

@@ -1,6 +1,7 @@
 const weather = require("weather-js");
 
-weather.find({ search: "Israel", degreeType: "C" }, function(err, result) {
+weather.find({ search: "", degreeType: "C" }, function(err, result) {
+  console.log()
   let youNeedCoat = false;
   result.forEach(location => {
     location.forecast.forEach(specificDay => {
