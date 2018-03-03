@@ -18,7 +18,7 @@
  <br/>
 
 # Welcome! 3 Things You Ought To Know First:
-**1. When you read here, you in fact read dozens of the best Node.JS articles -** this is a summary and curation of the top-ranked content on Node JS best practices
+**1. When you read here, you in fact read dozens of the best Node.js articles -** this is a summary and curation of the top-ranked content on Node.js best practices
 
 **2. It is the largest compilation, and it is growing every week -** currently, more than 50 best practices, style guides, and architectural tips are presented. New issues and PR are created every day to keep this live book updated. We'd love to see you contributing here, whether fixing some  code mistake or suggesting brilliant new ideas. See our [milestones here](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
 
@@ -99,7 +99,7 @@
 
 **TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using a reputable promise library or async-await instead which enables a much more compact and familiar code syntax like try-catch
 
-**Otherwise:** Node.JS callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting and awkward coding patterns
+**Otherwise:** Node.js callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting and awkward coding patterns
 
 🔗 [**Read More: avoiding callbacks**](/sections/errorhandling/asyncerrorhandling.md)
 
@@ -227,11 +227,11 @@
 
 <br/><br/>
 
-## ![✔] 3.2 Node JS Specific Plugins
+## ![✔] 3.2 Node.js Specific Plugins
 
 **TL;DR:** On top of ESLint standard rules that cover vanilla JS only, add Node-specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
-**Otherwise:** Many faulty Node.JS code patterns might escape under the radar. For example, developers might require(variableAsPath) files with a variable given as path which allows attackers to execute any JS script. Node.JS linters can detect such patterns and complain early
+**Otherwise:** Many faulty Node.js code patterns might escape under the radar. For example, developers might require(variableAsPath) files with a variable given as path which allows attackers to execute any JS script. Node.js linters can detect such patterns and complain early
 
 <br/><br/>
 
@@ -312,7 +312,7 @@
 
 **TL;DR:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top, but also avoids a couple of potential problems.
 
-**Otherwise:** Requires are run synchronously by NodeJS. If they are called from within a function, it may block other requests from being handled at a more critical time. Also, if a required module or any of its own dependencies throw an error and crash the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function.
+**Otherwise:** Requires are run synchronously by Node.js. If they are called from within a function, it may block other requests from being handled at a more critical time. Also, if a required module or any of its own dependencies throw an error and crash the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function.
 
 <br/><br/>
 
@@ -524,7 +524,7 @@ All statements above will return false if used with `===`
 
 **TL;DR:** At its basic form, a Node app runs on a single CPU core while all other are left idling. It’s your duty to replicate the Node process and utilize all CPUs – For small-medium apps you may use Node Cluster or PM2. For a larger app consider replicating the process using some Docker cluster (e.g. K8S, ECS) or deployment scripts that are based on Linux init system (e.g. systemd)
 
-**Otherwise:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.JS utilizes only 1 (even using PaaS services like AWS beanstalk!)
+**Otherwise:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.js utilizes only 1 (even using PaaS services like AWS beanstalk!)
 
 
 🔗 [**Read More: Utilize all CPU cores**](/sections/production/utilizecpu.md)
@@ -669,7 +669,7 @@ To maintain this guide and keep it up to date, we are constantly updating and im
 
 # Contributors
 ## `Yoni Goldberg`
-Independent Node.JS consultant who works with customers at USA, Europe and Israel on building large-scale scalable Node applications. Many of the best practices above were first published on his blog post at [http://www.goldbergyoni.com](http://www.goldbergyoni.com). Reach Yoni at @goldbergyoni or me@goldbergyoni.com
+Independent Node.js consultant who works with customers at USA, Europe and Israel on building large-scale scalable Node applications. Many of the best practices above were first published on his blog post at [http://www.goldbergyoni.com](http://www.goldbergyoni.com). Reach Yoni at @goldbergyoni or me@goldbergyoni.com
 
 ## `Ido Richter`
 👨‍💻 Software engineer, 🌐 web developer, 🤖 emojis enthusiast.
@@ -719,7 +719,10 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Xavier Ho](https://github.com/spaxe),
 🌻 [Aaron Arney](https://github.com/ocularrhythm),
 🌻 [Jan Charles Maghirang Adona](https://github.com/septa97),
-🌻 [Allen Fang](https://github.com/AllenFang)
+🌻 [Allen Fang](https://github.com/AllenFang),
+🌻 [Leonardo Villela](https://github.com/leonardovillela),
+🌻 [Michal Zalecki](https://github.com/MichalZalecki)
+🌻 [Chris Nicola](https://github.com/chrisnicola)
 
 
 

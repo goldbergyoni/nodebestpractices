@@ -65,19 +65,19 @@ app.use((err, req, res, next) => {
 ```
 
 ### Blog Quote: "Sometimes lower levels can’t do anything useful except propagate the error to their caller"
- From the blog Joyent, ranked 1 for the keywords “Node.JS error handling”
+ From the blog Joyent, ranked 1 for the keywords “Node.js error handling”
  
  > …You may end up handling the same error at several levels of the stack. This happens when lower levels can’t do anything useful except propagate the error to their caller, which propagates the error to its caller, and so on. Often, only the top-level caller knows what the appropriate response is, whether that’s to retry the operation, report an error to the user, or something else. But that doesn’t mean you should try to report all errors to a single top-level callback, because that callback itself can’t know in what context the error occurred…
 
  
 ### Blog Quote: "Handling each err individually would result in tremendous duplication"
- From the blog JS Recipes, ranked 17 for the keywords “Node.JS error handling”
+ From the blog JS Recipes, ranked 17 for the keywords “Node.js error handling”
  
  > ……In Hackathon Starter api.js controller alone, there are over 79 occurences of error objects. Handling each err individually would result in tremendous amount of code duplication. The next best thing you can do is to delegate all error handling logic to an Express middleware…
 
 
 ### Blog Quote: "HTTP errors have no place in your database code"
- From the blog Daily JS, ranked 14 for the keywords “Node.JS error handling”
+ From the blog Daily JS, ranked 14 for the keywords “Node.js error handling”
  
  > ……You should set useful properties in error objects, but use such properties consistently. And, don’t cross the streams: HTTP errors have no place in your database code. Or for browser developers, Ajax errors have a place in code that talks to the server, but not code that processes Mustache templates…
 
