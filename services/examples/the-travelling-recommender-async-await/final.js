@@ -91,7 +91,7 @@ class travellingRecommender {
     weatherResult.forEach((weatherResult, index) => {
       if (weatherResult.forecast && Array.isArray(weatherResult.forecast)) {
         weatherResult.forecast.forEach(specificDay => {
-          if (parseInt(specificDay.low) < 15) {
+          if (parseInt(specificDay.low) < 12) {
             weatherTooCold = true;
             return;
           }
@@ -107,12 +107,12 @@ const numberOfDays = 3;
 
 const places = [
   {
-    country: "Deutschland",
-    city: "Frankfurt am Main"
+    country: "United Kingdom",
+    city: "Northern Ireland"
   },
   {
     country: "United States of America",
-    city: "Los Angeles, CA"
+    city: "Los Angeles"
   },
   {
     country: "Brasil",
