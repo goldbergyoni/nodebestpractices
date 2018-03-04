@@ -48,6 +48,7 @@
     "socket.io": "^2.0.4",
     "swagger-jsdoc": "1.9.7",
     "swagger-ui-dist": "3.4.4",
+    "terminal-kit": "^1.14.3",
     "uuid": "^3.1.0",
     "weather-js": "^2.0.0",
     "which-country": "^1.0.0",

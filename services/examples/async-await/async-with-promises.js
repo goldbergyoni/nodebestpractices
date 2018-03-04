@@ -23,3 +23,11 @@ const main = async () => {
 };
 
 main()
+
+function callbackToPromise(callbackable, ...args) {
+  return new Promise(function(resolve, reject) {
+    return callbackable(...args, function(err, result) {
+      return err ? reject(err) : resolve(result);
+    });
+  });
+}

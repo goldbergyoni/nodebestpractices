@@ -24,19 +24,19 @@ function countrySupported(country) {
   return getCountryCode(country) !== null;
 }
 
-class travellingRecommender {
+  class travellingRecommender {
   isItRecommended(places, numberOfDays) {
     //check each place and consolidate the result
     //run with promise.all (array of checkSinglePlace)
 
     const placesToCheck = [];
 
-    places.forEach(place =>
+      places.forEach(place =>
       placesToCheck.push(this.checkSinglePlace(place, numberOfDays))
     );
 
     return Promise.all(placesToCheck);
-  }
+    }
 
   checkSinglePlace(place, numberOfDays) {
     //check both holidays and the weather
@@ -57,11 +57,11 @@ class travellingRecommender {
     });
   }
 
-  checkHolidays(place, numberOfDays) {
-    return new Promise((resolve, reject) => {
-      if (!countrySupported(place.country)) {
-        reject(
-          new Error(
+    checkHolidays(place, numberOfDays) {
+      return new Promise((resolve, reject) => {
+        if (!countrySupported(place.country)) {
+          reject(
+            new Error(
             "Country " + place.country + " not supported by Holiday library"
           )
         );
@@ -72,9 +72,9 @@ class travellingRecommender {
       const date = new Date();
 
       // Loop through number of days and check if holiday occurs
-      for (let i = 0; i < numberOfDays; i++) {
+        for (let i = 0; i < numberOfDays; i++) {
         date.setDate(date.getDate() + 1);
-        if (holidays.isHoliday(date)) {
+          if (holidays.isHoliday(date)) {
           resolve(true);
         }
       }

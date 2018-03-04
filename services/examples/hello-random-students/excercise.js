@@ -1,21 +1,26 @@
 const fs = require("fs");
-const terminal = require("terminal-kit").terminal;
+var terminal = require("terminal-kit").terminal;
 
-class goodMorningStudents {
+let x = 5;
+
+class goodMorning {
+  constructor() {}
+
   bless() {
-    terminal.drawImage(
-      "./goodmorning.png",
-      { shrink: { width: 20, height: 20 } },
-      (err, image) => {console.log(err)}
-    );
-
-    fs.readFile("./students.txt", "utf-8", function(error, data) {
+    fs.readFile("students.txt", "utf-8", function(err, data) {
       const studentsArray = data.split(";");
+      terminal.drawImage(
+        "./goodmorning.jpg",
+        { shrink: { width: 20, height: 20 } },
+        (err, image) => {}
+      );
       studentsArray.forEach(student => {
-        console.log(`Good morning ${student}`);
+        console.log(`Good Morning ${student}!`);
       });
     });
   }
 }
 
-module.exports = goodMorningStudents;
+module.exports = goodMorning;
+
+new goodMorning().bless()

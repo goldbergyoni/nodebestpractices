@@ -15,6 +15,7 @@ var router = express.Router();
 
 //upstream middleware: before API endpoint
 app.use((req, res, next) => {
+  console.log(req.connection.remoteAddress);
   console.log(`Upstream middleware -> I'm about to log a new request  ${req.url}`);
   next();
 });

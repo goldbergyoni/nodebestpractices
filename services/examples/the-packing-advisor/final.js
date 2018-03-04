@@ -1,13 +1,21 @@
 const weather = require("weather-js");
 
-weather.find({ search: "Israel", degreeType: "C" }, function(err, result) {
-  let youNeedCoat = false;
-  result.forEach(location => {
-    location.forecast.forEach(specificDay => {
-      if (specificDay.low < 15) {
-        youNeedCoat = true;
+function checkWeather() {
+  return new Promise((resolve, reject) =>{
+    weather.find({ search: "Israel", degreeType: "C" }, (err, result) => {
+      if(err){
+        reject(err);
+        return;
       }
+      let youNeedCoat = false;
+      result.forEach(location => {
+        location.forecast.forEach(specificDay => {
+          if (specificDay.low < 15) {
+            resolve(false);
+          }
+        });
+      });
     });
-  });
-  console.log(youNeedCoat ? "You need a coat" : "Leave your coat");
-});
+  })
+  
+}

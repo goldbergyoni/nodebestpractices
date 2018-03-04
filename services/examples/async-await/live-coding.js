@@ -5,12 +5,15 @@ async function getUserProducts(OptionsJSON) {
     const orders = await getOrders(user);
     const products = [];
 
-    for (i = 0; i < orders.length; i++) {      
-      const productToAdd = await getProduct(orders[i].id);
-      products.push(productToAdd);
-    }
-
+    console.time("sync")
+    orders.forEach(order => {
+      getProduct(order.id).then((product)=>{
+        products.push(product);
+      })
+    });
+    console.timeEnd("sync")
     return products;
+    
   } catch (error) {
     console.log(error);
   }

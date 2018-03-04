@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 var router = express.Router();
 
 const authenticate = (req, res, next) => {
-  const userClaims = jwt.verify(req.headers.authorization, 'secret');
+  const userClaims = jwt.verify(req.headers.authorization, 'very-long-secret');
   console.log(`Authorization header ${req.headers.authorization} is and the found user is ${JSON.stringify(userClaims)}`);
   if (!userClaims) {
     res.status(401).end();
@@ -29,6 +29,11 @@ const authenticate = (req, res, next) => {
 };
 
 app.use("/api", authenticate);
+router.get('/api/products', (req,res,next)=>{
+  console.log("got it")
+  res.status(200).json({status:"yesssshhhhh"})
+})
+app.use(router);
 app.use("/api/products", productService);
 app.use("/account", userService.router);
 console.log(`App is starting`);

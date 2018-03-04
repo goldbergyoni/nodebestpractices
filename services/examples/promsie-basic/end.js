@@ -1,5 +1,5 @@
 function getUserProducts(OptionsJSON) {
-  try {
+  try { 
     return new Promise((resolve, reject) => {
       const options = JSON.parse(OptionsJSON);
       logIn("username", "password")
@@ -25,6 +25,14 @@ function getUserProducts(OptionsJSON) {
     console.log(`Error found ${error} ${error.stack}`);
   }
 }
+
+
+
+
+
+
+
+
 
 function getProduct(orderId) {
   return new Promise((resolve, reject) => {
