@@ -1,31 +1,31 @@
-const express = require('express')
+const express = require("express");
 const app = express();
-const knex = require('knex')(require('./knexfile'));
+const knex = require("knex")(require("./knexfile"));
 
-console.log('starting');
+console.log("starting");
 const port = process.env.PORT || 8080;
 app.listen(port);
 
-app.post('/api/products' , async (req,res) =>{
-    console.log('starting')
-    productToAdd = {name:'iPhone', numOfSales:5}
+app.post("/api/products", async (req, res) => {
+  console.log("starting");
+  productToAdd = { name: "iPhone", numOfSales: 5 };
 
-    //validate the input
-    validateProduct(productToAdd);
+  //validate the input
+  validateProduct(productToAdd);
 
-    //save in DB
-    const DBResult = await knex.insert(productToAdd).into("products");
+  //save in DB
+  const DBResult = await knex.insert(productToAdd).into("products");
 
-    res.json({}).end();
+  res.json({}).end();
 });
 
-function validateProduct(productToValidate){
-    for(i=0;i<15000;i++){
-        if(!productToValidate.name || !productToValidate.numOfSales){
-            return false;
-        }        
+function validateProduct(productToValidate) {
+  for (i = 0; i < 15000; i++) {
+    if (!productToValidate.name || !productToValidate.numOfSales) {
+      return false;
     }
+  }
 
-    console.log(i);
-    return true;
+  console.log(i);
+  return true;
 }

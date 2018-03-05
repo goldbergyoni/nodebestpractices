@@ -9,7 +9,7 @@ function tellMeWhatToEat(userId) {
   const images = getNearbyImages(instagramAPIURL)
     .then(identifyFoodWithinImages)
     .then(printoutFood)
-    .catch(error => {
+      .catch(error => {
       console.log(`Error caught! ${error}`);
     });
 }
@@ -51,14 +51,6 @@ function getInstagramURL() {
 }
 
 tellMeWhatToEat();
-
-
-
-
-
-
-
-
 
 
 
