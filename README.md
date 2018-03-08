@@ -658,7 +658,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 6.1. Embrace linter security rules
 
-**TL;DR:** Make use of security linters such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to enforce a policy for secure code (e.g. no use of eval, require with variables, etc). Use of git hooks such as [pre-git](https://github.com/bahmutov/pre-git) allow to further enforce any rules on source control before they get distributed to remotes, one of which can be to check that no secrets were added to source control.
+**TL;DR:** Make use of security linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to enforce a policy for secure code (e.g. no use of eval, require with variables, etc). The use of git hooks such as [pre-git](https://github.com/bahmutov/pre-git) allows to further enforce any rules on source control before they get distributed to remotes, one of which can be to check that no secrets were added to source control.
 
 **Otherwise:**
 
@@ -692,9 +692,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 6.4. Prevent SQL/noSQL injection with ORM/ODM or any other DAL packages
 
-**TL;DR:** To prevent SQL/noSQL injection attacks *always* make use of an ORM/ODM or a database library that escapes or supports named or index parameters binding, and take care of validating user input for expected type. **Never** use JS template strings or string concatenation to inject values into queries.
+**TL;DR:** To prevent SQL/noSQL injection attacks *always* make use of an ORM/ODM or a database library that escapes or supports named or indexed parameter binding, and takes care of validating user input for expected types. **Never** use JS template strings or string concatenation to inject values into queries.
 
-**Otherwise:** Un-validated user input could lead to operators injection when working with MongoDB for noSQL, and unescaped use of proper ORM/ODM will allow easy SQL injection attacks.
+**Otherwise:** Un-validated user input could lead to operator injection when working with MongoDB for noSQL, and unescaped use of proper ORM/ODM will allow easy SQL injection attacks.
 
 <br/><br/>
 
@@ -714,11 +714,14 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Attackers could perform attacks on your application's users, leading to insecurity
 
+
+🔗 [**Read More: Using secure headers in your application**](/sections/security/secureheaders.md)
+
 <br/><br/>
 
-## ![✔] 6.7. Constantly and automatlically inspect for vulnerable dependencies
+## ![✔] 6.7. Constantly and automatically inspect for vulnerable dependencies
 
-**TL;DR:** With the npm ecosystem is it common to have many dependencies for a project. Dependencies should always be kept in check as new vulnerabilities are found. Use tools like [nsp](https://nodesecurity.io/) or [snyk](https://snyk.io/) to track, monitor and patch for vulnerable dependencies. Integrate with these tools on CI so you catch a vulnerable dependency before it makes it to production.
+**TL;DR:** With the npm ecosystem it is common to have many dependencies for a project. Dependencies should always be kept in check as new vulnerabilities are found. Use tools like [nsp](https://nodesecurity.io/) or [snyk](https://snyk.io/) to track, monitor and patch vulnerable dependencies. Integrate these tools with your CI setup so you catch a vulnerable dependency before it makes it to production.
 
 **Otherwise:** Insecure dependencies can render an application completely vulnerable.
 
@@ -729,7 +732,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 6.8. Avoid using the Node Crypto library for passwords, use Bcrypt
 
-**TL;DR:** Passwords or secrets (API keys) should be stored using a secure hash function like `bcrypt`, that should be a preferred choice over its javascript implementation due to performance reasons.
+**TL;DR:** Passwords or secrets (API keys) should be stored using a secure hash function like `bcrypt`, that should be a preferred choice over its JavaScript implementation due to performance reasons.
 
 **Otherwise:** Passwords or secrets that are persisted without using a secure hash function are vulnerable to brute forcing and dictionary attacks that will lead to their disclosure eventually.
 
@@ -737,9 +740,9 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.9. Use middleware that sanitize input and output
+## ![✔] 6.9. Use middleware that sanitizes input and output
 
-**TL;DR:** Here will write about sanitizing/escaping/encoding both the input and output
+**TL;DR:** Here we will write about sanitizing/escaping/encoding both the input and output
 
 **Otherwise:** Failure to encode user generated when outputting it can result in XSS, Log Injection or other vulnerabilities. Input validation should always be performed to confirm one is working with expected types and data properties (length, range, etc).
 
@@ -818,9 +821,6 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 
-🔗 [**Read More: Using secure headers in your application**](/sections/security/secureheaders.md)
-
-
 ## ![✔] 6.16. Prevent malicious RegEx from overloading your single thread execution
 
 **TL;DR:** Regular Expressions, while being handy, pose a real threat to JavaScript applications at large, and the Node.js platform in particular due to the fact that they require CPU cycles to compute a pattern test. Use the aforementioned [validator.js](https://github.com/chriso/validator.js) package to validate data instead of writing your own, or make use of [safe-regex](https://github.com/substack/safe-regex) to detect vulnerable regex patterns.
@@ -867,15 +867,15 @@ All statements above will return false if used with `===`
 
 ## ![✔] 6.20. Hide error details from client (e.g. default Express behaviour)
 
-**TL;DR:** With the npm ecosystem is it common to have many dependencies for a project. Dependencies should always be kept in check as new vulnerabilities are found. Use tools like [nsp](https://nodesecurity.io/) or [snyk](https://snyk.io/) to track, monitor and patch for vulnerable dependencies. Integrate with these tools on CI so you catch a vulnerable dependency before it makes it to production.
+**TL;DR:** We will write about hiding verbose and dangerous application status details from users here.
 
-**Otherwise:** Insecure dependencies can render an application completely vulnerable.
+**Otherwise:**
 
 🔗 [**Read More:**](#)
 
 <br/><br/>
 
-## ![✔] 6.21. Modify Passport middleware settings
+## ![✔] 6.21. Modify session middleware settings
 
 **TL;DR:** Using the default settings for session middleware can be expose your app to module and framework specific hijacking attacks in a similar way to the  `X-Powered-By` header.
 
