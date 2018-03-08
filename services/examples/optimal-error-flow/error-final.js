@@ -5,7 +5,7 @@ class CustomError extends Error {
     this.name = name;
     this.date = new Date();
     this.code = code;
-    this.isOperational = isOperational;
+    this.isOperational = isOperational; 
     this.message = message;
   }
 }

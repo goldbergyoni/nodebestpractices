@@ -3,14 +3,16 @@ async function getUserProducts(OptionsJSON) {
     const options = JSON.parse(OptionsJSON);
     const user = await logIn("username", "password");
     const orders = await getOrders(user);
-    const products = [];
 
-    for (i = 0; i < orders.length; i++) {      
-      const productToAdd = await getProduct(orders[i].id);
-      products.push(productToAdd);
-    }
+    console.time('product')
+    const getProductPromiseArray = [];
+    getProductPromiseArray.push(getProduct("a"))
+    getProductPromiseArray.push(getProduct2("a"))
+    
+    const result =  await Promise.all(getProductPromiseArray)
+    console.timeEnd('product')
+    return result;
 
-    return products;
   } catch (error) {
     console.log(error);
   }
@@ -20,12 +22,26 @@ async function getUserProducts(OptionsJSON) {
 function getProduct(orderId) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
+      console.log("Time out")
+      throw new Error("oppss")
       resolve({
         name: "Macbook Pro"
       });
-    }, 100);
+    }, 200);
   });
 }
+
+function getProduct2(orderId) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("Time out")
+      resolve({
+        name: "Surface"
+      });
+    }, 50);
+  });
+}
+
 
 function getTranslatedProduct(orderId) {
   return new Promise((resolve, reject) => {

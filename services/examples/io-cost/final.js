@@ -20,4 +20,4 @@ console.timeEnd('filesave-io');
 console.time('networkcall-io');
 http.get('https://google.com', (result)=>{
     console.timeEnd('networkcall-io');
-})
+});

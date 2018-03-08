@@ -1,5 +1,9 @@
-class OrderService {
-  add(order) {
+  class OrderService {
+    add(order) {
+
+      if(order){
+        throw new Error()
+      }
     if (!order) throw new Error("Bad boy!");
 
     const result = order;
@@ -8,7 +12,7 @@ class OrderService {
       result.approved = false;
     } else {
       result.approved = true;
-    } 
+    }
 
     new DAL().save(order);
 
@@ -37,8 +41,8 @@ class OrderService {
 
 }
 
-class DAL {
-  save(order) {
+  class DAL {
+    save(order) {
     return new Promise((resolve, reject) => {
       console.log("Save DAL is running now");
       setTimeout(() => {

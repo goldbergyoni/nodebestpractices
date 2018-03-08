@@ -50,4 +50,4 @@ class someBusinessLogicThatThrowsErrors {
 }
 
 const aClassThatThrowsErrors = new someBusinessLogicThatThrowsErrors();
-aClassThatThrowsErrors.a();
+aClassThatThrowsErrors.d();

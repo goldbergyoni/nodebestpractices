@@ -12,6 +12,7 @@ router.get("/api/products", async (req, res, next) => {
   try {
     console.log("Get products was invoked");
     const result = await new ProductService().getUserProducts({});
+    res.status(200).json({})
   } catch (error) {
     next(error);
   }
