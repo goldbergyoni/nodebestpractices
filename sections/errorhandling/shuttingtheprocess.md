@@ -19,15 +19,18 @@ process.on('uncaughtException', function(error) {
  
  
 // centralized error handler encapsulates error-handling related logic
-function errorHandler(){
+function errorHandler() {
   this.handleError = function (error) {
-  return logger.logError(err).then(sendMailToAdminIfCritical).then(saveInOpsQueueIfCritical).then(determineIfOperationalError);
-}
+    return logger.logError(err)
+      .then(sendMailToAdminIfCritical)
+      .then(saveInOpsQueueIfCritical)
+      .then(determineIfOperationalError);
+  }
 
-this.isTrustedError = function (error) {
-  return error.isOperational;
+  this.isTrustedError = function (error) {
+    return error.isOperational;
+  }
 }
-
 ```
 
 
