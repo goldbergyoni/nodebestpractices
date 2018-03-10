@@ -4,11 +4,13 @@
 ### One Paragraph Explainer
 
 The permissive nature of JS along with its variety code-flow options (e.g. EventEmitter, Callbacks, Promises, etc) pushes to great variance in how developers raise errors – some use strings, other define their own custom types. Using Node.js built-in Error object helps to keep uniformity within your code and with 3rd party libraries, it also preserves significant information like the StackTrace. When raising the exception, it’s usually a good practice to fill it with additional contextual properties like the error name and the associated HTTP error code. To achieve this uniformity and practices, consider extending the Error object with additional properties, see code example below
-Blog Quote: “I don’t see the value in having lots of different types”
+
+### Blog Quote: “I don’t see the value in having lots of different types”
 From the blog Ben Nadel, ranked 5 for the keywords “Node.js error object”
-…”Personally, I don’t see the value in having lots of different types of error objects – JavaScript, as a language, doesn’t seem to cater to Constructor-based error-catching. As such, differentiating on an object property seems far easier than differentiating on a Constructor type…
 
+>…”Personally, I don’t see the value in having lots of different types of error objects – JavaScript, as a language, doesn’t seem to cater to Constructor-based error-catching. As such, differentiating on an object property seems far easier than differentiating on a Constructor type…
 
+<br/><br/>
 
 ### Code Example – doing it right
 
