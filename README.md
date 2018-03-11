@@ -725,7 +725,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Insecure dependencies can render an application completely vulnerable.
 
-🔗 [**Read More:**](#)
+🔗 [**Read More:**](/sections/security/dependencysecurity.md))
 
 <br/><br/>
 
