@@ -16,7 +16,7 @@ Another thing to consider along with using these mitigation tools is to identify
 ### Node Security Platform (nsp)
 Node Security Platform is a set of services targeted towards dependency management with a focus on security.
 
-The most common use of this tool is the service nsp Live. This is a service which integratse into a project's CI workflow and Github Pull Requests to identify vulnerabilities present in the project. The benefits of this mean that when new modules are added, any vulnerabilites are automatically identified in order for the security risk to be mitigated before these dependencies reach master. This also includes new vulnerabilites which are found in existing dependencies, as well as when new dependencies are introduced.
+The most common use of this tool is the service nsp Live. This is a service which integrates into a project's CI workflow and Github Pull Requests to identify vulnerabilities present in the project. The benefits of this mean that when new modules are added, any vulnerabilites are automatically identified in order for the security risk to be mitigated before these dependencies reach master. This also includes new vulnerabilites which are found in existing dependencies, as well as when new dependencies are introduced.
 
 There is also an nsp CLI tool, which traverses your dependencies checking for vulnerabilities against the advisories list. To use this tool:
 Install the module globally.
@@ -29,9 +29,9 @@ An example of output of nsp check
 🔗 [Read on: NSP website](https://nodesecurity.io/)
 
 ### Snyk
-Synk offers a feature-rich CLI, as well as Github integration. Synk goes further with this and in addition to notifing vulnerabilities, also automatically creates new pull requests fixing vulnerabilities as patches are released for known vulnerabilties.
+Snyk offers a feature-rich CLI, as well as Github integration. Snyk goes further with this and in addition to notifying vulnerabilities, also automatically creates new pull requests fixing vulnerabilities as patches are released for known vulnerabilties.
 
-Synk's feature rich website also allows for ad-hoc assessment of dependencies when provided with a Github reposity or npm module url. You can also search for npm packages which have vulnerabilties directly https://snyk.io/vuln?packageManager=npm
+Snyk's feature rich website also allows for ad-hoc assessment of dependencies when provided with a GitHub repository or npm module url. You can also search for npm packages which have vulnerabilties directly https://snyk.io/vuln?packageManager=npm
 An example of the output of this tool [can be found here](https://snyk.io/test/npm/passport), which shows the current vulnerability status of the latest Passport.js npm package. 
 
 🔗 [Read on: Snyk website](https://snyk.io/)
