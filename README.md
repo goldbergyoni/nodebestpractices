@@ -26,6 +26,23 @@
 
 <br/><br/><br/>
 
+## Translations
+All translations are contributed by the community. We will be happy to get any help with ongoing or new translations!
+
+### Completed translations
+
+* 🇨🇳 [Chinese](README.chinese.md)
+
+### Translations in progress
+
+* 🇫🇷 [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/129))
+* 🇰🇷 [Korean](https://github.com/i0natan/nodebestpractices/blob/korean-translation/README.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/94))
+* 🇷🇺 [Russian](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/105))
+* 🇪🇸 [Spanish](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/95))
+* 🇹🇷 Turkish ([Discussion](https://github.com/i0natan/nodebestpractices/issues/139))
+
+<br/><br/><br/>
+
 ## Table of Contents
 1. [Project structure Practices (5)](#1-project-structure-practices)
 2. [Error Handling Practices (11) ](#2-error-handling-practices)
