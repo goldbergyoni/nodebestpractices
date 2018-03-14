@@ -17,7 +17,7 @@
  [![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
  <br/>
 
- Read in another language: [![CN](/assets/flags/CN.png)**CN**](README.chinese.md)
+ Read in another language: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md)
 
  <br/>
 
