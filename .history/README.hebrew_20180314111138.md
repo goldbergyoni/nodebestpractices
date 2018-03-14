@@ -1,4 +1,4 @@
-<div style="text-align: right">
+
 [✔]: assets/images/checkbox-small-blue.png
 
 # Node.js Best Practices
@@ -731,4 +731,3 @@ This repository is being kept up to date thanks to the help from the community. 
 <br/><br/>
 ## :star: No Stars Yet, Waiting For The First To Suggest a New Bullet 
 
-</div>
