@@ -6,6 +6,8 @@
   <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices" />
 </h1>
 
+Read in another language: ![CN](/assets/flags/CN.png) [**CN**](README.chinese.md)
+
 <br/>
 
 <div align="center">
@@ -26,23 +28,6 @@
 
 <br/><br/><br/>
 
-## Translations
-All translations are contributed by the community. We will be happy to get any help with ongoing or new translations!
-
-### Completed translations
-
-* 🇨🇳 [Chinese](README.chinese.md)
-
-### Translations in progress
-
-* 🇫🇷 [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/129))
-* 🇰🇷 [Korean](https://github.com/i0natan/nodebestpractices/blob/korean-translation/README.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/94))
-* 🇷🇺 [Russian](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/105))
-* 🇪🇸 [Spanish](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/95))
-* 🇹🇷 Turkish ([Discussion](https://github.com/i0natan/nodebestpractices/issues/139))
-
-<br/><br/><br/>
-
 ## Table of Contents
 1. [Project structure Practices (5)](#1-project-structure-practices)
 2. [Error Handling Practices (11) ](#2-error-handling-practices)
@@ -54,6 +39,7 @@ All translations are contributed by the community. We will be happy to get any h
 
 
 * [Milestones](#milestones)
+* [Translations](#translations)
 * [Contributors](#contributors)
 * [Thank you notes](#thank-you-notes)
 * [Sources](#sources)
@@ -686,6 +672,24 @@ All statements above will return false if used with `===`
 
 # Milestones
 To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/i0natan/nodebestpractices/milestones) and join the working groups if you want to contribute to this project.
+
+<br/><br/>
+
+## Translations
+All translations are contributed by the community. We will be happy to get any help with either completed, ongoing or new translations!
+
+### Completed translations
+
+* ![CN](/assets/flags/CN.png) [Chinese](README.chinese.md)
+
+### Translations in progress
+
+* ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion]
+* ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/i0natan/nodebestpractices/issues/156))
+* ![KR](/assets/flags/KR.png) [Korean](https://github.com/i0natan/nodebestpractices/blob/korean-translation/README.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/94))
+* ![RU](/assets/flags/RU.png) [Russian](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/105))
+* ![ES](/assets/flags/ES.png) [Spanish](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/95))
+* ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/i0natan/nodebestpractices/issues/139))
 
 <br/><br/>
 
