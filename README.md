@@ -6,8 +6,6 @@
   <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices" />
 </h1>
 
-Read in another language: ![CN](/assets/flags/CN.png) [**CN**](README.chinese.md)
-
 <br/>
 
 <div align="center">
@@ -18,6 +16,10 @@ Read in another language: ![CN](/assets/flags/CN.png) [**CN**](README.chinese.md
 
  [![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
  <br/>
+
+ Read in another language: [![CN](/assets/flags/CN.png) **CN**](README.chinese.md)
+
+ <br/><br/>
 
 # Welcome! 3 Things You Ought To Know First:
 **1. When you read here, you in fact read dozens of the best Node.JS articles -** this is a summary and curation of the top-ranked content on Node JS best practices
