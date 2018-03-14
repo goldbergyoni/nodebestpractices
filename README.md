@@ -755,13 +755,3 @@ This repository is being kept up to date thanks to the help from the community. 
 :star: **No Stars Yet, Waiting For The First To Suggest a New Bullet**
 
 <br/><br/>
-
-
-
-
-
-# Sources
-List of websites, blog posts, articles and books which are curated in this repostiory
-
-* [Monolith First](https://martinfowler.com/bliki/MonolithFirst.html), Martin Fowler, [martinfowler.com](https://martinfowler.com), June 3, 2015
-* [Screaming Architecture](https://8thlight.com/blog/uncle-bob/2011/09/30/Screaming-Architecture.html) Uncle Bob, [8thlight blog](https://8thlight.com/blog), September 30, 2011
