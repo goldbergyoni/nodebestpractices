@@ -1,6 +1,5 @@
 [✔]: assets/images/checkbox-small-blue.png
 
-<div style="text-align: right" dir="rtl">
 # Node.js Best Practices
 
 <h1 align="center">
