@@ -682,7 +682,7 @@ All translations are contributed by the community. We will be happy to get any h
 
 ### Completed translations
 
-* ![CN](/assets/flags/CN.png) [Chinese](README.chinese.md)
+* ![CN](/assets/flags/CN.png) [Chinese](README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
 
 ### Translations in progress
 
