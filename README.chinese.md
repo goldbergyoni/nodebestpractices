@@ -37,7 +37,7 @@
 
 
 <br/><br/><br/>
-<h1 id="1-project-structure-practices"><code>1. 项目结构实践<code></h1>
+<h1 id="1-project-structure-practices"><code>1. 项目结构实践</code></h1>
 
 ## ![✔] 1.1 组件式构建你的解决方案
 
@@ -92,7 +92,7 @@
 
 <p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
-<h1 id="2-error-handling-practices"><code>2. 错误处理最佳实践<code></h1>
+<h1 id="2-error-handling-practices"><code>2. 错误处理最佳实践</code></h1>
 
 ## ![✔] 2.1  使用 Async-Await 和 promises 用于异步错误处理
 
@@ -216,7 +216,7 @@
 
 <p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
-<h1 id="3-code-style-practices"><code>3. 编码风格实践<code></h1>
+<h1 id="3-code-style-practices"><code>3. 编码风格实践</code></h1>
 
 ## ![✔] 3.1 使用ESLint
 
@@ -389,7 +389,7 @@ null == undefined   // true
 <p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
 
-<h1 id="4-testing-and-overall-quality-practices"><code>4. 测试和总体的质量实践<code></h1>
+<h1 id="4-testing-and-overall-quality-practices"><code>4. 测试和总体的质量实践</code></h1>
 
 ## ![✔] 4.1 至少，编写API（组件）测试
 
@@ -464,7 +464,7 @@ null == undefined   // true
 
 <p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
-<h1 id="5-going-to-production-practices"><code>5. 上线实践<code></h1>
+<h1 id="5-going-to-production-practices"><code>5. 上线实践</code></h1>
 ## ![✔] 5.1. 监控!
 
 **TL;DR:** 监控是一种在顾客之前发现问题的游戏 – 显然这应该被赋予前所未有的重要性。考虑从定义你必须遵循的基本度量标准开始（我的建议在里面），到检查附加的花哨特性并选择解决所有问题的解决方案。市场已经淹没其中。点击下面的 ‘The Gist’ ，了解解决方案的概述。
