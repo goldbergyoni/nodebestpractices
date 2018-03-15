@@ -17,6 +17,10 @@
  [![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
  <br/>
 
+ Read in different language: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md)     [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
+
+ <br/>
+
 # Welcome! 3 Things You Ought To Know First:
 **1. When you read here, you in fact read dozens of the best Node.js articles -** this is a summary and curation of the top-ranked content on Node.js best practices
 
@@ -35,6 +39,12 @@
 6. Security Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 7. Performance Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 
+
+* [Milestones](#milestones)
+* [Translations](#translations)
+* [Contributors](#contributors)
+* [Thank you notes](#thank-you-notes)
+* [Sources](#sources)
 
 <br/><br/><br/>
 # `1. Project Structure Practices`
@@ -667,6 +677,24 @@ To maintain this guide and keep it up to date, we are constantly updating and im
 
 <br/><br/>
 
+## Translations
+All translations are contributed by the community. We will be happy to get any help with either completed, ongoing or new translations!
+
+### Completed translations
+
+* ![CN](/assets/flags/CN.png) [Chinese](README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
+
+### Translations in progress
+
+* ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion]
+* ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/i0natan/nodebestpractices/issues/156))
+* ![KR](/assets/flags/KR.png) [Korean](https://github.com/i0natan/nodebestpractices/blob/korean-translation/README.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/94))
+* ![RU](/assets/flags/RU.png) [Russian](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/105))
+* ![ES](/assets/flags/ES.png) [Spanish](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/95))
+* ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/i0natan/nodebestpractices/issues/139))
+
+<br/><br/>
+
 # Contributors
 ## `Yoni Goldberg`
 Independent Node.js consultant who works with customers at USA, Europe and Israel on building large-scale scalable Node applications. Many of the best practices above were first published on his blog post at [http://www.goldbergyoni.com](http://www.goldbergyoni.com). Reach Yoni at @goldbergyoni or me@goldbergyoni.com
@@ -725,8 +753,8 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Chris Nicola](https://github.com/chrisnicola),
 🌻 [Alejandro Corredor](https://github.com/aecorredor)
 
+<br/>
 
+:star: **No Stars Yet, Waiting For The First To Suggest a New Bullet**
 
 <br/><br/>
-## :star: No Stars Yet, Waiting For The First To Suggest a New Bullet 
-
