@@ -725,7 +725,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Insecure dependencies can render an application completely vulnerable.
 
-🔗 [**Read More:**](#)
+🔗 [**Read More:**](/sections/security/dependencysecurity.md))
 
 <br/><br/>
 
@@ -867,11 +867,12 @@ All statements above will return false if used with `===`
 
 ## ![✔] 6.20. Hide error details from client (e.g. default Express behaviour)
 
-**TL;DR:** We will write about hiding verbose and dangerous application status details from users here.
+**TL;DR:** Use the default Express error handler, or ensure that custom error handlers avoid exposing error details to the client when running an application outside of development.
 
 **Otherwise:**
+Sensitive application details such as server filepaths, third party modules in use, and other internal workings of the application which could be exploited by an attacker from information found in a stack trace.
 
-🔗 [**Read More:**](#)
+🔗 [**Read More:**](/sections/security/hideerrors.md)
 
 <br/><br/>
 
