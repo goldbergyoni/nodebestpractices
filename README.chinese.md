@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-<img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2053%20Best%20practices-blue.svg" alt="50 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Oct%2020%202017-green.svg" alt="Last update: Oct 20, 2017"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.4-brightgreen.svg" alt="Updated for Node v.8.4">
+<img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2053%20Best%20practices-blue.svg" alt="53 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Nov%2015%202017-green.svg" alt="Last update: Nov 15, 2017"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.9-brightgreen.svg" alt="Updated for Node v.8.9">
 	</div>
 
 <br/>
@@ -18,7 +18,7 @@
  <br/>
 
 # 欢迎! 首先您应该知道的三件事情:
-**1. 当您读到这里，实际上您读了很多关于Node.js的优秀文章 -** 这是对Node JS 最佳实践中排名最高的内容的总结和分享
+**1. 当您读到这里，实际上您读了很多关于Node.js的优秀文章 -** 这是对Node.js最佳实践中排名最高的内容的总结和分享
 
 **2. 这里是最大的汇集，且每周都在增长 -** 当前，超过50个最佳实现，样式指南，架构建议已经呈现。每天都有新的issue和PR被创建，以使这本在线书籍不断更新。我们很乐于见到您能在这里做出贡献，不管是修复一些代码的错误，或是提出绝妙的新想法。请查看我们的[milestones](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
 
@@ -41,7 +41,7 @@
 
 ## ![✔] 1.1 组件式构建你的解决方案
 
- **TL;DR:** 最坏的大型项目的隐患就是维护一个庞大的，含有几百个依赖的代码库 - 当开发人员准备整合新的需求的时候，这样一个庞然大物势必减缓了开发效率。反之，把您的代码拆分成组件，每一个组件有它自己的文件夹和代码库，并且确保每一个组件小而简单。查看正确的项目结构的例子请访问下面的 ‘更多’ 链接。
+ **TL;DR:** 大型项目的最坏的隐患就是维护一个庞大的，含有几百个依赖的代码库 - 当开发人员准备整合新的需求的时候，这样一个庞然大物势必减缓了开发效率。反之，把您的代码拆分成组件，每一个组件有它自己的文件夹和代码库，并且确保每一个组件小而简单。查看正确的项目结构的例子请访问下面的 ‘更多’ 链接。
 
 **否则:** 当编写新需求的开发人员逐步意识到他所做改变的影响，并担心会破坏其他的依赖模块 - 部署会变得更慢，风险更大。当所有业务逻辑没有被分开，这也会被认为很难扩展
 
@@ -82,7 +82,7 @@
 ## ![✔] 1.5 使用易于设置环境变量，安全和分级的配置
 
 
-**TL;DR:** 一个完美无瑕的配置安装应该确保 (a) 元素可以从文件中，也可以从环境变量中读取 (b) 密码排除在提交的代码之外 (c) 为了易于检索，配置是分级的。仅有几个包可以满足这样的条件，比如[nconf](https://www.npmjs.com/package/nconf) 和 [config](https://www.npmjs.com/package/config)。
+**TL;DR:** 一个完美无瑕的配置安装应该确保 (a) 元素可以从文件中，也可以从环境变量中读取 (b) 密码排除在提交的代码之外 (c) 为了易于检索，配置是分级的。仅有几个包可以满足这样的条件，比如[rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) 和 [config](https://www.npmjs.com/package/config)。
 
 **否则:** 不能满足任意的配置要求将会使开发，运维团队，或者两者，易于陷入泥潭。
 
@@ -98,7 +98,7 @@
 
 **TL;DR:** 使用回调的方式处理异步错误可能是导致灾难的最快的方式(a.k.a the pyramid of doom)。对您的代码来说，最好的礼物就是使用规范的promise库或async-await来替代，这会使其像try-catch一样更加简洁，具有熟悉的代码结构。 
 
-**否则:** Node.js 回调特性, function(err, response), 是导致不可维护代码的一个必然的方式。究其原因，是由于混合了随意的错误处理代码，臃肿的内嵌，蹩脚的代码模式。
+**否则:** Node.js回调特性, function(err, response), 是导致不可维护代码的一个必然的方式。究其原因，是由于混合了随意的错误处理代码，臃肿的内嵌，蹩脚的代码模式。
 
 🔗 [**更多: 避免回调**](/sections/errorhandling/asyncerrorhandling.chinese.md)
 
@@ -220,13 +220,13 @@
 
 ## ![✔] 3.1 使用ESLint
 
-**TL;DR:** ESLint是检查代码风格的事实上的标准，不仅要查明实际的间距问题，也要检测严重的反模式问题，像开发者没有分类的抛出异常。使用ESLint及下面列出的其他的代码风格实践，意味着和社区里的其他人保持同一种风格，以及用在核心产品本身相同的代码风格。
+**TL;DR:** [ESLint](https://eslint.org)是检查可能的代码错误和修复代码样式的事实上的标准，不仅可以识别实际的间距问题, 而且还可以检测严重的反模式代码, 如开发人员在不分类的情况下抛出错误。尽管ESlint可以自动修复代码样式，但其他的工具比如[prettier](https://www.npmjs.com/package/prettier)和[beautify](https://www.npmjs.com/package/js-beautify)在格式化修复上功能强大，可以和Eslint结合起来使用。
 
-**否则:** 开发者必须专注于单调的间距和线宽的问题上。
+**否则:** 开发人员将必须关注单调乏味的间距和线宽问题, 并且时间可能会浪费在过多考虑项目的代码样式。
 
 <br/><br/>
 
-## ![✔] 3.2 Node.js 特定的插件
+## ![✔] 3.2 Node.js特定的插件
 
 **TL;DR:** 除了仅仅涉及 vanilla JS 的 ESLint 标准规则，添加 Node 相关的插件，比如[eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
@@ -285,12 +285,12 @@
   // 使用UpperCamelCase命名类名
   class SomeClassExample () { 
     
-    // 常量使用UPPERCASE
-    const CONFIG = {
+    // 常量使用const关键字，并使用lowerCamelCase命名
+    const config = {
       key: 'value'
     };
     
-    // 变量和方法使用lowerCamelCase
+    // 变量和方法使用lowerCamelCase命名
     let someVariableExample = 'value';
     function doSomething() {
       
@@ -303,7 +303,7 @@
 
 ## ![✔] 3.7 使用const优于let，废弃var
 
-**TL;DR:** 使用` const `意味着一旦一个变量被分配，它不能被重新分配。使用const将帮助您免于使用相同的变量用于不同的用途，并使你的代码更清晰。如果一个变量需要被重新分配，以在一个循环为例，使用 `let` 声明它。let的另一个重要方面是，使用let声明的变量只在定义它的块作用域中可用。 `var` 是函数作用域，不是块级作用域，既然您有const和let让您随意使用，那么[不应该在ES6中使用var](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70)。
+**TL;DR:** 使用`const`意味着一旦一个变量被分配，它不能被重新分配。使用const将帮助您免于使用相同的变量用于不同的用途，并使你的代码更清晰。如果一个变量需要被重新分配，以在一个循环为例，使用`let`声明它。let的另一个重要方面是，使用let声明的变量只在定义它的块作用域中可用。 `var`是函数作用域，不是块级作用域，既然您有const和let让您随意使用，那么[不应该在ES6中使用var](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70)。
 
 **否则:** 当经常更改变量时，调试变得更麻烦了。
 
@@ -313,9 +313,9 @@
 
 ## ![✔] 3.8 先require, 而不是在方法内部
 
-**TL;DR:** 在每个文件的起始位置，在任何函数的前面和外部 require 模块。这种简单的最佳实践，不仅能帮助您轻松快速地在文件顶部辨别出依赖关系，而且避免了一些潜在的问题。
+**TL;DR:** 在每个文件的起始位置，在任何函数的前面和外部require模块。这种简单的最佳实践，不仅能帮助您轻松快速地在文件顶部辨别出依赖关系，而且避免了一些潜在的问题。
 
-**否则:** 在 NodeJs 中，require 是同步运行的。如果从函数中调用它们，它可能会阻塞其他请求，在更关键的时间得到处理。另外，如果所 require 的模块或它自己的任何依赖项抛出错误并使服务器崩溃，最好尽快查明它，如果该模块在函数中 require 的，则可能不是这样的情况。
+**否则:** 在Node.js中，require 是同步运行的。如果从函数中调用它们，它可能会阻塞其他请求，在更关键的时间得到处理。另外，如果所require的模块或它自己的任何依赖项抛出错误并使服务器崩溃，最好尽快查明它，如果该模块在函数中require的，则可能不是这样的情况。
 
 <br/><br/>
 
@@ -452,7 +452,7 @@ null == undefined   // true
 
 <br/><br/>
 
-## ![✔] 4.8 对于 e2e testing，使用 docker-compose
+## ![✔] 4.8 对于e2e testing，使用docker-compose
 
 **TL;DR:** 端对端(e2e)测试包含现场数据，由于它依赖于很多重型服务如数据库，习惯被认为是CI过程中最薄弱的环节。Docker-compose通过制定类似生产的环境，并使用一个简单的文本文件和简单的命令，轻松化解了这个问题。它为了e2e测试，允许制作所有相关服务，数据库和隔离网络。最后但并非最不重要的一点是，它可以保持一个无状态环境，该环境在每个测试套件之前被调用，然后立即消失。
 
@@ -489,9 +489,9 @@ null == undefined   // true
 
 ## ![✔] 5.3. 委托一切可能的（例如：gzip，SSL）给反向代理
 
-**TL;DR:** node处理CPU密集型任务，如gzipping，SSL termination等，表现糟糕。相反，使用一个 ‘真正’ 的中间件服务像Nginx，HAProxy或者云供应商的服务。
+**TL;DR:** Node处理CPU密集型任务，如gzipping，SSL termination等，表现糟糕。相反，使用一个 ‘真正’ 的中间件服务像Nginx，HAProxy或者云供应商的服务。
 
-**否则:** 单线程的node服务器将不幸地忙于处理网络任务，而不是处理应用程序核心，性能会相应降低。
+**否则:** 可怜的单线程Node将不幸地忙于处理网络任务，而不是处理应用程序核心，性能会相应降低。
 
 
 🔗 [**更多: 委托一切可能的（例如：gzip，SSL）给反向代理**](/sections/production/delegatetoproxy.chinese.md)
@@ -723,10 +723,11 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Allen Fang](https://github.com/AllenFang),
 🌻 [Leonardo Villela](https://github.com/leonardovillela),
 🌻 [Michal Zalecki](https://github.com/MichalZalecki)
-🌻 [Chris Nicola](https://github.com/chrisnicola)
+🌻 [Chris Nicola](https://github.com/chrisnicola),
+🌻 [Alejandro Corredor](https://github.com/aecorredor)
 
+<br/>
 
-
+:star: **No Stars Yet, Waiting For The First To Suggest a New Bullet**
 
 <br/><br/>
-## :star: No Stars Yet, Waiting For The First To Suggest a New Bullet 
