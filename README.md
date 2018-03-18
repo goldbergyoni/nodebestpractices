@@ -667,14 +667,13 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-
 ## ![✔] 6.2. Limit concurrent requests using a balancer or a middleware
 
-**TL;DR:** Prefer off-loading rate limiting to external service, but if not possible you can use [express-limiter](https://github.com/ded/express-limiter) to implement rate limiting. One can explore the use of yahoo's [limits](https://github.com/yahoo/node-limits) for advanced limits.
+**TL;DR:** Implement rate limiting using an external service such as NGINX, or if that is not possible use a rate limiting middleware within the application
 
-**Otherwise:** Implement rate limiting to avoid exhausting your system that would result in a denial of service where business logic is performing heavy operations.
+**Otherwise:** An application could be subject to an attack resulting in a denial of service where real users receive degraded service, or an unavailable application.
 
-🔗 [**Read More:**](#)
+🔗 [**Read More: Implement rate limiting**](sections/security/limitrequests.md)
 
 <br/><br/>
 
