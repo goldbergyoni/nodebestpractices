@@ -658,12 +658,12 @@ All statements above will return false if used with `===`
 
 ## ![✔] 6.1. Embrace linter security rules
 
-**TL;DR:** Make use of security linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to enforce a policy for secure code (e.g. no use of eval, require with variables, etc). The use of git hooks such as [pre-git](https://github.com/bahmutov/pre-git) allows to further enforce any rules on source control before they get distributed to remotes, one of which can be to check that no secrets were added to source control.
+**TL;DR:** Make use of security linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to enforce a policy for secure code (e.g. no use of eval, require with variables, etc).
 
 **Otherwise:**
+Developers in the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories.
 
-
-🔗 [**Read More:**](#)
+🔗 [**Read More:**](sections/security/lintrules.md)
 
 <br/><br/>
 
