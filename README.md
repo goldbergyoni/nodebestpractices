@@ -722,7 +722,7 @@ Developers in the project may not follow consistent code security practices, lea
 
 **TL;DR:** With the npm ecosystem it is common to have many dependencies for a project. Dependencies should always be kept in check as new vulnerabilities are found. Use tools like [nsp](https://nodesecurity.io/) or [snyk](https://snyk.io/) to track, monitor and patch vulnerable dependencies. Integrate these tools with your CI setup so you catch a vulnerable dependency before it makes it to production.
 
-**Otherwise:** Insecure dependencies can render an application completely vulnerable.
+**Otherwise:** An attacker could detect your web framework and attack with all it's known vulnerabilities.
 
 🔗 [**Read More:**](/sections/security/dependencysecurity.md))
 

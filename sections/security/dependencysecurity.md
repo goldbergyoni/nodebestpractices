@@ -6,8 +6,6 @@ The majority of Node.js applications rely heavily on a large number of third par
 
 There are a number of tools available to help identify third party packages in Node.js applications which have been identified as vulnerable by the community to mitigate the risk of introducing them into your project. These can be used periodically from CLI tools or included as part of your application's build process.
 
-Another thing to consider along with using these mitigation tools is to identify what dependencies are no longer being used in the application, and whether or not they are still required or could be implemented in Node.js without needing to reinvent the wheel.
-
 ### Table of Contents
 - [Node Security Platform (nsp)](#node-security-platform)
 - [Snyk](#snyk)
@@ -20,27 +18,41 @@ The most common use of this tool is the service nsp Live. This is a service whic
 
 There is also an nsp CLI tool, which traverses your dependencies checking for vulnerabilities against the advisories list. To use this tool:
 Install the module globally.
+
 `npm install -g nsp`
+
 Run the CLI tool from the root of the project directory.
+
 `nsp check`
-An example of output of nsp check
-![nsp check example](https://i.stack.imgur.com/uvxjQ.png)
+
+An example output of `nsp check`:
+
+![nsp check example](/assets/images/nsp.png)
 
 🔗 [Read on: NSP website](https://nodesecurity.io/)
 
-### Snyk
-Snyk offers a feature-rich CLI, as well as Github integration. Snyk goes further with this and in addition to notifying vulnerabilities, also automatically creates new pull requests fixing vulnerabilities as patches are released for known vulnerabilties.
+🔗 [Read on: Example advisory for a recent vulnerability in moment.js](https://nodesecurity.io/advisories/532)
 
-Snyk's feature rich website also allows for ad-hoc assessment of dependencies when provided with a GitHub repository or npm module url. You can also search for npm packages which have vulnerabilties directly https://snyk.io/vuln?packageManager=npm
-An example of the output of this tool [can be found here](https://snyk.io/test/npm/passport), which shows the current vulnerability status of the latest Passport.js npm package. 
+### Snyk
+Snyk offers a feature-rich CLI, as well as GitHub integration. Snyk goes further with this and in addition to notifying vulnerabilities, also automatically creates new pull requests fixing vulnerabilities as patches are released for known vulnerabilties.
+
+Snyk's feature rich website also allows for ad-hoc assessment of dependencies when provided with a GitHub repository or npm module url. You can also search for npm packages which have vulnerabilties directly.
+
+An example of the output of the Synk GitHub integration automatically created pull request:
+![synk GitHub example](/assets/images/snyk.png)
 
 🔗 [Read on: Snyk website](https://snyk.io/)
+
+🔗 [Read on: Synk online tool to check npm packages and GitHub modules](https://snyk.io/test)
 
 ### Greenkeeper
 Greenkeeper is a service which offers real-time dependency updates, which keeps an application more secure by always using the most update to date and patched dependency versions.
 
 Greenkeeper watches the npm dependencies specified in a repository's `package.json` file, and automatically creates a working branch with each dependency update. The repository CI suite is then run to reveal any breaking changes for the updated dependency version in the application. If CI fails due the dependency update, a clear and consise issue is created in the repository to be actioned outlining the current and updated package versions, along with information and commit history of the updated version.
 
+An example of the output of the Greenkeeper GitHub integration automatically created pull request:
+
+![synk github example](/assets/images/greenkeeper.png)
 🔗 [Read on: Greenkeeper website](https://greenkeeper.io/)
 
 ### Additional resources

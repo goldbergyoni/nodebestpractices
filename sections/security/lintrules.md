@@ -7,3 +7,7 @@ Security plugins for ESLint such as [eslint-plugin-security](https://github.com/
 An example of running `eslint-plugin-security` on a Node.js project with unsafe code practices.
 
 ![eslint-plugin-security example](/assets/images/lintrules1.png "eslint-plugin-security example")
+
+### What other bloggers say
+From the blog by [Adam Baldwin](https://www.safaribooksonline.com/blog/2014/03/28/using-eslint-plugins-node-js-app-security/):
+> Linting doesn’t have to be just a tool to enforce pedantic rules about whitespace, semicolons or eval statements. ESLint provides a powerful framework for eliminating a wide variety of potentially dangerous patterns in your code (regular expressions, input validation, and so on). I think it provides a powerful new tool that’s worthy of consideration by security-conscious JavaScript developers.

@@ -7,27 +7,15 @@ If you pass an error to `next()` and you do not handle it in a custom error hand
 
 ### Code example: Express error handler
 ``` javascript
-// development error handler which will print stacktrace
-if (process.env.NODE_ENV === 'development') {
-  app.use(function(err, req, res, next) {
+// production error handler
+// no stacktraces leaked to user
+app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
         message: err.message,
-        error: err
+        error: {}
     });
-  });
-
-} else {
-    // production error handler
-    // no stacktraces leaked to user
-    app.use(function(err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: {}
-        });
-    });
-}
+});
 ```
 ### Additional resources
 
