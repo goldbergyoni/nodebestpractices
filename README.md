@@ -658,23 +658,22 @@ All statements above will return false if used with `===`
 
 ## ![✔] 6.1. Embrace linter security rules
 
-**TL;DR:** Make use of security linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to enforce a policy for secure code (e.g. no use of eval, require with variables, etc). The use of git hooks such as [pre-git](https://github.com/bahmutov/pre-git) allows to further enforce any rules on source control before they get distributed to remotes, one of which can be to check that no secrets were added to source control.
+**TL;DR:** Make use of security linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to enforce a policy for secure code (e.g. no use of eval, require with variables, etc).
 
 **Otherwise:**
+Developers in the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories.
 
-
-🔗 [**Read More:**](#)
+🔗 [**Read More:**](sections/security/lintrules.md)
 
 <br/><br/>
 
-
 ## ![✔] 6.2. Limit concurrent requests using a balancer or a middleware
 
-**TL;DR:** Prefer off-loading rate limiting to external service, but if not possible you can use [express-limiter](https://github.com/ded/express-limiter) to implement rate limiting. One can explore the use of yahoo's [limits](https://github.com/yahoo/node-limits) for advanced limits.
+**TL;DR:** Implement rate limiting using an external service such as NGINX, or if that is not possible use a rate limiting middleware within the application
 
-**Otherwise:** Implement rate limiting to avoid exhausting your system that would result in a denial of service where business logic is performing heavy operations.
+**Otherwise:** An application could be subject to an attack resulting in a denial of service where real users receive degraded service, or an unavailable application.
 
-🔗 [**Read More:**](#)
+🔗 [**Read More: Implement rate limiting**](sections/security/limitrequests.md)
 
 <br/><br/>
 
@@ -723,9 +722,9 @@ All statements above will return false if used with `===`
 
 **TL;DR:** With the npm ecosystem it is common to have many dependencies for a project. Dependencies should always be kept in check as new vulnerabilities are found. Use tools like [nsp](https://nodesecurity.io/) or [snyk](https://snyk.io/) to track, monitor and patch vulnerable dependencies. Integrate these tools with your CI setup so you catch a vulnerable dependency before it makes it to production.
 
-**Otherwise:** Insecure dependencies can render an application completely vulnerable.
+**Otherwise:** An attacker could detect your web framework and attack with all it's known vulnerabilities.
 
-🔗 [**Read More:**](#)
+🔗 [**Read More:**](/sections/security/dependencysecurity.md))
 
 <br/><br/>
 
@@ -867,11 +866,12 @@ All statements above will return false if used with `===`
 
 ## ![✔] 6.20. Hide error details from client (e.g. default Express behaviour)
 
-**TL;DR:** We will write about hiding verbose and dangerous application status details from users here.
+**TL;DR:** Use the default Express error handler, or ensure that custom error handlers avoid exposing error details to the client when running an application outside of development.
 
 **Otherwise:**
+Sensitive application details such as server filepaths, third party modules in use, and other internal workings of the application which could be exploited by an attacker from information found in a stack trace.
 
-🔗 [**Read More:**](#)
+🔗 [**Read More:**](/sections/security/hideerrors.md)
 
 <br/><br/>
 
