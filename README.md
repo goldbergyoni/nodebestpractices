@@ -767,7 +767,7 @@ Developers in the project may not follow consistent code security practices, lea
 **Otherwise:** Expired, or misplaced tokens could be used maliciously by a third party to access an application impersonating the owner of the token.
 
 
-🔗 [**Read More: Blacklist JWT Tokens**](#revokejwt.md)
+🔗 [**Read More: Blacklist JWT Tokens**](/sections/security/revokejwt.md)
 
 <br/><br/>
 
