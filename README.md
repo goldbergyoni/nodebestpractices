@@ -663,7 +663,7 @@ All statements above will return false if used with `===`
 **Otherwise:**
 Developers in the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories.
 
-🔗 [**Read More:**](sections/security/lintrules.md)
+🔗 [**Read More: Lint rules**](sections/security/lintrules.md)
 
 <br/><br/>
 
@@ -724,7 +724,7 @@ Developers in the project may not follow consistent code security practices, lea
 
 **Otherwise:** An attacker could detect your web framework and attack with all it's known vulnerabilities.
 
-🔗 [**Read More:**](/sections/security/dependencysecurity.md))
+🔗 [**Read More: Dependency security**](/sections/security/dependencysecurity.md)
 
 <br/><br/>
 
@@ -760,14 +760,14 @@ Developers in the project may not follow consistent code security practices, lea
 <br/><br/>
 
 
-## ![✔] 6.11. Support JWT tokens blacklist (passport won't provide that by default)
+## ![✔] 6.11. Support blacklisting JWT tokens
 
-**TL;DR:** Here we will write about JWT tokens stateless concept which is not capable of blacklisting or disabling tokens which have been stolen or used for attacks by nature and therefore needs a custom implementation for blacklisting untrusted or invalid tokens
+**TL;DR:** When using JWT(JSON Web Token), a custom implementation for blacklisting untrusted or invalid tokens is required to revoke the token's access, due to the completely stateless approach of JWT.
 
-**Otherwise:**
+**Otherwise:** Expired, or misplaced tokens could be used maliciously by a third party to access an application impersonating the owner of the token.
 
 
-🔗 [**Read More:**](#)
+🔗 [**Read More: Blacklist JWT Tokens**](#revokejwt.md)
 
 <br/><br/>
 
@@ -812,10 +812,10 @@ Developers in the project may not follow consistent code security practices, lea
 
 **TL;DR:** `eval` may be used to evaluate javascript code during run-time, but it is not just a performance concern but also an important security concern due to malicious javascript code that may be sourced from user input. Another language feature that should be avoided is `new Function` constructor. `setTimeout` and `setInterval` should never be passed dynamic javascript code either.
 
-**Otherwise:** when malicious javascript code finds a way into a text passed into `eval` or other real-time evaluating javascript language functions, it will gain complete access to javascript permissions on the page, often manifesting as an XSS attack.
+**Otherwise:** Malicious javascript code finds a way into a text passed into `eval` or other real-time evaluating javascript language functions, it will gain complete access to javascript permissions on the page, often manifesting as an XSS attack.
 
 
-🔗 [**Read More:**](#)
+🔗 [**Read More: Avoid JS eval statements**](/sections/security/avoideval.md)
 
 <br/><br/>
 
@@ -834,10 +834,10 @@ Developers in the project may not follow consistent code security practices, lea
 
 **TL;DR:** Avoid requiring/importing another file with a path that was given as parameter due to the concern that it could have originated from user input. This rule can be extended for accessing files in general (i.e. `fs.readFile()`) or other sensitive resource access with dynamic variables originating from user input.
 
-**Otherwise:** Malicious user input could find its way to a parameter that is used to require tampered files, for example a previously uploaded files on the filesystem, or access already existing system files.
+**Otherwise:** Malicious user input could find its way to a parameter that is used to require tampered files, for example a previously uploaded file on the filesystem, or access already existing system files.
 
 
-🔗 [**Read More:**](#)
+🔗 [**Read More: Safe module loading**](/sections/security/safemoduleloading.md)
 
 <br/><br/>
 
@@ -871,7 +871,7 @@ Developers in the project may not follow consistent code security practices, lea
 **Otherwise:**
 Sensitive application details such as server filepaths, third party modules in use, and other internal workings of the application which could be exploited by an attacker from information found in a stack trace.
 
-🔗 [**Read More:**](/sections/security/hideerrors.md)
+🔗 [**Read More: Hide error details from client**](/sections/security/hideerrors.md)
 
 <br/><br/>
 
