@@ -2,9 +2,9 @@
 
 ### One Paragraph Explainer
 
-When handling incoming requests in your web application, you should limit the size of the request body. Incoming requests with
-unlimited body sizes can lead to your application crashing due to a denial-of-service outage or other unwanted side-effects.
-Many popular middleware-solutions for parsing request bodies, such as already-included `body-parser` package for express, expose
+When handling incoming requests in your web application, you should limit the size of their respective payloads. Incoming requests with
+unlimited body/payload sizes can lead to your application crashing due to a denial-of-service outage or other unwanted side-effects.
+Many popular middleware-solutions for parsing request bodies, such as the already-included `body-parser` package for express, expose
 options to limit the sizes of request payloads, making it easy for developers to implement this functionality. You can also
 integrate a request body size limit in your reverse-proxy/web server software if supported. Below are examples for limiting request sizes using
 `express` and/or `nginx`.
@@ -53,7 +53,7 @@ server {
 location /upload {
     ...
     # Limit the body size for incoming requests to this route to 1 MB
-    client_max_body_size 200M;
+    client_max_body_size 1m;
 }
 ```
 
