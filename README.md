@@ -741,7 +741,7 @@ Developers in the project may not follow consistent code security practices, lea
 
 ## ![✔] 6.9. Use middleware that sanitizes input and output
 
-**TL;DR:** Here we will write about sanitizing/escaping/encoding both the input and output
+**TL;DR:** Here we will write about sanitizing/escaping/encoding both the input and output. The top frontend libraries handle output encoding well, but nevertheless you should always make sure to output encode your user generated data in the correct context, and can make use of libraries such as [node-esapi](https://github.com/ESAPI/node-esapi) or [escape-html](https://github.com/component/escape-html).
 
 **Otherwise:** Failure to encode user generated when outputting it can result in XSS, Log Injection or other vulnerabilities. Input validation should always be performed to confirm one is working with expected types and data properties (length, range, etc).
 
@@ -751,11 +751,11 @@ Developers in the project may not follow consistent code security practices, lea
 
 ## ![✔] 6.10. Validate the incoming JSON schemas
 
-**TL;DR:** Whether user input is used in querying the database, making API calls, or accessing system files - all user input should always be validated to expected type. You can use [validator.js](https://github.com/chriso/validator.js/) or [joi](https://github.com/hapijs/joi) to validate general user input or json schemas. The top frontend libraries handle output encoding well, but nevertheless you should always make sure to output encode your user generated data in the correct context, and can make use of libraries such as [node-esapi](https://github.com/ESAPI/node-esapi) or [escape-html](https://github.com/component/escape-html).
+**TL;DR:** Validate the incoming requests` body payload and ensure it qualifies the expectations, fail fast if it doesn't. To avoid tedious validation coding within each route you may use lightweight JSON-based validation schemas such as [jsonschema](https://www.npmjs.com/package/jsonschema) or [JOI](https://www.npmjs.com/package/joi)
 
-**Otherwise:** Failure to encode user generated when outputting it can result in XSS, Log Injection or other vulnerabilities. Input validation should always be performed to confirm one is working with expected types and data properties (length, range, etc).
+**Otherwise:** Your generosity and permissive approach greatly increases the attack surface and encourage the attacker to tryout many inputs until it finds some combination that crashes the application
 
-🔗 [**Read More:**](#)
+🔗 [**Read More: Validate the incoming JSON schemas**](/sections/security/validation.md)
 
 <br/><br/>
 
