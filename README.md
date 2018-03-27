@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-<img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2053%20Best%20practices-blue.svg" alt="53 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Nov%2015%202017-green.svg" alt="Last update: Nov 15, 2017"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.9-brightgreen.svg" alt="Updated for Node v.8.9">
+<img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2052%20Best%20practices-blue.svg" alt="52 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Mar%2018%202018-green.svg" alt="Last update: Mar 18, 2018"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.10-brightgreen.svg" alt="Updated for Node v.8.10">
 	</div>
 
 <br/>
@@ -686,7 +686,7 @@ All translations are contributed by the community. We will be happy to get any h
 
 ### Translations in progress
 
-* ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion]
+* ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/129))
 * ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/i0natan/nodebestpractices/issues/156))
 * ![KR](/assets/flags/KR.png) [Korean](https://github.com/i0natan/nodebestpractices/blob/korean-translation/README.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/94))
 * ![RU](/assets/flags/RU.png) [Russian](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/105))
@@ -714,7 +714,7 @@ Node.js Core Collaborator, been noding since 0.4, and have noded in multiple pro
 
 # Thank You Notes
 
-This repository is being kept up to date thanks to the help from the community. We appreciate any contribution, from a single word fix to a new best practice. Below is a list of everyone who contributed to this project. A :sunflower: marks a successful pull request and a :star: marks an approved new best practice.
+This repository is being kept up to date thanks to the help from the community. We appreciate any contribution, from a single word fix to a new best practice. Below is a list of everyone who contributed to this project. A 🌻 marks a successful pull request and a ⭐ marks an approved new best practice.
 
 🌻 [Kevin Rambaud](https://github.com/kevinrambaud), 
 🌻 [Michael Fine](https://github.com/mfine15), 
@@ -751,10 +751,10 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Leonardo Villela](https://github.com/leonardovillela),
 🌻 [Michal Zalecki](https://github.com/MichalZalecki)
 🌻 [Chris Nicola](https://github.com/chrisnicola),
-🌻 [Alejandro Corredor](https://github.com/aecorredor)
+🌻 [Alejandro Corredor](https://github.com/aecorredor),
+🌻 [Ye Min Htut](https://github.com/ymhtut),
+🌻 [cwar](https://github.com/cwar)
 
-<br/>
-
-:star: **No Stars Yet, Waiting For The First To Suggest a New Bullet**
+⭐ [Kyle Martin](https://github.com/js-kyle)
 
 <br/><br/>
