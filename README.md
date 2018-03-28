@@ -762,7 +762,7 @@ Developers in the project may not follow consistent code security practices, lea
 
 ## ![✔] 6.11. Support blacklisting JWT tokens
 
-**TL;DR:** When using JWT(JSON Web Token), a custom implementation for blacklisting untrusted or invalid tokens is required to revoke the token's access, due to the completely stateless approach of JWT.
+**TL;DR:** When using JWT(for example, with [Passport.js](https://github.com/jaredhanson/passport)), a custom implementation for blacklisting untrusted or invalid tokens is required to revoke the token's access, due to the completely stateless approach of JWT.
 
 **Otherwise:** Expired, or misplaced tokens could be used maliciously by a third party to access an application impersonating the owner of the token.
 
