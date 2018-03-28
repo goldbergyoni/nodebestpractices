@@ -1,7 +1,7 @@
 # Validate the incoming JSON schemas
 
 ### One Paragraph Explainer
-Validation is about being very explicit on what payload our app is willing to accept and failing fast should the input deviates from the expectations. This minimizes attackers surface who can no longer tryout payloads with different structure, values and length. Practically it prevents attacks like DDOS (code is unlikely to fail when the input is well defined) and Insecure Deserialization (JSON contain no surprises ). Though validation can be coded or rely upon classes and types (TS, ES6 classes) the community seems to increasingly like JSON-based schemas as these allow declaring complex rules without coding and share the expectations with the frontend. JSON-schema is an emerging standard that is supported by many NPM libraries and tools (e.g. [jsonschema](https://www.npmjs.com/package/jsonschema), [POSTMAN](http://blog.getpostman.com/2017/07/28/api-testing-tips-from-a-postman-professional/)), [JOI](https://www.npmjs.com/package/joi) is also highly popular with sweet syntax. Typically JSON syntax can't cover all validation scenario and custom code or pre-baked validation frameworks like [validator.js](https://github.com/chriso/validator.js/) come in handy. Regardless of the chosen syntax, ensure to run the validation as early as possible - For example, by using Express middlewares that validates the request body before the request is passed to the route handler
+Validation is about being very explicit on what payload our app is willing to accept and failing fast should the input deviates from the expectations. This minimizes an attackers surface who can no longer try out payloads with a different structure, values and length. Practically it prevents attacks like DDOS (code is unlikely to fail when the input is well defined) and Insecure Deserialization (JSON contain no surprises ). Though validation can be coded or rely upon classes and types (TS, ES6 classes) the community seems to increasingly like JSON-based schemas as these allow declaring complex rules without coding and share the expectations with the frontend. JSON-schema is an emerging standard that is supported by many NPM libraries and tools (e.g. [jsonschema](https://www.npmjs.com/package/jsonschema), [POSTMAN](http://blog.getpostman.com/2017/07/28/api-testing-tips-from-a-postman-professional/)), [JOI](https://www.npmjs.com/package/joi) is also highly popular with sweet syntax. Typically JSON syntax can't cover all validation scenario and custom code or pre-baked validation frameworks like [validator.js](https://github.com/chriso/validator.js/) come in handy. Regardless of the chosen syntax, ensure to run the validation as early as possible - For example, by using Express middleware that validates the request body before the request is passed to the route handler
 
 
 ### Example - JSON-Schema validation rules
@@ -47,10 +47,10 @@ class Product {
 
 ### Example - Usage of middleware validator
 ``` javascript
-//the validator is a generic middleware that gets the entity it should validate and takes care to return
-//HTTP status 400 should the body payload validation failes
+// The validator is a generic middleware that gets the entity it should validate and takes care to return
+// HTTP status 400 (Bad Request) should the body payload validation fail
 router.post("/" , **validator(Product.validate)**, async (req, res, next) => {
-    //route handling code goes here
+    // route handling code goes here
 });
 
 ```

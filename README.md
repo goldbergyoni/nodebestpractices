@@ -753,7 +753,7 @@ Developers in the project may not follow consistent code security practices, lea
 
 **TL;DR:** Validate the incoming requests` body payload and ensure it qualifies the expectations, fail fast if it doesn't. To avoid tedious validation coding within each route you may use lightweight JSON-based validation schemas such as [jsonschema](https://www.npmjs.com/package/jsonschema) or [JOI](https://www.npmjs.com/package/joi)
 
-**Otherwise:** Your generosity and permissive approach greatly increases the attack surface and encourage the attacker to tryout many inputs until it finds some combination that crashes the application
+**Otherwise:** Your generosity and permissive approach greatly increases the attack surface and encourage the attacker to try out many inputs until it finds some combination that crashes the application
 
 🔗 [**Read More: Validate the incoming JSON schemas**](/sections/security/validation.md)
 
