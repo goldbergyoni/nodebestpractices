@@ -2,8 +2,9 @@
 
 ### One Paragraph Explainer
 
+Parsing request bodies, for example JSON-encoded payloads, is a performance-heavy operation, especially with larger requests.
 When handling incoming requests in your web application, you should limit the size of their respective payloads. Incoming requests with
-unlimited body/payload sizes can lead to your application crashing due to a denial-of-service outage or other unwanted side-effects.
+unlimited body/payload sizes can lead to your application performing badly or crashing due to a denial-of-service outage or other unwanted side-effects.
 Many popular middleware-solutions for parsing request bodies, such as the already-included `body-parser` package for express, expose
 options to limit the sizes of request payloads, making it easy for developers to implement this functionality. You can also
 integrate a request body size limit in your reverse-proxy/web server software if supported. Below are examples for limiting request sizes using
@@ -16,11 +17,10 @@ const express = require('express');
 
 const app = express();
 
-const parseJsonBody = express.json({ limit: '300kb' }); // body-parser defaults to a body size limit of 100kb
-const handleErrors = (err, req, res, next) => res.sendStatus(400); // simple express middleware to handle body parsing error
+app.use(express.json({ limit: '300kb' })); // body-parser defaults to a body size limit of 100kb
 
 // Request with json body
-app.post('/json', parseJsonBody, handleErrors, (req, res) => {
+app.post('/json', (req, res) => {
 
     // Check if request payload content-type matches json, because body-parser does not check for content types
     if (!req.is('json')) {

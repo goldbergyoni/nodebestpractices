@@ -800,7 +800,8 @@ Developers in the project may not follow consistent code security practices, lea
 
 **TL;DR:** DOS attacks of many varieties can be mitigated by limiting the body size of incoming requests to your web application.
 
-**Otherwise:** requests with no restriction towards their payload/body size may simply cause a denial-of-service in various parts of your application, leading to problems and other unwanted and risky side-effects.
+**Otherwise:** your application will have to deal with large requests, unable to process the other important work it has to accomplish, leading to performance
+implications and vulnerability towards DOS attacks
 
 
 🔗 [**Read More:**](/sections/security/requestpayloadsizelimit.md)
