@@ -664,6 +664,8 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Newly discovered bugs or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain.
 
+🔗 [**Read More: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
+
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
