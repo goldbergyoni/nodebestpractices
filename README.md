@@ -726,6 +726,8 @@ Node.js Core Collaborator, been noding since 0.4, and have noded in multiple pro
 
 This repository is being kept up to date thanks to the help from the community. We appreciate any contribution, from a single word fix to a new best practice. Below is a list of everyone who contributed to this project. A 🌻 marks a successful pull request and a ⭐ marks an approved new best practice.
 
+###Flowers
+
 🌻 [Kevin Rambaud](https://github.com/kevinrambaud), 
 🌻 [Michael Fine](https://github.com/mfine15), 
 🌻 [Shreya Dahal](https://github.com/squgeim), 
@@ -765,6 +767,7 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Ye Min Htut](https://github.com/ymhtut),
 🌻 [cwar](https://github.com/cwar)
 
+###Stars
 ⭐ [Kyle Martin](https://github.com/js-kyle)
 
 <br/><br/>
