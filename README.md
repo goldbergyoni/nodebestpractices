@@ -656,6 +656,14 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Long deployments -> production down time & human-related error -> team unconfident and in making deployment -> less deployments and features
 
+<br/><br/>
+
+## ![✔] 5.17. Use an LTS release of Node.js
+
+**TL;DR:** Ensure you are using an LTS version of Node.js to receive critical bug fixes, security updates and performance improvements.
+
+**Otherwise:** Newly discovered bugs or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain.
+
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
