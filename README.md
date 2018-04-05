@@ -798,12 +798,13 @@ Developers in the project may not follow consistent code security practices, lea
 
 ## ![✔] 6.14. Limit payload size using a reverse-proxy or a middleware
 
-**TL;DR:** Here we will talk about the easiness of exhausting the system using large request payloads
+**TL;DR:** DOS attacks of many varieties can be mitigated by limiting the body size of incoming requests to your web application.
 
-**Otherwise:**
+**Otherwise:** your application will have to deal with large requests, unable to process the other important work it has to accomplish, leading to performance
+implications and vulnerability towards DOS attacks
 
 
-🔗 [**Read More:**](#)
+🔗 [**Read More:**](/sections/security/requestpayloadsizelimit.md)
 
 <br/><br/>
 
