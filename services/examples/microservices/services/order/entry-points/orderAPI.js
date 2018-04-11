@@ -4,7 +4,7 @@ const express = require("express"),
   newOrderService = require("../domain/orderService"),
   order = require("./order");
 
-router.post("/" ,async (req, res, next) => {
+router.post("/" , validator(Product.validate), async (req, res, next) => {
   try {
     console.log(`Order controller was called to add new Order ${util.inspect(req.body)}`);
     const newOrderToAdd = Object.assign(new order(), req.body);

@@ -4,6 +4,9 @@ class OneTimeSchedule extends EventEmitter {
   constructor(properties) {
     super();
     this.properties = properties;
+  }
+
+  start() {
     setTimeout(() => {
       console.log(`One time schedule is about to emit start event`);
       this.emit("start", {});

@@ -1,7 +1,7 @@
 const Order = require('./../order')
 const expect = require('chai').expect
 
-it('Check valid order, expect get positive result', ()=>{
+it('Check valid order, expect get positive result #cold #quick #order', ()=>{
     const newOrder = new Order(0, 1 , 2 , 'New', new Date());
     const result = newOrder.validate();
     expect(result).to.be.true

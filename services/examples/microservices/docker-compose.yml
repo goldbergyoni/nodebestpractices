@@ -38,7 +38,7 @@ version: "3"
     ports:
       - "5858:5858"
       - "8443:8443"
-      - "8080:8080"
+      - "8080:8080"`
     command: npm run start
     environment:
       - PORT=8080

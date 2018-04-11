@@ -5,7 +5,7 @@ const app = express();
 const port = process.env.PORT || 8080;
 app.listen(port);
 
-new ChaosControl(app, require('./chaos.config') ).openTheZoo();
+new ChaosControl(app, require('./chaos.config') ).start();
 
 var router = express.Router();
 

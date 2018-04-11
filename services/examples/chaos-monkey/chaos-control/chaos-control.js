@@ -7,7 +7,7 @@ class ChaosControl {
     this.app = expressApplication;
   }
 
-  openTheZoo() {
+  start() {
     console.log(`Opening the zoo now`);
     const allSins = this.getAllSins([this.app]);
     allSins.forEach(sin => {
@@ -31,13 +31,15 @@ class ChaosControl {
     const allSins = [];
     this.configuration.sins.forEach(sinConfiguration => {
       const SinClass = require(`../sins/${sinConfiguration.file}`);
+      const sinSchedule = this.getSinSchedule(sinConfiguration)
       allSins.push(
         new SinClass(
           sinConfiguration,
-          this.getSinSchedule(sinConfiguration),
+          sinSchedule,
           ...sinParams
         )
       );
+      sinSchedule.start();
     });
 
     return allSins;
