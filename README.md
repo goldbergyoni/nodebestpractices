@@ -729,13 +729,13 @@ Developers in the project may not follow consistent code security practices, lea
 <br/><br/>
 
 
-## ![✔] 6.8. Avoid using the Node Crypto library for passwords, use Bcrypt
+## ![✔] 6.8. Avoid using the Node.js Crypto library for passwords, use Bcrypt
 
-**TL;DR:** Passwords or secrets (API keys) should be stored using a secure hash function like `bcrypt`, that should be a preferred choice over its JavaScript implementation due to performance reasons.
+**TL;DR:** Passwords or secrets (API keys) should be stored using a secure hash function like `bcrypt`, that should be a preferred choice over its JavaScript implementation due to performance and security reasons.
 
 **Otherwise:** Passwords or secrets that are persisted without using a secure hash function are vulnerable to brute forcing and dictionary attacks that will lead to their disclosure eventually.
 
-🔗 [**Read More:**](#)
+🔗 [**Read More: Use Bcrypt**](/sections/security/bcryptpasswords.md)
 
 <br/><br/>
 
