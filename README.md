@@ -2,6 +2,8 @@
 
 # Node.js Best Practices
 
+[![Join the chat at https://gitter.im/nodebestpractices/Lobby](https://badges.gitter.im/nodebestpractices/Lobby.svg)](https://gitter.im/nodebestpractices/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 <h1 align="center">
   <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices" />
 </h1>
