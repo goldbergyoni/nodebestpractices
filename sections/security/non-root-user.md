@@ -1,9 +1,9 @@
-# Run Node as Noon-Root User
+# Run Node.js as Non-Root User
 
 ### One Paragraph Explainer
-According to the 'Principle of least privilege' a user/process must be able to access only the information and resources that are necessary. Granting root access to an attacker opens a whole new world of malicious ideas like routing traffic to other servers. In practice, most Node apps don't need a root access and don't run with such privilege. However, there are two common scenario that might push to root usage: (1) to gain access to privilege port (e.g. port 80) Nodejs must run as root (2) Docker containers by default run as root(!). It's recommended for Node webserver to listen to non-privilege ports and rely on a reverse-proxy like nginx redirect from port 80. When building a docker image, highly secured apps should run the container with an alternate non-root user. Most docker clusters (e.g. Swarm, Kubernetes) allow setting the security context declaratively 
+According to the 'Principle of least privilege' a user/process must be able to access only the necessary information and resources. Granting root access to an attacker opens a whole new world of malicious ideas like routing traffic to other servers. In practice, most Node.js apps don't need root access and don't run with such privileges. However, there are two common scenarios that might push to root usage: (1) to gain access to privilege port (e.g. port 80) Node.js must run as root (2) Docker containers by default run as root(!). It's recommended for Node.js webservers to listen on non-privilege ports and rely on a reverse-proxy like nginx to redirect incoming traffic from port 80 to your Node.js application. When building a Docker image, highly secured apps should run the container with an alternate non-root user. Most Docker clusters (e.g. Swarm, Kubernetes) allow setting the security context declaratively
 
-### Code example - Building a Docker image as noon-root
+### Code example - Building a Docker image as non-root
 ```javascript
 FROM node:some-version-here
 COPY package.json .
