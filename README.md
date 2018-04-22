@@ -786,7 +786,7 @@ Developers in the project may not follow consistent code security practices, lea
 
 ## ![✔] 6.13. Run Node.js as non-root user
 
-**TL;DR:** In a Docker environment, Node.js runs as a root user with unlimited permissions by default. Create a non-root user during image creation and run the container with the flag "-u username"
+**TL;DR:** There are common scenario where nodejs runs as a root user with unlimited permissions. For example this is the default behaviour in Docker containers. It's recommended to create a non-root user and always run the process on this user behalf by invoking the container with the flag "-u username"
 
 **Otherwise:** An attacker who manages to run a script on the server gets unlimited power over the local machine (e.g. change iptable and re-route traffic to his server)
 
