@@ -18,18 +18,23 @@ doWork()
 ### Anti pattern code example – callback style error handling
 
 ```javascript
-getData(someParameter, function(err, result){
-    if(err != null)
-      // do something like calling the given callback function and pass the error
-    getMoreData(a, function(err, result){
-          if(err != null)
-            // do something like calling the given callback function and pass the error
-        getMoreData(b, function(c){ 
-                getMoreData(d, function(e){ 
-         if(err != null)
-                // you get the idea? 
-            });
+getData(someParameter, function(err, result) {
+    if(err !== null) {
+        // do something like calling the given callback function and pass the error
+        getMoreData(a, function(err, result) {
+            if(err !== null) {
+                // do something like calling the given callback function and pass the error
+                getMoreData(b, function(c) {
+                    getMoreData(d, function(e) {
+                        if(err !== null ) {
+                            // you get the idea? 
+                        }
+                    })
+                });
+            }
         });
+    }
+});
 ```
 
 ### Blog Quote: "We have a problem with promises"
