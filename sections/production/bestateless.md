@@ -7,7 +7,7 @@
 Have you ever encountered a severe production issue where one server was missing some piece of configuration or data? That is probably due to some unnecessary dependency on some local asset that is not part of the deployment. Many successful products treat servers like a phoenix bird – it dies and is reborn periodically without any damage. In other words, a server is just a piece of hardware that executes your code for some time and is replaced after that.
 This approach
 
-- allows scaling by adding and removing servers dynamically without any side-effect 
+- allows scaling by adding and removing servers dynamically without any side-effects.
 - simplifies the maintenance as it frees our mind from evaluating each server state.
 
 <br/><br/>
