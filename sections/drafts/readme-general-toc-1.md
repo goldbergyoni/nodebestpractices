@@ -13,12 +13,13 @@
 Welcome to the biggest compilation of Node.js best practices. The content below was gathered from all top ranked books and posts and is updated constantly - when you read here rest assure that no significant tip slipped away. Feel at home - we love to discuss via PRs, issues or Gitter.
 
 ## Table of Contents
+
 * [Project Setup Practices (18)](#project-setup-practices)
-* [Code Style Practices (11) ](#code-style-practices)
-* [Error Handling Practices (14) ](#error-handling-practices)
-* [Going To Production Practices (21) ](#going-to-production-practices)
-* [Testing Practices (9) ](#deployment-practices)
-* [Security Practices (8) ](#security-practices)
+* [Code Style Practices (11)](#code-style-practices)
+* [Error Handling Practices (14)](#error-handling-practices)
+* [Going To Production Practices (21)](#going-to-production-practices)
+* [Testing Practices (9)](#deployment-practices)
+* [Security Practices (8)](#security-practices)
 
 
 <br/><br/>
@@ -26,7 +27,7 @@ Welcome to the biggest compilation of Node.js best practices. The content below 
 
 ## ✔ 1. Structure your solution by feature ('microservices')
 
-**TL&DR:** The worst large applications pitfal is a huge code base with hundreds of dependencies that slow down they developers as they try to incorporate new features. Partioning into small units ensures that each unit is kept simple and  easy to maintain. This strategy pushes the complexity to the higher level - designing the cross-component interactions. 
+**TL&DR:** The worst large applications pitfal is a huge code base with hundreds of dependencies that slow down they developers as they try to incorporate new features. Partioning into small units ensures that each unit is kept simple and  easy to maintain. This strategy pushes the complexity to the higher level - designing the cross-component interactions.
 
 **Otherwise:** Developing a new feature with a change to few objects demands to evaluate how this changes might affect dozends of dependants and ach deployment becomes a fear.
 
@@ -54,11 +55,14 @@ Welcome to the biggest compilation of Node.js best practices. The content below 
 
 
 <br/><br/><br/>
+
 # `Code Style Practices`
 
 
 <br/><br/><br/>
+
 # `Error Handling Practices`
+
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
 ## ✔ Use async-await for async error handling
@@ -69,16 +73,14 @@ Welcome to the biggest compilation of Node.js best practices. The content below 
 
 🔗 [**Use async-await for async error handling**](/sections/errorhandling/asyncawait.md)
 
-
-
 <br/><br/><br/>
+
 # `Going To Production Practices`
 
-
 <br/><br/><br/>
+
 # `Deployment Practices`
 
-
 <br/><br/><br/>
-# `Security Practices`
 
+# `Security Practices`
