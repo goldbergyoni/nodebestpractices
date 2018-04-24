@@ -295,7 +295,7 @@
 ```javascript
   // for class name we use UpperCamelCase
   class SomeClassExample {}
-    
+
   // for const names we use the const keyword and lowerCamelCase
   const config = {
     key: 'value'
@@ -412,7 +412,7 @@ All statements above will return false if used with `===`
 
 **TL;DR:** Use a code linter to check basic quality and detect anti-patterns early. Run it before any test and add it as a pre-commit git-hook to minimize the time needed to review and correct any issue. Also check [Section 3](https://github.com/i0natan/nodebestpractices#3-code-style-practices) on Code Style Practices
 
-**Otherwise:** You may let pass some anti-pattern and possible vulnerable code to your production environment. 
+**Otherwise:** You may let pass some anti-pattern and possible vulnerable code to your production environment.
 
 
 <br/><br/>
@@ -473,6 +473,14 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
+## ![✔] 4.9 Refactor regularly using static analysis tools
+
+**TL;DR:** Using static analysis tools helps give objective ways to improve code quality and keep your code maintainable. Keeping out code smells and bloat will make maintenance easier and provides better readability to your code. Try tools like [Code Climate](https://codeclimate.com/) or [Codebeat](https://codebeat.co/) to automate finding code to improve.
+
+**Otherwise:** You will slowly accumulate code bloat that ensure difficulty when adding new features.
+
+<br/><br/>
+
 # `5. Going To Production Practices`
 ## ![✔] 5.1. Monitoring!
 
@@ -493,7 +501,7 @@ All statements above will return false if used with `===`
 
 
 🔗 [**Read More: Increase transparency using smart logging**](/sections/production/smartlogging.md)
-    
+
 <br/><br/>
 
 ## ![✔] 5.3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy
@@ -527,7 +535,7 @@ All statements above will return false if used with `===`
 
 🔗 [**Read More: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
 
- 
+
 <br/><br/>
 
 ## ![✔] 5.6. Utilize all CPU cores
@@ -713,10 +721,10 @@ Independent Node.js consultant who works with customers in USA, Europe, and Isra
 👨‍💻 Software engineer, 🌐 web developer, 🤖 emojis enthusiast.
 
 ## `Refael Ackermann` [@refack](https://github.com/refack) &lt;refack@gmail.com&gt; (he/him)
-Node.js Core Collaborator, been noding since 0.4, and have noded in multiple production sites. Founded `node4good` home of [`lodash-contrib`](https://github.com/node4good/lodash-contrib), [`formage`](https://github.com/node4good/formage), and [`asynctrace`](https://github.com/node4good/asynctrace). 
+Node.js Core Collaborator, been noding since 0.4, and have noded in multiple production sites. Founded `node4good` home of [`lodash-contrib`](https://github.com/node4good/lodash-contrib), [`formage`](https://github.com/node4good/formage), and [`asynctrace`](https://github.com/node4good/asynctrace).
 `refack` on freenode, Twitter, GitHub, GMail, and many other platforms. DMs are open, happy to help.
 
-## `Bruno Scheufler` 
+## `Bruno Scheufler`
 💻 full-stack web developer and Node.js enthusiast.
 
 
@@ -728,31 +736,31 @@ This repository is being kept up to date thanks to the help from the community. 
 
 ### Flowers <br/>
 
-🌻 [Kevin Rambaud](https://github.com/kevinrambaud), 
-🌻 [Michael Fine](https://github.com/mfine15), 
-🌻 [Shreya Dahal](https://github.com/squgeim), 
-🌻 [ChangJoo Park](https://github.com/ChangJoo-Park), 
-🌻 [Matheus Cruz Rocha](https://github.com/matheusrocha89), 
-🌻 [Yog Mehta](https://github.com/BitYog), 
-🌻 [Kudakwashe Paradzayi](https://github.com/kudapara), 
-🌻 [t1st3](https://github.com/t1st3), 
-🌻 [mulijordan1976](https://github.com/mulijordan1976), 
-🌻 [Matan Kushner](https://github.com/matchai), 
-🌻 [Fabio Hiroki](https://github.com/fabiothiroki), 
-🌻 [James Sumners](https://github.com/jsumners), 
-🌻 [Chandan Rai](https://github.com/crowchirp), 
-🌻 [Dan Gamble](https://github.com/dan-gamble), 
-🌻 [PJ Trainor](https://github.com/trainorpj), 
-🌻 [Remek Ambroziak](https://github.com/reod), 
-🌻 [Yoni Jah](https://github.com/yonjah), 
-🌻 [Misha Khokhlov](https://github.com/hazolsky), 
-🌻 [Evgeny Orekhov](https://github.com/EvgenyOrekhov), 
-🌻 [Gediminas Petrikas](https://github.com/gediminasml), 
-🌻 [Isaac Halvorson](https://github.com/hisaac), 
-🌻 [Vedran Karačić](https://github.com/vkaracic), 
-🌻 [lallenlowe](https://github.com/lallenlowe), 
-🌻 [Nathan Wells](https://github.com/nwwells), 
-🌻 [Paulo Vítor S Reis](https://github.com/paulovitin), 
+🌻 [Kevin Rambaud](https://github.com/kevinrambaud),
+🌻 [Michael Fine](https://github.com/mfine15),
+🌻 [Shreya Dahal](https://github.com/squgeim),
+🌻 [ChangJoo Park](https://github.com/ChangJoo-Park),
+🌻 [Matheus Cruz Rocha](https://github.com/matheusrocha89),
+🌻 [Yog Mehta](https://github.com/BitYog),
+🌻 [Kudakwashe Paradzayi](https://github.com/kudapara),
+🌻 [t1st3](https://github.com/t1st3),
+🌻 [mulijordan1976](https://github.com/mulijordan1976),
+🌻 [Matan Kushner](https://github.com/matchai),
+🌻 [Fabio Hiroki](https://github.com/fabiothiroki),
+🌻 [James Sumners](https://github.com/jsumners),
+🌻 [Chandan Rai](https://github.com/crowchirp),
+🌻 [Dan Gamble](https://github.com/dan-gamble),
+🌻 [PJ Trainor](https://github.com/trainorpj),
+🌻 [Remek Ambroziak](https://github.com/reod),
+🌻 [Yoni Jah](https://github.com/yonjah),
+🌻 [Misha Khokhlov](https://github.com/hazolsky),
+🌻 [Evgeny Orekhov](https://github.com/EvgenyOrekhov),
+🌻 [Gediminas Petrikas](https://github.com/gediminasml),
+🌻 [Isaac Halvorson](https://github.com/hisaac),
+🌻 [Vedran Karačić](https://github.com/vkaracic),
+🌻 [lallenlowe](https://github.com/lallenlowe),
+🌻 [Nathan Wells](https://github.com/nwwells),
+🌻 [Paulo Vítor S Reis](https://github.com/paulovitin),
 🌻 [syzer](https://github.com/syzer),
 🌻 [David Sancho](https://github.com/davesnx),
 🌻 [Robert Manolea](https://github.com/pupix),
