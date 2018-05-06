@@ -1,4 +1,4 @@
-<!--- # Node.JS Best Practices -->
+<!--- # Node.js Best Practices -->
 <!--- ![Node.js Best Practices](assets/images/banner-2.jpg) -->
 <h1 align="center">
   <img src="assets/images/banner-4.jpg" alt="Node.js Best Practices" />
@@ -10,7 +10,7 @@
 
 # Welcome to Node.js Best Practices
 
-Welcome to the biggest compilation of Node.JS best practices, based on our check it's also the largest collection on any programming language (more than 53 items). The content below was gathered from all top ranked books and posts and is updated constantly - if you read here you can rest assure that no significant tip slipped away. Feel at home - we love to discuss via PRs, issues or Gitter.
+Welcome to the biggest compilation of Node.js best practices, based on our check it's also the largest collection on any programming language (more than 53 items). The content below was gathered from all top ranked books and posts and is updated constantly - if you read here you can rest assure that no significant tip slipped away. Feel at home - we love to discuss via PRs, issues or Gitter.
 
 ## Table of Contents
 * [Project Setup Practices (18)](#project-setup-practices)
@@ -86,7 +86,7 @@ Welcome to the biggest compilation of Node.JS best practices, based on our check
 
 **TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using instead a reputable promise library or async-await which provides much compact and familiar code syntax like try-catch
 
-**Otherwise:** Node.JS callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting and awkward coding patterns
+**Otherwise:** Node.js callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting and awkward coding patterns
 
 🔗 [**Use async-await for async error handling**](/sections/errorhandling/asyncawait.md)
 
@@ -96,7 +96,7 @@ Welcome to the biggest compilation of Node.JS best practices, based on our check
 
 **TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using instead a reputable promise library or async-await which provides much compact and familiar code syntax like try-catch
 
-**Otherwise:** Node.JS callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting and awkward coding patterns
+**Otherwise:** Node.js callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting and awkward coding patterns
 
 🔗 [**Use async-await for async error handling**](/sections/errorhandling/asyncawait.md)
 
