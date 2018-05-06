@@ -684,7 +684,7 @@ Developers in the project may not follow consistent code security practices, lea
 **Otherwise:** Source control for even private repositories, can mistakenly be made public, at which point all secret has been exposed outside. Access to source control for an external party will inadvertently provide access to related systems (database, apis, etc).
 
 
-🔗 [**Read More:**](#)
+🔗 [**Read More: Secret management**](sections/security/secretmanagement.md)
 
 <br/><br/>
 
