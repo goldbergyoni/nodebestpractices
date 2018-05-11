@@ -39,13 +39,6 @@
 6. Security Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 7. Performance Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 
-
-* [Milestones](#milestones)
-* [Translations](#translations)
-* [Contributors](#contributors)
-* [Thank you notes](#thank-you-notes)
-* [Sources](#sources)
-
 <br/><br/><br/>
 # `1. Project Structure Practices`
 
