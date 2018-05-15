@@ -551,7 +551,7 @@ All statements above will return false if used with `===`
 
 **TL;DR:** Node.js has controversial relationships with memory: the v8 engine has soft limits on memory usage (1.4GB) and there are known paths to leaks memory in Node’s code – thus watching Node’s process memory is a must. In small apps, you may gauge memory periodically using shell commands but in medium-large app consider baking your memory watch into a robust monitoring system
 
-**Otherwise:** Your process memory might leak a hundred megabytes a day like happened in Wallmart
+**Otherwise:** Your process memory might leak a hundred megabytes a day like how it happened at [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
 
 🔗 [**Read More: Measure and guard the memory usage**](/sections/production/measurememory.md)
 
