@@ -38,7 +38,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 2.  [Error Handling Practices (11) ](#2-error-handling-practices)
 3.  [Code Style Practices (12) ](#3-code-style-practices)
 4.  [Testing And Overall Quality Practices (8) ](#4-testing-and-overall-quality-practices)
-5.  [Going To Production Practices (16) ](#5-going-to-production-practices)
+5.  [Going To Production Practices (17) ](#5-going-to-production-practices)
 6.  Security Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 7.  Performance Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 
