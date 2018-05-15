@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2052%20Best%20practices-blue.svg" alt="52 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Mar%2018%202018-green.svg" alt="Last update: Mar 18, 2018"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.10-brightgreen.svg" alt="Updated for Node v.8.10">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2053%20Best%20practices-blue.svg" alt="53 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Apr%2023%202018-green.svg" alt="Last update: Apr 23, 2018"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.11-brightgreen.svg" alt="Updated for Node v.8.11">
 </div>
 
 <br/>
@@ -728,7 +728,9 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Chris Nicola](https://github.com/chrisnicola),
 🌻 [Alejandro Corredor](https://github.com/aecorredor),
 🌻 [Ye Min Htut](https://github.com/ymhtut),
-🌻 [cwar](https://github.com/cwar)
+🌻 [cwar](https://github.com/cwar),
+🌻 [Yuwei](https://github.com/keyfoxth),
+🌻 [Utkarsh Bhatt](https://github.com/utkarshbhatt12)
 
 ### Stars <br/>
 
