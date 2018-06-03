@@ -731,6 +731,10 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [cwar](https://github.com/cwar),
 🌻 [Yuwei](https://github.com/keyfoxth),
 🌻 [Utkarsh Bhatt](https://github.com/utkarshbhatt12)
+🌻 [Duarte Mendes](https://github.com/duartemendes)
+🌻 [Sagir Khan](https://github.com/sagirk)
+🌻 [Jason Kim](https://github.com/serv)
+
 
 ### Stars <br/>
 
