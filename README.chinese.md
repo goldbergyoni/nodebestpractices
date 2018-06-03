@@ -725,7 +725,14 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Leonardo Villela](https://github.com/leonardovillela),
 🌻 [Michal Zalecki](https://github.com/MichalZalecki)
 🌻 [Chris Nicola](https://github.com/chrisnicola),
-🌻 [Alejandro Corredor](https://github.com/aecorredor)
+🌻 [Alejandro Corredor](https://github.com/aecorredor),
+🌻 [Ye Min Htut](https://github.com/ymhtut),
+🌻 [cwar](https://github.com/cwar),
+🌻 [Yuwei](https://github.com/keyfoxth),
+🌻 [Utkarsh Bhatt](https://github.com/utkarshbhatt12)
+🌻 [Duarte Mendes](https://github.com/duartemendes)
+🌻 [Sagir Khan](https://github.com/sagirk)
+🌻 [Jason Kim](https://github.com/serv)
 
 <br/>
 
