@@ -36,10 +36,3 @@ class logger {
     {console.log(`${message} ${session.get('transactionId')}`);}
 }
 ```
-
-<br/><br/>
-
-### What Other Bloggers Say
-
-From the blog [ARG! TEAM](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load):
-> ...Although express.js has built-in static file handling through some connect middleware, you should never use it. *Nginx can do a much better job of handling static files and can prevent requests for non-dynamic content from clogging our node processes*...
