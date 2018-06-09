@@ -1,6 +1,6 @@
 [✔]: assets/images/checkbox-small-blue.png
 
-# Node.js Best Practices
+# Node.js 모범 사례
 
 <h1 align="center">
   <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices">
@@ -14,37 +14,37 @@
 
 <br/>
 
-[![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
+[![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **트위터에서 팔로우 하세요!** [**@nodepractices**](https://twitter.com/nodepractices/)
 
 <br/>
 
-Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
+다른 언어로 읽기: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU**, ![TR](/assets/flags/TR.png)**TR** 는 작업중입니다!)](#translations)
 
 <br/>
 
-# Welcome! 3 Things You Ought To Know First:
+# 안녕하세요! 먼저 알아야 할 3가지가 있습니다:
 
-**1. When you read here, you in fact read dozens of the best Node.js articles -** this is a summary and curation of the top-ranked content on Node.js best practices
+**1. 이 문서를 읽는 것은, 사실상 수십 개의 베스트 Node.js 문서를 읽는 것입니다. -** 이 문서는 Node.js 의 가장 인기 있는 모범사례(Best Practice)들을 모은 요약집 및 큐레이션입니다.
 
-**2. It is the largest compilation, and it is growing every week -** currently, more than 50 best practices, style guides, and architectural tips are presented. New issues and PR are created every day to keep this live book updated. We'd love to see you contributing here, whether fixing some code mistake or suggesting brilliant new ideas. See our [milestones here](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
+**2. 가장 큰 모음집이며, 매주 성장하고 있습니다. -** 현재, 50개 이상의 모범사례들과, 스타일 가이드, 아키텍처적인 팁들이 제공되고 있습니다. 이 문서의 업데이트를 위해 새로운 이슈들과 PR들이 매일 만들어지고 있습니다. 우리는 이 문서의 잘못된 코드를 고치거나 새로운 아이디어들을 제안하는 것을 매우 환영합니다. [마일스톤 보러가기](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
 
-**3. Most bullets have additional info -** nearby most best practice bullets you'll find **🔗Read More** link that will present you with code examples, quotes from selected blogs and more info
-
-<br/><br/><br/>
-
-## Table of Contents
-
-1.  [Project structure Practices (5)](#1-project-structure-practices)
-2.  [Error Handling Practices (11) ](#2-error-handling-practices)
-3.  [Code Style Practices (12) ](#3-code-style-practices)
-4.  [Testing And Overall Quality Practices (8) ](#4-testing-and-overall-quality-practices)
-5.  [Going To Production Practices (17) ](#5-going-to-production-practices)
-6.  Security Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
-7.  Performance Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
+**3. 항목 대부분은 추가적인 정보가 있습니다 -** 항목 옆쪽에 존재하는 **🔗자세히 보기** 링크에서 코드 예제, 참조 블로그 또는 기타 정보들을 확인 할 수 있습니다.
 
 <br/><br/><br/>
 
-# `1. Project Structure Practices`
+## 목차
+
+1. [프로젝트 구조 설계 (5)](#1-프로젝트-구조-설계)
+2. [에러 처리 방법 (11)](#2-에러-처리-방법)
+3. [코드 스타일 (12) ](#3-코드-스타일)
+4. [테스트 및 전체 품질 관리 (8) ](#4-테스트-및-전체-품질-관리)
+5. [운영 환경으로 전환하기 (16) ](#5-운영-환경으로-전환하기)
+6.  보안 ([예정](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
+7.  성능 ([예정](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
+
+<br/><br/><br/>
+
+# `1. 프로젝트 구조 설계`
 
 ## ![✔] 1.1 Structure your solution by components
 
@@ -52,7 +52,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** When developers who code new features struggle to realize the impact of their change and fear to break other dependant components - deployments become slower and more risky. It's also considered harder to scale-out when all the business units are not separated
 
-🔗 [**Read More: structure by components**](/sections/projectstructre/breakintcomponents.md)
+🔗 [**자세히 보가: structure by components**](/sections/projectstructre/breakintcomponents.korean.md)
 
 <br/><br/>
 
@@ -62,7 +62,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** App that mixes web objects with other layers can not be accessed by testing code, CRON jobs and other non-Express callers
 
-🔗 [**Read More: layer your app**](/sections/projectstructre/createlayers.md)
+🔗 [**자세히 보가: layer your app**](/sections/projectstructre/createlayers.korean.md)
 
 <br/><br/>
 
@@ -72,7 +72,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** You'll have to invent your own deployment and dependency wheel
 
-🔗 [**Read More: Structure by feature**](/sections/projectstructre/wraputilities.md)
+🔗 [**자세히 보가: Structure by feature**](/sections/projectstructre/wraputilities.korean.md)
 
 <br/><br/>
 
@@ -82,7 +82,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** Your API will be accessible for testing via HTTP calls only (slower and much harder to generate coverage reports). It probably won't be a big pleasure to maintain hundreds of lines of code in a single file
 
-🔗 [**Read More: separate Express 'app' and 'server'**](/sections/projectstructre/separateexpress.md)
+🔗 [**자세히 보가: separate Express 'app' and 'server'**](/sections/projectstructre/separateexpress.korean.md)
 
 <br/><br/>
 
@@ -92,13 +92,13 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** Failing to satisfy any of the config requirements will simply bog down the development or devops team. Probably both
 
-🔗 [**Read More: configuration best practices**](/sections/projectstructre/configguide.md)
+🔗 [**자세히 보가: configuration best practices**](/sections/projectstructre/configguide.korean.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#목차">⬆ 목차로 돌아가기</a></p>
 
-# `2. Error Handling Practices`
+# `2. 에러 처리 방법`
 
 ## ![✔] 2.1 Use Async-Await or promises for async error handling
 
@@ -106,7 +106,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** Node.js callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting and awkward coding patterns
 
-🔗 [**Read More: avoiding callbacks**](/sections/errorhandling/asyncerrorhandling.md)
+🔗 [**자세히 보가: avoiding callbacks**](/sections/errorhandling/asyncerrorhandling.korean.md)
 
 <br/><br/>
 
@@ -116,7 +116,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** When invoking some component, being uncertain which type of errors come in return – it makes proper error handling much harder. Even worse, using custom types to describe errors might lead to loss of critical error information like the stack trace!
 
-🔗 [**Read More: using the built-in error object**](/sections/errorhandling/useonlythebuiltinerror.md)
+🔗 [**자세히 보가: using the built-in error object**](/sections/errorhandling/useonlythebuiltinerror.korean.md)
 
 <br/><br/>
 
@@ -126,7 +126,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** You may always restart the application when an error appears, but why let ~5000 online users down because of a minor, predicted, operational error? the opposite is also not ideal – keeping the application up when an unknown issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
 
-🔗 [**Read More: operational vs programmer error**](/sections/errorhandling/operationalvsprogrammererror.md)
+🔗 [**자세히 보가: operational vs programmer error**](/sections/errorhandling/operationalvsprogrammererror.korean.md)
 
 <br/><br/>
 
@@ -136,7 +136,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** Not handling errors within a single place will lead to code duplication and probably to improperly handled errors
 
-🔗 [**Read More: handling errors in a centralized place**](/sections/errorhandling/centralizedhandling.md)
+🔗 [**자세히 보가: handling errors in a centralized place**](/sections/errorhandling/centralizedhandling.korean.md)
 
 <br/><br/>
 
@@ -146,7 +146,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** An API client might decide to crash and restart only because he received back an error he couldn’t understand. Note: the caller of your API might be you (very typical in a microservice environment)
 
-🔗 [**Read More: documenting errors in Swagger**](/sections/errorhandling/documentingusingswagger.md)
+🔗 [**자세히 보가: documenting errors in Swagger**](/sections/errorhandling/documentingusingswagger.korean.md)
 
 <br/><br/>
 
@@ -156,7 +156,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** When an unfamiliar exception is caught, some object might be in a faulty state (e.g an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
 
-🔗 [**Read More: shutting the process**](/sections/errorhandling/shuttingtheprocess.md)
+🔗 [**자세히 보가: shutting the process**](/sections/errorhandling/shuttingtheprocess.korean.md)
 
 <br/><br/>
 
@@ -166,7 +166,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** Skimming through console.logs or manually through messy text file without querying tools or a decent log viewer might keep you busy at work until late
 
-🔗 [**Read More: using a mature logger**](/sections/errorhandling/usematurelogger.md)
+🔗 [**자세히 보가: using a mature logger**](/sections/errorhandling/usematurelogger.korean.md)
 
 <br/><br/>
 
@@ -176,7 +176,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** Without testing, whether automatically or manually, you can’t rely on our code to return the right errors. Without meaningful errors – there’s no error handling
 
-🔗 [**Read More: testing error flows**](/sections/errorhandling/testingerrorflows.md)
+🔗 [**자세히 보가: testing error flows**](/sections/errorhandling/testingerrorflows.korean.md)
 
 <br/><br/>
 
@@ -186,7 +186,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which are your slowest code parts under real-world scenario and how these affect the UX
 
-🔗 [**Read More: using APM products**](/sections/errorhandling/apmproducts.md)
+🔗 [**자세히 보가: using APM products**](/sections/errorhandling/apmproducts.korean.md)
 
 <br/><br/>
 
@@ -196,7 +196,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** Your errors will get swallowed and leave no trace. Nothing to worry about
 
-🔗 [**Read More: catching unhandled promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.md)
+🔗 [**자세히 보가: catching unhandled promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.korean.md)
 
 <br/><br/>
 
@@ -206,13 +206,13 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** Consider this – your function expects a numeric argument “Discount” which the caller forgets to pass, later on, your code checks if Discount!=0 (amount of allowed discount is greater than zero), then it will allow the user to enjoy a discount. OMG, what a nasty bug. Can you see it?
 
-🔗 [**Read More: failing fast**](/sections/errorhandling/failfast.md)
+🔗 [**자세히 보가: failing fast**](/sections/errorhandling/failfast.korean.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#목차">⬆ 목차로 돌아가기</a></p>
 
-# `3. Code Style Practices`
+# `3. 코드 스타일`
 
 ## ![✔] 3.1 Use ESLint
 
@@ -251,7 +251,7 @@ function someFunction()
 
 **Otherwise:** Deferring from this best practice might lead to unexpected results, as seen in the StackOverflow thread below:
 
-🔗 [**Read more:** "Why does a results vary based on curly brace placement?" (Stackoverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
+🔗 [**자세히 보가:** "Why does a results vary based on curly brace placement?" (Stackoverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
 <br/><br/>
 
@@ -301,7 +301,7 @@ function doSomething() {}
 
 **Otherwise:** Debugging becomes way more cumbersome when following a variable that frequently changes
 
-🔗 [**Read more: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
+🔗 [**자세히 보가: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
 
 <br/><br/>
 
@@ -369,7 +369,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Handling async errors in callback style is probably the fastest way to hell - this style forces to check errors all over, deal with awkward code nesting and make it difficult to reason about the code flow
 
-🔗[**Read more:** Guide to async await 1.0](https://github.com/yortus/asyncawait)
+🔗[**자세히 보가:** Guide to async await 1.0](https://github.com/yortus/asyncawait)
 
 <br/><br/>
 
@@ -383,9 +383,9 @@ All statements above will return false if used with `===`
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#목차">⬆ 목차로 돌아가기</a></p>
 
-# `4. Testing And Overall Quality Practices`
+# `4. 테스트 및 전체 품질 관리`
 
 ## ![✔] 4.1 At the very least, write API (component) testing
 
@@ -409,7 +409,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
 
-🔗 [**Read More: Choosing CI platform**](/sections/testingandquality/citools.md)
+🔗 [**자세히 보가: Choosing CI platform**](/sections/testingandquality/citools.korean.md)
 
 <br/><br/>
 
@@ -453,9 +453,9 @@ All statements above will return false if used with `===`
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#목차">⬆ 목차로 돌아가기</a></p>
 
-# `5. Going To Production Practices`
+# `5. 운영 환경으로 전환하기`
 
 ## ![✔] 5.1. Monitoring!
 
@@ -463,7 +463,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Failure === disappointed customers. Simple
 
-🔗 [**Read More: Monitoring!**](/sections/production/monitoring.md)
+🔗 [**자세히 보가: Monitoring!**](/sections/production/monitoring.korean.md)
 
 <br/><br/>
 
@@ -473,7 +473,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** You end-up with a black box that is hard to reason about, then you start re-writing all logging statements to add additional information
 
-🔗 [**Read More: Increase transparency using smart logging**](/sections/production/smartlogging.md)
+🔗 [**자세히 보가: Increase transparency using smart logging**](/sections/production/smartlogging.korean.md)
 
 <br/><br/>
 
@@ -483,7 +483,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Your poor single thread will stay busy doing infrastructural tasks instead of dealing with your application core and performance will degrade accordingly
 
-🔗 [**Read More: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
+🔗 [**자세히 보가: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.korean.md)
 
 <br/><br/>
 
@@ -493,7 +493,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** QA will thoroughly test the code and approve a version that will behave differently at production. Even worse, different servers at the same production cluster might run different code
 
-🔗 [**Read More: Lock dependencies**](/sections/production/lockdependencies.md)
+🔗 [**자세히 보가: Lock dependencies**](/sections/production/lockdependencies.korean.md)
 
 <br/><br/>
 
@@ -503,7 +503,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Running dozens of instances without a clear strategy and too many tools together (cluster management, docker, PM2) might lead to a DevOps chaos
 
-🔗 [**Read More: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
+🔗 [**자세히 보가: Guard process uptime using the right tool**](/sections/production/guardprocess.korean.md)
 
 <br/><br/>
 
@@ -513,7 +513,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.js utilizes only 1 (even using PaaS services like AWS beanstalk!)
 
-🔗 [**Read More: Utilize all CPU cores**](/sections/production/utilizecpu.md)
+🔗 [**자세히 보가: Utilize all CPU cores**](/sections/production/utilizecpu.korean.md)
 
 <br/><br/>
 
@@ -523,7 +523,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
 
-🔗 [**Read More: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
+🔗 [**자세히 보가: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.korean.md)
 
 <br/><br/>
 
@@ -533,7 +533,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real-world scenario and how these affects the UX
 
-🔗 [**Read More: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
+🔗 [**자세히 보가: Discover errors and downtime using APM products**](/sections/production/apmproducts.korean.md)
 
 <br/><br/>
 
@@ -543,7 +543,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** A world champion IT/DevOps guy won’t save a system that is badly written
 
-🔗 [**Read More: Make your code production-ready**](/sections/production/productoncode.md)
+🔗 [**자세히 보가: Make your code production-ready**](/sections/production/productoncode.korean.md)
 
 <br/><br/>
 
@@ -553,7 +553,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Your process memory might leak a hundred megabytes a day like how it happened at [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
 
-🔗 [**Read More: Measure and guard the memory usage**](/sections/production/measurememory.md)
+🔗 [**자세히 보가: Measure and guard the memory usage**](/sections/production/measurememory.korean.md)
 
 <br/><br/>
 
@@ -563,7 +563,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Your single Node thread will be busy streaming hundreds of html/images/angular/react files instead of allocating all its resources for the task it was born for – serving dynamic content
 
-🔗 [**Read More: Get your frontend assets out of Node**](/sections/production/frontendout.md)
+🔗 [**자세히 보가: Get your frontend assets out of Node**](/sections/production/frontendout.korean.md)
 
 <br/><br/>
 
@@ -573,7 +573,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
 
-🔗 [**Read More: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
+🔗 [**자세히 보가: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.korean.md)
 
 <br/><br/>
 
@@ -583,7 +583,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Otherwise: Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
 
-🔗 [**Read More: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
+🔗 [**자세히 보가: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.korean.md)
 
 <br/><br/>
 
@@ -593,7 +593,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Looking at a production error log without the context – what happened before – makes it much harder and slower to reason about the issue
 
-🔗 [**Read More: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
+🔗 [**자세히 보가: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.korean.md)
 
 <br/><br/>
 
@@ -603,7 +603,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Omitting this simple property might greatly degrade performance. For example, when using Express for server-side rendering omitting `NODE_ENV` makes the slower by a factor of three!
 
-🔗 [**Read More: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
+🔗 [**자세히 보가: Set NODE_ENV=production**](/sections/production/setnodeenv.korean.md)
 
 <br/><br/>
 
@@ -621,39 +621,39 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Newly discovered bugs or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain
 
-🔗 [**Read More: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
+🔗 [**자세히 보가: Use an LTS release of Node.js**](/sections/production/LTSrelease.korean.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#목차">⬆ 목차로 돌아가기</a></p>
 
-# `Security Practices`
+# `보안`
 
-## Our contributors are working on this section. Would you like to join?
-
-<br/><br/><br/>
-
-# `Performance Practices`
-
-## Our contributors are working on this section. Would you like to join?
+## 컨트리뷰터들이 현재 작업중 입니다. 함께 하시겠습니까?
 
 <br/><br/><br/>
 
-# Milestones
+# `성능`
 
-To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/i0natan/nodebestpractices/milestones) and join the working groups if you want to contribute to this project
+## 컨트리뷰터들이 현재 작업중 입니다. 함께 하시겠습니까?
+
+<br/><br/><br/>
+
+# 마일스톤
+
+이 가이드를 관리하고 최신 버전을 유지하기 위해, 우리는 지속해서 가이드라인과 모범 사례들을 커뮤니티의 도움으로 업데이트하고 개선해 나가고 있습니다. 만약 이 프로젝트에 기여를 하고 싶으시면 [마일스톤](https://github.com/i0natan/nodebestpractices/milestones) 을 보고 참여하십시오.
 
 <br/><br/>
 
-## Translations
+## 번역
 
-All translations are contributed by the community. We will be happy to get any help with either completed, ongoing or new translations!
+모든 번역은 커뮤니티에 의해 기여되고 있습니다. 이미 완성된 번역이나, 진행중, 새로운 번역에 대한 도움은 언제나 환영합니다!
 
-### Completed translations
+### 번역 작업 완료
 
 * ![CN](/assets/flags/CN.png) [Chinese](README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
 
-### Translations in progress
+### 번역 작업중
 
 * ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/129))
 * ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/i0natan/nodebestpractices/issues/156))
