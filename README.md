@@ -472,13 +472,10 @@ All statements above will return false if used with `===`
 
 ## ![✔] 4.9 Refactor regularly using static analysis tools
 
-**TL;DR:** Using static analysis tools helps by giving objective ways to improve code quality and keep your code maintainable. Keeping out code smells and bloat will make maintenance easier and provides better readability to your code.
+**TL;DR:** Using static analysis tools helps by giving objective ways to improve code quality and keep your code maintainable. You can add static analysis tools to your CI build to fail when it finds code smells (Complex code, Duplication, etc).
+Two examples of tools you can use are [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) and [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)).
 
-Here are some tools to automate finding code to improve:
-  - [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube))
-  - [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate))
-
-**Otherwise:** You will slowly accumulate code bloat that ensure difficulty when adding new features.
+**Otherwise:** With poor code quality, bugs and performance will always be an issue that no shiny new library or state of the art features can fix.
 
 🔗 [**Read More: Refactoring!**](/sections/production/refactoring.md)
 
