@@ -2,7 +2,6 @@
 
 <br/><br/>
 
-
 ### One Paragraph Explainer
 
 Following is a list of development tips that greatly affect the production maintenance and stability:
