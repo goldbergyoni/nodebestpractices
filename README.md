@@ -468,10 +468,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Without docker-compose teams must maintain a testing DB for each testing environment including developers machines, keep all those DBs in sync so test results won't vary across environments
 
-
-<br/><br/><br/>
-
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<br/><br/>
 
 ## ![✔] 4.9 Refactor regularly using static analysis tools
 
@@ -485,7 +482,10 @@ Here are some tools to automate finding code to improve:
 
 🔗 [**Read More: Refactoring!**](/sections/production/refactoring.md)
 
-<br/><br/>
+
+<br/><br/><br/>
+
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
 # `5. Going To Production Practices`
 ## ![✔] 5.1. Monitoring!
