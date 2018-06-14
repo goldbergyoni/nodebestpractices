@@ -465,6 +465,7 @@ null == undefined   // true
 <p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
 <h1 id="5-going-to-production-practices"><code>5. 上线实践</code></h1>
+
 ## ![✔] 5.1. 监控!
 
 **TL;DR:** 监控是一种在顾客之前发现问题的游戏 – 显然这应该被赋予前所未有的重要性。考虑从定义你必须遵循的基本度量标准开始（我的建议在里面），到检查附加的花哨特性并选择解决所有问题的解决方案。市场已经淹没其中。点击下面的 ‘The Gist’ ，了解解决方案的概述。
@@ -682,6 +683,9 @@ Node.js Core Collaborator, been noding since 0.4, and have noded in multiple pro
 ## `Bruno Scheufler` 
 💻 full-stack web developer and Node.js enthusiast.
 
+## `Kyle Martin` [@js-kyle](https://github.com/js-kyle)
+Full Stack Developer based in New Zealand, interested in architecting and building Node.js applications to perform at global scale. Keen contributor to open source software, including Node.js Core.
+
 
 <br/><br/>
 
@@ -724,10 +728,17 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Leonardo Villela](https://github.com/leonardovillela),
 🌻 [Michal Zalecki](https://github.com/MichalZalecki)
 🌻 [Chris Nicola](https://github.com/chrisnicola),
-🌻 [Alejandro Corredor](https://github.com/aecorredor)
+🌻 [Alejandro Corredor](https://github.com/aecorredor),
+🌻 [Ye Min Htut](https://github.com/ymhtut),
+🌻 [cwar](https://github.com/cwar),
+🌻 [Yuwei](https://github.com/keyfoxth),
+🌻 [Utkarsh Bhatt](https://github.com/utkarshbhatt12)
+🌻 [Duarte Mendes](https://github.com/duartemendes)
+🌻 [Sagir Khan](https://github.com/sagirk)
+🌻 [Jason Kim](https://github.com/serv)
 
 <br/>
 
-:star: **No Stars Yet, Waiting For The First To Suggest a New Bullet**
+⭐ [Kyle Martin](https://github.com/js-kyle)
 
 <br/><br/>

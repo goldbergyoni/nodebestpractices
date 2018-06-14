@@ -14,6 +14,7 @@ The following tools automatically check for known security vulnerabilities in yo
 <br/><br/>
 
 ### What Other Bloggers Say
+
 From the [StrongLoop](https://strongloop.com/strongblog/best-practices-for-express-in-production-part-one-security/) blog:
 
-> ...Using to manage your application’s dependencies is powerful and convenient.  But the packages that you use may contain critical security vulnerabilities that could also affect your application.  The security of your app is only as strong as the “weakest link” in your dependencies. Fortunately, there are two helpful tools you can use to ensure of the third-party packages you use: and requireSafe.  These two tools do largely the same thing, so using both might be overkill, but “better safe than sorry” are words to live by when it comes to security...
+> ...Using to manage your application’s dependencies is powerful and convenient.  But the packages that you use may contain critical security vulnerabilities that could also affect your application.  The security of your app is only as strong as the “weakest link” in your dependencies. Fortunately, there are two helpful tools you can use to ensure the third-party packages you use: and requireSafe.  These two tools do largely the same thing, so using both might be overkill, but “better safe than sorry” are words to live by when it comes to security...
