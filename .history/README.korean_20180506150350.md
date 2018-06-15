@@ -683,6 +683,9 @@ Node.js Core Collaborator, been noding since 0.4, and have noded in multiple pro
 ## `Bruno Scheufler` 
 💻 full-stack web developer and Node.js enthusiast.
 
+## `Kyle Martin` [@js-kyle](https://github.com/js-kyle)
+Full Stack Developer based in New Zealand, interested in architecting and building Node.js applications to perform at global scale. Keen contributor to open source software, including Node.js Core.
+
 
 <br/><br/>
 
@@ -725,10 +728,17 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Leonardo Villela](https://github.com/leonardovillela),
 🌻 [Michal Zalecki](https://github.com/MichalZalecki)
 🌻 [Chris Nicola](https://github.com/chrisnicola),
-🌻 [Alejandro Corredor](https://github.com/aecorredor)
+🌻 [Alejandro Corredor](https://github.com/aecorredor),
+🌻 [Ye Min Htut](https://github.com/ymhtut),
+🌻 [cwar](https://github.com/cwar),
+🌻 [Yuwei](https://github.com/keyfoxth),
+🌻 [Utkarsh Bhatt](https://github.com/utkarshbhatt12)
+🌻 [Duarte Mendes](https://github.com/duartemendes)
+🌻 [Sagir Khan](https://github.com/sagirk)
+🌻 [Jason Kim](https://github.com/serv)
 
 <br/>
 
-:star: **No Stars Yet, Waiting For The First To Suggest a New Bullet**
+⭐ [Kyle Martin](https://github.com/js-kyle)
 
 <br/><br/>
