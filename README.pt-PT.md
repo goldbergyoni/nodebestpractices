@@ -19,7 +19,8 @@
 
 <br/>
 
-Leia num idioma diferente: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md) [(![ES](/assets/flags/ES.png)**ES**,
+Leia noutro idioma: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md) [(![ES](/assets/flags/ES.png)
+**ES**,
  ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU]
  (/assets/flags/RU.png)**RU** e ![TR](/assets/flags/TR.png)**TR** em progresso!)](#translations)
 
@@ -40,19 +41,19 @@ remeterá para exemplos de código, citações de blogs, e outras informações
 
 <br/><br/><br/>
 
-## Table of Contents
+## Índice
 
-1.  [Project structure Practices (5)](#1-project-structure-practices)
-2.  [Error Handling Practices (11) ](#2-error-handling-practices)
-3.  [Code Style Practices (12) ](#3-code-style-practices)
-4.  [Testing And Overall Quality Practices (8) ](#4-testing-and-overall-quality-practices)
-5.  [Going To Production Practices (17) ](#5-going-to-production-practices)
-6.  Security Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
-7.  Performance Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
+1.  [Estrutura do projeto (5)](#1-estrutura-do-projeto)
+2.  [Tratamento de erros (11) ](#2-tratamento-de-erros)
+3.  [Estilo de código (12) ](#3-estilo-de-código)
+4.  [Teste e qualidade geral (8) ](#4-teste-e-qualidade-geral)
+5.  [Entrar em produção (17) ](#5-entrar-em-produção)
+6.  Segurança ([em breve](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
+7.  Performance ([em breve](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 
 <br/><br/><br/>
 
-# `1. Project Structure Practices`
+# `1. Estrutura do projeto`
 
 ## ![✔] 1.1 Structure your solution by components
 
@@ -106,7 +107,7 @@ remeterá para exemplos de código, citações de blogs, e outras informações
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `2. Error Handling Practices`
+# `2. Tratamento de erros`
 
 ## ![✔] 2.1 Use Async-Await or promises for async error handling
 
@@ -220,7 +221,7 @@ remeterá para exemplos de código, citações de blogs, e outras informações
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `3. Code Style Practices`
+# `3. Estilo de código`
 
 ## ![✔] 3.1 Use ESLint
 
@@ -393,7 +394,7 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `4. Testing And Overall Quality Practices`
+# `4. Teste e qualidade geral`
 
 ## ![✔] 4.1 At the very least, write API (component) testing
 
@@ -463,7 +464,7 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `5. Going To Production Practices`
+# `5. Entrar em produção`
 
 ## ![✔] 5.1. Monitoring!
 
@@ -635,13 +636,13 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `Security Practices`
+# `Segurança`
 
 ## Our contributors are working on this section. Would you like to join?
 
 <br/><br/><br/>
 
-# `Performance Practices`
+# `Performance`
 
 ## Our contributors are working on this section. Would you like to join?
 
