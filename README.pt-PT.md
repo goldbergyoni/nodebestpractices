@@ -19,11 +19,10 @@
 
 <br/>
 
-Leia noutro idioma: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md) [(![ES](/assets/flags/ES.png)
-**ES**,
- ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU]
+Leia noutro idioma: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md) [(![ES](/assets/flags/ES.png)**ES**, 
+![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU]
  (/assets/flags/RU.png)**RU** e ![TR](/assets/flags/TR.png)**TR** em progresso!)](#translations)
-
+   
 <br/>
 
 # Bem-vindo! 3 coisas que você deve saber primeiro:
@@ -36,7 +35,7 @@ recomendadas, guias de estilo e dicas de arquitetura. Todos os dias são apresen
 PRs para manter este livro vivo atualizado. Adoraríamos vê-lo contribuindo aqui, seja corrigindo algum erro de código
  ou sugerindo novas ideias brilhantes. Ver os nossos [marcos aqui](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
 
-**3. A maioria dos tópicos contém informações adicionais -** em cada tópico encontra **🔗Mais Informações** que o 
+**3. A maioria dos tópicos contém informações adicionais -** em cada tópico encontra **🔗Mais informações** que o 
 remeterá para exemplos de código, citações de blogs, e outras informações
 
 <br/><br/><br/>
@@ -70,11 +69,16 @@ arriscadas. Também é mais difícil de escalar quando as unidades de negócios 
 
 <br/><br/>
 
-## ![✔] 1.2 Layer your components, keep Express within its boundaries
+## ![✔] 1.2 Organize os componentes em camadas, mantenha o Express dentro das suas responsabilidades
 
-**TL;DR:** Each component should contain 'layers' - a dedicated object for the web, logic and data access code. This not only draws a clean separation of concerns but also significantly eases mocking and testing the system. Though this is a very common pattern, API developers tend to mix layers by passing the web layer objects (Express req, res) to business logic and data layers - this makes your application dependant on and accessible by Express only
+**TL;DR:** Cada componente deve conter camadas (layers) - um objeto dedicado à web, lógica e código de acesso a dados. 
+Isso não apenas cria uma separação de responsabilidades bem definida, como também facilita significativamente o 
+mocking e o teste do sistema. Embora esse seja um padrão muito comum, os programadores de APIs tendem a misturar 
+camadas passando os objetos da camada da Web (Express req, res) para a lógica de negócios e camadas de dados - isso 
+torna a aplicação dependente e acessível somente pelo Express.
 
-**Caso contrário:** App that mixes web objects with other layers can not be accessed by testing code, CRON jobs and other non-Express callers
+**Caso contrário:** Aplicações que misturam objetos da web com outras camadas não podem ser acedidos pelo código de 
+teste, CRON jobs e outros *callers* que não o Express.
 
 🔗 [**Mais informações: layer your app**](/sections/projectstructre/createlayers.md)
 
