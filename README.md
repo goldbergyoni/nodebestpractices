@@ -689,11 +689,13 @@ Developers in the project may not follow consistent code security practices, lea
 <br/><br/>
 
 
-## ![✔] 6.4. Prevent SQL/noSQL injection with ORM/ODM or any other DAL packages
+## ![✔] 6.4. Prevent query injection vulnerabilities with ORM/ODM libraries or other DAL packages
 
-**TL;DR:** To prevent SQL/noSQL injection attacks *always* make use of an ORM/ODM or a database library that escapes or supports named or indexed parameter binding, and takes care of validating user input for expected types. **Never** use JS template strings or string concatenation to inject values into queries.
+**TL;DR:** To prevent SQL injection and other malicious attacks, _always_ make use of an ORM/ODM or a database library that escapes data or supports named or indexed parameterized queries, and takes care of validating user input for expected types. **Never** just use JavaScript template strings or string concatenation to inject values into queries as this opens your application to a wide spectrum of vulnerabilities.
 
-**Otherwise:** Un-validated user input could lead to operator injection when working with MongoDB for noSQL, and unescaped use of proper ORM/ODM will allow easy SQL injection attacks.
+**Otherwise:** Unvalidated or unsanitized user input could lead to operator injection when working with MongoDB for NoSQL, and not using a proper ORM/ODM will easily allow SQL injection attacks.
+
+🔗 [**Read More: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.md)
 
 <br/><br/>
 
