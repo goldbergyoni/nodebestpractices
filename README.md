@@ -739,9 +739,9 @@ Developers in the project may not follow consistent code security practices, lea
 
 <br/><br/>
 
-## ![✔] 6.9. Escape output 
+## ![✔] 6.9. Escape HTML, JS and CSS output 
 
-**TL;DR:** Untrusted data that is sent down to the browser might get executed instead of just being displayed, this is commonly being referred as XSS attack. Mitigate this by using dedicated libraries that explicitly mark the data as pure content that should never get executed (i.e. escaping)
+**TL;DR:** Untrusted data that is sent down to the browser might get executed instead of just being displayed, this is commonly being referred as XSS attack. Mitigate this by using dedicated libraries that explicitly mark the data as pure content that should never get executed (i.e. encoding, escaping)
 
 **Otherwise:** An attacker might store a malicious JS code in your DB which will then be sent as-is to the poor client
 
