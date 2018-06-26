@@ -80,17 +80,19 @@ torna a aplicação dependente e acessível somente pelo Express.
 **Caso contrário:** Aplicações que misturam objetos da web com outras camadas não podem ser acedidos pelo código de 
 teste, CRON jobs e outros *callers* que não o Express.
 
-🔗 [**Mais informações: layer your app**](/sections/projectstructre/createlayers.md)
+🔗 [**Mais informações: organize a aplicação em camadas**](/sections/projectstructre/createlayers.md)
 
 <br/><br/>
 
-## ![✔] 1.3 Wrap common utilities as NPM packages
+## ![✔] 1.3 Crie _packages_ NPM de utilitários comuns
 
-**TL;DR:** In a large app that constitutes a large code base, cross-cutting-concern utilities like logger, encryption and alike, should be wrapped by your own code and exposed as private NPM packages. This allows sharing them among multiple code bases and projects
+**TL;DR:** Em aplicações grandes, os utilitários comuns que são necessários nas várias camadas, como o logger, 
+criptografia e outros, devem ser disponibilizados em pacotes NPM privados. Isso permite partilhá-los entre vários 
+projetos.
 
-**Caso contrário:** You'll have to invent your own deployment and dependency wheel
+**Caso contrário:** terá que inventar a sua própria implantação e dependência.
 
-🔗 [**Mais informações: Structure by feature**](/sections/projectstructre/wraputilities.md)
+🔗 [**Mais informações: estrutura por característica**](/sections/projectstructre/wraputilities.md)
 
 <br/><br/>
 
