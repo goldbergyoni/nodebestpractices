@@ -739,13 +739,13 @@ Developers in the project may not follow consistent code security practices, lea
 
 <br/><br/>
 
-## ![✔] 6.9. Use middleware that sanitizes input and output
+## ![✔] 6.9. Escape HTML, JS and CSS output 
 
-**TL;DR:** Here we will write about sanitizing/escaping/encoding both the input and output. The top frontend libraries handle output encoding well, but nevertheless you should always make sure to output encode your user generated data in the correct context, and can make use of libraries such as [node-esapi](https://github.com/ESAPI/node-esapi) or [escape-html](https://github.com/component/escape-html).
+**TL;DR:** Untrusted data that is sent down to the browser might get executed instead of just being displayed, this is commonly being referred as XSS attack. Mitigate this by using dedicated libraries that explicitly mark the data as pure content that should never get executed (i.e. encoding, escaping)
 
-**Otherwise:** Failure to encode user generated when outputting it can result in XSS, Log Injection or other vulnerabilities. Input validation should always be performed to confirm one is working with expected types and data properties (length, range, etc).
+**Otherwise:** An attacker might store a malicious JS code in your DB which will then be sent as-is to the poor client
 
-🔗 [**Read More:**](#)
+🔗 [**Read More: Escape output**](/sections/security/escape-output.md)
 
 <br/><br/>
 
