@@ -10,6 +10,8 @@ When creating your database logic you should watch out for eventual injection ve
 - [TypeORM](https://github.com/typeorm/typeorm)
 - [sequelize](https://github.com/sequelize/sequelize)
 - [mongoose](https://github.com/Automattic/mongoose)
+- [Knex](https://github.com/tgriesser/knex)
+- [Objection.js](https://github.com/Vincit/objection.js)
 - [waterline](https://github.com/balderdashy/waterline)
 
 ### Example
