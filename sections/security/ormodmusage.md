@@ -28,4 +28,6 @@ To be added
 
 ### What other bloggers say
 
-To be added
+Risks of NoSQL injection from the [OWASP wiki](https://www.owasp.org/index.php/Testing_for_NoSQL_injection)
+
+> NoSQL injection attacks may execute in different areas of an application than traditional SQL injection. Where SQL injection would execute within the database engine, NoSQL variants may execute during within the application layer or the database layer, depending on the NoSQL API used and data model. Typically NoSQL injection attacks will execute where the attack string is parsed, evaluated, or concatenated into a NoSQL API call.
