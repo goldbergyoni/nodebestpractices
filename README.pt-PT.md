@@ -86,7 +86,7 @@ teste, CRON jobs e outros *callers* que não o Express.
 
 ## ![✔] 1.3 Crie _packages_ NPM de utilitários comuns
 
-**TL;DR:** Em aplicações grandes, os utilitários comuns que são necessários nas várias camadas, como o logger, 
+**TL;DR:** Em aplicações grandes, os utilitários comuns que são necessários nas várias camadas, como o _logger_, 
 criptografia e outros, devem ser disponibilizados em pacotes NPM privados. Isso permite partilhá-los entre vários 
 projetos.
 
@@ -96,13 +96,17 @@ projetos.
 
 <br/><br/>
 
-## ![✔] 1.4 Separate Express 'app' and 'server'
+## ![✔] 1.4 Separar o 'app' e 'server' no Express
 
-**TL;DR:** Avoid the nasty habit of defining the entire [Express](https://expressjs.com/) app in a single huge file - separate your 'Express' definition to at least two files: the API declaration (app.js) and the networking concerns (WWW). For even better structure, locate your API declaration within components
+**TL;DR:** Evite o péssimo hábito de definir toda a aplicação [Express](https://expressjs.com/) num único ficheiro 
+enorme - separe as suas definições do 'Express' em pelo menos dois ficheiros: a declaração da API (app.js) e as 
+responsabilidades de rede (WWW). Para uma estrutura ainda melhor, defina a sua declaração da API nos componentes.
 
-**Caso contrário:** Your API will be accessible for testing via HTTP calls only (slower and much harder to generate coverage reports). It probably won't be a big pleasure to maintain hundreds of lines of code in a single file
+**Caso contrário:** a API ficará apenas acessível por meio de chamadas HTTP (mais lenta e muito mais difícil de 
+gerar relatórios de cobertura). Provavelmente não será um grande prazer manter centenas de linhas de código num 
+único arquivo.
 
-🔗 [**Mais informações: separate Express 'app' and 'server'**](/sections/projectstructre/separateexpress.md)
+🔗 [**Mais informações: separar o 'app' e 'server' no Express**](/sections/projectstructre/separateexpress.md)
 
 <br/><br/>
 
