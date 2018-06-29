@@ -772,14 +772,13 @@ Developers in the project may not follow consistent code security practices, lea
 <br/><br/>
 
 
-## ![✔] 6.12. Avoid using middlewares that crash the process
+## ![✔] 6.12. Implement express rate limiting for login routes
 
-**TL;DR:** Here we will write about designing and using middleware that doesn't make the process crash when an invalid JSON is passed since it opens the door for easy DDOS attacks
+**TL;DR:** A brute force protection middleware such as [express-brute](https://www.npmjs.com/package/express-brute) should be used inside an express application to prevent brute force/dictionary attacks on sensitive routes such as `/admin` or `/login` based on request properties such as IP address, or other identifiers such as body parameters.
 
-**Otherwise:**
+**Otherwise:** An attacker can issue unlimited automated password attempts to gain access to privileged accounts on an application.
 
-
-🔗 [**Read More:**](#)
+🔗 [**Read More: Login rate limiting **](/sections/security/login-rate-limit.md)
 
 <br/><br/>
 
