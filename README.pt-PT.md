@@ -96,7 +96,7 @@ projetos.
 
 <br/><br/>
 
-## ![✔] 1.4 Separar o 'app' e 'server' no Express
+## ![✔] 1.4 Separar o 'app' e o 'server' no Express
 
 **TL;DR:** Evite o péssimo hábito de definir toda a aplicação [Express](https://expressjs.com/) num único ficheiro 
 enorme - separe as suas definições do 'Express' em pelo menos dois ficheiros: a declaração da API (app.js) e as 
@@ -110,17 +110,22 @@ gerar relatórios de cobertura). Provavelmente não será um grande prazer mante
 
 <br/><br/>
 
-## ![✔] 1.5 Use environment aware, secure and hierarchical config
+## ![✔] 1.5 Use uma configuração de ambiente segura e hierárquica 
 
-**TL;DR:** A perfect and flawless configuration setup should ensure (a) keys can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are a few packages that can help tick most of those boxes like [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) and [config](https://www.npmjs.com/package/config)
+**TL;DR:** Uma configuração perfeita deve garantir que (a) as chaves podem ser lidas do ficheiro E da variável de 
+ambiente (b) a informação sensível é mantidos fora do código onde são feitos _commits_ (c) a configuração é hierárquica 
+para facilitar a sua localização. Existem alguns _packages_ que podem ajudar a lidar com a maioria desses pontos, 
+tais como o [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) e 
+[config](https://www.npmjs.com/package/config)
 
-**Caso contrário:** Failing to satisfy any of the config requirements will simply bog down the development or devops team. Probably both
+**Caso contrário:** Não satisfazer qualquer um desses requisitos de configuração simplesmente atrapalhará a equipa
+ de desenvolvimento ou devops. Provavelmente ambas.
 
-🔗 [**Mais informações: configuration best practices**](/sections/projectstructre/configguide.md)
+🔗 [**Mais informações: boas práticas de configuração**](/sections/projectstructre/configguide.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Voltar ao início</a></p>
 
 # `2. Tratamento de erros`
 
@@ -234,7 +239,7 @@ gerar relatórios de cobertura). Provavelmente não será um grande prazer mante
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Voltar ao início</a></p>
 
 # `3. Estilo de código`
 
@@ -407,7 +412,7 @@ All statements above will return false if used with `===`
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Voltar ao início</a></p>
 
 # `4. Teste e qualidade geral`
 
@@ -477,7 +482,7 @@ All statements above will return false if used with `===`
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Voltar ao início</a></p>
 
 # `5. Entrar em produção`
 
@@ -649,7 +654,7 @@ All statements above will return false if used with `===`
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Voltar ao início</a></p>
 
 # `Segurança`
 
