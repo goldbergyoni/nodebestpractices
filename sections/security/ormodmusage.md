@@ -14,7 +14,7 @@ When creating your database logic you should watch out for eventual injection ve
 - [Objection.js](https://github.com/Vincit/objection.js)
 - [waterline](https://github.com/balderdashy/waterline)
 
-### Example for NoSQL query injection
+### Example - NoSQL query injection
 
 ```javascript
 // A query of
@@ -26,6 +26,14 @@ db.balances.find( { active: true, $where: function() { return obj.credits - obj.
 // will trigger a denial of service
 
 // Another user input might inject other logic resulting in the database exposing sensitive data
+```
+
+### Example - SQL injection
+
+```
+SELECT username, firstname, lastname FROM users WHERE id = 'user input';
+
+SELECT username, firstname, lastname FROM users WHERE id = 'evil'input';
 ```
 
 ### Additional resources
