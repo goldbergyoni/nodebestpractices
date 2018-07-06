@@ -129,13 +129,17 @@ tais como o [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.co
 
 # `2. Tratamento de erros`
 
-## ![✔] 2.1 Use Async-Await or promises for async error handling
+## ![✔] 2.1 Utilize o Async-Await ou promessas no tratamento de erros assíncronos
 
-**TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using a reputable promise library or async-await instead which enables a much more compact and familiar code syntax like try-catch
+**TL;DR:** Tratar erros assíncronos com _callbacks_ é provavelmente o caminho mais rápido para o inferno (vulgo, _the
+ pyramid of doom_). O melhor presente que pode oferecer ao seu código é usar uma biblioteca de promessas respeitável ou
+  o async-await, que permite uma sintaxe de código muito mais compacta e familiar, como o try-catch.
 
-**Caso contrário:** Node.js callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting and awkward coding patterns
+**Caso contrário:** O estilo de _callback_ do Node.js, function(err, response), é uma forma inevitável para criar 
+código de difícil de ser mantido devido à mistura do tratamento do erro com o restante código, _nesting_ excessivo e 
+padrões de código inadequados.
 
-🔗 [**Mais informações: avoiding callbacks**](/sections/errorhandling/asyncerrorhandling.md)
+🔗 [**Mais informações: evitar _callbacks_**](/sections/errorhandling/asyncerrorhandling.md)
 
 <br/><br/>
 
