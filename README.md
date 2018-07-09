@@ -754,5 +754,6 @@ This repository is being kept up to date thanks to the help from the community. 
 ### Stars <br/>
 
 ⭐ [Kyle Martin](https://github.com/js-kyle)
+⭐ [Keith Holliday](https://github.com/TheHollidayInn)
 
 <br/><br/><br/>
