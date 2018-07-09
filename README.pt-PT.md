@@ -136,20 +136,24 @@ tais como o [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.co
   o async-await, que permite uma sintaxe de código muito mais compacta e familiar, como o try-catch.
 
 **Caso contrário:** O estilo de _callback_ do Node.js, function(err, response), é uma forma inevitável para criar 
-código de difícil de ser mantido devido à mistura do tratamento do erro com o restante código, _nesting_ excessivo e 
+código de difícil de manter devido à mistura do tratamento do erro com o restante código, _nesting_ excessivo e 
 padrões de código inadequados.
 
 🔗 [**Mais informações: evitar _callbacks_**](/sections/errorhandling/asyncerrorhandling.md)
 
 <br/><br/>
 
-## ![✔] 2.2 Use only the built-in Error object
+## ![✔] 2.2 Utilize apenas o objeto _Error_
 
-**TL;DR:** Many throws errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw an exception or an emit error – using only the built-in Error object will increase uniformity and prevent loss of information
+**TL;DR:** Muitas vezes são lançados erros com uma string ou com um tipo personalizado – isso complica a lógica de 
+tratamento de erros e a interoperabilidade entre módulos. Quer rejeite uma promessa, lance uma exceção ou emita um 
+erro – utilizar apenas o objeto _Error_ aumentará a uniformidade e evitará a perda de informações.
 
-**Caso contrário:** When invoking some component, being uncertain which type of errors come in return – it makes proper error handling much harder. Even worse, using custom types to describe errors might lead to loss of critical error information like the stack trace!
+**Caso contrário:** Ao invocar algum componente, sendo incerto qual o tipo de erro que é devolvido – torna o tratamento
+ de erros muito mais difícil. Além disso, usar tipos personalizados para descrever erros pode levar à perda de 
+ informação de erros críticos, como o _stack trace_!
 
-🔗 [**Mais informações: using the built-in error object**](/sections/errorhandling/useonlythebuiltinerror.md)
+🔗 [**Mais informações: utilizar o objeto Error**](/sections/errorhandling/useonlythebuiltinerror.md)
 
 <br/><br/>
 
