@@ -36,20 +36,20 @@ if(!productToAdd)
 
 ```javascript
 // centralized error object that derives from Node’s Error
-function appError(name, httpCode, description, isOperational) {
+function AppError(name, httpCode, description, isOperational) {
     Error.call(this);
     Error.captureStackTrace(this);
     this.name = name;
     //...other properties assigned here
 };
 
-appError.prototype.__proto__ = Error.prototype;
+AppError.prototype.__proto__ = Error.prototype;
 
-module.exports.appError = appError;
+module.exports.AppError = AppError;
 
 // client throwing an exception
 if(user == null)
-    throw new appError(commonErrors.resourceNotFound, commonHTTPErrors.notFound, "further explanation", true)
+    throw new AppError(commonErrors.resourceNotFound, commonHTTPErrors.notFound, "further explanation", true)
 ```
 
 ### Blog Quote: "I don’t see the value in having lots of different types"
