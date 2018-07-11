@@ -157,13 +157,20 @@ erro – utilizar apenas o objeto _Error_ aumentará a uniformidade e evitará a
 
 <br/><br/>
 
-## ![✔] 2.3 Distinguish operational vs programmer errors
+## ![✔] 2.3 Distinguir os erros operacionais dos erros de programação
 
-**TL;DR:** Operational errors (e.g. API received an invalid input) refer to known cases where the error impact is fully understood and can be handled thoughtfully. On the other hand, programmer error (e.g. trying to read undefined variable) refers to unknown code failures that dictate to gracefully restart the application
+**TL;DR:** Os erros operacionais (por exemplo, a API recebe um pedido inválido) referem-se a casos conhecidos em que o 
+impacto do erro é totalmente compreendido e pode ser tratado. Por outro lado, erros de programação (por exemplo, 
+tentar ler uma variável não definida) refere-se a falhas de código desconhecidas que implicam a reinicialização da 
+aplicação.
 
-**Caso contrário:** You may always restart the application when an error appears, but why let ~5000 online users down because of a minor, predicted, operational error? the opposite is also not ideal – keeping the application up when an unknown issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
+**Caso contrário:** Poderá sempre reiniciar a aplicação quando ocorre um erro, mas por que deixar ~5000 utilizadores 
+"pendurados" devido a um pequeno erro operacional que podia ser previsto? O oposto também não é o ideal, ou seja, 
+manter a aplicação ativa mesmo quando ocorre um problema desconhecido (erro de programação) pode causar um 
+comportamento imprevisível. Diferenciar os dois tipos de erro permite planear o que apresentar ao utilizador e aplicar 
+uma abordagem equilibrada baseada no contexto.
 
-🔗 [**Mais informações: operational vs programmer error**](/sections/errorhandling/operationalvsprogrammererror.md)
+🔗 [**Mais informações: erro operacional vs programador**](/sections/errorhandling/operationalvsprogrammererror.md)
 
 <br/><br/>
 
