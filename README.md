@@ -673,19 +673,21 @@ Developers in the project may not follow consistent code security practices, lea
 <br/><br/>
 
 ## ![✔] 6.2. Limit concurrent requests using a balancer or a middleware
-<a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20DDOS%20-green.svg" alt=""/></a>
+<a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** DOS attacks are very popular and relativelly easy to conduct. Implement rate limiting using an external service such as cloud load balancers, cloud firewalls, NGINX, or for small and less critical apps you may also use a rate limiting middleware within the application (e.g. [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
+**TL;DR:** DOS attacks are very popular and relativelly easy to conduct. Implement rate limiting using an external service such as cloud load balancers, cloud firewalls, NGINX, or for small and less critical apps you may also consider a rate limiting middleware  (e.g. [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
 
-**Otherwise:** An application could be subject to an attack resulting in a deni](https://www.npmjs.com/package/express-rate-limit)al of service where real users receive degraded service, or an unavailable application
+**Otherwise:** An application could be subject to an attack resulting in a denial of service where real users receive degraded service, or an unavailable application
 
 🔗 [**Read More: Implement rate limiting**](sections/security/limitrequests.md)
 
 <br/><br/>
 
 ## ![✔] 6.3 Extract secrets from config files or use NPM package that encrypts them
+<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A3:Sensitive%20Data%20Exposure%20-green.svg" alt=""/></a>
 
-**TL;DR:** Never store plain-text secrets in configuration files or source code. Instead, make use of secrets management systems like Vault products, Kubernetes/Docker Secrets, or inject secrets as environment variables accessible to an application. As a last result, storing secrets in source control must be encrypted, and managed (rolling keys, expiring, auditing, etc). Make use of pre-commit/push hooks to check for accidental commit of secrets
+
+**TL;DR:** Never store plain-text secrets in configuration files or source code. Instead, make use of secrets management systems like Vault products, Kubernetes/Docker Secrets, or using environment variables. As a last result, storing secrets in source control must be encrypted, and managed (rolling keys, expiring, auditing, etc). Make use of pre-commit/push hooks to check for accidental commit of secrets
 
 **Otherwise:** Source control for even private repositories, can mistakenly be made public, at which point all secret has been exposed outside. Access to source control for an external party will inadvertently provide access to related systems (database, apis, etc).
 
