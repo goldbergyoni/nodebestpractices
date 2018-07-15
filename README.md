@@ -748,7 +748,8 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Duarte Mendes](https://github.com/duartemendes),
 🌻 [Sagir Khan](https://github.com/sagirk),
 🌻 [Jason Kim](https://github.com/serv),
-🌻 [Mitja O.](https://github.com/Max101)
+🌻 [Mitja O.](https://github.com/Max101),
+🌻 [Sandro Miguel Marques](https://github.com/SandroMiguel)
 
 ### Stars <br/>
 
