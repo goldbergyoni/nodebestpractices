@@ -864,11 +864,11 @@ implications and vulnerability towards DOS attacks
 
 ## ![✔] 6.19. Take extra care when working with child processes
 
-**TL;DR:** Avoid using `child_process.exec` when possible or validate and sanitize input to mitigate shell injection attacks. Prefer using `child_process.execFile` which by definition will only execute a single command with a set of attributes and will not allow shell parameter expansion.
+**TL;DR:** Avoid using child processes when possible and validate and sanitize input to mitigate shell injection attacks if you still have to. Prefer using `child_process.execFile` which by definition will only execute a single command with a set of attributes and will not allow shell parameter expansion.
 
-**Otherwise:** Naive use of `child_process.exec` could result in remote command execution or shell injection attacks due to malicious user input passed to an unsanitized system command.
+**Otherwise:** Naive use of child processes could result in remote command execution or shell injection attacks due to malicious user input passed to an unsanitized system command.
 
-🔗 [**Read More:**](#)
+🔗 [**Read More: Be cautious when working with child processes**](/sections/security/childprocesses.md)
 
 <br/><br/>
 
