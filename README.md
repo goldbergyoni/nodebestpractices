@@ -768,7 +768,6 @@ Developers in the project may not follow consistent code security practices, lea
 ## ![✔] 6.10. Validate the incoming JSON schemas
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7: XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a>
 
-
 **TL;DR:** Validate the incoming requests' body payload and ensure it qualifies the expectations, fail fast if it doesn't. To avoid tedious validation coding within each route you may use lightweight JSON-based validation schemas such as [jsonschema](https://www.npmjs.com/package/jsonschema) or [JOI](https://www.npmjs.com/package/joi)
 
 **Otherwise:** Your generosity and permissive approach greatly increases the attack surface and encourage the attacker to try out many inputs until it finds some combination that crashes the application
@@ -781,7 +780,6 @@ Developers in the project may not follow consistent code security practices, lea
 ## ![✔] 6.11. Support blacklisting JWT tokens
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-
 **TL;DR:** When using JWT tokens (for example, with [Passport.js](https://github.com/jaredhanson/passport)), by default there's no mechanism to prevent access from issued tokens. Once you discover some malicious user, there's no way to stop him from accessing the system as long as he holds a valid token. Mitigate this by implementing a blacklist of untrusted tokens that are validated on each request.
 
 **Otherwise:** Expired, or misplaced tokens could be used maliciously by a third party to access an application impersonating the owner of the token.
@@ -792,11 +790,12 @@ Developers in the project may not follow consistent code security practices, lea
 <br/><br/>
 
 
-## ![✔] 6.12. Implement express rate limiting for login routes
+## ![✔] 6.12. Limit the allowed login requests of each user
+<a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;DR:** A brute force protection middleware such as [express-brute](https://www.npmjs.com/package/express-brute) should be used inside an express application to prevent brute force/dictionary attacks on sensitive routes such as `/admin` or `/login` based on request properties such as IP address, or other identifiers such as body parameters.
+**TL;DR:** A brute force protection middleware such as [express-brute](https://www.npmjs.com/package/express-brute) should be used inside an express application to prevent brute force/dictionary attacks on sensitive routes such as `/admin` or `/login` based on request properties such as the user name, or other identifiers such as body parameters
 
-**Otherwise:** An attacker can issue unlimited automated password attempts to gain access to privileged accounts on an application.
+**Otherwise:** An attacker can issue unlimited automated password attempts to gain access to privileged accounts on an application
 
 🔗 [**Read More: Login rate limiting**](/sections/security/login-rate-limit.md)
 
@@ -804,8 +803,9 @@ Developers in the project may not follow consistent code security practices, lea
 
 
 ## ![✔] 6.13. Run Node.js as non-root user
+<a href="https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A5:Broken%20Access%20Access%20Control-green.svg" alt=""/></a>
 
-**TL;DR:** There are common scenario where nodejs runs as a root user with unlimited permissions. For example this is the default behaviour in Docker containers. It's recommended to create a non-root user and always run the process on this user behalf by invoking the container with the flag "-u username"
+**TL;DR:** There are common scenario where nodejs runs as a root user with unlimited permissions. For example this is the default behaviour in Docker containers. It's recommended to create a non-root user and either bake it into the Docker image (examples indside) or run the process on this user behalf by invoking the container with the flag "-u username"
 
 **Otherwise:** An attacker who manages to run a script on the server gets unlimited power over the local machine (e.g. change iptable and re-route traffic to his server)
 
@@ -816,8 +816,9 @@ Developers in the project may not follow consistent code security practices, lea
 
 
 ## ![✔] 6.14. Limit payload size using a reverse-proxy or a middleware
+<a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** DOS attacks of many varieties can be mitigated by limiting the body size of incoming requests to your web application.
+**TL;DR:** The bigger the body payload is, the harder your single thread works in processing it. This is an opprtunity for attackers to bring servers to their knees without tremendous amount of requests (DOS/DDOS attacks). Mitigate this limiting the body size of incoming requests on the edge side (e.g. firewall, ELB) or by configuring [express body parser](https://github.com/expressjs/body-parser) to accept only small-size payloads
 
 **Otherwise:** your application will have to deal with large requests, unable to process the other important work it has to accomplish, leading to performance
 implications and vulnerability towards DOS attacks
