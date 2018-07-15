@@ -34,13 +34,11 @@ HTML and other web languages mix content with executable code - a single HTML pa
 From the Blog [benramsey.com](https://benramsey.com/articles/escape-output/)
 > Data may leave your application in the form of HTML sent to a Web browser, SQL sent to a database, XML sent to an RSS reader, WML sent to a wireless device, etc. The possibilities are limitless. Each of these has its own set of special characters that are interpreted differently than the rest of the plain text received. Sometimes we want to send these special characters so that they are interpreted (HTML tags sent to a Web browser, for example), while other times (in the case of input from users or some other source), we don’t want the characters to be interpreted, so we need to escape them.
 
-Escaping is also sometimes referred to as encoding. In short, it is the process of representing data in a way that it will not be executed or interpreted. For example, HTML will render the following text in a Web browser as bold-faced text because the <strong> tags have special meaning:
-
+Escaping is also sometimes referred to as encoding. In short, it is the process of representing data in a way that it will not be executed or interpreted. For example, HTML will render the following text in a Web browser as bold-faced text because the <strong> tags have special meaning: 
 <strong>This is bold text.</strong>
 But, suppose I want to render the tags in the browser and avoid their interpretation. Then, I need to escape the angle brackets, which have special meaning in HTML. The following illustrates the escaped HTML:
 
 &lt;strong&gt;This is bold text.&lt;/strong&gt;
-
 
 
 <br/><br/>
