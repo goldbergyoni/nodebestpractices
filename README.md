@@ -894,22 +894,24 @@ implications and vulnerability towards DOS attacks
 <br/><br/>
 
 
-## ![✔] 6.20. Hide error details from client (e.g. default Express behaviour)
+## ![✔] 6.20. Hide error details from the client
+<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Use the default Express error handler, or ensure that custom error handlers avoid exposing error details to the client when running an application outside of development.
+**TL;DR:** Express default error handler hides the error details by default. However, great are the chances that you implement your own error handling logic with custom Error object (considered by many as a best practice). If you do, ensure not to return to the client the entire Error object which contains also some intimate details about the application
 
-**Otherwise:**
-Sensitive application details such as server filepaths, third party modules in use, and other internal workings of the application which could be exploited by an attacker from information found in a stack trace.
+**Otherwise:** Sensitive application details such as server filepaths, third party modules in use, and other internal workings of the application which could be exploited by an attacker from information found in a stack trace
 
 🔗 [**Read More: Hide error details from client**](/sections/security/hideerrors.md)
 
 <br/><br/>
 
 ## ![✔] 6.21. Modify session middleware settings
+<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Using the default settings for session middleware can be expose your app to module and framework specific hijacking attacks in a similar way to the  `X-Powered-By` header.
 
-**Otherwise:** Cookies could be sent over insecure connections, and an attacker can use session identification to identify the underlying framework of the web application, as well as module-specific vulnerabilities.
+**TL;DR:** Each webframework and technology has it own known weaknesses - telling to an attacker which web framework we use is a great help. Using the default settings for session middleware can be expose your app to module and framework specific hijacking attacks in a similar way to the `X-Powered-By` header. Try modifing anything that differentiates and reveals your tech stack (E.g. Node, Express)
+
+**Otherwise:** Cookies could be sent over insecure connections, and an attacker can use session identification to identify the underlying framework of the web application, as well as module-specific vulnerabilities
 
 🔗 [**Read More: Cookie and session security**](/sections/security/sessions.md)
 
