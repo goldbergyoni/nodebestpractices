@@ -673,7 +673,7 @@ Developers in the project may not follow consistent code security practices, lea
 <br/><br/>
 
 ## ![✔] 6.2. Limit concurrent requests using a balancer or a middleware
-<a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
+<a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
 **TL;DR:** DOS attacks are very popular and relativelly easy to conduct. Implement rate limiting using an external service such as cloud load balancers, cloud firewalls, NGINX, or for small and less critical apps you may also consider a rate limiting middleware  (e.g. [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
 
@@ -830,8 +830,10 @@ implications and vulnerability towards DOS attacks
 
 
 ## ![✔] 6.15. Avoid JavaScript eval statements
+<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** `eval` may be used to evaluate javascript code during run-time, but it is not just a performance concern but also an important security concern due to malicious javascript code that may be sourced from user input. Another language feature that should be avoided is `new Function` constructor. `setTimeout` and `setInterval` should never be passed dynamic javascript code either.
+
+**TL;DR:** `eval` is evil as it allows executing a custom javascript code during run time. This is not just a performance concern but also an important security concern due to malicious javascript code that may be sourced from user input. Another language feature that should be avoided is `new Function` constructor. `setTimeout` and `setInterval` should never be passed dynamic javascript code either.
 
 **Otherwise:** Malicious javascript code finds a way into a text passed into `eval` or other real-time evaluating javascript language functions, it will gain complete access to javascript permissions on the page, often manifesting as an XSS attack.
 
@@ -841,19 +843,22 @@ implications and vulnerability towards DOS attacks
 <br/><br/>
 
 
-## ![✔] 6.16. Prevent malicious regex from overloading your single thread execution
+## ![✔] 6.16. Prevent evil regex from overloading your single thread execution
+<a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Regular Expressions, while being handy, pose a real threat to JavaScript applications at large, and the Node.js platform in particular due to the fact that they require CPU cycles to compute a pattern test. Use the aforementioned [validator.js](https://github.com/chriso/validator.js) package to validate data instead of writing your own, or make use of [safe-regex](https://github.com/substack/safe-regex) to detect vulnerable regex patterns.
+**TL;DR:** Regular Expressions, while being handy, pose a real threat to JavaScript applications at large, and the Node.js platform in particular - a provided user input for text to match might require an outstanding amount of CPU cycles to process. Regex processing might be inefficient to an extent that a single request that validates 10 words can block the entire event loop for 6 seconds and set the CPU on 99% fire (!). For that reason, prefer 3rd validation packages like [validator.js](https://github.com/chriso/validator.js) instead of writing your own Regex patterns, or make use of [safe-regex](https://github.com/substack/safe-regex) to detect vulnerable regex patterns
 
-**Otherwise:** Poorly written regexes could be susceptible to Regular Expressions DoS attacks that will block the event loop completely. For example, the popular `moment` package was found vulnerable in Nov 2017.
+**Otherwise:** Poorly written regexes could be susceptible to Regular Expressions DoS attacks that will block the event loop completely. For example, the popular `moment` package was found vulnerable with evil Regex in Nov 2017
 
 🔗 [**Read More: Prevent malicious regex**](/sections/security/regex.md)
 
 <br/><br/>
 
 ## ![✔] 6.17. Avoid module loading require(someVariable) using a variable
+<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** Avoid requiring/importing another file with a path that was given as parameter due to the concern that it could have originated from user input. This rule can be extended for accessing files in general (i.e. `fs.readFile()`) or other sensitive resource access with dynamic variables originating from user input.
+
+**TL;DR:** Avoid requiring/importing another file with a path that was given as parameter due to the concern that it could have originated from user input. This rule can be extended for accessing files in general (i.e. `fs.readFile()`) or other sensitive resource access with dynamic variables originating from user input. [Eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) linter can catch such patterns and warn early enough
 
 **Otherwise:** Malicious user input could find its way to a parameter that is used to require tampered files, for example a previously uploaded file on the filesystem, or access already existing system files.
 
@@ -863,8 +868,9 @@ implications and vulnerability towards DOS attacks
 <br/><br/>
 
 ## ![✔] 6.18. Run unsafe code in a sandbox
+<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** When tasked to run external code that is given at run time (e.g. plugin), use any sort of 'sandbox' execution environment that isolates and guards the main code against the plugin. This can be achieved using a dedicated process, serverless environment or dedicated NPM packages that acts as a sandbox
+**TL;DR:** When tasked to run external code that is given at run time (e.g. plugin), use any sort of 'sandbox' execution environment that isolates and guards the main code against the plugin. This can be achieved using a dedicated process (e.g. cluster.fork()), serverless environment or dedicated NPM packages that acts as a sandbox
 
 
 **Otherwise:** A plugin can attack through an endless variety of options like infinite loops, memory overloading, and access to sensitive process environment variables
@@ -876,6 +882,8 @@ implications and vulnerability towards DOS attacks
 
 
 ## ![✔] 6.19. Take extra care when working with child processes
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
 **TL;DR:** Avoid using `child_process.exec` when possible or validate and sanitize input to mitigate shell injection attacks. Prefer using `child_process.execFile` which by definition will only execute a single command with a set of attributes and will not allow shell parameter expansion.
 
