@@ -660,7 +660,7 @@ All statements above will return false if used with `===`
 </div>
 
 ## ![✔] 6.1. Embrace linter security rules
-<a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
+<a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
 
 **TL;DR:** Make use of security linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to catch security coding issues (e.g. 'eval' usage) the earliest possible 
 
@@ -698,8 +698,9 @@ Developers in the project may not follow consistent code security practices, lea
 
 
 ## ![✔] 6.4. Prevent query injection vulnerabilities with ORM/ODM libraries
+<a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
-**TL;DR:** To prevent SQL injection and other malicious attacks, _always_ make use of an ORM/ODM or a database library that escapes data or supports named or indexed parameterized queries, and takes care of validating user input for expected types. **Never** just use JavaScript template strings or string concatenation to inject values into queries as this opens your application to a wide spectrum of vulnerabilities. All the reputable Node's data access libraries have a built-in protection for injection
+**TL;DR:** To prevent SQL/noSQL injection and other malicious attacks, _always_ make use of an ORM/ODM or a database library that escapes data or supports named or indexed parameterized queries, and takes care of validating user input for expected types. **Never** just use JavaScript template strings or string concatenation to inject values into queries as this opens your application to a wide spectrum of vulnerabilities. All the reputable Node's data access libraries (e.g. [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [Mongoose](https://github.com/Automattic/mongoose)) have a built-in protection for injection
 
 **Otherwise:** Unvalidated or unsanitized user input could lead to operator injection when working with MongoDB for NoSQL, and not using a proper sanitization system or ORM will easily allow SQL injection attacks, creating a giant vulnerability.
 
@@ -718,6 +719,7 @@ Developers in the project may not follow consistent code security practices, lea
 <br/><br/>
 
 ## ![✔] 6.6. Adjust the response HTTP headers for enhanced security
+<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
 **TL;DR:** Your application should be using secure headers to prevent attackers from using common attacks like cross-site scripting (XSS), clickjacking and other malicious attacks. These can be configured easily using modules like [helmet](https://www.npmjs.com/package/helmet).
 
@@ -729,8 +731,9 @@ Developers in the project may not follow consistent code security practices, lea
 <br/><br/>
 
 ## ![✔] 6.7. Constantly and automatically inspect for vulnerable dependencies
+<a href="https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Known%20Vulnerabilities%20-green.svg" alt=""/></a>
 
-**TL;DR:** With the npm ecosystem it is common to have many dependencies for a project. Dependencies should always be kept in check as new vulnerabilities are found. Use tools like [nsp](https://nodesecurity.io/) or [snyk](https://snyk.io/) to track, monitor and patch vulnerable dependencies. Integrate these tools with your CI setup so you catch a vulnerable dependency before it makes it to production.
+**TL;DR:** With the npm ecosystem it is common to have many dependencies for a project. Dependencies should always be kept in check as new vulnerabilities are found. Use tools like [npm audit](https://docs.npmjs.com/cli/audit), [nsp](https://nodesecurity.io/) or [snyk](https://snyk.io/) to track, monitor and patch vulnerable dependencies. Integrate these tools with your CI setup so you catch a vulnerable dependency before it makes it to production.
 
 **Otherwise:** An attacker could detect your web framework and attack with all it's known vulnerabilities.
 
@@ -740,6 +743,8 @@ Developers in the project may not follow consistent code security practices, lea
 
 
 ## ![✔] 6.8. Avoid using the Node.js Crypto library for passwords, use Bcrypt
+<a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
+
 
 **TL;DR:** Passwords or secrets (API keys) should be stored using a secure hash function like `bcrypt`, that should be a preferred choice over its JavaScript implementation due to performance and security reasons.
 
@@ -750,6 +755,7 @@ Developers in the project may not follow consistent code security practices, lea
 <br/><br/>
 
 ## ![✔] 6.9. Escape HTML, JS and CSS output 
+<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a>
 
 **TL;DR:** Untrusted data that is sent down to the browser might get executed instead of just being displayed, this is commonly being referred as XSS attack. Mitigate this by using dedicated libraries that explicitly mark the data as pure content that should never get executed (i.e. encoding, escaping)
 
@@ -760,8 +766,10 @@ Developers in the project may not follow consistent code security practices, lea
 <br/><br/>
 
 ## ![✔] 6.10. Validate the incoming JSON schemas
+<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7: XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a>
 
-**TL;DR:** Validate the incoming requests` body payload and ensure it qualifies the expectations, fail fast if it doesn't. To avoid tedious validation coding within each route you may use lightweight JSON-based validation schemas such as [jsonschema](https://www.npmjs.com/package/jsonschema) or [JOI](https://www.npmjs.com/package/joi)
+
+**TL;DR:** Validate the incoming requests' body payload and ensure it qualifies the expectations, fail fast if it doesn't. To avoid tedious validation coding within each route you may use lightweight JSON-based validation schemas such as [jsonschema](https://www.npmjs.com/package/jsonschema) or [JOI](https://www.npmjs.com/package/joi)
 
 **Otherwise:** Your generosity and permissive approach greatly increases the attack surface and encourage the attacker to try out many inputs until it finds some combination that crashes the application
 
@@ -771,8 +779,10 @@ Developers in the project may not follow consistent code security practices, lea
 
 
 ## ![✔] 6.11. Support blacklisting JWT tokens
+<a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;DR:** When using JWT(for example, with [Passport.js](https://github.com/jaredhanson/passport)), a custom implementation for blacklisting untrusted or invalid tokens is required to revoke the token's access, due to the completely stateless approach of JWT.
+
+**TL;DR:** When using JWT tokens (for example, with [Passport.js](https://github.com/jaredhanson/passport)), by default there's no mechanism to prevent access from issued tokens. Once you discover some malicious user, there's no way to stop him from accessing the system as long as he holds a valid token. Mitigate this by implementing a blacklist of untrusted tokens that are validated on each request.
 
 **Otherwise:** Expired, or misplaced tokens could be used maliciously by a third party to access an application impersonating the owner of the token.
 
