@@ -780,7 +780,7 @@ Developers in the project may not follow consistent code security practices, lea
 
 **Otherwise:** An attacker can issue unlimited automated password attempts to gain access to privileged accounts on an application.
 
-🔗 [**Read More: Login rate limiting **](/sections/security/login-rate-limit.md)
+🔗 [**Read More: Login rate limiting**](/sections/security/login-rate-limit.md)
 
 <br/><br/>
 
@@ -792,7 +792,7 @@ Developers in the project may not follow consistent code security practices, lea
 **Otherwise:** An attacker who manages to run a script on the server gets unlimited power over the local machine (e.g. change iptable and re-route traffic to his server)
 
 
-🔗 [**Read More:**](/sections/security/non-root-user.md)
+🔗 [**Read More: Run Node.js as non-root user**](/sections/security/non-root-user.md)
 
 <br/><br/>
 
@@ -805,30 +805,30 @@ Developers in the project may not follow consistent code security practices, lea
 implications and vulnerability towards DOS attacks
 
 
-🔗 [**Read More:**](/sections/security/requestpayloadsizelimit.md)
+🔗 [**Read More: Limit payload size**](/sections/security/requestpayloadsizelimit.md)
 
 <br/><br/>
 
 
-## ![✔] 6.15. Avoid JS eval statements
+## ![✔] 6.15. Avoid JavaScript eval statements
 
 **TL;DR:** `eval` may be used to evaluate javascript code during run-time, but it is not just a performance concern but also an important security concern due to malicious javascript code that may be sourced from user input. Another language feature that should be avoided is `new Function` constructor. `setTimeout` and `setInterval` should never be passed dynamic javascript code either.
 
 **Otherwise:** Malicious javascript code finds a way into a text passed into `eval` or other real-time evaluating javascript language functions, it will gain complete access to javascript permissions on the page, often manifesting as an XSS attack.
 
 
-🔗 [**Read More: Avoid JS eval statements**](/sections/security/avoideval.md)
+🔗 [**Read More: Avoid JavaScript eval statements**](/sections/security/avoideval.md)
 
 <br/><br/>
 
 
-## ![✔] 6.16. Prevent malicious RegEx from overloading your single thread execution
+## ![✔] 6.16. Prevent malicious regex from overloading your single thread execution
 
 **TL;DR:** Regular Expressions, while being handy, pose a real threat to JavaScript applications at large, and the Node.js platform in particular due to the fact that they require CPU cycles to compute a pattern test. Use the aforementioned [validator.js](https://github.com/chriso/validator.js) package to validate data instead of writing your own, or make use of [safe-regex](https://github.com/substack/safe-regex) to detect vulnerable regex patterns.
 
 **Otherwise:** Poorly written regexes could be susceptible to Regular Expressions DoS attacks that will block the event loop completely. For example, the popular `moment` package was found vulnerable in Nov 2017.
 
-🔗 [**Read More:**](/sections/security/regex.md)
+🔗 [**Read More: Prevent malicious regex**](/sections/security/regex.md)
 
 <br/><br/>
 
@@ -851,7 +851,7 @@ implications and vulnerability towards DOS attacks
 **Otherwise:** A plugin can attack through an endless variety of options like infinite loops, memory overloading, and access to sensitive process environment variables
 
 
-🔗 [**Read More:**](#)
+🔗 [**Read More: Run unsafe code in a sandbox**](/sections/security/sandbox.md)
 
 <br/><br/>
 
