@@ -655,13 +655,20 @@ All statements above will return false if used with `===`
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
 # `6. Security Best Practices`
+<div align="center">
+<img src="https://img.shields.io/badge/OWASP%20Threats-Top%2010-green.svg" alt="53 items"/>
+</div>
 
 ## ![✔] 6.1. Embrace linter security rules
+<div align="center">
+<img src="https://img.shields.io/badge/OWASP%20Threat-Injection-green.svg" alt=""/> <img src="https://img.shields.io/badge/OWASP%20Threat-Broken%20Authentication-green.svg" alt=""/>
+</div>
 
-**TL;DR:** Make use of security linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to enforce a policy for secure code (e.g. no use of eval, require with variables, etc).
+**TL;DR:** Make use of security linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to catch security issues such as 'eval' usage the earliest possible 
 
 **Otherwise:**
-Developers in the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories.
+Developers in the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories
+
 
 🔗 [**Read More: Lint rules**](sections/security/lintrules.md)
 
@@ -669,9 +676,9 @@ Developers in the project may not follow consistent code security practices, lea
 
 ## ![✔] 6.2. Limit concurrent requests using a balancer or a middleware
 
-**TL;DR:** Implement rate limiting using an external service such as NGINX, or if that is not possible use a rate limiting middleware within the application
+**TL;DR:** Implement rate limiting using an external service such as cloud load balancers, cloud firewalls, NGINX, or if that is not possible use a rate limiting middleware within the application
 
-**Otherwise:** An application could be subject to an attack resulting in a denial of service where real users receive degraded service, or an unavailable application.
+**Otherwise:** An application could be subject to an attack resulting in a denial of service where real users receive degraded service, or an unavailable application
 
 🔗 [**Read More: Implement rate limiting**](sections/security/limitrequests.md)
 
@@ -679,7 +686,7 @@ Developers in the project may not follow consistent code security practices, lea
 
 ## ![✔] 6.3 Extract secrets from config files or use NPM package that encrypts them
 
-**TL;DR:** Never store plain-text secrets in configuration files or source code. Instead, make use of secrets management systems like Vault, Docker Secrets, or inject secrets as environment variables accessible to an application. As a last result, storing secrets in source control must be encrypted, and managed (rolling keys, expiring, auditing, etc). Make use of pre-commit/push hooks to check for accidental commit of secrets.
+**TL;DR:** Never store plain-text secrets in configuration files or source code. Instead, make use of secrets management systems like Vault products, Kubernetes/Docker Secrets, or inject secrets as environment variables accessible to an application. As a last result, storing secrets in source control must be encrypted, and managed (rolling keys, expiring, auditing, etc). Make use of pre-commit/push hooks to check for accidental commit of secrets
 
 **Otherwise:** Source control for even private repositories, can mistakenly be made public, at which point all secret has been exposed outside. Access to source control for an external party will inadvertently provide access to related systems (database, apis, etc).
 
@@ -689,9 +696,9 @@ Developers in the project may not follow consistent code security practices, lea
 <br/><br/>
 
 
-## ![✔] 6.4. Prevent query injection vulnerabilities with ORM/ODM libraries or other DAL packages
+## ![✔] 6.4. Prevent query injection vulnerabilities with ORM/ODM libraries
 
-**TL;DR:** To prevent SQL injection and other malicious attacks, _always_ make use of an ORM/ODM or a database library that escapes data or supports named or indexed parameterized queries, and takes care of validating user input for expected types. **Never** just use JavaScript template strings or string concatenation to inject values into queries as this opens your application to a wide spectrum of vulnerabilities.
+**TL;DR:** To prevent SQL injection and other malicious attacks, _always_ make use of an ORM/ODM or a database library that escapes data or supports named or indexed parameterized queries, and takes care of validating user input for expected types. **Never** just use JavaScript template strings or string concatenation to inject values into queries as this opens your application to a wide spectrum of vulnerabilities. All the reputable Node's data access libraries have a built-in protection for injection
 
 **Otherwise:** Unvalidated or unsanitized user input could lead to operator injection when working with MongoDB for NoSQL, and not using a proper sanitization system or ORM will easily allow SQL injection attacks, creating a giant vulnerability.
 
@@ -702,7 +709,7 @@ Developers in the project may not follow consistent code security practices, lea
 
 ## ![✔] 6.5. Collection of common generic security best practices (15 items)
 
-**TL;DR:** There are many built-in and external ways to secure your Node.js applications starting from simple steps like running your server with ssl/tls enabled to more advanced features.
+**TL;DR:** These is a collection of security advice that are not related direcrtly to Nodejs - the implenentation is Node is no difference than in any other language. Click read more to skim through. 
 
 
 🔗 [**Read More: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
