@@ -673,10 +673,11 @@ Developers in the project may not follow consistent code security practices, lea
 <br/><br/>
 
 ## ![✔] 6.2. Limit concurrent requests using a balancer or a middleware
+<a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Implement rate limiting using an external service such as cloud load balancers, cloud firewalls, NGINX, or if that is not possible use a rate limiting middleware within the application
+**TL;DR:** DOS attacks are very popular and relativelly easy to conduct. Implement rate limiting using an external service such as cloud load balancers, cloud firewalls, NGINX, or for small and less critical apps you may also use a rate limiting middleware within the application (e.g. [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
 
-**Otherwise:** An application could be subject to an attack resulting in a denial of service where real users receive degraded service, or an unavailable application
+**Otherwise:** An application could be subject to an attack resulting in a deni](https://www.npmjs.com/package/express-rate-limit)al of service where real users receive degraded service, or an unavailable application
 
 🔗 [**Read More: Implement rate limiting**](sections/security/limitrequests.md)
 
