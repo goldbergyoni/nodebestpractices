@@ -703,7 +703,7 @@ Full Stack Developer based in New Zealand, interested in architecting and buildi
 
 This repository is being kept up to date thanks to the help from the community. We appreciate any contribution, from a single word fix to a new best practice. Below is a list of everyone who contributed to this project. A 🌻 marks a successful pull request and a ⭐ marks an approved new best practice
 
-### Flowers <br/>
+### Flowers
 
 🌻 [Kevin Rambaud](https://github.com/kevinrambaud),
 🌻 [Michael Fine](https://github.com/mfine15),
@@ -744,11 +744,11 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Ye Min Htut](https://github.com/ymhtut),
 🌻 [cwar](https://github.com/cwar),
 🌻 [Yuwei](https://github.com/keyfoxth),
-🌻 [Utkarsh Bhatt](https://github.com/utkarshbhatt12)
-🌻 [Duarte Mendes](https://github.com/duartemendes)
-🌻 [Sagir Khan](https://github.com/sagirk)
-🌻 [Jason Kim](https://github.com/serv)
-
+🌻 [Utkarsh Bhatt](https://github.com/utkarshbhatt12),
+🌻 [Duarte Mendes](https://github.com/duartemendes),
+🌻 [Sagir Khan](https://github.com/sagirk),
+🌻 [Jason Kim](https://github.com/serv),
+🌻 [Mitja O.](https://github.com/Max101)
 
 ### Stars <br/>
 
