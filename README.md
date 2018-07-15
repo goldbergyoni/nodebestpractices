@@ -660,10 +660,9 @@ All statements above will return false if used with `===`
 </div>
 
 ## ![✔] 6.1. Embrace linter security rules
-<img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20Injection%20-green.svg" alt=""/><img src="https://img.shields.io/badge/⚙%20OWASP%20Threats%20-%20Broken%20Authentication%20-blue.svg" alt=""/>
-<img src="https://img.shields.io/badge/OWASP%20Threat-Injection-green.svg" alt=""/> <img src="https://img.shields.io/badge/OWASP%20Threat-Broken%20Authentication-green.svg" alt=""/>
+<a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20Injection%20-green.svg" alt=""/></a> <img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/>
 
-**TL;DR:** Make use of security linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to catch security issues such as 'eval' usage the earliest possible 
+**TL;DR:** Make use of security linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to catch security coding issues (e.g. 'eval' usage) the earliest possible 
 
 **Otherwise:**
 Developers in the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories
