@@ -660,9 +660,9 @@ All statements above will return false if used with `===`
 </div>
 
 ## ![✔] 6.1. Embrace linter security rules
-<div align="center">
+<img src="https://img.shields.io/badge/⚙%20OWASP%20Threats%20-%20Injection%20-blue.svg" alt=""/>
+<img src="https://img.shields.io/badge/⚙%20OWASP%20Threats%20-%20Broken%20Authentication%20-blue.svg" alt=""/>
 <img src="https://img.shields.io/badge/OWASP%20Threat-Injection-green.svg" alt=""/> <img src="https://img.shields.io/badge/OWASP%20Threat-Broken%20Authentication-green.svg" alt=""/>
-</div>
 
 **TL;DR:** Make use of security linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to catch security issues such as 'eval' usage the earliest possible 
 
