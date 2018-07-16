@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2053%20Best%20practices-blue.svg" alt="54 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Apr%2023%202018-green.svg" alt="Last update: July 9th, 2018"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.11-brightgreen.svg" alt="Updated for Node v.8.13">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2054%20Best%20practices-blue.svg" alt="54 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20July%2015%202018-green.svg" alt="Last update: July 15th, 2018"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.11.3%20LTS-brightgreen.svg" alt="Updated for Node 8.11.3 LTS">
 </div>
 
 <br/>
@@ -703,7 +703,7 @@ Full Stack Developer based in New Zealand, interested in architecting and buildi
 
 This repository is being kept up to date thanks to the help from the community. We appreciate any contribution, from a single word fix to a new best practice. Below is a list of everyone who contributed to this project. A 🌻 marks a successful pull request and a ⭐ marks an approved new best practice
 
-### Flowers <br/>
+### Flowers
 
 🌻 [Kevin Rambaud](https://github.com/kevinrambaud),
 🌻 [Michael Fine](https://github.com/mfine15),
@@ -744,11 +744,12 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Ye Min Htut](https://github.com/ymhtut),
 🌻 [cwar](https://github.com/cwar),
 🌻 [Yuwei](https://github.com/keyfoxth),
-🌻 [Utkarsh Bhatt](https://github.com/utkarshbhatt12)
-🌻 [Duarte Mendes](https://github.com/duartemendes)
-🌻 [Sagir Khan](https://github.com/sagirk)
-🌻 [Jason Kim](https://github.com/serv)
-
+🌻 [Utkarsh Bhatt](https://github.com/utkarshbhatt12),
+🌻 [Duarte Mendes](https://github.com/duartemendes),
+🌻 [Sagir Khan](https://github.com/sagirk),
+🌻 [Jason Kim](https://github.com/serv),
+🌻 [Mitja O.](https://github.com/Max101),
+🌻 [Sandro Miguel Marques](https://github.com/SandroMiguel)
 
 ### Stars <br/>
 
