@@ -62,5 +62,16 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 - Protect against DDoS attacks using HTTP(S) and TCP load balancers
 - Perform periodic penetration tests by specialized agencies
 
+## ![✔] OWASP A3: Sensitive Data Exposure
+
+- Only accept SSL/TLS connections, enforce Strict-Transport-Security using headers
+- Separate the network into segments (i.e. subnets) and ensure each node has the least necessary networking access permissions
+- Group all services/instances that need no internet access and explictly disallow any outgoing connection (a.k.a private subnet)
+- Store all secrets in a vault products like AWS KMS, HashiCorp Vault or Google Cloud KMS
+- Lock down sensitive instance metadata using metadata
+- Encrypt data in transit when it leaves a physical boundary
+- Don't include secrets in log statements
+- Avoid showing plain passwords in the frontend, take necessary measures in the backend and never store sensitive information in plaintext
+
 
 <br/><br/><br/>
