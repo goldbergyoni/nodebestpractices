@@ -81,5 +81,16 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 - Log and audit each API call to cloud and management services (e.g who deleted the S3 bucket?) using services like AWS CloudTrail
 - Run the security checker of your cloud provider (e.g. AWS security trust advisor)
 
+## ![✔] OWASP A10: Insufficient Logging & Monitoring
+
+- Alert on remarkable or suspicious auditing events like user login, new user creation, permission change, etc
+
+- Alert on irregular amount of login failures (or equivelant actions like forgot password)
+
+- Include the time and username that initiated the update in each DB record
+
+## ![✔] OWASP A7: Cross-Site-Scripting (XSS)
+
+- Instruct the browser to load resources from the same domain only, using the Content-Security-Policy http header
 
 <br/><br/><br/>
