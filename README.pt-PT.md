@@ -174,13 +174,16 @@ uma abordagem equilibrada baseada no contexto.
 
 <br/><br/>
 
-## ![✔] 2.4 Handle errors centrally, not within an Express middleware
+## ![✔] 2.4 Tratar os erros de forma centralizada, não dentro de um middleware Express
 
-**TL;DR:** Error handling logic such as mail to admin and logging should be encapsulated in a dedicated and centralized object that all endpoints (e.g. Express middleware, cron jobs, unit-testing) call when an error comes in
+**TL;DR:** A lógica de tratamento de erros, como enviar emails para o administrador e _logging_, deve ser encapsulada
+ num objeto dedicado e centralizado que todos os _endpoints_ (por exemplo, _middleware_ do Express, _cron jobs_, 
+ testes unitários) invocam quando é recebido um erro.
 
-**Caso contrário:** Not handling errors within a single place will lead to code duplication and probably to improperly handled errors
+**Caso contrário:** Não tratar os erros num único local levará à duplicação de código e, provavelmente, a erros 
+tratados incorretamente.
 
-🔗 [**Mais informações: handling errors in a centralized place**](/sections/errorhandling/centralizedhandling.md)
+🔗 [**Mais informações: tratar os erros num local centralizado**](/sections/errorhandling/centralizedhandling.md)
 
 <br/><br/>
 
