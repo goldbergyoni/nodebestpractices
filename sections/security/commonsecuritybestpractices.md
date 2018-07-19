@@ -43,7 +43,12 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 - On login failure, don't let the user know whether the username or password verification failed, just return a common auth error
 - Consider using a centralized user management system to avoid managing multiple account per employee (e.g. GitHub, AWS, Jenkins, etc) and to benefit from a battle-tested user management system
 
+## ![✔] OWASP A5:  Broken access control
 
+- Respect the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)  -  every component and DevOps person should only have access to the necessary information and resources
+- **Never** work with the console/root (full-privilege) account except for account management
+- Run all instances/containers on behalf of a role/service account
+- Assign permissions to groups and not to users. This should make permission management easier and more transparent for most cases
 
 
 <br/><br/><br/>
