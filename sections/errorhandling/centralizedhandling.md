@@ -47,6 +47,7 @@ function errorHandler(){
         await determineIfOperationalError;
     }
 }
+```
 
 ### Code Example – Anti Pattern: handling errors within the middleware
 
