@@ -44,6 +44,8 @@ function errorHandler(){
         await logger.logError(err);
         await sendMailToAdminIfCritical;
         await saveInOpsQueueIfCritical;
+        await determineIfOperationalError;
+    }
 
 ### Code Example – Anti Pattern: handling errors within the middleware
 
