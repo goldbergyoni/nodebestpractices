@@ -27,7 +27,7 @@ catch (error) {
 
 // Error handling middleware, we delegate the handling to the centralized error handler
 app.use(async (err, req, res, next) => {
-    const isOperationalError = awaiterrorHandler.handleError(err)
+    const isOperationalError = await errorHandler.handleError(err)
     if (!isOperationalError)
         next(err);
 });
