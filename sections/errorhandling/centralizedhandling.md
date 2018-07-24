@@ -46,6 +46,7 @@ function errorHandler(){
         await saveInOpsQueueIfCritical;
         await determineIfOperationalError;
     }
+}
 
 ### Code Example – Anti Pattern: handling errors within the middleware
 
