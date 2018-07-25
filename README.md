@@ -925,6 +925,15 @@ implications and vulnerability towards DOS attacks
 
 🔗 [**Read More: Cookie and session security**](/sections/security/sessions.md)
 
+<br/><br/>
+
+## ![✔] 6.23. Avoid DOS attacks by explicitly setting when a process should crash
+<a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
+
+**TL;DR:** The Node process will crash when errors are not handled. Many best practices even recommend to exit eventhough an error was caught and got handled. Express, for example, will crash on any asynchronous error - unless you wrap routes with a catch clause. This open a very sweet attack spot for attacker who can just recognize what input make the process crash and issue the same request every 1 second. There's no instant remedy for this but few techniques can mitigate the pain: Alert with critical severity anytime a process crash due to unhandled error, validate the input and avoid crashing the process due to invalid input, wrap all routes with a catch and consider not to crash when an error originated within a request (as opposed that happens globally on the application start or outside an http request context)
+
+**Otherwise:** This is just an educated guess: given many Nodejs applications, if we try passing an empty json to all POST http requests - a handful of applications will crash. At that point, we can just repeat sending the same request to take the application down easily
+
 <br/><br/><br/>
 
 
