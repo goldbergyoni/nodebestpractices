@@ -1,4 +1,4 @@
-# Support blacklisting JWT tokens
+# Support blacklisting JWTs
 
 ### One Paragraph Explainer
 
