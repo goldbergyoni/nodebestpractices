@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2054%20Best%20practices-blue.svg" alt="54 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20July%2015%202018-green.svg" alt="Last update: July 15th, 2018"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.11.3%20LTS-brightgreen.svg" alt="Updated for Node 8.11.3 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2054%20Best%20practices-blue.svg" alt="73 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20July%2015%202018-green.svg" alt="Last update: July 25th, 2018"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.11.3%20LTS-brightgreen.svg" alt="Updated for Node 8.11.3 LTS">
 </div>
 
 <br/>
@@ -39,7 +39,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 3.  [Code Style Practices (12) ](#3-code-style-practices)
 4.  [Testing And Overall Quality Practices (8) ](#4-testing-and-overall-quality-practices)
 5.  [Going To Production Practices (17) ](#5-going-to-production-practices)
-6.  Security Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
+6.  [Security Practices (23)](#6-security-practices)
 7.  Performance Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 
 <br/><br/><br/>
@@ -638,11 +638,295 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `Security Practices`
+# `6. Security Practices`
+<div align="center">
+<img src="https://img.shields.io/badge/OWASP%20Threats-Top%2010-green.svg" alt="53 items"/>
+</div>
+
+## ![✔] 6.1. Embrace linter security rules
+<a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
+
+**TL;DR:** Make use of security linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to catch security issues the earliest possible - while their being coded. This can help catching security weaknesses like using eval, invoking a child process or importing a module with a string literal (e.g. user input). Click 'Read more' below to see code examples that will get caught by a security linter
+
+**Otherwise:** What could have been a straightforward security weakness during development becomes a major issue in production. Also, the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories
+
+
+🔗 [**Read More: Lint rules**](sections/security/lintrules.md)
+
+<br/><br/>
+
+## ![✔] 6.2. Limit concurrent requests using a balancer or a middleware
+<a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
+
+**TL;DR:** DOS attacks are very popular and relativelly easy to conduct. Implement rate limiting using an external service such as cloud load balancers, cloud firewalls, NGINX, or for small and less critical apps you may also consider a rate limiting middleware  (e.g. [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
+
+**Otherwise:** An application could be subject to an attack resulting in a denial of service where real users receive degraded service, or an unavailable application
+
+🔗 [**Read More: Implement rate limiting**](sections/security/limitrequests.md)
+
+<br/><br/>
+
+## ![✔] 6.3 Extract secrets from config files or use NPM package that encrypts them
+<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A3:Sensitive%20Data%20Exposure%20-green.svg" alt=""/></a>
+
+
+**TL;DR:** Never store plain-text secrets in configuration files or source code. Instead, make use of secrets management systems like Vault products, Kubernetes/Docker Secrets, or using environment variables. As a last result, storing secrets in source control must be encrypted, and managed (rolling keys, expiring, auditing, etc). Make use of pre-commit/push hooks to check for accidental commit of secrets
+
+**Otherwise:** Source control for even private repositories, can mistakenly be made public, at which point all secret has been exposed outside. Access to source control for an external party will inadvertently provide access to related systems (database, apis, etc).
+
+
+🔗 [**Read More: Secret management**](sections/security/secretmanagement.md)
+
+<br/><br/>
+
+
+## ![✔] 6.4. Prevent query injection vulnerabilities with ORM/ODM libraries
+<a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
+
+**TL;DR:** To prevent SQL/noSQL injection and other malicious attacks, _always_ make use of an ORM/ODM or a database library that escapes data or supports named or indexed parameterized queries, and takes care of validating user input for expected types. **Never** just use JavaScript template strings or string concatenation to inject values into queries as this opens your application to a wide spectrum of vulnerabilities. All the reputable Node's data access libraries (e.g. [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [Mongoose](https://github.com/Automattic/mongoose)) have a built-in protection for injection
+
+**Otherwise:** Unvalidated or unsanitized user input could lead to operator injection when working with MongoDB for NoSQL, and not using a proper sanitization system or ORM will easily allow SQL injection attacks, creating a giant vulnerability.
+
+🔗 [**Read More: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.md)
+
+<br/><br/>
+
+
+## ![✔] 6.5. Collection of common generic security best practices (15 items)
+
+**TL;DR:** These is a collection of security advice that are not related direcrtly to Nodejs - the implenentation is Node is no difference than in any other language. Click read more to skim through. 
+
+
+🔗 [**Read More: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
+
+<br/><br/>
+
+## ![✔] 6.6. Adjust the response HTTP headers for enhanced security
+<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
+
+**TL;DR:** Your application should be using secure headers to prevent attackers from using common attacks like cross-site scripting (XSS), clickjacking and other malicious attacks. These can be configured easily using modules like [helmet](https://www.npmjs.com/package/helmet).
+
+**Otherwise:** Attackers could perform attacks on your application's users, leading to insecurity
+
+
+🔗 [**Read More: Using secure headers in your application**](/sections/security/secureheaders.md)
+
+<br/><br/>
+
+## ![✔] 6.7. Constantly and automatically inspect for vulnerable dependencies
+<a href="https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Known%20Vulnerabilities%20-green.svg" alt=""/></a>
+
+**TL;DR:** With the npm ecosystem it is common to have many dependencies for a project. Dependencies should always be kept in check as new vulnerabilities are found. Use tools like [npm audit](https://docs.npmjs.com/cli/audit), [nsp](https://nodesecurity.io/) or [snyk](https://snyk.io/) to track, monitor and patch vulnerable dependencies. Integrate these tools with your CI setup so you catch a vulnerable dependency before it makes it to production.
+
+**Otherwise:** An attacker could detect your web framework and attack with all it's known vulnerabilities.
+
+🔗 [**Read More: Dependency security**](/sections/security/dependencysecurity.md)
+
+<br/><br/>
+
+
+## ![✔] 6.8. Avoid using the Node.js Crypto library for passwords, use Bcrypt
+<a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
+
+
+**TL;DR:** Passwords or secrets (API keys) should be stored using a secure hash function like `bcrypt`, that should be a preferred choice over its JavaScript implementation due to performance and security reasons.
+
+**Otherwise:** Passwords or secrets that are persisted without using a secure hash function are vulnerable to brute forcing and dictionary attacks that will lead to their disclosure eventually.
+
+🔗 [**Read More: Use Bcrypt**](/sections/security/bcryptpasswords.md)
+
+<br/><br/>
+
+## ![✔] 6.9. Escape HTML, JS and CSS output 
+<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a>
+
+**TL;DR:** Untrusted data that is sent down to the browser might get executed instead of just being displayed, this is commonly being referred as XSS attack. Mitigate this by using dedicated libraries that explicitly mark the data as pure content that should never get executed (i.e. encoding, escaping)
+
+**Otherwise:** An attacker might store a malicious JS code in your DB which will then be sent as-is to the poor client
+
+🔗 [**Read More: Escape output**](/sections/security/escape-output.md)
+
+<br/><br/>
+
+## ![✔] 6.10. Validate the incoming JSON schemas
+<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7: XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a>
+
+**TL;DR:** Validate the incoming requests' body payload and ensure it qualifies the expectations, fail fast if it doesn't. To avoid tedious validation coding within each route you may use lightweight JSON-based validation schemas such as [jsonschema](https://www.npmjs.com/package/jsonschema) or [JOI](https://www.npmjs.com/package/joi)
+
+**Otherwise:** Your generosity and permissive approach greatly increases the attack surface and encourage the attacker to try out many inputs until it finds some combination that crashes the application
+
+🔗 [**Read More: Validate the incoming JSON schemas**](/sections/security/validation.md)
+
+<br/><br/>
+
+
+## ![✔] 6.11. Support blacklisting JWT tokens
+<a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
+
+**TL;DR:** When using JWT tokens (for example, with [Passport.js](https://github.com/jaredhanson/passport)), by default there's no mechanism to prevent access from issued tokens. Once you discover some malicious user, there's no way to stop him from accessing the system as long as he holds a valid token. Mitigate this by implementing a blacklist of untrusted tokens that are validated on each request.
+
+**Otherwise:** Expired, or misplaced tokens could be used maliciously by a third party to access an application impersonating the owner of the token.
+
+
+🔗 [**Read More: Blacklist JWT Tokens**](/sections/security/revokejwt.md)
+
+<br/><br/>
+
+
+## ![✔] 6.12. Limit the allowed login requests of each user
+<a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
+
+**TL;DR:** A brute force protection middleware such as [express-brute](https://www.npmjs.com/package/express-brute) should be used inside an express application to prevent brute force/dictionary attacks on sensitive routes such as `/admin` or `/login` based on request properties such as the user name, or other identifiers such as body parameters
+
+**Otherwise:** An attacker can issue unlimited automated password attempts to gain access to privileged accounts on an application
+
+🔗 [**Read More: Login rate limiting**](/sections/security/login-rate-limit.md)
+
+<br/><br/>
+
+
+## ![✔] 6.13. Run Node.js as non-root user
+<a href="https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A5:Broken%20Access%20Access%20Control-green.svg" alt=""/></a>
+
+**TL;DR:** There are common scenario where nodejs runs as a root user with unlimited permissions. For example this is the default behaviour in Docker containers. It's recommended to create a non-root user and either bake it into the Docker image (examples indside) or run the process on this user behalf by invoking the container with the flag "-u username"
+
+**Otherwise:** An attacker who manages to run a script on the server gets unlimited power over the local machine (e.g. change iptable and re-route traffic to his server)
+
+
+🔗 [**Read More: Run Node.js as non-root user**](/sections/security/non-root-user.md)
+
+<br/><br/>
+
+
+## ![✔] 6.14. Limit payload size using a reverse-proxy or a middleware
+<a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
+
+**TL;DR:** The bigger the body payload is, the harder your single thread works in processing it. This is an opprtunity for attackers to bring servers to their knees without tremendous amount of requests (DOS/DDOS attacks). Mitigate this limiting the body size of incoming requests on the edge side (e.g. firewall, ELB) or by configuring [express body parser](https://github.com/expressjs/body-parser) to accept only small-size payloads
+
+**Otherwise:** your application will have to deal with large requests, unable to process the other important work it has to accomplish, leading to performance
+implications and vulnerability towards DOS attacks
+
+
+🔗 [**Read More: Limit payload size**](/sections/security/requestpayloadsizelimit.md)
+
+<br/><br/>
+
+
+## ![✔] 6.15. Avoid JavaScript eval statements
+<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
+
+
+**TL;DR:** `eval` is evil as it allows executing a custom javascript code during run time. This is not just a performance concern but also an important security concern due to malicious javascript code that may be sourced from user input. Another language feature that should be avoided is `new Function` constructor. `setTimeout` and `setInterval` should never be passed dynamic javascript code either.
+
+**Otherwise:** Malicious javascript code finds a way into a text passed into `eval` or other real-time evaluating javascript language functions, it will gain complete access to javascript permissions on the page, often manifesting as an XSS attack.
+
+
+🔗 [**Read More: Avoid JavaScript eval statements**](/sections/security/avoideval.md)
+
+<br/><br/>
+
+
+## ![✔] 6.16. Prevent evil regex from overloading your single thread execution
+<a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
+
+**TL;DR:** Regular Expressions, while being handy, pose a real threat to JavaScript applications at large, and the Node.js platform in particular - a provided user input for text to match might require an outstanding amount of CPU cycles to process. Regex processing might be inefficient to an extent that a single request that validates 10 words can block the entire event loop for 6 seconds and set the CPU on 99% fire (!). For that reason, prefer 3rd validation packages like [validator.js](https://github.com/chriso/validator.js) instead of writing your own Regex patterns, or make use of [safe-regex](https://github.com/substack/safe-regex) to detect vulnerable regex patterns
+
+**Otherwise:** Poorly written regexes could be susceptible to Regular Expressions DoS attacks that will block the event loop completely. For example, the popular `moment` package was found vulnerable with evil Regex in Nov 2017
+
+🔗 [**Read More: Prevent malicious regex**](/sections/security/regex.md)
+
+<br/><br/>
+
+## ![✔] 6.17. Avoid module loading require(someVariable) using a variable
+<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
+
+
+**TL;DR:** Avoid requiring/importing another file with a path that was given as parameter due to the concern that it could have originated from user input. This rule can be extended for accessing files in general (i.e. `fs.readFile()`) or other sensitive resource access with dynamic variables originating from user input. [Eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) linter can catch such patterns and warn early enough
+
+**Otherwise:** Malicious user input could find its way to a parameter that is used to require tampered files, for example a previously uploaded file on the filesystem, or access already existing system files.
+
+
+🔗 [**Read More: Safe module loading**](/sections/security/safemoduleloading.md)
+
+<br/><br/>
+
+## ![✔] 6.18. Run unsafe code in a sandbox
+<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
+
+**TL;DR:** When tasked to run external code that is given at run time (e.g. plugin), use any sort of 'sandbox' execution environment that isolates and guards the main code against the plugin. This can be achieved using a dedicated process (e.g. cluster.fork()), serverless environment or dedicated NPM packages that acts as a sandbox
+
+
+**Otherwise:** A plugin can attack through an endless variety of options like infinite loops, memory overloading, and access to sensitive process environment variables
+
+
+🔗 [**Read More: Run unsafe code in a sandbox**](/sections/security/sandbox.md)
+
+<br/><br/>
+
+
+## ![✔] 6.19. Take extra care when working with child processes
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
+
+**TL;DR:** Avoid using child processes when possible and validate and sanitize input to mitigate shell injection attacks if you still have to. Prefer using `child_process.execFile` which by definition will only execute a single command with a set of attributes and will not allow shell parameter expansion.
+
+**Otherwise:** Naive use of child processes could result in remote command execution or shell injection attacks due to malicious user input passed to an unsanitized system command.
+
+🔗 [**Read More: Be cautious when working with child processes**](/sections/security/childprocesses.md)
+
+<br/><br/>
+
+
+## ![✔] 6.20. Hide error details from the client
+<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
+
+**TL;DR:** Express default error handler hides the error details by default. However, great are the chances that you implement your own error handling logic with custom Error object (considered by many as a best practice). If you do, ensure not to return to the client the entire Error object which contains also some intimate details about the application
+
+**Otherwise:** Sensitive application details such as server filepaths, third party modules in use, and other internal workings of the application which could be exploited by an attacker from information found in a stack trace
+
+🔗 [**Read More: Hide error details from client**](/sections/security/hideerrors.md)
+
+<br/><br/>
+
+## ![✔] 6.21. Configure 2FA for NPM or Yarn
+<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
+
+
+**TL;DR:** Though any step in the development chain should be protected with MFA (multi-factor authentication), NPM/Yarn are a sweet opportunity for attackers who can get their hands on some developer's password. Using a developer credentials, attackers can inject malicious code into libraries that are widely installed across projects and Microservices. Maybe even across the web if published in public. Enabling 2 factor authentication in npm leaves almost zero chances for attackers to alter the packages code
+
+**Otherwise:** [Have you heard about the eslint developer who's password was hijacked?](https://medium.com/@oprearocks/eslint-backdoor-what-it-is-and-how-to-fix-the-issue-221f58f1a8c8)
+
+
+<br/><br/>
+
+## ![✔] 6.22. Modify session middleware settings
+<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
+
+
+**TL;DR:** Each webframework and technology has it own known weaknesses - telling to an attacker which web framework we use is a great help. Using the default settings for session middleware can be expose your app to module and framework specific hijacking attacks in a similar way to the `X-Powered-By` header. Try modifing anything that differentiates and reveals your tech stack (E.g. Node, Express)
+
+**Otherwise:** Cookies could be sent over insecure connections, and an attacker can use session identification to identify the underlying framework of the web application, as well as module-specific vulnerabilities
+
+🔗 [**Read More: Cookie and session security**](/sections/security/sessions.md)
+
+<br/><br/>
+
+## ![✔] 6.23. Avoid DOS attacks by explicitly setting when a process should crash
+<a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
+
+**TL;DR:** The Node process will crash when errors are not handled. Many best practices even recommend to exit eventhough an error was caught and got handled. Express, for example, will crash on any asynchronous error - unless you wrap routes with a catch clause. This open a very sweet attack spot for attacker who can just recognize what input make the process crash and issue the same request every 1 second. There's no instant remedy for this but few techniques can mitigate the pain: Alert with critical severity anytime a process crash due to unhandled error, validate the input and avoid crashing the process due to invalid input, wrap all routes with a catch and consider not to crash when an error originated within a request (as opposed that happens globally on the application start or outside an http request context)
+
+**Otherwise:** This is just an educated guess: given many Nodejs applications, if we try passing an empty json to all POST http requests - a handful of applications will crash. At that point, we can just repeat sending the same request to take the application down easily
+
+<br/><br/><br/>
+
+
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+
+# `API Practices`
 
 ## Our contributors are working on this section. Would you like to join?
 
-<br/><br/><br/>
 
 # `Performance Practices`
 
