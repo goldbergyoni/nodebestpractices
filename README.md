@@ -648,7 +648,7 @@ All statements above will return false if used with `===`
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Make use of security-related linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to catch security vulnerabilities and issues as early as possible - while they're being coded. This can help catching security weaknesses like using eval, invoking a child process or importing a module with a string literal (e.g. user input). Click 'Read more' below to see code examples that will get caught by a security linter
+**TL;DR:** Make use of security-related linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to catch security vulnerabilities and issues as early as possible , at best  while they're being coded. This can help catching security weaknesses like using eval, invoking a child process or importing a module with a string literal (e.g. user input). Click 'Read more' below to see code examples that will get caught by a security linter
 
 **Otherwise:** What could have been a straightforward security weakness during development becomes a major issue in production. Also, the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories
 
@@ -676,7 +676,7 @@ All statements above will return false if used with `===`
 
 **TL;DR:** Never store plain-text secrets in configuration files or source code. Instead, make use of secret-management systems like Vault products, Kubernetes/Docker Secrets, or using environment variables. As a last result, secrets stored in source control must be encrypted and managed (rolling keys, expiring, auditing, etc). Make use of pre-commit/push hooks to prevent committing secrets accidentally
 
-**Otherwise:** Source control, even for private repositories, can mistakenly be made public, at which point all secret are exposed. Access to source control for an external party will inadvertently provide access to related systems (databases, apis, services, etc).
+**Otherwise:** Source control, even for private repositories, can mistakenly be made public, at which point all secrets are exposed. Access to source control for an external party will inadvertently provide access to related systems (databases, apis, services, etc).
 
 
 🔗 [**Read More: Secret management**](sections/security/secretmanagement.md)
@@ -751,7 +751,7 @@ All statements above will return false if used with `===`
 
 **TL;DR:** Untrusted data that is sent down to the browser might get executed instead of just being displayed, this is commonly being referred as a cross-site-scripting (XSS) attack. Mitigate this by using dedicated libraries that explicitly mark the data as pure content that should never get executed (i.e. encoding, escaping)
 
-**Otherwise:** An attacker might store a malicious JS code in your DB which will then be sent as-is to the poor clients
+**Otherwise:** An attacker might store a malicious JavaScript code in your DB which will then be sent as-is to the poor clients
 
 🔗 [**Read More: Escape output**](/sections/security/escape-output.md)
 
@@ -763,23 +763,23 @@ All statements above will return false if used with `===`
 
 **TL;DR:** Validate the incoming requests' body payload and ensure it qualifies the expectations, fail fast if it doesn't. To avoid tedious validation coding within each route you may use lightweight JSON-based validation schemas such as [jsonschema](https://www.npmjs.com/package/jsonschema) or [joi](https://www.npmjs.com/package/joi)
 
-**Otherwise:** Your generosity and permissive approach greatly increases the attack surface and encourage the attacker to try out many inputs until they find some combination to crash the application
+**Otherwise:** Your generosity and permissive approach greatly increases the attack surface and encourages the attacker to try out many inputs until they find some combination to crash the application
 
 🔗 [**Read More: Validate incoming JSON schemas**](/sections/security/validation.md)
 
 <br/><br/>
 
 
-## ![✔] 6.11. Support blacklisting JWT tokens
+## ![✔] 6.11. Support blacklisting JWTs
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;DR:** When using JWT tokens (for example, with [Passport.js](https://github.com/jaredhanson/passport)), by default there's no mechanism to revoke access from issued tokens. Once you discover some malicious user activity, there's no way to stop them from accessing the system as long as they holds a valid token. Mitigate this by implementing a blacklist of untrusted tokens that are validated on each request.
+**TL;DR:** When using JSON Web Tokens (for example, with [Passport.js](https://github.com/jaredhanson/passport)), by default there's no mechanism to revoke access from issued tokens. Once you discover some malicious user activity, there's no way to stop them from accessing the system as long as they hold a valid token. Mitigate this by implementing a blacklist of untrusted tokens that are validated on each request.
 
-**Otherwise:** Expired, or misplaced tokens could be used maliciously by a third party to access an application impersonating the owner of the token.
+**Otherwise:** Expired, or misplaced tokens could be used maliciously by a third party to access an application and impersonate the owner of the token.
 
 
-🔗 [**Read More: Blacklist JWT Tokens**](/sections/security/revokejwt.md)
+🔗 [**Read More: Blacklist JSON Web Tokens**](/sections/security/revokejwt.md)
 
 <br/><br/>
 
@@ -830,9 +830,9 @@ All statements above will return false if used with `===`
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
 
-**TL;DR:** `eval` is evil as it allows executing  a custom JavaScript code during run time. This is not just a performance concern but also an important security concern due to  malicious JavaScript code that may be sourced from user input. Another language feature that should be avoided is `new Function` constructor. `setTimeout` and `setInterval` should never be passed dynamic javascript code either.
+**TL;DR:** `eval` is evil as it allows executing  a custom JavaScript code during run time. This is not just a performance concern but also an important security concern due to  malicious JavaScript code that may be sourced from user input. Another language feature that should be avoided is `new Function` constructor. `setTimeout` and `setInterval` should never be passed dynamic JavaScript code either.
 
-**Otherwise:** Malicious javascript code finds a way into a text passed into `eval` or other real-time evaluating JavaScript language functions, it will gain complete access to JavaScript permissions on the page, often manifesting as an XSS attack.
+**Otherwise:** Malicious JavaScript code finds a way into a text passed into `eval` or other real-time evaluating JavaScript language functions, and will gain complete access to JavaScript permissions on the page. This vulnerability is often manifested as an XSS attack.
 
 
 🔗 [**Read More: Avoid JavaScript eval statements**](/sections/security/avoideval.md)
@@ -844,7 +844,7 @@ All statements above will return false if used with `===`
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Regular Expressions, while being handy, pose a real threat to JavaScript applications at large, and the Node.js platform in particular. A user input for text to match might require an outstanding amount of CPU cycles to process. Regex processing might be inefficient to an extent that a single request that validates 10 words can block the entire event loop for 6 seconds and set the CPU on 🔥. For that reason, prefer third-party validation packages like [validator.js](https://github.com/chriso/validator.js) instead of writing your own Regex patterns, or make use of [safe-regex](https://github.com/substack/safe-regex) to detect vulnerable regex patterns
+**TL;DR:** Regular Expressions, while being handy, pose a real threat to JavaScript applications at large, and the Node.js platform in particular. A user input for text to match might require an outstanding amount of CPU cycles to process. RegEx processing might be inefficient to an extent that a single request that validates 10 words can block the entire event loop for 6 seconds and set the CPU on 🔥. For that reason, prefer third-party validation packages like [validator.js](https://github.com/chriso/validator.js) instead of writing your own Regex patterns, or make use of [safe-regex](https://github.com/substack/safe-regex) to detect vulnerable regex patterns
 
 **Otherwise:** Poorly written regexes could be susceptible to Regular Expression DoS attacks that will block the event loop completely. For example, the popular `moment` package was found vulnerable with malicious RegEx usage in November of 2017
 
