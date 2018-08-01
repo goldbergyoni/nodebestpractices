@@ -39,7 +39,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 3.  [Code Style Practices (12) ](#3-code-style-practices)
 4.  [Testing And Overall Quality Practices (8) ](#4-testing-and-overall-quality-practices)
 5.  [Going To Production Practices (17) ](#5-going-to-production-practices)
-6.  [Security Practices (23)](#6-security-best-practices)
+6.  [Security Practices (23)](#6-security-best-practices):star:
 7.  Performance Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 
 <br/><br/><br/>
