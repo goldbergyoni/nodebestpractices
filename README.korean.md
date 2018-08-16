@@ -46,23 +46,23 @@
 
 # `1. 프로젝트 구조 설계`
 
-## ![✔] 1.1 Structure your solution by components
+## ![✔] 1.1 컴포넌트 기반으로 설계하라
 
-**TL;DR:** The worst large applications pitfall is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Instead, partition your code into components, each gets its own folder or a dedicated codebase, and ensure that each unit is kept small and simple. Visit 'Read More' below to see examples of correct project structure
+**핵심요약:** 큰 프로젝트에서 빠지기 쉬운 가장 안좋은 함정은 많은 수백개의 의존성을 가진 커다란 소스코드를 유지보수하는 것이다. 그렇게 하나로 통째로 짜여진 코드는 개발자가 새로운 기능들을 협업하는 속도를 느려지게 한다. 그 대신에 당신의 코드를 컴포넌트로 나누고, 각각의 컴포넌트가 자신의 폴더 혹은 할당된 코드베이스를 가지게 하고 컴포넌트의 각 단위가 작고 간단하게 유지되도록 하라. 아래의 '자세히 보기'를 눌러 올바를 프로젝트 구조의 예시를 확인하라.
 
-**Otherwise:** When developers who code new features struggle to realize the impact of their change and fear to break other dependant components - deployments become slower and more risky. It's also considered harder to scale-out when all the business units are not separated
+**그렇게 하지 않을 경우:** 새로운 기능을 작성하는 개발자가 변경사항이 미치는 영향을 깨닫기위해 몸부림치거나 의존하고 있는 다른 컴포넌트를 망칠까봐 두려워 할때 배포는 느려지고 더 위험해진다. 비지니스 단위가 나눠져 있지 않으면 확장(scale-out)하기도 쉽지 않다.
 
-🔗 [**자세히 보기: structure by components**](/sections/projectstructre/breakintcomponents.korean.md)
+🔗 [**자세히 보기: 컴포넌트로 구조화하기**](/sections/projectstructre/breakintcomponents.korean.md)
 
 <br/><br/>
 
-## ![✔] 1.2 Layer your components, keep Express within its boundaries
+## ![✔] 1.2 컴포넌트를 계층화(layer)하고, Express를 그 경계 안에 두세요.
 
-**TL;DR:** Each component should contain 'layers' - a dedicated object for the web, logic and data access code. This not only draws a clean separation of concerns but also significantly eases mocking and testing the system. Though this is a very common pattern, API developers tend to mix layers by passing the web layer objects (Express req, res) to business logic and data layers - this makes your application dependant on and accessible by Express only
+**핵심요약:** 각각의 컴포넌트는 웹, 로직, 데이터 접근 코드을 위한 객체인 '계층'을 포함해야 한다. 이것은 우려를 깨끗하게 분리할 뿐만 아니라 가짜 객체를 만들거나(mocking) 테스트하기가 굉장히 쉽게 만든다. 이것은 굉장히 일반적인 패턴이지만, API 개발자는 웹 계층의 객체 (Express req, res)를 비지니스 로직과 데이터 계층으로 보내서 계층을 뒤섞어버리는 경향이 있다. 이것은 당신의 어플리케이션에 의존성을 만들고 Expres에서만 접근 가능하도록 만든다.
 
-**Otherwise:** App that mixes web objects with other layers can not be accessed by testing code, CRON jobs and other non-Express callers
+**그렇게 하지 않을 경우:** 웹 객체를 다른 계층과 뒤섞은 앱은 테스트 코드, CRON 작업이나 Express가 아닌 다른 곳에서 접근이 불가능하게 한다.
 
-🔗 [**자세히 보기: layer your app**](/sections/projectstructre/createlayers.korean.md)
+🔗 [**자세히 보기: 앱을 계층화하기**](/sections/projectstructre/createlayers.korean.md)
 
 <br/><br/>
 
