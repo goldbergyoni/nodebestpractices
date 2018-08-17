@@ -86,13 +86,13 @@
 
 <br/><br/>
 
-## ![✔] 1.5 Use environment aware, secure and hierarchical config
+## ![✔] 1.5 환경을 인식하는, 보안적인, 계층적인 설정을 사용하라
 
-**TL;DR:** A perfect and flawless configuration setup should ensure (a) keys can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are a few packages that can help tick most of those boxes like [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) and [config](https://www.npmjs.com/package/config)
+**핵심요약:** 완벽하고 결점이 없는 구성 설정은 (a) 파일과 환경 변수에서 키 값을 읽을 수 있어야하고 (b) 보안 값들은 커밋된 코드 바깥에서 관리되어야하고 (c) 설정은 좀 더 쉽게 찾을 수 있도록 계층적으로 관리해야 한다. [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config)와 같이 이러한 요구사항을 동작하게 해주는 몇가지 패키지가 존재한다.
 
-**Otherwise:** Failing to satisfy any of the config requirements will simply bog down the development or devops team. Probably both
+**그렇게 하지 않을 경우:** 위의 구성 요구사항 중 어느 것도 만족시키지 못한다면 개발팀 혹은 데브옵스팀을 늪으로 몰아갈 수 있다. 아마도 두 팀 모두일 것이다.
 
-🔗 [**자세히 보기: configuration best practices**](/sections/projectstructre/configguide.korean.md)
+🔗 [**자세히 보기: 구성 모범 사례**](/sections/projectstructre/configguide.korean.md)
 
 <br/><br/><br/>
 
@@ -100,13 +100,13 @@
 
 # `2. 에러 처리 방법`
 
-## ![✔] 2.1 Use Async-Await or promises for async error handling
+## ![✔] 2.1 비동기 에러 처리시에는 Async-Await 혹은 Promise를 사용하라
 
-**TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using a reputable promise library or async-await instead which enables a much more compact and familiar code syntax like try-catch
+**핵심요약:** 비동기 에러를 콜백 스타일로 처리하는 것은 지옥으로 가는 급행열차일 것이다(운명의 피라미드로 잘 알려진). 당신이 코드에 줄 수 있는 가장 큰 선물은 평판이 좋은 Promise 라이브러리를 사용하거나 훨신 작고 친숙한 코드 문법인 try-catch를 사용하게 해주는 Async-Await를 사용하는 것이다.
 
-**Otherwise:** Node.js callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting and awkward coding patterns
+**그렇게 하지 않을 경우:** Node.js 콜백 스타일인 function(err, response)는 에러 처리와 일반 코드의 혼합, 코드의 과도한 중첩, 이상한 코딩 패턴 때문에 유지보수가 불가능한 코드로가는 확실한 길이다.
 
-🔗 [**자세히 보기: avoiding callbacks**](/sections/errorhandling/asyncerrorhandling.korean.md)
+🔗 [**자세히 보기: 콜백 피하기**](/sections/errorhandling/asyncerrorhandling.korean.md)
 
 <br/><br/>
 
