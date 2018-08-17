@@ -1052,6 +1052,7 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Jason Kim](https://github.com/serv),
 🌻 [Mitja O.](https://github.com/Max101),
 🌻 [Sandro Miguel Marques](https://github.com/SandroMiguel)
+🌻 [Ron Gross](https://github.com/ripper234)
 
 ### Stars <br/>
 
