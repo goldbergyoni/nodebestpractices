@@ -110,23 +110,23 @@
 
 <br/><br/>
 
-## ![✔] 2.2 Use only the built-in Error object
+## ![✔] 2.2 내장된 Error 객체만 사용하라
 
-**TL;DR:** Many throws errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw an exception or an emit error – using only the built-in Error object will increase uniformity and prevent loss of information
+**핵심요약:** 많은 사람들이 문자열이나 사용자가 임의로 정의한 타입으로 에러를 던진다(throw). 이것은 에러처리 로직과 모듈 사이의 상호운영성을 복잡하게 한다. 당신이 Promise를 거부(reject)하든, 예외를 던지든, 에러를 냈건 내장된 Error 객체를 이용하는 것은 균일성을 향상하고 정보의 손실을 방지하게 만들것이다.
 
-**Otherwise:** When invoking some component, being uncertain which type of errors come in return – it makes proper error handling much harder. Even worse, using custom types to describe errors might lead to loss of critical error information like the stack trace!
+**그렇게 하지 않을 경우:** 일부 컴포넌트를 호출할때 어떤 에러의 타입이 반환될지 불확실해져서 적절한 에러처리가 매우 어려워 질것이다. 더 나쁜 것은, 사용자가 정의한 타입으로 에러를 나타내는 것은 스택 트래이스와 같은 중요한 에러 정보를 손실할 가능성이 있다는 것이다!
 
-🔗 [**자세히 보기: using the built-in error object**](/sections/errorhandling/useonlythebuiltinerror.korean.md)
+🔗 [**자세히 보기: 내장된 Error 객체 사용하기**](/sections/errorhandling/useonlythebuiltinerror.korean.md)
 
 <br/><br/>
 
-## ![✔] 2.3 Distinguish operational vs programmer errors
+## ![✔] 2.3 동작상의 에러와 프로그래머 에러를 구분하라
 
-**TL;DR:** Operational errors (e.g. API received an invalid input) refer to known cases where the error impact is fully understood and can be handled thoughtfully. On the other hand, programmer error (e.g. trying to read undefined variable) refers to unknown code failures that dictate to gracefully restart the application
+**핵심요약:** API에서 잘못된 입력을 받는 것과 같은 동작상의 에러는 에러의 영향을 완전히 이해할수 있고 신중하게 처리 할수있는 알려진 경우를 의미한다. 반면에 정의되지 않은 변수를 읽는 것과 같은 프로그래머 에러는 어플리케이션을 우아하게 다시 시작하도록 만드는 알수 없는 코드 에러를 의미한다.
 
-**Otherwise:** You may always restart the application when an error appears, but why let ~5000 online users down because of a minor, predicted, operational error? the opposite is also not ideal – keeping the application up when an unknown issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
+**그렇게 하지 않을 경우:** 당신은 에러가 날때마다 어플리케이션을 다시 시작할수도 있다. 하지만 왜 사소하고 예측가능한 동작상의 오류때문에 5000명의 온라인 사용자를 다운시키는 것인가? 나머지 상황 또한 이상적이지 않다. 알수없는 이슈(프로그래머 에러)가 났는데 어플리케이션을 그대로 두는 것은 예측이 불가능한 동작을 일으킬 수 있다. 두 가지를 구별하는 것은 현명한 행동과 주어진 상황에 따른 균형잡힌 접근을 가능하게 한다.
 
-🔗 [**자세히 보기: operational vs programmer error**](/sections/errorhandling/operationalvsprogrammererror.korean.md)
+🔗 [**자세히 보기: 동작상의 에러와 프로그래머 에러**](/sections/errorhandling/operationalvsprogrammererror.korean.md)
 
 <br/><br/>
 
