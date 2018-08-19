@@ -1,4 +1,4 @@
-# Handle errors centrally
+# Handle errors centrally. Not within middlewares
 
 ### One Paragraph Explainer
 
