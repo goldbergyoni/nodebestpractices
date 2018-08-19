@@ -130,33 +130,33 @@
 
 <br/><br/>
 
-## ![✔] 2.4 Handle errors centrally, not within an Express middleware
+## ![✔] 2.4 에러를 Express 미들웨어로 처리하지 말고 중앙집중적으로 처리하라
 
-**TL;DR:** Error handling logic such as mail to admin and logging should be encapsulated in a dedicated and centralized object that all endpoints (e.g. Express middleware, cron jobs, unit-testing) call when an error comes in
+**핵심요약:** 관리자에게 메일을 보내거나 로깅을 하는 것과 같은 에러 처리는 에러가 발생할 때 모든 엔드포인트(예를 들어 Express 미들웨어, cron 작업, 단위 테스트 등)가 호출하는 에러전용 중앙집중 객체로 캡슐화 되어야한다.
 
-**Otherwise:** Not handling errors within a single place will lead to code duplication and probably to improperly handled errors
+**그렇게 하지 않을 경우:** 한 곳에서 에러를 처리하지 않는 것은 코드 중복과 부적절한 에러처리로 이어진다.
 
-🔗 [**자세히 보기: handling errors in a centralized place**](/sections/errorhandling/centralizedhandling.korean.md)
-
-<br/><br/>
-
-## ![✔] 2.5 Document API errors using Swagger
-
-**TL;DR:** Let your API callers know which errors might come in return so they can handle these thoughtfully without crashing. This is usually done with REST API documentation frameworks like Swagger
-
-**Otherwise:** An API client might decide to crash and restart only because he received back an error he couldn’t understand. Note: the caller of your API might be you (very typical in a microservice environment)
-
-🔗 [**자세히 보기: documenting errors in Swagger**](/sections/errorhandling/documentingusingswagger.korean.md)
+🔗 [**자세히 보기: 중앙집중적으로 에러 처리하기**](/sections/errorhandling/centralizedhandling.korean.md)
 
 <br/><br/>
 
-## ![✔] 2.6 Shut the process gracefully when a stranger comes to town
+## ![✔] 2.5 Swagger를 이용해 API 에러를 문서화하라
 
-**TL;DR:** When an unknown error occurs (a developer error, see best practice number #3)- there is uncertainty about the application healthiness. A common practice suggests restarting the process carefully using a ‘restarter’ tool like Forever and PM2
+**핵심요약:** API를 호출자들이 어떤 에러가 반환 될수 있는지 알게하여 충돌없이 신중하게 처리 할 수 있도록하라. 이것은 보통 Swagger와 같은 API 문서화 프레임워크를 통해 이루어진다.
 
-**Otherwise:** When an unfamiliar exception is caught, some object might be in a faulty state (e.g an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
+**그렇게 하지 않을 경우:** API 클라이언트는 알수 없는 에러로 인해 충돌 후에 재시작을 결정할수도 있을 것이다. 참고: 당신의 API를 호출한 사람이 당신 자신일 수 있습니다(마이크로서비스 환경에서는 아주 일반적임).
 
-🔗 [**자세히 보기: shutting the process**](/sections/errorhandling/shuttingtheprocess.korean.md)
+🔗 [**자세히 보기: Swagger에서 에러 문서화하기**](/sections/errorhandling/documentingusingswagger.korean.md)
+
+<br/><br/>
+
+## ![✔] 2.6 이상한 것이 들어왔을때 프로세스를 정상적으로 중단하라
+
+**핵심요약:** 알수 없는 에러(개발자 에러, 모범사례 #3번 참조)가 발생하면 어플리케이션의 건강상태에 대한 불확실성이 있다. 일반적인 방법은 Forever와 PM2 같은 '재시작' 도구로 프로세스를 다시 시작하는 것이다. 
+
+**그렇게 하지 않을 경우:** 익숙치 않은 예외가 잡히면 일부 객체가 오류 상태(예를 들어 전역적으로 사용되고 내부 오류로 인해 이벤트를 더이상 발생시키지 않는 Event Emitter)일 수 있으며 모든 향후 요청이 실패하거나 비정상적(crazily)으로 동작할 수 있습니다.
+
+🔗 [**자세히 보기: 프로세스 중단하기**](/sections/errorhandling/shuttingtheprocess.korean.md)
 
 <br/><br/>
 
