@@ -46,53 +46,53 @@
 
 # `1. 프로젝트 구조 설계`
 
-## ![✔] 1.1 Structure your solution by components
+## ![✔] 1.1 컴포넌트 기반으로 설계하라
 
-**TL;DR:** The worst large applications pitfall is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Instead, partition your code into components, each gets its own folder or a dedicated codebase, and ensure that each unit is kept small and simple. Visit 'Read More' below to see examples of correct project structure
+**핵심요약:** 큰 프로젝트에서 빠지기 쉬운 최악의 함정은 많은 수백개의 의존성을 가진 커다란 소스코드를 유지보수하는 것이다. 그렇게 하나로 통째로 짜여진 코드는 개발자가 새로운 기능들을 협업하는 속도를 느려지게 한다. 그 대신에 당신의 코드를 컴포넌트로 나누고, 각각의 컴포넌트가 자신의 폴더 혹은 할당된 코드베이스를 가지게 하고 컴포넌트의 각 단위가 작고 간단하게 유지되도록 하라. 아래의 '자세히 보기'를 눌러 올바른 프로젝트 구조의 예시를 확인하라.
 
-**Otherwise:** When developers who code new features struggle to realize the impact of their change and fear to break other dependant components - deployments become slower and more risky. It's also considered harder to scale-out when all the business units are not separated
+**그렇게 하지 않을 경우:** 새로운 기능을 작성하는 개발자가 변경사항이 미치는 영향을 깨닫기위해 몸부림치거나 의존하고 있는 다른 컴포넌트를 망칠까봐 두려워 할때 배포는 느려지고 더 위험해진다. 비지니스 단위가 나눠져 있지 않으면 확장(scale-out)하기도 쉽지 않다.
 
-🔗 [**자세히 보기: structure by components**](/sections/projectstructre/breakintcomponents.korean.md)
-
-<br/><br/>
-
-## ![✔] 1.2 Layer your components, keep Express within its boundaries
-
-**TL;DR:** Each component should contain 'layers' - a dedicated object for the web, logic and data access code. This not only draws a clean separation of concerns but also significantly eases mocking and testing the system. Though this is a very common pattern, API developers tend to mix layers by passing the web layer objects (Express req, res) to business logic and data layers - this makes your application dependant on and accessible by Express only
-
-**Otherwise:** App that mixes web objects with other layers can not be accessed by testing code, CRON jobs and other non-Express callers
-
-🔗 [**자세히 보기: layer your app**](/sections/projectstructre/createlayers.korean.md)
+🔗 [**자세히 보기: 컴포넌트로 구조화하기**](/sections/projectstructre/breakintcomponents.korean.md)
 
 <br/><br/>
 
-## ![✔] 1.3 Wrap common utilities as NPM packages
+## ![✔] 1.2 컴포넌트를 계층화(layer)하고, Express를 그 경계 안에 둬라.
 
-**TL;DR:** In a large app that constitutes a large code base, cross-cutting-concern utilities like logger, encryption and alike, should be wrapped by your own code and exposed as private NPM packages. This allows sharing them among multiple code bases and projects
+**핵심요약:** 각각의 컴포넌트는 웹, 로직, 데이터 접근 코드을 위한 객체인 '계층'을 포함해야 한다. 이것은 우려를 깨끗하게 분리할 뿐만 아니라 모의 객체를 만들거나(mocking) 테스트하기가 굉장히 쉽게 만든다. 이것이 굉장히 일반적인 패턴임에도, API 개발자는 웹 계층의 객체 (Express req, res)를 비지니스 로직과 데이터 계층으로 보내서 계층을 뒤섞어버리는 경향이 있다. 그렇게 하는것은 당신의 어플리케이션에 의존성을 만들고 Express에서만 접근 가능하도록 만든다.
 
-**Otherwise:** You'll have to invent your own deployment and dependency wheel
+**그렇게 하지 않을 경우:** 웹 객체를 다른 계층과 뒤섞은 앱은 테스트 코드, CRON 작업이나 Express가 아닌 다른 곳에서 접근이 불가능하게 한다.
 
-🔗 [**자세히 보기: Structure by feature**](/sections/projectstructre/wraputilities.korean.md)
-
-<br/><br/>
-
-## ![✔] 1.4 Separate Express 'app' and 'server'
-
-**TL;DR:** Avoid the nasty habit of defining the entire [Express](https://expressjs.com/) app in a single huge file - separate your 'Express' definition to at least two files: the API declaration (app.js) and the networking concerns (WWW). For even better structure, locate your API declaration within components
-
-**Otherwise:** Your API will be accessible for testing via HTTP calls only (slower and much harder to generate coverage reports). It probably won't be a big pleasure to maintain hundreds of lines of code in a single file
-
-🔗 [**자세히 보기: separate Express 'app' and 'server'**](/sections/projectstructre/separateexpress.korean.md)
+🔗 [**자세히 보기: 앱을 계층화하기**](/sections/projectstructre/createlayers.korean.md)
 
 <br/><br/>
 
-## ![✔] 1.5 Use environment aware, secure and hierarchical config
+## ![✔] 1.3 유틸리티들을 NPM 패키지로 감싸라(wrap)
 
-**TL;DR:** A perfect and flawless configuration setup should ensure (a) keys can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are a few packages that can help tick most of those boxes like [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) and [config](https://www.npmjs.com/package/config)
+**핵심요약:** 커다란 코드 기반으로 구성되어있는 커다란 앱에서는 로깅, 암호화 같은 횡단 관심사(cross-cutting-concern)가 존재하는 유틸의 경우 당신 자신의 코드로 감싸져야하며 개인 NPM package로 노출이 되어야한다. 이것은 여러 코드 기반과 프로젝트들 사이에서 그것들을 공유가 가능하도록 해준다.
 
-**Otherwise:** Failing to satisfy any of the config requirements will simply bog down the development or devops team. Probably both
+**그렇게 하지 않을 경우:** 당신 자신만의 배포 및 의존성 바퀴(wheel)를 새로 발명해야 할 것이다.
 
-🔗 [**자세히 보기: configuration best practices**](/sections/projectstructre/configguide.korean.md)
+🔗 [**자세히 보기: 기능으로 구조화 하기**](/sections/projectstructre/wraputilities.korean.md)
+
+<br/><br/>
+
+## ![✔] 1.4 Express의 app과 server를 분리하라
+
+**핵심요약:** 'Express' 정의를 적어도 API 선언(app.js)과 네트워크 부분(WWW)의 두 개 파일로 나눠서 전체 [Express](https://expressjs.com/)앱을 하나의 큰 파일에 정의하는 불쾌한 습관을 피해라. 더 좋은 구조는 API 선언을 컴포넌트에 위치시키는 것이다.
+
+**그렇게 하지 않을 경우:** API는 HTTP 요청으로만 테스트가 가능 할것이다(커버리지 보고서를 생성하기가 더 느려지고 훨씬 힘들어진다). 수백줄의 코드를 하나의 파일에서 관리하는 것이 크게 즐겁지는 않을 것이다.
+
+🔗 [**자세히 보기: Express를 'app'과 'server'로 분리하기**](/sections/projectstructre/separateexpress.korean.md)
+
+<br/><br/>
+
+## ![✔] 1.5 환경을 인식하는, 보안적인, 계층적인 설정을 사용하라
+
+**핵심요약:** 완벽하고 결점이 없는 구성 설정은 (a) 파일과 환경 변수에서 키 값을 읽을 수 있어야하고 (b) 보안 값들은 커밋된 코드 바깥에서 관리되어야하고 (c) 설정은 좀 더 쉽게 찾을 수 있도록 계층적으로 관리해야 한다. [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config)와 같이 이러한 요구사항을 동작하게 해주는 몇가지 패키지가 존재한다.
+
+**그렇게 하지 않을 경우:** 위의 구성 요구사항 중 어느 것도 만족시키지 못한다면 개발팀 혹은 데브옵스팀을 늪으로 몰아갈 수 있다. 아마도 두 팀 모두일 것이다.
+
+🔗 [**자세히 보기: 구성 모범 사례**](/sections/projectstructre/configguide.korean.md)
 
 <br/><br/><br/>
 
@@ -100,63 +100,63 @@
 
 # `2. 에러 처리 방법`
 
-## ![✔] 2.1 Use Async-Await or promises for async error handling
+## ![✔] 2.1 비동기 에러 처리시에는 Async-Await 혹은 Promise를 사용하라
 
-**TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using a reputable promise library or async-await instead which enables a much more compact and familiar code syntax like try-catch
+**핵심요약:** 비동기 에러를 콜백 스타일로 처리하는 것은 지옥으로 가는 급행열차일 것이다(운명의 피라미드로 잘 알려진). 당신이 코드에 줄 수 있는 가장 큰 선물은 평판이 좋은 Promise 라이브러리를 사용하거나 훨신 작고 친숙한 코드 문법인 try-catch를 사용하게 해주는 Async-Await를 사용하는 것이다.
 
-**Otherwise:** Node.js callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting and awkward coding patterns
+**그렇게 하지 않을 경우:** Node.js 콜백 스타일인 function(err, response)는 에러 처리와 일반 코드의 혼합, 코드의 과도한 중첩, 이상한 코딩 패턴 때문에 유지보수가 불가능한 코드로가는 확실한 길이다.
 
-🔗 [**자세히 보기: avoiding callbacks**](/sections/errorhandling/asyncerrorhandling.korean.md)
-
-<br/><br/>
-
-## ![✔] 2.2 Use only the built-in Error object
-
-**TL;DR:** Many throws errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw an exception or an emit error – using only the built-in Error object will increase uniformity and prevent loss of information
-
-**Otherwise:** When invoking some component, being uncertain which type of errors come in return – it makes proper error handling much harder. Even worse, using custom types to describe errors might lead to loss of critical error information like the stack trace!
-
-🔗 [**자세히 보기: using the built-in error object**](/sections/errorhandling/useonlythebuiltinerror.korean.md)
+🔗 [**자세히 보기: 콜백 피하기**](/sections/errorhandling/asyncerrorhandling.korean.md)
 
 <br/><br/>
 
-## ![✔] 2.3 Distinguish operational vs programmer errors
+## ![✔] 2.2 내장된 Error 객체만 사용하라
 
-**TL;DR:** Operational errors (e.g. API received an invalid input) refer to known cases where the error impact is fully understood and can be handled thoughtfully. On the other hand, programmer error (e.g. trying to read undefined variable) refers to unknown code failures that dictate to gracefully restart the application
+**핵심요약:** 많은 사람들이 문자열이나 사용자가 임의로 정의한 타입으로 에러를 던진다(throw). 이것은 에러처리 로직과 모듈 사이의 상호운영성을 복잡하게 한다. 당신이 Promise를 거부(reject)하든, 예외를 던지든, 에러를 냈건 내장된 Error 객체를 이용하는 것은 균일성을 향상하고 정보의 손실을 방지하게 만들것이다.
 
-**Otherwise:** You may always restart the application when an error appears, but why let ~5000 online users down because of a minor, predicted, operational error? the opposite is also not ideal – keeping the application up when an unknown issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
+**그렇게 하지 않을 경우:** 일부 컴포넌트를 호출할때 어떤 에러의 타입이 반환될지 불확실해져서 적절한 에러처리가 매우 어려워 질것이다. 더 나쁜 것은, 사용자가 정의한 타입으로 에러를 나타내는 것은 스택 정보(stack trace)와 같은 중요한 에러 정보를 손실할 가능성이 있다는 것이다!
 
-🔗 [**자세히 보기: operational vs programmer error**](/sections/errorhandling/operationalvsprogrammererror.korean.md)
-
-<br/><br/>
-
-## ![✔] 2.4 Handle errors centrally, not within an Express middleware
-
-**TL;DR:** Error handling logic such as mail to admin and logging should be encapsulated in a dedicated and centralized object that all endpoints (e.g. Express middleware, cron jobs, unit-testing) call when an error comes in
-
-**Otherwise:** Not handling errors within a single place will lead to code duplication and probably to improperly handled errors
-
-🔗 [**자세히 보기: handling errors in a centralized place**](/sections/errorhandling/centralizedhandling.korean.md)
+🔗 [**자세히 보기: 내장된 Error 객체 사용하기**](/sections/errorhandling/useonlythebuiltinerror.korean.md)
 
 <br/><br/>
 
-## ![✔] 2.5 Document API errors using Swagger
+## ![✔] 2.3 동작상의 에러와 프로그래머 에러를 구분하라
 
-**TL;DR:** Let your API callers know which errors might come in return so they can handle these thoughtfully without crashing. This is usually done with REST API documentation frameworks like Swagger
+**핵심요약:** API에서 잘못된 입력을 받는 것과 같은 동작상의 에러는 에러의 영향을 완전히 이해할수 있고 신중하게 처리 할수있는 알려진 경우를 의미한다. 반면에 정의되지 않은 변수를 읽는 것과 같은 프로그래머 에러는 어플리케이션을 우아하게 다시 시작하도록 만드는 알수 없는 코드 에러를 의미한다.
 
-**Otherwise:** An API client might decide to crash and restart only because he received back an error he couldn’t understand. Note: the caller of your API might be you (very typical in a microservice environment)
+**그렇게 하지 않을 경우:** 당신은 에러가 날때마다 어플리케이션을 다시 시작할수도 있다. 하지만 왜 사소하고 예측가능한 동작상의 오류때문에 5000명의 온라인 사용자를 다운시키는 것인가? 나머지 상황 또한 이상적이지 않다. 알수없는 이슈(프로그래머 에러)가 났는데 어플리케이션을 그대로 두는 것은 예측이 불가능한 동작을 일으킬 수 있다. 두 가지를 구별하는 것은 현명한 행동과 주어진 상황에 따른 균형잡힌 접근을 가능하게 한다.
 
-🔗 [**자세히 보기: documenting errors in Swagger**](/sections/errorhandling/documentingusingswagger.korean.md)
+🔗 [**자세히 보기: 동작상의 에러와 프로그래머 에러**](/sections/errorhandling/operationalvsprogrammererror.korean.md)
 
 <br/><br/>
 
-## ![✔] 2.6 Shut the process gracefully when a stranger comes to town
+## ![✔] 2.4 에러를 Express 미들웨어로 처리하지 말고 중앙집중적으로 처리하라
 
-**TL;DR:** When an unknown error occurs (a developer error, see best practice number #3)- there is uncertainty about the application healthiness. A common practice suggests restarting the process carefully using a ‘restarter’ tool like Forever and PM2
+**핵심요약:** 관리자에게 메일을 보내거나 로깅을 하는 것과 같은 에러 처리는 에러가 발생할 때 모든 엔드포인트(예를 들어 Express 미들웨어, cron 작업, 단위 테스트 등)가 호출하는 에러전용 중앙집중 객체로 캡슐화 되어야한다.
 
-**Otherwise:** When an unfamiliar exception is caught, some object might be in a faulty state (e.g an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
+**그렇게 하지 않을 경우:** 한 곳에서 에러를 처리하지 않는 것은 코드 중복과 부적절한 에러처리로 이어진다.
 
-🔗 [**자세히 보기: shutting the process**](/sections/errorhandling/shuttingtheprocess.korean.md)
+🔗 [**자세히 보기: 중앙집중적으로 에러 처리하기**](/sections/errorhandling/centralizedhandling.korean.md)
+
+<br/><br/>
+
+## ![✔] 2.5 Swagger를 이용해 API 에러를 문서화하라
+
+**핵심요약:** API를 호출한 사람들이 어떤 에러가 반환 될수 있는지 알게하여 충돌없이 신중하게 처리 할 수 있도록하라. 이것은 보통 Swagger와 같은 API 문서화 프레임워크를 통해 이루어진다.
+
+**그렇게 하지 않을 경우:** API 클라이언트는 알수 없는 에러로 인해 충돌 후에 재시작을 결정할수도 있을 것이다. 참고: 당신의 API를 호출한 사람이 당신 자신 일수도 있다.(마이크로서비스 환경에서는 아주 일반적임).
+
+🔗 [**자세히 보기: Swagger에서 에러 문서화하기**](/sections/errorhandling/documentingusingswagger.korean.md)
+
+<br/><br/>
+
+## ![✔] 2.6 이상한 것이 들어왔을때 프로세스를 정상적으로 중단하라
+
+**핵심요약:** 알수 없는 에러(프로그래머 에러, 모범사례 #3번 참조)가 발생하면 어플리케이션의 건강상태에 대한 불확실성이 있다. 일반적인 방법은 Forever와 PM2 같은 '재시작' 도구로 프로세스를 다시 시작하는 것이다. 
+
+**그렇게 하지 않을 경우:** 익숙치 않은 예외가 발생하면 일부 객체가 오류 상태(예를 들어 전역적으로 사용되지만 내부 오류로 인해 이벤트를 더이상 발생시키지 않는 Event Emitter)일 수 있으며 향후의 모든 요청이 실패하거나 미친것처럼(crazily) 동작할 수 있다.
+
+🔗 [**자세히 보기: 프로세스 중단하기**](/sections/errorhandling/shuttingtheprocess.korean.md)
 
 <br/><br/>
 
