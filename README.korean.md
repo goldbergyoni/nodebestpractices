@@ -100,9 +100,9 @@
 
 # `2. 에러 처리 방법`
 
-## ![✔] 2.1 비동기 에러 처리시에는 Async-Await 혹은 Promise를 사용하라
+## ![✔] 2.1 비동기 에러 처리시에는 async-await 혹은 promise를 사용하라
 
-**핵심요약:** 비동기 에러를 콜백 스타일로 처리하는 것은 지옥으로 가는 급행열차일 것이다(운명의 피라미드로 잘 알려진). 당신이 코드에 줄 수 있는 가장 큰 선물은 평판이 좋은 Promise 라이브러리를 사용하거나 훨신 작고 친숙한 코드 문법인 try-catch를 사용하게 해주는 Async-Await를 사용하는 것이다.
+**핵심요약:** 비동기 에러를 콜백 스타일로 처리하는 것은 지옥으로 가는 급행열차일 것이다(운명의 피라미드로 잘 알려진). 당신이 코드에 줄 수 있는 가장 큰 선물은 평판이 좋은 promise 라이브러리를 사용하거나 훨신 작고 친숙한 코드 문법인 try-catch를 사용하게 해주는 async-await를 사용하는 것이다.
 
 **그렇게 하지 않을 경우:** Node.js 콜백 스타일인 function(err, response)는 에러 처리와 일반 코드의 혼합, 코드의 과도한 중첩, 이상한 코딩 패턴 때문에 유지보수가 불가능한 코드로가는 확실한 길이다.
 
@@ -112,7 +112,7 @@
 
 ## ![✔] 2.2 내장된 Error 객체만 사용하라
 
-**핵심요약:** 많은 사람들이 문자열이나 사용자가 임의로 정의한 타입으로 에러를 던진다(throw). 이것은 에러처리 로직과 모듈 사이의 상호운영성을 복잡하게 한다. 당신이 Promise를 거부(reject)하든, 예외를 던지든, 에러를 냈건 내장된 Error 객체를 이용하는 것은 균일성을 향상하고 정보의 손실을 방지하게 만들것이다.
+**핵심요약:** 많은 사람들이 문자열이나 사용자가 임의로 정의한 타입으로 에러를 던진다(throw). 이것은 에러처리 로직과 모듈 사이의 상호운영성을 복잡하게 한다. 당신이 promise를 거부(reject)하든, 예외를 던지든, 에러를 냈건 내장된 Error 객체를 이용하는 것은 균일성을 향상하고 정보의 손실을 방지하게 만들것이다.
 
 **그렇게 하지 않을 경우:** 일부 컴포넌트를 호출할때 어떤 에러의 타입이 반환될지 불확실해져서 적절한 에러처리가 매우 어려워 질것이다. 더 나쁜 것은, 사용자가 정의한 타입으로 에러를 나타내는 것은 스택 정보(stack trace)와 같은 중요한 에러 정보를 손실할 가능성이 있다는 것이다!
 
@@ -160,53 +160,53 @@
 
 <br/><br/>
 
-## ![✔] 2.7 Use a mature logger to increase error visibility
+## ![✔] 2.7 에러 확인을 용이하게 해주는 로거를 사용하라
 
-**TL;DR:** A set of mature logging tools like Winston, Bunyan or Log4J, will speed-up error discovery and understanding. So forget about console.log
+**핵심요약:** Winston, Bunyan 혹은 Log4J와 같은 발전된 로깅 도구의 집합은 에러를 찾는 것과 이해하는 것의 속도를 높여준다. 그러니 console.log를 잊어버려라.
 
-**Otherwise:** Skimming through console.logs or manually through messy text file without querying tools or a decent log viewer might keep you busy at work until late
+**그렇게 하지 않을 경우:** 로그 검색 도구나 괜찮은 로그 뷰어 없이 console.log 혹은 지저분한 텍스트 파일을 대충 읽는 것은 야근을 부를 수 있다.
 
-🔗 [**자세히 보기: using a mature logger**](/sections/errorhandling/usematurelogger.korean.md)
+🔗 [**자세히 보기: 발전된 로거를 사용하기**](/sections/errorhandling/usematurelogger.korean.md)
 
 <br/><br/>
 
-## ![✔] 2.8 Test error flows using your favorite test framework
+## ![✔] 2.8 당신이 선호하는 테스트 프레임워크로 에러 흐름을 테스트하라
 
-**TL;DR:** Whether professional automated QA or plain manual developer testing – Ensure that your code not only satisfies positive scenario but also handle and return the right errors. Testing frameworks like Mocha & Chai can handle this easily (see code examples within the "Gist popup")
+**핵심요약:** 전문 자동화 QA든 일반 수동 개발자 테스트든 당신의 코드가 긍정적인 상황에서 잘 동작할 뿐만 아니라 올바른 에러를 처리하고 반환하는지 확실히 하라. Mocha & Chai와 같은 테스트 프레임워크는 이것을 쉽게 처리 할수 있다("Gist popup"안의 코드 예제를 확인하라).
 
-**Otherwise:** Without testing, whether automatically or manually, you can’t rely on our code to return the right errors. Without meaningful errors – there’s no error handling
+**그렇게 하지 않을 경우:** 자동이든 수동이든 테스트가 없다면 당신은 당신의 코드가 올바른 에러를 반환하는지 믿지 못할 것이다. 의미가 있는 에러가 없다면 에러 처리는 없는 것이다.
 
 🔗 [**자세히 보기: testing error flows**](/sections/errorhandling/testingerrorflows.korean.md)
 
 <br/><br/>
 
-## ![✔] 2.9 Discover errors and downtime using APM products
+## ![✔] 2.9 APM 제품을 사용하여 에러와 다운타임을 확인하라
 
-**TL;DR:** Monitoring and performance products (a.k.a APM) proactively gauge your codebase or API so they can automagically highlight errors, crashes and slow parts that you were missing
+**핵심요약:** APM이라고 불리는 모니터링 및 성능 제품은 미리 알아서 코드베이스와 API를 측정하고 자동적으로 당신이 놓친 에러, 충돌, 느린부분을 강조 표시해준다.
 
-**Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which are your slowest code parts under real-world scenario and how these affect the UX
+**그렇게 하지 않을 경우:** API의 성능과 다운타임을 측정하기위해 많은 노력을 들여야 할지도 모른다. 아마 당신은 실제 상황에서 어떤 코드 부분이 가장 느린지, 그것이 UX에 어떻게 영향을 미칠지 절대 알수없을 것이다.
 
-🔗 [**자세히 보기: using APM products**](/sections/errorhandling/apmproducts.korean.md)
-
-<br/><br/>
-
-## ![✔] 2.10 Catch unhandled promise rejections
-
-**TL;DR:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explicitly handle. Even if your code is subscribed to process.uncaughtException! Overcome this by registering to the event process.unhandledRejection
-
-**Otherwise:** Your errors will get swallowed and leave no trace. Nothing to worry about
-
-🔗 [**자세히 보기: catching unhandled promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.korean.md)
+🔗 [**자세히 보기: APM 제품 사용하기**](/sections/errorhandling/apmproducts.korean.md)
 
 <br/><br/>
 
-## ![✔] 2.11 Fail fast, validate arguments using a dedicated library
+## ![✔] 2.10 처리되지 않은 promise 거부(unhandled promise rejection)를 잡아라
 
-**TL;DR:** This should be part of your Express best practices – Assert API input to avoid nasty bugs that are much harder to track later. The validation code is usually tedious unless you are using a very cool helper library like Joi
+**핵심요약:** promise안에서 발생한 예외는 개발자가 명시적으로 처리하는 것을 잊게되면 삼켜지고 버려지게 된다. 당신의 코드가 process.uncaughtException 이벤트를 구독하고 있다고해도 말이다! 이것을 극복하기위해 process.unhandledRejection 이벤트를 등록하라.
 
-**Otherwise:** Consider this – your function expects a numeric argument “Discount” which the caller forgets to pass, later on, your code checks if Discount!=0 (amount of allowed discount is greater than zero), then it will allow the user to enjoy a discount. OMG, what a nasty bug. Can you see it?
+**그렇게 하지 않을 경우:** 당신의 에러는 삼켜지고 어떤 흔적도 남기지 않을 것이다. 걱정할 것이 없긴 하다.
 
-🔗 [**자세히 보기: failing fast**](/sections/errorhandling/failfast.korean.md)
+🔗 [**자세히 보기: 처리되지 않은 promise 거부 잡기**](/sections/errorhandling/catchunhandledpromiserejection.korean.md)
+
+<br/><br/>
+
+## ![✔] 2.11 전용 라이브러리를 이용해 인자값이 유효한지 검사하여 빠르게 실패하라
+
+**핵심요약:** 나중에 처리하기가 더 힘들어지는 지저분한 버그를 피하기 위해 Assert API입력은 당신의 Express 모범사례가 되어야 한다. 당신이 Joi와 같은 유용한 헬퍼 라이브러리를 사용하지 않는 이상 유효성 검사 코드는 일반적으로 지루하다.
+
+**그렇게 하지 않을 경우:** 이런 상황을 생각해보자. 당신의 함수가 "Discount"라는 숫자를 받아야하는데 요청하는 사람이 넘겨주는 것을 깜빡했다. 그 후에 당신의 코드는 Discount!=0인지 아닌지 체크한다(사실 허용된 Discount의 값은 0보다 커야 한다). 그러면 사용자가 할인을 받게될 것이다. 보이는가? 엄청나게 지저분한 버그이다.
+
+🔗 [**자세히 보기: 빠르게 실패하기**](/sections/errorhandling/failfast.korean.md)
 
 <br/><br/><br/>
 
