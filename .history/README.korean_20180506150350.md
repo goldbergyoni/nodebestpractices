@@ -9,8 +9,8 @@
 <br/>
 
 <div align="center">
-<img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2053%20Best%20practices-blue.svg" alt="53 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Nov%2015%202017-green.svg" alt="Last update: Nov 15, 2017"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.9-brightgreen.svg" alt="Updated for Node v.8.9">
-	</div>
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2054%20Best%20practices-blue.svg" alt="54 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20July%2015%202018-green.svg" alt="Last update: July 15th, 2018"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.11.3%20LTS-brightgreen.svg" alt="Updated for Node 8.11.3 LTS">
+</div>
 
 <br/>
 
@@ -693,31 +693,33 @@ Full Stack Developer based in New Zealand, interested in architecting and buildi
 
 This repository is being kept up to date thanks to the help from the community. We appreciate any contribution, from a single word fix to a new best practice. Below is a list of everyone who contributed to this project. A :sunflower: marks a successful pull request and a :star: marks an approved new best practice.
 
-🌻 [Kevin Rambaud](https://github.com/kevinrambaud), 
-🌻 [Michael Fine](https://github.com/mfine15), 
-🌻 [Shreya Dahal](https://github.com/squgeim), 
-🌻 [ChangJoo Park](https://github.com/ChangJoo-Park), 
-🌻 [Matheus Cruz Rocha](https://github.com/matheusrocha89), 
-🌻 [Yog Mehta](https://github.com/BitYog), 
-🌻 [Kudakwashe Paradzayi](https://github.com/kudapara), 
-🌻 [t1st3](https://github.com/t1st3), 
-🌻 [mulijordan1976](https://github.com/mulijordan1976), 
-🌻 [Matan Kushner](https://github.com/matchai), 
-🌻 [Fabio Hiroki](https://github.com/fabiothiroki), 
-🌻 [James Sumners](https://github.com/jsumners), 
-🌻 [Chandan Rai](https://github.com/crowchirp), 
-🌻 [Dan Gamble](https://github.com/dan-gamble), 
-🌻 [PJ Trainor](https://github.com/trainorpj), 
-🌻 [Remek Ambroziak](https://github.com/reod), 
-🌻 [Yoni Jah](https://github.com/yonjah), 
-🌻 [Misha Khokhlov](https://github.com/hazolsky), 
-🌻 [Evgeny Orekhov](https://github.com/EvgenyOrekhov), 
-🌻 [Gediminas Petrikas](https://github.com/gediminasml), 
-🌻 [Isaac Halvorson](https://github.com/hisaac), 
-🌻 [Vedran Karačić](https://github.com/vkaracic), 
-🌻 [lallenlowe](https://github.com/lallenlowe), 
-🌻 [Nathan Wells](https://github.com/nwwells), 
-🌻 [Paulo Vítor S Reis](https://github.com/paulovitin), 
+### Flowers
+
+🌻 [Kevin Rambaud](https://github.com/kevinrambaud),
+🌻 [Michael Fine](https://github.com/mfine15),
+🌻 [Shreya Dahal](https://github.com/squgeim),
+🌻 [ChangJoo Park](https://github.com/ChangJoo-Park),
+🌻 [Matheus Cruz Rocha](https://github.com/matheusrocha89),
+🌻 [Yog Mehta](https://github.com/BitYog),
+🌻 [Kudakwashe Paradzayi](https://github.com/kudapara),
+🌻 [t1st3](https://github.com/t1st3),
+🌻 [mulijordan1976](https://github.com/mulijordan1976),
+🌻 [Matan Kushner](https://github.com/matchai),
+🌻 [Fabio Hiroki](https://github.com/fabiothiroki),
+🌻 [James Sumners](https://github.com/jsumners),
+🌻 [Chandan Rai](https://github.com/crowchirp),
+🌻 [Dan Gamble](https://github.com/dan-gamble),
+🌻 [PJ Trainor](https://github.com/trainorpj),
+🌻 [Remek Ambroziak](https://github.com/reod),
+🌻 [Yoni Jah](https://github.com/yonjah),
+🌻 [Misha Khokhlov](https://github.com/hazolsky),
+🌻 [Evgeny Orekhov](https://github.com/EvgenyOrekhov),
+🌻 [Gediminas Petrikas](https://github.com/gediminasml),
+🌻 [Isaac Halvorson](https://github.com/hisaac),
+🌻 [Vedran Karačić](https://github.com/vkaracic),
+🌻 [lallenlowe](https://github.com/lallenlowe),
+🌻 [Nathan Wells](https://github.com/nwwells),
+🌻 [Paulo Vítor S Reis](https://github.com/paulovitin),
 🌻 [syzer](https://github.com/syzer),
 🌻 [David Sancho](https://github.com/davesnx),
 🌻 [Robert Manolea](https://github.com/pupix),
@@ -732,13 +734,16 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Ye Min Htut](https://github.com/ymhtut),
 🌻 [cwar](https://github.com/cwar),
 🌻 [Yuwei](https://github.com/keyfoxth),
-🌻 [Utkarsh Bhatt](https://github.com/utkarshbhatt12)
-🌻 [Duarte Mendes](https://github.com/duartemendes)
-🌻 [Sagir Khan](https://github.com/sagirk)
-🌻 [Jason Kim](https://github.com/serv)
+🌻 [Utkarsh Bhatt](https://github.com/utkarshbhatt12),
+🌻 [Duarte Mendes](https://github.com/duartemendes),
+🌻 [Sagir Khan](https://github.com/sagirk),
+🌻 [Jason Kim](https://github.com/serv),
+🌻 [Mitja O.](https://github.com/Max101),
+🌻 [Sandro Miguel Marques](https://github.com/SandroMiguel)
 
-<br/>
+### Stars <br/>
 
 ⭐ [Kyle Martin](https://github.com/js-kyle)
+⭐ [Keith Holliday](https://github.com/TheHollidayInn)
 
 <br/><br/>
