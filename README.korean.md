@@ -200,7 +200,7 @@
 
 <br/><br/>
 
-## ![✔] 2.11 전용 라이브러리를 이용해 인자값이 유효한지 검사하여 빠르게 실패하라
+## ![✔] 2.11 전용 라이브러리를 이용해 인자값이 유효한지 검사하여 빠르게 실패하라(fail fast)
 
 **핵심요약:** 나중에 처리하기가 더 힘들어지는 지저분한 버그를 피하기 위해 Assert API입력은 당신의 Express 모범사례가 되어야 한다. 당신이 Joi와 같은 유용한 헬퍼 라이브러리를 사용하지 않는 이상 유효성 검사 코드는 일반적으로 지루하다.
 
@@ -232,7 +232,7 @@
 
 ## ![✔] 3.3 코드 블록의 중괄호를 같은 줄에서 시작하라
 
-**TL;DR:** 블록에서 중괄호를 여는 부분은 코드를 여는 부분과 같은 줄에 있어야 한다.
+**핵심요약:** 블록에서 중괄호를 여는 부분은 코드를 여는 문장과 같은 줄에 있어야 한다.
 
 ### 코드 예제
 
@@ -243,52 +243,53 @@ function someFunction() {
 }
 
 // Avoid
-function someFunction()
+function someFu장nction()
 {
   // code block
 }
 ```
 
-**Otherwise:** 이 모범사례와 다른 것은 아래의 StackOverflow 스레드에서 보는 바와 같이 예기치못한 결과로 이어질 수 있다.
+**그렇게 하지 않을 경우:** 이 모범사례를 적용하지 않는 것은 아래의 StackOverflow 스레드에서 보는 바와 같이 예기치못한 결과로 이어질 수 있다.
 
 🔗 [**자세히 보기:** "왜 결과가 중괄호의 위치에 따라 달라지나요?" (Stackoverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
 <br/><br/>
 
-## ![✔] 3.4 Don't Forget the Semicolon
+## ![✔] 3.4 세미콜론을 잊지 마라
 
-**TL;DR:** While not unanimously agreed upon, it is still recommended to put a semicolon at the end of each statement. This will make your code more readable and explicit to other developers who read it
+**핵심요약:** 만장일치로 동의하지는 않겠지만 각 문장의 끝에 세미콜론을 붙이는 것은 여전히 권장사항이다. 이것은 당신의 코드를 읽는 다른 프로그래머가 좀더 잘 읽게하고 명확하게 할것이다.
 
-**Otherwise:** As seen in the previous section, JavaScript's interpreter automatically adds a semicolon at the end of a statement if there isn't one which might lead to some undesired results
-
-<br/><br/>
-
-## ![✔] 3.5 Name Your Functions
-
-**TL;DR:** Name all functions, including closures and callbacks. Avoid anonymous functions. This is especially useful when profiling a node app. Naming all functions will allow you to easily understand what you're looking at when checking a memory snapshot
-
-**Otherwise:** Debugging production issues using a core dump (memory snapshot) might become challenging as you notice significant memory consumption from anonymous functions
+**그렇게 하지 않을 경우:** 이전 섹션에서 본것처럼 자바스크립트의 인터프리터는 세미콜론이 없으면 의도되지 않은 결과를 야기할수 있기에 자동으로 문장의 끝에 세미콜론을 붙인다.
 
 <br/><br/>
 
-## ![✔] 3.6 Naming conventions for variables, constants, functions and classes
+## ![✔] 3.5 함수에 이름을 붙여라
 
-**TL;DR:** Use **_lowerCamelCase_** when naming constants, variables and functions and **_UpperCamelCase_** (capital first letter as well) when naming classes. This will help you to easily distinguish between plain variables/functions, and classes that require instantiation. Use descriptive names, but try to keep them short
+**핵심요약:** 클로저와 콜백을 포함한 모든 함수에 이름을 붙여라. 익명함수를 피해라. 이것은 노드 앱을 프로파일링 할때 특히 유용하다. 모든 함수를 명명하는 것은 당신이 메모리 스냅샷을 확인할때 당신이 보고있는 것이 무엇인지 쉽게 이해 할수있도록 해준다.
 
-**Otherwise:** Javascript is the only language in the world which allows invoking a constructor ("Class") directly without instantiating it first. Consequently, Classes and function-constructors are differentiated by starting with UpperCamelCase
+**그렇게 하지 않을 경우:** 
+당신이 익명함수에서 메모리 소비가 많다는 것을 확인 했을 때 코어 덤프(메모리 스냅샷)을 이용해 프로덕션 문제를 디버깅하는 것이 어려울 수도 있습니다.
 
-### Code Example
+<br/><br/>
+
+## ![✔] 3.6 변수, 상수, 함수, 클래스의 명명 규칙(naming convention) 
+
+**핵심요약:** 상수와 변수 함수를 명명할때는 **_lowerCamelCase_**를 사용하고 클래스를 명명 할때는 **_UpperCamelCase_**(첫 글자 대문자)를 사용하라. 이것은 일반 변수/함수와 인스턴스로 만들어야 하는 클래스를 구분하는데 도움을  것이다. 설명이 포함된 이름을 사용하되 이름을 짧게 유지하도록 해라.
+
+**그렇게 하지 않을 경우:** 자바스크립트는 먼저 인스턴스로 만들지 않고 직접 생성자("Class")를 호출할 수 있는 세계 유일의 언어이다. 그러므로 클래스와 함수생성자는 UpperCamelCase를 통해 구분된다.
+
+### 코드예제
 
 ```javascript
-// for class name we use UpperCamelCase
+// 클래스명은 UpperCamelCase 사용
 class SomeClassExample {}
 
-// for const names we use the const keyword and lowerCamelCase
+// 상수명은 const 키워드와 lowerCamelCase 사용
 const config = {
   key: 'value'
 };
 
-// for variables and functions names we use lowerCamelCase
+// 변수와 함수 이름은 lowerCamelCase 사용
 let someVariableExample = 'value';
 function doSomething() {}
 ```
@@ -297,9 +298,9 @@ function doSomething() {}
 
 ## ![✔] 3.7 Prefer const over let. Ditch the var
 
-**TL;DR:** Using `const` means that once a variable is assigned, it cannot be reassigned. Preferring const will help you to not be tempted to use the same variable for different uses, and make your code clearer. If a variable needs to be reassigned, in a for loop, for example, use `let` to declare it. Another important aspect of `let` is that a variable declared using it is only available in the block scope in which it was defined. `var` is function scoped, not block scoped, and [shouldn't be used in ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) now that you have const and let at your disposal
+**핵심요약:** Using `const` means that once a variable is assigned, it cannot be reassigned. Preferring const will help you to not be tempted to use the same variable for different uses, and make your code clearer. If a variable needs to be reassigned, in a for loop, for example, use `let` to declare it. Another important aspect of `let` is that a variable declared using it is only available in the block scope in which it was defined. `var` is function scoped, not block scoped, and [shouldn't be used in ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) now that you have const and let at your disposal
 
-**Otherwise:** Debugging becomes way more cumbersome when following a variable that frequently changes
+**그렇게 하지 않을 경우:** Debugging becomes way more cumbersome when following a variable that frequently changes
 
 🔗 [**자세히 보기: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
 
@@ -307,19 +308,19 @@ function doSomething() {}
 
 ## ![✔] 3.8 Requires come first, and not inside functions
 
-**TL;DR:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top but also avoids a couple of potential problems
+**핵심요약:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top but also avoids a couple of potential problems
 
-**Otherwise:** Requires are run synchronously by Node.js. If they are called from within a function, it may block other requests from being handled at a more critical time. Also, if a required module or any of its own dependencies throw an error and crash the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function
+**그렇게 하지 않을 경우:** Requires are run synchronously by Node.js. If they are called from within a function, it may block other requests from being handled at a more critical time. Also, if a required module or any of its own dependencies throw an error and crash the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function
 
 <br/><br/>
 
 ## ![✔] 3.9 Do Require on the folders, not directly on the files
 
-**TL;DR:** When developing a module/library in a folder, place an index.js file that exposes the module's
+**핵심요약:** When developing a module/library in a folder, place an index.js file that exposes the module's
 internals so every consumer will pass through it. This serves as an 'interface' to your module and eases
 future changes without breaking the contract
 
-**Otherwise:** Changing the internal structure of files or the signature may break the interface with
+**그렇게 하지 않을 경우:** Changing the internal structure of files or the signature may break the interface with
 clients
 
 ### Code example
@@ -338,9 +339,9 @@ module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolve
 
 ## ![✔] 3.10 Use the `===` operator
 
-**TL;DR:** Prefer the strict equality operator `===` over the weaker abstract equality operator `==`. `==` will compare two variables after converting them to a common type. There is no type conversion in `===`, and both variables must be of the same type to be equal
+**핵심요약:** Prefer the strict equality operator `===` over the weaker abstract equality operator `==`. `==` will compare two variables after converting them to a common type. There is no type conversion in `===`, and both variables must be of the same type to be equal
 
-**Otherwise:** Unequal variables might return true when compared with the `==` operator
+**그렇게 하지 않을 경우:** Unequal variables might return true when compared with the `==` operator
 
 ### Code example
 
@@ -365,9 +366,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 3.11 Use Async Await, avoid callbacks
 
-**TL;DR:** Node 8 LTS now has full support for Async-await. This is a new way of dealing with asynchronous code which supersedes callbacks and promises. Async-await is non-blocking, and it makes asynchronous code look synchronous. The best gift you can give to your code is using async-await which provides a much more compact and familiar code syntax like try-catch
+**핵심요약:** Node 8 LTS now has full support for Async-await. This is a new way of dealing with asynchronous code which supersedes callbacks and promises. Async-await is non-blocking, and it makes asynchronous code look synchronous. The best gift you can give to your code is using async-await which provides a much more compact and familiar code syntax like try-catch
 
-**Otherwise:** Handling async errors in callback style is probably the fastest way to hell - this style forces to check errors all over, deal with awkward code nesting and make it difficult to reason about the code flow
+**그렇게 하지 않을 경우:** Handling async errors in callback style is probably the fastest way to hell - this style forces to check errors all over, deal with awkward code nesting and make it difficult to reason about the code flow
 
 🔗[**자세히 보기:** Guide to async await 1.0](https://github.com/yortus/asyncawait)
 
@@ -375,9 +376,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 3.12 Use Fat (=>) Arrow Functions
 
-**TL;DR:** Though it's recommended to use async-await and avoid function parameters when dealing with older API that accept promises or callbacks - arrow functions make the code structure more compact and keep the lexical context of the root function (i.e. 'this')
+**핵심요약:** Though it's recommended to use async-await and avoid function parameters when dealing with older API that accept promises or callbacks - arrow functions make the code structure more compact and keep the lexical context of the root function (i.e. 'this')
 
-**Otherwise:** Longer code (in ES5 functions) is more prone to bugs and cumbersome to read
+**그렇게 하지 않을 경우:** Longer code (in ES5 functions) is more prone to bugs and cumbersome to read
 
 🔗 [**Read mode: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
 
@@ -389,25 +390,25 @@ All statements above will return false if used with `===`
 
 ## ![✔] 4.1 At the very least, write API (component) testing
 
-**TL;DR:** Most projects just don't have any automated testing due to short timetables or often the 'testing project' run out of control and being abandoned. For that reason, prioritize and start with API testing which is the easiest to write and provide more coverage than unit testing (you may even craft API tests without code using tools like [Postman](https://www.getpostman.com/). Afterward, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc
+**핵심요약:** Most projects just don't have any automated testing due to short timetables or often the 'testing project' run out of control and being abandoned. For that reason, prioritize and start with API testing which is the easiest to write and provide more coverage than unit testing (you may even craft API tests without code using tools like [Postman](https://www.getpostman.com/). Afterward, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc
 
-**Otherwise:** You may spend long days on writing unit tests to find out that you got only 20% system coverage
+**그렇게 하지 않을 경우:** You may spend long days on writing unit tests to find out that you got only 20% system coverage
 
 <br/><br/>
 
 ## ![✔] 4.2 Detect code issues with a linter
 
-**TL;DR:** Use a code linter to check basic quality and detect anti-patterns early. Run it before any test and add it as a pre-commit git-hook to minimize the time needed to review and correct any issue. Also check [Section 3](https://github.com/i0natan/nodebestpractices#3-code-style-practices) on Code Style Practices
+**핵심요약:** Use a code linter to check basic quality and detect anti-patterns early. Run it before any test and add it as a pre-commit git-hook to minimize the time needed to review and correct any issue. Also check [Section 3](https://github.com/i0natan/nodebestpractices#3-code-style-practices) on Code Style Practices
 
-**Otherwise:** You may let pass some anti-pattern and possible vulnerable code to your production environment.
+**그렇게 하지 않을 경우:** You may let pass some anti-pattern and possible vulnerable code to your production environment.
 
 <br/><br/>
 
 ## ![✔] 4.3 Carefully choose your CI platform (Jenkins vs CircleCI vs Travis vs Rest of the world)
 
-**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it should come with a vibrant ecosystem of plugins. [Jenkins](https://jenkins.io/) used to be the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Nowadays, it became much easier to set up a CI solution using SaaS tools like [CircleCI](https://circleci.com) and others. These tools allow crafting a flexible CI pipeline without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
+**핵심요약:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it should come with a vibrant ecosystem of plugins. [Jenkins](https://jenkins.io/) used to be the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Nowadays, it became much easier to set up a CI solution using SaaS tools like [CircleCI](https://circleci.com) and others. These tools allow crafting a flexible CI pipeline without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
 
-**Otherwise:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
+**그렇게 하지 않을 경우:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
 
 🔗 [**자세히 보기: Choosing CI platform**](/sections/testingandquality/citools.korean.md)
 
@@ -415,41 +416,41 @@ All statements above will return false if used with `===`
 
 ## ![✔] 4.4 Constantly inspect for vulnerable dependencies
 
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [nsp](https://github.com/nodesecurity/nsp) that can be invoked from your CI on every build
+**핵심요약:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [nsp](https://github.com/nodesecurity/nsp) that can be invoked from your CI on every build
 
-**Otherwise:** Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
+**그렇게 하지 않을 경우:** Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
 
 <br/><br/>
 
 ## ![✔] 4.5 Tag your tests
 
-**TL;DR:** Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/): mocha --grep 'sanity'
+**핵심요약:** Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/): mocha --grep 'sanity'
 
-**Otherwise:** Running all the tests, including tests that perform dozens of DB queries, any time a developer makes a small change can be extremely slow and keeps developers away from running tests
+**그렇게 하지 않을 경우:** Running all the tests, including tests that perform dozens of DB queries, any time a developer makes a small change can be extremely slow and keeps developers away from running tests
 
 <br/><br/>
 
 ## ![✔] 4.6 Check your test coverage, it helps to identify wrong test patterns
 
-**TL;DR:** Code coverage tools like [Istanbul/NYC ](https://github.com/gotwarlost/istanbul)are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but not least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
+**핵심요약:** Code coverage tools like [Istanbul/NYC ](https://github.com/gotwarlost/istanbul)are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but not least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
 
-**Otherwise:** There won't be any automated metric telling you when a large portion of your code is not covered by testing
+**그렇게 하지 않을 경우:** There won't be any automated metric telling you when a large portion of your code is not covered by testing
 
 <br/><br/>
 
 ## ![✔] 4.7 Inspect for outdated packages
 
-**TL;DR:** Use your preferred tool (e.g. 'npm outdated' or [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) to detect installed packages which are outdated, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a severe scenario might be when an installed package is 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
+**핵심요약:** Use your preferred tool (e.g. 'npm outdated' or [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) to detect installed packages which are outdated, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a severe scenario might be when an installed package is 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
 
-**Otherwise:** Your production will run packages that have been explicitly tagged by their author as risky
+**그렇게 하지 않을 경우:** Your production will run packages that have been explicitly tagged by their author as risky
 
 <br/><br/>
 
 ## ![✔] 4.8 Use docker-compose for e2e testing
 
-**TL;DR:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Docker-compose turns this problem into a breeze by crafting production-like environment using a simple text file and easy commands. It allows crafting all the dependent services, DB and isolated network for e2e testing. Last but not least, it can keep a stateless environment that is invoked before each test suite and dies right after
+**핵심요약:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Docker-compose turns this problem into a breeze by crafting production-like environment using a simple text file and easy commands. It allows crafting all the dependent services, DB and isolated network for e2e testing. Last but not least, it can keep a stateless environment that is invoked before each test suite and dies right after
 
-**Otherwise:** Without docker-compose teams must maintain a testing DB for each testing environment including developers machines, keep all those DBs in sync so test results won't vary across environments
+**그렇게 하지 않을 경우:** Without docker-compose teams must maintain a testing DB for each testing environment including developers machines, keep all those DBs in sync so test results won't vary across environments
 
 <br/><br/><br/>
 
@@ -459,9 +460,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.1. Monitoring!
 
-**TL;DR:** Monitoring is a game of finding out issues before customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that ticks all boxes. Click ‘The Gist’ below for an overview of the solutions
+**핵심요약:** Monitoring is a game of finding out issues before customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that ticks all boxes. Click ‘The Gist’ below for an overview of the solutions
 
-**Otherwise:** Failure === disappointed customers. Simple
+**그렇게 하지 않을 경우:** Failure === disappointed customers. Simple
 
 🔗 [**자세히 보기: Monitoring!**](/sections/production/monitoring.korean.md)
 
@@ -469,9 +470,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.2. Increase transparency using smart logging
 
-**TL;DR:** Logs can be a dumb warehouse of debug statements or the enabler of a beautiful dashboard that tells the story of your app. Plan your logging platform from day 1: how logs are collected, stored and analyzed to ensure that the desired information (e.g. error rate, following an entire transaction through services and servers, etc) can really be extracted
+**핵심요약:** Logs can be a dumb warehouse of debug statements or the enabler of a beautiful dashboard that tells the story of your app. Plan your logging platform from day 1: how logs are collected, stored and analyzed to ensure that the desired information (e.g. error rate, following an entire transaction through services and servers, etc) can really be extracted
 
-**Otherwise:** You end-up with a black box that is hard to reason about, then you start re-writing all logging statements to add additional information
+**그렇게 하지 않을 경우:** You end-up with a black box that is hard to reason about, then you start re-writing all logging statements to add additional information
 
 🔗 [**자세히 보기: Increase transparency using smart logging**](/sections/production/smartlogging.korean.md)
 
@@ -479,9 +480,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy
 
-**TL;DR:** Node is awfully bad at doing CPU intensive tasks like gzipping, SSL termination, etc. You should use ‘real’ middleware services like nginx, HAproxy or cloud vendor services instead
+**핵심요약:** Node is awfully bad at doing CPU intensive tasks like gzipping, SSL termination, etc. You should use ‘real’ middleware services like nginx, HAproxy or cloud vendor services instead
 
-**Otherwise:** Your poor single thread will stay busy doing infrastructural tasks instead of dealing with your application core and performance will degrade accordingly
+**그렇게 하지 않을 경우:** Your poor single thread will stay busy doing infrastructural tasks instead of dealing with your application core and performance will degrade accordingly
 
 🔗 [**자세히 보기: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.korean.md)
 
@@ -489,9 +490,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.4. Lock dependencies
 
-**TL;DR:** Your code must be identical across all environments, but amazingly NPM lets dependencies drift across environments by default – when you install packages at various environments it tries to fetch packages’ latest patch version. Overcome this by using NPM config files, .npmrc, that tell each environment to save the exact (not the latest) version of each package. Alternatively, for finer grain control use NPM” shrinkwrap”. \*Update: as of NPM5, dependencies are locked by default. The new package manager in town, Yarn, also got us covered by default
+**핵심요약:** Your code must be identical across all environments, but amazingly NPM lets dependencies drift across environments by default – when you install packages at various environments it tries to fetch packages’ latest patch version. Overcome this by using NPM config files, .npmrc, that tell each environment to save the exact (not the latest) version of each package. Alternatively, for finer grain control use NPM” shrinkwrap”. \*Update: as of NPM5, dependencies are locked by default. The new package manager in town, Yarn, also got us covered by default
 
-**Otherwise:** QA will thoroughly test the code and approve a version that will behave differently at production. Even worse, different servers at the same production cluster might run different code
+**그렇게 하지 않을 경우:** QA will thoroughly test the code and approve a version that will behave differently at production. Even worse, different servers at the same production cluster might run different code
 
 🔗 [**자세히 보기: Lock dependencies**](/sections/production/lockdependencies.korean.md)
 
@@ -499,9 +500,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.5. Guard process uptime using the right tool
 
-**TL;DR:** The process must go on and get restarted upon failures. For simple scenarios, ‘restarter’ tools like PM2 might be enough but in today ‘dockerized’ world – a cluster management tools should be considered as well
+**핵심요약:** The process must go on and get restarted upon failures. For simple scenarios, ‘restarter’ tools like PM2 might be enough but in today ‘dockerized’ world – a cluster management tools should be considered as well
 
-**Otherwise:** Running dozens of instances without a clear strategy and too many tools together (cluster management, docker, PM2) might lead to a DevOps chaos
+**그렇게 하지 않을 경우:** Running dozens of instances without a clear strategy and too many tools together (cluster management, docker, PM2) might lead to a DevOps chaos
 
 🔗 [**자세히 보기: Guard process uptime using the right tool**](/sections/production/guardprocess.korean.md)
 
@@ -509,9 +510,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.6. Utilize all CPU cores
 
-**TL;DR:** At its basic form, a Node app runs on a single CPU core while all other are left idling. It’s your duty to replicate the Node process and utilize all CPUs – For small-medium apps you may use Node Cluster or PM2. For a larger app consider replicating the process using some Docker cluster (e.g. K8S, ECS) or deployment scripts that are based on Linux init system (e.g. systemd)
+**핵심요약:** At its basic form, a Node app runs on a single CPU core while all other are left idling. It’s your duty to replicate the Node process and utilize all CPUs – For small-medium apps you may use Node Cluster or PM2. For a larger app consider replicating the process using some Docker cluster (e.g. K8S, ECS) or deployment scripts that are based on Linux init system (e.g. systemd)
 
-**Otherwise:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.js utilizes only 1 (even using PaaS services like AWS beanstalk!)
+**그렇게 하지 않을 경우:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.js utilizes only 1 (even using PaaS services like AWS beanstalk!)
 
 🔗 [**자세히 보기: Utilize all CPU cores**](/sections/production/utilizecpu.korean.md)
 
@@ -519,9 +520,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.7. Create a ‘maintenance endpoint’
 
-**TL;DR:** Expose a set of system-related information, like memory usage and REPL, etc in a secured API. Although it’s highly recommended to rely on standard and battle-tests tools, some valuable information and operations are easier done using code
+**핵심요약:** Expose a set of system-related information, like memory usage and REPL, etc in a secured API. Although it’s highly recommended to rely on standard and battle-tests tools, some valuable information and operations are easier done using code
 
-**Otherwise:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
+**그렇게 하지 않을 경우:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
 
 🔗 [**자세히 보기: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.korean.md)
 
@@ -529,9 +530,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.8. Discover errors and downtime using APM products
 
-**TL;DR:** Monitoring and performance products (a.k.a APM) proactively gauge codebase and API so they can auto-magically go beyond traditional monitoring and measure the overall user-experience across services and tiers. For example, some APM products can highlight a transaction that loads too slow on the end-users side while suggesting the root cause
+**핵심요약:** Monitoring and performance products (a.k.a APM) proactively gauge codebase and API so they can auto-magically go beyond traditional monitoring and measure the overall user-experience across services and tiers. For example, some APM products can highlight a transaction that loads too slow on the end-users side while suggesting the root cause
 
-**Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real-world scenario and how these affects the UX
+**그렇게 하지 않을 경우:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real-world scenario and how these affects the UX
 
 🔗 [**자세히 보기: Discover errors and downtime using APM products**](/sections/production/apmproducts.korean.md)
 
@@ -539,9 +540,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.9. Make your code production-ready
 
-**TL;DR:** Code with the end in mind, plan for production from day 1. This sounds a bit vague so I’ve compiled a few development tips that are closely related to production maintenance (click Gist below)
+**핵심요약:** Code with the end in mind, plan for production from day 1. This sounds a bit vague so I’ve compiled a few development tips that are closely related to production maintenance (click Gist below)
 
-**Otherwise:** A world champion IT/DevOps guy won’t save a system that is badly written
+**그렇게 하지 않을 경우:** A world champion IT/DevOps guy won’t save a system that is badly written
 
 🔗 [**자세히 보기: Make your code production-ready**](/sections/production/productoncode.korean.md)
 
@@ -549,9 +550,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.10. Measure and guard the memory usage
 
-**TL;DR:** Node.js has controversial relationships with memory: the v8 engine has soft limits on memory usage (1.4GB) and there are known paths to leaks memory in Node’s code – thus watching Node’s process memory is a must. In small apps, you may gauge memory periodically using shell commands but in medium-large app consider baking your memory watch into a robust monitoring system
+**핵심요약:** Node.js has controversial relationships with memory: the v8 engine has soft limits on memory usage (1.4GB) and there are known paths to leaks memory in Node’s code – thus watching Node’s process memory is a must. In small apps, you may gauge memory periodically using shell commands but in medium-large app consider baking your memory watch into a robust monitoring system
 
-**Otherwise:** Your process memory might leak a hundred megabytes a day like how it happened at [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
+**그렇게 하지 않을 경우:** Your process memory might leak a hundred megabytes a day like how it happened at [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
 
 🔗 [**자세히 보기: Measure and guard the memory usage**](/sections/production/measurememory.korean.md)
 
@@ -559,9 +560,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.11. Get your frontend assets out of Node
 
-**TL;DR:** Serve frontend content using dedicated middleware (nginx, S3, CDN) because Node performance really gets hurt when dealing with many static files due to its single threaded model
+**핵심요약:** Serve frontend content using dedicated middleware (nginx, S3, CDN) because Node performance really gets hurt when dealing with many static files due to its single threaded model
 
-**Otherwise:** Your single Node thread will be busy streaming hundreds of html/images/angular/react files instead of allocating all its resources for the task it was born for – serving dynamic content
+**그렇게 하지 않을 경우:** Your single Node thread will be busy streaming hundreds of html/images/angular/react files instead of allocating all its resources for the task it was born for – serving dynamic content
 
 🔗 [**자세히 보기: Get your frontend assets out of Node**](/sections/production/frontendout.korean.md)
 
@@ -569,9 +570,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.12. Be stateless, kill your Servers almost every day
 
-**TL;DR:** Store any type of data (e.g. users session, cache, uploaded files) within external data stores. Consider ‘killing’ your servers periodically or use ‘serverless’ platform (e.g. AWS Lambda) that explicitly enforces a stateless behavior
+**핵심요약:** Store any type of data (e.g. users session, cache, uploaded files) within external data stores. Consider ‘killing’ your servers periodically or use ‘serverless’ platform (e.g. AWS Lambda) that explicitly enforces a stateless behavior
 
-**Otherwise:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
+**그렇게 하지 않을 경우:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
 
 🔗 [**자세히 보기: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.korean.md)
 
@@ -579,9 +580,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.13. Use tools that automatically detect vulnerabilities
 
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities (from time to time) that can put a system at risk. This can get easily tamed using community and commercial tools that constantly check for vulnerabilities and warn (locally or at GitHub), some can even patch them immediately
+**핵심요약:** Even the most reputable dependencies such as Express have known vulnerabilities (from time to time) that can put a system at risk. This can get easily tamed using community and commercial tools that constantly check for vulnerabilities and warn (locally or at GitHub), some can even patch them immediately
 
-**Otherwise:** Otherwise: Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
+**그렇게 하지 않을 경우:** 그렇게 하지 않을 경우: Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
 
 🔗 [**자세히 보기: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.korean.md)
 
@@ -589,9 +590,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.14. Assign ‘TransactionId’ to each log statement
 
-**TL;DR:** Assign the same identifier, transaction-id: {some value}, to each log entry within a single request. Then when inspecting errors in logs, easily conclude what happened before and after. Unfortunately, this is not easy to achieve in Node due to its async nature, see code examples inside
+**핵심요약:** Assign the same identifier, transaction-id: {some value}, to each log entry within a single request. Then when inspecting errors in logs, easily conclude what happened before and after. Unfortunately, this is not easy to achieve in Node due to its async nature, see code examples inside
 
-**Otherwise:** Looking at a production error log without the context – what happened before – makes it much harder and slower to reason about the issue
+**그렇게 하지 않을 경우:** Looking at a production error log without the context – what happened before – makes it much harder and slower to reason about the issue
 
 🔗 [**자세히 보기: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.korean.md)
 
@@ -599,9 +600,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.15. Set NODE_ENV=production
 
-**TL;DR:** Set the environment variable NODE_ENV to ‘production’ or ‘development’ to flag whether production optimizations should get activated – many NPM packages determining the current environment and optimize their code for production
+**핵심요약:** Set the environment variable NODE_ENV to ‘production’ or ‘development’ to flag whether production optimizations should get activated – many NPM packages determining the current environment and optimize their code for production
 
-**Otherwise:** Omitting this simple property might greatly degrade performance. For example, when using Express for server-side rendering omitting `NODE_ENV` makes the slower by a factor of three!
+**그렇게 하지 않을 경우:** Omitting this simple property might greatly degrade performance. For example, when using Express for server-side rendering omitting `NODE_ENV` makes the slower by a factor of three!
 
 🔗 [**자세히 보기: Set NODE_ENV=production**](/sections/production/setnodeenv.korean.md)
 
@@ -611,7 +612,7 @@ All statements above will return false if used with `===`
 
 **TL;DR:** Researches show that teams who perform many deployments – lowers the probability of severe production issues. Fast and automated deployments that don’t require risky manual steps and service downtime significantly improves the deployment process. You should probably achieve that using Docker combined with CI tools as they became the industry standard for streamlined deployment
 
-**Otherwise:** Long deployments -> production down time & human-related error -> team unconfident and in making deployment -> less deployments and features
+**그렇게 하지 않을 경우:** Long deployments -> production down time & human-related error -> team unconfident and in making deployment -> less deployments and features
 
 <br/><br/>
 
@@ -619,7 +620,7 @@ All statements above will return false if used with `===`
 
 **TL;DR:** Ensure you are using an LTS version of Node.js to receive critical bug fixes, security updates and performance improvements
 
-**Otherwise:** Newly discovered bugs or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain
+**그렇게 하지 않을 경우:** Newly discovered bugs or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain
 
 🔗 [**자세히 보기: Use an LTS release of Node.js**](/sections/production/LTSrelease.korean.md)
 
