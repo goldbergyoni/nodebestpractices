@@ -226,7 +226,7 @@
 
 **핵심요약:** vanlla JS만 지원하는 ESLinst의 표준 규칙 위에 [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha), [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)와 같은 Node에 특화된 플러그인을 같이 사용하라.
 
-**그렇게 하지 않을 경우:** 많은 결함이 있는 Node.js 코드 패턴들이 레이더에서 벗어날 수 있다. 예를 들어 프로그래머는 변수로된 파일경로를 이용해 require(파일 위치 변수)로 파일을 가져올수 있다. 이것은 공격자들이 어떤 JS script도 실행시킬 수 있게 한다. Node.js linter는 그러한 패턴을 감지하고 미리 알려준다.
+**그렇게 하지 않을 경우:** 많은 결함이 있는 Node.js 코드 패턴들이 레이더에서 벗어날 수 있다. 예를 들어 프로그래머는 변수로된 파일경로를 이용해 `require(파일 경로 변수)`로 파일을 가져올수 있다. 이것은 공격자들이 어떤 JS script도 실행시킬 수 있게 한다. Node.js linter는 그러한 패턴을 감지하고 미리 알려준다.
 
 <br/><br/>
 
@@ -243,7 +243,7 @@ function someFunction() {
 }
 
 // Avoid
-function someFu장nction()
+function someFunction()
 {
   // code block
 }
@@ -274,7 +274,7 @@ function someFu장nction()
 
 ## ![✔] 3.6 변수, 상수, 함수, 클래스의 명명 규칙(naming convention) 
 
-**핵심요약:** 상수와 변수 함수를 명명할때는 **_lowerCamelCase_**를 사용하고 클래스를 명명 할때는 **_UpperCamelCase_**(첫 글자 대문자)를 사용하라. 이것은 일반 변수/함수와 인스턴스로 만들어야 하는 클래스를 구분하는데 도움을  것이다. 설명이 포함된 이름을 사용하되 이름을 짧게 유지하도록 해라.
+**핵심요약:** 상수와 변수 함수를 명명할때는 **_lowerCamelCase_** 를 사용하고 클래스를 명명 할때는 **_UpperCamelCase_**(첫 글자 대문자)를 사용하라. 이것은 일반 변수/함수와 인스턴스로 만들어야 하는 클래스를 구분하는데 도움을  것이다. 설명이 포함된 이름을 사용하되 이름을 짧게 유지하도록 해라.
 
 **그렇게 하지 않을 경우:** 자바스크립트는 먼저 인스턴스로 만들지 않고 직접 생성자("Class")를 호출할 수 있는 세계 유일의 언어이다. 그러므로 클래스와 함수생성자는 UpperCamelCase를 통해 구분된다.
 
@@ -296,17 +296,17 @@ function doSomething() {}
 
 <br/><br/>
 
-## ![✔] 3.7 let보다 const. var는 갖다버려라
+## ![✔] 3.7 let보다는 const를 사용하라. var는 갖다버려라
 
-**핵심요약:** `const`를 사용한다는 것은 변수에 한번 값이 할당되면 다시 할당할 수 없다는 것을 의미한다. const를 선호하는 것은 같은 변수를 다른 용도로 사용하는 것을 방지하고 당신의 코드를 더 깔끔하게 만드는데 도움을 준다. for루프처럼 변수가 재할당 되어야 할 필요가 있으면 `let`을 사용하여 선언하라. `let`의 또 다른 중요한 부분은 선언된 변수를 사용하는 것이 변수가 정의된 블록범위(block scope) 안에서만 가능하다는 것이다. `var`는 블록범위가 아니라 함수범위(function scope)이며 이제 대신할 수 있는 const와 let이 있으므로 [ES6에서는 사용하면 안된다](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70).
+**핵심요약:** `const`를 사용한다는 것은 변수에 한번 값이 할당되면 다시 할당할 수 없다는 것을 의미한다. `const`를 선호하는 것은 같은 변수를 다른 용도로 사용하는 것을 방지하고 당신의 코드를 더 깔끔하게 만드는데 도움을 준다. for루프처럼 변수가 재할당 되어야 할 필요가 있으면 `let`을 사용하여 선언하라. `let`의 또 다른 중요한 부분은 선언된 변수를 사용하는 것이 변수가 정의된 블록범위(block scope) 안에서만 가능하다는 것이다. `var`는 블록범위가 아니라 함수범위(function scope)이며 이제 대신할 수 있는 const와 let이 있으므로 [ES6에서는 사용하면 안된다](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70).
 
 **그렇게 하지 않을 경우:** 자주 변경되는 변수를 따라가면 디버깅이 훨씬 더 번거로워 진다.
 
-🔗 [**자세히 보기: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
+🔗 [**자세히 보기: JavaScript ES6+: var 혹은 let 혹은 const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
 
 <br/><br/>
 
-## ![✔] 3.8 require는 맨 처음에 오게하고 함수 안에서 사용은 피하라
+## ![✔] 3.8 require는 맨 처음에 오게하고 함수 안에서의 사용은 피하라
 
 **핵심요약:** 모듈을 각 파일의 시작이나 모든 함수의 앞부분 혹은 밖에서 require하라. 이 간단한 모범사례는 파일의 의존성을 맨 위에서 쉽고 빠르게 구분 할수 있게 해줄 뿐만 아니라 여러 잠재적인 문제를 피하게 해준다.
 
@@ -316,9 +316,7 @@ function doSomething() {}
 
 ## ![✔] 3.9 require는 파일에 직접하지말고 폴더에 하라
 
-**핵심요약:** 폴더에서 모듈과 라이브러리를 개발 할때 모든 소비자가 그것을 거치도록  모듈의 내부를 노출하는 index.js 파일을 둬라. 이것은 모듈의 '인터페이스'역할을 하며 계약을 위반하지 않으면서 미래의 변경사항에 대해 유연하게 대처하도록 해준다.
-When developing a module/library in a folder, place an index.js file that exposes the module's
-future changes without breaking the contract
+**핵심요약:** 폴더에서 모듈과 라이브러리를 개발할 때 모든 소비자가 그것을 거치도록  모듈의 내부를 노출하는 index.js 파일을 둬라. 이것은 모듈의 '인터페이스'역할을 하며 계약을 위반하지 않으면서 미래의 변경사항에 대해 유연하게 대처하도록 해준다.
 
 **그렇게 하지 않을 경우:** 파일 내부의 구조 혹은 서명을 변경하면 클라이언트와의 인터페이스가 손상될 수 있다.
 
