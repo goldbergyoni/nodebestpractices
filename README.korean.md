@@ -296,41 +296,40 @@ function doSomething() {}
 
 <br/><br/>
 
-## ![✔] 3.7 Prefer const over let. Ditch the var
+## ![✔] 3.7 let보다 const. var는 갖다버려라
 
-**핵심요약:** Using `const` means that once a variable is assigned, it cannot be reassigned. Preferring const will help you to not be tempted to use the same variable for different uses, and make your code clearer. If a variable needs to be reassigned, in a for loop, for example, use `let` to declare it. Another important aspect of `let` is that a variable declared using it is only available in the block scope in which it was defined. `var` is function scoped, not block scoped, and [shouldn't be used in ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) now that you have const and let at your disposal
+**핵심요약:** `const`를 사용한다는 것은 변수에 한번 값이 할당되면 다시 할당할 수 없다는 것을 의미한다. const를 선호하는 것은 같은 변수를 다른 용도로 사용하는 것을 방지하고 당신의 코드를 더 깔끔하게 만드는데 도움을 준다. for루프처럼 변수가 재할당 되어야 할 필요가 있으면 `let`을 사용하여 선언하라. `let`의 또 다른 중요한 부분은 선언된 변수를 사용하는 것이 변수가 정의된 블록범위(block scope) 안에서만 가능하다는 것이다. `var`는 블록범위가 아니라 함수범위(function scope)이며 이제 대신할 수 있는 const와 let이 있으므로 [ES6에서는 사용하면 안된다](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70).
 
-**그렇게 하지 않을 경우:** Debugging becomes way more cumbersome when following a variable that frequently changes
+**그렇게 하지 않을 경우:** 자주 변경되는 변수를 따라가면 디버깅이 훨씬 더 번거로워 진다.
 
 🔗 [**자세히 보기: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
 
 <br/><br/>
 
-## ![✔] 3.8 Requires come first, and not inside functions
+## ![✔] 3.8 require는 맨 처음에 오게하고 함수 안에서 사용은 피하라
 
-**핵심요약:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top but also avoids a couple of potential problems
+**핵심요약:** 모듈을 각 파일의 시작이나 모든 함수의 앞부분 혹은 밖에서 require하라. 이 간단한 모범사례는 파일의 의존성을 맨 위에서 쉽고 빠르게 구분 할수 있게 해줄 뿐만 아니라 여러 잠재적인 문제를 피하게 해준다.
 
-**그렇게 하지 않을 경우:** Requires are run synchronously by Node.js. If they are called from within a function, it may block other requests from being handled at a more critical time. Also, if a required module or any of its own dependencies throw an error and crash the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function
+**그렇게 하지 않을 경우:** require는 Node.js에서 동기로 실행된다. 함수 안에서 호출되면 다른 요청들을 더 중요한 시간에 처리되지 못하도록 막을 수 있다. 또한 require된 모듈이나 그것의 의존 모듈이 에러를 뱉거나 서버를 다운시키면, 함수 안에서 그 모듈이 require된 것이 아닌지 가능한 아주 빠르게 찾아야 할 것이다.
 
 <br/><br/>
 
-## ![✔] 3.9 Do Require on the folders, not directly on the files
+## ![✔] 3.9 require는 파일에 직접하지말고 폴더에 하라
 
-**핵심요약:** When developing a module/library in a folder, place an index.js file that exposes the module's
-internals so every consumer will pass through it. This serves as an 'interface' to your module and eases
+**핵심요약:** 폴더에서 모듈과 라이브러리를 개발 할때 모든 소비자가 그것을 거치도록  모듈의 내부를 노출하는 index.js 파일을 둬라. 이것은 모듈의 '인터페이스'역할을 하며 계약을 위반하지 않으면서 미래의 변경사항에 대해 유연하게 대처하도록 해준다.
+When developing a module/library in a folder, place an index.js file that exposes the module's
 future changes without breaking the contract
 
-**그렇게 하지 않을 경우:** Changing the internal structure of files or the signature may break the interface with
-clients
+**그렇게 하지 않을 경우:** 파일 내부의 구조 혹은 서명을 변경하면 클라이언트와의 인터페이스가 손상될 수 있다.
 
-### Code example
+### 코드 예제
 
 ```javascript
-// Do
+// 이렇게 하라
 module.exports.SMSProvider = require('./SMSProvider');
 module.exports.SMSNumberResolver = require('./SMSNumberResolver');
 
-// Avoid
+// 피하라
 module.exports.SMSProvider = require('./SMSProvider/SMSProvider.js');
 module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolver.js');
 ```
