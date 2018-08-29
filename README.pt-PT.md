@@ -187,13 +187,15 @@ tratados incorretamente.
 
 <br/><br/>
 
-## ![✔] 2.5 Document API errors using Swagger
+## ![✔] 2.5 Documentar erros da API com o Swagger
 
-**TL;DR:** Let your API callers know which errors might come in return so they can handle these thoughtfully without crashing. This is usually done with REST API documentation frameworks like Swagger
+**TL;DR:** Disponibilize os erros que podem ser devolvidos pela API. Desta forma, quem a utiliza pode lidar com 
+esses detalhes sem causar falhas. Tal, geralmente é feito com estruturas de documentação da API REST, como o Swagger.
 
-**Caso contrário:** An API client might decide to crash and restart only because he received back an error he couldn’t understand. Note: the caller of your API might be you (very typical in a microservice environment)
+**Caso contrário:** Um cliente da API pode "rebentar" e reiniciar apenas porque lhe foi devolvido um erro que não 
+consegue interpretar. Nota: o cliente da API pode ser você (muito comum num ambiente de microsserviços)
 
-🔗 [**Mais informações: documenting errors in Swagger**](/sections/errorhandling/documentingusingswagger.md)
+🔗 [**Mais informações: documentar erros no Swagger**](/sections/errorhandling/documentingusingswagger.md)
 
 <br/><br/>
 
