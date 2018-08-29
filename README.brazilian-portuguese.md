@@ -98,71 +98,142 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 <p align="right"><a href="#table-of-contents">⬆ Voltar ao topo</a></p>
 
-# `API Practices`
+# `2. Práticas de Tratamento de Erros`
 
-## Our contributors are working on this section. Would you like to join?
+## ![✔] 2.1 Utilize Async-Await ou promises para tratamento de erros assíncronos
 
-# `Performance Practices`
+**TL;DR:** Tratar erros assíncronos no estilo callback provavelmente é o caminho mais rápido para o inferno (também conhecido como a pyramid of doom - ou pirâmide da desgraça em bom português). O melhor presente que você pode dar ao seu código é utilizar uma biblioteca respeitável de promise ou async-await, que proporciona uma sintaxe de código muito mais compacta e familiar, como o try-catch.
 
-## Our contributors are working on this section. Would you like to join?
+**Caso contrário:** O estilo de callback do Node.js, function(err, response), é um caminho promissor para um código insustentável devido à combinação de manipulação de erro com código casual, aninhamento excessivo e padrões de codificação inadequados.
 
-<br/><br/><br/>
-
-# Milestones
-
-To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/i0natan/nodebestpractices/milestones) and join the working groups if you want to contribute to this project
+🔗 [**Leia Mais: evitando callbacks**](/sections/errorhandling/asyncerrorhandling.md)
 
 <br/><br/>
 
-## Translations
+## ![✔] 2.2 Utilize apenas objetos de erro interno
 
-All translations are contributed by the community. We will be happy to get any help with either completed, ongoing or new translations!
+**TL;DR:** Muitos geram erros como uma string ou como algum tipo personalizado - isso complica a lógica de tratamento de erros e a interoperabilidade entre módulos. Se você rejeita uma promise, lance uma mensagem de erro ou uma exceção - utilizando somente o objeto de erro interno aumentará a uniformidade e evitará a perda de informações.
 
-### Completed translations
+**Caso contrário:** Ao invocar algum componente, sendo incerto qual tipo de erro irá retornar - isso faz com que o tratamento de erros seja muito mais difícil. Até pior, usar tipos personalizados para descrever erros pode levar à perda de informações de erros críticos, como o stack trace!
 
-- ![CN](/assets/flags/CN.png) [Chinese](README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
+🔗 [**Leia Mais: usando o objeto interno de erro**](/sections/errorhandling/useonlythebuiltinerror.md)
 
-### Translations in progress
+<br/><br/>
 
-- ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/129))
-- ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/i0natan/nodebestpractices/issues/156))
-- ![KR](/assets/flags/KR.png) [Korean](https://github.com/i0natan/nodebestpractices/blob/korean-translation/README.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/94))
-- ![RU](/assets/flags/RU.png) [Russian](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/105))
-- ![ES](/assets/flags/ES.png) [Spanish](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/95))
-- ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/i0natan/nodebestpractices/issues/139))
+## ![✔] 2.3 Diferencie erros operacionais vs erros de programação
+
+**TL;DR:** Erros operacionais (ex: API recebeu um input inválido) referem-se a casos onde o impacto do erro é totalmente compreendido e pode ser tratado com cuidado. Por outro lado, erro de programação (ex: tentar ler uma variável não definida) refere-se a falhas de código desconhecidas que ditam para reiniciar a aplicação.
+
+**Caso contrário:** Você pode sempre reiniciar o aplicativo quando um erro aparecer, mas por que derrubar aproximadamente 5000 usuários que estavam online por causa de um pequeno erro operacional previsto? O contrário também não é ideal - manter a aplicação rodando quando um problema desconhecido (erro de programação) ocorreu, pode levar para um comportamento não esperado. Diferenciá-los, permite agir com tato e aplicar uma abordagem equilibrada baseada no dado contexto.
+
+🔗 [**Leia Mais: erros operacionais vs erros de programação**](/sections/errorhandling/operationalvsprogrammererror.md)
+
+<br/><br/>
+
+## ![✔] 2.4 Trate erros de forma centralizada, não dentro de um middleware do Express
+
+**TL;DR:** A lógica de tratamento de erros, bem como email para administrador e loggin, deve ser encapsulada em um objeto dedicado e centralizado que todos os endpoints (por exemplo, middleware do Express, cron jobs, testes unitários) chamem quando um erro é recebido.
+
+**Caso contrário:** Não tratar os erros em um mesmo lugar irá levar à duplicidade de código, e provavelmente, a erros tratados incorretamente.
+
+🔗 [**Leia Mais: tratando erros de forma centralizada**](/sections/errorhandling/centralizedhandling.md)
+
+<br/><br/>
+
+## ![✔] 2.5 Documente erros de API usando o Swagger
+
+**TL;DR:** Permita que os clientes de sua API saibam quais erros podem ser retornados para que eles possam lidar com esses detalhes, sem causar falhas. Geralmente, isto é feito com frameworks de documentação REST API, como o Swagger.
+
+**Caso contrário:** Um cliente de uma API pode decidir travar e reiniciar, apenas pelo motivo de ter recebido de volta um erro que não conseguiu entender. Nota: o visitante de sua API pode ser você (muito comum em um ambiente de microsserviço).
+
+🔗 [**Leia Mais: documentando erros no Swagger**](/sections/errorhandling/documentingusingswagger.md)
+
+<br/><br/>
+
+## ![✔] 2.6 Finalize o processo quando um estranho chegar
+
+**TL;DR:** Quando ocorre um erro desconhecido (um erro de programação, veja a melhor prática #3) - há incerteza sobre a integridade da aplicação. Uma prática comum sugere reiniciar cuidadosamente o processo utilizando uma ferramenta de “reinicialização” como Forever e PM2.
+
+**Caso contrário:** Quando uma exceção desconhecida é lançada, algum objeto pode estar com defeito (por exemplo, um emissor de evento que é usado globalmente e não dispara mais eventos devido a alguma falha interna) e todas as requisições futuras podem falhar ou se comportar loucamente.
+
+🔗 [**Leia Mais: finalizando o processo**](/sections/errorhandling/shuttingtheprocess.md)
+
+<br/><br/>
+
+## ![✔] 2.7 Use um agente de log maduro para aumentar a visibilidade de erros
+
+**TL;DR:** Um conjunto de ferramentas de registro maduras como Winston, Bunyan ou Log4j, irão acelerar a descoberta e entendimento de erros. Portanto, esqueça o console.log.
+
+**Caso contrário:** Ficar procurando através de console.logs ou manualmente em arquivos de texto confusos sem utilizar ferramentas de consulta ou um visualizador de log decente, pode mantê-lo ocupado até tarde.
+
+🔗 [**Leia Mais: usando um logger maduro**](/sections/errorhandling/usematurelogger.md)
+
+<br/><br/>
+
+# `Práticas de API`
+
+## Nossos colaboradores estão trabalhando nesta seção. Quer se juntar a nós?
+
+# `Práticas de Performance`
+
+## Nossos colaboradores estão trabalhando nesta seção. Quer se juntar a nós?
 
 <br/><br/><br/>
 
-# Contributors
+# Feitos
+
+Para manter este guia e deixá-lo atualizado, estamos constantemente atualizando e aprimorando as diretrizes e as práticas recomendadas com a ajuda da comunidade. Você pode acompanhar nossos [feitos](https://github.com/i0natan/nodebestpractices/milestones) e se juntar aos grupos de trabalho, caso queira contribuir com este projeto.
+
+<br/><br/>
+
+## Traduções
+
+Todas as traduções são contribuições da comunidade. Nós ficaremos felizes em obter ajuda com traduções concluídas, em andamento, ou mesmo com novas traduções!
+
+### Traduções concluídas
+
+- ![CN](/assets/flags/CN.png) [Chinês](README.chinese.md) - Cortesia de [Matt Jin](https://github.com/mattjin)
+
+### Traduções em andamento
+
+- ![FR](/assets/flags/FR.png) [Francês](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/129))
+- ![HE](/assets/flags/HE.png) Hebraico ([Discussão](https://github.com/i0natan/nodebestpractices/issues/156))
+- ![KR](/assets/flags/KR.png) [Coreano](https://github.com/i0natan/nodebestpractices/blob/korean-translation/README.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/94))
+- ![RU](/assets/flags/RU.png) [Russo](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/105))
+- ![ES](/assets/flags/ES.png) [Espanhol](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/95))
+- ![TR](/assets/flags/TR.png) Turco ([Discussão](https://github.com/i0natan/nodebestpractices/issues/139))
+
+<br/><br/><br/>
+
+# Colaboradores
 
 ## `Yoni Goldberg`
 
-Independent Node.js consultant who works with customers in USA, Europe, and Israel on building large-scale scalable Node applications. Many of the best practices above were first published in his blog post at [goldbergyoni.com](https://goldbergyoni.com). Reach Yoni at @goldbergyoni or me@goldbergyoni.com
+Consultor de Node.js independente, que trabalha com clientes nos EUA, Europa e Israel, na criação de aplicações Node dimensionáveis em grande escala. Muitas das melhores práticas acima foram publicadas primeiro em um post em seu blog em [goldbergyoni.com](https://goldbergyoni.com). Encontre-o como @goldbergyoni ou me@goldbergyoni.com
 
 ## `Ido Richter`
 
-👨‍💻 Software engineer, 🌐 web developer, 🤖 emojis enthusiast
+👨‍💻 Engenheiro de software, 🌐 web developer, 🤖 entusiasta de emojis
 
 ## `Refael Ackermann` [@refack](https://github.com/refack) &lt;refack@gmail.com&gt; (he/him)
 
-Node.js Core Collaborator, been noding since 0.4, and have noded in multiple production sites. Founded `node4good` home of [`lodash-contrib`](https://github.com/node4good/lodash-contrib), [`formage`](https://github.com/node4good/formage), and [`asynctrace`](https://github.com/node4good/asynctrace).
-`refack` on freenode, Twitter, GitHub, GMail, and many other platforms. DMs are open, happy to help
+Colaborador do Core do Node.js Core, vem "nodeando" desde a versão 0.4 e "nodeou" em vários sites em produção. Fundou o repositório `node4good`, dos projetos [`lodash-contrib`](https://github.com/node4good/lodash-contrib), [`formage`](https://github.com/node4good/formage), e [`asynctrace`](https://github.com/node4good/asynctrace). Também o `refack` no freenode, Twitter, GitHub, GMail e muitas outras plataformas. Aberto à mensagens inbox, feliz em ajudar.
 
 ## `Bruno Scheufler`
 
-💻 full-stack web developer and Node.js enthusiast
+💻 full-stack web developer e entusiasta de Node.js
 
 ## `Kyle Martin` [@js-kyle](https://github.com/js-kyle)
 
-Full Stack Developer based in New Zealand, interested in architecting and building Node.js applications to perform at global scale. Keen contributor to open source software, including Node.js Core.
+Full Stack Developer da Nova Zelândia, interessado em arquitetar e desenvolver aplicações Node.js para rodar em escala global. Um grande contribuidor para software de código aberto, incluindo o Core do Node.js
 
 <br/><br/><br/>
 
-# Thank You Notes
+# Notas de Agradecimento
 
-This repository is being kept up to date thanks to the help from the community. We appreciate any contribution, from a single word fix to a new best practice. Below is a list of everyone who contributed to this project. A 🌻 marks a successful pull request and a ⭐ marks an approved new best practice
+Este repositório é mantido atualizado graças à ajuda da comunidade. Nós apreciamos qualquer contribuição, desde a correção de uma simples palavra até uma nova melhor prática. Abaixo, a lista de todos que contribuíram para este projeto. Uma 🌻 simboliza um pull request bem sucedido e uma ⭐ simboliza uma nova melhor prática aprovada.
 
-### Flowers
+### Flores
 
 🌻 [Kevin Rambaud](https://github.com/kevinrambaud),
 🌻 [Michael Fine](https://github.com/mfine15),
@@ -210,7 +281,7 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Mitja O.](https://github.com/Max101),
 🌻 [Sandro Miguel Marques](https://github.com/SandroMiguel)
 
-### Stars <br/>
+### Estrelas <br/>
 
 ⭐ [Kyle Martin](https://github.com/js-kyle)
 ⭐ [Keith Holliday](https://github.com/TheHollidayInn)
