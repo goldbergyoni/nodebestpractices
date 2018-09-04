@@ -263,14 +263,27 @@ function someFunction()
 
 ### Code example
 ```javascript
-let count = 1
-// ...
-count = 2
-(function () { /* ... */ }()) // Oops, it tries to call 2(), but 2 is not a function
+// Do
+const count = 2;
+(function doSomething() {
+  // do something amazing
+}());
 
+// Avoid — throws exception
+const count = 2 // it tries to run 2(), but 2 is not a function
+(function doSomething() {
+  // do something amazing
+}())
+
+// Do
 function foo() {
-  return // Oops, ; is automatically inserted here. foo() returns undefined
-    {baz: true}
+  return 'javascript is awesome';
+}
+
+// Avoid - returns `undefined` instead of the value on the next line
+function foo() {
+  return // a semi-colon is automatically inserted here - foo() returns undefined
+    'javascript is awesome'
 }
 ```
 
