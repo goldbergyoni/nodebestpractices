@@ -266,11 +266,11 @@ function someFunction()
 let count = 1
 // ...
 count = 2
-(function () { /* ... */ }()); // Oops, it tries to call count(), but count is not a function
+(function () { /* ... */ }()) // Oops, it tries to call 2(), but 2 is not a function
 
 function foo() {
   return // Oops, ; is automatically inserted here. foo() returns undefined
-    {baz: true};
+    {baz: true}
 }
 ```
 
