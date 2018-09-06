@@ -17,9 +17,14 @@ myEmitter.emit('error', new Error('whoops!'));
 
 // 'throwing' an Error from a Promise
 const addProduct = async (productToAdd) => {
-  const existingProduct = await DAL.getProduct(productToAdd.id);
-  if (existingProduct != null)
-      reject(new Error("Why fooling us and trying to add an existing product?"));
+  try {
+    const existingProduct = await DAL.getProduct(productToAdd.id);
+    if (existingProduct) {
+      throw new Error("Product already exists!");
+    }
+  } catch (err) {
+    // ...
+  }
 }
 ```
 
