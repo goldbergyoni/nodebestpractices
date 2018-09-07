@@ -170,6 +170,218 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 <br/><br/>
 
+## ![✔] 2.8 Fluxos de testes de erros usando seu framework favorito
+
+**TL;DR:** Se o analista de QA ou o desenvolvedor de testes - Certifique-se de que seu código não atenda apenas o cenário positivo, mas também trate e retorne os erros corretos. Frameworks de teste como Mocha e Chai podem lidar com isso facilmente (veja exemplos de códigos no “Gist popup”)
+
+**Caso contrário:** Sem testes, seja automático ou manual, não podemos confiar em nosso código para retornar os erros certos. Sem erros significantes, não há tratamento de erros.
+
+🔗 [**Leia Mais: fluxos de testes de erros**](/sections/errorhandling/testingerrorflows.md)
+
+<br/><br/>
+
+## ![✔] 2.9 Descubra erros e downtime usando APM
+
+**TL;DR:** Produtos de monitoramento e desempenho (também conhecido como APM), avaliam sua base de código ou API de forma proativa, para que possam destacar automaticamente erros, falhas e lentidões não percebidos.
+
+**Caso contrário:** Você pode gastar muito esforço medindo o desempenho e os tempos de inatividade (downtime) da API. Provavelmente, você nunca saberá quais são suas partes de código mais lentas no cenário real e como elas afetam o UX.
+
+🔗 [**Leia Mais: usando APM**](/sections/errorhandling/apmproducts.md)
+
+<br/><br/>
+
+## ![✔] 2.10 Capture rejeições de promises não tratadas
+
+**TL;DR:** Qualquer exceção lançada dentro de uma promise será descartada, a menos que o desenvolvedor não se esqueça de tratá-la explicitamente. Mesmo que seu código esteja inscrito no process.uncaughtException! Supere isso, registrando no evento process.unhandledRejection.
+
+**Caso contrário:** Seus erros serão engolidos e não vão deixar rastros. Nada para se preocupar.
+
+🔗 [**Leia Mais: capturando rejeições de promises não tratadas**](/sections/errorhandling/catchunhandledpromiserejection.md)
+
+<br/><br/>
+
+## ![✔] 2.11 Falhe rápido, valide argumentos usando uma biblioteca dedicada
+
+**TL;DR:** Isto deveria fazer parte das melhores práticas de Express - Confirme a entrada da API para evitar erros desagradáveis ​​que são muito mais difíceis de acompanhar mais tarde. A validação de código geralmente é entediante ao menos que você esteja utilizando uma biblioteca de ajuda bem legal, como a Joi.
+
+**Caso contrário:** Considere isto: sua função espera receber um “Desconto” como argumento numérico que foi esquecido de passar. Mais adiante, seu código verifica se Desconto!=0 (valor do desconto permitido é maior que zero). Depois, irá permitir que o usuário desfrute de um desconto. Meu Deus, que baita bug. Entendeu?
+
+🔗 [**Leia Mais: falhando rápido**](/sections/errorhandling/failfast.md)
+
+<br/><br/><br/>
+
+<p align="right"><a href="#table-of-contents">⬆ Voltar ao topo</a></p>
+
+# `3. Práticas de Estilo de Código`
+
+## ![✔] 3.1 Use ESLint
+
+**TL;DR:** O [ESLint](https://eslint.org) é de fato o padrão para verificar possíveis erros e consertar o estilo de código, não apenas para identificar problemas básicos de espaçamento, mas também para detectar antipadrões de código, como desenvolvedores lançando erros sem classificação. Embora o ESLint possa corrigir automaticamente estilos de código, outra ferramentas como o [prettier](https://www.npmjs.com/package/prettier) e o [beautify](https://www.npmjs.com/package/js-beautify) são mais poderosos no quesito correção de formatação e trabalham em conjunto com o ESLint.
+
+**Caso contrário:** Desenvolvedores irão focar nas preocupações tediosas de espaçamento e largura de linha e o tempo poderá ser desperdiçado pensando sobre o estilo de código do projeto.
+
+<br/><br/>
+
+## ![✔] 3.2 Plugins Específicos do Node.js
+
+**TL;DR:** Além das regras padrões do ESLint que cobrem somente o Vanilla JS, adicione plug-ins específicos do Node, como o [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), o [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) e o [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
+
+**Caso contrário:** Muitos padrões de código do Node.js com falha podem escapar do radar. Por exemplo, desenvolvedores podem chamar arquivos fazendo o require(variavelComoCaminho) com uma determinada variável como caminho, o que permite que invasores executem qualquer script JS. Os linters do Node.js podem detectar tais padrões e reclamar cedo.
+
+<br/><br/>
+
+## ![✔] 3.3 Comece um Bloco de Código com Chaves na Mesma Linha
+
+**TL;DR:** As chaves que abrem um bloco de código devem estar na mesma linha da instrução de abertura
+
+### Exemplo de Código
+
+```javascript
+// Do
+function someFunction() {
+  // code block
+}
+
+// Avoid
+function someFunction() {
+  // code block
+}
+```
+
+**Caso contrário:** Evitar esta recomendação pode levar a resultados inesperados, como visto nesta thread do StackOverflow:
+
+🔗 [**Read more:** "Por que os resultados variam com base no posicionamento da chave?" (Stackoverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
+
+<br/><br/>
+
+## ![✔] 3.4 Não Esqueça do Ponto e Vírgula
+
+**TL;DR:** Embora não seja unanimidade, ainda é recomendado colocar ponto e vírgula no fim de cada declaração. Isto fará que seu código seja mais legível e explícito para outros desenvolvedores.
+
+**Caso contrário:** Como visto em seções anteriores, interpretadores do JavaScript adicionam ponto e vírgula automaticamente no final das declarações caso não exista, o que pode levar a resultados não desejados.
+
+<br/><br/>
+
+## ![✔] 3.5 Nomeie Suas Funções
+
+**TL;DR:** Nomeie todas as funções, incluindo closures e callbacks. Evite funções anônimas. Isso é especialmente útil em uma aplicação node. Nomear todas a funções permitirá que você entenda facilmente o que está olhando quando verificar um snapshot da memória.
+
+**Caso contrário:** A depuração de problemas de produção usando um dump principal (snapshot da memória) pode se tornar um desafio quando você percebe um consumo significativo de memória de funções anônimas.
+
+<br/><br/>
+
+## ![✔] 3.6 Convenções de nomenclatura para variáveis, constantes, funções e classes
+
+**TL;DR:** Utilize **_lowerCamelCase_** quando nomeando constantes, variáveis e funções, e **_UpperCamelCase_** (primeira letra maiúscula também) quando nomeando classes. Isso irá lhe ajudar a distinguir facilmente entre variáveis/funções, e classes que necessitam de instanciação. Use nomes descritivos, mas tente mantê-los curtos.
+
+**Caso contrário:** O JavaScript é a única linguagem no mundo que permite invocar um construtor (“Class”) diretamente sem instanciá-lo primeiro. Consequentemente, Classes e construtores de funções são diferenciados começando com UpperCamelCase
+
+### Exemplo de Código
+
+```javascript
+// for class name we use UpperCamelCase
+class SomeClassExample {}
+
+// for const names we use the const keyword and lowerCamelCase
+const config = {
+  key: 'value'
+};
+
+// for variables and functions names we use lowerCamelCase
+let someVariableExample = 'value';
+function doSomething() {}
+```
+
+<br/><br/>
+
+## ![✔] 3.7 Prefira const do que let. Esqueça do var
+
+**TL;DR:** Usar `const` significa que uma vez que a variável foi atribuída, ela não pode ser reatribuída. Preferir const irá te ajudar a não cair na tentação de utilizar a mesma variável para diferentes usos, e irá deixar seu código mais limpo. Se uma variável precisa ser reatribuída, em um for loop, por exemplo, use `let` para declarar. Outro aspecto importante do `let` é que esta variável só estará disponível no escopo de código em que ela foi definida. `var` tem escopo de função, não de bloco, e [não deveria ser utilizada em ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70)
+, agora que você tem const e let ao seu dispor.
+
+**Caso contrário:** A depuração se torna muito mais complicada ao seguir uma variável que frequentemente muda
+
+🔗 [**Read more: JavaScript ES6+: var, let ou const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
+
+<br/><br/>
+
+## ![✔] 3.8 Requires vem primeiro e não dentro de funções
+
+**TL;DR:** Faça o require de módulos no início de cada arquivo, antes e fora de qualquer função. Esta simples prática irá te ajudar não apenas a reconhecer as dependências de um determinado arquivo com facilidade e rapidez, como também evitará alguns possíveis problemas.
+
+**Caso contrário:** Os requires rodam de forma síncrona pelo Node.js. Se eles forem chamados de dentro de uma função, isso pode impedir que outras solicitações sejam tratadas em um momento mais crítico. Além disso, se um módulo necessário ou qualquer uma de suas dependências lançar um erro e travar o servidor, é melhor descobrir isso o mais rápido possível, o que pode não ser o caso se este módulo tiver sido declarado dentro de uma função.
+
+<br/><br/>
+
+## ![✔] 3.9 Faça Require nas pastas, não diretamente nos arquivos
+
+**TL;DR:** Ao desenvolver um módulo/biblioteca em uma pasta, coloque um arquivo index.js que exponha os componentes internos do módulo para que cada consumidor passe por ele. Isso serve como uma 'interface' para seu módulo e facilita futuras mudanças sem causar perdas.
+
+**Caso contrário:** Alterar a estrutura interna dos arquivos ou a assinatura pode quebrar a interface com clientes.
+
+### Exemplo de Código
+
+```javascript
+// Do
+module.exports.SMSProvider = require('./SMSProvider');
+module.exports.SMSNumberResolver = require('./SMSNumberResolver');
+
+// Avoid
+module.exports.SMSProvider = require('./SMSProvider/SMSProvider.js');
+module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolver.js');
+```
+
+<br/><br/>
+
+## ![✔] 3.10 Use 0 operador `===`
+
+**TL;DR:** Dê preferência em usar o operador de comparação estrita `===` ao invés do operador de comparação abstrata `==`, que é mais fraco. `==` irá comparar duas variáveis depois de convertê-las para o mesmo tipo. Não há conversão de tipo no `===` e ambas as variáveis devem ser do mesmo tipo para serem iguais.
+
+**Caso contrário:** Variáveis diferentes podem retornar verdadeiro quando comparadas usando o operador `==`.
+
+### Exemplo de Código
+
+```javascript
+'' == '0'; // false
+0 == ''; // true
+0 == '0'; // true
+
+false == 'false'; // false
+false == '0'; // true
+
+false == undefined; // false
+false == null; // false
+null == undefined; // true
+
+' \t\r\n ' == 0; // true
+```
+
+Todas as declarações acima false se feitas com `===`.
+
+<br/><br/>
+
+## ![✔] 3.11 Use Async Await, evite callbacks
+
+**TL;DR:** Agora o Node 8 LTS possui suporte completo para Async-await. Esta é uma nova maneira de lidar com códigos assíncronos que substitui callbacks e promises. Async-await é não-bloqueante, e isso faz com que os códigos assíncronos pareçam síncronos. O melhor presente que você pode dar ao seu código é usar async-await, que fornece uma sintaxe de código muito mais compacta e familiar como o try-catch.
+
+**Caso contrário:** Lidar com erros assíncronos no estilo de callback é provavelmente o caminho mais rápido para o inferno - esse estilo força verificar todos os erros, lidar com desajeitados aninhamentos de código e torna difícil raciocinar sobre o fluxo de código.
+
+🔗[**Leia mais:** Guia do async await 1.0](https://github.com/yortus/asyncawait)
+
+<br/><br/>
+
+## ![✔] 3.12 Use Fat (=>) Arrow Functions
+
+**TL;DR:** Embora seja recomendado usar acync-await e evitar parâmetros de função ao lidar com APIs antigas, que aceitam promises ou callbacks - arrow functions tornam a estrutura do código mais compacta e mantém o contexto léxico da função raiz (por exemplo, 'this').
+
+**Caso contrário:** Códigos mais longos (em funções ES5) são mais propensos a erros e são mais difíceis de ler.
+
+🔗 [**Read mode: Arrow Functions - é hora de abraçar a causa**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
+
+<br/><br/><br/>
+
+<p align="right"><a href="#table-of-contents">⬆ Voltar ao topo</a></p>
+
 # `Práticas de API`
 
 ## Nossos colaboradores estão trabalhando nesta seção. Quer se juntar a nós?
