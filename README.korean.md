@@ -731,10 +731,15 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Ye Min Htut](https://github.com/ymhtut),
 🌻 [cwar](https://github.com/cwar),
 🌻 [Yuwei](https://github.com/keyfoxth),
-🌻 [Utkarsh Bhatt](https://github.com/utkarshbhatt12)
-🌻 [Duarte Mendes](https://github.com/duartemendes)
-🌻 [Sagir Khan](https://github.com/sagirk)
-🌻 [Jason Kim](https://github.com/serv)
+🌻 [Utkarsh Bhatt](https://github.com/utkarshbhatt12),
+🌻 [Duarte Mendes](https://github.com/duartemendes),
+🌻 [Sagir Khan](https://github.com/sagirk),
+🌻 [Jason Kim](https://github.com/serv),
+🌻 [Mitja O.](https://github.com/Max101),
+🌻 [Sandro Miguel Marques](https://github.com/SandroMiguel),
+🌻 [Gabe Kuslansky](https://github.com/GabeKuslansky),
+🌻 [Ron Gross](https://github.com/ripper234),
+🌻 [Valeri Karpov](https://github.com/vkarpov15)
 
 
 ### Stars <br/>
