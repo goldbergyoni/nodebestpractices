@@ -19,7 +19,7 @@ myEmitter.emit('error', new Error('whoops!'));
 const addProduct = async (productToAdd) => {
   try {
     const existingProduct = await DAL.getProduct(productToAdd.id);
-    if (existingProduct) {
+    if (existingProduct !== null) {
       throw new Error("Product already exists!");
     }
   } catch (err) {
