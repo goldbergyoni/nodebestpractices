@@ -779,7 +779,7 @@ All statements above will return false if used with `===`
 **Otherwise:** Expired, or misplaced tokens could be used maliciously by a third party to access an application and impersonate the owner of the token.
 
 
-🔗 [**Read More: Blacklist JSON Web Tokens**](/sections/security/revokejwt.md)
+🔗 [**Read More: Blacklist JSON Web Tokens**](/sections/security/expirejwt.md)
 
 <br/><br/>
 
