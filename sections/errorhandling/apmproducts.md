@@ -20,10 +20,14 @@ APM products constitute 3 major segments:
 
 3. Operational intelligence dashboard – this line of products is focused on facilitating the ops team with metrics and curated content that helps to easily stay on top of application performance. This usually involves aggregating multiple sources of information (application logs, DB logs, servers log, etc) and upfront dashboard design work. Following are few selected contenders: [Datadog](https://www.datadoghq.com/), [Splunk](https://www.splunk.com/), [Zabbix](https://www.zabbix.com/)
 
-
-
  ### Example: UpTimeRobot.Com – Website monitoring dashboard
 ![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/uptimerobot.jpg "Website monitoring dashboard")
+
+### Example: [Keymetrics.io](https://keymetrics.io) – Complete monitoring and code instrumentation
+![alt text](https://github.com/Unitech/nodebestpractices/blob/master/assets/images/apm-keymetrics.png "Website monitoring dashboard")
+
+Keymetrics is a monitoring and APM solution built on top of [PM2](https://github.com/Unitech/pm2).
+This Transaction Tracing view, shows database queries and external calls that your application make on every http request. You can use transaction traces to troubleshoot performance issues and to get detailed low-level insight into how your app is working. 
 
  ### Example: AppDynamics.Com – end to end monitoring combined with code instrumentation
 ![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/app-dynamics-dashboard.png "end to end monitoring combined with code instrumentation")
