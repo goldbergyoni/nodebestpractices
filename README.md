@@ -18,7 +18,10 @@
 
 <br/>
 
-Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
+Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md) [(![ES](/assets/flags/ES.png)
+**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, 
+![RU](/assets/flags/RU.png)**RU**, ![TR](/assets/flags/TR.png)**TR** and ![pt-PT](/assets/flags/PT.png)**pt-PT** in 
+progress!)](#translations)
 
 <br/>
 
@@ -974,6 +977,7 @@ All translations are contributed by the community. We will be happy to get any h
 * ![RU](/assets/flags/RU.png) [Russian](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/105))
 * ![ES](/assets/flags/ES.png) [Spanish](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/95))
 * ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/i0natan/nodebestpractices/issues/139))
+* ![pt-PT](/assets/flags/PT.png) [Portuguese (Portugal)](https://github.com/SandroMiguel/nodebestpractices/blob/master/README.pt-PT.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/196))
 
 <br/><br/><br/>
 
