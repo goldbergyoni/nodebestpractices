@@ -8,7 +8,7 @@ In a nutshell, every issue and PR should get tagged by one of our core team and 
 
 There is no specific person on call who assigns inquiries rather we count on our core team to visit almost everyday and assign issues/PR - this way, the workflow is not depend upon any specific person rather on our entire team.
 
-Any new content should conform to our (writing guidelines)[https://github.com/i0natan/nodebestpractices/blob/master/.operations/writing-guidelines.md]
+Any new content should conform to our [writing guidelines](https://github.com/i0natan/nodebestpractices/blob/master/.operations/writing-guidelines.md)
 
 ## Monthly maintenance
 
