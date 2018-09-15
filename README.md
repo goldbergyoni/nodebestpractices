@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2073%20Best%20practices-blue.svg" alt="73 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20July%2015%202018-green.svg" alt="Last update: July 25th, 2018"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.11.3%20LTS-brightgreen.svg" alt="Updated for Node 8.11.3 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2073%20Best%20practices-blue.svg" alt="73 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20September%209%202018-green.svg" alt="Last update: September 9th, 2018"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.11.3%20LTS-brightgreen.svg" alt="Updated for Node 8.11.3 LTS">
 </div>
 
 <br/>
@@ -259,7 +259,23 @@ function someFunction()
 
 **TL;DR:** While not unanimously agreed upon, it is still recommended to put a semicolon at the end of each statement. This will make your code more readable and explicit to other developers who read it
 
-**Otherwise:** As seen in the previous section, JavaScript's interpreter automatically adds a semicolon at the end of a statement if there isn't one which might lead to some undesired results
+**Otherwise:** As seen in the previous section, JavaScript's interpreter automatically adds a semicolon at the end of a statement if there isn't one, or considers a statement as not ended where it should, which might lead to some undesired results
+
+### Code example
+
+```javascript
+// Do
+const count = 2;
+(function doSomething() {
+  // do something amazing
+}());
+
+// Avoid — throws exception
+const count = 2 // it tries to run 2(), but 2 is not a function
+(function doSomething() {
+  // do something amazing
+}())
+```
 
 <br/><br/>
 
@@ -461,7 +477,6 @@ All statements above will return false if used with `===`
 
 🔗 [**Read More: Refactoring!**](/sections/testingandquality/refactoring.md)
 
-
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
@@ -652,7 +667,6 @@ All statements above will return false if used with `===`
 
 **Otherwise:** What could have been a straightforward security weakness during development becomes a major issue in production. Also, the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories
 
-
 🔗 [**Read More: Lint rules**](sections/security/lintrules.md)
 
 <br/><br/>
@@ -673,16 +687,13 @@ All statements above will return false if used with `===`
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A3:Sensitive%20Data%20Exposure%20-green.svg" alt=""/></a>
 
-
 **TL;DR:** Never store plain-text secrets in configuration files or source code. Instead, make use of secret-management systems like Vault products, Kubernetes/Docker Secrets, or using environment variables. As a last result, secrets stored in source control must be encrypted and managed (rolling keys, expiring, auditing, etc). Make use of pre-commit/push hooks to prevent committing secrets accidentally
 
 **Otherwise:** Source control, even for private repositories, can mistakenly be made public, at which point all secrets are exposed. Access to source control for an external party will inadvertently provide access to related systems (databases, apis, services, etc).
 
-
 🔗 [**Read More: Secret management**](sections/security/secretmanagement.md)
 
 <br/><br/>
-
 
 ## ![✔] 6.4. Prevent query injection vulnerabilities with ORM/ODM libraries
 
@@ -696,11 +707,9 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-
 ## ![✔] 6.5. Collection of generic security best practices
 
 **TL;DR:** These is a collection of security advice that are not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
-
 
 🔗 [**Read More: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
 
@@ -713,7 +722,6 @@ All statements above will return false if used with `===`
 **TL;DR:** Your application should be using secure headers to prevent attackers from using common attacks like cross-site scripting (XSS), clickjacking and other malicious attacks. These can be configured easily using modules like [helmet](https://www.npmjs.com/package/helmet).
 
 **Otherwise:** Attackers could perform direct attacks on your application's users, leading huge security vulnerabilities
-
 
 🔗 [**Read More: Using secure headers in your application**](/sections/security/secureheaders.md)
 
@@ -731,11 +739,9 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-
 ## ![✔] 6.8. Avoid using the Node.js crypto library for handling passwords, use Bcrypt
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
-
 
 **TL;DR:** Passwords or secrets (API keys) should be stored using a secure hash + salt function like `bcrypt`, that should be a preferred choice over its JavaScript implementation due to performance and security reasons.
 
@@ -769,7 +775,6 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-
 ## ![✔] 6.11. Support blacklisting JWTs
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
@@ -778,11 +783,9 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Expired, or misplaced tokens could be used maliciously by a third party to access an application and impersonate the owner of the token.
 
-
-🔗 [**Read More: Blacklist JSON Web Tokens**](/sections/security/revokejwt.md)
+🔗 [**Read More: Blacklist JSON Web Tokens**](/sections/security/expirejwt.md)
 
 <br/><br/>
-
 
 ## ![✔] 6.12. Limit the allowed login requests of each user
 
@@ -796,7 +799,6 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-
 ## ![✔] 6.13. Run Node.js as non-root user
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A5:Broken%20Access%20Access%20Control-green.svg" alt=""/></a>
@@ -805,11 +807,9 @@ All statements above will return false if used with `===`
 
 **Otherwise:** An attacker who manages to run a script on the server gets unlimited power over the local machine (e.g. change iptable and re-route traffic to his server)
 
-
 🔗 [**Read More: Run Node.js as non-root user**](/sections/security/non-root-user.md)
 
 <br/><br/>
-
 
 ## ![✔] 6.14. Limit payload size using a reverse-proxy or a middleware
 
@@ -819,26 +819,21 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Your application will have to deal with large requests, unable to process the other important work it has to accomplish, leading to performance implications and vulnerability towards DOS attacks
 
-
 🔗 [**Read More: Limit payload size**](/sections/security/requestpayloadsizelimit.md)
 
 <br/><br/>
-
 
 ## ![✔] 6.15. Avoid JavaScript eval statements
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-
-**TL;DR:** `eval` is evil as it allows executing  a custom JavaScript code during run time. This is not just a performance concern but also an important security concern due to  malicious JavaScript code that may be sourced from user input. Another language feature that should be avoided is `new Function` constructor. `setTimeout` and `setInterval` should never be passed dynamic JavaScript code either.
+**TL;DR:** `eval` is evil as it allows executing a custom JavaScript code during run time. This is not just a performance concern but also an important security concern due to malicious JavaScript code that may be sourced from user input. Another language feature that should be avoided is `new Function` constructor. `setTimeout` and `setInterval` should never be passed dynamic JavaScript code either.
 
 **Otherwise:** Malicious JavaScript code finds a way into a text passed into `eval` or other real-time evaluating JavaScript language functions, and will gain complete access to JavaScript permissions on the page. This vulnerability is often manifested as an XSS attack.
-
 
 🔗 [**Read More: Avoid JavaScript eval statements**](/sections/security/avoideval.md)
 
 <br/><br/>
-
 
 ## ![✔] 6.16. Prevent evil RegEx from overloading your single thread execution
 
@@ -856,11 +851,9 @@ All statements above will return false if used with `===`
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-
 **TL;DR:** Avoid requiring/importing another file with a path that was given as parameter due to the concern that it could have originated from user input. This rule can be extended for accessing files in general (i.e. `fs.readFile()`) or other sensitive resource access with dynamic variables originating from user input. [Eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) linter can catch such patterns and warn early enough
 
 **Otherwise:** Malicious user input could find its way to a parameter that is used to require tampered files, for example a previously uploaded file on the filesystem, or access already existing system files.
-
 
 🔗 [**Read More: Safe module loading**](/sections/security/safemoduleloading.md)
 
@@ -874,11 +867,9 @@ All statements above will return false if used with `===`
 
 **Otherwise:** A plugin can attack through an endless variety of options like infinite loops, memory overloading, and access to sensitive process environment variables
 
-
 🔗 [**Read More: Run unsafe code in a sandbox**](/sections/security/sandbox.md)
 
 <br/><br/>
-
 
 ## ![✔] 6.19. Take extra care when working with child processes
 
@@ -891,7 +882,6 @@ All statements above will return false if used with `===`
 🔗 [**Read More: Be cautious when working with child processes**](/sections/security/childprocesses.md)
 
 <br/><br/>
-
 
 ## ![✔] 6.20. Hide error details from clients
 
@@ -913,12 +903,11 @@ All statements above will return false if used with `===`
 
 **Otherwise:** [Have you heard about the eslint developer who's password was hijacked?](https://medium.com/@oprearocks/eslint-backdoor-what-it-is-and-how-to-fix-the-issue-221f58f1a8c8)
 
-
 <br/><br/>
 
 ## ![✔] 6.22. Modify session middleware settings
-<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
+<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
 **TL;DR:** Each web framework and technology has its known weaknesses - telling an attacker which web framework we use is a great help for them. Using the default settings for session middlewares can expose your app to module- and framework-specific hijacking attacks in a similar way to the `X-Powered-By` header. Try hiding anything that identifies and reveals your tech stack (E.g. Node.js, express)
 
@@ -938,13 +927,11 @@ All statements above will return false if used with `===`
 
 <br/><br/><br/>
 
-
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
 # `API Practices`
 
 ## Our contributors are working on this section. Would you like to join?
-
 
 # `Performance Practices`
 
@@ -964,16 +951,16 @@ All translations are contributed by the community. We will be happy to get any h
 
 ### Completed translations
 
-* ![CN](/assets/flags/CN.png) [Chinese](README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
+- ![CN](/assets/flags/CN.png) [Chinese](README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
 
 ### Translations in progress
 
-* ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/129))
-* ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/i0natan/nodebestpractices/issues/156))
-* ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Courtesy of [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/94))
-* ![RU](/assets/flags/RU.png) [Russian](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/105))
-* ![ES](/assets/flags/ES.png) [Spanish](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/95))
-* ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/i0natan/nodebestpractices/issues/139))
+- ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/129))
+- ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/i0natan/nodebestpractices/issues/156))
+- ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Courtesy of [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/94))
+- ![RU](/assets/flags/RU.png) [Russian](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/105))
+- ![ES](/assets/flags/ES.png) [Spanish](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/95))
+- ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/i0natan/nodebestpractices/issues/139))
 
 <br/><br/><br/>
 
@@ -997,6 +984,7 @@ Node.js Core Collaborator, been noding since 0.4, and have noded in multiple pro
 💻 full-stack web developer and Node.js enthusiast
 
 ## `Kyle Martin` [@js-kyle](https://github.com/js-kyle)
+
 Full Stack Developer based in New Zealand, interested in architecting and building Node.js applications to perform at global scale. Keen contributor to open source software, including Node.js Core.
 
 <br/><br/><br/>
@@ -1051,7 +1039,10 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Sagir Khan](https://github.com/sagirk),
 🌻 [Jason Kim](https://github.com/serv),
 🌻 [Mitja O.](https://github.com/Max101),
-🌻 [Sandro Miguel Marques](https://github.com/SandroMiguel)
+🌻 [Sandro Miguel Marques](https://github.com/SandroMiguel),
+🌻 [Gabe Kuslansky](https://github.com/GabeKuslansky),
+🌻 [Ron Gross](https://github.com/ripper234),
+🌻 [Valeri Karpov](https://github.com/vkarpov15)
 
 ### Stars <br/>
 
