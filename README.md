@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2073%20Best%20practices-blue.svg" alt="73 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20July%2015%202018-green.svg" alt="Last update: July 25th, 2018"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.11.3%20LTS-brightgreen.svg" alt="Updated for Node 8.11.3 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2073%20Best%20practices-blue.svg" alt="73 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20September%209%202018-green.svg" alt="Last update: September 9th, 2018"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.11.3%20LTS-brightgreen.svg" alt="Updated for Node 8.11.3 LTS">
 </div>
 
 <br/>
@@ -794,7 +794,7 @@ All statements above will return false if used with `===`
 **Otherwise:** Expired, or misplaced tokens could be used maliciously by a third party to access an application and impersonate the owner of the token.
 
 
-🔗 [**Read More: Blacklist JSON Web Tokens**](/sections/security/revokejwt.md)
+🔗 [**Read More: Blacklist JSON Web Tokens**](/sections/security/expirejwt.md)
 
 <br/><br/>
 
@@ -985,7 +985,7 @@ All translations are contributed by the community. We will be happy to get any h
 
 * ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/129))
 * ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/i0natan/nodebestpractices/issues/156))
-* ![KR](/assets/flags/KR.png) [Korean](https://github.com/i0natan/nodebestpractices/blob/korean-translation/README.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/94))
+* ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Courtesy of [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/94))
 * ![RU](/assets/flags/RU.png) [Russian](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/105))
 * ![ES](/assets/flags/ES.png) [Spanish](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/95))
 * ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/i0natan/nodebestpractices/issues/139))
@@ -1066,7 +1066,10 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Sagir Khan](https://github.com/sagirk),
 🌻 [Jason Kim](https://github.com/serv),
 🌻 [Mitja O.](https://github.com/Max101),
-🌻 [Sandro Miguel Marques](https://github.com/SandroMiguel)
+🌻 [Sandro Miguel Marques](https://github.com/SandroMiguel),
+🌻 [Gabe Kuslansky](https://github.com/GabeKuslansky),
+🌻 [Ron Gross](https://github.com/ripper234),
+🌻 [Valeri Karpov](https://github.com/vkarpov15)
 
 ### Stars <br/>
 
