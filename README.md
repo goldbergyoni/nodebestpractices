@@ -274,17 +274,6 @@ const count = 2 // it tries to run 2(), but 2 is not a function
 (function doSomething() {
   // do something amazing
 }())
-
-// Do
-function foo() {
-  return 'javascript is awesome';
-}
-
-// Avoid - returns `undefined` instead of the value on the next line
-function foo() {
-  return // a semi-colon is automatically inserted here - foo() returns undefined
-    'javascript is awesome'
-}
 ```
 
 <br/><br/>
