@@ -964,7 +964,7 @@ All translations are contributed by the community. We will be happy to get any h
 - ![RU](/assets/flags/RU.png) [Russian](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/105))
 - ![ES](/assets/flags/ES.png) [Spanish](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/95))
 - ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/i0natan/nodebestpractices/issues/139))
-* ![pt-PT](/assets/flags/PT.png) [Portuguese (Portugal)](https://github.com/SandroMiguel/nodebestpractices/blob/master/README.pt-PT.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/196))
+- ![pt-PT](/assets/flags/PT.png) [Portuguese (Portugal)](https://github.com/SandroMiguel/nodebestpractices/blob/master/README.pt-PT.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/196))
 
 <br/><br/><br/>
 
