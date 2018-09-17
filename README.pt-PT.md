@@ -47,8 +47,9 @@ remeterá para exemplos de código, citações de blogs, e outras informações
 3.  [Estilo de código (12) ](#3-estilo-de-código)
 4.  [Teste e qualidade geral (8) ](#4-teste-e-qualidade-geral)
 5.  [Entrar em produção (17) ](#5-entrar-em-produção)
-6.  :star: New: [Segurança (23)](#6-Seguranca)
-7.  Performance ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
+6.  :star: Novo: [Segurança (23)](#6-segurança)
+7.  Performance ([em breve](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state
+=open))
 
 <br/><br/><br/>
 
