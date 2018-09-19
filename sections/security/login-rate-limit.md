@@ -12,27 +12,25 @@ An in-memory store such as Redis or MongoDB should be used in production to enfo
 const ExpressBrute = require('express-brute');
 const RedisStore = require('express-brute-redis');
 
-const redis = new RedisStore({
-	host: '127.0.0.1',
-	port: 6379
+const redisStore = new RedisStore({
+  host: '127.0.0.1',
+  port: 6379
 });
 
-const bruteforce = new ExpressBrute(redis);
 // Start slowing requests after 5 failed attempts to login for the same user
-const loginBruteforce = new ExpressBrute(store, {
-    freeRetries: 5,
-    minWait: 5*60*1000, // 5 minutes
-    maxWait: 60*60*1000, // 1 hour,
-    failCallback: failCallback,
-    handleStoreError: handleStoreError
-    }
+const loginBruteforce = new ExpressBrute(redisStore, {
+  freeRetries: 5,
+  minWait: 5 * 60 * 1000, // 5 minutes
+  maxWait: 60 * 60 * 1000, // 1 hour
+  failCallback: failCallback,
+  handleStoreError: handleStoreErrorCallback
 });
 
 app.post('/login',
-  userBruteforce.getMiddleware({
-    key: function(req, res, next) {
-        // prevent too many attempts for the same username
-        next(req.body.username);
+  loginBruteforce.getMiddleware({
+    key: function (req, res, next) {
+      // prevent too many attempts for the same username
+      next(req.body.username);
     }
   }), // error 403 if we hit this route too often
   function (req, res, next) {
@@ -42,7 +40,7 @@ app.post('/login',
         res.redirect('/'); // logged in
       });
     } else {
-    //handle invalid user
+      // handle invalid user
     }
   }
 );
