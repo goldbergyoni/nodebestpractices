@@ -22,7 +22,7 @@ class AppError {
   }
 };
 
-throw new appError(errorManagement.commonErrors.InvalidInput, "Describe here what happened", true);
+throw new AppError(errorManagement.commonErrors.InvalidInput, "Describe here what happened", true);
 
 ```
 
