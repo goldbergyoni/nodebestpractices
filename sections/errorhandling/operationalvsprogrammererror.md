@@ -12,7 +12,7 @@ const myError = new Error("How can I add new product when no value provided?");
 myError.isOperational = true;
 
 // or if you're using some centralized error factory (see other examples at the bullet "Use only the built-in Error object")
-class appError {
+class AppError {
   constructor (commonType, description, isOperational) {
     Error.call(this);
     Error.captureStackTrace(this);
