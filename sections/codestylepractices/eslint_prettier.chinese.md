@@ -21,6 +21,6 @@ foo(
 
 Source: [https://github.com/prettier/prettier-eslint/issues/101](https://github.com/prettier/prettier-eslint/issues/101)
 
-### Integrating ESLint and Prettier
+### 整合 ESLint 和 Prettier
 
-ESLint和Prettier在代码格式化功能上有重叠, 但它可以很容易通过其他的包来解决，比如 [prettier-eslint](https://github.com/prettier/prettier-eslint), [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier), and [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)。 有关他们的差异的更多信息，您可以查看链接 [here](https://stackoverflow.com/questions/44690308/whats-the-difference-between-prettier-eslint-eslint-plugin-prettier-and-eslint).
+ESLint和Prettier在代码格式化功能上有重叠, 但它可以很容易通过其他的包来解决，比如 [prettier-eslint](https://github.com/prettier/prettier-eslint), [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier), 和 [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)。有关他们的差异的更多信息，您可以查看链接 [这里](https://stackoverflow.com/questions/44690308/whats-the-difference-between-prettier-eslint-eslint-plugin-prettier-and-eslint).
