@@ -32,7 +32,7 @@
 3. [编码规范实践 (12) ](#3-code-style-practices)
 4. [测试和总体质量实践 (8) ](#4-testing-and-overall-quality-practices)
 5. [进入生产实践 (16) ](#5-going-to-production-practices)
-6. Security Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
+6. :star: New: [安全实践(23)](#6-security-best-practices)
 7. Performance Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 
 
@@ -652,10 +652,23 @@ null == undefined   // true
 
 <p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
-# `Security Practices`
+# `安全最佳实践`
 
-## Our contributors are working on this section. Would you like to join?
+<div align="center">
+<img src="https://img.shields.io/badge/OWASP%20Threats-Top%2010-green.svg" alt="53 items"/>
+</div>
 
+## ![✔] 6.1. 拥护linter安全准则
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
+
+**TL;DR:** 使用安全相关的linter插件，比如[eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security)，尽早捕获安全隐患或者问题，最好在编码阶段。这能帮助察觉安全的问题，比如使用eval，调用子进程，或者根据字面含义（比如，用户输入）引入模块等等。点击下面‘更多’获得一个安全linter可以检测到的代码示例。
+
+**Otherwise:** 在开发过程中, 可能一个直白的安全隐患, 成为生产环境中一个严重问题。此外, 项目可能没有遵循一致的安全规范, 而导致引入漏洞, 或敏感信息被提交到远程仓库中。
+
+🔗 [**更多: Lint 规范**](sections/security/lintrules.md)
+
+<br/><br/>
 <br/><br/><br/>
 # `Performance Practices`
 
