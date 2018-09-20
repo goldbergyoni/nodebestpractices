@@ -669,6 +669,19 @@ null == undefined   // true
 🔗 [**更多: Lint 规范**](sections/security/lintrules.md)
 
 <br/><br/>
+
+## ![✔] 6.2. 使用中间件限制并发请求
+
+<a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
+
+**TL;DR:** DOS攻击非常流行而且相对容易处理。使用外部服务，比如cloud负载均衡, cloud防火墙, nginx, 或者（对于小的，不是那么重要的app）一个速率限制中间件(比如[express-rate-limit](https://www.npmjs.com/package/express-rate-limit))，来实现速率限制。
+
+**否则:** 应用程序可能受到攻击, 导致拒绝服务, 在这种情况下, 真实用户会遭受服务降级或不可用。
+
+🔗 [**更多: 实施速率限制**](sections/security/limitrequests.md)
+
+<br/><br/>
+
 <br/><br/><br/>
 # `Performance Practices`
 
