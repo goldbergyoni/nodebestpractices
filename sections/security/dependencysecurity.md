@@ -8,32 +8,19 @@ There is a number of tools available to help identify third-party packages in No
 
 ### Table of Contents
 
-- [Node Security Platform (nsp)](#node-security-platform)
+- [NPM audit](#npm-audit)
 - [Snyk](#snyk)
 - [Greenkeeper](#greenkeeper)
 
-### Node Security Platform (nsp)
+### NPM Audit
 
-Node Security Platform is a set of services targeted towards dependency management with a focus on security.
+`npm audit` is a new cli tool introduced with NPM@6. 
 
-The most common use of this tool is the service nsp Live. This is a service which integrates into a project's CI workflow and Github Pull Requests to identify vulnerabilities present in the project. The benefits of this mean that when new modules are added, any vulnerabilites are automatically identified in order for the security risk to be mitigated before these dependencies reach master. This also includes new vulnerabilites which are found in existing dependencies, as well as when new dependencies are introduced.
+Running `npm audit` will produce a report of security vulnerabilities with the affected package name, vulnerability severity and description, path, and other information, and, if available, commands to apply patches to resolve vulnerabilities.
 
-There is also an nsp CLI tool, which traverses your dependencies checking for vulnerabilities against the advisories list. To use this tool:
-Install the module globally.
+![npm audit example](/assets/images/npm-audit.png)
 
-`npm install -g nsp`
-
-Run the CLI tool from the root of the project directory.
-
-`nsp check`
-
-An example output of `nsp check`:
-
-![nsp check example](/assets/images/nsp.png)
-
-🔗 [Read on: NSP website](https://nodesecurity.io/)
-
-🔗 [Read on: Example advisory for a recent vulnerability in moment.js](https://nodesecurity.io/advisories/532)
+🔗 [Read on: NPM blog](https://docs.npmjs.com/getting-started/running-a-security-audit)
 
 ### Snyk
 
