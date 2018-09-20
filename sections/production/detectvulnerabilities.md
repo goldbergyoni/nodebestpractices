@@ -8,7 +8,7 @@ Modern Node applications have tens and sometimes hundreds of dependencies. If an
 you use has a known security vulnerability your app is vulnerable as well.
 The following tools automatically check for known security vulnerabilities in your dependencies:
 
-- [nsp](https://www.npmjs.com/package/nsp) - Node Security Project
+- [npm audit](https://docs.npmjs.com/cli/audit) - npm audit
 - [snyk](https://snyk.io/) - Continuously find & fix vulnerabilities in your dependencies
 
 <br/><br/>
