@@ -32,7 +32,7 @@
 3. [编码规范实践 (12) ](#3-code-style-practices)
 4. [测试和总体质量实践 (8) ](#4-testing-and-overall-quality-practices)
 5. [进入生产实践 (16) ](#5-going-to-production-practices)
-6. :star: New: [安全实践(23)](#6-security-best-practices)
+6. :star: 新: [安全实践(23)](#6-security-best-practices)
 7. Performance Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 
 
@@ -682,6 +682,29 @@ null == undefined   // true
 
 <br/><br/>
 
+## ![✔] 6.3 把机密信息从配置文件中抽离出来，或者使用包对其加密
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A3:Sensitive%20Data%20Exposure%20-green.svg" alt=""/></a>
+
+**TL;DR:** 不要在配置文件或源代码中存储纯文本机密信息。相反, 使用诸如Vault产品、Kubernetes/Docker Secrets或使用环境变量之类的安全管理系统。最后一个结果是, 存储在源代码管理中的机密信息必须进行加密和管理 (滚动密钥(rolling keys)、过期时间、审核等)。使用pre-commit/push钩子防止意外提交机密信息。
+
+**否则:** 源代码管理, 即使对于私有仓库, 也可能会被错误地公开, 此时所有的秘密信息都会被公开。外部组织的源代码管理的访问权限将无意中提供对相关系统 (数据库、api、服务等) 的访问。
+
+🔗 [**更多: 安全管理**](sections/security/secretmanagement.md)
+
+<br/><br/>
+
+## ![✔] 6.4. 使用 ORM/ODM 库防止查询注入漏洞
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
+
+**TL;DR:** 要防止 SQL/NoSQL 注入和其他恶意攻击, 请始终使用 ORM/ODM 或database库来转义数据或支持命名的或索引的参数化查询, 并注意验证用户输入的预期类型。不要只使用JavaScript模板字符串或字符串串联将值插入到查询语句中, 因为这会将应用程序置于广泛的漏洞中。所有知名的Node.js数据访问库(例如[Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose))包含对注入漏洞的内置包含措施。
+
+**否则:** 未经验证或未脱敏处理的用户输入，可能会导致操作员在使用MongoDB进行NoSQL操作时进行注入, 而不使用适当的过滤系统或ORM很容易导致SQL注入攻击, 从而造成巨大的漏洞。
+
+🔗 [**更多: 使用 ORM/ODM 库防止查询注入**](/sections/security/ormodmusage.md)
+
+<br/><br/>
 <br/><br/><br/>
 # `Performance Practices`
 
