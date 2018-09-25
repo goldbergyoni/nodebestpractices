@@ -705,6 +705,63 @@ null == undefined   // true
 🔗 [**更多: 使用 ORM/ODM 库防止查询注入**](/sections/security/ormodmusage.md)
 
 <br/><br/>
+
+## ![✔] 6.5. 通用安全最佳实际集合
+
+**TL;DR:** 这些是与Node.js不直接相关的安全建议的集合-Node的实现与任何其他语言没有太大的不同。单击 "阅读更多" 浏览。
+
+🔗 [**更多: 通用安全最佳实际**](/sections/security/commonsecuritybestpractices.md)
+
+<br/><br/>
+
+## ![✔] 6.6. 调整 HTTP 响应头以加强安全性
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
+
+**TL;DR:** 应用程序应该使用安全的header来防止攻击者使用常见的攻击方式，诸如跨站点脚本(XSS)、点击劫持和其他恶意攻击。可以使用模块，比如 [helmet](https://www.npmjs.com/package/helmet)轻松进行配置。
+
+**否则:** 攻击者可以对应用程序的用户进行直接攻击, 导致巨大的安全漏洞
+
+🔗 [**更多: 在应用程序中使用安全的header**](/sections/security/secureheaders.md)
+
+<br/><br/>
+
+## ![✔] 6.7. 经常自动检查易受攻击的依赖库
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Known%20Vulnerabilities%20-green.svg" alt=""/></a>
+
+**TL;DR:** 在npm的生态系统中, 一个项目有许多依赖是很常见的。在找到新的漏洞时, 应始终将依赖项保留在检查中。使用工具，类似于[npm audit](https://docs.npmjs.com/cli/audit) 或者 [snyk](https://snyk.io/)跟踪、监视和修补易受攻击的依赖项。将这些工具与 CI 设置集成, 以便在将其上线之前捕捉到易受攻击的依赖库。
+
+**否则:** 攻击者可以检测到您的web框架并攻击其所有已知的漏洞。
+
+🔗 [**更多: 安全依赖**](/sections/security/dependencysecurity.md)
+
+<br/><br/>
+
+## ![✔] 6.8. 避免使用Node.js的crypto库处理密码，使用Bcrypt
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
+
+**TL;DR:** 密码或机密信息(API密钥)应该使用安全的哈希+salt函数(如 "bcrypt")来存储, 因为性能和安全原因, 这应该是其JavaScript实现的首选。
+
+**否则:** 在不使用安全功能的情况下，保存的密码或秘密信息容易受到暴力破解和字典攻击, 最终会导致他们的泄露。
+
+🔗 [**更多: 使用Bcrypt**](/sections/security/bcryptpasswords.md)
+
+<br/><br/>
+
+## ![✔] 6.9. 转义 HTML、JS 和 CSS 输出
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a>
+
+**TL;DR:** Untrusted data that is sent down to the browser might get executed instead of just being displayed, this is commonly being referred as a cross-site-scripting (XSS) attack. Mitigate this by using dedicated libraries that explicitly mark the data as pure content that should never get executed (i.e. encoding, escaping)
+
+**Otherwise:** An attacker might store a malicious JavaScript code in your DB which will then be sent as-is to the poor clients
+
+🔗 [**Read More: Escape output**](/sections/security/escape-output.md)
+
+<br/><br/>
+
 <br/><br/><br/>
 # `Performance Practices`
 
