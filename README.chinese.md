@@ -822,6 +822,29 @@ null == undefined   // true
 
 <br/><br/>
 
+## ![✔] 6.15. 避免JavaScript的eval声明
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
+
+**TL;DR:** `eval` 是邪恶的, 因为它允许在运行时执行自定义的JavaScript代码。这不仅是一个性能方面的问题, 而且也是一个重要的安全问题, 因为恶意的JavaScript代码可能来源于用户输入。应该避免的另一种语言功能是 `new Function` 构造函数。`setTimeout` 和 `setInterval` 也不应该传入动态JavaScript代码。
+
+**否则:** 恶意JavaScript代码查找传入 `eval` 或其他实时判断的JavaScript函数的文本的方法, 并将获得在该页面上javascript权限的完全访问权。此漏洞通常表现为XSS攻击。
+
+🔗 [**更多: 避免JavaScript的eval声明**](/sections/security/avoideval.md)
+
+<br/><br/>
+
+## ![✔] 6.16. 防止恶意RegEx让Node.js的单线程过载执行
+
+<a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
+
+**TL;DR:** Regular Expressions, while being handy, pose a real threat to JavaScript applications at large, and the Node.js platform in particular. A user input for text to match might require an outstanding amount of CPU cycles to process. RegEx processing might be inefficient to an extent that a single request that validates 10 words can block the entire event loop for 6 seconds and set the CPU on 🔥. For that reason, prefer third-party validation packages like [validator.js](https://github.com/chriso/validator.js) instead of writing your own Regex patterns, or make use of [safe-regex](https://github.com/substack/safe-regex) to detect vulnerable regex patterns
+
+**Otherwise:** Poorly written regexes could be susceptible to Regular Expression DoS attacks that will block the event loop completely. For example, the popular `moment` package was found vulnerable with malicious RegEx usage in November of 2017
+
+🔗 [**Read More: Prevent malicious RegEx**](/sections/security/regex.md)
+
+<br/><br/>
 <br/><br/><br/>
 # `Performance Practices`
 
