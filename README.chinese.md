@@ -762,7 +762,7 @@ null == undefined   // true
 
 <br/><br/>
 
-## ![✔] 6.10. 验证传人的JSON schemas
+## ![✔] 6.10. 验证传入的JSON schemas
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7: XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a>
 
@@ -782,9 +782,46 @@ null == undefined   // true
 
 **否则:** 过期或错误的令牌可能被第三方恶意使用，以访问应用程序，并模拟令牌的所有者。
 
-🔗 [**Read More: Blacklist JSON Web Tokens**](/sections/security/expirejwt.md)
+🔗 [**更多: 为JSON Web Token添加黑名单**](/sections/security/expirejwt.md)
 
 <br/><br/>
+
+## ![✔] 6.12. 限制每个用户允许的登录请求
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
+
+**TL;DR:** 一类保护暴力破解的中间件，比如[express-brute](https://www.npmjs.com/package/express-brute)，应该被用在express的应用中，来防止暴力/字典攻击；这类攻击主要应用于一些敏感路由，比如/admin 或者 /login，基于某些请求属性, 如用户名, 或其他标识符, 如正文参数等。
+
+**否则:** 攻击者可以发出无限制的密码匹配尝试, 以获取对应用程序中特权帐户的访问权限。
+
+🔗 [**更多: 限制登录频率**](/sections/security/login-rate-limit.md)
+
+<br/><br/>
+
+## ![✔] 6.13. 使用非root用户运行Node.js
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A5:Broken%20Access%20Access%20Control-green.svg" alt=""/></a>
+
+**TL;DR:** Node.js作为一个具有无限权限的root用户运行，这是一种普遍的情景。例如，在Docker容器中，这是默认行为。建议创建一个非root用户，并保存到Docker镜像中（下面给出了示例），或者通过调用带有"-u username" 的容器来代表此用户运行该进程。
+
+**否则:** 在服务器上运行脚本的攻击者在本地计算机上获得无限制的权利 (例如，改变iptable，引流到他的服务器上)
+
+🔗 [**更多: 使用非root用户运行Node.js**](/sections/security/non-root-user.md)
+
+<br/><br/>
+
+## ![✔] 6.14. 使用反向代理或中间件限制负载大小
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
+
+**TL;DR:** 请求body有效载荷越大, Node.js的单线程就越难处理它。这是攻击者在没有大量请求(DOS/DDOS 攻击)的情况下，就可以让服务器跪下的机会。在边缘上（例如，防火墙，ELB）限制传入请求的body大小，或者通过配置[express body parser](https://github.com/expressjs/body-parser)仅接收小的载荷，可以减轻这种问题。
+
+**否则:** 您的应用程序将不得不处理大的请求, 无法处理它必须完成的其他重要工作, 从而导致对DOS攻击的性能影响和脆弱性。
+
+🔗 [**更多: 限制负载大小**](/sections/security/requestpayloadsizelimit.md)
+
+<br/><br/>
+
 <br/><br/><br/>
 # `Performance Practices`
 
