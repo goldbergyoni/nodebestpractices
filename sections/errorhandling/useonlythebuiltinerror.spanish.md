@@ -1,8 +1,8 @@
-# Use only the built-in Error object
+# Utiliza solo el objeto nativo de Error
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
-The permissive nature of JS along with its variety code-flow options (e.g. EventEmitter, Callbacks, Promises, etc) pushes to great variance in how developers raise errors – some use strings, other define their own custom types. Using Node.js built-in Error object helps to keep uniformity within your code and with 3rd party libraries, it also preserves significant information like the StackTrace. When raising the exception, it’s usually a good practice to fill it with additional contextual properties like the error name and the associated HTTP error code. To achieve this uniformity and practices, consider extending the Error object with additional properties, see code example below
+La naturaleza permisiva de JS junto con sus variadas opciones de flujo de código (ej. EventEmitter, Callbacks, Promises, etc) provocan la existencia de una gran variedad de maneras de lanzar errores. Algunos utilizan strings, otros definen sus propios tipos personalizados. Utilizar el objeto nativo de Error presente en Node.js ayuda a mantener la uniformidad dentro de tu código y de librerías de terceros, así como a mantener información significativa como el StackTrace. Al lanzar la excepción, normalmente es buena práctica el agregar propiedades adicionales que aporten contexto, como el nombre del error y el código de error HTTP asociado. Para lograr esta uniformidad y estas prácticas, considera extender el objeto Error con propiedades adicionales, observa el ejemplo a continuación.
 
 ### Code Example – doing it right
 

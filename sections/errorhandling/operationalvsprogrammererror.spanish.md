@@ -1,8 +1,8 @@
-# Distinguish operational vs programmer errors
+# Distinguir errores operacionales vs errores del programador
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
-Distinguishing the following two error types will minimize your app downtime and helps avoid crazy bugs: Operational errors refer to situations where you understand what happened and the impact of it – for example, a query to some HTTP service failed due to connection problem. On the other hand, programmer errors refer to cases where you have no idea why and sometimes where an error came from – it might be some code that tried to read an undefined value or DB connection pool that leaks memory. Operational errors are relatively easy to handle – usually logging the error is enough. Things become hairy when a programmer error pops up, the application might be in an inconsistent state and there’s nothing better you can do than to restart gracefully
+Distinguir entre los siguientes dos tipos de error minimizará el downtime de la aplicación y ayudará a evitar comportamientos extraños: Los errores operacionales se refieren a situaciones en las que entendemos lo que ha pasado y su impacto, por ejemplo, una petición HTTP fallida por un problema de conexión. Por otro lado, los errores del programador se refieren a casos en los que no tienes ni idea de por qué ocurren (a veces ni de dónde vienen), puede tratarse de algún código que intenta leer un valor no definido o de una pool de conexión a base de datos que pierde memoria. Los errores operacionales son relativamente fáciles de gestionar –generalmente, con registrar el error es suficiente– pero las cosas se complican cuando salta un error del programador, ya que la aplicación puede quedar en un estado inconsistente y no hay nada mejor que puedas hacer que reiniciarla de forma controlada.
 
 ### Code Example – marking an error as operational (trusted)
 
