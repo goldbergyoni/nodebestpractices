@@ -1,8 +1,8 @@
-# Structure your solution by components
+# Estructura tu solución en componentes
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
 Para aplicaciones de tamaño medio o superior, los monolitos son bastante malos. Un enorme software con muchas dependencias se torna complicado de manejar y por lo general termina en código espagueti. Incluso arquitectos inteligentes –aquellos con suficiente habilidad como para domar a la bestia y "modularizarla"– invierten gran esfuerzo mental en el diseño, y cada cambio requiere una evaluación cuidadosa del impacto en dependencias. La solución definitiva es desarrollar software pequeño: dividir el total en componentes autocontenidos, que no compartan archivos con otros, cada uno de los cuales constituye un pequeño conjunto de archivos (ej. API, servicio, acceso de datos, pruebas, etc), lo que aporta una estructura muy fácil de digerir. Algunos lo llaman arquitectura de "microservicios". Es importante entender que los microservicios no son ninguna especificación que debas seguir, sino un conjunto de principios. Puedes optar por atenerte a muchos principios en una arquitectura de microservicios completa, o simplemente adoptar unos pocos. Ambas opciones son buenas siempre y cuando mantengas baja la complejidad del software. Al final, lo que deberías hacer es crear límites básicos entre componentes, asignar una carpeta en la raíz de tu proyecto para cada entidad de negocio (componente) y hacer que sea autocontenido. A otros componentes solo se les permite consumir su funcionalidad a través de su interfaz pública o API. Esta es la base para mantener tus componentes simples, evitar el infierno de las dependencias y abrir el camino a microservicios completos en el futuro una vez tu aplicación crezca.
 

@@ -1,8 +1,8 @@
-# Use environment aware, secure and hierarchical config
+# Utiliza configuración consciente del entorno, segura y jerárquica
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
 Cuando se trata de datos de configuración, hay muchas molestias que pueden suponer un retraso:
 

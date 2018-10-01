@@ -1,8 +1,8 @@
-# Separate Express 'app' and 'server'
+# Separa la 'app' de Express y el 'server'
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
 El último generador de Express viene con una gran práctica que vale la pena mantener. La declaración API separada de la configuración relacionada con la red (puerto, protocolo, etc). Esto permite testear la API sin realizar llamadas de red, con todos los beneficios que ello conlleva: una ejecución rápida de los tests y la obtención de métricas de coverage. También permite desplegar la misma API bajo diferentes condiciones de red. Y otro plus: una mejor división de responsabilidades y un código más limpio.
 
