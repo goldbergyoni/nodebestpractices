@@ -4,17 +4,17 @@
 
 ### One Paragraph Explainer
 
-When dealing with configuration data, many things can just annoy and slow down:
+Cuando se trata de datos de configuración, hay muchas molestias que pueden suponer un retraso:
 
-1. setting all the keys using process environment variables becomes very tedious when in need to inject 100 keys (instead of just committing those in a config file), however when dealing with files only the DevOps admins cannot alter the behavior without changing the code. A reliable config solution must combine both configuration files + overrides from the process variables
+1. Setear todas las claves utilizando variables de entorno se vuelve muy tedioso cuando hay que inyectar 100 claves (en vez de simplemente commitearlas en un archivo de configuración). Sin embargo, tratar solo con archivos provoca que los administradores DevOps no puedan alterar el comportamiento sin cambiar el código. Una solución confiable para la configuración debe combinar archivos de configuración + la sobreescritura desde variables de entorno.
 
-2. when specifying all keys in a flat JSON, it becomes frustrating to find and modify entries when the list grows bigger. A hierarchical JSON file that is grouped into sections can overcome this issue + few config libraries allow to store the configuration in multiple files and take care to union all at runtime. See example below
+2. Al especificar todas las claves en JSON plano, se vuelve frustrante encontrar y modificar las entradas cuando la lista crece. Un archivo JSON jerárquico y agrupado en secciones puede superar este problema + pocas librerías de configuración permiten almacenar la configuración en múltiples archivos encargándose también de su unión en tiempo de ejecución. Mira el ejemplo de abajo.
 
-3. storing sensitive information like DB password is obviously not recommended but no quick and handy solution exists for this challenge. Some configuration libraries allow to encrypt files, others encrypt those entries during GIT commits or simply don't store real values for those entries and specify the actual value during deployment via environment variables.
+3. Evidentemente, no es recomendable almacenar información sensible como la contraseña de la base de datos, pero no existen soluciones rápidas y cómodas para este desafío. Algunas librerías de configuración permiten encriptar archivos, otros encriptan esas entradas durante los commits de GIT o simplemente no almacenan valores reales para esas entradas y especifican el valor verdadero durante el deploy a través de variables de entorno.
 
-4. some advanced configuration scenarios demand to inject configuration values via command line (vargs) or sync configuration info via a centralized cache like Redis so multiple servers will use the same configuration data.
+4. Algunos escenarios de configuración avanzada exigen inyectar los valores de configuración a través de línea de comandos (vargs) o que se sincronicen a través de un caché centralizado como Redis para que múltiples servidores puedan usar los mismos datos de configuración.
 
-Some configuration libraries can provide most of these features for free, have a look at NPM libraries like [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) and [config](https://www.npmjs.com/package/config) which tick many of these requirements.
+Algunas librerías de configuración pueden proporcionar muchas de estas características sin coste, echa un vistazo a paquetes NPM como [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) y [config](https://www.npmjs.com/package/config) los cuales cumplen con muchos de estos requisitos.
 
 <br/><br/>
 

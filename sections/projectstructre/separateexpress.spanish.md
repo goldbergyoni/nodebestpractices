@@ -4,7 +4,7 @@
 
 ### One Paragraph Explainer
 
-The latest Express generator comes with a great practice that is worth to keep - the API declaration is separated from the network related configuration (port, protocol, etc). This allows testing the API in-process, without performing network calls, with all the benefits that it brings to the table: fast testing execution and getting coverage metrics of the code. It also allows deploying the same API under flexible and different network conditions. Bonus: better separation of concerns and cleaner code
+El último generador de Express viene con una gran práctica que vale la pena mantener. La declaración API separada de la configuración relacionada con la red (puerto, protocolo, etc). Esto permite testear la API sin realizar llamadas de red, con todos los beneficios que ello conlleva: una ejecución rápida de los tests y la obtención de métricas de coverage. También permite desplegar la misma API bajo diferentes condiciones de red. Y otro plus: una mejor división de responsabilidades y un código más limpio.
 
 <br/><br/>
 
