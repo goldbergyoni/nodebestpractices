@@ -1,8 +1,8 @@
-# Document API errors using Swagger
+# Documentar errores API mediante Swagger
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
-REST APIs return results using HTTP status codes, it’s absolutely required for the API user to be aware not only about the API schema but also about potential errors – the caller may then catch an error and tactfully handle it. For example, your API documentation might state in advance that HTTP status 409 is returned when the customer name already exists (assuming the API register new users) so the caller can correspondingly render the best UX for the given situation. Swagger is a standard that defines the schema of API documentation offering an eco-system of tools that allow creating documentation easily online, see print screens below
+Las APIs basadas en REST devuelven resultados utilizando códigos de estado HTTP. Es absolutamente necesario para el usuario de la API el ser consciente, no solo del esquema API, sino también de los errores potenciales. De ese modo puede atrapar el error y actuar en consecuencia. Por ejemplo, la documentación de tu API puede aclarar por adelantado que se devuelve el código HTTP 409 cuando el nombre del cliente ya existe (asumiendo que la API registre nuevos usuarios), por tanto la aplicación que consume la API puede proporcionar la mejor UX para la situación dada. Swagger es un estándar que define un esquema para generar documentación API, ofreciendo un ecosistema de herramientas que permiten crear fácilmente documentación online. Observa las siguientes capturas de pantalla.
 
 ### Blog Quote: "You have to tell your callers what errors can happen"
 
