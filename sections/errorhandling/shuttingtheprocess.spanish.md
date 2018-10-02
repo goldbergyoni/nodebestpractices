@@ -1,8 +1,8 @@
-# Exit the process gracefully when a stranger comes to town
+# Termina el proceso si llega un desconocido al pueblo
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
-Somewhere within your code, an error handler object is responsible for deciding how to proceed when an error is thrown – if the error is trusted (i.e. operational error, see further explanation within best practice #3) then writing to log file might be enough. Things get hairy if the error is not familiar – this means that some component might be in a faulty state and all future requests are subject to failure. For example, assuming a singleton, stateful token issuer service that threw an exception and lost its state – from now it might behave unexpectedly and cause all requests to fail. Under this scenario, kill the process and use a ‘Restarter tool’ (like Forever, PM2, etc) to start over with a clean slate.
+En algún lugar del código, un objeto gestor de errores es responsable de decidir cómo se procede ante un error. Si ese error es confiable (ej. un error operacional, ver más información en mejores prácticas #3) con registrarlo en un log puede ser suficiente. Lo complicado viene cuando el error no es conocido, lo que implica que algún componente puede estar fallando y toda petición subsiguiente quedaría expuesta a fallar también. Por ejemplo, asumiendo una arquitectura singleton, un servicio proveedor de token con estado propio que lanza una excepción y pierde su estado podría, a partir de ese momento, comportarse de manera inesperada y provocar que todas las peticiones empiecen a fallar. Ante este escenario, termina el proceso y utiliza una "herramienta de reinicio" (como Forever, PM2, etc.) para empezar de cero limpiamente.
 
 ### Code example: deciding whether to crash
 

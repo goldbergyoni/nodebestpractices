@@ -1,10 +1,10 @@
-# Catch unhandled promise rejections
+# Capturar promises denegadas sin controlar
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
-Typically, most of modern Node.js/Express application code runs within promises – whether within the .then handler, a function callback or in a catch block. Surprisingly, unless a developer remembered to add a .catch clause, errors thrown at these places are not handled by the uncaughtException event-handler and disappear.  Recent versions of Node added a warning message when an unhandled rejection pops, though this might help to notice when things go wrong but it's obviously not a proper error handling method. The straightforward solution is to never forget adding .catch clauses within each promise chain call and redirect to a centralized error handler. However, building your error handling strategy only on developer’s discipline is somewhat fragile. Consequently, it’s highly recommended using a graceful fallback and subscribe to `process.on(‘unhandledRejection’, callback)` – this will ensure that any promise error, if not handled locally, will get its treatment.
+Normalmente, la mayor parte de código en aplicaciones Node.js/Express modernas funciona encerrado en "promises", ya sea en el interior de un .then, como en una función callback o en un bloque catch. Sorprendentemente, a menos que el desarrollador no olvide añadir una cláusula .catch, los errores que lanzados en estos sitios no son controlados por uncaughtException y desaparecen. Las últimas versiones de Node incorporan un mensaje de warning ante estas situaciones y, a pesar de la ayuda que esto supone cuando las cosas van mal, resulta evidente que no es el método adecuado para dar por resuelto el tema. La solución más sencilla es nunca olvidar cláusulas .catch en cada cadena de promises y redirigir el error al gestor de errores centralizado. Sin embargo, centrar tu estrategia de gestión de errores puramente en la disciplina del desarrollador es ciertamente frágil. Por lo tanto, se recomienda muchísimo utilizar una alternativa elegante: suscribirse a `process.on('unhandledRejection', callback)` – esto asegurará que cualquier error provinente de una promise, de no gestionarse localmente, siempre reciba su correcta gestión.
 
 <br/><br/>
 
