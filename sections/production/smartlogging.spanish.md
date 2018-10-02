@@ -1,16 +1,16 @@
-# Make your app transparent using smart logs
+# Haz transparente tu app mediante logs inteligentes
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
-Since you print out log statements anyway and you're obviously in a need of some interface that wraps up production information where you can trace errors and core metrics (e.g. how many errors happen every hour and which is your slowest API end-point) why not invest some moderate effort in a robust logging framework that will tick all boxes? Achieving that requires a thoughtful decision on three steps:
+Ya que vas a printar logs igual y obviamente necesitas una interfaz que resuma información de producción donde puedas rastrear errores y métricas core (por ejemplo, cuántos errores ocurren cada hora y cuál es el endpoint más lento de la API), ¿por qué no invertir un esfuerzo moderado en un framework de logging robusto que lo haga todo? Conseguir esto requiere una decisión reflexiva en tres pasos:
 
-**1. smart logging** – at the bare minimum you need to use a reputable logging library like [Winston](https://github.com/winstonjs/winston), [Bunyan](https://github.com/trentm/node-bunyan) and write meaningful information at each transaction start and end. Consider to also format log statements as JSON and provide all the contextual properties (e.g. user id, operation type, etc) so that the operations team can act on those fields. Include also a unique transaction ID at each log line, for more information refer to the bullet below “Write transaction-id to log”. One last point to consider is also including an agent that logs the system resource like memory and CPU like Elastic Beat.
+**1. Logging inteligente** – como mínimo, deberías utilizar una librería de logging conocida, como [Winston](https://github.com/winstonjs/winston) o [Bunyan](https://github.com/trentm/node-bunyan), y guardar información significativa en cada inicio y fin de transacción. Considera también guardar logs en formato JSON y añadir información contextual mediante propiedades (por ejemplo, la id de usuario, el tipo de operación, etc.) para que el equipo de operaciones pueda actuar en esos aspectos. Incluye también una ID de transacción única en cada línea de log (para más información consulta el punto "Escribir ID de transacción en el log"). Un último punto a considerar también incluye un agente que registre el uso de recursos del sistema, como la memoria y la CPU, como Elastic Beat.
 
-**2. smart aggregation** – once you have comprehensive information on your servers file system, it’s time to periodically push these to a system that aggregates, facilities and visualizes this data. The Elastic stack, for example, is a popular and free choice that offers all the components to aggregate and visualize data. Many commercial products provide similar functionality only they greatly cut down the setup time and require no hosting.
+**2. Agregación inteligente** – una vez tengas información exhaustiva en el sistema de archivos del server, es hora de enviarla periódicamente a un sistema que agregue, configure y visualice estos datos. Elastick stack, por ejemplo, es una opción popular y gratuita que ofrece todos los componentes para agregar y visualizar datos. Muchos productos comerciales ofrecen una funcionalidad similar reduciendo enormemente el tiempo de configuración y evitando el requisito de hosting.
 
-**3. smart visualization** – now the information is aggregated and searchable, one can be satisfied only with the power of easily searching the logs but this can go much further without coding or spending much effort. We can now show important operational metrics like error rate, average CPU throughout the day, how many new users opted-in in the last hour and any other metric that helps to govern and improve our app
+**3. Visualización inteligente** – ahora que la información se ha agregado y se puede buscar, uno puede quedar satisfecho solo con poder buscar fácilmente entre los logs, pero esto puede ir mucho más allá sin necesidad de codificar ni invertir mucho esfuerzo. Ahora podemos mostrar importantes métricas operacionales como la tasa de error, uso promedio de la CPU durante el día, cuántos usuarios nuevos se unieron en la última hora y cualquier otra métrica que ayude a regular y mejorar nuestra app.
 
 <br/><br/>
 
