@@ -1,8 +1,8 @@
-# Test error flows using your favorite test framework
+# Testear flujos de error mediante tu framework favorito de testing
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
-Testing ‘happy’ paths is no better than testing failures. Good testing code coverage demands to test exceptional paths. Otherwise, there is no trust that exceptions are indeed handled correctly. Every unit testing framework, like [Mocha](https://mochajs.org/) & [Chai](http://chaijs.com/), supports exception testing (code examples below). If you find it tedious to test every inner function and exception you may settle with testing only REST API HTTP errors.
+Testear rutas de ejecución "felices" no es mejor que testear errores. Un buen coverage de código exige testear rutas de ejecución adversas. De lo contrario, no existe ninguna seguridad de que las excepciones se capturen y gestionen correctamente. Cada framework de testing unitario, como Mocha y Chai, admite testing de excepciones (códigos de ejemplo a continuación). Si te parece tedioso ir probando cada función y excepción internas, podrías quedarte solo con el testing de errores REST API HTTP.
 
 ### Code example: ensuring the right exception is thrown using Mocha & Chai
 

@@ -1,9 +1,8 @@
-# Discover errors and downtime using APM products
+# Detectar errores y tiempos de inactividad a través de productos APM
 
+### Párrafo de explicación
 
-### One Paragraph Explainer
-
-Exception != Error. Traditional error handling assumes the existence of Exception but application errors might come in the form of slow code paths, API downtime, lack of computational resources and more. This is where APM products come in handy as they allow to detect a wide variety of ‘burried’ issues proactively with a minimal setup. Among the common features of APM products are for example alerting when the HTTP API returns errors, detect when the API response time drops below some threshold, detection of ‘code smells’, features to monitor server resources, operational intelligence dashboard with IT metrics and many other useful features. Most vendors offer a free plan.
+Exception != Error. La gestión tradicional de errores asume la existencia de Exception, pero los errores de la aplicación pueden manifestarse en forma de rutas de ejecución lentas, tiempos de inactividad de la API, falta de recursos computacionales y más. Es ahí donde los productos APM se tornan realmente útiles ya que permiten detectar una amplia variedad de problemas "enterrados", proactivamente y con una configuración mínima. Entre las características más comunes de productos APM están, por ejemplo, el alertar cuando se presentan errores HTTP API, detectar cuando el tiempo de respuesta de la API cae por debajo del umbral establecido, localizar ["code smells"](https://es.wikipedia.org/wiki/Hediondez_del_c%C3%B3digo), monitorizar recursos del servidor, proporcionar inteligencia operacional mediante paneles con métricas de IT y muchas otras funciones útiles. La mayoría de proveedores de este tipo de productos ofrecen algún plan gratuito.
 
 ### Wikipedia about APM
 
