@@ -1,8 +1,8 @@
-# Fail fast, validate arguments using a dedicated library
+# Falla rápido, valida los argumentos mediante una librería dedicada
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
-We all know how checking arguments and failing fast is important to avoid hidden bugs (see anti-pattern code example below). If not, read about explicit programming and defensive programming. In reality, we tend to avoid it due to the annoyance of coding it (e.g. think of validating hierarchical  JSON object with fields like email and dates) – libraries like Joi and Validator turn this tedious task into a breeze.
+Todos sabemos que revisar argumentos y fallar cuanto antes es importante para evitar bugs ocultos (ver el código antipatrón de ejemplo a continuación). Si no, lee sobre programación explícita y defensiva. En realidad, tendemos a evitarlo por el fastidio que supone programarlo (por ej. piensa en validar un objeto JSON jerárquico con campos como email y fechas). Bibliotecas como Joi y Validator convierten esta tediosa tarea en calderilla.
 
 ### Wikipedia: Defensive Programming
 
