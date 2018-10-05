@@ -34,12 +34,12 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 ## Índice
 
-1.  [Práticas de Estrutura de Projeto (5)](#1-project-structure-practices)
-2.  [Práticas de Tratamento de Erros (11) ](#2-error-handling-practices)
-3.  [Práticas de Estilo de Código (12) ](#3-code-style-practices)
-4.  [Práticas de Testes e Qualidade Geral (8) ](#4-testing-and-overall-quality-practices)
-5.  [Práticas de Produção (17) ](#5-going-to-production-practices)
-6.  :star: Novo: [Práticas de Segurança (23)](#6-security-best-practices)
+1.  [Práticas de Estrutura de Projeto (5)](#1-práticas-de-estrutura-de-projeto)
+2.  [Práticas de Tratamento de Erros (11) ](#2-práticas-de-tratamento-de-erros)
+3.  [Práticas de Estilo de Código (12) ](#3-práticas-de-estilo-de-código)
+4.  [Práticas de Testes e Qualidade Geral (8) ](#4-práticas-de-testes-e-qualidade-geral)
+5.  [Práticas de Produção (17) ](#5-práticas-de-produção)
+6.  :star: Novo: [Práticas de Segurança (23)](#6-práticas-de-segurança)
 7.  Práticas de Performance ([em breve](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 
 <br/><br/><br/>
@@ -96,7 +96,7 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Voltar ao topo</a></p>
+<p align="right"><a href="#índice">⬆ Voltar ao topo</a></p>
 
 # `2. Práticas de Tratamento de Erros`
 
@@ -382,7 +382,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <p align="right"><a href="#table-of-contents">⬆ Voltar ao topo</a></p>
 
-# `4. Testes e Práticas Gerais de Qualidade`
+# `4. Práticas de Testes e Qualidade Geral`
 
 ## ![✔] 4.1 No mínimo, escreva testes de API (componente)
 
