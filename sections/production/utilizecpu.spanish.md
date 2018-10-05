@@ -1,10 +1,10 @@
-# Utilize all CPU cores
+# Utiliza todos los núcleos de la CPU
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
-It might not come as a surprise that in its basic form, Node runs over a single thread=single process=single CPU. Paying for beefy hardware with 4 or 8 CPU and utilizing only one sounds crazy, right? The quickest solution which fits medium sized apps is using Node’s Cluster module which in 10 lines of code spawns a process for each logical core and route requests between the processes in a round-robin style. Even better, use PM2 which sugarcoats the clustering module with a simple interface and cool monitoring UI. While this solution works well for traditional applications, it might fall short for applications that require top-notch performance and robust DevOps flow. For those advanced use cases, consider replicating the NODE process using custom deployment script and balancing using a specialized tool such as nginx or use a container engine such as AWS ECS or Kubernetees that have advanced features for deployment and replication of processes.
+Quizá no sea una sorpresa que, en su forma básica, Node se ejecute en un solo subproceso = proceso único = una sola CPU. Pagar por hardware pesado con 4 u 8 CPUs y usar solo una suena absurdo, ¿verdad? La solución más rápida que se adapta a aplicaciones de tamaño medio es utilizar el módulo Node's Cluster, que en 10 líneas de código genera un proceso para cada núcleo lógico y redirige las peticiones entre los procesos al estilo round-robin. Mejor aún, PM2 endulza Node's Cluster con una interfaz de monitorización simple y genial. Si bien esta solución funciona bien para aplicaciones tradicionales, se puede quedar corta para aplicaciones que requieren de un rendimiento de primer nivel y de un flujo DevOps robusto. Para esos casos más avanzados, considera la posibilidad de replicar el proceso NODE mediante un script personalizado de deploy, y balancear la carga a través de herramientas especializadas como nginx, o a través de un motor de contenedores como AWS ECS o Kubernetees, que tienen funciones avanzadas para deployment y replicación de procesos.
 
 <br/><br/>
 
