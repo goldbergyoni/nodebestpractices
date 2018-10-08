@@ -838,11 +838,23 @@ null == undefined   // true
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Regular Expressions, while being handy, pose a real threat to JavaScript applications at large, and the Node.js platform in particular. A user input for text to match might require an outstanding amount of CPU cycles to process. RegEx processing might be inefficient to an extent that a single request that validates 10 words can block the entire event loop for 6 seconds and set the CPU on 🔥. For that reason, prefer third-party validation packages like [validator.js](https://github.com/chriso/validator.js) instead of writing your own Regex patterns, or make use of [safe-regex](https://github.com/substack/safe-regex) to detect vulnerable regex patterns
+**TL;DR:** 正则表达式，在方便的同时，对JavaScript应用构成了真正的威胁，特别是Node.js平台。匹配文本的用户输入需要大量的CPU周期来处理。在某种程度上，正则处理是效率低下的，比如验证10个单词的单个请求可能阻止整个event loop长达6秒，并让CPU引火烧身。由于这个原因，偏向第三方的验证包，比如[validator.js](https://github.com/chriso/validator.js)，而不是采用正则，或者使用[safe-regex](https://github.com/substack/safe-regex)来检测有问题的正则表达式。
 
-**Otherwise:** Poorly written regexes could be susceptible to Regular Expression DoS attacks that will block the event loop completely. For example, the popular `moment` package was found vulnerable with malicious RegEx usage in November of 2017
+**否则:** 写得不好的正则表达式可能容易受到正则表达式DoS攻击的影响, 这将完全阻止event loop。例如，流行的`moment`包在2017年的11月，被发现使用了错误的RegEx用法而易受攻击。
 
-🔗 [**Read More: Prevent malicious RegEx**](/sections/security/regex.md)
+🔗 [**更多: 防止恶意正则**](/sections/security/regex.md)
+
+<br/><br/>
+
+## ![✔] 6.17. Avoid module loading using a variable
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
+
+**TL;DR:** Avoid requiring/importing another file with a path that was given as parameter due to the concern that it could have originated from user input. This rule can be extended for accessing files in general (i.e. `fs.readFile()`) or other sensitive resource access with dynamic variables originating from user input. [Eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) linter can catch such patterns and warn early enough
+
+**Otherwise:** Malicious user input could find its way to a parameter that is used to require tampered files, for example a previously uploaded file on the filesystem, or access already existing system files.
+
+🔗 [**Read More: Safe module loading**](/sections/security/safemoduleloading.md)
 
 <br/><br/>
 <br/><br/><br/>
