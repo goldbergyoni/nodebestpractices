@@ -10,7 +10,7 @@ Example: Unsafe express redirect using user input
 const express = require('express');
 const app = express();
 
-app.get('/login', function (req, res, next) {
+app.get('/login', (req, res, next) => {
 
   if (req.session.isAuthenticated()) {
     res.redirect(req.query.url);
@@ -37,7 +37,7 @@ function getValidRedirect(url) {
   return whitelist[url] ? url : '/'; 
 }
 
-app.get('/login', function (req, res, next) {
+app.get('/login', (req, res, next) => {
 
   if (req.session.isAuthenticated()) {
     res.redirect(getValidRedirect(req.query.url));
