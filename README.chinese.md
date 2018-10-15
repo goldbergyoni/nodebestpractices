@@ -916,13 +916,27 @@ null == undefined   // true
 
 <br/><br/>
 
+## ![✔] 6.23. 通过显式设置进程应崩溃的情况，以避免DOS攻击
+
+<a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
+
+**TL;DR:** 当错误未被处理时, Node进程将崩溃。即使错误被捕获并得到处理，许多最佳实践甚至建议退出。例如, Express会在任何异步错误上崩溃 - 除非使用catch子句包装路由。这将打开一个非常惬意的攻击点, 攻击者识别哪些输入会导致进程崩溃并重复发送相同的请求。没有即时补救办法, 但一些技术可以减轻苦楚: 每当进程因未处理的错误而崩溃，都会发出警报，验证输入并避免由于用户输入无效而导致进程崩溃，并使用catch将所有路由处理包装起来，并在请求中出现错误时, 考虑不要崩溃(与全局发生的情况相反)。
+
+**否则:** 这只是一个起到教育意义的假设: 给定许多Node.js应用程序, 如果我们尝试传递一个空的JSON正文到所有POST请求 - 少数应用程序将崩溃。在这一点上, 我们可以只是重复发送相同的请求, 就可以轻松地搞垮应用程序。
+
 <br/><br/><br/>
+
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+
+# `API Practices`
+
+## Our contributors are working on this section. Would you like to join?
+
 # `Performance Practices`
 
 ## Our contributors are working on this section. Would you like to join?
 
-
-<br/><br/>
+<br/><br/><br/>
 
 # Milestones
 To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/i0natan/nodebestpractices/milestones) and join the working groups if you want to contribute to this project.
