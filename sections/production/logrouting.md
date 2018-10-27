@@ -4,16 +4,17 @@
 
 ### One Paragraph Explainer
 
-“Log routing” as defined here refers to picking up and pushing logs to a some other location than your application or application process. This is something that should not be handled by the application itself, but by infrastructure instead due to: 1) separation of concerns and 2) [12-Factor best practices for modern applications](https://12factor.net/logs).
+Application code should not handle log routing, but instead just use the `console` module to write to `stdout/stderr`.“Log routing” means picking up and pushing logs to a some other location than your application or application process, for example, writing the logs to a file, database, etc. The reason for this is mostly two-fold: 1) separation of concerns and 2) [12-Factor best practices for modern applications](https://12factor.net/logs).
 
-We often think of "separation of conerns" in terms of pieces of code between services and between services themselves, but this applies to the more “infrastructural” components as well. Your application code should not handle something that should be handled by infrastructure. What happens if you define the log locations in your application, but later you need to change that location? That results in a code change and deployment. Also, when working with container-based/cloud-based platforms, containers can spin up and shut down when scaling to performance demands, so we can't be sure where a logfile will end up. The execution environment (container) should decide where the log files get routed to instead. The application should just log what it needs to to `stdout` / `stderr`, and the execution environment should be configured to pick up the log stream from there and route it to where it needs to go.
+We often think of "separation of conerns" in terms of pieces of code between services and between services themselves, but this applies to the more “infrastructural” components as well. Your application code should not handle something that should be handled by infrastructure/the execution environment (most often these days, containers). What happens if you define the log locations in your application, but later you need to change that location? That results in a code change and deployment. Also, when working with container-based/cloud-based platforms, containers can spin up and shut down when scaling to performance demands, so we can't be sure where a logfile will end up. The execution environment (container) should decide where the log files get routed to instead. The application should just log what it needs to to `stdout` / `stderr`, and the execution environment should be configured to pick up the log stream from there and route it to where it needs to go.
 
+Benefits:
 - keeping the log routing responsibility out of your application code:
     - keeps the code cleaner
     - makes log routing locations easier to change without deployments
 - scaling applications/containers means it’s harder to have control over logfiles
 - scaling applications also means they’re more ephemeral, meaning logfiles might not be there depending on the state of the container
-- writing to, say a file or database, over stdout/stderr ties you down to those log targets, takes away your flexibility to pipe the output of stdout/stderr to whatever targets you want, and change this on the fly
+- writing to, say a file or database, over stdout/stderr ties you down to those log targets, takes away your flexibility to pipe the output of stdout/stderr to whatever targets you want, and change this at the infrastructure or container level
 
 <br/><br/>
 
