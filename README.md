@@ -475,6 +475,12 @@ All statements above will return false if used with `===`
 
 **Otherwise:** With poor code quality, bugs and performance will always be an issue that no shiny new library or state of the art features can fix.
 
+## ![✔] 4.10 Run parallelized tests
+
+**TL;DR:** Consider running your tests with [Jest](https://jestjs.io), [Ava](https://github.com/avajs/ava) or another framework that supports parallelization out of the box. This will require you to write test files that don't conflict, but means your tests will execute substantially faster. You should also avoid tests with real IO (such as network or db calls), since they'll slow them down and make parallelization harder. Note that it can be difficult to change existing tests written with Mocha to run in parallel so if you expect your project to grow large starting with parallel tests helps.
+
+**Otherwise:** As your project grows larger your test execution times will continue getting longer and become unmanageable.
+
 🔗 [**Read More: Refactoring!**](/sections/testingandquality/refactoring.md)
 
 <br/><br/><br/>
