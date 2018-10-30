@@ -649,6 +649,16 @@ All statements above will return false if used with `===`
 
 🔗 [**Read More: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
 
+<br/><br/>
+
+## ![✔] 5.18. Log Routing
+
+**TL;DR:** Logs should be routed not by the application, but by the exection environment the application runs in. Node applications typically write logs to `stdout` using the `console` module. Instead of the application specifying where the logs should end up, write to `stdout` using `console` and then let the execution environment (container, server, etc.) pipe the `stdout` stream to the appropriate destination (i.e. Splunk, Graylog, etc.).
+
+**Otherwise:** Application handling log routing === hard to scale, loss of logs, poor separation of concerns
+
+🔗 [**Read More: Log Routing**](/sections/production/logrouting.md)
+
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
