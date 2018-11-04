@@ -1056,7 +1056,9 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Sergio](https://github.com/imsergiobernal),
 🌻 [Duarte Mendes](https://github.com/duartemendes),
 🌻 [Nikola Telkedzhiev](https://github.com/ntelkedzhiev),
-🌻 [Vitor Godoy](https://github.com/vitordagamagodoy)
+🌻 [Vitor Godoy](https://github.com/vitordagamagodoy),
+🌻 [Manish Saraan](https://github.com/manishsaraan),
+🌻 [Sangbeom Han](https://github.com/uronly14me)
 
 ### Stars <br/>
 
