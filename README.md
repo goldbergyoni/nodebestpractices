@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2074%20Best%20practices-blue.svg" alt="74 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20October%207%202018-green.svg" alt="Last update: October 7th, 2018"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.11.3%20LTS-brightgreen.svg" alt="Updated for Node 8.11.3 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2075%20Best%20practices-blue.svg" alt="75 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20October%210%202018-green.svg" alt="Last update: October 10th, 2018"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.11.3%20LTS-brightgreen.svg" alt="Updated for Node 8.11.3 LTS">
 </div>
 
 <br/>
@@ -1055,6 +1055,12 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Gabe Kuslansky](https://github.com/GabeKuslansky),
 🌻 [Ron Gross](https://github.com/ripper234),
 🌻 [Valeri Karpov](https://github.com/vkarpov15)
+🌻 [Sergio](https://github.com/imsergiobernal),
+🌻 [Duarte Mendes](https://github.com/duartemendes),
+🌻 [Nikola Telkedzhiev](https://github.com/ntelkedzhiev),
+🌻 [Vitor Godoy](https://github.com/vitordagamagodoy),
+🌻 [Manish Saraan](https://github.com/manishsaraan),
+🌻 [Sangbeom Han](https://github.com/uronly14me)
 
 ### Stars <br/>
 
