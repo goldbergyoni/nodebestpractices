@@ -652,7 +652,7 @@ null == undefined   // true
 
 <p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
-<h1 id="#6-security-best-practices"><code>6. 安全最佳实践</code></h1>
+<h1 id="6-security-best-practices"><code>6. 安全最佳实践</code></h1>
 
 <div align="center">
 <img src="https://img.shields.io/badge/OWASP%20Threats-Top%2010-green.svg" alt="53 items"/>
