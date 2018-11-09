@@ -6,7 +6,7 @@ As a rule of thumb, one should run his own JavaScript files only. Theories aside
 
 - a dedicated child process - this provides a quick information isolation but demand to tame the child process, limit its execution time and recover from errors
 - a cloud serverless framework ticks all the sandbox requirements but deployment and invoking a FaaS function dynamically is not a walk in the part
-- some npm libraries, like (https://www.npmjs.com/package/sandbox)[/npm/sandbox] and (https://www.npmjs.com/package/vm2)[/npm/vm2] allow execution of isolated code in 1 single line of code. Though this latter option wins in simplicity it provides a limited protection
+- some npm libraries, like [sandbox](https://www.npmjs.com/package/sandbox) and [vm2](https://www.npmjs.com/package/vm2) allow execution of isolated code in 1 single line of code. Though this latter option wins in simplicity it provides a limited protection
 
 ### Code example - Using Sandbox library to run code in isolation
 
