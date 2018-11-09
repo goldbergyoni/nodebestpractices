@@ -488,14 +488,14 @@ null == undefined   // true
 	
 <br/><br/>
 
-## ![✔] 5.3. 委托一切可能的（例如：gzip，SSL）给反向代理
+## ![✔] 5.3. 委托可能的一切（例如：gzip，SSL）给反向代理
 
 **TL;DR:** Node处理CPU密集型任务，如gzipping，SSL termination等，表现糟糕。相反，使用一个 ‘真正’ 的中间件服务像Nginx，HAProxy或者云供应商的服务。
 
 **否则:** 可怜的单线程Node将不幸地忙于处理网络任务，而不是处理应用程序核心，性能会相应降低。
 
 
-🔗 [**更多: 委托一切可能的（例如：gzip，SSL）给反向代理**](/sections/production/delegatetoproxy.chinese.md)
+🔗 [**更多: 委托可能的一切（例如：gzip，SSL）给反向代理**](/sections/production/delegatetoproxy.chinese.md)
 
 <br/><br/>
 
