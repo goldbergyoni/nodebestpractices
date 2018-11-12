@@ -475,13 +475,13 @@ All statements above will return false if used with `===`
 
 **Otherwise:** With poor code quality, bugs and performance will always be an issue that no shiny new library or state of the art features can fix.
 
-## ![✔] 4.10 Write independent tests and run them in parallel
+🔗 [**Read More: Refactoring!**](/sections/testingandquality/refactoring.md)
 
-**TL;DR:** Write your tests so that they can run concurrently without conflicts. Each test should run indepently without requiring tests earlier in the file to run first. This makes cleaner tests, debugging easier and faster execution since you can run them in parallel. Consider using [Jest](https://jestjs.io), [ava](https://github.com/avajs/ava), [mocha-parallel-tests](https://github.com/mocha-parallel/mocha-parallel-tests) or another test framework that supports parallelization out of the box. Even if your tests are currently small, it is difficult to change existing tests to run in parallel, so if you expect your project to grow large, starting with parallel execution helps.
+## ![✔] 4.10 Run tests in parallel
+
+**TL;DR:** Design your tests so you can run them concurrently. Your total test times will be dramatically lower since the runner can take advantage of multiple CPU cores and slow tests won't block execution. Consider a framework that supports parallelization out of the box. Some run multiple tests in the same file in parallel ([Ava](https://github.com/avajs/ava)), whereas others only run multiple files in parallel ([Jest](https://jestjs.io), [mocha-parallel-tests](https://github.com/mocha-parallel/mocha-parallel-tests)). The latter is simpler for development, but more limiting. Even if your tests are currently small, it is difficult to parallelize existing tests, so if your project might get large, starting with parallel execution helps.
 
 **Otherwise:** As your project grows larger your test execution times will continue getting longer and become unmanageable.
-
-🔗 [**Read More: Refactoring!**](/sections/testingandquality/refactoring.md)
 
 <br/><br/><br/>
 
