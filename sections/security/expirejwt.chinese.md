@@ -11,7 +11,7 @@
 
 ```javascript
 var jwt = require('express-jwt');
-var blacklist = require('express-jwt-blacklist');
+const blacklist = require('express-jwt-blacklist');
  
 app.use(jwt({
   secret: 'my-secret',
