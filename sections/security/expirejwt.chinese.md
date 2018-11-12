@@ -10,7 +10,7 @@
 在Node.js项目中，使用`express-jwt`，并运行`express-jwt-blacklist`的例子
 
 ```javascript
-var jwt = require('express-jwt');
+const jwt = require('express-jwt');
 const blacklist = require('express-jwt-blacklist');
  
 app.use(jwt({
