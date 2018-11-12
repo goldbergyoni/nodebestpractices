@@ -11,7 +11,8 @@
 ### 代码示例 - 使用Sandbox库运行隔离代码
 
 ```javascript
-const Sandbox = require("sandbox")
+const Sandbox = require("sandbox");
+const s = new Sandbox();
   , s = new Sandbox()
 
 s.run( "lol)hai", function( output ) {
