@@ -8,7 +8,7 @@
 
 ```javascript
 // 攻击者可能输入的恶意代码示例
-userInput = "require('child_process').spawn('rm', ['-rf', '/'])";
+const userInput = "require('child_process').spawn('rm', ['-rf', '/'])";
 
 // 恶意代码被执行
 eval(userInput);
