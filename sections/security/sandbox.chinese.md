@@ -13,7 +13,6 @@
 ```javascript
 const Sandbox = require("sandbox");
 const s = new Sandbox();
-  , s = new Sandbox()
 
 s.run( "lol)hai", function( output ) {
   console.log(output);
