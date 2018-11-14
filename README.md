@@ -1076,13 +1076,11 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Nikola Telkedzhiev](https://github.com/ntelkedzhiev),
 🌻 [Vitor Godoy](https://github.com/vitordagamagodoy),
 🌻 [Manish Saraan](https://github.com/manishsaraan),
-🌻 [Sangbeom Han](https://github.com/uronly14me),
-🌻 [blackmatch](https://github.com/blackmatch)
+🌻 [Sangbeom Han](https://github.com/uronly14me)
 
 ### Stars <br/>
 
 ⭐ [Kyle Martin](https://github.com/js-kyle),
-⭐ [Keith Holliday](https://github.com/TheHollidayInn),
-⭐ [Corey Cleary](https://github.com/coreyc)
+⭐ [Keith Holliday](https://github.com/TheHollidayInn)
 
 <br/><br/><br/>
