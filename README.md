@@ -951,11 +951,11 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `API Practices`
+# `Performance Practices`
 
 ## Our contributors are working on this section. Would you like to join?
 
-# `Performance Practices`
+# `API Practices`
 
 ## Our contributors are working on this section. Would you like to join?
 
