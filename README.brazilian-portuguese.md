@@ -464,8 +464,6 @@ Todas as declarações acima false se feitas com `===`.
 
 <p align="right"><a href="#table-of-contents">⬆ Voltar a topo</a></p>
 
-<<<<<<< HEAD
-
 # `5. Boas Práticas de Produção`
 
 ## ![✔] 5.1. Monitoramento!
@@ -981,9 +979,7 @@ Todas as traduções são contribuições da comunidade. Nós ficaremos felizes 
 - ![RU](/assets/flags/RU.png) [Russo](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/105))
 - ![ES](/assets/flags/ES.png) [Espanhol](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/95))
 - ![TR](/assets/flags/TR.png) Turco ([Discussão](https://github.com/i0natan/nodebestpractices/issues/139))
-  <<<<<<< HEAD
-- # ![TR](/assets/flags/BR.png) Português Brasileiro ([Discussão](https://github.com/i0natan/nodebestpractices/issues/223))
-  > > > > > > > 6708bc15909e8964b14cfdb1543353d061b9ff84
+- ![BR](/assets/flags/BR.png) Português Brasileiro ([Discussão](https://github.com/i0natan/nodebestpractices/issues/223))
 
 <br/><br/><br/>
 
