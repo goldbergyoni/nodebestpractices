@@ -250,7 +250,7 @@ function someFunction() {
 
 **Caso contrário:** Evitar esta recomendação pode levar a resultados inesperados, como visto nesta thread do StackOverflow:
 
-🔗 [**Read more:** "Por que os resultados variam com base no posicionamento da chave?" (Stackoverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
+🔗 [**Leia Mais:** "Por que os resultados variam com base no posicionamento da chave?" (Stackoverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
 <br/><br/>
 
@@ -301,7 +301,7 @@ function doSomething() {}
 
 **Caso contrário:** A depuração se torna muito mais complicada ao seguir uma variável que frequentemente muda
 
-🔗 [**Read more: JavaScript ES6+: var, let ou const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
+🔗 [**Leia Mais: JavaScript ES6+: var, let ou const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
 
 <br/><br/>
 
@@ -461,6 +461,88 @@ Todas as declarações acima false se feitas com `===`.
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Voltar a topo</a></p>
+
+# `5. Boas Práticas de Produção`
+
+## ![✔] 5.1. Monitoramento!
+
+**TL;DR:** O monitoramento é um jogo de descobrir problemas antes que os clientes os encontrem - obviamente deve ser atribuída muita importância para isto. O mercado está sobrecarregado de ofertas, portanto, considere começar com a definição das métricas básicas que você deve seguir (sugestões minhas dentro), depois passe por recursos extras e escolha a solução que marca todas as caixas. Acesse o ‘Gist’ abaixo para uma visão geral das soluções.
+
+**Caso contrário:** Falha === clientes desapontados. Simples
+
+🔗 [**Leia Mais: Monitoramento!**](/sections/production/monitoring.md)
+
+<br/><br/>
+
+## ![✔] 5.2. Aumente a transparência usando smart logging
+
+**TL;DR:** Logs podem ser um armazém inútil de instruções de debug ou o ativador de um belo dashboard que conta a história do seu app. Planeje sua plataforma de logs desde o primeiro dia: como os logs são coletados, armazenados e analisados para ter certeza de que as informações desejadas possam realmente ser extraídas, por exemplo, a avaliação de erro, após uma transação inteira através de serviços e servidores, etc.
+
+**Caso contrário:** Você acaba com uma caixa preta que é difícil de raciocinar, então você começa a reescrever todas as declarações de log para adicionar informações adicionais.
+
+🔗 [**Leia Mais: Aumente a transparência usando smart logging**](/sections/production/smartlogging.md)
+
+<br/><br/>
+
+## ![✔] 5.3. Delegue tudo o que for possível (por exemplo, gzip, SSL) a um proxy reverso
+
+**TL;DR:** O Node é terrivelmente ruim em fazer tarefas intensas de CPU como gzipping, SSL termination, etc. Você deve usar serviços de middleware “reais” como nginx, HAproxy ou serviços de nuvem.
+
+**Caso contrário:** Seu único e pobre thread permanecerá ocupado fazendo tarefas de infra-estrutura em vez de lidar com o núcleo da sua aplicação e o desempenho certamente será degradado.
+
+🔗 [**Leia Mais: Delegue tudo o que for possível (por exemplo, gzip, SSL) a um proxy reverso**](/sections/production/delegatetoproxy.md)
+
+<br/><br/>
+
+## ![✔] 5.4. Bloqueio de dependências
+
+**TL;DR:** Seu código deve ser idêntico em todos os ambientes, mas, surpreendentemente, o npm permite que as dependências derivem entre os ambientes por padrão - quando você instala pacotes em vários ambientes, ele tenta buscar a versão mais recente dos pacotes. Supere isso usando arquivos de configuração do npm, .npmrc, que dirão a cada ambiente para salvar a versão exata (não a última) de cada pacote. Outra alternativa, para um controle melhor, use o “shirinkwrap” do npm. \*Atualização: a partir do NPM5, as dependências são bloqueadas por padrão. O novo gerenciador de pacotes no pedaço, Yarn, também faz isso por padrão.
+
+**Caso contrário:** O QA testará completamente o código e aprovará uma versão que se comportará de maneira diferente na produção. Pior ainda, servidores diferentes no mesmo cluster de produção podem executar código diferente.
+
+🔗 [**Leia Mais: Bloqueio de dependências**](/sections/production/lockdependencies.md)
+
+<br/><br/>
+
+## ![✔] 5.5. Poupe tempo de atividade do processo usando a ferramenta certa
+
+**TL;DR:** O processo deve continuar e ser reiniciado após falhas. Para cenários simples, as ferramentas de "reinicialização", como PM2, podem ser suficientes. Entretanto, no mundo atual "dockerizado", as ferramentas de gerenciamento de cluster também devem ser consideradas
+
+**Caso contrário:** Rodar dezenas de instâncias sem uma estratégia clara e muitas ferramentas juntas (gerenciamento de cluster, docker, PM2) pode levar o DevOps ao caos.
+
+🔗 [**Leia Mais: Poupe tempo de atividade do processo usando a ferramenta certa**](/sections/production/guardprocess.md)
+
+<br/><br/>
+
+## ![✔] 5.6. Utilize todos os núcleos do processador
+
+**TL;DR:** Em sua forma básica, uma aplicação Node roda em um único núcleo do processador enquanto todos os demais ficam inativos. É seu dever replicar o processamento do Node e utilizar todos os processadores. Para aplicações pequenas/médias você pode usar o Node Cluster ou PM2. Para uma aplicação maior, considere replicar o processo usando algum cluster do Docker (por exemplo, o K8S ou o ECS) ou scripts de deploy que são baseados no sistema de inicialização do Linux (por exemplo, systemd)
+
+**Caso contrário:** Sua aplicação vai utilizar apenas 25% dos recursos disponíveis(!) ou talvez até menos. Note que um servidor típico possui 4 núcleos de processamento ou mais, o deploy ingênuo do Node.js utiliza apenas 1 (mesmo usando serviços de PaaS como AWS Beanstalk!)
+
+🔗 [**Leia Mais: Utilize todos os núcleos do processador**](/sections/production/utilizecpu.md)
+
+<br/><br/>
+
+## ![✔] 5.7. Crie um ‘endpoint de manutenção’
+
+**TL;DR:** Exponha um conjunto de informações relacionadas ao sistema, como uso de memória e REPL, etc, em uma API segura. Embora seja altamente recomendado confiar em ferramentas padrões e de battle-tests, algumas informações e operações valiosas são mais fáceis de serem feitas usando código.
+
+**Caso contrário:** Você perceberá que está realizando muitos “deploys de diagnóstico” - enviando código para produção apenas para extrair algumas informações para fins de diagnóstico.
+
+🔗 [**Leia Mais: Crie um ‘endpoint de manutenção’**](/sections/production/createmaintenanceendpoint.md)
+
+<br/><br/>
+
+## ![✔] 5.8. Descubra erros e tempo de inatividade usando produtos APM
+
+**TL;DR:** Produtos de monitoramento e desempenho (também conhecidos como APM) medem a base de código e a API de forma proativa para que possam ir “automagicamente” além do monitoramento tradicional e medir a experiência geral do usuário entre os serviços e camadas. Por exemplo, alguns APMs podem destacar uma transação que é carregada muito lentamente no lado do usuário final, sugerindo a causa raiz.
+
+**Caso contrário:** Você pode gastar muito esforço medindo o desempenho e os tempos de inatividade da API, provavelmente você nunca saberá quais são suas partes de código mais lentas no cenário do mundo real e como elas afetam o UX.
+
+🔗 [**Leia Mais: Descubra erros e tempo de inatividade usando produtos APM**](/sections/production/apmproducts.md)
+
+<br/><br/>
 
 # `Práticas de API`
 
