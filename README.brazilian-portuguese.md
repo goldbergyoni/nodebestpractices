@@ -18,7 +18,7 @@
 
 <br/>
 
-Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
+Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md) [(![BR](/assets/flags/BR.png)**BR**, ![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
 
 <br/>
 
@@ -544,6 +544,104 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
+## ![✔] 5.9. Deixe seu código pronto para produção
+
+**TL;DR:** Programe com o fim em mente, planeje para produção desde o primeiro dia. Isso pode parecer vago, então eu compilei algumas dicas de desenvolvimento que estão relacionadas à manutenção de produção (clique no Gist abaixo).
+
+**Caso contrário:** Uma pessoa fera em TI/DevOps não salvará um sistema mal escrito.
+
+🔗 [**Leia Mais: Deixe seu código pronto para produção**](/sections/production/productoncode.md)
+
+<br/><br/>
+
+## ![✔] 5.10. Meça e proteja o uso de memória
+
+**TL;DR:** O Node.js tem uma relação controversa com o uso de memória: o motor v8 possui limites no uso de memória (1.4GB) e existem caminhos conhecidos para vazamentos de memória no código do Node - portanto, observar a memória do processo do Node é uma obrigação. Em aplicações pequenas, você pode medir a memória periodicamente usando comandos shell, mas em aplicação média-grande considere utilizar um sistema de monitoramento de memória robusto.
+
+**Caso contrário:** A memória de seus processos pode vazar cem megabytes por dia, assim como aconteceu no [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak).
+
+🔗 [**Leia Mais: Meça e proteja o uso de memória**](/sections/production/measurememory.md)
+
+<br/><br/>
+
+## ![✔] 5.11. Deixe seus recursos de frontend fora do Node
+
+**TL;DR:** Sirva conteúdo de frontend usando um middleware dedicado (nginx, S3, CDN) pois o desempenho do Node fica realmente prejudicado quando se lida com muitos arquivos estáticos devido ao seu modelo single threaded (segmento único).
+
+**Caso contrário:** Seu único thread do Node ficará ocupado fazendo streaming the centenas de arquivos de html/imagens/angular/react ao invés de alocar todo seu recurso para a tarefa que ele foi designado - servir conteúdo dinâmico.
+
+🔗 [**Leia Mais: Deixe seus recursos de frontend fora do Node**](/sections/production/frontendout.md)
+
+<br/><br/>
+
+## ![✔] 5.12. Seja stateless, mate seus Servidores quase todos os dias
+
+**TL;DR:** Armazene qualquer tipo de dados (por exemplo, sessões de usuário, cache, arquivos de upload) em armazenamentos externos. Considere ‘matar’ seus servidores periódicamente ou utilize plataformas ‘serverless’ (por exemplo, AWS Lambda) que forçam explicitamente um comportamento stateless.
+
+**Caso contrário:** Falha em um determinado servidor resultará em tempo de inatividade da aplicação, em vez de apenas matar uma máquina defeituosa. Além do mais, dimensionar a elasticidade será mais desafiador devido à dependência de um servidor específico.
+
+🔗 [**Leia Mais: Seja stateless, mate seus Servidores quase todos os dias**](/sections/production/bestateless.md)
+
+<br/><br/>
+
+## ![✔] 5.13. Utilize ferramentas que detectam vulnerabilidades automaticamente
+
+**TL;DR:** Mesmo as dependências mais confiáveis, como o Express, têm vulnerabilidades conhecidas (de tempos em tempos) que podem colocar um sistema em risco. Isso pode ser contornado usando ferramentas comunitárias e comerciais que constantemente verificam vulnerabilidades e avisam (localmente ou no Github). Algumas podem até corrigí-las imediatamente.
+
+**Caso contrário:** Manter seu código limpo com vulnerabilidades sem ferramentas dedicadas exigirá o acompanhamento constante de publicações online sobre novas ameaças. Bem entendiante.
+
+🔗 [**Leia Mais: Utilize ferramentas que detectam vulnerabilidades automaticamente**](/sections/production/detectvulnerabilities.md)
+
+<br/><br/>
+
+## ![✔] 5.14. Atribua‘TransactionId’ para cada declaração de log
+
+**TL;DR:** Atribua o mesmo identificador, transaction-id: {some value}, para cada entrada de log dentro de um mesmo request. Depois, ao inspecionar erros em logs, conclua facilmente o que aconteceu antes e depois. Infelizmente, isso não é fácil de se conseguir no Node, devido à sua natureza assíncrona. Veja exemplos de código.
+
+**Caso contrário:** Observar um log de erros de produção sem o contexto - o que aconteceu antes - torna muito mais difícil e mais lento raciocinar sobre o problema.
+
+🔗 [**Leia Mais: Atribua ‘TransactionId’ para cada declaração de log**](/sections/production/assigntransactionid.md)
+
+<br/><br/>
+
+## ![✔] 5.15. Defina NODE_ENV=production
+
+**TL;DR:** Defina a variável de ambiente NODE_ENV para ‘production’ ou ‘development’ para sinalizar se as otimizações de produção devem ser ativadas - muitos pacotes npm determinam o ambiente atual e otimizam seu código para produção.
+
+**Caso contrário:** Omitir esta simples propriedade pode degradar muito o desempenho. Por exemplo, ao utilizar o Express para renderização do lado do servidor, omitir o NODE_ENV o torna mais lento!
+
+🔗 [**Leia Mais: Defina NODE_ENV=production**](/sections/production/setnodeenv.md)
+
+<br/><br/>
+
+## ![✔] 5.16. Projete deploys automáticos, atômicos e com tempo de inatividade zero
+
+**TL;DR:** Pesquisas mostram que times que executam muitos deploys, reduzem a probabilidade de problemas graves em produção. Deploys rápidos e automatizados que não necessitam de processos manuais arriscados e significativo tempo de inatividade, melhoram o processo de deploy. Provavelmente, você irá alcançar isso usando Docker, combinado com ferramentas de CI, pois elas se tornaram o padrão do setor para deploy simplificado.
+
+**Caso contrário:** Deploys demorados -> tempo de inatividade de produção e erro relacionado a humanos -> equipe não-confiante com os deploys -> menos implantações e recursos.
+
+<br/><br/>
+
+## ![✔] 5.17. Use uma versão LTS do Node.js
+
+**TL;DR:** Certifique de que você está usando uma versão LTS do Node.js para receber correção de bugs críticos, atualizações de segurança e melhorias de performance.
+
+**Caso contrário:** Bugs recentemente descobertos e vulnerabilidades podem ser usados para explorar uma aplicação em produção, e sua aplicação pode se tornar incompatível com vários módulos e mais difícil de manter.
+
+🔗 [**Leia Mais: Use uma versão LTS do Node.js**](/sections/production/LTSrelease.md)
+
+## ![✔] 5.18. Não direcione logs dentro do aplicativo
+
+**TL;DR:** O destino dos logs não devem ser codificados na unha por desenvolvedores, dentro do código da aplicação. Ao invés disso, deve ser definido pelo ambiente de execução no qual a aplicação é executada. Desenvolvedores devem escrever logs para stdout usando um utilitário logger e depois deixar o ambiente de execução (container, servidor, etc) canalizar o fluxo do stdout para o destino apropriado (por exemplo: Splunk, Graylog, ElasticSearch, etc).
+
+**Otherwise:** Aplicações manipulando o roteamento de log === difícil de dimensionar, perda de logs, separação ruim de preocupações.
+
+🔗 [**Read More: Roteamento de Logs**](/sections/production/logrouting.md)
+
+<br/><br/><br/>
+
+<p align="right"><a href="#table-of-contents">⬆ Voltar ao topo</a></p>
+
 # `Práticas de API`
 
 ## Nossos colaboradores estão trabalhando nesta seção. Quer se juntar a nós?
@@ -576,6 +674,7 @@ Todas as traduções são contribuições da comunidade. Nós ficaremos felizes 
 - ![RU](/assets/flags/RU.png) [Russo](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/105))
 - ![ES](/assets/flags/ES.png) [Espanhol](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/95))
 - ![TR](/assets/flags/TR.png) Turco ([Discussão](https://github.com/i0natan/nodebestpractices/issues/139))
+- ![TR](/assets/flags/BR.png) Português Brasileiro ([Discussão](https://github.com/i0natan/nodebestpractices/issues/223))
 
 <br/><br/><br/>
 
