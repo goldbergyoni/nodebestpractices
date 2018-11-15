@@ -96,7 +96,9 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 <br/><br/><br/>
 
-<p align="right"><a href="#índice">⬆ Voltar ao topo</a></p>
+# <p align="right"><a href="#índice">⬆ Voltar ao topo</a></p>
+
+<p align="right"><a href="#table-of-contents">⬆ Voltar ao topo</a></p>
 
 # `2. Práticas de Tratamento de Erros`
 
@@ -462,6 +464,8 @@ Todas as declarações acima false se feitas com `===`.
 
 <p align="right"><a href="#table-of-contents">⬆ Voltar a topo</a></p>
 
+<<<<<<< HEAD
+
 # `5. Boas Práticas de Produção`
 
 ## ![✔] 5.1. Monitoramento!
@@ -642,6 +646,10 @@ Todas as declarações acima false se feitas com `===`.
 
 <p align="right"><a href="#table-of-contents">⬆ Voltar ao topo</a></p>
 
+=======
+
+> > > > > > > 6708bc15909e8964b14cfdb1543353d061b9ff84
+
 # `Práticas de API`
 
 ## Nossos colaboradores estão trabalhando nesta seção. Quer se juntar a nós?
@@ -674,7 +682,9 @@ Todas as traduções são contribuições da comunidade. Nós ficaremos felizes 
 - ![RU](/assets/flags/RU.png) [Russo](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/105))
 - ![ES](/assets/flags/ES.png) [Espanhol](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/95))
 - ![TR](/assets/flags/TR.png) Turco ([Discussão](https://github.com/i0natan/nodebestpractices/issues/139))
-- ![TR](/assets/flags/BR.png) Português Brasileiro ([Discussão](https://github.com/i0natan/nodebestpractices/issues/223))
+  <<<<<<< HEAD
+- # ![TR](/assets/flags/BR.png) Português Brasileiro ([Discussão](https://github.com/i0natan/nodebestpractices/issues/223))
+  > > > > > > > 6708bc15909e8964b14cfdb1543353d061b9ff84
 
 <br/><br/><br/>
 
