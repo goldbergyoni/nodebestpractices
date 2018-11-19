@@ -2,7 +2,7 @@
 
 ### 一段解释
 
-ESLint的安全插件，例如[eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) 它提供了基于一些已知代码漏洞的安全性检查，例如不安全的RegEx，对`eval()`的不安全使用,以及在访问应用程序中的文件系统时使用了非文字的文件名。通过git钩子的使用，比如[pre-git](https://github.com/bahmutov/pre-git)，可以在将源代码发送到remotes之前进一步执行对于源代码控制的任意规则，其中之一项就是检查源代码控制中没有添加任何秘密。
+ESLint的安全插件，例如[eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security)提供了基于一些已知代码漏洞的安全性检查，例如不安全的RegEx，对`eval()`的不安全使用，以及在访问应用程序中的文件系统时使用了非文字的文件名。通过git钩子的使用，比如[pre-git](https://github.com/bahmutov/pre-git)，可以在将源代码发送到remotes之前进一步执行对于源代码控制的任意规则，其中之一项就是检查源代码控制中没有添加任何机密信息。
 
 ### `eslint-plugin-security` 例子
 
