@@ -952,7 +952,7 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `Performance Practices`
+# `7. Performance Best Practices`
 
 ## ![✔] 7.1. Prefer native JS methods over user-land utils like Lodash
 
