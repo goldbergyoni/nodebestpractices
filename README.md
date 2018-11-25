@@ -951,9 +951,20 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `Performance Practices`
+# `7. Performance Practices`
 
 ## Our contributors are working on this section. Would you like to join?
+
+## ![✔] 7.1 Use compression on your responses
+
+**TL;DR:** Use the compression middleware (or the compression module with Nginx) to reduce the response from your server, thus speeding up your API.
+
+**Otherwise:** You will have a larger response than you need, thus taking more time to send your data to users.
+
+🔗 [**Read More: Using compression**](/sections/performance/compression.md)
+
+<br/><br/>
+
 
 # `API Practices`
 
