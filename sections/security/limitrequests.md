@@ -16,7 +16,6 @@ app.enable('trust proxy');
 var apiLimiter = new RateLimit({
   windowMs: 15*60*1000, // 15 minutes
   max: 100,
-  delayMs: 0 // disabled
 });
  
 // only apply to requests that begin with /user/
