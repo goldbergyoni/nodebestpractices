@@ -1,10 +1,10 @@
 # Catch unhandled promise rejections
-<br/><br/>
 
+<br/><br/>
 
 ### One Paragraph Explainer
 
-Typically, most of modern Node.JS/Express application code runs within promises – whether within the .then handler, a function callback or in a catch block. Suprisingly, unless a developer remembered to add a .catch clause, errors thrown at these places are not handled  by the uncaughtException event-handler and disappear.  Recent versions of Node added a warning message when an unhandled rejection pops, though this might help to notice when things go wrong but it's obviously not a proper error handling method. The straightforward solution is to never forget adding .catch clauses within each promise chain call and redirect to a centralized error handler. However building your error handling strategy only on developer’s discipline is somewhat fragile. Consequently, it’s highly recommended using a graceful fallback and subscribe to `process.on(‘unhandledRejection’, callback)` – this will ensure that any promise error, if not handled locally, will get its treatment.
+Typically, most of modern Node.js/Express application code runs within promises – whether within the .then handler, a function callback or in a catch block. Surprisingly, unless a developer remembered to add a .catch clause, errors thrown at these places are not handled by the uncaughtException event-handler and disappear.  Recent versions of Node added a warning message when an unhandled rejection pops, though this might help to notice when things go wrong but it's obviously not a proper error handling method. The straightforward solution is to never forget adding .catch clauses within each promise chain call and redirect to a centralized error handler. However, building your error handling strategy only on developer’s discipline is somewhat fragile. Consequently, it’s highly recommended using a graceful fallback and subscribe to `process.on(‘unhandledRejection’, callback)` – this will ensure that any promise error, if not handled locally, will get its treatment.
 
 <br/><br/>
 
@@ -13,12 +13,14 @@ Typically, most of modern Node.JS/Express application code runs within promises 
 ```javascript
 DAL.getUserById(1).then((johnSnow) => {
   // this error will just vanish
-	if(johnSnow.isAlive == false)
-	    throw new Error('ahhhh');
+  if(johnSnow.isAlive == false)
+      throw new Error('ahhhh');
 });
 
 ```
+
 <br/><br/>
+
 ### Code example: Catching unresolved and rejected promises
 
 ```javascript
@@ -34,10 +36,13 @@ process.on('uncaughtException', (error) => {
 });
 
 ```
+
 <br/><br/>
+
 ### Blog Quote: "If you can make a mistake, at some point you will"
+
  From the blog James Nelson
- 
+
  > Let’s test your understanding. Which of the following would you expect to print an error to the console?
 
 ```javascript

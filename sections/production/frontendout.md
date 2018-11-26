@@ -2,7 +2,6 @@
 
 <br/><br/>
 
-
 ### One Paragraph Explainer
 
 In a classic web app the backend serves the frontend/graphics to the browser, a very common approach in the Node’s world is to use Express static middleware for streamlining static files to the client. BUT – Node is not a typical webapp as it utilizes a single thread that is not optimized to serve many files at once. Instead, consider using a reverse proxy (e.g. nginx, HAProxy), cloud storage or CDN (e.g. AWS S3, Azure Blob Storage, etc) that utilizes many optimizations for this task and gain much better throughput. For example, specialized middleware like nginx embodies direct hooks between the file system and the network card and uses a multi-threaded approach to minimize intervention among multiple requests.
@@ -15,10 +14,9 @@ Your optimal solution might wear one of the following forms:
 
 <br/><br/>
 
-
 ### Configuration example: typical nginx configuration for serving static files
 
-```
+```nginx
 # configure gzip compression
 gzip on;
 keepalive 64;
@@ -39,6 +37,7 @@ expires max;
 <br/><br/>
 
 ### What Other Bloggers Say
+
 From the blog [StrongLoop](https://strongloop.com/strongblog/best-practices-for-express-in-production-part-two-performance-and-reliability/):
 
 >…In development, you can use [res.sendFile()](http://expressjs.com/4x/api.html#res.sendFile) to serve static files. But don’t do this in production, because this function has to read from the file system for every file request, so it will encounter significant latency and affect the overall performance of the app. Note that res.sendFile() is not implemented with the sendfile system call, which would make it far more efficient. Instead, use serve-static middleware (or something equivalent), that is optimized for serving files for Express apps. An even better option is to use a reverse proxy to serve static files; see Use a reverse proxy for more information…
