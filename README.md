@@ -39,8 +39,8 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 3.  [Code Style Practices (12) ](#3-code-style-practices)
 4.  [Testing And Overall Quality Practices (9) ](#4-testing-and-overall-quality-practices)
 5.  [Going To Production Practices (18) ](#5-going-to-production-practices)
-6.  :star: New: [Security Practices (24)](#6-security-best-practices)
-7.  Performance Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
+6.  [Security Practices (24)](#6-security-best-practices)
+7.  [Performance Practices (in progress)](#7-performance-best-practices)
 
 <br/><br/><br/>
 
@@ -951,13 +951,9 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `Performance Practices`
+# `7. Performance Best Practices`
 
-## Our contributors are working on this section. Would you like to join?
-
-# `API Practices`
-
-## Our contributors are working on this section. Would you like to join?
+## Our contributors are working on this section. [Would you like to join?](https://github.com/i0natan/nodebestpractices/issues/256)
 
 <br/><br/><br/>
 
