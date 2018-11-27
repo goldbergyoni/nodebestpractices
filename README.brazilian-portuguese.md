@@ -18,7 +18,7 @@
 
 <br/>
 
-Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
+Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md) [(![BR](/assets/flags/BR.png)**BR**, ![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
 
 <br/>
 
@@ -34,12 +34,12 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 ## Índice
 
-1.  [Práticas de Estrutura de Projeto (5)](#1-project-structure-practices)
-2.  [Práticas de Tratamento de Erros (11) ](#2-error-handling-practices)
-3.  [Práticas de Estilo de Código (12) ](#3-code-style-practices)
-4.  [Práticas de Testes e Qualidade Geral (8) ](#4-testing-and-overall-quality-practices)
-5.  [Práticas de Produção (17) ](#5-going-to-production-practices)
-6.  :star: Novo: [Práticas de Segurança (23)](#6-security-best-practices)
+1.  [Práticas de Estrutura de Projeto (5)](#1-práticas-de-estrutura-de-projeto)
+2.  [Práticas de Tratamento de Erros (11) ](#2-práticas-de-tratamento-de-erros)
+3.  [Práticas de Estilo de Código (12) ](#3-práticas-de-estilo-de-código)
+4.  [Práticas de Testes e Qualidade Geral (8) ](#4-práticas-de-testes-e-qualidade-geral)
+5.  [Práticas de Produção (17) ](#5-práticas-de-produção)
+6.  :star: Novo: [Práticas de Segurança (23)](#6-práticas-de-segurança)
 7.  Práticas de Performance ([em breve](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 
 <br/><br/><br/>
@@ -95,6 +95,8 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 🔗 [**Leia Mais: melhores práticas de configuração**](/sections/projectstructre/configguide.md)
 
 <br/><br/><br/>
+
+# <p align="right"><a href="#índice">⬆ Voltar ao topo</a></p>
 
 <p align="right"><a href="#table-of-contents">⬆ Voltar ao topo</a></p>
 
@@ -250,7 +252,7 @@ function someFunction() {
 
 **Caso contrário:** Evitar esta recomendação pode levar a resultados inesperados, como visto nesta thread do StackOverflow:
 
-🔗 [**Read more:** "Por que os resultados variam com base no posicionamento da chave?" (Stackoverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
+🔗 [**Leia Mais:** "Por que os resultados variam com base no posicionamento da chave?" (Stackoverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
 <br/><br/>
 
@@ -301,7 +303,7 @@ function doSomething() {}
 
 **Caso contrário:** A depuração se torna muito mais complicada ao seguir uma variável que frequentemente muda
 
-🔗 [**Read more: JavaScript ES6+: var, let ou const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
+🔗 [**Leia Mais: JavaScript ES6+: var, let ou const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
 
 <br/><br/>
 
@@ -382,7 +384,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <p align="right"><a href="#table-of-contents">⬆ Voltar ao topo</a></p>
 
-# `4. Testes e Práticas Gerais de Qualidade`
+# `4. Práticas de Testes e Qualidade Geral`
 
 ## ![✔] 4.1 No mínimo, escreva testes de API (componente)
 
@@ -462,6 +464,192 @@ Todas as declarações acima false se feitas com `===`.
 
 <p align="right"><a href="#table-of-contents">⬆ Voltar a topo</a></p>
 
+<<<<<<< HEAD
+
+# `5. Boas Práticas de Produção`
+
+## ![✔] 5.1. Monitoramento!
+
+**TL;DR:** O monitoramento é um jogo de descobrir problemas antes que os clientes os encontrem - obviamente deve ser atribuída muita importância para isto. O mercado está sobrecarregado de ofertas, portanto, considere começar com a definição das métricas básicas que você deve seguir (sugestões minhas dentro), depois passe por recursos extras e escolha a solução que marca todas as caixas. Acesse o ‘Gist’ abaixo para uma visão geral das soluções.
+
+**Caso contrário:** Falha === clientes desapontados. Simples
+
+🔗 [**Leia Mais: Monitoramento!**](/sections/production/monitoring.md)
+
+<br/><br/>
+
+## ![✔] 5.2. Aumente a transparência usando smart logging
+
+**TL;DR:** Logs podem ser um armazém inútil de instruções de debug ou o ativador de um belo dashboard que conta a história do seu app. Planeje sua plataforma de logs desde o primeiro dia: como os logs são coletados, armazenados e analisados para ter certeza de que as informações desejadas possam realmente ser extraídas, por exemplo, a avaliação de erro, após uma transação inteira através de serviços e servidores, etc.
+
+**Caso contrário:** Você acaba com uma caixa preta que é difícil de raciocinar, então você começa a reescrever todas as declarações de log para adicionar informações adicionais.
+
+🔗 [**Leia Mais: Aumente a transparência usando smart logging**](/sections/production/smartlogging.md)
+
+<br/><br/>
+
+## ![✔] 5.3. Delegue tudo o que for possível (por exemplo, gzip, SSL) a um proxy reverso
+
+**TL;DR:** O Node é terrivelmente ruim em fazer tarefas intensas de CPU como gzipping, SSL termination, etc. Você deve usar serviços de middleware “reais” como nginx, HAproxy ou serviços de nuvem.
+
+**Caso contrário:** Seu único e pobre thread permanecerá ocupado fazendo tarefas de infra-estrutura em vez de lidar com o núcleo da sua aplicação e o desempenho certamente será degradado.
+
+🔗 [**Leia Mais: Delegue tudo o que for possível (por exemplo, gzip, SSL) a um proxy reverso**](/sections/production/delegatetoproxy.md)
+
+<br/><br/>
+
+## ![✔] 5.4. Bloqueio de dependências
+
+**TL;DR:** Seu código deve ser idêntico em todos os ambientes, mas, surpreendentemente, o npm permite que as dependências derivem entre os ambientes por padrão - quando você instala pacotes em vários ambientes, ele tenta buscar a versão mais recente dos pacotes. Supere isso usando arquivos de configuração do npm, .npmrc, que dirão a cada ambiente para salvar a versão exata (não a última) de cada pacote. Outra alternativa, para um controle melhor, use o “shirinkwrap” do npm. \*Atualização: a partir do NPM5, as dependências são bloqueadas por padrão. O novo gerenciador de pacotes no pedaço, Yarn, também faz isso por padrão.
+
+**Caso contrário:** O QA testará completamente o código e aprovará uma versão que se comportará de maneira diferente na produção. Pior ainda, servidores diferentes no mesmo cluster de produção podem executar código diferente.
+
+🔗 [**Leia Mais: Bloqueio de dependências**](/sections/production/lockdependencies.md)
+
+<br/><br/>
+
+## ![✔] 5.5. Poupe tempo de atividade do processo usando a ferramenta certa
+
+**TL;DR:** O processo deve continuar e ser reiniciado após falhas. Para cenários simples, as ferramentas de "reinicialização", como PM2, podem ser suficientes. Entretanto, no mundo atual "dockerizado", as ferramentas de gerenciamento de cluster também devem ser consideradas
+
+**Caso contrário:** Rodar dezenas de instâncias sem uma estratégia clara e muitas ferramentas juntas (gerenciamento de cluster, docker, PM2) pode levar o DevOps ao caos.
+
+🔗 [**Leia Mais: Poupe tempo de atividade do processo usando a ferramenta certa**](/sections/production/guardprocess.md)
+
+<br/><br/>
+
+## ![✔] 5.6. Utilize todos os núcleos do processador
+
+**TL;DR:** Em sua forma básica, uma aplicação Node roda em um único núcleo do processador enquanto todos os demais ficam inativos. É seu dever replicar o processamento do Node e utilizar todos os processadores. Para aplicações pequenas/médias você pode usar o Node Cluster ou PM2. Para uma aplicação maior, considere replicar o processo usando algum cluster do Docker (por exemplo, o K8S ou o ECS) ou scripts de deploy que são baseados no sistema de inicialização do Linux (por exemplo, systemd)
+
+**Caso contrário:** Sua aplicação vai utilizar apenas 25% dos recursos disponíveis(!) ou talvez até menos. Note que um servidor típico possui 4 núcleos de processamento ou mais, o deploy ingênuo do Node.js utiliza apenas 1 (mesmo usando serviços de PaaS como AWS Beanstalk!)
+
+🔗 [**Leia Mais: Utilize todos os núcleos do processador**](/sections/production/utilizecpu.md)
+
+<br/><br/>
+
+## ![✔] 5.7. Crie um ‘endpoint de manutenção’
+
+**TL;DR:** Exponha um conjunto de informações relacionadas ao sistema, como uso de memória e REPL, etc, em uma API segura. Embora seja altamente recomendado confiar em ferramentas padrões e de battle-tests, algumas informações e operações valiosas são mais fáceis de serem feitas usando código.
+
+**Caso contrário:** Você perceberá que está realizando muitos “deploys de diagnóstico” - enviando código para produção apenas para extrair algumas informações para fins de diagnóstico.
+
+🔗 [**Leia Mais: Crie um ‘endpoint de manutenção’**](/sections/production/createmaintenanceendpoint.md)
+
+<br/><br/>
+
+## ![✔] 5.8. Descubra erros e tempo de inatividade usando produtos APM
+
+**TL;DR:** Produtos de monitoramento e desempenho (também conhecidos como APM) medem a base de código e a API de forma proativa para que possam ir “automagicamente” além do monitoramento tradicional e medir a experiência geral do usuário entre os serviços e camadas. Por exemplo, alguns APMs podem destacar uma transação que é carregada muito lentamente no lado do usuário final, sugerindo a causa raiz.
+
+**Caso contrário:** Você pode gastar muito esforço medindo o desempenho e os tempos de inatividade da API, provavelmente você nunca saberá quais são suas partes de código mais lentas no cenário do mundo real e como elas afetam o UX.
+
+🔗 [**Leia Mais: Descubra erros e tempo de inatividade usando produtos APM**](/sections/production/apmproducts.md)
+
+<br/><br/>
+
+## ![✔] 5.9. Deixe seu código pronto para produção
+
+**TL;DR:** Programe com o fim em mente, planeje para produção desde o primeiro dia. Isso pode parecer vago, então eu compilei algumas dicas de desenvolvimento que estão relacionadas à manutenção de produção (clique no Gist abaixo).
+
+**Caso contrário:** Uma pessoa fera em TI/DevOps não salvará um sistema mal escrito.
+
+🔗 [**Leia Mais: Deixe seu código pronto para produção**](/sections/production/productoncode.md)
+
+<br/><br/>
+
+## ![✔] 5.10. Meça e proteja o uso de memória
+
+**TL;DR:** O Node.js tem uma relação controversa com o uso de memória: o motor v8 possui limites no uso de memória (1.4GB) e existem caminhos conhecidos para vazamentos de memória no código do Node - portanto, observar a memória do processo do Node é uma obrigação. Em aplicações pequenas, você pode medir a memória periodicamente usando comandos shell, mas em aplicação média-grande considere utilizar um sistema de monitoramento de memória robusto.
+
+**Caso contrário:** A memória de seus processos pode vazar cem megabytes por dia, assim como aconteceu no [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak).
+
+🔗 [**Leia Mais: Meça e proteja o uso de memória**](/sections/production/measurememory.md)
+
+<br/><br/>
+
+## ![✔] 5.11. Deixe seus recursos de frontend fora do Node
+
+**TL;DR:** Sirva conteúdo de frontend usando um middleware dedicado (nginx, S3, CDN) pois o desempenho do Node fica realmente prejudicado quando se lida com muitos arquivos estáticos devido ao seu modelo single threaded (segmento único).
+
+**Caso contrário:** Seu único thread do Node ficará ocupado fazendo streaming the centenas de arquivos de html/imagens/angular/react ao invés de alocar todo seu recurso para a tarefa que ele foi designado - servir conteúdo dinâmico.
+
+🔗 [**Leia Mais: Deixe seus recursos de frontend fora do Node**](/sections/production/frontendout.md)
+
+<br/><br/>
+
+## ![✔] 5.12. Seja stateless, mate seus Servidores quase todos os dias
+
+**TL;DR:** Armazene qualquer tipo de dados (por exemplo, sessões de usuário, cache, arquivos de upload) em armazenamentos externos. Considere ‘matar’ seus servidores periódicamente ou utilize plataformas ‘serverless’ (por exemplo, AWS Lambda) que forçam explicitamente um comportamento stateless.
+
+**Caso contrário:** Falha em um determinado servidor resultará em tempo de inatividade da aplicação, em vez de apenas matar uma máquina defeituosa. Além do mais, dimensionar a elasticidade será mais desafiador devido à dependência de um servidor específico.
+
+🔗 [**Leia Mais: Seja stateless, mate seus Servidores quase todos os dias**](/sections/production/bestateless.md)
+
+<br/><br/>
+
+## ![✔] 5.13. Utilize ferramentas que detectam vulnerabilidades automaticamente
+
+**TL;DR:** Mesmo as dependências mais confiáveis, como o Express, têm vulnerabilidades conhecidas (de tempos em tempos) que podem colocar um sistema em risco. Isso pode ser contornado usando ferramentas comunitárias e comerciais que constantemente verificam vulnerabilidades e avisam (localmente ou no Github). Algumas podem até corrigí-las imediatamente.
+
+**Caso contrário:** Manter seu código limpo com vulnerabilidades sem ferramentas dedicadas exigirá o acompanhamento constante de publicações online sobre novas ameaças. Bem entendiante.
+
+🔗 [**Leia Mais: Utilize ferramentas que detectam vulnerabilidades automaticamente**](/sections/production/detectvulnerabilities.md)
+
+<br/><br/>
+
+## ![✔] 5.14. Atribua‘TransactionId’ para cada declaração de log
+
+**TL;DR:** Atribua o mesmo identificador, transaction-id: {some value}, para cada entrada de log dentro de um mesmo request. Depois, ao inspecionar erros em logs, conclua facilmente o que aconteceu antes e depois. Infelizmente, isso não é fácil de se conseguir no Node, devido à sua natureza assíncrona. Veja exemplos de código.
+
+**Caso contrário:** Observar um log de erros de produção sem o contexto - o que aconteceu antes - torna muito mais difícil e mais lento raciocinar sobre o problema.
+
+🔗 [**Leia Mais: Atribua ‘TransactionId’ para cada declaração de log**](/sections/production/assigntransactionid.md)
+
+<br/><br/>
+
+## ![✔] 5.15. Defina NODE_ENV=production
+
+**TL;DR:** Defina a variável de ambiente NODE_ENV para ‘production’ ou ‘development’ para sinalizar se as otimizações de produção devem ser ativadas - muitos pacotes npm determinam o ambiente atual e otimizam seu código para produção.
+
+**Caso contrário:** Omitir esta simples propriedade pode degradar muito o desempenho. Por exemplo, ao utilizar o Express para renderização do lado do servidor, omitir o NODE_ENV o torna mais lento!
+
+🔗 [**Leia Mais: Defina NODE_ENV=production**](/sections/production/setnodeenv.md)
+
+<br/><br/>
+
+## ![✔] 5.16. Projete deploys automáticos, atômicos e com tempo de inatividade zero
+
+**TL;DR:** Pesquisas mostram que times que executam muitos deploys, reduzem a probabilidade de problemas graves em produção. Deploys rápidos e automatizados que não necessitam de processos manuais arriscados e significativo tempo de inatividade, melhoram o processo de deploy. Provavelmente, você irá alcançar isso usando Docker, combinado com ferramentas de CI, pois elas se tornaram o padrão do setor para deploy simplificado.
+
+**Caso contrário:** Deploys demorados -> tempo de inatividade de produção e erro relacionado a humanos -> equipe não-confiante com os deploys -> menos implantações e recursos.
+
+<br/><br/>
+
+## ![✔] 5.17. Use uma versão LTS do Node.js
+
+**TL;DR:** Certifique de que você está usando uma versão LTS do Node.js para receber correção de bugs críticos, atualizações de segurança e melhorias de performance.
+
+**Caso contrário:** Bugs recentemente descobertos e vulnerabilidades podem ser usados para explorar uma aplicação em produção, e sua aplicação pode se tornar incompatível com vários módulos e mais difícil de manter.
+
+🔗 [**Leia Mais: Use uma versão LTS do Node.js**](/sections/production/LTSrelease.md)
+
+## ![✔] 5.18. Não direcione logs dentro do aplicativo
+
+**TL;DR:** O destino dos logs não devem ser codificados na unha por desenvolvedores, dentro do código da aplicação. Ao invés disso, deve ser definido pelo ambiente de execução no qual a aplicação é executada. Desenvolvedores devem escrever logs para stdout usando um utilitário logger e depois deixar o ambiente de execução (container, servidor, etc) canalizar o fluxo do stdout para o destino apropriado (por exemplo: Splunk, Graylog, ElasticSearch, etc).
+
+**Otherwise:** Aplicações manipulando o roteamento de log === difícil de dimensionar, perda de logs, separação ruim de preocupações.
+
+🔗 [**Read More: Roteamento de Logs**](/sections/production/logrouting.md)
+
+<br/><br/><br/>
+
+<p align="right"><a href="#table-of-contents">⬆ Voltar ao topo</a></p>
+
+=======
+
+> > > > > > > 6708bc15909e8964b14cfdb1543353d061b9ff84
+
 # `Práticas de API`
 
 ## Nossos colaboradores estão trabalhando nesta seção. Quer se juntar a nós?
@@ -494,6 +682,9 @@ Todas as traduções são contribuições da comunidade. Nós ficaremos felizes 
 - ![RU](/assets/flags/RU.png) [Russo](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/105))
 - ![ES](/assets/flags/ES.png) [Espanhol](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/95))
 - ![TR](/assets/flags/TR.png) Turco ([Discussão](https://github.com/i0natan/nodebestpractices/issues/139))
+  <<<<<<< HEAD
+- # ![TR](/assets/flags/BR.png) Português Brasileiro ([Discussão](https://github.com/i0natan/nodebestpractices/issues/223))
+  > > > > > > > 6708bc15909e8964b14cfdb1543353d061b9ff84
 
 <br/><br/><br/>
 
