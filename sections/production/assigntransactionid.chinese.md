@@ -14,7 +14,7 @@
 
 ```javascript
 //当接收到一个新的要求，开始一个新的隔离的上下文和设置一个事务transaction id。下面的例子是使用NPM库continuation-local-storage去隔离请求
- 
+
 const { createNamespace } = require('continuation-local-storage');
 var session = createNamespace('my session');
 
@@ -38,9 +38,3 @@ class logger{
     {console.log(`${message} ${session.get('transactionId')}`);}
 }
 ```
-
-<br/><br/>
-
-### 其他博主说什么
-摘自博客 [ARG! TEAM](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load):
-> ...Although express.js has built in static file handling through some connect middleware, you should never use it. *Nginx can do a much better job of handling static files and can prevent requests for non-dynamic content from clogging our node processes*...
