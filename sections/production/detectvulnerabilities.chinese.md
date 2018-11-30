@@ -6,7 +6,7 @@
 
 现代node应用有数十个, 有时是数以百计的依赖。如果您使用的任何依赖项存在已知的安全漏洞, 您的应用也很容易受到攻击。
 下列工具自动检查依赖项中的已知安全漏洞:
-[nsp](https://www.npmjs.com/package/nsp) - Node 安全工程
+[npm audit](https://docs.npmjs.com/cli/audit) - Node 安全工程
 [snyk](https://snyk.io/) - 持续查找和修复依赖中的漏洞
 
 <br/><br/>
