@@ -1,0 +1,24 @@
+{
+  "name": "nodebestpractices",
+  "version": "1.0.0",
+  "description": "[✔]: assets/images/checkbox-small-blue.png",
+  "main": "gen-pdf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/i0natan/nodebestpractices.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/i0natan/nodebestpractices/issues"
+  },
+  "homepage": "https://github.com/i0natan/nodebestpractices#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "graceful-fs": "^4.1.15",
+    "showdown": "^1.9.0"
+  }
+}
