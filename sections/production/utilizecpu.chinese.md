@@ -21,8 +21,8 @@
 * 摘自[Node.JS documentation](https://nodejs.org/api/cluster.html#cluster_how_it_works):
 > ... 理论上第二种方法， Node clusters，应该是性能最佳的。然而, 在实践中, 由于操作系统调度程序的反复无常, 分布往往非常不平衡。观察负载, 所有连接中，超过70%在两个进程中处理, 而总共有八个进程...
 
-* 摘自博客[StrongLoop](From the blog StrongLoop):
+* 摘自博客[StrongLoop](https://strongloop.com/strongblog/best-practices-for-express-in-production-part-two-performance-and-reliability/):
 > ...通过Node的cluster模块实现集群化。这使一个主进程能够产生工作进程，并在工作进程间分配进入的连接。然而，与其直接使用这个模块，更好的选择是使用其中的许多工具之一, 它为您自动处理它; 例如，node-pm或cluster-service...
 
-* 摘自the Medium post[node.js进程负载平衡性能:比较cluster moudlle、iptables和Nginx](https://medium.com/@fermads/node-js-process-load-balancing- iptabls -and- Nginx -6746aaf38272)
+* 摘自the Medium post[node.js进程负载平衡性能:比较cluster moudlle、iptables和Nginx](https://medium.com/@fermads/node-js-process-load-balancing-comparing-cluster-iptables-and-nginx-6746aaf38272)
 > ... Node cluster易于实施和配置，不依赖于其他软件就可以在Node的领域内进行。请记住，你的主进程将会工作几乎和你的工作进程一样多，比较于其他的解决方案，少一点请求率...
