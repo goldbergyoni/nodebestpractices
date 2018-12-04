@@ -4,6 +4,7 @@
   "description": "[✔]: assets/images/checkbox-small-blue.png",
   "main": "gen-pdf.js",
   "scripts": {
+    "build": "node gen-pdf.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
