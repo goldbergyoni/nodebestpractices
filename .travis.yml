@@ -4,9 +4,6 @@
   "script": [
     "npm run build",
   ],
-  "install": [
-    "npm ci",
-  ],
   "services": [
     "redis-server",
   ],
