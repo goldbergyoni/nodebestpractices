@@ -20,6 +20,9 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "graceful-fs": "^4.1.15",
+    "imagemin": "^6.0.0",
+    "imagemin-jpegtran": "^6.0.0",
+    "imagemin-pngquant": "^6.0.0",
     "showdown": "^1.9.0"
   }
 }
