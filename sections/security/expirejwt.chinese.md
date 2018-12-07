@@ -26,5 +26,5 @@ app.get('/logout', function (req, res) {
 
 ### 其他博客作者说什么
 
-摘自博客[Marc Busqué](waiting-for-dev.github.io/blog/2017/01/25/jwt_secure_usage/):
+摘自博客[Marc Busqué](http://waiting-for-dev.github.io/blog/2017/01/25/jwt_secure_usage/):
 > ...在JWT之上添加一个吊销层(revocation layer), 即使它意味着失去其无状态性质。
