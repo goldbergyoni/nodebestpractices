@@ -10,7 +10,7 @@ The common security guidelines section contains best practices that are standard
 
 **Otherwise:** Attackers could perform man-in-the-middle attacks, spy on your users' behaviour and perform even more malicious actions when the connection is unencrypted
 
-🔗 [**Read More: Running a secure Node.js server**](secureserver.md)
+🔗 [**Read More: Running a secure Node.js server**](/sections/security/secureserver.md)
 
 <br/><br/>
 
