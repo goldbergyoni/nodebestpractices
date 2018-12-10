@@ -4,7 +4,4 @@
   "script": [
     "npm run build",
   ],
-  "services": [
-    "redis-server",
-  ],
 }

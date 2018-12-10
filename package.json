@@ -2,9 +2,9 @@
   "name": "nodebestpractices",
   "version": "1.0.0",
   "description": "[✔]: assets/images/checkbox-small-blue.png",
-  "main": "gen-pdf.js",
+  "main": "gen-html.js",
   "scripts": {
-    "build": "node gen-pdf.js",
+    "build": "node gen-html.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

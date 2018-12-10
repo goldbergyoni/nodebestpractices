@@ -41,7 +41,7 @@ readDirPromise('./')
         }
     })
     .then(() => {
-        console.log(`🎉 Finished gen-pdf 🎉`);
+        console.log(`🎉 Finished gen-html 🎉`);
     })
 
 
