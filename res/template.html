@@ -28,17 +28,14 @@
         <div class="content"></div>
         <div class="references"></div>
     </div>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="./res/bootstrap.min.css" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="./res/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="./res/normalize.css">
+    <link rel="stylesheet" href="./res/skeleton.css">
 
     <link rel="stylesheet" href="./res/github.css">
     <script src="./res/highlight.pack.js"></script>
     <script>
         window.onload = function () {
-            hljs.initHighlightingOnLoad();
+            hljs.initHighlighting();
             document.getElementsByClassName('container')[0].classList.remove('_hide');
         }
     </script>
