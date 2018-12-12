@@ -29,7 +29,7 @@ function addNewMember(newMember) {
 
 ```javascript
 // if the discount is positive let's then redirect the user to print his discount coupons
-function redirectToPrintDiscount(httpResponse, member, discount) 
+function redirectToPrintDiscount(httpResponse, member, discount) {
     if (discount != 0) {
         httpResponse.redirect(`/discountPrintView/${member.id}`);
     }
