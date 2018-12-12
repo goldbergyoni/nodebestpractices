@@ -40,7 +40,7 @@ readDirPromise('./')
                 console.info(`Writing output to [${outFilePath}]`);
                 await writeFilePromise(outFilePath, outputHTML);
 
-                if (isCI && (true || TRAVIS_BRANCH === 'master')) {
+                if (isCI && TRAVIS_BRANCH === 'master') {
                     const repo = new Repository(TRAVIS_REPO_SLUG, {
                         token: GITHUB_TOKEN
                     });
