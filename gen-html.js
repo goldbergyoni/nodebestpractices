@@ -1,6 +1,7 @@
 const path = require('path');
 const cheerio = require('cheerio');
 const showdown = require('showdown');
+const Repository = require('github-api/dist/components/Repository');
 const { readdir, readFile, writeFile } = require('graceful-fs');
 
 const imagemin = require('imagemin');
@@ -17,6 +18,9 @@ const imageminOpts = {
         imageminPngquant({ quality: '65-80' })
     ]
 };
+
+const { GITHUB_TOKEN, TRAVIS_BRANCH, TRAVIS, TRAVIS_REPO_SLUG } = process.env;
+const isCI = !!TRAVIS;
 
 readDirPromise('./')
     .then(async (fileNames) => {
@@ -35,6 +39,15 @@ readDirPromise('./')
                 const outFilePath = path.join('out', outFileName);
                 console.info(`Writing output to [${outFilePath}]`);
                 await writeFilePromise(outFilePath, outputHTML);
+
+                if (isCI && TRAVIS_BRANCH === 'master') {
+                    const repo = new Repository(TRAVIS_REPO_SLUG, {
+                        token: GITHUB_TOKEN
+                    });
+
+                    console.info(`Committing HTML file to branch [gh-pages]`);
+                    await repo.writeFile('gh-pages', outFileName, outputHTML, ':loudspeaker: :robot: Automatically updating built HTML file', {});
+                }
             } catch (err) {
                 console.error(`Failed to generate from [${fileName}] in [${(Date.now() - startTime) / 1000}s]`, err);
             }
