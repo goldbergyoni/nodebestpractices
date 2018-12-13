@@ -63,7 +63,13 @@ readDirPromise('./')
 
 
 async function processMDFile(filePath = '/', templateHTML = null) {
-    const mdSrc = await readFilePromise(filePath);
+    let mdSrc;
+    try {
+        mdSrc = await readFilePromise(filePath);
+    } catch (err) {
+        console.warn(`Failed to read file [${filePath}], does it exist?`);
+        return '';
+    }
     const generatedHTML = converter.makeHtml(mdSrc);
     let nexHTML = generatedHTML;
     if (templateHTML) {
