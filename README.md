@@ -719,7 +719,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 6.5. Collection of generic security best practices
 
-**TL;DR:** These is a collection of security advice that are not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
+**TL;DR:** This is a collection of security advice that are not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
 
 🔗 [**Read More: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
 
