@@ -4,7 +4,7 @@
   "description": "[✔]: assets/images/checkbox-small-blue.png",
   "main": "gen-html.js",
   "scripts": {
-    "build": "node gen-html.js",
+    "build": "cd .. && node .operations/gen-html.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
