@@ -10,7 +10,7 @@ const imageminPngquant = require('imagemin-pngquant');
 
 const converter = new showdown.Converter();
 
-const templateFilePath = './res/template.html';
+const templateFilePath = './.operations/res/template.html';
 
 const imageminOpts = {
     plugins: [
@@ -18,6 +18,8 @@ const imageminOpts = {
         imageminPngquant({ quality: '65-80' })
     ]
 };
+
+console.info(`Working in [${process.cwd()}]`);
 
 const { GITHUB_TOKEN, TRAVIS_BRANCH, TRAVIS, TRAVIS_REPO_SLUG } = process.env;
 const isCI = !!TRAVIS;
@@ -36,7 +38,7 @@ readDirPromise('./')
                 console.info(`Completed Generation in [${(Date.now() - startTime) / 1000}s]`);
 
                 const outFileName = path.parse(fileName).name + '.html';
-                const outFilePath = path.join('out', outFileName);
+                const outFilePath = path.join('.operations', 'out', outFileName);
                 console.info(`Writing output to [${outFilePath}]`);
                 await writeFilePromise(outFilePath, outputHTML);
 
@@ -69,7 +71,7 @@ async function processMDFile(filePath = '/', templateHTML = null) {
         nexHTML = $.html();
     }
 
-    const fileDir = path.parse(filePath).dir.replace(__dirname, '/') || '/';
+    const fileDir = path.parse(filePath).dir.replace(process.cwd(), '/') || '/';
 
     console.log(`Processing file [${filePath}]`);
     const outHtml = await (
@@ -191,7 +193,7 @@ async function inlineResources(html, filePath = '/') {
 
 function readFilePromise(filePath, encoding = 'utf8') {
     return new Promise((resolve, reject) => {
-        readFile(path.resolve(__dirname, './' + filePath), encoding, (err, content) => {
+        readFile(path.resolve(process.cwd(), './' + filePath), encoding, (err, content) => {
             if (err) reject(err);
             else resolve(content);
         });
@@ -200,7 +202,7 @@ function readFilePromise(filePath, encoding = 'utf8') {
 
 function writeFilePromise(filePath, encoding = 'utf8') {
     return new Promise((resolve, reject) => {
-        writeFile(path.resolve(__dirname, './' + filePath), encoding, (err, content) => {
+        writeFile(path.resolve(process.cwd(), './' + filePath), encoding, (err, content) => {
             if (err) reject(err);
             else resolve(content);
         });
@@ -209,7 +211,7 @@ function writeFilePromise(filePath, encoding = 'utf8') {
 
 function readDirPromise(dirPath) {
     return new Promise((resolve, reject) => {
-        readdir(path.resolve(__dirname, dirPath), (err, files) => {
+        readdir(path.resolve(process.cwd(), dirPath), (err, files) => {
             if (err) reject(err);
             else resolve(files);
         });
