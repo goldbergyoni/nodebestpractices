@@ -52,6 +52,7 @@ readDirPromise('./')
                 }
             } catch (err) {
                 console.error(`Failed to generate from [${fileName}] in [${(Date.now() - startTime) / 1000}s]`, err);
+                process.exit(1);
             }
         }
     })
