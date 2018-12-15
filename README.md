@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2079%20Best%20practices-blue.svg" alt="79 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Nov%2014%202018-green.svg" alt="Last update: November 14th, 2018"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%2010.13.0%20LTS-brightgreen.svg" alt="Updated for Node 10.13.0 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2079%20Best%20practices-blue.svg" alt="79 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Dec%2015%202018-green.svg" alt="Last update: December 15th, 2018"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%2010.13.0%20LTS-brightgreen.svg" alt="Updated for Node 10.14.2 LTS">
 </div>
 
 <br/>
@@ -1072,11 +1072,15 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Nikola Telkedzhiev](https://github.com/ntelkedzhiev),
 🌻 [Vitor Godoy](https://github.com/vitordagamagodoy),
 🌻 [Manish Saraan](https://github.com/manishsaraan),
-🌻 [Sangbeom Han](https://github.com/uronly14me)
+🌻 [Sangbeom Han](https://github.com/uronly14me),
+🌻 [blackmatch](https://github.com/blackmatch),
+🌻 [Joe Reeve](https://github.com/ISNIT0),
+🌻 [Marcelo Melo](https://github.com/marcelosdm)
 
 ### Stars <br/>
 
 ⭐ [Kyle Martin](https://github.com/js-kyle),
-⭐ [Keith Holliday](https://github.com/TheHollidayInn)
+⭐ [Keith Holliday](https://github.com/TheHollidayInn),
+⭐ [Corey Cleary](https://github.com/coreyc)
 
 <br/><br/><br/>
