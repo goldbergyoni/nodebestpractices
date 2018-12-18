@@ -677,7 +677,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** What could have been a straightforward security weakness during development becomes a major issue in production. Also, the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories
 
-🔗 [**Read More: Lint rules**](sections/security/lintrules.md)
+🔗 [**Read More: Lint rules**](/sections/security/lintrules.md)
 
 <br/><br/>
 
@@ -689,7 +689,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** An application could be subject to an attack resulting in a denial of service where real users receive a degraded or unavailable service.
 
-🔗 [**Read More: Implement rate limiting**](sections/security/limitrequests.md)
+🔗 [**Read More: Implement rate limiting**](/sections/security/limitrequests.md)
 
 <br/><br/>
 
@@ -701,7 +701,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Source control, even for private repositories, can mistakenly be made public, at which point all secrets are exposed. Access to source control for an external party will inadvertently provide access to related systems (databases, apis, services, etc).
 
-🔗 [**Read More: Secret management**](sections/security/secretmanagement.md)
+🔗 [**Read More: Secret management**](/sections/security/secretmanagement.md)
 
 <br/><br/>
 
