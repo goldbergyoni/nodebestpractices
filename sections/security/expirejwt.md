@@ -26,5 +26,5 @@ app.get('/logout', function (req, res) {
 
 ### What other bloggers say
 
-From the blog by [Marc Busqué](waiting-for-dev.github.io/blog/2017/01/25/jwt_secure_usage/):
+From the blog by [Marc Busqué](http://waiting-for-dev.github.io/blog/2017/01/25/jwt_secure_usage/):
 > ...add a revocation layer on top of JWT, even if it implies losing its stateless nature.
