@@ -541,7 +541,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** A world champion IT/DevOps guy won’t save a system that is badly written
 
-🔗 [**자세히 보기: Make your code production-ready**](/sections/production/productoncode.korean.md)
+🔗 [**자세히 보기: Make your code production-ready**](/sections/production/productioncode.korean.md)
 
 <br/><br/>
 
