@@ -34,7 +34,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 ## Table of Contents
 
-1.  [Project structure Practices (5)](#1-project-structure-practices)
+1.  [Project Structure Practices (5)](#1-project-structure-practices)
 2.  [Error Handling Practices (11) ](#2-error-handling-practices)
 3.  [Code Style Practices (12) ](#3-code-style-practices)
 4.  [Testing And Overall Quality Practices (9) ](#4-testing-and-overall-quality-practices)
