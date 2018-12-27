@@ -6,6 +6,69 @@ Leaving higher privileged routes such as `/login` or `/admin` exposed without ra
 
 An in-memory store such as Redis or MongoDB should be used in production to enforce the shared limit across application clusters.
 
+### Code example: Using [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible)
+
+Login endpoint should be rate limited, protected against brute force attack and implement a temporary block after some amount of wrong tries.
+
+```javascript
+const Redis = require('ioredis');
+const redisClient = new Redis({ enableOfflineQueue: false });
+
+// Maximum 10 requests per second
+const rateLimiter = new RateLimiterRedis({
+  redis: redisClient,
+  points: 10,
+  duration: 1,
+});
+
+const maxWrongAttemptsPerMinute = 5;
+const rateLimiterBrute = new RateLimiterRedis({
+  redis: redisClient,
+  keyPrefix: 'rl_login_brute',
+  points: maxWrongAttemptsPerMinute,
+  duration: 60,
+  blockDuration: 60 * 10, // Block for 10 minutes, if 5 wrong attempts per minute
+});
+
+app.post('/login', async (req, res, next) {
+  try {
+    const [getPointsBruteRes] = await Promise.all([
+      rateLimiterBrute.get(req.connection.remoteAddress),
+      rateLimiter.consume(req.connection.remoteAddress)
+    ]);
+
+    if (getPointsBruteRes !== null && getPointsBruteRes.remainingPoints <= 0) {
+      // Blocked
+      const secs = Math.round(getPointsBruteRes.msBeforeNext / 1000) || 1;
+      res.set('Retry-After', String(secs));
+      res.status(403).send('Forbidden');
+    } else {
+      const user = login(req.body.email, req.body.password);
+      if (!user.isLoggedIn) {
+        // Consume from brute limiter on wrong attempt
+        await rateLimiterBrute.consume(req.connection.remoteAddress);
+        res.end('email or password is wrong');
+      } else {
+        // If at least one wrong attempt, reset points
+        if (getPointsBruteRes.consumedPoints > 0) {
+          await rateLimiterBrute.reward(req.connection.remoteAddress, getPointsBruteRes.consumedPoints);
+        }
+        res.end('authorized');
+      }
+    }
+  } catch (rej) {
+    // Two reasons to get here:
+    // 1. Consumed more than 10 points per second
+    // 2. Any Redis error, if it is not covered by `insuranceLimiter`
+    if (rej instanceof Error) {
+      res.status(500);
+    } else {
+      res.status(429).send('Too Many Requests');
+    }
+  }
+});
+```
+
 ### Code example: Using express-brute
 
 ```javascript
