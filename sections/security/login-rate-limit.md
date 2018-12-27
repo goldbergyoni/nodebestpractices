@@ -50,7 +50,7 @@ app.post('/login', async (req, res, next) {
         res.end('email or password is wrong');
       } else {
         // If at least one wrong attempt, reset points
-        if (getPointsBruteRes.consumedPoints > 0) {
+        if (getPointsBruteRes !== null && getPointsBruteRes.consumedPoints > 0) {
           await rateLimiterBrute.reward(req.connection.remoteAddress, getPointsBruteRes.consumedPoints);
         }
         res.end('authorized');
