@@ -87,4 +87,4 @@ Here's what ESLint would output when using the YDNLU plugin.
 ✖ 2 problems (0 errors, 2 warnings)
 ```
 
-Of course, the example above doesn't seem realistic considering to what actual codebases would have but you get the idea.
+Of course, the example above doesn't seem realistic considering what actual codebases would have but you get the idea.
