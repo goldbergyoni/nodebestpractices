@@ -957,7 +957,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 7.1. Prefer native JS methods over user-land utils like Lodash
 
-**TL;DR:** It's often more penalising to use utility libraries like `lodash` and `underscore` over using native methods as it leads to uneeded dependencies with less performance boost.
+ **TL;DR:** It's often more penalising to use utility libraries like `lodash` and `underscore` over native methods as it leads to unneeded dependencies and slower performance.
 
 **Otherwise:** You'll have to maintain (slightly) bigger projects where you could have simply used what was **already** available or dealt with a few more lines in exchange of a few more files.
 
