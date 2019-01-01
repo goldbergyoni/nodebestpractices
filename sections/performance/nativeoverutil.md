@@ -1,10 +1,20 @@
 # Prefer native JS methods over user-land utils like Lodash
 
+
 <br/><br/>
 
 ### One Paragraph Explainer
 
-Sometimes, using native methods is better than requiring `lodash` or `underscore` because the resulting program will have more dependencies and thus use more space and also not guarantee the best performance all-round.
+Sometimes, using native methods is better than requiring `lodash` or `underscore` because it **will not lead in a performance boost** and use more space than necessary.
+The performance using native methods result in an overall ~50% gain which includes the following methods:
+ - `Array.concat`
+ - `Array.fill`
+ - `Array.filter`
+ - `Array.map`
+ - `(Array|String).indexOf`
+ - `Object.find`
+ - ...
+
 
 <!-- comp here: https://gist.github.com/Berkmann18/3a99f308d58535ab0719ac8fc3c3b8bb-->
 
@@ -78,13 +88,8 @@ if (_.includes(arr, 0)) console.log('0 found');
 console.log('compacted:', _.compact(arr));
 ```
 
+### Example: detecting non-v8 util usage using a linter
 Here's what ESLint would output when using the YDNLU plugin.
-```bash
-/home/maxie/GDrive/Other/Sandbox/YDNLU/lodashLove.js
-  5:13  warning  Consider using the native Array.prototype.map()       you-dont-need-lodash-underscore/map
-  7:5   warning  Consider using the native Array.prototype.includes()  you-dont-need-lodash-underscore/includes
-
-✖ 2 problems (0 errors, 2 warnings)
-```
+![output](../../assets/images/ydnlu.png)
 
 Of course, the example above doesn't seem realistic considering what actual codebases would have but you get the idea.
