@@ -42,7 +42,7 @@ var server = http.createServer(app);
 ### Example: test your API in-process using supertest (popular testing package)
 
 ```javascript
-const app = express();
+var app = require('../app');
 
 app.get('/user', function(req, res) {
   res.status(200).json({ name: 'tobi' });
