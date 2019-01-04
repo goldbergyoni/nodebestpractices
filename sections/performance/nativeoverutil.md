@@ -20,50 +20,31 @@ The performance using native methods result in an overall ~50% gain which includ
 
 <br/><br/>
 
-### Code Example – Benchmark test on `_.concat`/`Array.concat`
+### Example: benchmark comparison - Lodash vs V8 (Native)
+The graph below shows the mean of the benchmarks for a variety of Lodash methods, this shows that Lodash methods take on average 146.23% more time to complete the same tasks as V8 methods.
 
+![meanDiag](../../assets/images/sampleMeanDiag.png)
+
+### Code Example – Benchmark test on `_.concat`/`Array.concat`
 ```javascript
 const _ = require('lodash'),
   __ = require('underscore'),
   Suite = require('benchmark').Suite,
-  chalk = require('chalk');
-
-function onComplete() {
-  let fastest = String(this.filter('fastest').map('name')),
-    slowest = String(this.filter('slowest').map('name'));
-  console.log(`\tBenchmark: ${chalk.cyan(this.name)}\nThe fastest is ${chalk.black.bgGreen(fastest)}\nThe slowest is ${chalk.black.bgRed(slowest)}\n`)
-}
-const onCycle = event => console.log(`${event.target}`);
-const opts = {
-  onComplete,
-  onCycle
-};
+  opts = require('./utils'); //cf. https://github.com/Berkmann18/NativeVsUtils/blob/master/utils.js
 
 const concatSuite = new Suite('concat', opts);
-const a0 = [1];
+const array = [0, 1, 2];
 
-concatSuite
-  .add('lodash', () => _.concat(a0, 2, [3], [
-    [4]
-  ]))
-  .add('underscore', () => __.concat(a0, 2, [3], [
-    [4]
-  ]))
-  .add('native', () => a0.concat(2, [3], [
-    [4]
-  ]))
+concatSuite.add('lodash', () => _.concat(array, 3, 4, 5))
+  .add('underscore', () => __.concat(array, 3, 4, 5))
+  .add('native', () => array.concat(3, 4, 5))
   .run({ 'async': true });
 ```
 
 Which returns this:
-```bash
-lodash x 1,896,368 ops/sec ±5.64% (89 runs sampled)
-underscore:
-native x 2,488,685 ops/sec ±6.46% (86 runs sampled)
-	Benchmark: concat
-The fastest is native
-The slowest is lodash
-```
+
+![output](../../assets/images/concat-benchmark.png)
+
 You can find a bigger list of benchmarks [here](https://github.com/Berkmann18/NativeVsUtils/blob/master/index.txt) or alternatively [run this](https://github.com/Berkmann18/NativeVsUtils/blob/master/index.js) which would show the same but with colours.
 
 ### "You don't (may not) need Lodash/Underscore"
