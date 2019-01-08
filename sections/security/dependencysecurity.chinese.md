@@ -16,15 +16,15 @@
 
 `npm audit`时随着NPM@6引入的一个新的cli工具。 
 
-Running `npm audit` will produce a report of security vulnerabilities with the affected package name, vulnerability severity and description, path, and other information, and, if available, commands to apply patches to resolve vulnerabilities.
+运行`npm audit`将生成安全漏洞的报告, 其中包含受影响的包名称、漏洞严重性和描述、路径和其他信息, 以及应用补丁程序来解决漏洞的命令(如果可用)。
 
-![npm audit example](/assets/images/npm-audit.png)
+![npm audit示例](/assets/images/npm-audit.png)
 
 🔗 [Read on: NPM blog](https://docs.npmjs.com/getting-started/running-a-security-audit)
 
 ### Snyk
 
-Snyk offers a feature-rich CLI, as well as GitHub integration. Snyk goes further with this and in addition to notifying vulnerabilities, also automatically creates new pull requests fixing vulnerabilities as patches are released for known vulnerabilities.
+Snyk提供了功能丰富的cli, 并集成Github。除了通知漏洞外, Snyk更进一步, 针对已知漏洞发布了的修补程序, 还会自动创建新的pull requests, 以修复漏洞。
 
 Snyk's feature rich website also allows for ad-hoc assessment of dependencies when provided with a GitHub repository or npm module url. You can also search for npm packages which have vulnerabilities directly.
 
@@ -46,7 +46,7 @@ An example of the output of the Greenkeeper GitHub integration automatically cre
 ![synk github example](/assets/images/greenkeeper.png)
 🔗 [Read on: Greenkeeper website](https://greenkeeper.io/)
 
-### Additional resources
+### 额外资源
 
 🔗 [Rising Stack Blog: Node.js dependency risks](https://blog.risingstack.com/controlling-node-js-security-risk-npm-dependencies/)
 
