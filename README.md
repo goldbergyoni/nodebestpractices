@@ -1084,3 +1084,12 @@ This repository is being kept up to date thanks to the help from the community. 
 ⭐ [Corey Cleary](https://github.com/coreyc)
 
 <br/><br/><br/>
+
+### Code Visualization:
+
+Here is a cool visualization of the code evolution
+
+ [![Watch the video](https://img.youtube.com/vi/SvMM7A_-_cM/0.jpg)](https://www.youtube.com/watch?v=SvMM7A_-_cM)
+
+ [https://www.youtube.com/watch?v=SvMM7A_-_cM](https://www.youtube.com/watch?v=SvMM7A_-_cM)
+
