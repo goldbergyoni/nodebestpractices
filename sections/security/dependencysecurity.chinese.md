@@ -26,9 +26,9 @@
 
 Snyk提供了功能丰富的cli, 并集成Github。除了通知漏洞外, Snyk更进一步, 针对已知漏洞发布了的修补程序, 还会自动创建新的pull requests, 以修复漏洞。
 
-Snyk's feature rich website also allows for ad-hoc assessment of dependencies when provided with a GitHub repository or npm module url. You can also search for npm packages which have vulnerabilities directly.
+Snyk的网站功能丰富, 它还允许提供对github存储库或npm模块url的依赖关系进行临时评估。您还可以直接搜索有漏洞的npm包。
 
-An example of the output of the Synk GitHub integration automatically created pull request:
+Synk的Github集成自动创建pull request的示例：
 ![synk GitHub example](/assets/images/snyk.png)
 
 🔗 [Read on: Snyk website](https://snyk.io/)
@@ -37,11 +37,11 @@ An example of the output of the Synk GitHub integration automatically created pu
 
 ### Greenkeeper
 
-Greenkeeper is a service which offers real-time dependency updates, which keeps an application more secure by always using the most update to date and patched dependency versions.
+Greenkeeper是一种提供实时依赖关系更新的服务, 通过始终使用到目前为止更新最多的依赖版本来保持应用程序的安全性。
 
-Greenkeeper watches the npm dependencies specified in a repository's `package.json` file, and automatically creates a working branch with each dependency update. The repository CI suite is then run to reveal any breaking changes for the updated dependency version in the application. If CI fails due to the dependency update, a clear and concise issue is created in the repository to be auctioned, outlining the current and updated package versions, along with information and commit history of the updated version.
+Greenkeeper监视存储库包中`package.json`文件指定的npm依赖项, 并对每个依赖项的更新，自动创建一个工作分支。然后运行仓库CI套件, 以揭示应用程序中更新的依赖项版本的任何重大更改。如果CI由于依赖项的更新而失败, 则会在相应的存储库中创建一个清晰简洁的问题, 概述当前的和更新的包版本，以及更新版本的提交历史信息和记录。
 
-An example of the output of the Greenkeeper GitHub integration automatically created pull request:
+Greenkeeper的Github集成自动创建pull request的示例：
 
 ![synk github example](/assets/images/greenkeeper.png)
 🔗 [Read on: Greenkeeper website](https://greenkeeper.io/)
