@@ -963,6 +963,14 @@ To maintain this guide and keep it up to date, we are constantly updating and im
 
 <br/><br/>
 
+## ![✔] 7.1. Collection of generic performance best practices
+
+**TL;DR:** This is a collection of performance advice that are not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
+
+🔗 [**Read More: Common performance best practices**](/sections/performance/common-performance.md)
+
+<br/><br/>
+
 ## Translations
 
 All translations are contributed by the community. We will be happy to get any help with either completed, ongoing or new translations!
