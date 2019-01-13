@@ -48,15 +48,15 @@ HTML和其他web语言将内容与可执行代码混合在一起 - 单个HTML段
 
 <br/><br/>
 
-### Blog Quote: "OWASP recommends using a security-focused encoding library"
+### 博客引用: "OWASP推荐使用以安全为中心的编码库"
 
-From the blog OWASP [XSS (Cross Site Scripting) Prevention Cheat Sheet](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet)
-> "Writing these encoders is not tremendously difficult, but there are quite a few hidden pitfalls. For example, you might be tempted to use some of the escaping shortcuts like \" in JavaScript. However, these values are dangerous and may be misinterpreted by the nested parsers in the browser. You might also forget to escape the escape character, which attackers can use to neutralize your attempts to be safe. **OWASP recommends using a security-focused encoding library to make sure these rules are properly implemented**."
+摘自博客OWASP [XSS (Cross Site Scripting) Prevention Cheat Sheet](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet)
+> "编写这些编码器并不是极其困难, 但也有不少隐藏的陷阱。例如，您可能会尝试使用一些转义的快捷方式， 比如Javascript中的"\"。但是, 这些值是危险的, 可能会被嵌套在浏览器中的解析器误解。您也可能忘记转义转义字符串, 而攻击者可以用它使您的安全尝试无效。**OWASP建议使用以安全为中心的编码库, 以确保这些规则得到正确执行**。"
 
 
 <br/><br/>
 
-### Blog Quote: "You MUST use the escape syntax for the part of the HTML"
+### 博客引用: "您必须对HTML片段使用转义语法"
 
-From the blog OWASP [XSS (Cross Site Scripting) Prevention Cheat Sheet](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet)
-> "But HTML entity encoding doesn't work if you're putting untrusted data inside a <script> tag anywhere, or an event handler attribute like onmouseover, or inside CSS, or in a URL. So even if you use an HTML entity encoding method everywhere, you are still most likely vulnerable to XSS. You MUST use the escape syntax for the part of the HTML document you're putting untrusted data into."
+摘自博客OWASP [XSS (Cross Site Scripting) Prevention Cheat Sheet](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet)
+> "假如您把不受信任的数据放在一个置于某处的<script>标签中，或一个事件处理属性比如onmouseover，或在CSS中，或在一个URL里， HTML实体编码将不起作用。因此, 即使您在任何地方都使用HTML实体编码方法, 您仍然最容易受到XSS的攻击。您必须对将不受信任的数据放入的HTML文档部分使用转义语法。"
