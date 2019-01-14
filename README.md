@@ -955,6 +955,15 @@ All statements above will return false if used with `===`
 
 ## Our contributors are working on this section. [Would you like to join?](https://github.com/i0natan/nodebestpractices/issues/256)
 
+## ![✔] 7.1. Prefer native JS methods over user-land utils like Lodash
+
+ **TL;DR:** It's often more penalising to use utility libraries like `lodash` and `underscore` over native methods as it leads to unneeded dependencies and slower performance.
+ Bear in mind that with the introduction of the new V8 engine alongside the new ES standards, native methods were improved in such a way that it's now about 50% more performant than utility libraries.
+
+**Otherwise:** You'll have to maintain less performant projects where you could have simply used what was **already** available or dealt with a few more lines in exchange of a few more files.
+
+🔗 [**Read More: Native over user land utils**](/sections/performance/nativeoverutil.md)
+
 <br/><br/><br/>
 
 # Milestones
