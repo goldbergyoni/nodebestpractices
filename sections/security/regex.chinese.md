@@ -17,18 +17,18 @@
 var saferegex = require('safe-regex');
 var emailRegex = /^([a-zA-Z0-9])(([\-.]|[_]+)?([a-zA-Z0-9]+))*(@){1}[a-z0-9]+[.]{1}(([a-z]{2,3})|([a-z]{2,3}[.]{1}[a-z]{2,3}))$/;
 
-// should output false because the emailRegex is vulnerable to redos attacks
+// 应该输出false, 因为电子邮件RegEx很容易受到redos攻击
 console.log(saferegex(emailRegex));
 
-// instead of the regex pattern, use validator:
+// 使用validator替代正则表达式
 var validator = require('validator');
 console.log(validator.isEmail('liran.tal@gmail.com'));
 ```
 
 <br/><br/>
 
-### Book Quote: "A vulnerable Regular Expression is known as one which applies repetition"
+### 书本引用: "易受攻击的正则表达式被称为重复应用的表达式
 
-From the book [Essential Node.js Security](https://leanpub.com/nodejssecurity) by Liran Tal
-> Often, programmers will use RegEx to validate that an input received from a user conforms to an expected condition. A vulnerable Regular Expression is known as one which applies repetition to a repeating capturing group, and where the string to match is composed of a suffix of a valid matching pattern plus characters that aren't matching the capturing group.
+摘自Liran Tal的书[Essential Node.js Security](https://leanpub.com/nodejssecurity)
+> 通常, 程序员会使用RegEx来验证从用户收到的输入是否符合预期的条件。易受攻击的正则表达式被称为将重复应用于重复匹配组, 以及要匹配的字符串由有效匹配模式的后缀加上与匹配组不匹配的字符组成的表达式。
 
