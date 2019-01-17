@@ -17,7 +17,7 @@ app.use(express.json({ limit: '300kb' })); // body-parser默认设置正文大�
 // 请求json正文
 app.post('/json', (req, res) => {
 
-    // 检查请求有效负载内容类型是否与JSON匹配, 因为body-parser不检查内容类型
+    // 检查请求负载内容类型是否与JSON匹配, 因为body-parser不检查内容类型
     if (!req.is('json')) {
         return res.sendStatus(415); // -> 如果请求没有JSON正文, 则返回为不支持媒体类型
     }
