@@ -150,7 +150,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <br/><br/>
 
-## ![✔] 2.6 Shutdown the process gracefully when a stranger comes to town
+## ![✔] 2.6 Exit the process gracefully when a stranger comes to town
 
 **TL;DR:** When an unknown error occurs (a developer error, see best practice 2.3) - there is uncertainty about the application healthiness. A common practice suggests restarting the process carefully using a process management tool like Forever or PM2
 
