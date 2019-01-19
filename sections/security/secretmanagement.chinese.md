@@ -1,17 +1,17 @@
-# Extract secrets from config files or use npm package that encrypts them
+# 从配置文件中提取机密信息, 或使用npm包加密这些文件
 
 ### 一段解释
 
-The most common and secure way to provide a Node.js application access to keys and secrets is to store them using environment variables on the system where it is being run. Once set, these can be accessed from the global `process.env` object.
-A litmus test for whether an app has all config correctly factored out of the code is whether the codebase could be made open source at any moment, without compromising any credentials.
+对密钥和机密信息的访问，提供给Node.js最常见和最安全的方法，是使用环境变量存储在运行它们的系统上。设置完成后, 可以从全局`process.env`中访问这些信息。
+对于应用是否将所有配置正确地排除在代码之外, 一个试金石是通过判断代码库是否可以在不损害任何凭据的情况下随时可以开源。
 
-For rare situations where secrets do need to be stored inside source control, using a package such as [cryptr](https://www.npmjs.com/package/cryptr) allows these to be stored in an encrypted form as opposed to in plain text.
+在极少数情况下, 确实需要将机密信息存储在源代码管理中，使用包例如[cryptr](https://www.npmjs.com/package/cryptr)，它以加密的方式存储信息，而不是文本。
 
-There are a variety of tools available which use git commit to audit commits and commit messages for accidental additions of secrets, such as [git-secrets](https://github.com/awslabs/git-secrets).
+有多种可用的工具, 在使用git提交时，审核提交和提交消息意外添加的机密信息, 例如[git-secrets](https://github.com/awslabs/git-secrets).
 
 ### 代码示例
 
-Accessing an API key stored in an environment variable:
+访问存储在环境变量中的API密钥:
 
 ```javascript
     const azure = require('azure');
@@ -20,7 +20,7 @@ Accessing an API key stored in an environment variable:
     const blobService = azure.createBlobService(apiKey);
 ```
 
-Using `cryptr` to store an encrypted secret:
+使用`cryptr`存储加密秘钥:
 
 ```javascript
 const Cryptr = require('cryptr');
@@ -31,6 +31,6 @@ let accessToken = cryptr.decrypt('e74d7c0de21e72aaffc8f2eef2bdb7c1');
 console.log(accessToken);  // outputs decrypted string which was not stored in source control
 ```
 
-### What other bloggers say
+### 其他博主说了什么
 
-> Env vars are easy to change between deploys without changing any code; unlike config files, there is little chance of them being checked into the code repo accidentally; and unlike custom config files, or other config mechanisms such as Java System Properties, they are a language- and OS-agnostic standard. [From: The 12 factor app](https://12factor.net/config)
+> 环境变量在部署之间很容易更改, 而无需更改任何代码;与配置文件不同的是, 它们被意外签入代码存储库的可能性很小;与自定义配置文件或其他配置机制(如 java系统属性)不同, 它们是一种语言和OS无关的标准。[摘自: The 12 factor app](https://12factor.net/config)
