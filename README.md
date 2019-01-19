@@ -3,7 +3,7 @@
 # Node.js Best Practices
 
 <h1 align="center">
-  <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices">
+  <img src="assets/images/banner-2.png" alt="Node.js Best Practices">
 </h1>
 
 <br/>
