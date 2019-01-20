@@ -989,42 +989,63 @@ All translations are contributed by the community. We will be happy to get any h
 - ![ES](/assets/flags/ES.png) [Spanish](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/95))
 - ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/i0natan/nodebestpractices/issues/139))
 
-<br/><br/><br/>
+<br/><br/>
 
-# Core Contributors
+## Technical Steering Committee
 
-## `Yoni Goldberg`
+Meet the technical steering committee members - the people who work together to provide guidance and future direction to the project. In addition, each member of the committee leads a project which are track under [Github projects](https://github.com/i0natan/nodebestpractices/projects).
 
-Independent Node.js consultant who works with customers in USA, Europe, and Israel on building large-scale scalable Node applications. Many of the best practices above were first published in his blog post at [goldbergyoni.com](https://goldbergyoni.com). Reach Yoni at @goldbergyoni or me@goldbergyoni.com
+<img align="left" width="100" height="100" src="assets/images/members/yoni.png">
 
-## `Ido Richter`
+[Yoni Goldberg](https://github.com/i0natan)
+<a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
+<a href="https://goldbergyoni.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
-👨‍💻 Software engineer, 🌐 web developer, 🤖 emojis enthusiast
+Independent Node.js consultant who works with customers in USA, Europe, and Israel on building large scale scalable Node applications. Many of the best practices above were first published at [goldbergyoni.com](https://goldbergyoni.com). Reach Yoni at @goldbergyoni or me@goldbergyoni.com
 
-## `Refael Ackermann` [@refack](https://github.com/refack) &lt;refack@gmail.com&gt; (he/him)
+<br/>
+<img align="left" width="100" height="100" src="assets/images/members/bruno.png">
 
-Node.js Core Collaborator, been noding since 0.4, and have noded in multiple production sites. Founded `node4good` home of [`lodash-contrib`](https://github.com/node4good/lodash-contrib), [`formage`](https://github.com/node4good/formage), and [`asynctrace`](https://github.com/node4good/asynctrace).
-`refack` on freenode, Twitter, GitHub, GMail, and many other platforms. DMs are open, happy to help
-
-## `Bruno Scheufler`
+[Bruno Scheufler](https://github.com/BrunoScheufler)
+<a href="https://brunoscheufler.com/"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
 💻 full-stack web developer and Node.js enthusiast
 
-## `Kyle Martin` [@js-kyle](https://github.com/js-kyle)
+<br/>
+<img align="left" width="100" height="100" src="assets/images/members/kyle.png">
 
-Full Stack Developer based in New Zealand, interested in architecting and building Node.js applications to perform at global scale. Keen contributor to open source software, including Node.js Core.
+[Kyle Martin](https://github.com/js-kyle)
+<a href="https://twitter.com/kylemartin_93"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
+<a href="https://www.linkedin.com/in/kylemartinnz"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
 
-## `Sagir Khan`
+Full Stack Developer & Site Reliability Engineer based in New Zealand, interested in web application security, and architecting and building Node.js applications to perform at global scale.
+
+<br/>
+<img align="left" width="100" height="100" src="assets/images/members/sagir.png">
+
+[Sagir Khan](https://github.com/sagirk)
+<a href="https://twitter.com/sagir_k"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
+<a href="https://sagirk.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
+<a href="https://linkedin.com/in/sagirk"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
 
 Deep specialist in JavaScript and its ecosystem — React, Node.js, MongoDB, pretty much anything that involves using JavaScript/JSON in any layer of the system — building products using the web platform for the world’s most recognized brands. Individual Member of the Node.js Foundation, collaborating on the Community Committee's Website Redesign Initiative.
 
-Social: gh. [sagirk](https://github.com/sagirk) | t. [@sagir_k](https://twitter.com/sagir_k) | li. [sagirk](https://linkedin.com/in/sagirk) | w. [sagirk.com](https://sagirk.com/)
+<br/>
 
-<br/><br/><br/>
+## Collaborators
 
-# Thank You Notes
+Thank you to all our collaborators! 🙏 
 
-This repository is being kept up to date thanks to the help from the community. We appreciate any contribution, from a single word fix to a new best practice. Below is a list of everyone who contributed to this project. A 🌻 marks a successful pull request and a ⭐ marks an approved new best practice
+Our collaborators are members who are contributing to the repository on a reguar basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in becoming a collaborator, please read our [contributor guidelines](/.operations/CONTRIBUTING.md).
+
+<a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75">Ido Richter</a>
+<a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="75" height="75">Refael Ackermann</a>
+<a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75">Keith Holliday</a>
+
+
+## Thank You Notes
+
+We appreciate any contribution, from a single word fix to a new best practice. Below is a list of everyone who contributed to this project. A 🌻 marks a successful pull request and a ⭐ marks an approved new best practice.
 
 ### Flowers
 
@@ -1099,3 +1120,5 @@ This repository is being kept up to date thanks to the help from the community. 
 ⭐ [Corey Cleary](https://github.com/coreyc)
 
 <br/><br/><br/>
+
+
