@@ -22,6 +22,8 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <br/>
 
+###### Built and maintained by our [Steering Committee ](#steering-committee) and [Collaborators](#collaborators)
+
 # Welcome! 3 Things You Ought To Know First:
 
 **1. You are, in fact, reading dozens of the best Node.js articles -** this repository is a summary and curation of the top-ranked content on Node.js best practices, as well as content written here by collaborators
@@ -999,9 +1001,9 @@ All translations are contributed by the community. We will be happy to get any h
 
 <br/><br/>
 
-## Technical Steering Committee
+## Steering Committee
 
-Meet the technical steering committee members - the people who work together to provide guidance and future direction to the project. In addition, each member of the committee leads a project which are track under [Github projects](https://github.com/i0natan/nodebestpractices/projects).
+Meet the steering committee members - the people who work together to provide guidance and future direction to the project. In addition, each member of the committee leads a project which are track under [Github projects](https://github.com/i0natan/nodebestpractices/projects).
 
 <img align="left" width="100" height="100" src="assets/images/members/yoni.png">
 
@@ -1010,6 +1012,13 @@ Meet the technical steering committee members - the people who work together to 
 <a href="https://goldbergyoni.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
 Independent Node.js consultant who works with customers in USA, Europe, and Israel on building large scale scalable Node applications. Many of the best practices above were first published at [goldbergyoni.com](https://goldbergyoni.com). Reach Yoni at @goldbergyoni or me@goldbergyoni.com
+
+<br/>
+<img align="left" width="100" height="100" src="assets/images/members/ido.png">
+
+[Ido Richter](https://github.com/idori)
+
+👨‍💻 Software engineer, 🌐 web developer, 🤖 emojis enthusiast
 
 <br/>
 <img align="left" width="100" height="100" src="assets/images/members/bruno.png">
@@ -1046,10 +1055,11 @@ Thank you to all our collaborators! 🙏
 
 Our collaborators are members who are contributing to the repository on a reguar basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in becoming a collaborator, please read our [contributor guidelines](/.operations/CONTRIBUTING.md).
 
-<a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75">Ido Richter</a>
-<a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="75" height="75">Refael Ackermann</a>
 <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75">Keith Holliday</a>
 
+### Past collaborators
+
+ - [Refael Ackermann](https://github.com/refack)
 
 ## Thank You Notes
 
