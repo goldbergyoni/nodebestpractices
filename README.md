@@ -22,7 +22,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <br/>
 
-###### Built and maintained by our [Steering Committee ](#steering-committee) and [Collaborators](#collaborators)
+###### Built and maintained by our [Steering Committee](#steering-committee) and [Collaborators](#collaborators)
 
 # Welcome! 3 Things You Ought To Know First:
 
@@ -1003,7 +1003,7 @@ All translations are contributed by the community. We will be happy to get any h
 
 ## Steering Committee
 
-Meet the steering committee members - the people who work together to provide guidance and future direction to the project. In addition, each member of the committee leads a project which are tracked under [Github projects](https://github.com/i0natan/nodebestpractices/projects).
+Meet the steering committee members - the people who work together to provide guidance and future direction to the project. In addition, each member of the committee leads a project tracked under our [Github projects](https://github.com/i0natan/nodebestpractices/projects).
 
 <img align="left" width="100" height="100" src="assets/images/members/yoni.png">
 
