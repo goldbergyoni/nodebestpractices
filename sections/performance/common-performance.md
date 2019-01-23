@@ -28,11 +28,7 @@ The common performance guidelines section contains best practices that are stand
 
 ## ![✔] Benchmark slow db calls
 
-**TL;DR:** 
-
-**Otherwise:** 
-
-🔗 [**Read More: Benchmark dbs**](/sections/performance/benchmark-dbs.md)
+Monitoring your database for common and slow db calls. When viewing these queries, check the docs for how to optimize these queries or cache them. Here are links to some commong way to monitor your database queres: [postgres](https://wiki.postgresql.org/wiki/Monitoring), [mysql](https://www.digitalocean.com/community/tutorials/how-to-use-mysql-query-profiling), [mongodb](https://stackoverflow.com/questions/15204341/mongodb-logging-all-queries)
 
 <br/><br/>
 
