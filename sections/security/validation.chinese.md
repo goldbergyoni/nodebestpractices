@@ -2,9 +2,9 @@
 
 ### 一段解释
 
-验证是关于我们的应用程序愿意接受什么有效负载的非常明确地说明, 如果输入偏离预期, 则会立即返回错误。这样可以最大限度地减少攻击者无法再尝试具有不同结构、值和长度的有效负载的表层攻击。实际上, 它可以防止像DDOS这样的攻击(当输入定义良好时代码不可能失败)和不安全反序列化(JSON不包含任何其它字段)。Validation is about being very explicit on what payload our app is willing to accept and failing fast should the input deviates from the expectations. This minimizes an attackers surface who can no longer try out payloads with a different structure, values and length. Practically it prevents attacks like DDOS (code is unlikely to fail when the input is well defined) and Insecure Deserialization (JSON contain no surprises). Though validation can be coded or rely upon classes and types (TypeScript, ES6 classes) the community seems to increasingly like JSON-based schemas as these allow declaring complex rules without coding and share the expectations with the frontend. JSON-schema is an emerging standard that is supported by many npm libraries and tools (e.g. [jsonschema](https://www.npmjs.com/package/jsonschema), [Postman](http://blog.getpostman.com/2017/07/28/api-testing-tips-from-a-postman-professional/)), [joi](https://www.npmjs.com/package/joi) is also highly popular with sweet syntax. Typically JSON syntax can't cover all validation scenario and custom code or pre-baked validation frameworks like [validator.js](https://github.com/chriso/validator.js/) come in handy. Regardless of the chosen syntax, ensure to run the validation as early as possible - For example, by using Express middleware that validates the request body before the request is passed to the route handler
+验证是关于我们的应用程序愿意接受什么有效负载的非常明确地说明, 如果输入偏离预期, 则会立即返回错误。这样可以最大限度地减少攻击者无法再尝试具有不同结构、值和长度的有效负载的表层攻击。实际上, 它可以防止像DDOS这样的攻击(当输入定义良好时代码不可能失败)和不安全反序列化(JSON不包含任何其它字段)。尽管验证可以编码或依赖于类和类型(TypeScript、ES6 类), 但社区似乎越来越喜欢基于JSON的架构, 因为这些架构允许在不编码的情况下声明复杂的规则, 并与前端分享期望。JSON-schema是一个新兴的标准, 由许多npm库和工具支持(例如[jsonschema](https://www.npmjs.com/package/jsonschema), [Postman](http://blog.getpostman.com/2017/07/28/api-testing-tips-from-a-postman-professional/))，[joi](https://www.npmjs.com/package/joi)由于易用的语法非常流行。通常, JSON语法不能涵盖所有验证方案和自定义代码，或者预先准备好的验证框架，比如[validator.js](https://github.com/chriso/validator.js/)可以派上用场。无论选择哪种语法, 都要确保尽早运行验证 - 例如, 通过使用Express中间件在请求传递到路由处理程序之前验证请求正文。Validation is about being very explicit on what payload our app is willing to accept and failing fast should the input deviates from the expectations. This minimizes an attackers surface who can no longer try out payloads with a different structure, values and length. Practically it prevents attacks like DDOS (code is unlikely to fail when the input is well defined) and Insecure Deserialization (JSON contain no surprises). Though validation can be coded or rely upon classes and types (TypeScript, ES6 classes) the community seems to increasingly like JSON-based schemas as these allow declaring complex rules without coding and share the expectations with the frontend. JSON-schema is an emerging standard that is supported by many npm libraries and tools (e.g. [jsonschema](https://www.npmjs.com/package/jsonschema), [Postman](http://blog.getpostman.com/2017/07/28/api-testing-tips-from-a-postman-professional/)), [joi](https://www.npmjs.com/package/joi) is also highly popular with sweet syntax. Typically JSON syntax can't cover all validation scenario and custom code or pre-baked validation frameworks like [validator.js](https://github.com/chriso/validator.js/) come in handy. Regardless of the chosen syntax, ensure to run the validation as early as possible - For example, by using Express middleware that validates the request body before the request is passed to the route handler
 
-### Example - JSON-Schema validation rules
+### 代码示例 - JSON-Schema验证规则
 
 ``` javascript
 {
@@ -27,7 +27,7 @@
 ```
 
 
-### Example - Validating an entity using JSON-Schema
+### 代码示例 - Validating an entity using JSON-Schema
 
 ``` javascript
 const JSONValidator = require("jsonschema").Validator;
@@ -47,7 +47,7 @@ class Product {
 
 ```
 
-### Example - Usage of middleware validator
+### 代码示例 - 使用中间件验证
 
 ``` javascript
 // The validator is a generic middleware that gets the entity it should validate and takes care to return
