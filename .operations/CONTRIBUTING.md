@@ -12,4 +12,4 @@ On the occasion where a collaborator becomes inactive for some time, they will b
 
 ### Flowers and stars
 
-Smaller contributions to the project are acknowledged by the author gaining a place on the home page - a 🌻 marks a successful pull request and a ⭐ marks an approved new best practice.
+Every addition to the project are acknowledged by the author gaining a place on the home page. A flower 🌻 marks a successful pull request. A star of honor ⭐ is assigned to contributors who propose and write a new best practice to our guide.
