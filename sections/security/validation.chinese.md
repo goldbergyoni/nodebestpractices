@@ -27,7 +27,7 @@
 ```
 
 
-### 代码示例 - Validating an entity using JSON-Schema
+### 代码示例 - 使用JSON-Schema验证实体
 
 ``` javascript
 const JSONValidator = require("jsonschema").Validator;
@@ -62,7 +62,7 @@ router.post("/" , **validator(Product.validate)**, async (req, res, next) => {
 
 ### 其他博主说了什么
 
-From the blog [Gergely Nemeth](https://nemethgergely.com/nodejs-security-overview/):
+摘自博客[Gergely Nemeth](https://nemethgergely.com/nodejs-security-overview/):
 > Validating user input is one of the most important things to do when it comes to the security of your application. Failing to do it correctly can open up your application and users to a wide range of attacks, including command injection, SQL injection or stored cross-site scripting.<br/>
 
 To validate user input, one of the best libraries you can pick is joi. Joi is an object schema description language and validator for JavaScript objects.
