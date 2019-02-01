@@ -8,7 +8,7 @@ Members of the steering committee work together to provide guidance and future d
 
 Collaborators are members who are contributing to the repository on a regular basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. They help the steering committee to ensure that the content provided is of a high standard, up-to-date with the industry, and available in many languages. Members who are displaying the above activity, and quality of contribution will be invited to become a collaborator.
 
-On the occasion where a collaborator becomes inactive for some time, they will be asked if they would still like to contribute as a collaborator or leave their role, being acknowledged as a past collaborator.
+The steering committee periodically reviews the collaborator list to identify inactive collaborators. Inactive collaborators can choose to either continue in or step down from their role, in which case they are acknowledged as a past collaborator. They may later request that the steering committee restore them to active status.
 
 ### Flowers and stars
 
