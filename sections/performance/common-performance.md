@@ -41,10 +41,7 @@ Monitoring your database for common and slow db calls. When viewing these querie
 
 ## ![✔] Analyze repeated API Calls
 
-**TL;DR:** 
-
-**Otherwise:** 
-
+Using the tools above, find the most used API requests and cache the requests. One option to cache and gain a great performance is to use [Redis with NodeJS](https://community.risingstack.com/redis-node-js-introduction-to-caching/). Using an in-memory store like Redis will have faster access than disk-access DBs which leads to lower reponse time for your APIs.
 
 <br/><br/>
 
