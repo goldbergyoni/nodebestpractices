@@ -44,10 +44,7 @@ Using the tools above, find the most used API requests and cache the requests. O
 
 ## ![✔] Serve static assets from a CDN
 
-**TL;DR:** 
-
-**Otherwise:** 
-
+Use services suchs as Netlify, S3, Cloudfront or similar to cache static assets like images and videos. These services are well suited and have high performance for serving these kind of assets. This will also reduce the load on your server.
 
 <br/><br/>
 
