@@ -6,11 +6,19 @@ The common performance guidelines section contains best practices that are stand
 
 ## ![✔] Use compression on your responses
 
-**TL;DR:** Use the compression middleware (or the compression module with Nginx) to reduce the response from your server, thus speeding up your API.
+Express.js and applications like Nginx support gzip compression for HTTP requests. This is a well used standard that can compress all response from your server. Adding this option to your API is easy to use and will give you a nice boost in performance depending on your normal response size.
 
-**Otherwise:** You will have a larger response than you need, thus taking more time to send your data to users. 
+## Example: Express.js
 
-🔗 [**Read More: Using compression**](/sections/performance/compression.md)
+If you are using the Express library, you can compresses your requests via the [Compression](https://github.com/expressjs/compression) middleware library. Here is an example from the [Express docs](https://expressjs.com/en/advanced/best-practice-performance.html#use-gzip-compression):
+
+```
+const compression = require('compression')
+const express = require('express')
+
+const app = express()
+app.use(compression())
+```
 
 <br/><br/>
 
@@ -21,7 +29,6 @@ The common performance guidelines section contains best practices that are stand
 
 **Otherwise:** 
 
-🔗 [**Read More: Batch APIs**](/sections/performance/batch-apis.md)
 
 <br/><br/>
 
@@ -38,7 +45,6 @@ Monitoring your database for common and slow db calls. When viewing these querie
 
 **Otherwise:** 
 
-🔗 [**Read More: Analyze API calls**](/sections/performance/analyze-api-calls.md)
 
 <br/><br/>
 
@@ -48,7 +54,6 @@ Monitoring your database for common and slow db calls. When viewing these querie
 
 **Otherwise:** 
 
-🔗 [**Read More: Use CDN**](/sections/performance/use-cdn.md)
 
 <br/><br/>
 
