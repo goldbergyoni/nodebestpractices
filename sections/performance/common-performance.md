@@ -25,10 +25,7 @@ app.use(compression())
 
 ## ![✔] Deal with database and external APIs in batches
 
-**TL;DR:** 
-
-**Otherwise:** 
-
+When working with externnal APIs, favor the batch operations. For example, Mailchimp overs a [batch operation API](https://developer.mailchimp.com/documentation/mailchimp/reference/batches/). Using features like this can reduce the number of operations you have to send, thus speeding up response and executation time for your app.
 
 <br/><br/>
 
