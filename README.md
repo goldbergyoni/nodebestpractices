@@ -23,7 +23,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 <br/>
 
 # Latest Best Practices and News
-- **New Best Practice:** 4.10: Include 3 parts in each test name - [*From the section "Testing and overall quality"*](https://github.com/i0natan/nodebestpractices#4-testing-and-overall-quality-practices)
+- **New Best Practice:** 4.2: Include 3 parts in each test name - [*From the section "Testing and overall quality"*](https://github.com/i0natan/nodebestpractices#4-testing-and-overall-quality-practices)
 
 - **New Best Practice:** 7.1: Prefer native JS methods over user-land utils like Lodash - [*From the section "Performance"*](https://github.com/i0natan/nodebestpractices#7-performance-best-practices)
 
