@@ -407,7 +407,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Longer code (in ES5 functions) is more prone to bugs and cumbersome to read
 
-🔗 [**Read mode: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
+🔗 [**Read more: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
 
 <br/><br/><br/>
 
@@ -430,7 +430,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** A deployment just failed, a test named “Add product” failed. Does this tell you what exactly is malfunctioning?
 
-🔗 [**Read mode: Include 3 parts in each test name**](🔗 [**Read More: Refactoring!**](/sections/testingandquality/3-parts-in-name.md))
+🔗 [**Read More: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md))
 
 <br/><br/>
 
