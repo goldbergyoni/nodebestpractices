@@ -1006,13 +1006,6 @@ Meet the steering committee members - the people who work together to provide gu
 Independent Node.js consultant who works with customers in USA, Europe, and Israel on building large scale scalable Node applications. Many of the best practices above were first published at [goldbergyoni.com](https://goldbergyoni.com). Reach Yoni at @goldbergyoni or me@goldbergyoni.com
 
 <br/>
-<img align="left" width="100" height="100" src="assets/images/members/ido.png">
-
-[Ido Richter](https://github.com/idori)
-
-👨‍💻 Software engineer, 🌐 web developer, 🤖 emojis enthusiast
-
-<br/>
 <img align="left" width="100" height="100" src="assets/images/members/bruno.png">
 
 [Bruno Scheufler](https://github.com/BrunoScheufler)
@@ -1046,6 +1039,8 @@ Deep specialist in JavaScript and its ecosystem — React, Node.js, MongoDB, pre
 Thank you to all our collaborators! 🙏 
 
 Our collaborators are members who are contributing to the repository on a reguar basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in helping us guide thousands of people to craft better Node.js applications, please read our [contributor guidelines](/.operations/CONTRIBUTING.md) 🎉
+
+<a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75">Ido Richter (Founder)</a>
 
 <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75">Keith Holliday</a>
 
