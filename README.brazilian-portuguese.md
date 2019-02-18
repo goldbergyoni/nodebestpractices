@@ -768,10 +768,6 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-=======
-
-> > > > > > > 6708bc15909e8964b14cfdb1543353d061b9ff84
-
 # `Práticas de API`
 
 ## Nossos colaboradores estão trabalhando nesta seção. Quer se juntar a nós?
