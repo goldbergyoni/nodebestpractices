@@ -422,7 +422,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 4.2 Include 3 parts in each test name
 
-**TL;DR:** Make the test speak at the requirements level so it's self explanatory also to QA engineers and developers who are not familiar with the code internals. State in the test name what it being tested (unit under test), under what circumstances and what is the expected result
+**TL;DR:** Make the test speak at the requirements level so it's self explanatory also to QA engineers and developers who are not familiar with the code internals. State in the test name what is being tested (unit under test), under what circumstances and what is the expected result
 
 
 **Otherwise:** A deployment just failed, a test named “Add product” failed. Does this tell you what exactly is malfunctioning?
