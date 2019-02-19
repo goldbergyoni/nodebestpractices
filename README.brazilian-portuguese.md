@@ -906,7 +906,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Cookies podem ser enviados através de conexões não seguras, e um hacker pode usar a sessão do usuário para identificar o framework utilizado na aplicação, bem como vulnerabilidades específicas do módulo.
 
-🔗 [**Read More: Segurança de cookies e sessões**](/sections/security/sessions.md)
+🔗 [**Leia Mais: Segurança de cookies e sessões**](/sections/security/sessions.md)
 
 <br/><br/>
 
@@ -926,13 +926,28 @@ Todas as declarações acima false se feitas com `===`.
 
 **TL;DR:** Redirecionamentos que não validam a entrada do usuário podem permitir que invasores iniciem tentativas de phishing, roubem credenciais de usuários e executem outras ações mal-intencionadas.
 
-**Otherwise:** Se um invasor descobrir que você não está validando informações externas fornecidas pelo usuário, ele poderá explorar essa vulnerabilidade postando links especialmente em fóruns, mídias sociais e outros locais públicos para que os usuários cliquem.
+**Caso contrário:** Se um invasor descobrir que você não está validando informações externas fornecidas pelo usuário, ele poderá explorar essa vulnerabilidade postando links especialmente em fóruns, mídias sociais e outros locais públicos para que os usuários cliquem.
 
-🔗 [**Read More: Impeça redirecionamentos não seguros**](/sections/security/saferedirects.md)
+🔗 [**Leia Mais: Impeça redirecionamentos não seguros**](/sections/security/saferedirects.md)
 
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+
+# `7. Boas Práticas em Performance`
+
+## Nossos colaboradores estão trabalhando nesta seção. [Gostaria de participar?](https://github.com/i0natan/nodebestpractices/issues/256)
+
+## ![✔] 7.1. Prefira métodos JS nativos ao invés de utilitários de usuário, como o Lodash
+
+**TL;DR:** Muitas vezes é mais complicado usar bibliotecas de utilitários como o `lodash` e `underscore` sobre os métodos nativos, pois leva a dependências desnecessárias e desempenho mais lento.
+Tenha em mente que, com a introdução do novo motor V8 juntamente com os novos padrões ES, os métodos nativos foram aprimorados de tal forma que agora ele tem cerca de 50% a mais de desempenho que as bibliotecas de utilitários.
+
+**Caso contrário:** Você terá que manter projetos de menor desempenho onde você poderia simplesmente ter usado o que **já estava** disponível ou lidar com mais algumas linhas em troca de mais alguns arquivos.
+
+🔗 [**Leia Mais: Nativos sobre utilitários de uso do usuário**](/sections/performance/nativeoverutil.md)
+
+<br/><br/><br/>
 
 # `Práticas de API`
 
