@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2073%20Best%20practices-blue.svg" alt="73 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20September%209%202018-green.svg" alt="Last update: September 9th, 2018"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.11.3%20LTS-brightgreen.svg" alt="Updated for Node 8.11.3 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2079%20Best%20practices-blue.svg" alt="79 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Feb%201%202019-green.svg" alt="Last update: February 1st, 2019"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%2010.15.1%20LTS-brightgreen.svg" alt="Updated for Node 10.15.1 LTS">
 </div>
 
 <br/>
@@ -18,31 +18,31 @@
 
 <br/>
 
-Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
+Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md) [(![BR](/assets/flags/BR.png)**BR**, ![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
 
 <br/>
 
 # Welcome! 3 Things You Ought To Know First:
 
-**1. When you read here, you in fact read dozens of the best Node.js articles -** this is a summary and curation of the top-ranked content on Node.js best practices
+**1. You are, in fact, reading dozens of the best Node.js articles -** this repository is a summary and curation of the top-ranked content on Node.js best practices, as well as content written here by collaborators
 
-**2. It is the largest compilation, and it is growing every week -** currently, more than 50 best practices, style guides, and architectural tips are presented. New issues and PR are created every day to keep this live book updated. We'd love to see you contributing here, whether fixing some code mistake or suggesting brilliant new ideas. See our [milestones here](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
+**2. It is the largest compilation, and it is growing every week -** currently, more than 70 best practices, style guides, and architectural tips are presented. New issues and pull requests are created every day to keep this live book updated. We'd love to see you contributing here, whether that is fixing code mistakes, helping with translations, or suggesting brilliant new ideas. See our [writing guidelines here](/.operations/writing-guidelines.md)
 
-**3. Most bullets have additional info -** nearby most best practice bullets you'll find **🔗Read More** link that will present you with code examples, quotes from selected blogs and more info
+**3. Most best practices have additional info -** most bullets include a **🔗Read More** link that expands on the practice with code examples, quotes from selected blogs and more information
 
-<br/><br/><br/>
+<br/><br/>
 
 ## Table of Contents
 
-1.  [Project structure Practices (5)](#1-project-structure-practices)
+1.  [Project Structure Practices (5)](#1-project-structure-practices)
 2.  [Error Handling Practices (11) ](#2-error-handling-practices)
 3.  [Code Style Practices (12) ](#3-code-style-practices)
-4.  [Testing And Overall Quality Practices (8) ](#4-testing-and-overall-quality-practices)
-5.  [Going To Production Practices (17) ](#5-going-to-production-practices)
-6.  :star: New: [Security Practices (23)](#6-security-best-practices)
-7.  Performance Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
+4.  [Testing And Overall Quality Practices (9) ](#4-testing-and-overall-quality-practices)
+5.  [Going To Production Practices (18) ](#5-going-to-production-practices)
+6.  [Security Practices (24)](#6-security-best-practices)
+7.  [Performance Practices (in progress)](#7-performance-best-practices)
 
-<br/><br/><br/>
+<br/><br/>
 
 # `1. Project Structure Practices`
 
@@ -112,7 +112,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 ## ![✔] 2.2 Use only the built-in Error object
 
-**TL;DR:** Many throws errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw an exception or an emit error – using only the built-in Error object will increase uniformity and prevent loss of information
+**TL;DR:** Many throw errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw an exception or emit an error – using only the built-in Error object will increase uniformity and prevent loss of information
 
 **Otherwise:** When invoking some component, being uncertain which type of errors come in return – it makes proper error handling much harder. Even worse, using custom types to describe errors might lead to loss of critical error information like the stack trace!
 
@@ -144,17 +144,17 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **TL;DR:** Let your API callers know which errors might come in return so they can handle these thoughtfully without crashing. This is usually done with REST API documentation frameworks like Swagger
 
-**Otherwise:** An API client might decide to crash and restart only because he received back an error he couldn’t understand. Note: the caller of your API might be you (very typical in a microservice environment)
+**Otherwise:** An API client might decide to crash and restart only because it received back an error it couldn’t understand. Note: the caller of your API might be you (very typical in a microservice environment)
 
 🔗 [**Read More: documenting errors in Swagger**](/sections/errorhandling/documentingusingswagger.md)
 
 <br/><br/>
 
-## ![✔] 2.6 Shut the process gracefully when a stranger comes to town
+## ![✔] 2.6 Exit the process gracefully when a stranger comes to town
 
-**TL;DR:** When an unknown error occurs (a developer error, see best practice number #3)- there is uncertainty about the application healthiness. A common practice suggests restarting the process carefully using a ‘restarter’ tool like Forever and PM2
+**TL;DR:** When an unknown error occurs (a developer error, see best practice 2.3) - there is uncertainty about the application healthiness. A common practice suggests restarting the process carefully using a process management tool like [Forever](https://www.npmjs.com/package/forever) or [PM2](http://pm2.keymetrics.io/)
 
-**Otherwise:** When an unfamiliar exception is caught, some object might be in a faulty state (e.g an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
+**Otherwise:** When an unfamiliar exception occurs, some object might be in a faulty state (e.g. an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
 
 🔗 [**Read More: shutting the process**](/sections/errorhandling/shuttingtheprocess.md)
 
@@ -162,7 +162,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 ## ![✔] 2.7 Use a mature logger to increase error visibility
 
-**TL;DR:** A set of mature logging tools like Winston, Bunyan or Log4J, will speed-up error discovery and understanding. So forget about console.log
+**TL;DR:** A set of mature logging tools like [Winston](https://www.npmjs.com/package/winston), [Bunyan](https://github.com/trentm/node-bunyan) or [Log4js](http://stritti.github.io/log4js/), will speed-up error discovery and understanding. So forget about console.log
 
 **Otherwise:** Skimming through console.logs or manually through messy text file without querying tools or a decent log viewer might keep you busy at work until late
 
@@ -172,9 +172,9 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 ## ![✔] 2.8 Test error flows using your favorite test framework
 
-**TL;DR:** Whether professional automated QA or plain manual developer testing – Ensure that your code not only satisfies positive scenario but also handle and return the right errors. Testing frameworks like Mocha & Chai can handle this easily (see code examples within the "Gist popup")
+**TL;DR:** Whether professional automated QA or plain manual developer testing – Ensure that your code not only satisfies positive scenarios but also handles and returns the right errors. Testing frameworks like Mocha & Chai can handle this easily (see code examples within the "Gist popup")
 
-**Otherwise:** Without testing, whether automatically or manually, you can’t rely on our code to return the right errors. Without meaningful errors – there’s no error handling
+**Otherwise:** Without testing, whether automatically or manually, you can’t rely on your code to return the right errors. Without meaningful errors – there’s no error handling
 
 🔗 [**Read More: testing error flows**](/sections/errorhandling/testingerrorflows.md)
 
@@ -192,7 +192,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 ## ![✔] 2.10 Catch unhandled promise rejections
 
-**TL;DR:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explicitly handle. Even if your code is subscribed to process.uncaughtException! Overcome this by registering to the event process.unhandledRejection
+**TL;DR:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explicitly handle. Even if your code is subscribed to `process.uncaughtException`! Overcome this by registering to the event `process.unhandledRejection`
 
 **Otherwise:** Your errors will get swallowed and leave no trace. Nothing to worry about
 
@@ -218,13 +218,13 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **TL;DR:** [ESLint](https://eslint.org) is the de-facto standard for checking possible code errors and fixing code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Though ESLint can automatically fix code styles, other tools like [prettier](https://www.npmjs.com/package/prettier) and [beautify](https://www.npmjs.com/package/js-beautify) are more powerful in formatting the fix and work in conjunction with ESLint
 
-**Otherwise:** Developers will focus on tedious spacing and line-width concerns and time might be wasted overthinking about the project's code style
+**Otherwise:** Developers will focus on tedious spacing and line-width concerns and time might be wasted overthinking the project's code style
 
 <br/><br/>
 
-## ![✔] 3.2 Node.js Specific Plugins
+## ![✔] 3.2 Node.js specific plugins
 
-**TL;DR:** On top of ESLint standard rules that cover vanilla JS only, add Node-specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
+**TL;DR:** On top of ESLint standard rules that cover vanilla JavaScript, add Node.js specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
 **Otherwise:** Many faulty Node.js code patterns might escape under the radar. For example, developers might require(variableAsPath) files with a variable given as path which allows attackers to execute any JS script. Node.js linters can detect such patterns and complain early
 
@@ -232,7 +232,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 ## ![✔] 3.3 Start a Codeblock's Curly Braces on the Same Line
 
-**TL;DR:** The opening curly braces of a code block should be in the same line of the opening statement
+**TL;DR:** The opening curly braces of a code block should be on the same line as the opening statement
 
 ### Code Example
 
@@ -243,8 +243,7 @@ function someFunction() {
 }
 
 // Avoid
-function someFunction()
-{
+function someFunction() {
   // code block
 }
 ```
@@ -268,18 +267,20 @@ function someFunction()
 const count = 2;
 (function doSomething() {
   // do something amazing
-}());
+})();
 
 // Avoid — throws exception
-const count = 2 // it tries to run 2(), but 2 is not a function
-(function doSomething() {
-  // do something amazing
-}())
+const count = 2(
+  // it tries to run 2(), but 2 is not a function
+  (function doSomething() {
+    // do something amazing
+  })()
+);
 ```
 
 <br/><br/>
 
-## ![✔] 3.5 Name Your Functions
+## ![✔] 3.5 Name your functions
 
 **TL;DR:** Name all functions, including closures and callbacks. Avoid anonymous functions. This is especially useful when profiling a node app. Naming all functions will allow you to easily understand what you're looking at when checking a memory snapshot
 
@@ -287,7 +288,7 @@ const count = 2 // it tries to run 2(), but 2 is not a function
 
 <br/><br/>
 
-## ![✔] 3.6 Naming conventions for variables, constants, functions and classes
+## ![✔] 3.6 Use naming conventions for variables, constants, functions and classes
 
 **TL;DR:** Use **_lowerCamelCase_** when naming constants, variables and functions and **_UpperCamelCase_** (capital first letter as well) when naming classes. This will help you to easily distinguish between plain variables/functions, and classes that require instantiation. Use descriptive names, but try to keep them short
 
@@ -313,7 +314,7 @@ function doSomething() {}
 
 ## ![✔] 3.7 Prefer const over let. Ditch the var
 
-**TL;DR:** Using `const` means that once a variable is assigned, it cannot be reassigned. Preferring const will help you to not be tempted to use the same variable for different uses, and make your code clearer. If a variable needs to be reassigned, in a for loop, for example, use `let` to declare it. Another important aspect of `let` is that a variable declared using it is only available in the block scope in which it was defined. `var` is function scoped, not block scoped, and [shouldn't be used in ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) now that you have const and let at your disposal
+**TL;DR:** Using `const` means that once a variable is assigned, it cannot be reassigned. Preferring `const` will help you to not be tempted to use the same variable for different uses, and make your code clearer. If a variable needs to be reassigned, in a for loop, for example, use `let` to declare it. Another important aspect of `let` is that a variable declared using it is only available in the block scope in which it was defined. `var` is function scoped, not block scoped, and [shouldn't be used in ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) now that you have `const` and `let` at your disposal
 
 **Otherwise:** Debugging becomes way more cumbersome when following a variable that frequently changes
 
@@ -321,7 +322,7 @@ function doSomething() {}
 
 <br/><br/>
 
-## ![✔] 3.8 Requires come first, and not inside functions
+## ![✔] 3.8 Require modules first, not inside functions
 
 **TL;DR:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top but also avoids a couple of potential problems
 
@@ -329,7 +330,7 @@ function doSomething() {}
 
 <br/><br/>
 
-## ![✔] 3.9 Do Require on the folders, not directly on the files
+## ![✔] 3.9 Require modules by folders, opposed to the files directly
 
 **TL;DR:** When developing a module/library in a folder, place an index.js file that exposes the module's
 internals so every consumer will pass through it. This serves as an 'interface' to your module and eases
@@ -361,18 +362,18 @@ module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolve
 ### Code example
 
 ```javascript
-'' == '0'           // false
-0 == ''             // true
-0 == '0'            // true
+'' == '0'; // false
+0 == ''; // true
+0 == '0'; // true
 
-false == 'false'    // false
-false == '0'        // true
+false == 'false'; // false
+false == '0'; // true
 
-false == undefined  // false
-false == null       // false
-null == undefined   // true
+false == undefined; // false
+false == null; // false
+null == undefined; // true
 
-' \t\r\n ' == 0     // true
+' \t\r\n ' == 0; // true
 ```
 
 All statements above will return false if used with `===`
@@ -383,15 +384,15 @@ All statements above will return false if used with `===`
 
 **TL;DR:** Node 8 LTS now has full support for Async-await. This is a new way of dealing with asynchronous code which supersedes callbacks and promises. Async-await is non-blocking, and it makes asynchronous code look synchronous. The best gift you can give to your code is using async-await which provides a much more compact and familiar code syntax like try-catch
 
-**Otherwise:** Handling async errors in callback style is probably the fastest way to hell - this style forces to check errors all over, deal with awkward code nesting and make it difficult to reason about the code flow
+**Otherwise:** Handling async errors in callback style is probably the fastest way to hell - this style forces to check errors all over, deal with awkward code nesting and makes it difficult to reason about the code flow
 
 🔗[**Read more:** Guide to async await 1.0](https://github.com/yortus/asyncawait)
 
 <br/><br/>
 
-## ![✔] 3.12 Use Fat (=>) Arrow Functions
+## ![✔] 3.12 Use arrow function expressions (=>)
 
-**TL;DR:** Though it's recommended to use async-await and avoid function parameters when dealing with older API that accept promises or callbacks - arrow functions make the code structure more compact and keep the lexical context of the root function (i.e. 'this')
+**TL;DR:** Though it's recommended to use async-await and avoid function parameters when dealing with older APIs that accept promises or callbacks - arrow functions make the code structure more compact and keep the lexical context of the root function (i.e. `this`)
 
 **Otherwise:** Longer code (in ES5 functions) is more prone to bugs and cumbersome to read
 
@@ -405,7 +406,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 4.1 At the very least, write API (component) testing
 
-**TL;DR:** Most projects just don't have any automated testing due to short timetables or often the 'testing project' run out of control and being abandoned. For that reason, prioritize and start with API testing which is the easiest to write and provide more coverage than unit testing (you may even craft API tests without code using tools like [Postman](https://www.getpostman.com/). Afterward, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc
+**TL;DR:** Most projects just don't have any automated testing due to short timetables or often the 'testing project' ran out of control and was abandoned. For that reason, prioritize and start with API testing which is the easiest way to write and provides more coverage than unit testing (you may even craft API tests without code using tools like [Postman](https://www.getpostman.com/). Afterward, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc
 
 **Otherwise:** You may spend long days on writing unit tests to find out that you got only 20% system coverage
 
@@ -421,7 +422,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 4.3 Carefully choose your CI platform (Jenkins vs CircleCI vs Travis vs Rest of the world)
 
-**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it should come with a vibrant ecosystem of plugins. [Jenkins](https://jenkins.io/) used to be the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Nowadays, it became much easier to set up a CI solution using SaaS tools like [CircleCI](https://circleci.com) and others. These tools allow crafting a flexible CI pipeline without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
+**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it should come with a vibrant ecosystem of plugins. [Jenkins](https://jenkins.io/) used to be the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Nowadays, it has become much easier to set up a CI solution using SaaS tools like [CircleCI](https://circleci.com) and others. These tools allow crafting a flexible CI pipeline without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
 
 **Otherwise:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
 
@@ -431,7 +432,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 4.4 Constantly inspect for vulnerable dependencies
 
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [nsp](https://github.com/nodesecurity/nsp) that can be invoked from your CI on every build
+**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [npm audit](https://docs.npmjs.com/cli/audit) and 🔗 [snyk.io](https://snyk.io) that can be invoked from your CI on every build
 
 **Otherwise:** Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
 
@@ -465,15 +466,15 @@ All statements above will return false if used with `===`
 
 **TL;DR:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Docker-compose turns this problem into a breeze by crafting production-like environment using a simple text file and easy commands. It allows crafting all the dependent services, DB and isolated network for e2e testing. Last but not least, it can keep a stateless environment that is invoked before each test suite and dies right after
 
-**Otherwise:** Without docker-compose teams must maintain a testing DB for each testing environment including developers machines, keep all those DBs in sync so test results won't vary across environments
+**Otherwise:** Without docker-compose teams must maintain a testing DB for each testing environment including developers' machines, keep all those DBs in sync so test results won't vary across environments
 
 <br/><br/>
 
 ## ![✔] 4.9 Refactor regularly using static analysis tools
 
-**TL;DR:** Using static analysis tools helps by giving objective ways to improve code quality and keep your code maintainable. You can add static analysis tools to your CI build to fail when it finds code smells. Its main selling points over plain linting are the ability to inspect quality in the context of multiple files (e.g. detect duplications), perform advanced analysis (e.g. code complexity) and follow the history and progress of code issues. Two examples of tools you can use are [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) and [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)).
+**TL;DR:** Using static analysis tools helps by giving objective ways to improve code quality and keeps your code maintainable. You can add static analysis tools to your CI build to fail when it finds code smells. Its main selling points over plain linting are the ability to inspect quality in the context of multiple files (e.g. detect duplications), perform advanced analysis (e.g. code complexity) and follow the history and progress of code issues. Two examples of tools you can use are [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) and [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)).
 
-**Otherwise:** With poor code quality, bugs and performance will always be an issue that no shiny new library or state of the art features can fix.
+**Otherwise:** With poor code quality, bugs and performance will always be an issue that no shiny new library or state of the art features can fix
 
 🔗 [**Read More: Refactoring!**](/sections/testingandquality/refactoring.md)
 
@@ -497,7 +498,7 @@ All statements above will return false if used with `===`
 
 **TL;DR:** Logs can be a dumb warehouse of debug statements or the enabler of a beautiful dashboard that tells the story of your app. Plan your logging platform from day 1: how logs are collected, stored and analyzed to ensure that the desired information (e.g. error rate, following an entire transaction through services and servers, etc) can really be extracted
 
-**Otherwise:** You end-up with a black box that is hard to reason about, then you start re-writing all logging statements to add additional information
+**Otherwise:** You end up with a black box that is hard to reason about, then you start re-writing all logging statements to add additional information
 
 🔗 [**Read More: Increase transparency using smart logging**](/sections/production/smartlogging.md)
 
@@ -515,9 +516,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.4. Lock dependencies
 
-**TL;DR:** Your code must be identical across all environments, but amazingly npm lets dependencies drift across environments by default – when you install packages at various environments it tries to fetch packages’ latest patch version. Overcome this by using npm config files, .npmrc, that tell each environment to save the exact (not the latest) version of each package. Alternatively, for finer grain control use npm” shrinkwrap”. \*Update: as of NPM5, dependencies are locked by default. The new package manager in town, Yarn, also got us covered by default
+**TL;DR:** Your code must be identical across all environments, but amazingly npm lets dependencies drift across environments by default – when you install packages at various environments it tries to fetch packages’ latest patch version. Overcome this by using npm config files, .npmrc, that tell each environment to save the exact (not the latest) version of each package. Alternatively, for finer grained control use `npm shrinkwrap`. \*Update: as of NPM5, dependencies are locked by default. The new package manager in town, Yarn, also got us covered by default
 
-**Otherwise:** QA will thoroughly test the code and approve a version that will behave differently at production. Even worse, different servers at the same production cluster might run different code
+**Otherwise:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
 
 🔗 [**Read More: Lock dependencies**](/sections/production/lockdependencies.md)
 
@@ -525,9 +526,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.5. Guard process uptime using the right tool
 
-**TL;DR:** The process must go on and get restarted upon failures. For simple scenarios, ‘restarter’ tools like PM2 might be enough but in today ‘dockerized’ world – a cluster management tools should be considered as well
+**TL;DR:** The process must go on and get restarted upon failures. For simple scenarios, process management tools like PM2 might be enough but in today's ‘dockerized’ world, cluster management tools should be considered as well
 
-**Otherwise:** Running dozens of instances without a clear strategy and too many tools together (cluster management, docker, PM2) might lead to a DevOps chaos
+**Otherwise:** Running dozens of instances without a clear strategy and too many tools together (cluster management, docker, PM2) might lead to DevOps chaos
 
 🔗 [**Read More: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
 
@@ -535,7 +536,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.6. Utilize all CPU cores
 
-**TL;DR:** At its basic form, a Node app runs on a single CPU core while all other are left idling. It’s your duty to replicate the Node process and utilize all CPUs – For small-medium apps you may use Node Cluster or PM2. For a larger app consider replicating the process using some Docker cluster (e.g. K8S, ECS) or deployment scripts that are based on Linux init system (e.g. systemd)
+**TL;DR:** At its basic form, a Node app runs on a single CPU core while all others are left idling. It’s your duty to replicate the Node process and utilize all CPUs – For small-medium apps you may use Node Cluster or PM2. For a larger app consider replicating the process using some Docker cluster (e.g. K8S, ECS) or deployment scripts that are based on Linux init system (e.g. systemd)
 
 **Otherwise:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.js utilizes only 1 (even using PaaS services like AWS beanstalk!)
 
@@ -555,9 +556,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.8. Discover errors and downtime using APM products
 
-**TL;DR:** Monitoring and performance products (a.k.a APM) proactively gauge codebase and API so they can auto-magically go beyond traditional monitoring and measure the overall user-experience across services and tiers. For example, some APM products can highlight a transaction that loads too slow on the end-users side while suggesting the root cause
+**TL;DR:** Application monitoring and performance products (a.k.a APM) proactively gauge codebase and API so they can auto-magically go beyond traditional monitoring and measure the overall user-experience across services and tiers. For example, some APM products can highlight a transaction that loads too slow on the end-users side while suggesting the root cause
 
-**Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real-world scenario and how these affects the UX
+**Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real-world scenario and how these affect the UX
 
 🔗 [**Read More: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
 
@@ -569,13 +570,13 @@ All statements above will return false if used with `===`
 
 **Otherwise:** A world champion IT/DevOps guy won’t save a system that is badly written
 
-🔗 [**Read More: Make your code production-ready**](/sections/production/productoncode.md)
+🔗 [**Read More: Make your code production-ready**](/sections/production/productioncode.md)
 
 <br/><br/>
 
 ## ![✔] 5.10. Measure and guard the memory usage
 
-**TL;DR:** Node.js has controversial relationships with memory: the v8 engine has soft limits on memory usage (1.4GB) and there are known paths to leaks memory in Node’s code – thus watching Node’s process memory is a must. In small apps, you may gauge memory periodically using shell commands but in medium-large app consider baking your memory watch into a robust monitoring system
+**TL;DR:** Node.js has controversial relationships with memory: the v8 engine has soft limits on memory usage (1.4GB) and there are known paths to leak memory in Node’s code – thus watching Node’s process memory is a must. In small apps, you may gauge memory periodically using shell commands but in medium-large apps consider baking your memory watch into a robust monitoring system
 
 **Otherwise:** Your process memory might leak a hundred megabytes a day like how it happened at [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
 
@@ -593,9 +594,9 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 5.12. Be stateless, kill your Servers almost every day
+## ![✔] 5.12. Be stateless, kill your servers almost every day
 
-**TL;DR:** Store any type of data (e.g. users session, cache, uploaded files) within external data stores. Consider ‘killing’ your servers periodically or use ‘serverless’ platform (e.g. AWS Lambda) that explicitly enforces a stateless behavior
+**TL;DR:** Store any type of data (e.g. user sessions, cache, uploaded files) within external data stores. Consider ‘killing’ your servers periodically or use ‘serverless’ platform (e.g. AWS Lambda) that explicitly enforces a stateless behavior
 
 **Otherwise:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
 
@@ -605,15 +606,15 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.13. Use tools that automatically detect vulnerabilities
 
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities (from time to time) that can put a system at risk. This can get easily tamed using community and commercial tools that constantly check for vulnerabilities and warn (locally or at GitHub), some can even patch them immediately
+**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities (from time to time) that can put a system at risk. This can be easily tamed using community and commercial tools that constantly check for vulnerabilities and warn (locally or at GitHub), some can even patch them immediately
 
-**Otherwise:** Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
+**Otherwise:** Keeping your code clean from vulnerabilities without dedicated tools will require you to constantly follow online publications about new threats. Quite tedious
 
 🔗 [**Read More: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
 
 <br/><br/>
 
-## ![✔] 5.14. Assign ‘TransactionId’ to each log statement
+## ![✔] 5.14. Assign a transaction id to each log statement
 
 **TL;DR:** Assign the same identifier, transaction-id: {some value}, to each log entry within a single request. Then when inspecting errors in logs, easily conclude what happened before and after. Unfortunately, this is not easy to achieve in Node due to its async nature, see code examples inside
 
@@ -625,9 +626,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.15. Set NODE_ENV=production
 
-**TL;DR:** Set the environment variable NODE_ENV to ‘production’ or ‘development’ to flag whether production optimizations should get activated – many npm packages determining the current environment and optimize their code for production
+**TL;DR:** Set the environment variable NODE_ENV to ‘production’ or ‘development’ to flag whether production optimizations should get activated – many npm packages determine the current environment and optimize their code for production
 
-**Otherwise:** Omitting this simple property might greatly degrade performance. For example, when using Express for server-side rendering omitting `NODE_ENV` makes the slower by a factor of three!
+**Otherwise:** Omitting this simple property might greatly degrade performance. For example, when using Express for server-side rendering omitting `NODE_ENV` makes it slower by a factor of three!
 
 🔗 [**Read More: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
 
@@ -635,9 +636,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.16. Design automated, atomic and zero-downtime deployments
 
-**TL;DR:** Researches show that teams who perform many deployments – lowers the probability of severe production issues. Fast and automated deployments that don’t require risky manual steps and service downtime significantly improves the deployment process. You should probably achieve that using Docker combined with CI tools as they became the industry standard for streamlined deployment
+**TL;DR:** Research shows that teams who perform many deployments lower the probability of severe production issues. Fast and automated deployments that don’t require risky manual steps and service downtime significantly improve the deployment process. You should probably achieve this using Docker combined with CI tools as they became the industry standard for streamlined deployment
 
-**Otherwise:** Long deployments -> production down time & human-related error -> team unconfident and in making deployment -> less deployments and features
+**Otherwise:** Long deployments -> production downtime & human-related error -> team unconfident in making deployment -> fewer deployments and features
 
 <br/><br/>
 
@@ -648,6 +649,16 @@ All statements above will return false if used with `===`
 **Otherwise:** Newly discovered bugs or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain
 
 🔗 [**Read More: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
+
+<br/><br/>
+
+## ![✔] 5.18. Don't route logs within the app
+
+**TL;DR:** Log destinations should not be hard-coded by developers within the application code, but instead should be defined by the execution environment the application runs in. Developers should write logs to `stdout` using a logger utility and then let the execution environment (container, server, etc.) pipe the `stdout` stream to the appropriate destination (i.e. Splunk, Graylog, ElasticSearch, etc.).
+
+**Otherwise:** Application handling log routing === hard to scale, loss of logs, poor separation of concerns
+
+🔗 [**Read More: Log Routing**](/sections/production/logrouting.md)
 
 <br/><br/><br/>
 
@@ -663,11 +674,11 @@ All statements above will return false if used with `===`
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Make use of security-related linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to catch security vulnerabilities and issues as early as possible , at best  while they're being coded. This can help catching security weaknesses like using eval, invoking a child process or importing a module with a string literal (e.g. user input). Click 'Read more' below to see code examples that will get caught by a security linter
+**TL;DR:** Make use of security-related linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to catch security vulnerabilities and issues as early as possible, preferably while they're being coded. This can help catching security weaknesses like using eval, invoking a child process or importing a module with a string literal (e.g. user input). Click 'Read more' below to see code examples that will get caught by a security linter
 
 **Otherwise:** What could have been a straightforward security weakness during development becomes a major issue in production. Also, the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories
 
-🔗 [**Read More: Lint rules**](sections/security/lintrules.md)
+🔗 [**Read More: Lint rules**](/sections/security/lintrules.md)
 
 <br/><br/>
 
@@ -679,7 +690,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** An application could be subject to an attack resulting in a denial of service where real users receive a degraded or unavailable service.
 
-🔗 [**Read More: Implement rate limiting**](sections/security/limitrequests.md)
+🔗 [**Read More: Implement rate limiting**](/sections/security/limitrequests.md)
 
 <br/><br/>
 
@@ -687,11 +698,11 @@ All statements above will return false if used with `===`
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A3:Sensitive%20Data%20Exposure%20-green.svg" alt=""/></a>
 
-**TL;DR:** Never store plain-text secrets in configuration files or source code. Instead, make use of secret-management systems like Vault products, Kubernetes/Docker Secrets, or using environment variables. As a last result, secrets stored in source control must be encrypted and managed (rolling keys, expiring, auditing, etc). Make use of pre-commit/push hooks to prevent committing secrets accidentally
+**TL;DR:** Never store plain-text secrets in configuration files or source code. Instead, make use of secret-management systems like Vault products, Kubernetes/Docker Secrets, or using environment variables. As a last resort, secrets stored in source control must be encrypted and managed (rolling keys, expiring, auditing, etc). Make use of pre-commit/push hooks to prevent committing secrets accidentally
 
 **Otherwise:** Source control, even for private repositories, can mistakenly be made public, at which point all secrets are exposed. Access to source control for an external party will inadvertently provide access to related systems (databases, apis, services, etc).
 
-🔗 [**Read More: Secret management**](sections/security/secretmanagement.md)
+🔗 [**Read More: Secret management**](/sections/security/secretmanagement.md)
 
 <br/><br/>
 
@@ -699,7 +710,7 @@ All statements above will return false if used with `===`
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
-**TL;DR:** To prevent SQL/NoSQL injection and other malicious attacks, always make use of an ORM/ODM or a database library that escapes data or supports named or indexed parameterized queries, and takes care of validating user input for expected types. Never just use JavaScript template strings or string concatenation to inject values into queries as this opens your application to a wide spectrum of vulnerabilities. All the reputable Node.js data access libraries (e.g. [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose)) have built-in protection agains injection attacks
+**TL;DR:** To prevent SQL/NoSQL injection and other malicious attacks, always make use of an ORM/ODM or a database library that escapes data or supports named or indexed parameterized queries, and takes care of validating user input for expected types. Never just use JavaScript template strings or string concatenation to inject values into queries as this opens your application to a wide spectrum of vulnerabilities. All the reputable Node.js data access libraries (e.g. [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose)) have built-in protection against injection attacks.
 
 **Otherwise:** Unvalidated or unsanitized user input could lead to operator injection when working with MongoDB for NoSQL, and not using a proper sanitization system or ORM will easily allow SQL injection attacks, creating a giant vulnerability.
 
@@ -709,7 +720,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 6.5. Collection of generic security best practices
 
-**TL;DR:** These is a collection of security advice that are not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
+**TL;DR:** This is a collection of security advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
 
 🔗 [**Read More: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
 
@@ -721,7 +732,7 @@ All statements above will return false if used with `===`
 
 **TL;DR:** Your application should be using secure headers to prevent attackers from using common attacks like cross-site scripting (XSS), clickjacking and other malicious attacks. These can be configured easily using modules like [helmet](https://www.npmjs.com/package/helmet).
 
-**Otherwise:** Attackers could perform direct attacks on your application's users, leading huge security vulnerabilities
+**Otherwise:** Attackers could perform direct attacks on your application's users, leading to huge security vulnerabilities
 
 🔗 [**Read More: Using secure headers in your application**](/sections/security/secureheaders.md)
 
@@ -755,9 +766,9 @@ All statements above will return false if used with `===`
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Untrusted data that is sent down to the browser might get executed instead of just being displayed, this is commonly being referred as a cross-site-scripting (XSS) attack. Mitigate this by using dedicated libraries that explicitly mark the data as pure content that should never get executed (i.e. encoding, escaping)
+**TL;DR:** Untrusted data that is sent down to the browser might get executed instead of just being displayed, this is commonly referred as a cross-site-scripting (XSS) attack. Mitigate this by using dedicated libraries that explicitly mark the data as pure content that should never get executed (i.e. encoding, escaping)
 
-**Otherwise:** An attacker might store a malicious JavaScript code in your DB which will then be sent as-is to the poor clients
+**Otherwise:** An attacker might store malicious JavaScript code in your DB which will then be sent as-is to the poor clients
 
 🔗 [**Read More: Escape output**](/sections/security/escape-output.md)
 
@@ -767,7 +778,7 @@ All statements above will return false if used with `===`
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7: XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a>
 
-**TL;DR:** Validate the incoming requests' body payload and ensure it qualifies the expectations, fail fast if it doesn't. To avoid tedious validation coding within each route you may use lightweight JSON-based validation schemas such as [jsonschema](https://www.npmjs.com/package/jsonschema) or [joi](https://www.npmjs.com/package/joi)
+**TL;DR:** Validate the incoming requests' body payload and ensure it meets expectations, fail fast if it doesn't. To avoid tedious validation coding within each route you may use lightweight JSON-based validation schemas such as [jsonschema](https://www.npmjs.com/package/jsonschema) or [joi](https://www.npmjs.com/package/joi)
 
 **Otherwise:** Your generosity and permissive approach greatly increases the attack surface and encourages the attacker to try out many inputs until they find some combination to crash the application
 
@@ -791,7 +802,7 @@ All statements above will return false if used with `===`
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;DR:** A brute force protection middleware such as [express-brute](https://www.npmjs.com/package/express-brute) should be used inside an express application to prevent brute force/dictionary attacks on sensitive routes such as /admin or /login based on request properties such as the user name, or other identifiers such as body parameters
+**TL;DR:** A brute force protection middleware such as [express-brute](https://www.npmjs.com/package/express-brute) should be used inside an express application to prevent brute force/dictionary attacks on sensitive routes such as /admin or /login based on request properties such as the username, or other identifiers such as body parameters
 
 **Otherwise:** An attacker can issue unlimited automated password attempts to gain access to privileged accounts on an application
 
@@ -803,7 +814,7 @@ All statements above will return false if used with `===`
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A5:Broken%20Access%20Access%20Control-green.svg" alt=""/></a>
 
-**TL;DR:** There is a common scenario where Node.js runs as a root user with unlimited permissions. For example, this is the default behaviour in Docker containers. It's recommended to create a non-root user and either bake it into the Docker image (examples given below) or run the process on this users' behalf by invoking the container with the flag "-u username"
+**TL;DR:** There is a common scenario where Node.js runs as a root user with unlimited permissions. For example, this is the default behaviour in Docker containers. It's recommended to create a non-root user and either bake it into the Docker image (examples given below) or run the process on this user's behalf by invoking the container with the flag "-u username"
 
 **Otherwise:** An attacker who manages to run a script on the server gets unlimited power over the local machine (e.g. change iptable and re-route traffic to his server)
 
@@ -827,9 +838,9 @@ All statements above will return false if used with `===`
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** `eval` is evil as it allows executing a custom JavaScript code during run time. This is not just a performance concern but also an important security concern due to malicious JavaScript code that may be sourced from user input. Another language feature that should be avoided is `new Function` constructor. `setTimeout` and `setInterval` should never be passed dynamic JavaScript code either.
+**TL;DR:** `eval` is evil as it allows executing custom JavaScript code during run time. This is not just a performance concern but also an important security concern due to malicious JavaScript code that may be sourced from user input. Another language feature that should be avoided is `new Function` constructor. `setTimeout` and `setInterval` should never be passed dynamic JavaScript code either.
 
-**Otherwise:** Malicious JavaScript code finds a way into a text passed into `eval` or other real-time evaluating JavaScript language functions, and will gain complete access to JavaScript permissions on the page. This vulnerability is often manifested as an XSS attack.
+**Otherwise:** Malicious JavaScript code finds a way into text passed into `eval` or other real-time evaluating JavaScript language functions, and will gain complete access to JavaScript permissions on the page. This vulnerability is often manifested as an XSS attack.
 
 🔗 [**Read More: Avoid JavaScript eval statements**](/sections/security/avoideval.md)
 
@@ -863,7 +874,7 @@ All statements above will return false if used with `===`
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** When tasked to run external code that is given at run-time (e.g. plugin), use any sort of 'sandbox' execution environment that isolates and guards the main code against the plugin. This can be achieved using a dedicated process (e.g. cluster.fork()), serverless environment or dedicated npm packages that acting as a sandbox
+**TL;DR:** When tasked to run external code that is given at run-time (e.g. plugin), use any sort of 'sandbox' execution environment that isolates and guards the main code against the plugin. This can be achieved using a dedicated process (e.g. `cluster.fork()`), serverless environment or dedicated npm packages that act as a sandbox
 
 **Otherwise:** A plugin can attack through an endless variety of options like infinite loops, memory overloading, and access to sensitive process environment variables
 
@@ -925,17 +936,34 @@ All statements above will return false if used with `===`
 
 **Otherwise:** This is just an educated guess: given many Node.js applications, if we try passing an empty JSON body to all POST requests - a handful of applications will crash. At that point, we can just repeat sending the same request to take down the applications with ease
 
+<br/><br/>
+
+## ![✔] 6.24. Prevent unsafe redirects
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
+
+**TL;DR:** Redirects that do not validate user input can enable attackers to launch phishing scams, steal user credentials, and perform other malicious actions.
+
+**Otherwise:** If an attacker discovers that you are not validating external, user-supplied input, they may exploit this vulnerability by posting specially-crafted links on forums, social media, and other public places to get users to click it.
+
+🔗 [**Read More: Prevent unsafe redirects**](/sections/security/saferedirects.md)
+
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `API Practices`
+# `7. Performance Best Practices`
 
-## Our contributors are working on this section. Would you like to join?
+## Our contributors are working on this section. [Would you like to join?](https://github.com/i0natan/nodebestpractices/issues/256)
 
-# `Performance Practices`
+## ![✔] 7.1. Prefer native JS methods over user-land utils like Lodash
 
-## Our contributors are working on this section. Would you like to join?
+**TL;DR:** It's often more penalising to use utility libraries like `lodash` and `underscore` over native methods as it leads to unneeded dependencies and slower performance.
+Bear in mind that with the introduction of the new V8 engine alongside the new ES standards, native methods were improved in such a way that it's now about 50% more performant than utility libraries.
+
+**Otherwise:** You'll have to maintain less performant projects where you could have simply used what was **already** available or dealt with a few more lines in exchange of a few more files.
+
+🔗 [**Read More: Native over user land utils**](/sections/performance/nativeoverutil.md)
 
 <br/><br/><br/>
 
@@ -964,7 +992,7 @@ All translations are contributed by the community. We will be happy to get any h
 
 <br/><br/><br/>
 
-# Contributors
+# Core Contributors
 
 ## `Yoni Goldberg`
 
@@ -986,6 +1014,12 @@ Node.js Core Collaborator, been noding since 0.4, and have noded in multiple pro
 ## `Kyle Martin` [@js-kyle](https://github.com/js-kyle)
 
 Full Stack Developer based in New Zealand, interested in architecting and building Node.js applications to perform at global scale. Keen contributor to open source software, including Node.js Core.
+
+## `Sagir Khan`
+
+Deep specialist in JavaScript and its ecosystem — React, Node.js, MongoDB, pretty much anything that involves using JavaScript/JSON in any layer of the system — building products using the web platform for the world’s most recognized brands. Individual Member of the Node.js Foundation, collaborating on the Community Committee's Website Redesign Initiative.
+
+Social: gh. [sagirk](https://github.com/sagirk) | t. [@sagir_k](https://twitter.com/sagir_k) | li. [sagirk](https://linkedin.com/in/sagirk) | w. [sagirk.com](https://sagirk.com/)
 
 <br/><br/><br/>
 
@@ -1043,10 +1077,27 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Gabe Kuslansky](https://github.com/GabeKuslansky),
 🌻 [Ron Gross](https://github.com/ripper234),
 🌻 [Valeri Karpov](https://github.com/vkarpov15)
+🌻 [Sergio](https://github.com/imsergiobernal),
+🌻 [Duarte Mendes](https://github.com/duartemendes),
+🌻 [Nikola Telkedzhiev](https://github.com/ntelkedzhiev),
+🌻 [Vitor Godoy](https://github.com/vitordagamagodoy),
+🌻 [Manish Saraan](https://github.com/manishsaraan),
+🌻 [Sangbeom Han](https://github.com/uronly14me),
+🌻 [blackmatch](https://github.com/blackmatch),
+🌻 [Joe Reeve](https://github.com/ISNIT0),
+🌻 [Marcelo Melo](https://github.com/marcelosdm),
+🌻 [Ryan Busby](https://github.com/BusbyActual),
+🌻 [Iman Mohamadi](https://github.com/ImanMh),
+🌻 [Remek Ambroziak](https://github.com/reod),
+🌻 [Sergii Paryzhskyi](https://github.com/HeeL),
+🌻 [Kapil Patel](https://github.com/kapilepatel),
+🌻 [迷渡](https://github.com/justjavac)
 
 ### Stars <br/>
 
-⭐ [Kyle Martin](https://github.com/js-kyle)
-⭐ [Keith Holliday](https://github.com/TheHollidayInn)
+⭐ [Kyle Martin](https://github.com/js-kyle),
+⭐ [Keith Holliday](https://github.com/TheHollidayInn),
+⭐ [Corey Cleary](https://github.com/coreyc),
+⭐ [Maximilian Berkmann](https://github.com/Berkmann18)
 
 <br/><br/><br/>
