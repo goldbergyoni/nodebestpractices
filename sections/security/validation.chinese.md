@@ -2,7 +2,7 @@
 
 ### 一段解释
 
-验证是关于我们的应用程序愿意接受什么有效负载的非常明确地说明, 如果输入偏离预期, 则会立即返回错误。这样可以最大限度地减少攻击者无法再尝试具有不同结构、值和长度的有效负载的表层攻击。实际上, 它可以防止像DDOS这样的攻击(当输入定义良好时代码不可能失败)和不安全反序列化(JSON不包含任何其它字段)。尽管验证可以编码或依赖于类和类型(TypeScript、ES6 类), 但社区似乎越来越喜欢基于JSON的架构, 因为这些架构允许在不编码的情况下声明复杂的规则, 并与前端分享期望。JSON-schema是一个新兴的标准, 由许多npm库和工具支持(例如[jsonschema](https://www.npmjs.com/package/jsonschema), [Postman](http://blog.getpostman.com/2017/07/28/api-testing-tips-from-a-postman-professional/))，[joi](https://www.npmjs.com/package/joi)由于易用的语法非常流行。通常, JSON语法不能涵盖所有验证方案和自定义代码，或者预先准备好的验证框架，比如[validator.js](https://github.com/chriso/validator.js/)可以派上用场。无论选择哪种语法, 都要确保尽早运行验证 - 例如, 通过使用Express中间件在请求传递到路由处理程序之前验证请求正文。Validation is about being very explicit on what payload our app is willing to accept and failing fast should the input deviates from the expectations. This minimizes an attackers surface who can no longer try out payloads with a different structure, values and length. Practically it prevents attacks like DDOS (code is unlikely to fail when the input is well defined) and Insecure Deserialization (JSON contain no surprises). Though validation can be coded or rely upon classes and types (TypeScript, ES6 classes) the community seems to increasingly like JSON-based schemas as these allow declaring complex rules without coding and share the expectations with the frontend. JSON-schema is an emerging standard that is supported by many npm libraries and tools (e.g. [jsonschema](https://www.npmjs.com/package/jsonschema), [Postman](http://blog.getpostman.com/2017/07/28/api-testing-tips-from-a-postman-professional/)), [joi](https://www.npmjs.com/package/joi) is also highly popular with sweet syntax. Typically JSON syntax can't cover all validation scenario and custom code or pre-baked validation frameworks like [validator.js](https://github.com/chriso/validator.js/) come in handy. Regardless of the chosen syntax, ensure to run the validation as early as possible - For example, by using Express middleware that validates the request body before the request is passed to the route handler
+验证是关于我们的应用程序愿意接受什么有效负载的非常明确地说明, 如果输入偏离预期, 则会立即返回错误。这样可以最大限度地减少攻击者再尝试具有不同结构、值和长度的有效负载的表层攻击。实际上, 它可以防止像DDOS这样的攻击(当输入定义良好时，代码不可能失败)和不安全反序列化(JSON不包含任何其它字段)。尽管验证可以编码或依赖于类和类型(TypeScript，ES6类), 但社区似乎越来越喜欢基于JSON的架构, 因为这些架构允许在不编码的情况下声明复杂的规则, 并与前端分享期望。JSON-schema是一个新兴的标准, 由许多npm库和工具支持(例如[jsonschema](https://www.npmjs.com/package/jsonschema), [Postman](http://blog.getpostman.com/2017/07/28/api-testing-tips-from-a-postman-professional/))，[joi](https://www.npmjs.com/package/joi)由于易用的语法非常流行。通常, JSON语法不能涵盖所有验证场景，这样的话自定义代码，或者预先准备好的验证框架，比如[validator.js](https://github.com/chriso/validator.js/)可以派上用场。无论选择哪种语法, 都要确保尽早运行验证 - 例如, 通过使用Express中间件在请求传递到路由处理程序之前验证请求正文。
 
 ### 代码示例 - JSON-Schema验证规则
 
@@ -41,7 +41,7 @@ class Product {
   }
 
   static get schema() {
-    //define JSON-Schema, see example above
+    //定义JSON-Schema, 见上面的示例
   }
 }
 
@@ -50,8 +50,8 @@ class Product {
 ### 代码示例 - 使用中间件验证
 
 ``` javascript
-// The validator is a generic middleware that gets the entity it should validate and takes care to return
-// HTTP status 400 (Bad Request) should the body payload validation fail
+// 验证程序是一个通用中间件, 它获取验证的实体, 并在正文有效负载
+// 验证失败时返回http状态400(错误请求)
 router.post("/" , **validator(Product.validate)**, async (req, res, next) => {
     // route handling code goes here
 });
@@ -63,6 +63,7 @@ router.post("/" , **validator(Product.validate)**, async (req, res, next) => {
 ### 其他博主说了什么
 
 摘自博客[Gergely Nemeth](https://nemethgergely.com/nodejs-security-overview/):
-> Validating user input is one of the most important things to do when it comes to the security of your application. Failing to do it correctly can open up your application and users to a wide range of attacks, including command injection, SQL injection or stored cross-site scripting.<br/>
+> 当涉及到应用程序的安全性时，验证用户输入是最重要的事情之一。如果做不到这一点, 您的应用程序和用户可能会受到广泛的攻击, 包括命令注入，SQL注入或存储的跨站点脚本。<br/>
 
-To validate user input, one of the best libraries you can pick is joi. Joi is an object schema description language and validator for JavaScript objects.
+
+要验证用户输入，可以选择的最佳库之一是joi。joi是一种对象模式描述语言，也是javascript对象的验证器。 
