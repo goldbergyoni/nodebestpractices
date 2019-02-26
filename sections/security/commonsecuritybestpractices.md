@@ -56,7 +56,7 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 - Restrict internal network access  - explicitly set which resource can access other resources (e.g. network policy or subnets)
 - If using cookies, configure it to "secured" mode where it's being sent over SSL only
 - If using cookies, configure it for "same site" only so only requests from same domain will get back the designated cookies
-- If using cookies, prefer "http only" configuration that prevent client-side JavaScript code from accessing the cookies
+- If using cookies, prefer "HttpOnly" configuration that prevent client-side JavaScript code from accessing the cookies
 - Protect each VPC with strict and restrictive access rules
 - Prioritize threats using any standard security threat modeling like STRIDE or DREAD
 - Protect against DDoS attacks using HTTP(S) and TCP load balancers
