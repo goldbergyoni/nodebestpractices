@@ -25,9 +25,10 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 ###### Built and maintained by our [Steering Committee](#steering-committee) and [Collaborators](#collaborators)
 
 # Latest Best Practices and News
-- **New Best Practice:** 4.2: Include 3 parts in each test name - [*From the section "Testing and overall quality"*](https://github.com/i0natan/nodebestpractices#4-testing-and-overall-quality-practices)
 
-- **New Best Practice:** 7.1: Prefer native JS methods over user-land utils like Lodash - [*From the section "Performance"*](https://github.com/i0natan/nodebestpractices#7-performance-best-practices)
+- **New Best Practice:** 4.2: Include 3 parts in each test name - [_From the section "Testing and overall quality"_](https://github.com/i0natan/nodebestpractices#4-testing-and-overall-quality-practices)
+
+- **New Best Practice:** 7.1: Prefer native JS methods over user-land utils like Lodash - [_From the section "Performance"_](https://github.com/i0natan/nodebestpractices#7-performance-best-practices)
 
 - **News updates** - [We kicked-off the performance section, wanna join?](https://github.com/i0natan/nodebestpractices/issues/302)
 
@@ -254,8 +255,7 @@ function someFunction() {
 }
 
 // Avoid
-function someFunction()
-{
+function someFunction() {
   // code block
 }
 ```
@@ -279,13 +279,15 @@ function someFunction()
 const count = 2;
 (function doSomething() {
   // do something amazing
-}());
+})();
 
 // Avoid — throws exception
-const count = 2 // it tries to run 2(), but 2 is not a function
-(function doSomething() {
-  // do something amazing
-}())
+const count = 2(
+  // it tries to run 2(), but 2 is not a function
+  (function doSomething() {
+    // do something amazing
+  })()
+);
 ```
 
 <br/><br/>
@@ -372,18 +374,18 @@ module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolve
 ### Code example
 
 ```javascript
-'' == '0'           // false
-0 == ''             // true
-0 == '0'            // true
+'' == '0'; // false
+0 == ''; // true
+0 == '0'; // true
 
-false == 'false'    // false
-false == '0'        // true
+false == 'false'; // false
+false == '0'; // true
 
-false == undefined  // false
-false == null       // false
-null == undefined   // true
+false == undefined; // false
+false == null; // false
+null == undefined; // true
 
-' \t\r\n ' == 0     // true
+' \t\r\n ' == 0; // true
 ```
 
 All statements above will return false if used with `===`
@@ -426,13 +428,11 @@ All statements above will return false if used with `===`
 
 **TL;DR:** Make the test speak at the requirements level so it's self explanatory also to QA engineers and developers who are not familiar with the code internals. State in the test name what is being tested (unit under test), under what circumstances and what is the expected result
 
-
 **Otherwise:** A deployment just failed, a test named “Add product” failed. Does this tell you what exactly is malfunctioning?
 
 🔗 [**Read More: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
 
 <br/><br/>
-
 
 ## ![✔] 4.3 Detect code issues with a linter
 
@@ -980,8 +980,8 @@ All statements above will return false if used with `===`
 
 ## ![✔] 7.1. Prefer native JS methods over user-land utils like Lodash
 
- **TL;DR:** It's often more penalising to use utility libraries like `lodash` and `underscore` over native methods as it leads to unneeded dependencies and slower performance.
- Bear in mind that with the introduction of the new V8 engine alongside the new ES standards, native methods were improved in such a way that it's now about 50% more performant than utility libraries.
+**TL;DR:** It's often more penalising to use utility libraries like `lodash` and `underscore` over native methods as it leads to unneeded dependencies and slower performance.
+Bear in mind that with the introduction of the new V8 engine alongside the new ES standards, native methods were improved in such a way that it's now about 50% more performant than utility libraries.
 
 **Otherwise:** You'll have to maintain less performant projects where you could have simply used what was **already** available or dealt with a few more lines in exchange of a few more files.
 
@@ -1057,7 +1057,7 @@ Deep specialist in JavaScript and its ecosystem — React, Node.js, MongoDB, pre
 
 ## Collaborators
 
-Thank you to all our collaborators! 🙏 
+Thank you to all our collaborators! 🙏
 
 Our collaborators are members who are contributing to the repository on a reguar basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in helping us guide thousands of people to craft better Node.js applications, please read our [contributor guidelines](/.operations/CONTRIBUTING.md) 🎉
 
@@ -1067,7 +1067,7 @@ Our collaborators are members who are contributing to the repository on a reguar
 
 ### Past collaborators
 
- - [Refael Ackermann](https://github.com/refack)
+- [Refael Ackermann](https://github.com/refack)
 
 ## Thank You Notes
 
@@ -1147,5 +1147,3 @@ We appreciate any contribution, from a single word fix to a new best practice. B
 ⭐ [Maximilian Berkmann](https://github.com/Berkmann18)
 
 <br/><br/><br/>
-
-

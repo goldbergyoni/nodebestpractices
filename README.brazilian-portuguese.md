@@ -634,9 +634,9 @@ Todas as declarações acima false se feitas com `===`.
 
 **TL;DR:** O destino dos logs não devem ser codificados na unha por desenvolvedores, dentro do código da aplicação. Ao invés disso, deve ser definido pelo ambiente de execução no qual a aplicação é executada. Desenvolvedores devem escrever logs para stdout usando um utilitário logger e depois deixar o ambiente de execução (container, servidor, etc) canalizar o fluxo do stdout para o destino apropriado (por exemplo: Splunk, Graylog, ElasticSearch, etc).
 
-**Otherwise:** Aplicações manipulando o roteamento de log === difícil de dimensionar, perda de logs, separação ruim de preocupações.
+**Caso contrário:** Aplicações manipulando o roteamento de log === difícil de dimensionar, perda de logs, separação ruim de preocupações.
 
-🔗 [**Read More: Roteamento de Logs**](/sections/production/logrouting.md)
+🔗 [**Leia Mais: Roteamento de Logs**](/sections/production/logrouting.md)
 
 <br/><br/><br/>
 
