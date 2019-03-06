@@ -255,7 +255,8 @@ function someFunction() {
 }
 
 // Avoid
-function someFunction() {
+function someFunction()
+{
   // code block
 }
 ```
@@ -279,15 +280,13 @@ function someFunction() {
 const count = 2;
 (function doSomething() {
   // do something amazing
-})();
+}());
 
 // Avoid — throws exception
-const count = 2(
-  // it tries to run 2(), but 2 is not a function
-  (function doSomething() {
-    // do something amazing
-  })()
-);
+const count = 2 // it tries to run 2(), but 2 is not a function
+(function doSomething() {
+  // do something amazing
+}())
 ```
 
 <br/><br/>
@@ -374,18 +373,18 @@ module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolve
 ### Code example
 
 ```javascript
-'' == '0'; // false
-0 == ''; // true
-0 == '0'; // true
+'' == '0'           // false
+0 == ''             // true
+0 == '0'            // true
 
-false == 'false'; // false
-false == '0'; // true
+false == 'false'    // false
+false == '0'        // true
 
-false == undefined; // false
-false == null; // false
-null == undefined; // true
+false == undefined  // false
+false == null       // false
+null == undefined   // true
 
-' \t\r\n ' == 0; // true
+' \t\r\n ' == 0     // true
 ```
 
 All statements above will return false if used with `===`
