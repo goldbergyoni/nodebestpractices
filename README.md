@@ -18,7 +18,7 @@
 
 <br/>
 
-Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md) [(![BR](/assets/flags/BR.png)**BR**, ![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
+Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
 
 <br/>
 
@@ -1056,7 +1056,7 @@ Deep specialist in JavaScript and its ecosystem — React, Node.js, MongoDB, pre
 
 ## Collaborators
 
-Thank you to all our collaborators! 🙏 
+Thank you to all our collaborators! 🙏
 
 Our collaborators are members who are contributing to the repository on a reguar basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in helping us guide thousands of people to craft better Node.js applications, please read our [contributor guidelines](/.operations/CONTRIBUTING.md) 🎉
 
@@ -1146,5 +1146,3 @@ We appreciate any contribution, from a single word fix to a new best practice. B
 ⭐ [Maximilian Berkmann](https://github.com/Berkmann18)
 
 <br/><br/><br/>
-
-
