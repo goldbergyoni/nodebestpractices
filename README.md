@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2079%20Best%20practices-blue.svg" alt="79 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Feb%201%202019-green.svg" alt="Last update: February 1st, 2019"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%2010.15.1%20LTS-brightgreen.svg" alt="Updated for Node 10.15.1 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2081%20Best%20Practices-blue.svg" alt="81 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Mar%2010%202019-green.svg" alt="Last update: March 10, 2019"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%2010.15.3%20LTS-brightgreen.svg" alt="Updated for Node 10.15.3 LTS">
 </div>
 
 <br/>
@@ -26,11 +26,13 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 # Latest Best Practices and News
 
-- **New Best Practice:** 4.2: Include 3 parts in each test name - [_From the section "Testing and overall quality"_](https://github.com/i0natan/nodebestpractices#4-testing-and-overall-quality-practices)
+- **New translation:** ![BR](/assets/flags/BR.png) [Brazilian Portuguese](/README.brazilian-portuguese.md) available now, courtesy of [Marcelo Melo](https://github.com/marcelosdm)! ❤️
 
-- **New Best Practice:** 7.1: Prefer native JS methods over user-land utils like Lodash - [_From the section "Performance"_](https://github.com/i0natan/nodebestpractices#7-performance-best-practices)
+- **New best practice:** 4.2: Include 3 parts in each test name - [_From the section "Testing and overall quality"_](https://github.com/i0natan/nodebestpractices#4-testing-and-overall-quality-practices)
 
-- **News updates** - [We kicked-off the performance section, wanna join?](https://github.com/i0natan/nodebestpractices/issues/302)
+- **New best practice:** 7.1: Prefer native JS methods over user-land utils like Lodash - [_From the section "Performance"_](https://github.com/i0natan/nodebestpractices#7-performance-best-practices)
+
+- **News update:** [We kicked-off the performance section, wanna join?](https://github.com/i0natan/nodebestpractices/issues/302)
 
 <br/><br/>
 
@@ -49,10 +51,10 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 1.  [Project Structure Practices (5)](#1-project-structure-practices)
 2.  [Error Handling Practices (11) ](#2-error-handling-practices)
 3.  [Code Style Practices (12) ](#3-code-style-practices)
-4.  [Testing And Overall Quality Practices (9) ](#4-testing-and-overall-quality-practices)
+4.  [Testing And Overall Quality Practices (10) ](#4-testing-and-overall-quality-practices)
 5.  [Going To Production Practices (18) ](#5-going-to-production-practices)
 6.  [Security Practices (24)](#6-security-best-practices)
-7.  [Performance Practices (in progress)](#7-performance-best-practices)
+7.  [Performance Practices (1) (In Progress️ ✍️)](#7-performance-best-practices)
 
 <br/><br/>
 
@@ -343,12 +345,9 @@ function doSomething() {}
 
 ## ![✔] 3.9 Require modules by folders, opposed to the files directly
 
-**TL;DR:** When developing a module/library in a folder, place an index.js file that exposes the module's
-internals so every consumer will pass through it. This serves as an 'interface' to your module and eases
-future changes without breaking the contract
+**TL;DR:** When developing a module/library in a folder, place an index.js file that exposes the module's internals so every consumer will pass through it. This serves as an 'interface' to your module and eases future changes without breaking the contract
 
-**Otherwise:** Changing the internal structure of files or the signature may break the interface with
-clients
+**Otherwise:** Changing the internal structure of files or the signature may break the interface with clients
 
 ### Code example
 
@@ -992,7 +991,7 @@ All statements above will return false if used with `===`
 
 To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/i0natan/nodebestpractices/milestones) and join the working groups if you want to contribute to this project
 
-<br/><br/>
+<br/>
 
 ## Translations
 
@@ -1000,6 +999,7 @@ All translations are contributed by the community. We will be happy to get any h
 
 ### Completed translations
 
+- ![BR](/assets/flags/BR.png) [Brazilian Portuguese](/README.brazilian-portuguese.md) - Courtesy of [Marcelo Melo](https://github.com/marcelosdm)
 - ![CN](/assets/flags/CN.png) [Chinese](README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
 
 ### Translations in progress
@@ -1026,6 +1026,7 @@ Meet the steering committee members - the people who work together to provide gu
 Independent Node.js consultant who works with customers in USA, Europe, and Israel on building large scale scalable Node applications. Many of the best practices above were first published at [goldbergyoni.com](https://goldbergyoni.com). Reach Yoni at @goldbergyoni or me@goldbergyoni.com
 
 <br/>
+
 <img align="left" width="100" height="100" src="assets/images/members/bruno.png">
 
 [Bruno Scheufler](https://github.com/BrunoScheufler)
@@ -1034,6 +1035,7 @@ Independent Node.js consultant who works with customers in USA, Europe, and Isra
 💻 full-stack web developer and Node.js enthusiast
 
 <br/>
+
 <img align="left" width="100" height="100" src="assets/images/members/kyle.png">
 
 [Kyle Martin](https://github.com/js-kyle)
@@ -1043,6 +1045,7 @@ Independent Node.js consultant who works with customers in USA, Europe, and Isra
 Full Stack Developer & Site Reliability Engineer based in New Zealand, interested in web application security, and architecting and building Node.js applications to perform at global scale.
 
 <br/>
+
 <img align="left" width="100" height="100" src="assets/images/members/sagir.png">
 
 [Sagir Khan](https://github.com/sagirk)
@@ -1060,13 +1063,17 @@ Thank you to all our collaborators! 🙏
 
 Our collaborators are members who are contributing to the repository on a reguar basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in helping us guide thousands of people to craft better Node.js applications, please read our [contributor guidelines](/.operations/CONTRIBUTING.md) 🎉
 
-<a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75">Ido Richter (Founder)</a>
-
-<a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75">Keith Holliday</a>
+| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
+| :--: | :--: |
+| [Ido Richter (Founder)](https://github.com/idori) | [Keith Holliday](https://github.com/TheHollidayInn) |
 
 ### Past collaborators
 
-- [Refael Ackermann](https://github.com/refack)
+| <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"></a> |
+| :--: |
+| [Refael Ackermann](https://github.com/refack) |
+
+<br/>
 
 ## Thank You Notes
 
@@ -1136,9 +1143,15 @@ We appreciate any contribution, from a single word fix to a new best practice. B
 🌻 [Remek Ambroziak](https://github.com/reod),
 🌻 [Sergii Paryzhskyi](https://github.com/HeeL),
 🌻 [Kapil Patel](https://github.com/kapilepatel),
-🌻 [迷渡](https://github.com/justjavac)
+🌻 [迷渡](https://github.com/justjavac),
+🌻 [Hozefa](https://github.com/hozefaj),
+🌻 [Ethan](https://github.com/el-ethan),
+🌻 [Sam](https://github.com/milkdeliver),
+🌻 [Arlind](https://github.com/ArlindXh),
+🌻 [Teddy Toussaint](https://github.com/ttous),
+🌻 [Lewis](https://github.com/LewisArdern)
 
-### Stars <br/>
+### Stars
 
 ⭐ [Kyle Martin](https://github.com/js-kyle),
 ⭐ [Keith Holliday](https://github.com/TheHollidayInn),
