@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2079%20Best%20practices-blue.svg" alt="79 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Feb%201%202019-green.svg" alt="Last update: February 1st, 2019"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%2010.15.1%20LTS-brightgreen.svg" alt="Updated for Node 10.15.1 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2081%20Best%20Practices-blue.svg" alt="81 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Mar%2010%202019-green.svg" alt="Last update: March 10, 2019"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%2010.15.3%20LTS-brightgreen.svg" alt="Updated for Node 10.15.3 LTS">
 </div>
 
 <br/>
@@ -18,9 +18,21 @@
 
 <br/>
 
-Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md) [(![BR](/assets/flags/BR.png)**BR**, ![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
+Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
 
 <br/>
+
+###### Built and maintained by our [Steering Committee](#steering-committee) and [Collaborators](#collaborators)
+
+# Latest Best Practices and News
+
+- **New Best Practice:** 4.2: Include 3 parts in each test name - [_From the section "Testing and overall quality"_](https://github.com/i0natan/nodebestpractices#4-testing-and-overall-quality-practices)
+
+- **New Best Practice:** 7.1: Prefer native JS methods over user-land utils like Lodash - [_From the section "Performance"_](https://github.com/i0natan/nodebestpractices#7-performance-best-practices)
+
+- **News updates** - [We kicked-off the performance section, wanna join?](https://github.com/i0natan/nodebestpractices/issues/302)
+
+<br/><br/>
 
 # Bem-vindo! 3 Coisas Que Você Precisa de Saber:
 
@@ -30,19 +42,19 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 **3. A maioria dos tópicos possuem informações adicionais -** perto dos tópicos das melhores práticas, você encontrará o link **🔗Leia Mais** que irá apresentar exemplos de códigos, citações de blogs selecionados e mais informações.
 
-<br/><br/><br/>
+<br/><br/>
 
 ## Índice
 
 1.  [Práticas de Estrutura de Projeto (5)](#1-práticas-de-estrutura-de-projeto)
 2.  [Práticas de Tratamento de Erros (11) ](#2-práticas-de-tratamento-de-erros)
 3.  [Práticas de Estilo de Código (12) ](#3-práticas-de-estilo-de-código)
-4.  [Práticas de Testes e Qualidade Geral (8) ](#4-práticas-de-testes-e-qualidade-geral)
-5.  [Práticas de Produção (17) ](#5-práticas-de-produção)
-6.  :star: Novo: [Práticas de Segurança (23)](#6-práticas-de-segurança)
-7.  Práticas de Performance ([em breve](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
+4.  [Práticas de Testes e Qualidade Geral (10) ](#4-práticas-de-testes-e-qualidade-geral)
+5.  [Práticas de Produção (18) ](#5-práticas-de-produção)
+6.  [Práticas de Segurança (24)](#6-práticas-de-segurança)
+7.  [Práticas de Performance (1) (Em Progresso ✍️)](#7-práticas-de-performance)
 
-<br/><br/><br/>
+<br/><br/>
 
 # `1. Práticas de Estrutura de Projeto`
 
@@ -96,9 +108,7 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 <br/><br/><br/>
 
-# <p align="right"><a href="#índice">⬆ Voltar ao topo</a></p>
-
-<p align="right"><a href="#table-of-contents">⬆ Voltar ao topo</a></p>
+<p align="right"><a href="#índice">⬆ Voltar ao topo</a></p>
 
 # `2. Práticas de Tratamento de Erros`
 
@@ -212,7 +222,7 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Voltar ao topo</a></p>
+<p align="right"><a href="#índice">⬆ Voltar ao topo</a></p>
 
 # `3. Práticas de Estilo de Código`
 
@@ -262,6 +272,22 @@ function someFunction()
 **TL;DR:** Embora não seja unanimidade, ainda é recomendado colocar ponto e vírgula no fim de cada declaração. Isto fará que seu código seja mais legível e explícito para outros desenvolvedores.
 
 **Caso contrário:** Como visto em seções anteriores, interpretadores do JavaScript adicionam ponto e vírgula automaticamente no final das declarações caso não exista, o que pode levar a resultados não desejados.
+
+### Code example
+
+```javascript
+// Do
+const count = 2;
+(function doSomething() {
+  // do something amazing
+}());
+
+// Avoid — throws exception
+const count = 2 // it tries to run 2(), but 2 is not a function
+(function doSomething() {
+  // do something amazing
+}())
+```
 
 <br/><br/>
 
@@ -383,7 +409,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Voltar ao topo</a></p>
+<p align="right"><a href="#índice">⬆ Voltar ao topo</a></p>
 
 # `4. Práticas de Testes e Qualidade Geral`
 
@@ -395,7 +421,17 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.2 Detecte problemas de código com um linter
+## ![✔] 4.2 Include 3 parts in each test name
+
+**TL;DR:** Make the test speak at the requirements level so it's self explanatory also to QA engineers and developers who are not familiar with the code internals. State in the test name what is being tested (unit under test), under what circumstances and what is the expected result
+
+**Otherwise:** A deployment just failed, a test named “Add product” failed. Does this tell you what exactly is malfunctioning?
+
+🔗 [**Read More: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
+
+<br/><br/>
+
+## ![✔] 4.3 Detecte problemas de código com um linter
 
 **TL;DR:** Use um code linter para checar a qualidade básica e detectar antipadrões antecipadamente. Rode-o antes de qualquer teste e adicione-o como um pre-commit git-hook para minimizar o tempo necessário para revisar e corrigir qualquer problema. Veja também [Seção 3](https://github.com/i0natan/nodebestpractices#3-code-style-practices) no Prática de Estilo de Código.
 
@@ -403,7 +439,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.3 Escolha cuidadosamente sua plataforma de Integração Contínua - CI (Jenkins vs CircleCI vs Travis vs Resto do mundo)
+## ![✔] 4.4 Escolha cuidadosamente sua plataforma de Integração Contínua - CI (Jenkins vs CircleCI vs Travis vs Resto do mundo)
 
 **TL;DR:** Sua plataforma de integração contínua (CICD) irá hospedar todas as ferramentas de qualidade (por exemplo, teste, lint), então ela deve vir com um ecosistema de plugins arrebatador. O [Jenkins](https://jenkins.io/) costumava ser o padrão de muitos projetos, pois tem a maior comunidade, juntamente com uma poderosa plataforma, ao preço de configuração complexa que exige uma curva de aprendizado íngreme. Atualmente, ficou bem mais fácil para configurar uma solução de CI usando ferramentas SaaS como [CircleCI](https://circleci.com) e outras. Essas ferramentas permitem a criação de um pipeline de CI flexível sem o peso de gerenciar toda a infraestrutura. Eventualmente, é um perde e ganha entre robustez e velocidade - escolha seu lado com cuidado!
 
@@ -413,7 +449,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.4 Inspencione constantemente por dependências vulneráveis
+## ![✔] 4.5 Inspencione constantemente por dependências vulneráveis
 
 **TL;DR:** Até mesmo as dependências mais confiáveis, como o Express, têm vulnerabilidades conhecidas. Isso pode ser facilmente contornado usando ferramentas comunitárias e comerciais como 🔗 [nsp](https://github.com/nodesecurity/nsp) que pode ser invocado a partir do seu CI em cada build.
 
@@ -421,7 +457,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.5 Marque seus testes
+## ![✔] 4.6 Marque seus testes
 
 **TL;DR:** Diferentes testes devem rodar em diferentes cenários: testes de rápidos, sem IO, devem ser executados quando um desenvolvedor salva ou faz commit em um arquivo, testes completos de ponta a ponta geralmente são executados quando uma nova solicitação de request é enviada, etc. Isso pode ser conseguido através da marcação de testes com palavras-chave como #cold #api #sanity. Assim você pode invocar o subconjunto desejado. Por exemplo, é desta forma que você invocaria apenas o grupo de sanity test usando o [Mocha](https://mochajs.org/): mocha --grep 'sanity'
 
@@ -429,7 +465,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.6 Verifique a cobertura de seu teste, isso te ajuda a identificar padrões incorretos de teste
+## ![✔] 4.7 Verifique a cobertura de seu teste, isso te ajuda a identificar padrões incorretos de teste
 
 **TL;DR:** Ferramentas de cobertura de código como [Istanbul/NYC ](https://github.com/gotwarlost/istanbul), são ótimas por 3 motivos: elas são gratuitas (nenhum esforço é necessário para beneficiar esses relatórios), elas ajuda a identificar diminuição na cobertura de testes, e por último mas não menos importante, ela destacam a incompatibilidade de testes: olhando relatórios coloridos de cobertura de código, você pode notar, por exemplo, áreas de código que nunca são testadas como cláusulas catch (o que significa que os testes só invocam os caminhos felizes e não como o aplicativo se comporta em erros). Configure-o para falhas se a cobertura estiver abaixo de um certo limite.
 
@@ -437,7 +473,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.7 Inspecione pacotes desatualizados
+## ![✔] 4.8 Inspecione pacotes desatualizados
 
 **TL;DR:** Use sua ferramenta preferida (por exemplo, 'npm outdated' ou [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) para detectar pacotes instalados que estão desatualizados, injetar essa verificação em seu pipeline de CI e até mesmo fazer uma falha grave em um cenário grave. Por exemplo, um cenário grave pode ser quando um pacote instalado esteja há 5 commits atrás (por exemplo, a versão local é 1.3.1 e a versão no repositório é 1.3.8) ou está marcada como descontinuada pelo autor - mate o build e impeça a implantação desta versão.
 
@@ -445,7 +481,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.8 Use docker-compose para testes e2e
+## ![✔] 4.9 Use docker-compose para testes e2e
 
 **TL;DR:** Teste de ponta a ponta (end to end, ou e2e), que inclui dados ativos, costumava ser o elo mais fraco do processo de CI, já que depende de vários serviços pesados como o banco de dados. O docker-compose deixa isso mamão com açúcar, criando um ambiente de produção usando um arquivo de texto simples e comandos fáceis. Isto permite criar todos os serviços dependentes, banco de dados e rede isolada para teste e2e. Por último mas não menos importante, ele pode manter um ambiente sem estado que é invocado antes de cada suíte de testes e é encerrado logo após.
 
@@ -453,7 +489,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.9 Refatore regularmente usando ferramentas de análise estática
+## ![✔] 4.10 Refatore regularmente usando ferramentas de análise estática
 
 **TL;DR:** O uso de ferramentas de análise estática ajuda fornecendo maneiras objetivas de melhorar a qualidade do código e manter seu código sustentável. Você pode adicionar ferramentas de análise estática para seu build de Integração Contínua (CI) falhar quando encontre code smells. Seus principais pontos de vantagem sobre o linting são a abilidade de inspecionar a qualidade no contexto de múltiplos arquivos (por exemplo, detectar duplicidades), realizar análises avançadas (por exemplo, complexidade de código), e acompanhar histórico e progresso de problemas de código. Dois dexemplos de ferramentas que podem ser utilizadas são [Sonarqube](https://www.sonarqube.org/) (mais de 2.600 [stars](https://github.com/SonarSource/sonarqube)) e [Code Climate](https://codeclimate.com/) (mais de 1.500 [stars](https://github.com/codeclimate/codeclimate)).
 
@@ -463,7 +499,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Voltar a topo</a></p>
+<p align="right"><a href="#índice">⬆ Voltar ao topo</a></p>
 
 # `5. Boas Práticas de Produção`
 
@@ -633,6 +669,8 @@ Todas as declarações acima false se feitas com `===`.
 
 🔗 [**Leia Mais: Use uma versão LTS do Node.js**](/sections/production/LTSrelease.md)
 
+<br/><br/>
+
 ## ![✔] 5.18. Não direcione logs dentro do aplicativo
 
 **TL;DR:** O destino dos logs não devem ser codificados na unha por desenvolvedores, dentro do código da aplicação. Ao invés disso, deve ser definido pelo ambiente de execução no qual a aplicação é executada. Desenvolvedores devem escrever logs para stdout usando um utilitário logger e depois deixar o ambiente de execução (container, servidor, etc) canalizar o fluxo do stdout para o destino apropriado (por exemplo: Splunk, Graylog, ElasticSearch, etc).
@@ -643,7 +681,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Voltar ao topo</a></p>
+<p align="right"><a href="#índice">⬆ Voltar ao topo</a></p>
 
 # `6. Boas Práticas em Segurança`
 
@@ -931,7 +969,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#índice">⬆ Voltar ao topo</a></p>
 
 # `7. Boas Práticas em Performance`
 
@@ -948,21 +986,11 @@ Tenha em mente que, com a introdução do novo motor V8 juntamente com os novos 
 
 <br/><br/><br/>
 
-# `Práticas de API`
-
-## Nossos colaboradores estão trabalhando nesta seção. Quer se juntar a nós?
-
-# `Práticas de Performance`
-
-## Nossos colaboradores estão trabalhando nesta seção. Quer se juntar a nós?
-
-<br/><br/><br/>
-
 # Feitos
 
 Para manter este guia e deixá-lo atualizado, estamos constantemente atualizando e aprimorando as diretrizes e as práticas recomendadas com a ajuda da comunidade. Você pode acompanhar nossos [feitos](https://github.com/i0natan/nodebestpractices/milestones) e se juntar aos grupos de trabalho, caso queira contribuir com este projeto.
 
-<br/><br/>
+<br/>
 
 ## Traduções
 
@@ -970,6 +998,7 @@ Todas as traduções são contribuições da comunidade. Nós ficaremos felizes 
 
 ### Traduções concluídas
 
+- ![BR](/assets/flags/BR.png) [Português Brasileiro](/README.brazilian-portuguese.md) - Cortesia de [Marcelo Melo](https://github.com/marcelosdm)
 - ![CN](/assets/flags/CN.png) [Chinês](README.chinese.md) - Cortesia de [Matt Jin](https://github.com/mattjin)
 
 ### Traduções em andamento
@@ -980,33 +1009,69 @@ Todas as traduções são contribuições da comunidade. Nós ficaremos felizes 
 - ![RU](/assets/flags/RU.png) [Russo](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/105))
 - ![ES](/assets/flags/ES.png) [Espanhol](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/95))
 - ![TR](/assets/flags/TR.png) Turco ([Discussão](https://github.com/i0natan/nodebestpractices/issues/139))
-- ![BR](/assets/flags/BR.png) Português Brasileiro ([Discussão](https://github.com/i0natan/nodebestpractices/issues/223))
 
-<br/><br/><br/>
+<br/><br/>
 
-# Colaboradores
+## Steering Committee
 
-## `Yoni Goldberg`
+Meet the steering committee members - the people who work together to provide guidance and future direction to the project. In addition, each member of the committee leads a project tracked under our [Github projects](https://github.com/i0natan/nodebestpractices/projects).
+
+<img align="left" width="100" height="100" src="assets/images/members/yoni.png">
+
+[Yoni Goldberg](https://github.com/i0natan)
+<a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
+<a href="https://goldbergyoni.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
 Consultor de Node.js independente, que trabalha com clientes nos EUA, Europa e Israel, na criação de aplicações Node dimensionáveis em grande escala. Muitas das melhores práticas acima foram publicadas primeiro em um post em seu blog em [goldbergyoni.com](https://goldbergyoni.com). Encontre-o como @goldbergyoni ou me@goldbergyoni.com
 
-## `Ido Richter`
+<br/>
 
-👨‍💻 Engenheiro de software, 🌐 web developer, 🤖 entusiasta de emojis
+<img align="left" width="100" height="100" src="assets/images/members/bruno.png">
 
-## `Refael Ackermann` [@refack](https://github.com/refack) &lt;refack@gmail.com&gt; (he/him)
-
-Colaborador do Core do Node.js Core, vem "nodeando" desde a versão 0.4 e "nodeou" em vários sites em produção. Fundou o repositório `node4good`, dos projetos [`lodash-contrib`](https://github.com/node4good/lodash-contrib), [`formage`](https://github.com/node4good/formage), e [`asynctrace`](https://github.com/node4good/asynctrace). Também o `refack` no freenode, Twitter, GitHub, GMail e muitas outras plataformas. Aberto à mensagens inbox, feliz em ajudar.
-
-## `Bruno Scheufler`
+[Bruno Scheufler](https://github.com/BrunoScheufler)
+<a href="https://brunoscheufler.com/"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
 💻 full-stack web developer e entusiasta de Node.js
 
-## `Kyle Martin` [@js-kyle](https://github.com/js-kyle)
+<br/>
 
-Full Stack Developer da Nova Zelândia, interessado em arquitetar e desenvolver aplicações Node.js para rodar em escala global. Um grande contribuidor para software de código aberto, incluindo o Core do Node.js
+<img align="left" width="100" height="100" src="assets/images/members/kyle.png">
 
-<br/><br/><br/>
+[Kyle Martin](https://github.com/js-kyle)
+<a href="https://twitter.com/kylemartin_93"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
+<a href="https://www.linkedin.com/in/kylemartinnz"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
+
+Full Stack Developer e Engenheiro de Confiabilidade de Sites com sede na Nova Zelândia, interessados ​​em segurança de aplicativos da Web, e arquitetando e construindo aplicativos Node.js para executar em escala global.
+<br/>
+
+<img align="left" width="100" height="100" src="assets/images/members/sagir.png">
+
+[Sagir Khan](https://github.com/sagirk)
+<a href="https://twitter.com/sagir_k"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
+<a href="https://sagirk.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
+<a href="https://linkedin.com/in/sagirk"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
+
+Deep specialist in JavaScript and its ecosystem — React, Node.js, MongoDB, pretty much anything that involves using JavaScript/JSON in any layer of the system — building products using the web platform for the world’s most recognized brands. Individual Member of the Node.js Foundation, collaborating on the Community Committee's Website Redesign Initiative.
+
+<br/>
+
+## Colaboradores
+
+Thank you to all our collaborators! 🙏
+
+Our collaborators are members who are contributing to the repository on a reguar basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in helping us guide thousands of people to craft better Node.js applications, please read our [contributor guidelines](/.operations/CONTRIBUTING.md) 🎉
+
+| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
+| :--: | :--: |
+| [Ido Richter (Founder)](https://github.com/idori) | [Keith Holliday](https://github.com/TheHollidayInn) |
+
+### Past collaborators
+
+| <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"></a> |
+| :--: |
+| [Refael Ackermann](https://github.com/refack) |
+
+<br/>
 
 # Notas de Agradecimento
 
@@ -1058,11 +1123,37 @@ Este repositório é mantido atualizado graças à ajuda da comunidade. Nós apr
 🌻 [Sagir Khan](https://github.com/sagirk),
 🌻 [Jason Kim](https://github.com/serv),
 🌻 [Mitja O.](https://github.com/Max101),
-🌻 [Sandro Miguel Marques](https://github.com/SandroMiguel)
+🌻 [Sandro Miguel Marques](https://github.com/SandroMiguel),
+🌻 [Gabe Kuslansky](https://github.com/GabeKuslansky),
+🌻 [Ron Gross](https://github.com/ripper234),
+🌻 [Valeri Karpov](https://github.com/vkarpov15)
+🌻 [Sergio](https://github.com/imsergiobernal),
+🌻 [Duarte Mendes](https://github.com/duartemendes),
+🌻 [Nikola Telkedzhiev](https://github.com/ntelkedzhiev),
+🌻 [Vitor Godoy](https://github.com/vitordagamagodoy),
+🌻 [Manish Saraan](https://github.com/manishsaraan),
+🌻 [Sangbeom Han](https://github.com/uronly14me),
+🌻 [blackmatch](https://github.com/blackmatch),
+🌻 [Joe Reeve](https://github.com/ISNIT0),
+🌻 [Marcelo Melo](https://github.com/marcelosdm),
+🌻 [Ryan Busby](https://github.com/BusbyActual),
+🌻 [Iman Mohamadi](https://github.com/ImanMh),
+🌻 [Remek Ambroziak](https://github.com/reod),
+🌻 [Sergii Paryzhskyi](https://github.com/HeeL),
+🌻 [Kapil Patel](https://github.com/kapilepatel),
+🌻 [迷渡](https://github.com/justjavac),
+🌻 [Hozefa](https://github.com/hozefaj),
+🌻 [Ethan](https://github.com/el-ethan),
+🌻 [Sam](https://github.com/milkdeliver),
+🌻 [Arlind](https://github.com/ArlindXh),
+🌻 [Teddy Toussaint](https://github.com/ttous),
+🌻 [Lewis](https://github.com/LewisArdern)
 
-### Estrelas <br/>
+### Estrelas
 
 ⭐ [Kyle Martin](https://github.com/js-kyle)
-⭐ [Keith Holliday](https://github.com/TheHollidayInn)
+⭐ [Keith Holliday](https://github.com/TheHollidayInn),
+⭐ [Corey Cleary](https://github.com/coreyc),
+⭐ [Maximilian Berkmann](https://github.com/Berkmann18)
 
 <br/><br/><br/>
