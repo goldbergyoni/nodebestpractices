@@ -18,16 +18,17 @@
 
 <br/>
 
-Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md) [(![BR](/assets/flags/BR.png)**BR**, ![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
+Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
 
 <br/>
 
 ###### Built and maintained by our [Steering Committee](#steering-committee) and [Collaborators](#collaborators)
 
 # Latest Best Practices and News
-- **New Best Practice:** 4.2: Include 3 parts in each test name - [*From the section "Testing and overall quality"*](https://github.com/i0natan/nodebestpractices#4-testing-and-overall-quality-practices)
 
-- **New Best Practice:** 7.1: Prefer native JS methods over user-land utils like Lodash - [*From the section "Performance"*](https://github.com/i0natan/nodebestpractices#7-performance-best-practices)
+- **New Best Practice:** 4.2: Include 3 parts in each test name - [_From the section "Testing and overall quality"_](https://github.com/i0natan/nodebestpractices#4-testing-and-overall-quality-practices)
+
+- **New Best Practice:** 7.1: Prefer native JS methods over user-land utils like Lodash - [_From the section "Performance"_](https://github.com/i0natan/nodebestpractices#7-performance-best-practices)
 
 - **News updates** - [We kicked-off the performance section, wanna join?](https://github.com/i0natan/nodebestpractices/issues/302)
 
@@ -426,13 +427,11 @@ All statements above will return false if used with `===`
 
 **TL;DR:** Make the test speak at the requirements level so it's self explanatory also to QA engineers and developers who are not familiar with the code internals. State in the test name what is being tested (unit under test), under what circumstances and what is the expected result
 
-
 **Otherwise:** A deployment just failed, a test named “Add product” failed. Does this tell you what exactly is malfunctioning?
 
 🔗 [**Read More: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
 
 <br/><br/>
-
 
 ## ![✔] 4.3 Detect code issues with a linter
 
@@ -1057,7 +1056,7 @@ Deep specialist in JavaScript and its ecosystem — React, Node.js, MongoDB, pre
 
 ## Collaborators
 
-Thank you to all our collaborators! 🙏 
+Thank you to all our collaborators! 🙏
 
 Our collaborators are members who are contributing to the repository on a reguar basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in helping us guide thousands of people to craft better Node.js applications, please read our [contributor guidelines](/.operations/CONTRIBUTING.md) 🎉
 
@@ -1067,7 +1066,7 @@ Our collaborators are members who are contributing to the repository on a reguar
 
 ### Past collaborators
 
- - [Refael Ackermann](https://github.com/refack)
+- [Refael Ackermann](https://github.com/refack)
 
 ## Thank You Notes
 
@@ -1147,5 +1146,3 @@ We appreciate any contribution, from a single word fix to a new best practice. B
 ⭐ [Maximilian Berkmann](https://github.com/Berkmann18)
 
 <br/><br/><br/>
-
-
