@@ -52,9 +52,9 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 2.  [Práticas de Tratamento de Erros (11) ](#2-práticas-de-tratamento-de-erros)
 3.  [Práticas de Estilo de Código (12) ](#3-práticas-de-estilo-de-código)
 4.  [Práticas de Testes e Qualidade Geral (10) ](#4-práticas-de-testes-e-qualidade-geral)
-5.  [Práticas de Produção (18) ](#5-práticas-de-produção)
-6.  [Práticas de Segurança (24)](#6-práticas-de-segurança)
-7.  [Práticas de Performance (1) (Em Progresso ✍️)](#7-práticas-de-performance)
+5.  [Práticas de Produção (18) ](#5-boas-práticas-de-produção)
+6.  [Práticas de Segurança (24)](#6-boas-práticas-em-segurança)
+7.  [Práticas de Performance (1) (Em Progresso ✍️)](#7-boas-práticas-em-performance)
 
 <br/><br/>
 
