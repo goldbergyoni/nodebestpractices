@@ -18,21 +18,21 @@
 
 <br/>
 
-Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
+Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
 
 <br/>
 
-###### Built and maintained by our [Steering Committee](#steering-committee) and [Collaborators](#collaborators)
+###### Construído e mantido pelo nosso [Comitê Diretivo](#steering-committee) e [Colaboradores](#collaborators)
 
-# Latest Best Practices and News
+# Últimas Boas Práticas e Notícias
 
-- **New translation:** ![BR](/assets/flags/BR.png) [Brazilian Portuguese](/README.brazilian-portuguese.md) available now, courtesy of [Marcelo Melo](https://github.com/marcelosdm)! ❤️
+- **Nova tradução:** ![BR](/assets/flags/BR.png) [Português Brasileiro](/README.brazilian-portuguese.md) disponível agora, cortesia de [Marcelo Melo](https://github.com/marcelosdm)! ❤️
 
-- **New best practice:** 4.2: Include 3 parts in each test name - [_From the section "Testing and overall quality"_](https://github.com/i0natan/nodebestpractices#4-testing-and-overall-quality-practices)
+- **Nova prática recomendada:** 4.2: Inclua 3 partes em cada nome de teste - [_Da seção "Teste e qualidade geral"_](https://github.com/i0natan/nodebestpractices#4-testing-and-overall-quality-practices)
 
-- **New best practice:** 7.1: Prefer native JS methods over user-land utils like Lodash - [_From the section "Performance"_](https://github.com/i0natan/nodebestpractices#7-performance-best-practices)
+- **Nova prática recomendada:** 7.1: Prefira métodos JS nativos ao invés de utilitários de usuário, como o Lodash - [Da seção "Performance"_](https://github.com/i0natan/nodebestpractices#7-performance-best-practices)
 
-- **News update:** [We kicked-off the performance section, wanna join?](https://github.com/i0natan/nodebestpractices/issues/302)
+- **Novidades:** [Demos o pontapé inicial na seção de performance, quer fazer parte?](https://github.com/i0natan/nodebestpractices/issues/302)
 
 <br/><br/>
 
