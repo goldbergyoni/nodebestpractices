@@ -423,13 +423,13 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.2 Include 3 parts in each test name
+## ![✔] 4.2 Inclua 3 partes em cada nome de teste
 
-**TL;DR:** Make the test speak at the requirements level so it's self explanatory also to QA engineers and developers who are not familiar with the code internals. State in the test name what is being tested (unit under test), under what circumstances and what is the expected result
+**TL;DR:** Faça o teste falar no nível de requisitos, de modo que seja autoexplicativo para engenheiros de garantia de qualidade e desenvolvedores que não estão familiarizados com o código. Indicar no nome do teste o que está sendo testado (unidade em teste), em que circunstâncias e qual é o resultado esperado.
 
-**Otherwise:** A deployment just failed, a test named “Add product” failed. Does this tell you what exactly is malfunctioning?
+**Caso contrário:** Uma implantação falhou, um teste chamado "Adicionar produto" falhou. Isso lhe diz exatamente o que está errado?
 
-🔗 [**Read More: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
+🔗 [**Leia Mais: Inclua 3 partes em cada nome de teste**](/sections/testingandquality/3-parts-in-name.md)
 
 <br/><br/>
 
