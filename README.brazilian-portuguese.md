@@ -24,13 +24,13 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 ###### Construído e mantido pelo nosso [Comitê Diretivo](#steering-committee) e [Colaboradores](#collaborators)
 
-# Últimas Boas Práticas e Notícias
+# Novas Práticas e Notícias
 
 - **Nova tradução:** ![BR](/assets/flags/BR.png) [Português Brasileiro](/README.brazilian-portuguese.md) disponível agora, cortesia de [Marcelo Melo](https://github.com/marcelosdm)! ❤️
 
 - **Nova prática recomendada:** 4.2: Inclua 3 partes em cada nome de teste - [_Da seção "Teste e qualidade geral"_](https://github.com/i0natan/nodebestpractices#4-testing-and-overall-quality-practices)
 
-- **Nova prática recomendada:** 7.1: Prefira métodos JS nativos ao invés de utilitários de usuário, como o Lodash - [Da seção "Performance"_](https://github.com/i0natan/nodebestpractices#7-performance-best-practices)
+- **Nova prática recomendada:** 7.1: Prefira métodos JS nativos ao invés de utilitários de usuário, como o Lodash - [Da seção "Performance"\_](https://github.com/i0natan/nodebestpractices#7-performance-best-practices)
 
 - **Novidades:** [Demos o pontapé inicial na seção de performance, quer fazer parte?](https://github.com/i0natan/nodebestpractices/issues/302)
 
@@ -257,8 +257,7 @@ function someFunction() {
 }
 
 // Avoid
-function someFunction()
-{
+function someFunction() {
   // code block
 }
 ```
@@ -282,13 +281,15 @@ function someFunction()
 const count = 2;
 (function doSomething() {
   // do something amazing
-}());
+})();
 
 // Avoid — throws exception
-const count = 2 // it tries to run 2(), but 2 is not a function
-(function doSomething() {
-  // do something amazing
-}())
+const count = 2(
+  // it tries to run 2(), but 2 is not a function
+  (function doSomething() {
+    // do something amazing
+  })()
+);
 ```
 
 <br/><br/>
@@ -373,18 +374,18 @@ module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolve
 ### Exemplo de Código
 
 ```javascript
-'' == '0'           // false
-0 == ''             // true
-0 == '0'            // true
+'' == '0'; // false
+0 == ''; // true
+0 == '0'; // true
 
-false == 'false'    // false
-false == '0'        // true
+false == 'false'; // false
+false == '0'; // true
 
-false == undefined  // false
-false == null       // false
-null == undefined   // true
+false == undefined; // false
+false == null; // false
+null == undefined; // true
 
-' \t\r\n ' == 0     // true
+' \t\r\n ' == 0; // true
 ```
 
 Todas as declarações acima false se feitas com `===`.
@@ -1064,14 +1065,14 @@ Thank you to all our collaborators! 🙏
 Our collaborators are members who are contributing to the repository on a reguar basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in helping us guide thousands of people to craft better Node.js applications, please read our [contributor guidelines](/.operations/CONTRIBUTING.md) 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
-| :--: | :--: |
-| [Ido Richter (Founder)](https://github.com/idori) | [Keith Holliday](https://github.com/TheHollidayInn) |
+| :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
+|                                    [Ido Richter (Founder)](https://github.com/idori)                                    |                                        [Keith Holliday](https://github.com/TheHollidayInn)                                         |
 
 ### Past collaborators
 
 | <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"></a> |
-| :--: |
-| [Refael Ackermann](https://github.com/refack) |
+| :-------------------------------------------------------------------------------------------------------------------------: |
+|                                        [Refael Ackermann](https://github.com/refack)                                        |
 
 <br/>
 
