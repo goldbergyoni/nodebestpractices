@@ -257,7 +257,8 @@ function someFunction() {
 }
 
 // Avoid
-function someFunction() {
+function someFunction()
+{
   // code block
 }
 ```
@@ -284,14 +285,11 @@ const count = 2;
 })();
 
 // Avoid — throws exception
-const count = 2(
-  // it tries to run 2(), but 2 is not a function
-  (function doSomething() {
-    // do something amazing
-  })()
-);
+const count = 2 // it tries to run 2(), but 2 is not a function
+(function doSomething() {
+  // do something amazing
+}())
 ```
-
 <br/><br/>
 
 ## ![✔] 3.5 Nomeie Suas Funções
@@ -374,18 +372,18 @@ module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolve
 ### Exemplo de Código
 
 ```javascript
-'' == '0'; // false
-0 == ''; // true
-0 == '0'; // true
+'' == '0'           // false
+0 == ''             // true
+0 == '0'            // true
 
-false == 'false'; // false
-false == '0'; // true
+false == 'false'    // false
+false == '0'        // true
 
-false == undefined; // false
-false == null; // false
-null == undefined; // true
+false == undefined  // false
+false == null       // false
+null == undefined   // true
 
-' \t\r\n ' == 0; // true
+' \t\r\n ' == 0     // true
 ```
 
 Todas as declarações acima false se feitas com `===`.
@@ -1065,16 +1063,17 @@ Thank you to all our collaborators! 🙏
 Our collaborators are members who are contributing to the repository on a reguar basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in helping us guide thousands of people to craft better Node.js applications, please read our [contributor guidelines](/.operations/CONTRIBUTING.md) 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
-| :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
-|                                    [Ido Richter (Founder)](https://github.com/idori)                                    |                                        [Keith Holliday](https://github.com/TheHollidayInn)                                         |
+| :--: | :--: |
+| [Ido Richter (Founder)](https://github.com/idori) | [Keith Holliday](https://github.com/TheHollidayInn) |
 
 ### Past collaborators
 
 | <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"></a> |
-| :-------------------------------------------------------------------------------------------------------------------------: |
-|                                        [Refael Ackermann](https://github.com/refack)                                        |
+| :--: |
+| [Refael Ackermann](https://github.com/refack) |
 
 <br/>
+
 
 # Notas de Agradecimento
 
