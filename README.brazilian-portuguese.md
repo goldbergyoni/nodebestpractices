@@ -120,7 +120,7 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 **Caso contrário:** O estilo de callback do Node.js, function(err, response), é um caminho promissor para um código insustentável devido à combinação de manipulação de erro com código casual, aninhamento excessivo e padrões de codificação inadequados.
 
-🔗 [**Leia Mais: evitando callbacks**](/sections/errorhandling/asyncerrorhandling.md)
+🔗 [**Leia Mais: evitando callbacks**](/sections/errorhandling/asyncerrorhandling.brazilian-portuguese.md)
 
 <br/><br/>
 
