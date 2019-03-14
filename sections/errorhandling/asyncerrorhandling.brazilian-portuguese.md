@@ -20,14 +20,14 @@ doWork()
 ```javascript
 getData(someParameter, function(err, result) {
     if(err !== null) {
-        // do something like calling the given callback function and pass the error
+        // fazer algo como chamar a função de retorno de chamada e passar o erro
         getMoreData(a, function(err, result) {
             if(err !== null) {
-                // do something like calling the given callback function and pass the error
+                // fazer algo como chamar a função de retorno de chamada e passar o erro
                 getMoreData(b, function(c) {
                     getMoreData(d, function(e) {
                         if(err !== null ) {
-                            // you get the idea? 
+                            // Você entendeu a ideia? 
                         }
                     })
                 });
