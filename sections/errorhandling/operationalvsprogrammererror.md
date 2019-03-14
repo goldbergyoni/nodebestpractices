@@ -44,7 +44,7 @@ From the blog, debugable.com ranked 3 for the keywords “Node.js uncaught excep
 
  > …So, unless you really know what you are doing, you should perform a graceful restart of your service after receiving an “uncaughtException” exception event. Otherwise, you risk the state of your application, or that of 3rd party libraries to become inconsistent, leading to all kinds of crazy bugs…
 
-### Blog Quote: "Blog Quote: There are three schools of thoughts on error handling"
+### Blog Quote: "There are three schools of thoughts on error handling"
 
 From the blog: JS Recipes
 
