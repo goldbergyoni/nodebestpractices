@@ -9,7 +9,7 @@ A natureza permissiva do JS junto com sua variedade de opções de fluxo de cód
 ```javascript
 // jogando um Error de uma função típica, seja síncrona ou assíncrona
 if(!productToAdd)
-    throw new Error("How can I add new product when no value provided?");
+    throw new Error("Como posso adicionar um novo produto quando nenhum valor é fornecido?");
 
 // 'jogando' um Error de um EventEmitter
 const myEmitter = new MyEmitter();
@@ -20,7 +20,7 @@ const addProduct = async (productToAdd) => {
   try {
     const existingProduct = await DAL.getProduct(productToAdd.id);
     if (existingProduct !== null) {
-      throw new Error("Product already exists!");
+      throw new Error("O produto já existe!");
     }
   } catch (err) {
     // ...
@@ -33,7 +33,7 @@ const addProduct = async (productToAdd) => {
 ```javascript
 // lançar uma string não possui informações de rastreamento de stack e outras propriedades de dados importantes
 if(!productToAdd)
-    throw ("How can I add new product when no value provided?");
+    throw ("Como posso adicionar um novo produto quando nenhum valor é fornecido?");
 ```
 
 ### Exemplo de código - fazendo isso ainda melhor
@@ -53,7 +53,7 @@ module.exports.AppError = AppError;
 
 // cliente jogando uma exceção
 if(user == null)
-    throw new AppError(commonErrors.resourceNotFound, commonHTTPErrors.notFound, "further explanation", true)
+    throw new AppError(commonErrors.resourceNotFound, commonHTTPErrors.notFound, "mais explicações", true)
 ```
 
 ### Citação de Blog: "Não vejo o valor em ter vários tipos diferentes"
