@@ -8,7 +8,7 @@ Distinguir os dois tipos de erros a seguir minimizará o tempo de inatividade do
 
 ```javascript
 // marcando um objeto de erro como operacional 
-const myError = new Error("How can I add new product when no value provided?");
+const myError = new Error("Como posso adicionar um novo produto quando nenhum valor é fornecido?");
 myError.isOperational = true;
 
 // ou se você estiver usando alguma fábrica centralizada de erros (veja outros exemplos no marcador "Use somente o objeto Error interno")
@@ -22,7 +22,7 @@ class AppError {
   }
 };
 
-throw new AppError(errorManagement.commonErrors.InvalidInput, "Describe here what happened", true);
+throw new AppError(errorManagement.commonErrors.InvalidInput, "Descreva aqui o que aconteceu", true);
 
 ```
 
