@@ -67,7 +67,6 @@ From the blog, Ben Nadel ranked 5 for the keywords “Node.js error object”
 From the blog, devthought.com ranked 6 for the keywords “Node.js error object”
 
 > …passing a string instead of an error results in reduced interoperability between modules. It breaks contracts with APIs that might be performing `instanceof` Error checks, or that want to know more about the error. Error objects, as we’ll see, have very interesting properties in modern JavaScript engines besides holding the message passed to the constructor…
-Blog Quote: “All JavaScript and System errors raised by Node.js inherit from Error”
 
 ### Blog Quote: "Inheriting from Error doesn’t add too much value"
 
