@@ -120,7 +120,7 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 **Caso contrário:** O estilo de callback do Node.js, function(err, response), é um caminho promissor para um código insustentável devido à combinação de manipulação de erro com código casual, aninhamento excessivo e padrões de codificação inadequados.
 
-🔗 [**Leia Mais: evitando callbacks**](/sections/errorhandling/asyncerrorhandling.md)
+🔗 [**Leia Mais: evitando callbacks**](/sections/errorhandling/asyncerrorhandling.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -130,7 +130,7 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 **Caso contrário:** Ao invocar algum componente, sendo incerto qual tipo de erro irá retornar - isso faz com que o tratamento de erros seja muito mais difícil. Até pior, usar tipos personalizados para descrever erros pode levar à perda de informações de erros críticos, como o stack trace!
 
-🔗 [**Leia Mais: usando o objeto interno de erro**](/sections/errorhandling/useonlythebuiltinerror.md)
+🔗 [**Leia Mais: usando o objeto interno de erro**](/sections/errorhandling/useonlythebuiltinerror.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -140,17 +140,17 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 **Caso contrário:** Você pode sempre reiniciar o aplicativo quando um erro aparecer, mas por que derrubar aproximadamente 5000 usuários que estavam online por causa de um pequeno erro operacional previsto? O contrário também não é ideal - manter a aplicação rodando quando um problema desconhecido (erro de programação) ocorreu, pode levar para um comportamento não esperado. Diferenciá-los, permite agir com tato e aplicar uma abordagem equilibrada baseada no dado contexto.
 
-🔗 [**Leia Mais: erros operacionais vs erros de programação**](/sections/errorhandling/operationalvsprogrammererror.md)
+🔗 [**Leia Mais: erros operacionais vs erros de programação**](/sections/errorhandling/operationalvsprogrammererror.brazilian-portuguese.md)
 
 <br/><br/>
 
 ## ![✔] 2.4 Trate erros de forma centralizada, não dentro de um middleware do Express
 
-**TL;DR:** A lógica de tratamento de erros, bem como email para administrador e loggin, deve ser encapsulada em um objeto dedicado e centralizado que todos os endpoints (por exemplo, middleware do Express, cron jobs, testes unitários) chamem quando um erro é recebido.
+**TL;DR:** A lógica de tratamento de erros, bem como email para administrador e registros (logs), deve ser encapsulada em um objeto dedicado e centralizado que todos os endpoints (por exemplo, middleware do Express, cron jobs, testes unitários) chamem quando um erro é recebido.
 
 **Caso contrário:** Não tratar os erros em um mesmo lugar irá levar à duplicidade de código, e provavelmente, a erros tratados incorretamente.
 
-🔗 [**Leia Mais: tratando erros de forma centralizada**](/sections/errorhandling/centralizedhandling.md)
+🔗 [**Leia Mais: tratando erros de forma centralizada**](/sections/errorhandling/centralizedhandling.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -160,7 +160,7 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 **Caso contrário:** Um cliente de uma API pode decidir travar e reiniciar, apenas pelo motivo de ter recebido de volta um erro que não conseguiu entender. Nota: o visitante de sua API pode ser você (muito comum em um ambiente de microsserviço).
 
-🔗 [**Leia Mais: documentando erros no Swagger**](/sections/errorhandling/documentingusingswagger.md)
+🔗 [**Leia Mais: documentando erros no Swagger**](/sections/errorhandling/documentingusingswagger.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -170,7 +170,7 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 **Caso contrário:** Quando uma exceção desconhecida é lançada, algum objeto pode estar com defeito (por exemplo, um emissor de evento que é usado globalmente e não dispara mais eventos devido a alguma falha interna) e todas as requisições futuras podem falhar ou se comportar loucamente.
 
-🔗 [**Leia Mais: finalizando o processo**](/sections/errorhandling/shuttingtheprocess.md)
+🔗 [**Leia Mais: finalizando o processo**](/sections/errorhandling/shuttingtheprocess.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -180,7 +180,7 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 **Caso contrário:** Ficar procurando através de console.logs ou manualmente em arquivos de texto confusos sem utilizar ferramentas de consulta ou um visualizador de log decente, pode mantê-lo ocupado até tarde.
 
-🔗 [**Leia Mais: usando um logger maduro**](/sections/errorhandling/usematurelogger.md)
+🔗 [**Leia Mais: usando um logger maduro**](/sections/errorhandling/usematurelogger.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -190,7 +190,7 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 **Caso contrário:** Sem testes, seja automático ou manual, não podemos confiar em nosso código para retornar os erros certos. Sem erros significantes, não há tratamento de erros.
 
-🔗 [**Leia Mais: fluxos de testes de erros**](/sections/errorhandling/testingerrorflows.md)
+🔗 [**Leia Mais: fluxos de testes de erros**](/sections/errorhandling/testingerrorflows.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -200,7 +200,7 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 **Caso contrário:** Você pode gastar muito esforço medindo o desempenho e os tempos de inatividade (downtime) da API. Provavelmente, você nunca saberá quais são suas partes de código mais lentas no cenário real e como elas afetam o UX.
 
-🔗 [**Leia Mais: usando APM**](/sections/errorhandling/apmproducts.md)
+🔗 [**Leia Mais: usando APM**](/sections/errorhandling/apmproducts.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -210,7 +210,7 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 **Caso contrário:** Seus erros serão engolidos e não vão deixar rastros. Nada para se preocupar.
 
-🔗 [**Leia Mais: capturando rejeições de promises não tratadas**](/sections/errorhandling/catchunhandledpromiserejection.md)
+🔗 [**Leia Mais: capturando rejeições de promises não tratadas**](/sections/errorhandling/catchunhandledpromiserejection.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -220,7 +220,7 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 **Caso contrário:** Considere isto: sua função espera receber um “Desconto” como argumento numérico que foi esquecido de passar. Mais adiante, seu código verifica se Desconto!=0 (valor do desconto permitido é maior que zero). Depois, irá permitir que o usuário desfrute de um desconto. Meu Deus, que baita bug. Entendeu?
 
-🔗 [**Leia Mais: falhando rápido**](/sections/errorhandling/failfast.md)
+🔗 [**Leia Mais: falhando rápido**](/sections/errorhandling/failfast.brazilian-portuguese.md)
 
 <br/><br/><br/>
 
