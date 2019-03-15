@@ -36,7 +36,7 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 <br/><br/>
 
-# Bem-vindo! 3 Coisas Que Você Precisa de Saber:
+# Bem-vindo! 3 Coisas Que Você Precisa Saber:
 
 **1. Quando você lê aqui, na verdade você lê alguns dos melhores artigos de Node.js -** este é um resumo e curadoria dos mais bem ranqueados conteúdos sobre as melhores práticas do Node.js.
 
