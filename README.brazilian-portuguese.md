@@ -699,7 +699,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** O que poderia ser um ponto fraco de segurança durante o desenvolvimento, pode se tornar um grande problema no ambiente de produção. Além disso, o projeto pode não seguir práticas de segurança de código consistentes, levando a vulnerabilidades sendo introduzidas ou segredos confidenciais comprometidos em repositórios remotos.
 
-🔗 [**Leia Mais: Regras de Lint**](sections/security/lintrules.md)
+🔗 [**Leia Mais: Regras de Lint**](sections/security/lintrules.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -711,7 +711,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Uma aplicação pode estar sujeita a um ataque resultando em uma queda do serviço, onde usuários reais recebem um serviço degradado ou indisponível.
 
-🔗 [**Leia Mais: Implementando limitador de taxa**](sections/security/limitrequests.md)
+🔗 [**Leia Mais: Implementando limitador de taxa**](sections/security/limitrequests.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -723,7 +723,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** O controle de origem, mesmo para repositórios privados, pode ser tornado público por engano, quando todos os segredos são expostos. O acesso ao controle de origem para uma parte externa fornecerá inadvertidamente acesso a sistemas relacionados (bancos de dados, APIs, serviços, etc.).
 
-🔗 [**Leia Mais: Gerenciamento de segredos**](sections/security/secretmanagement.md)
+🔗 [**Leia Mais: Gerenciamento de segredos**](sections/security/secretmanagement.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -735,7 +735,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** A entrada de usuários não validados pode levar à injeção do operador ao trabalhar com MongoDB para NoSQL e não usar um sistema próprio ou ORM irão permitir facilmente um ataque de SQL injection, criando uma grande vulnerabilidade.
 
-🔗 [**Leia Mais: Prevenção de query injection usando bibliotecas de ORM/ODM**](/sections/security/ormodmusage.md)
+🔗 [**Leia Mais: Prevenção de query injection usando bibliotecas de ORM/ODM**](/sections/security/ormodmusage.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -743,7 +743,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **TL;DR:** Esta é uma coleção de conselhos de segurança que não estão relacionadas diretamente com Node.js - a implementação do Node não é muito diferente comparado a outras linguagens. Clique em “leia mais” para dar uma olhada.
 
-🔗 [**Leia Mais: Boas práticas comuns de segurança**](/sections/security/commonsecuritybestpractices.md)
+🔗 [**Leia Mais: Boas práticas comuns de segurança**](/sections/security/commonsecuritybestpractices.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -755,7 +755,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Invasores podem realizar ataques diretos aos usuários de sua aplicação, levando a grandes vulnerabilidades de segurança.
 
-🔗 [**Leia Mais: Usando headers seguros em sua aplicação**](/sections/security/secureheaders.md)
+🔗 [**Leia Mais: Usando headers seguros em sua aplicação**](/sections/security/secureheaders.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -767,7 +767,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Um invasor pode detectar seu framework web e atacar todas suas vulnerabilidades.
 
-🔗 [**Leia Mais: Segurança de dependências**](/sections/security/dependencysecurity.md)
+🔗 [**Leia Mais: Segurança de dependências**](/sections/security/dependencysecurity.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -779,7 +779,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Senhas ou segredos que são persistidos sem o uso de uma função segura, são vulneráveis a força bruta e ataques de dicionário que levarão eventualmente à sua divulgação.
 
-🔗 [**Leia Mais: Use o Bcrypt**](/sections/security/bcryptpasswords.md)
+🔗 [**Leia Mais: Use o Bcrypt**](/sections/security/bcryptpasswords.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -791,7 +791,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Um invasor pode armazenar um código JavaScript malicioso em seu banco de dados, que será enviado para os clientes.
 
-🔗 [**Leia Mais: Evite saídas**](/sections/security/escape-output.md)
+🔗 [**Leia Mais: Evite saídas**](/sections/security/escape-output.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -803,7 +803,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Sua generosidade e abordagem permissiva aumentam muito a superfície de ataque e incentivam o invasor a experimentar muitas entradas até encontrar alguma combinação para travar a aplicação.
 
-🔗 [**Leia Mais: Valide os esquemas de entrada JSON**](/sections/security/validation.md)
+🔗 [**Leia Mais: Valide os esquemas de entrada JSON**](/sections/security/validation.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -815,7 +815,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Tokens expirados ou extraviados, podem ser usados maliciosamente por terceiros para acessar uma aplicação e para representar o proprietário do token.
 
-🔗 [**Leia Mais: Blacklist de JSON Web Tokens**](/sections/security/expirejwt.md)
+🔗 [**Leia Mais: Blacklist de JSON Web Tokens**](/sections/security/expirejwt.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -827,7 +827,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Um invasor pode emitir tentativas ilimitadas de senha automatizada para obter acesso a contas com privilégios em uma aplicação.
 
-🔗 [**Leia Mais: Limitando a taxa de login**](/sections/security/login-rate-limit.md)
+🔗 [**Leia Mais: Limitando a taxa de login**](/sections/security/login-rate-limit.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -839,7 +839,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Um invasor que consiga executar um script no servidor obtém poder ilimitado sobre a máquina local (por exemplo, alterar o iptable e redirecionar o tráfego para seu servidor).
 
-🔗 [**Leia Mais: Rode o Node.js com um usuário não raiz**](/sections/security/non-root-user.md)
+🔗 [**Leia Mais: Rode o Node.js com um usuário não raiz**](/sections/security/non-root-user.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -851,7 +851,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Sua aplicação terá que lidar com solicitações grandes, incapazes de processar o outro trabalho importante que ele precisa realizar, o que leva a implicações de desempenho e vulnerabilidade em relação a ataques DOS.
 
-🔗 [**Leia Mais: Limite o tamanho dos payloads**](/sections/security/requestpayloadsizelimit.md)
+🔗 [**Leia Mais: Limite o tamanho dos payloads**](/sections/security/requestpayloadsizelimit.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -863,7 +863,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** o código JavaScript malicioso encontra um caminho para um texto passado para o eval ou outras funções de avaliação em tempo real da linguagem JavaScript, e terá acesso total às permissões do JavaScript na página. Essa vulnerabilidade geralmente se manifesta como um ataque XSS.
 
-🔗 [**Leia Mais: Evite instruções eval do JavaScript**](/sections/security/avoideval.md)
+🔗 [**Leia Mais: Evite instruções eval do JavaScript**](/sections/security/avoideval.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -875,7 +875,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Expressões regulares mal escritas podem ser suscetíveis a ataques de Regular Expresssion DoS, que irão bloquear completamente o loop de eventos. Por exemplo, o popular pacote `moment` foi encontrado com vulnerabilidades de uso de RegEx maliciosos em novembro de 2017.
 
-🔗 [**Leia Mais: Evite RegEx maliciosos**](/sections/security/regex.md)
+🔗 [**Leia Mais: Evite RegEx maliciosos**](/sections/security/regex.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -887,7 +887,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** A entrada de usuário mal-intencionada pode encontrar o caminho para um parâmetro usado para require de arquivos adulterados, por exemplo, um arquivo carregado anteriormente no sistema de arquivos ou para acessar arquivos de sistema já existentes.
 
-🔗 [**Leia Mais: Carregamento seguro de módulos**](/sections/security/safemoduleloading.md)
+🔗 [**Leia Mais: Carregamento seguro de módulos**](/sections/security/safemoduleloading.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -899,7 +899,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Um plugin pode atacar através de uma infinita variedade de opções, como loops infinitos, sobrecarga de memória e acesso a variáveis sensíveis do ambiente de processo.
 
-🔗 [**Leia Mais: Rode códigos não seguros em uma sandbox**](/sections/security/sandbox.md)
+🔗 [**Leia Mais: Rode códigos não seguros em uma sandbox**](/sections/security/sandbox.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -911,7 +911,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** O uso ingênuo de processos filhos pode resultar na execução de comandos remotos ou em ataques de shell injection, devido à entrada do usuário mal-intencionado passada para um comando do sistema não-autorizado.
 
-🔗 [**Leia Mais: Tenha cautela ao trabalhar com processos filhos**](/sections/security/childprocesses.md)
+🔗 [**Leia Mais: Tenha cautela ao trabalhar com processos filhos**](/sections/security/childprocesses.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -923,7 +923,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Detalhes confidenciais da aplicação como caminhos e arquivos do servidor, módulos de terceiros em uso e outros workflows internos da aplicação poderiam ser explorados e expostos por um invasor.
 
-🔗 [**Leia Mais: Oculte detalhes de erros dos usuários**](/sections/security/hideerrors.md)
+🔗 [**Leia Mais: Oculte detalhes de erros dos usuários**](/sections/security/hideerrors.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -945,7 +945,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Cookies podem ser enviados através de conexões não seguras, e um hacker pode usar a sessão do usuário para identificar o framework utilizado na aplicação, bem como vulnerabilidades específicas do módulo.
 
-🔗 [**Leia Mais: Segurança de cookies e sessões**](/sections/security/sessions.md)
+🔗 [**Leia Mais: Segurança de cookies e sessões**](/sections/security/sessions.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -967,7 +967,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Se um invasor descobrir que você não está validando informações externas fornecidas pelo usuário, ele poderá explorar essa vulnerabilidade postando links especialmente em fóruns, mídias sociais e outros locais públicos para que os usuários cliquem.
 
-🔗 [**Leia Mais: Impeça redirecionamentos não seguros**](/sections/security/saferedirects.md)
+🔗 [**Leia Mais: Impeça redirecionamentos não seguros**](/sections/security/saferedirects.brazilian-portuguese.md)
 
 <br/><br/><br/>
 
