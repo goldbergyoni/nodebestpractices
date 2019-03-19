@@ -66,7 +66,7 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 **Caso contrário:** Quando desenvolvendo novos recursos, desenvolvedores têm dificuldade para perceber o impacto de suas modificações e temem estragar outros componentes dependentes - deploys se tornam mais lentos e arriscados. Também é considerado mais difícil de escalar quando nenhuma unidade de negócio está separada.
 
-🔗 [**Leia mais: estruture por componentes**](/sections/projectstructre/breakintcomponents.md)
+🔗 [**Leia mais: estruture por componentes**](/sections/projectstructre/breakintcomponents.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -76,7 +76,7 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 **Caso contrário:** Uma aplicação que misture objetos WEB com outras camadas não podem ser acessadas por códigos de teste, CRON jobs e outras chamadas não oriundas do Express.
 
-🔗 [**Leia Mais: seu app em camadas**](/sections/projectstructre/createlayers.md)
+🔗 [**Leia Mais: seu app em camadas**](/sections/projectstructre/createlayers.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -86,7 +86,7 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 **Caso contrário:** Você deverá criar seu próprio ciclo de implantação e dependência.
 
-🔗 [**Leia Mais: estrutura por característica**](/sections/projectstructre/wraputilities.md)
+🔗 [**Leia Mais: estrutura por característica**](/sections/projectstructre/wraputilities.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -96,7 +96,7 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 **Caso contrário:** Sua API será acessível apenas para testes via chamadas HTTP (mais lentos e muito mais difíceis de gerar relatórios de cobertura). Provavelmente não será um grande prazer manter centenas de linhas de código em um único arquivo.
 
-🔗 [**Leia Mais: separe 'app' e 'server' no Express**](/sections/projectstructre/separateexpress.md)
+🔗 [**Leia Mais: separe 'app' e 'server' no Express**](/sections/projectstructre/separateexpress.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -106,7 +106,7 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 
 **Caso contrário:** Deixar de satisfazer qualquer um dos requisitos de configuração simplesmente atrapalhará a equipe de desenvolvimento ou devops. Provavelmente ambas.
 
-🔗 [**Leia Mais: melhores práticas de configuração**](/sections/projectstructre/configguide.md)
+🔗 [**Leia Mais: melhores práticas de configuração**](/sections/projectstructre/configguide.brazilian-portuguese.md)
 
 <br/><br/><br/>
 
@@ -233,6 +233,8 @@ Leia em diferentes linguagens: [![CN](/assets/flags/CN.png)**CN**](/README.chine
 **TL;DR:** O [ESLint](https://eslint.org) é de fato o padrão para verificar possíveis erros e consertar o estilo de código, não apenas para identificar problemas básicos de espaçamento, mas também para detectar antipadrões de código, como desenvolvedores lançando erros sem classificação. Embora o ESLint possa corrigir automaticamente estilos de código, outra ferramentas como o [prettier](https://www.npmjs.com/package/prettier) e o [beautify](https://www.npmjs.com/package/js-beautify) são mais poderosos no quesito correção de formatação e trabalham em conjunto com o ESLint.
 
 **Caso contrário:** Desenvolvedores irão focar nas preocupações tediosas de espaçamento e largura de linha e o tempo poderá ser desperdiçado pensando sobre o estilo de código do projeto.
+
+🔗 [**Leia Mais: Usando ESLint e Prettier**](/sections/codestylepractices/eslint_prettier.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -429,7 +431,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Uma implantação falhou, um teste chamado "Adicionar produto" falhou. Isso lhe diz exatamente o que está errado?
 
-🔗 [**Leia Mais: Inclua 3 partes em cada nome de teste**](/sections/testingandquality/3-parts-in-name.md)
+🔗 [**Leia Mais: Inclua 3 partes em cada nome de teste**](/sections/testingandquality/3-parts-in-name.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -447,7 +449,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Escolher algum fornecedor de nicho pode fazer com que você fique engessado quando precisar de alguma personalização avançada. Por outro lado, escolher o Jenkins pode ser uma perda de tempo precioso na configuração da infraestrutura.
 
-🔗 [**Leia Mais: Escolhendo a plataforma de CI**](/sections/testingandquality/citools.md)
+🔗 [**Leia Mais: Escolhendo a plataforma de CI**](/sections/testingandquality/citools.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -497,7 +499,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Com qualidade de código ruim, bugs e desempenho sempre serão um problema que nenhuma nova biblioteca maravilhosa ou recursos de última geração podem corrigir.
 
-🔗 [**Leia Mais: Refatoração!**](/sections/testingandquality/refactoring.md)
+🔗 [**Leia Mais: Refatoração!**](/sections/testingandquality/refactoring.brazilian-portuguese.md)
 
 <br/><br/><br/>
 
@@ -511,7 +513,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Falha === clientes desapontados. Simples
 
-🔗 [**Leia Mais: Monitoramento!**](/sections/production/monitoring.md)
+🔗 [**Leia Mais: Monitoramento!**](/sections/production/monitoring.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -521,7 +523,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Você acaba com uma caixa preta que é difícil de raciocinar, então você começa a reescrever todas as declarações de log para adicionar informações adicionais.
 
-🔗 [**Leia Mais: Aumente a transparência usando smart logging**](/sections/production/smartlogging.md)
+🔗 [**Leia Mais: Aumente a transparência usando smart logging**](/sections/production/smartlogging.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -531,7 +533,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Seu único e pobre thread permanecerá ocupado fazendo tarefas de infra-estrutura em vez de lidar com o núcleo da sua aplicação e o desempenho certamente será degradado.
 
-🔗 [**Leia Mais: Delegue tudo o que for possível (por exemplo, gzip, SSL) a um proxy reverso**](/sections/production/delegatetoproxy.md)
+🔗 [**Leia Mais: Delegue tudo o que for possível (por exemplo, gzip, SSL) a um proxy reverso**](/sections/production/delegatetoproxy.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -541,7 +543,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** O QA testará completamente o código e aprovará uma versão que se comportará de maneira diferente na produção. Pior ainda, servidores diferentes no mesmo cluster de produção podem executar código diferente.
 
-🔗 [**Leia Mais: Bloqueio de dependências**](/sections/production/lockdependencies.md)
+🔗 [**Leia Mais: Bloqueio de dependências**](/sections/production/lockdependencies.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -551,7 +553,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Rodar dezenas de instâncias sem uma estratégia clara e muitas ferramentas juntas (gerenciamento de cluster, docker, PM2) pode levar o DevOps ao caos.
 
-🔗 [**Leia Mais: Poupe tempo de atividade do processo usando a ferramenta certa**](/sections/production/guardprocess.md)
+🔗 [**Leia Mais: Poupe tempo de atividade do processo usando a ferramenta certa**](/sections/production/guardprocess.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -561,7 +563,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Sua aplicação vai utilizar apenas 25% dos recursos disponíveis(!) ou talvez até menos. Note que um servidor típico possui 4 núcleos de processamento ou mais, o deploy ingênuo do Node.js utiliza apenas 1 (mesmo usando serviços de PaaS como AWS Beanstalk!)
 
-🔗 [**Leia Mais: Utilize todos os núcleos do processador**](/sections/production/utilizecpu.md)
+🔗 [**Leia Mais: Utilize todos os núcleos do processador**](/sections/production/utilizecpu.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -571,7 +573,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Você perceberá que está realizando muitos “deploys de diagnóstico” - enviando código para produção apenas para extrair algumas informações para fins de diagnóstico.
 
-🔗 [**Leia Mais: Crie um ‘endpoint de manutenção’**](/sections/production/createmaintenanceendpoint.md)
+🔗 [**Leia Mais: Crie um ‘endpoint de manutenção’**](/sections/production/createmaintenanceendpoint.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -581,7 +583,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Você pode gastar muito esforço medindo o desempenho e os tempos de inatividade da API, provavelmente você nunca saberá quais são suas partes de código mais lentas no cenário do mundo real e como elas afetam o UX.
 
-🔗 [**Leia Mais: Descubra erros e tempo de inatividade usando produtos APM**](/sections/production/apmproducts.md)
+🔗 [**Leia Mais: Descubra erros e tempo de inatividade usando produtos APM**](/sections/production/apmproducts.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -591,7 +593,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Uma pessoa fera em TI/DevOps não salvará um sistema mal escrito.
 
-🔗 [**Leia Mais: Deixe seu código pronto para produção**](/sections/production/productoncode.md)
+🔗 [**Leia Mais: Deixe seu código pronto para produção**](/sections/production/productioncode.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -601,7 +603,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** A memória de seus processos pode vazar cem megabytes por dia, assim como aconteceu no [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak).
 
-🔗 [**Leia Mais: Meça e proteja o uso de memória**](/sections/production/measurememory.md)
+🔗 [**Leia Mais: Meça e proteja o uso de memória**](/sections/production/measurememory.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -611,7 +613,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Seu único thread do Node ficará ocupado fazendo streaming the centenas de arquivos de html/imagens/angular/react ao invés de alocar todo seu recurso para a tarefa que ele foi designado - servir conteúdo dinâmico.
 
-🔗 [**Leia Mais: Deixe seus recursos de frontend fora do Node**](/sections/production/frontendout.md)
+🔗 [**Leia Mais: Deixe seus recursos de frontend fora do Node**](/sections/production/frontendout.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -621,7 +623,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Falha em um determinado servidor resultará em tempo de inatividade da aplicação, em vez de apenas matar uma máquina defeituosa. Além do mais, dimensionar a elasticidade será mais desafiador devido à dependência de um servidor específico.
 
-🔗 [**Leia Mais: Seja stateless, mate seus Servidores quase todos os dias**](/sections/production/bestateless.md)
+🔗 [**Leia Mais: Seja stateless, mate seus Servidores quase todos os dias**](/sections/production/bestateless.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -631,7 +633,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Manter seu código limpo com vulnerabilidades sem ferramentas dedicadas exigirá o acompanhamento constante de publicações online sobre novas ameaças. Bem entendiante.
 
-🔗 [**Leia Mais: Utilize ferramentas que detectam vulnerabilidades automaticamente**](/sections/production/detectvulnerabilities.md)
+🔗 [**Leia Mais: Utilize ferramentas que detectam vulnerabilidades automaticamente**](/sections/production/detectvulnerabilities.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -641,7 +643,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Observar um log de erros de produção sem o contexto - o que aconteceu antes - torna muito mais difícil e mais lento raciocinar sobre o problema.
 
-🔗 [**Leia Mais: Atribua ‘TransactionId’ para cada declaração de log**](/sections/production/assigntransactionid.md)
+🔗 [**Leia Mais: Atribua ‘TransactionId’ para cada declaração de log**](/sections/production/assigntransactionid.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -651,7 +653,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Omitir esta simples propriedade pode degradar muito o desempenho. Por exemplo, ao utilizar o Express para renderização do lado do servidor, omitir o NODE_ENV o torna mais lento!
 
-🔗 [**Leia Mais: Defina NODE_ENV=production**](/sections/production/setnodeenv.md)
+🔗 [**Leia Mais: Defina NODE_ENV=production**](/sections/production/setnodeenv.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -669,7 +671,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Bugs recentemente descobertos e vulnerabilidades podem ser usados para explorar uma aplicação em produção, e sua aplicação pode se tornar incompatível com vários módulos e mais difícil de manter.
 
-🔗 [**Leia Mais: Use uma versão LTS do Node.js**](/sections/production/LTSrelease.md)
+🔗 [**Leia Mais: Use uma versão LTS do Node.js**](/sections/production/LTSrelease.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -679,7 +681,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Aplicações manipulando o roteamento de log === difícil de dimensionar, perda de logs, separação ruim de preocupações.
 
-🔗 [**Leia Mais: Roteamento de Logs**](/sections/production/logrouting.md)
+🔗 [**Leia Mais: Roteamento de Logs**](/sections/production/logrouting.brazilian-portuguese.md)
 
 <br/><br/><br/>
 
@@ -699,7 +701,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** O que poderia ser um ponto fraco de segurança durante o desenvolvimento, pode se tornar um grande problema no ambiente de produção. Além disso, o projeto pode não seguir práticas de segurança de código consistentes, levando a vulnerabilidades sendo introduzidas ou segredos confidenciais comprometidos em repositórios remotos.
 
-🔗 [**Leia Mais: Regras de Lint**](sections/security/lintrules.md)
+🔗 [**Leia Mais: Regras de Lint**](sections/security/lintrules.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -711,7 +713,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Uma aplicação pode estar sujeita a um ataque resultando em uma queda do serviço, onde usuários reais recebem um serviço degradado ou indisponível.
 
-🔗 [**Leia Mais: Implementando limitador de taxa**](sections/security/limitrequests.md)
+🔗 [**Leia Mais: Implementando limitador de taxa**](sections/security/limitrequests.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -723,7 +725,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** O controle de origem, mesmo para repositórios privados, pode ser tornado público por engano, quando todos os segredos são expostos. O acesso ao controle de origem para uma parte externa fornecerá inadvertidamente acesso a sistemas relacionados (bancos de dados, APIs, serviços, etc.).
 
-🔗 [**Leia Mais: Gerenciamento de segredos**](sections/security/secretmanagement.md)
+🔗 [**Leia Mais: Gerenciamento de segredos**](sections/security/secretmanagement.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -735,7 +737,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** A entrada de usuários não validados pode levar à injeção do operador ao trabalhar com MongoDB para NoSQL e não usar um sistema próprio ou ORM irão permitir facilmente um ataque de SQL injection, criando uma grande vulnerabilidade.
 
-🔗 [**Leia Mais: Prevenção de query injection usando bibliotecas de ORM/ODM**](/sections/security/ormodmusage.md)
+🔗 [**Leia Mais: Prevenção de query injection usando bibliotecas de ORM/ODM**](/sections/security/ormodmusage.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -743,7 +745,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **TL;DR:** Esta é uma coleção de conselhos de segurança que não estão relacionadas diretamente com Node.js - a implementação do Node não é muito diferente comparado a outras linguagens. Clique em “leia mais” para dar uma olhada.
 
-🔗 [**Leia Mais: Boas práticas comuns de segurança**](/sections/security/commonsecuritybestpractices.md)
+🔗 [**Leia Mais: Boas práticas comuns de segurança**](/sections/security/commonsecuritybestpractices.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -755,7 +757,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Invasores podem realizar ataques diretos aos usuários de sua aplicação, levando a grandes vulnerabilidades de segurança.
 
-🔗 [**Leia Mais: Usando headers seguros em sua aplicação**](/sections/security/secureheaders.md)
+🔗 [**Leia Mais: Usando headers seguros em sua aplicação**](/sections/security/secureheaders.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -767,7 +769,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Um invasor pode detectar seu framework web e atacar todas suas vulnerabilidades.
 
-🔗 [**Leia Mais: Segurança de dependências**](/sections/security/dependencysecurity.md)
+🔗 [**Leia Mais: Segurança de dependências**](/sections/security/dependencysecurity.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -779,7 +781,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Senhas ou segredos que são persistidos sem o uso de uma função segura, são vulneráveis a força bruta e ataques de dicionário que levarão eventualmente à sua divulgação.
 
-🔗 [**Leia Mais: Use o Bcrypt**](/sections/security/bcryptpasswords.md)
+🔗 [**Leia Mais: Use o Bcrypt**](/sections/security/bcryptpasswords.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -791,7 +793,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Um invasor pode armazenar um código JavaScript malicioso em seu banco de dados, que será enviado para os clientes.
 
-🔗 [**Leia Mais: Evite saídas**](/sections/security/escape-output.md)
+🔗 [**Leia Mais: Evite saídas**](/sections/security/escape-output.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -803,7 +805,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Sua generosidade e abordagem permissiva aumentam muito a superfície de ataque e incentivam o invasor a experimentar muitas entradas até encontrar alguma combinação para travar a aplicação.
 
-🔗 [**Leia Mais: Valide os esquemas de entrada JSON**](/sections/security/validation.md)
+🔗 [**Leia Mais: Valide os esquemas de entrada JSON**](/sections/security/validation.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -815,7 +817,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Tokens expirados ou extraviados, podem ser usados maliciosamente por terceiros para acessar uma aplicação e para representar o proprietário do token.
 
-🔗 [**Leia Mais: Blacklist de JSON Web Tokens**](/sections/security/expirejwt.md)
+🔗 [**Leia Mais: Blacklist de JSON Web Tokens**](/sections/security/expirejwt.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -827,7 +829,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Um invasor pode emitir tentativas ilimitadas de senha automatizada para obter acesso a contas com privilégios em uma aplicação.
 
-🔗 [**Leia Mais: Limitando a taxa de login**](/sections/security/login-rate-limit.md)
+🔗 [**Leia Mais: Limitando a taxa de login**](/sections/security/login-rate-limit.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -839,7 +841,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Um invasor que consiga executar um script no servidor obtém poder ilimitado sobre a máquina local (por exemplo, alterar o iptable e redirecionar o tráfego para seu servidor).
 
-🔗 [**Leia Mais: Rode o Node.js com um usuário não raiz**](/sections/security/non-root-user.md)
+🔗 [**Leia Mais: Rode o Node.js com um usuário não raiz**](/sections/security/non-root-user.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -851,7 +853,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Sua aplicação terá que lidar com solicitações grandes, incapazes de processar o outro trabalho importante que ele precisa realizar, o que leva a implicações de desempenho e vulnerabilidade em relação a ataques DOS.
 
-🔗 [**Leia Mais: Limite o tamanho dos payloads**](/sections/security/requestpayloadsizelimit.md)
+🔗 [**Leia Mais: Limite o tamanho dos payloads**](/sections/security/requestpayloadsizelimit.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -863,7 +865,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** o código JavaScript malicioso encontra um caminho para um texto passado para o eval ou outras funções de avaliação em tempo real da linguagem JavaScript, e terá acesso total às permissões do JavaScript na página. Essa vulnerabilidade geralmente se manifesta como um ataque XSS.
 
-🔗 [**Leia Mais: Evite instruções eval do JavaScript**](/sections/security/avoideval.md)
+🔗 [**Leia Mais: Evite instruções eval do JavaScript**](/sections/security/avoideval.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -875,7 +877,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Expressões regulares mal escritas podem ser suscetíveis a ataques de Regular Expresssion DoS, que irão bloquear completamente o loop de eventos. Por exemplo, o popular pacote `moment` foi encontrado com vulnerabilidades de uso de RegEx maliciosos em novembro de 2017.
 
-🔗 [**Leia Mais: Evite RegEx maliciosos**](/sections/security/regex.md)
+🔗 [**Leia Mais: Evite RegEx maliciosos**](/sections/security/regex.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -887,7 +889,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** A entrada de usuário mal-intencionada pode encontrar o caminho para um parâmetro usado para require de arquivos adulterados, por exemplo, um arquivo carregado anteriormente no sistema de arquivos ou para acessar arquivos de sistema já existentes.
 
-🔗 [**Leia Mais: Carregamento seguro de módulos**](/sections/security/safemoduleloading.md)
+🔗 [**Leia Mais: Carregamento seguro de módulos**](/sections/security/safemoduleloading.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -899,7 +901,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Um plugin pode atacar através de uma infinita variedade de opções, como loops infinitos, sobrecarga de memória e acesso a variáveis sensíveis do ambiente de processo.
 
-🔗 [**Leia Mais: Rode códigos não seguros em uma sandbox**](/sections/security/sandbox.md)
+🔗 [**Leia Mais: Rode códigos não seguros em uma sandbox**](/sections/security/sandbox.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -911,7 +913,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** O uso ingênuo de processos filhos pode resultar na execução de comandos remotos ou em ataques de shell injection, devido à entrada do usuário mal-intencionado passada para um comando do sistema não-autorizado.
 
-🔗 [**Leia Mais: Tenha cautela ao trabalhar com processos filhos**](/sections/security/childprocesses.md)
+🔗 [**Leia Mais: Tenha cautela ao trabalhar com processos filhos**](/sections/security/childprocesses.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -923,7 +925,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Detalhes confidenciais da aplicação como caminhos e arquivos do servidor, módulos de terceiros em uso e outros workflows internos da aplicação poderiam ser explorados e expostos por um invasor.
 
-🔗 [**Leia Mais: Oculte detalhes de erros dos usuários**](/sections/security/hideerrors.md)
+🔗 [**Leia Mais: Oculte detalhes de erros dos usuários**](/sections/security/hideerrors.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -945,7 +947,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Cookies podem ser enviados através de conexões não seguras, e um hacker pode usar a sessão do usuário para identificar o framework utilizado na aplicação, bem como vulnerabilidades específicas do módulo.
 
-🔗 [**Leia Mais: Segurança de cookies e sessões**](/sections/security/sessions.md)
+🔗 [**Leia Mais: Segurança de cookies e sessões**](/sections/security/sessions.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -967,7 +969,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Se um invasor descobrir que você não está validando informações externas fornecidas pelo usuário, ele poderá explorar essa vulnerabilidade postando links especialmente em fóruns, mídias sociais e outros locais públicos para que os usuários cliquem.
 
-🔗 [**Leia Mais: Impeça redirecionamentos não seguros**](/sections/security/saferedirects.md)
+🔗 [**Leia Mais: Impeça redirecionamentos não seguros**](/sections/security/saferedirects.brazilian-portuguese.md)
 
 <br/><br/><br/>
 
@@ -984,7 +986,7 @@ Tenha em mente que, com a introdução do novo motor V8 juntamente com os novos 
 
 **Caso contrário:** Você terá que manter projetos de menor desempenho onde você poderia simplesmente ter usado o que **já estava** disponível ou lidar com mais algumas linhas em troca de mais alguns arquivos.
 
-🔗 [**Leia Mais: Nativos sobre utilitários de uso do usuário**](/sections/performance/nativeoverutil.md)
+🔗 [**Leia Mais: Prefira métodos nativos ao invés de utilitários do usuário como Lodash**](/sections/performance/nativeoverutil.brazilian-portuguese.md)
 
 <br/><br/><br/>
 

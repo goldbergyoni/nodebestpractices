@@ -234,6 +234,8 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** Developers will focus on tedious spacing and line-width concerns and time might be wasted overthinking the project's code style
 
+🔗 [**Read More: Using ESLint and Prettier**](/sections/codestylepractices/eslint_prettier.md)
+
 <br/><br/>
 
 ## ![✔] 3.2 Node.js specific plugins
