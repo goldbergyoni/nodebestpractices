@@ -282,7 +282,7 @@ function someFunction()
 const count = 2;
 (function doSomething() {
   // do something amazing
-})();
+}());
 
 // Avoid — throws exception
 const count = 2 // it tries to run 2(), but 2 is not a function
