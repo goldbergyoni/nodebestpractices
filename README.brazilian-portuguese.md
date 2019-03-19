@@ -1075,7 +1075,6 @@ Our collaborators are members who are contributing to the repository on a reguar
 
 <br/>
 
-
 # Notas de Agradecimento
 
 Este repositório é mantido atualizado graças à ajuda da comunidade. Nós apreciamos qualquer contribuição, desde a correção de uma simples palavra até uma nova melhor prática. Abaixo, a lista de todos que contribuíram para este projeto. Uma 🌻 simboliza um pull request bem sucedido e uma ⭐ simboliza uma nova melhor prática aprovada.
