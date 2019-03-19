@@ -290,6 +290,7 @@ const count = 2 // it tries to run 2(), but 2 is not a function
   // do something amazing
 }())
 ```
+
 <br/><br/>
 
 ## ![✔] 3.5 Nomeie Suas Funções
