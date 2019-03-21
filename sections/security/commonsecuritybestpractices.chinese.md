@@ -64,21 +64,21 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 
 ## ![✔] OWASP A3: 暴露敏感数据
 
-- Only accept SSL/TLS connections, enforce Strict-Transport-Security using headers
+- 仅接受SSL/TLS连接, 使用headers加强Strict-Transport-Security
 - Separate the network into segments (i.e. subnets) and ensure each node has the least necessary networking access permissions
 - Group all services/instances that need no internet access and explictly disallow any outgoing connection (a.k.a private subnet)
-- Store all secrets in a vault products like AWS KMS, HashiCorp Vault or Google Cloud KMS
+- 存储机密信息通过vault产品，比如AWS KMS, HashiCorp Vault或者Google Cloud KMS
 - Lock down sensitive instance metadata using metadata
-- Encrypt data in transit when it leaves a physical boundary
-- Don't include secrets in log statements
-- Avoid showing plain passwords in the frontend, take necessary measures in the backend and never store sensitive information in plaintext
+- 在数据离开物理边界时对传输中的数据进行加密
+- 不在日志语句中包含机密信息
+- 避免在前端显示密码, 在后端采取必要措施, 永远不要以明文形式存储敏感信息
 
 ## ![✔] OWASP A9: 使用具有已知安全漏洞的组件
 
-- Scan docker images for known vulnerabilities (using Docker's and other vendors offer scanning services)
-- Enable automatic instance (machine) patching and upgrades to avoid running old OS versions that lack security patches
-- Provide the user with both 'id', 'access' and 'refresh' token so the access token is short-lived and renewed with the refresh token
-- Log and audit each API call to cloud and management services (e.g who deleted the S3 bucket?) using services like AWS CloudTrail
+- 扫描docker镜像中的已知漏洞(使用Docker和其他供应商提供的扫描服务)
+- 启用实例(机器)的自动修补和升级, 以避免运行缺少安全修补程序的旧操作系统
+- 为用户提供'id', 'access'和'refresh' token，以便access token是short-lived的，并通过refresh token进行更新。Provide the user with both 'id', 'access' and 'refresh' token so the access token is short-lived and renewed with the refresh token
+- 使用服务，比如AWS CloudTrail，记录和审核对云和管理服务的每个API调用(例如，谁删除了S3 bucket?)
 - 运行云提供商的安全检查程序(例如AWS security trust advisor)
 
 ## ![✔] OWASP A10: 不充分的日志和监控
