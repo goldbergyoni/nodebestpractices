@@ -9,8 +9,15 @@ exemptLabels:
 staleLabel: stale
 # Comment to post when marking an issue as stale. Set to `false` to disable
 markComment: >
-  This issue has been automatically marked as stale because it has not had
-  recent activity. It will be closed if no further activity occurs. Thank you
-  for your contributions.
+  Hello there! 👋
+  
+  This issue has gone silent. Eerily silent. ⏳
+  
+  We currently close issues after 100 days of inactivity. It has been 90 days
+  since the last update here.
+  
+  If needed, you can keep it open by replying here.
+  
+  Thanks for being a part of the Node.js Best Practices community! 💚
 # Comment to post when closing a stale issue. Set to `false` to disable
 closeComment: false
