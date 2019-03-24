@@ -1,0 +1,23 @@
+# Number of days of inactivity before an issue becomes stale
+daysUntilStale: 90
+# Number of days of inactivity before a stale issue is closed
+daysUntilClose: 10
+# Issues with these labels will never be considered stale
+exemptLabels:
+  - security
+# Label to use when marking an issue as stale
+staleLabel: stale
+# Comment to post when marking an issue as stale. Set to `false` to disable
+markComment: >
+  Hello there! 👋
+  
+  This issue has gone silent. Eerily silent. ⏳
+  
+  We currently close issues after 100 days of inactivity. It has been 90 days
+  since the last update here.
+  
+  If needed, you can keep it open by replying here.
+  
+  Thanks for being a part of the Node.js Best Practices community! 💚
+# Comment to post when closing a stale issue. Set to `false` to disable
+closeComment: false
