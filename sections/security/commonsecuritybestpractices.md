@@ -2,11 +2,11 @@
 
 # Common Node.js security best practices
 
-The common security guidelines section contains best practices that are standardized in many frameworks and conventions, running an application with ssl/tls for example should be a common guideline and convention followed in every setup to achieve great security benefits.
+The common security guidelines section contains best practices that are standardized in many frameworks and conventions, running an application with SSL/TLS, for example, should be a common guideline and convention followed in every setup to achieve great security benefits.
 
 ## ![✔] Use SSL/TLS to encrypt the client-server connection
 
-**TL;DR:** In the times of [free SSL/TLS certificates](https://letsencrypt.org/) and easy configuration of those, you do no longer have to weigh advantages and disadvantages of using a secure server because the advantages such as security, support of modern technology and trust clearly outweigh the disadvantages like minimal overhead compared to pure http.
+**TL;DR:** In the times of [free SSL/TLS certificates](https://letsencrypt.org/) and easy configuration of those, you do no longer have to weigh advantages and disadvantages of using a secure server because the advantages such as security, support of modern technology and trust clearly outweigh the disadvantages like minimal overhead compared to pure HTTP.
 
 **Otherwise:** Attackers could perform man-in-the-middle attacks, spy on your users' behaviour and perform even more malicious actions when the connection is unencrypted
 
@@ -41,7 +41,7 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 - Use only standard authentication methods like OAuth, OpenID, etc.  - **avoid** basic authentication
 - Auth rate limiting: Disallow more than _X_ login attempts (including password recovery, etc.) in a period of _Y_
 - On login failure, don't let the user know whether the username or password verification failed, just return a common auth error
-- Consider using a centralized user management system to avoid managing multiple account per employee (e.g. GitHub, AWS, Jenkins, etc) and to benefit from a battle-tested user management system
+- Consider using a centralized user management system to avoid managing multiple accounts per employee (e.g. GitHub, AWS, Jenkins, etc) and to benefit from a battle-tested user management system
 
 ## ![✔] OWASP A5:  Broken access control
 
@@ -56,7 +56,7 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 - Restrict internal network access  - explicitly set which resource can access other resources (e.g. network policy or subnets)
 - If using cookies, configure it to "secured" mode where it's being sent over SSL only
 - If using cookies, configure it for "same site" only so only requests from same domain will get back the designated cookies
-- If using cookies, prefer "http only" configuration that prevent browser side JavaScript code from accessing the cookies
+- If using cookies, prefer "HttpOnly" configuration that prevent client-side JavaScript code from accessing the cookies
 - Protect each VPC with strict and restrictive access rules
 - Prioritize threats using any standard security threat modeling like STRIDE or DREAD
 - Protect against DDoS attacks using HTTP(S) and TCP load balancers
@@ -66,9 +66,9 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 
 - Only accept SSL/TLS connections, enforce Strict-Transport-Security using headers
 - Separate the network into segments (i.e. subnets) and ensure each node has the least necessary networking access permissions
-- Group all services/instances that need no internet access and explictly disallow any outgoing connection (a.k.a private subnet)
+- Group all services/instances that need no internet access and explicitly disallow any outgoing connection (a.k.a private subnet)
 - Store all secrets in a vault products like AWS KMS, HashiCorp Vault or Google Cloud KMS
-- Lock down sensitive instance metadata using metadata
+- Lockdown sensitive instance metadata using metadata
 - Encrypt data in transit when it leaves a physical boundary
 - Don't include secrets in log statements
 - Avoid showing plain passwords in the frontend, take necessary measures in the backend and never store sensitive information in plaintext
@@ -81,16 +81,19 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 - Log and audit each API call to cloud and management services (e.g who deleted the S3 bucket?) using services like AWS CloudTrail
 - Run the security checker of your cloud provider (e.g. AWS security trust advisor)
 
+
 ## ![✔] OWASP A10: Insufficient Logging & Monitoring
 
 - Alert on remarkable or suspicious auditing events like user login, new user creation, permission change, etc
-
 - Alert on irregular amount of login failures (or equivelant actions like forgot password)
-
 - Include the time and username that initiated the update in each DB record
 
 ## ![✔] OWASP A7: Cross-Site-Scripting (XSS)
 
-- Instruct the browser to load resources from the same domain only, using the Content-Security-Policy http header
+- Use templating engines or frameworks that automatically escape XSS by design, such as EJS, Pug, React, or Angular. Learn the limitations of each mechanisms XSS protection and appropriately handle the use cases which are not covered
+- Escaping untrusted HTTP request data based on the context in the HTML output (body, attribute, JavaScript, CSS, or URL) will resolve Reflected and Stored XSS vulnerabilities
+- Applying context-sensitive encoding when modifying the browser document on the client-side acts against DOM XSS
+- Enabling a Content-Security Policy (CSP) as a defense-in-depth mitigating control against XSS
+
 
 <br/><br/><br/>
