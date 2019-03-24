@@ -1,4 +1,4 @@
-# Document RESTful API errors using Swagger
+# Document API errors using Swagger or GraphQL
 
 ### One Paragraph Explainer
 
