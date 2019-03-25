@@ -273,9 +273,9 @@ function someFunction()
 
 ## ![✔] 3.4 Separate your statements properly
 
-No matter if you use semicolons or not to separate your statements, knowing the common pitfalls of inproper linebreak or automatic semicolon insertion, will help you to eliminate regular syntax errors.
+No matter if you use semicolons or not to separate your statements, knowing the common pitfalls of improper linebreaks or automatic semicolon insertion, will help you to eliminate regular syntax errors.
 
-**TL;DR:** Use ESLint to make you aware about separation concerns. Prettier or Standardjs can automatically resolve these issues.
+**TL;DR:** Use ESLint to gain awareness about separation concerns. Prettier or Standardjs can automatically resolve these issues.
 
 **Otherwise:** As seen in the previous section, JavaScript's interpreter automatically adds a semicolon at the end of a statement if there isn't one, or considers a statement as not ended where it should, which might lead to some undesired results. You can use assignments and avoid using immediate invoked function expressions to prevent most of unexpected errors.
 
@@ -822,7 +822,7 @@ All statements above will return false if used with `===`
 
 **TL;DR:** Validate the incoming requests' body payload and ensure it meets expectations, fail fast if it doesn't. To avoid tedious validation coding within each route you may use lightweight JSON-based validation schemas such as [jsonschema](https://www.npmjs.com/package/jsonschema) or [joi](https://www.npmjs.com/package/joi)
 
-**Otherwise:** Your generosity and permissive approach greatly increases the attack surface and encourages the attacker to try out many inputs until they find some combination to crash the application
+**Otherwise:** Your generosity and permissive approach greatly increases the attack surface and encourages the attacker to try out many futs until they find some combination to crash the application
 
 🔗 [**Read More: Validate incoming JSON schemas**](/sections/security/validation.md)
 
