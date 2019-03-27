@@ -827,7 +827,7 @@ All statements above will return false if used with `===`
 **TL;DR:** A simple and powerful technique is to limit authorization attempts using two metrics:
            
 1. The first is number of consecutive failed attempts by the same user unique ID/name and IP address.
-1. The second is number of failed attempts from an IP address over some long period of time. For example, block an IP address if it makes 100 failed attempts in one day.
+2. The second is number of failed attempts from an IP address over some long period of time. For example, block an IP address if it makes 100 failed attempts in one day.
 
 **Otherwise:** An attacker can issue unlimited automated password attempts to gain access to privileged accounts on an application
 
