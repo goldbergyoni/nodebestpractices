@@ -820,7 +820,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.12. Limit the allowed login requests of each user
+## ![✔] 6.12. Prevent brute-force attacks against authorization
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
