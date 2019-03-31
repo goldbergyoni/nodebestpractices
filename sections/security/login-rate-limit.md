@@ -1,50 +1,8 @@
-# Implement express rate limiting for login routes
+# Prevent brute-force attacks against authorization
 
 ### One Paragraph Explainer
 
 Leaving higher privileged routes such as `/login` or `/admin` exposed without rate limiting leaves an application at risk of brute force password dictionary attacks. Using a strategy to limit requests to such routes can prevent the success of this by limiting the number of allow attempts based on a request property such as ip, or a body parameter such as username/email address.
-
-An in-memory store such as Redis or MongoDB should be used in production to enforce the shared limit across application clusters.
-
-### Code example: Using express-brute
-
-```javascript
-const ExpressBrute = require('express-brute');
-const RedisStore = require('express-brute-redis');
-
-const redisStore = new RedisStore({
-  host: '127.0.0.1',
-  port: 6379
-});
-
-// Start slowing requests after 5 failed attempts to login for the same user
-const loginBruteforce = new ExpressBrute(redisStore, {
-  freeRetries: 5,
-  minWait: 5 * 60 * 1000, // 5 minutes
-  maxWait: 60 * 60 * 1000, // 1 hour
-  failCallback: failCallback,
-  handleStoreError: handleStoreErrorCallback
-});
-
-app.post('/login',
-  loginBruteforce.getMiddleware({
-    key: function (req, res, next) {
-      // prevent too many attempts for the same username
-      next(req.body.username);
-    }
-  }), // error 403 if we hit this route too often
-  function (req, res, next) {
-    if (User.isValidLogin(req.body.username, req.body.password)) {
-      // reset the failure counter for valid login
-      req.brute.reset(function () {
-        res.redirect('/'); // logged in
-      });
-    } else {
-      // handle invalid user
-    }
-  }
-);
-```
 
 ### What other bloggers say
 
