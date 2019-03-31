@@ -14,15 +14,15 @@
 
 <br/>
 
-[![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
+[![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Bizi Twitter'da takip edin!** [**@nodepractices**](https://twitter.com/nodepractices/)
 
 <br/>
 
-Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
+Farklı dillerde oku: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
 
 <br/>
 
-###### Built and maintained by our [Steering Committee](#steering-committee) and [Collaborators](#collaborators)
+###### Yapım ve bakım [Yönetim Kurulu](#steering-committee) ve [Ortak Çalışanlar](#collaborators) tarafından yapılıyor
 
 # Son En İyi Uygulamalar ve Haberler
 
@@ -58,25 +58,26 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <br/><br/>
 
-# `1. Proje Yapısı En İyi Uygulamalar`
+# `1. Proje Yapısı En İyi Uygulamaları`
 
-## ![✔] 1.1 Yapıyı komponentler ile kur
+## ![✔] 1.1 Çözümünüzü komponentler ile yapılandırın
 
-**TL;DR:** The worst large applications pitfall is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Instead, partition your code into components, each gets its own folder or a dedicated codebase, and ensure that each unit is kept small and simple. Visit 'Read More' below to see examples of correct project structure
+**TL;DR:** 
+En kötü büyük uygulamalardaki gizli tehlike yüzlerce bağımlılıkla büyük bir kod tabanını sürdürmektir - bir monolit gibi (koca bir kaya gibi) yeni özellikler eklemeye çalışan geliştiricileri yavaşlatır. Bunun yerine, kodunuzu komponentlere ayırın, her komponent kendi klasörünü veya kendine özel bir kod tabanını alır ve her birimin küçük ve basit olmasını sağlayın. Doğru proje yapısının örneklerini görmek için aşağıdaki 'Daha Fazla Oku' kısmını ziyaret edin.
 
-**Otherwise:** When developers who code new features struggle to realize the impact of their change and fear to break other dependent components - deployments become slower and riskier. It's also considered harder to scale-out when all the business units are not separated
+**Aksi takdirde:** Yeni özellikleri kodlayan geliştiriciler değişikliklerinin etkisini anlamakta zorlanıyorlar ve diğer bağımlı komponentleri bozma korkusu - dağımtımlar daha yavaş ve daha riskli olur. Ayrıca tüm iş birimleri ayrılmadığında dağıtıklaştırmanın daha zor olduğu düşünülmektedir.
 
-🔗 [**Read More: structure by components**](/sections/projectstructre/breakintcomponents.md)
+🔗 [**Daha fazla oku: komponentlerle yapı**](/sections/projectstructre/breakintcomponents.md)
 
 <br/><br/>
 
-## ![✔] 1.2 Express sınırları içerisinde komponentlerinizi katmanlayın
+## ![✔] 1.2 Komponentlerinizi katmanlayın, Express'i sınırları içerisinde tutun
 
-**TL;DR:** Each component should contain 'layers' - a dedicated object for the web, logic, and data access code. This not only draws a clean separation of concerns but also significantly eases mocking and testing the system. Though this is a very common pattern, API developers tend to mix layers by passing the web layer objects (Express req, res) to business logic and data layers - this makes your application dependent on and accessible by Express only
+**TL;DR:** Her komponent 'katmanlar' (layers) içermelidir. Web, mantık ve veri erişim kodu için özel bir nesne. Bu sadece farklı kavramların birbirinden ayrılmasını (separation of concerns) sağlamaz ayrıca önemli ölçüde testi ve mocklamayı (mocking) kolaylaştırır. Bu çok yaygın bir kalıp olmasına rağmen, API geliştiricileri, web katmanı nesnelerini (Express req, res) iş mantığına ve veri katmanlarına geçirerek katmanları karıştırma eğilimindedir. Bu, uygulamanızı sadece Express'e bağlı ve erişilebilir yapar.
 
-**Otherwise:** App that mixes web objects with other layers cannot be accessed by testing code, CRON jobs, and other non-Express callers
+**Aksi takdirde:** Web nesnelerini diğer katmanlarla karıştıran uygulamalaya test kodu, görev zamanlayıcısı ve diğer Express dışından çağıranlar tarafından erişilemez.
 
-🔗 [**Read More: layer your app**](/sections/projectstructre/createlayers.md)
+🔗 [**Daha fazla oku: uygulamanızı katmanlayın**](/sections/projectstructre/createlayers.md)
 
 <br/><br/>
 
