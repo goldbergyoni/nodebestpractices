@@ -81,33 +81,35 @@ En kötü büyük uygulamalardaki gizli tehlike yüzlerce bağımlılıkla büy�
 
 <br/><br/>
 
-## ![✔] 1.3 Ortak kullanılan yapıları npm paketleri gibi paket yapın
+## ![✔] 1.3 Ortak kullanılan yardımcı uygulamaları npm paketleri gibi paketleyin
 
-**TL;DR:** In a large app that constitutes a large code base, cross-cutting-concern utilities like logger, encryption and alike, should be wrapped by your own code and exposed as private npm packages. This allows sharing them among multiple code bases and projects
+**TL;DR:** Büyük bir kod tabanından oluşan büyük bir uygulamada, loglama, şifreleme ve benzerleri gibi kesişen ilgileri ayıran (cross-cutting-concern) yardımcı uygulamalar kendi kodunuzla paketlenmeli ve özel npm paketleri olarak gösterilmelidir. Bu, kodunuzu birçok kod tabanında ve projelerde paylaşmanıza izin verir.
 
-**Otherwise:** You'll have to invent your own deployment and dependency wheel
+In a large app that constitutes a large code base, cross-cutting-concern utilities like logger, encryption and alike, should be wrapped by your own code and exposed as private npm packages. This allows sharing them among multiple code bases and projects
 
-🔗 [**Read More: Structure by feature**](/sections/projectstructre/wraputilities.md)
+**Aksi takdirde:** Kendi dağıtım ve bağımlılık tekerleğinizi icat etmeniz gerekecek.
+
+🔗 [**Daha fazla oku: Özelliklerle yapı**](/sections/projectstructre/wraputilities.md)
 
 <br/><br/>
 
-## ![✔] 1.4 'uygulama' ve 'server' birbirinden ayırın
+## ![✔] 1.4 'uygulama' ve 'server' birbirinden ayrı Express uygulaması
 
-**TL;DR:** Avoid the nasty habit of defining the entire [Express](https://expressjs.com/) app in a single huge file - separate your 'Express' definition to at least two files: the API declaration (app.js) and the networking concerns (WWW). For even better structure, locate your API declaration within components
+**TL;DR:** Tüm Express uygulamasını tek bir büyük dosyada tanımlamak gibi kötü alışkanlıklardan kaçının - Express tanımlamanızı en az iki dosyaya ayırın: API tanımalaması (app.js) ve ağ (www). Daha iyi bir yapı için, API tanımlamanızı komponentler içerisine koyun.
 
-**Otherwise:** Your API will be accessible for testing via HTTP calls only (slower and much harder to generate coverage reports). It probably won't be a big pleasure to maintain hundreds of lines of code in a single file
+**Aksi takdirde:** API'nize sadece HTTP istekleri ile test için erişilebilecek (daha yavaş ve kapsama raporları oluşturmak çok daha zor). Muhtemelen yüzlerce kod satırını tek bir dosyada bakımını sağlamak büyük bir zevk olmaz.
 
-🔗 [**Read More: separate Express 'app' and 'server'**](/sections/projectstructre/separateexpress.md)
+🔗 [**Daha fazla oku: 'uygulama' ve 'server' birbirinden ayrı Express uygulaması**](/sections/projectstructre/separateexpress.md)
 
 <br/><br/>
 
 ## ![✔] 1.5 Konfigürasyon dosyalarını değişen ortamlara uyumlu, güvenli ve hiyerarşik yapın
 
-**TL;DR:** A perfect and flawless configuration setup should ensure (a) keys can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are a few packages that can help tick most of those boxes like [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) and [config](https://www.npmjs.com/package/config)
+**TL;DR:** Mükemmel ve kusursuz bir konfigürasyon kurulmalıdır (a) anahtarlar (keys) dosyadan ve ortam değişkenlerinden okunabilir (b) gizli bilgileri commit kodun dışında tut (c) konfig kolay bulunabilmesi için hiyerarşiktir. [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) and [config](https://www.npmjs.com/package/config) gibi paketler yardım edebilir.
 
-**Otherwise:** Failing to satisfy any of the config requirements will simply bog down the development or devops team. Probably both
+**Aksi takdirde:** Config gereksinimlerinden herhangi birinin yerine getirilmemesi geliştirmeyi veya devops takımını basitçe çıkmaza sokacaktır. Muhtemelen ikisi de.
 
-🔗 [**Read More: configuration best practices**](/sections/projectstructre/configguide.md)
+🔗 [**Daha fazla oku: konfigürasyon en iyi uygulamaları**](/sections/projectstructre/configguide.md)
 
 <br/><br/><br/>
 
