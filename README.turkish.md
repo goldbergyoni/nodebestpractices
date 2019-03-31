@@ -1,6 +1,6 @@
 [✔]: assets/images/checkbox-small-blue.png
 
-# Node.js Best Practices
+# Node.js En İyi Uygulamalar
 
 <h1 align="center">
   <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices">
@@ -24,7 +24,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 ###### Built and maintained by our [Steering Committee](#steering-committee) and [Collaborators](#collaborators)
 
-# Latest Best Practices and News
+# Son En İyi Uygulamalar ve Haberler
 
 - **New translation:** ![BR](/assets/flags/BR.png) [Brazilian Portuguese](/README.brazilian-portuguese.md) available now, courtesy of [Marcelo Melo](https://github.com/marcelosdm)! ❤️
 
@@ -36,7 +36,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <br/><br/>
 
-# Welcome! 3 Things You Ought To Know First:
+# Hoşgeldiniz! Öncelikle Bilmeniz Gereken 3 Şey:
 
 **1. You are, in fact, reading dozens of the best Node.js articles -** this repository is a summary and curation of the top-ranked content on Node.js best practices, as well as content written here by collaborators
 
@@ -58,9 +58,9 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <br/><br/>
 
-# `1. Project Structure Practices`
+# `1. Proje Yapısı En İyi Uygulamalar`
 
-## ![✔] 1.1 Structure your solution by components
+## ![✔] 1.1 Yapıyı komponentler ile kur
 
 **TL;DR:** The worst large applications pitfall is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Instead, partition your code into components, each gets its own folder or a dedicated codebase, and ensure that each unit is kept small and simple. Visit 'Read More' below to see examples of correct project structure
 
@@ -70,7 +70,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <br/><br/>
 
-## ![✔] 1.2 Layer your components, keep Express within its boundaries
+## ![✔] 1.2 Express sınırları içerisinde komponentlerinizi katmanlayın
 
 **TL;DR:** Each component should contain 'layers' - a dedicated object for the web, logic, and data access code. This not only draws a clean separation of concerns but also significantly eases mocking and testing the system. Though this is a very common pattern, API developers tend to mix layers by passing the web layer objects (Express req, res) to business logic and data layers - this makes your application dependent on and accessible by Express only
 
@@ -80,7 +80,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <br/><br/>
 
-## ![✔] 1.3 Wrap common utilities as npm packages
+## ![✔] 1.3 Ortak kullanılan yapıları npm paketleri gibi paket yapın
 
 **TL;DR:** In a large app that constitutes a large code base, cross-cutting-concern utilities like logger, encryption and alike, should be wrapped by your own code and exposed as private npm packages. This allows sharing them among multiple code bases and projects
 
@@ -90,7 +90,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <br/><br/>
 
-## ![✔] 1.4 Separate Express 'app' and 'server'
+## ![✔] 1.4 'uygulama' ve 'server' birbirinden ayırın
 
 **TL;DR:** Avoid the nasty habit of defining the entire [Express](https://expressjs.com/) app in a single huge file - separate your 'Express' definition to at least two files: the API declaration (app.js) and the networking concerns (WWW). For even better structure, locate your API declaration within components
 
@@ -100,7 +100,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <br/><br/>
 
-## ![✔] 1.5 Use environment aware, secure and hierarchical config
+## ![✔] 1.5 Konfigürasyon dosyalarını değişen ortamlara uyumlu, güvenli ve hiyerarşik yapın
 
 **TL;DR:** A perfect and flawless configuration setup should ensure (a) keys can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are a few packages that can help tick most of those boxes like [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) and [config](https://www.npmjs.com/package/config)
 
@@ -112,9 +112,9 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `2. Error Handling Practices`
+# `2. Hata işleme yöntemleri`
 
-## ![✔] 2.1 Use Async-Await or promises for async error handling
+## ![✔] 2.1 Asenkron hata yakalamak için Async-Await veya Promises kullanın
 
 **TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using a reputable promise library or async-await instead which enables a much more compact and familiar code syntax like try-catch
 
@@ -124,7 +124,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <br/><br/>
 
-## ![✔] 2.2 Use only the built-in Error object
+## ![✔] 2.2 Sadece dahili Error objesini kullanın
 
 **TL;DR:** Many throw errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw an exception or emit an error – using only the built-in Error object will increase uniformity and prevent loss of information
 
@@ -134,7 +134,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <br/><br/>
 
-## ![✔] 2.3 Distinguish operational vs programmer errors
+## ![✔] 2.3 İşletimsel hatalarlar ile yazılımcı hatalarını ayrıştırın
 
 **TL;DR:** Operational errors (e.g. API received an invalid input) refer to known cases where the error impact is fully understood and can be handled thoughtfully. On the other hand, programmer error (e.g. trying to read undefined variable) refers to unknown code failures that dictate to gracefully restart the application
 
@@ -144,7 +144,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <br/><br/>
 
-## ![✔] 2.4 Handle errors centrally, not within an Express middleware
+## ![✔] 2.4 Merkezi hata işleyicisi kullanın, Express middleware içerisinde hataları işlemeyin
 
 **TL;DR:** Error handling logic such as mail to admin and logging should be encapsulated in a dedicated and centralized object that all endpoints (e.g. Express middleware, cron jobs, unit-testing) call when an error comes in
 
@@ -154,17 +154,17 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <br/><br/>
 
-## ![✔] 2.5 Document API errors using Swagger or GraphQL
+## ![✔] 2.5 Swagger kullanarak API hatalarını dökümante edin 
 
-**TL;DR:** Let your API callers know which errors might come in return so they can handle these thoughtfully without crashing. For RESTful APIs, this is usually done with documentation frameworks like Swagger. If you're using GraphQL, you can utilize your schema and comments as well.
+**TL;DR:** Let your API callers know which errors might come in return so they can handle these thoughtfully without crashing. This is usually done with REST API documentation frameworks like Swagger
 
 **Otherwise:** An API client might decide to crash and restart only because it received back an error it couldn’t understand. Note: the caller of your API might be you (very typical in a microservice environment)
 
-🔗 [**Read More: documenting API errors in Swagger or GraphQL**](/sections/errorhandling/documentingusingswagger.md)
+🔗 [**Read More: documenting errors in Swagger**](/sections/errorhandling/documentingusingswagger.md)
 
 <br/><br/>
 
-## ![✔] 2.6 Exit the process gracefully when a stranger comes to town
+## ![✔] 2.6 Bir yabancı şehre geldiğinde nazikçe işlemden nazikçe çıkın
 
 **TL;DR:** When an unknown error occurs (a developer error, see best practice 2.3) - there is uncertainty about the application healthiness. A common practice suggests restarting the process carefully using a process management tool like [Forever](https://www.npmjs.com/package/forever) or [PM2](http://pm2.keymetrics.io/)
 
@@ -174,7 +174,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <br/><br/>
 
-## ![✔] 2.7 Use a mature logger to increase error visibility
+## ![✔] 2.7 Hata görünürlüğünü artırmak için olgun bir log tutucu kullanın
 
 **TL;DR:** A set of mature logging tools like [Winston](https://www.npmjs.com/package/winston), [Bunyan](https://github.com/trentm/node-bunyan) or [Log4js](http://stritti.github.io/log4js/), will speed-up error discovery and understanding. So forget about console.log
 
@@ -184,7 +184,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <br/><br/>
 
-## ![✔] 2.8 Test error flows using your favorite test framework
+## ![✔] 2.8 Favori test framework'ünüzü kullanarak hatalı test akışlarını yapın
 
 **TL;DR:** Whether professional automated QA or plain manual developer testing – Ensure that your code not only satisfies positive scenarios but also handles and returns the right errors. Testing frameworks like Mocha & Chai can handle this easily (see code examples within the "Gist popup")
 
@@ -194,7 +194,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <br/><br/>
 
-## ![✔] 2.9 Discover errors and downtime using APM products
+## ![✔] 2.9 Hataları ve APM ürünlerini kullanarak kesintileri keşfedin
 
 **TL;DR:** Monitoring and performance products (a.k.a APM) proactively gauge your codebase or API so they can automagically highlight errors, crashes and slow parts that you were missing
 
@@ -204,7 +204,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <br/><br/>
 
-## ![✔] 2.10 Catch unhandled promise rejections
+## ![✔] 2.10 İşlenmeyen promise retlerini yakalayın
 
 **TL;DR:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explicitly handle. Even if your code is subscribed to `process.uncaughtException`! Overcome this by registering to the event `process.unhandledRejection`
 
@@ -214,7 +214,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <br/><br/>
 
-## ![✔] 2.11 Fail fast, validate arguments using a dedicated library
+## ![✔] 2.11 Fail fast, Özel bir kütüphane kullanarak argümanları doğrula
 
 **TL;DR:** This should be part of your Express best practices – Assert API input to avoid nasty bugs that are much harder to track later. The validation code is usually tedious unless you are using a very cool helper library like Joi
 
@@ -226,9 +226,9 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `3. Code Style Practices`
+# `3. Kod Stil En İyi Uygulamaları`
 
-## ![✔] 3.1 Use ESLint
+## ![✔] 3.1 ESLint Kullan
 
 **TL;DR:** [ESLint](https://eslint.org) is the de-facto standard for checking possible code errors and fixing code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Though ESLint can automatically fix code styles, other tools like [prettier](https://www.npmjs.com/package/prettier) and [beautify](https://www.npmjs.com/package/js-beautify) are more powerful in formatting the fix and work in conjunction with ESLint
 
@@ -238,7 +238,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <br/><br/>
 
-## ![✔] 3.2 Node.js specific plugins
+## ![✔] 3.2 Node.js özel eklentiler
 
 **TL;DR:** On top of ESLint standard rules that cover vanilla JavaScript, add Node.js specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
@@ -246,7 +246,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <br/><br/>
 
-## ![✔] 3.3 Start a Codeblock's Curly Braces on the Same Line
+## ![✔] 3.3 Kod bloğu ile süslü parantez aynı satırda başlasın
 
 **TL;DR:** The opening curly braces of a code block should be on the same line as the opening statement
 
@@ -271,7 +271,7 @@ function someFunction()
 
 <br/><br/>
 
-## ![✔] 3.4 Don't Forget the Semicolon
+## ![✔] 3.4 Noktalı virgülü unutma
 
 **TL;DR:** While not unanimously agreed upon, it is still recommended to put a semicolon at the end of each statement. This will make your code more readable and explicit to other developers who read it
 
@@ -295,7 +295,7 @@ const count = 2 // it tries to run 2(), but 2 is not a function
 
 <br/><br/>
 
-## ![✔] 3.5 Name your functions
+## ![✔] 3.5 Fonksiyonlarını isimlendir
 
 **TL;DR:** Name all functions, including closures and callbacks. Avoid anonymous functions. This is especially useful when profiling a node app. Naming all functions will allow you to easily understand what you're looking at when checking a memory snapshot
 
@@ -303,7 +303,7 @@ const count = 2 // it tries to run 2(), but 2 is not a function
 
 <br/><br/>
 
-## ![✔] 3.6 Use naming conventions for variables, constants, functions and classes
+## ![✔] 3.6 Değişkenler, sabitler, fonksiyonlar ve sınıflar için isimlendirme kurallarını kullanın
 
 **TL;DR:** Use **_lowerCamelCase_** when naming constants, variables and functions and **_UpperCamelCase_** (capital first letter as well) when naming classes. This will help you to easily distinguish between plain variables/functions, and classes that require instantiation. Use descriptive names, but try to keep them short
 
@@ -327,7 +327,7 @@ function doSomething() {}
 
 <br/><br/>
 
-## ![✔] 3.7 Prefer const over let. Ditch the var
+## ![✔] 3.7 Const ve let tercih edin. Var kullanmayın
 
 **TL;DR:** Using `const` means that once a variable is assigned, it cannot be reassigned. Preferring `const` will help you to not be tempted to use the same variable for different uses, and make your code clearer. If a variable needs to be reassigned, in a for loop, for example, use `let` to declare it. Another important aspect of `let` is that a variable declared using it is only available in the block scope in which it was defined. `var` is function scoped, not block scoped, and [shouldn't be used in ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) now that you have `const` and `let` at your disposal
 
@@ -337,7 +337,7 @@ function doSomething() {}
 
 <br/><br/>
 
-## ![✔] 3.8 Require modules first, not inside functions
+## ![✔] 3.8 Modüller ilk gerekenlerdir, fonksiyon içerikleri değil
 
 **TL;DR:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top but also avoids a couple of potential problems
 
@@ -345,7 +345,7 @@ function doSomething() {}
 
 <br/><br/>
 
-## ![✔] 3.9 Require modules by folders, opposed to the files directly
+## ![✔] 3.9 MOdüller, direkt dosyaların yerine klasörlerden olmalı
 
 **TL;DR:** When developing a module/library in a folder, place an index.js file that exposes the module's internals so every consumer will pass through it. This serves as an 'interface' to your module and eases future changes without breaking the contract
 
@@ -365,7 +365,7 @@ module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolve
 
 <br/><br/>
 
-## ![✔] 3.10 Use the `===` operator
+## ![✔] 3.10 Bu operatörü kullanın `===`
 
 **TL;DR:** Prefer the strict equality operator `===` over the weaker abstract equality operator `==`. `==` will compare two variables after converting them to a common type. There is no type conversion in `===`, and both variables must be of the same type to be equal
 
@@ -392,7 +392,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 3.11 Use Async Await, avoid callbacks
+## ![✔] 3.11 Async Await kullan, callbacks kullanmaktan kaçın
 
 **TL;DR:** Node 8 LTS now has full support for Async-await. This is a new way of dealing with asynchronous code which supersedes callbacks and promises. Async-await is non-blocking, and it makes asynchronous code look synchronous. The best gift you can give to your code is using async-await which provides a much more compact and familiar code syntax like try-catch
 
@@ -402,7 +402,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 3.12 Use arrow function expressions (=>)
+## ![✔] 3.12 Fonksiyon ifadelerinde bu ok işaretini kullan (=>)
 
 **TL;DR:** Though it's recommended to use async-await and avoid function parameters when dealing with older APIs that accept promises or callbacks - arrow functions make the code structure more compact and keep the lexical context of the root function (i.e. `this`)
 
@@ -414,9 +414,9 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `4. Testing And Overall Quality Practices`
+# `4. Test Ve Bütün Kalite Uygulamalari`
 
-## ![✔] 4.1 At the very least, write API (component) testing
+## ![✔] 4.1 En azından, API (bileşen) testi yaz
 
 **TL;DR:** Most projects just don't have any automated testing due to short timetables or often the 'testing project' ran out of control and was abandoned. For that reason, prioritize and start with API testing which is the easiest way to write and provides more coverage than unit testing (you may even craft API tests without code using tools like [Postman](https://www.getpostman.com/). Afterward, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc
 
@@ -424,7 +424,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.2 Include 3 parts in each test name
+## ![✔] 4.2 Her test 3 parça içersin
 
 **TL;DR:** Make the test speak at the requirements level so it's self explanatory also to QA engineers and developers who are not familiar with the code internals. State in the test name what is being tested (unit under test), under what circumstances and what is the expected result
 
@@ -434,7 +434,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.3 Detect code issues with a linter
+## ![✔] 4.3 Bir linter ile kod sorunlarını tespit et
 
 **TL;DR:** Use a code linter to check basic quality and detect anti-patterns early. Run it before any test and add it as a pre-commit git-hook to minimize the time needed to review and correct any issue. Also check [Section 3](https://github.com/i0natan/nodebestpractices#3-code-style-practices) on Code Style Practices
 
@@ -442,7 +442,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.4 Carefully choose your CI platform (Jenkins vs CircleCI vs Travis vs Rest of the world)
+## ![✔] 4.4 CI platformunu dikkatli seç (Jenkins vs CircleCI vs Travis vs Diğerleri)
 
 **TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it should come with a vibrant ecosystem of plugins. [Jenkins](https://jenkins.io/) used to be the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Nowadays, it has become much easier to set up a CI solution using SaaS tools like [CircleCI](https://circleci.com) and others. These tools allow crafting a flexible CI pipeline without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
 
@@ -452,7 +452,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.5 Constantly inspect for vulnerable dependencies
+## ![✔] 4.5 Güvencesiz bağımlılıkları sürekli incele
 
 **TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [npm audit](https://docs.npmjs.com/cli/audit) and 🔗 [snyk.io](https://snyk.io) that can be invoked from your CI on every build
 
@@ -460,7 +460,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.6 Tag your tests
+## ![✔] 4.6 Testlerini etiketle
 
 **TL;DR:** Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/): mocha --grep 'sanity'
 
@@ -468,7 +468,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.7 Check your test coverage, it helps to identify wrong test patterns
+## ![✔] 4.7 Kodun ne kadarının test edilmiş olduğunu kontrol et, bu yanlış test tasarımlarını tespit etmene yardım eder
 
 **TL;DR:** Code coverage tools like [Istanbul/NYC ](https://github.com/gotwarlost/istanbul)are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but not least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
 
@@ -476,7 +476,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.8 Inspect for outdated packages
+## ![✔] 4.8 Güncel olmayan paketleri kontrol et
 
 **TL;DR:** Use your preferred tool (e.g. 'npm outdated' or [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) to detect installed packages which are outdated, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a severe scenario might be when an installed package is 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
 
@@ -484,7 +484,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.9 Use docker-compose for e2e testing
+## ![✔] 4.9 Uçtan uca (e2e) testi için docker-compose kullan
 
 **TL;DR:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Docker-compose turns this problem into a breeze by crafting production-like environment using a simple text file and easy commands. It allows crafting all the dependent services, DB and isolated network for e2e testing. Last but not least, it can keep a stateless environment that is invoked before each test suite and dies right after
 
@@ -492,7 +492,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.10 Refactor regularly using static analysis tools
+## ![✔] 4.10 Statik analiz araçları ile düzenli olarak refactor yap
 
 **TL;DR:** Using static analysis tools helps by giving objective ways to improve code quality and keeps your code maintainable. You can add static analysis tools to your CI build to fail when it finds code smells. Its main selling points over plain linting are the ability to inspect quality in the context of multiple files (e.g. detect duplications), perform advanced analysis (e.g. code complexity) and follow the history and progress of code issues. Two examples of tools you can use are [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) and [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)).
 
@@ -504,9 +504,9 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `5. Going To Production Practices`
+# `5. Canlı Ortam (Production) Uygulamaları`
 
-## ![✔] 5.1. Monitoring!
+## ![✔] 5.1. Görüntüleme!
 
 **TL;DR:** Monitoring is a game of finding out issues before customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that ticks all boxes. Click ‘The Gist’ below for an overview of the solutions
 
@@ -516,7 +516,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 5.2. Increase transparency using smart logging
+## ![✔] 5.2. Akıllı loglama kullanarak şeffaflığı arttır
 
 **TL;DR:** Logs can be a dumb warehouse of debug statements or the enabler of a beautiful dashboard that tells the story of your app. Plan your logging platform from day 1: how logs are collected, stored and analyzed to ensure that the desired information (e.g. error rate, following an entire transaction through services and servers, etc) can really be extracted
 
@@ -526,7 +526,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 5.3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy
+## ![✔] 5.3. Mümkün olan herşeyi reverse proxy e devret
 
 **TL;DR:** Node is awfully bad at doing CPU intensive tasks like gzipping, SSL termination, etc. You should use ‘real’ middleware services like nginx, HAproxy or cloud vendor services instead
 
@@ -536,7 +536,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 5.4. Lock dependencies
+## ![✔] 5.4. Bağımlılıkları sabitle
 
 **TL;DR:** Your code must be identical across all environments, but amazingly npm lets dependencies drift across environments by default – when you install packages at various environments it tries to fetch packages’ latest patch version. Overcome this by using npm config files, .npmrc, that tell each environment to save the exact (not the latest) version of each package. Alternatively, for finer grained control use `npm shrinkwrap`. \*Update: as of NPM5, dependencies are locked by default. The new package manager in town, Yarn, also got us covered by default
 
@@ -546,7 +546,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 5.5. Guard process uptime using the right tool
+## ![✔] 5.5. Doğru araçlar kullanarak işlem sürelerini koruyun
 
 **TL;DR:** The process must go on and get restarted upon failures. For simple scenarios, process management tools like PM2 might be enough but in today's ‘dockerized’ world, cluster management tools should be considered as well
 
@@ -556,7 +556,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 5.6. Utilize all CPU cores
+## ![✔] 5.6. Tüm CPU çekirdelerini kullan
 
 **TL;DR:** At its basic form, a Node app runs on a single CPU core while all others are left idling. It’s your duty to replicate the Node process and utilize all CPUs – For small-medium apps you may use Node Cluster or PM2. For a larger app consider replicating the process using some Docker cluster (e.g. K8S, ECS) or deployment scripts that are based on Linux init system (e.g. systemd)
 
@@ -566,7 +566,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 5.7. Create a ‘maintenance endpoint’
+## ![✔] 5.7. Bir ‘maintenance endpoint’ oluştur
 
 **TL;DR:** Expose a set of system-related information, like memory usage and REPL, etc in a secured API. Although it’s highly recommended to rely on standard and battle-tests tools, some valuable information and operations are easier done using code
 
@@ -576,7 +576,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 5.8. Discover errors and downtime using APM products
+## ![✔] 5.8. APM ürünlerini kullanarak hataları ve kesintileri bulun
 
 **TL;DR:** Application monitoring and performance products (a.k.a APM) proactively gauge codebase and API so they can auto-magically go beyond traditional monitoring and measure the overall user-experience across services and tiers. For example, some APM products can highlight a transaction that loads too slow on the end-users side while suggesting the root cause
 
@@ -586,7 +586,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 5.9. Make your code production-ready
+## ![✔] 5.9. Kodunu canlı ortama göre geliştir
 
 **TL;DR:** Code with the end in mind, plan for production from day 1. This sounds a bit vague so I’ve compiled a few development tips that are closely related to production maintenance (click Gist below)
 
@@ -596,7 +596,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 5.10. Measure and guard the memory usage
+## ![✔] 5.10. Bellek kullanımını ölçün ve koruyun
 
 **TL;DR:** Node.js has controversial relationships with memory: the v8 engine has soft limits on memory usage (1.4GB) and there are known paths to leak memory in Node’s code – thus watching Node’s process memory is a must. In small apps, you may gauge memory periodically using shell commands but in medium-large apps consider baking your memory watch into a robust monitoring system
 
@@ -606,7 +606,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 5.11. Get your frontend assets out of Node
+## ![✔] 5.11. Ön yüzdeki assets dosyalarını Node kullanmadan getir
 
 **TL;DR:** Serve frontend content using dedicated middleware (nginx, S3, CDN) because Node performance really gets hurt when dealing with many static files due to its single-threaded model
 
@@ -616,7 +616,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 5.12. Be stateless, kill your servers almost every day
+## ![✔] 5.12. Yurtsuz olun, Neredeyse her gün sunucularınızı öldürün
 
 **TL;DR:** Store any type of data (e.g. user sessions, cache, uploaded files) within external data stores. Consider ‘killing’ your servers periodically or use ‘serverless’ platform (e.g. AWS Lambda) that explicitly enforces a stateless behavior
 
@@ -626,7 +626,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 5.13. Use tools that automatically detect vulnerabilities
+## ![✔] 5.13. Güvenlik açıklarını otomatik olarak algılayan araçları kullanın
 
 **TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities (from time to time) that can put a system at risk. This can be easily tamed using community and commercial tools that constantly check for vulnerabilities and warn (locally or at GitHub), some can even patch them immediately
 
@@ -636,7 +636,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 5.14. Assign a transaction id to each log statement
+## ![✔] 5.14. Her log ifadesine bir işlem id'si atayın
 
 **TL;DR:** Assign the same identifier, transaction-id: {some value}, to each log entry within a single request. Then when inspecting errors in logs, easily conclude what happened before and after. Unfortunately, this is not easy to achieve in Node due to its async nature, see code examples inside
 
@@ -656,7 +656,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 5.16. Design automated, atomic and zero-downtime deployments
+## ![✔] 5.16. Otomatik, atomik ve sıfır kesinti dağıtımları (deploy) tasarlayın
 
 **TL;DR:** Research shows that teams who perform many deployments lower the probability of severe production issues. Fast and automated deployments that don’t require risky manual steps and service downtime significantly improve the deployment process. You should probably achieve this using Docker combined with CI tools as they became the industry standard for streamlined deployment
 
@@ -664,7 +664,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 5.17. Use an LTS release of Node.js
+## ![✔] 5.17. Node.js'in son kararlı sürümünü kullanın
 
 **TL;DR:** Ensure you are using an LTS version of Node.js to receive critical bug fixes, security updates and performance improvements
 
@@ -674,7 +674,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 5.18. Don't route logs within the app
+## ![✔] 5.18. Uygulama içerisinde logları yönlendirmeyin
 
 **TL;DR:** Log destinations should not be hard-coded by developers within the application code, but instead should be defined by the execution environment the application runs in. Developers should write logs to `stdout` using a logger utility and then let the execution environment (container, server, etc.) pipe the `stdout` stream to the appropriate destination (i.e. Splunk, Graylog, ElasticSearch, etc.).
 
@@ -686,13 +686,13 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `6. Security Best Practices`
+# `6. Güvenlik İçin En İyi Uygulamar`
 
 <div align="center">
 <img src="https://img.shields.io/badge/OWASP%20Threats-Top%2010-green.svg" alt="53 items"/>
 </div>
 
-## ![✔] 6.1. Embrace linter security rules
+## ![✔] 6.1. Güvenlik kurallarına sarılın
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
 
@@ -704,7 +704,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.2. Limit concurrent requests using a middleware
+## ![✔] 6.2. Bir ara katman kullanarak eş zamanlı istekleri limitleyin
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
@@ -716,7 +716,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.3 Extract secrets from config files or use packages to encrypt them
+## ![✔] 6.3 Yapılandırma dosyalarından gizli keyleri çıkarın veya şifrelemek için paketler kullanın
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A3:Sensitive%20Data%20Exposure%20-green.svg" alt=""/></a>
 
@@ -728,7 +728,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.4. Prevent query injection vulnerabilities with ORM/ODM libraries
+## ![✔] 6.4. ORM/ODM kütüphanelerindeki sorgu açıklarını önleyin
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
@@ -740,7 +740,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.5. Collection of generic security best practices
+## ![✔] 6.5. Genel güvenlik uygulamaları
 
 **TL;DR:** This is a collection of security advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
 
@@ -748,7 +748,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.6. Adjust the HTTP response headers for enhanced security
+## ![✔] 6.6. Gelişmiş güvenlik için HTTP cevap başlığını (response header) düzenle
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
@@ -760,7 +760,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.7. Constantly and automatically inspect for vulnerable dependencies
+## ![✔] 6.7. Savunmasız bağımlılıkları sürekli ve otomatik olarak denetleyin
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Known%20Vulnerabilities%20-green.svg" alt=""/></a>
 
@@ -772,7 +772,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.8. Avoid using the Node.js crypto library for handling passwords, use Bcrypt
+## ![✔] 6.8. Şifreleri işlemek için Node.js şifreleme kütüphanesini kullanmaktan kaçın, Bcrypt kullanın
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
@@ -784,7 +784,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.9. Escape HTML, JS and CSS output
+## ![✔] 6.9. HTML, JS ve CSS çıktılardan kaçının
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a>
 
@@ -796,7 +796,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.10. Validate incoming JSON schemas
+## ![✔] 6.10. Gelen JSON şemalarını doğrulayın
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7: XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a>
 
@@ -808,7 +808,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.11. Support blacklisting JWTs
+## ![✔] 6.11. JWT nin kara listesini destekleyin
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
@@ -820,14 +820,11 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.12. Prevent brute-force attacks against authorization
+## ![✔] 6.12. Her kullanıcının login isteğini limitleyin
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;DR:** A simple and powerful technique is to limit authorization attempts using two metrics:
-           
-1. The first is number of consecutive failed attempts by the same user unique ID/name and IP address.
-2. The second is number of failed attempts from an IP address over some long period of time. For example, block an IP address if it makes 100 failed attempts in one day.
+**TL;DR:** A brute force protection middleware such as [express-brute](https://www.npmjs.com/package/express-brute) should be used inside an express application to prevent brute force/dictionary attacks on sensitive routes such as /admin or /login based on request properties such as the username, or other identifiers such as body parameters
 
 **Otherwise:** An attacker can issue unlimited automated password attempts to gain access to privileged accounts on an application
 
@@ -835,7 +832,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.13. Run Node.js as non-root user
+## ![✔] 6.13. Node.js'i kök (root) olmayan kullanıcı tarafından çalıştırın
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A5:Broken%20Access%20Access%20Control-green.svg" alt=""/></a>
 
@@ -847,7 +844,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.14. Limit payload size using a reverse-proxy or a middleware
+## ![✔] 6.14. Bir reverse-proxy veya bir ara katman kullanarak yükleme boyutunu limitlendirin
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
@@ -859,7 +856,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.15. Avoid JavaScript eval statements
+## ![✔] 6.15. JavaScript eval ifadelerinden kaçının
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
@@ -871,7 +868,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.16. Prevent evil RegEx from overloading your single thread execution
+## ![✔] 6.16. Kötü RegEx'in tek iş parçasını (single thread) aşırı yüklemesini önleyin
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
@@ -883,7 +880,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.17. Avoid module loading using a variable
+## ![✔] 6.17. Değişken kullanarak modül yüklemekten kaçının
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
@@ -895,7 +892,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.18. Run unsafe code in a sandbox
+## ![✔] 6.18. Bir sandbox ta güvensiz kod çalıştırın
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
@@ -907,7 +904,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.19. Take extra care when working with child processes
+## ![✔] 6.19. Çocuk işlemlerle (child pocesses) çalıştığında ekstra dikkat et
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
@@ -919,7 +916,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.20. Hide error details from clients
+## ![✔] 6.20. İstemciden hata detaylarını saklayın
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
@@ -931,7 +928,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.21. Configure 2FA for npm or Yarn
+## ![✔] 6.21. İki faktörlü kimlik doğrulamayı yapılandırın
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
@@ -941,7 +938,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.22. Modify session middleware settings
+## ![✔] 6.22. Oturum ara katman (middleware) ayarlarını değiştirin
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
@@ -953,7 +950,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.23. Avoid DOS attacks by explicitly setting when a process should crash
+## ![✔] 6.23. Bir işlem olağandışı sonlandığında ayarlarla DOS ataklarından kaçın
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
@@ -963,7 +960,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 6.24. Prevent unsafe redirects
+## ![✔] 6.24. Güvensiz yönlendirmeleri önleyin
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
@@ -977,11 +974,11 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `7. Performance Best Practices`
+# `7. Performans En İyi Uygulamaları`
 
 ## Our contributors are working on this section. [Would you like to join?](https://github.com/i0natan/nodebestpractices/issues/256)
 
-## ![✔] 7.1. Prefer native JS methods over user-land utils like Lodash
+## ![✔] 7.1. Doğal JS metotlarını, Lodash gibi araçların yerine tercih edin
 
  **TL;DR:** It's often more penalising to use utility libraries like `lodash` and `underscore` over native methods as it leads to unneeded dependencies and slower performance.
  Bear in mind that with the introduction of the new V8 engine alongside the new ES standards, native methods were improved in such a way that it's now about 50% more performant than utility libraries.
