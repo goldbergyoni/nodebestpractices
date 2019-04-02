@@ -137,11 +137,11 @@ In a large app that constitutes a large code base, cross-cutting-concern utiliti
 
 <br/><br/>
 
-## ![✔] 2.3 İşletimsel hatalarlar ile yazılımcı hatalarını ayrıştırın
+## ![✔] 2.3 İşletimsel hatalar ile yazılımcı hatalarını ayrıştırın
 
-**TL;DR:** Operational errors (e.g. API received an invalid input) refer to known cases where the error impact is fully understood and can be handled thoughtfully. On the other hand, programmer error (e.g. trying to read undefined variable) refers to unknown code failures that dictate to gracefully restart the application
+**TL;DR:** Operasyonel hatalar (örneğin API'nin geçersiz bir input alması) hata etkisinin tam olarak anlaşıldığı ve dikkatlice işlenebildiği hataları ifade eder. Diğer yandan, programcı hatası (örneğin tanımsız (undefined) değişkeni okumaya çalışması) uygulamayı nazikçe yeniden başlatmak için zorlayan bilinmeyen kod hatasını ifade eder.
 
-**Otherwise:** You may always restart the application when an error appears, but why let ~5000 online users down because of a minor, predicted, operational error? the opposite is also not ideal – keeping the application up when an unknown issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
+**Otherwise:** Bir hata olduğunda uygulamayı her zaman yeniden başlatabilirsin, fakat neden basit, tahmin edilebilen, operasyonel hata yüzünden ~5000 çevrimiçi kullanıcının düşmesine izin veriyorsun? Tam tersi de ideal değildir - bilinmeyen bir sorun (programcı hatası) meydana geldiğinde uygulama devam ettirmek tahmin edilemeyen bir davranışa yol açabilir. İkisini ayırt etmek nazikçe davranmayı ve duruma göre dengeli bir yaklaşım uygulamayı sağlar.
 
 🔗 [**Read More: operational vs programmer error**](/sections/errorhandling/operationalvsprogrammererror.md)
 
