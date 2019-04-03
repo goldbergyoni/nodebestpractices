@@ -40,7 +40,7 @@ Que retornará isso:
 
 Você pode encontrar uma lista maior de benchmarks [aqui](https://github.com/Berkmann18/NativeVsUtils/blob/master/index.txt) ou alternativamente [executar isso](https://github.com/Berkmann18/NativeVsUtils/blob/master/index.js) que mostraria o mesmo porém com cores.
 
-### Citação de Blog: "Você não precisa (talvez não) de Lodash/Underscore"
+### Citação de Blog: "Você (talvez) não precisa de Lodash/Underscore"
 
 Do [repositório sobre esse assunto que foca em Lodash e Underscore](https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore).
 

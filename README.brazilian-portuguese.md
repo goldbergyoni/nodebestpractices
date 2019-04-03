@@ -9,20 +9,20 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2081%20Best%20Practices-blue.svg" alt="81 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Mar%2010%202019-green.svg" alt="Last update: March 10, 2019"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%2010.15.3%20LTS-brightgreen.svg" alt="Updated for Node 10.15.3 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Contagem%20de%20Items%20-%2081%20Boas%20Práticas-blue.svg" alt="81 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Última%20Atualização%20-%20Mar%2010%202019-green.svg" alt="Última Atualização: March 10, 2019"> <img src="https://img.shields.io/badge/%E2%9C%94%20Atualizado%20Para%20Versão%20-%20Node%2010.15.3%20LTS-brightgreen.svg" alt="Atualizado para Node 10.15.3 LTS">
 </div>
 
 <br/>
 
-[![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
+[![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Siga-nos no Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
 
 <br/>
 
-Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
+Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** e ![TR](/assets/flags/TR.png)**TR** em progresso!)](#translations)
 
 <br/>
 
-###### Construído e mantido pelo nosso [Comitê Diretivo](#steering-committee) e [Colaboradores](#collaborators)
+###### Construído e mantido pelo nosso [Comitê Diretivo](#comitê-diretivo) e [Colaboradores](#colaboradores)
 
 # Novas Práticas e Notícias
 
@@ -1016,9 +1016,9 @@ Todas as traduções são contribuições da comunidade. Nós ficaremos felizes 
 
 <br/><br/>
 
-## Steering Committee
+## Comitê Diretivo
 
-Meet the steering committee members - the people who work together to provide guidance and future direction to the project. In addition, each member of the committee leads a project tracked under our [Github projects](https://github.com/i0natan/nodebestpractices/projects).
+Conheça os membros do comitê diretivo - as pessoas que trabalham juntas para fornecer orientação e direção futura para o projeto. Além disso, cada membro do comitê lidera um projeto rastreado em nossos [projetos do Github](https://github.com/i0natan/nodebestpractices/projects).
 
 <img align="left" width="100" height="100" src="assets/images/members/yoni.png">
 
@@ -1046,6 +1046,7 @@ Consultor de Node.js independente, que trabalha com clientes nos EUA, Europa e I
 <a href="https://www.linkedin.com/in/kylemartinnz"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
 
 Full Stack Developer e Engenheiro de Confiabilidade de Sites com sede na Nova Zelândia, interessados ​​em segurança de aplicativos da Web, e arquitetando e construindo aplicativos Node.js para executar em escala global.
+
 <br/>
 
 <img align="left" width="100" height="100" src="assets/images/members/sagir.png">
@@ -1055,21 +1056,21 @@ Full Stack Developer e Engenheiro de Confiabilidade de Sites com sede na Nova Ze
 <a href="https://sagirk.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 <a href="https://linkedin.com/in/sagirk"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
 
-Deep specialist in JavaScript and its ecosystem — React, Node.js, MongoDB, pretty much anything that involves using JavaScript/JSON in any layer of the system — building products using the web platform for the world’s most recognized brands. Individual Member of the Node.js Foundation, collaborating on the Community Committee's Website Redesign Initiative.
+Especialista profundo em JavaScript e seu ecossistema - React, Node.js, MongoDB, praticamente qualquer coisa que envolva o uso de JavaScript/JSON em qualquer camada do sistema - criando produtos usando a plataforma da web para as marcas mais reconhecidas do mundo. Membro individual da "Node.js Foundation", colaborando em "Community Committee's Website Redesign Initiative".
 
 <br/>
 
 ## Colaboradores
 
-Thank you to all our collaborators! 🙏
+Obrigado a todos nossos colaboradores! 🙏
 
-Our collaborators are members who are contributing to the repository on a reguar basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in helping us guide thousands of people to craft better Node.js applications, please read our [contributor guidelines](/.operations/CONTRIBUTING.md) 🎉
+Nossos colaboradores são membros que estão contribuindo com o repositório em base regular, sugerindo novas práticas recomendadas, triando problemas, analisando solicitações de pull e muito mais. Se você estiver interessado em nos ajudar a orientar milhares de pessoas a criar melhores aplicações Node.js, leia nossas [diretrizes de colaborador](/.operations/CONTRIBUTING.md) 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
 | :--: | :--: |
 | [Ido Richter (Founder)](https://github.com/idori) | [Keith Holliday](https://github.com/TheHollidayInn) |
 
-### Past collaborators
+### Colaboradores anteriores
 
 | <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"></a> |
 | :--: |
