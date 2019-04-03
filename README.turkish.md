@@ -157,11 +157,11 @@ In a large app that constitutes a large code base, cross-cutting-concern utiliti
 
 <br/><br/>
 
-## ![✔] 2.5 Swagger kullanarak API hatalarını dökümante edin 
+## ![✔] 2.5 Swagger veya GraphQL kullanarak API hatalarını dökümante edin 
 
-**TL;DR:** Let your API callers know which errors might come in return so they can handle these thoughtfully without crashing. This is usually done with REST API documentation frameworks like Swagger
+**TL;DR:** API uygulamanıza istek atanların hangi hataları alabileceğini bilmelerini sağlayın böylece çökme (crashing) olmadan hataları dikkatlice işleyebilirler. RESTful API için, bu genellikle swagger gibi framework dökümantasyonu ile yapılır. Eğer GraphQl kullanıyorsanız, şemalarınızı ve yorumlarınızı da kullanabilirsiniz.
 
-**Aksi takdirde:** An API client might decide to crash and restart only because it received back an error it couldn’t understand. Note: the caller of your API might be you (very typical in a microservice environment)
+**Aksi takdirde:** API kullanıcısı anlamayadığı bir hatayı alırsa çökmeye veya yeniden başlatmaya karar verebilir. Note: bu kullanıcı siz olabilirsiniz (bir mikro servis ortamında çok normal)
 
 🔗 [**Daha fazla oku: documenting errors in Swagger**](/sections/errorhandling/documentingusingswagger.md)
 
