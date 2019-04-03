@@ -143,17 +143,17 @@ In a large app that constitutes a large code base, cross-cutting-concern utiliti
 
 **Aksi takdirde:** Bir hata olduğunda uygulamayı her zaman yeniden başlatabilirsin, fakat neden basit, tahmin edilebilen, operasyonel hata yüzünden ~5000 çevrimiçi kullanıcının düşmesine izin veriyorsun? Tam tersi de ideal değildir - bilinmeyen bir sorun (programcı hatası) meydana geldiğinde uygulama devam ettirmek tahmin edilemeyen bir davranışa yol açabilir. İkisini ayırt etmek nazikçe davranmayı ve duruma göre dengeli bir yaklaşım uygulamayı sağlar.
 
-🔗 [**Daha fazla oku: operational vs programmer error**](/sections/errorhandling/operationalvsprogrammererror.md)
+🔗 [**Daha fazla oku: operasyonel vs programcı hatası**](/sections/errorhandling/operationalvsprogrammererror.md)
 
 <br/><br/>
 
 ## ![✔] 2.4 Merkezi hata işleyicisi kullanın, Express middleware içerisinde hataları işlemeyin
 
-**TL;DR:** Error handling logic such as mail to admin and logging should be encapsulated in a dedicated and centralized object that all endpoints (e.g. Express middleware, cron jobs, unit-testing) call when an error comes in
+**TL;DR:** Yöneticiye mail atma ve loglama gibi hata işleme, bir hata aldığında bütün uç noktaların (örneğin Express ara katmanı, görev zamanlayıcı, birim testleri) çağırdığı özel ve merkezi bir nesnede saklanmalıdır.
 
-**Aksi takdirde:** Not handling errors within a single place will lead to code duplication and probably to improperly handled errors
+**Aksi takdirde:** Hatalaron tek bir yerde işlenmemesi, kod tekrarına ve muhtemelen yanlış işlenmiş hatalara yol açacaktır
 
-🔗 [**Daha fazla oku: handling errors in a centralized place**](/sections/errorhandling/centralizedhandling.md)
+🔗 [**Daha fazla oku: merkezi bir yerde hata işleme**](/sections/errorhandling/centralizedhandling.md)
 
 <br/><br/>
 
@@ -163,71 +163,72 @@ In a large app that constitutes a large code base, cross-cutting-concern utiliti
 
 **Aksi takdirde:** API kullanıcısı anlamayadığı bir hatayı alırsa çökmeye veya yeniden başlatmaya karar verebilir. Note: bu kullanıcı siz olabilirsiniz (bir mikro servis ortamında çok normal)
 
-🔗 [**Daha fazla oku: documenting errors in Swagger**](/sections/errorhandling/documentingusingswagger.md)
+🔗 [**Daha fazla oku: Swagger veya GraphQL’de API hatalarını dökümante etmek**](/sections/errorhandling/documentingusingswagger.md)
 
 <br/><br/>
 
-## ![✔] 2.6 Bir yabancı şehre geldiğinde nazikçe işlemden nazikçe çıkın
+## ![✔] 2.6 Bir yabancı şehre geldiğinde işlemden nazikçe çıkın
 
-**TL;DR:** When an unknown error occurs (a developer error, see best practice 2.3) - there is uncertainty about the application healthiness. A common practice suggests restarting the process carefully using a process management tool like [Forever](https://www.npmjs.com/package/forever) or [PM2](http://pm2.keymetrics.io/)
+**TL;DR:** Bilinmeyen bir hata oluştuğunda (bir geliştirici hatası, en iyi uygulamalar 2.3 bak) - uygulamanın sağlığına ilişkin belirsizlik var. Bir işlem yönetim aracı [Forever](https://www.npmjs.com/package/forever) or [PM2](http://pm2.keymetrics.io/) gibi kullanarak dikkatlice işlemi yeniden başlatmak yaygın bir uygulamadır.
 
-**Aksi takdirde:** When an unfamiliar exception occurs, some object might be in a faulty state (e.g. an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
+**Aksi takdirde:** Bilmediğiniz bir istisna oluştuğunda, bazı nesneler hatalı durumda olabilir (örneğin global olarak kullanılan ve bazı iç arızalar nedeniyle artık olayları tetiklemeyen bir olay (event) tetikleyicisi) ve gelecekteki tüm istekler başarısız olabilir veya çılgınca davranabilir
 
-🔗 [**Daha fazla oku: shutting the process**](/sections/errorhandling/shuttingtheprocess.md)
+🔗 [**Daha fazla oku: işlemin sonlandırılması**](/sections/errorhandling/shuttingtheprocess.md)
 
 <br/><br/>
 
 ## ![✔] 2.7 Hata görünürlüğünü artırmak için olgun bir log tutucu kullanın
 
-**TL;DR:** A set of mature logging tools like [Winston](https://www.npmjs.com/package/winston), [Bunyan](https://github.com/trentm/node-bunyan) or [Log4js](http://stritti.github.io/log4js/), will speed-up error discovery and understanding. So forget about console.log
+**TL;DR:** [Winston](https://www.npmjs.com/package/winston), [Bunyan](https://github.com/trentm/node-bunyan) veya [Log4js](http://stritti.github.io/log4js/) gibi olgun bir log tutma aracı hata bulma ve anlama sürecini hızlandıracak.
 
-**Aksi takdirde:** Skimming through console.logs or manually through messy text file without querying tools or a decent log viewer might keep you busy at work until late
+**Aksi takdirde:** Console.log'lar arasında gezinme veya karışık metin dosyaları arasında sorgulama araçları olmadan manuel gezinme veya iyi bir log görüntüleyici olmadan sorgulama yapmak geç saate kadar iş ile meşgul olmanıza neden olur.
 
-🔗 [**Daha fazla oku: using a mature logger**](/sections/errorhandling/usematurelogger.md)
+🔗 [**Daha fazla oku: olgun bir log tutucu kullan**](/sections/errorhandling/usematurelogger.md)
 
 <br/><br/>
 
-## ![✔] 2.8 Favori test framework'ünüzü kullanarak hatalı test akışlarını yapın
+## ![✔] 2.8 Favori test çerçevenizi (framework) kullanarak test için hatalı akışlar yapın
 
-**TL;DR:** Whether professional automated QA or plain manual developer testing – Ensure that your code not only satisfies positive scenarios but also handles and returns the right errors. Testing frameworks like Mocha & Chai can handle this easily (see code examples within the "Gist popup")
+**TL;DR:** Profesyonel otomatik kalite güvencesi veya manuel geliştirici testi - Kodunuzun sadece pozitif senaryoları karşılamadığından aynı zamanda doğru hataları işlediğinden ve doğru hataları döndürdüğünden emin olun. Mocha & Chai gibi test çerçeveleri (framework) bu işlemleri kolayca işleyebilir.
 
-**Aksi takdirde:** Without testing, whether automatically or manually, you can’t rely on your code to return the right errors. Without meaningful errors – there’s no error handling
+**Aksi takdirde:** Otomatik veya manuel test yapmadan, kodunuzun doğru hataları döndürdüğüne güvenemezsiniz. Anlamlı hatalar olmadan - hata işlemesi olmaz.
 
-🔗 [**Daha fazla oku: testing error flows**](/sections/errorhandling/testingerrorflows.md)
+🔗 [**Daha fazla oku: test için hatalı akışlar**](/sections/errorhandling/testingerrorflows.md)
 
 <br/><br/>
 
 ## ![✔] 2.9 Hataları ve APM ürünlerini kullanarak kesintileri keşfedin
 
-**TL;DR:** Monitoring and performance products (a.k.a APM) proactively gauge your codebase or API so they can automagically highlight errors, crashes and slow parts that you were missing
+**TL;DR:** İzleme ve performans ürünleri (diğer ismi APM)  kod tabanınızı veya API uygulamanızı proaktif olarak ölçer böylece bu araçlar otomatik olarak hataları, çökmeleri ve kaçırdığınız parçaları vurgulayabilir.
 
-**Aksi takdirde:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which are your slowest code parts under real-world scenario and how these affect the UX
+**Aksi takdirde:** API permformansı ve çökme süreleri için çok efor harcayabilirsiniz, muhtemelen gerçek dünya senaryosunda en yavaş kodlu parçaların hangileri olduğunu ve bunların UX'i nasıl etkilediğini asla bilemezsiniz.
 
-🔗 [**Daha fazla oku: using APM products**](/sections/errorhandling/apmproducts.md)
+🔗 [**Daha fazla oku: APM ürünlerini kullanın**](/sections/errorhandling/apmproducts.md)
 
 <br/><br/>
 
 ## ![✔] 2.10 İşlenmeyen promise retlerini yakalayın
 
-**TL;DR:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explicitly handle. Even if your code is subscribed to `process.uncaughtException`! Overcome this by registering to the event `process.unhandledRejection`
+**TL;DR:** Promise içerisinde fırlatılan herhangi bir istisna, bir geliştirici açıkça işlemeyi unutmadığı sürece, yutulur ve atılır.
+Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explicitly handle. Kodunuz `process.uncaughtException` 'a subscribed olsa bile! Bu olayı kaydederek bunun üstesinden gel `process.unhandledRejection`
 
-**Aksi takdirde:** Your errors will get swallowed and leave no trace. Nothing to worry about
+**Aksi takdirde:** Hatalarınız yutulur ve iz bırakmaz. Endişelenecek birşey yok
 
-🔗 [**Daha fazla oku: catching unhandled promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.md)
+🔗 [**Daha fazla oku: işlenmeyen promise retlerini yakalayın**](/sections/errorhandling/catchunhandledpromiserejection.md)
 
 <br/><br/>
 
 ## ![✔] 2.11 Fail fast, Özel bir kütüphane kullanarak argümanları doğrula
 
-**TL;DR:** This should be part of your Express best practices – Assert API input to avoid nasty bugs that are much harder to track later. The validation code is usually tedious unless you are using a very cool helper library like Joi
+**TL;DR:** Bu Ekspress en iyi uygulamaların bir parçası olmalıdır - Daha sonra izlemesi daha zor olan kötü hatalardan kaçınmak için API girişini belirtin. Doğrulama genellikle Joi gibi çok havalı bir yardımcı kütüphane kullanmadığınız sürece sıkıcı olur.
 
-**Aksi takdirde:** Consider this – your function expects a numeric argument “Discount” which the caller forgets to pass, later on, your code checks if Discount!=0 (amount of allowed discount is greater than zero), then it will allow the user to enjoy a discount. OMG, what a nasty bug. Can you see it?
+**Aksi takdirde:** Bunu düşün - fonksiyonunuz çağıranın geçmeyi unuttuğu bir nümerik argüman “Discount” bekliyor, daha sonra, kodunuz if Discount!=0 kontrol ediyor (izin verilen indirim tutarı sıfırdan büyük), o zaman kullanıcının bir indirimden yararlanmasına izin verecektir. Aman Allah'ım, ne çirkin bir bug. Gördün mü?
 
 🔗 [**Daha fazla oku: failing fast**](/sections/errorhandling/failfast.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Başa dön</a></p>
 
 # `3. Kod Stil En İyi Uygulamaları`
 
@@ -415,7 +416,7 @@ All statements above will return false if used with `===`
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Başa dön</a></p>
 
 # `4. Test Ve Bütün Kalite Uygulamalari`
 
@@ -505,7 +506,7 @@ All statements above will return false if used with `===`
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Başa dön</a></p>
 
 # `5. Canlı Ortam (Production) Uygulamaları`
 
@@ -687,7 +688,7 @@ All statements above will return false if used with `===`
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Başa dön</a></p>
 
 # `6. Güvenlik İçin En İyi Uygulamar`
 
@@ -975,7 +976,7 @@ All statements above will return false if used with `===`
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Başa dön</a></p>
 
 # `7. Performans En İyi Uygulamaları`
 
