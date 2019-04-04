@@ -222,7 +222,7 @@ Any exception thrown within a promise will get swallowed and discarded unless a 
 
 **TL;DR:** Bu Ekspress en iyi uygulamaların bir parçası olmalıdır - Daha sonra izlemesi daha zor olan kötü hatalardan kaçınmak için API girişini belirtin. Doğrulama genellikle Joi gibi çok havalı bir yardımcı kütüphane kullanmadığınız sürece sıkıcı olur.
 
-**Aksi takdirde:** Bunu düşün - fonksiyonunuz çağıranın geçmeyi unuttuğu bir nümerik argüman “Discount” bekliyor, daha sonra, kodunuz if Discount!=0 kontrol ediyor (izin verilen indirim tutarı sıfırdan büyük), o zaman kullanıcının bir indirimden yararlanmasına izin verecektir. Aman Allah'ım, ne çirkin bir bug. Gördün mü?
+**Aksi takdirde:** Bunu düşün - fonksiyonunuz, çağıranın geçmeyi unuttuğu bir nümerik argüman “Discount” bekliyor, daha sonra, kodunuz if Discount!=0 kontrol ediyor (izin verilen indirim tutarı sıfırdan büyük), o zaman kullanıcının bir indirimden yararlanmasına izin verecektir. Aman Allah'ım, ne çirkin bir bug. Gördün mü?
 
 🔗 [**Daha fazla oku: failing fast**](/sections/errorhandling/failfast.md)
 
@@ -234,27 +234,27 @@ Any exception thrown within a promise will get swallowed and discarded unless a 
 
 ## ![✔] 3.1 ESLint Kullan
 
-**TL;DR:** [ESLint](https://eslint.org) is the de-facto standard for checking possible code errors and fixing code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Though ESLint can automatically fix code styles, other tools like [prettier](https://www.npmjs.com/package/prettier) and [beautify](https://www.npmjs.com/package/js-beautify) are more powerful in formatting the fix and work in conjunction with ESLint
+**TL;DR:** [ESLint](https://eslint.org), olası kod hatalarını kontrol eden ve kod stilini düzelten fiili standarttır, sadece boşluk sorunları belirlemek değil aynı zamanda geliştiricilerin sınıflandırma olmadan fırlatılan hataları gibi ciddi anti desenleri (anti-patterns) ortaya çıkartır. Eslint otomatik olarak kod stillerini düzeltse de, [prettier](https://www.npmjs.com/package/prettier) and [beautify](https://www.npmjs.com/package/js-beautify) gibi diğer araçlar da formatlamak için çok güçlüdür ve ESLint ile birlikte çalışır
 
-**Aksi takdirde:** Developers will focus on tedious spacing and line-width concerns and time might be wasted overthinking the project's code style
+**Aksi takdirde:** Geliştiriciler sıkıcı boşluk sorunlarına odaklanacak ve satır genişliği ve kod stilini düşünerek boşa zaman kaybetmiş olacaksınız
 
-🔗 [**Daha fazla oku: Using ESLint and Prettier**](/sections/codestylepractices/eslint_prettier.md)
+🔗 [**Daha fazla oku: ESLint ve Prettier kullanın**](/sections/codestylepractices/eslint_prettier.md)
 
 <br/><br/>
 
 ## ![✔] 3.2 Node.js özel eklentiler
 
-**TL;DR:** On top of ESLint standard rules that cover vanilla JavaScript, add Node.js specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
+**TL;DR:** Geleneksel Javascripti kapsayan ESLint standart kurallarının üstüne, [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security) gibi Node.js özel eklentilerini ekleyin
 
-**Aksi takdirde:** Many faulty Node.js code patterns might escape under the radar. For example, developers might require(variableAsPath) files with a variable given as path which allows attackers to execute any JS script. Node.js linters can detect such patterns and complain early
+**Aksi takdirde:** Çok kötü Node.js kod tasarımı radarın altına kaçabilir. Örneğin,saldırganların herhangi bir JS komutunu çalıştırmasına izin veren, yol (path) olarak verilen bir değişken ile (variableAsPath) dosyalar isteyebilir. 
 
 <br/><br/>
 
-## ![✔] 3.3 Kod bloğu ile süslü parantez aynı satırda başlasın
+## ![✔] 3.3 Kod bloğu ile küme parantezi aynı satırda başlatın
 
-**TL;DR:** The opening curly braces of a code block should be on the same line as the opening statement
+**TL;DR:** Bir kod bloğunun açık küme (süslü) parantezi, açılış ifadesiyle aynı satırda olmalıdır
 
-### Code Example
+### Kod örneği
 
 ```javascript
 // Do
@@ -266,22 +266,23 @@ function someFunction() {
 function someFunction()
 {
   // code block
+
 }
 ```
 
-**Aksi takdirde:** Deferring from this best practice might lead to unexpected results, as seen in the StackOverflow thread below:
+**Aksi takdirde:** Bu en iyi uygulamayı yapmamak beklenmeyen sonuçlara yol açabilir, aşağıdaki StackOverflow başlığında görüldüğü gibi:
 
-🔗 [**Daha fazla oku:** "Why do results vary based on curly brace placement?" (StackOverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
+🔗 [**Daha fazla oku:** "Neden küme parantezinin yerleşimine göre sonuçlar değişiyor?" (StackOverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
 <br/><br/>
 
 ## ![✔] 3.4 Noktalı virgülü unutma
 
-**TL;DR:** While not unanimously agreed upon, it is still recommended to put a semicolon at the end of each statement. This will make your code more readable and explicit to other developers who read it
+**TL;DR:** Oy birliği ile kabul edilmiş olmasa da, her ifadenin sonuna noktalı virgül koymanız tavsiye edilir. Bu kodunuzu daha çok okunabilir yapar ve diğer geliştiricilerin okumaları için daha açık hale getirir.
 
 **Aksi takdirde:** As seen in the previous section, JavaScript's interpreter automatically adds a semicolon at the end of a statement if there isn't one, or considers a statement as not ended where it should, which might lead to some undesired results
 
-### Code example
+### Kod örneği
 
 ```javascript
 // Do
@@ -301,9 +302,9 @@ const count = 2 // it tries to run 2(), but 2 is not a function
 
 ## ![✔] 3.5 Fonksiyonlarını isimlendir
 
-**TL;DR:** Name all functions, including closures and callbacks. Avoid anonymous functions. This is especially useful when profiling a node app. Naming all functions will allow you to easily understand what you're looking at when checking a memory snapshot
+**TL;DR:** Geridönüş (callbacks) ve kapanış (closures) dahil bütün fonksiyonları isimlendirin. İsimsiz fonksiyonlardan kaçının. Bu özellikle bir node uygulamasının profilini çıkarırken kullanışlıdır. Bütün fonksiyonların isimlendirilmesi bir bellek görüntüsünü (memory snapshot) kontrol ederken ne arıyorsanuz kolayca anlamanıza izin verir
 
-**Aksi takdirde:** Debugging production issues using a core dump (memory snapshot) might become challenging as you notice significant memory consumption from anonymous functions
+**Aksi takdirde:** İsimsiz fonksiyonlardan önemli miktarda bellek tüketimi fark ettiğinizde bir çekirdek dökümü (memory snapshot) kullanarak canlı ortamda hata ayıklamak (debugging) zorlaşabilir
 
 <br/><br/>
 
@@ -313,7 +314,7 @@ const count = 2 // it tries to run 2(), but 2 is not a function
 
 **Aksi takdirde:** Javascript is the only language in the world which allows invoking a constructor ("Class") directly without instantiating it first. Consequently, Classes and function-constructors are differentiated by starting with UpperCamelCase
 
-### Code Example
+### Kod örneği
 
 ```javascript
 // for class name we use UpperCamelCase
@@ -355,7 +356,7 @@ function doSomething() {}
 
 **Aksi takdirde:** Changing the internal structure of files or the signature may break the interface with clients
 
-### Code example
+### Kod örneği
 
 ```javascript
 // Do
@@ -375,7 +376,7 @@ module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolve
 
 **Aksi takdirde:** Unequal variables might return true when compared with the `==` operator
 
-### Code example
+### Kod örneği
 
 ```javascript
 '' == '0'           // false
