@@ -25,10 +25,11 @@ coverage
 Example use of files array in package.json
 
 ```
-{ "files" : [
+{ 
+  "files" : [
     "dist/moment.js",
     "dist/moment.min.js"
-    ]
+  ]
 }
 ```
 
