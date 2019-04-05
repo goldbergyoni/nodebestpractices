@@ -3,6 +3,8 @@
 ### One Paragraph Explainer
 Precautions should be taken to avoid the risk of accidentally publishing secrets to public npm registries. An `.npmignore` file can be used to blacklist specific files or folders, or the `files` array in `package.json` can act as a whitelist.
 
+To gain a view of what npm publish will really publish to the registry, the `--dry-run` flag can be added the npm publish command to provide a verbose view of the tarbell package created.
+
 It is important to note that if a project is utilising both `.npmignore` and `.gitignore` files, everything which isn't in `.npmignore` is published to the registry(i.e. the `.npmignore` file overrides the `.gitignore`). This condition is a common source of confusion and is a problem that can lead to leaking secrets. Developers may end up updating the `.gitignore` file, but forget to update `.npmignore` as well, which can lead to a potentially sensitive file not being pushed to source control, but still being included in the npm package.
 
 ### Code example
