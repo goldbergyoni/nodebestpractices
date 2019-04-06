@@ -304,15 +304,15 @@ const count = 2 // it tries to run 2(), but 2 is not a function
 
 **TL;DR:** Geridönüş (callbacks) ve kapanış (closures) dahil bütün fonksiyonları isimlendirin. İsimsiz fonksiyonlardan kaçının. Bu özellikle bir node uygulamasının profilini çıkarırken kullanışlıdır. Bütün fonksiyonların isimlendirilmesi bir bellek görüntüsünü (memory snapshot) kontrol ederken ne arıyorsanuz kolayca anlamanıza izin verir
 
-**Aksi takdirde:** İsimsiz fonksiyonlardan önemli miktarda bellek tüketimi fark ettiğinizde bir çekirdek dökümü (memory snapshot) kullanarak canlı ortamda hata ayıklamak (debugging) zorlaşabilir
+**Aksi takdirde:** İsimsiz fonksiyonlardan önemli miktarda bellek tüketimi fark ettiğinizde bir çekirdek dökümü (memory snapshot) kullanarak canlı ortamda (production) hata ayıklamak (debugging) zorlaşabilir
 
 <br/><br/>
 
 ## ![✔] 3.6 Değişkenler, sabitler, fonksiyonlar ve sınıflar için isimlendirme kurallarını kullanın
 
-**TL;DR:** Use **_lowerCamelCase_** when naming constants, variables and functions and **_UpperCamelCase_** (capital first letter as well) when naming classes. This will help you to easily distinguish between plain variables/functions, and classes that require instantiation. Use descriptive names, but try to keep them short
+**TL;DR:** Sabitleri, değişkenleri ve fonksiyonları isimlendirdiğinizde **_lowerCamelCase_** kullanın ve sınıf isimlendirmelerinde **_UpperCamelCase_** (ilk harf de büyük) kullanın. Bu değişkenleri/fonksiyonları ve sınıfları kolayca ayırt etmenizi yardımcı olur. Açıklayıcı isimler kullanın fakat kısa tutmaya çalışın
 
-**Aksi takdirde:** Javascript is the only language in the world which allows invoking a constructor ("Class") directly without instantiating it first. Consequently, Classes and function-constructors are differentiated by starting with UpperCamelCase
+**Aksi takdirde:** Javascript, sınıfı oluşturmadan yapıcıyı direkt çağırmaya izin veren dünyadaki tek dildir. Sonuç olarak sınıflar ve fonksiyonlar UpperCamelCase ile başlatılarak farklılaştırılır
 
 ### Kod örneği
 
@@ -334,27 +334,28 @@ function doSomething() {}
 
 ## ![✔] 3.7 Const ve let tercih edin. Var kullanmayın
 
-**TL;DR:** Using `const` means that once a variable is assigned, it cannot be reassigned. Preferring `const` will help you to not be tempted to use the same variable for different uses, and make your code clearer. If a variable needs to be reassigned, in a for loop, for example, use `let` to declare it. Another important aspect of `let` is that a variable declared using it is only available in the block scope in which it was defined. `var` is function scoped, not block scoped, and [shouldn't be used in ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) now that you have `const` and `let` at your disposal
+**TL;DR:** `const` kullanmak, bir değişken atandığında tekrar atanamayacağı anlamına gelir. `const` tercih etmek, farklı kullanımlar için aynı değişkeni kulanmamanıza ve kodunuzu daha temiz yapmanıza yardım edecektir. Eğer yeniden atanabilir bir değişken ihtiyacı varsa, örneğin bir for döngüsü içerisinde, `let` kullanın. `let` 'in diğer bir önemli yönü, `let` kullanarak tanımlanan bir değişkenin yalnızca tanımlandığı blok kapsamında mevcut olmasıdır. `var` blok kapsamında değil fonksiyon kapsamındadır ve [ES6 ile kullanılmamalıdır](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) , `const` ve `let` kullanmalısınız.
 
-**Aksi takdirde:** Debugging becomes way more cumbersome when following a variable that frequently changes
+**Aksi takdirde:** Hata ayıklama, sıklıkla 
+değişen bir değişkeni takip ederken daha hantal hale gelir
 
 🔗 [**Daha fazla oku: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
 
 <br/><br/>
 
-## ![✔] 3.8 Modüller ilk gerekenlerdir, fonksiyon içerikleri değil
+## ![✔] 3.8 Önce modül gereksinimleri, fonksiyonlar değil
 
-**TL;DR:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top but also avoids a couple of potential problems
+**TL;DR:** Her dosyanın başında, herhangi bir fonksiyonun öncesinde ve dışında modül gereksinimleri. Bu basit en iyi uygulama, bir dosyanın bağımlılıklarını en baştan kolayca ve hızlı bir şekilde haber vermekle kalmaz, aynı zamanda birkaç olası sorunu da önler
 
-**Aksi takdirde:** Requires are run synchronously by Node.js. If they are called from within a function, it may block other requests from being handled at a more critical time. Also, if a required module or any of its own dependencies throw an error and crash the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function
+**Aksi takdirde:** Gereksinimler Node.js tarafından senkron çalışır. Fonksiyon içinde çağrılırlarsa, diğer isteklerin daha kritik bir zamanda işlenmesini engelleyebilir. Ayrıca eğer bir modül gereksinimi veya herhangi bir kendi bağımlılığınız bir hata fırlatırsa ve sunucu çökerse, en kısa sürede onu bulmak en iyisidir, eğer modül bir fonksiyon içerisinden istendiyse durum böyle olmayabilir.
 
 <br/><br/>
 
-## ![✔] 3.9 MOdüller, direkt dosyaların yerine klasörlerden olmalı
+## ![✔] 3.9 Modüller, direkt dosyaların yerine klasörlerden olmalı
 
-**TL;DR:** When developing a module/library in a folder, place an index.js file that exposes the module's internals so every consumer will pass through it. This serves as an 'interface' to your module and eases future changes without breaking the contract
+**TL;DR:** Bir klasörde bir modül/kütüphane geliştirirken, modülün içindekileri gösteren, her tüketicinin geçeceği bir index.js dosyası yerleştirin. Bu modülünüze bir 'interface' işlevi görür ve anlaşmayı bozmadan gelecekteki değişiklikleri kolaylaştırır.
 
-**Aksi takdirde:** Changing the internal structure of files or the signature may break the interface with clients
+**Aksi takdirde:** Dosyaların iç yapısını değiştirmek veya ismini değiştirmek kullanıcıyla olan arayüzü bozabilir.
 
 ### Kod örneği
 
@@ -372,9 +373,9 @@ module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolve
 
 ## ![✔] 3.10 Bu operatörü kullanın `===`
 
-**TL;DR:** Prefer the strict equality operator `===` over the weaker abstract equality operator `==`. `==` will compare two variables after converting them to a common type. There is no type conversion in `===`, and both variables must be of the same type to be equal
+**TL;DR:** Katı eşitlik operatörünü `===`, zayıf eşitlik operatörüne `==` tercih edin. `==` operatörü, iki değişkeni ortak bir türe dönüştürdükten sonra karşılaştırır. `===` operatöründe tür dönüşümü yoktur ve iki değişken de eşit olması için aynı tipte olmalıdır
 
-**Aksi takdirde:** Unequal variables might return true when compared with the `==` operator
+**Aksi takdirde:** Eşit olmayan değişkenler `==` operatör ile karşılaştırılırken true dönebilir
 
 ### Kod örneği
 
@@ -393,27 +394,27 @@ null == undefined   // true
 ' \t\r\n ' == 0     // true
 ```
 
-All statements above will return false if used with `===`
+Yukarıdaki bütün ifadeler, eğer `===` operatörü kullanılsaydı false dönecekti
 
 <br/><br/>
 
 ## ![✔] 3.11 Async Await kullan, callbacks kullanmaktan kaçın
 
-**TL;DR:** Node 8 LTS now has full support for Async-await. This is a new way of dealing with asynchronous code which supersedes callbacks and promises. Async-await is non-blocking, and it makes asynchronous code look synchronous. The best gift you can give to your code is using async-await which provides a much more compact and familiar code syntax like try-catch
+**TL;DR:** Node 8 LTS, Async-await için tam desteğe sahip. Bu, callbacks ve promises yerine geçen asenkron kodlara yaklaşımın yeni bir yoludur. Async-await engellemez ve asenkron kodu senkron görünümlü yapar. Konudunuza verebileceğiniz en iyi hediye, try-catch gibi çok daha kompakt ve tanıdık bir kod sözdizimi sağlayan async-await kullanmaktır
 
-**Aksi takdirde:** Handling async errors in callback style is probably the fastest way to hell - this style forces to check errors all over, deal with awkward code nesting and makes it difficult to reason about the code flow
+**Aksi takdirde:** Asenkron hataları işleme callback stilinde muhtemelen cehenneme giden  en hızlı yoldur - Bu stil her yerde hataları kontrol etmeye zorlar, garip kod yerleştirme ile uğraşır ve kod akışı hakkında düşünmeyi zorlaştırıyor
 
-🔗[**Daha fazla oku:** Guide to async await 1.0](https://github.com/yortus/asyncawait)
+🔗[**Daha fazla oku:** async await 1.0 klavuzu](https://github.com/yortus/asyncawait)
 
 <br/><br/>
 
-## ![✔] 3.12 Fonksiyon ifadelerinde bu ok işaretini kullan (=>)
+## ![✔] 3.12 Ok fonksiyon ifadelerini kullan (=>)
 
-**TL;DR:** Though it's recommended to use async-await and avoid function parameters when dealing with older APIs that accept promises or callbacks - arrow functions make the code structure more compact and keep the lexical context of the root function (i.e. `this`)
+**TL;DR:** Async-await kullanımı önerilmesine rağmen, promises veya callbacks kabul eden eski API'ler ile ilgilenirken fonksiyon parametrelerinden kaçının - ok işareti fonksiyonları, kod yapısını daha kompakt hale gertirir ve root fonksiyonun sözcük bağlamını korur (yani `this`)
 
-**Aksi takdirde:** Longer code (in ES5 functions) is more prone to bugs and cumbersome to read
+**Aksi takdirde:** Daha uzun kod (ES5 fonksiyonları) hatalara ve okunma hantallığına daha yatkındır.
 
-🔗 [**Daha fazla oku: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
+🔗 [**Daha fazla oku: Ok fonksiyon ifadelerine sarılma zamanı**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
 
 <br/><br/><br/>
 
