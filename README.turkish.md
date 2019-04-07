@@ -408,7 +408,7 @@ Yukarıdaki bütün ifadeler, eğer `===` operatörü kullanılsaydı false dön
 
 <br/><br/>
 
-## ![✔] 3.12 Ok fonksiyon ifadelerini kullan (=>)
+## ![✔] 3.12 Ok fonksiyon ifadelerini kullanın (=>)
 
 **TL;DR:** Async-await kullanımı önerilmesine rağmen, promises veya callbacks kabul eden eski API'ler ile ilgilenirken fonksiyon parametrelerinden kaçının - ok işareti fonksiyonları, kod yapısını daha kompakt hale gertirir ve root fonksiyonun sözcük bağlamını korur (yani `this`)
 
@@ -420,89 +420,90 @@ Yukarıdaki bütün ifadeler, eğer `===` operatörü kullanılsaydı false dön
 
 <p align="right"><a href="#table-of-contents">⬆ Başa dön</a></p>
 
-# `4. Test Ve Bütün Kalite Uygulamalari`
+# `4. Test Ve Tam Kalite Uygulamaları`
 
-## ![✔] 4.1 En azından, API (bileşen) testi yaz
+## ![✔] 4.1 En azından, API (bileşen) testi yazın
 
-**TL;DR:** Most projects just don't have any automated testing due to short timetables or often the 'testing project' ran out of control and was abandoned. For that reason, prioritize and start with API testing which is the easiest way to write and provides more coverage than unit testing (you may even craft API tests without code using tools like [Postman](https://www.getpostman.com/). Afterward, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc
+**TL;DR:** Projelerin çoğu kısa zaman sebebiyle otomatik test edilmemiş veya çoğu zaman 'test projesi' kontrolden çıkmış ve terk edilmiştir. Bu nedenle, birim testinden daha fazla kapsam sağlayan ve yazmanın kolay bir yolu olan API testini önceliklendirin ve başlayın. [Postman](https://www.getpostman.com/) gibi araçlar kullanarak kod olmadan API testleri bile yapabilirsiniz. Daha sonra, daha fazla kaynağa ve zamana sahipseniz, birim testi, VT testi, performans testi vb gibi gelişmiş test ürünlerine devam edin.
 
-**Aksi takdirde:** You may spend long days on writing unit tests to find out that you got only 20% system coverage
-
-<br/><br/>
-
-## ![✔] 4.2 Her test 3 parça içersin
-
-**TL;DR:** Make the test speak at the requirements level so it's self explanatory also to QA engineers and developers who are not familiar with the code internals. State in the test name what is being tested (unit under test), under what circumstances and what is the expected result
-
-**Aksi takdirde:** A deployment just failed, a test named “Add product” failed. Does this tell you what exactly is malfunctioning?
-
-🔗 [**Daha fazla oku: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
+**Aksi takdirde:** Birim testleri yazmak için uzun günler harcayabilirsin bu sayede sadece %20 sistem kapsamını kontrol edersiniz.
 
 <br/><br/>
 
-## ![✔] 4.3 Bir linter ile kod sorunlarını tespit et
+## ![✔] 4.2 Her test ismi 3 parça içersin
 
-**TL;DR:** Use a code linter to check basic quality and detect anti-patterns early. Run it before any test and add it as a pre-commit git-hook to minimize the time needed to review and correct any issue. Also check [Section 3](https://github.com/i0natan/nodebestpractices#3-code-style-practices) on Code Style Practices
+**TL;DR:** Testi gereksinimler düzeyinde konuşturun böylece kod içeriğine aşina olmayan kalite mühendisleri (qa) ve geliştiriciler için kendi kendini açıklar. Test isminde neyin test edildğini (test edilen birim), hangi koşullar altında ve beklenen sonucun ne olduğunu belirtin
 
-**Aksi takdirde:** You may let pass some anti-pattern and possible vulnerable code to your production environment.
+**Aksi takdirde:** Bir dağıtım az önce başarısız oldu, başarısız olan testin ismi “Ürün Ekle”. Bu size tam olarak neyin yanlış gittiğini söylüyor mu?
 
-<br/><br/>
-
-## ![✔] 4.4 CI platformunu dikkatli seç (Jenkins vs CircleCI vs Travis vs Diğerleri)
-
-**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it should come with a vibrant ecosystem of plugins. [Jenkins](https://jenkins.io/) used to be the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Nowadays, it has become much easier to set up a CI solution using SaaS tools like [CircleCI](https://circleci.com) and others. These tools allow crafting a flexible CI pipeline without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
-
-**Aksi takdirde:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
-
-🔗 [**Daha fazla oku: Choosing CI platform**](/sections/testingandquality/citools.md)
+🔗 [**Daha fazla oku: Her test ismi 3 parça içersin**](/sections/testingandquality/3-parts-in-name.md)
 
 <br/><br/>
 
-## ![✔] 4.5 Güvencesiz bağımlılıkları sürekli incele
+## ![✔] 4.3 Bir linter ile kod sorunlarını tespit edin
 
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [npm audit](https://docs.npmjs.com/cli/audit) and 🔗 [snyk.io](https://snyk.io) that can be invoked from your CI on every build
+**TL;DR:** Bir kod linter kullanarak temel kaliteyi kontrol et ve anti tasarım kalıplarını tespit et. Herhangi bir testten önce, herhangi bir sorunu gözden geçirmek ve düzeltmek için gereken süreyi en aza indirmek için pre-commit gibi git-hook ekleyin ve çalıştırın. Ayrıca kod stil uygulamalarını kontrol edebilirsin [Section 3](https://github.com/i0natan/nodebestpractices#3-code-style-practices) 
 
-**Aksi takdirde:** Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
+**Aksi takdirde:** Canlı ortamınıza bazı anti tasarım ve olası hassas kodları iletebilirsiniz.
+
+<br/><br/>
+
+## ![✔] 4.4 CI platformununu dikkatli secin (Jenkins vs CircleCI vs Travis vs Diğerleri)
+
+**TL;DR:** SÜrekli entegrasyon platformunuz (CICD) tüm kalite araçlarına ev sahipliği yapacak (örneğin test, lint) bu yüzden canlı bir eklenti ekosistemi ile gelmelidir. [Jenkins](https://jenkins.io/) en büyük topluluğa sahip dik bir öğrenme eğrisi gerektiren karmaşık kurulumu olan güçlü bir platform olduğundan bir çok projede varsayılan olarak kullanıldı. Şimdilerde, [CircleCI](https://circleci.com) ve diğerleri gibi SaaS araçları kullanarak bir CI çözümü oluşturmak çok daha kolay hale geldi. Bu araçlar, tüm altyapıyı yönetme yükü olmadan esnek bir CI boru hattı (pipeline) oluşturulmasına izin veriyor. Sonuçta, bu sağlamlık ile hız arasında bir seçimdir - seçiminizi dikkatli yapın
+
+**Aksi takdirde:** Satıcı seçiminiz bazı gelişmiş özelleştirme ihtiyaçlarınız için sizi engelleyebilir. Diğer yandan, Jenkins ile devam ederseniz, altyapısal kurulumlar değerli zamanınızı yakabilir.
+
+🔗 [**Daha fazla oku: CI platformununu seçimi**](/sections/testingandquality/citools.md)
+
+<br/><br/>
+
+## ![✔] 4.5 Güvencesiz bağımlılıkları sürekli inceleyin
+
+**TL;DR:** Ekspress gibi çok saygın bağımlılıkların bile bilinen açıkları vardır.
+Bu, her yapı için CI'nizden çağrılabilecek 🔗 [npm audit](https://docs.npmjs.com/cli/audit) ve 🔗 [snyk.io](https://snyk.io) gibi topluluk ve ticari araçlar kullanılarak kolayca evcilleştirilebilir.
+
+**Aksi takdirde:** Kodunuzu özel araçlar olmadan güvenlik açıklarından temiz tutmak için sürekli çevrimiçi yayınları takip etmek gerekecek. Oldukça sıkıcı
 
 <br/><br/>
 
 ## ![✔] 4.6 Testlerini etiketle
 
-**TL;DR:** Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/): mocha --grep 'sanity'
+**TL;DR:** Farklı senaryolarda farklı testler çalışmalı: quick smoke, IO-less, geliştirci bir dosyayı kaydettiğinde veya commit lediğinde testler çalışmalıdır, yeni bir pull request gönderildiğinde uçtan uca testler yapılmalıdır, vb. Bu testleri #cold #api #sanity gibi anahtar kelimelerle etiketleyerek sağlanabilir böylece test takımınızda arayabilirsiniz ve istenen alt grubu çağırabilirsiniz. Örneğin, [Mocha](https://mochajs.org/) ile tutarlılık test grubunu (sanity) çağırabilirsiniz: mocha --grep 'sanity'
 
-**Aksi takdirde:** Running all the tests, including tests that perform dozens of DB queries, any time a developer makes a small change can be extremely slow and keeps developers away from running tests
-
-<br/><br/>
-
-## ![✔] 4.7 Kodun ne kadarının test edilmiş olduğunu kontrol et, bu yanlış test tasarımlarını tespit etmene yardım eder
-
-**TL;DR:** Code coverage tools like [Istanbul/NYC ](https://github.com/gotwarlost/istanbul)are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but not least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
-
-**Aksi takdirde:** There won't be any automated metric telling you when a large portion of your code is not covered by testing
+**Aksi takdirde:** Bütün testleri çalıştırmak, onlarca VT sorgusu gerçekleştiren testler de dahil olmak üzere, bir geliştiricinin herhangi bir zamanda yaptığı küçük bir değişikliği çok yavaşlatabilir ve geliştiricileri testleri çalıştırmaktan uzak tutar
 
 <br/><br/>
 
-## ![✔] 4.8 Güncel olmayan paketleri kontrol et
+## ![✔] 4.7 Test kapsamınızı kontrol edin, bu yanlış test tasarımlarınızı tespit etmenize yardım eder
 
-**TL;DR:** Use your preferred tool (e.g. 'npm outdated' or [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) to detect installed packages which are outdated, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a severe scenario might be when an installed package is 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
+**TL;DR:** [Istanbul/NYC ](https://github.com/gotwarlost/istanbul) gibi test kapsam aracı 3 sebepten dolayı çok iyidir: ücretsizdir (raporlardan faydalanmak için efora gerek yok), test kapsamındaki bir düşüşün belirlenmesine yardım eder ve test uyumsuzluklarını vurgular: renkli kod kapsamı raporlarına bakarak fark edebilirsiniz, örneğin, catch blokları gibi hiç test edilmeyen kod alanları (yani test sadece olumlu durumlar için çalışır ve uygulamanın bir hata durumunda nasıl davranacağını bilmez). Eğer kapsam belirli bir eşik değerin altına düşerse yapıyı başarız olarak ayarlayın.
 
-**Aksi takdirde:** Your production will run packages that have been explicitly tagged by their author as risky
+**Aksi takdirde:** Kodunuzun büyük bir bölümünün test kapsamına girmediğini size bildiren otomatik bir metrik olmayacak
 
 <br/><br/>
 
-## ![✔] 4.9 Uçtan uca (e2e) testi için docker-compose kullan
+## ![✔] 4.8 Güncel olmayan paketleri denetleyin
 
-**TL;DR:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Docker-compose turns this problem into a breeze by crafting production-like environment using a simple text file and easy commands. It allows crafting all the dependent services, DB and isolated network for e2e testing. Last but not least, it can keep a stateless environment that is invoked before each test suite and dies right after
+**TL;DR:** Eski olan kurulu paketleri tespit etmek için tercih ettiğiniz aracı kullanın (örneğin, 'npm outdated' veya [npm-check-updates](https://www.npmjs.com/package/npm-check-updates)), bu kontrolü CI pipeline'nıza enjekte edin ve hatta ciddi bir senaryoda derleme işlemini başarısız hale getirin. Örneğin, kurulu bir paket 5 patch commit arkadaysa ciddi bir senaryo olabilir veya kendi yazarı tarafından kullanımdan kaldırıldı olarak etiketlenebilir - bu durumlarda derlemeyi sonlandır ve bu sürümü dağıtmayı engelle
 
-**Aksi takdirde:** Without docker-compose teams must maintain a testing DB for each testing environment including developers' machines, keep all those DBs in sync so test results won't vary across environments
+**Aksi takdirde:** Ürününüz yazarı tarafından açıkça riskli olarak etiketlenen paketleri kullanacak
+
+<br/><br/>
+
+## ![✔] 4.9 Uçtan uca (e2e) testi için docker-compose kullanın
+
+**TL;DR:** Canlı verileri kullanan uçtan uça (e2e) testi, VT gibi ağır hizmetlere bağlı olduğundan CI işleminin zayıf parçasıdır. Docker-compose bu sorunu üretim işçiliği ile bir esinti haline getiriyor - ortam bazlı basit bir metin dosyası kullanıyor ve kolay komutlar kullanıyor. e2e testi için tüm bağımlı servislerin, VT ve izole edilmiş ağın işçiliğini sağlar.
+
+**Aksi takdirde:** Docker-compose kullanmayan takımlar, geliştiricilerin makineleri de dahil olmak üzere her test ortamı için bir test VT'si sağlamalıdır, tüm bu VT'ler senkron tutun böylece test sonuçları ortamlara göre değişiklik göstermez
 
 <br/><br/>
 
 ## ![✔] 4.10 Statik analiz araçları ile düzenli olarak refactor yap
 
-**TL;DR:** Using static analysis tools helps by giving objective ways to improve code quality and keeps your code maintainable. You can add static analysis tools to your CI build to fail when it finds code smells. Its main selling points over plain linting are the ability to inspect quality in the context of multiple files (e.g. detect duplications), perform advanced analysis (e.g. code complexity) and follow the history and progress of code issues. Two examples of tools you can use are [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) and [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)).
+**TL;DR:** Statik analiz araçları kullanmak, kod kalitesini geliştirmek için objektif yollar vererek yardımcı olur ve kod bakımınızı devamlı sağlar. Kodda koku bulduğunda derlemenin başarısız olması için, static analiz araçlarını CI derlemenize ekleyebilirsiniz. Plain linting de ana noktalar, kaliteyi birden fazla dosyaların bağlamında incelemek (örneğin tekrarları algıla), gelişmiş analizler yapmak (örneğin kod karmaşıklığı) ve kod sorunlarının tarihçesini ve ilerlemesini takip edebilmek. Kullanabileceğiniz iki araç örneği [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) ve [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)).
 
-**Aksi takdirde:** With poor code quality, bugs and performance will always be an issue that no shiny new library or state of the art features can fix
+**Aksi takdirde:** Düşük kod kalitesiyle, parlak yeni kütüphane veya son teknoloji özelliklerinin düzeltemeyeceği, hatalar ve performans sorunları sürekli olacaktır
 
 🔗 [**Daha fazla oku: Refactoring!**](/sections/testingandquality/refactoring.md)
 
