@@ -143,17 +143,17 @@ In a large app that constitutes a large code base, cross-cutting-concern utiliti
 
 **Aksi takdirde:** Bir hata olduğunda uygulamayı her zaman yeniden başlatabilirsin, fakat neden basit, tahmin edilebilen, operasyonel hata yüzünden ~5000 çevrimiçi kullanıcının düşmesine izin veriyorsun? Tam tersi de ideal değildir - bilinmeyen bir sorun (programcı hatası) meydana geldiğinde uygulama devam ettirmek tahmin edilemeyen bir davranışa yol açabilir. İkisini ayırt etmek nazikçe davranmayı ve duruma göre dengeli bir yaklaşım uygulamayı sağlar.
 
-🔗 [**Daha fazla oku: operational vs programmer error**](/sections/errorhandling/operationalvsprogrammererror.md)
+🔗 [**Daha fazla oku: operasyonel vs programcı hatası**](/sections/errorhandling/operationalvsprogrammererror.md)
 
 <br/><br/>
 
 ## ![✔] 2.4 Merkezi hata işleyicisi kullanın, Express middleware içerisinde hataları işlemeyin
 
-**TL;DR:** Error handling logic such as mail to admin and logging should be encapsulated in a dedicated and centralized object that all endpoints (e.g. Express middleware, cron jobs, unit-testing) call when an error comes in
+**TL;DR:** Yöneticiye mail atma ve loglama gibi hata işleme, bir hata aldığında bütün uç noktaların (örneğin Express ara katmanı, görev zamanlayıcı, birim testleri) çağırdığı özel ve merkezi bir nesnede saklanmalıdır.
 
-**Aksi takdirde:** Not handling errors within a single place will lead to code duplication and probably to improperly handled errors
+**Aksi takdirde:** Hatalaron tek bir yerde işlenmemesi, kod tekrarına ve muhtemelen yanlış işlenmiş hatalara yol açacaktır
 
-🔗 [**Daha fazla oku: handling errors in a centralized place**](/sections/errorhandling/centralizedhandling.md)
+🔗 [**Daha fazla oku: merkezi bir yerde hata işleme**](/sections/errorhandling/centralizedhandling.md)
 
 <br/><br/>
 
@@ -163,97 +163,98 @@ In a large app that constitutes a large code base, cross-cutting-concern utiliti
 
 **Aksi takdirde:** API kullanıcısı anlamayadığı bir hatayı alırsa çökmeye veya yeniden başlatmaya karar verebilir. Note: bu kullanıcı siz olabilirsiniz (bir mikro servis ortamında çok normal)
 
-🔗 [**Daha fazla oku: documenting errors in Swagger**](/sections/errorhandling/documentingusingswagger.md)
+🔗 [**Daha fazla oku: Swagger veya GraphQL’de API hatalarını dökümante etmek**](/sections/errorhandling/documentingusingswagger.md)
 
 <br/><br/>
 
-## ![✔] 2.6 Bir yabancı şehre geldiğinde nazikçe işlemden nazikçe çıkın
+## ![✔] 2.6 Bir yabancı şehre geldiğinde işlemden nazikçe çıkın
 
-**TL;DR:** When an unknown error occurs (a developer error, see best practice 2.3) - there is uncertainty about the application healthiness. A common practice suggests restarting the process carefully using a process management tool like [Forever](https://www.npmjs.com/package/forever) or [PM2](http://pm2.keymetrics.io/)
+**TL;DR:** Bilinmeyen bir hata oluştuğunda (bir geliştirici hatası, en iyi uygulamalar 2.3 bak) - uygulamanın sağlığına ilişkin belirsizlik var. Bir işlem yönetim aracı [Forever](https://www.npmjs.com/package/forever) or [PM2](http://pm2.keymetrics.io/) gibi kullanarak dikkatlice işlemi yeniden başlatmak yaygın bir uygulamadır.
 
-**Aksi takdirde:** When an unfamiliar exception occurs, some object might be in a faulty state (e.g. an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
+**Aksi takdirde:** Bilmediğiniz bir istisna oluştuğunda, bazı nesneler hatalı durumda olabilir (örneğin global olarak kullanılan ve bazı iç arızalar nedeniyle artık olayları tetiklemeyen bir olay (event) tetikleyicisi) ve gelecekteki tüm istekler başarısız olabilir veya çılgınca davranabilir
 
-🔗 [**Daha fazla oku: shutting the process**](/sections/errorhandling/shuttingtheprocess.md)
+🔗 [**Daha fazla oku: işlemin sonlandırılması**](/sections/errorhandling/shuttingtheprocess.md)
 
 <br/><br/>
 
 ## ![✔] 2.7 Hata görünürlüğünü artırmak için olgun bir log tutucu kullanın
 
-**TL;DR:** A set of mature logging tools like [Winston](https://www.npmjs.com/package/winston), [Bunyan](https://github.com/trentm/node-bunyan) or [Log4js](http://stritti.github.io/log4js/), will speed-up error discovery and understanding. So forget about console.log
+**TL;DR:** [Winston](https://www.npmjs.com/package/winston), [Bunyan](https://github.com/trentm/node-bunyan) veya [Log4js](http://stritti.github.io/log4js/) gibi olgun bir log tutma aracı hata bulma ve anlama sürecini hızlandıracak.
 
-**Aksi takdirde:** Skimming through console.logs or manually through messy text file without querying tools or a decent log viewer might keep you busy at work until late
+**Aksi takdirde:** Console.log'lar arasında gezinme veya karışık metin dosyaları arasında sorgulama araçları olmadan manuel gezinme veya iyi bir log görüntüleyici olmadan sorgulama yapmak geç saate kadar iş ile meşgul olmanıza neden olur.
 
-🔗 [**Daha fazla oku: using a mature logger**](/sections/errorhandling/usematurelogger.md)
+🔗 [**Daha fazla oku: olgun bir log tutucu kullan**](/sections/errorhandling/usematurelogger.md)
 
 <br/><br/>
 
-## ![✔] 2.8 Favori test framework'ünüzü kullanarak hatalı test akışlarını yapın
+## ![✔] 2.8 Favori test çerçevenizi (framework) kullanarak test için hatalı akışlar yapın
 
-**TL;DR:** Whether professional automated QA or plain manual developer testing – Ensure that your code not only satisfies positive scenarios but also handles and returns the right errors. Testing frameworks like Mocha & Chai can handle this easily (see code examples within the "Gist popup")
+**TL;DR:** Profesyonel otomatik kalite güvencesi veya manuel geliştirici testi - Kodunuzun sadece pozitif senaryoları karşılamadığından aynı zamanda doğru hataları işlediğinden ve doğru hataları döndürdüğünden emin olun. Mocha & Chai gibi test çerçeveleri (framework) bu işlemleri kolayca işleyebilir.
 
-**Aksi takdirde:** Without testing, whether automatically or manually, you can’t rely on your code to return the right errors. Without meaningful errors – there’s no error handling
+**Aksi takdirde:** Otomatik veya manuel test yapmadan, kodunuzun doğru hataları döndürdüğüne güvenemezsiniz. Anlamlı hatalar olmadan - hata işlemesi olmaz.
 
-🔗 [**Daha fazla oku: testing error flows**](/sections/errorhandling/testingerrorflows.md)
+🔗 [**Daha fazla oku: test için hatalı akışlar**](/sections/errorhandling/testingerrorflows.md)
 
 <br/><br/>
 
 ## ![✔] 2.9 Hataları ve APM ürünlerini kullanarak kesintileri keşfedin
 
-**TL;DR:** Monitoring and performance products (a.k.a APM) proactively gauge your codebase or API so they can automagically highlight errors, crashes and slow parts that you were missing
+**TL;DR:** İzleme ve performans ürünleri (diğer ismi APM)  kod tabanınızı veya API uygulamanızı proaktif olarak ölçer böylece bu araçlar otomatik olarak hataları, çökmeleri ve kaçırdığınız parçaları vurgulayabilir.
 
-**Aksi takdirde:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which are your slowest code parts under real-world scenario and how these affect the UX
+**Aksi takdirde:** API permformansı ve çökme süreleri için çok efor harcayabilirsiniz, muhtemelen gerçek dünya senaryosunda en yavaş kodlu parçaların hangileri olduğunu ve bunların UX'i nasıl etkilediğini asla bilemezsiniz.
 
-🔗 [**Daha fazla oku: using APM products**](/sections/errorhandling/apmproducts.md)
+🔗 [**Daha fazla oku: APM ürünlerini kullanın**](/sections/errorhandling/apmproducts.md)
 
 <br/><br/>
 
 ## ![✔] 2.10 İşlenmeyen promise retlerini yakalayın
 
-**TL;DR:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explicitly handle. Even if your code is subscribed to `process.uncaughtException`! Overcome this by registering to the event `process.unhandledRejection`
+**TL;DR:** Promise içerisinde fırlatılan herhangi bir istisna, bir geliştirici açıkça işlemeyi unutmadığı sürece, yutulur ve atılır.
+Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explicitly handle. Kodunuz `process.uncaughtException` 'a subscribed olsa bile! Bu olayı kaydederek bunun üstesinden gel `process.unhandledRejection`
 
-**Aksi takdirde:** Your errors will get swallowed and leave no trace. Nothing to worry about
+**Aksi takdirde:** Hatalarınız yutulur ve iz bırakmaz. Endişelenecek birşey yok
 
-🔗 [**Daha fazla oku: catching unhandled promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.md)
+🔗 [**Daha fazla oku: işlenmeyen promise retlerini yakalayın**](/sections/errorhandling/catchunhandledpromiserejection.md)
 
 <br/><br/>
 
 ## ![✔] 2.11 Fail fast, Özel bir kütüphane kullanarak argümanları doğrula
 
-**TL;DR:** This should be part of your Express best practices – Assert API input to avoid nasty bugs that are much harder to track later. The validation code is usually tedious unless you are using a very cool helper library like Joi
+**TL;DR:** Bu Ekspress en iyi uygulamaların bir parçası olmalıdır - Daha sonra izlemesi daha zor olan kötü hatalardan kaçınmak için API girişini belirtin. Doğrulama genellikle Joi gibi çok havalı bir yardımcı kütüphane kullanmadığınız sürece sıkıcı olur.
 
-**Aksi takdirde:** Consider this – your function expects a numeric argument “Discount” which the caller forgets to pass, later on, your code checks if Discount!=0 (amount of allowed discount is greater than zero), then it will allow the user to enjoy a discount. OMG, what a nasty bug. Can you see it?
+**Aksi takdirde:** Bunu düşün - fonksiyonunuz, çağıranın geçmeyi unuttuğu bir nümerik argüman “Discount” bekliyor, daha sonra, kodunuz if Discount!=0 kontrol ediyor (izin verilen indirim tutarı sıfırdan büyük), o zaman kullanıcının bir indirimden yararlanmasına izin verecektir. Aman Allah'ım, ne çirkin bir bug. Gördün mü?
 
 🔗 [**Daha fazla oku: failing fast**](/sections/errorhandling/failfast.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Başa dön</a></p>
 
 # `3. Kod Stil En İyi Uygulamaları`
 
 ## ![✔] 3.1 ESLint Kullan
 
-**TL;DR:** [ESLint](https://eslint.org) is the de-facto standard for checking possible code errors and fixing code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Though ESLint can automatically fix code styles, other tools like [prettier](https://www.npmjs.com/package/prettier) and [beautify](https://www.npmjs.com/package/js-beautify) are more powerful in formatting the fix and work in conjunction with ESLint
+**TL;DR:** [ESLint](https://eslint.org), olası kod hatalarını kontrol eden ve kod stilini düzelten fiili standarttır, sadece boşluk sorunları belirlemek değil aynı zamanda geliştiricilerin sınıflandırma olmadan fırlatılan hataları gibi ciddi anti desenleri (anti-patterns) ortaya çıkartır. Eslint otomatik olarak kod stillerini düzeltse de, [prettier](https://www.npmjs.com/package/prettier) and [beautify](https://www.npmjs.com/package/js-beautify) gibi diğer araçlar da formatlamak için çok güçlüdür ve ESLint ile birlikte çalışır
 
-**Aksi takdirde:** Developers will focus on tedious spacing and line-width concerns and time might be wasted overthinking the project's code style
+**Aksi takdirde:** Geliştiriciler sıkıcı boşluk sorunlarına odaklanacak ve satır genişliği ve kod stilini düşünerek boşa zaman kaybetmiş olacaksınız
 
-🔗 [**Daha fazla oku: Using ESLint and Prettier**](/sections/codestylepractices/eslint_prettier.md)
+🔗 [**Daha fazla oku: ESLint ve Prettier kullanın**](/sections/codestylepractices/eslint_prettier.md)
 
 <br/><br/>
 
 ## ![✔] 3.2 Node.js özel eklentiler
 
-**TL;DR:** On top of ESLint standard rules that cover vanilla JavaScript, add Node.js specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
+**TL;DR:** Geleneksel Javascripti kapsayan ESLint standart kurallarının üstüne, [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security) gibi Node.js özel eklentilerini ekleyin
 
-**Aksi takdirde:** Many faulty Node.js code patterns might escape under the radar. For example, developers might require(variableAsPath) files with a variable given as path which allows attackers to execute any JS script. Node.js linters can detect such patterns and complain early
+**Aksi takdirde:** Çok kötü Node.js kod tasarımı radarın altına kaçabilir. Örneğin,saldırganların herhangi bir JS komutunu çalıştırmasına izin veren, yol (path) olarak verilen bir değişken ile (variableAsPath) dosyalar isteyebilir. 
 
 <br/><br/>
 
-## ![✔] 3.3 Kod bloğu ile süslü parantez aynı satırda başlasın
+## ![✔] 3.3 Kod bloğu ile küme parantezi aynı satırda başlatın
 
-**TL;DR:** The opening curly braces of a code block should be on the same line as the opening statement
+**TL;DR:** Bir kod bloğunun açık küme (süslü) parantezi, açılış ifadesiyle aynı satırda olmalıdır
 
-### Code Example
+### Kod örneği
 
 ```javascript
 // Do
@@ -265,22 +266,23 @@ function someFunction() {
 function someFunction()
 {
   // code block
+
 }
 ```
 
-**Aksi takdirde:** Deferring from this best practice might lead to unexpected results, as seen in the StackOverflow thread below:
+**Aksi takdirde:** Bu en iyi uygulamayı yapmamak beklenmeyen sonuçlara yol açabilir, aşağıdaki StackOverflow başlığında görüldüğü gibi:
 
-🔗 [**Daha fazla oku:** "Why do results vary based on curly brace placement?" (StackOverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
+🔗 [**Daha fazla oku:** "Neden küme parantezinin yerleşimine göre sonuçlar değişiyor?" (StackOverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
 <br/><br/>
 
 ## ![✔] 3.4 Noktalı virgülü unutma
 
-**TL;DR:** While not unanimously agreed upon, it is still recommended to put a semicolon at the end of each statement. This will make your code more readable and explicit to other developers who read it
+**TL;DR:** Oy birliği ile kabul edilmiş olmasa da, her ifadenin sonuna noktalı virgül koymanız tavsiye edilir. Bu kodunuzu daha çok okunabilir yapar ve diğer geliştiricilerin okumaları için daha açık hale getirir.
 
 **Aksi takdirde:** As seen in the previous section, JavaScript's interpreter automatically adds a semicolon at the end of a statement if there isn't one, or considers a statement as not ended where it should, which might lead to some undesired results
 
-### Code example
+### Kod örneği
 
 ```javascript
 // Do
@@ -300,19 +302,19 @@ const count = 2 // it tries to run 2(), but 2 is not a function
 
 ## ![✔] 3.5 Fonksiyonlarını isimlendir
 
-**TL;DR:** Name all functions, including closures and callbacks. Avoid anonymous functions. This is especially useful when profiling a node app. Naming all functions will allow you to easily understand what you're looking at when checking a memory snapshot
+**TL;DR:** Geridönüş (callbacks) ve kapanış (closures) dahil bütün fonksiyonları isimlendirin. İsimsiz fonksiyonlardan kaçının. Bu özellikle bir node uygulamasının profilini çıkarırken kullanışlıdır. Bütün fonksiyonların isimlendirilmesi bir bellek görüntüsünü (memory snapshot) kontrol ederken ne arıyorsanuz kolayca anlamanıza izin verir
 
-**Aksi takdirde:** Debugging production issues using a core dump (memory snapshot) might become challenging as you notice significant memory consumption from anonymous functions
+**Aksi takdirde:** İsimsiz fonksiyonlardan önemli miktarda bellek tüketimi fark ettiğinizde bir çekirdek dökümü (memory snapshot) kullanarak canlı ortamda (production) hata ayıklamak (debugging) zorlaşabilir
 
 <br/><br/>
 
 ## ![✔] 3.6 Değişkenler, sabitler, fonksiyonlar ve sınıflar için isimlendirme kurallarını kullanın
 
-**TL;DR:** Use **_lowerCamelCase_** when naming constants, variables and functions and **_UpperCamelCase_** (capital first letter as well) when naming classes. This will help you to easily distinguish between plain variables/functions, and classes that require instantiation. Use descriptive names, but try to keep them short
+**TL;DR:** Sabitleri, değişkenleri ve fonksiyonları isimlendirdiğinizde **_lowerCamelCase_** kullanın ve sınıf isimlendirmelerinde **_UpperCamelCase_** (ilk harf de büyük) kullanın. Bu değişkenleri/fonksiyonları ve sınıfları kolayca ayırt etmenizi yardımcı olur. Açıklayıcı isimler kullanın fakat kısa tutmaya çalışın
 
-**Aksi takdirde:** Javascript is the only language in the world which allows invoking a constructor ("Class") directly without instantiating it first. Consequently, Classes and function-constructors are differentiated by starting with UpperCamelCase
+**Aksi takdirde:** Javascript, sınıfı oluşturmadan yapıcıyı direkt çağırmaya izin veren dünyadaki tek dildir. Sonuç olarak sınıflar ve fonksiyonlar UpperCamelCase ile başlatılarak farklılaştırılır
 
-### Code Example
+### Kod örneği
 
 ```javascript
 // for class name we use UpperCamelCase
@@ -332,29 +334,30 @@ function doSomething() {}
 
 ## ![✔] 3.7 Const ve let tercih edin. Var kullanmayın
 
-**TL;DR:** Using `const` means that once a variable is assigned, it cannot be reassigned. Preferring `const` will help you to not be tempted to use the same variable for different uses, and make your code clearer. If a variable needs to be reassigned, in a for loop, for example, use `let` to declare it. Another important aspect of `let` is that a variable declared using it is only available in the block scope in which it was defined. `var` is function scoped, not block scoped, and [shouldn't be used in ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) now that you have `const` and `let` at your disposal
+**TL;DR:** `const` kullanmak, bir değişken atandığında tekrar atanamayacağı anlamına gelir. `const` tercih etmek, farklı kullanımlar için aynı değişkeni kulanmamanıza ve kodunuzu daha temiz yapmanıza yardım edecektir. Eğer yeniden atanabilir bir değişken ihtiyacı varsa, örneğin bir for döngüsü içerisinde, `let` kullanın. `let` 'in diğer bir önemli yönü, `let` kullanarak tanımlanan bir değişkenin yalnızca tanımlandığı blok kapsamında mevcut olmasıdır. `var` blok kapsamında değil fonksiyon kapsamındadır ve [ES6 ile kullanılmamalıdır](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) , `const` ve `let` kullanmalısınız.
 
-**Aksi takdirde:** Debugging becomes way more cumbersome when following a variable that frequently changes
+**Aksi takdirde:** Hata ayıklama, sıklıkla 
+değişen bir değişkeni takip ederken daha hantal hale gelir
 
 🔗 [**Daha fazla oku: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
 
 <br/><br/>
 
-## ![✔] 3.8 Modüller ilk gerekenlerdir, fonksiyon içerikleri değil
+## ![✔] 3.8 Önce modül gereksinimleri, fonksiyonlar değil
 
-**TL;DR:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top but also avoids a couple of potential problems
+**TL;DR:** Her dosyanın başında, herhangi bir fonksiyonun öncesinde ve dışında modül gereksinimleri. Bu basit en iyi uygulama, bir dosyanın bağımlılıklarını en baştan kolayca ve hızlı bir şekilde haber vermekle kalmaz, aynı zamanda birkaç olası sorunu da önler
 
-**Aksi takdirde:** Requires are run synchronously by Node.js. If they are called from within a function, it may block other requests from being handled at a more critical time. Also, if a required module or any of its own dependencies throw an error and crash the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function
+**Aksi takdirde:** Gereksinimler Node.js tarafından senkron çalışır. Fonksiyon içinde çağrılırlarsa, diğer isteklerin daha kritik bir zamanda işlenmesini engelleyebilir. Ayrıca eğer bir modül gereksinimi veya herhangi bir kendi bağımlılığınız bir hata fırlatırsa ve sunucu çökerse, en kısa sürede onu bulmak en iyisidir, eğer modül bir fonksiyon içerisinden istendiyse durum böyle olmayabilir.
 
 <br/><br/>
 
-## ![✔] 3.9 MOdüller, direkt dosyaların yerine klasörlerden olmalı
+## ![✔] 3.9 Modüller, direkt dosyaların yerine klasörlerden olmalı
 
-**TL;DR:** When developing a module/library in a folder, place an index.js file that exposes the module's internals so every consumer will pass through it. This serves as an 'interface' to your module and eases future changes without breaking the contract
+**TL;DR:** Bir klasörde bir modül/kütüphane geliştirirken, modülün içindekileri gösteren, her tüketicinin geçeceği bir index.js dosyası yerleştirin. Bu modülünüze bir 'interface' işlevi görür ve anlaşmayı bozmadan gelecekteki değişiklikleri kolaylaştırır.
 
-**Aksi takdirde:** Changing the internal structure of files or the signature may break the interface with clients
+**Aksi takdirde:** Dosyaların iç yapısını değiştirmek veya ismini değiştirmek kullanıcıyla olan arayüzü bozabilir.
 
-### Code example
+### Kod örneği
 
 ```javascript
 // Do
@@ -370,11 +373,11 @@ module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolve
 
 ## ![✔] 3.10 Bu operatörü kullanın `===`
 
-**TL;DR:** Prefer the strict equality operator `===` over the weaker abstract equality operator `==`. `==` will compare two variables after converting them to a common type. There is no type conversion in `===`, and both variables must be of the same type to be equal
+**TL;DR:** Katı eşitlik operatörünü `===`, zayıf eşitlik operatörüne `==` tercih edin. `==` operatörü, iki değişkeni ortak bir türe dönüştürdükten sonra karşılaştırır. `===` operatöründe tür dönüşümü yoktur ve iki değişken de eşit olması için aynı tipte olmalıdır
 
-**Aksi takdirde:** Unequal variables might return true when compared with the `==` operator
+**Aksi takdirde:** Eşit olmayan değişkenler `==` operatör ile karşılaştırılırken true dönebilir
 
-### Code example
+### Kod örneği
 
 ```javascript
 '' == '0'           // false
@@ -391,269 +394,270 @@ null == undefined   // true
 ' \t\r\n ' == 0     // true
 ```
 
-All statements above will return false if used with `===`
+Yukarıdaki bütün ifadeler, eğer `===` operatörü kullanılsaydı false dönecekti
 
 <br/><br/>
 
 ## ![✔] 3.11 Async Await kullan, callbacks kullanmaktan kaçın
 
-**TL;DR:** Node 8 LTS now has full support for Async-await. This is a new way of dealing with asynchronous code which supersedes callbacks and promises. Async-await is non-blocking, and it makes asynchronous code look synchronous. The best gift you can give to your code is using async-await which provides a much more compact and familiar code syntax like try-catch
+**TL;DR:** Node 8 LTS, Async-await için tam desteğe sahip. Bu, callbacks ve promises yerine geçen asenkron kodlara yaklaşımın yeni bir yoludur. Async-await engellemez ve asenkron kodu senkron görünümlü yapar. Konudunuza verebileceğiniz en iyi hediye, try-catch gibi çok daha kompakt ve tanıdık bir kod sözdizimi sağlayan async-await kullanmaktır
 
-**Aksi takdirde:** Handling async errors in callback style is probably the fastest way to hell - this style forces to check errors all over, deal with awkward code nesting and makes it difficult to reason about the code flow
+**Aksi takdirde:** Asenkron hataları işleme callback stilinde muhtemelen cehenneme giden  en hızlı yoldur - Bu stil her yerde hataları kontrol etmeye zorlar, garip kod yerleştirme ile uğraşır ve kod akışı hakkında düşünmeyi zorlaştırıyor
 
-🔗[**Daha fazla oku:** Guide to async await 1.0](https://github.com/yortus/asyncawait)
+🔗[**Daha fazla oku:** async await 1.0 klavuzu](https://github.com/yortus/asyncawait)
 
 <br/><br/>
 
-## ![✔] 3.12 Fonksiyon ifadelerinde bu ok işaretini kullan (=>)
+## ![✔] 3.12 Ok fonksiyon ifadelerini kullanın (=>)
 
-**TL;DR:** Though it's recommended to use async-await and avoid function parameters when dealing with older APIs that accept promises or callbacks - arrow functions make the code structure more compact and keep the lexical context of the root function (i.e. `this`)
+**TL;DR:** Async-await kullanımı önerilmesine rağmen, promises veya callbacks kabul eden eski API'ler ile ilgilenirken fonksiyon parametrelerinden kaçının - ok işareti fonksiyonları, kod yapısını daha kompakt hale gertirir ve root fonksiyonun sözcük bağlamını korur (yani `this`)
 
-**Aksi takdirde:** Longer code (in ES5 functions) is more prone to bugs and cumbersome to read
+**Aksi takdirde:** Daha uzun kod (ES5 fonksiyonları) hatalara ve okunma hantallığına daha yatkındır.
 
-🔗 [**Daha fazla oku: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
+🔗 [**Daha fazla oku: Ok fonksiyon ifadelerine sarılma zamanı**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Başa dön</a></p>
 
-# `4. Test Ve Bütün Kalite Uygulamalari`
+# `4. Test Ve Tam Kalite Uygulamaları`
 
-## ![✔] 4.1 En azından, API (bileşen) testi yaz
+## ![✔] 4.1 En azından, API (bileşen) testi yazın
 
-**TL;DR:** Most projects just don't have any automated testing due to short timetables or often the 'testing project' ran out of control and was abandoned. For that reason, prioritize and start with API testing which is the easiest way to write and provides more coverage than unit testing (you may even craft API tests without code using tools like [Postman](https://www.getpostman.com/). Afterward, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc
+**TL;DR:** Projelerin çoğu kısa zaman sebebiyle otomatik test edilmemiş veya çoğu zaman 'test projesi' kontrolden çıkmış ve terk edilmiştir. Bu nedenle, birim testinden daha fazla kapsam sağlayan ve yazmanın kolay bir yolu olan API testini önceliklendirin ve başlayın. [Postman](https://www.getpostman.com/) gibi araçlar kullanarak kod olmadan API testleri bile yapabilirsiniz. Daha sonra, daha fazla kaynağa ve zamana sahipseniz, birim testi, VT testi, performans testi vb gibi gelişmiş test ürünlerine devam edin.
 
-**Aksi takdirde:** You may spend long days on writing unit tests to find out that you got only 20% system coverage
-
-<br/><br/>
-
-## ![✔] 4.2 Her test 3 parça içersin
-
-**TL;DR:** Make the test speak at the requirements level so it's self explanatory also to QA engineers and developers who are not familiar with the code internals. State in the test name what is being tested (unit under test), under what circumstances and what is the expected result
-
-**Aksi takdirde:** A deployment just failed, a test named “Add product” failed. Does this tell you what exactly is malfunctioning?
-
-🔗 [**Daha fazla oku: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
+**Aksi takdirde:** Birim testleri yazmak için uzun günler harcayabilirsin bu sayede sadece %20 sistem kapsamını kontrol edersiniz.
 
 <br/><br/>
 
-## ![✔] 4.3 Bir linter ile kod sorunlarını tespit et
+## ![✔] 4.2 Her test ismi 3 parça içersin
 
-**TL;DR:** Use a code linter to check basic quality and detect anti-patterns early. Run it before any test and add it as a pre-commit git-hook to minimize the time needed to review and correct any issue. Also check [Section 3](https://github.com/i0natan/nodebestpractices#3-code-style-practices) on Code Style Practices
+**TL;DR:** Testi gereksinimler düzeyinde konuşturun böylece kod içeriğine aşina olmayan kalite mühendisleri (qa) ve geliştiriciler için kendi kendini açıklar. Test isminde neyin test edildğini (test edilen birim), hangi koşullar altında ve beklenen sonucun ne olduğunu belirtin
 
-**Aksi takdirde:** You may let pass some anti-pattern and possible vulnerable code to your production environment.
+**Aksi takdirde:** Bir dağıtım az önce başarısız oldu, başarısız olan testin ismi “Ürün Ekle”. Bu size tam olarak neyin yanlış gittiğini söylüyor mu?
 
-<br/><br/>
-
-## ![✔] 4.4 CI platformunu dikkatli seç (Jenkins vs CircleCI vs Travis vs Diğerleri)
-
-**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it should come with a vibrant ecosystem of plugins. [Jenkins](https://jenkins.io/) used to be the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Nowadays, it has become much easier to set up a CI solution using SaaS tools like [CircleCI](https://circleci.com) and others. These tools allow crafting a flexible CI pipeline without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
-
-**Aksi takdirde:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
-
-🔗 [**Daha fazla oku: Choosing CI platform**](/sections/testingandquality/citools.md)
+🔗 [**Daha fazla oku: Her test ismi 3 parça içersin**](/sections/testingandquality/3-parts-in-name.md)
 
 <br/><br/>
 
-## ![✔] 4.5 Güvencesiz bağımlılıkları sürekli incele
+## ![✔] 4.3 Bir linter ile kod sorunlarını tespit edin
 
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [npm audit](https://docs.npmjs.com/cli/audit) and 🔗 [snyk.io](https://snyk.io) that can be invoked from your CI on every build
+**TL;DR:** Bir kod linter kullanarak temel kaliteyi kontrol et ve anti tasarım kalıplarını tespit et. Herhangi bir testten önce, herhangi bir sorunu gözden geçirmek ve düzeltmek için gereken süreyi en aza indirmek için pre-commit gibi git-hook ekleyin ve çalıştırın. Ayrıca kod stil uygulamalarını kontrol edebilirsin [Section 3](https://github.com/i0natan/nodebestpractices#3-code-style-practices) 
 
-**Aksi takdirde:** Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
+**Aksi takdirde:** Canlı ortamınıza bazı anti tasarım ve olası hassas kodları iletebilirsiniz.
+
+<br/><br/>
+
+## ![✔] 4.4 CI platformununu dikkatli secin (Jenkins vs CircleCI vs Travis vs Diğerleri)
+
+**TL;DR:** SÜrekli entegrasyon platformunuz (CICD) tüm kalite araçlarına ev sahipliği yapacak (örneğin test, lint) bu yüzden canlı bir eklenti ekosistemi ile gelmelidir. [Jenkins](https://jenkins.io/) en büyük topluluğa sahip dik bir öğrenme eğrisi gerektiren karmaşık kurulumu olan güçlü bir platform olduğundan bir çok projede varsayılan olarak kullanıldı. Şimdilerde, [CircleCI](https://circleci.com) ve diğerleri gibi SaaS araçları kullanarak bir CI çözümü oluşturmak çok daha kolay hale geldi. Bu araçlar, tüm altyapıyı yönetme yükü olmadan esnek bir CI boru hattı (pipeline) oluşturulmasına izin veriyor. Sonuçta, bu sağlamlık ile hız arasında bir seçimdir - seçiminizi dikkatli yapın
+
+**Aksi takdirde:** Satıcı seçiminiz bazı gelişmiş özelleştirme ihtiyaçlarınız için sizi engelleyebilir. Diğer yandan, Jenkins ile devam ederseniz, altyapısal kurulumlar değerli zamanınızı yakabilir.
+
+🔗 [**Daha fazla oku: CI platformununu seçimi**](/sections/testingandquality/citools.md)
+
+<br/><br/>
+
+## ![✔] 4.5 Güvencesiz bağımlılıkları sürekli inceleyin
+
+**TL;DR:** Ekspress gibi çok saygın bağımlılıkların bile bilinen açıkları vardır.
+Bu, her yapı için CI'nizden çağrılabilecek 🔗 [npm audit](https://docs.npmjs.com/cli/audit) ve 🔗 [snyk.io](https://snyk.io) gibi topluluk ve ticari araçlar kullanılarak kolayca evcilleştirilebilir.
+
+**Aksi takdirde:** Kodunuzu özel araçlar olmadan güvenlik açıklarından temiz tutmak için sürekli çevrimiçi yayınları takip etmeniz gerekecek. Oldukça sıkıcı
 
 <br/><br/>
 
 ## ![✔] 4.6 Testlerini etiketle
 
-**TL;DR:** Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/): mocha --grep 'sanity'
+**TL;DR:** Farklı senaryolarda farklı testler çalışmalı: quick smoke, IO-less, geliştirci bir dosyayı kaydettiğinde veya commit lediğinde testler çalışmalıdır, yeni bir pull request gönderildiğinde uçtan uca testler yapılmalıdır, vb. Bu testleri #cold #api #sanity gibi anahtar kelimelerle etiketleyerek sağlanabilir böylece test takımınızda arayabilirsiniz ve istenen alt grubu çağırabilirsiniz. Örneğin, [Mocha](https://mochajs.org/) ile tutarlılık test grubunu (sanity) çağırabilirsiniz: mocha --grep 'sanity'
 
-**Aksi takdirde:** Running all the tests, including tests that perform dozens of DB queries, any time a developer makes a small change can be extremely slow and keeps developers away from running tests
-
-<br/><br/>
-
-## ![✔] 4.7 Kodun ne kadarının test edilmiş olduğunu kontrol et, bu yanlış test tasarımlarını tespit etmene yardım eder
-
-**TL;DR:** Code coverage tools like [Istanbul/NYC ](https://github.com/gotwarlost/istanbul)are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but not least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
-
-**Aksi takdirde:** There won't be any automated metric telling you when a large portion of your code is not covered by testing
+**Aksi takdirde:** Bütün testleri çalıştırmak, onlarca VT sorgusu gerçekleştiren testler de dahil olmak üzere, bir geliştiricinin herhangi bir zamanda yaptığı küçük bir değişikliği çok yavaşlatabilir ve geliştiricileri testleri çalıştırmaktan uzak tutar
 
 <br/><br/>
 
-## ![✔] 4.8 Güncel olmayan paketleri kontrol et
+## ![✔] 4.7 Test kapsamınızı kontrol edin, bu yanlış test tasarımlarınızı tespit etmenize yardım eder
 
-**TL;DR:** Use your preferred tool (e.g. 'npm outdated' or [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) to detect installed packages which are outdated, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a severe scenario might be when an installed package is 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
+**TL;DR:** [Istanbul/NYC ](https://github.com/gotwarlost/istanbul) gibi test kapsam aracı 3 sebepten dolayı çok iyidir: ücretsizdir (raporlardan faydalanmak için efora gerek yok), test kapsamındaki bir düşüşün belirlenmesine yardım eder ve test uyumsuzluklarını vurgular: renkli kod kapsamı raporlarına bakarak fark edebilirsiniz, örneğin, catch blokları gibi hiç test edilmeyen kod alanları (yani test sadece olumlu durumlar için çalışır ve uygulamanın bir hata durumunda nasıl davranacağını bilmez). Eğer kapsam belirli bir eşik değerin altına düşerse yapıyı başarız olarak ayarlayın.
 
-**Aksi takdirde:** Your production will run packages that have been explicitly tagged by their author as risky
+**Aksi takdirde:** Kodunuzun büyük bir bölümünün test kapsamına girmediğini size bildiren otomatik bir metrik olmayacak
 
 <br/><br/>
 
-## ![✔] 4.9 Uçtan uca (e2e) testi için docker-compose kullan
+## ![✔] 4.8 Güncel olmayan paketleri denetleyin
 
-**TL;DR:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Docker-compose turns this problem into a breeze by crafting production-like environment using a simple text file and easy commands. It allows crafting all the dependent services, DB and isolated network for e2e testing. Last but not least, it can keep a stateless environment that is invoked before each test suite and dies right after
+**TL;DR:** Eski olan kurulu paketleri tespit etmek için tercih ettiğiniz aracı kullanın (örneğin, 'npm outdated' veya [npm-check-updates](https://www.npmjs.com/package/npm-check-updates)), bu kontrolü CI pipeline'nıza enjekte edin ve hatta ciddi bir senaryoda derleme işlemini başarısız hale getirin. Örneğin, kurulu bir paket 5 patch commit arkadaysa ciddi bir senaryo olabilir veya kendi yazarı tarafından kullanımdan kaldırıldı olarak etiketlenebilir - bu durumlarda derlemeyi sonlandır ve bu sürümü dağıtmayı engelle
 
-**Aksi takdirde:** Without docker-compose teams must maintain a testing DB for each testing environment including developers' machines, keep all those DBs in sync so test results won't vary across environments
+**Aksi takdirde:** Ürününüz yazarı tarafından açıkça riskli olarak etiketlenen paketleri kullanacak
+
+<br/><br/>
+
+## ![✔] 4.9 Uçtan uca (e2e) testi için docker-compose kullanın
+
+**TL;DR:** Canlı verileri kullanan uçtan uça (e2e) testi, VT gibi ağır hizmetlere bağlı olduğundan CI işleminin zayıf parçasıdır. Docker-compose bu sorunu üretim işçiliği ile bir esinti haline getiriyor - ortam bazlı basit bir metin dosyası kullanıyor ve kolay komutlar kullanıyor. e2e testi için tüm bağımlı servislerin, VT ve izole edilmiş ağın işçiliğini sağlar.
+
+**Aksi takdirde:** Docker-compose kullanmayan takımlar, geliştiricilerin makineleri de dahil olmak üzere her test ortamı için bir test VT'si sağlamalıdır, tüm bu VT'ler senkron tutun böylece test sonuçları ortamlara göre değişiklik göstermez
 
 <br/><br/>
 
 ## ![✔] 4.10 Statik analiz araçları ile düzenli olarak refactor yap
 
-**TL;DR:** Using static analysis tools helps by giving objective ways to improve code quality and keeps your code maintainable. You can add static analysis tools to your CI build to fail when it finds code smells. Its main selling points over plain linting are the ability to inspect quality in the context of multiple files (e.g. detect duplications), perform advanced analysis (e.g. code complexity) and follow the history and progress of code issues. Two examples of tools you can use are [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) and [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)).
+**TL;DR:** Statik analiz araçları kullanmak, kod kalitesini geliştirmek için objektif yollar vererek yardımcı olur ve kod bakımınızı devamlı sağlar. Kodda koku bulduğunda derlemenin başarısız olması için, static analiz araçlarını CI derlemenize ekleyebilirsiniz. Plain linting de ana noktalar, kaliteyi birden fazla dosyaların bağlamında incelemek (örneğin tekrarları algıla), gelişmiş analizler yapmak (örneğin kod karmaşıklığı) ve kod sorunlarının tarihçesini ve ilerlemesini takip edebilmek. Kullanabileceğiniz iki araç örneği [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) ve [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)).
 
-**Aksi takdirde:** With poor code quality, bugs and performance will always be an issue that no shiny new library or state of the art features can fix
+**Aksi takdirde:** Düşük kod kalitesiyle, parlak yeni kütüphane veya son teknoloji özelliklerinin düzeltemeyeceği, hatalar ve performans sorunları sürekli olacaktır
 
 🔗 [**Daha fazla oku: Refactoring!**](/sections/testingandquality/refactoring.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Başa dön</a></p>
 
 # `5. Canlı Ortam (Production) Uygulamaları`
 
 ## ![✔] 5.1. Görüntüleme!
 
-**TL;DR:** Monitoring is a game of finding out issues before customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that ticks all boxes. Click ‘The Gist’ below for an overview of the solutions
+**TL;DR:** İzleme müşterilerden önce sorunları bulma oyunudur - açıkçası buna eşi görülmemiş bir önem verilmelidir. Piyasa, tekliflerle doludur, bu nedenle takip etmeniz gereken temel ölçütleri (önerilerim dahilinde) tanımlamaya başlayıp ardından ek keyfi özelliklerin üzerinden gidin ve tüm kutuları işaretleyen çözümü seçin. Çözümlere genel bir bakış için 'The Gist' tıklayın
 
-**Aksi takdirde:** Failure === disappointed customers. Simple
+**Aksi takdirde:** Arıza === hayal kırıklığına uğrayan müşteriler. Basit
 
-🔗 [**Daha fazla oku: Monitoring!**](/sections/production/monitoring.md)
+🔗 [**Daha fazla oku: İzleme!**](/sections/production/monitoring.md)
 
 <br/><br/>
 
 ## ![✔] 5.2. Akıllı loglama kullanarak şeffaflığı arttır
 
-**TL;DR:** Logs can be a dumb warehouse of debug statements or the enabler of a beautiful dashboard that tells the story of your app. Plan your logging platform from day 1: how logs are collected, stored and analyzed to ensure that the desired information (e.g. error rate, following an entire transaction through services and servers, etc) can really be extracted
+**TL;DR:** Loglama, hata ayıklama ifadelerinin aptal bir deposu veya uygulamanızın hikayesini anlatan güzel bir kontrol paneli olabilir. Log platformunuzu birinci günden itibaren planlayın: istenilen bilgilerin sağlanması için logların nasıl toplanacağı, depolanacağı ve analiz edileceği (örneğin hata oranları, tüm işlemin servisler ve sunucular üzerinden takip edilmesi vb.) gerçekten çıkartılabilir
 
-**Aksi takdirde:** You end up with a black box that is hard to reason about, then you start re-writing all logging statements to add additional information
+**Aksi takdirde:** Nedeni zor bir kara kutu ile karşılaşırsınız, daha sonra ek bilgi eklemek için tüm log ifadelerini yeniden yazmaya başlarsınız.
 
-🔗 [**Daha fazla oku: Increase transparency using smart logging**](/sections/production/smartlogging.md)
-
-<br/><br/>
-
-## ![✔] 5.3. Mümkün olan herşeyi reverse proxy e devret
-
-**TL;DR:** Node is awfully bad at doing CPU intensive tasks like gzipping, SSL termination, etc. You should use ‘real’ middleware services like nginx, HAproxy or cloud vendor services instead
-
-**Aksi takdirde:** Your poor single thread will stay busy doing infrastructural tasks instead of dealing with your application core and performance will degrade accordingly
-
-🔗 [**Daha fazla oku: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
+🔗 [**Daha fazla oku: akıllı loglama kullanarak şeffaflığı arttır**](/sections/production/smartlogging.md)
 
 <br/><br/>
 
-## ![✔] 5.4. Bağımlılıkları sabitle
+## ![✔] 5.3. Mümkün olan herşeyi (ör: gzip, SSL) reverse proxy e devret
 
-**TL;DR:** Your code must be identical across all environments, but amazingly npm lets dependencies drift across environments by default – when you install packages at various environments it tries to fetch packages’ latest patch version. Overcome this by using npm config files, .npmrc, that tell each environment to save the exact (not the latest) version of each package. Alternatively, for finer grained control use `npm shrinkwrap`. \*Update: as of NPM5, dependencies are locked by default. The new package manager in town, Yarn, also got us covered by default
+**TL;DR:** Node, gzipping, SSL şifrelerini çözme gibi yoğun CPU görevlerinde çok kötüdür. nginx, HAproxy veya bulut satıcı hizmetleri gibi ‘gerçek’ ara katman bir hizmet kullanmalısınız
 
-**Aksi takdirde:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
+**Aksi takdirde:** Tek zayıf thread, uygulamanızla uğraşmak yerine altyapı işleri ile meşgul olacaktır ve bu nedenle performans düşecektir
 
-🔗 [**Daha fazla oku: Lock dependencies**](/sections/production/lockdependencies.md)
-
-<br/><br/>
-
-## ![✔] 5.5. Doğru araçlar kullanarak işlem sürelerini koruyun
-
-**TL;DR:** The process must go on and get restarted upon failures. For simple scenarios, process management tools like PM2 might be enough but in today's ‘dockerized’ world, cluster management tools should be considered as well
-
-**Aksi takdirde:** Running dozens of instances without a clear strategy and too many tools together (cluster management, docker, PM2) might lead to DevOps chaos
-
-🔗 [**Daha fazla oku: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
+🔗 [**Daha fazla oku: Mümkün olan herşeyi (ör: gzip, SSL) reverse proxy e devret**](/sections/production/delegatetoproxy.md)
 
 <br/><br/>
 
-## ![✔] 5.6. Tüm CPU çekirdelerini kullan
+## ![✔] 5.4. Bağımılıkları salbitle
 
-**TL;DR:** At its basic form, a Node app runs on a single CPU core while all others are left idling. It’s your duty to replicate the Node process and utilize all CPUs – For small-medium apps you may use Node Cluster or PM2. For a larger app consider replicating the process using some Docker cluster (e.g. K8S, ECS) or deployment scripts that are based on Linux init system (e.g. systemd)
+**TL;DR:** Kodunuz tüm ortamlarda aynı olmalıdır fakat şaşırtıcı bir şekilde varsayılan olarak npm bağımlılıkların ortamlar arasında kaymasına izin verir - paketleri farklı ortamlara yüklediğinizde, son versiyonları yüklemeye çalışır. Npm config dosyalarını kullanarak bunun üstesinden gelin, .npmrc, her ortama her paketin aynı versiyonunu (son değil) kaydetmesini söyleyin. Alternatif olarak, ince taneli kontrol için `npm shrinkwrap` kullanın. *Güncelleme: NPM5'den itibaren bağımlılıklar varsayılan olarak kilitleniyor. Yeni paket yöneticisi, yarn, yarn da bizi varsayılan olarak karşıladı.
 
-**Aksi takdirde:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.js utilizes only 1 (even using PaaS services like AWS beanstalk!)
+**Aksi takdirde:** Kalite ekibi, kodu tamamen test edecek ve üretimde farklı davranacak bir sürümü onaylayacaktır. Daha da kötüsü, farklı sunucularda ürünün aynı sürümleri farklı kod çalıştırabilir
 
-🔗 [**Daha fazla oku: Utilize all CPU cores**](/sections/production/utilizecpu.md)
+🔗 [**Daha fazla oku: Bağımılıkları salbitle**](/sections/production/lockdependencies.md)
 
 <br/><br/>
 
-## ![✔] 5.7. Bir ‘maintenance endpoint’ oluştur
+## ![✔] 5.5. Doğru araçlar kullanarak sürecin çalışma süresini koruyun
 
-**TL;DR:** Expose a set of system-related information, like memory usage and REPL, etc in a secured API. Although it’s highly recommended to rely on standard and battle-tests tools, some valuable information and operations are easier done using code
+**TL;DR:** Süreç devam etmeli ve başarısızlıklar üzerine yeniden başlatılmalıdır. Basit senaryolar, PM2 gibi süreç yönetim araçları yeterli olabilir fakat günümüz 'dockerized' dünyası, küme yönetim araçları (cluster management tools) da dikkate alınmalıdır
 
-**Aksi takdirde:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
+**Aksi takdirde:** Net bir strateji olmadan onlarca örnek çalıştırmak ve birlikte çok fazla araç kullanmak (cluster management, docker, PM2) DevOps kaosuna neden olabilir
 
-🔗 [**Daha fazla oku: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
+🔗 [**Daha fazla oku: Doğru araçlar kullanarak sürecin çalışma süresini koruyun**](/sections/production/guardprocess.md)
+
+<br/><br/>
+
+## ![✔] 5.6. Tüm CPU çekirdelerinden yararlanma
+
+**TL;DR:** Temel haliye, bir Node uygulaması tek CPU ile çalışır, diğerleri boşta kalır. Node işlemlerini çoğaltmak ve tüm CPU'ları kullanmak sizin göreviniz - küçük-orta ölçekli uygulamalar için Node Cluster veya PM2 kullanabilirsiniz. Daha büyük bir uygulama için, bazı Docker kümesini kullanarak işlemleri çoklayabilirsin (örneğin K8S, ECS) veya linux sisteminde dağıtım komutları ile yapabilirsin (örneğin systemd)
+
+**Aksi takdirde:** Uygulamanız muhtemelen mevcut kaynakların yalnızca %25'ini veya daha azını kullanacaktır. Tipik bir sunucunun 4 CPU çekirdeği ya da daha fazlasına sahip olduğunu, Node.js'in saf dağıtımı sadece 1 CPU kullandığını unutmayın (AWS beanstalk gibi PaaS servislerini kullanma!)
+
+🔗 [**Daha fazla oku: Tüm CPU çekirdelerinden yararlanma**](/sections/production/utilizecpu.md)
+
+<br/><br/>
+
+## ![✔] 5.7. Bir ‘maintenance endpoint’ oluşturun
+
+**TL;DR:** Sistemle ilgili bir dizi bilgiyi gösterin, bellek kullanımı, REPL ve güvenli API gibi. Standart ve battle-tests araçlarına güvenmeniz şiddetle tavsiye edilmesine rağmen, bazı değerli bilgiler ve işlemler kod kullanılarak daha kolay yapılabilir
+
+**Aksi takdirde:** Pek çok "diagnostic deploys" gerçekleştirdiğinizi göreceksiniz - yalnızca tanı amacıyla bazı bilgileri çıkartmak için canlı ortama gönderim kodu
+
+🔗 [**Daha fazla oku: Bir ‘maintenance endpoint’ oluşturun**](/sections/production/createmaintenanceendpoint.md)
 
 <br/><br/>
 
 ## ![✔] 5.8. APM ürünlerini kullanarak hataları ve kesintileri bulun
 
-**TL;DR:** Application monitoring and performance products (a.k.a APM) proactively gauge codebase and API so they can auto-magically go beyond traditional monitoring and measure the overall user-experience across services and tiers. For example, some APM products can highlight a transaction that loads too slow on the end-users side while suggesting the root cause
+**TL;DR:** Uygulama izleme ve performans ürünleri (diğer adıyla APM) proaktif olarak kod tabanını ve API uygulamasını ölçer böylece otomatik olarak geleneksel izlemenin ötesine geçebilir ve hizmetler ve katmanlar arasındaki kullanıcı deneyimini ölçebilir. Örneğin bazı APM ürünleri, son kullanıcılardaki çok yavaş yüklenen bir işlemin kök nedenini vurgulayabilir
 
-**Aksi takdirde:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real-world scenario and how these affect the UX
+**Aksi takdirde:** API performansını ve kesinti zamanlarını ölçmek için müthiç efor harcayabilirsin, muhtemelen gerçek senaryoda en yavaş kod parçasının hangisi olduğunu ve bunların UX'i nasıl etkilediğini asla bilemezsiniz
 
-🔗 [**Daha fazla oku: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
+🔗 [**Daha fazla oku: APM ürünlerini kullanarak hataları ve kesintileri bulun**](/sections/production/apmproducts.md)
 
 <br/><br/>
 
-## ![✔] 5.9. Kodunu canlı ortama göre geliştir
+## ![✔] 5.9. Kodunuzu üretime hazır hale getirin
 
-**TL;DR:** Code with the end in mind, plan for production from day 1. This sounds a bit vague so I’ve compiled a few development tips that are closely related to production maintenance (click Gist below)
+**TL;DR:** 1. günden itibaren üretim için plan yapın. Bu biraz belirsiz geliyor bu yüzden üretim bakımıyla yakından ilgili birkaç ipucu derledim (aşağıdaki Gist'e tıkla)
 
-**Aksi takdirde:** A world champion IT/DevOps guy won’t save a system that is badly written
+**Aksi takdirde:** Dünya IT/DevOps şampiyonu kötü yazılmış bir sistemi kurtaramaz
 
-🔗 [**Daha fazla oku: Make your code production-ready**](/sections/production/productioncode.md)
+🔗 [**Daha fazla oku: Kodunuzu üretime hazır hale getirin**](/sections/production/productioncode.md)
 
 <br/><br/>
 
 ## ![✔] 5.10. Bellek kullanımını ölçün ve koruyun
 
-**TL;DR:** Node.js has controversial relationships with memory: the v8 engine has soft limits on memory usage (1.4GB) and there are known paths to leak memory in Node’s code – thus watching Node’s process memory is a must. In small apps, you may gauge memory periodically using shell commands but in medium-large apps consider baking your memory watch into a robust monitoring system
+**TL;DR:** Node.js bellek ile kontrollü ilişki içindedir: v8 motorunun bellek kullanımı konusunda yumuşak sınırları vardır (1.4GB) ve Node kodunda bellek sızıntısı için bilinen yollar vardır - bununla beraber Node'ın işlem belleğini izlemek bir zorunluluktur. Küçük uygulamalarda, belleği shell komutları kullanarak periyodik olarak ölçebilirsiniz fakat orta ve büyük uygulamalarda belleğinizi güçlü bir izleme sistemi ile izlemeyi düşünebilirsiniz
 
-**Aksi takdirde:** Your process memory might leak a hundred megabytes a day like how it happened at [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
+**Aksi takdirde:** İşlem belleğiniz bir günde yüz megabytes sızdırabilir, [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak) daki gibi
 
-🔗 [**Daha fazla oku: Measure and guard the memory usage**](/sections/production/measurememory.md)
+🔗 [**Daha fazla oku: Bellek kullanımını ölçün ve koruyun**](/sections/production/measurememory.md)
 
 <br/><br/>
 
 ## ![✔] 5.11. Ön yüzdeki assets dosyalarını Node kullanmadan getir
 
-**TL;DR:** Serve frontend content using dedicated middleware (nginx, S3, CDN) because Node performance really gets hurt when dealing with many static files due to its single-threaded model
+**TL;DR:** Özel arakatman (nginx, S3, CDN) kullanarak önyüz içeriğini sunun çünkü Node performansı tek thread üzerinde bir çok statik dosyalarla uğraşırken gercekten zarar görür 
 
-**Aksi takdirde:** Your single Node thread will be busy streaming hundreds of html/images/angular/react files instead of allocating all its resources for the task it was born for – serving dynamic content
+**Aksi takdirde:** Tek thread Node, tüm kaynaklarını doğduğu göreve tahsis etmek yerine yüzlerce html/images/angular/react dosyalarının akışıyla meşgul olacak - dinamik içerik sunma
 
-🔗 [**Daha fazla oku: Get your frontend assets out of Node**](/sections/production/frontendout.md)
+🔗 [**Daha fazla oku: Ön yüzdeki assets dosyalarını Node kullanmadan getir**](/sections/production/frontendout.md)
 
 <br/><br/>
 
-## ![✔] 5.12. Yurtsuz olun, Neredeyse her gün sunucularınızı öldürün
+## ![✔] 5.12. Sunucu bağımsız olun, Neredeyse her gün sunucularınızı öldürün
 
-**TL;DR:** Store any type of data (e.g. user sessions, cache, uploaded files) within external data stores. Consider ‘killing’ your servers periodically or use ‘serverless’ platform (e.g. AWS Lambda) that explicitly enforces a stateless behavior
+**TL;DR:** Her türden veriyi (örneğin kullanıcı oturumları, önbellek, yüklenen dosyalar (upload)) harici veri depolarında saklayın. Sunucularınızı periyodik olarak "killing" yok ettiğinizi düşünün veya "serverless" platformunu (örneğin AWS Lambda) kullanın bu sunucu bağımsızlığını açıkça uygular.
 
-**Aksi takdirde:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
+**Aksi takdirde:** Bir sunucudaki başarısızlık, sadece hatalı makineyi öldürmek yerine uygulamanızda kesintiye neden olur. Hatta, dağıtıklaştırma esnekliği sunucuya güvenme nedeniyle daha da zorlaşacaktır.
 
-🔗 [**Daha fazla oku: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
+🔗 [**Daha fazla oku: Sunucu bağımsız olun, Neredeyse her gün sunucularınızı öldürün**](/sections/production/bestateless.md)
 
 <br/><br/>
 
 ## ![✔] 5.13. Güvenlik açıklarını otomatik olarak algılayan araçları kullanın
 
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities (from time to time) that can put a system at risk. This can be easily tamed using community and commercial tools that constantly check for vulnerabilities and warn (locally or at GitHub), some can even patch them immediately
+**TL;DR:** Express gibi çok saygın bağımlılıkların bile bilinen açıkları vardır (zaman zaman) bu sisteminize risk koyar. Bu, sürekli güvenlik açıklarını kontrol eden ve uyaran (yerel olarak veya GitHub'da) topluluk  ve ticari araçlar kullanılarak kolayca evcilleştirilebilir, bazıları hemen onları düzeltelebilir
 
-**Aksi takdirde:** Keeping your code clean from vulnerabilities without dedicated tools will require you to constantly follow online publications about new threats. Quite tedious
+**Aksi takdirde:** Kodunuzu özel araçlar olmadan güvenlik açıklarından temiz tutmak için sürekli çevrimiçi yayınları takip etmeniz gerekecek. Oldukça sıkıcı
 
-🔗 [**Daha fazla oku: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
+🔗 [**Daha fazla oku: Güvenlik açıklarını otomatik olarak algılayan araçları kullanın**](/sections/production/detectvulnerabilities.md)
 
 <br/><br/>
 
 ## ![✔] 5.14. Her log ifadesine bir işlem id'si atayın
 
-**TL;DR:** Assign the same identifier, transaction-id: {some value}, to each log entry within a single request. Then when inspecting errors in logs, easily conclude what happened before and after. Unfortunately, this is not easy to achieve in Node due to its async nature, see code examples inside
+**TL;DR:** Tek istek içerisindeki her log kaydına aynı işlem id'sini, transaction-id, atayın. Daha sonra log kayıtlarındaki hataları incelerken, önce ve sonra olanları kolayca sonuçlandırırsınız. Ne yazık ki, doğasında asenkron olması nedeniyle Node için yapılması kolay değildir, kod örneklerine bakın
 
-**Aksi takdirde:** Looking at a production error log without the context – what happened before – makes it much harder and slower to reason about the issue
+**Aksi takdirde:** Bağlam olmadan üretim hata loguna bakmak - önce ne oldu - sorunla ilgili nedenleri zorlaştırır ve yavaşlatır
 
-🔗 [**Daha fazla oku: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
+🔗 [**Daha fazla oku: Her log ifadesine bir ‘TransactionId’ atayın**](/sections/production/assigntransactionid.md)
 
 <br/><br/>
 
 ## ![✔] 5.15. Set NODE_ENV=production
 
-**TL;DR:** Set the environment variable NODE_ENV to ‘production’ or ‘development’ to flag whether production optimizations should get activated – many npm packages determine the current environment and optimize their code for production
+**TL;DR:** Ortam optimizasyonlarını aktif hale getirip NODE_ENV ortam değişkenini "production" veya "development" olarak ayarlayın. Birçok npm paketi mevcut ortamı belirler ve canlı ortam için kodlarını optimize eder
 
-**Aksi takdirde:** Omitting this simple property might greatly degrade performance. For example, when using Express for server-side rendering omitting `NODE_ENV` makes it slower by a factor of three!
+**Aksi takdirde:** Bu basit özelliği atlamak performansı büyük ölçüde düşürebilir. Örneğin, `NODE_ENV` atlanması Express server-side bir uygulamada üç kat daha yavaş olur
 
 🔗 [**Daha fazla oku: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
 
@@ -661,33 +665,33 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.16. Otomatik, atomik ve sıfır kesinti dağıtımları (deploy) tasarlayın
 
-**TL;DR:** Research shows that teams who perform many deployments lower the probability of severe production issues. Fast and automated deployments that don’t require risky manual steps and service downtime significantly improve the deployment process. You should probably achieve this using Docker combined with CI tools as they became the industry standard for streamlined deployment
+**TL;DR:** Araştırmalar, birçok dağıtım yapan ekiplerin ciddi canlı ortam sorunlarının olasılığını azalttığını gösteriyor. Hızlı ve otomatikleştirilmiş dağıtımlar, riskli manuel adım ve hizmet kesintisi olmadan dağıtım işlemini önemli ölçüde iyileştirir. Modern dağıtım için endüstri standardı olarak, muhtemelen bunu CI araçlarıyla beraber Docker kullanarak yapabilirsiniz.
 
-**Aksi takdirde:** Long deployments -> production downtime & human-related error -> team unconfident in making deployment -> fewer deployments and features
+**Aksi takdirde:** Uzun dağıtımlar -> canlı ortamda kesinti & insan kaynaklı hata -> dağıtımın yapılmasından emin olmayan ekip -> daha az dağıtım ve özellik
 
 <br/><br/>
 
-## ![✔] 5.17. Node.js'in son kararlı sürümünü kullanın
+## ![✔] 5.17. Node.js'in bir LTS sürümünü kullanın
 
-**TL;DR:** Ensure you are using an LTS version of Node.js to receive critical bug fixes, security updates and performance improvements
+**TL;DR:** Kritik hata düzeltmeleri, güvenlik güncellemeleri ve performans iyileştirmelerini almak için Node.js'in LTS sürümünü kullandığınızdan emin olun
 
-**Aksi takdirde:** Newly discovered bugs or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain
+**Aksi takdirde:** Canlı ortamda çalışan bir uygulamanızı kötüye kullanmak için yeni keşfedilen hatalar veya güvenlik açıkları kullanılabilir ve uygulamanız çeşitli modüller tarafından desteklenmiyor ve bakımı zorlaşıyor
 
-🔗 [**Daha fazla oku: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
+🔗 [**Daha fazla oku: Node.js'in bir LTS sürümünü kullanın**](/sections/production/LTSrelease.md)
 
 <br/><br/>
 
 ## ![✔] 5.18. Uygulama içerisinde logları yönlendirmeyin
 
-**TL;DR:** Log destinations should not be hard-coded by developers within the application code, but instead should be defined by the execution environment the application runs in. Developers should write logs to `stdout` using a logger utility and then let the execution environment (container, server, etc.) pipe the `stdout` stream to the appropriate destination (i.e. Splunk, Graylog, ElasticSearch, etc.).
+**TL;DR:** Logların yazılacağı hedef yerler, uygulama kodu dahilinde geliştiriciler tarafından kodlanmamalı, bunun yerine uygulamanın çalıştığı yürütme ortamı tarafından tanımlanmalıdır. Geliştiriciler bir logger yardımcı aracını kullanarak `stdout`'a loglar yazmalı ve ardından yürütme ortamının (caontainer, server, vb.) `stdout` akışını uygun hedefe (Splunk, Graylog, ElasticSearch, vb.) yönlenirmesine izin vermelidir.
 
-**Aksi takdirde:** Application handling log routing === hard to scale, loss of logs, poor separation of concerns
+**Aksi takdirde:** Uygulamada log yönerdirilmesi === ölçeklendirmesi zor, log kayıpları, bağımlılıkların ayrılmaması
 
-🔗 [**Daha fazla oku: Log Routing**](/sections/production/logrouting.md)
+🔗 [**Daha fazla oku: Log Yönlendirme**](/sections/production/logrouting.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Başa dön</a></p>
 
 # `6. Güvenlik İçin En İyi Uygulamar`
 
@@ -975,7 +979,7 @@ All statements above will return false if used with `===`
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Başa dön</a></p>
 
 # `7. Performans En İyi Uygulamaları`
 
