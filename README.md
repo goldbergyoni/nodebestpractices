@@ -955,6 +955,16 @@ All statements above will return false if used with `===`
 
 ## Our contributors are working on this section. [Would you like to join?](https://github.com/i0natan/nodebestpractices/issues/256)
 
+<br/><br/>
+
+## ![✔] 7.1. Don't block the event loop
+
+**TL;DR:** TLDR; Avoid using syncronous and other Event Loop blocking functions.
+
+**Otherwise:** Syncronous functions (usually ending with Sync) like `readFileSync` will prevent Node from moving through its phases thus blocking the Event Loop. This will prevent your app from handling pending functions and requests.
+
+🔗 [**Read More: Do not block the event loop**](/sections/performance/block-loop.md)
+
 <br/><br/><br/>
 
 # Milestones
