@@ -463,7 +463,7 @@ Yukarıdaki bütün ifadeler, eğer `===` operatörü kullanılsaydı false dön
 **TL;DR:** Ekspress gibi çok saygın bağımlılıkların bile bilinen açıkları vardır.
 Bu, her yapı için CI'nizden çağrılabilecek 🔗 [npm audit](https://docs.npmjs.com/cli/audit) ve 🔗 [snyk.io](https://snyk.io) gibi topluluk ve ticari araçlar kullanılarak kolayca evcilleştirilebilir.
 
-**Aksi takdirde:** Kodunuzu özel araçlar olmadan güvenlik açıklarından temiz tutmak için sürekli çevrimiçi yayınları takip etmek gerekecek. Oldukça sıkıcı
+**Aksi takdirde:** Kodunuzu özel araçlar olmadan güvenlik açıklarından temiz tutmak için sürekli çevrimiçi yayınları takip etmeniz gerekecek. Oldukça sıkıcı
 
 <br/><br/>
 
@@ -515,149 +515,149 @@ Bu, her yapı için CI'nizden çağrılabilecek 🔗 [npm audit](https://docs.np
 
 ## ![✔] 5.1. Görüntüleme!
 
-**TL;DR:** Monitoring is a game of finding out issues before customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that ticks all boxes. Click ‘The Gist’ below for an overview of the solutions
+**TL;DR:** İzleme müşterilerden önce sorunları bulma oyunudur - açıkçası buna eşi görülmemiş bir önem verilmelidir. Piyasa, tekliflerle doludur, bu nedenle takip etmeniz gereken temel ölçütleri (önerilerim dahilinde) tanımlamaya başlayıp ardından ek keyfi özelliklerin üzerinden gidin ve tüm kutuları işaretleyen çözümü seçin. Çözümlere genel bir bakış için 'The Gist' tıklayın
 
-**Aksi takdirde:** Failure === disappointed customers. Simple
+**Aksi takdirde:** Arıza === hayal kırıklığına uğrayan müşteriler. Basit
 
-🔗 [**Daha fazla oku: Monitoring!**](/sections/production/monitoring.md)
+🔗 [**Daha fazla oku: İzleme!**](/sections/production/monitoring.md)
 
 <br/><br/>
 
 ## ![✔] 5.2. Akıllı loglama kullanarak şeffaflığı arttır
 
-**TL;DR:** Logs can be a dumb warehouse of debug statements or the enabler of a beautiful dashboard that tells the story of your app. Plan your logging platform from day 1: how logs are collected, stored and analyzed to ensure that the desired information (e.g. error rate, following an entire transaction through services and servers, etc) can really be extracted
+**TL;DR:** Loglama, hata ayıklama ifadelerinin aptal bir deposu veya uygulamanızın hikayesini anlatan güzel bir kontrol paneli olabilir. Log platformunuzu birinci günden itibaren planlayın: istenilen bilgilerin sağlanması için logların nasıl toplanacağı, depolanacağı ve analiz edileceği (örneğin hata oranları, tüm işlemin servisler ve sunucular üzerinden takip edilmesi vb.) gerçekten çıkartılabilir
 
-**Aksi takdirde:** You end up with a black box that is hard to reason about, then you start re-writing all logging statements to add additional information
+**Aksi takdirde:** Nedeni zor bir kara kutu ile karşılaşırsınız, daha sonra ek bilgi eklemek için tüm log ifadelerini yeniden yazmaya başlarsınız.
 
-🔗 [**Daha fazla oku: Increase transparency using smart logging**](/sections/production/smartlogging.md)
-
-<br/><br/>
-
-## ![✔] 5.3. Mümkün olan herşeyi reverse proxy e devret
-
-**TL;DR:** Node is awfully bad at doing CPU intensive tasks like gzipping, SSL termination, etc. You should use ‘real’ middleware services like nginx, HAproxy or cloud vendor services instead
-
-**Aksi takdirde:** Your poor single thread will stay busy doing infrastructural tasks instead of dealing with your application core and performance will degrade accordingly
-
-🔗 [**Daha fazla oku: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
+🔗 [**Daha fazla oku: akıllı loglama kullanarak şeffaflığı arttır**](/sections/production/smartlogging.md)
 
 <br/><br/>
 
-## ![✔] 5.4. Bağımlılıkları sabitle
+## ![✔] 5.3. Mümkün olan herşeyi (ör: gzip, SSL) reverse proxy e devret
 
-**TL;DR:** Your code must be identical across all environments, but amazingly npm lets dependencies drift across environments by default – when you install packages at various environments it tries to fetch packages’ latest patch version. Overcome this by using npm config files, .npmrc, that tell each environment to save the exact (not the latest) version of each package. Alternatively, for finer grained control use `npm shrinkwrap`. \*Update: as of NPM5, dependencies are locked by default. The new package manager in town, Yarn, also got us covered by default
+**TL;DR:** Node, gzipping, SSL şifrelerini çözme gibi yoğun CPU görevlerinde çok kötüdür. nginx, HAproxy veya bulut satıcı hizmetleri gibi ‘gerçek’ ara katman bir hizmet kullanmalısınız
 
-**Aksi takdirde:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
+**Aksi takdirde:** Tek zayıf thread, uygulamanızla uğraşmak yerine altyapı işleri ile meşgul olacaktır ve bu nedenle performans düşecektir
 
-🔗 [**Daha fazla oku: Lock dependencies**](/sections/production/lockdependencies.md)
-
-<br/><br/>
-
-## ![✔] 5.5. Doğru araçlar kullanarak işlem sürelerini koruyun
-
-**TL;DR:** The process must go on and get restarted upon failures. For simple scenarios, process management tools like PM2 might be enough but in today's ‘dockerized’ world, cluster management tools should be considered as well
-
-**Aksi takdirde:** Running dozens of instances without a clear strategy and too many tools together (cluster management, docker, PM2) might lead to DevOps chaos
-
-🔗 [**Daha fazla oku: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
+🔗 [**Daha fazla oku: Mümkün olan herşeyi (ör: gzip, SSL) reverse proxy e devret**](/sections/production/delegatetoproxy.md)
 
 <br/><br/>
 
-## ![✔] 5.6. Tüm CPU çekirdelerini kullan
+## ![✔] 5.4. Bağımılıkları salbitle
 
-**TL;DR:** At its basic form, a Node app runs on a single CPU core while all others are left idling. It’s your duty to replicate the Node process and utilize all CPUs – For small-medium apps you may use Node Cluster or PM2. For a larger app consider replicating the process using some Docker cluster (e.g. K8S, ECS) or deployment scripts that are based on Linux init system (e.g. systemd)
+**TL;DR:** Kodunuz tüm ortamlarda aynı olmalıdır fakat şaşırtıcı bir şekilde varsayılan olarak npm bağımlılıkların ortamlar arasında kaymasına izin verir - paketleri farklı ortamlara yüklediğinizde, son versiyonları yüklemeye çalışır. Npm config dosyalarını kullanarak bunun üstesinden gelin, .npmrc, her ortama her paketin aynı versiyonunu (son değil) kaydetmesini söyleyin. Alternatif olarak, ince taneli kontrol için `npm shrinkwrap` kullanın. *Güncelleme: NPM5'den itibaren bağımlılıklar varsayılan olarak kilitleniyor. Yeni paket yöneticisi, yarn, yarn da bizi varsayılan olarak karşıladı.
 
-**Aksi takdirde:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.js utilizes only 1 (even using PaaS services like AWS beanstalk!)
+**Aksi takdirde:** Kalite ekibi, kodu tamamen test edecek ve üretimde farklı davranacak bir sürümü onaylayacaktır. Daha da kötüsü, farklı sunucularda ürünün aynı sürümleri farklı kod çalıştırabilir
 
-🔗 [**Daha fazla oku: Utilize all CPU cores**](/sections/production/utilizecpu.md)
+🔗 [**Daha fazla oku: Bağımılıkları salbitle**](/sections/production/lockdependencies.md)
 
 <br/><br/>
 
-## ![✔] 5.7. Bir ‘maintenance endpoint’ oluştur
+## ![✔] 5.5. Doğru araçlar kullanarak sürecin çalışma süresini koruyun
 
-**TL;DR:** Expose a set of system-related information, like memory usage and REPL, etc in a secured API. Although it’s highly recommended to rely on standard and battle-tests tools, some valuable information and operations are easier done using code
+**TL;DR:** Süreç devam etmeli ve başarısızlıklar üzerine yeniden başlatılmalıdır. Basit senaryolar, PM2 gibi süreç yönetim araçları yeterli olabilir fakat günümüz 'dockerized' dünyası, küme yönetim araçları (cluster management tools) da dikkate alınmalıdır
 
-**Aksi takdirde:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
+**Aksi takdirde:** Net bir strateji olmadan onlarca örnek çalıştırmak ve birlikte çok fazla araç kullanmak (cluster management, docker, PM2) DevOps kaosuna neden olabilir
 
-🔗 [**Daha fazla oku: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
+🔗 [**Daha fazla oku: Doğru araçlar kullanarak sürecin çalışma süresini koruyun**](/sections/production/guardprocess.md)
+
+<br/><br/>
+
+## ![✔] 5.6. Tüm CPU çekirdelerinden yararlanma
+
+**TL;DR:** Temel haliye, bir Node uygulaması tek CPU ile çalışır, diğerleri boşta kalır. Node işlemlerini çoğaltmak ve tüm CPU'ları kullanmak sizin göreviniz - küçük-orta ölçekli uygulamalar için Node Cluster veya PM2 kullanabilirsiniz. Daha büyük bir uygulama için, bazı Docker kümesini kullanarak işlemleri çoklayabilirsin (örneğin K8S, ECS) veya linux sisteminde dağıtım komutları ile yapabilirsin (örneğin systemd)
+
+**Aksi takdirde:** Uygulamanız muhtemelen mevcut kaynakların yalnızca %25'ini veya daha azını kullanacaktır. Tipik bir sunucunun 4 CPU çekirdeği ya da daha fazlasına sahip olduğunu, Node.js'in saf dağıtımı sadece 1 CPU kullandığını unutmayın (AWS beanstalk gibi PaaS servislerini kullanma!)
+
+🔗 [**Daha fazla oku: Tüm CPU çekirdelerinden yararlanma**](/sections/production/utilizecpu.md)
+
+<br/><br/>
+
+## ![✔] 5.7. Bir ‘maintenance endpoint’ oluşturun
+
+**TL;DR:** Sistemle ilgili bir dizi bilgiyi gösterin, bellek kullanımı, REPL ve güvenli API gibi. Standart ve battle-tests araçlarına güvenmeniz şiddetle tavsiye edilmesine rağmen, bazı değerli bilgiler ve işlemler kod kullanılarak daha kolay yapılabilir
+
+**Aksi takdirde:** Pek çok "diagnostic deploys" gerçekleştirdiğinizi göreceksiniz - yalnızca tanı amacıyla bazı bilgileri çıkartmak için canlı ortama gönderim kodu
+
+🔗 [**Daha fazla oku: Bir ‘maintenance endpoint’ oluşturun**](/sections/production/createmaintenanceendpoint.md)
 
 <br/><br/>
 
 ## ![✔] 5.8. APM ürünlerini kullanarak hataları ve kesintileri bulun
 
-**TL;DR:** Application monitoring and performance products (a.k.a APM) proactively gauge codebase and API so they can auto-magically go beyond traditional monitoring and measure the overall user-experience across services and tiers. For example, some APM products can highlight a transaction that loads too slow on the end-users side while suggesting the root cause
+**TL;DR:** Uygulama izleme ve performans ürünleri (diğer adıyla APM) proaktif olarak kod tabanını ve API uygulamasını ölçer böylece otomatik olarak geleneksel izlemenin ötesine geçebilir ve hizmetler ve katmanlar arasındaki kullanıcı deneyimini ölçebilir. Örneğin bazı APM ürünleri, son kullanıcılardaki çok yavaş yüklenen bir işlemin kök nedenini vurgulayabilir
 
-**Aksi takdirde:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real-world scenario and how these affect the UX
+**Aksi takdirde:** API performansını ve kesinti zamanlarını ölçmek için müthiç efor harcayabilirsin, muhtemelen gerçek senaryoda en yavaş kod parçasının hangisi olduğunu ve bunların UX'i nasıl etkilediğini asla bilemezsiniz
 
-🔗 [**Daha fazla oku: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
+🔗 [**Daha fazla oku: APM ürünlerini kullanarak hataları ve kesintileri bulun**](/sections/production/apmproducts.md)
 
 <br/><br/>
 
-## ![✔] 5.9. Kodunu canlı ortama göre geliştir
+## ![✔] 5.9. Kodunuzu üretime hazır hale getirin
 
-**TL;DR:** Code with the end in mind, plan for production from day 1. This sounds a bit vague so I’ve compiled a few development tips that are closely related to production maintenance (click Gist below)
+**TL;DR:** 1. günden itibaren üretim için plan yapın. Bu biraz belirsiz geliyor bu yüzden üretim bakımıyla yakından ilgili birkaç ipucu derledim (aşağıdaki Gist'e tıkla)
 
-**Aksi takdirde:** A world champion IT/DevOps guy won’t save a system that is badly written
+**Aksi takdirde:** Dünya IT/DevOps şampiyonu kötü yazılmış bir sistemi kurtaramaz
 
-🔗 [**Daha fazla oku: Make your code production-ready**](/sections/production/productioncode.md)
+🔗 [**Daha fazla oku: Kodunuzu üretime hazır hale getirin**](/sections/production/productioncode.md)
 
 <br/><br/>
 
 ## ![✔] 5.10. Bellek kullanımını ölçün ve koruyun
 
-**TL;DR:** Node.js has controversial relationships with memory: the v8 engine has soft limits on memory usage (1.4GB) and there are known paths to leak memory in Node’s code – thus watching Node’s process memory is a must. In small apps, you may gauge memory periodically using shell commands but in medium-large apps consider baking your memory watch into a robust monitoring system
+**TL;DR:** Node.js bellek ile kontrollü ilişki içindedir: v8 motorunun bellek kullanımı konusunda yumuşak sınırları vardır (1.4GB) ve Node kodunda bellek sızıntısı için bilinen yollar vardır - bununla beraber Node'ın işlem belleğini izlemek bir zorunluluktur. Küçük uygulamalarda, belleği shell komutları kullanarak periyodik olarak ölçebilirsiniz fakat orta ve büyük uygulamalarda belleğinizi güçlü bir izleme sistemi ile izlemeyi düşünebilirsiniz
 
-**Aksi takdirde:** Your process memory might leak a hundred megabytes a day like how it happened at [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
+**Aksi takdirde:** İşlem belleğiniz bir günde yüz megabytes sızdırabilir, [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak) daki gibi
 
-🔗 [**Daha fazla oku: Measure and guard the memory usage**](/sections/production/measurememory.md)
+🔗 [**Daha fazla oku: Bellek kullanımını ölçün ve koruyun**](/sections/production/measurememory.md)
 
 <br/><br/>
 
 ## ![✔] 5.11. Ön yüzdeki assets dosyalarını Node kullanmadan getir
 
-**TL;DR:** Serve frontend content using dedicated middleware (nginx, S3, CDN) because Node performance really gets hurt when dealing with many static files due to its single-threaded model
+**TL;DR:** Özel arakatman (nginx, S3, CDN) kullanarak önyüz içeriğini sunun çünkü Node performansı tek thread üzerinde bir çok statik dosyalarla uğraşırken gercekten zarar görür 
 
-**Aksi takdirde:** Your single Node thread will be busy streaming hundreds of html/images/angular/react files instead of allocating all its resources for the task it was born for – serving dynamic content
+**Aksi takdirde:** Tek thread Node, tüm kaynaklarını doğduğu göreve tahsis etmek yerine yüzlerce html/images/angular/react dosyalarının akışıyla meşgul olacak - dinamik içerik sunma
 
-🔗 [**Daha fazla oku: Get your frontend assets out of Node**](/sections/production/frontendout.md)
+🔗 [**Daha fazla oku: Ön yüzdeki assets dosyalarını Node kullanmadan getir**](/sections/production/frontendout.md)
 
 <br/><br/>
 
-## ![✔] 5.12. Yurtsuz olun, Neredeyse her gün sunucularınızı öldürün
+## ![✔] 5.12. Sunucu bağımsız olun, Neredeyse her gün sunucularınızı öldürün
 
-**TL;DR:** Store any type of data (e.g. user sessions, cache, uploaded files) within external data stores. Consider ‘killing’ your servers periodically or use ‘serverless’ platform (e.g. AWS Lambda) that explicitly enforces a stateless behavior
+**TL;DR:** Her türden veriyi (örneğin kullanıcı oturumları, önbellek, yüklenen dosyalar (upload)) harici veri depolarında saklayın. Sunucularınızı periyodik olarak "killing" yok ettiğinizi düşünün veya "serverless" platformunu (örneğin AWS Lambda) kullanın bu sunucu bağımsızlığını açıkça uygular.
 
-**Aksi takdirde:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
+**Aksi takdirde:** Bir sunucudaki başarısızlık, sadece hatalı makineyi öldürmek yerine uygulamanızda kesintiye neden olur. Hatta, dağıtıklaştırma esnekliği sunucuya güvenme nedeniyle daha da zorlaşacaktır.
 
-🔗 [**Daha fazla oku: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
+🔗 [**Daha fazla oku: Sunucu bağımsız olun, Neredeyse her gün sunucularınızı öldürün**](/sections/production/bestateless.md)
 
 <br/><br/>
 
 ## ![✔] 5.13. Güvenlik açıklarını otomatik olarak algılayan araçları kullanın
 
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities (from time to time) that can put a system at risk. This can be easily tamed using community and commercial tools that constantly check for vulnerabilities and warn (locally or at GitHub), some can even patch them immediately
+**TL;DR:** Express gibi çok saygın bağımlılıkların bile bilinen açıkları vardır (zaman zaman) bu sisteminize risk koyar. Bu, sürekli güvenlik açıklarını kontrol eden ve uyaran (yerel olarak veya GitHub'da) topluluk  ve ticari araçlar kullanılarak kolayca evcilleştirilebilir, bazıları hemen onları düzeltelebilir
 
-**Aksi takdirde:** Keeping your code clean from vulnerabilities without dedicated tools will require you to constantly follow online publications about new threats. Quite tedious
+**Aksi takdirde:** Kodunuzu özel araçlar olmadan güvenlik açıklarından temiz tutmak için sürekli çevrimiçi yayınları takip etmeniz gerekecek. Oldukça sıkıcı
 
-🔗 [**Daha fazla oku: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
+🔗 [**Daha fazla oku: Güvenlik açıklarını otomatik olarak algılayan araçları kullanın**](/sections/production/detectvulnerabilities.md)
 
 <br/><br/>
 
 ## ![✔] 5.14. Her log ifadesine bir işlem id'si atayın
 
-**TL;DR:** Assign the same identifier, transaction-id: {some value}, to each log entry within a single request. Then when inspecting errors in logs, easily conclude what happened before and after. Unfortunately, this is not easy to achieve in Node due to its async nature, see code examples inside
+**TL;DR:** Tek istek içerisindeki her log kaydına aynı işlem id'sini, transaction-id, atayın. Daha sonra log kayıtlarındaki hataları incelerken, önce ve sonra olanları kolayca sonuçlandırırsınız. Ne yazık ki, doğasında asenkron olması nedeniyle Node için yapılması kolay değildir, kod örneklerine bakın
 
-**Aksi takdirde:** Looking at a production error log without the context – what happened before – makes it much harder and slower to reason about the issue
+**Aksi takdirde:** Bağlam olmadan üretim hata loguna bakmak - önce ne oldu - sorunla ilgili nedenleri zorlaştırır ve yavaşlatır
 
-🔗 [**Daha fazla oku: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
+🔗 [**Daha fazla oku: Her log ifadesine bir ‘TransactionId’ atayın**](/sections/production/assigntransactionid.md)
 
 <br/><br/>
 
 ## ![✔] 5.15. Set NODE_ENV=production
 
-**TL;DR:** Set the environment variable NODE_ENV to ‘production’ or ‘development’ to flag whether production optimizations should get activated – many npm packages determine the current environment and optimize their code for production
+**TL;DR:** Ortam optimizasyonlarını aktif hale getirip NODE_ENV ortam değişkenini "production" veya "development" olarak ayarlayın. Birçok npm paketi mevcut ortamı belirler ve canlı ortam için kodlarını optimize eder
 
-**Aksi takdirde:** Omitting this simple property might greatly degrade performance. For example, when using Express for server-side rendering omitting `NODE_ENV` makes it slower by a factor of three!
+**Aksi takdirde:** Bu basit özelliği atlamak performansı büyük ölçüde düşürebilir. Örneğin, `NODE_ENV` atlanması Express server-side bir uygulamada üç kat daha yavaş olur
 
 🔗 [**Daha fazla oku: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
 
@@ -665,29 +665,29 @@ Bu, her yapı için CI'nizden çağrılabilecek 🔗 [npm audit](https://docs.np
 
 ## ![✔] 5.16. Otomatik, atomik ve sıfır kesinti dağıtımları (deploy) tasarlayın
 
-**TL;DR:** Research shows that teams who perform many deployments lower the probability of severe production issues. Fast and automated deployments that don’t require risky manual steps and service downtime significantly improve the deployment process. You should probably achieve this using Docker combined with CI tools as they became the industry standard for streamlined deployment
+**TL;DR:** Araştırmalar, birçok dağıtım yapan ekiplerin ciddi canlı ortam sorunlarının olasılığını azalttığını gösteriyor. Hızlı ve otomatikleştirilmiş dağıtımlar, riskli manuel adım ve hizmet kesintisi olmadan dağıtım işlemini önemli ölçüde iyileştirir. Modern dağıtım için endüstri standardı olarak, muhtemelen bunu CI araçlarıyla beraber Docker kullanarak yapabilirsiniz.
 
-**Aksi takdirde:** Long deployments -> production downtime & human-related error -> team unconfident in making deployment -> fewer deployments and features
+**Aksi takdirde:** Uzun dağıtımlar -> canlı ortamda kesinti & insan kaynaklı hata -> dağıtımın yapılmasından emin olmayan ekip -> daha az dağıtım ve özellik
 
 <br/><br/>
 
-## ![✔] 5.17. Node.js'in son kararlı sürümünü kullanın
+## ![✔] 5.17. Node.js'in bir LTS sürümünü kullanın
 
-**TL;DR:** Ensure you are using an LTS version of Node.js to receive critical bug fixes, security updates and performance improvements
+**TL;DR:** Kritik hata düzeltmeleri, güvenlik güncellemeleri ve performans iyileştirmelerini almak için Node.js'in LTS sürümünü kullandığınızdan emin olun
 
-**Aksi takdirde:** Newly discovered bugs or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain
+**Aksi takdirde:** Canlı ortamda çalışan bir uygulamanızı kötüye kullanmak için yeni keşfedilen hatalar veya güvenlik açıkları kullanılabilir ve uygulamanız çeşitli modüller tarafından desteklenmiyor ve bakımı zorlaşıyor
 
-🔗 [**Daha fazla oku: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
+🔗 [**Daha fazla oku: Node.js'in bir LTS sürümünü kullanın**](/sections/production/LTSrelease.md)
 
 <br/><br/>
 
 ## ![✔] 5.18. Uygulama içerisinde logları yönlendirmeyin
 
-**TL;DR:** Log destinations should not be hard-coded by developers within the application code, but instead should be defined by the execution environment the application runs in. Developers should write logs to `stdout` using a logger utility and then let the execution environment (container, server, etc.) pipe the `stdout` stream to the appropriate destination (i.e. Splunk, Graylog, ElasticSearch, etc.).
+**TL;DR:** Logların yazılacağı hedef yerler, uygulama kodu dahilinde geliştiriciler tarafından kodlanmamalı, bunun yerine uygulamanın çalıştığı yürütme ortamı tarafından tanımlanmalıdır. Geliştiriciler bir logger yardımcı aracını kullanarak `stdout`'a loglar yazmalı ve ardından yürütme ortamının (caontainer, server, vb.) `stdout` akışını uygun hedefe (Splunk, Graylog, ElasticSearch, vb.) yönlenirmesine izin vermelidir.
 
-**Aksi takdirde:** Application handling log routing === hard to scale, loss of logs, poor separation of concerns
+**Aksi takdirde:** Uygulamada log yönerdirilmesi === ölçeklendirmesi zor, log kayıpları, bağımlılıkların ayrılmaması
 
-🔗 [**Daha fazla oku: Log Routing**](/sections/production/logrouting.md)
+🔗 [**Daha fazla oku: Log Yönlendirme**](/sections/production/logrouting.md)
 
 <br/><br/><br/>
 
