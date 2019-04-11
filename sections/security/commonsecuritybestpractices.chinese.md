@@ -2,15 +2,15 @@
 
 # Node.js常见的安全最佳实践
 
-The common security guidelines section contains best practices that are standardized in many frameworks and conventions, running an application with ssl/tls for example should be a common guideline and convention followed in every setup to achieve great security benefits.
+通用安全指南部分，包含在许多框架和约定中标准化的最佳实践, 例如, 使用ssl/tls运行应用程序，应该是每个设置中应遵循的通用准则和约定, 以实现出色的安全性。
 
 ## ![✔] 使用SSL/TLS加密客户端-服务器连接
 
 **TL;DR:** In the times of [free SSL/TLS certificates](https://letsencrypt.org/) and easy configuration of those, you do no longer have to weigh advantages and disadvantages of using a secure server because the advantages such as security, support of modern technology and trust clearly outweigh the disadvantages like minimal overhead compared to pure http.
 
-**Otherwise:** Attackers could perform man-in-the-middle attacks, spy on your users' behaviour and perform even more malicious actions when the connection is unencrypted
+**否则:** 攻击者可以执行中间人攻击, 监视用户的行为, 并在连接未加密时执行更多恶意操作。
 
-🔗 [**Read More: Running a secure Node.js server**](secureserver.md)
+🔗 [**更多: 允许一个安全的Node.js服务**](secureserver.md)
 
 <br/><br/>
 
@@ -50,7 +50,7 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 - Run all instances/containers on behalf of a role/service account
 - Assign permissions to groups and not to users. This should make permission management easier and more transparent for most cases
 
-## ![✔] OWASP A6: Security Misconfiguration
+## ![✔] OWASP A6: 安全配置错误
 
 - Access to production environment internals is done through the internal network only, use SSH or other ways, but _never_ expose internal services
 - Restrict internal network access  - explicitly set which resource can access other resources (e.g. network policy or subnets)
@@ -59,8 +59,8 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 - If using cookies, prefer "http only" configuration that prevent browser side JavaScript code from accessing the cookies
 - Protect each VPC with strict and restrictive access rules
 - Prioritize threats using any standard security threat modeling like STRIDE or DREAD
-- Protect against DDoS attacks using HTTP(S) and TCP load balancers
-- Perform periodic penetration tests by specialized agencies
+- 使用HTTP(S)和TCP负载均衡防范DDoS攻击
+- 由专门机构定期进行渗透测试
 
 ## ![✔] OWASP A3: 暴露敏感数据
 
