@@ -52,21 +52,21 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 
 ## ![✔] OWASP A6: 安全配置错误
 
-- Access to production environment internals is done through the internal network only, use SSH or other ways, but _never_ expose internal services
-- Restrict internal network access  - explicitly set which resource can access other resources (e.g. network policy or subnets)
-- If using cookies, configure it to "secured" mode where it's being sent over SSL only
-- If using cookies, configure it for "same site" only so only requests from same domain will get back the designated cookies
-- If using cookies, prefer "http only" configuration that prevent browser side JavaScript code from accessing the cookies
-- Protect each VPC with strict and restrictive access rules
-- Prioritize threats using any standard security threat modeling like STRIDE or DREAD
+- 对生产环境内部的访问仅通过内部网络完成, 使用SSH或其他方式, 但从不公开内部服务
+- 限制内部网络访问 - 明确设置哪些资源可以访问其他资源(例如网络协议或者子网）
+- 如果使用cookies, 配置它为"secured"模式，使其仅能通过SSL传输
+- 如果使用cookies, 配置它为"same site"，使同一域名下的请求才能获得指定的cookies
+- 如果使用cookies, 建议配置"http only"，它将防止浏览器端的Javascript代码访问cookies
+- 通过严格的，限制的准入规则包含每个VPC
+- 使用一些标准安全威胁模型(如STRIDE或DREAD)来确定威胁的优先级
 - 使用HTTP(S)和TCP负载均衡防范DDoS攻击
 - 由专门机构定期进行渗透测试
 
 ## ![✔] OWASP A3: 暴露敏感数据
 
 - 仅接受SSL/TLS连接, 使用headers加强Strict-Transport-Security
-- Separate the network into segments (i.e. subnets) and ensure each node has the least necessary networking access permissions
-- Group all services/instances that need no internet access and explictly disallow any outgoing connection (a.k.a private subnet)
+- 将网络划分为多个网段(即子网), 并确保每个节点具有最小的网络访问权限
+- 对所有不需要互联网访问的服务进行分组, 并明确禁止任何外连接(也被称为专用子网)
 - 存储机密信息通过vault产品，比如AWS KMS, HashiCorp Vault或者Google Cloud KMS
 - Lock down sensitive instance metadata using metadata
 - 在数据离开物理边界时对传输中的数据进行加密
