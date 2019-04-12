@@ -16,13 +16,12 @@ Rate limiting should be implemented in your application to protect a Node.js app
    enable_offline_queue: false,
  });
  
- // Maximum 50 requests per second
+ // Maximum 20 requests per second
  const rateLimiter = new RateLimiterRedis({
    storeClient: redisClient,
-   points: 50,
+   points: 20,
    duration: 1,
-   inmemoryBlockOnConsumed: 51, // If user consumes >=51 points per second
-   inmemoryBlockDuration: 60, // Block it for a minute in memory, so no requests go to Redis
+   blockDuration: 2, // block for 2 seconds if consumed more than 20 points per second
  });
  
  http.createServer((req, res) => {
@@ -40,6 +39,8 @@ Rate limiting should be implemented in your application to protect a Node.js app
    }
  }).listen(3000);
  ```
+
+You can find [more examples in the documentation](https://github.com/animir/node-rate-limiter-flexible/wiki/Overall-example).
 
 ### Code example: Express rate limiting middleware for certain routes
 
