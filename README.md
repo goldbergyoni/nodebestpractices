@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2082%20Best%20Practices-blue.svg" alt="82 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Mar%2010%202019-green.svg" alt="Last update: March 10, 2019"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%2010.15.3%20LTS-brightgreen.svg" alt="Updated for Node 10.15.3 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2082%20Best%20Practices-blue.svg" alt="82 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Apr%2013%202019-green.svg" alt="Last update: April 13, 2019"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2010.15.3%20LTS-brightgreen.svg" alt="Updated for Node 10.15.3 LTS">
 </div>
 
 <br/>
@@ -42,7 +42,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **1. You are, in fact, reading dozens of the best Node.js articles -** this repository is a summary and curation of the top-ranked content on Node.js best practices, as well as content written here by collaborators
 
-**2. It is the largest compilation, and it is growing every week -** currently, more than 70 best practices, style guides, and architectural tips are presented. New issues and pull requests are created every day to keep this live book updated. We'd love to see you contributing here, whether that is fixing code mistakes, helping with translations, or suggesting brilliant new ideas. See our [writing guidelines here](/.operations/writing-guidelines.md)
+**2. It is the largest compilation, and it is growing every week -** currently, more than 80 best practices, style guides, and architectural tips are presented. New issues and pull requests are created every day to keep this live book updated. We'd love to see you contributing here, whether that is fixing code mistakes, helping with translations, or suggesting brilliant new ideas. See our [writing guidelines here](/.operations/writing-guidelines.md)
 
 **3. Most best practices have additional info -** most bullets include a **🔗Read More** link that expands on the practice with code examples, quotes from selected blogs and more information
 
@@ -55,7 +55,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 3.  [Code Style Practices (12) ](#3-code-style-practices)
 4.  [Testing And Overall Quality Practices (10) ](#4-testing-and-overall-quality-practices)
 5.  [Going To Production Practices (18) ](#5-going-to-production-practices)
-6.  [Security Practices (24)](#6-security-best-practices)
+6.  [Security Practices (25)](#6-security-best-practices)
 7.  [Performance Practices (1) (In Progress️ ✍️)](#7-performance-best-practices)
 
 <br/><br/>
@@ -1050,7 +1050,7 @@ Independent Node.js consultant who works with customers in USA, Europe, and Isra
 [Bruno Scheufler](https://github.com/BrunoScheufler)
 <a href="https://brunoscheufler.com/"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
-💻 full-stack web developer and Node.js enthusiast
+💻 full-stack web engineer, Node.js & GraphQL enthusiast
 
 <br/>
 
@@ -1167,13 +1167,24 @@ We appreciate any contribution, from a single word fix to a new best practice. B
 🌻 [Sam](https://github.com/milkdeliver),
 🌻 [Arlind](https://github.com/ArlindXh),
 🌻 [Teddy Toussaint](https://github.com/ttous),
-🌻 [Lewis](https://github.com/LewisArdern)
+🌻 [Lewis](https://github.com/LewisArdern),
+🌻 [DouglasMV](https://github.com/DouglasMV),
+🌻 [Corey Cleary](https://github.com/coreyc),
+🌻 [Mehmet Perk](https://github.com/mperk),
+🌻 [Ryan Ouyang](https://github.com/ryanouyang),
+🌻 [Gabriel Lidenor](https://github.com/GabrielLidenor),
+🌻 [Roman](https://github.com/animir),
+🌻 [Francozeira](https://github.com/Francozeira)
 
 ### Stars
 
 ⭐ [Kyle Martin](https://github.com/js-kyle),
 ⭐ [Keith Holliday](https://github.com/TheHollidayInn),
 ⭐ [Corey Cleary](https://github.com/coreyc),
-⭐ [Maximilian Berkmann](https://github.com/Berkmann18)
+⭐ [Maximilian Berkmann](https://github.com/Berkmann18),
+⭐ [DouglasMV](https://github.com/DouglasMV),
+⭐ [Marcelo Melo](https://github.com/marcelosdm),
+⭐ [Mehmet Perk](https://github.com/mperk),
+⭐ [Ryan Ouyang](https://github.com/ryanouyang)
 
 <br/><br/><br/>
