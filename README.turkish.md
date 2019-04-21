@@ -846,7 +846,7 @@ Bu, her yapı için CI'nizden çağrılabilecek 🔗 [npm audit](https://docs.np
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A5:Broken%20Access%20Access%20Control-green.svg" alt=""/></a>
 
-**TL;DR:** Node.js'nin sınırsız izinlere sahip bir kök kullanıcı olarak çalıştığı yaygın bir senaryo vardır. Örneğin, Docker container daki varsayılan davranış budur. Kök olmayan bir kullanıcı oluşturmanız önerilir ve Docker görüntüsünü de bu şekilde ayarlayın (aşağıda örnek verildi) veya "-u username" ile conatiner'ı çalıştırarak işlemleri bu kullanıcı adıyla çalıştırın.
+**TL;DR:** Node.js'nin sınırsız izinlere sahip bir kök kullanıcı olarak çalıştığı yaygın bir senaryo vardır. Örneğin, bu Docker container daki varsayılan davranıştır. Kök olmayan bir kullanıcı oluşturmanız önerilir ve Docker görüntüsüne de bu şekilde ayarlayın (aşağıda örnek verildi) veya "-u username" ile conatiner'ı çalıştırarak işlemleri bu kullanıcı adıyla çalıştırmanız önerilir.
 
 **Aksi takdirde:** Sunucuda bir komut dosyası çalıştırmaya yekisi olan bir saldırgan, yerel makine üzerinde sınırsız güç elde eder (örneğin, iptable'ı değiştirir ve trafiği kendi sunucusuna yönlendirir)
 
@@ -882,7 +882,7 @@ Bu, her yapı için CI'nizden çağrılabilecek 🔗 [npm audit](https://docs.np
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Regular Expressions kullanışlı iken, özellikle JavaScript uygulamalarına ve Node.js platformuna gerçek bir tehdit oluşturur. bir kullanıcı girişi metni eşleştirmek için yapılan işlem olağanüstü miktarda CPU döngüsü gerektirebilir. RegEx işlemi verimsiz olabilir, 10 kelimeyi doğrulayan tek bir isteğin tüm olay döngüsünü 6 saniye boyunca engelleyebilir ve sonunda CPU 🔥. Bu nedenle, kendi Regex desenlerinizi yazmak yerine [validator.js](https://github.com/chriso/validator.js) gibi üçüncü parti doğrulama  paketlerini tercih edin veya zayıf regex desenlerini saptamak için [safe-regex](https://github.com/substack/safe-regex) kullanın.
+**TL;DR:** Regular Expressions kullanışlı iken, özellikle JavaScript uygulamalarına ve Node.js platformuna gerçek bir tehdit oluşturur. Bir kullanıcı girişi metni eşleştirmek için yapılan işlem olağanüstü miktarda CPU döngüsü gerektirebilir. RegEx işlemi verimsiz olabilir, 10 kelimeyi doğrulayan tek bir isteğin tüm olay döngüsünü 6 saniye boyunca engelleyebilir ve sonunda CPU 🔥. Bu nedenle, kendi Regex desenlerinizi yazmak yerine [validator.js](https://github.com/chriso/validator.js) gibi üçüncü parti doğrulama  paketlerini tercih edin veya zayıf regex desenlerini saptamak için [safe-regex](https://github.com/substack/safe-regex) kullanın.
 
 **Aksi takdirde:** Kötü yazılmış regex'ler, olay döngüsünü tamamen engelleyecek Regular Expression DoS saldırılarına açık olabilir. Örneğin, popüler `moment` paketi 2017 yılının Kasım ayında kötü niyetli RegEx kullanımına  karşı savunmasız bulundu.
 
@@ -894,35 +894,36 @@ Bu, her yapı için CI'nizden çağrılabilecek 🔗 [npm audit](https://docs.np
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** Avoid requiring/importing another file with a path that was given as parameter due to the concern that it could have originated from user input. This rule can be extended for accessing files in general (i.e. `fs.readFile()`) or other sensitive resource access with dynamic variables originating from user input. [Eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) linter can catch such patterns and warn early enough
+**TL;DR:** Kullanıcı girişinden kaynaklanmış olabileceği endişesi nedeniyle parametre olarak verilen bir yol ile başka bir dosya istemek/içe aktarmaktan kaçının.
+Bu kural, genel olarak dosyalara (ör. `fs.readFile()`) veya kullanıcı girişinden kaynaklanan dinamik değişkenlerle diğer hassas kaynaklara erişmek için genişletilebilir. [Eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) linter bu tür desenleri yakalayabilir ve yeterince erken uyarabilir.
 
-**Aksi takdirde:** Malicious user input could find its way to a parameter that is used to require tampered files, for example, a previously uploaded file on the filesystem, or access already existing system files.
+**Aksi takdirde:** Kötü amaçlı kullanıcı girişi, örneğin, dosya sisteminde önceden yüklenmiş bir dosya veya zaten varolan sistem dosyalarına erişmek için kullanılan bir parametreye giden yolu bulabilir.
 
-🔗 [**Daha fazla oku: Safe module loading**](/sections/security/safemoduleloading.md)
-
-<br/><br/>
-
-## ![✔] 6.18. Bir sandbox ta güvensiz kod çalıştırın
-
-<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
-
-**TL;DR:** When tasked to run external code that is given at run-time (e.g. plugin), use any sort of 'sandbox' execution environment that isolates and guards the main code against the plugin. This can be achieved using a dedicated process (e.g. `cluster.fork()`), serverless environment or dedicated npm packages that act as a sandbox
-
-**Aksi takdirde:** A plugin can attack through an endless variety of options like infinite loops, memory overloading, and access to sensitive process environment variables
-
-🔗 [**Daha fazla oku: Run unsafe code in a sandbox**](/sections/security/sandbox.md)
+🔗 [**Daha fazla oku: Güvenli modül yükleme**](/sections/security/safemoduleloading.md)
 
 <br/><br/>
 
-## ![✔] 6.19. Çocuk işlemlerle (child pocesses) çalıştığında ekstra dikkat et
+## ![✔] 6.18. Bir sanal alanda (sandbox) güvensiz kod çalıştırma
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** Avoid using child processes when possible and validate and sanitize input to mitigate shell injection attacks if you still have to. Prefer using `child_process.execFile` which by definition will only execute a single command with a set of attributes and will not allow shell parameter expansion.
+**TL;DR:** Çalışma zamanında verilen harici kodu (örn. eklenti) çalıştırmak için görevlendirildiğinde, ana kodu eklentiye karşı izole eden ve koruyan herhangi bir 'sandbox' yürütme ortamını kullanın. Bu, özel bir işlem (örn. `cluster.fork()`), sunucusuz ortam veya sanal alan gibi davranan özel npm paketleri kullanılarak gerçekleştirilebilir
 
-**Aksi takdirde:** Naive use of child processes could result in remote command execution or shell injection attacks due to malicious user input passed to an unsanitized system command.
+**Aksi takdirde:** Bir eklenti sonsuz döngüler, bellek aşırı yükleme ve hassas ortam değişkenlerine erişim gibi sayısız seçenek arasından saldırabilir
 
-🔗 [**Daha fazla oku: Be cautious when working with child processes**](/sections/security/childprocesses.md)
+🔗 [**Daha fazla oku: Bir sanal alanda güvensiz kod çalıştırma**](/sections/security/sandbox.md)
+
+<br/><br/>
+
+## ![✔] 6.19. Çocuk işlemlerle (child pocesses) çalışırken ekstra dikkat gösterin
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
+
+**TL;DR:** Mümkünse çocuk işlenlerini (child processes) kullanmaktan kaçının ve kullanmak zorundaysan kabuk enjeksiyon (shell injection) saldırılarını azaltmak için girdiyi doğrulayın ve sterilize edin. Tanım gereği yalnızca bir öznitelik kümesiyle tek bir komut yürütecek ve kabuk parametresi genişlemesine izin vermeyecek `child_process.execFile` kullanmayı tercih edin.
+
+**Aksi takdirde:** Alt işlemlerin naif kullanımı, sterilize edilmemiş bir sistem komutuna iletilen kötü amaçlı kullanıcı girişi nedeniyle uzaktan komut çalıştırılmasına veya kabuk enjeksiyon saldırılarına neden olabilir.
+
+🔗 [**Daha fazla oku: Çocuk işlemleriyle çalışırken dikkatli olun**](/sections/security/childprocesses.md)
 
 <br/><br/>
 
@@ -930,11 +931,11 @@ Bu, her yapı için CI'nizden çağrılabilecek 🔗 [npm audit](https://docs.np
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** An integrated express error handler hides the error details by default. However, great are the chances that you implement your own error handling logic with custom Error objects (considered by many as a best practice). If you do so, ensure not to return the entire Error object to the client, which might contain some sensitive application details
+**TL;DR:** Entegre bir ekspres hata işleyicisi varsayılan olarak hata ayrıntılarını gizler. Bununla birlikte, kendi hata işleme mantığınızı özel Error nesneleriyle (çoğu kişi tarafından en iyi uygulama olarak kabul edilir) uygulayabilmeniz harika bir yöntemdir. Bunu yaparsanız, bazı hassas uygulama ayrıntıları içeren Error nesnesinin tümünü istemciye iade etmemeye dikkat edin.
 
-**Aksi takdirde:** Sensitive application details such as server file paths, third party modules in use, and other internal workflows of the application which could be exploited by an attacker, could be leaked from information found in a stack trace
+**Aksi takdirde:** Sunucu dosya yolları, kullanımda olan üçüncü taraf modülleri ve bir saldırgan tarafından kullanılabilecek uygulamanın diğer iç iş akışları gibi hassas uygulama ayrıntıları yığın izlemesinde bulunan bilgilerden sızdırılabilir
 
-🔗 [**Daha fazla oku: Hide error details from client**](/sections/security/hideerrors.md)
+🔗 [**Daha fazla oku: İstemciden hata ayrıntılarını gizle**](/sections/security/hideerrors.md)
 
 <br/><br/>
 
@@ -942,9 +943,9 @@ Bu, her yapı için CI'nizden çağrılabilecek 🔗 [npm audit](https://docs.np
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Any step in the development chain should be protected with MFA (multi-factor authentication), npm/Yarn are a sweet opportunity for attackers who can get their hands on some developer's password. Using developer credentials, attackers can inject malicious code into libraries that are widely installed across projects and services. Maybe even across the web if published in public. Enabling 2-factor-authentication in npm leaves almost zero chances for attackers to alter your package code.
+**TL;DR:** Geliştirme zincirindeki herhangi bir adım MFA (çok faktörlü doğrulama) ile korunmalıdır, npm/Yarn, bazı geliştiricilerin şifresini ele geçirebilen saldırganlar için tatlı bir fırsattır. Saldırganlar, geliştirici kimlik bilgilerini kullanarak, projeler ve servisler arasında yaygın olarak yüklenen kütüphanelere kötü amaçlı kod enjekte edebilir. Belki web'de halka açık olarak yayınlanmışsa bile. Npm'de 2 faktörlü kimlik doğrulamasının etkinleştirilmesi, saldırganların paket kodunuzu değiştirmesi için neredeyse sıfır şans sağlar.
 
-**Aksi takdirde:** [Have you heard about the eslint developer who's password was hijacked?](https://medium.com/@oprearocks/eslint-backdoor-what-it-is-and-how-to-fix-the-issue-221f58f1a8c8)
+**Aksi takdirde:** [Şifresinin ele geçirildiği eslint geliştiricisini duydunuz mu?](https://medium.com/@oprearocks/eslint-backdoor-what-it-is-and-how-to-fix-the-issue-221f58f1a8c8)
 
 <br/><br/>
 
@@ -952,21 +953,21 @@ Bu, her yapı için CI'nizden çağrılabilecek 🔗 [npm audit](https://docs.np
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Each web framework and technology has its known weaknesses - telling an attacker which web framework we use is a great help for them. Using the default settings for session middlewares can expose your app to module- and framework-specific hijacking attacks in a similar way to the `X-Powered-By` header. Try hiding anything that identifies and reveals your tech stack (E.g. Node.js, express)
+**TL;DR:** Her web çerçevesi (framework) ve teknolojisinin bilinen zayıf yönleri vardır - bir saldırgana hangi web çerçevesini kullandığımızı söylerseniz, onlara çok yardımcı olursunuz. Oturum ara katman programlarının varsayılan ayarlarını kullanmak, uygulamanızı `X-Powered-By` başlığına benzer şekilde modüle veya çerçeveye özgü kaçırma saldırılarına (hijacking attacks) maruz bırakabilir. Teknik yığınınızı tanımlayan ve ortaya çıkaran her şeyi saklamayı deneyin (örn. Node.js, express)
 
-**Aksi takdirde:** Cookies could be sent over insecure connections, and an attacker might use session identification to identify the underlying framework of the web application, as well as module-specific vulnerabilities
+**Aksi takdirde:** Çerezler güvenli olmayan bağlantılar üzerinden gönderilebilir ve saldırgan, web uygulamasının temel çerçevesini ve modüle özgü güvenlik açıklarını belirlemek için oturum kimliğini kullanabilir.
 
-🔗 [**Daha fazla oku: Cookie and session security**](/sections/security/sessions.md)
+🔗 [**Daha fazla oku: Çerez ve oturum güvenliği**](/sections/security/sessions.md)
 
 <br/><br/>
 
-## ![✔] 6.23. Bir işlem olağandışı sonlandığında ayarlarla DOS ataklarından kaçın
+## ![✔] 6.23. Bir işlemin kilitleneceğini açıkça ayarlayarak DOS saldırılarını önleme
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** The Node process will crash when errors are not handled. Many best practices even recommend to exit even though an error was caught and got handled. Express, for example, will crash on any asynchronous error - unless you wrap routes with a catch clause. This opens a very sweet attack spot for attackers who recognize what input makes the process crash and repeatedly send the same request. There's no instant remedy for this but a few techniques can mitigate the pain: Alert with critical severity anytime a process crashes due to an unhandled error, validate the input and avoid crashing the process due to invalid user input, wrap all routes with a catch and consider not to crash when an error originated within a request (as opposed to what happens globally)
+**TL;DR:** Hata işlenmediğinde Node işlemi çökecektir. Birçok en iyi uygulama, bir hata yakalansa ve ele alınsa bile çıkmanızı önerir. Örneğin, Express, herhangi bir asenkron hatada çökecektir - rotaları bir catch durumuyla sarmadığınız sürece. Bu, hangi girdinin işlemi çökerttiğini tanıyan ve aynı isteği tekrar tekrar gönderen saldırganlar için çok tatlı bir saldırı noktası açar. Bunun için bir çare yok ama birkaç teknik acıyı hafifletebilir: işlenmeyen bir hata nedeniyle bir işlem çöktüğünde kritik önem taşıyan uyarı yapın, girişi doğrulayın ve geçersiz kullanıcı girişi nedeniyle işlemi çökertmekten kaçının, tüm rotaları bir catch ile sarın ve bir istek içerisinde bir hata oluştuğunda kilitlenmemeyi hesaba katın (küresel olarak olanların aksine)
 
-**Aksi takdirde:** This is just an educated guess: given many Node.js applications, if we try passing an empty JSON body to all POST requests - a handful of applications will crash. At that point, we can just repeat sending the same request to take down the applications with ease
+**Aksi takdirde:** Bu sadece eğitimli bir tahmindir: birçok Node.js uygulaması göz önüne alındığında, boş bir JSON gövdesini tüm POST isteklerine geçirmeyi denersek - bir avuç uygulama çöker. Bu noktada, uygulamaları kolaylıkla aşağı çekmek için aynı isteği göndererek tekrar edebiliriz.
 
 <br/><br/>
 
@@ -974,26 +975,38 @@ Bu, her yapı için CI'nizden çağrılabilecek 🔗 [npm audit](https://docs.np
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
-**TL;DR:** Redirects that do not validate user input can enable attackers to launch phishing scams, steal user credentials, and perform other malicious actions.
+**TL;DR:** Kullanıcı girdisini doğrulamayan yönlendirmeler, saldırganların kimlik avı dolandırıcılığı başlatmasına, kullanıcı kimlik bilgilerini çalmasına ve diğer kötü amaçlı eylemler gerçekleştirmesine olanak tanır.
 
-**Aksi takdirde:** If an attacker discovers that you are not validating external, user-supplied input, they may exploit this vulnerability by posting specially-crafted links on forums, social media, and other public places to get users to click it.
+**Aksi takdirde:** Bir saldırgan dış, kullanıcı tarafından sağlanan girdiyi doğrulamadığınızı fark ederse, bu güvenlik açığından yararlanarak forumlar, sosyal medya ve diğer herkese açık yerlerde özel olarak hazırlanmış bağlantılar göndererek yararlanabilir.
 
-🔗 [**Daha fazla oku: Prevent unsafe redirects**](/sections/security/saferedirects.md)
+🔗 [**Daha fazla oku: Güvensiz yönlendirmeleri önle**](/sections/security/saferedirects.md)
 
+<br/><br/>
+
+## ![✔] 6.25. Npm kayıt defterinde gizlilikleri yayınlamaktan kaçının
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
+
+**TL;DR:** Gizlilikleri halka açık npm kayıtlarına yanlışlıkla yayınlama riskinden kaçınmak için önlemler alınmalıdır. Bir `.npmignore` dosyası, belirli dosyaları veya klasörleri kara listeye almak için kullanılabilir veya package.json içindeki dosyalar dizisi beyaz liste olarak işlev görebilir.
+
+**Otherwise:** Projenizin API anahtarları, parolaları veya diğer sırları, finansal kayıp, kimliğe bürünme ve diğer risklere neden olabilecek herkes tarafından istismar edilmeye açıktır.
+
+🔗 [**Read More: Gizlilikleri yayınlamaktan kaçının**](/sections/security/avoid_publishing_secrets.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Başa dön</a></p>
 
 # `7. Performans En İyi Uygulamaları`
 
-## Our contributors are working on this section. [Would you like to join?](https://github.com/i0natan/nodebestpractices/issues/256)
+## Katkıda bulunanlarımız bu bölümde çalışıyor. [Katılmak ister misin?](https://github.com/i0natan/nodebestpractices/issues/256)
 
 ## ![✔] 7.1. Doğal JS metotlarını, Lodash gibi araçların yerine tercih edin
 
- **TL;DR:** It's often more penalising to use utility libraries like `lodash` and `underscore` over native methods as it leads to unneeded dependencies and slower performance.
- Bear in mind that with the introduction of the new V8 engine alongside the new ES standards, native methods were improved in such a way that it's now about 50% more performant than utility libraries.
+ **TL;DR:** Gereksiz bağımlılıklara ve daha yavaş performansa yol açtığından, doğal metotlara göre `lodash` ve `underscore` gibi yardımcı program kütüphanelerini kullanmak genellikle daha fazla cezalandırıcıdır. Yeni ES standartlarının yanı sıra yeni V8 motorunun piyasaya sürülmesiyle doğal metotların, yardımcı kütüphanelerden %50 daha fazla performans gösterecek şekilde geliştirildiğini unutmayın.
 
-**Aksi takdirde:** You'll have to maintain less performant projects where you could have simply used what was **already** available or dealt with a few more lines in exchange of a few more files.
+**Aksi takdirde:** Daha az performanslı projeler sürdürmek zorunda kalacaksınız, **zaten** mevcutta var olanı basitçe kullanabilirdiniz veya birkaç dosya karşılığında birkaç satırla daha uğraşın.
+
+You'll have to maintain less performant projects where you could have simply used what was **already** available or dealt with a few more lines in exchange of a few more files.
 
 🔗 [**Daha fazla oku: Native over user land utils**](/sections/performance/nativeoverutil.md)
 
