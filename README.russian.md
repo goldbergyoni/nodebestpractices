@@ -3,7 +3,7 @@
 # Node.js Best Practices
 
 <h1 align="center">
-  <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices" />
+  <img src="assets/images/banner-2.jpg" alt="Лучшие практики Node.js" />
 </h1>
 
 <br/>
@@ -14,136 +14,136 @@
 
 <br/>
 
- [![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
+ [![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Подпишитесь на наш Твиттер!** [**@nodepractices**](https://twitter.com/nodepractices/)
  <br/>
 
-# Welcome! 3 Things You Ought To Know First:
-**1. When you read here, you in fact read dozens of the best Node.JS articles -** this is a summary and curation of the top-ranked content on Node JS best practices
+# Добро пожаловать! 3 Вещи, которые вы должны знать в первую очередь:
+**1. Когда вы читаете это, вы на самом деле читаете десятки лучших статей Node.JS -** это краткое изложение и список наиболее популярных материалов о лучших практиках Node.JS
 
-**2. It is the largest compilation, and it is growing every week -** currently, more than 50 best practices, style guides, and architectural tips are presented. We welcome issues and PR to ever keep this live book updated. We'd love to see you contributing here, whether fixing some  code mistake or suggesting brilliant new ideas - be part of the Node.JS best practices book
+**2. Это самая большая подборка, и она растет каждую неделю -** в настоящее время представлено более 50 лучших практик, руководств по стилю и архитектурных советов. Мы приветствуем ишью(issue) и PR, чтобы постоянно обновлять эту книгу. Мы хотели бы видеть, что вы вносите свой вклад здесь, будь то исправление ошибки кода или предложение новых блестящих идей - станьте частью книги по передовому опыту Node.JS
 
-**3. Most bullets have additional info -** nearby most best practice bullets you'll find **🔗Read More** link that will present you with code examples, quotes from selected blogs and more info
-
-<br/><br/><br/>
-
-## Table of Contents
-1. [Project structure Practices (5)](#1-project-structure-practices)
-2. [Error Handling Practices (11) ](#2-error-handling-practices)
-3. [Code Style Practices (12) ](#3-code-style-practices)
-4. [Testing And Overall Quality Practices (8) ](#4-testing-and-overall-quality-practices)
-5. [Going To Production Practices (16) ](#5-going-to-production-practices)
-6. Security Practices (coming soon)
-7. Performance Practices (coming soon)
-
+**3.Большинство маркеров имеют дополнительную информацию -** рядом с наиболее подходящими маркерами вы найдете **🔗ссылку «Подробнее»**, которая предоставит вам примеры кода, цитаты из выбранных блогов и дополнительную информацию
 
 <br/><br/><br/>
-# `1. Project Structure Practices`
 
-## ![✔] 1.1 Structure your solution by components
+## Содержание
+1. [Практики структурирования проекта (5) ](#1-практики-структурирования-проекта)
+2. [Практики обработок ошибок (11) ](#2-практики-обработок-ошибок)
+3. [Практики форматирования кода (12) ](#3-практики-форматирования-кода)
+4. [Практики тестирования и общего качества (8) ](#4-практики-тестирования-и-общего-качества)
+5. [Практики запуска в продакшн (16) ](#5-практики-запуска-в-продакшн)
+6. Практики безопасности (скоро)
+7. Практики производительности (скоро)
 
- **TL;DR:** The worst large applications pitfall is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Instead, partition your code into components, each gets its own folder or a dedicated codebase, and ensure that each unit is kept small and simple. Visit 'Read More' below to see examples of correct project structure
 
-**Otherwise:** When developers who code new features struggle to realize the impact of their change and fear to break other dependant components - deployments become slower and more risky. It's also considered harder to scale-out when all the business units are not separated
+<br/><br/><br/>
+# `1. Практики структурирования проекта`
 
-🔗 [**Read More: structure by components**](/sections/projectstructre/breakintcomponents.korean.md)
+## ![✔] 1.1 Структурируйте свой проект по компонентам
 
-<br/><br/>
+ **TL;DR:** Наихудшая ошибка больших приложений - поддержка огромной базы кода с сотнями зависимостей - такой монолит замедляет разработчиков, поскольку они пытаются внедрить новые функции. Вместо этого разделите ваш код на компоненты, каждый получает свою собственную папку или выделенную кодовую базу, и убедитесь, что каждый модуль остается маленьким и простым. Посетите «Подробнее» ниже, чтобы увидеть примеры правильной структуры проекта
 
-## ![✔] 1.2 Layer your components, keep Express within its boundaries
+**Otherwise:** Когда разработчики, которые пишут новые функции, изо всех сил пытаются понять влияние своих изменений и боятся сломать другие зависимые компоненты, развертывания становятся медленнее и более рискованными. Также считается сложнее масштабировать, когда все бизнес-единицы не разделены
 
-**TL;DR:** Each component should contain 'layers' - a dedicated object for the web, logic and data access code. This not only draws a clean separation of concerns but also significantly ease mocking and testing the system. Though this is a very common pattern, API developers tend to mix layers by passing the web layer objects (Express req, res) to business logic and data layers - this makes your application dependant on and accessible by Express only
-
-**Otherwise:** App that mixes web objects with other layers can not be accessed by testing code, CRON jobs and other non-Express callers
-
-🔗 [**Read More: layer your app**](/sections/projectstructre/createlayers.md)
-
-<br/><br/>
-
-## ![✔] 1.3 Wrap common utilities as NPM packages
-
-**TL;DR:** In a large app that constitutes a large code base, cross-cutting-concern utilities like logger, encryption and alike, should be wrapped by your own code and exposed as private NPM packages. This allows sharing them among multiple code bases and projects
-
-**Otherwise:** You'll have to invent your own deployment and dependency wheel
-
-🔗 [**Read More: Structure by feature**](/sections/projectstructre/wraputilities.md)
+🔗 [**Подробнее: Структурирование по компонентам**](/sections/projectstructre/breakintcomponents.md)
 
 <br/><br/>
 
-## ![✔] 1.4 Separate Express 'app' and 'server'
+## ![✔] 1.2 Разделяйте на уровни ваши компоненты, держите Express в пределах своих границ
 
-**TL;DR:** Avoid the nasty habit of defining the entire [Express](https://expressjs.com/) app in a single huge file - separate your 'Express' definition to at least two files: the API declaration (app.js) and the networking concerns (WWW). For even better structure, locate your API declaration within components
+**TL;DR:** Каждый компонент должен иметь «уровни» - выделенный объект для веба, логики и кода доступа к данным. Это не только четко разделяет проблемы, но и значительно облегчает мокинг и тестирование системы. Хотя это очень распространенный шаблон, разработчики API, как правило, смешивают слои, передавая объекты веб-слоя (Express req, res) в бизнес-логику и в уровни данных - это делает ваше приложение зависимым и доступным только для Express
+
+**Otherwise:** Приложение, которое смешивает веб объекты с другими слоями, не может быть доступно для тестирования, заданий CRON и других не-Express вызовов.
+
+🔗 [**Подробнее: разделяйте на уровни ваше приложение**](/sections/projectstructre/createlayers.md)
+
+<br/><br/>
+
+## ![✔] 1.3 Оберните частые утилиты в пакеты NPM
+
+**TL;DR:** В больших приложениях, которые составляют большую кодовую базу, такие утилиты, как логгер, энкриптор и т.д., должны быть обернуты вашим собственным кодом и представлены как приватные пакеты NPM. Это позволяет делиться ими между несколькими базами кода и проектами
+
+**Otherwise:** Вам придется изобрести собственное развертывания и колесо зависимости
+
+🔗 [**Подробнее: Структурирования по функциям**](/sections/projectstructre/wraputilities.md)
+
+<br/><br/>
+
+## ![✔] 1.4 Разделите Express 'приложение' и 'сервер'
+
+**TL;DR:** Избегайте неприятной привычки писать все приложение [Express](https://expressjs.com/) в одном огромном файле - разделите определение 'Express' как минимум на два файла: объявление API (app.js) и сетевые проблемы (WWW). Для еще лучшей структуры разделите объявление API по компонентам.
 
 **Otherwise:** Your API will be accessible for testing via HTTP calls only (slower and much harder to generate coverage reports). It probably won't be a big pleasure to maintain hundreds of lines of code in a single file
 
-🔗 [**Read More: separate Express 'app' and 'server'**](/sections/projectstructre/separateexpress.md)
+🔗 [**Подробнее: разделите Express 'приложение' и 'сервер'**](/sections/projectstructre/separateexpress.md)
 
 <br/><br/>
 
-## ![✔] 1.5 Use environment aware, secure and hierarchical config
+## ![✔] 1.5 Используйте осведомленные окружением, безопансные и иерархические конфигурации 
 
 
 **TL;DR:** A perfect and flawless configuration setup should ensure (a) keys can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are only a few packages that can help tick most of those boxes like [nconf](https://www.npmjs.com/package/nconf) and [config](https://www.npmjs.com/package/config).
 
 **Otherwise:** Failing to satisfy any of the config requirements will simply bog down the development or devops team. Probably both
 
-🔗 [**Read More: configuration best practices**](/sections/projectstructre/configguide.md)
+🔗 [**Подробнее: configuration best practices**](/sections/projectstructre/configguide.md)
 
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#содержание">⬆ Наверх</a></p>
 
-# `2. Error Handling Practices`
+# `2. Практики обработок ошибок`
 
-## ![✔] 2.1  Use Async-Await or promises for async error handling
+## ![✔] 2.1 Используйте Async-Await или Промисы для обработки асинхронных ошибок
 
 **TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using a reputable promise library or async-await instead which enables a much more compact and familiar code syntax like try-catch
 
 **Otherwise:** Node.JS callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting and awkward coding patterns
 
-🔗 [**Read More: avoiding callbacks**](/sections/errorhandling/asyncerrorhandling.md)
+🔗 [**Подробнее: avoiding callbacks**](/sections/errorhandling/asyncerrorhandling.md)
 
 <br/><br/>
 
-## ![✔] 2.2 Use only the built-in Error object
+## ![✔] 2.2 Используйте только встроенный объект Error
 
 **TL;DR:** Many throws errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw exception or emit error – using only the built-in Error object will increase uniformity and prevent loss of information
 
 
 **Otherwise:** When invoking some component, being uncertain which type of errors come in return – it makes proper error handling much harder. Even worse, using custom types to describe errors might lead to loss of critical error information like the stack trace!
 
-🔗 [**Read More: using the built-in error object**](/sections/errorhandling/useonlythebuiltinerror.md)
+🔗 [**Подробнее: using the built-in error object**](/sections/errorhandling/useonlythebuiltinerror.md)
 
 <br/><br/>
 
-## ![✔] 2.3 Distinguish operational vs programmer errors
+## ![✔] 2.3 Различайте операционные и программистские ошибки
 
 **TL;DR:** Operational errors (e.g. API received an invalid input) refer to known cases where the error impact is fully understood and can be handled thoughtfully. On the other hand, programmer error (e.g. trying to read undefined variable) refers to unknown code failures that dictate to gracefully restart the application
 
 **Otherwise:** You may always restart the application when an error appears, but why let ~5000 online users down because of a minor, predicted, operational error? the opposite is also not ideal – keeping the application up when an unknown issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
 
-  🔗 [**Read More: operational vs programmer error**](/sections/errorhandling/operationalvsprogrammererror.md)
+  🔗 [**Подробнее: operational vs programmer error**](/sections/errorhandling/operationalvsprogrammererror.md)
 
 <br/><br/>
 
-## ![✔] 2.4 Handle errors centrally, not within an Express middleware
+## ![✔] 2.4 Обрабатывайте ошибки в самой логике, а не в мидлварах Express
 
 **TL;DR:** Error handling logic such as mail to admin and logging should be encapsulated in a dedicated and centralized object that all endpoints (e.g. Express middleware, cron jobs, unit-testing) call when an error comes in.
 
 **Otherwise:** Not handling errors within a single place will lead to code duplication and probably to improperly handled errors
 
-🔗 [**Read More: handling errors in a centralized place**](/sections/errorhandling/centralizedhandling.md)
+🔗 [**Подробнее: handling errors in a centralized place**](/sections/errorhandling/centralizedhandling.md)
 
 <br/><br/>
 
-## ![✔] 2.5 Document API errors using Swagger
+## ![✔] 2.5 Ошибки API документа с использованием Swagger
 
 **TL;DR:** Let your API callers know which errors might come in return so they can handle these thoughtfully without crashing. This is usually done with REST API documentation frameworks like Swagger
 
 **Otherwise:** An API client might decide to crash and restart only because he received back an error he couldn’t understand. Note: the caller of your API might be you (very typical in a microservice environment)
 
 
-🔗 [**Read More: documenting errors in Swagger**](/sections/errorhandling/documentingusingswagger.md)
+🔗 [**Подробнее: documenting errors in Swagger**](/sections/errorhandling/documentingusingswagger.md)
 
 <br/><br/>
 
@@ -153,32 +153,32 @@
 
 **Otherwise:** When an unfamiliar exception is caught, some object might be in a faulty state (e.g an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
 
-🔗 [**Read More: shutting the process**](/sections/errorhandling/shuttingtheprocess.md)
+🔗 [**Подробнее: shutting the process**](/sections/errorhandling/shuttingtheprocess.md)
 
 <br/><br/>
 
 
 
-## ![✔] 2.7 Use a mature logger to increase error visibility
+## ![✔] 2.7 Используйте надежный логгер, чтобы увеличить видимость ошибок
 
 **TL;DR:** A set of mature logging tools like Winston, Bunyan or Log4J, will speed-up error discovery and understanding. So forget about console.log.
 
 **Otherwise:** Skimming through console.logs or manually through messy text file without querying tools or a decent log viewer might keep you busy at work until late
 
-🔗 [**Read More: using a mature logger**](/sections/errorhandling/usematurelogger.md)
+🔗 [**Подробнее: использование надежного логгера**](/sections/errorhandling/usematurelogger.md)
 
 
 <br/><br/>
 
 
-## ![✔] 2.8 Test error flows using your favorite test framework
+## ![✔] 2.8 Тестируйте потоки ошибок, используя вашу любимую тестовый фреймворк
 
 **TL;DR:** Whether professional automated QA or plain manual developer testing – Ensure that your code not only satisfies positive scenario but also handle and return the right errors. Testing frameworks like Mocha & Chai can handle this easily (see code examples within the "Gist popup")
 
 **Otherwise:** Without testing, whether automatically or manually, you can’t rely on our code to return the right errors. Without meaningful errors – there’s no error handling
 
 
-🔗 [**Read More: testing error flows**](/sections/errorhandling/testingerrorflows.md)
+🔗 [**Подробнее: testing error flows**](/sections/errorhandling/testingerrorflows.md)
 
 <br/><br/>
 
@@ -189,19 +189,19 @@
 **Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which are your slowest code parts under real world scenario and how these affects the UX
 
 
-🔗 [**Read More: using APM products**](/sections/errorhandling/apmproducts.md)
+🔗 [**Подробнее: using APM products**](/sections/errorhandling/apmproducts.md)
 
 <br/><br/>
 
 
-## ![✔] 2.10 Catch unhandled promise rejections
+## ![✔] 2.10 Поймайте необработанные реджекты Промисов
 
 **TL;DR:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explictly handle. Even if your code is subscribed to process.uncaughtException! Overcome this by registering to the event process.unhandledRejection
 
 **Otherwise:** Your errors will get swallowed and leave no trace. Nothing to worry about
 
 
-🔗 [**Read More: catching unhandled promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.md)
+🔗 [**Подробнее: catching unhandled promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.md)
 
 <br/><br/>
 
@@ -211,15 +211,15 @@
 
 **Otherwise:** Consider this – your function expects a numeric argument “Discount” which the caller forgets to pass, later on your code checks if Discount!=0 (amount of allowed discount is greater than zero), then it will allow the user to enjoy a discount. OMG, what a nasty bug. Can you see it?
 
-🔗 [**Read More: failing fast**](/sections/errorhandling/failfast.md)
+🔗 [**Подробнее: failing fast**](/sections/errorhandling/failfast.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#содержание">⬆ Наверх</a></p>
 
-# `3. Code Style Practices`
+# `3. Практики форматирования кода`
 
-## ![✔] 3.1 Use ESLint
+## ![✔] 3.1 Используйте ESLint
 
 **TL;DR:** ESLint is the de-facto standard for checking code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Using ESLint and following the rest of the code style practices below means following the same styles used by the rest of the community, as well as the same code styles used in the core products themselves.
 
@@ -227,7 +227,7 @@
 
 <br/><br/>
 
-## ![✔] 3.2 Node JS Specific Plugins
+## ![✔] 3.2 Специальные плагины Node JS
 
 **TL;DR:** On top of ESLint standard rules that cover vanilla JS only, add Node-specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
@@ -235,18 +235,18 @@
 
 <br/><br/>
 
-## ![✔] 3.3 Start a Codeblock's Curly Braces in the Same Line
+## ![✔] 3.3 Открывайте фигурные скобки в той же строке
 
 **TL;DR:** The opening curly braces of a code block should be in the same line of the opening statement.
 
 ### Code Example
 ```javascript
-  // Do
+  // Хорошо
   function someFunction() {
     // code block
   }
 
-  //Avoid
+  // Плохо
   function someFunction
   {
     // code block
@@ -255,11 +255,11 @@
 
 **Otherwise:** Deferring from this best practice might lead to unexpected results, as seen in the Stackoverflow thread below:
 
-🔗 [**Read more:** "Why does a results vary based on curly brace placement?" (Stackoverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
+🔗 [**Подробнее:** "Why does a results vary based on curly brace placement?" (Stackoverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
 <br/><br/>
 
-## ![✔] 3.4 Don't Forget the Semicolon
+## ![✔] 3.4 Не забывайте точку с запятой
 
 **TL;DR:** While not unanimously agreed upon, it is still recommended to put a semicolon at the end of each statement. This will make your code more readable and explicit to other developers who read it.
 
@@ -267,7 +267,7 @@
 
 <br/><br/>
 
-## ![✔] 3.5 Name Your Functions
+## ![✔] 3.5 Назначайте имя вашим функциям
 
 **TL;DR:** Name all functions, including closures and callbacks. Avoid anonymous functions. This is especially useful when profiling a node app. Naming all functions will allow you to easily understand what you're looking at when checking a memory snapshot.
 
@@ -302,17 +302,17 @@
 
 <br/><br/>
 
-## ![✔] 3.7 Prefer const over let. Ditch the var
+## ![✔] 3.7 Используйте const вместо let. Бросьте в канаву var
 
 **TL;DR:** Using `const` means that once a variable is assigned, it cannot be reassigned. Prefering const will help you to not be tempted to use the same variable for different uses, and make your code clearer. If a variable needs to be reassigned, in a for loop for example, use `let` to declare it. Another important aspect of let is that a variable declared using let is only available in the block scope in which it was defined. `var` is function scoped, not block scoped, and [shouldn't be used in ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) now that you have const and let at your disposal.
 
 **Otherwise:** Debugging becomes way more cumbersome when following a variable that frequently changes.
 
-🔗 [**Read more: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
+🔗 [**Подробнее: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
 
 <br/><br/>
 
-## ![✔] 3.8 Requires come first, and not inside functions
+## ![✔] 3.8 Импорты идут первым, и не внутри функции
 
 **TL;DR:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top, but also avoids a couple of potential problems.
 
@@ -320,7 +320,7 @@
 
 <br/><br/>
 
-## ![✔] 3.9 Do Require on the folders, not directly on the files
+## ![✔] 3.9 Делайте импорты на папках, а не на самих файлах
 
 **TL;DR:** When developing a module/library in a folder, place an index.js file that exposes the module's
 internals so every consumer will pass through it. This serves as an 'interface' to your module and ease
@@ -343,7 +343,7 @@ clients.
 <br/><br/>
 
 
-## ![✔] 3.10 Use the `===` operator
+## ![✔] 3.10 Используйте оператор `===`
 
 **TL;DR:** Prefer the strict equality operator `===` over the weaker abstract equality operator `==`. `==` will compare two variables after converting them to a common type. There is no type conversion in `===`, and both variables must be of the same type to be equal.
 
@@ -368,17 +368,17 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 3.11 Use Async Await, avoid callbacks
+## ![✔] 3.11 Используйте Async Await, избегайте callback-ов
 
 **TL;DR:** Node 8 LTS now has full support for Async-await. This is a new way of dealing with asyncronous code which supersedes callbacks and promises. Async-await is non-blocking, and it makes asynchronous code look synchronous. The best gift you can give to your code is using async-await which provides a much more compact and familiar code syntax like try-catch.
 
 **Otherwise:** Handling async errors in callback style is probably the fastest way to hell - this style forces to check errors all over, deal with akward code nesting and make it difficult to reason about the code flow.
 
-🔗[**Read more:** Guide to async await 1.0](https://github.com/yortus/asyncawait)
+🔗[**Подробнее:** Guide to async await 1.0](https://github.com/yortus/asyncawait)
 
 <br/><br/>
 
-## ![✔] 3.12 Use Fat (=>) Arrow Functions
+## ![✔] 3.12 Используйте стрелочные функции (`=>`)
 
 **TL;DR:** Though it's recommended to use async-await and avoid function parameters, when dealing with older API that accept promises or callbacks - arrow functions make the code structure more compact and keep the lexical context of the root function (i.e. 'this').
 
@@ -389,10 +389,10 @@ All statements above will return false if used with `===`
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#содержание">⬆ Наверх</a></p>
 
 
-# `4. Testing And Overall Quality Practices`
+# `4. Практики тестирования и общего качества`
 
 ## ![✔] 4.1 At the very least, write API (component) testing
 
@@ -417,7 +417,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
 
-🔗 [**Read More: Choosing CI platform**](/sections/testingandquality/citools.md)
+🔗 [**Подробнее: Choosing CI platform**](/sections/testingandquality/citools.md)
 
 <br/><br/>
 
@@ -447,7 +447,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.7 Inspect for outdated packages
+## ![✔] 4.7 Осмотрите проект на устаревшие пакеты
 
 **TL;DR:** Use your preferred tool (e.g. 'npm outdated' or [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) to detect installed packages which are outdated, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a severe scenario might be when an installed package is 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
 
@@ -455,7 +455,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.8 Use docker-compose for e2e testing
+## ![✔] 4.8 Используйте docker-compose для e2e тестирования
 
 **TL;DR:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Docker-compose turns this problem into a breeze by crafting production-like environment using a simple text file and easy commands. It allows crafting all the dependent services, DB and isolated network for e2e testing. Last but not least, it can keep a stateless environment that is invoked before each test suite and dies right after
 
@@ -465,17 +465,17 @@ All statements above will return false if used with `===`
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#содержание">⬆ Наверх</a></p>
 
-# `5. Going To Production Practices`
-## ![✔] 5.1. Monitoring!
+# `5. Практики запуска в продакшн`
+## ![✔] 5.1. Мониторинг!
 
 **TL;DR:** Monitoring is a game of finding out issues before customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that ticks all boxes. Click ‘The Gist’ below for overview of solutions
 
 **Otherwise:** Failure === disappointed customers. Simple.
 
 
-🔗 [**Read More: Monitoring!**](/sections/production/monitoring.md)
+🔗 [**Подробнее: Мониторинг!**](/sections/production/monitoring.md)
 
 <br/><br/>
 
@@ -486,7 +486,7 @@ All statements above will return false if used with `===`
 **Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
 
 
-🔗 [**Read More: Increase transparency using smart logging**](/sections/production/smartlogging.md)
+🔗 [**Подробнее: Increase transparency using smart logging**](/sections/production/smartlogging.md)
 	
 <br/><br/>
 
@@ -497,7 +497,7 @@ All statements above will return false if used with `===`
 **Otherwise:** Your poor single thread will keep busy doing networking tasks instead of dealing with your application core and performance will degrade accordingly
 
 
-🔗 [**Read More: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
+🔗 [**Подробнее: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
 
 <br/><br/>
 
@@ -508,7 +508,7 @@ All statements above will return false if used with `===`
 **Otherwise:** QA will thoroughly test the code and approve a version that will behave differently at production. Even worse, different servers at the same production cluster might run different code
 
 
-🔗 [**Read More: Lock dependencies**](/sections/production/lockdependencies.md)
+🔗 [**Подробнее: Lock dependencies**](/sections/production/lockdependencies.md)
 
 <br/><br/>
 
@@ -519,7 +519,7 @@ All statements above will return false if used with `===`
 **Otherwise:** Running dozens of instances without clear strategy and too many tools together (cluster management, docker, PM2) might lead to a devops chaos
 
 
-🔗 [**Read More: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
+🔗 [**Подробнее: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
 
  
 <br/><br/>
@@ -531,7 +531,7 @@ All statements above will return false if used with `===`
 **Otherwise:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.JS utilizes only 1 (even using PaaS services like AWS beanstalk!)
 
 
-🔗 [**Read More: Utilize all CPU cores**](/sections/production/utilizecpu.md)
+🔗 [**Подробнее: Utilize all CPU cores**](/sections/production/utilizecpu.md)
 
 <br/><br/>
 
@@ -542,7 +542,7 @@ All statements above will return false if used with `===`
 **Otherwise:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
 
 
-🔗 [**Read More: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
+🔗 [**Подробнее: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
 
 <br/><br/>
 
@@ -553,7 +553,7 @@ All statements above will return false if used with `===`
 **Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real world scenario and how these affects the UX
 
 
-🔗 [**Read More: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
+🔗 [**Подробнее: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
 
 
 <br/><br/>
@@ -566,7 +566,7 @@ All statements above will return false if used with `===`
 **Otherwise:** A world champion IT/devops guy won’t save a system that is badly written
 
 
-🔗 [**Read More: Make your code production-ready**](/sections/production/productoncode.md)
+🔗 [**Подробнее: Make your code production-ready**](/sections/production/productoncode.md)
 
 <br/><br/>
 
@@ -577,7 +577,7 @@ All statements above will return false if used with `===`
 **Otherwise:** Your process memory might leak a hundred megabytes a day like happened in Wallmart
 
 
-🔗 [**Read More: Measure and guard the memory usage**](/sections/production/measurememory.md)
+🔗 [**Подробнее: Measure and guard the memory usage**](/sections/production/measurememory.md)
 
 <br/><br/>
 
@@ -589,7 +589,7 @@ All statements above will return false if used with `===`
 **Otherwise:** Your single Node thread will be busy streaming hundreds of html/images/angular/react files instead of  allocating all its resources for the task it was born for – serving dynamic content
 
 
-🔗 [**Read More: Get your frontend assets out of Node**](/sections/production/frontendout.md)
+🔗 [**Подробнее: Get your frontend assets out of Node**](/sections/production/frontendout.md)
 
 <br/><br/>
 
@@ -601,7 +601,7 @@ All statements above will return false if used with `===`
 **Otherwise:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
 
 
-🔗 [**Read More: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
+🔗 [**Подробнее: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
 
 
 <br/><br/>
@@ -614,7 +614,7 @@ All statements above will return false if used with `===`
 **Otherwise:** Otherwise: Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
 
 
-🔗 [**Read More: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
+🔗 [**Подробнее: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
 
 <br/><br/>
 
@@ -626,7 +626,7 @@ All statements above will return false if used with `===`
 **Otherwise:** Looking at a production error log without the context – what happened before – makes it much harder and slower to reason about the issue
 
 
-🔗 [**Read More: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
+🔗 [**Подробнее: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
 
 <br/><br/>
 
@@ -638,7 +638,7 @@ All statements above will return false if used with `===`
 **Otherwise:** Omitting this simple property might greatly degrade performance. For example, when using Express for server side rendering omitting NODE_ENV makes the slower by a factor of three!
 
 
-🔗 [**Read More: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
+🔗 [**Подробнее: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
 
 
 <br/><br/>
@@ -652,22 +652,22 @@ All statements above will return false if used with `===`
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#содержание">⬆ Наверх</a></p>
 
-# `Security Practices`
+# `Практики безопасности`
 
-## Our contributors are working on this section. Would you like to join?
+## Наши участники работают над этим разделом. Хотели бы вы присоединиться?
 
 <br/><br/><br/>
-# `Performance Practices`
+# `Практики производительности`
 
-## Our contributors are working on this section. Would you like to join?
+## Наши участники работают над этим разделом. Хотели бы вы присоединиться?
 
 
 <br/><br/><br/>
 # Contributors
 ## `Yoni Goldberg`
-Developer & consultant, Backend expert, JavaScript enthusiast, focused on Node.JS. Many of the bullets was first published on his blog post [http://www.goldbergyoni.com](http://www.goldbergyoni.com)
+Разработчик и консультант, эксперт по бэкэнду, энтузиаст JavaScript, специализирующийся на Node.JS. Многие из ?пуль были впервые опубликованы в его блоге [http://www.goldbergyoni.com](http://www.goldbergyoni.com)
 
 ## `Ido Richter`
-👨‍💻 Software engineer, 🌐 web developer, 🤖 emojis enthusiast.
+👨‍💻 Программный инженер , 🌐 Веб разработчик, 🤖 Энтузиаст эмодзи.
