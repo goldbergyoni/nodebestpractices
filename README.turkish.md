@@ -543,13 +543,13 @@ Bu, her yapı için CI'nizden çağrılabilecek 🔗 [npm audit](https://docs.np
 
 <br/><br/>
 
-## ![✔] 5.4. Bağımılıkları salbitle
+## ![✔] 5.4. Bağımlılıkları kilitle
 
 **TL;DR:** Kodunuz tüm ortamlarda aynı olmalıdır fakat şaşırtıcı bir şekilde varsayılan olarak npm bağımlılıkların ortamlar arasında kaymasına izin verir - paketleri farklı ortamlara yüklediğinizde, son versiyonları yüklemeye çalışır. Npm config dosyalarını kullanarak bunun üstesinden gelin, .npmrc, her ortama her paketin aynı versiyonunu (son değil) kaydetmesini söyleyin. Alternatif olarak, ince taneli kontrol için `npm shrinkwrap` kullanın. *Güncelleme: NPM5'den itibaren bağımlılıklar varsayılan olarak kilitleniyor. Yeni paket yöneticisi, yarn, yarn da bizi varsayılan olarak karşıladı.
 
 **Aksi takdirde:** Kalite ekibi, kodu tamamen test edecek ve üretimde farklı davranacak bir sürümü onaylayacaktır. Daha da kötüsü, farklı sunucularda ürünün aynı sürümleri farklı kod çalıştırabilir
 
-🔗 [**Daha fazla oku: Bağımılıkları salbitle**](/sections/production/lockdependencies.md)
+🔗 [**Daha fazla oku: Bağımlılıkları kilitle**](/sections/production/lockdependencies.md)
 
 <br/><br/>
 
