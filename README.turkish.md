@@ -48,13 +48,13 @@ Farklı dillerde oku: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [
 
 ## Table of Contents
 
-1.  [Project Structure Practices (5)](#1-project-structure-practices)
-2.  [Error Handling Practices (11) ](#2-error-handling-practices)
-3.  [Code Style Practices (12) ](#3-code-style-practices)
-4.  [Testing And Overall Quality Practices (10) ](#4-testing-and-overall-quality-practices)
-5.  [Going To Production Practices (18) ](#5-going-to-production-practices)
-6.  [Security Practices (24)](#6-security-best-practices)
-7.  [Performance Practices (1) (In Progress️ ✍️)](#7-performance-best-practices)
+1.  [Proje Yapısı En İyi Uygulamaları (5)](#1-project-structure-practices)
+2.  [Hata İşleme En İyi Uygulamaları (11) ](#2-error-handling-practices)
+3.  [Kod Stil En İyi Uygulamaları (12) ](#3-code-style-practices)
+4.  [Test Ve Tam Kalite En İyi Uygulamaları (10) ](#4-testing-and-overall-quality-practices)
+5.  [Canlı Ortam (Production) En İyi Uygulamaları (18) ](#5-going-to-production-practices)
+6.  [Güvenlik İçin En İyi Uygulamalar (25)](#6-security-best-practices)
+7.  [Performans En İyi Uygulamaları (1) (Devam Etmekte ✍️)](#7-performance-best-practices)
 
 <br/><br/>
 
@@ -115,7 +115,7 @@ In a large app that constitutes a large code base, cross-cutting-concern utiliti
 
 <p align="right"><a href="#table-of-contents">⬆ Başa dön</a></p>
 
-# `2. Hata İşleme Uygulamaları`
+# `2. Hata İşleme En İyi Uygulamaları`
 
 ## ![✔] 2.1 Asenkron hata işlemek için Async-Await veya Promises kullanın
 
@@ -420,7 +420,7 @@ Yukarıdaki bütün ifadeler, eğer `===` operatörü kullanılsaydı false dön
 
 <p align="right"><a href="#table-of-contents">⬆ Başa dön</a></p>
 
-# `4. Test Ve Tam Kalite Uygulamaları`
+# `4. Test Ve Tam Kalite En İyi Uygulamaları`
 
 ## ![✔] 4.1 En azından, API (bileşen) testi yazın
 
@@ -511,7 +511,7 @@ Bu, her yapı için CI'nizden çağrılabilecek 🔗 [npm audit](https://docs.np
 
 <p align="right"><a href="#table-of-contents">⬆ Başa dön</a></p>
 
-# `5. Canlı Ortam (Production) Uygulamaları`
+# `5. Canlı Ortam (Production) En İyi Uygulamaları`
 
 ## ![✔] 5.1. Görüntüleme!
 
@@ -693,7 +693,7 @@ Bu, her yapı için CI'nizden çağrılabilecek 🔗 [npm audit](https://docs.np
 
 <p align="right"><a href="#table-of-contents">⬆ Başa dön</a></p>
 
-# `6. Güvenlik İçin En İyi Uygulamar`
+# `6. Güvenlik İçin En İyi Uygulamalar`
 
 <div align="center">
 <img src="https://img.shields.io/badge/OWASP%20Threats-Top%2010-green.svg" alt="53 items"/>
