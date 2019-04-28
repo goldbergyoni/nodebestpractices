@@ -93,21 +93,21 @@ En kötü büyük uygulamalardaki gizli tehlike yüzlerce bağımlılıkla büy�
 
 ## ![✔] 1.4 'uygulama' ve 'server' birbirinden ayrı Express uygulaması
 
-**TL;DR:** Tüm Express uygulamasını tek bir büyük dosyada tanımlamak gibi kötü alışkanlıklardan kaçının - Express tanımlamanızı en az iki dosyaya ayırın: API tanımalaması (app.js) ve ağ (www). Daha iyi bir yapı için, API tanımlamanızı komponentler içerisine koyun.
+**TL;DR:** Tüm Express uygulamasını tek bir büyük dosyada tanımlamak gibi kötü alışkanlıklardan kaçının - Express tanımlamanızı en az iki dosyaya ayırın: API tanımlaması (app.js) ve ağ ilgileri (www). Daha iyi bir yapı için, API tanımlamanızı komponentler içerisine koyun.
 
 **Aksi takdirde:** API'nize sadece HTTP istekleri ile test için erişilebilecek (daha yavaş ve kapsama raporları oluşturmak çok daha zor). Muhtemelen yüzlerce kod satırını tek bir dosyada bakımını sağlamak büyük bir zevk olmaz.
 
-🔗 [**Daha fazla oku: 'uygulama' ve 'server' birbirinden ayrı Express uygulaması**](/sections/projectstructre/separateexpress.md)
+🔗 [**Daha fazla oku: 'uygulama' ve 'server' birbirinden ayrı Express uygulaması**](/sections/projectstructre/separateexpress.turkish.md)
 
 <br/><br/>
 
-## ![✔] 1.5 Konfigürasyon dosyalarını değişen ortamlara uyumlu, güvenli ve hiyerarşik yapın
+## ![✔] 1.5 Değişen ortamlara uyumlu, güvenli ve hiyerarşik konfig kullanın
 
 **TL;DR:** Mükemmel ve kusursuz bir konfigürasyon kurulmalıdır (a) anahtarlar (keys) dosyadan ve ortam değişkenlerinden okunabilir (b) gizli bilgileri commit kodun dışında tut (c) konfig kolay bulunabilmesi için hiyerarşiktir. [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) and [config](https://www.npmjs.com/package/config) gibi paketler yardım edebilir.
 
 **Aksi takdirde:** Config gereksinimlerinden herhangi birinin yerine getirilmemesi geliştirmeyi veya devops takımını basitçe çıkmaza sokacaktır. Muhtemelen ikisi de.
 
-🔗 [**Daha fazla oku: konfigürasyon en iyi uygulamaları**](/sections/projectstructre/configguide.md)
+🔗 [**Daha fazla oku: konfigürasyon en iyi uygulamaları**](/sections/projectstructre/configguide.turkish.md)
 
 <br/><br/><br/>
 

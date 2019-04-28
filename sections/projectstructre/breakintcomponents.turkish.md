@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Açıklayıcı Bir Paragraf
+### Bir Paragraf Açıklama
 
 Orta ve üstü büyüklükteki uygulamalar için monolitler gerçekten kötüdür - birçok bağımlılıkları olan büyük bir yazılımda akıl yürütmek zordur ve genellikle spagetti koduna yol açar. Akıllı mimarlar bile — canavarı evcilleştirecek ve onu'modülerleştirecek kadar yetenekli olanlar — tasarıma büyük zihinsel çaba harcarlar ve her değişiklik, diğer bağımlı nesneler üzerindeki etkiyi dikkatlice değerlendirmeyi gerektirir. Nihai çözüm küçük yazılım geliştirmektir: tüm yığını bölün, başkalarıyla dosya paylaşmayan kendi kendine yeten bileşenlere bölün, her biri çok az dosya oluşturur (örn: API, servis, veri erişim, test vb.)böylece bunun için akıl yürütmek çok kolay olacaktır. Bazıları buna 'mikro servisler' mimarisi diyebilir — mikro servisler; takip etmeniz gereken bir özellik değil, bir dizi ilke olduğunu anlamak önemlidir. Olgunlaşmış mikro servis mimarisinin prensiplerini benimseyebilirsin veya bir kaçını benimseyebilirsin. Yazılım karmaşıklığını düşük tuttuğunuz sürece her ikisi de iyidir. Yapmanız gereken en azından bileşenler arasında temel sınırlar oluşturmak, her iş bileşeni için proje kökünde bir klasör atamak ve kendi kendine yeten hale getirmektir — diğer bileşenlere işlevlerin yalnızca arayüzle (interface) veya API ile kullanmasına izin verilir. Bu, bileşenlerinizi basit tutmak için temeldir, bağımlılık cehenneminden kaçının ve uygulamanız büyüdükçe gelecekte tam gelişmiş mikro hizmetlerin önünü açacaktır.
 
