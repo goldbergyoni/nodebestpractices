@@ -442,7 +442,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 4.4 Avoid global test fixtures and seeds, add data per-test
 
-**TL;DR:** To prevent tests coupling and easily reason about the test flow, each test should add and act on its own set of DB rows. Whenever a test need to pull or assume the existence of some DB data - it must explicitly add that data and avoid mutating any other records
+**TL;DR:** To prevent tests coupling and easily reason about the test flow, each test should add and act on its own set of DB rows. Whenever a test needs to pull or assume the existence of some DB data - it must explicitly add that data and avoid mutating any other records
 
 **Otherwise:** Consider a scenario where deployment is aborted due to failing tests, team is now going to spend precious investigation time that ends in a sad conclusion: the system works well, the tests however interfere with each other and break the build
 
