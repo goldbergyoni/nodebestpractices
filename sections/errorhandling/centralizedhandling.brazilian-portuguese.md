@@ -40,7 +40,7 @@ app.use(async (err, req, res, next) => {
 module.exports.handler = new errorHandler();
 
 function errorHandler() {
-  this.handleError = async function(error) {
+  this.handleError = async function(err) {
     await logger.logError(err);
     await sendMailToAdminIfCritical;
     await saveInOpsQueueIfCritical;
