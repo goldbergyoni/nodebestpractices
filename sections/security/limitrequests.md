@@ -30,7 +30,7 @@ Rate limiting should be implemented in your application to protect a Node.js app
         // Some app logic here
  
         res.writeHead(200);
-        res.end()
+        res.end();
       })
       .catch(() => {
         res.writeHead(429);
