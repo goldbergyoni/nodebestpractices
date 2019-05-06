@@ -4,7 +4,7 @@
 
 Rate limiting should be implemented in your application to protect a Node.js application from being overwhelmed by too many requests at the same time. Rate limiting is a task best performed with a service designed for this task, such as nginx, however it is also possible with [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) package or middleware such as [express-rate-limiter](https://www.npmjs.com/package/express-rate-limit) for Express.js applications.
  
-  ### Code example: pure NodeJS app with [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible)
+  ### Code example: pure Node.js app with [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible)
  
   ```javascript
  const http = require('http');
