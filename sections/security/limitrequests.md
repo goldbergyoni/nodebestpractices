@@ -34,7 +34,7 @@ Rate limiting should be implemented in your application to protect a Node.js app
       })
       .catch(() => {
         res.writeHead(429);
-        res.end('Too Many Requests')
+        res.end('Too Many Requests');
       });
    }
  }).listen(3000);
