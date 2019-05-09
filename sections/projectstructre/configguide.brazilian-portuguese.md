@@ -20,7 +20,7 @@ Algumas bibliotecas de configuração podem fornecer a maioria desses recursos g
 
 ### Exemplo de código - configuração hierárquica ajuda a encontrar entradas e manter arquivos de configuração enormes
 
-```json
+```js
 {
   // Configurações do módulo do cliente 
   "Customer": {

@@ -1,50 +1,39 @@
-# Implemente limite de taxas para rotas de login no express
+# Evite ataques de força bruta contra autorização
 
 ### Explicaçãao em um Parágrafo
 
 Deixar rotas mais privilegiadas como `/ login` ou `/ admin` expostas sem limitação de taxa deixa uma aplicação em risco de ataques de dicionário de senha de força bruta. O uso de uma estratégia para limitar as solicitações para essas rotas pode impedir o sucesso disso, limitando o número de tentativas de permissão com base em uma propriedade de solicitação, como ip, ou um parâmetro de corpo, como nome de usuário/endereço de email.
 
-Um armazenamento na memória, como Redis ou MongoDB, deve ser usado na produção para impor o limite compartilhado entre os clusters de aplicativos.
+### Exemplo de código: conta tentativas consecutivas de autorização com falha por um par nome de usuário e IP, e o total de falhas por endereço IP.
 
-### Exemplo de código: Usando express-brute
+Usando o pacote npm: [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible).
+
+Crie dois limitadores:
+1. A primeira conta número de tentativas consecutivas com falha e permite no máximo 10 por par nome de usuário e IP.
+2. O segundo bloqueia o endereço IP por um dia caso 100 tentativas malsucedidas ocorram em um dia.
 
 ```javascript
-const ExpressBrute = require('express-brute');
-const RedisStore = require('express-brute-redis');
+const maxWrongAttemptsByIPperDay = 100;
+const maxConsecutiveFailsByUsernameAndIP = 10;
 
-const redisStore = new RedisStore({
-  host: '127.0.0.1',
-  port: 6379
+const limiterSlowBruteByIP = new RateLimiterRedis({
+  storeClient: redisClient,
+  keyPrefix: 'login_fail_ip_per_day',
+  points: maxWrongAttemptsByIPperDay,
+  duration: 60 * 60 * 24,
+  blockDuration: 60 * 60 * 24, // Bloqueia por 1 dia, se 100 tentativas erradas ocorrem em 1 dia
 });
 
-// Comece a diminuir as solicitações após 5 tentativas mal-sucedidas de fazer login para o mesmo usuário
-const loginBruteforce = new ExpressBrute(redisStore, {
-  freeRetries: 5,
-  minWait: 5 * 60 * 1000, // 5 minutos
-  maxWait: 60 * 60 * 1000, // 1 hora
-  failCallback: failCallback,
-  handleStoreError: handleStoreErrorCallback
+const limiterConsecutiveFailsByUsernameAndIP = new RateLimiterRedis({
+  storeClient: redisClient,
+  keyPrefix: 'login_fail_consecutive_username_and_ip',
+  points: maxConsecutiveFailsByUsernameAndIP,
+  duration: 60 * 60 * 24 * 90, // Guarda o número por 90 dias desde a primeira falha
+  blockDuration: 60 * 60, // Bloqueia por 1 hora
 });
-
-app.post('/login',
-  loginBruteforce.getMiddleware({
-    key: function (req, res, next) {
-      // evitar muitas tentativas para o mesmo nome de usuário
-      next(req.body.username);
-    }
-  }), // erro 403 se solicitamos essa rota com muita frequência
-  function (req, res, next) {
-    if (User.isValidLogin(req.body.username, req.body.password)) {
-      // resetar o contador de falhas para um login válido
-      req.brute.reset(function () {
-        res.redirect('/'); // logado
-      });
-    } else {
-      // lidar com usuário inválido
-    }
-  }
-);
 ```
+
+Veja o exemplo completo na [Wiki do pacote rate-limiter-flexible](https://github.com/animir/node-rate-limiter-flexible/wiki/Overall-example#login-endpoint-protection).
 
 ### O que Outros Blogueiros Dizem
 
