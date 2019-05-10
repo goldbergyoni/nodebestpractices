@@ -269,27 +269,47 @@ function someFunction()
 
 <br/><br/>
 
-## ![✔] 3.4 Não Esqueça do Ponto e Vírgula
+## ![✔] 3.4 Separe suas declarações corretamente
 
-**TL;DR:** Embora não seja unanimidade, ainda é recomendado colocar ponto e vírgula no fim de cada declaração. Isto fará que seu código seja mais legível e explícito para outros desenvolvedores.
+Não importa se você usa ponto-e-vírgula ou não para separar suas declarações, conhecer as armadilhas comuns de quebras de linha impróprias ou inserção automática de ponto e vírgula, irá ajudá-lo a eliminar erros regulares de sintaxe.
 
-**Caso contrário:** Como visto em seções anteriores, interpretadores do JavaScript adicionam ponto e vírgula automaticamente no final das declarações caso não exista, o que pode levar a resultados não desejados.
+**TL;DR:** Use o ESLint para obter conhecimento sobre as preocupações de separação. [Prettier](https://prettier.io/) ou [Standardjs](https://standardjs.com/) podem resolver automaticamente esses problemas.
 
-### Code example
+**Otherwise:** Como visto na seção anterior, o interpretador do JavaScript adiciona automaticamente um ponto-e-vírgula ao final de uma instrução, se não houver uma, ou considera uma instrução como não terminada onde deveria, o que pode levar a alguns resultados indesejáveis. Você pode usar atribuições e evitar o uso de expressões de função chamadas imediatas para evitar a maioria dos erros inesperados.
+
+### Exemplo de Código
 
 ```javascript
-// Do
-const count = 2;
-(function doSomething() {
-  // do something amazing
-}());
+// Faça
+function doThing() {
+    // ...
+}
 
-// Avoid — throws exception
-const count = 2 // it tries to run 2(), but 2 is not a function
+doThing()
+
+// Faça
+
+const items = [1, 2, 3]
+items.forEach(console.log)
+
+// Evitar - lança exceção
+const m = new Map()
+const a = [1,2,3]
+[...m.values()].forEach(console.log)
+> [...m.values()].forEach(console.log)
+>  ^^^
+> SyntaxError: Unexpected token ...
+
+// Evitar - lança exceção
+const count = 2 // tenta executar 2(), mas 2 não é uma função
 (function doSomething() {
-  // do something amazing
+  // Faça algo incrível
 }())
+// Coloque um ponto-e-vírgula antes da função invocada imediatamente, após a definição const, salve o valor de retorno da função anônima para uma variável ou evite IIFEs no conjunto
 ```
+
+🔗 [**Leia mais:** "Regra Semi ESLint"](https://eslint.org/docs/rules/semi)
+🔗 [**Leia mais:** "Nenhuma regra ESLint de múltiplas linhas inesperada"](https://eslint.org/docs/rules/no-unexpected-multiline)
 
 <br/><br/>
 
