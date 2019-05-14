@@ -2,19 +2,19 @@
 
 # Node.js常见的安全最佳实践
 
-The common security guidelines section contains best practices that are standardized in many frameworks and conventions, running an application with ssl/tls for example should be a common guideline and convention followed in every setup to achieve great security benefits.
+通用安全指南部分包含在许多框架和约定中标准化的最佳实践, 例如, 使用ssl/tls运行应用程序应该是每个设置中遵循的通用准则和约定, 以实现出色的安全性。
 
 ## ![✔] 使用SSL/TLS加密客户端-服务器连接
 
-**TL;DR:** In the times of [free SSL/TLS certificates](https://letsencrypt.org/) and easy configuration of those, you do no longer have to weigh advantages and disadvantages of using a secure server because the advantages such as security, support of modern technology and trust clearly outweigh the disadvantages like minimal overhead compared to pure http.
+**TL;DR:** 在[免费SSL/TLS证书](https://letsencrypt.org/)和配置SSL/TLS方便的年代, 你不再需要权衡使用安全服务器的优点和缺点, 因为相较于纯http, 安全和对现代技术和信任的支持显然超过缺点(比如需要的最小开销)。
 
-**Otherwise:** Attackers could perform man-in-the-middle attacks, spy on your users' behaviour and perform even more malicious actions when the connection is unencrypted
+**否则:** 攻击者可以执行中间人攻击, 监视用户的行为, 并在未加密连接时执行更多恶意操作
 
-🔗 [**Read More: Running a secure Node.js server**](secureserver.md)
+🔗 [**更多: 运行一个安全的Node.js服务**](secureserver.chinese.md)
 
 <br/><br/>
 
-## ![✔] Comparing secret values and hashes securely
+## ![✔] 安全地比较secret values和哈希
 
 **TL;DR:** When comparing secret values or hashes like HMAC digests, you should use the [`crypto.timingSafeEqual(a, b)`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_timingsafeequal_a_b) function Node provides out of the box since Node.js v6.6.0. This method compares two given objects and keeps comparing even if data does not match. The default equality comparison methods would simply return after a character mismatch, allowing timing attacks based on the operation length.
 
