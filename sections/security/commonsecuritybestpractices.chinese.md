@@ -16,31 +16,31 @@
 
 ## ![✔] 安全地比较secret values和哈希
 
-**TL;DR:** When comparing secret values or hashes like HMAC digests, you should use the [`crypto.timingSafeEqual(a, b)`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_timingsafeequal_a_b) function Node provides out of the box since Node.js v6.6.0. This method compares two given objects and keeps comparing even if data does not match. The default equality comparison methods would simply return after a character mismatch, allowing timing attacks based on the operation length.
+**TL;DR:** 当比较secret values和哈希(比如，HMAC digests), 您应该使用[`crypto.timingSafeEqual(a, b)`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_timingsafeequal_a_b), 这个方法Node自从v6.6.0就开始提供。此方法比较两个给定的对象, 假如数据不匹配，它会不断比较。默认相等的比较方法只需在字符不匹配后返回, 从而允许基于操作长度的计时攻击。
 
-**Otherwise:** Using default equality comparison operators you might expose critical information based on the time taken to compare two objects
+**否则:** 使用默认相等比较运算符, 您可能会由于比较两个对象所花费的时间而公开关键信息
 
 <br/><br/>
 
 ## ![✔] 使用Node.js产生随机字符串
 
-**TL;DR:** Using a custom-built function generating pseudo-random strings for tokens and other security-sensitive use cases might actually not be as random as you think, rendering your application vulnerable to cryptographic attacks. When you have to generate secure random strings, use the [`crypto.RandomBytes(size, [callback])`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_randombytes_size_callback) function using available entropy provided by the system.
+**TL;DR:** 使用自定义函数, 为令牌和其他安全敏感用例生成伪随机字符串, 实际上可能并不会产生像您想象的那样的随机数据, 从而使应用程序容易受到加密攻击。当您必须产生安全的随机字符串时，使用方法[`crypto.RandomBytes(size, [callback])`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_randombytes_size_callback), 它使用了系统提供的有效的一致性。
 
-**否则:** When generating pseudo-random strings without cryptographically secure methods, attackers might predict and reproduce the generated results, rendering your application insecure
+**否则:** 在没有安全的加密方法的情况下生成伪随机字符串时, 攻击者可能会预测并重现生成的结果, 从而使应用程序不安全
 
 <br/><br/>
 
-Going on, below we've listed some important bits of advice from the OWASP project.
+接着, 下面我们列出了OWASP项目中的一些重要建议。
 
-## ![✔] OWASP A2: Broken Authentication
+## ![✔] OWASP A2: 脆弱的身份认证（Broken Authentication）
 
-- Require MFA/2FA for important services and accounts
-- Rotate passwords and access keys frequently, including SSH keys
-- Apply strong password policies, both for ops and in-application user management ([🔗 OWASP password recommendation](https://www.owasp.org/index.php/Authentication_Cheat_Sheet#Implement_Proper_Password_Strength_Controls.22))
-- Do not ship or deploy your application with any default credentials, particularly for admin users or external services you depend on
-- Use only standard authentication methods like OAuth, OpenID, etc.  - **avoid** basic authentication
+- 对重要的服务和账号要求MFA/2FA
+- 频繁更换密码和access keys, 包含SSH keys
+- 为ops和应用程序内用户管理应用强密码策略([🔗 OWASP password recommendation](https://www.owasp.org/index.php/Authentication_Cheat_Sheet#Implement_Proper_Password_Strength_Controls.22))
+- 不要使用任何默认凭据(credentials)来交付或部署应用程序, 尤其是对于管理员用户或您所依赖的外部服务
+- 仅使用标准的授权方法，比如OAuth, OpenID等等 - **avoid** basic authentication
 - Auth rate limiting: Disallow more than _X_ login attempts (including password recovery, etc.) in a period of _Y_
-- On login failure, don't let the user know whether the username or password verification failed, just return a common auth error
+- 当登录失败时，不要让用户知道是否用户名或者密码验证错误，仅返回一个通用鉴权失败错误
 - Consider using a centralized user management system to avoid managing multiple account per employee (e.g. GitHub, AWS, Jenkins, etc) and to benefit from a battle-tested user management system
 
 ## ![✔] OWASP A5:  Broken access control
