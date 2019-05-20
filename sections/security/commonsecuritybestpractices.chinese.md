@@ -39,16 +39,16 @@
 - 为ops和应用程序内用户管理应用强密码策略([🔗 OWASP password recommendation](https://www.owasp.org/index.php/Authentication_Cheat_Sheet#Implement_Proper_Password_Strength_Controls.22))
 - 不要使用任何默认凭据(credentials)来交付或部署应用程序, 尤其是对于管理员用户或您所依赖的外部服务
 - 仅使用标准的授权方法，比如OAuth, OpenID等等 - **avoid** basic authentication
-- Auth rate limiting: Disallow more than _X_ login attempts (including password recovery, etc.) in a period of _Y_
+- 验证频率限制: 不允许在区间_Y_内超过_X_次的登录请求(包括密码恢复, 等等)
 - 当登录失败时，不要让用户知道是否用户名或者密码验证错误，仅返回一个通用鉴权失败错误
-- Consider using a centralized user management system to avoid managing multiple account per employee (e.g. GitHub, AWS, Jenkins, etc) and to benefit from a battle-tested user management system
+- 考虑使用集中式的用户管理系统, 以避免管理一个员工多个帐户 (例如,GitHub、AWS、Jenkins等), 并可以受益于经过严苛测试的用户管理系统
 
 ## ![✔] OWASP A5:  Broken access control
 
-- Respect the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)  -  every component and DevOps person should only have access to the necessary information and resources
-- **Never** work with the console/root (full-privilege) account except for account management
+- 遵守[principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)  -  每个组件和DevOps人员只能访问必要的信息和资源
+- **从不** 在console/root(全部权限)下工作, 除了用于账号管理
 - Run all instances/containers on behalf of a role/service account
-- Assign permissions to groups and not to users. This should make permission management easier and more transparent for most cases
+- 将权限分配给组, 而不是用户。这将使权限管理在大多数情况下更容易和更透明
 
 ## ![✔] OWASP A6: Security Misconfiguration
 
