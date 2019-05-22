@@ -47,7 +47,7 @@
 
 - 遵守[principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)  -  每个组件和DevOps人员只能访问必要的信息和资源
 - **从不** 在console/root(全部权限)下工作, 除了用于账号管理
-- Run all instances/containers on behalf of a role/service account
+- 通过一个角色/服务账号运行所以实例/容器
 - 将权限分配给组, 而不是用户。这将使权限管理在大多数情况下更容易和更透明
 
 ## ![✔] OWASP A6: Security Misconfiguration
@@ -57,10 +57,10 @@
 - If using cookies, configure it to "secured" mode where it's being sent over SSL only
 - If using cookies, configure it for "same site" only so only requests from same domain will get back the designated cookies
 - If using cookies, prefer "http only" configuration that prevent browser side JavaScript code from accessing the cookies
-- Protect each VPC with strict and restrictive access rules
-- Prioritize threats using any standard security threat modeling like STRIDE or DREAD
-- Protect against DDoS attacks using HTTP(S) and TCP load balancers
-- Perform periodic penetration tests by specialized agencies
+- 通过严格和限制的访问规则保护每个VPC
+- 使用某一个标准安全威胁建模(如STRIDE或DREAD)确定威胁的优先级
+- 使用HTTP(S)和TCP负载平衡防止DDoS攻击
+- 由专门机构定期进行渗透测试
 
 ## ![✔] OWASP A3: 暴露敏感数据
 
