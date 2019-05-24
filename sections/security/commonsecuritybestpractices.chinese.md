@@ -43,20 +43,20 @@
 - 当登录失败时，不要让用户知道是否用户名或者密码验证错误，仅返回一个通用鉴权失败错误
 - 考虑使用集中式的用户管理系统, 以避免管理一个员工多个帐户 (例如,GitHub、AWS、Jenkins等), 并可以受益于经过严苛测试的用户管理系统
 
-## ![✔] OWASP A5:  Broken access control
+## ![✔] OWASP A5:  脆弱的访问控制（Broken access control）
 
 - 遵守[principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)  -  每个组件和DevOps人员只能访问必要的信息和资源
 - **从不** 在console/root(全部权限)下工作, 除了用于账号管理
 - 通过一个角色/服务账号运行所以实例/容器
 - 将权限分配给组, 而不是用户。这将使权限管理在大多数情况下更容易和更透明
 
-## ![✔] OWASP A6: Security Misconfiguration
+## ![✔] OWASP A6: 错误的安全配置（Security Misconfiguration）
 
-- Access to production environment internals is done through the internal network only, use SSH or other ways, but _never_ expose internal services
-- Restrict internal network access  - explicitly set which resource can access other resources (e.g. network policy or subnets)
-- If using cookies, configure it to "secured" mode where it's being sent over SSL only
-- If using cookies, configure it for "same site" only so only requests from same domain will get back the designated cookies
-- If using cookies, prefer "http only" configuration that prevent browser side JavaScript code from accessing the cookies
+- 对于生产环境内部的访问, 仅通过内部网络, 使用SSH或其他方式完成, 并_从不_暴露内部服务
+- 限制内部网络访问 - 显式设置哪些资源可以访问其他资源 (例如, 网络策略或子网)
+- 如果使用cookie, 请将其配置为仅通过SSL发送的"secured"模式
+- 如果使用cookie, 则仅配置它为"same site", 因此只有来自同一域名的请求才会返回指定的cookie
+- 如果使用cookie, 更倾向"http only"配置, 以防止浏览器端JavaScript代码访问cookie
 - 通过严格和限制的访问规则保护每个VPC
 - 使用某一个标准安全威胁建模(如STRIDE或DREAD)确定威胁的优先级
 - 使用HTTP(S)和TCP负载平衡防止DDoS攻击
@@ -65,10 +65,10 @@
 ## ![✔] OWASP A3: 暴露敏感数据
 
 - 仅接受SSL/TLS连接, 使用headers加强Strict-Transport-Security
-- Separate the network into segments (i.e. subnets) and ensure each node has the least necessary networking access permissions
-- Group all services/instances that need no internet access and explictly disallow any outgoing connection (a.k.a private subnet)
+- 将网络划分为多个段 (即子网), 并确保每个节点具有非必要的网络访问权限
+- 对所有不需要互联网访问的服务/实例进行分组, 并明确禁止任何传出连接(又名专用子网)
 - 存储机密信息通过vault产品，比如AWS KMS, HashiCorp Vault或者Google Cloud KMS
-- Lock down sensitive instance metadata using metadata
+- 使用metadata锁定敏感实例metadata
 - 在数据离开物理边界时对传输中的数据进行加密
 - 不在日志语句中包含机密信息
 - 避免在前端显示密码, 在后端采取必要措施, 永远不要以明文形式存储敏感信息
@@ -77,7 +77,7 @@
 
 - 扫描docker镜像中的已知漏洞(使用Docker和其他供应商提供的扫描服务)
 - 启用实例(机器)的自动修补和升级, 以避免运行缺少安全修补程序的旧操作系统
-- 为用户提供'id', 'access'和'refresh' token，以便access token是short-lived的，并通过refresh token进行更新。Provide the user with both 'id', 'access' and 'refresh' token so the access token is short-lived and renewed with the refresh token
+- 为用户提供'id', 'access'和'refresh' token，以便access token是short-lived的，并通过refresh token进行更新
 - 使用服务，比如AWS CloudTrail，记录和审核对云和管理服务的每个API调用(例如，谁删除了S3 bucket?)
 - 运行云提供商的安全检查程序(例如AWS security trust advisor)
 
