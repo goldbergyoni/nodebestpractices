@@ -27,24 +27,28 @@ catch (error) {
 
 // Error handling middleware, we delegate the handling to the centralized error handler
 app.use(async (err, req, res, next) => {
-  const isOperationalError = await errorHandler.handleError(err);
-  if (!isOperationalError) {
-    next(err);
-  }
+  await centralizedErrorHandler.handleError(err);
 });
 ```
 
 ### Code example – handling errors within a dedicated object
 
 ```javascript
-module.exports.handler = new errorHandler();
+module.exports.handler = new centralizedErrorHandler();
 
-function errorHandler() {
+function centralizedErrorHandler() {
   this.handleError = async function(err) {
     await logger.logError(err);
     await sendMailToAdminIfCritical;
     await saveInOpsQueueIfCritical;
-    await determineIfOperationalError;
+    const isOperationalError = await determineIfOperationalError(err);
+    if (isOperationalError) {
+      // return an error response to the client
+      return res.status(this.mapErrorToHttp(err));
+    } else {
+      // it's a programmer error, crash to recover the application
+      process.exit(1);
+    }
   };
 }
 ```
