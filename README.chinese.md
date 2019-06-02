@@ -246,7 +246,7 @@
   }
 
   // 避免
-  function someFunction
+  function someFunction()
   {
     // 代码块
   }
