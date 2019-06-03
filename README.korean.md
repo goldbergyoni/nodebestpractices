@@ -411,7 +411,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 배포가 실패하더니, '기능 추가'라는 이름의 테스트가 실패했다고 한다. 당신은 정확히 어떤 것에서 오류가 났는지 알 수 있을까?
 
-🔗 [**Read More: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
+🔗 [**자세히 보기: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
 
 <br/><br/>
 
@@ -429,7 +429,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 테스트가 실패하여 배포가 중단되는 시나리오를 생각해보라. 귀중한 시간을 소모하여 조사 끝에 슬픈 결론으로 끝이 난다. "오류 보고서: 시스템은 잘 작동하지만 테스트의 상호 간섭으로 인해 배포 실패"
 
-🔗 [**Read More: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
+🔗 [**자세히 보기: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
 
 <br/><br/>
 
@@ -479,7 +479,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 형편없는 코드의 품질로 인해 버그와 성능은 반짝이는 새로운 라이브러리나 최첨단 기술로는 고칠수 없는 문제가 되어버릴 것이다
 
-🔗 [**Read More: Refactoring!**](/sections/testingandquality/refactoring.md)
+🔗 [**자세히 보기: Refactoring!**](/sections/testingandquality/refactoring.md)
 
 <br/><br/>
 
@@ -504,7 +504,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Failure === disappointed customers. Simple
 
-🔗 [**Read More: Monitoring!**](/sections/production/monitoring.md)
+🔗 [**자세히 보기: Monitoring!**](/sections/production/monitoring.md)
 
 <br/><br/>
 
@@ -514,7 +514,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** You end up with a black box that is hard to reason about, then you start re-writing all logging statements to add additional information
 
-🔗 [**Read More: Increase transparency using smart logging**](/sections/production/smartlogging.md)
+🔗 [**자세히 보기: Increase transparency using smart logging**](/sections/production/smartlogging.md)
 
 <br/><br/>
 
@@ -524,7 +524,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Your poor single thread will stay busy doing infrastructural tasks instead of dealing with your application core and performance will degrade accordingly
 
-🔗 [**Read More: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
+🔗 [**자세히 보기: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
 
 <br/><br/>
 
@@ -534,7 +534,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
 
-🔗 [**Read More: Lock dependencies**](/sections/production/lockdependencies.md)
+🔗 [**자세히 보기: Lock dependencies**](/sections/production/lockdependencies.md)
 
 <br/><br/>
 
@@ -544,7 +544,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Running dozens of instances without a clear strategy and too many tools together (cluster management, docker, PM2) might lead to DevOps chaos
 
-🔗 [**Read More: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
+🔗 [**자세히 보기: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
 
 <br/><br/>
 
@@ -554,7 +554,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.js utilizes only 1 (even using PaaS services like AWS beanstalk!)
 
-🔗 [**Read More: Utilize all CPU cores**](/sections/production/utilizecpu.md)
+🔗 [**자세히 보기: Utilize all CPU cores**](/sections/production/utilizecpu.md)
 
 <br/><br/>
 
@@ -564,7 +564,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
 
-🔗 [**Read More: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
+🔗 [**자세히 보기: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
 
 <br/><br/>
 
@@ -574,7 +574,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real-world scenario and how these affect the UX
 
-🔗 [**Read More: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
+🔗 [**자세히 보기: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
 
 <br/><br/>
 
@@ -584,7 +584,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** A world champion IT/DevOps guy won’t save a system that is badly written
 
-🔗 [**Read More: Make your code production-ready**](/sections/production/productioncode.md)
+🔗 [**자세히 보기: Make your code production-ready**](/sections/production/productioncode.md)
 
 <br/><br/>
 
@@ -594,7 +594,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Your process memory might leak a hundred megabytes a day like how it happened at [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
 
-🔗 [**Read More: Measure and guard the memory usage**](/sections/production/measurememory.md)
+🔗 [**자세히 보기: Measure and guard the memory usage**](/sections/production/measurememory.md)
 
 <br/><br/>
 
@@ -604,7 +604,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Your single Node thread will be busy streaming hundreds of html/images/angular/react files instead of allocating all its resources for the task it was born for – serving dynamic content
 
-🔗 [**Read More: Get your frontend assets out of Node**](/sections/production/frontendout.md)
+🔗 [**자세히 보기: Get your frontend assets out of Node**](/sections/production/frontendout.md)
 
 <br/><br/>
 
@@ -614,7 +614,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
 
-🔗 [**Read More: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
+🔗 [**자세히 보기: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
 
 <br/><br/>
 
@@ -624,7 +624,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Keeping your code clean from vulnerabilities without dedicated tools will require you to constantly follow online publications about new threats. Quite tedious
 
-🔗 [**Read More: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
+🔗 [**자세히 보기: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
 
 <br/><br/>
 
@@ -634,7 +634,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Looking at a production error log without the context – what happened before – makes it much harder and slower to reason about the issue
 
-🔗 [**Read More: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
+🔗 [**자세히 보기: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
 
 <br/><br/>
 
@@ -644,7 +644,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Omitting this simple property might greatly degrade performance. For example, when using Express for server-side rendering omitting `NODE_ENV` makes it slower by a factor of three!
 
-🔗 [**Read More: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
+🔗 [**자세히 보기: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
 
 <br/><br/>
 
@@ -662,7 +662,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Newly discovered bugs or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain
 
-🔗 [**Read More: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
+🔗 [**자세히 보기: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
 
 <br/><br/>
 
@@ -672,7 +672,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Application handling log routing === hard to scale, loss of logs, poor separation of concerns
 
-🔗 [**Read More: Log Routing**](/sections/production/logrouting.md)
+🔗 [**자세히 보기: Log Routing**](/sections/production/logrouting.md)
 
 <br/><br/><br/>
 
@@ -692,7 +692,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** What could have been a straightforward security weakness during development becomes a major issue in production. Also, the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories
 
-🔗 [**Read More: Lint rules**](/sections/security/lintrules.md)
+🔗 [**자세히 보기: Lint rules**](/sections/security/lintrules.md)
 
 <br/><br/>
 
@@ -704,7 +704,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** An application could be subject to an attack resulting in a denial of service where real users receive a degraded or unavailable service.
 
-🔗 [**Read More: Implement rate limiting**](/sections/security/limitrequests.md)
+🔗 [**자세히 보기: Implement rate limiting**](/sections/security/limitrequests.md)
 
 <br/><br/>
 
@@ -716,7 +716,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Source control, even for private repositories, can mistakenly be made public, at which point all secrets are exposed. Access to source control for an external party will inadvertently provide access to related systems (databases, apis, services, etc).
 
-🔗 [**Read More: Secret management**](/sections/security/secretmanagement.md)
+🔗 [**자세히 보기: Secret management**](/sections/security/secretmanagement.md)
 
 <br/><br/>
 
@@ -728,7 +728,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Unvalidated or unsanitized user input could lead to operator injection when working with MongoDB for NoSQL, and not using a proper sanitization system or ORM will easily allow SQL injection attacks, creating a giant vulnerability.
 
-🔗 [**Read More: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.md)
+🔗 [**자세히 보기: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.md)
 
 <br/><br/>
 
@@ -736,7 +736,7 @@ null == undefined   // true
 
 **핵심요약:** This is a collection of security advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
 
-🔗 [**Read More: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
+🔗 [**자세히 보기: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
 
 <br/><br/>
 
@@ -748,7 +748,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Attackers could perform direct attacks on your application's users, leading to huge security vulnerabilities
 
-🔗 [**Read More: Using secure headers in your application**](/sections/security/secureheaders.md)
+🔗 [**자세히 보기: Using secure headers in your application**](/sections/security/secureheaders.md)
 
 <br/><br/>
 
@@ -760,7 +760,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** An attacker could detect your web framework and attack all its known vulnerabilities.
 
-🔗 [**Read More: Dependency security**](/sections/security/dependencysecurity.md)
+🔗 [**자세히 보기: Dependency security**](/sections/security/dependencysecurity.md)
 
 <br/><br/>
 
@@ -772,7 +772,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Passwords or secrets that are persisted without using a secure function are vulnerable to brute forcing and dictionary attacks that will lead to their disclosure eventually.
 
-🔗 [**Read More: Use Bcrypt**](/sections/security/bcryptpasswords.md)
+🔗 [**자세히 보기: Use Bcrypt**](/sections/security/bcryptpasswords.md)
 
 <br/><br/>
 
@@ -784,7 +784,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** An attacker might store malicious JavaScript code in your DB which will then be sent as-is to the poor clients
 
-🔗 [**Read More: Escape output**](/sections/security/escape-output.md)
+🔗 [**자세히 보기: Escape output**](/sections/security/escape-output.md)
 
 <br/><br/>
 
@@ -796,7 +796,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Your generosity and permissive approach greatly increases the attack surface and encourages the attacker to try out many inputs until they find some combination to crash the application
 
-🔗 [**Read More: Validate incoming JSON schemas**](/sections/security/validation.md)
+🔗 [**자세히 보기: Validate incoming JSON schemas**](/sections/security/validation.md)
 
 <br/><br/>
 
@@ -808,7 +808,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Expired, or misplaced tokens could be used maliciously by a third party to access an application and impersonate the owner of the token.
 
-🔗 [**Read More: Blacklist JSON Web Tokens**](/sections/security/expirejwt.md)
+🔗 [**자세히 보기: Blacklist JSON Web Tokens**](/sections/security/expirejwt.md)
 
 <br/><br/>
 
@@ -823,7 +823,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** An attacker can issue unlimited automated password attempts to gain access to privileged accounts on an application
 
-🔗 [**Read More: Login rate limiting**](/sections/security/login-rate-limit.md)
+🔗 [**자세히 보기: Login rate limiting**](/sections/security/login-rate-limit.md)
 
 <br/><br/>
 
@@ -835,7 +835,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** An attacker who manages to run a script on the server gets unlimited power over the local machine (e.g. change iptable and re-route traffic to his server)
 
-🔗 [**Read More: Run Node.js as non-root user**](/sections/security/non-root-user.md)
+🔗 [**자세히 보기: Run Node.js as non-root user**](/sections/security/non-root-user.md)
 
 <br/><br/>
 
@@ -847,7 +847,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Your application will have to deal with large requests, unable to process the other important work it has to accomplish, leading to performance implications and vulnerability towards DOS attacks
 
-🔗 [**Read More: Limit payload size**](/sections/security/requestpayloadsizelimit.md)
+🔗 [**자세히 보기: Limit payload size**](/sections/security/requestpayloadsizelimit.md)
 
 <br/><br/>
 
@@ -859,7 +859,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Malicious JavaScript code finds a way into text passed into `eval` or other real-time evaluating JavaScript language functions, and will gain complete access to JavaScript permissions on the page. This vulnerability is often manifested as an XSS attack.
 
-🔗 [**Read More: Avoid JavaScript eval statements**](/sections/security/avoideval.md)
+🔗 [**자세히 보기: Avoid JavaScript eval statements**](/sections/security/avoideval.md)
 
 <br/><br/>
 
@@ -871,7 +871,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Poorly written regexes could be susceptible to Regular Expression DoS attacks that will block the event loop completely. For example, the popular `moment` package was found vulnerable with malicious RegEx usage in November of 2017
 
-🔗 [**Read More: Prevent malicious RegEx**](/sections/security/regex.md)
+🔗 [**자세히 보기: Prevent malicious RegEx**](/sections/security/regex.md)
 
 <br/><br/>
 
@@ -883,7 +883,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Malicious user input could find its way to a parameter that is used to require tampered files, for example, a previously uploaded file on the filesystem, or access already existing system files.
 
-🔗 [**Read More: Safe module loading**](/sections/security/safemoduleloading.md)
+🔗 [**자세히 보기: Safe module loading**](/sections/security/safemoduleloading.md)
 
 <br/><br/>
 
@@ -895,7 +895,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** A plugin can attack through an endless variety of options like infinite loops, memory overloading, and access to sensitive process environment variables
 
-🔗 [**Read More: Run unsafe code in a sandbox**](/sections/security/sandbox.md)
+🔗 [**자세히 보기: Run unsafe code in a sandbox**](/sections/security/sandbox.md)
 
 <br/><br/>
 
@@ -907,7 +907,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Naive use of child processes could result in remote command execution or shell injection attacks due to malicious user input passed to an unsanitized system command.
 
-🔗 [**Read More: Be cautious when working with child processes**](/sections/security/childprocesses.md)
+🔗 [**자세히 보기: Be cautious when working with child processes**](/sections/security/childprocesses.md)
 
 <br/><br/>
 
@@ -919,7 +919,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Sensitive application details such as server file paths, third party modules in use, and other internal workflows of the application which could be exploited by an attacker, could be leaked from information found in a stack trace
 
-🔗 [**Read More: Hide error details from client**](/sections/security/hideerrors.md)
+🔗 [**자세히 보기: Hide error details from client**](/sections/security/hideerrors.md)
 
 <br/><br/>
 
@@ -941,7 +941,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Cookies could be sent over insecure connections, and an attacker might use session identification to identify the underlying framework of the web application, as well as module-specific vulnerabilities
 
-🔗 [**Read More: Cookie and session security**](/sections/security/sessions.md)
+🔗 [**자세히 보기: Cookie and session security**](/sections/security/sessions.md)
 
 <br/><br/>
 
@@ -963,7 +963,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** If an attacker discovers that you are not validating external, user-supplied input, they may exploit this vulnerability by posting specially-crafted links on forums, social media, and other public places to get users to click it.
 
-🔗 [**Read More: Prevent unsafe redirects**](/sections/security/saferedirects.md)
+🔗 [**자세히 보기: Prevent unsafe redirects**](/sections/security/saferedirects.md)
 
 <br/><br/>
 
@@ -975,7 +975,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** Your project's API keys, passwords or other secrets are open to be abused by anyone who comes across them, which may result in financial loss, impersonation, and other risks.
 
-🔗 [**Read More: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.md)
+🔗 [**자세히 보기: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#목차">⬆ Return to top</a></p>
@@ -991,7 +991,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** You'll have to maintain less performant projects where you could have simply used what was **already** available or dealt with a few more lines in exchange of a few more files.
 
-🔗 [**Read More: Native over user land utils**](/sections/performance/nativeoverutil.md)
+🔗 [**자세히 보기: Native over user land utils**](/sections/performance/nativeoverutil.md)
 
 <br/><br/><br/>
 
