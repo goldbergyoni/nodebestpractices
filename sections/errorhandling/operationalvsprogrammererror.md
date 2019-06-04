@@ -8,19 +8,21 @@ Distinguishing the following two error types will minimize your app downtime and
 
 ```javascript
 // marking an error object as operational 
-var myError = new Error("How can I add new product when no value provided?");
+const myError = new Error("How can I add new product when no value provided?");
 myError.isOperational = true;
 
 // or if you're using some centralized error factory (see other examples at the bullet "Use only the built-in Error object")
-function appError(commonType, description, isOperational) {
+class AppError {
+  constructor (commonType, description, isOperational) {
     Error.call(this);
     Error.captureStackTrace(this);
     this.commonType = commonType;
     this.description = description;
     this.isOperational = isOperational;
+  }
 };
 
-throw new appError(errorManagement.commonErrors.InvalidInput, "Describe here what happened", true);
+throw new AppError(errorManagement.commonErrors.InvalidInput, "Describe here what happened", true);
 
 ```
 
@@ -42,7 +44,7 @@ From the blog, debugable.com ranked 3 for the keywords “Node.js uncaught excep
 
  > …So, unless you really know what you are doing, you should perform a graceful restart of your service after receiving an “uncaughtException” exception event. Otherwise, you risk the state of your application, or that of 3rd party libraries to become inconsistent, leading to all kinds of crazy bugs…
 
-### Blog Quote: "Blog Quote: There are three schools of thoughts on error handling"
+### Blog Quote: "There are three schools of thoughts on error handling"
 
 From the blog: JS Recipes
 

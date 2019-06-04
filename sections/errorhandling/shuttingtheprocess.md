@@ -2,7 +2,7 @@
 
 ### One Paragraph Explainer
 
-Somewhere within your code, an error handler object is responsible for deciding how to proceed when an error is thrown – if the error is trusted (i.e. operational error, see further explanation within best practice #3) then writing to log file might be enough. Things get hairy if the error is not familiar – this means that some component might be in a faulty state and all future requests are subject to failure. For example, assuming a singleton, stateful token issuer service that threw an exception and lost its state – from now it might behave unexpectedly and cause all requests to fail. Under this scenario, kill the process and use a ‘Restarter tool’ (like Forever, PM2, etc) to start over with a clean slate.
+Somewhere within your code, an error handler object is responsible for deciding how to proceed when an error is thrown – if the error is trusted (i.e. operational error, see further explanation within best practice #3) then writing to log file might be enough. Things get hairy if the error is not familiar – this means that some component might be in a faulty state and all future requests are subject to failure. For example, assuming a singleton, stateful token issuer service that threw an exception and lost its state – from now it might behave unexpectedly and cause all requests to fail. Under this scenario, kill the process and use a ‘Restarter tool’ (like Forever, PM2, etc) to start over with a clean state.
 
 ### Code example: deciding whether to crash
 
