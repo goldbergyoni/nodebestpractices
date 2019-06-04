@@ -9,8 +9,8 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2082%20Best%20Practices-blue.svg" alt="82 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Apr%2013%202019-green.svg" alt="Last update: April 13, 2019"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2010.15.3%20LTS-brightgreen.svg" alt="Updated for Node 10.15.3 LTS">
-</div>
+<img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2053%20Best%20practices-blue.svg" alt="53 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Nov%2015%202017-green.svg" alt="Last update: Nov 15, 2017"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.9-brightgreen.svg" alt="Updated for Node v.8.9">
+	</div>
 
 <br/>
 
@@ -26,13 +26,13 @@
 
 <br/><br/><br/>
 
-## [目录](#table-of-contents)
+## 目录
 1. [项目结构实践 (5) ](#1-project-structure-practices)
 2. [异常处理实践 (11) ](#2-error-handling-practices)
 3. [编码规范实践 (12) ](#3-code-style-practices)
 4. [测试和总体质量实践 (8) ](#4-testing-and-overall-quality-practices)
 5. [进入生产实践 (16) ](#5-going-to-production-practices)
-6. :star: 新: [安全实践(23)](#6-security-best-practices)
+6. Security Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 7. Performance Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 
 
@@ -45,7 +45,7 @@
 
 **否则:** 当编写新需求的开发人员逐步意识到他所做改变的影响，并担心会破坏其他的依赖模块 - 部署会变得更慢，风险更大。当所有业务逻辑没有被分开，这也会被认为很难扩展
 
-🔗 [**更多: 组件结构**](/sections/projectstructre/breakintcomponents.chinese.md)
+🔗 [**Read More: structure by components**](/sections/projectstructre/breakintcomponents.korean.md)
 
 <br/><br/>
 
@@ -96,7 +96,7 @@
 
 ## ![✔] 2.1  使用 Async-Await 和 promises 用于异步错误处理
 
-**TL;DR:** 使用回调的方式处理异步错误可能是导致灾难的最快的方式(a.k.a the pyramid of doom)。对您的代码来说，最好的礼物就是使用规范的promise库或async-await来替代，这会使其像try-catch一样更加简洁，具有熟悉的代码结构。
+**TL;DR:** 使用回调的方式处理异步错误可能是导致灾难的最快的方式(a.k.a the pyramid of doom)。对您的代码来说，最好的礼物就是使用规范的promise库或async-await来替代，这会使其像try-catch一样更加简洁，具有熟悉的代码结构。 
 
 **否则:** Node.js回调特性, function(err, response), 是导致不可维护代码的一个必然的方式。究其原因，是由于混合了随意的错误处理代码，臃肿的内嵌，蹩脚的代码模式。
 
@@ -204,7 +204,7 @@
 
 <br/><br/>
 
-## ![✔] 2.11 快速查错，验证参数使用一个专门的库
+## ![✔] 2.11 快速查错，验证参数使用一个专门的库Fail fast, validate arguments using a dedicated library
 
 **TL;DR:** 这应该是您的Express最佳实践中的一部分 – assert API输入避免难以理解的漏洞，这类漏洞以后会非常难以追踪。而验证代码通常是一件乏味的事情，除非使用一些非常炫酷的帮助库比如Joi。
 
@@ -246,7 +246,7 @@
   }
 
   // 避免
-  function someFunction()
+  function someFunction
   {
     // 代码块
   }
@@ -283,17 +283,17 @@
 ### 代码示例 ###
 ```javascript
   // 使用UpperCamelCase命名类名
-  class SomeClassExample () {
-
+  class SomeClassExample () { 
+    
     // 常量使用const关键字，并使用lowerCamelCase命名
     const config = {
       key: 'value'
     };
-
+    
     // 变量和方法使用lowerCamelCase命名
     let someVariableExample = 'value';
     function doSomething() {
-
+      
     }
 
   }
@@ -319,7 +319,7 @@
 
 <br/><br/>
 
-## ![✔] 3.9 require 文件夹，而不是文件
+## ![✔] 3.9 在文件夹上 require ，而不是直接在文件上
 
 **TL;DR:** 当在一个文件夹中开发库/模块，放置一个文件index.js暴露模块的
 内部，这样每个消费者都会通过它。这将作为您模块的一个接口，并使未来的变化简单而不违反规则。
@@ -420,7 +420,7 @@ null == undefined   // true
 
 ## ![✔] 4.4 经常检查易受攻击的依赖
 
-**TL;DR:** 即使是那些最有名的依赖模块，比如Express，也有已知的漏洞。使用社区和商业工具，比如 🔗 [npm audit](https://docs.npmjs.com/cli/audit) ，集成在您的CI平台上，在每一次构建的时候都会被调用，这样可以很容易地解决漏洞问题。
+**TL;DR:** 即使是那些最有名的依赖模块，比如Express，也有已知的漏洞。使用社区和商业工具，比如 🔗 [nsp](https://github.com/nodesecurity/nsp) ，集成在您的CI平台上，在每一次构建的时候都会被调用，这样可以很容易地解决漏洞问题。
 
 **否则:** 在没有专用工具的情况下，使代码清除漏洞，需要不断地跟踪有关新威胁的在线出版物，相当繁琐。
 
@@ -485,17 +485,17 @@ null == undefined   // true
 
 
 🔗 [**更多: 使用智能日志增加透明度**](/sections/production/smartlogging.chinese.md)
-
+	
 <br/><br/>
 
-## ![✔] 5.3. 委托可能的一切（例如：gzip，SSL）给反向代理
+## ![✔] 5.3. 委托一切可能的（例如：gzip，SSL）给反向代理
 
 **TL;DR:** Node处理CPU密集型任务，如gzipping，SSL termination等，表现糟糕。相反，使用一个 ‘真正’ 的中间件服务像Nginx，HAProxy或者云供应商的服务。
 
 **否则:** 可怜的单线程Node将不幸地忙于处理网络任务，而不是处理应用程序核心，性能会相应降低。
 
 
-🔗 [**更多: 委托可能的一切（例如：gzip，SSL）给反向代理**](/sections/production/delegatetoproxy.chinese.md)
+🔗 [**更多: 委托一切可能的（例如：gzip，SSL）给反向代理**](/sections/production/delegatetoproxy.chinese.md)
 
 <br/><br/>
 
@@ -519,7 +519,7 @@ null == undefined   // true
 
 🔗 [**更多: 使用正确的工具保护进程正常运行**](/sections/production/guardprocess.chinese.md)
 
-
+ 
 <br/><br/>
 
 ## ![✔] 5.6. 利用CPU多核
@@ -564,7 +564,7 @@ null == undefined   // true
 **否则:** 一个世界冠军级别的IT/运维人员也不能拯救一个编码低劣的系统。
 
 
-🔗 [**更多: 使您的代码保持生产环境就绪**](/sections/production/productioncode.chinese.md)
+🔗 [**更多: 使您的代码保持生产环境就绪**](/sections/production/productoncode.chinese.md)
 
 <br/><br/>
 
@@ -617,7 +617,7 @@ null == undefined   // true
 <br/><br/>
 
 
-## ![✔] 5.14. 在每一个log语句中指明 ‘TransactionId’
+## ![✔] 5.14. 在每一个log语句中指明 ‘TransactionId’ 
 
 **TL;DR:** 在每一个请求的每一条log入口，指明同一个标识符，transaction-id: {某些值}。然后在检查日志中的错误时，很容易总结出前后发生的事情。不幸的是，由于Node异步的天性自然，这是不容易办到的，看下代码里面的例子
 
@@ -652,291 +652,17 @@ null == undefined   // true
 
 <p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
-<h1 id="6-security-best-practices"><code>6. 安全最佳实践</code></h1>
-
-<div align="center">
-<img src="https://img.shields.io/badge/OWASP%20Threats-Top%2010-green.svg" alt="53 items"/>
-</div>
-
-## ![✔] 6.1. 拥护linter安全准则
-
-<a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
-
-**TL;DR:** 使用安全相关的linter插件，比如[eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security)，尽早捕获安全隐患或者问题，最好在编码阶段。这能帮助察觉安全的问题，比如使用eval，调用子进程，或者根据字面含义（比如，用户输入）引入模块等等。点击下面‘更多’获得一个安全linter可以检测到的代码示例。
-
-**Otherwise:** 在开发过程中, 可能一个直白的安全隐患, 成为生产环境中一个严重问题。此外, 项目可能没有遵循一致的安全规范, 而导致引入漏洞, 或敏感信息被提交到远程仓库中。
-
-🔗 [**更多: Lint 规范**](/sections/security/lintrules.md)
-
-<br/><br/>
-
-## ![✔] 6.2. 使用中间件限制并发请求
-
-<a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
-
-**TL;DR:** DOS攻击非常流行而且相对容易处理。使用外部服务，比如cloud负载均衡, cloud防火墙, nginx, 或者（对于小的，不是那么重要的app）一个速率限制中间件(比如[express-rate-limit](https://www.npmjs.com/package/express-rate-limit))，来实现速率限制。
-
-**否则:** 应用程序可能受到攻击, 导致拒绝服务, 在这种情况下, 真实用户会遭受服务降级或不可用。
-
-🔗 [**更多: 实施速率限制**](/sections/security/limitrequests.md)
-
-<br/><br/>
-
-## ![✔] 6.3 把机密信息从配置文件中抽离出来，或者使用包对其加密
-
-<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A3:Sensitive%20Data%20Exposure%20-green.svg" alt=""/></a>
-
-**TL;DR:** 不要在配置文件或源代码中存储纯文本机密信息。相反, 使用诸如Vault产品、Kubernetes/Docker Secrets或使用环境变量之类的安全管理系统。最后一个结果是, 存储在源代码管理中的机密信息必须进行加密和管理 (滚动密钥(rolling keys)、过期时间、审核等)。使用pre-commit/push钩子防止意外提交机密信息。
-
-**否则:** 源代码管理, 即使对于私有仓库, 也可能会被错误地公开, 此时所有的秘密信息都会被公开。外部组织的源代码管理的访问权限将无意中提供对相关系统 (数据库、api、服务等) 的访问。
-
-🔗 [**更多: 安全管理**](/sections/security/secretmanagement.md)
-
-<br/><br/>
-
-## ![✔] 6.4. 使用 ORM/ODM 库防止查询注入漏洞
-
-<a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
-
-**TL;DR:** 要防止 SQL/NoSQL 注入和其他恶意攻击, 请始终使用 ORM/ODM 或database库来转义数据或支持命名的或索引的参数化查询, 并注意验证用户输入的预期类型。不要只使用JavaScript模板字符串或字符串串联将值插入到查询语句中, 因为这会将应用程序置于广泛的漏洞中。所有知名的Node.js数据访问库(例如[Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose))包含对注入漏洞的内置包含措施。
-
-**否则:** 未经验证或未脱敏处理的用户输入，可能会导致操作员在使用MongoDB进行NoSQL操作时进行注入, 而不使用适当的过滤系统或ORM很容易导致SQL注入攻击, 从而造成巨大的漏洞。
-
-🔗 [**更多: 使用 ORM/ODM 库防止查询注入**](/sections/security/ormodmusage.md)
-
-<br/><br/>
-
-## ![✔] 6.5. 通用安全最佳实际集合
-
-**TL;DR:** 这些是与Node.js不直接相关的安全建议的集合-Node的实现与任何其他语言没有太大的不同。单击 "阅读更多" 浏览。
-
-🔗 [**更多: 通用安全最佳实际**](/sections/security/commonsecuritybestpractices.md)
-
-<br/><br/>
-
-## ![✔] 6.6. 调整 HTTP 响应头以加强安全性
-
-<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
-
-**TL;DR:** 应用程序应该使用安全的header来防止攻击者使用常见的攻击方式，诸如跨站点脚本(XSS)、点击劫持和其他恶意攻击。可以使用模块，比如 [helmet](https://www.npmjs.com/package/helmet)轻松进行配置。
-
-**否则:** 攻击者可以对应用程序的用户进行直接攻击, 导致巨大的安全漏洞
-
-🔗 [**更多: 在应用程序中使用安全的header**](/sections/security/secureheaders.md)
-
-<br/><br/>
-
-## ![✔] 6.7. 经常自动检查易受攻击的依赖库
-
-<a href="https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Known%20Vulnerabilities%20-green.svg" alt=""/></a>
-
-**TL;DR:** 在npm的生态系统中, 一个项目有许多依赖是很常见的。在找到新的漏洞时, 应始终将依赖项保留在检查中。使用工具，类似于[npm audit](https://docs.npmjs.com/cli/audit) 或者 [snyk](https://snyk.io/)跟踪、监视和修补易受攻击的依赖项。将这些工具与 CI 设置集成, 以便在将其上线之前捕捉到易受攻击的依赖库。
-
-**否则:** 攻击者可以检测到您的web框架并攻击其所有已知的漏洞。
-
-🔗 [**更多: 安全依赖**](/sections/security/dependencysecurity.md)
-
-<br/><br/>
-
-## ![✔] 6.8. 避免使用Node.js的crypto库处理密码，使用Bcrypt
-
-<a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
-
-**TL;DR:** 密码或机密信息(API密钥)应该使用安全的哈希+salt函数(如 "bcrypt")来存储, 因为性能和安全原因, 这应该是其JavaScript实现的首选。
-
-**否则:** 在不使用安全功能的情况下，保存的密码或秘密信息容易受到暴力破解和字典攻击, 最终会导致他们的泄露。
-
-🔗 [**更多: 使用Bcrypt**](/sections/security/bcryptpasswords.chinese.md)
-
-<br/><br/>
-
-## ![✔] 6.9. 转义 HTML、JS 和 CSS 输出
-
-<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a>
-
-**TL;DR:** 发送给浏览器的不受信任数据可能会被执行, 而不是显示, 这通常被称为跨站点脚本(XSS)攻击。使用专用库将数据显式标记为不应执行的纯文本内容(例如:编码、转义)，可以减轻这种问题。
-
-**否则:** 攻击者可能会将恶意的JavaScript代码存储在您的DB中, 然后将其发送给可怜的客户端。
-
-🔗 [**更多: 转义输出**](/sections/security/escape-output.md)
-
-<br/><br/>
-
-## ![✔] 6.10. 验证传入的JSON schemas
-
-<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7: XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a>
-
-**TL;DR:** 验证传入请求的body payload，并确保其符合预期要求, 如果没有, 则快速报错。为了避免每个路由中繁琐的验证编码, 您可以使用基于JSON的轻量级验证架构，比如[jsonschema](https://www.npmjs.com/package/jsonschema) or [joi](https://www.npmjs.com/package/joi)
-
-**否则:** 您疏忽和宽松的方法大大增加了攻击面, 并鼓励攻击者尝试许多输入, 直到他们找到一些组合, 使应用程序崩溃。
-
-🔗 [**更多: 验证传人的JSON schemas**](/sections/security/validation.md)
-
-<br/><br/>
-
-## ![✔] 6.11. 支持黑名单的JWT
-
-<a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
-
-**TL;DR:** 当使用JSON Web Tokens(例如, 通过[Passport.js](https://github.com/jaredhanson/passport)), 默认情况下, 没有任何机制可以从发出的令牌中撤消访问权限。一旦发现了一些恶意用户活动, 只要它们持有有效的标记, 就无法阻止他们访问系统。通过实现一个不受信任令牌的黑名单，并在每个请求上验证，来减轻此问题。
-
-**否则:** 过期或错误的令牌可能被第三方恶意使用，以访问应用程序，并模拟令牌的所有者。
-
-🔗 [**更多: 为JSON Web Token添加黑名单**](/sections/security/expirejwt.md)
-
-<br/><br/>
-
-## ![✔] 6.12. 限制每个用户允许的登录请求
-
-<a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
-
-**TL;DR:** 一类保护暴力破解的中间件，比如[express-brute](https://www.npmjs.com/package/express-brute)，应该被用在express的应用中，来防止暴力/字典攻击；这类攻击主要应用于一些敏感路由，比如/admin 或者 /login，基于某些请求属性, 如用户名, 或其他标识符, 如正文参数等。
-
-**否则:** 攻击者可以发出无限制的密码匹配尝试, 以获取对应用程序中特权帐户的访问权限。
-
-🔗 [**更多: 限制登录频率**](/sections/security/login-rate-limit.md)
-
-<br/><br/>
-
-## ![✔] 6.13. 使用非root用户运行Node.js
-
-<a href="https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A5:Broken%20Access%20Access%20Control-green.svg" alt=""/></a>
-
-**TL;DR:** Node.js作为一个具有无限权限的root用户运行，这是一种普遍的情景。例如，在Docker容器中，这是默认行为。建议创建一个非root用户，并保存到Docker镜像中（下面给出了示例），或者通过调用带有"-u username" 的容器来代表此用户运行该进程。
-
-**否则:** 在服务器上运行脚本的攻击者在本地计算机上获得无限制的权利 (例如，改变iptable，引流到他的服务器上)
-
-🔗 [**更多: 使用非root用户运行Node.js**](/sections/security/non-root-user.md)
-
-<br/><br/>
-
-## ![✔] 6.14. 使用反向代理或中间件限制负载大小
-
-<a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
-
-**TL;DR:** 请求body有效载荷越大, Node.js的单线程就越难处理它。这是攻击者在没有大量请求(DOS/DDOS 攻击)的情况下，就可以让服务器跪下的机会。在边缘上（例如，防火墙，ELB）限制传入请求的body大小，或者通过配置[express body parser](https://github.com/expressjs/body-parser)仅接收小的载荷，可以减轻这种问题。
-
-**否则:** 您的应用程序将不得不处理大的请求, 无法处理它必须完成的其他重要工作, 从而导致对DOS攻击的性能影响和脆弱性。
-
-🔗 [**更多: 限制负载大小**](/sections/security/requestpayloadsizelimit.md)
-
-<br/><br/>
-
-## ![✔] 6.15. 避免JavaScript的eval声明
-
-<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
-
-**TL;DR:** `eval` 是邪恶的, 因为它允许在运行时执行自定义的JavaScript代码。这不仅是一个性能方面的问题, 而且也是一个重要的安全问题, 因为恶意的JavaScript代码可能来源于用户输入。应该避免的另一种语言功能是 `new Function` 构造函数。`setTimeout` 和 `setInterval` 也不应该传入动态JavaScript代码。
-
-**否则:** 恶意JavaScript代码查找传入 `eval` 或其他实时判断的JavaScript函数的文本的方法, 并将获得在该页面上javascript权限的完全访问权。此漏洞通常表现为XSS攻击。
-
-🔗 [**更多: 避免JavaScript的eval声明**](/sections/security/avoideval.chinese.md)
-
-<br/><br/>
-
-## ![✔] 6.16. 防止恶意RegEx让Node.js的单线程过载执行
-
-<a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
-
-**TL;DR:** 正则表达式，在方便的同时，对JavaScript应用构成了真正的威胁，特别是Node.js平台。匹配文本的用户输入需要大量的CPU周期来处理。在某种程度上，正则处理是效率低下的，比如验证10个单词的单个请求可能阻止整个event loop长达6秒，并让CPU引火烧身。由于这个原因，偏向第三方的验证包，比如[validator.js](https://github.com/chriso/validator.js)，而不是采用正则，或者使用[safe-regex](https://github.com/substack/safe-regex)来检测有问题的正则表达式。
-
-**否则:** 写得不好的正则表达式可能容易受到正则表达式DoS攻击的影响, 这将完全阻止event loop。例如，流行的`moment`包在2017年的11月，被发现使用了错误的RegEx用法而易受攻击。
-
-🔗 [**更多: 防止恶意正则**](/sections/security/regex.md)
-
-<br/><br/>
-
-## ![✔] 6.17. 使用变量避免模块加载
-
-<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
-
-**TL;DR:** 避免通过作为参数的路径requiring/importing另一个文件, 原因是它可能源自用户输入。此规则可扩展为访问一般文件(即:`fs.readFile()`)或使用来自用户输入的动态变量访问其他敏感资源。[Eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) linter可以捕捉这样的模式, 并尽早提前警告。
-
-**否则:** 恶意用户输入可以找到用于获得篡改文件的参数, 例如, 文件系统上以前上载的文件, 或访问已有的系统文件。
-
-🔗 [**更多: 安全地加载模块**](/sections/security/safemoduleloading.chinese.md)
-
-<br/><br/>
-
-## ![✔] 6.18. 在沙箱中运行不安全代码
-
-<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
-
-**TL;DR:** 当任务执行在运行时给出的外部代码时(例如, 插件), 使用任何类型的`沙盒`执行环境保护主代码，并隔离开主代码和插件。这可以通过一个专用的过程来实现 (例如:cluster.fork()), 无服务器环境或充当沙盒的专用npm包。
-
-**否则:** 插件可以通过无限循环、内存超载和对敏感进程环境变量的访问等多种选项进行攻击
-
-🔗 [**更多: 在沙箱中运行不安全代码**](/sections/security/sandbox.chinese.md)
-
-<br/><br/>
-
-## ![✔] 6.19. 使用子进程时要格外小心
-
-<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
-
-**TL;DR:** 尽可能地避免使用子进程，如果您仍然必须这样做，验证和清理输入以减轻shell注入攻击。更喜欢使用 "child_process"。execFile 的定义将只执行具有一组属性的单个命令, 并且不允许 shell 参数扩展。倾向于使用`child_process.execFile`，从定义上来说，它将仅仅执行具有一组属性的单个命令，并且不允许shell参数扩展。
-
-**否则:** 由于将恶意用户输入传递给未脱敏处理的系统命令, 直接地使用子进程可能导致远程命令执行或shell注入攻击。
-
-🔗 [**更多: 处理子进程时要格外小心**](/sections/security/childprocesses.chinese.md)
-
-<br/><br/>
-
-## ![✔] 6.20. 隐藏客户端的错误详细信息
-
-<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
-
-**TL;DR:** 默认情况下, 集成的express错误处理程序隐藏错误详细信息。但是, 极有可能, 您实现自己的错误处理逻辑与自定义错误对象(被许多人认为是最佳做法)。如果这样做, 请确保不将整个Error对象返回到客户端, 这可能包含一些敏感的应用程序详细信息。
-
-**否则:** 敏感应用程序详细信息(如服务器文件路径、使用中的第三方模块和可能被攻击者利用的应用程序的其他内部工作流)可能会从stack trace发现的信息中泄露。
-
-🔗 [**更多: 隐藏客户端的错误详细信息**](/sections/security/hideerrors.md)
-
-<br/><br/>
-
-## ![✔] 6.21. 对npm或Yarn，配置2FA
-
-<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
-
-**TL;DR:** 开发链中的任何步骤都应使用MFA(多重身份验证)进行保护, npm/Yarn对于那些能够掌握某些开发人员密码的攻击者来说是一个很好的机会。使用开发人员凭据, 攻击者可以向跨项目和服务广泛安装的库中注入恶意代码。甚至可能在网络上公开发布。在npm中启用2因素身份验证（2-factor-authentication）, 攻击者几乎没有机会改变您的软件包代码。
-
-**否则:** [Have you heard about the eslint developer who's password was hijacked?](https://medium.com/@oprearocks/eslint-backdoor-what-it-is-and-how-to-fix-the-issue-221f58f1a8c8)
-
-<br/><br/>
-
-## ![✔] 6.22. 修改session中间件设置
-
-<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
-
-**TL;DR:** 每个web框架和技术都有其已知的弱点-告诉攻击者我们使用的web框架对他们来说是很大的帮助。使用session中间件的默认设置, 可以以类似于`X-Powered-By`header的方式向模块和框架特定的劫持攻击公开您的应用。尝试隐藏识别和揭露技术栈的任何内容(例如:Nonde.js, express)。
-
-**否则:** 可以通过不安全的连接发送cookie, 攻击者可能会使用会话标识来标识web应用程序的基础框架以及特定于模块的漏洞。
-
-🔗 [**更多: cookie和session安全**](/sections/security/sessions.md)
-
-<br/><br/>
-
-## ![✔] 6.23. 通过显式设置进程应崩溃的情况，以避免DOS攻击
-
-<a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
-
-**TL;DR:** 当错误未被处理时, Node进程将崩溃。即使错误被捕获并得到处理，许多最佳实践甚至建议退出。例如, Express会在任何异步错误上崩溃 - 除非使用catch子句包装路由。这将打开一个非常惬意的攻击点, 攻击者识别哪些输入会导致进程崩溃并重复发送相同的请求。没有即时补救办法, 但一些技术可以减轻苦楚: 每当进程因未处理的错误而崩溃，都会发出警报，验证输入并避免由于用户输入无效而导致进程崩溃，并使用catch将所有路由处理包装起来，并在请求中出现错误时, 考虑不要崩溃(与全局发生的情况相反)。
-
-**否则:** 这只是一个起到教育意义的假设: 给定许多Node.js应用程序, 如果我们尝试传递一个空的JSON正文到所有POST请求 - 少数应用程序将崩溃。在这一点上, 我们可以只是重复发送相同的请求, 就可以轻松地搞垮应用程序。
-
-<br/><br/><br/>
-
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
-
-# `API Practices`
+# `Security Practices`
 
 ## Our contributors are working on this section. Would you like to join?
 
+<br/><br/><br/>
 # `Performance Practices`
 
 ## Our contributors are working on this section. Would you like to join?
 
-<br/><br/><br/>
+
+<br/><br/>
 
 # Milestones
 To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/i0natan/nodebestpractices/milestones) and join the working groups if you want to contribute to this project.
@@ -951,10 +677,10 @@ Independent Node.js consultant who works with customers at USA, Europe and Israe
 👨‍💻 Software engineer, 🌐 web developer, 🤖 emojis enthusiast.
 
 ## `Refael Ackermann` [@refack](https://github.com/refack) &lt;refack@gmail.com&gt; (he/him)
-Node.js Core Collaborator, been noding since 0.4, and have noded in multiple production sites. Founded `node4good` home of [`lodash-contrib`](https://github.com/node4good/lodash-contrib), [`formage`](https://github.com/node4good/formage), and [`asynctrace`](https://github.com/node4good/asynctrace).
+Node.js Core Collaborator, been noding since 0.4, and have noded in multiple production sites. Founded `node4good` home of [`lodash-contrib`](https://github.com/node4good/lodash-contrib), [`formage`](https://github.com/node4good/formage), and [`asynctrace`](https://github.com/node4good/asynctrace). 
 `refack` on freenode, Twitter, GitHub, GMail, and many other platforms. DMs are open, happy to help.
 
-## `Bruno Scheufler`
+## `Bruno Scheufler` 
 💻 full-stack web developer and Node.js enthusiast.
 
 ## `Kyle Martin` [@js-kyle](https://github.com/js-kyle)
@@ -967,33 +693,31 @@ Full Stack Developer based in New Zealand, interested in architecting and buildi
 
 This repository is being kept up to date thanks to the help from the community. We appreciate any contribution, from a single word fix to a new best practice. Below is a list of everyone who contributed to this project. A :sunflower: marks a successful pull request and a :star: marks an approved new best practice.
 
-### Flowers
-
-🌻 [Kevin Rambaud](https://github.com/kevinrambaud),
-🌻 [Michael Fine](https://github.com/mfine15),
-🌻 [Shreya Dahal](https://github.com/squgeim),
-🌻 [ChangJoo Park](https://github.com/ChangJoo-Park),
-🌻 [Matheus Cruz Rocha](https://github.com/matheusrocha89),
-🌻 [Yog Mehta](https://github.com/BitYog),
-🌻 [Kudakwashe Paradzayi](https://github.com/kudapara),
-🌻 [t1st3](https://github.com/t1st3),
-🌻 [mulijordan1976](https://github.com/mulijordan1976),
-🌻 [Matan Kushner](https://github.com/matchai),
-🌻 [Fabio Hiroki](https://github.com/fabiothiroki),
-🌻 [James Sumners](https://github.com/jsumners),
-🌻 [Chandan Rai](https://github.com/crowchirp),
-🌻 [Dan Gamble](https://github.com/dan-gamble),
-🌻 [PJ Trainor](https://github.com/trainorpj),
-🌻 [Remek Ambroziak](https://github.com/reod),
-🌻 [Yoni Jah](https://github.com/yonjah),
-🌻 [Misha Khokhlov](https://github.com/hazolsky),
-🌻 [Evgeny Orekhov](https://github.com/EvgenyOrekhov),
-🌻 [Gediminas Petrikas](https://github.com/gediminasml),
-🌻 [Isaac Halvorson](https://github.com/hisaac),
-🌻 [Vedran Karačić](https://github.com/vkaracic),
-🌻 [lallenlowe](https://github.com/lallenlowe),
-🌻 [Nathan Wells](https://github.com/nwwells),
-🌻 [Paulo Vítor S Reis](https://github.com/paulovitin),
+🌻 [Kevin Rambaud](https://github.com/kevinrambaud), 
+🌻 [Michael Fine](https://github.com/mfine15), 
+🌻 [Shreya Dahal](https://github.com/squgeim), 
+🌻 [ChangJoo Park](https://github.com/ChangJoo-Park), 
+🌻 [Matheus Cruz Rocha](https://github.com/matheusrocha89), 
+🌻 [Yog Mehta](https://github.com/BitYog), 
+🌻 [Kudakwashe Paradzayi](https://github.com/kudapara), 
+🌻 [t1st3](https://github.com/t1st3), 
+🌻 [mulijordan1976](https://github.com/mulijordan1976), 
+🌻 [Matan Kushner](https://github.com/matchai), 
+🌻 [Fabio Hiroki](https://github.com/fabiothiroki), 
+🌻 [James Sumners](https://github.com/jsumners), 
+🌻 [Chandan Rai](https://github.com/crowchirp), 
+🌻 [Dan Gamble](https://github.com/dan-gamble), 
+🌻 [PJ Trainor](https://github.com/trainorpj), 
+🌻 [Remek Ambroziak](https://github.com/reod), 
+🌻 [Yoni Jah](https://github.com/yonjah), 
+🌻 [Misha Khokhlov](https://github.com/hazolsky), 
+🌻 [Evgeny Orekhov](https://github.com/EvgenyOrekhov), 
+🌻 [Gediminas Petrikas](https://github.com/gediminasml), 
+🌻 [Isaac Halvorson](https://github.com/hisaac), 
+🌻 [Vedran Karačić](https://github.com/vkaracic), 
+🌻 [lallenlowe](https://github.com/lallenlowe), 
+🌻 [Nathan Wells](https://github.com/nwwells), 
+🌻 [Paulo Vítor S Reis](https://github.com/paulovitin), 
 🌻 [syzer](https://github.com/syzer),
 🌻 [David Sancho](https://github.com/davesnx),
 🌻 [Robert Manolea](https://github.com/pupix),
@@ -1008,53 +732,13 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Ye Min Htut](https://github.com/ymhtut),
 🌻 [cwar](https://github.com/cwar),
 🌻 [Yuwei](https://github.com/keyfoxth),
-🌻 [Utkarsh Bhatt](https://github.com/utkarshbhatt12),
-🌻 [Duarte Mendes](https://github.com/duartemendes),
-🌻 [Sagir Khan](https://github.com/sagirk),
-🌻 [Jason Kim](https://github.com/serv),
-🌻 [Mitja O.](https://github.com/Max101),
-🌻 [Sandro Miguel Marques](https://github.com/SandroMiguel),
-🌻 [Gabe Kuslansky](https://github.com/GabeKuslansky),
-🌻 [Ron Gross](https://github.com/ripper234),
-🌻 [Valeri Karpov](https://github.com/vkarpov15)
-🌻 [Sergio](https://github.com/imsergiobernal),
-🌻 [Duarte Mendes](https://github.com/duartemendes),
-🌻 [Nikola Telkedzhiev](https://github.com/ntelkedzhiev),
-🌻 [Vitor Godoy](https://github.com/vitordagamagodoy),
-🌻 [Manish Saraan](https://github.com/manishsaraan),
-🌻 [Sangbeom Han](https://github.com/uronly14me),
-🌻 [blackmatch](https://github.com/blackmatch),
-🌻 [Joe Reeve](https://github.com/ISNIT0),
-🌻 [Marcelo Melo](https://github.com/marcelosdm),
-🌻 [Ryan Busby](https://github.com/BusbyActual),
-🌻 [Iman Mohamadi](https://github.com/ImanMh),
-🌻 [Remek Ambroziak](https://github.com/reod),
-🌻 [Sergii Paryzhskyi](https://github.com/HeeL),
-🌻 [Kapil Patel](https://github.com/kapilepatel),
-🌻 [迷渡](https://github.com/justjavac),
-🌻 [Hozefa](https://github.com/hozefaj),
-🌻 [Ethan](https://github.com/el-ethan),
-🌻 [Sam](https://github.com/milkdeliver),
-🌻 [Arlind](https://github.com/ArlindXh),
-🌻 [Teddy Toussaint](https://github.com/ttous),
-🌻 [Lewis](https://github.com/LewisArdern),
-🌻 [DouglasMV](https://github.com/DouglasMV),
-🌻 [Corey Cleary](https://github.com/coreyc),
-🌻 [Mehmet Perk](https://github.com/mperk),
-🌻 [Ryan Ouyang](https://github.com/ryanouyang),
-🌻 [Gabriel Lidenor](https://github.com/GabrielLidenor),
-🌻 [Roman](https://github.com/animir),
-🌻 [Francozeira](https://github.com/Francozeira)
+🌻 [Utkarsh Bhatt](https://github.com/utkarshbhatt12)
+🌻 [Duarte Mendes](https://github.com/duartemendes)
+🌻 [Sagir Khan](https://github.com/sagirk)
+🌻 [Jason Kim](https://github.com/serv)
 
-### Stars
+<br/>
 
-⭐ [Kyle Martin](https://github.com/js-kyle),
-⭐ [Keith Holliday](https://github.com/TheHollidayInn),
-⭐ [Corey Cleary](https://github.com/coreyc),
-⭐ [Maximilian Berkmann](https://github.com/Berkmann18),
-⭐ [DouglasMV](https://github.com/DouglasMV),
-⭐ [Marcelo Melo](https://github.com/marcelosdm),
-⭐ [Mehmet Perk](https://github.com/mperk),
-⭐ [Ryan Ouyang](https://github.com/ryanouyang)
+⭐ [Kyle Martin](https://github.com/js-kyle)
 
-<br/><br/><br/>
+<br/><br/>
