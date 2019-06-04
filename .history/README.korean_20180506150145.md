@@ -45,11 +45,7 @@
 
 **否则:** 当编写新需求的开发人员逐步意识到他所做改变的影响，并担心会破坏其他的依赖模块 - 部署会变得更慢，风险更大。当所有业务逻辑没有被分开，这也会被认为很难扩展
 
-<<<<<<< HEAD:README.korean.md
-🔗 [**Read More: structure by components**](/sections/projectstructre/breakintcomponents.korean.md)
-=======
 🔗 [**更多: 组件结构**](/sections/projectstructre/breakintcomponents.chinese.md)
->>>>>>> master:README.chinese.md
 
 <br/><br/>
 
