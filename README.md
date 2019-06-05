@@ -1207,7 +1207,7 @@ We appreciate any contribution, from a single word fix to a new best practice. B
 🌻 [Rômulo Garofalo](https://github.com/romulogarofalo),
 🌻 [Tho Q Luong](https://github.com/thoqbk),
 🌻 [Burak Shen](https://github.com/Qeneke),
-🌻 [Martin Muzatko](https://github.com/MartinMuzatko)
+🌻 [Martin Muzatko](https://github.com/MartinMuzatko),
 🌻 [zhuweiyou](https://github.com/zhuweiyou)
 
 
