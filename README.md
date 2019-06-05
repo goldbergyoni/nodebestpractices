@@ -1203,6 +1203,7 @@ We appreciate any contribution, from a single word fix to a new best practice. B
 🌻 [Ryan Ouyang](https://github.com/ryanouyang),
 🌻 [Gabriel Lidenor](https://github.com/GabrielLidenor),
 🌻 [Roman](https://github.com/animir),
+🌻 [Francozeira](https://github.com/Francozeira),
 🌻 [Invvard](https://github.com/Invvard),
 🌻 [Rômulo Garofalo](https://github.com/romulogarofalo),
 🌻 [Tho Q Luong](https://github.com/thoqbk),
