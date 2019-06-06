@@ -1034,6 +1034,14 @@ All statements above will return false if used with `===`
 
 <br/><br/><br/>
 
+## ![✔] 7.2. Replicate the Node process
+
+ **TL;DR:** If you really need to use some blocking/heavy compute code in your application, you can’t use any of the recommendation about [non-blocking the event loop](https://nodejs.org/en/docs/guides/dont-block-the-event-loop/) and you have a managed server with more than a single CPU, you should consider using the Cluster Module native from NodeJS or a library like [PM2](http://pm2.keymetrics.io/docs/usage/cluster-mode/). Cluster mode will allow you to take advantage of your CPU resources to replicate the Single Thread having availability when the Event Loop is blocked.
+
+**Otherwise:** In high peak traffic your users could suffer some latency when the Event Loop is blocked and if you have a multi CPU managed server you will be wasting valuable resources.
+
+<br/><br/><br/>
+
 # Milestones
 
 To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/i0natan/nodebestpractices/milestones) and join the working groups if you want to contribute to this project
