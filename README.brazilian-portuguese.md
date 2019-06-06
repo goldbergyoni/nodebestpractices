@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Contagem%20de%20Items%20-%2083%20Boas%20Práticas-blue.svg" alt="83 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Última%20Atualização%20-%20Apr%2013%202019-green.svg" alt="Última Atualização: April 13, 2019"> <img src="https://img.shields.io/badge/%E2%9C%94%20Atualizado%20Para%20Versão%20-%20Node%2010.15.3%20LTS-brightgreen.svg" alt="Atualizado para Node 10.15.3 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Contagem%20de%20Items%20-%2083%20Boas%20Práticas-blue.svg" alt="83 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Última%20Atualização%20-%20Jun%205%202019-green.svg" alt="Última Atualização: June 5, 2019"> <img src="https://img.shields.io/badge/%E2%9C%94%20Atualizado%20Para%20Versão%20-%20Node%2012.4.0%20LTS-brightgreen.svg" alt="Atualizado para Node 12.4.0 LTS">
 </div>
 
 <br/>
@@ -1201,7 +1201,13 @@ Este repositório é mantido atualizado graças à ajuda da comunidade. Nós apr
 🌻 [Ryan Ouyang](https://github.com/ryanouyang),
 🌻 [Gabriel Lidenor](https://github.com/GabrielLidenor),
 🌻 [Roman](https://github.com/animir),
-🌻 [Francozeira](https://github.com/Francozeira)
+🌻 [Francozeira](https://github.com/Francozeira),
+🌻 [Invvard](https://github.com/Invvard),
+🌻 [Rômulo Garofalo](https://github.com/romulogarofalo),
+🌻 [Tho Q Luong](https://github.com/thoqbk),
+🌻 [Burak Shen](https://github.com/Qeneke),
+🌻 [Martin Muzatko](https://github.com/MartinMuzatko),
+🌻 [zhuweiyou](https://github.com/zhuweiyou)
 
 ### Estrelas
 
