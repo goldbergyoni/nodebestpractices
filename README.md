@@ -959,13 +959,13 @@ All statements above will return false if used with `===`
 
 ## ![✔] 7.1. Don't block the event loop
 
-**TL;DR:** TLDR; Avoid using syncronous and other Event Loop blocking functions.
+**TL;DR:** TLDR; Avoid CPU intensive tasks as they will block the Event Loop.
 
-**Otherwise:** Syncronous functions (usually ending with Sync) like `readFileSync` will prevent Node from moving through its phases thus blocking the Event Loop. This will prevent your app from handling pending functions and requests.
+**Otherwise:** As the Event Loop is blocked, Node.js will be unable to handle other request thus causing delays for concurrent users.
 
 🔗 [**Read More: Do not block the event loop**](/sections/performance/block-loop.md)
 
-<br/><br/><br/>
+<br /><br /><br />
 
 # Milestones
 
