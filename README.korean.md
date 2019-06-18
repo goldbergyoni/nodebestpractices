@@ -385,11 +385,11 @@ null == undefined   // true
 
 # `4. 테스트 및 전체 품질 관리`
 
-## ![✔] 4.1 At the very least, write API (component) testing
+## ![✔] 4.1 적어도 API(구성 요소) 테스트를 작성하라
 
-**핵심요약:** Most projects just don't have any automated testing due to short timetables or often the 'testing project' run out of control and being abandoned. For that reason, prioritize and start with API testing which is the easiest to write and provide more coverage than unit testing (you may even craft API tests without code using tools like [Postman](https://www.getpostman.com/). Afterward, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc
+**핵심요약:** 대부분의 프로젝트는 짧은 일정 때문에 자동화된 테스트가 없거나 '테스트 프로젝트'가 통제 불능 상태가 되어 폐기되는 경우가 있습니다. 이러한 이유로 우선순위를 정하고 유닛 테스트보다 더 많은 적용 범위를 제공하고 작성하기 쉬운 API 테스트로 시작하십시오. ([Postman](https://www.getpostman.com/)과 같은 도구를 사용하여 코드 없이 API 테스트를 만들 수도 있습니다) 이후 리소스나 시간이 생긴다면, 단위 테스트, DB 테스트, 성능 테스트 등과 같은 고급 테스트를 계속 진행하십시오.
 
-**그렇게 하지 않을 경우:** You may spend long days on writing unit tests to find out that you got only 20% system coverage
+**그렇게 하지 않을 경우:** 당신은 단위 테스트를 작성하는 데 오랜 시간을 투자하였지만, 시스템 적용 범위가 20% 밖에 되지 않음을 알 수 있습니다.
 
 <br/><br/>
 
