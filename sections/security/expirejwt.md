@@ -7,11 +7,25 @@ Due to this, when using JWT authentication, an application should manage a black
 
 ### `express-jwt-blacklist` example
 
-An example of running `express-jwt-blacklist` on a Node.js project using the `express-jwt`
+An example of running `express-jwt-blacklist` on a Node.js project using the `express-jwt`. Note that it is important to not use the default store settings(in-memory) cache of `express-jwt-blacklist`, but to use an external store such as Redis to revoke tokens across many Node.js processes.
 
 ```javascript
-var jwt = require('express-jwt');
-var blacklist = require('express-jwt-blacklist');
+const jwt = require('express-jwt');
+const blacklist = require('express-jwt-blacklist');
+
+blacklist.configure({
+  tokenId: 'jti',
+  strict: true,
+  store: {
+    type: 'memcached',
+    host: '127.0.0.1'
+    port: 11211,
+    keyPrefix: 'mywebapp:',
+    options: {
+      timeout: 1000
+    }
+  }
+});
  
 app.use(jwt({
   secret: 'my-secret',

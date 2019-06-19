@@ -44,7 +44,7 @@ app.use(function (err, req, res, next) {
 module.exports.handler = new errorHandler();
  
 function errorHandler(){
-    this.handleError = function (error) {
+    this.handleError = function (err) {
         return logger.logError(err).then(sendMailToAdminIfCritical).then(saveInOpsQueueIfCritical).then(determineIfOperationalError);
     }
 

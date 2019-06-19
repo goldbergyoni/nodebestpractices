@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Contagem%20de%20Items%20-%2081%20Boas%20Práticas-blue.svg" alt="81 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Última%20Atualização%20-%20Mar%2010%202019-green.svg" alt="Última Atualização: March 10, 2019"> <img src="https://img.shields.io/badge/%E2%9C%94%20Atualizado%20Para%20Versão%20-%20Node%2010.15.3%20LTS-brightgreen.svg" alt="Atualizado para Node 10.15.3 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Contagem%20de%20Items%20-%2083%20Boas%20Práticas-blue.svg" alt="83 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Última%20Atualização%20-%20Jun%205%202019-green.svg" alt="Última Atualização: June 5, 2019"> <img src="https://img.shields.io/badge/%E2%9C%94%20Atualizado%20Para%20Versão%20-%20Node%2012.4.0%20LTS-brightgreen.svg" alt="Atualizado para Node 12.4.0 LTS">
 </div>
 
 <br/>
@@ -26,13 +26,11 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 # Novas Práticas e Notícias
 
+- **Nova Boa Prática:** 4.4: [Evite dados fixos e sementes para teste, adicione os dados no teste](#4-práticas-de-testes-e-qualidade-geral)
+
+- **Nova Boa Prática:** 6.25: [Evite publicar segredos no registro do npm](/sections/security/avoid_publishing_secrets.brazilian-portuguese.md)
+
 - **Nova tradução:** ![BR](/assets/flags/BR.png) [Português Brasileiro](/README.brazilian-portuguese.md) disponível agora, cortesia de [Marcelo Melo](https://github.com/marcelosdm)! ❤️
-
-- **Nova prática recomendada:** 4.2: Inclua 3 partes em cada nome de teste - [_Da seção "Teste e qualidade geral"_](https://github.com/i0natan/nodebestpractices#4-testing-and-overall-quality-practices)
-
-- **Nova prática recomendada:** 7.1: Prefira métodos JS nativos ao invés de utilitários de usuário, como o Lodash - [Da seção "Performance"\_](https://github.com/i0natan/nodebestpractices#7-performance-best-practices)
-
-- **Novidades:** [Demos o pontapé inicial na seção de performance, quer fazer parte?](https://github.com/i0natan/nodebestpractices/issues/302)
 
 <br/><br/>
 
@@ -40,7 +38,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **1. Quando você lê aqui, na verdade você lê alguns dos melhores artigos de Node.js -** este é um resumo e curadoria dos mais bem ranqueados conteúdos sobre as melhores práticas do Node.js.
 
-**2. Esta é a maior coletânea, e está crescendo mais a cada semana -** atualmente, são apresentadas mais de 50 melhores práticas, guias de estilo e dicas de arquitetura. Novas issues e PR são criadas diariamente para manter este livro vivo atualizado. Gostaríamos muito de ver você contribuindo aqui, seja corrigindo algum erro de código ou sugerindo novas e brilhantes ideias. Veja nossas [conquistas aqui](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open).
+**2. Esta é a maior coletânea, e está crescendo mais a cada semana -** atualmente, são apresentadas mais de 80 melhores práticas, guias de estilo e dicas de arquitetura. Novas issues e PR são criadas diariamente para manter este livro vivo atualizado. Gostaríamos muito de ver você contribuindo aqui, seja corrigindo algum erro de código ou sugerindo novas e brilhantes ideias. Veja nossas [conquistas aqui](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open).
 
 **3. A maioria dos tópicos possuem informações adicionais -** perto dos tópicos das melhores práticas, você encontrará o link **🔗Leia Mais** que irá apresentar exemplos de códigos, citações de blogs selecionados e mais informações.
 
@@ -51,9 +49,9 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 1.  [Práticas de Estrutura de Projeto (5)](#1-práticas-de-estrutura-de-projeto)
 2.  [Práticas de Tratamento de Erros (11) ](#2-práticas-de-tratamento-de-erros)
 3.  [Práticas de Estilo de Código (12) ](#3-práticas-de-estilo-de-código)
-4.  [Práticas de Testes e Qualidade Geral (10) ](#4-práticas-de-testes-e-qualidade-geral)
+4.  [Práticas de Testes e Qualidade Geral (11) ](#4-práticas-de-testes-e-qualidade-geral)
 5.  [Práticas de Produção (18) ](#5-boas-práticas-de-produção)
-6.  [Práticas de Segurança (24)](#6-boas-práticas-em-segurança)
+6.  [Práticas de Segurança (25)](#6-boas-práticas-em-segurança)
 7.  [Práticas de Performance (1) (Em Progresso ✍️)](#7-boas-práticas-em-performance)
 
 <br/><br/>
@@ -154,13 +152,13 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 <br/><br/>
 
-## ![✔] 2.5 Documente erros de API usando o Swagger
+## ![✔] 2.5 Documente erros de API usando o Swagger ou GraphQL
 
-**TL;DR:** Permita que os clientes de sua API saibam quais erros podem ser retornados para que eles possam lidar com esses detalhes, sem causar falhas. Geralmente, isto é feito com frameworks de documentação REST API, como o Swagger.
+**TL;DR:** Permita que os clientes de sua API saibam quais erros podem ser retornados para que eles possam lidar com esses detalhes, sem causar falhas. Para RESTful APIs geralmente, isto é feito com frameworks de documentação REST API, como o Swagger. Se você está usando GraphQL, você também pode utilizar seu esquema e comentários.
 
 **Caso contrário:** Um cliente de uma API pode decidir travar e reiniciar, apenas pelo motivo de ter recebido de volta um erro que não conseguiu entender. Nota: o visitante de sua API pode ser você (muito comum em um ambiente de microsserviço).
 
-🔗 [**Leia Mais: documentando erros no Swagger**](/sections/errorhandling/documentingusingswagger.brazilian-portuguese.md)
+🔗 [**Leia Mais: documentando erros de API no Swagger ou GraphQL**](/sections/errorhandling/documentingusingswagger.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -271,27 +269,47 @@ function someFunction()
 
 <br/><br/>
 
-## ![✔] 3.4 Não Esqueça do Ponto e Vírgula
+## ![✔] 3.4 Separe suas declarações corretamente
 
-**TL;DR:** Embora não seja unanimidade, ainda é recomendado colocar ponto e vírgula no fim de cada declaração. Isto fará que seu código seja mais legível e explícito para outros desenvolvedores.
+Não importa se você usa ponto-e-vírgula ou não para separar suas declarações, conhecer as armadilhas comuns de quebras de linha impróprias ou inserção automática de ponto e vírgula, irá ajudá-lo a eliminar erros regulares de sintaxe.
 
-**Caso contrário:** Como visto em seções anteriores, interpretadores do JavaScript adicionam ponto e vírgula automaticamente no final das declarações caso não exista, o que pode levar a resultados não desejados.
+**TL;DR:** Use o ESLint para obter conhecimento sobre as preocupações de separação. [Prettier](https://prettier.io/) ou [Standardjs](https://standardjs.com/) podem resolver automaticamente esses problemas.
 
-### Code example
+**Otherwise:** Como visto na seção anterior, o interpretador do JavaScript adiciona automaticamente um ponto-e-vírgula ao final de uma instrução, se não houver uma, ou considera uma instrução como não terminada onde deveria, o que pode levar a alguns resultados indesejáveis. Você pode usar atribuições e evitar o uso de expressões de função chamadas imediatas para evitar a maioria dos erros inesperados.
+
+### Exemplo de Código
 
 ```javascript
-// Do
-const count = 2;
-(function doSomething() {
-  // do something amazing
-}());
+// Faça
+function doThing() {
+    // ...
+}
 
-// Avoid — throws exception
-const count = 2 // it tries to run 2(), but 2 is not a function
+doThing()
+
+// Faça
+
+const items = [1, 2, 3]
+items.forEach(console.log)
+
+// Evitar - lança exceção
+const m = new Map()
+const a = [1,2,3]
+[...m.values()].forEach(console.log)
+> [...m.values()].forEach(console.log)
+>  ^^^
+> SyntaxError: Unexpected token ...
+
+// Evitar - lança exceção
+const count = 2 // tenta executar 2(), mas 2 não é uma função
 (function doSomething() {
-  // do something amazing
+  // Faça algo incrível
 }())
+// Coloque um ponto-e-vírgula antes da função invocada imediatamente, após a definição const, salve o valor de retorno da função anônima para uma variável ou evite IIFEs no conjunto
 ```
+
+🔗 [**Leia mais:** "Regra Semi ESLint"](https://eslint.org/docs/rules/semi)
+🔗 [**Leia mais:** "Nenhuma regra ESLint de múltiplas linhas inesperada"](https://eslint.org/docs/rules/no-unexpected-multiline)
 
 <br/><br/>
 
@@ -419,7 +437,7 @@ Todas as declarações acima false se feitas com `===`.
 
 ## ![✔] 4.1 No mínimo, escreva testes de API (componente)
 
-**TL;DR:** A maioria dos projetos simplesmente não possuem testes automatizados devido a falta de tempo ou geralmente o 'testing project' fica fora de controle e acaba sendo abandonado. Por esse motivo, priorize e comece com o teste de API, que é o mais fácil de escrever e proporciona mais cobertura do que os testes unitários (você pode inclusive criar testes de API sem código usando ferramentas como [Postman](https://www.getpostman.com/)). Depois, se você tiver mais recursos e tempo, continue com testes avançados, como testes unitários, testes de bando de dados, testes de desempenho, etc.
+**TL;DR:** A maioria dos projetos simplesmente não possuem testes automatizados devido a falta de tempo ou geralmente o 'testing project' fica fora de controle e acaba sendo abandonado. Por esse motivo, priorize e comece com o teste de API, que é o mais fácil de escrever e proporciona mais cobertura do que os testes unitários (você pode inclusive criar testes de API sem código usando ferramentas como [Postman](https://www.getpostman.com/)). Depois, se você tiver mais recursos e tempo, continue com testes avançados, como testes unitários, testes de banco de dados, testes de desempenho, etc.
 
 **Caso contrário:** Voce pode passar longos dias escrevendo testes unitários para perceber que possui apenas 20% de cobertura de sistema.
 
@@ -443,13 +461,13 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.4 Escolha cuidadosamente sua plataforma de Integração Contínua - CI (Jenkins vs CircleCI vs Travis vs Resto do mundo)
+## ![✔] 4.4 Evite dados fixos e sementes para teste, adicione os dados no teste
 
-**TL;DR:** Sua plataforma de integração contínua (CICD) irá hospedar todas as ferramentas de qualidade (por exemplo, teste, lint), então ela deve vir com um ecosistema de plugins arrebatador. O [Jenkins](https://jenkins.io/) costumava ser o padrão de muitos projetos, pois tem a maior comunidade, juntamente com uma poderosa plataforma, ao preço de configuração complexa que exige uma curva de aprendizado íngreme. Atualmente, ficou bem mais fácil para configurar uma solução de CI usando ferramentas SaaS como [CircleCI](https://circleci.com) e outras. Essas ferramentas permitem a criação de um pipeline de CI flexível sem o peso de gerenciar toda a infraestrutura. Eventualmente, é um perde e ganha entre robustez e velocidade - escolha seu lado com cuidado!
+**TL;DR:** Para evitar o acoplamento de testes e facilitar o entendimento do fluxo do teste, cada teste deve adicionar e atuar em seu próprio conjunto de linhas de banco de dados. Sempre que um teste precisar extrair ou assumir a existência de alguns dados do banco de dados - ele deve incluir explicitamente esses dados e evitar a mutação de outros registros
 
-**Caso contrário:** Escolher algum fornecedor de nicho pode fazer com que você fique engessado quando precisar de alguma personalização avançada. Por outro lado, escolher o Jenkins pode ser uma perda de tempo precioso na configuração da infraestrutura.
+**Caso contrário:** Considere um cenário em que a implementação é abortada devido a falhas nos testes. Agora, a equipe gastará um tempo precioso de investigação que termina em uma triste conclusão: o sistema funciona bem, mas os testes interferem uns nos outros e quebram a compilação
 
-🔗 [**Leia Mais: Escolhendo a plataforma de CI**](/sections/testingandquality/citools.brazilian-portuguese.md)
+🔗 [**Leia Mais: Evite dados fixos para teste**](/sections/testingandquality/avoid-global-test-fixture.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -500,6 +518,16 @@ Todas as declarações acima false se feitas com `===`.
 **Caso contrário:** Com qualidade de código ruim, bugs e desempenho sempre serão um problema que nenhuma nova biblioteca maravilhosa ou recursos de última geração podem corrigir.
 
 🔗 [**Leia Mais: Refatoração!**](/sections/testingandquality/refactoring.brazilian-portuguese.md)
+
+<br/><br/>
+
+## ![✔] 4.11 Escolha cuidadosamente sua plataforma de Integração Contínua - CI (Jenkins vs CircleCI vs Travis vs Resto do mundo)
+
+**TL;DR:** Sua plataforma de integração contínua (CICD) irá hospedar todas as ferramentas de qualidade (por exemplo, teste, lint), então ela deve vir com um ecosistema de plugins arrebatador. O [Jenkins](https://jenkins.io/) costumava ser o padrão de muitos projetos, pois tem a maior comunidade, juntamente com uma poderosa plataforma, ao preço de configuração complexa que exige uma curva de aprendizado íngreme. Atualmente, ficou bem mais fácil para configurar uma solução de CI usando ferramentas SaaS como [CircleCI](https://circleci.com) e outras. Essas ferramentas permitem a criação de um pipeline de CI flexível sem o peso de gerenciar toda a infraestrutura. Eventualmente, é um perde e ganha entre robustez e velocidade - escolha seu lado com cuidado!
+
+**Caso contrário:** Escolher algum fornecedor de nicho pode fazer com que você fique engessado quando precisar de alguma personalização avançada. Por outro lado, escolher o Jenkins pode ser uma perda de tempo precioso na configuração da infraestrutura.
+
+🔗 [**Leia Mais: Escolhendo a plataforma de CI**](/sections/testingandquality/citools.brazilian-portuguese.md)
 
 <br/><br/><br/>
 
@@ -690,7 +718,7 @@ Todas as declarações acima false se feitas com `===`.
 # `6. Boas Práticas em Segurança`
 
 <div align="center">
-<img src="https://img.shields.io/badge/OWASP%20Threats-Top%2010-green.svg" alt="53 items"/>
+<img src="https://img.shields.io/badge/OWASP%20Threats-Top%2010-green.svg" alt="54 items"/>
 </div>
 
 ## ![✔] 6.1. Adote as regras de segurança do linter
@@ -709,7 +737,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Ataques DOS são muito populares e relativamente fáceis de conduzir. Implemente uma limitação de taxa, usando um serviço externo como balanceadores de carga de nuvem, firewalls de nuvem, nginx, ou (para aplicações menores e menos críticas) um middleware limitador de taxa (por exemplo, [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
+**TL;DR:** Ataques DOS são muito populares e relativamente fáceis de conduzir. Implemente uma limitação de taxa, usando um serviço externo como balanceadores de carga de nuvem, firewalls de nuvem, nginx, o pacote [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible), ou (para aplicações menores e menos críticas) um middleware limitador de taxa (por exemplo, [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
 
 **Caso contrário:** Uma aplicação pode estar sujeita a um ataque resultando em uma queda do serviço, onde usuários reais recebem um serviço degradado ou indisponível.
 
@@ -821,11 +849,14 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 6.12. Limite os requests de login permitidas por usuário
+## ![✔] 6.12. Evite ataques de força bruta contra autorização
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;DR:** Um middleware de proteção de força bruta, como o [express-brute](https://www.npmjs.com/package/express-brute) deve ser usado em uma aplicação para evitar ataques de força bruta/dicionário de ataques em rotas sensíveis como /admin ou /login, baseados em propriedades de request como nome de usuário, ou outros identificadores, como parâmetros do body.
+**TL;DR:** Uma técnica simples e poderosa é limitar as tentativas de autorização usando duas métricas:
+           
+1. A primeiro é o número de tentativas consecutivas com falha do mesmo ID/nome e endereço IP exclusivos do usuário.
+2. A segundo é o número de tentativas malsucedidas de um endereço IP durante um longo período de tempo. Por exemplo, bloqueie um endereço IP se ele fizer 100 tentativas com falha em um dia.
 
 **Caso contrário:** Um invasor pode emitir tentativas ilimitadas de senha automatizada para obter acesso a contas com privilégios em uma aplicação.
 
@@ -971,6 +1002,17 @@ Todas as declarações acima false se feitas com `===`.
 
 🔗 [**Leia Mais: Impeça redirecionamentos não seguros**](/sections/security/saferedirects.brazilian-portuguese.md)
 
+<br/><br/>
+
+## ![✔] 6.25. Evite publicar segredos no registro do npm
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20Ameaças%20OWASP%20-%20A6:Configuração%20Incorreta%20de%20Segurança%20-green.svg" alt=""/></a>
+
+**TL;DR:** Precauções devem ser tomadas para evitar o risco de publicação acidental de segredos nos registros públicos do npm. Um arquivo `.npmignore` pode ser usado para colocar arquivos ou pastas específicos em uma blacklist, ou a lista `files` no `package.json` pode atuar como uma whitelist.
+
+**Caso contrário:** As chaves, as senhas ou outros segredos da API do seu projeto estão sujeitos a abusos por qualquer pessoa que os encontre, o que pode resultar em perda financeira, falsificação de identidade e outros riscos.
+
+🔗 [**Leia Mais: Evite publicar segredos**](/sections/security/avoid_publishing_secrets.brazilian-portuguese.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#índice">⬆ Voltar ao topo</a></p>
@@ -1035,7 +1077,7 @@ Consultor de Node.js independente, que trabalha com clientes nos EUA, Europa e I
 [Bruno Scheufler](https://github.com/BrunoScheufler)
 <a href="https://brunoscheufler.com/"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
-💻 full-stack web developer e entusiasta de Node.js
+💻 full-stack web engineer e entusiasta de Node.js & GraphQL
 
 <br/>
 
@@ -1152,13 +1194,30 @@ Este repositório é mantido atualizado graças à ajuda da comunidade. Nós apr
 🌻 [Sam](https://github.com/milkdeliver),
 🌻 [Arlind](https://github.com/ArlindXh),
 🌻 [Teddy Toussaint](https://github.com/ttous),
-🌻 [Lewis](https://github.com/LewisArdern)
+🌻 [Lewis](https://github.com/LewisArdern),
+🌻 [DouglasMV](https://github.com/DouglasMV),
+🌻 [Corey Cleary](https://github.com/coreyc),
+🌻 [Mehmet Perk](https://github.com/mperk),
+🌻 [Ryan Ouyang](https://github.com/ryanouyang),
+🌻 [Gabriel Lidenor](https://github.com/GabrielLidenor),
+🌻 [Roman](https://github.com/animir),
+🌻 [Francozeira](https://github.com/Francozeira),
+🌻 [Invvard](https://github.com/Invvard),
+🌻 [Rômulo Garofalo](https://github.com/romulogarofalo),
+🌻 [Tho Q Luong](https://github.com/thoqbk),
+🌻 [Burak Shen](https://github.com/Qeneke),
+🌻 [Martin Muzatko](https://github.com/MartinMuzatko),
+🌻 [zhuweiyou](https://github.com/zhuweiyou)
 
 ### Estrelas
 
 ⭐ [Kyle Martin](https://github.com/js-kyle)
 ⭐ [Keith Holliday](https://github.com/TheHollidayInn),
 ⭐ [Corey Cleary](https://github.com/coreyc),
-⭐ [Maximilian Berkmann](https://github.com/Berkmann18)
+⭐ [Maximilian Berkmann](https://github.com/Berkmann18),
+⭐ [DouglasMV](https://github.com/DouglasMV),
+⭐ [Marcelo Melo](https://github.com/marcelosdm),
+⭐ [Mehmet Perk](https://github.com/mperk),
+⭐ [Ryan Ouyang](https://github.com/ryanouyang)
 
 <br/><br/><br/>
