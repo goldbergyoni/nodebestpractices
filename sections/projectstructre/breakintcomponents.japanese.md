@@ -69,7 +69,7 @@ So what does the architecture of your application scream? When you look at the t
 ### Good: Structure your solution by self-contained components
 --->
 
-### ○：自己完結型のコンポーネントでソリューションを構築する
+### GOOD：自己完結型のコンポーネントでソリューションを構築する
 
 ![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Structuring solution by components")
 
@@ -79,6 +79,6 @@ So what does the architecture of your application scream? When you look at the t
 ### Bad: Group your files by technical role
 --->
 
-### ×：技術的な役割別でファイルをグループ化してしまう
+### BAD：技術的な役割別でファイルをグループ化してしまう
 
 ![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebyroles.PNG "Structuring solution by technical roles")
