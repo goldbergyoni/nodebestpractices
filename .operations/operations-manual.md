@@ -69,3 +69,24 @@ Each month, a maintainer on call will open an issue for maintenance work and rec
 | Performance              | Efficient code, inspecting processes on fire        | Sagir                              |
 | Security                 | Security packages, secured code                     | Kyle                               |
 | General inquires         | Ideas, requests to contribute, etc                  | Monthly rotation   October - Bruno |
+| Error handling           | ...                                                 | Yoni                               |
+
+## Routing of languages under translation
+
+| Language             | Assignee |
+|----------------------|----------|
+| Brazilian Portuguese | Sagir    |
+| Portuguese           | Sagir    |
+| Hebrew               | Yoni     |
+| German               | Bruno    |
+| Italian              | Kyle     |
+| Turkish              | Bruno    |
+| French               | Yoni     |
+| Russian              | Sagir    |
+| Korean               | Yoni     |
+| Spanish              | Kyle     |
+| Chinese              | Yoni     |
+| Korean               | Kyle     |
+| Egyptian             | Yoni     |
+| Ukrainian            | Bruno     |
+

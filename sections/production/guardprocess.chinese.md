@@ -5,7 +5,7 @@
 
 ### 一段解释
 
-在基本级别，必须保护Node进程并在出现故障时重新启动。简单地说, 对于那些小应用和不使用容器的应用 – 像这样的工具 [PM2](https://www.npmjs.com/package/pm2-docker) 是完美的，因为它们带来简单性，重启能力以及与Node的丰富集成。其他具有强大Linux技能的人可能会使用systemd并将Node作为服务运行。对于使用Docker或任何容器技术的应用程序来说，事情会变得更加有趣，因为集群管理和协调工具（比如[AWS ECS]（http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html ），[Kubernetes]（https://kubernetes.io/）等）会完成部署，监视和保持容器健康的功能。拥有所有丰富的集群管理功能（包括容器重启），为什么还要与其他工具（如PM2）混为一谈？这里并没有可靠的答案。将PM2保留在容器（主要是其容器特定版本[pm2-docker]（https://www.npmjs.com/package/pm2-docker））中作为第一个守护层是有充分的理由的 - 在主机容器要求正常重启时，重新启动更快，并提供特定于node的功能比如向代码发送信号。其他选择可能会避免不必要的层。总而言之，没有一个解决方案适合所有人，但了解这些选择是最重要的。
+在基本级别，必须保护Node进程并在出现故障时重新启动。简单地说, 对于那些小应用和不使用容器的应用 – 像这样的工具 [PM2](https://www.npmjs.com/package/pm2-docker) 是完美的，因为它们带来简单性，重启能力以及与Node的丰富集成。其他具有强大Linux技能的人可能会使用systemd并将Node作为服务运行。对于使用Docker或任何容器技术的应用程序来说，事情会变得更加有趣，因为集群管理和协调工具（比如[AWS ECS](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html)，[Kubernetes](https://kubernetes.io/)等）会完成部署，监视和保持容器健康的功能。拥有所有丰富的集群管理功能（包括容器重启），为什么还要与其他工具（如PM2）混为一谈？这里并没有可靠的答案。将PM2保留在容器（主要是其容器特定版本[pm2-docker](https://www.npmjs.com/package/pm2-docker)）中作为第一个守护层是有充分的理由的 - 在主机容器要求正常重启时，重新启动更快，并提供特定于node的功能比如向代码发送信号。其他选择可能会避免不必要的层。总而言之，没有一个解决方案适合所有人，但了解这些选择是最重要的。
 
 <br/><br/>
 

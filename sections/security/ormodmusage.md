@@ -40,7 +40,7 @@ SELECT username, firstname, lastname FROM users WHERE id = 'evil'input';
 
 🔗 [OWASP SQL Injection](https://www.owasp.org/index.php/SQL_Injection)
 
-🔗 [OWASP SQL Injection Prevention Cheat Sheet](https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet)
+🔗 [OWASP SQL Injection Prevention Cheat Sheet](https://github.com/OWASP/CheatSheetSeries)
 
 🔗 [Testing for NoSQL Injection](https://www.owasp.org/index.php/Testing_for_NoSQL_injection)
 
