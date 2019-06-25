@@ -25,6 +25,8 @@ progresso!)](#translations)
 
 <br/>
 
+###### Construído e mantido pelo nosso [Comitê Diretivo](#comité-diretivo) e [Colaboradores](#colaboradores)
+
 # Bem-vindo! 3 coisas que você deve saber primeiro:
 
 **1. Ao ler este texto, de facto está a ler um apanhado dos melhores artigos sobre Node.js -** trata-se de um 
@@ -986,37 +988,64 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** This is just an educated guess: given many Node.js applications, if we try passing an empty JSON body to all POST requests - a handful of applications will crash. At that point, we can just repeat sending the same request to take down the applications with ease
 
-<br/><br/><br/>
+<br/><br/>
 
+## ![✔] 6.24. Prevent unsafe redirects
 
-<p align="right"><a href="#table-of-contents">⬆ Voltar ao início</a></p>
+<a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
-# `API Practices`
+**TL;DR:** Redirects that do not validate user input can enable attackers to launch phishing scams, steal user credentials, and perform other malicious actions.
 
-## Our contributors are working on this section. Would you like to join?
+**Otherwise:** If an attacker discovers that you are not validating external, user-supplied input, they may exploit this vulnerability by posting specially-crafted links on forums, social media, and other public places to get users to click it.
 
-
-# `Performance Practices`
-
-## Our contributors are working on this section. Would you like to join?
-
-<br/><br/><br/>
-
-# Milestones
-
-To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/i0natan/nodebestpractices/milestones) and join the working groups if you want to contribute to this project
+🔗 [**Read More: Prevent unsafe redirects**](/sections/security/saferedirects.md)
 
 <br/><br/>
 
-## Translations
+## ![✔] 6.25. Avoid publishing secrets to the npm registry
 
-All translations are contributed by the community. We will be happy to get any help with either completed, ongoing or new translations!
+<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-### Completed translations
+**TL;DR:** Precautions should be taken to avoid the risk of accidentally publishing secrets to public npm registries. An `.npmignore` file can be used to blacklist specific files or folders, or the `files` array in `package.json` can act as a whitelist.
 
-* ![CN](/assets/flags/CN.png) [Chinese](README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
+**Otherwise:** Your project's API keys, passwords or other secrets are open to be abused by anyone who comes across them, which may result in financial loss, impersonation, and other risks.
 
-### Translations in progress
+🔗 [**Read More: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.md)
+<br/><br/><br/>
+
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+
+# `7. Performance Best Practices`
+
+## Our contributors are working on this section. [Would you like to join?](https://github.com/i0natan/nodebestpractices/issues/256)
+
+## ![✔] 7.1. Prefer native JS methods over user-land utils like Lodash
+
+ **TL;DR:** It's often more penalising to use utility libraries like `lodash` and `underscore` over native methods as it leads to unneeded dependencies and slower performance.
+ Bear in mind that with the introduction of the new V8 engine alongside the new ES standards, native methods were improved in such a way that it's now about 50% more performant than utility libraries.
+
+**Otherwise:** You'll have to maintain less performant projects where you could have simply used what was **already** available or dealt with a few more lines in exchange of a few more files.
+
+🔗 [**Read More: Native over user land utils**](/sections/performance/nativeoverutil.md)
+
+<br/><br/><br/>
+
+# Feitos
+
+Para manter este guia e deixá-lo atualizado, estamos constantemente a atualizar e a aprimorar as diretrizes e as práticas recomendadas com a ajuda da comunidade. Você pode acompanhar o nossos [feitos](https://github.com/i0natan/nodebestpractices/milestones) e se juntar aos grupos de trabalho, caso queira contribuir neste projeto.
+
+<br/>
+
+## Traduções
+
+Todas as traduções são contribuições da comunidade. Ficaremos felizes em ter ajuda com traduções finalizadas, em andamento, ou mesmo com novas traduções!
+
+### Traduções concluídas
+
+- ![BR](/assets/flags/BR.png) [Português Brasileiro](/README.brazilian-portuguese.md) - Cortesia de [Marcelo Melo](https://github.com/marcelosdm)
+- ![CN](/assets/flags/CN.png) [Chinês](README.chinese.md) - Cortesia de [Matt Jin](https://github.com/mattjin)
+
+### Traduções em andamento
 
 * ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/129))
 * ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/i0natan/nodebestpractices/issues/156))
@@ -1028,35 +1057,73 @@ All translations are contributed by the community. We will be happy to get any h
 
 <br/><br/><br/>
 
-# Contributors
+## Comité Diretivo
 
-## `Yoni Goldberg`
+Conheça os membros do comité diretivo - as pessoas que trabalham juntas para fornecer orientação e direção futura para o projeto. Além disso, cada membro do comité lidera um projeto monitorado em [projetos do Github](https://github.com/i0natan/nodebestpractices/projects).
 
-Independent Node.js consultant who works with customers in USA, Europe, and Israel on building large-scale scalable Node applications. Many of the best practices above were first published in his blog post at [goldbergyoni.com](https://goldbergyoni.com). Reach Yoni at @goldbergyoni or me@goldbergyoni.com
+<img align="left" width="100" height="100" src="assets/images/members/yoni.png">
 
-## `Ido Richter`
+[Yoni Goldberg](https://github.com/i0natan)
+<a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
+<a href="https://goldbergyoni.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
-👨‍💻 Software engineer, 🌐 web developer, 🤖 emojis enthusiast
+Consultor de Node.js independente, que trabalha com clientes nos EUA, Europa e Israel, na criação de aplicações Node dimensionáveis em grande escala. Muitas das melhores práticas acima foram inicialmente publicadas num post do seu blog em [goldbergyoni.com](https://goldbergyoni.com). Contacte-o em @goldbergyoni ou me@goldbergyoni.com
 
-## `Refael Ackermann` [@refack](https://github.com/refack) &lt;refack@gmail.com&gt; (he/him)
+<br/>
 
-Node.js Core Collaborator, been noding since 0.4, and have noded in multiple production sites. Founded `node4good` home of [`lodash-contrib`](https://github.com/node4good/lodash-contrib), [`formage`](https://github.com/node4good/formage), and [`asynctrace`](https://github.com/node4good/asynctrace).
-`refack` on freenode, Twitter, GitHub, GMail, and many other platforms. DMs are open, happy to help
+<img align="left" width="100" height="100" src="assets/images/members/bruno.png">
 
-## `Bruno Scheufler`
+[Bruno Scheufler](https://github.com/BrunoScheufler)
+<a href="https://brunoscheufler.com/"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
-💻 full-stack web developer and Node.js enthusiast
+💻 full-stack web engineer e entusiasta de Node.js & GraphQL
 
-## `Kyle Martin` [@js-kyle](https://github.com/js-kyle)
-Full Stack Developer based in New Zealand, interested in architecting and building Node.js applications to perform at global scale. Keen contributor to open source software, including Node.js Core.
+<br/>
 
-<br/><br/><br/>
+<img align="left" width="100" height="100" src="assets/images/members/kyle.png">
 
-# Thank You Notes
+[Kyle Martin](https://github.com/js-kyle)
+<a href="https://twitter.com/kylemartin_93"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
+<a href="https://www.linkedin.com/in/kylemartinnz"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
 
-This repository is being kept up to date thanks to the help from the community. We appreciate any contribution, from a single word fix to a new best practice. Below is a list of everyone who contributed to this project. A 🌻 marks a successful pull request and a ⭐ marks an approved new best practice
+Full Stack Developer & Site Reliability Engineer na Nova Zelândia, interessado ​​em segurança de aplicações Web, e arquitetando e construindo aplicações Node.js para execução em escala global.
 
-### Flowers
+<br/>
+
+<img align="left" width="100" height="100" src="assets/images/members/sagir.png">
+
+[Sagir Khan](https://github.com/sagirk)
+<a href="https://twitter.com/sagir_k"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
+<a href="https://sagirk.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
+<a href="https://linkedin.com/in/sagirk"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
+
+Especialista em JavaScript e o seu ecossistema - React, Node.js, MongoDB, praticamente qualquer coisa que envolva o uso de JavaScript/JSON em qualquer camada do sistema - cria produtos usando a plataformas web para as mais reconhecidas marcas do mundo. Membro individual da "Node.js Foundation", colaborador na "Community Committee's Website Redesign Initiative".
+
+<br/>
+
+## Colaboradores
+
+Obrigado a todos os colaboradores! 🙏
+
+Os nossos colaboradores são membros que contribuem regularmente no repositório, sugerindo novas práticas recomendadas, realizam a triagem de problemas, analisam Pull Requests e muito mais. Se estiver interessado em nos ajudar a orientar milhares de pessoas a criar melhores aplicações Node.js, leia as nossas [diretrizes de colaborador](/.operations/CONTRIBUTING.md) 🎉
+
+| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
+| :--: | :--: |
+| [Ido Richter (Founder)](https://github.com/idori) | [Keith Holliday](https://github.com/TheHollidayInn) |
+
+### Colaboradores anteriores
+
+| <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"></a> |
+| :--: |
+| [Refael Ackermann](https://github.com/refack) |
+
+<br/>
+
+# Notas de Agradecimento
+
+Apreciamos qualquer contribuição, desde a correção de uma simples palavra até uma nova boa prática. Abaixo, segue a lista de todos os que contribuíram para este projeto. Uma 🌻 simboliza um Pull Request bem sucedido e uma ⭐ simboliza uma nova boa prática aprovada.
+
+### Flores
 
 🌻 [Kevin Rambaud](https://github.com/kevinrambaud),
 🌻 [Michael Fine](https://github.com/mfine15),
@@ -1106,10 +1173,50 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Gabe Kuslansky](https://github.com/GabeKuslansky),
 🌻 [Ron Gross](https://github.com/ripper234),
 🌻 [Valeri Karpov](https://github.com/vkarpov15)
+🌻 [Sergio](https://github.com/imsergiobernal),
+🌻 [Duarte Mendes](https://github.com/duartemendes),
+🌻 [Nikola Telkedzhiev](https://github.com/ntelkedzhiev),
+🌻 [Vitor Godoy](https://github.com/vitordagamagodoy),
+🌻 [Manish Saraan](https://github.com/manishsaraan),
+🌻 [Sangbeom Han](https://github.com/uronly14me),
+🌻 [blackmatch](https://github.com/blackmatch),
+🌻 [Joe Reeve](https://github.com/ISNIT0),
+🌻 [Marcelo Melo](https://github.com/marcelosdm),
+🌻 [Ryan Busby](https://github.com/BusbyActual),
+🌻 [Iman Mohamadi](https://github.com/ImanMh),
+🌻 [Remek Ambroziak](https://github.com/reod),
+🌻 [Sergii Paryzhskyi](https://github.com/HeeL),
+🌻 [Kapil Patel](https://github.com/kapilepatel),
+🌻 [迷渡](https://github.com/justjavac),
+🌻 [Hozefa](https://github.com/hozefaj),
+🌻 [Ethan](https://github.com/el-ethan),
+🌻 [Sam](https://github.com/milkdeliver),
+🌻 [Arlind](https://github.com/ArlindXh),
+🌻 [Teddy Toussaint](https://github.com/ttous),
+🌻 [Lewis](https://github.com/LewisArdern),
+🌻 [DouglasMV](https://github.com/DouglasMV),
+🌻 [Corey Cleary](https://github.com/coreyc),
+🌻 [Mehmet Perk](https://github.com/mperk),
+🌻 [Ryan Ouyang](https://github.com/ryanouyang),
+🌻 [Gabriel Lidenor](https://github.com/GabrielLidenor),
+🌻 [Roman](https://github.com/animir),
+🌻 [Francozeira](https://github.com/Francozeira),
+🌻 [Invvard](https://github.com/Invvard),
+🌻 [Rômulo Garofalo](https://github.com/romulogarofalo),
+🌻 [Tho Q Luong](https://github.com/thoqbk),
+🌻 [Burak Shen](https://github.com/Qeneke),
+🌻 [Martin Muzatko](https://github.com/MartinMuzatko),
+🌻 [zhuweiyou](https://github.com/zhuweiyou)
 
-### Stars <br/>
+### Estrelas
 
-⭐ [Kyle Martin](https://github.com/js-kyle)
-⭐ [Keith Holliday](https://github.com/TheHollidayInn)
+⭐ [Kyle Martin](https://github.com/js-kyle),
+⭐ [Keith Holliday](https://github.com/TheHollidayInn),
+⭐ [Corey Cleary](https://github.com/coreyc),
+⭐ [Maximilian Berkmann](https://github.com/Berkmann18),
+⭐ [DouglasMV](https://github.com/DouglasMV),
+⭐ [Marcelo Melo](https://github.com/marcelosdm),
+⭐ [Mehmet Perk](https://github.com/mperk),
+⭐ [Ryan Ouyang](https://github.com/ryanouyang)
 
 <br/><br/><br/>
