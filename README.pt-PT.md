@@ -14,6 +14,14 @@
 
 <br/>
 
+---
+
+Este idioma ainda está em fase de tradução, quer ajudar?
+
+---
+
+<br/>
+
 [![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Siga-nos no Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
 
 <br/>
@@ -25,7 +33,7 @@ progresso!)](#translations)
 
 <br/>
 
-###### Construído e mantido pelo nosso [Comitê Diretivo](#comité-diretivo) e [Colaboradores](#colaboradores)
+###### Construído e mantido pelo nosso [Comité Diretivo](#comité-diretivo) e [Colaboradores](#colaboradores)
 
 # Bem-vindo! 3 coisas que você deve saber primeiro:
 
@@ -47,11 +55,10 @@ remeterá para exemplos de código, citações de blogs, e outras informações
 1.  [Estrutura do projeto (5)](#1-estrutura-do-projeto)
 2.  [Tratamento de erros (11) ](#2-tratamento-de-erros)
 3.  [Estilo de código (12) ](#3-estilo-de-código)
-4.  [Teste e qualidade geral (8) ](#4-teste-e-qualidade-geral)
-5.  [Entrar em produção (17) ](#5-entrar-em-produção)
-6.  :star: Novo: [Segurança (23)](#6-segurança)
-7.  Performance ([em breve](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state
-=open))
+4.  [Teste e qualidade geral (11) ](#4-teste-e-qualidade-geral)
+5.  [Entrar em produção (18) ](#5-entrar-em-produção)
+6.  [Segurança (25)](#6-segurança)
+7.  [Performance (1) (Em Progresso ✍️)](#7-performance)
 
 <br/><br/><br/>
 
@@ -68,7 +75,7 @@ Tal monólito desacelera os programadores quando tentam incorporar novos recurso
 alterações e têm medo de quebrar outros componentes dependentes - as implementações tornam-se mais lentas e 
 arriscadas. Também é mais difícil de escalar quando as unidades de negócios não estão separadas.
 
-🔗 [**Mais informações: estrutura em componentes**](/sections/projectstructre/breakintcomponents.md)
+🔗 [**Mais informações: estrutura em componentes**](/sections/projectstructre/breakintcomponents.pt-PT.md)
 
 <br/><br/>
 
@@ -83,7 +90,7 @@ torna a aplicação dependente e acessível somente pelo Express.
 **Caso contrário:** Aplicações que misturam objetos da web com outras camadas não podem ser acedidos pelo código de 
 teste, CRON jobs e outros *callers* que não o Express.
 
-🔗 [**Mais informações: organize a aplicação em camadas**](/sections/projectstructre/createlayers.md)
+🔗 [**Mais informações: organize a aplicação em camadas**](/sections/projectstructre/createlayers.pt-PT.md)
 
 <br/><br/>
 
@@ -95,7 +102,7 @@ projetos.
 
 **Caso contrário:** terá que inventar a sua própria implantação e dependência.
 
-🔗 [**Mais informações: estrutura por característica**](/sections/projectstructre/wraputilities.md)
+🔗 [**Mais informações: estrutura por característica**](/sections/projectstructre/wraputilities.pt-PT.md)
 
 <br/><br/>
 
@@ -109,7 +116,7 @@ responsabilidades de rede (WWW). Para uma estrutura ainda melhor, defina a sua d
 gerar relatórios de cobertura). Provavelmente não será um grande prazer manter centenas de linhas de código num 
 único arquivo.
 
-🔗 [**Mais informações: separar o 'app' e 'server' no Express**](/sections/projectstructre/separateexpress.md)
+🔗 [**Mais informações: separar o 'app' e 'server' no Express**](/sections/projectstructre/separateexpress.pt-PT.md)
 
 <br/><br/>
 
@@ -124,7 +131,7 @@ tais como o [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.co
 **Caso contrário:** Não satisfazer qualquer um desses requisitos de configuração simplesmente atrapalhará a equipa
  de desenvolvimento ou devops. Provavelmente ambas.
 
-🔗 [**Mais informações: boas práticas de configuração**](/sections/projectstructre/configguide.md)
+🔗 [**Mais informações: boas práticas de configuração**](/sections/projectstructre/configguide.pt-PT.md)
 
 <br/><br/><br/>
 
@@ -142,11 +149,11 @@ tais como o [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.co
 código de difícil de manter devido à mistura do tratamento do erro com o restante código, _nesting_ excessivo e 
 padrões de código inadequados.
 
-🔗 [**Mais informações: evitar _callbacks_**](/sections/errorhandling/asyncerrorhandling.md)
+🔗 [**Mais informações: evitar _callbacks_**](/sections/errorhandling/asyncerrorhandling.pt-PT.md)
 
 <br/><br/>
 
-## ![✔] 2.2 Utilize apenas o objeto _Error_
+## ![✔] 2.2 Utilize apenas o objeto _Error_ interno
 
 **TL;DR:** Muitas vezes são lançados erros com uma string ou com um tipo personalizado – isso complica a lógica de 
 tratamento de erros e a interoperabilidade entre módulos. Quer rejeite uma promessa, lance uma exceção ou emita um 
@@ -156,7 +163,7 @@ erro – utilizar apenas o objeto _Error_ aumentará a uniformidade e evitará a
  de erros muito mais difícil. Além disso, usar tipos personalizados para descrever erros pode levar à perda de 
  informação de erros críticos, como o _stack trace_!
 
-🔗 [**Mais informações: utilizar o objeto Error**](/sections/errorhandling/useonlythebuiltinerror.md)
+🔗 [**Mais informações: utilizar o objeto Error**](/sections/errorhandling/useonlythebuiltinerror.pt-PT.md)
 
 <br/><br/>
 
@@ -173,7 +180,7 @@ manter a aplicação ativa mesmo quando ocorre um problema desconhecido (erro de
 comportamento imprevisível. Diferenciar os dois tipos de erro permite planear o que apresentar ao utilizador e aplicar 
 uma abordagem equilibrada baseada no contexto.
 
-🔗 [**Mais informações: erro operacional vs programador**](/sections/errorhandling/operationalvsprogrammererror.md)
+🔗 [**Mais informações: erro operacional vs programador**](/sections/errorhandling/operationalvsprogrammererror.pt-PT.md)
 
 <br/><br/>
 
@@ -186,29 +193,29 @@ uma abordagem equilibrada baseada no contexto.
 **Caso contrário:** Não tratar os erros num único local levará à duplicação de código e, provavelmente, a erros 
 tratados incorretamente.
 
-🔗 [**Mais informações: tratar os erros num local centralizado**](/sections/errorhandling/centralizedhandling.md)
+🔗 [**Mais informações: tratar os erros num local centralizado**](/sections/errorhandling/centralizedhandling.pt-PT.md)
 
 <br/><br/>
 
-## ![✔] 2.5 Documentar erros da API com o Swagger
+## ![✔] 2.5 Documentar erros da API com o Swagger ou GraphQL
 
-**TL;DR:** Disponibilize os erros que podem ser devolvidos pela API. Desta forma, quem a utiliza pode lidar com 
-esses detalhes sem causar falhas. Tal, geralmente é feito com estruturas de documentação da API REST, como o Swagger.
+**TL;DR:** Permita que os utilizadores da sua API saibam quais são os erros que podem ser retornados para que possam ser tratados e não causarem falhas. Para APIs RESTful geralmente é feito com frameworks de documentação REST API, como o Swagger. Se usar o GraphQL, também pode utilizar o seu esquema e comentários.
 
 **Caso contrário:** Um cliente da API pode "rebentar" e reiniciar apenas porque lhe foi devolvido um erro que não 
 consegue interpretar. Nota: o cliente da API pode ser você (muito comum num ambiente de microsserviços)
 
-🔗 [**Mais informações: documentar erros no Swagger**](/sections/errorhandling/documentingusingswagger.md)
+🔗 [**Mais informações: documentar erros no Swagger**](/sections/errorhandling/documentingusingswagger.pt-PT.md)
 
 <br/><br/>
 
-## ![✔] 2.6 Shut the process gracefully when a stranger comes to town
+## ![✔] 2.6 Reiniciar o processo
 
-**TL;DR:** When an unknown error occurs (a developer error, see best practice number #3)- there is uncertainty about the application healthiness. A common practice suggests restarting the process carefully using a ‘restarter’ tool like Forever and PM2
+**TL;DR:** Quando ocorre um erro desconhecido (um erro de programação, veja a boa prática #3) - não há certeza sobre a integridade da aplicação. Uma prática comum consiste em reiniciar o processo utilizando uma ferramenta como o [Forever](https://www.npmjs.com/package/forever) ou [PM2](http://pm2.keymetrics.io/).
 
-**Caso contrário:** When an unfamiliar exception is caught, some object might be in a faulty state (e.g an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
+**Caso contrário:** Quando uma exceção desconhecida é capturada, algum objeto pode ficar com o seu estado incorreto (por exemplo, um *event emitter* que é usado globalmente e que deixa de disparar eventos devido a alguma falha interna) e todas as requisições futuras podem falhar
 
-🔗 [**Mais informações: shutting the process**](/sections/errorhandling/shuttingtheprocess.md)
+
+🔗 [**Mais informações: Reiniciar o processo**](/sections/errorhandling/shuttingtheprocess.pt-PT.md)
 
 <br/><br/>
 
@@ -218,7 +225,7 @@ consegue interpretar. Nota: o cliente da API pode ser você (muito comum num amb
 
 **Caso contrário:** Skimming through console.logs or manually through messy text file without querying tools or a decent log viewer might keep you busy at work until late
 
-🔗 [**Mais informações: using a mature logger**](/sections/errorhandling/usematurelogger.md)
+🔗 [**Mais informações: using a mature logger**](/sections/errorhandling/usematurelogger.pt-PT.md)
 
 <br/><br/>
 
@@ -228,7 +235,7 @@ consegue interpretar. Nota: o cliente da API pode ser você (muito comum num amb
 
 **Caso contrário:** Without testing, whether automatically or manually, you can’t rely on our code to return the right errors. Without meaningful errors – there’s no error handling
 
-🔗 [**Mais informações: testing error flows**](/sections/errorhandling/testingerrorflows.md)
+🔗 [**Mais informações: testing error flows**](/sections/errorhandling/testingerrorflows.pt-PT.md)
 
 <br/><br/>
 
@@ -238,7 +245,7 @@ consegue interpretar. Nota: o cliente da API pode ser você (muito comum num amb
 
 **Caso contrário:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which are your slowest code parts under real-world scenario and how these affect the UX
 
-🔗 [**Mais informações: using APM products**](/sections/errorhandling/apmproducts.md)
+🔗 [**Mais informações: using APM products**](/sections/errorhandling/apmproducts.pt-PT.md)
 
 <br/><br/>
 
@@ -248,7 +255,7 @@ consegue interpretar. Nota: o cliente da API pode ser você (muito comum num amb
 
 **Caso contrário:** Your errors will get swallowed and leave no trace. Nothing to worry about
 
-🔗 [**Mais informações: catching unhandled promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.md)
+🔗 [**Mais informações: catching unhandled promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.pt-PT.md)
 
 <br/><br/>
 
@@ -258,7 +265,7 @@ consegue interpretar. Nota: o cliente da API pode ser você (muito comum num amb
 
 **Caso contrário:** Consider this – your function expects a numeric argument “Discount” which the caller forgets to pass, later on, your code checks if Discount!=0 (amount of allowed discount is greater than zero), then it will allow the user to enjoy a discount. OMG, what a nasty bug. Can you see it?
 
-🔗 [**Mais informações: failing fast**](/sections/errorhandling/failfast.md)
+🔗 [**Mais informações: failing fast**](/sections/errorhandling/failfast.pt-PT.md)
 
 <br/><br/><br/>
 
@@ -271,6 +278,8 @@ consegue interpretar. Nota: o cliente da API pode ser você (muito comum num amb
 **TL;DR:** [ESLint](https://eslint.org) is the de-facto standard for checking possible code errors and fixing code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Though ESLint can automatically fix code styles, other tools like [prettier](https://www.npmjs.com/package/prettier) and [beautify](https://www.npmjs.com/package/js-beautify) are more powerful in formatting the fix and work in conjunction with ESLint
 
 **Caso contrário:** Developers will focus on tedious spacing and line-width concerns and time might be wasted overthinking about the project's code style
+
+🔗 [**Mais informações: Using ESLint and Prettier**](/sections/codestylepractices/eslint_prettier.pt-PT.md)
 
 <br/><br/>
 
@@ -431,7 +440,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** Longer code (in ES5 functions) is more prone to bugs and cumbersome to read
 
-🔗 [**Read mode: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
+🔗 [**Mais informações: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
 
 <br/><br/><br/>
 
@@ -453,6 +462,8 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** You may let pass some anti-pattern and possible vulnerable code to your production environment.
 
+🔗 [**Mais informações: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.pt-PT.md)
+
 <br/><br/>
 
 ## ![✔] 4.3 Carefully choose your CI platform (Jenkins vs CircleCI vs Travis vs Rest of the world)
@@ -461,7 +472,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
 
-🔗 [**Mais informações: Choosing CI platform**](/sections/testingandquality/citools.md)
+🔗 [**Mais informações: Choosing CI platform**](/sections/testingandquality/citools.pt-PT.md)
 
 <br/><br/>
 
@@ -470,6 +481,8 @@ All statements above will return false if used with `===`
 **TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [nsp](https://github.com/nodesecurity/nsp) that can be invoked from your CI on every build
 
 **Caso contrário:** Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
+
+🔗 [**Mais informações: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.pt-PT.md)
 
 <br/><br/>
 
@@ -511,8 +524,25 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** With poor code quality, bugs and performance will always be an issue that no shiny new library or state of the art features can fix.
 
-🔗 [**Mais informações: Refactoring!**](/sections/testingandquality/refactoring.md)
+<br/><br/>
 
+## ![✔] 4.10 Refactor regularly using static analysis tools
+
+**TL;DR:** Using static analysis tools helps by giving objective ways to improve code quality and keeps your code maintainable. You can add static analysis tools to your CI build to fail when it finds code smells. Its main selling points over plain linting are the ability to inspect quality in the context of multiple files (e.g. detect duplications), perform advanced analysis (e.g. code complexity) and follow the history and progress of code issues. Two examples of tools you can use are [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) and [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)).
+
+**Otherwise:** With poor code quality, bugs and performance will always be an issue that no shiny new library or state of the art features can fix
+
+🔗 [**Mais informações: Refactoring!**](/sections/testingandquality/refactoring.pt-PT.md)
+
+<br/><br/>
+
+## ![✔] 4.11 Carefully choose your CI platform (Jenkins vs CircleCI vs Travis vs Rest of the world)
+
+**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it should come with a vibrant ecosystem of plugins. [Jenkins](https://jenkins.io/) used to be the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Nowadays, it has become much easier to set up a CI solution using SaaS tools like [CircleCI](https://circleci.com) and others. These tools allow crafting a flexible CI pipeline without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
+
+**Otherwise:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
+
+🔗 [**Mais informações: Choosing CI platform**](/sections/testingandquality/citools.pt-PT.md)
 
 <br/><br/><br/>
 
@@ -526,7 +556,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** Failure === disappointed customers. Simple
 
-🔗 [**Mais informações: Monitoring!**](/sections/production/monitoring.md)
+🔗 [**Mais informações: Monitoring!**](/sections/production/monitoring.pt-PT.md)
 
 <br/><br/>
 
@@ -536,7 +566,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** You end-up with a black box that is hard to reason about, then you start re-writing all logging statements to add additional information
 
-🔗 [**Mais informações: Increase transparency using smart logging**](/sections/production/smartlogging.md)
+🔗 [**Mais informações: Increase transparency using smart logging**](/sections/production/smartlogging.pt-PT.md)
 
 <br/><br/>
 
@@ -546,7 +576,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** Your poor single thread will stay busy doing infrastructural tasks instead of dealing with your application core and performance will degrade accordingly
 
-🔗 [**Mais informações: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
+🔗 [**Mais informações: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.pt-PT.md)
 
 <br/><br/>
 
@@ -556,7 +586,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** QA will thoroughly test the code and approve a version that will behave differently at production. Even worse, different servers at the same production cluster might run different code
 
-🔗 [**Mais informações: Lock dependencies**](/sections/production/lockdependencies.md)
+🔗 [**Mais informações: Lock dependencies**](/sections/production/lockdependencies.pt-PT.md)
 
 <br/><br/>
 
@@ -566,7 +596,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** Running dozens of instances without a clear strategy and too many tools together (cluster management, docker, PM2) might lead to a DevOps chaos
 
-🔗 [**Mais informações: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
+🔗 [**Mais informações: Guard process uptime using the right tool**](/sections/production/guardprocess.pt-PT.md)
 
 <br/><br/>
 
@@ -576,7 +606,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.js utilizes only 1 (even using PaaS services like AWS beanstalk!)
 
-🔗 [**Mais informações: Utilize all CPU cores**](/sections/production/utilizecpu.md)
+🔗 [**Mais informações: Utilize all CPU cores**](/sections/production/utilizecpu.pt-PT.md)
 
 <br/><br/>
 
@@ -586,7 +616,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
 
-🔗 [**Mais informações: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
+🔗 [**Mais informações: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.pt-PT.md)
 
 <br/><br/>
 
@@ -596,7 +626,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real-world scenario and how these affects the UX
 
-🔗 [**Mais informações: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
+🔗 [**Mais informações: Discover errors and downtime using APM products**](/sections/production/apmproducts.pt-PT.md)
 
 <br/><br/>
 
@@ -606,7 +636,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** A world champion IT/DevOps guy won’t save a system that is badly written
 
-🔗 [**Mais informações: Make your code production-ready**](/sections/production/productoncode.md)
+🔗 [**Mais informações: Make your code production-ready**](/sections/production/productioncode.pt-PT.md)
 
 <br/><br/>
 
@@ -616,7 +646,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** Your process memory might leak a hundred megabytes a day like how it happened at [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
 
-🔗 [**Mais informações: Measure and guard the memory usage**](/sections/production/measurememory.md)
+🔗 [**Mais informações: Measure and guard the memory usage**](/sections/production/measurememory.pt-PT.md)
 
 <br/><br/>
 
@@ -626,7 +656,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** Your single Node thread will be busy streaming hundreds of html/images/angular/react files instead of allocating all its resources for the task it was born for – serving dynamic content
 
-🔗 [**Mais informações: Get your frontend assets out of Node**](/sections/production/frontendout.md)
+🔗 [**Mais informações: Get your frontend assets out of Node**](/sections/production/frontendout.pt-PT.md)
 
 <br/><br/>
 
@@ -636,7 +666,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
 
-🔗 [**Mais informações: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
+🔗 [**Mais informações: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.pt-PT.md)
 
 <br/><br/>
 
@@ -646,7 +676,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
 
-🔗 [**Mais informações: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
+🔗 [**Mais informações: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.pt-PT.md)
 
 <br/><br/>
 
@@ -656,7 +686,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** Looking at a production error log without the context – what happened before – makes it much harder and slower to reason about the issue
 
-🔗 [**Mais informações: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
+🔗 [**Mais informações: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.pt-PT.md)
 
 <br/><br/>
 
@@ -666,7 +696,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** Omitting this simple property might greatly degrade performance. For example, when using Express for server-side rendering omitting `NODE_ENV` makes the slower by a factor of three!
 
-🔗 [**Mais informações: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
+🔗 [**Mais informações: Set NODE_ENV=production**](/sections/production/setnodeenv.pt-PT.md)
 
 <br/><br/>
 
@@ -682,13 +712,24 @@ All statements above will return false if used with `===`
 
 **TL;DR:** Ensure you are using an LTS version of Node.js to receive critical bug fixes, security updates and performance improvements
 
-**Caso contrário:** Newly discovered bugs or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain
+**Otherwise:** Newly discovered bugs or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain
 
-🔗 [**Mais informações: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
+🔗 [**Mais informações: Use an LTS release of Node.js**](/sections/production/LTSrelease.pt-PT.md)
+
+<br/><br/>
+
+## ![✔] 5.18. Don't route logs within the app
+
+**TL;DR:** Log destinations should not be hard-coded by developers within the application code, but instead should be defined by the execution environment the application runs in. Developers should write logs to `stdout` using a logger utility and then let the execution environment (container, server, etc.) pipe the `stdout` stream to the appropriate destination (i.e. Splunk, Graylog, ElasticSearch, etc.).
+
+**Otherwise:** Application handling log routing === hard to scale, loss of logs, poor separation of concerns
+
+🔗 [**Mais informações: Log Routing**](/sections/production/logrouting.pt-PT.md)
 
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Voltar ao início</a></p>
+
 
 # `6. Segurança`
 
@@ -705,7 +746,7 @@ All statements above will return false if used with `===`
 **Caso contrário:** What could have been a straightforward security weakness during development becomes a major issue in production. Also, the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories
 
 
-🔗 [**Mais informações: Lint rules**](sections/security/lintrules.md)
+🔗 [**Mais informações: Lint rules**](sections/security/lintrules.pt-PT.md)
 
 <br/><br/>
 
@@ -717,7 +758,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** An application could be subject to an attack resulting in a denial of service where real users receive a degraded or unavailable service.
 
-🔗 [**Mais informações: Implement rate limiting**](sections/security/limitrequests.md)
+🔗 [**Mais informações: Implement rate limiting**](sections/security/limitrequests.pt-PT.md)
 
 <br/><br/>
 
@@ -731,7 +772,7 @@ All statements above will return false if used with `===`
 **Caso contrário:** Source control, even for private repositories, can mistakenly be made public, at which point all secrets are exposed. Access to source control for an external party will inadvertently provide access to related systems (databases, apis, services, etc).
 
 
-🔗 [**Mais informações: Secret management**](sections/security/secretmanagement.md)
+🔗 [**Mais informações: Secret management**](sections/security/secretmanagement.pt-PT.md)
 
 <br/><br/>
 
@@ -744,7 +785,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** Unvalidated or unsanitized user input could lead to operator injection when working with MongoDB for NoSQL, and not using a proper sanitization system or ORM will easily allow SQL injection attacks, creating a giant vulnerability.
 
-🔗 [**Mais informações: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.md)
+🔗 [**Mais informações: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.pt-PT.md)
 
 <br/><br/>
 
@@ -754,7 +795,7 @@ All statements above will return false if used with `===`
 **TL;DR:** These is a collection of security advice that are not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
 
 
-🔗 [**Mais informações: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
+🔗 [**Mais informações: Common security best practices**](/sections/security/commonsecuritybestpractices.pt-PT.md)
 
 <br/><br/>
 
@@ -767,7 +808,7 @@ All statements above will return false if used with `===`
 **Caso contrário:** Attackers could perform direct attacks on your application's users, leading huge security vulnerabilities
 
 
-🔗 [**Mais informações: Using secure headers in your application**](/sections/security/secureheaders.md)
+🔗 [**Mais informações: Using secure headers in your application**](/sections/security/secureheaders.pt-PT.md)
 
 <br/><br/>
 
@@ -779,7 +820,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** An attacker could detect your web framework and attack all its known vulnerabilities.
 
-🔗 [**Mais informações: Dependency security**](/sections/security/dependencysecurity.md)
+🔗 [**Mais informações: Dependency security**](/sections/security/dependencysecurity.pt-PT.md)
 
 <br/><br/>
 
@@ -793,7 +834,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** Passwords or secrets that are persisted without using a secure function are vulnerable to brute forcing and dictionary attacks that will lead to their disclosure eventually.
 
-🔗 [**Mais informações: Use Bcrypt**](/sections/security/bcryptpasswords.md)
+🔗 [**Mais informações: Use Bcrypt**](/sections/security/bcryptpasswords.pt-PT.md)
 
 <br/><br/>
 
@@ -805,7 +846,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** An attacker might store a malicious JavaScript code in your DB which will then be sent as-is to the poor clients
 
-🔗 [**Mais informações: Escape output**](/sections/security/escape-output.md)
+🔗 [**Mais informações: Escape output**](/sections/security/escape-output.pt-PT.md)
 
 <br/><br/>
 
@@ -817,7 +858,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** Your generosity and permissive approach greatly increases the attack surface and encourages the attacker to try out many inputs until they find some combination to crash the application
 
-🔗 [**Mais informações: Validate incoming JSON schemas**](/sections/security/validation.md)
+🔗 [**Mais informações: Validate incoming JSON schemas**](/sections/security/validation.pt-PT.md)
 
 <br/><br/>
 
@@ -831,7 +872,7 @@ All statements above will return false if used with `===`
 **Caso contrário:** Expired, or misplaced tokens could be used maliciously by a third party to access an application and impersonate the owner of the token.
 
 
-🔗 [**Mais informações: Blacklist JSON Web Tokens**](/sections/security/expirejwt.md)
+🔗 [**Mais informações: Blacklist JSON Web Tokens**](/sections/security/expirejwt.pt-PT.md)
 
 <br/><br/>
 
@@ -844,7 +885,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** An attacker can issue unlimited automated password attempts to gain access to privileged accounts on an application
 
-🔗 [**Mais informações: Login rate limiting**](/sections/security/login-rate-limit.md)
+🔗 [**Mais informações: Login rate limiting**](/sections/security/login-rate-limit.pt-PT.md)
 
 <br/><br/>
 
@@ -858,7 +899,7 @@ All statements above will return false if used with `===`
 **Caso contrário:** An attacker who manages to run a script on the server gets unlimited power over the local machine (e.g. change iptable and re-route traffic to his server)
 
 
-🔗 [**Mais informações: Run Node.js as non-root user**](/sections/security/non-root-user.md)
+🔗 [**Mais informações: Run Node.js as non-root user**](/sections/security/non-root-user.pt-PT.md)
 
 <br/><br/>
 
@@ -872,7 +913,7 @@ All statements above will return false if used with `===`
 **Caso contrário:** Your application will have to deal with large requests, unable to process the other important work it has to accomplish, leading to performance implications and vulnerability towards DOS attacks
 
 
-🔗 [**Mais informações: Limit payload size**](/sections/security/requestpayloadsizelimit.md)
+🔗 [**Mais informações: Limit payload size**](/sections/security/requestpayloadsizelimit.pt-PT.md)
 
 <br/><br/>
 
@@ -887,7 +928,7 @@ All statements above will return false if used with `===`
 **Caso contrário:** Malicious JavaScript code finds a way into a text passed into `eval` or other real-time evaluating JavaScript language functions, and will gain complete access to JavaScript permissions on the page. This vulnerability is often manifested as an XSS attack.
 
 
-🔗 [**Mais informações: Avoid JavaScript eval statements**](/sections/security/avoideval.md)
+🔗 [**Mais informações: Avoid JavaScript eval statements**](/sections/security/avoideval.pt-PT.md)
 
 <br/><br/>
 
@@ -900,7 +941,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** Poorly written regexes could be susceptible to Regular Expression DoS attacks that will block the event loop completely. For example, the popular `moment` package was found vulnerable with malicious RegEx usage in November of 2017
 
-🔗 [**Mais informações: Prevent malicious RegEx**](/sections/security/regex.md)
+🔗 [**Mais informações: Prevent malicious RegEx**](/sections/security/regex.pt-PT.md)
 
 <br/><br/>
 
@@ -914,7 +955,7 @@ All statements above will return false if used with `===`
 **Caso contrário:** Malicious user input could find its way to a parameter that is used to require tampered files, for example a previously uploaded file on the filesystem, or access already existing system files.
 
 
-🔗 [**Mais informações: Safe module loading**](/sections/security/safemoduleloading.md)
+🔗 [**Mais informações: Safe module loading**](/sections/security/safemoduleloading.pt-PT.md)
 
 <br/><br/>
 
@@ -927,7 +968,7 @@ All statements above will return false if used with `===`
 **Caso contrário:** A plugin can attack through an endless variety of options like infinite loops, memory overloading, and access to sensitive process environment variables
 
 
-🔗 [**Mais informações: Run unsafe code in a sandbox**](/sections/security/sandbox.md)
+🔗 [**Mais informações: Run unsafe code in a sandbox**](/sections/security/sandbox.pt-PT.md)
 
 <br/><br/>
 
@@ -940,7 +981,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** Naive use of child processes could result in remote command execution or shell injection attacks due to malicious user input passed to an unsanitized system command.
 
-🔗 [**Mais informações: Be cautious when working with child processes**](/sections/security/childprocesses.md)
+🔗 [**Mais informações: Be cautious when working with child processes**](/sections/security/childprocesses.pt-PT.md)
 
 <br/><br/>
 
@@ -953,7 +994,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** Sensitive application details such as server file paths, third party modules in use, and other internal workflows of the application which could be exploited by an attacker, could be leaked from information found in a stack trace
 
-🔗 [**Mais informações: Hide error details from client**](/sections/security/hideerrors.md)
+🔗 [**Mais informações: Hide error details from client**](/sections/security/hideerrors.pt-PT.md)
 
 <br/><br/>
 
@@ -976,7 +1017,7 @@ All statements above will return false if used with `===`
 
 **Caso contrário:** Cookies could be sent over insecure connections, and an attacker might use session identification to identify the underlying framework of the web application, as well as module-specific vulnerabilities
 
-🔗 [**Mais informações: Cookie and session security**](/sections/security/sessions.md)
+🔗 [**Mais informações: Cookie and session security**](/sections/security/sessions.pt-PT.md)
 
 <br/><br/>
 
@@ -998,7 +1039,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** If an attacker discovers that you are not validating external, user-supplied input, they may exploit this vulnerability by posting specially-crafted links on forums, social media, and other public places to get users to click it.
 
-🔗 [**Read More: Prevent unsafe redirects**](/sections/security/saferedirects.md)
+🔗 [**Mais informações: Prevent unsafe redirects**](/sections/security/saferedirects.pt-PT.md)
 
 <br/><br/>
 
@@ -1010,7 +1051,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Your project's API keys, passwords or other secrets are open to be abused by anyone who comes across them, which may result in financial loss, impersonation, and other risks.
 
-🔗 [**Read More: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.md)
+🔗 [**Mais informações: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.pt-PT.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
@@ -1026,7 +1067,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** You'll have to maintain less performant projects where you could have simply used what was **already** available or dealt with a few more lines in exchange of a few more files.
 
-🔗 [**Read More: Native over user land utils**](/sections/performance/nativeoverutil.md)
+🔗 [**Mais informações: Native over user land utils**](/sections/performance/nativeoverutil.pt-PT.md)
 
 <br/><br/><br/>
 
