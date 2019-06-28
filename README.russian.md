@@ -202,23 +202,23 @@
 
 <br/><br/>
 
-## ![✔] 2.10 Catch unhandled promise rejections
+## ![✔] 2.10 Ловите необработанные отказы от обещаний
 
-**TL;DR:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explicitly handle. Even if your code is subscribed to `process.uncaughtException`! Overcome this by registering to the event `process.unhandledRejection`
+**TL;DR:** Любое исключение, выданное в обещании, будет проглочено и отброшено, если разработчик не забудет явно обработать. Даже если ваш код подписан на `process.uncaughtException`! Преодолейте это, зарегистрировавшись на событие `process.unhandledRejection`.
 
-**Иначе:** Your errors will get swallowed and leave no trace. Nothing to worry about
+**Иначе:** Ваши ошибки будут проглочены и не оставят следов. Не о чем беспокоиться!
 
-🔗 [**Read More: catching unhandled promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.md)
+🔗 [**Подробнее: перехват необработанного отказа от обещания**](/sections/errorhandling/catchunhandledpromiserejection.md)
 
 <br/><br/>
 
-## ![✔] 2.11 Fail fast, validate arguments using a dedicated library
+## ![✔] 2.11. Быстро проваливайтесь, проверяя аргументы, используя выделенную библиотеку
 
-**TL;DR:** This should be part of your Express best practices – Assert API input to avoid nasty bugs that are much harder to track later. The validation code is usually tedious unless you are using a very cool helper library like Joi
+**TL;DR:** Это должно быть частью вашей лучшей практики Express - вводите данные API, чтобы избежать неприятных ошибок, которые потом будет намного сложнее отследить. Код проверки обычно утомителен, если вы не используете очень классную вспомогательную библиотеку, такую ​​как Joi.
 
-**Иначе:** Consider this – your function expects a numeric argument “Discount” which the caller forgets to pass, later on, your code checks if Discount!=0 (amount of allowed discount is greater than zero), then it will allow the user to enjoy a discount. OMG, what a nasty bug. Can you see it?
+**Иначе:** Учтите это -- ваша функция ожидает числовой аргумент "Скидка", который вызывающая сторона забывает передать, позже ваш код проверяет, если Скидка !=0 (сумма разрешенной скидки больше нуля), тогда она позволит пользователю пользоваться скидкой. О, Боже, какая неприятная ошибка! Видишь?
 
-🔗 [**Read More: failing fast**](/sections/errorhandling/failfast.md)
+🔗 [**Подробнее: быстрый провал**](/sections/errorhandling/failfast.md)
 
 <br/><br/><br/>
 
@@ -226,73 +226,73 @@
 
 # `3. Практики стиля кода`
 
-## ![✔] 3.1 Use ESLint
+## ![✔] 3.1 Используйте ESLint
 
-**TL;DR:** [ESLint](https://eslint.org) is the de-facto standard for checking possible code errors and fixing code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Though ESLint can automatically fix code styles, other tools like [prettier](https://www.npmjs.com/package/prettier) and [beautify](https://www.npmjs.com/package/js-beautify) are more powerful in formatting the fix and work in conjunction with ESLint
+**TL;DR:** [ESLint](https://eslint.org) является стандартом де-факто для проверки возможных ошибок кода и исправления стиля кода не только для выявления проблем с пробелами, но и для выявления серьезных анти-паттернов, которые выдают разработчики ошибки без классификации. Хотя ESLint может автоматически исправлять стили кода, другие инструменты, такие как [prettier](https://www.npmjs.com/package/prettier) и [beautify](https://www.npmjs.com/package/js-beautify) более эффективны при форматировании исправлений и работают совместно с ESLint.
 
-**Иначе:** Developers will focus on tedious spacing and line-width concerns and time might be wasted overthinking the project's code style
+**Иначе:** Разработчики сосредоточатся на утомительных проблемах с интервалами и шириной линии, и время может быть потрачено впустую на продумывание стиля кода проекта.
 
-🔗 [**Read More: Using ESLint and Prettier**](/sections/codestylepractices/eslint_prettier.md)
-
-<br/><br/>
-
-## ![✔] 3.2 Node.js specific plugins
-
-**TL;DR:** On top of ESLint standard rules that cover vanilla JavaScript, add Node.js specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
-
-**Иначе:** Many faulty Node.js code patterns might escape under the radar. For example, developers might require(variableAsPath) files with a variable given as path which allows attackers to execute any JS script. Node.js linters can detect such patterns and complain early
+🔗 [**Подробнее: использование ESLint и Prettier**](/section/codestylepractices/eslint_prettier.md)
 
 <br/><br/>
 
-## ![✔] 3.3 Start a Codeblock's Curly Braces on the Same Line
+## ![✔] 3.2 Специальные плагины Node.js
 
-**TL;DR:** The opening curly braces of a code block should be on the same line as the opening statement
+**TL;DR:** Помимо стандартных правил ESLint, которые охватывают ванильный JavaScript, добавьте специальные плагины Node.js, например [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) и [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security).
 
-### Code Example
+**Иначе:** Многие неисправные шаблоны кода Node.js могут скрыться за радаром. Например, разработчикам могут потребоваться файлы (variableAsPath) с переменной, указанной в качестве пути, которая позволяет злоумышленникам выполнить любой сценарий JS. Линтеры Node.js могут обнаружить такие паттерны и заранее сообщить о проблеме.
+
+<br/><br/>
+
+##! [✔] 3.3 Начинайте кодовый блок фигурными скобками на той же линии.
+
+**TL;DR:** Открывающие фигурные скобки блока кода должны находиться на той же строке, что и оператор открытия.
+
+### Пример кода
 
 ```javascript
-// Do
+// Делайте так
 function someFunction() {
   // code block
 }
 
-// Avoid
+// Избегайте
 function someFunction()
 {
   // code block
 }
 ```
 
-**Иначе:** Deferring from this best practice might lead to unexpected results, as seen in the StackOverflow thread below:
+**Иначе:** Отклонение от этой передовой практики может привести к неожиданным результатам, как видно из топика StackOverflow ниже:
 
-🔗 [**Read more:** "Why do results vary based on curly brace placement?" (StackOverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
+🔗 [**Подробнее:** "Why do results vary based on curly brace placement?" (StackOverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
 <br/><br/>
 
-## ![✔] 3.4 Separate your statements properly
+##! [✔] 3.4 Разделяйте свои выражения правильно
 
-No matter if you use semicolons or not to separate your statements, knowing the common pitfalls of improper linebreaks or automatic semicolon insertion, will help you to eliminate regular syntax errors.
+Независимо от того, используете ли вы точки с запятой или нет для разделения своих операторов, знание общих ошибок неправильных разрывов строк или автоматической вставки точек с запятой поможет вам устранить обычные синтаксические ошибки.
 
-**TL;DR:** Use ESLint to gain awareness about separation concerns. [Prettier](https://prettier.io/) or [Standardjs](https://standardjs.com/) can automatically resolve these issues.
+**TL;DR:** Используйте ESLint для получения информации о проблемах разделения. [Prettier](https://prettier.io/) или [Standardjs](https://standardjs.com/) могут автоматически решить эти проблемы.
 
-**Иначе:** As seen in the previous section, JavaScript's interpreter automatically adds a semicolon at the end of a statement if there isn't one, or considers a statement as not ended where it should, which might lead to some undesired results. You can use assignments and avoid using immediate invoked function expressions to prevent most of unexpected errors.
+**Иначе:** Как видно из предыдущего раздела, интерпретатор JavaScript автоматически добавляет точку с запятой в конце оператора, если его нет, или считает, что оператор не завершен, где он должен, что может привести к нежелательным результатам. , Вы можете использовать присваивания и избегать немедленного вызова выражений функций для предотвращения большинства непредвиденных ошибок.
 
-### Code example
+### Пример кода
 
 ```javascript
-// Do
+// Делайте так
 function doThing() {
     // ...
 }
 
 doThing()
 
-// Do
+// Делайте так
 
 const items = [1, 2, 3]
 items.forEach(console.log)
 
-// Avoid — throws exception
+// Избегайте — будет выброшена ошибка
 const m = new Map()
 const a = [1,2,3]
 [...m.values()].forEach(console.log)
@@ -300,96 +300,96 @@ const a = [1,2,3]
 >  ^^^
 > SyntaxError: Unexpected token ...
 
-// Avoid — throws exception
+// Избегайте — будет выброшена ошибка
 const count = 2 // it tries to run 2(), but 2 is not a function
 (function doSomething() {
   // do something amazing
 }())
-// put a semicolon before the immediate invoked function, after the const definition, save the return value of the anonymous function to a variable or avoid IIFEs alltogether
+// ставим точку с запятой перед непосредственно вызванной функцией, после определения const сохраняем возвращаемое значение анонимной функции в переменной или вообще избегаем последовательного написания IIFE
 ```
 
-🔗 [**Read more:** "Semi ESLint rule"](https://eslint.org/docs/rules/semi)
-🔗 [**Read more:** "No unexpected multiline ESLint rule"](https://eslint.org/docs/rules/no-unexpected-multiline)
+🔗 [**Подробнее:** "Semi ESLint rule"](https://eslint.org/docs/rules/semi)
+🔗 [**Подробнее:** "No unexpected multiline ESLint rule"](https://eslint.org/docs/rules/no-unexpected-multiline)
 
 <br/><br/>
 
-## ![✔] 3.5 Name your functions
+## ![✔] 3.5 Назовите свои функции
 
-**TL;DR:** Name all functions, including closures and callbacks. Avoid anonymous functions. This is especially useful when profiling a node app. Naming all functions will allow you to easily understand what you're looking at when checking a memory snapshot
+**TL;DR:** Назовите все функции, включая замыкания и обратные вызовы. Избегайте анонимных функций. Это особенно полезно при профилировании приложения узла. Обозначение всех функций позволит вам легко понять, на что вы смотрите при проверке снимка памяти.
 
-**Иначе:** Debugging production issues using a core dump (memory snapshot) might become challenging as you notice significant memory consumption from anonymous functions
+**Иначе:** Отладка производственных проблем с использованием дампа ядра (снимока памяти) может стать сложной, так как вы замечаете значительное потребление памяти анонимными функциями.
 
 <br/><br/>
 
-## ![✔] 3.6 Use naming conventions for variables, constants, functions and classes
+## ![✔] 3.6 Используйте соглашения об именах переменных, констант, функций и классов
 
-**TL;DR:** Use **_lowerCamelCase_** when naming constants, variables and functions and **_UpperCamelCase_** (capital first letter as well) when naming classes. This will help you to easily distinguish between plain variables/functions, and classes that require instantiation. Use descriptive names, but try to keep them short
+**TL;DR:** Используйте **_lowerCamelCase_** при именовании констант, переменных и функций и **_UpperCamelCase_** (также с большой буквы) при именовании классов. Это поможет вам легко различать простые переменные/функции и классы, которые требуют реализации. Используйте описательные имена, но старайтесь, чтобы они были короткими.
 
-**Иначе:** Javascript is the only language in the world which allows invoking a constructor ("Class") directly without instantiating it first. Consequently, Classes and function-constructors are differentiated by starting with UpperCamelCase
+**Иначе:** Javascript -- это единственный язык в мире, который позволяет напрямую вызывать конструктор ("Class") без его инициализации. Следовательно, классы и конструкторы функций должщны различаться, начинаясь с UpperCamelCase.
 
-### Code Example
+### Пример кода
 
 ```javascript
-// for class name we use UpperCamelCase
+// для класса мы используем UpperCamelCase
 class SomeClassExample {}
 
-// for const names we use the const keyword and lowerCamelCase
+// для константы мы используем служебное слово const и lowerCamelCase
 const config = {
   key: 'value'
 };
 
-// for variables and functions names we use lowerCamelCase
+// для переменных и функций мы используем lowerCamelCase
 let someVariableExample = 'value';
 function doSomething() {}
 ```
 
 <br/><br/>
 
-## ![✔] 3.7 Prefer const over let. Ditch the var
+## ![✔] 3.7 Предпочитайте const, а не let. Забудьте var
 
-**TL;DR:** Using `const` means that once a variable is assigned, it cannot be reassigned. Preferring `const` will help you to not be tempted to use the same variable for different uses, and make your code clearer. If a variable needs to be reassigned, in a for loop, for example, use `let` to declare it. Another important aspect of `let` is that a variable declared using it is only available in the block scope in which it was defined. `var` is function scoped, not block scoped, and [shouldn't be used in ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) now that you have `const` and `let` at your disposal
+**TL;DR:** Использование `const` означает, что как только переменная назначена, она не может быть переназначена. Предпочтение `const` поможет вам не поддаваться искушению использовать одну и ту же переменную для разных целей и сделает ваш код более понятным. Если переменная должна быть переназначена, например, в цикле for используйте `let`, чтобы объявить ее. Другим важным аспектом `let` является то, что переменная, объявленная с ее использованием, доступна только в той области блока, в которой она была определена. `var` является областью функции, а не областью блока и [не должен использоваться в ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) теперь, когда у вас есть `const` и `let` в вашем распоряжении.
 
-**Иначе:** Debugging becomes way more cumbersome when following a variable that frequently changes
+**Иначе:** Отладка становится намного более громоздкой, когда необходимо следовать за переменной, которая часто изменяется.
 
-🔗 [**Read more: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
-
-<br/><br/>
-
-## ![✔] 3.8 Require modules first, not inside functions
-
-**TL;DR:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top but also avoids a couple of potential problems
-
-**Иначе:** Requires are run synchronously by Node.js. If they are called from within a function, it may block other requests from being handled at a more critical time. Also, if a required module or any of its own dependencies throw an error and crash the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function
+🔗 [**Подробнее: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
 
 <br/><br/>
 
-## ![✔] 3.9 Require modules by folders, opposed to the files directly
+## ![✔] 3.8 Подключайте модули вначале, а не внутри функций
 
-**TL;DR:** When developing a module/library in a folder, place an index.js file that exposes the module's internals so every consumer will pass through it. This serves as an 'interface' to your module and eases future changes without breaking the contract
+**TL;DR:** Подключайте модули в начале каждого файла, до и вне каких-либо функций. Эта простая рекомендация не только поможет вам легко и быстро определить зависимости файла прямо вверху, но и позволит избежать пары потенциальных проблем.
 
-**Иначе:** Changing the internal structure of files or the signature may break the interface with clients
+**Иначе:** Подключения выполняются синхронно с Node.js. Если они вызываются из функции, она может заблокировать обработку других запросов в более критическое время. Кроме того, если требуемый модуль или какая-либо из его собственных зависимостей выдает ошибку и приводит к сбою сервера, лучше узнать об этом как можно скорее, что может быть не так, если этот модуль требуется изнутри функции.
 
-### Code example
+<br/><br/>
+
+## ![✔] 3.9 Подключайте модули по папкам, а не по файлам напрямую
+
+**TL;DR:** При разработке модуля/библиотеки в папке поместите файл index.js, который раскрывает внутреннюю часть модуля, чтобы каждый потребитель проходил через него. Это служит "интерфейсом" для вашего модуля и облегчает будущие изменения, не нарушая контракт.
+
+**Иначе:** Изменение внутренней структуры файлов или подписи может нарушить интерфейс с клиентами.
+
+### Пример кода
 
 ```javascript
-// Do
+// Делайте так
 module.exports.SMSProvider = require('./SMSProvider');
 module.exports.SMSNumberResolver = require('./SMSNumberResolver');
 
-// Avoid
+// Избегайте
 module.exports.SMSProvider = require('./SMSProvider/SMSProvider.js');
 module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolver.js');
 ```
 
 <br/><br/>
 
-## ![✔] 3.10 Use the `===` operator
+## ![✔] 3.10 Используйте оператор `===`
 
-**TL;DR:** Prefer the strict equality operator `===` over the weaker abstract equality operator `==`. `==` will compare two variables after converting them to a common type. There is no type conversion in `===`, and both variables must be of the same type to be equal
+**TL;DR:** Предпочитайте оператор строгого равенства `===` более слабому абстрактному оператору равенства `==`. `==` сравнивает две переменные после преобразования их в общий тип. В `===` нет преобразования типов, и обе переменные должны иметь одинаковый тип, чтобы быть равными.
 
-**Иначе:** Unequal variables might return true when compared with the `==` operator
+**Иначе:** Неравные переменные могут возвращать true при сравнении с оператором `==`.
 
-### Code example
+### Пример кода
 
 ```javascript
 '' == '0'           // false
@@ -406,27 +406,27 @@ null == undefined   // true
 ' \t\r\n ' == 0     // true
 ```
 
-All statements above will return false if used with `===`
+Все приведенные выше операторы вернут false, если используются с `===`.
 
 <br/><br/>
 
-## ![✔] 3.11 Use Async Await, avoid callbacks
+## ![✔] 3.11 Используйте Async Await, избегайте колбэков
 
-**TL;DR:** Node 8 LTS now has full support for Async-await. This is a new way of dealing with asynchronous code which supersedes callbacks and promises. Async-await is non-blocking, and it makes asynchronous code look synchronous. The best gift you can give to your code is using async-await which provides a much more compact and familiar code syntax like try-catch
+**TL;DR:** Node 8 LTS теперь имеет полную поддержку Async-await. Это новый способ работы с асинхронным кодом, который заменяет обратные вызовы и обещания. Async-await не блокирует и делает асинхронный код синхронным. Лучший подарок, который вы можете дать своему коду, -- это использовать async-await, который обеспечивает гораздо более компактный и знакомый синтаксис кода, такой как try-catch.
 
-**Иначе:** Handling async errors in callback style is probably the fastest way to hell - this style forces to check errors all over, deal with awkward code nesting and makes it difficult to reason about the code flow
+**Иначе:** Обработка асинхронных ошибок в стиле обратного вызова, вероятно, самый быстрый путь в ад -- этот стиль вынуждает проверять ошибки повсюду, справляться с неудобным вложением кода и затрудняет рассуждение о потоке кода.
 
-🔗[**Read more:** Guide to async await 1.0](https://github.com/yortus/asyncawait)
+🔗 [**Подробнее:** Guide to async await 1.0](https://github.com/yortus/asyncawait)
 
 <br/><br/>
 
-## ![✔] 3.12 Use arrow function expressions (=>)
+## ![✔] 3.12 Используйте стрелочные функции (=>)
 
-**TL;DR:** Though it's recommended to use async-await and avoid function parameters when dealing with older APIs that accept promises or callbacks - arrow functions make the code structure more compact and keep the lexical context of the root function (i.e. `this`)
+**TL;DR:** Хотя рекомендуется использовать async-await и избегать параметров функций при работе со старыми API, которые принимают обещания или обратные вызовы -- стрелочные функции делают структуру кода более компактной и поддерживают лексический контекст корневой функции (т.к. `this`)
 
-**Иначе:** Longer code (in ES5 functions) is more prone to bugs and cumbersome to read
+**Иначе:** Более длинный код (в функциях ES5) более подвержен ошибкам и неудобен для чтения.
 
-🔗 [**Read more: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
+🔗 [**Подробнее: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
 
 <br/><br/><br/>
 
@@ -448,7 +448,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** A deployment just failed, a test named “Add product” failed. Does this tell you what exactly is malfunctioning?
 
-🔗 [**Read More: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
+🔗 [**Подробнее: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
 
 <br/><br/>
 
@@ -466,7 +466,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Consider a scenario where deployment is aborted due to failing tests, team is now going to spend precious investigation time that ends in a sad conclusion: the system works well, the tests however interfere with each other and break the build
 
-🔗 [**Read More: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
+🔗 [**Подробнее: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
 
 <br/><br/>
 
@@ -518,7 +518,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** With poor code quality, bugs and performance will always be an issue that no shiny new library or state of the art features can fix
 
-🔗 [**Read More: Refactoring!**](/sections/testingandquality/refactoring.md)
+🔗 [**Подробнее: Refactoring!**](/sections/testingandquality/refactoring.md)
 
 <br/><br/>
 
@@ -528,7 +528,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
 
-🔗 [**Read More: Choosing CI platform**](/sections/testingandquality/citools.md)
+🔗 [**Подробнее: Choosing CI platform**](/sections/testingandquality/citools.md)
 
 <br/><br/><br/>
 
@@ -543,7 +543,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Failure === disappointed customers. Simple
 
-🔗 [**Read More: Monitoring!**](/sections/production/monitoring.md)
+🔗 [**Подробнее: Monitoring!**](/sections/production/monitoring.md)
 
 <br/><br/>
 
@@ -553,7 +553,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** You end up with a black box that is hard to reason about, then you start re-writing all logging statements to add additional information
 
-🔗 [**Read More: Increase transparency using smart logging**](/sections/production/smartlogging.md)
+🔗 [**Подробнее: Increase transparency using smart logging**](/sections/production/smartlogging.md)
 
 <br/><br/>
 
@@ -563,7 +563,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Your poor single thread will stay busy doing infrastructural tasks instead of dealing with your application core and performance will degrade accordingly
 
-🔗 [**Read More: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
+🔗 [**Подробнее: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
 
 <br/><br/>
 
@@ -573,7 +573,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
 
-🔗 [**Read More: Lock dependencies**](/sections/production/lockdependencies.md)
+🔗 [**Подробнее: Lock dependencies**](/sections/production/lockdependencies.md)
 
 <br/><br/>
 
@@ -583,7 +583,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Running dozens of instances without a clear strategy and too many tools together (cluster management, docker, PM2) might lead to DevOps chaos
 
-🔗 [**Read More: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
+🔗 [**Подробнее: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
 
 <br/><br/>
 
@@ -593,7 +593,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.js utilizes only 1 (even using PaaS services like AWS beanstalk!)
 
-🔗 [**Read More: Utilize all CPU cores**](/sections/production/utilizecpu.md)
+🔗 [**Подробнее: Utilize all CPU cores**](/sections/production/utilizecpu.md)
 
 <br/><br/>
 
@@ -603,7 +603,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
 
-🔗 [**Read More: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
+🔗 [**Подробнее: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
 
 <br/><br/>
 
@@ -613,7 +613,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real-world scenario and how these affect the UX
 
-🔗 [**Read More: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
+🔗 [**Подробнее: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
 
 <br/><br/>
 
@@ -623,7 +623,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** A world champion IT/DevOps guy won’t save a system that is badly written
 
-🔗 [**Read More: Make your code production-ready**](/sections/production/productioncode.md)
+🔗 [**Подробнее: Make your code production-ready**](/sections/production/productioncode.md)
 
 <br/><br/>
 
@@ -633,7 +633,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Your process memory might leak a hundred megabytes a day like how it happened at [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
 
-🔗 [**Read More: Measure and guard the memory usage**](/sections/production/measurememory.md)
+🔗 [**Подробнее: Measure and guard the memory usage**](/sections/production/measurememory.md)
 
 <br/><br/>
 
@@ -643,7 +643,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Your single Node thread will be busy streaming hundreds of html/images/angular/react files instead of allocating all its resources for the task it was born for – serving dynamic content
 
-🔗 [**Read More: Get your frontend assets out of Node**](/sections/production/frontendout.md)
+🔗 [**Подробнее: Get your frontend assets out of Node**](/sections/production/frontendout.md)
 
 <br/><br/>
 
@@ -653,7 +653,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
 
-🔗 [**Read More: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
+🔗 [**Подробнее: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
 
 <br/><br/>
 
@@ -663,17 +663,17 @@ All statements above will return false if used with `===`
 
 **Иначе:** Keeping your code clean from vulnerabilities without dedicated tools will require you to constantly follow online publications about new threats. Quite tedious
 
-🔗 [**Read More: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
+🔗 [**Подробнее: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
 
 <br/><br/>
 
 ## ![✔] 5.14. Assign a transaction id to each log statement
 
-**TL;DR:** Assign the same identifier, transaction-id: {some value}, to each log entry within a single request. Then when inspecting errors in logs, easily conclude what happened before and after. Unfortunately, this is not easy to achieve in Node due to its async nature, see code examples inside
+**TL;DR:** Assign the same identifier, transaction-id: {some value}, to each log entry within a single request. Then when inspecting errors in logs, easily conclude what happened before and after. Unfortunately, this is not easy to achieve in Node due to its async nature, see Пример кодаs inside
 
 **Иначе:** Looking at a production error log without the context – what happened before – makes it much harder and slower to reason about the issue
 
-🔗 [**Read More: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
+🔗 [**Подробнее: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
 
 <br/><br/>
 
@@ -683,7 +683,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Omitting this simple property might greatly degrade performance. For example, when using Express for server-side rendering omitting `NODE_ENV` makes it slower by a factor of three!
 
-🔗 [**Read More: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
+🔗 [**Подробнее: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
 
 <br/><br/>
 
@@ -701,7 +701,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Newly discovered bugs or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain
 
-🔗 [**Read More: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
+🔗 [**Подробнее: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
 
 <br/><br/>
 
@@ -711,7 +711,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Application handling log routing === hard to scale, loss of logs, poor separation of concerns
 
-🔗 [**Read More: Log Routing**](/sections/production/logrouting.md)
+🔗 [**Подробнее: Log Routing**](/sections/production/logrouting.md)
 
 <br/><br/><br/>
 
@@ -727,11 +727,11 @@ All statements above will return false if used with `===`
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Make use of security-related linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to catch security vulnerabilities and issues as early as possible, preferably while they're being coded. This can help catching security weaknesses like using eval, invoking a child process or importing a module with a string literal (e.g. user input). Click 'Read more' below to see code examples that will get caught by a security linter
+**TL;DR:** Make use of security-related linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to catch security vulnerabilities and issues as early as possible, preferably while they're being coded. This can help catching security weaknesses like using eval, invoking a child process or importing a module with a string literal (e.g. user input). Click 'Read more' below to see Пример кодаs that will get caught by a security linter
 
 **Иначе:** What could have been a straightforward security weakness during development becomes a major issue in production. Also, the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories
 
-🔗 [**Read More: Lint rules**](/sections/security/lintrules.md)
+🔗 [**Подробнее: Lint rules**](/sections/security/lintrules.md)
 
 <br/><br/>
 
@@ -743,7 +743,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** An application could be subject to an attack resulting in a denial of service where real users receive a degraded or unavailable service.
 
-🔗 [**Read More: Implement rate limiting**](/sections/security/limitrequests.md)
+🔗 [**Подробнее: Implement rate limiting**](/sections/security/limitrequests.md)
 
 <br/><br/>
 
@@ -755,7 +755,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Source control, even for private repositories, can mistakenly be made public, at which point all secrets are exposed. Access to source control for an external party will inadvertently provide access to related systems (databases, apis, services, etc).
 
-🔗 [**Read More: Secret management**](/sections/security/secretmanagement.md)
+🔗 [**Подробнее: Secret management**](/sections/security/secretmanagement.md)
 
 <br/><br/>
 
@@ -767,7 +767,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Unvalidated or unsanitized user input could lead to operator injection when working with MongoDB for NoSQL, and not using a proper sanitization system or ORM will easily allow SQL injection attacks, creating a giant vulnerability.
 
-🔗 [**Read More: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.md)
+🔗 [**Подробнее: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.md)
 
 <br/><br/>
 
@@ -775,7 +775,7 @@ All statements above will return false if used with `===`
 
 **TL;DR:** This is a collection of security advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
 
-🔗 [**Read More: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
+🔗 [**Подробнее: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
 
 <br/><br/>
 
@@ -787,7 +787,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Attackers could perform direct attacks on your application's users, leading to huge security vulnerabilities
 
-🔗 [**Read More: Using secure headers in your application**](/sections/security/secureheaders.md)
+🔗 [**Подробнее: Using secure headers in your application**](/sections/security/secureheaders.md)
 
 <br/><br/>
 
@@ -799,7 +799,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** An attacker could detect your web framework and attack all its known vulnerabilities.
 
-🔗 [**Read More: Dependency security**](/sections/security/dependencysecurity.md)
+🔗 [**Подробнее: Dependency security**](/sections/security/dependencysecurity.md)
 
 <br/><br/>
 
@@ -811,7 +811,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Passwords or secrets that are persisted without using a secure function are vulnerable to brute forcing and dictionary attacks that will lead to their disclosure eventually.
 
-🔗 [**Read More: Use Bcrypt**](/sections/security/bcryptpasswords.md)
+🔗 [**Подробнее: Use Bcrypt**](/sections/security/bcryptpasswords.md)
 
 <br/><br/>
 
@@ -823,7 +823,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** An attacker might store malicious JavaScript code in your DB which will then be sent as-is to the poor clients
 
-🔗 [**Read More: Escape output**](/sections/security/escape-output.md)
+🔗 [**Подробнее: Escape output**](/sections/security/escape-output.md)
 
 <br/><br/>
 
@@ -835,7 +835,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Your generosity and permissive approach greatly increases the attack surface and encourages the attacker to try out many inputs until they find some combination to crash the application
 
-🔗 [**Read More: Validate incoming JSON schemas**](/sections/security/validation.md)
+🔗 [**Подробнее: Validate incoming JSON schemas**](/sections/security/validation.md)
 
 <br/><br/>
 
@@ -847,7 +847,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Expired, or misplaced tokens could be used maliciously by a third party to access an application and impersonate the owner of the token.
 
-🔗 [**Read More: Blacklist JSON Web Tokens**](/sections/security/expirejwt.md)
+🔗 [**Подробнее: Blacklist JSON Web Tokens**](/sections/security/expirejwt.md)
 
 <br/><br/>
 
@@ -862,7 +862,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** An attacker can issue unlimited automated password attempts to gain access to privileged accounts on an application
 
-🔗 [**Read More: Login rate limiting**](/sections/security/login-rate-limit.md)
+🔗 [**Подробнее: Login rate limiting**](/sections/security/login-rate-limit.md)
 
 <br/><br/>
 
@@ -874,7 +874,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** An attacker who manages to run a script on the server gets unlimited power over the local machine (e.g. change iptable and re-route traffic to his server)
 
-🔗 [**Read More: Run Node.js as non-root user**](/sections/security/non-root-user.md)
+🔗 [**Подробнее: Run Node.js as non-root user**](/sections/security/non-root-user.md)
 
 <br/><br/>
 
@@ -886,7 +886,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Your application will have to deal with large requests, unable to process the other important work it has to accomplish, leading to performance implications and vulnerability towards DOS attacks
 
-🔗 [**Read More: Limit payload size**](/sections/security/requestpayloadsizelimit.md)
+🔗 [**Подробнее: Limit payload size**](/sections/security/requestpayloadsizelimit.md)
 
 <br/><br/>
 
@@ -898,7 +898,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Malicious JavaScript code finds a way into text passed into `eval` or other real-time evaluating JavaScript language functions, and will gain complete access to JavaScript permissions on the page. This vulnerability is often manifested as an XSS attack.
 
-🔗 [**Read More: Avoid JavaScript eval statements**](/sections/security/avoideval.md)
+🔗 [**Подробнее: Avoid JavaScript eval statements**](/sections/security/avoideval.md)
 
 <br/><br/>
 
@@ -910,7 +910,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Poorly written regexes could be susceptible to Regular Expression DoS attacks that will block the event loop completely. For example, the popular `moment` package was found vulnerable with malicious RegEx usage in November of 2017
 
-🔗 [**Read More: Prevent malicious RegEx**](/sections/security/regex.md)
+🔗 [**Подробнее: Prevent malicious RegEx**](/sections/security/regex.md)
 
 <br/><br/>
 
@@ -922,7 +922,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Malicious user input could find its way to a parameter that is used to require tampered files, for example, a previously uploaded file on the filesystem, or access already existing system files.
 
-🔗 [**Read More: Safe module loading**](/sections/security/safemoduleloading.md)
+🔗 [**Подробнее: Safe module loading**](/sections/security/safemoduleloading.md)
 
 <br/><br/>
 
@@ -934,7 +934,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** A plugin can attack through an endless variety of options like infinite loops, memory overloading, and access to sensitive process environment variables
 
-🔗 [**Read More: Run unsafe code in a sandbox**](/sections/security/sandbox.md)
+🔗 [**Подробнее: Run unsafe code in a sandbox**](/sections/security/sandbox.md)
 
 <br/><br/>
 
@@ -946,7 +946,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Naive use of child processes could result in remote command execution or shell injection attacks due to malicious user input passed to an unsanitized system command.
 
-🔗 [**Read More: Be cautious when working with child processes**](/sections/security/childprocesses.md)
+🔗 [**Подробнее: Be cautious when working with child processes**](/sections/security/childprocesses.md)
 
 <br/><br/>
 
@@ -958,7 +958,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Sensitive application details such as server file paths, third party modules in use, and other internal workflows of the application which could be exploited by an attacker, could be leaked from information found in a stack trace
 
-🔗 [**Read More: Hide error details from client**](/sections/security/hideerrors.md)
+🔗 [**Подробнее: Hide error details from client**](/sections/security/hideerrors.md)
 
 <br/><br/>
 
@@ -980,7 +980,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Cookies could be sent over insecure connections, and an attacker might use session identification to identify the underlying framework of the web application, as well as module-specific vulnerabilities
 
-🔗 [**Read More: Cookie and session security**](/sections/security/sessions.md)
+🔗 [**Подробнее: Cookie and session security**](/sections/security/sessions.md)
 
 <br/><br/>
 
@@ -1002,7 +1002,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** If an attacker discovers that you are not validating external, user-supplied input, they may exploit this vulnerability by posting specially-crafted links on forums, social media, and other public places to get users to click it.
 
-🔗 [**Read More: Prevent unsafe redirects**](/sections/security/saferedirects.md)
+🔗 [**Подробнее: Prevent unsafe redirects**](/sections/security/saferedirects.md)
 
 <br/><br/>
 
@@ -1014,7 +1014,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** Your project's API keys, passwords or other secrets are open to be abused by anyone who comes across them, which may result in financial loss, impersonation, and other risks.
 
-🔗 [**Read More: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.md)
+🔗 [**Подробнее: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#оглавление">⬆ К началу</a></p>
@@ -1030,7 +1030,7 @@ All statements above will return false if used with `===`
 
 **Иначе:** You'll have to maintain less performant projects where you could have simply used what was **already** available or dealt with a few more lines in exchange of a few more files.
 
-🔗 [**Read More: Native over user land utils**](/sections/performance/nativeoverutil.md)
+🔗 [**Подробнее: Native over user land utils**](/sections/performance/nativeoverutil.md)
 
 <br/><br/><br/>
 
