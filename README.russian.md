@@ -598,87 +598,87 @@ null == undefined   // true
 
 <br/><br/>
 
-## ![✔] 5.7. Create a ‘maintenance endpoint’
+## ![✔] 5.7. Создать "конечную точку обслуживания"
 
-**TL;DR:** Expose a set of system-related information, like memory usage and REPL, etc in a secured API. Although it’s highly recommended to rely on standard and battle-tests tools, some valuable information and operations are easier done using code
+**TL;DR:** Предоставьте набор информации, связанный с системой, например, использование памяти и REPL, и т.д. в защищенном API. Хотя настоятельно рекомендуется полагаться на стандартные инструменты и инструменты для боевых испытаний, некоторые ценные сведения и операции легче выполнять с помощью кода.
 
-**Иначе:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
+**Иначе:** Вы обнаружите, что выполняете много "диагностических развертываний" -- отправка кода в производство только для извлечения некоторой информации в диагностических целях.
 
 🔗 [**Подробнее: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
 
 <br/><br/>
 
-## ![✔] 5.8. Discover errors and downtime using APM products
+## ![✔] 5.8. Обнаружение ошибок и простоев с использованием продуктов APM
 
-**TL;DR:** Application monitoring and performance products (a.k.a APM) proactively gauge codebase and API so they can auto-magically go beyond traditional monitoring and measure the overall user-experience across services and tiers. For example, some APM products can highlight a transaction that loads too slow on the end-users side while suggesting the root cause
+**TL;DR:** Продукты для мониторинга приложений и производительности (a.k.a APM) проактивно измеряют кодовую базу и API, поэтому они могут автоматически выходить за рамки традиционного мониторинга и измерять общее взаимодействие пользователей между службами и уровнями. Например, некоторые продукты APM могут выделять транзакцию, которая загружается слишком медленно на стороне конечного пользователя, предлагая при этом основную причину.
 
-**Иначе:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real-world scenario and how these affect the UX
+**Иначе:** Вы можете потратить огромные усилия на измерение производительности и времени простоя API, возможно, вы никогда не узнаете, какие ваши самые медленные части кода в реальном сценарии и как они влияют на UX.
 
 🔗 [**Подробнее: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
 
 <br/><br/>
 
-## ![✔] 5.9. Make your code production-ready
+## ![✔] 5.9. Делайте ваш код готовым к работе
 
-**TL;DR:** Code with the end in mind, plan for production from day 1. This sounds a bit vague so I’ve compiled a few development tips that are closely related to production maintenance (click Gist below)
+**TL;DR:** Код с конечной целью, план производства с первого дня. Это звучит немного расплывчато, поэтому я собрал несколько советов по разработке, которые тесно связаны с техническим обслуживанием производства (см. ниже)
 
-**Иначе:** A world champion IT/DevOps guy won’t save a system that is badly written
+**Иначе:** Чемпион мира по IT/DevOps не спасет плохо написанную систему.
 
 🔗 [**Подробнее: Make your code production-ready**](/sections/production/productioncode.md)
 
 <br/><br/>
 
-## ![✔] 5.10. Measure and guard the memory usage
+## ![✔] 5.10. Измеряйте и защищайте использование памяти
 
-**TL;DR:** Node.js has controversial relationships with memory: the v8 engine has soft limits on memory usage (1.4GB) and there are known paths to leak memory in Node’s code – thus watching Node’s process memory is a must. In small apps, you may gauge memory periodically using shell commands but in medium-large apps consider baking your memory watch into a robust monitoring system
+**TL;DR:** Node.js имеет противоречивые отношения с памятью: движок v8 имеет мягкие ограничения на использование памяти (1,4 ГБ), и существуют известные пути утечки памяти в коде Node -- таким образом, наблюдение за процессной памятью Node является обязательным. В небольших приложениях вы можете периодически измерять память с помощью команд оболочки, но в средних и больших приложениях стоит подумать о том, чтобы превратить ваши часы памяти в надежную систему мониторинга.
 
-**Иначе:** Your process memory might leak a hundred megabytes a day like how it happened at [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
+**Иначе:** Ваша память процесса может пропускать сотни мегабайт в день, как это было в [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak).
 
 🔗 [**Подробнее: Measure and guard the memory usage**](/sections/production/measurememory.md)
 
 <br/><br/>
 
-## ![✔] 5.11. Get your frontend assets out of Node
+## ![✔] 5.11. Получайте ваши внешние ресурсы вне Node
 
-**TL;DR:** Serve frontend content using dedicated middleware (nginx, S3, CDN) because Node performance really gets hurt when dealing with many static files due to its single-threaded model
+**TL;DR:** Обслуживание внешнего интерфейса с помощью специального промежуточного программного обеспечения (nginx, S3, CDN), потому что производительность Node действительно ухудшается при работе со многими статическими файлами из-за его однопоточной модели.
 
-**Иначе:** Your single Node thread will be busy streaming hundreds of html/images/angular/react files instead of allocating all its resources for the task it was born for – serving dynamic content
+**Иначе:** Ваш единственный поток Node будет занят потоковой передачей сотен файлов html/images/angular/react вместо того, чтобы выделять все свои ресурсы на задачи, для которой он был создан -- обслуживание динамического контента.
 
 🔗 [**Подробнее: Get your frontend assets out of Node**](/sections/production/frontendout.md)
 
 <br/><br/>
 
-## ![✔] 5.12. Be stateless, kill your servers almost every day
+## ![✔] 5.12. Не прописывайтесь на постоянку, убивайте свои серверы почти каждый день
 
-**TL;DR:** Store any type of data (e.g. user sessions, cache, uploaded files) within external data stores. Consider ‘killing’ your servers periodically or use ‘serverless’ platform (e.g. AWS Lambda) that explicitly enforces a stateless behavior
+**TL;DR:** Храните любые типы данных (например, пользовательские сеансы, кэш, загруженные файлы) во внешних хранилищах данных. Попробуйте периодически "убивать" свои серверы или использовать "безсерверную" платформу (например, AWS Lambda), которая явно обеспечивает поведение без сохранения состояния.
 
-**Иначе:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
+**Иначе:** Сбой на данном сервере приведет к простою приложения, а не просто к гибели неисправного компьютера. Более того, гибкость масштабирования станет более сложной из-за зависимости от конкретного сервера.
 
 🔗 [**Подробнее: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
 
 <br/><br/>
 
-## ![✔] 5.13. Use tools that automatically detect vulnerabilities
+## ![✔] 5.13. Используйте инструменты, которые автоматически обнаруживают уязвимости
 
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities (from time to time) that can put a system at risk. This can be easily tamed using community and commercial tools that constantly check for vulnerabilities and warn (locally or at GitHub), some can even patch them immediately
+**TL;DR:** Даже самые уважаемые зависимости, такие как Express, имеют известные уязвимости (время от времени), которые могут подвергать систему риску. Это можно легко укротить, используя общественные и коммерческие инструменты, которые постоянно проверяют уязвимости и предупреждают (локально или на GitHub), некоторые могут даже сразу же их исправлять.
 
-**Иначе:** Keeping your code clean from vulnerabilities without dedicated tools will require you to constantly follow online publications about new threats. Quite tedious
+**Иначе:** Для обеспечения чистоты кода от уязвимостей без использования специальных инструментов вам потребуется постоянно следить за публикациями в Интернете о новых угрозах. Довольно утомительно.
 
 🔗 [**Подробнее: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
 
 <br/><br/>
 
-## ![✔] 5.14. Assign a transaction id to each log statement
+## ![✔] 5.14. Назначьте идентификатор транзакции для каждого события журнала
 
-**TL;DR:** Assign the same identifier, transaction-id: {some value}, to each log entry within a single request. Then when inspecting errors in logs, easily conclude what happened before and after. Unfortunately, this is not easy to achieve in Node due to its async nature, see Пример кодаs inside
+**TL;DR:** Назначьте один и тот же идентификатор, идентификатор транзакции: {некоторое значение}, каждой записи журнала в рамках одного запроса. Затем при проверке ошибок в журналах легко сделать вывод о том, что происходило до и после. К сожалению, этого нелегко добиться в Node из-за его асинхронной природы, см. Пример кодов внутри.
 
-**Иначе:** Looking at a production error log without the context – what happened before – makes it much harder and slower to reason about the issue
+**Иначе:** Глядя на журнал ошибок производства без контекста -- что произошло раньше -- становится намного сложнее и медленнее рассуждать о проблеме.
 
 🔗 [**Подробнее: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
 
 <br/><br/>
 
-## ![✔] 5.15. Set NODE_ENV=production
+## ![✔] 5.15. Устанавливайте NODE_ENV=production
 
 **TL;DR:** Set the environment variable NODE_ENV to ‘production’ or ‘development’ to flag whether production optimizations should get activated – many npm packages determine the current environment and optimize their code for production
 
@@ -1035,35 +1035,35 @@ null == undefined   // true
 
 <br/><br/><br/>
 
-# Milestones
+# Вехи
 
-To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/i0natan/nodebestpractices/milestones) and join the working groups if you want to contribute to this project
+Чтобы поддерживать это руководство и обновлять его, мы постоянно обновляем и совершенствуем рекомендации и лучшие практики с помощью сообщества. Вы можете следить за нашими [вехами](https://github.com/i0natan/nodebestpractices/milestones) и присоединиться к рабочим группам, если хотите внести свой вклад в этот проект.
 
 <br/>
 
-## Translations
+## Переводы
 
-All translations are contributed by the community. We will be happy to get any help with either completed, ongoing or new translations!
+Все переводы предоставлены сообществом. Мы будем рады получить любую помощь с готовыми, текущими или новыми переводами!
 
-### Completed translations
+### Завершенные переводы
 
-- ![BR](/assets/flags/BR.png) [Brazilian Portuguese](/README.brazilian-portuguese.md) - Courtesy of [Marcelo Melo](https://github.com/marcelosdm)
-- ![CN](/assets/flags/CN.png) [Chinese](README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
+- ![BR](/assets/flags/BR.png) [Бразильский португальский](/README.brazilian-portuguese.md) - Предоставлено [Marcelo Melo](https://github.com/marcelosdm)
+- ![CN](/assets/flags/CN.png) [Китайский](README.chinese.md) - Предоставлено [Matt Jin](https://github.com/mattjin)
 
-### Translations in progress
+### Переводы в процессе
 
-- ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/129))
-- ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/i0natan/nodebestpractices/issues/156))
-- ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Courtesy of [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/94))
-- ![RU](/assets/flags/RU.png) [Russian](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/105))
-- ![ES](/assets/flags/ES.png) [Spanish](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/95))
-- ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/i0natan/nodebestpractices/issues/139))
+- ![FR](/assets/flags/FR.png) [Французский](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Обсуждение](https://github.com/i0natan/nodebestpractices/issues/129))
+- ![HE](/assets/flags/HE.png) Иврит ([Обсуждение](https://github.com/i0natan/nodebestpractices/issues/156))
+- ![KR](/assets/flags/KR.png) [Корейский](README.korean.md) - Предоставлено [Sangbeom Han](https://github.com/uronly14me) ([Обсуждение](https://github.com/i0natan/nodebestpractices/issues/94))
+- ![RU](/assets/flags/RU.png) [Russian](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Обсуждение](https://github.com/i0natan/nodebestpractices/issues/105))
+- ![ES](/assets/flags/ES.png) [Испанский](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Обсуждение](https://github.com/i0natan/nodebestpractices/issues/95))
+- ![TR](/assets/flags/TR.png) Турецкий ([Обсуждение](https://github.com/i0natan/nodebestpractices/issues/139))
 
 <br/><br/>
 
-## Steering Committee
+## Руководящий комитет
 
-Meet the steering committee members - the people who work together to provide guidance and future direction to the project. In addition, each member of the committee leads a project tracked under our [Github projects](https://github.com/i0natan/nodebestpractices/projects).
+Познакомьтесь с членами руководящего комитета -- людьми, которые работают вместе, чтобы обеспечить управление и дальнейшее руководство проектом. Кроме того, каждый член комитета руководит проектом, отслеживаемым в рамках наших [проектов Github](https://github.com/i0natan/nodebestpractices/projects).
 
 <img align="left" width="100" height="100" src="assets/images/members/yoni.png">
 
@@ -1071,7 +1071,7 @@ Meet the steering committee members - the people who work together to provide gu
 <a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
 <a href="https://goldbergyoni.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
-Independent Node.js consultant who works with customers in USA, Europe, and Israel on building large scale scalable Node applications. Many of the best practices above were first published at [goldbergyoni.com](https://goldbergyoni.com). Reach Yoni at @goldbergyoni or me@goldbergyoni.com
+Независимый консультант Node.js, который работает с клиентами в США, Европе и Израиле над созданием масштабируемых масштабируемых приложений Node. Многие из приведенных выше лучших практик были впервые опубликованы на [goldbergyoni.com](https://goldbergyoni.com). Свяжитесь с Yoni как @goldbergyoni или me@goldbergyoni.com
 
 <br/>
 
@@ -1080,7 +1080,7 @@ Independent Node.js consultant who works with customers in USA, Europe, and Isra
 [Bruno Scheufler](https://github.com/BrunoScheufler)
 <a href="https://brunoscheufler.com/"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
-💻 full-stack web engineer, Node.js & GraphQL enthusiast
+💻 веб-инженер полного цикла, энтузиаст Node.js и GraphQL
 
 <br/>
 
@@ -1090,7 +1090,7 @@ Independent Node.js consultant who works with customers in USA, Europe, and Isra
 <a href="https://twitter.com/kylemartin_93"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
 <a href="https://www.linkedin.com/in/kylemartinnz"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
 
-Full Stack Developer & Site Reliability Engineer based in New Zealand, interested in web application security, and architecting and building Node.js applications to perform at global scale.
+Разработчик полного цикла и инженер по надежности сайтов из Новой Зеландии, заинтересованный в безопасности веб-приложений, а также в разработке и создании приложений Node.js для работы в глобальном масштабе.
 
 <br/>
 
@@ -1101,21 +1101,21 @@ Full Stack Developer & Site Reliability Engineer based in New Zealand, intereste
 <a href="https://sagirk.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 <a href="https://linkedin.com/in/sagirk"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
 
-Deep specialist in JavaScript and its ecosystem — React, Node.js, MongoDB, pretty much anything that involves using JavaScript/JSON in any layer of the system — building products using the web platform for the world’s most recognized brands. Individual Member of the Node.js Foundation, collaborating on the Community Committee's Website Redesign Initiative.
+Высококвалифицированный специалист по JavaScript и его экосистеме -- React, Node.js, MongoDB, практически все, что связано с использованием JavaScript/JSON на любом уровне системы -- создающий продукт с использованием веб-платформы для самых узнаваемых брендов мира. Индивидуальный член Фонда Node.js, сотрудничающий в рамках Сообщества Committee's Website Redesign Strategic Initiative.
 
 <br/>
 
-## Collaborators
+## Соавторы
 
-Thank you to all our collaborators! 🙏
+Спасибо всем нашим соавторам! 🙏
 
-Our collaborators are members who are contributing to the repository on a reguar basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in helping us guide thousands of people to craft better Node.js applications, please read our [contributor guidelines](/.operations/CONTRIBUTING.md) 🎉
+Наши соавторы являются участниками, которые регулярно вносят свой вклад в хранилище, предлагая новые лучшие практики, разбирая проблемы, просматривая запросы на изменение и многое другое. Если вы заинтересованы в том, чтобы помочь нам научить тысячи людей создавать более качественные приложения Node.js, ознакомьтесь с нашими [руководством для соавторов](/.operations/CONTRIBUTING.md) 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
 | :--: | :--: |
 | [Ido Richter (Founder)](https://github.com/idori) | [Keith Holliday](https://github.com/TheHollidayInn) |
 
-### Past collaborators
+### Прошлые соавторы
 
 | <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"></a> |
 | :--: |
@@ -1123,11 +1123,11 @@ Our collaborators are members who are contributing to the repository on a reguar
 
 <br/>
 
-## Thank You Notes
+## Благодарности
 
-We appreciate any contribution, from a single word fix to a new best practice. Below is a list of everyone who contributed to this project. A 🌻 marks a successful pull request and a ⭐ marks an approved new best practice.
+Мы ценим любой вклад, от одного исправленного слова до новой лучшей практики. Ниже приведен список всех, кто внес свой вклад в этот проект. Цветочек 🌻 обозначает успешный запрос на изменение, звездочка ⭐ обозначает одобренную новую лучшую практику.
 
-### Flowers
+### Цветочки
 
 🌻 [Kevin Rambaud](https://github.com/kevinrambaud),
 🌻 [Michael Fine](https://github.com/mfine15),
@@ -1213,7 +1213,7 @@ We appreciate any contribution, from a single word fix to a new best practice. B
 🌻 [zhuweiyou](https://github.com/zhuweiyou)
 
 
-### Stars
+### Звездочки
 
 ⭐ [Kyle Martin](https://github.com/js-kyle),
 ⭐ [Keith Holliday](https://github.com/TheHollidayInn),
