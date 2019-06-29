@@ -434,37 +434,37 @@ null == undefined   // true
 
 # `4. Тестирование и общие методы контроля качества`
 
-## ![✔] 4.1 At the very least, write API (component) testing
+## ![✔] 4.1 Как минимум, напишите тестирование API (компонента)
 
-**TL;DR:** Most projects just don't have any automated testing due to short timetables or often the 'testing project' ran out of control and was abandoned. For that reason, prioritize and start with API testing which is the easiest way to write and provides more coverage than unit testing (you may even craft API tests without code using tools like [Postman](https://www.getpostman.com/). Afterward, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc
+**TL;DR:** Большинство проектов просто не имеют автоматического тестирования из-за коротких сроков, или, как часто бывает, выхода из-под контроля и забрасывания "проекта тестирования". По этой причине расставьте приоритеты и начните с тестирования API, который является самым простым способом написания, и обеспечивает больший охват, чем модульное тестирование. Вы даже можете создавать тесты API без кода, используя такие инструменты, как [Postman](https://www.getpostman.com/). После этого, если у вас будет больше ресурсов и времени, перейдите к расширенным типам тестов, таким как модульное тестирование, тестирование БД, тестирование производительности и т.д.
 
-**Иначе:** You may spend long days on writing unit tests to find out that you got only 20% system coverage
+**Иначе:** Вы можете потратить долгие дни на написание модульных тестов, чтобы узнать, что вы получили только 20% покрытия системы.
 
 <br/><br/>
 
-## ![✔] 4.2 Include 3 parts in each test name
+## ![✔] 4.2 Включите 3 части в каждое название теста
 
-**TL;DR:** Make the test speak at the requirements level so it's self explanatory also to QA engineers and developers who are not familiar with the code internals. State in the test name what is being tested (unit under test), under what circumstances and what is the expected result
+**TL;DR:** Заставьте тест говорить на уровне требований, чтобы он был понятен инженерам и разработчикам QA, которые не знакомы с внутренними компонентами кода. Укажите в названии теста, что тестируется (тестируемая единица), при каких обстоятельствах и каков ожидаемый результат.
 
-**Иначе:** A deployment just failed, a test named “Add product” failed. Does this tell you what exactly is malfunctioning?
+**Иначе:** Развертывание только что прошло, тест под названием "Добавить продукт" не прошел. Это говорит вам, что именно работает со сбоями?
 
 🔗 [**Подробнее: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
 
 <br/><br/>
 
-## ![✔] 4.3 Detect code issues with a linter
+## ![✔] 4.3. Обнаружение проблем с кодом с помощью линтера
 
-**TL;DR:** Use a code linter to check basic quality and detect anti-patterns early. Run it before any test and add it as a pre-commit git-hook to minimize the time needed to review and correct any issue. Also check [Section 3](https://github.com/i0natan/nodebestpractices#3-code-style-practices) on Code Style Practices
+**TL;DR:** Используйте линтер кода для проверки базового качества и раннего обнаружения анти-паттернов. Запустите его перед любым тестом и добавьте его в качестве git-ловушки перед фиксацией, чтобы минимизировать время, необходимое для проверки и исправления любой проблемы. Также проверьте [Раздел 3](#3-Практики-стиля-кода) в разделе Практика стиля кода.
 
-**Иначе:** You may let pass some anti-pattern and possible vulnerable code to your production environment.
+**Иначе:** Вы можете не заметить передачу некоторого анти-паттерна и возможного уязвимого кода в вашу производственную среду.
 
 <br/><br/>
 
-## ![✔] 4.4 Avoid global test fixtures and seeds, add data per-test
+## ![✔] 4.4 Избегайте глобальных тестовых приспособлений и параметров, добавляйте данные для каждого теста
 
-**TL;DR:** To prevent tests coupling and easily reason about the test flow, each test should add and act on its own set of DB rows. Whenever a test needs to pull or assume the existence of some DB data - it must explicitly add that data and avoid mutating any other records
+**TL;DR:** Чтобы предотвратить связывание тестов и легко рассуждать о последовательности тестов, каждый тест должен добавлять и воздействовать на свой собственный набор строк БД. Всякий раз, когда тест должен получить или предположить существование некоторых данных БД, он должен явно добавить эти данные и избегать изменения любых других записей.
 
-**Иначе:** Consider a scenario where deployment is aborted due to failing tests, team is now going to spend precious investigation time that ends in a sad conclusion: the system works well, the tests however interfere with each other and break the build
+**Иначе:** Рассмотрим сценарий, в котором развертывание прерывается из-за неудачных тестов, теперь команда собирается потратить драгоценное время на исследование, которое заканчивается печальным выводом: система работает хорошо, однако тесты мешают друг другу и нарушают сборку.
 
 🔗 [**Подробнее: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
 
@@ -472,61 +472,62 @@ null == undefined   // true
 
 
 
-## ![✔] 4.5 Constantly inspect for vulnerable dependencies
+## ![✔] 4.5 Постоянно проверяйте уязвимые зависимости
 
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [npm audit](https://docs.npmjs.com/cli/audit) and 🔗 [snyk.io](https://snyk.io) that can be invoked from your CI on every build
+**TL;DR:** Даже самые уважаемые зависимости, такие как Express, имеют известные уязвимости. Это можно легко приручить, используя открытые и коммерческие инструменты, такие как 🔗 [npm audit](https://docs.npmjs.com/cli/audit) и 🔗[snyk.io](https://snyk.io), которые могут быть вызванны из вашего CI при каждой сборке.
 
-**Иначе:** Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
+**Иначе:** Для обеспечения чистоты вашего кода от уязвимостей без использования специальных инструментов потребуется постоянно следить за публикациями в Интернете о новых угрозах. Довольно утомительно.
 
 <br/><br/>
 
-## ![✔] 4.6 Tag your tests
+## ![✔] 4.6 Помечайте свои тесты
 
-**TL;DR:** Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/): mocha --grep 'sanity'
+**TL;DR:** Различные тесты должны выполняться в разных сценариях: быстрое раскуривание, без ввода-вывода, тесты должны выполняться, когда разработчик сохраняет или фиксирует файл, полные сквозные тесты обычно выполняются, когда отправлен новый запрос в репозиторий и т.д. Этого можно достичь, помечая тесты ключевыми словами, такими как #cold, #api, #sanity, чтобы вы могли использовать свой тестовый набор и вызывать нужное подмножество. Например, вот как вы бы вызывали только группу тестов на работоспособность с [Mocha](https://mochajs.org/): mocha --grep 'sanity'.
 
 **Иначе:** Running all the tests, including tests that perform dozens of DB queries, any time a developer makes a small change can be extremely slow and keeps developers away from running tests
+**Иначе:** Запуск всех тестов, включая тесты, которые выполняют десятки запросов к БД, каждый раз, когда разработчик вносит небольшие изменения, может быть очень медленным и держит разработчиков подальше от запуска тестов.
 
 <br/><br/>
 
-## ![✔] 4.7 Check your test coverage, it helps to identify wrong test patterns
+## ![✔] 4.7 Проверьте ваше покрытие тестов, он помогает определить неправильные тестовые шаблоны
 
-**TL;DR:** Code coverage tools like [Istanbul/NYC ](https://github.com/gotwarlost/istanbul)are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but not least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
+**TL;DR:** Инструменты покрытия кода тестами, такие как [Istanbul/NYC](https://github.com/gotwarlost/istanbul) хороши по 3 причинам: они предоставляются бесплатно (никаких усилий не требуется, чтобы воспользоваться этими отчетами) это помогает выявить уменьшение охвата тестирования и, наконец, что не менее важно, подчеркивает несоответствия тестирования: просматривая цветные отчеты о покрытии кода, вы можете заметить, например, области кода, которые никогда не тестируются, как предложения catch (то есть тесты вызывают только счастливые пути, а не то, как приложение ведет себя на ошибках). Установите его на сбой сборки, если охват падает ниже определенного порога.
 
-**Иначе:** There won't be any automated metric telling you when a large portion of your code is not covered by testing
-
-<br/><br/>
-
-## ![✔] 4.8 Inspect for outdated packages
-
-**TL;DR:** Use your preferred tool (e.g. 'npm outdated' or [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) to detect installed packages which are outdated, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a severe scenario might be when an installed package is 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
-
-**Иначе:** Your production will run packages that have been explicitly tagged by their author as risky
+**Иначе:** Там не будет никакой автоматической метрики, сообщающей вам, когда большая часть вашего кода не покрыта тестированием.
 
 <br/><br/>
 
-## ![✔] 4.9 Use docker-compose for e2e testing
+## ![✔] 4.8 Проверяйте устаревшие пакеты
 
-**TL;DR:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Docker-compose turns this problem into a breeze by crafting production-like environment using a simple text file and easy commands. It allows crafting all the dependent services, DB and isolated network for e2e testing. Last but not least, it can keep a stateless environment that is invoked before each test suite and dies right after
+**TL;DR:** Используйте предпочитаемый вами инструмент (например, 'npm outdated' или [npm-check-updates](https://www.npmjs.com/package/npm-check-updates)) для обнаружения установленных пакетов, которые устарели, внедрите эту проверку в конвейер CI и приводите к сбою сборки в серьезном сценарии. Например, серьезный сценарий может быть, когда установленный пакет имеет 5 исправлений патча позади (например, локальная версия 1.3.1 и версия репозитория 1.3.8) или помечен автором как устаревший -- убейте сборку и предотвратите развертывание этой версии.
 
-**Иначе:** Without docker-compose teams must maintain a testing DB for each testing environment including developers' machines, keep all those DBs in sync so test results won't vary across environments
+**Иначе:** Ваше производство будет запускать пакеты, которые были явно помечены их автором как рискованные.
 
 <br/><br/>
 
-## ![✔] 4.10 Refactor regularly using static analysis tools
+## ![✔] 4.9 Используйте docker-compose для тестирования e2e
 
-**TL;DR:** Using static analysis tools helps by giving objective ways to improve code quality and keeps your code maintainable. You can add static analysis tools to your CI build to fail when it finds code smells. Its main selling points over plain linting are the ability to inspect quality in the context of multiple files (e.g. detect duplications), perform advanced analysis (e.g. code complexity) and follow the history and progress of code issues. Two examples of tools you can use are [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) and [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)).
+**TL;DR:** Сквозное (e2e) тестирование, включает в себя живые данные, которые раньше были самым слабым звеном процесса CI, поскольку оно зависит от множества тяжелых сервисов, таких как DB. Docker-compose превращает эту проблему в простоту, создавая производственную среду, используя простой текстовый файл и простые команды. Это позволяет создавать все зависимые сервисы, БД и изолированную сеть для тестирования e2e. Наконец, что не менее важно, он может поддерживать среду без состояния, которая вызывается перед каждым набором тестов и умирает сразу после.
 
-**Иначе:** With poor code quality, bugs and performance will always be an issue that no shiny new library or state of the art features can fix
+**Иначе:** Без docker-compose команды должны поддерживать базу данных тестирования для каждой среды тестирования, включая машины разработчиков, синхронизировать все эти базы данных, чтобы результаты тестирования не менялись в зависимости от среды.
+
+<br/><br/>
+
+## ![✔] 4.10 Производите рефакторинг регулярно с использованием инструментов статического анализа
+
+**TL;DR:** Использование инструментов статического анализа помогает, предоставляя объективные способы улучшить качество кода и поддерживая его в обслуживании. Вы можете добавить инструменты статического анализа в свою сборку CI, чтобы она вызывала сбой при обнаружении запахов кода. Его основные преимущества при использовании простого линтинга -- это возможность проверять качество в контексте нескольких файлов (например, обнаруживать дубликаты), выполнять расширенный анализ (например, сложность кода) и следить за историей и развитием проблем с кодом. Два примера инструментов, которые вы можете использовать: [Sonarqube](https://www.sonarqube.org/) (2600+ [stars](https://github.com/SonarSource/sonarqube)) и [Code Climate](https://codeclimate.com/) (1500+ [stars](https://github.com/codeclimate/codeclimate)).
+
+**Иначе:** При плохом качестве кода ошибки и производительность всегда будут проблемой, которую не может исправить ни одна блестящая новая библиотека или современные функции.
 
 🔗 [**Подробнее: Refactoring!**](/sections/testingandquality/refactoring.md)
 
 <br/><br/>
 
-## ![✔] 4.11 Carefully choose your CI platform (Jenkins vs CircleCI vs Travis vs Rest of the world)
+## ![✔] 4.11 Тщательно выбирайте свою CI-платформу (Jenkins или CircleCI или Travis или остальной мир)
 
-**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it should come with a vibrant ecosystem of plugins. [Jenkins](https://jenkins.io/) used to be the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Nowadays, it has become much easier to set up a CI solution using SaaS tools like [CircleCI](https://circleci.com) and others. These tools allow crafting a flexible CI pipeline without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
+**TL;DR:** Ваша платформа непрерывной интеграции (CICD) будет содержать все инструменты качества (такие как тестирование и линтинг), поэтому она должна поставляться с динамичной экосистемой плагинов. [Jenkins](https://jenkins.io/) раньше использовался по умолчанию для многих проектов, поскольку у него самое большое сообщество и очень мощная платформа по цене сложной установки, которая требует крутой кривой обучения. В настоящее время стало намного проще настроить CI-решение с использованием инструментов SaaS, таких как [CircleCI](https://circleci.com) и других. Эти инструменты позволяют создать гибкий конвейер CI без необходимости управлять всей инфраструктурой. В конце концов, это компромисс между надежностью и скоростью -- тщательно выбирайте свою сторону.
 
-**Иначе:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
+**Иначе:** Выбор какого-либо нишевого поставщика может заблокировать вас, когда вам понадобится дополнительная настройка. С другой стороны, работа с Jenkins может потратить драгоценное время на настройку инфраструктуры.
 
 🔗 [**Подробнее: Choosing CI platform**](/sections/testingandquality/citools.md)
 
@@ -537,61 +538,61 @@ null == undefined   // true
 
 # `5. Переход к производственным практикам`
 
-## ![✔] 5.1. Monitoring!
+## ![✔] 5.1. Мониторинг!
 
-**TL;DR:** Monitoring is a game of finding out issues before customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that ticks all boxes. Click ‘The Gist’ below for an overview of the solutions
+**TL;DR:** Мониторинг -- это игра для выявления проблем до того, как их решат клиенты, очевидно, этому следует придать беспрецедентную важность. Рынок перегружен предложениями, поэтому подумайте о том, чтобы начать с определения основных метрик, которым вы должны следовать (мои предложения в подробностях), затем перейти к дополнительным необычным функциям и выбрать решение, которое помечает все поля. Нажмите "Подробнее" ниже для обзора решений.
 
-**Иначе:** Failure === disappointed customers. Simple
+**Иначе:** Отказ === разочарованные клиенты. Просто.
 
 🔗 [**Подробнее: Monitoring!**](/sections/production/monitoring.md)
 
 <br/><br/>
 
-## ![✔] 5.2. Increase transparency using smart logging
+## ![✔] 5.2. Увеличьте прозрачность, используя умную регистрацию
 
-**TL;DR:** Logs can be a dumb warehouse of debug statements or the enabler of a beautiful dashboard that tells the story of your app. Plan your logging platform from day 1: how logs are collected, stored and analyzed to ensure that the desired information (e.g. error rate, following an entire transaction through services and servers, etc) can really be extracted
+**TL;DR:** Журналы могут быть тупым хранилищем операторов отладки или активатором красивой панели инструментов, которая рассказывает историю вашего приложения. Планируйте свою платформу ведения журналов с первого дня: как журналы собираются, хранятся и анализируются, чтобы обеспечить возможность извлечения желаемой информации (например, частоты ошибок, всей транзакции через службы и серверы и т.д.).
 
-**Иначе:** You end up with a black box that is hard to reason about, then you start re-writing all logging statements to add additional information
+**Иначе:** Вы в конечном итоге получаете черный ящик, о котором трудно подумать, затем вы начинаете переписывать все операторы регистрации, чтобы добавить дополнительную информацию.
 
 🔗 [**Подробнее: Increase transparency using smart logging**](/sections/production/smartlogging.md)
 
 <br/><br/>
 
-## ![✔] 5.3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy
+## ![✔] 5.3. Делегируйте все возможное (например, gzip, SSL) обратному прокси
 
-**TL;DR:** Node is awfully bad at doing CPU intensive tasks like gzipping, SSL termination, etc. You should use ‘real’ middleware services like nginx, HAproxy or cloud vendor services instead
+**TL;DR:** Node ужасно плохо справляется с задачами, интенсивно использующими процессор, такими как архивирование, SSL и т.д. Вместо этого вы должны использовать "настоящие" сервисы промежуточного ПО, такие как nginx, HAproxy или сервисы облачного вендора.
 
-**Иначе:** Your poor single thread will stay busy doing infrastructural tasks instead of dealing with your application core and performance will degrade accordingly
+**Иначе:** Ваш бедный одиночный поток будет занят выполнением инфраструктурных задач вместо того, чтобы работать с ядром приложения, и производительность будет соответственно снижаться.
 
 🔗 [**Подробнее: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
 
 <br/><br/>
 
-## ![✔] 5.4. Lock dependencies
+## ![✔] 5.4. Блокировка зависимостей
 
-**TL;DR:** Your code must be identical across all environments, but amazingly npm lets dependencies drift across environments by default – when you install packages at various environments it tries to fetch packages’ latest patch version. Overcome this by using npm config files, .npmrc, that tell each environment to save the exact (not the latest) version of each package. Alternatively, for finer grained control use `npm shrinkwrap`. \*Update: as of NPM5, dependencies are locked by default. The new package manager in town, Yarn, also got us covered by default
+**TL;DR:** Ваш код должен быть одинаковым во всех средах, но удивительно, что npm по умолчанию позволяет смещать зависимости между средами -- при установке пакетов в различных средах он пытается получить последнюю версию пакета исправлений. Преодолеть это можно с помощью файлов конфигурации npm, .npmrc, которые сообщают каждой среде сохранять точную (не последнюю) версию каждого пакета. В качестве альтернативы, для более тонкого контроля используйте `npm shrinkwrap`. \* Обновление: начиная с NPM5, зависимости по умолчанию заблокированы. Новый менеджер пакетов Yarn также предоставил нам покрытие по умолчанию.
 
-**Иначе:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
+**Иначе:** QA тщательно протестирует код и утвердит версию, которая будет вести себя по-другому в производстве. Хуже того, на разных серверах в одном и том же производственном кластере может выполняться другой код.
 
 🔗 [**Подробнее: Lock dependencies**](/sections/production/lockdependencies.md)
 
 <br/><br/>
 
-## ![✔] 5.5. Guard process uptime using the right tool
+## ![✔] 5.5. Защитите время безотказной работы, используя правильный инструмент
 
-**TL;DR:** The process must go on and get restarted upon failures. For simple scenarios, process management tools like PM2 might be enough but in today's ‘dockerized’ world, cluster management tools should be considered as well
+**TL;DR:** Процесс должен продолжаться и перезапускаться при сбоях. Для простых сценариев может быть достаточно инструментов управления процессами, таких как PM2, но в современном "докеризованном" мире следует также рассмотреть инструменты управления кластерами.
 
-**Иначе:** Running dozens of instances without a clear strategy and too many tools together (cluster management, docker, PM2) might lead to DevOps chaos
+**Иначе:** Запуск десятков экземпляров без четкой стратегии и слишком большого количества инструментов (управление кластером, docker, PM2) может привести к хаосу DevOps.
 
 🔗 [**Подробнее: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
 
 <br/><br/>
 
-## ![✔] 5.6. Utilize all CPU cores
+##! [✔] 5.6. Используйте все ядра процессора
 
-**TL;DR:** At its basic form, a Node app runs on a single CPU core while all others are left idling. It’s your duty to replicate the Node process and utilize all CPUs – For small-medium apps you may use Node Cluster or PM2. For a larger app consider replicating the process using some Docker cluster (e.g. K8S, ECS) or deployment scripts that are based on Linux init system (e.g. systemd)
+**TL;DR:** В своей базовой форме приложение Node работает на одном ядре ЦП, в то время как все остальные не работают. Ваша обязанность -- копировать процесс Node и использовать все процессоры. Для небольших и средних приложений вы можете использовать Node Cluster или PM2. Для более крупного приложения рассмотрите возможность репликации процесса с использованием некоторого кластера Docker (например, K8S, ECS) или сценариев развертывания, основанных на системе инициализации Linux (например, systemd).
 
-**Иначе:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.js utilizes only 1 (even using PaaS services like AWS beanstalk!)
+**Иначе:** Ваше приложение, скорее всего, будет использовать только 25% доступных ресурсов (!) Или даже меньше. Обратите внимание, что типичный сервер имеет 4 или более ядер ЦП, для простого развертывания Node.js используется только 1 (даже при использовании сервисов PaaS, таких как AWS beanstalk!)
 
 🔗 [**Подробнее: Utilize all CPU cores**](/sections/production/utilizecpu.md)
 
