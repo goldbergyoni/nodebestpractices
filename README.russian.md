@@ -680,37 +680,37 @@ null == undefined   // true
 
 ## ![✔] 5.15. Устанавливайте NODE_ENV=production
 
-**TL;DR:** Set the environment variable NODE_ENV to ‘production’ or ‘development’ to flag whether production optimizations should get activated – many npm packages determine the current environment and optimize their code for production
+**TL;DR:** Установите для переменной среды NODE_ENV значение "production" или "development", чтобы указать, должны ли активироваться производственные оптимизации -- многие пакеты npm определяют текущую среду и оптимизируют свой код для того или иного выпуска.
 
-**Иначе:** Omitting this simple property might greatly degrade performance. For example, when using Express for server-side rendering omitting `NODE_ENV` makes it slower by a factor of three!
+**Иначе:** Пропуск этого простого свойства может значительно снизить производительность. Например, при использовании Express для рендеринга на стороне сервера пропуск `NODE_ENV` замедляет его в три раза!
 
 🔗 [**Подробнее: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
 
 <br/><br/>
 
-## ![✔] 5.16. Design automated, atomic and zero-downtime deployments
+## ![✔] 5.16. Проектируйте автоматизированные, атомарные и без простоев на развертывание
 
-**TL;DR:** Research shows that teams who perform many deployments lower the probability of severe production issues. Fast and automated deployments that don’t require risky manual steps and service downtime significantly improve the deployment process. You should probably achieve this using Docker combined with CI tools as they became the industry standard for streamlined deployment
+**TL;DR:** Исследования показывают, что команды, которые выполняют много развертываний, снижают вероятность серьезных производственных проблем. Быстрое и автоматическое развертывание, не требующее рискованных ручных операций и простоев служб, значительно улучшает процесс развертывания. Вероятно, вам следует добиться этого, используя Docker в сочетании с инструментами CI, поскольку они стали отраслевым стандартом для упрощенного развертывания.
 
-**Иначе:** Long deployments -> production downtime & human-related error -> team unconfident in making deployment -> fewer deployments and features
+**Иначе:** Длительные развертывания -> простои производства и ошибки, связанные с персоналом -> команда неуверенная в развертывании -> меньше развертываний и функций.
 
 <br/><br/>
 
-## ![✔] 5.17. Use an LTS release of Node.js
+## ![✔] 5.17. Используйте LTS-релиз Node.js
 
-**TL;DR:** Ensure you are using an LTS version of Node.js to receive critical bug fixes, security updates and performance improvements
+**TL;DR:** Убедитесь, что вы используете LTS-версию Node.js для получения критических исправлений ошибок, обновлений безопасности и улучшений производительности.
 
-**Иначе:** Newly discovered bugs or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain
+**Иначе:** Недавно обнаруженные ошибки или уязвимости могут быть использованы для эксплуатации приложения, работающего в производственной среде, и ваше приложение может стать неподдерживаемым различными модулями и усложнить поддержку.
 
 🔗 [**Подробнее: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
 
 <br/><br/>
 
-## ![✔] 5.18. Don't route logs within the app
+## ![✔] 5.18. Не маршрутизируйте журналы в приложении
 
-**TL;DR:** Log destinations should not be hard-coded by developers within the application code, but instead should be defined by the execution environment the application runs in. Developers should write logs to `stdout` using a logger utility and then let the execution environment (container, server, etc.) pipe the `stdout` stream to the appropriate destination (i.e. Splunk, Graylog, ElasticSearch, etc.).
+**TL;DR:** Места назначения журналов не должны жестко кодироваться разработчиками в коде приложения, но вместо этого должны определяться средой исполнения, в которой выполняется приложение. Разработчики должны записывать журналы в `stdout` с помощью утилиты logger и затем позвольте среде выполнения (контейнер, сервер и т. д.) направить поток `stdout` в соответствующее место назначения (т.е. Splunk, Graylog, ElasticSearch и т.д.).
 
-**Иначе:** Application handling log routing === hard to scale, loss of logs, poor separation of concerns
+**Иначе:** Маршрутизация журналов обработки приложения === трудности масштабирования, потеря журналов, плохое разделение задач
 
 🔗 [**Подробнее: Log Routing**](/sections/production/logrouting.md)
 
@@ -724,83 +724,83 @@ null == undefined   // true
 <img src="https://img.shields.io/badge/OWASP%20Threats-Top%2010-green.svg" alt="54 items"/>
 </div>
 
-## ![✔] 6.1. Embrace linter security rules
+## ![✔] 6.1. Принять правила безопасности линтера
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Make use of security-related linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to catch security vulnerabilities and issues as early as possible, preferably while they're being coded. This can help catching security weaknesses like using eval, invoking a child process or importing a module with a string literal (e.g. user input). Click 'Read more' below to see Пример кодаs that will get caught by a security linter
+**TL;DR:** Используйте связанные с безопасностью плагины для линтера, такие как [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security), чтобы обнаруживать уязвимости и проблемы безопасности на ранней стадии, насколько возможно, желательно, пока они кодируются. Это может помочь выявить слабые места безопасности, такие как использование eval, вызов дочернего процесса или импорт модуля со строковым литералом (например, пользовательский ввод). Нажмите "Подробнее" ниже, чтобы увидеть примеры кода, которые попадут под стражу безопасности.
 
-**Иначе:** What could have been a straightforward security weakness during development becomes a major issue in production. Also, the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories
+**Иначе:** То, что могло быть простым недостатком безопасности во время разработки, становится основной проблемой в производстве. Кроме того, проект может не следовать согласованным методам обеспечения безопасности кода, что приводит к появлению уязвимостей или секретных секретов, передаваемых в удаленные репозитории.
 
 🔗 [**Подробнее: Lint rules**](/sections/security/lintrules.md)
 
 <br/><br/>
 
-## ![✔] 6.2. Limit concurrent requests using a middleware
+## ![✔] 6.2. Ограничивайте одновременные запросы с использованием промежуточного программного обеспечения
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** DOS attacks are very popular and relatively easy to conduct. Implement rate limiting using an external service such as cloud load balancers, cloud firewalls, nginx, [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) package, or (for smaller and less critical apps) a rate-limiting middleware (e.g. [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
+**TL;DR:** DOS-атаки очень популярны и относительно просты в проведении. Внедрите ограничение скорости с помощью внешней службы, такой как облачные балансировщики нагрузки, облачные брандмауэры, nginx, пакет [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) или (для небольших и менее критичных приложений) промежуточное программное обеспечение, ограничивающее скорость (например, [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
 
-**Иначе:** An application could be subject to an attack resulting in a denial of service where real users receive a degraded or unavailable service.
+**Иначе:** Приложение может подвергнуться атаке, приводящей к отказу в обслуживании, когда реальные пользователи получают ухудшенный или недоступный сервис.
 
 🔗 [**Подробнее: Implement rate limiting**](/sections/security/limitrequests.md)
 
 <br/><br/>
 
-## ![✔] 6.3 Extract secrets from config files or use packages to encrypt them
+## ![✔] 6.3 Извлекайте секреты из конфигурационных файлов или используйте пакеты для их шифрования
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A3:Sensitive%20Data%20Exposure%20-green.svg" alt=""/></a>
 
-**TL;DR:** Never store plain-text secrets in configuration files or source code. Instead, make use of secret-management systems like Vault products, Kubernetes/Docker Secrets, or using environment variables. As a last resort, secrets stored in source control must be encrypted and managed (rolling keys, expiring, auditing, etc). Make use of pre-commit/push hooks to prevent committing secrets accidentally
+**TL;DR:** Никогда не храните секреты в виде простого текста в файлах конфигурации или исходном коде. Вместо этого используйте системы секретного управления, такие как продукты Vault, секреты Kubernetes/Docker или переменные среды. В крайнем случае, секреты, хранящиеся в системе контроля версий, должны быть зашифрованы и обработаны (переходящие ключи, срок действия, аудит и т.д.). Используйте фиксаторы pre-commit/push, чтобы предотвратить случайную передачу секретов.
 
-**Иначе:** Source control, even for private repositories, can mistakenly be made public, at which point all secrets are exposed. Access to source control for an external party will inadvertently provide access to related systems (databases, apis, services, etc).
+**Иначе:** Контроль источников, даже для частных репозиториев, может быть ошибочно обнародован, после чего все секреты будут раскрыты. Доступ к управлению исходным кодом для внешней стороны непреднамеренно предоставит доступ к связанным системам (базам данных, API, службам и т.д.).
 
 🔗 [**Подробнее: Secret management**](/sections/security/secretmanagement.md)
 
 <br/><br/>
 
-## ![✔] 6.4. Prevent query injection vulnerabilities with ORM/ODM libraries
+## ![✔] 6.4. Предотвращайте уязвимости при внедрении запросов с помощью библиотек ORM/ODM
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
-**TL;DR:** To prevent SQL/NoSQL injection and other malicious attacks, always make use of an ORM/ODM or a database library that escapes data or supports named or indexed parameterized queries, and takes care of validating user input for expected types. Never just use JavaScript template strings or string concatenation to inject values into queries as this opens your application to a wide spectrum of vulnerabilities. All the reputable Node.js data access libraries (e.g. [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose)) have built-in protection against injection attacks.
+**TL;DR:** Чтобы предотвратить инъекцию SQL/NoSQL и другие злонамеренные атаки, всегда используйте ORM/ODM или библиотеку базы данных, которая экранирует данные или поддерживает именованные или индексированные параметризованные запросы, а также проверяет пользовательский ввод на ожидаемые типы. Никогда не используйте строки шаблонов JavaScript или конкатенацию строк для ввода значений в запросы, поскольку это открывает для вашего приложения широкий спектр уязвимостей. Все авторитетные библиотеки доступа к данным Node.js (например, [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose)) имеют встроенную защиту от инъекционных атак.
 
-**Иначе:** Unvalidated or unsanitized user input could lead to operator injection when working with MongoDB for NoSQL, and not using a proper sanitization system or ORM will easily allow SQL injection attacks, creating a giant vulnerability.
+**Иначе:** Непроверенный или недеанонимизированный пользовательский ввод может привести к внедрению оператора при работе с MongoDB для NoSQL, а отсутствие надлежащей системы очистки или ORM легко разрешит атаки с использованием SQL-инъекции, создав гигантскую уязвимость.
 
 🔗 [**Подробнее: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.md)
 
 <br/><br/>
 
-## ![✔] 6.5. Collection of generic security best practices
+##! [✔] 6.5. Сборник общих рекомендаций по безопасности
 
-**TL;DR:** This is a collection of security advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
+**TL;DR:** Это набор рекомендаций по безопасности, которые не связаны напрямую с Node.js -- реализация Node мало чем отличается от любого другого языка. Нажмите "Подробнее", чтобы просмотреть.
 
 🔗 [**Подробнее: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
 
 <br/><br/>
 
-## ![✔] 6.6. Adjust the HTTP response headers for enhanced security
+## ![✔] 6.6. Настраивайте заголовки ответа HTTP для повышения безопасности
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Your application should be using secure headers to prevent attackers from using common attacks like cross-site scripting (XSS), clickjacking and other malicious attacks. These can be configured easily using modules like [helmet](https://www.npmjs.com/package/helmet).
+**TL;DR:** Ваше приложение должно использовать безопасные заголовки, чтобы предотвратить использование злоумышленниками распространенных атак, таких как межсайтовый скриптинг (XSS), клик-джеккинг и другие вредоносные атаки. Их можно легко настроить с помощью таких модулей, как [helmet](https://www.npmjs.com/package/helmet).
 
-**Иначе:** Attackers could perform direct attacks on your application's users, leading to huge security vulnerabilities
+**Иначе:** Злоумышленники могут выполнять прямые атаки на пользователей вашего приложения, что приводит к огромным уязвимостям безопасности.
 
 🔗 [**Подробнее: Using secure headers in your application**](/sections/security/secureheaders.md)
 
 <br/><br/>
 
-## ![✔] 6.7. Constantly and automatically inspect for vulnerable dependencies
+## ![✔] 6.7. Постоянно и автоматически проверяйте наличие уязвимых зависимостей
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Known%20Vulnerabilities%20-green.svg" alt=""/></a>
 
-**TL;DR:** With the npm ecosystem it is common to have many dependencies for a project. Dependencies should always be kept in check as new vulnerabilities are found. Use tools like [npm audit](https://docs.npmjs.com/cli/audit) or [snyk](https://snyk.io/) to track, monitor and patch vulnerable dependencies. Integrate these tools with your CI setup so you catch a vulnerable dependency before it makes it to production.
+**TL;DR:** В экосистеме npm для проекта характерно наличие множества зависимостей. Зависимости всегда следует контролировать при обнаружении новых уязвимостей. Используйте инструменты, такие как [npm audit](https://docs.npmjs.com/cli/audit) или [snyk](https://snyk.io/), чтобы отслеживать, мониторить и исправлять уязвимые зависимости. Интегрируйте эти инструменты с настройкой CI, чтобы вы могли поймать уязвимую зависимость, прежде чем она попадет в производство.
 
-**Иначе:** An attacker could detect your web framework and attack all its known vulnerabilities.
+**Иначе:** Злоумышленник может обнаружить ваш веб-фреймворк и атаковать все его известные уязвимости.
 
-🔗 [**Подробнее: Dependency security**](/sections/security/dependencysecurity.md)
+🔗 [**Подробнее: Безопасность зависимостей**](/sections/security/dependencysecurity.md)
 
 <br/><br/>
 
