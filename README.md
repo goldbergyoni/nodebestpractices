@@ -452,7 +452,19 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.3 Detect code issues with a linter
+## ![✔] 4.3 Structure tests by the AAA pattern
+
+**TL;DR:** Structure your tests with 3 well-separated sections: Arrange, Act & Assert (AAA). The first part includes the test setup, then the execution of the unit under test and finally the assertion phase. Following this structure guarantees that the reader spends no brain CPU on understanding the test plan
+
+
+**Otherwise:** Not only you spend long daily hours on understanding the main code, now also what should have been the simple part of the day (testing) stretches your brain
+
+🔗 [**Read More: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.md)
+
+<br/><br/>
+
+
+## ![✔] 4.4 Detect code issues with a linter
 
 **TL;DR:** Use a code linter to check basic quality and detect anti-patterns early. Run it before any test and add it as a pre-commit git-hook to minimize the time needed to review and correct any issue. Also check [Section 3](https://github.com/i0natan/nodebestpractices#3-code-style-practices) on Code Style Practices
 
@@ -460,7 +472,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.4 Avoid global test fixtures and seeds, add data per-test
+## ![✔] 4.5 Avoid global test fixtures and seeds, add data per-test
 
 **TL;DR:** To prevent tests coupling and easily reason about the test flow, each test should add and act on its own set of DB rows. Whenever a test needs to pull or assume the existence of some DB data - it must explicitly add that data and avoid mutating any other records
 
@@ -472,7 +484,7 @@ All statements above will return false if used with `===`
 
 
 
-## ![✔] 4.5 Constantly inspect for vulnerable dependencies
+## ![✔] 4.6 Constantly inspect for vulnerable dependencies
 
 **TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [npm audit](https://docs.npmjs.com/cli/audit) and 🔗 [snyk.io](https://snyk.io) that can be invoked from your CI on every build
 
@@ -480,7 +492,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.6 Tag your tests
+## ![✔] 4.7 Tag your tests
 
 **TL;DR:** Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/): mocha --grep 'sanity'
 
@@ -488,7 +500,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.7 Check your test coverage, it helps to identify wrong test patterns
+## ![✔] 4.8 Check your test coverage, it helps to identify wrong test patterns
 
 **TL;DR:** Code coverage tools like [Istanbul/NYC ](https://github.com/gotwarlost/istanbul)are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but not least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
 
@@ -496,7 +508,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.8 Inspect for outdated packages
+## ![✔] 4.9 Inspect for outdated packages
 
 **TL;DR:** Use your preferred tool (e.g. 'npm outdated' or [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) to detect installed packages which are outdated, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a severe scenario might be when an installed package is 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
 
@@ -504,15 +516,15 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.9 Use docker-compose for e2e testing
+## ![✔] 4.10 Use production-like env for e2e testing
 
-**TL;DR:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Docker-compose turns this problem into a breeze by crafting production-like environment using a simple text file and easy commands. It allows crafting all the dependent services, DB and isolated network for e2e testing. Last but not least, it can keep a stateless environment that is invoked before each test suite and dies right after
+**TL;DR:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Use an environment which is as closed to your real production as possible like a-continue
 
 **Otherwise:** Without docker-compose teams must maintain a testing DB for each testing environment including developers' machines, keep all those DBs in sync so test results won't vary across environments
 
 <br/><br/>
 
-## ![✔] 4.10 Refactor regularly using static analysis tools
+## ![✔] 4.11 Refactor regularly using static analysis tools
 
 **TL;DR:** Using static analysis tools helps by giving objective ways to improve code quality and keeps your code maintainable. You can add static analysis tools to your CI build to fail when it finds code smells. Its main selling points over plain linting are the ability to inspect quality in the context of multiple files (e.g. detect duplications), perform advanced analysis (e.g. code complexity) and follow the history and progress of code issues. Two examples of tools you can use are [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) and [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)).
 
@@ -522,7 +534,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.11 Carefully choose your CI platform (Jenkins vs CircleCI vs Travis vs Rest of the world)
+## ![✔] 4.12 Carefully choose your CI platform (Jenkins vs CircleCI vs Travis vs Rest of the world)
 
 **TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it should come with a vibrant ecosystem of plugins. [Jenkins](https://jenkins.io/) used to be the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Nowadays, it has become much easier to set up a CI solution using SaaS tools like [CircleCI](https://circleci.com) and others. These tools allow crafting a flexible CI pipeline without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
 
