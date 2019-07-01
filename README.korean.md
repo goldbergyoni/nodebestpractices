@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2073%20Best%20practices-blue.svg" alt="73 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20September%209%202018-green.svg" alt="Last update: September 9th, 2018"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.11.3%20LTS-brightgreen.svg" alt="Updated for Node 8.11.3 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2082%20Best%20Practices-blue.svg" alt="82 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Jun%205%202019-green.svg" alt="Last update: Jun 5, 2019"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.14.0%20LTS-brightgreen.svg" alt="Updated for Node 12.14.0 LTS">
 </div>
 
 <br/>
@@ -152,7 +152,7 @@
 
 ## ![✔] 2.6 이상한 것이 들어왔을때 프로세스를 정상적으로 중단하라
 
-**핵심요약:** 알수 없는 에러(프로그래머 에러, 모범사례 #3번 참조)가 발생하면 어플리케이션의 건강상태에 대한 불확실성이 있다. 일반적인 방법은 Forever와 PM2 같은 '재시작' 도구로 프로세스를 다시 시작하는 것이다. 
+**핵심요약:** 알수 없는 에러(프로그래머 에러, 모범사례 #3번 참조)가 발생하면 어플리케이션의 건강상태에 대한 불확실성이 있다. 일반적인 방법은 Forever와 PM2 같은 '재시작' 도구로 프로세스를 다시 시작하는 것이다.
 
 **그렇게 하지 않을 경우:** 익숙치 않은 예외가 발생하면 일부 객체가 오류 상태(예를 들어 전역적으로 사용되지만 내부 오류로 인해 이벤트를 더이상 발생시키지 않는 Event Emitter)일 수 있으며 향후의 모든 요청이 실패하거나 미친것처럼(crazily) 동작할 수 있다.
 
@@ -216,7 +216,7 @@
 
 ## ![✔] 3.1 ESLint를 사용하라
 
-**핵심요약:** [ESLint](https://eslint.org)는 발생 가능한 코드 에러를 체크하고 껄끄러운 간격(spacing)문제를 식별하는 것부터 프로그래머가 분별없이 에러를 던지는 것과 같은 코드의 심각한 안티 패턴을 감지하여 코드 스타일을 바꾸는 것에 대한 사실상의 표준이다. ESLint도 자동으로 코드스타일을 고칠 수 있지만 [prettier](https://www.npmjs.com/package/prettier)와 [beautify](https://www.npmjs.com/package/js-beautify)같은 수정 부분의 포맷을 맞춰주는 강력한 툴이 있고 ESLint와 함께 작동된다.  
+**핵심요약:** [ESLint](https://eslint.org)는 발생 가능한 코드 에러를 체크하고 껄끄러운 간격(spacing)문제를 식별하는 것부터 프로그래머가 분별없이 에러를 던지는 것과 같은 코드의 심각한 안티 패턴을 감지하여 코드 스타일을 바꾸는 것에 대한 사실상의 표준이다. ESLint도 자동으로 코드스타일을 고칠 수 있지만 [prettier](https://www.npmjs.com/package/prettier)와 [beautify](https://www.npmjs.com/package/js-beautify)같은 수정 부분의 포맷을 맞춰주는 강력한 툴이 있고 ESLint와 함께 작동된다.
 
 **그렇게 하지 않을 경우:** 프로그래머가 쓸데없는 간격과 한줄의 길이(line-width) 문제에 대해서 집중해야하고 프로젝트의 코드스타일에 대해 과도하게 생각하느라 시간을 낭비해야할 수도 있다.
 
@@ -267,12 +267,12 @@ function someFunction()
 
 **핵심요약:** 클로저와 콜백을 포함한 모든 함수에 이름을 붙여라. 익명함수를 피해라. 이것은 노드 앱을 프로파일링 할때 특히 유용하다. 모든 함수를 명명하는 것은 당신이 메모리 스냅샷을 확인할때 당신이 보고있는 것이 무엇인지 쉽게 이해 할수있도록 해준다.
 
-**그렇게 하지 않을 경우:** 
+**그렇게 하지 않을 경우:**
 당신이 익명함수에서 메모리 소비가 많다는 것을 확인 했을 때 코어 덤프(메모리 스냅샷)을 이용해 프로덕션 문제를 디버깅하는 것이 어려울 수도 있습니다.
 
 <br/><br/>
 
-## ![✔] 3.6 변수, 상수, 함수, 클래스의 명명 규칙(naming convention) 
+## ![✔] 3.6 변수, 상수, 함수, 클래스의 명명 규칙(naming convention)
 
 **핵심요약:** 상수와 변수 함수를 명명할때는 **_lowerCamelCase_** 를 사용하고 클래스를 명명 할때는 **_UpperCamelCase_**(첫 글자 대문자)를 사용하라. 이것은 일반 변수/함수와 인스턴스로 만들어야 하는 클래스를 구분하는데 도움을  것이다. 설명이 포함된 이름을 사용하되 이름을 짧게 유지하도록 해라.
 
@@ -413,7 +413,7 @@ null == undefined   // true
 
 ## ![✔] 4.4 Constantly inspect for vulnerable dependencies
 
-**핵심요약:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [nsp](https://github.com/nodesecurity/nsp) that can be invoked from your CI on every build
+**핵심요약:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [npm audit](https://docs.npmjs.com/cli/audit) and 🔗 [snyk.io](https://snyk.io) that can be invoked from your CI on every build
 
 **그렇게 하지 않을 경우:** Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
 
@@ -541,7 +541,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** A world champion IT/DevOps guy won’t save a system that is badly written
 
-🔗 [**자세히 보기: Make your code production-ready**](/sections/production/productoncode.korean.md)
+🔗 [**자세히 보기: Make your code production-ready**](/sections/production/productioncode.md)
 
 <br/><br/>
 
@@ -690,7 +690,7 @@ Full Stack Developer based in New Zealand, interested in architecting and buildi
 
 This repository is being kept up to date thanks to the help from the community. We appreciate any contribution, from a single word fix to a new best practice. Below is a list of everyone who contributed to this project. A 🌻 marks a successful pull request and a ⭐ marks an approved new best practice
 
-### Flowers <br/>
+### Flowers
 
 🌻 [Kevin Rambaud](https://github.com/kevinrambaud),
 🌻 [Michael Fine](https://github.com/mfine15),
@@ -740,10 +740,50 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Gabe Kuslansky](https://github.com/GabeKuslansky),
 🌻 [Ron Gross](https://github.com/ripper234),
 🌻 [Valeri Karpov](https://github.com/vkarpov15)
+🌻 [Sergio](https://github.com/imsergiobernal),
+🌻 [Duarte Mendes](https://github.com/duartemendes),
+🌻 [Nikola Telkedzhiev](https://github.com/ntelkedzhiev),
+🌻 [Vitor Godoy](https://github.com/vitordagamagodoy),
+🌻 [Manish Saraan](https://github.com/manishsaraan),
+🌻 [Sangbeom Han](https://github.com/uronly14me),
+🌻 [blackmatch](https://github.com/blackmatch),
+🌻 [Joe Reeve](https://github.com/ISNIT0),
+🌻 [Marcelo Melo](https://github.com/marcelosdm),
+🌻 [Ryan Busby](https://github.com/BusbyActual),
+🌻 [Iman Mohamadi](https://github.com/ImanMh),
+🌻 [Remek Ambroziak](https://github.com/reod),
+🌻 [Sergii Paryzhskyi](https://github.com/HeeL),
+🌻 [Kapil Patel](https://github.com/kapilepatel),
+🌻 [迷渡](https://github.com/justjavac),
+🌻 [Hozefa](https://github.com/hozefaj),
+🌻 [Ethan](https://github.com/el-ethan),
+🌻 [Sam](https://github.com/milkdeliver),
+🌻 [Arlind](https://github.com/ArlindXh),
+🌻 [Teddy Toussaint](https://github.com/ttous),
+🌻 [Lewis](https://github.com/LewisArdern),
+🌻 [DouglasMV](https://github.com/DouglasMV),
+🌻 [Corey Cleary](https://github.com/coreyc),
+🌻 [Mehmet Perk](https://github.com/mperk),
+🌻 [Ryan Ouyang](https://github.com/ryanouyang),
+🌻 [Gabriel Lidenor](https://github.com/GabrielLidenor),
+🌻 [Roman](https://github.com/animir),
+🌻 [Francozeira](https://github.com/Francozeira),
+🌻 [Invvard](https://github.com/Invvard),
+🌻 [Rômulo Garofalo](https://github.com/romulogarofalo),
+🌻 [Tho Q Luong](https://github.com/thoqbk),
+🌻 [Burak Shen](https://github.com/Qeneke),
+🌻 [Martin Muzatko](https://github.com/MartinMuzatko),
+🌻 [zhuweiyou](https://github.com/zhuweiyou)
 
+### Stars
 
-### Stars <br/>
-
-⭐ [Kyle Martin](https://github.com/js-kyle)
+⭐ [Kyle Martin](https://github.com/js-kyle),
+⭐ [Keith Holliday](https://github.com/TheHollidayInn),
+⭐ [Corey Cleary](https://github.com/coreyc),
+⭐ [Maximilian Berkmann](https://github.com/Berkmann18),
+⭐ [DouglasMV](https://github.com/DouglasMV),
+⭐ [Marcelo Melo](https://github.com/marcelosdm),
+⭐ [Mehmet Perk](https://github.com/mperk),
+⭐ [Ryan Ouyang](https://github.com/ryanouyang)
 
 <br/><br/><br/>

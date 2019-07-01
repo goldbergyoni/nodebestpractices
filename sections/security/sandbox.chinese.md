@@ -6,7 +6,7 @@
 
 - 一个专门的子进程 - 这提供了一个快速的信息隔离, 但要求制约子进程, 限制其执行时间, 并从错误中恢复
 - 一个基于云的无服务框架满足所有沙盒要求，但动态部署和调用Faas方法不是本部分的内容
-- 一些npm库，比如(https://www.npmjs.com/package/sandbox)[/npm/sandbox]和(https://www.npmjs.com/package/vm2)[/npm/vm2]允许通过一行代码执行隔离代码。尽管后一种选择在简单中获胜, 但它提供了有限的保护。
+- 一些npm库，比如[sandbox](https://www.npmjs.com/package/sandbox)和[vm2](https://www.npmjs.com/package/vm2)允许通过一行代码执行隔离代码。尽管后一种选择在简单中获胜, 但它提供了有限的保护。
 
 ### 代码示例 - 使用Sandbox库运行隔离代码
 
@@ -16,7 +16,7 @@ const s = new Sandbox();
 
 s.run( "lol)hai", function( output ) {
   console.log(output);
-  //output='Synatx error'
+  //output='Syntax error'
 });
 
 // Example 4 - Restricted code

@@ -2,7 +2,7 @@
 
 ### One Paragraph Explainer
 
-When storing user passwords, using an adaptive hashing algorithm such as bcrypt, offered by the [bcrypt npm module](https://www.npmjs.com/package/bcrypt) is recommended as opposed to using the native Node.js crypto module. `Math.random()` should also never be used as part of any password or token generation due to it's predictability.
+When storing user passwords, using an adaptive hashing algorithm such as bcrypt, offered by the [bcrypt npm module](https://www.npmjs.com/package/bcrypt) is recommended as opposed to using the native Node.js crypto module. `Math.random()` should also never be used as part of any password or token generation due to its predictability.
 
 The `bcrypt` module or similar should be used as opposed to the JavaScript implementation, as when using `bcrypt`, a number of 'rounds' can be specified in order to provide a secure hash. This sets the work factor or the number of 'rounds' the data is processed for, and more hashing rounds leads to more secure hash (although this at the cost of CPU time). The introduction of hashing rounds means that the brute force factor is significantly reduced, as password crackers are slowed down increasing the time required to generate one attempt.
 

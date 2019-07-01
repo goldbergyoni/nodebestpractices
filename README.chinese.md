@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2073%20Best%20practices-blue.svg" alt="73 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20September%209%202018-green.svg" alt="Last update: September 9th, 2018"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.11.3%20LTS-brightgreen.svg" alt="Updated for Node 8.11.3 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2082%20Best%20Practices-blue.svg" alt="82 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Jun%205%202019-green.svg" alt="Last update: June 5, 2019"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.4.0%20LTS-brightgreen.svg" alt="Updated for Node 12.4.0 LTS">
 </div>
 
 <br/>
@@ -96,7 +96,7 @@
 
 ## ![✔] 2.1  使用 Async-Await 和 promises 用于异步错误处理
 
-**TL;DR:** 使用回调的方式处理异步错误可能是导致灾难的最快的方式(a.k.a the pyramid of doom)。对您的代码来说，最好的礼物就是使用规范的promise库或async-await来替代，这会使其像try-catch一样更加简洁，具有熟悉的代码结构。 
+**TL;DR:** 使用回调的方式处理异步错误可能是导致灾难的最快的方式(a.k.a the pyramid of doom)。对您的代码来说，最好的礼物就是使用规范的promise库或async-await来替代，这会使其像try-catch一样更加简洁，具有熟悉的代码结构。
 
 **否则:** Node.js回调特性, function(err, response), 是导致不可维护代码的一个必然的方式。究其原因，是由于混合了随意的错误处理代码，臃肿的内嵌，蹩脚的代码模式。
 
@@ -204,7 +204,7 @@
 
 <br/><br/>
 
-## ![✔] 2.11 快速查错，验证参数使用一个专门的库Fail fast, validate arguments using a dedicated library
+## ![✔] 2.11 快速查错，验证参数使用一个专门的库
 
 **TL;DR:** 这应该是您的Express最佳实践中的一部分 – assert API输入避免难以理解的漏洞，这类漏洞以后会非常难以追踪。而验证代码通常是一件乏味的事情，除非使用一些非常炫酷的帮助库比如Joi。
 
@@ -246,7 +246,7 @@
   }
 
   // 避免
-  function someFunction
+  function someFunction()
   {
     // 代码块
   }
@@ -283,17 +283,17 @@
 ### 代码示例 ###
 ```javascript
   // 使用UpperCamelCase命名类名
-  class SomeClassExample () { 
-    
+  class SomeClassExample () {
+
     // 常量使用const关键字，并使用lowerCamelCase命名
     const config = {
       key: 'value'
     };
-    
+
     // 变量和方法使用lowerCamelCase命名
     let someVariableExample = 'value';
     function doSomething() {
-      
+
     }
 
   }
@@ -319,7 +319,7 @@
 
 <br/><br/>
 
-## ![✔] 3.9 在文件夹上 require ，而不是直接在文件上
+## ![✔] 3.9 require 文件夹，而不是文件
 
 **TL;DR:** 当在一个文件夹中开发库/模块，放置一个文件index.js暴露模块的
 内部，这样每个消费者都会通过它。这将作为您模块的一个接口，并使未来的变化简单而不违反规则。
@@ -420,7 +420,7 @@ null == undefined   // true
 
 ## ![✔] 4.4 经常检查易受攻击的依赖
 
-**TL;DR:** 即使是那些最有名的依赖模块，比如Express，也有已知的漏洞。使用社区和商业工具，比如 🔗 [nsp](https://github.com/nodesecurity/nsp) ，集成在您的CI平台上，在每一次构建的时候都会被调用，这样可以很容易地解决漏洞问题。
+**TL;DR:** 即使是那些最有名的依赖模块，比如Express，也有已知的漏洞。使用社区和商业工具，比如 🔗 [npm audit](https://docs.npmjs.com/cli/audit) ，集成在您的CI平台上，在每一次构建的时候都会被调用，这样可以很容易地解决漏洞问题。
 
 **否则:** 在没有专用工具的情况下，使代码清除漏洞，需要不断地跟踪有关新威胁的在线出版物，相当繁琐。
 
@@ -485,7 +485,7 @@ null == undefined   // true
 
 
 🔗 [**更多: 使用智能日志增加透明度**](/sections/production/smartlogging.chinese.md)
-	
+
 <br/><br/>
 
 ## ![✔] 5.3. 委托可能的一切（例如：gzip，SSL）给反向代理
@@ -519,7 +519,7 @@ null == undefined   // true
 
 🔗 [**更多: 使用正确的工具保护进程正常运行**](/sections/production/guardprocess.chinese.md)
 
- 
+
 <br/><br/>
 
 ## ![✔] 5.6. 利用CPU多核
@@ -564,7 +564,7 @@ null == undefined   // true
 **否则:** 一个世界冠军级别的IT/运维人员也不能拯救一个编码低劣的系统。
 
 
-🔗 [**更多: 使您的代码保持生产环境就绪**](/sections/production/productoncode.chinese.md)
+🔗 [**更多: 使您的代码保持生产环境就绪**](/sections/production/productioncode.chinese.md)
 
 <br/><br/>
 
@@ -617,7 +617,7 @@ null == undefined   // true
 <br/><br/>
 
 
-## ![✔] 5.14. 在每一个log语句中指明 ‘TransactionId’ 
+## ![✔] 5.14. 在每一个log语句中指明 ‘TransactionId’
 
 **TL;DR:** 在每一个请求的每一条log入口，指明同一个标识符，transaction-id: {某些值}。然后在检查日志中的错误时，很容易总结出前后发生的事情。不幸的是，由于Node异步的天性自然，这是不容易办到的，看下代码里面的例子
 
@@ -951,10 +951,10 @@ Independent Node.js consultant who works with customers at USA, Europe and Israe
 👨‍💻 Software engineer, 🌐 web developer, 🤖 emojis enthusiast.
 
 ## `Refael Ackermann` [@refack](https://github.com/refack) &lt;refack@gmail.com&gt; (he/him)
-Node.js Core Collaborator, been noding since 0.4, and have noded in multiple production sites. Founded `node4good` home of [`lodash-contrib`](https://github.com/node4good/lodash-contrib), [`formage`](https://github.com/node4good/formage), and [`asynctrace`](https://github.com/node4good/asynctrace). 
+Node.js Core Collaborator, been noding since 0.4, and have noded in multiple production sites. Founded `node4good` home of [`lodash-contrib`](https://github.com/node4good/lodash-contrib), [`formage`](https://github.com/node4good/formage), and [`asynctrace`](https://github.com/node4good/asynctrace).
 `refack` on freenode, Twitter, GitHub, GMail, and many other platforms. DMs are open, happy to help.
 
-## `Bruno Scheufler` 
+## `Bruno Scheufler`
 💻 full-stack web developer and Node.js enthusiast.
 
 ## `Kyle Martin` [@js-kyle](https://github.com/js-kyle)
@@ -1017,10 +1017,50 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Gabe Kuslansky](https://github.com/GabeKuslansky),
 🌻 [Ron Gross](https://github.com/ripper234),
 🌻 [Valeri Karpov](https://github.com/vkarpov15)
+🌻 [Sergio](https://github.com/imsergiobernal),
+🌻 [Duarte Mendes](https://github.com/duartemendes),
+🌻 [Nikola Telkedzhiev](https://github.com/ntelkedzhiev),
+🌻 [Vitor Godoy](https://github.com/vitordagamagodoy),
+🌻 [Manish Saraan](https://github.com/manishsaraan),
+🌻 [Sangbeom Han](https://github.com/uronly14me),
+🌻 [blackmatch](https://github.com/blackmatch),
+🌻 [Joe Reeve](https://github.com/ISNIT0),
+🌻 [Marcelo Melo](https://github.com/marcelosdm),
+🌻 [Ryan Busby](https://github.com/BusbyActual),
+🌻 [Iman Mohamadi](https://github.com/ImanMh),
+🌻 [Remek Ambroziak](https://github.com/reod),
+🌻 [Sergii Paryzhskyi](https://github.com/HeeL),
+🌻 [Kapil Patel](https://github.com/kapilepatel),
+🌻 [迷渡](https://github.com/justjavac),
+🌻 [Hozefa](https://github.com/hozefaj),
+🌻 [Ethan](https://github.com/el-ethan),
+🌻 [Sam](https://github.com/milkdeliver),
+🌻 [Arlind](https://github.com/ArlindXh),
+🌻 [Teddy Toussaint](https://github.com/ttous),
+🌻 [Lewis](https://github.com/LewisArdern),
+🌻 [DouglasMV](https://github.com/DouglasMV),
+🌻 [Corey Cleary](https://github.com/coreyc),
+🌻 [Mehmet Perk](https://github.com/mperk),
+🌻 [Ryan Ouyang](https://github.com/ryanouyang),
+🌻 [Gabriel Lidenor](https://github.com/GabrielLidenor),
+🌻 [Roman](https://github.com/animir),
+🌻 [Francozeira](https://github.com/Francozeira),
+🌻 [Invvard](https://github.com/Invvard),
+🌻 [Rômulo Garofalo](https://github.com/romulogarofalo),
+🌻 [Tho Q Luong](https://github.com/thoqbk),
+🌻 [Burak Shen](https://github.com/Qeneke),
+🌻 [Martin Muzatko](https://github.com/MartinMuzatko),
+🌻 [zhuweiyou](https://github.com/zhuweiyou)
 
-### Stars <br/>
+### Stars
 
-⭐ [Kyle Martin](https://github.com/js-kyle)
-⭐ [Keith Holliday](https://github.com/TheHollidayInn)
+⭐ [Kyle Martin](https://github.com/js-kyle),
+⭐ [Keith Holliday](https://github.com/TheHollidayInn),
+⭐ [Corey Cleary](https://github.com/coreyc),
+⭐ [Maximilian Berkmann](https://github.com/Berkmann18),
+⭐ [DouglasMV](https://github.com/DouglasMV),
+⭐ [Marcelo Melo](https://github.com/marcelosdm),
+⭐ [Mehmet Perk](https://github.com/mperk),
+⭐ [Ryan Ouyang](https://github.com/ryanouyang)
 
-<br/><br/>
+<br/><br/><br/>

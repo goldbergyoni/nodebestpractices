@@ -14,7 +14,7 @@ There is a number of tools available to help identify third-party packages in No
 
 ### NPM Audit
 
-`npm audit` is a new cli tool introduced with NPM@6. 
+`npm audit` is a new cli tool introduced with NPM@6.
 
 Running `npm audit` will produce a report of security vulnerabilities with the affected package name, vulnerability severity and description, path, and other information, and, if available, commands to apply patches to resolve vulnerabilities.
 
