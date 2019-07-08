@@ -56,6 +56,6 @@ test('Should be classified as premium', () => {
 <br/><br/>
 
 ### "It is important for the test reader to be able to quickly determine what behavior the test is verifying"
+From the book [XUnit Patterns](http://xunitpatterns.com/Four%20Phase%20Test.html):
 
-From the book XUnit Patterns(http://xunitpatterns.com/Four%20Phase%20Test.html):
 > It is important for the test reader to be able to quickly determine what behavior the test is verifying. It can be very confusing when various behaviors of the system under test (SUT) are being invoked, some to set up the pre-test state (fixture) of the SUT, others to exercise the SUT and yet others to verify the post-test state of the SUT. Clearly identifying the four phases makes the intent of the test much easier to see.
