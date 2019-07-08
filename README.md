@@ -26,7 +26,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 # Latest Best Practices and News
 
-- **New best practice:** 4.4: [Testing with the AAA pattern](https://github.com/i0natan/nodebestpractices#4-testing-and-overall-quality-practices)
+- **New best practice:** 4.3: [Testing with the AAA pattern](https://github.com/i0natan/nodebestpractices#4-testing-and-overall-quality-practices)
 
 - **We seek typescript contributors:** want to help contributing TypeScript examples? please approach by opening an issue
 
