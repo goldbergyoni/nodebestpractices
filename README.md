@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2083%20Best%20Practices-blue.svg" alt="83 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Jun%205%202019-green.svg" alt="Last update: Jun 5, 2019"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.14.0%20LTS-brightgreen.svg" alt="Updated for Node 12.14.0 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2084%20Best%20Practices-blue.svg" alt="84 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20July%205%202019-green.svg" alt="Last update: Jun 5, 2019"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.14.0%20LTS-brightgreen.svg" alt="Updated for Node 12.14.0 LTS">
 </div>
 
 <br/>
@@ -26,9 +26,9 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 # Latest Best Practices and News
 
-- **New best practice:** 4.4: [Avoid test-fixtures, add data per test](https://github.com/i0natan/nodebestpractices#4-testing-and-overall-quality-practices)
+- **New best practice:** 4.4: [Testing with the AAA pattern](https://github.com/i0natan/nodebestpractices#4-testing-and-overall-quality-practices)
 
-- **New best practice:** 6.25: [Avoid publishing secrets to the npm registry](/sections/security/avoid_publishing_secrets.md)
+- **We seek typescript contributors:** want to help contributing TypeScript examples? please approach by opening an issue
 
 - **New translation:** ![BR](/assets/flags/BR.png) [Brazilian Portuguese](/README.brazilian-portuguese.md) available now, courtesy of [Marcelo Melo](https://github.com/marcelosdm)! ❤️
 
@@ -49,7 +49,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 1.  [Project Structure Practices (5)](#1-project-structure-practices)
 2.  [Error Handling Practices (11) ](#2-error-handling-practices)
 3.  [Code Style Practices (12) ](#3-code-style-practices)
-4.  [Testing And Overall Quality Practices (11) ](#4-testing-and-overall-quality-practices)
+4.  [Testing And Overall Quality Practices (12) ](#4-testing-and-overall-quality-practices)
 5.  [Going To Production Practices (18) ](#5-going-to-production-practices)
 6.  [Security Practices (25)](#6-security-best-practices)
 7.  [Performance Practices (1) (In Progress️ ✍️)](#7-performance-best-practices)
@@ -1220,7 +1220,11 @@ We appreciate any contribution, from a single word fix to a new best practice. B
 🌻 [Tho Q Luong](https://github.com/thoqbk),
 🌻 [Burak Shen](https://github.com/Qeneke),
 🌻 [Martin Muzatko](https://github.com/MartinMuzatko),
-🌻 [zhuweiyou](https://github.com/zhuweiyou)
+🌻 [Jared Collier](https://github.com/autoboxer)
+🌻 [Hilton Meyer](https://github.com/bikingbadger)
+🌻 [ChangJoo Park(박창주)](https://github.com/ChangJoo-Park)
+🌻 [Masahiro Sakaguchi](https://github.com/MasahiroSakaguchi)
+
 
 
 ### Stars
