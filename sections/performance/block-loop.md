@@ -1,4 +1,8 @@
-Node handles the Event Loop on a single thread rotating through multiple queues. Operations with high complexity, large json parsing, unsafe regex querieies, and long awaited promises are some of the operations that can cause the event loop to stall. Preventing this is as easy as setting up monitoring for the the Event Loop and resolving the blocker.
+# Don't block the event loop
+
+<br/><br/>
+
+Node handles the Event Loop mostly on a single thread rotating through multiple queues. Operations with high complexity, large json parsing, unsafe regex querieies, and large IO operations are some of the operations that can cause the Event Loop to stall. Avoid this off-loading CPU intensive tasks to a dedicated service (e.g. job server), or breaking long tasks into small steps then using the Worker Pool are some examples of how to avoid blocking the Event Loop.
 
 ## Example
 Let's take a look at an example from [Node Clinic](https://clinicjs.org/documentation/doctor/05-fixing-event-loop-problem).
@@ -18,11 +22,6 @@ server.get('/', function (req, res, next) {
 })
 
 server.listen(3000)
-
-process.on('SIGINT', function () {
-  console.error('Caught SIGINT, shutting down.')
-  server.close()
-})
 ```
 
 And when we benchmark this app, we start to see the latency caused by the long
@@ -48,7 +47,24 @@ while loop.
 ```
 
 ## Image of the Event Loop
-![1*aU5dr98pxTsZ4AMfnA6lNA.png](https://cdn-images-1.medium.com/max/1600/1*aU5dr98pxTsZ4AMfnA6lNA.png)
+   ┌───────────────────────────┐
+┌─>│           timers          │
+│  └─────────────┬─────────────┘
+│  ┌─────────────┴─────────────┐
+│  │     pending callbacks     │
+│  └─────────────┬─────────────┘
+│  ┌─────────────┴─────────────┐
+│  │       idle, prepare       │
+│  └─────────────┬─────────────┘      ┌───────────────┐
+│  ┌─────────────┴─────────────┐      │   incoming:   │
+│  │           poll            │<─────┤  connections, │
+│  └─────────────┬─────────────┘      │   data, etc.  │
+│  ┌─────────────┴─────────────┐      └───────────────┘
+│  │           check           │
+│  └─────────────┬─────────────┘
+│  ┌─────────────┴─────────────┐
+└──┤      close callbacks      │
+   └───────────────────────────┘
 
 >Here's a good rule of thumb for keeping your Node server speedy: Node is fast when the work associated with each client at any given time is "small".
 >[Don't Block the Event Loop (or the Worker Pool) \| Node.js](https://nodejs.org/en/docs/guides/dont-block-the-event-loop/)

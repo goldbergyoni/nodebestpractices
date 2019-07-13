@@ -959,7 +959,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 7.1. Don't block the event loop
 
-**TL;DR:** TLDR; Avoid CPU intensive tasks as they will block the Event Loop.
+**TL;DR:** Avoid CPU intensive tasks as they will block the mostly single-threaded Event Loop.
 
 **Otherwise:** As the Event Loop is blocked, Node.js will be unable to handle other request thus causing delays for concurrent users.
 
