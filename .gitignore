@@ -14,3 +14,5 @@ cert
 logs/*
 desktop.ini
 package-lock.json
+.history
+.env
