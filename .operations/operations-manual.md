@@ -86,3 +86,7 @@ Each month, a maintainer on call will open an issue for maintenance work and rec
 | Korean               | Yoni     |
 | Spanish              | Kyle     |
 | Chinese              | Yoni     |
+| Korean               | Kyle     |
+| Egyptian             | Yoni     |
+| Ukrainian            | Bruno     |
+

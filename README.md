@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2081%20Best%20Practices-blue.svg" alt="81 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Mar%2010%202019-green.svg" alt="Last update: March 10, 2019"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%2010.15.3%20LTS-brightgreen.svg" alt="Updated for Node 10.15.3 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2084%20Best%20Practices-blue.svg" alt="84 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20July%205%202019-green.svg" alt="Last update: Jun 5, 2019"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.14.0%20LTS-brightgreen.svg" alt="Updated for Node 12.14.0 LTS">
 </div>
 
 <br/>
@@ -26,13 +26,11 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 # Latest Best Practices and News
 
+- **New best practice:** 4.3: [Testing with the AAA pattern](https://github.com/i0natan/nodebestpractices#4-testing-and-overall-quality-practices)
+
+- **We seek typescript contributors:** want to help contributing TypeScript examples? please approach by opening an issue
+
 - **New translation:** ![BR](/assets/flags/BR.png) [Brazilian Portuguese](/README.brazilian-portuguese.md) available now, courtesy of [Marcelo Melo](https://github.com/marcelosdm)! ❤️
-
-- **New best practice:** 4.2: Include 3 parts in each test name - [_From the section "Testing and overall quality"_](https://github.com/i0natan/nodebestpractices#4-testing-and-overall-quality-practices)
-
-- **New best practice:** 7.1: Prefer native JS methods over user-land utils like Lodash - [_From the section "Performance"_](https://github.com/i0natan/nodebestpractices#7-performance-best-practices)
-
-- **News update:** [We kicked-off the performance section, wanna join?](https://github.com/i0natan/nodebestpractices/issues/302)
 
 <br/><br/>
 
@@ -40,7 +38,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **1. You are, in fact, reading dozens of the best Node.js articles -** this repository is a summary and curation of the top-ranked content on Node.js best practices, as well as content written here by collaborators
 
-**2. It is the largest compilation, and it is growing every week -** currently, more than 70 best practices, style guides, and architectural tips are presented. New issues and pull requests are created every day to keep this live book updated. We'd love to see you contributing here, whether that is fixing code mistakes, helping with translations, or suggesting brilliant new ideas. See our [writing guidelines here](/.operations/writing-guidelines.md)
+**2. It is the largest compilation, and it is growing every week -** currently, more than 80 best practices, style guides, and architectural tips are presented. New issues and pull requests are created every day to keep this live book updated. We'd love to see you contributing here, whether that is fixing code mistakes, helping with translations, or suggesting brilliant new ideas. See our [writing guidelines here](/.operations/writing-guidelines.md)
 
 **3. Most best practices have additional info -** most bullets include a **🔗Read More** link that expands on the practice with code examples, quotes from selected blogs and more information
 
@@ -51,9 +49,9 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 1.  [Project Structure Practices (5)](#1-project-structure-practices)
 2.  [Error Handling Practices (11) ](#2-error-handling-practices)
 3.  [Code Style Practices (12) ](#3-code-style-practices)
-4.  [Testing And Overall Quality Practices (10) ](#4-testing-and-overall-quality-practices)
+4.  [Testing And Overall Quality Practices (12) ](#4-testing-and-overall-quality-practices)
 5.  [Going To Production Practices (18) ](#5-going-to-production-practices)
-6.  [Security Practices (24)](#6-security-best-practices)
+6.  [Security Practices (25)](#6-security-best-practices)
 7.  [Performance Practices (1) (In Progress️ ✍️)](#7-performance-best-practices)
 
 <br/><br/>
@@ -271,27 +269,47 @@ function someFunction()
 
 <br/><br/>
 
-## ![✔] 3.4 Don't Forget the Semicolon
+## ![✔] 3.4 Separate your statements properly
 
-**TL;DR:** While not unanimously agreed upon, it is still recommended to put a semicolon at the end of each statement. This will make your code more readable and explicit to other developers who read it
+No matter if you use semicolons or not to separate your statements, knowing the common pitfalls of improper linebreaks or automatic semicolon insertion, will help you to eliminate regular syntax errors.
 
-**Otherwise:** As seen in the previous section, JavaScript's interpreter automatically adds a semicolon at the end of a statement if there isn't one, or considers a statement as not ended where it should, which might lead to some undesired results
+**TL;DR:** Use ESLint to gain awareness about separation concerns. [Prettier](https://prettier.io/) or [Standardjs](https://standardjs.com/) can automatically resolve these issues.
+
+**Otherwise:** As seen in the previous section, JavaScript's interpreter automatically adds a semicolon at the end of a statement if there isn't one, or considers a statement as not ended where it should, which might lead to some undesired results. You can use assignments and avoid using immediate invoked function expressions to prevent most of unexpected errors.
 
 ### Code example
 
 ```javascript
 // Do
-const count = 2;
-(function doSomething() {
-  // do something amazing
-}());
+function doThing() {
+    // ...
+}
+
+doThing()
+
+// Do
+
+const items = [1, 2, 3]
+items.forEach(console.log)
+
+// Avoid — throws exception
+const m = new Map()
+const a = [1,2,3]
+[...m.values()].forEach(console.log)
+> [...m.values()].forEach(console.log)
+>  ^^^
+> SyntaxError: Unexpected token ...
 
 // Avoid — throws exception
 const count = 2 // it tries to run 2(), but 2 is not a function
 (function doSomething() {
   // do something amazing
 }())
+// put a semicolon before the immediate invoked function, after the const definition, save the return value of the anonymous function to a variable or avoid IIFEs alltogether
 ```
+
+🔗 [**Read more:** "Semi ESLint rule"](https://eslint.org/docs/rules/semi)
+🔗 [**Read more:** "No unexpected multiline ESLint rule"](https://eslint.org/docs/rules/no-unexpected-multiline)
 
 <br/><br/>
 
@@ -434,7 +452,18 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.3 Detect code issues with a linter
+## ![✔] 4.3 Structure tests by the AAA pattern
+
+**TL;DR:** Structure your tests with 3 well-separated sections: Arrange, Act & Assert (AAA). The first part includes the test setup, then the execution of the unit under test and finally the assertion phase. Following this structure guarantees that the reader spends no brain CPU on understanding the test plan
+
+
+**Otherwise:** Not only you spend long daily hours on understanding the main code, now also what should have been the simple part of the day (testing) stretches your brain
+
+🔗 [**Read More: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.md)
+
+<br/><br/>
+
+## ![✔] 4.4 Detect code issues with a linter
 
 **TL;DR:** Use a code linter to check basic quality and detect anti-patterns early. Run it before any test and add it as a pre-commit git-hook to minimize the time needed to review and correct any issue. Also check [Section 3](https://github.com/i0natan/nodebestpractices#3-code-style-practices) on Code Style Practices
 
@@ -442,17 +471,19 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.4 Carefully choose your CI platform (Jenkins vs CircleCI vs Travis vs Rest of the world)
+## ![✔] 4.5 Avoid global test fixtures and seeds, add data per-test
 
-**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it should come with a vibrant ecosystem of plugins. [Jenkins](https://jenkins.io/) used to be the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Nowadays, it has become much easier to set up a CI solution using SaaS tools like [CircleCI](https://circleci.com) and others. These tools allow crafting a flexible CI pipeline without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
+**TL;DR:** To prevent tests coupling and easily reason about the test flow, each test should add and act on its own set of DB rows. Whenever a test needs to pull or assume the existence of some DB data - it must explicitly add that data and avoid mutating any other records
 
-**Otherwise:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
+**Otherwise:** Consider a scenario where deployment is aborted due to failing tests, team is now going to spend precious investigation time that ends in a sad conclusion: the system works well, the tests however interfere with each other and break the build
 
-🔗 [**Read More: Choosing CI platform**](/sections/testingandquality/citools.md)
+🔗 [**Read More: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
 
 <br/><br/>
 
-## ![✔] 4.5 Constantly inspect for vulnerable dependencies
+
+
+## ![✔] 4.6 Constantly inspect for vulnerable dependencies
 
 **TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [npm audit](https://docs.npmjs.com/cli/audit) and 🔗 [snyk.io](https://snyk.io) that can be invoked from your CI on every build
 
@@ -460,7 +491,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.6 Tag your tests
+## ![✔] 4.7 Tag your tests
 
 **TL;DR:** Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/): mocha --grep 'sanity'
 
@@ -468,7 +499,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.7 Check your test coverage, it helps to identify wrong test patterns
+## ![✔] 4.8 Check your test coverage, it helps to identify wrong test patterns
 
 **TL;DR:** Code coverage tools like [Istanbul/NYC ](https://github.com/gotwarlost/istanbul)are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but not least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
 
@@ -476,7 +507,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.8 Inspect for outdated packages
+## ![✔] 4.9 Inspect for outdated packages
 
 **TL;DR:** Use your preferred tool (e.g. 'npm outdated' or [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) to detect installed packages which are outdated, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a severe scenario might be when an installed package is 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
 
@@ -484,15 +515,15 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.9 Use docker-compose for e2e testing
+## ![✔] 4.10 Use production-like env for e2e testing
 
-**TL;DR:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Docker-compose turns this problem into a breeze by crafting production-like environment using a simple text file and easy commands. It allows crafting all the dependent services, DB and isolated network for e2e testing. Last but not least, it can keep a stateless environment that is invoked before each test suite and dies right after
+**TL;DR:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Use an environment which is as closed to your real production as possible like a-continue
 
 **Otherwise:** Without docker-compose teams must maintain a testing DB for each testing environment including developers' machines, keep all those DBs in sync so test results won't vary across environments
 
 <br/><br/>
 
-## ![✔] 4.10 Refactor regularly using static analysis tools
+## ![✔] 4.11 Refactor regularly using static analysis tools
 
 **TL;DR:** Using static analysis tools helps by giving objective ways to improve code quality and keeps your code maintainable. You can add static analysis tools to your CI build to fail when it finds code smells. Its main selling points over plain linting are the ability to inspect quality in the context of multiple files (e.g. detect duplications), perform advanced analysis (e.g. code complexity) and follow the history and progress of code issues. Two examples of tools you can use are [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) and [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)).
 
@@ -500,7 +531,18 @@ All statements above will return false if used with `===`
 
 🔗 [**Read More: Refactoring!**](/sections/testingandquality/refactoring.md)
 
+<br/><br/>
+
+## ![✔] 4.12 Carefully choose your CI platform (Jenkins vs CircleCI vs Travis vs Rest of the world)
+
+**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it should come with a vibrant ecosystem of plugins. [Jenkins](https://jenkins.io/) used to be the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Nowadays, it has become much easier to set up a CI solution using SaaS tools like [CircleCI](https://circleci.com) and others. These tools allow crafting a flexible CI pipeline without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
+
+**Otherwise:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
+
+🔗 [**Read More: Choosing CI platform**](/sections/testingandquality/citools.md)
+
 <br/><br/><br/>
+
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
@@ -689,7 +731,7 @@ All statements above will return false if used with `===`
 # `6. Security Best Practices`
 
 <div align="center">
-<img src="https://img.shields.io/badge/OWASP%20Threats-Top%2010-green.svg" alt="53 items"/>
+<img src="https://img.shields.io/badge/OWASP%20Threats-Top%2010-green.svg" alt="54 items"/>
 </div>
 
 ## ![✔] 6.1. Embrace linter security rules
@@ -708,7 +750,7 @@ All statements above will return false if used with `===`
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** DOS attacks are very popular and relatively easy to conduct. Implement rate limiting using an external service such as cloud load balancers, cloud firewalls, nginx, or (for smaller and less critical apps) a rate-limiting middleware (e.g. [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
+**TL;DR:** DOS attacks are very popular and relatively easy to conduct. Implement rate limiting using an external service such as cloud load balancers, cloud firewalls, nginx, [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) package, or (for smaller and less critical apps) a rate-limiting middleware (e.g. [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
 
 **Otherwise:** An application could be subject to an attack resulting in a denial of service where real users receive a degraded or unavailable service.
 
@@ -973,6 +1015,17 @@ All statements above will return false if used with `===`
 
 🔗 [**Read More: Prevent unsafe redirects**](/sections/security/saferedirects.md)
 
+<br/><br/>
+
+## ![✔] 6.25. Avoid publishing secrets to the npm registry
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
+
+**TL;DR:** Precautions should be taken to avoid the risk of accidentally publishing secrets to public npm registries. An `.npmignore` file can be used to blacklist specific files or folders, or the `files` array in `package.json` can act as a whitelist.
+
+**Otherwise:** Your project's API keys, passwords or other secrets are open to be abused by anyone who comes across them, which may result in financial loss, impersonation, and other risks.
+
+🔗 [**Read More: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
@@ -1037,7 +1090,7 @@ Independent Node.js consultant who works with customers in USA, Europe, and Isra
 [Bruno Scheufler](https://github.com/BrunoScheufler)
 <a href="https://brunoscheufler.com/"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
-💻 full-stack web developer and Node.js enthusiast
+💻 full-stack web engineer, Node.js & GraphQL enthusiast
 
 <br/>
 
@@ -1154,13 +1207,35 @@ We appreciate any contribution, from a single word fix to a new best practice. B
 🌻 [Sam](https://github.com/milkdeliver),
 🌻 [Arlind](https://github.com/ArlindXh),
 🌻 [Teddy Toussaint](https://github.com/ttous),
-🌻 [Lewis](https://github.com/LewisArdern)
+🌻 [Lewis](https://github.com/LewisArdern),
+🌻 [DouglasMV](https://github.com/DouglasMV),
+🌻 [Corey Cleary](https://github.com/coreyc),
+🌻 [Mehmet Perk](https://github.com/mperk),
+🌻 [Ryan Ouyang](https://github.com/ryanouyang),
+🌻 [Gabriel Lidenor](https://github.com/GabrielLidenor),
+🌻 [Roman](https://github.com/animir),
+🌻 [Francozeira](https://github.com/Francozeira),
+🌻 [Invvard](https://github.com/Invvard),
+🌻 [Rômulo Garofalo](https://github.com/romulogarofalo),
+🌻 [Tho Q Luong](https://github.com/thoqbk),
+🌻 [Burak Shen](https://github.com/Qeneke),
+🌻 [Martin Muzatko](https://github.com/MartinMuzatko),
+🌻 [Jared Collier](https://github.com/autoboxer)
+🌻 [Hilton Meyer](https://github.com/bikingbadger)
+🌻 [ChangJoo Park(박창주)](https://github.com/ChangJoo-Park)
+🌻 [Masahiro Sakaguchi](https://github.com/MasahiroSakaguchi)
+
+
 
 ### Stars
 
 ⭐ [Kyle Martin](https://github.com/js-kyle),
 ⭐ [Keith Holliday](https://github.com/TheHollidayInn),
 ⭐ [Corey Cleary](https://github.com/coreyc),
-⭐ [Maximilian Berkmann](https://github.com/Berkmann18)
+⭐ [Maximilian Berkmann](https://github.com/Berkmann18),
+⭐ [DouglasMV](https://github.com/DouglasMV),
+⭐ [Marcelo Melo](https://github.com/marcelosdm),
+⭐ [Mehmet Perk](https://github.com/mperk),
+⭐ [Ryan Ouyang](https://github.com/ryanouyang)
 
 <br/><br/><br/>

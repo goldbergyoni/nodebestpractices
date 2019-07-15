@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2081%20Best%20Practices-blue.svg" alt="81 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Mar%2010%202019-green.svg" alt="Last update: March 10, 2019"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%2010.15.3%20LTS-brightgreen.svg" alt="Updated for Node 10.15.3 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2082%20Best%20Practices-blue.svg" alt="82 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Jun%205%202019-green.svg" alt="Last update: June 5, 2019"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.4.0%20LTS-brightgreen.svg" alt="Updated for Node 12.4.0 LTS">
 </div>
 
 <br/>
@@ -246,7 +246,7 @@
   }
 
   // 避免
-  function someFunction
+  function someFunction()
   {
     // 代码块
   }
@@ -1037,13 +1037,30 @@ This repository is being kept up to date thanks to the help from the community. 
 🌻 [Sam](https://github.com/milkdeliver),
 🌻 [Arlind](https://github.com/ArlindXh),
 🌻 [Teddy Toussaint](https://github.com/ttous),
-🌻 [Lewis](https://github.com/LewisArdern)
+🌻 [Lewis](https://github.com/LewisArdern),
+🌻 [DouglasMV](https://github.com/DouglasMV),
+🌻 [Corey Cleary](https://github.com/coreyc),
+🌻 [Mehmet Perk](https://github.com/mperk),
+🌻 [Ryan Ouyang](https://github.com/ryanouyang),
+🌻 [Gabriel Lidenor](https://github.com/GabrielLidenor),
+🌻 [Roman](https://github.com/animir),
+🌻 [Francozeira](https://github.com/Francozeira),
+🌻 [Invvard](https://github.com/Invvard),
+🌻 [Rômulo Garofalo](https://github.com/romulogarofalo),
+🌻 [Tho Q Luong](https://github.com/thoqbk),
+🌻 [Burak Shen](https://github.com/Qeneke),
+🌻 [Martin Muzatko](https://github.com/MartinMuzatko),
+🌻 [zhuweiyou](https://github.com/zhuweiyou)
 
 ### Stars
 
 ⭐ [Kyle Martin](https://github.com/js-kyle),
 ⭐ [Keith Holliday](https://github.com/TheHollidayInn),
 ⭐ [Corey Cleary](https://github.com/coreyc),
-⭐ [Maximilian Berkmann](https://github.com/Berkmann18)
+⭐ [Maximilian Berkmann](https://github.com/Berkmann18),
+⭐ [DouglasMV](https://github.com/DouglasMV),
+⭐ [Marcelo Melo](https://github.com/marcelosdm),
+⭐ [Mehmet Perk](https://github.com/mperk),
+⭐ [Ryan Ouyang](https://github.com/ryanouyang)
 
 <br/><br/><br/>
