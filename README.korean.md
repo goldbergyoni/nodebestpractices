@@ -995,22 +995,22 @@ null == undefined   // true
 
 <br/><br/><br/>
 
-# Milestones
+# 마일스톤
 
-To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/i0natan/nodebestpractices/milestones) and join the working groups if you want to contribute to this project
+이 가이드를 관리하고 최신 버전을 유지하기 위해, 우리는 지속해서 가이드라인과 모범 사례들을 커뮤니티의 도움으로 업데이트하고 개선해 나가고 있습니다. [마일스톤](https://github.com/i0natan/nodebestpractices/milestones)을 확인하시고 이 프로젝트에 기여하고 싶다면 작업중인 그룹에 참여하세요!
 
 <br/>
 
-## Translations
+## 번역
 
-All translations are contributed by the community. We will be happy to get any help with either completed, ongoing or new translations!
+모든 번역은 커뮤니티에 의해 기여되고 있습니다. 이미 완성된 번역이나, 진행중, 새로운 번역에 대한 도움은 언제나 환영합니다!
 
-### Completed translations
+### 번역 작업 완료
 
 - ![BR](/assets/flags/BR.png) [Brazilian Portuguese](/README.brazilian-portuguese.md) - Courtesy of [Marcelo Melo](https://github.com/marcelosdm)
 - ![CN](/assets/flags/CN.png) [Chinese](README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
 
-### Translations in progress
+### 번역 작업중
 
 - ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/129))
 - ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/i0natan/nodebestpractices/issues/156))
@@ -1083,9 +1083,9 @@ Our collaborators are members who are contributing to the repository on a reguar
 
 <br/>
 
-## Thank You Notes
+## 감사 노트
 
-We appreciate any contribution, from a single word fix to a new best practice. Below is a list of everyone who contributed to this project. A 🌻 marks a successful pull request and a ⭐ marks an approved new best practice.
+하나의 단어를 고치는 것 부터 새로운 모범사례까지, 어떤 컨트리뷰트든 환영합니다. 아래는 이 프로젝트에 컨트리뷰트한 모든 사람의 리스트입니다. 🌻는 성공적인 풀리퀘스트를 표시하고, ⭐는 새로운 모범사례를 의미합니다.
 
 ### Flowers
 
