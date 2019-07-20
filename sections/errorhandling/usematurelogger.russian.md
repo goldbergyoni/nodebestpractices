@@ -1,6 +1,6 @@
 # Используйте проверенный логгер, чтобы увеличить видимость ошибок
 
-### Объяснение в один абза
+### Объяснение в один абзац
 
 We all love console.log but obviously, a reputable and persistent logger like [Winston][winston], [Bunyan][bunyan] (highly popular) or [Pino][pino] (the new kid in town which is focused on performance) is mandatory for serious projects. A set of practices and tools will help to reason about errors much quicker – (1) log frequently using different levels (debug, info, error), (2) when logging, provide contextual information as JSON objects, see example below. (3) watch and filter logs using a log querying API (built-in in most loggers) or a log viewer software
 Мы все любим console.log, но, очевидно, авторитетный и постоянный регистратор, такой как [Winston][winston], [Bunyan][bunyan] (очень популярный) или [Pino][pino] (новый парень на районе, который ориентирован на производительность) является обязательным для серьезных проектов. Набор методов и инструментов поможет гораздо быстрее рассуждать об ошибках - (1) часто регистрировать с использованием разных уровней (отладка, информация, ошибка); (2) при ведении журнала, предоставлять контекстную информацию в виде объектов JSON, см. пример ниже; (3) просматривать и фильтровать журналы, используя API запросов журналов (встроенный в большинство регистраторов) или программу просмотра журналов; (4) разворачивать и составлять отчет для рабочей группы, используя инструменты предоставления оперативной информации, такие как Splunk.
