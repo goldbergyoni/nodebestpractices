@@ -1,0 +1,54 @@
+# Используйте проверенный логгер, чтобы увеличить видимость ошибок
+
+### Объяснение в один абза
+
+We all love console.log but obviously, a reputable and persistent logger like [Winston][winston], [Bunyan][bunyan] (highly popular) or [Pino][pino] (the new kid in town which is focused on performance) is mandatory for serious projects. A set of practices and tools will help to reason about errors much quicker – (1) log frequently using different levels (debug, info, error), (2) when logging, provide contextual information as JSON objects, see example below. (3) watch and filter logs using a log querying API (built-in in most loggers) or a log viewer software
+Мы все любим console.log, но, очевидно, авторитетный и постоянный регистратор, такой как [Winston][winston], [Bunyan][bunyan] (очень популярный) или [Pino][pino] (новый парень на районе, который ориентирован на производительность) является обязательным для серьезных проектов. Набор методов и инструментов поможет гораздо быстрее рассуждать об ошибках - (1) часто регистрировать с использованием разных уровней (отладка, информация, ошибка); (2) при ведении журнала, предоставлять контекстную информацию в виде объектов JSON, см. пример ниже; (3) просматривать и фильтровать журналы, используя API запросов журналов (встроенный в большинство регистраторов) или программу просмотра журналов; (4) разворачивать и составлять отчет для рабочей группы, используя инструменты предоставления оперативной информации, такие как Splunk.
+
+[winston]: https://www.npmjs.com/package/winston
+[bunyan]: https://www.npmjs.com/package/bunyan
+[pino]: https://www.npmjs.com/package/pino
+
+### Пример кода - Winston Logger в действии
+
+```javascript
+// your centralized logger object
+var logger = new winston.Logger({
+  level: 'info',
+  transports: [
+    new (winston.transports.Console)()
+  ]
+});
+
+// custom code somewhere using the logger
+logger.log('info', 'Test Log Message with some parameter %s', 'some parameter', { anything: 'This is metadata' });
+
+```
+
+### Пример кода - Запрос к папке журнала (поиск записей)
+
+```javascript
+var options = {
+  from: new Date - 24 * 60 * 60 * 1000,
+  until: new Date,
+  limit: 10,
+  start: 0,
+  order: 'desc',
+  fields: ['message']
+};
+
+
+// Find items logged between today and yesterday.
+winston.query(options, function (err, results) {
+  // execute callback with results
+});
+```
+
+### Цитата блога: "Требования к логгеру"
+
+Из блога Strong Loop
+
+> Давайте определим несколько требований (для регистратора):
+1. Отметка времени каждой строки журнала. Это довольно очевидно - вы должны быть в состоянии сказать, когда произошла каждая запись в журнале.
+2. Формат записей должен быть легко усваиваемым людьми, а также машинами.
+3. Возможность для нескольких настраиваемых потоков назначения. Например, вы можете записывать журналы трассировки в один файл, но при возникновении ошибки запишите в тот же файл, затем в файл ошибок и отправьте электронное письмо одновременно …
