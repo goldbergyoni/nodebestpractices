@@ -1,10 +1,11 @@
-# Assign ‘TransactionId’ to each log statement
+# Назначьте "TransactionId" для каждого вхождения журнала логирования
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Объяснение в один абзац
 
 A typical log is a warehouse of entries from all components and requests. Upon detection of some suspicious line or error, it becomes hairy to match other lines that belong to the same specific flow (e.g. the user “John” tried to buy something). This becomes even more critical and challenging in a microservice environment when a request/transaction might span across multiple computers. Address this by assigning a unique transaction identifier value to all the entries from the same request so when detecting one line one can copy the id and search for every line that has similar transaction Id. However, achieving this In Node is not straightforward as a single thread is used to serve all requests –consider using a library that that can group data on the request level – see code example on the next slide. When calling other microservice, pass the transaction Id using an HTTP header like “x-transaction-id” to keep the same context.
+Типичный журнал - это хранилище записей всех компонентов и запросов. При обнаружении какой-либо подозрительной линии или ошибки становится волосатым совпадение с другими линиями, принадлежащими к тому же конкретному потоку (например, пользователь «Джон» пытался что-то купить). Это становится еще более критическим и сложным в микросервисной среде, когда запрос / транзакция может охватывать несколько компьютеров. Чтобы решить эту проблему, присвойте уникальное значение идентификатора транзакции всем записям одного и того же запроса, чтобы при обнаружении одной строки можно было копировать идентификатор и искать каждую строку, имеющую аналогичный идентификатор транзакции. Однако добиться этого в узле непросто, так как для обслуживания всех запросов используется один поток - рассмотрите возможность использования библиотеки, которая может группировать данные на уровне запроса - см. Пример кода на следующем слайде. При вызове другого микросервиса передайте идентификатор транзакции, используя заголовок HTTP, например «x -action-id», чтобы сохранить тот же контекст.
 
 <br/><br/>
 
