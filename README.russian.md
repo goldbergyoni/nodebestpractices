@@ -644,7 +644,7 @@ null == undefined   // true
 
 **Иначе:** Ваша память процесса может пропускать сотни мегабайт в день, как это было в [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak).
 
-🔗 [**Подробнее: Measure and guard the memory usage**](/sections/production/measurememory.md)
+🔗 [**Подробнее: Измеряйте и защищайте использование памяти**](/sections/production/measurememory.russian.md)
 
 <br/><br/>
 
