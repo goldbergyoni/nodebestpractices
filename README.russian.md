@@ -634,7 +634,7 @@ null == undefined   // true
 
 **Иначе:** Чемпион мира по IT/DevOps не спасет плохо написанную систему.
 
-🔗 [**Подробнее: Make your code production-ready**](/sections/production/productioncode.md)
+🔗 [**Подробнее: Делайте ваш код готовым к работе**](/sections/production/productioncode.russian.md)
 
 <br/><br/>
 
