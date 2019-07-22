@@ -459,7 +459,7 @@ null == undefined   // true
 
 **Иначе:** Не только вы тратите долгие ежедневные часы на понимание основного кода, теперь и то, что должно было быть простой частью дня (тестирование), напрягает ваш мозг.
 
-🔗 [**Read More: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.md)
+🔗 [**Read More: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.russian.md)
 
 <br/><br/>
 
