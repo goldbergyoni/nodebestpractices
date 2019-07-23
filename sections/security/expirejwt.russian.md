@@ -1,13 +1,13 @@
-# Support blacklisting JWTs
+# Реализовывайте поддержку внесения JWT в черный список
 
-### One Paragraph Explainer
+### Объяснение в один абзац
 
-By design, JWTs (JSON Web Tokens) are completely stateless, so once a valid token is signed by an issuer, the token may be verified as authentic by the application. The problem this leads to is the security concern where a leaked token could still be used and unable to be revoked, due to the signature remaining valid as long as the signature provided by the issues matches what the application is expecting.
-Due to this, when using JWT authentication, an application should manage a blacklist of expired or revoked tokens to retain user's security in the case a token needs to be revoked.
+По своей сути JWT (веб-токены JSON) полностью не сохраняют состояния, поэтому после того, как эмитент подписал действительный токен, токен может быть проверен приложением как аутентичный. Проблема, к которой это приводит - это проблема безопасности, когда утечка токена все еще может быть использована и не может быть отозвана из-за того, что подпись остается в силе до тех пор, пока подпись, предоставленная проблемами, совпадает с ожидаемой приложением.
+В связи с этим при использовании аутентификации JWT приложение должно управлять черным списком токенов с истекшим сроком действия или отозванными токенами, чтобы сохранить безопасность пользователя в случае, если токен необходимо отозвать.
 
-### `express-jwt-blacklist` example
+### `express-jwt-blacklist` пример
 
-An example of running `express-jwt-blacklist` on a Node.js project using the `express-jwt`. Note that it is important to not use the default store settings(in-memory) cache of `express-jwt-blacklist`, but to use an external store such as Redis to revoke tokens across many Node.js processes.
+Пример запуска `express-jwt-blacklist` в проекте Node.js с использованием `express-jwt`. Обратите внимание, что важно не использовать кэш настроек хранилища по умолчанию (in-memory) `express-jwt-blacklist`, а использовать внешнее хранилище, такое как Redis, для отзыва токенов во многих процессах Node.js.
 
 ```javascript
 const jwt = require('express-jwt');
@@ -38,7 +38,7 @@ app.get('/logout', function (req, res) {
 });
 ```
 
-### What other bloggers say
+### Что говорят другие блогеры
 
-From the blog by [Marc Busqué](http://waiting-for-dev.github.io/blog/2017/01/25/jwt_secure_usage/):
-> ...add a revocation layer on top of JWT, even if it implies losing its stateless nature.
+Из блога [Marc Busqué](http://waiting-for-dev.github.io/blog/2017/01/25/jwt_secure_usage/):
+> ... добавить слой отзыва поверх JWT, даже если это подразумевает потерю своего состояния без состояния.
