@@ -825,7 +825,7 @@ null == undefined   // true
 
 <br/><br/>
 
-##! [✔] 6.9. Экранирование вывода HTML, JS и CSS
+##! [✔] 6.9. Экранируйте вывод HTML, JS и CSS
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a>
 
@@ -833,7 +833,7 @@ null == undefined   // true
 
 **Иначе:** Злоумышленник может сохранить вредоносный код JavaScript в вашей БД, который затем будет отправлен бедным клиентам как есть.
 
-🔗 [**Подробнее: Экранирование вывода**](/sections/security/escape-output.md)
+🔗 [**Подробнее: Экранируйте вывод**](/sections/security/escape-output.russian.md)
 
 <br/><br/>
 
