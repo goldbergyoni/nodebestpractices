@@ -924,7 +924,7 @@ null == undefined   // true
 
 <br/><br/>
 
-## ![✔] 6.17. Избегайте загрузки модуля с использованием переменной
+## ![✔] 6.17. Избегайте загрузки модулей с использованием переменных
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
@@ -932,7 +932,7 @@ null == undefined   // true
 
 **Иначе:** Вредоносный пользовательский ввод может найти путь к параметру, который используется для запроса измененных файлов, например, ранее загруженного файла в файловой системе, или для доступа к уже существующим системным файлам.
 
-🔗 [**Подробнее: Безопасная загрузка модуля**](/sections/security/safemoduleloading.md)
+🔗 [**Подробнее: Избегайте загрузки модулей с использованием переменных**](/sections/security/safemoduleloading.russian.md)
 
 <br/><br/>
 
