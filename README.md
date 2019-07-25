@@ -959,9 +959,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 7.1. Don't block the event loop
 
-**TL;DR:** Avoid CPU intensive tasks as they will block the mostly single-threaded Event Loop.
+**TL;DR:** Avoid CPU intensive tasks as they will block the mostly single-threaded Event Loop and offload those to a dedicated thread, process or even a different technology based on the context.
 
-**Otherwise:** As the Event Loop is blocked, Node.js will be unable to handle other request thus causing delays for concurrent users.
+**Otherwise:** As the Event Loop is blocked, Node.js will be unable to handle other request thus causing delays for concurrent users. **3000 users are waiting for a response, the content is ready to be served, but one single request blocks the server from dispatching the results back**
 
 🔗 [**Read More: Do not block the event loop**](/sections/performance/block-loop.md)
 
