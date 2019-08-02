@@ -174,7 +174,7 @@
 
 ## ![✔] 2.7 Используйте надежный регистратор для улучшения видимости ошибок
 
-**TL;DR:** Набор развитых инструментов ведения журналов, таких как [Winston](https://www.npmjs.com/package/winston), [Bunyan](https://github.com/trentm/node-bunyan) или [Log4js] http://stritti.github.io/log4js/) ускорит обнаружение и понимание ошибок. Так что забудьте о console.log.
+**TL;DR:** Набор развитых инструментов ведения журналов, таких как [Winston](https://www.npmjs.com/package/winston), [Bunyan](https://github.com/trentm/node-bunyan), [Log4js](http://stritti.github.io/log4js/) или [Pino](https://github.com/pinojs/pino) ускорит обнаружение и понимание ошибок. Так что забудьте о console.log.
 
 **Иначе:** Сканирование через console.logs или вручную через грязный текстовый файл без запросов инструментов или приличного просмотра журнала может занять вас на работе до поздна.
 
