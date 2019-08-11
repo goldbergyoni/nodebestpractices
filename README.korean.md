@@ -684,13 +684,13 @@ null == undefined   // true
 <img src="https://img.shields.io/badge/OWASP%20Threats-Top%2010-green.svg" alt="54 items"/>
 </div>
 
-## ![✔] 6.1. Embrace linter security rules
+## ![✔] 6.1. linter 보안 규칙 수용
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
 
-**핵심요약:** Make use of security-related linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to catch security vulnerabilities and issues as early as possible, preferably while they're being coded. This can help catching security weaknesses like using eval, invoking a child process or importing a module with a string literal (e.g. user input). Click 'Read more' below to see code examples that will get caught by a security linter
+**핵심요약:** 이왕이면 코드를 작성하면서, 가능한한 빨리 eslint-plugin-security와 같은 보안 관련 linter 플러그인을 사용하여 보안 취약점을 잡으십시오. 이것은 eval, 자식 프로세스 호출, string iteral을 이용한 모듈 import (예를 들면 유저 인풋) 같은 보안 취약점을 잡는데 도움이 될 수 있다. 보안 linter가 잡는 코드를 보려면, 아래의 'Read more'을 클릭하십시오.
 
-**그렇게 하지 않을 경우:** What could have been a straightforward security weakness during development becomes a major issue in production. Also, the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories
+**그렇게 하지 않을 경우:** 개발 중에 직접 보안 취약점이 도리 수 있었던 것이 프로덕션에서 주요한 이슈가 된다. 또, 프로젝트가 일관된 보안 프렉티스를 따르지 않아, 취약점이 노출되거나 민감한 정보가 원격 저장소에 유출될 수 있다.
 
 🔗 [**자세히 보기: Lint rules**](/sections/security/lintrules.md)
 
