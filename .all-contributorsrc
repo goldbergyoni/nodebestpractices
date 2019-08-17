@@ -1,7 +1,23 @@
 {
-  "files": ["all-contributors.md"],
+  "files": [
+    "all-contributors.md"
+  ],
   "imageSize": 100,
   "contributorsPerLine": 7,
   "badgeTemplate": "[![All Contributors](https://img.shields.io/badge/all_contributors-<%= contributors.length %>-orange.svg?style=flat-square)](#contributors)",
-  "contributors": []
+  "contributors": [
+    {
+      "login": "js-kyle",
+      "name": "Kyle Martin",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/23022619?v=4",
+      "profile": "https://github.com/js-kyle",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "projectName": "nodebestpractices",
+  "projectOwner": "goldbergyoni",
+  "repoType": "github",
+  "repoHost": "https://github.com"
 }
