@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2081%20Best%20Practices-blue.svg" alt="81 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Mar%2010%202019-green.svg" alt="Last update: March 10, 2019"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%2010.15.3%20LTS-brightgreen.svg" alt="Updated for Node 10.15.3 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2084%20Best%20Practices-blue.svg" alt="84 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20July%205%202019-green.svg" alt="Last update: Jun 5, 2019"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.14.0%20LTS-brightgreen.svg" alt="Updated for Node 12.14.0 LTS">
 </div>
 
 <br/>
@@ -26,35 +26,33 @@ Farklı dillerde oku: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [
 
 # Son En İyi Uygulamalar ve Haberler
 
-- **New translation:** ![BR](/assets/flags/BR.png) [Brazilian Portuguese](/README.brazilian-portuguese.md) available now, courtesy of [Marcelo Melo](https://github.com/marcelosdm)! ❤️
+- **Yeni bir en iyi uygulama:** 4.3: [Testing with the AAA pattern](https://github.com/i0natan/nodebestpractices#4-testing-and-overall-quality-practices)
 
-- **New best practice:** 4.2: Include 3 parts in each test name - [_From the section "Testing and overall quality"_](https://github.com/i0natan/nodebestpractices#4-testing-and-overall-quality-practices)
+- **Biz typescript olarak katkıda bulunmak isteyenleri arıyoruz:** TypeScript örneklerine katkıda bulunmak isterm isin? Lütfen bir iş açarak yaklaşın
 
-- **New best practice:** 7.1: Prefer native JS methods over user-land utils like Lodash - [_From the section "Performance"_](https://github.com/i0natan/nodebestpractices#7-performance-best-practices)
-
-- **News update:** [We kicked-off the performance section, wanna join?](https://github.com/i0natan/nodebestpractices/issues/302)
+- **Yeni çeviri:** ![BR](/assets/flags/BR.png) [Brazilian Portuguese](/README.brazilian-portuguese.md) şimdi kullanılabilir, [Marcelo Melo](https://github.com/marcelosdm)'nun nezaketi! ❤️
 
 <br/><br/>
 
 # Hoşgeldiniz! Öncelikle Bilmeniz Gereken 3 Şey:
 
-**1. You are, in fact, reading dozens of the best Node.js articles -** this repository is a summary and curation of the top-ranked content on Node.js best practices, as well as content written here by collaborators
+**1. Aslında, düzinelerce en iyi Node.js makalesi okuyorsunuz -** Bu depo, Node.js en iyi uygulamalarında üst sıralarda yer alan içeriklerin özeti ve iyileştirmesidir, bununla beraber ortak çalışanlar tarafından burada yazılan içerikler
 
-**2. It is the largest compilation, and it is growing every week -** currently, more than 70 best practices, style guides, and architectural tips are presented. New issues and pull requests are created every day to keep this live book updated. We'd love to see you contributing here, whether that is fixing code mistakes, helping with translations, or suggesting brilliant new ideas. See our [writing guidelines here](/.operations/writing-guidelines.md)
+**2. Bu en büyük derlemedir ve her hafta büyüyor -** şu anda 80'den fazla en iyi uygulama, stil rehberi ve mimari ipucu sunulmaktadır. Yeni sorunlar ve çekme istekleri bu canlı kitabı güncel tutmak için her gün oluşturulur. Kod hatalarını düzeltmek, çevirilere yardım etmek veya parlak yeni fikirler önermek olsun, burada katkıda bulunmanızı çok isteriz. [Yazım kurallarımıza](/.operations/writing-guidelines.md) bakınız.
 
-**3. Most best practices have additional info -** most bullets include a **🔗Read More** link that expands on the practice with code examples, quotes from selected blogs and more information
+**3. En iyi uygulamaların ek bilgileri vardır -** Çoğu madde kod örnekleri, seçilen bloglardan alıntılar ve daha fazla bilgi ile pratikte genişleyen bir **🔗Read More** bağlantısını içerir
 
 <br/><br/>
 
-## Table of Contents
+## İçindekiler
 
-1.  [Project Structure Practices (5)](#1-project-structure-practices)
-2.  [Error Handling Practices (11) ](#2-error-handling-practices)
-3.  [Code Style Practices (12) ](#3-code-style-practices)
-4.  [Testing And Overall Quality Practices (10) ](#4-testing-and-overall-quality-practices)
-5.  [Going To Production Practices (18) ](#5-going-to-production-practices)
-6.  [Security Practices (24)](#6-security-best-practices)
-7.  [Performance Practices (1) (In Progress️ ✍️)](#7-performance-best-practices)
+1.  [Proje Yapısı En İyi Uygulamaları (5)](#1-project-structure-practices)
+2.  [Hata İşleme En İyi Uygulamaları (11) ](#2-error-handling-practices)
+3.  [Kod Stil En İyi Uygulamaları (12) ](#3-code-style-practices)
+4.  [Test Ve Tam Kalite En İyi Uygulamaları (12) ](#4-testing-and-overall-quality-practices)
+5.  [Canlı Ortam (Production) En İyi Uygulamaları (18) ](#5-going-to-production-practices)
+6.  [Güvenlik İçin En İyi Uygulamalar (25)](#6-security-best-practices)
+7.  [Performans En İyi Uygulamaları (1) (Devam Etmekte ✍️)](#7-performance-best-practices)
 
 <br/><br/>
 
@@ -67,55 +65,53 @@ En kötü büyük uygulamalardaki gizli tehlike yüzlerce bağımlılıkla büy�
 
 **Aksi takdirde:** Yeni özellikleri kodlayan geliştiriciler değişikliklerinin etkisini anlamakta zorlanıyorlar ve diğer bağımlı komponentleri bozma korkusu - dağımtımlar daha yavaş ve daha riskli olur. Ayrıca tüm iş birimleri ayrılmadığında dağıtıklaştırmanın daha zor olduğu düşünülmektedir.
 
-🔗 [**Daha fazla oku: komponentlerle yapı**](/sections/projectstructre/breakintcomponents.md)
+🔗 [**Daha fazla oku: komponentlerle yapı**](/sections/projectstructre/breakintcomponents.turkish.md)
 
 <br/><br/>
 
 ## ![✔] 1.2 Komponentlerinizi katmanlayın, Express'i sınırları içerisinde tutun
 
-**TL;DR:** Her komponent 'katmanlar' (layers) içermelidir. Web, mantık ve veri erişim kodu için özel bir nesne. Bu sadece farklı kavramların birbirinden ayrılmasını (separation of concerns) sağlamaz ayrıca önemli ölçüde testi ve mocklamayı (mocking) kolaylaştırır. Bu çok yaygın bir kalıp olmasına rağmen, API geliştiricileri, web katmanı nesnelerini (Express req, res) iş mantığına ve veri katmanlarına geçirerek katmanları karıştırma eğilimindedir. Bu, uygulamanızı sadece Express'e bağlı ve erişilebilir yapar.
+**TL;DR:** Her komponent 'katmanlar' (layers) içermelidir - web, mantık ve veri erişim kodu için özel bir nesne. Bu sadece farklı kavramların birbirinden ayrılmasını (separation of concerns) sağlamaz ayrıca önemli ölçüde testi ve mocklamayı (mocking) kolaylaştırır. Bu çok yaygın bir kalıp olmasına rağmen, API geliştiricileri, web katmanı nesnelerini (Express req, res) iş mantığına ve veri katmanlarına geçirerek katmanları karıştırma eğilimindedir. Bu, uygulamanızı sadece Express'e bağlı ve erişilebilir yapar.
 
-**Aksi takdirde:** Web nesnelerini diğer katmanlarla karıştıran uygulamalaya test kodu, görev zamanlayıcısı ve diğer Express dışından çağıranlar tarafından erişilemez.
+**Aksi takdirde:** Web nesnelerini diğer katmanlarla karıştıran uygulamaya test kodu, görev zamanlayıcısı ve diğer Express dışından çağıranlar tarafından erişilemez.
 
-🔗 [**Daha fazla oku: uygulamanızı katmanlayın**](/sections/projectstructre/createlayers.md)
+🔗 [**Daha fazla oku: uygulamanızı katmanlayın**](/sections/projectstructre/createlayers.turkish.md)
 
 <br/><br/>
 
 ## ![✔] 1.3 Ortak kullanılan yardımcı uygulamaları npm paketleri gibi paketleyin
 
-**TL;DR:** Büyük bir kod tabanından oluşan büyük bir uygulamada, loglama, şifreleme ve benzerleri gibi kesişen ilgileri ayıran (cross-cutting-concern) yardımcı uygulamalar kendi kodunuzla paketlenmeli ve özel npm paketleri olarak gösterilmelidir. Bu, kodunuzu birçok kod tabanında ve projelerde paylaşmanıza izin verir.
-
-In a large app that constitutes a large code base, cross-cutting-concern utilities like logger, encryption and alike, should be wrapped by your own code and exposed as private npm packages. This allows sharing them among multiple code bases and projects
+**TL;DR:** Büyük bir kod tabanını oluşturan büyük bir uygulamada, loglama, şifreleme ve benzerleri gibi kesişen ilgileri ayıran (cross-cutting-concern) yardımcı uygulamalar kendi kodunuza göre paketlenmeli ve özel npm paketleri olarak gösterilmelidir. Bu, kodunuzu birçok kod tabanında ve projelerde paylaşmanıza izin verir.
 
 **Aksi takdirde:** Kendi dağıtım ve bağımlılık tekerleğinizi icat etmeniz gerekecek.
 
-🔗 [**Daha fazla oku: Özelliklerle yapı**](/sections/projectstructre/wraputilities.md)
+🔗 [**Daha fazla oku: Özelliklerle yapı**](/sections/projectstructre/wraputilities.turkish.md)
 
 <br/><br/>
 
 ## ![✔] 1.4 'uygulama' ve 'server' birbirinden ayrı Express uygulaması
 
-**TL;DR:** Tüm Express uygulamasını tek bir büyük dosyada tanımlamak gibi kötü alışkanlıklardan kaçının - Express tanımlamanızı en az iki dosyaya ayırın: API tanımalaması (app.js) ve ağ (www). Daha iyi bir yapı için, API tanımlamanızı komponentler içerisine koyun.
+**TL;DR:** Tüm Express uygulamasını tek bir büyük dosyada tanımlamak gibi kötü alışkanlıklardan kaçının - Express tanımlamanızı en az iki dosyaya ayırın: API tanımlaması (app.js) ve ağ ilgileri (www). Daha iyi bir yapı için, API tanımlamanızı komponentler içerisine koyun.
 
 **Aksi takdirde:** API'nize sadece HTTP istekleri ile test için erişilebilecek (daha yavaş ve kapsama raporları oluşturmak çok daha zor). Muhtemelen yüzlerce kod satırını tek bir dosyada bakımını sağlamak büyük bir zevk olmaz.
 
-🔗 [**Daha fazla oku: 'uygulama' ve 'server' birbirinden ayrı Express uygulaması**](/sections/projectstructre/separateexpress.md)
+🔗 [**Daha fazla oku: 'uygulama' ve 'server' birbirinden ayrı Express uygulaması**](/sections/projectstructre/separateexpress.turkish.md)
 
 <br/><br/>
 
-## ![✔] 1.5 Konfigürasyon dosyalarını değişen ortamlara uyumlu, güvenli ve hiyerarşik yapın
+## ![✔] 1.5 Değişen ortamlara uyumlu, güvenli ve hiyerarşik konfig kullanın
 
 **TL;DR:** Mükemmel ve kusursuz bir konfigürasyon kurulmalıdır (a) anahtarlar (keys) dosyadan ve ortam değişkenlerinden okunabilir (b) gizli bilgileri commit kodun dışında tut (c) konfig kolay bulunabilmesi için hiyerarşiktir. [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) and [config](https://www.npmjs.com/package/config) gibi paketler yardım edebilir.
 
 **Aksi takdirde:** Config gereksinimlerinden herhangi birinin yerine getirilmemesi geliştirmeyi veya devops takımını basitçe çıkmaza sokacaktır. Muhtemelen ikisi de.
 
-🔗 [**Daha fazla oku: konfigürasyon en iyi uygulamaları**](/sections/projectstructre/configguide.md)
+🔗 [**Daha fazla oku: konfigürasyon en iyi uygulamaları**](/sections/projectstructre/configguide.turkish.md)
 
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Başa dön</a></p>
 
-# `2. Hata İşleme Uygulamaları`
+# `2. Hata İşleme En İyi Uygulamaları`
 
 ## ![✔] 2.1 Asenkron hata işlemek için Async-Await veya Promises kullanın
 
@@ -123,7 +119,7 @@ In a large app that constitutes a large code base, cross-cutting-concern utiliti
 
 **Aksi takdirde:** Node.js geri çağırma (callback) stili, function(err, response), rastgele kod, fazla iç içe yerleştirme ve garip kodlama kalıplarını hata işlemeyle karıştırmaktan dolayı sürdürülemez kod olur.
 
-🔗 [**Daha fazla oku: geri çağırmalardan kaçın**](/sections/errorhandling/asyncerrorhandling.md)
+🔗 [**Daha fazla oku: geri çağırmalardan kaçın**](/sections/errorhandling/asyncerrorhandling.turkish.md)
 
 <br/><br/>
 
@@ -420,7 +416,7 @@ Yukarıdaki bütün ifadeler, eğer `===` operatörü kullanılsaydı false dön
 
 <p align="right"><a href="#table-of-contents">⬆ Başa dön</a></p>
 
-# `4. Test Ve Tam Kalite Uygulamaları`
+# `4. Test Ve Tam Kalite En İyi Uygulamaları`
 
 ## ![✔] 4.1 En azından, API (bileşen) testi yazın
 
@@ -440,7 +436,17 @@ Yukarıdaki bütün ifadeler, eğer `===` operatörü kullanılsaydı false dön
 
 <br/><br/>
 
-## ![✔] 4.3 Bir linter ile kod sorunlarını tespit edin
+## ![✔] 4.3 AAA deseni ile yapı testleri
+
+**TL;DR:** Testlerinizi 3 iyi ayrılmış bölümle yapılandırın: Arrange, Act & Assert (AAA). İlk bölüm test kurulumunu, daha sonra test altındaki ünitenin yürütülmesini ve son olarak onaylama aşamasını içerir. Bu yapıyı takip edersen, okuyucunun test planını anlama konusunda beyin işlemcisi harcamadığını garanti eder.
+
+**Aksi takdirde:** Sadece ana kodu anlamak için uzun uzun saatler harcıyorsunuz, aynı zamanda günün basit bir parçası olması gereken şey (test) beyninizi uzatıyor
+
+🔗 [**Daha fazla oku: AAA deseni ile yapı testleri**](/sections/testingandquality/aaa.md)
+
+<br/><br/>
+
+## ![✔] 4.4 Bir linter ile kod sorunlarını tespit edin
 
 **TL;DR:** Bir kod linter kullanarak temel kaliteyi kontrol et ve anti tasarım kalıplarını tespit et. Herhangi bir testten önce, herhangi bir sorunu gözden geçirmek ve düzeltmek için gereken süreyi en aza indirmek için pre-commit gibi git-hook ekleyin ve çalıştırın. Ayrıca kod stil uygulamalarını kontrol edebilirsin [Section 3](https://github.com/i0natan/nodebestpractices#3-code-style-practices) 
 
@@ -448,17 +454,17 @@ Yukarıdaki bütün ifadeler, eğer `===` operatörü kullanılsaydı false dön
 
 <br/><br/>
 
-## ![✔] 4.4 CI platformununu dikkatli secin (Jenkins vs CircleCI vs Travis vs Diğerleri)
+## ![✔] 4.5 Global test fikstürlerinden ve tohumlarından kaçının, test başına veri ekleyin
 
-**TL;DR:** SÜrekli entegrasyon platformunuz (CICD) tüm kalite araçlarına ev sahipliği yapacak (örneğin test, lint) bu yüzden canlı bir eklenti ekosistemi ile gelmelidir. [Jenkins](https://jenkins.io/) en büyük topluluğa sahip dik bir öğrenme eğrisi gerektiren karmaşık kurulumu olan güçlü bir platform olduğundan bir çok projede varsayılan olarak kullanıldı. Şimdilerde, [CircleCI](https://circleci.com) ve diğerleri gibi SaaS araçları kullanarak bir CI çözümü oluşturmak çok daha kolay hale geldi. Bu araçlar, tüm altyapıyı yönetme yükü olmadan esnek bir CI boru hattı (pipeline) oluşturulmasına izin veriyor. Sonuçta, bu sağlamlık ile hız arasında bir seçimdir - seçiminizi dikkatli yapın
+**TL;DR:** Testlerin bağlanmasını önlemek ve test akışına kolayca karar vermek için, her test kendi DB satırı kümesine eklemeli ve hareket etmelidir. Bir testin bazı DB verilerinin varlığını çekmesi veya varsayması gerektiğinde - açıkça bu verileri eklemeli ve diğer kayıtların mutasyona uğramasından kaçınmalıdır.
 
-**Aksi takdirde:** Satıcı seçiminiz bazı gelişmiş özelleştirme ihtiyaçlarınız için sizi engelleyebilir. Diğer yandan, Jenkins ile devam ederseniz, altyapısal kurulumlar değerli zamanınızı yakabilir.
+**Aksi takdirde:** Başarısız testler nedeniyle dağıtımın iptal edildiği bir senaryo düşünün, ekip şimdi üzücü bir sonuçla biten değerli soruşturma zamanını harcayacak: sistem iyi çalışıyor, testler birbirine karışıyor ve derlemeyi bozuyor
 
-🔗 [**Daha fazla oku: CI platformununu seçimi**](/sections/testingandquality/citools.md)
+🔗 [**Daha fazla oku: Global test fikstürlerinden kaçının**](/sections/testingandquality/avoid-global-test-fixture.md)
 
 <br/><br/>
 
-## ![✔] 4.5 Güvencesiz bağımlılıkları sürekli inceleyin
+## ![✔] 4.6 Güvencesiz bağımlılıkları sürekli inceleyin
 
 **TL;DR:** Ekspress gibi çok saygın bağımlılıkların bile bilinen açıkları vardır.
 Bu, her yapı için CI'nizden çağrılabilecek 🔗 [npm audit](https://docs.npmjs.com/cli/audit) ve 🔗 [snyk.io](https://snyk.io) gibi topluluk ve ticari araçlar kullanılarak kolayca evcilleştirilebilir.
@@ -467,7 +473,7 @@ Bu, her yapı için CI'nizden çağrılabilecek 🔗 [npm audit](https://docs.np
 
 <br/><br/>
 
-## ![✔] 4.6 Testlerini etiketle
+## ![✔] 4.7 Testlerini etiketle
 
 **TL;DR:** Farklı senaryolarda farklı testler çalışmalı: quick smoke, IO-less, geliştirci bir dosyayı kaydettiğinde veya commit lediğinde testler çalışmalıdır, yeni bir pull request gönderildiğinde uçtan uca testler yapılmalıdır, vb. Bu testleri #cold #api #sanity gibi anahtar kelimelerle etiketleyerek sağlanabilir böylece test takımınızda arayabilirsiniz ve istenen alt grubu çağırabilirsiniz. Örneğin, [Mocha](https://mochajs.org/) ile tutarlılık test grubunu (sanity) çağırabilirsiniz: mocha --grep 'sanity'
 
@@ -475,7 +481,7 @@ Bu, her yapı için CI'nizden çağrılabilecek 🔗 [npm audit](https://docs.np
 
 <br/><br/>
 
-## ![✔] 4.7 Test kapsamınızı kontrol edin, bu yanlış test tasarımlarınızı tespit etmenize yardım eder
+## ![✔] 4.8 Test kapsamınızı kontrol edin, bu yanlış test tasarımlarınızı tespit etmenize yardım eder
 
 **TL;DR:** [Istanbul/NYC ](https://github.com/gotwarlost/istanbul) gibi test kapsam aracı 3 sebepten dolayı çok iyidir: ücretsizdir (raporlardan faydalanmak için efora gerek yok), test kapsamındaki bir düşüşün belirlenmesine yardım eder ve test uyumsuzluklarını vurgular: renkli kod kapsamı raporlarına bakarak fark edebilirsiniz, örneğin, catch blokları gibi hiç test edilmeyen kod alanları (yani test sadece olumlu durumlar için çalışır ve uygulamanın bir hata durumunda nasıl davranacağını bilmez). Eğer kapsam belirli bir eşik değerin altına düşerse yapıyı başarız olarak ayarlayın.
 
@@ -483,7 +489,7 @@ Bu, her yapı için CI'nizden çağrılabilecek 🔗 [npm audit](https://docs.np
 
 <br/><br/>
 
-## ![✔] 4.8 Güncel olmayan paketleri denetleyin
+## ![✔] 4.9 Güncel olmayan paketleri denetleyin
 
 **TL;DR:** Eski olan kurulu paketleri tespit etmek için tercih ettiğiniz aracı kullanın (örneğin, 'npm outdated' veya [npm-check-updates](https://www.npmjs.com/package/npm-check-updates)), bu kontrolü CI pipeline'nıza enjekte edin ve hatta ciddi bir senaryoda derleme işlemini başarısız hale getirin. Örneğin, kurulu bir paket 5 patch commit arkadaysa ciddi bir senaryo olabilir veya kendi yazarı tarafından kullanımdan kaldırıldı olarak etiketlenebilir - bu durumlarda derlemeyi sonlandır ve bu sürümü dağıtmayı engelle
 
@@ -491,7 +497,7 @@ Bu, her yapı için CI'nizden çağrılabilecek 🔗 [npm audit](https://docs.np
 
 <br/><br/>
 
-## ![✔] 4.9 Uçtan uca (e2e) testi için docker-compose kullanın
+## ![✔] 4.10 Uçtan uca (e2e) testi için docker-compose kullanın
 
 **TL;DR:** Canlı verileri kullanan uçtan uça (e2e) testi, VT gibi ağır hizmetlere bağlı olduğundan CI işleminin zayıf parçasıdır. Docker-compose bu sorunu üretim işçiliği ile bir esinti haline getiriyor - ortam bazlı basit bir metin dosyası kullanıyor ve kolay komutlar kullanıyor. e2e testi için tüm bağımlı servislerin, VT ve izole edilmiş ağın işçiliğini sağlar.
 
@@ -499,7 +505,7 @@ Bu, her yapı için CI'nizden çağrılabilecek 🔗 [npm audit](https://docs.np
 
 <br/><br/>
 
-## ![✔] 4.10 Statik analiz araçları ile düzenli olarak refactor yap
+## ![✔] 4.11 Statik analiz araçları ile düzenli olarak refactor yap
 
 **TL;DR:** Statik analiz araçları kullanmak, kod kalitesini geliştirmek için objektif yollar vererek yardımcı olur ve kod bakımınızı devamlı sağlar. Kodda koku bulduğunda derlemenin başarısız olması için, static analiz araçlarını CI derlemenize ekleyebilirsiniz. Plain linting de ana noktalar, kaliteyi birden fazla dosyaların bağlamında incelemek (örneğin tekrarları algıla), gelişmiş analizler yapmak (örneğin kod karmaşıklığı) ve kod sorunlarının tarihçesini ve ilerlemesini takip edebilmek. Kullanabileceğiniz iki araç örneği [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) ve [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)).
 
@@ -507,11 +513,21 @@ Bu, her yapı için CI'nizden çağrılabilecek 🔗 [npm audit](https://docs.np
 
 🔗 [**Daha fazla oku: Refactoring!**](/sections/testingandquality/refactoring.md)
 
+<br/><br/>
+
+## ![✔] 4.12 CI platformununu dikkatli secin (Jenkins vs CircleCI vs Travis vs Diğerleri)
+
+**TL;DR:** SÜrekli entegrasyon platformunuz (CICD) tüm kalite araçlarına ev sahipliği yapacak (örneğin test, lint) bu yüzden canlı bir eklenti ekosistemi ile gelmelidir. [Jenkins](https://jenkins.io/) en büyük topluluğa sahip dik bir öğrenme eğrisi gerektiren karmaşık kurulumu olan güçlü bir platform olduğundan bir çok projede varsayılan olarak kullanıldı. Şimdilerde, [CircleCI](https://circleci.com) ve diğerleri gibi SaaS araçları kullanarak bir CI çözümü oluşturmak çok daha kolay hale geldi. Bu araçlar, tüm altyapıyı yönetme yükü olmadan esnek bir CI boru hattı (pipeline) oluşturulmasına izin veriyor. Sonuçta, bu sağlamlık ile hız arasında bir seçimdir - seçiminizi dikkatli yapın
+
+**Aksi takdirde:** Satıcı seçiminiz bazı gelişmiş özelleştirme ihtiyaçlarınız için sizi engelleyebilir. Diğer yandan, Jenkins ile devam ederseniz, altyapısal kurulumlar değerli zamanınızı yakabilir.
+
+🔗 [**Daha fazla oku: CI platformununu seçimi**](/sections/testingandquality/citools.md)
+
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Başa dön</a></p>
 
-# `5. Canlı Ortam (Production) Uygulamaları`
+# `5. Canlı Ortam (Production) En İyi Uygulamaları`
 
 ## ![✔] 5.1. Görüntüleme!
 
@@ -693,7 +709,7 @@ Bu, her yapı için CI'nizden çağrılabilecek 🔗 [npm audit](https://docs.np
 
 <p align="right"><a href="#table-of-contents">⬆ Başa dön</a></p>
 
-# `6. Güvenlik İçin En İyi Uygulamar`
+# `6. Güvenlik İçin En İyi Uygulamalar`
 
 <div align="center">
 <img src="https://img.shields.io/badge/OWASP%20Threats-Top%2010-green.svg" alt="53 items"/>
@@ -1006,26 +1022,24 @@ Bu kural, genel olarak dosyalara (ör. `fs.readFile()`) veya kullanıcı girişi
 
 **Aksi takdirde:** Daha az performanslı projeler sürdürmek zorunda kalacaksınız, **zaten** mevcutta var olanı basitçe kullanabilirdiniz veya birkaç dosya karşılığında birkaç satırla daha uğraşın.
 
-You'll have to maintain less performant projects where you could have simply used what was **already** available or dealt with a few more lines in exchange of a few more files.
-
-🔗 [**Daha fazla oku: Native over user land utils**](/sections/performance/nativeoverutil.md)
+🔗 [**Daha fazla oku: Doğal JS araçlarını tercih edin**](/sections/performance/nativeoverutil.md)
 
 <br/><br/><br/>
 
-# Milestones
+# Kilometre taşları
 
-To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/i0natan/nodebestpractices/milestones) and join the working groups if you want to contribute to this project
+Bu kılavuzu korumak ve güncel tutmak için, topluluğun yardımıyla yönergeleri ve en iyi uygulamaları sürekli güncelliyor ve geliştiriyoruz. Bu projeye katkıda bulunmak istiyorsanız, [kilometre taşlarımızı](https://github.com/i0natan/nodebestpractices/milestones) takip edebilir ve çalışma gruplarına katılabilirsiniz.
 
 <br/>
 
-## Translations
+## Çeviriler
 
-All translations are contributed by the community. We will be happy to get any help with either completed, ongoing or new translations!
+Tüm çeviriler topluluk tarafından katkıda bulunulabilir. Tamamlanmış, devam eden veya yeni çevirilerle herhangi bir yardım almaktan mutluluk duyarız!
 
-### Completed translations
+### Tamamlanmış çeviriler
 
-- ![BR](/assets/flags/BR.png) [Brazilian Portuguese](/README.brazilian-portuguese.md) - Courtesy of [Marcelo Melo](https://github.com/marcelosdm)
-- ![CN](/assets/flags/CN.png) [Chinese](README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
+- ![BR](/assets/flags/BR.png) [Brazilian Portuguese](/README.brazilian-portuguese.md) - [Marcelo Melo](https://github.com/marcelosdm)'nun nezaketi
+- ![CN](/assets/flags/CN.png) [Chinese](README.chinese.md) - [Matt Jin](https://github.com/mattjin)'nin nezaketi
 
 ### Translations in progress
 
@@ -1038,9 +1052,9 @@ All translations are contributed by the community. We will be happy to get any h
 
 <br/><br/>
 
-## Steering Committee
+## Yönetim Kurulu
 
-Meet the steering committee members - the people who work together to provide guidance and future direction to the project. In addition, each member of the committee leads a project tracked under our [Github projects](https://github.com/i0natan/nodebestpractices/projects).
+Yönetim kurulu üyeleriyle tanışın - projeye rehberlik ve gelecekte yön vermek için birlikte çalışan insanlar. Buna ek olarak, kurulun her üyesi [Github projelerimiz](https://github.com/i0natan/nodebestpractices/projects) altında takip edilen bir projeye öncülük ediyor.
 
 <img align="left" width="100" height="100" src="assets/images/members/yoni.png">
 
@@ -1082,17 +1096,17 @@ Deep specialist in JavaScript and its ecosystem — React, Node.js, MongoDB, pre
 
 <br/>
 
-## Collaborators
+## Ortak Çalışanlar
 
-Thank you to all our collaborators! 🙏
+Tüm ortak çalışanlarımıza teşekkür ederiz! 🙏
 
-Our collaborators are members who are contributing to the repository on a reguar basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in helping us guide thousands of people to craft better Node.js applications, please read our [contributor guidelines](/.operations/CONTRIBUTING.md) 🎉
+Ortak çalışanlarımız, yeni en iyi uygulamalar önerme, sorunları değerlendirme, birleştirme isteklerini gözden geçirme ve daha fazlasını yaparak depoya düzenli olarak katkıda bulunan üyelerdir. Binlerce kişiye daha iyi Node.js uygulamaları oluşturmak için rehberlik etmemize yardımcı olmak istiyorsanız, lütfen [katılımcı yönergelerimizi](/.operations/CONTRIBUTING.md) okuyun.🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
 | :--: | :--: |
 | [Ido Richter (Founder)](https://github.com/idori) | [Keith Holliday](https://github.com/TheHollidayInn) |
 
-### Past collaborators
+### Geçmiş Ortak Çalışanlar
 
 | <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"></a> |
 | :--: |
@@ -1100,11 +1114,11 @@ Our collaborators are members who are contributing to the repository on a reguar
 
 <br/>
 
-## Thank You Notes
+## Teşekkür Notları
 
-We appreciate any contribution, from a single word fix to a new best practice. Below is a list of everyone who contributed to this project. A 🌻 marks a successful pull request and a ⭐ marks an approved new best practice.
+Tek bir kelime düzeltmeden yeni bir en iyi uygulamaya kadar her türlü katkıyı takdir ediyoruz. Aşağıda bu projeye katkıda bulunan herkesin bir listesi bulunmaktadır. Bir 🌻 başarılı bir birleştirme talebini işaretler ve bir ⭐ onaylanmış yeni en iyi uygulamayı işaretler.
 
-### Flowers
+### Çiçekler
 
 🌻 [Kevin Rambaud](https://github.com/kevinrambaud),
 🌻 [Michael Fine](https://github.com/mfine15),
@@ -1174,13 +1188,33 @@ We appreciate any contribution, from a single word fix to a new best practice. B
 🌻 [Sam](https://github.com/milkdeliver),
 🌻 [Arlind](https://github.com/ArlindXh),
 🌻 [Teddy Toussaint](https://github.com/ttous),
-🌻 [Lewis](https://github.com/LewisArdern)
+🌻 [Lewis](https://github.com/LewisArdern),
+🌻 [DouglasMV](https://github.com/DouglasMV),
+🌻 [Corey Cleary](https://github.com/coreyc),
+🌻 [Mehmet Perk](https://github.com/mperk),
+🌻 [Ryan Ouyang](https://github.com/ryanouyang),
+🌻 [Gabriel Lidenor](https://github.com/GabrielLidenor),
+🌻 [Roman](https://github.com/animir),
+🌻 [Francozeira](https://github.com/Francozeira),
+🌻 [Invvard](https://github.com/Invvard),
+🌻 [Rômulo Garofalo](https://github.com/romulogarofalo),
+🌻 [Tho Q Luong](https://github.com/thoqbk),
+🌻 [Burak Shen](https://github.com/Qeneke),
+🌻 [Martin Muzatko](https://github.com/MartinMuzatko),
+🌻 [Jared Collier](https://github.com/autoboxer)
+🌻 [Hilton Meyer](https://github.com/bikingbadger)
+🌻 [ChangJoo Park(박창주)](https://github.com/ChangJoo-Park)
+🌻 [Masahiro Sakaguchi](https://github.com/MasahiroSakaguchi)
 
-### Stars
+### Yıldızlar
 
 ⭐ [Kyle Martin](https://github.com/js-kyle),
 ⭐ [Keith Holliday](https://github.com/TheHollidayInn),
 ⭐ [Corey Cleary](https://github.com/coreyc),
-⭐ [Maximilian Berkmann](https://github.com/Berkmann18)
+⭐ [Maximilian Berkmann](https://github.com/Berkmann18),
+⭐ [DouglasMV](https://github.com/DouglasMV),
+⭐ [Marcelo Melo](https://github.com/marcelosdm),
+⭐ [Mehmet Perk](https://github.com/mperk),
+⭐ [Ryan Ouyang](https://github.com/ryanouyang)
 
 <br/><br/><br/>
