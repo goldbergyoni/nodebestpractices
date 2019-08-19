@@ -1052,7 +1052,7 @@ Todas as traduções são contribuições da comunidade. Nós ficaremos felizes 
 - ![FR](/assets/flags/FR.png) [Francês](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/129))
 - ![HE](/assets/flags/HE.png) Hebraico ([Discussão](https://github.com/i0natan/nodebestpractices/issues/156))
 - ![KR](/assets/flags/KR.png) [Coreano](https://github.com/i0natan/nodebestpractices/blob/korean-translation/README.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/94))
-- ![RU](/assets/flags/RU.png) [Russo](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/105))
+- ![RU](/assets/flags/RU.png) [Russo](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/454))
 - ![ES](/assets/flags/ES.png) [Espanhol](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/95))
 - ![TR](/assets/flags/TR.png) Turco ([Discussão](https://github.com/i0natan/nodebestpractices/issues/139))
 
