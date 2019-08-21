@@ -465,7 +465,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 4.4 Detect code issues with a linter
 
-**TL;DR:** Use a code linter to check basic quality and detect anti-patterns early. Run it before any test and add it as a pre-commit git-hook to minimize the time needed to review and correct any issue. Also check [Section 3](https://github.com/i0natan/nodebestpractices#3-code-style-practices) on Code Style Practices
+**TL;DR:** Use a code linter to check basic quality and detect anti-patterns early. Run it before any test and add it as a pre-commit git-hook to minimize the time needed to review and correct any issue. Also check [Section 3](#3-code-style-practices) on Code Style Practices
 
 **Otherwise:** You may let pass some anti-pattern and possible vulnerable code to your production environment.
 
