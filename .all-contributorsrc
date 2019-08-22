@@ -140,6 +140,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "hazolsky",
+      "name": "Misha Khokhlov",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1270790?v=4",
+      "profile": "https://github.com/hazolsky",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
