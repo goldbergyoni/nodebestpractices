@@ -725,6 +725,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "ryanouyang",
+      "name": "ryan ouyang",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/360426?v=4",
+      "profile": "https://github.com/ryanouyang",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
