@@ -131,6 +131,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "yonjah",
+      "name": "Yoni Jah",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1829789?v=4",
+      "profile": "https://ca.non.co.il",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
