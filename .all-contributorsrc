@@ -167,6 +167,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "hisaac",
+      "name": "Isaac Halvorson",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/923876?v=4",
+      "profile": "http://hisaac.net",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
