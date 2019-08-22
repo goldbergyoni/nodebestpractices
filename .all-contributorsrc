@@ -482,6 +482,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "HeeL",
+      "name": "Sergii Paryzhskyi",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/287769?v=4",
+      "profile": "https://github.com/HeeL",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
