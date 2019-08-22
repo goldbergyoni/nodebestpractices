@@ -509,6 +509,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "hozefaj",
+      "name": "Hozefa",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/2084833?v=4",
+      "profile": "https://github.com/hozefaj",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
