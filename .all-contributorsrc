@@ -707,6 +707,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "marcelosdm",
+      "name": "Marcelo Melo",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/18266600?v=4",
+      "profile": "https://github.com/marcelosdm",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
