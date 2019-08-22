@@ -500,6 +500,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "justjavac",
+      "name": "迷渡",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/359395?v=4",
+      "profile": "https://twitter.com/justjavac",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
