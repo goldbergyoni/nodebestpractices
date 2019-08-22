@@ -428,6 +428,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "manishsaraan",
+      "name": "Manish Saraan",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/19797340?v=4",
+      "profile": "https://www.manishsaraan.com/",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
