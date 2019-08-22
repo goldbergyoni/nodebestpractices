@@ -356,6 +356,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "Max101",
+      "name": "Mitja O.",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2124249?v=4",
+      "profile": "https://github.com/Max101",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
