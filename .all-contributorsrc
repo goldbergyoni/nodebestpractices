@@ -302,6 +302,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "aecorredor",
+      "name": "Alejandro Corredor",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/9114987?v=4",
+      "profile": "https://twitter.com/aecorredor",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
