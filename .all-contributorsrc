@@ -293,6 +293,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "chrisnicola",
+      "name": "Chris Nicola",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/156449?v=4",
+      "profile": "http://www.wealthbar.com",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
