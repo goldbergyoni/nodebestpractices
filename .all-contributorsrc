@@ -338,6 +338,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "duartemendes",
+      "name": "Duarte Mendes",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/12852058?v=4",
+      "profile": "https://github.com/duartemendes",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
