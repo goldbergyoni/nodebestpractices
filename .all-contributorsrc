@@ -275,6 +275,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "leonardovillela",
+      "name": "Leonardo Villela",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/8650543?v=4",
+      "profile": "https://github.com/leonardovillela",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
