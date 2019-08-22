@@ -491,6 +491,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "kapilepatel",
+      "name": "Kapil Patel",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/25738473?v=4",
+      "profile": "https://github.com/kapilepatel",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
