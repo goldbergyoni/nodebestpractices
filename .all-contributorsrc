@@ -113,6 +113,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "trainorpj",
+      "name": "PJ Trainor",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/13276704?v=4",
+      "profile": "https://github.com/trainorpj",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
