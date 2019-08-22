@@ -599,6 +599,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "romulogarofalo",
+      "name": "Rômulo Garofalo",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/18492592?v=4",
+      "profile": "https://romulogarofalo.github.io/",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
