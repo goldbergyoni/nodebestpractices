@@ -32,7 +32,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 - **All Contributors:** We're now using the [All Contributors Spec](https://allcontributors.org/) to recognise all types of contributions to the repo. Thanks again for all our current, and future contributors ♥️
 
-- **Javascipt testing best practices:** 🏆 Yoni & friends have launched a new testing best practices repository, with comprehensive and exhaustive JavaScript & Node.js testing best practices. [Check it out here!](https://github.com/goldbergyoni/javascript-testing-best-practices)
+- **JavaScript testing best practices:** 🏆 Yoni & friends have launched a new testing best practices repository, with comprehensive and exhaustive JavaScript & Node.js testing best practices. [Check it out here!](https://github.com/goldbergyoni/javascript-testing-best-practices)
 
 <br/><br/>
 
