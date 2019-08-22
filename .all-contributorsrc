@@ -635,6 +635,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "autoboxer",
+      "name": "Jared Collier",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2757601?v=4",
+      "profile": "https://github.com/autoboxer",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
