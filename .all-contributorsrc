@@ -464,6 +464,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "BusbyActual",
+      "name": "Ryan Busby",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/14985016?v=4",
+      "profile": "https://github.com/BusbyActual",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
