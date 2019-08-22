@@ -194,6 +194,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "nwwells",
+      "name": "Nathan Wells",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1039473?v=4",
+      "profile": "https://github.com/nwwells",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
