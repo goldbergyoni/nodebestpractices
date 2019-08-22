@@ -50,6 +50,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "kudapara",
+      "name": "Kudakwashe Paradzayi",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/13519184?v=4",
+      "profile": "http://kudapara.co.zw",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
