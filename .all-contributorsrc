@@ -545,6 +545,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "ttous",
+      "name": "Teddy Toussaint",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/19815440?v=4",
+      "profile": "https://github.com/ttous",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
