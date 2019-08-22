@@ -518,6 +518,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "el-ethan",
+      "name": "Ethan",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/10249884?v=4",
+      "profile": "https://github.com/el-ethan",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
