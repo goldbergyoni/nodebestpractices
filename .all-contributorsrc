@@ -410,6 +410,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "ntelkedzhiev",
+      "name": "Nikola Telkedzhiev",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/7332371?v=4",
+      "profile": "https://github.com/ntelkedzhiev",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
