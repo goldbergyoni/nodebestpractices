@@ -239,6 +239,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "spaxe",
+      "name": "Xavier Ho",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/708395?v=4",
+      "profile": "https://jumptoglide.com",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
