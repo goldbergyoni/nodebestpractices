@@ -212,6 +212,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "syzer",
+      "name": "syzer",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1989646?v=4",
+      "profile": "https://snap.simpego.ch",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
