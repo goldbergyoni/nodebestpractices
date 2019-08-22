@@ -104,6 +104,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "dan-gamble",
+      "name": "Dan Gamble",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/7152041?v=4",
+      "profile": "https://twitter.com/_DanGamble",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
