@@ -680,6 +680,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "coreyc",
+      "name": "coreyc",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1485356?v=4",
+      "profile": "https://www.coreycleary.me",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
