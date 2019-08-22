@@ -644,6 +644,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "bikingbadger",
+      "name": "Hilton Meyer",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4545860?v=4",
+      "profile": "http://hiltonmeyer.com",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
