@@ -203,6 +203,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "paulovitin",
+      "name": "Paulo Reis",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/125503?v=4",
+      "profile": "https://github.com/paulovitin",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
