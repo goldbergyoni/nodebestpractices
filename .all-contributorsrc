@@ -446,6 +446,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "blackmatch",
+      "name": "blackmatch",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/12443954?v=4",
+      "profile": "https://blackmatch.github.io",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
