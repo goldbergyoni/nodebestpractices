@@ -122,6 +122,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "reod",
+      "name": "Remek Ambroziak",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3164299?v=4",
+      "profile": "https://github.com/reod",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
