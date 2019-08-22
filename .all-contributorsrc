@@ -1,7 +1,23 @@
 {
-  "files": ["CONTRIBUTORS.md"],
+  "files": [
+    "CONTRIBUTORS.md"
+  ],
   "imageSize": 100,
   "contributorsPerLine": 7,
   "badgeTemplate": "[![All Contributors](https://img.shields.io/badge/all_contributors-<%= contributors.length %>-orange.svg?style=flat-square)](#contributors)",
-  "contributors": []
+  "contributors": [
+    {
+      "login": "kevinrambaud",
+      "name": "Kevin Rambaud",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/7501477?v=4",
+      "profile": "https://github.com/kevinrambaud",
+      "contributions": [
+        "content"
+      ]
+    }
+  ],
+  "projectName": "nodebestpractices",
+  "projectOwner": "goldbergyoni",
+  "repoType": "github",
+  "repoHost": "https://github.com"
 }
