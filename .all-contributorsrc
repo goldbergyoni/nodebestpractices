@@ -347,6 +347,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "serv",
+      "name": "Jason Kim",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/103456?v=4",
+      "profile": "http://jasonkim.ca",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
