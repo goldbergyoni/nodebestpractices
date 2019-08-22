@@ -473,6 +473,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "ImanMh",
+      "name": "Iman Mohamadi",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4482199?v=4",
+      "profile": "http://jsdecorator.com",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
