@@ -311,6 +311,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "cwar",
+      "name": "cwar",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/272843?v=4",
+      "profile": "https://github.com/cwar",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
