@@ -248,6 +248,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "ocularrhythm",
+      "name": "Aaron",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2738518?v=4",
+      "profile": "http://www.ocular-rhythm.io",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
