@@ -176,6 +176,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "vkaracic",
+      "name": "Vedran Karačić",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2808092?v=4",
+      "profile": "http://www.vedrankaracic.com",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
