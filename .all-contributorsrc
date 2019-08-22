@@ -383,6 +383,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "ripper234",
+      "name": "Ron Gross",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/172282?v=4",
+      "profile": "http://ripper234.com/",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
