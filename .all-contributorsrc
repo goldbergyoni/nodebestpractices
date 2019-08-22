@@ -527,6 +527,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "milkdeliver",
+      "name": "Sam",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/3108407?v=4",
+      "profile": "https://github.com/milkdeliver",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
