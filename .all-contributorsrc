@@ -95,6 +95,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "jsumners",
+      "name": "James Sumners",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/321201?v=4",
+      "profile": "http://james.sumners.info/",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
