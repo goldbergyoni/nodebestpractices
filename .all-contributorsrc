@@ -689,6 +689,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "Berkmann18",
+      "name": "Maximilian Berkmann",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/8260834?v=4",
+      "profile": "http://maxcubing.wordpress.com",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
