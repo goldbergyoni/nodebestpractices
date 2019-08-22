@@ -230,6 +230,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "pupix",
+      "name": "Robert Manolea",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4929965?v=4",
+      "profile": "https://apiforge.it",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
