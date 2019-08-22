@@ -32,6 +32,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "matheusrocha89",
+      "name": "Matheus Cruz Rocha",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/3718366?v=4",
+      "profile": "http://matheusrocha89.com",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
