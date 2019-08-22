@@ -266,6 +266,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "AllenFang",
+      "name": "Allen",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5351390?v=4",
+      "profile": "https://www.cakeresume.com/allenfang",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
