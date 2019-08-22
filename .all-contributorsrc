@@ -572,6 +572,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "animir",
+      "name": "Roman",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4623196?v=4",
+      "profile": "https://github.com/animir",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
