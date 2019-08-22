@@ -698,6 +698,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "DouglasMV",
+      "name": "Douglas Mariano Valero",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/32845487?v=4",
+      "profile": "https://github.com/DouglasMV",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
