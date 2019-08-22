@@ -716,6 +716,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "mperk",
+      "name": "Mehmet Perk",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3465794?v=4",
+      "profile": "https://twitter.com/mperk_",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
