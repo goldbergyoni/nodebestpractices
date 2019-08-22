@@ -617,6 +617,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "Qeneke",
+      "name": "Burak Shen",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/20271568?v=4",
+      "profile": "https://github.com/Qeneke",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
