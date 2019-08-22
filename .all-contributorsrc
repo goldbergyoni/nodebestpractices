@@ -329,6 +329,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "utkarshbhatt12",
+      "name": "Utkarsh Bhatt",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/10895594?v=4",
+      "profile": "https://bigcodenerd.org",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
