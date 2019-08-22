@@ -374,6 +374,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "GabeKuslansky",
+      "name": "Gabe",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/9855482?v=4",
+      "profile": "https://github.com/GabeKuslansky",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
