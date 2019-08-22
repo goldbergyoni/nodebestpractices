@@ -554,6 +554,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "LewisArdern",
+      "name": "Lewis",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2419690?v=4",
+      "profile": "http://ardern.io",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
