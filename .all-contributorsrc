@@ -41,6 +41,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "BitYog",
+      "name": "Yog Mehta",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/28219178?v=4",
+      "profile": "https://bityog.github.io/Portfolio/",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
