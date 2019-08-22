@@ -392,6 +392,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "vkarpov15",
+      "name": "Valeri Karpov",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1620265?v=4",
+      "profile": "http://www.thecodebarbarian.com",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
