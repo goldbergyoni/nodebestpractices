@@ -14,6 +14,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "mfine15",
+      "name": "Michael Fine",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1286554?v=4",
+      "profile": "https://github.com/mfine15",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
