@@ -1052,7 +1052,7 @@ Todas as traduções são contribuições da comunidade. Nós ficaremos felizes 
 - ![FR](/assets/flags/FR.png) [Francês](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/129))
 - ![HE](/assets/flags/HE.png) Hebraico ([Discussão](https://github.com/i0natan/nodebestpractices/issues/156))
 - ![KR](/assets/flags/KR.png) [Coreano](https://github.com/i0natan/nodebestpractices/blob/korean-translation/README.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/94))
-- ![RU](/assets/flags/RU.png) [Russo](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/105))
+- ![RU](/assets/flags/RU.png) [Russo](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/454))
 - ![ES](/assets/flags/ES.png) [Espanhol](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/95))
 - ![TR](/assets/flags/TR.png) Turco ([Discussão](https://github.com/i0natan/nodebestpractices/issues/139))
 
@@ -1120,104 +1120,8 @@ Nossos colaboradores são membros que estão contribuindo com o repositório em 
 
 <br/>
 
-# Notas de Agradecimento
+## Thank You Notes
 
-Este repositório é mantido atualizado graças à ajuda da comunidade. Nós apreciamos qualquer contribuição, desde a correção de uma simples palavra até uma nova melhor prática. Abaixo, a lista de todos que contribuíram para este projeto. Uma 🌻 simboliza um pull request bem sucedido e uma ⭐ simboliza uma nova melhor prática aprovada.
-
-### Flores
-
-🌻 [Kevin Rambaud](https://github.com/kevinrambaud),
-🌻 [Michael Fine](https://github.com/mfine15),
-🌻 [Shreya Dahal](https://github.com/squgeim),
-🌻 [ChangJoo Park](https://github.com/ChangJoo-Park),
-🌻 [Matheus Cruz Rocha](https://github.com/matheusrocha89),
-🌻 [Yog Mehta](https://github.com/BitYog),
-🌻 [Kudakwashe Paradzayi](https://github.com/kudapara),
-🌻 [t1st3](https://github.com/t1st3),
-🌻 [mulijordan1976](https://github.com/mulijordan1976),
-🌻 [Matan Kushner](https://github.com/matchai),
-🌻 [Fabio Hiroki](https://github.com/fabiothiroki),
-🌻 [James Sumners](https://github.com/jsumners),
-🌻 [Chandan Rai](https://github.com/crowchirp),
-🌻 [Dan Gamble](https://github.com/dan-gamble),
-🌻 [PJ Trainor](https://github.com/trainorpj),
-🌻 [Remek Ambroziak](https://github.com/reod),
-🌻 [Yoni Jah](https://github.com/yonjah),
-🌻 [Misha Khokhlov](https://github.com/hazolsky),
-🌻 [Evgeny Orekhov](https://github.com/EvgenyOrekhov),
-🌻 [Gediminas Petrikas](https://github.com/gediminasml),
-🌻 [Isaac Halvorson](https://github.com/hisaac),
-🌻 [Vedran Karačić](https://github.com/vkaracic),
-🌻 [lallenlowe](https://github.com/lallenlowe),
-🌻 [Nathan Wells](https://github.com/nwwells),
-🌻 [Paulo Vítor S Reis](https://github.com/paulovitin),
-🌻 [syzer](https://github.com/syzer),
-🌻 [David Sancho](https://github.com/davesnx),
-🌻 [Robert Manolea](https://github.com/pupix),
-🌻 [Xavier Ho](https://github.com/spaxe),
-🌻 [Aaron Arney](https://github.com/ocularrhythm),
-🌻 [Jan Charles Maghirang Adona](https://github.com/septa97),
-🌻 [Allen Fang](https://github.com/AllenFang),
-🌻 [Leonardo Villela](https://github.com/leonardovillela),
-🌻 [Michal Zalecki](https://github.com/MichalZalecki)
-🌻 [Chris Nicola](https://github.com/chrisnicola),
-🌻 [Alejandro Corredor](https://github.com/aecorredor),
-🌻 [Ye Min Htut](https://github.com/ymhtut),
-🌻 [cwar](https://github.com/cwar),
-🌻 [Yuwei](https://github.com/keyfoxth),
-🌻 [Utkarsh Bhatt](https://github.com/utkarshbhatt12),
-🌻 [Duarte Mendes](https://github.com/duartemendes),
-🌻 [Sagir Khan](https://github.com/sagirk),
-🌻 [Jason Kim](https://github.com/serv),
-🌻 [Mitja O.](https://github.com/Max101),
-🌻 [Sandro Miguel Marques](https://github.com/SandroMiguel),
-🌻 [Gabe Kuslansky](https://github.com/GabeKuslansky),
-🌻 [Ron Gross](https://github.com/ripper234),
-🌻 [Valeri Karpov](https://github.com/vkarpov15)
-🌻 [Sergio](https://github.com/imsergiobernal),
-🌻 [Duarte Mendes](https://github.com/duartemendes),
-🌻 [Nikola Telkedzhiev](https://github.com/ntelkedzhiev),
-🌻 [Vitor Godoy](https://github.com/vitordagamagodoy),
-🌻 [Manish Saraan](https://github.com/manishsaraan),
-🌻 [Sangbeom Han](https://github.com/uronly14me),
-🌻 [blackmatch](https://github.com/blackmatch),
-🌻 [Joe Reeve](https://github.com/ISNIT0),
-🌻 [Marcelo Melo](https://github.com/marcelosdm),
-🌻 [Ryan Busby](https://github.com/BusbyActual),
-🌻 [Iman Mohamadi](https://github.com/ImanMh),
-🌻 [Remek Ambroziak](https://github.com/reod),
-🌻 [Sergii Paryzhskyi](https://github.com/HeeL),
-🌻 [Kapil Patel](https://github.com/kapilepatel),
-🌻 [迷渡](https://github.com/justjavac),
-🌻 [Hozefa](https://github.com/hozefaj),
-🌻 [Ethan](https://github.com/el-ethan),
-🌻 [Sam](https://github.com/milkdeliver),
-🌻 [Arlind](https://github.com/ArlindXh),
-🌻 [Teddy Toussaint](https://github.com/ttous),
-🌻 [Lewis](https://github.com/LewisArdern),
-🌻 [DouglasMV](https://github.com/DouglasMV),
-🌻 [Corey Cleary](https://github.com/coreyc),
-🌻 [Mehmet Perk](https://github.com/mperk),
-🌻 [Ryan Ouyang](https://github.com/ryanouyang),
-🌻 [Gabriel Lidenor](https://github.com/GabrielLidenor),
-🌻 [Roman](https://github.com/animir),
-🌻 [Francozeira](https://github.com/Francozeira),
-🌻 [Invvard](https://github.com/Invvard),
-🌻 [Rômulo Garofalo](https://github.com/romulogarofalo),
-🌻 [Tho Q Luong](https://github.com/thoqbk),
-🌻 [Burak Shen](https://github.com/Qeneke),
-🌻 [Martin Muzatko](https://github.com/MartinMuzatko),
-🌻 [zhuweiyou](https://github.com/zhuweiyou)
-
-### Estrelas
-
-⭐ [Kyle Martin](https://github.com/js-kyle)
-⭐ [Keith Holliday](https://github.com/TheHollidayInn),
-⭐ [Corey Cleary](https://github.com/coreyc),
-⭐ [Maximilian Berkmann](https://github.com/Berkmann18),
-⭐ [DouglasMV](https://github.com/DouglasMV),
-⭐ [Marcelo Melo](https://github.com/marcelosdm),
-⭐ [Mehmet Perk](https://github.com/mperk),
-⭐ [Ryan Ouyang](https://github.com/ryanouyang)
+We appreciate any contribution, from a single word fix to a new best practice. View our contributors and [contributing documentation here!](CONTRIBUTORS.md)
 
 <br/><br/><br/>
