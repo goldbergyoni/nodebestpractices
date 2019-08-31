@@ -2,7 +2,7 @@
 
 ### 一段解释
 
-我们都特别喜欢（loovve）console.log，但显而易见地，对于严肃的项目, 有信誉和持久的Logger是必需的，比如[Winston][winston], [Bunyan][bunyan] (非常流行) or [Pino][pino](专注于性能的新库)。一套实践和工具将有助于更快速地解释错误 – (1)使用不同的级别（debug, info, error）频繁地log；(2)在记录日志时, 以 JSON 对象的方式提供上下文信息, 请参见下面的示例；(3)使用日志查询API(在大多数logger中内置)或日志查看程序软件监视和筛选日志；(4)使用操作智能工具(如 Splunk)为操作团队公开和管理日志语句。
+我们都特别喜欢（loovve）console.log，但显而易见地，对于严肃的项目, 有信誉和持久的Logger是必需的，比如[Winston][winston] (非常流行) or [Pino][pino](专注于性能的新库)。一套实践和工具将有助于更快速地解释错误 – (1)使用不同的级别（debug, info, error）频繁地log；(2)在记录日志时, 以 JSON 对象的方式提供上下文信息, 请参见下面的示例；(3)使用日志查询API(在大多数logger中内置)或日志查看程序软件监视和筛选日志；(4)使用操作智能工具(如 Splunk)为操作团队公开和管理日志语句。
 
 [winston]: https://www.npmjs.com/package/winston
 [bunyan]: https://www.npmjs.com/package/bunyan
