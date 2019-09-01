@@ -423,7 +423,7 @@ Todas as declarações acima false se feitas com `===`.
 
 ## ![✔] 3.12 Use Fat (=>) Arrow Functions
 
-**TL;DR:** Embora seja recomendado usar acync-await e evitar parâmetros de função ao lidar com APIs antigas, que aceitam promises ou callbacks - arrow functions tornam a estrutura do código mais compacta e mantém o contexto léxico da função raiz (por exemplo, 'this').
+**TL;DR:** Embora seja recomendado usar async-await e evitar parâmetros de função ao lidar com APIs antigas, que aceitam promises ou callbacks - arrow functions tornam a estrutura do código mais compacta e mantém o contexto léxico da função raiz (por exemplo, 'this').
 
 **Caso contrário:** Códigos mais longos (em funções ES5) são mais propensos a erros e são mais difíceis de ler.
 
