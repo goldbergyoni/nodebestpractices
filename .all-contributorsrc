@@ -743,6 +743,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "halfzebra",
+      "name": "Eduard Kyvenko",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/3983879?v=4",
+      "profile": "https://github.com/halfzebra",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",

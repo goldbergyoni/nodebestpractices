@@ -2,7 +2,7 @@
 
 ### Explicação em um Parágrafo
 
-Todos nós amamos console.log, mas obviamente, um logger respeitável e persistente como [Winston][winston], [bunyan][bunyan] (altamente popular) ou [pino][pino] (o novato que está focado no desempenho) é obrigatório para projetos sérios. Um conjunto de práticas e ferramentas ajudará a entender os erros muito mais rapidamente - (1) logar freqüentemente usando diferentes níveis (depuração, informação, erro), (2) ao registrar, fornecer informações contextuais como objetos JSON, ver exemplo abaixo, (3) observe e filtre os logs usando uma API de consulta de log (incorporada na maioria dos registradores) ou um software de visualização de logs, (4) Expor e selecionar a declaração de log para a equipe de operação usando ferramentas de inteligência operacional como o Splunk.
+Todos nós amamos console.log, mas obviamente, um logger respeitável e persistente como [Winston][winston] (altamente popular) ou [pino][pino] (o novato que está focado no desempenho) é obrigatório para projetos sérios. Um conjunto de práticas e ferramentas ajudará a entender os erros muito mais rapidamente - (1) logar freqüentemente usando diferentes níveis (depuração, informação, erro), (2) ao registrar, fornecer informações contextuais como objetos JSON, ver exemplo abaixo, (3) observe e filtre os logs usando uma API de consulta de log (incorporada na maioria dos registradores) ou um software de visualização de logs, (4) Expor e selecionar a declaração de log para a equipe de operação usando ferramentas de inteligência operacional como o Splunk.
 
 [winston]: https://www.npmjs.com/package/winston
 [bunyan]: https://www.npmjs.com/package/bunyan
