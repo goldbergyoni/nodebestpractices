@@ -1,16 +1,16 @@
-# Make your code production-ready
+# Desarrolla código listo para producción
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
-Following is a list of development tips that greatly affect the production maintenance and stability:
+La siguiente lista contiene consejos de desarrollo que afectan en gran medida al mantenimiento y estabilidad de producción:
 
-* The twelve-factor guide – Get familiar with the [Twelve factors](https://12factor.net/) guide
-* Be stateless – Save no data locally on a specific web server (see separate bullet – ‘Be Stateless’)
-* Cache – Utilize cache heavily, yet never fail because of cache mismatch
-* Test memory – gauge memory usage and leaks as part your development flow, tools such as ‘memwatch’ can greatly facilitate this task
-* Name functions – Minimize the usage of anonymous functions (i.e. inline callback) as a typical memory profiler will provide memory usage per method name
-* Use CI tools – Use CI tool to detect failures before sending to production. For example, use ESLint to detect reference errors and undefined variables. Use –trace-sync-io to identify code that uses synchronous APIs (instead of the async version)
-* Log wisely – Include in each log statement contextual information, hopefully in JSON format so log aggregators tools such as Elastic can search upon those properties (see separate bullet – ‘Increase visibility using smart logs’). Also, include transaction-id that identifies each request and allows to correlate lines that describe the same transaction (see separate bullet – ‘Include Transaction-ID’)
-* Error management – Error handling is the Achilles’ heel of Node.js production sites – many Node processes are crashing because of minor errors while others hang on alive in a faulty state instead of crashing. Setting your error handling strategy is absolutely critical, read here my [error handling best practices](http://goldbergyoni.com/checklist-best-practices-of-node-js-error-handling/)
+* La guía de los doce factores: familiarízate con la guía de [Los doce factores](https://12factor.net/).
+* Sin estado: no guardes datos localmente en un servidor web específico (consulta el apartado separado: "Sin estado").
+* Caché: utiliza mucho caché, pero evita problemas de matching.
+* Test de memoria: vigila el uso de la memoria y las fugas como parte del flujo de desarrollo —herramientas como "memwatch" pueden facilitar enormemente esta tarea—.
+* Funciones nombradas: minimiza el uso de funciones anónimas (es decir, inline callbacks) ya que el típico profiler de memoria relacionará cada uso de memoria con su función respectiva.
+* Herramientas de CI: usa la herramienta de CI para detectar fallos antes de mandar el código a producción. Por ejemplo, usa ESLint para detectar errores de referencia y variables no definidas. Utiliza --trace-sync-io para identificar código que ejecute APIs síncronas en vez de su versión asincrónica.
+* Logs inteligentes: incluye en cada entrada de log información contextual, si puede ser en formato JSON, para que las herramientas de agregadores de log como Elastic puedan buscar en esas propiedades (consulta la sección separada: "Aumentar la visibilidad mediante logs inteligentes"). Además, incluye la ID de transacción que identifica cada petición y permite correlacionar líneas que describen la misma transacción (vea sección aparte: "Incluir ID de transacción").
+* Gestión de errores: la gestión de errores es el talón de Aquiles de los sites en producción de Node.js: muchos procesos de Node se bloquean debido a errores menores, mientras que otros se cuelgan en un estado defectuoso en vez de fallar. Establecer una estrategia de gestión de errores es absolutamente crítico, lee aquí mis [mejores prácticas para la gestión de errores](http://goldbergyoni.com/checklist-best-practices-of-node-js-error-handling/).

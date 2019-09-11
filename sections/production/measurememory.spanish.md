@@ -1,10 +1,10 @@
-# Measure and guard the memory usage
+# Mide y protege el uso de la memoria
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
-In a perfect world, a web developer shouldn’t deal with memory leaks. In reality, memory issues are a known Node’s gotcha one must be aware of. Above all, memory usage must be monitored constantly. In the development and small production sites, you may gauge manually using Linux commands or NPM tools and libraries like node-inspector and memwatch. The main drawback of this manual activities is that they require a human being actively monitoring – for serious production sites, it’s absolutely vital to use robust monitoring tools e.g. (AWS CloudWatch, DataDog or any similar proactive system) that alerts when a leak happens. There are also few development guidelines to prevent leaks: avoid storing data on the global level, use streams for data with dynamic size, limit variables scope using let and const.
+En un mundo perfecto, un desarrollador web no debería lidiar con fugas de memoria. En la realidad, los problemas de memoria son un asunto conocido de Node del que uno debe ser consciente. El uso de la memoria se debe monitorizar constantemente. En sites de desarrollo o pequeños sites en producción, quizá puedas medir la memoria manualmente mediante comandos Linux o herramientas NPM como node-inspector y memwatch. El principal inconveniente de estas actividades manuales es que requieren de una persona que las realice activamente. Para sites serios en producción, es absolutamente indispensable el uso de herramientas de monitorización robustas —por ej. AWS CloudWatch, DataDog o cualquier sistema proactivo similar— que alerten cuando ocurra una fuga de memoria. También existen algunas pautas para evitar estas fugas: evita almacenar datos a nivel global, utiliza streams de datos con tamaño dinámico, limita el scope de las variables mediante el uso de let y const.
 
 <br/><br/>
 

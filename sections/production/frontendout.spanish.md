@@ -1,16 +1,16 @@
-# Get your frontend assets out of Node
+# Saca tus recursos frontend fuera de Node
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
-In a classic web app the backend serves the frontend/graphics to the browser, a very common approach in the Node’s world is to use Express static middleware for streamlining static files to the client. BUT – Node is not a typical webapp as it utilizes a single thread that is not optimized to serve many files at once. Instead, consider using a reverse proxy (e.g. nginx, HAProxy), cloud storage or CDN (e.g. AWS S3, Azure Blob Storage, etc) that utilizes many optimizations for this task and gain much better throughput. For example, specialized middleware like nginx embodies direct hooks between the file system and the network card and uses a multi-threaded approach to minimize intervention among multiple requests.
+En una aplicación web clásica, el backend sirve tanto frontend como gráficos al navegador. Una práctica muy común en el mundo de Node es utilizar el middleware estático de Express para mandar los archivos estáticos al cliente. PERO, Node no es una aplicación web típica, ya que utiliza un único thread que no está diseñado para servir muchos archivos a la vez. Así que, en vez de eso, considera utilizar un proxy inverso (como nginx o HAProxy), almacenamiento cloud, o un CDN (como AWS S3, Azure Blob Storage, etc.) que se vale de muchas optimizaciones para esta tarea y ganas un rendimiento mucho mayor. Por ejemplo, un middleware especializado como nginx incorpora enlaces directos entre el sistema de archivos y la tarjeta de red, y funciona bajo un proceso multi-threaded para minimizar las afectaciones entre múltiples peticiones.
 
-Your optimal solution might wear one of the following forms:
+Tu solución óptima podría seguir uno de los siguientes modelos:
 
-1. Using a reverse proxy – your static files will be located right next to your Node application, only requests to the static files folder will be served by a proxy that sits in front of your Node app such as nginx. Using this approach, your Node app is responsible deploying the static files but not to serve them. Your frontend’s colleague will love this approach as it prevents cross-origin-requests from the frontend.
+1. Usar un proxy inverso: tus archivos estáticos se ubicarán justo al lado de tu aplicación Node y solo las peticiones a la carpeta de archivos estáticos serán servidas mediante el proxy que se encuentra frente a tu aplicación Node, como nginx. Mediante esta técnica, tu aplicación Node es la responsable de publicar los archivos estáticos pero no de servirlos. Al colega de tu frontend le encantará este enfoque, ya que también evita peticiones cross-origin desde el frontend.
 
-2. Cloud storage – your static files will NOT be part of your Node app content, they will be uploaded to services like AWS S3, Azure BlobStorage, or other similar services that were born for this mission. Using this approach, your Node app is not responsible deploying the static files neither to serve them, hence a complete decoupling is drawn between Node and the Frontend which is anyway handled by different teams.
+2. Usar almacenamiento cloud: tus archivos estáticos NO serán parte del contenido de tu aplicación Node, sino que se subirán a servicios como AWS S3, Azure BlobStorage o similares que nacieron para este cometido. Mediante esta técnica, tu aplicación Node no es responsable ni de publicar los archivos estáticos ni de servirlos, por tanto se desenlaza por completo el backend del frontend, que de todos modos lo gestionan equipos diferentes.
 
 <br/><br/>
 
