@@ -1,10 +1,10 @@
-# Set NODE_ENV = production
+# Asigna NODE_ENV = production
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
-Process environment variables is a set of key-value pairs made available to any running program, usually for configuration purposes. Though any variables can be used, Node encourages the convention of using a variable called NODE_ENV to flag whether we’re in production right now. This determination allows components to provide better diagnostics during development, for example by disabling caching or emitting verbose log statements. Any modern deployment tool – Chef, Puppet, CloudFormation, others – support setting environment variables during deployment
+Las variables de entorno de proceso son un conjunto de pares clave-valor que se hacen disponibles para un programa en ejecución, generalmente con fines de configuración. Aunque se puede usar cualquier variable, Node fomenta la convención de usar una variable llamada NODE_ENV para marcar si estamos en producción en este momento. Esta información permite a los componentes proporcionar mejores diagnósticos durante el desarrollo, por ejemplo, deshabilitando el caché o registrando logs más detallados. Cualquier herramienta moderna de deploy —Chef, Puppet, CloudFormation y otros— soporta la asignación de variables de entorno durante el deploy.
 
 <br/><br/>
 

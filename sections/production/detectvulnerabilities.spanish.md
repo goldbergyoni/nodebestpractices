@@ -1,15 +1,13 @@
-# Use tools that automatically detect vulnerable dependencies
+# Usa herramientas de detección automática de vulnerabilidades
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
-Modern Node applications have tens and sometimes hundreds of dependencies. If any of the dependencies
-you use has a known security vulnerability your app is vulnerable as well.
-The following tools automatically check for known security vulnerabilities in your dependencies:
+Las aplicaciones modernas de Node tienen decenas y a veces cientos de dependencias. Si alguna de las dependencias que utilizas tiene una vulnerabilidad de seguridad, tu aplicación también es vulnerable. Las siguientes herramientas detectan automáticamente si hay vulnerabilidades de seguridad conocidas en tus dependencias:
 
 - [nsp](https://www.npmjs.com/package/nsp) - Node Security Project
-- [snyk](https://snyk.io/) - Continuously find & fix vulnerabilities in your dependencies
+- [snyk](https://snyk.io/) - Encuentra y corrige continuamente vulnerabilidades en tus dependencias
 
 <br/><br/>
 

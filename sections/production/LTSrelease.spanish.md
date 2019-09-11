@@ -1,10 +1,12 @@
-# Use an LTS release of Node.js in production
+# Usa una versión LTS de Node.js en producción
 
-### One Paragraph Explainer
+<br/><br/>
 
-Ensure you are using an LTS(Long Term Support) version of Node.js in production to receive critical bug fixes, security updates and performance improvements. 
+### Párrafo de explicación
 
-LTS versions of Node.js are supported for at least 18 months and are indicated by even version numbers (e.g. 4, 6, 8). They're best for production since the LTS release line is focussed on stability and security, whereas the 'Current' release line has a shorter lifespan and more frequent updates to the code. Changes to LTS versions are limited to bug fixes for stability, security updates, possible npm updates, documentation updates and certain performance improvements that can be demonstrated to not break existing applications.
+Asegúrate de usar una versión LTS —soporte a largo plazo, del inglés "Long Term Support"— de Node.js en producción para recibir correcciones críticas, actualizaciones de seguridad y mejoras de rendimiento.
+
+Las versiones LTS de Node.js reciben soporte durante al menos 18 meses y vienen indicadas por números pares de versión (por ejemplo, 4, 6, 8). Son las mejores para su uso en producción ya que sus actualizaciones se centran en la estabilidad y seguridad, mientras que las actualizaciones de 'Current' (la versión más reciente de Node) tienen una vida útil más corta y se lanzan con mucha frecuencia. Los cambios en las versiones de LTS están limitados a la corrección de errores de estabilidad, actualizaciones de seguridad, posibles actualizaciones de npm, actualizaciones de documentación y ciertas mejoras de rendimiento con prueba demostrable de que no rompen aplicaciones existentes.
 
 <br/><br/>
 
