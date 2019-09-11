@@ -2,7 +2,45 @@
 
 ### One Paragraph Explainer
 
-Rate limiting should be implemented in your application to protect a Node.js application from being overwhelmed by too many requests at the same time. Rate limiting is a task best performed with a service designed for this task, such as nginx, however it is also possible with application middleware such as [express-rate-limiter](https://www.npmjs.com/package/express-rate-limit).
+Rate limiting should be implemented in your application to protect a Node.js application from being overwhelmed by too many requests at the same time. Rate limiting is a task best performed with a service designed for this task, such as nginx, however it is also possible with [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) package or middleware such as [express-rate-limiter](https://www.npmjs.com/package/express-rate-limit) for Express.js applications.
+ 
+  ### Code example: pure Node.js app with [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible)
+ 
+  ```javascript
+ const http = require('http');
+ const redis = require('redis');
+ 
+ const { RateLimiterRedis } = require('rate-limiter-flexible');
+ 
+ const redisClient = redis.createClient({
+   enable_offline_queue: false,
+ });
+ 
+ // Maximum 20 requests per second
+ const rateLimiter = new RateLimiterRedis({
+   storeClient: redisClient,
+   points: 20,
+   duration: 1,
+   blockDuration: 2, // block for 2 seconds if consumed more than 20 points per second
+ });
+ 
+ http.createServer((req, res) => {
+   rateLimiter.consume(req.socket.remoteAddress)
+     .then((rateLimiterRes) => {
+        // Some app logic here
+ 
+        res.writeHead(200);
+        res.end();
+      })
+      .catch(() => {
+        res.writeHead(429);
+        res.end('Too Many Requests');
+      });
+   }
+ }).listen(3000);
+ ```
+
+You can find [more examples in the documentation](https://github.com/animir/node-rate-limiter-flexible/wiki/Overall-example).
 
 ### Code example: Express rate limiting middleware for certain routes
 

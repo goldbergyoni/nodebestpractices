@@ -16,7 +16,7 @@ const s = new Sandbox();
 
 s.run( "lol)hai", function( output ) {
   console.log(output);
-  //output='Synatx error'
+  //output='Syntax error'
 });
 
 // Example 4 - Restricted code

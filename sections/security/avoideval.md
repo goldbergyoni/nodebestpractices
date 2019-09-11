@@ -2,7 +2,7 @@
 
 ### One Paragraph Explainer
 
-`eval()`, `setTimeout()` and `setInterval()` are global functions, often used in Node.js, which accept a string parameter representing a JavaScript expression, statement, or sequence of statements. The security concern of using these functions is the possibility that untrusted user input might find its way into code execution leading to server compromise, as evaluating user code essentially allows an attacker to perform any actions that you can. It is suggested to refactor code to not rely on the usage of these functions where user input could be passed to the function and executed.
+`eval()`, `setTimeout()`, `setInterval()`, and `new Function()` are global functions, often used in Node.js, which accept a string parameter representing a JavaScript expression, statement, or sequence of statements. The security concern of using these functions is the possibility that untrusted user input might find its way into code execution leading to server compromise, as evaluating user code essentially allows an attacker to perform any actions that you can. It is suggested to refactor code to not rely on the usage of these functions where user input could be passed to the function and executed.
 
 ### Code example
 

@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2079%20Best%20practices-blue.svg" alt="79 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Jan%201%202019-green.svg" alt="Last update: January 1st, 2019"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%2010.15.0%20LTS-brightgreen.svg" alt="Updated for Node 10.15.0 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2082%20Best%20Practices-blue.svg" alt="82 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Jun%205%202019-green.svg" alt="Last update: June 5, 2019"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.4.0%20LTS-brightgreen.svg" alt="Updated for Node 12.4.0 LTS">
 </div>
 
 <br/>
@@ -96,7 +96,7 @@
 
 ## ![✔] 2.1  使用 Async-Await 和 promises 用于异步错误处理
 
-**TL;DR:** 使用回调的方式处理异步错误可能是导致灾难的最快的方式(a.k.a the pyramid of doom)。对您的代码来说，最好的礼物就是使用规范的promise库或async-await来替代，这会使其像try-catch一样更加简洁，具有熟悉的代码结构。 
+**TL;DR:** 使用回调的方式处理异步错误可能是导致灾难的最快的方式(a.k.a the pyramid of doom)。对您的代码来说，最好的礼物就是使用规范的promise库或async-await来替代，这会使其像try-catch一样更加简洁，具有熟悉的代码结构。
 
 **否则:** Node.js回调特性, function(err, response), 是导致不可维护代码的一个必然的方式。究其原因，是由于混合了随意的错误处理代码，臃肿的内嵌，蹩脚的代码模式。
 
@@ -246,7 +246,7 @@
   }
 
   // 避免
-  function someFunction
+  function someFunction()
   {
     // 代码块
   }
@@ -283,17 +283,17 @@
 ### 代码示例 ###
 ```javascript
   // 使用UpperCamelCase命名类名
-  class SomeClassExample () { 
-    
+  class SomeClassExample () {
+
     // 常量使用const关键字，并使用lowerCamelCase命名
     const config = {
       key: 'value'
     };
-    
+
     // 变量和方法使用lowerCamelCase命名
     let someVariableExample = 'value';
     function doSomething() {
-      
+
     }
 
   }
@@ -436,7 +436,7 @@ null == undefined   // true
 
 ## ![✔] 4.6 检查测试覆盖率，它有助于识别错误的测试模式
 
-**TL;DR:** 代码覆盖工具比如[Istanbul/NYC ](https://github.com/gotwarlost/istanbul)，很好用有3个原因：它是免费的（获得这份报告不需要任何开销），它有助于确定测试覆盖率降低的部分，以及最后但非最不重要的是它指出了测试中的不匹配：通过查看颜色标记的代码覆盖报告您可以注意到，例如，从来不会被测到的代码片段像catch语句（即测试只是调用正确的路径，而不调用应用程序发生错误时的行为）。如果覆盖率低于某个阈值，则将其设置为失败的构建。
+**TL;DR:** 代码覆盖工具比如 [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc)，很好用有3个原因：它是免费的（获得这份报告不需要任何开销），它有助于确定测试覆盖率降低的部分，以及最后但非最不重要的是它指出了测试中的不匹配：通过查看颜色标记的代码覆盖报告您可以注意到，例如，从来不会被测到的代码片段像catch语句（即测试只是调用正确的路径，而不调用应用程序发生错误时的行为）。如果覆盖率低于某个阈值，则将其设置为失败的构建。
 
 **否则:** 当你的大部分代码没有被测试覆盖时，就不会有任何自动化的度量指标告诉你了。
 
@@ -485,7 +485,7 @@ null == undefined   // true
 
 
 🔗 [**更多: 使用智能日志增加透明度**](/sections/production/smartlogging.chinese.md)
-	
+
 <br/><br/>
 
 ## ![✔] 5.3. 委托可能的一切（例如：gzip，SSL）给反向代理
@@ -519,7 +519,7 @@ null == undefined   // true
 
 🔗 [**更多: 使用正确的工具保护进程正常运行**](/sections/production/guardprocess.chinese.md)
 
- 
+
 <br/><br/>
 
 ## ![✔] 5.6. 利用CPU多核
@@ -617,7 +617,7 @@ null == undefined   // true
 <br/><br/>
 
 
-## ![✔] 5.14. 在每一个log语句中指明 ‘TransactionId’ 
+## ![✔] 5.14. 在每一个log语句中指明 ‘TransactionId’
 
 **TL;DR:** 在每一个请求的每一条log入口，指明同一个标识符，transaction-id: {某些值}。然后在检查日志中的错误时，很容易总结出前后发生的事情。不幸的是，由于Node异步的天性自然，这是不容易办到的，看下代码里面的例子
 
@@ -951,10 +951,10 @@ Independent Node.js consultant who works with customers at USA, Europe and Israe
 👨‍💻 Software engineer, 🌐 web developer, 🤖 emojis enthusiast.
 
 ## `Refael Ackermann` [@refack](https://github.com/refack) &lt;refack@gmail.com&gt; (he/him)
-Node.js Core Collaborator, been noding since 0.4, and have noded in multiple production sites. Founded `node4good` home of [`lodash-contrib`](https://github.com/node4good/lodash-contrib), [`formage`](https://github.com/node4good/formage), and [`asynctrace`](https://github.com/node4good/asynctrace). 
+Node.js Core Collaborator, been noding since 0.4, and have noded in multiple production sites. Founded `node4good` home of [`lodash-contrib`](https://github.com/node4good/lodash-contrib), [`formage`](https://github.com/node4good/formage), and [`asynctrace`](https://github.com/node4good/asynctrace).
 `refack` on freenode, Twitter, GitHub, GMail, and many other platforms. DMs are open, happy to help.
 
-## `Bruno Scheufler` 
+## `Bruno Scheufler`
 💻 full-stack web developer and Node.js enthusiast.
 
 ## `Kyle Martin` [@js-kyle](https://github.com/js-kyle)
@@ -963,80 +963,8 @@ Full Stack Developer based in New Zealand, interested in architecting and buildi
 
 <br/><br/>
 
-# Thank You Notes
+## Thank You Notes
 
-This repository is being kept up to date thanks to the help from the community. We appreciate any contribution, from a single word fix to a new best practice. Below is a list of everyone who contributed to this project. A :sunflower: marks a successful pull request and a :star: marks an approved new best practice.
+We appreciate any contribution, from a single word fix to a new best practice. View our contributors and [contributing documentation here!](CONTRIBUTORS.md)
 
-### Flowers
-
-🌻 [Kevin Rambaud](https://github.com/kevinrambaud),
-🌻 [Michael Fine](https://github.com/mfine15),
-🌻 [Shreya Dahal](https://github.com/squgeim),
-🌻 [ChangJoo Park](https://github.com/ChangJoo-Park),
-🌻 [Matheus Cruz Rocha](https://github.com/matheusrocha89),
-🌻 [Yog Mehta](https://github.com/BitYog),
-🌻 [Kudakwashe Paradzayi](https://github.com/kudapara),
-🌻 [t1st3](https://github.com/t1st3),
-🌻 [mulijordan1976](https://github.com/mulijordan1976),
-🌻 [Matan Kushner](https://github.com/matchai),
-🌻 [Fabio Hiroki](https://github.com/fabiothiroki),
-🌻 [James Sumners](https://github.com/jsumners),
-🌻 [Chandan Rai](https://github.com/crowchirp),
-🌻 [Dan Gamble](https://github.com/dan-gamble),
-🌻 [PJ Trainor](https://github.com/trainorpj),
-🌻 [Remek Ambroziak](https://github.com/reod),
-🌻 [Yoni Jah](https://github.com/yonjah),
-🌻 [Misha Khokhlov](https://github.com/hazolsky),
-🌻 [Evgeny Orekhov](https://github.com/EvgenyOrekhov),
-🌻 [Gediminas Petrikas](https://github.com/gediminasml),
-🌻 [Isaac Halvorson](https://github.com/hisaac),
-🌻 [Vedran Karačić](https://github.com/vkaracic),
-🌻 [lallenlowe](https://github.com/lallenlowe),
-🌻 [Nathan Wells](https://github.com/nwwells),
-🌻 [Paulo Vítor S Reis](https://github.com/paulovitin),
-🌻 [syzer](https://github.com/syzer),
-🌻 [David Sancho](https://github.com/davesnx),
-🌻 [Robert Manolea](https://github.com/pupix),
-🌻 [Xavier Ho](https://github.com/spaxe),
-🌻 [Aaron Arney](https://github.com/ocularrhythm),
-🌻 [Jan Charles Maghirang Adona](https://github.com/septa97),
-🌻 [Allen Fang](https://github.com/AllenFang),
-🌻 [Leonardo Villela](https://github.com/leonardovillela),
-🌻 [Michal Zalecki](https://github.com/MichalZalecki)
-🌻 [Chris Nicola](https://github.com/chrisnicola),
-🌻 [Alejandro Corredor](https://github.com/aecorredor),
-🌻 [Ye Min Htut](https://github.com/ymhtut),
-🌻 [cwar](https://github.com/cwar),
-🌻 [Yuwei](https://github.com/keyfoxth),
-🌻 [Utkarsh Bhatt](https://github.com/utkarshbhatt12),
-🌻 [Duarte Mendes](https://github.com/duartemendes),
-🌻 [Sagir Khan](https://github.com/sagirk),
-🌻 [Jason Kim](https://github.com/serv),
-🌻 [Mitja O.](https://github.com/Max101),
-🌻 [Sandro Miguel Marques](https://github.com/SandroMiguel),
-🌻 [Gabe Kuslansky](https://github.com/GabeKuslansky),
-🌻 [Ron Gross](https://github.com/ripper234),
-🌻 [Valeri Karpov](https://github.com/vkarpov15)
-🌻 [Sergio](https://github.com/imsergiobernal),
-🌻 [Duarte Mendes](https://github.com/duartemendes),
-🌻 [Nikola Telkedzhiev](https://github.com/ntelkedzhiev),
-🌻 [Vitor Godoy](https://github.com/vitordagamagodoy),
-🌻 [Manish Saraan](https://github.com/manishsaraan),
-🌻 [Sangbeom Han](https://github.com/uronly14me),
-🌻 [blackmatch](https://github.com/blackmatch),
-🌻 [Joe Reeve](https://github.com/ISNIT0),
-🌻 [Marcelo Melo](https://github.com/marcelosdm),
-🌻 [Ryan Busby](https://github.com/BusbyActual),
-🌻 [Iman Mohamadi](https://github.com/ImanMh),
-🌻 [Remek Ambroziak](https://github.com/reod),
-🌻 [Sergii Paryzhskyi](https://github.com/HeeL),
-🌻 [Kapil Patel](https://github.com/kapilepatel),
-🌻 [迷渡](https://github.com/justjavac)
-
-### Stars <br/>
-
-⭐ [Kyle Martin](https://github.com/js-kyle),
-⭐ [Keith Holliday](https://github.com/TheHollidayInn),
-⭐ [Corey Cleary](https://github.com/coreyc)
-
-<br/><br/>
+<br/><br/><br/>
