@@ -1,10 +1,10 @@
-# Create a maintenance endpoint
+# Crea un endpoint de mantenimiento
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
-A maintenance endpoint is a plain secured HTTP API that is part of the app code and its purpose is to be used by the ops/production team to monitor and expose maintenance functionality. For example, it can return a head dump (memory snapshot) of the process, report whether there are some memory leaks and even allow to execute REPL commands directly. This endpoint is needed where the conventional DevOps tools (monitoring products, logs, etc) fails to gather some specific type of information or you choose not to buy/install such tools. The golden rule is using professional and external tools for monitoring and maintaining the production, these are usually more robust and accurate. That said, there are likely to be cases where the generic tools will fail to extract information that is specific to Node or to your app – for example, should you wish to generate a memory snapshot at the moment GC completed a cycle – few NPM libraries will be glad to perform this for you but popular monitoring tools will be likely to miss this functionality
+Un endpoint de mantenimiento es una API HTTP plana y securizada que es parte del código de la aplicación y su propósito es ser usado por el equipo de ops/producción para monitorizar y exponer funcionalidades de mantenimiento. Por ejemplo, puede devolver un "Heap Dump" (snapshot de memoria) del proceso, reportar si hay fugas de memoria e incluso permitir la ejecución de comandos REPL directamente. El endpoint se necesita donde las herramientas convencionales de devops (productos de monitorización, logs, etc) fallan en recoger algún tipo específico de información o si simplemente eliges no comprar/instalar dichas herramientas. La regla de oro es utilizar herramientas externas y profesionales para monitorizar y mantener la aplicación en producción, ya que normalmente éstas son más robustas y precisas. Dicho eso, puede haber casos en los que las herramientas genéricas fallen en extraer información específica de Node o de tu aplicación —por ejemplo, si deseas generar una snapshot de memoria en el instante en el que GC completa un ciclo— algo que unas cuantas librerías NPM estarán encantadas de hacer por ti, pero que probablemente falte en herramientas de monitorización populares.
 
 <br/><br/>
 
