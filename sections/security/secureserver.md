@@ -5,9 +5,9 @@
 
 ### One Paragraph Explainer
 
-Using services like the [Let'sEncrypt](https://letsencrypt.org/) certificate authority providing __free__ ssl/tls certificates, you can easily obtain a certificate to secure your application. Node.js frameworks like [Express](http://expressjs.com/) (based on the core `https` module) support ssl/tls based servers easily, so the configuration can be done in a few lines of additional code.
+Using services such as [Let'sEncrypt](https://letsencrypt.org/), a certificate authority which provides __free__ SSL/TLS certificates, can help encrypt the communication of your applications. Node.js frameworks like [Express](http://expressjs.com/) (based on the core `https` module) support SSL/TLS, which can be implemented in a few lines of code.
 
-You can also configure ssl/tls on your reverse proxy pointing to your application for example using [nginx](http://nginx.org/en/docs/http/configuring_https_servers.html) or HAProxy.
+You can also configure SSL/TLS on a reverse proxy, such as [NGINX](http://nginx.org/en/docs/http/configuring_https_servers.html) or HAProxy.
 
 <br/><br/>
 
