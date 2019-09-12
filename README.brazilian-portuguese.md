@@ -330,15 +330,15 @@ const count = 2 // tenta executar 2(), mas 2 não é uma função
 ### Exemplo de Código
 
 ```javascript
-// for class name we use UpperCamelCase
+// para classes nós usamos UpperCamelCase
 class SomeClassExample {}
 
-// for const names we use the const keyword and lowerCamelCase
+// para nomes de constantes nós usamos a palavra const e lowerCamelCase
 const config = {
   key: 'value'
 };
 
-// for variables and functions names we use lowerCamelCase
+// para nomes de variáveis e funções nós usamos lowerCamelCase
 let someVariableExample = 'value';
 function doSomething() {}
 ```
