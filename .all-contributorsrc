@@ -752,6 +752,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "deyvisonrocha",
+      "name": "Deyvison Rocha",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/686067?v=4",
+      "profile": "http://deyvisonrocha.com",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
