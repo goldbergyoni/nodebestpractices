@@ -2,11 +2,9 @@
 
 ### One Paragraph Explainer
 
-We all love console.log but obviously, a reputable and persistent logger like [Winston][winston], [Bunyan][bunyan] (highly popular) or [Pino][pino] (the new kid in town which is focused on performance) is mandatory for serious projects. A set of practices and tools will help to reason about errors much quicker – (1) log frequently using different levels (debug, info, error), (2) when logging, provide contextual information as JSON objects, see example below. (3) watch and filter logs using a log querying API (built-in in most loggers) or a log viewer software
-(4) Expose and curate log statement for the operation team using operational intelligence tools like Splunk
+We all love console.log but obviously, a reputable and persistent logger like [Winston][winston] (highly popular) or [Pino][pino] (the new kid in town which is focused on performance) is mandatory for serious projects. A set of practices and tools will help to reason about errors much quicker – (1) log frequently using different levels (debug, info, error), (2) when logging, provide contextual information as JSON objects, see example below. (3) Watch and filter logs using a log querying API (built-in in most loggers) or a log viewer software. (4) Expose and curate log statement for the operation team using operational intelligence tools like Splunk.
 
 [winston]: https://www.npmjs.com/package/winston
-[bunyan]: https://www.npmjs.com/package/bunyan
 [pino]: https://www.npmjs.com/package/pino
 
 ### Code Example – Winston Logger in action
@@ -16,8 +14,7 @@ We all love console.log but obviously, a reputable and persistent logger like [W
 var logger = new winston.Logger({
   level: 'info',
   transports: [
-    new (winston.transports.Console)(),
-    new (winston.transports.File)({ filename: 'somefile.log' })
+    new (winston.transports.Console)()
   ]
 });
 
