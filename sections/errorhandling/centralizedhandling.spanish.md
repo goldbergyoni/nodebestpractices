@@ -1,8 +1,8 @@
-# Handle errors centrally, through but not within a middleware
+# Gestiona los errores de manera central, "a través de" pero no "en" un middleware
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
-Without one dedicated object for error handling, greater are the chances of important errors hiding under the radar due to improper handling. The error handler object is responsible for making the error visible, for example by writing to a well-formatted logger, sending events to some monitoring product or to an admin directly via email. A typical error handling flow might be: Some module throws an error -> API router catches the error -> it propagates the error to the middleware (e.g. Express, KOA) who is responsible for catching errors -> a centralized error handler is called -> the middleware is being told whether this error is an untrusted error (not operational) so it can restart the app gracefully. Note that it’s a common, yet wrong, practice to handle errors within Express middleware – doing so will not cover errors that are thrown in non-web interfaces
+Sin un objeto dedicado a la gestión de errores, son más las posibilidades de que errores importantes se oculten bajo el radar debido a una gestión inapropiada de los mismos. El objeto que gestiona el error es responsable de hacerlo visible, por ejemplo, mediante un logger bien formateado, enviando eventos hacia algún producto de monitorización o directamente a un administrador vía email. Un flujo típico de gestión de errores puede ser: Algún módulo tira un error –> el router de la API captura el error -> se propaga al middleware (ej. Express, KOA) responsable de atrapar errores -> se llama al objeto gestor de errores central -> se le indica al middleware si el error no es de fiar (no operacional) para que pueda reiniciar la aplicación de forma controlada. Nota que es una práctica común y, aun así mala práctica, el gestionar los errores directamente en el middleware de Express, pues de esa manera los errores lanzados en interfaces "no web" no quedan cubiertos.
 
 ### Code Example – a typical error flow
 

@@ -1,10 +1,10 @@
-# Delegate anything possible (e.g. static content, gzip) to a reverse proxy
+# Delega todo lo posible (ej. contenido estático, gzip) a un proxy inverso
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
-It’s very tempting to cargo-cult Express and use its rich middleware offering for networking related tasks like serving static files, gzip encoding, throttling requests, SSL termination, etc. This is a performance kill due to its single threaded model which will keep the CPU busy for long periods (Remember, Node’s execution model is optimized for short tasks or async IO related tasks). A better approach is to use a tool that expertise in networking tasks – the most popular are nginx and HAproxy which are also used by the biggest cloud vendors to lighten the incoming load on node.js processes.
+Es muy tentador caer en el culto a Express y usar su rico sistema de middlewares para tareas relacionadas con la red, como servir archivos estáticos, encoding de gzip, peticiones de throttling, terminación SSL, etc. Esto mata el rendimiento ya que su modelo "single thread" mantendrá la CPU ocupada durante largos periodos de tiempo (recuerda, el modelo de ejecución de Node está optimizado para tareas cortas o asíncronas relacionadas con entrada/salida). Una mejor solución es utilizar una herramienta especializada en tareas de red; las más populares son nginx y HAproxy, usadas también por los mayores proveedores cloud para aligerar la carga entrante en procesos de node.js.
 
 <br/><br/>
 

@@ -1,10 +1,10 @@
-# Carefully choose your CI platform
+# Elige tu plataforma de CI con cuidado
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
-The CI world used to be the flexibility of [Jenkins](https://jenkins.io/) vs the simplicity of SaaS vendors. The game is now changing as SaaS providers like [CircleCI](https://circleci.com/) and [Travis](https://travis-ci.org/) offer robust solutions including Docker containers with minimum setup time while Jenkins tries to compete on 'simplicity' segment as well. Though one can setup rich CI solution in the cloud, should it required to control the finest details Jenkins is still the platform of choice. The choice eventually boils down to which extent the CI process should be customized: free and setup free cloud vendors allow to run custom shell commands, custom docker images, adjust the workflow, run matrix builds and other rich features. However, if controlling the infrastructure or programming the CI logic using a formal programming language like Java is desired - Jenkins might still be the choice. Otherwise, consider opting for the simple and setup free cloud option
+El mundo de la CI solía ser la flexibilidad de Jenkins vs la simplicidad de proveedores SaaS. El juego ahora cambia ya que proveedores SaaS como CircleCI y Travis ofrecen soluciones robustas, incluyendo contenedores Docker con instalación y configuración mínimas, mientras Jenkins también intenta competir en el segmento de la "simplicidad". Aunque uno puede instalar una solución de CI completa en cloud, si fuera necesario controlar hasta el más mínimo detalle, Jekins sigue siendo la plataforma recomendada. Llega un momento en el que la elección se reduce lo siguiente: ¿hasta qué punto tengo que personalizar mi CI? Los proveedores cloud permiten ejecutar comandos de shell personalizados, imágenes Docker personalizadas, ajustar el flujo de trabajo, ejecutar compilaciones en clúster y otras funciones avanzadas. Sin embargo, si se desea controlar la infraestructura o programar la lógica de CI utilizando un lenguaje formal de programación como Java, Jenkins aún podría ser la opción. De lo contrario, considera optar por la opción de cloud simple y libre de instalación.
 
 <br/><br/>
 

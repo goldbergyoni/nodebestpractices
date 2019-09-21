@@ -1,14 +1,13 @@
-# Be stateless, kill your Servers almost every day
+# Sin estado: reinicia tus servidores casi cada día
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
-Have you ever encountered a severe production issue where one server was missing some piece of configuration or data? That is probably due to some unnecessary dependency on some local asset that is not part of the deployment. Many successful products treat servers like a phoenix bird – it dies and is reborn periodically without any damage. In other words, a server is just a piece of hardware that executes your code for some time and is replaced after that.
-This approach
+¿Te has encontrado alguna vez un grave problema en producción en el que a un servidor le faltaba algo de configuración o información? Probablemente se deba a alguna dependencia innecesaria en algún recurso local que no es parte del deploy. Muchos productos de éxito tratan a los servidores como a un pájaro fénix: muere y renace periódicamente sin sufrir daños. En otras palabras, un servidor es solo una pieza de hardware que ejecuta tu código durante un tiempo y que después se reemplaza. De esta manera:
 
-- allows scaling by adding and removing servers dynamically without any side-effects.
-- simplifies the maintenance as it frees our mind from evaluating each server state.
+- Se puede escalar añadiendo y quitando servidores dinámicamente, sin efectos secundarios.
+- Se simplifica el mantenimiento ya que libera nuestra mente de tener que evaluar el estado de cada servidor.
 
 <br/><br/>
 

@@ -1,10 +1,10 @@
-# Sure user experience with APM products
+# Asegura la experiencia de usuario con productos APM
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
-APM (application performance monitoring) refers to a family of products that aims to monitor application performance from end to end, also from the customer perspective. While traditional monitoring solutions focus on Exceptions and standalone technical metrics (e.g. error tracking, slow server endpoints, etc), in the real world our app might create disappointed users without any code exceptions, for example, if some middleware service performed real slow. APM products measure the user experience from end to end, for example, given a system that encompasses frontend UI and multiple distributed services – some APM products can tell how fast a transaction that spans multiple tiers last. It can tell whether the user experience is solid and point to the problem. This attractive offering comes with a relatively high price tag hence it’s recommended for large-scale and complex products that require going beyond straightforward monitoring.
+APM (application performance monitoring) se refiere a una familia de productos que tiene como objetivo monitorizar el rendimiento de la aplicación de principio a fin, también desde la perspectiva del cliente. Mientras las soluciones de monitorización tradicionales se centran en Excepciones y métricas técnicas independientes (por ejemplo, seguimiento de errores, endpoints lentos de servidor, etc.), en el mundo real nuestra app podría tener a usuarios descontentos sin excepciones de código, por ejemplo, si algún servicio middleware funcionase muy lento. Los productos APM miden la experiencia de usuario de punto a punto, por ejemplo, dado un sistema que abarca la interfaz de usuario frontend y múltiples servicios distribuidos: algunos productos APM pueden indicar lo rápido que dura una transacción que abarca varios niveles. Puede revelar, de hecho, si la experiencia de usuario es sólida y señalar el problema. Esta atractiva solución viene con un precio relativamente alto y se recomienda para productos complejos a gran escala que requieren ir más allá de la monitorización básica.
 
 <br/><br/>
 

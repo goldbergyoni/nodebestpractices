@@ -1,9 +1,8 @@
-# Use a mature logger to increase errors visibility
+# Utilizar un logger maduro para incrementar la visibilidad de errores
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
-We all love console.log but obviously, a reputable and persistent logger like [Winston][winston], [Bunyan][bunyan] (highly popular) or [Pino][pino] (the new kid in town which is focused on performance) is mandatory for serious projects. A set of practices and tools will help to reason about errors much quicker – (1) log frequently using different levels (debug, info, error), (2) when logging, provide contextual information as JSON objects, see example below. (3) watch and filter logs using a log querying API (built-in in most loggers) or a log viewer software
-(4) Expose and curate log statement for the operation team using operational intelligence tools like Splunk
+A todos nos encanta console.log, pero evidentemente un logger persistente y con buena reputación como [Winston][winston], [Bunyan][bunyan] (tremendamente popular) o [Pino][pino] (la última novedad, centrado en el performance) es algo obligatorio para proyectos serios. Un conjunto de prácticas y herramientas nos ayudarán a tratar con errores mucho más rápido: (1) Utilizar diferentes niveles de log (debug, info, error). (2) Cuando creamos logs, proporcionar información contextual mediante objetos JSON, ver el ejemplo de abajo. (3) Mirar y filtrar logs a través de una API de consulta de logs (incorporado en la mayoría de loggers) o de un software visor de logs. (4) Exponer y curar las entradas de log para el equipo de operaciones utilizando herramientas de inteligencia operacional como Splunk.
 
 [winston]: https://www.npmjs.com/package/winston
 [bunyan]: https://www.npmjs.com/package/bunyan

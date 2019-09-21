@@ -1,10 +1,10 @@
-# Assign ‘TransactionId’ to each log statement
+# Asigna "TransactionId" a cada entrada de log
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
-A typical log is a warehouse of entries from all components and requests. Upon detection of some suspicious line or error, it becomes hairy to match other lines that belong to the same specific flow (e.g. the user “John” tried to buy something). This becomes even more critical and challenging in a microservice environment when a request/transaction might span across multiple computers. Address this by assigning a unique transaction identifier value to all the entries from the same request so when detecting one line one can copy the id and search for every line that has similar transaction Id. However, achieving this In Node is not straightforward as a single thread is used to serve all requests –consider using a library that that can group data on the request level – see code example on the next slide. When calling other microservice, pass the transaction Id using an HTTP header like “x-transaction-id” to keep the same context.
+El típico log es un almacén de entradas de todos los componentes y peticiones. Ante la detección de una línea sospechosa o error, se vuelve un lío cruzar dicha línea con otras líneas que pertenezcan a la misma cadena de sucesos (por ejemplo, el usuario "John" intentó comprar algo). Esto se vuelve aún más crítico y desafiante en un entorno de microservicios en el que para una petición/transacción pueden intervenir múltiples máquinas. Esto se soluciona asignando un valor único a modo de identificador de "la transacción" a todas las entradas de la misma petición, así cuando se detecta una línea de log puedes copiar dicho ID y buscar todas las líneas con la misma ID de transacción. Sin embargo, lograr esto en Node no es sencillo ya que se usa un solo thread para atender a todas las peticiones —considera el uso de una librería que agrupe datos a nivel de petición—. Observa el ejemplo de código en siguiente la imagen. Cuando llames a otro microservicio, pasa el ID de transacción en una cabecera HTTP como "x-transaction-id" para mantener el mismo contexto.
 
 <br/><br/>
 
