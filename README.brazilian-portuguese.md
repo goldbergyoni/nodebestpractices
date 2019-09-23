@@ -109,7 +109,6 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 <br/><br/><br/>
 
 <p align="right"><a href="#índice">⬆ Voltar ao topo</a></p>
-
 # `2. Práticas de Tratamento de Erros`
 
 ## ![✔] 2.1 Utilize Async-Await ou promises para tratamento de erros assíncronos
@@ -223,7 +222,6 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 <br/><br/><br/>
 
 <p align="right"><a href="#índice">⬆ Voltar ao topo</a></p>
-
 # `3. Práticas de Estilo de Código`
 
 ## ![✔] 3.1 Use ESLint
@@ -432,7 +430,6 @@ Todas as declarações acima false se feitas com `===`.
 <br/><br/><br/>
 
 <p align="right"><a href="#índice">⬆ Voltar ao topo</a></p>
-
 # `4. Práticas de Testes e Qualidade Geral`
 
 ## ![✔] 4.1 No mínimo, escreva testes de API (componente)
@@ -532,7 +529,6 @@ Todas as declarações acima false se feitas com `===`.
 <br/><br/><br/>
 
 <p align="right"><a href="#índice">⬆ Voltar ao topo</a></p>
-
 # `5. Boas Práticas de Produção`
 
 ## ![✔] 5.1. Monitoramento!
@@ -714,7 +710,6 @@ Todas as declarações acima false se feitas com `===`.
 <br/><br/><br/>
 
 <p align="right"><a href="#índice">⬆ Voltar ao topo</a></p>
-
 # `6. Boas Práticas em Segurança`
 
 <div align="center">
@@ -892,7 +887,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** `eval` é do mal, pois permite a execução de um código JavaScript personalizado durante o tempo de execução. Isso não é apenas uma preocupação de desempenho, mas também uma importante preocupação de segurança devido ao código JavaScript malicioso que pode ser originado da entrada do usuário. Outra feature da linguagem que deve ser evitada é o construtor `new Function` constructor. `setTimeout` e `setInterval` também não devem ser receber código JavaScript dinâmico.
+**TL;DR:** `eval` é do mal, pois permite a execução de um código JavaScript personalizado durante o tempo de execução. Isso não é apenas uma preocupação de desempenho, mas também uma importante preocupação de segurança devido ao código JavaScript malicioso que pode ser originado da entrada do usuário. Outra feature da linguagem que deve ser evitada é o construtor `new Function` constructor. `setTimeout` e `setInterval` também não devem receber código JavaScript dinâmico.
 
 **Caso contrário:** o código JavaScript malicioso encontra um caminho para um texto passado para o eval ou outras funções de avaliação em tempo real da linguagem JavaScript, e terá acesso total às permissões do JavaScript na página. Essa vulnerabilidade geralmente se manifesta como um ataque XSS.
 
@@ -1016,7 +1011,6 @@ Todas as declarações acima false se feitas com `===`.
 <br/><br/><br/>
 
 <p align="right"><a href="#índice">⬆ Voltar ao topo</a></p>
-
 # `7. Boas Práticas em Performance`
 
 ## Nossos colaboradores estão trabalhando nesta seção. [Gostaria de participar?](https://github.com/i0natan/nodebestpractices/issues/256)
