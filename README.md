@@ -22,6 +22,8 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <br/>
 
+###### Our steering committee member, Yoni Goldberg, will speak this month about Node.js practices at [Verona](https://2019.nodejsday.it), [Kharkiv](https://kharkivjs.org) and Atlanta (more details soon)
+
 ###### Built and maintained by our [Steering Committee](#steering-committee) and [Collaborators](#collaborators)
 
 # Latest Best Practices and News
