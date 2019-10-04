@@ -1028,11 +1028,24 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `7. Performance Best Practices`
+# `7. Draft: Performance Best Practices`
 
 ## Our contributors are working on this section. [Would you like to join?](https://github.com/i0natan/nodebestpractices/issues/256)
 
-## ![✔] 7.1. Prefer native JS methods over user-land utils like Lodash
+<br/><br/>
+
+## ![✔] 7.1. Don't block the event loop
+
+**TL;DR:** Avoid CPU intensive tasks as they will block the mostly single-threaded Event Loop and offload those to a dedicated thread, process or even a different technology based on the context.
+
+**Otherwise:** As the Event Loop is blocked, Node.js will be unable to handle other request thus causing delays for concurrent users. **3000 users are waiting for a response, the content is ready to be served, but one single request blocks the server from dispatching the results back**
+
+🔗 [**Read More: Do not block the event loop**](/sections/performance/block-loop.md)
+
+<br /><br /><br />
+
+
+## ![✔] 7.2. Prefer native JS methods over user-land utils like Lodash
 
  **TL;DR:** It's often more penalising to use utility libraries like `lodash` and `underscore` over native methods as it leads to unneeded dependencies and slower performance.
  Bear in mind that with the introduction of the new V8 engine alongside the new ES standards, native methods were improved in such a way that it's now about 50% more performant than utility libraries.
@@ -1042,6 +1055,7 @@ All statements above will return false if used with `===`
 🔗 [**Read More: Native over user land utils**](/sections/performance/nativeoverutil.md)
 
 <br/><br/><br/>
+
 
 # Milestones
 
