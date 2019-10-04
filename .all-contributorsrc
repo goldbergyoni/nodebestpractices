@@ -770,6 +770,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "leimonio",
+      "name": "Konstantinos Leimonis",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1969742?v=4",
+      "profile": "https://github.com/leimonio",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
