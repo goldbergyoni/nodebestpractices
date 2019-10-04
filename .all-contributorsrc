@@ -761,6 +761,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "georgem3",
+      "name": "George Mamer",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/20108934?v=4",
+      "profile": "http://twitter.com/georgemamer",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
