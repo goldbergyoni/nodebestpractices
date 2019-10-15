@@ -779,6 +779,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "Zybax",
+      "name": "Oliver Lluberes",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/22094453?v=4",
+      "profile": "https://github.com/Zybax",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
