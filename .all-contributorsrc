@@ -761,6 +761,33 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "georgem3",
+      "name": "George Mamer",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/20108934?v=4",
+      "profile": "http://twitter.com/georgemamer",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "leimonio",
+      "name": "Konstantinos Leimonis",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1969742?v=4",
+      "profile": "https://github.com/leimonio",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "Zybax",
+      "name": "Oliver Lluberes",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/22094453?v=4",
+      "profile": "https://github.com/Zybax",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
