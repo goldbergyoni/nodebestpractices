@@ -22,9 +22,9 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <br/>
 
-###### Our steering committee member, Yoni Goldberg, will speak this month about Node.js practices at [Verona](https://2019.nodejsday.it), [Kharkiv](https://kharkivjs.org) and Atlanta (more details soon)
+###### Our steering committee member, Yoni Goldberg, will speak about Node.js best practices in Atlanta this month (more details soon)
 
-###### Built and maintained by our [Steering Committee](#steering-committee) and [Collaborators](#collaborators)
+###### Built and maintained by our [Steering Committee](#steering-committee) and our amazing [Collaborators](#collaborators)
 
 # Latest Best Practices and News
 
@@ -1095,7 +1095,7 @@ Meet the steering committee members - the people who work together to provide gu
 <a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
 <a href="https://goldbergyoni.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
-Independent Node.js consultant who works with customers in USA, Europe, and Israel on building large scale scalable Node applications. Many of the best practices above were first published at [goldbergyoni.com](https://goldbergyoni.com). Reach Yoni at @goldbergyoni or me@goldbergyoni.com
+Independent Node.js consultant who works with customers in the USA, Europe, and Israel on building large-scale Node.js applications. Many of the best practices above were first published at [goldbergyoni.com](https://goldbergyoni.com). Reach Yoni at [@goldbergyoni](https://github.com/goldbergyoni) or [me@goldbergyoni.com](mailto:me@goldbergyoni.com)
 
 <br/>
 
