@@ -56,7 +56,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 4. [Testing And Overall Quality Practices (12) ](#4-testing-and-overall-quality-practices)
 5. [Going To Production Practices (18) ](#5-going-to-production-practices)
 6. [Security Practices (25)](#6-security-best-practices)
-7. [Performance Practices (1) (In Progress️ ✍️)](#7-performance-best-practices)
+7. [Performance Practices (1) (In Progress️ ✍️)](#7-draft-performance-best-practices)
 
 <br/><br/>
 
