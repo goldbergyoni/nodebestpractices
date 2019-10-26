@@ -31,6 +31,26 @@ async function executeAsyncTask () {
     await alwaysExecuteThisFunction();
   }
 }
+
+async function executeAsyncTask () {
+  const valueA = await functionA();
+  try {
+    const valueA = await functionA();
+    const valueB = await functionB(valueA).catch(err => {
+      throw new Error('Something went wrong while executing function B'); // stops the further execution of the try block
+    });
+
+    console.log('This will never run if functionB returns a rejected Promise');
+    const valueC = await functionC(valueB);
+    return await functionD(valueC);
+  }
+  catch(err) {
+    logger.error(err);
+  } finally {
+    await alwaysExecuteThisFunction();
+  }
+}
+
 ```
 
 ### Anti pattern code example – callback style error handling
