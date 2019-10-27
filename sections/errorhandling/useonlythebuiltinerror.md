@@ -38,6 +38,9 @@ if(!productToAdd)
 
 ### Code example – doing it even better
 
+<details>
+<summary><strong>Javascript</strong></summary>
+
 ```javascript
 // centralized error object that derives from Node’s Error
 function AppError(name, httpCode, description, isOperational) {
@@ -55,6 +58,38 @@ module.exports.AppError = AppError;
 if(user == null)
     throw new AppError(commonErrors.resourceNotFound, commonHTTPErrors.notFound, "further explanation", true)
 ```
+</details>
+
+<details>
+<summary><strong>Typescript</strong></summary>
+
+```typescript
+// centralized error object that derives from Node’s Error
+export class AppError extends Error {
+  public readonly name: string;
+  public readonly httpCode: HttpCode;
+  public readonly isOperational: boolean;
+
+  constructor(name: string, httpCode: HttpCode, description: string, isOperational: boolean) {
+    super(description);
+
+    Object.setPrototypeOf(this, new.target.prototype); // restore prototype chain
+
+    this.name = name;
+    this.httpCode = httpCode;
+    this.isOperational = isOperational;
+
+    Error.captureStackTrace(this);
+  }
+}
+
+// client throwing an exception
+if(user == null)
+    throw new AppError(commonErrors.resourceNotFound, commonHTTPErrors.notFound, "further explanation", true)
+```
+</details>
+
+*Explanation about the `Object.setPrototypeOf` in Typescript: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html#support-for-newtarget*
 
 ### Blog Quote: "I don’t see the value in having lots of different types"
 

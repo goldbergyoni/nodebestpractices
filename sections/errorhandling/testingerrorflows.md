@@ -6,6 +6,9 @@ Testing ‘happy’ paths is no better than testing failures. Good testing code 
 
 ### Code example: ensuring the right exception is thrown using Mocha & Chai
 
+<details>
+<summary><strong>Javascript</strong></summary>
+
 ```javascript
 describe("Facebook chat", () => {
   it("Notifies on new chat message", () => {
@@ -14,13 +17,30 @@ describe("Facebook chat", () => {
     expect(chatService.sendMessage.bind({ message: "Hi" })).to.throw(ConnectionError);
   });
 });
-
 ```
+</details>
+
+<details>
+<summary><strong>Typescript</strong></summary>
+
+```typescript
+describe("Facebook chat", () => {
+  it("Notifies on new chat message", () => {
+    const chatService = new chatService();
+    chatService.participants = getDisconnectedParticipants();
+    expect(chatService.sendMessage.bind({ message: "Hi" })).to.throw(ConnectionError);
+  });
+});
+```
+</details>
 
 ### Code example: ensuring API returns the right HTTP error code
 
+<details>
+<summary><strong>Javascript</strong></summary>
+
 ```javascript
-it("Creates new Facebook group", function (done) {
+it("Creates new Facebook group", (done) => {
   var invalidGroupInfo = {};
   httpRequest({
     method: 'POST',
@@ -30,9 +50,33 @@ it("Creates new Facebook group", function (done) {
     json: true
   }).then((response) => {
     // if we were to execute the code in this block, no error was thrown in the operation above
-  }).catch(function (response) {
+  }).catch((response) => {
     expect(400).to.equal(response.statusCode);
     done();
   });
 });
 ```
+</details>
+
+<details>
+<summary><strong>Typescript</strong></summary>
+
+```typescript
+it("Creates new Facebook group", async () => {
+  let invalidGroupInfo = {};
+  try {
+    const response = await httpRequest({
+      method: 'POST',
+      uri: "facebook.com/api/groups",
+      resolveWithFullResponse: true,
+      body: invalidGroupInfo,
+      json: true
+    })
+    // if we were to execute the code in this block, no error was thrown in the operation above
+    expect.fail('The request should have failed')
+  } catch(response) {
+    expect(400).to.equal(response.statusCode);
+  }
+});
+```
+</details>
