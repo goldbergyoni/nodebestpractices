@@ -49,7 +49,7 @@ getData(someParameter, function(err, result) {
                 getMoreData(b, function(c) {
                     getMoreData(d, function(e) {
                         if(err !== null ) {
-                            // you get the idea? 
+                            // you get the idea?
                         }
                     })
                 });
@@ -73,7 +73,7 @@ getData(someParameter, function(err: Error | null, resultA: ResultA) {
         getMoreData(resultB, function(resultC: ResultC) {
           getMoreData(resultC, function(err: Error | null, d: ResultD) {
             if(err !== null) {
-              // you get the idea? 
+              // you get the idea?
             }
           })
         });
