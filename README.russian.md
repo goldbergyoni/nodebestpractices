@@ -1067,17 +1067,17 @@ null == undefined   // true
 
 ### Завершенные переводы
 
-- ![BR](/assets/flags/BR.png) [Бразильский португальский](/README.brazilian-portuguese.md) - Предоставлено [Marcelo Melo](https://github.com/marcelosdm)
-- ![CN](/assets/flags/CN.png) [Китайский](README.chinese.md) - Предоставлено [Matt Jin](https://github.com/mattjin)
+- ![BR](/assets/flags/BR.png) [Brazilian Portuguese](./README.brazilian-portuguese.md) - Любезно предоставлено [Marcelo Melo](https://github.com/marcelosdm)
+- ![CN](/assets/flags/CN.png) [Chinese](./README.chinese.md) - Любезно предоставлено [Matt Jin](https://github.com/mattjin)
+- ![RU](/assets/flags/RU.png) [Russian](./README.russian.md) - Любезно предоставлено [Alex Ivanov](https://github.com/contributorpw)
 
 ### Переводы в процессе
 
-- ![FR](/assets/flags/FR.png) [Французский](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Обсуждение](https://github.com/i0natan/nodebestpractices/issues/129))
-- ![HE](/assets/flags/HE.png) Иврит ([Обсуждение](https://github.com/i0natan/nodebestpractices/issues/156))
-- ![KR](/assets/flags/KR.png) [Корейский](README.korean.md) - Предоставлено [Sangbeom Han](https://github.com/uronly14me) ([Обсуждение](https://github.com/i0natan/nodebestpractices/issues/94))
-- ![RU](/assets/flags/RU.png) [Russian](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/454))
-- ![ES](/assets/flags/ES.png) [Испанский](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Обсуждение](https://github.com/i0natan/nodebestpractices/issues/95))
-- ![TR](/assets/flags/TR.png) Турецкий ([Обсуждение](https://github.com/i0natan/nodebestpractices/issues/139))
+- ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/129))
+- ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/i0natan/nodebestpractices/issues/156))
+- ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Любезно предоставлено [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/94))
+- ![ES](/assets/flags/ES.png) [Spanish](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/95))
+- ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/i0natan/nodebestpractices/issues/139))
 
 <br/><br/>
 
