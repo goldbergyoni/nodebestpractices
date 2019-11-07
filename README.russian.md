@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2084%20Best%20Practices-blue.svg" alt="84 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20October%2012%202019-green.svg" alt="Last update: Oct 12, 2019"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.12.0-brightgreen.svg" alt="Updated for Node 12.12.0">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2085%20Best%20Practices-blue.svg" alt="85 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20November%2012%202019-green.svg" alt="Last update: Oct 12, 2019"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.12.0-brightgreen.svg" alt="Updated for Node 12.12.0">
 </div>
 
 <br/>
@@ -18,23 +18,19 @@
 
 <br/>
 
-Читайте на других языках: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** and ![TR](/assets/flags/TR.png)**TR** в процессе!)](#translations)
+Читайте на других языках: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
 
 <br/>
-
-###### Член нашего руководящего комитета Йони Голдберг в этом месяце расскажет о практике Node.js в [Вероне](https://2019.nodejsday.it), [Харькове](https://kharkivjs.org ) и Атланте(подробности скоро)
 
 ###### Создано и поддерживается нашим [руководящим комитетом](#steering-committee) and [соавторами](#collaborators)
 
 # Последние лучшие практики и новости
 
-- **Новая лучшая практика:** 4.3: [Тестирование AAA-подходом](#-43-структурные-тесты-aaa-подходом)
+- **✅ Новая лучшая практика:** 7.1: [Не блокируйте цикл событий](#7-draft-performance-best-practices) by Keith Holliday
+
+- **🇷🇺 Перевод на русский:** Alex Ivanov недавно опубликовал опубликовал [Russian translation](/README.russian.md)
 
 - **Мы ищем авторов текстов:** хотите помочь с примерами TypeScript? Пожалуйста, обратитесь, открыв вопрос.
-
-- **Все участники:** Теперь мы используем [Спецификацию автоматического определения участников](https://allcontributors.org/) для распознавания всех типов вкладов в репозиторий. Еще раз спасибо всем нашим нынешним и будущим участникам ♥ ️
-
-- **Лучшие практики тестирования JavaScipt:** 🏆 Yoni и друзья запустили новый репозиторий лучших практик тестирования с всеобъемлющим и исчерпывающим опытом тестирования JavaScript и Node.js. [Ссылка на эти практики!](https://github.com/goldbergyoni/javascript-testing-best-practices)
 
 <br/><br/>
 
@@ -56,7 +52,7 @@
 4.  [Тестирование и общие методы контроля качества (12)](#4-Тестирование-и-общие-методы-контроля-качества)
 5.  [Переход к производственным практикам (18)](#5-Переход-к-производственным-практикам)
 6.  [Практики безопасности (25)](#6-Практики-безопасности)
-7.  [Практики эффективности (1) (В процессе️ ✍️)](#7-Практики-эффективности)
+7.  [Практики эффективности (2) (Работа в процессе️ ✍️)](#7-Практики-эффективности)
 
 <br/><br/>
 
@@ -1071,17 +1067,17 @@ null == undefined   // true
 
 ### Завершенные переводы
 
-- ![BR](/assets/flags/BR.png) [Бразильский португальский](/README.brazilian-portuguese.md) - Предоставлено [Marcelo Melo](https://github.com/marcelosdm)
-- ![CN](/assets/flags/CN.png) [Китайский](README.chinese.md) - Предоставлено [Matt Jin](https://github.com/mattjin)
+- ![BR](/assets/flags/BR.png) [Brazilian Portuguese](./README.brazilian-portuguese.md) - Любезно предоставлено [Marcelo Melo](https://github.com/marcelosdm)
+- ![CN](/assets/flags/CN.png) [Chinese](./README.chinese.md) - Любезно предоставлено [Matt Jin](https://github.com/mattjin)
+- ![RU](/assets/flags/RU.png) [Russian](./README.russian.md) - Любезно предоставлено [Alex Ivanov](https://github.com/contributorpw)
 
 ### Переводы в процессе
 
-- ![FR](/assets/flags/FR.png) [Французский](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Обсуждение](https://github.com/i0natan/nodebestpractices/issues/129))
-- ![HE](/assets/flags/HE.png) Иврит ([Обсуждение](https://github.com/i0natan/nodebestpractices/issues/156))
-- ![KR](/assets/flags/KR.png) [Корейский](README.korean.md) - Предоставлено [Sangbeom Han](https://github.com/uronly14me) ([Обсуждение](https://github.com/i0natan/nodebestpractices/issues/94))
-- ![RU](/assets/flags/RU.png) [Russian](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/454))
-- ![ES](/assets/flags/ES.png) [Испанский](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Обсуждение](https://github.com/i0natan/nodebestpractices/issues/95))
-- ![TR](/assets/flags/TR.png) Турецкий ([Обсуждение](https://github.com/i0natan/nodebestpractices/issues/139))
+- ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/129))
+- ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/i0natan/nodebestpractices/issues/156))
+- ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Любезно предоставлено [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/94))
+- ![ES](/assets/flags/ES.png) [Spanish](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/95))
+- ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/i0natan/nodebestpractices/issues/139))
 
 <br/><br/>
 
