@@ -13,8 +13,8 @@ The latest Express generator comes with a great practice that is worth to keep -
 ```javascript
 const app = express();
 app.use(bodyParser.json());
-app.use("/api/events", events.API);
-app.use("/api/forms", forms);
+app.use('/api/events', events.API);
+app.use('/api/forms', forms);
 ```
 
 ### Code example: Server network declaration, should reside in /bin/www

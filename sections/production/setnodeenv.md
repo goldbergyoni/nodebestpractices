@@ -18,7 +18,7 @@ $ node
 
 ```javascript
 // Reading the environment variable using code
-if (process.env.NODE_ENV === "production")
+if (process.env.NODE_ENV === 'production')
     useCaching = true;
 ```
 
