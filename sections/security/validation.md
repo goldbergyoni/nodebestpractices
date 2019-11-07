@@ -30,7 +30,7 @@ Validation is about being very explicit on what payload our app is willing to ac
 ### Example - Validating an entity using JSON-Schema
 
 ```javascript
-const JSONValidator = require("jsonschema").Validator;
+const JSONValidator = require('jsonschema').Validator;
 
 class Product {
   
@@ -52,7 +52,7 @@ class Product {
 ```javascript
 // The validator is a generic middleware that gets the entity it should validate and takes care to return
 // HTTP status 400 (Bad Request) should the body payload validation fail
-router.post("/" , **validator(Product.validate)**, async (req, res, next) => {
+router.post('/' , **validator(Product.validate)**, async (req, res, next) => {
     // route handling code goes here
 });
 
