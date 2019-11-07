@@ -23,15 +23,15 @@ app.use("/api/forms", forms);
 <summary><strong>Javascript</strong></summary>
 
 ```javascript
-var app = require('../app');
-var http = require('http');
+const app = require('../app');
+const http = require('http');
 
 // Get port from environment and store in Express.
-var port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 // Create HTTP server.
-var server = http.createServer(app);
+const server = http.createServer(app);
 ```
 </details>
 
@@ -59,7 +59,7 @@ const server = http.createServer(app);
 ```javascript
 const app = express();
 
-app.get('/user', function(req, res) {
+app.get('/user', (req, res) => {
   res.status(200).json({ name: 'tobi' });
 });
 
@@ -68,7 +68,7 @@ request(app)
   .expect('Content-Type', /json/)
   .expect('Content-Length', '15')
   .expect(200)
-  .end(function(err, res) {
+  .end((err, res) => {
     if (err) throw err;
   });
 ```

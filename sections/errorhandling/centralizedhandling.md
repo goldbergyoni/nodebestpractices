@@ -80,7 +80,7 @@ app.use(async (err: Error, req: Request, res: Response, next: NextFunction) => {
 module.exports.handler = new errorHandler();
 
 function errorHandler() {
-  this.handleError = async function(err) {
+  this.handleError = async (err) => {
     await logger.logError(err);
     await sendMailToAdminIfCritical;
     await saveInOpsQueueIfCritical;
