@@ -7,11 +7,25 @@
 
 ### `express-jwt-blacklist` 示例
 
-在Node.js项目中，使用`express-jwt`，并运行`express-jwt-blacklist`的例子
+在Node.js项目中，使用`express-jwt`，并运行`express-jwt-blacklist`的例子。请注意，请务必不要使用`express-jwt-blacklist`的默认存储设置（内存中缓存），而是使用外部存储（如 Redis）来撤销跨多个Node.js进程的令牌。
 
 ```javascript
 const jwt = require('express-jwt');
 const blacklist = require('express-jwt-blacklist');
+
+blacklist.configure({
+  tokenId: 'jti',
+  strict: true,
+  store: {
+    type: 'memcached',
+    host: '127.0.0.1'
+    port: 11211,
+    keyPrefix: 'mywebapp:',
+    options: {
+      timeout: 1000
+    }
+  }
+});
  
 app.use(jwt({
   secret: 'my-secret',
