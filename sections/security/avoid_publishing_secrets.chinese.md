@@ -24,7 +24,7 @@ coverage
 
 ```
 
-Example use of files array in package.json
+在package.json使用files数组的示例
 
 ```
 { 
@@ -35,10 +35,10 @@ Example use of files array in package.json
 }
 ```
 
-### What other bloggers say
+### 其他博客作者的说法
 
-From the blog by [Liran Tal & Juan Picado at Snyk](https://snyk.io/blog/ten-npm-security-best-practices/):
-> ... Another good practice to adopt is making use of the files property in package.json, which works as a whitelist and specifies the array of files to be included in the package that is to be created and installed (while the ignore file functions as a blacklist). The files property and an ignore file can both be used together to determine which files should explicitly be included, as well as excluded, from the package. When using both, the former the files property in package.json takes precedence over the ignore file.
+摘自博客[Liran Tal & Juan Picado at Snyk](https://snyk.io/blog/ten-npm-security-best-practices/):
+> ... 另一个值得采纳的良好实践是是使用package.json的files属性，用它作为白名单，并指定要创建和安装的包中需要包含的文件数组（而忽略文件作为黑名单）。files属性和忽略文件都可以一起使用，以确定哪些文件应显式包含在包中，以及应排除哪些文件。同时使用这两个属性时，位于package.json的files属性位应优先于忽略文件。
 
-From the [npm blog](https://blog.npmjs.org/post/165769683050/publishing-what-you-mean-to-publish)
-> ... When you run npm publish, npm bundles up all the files in the current directory. It makes a few decisions for you about what to include and what to ignore. To make these decisions, it uses the contents of several files in your project directory. These files include .gitignore, .npmignore, and the files array in the package.json. It also always includes certain files and ignores others.
+摘自[npm blog](https://blog.npmjs.org/post/165769683050/publishing-what-you-mean-to-publish)
+> ... 运行npm发布命令时，npm会捆绑当前目录中的所有文件。对于哪些内容应包括，哪些应忽略，它会为你做出一些决定。为了做出这些决策，它依赖项目目录中多个文件的内容。这些文件包括.gitignore和.npmignore及package.json中的files数组。它还始终包含某些文件并忽略其他文件。
