@@ -1,11 +1,11 @@
 # 避免将秘钥发布到npm registry
 
 ### 一段解释
-Precautions should be taken to avoid the risk of accidentally publishing secrets to public npm registries. An `.npmignore` file can be used to blacklist specific files or folders, or the `files` array in `package.json` can act as a whitelist.
+应采取预防措施，以避免向公共npm registre意外发布秘钥的风险。一个'.npmignore'文件可用于将特定文件或文件夹列入黑名单，或者把`package.json`中的`files`文件组充当白名单。
 
-To gain a view of what npm publish will really publish to the registry, the `--dry-run` flag can be added the npm publish command to provide a verbose view of the tarbell package created.
+为了获得npm真正将发布到registry的视图，可以添加`--dry-run`标志到npm发布命令，以提供被创建的tarbell包的详细视图。
 
-It is important to note that if a project is utilising both `.npmignore` and `.gitignore` files, everything which isn't in `.npmignore` is published to the registry(i.e. the `.npmignore` file overrides the `.gitignore`). This condition is a common source of confusion and is a problem that can lead to leaking secrets. Developers may end up updating the `.gitignore` file, but forget to update `.npmignore` as well, which can lead to a potentially sensitive file not being pushed to source control, but still being included in the npm package.
+请务必注意，如果项目同时使用`.npmignore`和`.gitignore`文件，一切都不在`.npmignore`中的文件会被发布到registry（例如，`.npmignore`覆盖`.gitignore`）。这种情况是混淆的常见来源，是一个可能导致泄露秘钥的问题。开发人员最终可能会更新`.gitignore`文件，但忘记更新`.npmignore`，这可能导致一个潜在的秘钥文件没有推送到源代码管理应用中，但仍包含在npm包里。
 
 ### 代码示例
 .npmignore示例文件
