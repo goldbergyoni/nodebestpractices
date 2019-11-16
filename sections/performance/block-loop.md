@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-Node handles the Event Loop mostly on a single thread rotating through multiple queues. Operations with high complexity, large json parsing, applying logic over huge arrays, unsafe regex querieies, and large IO operations are some of the operations that can cause the Event Loop to stall. Avoid this off-loading CPU intensive tasks to a dedicated service (e.g. job server), or breaking long tasks into small steps then using the Worker Pool are some examples of how to avoid blocking the Event Loop.
+Node handles the Event Loop mostly on a single thread rotating through multiple queues. Operations with high complexity, large json parsing, applying logic over huge arrays, unsafe regex queries, and large IO operations are some of the operations that can cause the Event Loop to stall. Avoid this off-loading CPU intensive tasks to a dedicated service (e.g. job server), or breaking long tasks into small steps then using the Worker Pool are some examples of how to avoid blocking the Event Loop.
 
 ### Example: blocking the event loop
 Let's take a look at an example from [Node Clinic](https://clinicjs.org/documentation/doctor/05-fixing-event-loop-problem).
