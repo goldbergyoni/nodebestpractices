@@ -8,38 +8,53 @@ The latest Express generator comes with a great practice that is worth to keep -
 
 <br/><br/>
 
-### Code example: API declaration, should reside in app.js
+### Code example: API declaration, should reside in app.js/app.ts
 
 ```javascript
-var app = express();
+const app = express();
 app.use(bodyParser.json());
 app.use("/api/events", events.API);
 app.use("/api/forms", forms);
 ```
 
-<br/><br/>
-
 ### Code example: Server network declaration, should reside in /bin/www
+
+<details>
+<summary><strong>Javascript</strong></summary>
 
 ```javascript
 var app = require('../app');
 var http = require('http');
 
-/**
- * Get port from environment and store in Express.
- */
-
+// Get port from environment and store in Express.
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-/**
- * Create HTTP server.
- */
-
+// Create HTTP server.
 var server = http.createServer(app);
 ```
+</details>
+
+<details>
+<summary><strong>Typescript</strong></summary>
+
+```typescript
+import app from '../app';
+import http from 'http';
+
+// Get port from environment and store in Express.
+const port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
+
+// Create HTTP server.
+const server = http.createServer(app);
+```
+</details>
 
 ### Example: test your API in-process using supertest (popular testing package)
+
+<details>
+<summary><strong>Javascript</strong></summary>
 
 ```javascript
 const app = express();
@@ -56,4 +71,28 @@ request(app)
   .end(function(err, res) {
     if (err) throw err;
   });
-````
+```
+</details>
+
+
+<details>
+<summary><strong>Typescript</strong></summary>
+
+```typescript
+const app = express();
+
+app.get('/user', (req: Request, res: Response) => {
+  res.status(200).json({ name: 'tobi' });
+});
+
+request(app)
+  .get('/user')
+  .expect('Content-Type', /json/)
+  .expect('Content-Length', '15')
+  .expect(200)
+  .end((err: Error) => {
+    if (err) throw err;
+  });
+
+```
+</details>
