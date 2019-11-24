@@ -788,6 +788,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "tiendq",
+      "name": "Tien Do",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/815910?v=4",
+      "profile": "https://stackoverflow.com/story/tiendq",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
