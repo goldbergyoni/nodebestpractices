@@ -10,7 +10,7 @@ The CI world used to be the flexibility of [Jenkins](https://jenkins.io/) vs the
 
 ### Code Example – a typical cloud CI configuration. Single .yml file and that's it
 
-```javascript
+```yaml
 version: 2
 jobs:
   build:

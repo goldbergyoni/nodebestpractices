@@ -10,11 +10,11 @@ Testing ‘happy’ paths is no better than testing failures. Good testing code 
 <summary><strong>Javascript</strong></summary>
 
 ```javascript
-describe("Facebook chat", () => {
-  it("Notifies on new chat message", () => {
-    var chatService = new chatService();
+describe('Facebook chat', () => {
+  it('Notifies on new chat message', () => {
+    const chatService = new chatService();
     chatService.participants = getDisconnectedParticipants();
-    expect(chatService.sendMessage.bind({ message: "Hi" })).to.throw(ConnectionError);
+    expect(chatService.sendMessage.bind({ message: 'Hi' })).to.throw(ConnectionError);
   });
 });
 ```
@@ -24,11 +24,11 @@ describe("Facebook chat", () => {
 <summary><strong>Typescript</strong></summary>
 
 ```typescript
-describe("Facebook chat", () => {
-  it("Notifies on new chat message", () => {
+describe('Facebook chat', () => {
+  it('Notifies on new chat message', () => {
     const chatService = new chatService();
     chatService.participants = getDisconnectedParticipants();
-    expect(chatService.sendMessage.bind({ message: "Hi" })).to.throw(ConnectionError);
+    expect(chatService.sendMessage.bind({ message: 'Hi' })).to.throw(ConnectionError);
   });
 });
 ```
@@ -40,19 +40,18 @@ describe("Facebook chat", () => {
 <summary><strong>Javascript</strong></summary>
 
 ```javascript
-it("Creates new Facebook group", (done) => {
-  var invalidGroupInfo = {};
-  httpRequest({
+it('Creates new Facebook group', () => {
+  const invalidGroupInfo = {};
+  return httpRequest({
     method: 'POST',
-    uri: "facebook.com/api/groups",
+    uri: 'facebook.com/api/groups',
     resolveWithFullResponse: true,
     body: invalidGroupInfo,
     json: true
   }).then((response) => {
-    // if we were to execute the code in this block, no error was thrown in the operation above
+    expect.fail('if we were to execute the code in this block, no error was thrown in the operation above')
   }).catch((response) => {
     expect(400).to.equal(response.statusCode);
-    done();
   });
 });
 ```
@@ -62,12 +61,12 @@ it("Creates new Facebook group", (done) => {
 <summary><strong>Typescript</strong></summary>
 
 ```typescript
-it("Creates new Facebook group", async () => {
+it('Creates new Facebook group', async () => {
   let invalidGroupInfo = {};
   try {
     const response = await httpRequest({
       method: 'POST',
-      uri: "facebook.com/api/groups",
+      uri: 'facebook.com/api/groups',
       resolveWithFullResponse: true,
       body: invalidGroupInfo,
       json: true
