@@ -13,7 +13,7 @@ Without one dedicated object for error handling, greater are the chances of impo
 // DAL layer, we don't handle errors here
 DB.addDocument(newCustomer, (error, result) => {
   if (error)
-    throw new Error("Great error explanation comes here", other useful parameters)
+    throw new Error('Great error explanation comes here', other useful parameters)
 });
 
 // API route code, we catch both sync and async errors and forward to the middleware
@@ -45,7 +45,7 @@ app.use(async (err, req, res, next) => {
 // DAL layer, we don't handle errors here
 DB.addDocument(newCustomer, (error: Error, result: Result) => {
   if (error)
-    throw new Error("Great error explanation comes here", other useful parameters)
+    throw new Error('Great error explanation comes here', other useful parameters)
 });
 
 // API route code, we catch both sync and async errors and forward to the middleware
@@ -80,7 +80,7 @@ app.use(async (err: Error, req: Request, res: Response, next: NextFunction) => {
 module.exports.handler = new errorHandler();
 
 function errorHandler() {
-  this.handleError = async function(err) {
+  this.handleError = async (err) => {
     await logger.logError(err);
     await sendMailToAdminIfCritical;
     await saveInOpsQueueIfCritical;

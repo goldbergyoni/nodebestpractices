@@ -6,13 +6,13 @@ Node handles the Event Loop mostly on a single thread rotating through multiple 
 
 ### Example: blocking the event loop
 Let's take a look at an example from [Node Clinic](https://clinicjs.org/documentation/doctor/05-fixing-event-loop-problem).
-```
+```javascript
 function sleep (ms) {
   const future = Date.now() + ms
   while (Date.now() < future);
 }
 
-server.get('/', function (req, res, next) {
+server.get('/', (req, res, next) => {
   sleep(30)
   res.send({})
   next()

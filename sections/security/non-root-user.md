@@ -9,7 +9,7 @@ According to the 'Principle of least privilege' a user/process must be able to a
 
 ### Code example - Building a Docker image as non-root
 
-```javascript
+```dockerfile
 FROM node:latest
 COPY package.json .
 RUN npm install

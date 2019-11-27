@@ -6,7 +6,7 @@ Validation is about being very explicit on what payload our app is willing to ac
 
 ### Example - JSON-Schema validation rules
 
-``` javascript
+```json
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
     "title": "Product",
@@ -29,13 +29,13 @@ Validation is about being very explicit on what payload our app is willing to ac
 
 ### Example - Validating an entity using JSON-Schema
 
-``` javascript
-const JSONValidator = require("jsonschema").Validator;
+```javascript
+const JSONValidator = require('jsonschema').Validator;
 
 class Product {
   
   validate() {
-    var v = new JSONValidator();
+    const v = new JSONValidator();
 
     return v.validate(this, schema);
   }
@@ -49,10 +49,10 @@ class Product {
 
 ### Example - Usage of middleware validator
 
-``` javascript
+```javascript
 // The validator is a generic middleware that gets the entity it should validate and takes care to return
 // HTTP status 400 (Bad Request) should the body payload validation fail
-router.post("/" , **validator(Product.validate)**, async (req, res, next) => {
+router.post('/' , **validator(Product.validate)**, async (req, res, next) => {
     // route handling code goes here
 });
 
