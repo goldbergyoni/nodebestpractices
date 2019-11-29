@@ -13,29 +13,54 @@
 ```javascript
 DAL.getUserById(1).then((johnSnow) => {
   // this error will just vanish
-  if(johnSnow.isAlive == false)
+  if(johnSnow.isAlive === false)
       throw new Error('ahhhh');
 });
-
 ```
 
 <br/><br/>
 
 ### Пример кода: отлов нерешенных и отклоненных обещаний
 
+<details>
+<summary><strong>Javascript</strong></summary>
+
 ```javascript
 process.on('unhandledRejection', (reason, p) => {
-  // I just caught an unhandled promise rejection, since we already have fallback handler for unhandled errors (see below), let throw and let him handle that
+  // I just caught an unhandled promise rejection,
+  // since we already have fallback handler for unhandled errors (see below),
+  // let throw and let him handle that
   throw reason;
 });
+
 process.on('uncaughtException', (error) => {
   // I just received an error that was never handled, time to handle it and then decide whether a restart is needed
   errorManagement.handler.handleError(error);
   if (!errorManagement.handler.isTrustedError(error))
     process.exit(1);
 });
-
 ```
+</details>
+
+<details>
+<summary><strong>Typescript</strong></summary>
+
+```typescript
+process.on('unhandledRejection', (reason: string, p: Promise<any>) => {
+  // I just caught an unhandled promise rejection,
+  // since we already have fallback handler for unhandled errors (see below),
+  // let throw and let him handle that
+  throw reason;
+});
+
+process.on('uncaughtException', (error: Error) => {
+  // I just received an error that was never handled, time to handle it and then decide whether a restart is needed
+  errorManagement.handler.handleError(error);
+  if (!errorManagement.handler.isTrustedError(error))
+    process.exit(1);
+});
+```
+</details>
 
 <br/><br/>
 
@@ -46,16 +71,16 @@ process.on('uncaughtException', (error) => {
 > Давайте проверим ваше понимание. Что из следующего вы ожидаете увидеть как ошибку в консоли?
 
 ```javascript
-Promise.resolve(‘promised value’).then(() => {
-  throw new Error(‘error’);
-});
+Promise.resolve('promised value').then(() => {
+  throw new Error('error');
+})
 
-Promise.reject(‘error value’).catch(() => {
-  throw new Error(‘error’);
+Promise.reject('error value').catch(() => {
+  throw new Error('error')
 });
 
 new Promise((resolve, reject) => {
-  throw new Error(‘error’);
+  throw new Error('error');
 });
 ```
 
