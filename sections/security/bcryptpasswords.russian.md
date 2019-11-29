@@ -9,19 +9,21 @@
 ### Пример кода
 
 ```javascript
+try {
 // asynchronously generate a secure password using 10 hashing rounds
-bcrypt.hash('myPassword', 10, function(err, hash) {
+  const hash = await bcrypt.hash('myPassword', 10);
   // Store secure hash in user record
-});
 
-// compare a provided password input with saved hash
-bcrypt.compare('somePassword', hash, function(err, match) {
-  if(match) {
+  // compare a provided password input with saved hash
+  const match = await bcrypt.compare('somePassword', hash);
+  if (match) {
    // Passwords match
   } else {
    // Passwords don't match
   } 
-});
+} catch {
+  logger.error('could not hash password.')
+}
 ```
 
 ### Что говорят другие блогеры
