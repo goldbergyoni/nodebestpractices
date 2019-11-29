@@ -14,13 +14,16 @@
 
 ```javascript
 const { createLogger, transports, winston } = require('winston');
-const winston-mongodb = require('winston-mongodb');
+/**
+   * Requiring `winston-mongodb` will expose
+   * `winston.transports.MongoDB`
+   */
+require('winston-mongodb');
  
 // log to two different files, which the application now must be concerned with
 const logger = createLogger({
   transports: [
     new transports.File({ filename: 'combined.log' }),
- 
   ],
   exceptionHandlers: [
     new transports.File({ filename: 'exceptions.log' })
@@ -47,13 +50,13 @@ const logger = new winston.Logger({
 logger.log('info', 'Test Log Message with some parameter %s', 'some parameter', { anything: 'This is metadata' });
 ```
 Затем в Docker-контейнере `daemon.json`:
-```javascript
+```json5
 {
   "log-driver": "splunk", // just using Splunk as an example, it could be another storage type
   "log-opts": {
     "splunk-token": "",
     "splunk-url": "",
-    ...
+    //...
   }
 }
 ```
