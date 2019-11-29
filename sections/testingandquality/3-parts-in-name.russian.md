@@ -17,10 +17,10 @@
 ### Пример кода: имя теста, состоящее из 3 частей
 ```javascript
 //1. unit under test
-describe('Products Service', function() {
-  describe('Add new product', function() {
+describe('Products Service', () => {
+  describe('Add new product', () => {
     //2. scenario and 3. expectation
-    it('When no price is specified, then the product status is pending approval', ()=> {
+    it('When no price is specified, then the product status is pending approval', () => {
       const newProduct = new ProductService().add(...);
       expect(newProduct.status).to.equal('pendingApproval');
     });
@@ -32,9 +32,9 @@ describe('Products Service', function() {
 
 ### Пример кода - Антипаттерн: нужно прочитать весь тестовый код, чтобы понять намерение
 ```javascript
-describe('Products Service', function() {
-  describe('Add new product', function() {
-    it('Should return the right status', ()=> {
+describe('Products Service', () => {
+  describe('Add new product', () => {
+    it('Should return the right status', () => {
         //hmm, what is this test checking? what are the scenario and expectation?
       const newProduct = new ProductService().add(...);
       expect(newProduct.status).to.equal('pendingApproval');
