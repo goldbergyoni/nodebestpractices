@@ -41,17 +41,13 @@ Each month, a maintainer on call will open an issue for maintenance work and rec
 | Month   | Maintainer on call |
 |---------|--------------------|
 | 10/2019 | Yoni               |
-| 11/2019 | Bruno              |
-| 12/2019 | Kyle               |
-| 01/2020 | Yoni               |
-| 02/2020 | Bruno              |
-| 03/2020 | Kyle               |
+| 12/2019 | Bruno              |
+| 02/2020 | Kyle               |
 | 04/2020 | Yoni               |
-| 05/2020 | Bruno              |
-| 06/2020 | Kyle               |
-| 07/2020 | Yoni               |
-| 09/2020 | Bruno              |
-
+| 06/2020 | Bruno              |
+| 08/2020 | Kyle               |
+| 10/2020 | Yoni               |
+| 12/2020 | Bruno              |
 
 <br/>
 
