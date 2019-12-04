@@ -11,7 +11,7 @@ We all love console.log but obviously, a reputable and persistent logger like [W
 
 ```javascript
 // your centralized logger object
-var logger = new winston.Logger({
+const logger = new winston.Logger({
   level: 'info',
   transports: [
     new (winston.transports.Console)()
@@ -20,24 +20,22 @@ var logger = new winston.Logger({
 
 // custom code somewhere using the logger
 logger.log('info', 'Test Log Message with some parameter %s', 'some parameter', { anything: 'This is metadata' });
-
 ```
 
 ### Code Example – Querying the log folder (searching for entries)
 
 ```javascript
-var options = {
-  from: new Date - 24 * 60 * 60 * 1000,
-  until: new Date,
+const options = {
+  from: Date.now() - 24 * 60 * 60 * 1000,
+  until: new Date(),
   limit: 10,
   start: 0,
   order: 'desc',
   fields: ['message']
 };
 
-
 // Find items logged between today and yesterday.
-winston.query(options, function (err, results) {
+winston.query(options, (err, results) => {
   // execute callback with results
 });
 ```
