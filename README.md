@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2084%20Best%20Practices-blue.svg" alt="84 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20October%2012%202019-green.svg" alt="Last update: Oct 12, 2019"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.12.0-brightgreen.svg" alt="Updated for Node 12.12.0">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2085%20Best%20Practices-blue.svg" alt="85 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20November%2012%202019-green.svg" alt="Last update: Oct 12, 2019"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.12.0-brightgreen.svg" alt="Updated for Node 12.12.0">
 </div>
 
 <br/>
@@ -18,23 +18,19 @@
 
 <br/>
 
-Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
+Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
 
 <br/>
 
-###### Our steering committee member, Yoni Goldberg, will speak about Node.js best practices in Atlanta this month (more details soon)
-
-###### Built and maintained by our [Steering Committee](#steering-committee) and our amazing [Collaborators](#collaborators)
+###### Built and maintained by our [Steering Committee](#steering-committee) and [Collaborators](#collaborators)
 
 # Latest Best Practices and News
 
-- **New best practice:** 4.3: [Testing with the AAA pattern](#4-testing-and-overall-quality-practices)
+- **✅ New best practice:** 7.1: [Don't block the event loop](#7-draft-performance-best-practices) by Keith Holliday
+
+- **🇷🇺 Russian translation:** The amazing Alex Ivanov has just published a [Russian translation](/README.russian.md)
 
 - **We seek typescript contributors:** want to help contributing TypeScript examples? please approach by opening an issue
-
-- **All Contributors:** We're now using the [All Contributors Spec](https://allcontributors.org/) to recognise all types of contributions to the repo. Thanks again for all our current, and future contributors ♥️
-
-- **JavaScript testing best practices:** 🏆 Yoni & friends have launched a new testing best practices repository, with comprehensive and exhaustive JavaScript & Node.js testing best practices. [Check it out here!](https://github.com/goldbergyoni/javascript-testing-best-practices)
 
 <br/><br/>
 
@@ -56,7 +52,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 4. [Testing And Overall Quality Practices (12) ](#4-testing-and-overall-quality-practices)
 5. [Going To Production Practices (18) ](#5-going-to-production-practices)
 6. [Security Practices (25)](#6-security-best-practices)
-7. [Performance Practices (1) (In Progress️ ✍️)](#7-draft-performance-best-practices)
+7. [Performance Practices (2) (Work In Progress️ ✍️)](#7-draft-performance-best-practices)
 
 <br/><br/>
 
@@ -1071,15 +1067,15 @@ All translations are contributed by the community. We will be happy to get any h
 
 ### Completed translations
 
-- ![BR](/assets/flags/BR.png) [Brazilian Portuguese](/README.brazilian-portuguese.md) - Courtesy of [Marcelo Melo](https://github.com/marcelosdm)
-- ![CN](/assets/flags/CN.png) [Chinese](README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
+- ![BR](/assets/flags/BR.png) [Brazilian Portuguese](./README.brazilian-portuguese.md) - Courtesy of [Marcelo Melo](https://github.com/marcelosdm)
+- ![CN](/assets/flags/CN.png) [Chinese](./README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
+- ![RU](/assets/flags/RU.png) [Russian](./README.russian.md) - Courtesy of [Alex Ivanov](https://github.com/contributorpw)
 
 ### Translations in progress
 
 - ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/129))
 - ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/i0natan/nodebestpractices/issues/156))
 - ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Courtesy of [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/94))
-- ![RU](/assets/flags/RU.png) [Russian](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/454))
 - ![ES](/assets/flags/ES.png) [Spanish](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/95))
 - ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/i0natan/nodebestpractices/issues/139))
 

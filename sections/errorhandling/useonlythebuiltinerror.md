@@ -9,7 +9,7 @@ The permissive nature of JavaScript along with its variety of code-flow options 
 ```javascript
 // throwing an Error from typical function, whether sync or async
 if(!productToAdd)
-    throw new Error("How can I add new product when no value provided?");
+    throw new Error('How can I add new product when no value provided?');
 
 // 'throwing' an Error from EventEmitter
 const myEmitter = new MyEmitter();
@@ -20,7 +20,7 @@ const addProduct = async (productToAdd) => {
   try {
     const existingProduct = await DAL.getProduct(productToAdd.id);
     if (existingProduct !== null) {
-      throw new Error("Product already exists!");
+      throw new Error('Product already exists!');
     }
   } catch (err) {
     // ...
@@ -33,10 +33,13 @@ const addProduct = async (productToAdd) => {
 ```javascript
 // throwing a string lacks any stack trace information and other important data properties
 if(!productToAdd)
-    throw ("How can I add new product when no value provided?");
+    throw ('How can I add new product when no value provided?');
 ```
 
 ### Code example – doing it even better
+
+<details>
+<summary><strong>Javascript</strong></summary>
 
 ```javascript
 // centralized error object that derives from Node’s Error
@@ -47,14 +50,47 @@ function AppError(name, httpCode, description, isOperational) {
     //...other properties assigned here
 };
 
-AppError.prototype.__proto__ = Error.prototype;
+AppError.prototype = Object.create(Error.prototype);
+AppError.prototype.constructor = AppError;
 
 module.exports.AppError = AppError;
 
 // client throwing an exception
 if(user == null)
-    throw new AppError(commonErrors.resourceNotFound, commonHTTPErrors.notFound, "further explanation", true)
+    throw new AppError(commonErrors.resourceNotFound, commonHTTPErrors.notFound, 'further explanation', true)
 ```
+</details>
+
+<details>
+<summary><strong>Typescript</strong></summary>
+
+```typescript
+// centralized error object that derives from Node’s Error
+export class AppError extends Error {
+  public readonly name: string;
+  public readonly httpCode: HttpCode;
+  public readonly isOperational: boolean;
+
+  constructor(name: string, httpCode: HttpCode, description: string, isOperational: boolean) {
+    super(description);
+
+    Object.setPrototypeOf(this, new.target.prototype); // restore prototype chain
+
+    this.name = name;
+    this.httpCode = httpCode;
+    this.isOperational = isOperational;
+
+    Error.captureStackTrace(this);
+  }
+}
+
+// client throwing an exception
+if(user == null)
+    throw new AppError(commonErrors.resourceNotFound, commonHTTPErrors.notFound, 'further explanation', true)
+```
+</details>
+
+*Explanation about the `Object.setPrototypeOf` in Typescript: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html#support-for-newtarget*
 
 ### Blog Quote: "I don’t see the value in having lots of different types"
 

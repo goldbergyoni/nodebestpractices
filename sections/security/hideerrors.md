@@ -8,10 +8,10 @@ If you pass an error to `next()` and you do not handle it in a custom error hand
 
 ### Code example: Express error handler
 
-``` javascript
+```javascript
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
     res.status(err.status || 500);
     res.render('error', {
         message: err.message,
