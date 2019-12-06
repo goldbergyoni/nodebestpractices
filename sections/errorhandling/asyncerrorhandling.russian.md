@@ -8,12 +8,13 @@
 
 ```javascript
 return functionA()
-  .then((valueA) => functionB(valueA))
-  .then((valueB) => functionC(valueB))
-  .then((valueC) => functionD(valueC))
+  .then(functionB)
+  .then(functionC)
+  .then(functionD)
   .catch((err) => logger.error(err))
-  .then(alwaysExecuteThisFunction())
+  .then(alwaysExecuteThisFunction)
 ```
+
 
 ### Пример кода - использование async/await для отлова ошибок
 
@@ -25,7 +26,7 @@ async function executeAsyncTask () {
     const valueC = await functionC(valueB);
     return await functionD(valueC);
   }
-  catch(err) {
+  catch (err) {
     logger.error(err);
   } finally {
     await alwaysExecuteThisFunction();
@@ -33,7 +34,10 @@ async function executeAsyncTask () {
 }
 ```
 
-### Пример кода шаблона - обработка ошибок в стиле обратного вызова
+### Антипаттерн. Обработка ошибок в стиле обратного вызова
+
+<details>
+<summary><strong>Javascript</strong></summary>
 
 ```javascript
 getData(someParameter, function(err, result) {
@@ -45,7 +49,7 @@ getData(someParameter, function(err, result) {
                 getMoreData(b, function(c) {
                     getMoreData(d, function(e) {
                         if(err !== null ) {
-                            // you get the idea? 
+                            // you get the idea?
                         }
                     })
                 });
@@ -54,6 +58,31 @@ getData(someParameter, function(err, result) {
     }
 });
 ```
+</details>
+
+<details>
+<summary><strong>Typescript</strong></summary>
+
+```typescript
+getData(someParameter, function(err: Error | null, resultA: ResultA) {
+  if(err !== null) {
+    // do something like calling the given callback function and pass the error
+    getMoreData(resultA, function(err: Error | null, resultB: ResultB) {
+      if(err !== null) {
+        // do something like calling the given callback function and pass the error
+        getMoreData(resultB, function(resultC: ResultC) {
+          getMoreData(resultC, function(err: Error | null, d: ResultD) {
+            if(err !== null) {
+              // you get the idea?
+            }
+          })
+        });
+      }
+    });
+  }
+});
+```
+</details>
 
 ### Цитата из блога: "У нас проблема с обещаниями"
 

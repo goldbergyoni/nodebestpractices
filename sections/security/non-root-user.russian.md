@@ -9,7 +9,7 @@
 
 ### Пример кода - Создание образа Docker без полномочий root
 
-```javascript
+```dockerfile
 FROM node:latest
 COPY package.json .
 RUN npm install
