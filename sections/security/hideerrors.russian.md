@@ -8,10 +8,10 @@ Express поставляется со встроенным обработчик�
 
 ### Пример кода: экспресс-обработчик ошибок
 
-``` javascript
+```javascript
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
     res.status(err.status || 500);
     res.render('error', {
         message: err.message,

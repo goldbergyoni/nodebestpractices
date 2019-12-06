@@ -20,10 +20,10 @@
 
 ### Пример кода - бенчмарк-тест для `_.concat`/`Array.concat`
 ```javascript
-const _ = require('lodash'),
-  __ = require('underscore'),
-  Suite = require('benchmark').Suite,
-  opts = require('./utils'); //cf. https://github.com/Berkmann18/NativeVsUtils/blob/master/utils.js
+const _ = require('lodash');
+const __ = require('underscore');
+const Suite = require('benchmark').Suite;
+const opts = require('./utils'); //cf. https://github.com/Berkmann18/NativeVsUtils/blob/master/utils.js
 
 const concatSuite = new Suite('concat', opts);
 const array = [0, 1, 2];

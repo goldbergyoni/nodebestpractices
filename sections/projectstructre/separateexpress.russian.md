@@ -8,43 +8,58 @@
 
 <br/><br/>
 
-### Пример кода: объявление API, должно находиться в app.js
+### Пример кода: объявление API, должно находиться в app.js/app.ts
 
 ```javascript
-var app = express();
+const app = express();
 app.use(bodyParser.json());
-app.use("/api/events", events.API);
-app.use("/api/forms", forms);
+app.use('/api/events', events.API);
+app.use('/api/forms', forms)
 ```
-
-<br/><br/>
 
 ### Пример кода: сетевое объявление сервера должно находиться в /bin/www
 
+<details>
+<summary><strong>Javascript</strong></summary>
+
 ```javascript
-var app = require('../app');
-var http = require('http');
+const app = require('../app');
+const http = require('http');
 
-/**
- * Get port from environment and store in Express.
- */
-
-var port = normalizePort(process.env.PORT || '3000');
+// Get port from environment and store in Express.
+const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-/**
- * Create HTTP server.
- */
-
-var server = http.createServer(app);
+// Create HTTP server.
+const server = http.createServer(app);
 ```
+</details>
+
+<details>
+<summary><strong>Typescript</strong></summary>
+
+```typescript
+import app from '../app';
+import http from 'http';
+
+// Get port from environment and store in Express.
+const port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
+
+// Create HTTP server.
+const server = http.createServer(app);
+```
+</details>
 
 ### Пример: протестируйте свой API в процессе, используя supertest (популярный пакет тестирования)
+
+<details>
+<summary><strong>Javascript</strong></summary>
 
 ```javascript
 const app = express();
 
-app.get('/user', function(req, res) {
+app.get('/user', (req, res) => {
   res.status(200).json({ name: 'tobi' });
 });
 
@@ -53,7 +68,31 @@ request(app)
   .expect('Content-Type', /json/)
   .expect('Content-Length', '15')
   .expect(200)
-  .end(function(err, res) {
+  .end((err, res) => {
     if (err) throw err;
   });
-````
+```
+</details>
+
+
+<details>
+<summary><strong>Typescript</strong></summary>
+
+```typescript
+const app = express();
+
+app.get('/user', (req: Request, res: Response) => {
+  res.status(200).json({ name: 'tobi' });
+});
+
+request(app)
+  .get('/user')
+  .expect('Content-Type', /json/)
+  .expect('Content-Length', '15')
+  .expect(200)
+  .end((err: Error) => {
+    if (err) throw err;
+  });
+
+```
+</details>

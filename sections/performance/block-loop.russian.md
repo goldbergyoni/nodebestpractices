@@ -6,13 +6,13 @@ Node обрабатывает цикл событий в основном в о�
 
 ### Example: blocking the event loop
 Давайте посмотрим на пример из [Node Clinic](https://clinicjs.org/documentation/doctor/05-fixing-event-loop-problem).
-```
+```javascript
 function sleep (ms) {
   const future = Date.now() + ms
   while (Date.now() < future);
 }
 
-server.get('/', function (req, res, next) {
+server.get('/', (req, res, next) => {
   sleep(30)
   res.send({})
   next()

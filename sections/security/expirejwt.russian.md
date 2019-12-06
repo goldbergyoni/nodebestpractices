@@ -18,7 +18,7 @@ blacklist.configure({
   strict: true,
   store: {
     type: 'memcached',
-    host: '127.0.0.1'
+    host: '127.0.0.1',
     port: 11211,
     keyPrefix: 'mywebapp:',
     options: {
@@ -32,7 +32,7 @@ app.use(jwt({
   isRevoked: blacklist.isRevoked
 }));
  
-app.get('/logout', function (req, res) {
+app.get('/logout', (req, res)=> {
   blacklist.revoke(req.user)
   res.sendStatus(200);
 });

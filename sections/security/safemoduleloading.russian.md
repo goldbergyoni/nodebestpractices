@@ -8,7 +8,7 @@
 
 ```javascript
 // insecure, as helperPath variable may have been modified by user input
-const uploadHelpers = require(helperPath);
+const badWayToRequireUploadHelpers = require(helperPath);
 
 // secure
 const uploadHelpers = require('./helpers/upload');

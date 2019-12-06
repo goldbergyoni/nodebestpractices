@@ -16,13 +16,13 @@
 
 ```javascript
 // Typical mistake 1: saving uploaded files locally on a server
-var multer = require('multer'); // express middleware for handling multipart uploads
-var upload = multer({ dest: 'uploads/' });
+const multer = require('multer'); // express middleware for handling multipart uploads
+const upload = multer({ dest: 'uploads/' });
 
 app.post('/photos/upload', upload.array('photos', 12), function (req, res, next) {});
 
 // Typical mistake 2: storing authentication sessions (passport) in a local file or memory
-var FileStore = require('session-file-store')(session);
+const FileStore = require('session-file-store')(session);
 app.use(session({
     store: new FileStore(options),
     secret: 'keyboard cat'
