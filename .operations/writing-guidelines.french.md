@@ -1,31 +1,31 @@
-# Our content writing manifest
+# Notre manifeste de rédaction de contenu
 
-How we enhance the reading and learning experience for our visitors.
+Comment nous améliorons l'expérience de lecture et l'apprentissage pour nos visiteurs.
 
-## 1. Simple is better than better
+## 1. La simplicité vaut mieux que la perfection
 
-Making it easy to read and absorb knowledge is our mission, we curate content. As such we focus on transforming complex and exhausting topics into a simplified list, trade overloaded information with shortened and less-accurate details, avoid ‘flammable’ and controversial topics and escape subjective ideas in favor of generally accepted practices.
+Faciliter la lecture et l'absorption des connaissances est notre mission, nous en organisons son contenu. En tant que tels, nous nous concentrons sur la transformation des sujets complexes et difficiles en une liste simplifiée, nous traitons les informations trop volumineuses avec du contenu plus courts et moins précis, nous évitons les sujets ‘qui mettent de l'huile sur le feu’ ou controversés et nous évitons les idées subjectives au profit de pratiques généralement acceptées.
 
-## 2. Be evidence-based and reliable
+## 2. Se baser sur des faits probants et fiables
 
-Our readers should have great confidence that the content they skim through is reliable. We achieve this by including evidence like references, data and other resources available to this topic. Practically, strive to include quotes from reliable sources, show benchmarks, related design patterns or any scientific measure to prove your claims.
+Nos lecteurs doivent être persuadés que le contenu qu'ils parcourent est fiable. Pour ce faire, nous incluons des données probantes comme des références, des données et d'autres ressources disponibles à ce sujet. Dans la pratique, nous essayons d'inclure des citations provenant de sources fiables, de montrer des benchmarks, des modèles de conception connexes ou toute autre mesure scientifique pour prouver les affirmations.
 
-## 3. MECE (Mutually Exclusive and Collectively Exhaustive)
+## 3. MECE (Mutuellement Exclusif Collectivement Exhaustif)
 
-Apart from the content being greatly edited and reliable, skimming through it should also provide full coverage of the topic. No important sub-topic should be left out.
+En plus d'être d'une grande fiabilité et d'une grande qualité rédactionnelle, le fait de parcourir le contenu devrait également permettre de couvrir l'ensemble du sujet. Aucun sous-thème important ne doit être laissé de côté.
 
-## 4. Consistent formatting
+## 4. Formatage cohérent
 
-The content is presented using fixed templates. Any future content must conform to the same template. If you wish to add new bullets copy a bullet format from an existing bullet and extend it to your needs. For additional information please view [this template](https://github.com/i0natan/nodebestpractices/blob/master/sections/template.md).
+Le contenu est présenté à l'aide de modèles prédéfinis. Tout contenu futur doit être conforme au même modèle. Si vous souhaitez ajouter de nouveaux points, copiez le format d'un point existant et complétez-le selon vos besoins. Pour plus d'informations, veuillez consulter [ce modèle](https://github.com/i0natan/nodebestpractices/blob/master/sections/template.md).
 
-## 5. It's About Node.js
+## 5. C'est à propos de Node.js
 
-Each advice should be related directly to Node.js and not to software development in general. When we advise to implement generic pattern/rule in Node.js, the content should focus on the Node implementation. For example, when we advise to sanitize all requests input for security reasons, Node-lingo should be used - ‘Use middleware to sanitize request input’. If an item has no specific implementation in Node.js (e.g. it looks the same in Python & Jaba) - include it within a generic container item, see item 6.5 for example.
+Chaque conseil doit être directement lié à Node.js et non au développement de logiciels en général. Lorsque nous conseillons d'implémenter un modèle/une règle générique dans Node.js, le contenu doit se concentrer sur l'implémentation dans Node. Par exemple, lorsque nous conseillons de nettoyer toutes les requêtes saisies pour des raisons de sécurité, il convient d'utiliser Node-lingo - ‘Utiliser un middleware pour nettoyer les requêtes saisies’. Si un élément n'a pas d'implémentation spécifique dans Node.js (par exemple, il est identique dans Python & Jaba) - incluez-le dans un élément de conteneur générique, voir l'article 6.5 par exemple.
 
-## 6. Leading vendors only
+## 6. Uniquement les fournisseurs majeurs
 
-Sometimes it's useful to include names of vendors that can address certain challenges and problems like npm packages, open source tools or even commercial products. To avoid overwhelmingly long lists or recommending non-reputable and unstable projects, we came up with the following rules:
+Il est parfois utile d'inclure des noms de fournisseurs qui peuvent répondre à certains défis et problèmes comme les paquets npm, les outils open source ou même les produits commerciaux. Afin d'éviter des listes trop longues ou de recommander des projets peu fiables et instables, nous avons élaboré les règles suivantes :
 
-- Only the top 3 vendors should be recommended – a vendor that appears in the top 3 results of a search engine (Google or GitHub sorted by popularity) for a given relevant keyword can be included in our recommendation.
-- If it’s a npm package it must also be downloaded at least 750 times a day on average.
-- If it’s an open-source project, it must have been updated at least once in the last 6 months.
+- Seuls les 3 premiers fournisseurs devraient être recommandés - un fournisseur qui apparaît dans les 3 premiers résultats d'un moteur de recherche (Google ou GitHub triés par popularité) pour un mot clé pertinent donné peut être inclus dans notre recommandation.
+- S'il s'agit d'un paquet npm, il doit également être téléchargé au moins 750 fois par jour en moyenne.
+- S'il s'agit d'un projet open-source, il doit avoir été mis à jour au moins une fois au cours des 6 derniers mois.
