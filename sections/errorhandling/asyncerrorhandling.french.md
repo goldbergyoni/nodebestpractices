@@ -1,40 +1,40 @@
-# Use Async-Await or promises for async error handling
+# Utilisez Async-Await ou les promesses pour le traitement des erreurs asynchrones
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-Callbacks don’t scale well since most programmers are not familiar with them. They force to check errors all over, deal with nasty code nesting and make it difficult to reason about the code flow. Promise libraries like BlueBird, async, and Q pack a standard code style using RETURN and THROW to control the program flow. Specifically, they support the favorite try-catch error handling style which allows freeing the main code path from dealing with errors in every function
+Les fonctions de rappels n'évoluent pas bien car la plupart des programmeurs ne les connaissent pas bien. Elles obligent à vérifier les erreurs partout, à gérer l'imbrication de code désagréable et à rendre difficile le raisonnement sur le flux du code. Les bibliothèques de promesse comme BlueBird, async et Q contiennent un style de code standard en utilisant RETURN et THROW pour contrôler le flux du programme. Plus précisément, elles prennent en charge le style de gestion des erreurs de try-catch qui permet de libérer le chemin du code principal de la gestion des erreurs dans chaque fonction.
 
-### Code Example – using promises to catch errors
+### Exemple de code - utiliser des promesses pour détecter les erreurs
 
 ```javascript
-return functionA()
-  .then(functionB)
-  .then(functionC)
-  .then(functionD)
+return fonctionA()
+  .then(fonctionB)
+  .then(fonctionC)
+  .then(fonctionD)
   .catch((err) => logger.error(err))
-  .then(alwaysExecuteThisFunction)
+  .then(toujoursExecuterCetteFonction)
 ```
 
 
-### Code Example - using async/await to catch errors
+### Exemple de code - utiliser async/wait pour détecter les erreurs
 
 ```javascript
 async function executeAsyncTask () {
   try {
-    const valueA = await functionA();
-    const valueB = await functionB(valueA);
-    const valueC = await functionC(valueB);
-    return await functionD(valueC);
+    const valueA = await fonctionA();
+    const valueB = await fonctionB(valueA);
+    const valueC = await fonctionC(valueB);
+    return await fonctionD(valueC);
   }
   catch (err) {
     logger.error(err);
   } finally {
-    await alwaysExecuteThisFunction();
+    await toujoursExecuterCetteFonction();
   }
 }
 ```
 
-### Anti pattern code example – callback style error handling
+### Contre exemple de code - gestion des erreurs avec des fonctions de rappel
 
 <details>
 <summary><strong>Javascript</strong></summary>
@@ -42,14 +42,14 @@ async function executeAsyncTask () {
 ```javascript
 getData(someParameter, function(err, result) {
     if(err !== null) {
-        // do something like calling the given callback function and pass the error
+        // faire quelque chose comme appeler la fonction de rappel donnée et passer l'erreur
         getMoreData(a, function(err, result) {
             if(err !== null) {
-                // do something like calling the given callback function and pass the error
+                // faire quelque chose comme appeler la fonction de rappel donnée et passer l'erreur
                 getMoreData(b, function(c) {
                     getMoreData(d, function(e) {
                         if(err !== null ) {
-                            // you get the idea?
+                            // vous avez une idée ?
                         }
                     })
                 });
@@ -66,14 +66,14 @@ getData(someParameter, function(err, result) {
 ```typescript
 getData(someParameter, function(err: Error | null, resultA: ResultA) {
   if(err !== null) {
-    // do something like calling the given callback function and pass the error
+    // faire quelque chose comme appeler la fonction de rappel donnée et passer l'erreur
     getMoreData(resultA, function(err: Error | null, resultB: ResultB) {
       if(err !== null) {
-        // do something like calling the given callback function and pass the error
+        // faire quelque chose comme appeler la fonction de rappel donnée et passer l'erreur
         getMoreData(resultB, function(resultC: ResultC) {
           getMoreData(resultC, function(err: Error | null, d: ResultD) {
             if(err !== null) {
-              // you get the idea?
+              // vous avez une idée ?
             }
           })
         });
@@ -84,26 +84,26 @@ getData(someParameter, function(err: Error | null, resultA: ResultA) {
 ```
 </details>
 
-### Blog Quote: "We have a problem with promises"
+### Citation de blog : « Nous avons un problème avec les promesses »
 
- From the blog pouchdb.com
+ Extrait du blog de pouchdb.com
 
- > ……And in fact, callbacks do something even more sinister: they deprive us of the stack, which is something we usually take for granted in programming languages. Writing code without a stack is a lot like driving a car without a brake pedal: you don’t realize how badly you need it until you reach for it and it’s not there. The whole point of promises is to give us back the language fundamentals we lost when we went async: return, throw, and the stack. But you have to know how to use promises correctly in order to take advantage of them.
+ > …. Et en fait, les fonctions de rappel font quelque chose d'encore plus sinistre : elles nous privent de la pile, ce que nous tenons généralement pour acquis en langage de programmation. Écrire du code sans pile, c'est un peu comme conduire une voiture sans pédale de frein : vous ne réalisez pas à quel point vous en avez besoin tant que vous ne l'avez pas atteint et qu'il n'est pas là. Le but des promesses est de nous rendre les bases linguistiques que nous avons perdues quand nous sommes devenus asynchrones : return, throw et la pile. Mais il faut savoir utiliser correctement les promesses pour en profiter.
 
-### Blog Quote: "The promises method is much more compact"
+### Citation de blog : « La méthode des promesses est beaucoup plus compacte »
 
- From the blog gosquared.com
+ Extrait du blog de gosquared.com
 
- > ………The promises method is much more compact, clearer and quicker to write. If an error or exception occurs within any of the ops it is handled by the single .catch() handler. Having this single place to handle all errors means you don’t need to write error checking for each stage of the work.
+ > …. La méthode des promesses est beaucoup plus compacte, plus claire et plus rapide à écrire. Si une erreur ou une exception se produit dans l'une des opérations, elle est gérée par l'unique gestionnaire .catch (). Avoir cet emplacement unique pour gérer toutes les erreurs signifie que vous n'avez pas besoin d'écrire la vérification des erreurs pour chaque étape du travail.
 
-### Blog Quote: "Promises are native ES6, can be used with generators"
+### Citation de blog : « Les promesses sont natives en ES6, elles peuvent être utilisées avec des générateurs »
 
- From the blog StrongLoop
+ Extrait du blog de StrongLoop
 
- > ….Callbacks have a lousy error-handling story. Promises are better. Marry the built-in error handling in Express with promises and significantly lower the chances of an uncaught exception. Promises are native ES6, can be used with generators, and ES7 proposals like async/await through compilers like Babel
+> …. Les fonctions de rappel ont un mauvais historique de gestion des erreurs. Les promesses sont meilleures. Marier la gestion des erreurs intégrée dans Express avec des promesses permet de réduire considérablement les chances d'une exception non capturée. Les promesses sont natives en ES6, elles peuvent être utilisées avec des générateurs et des propositions ES7 comme async/wait via des compilateurs comme Babel.
 
-### Blog Quote: "All those regular flow control constructs you are used to are completely broken"
+### Citation de blog : « Toutes ces constructions de contrôle de flux auxquelles vous êtes habitué sont complètement cassées »
 
-From the blog Benno’s
+Extrait du blog de Benno’s
 
- > ……One of the best things about asynchronous, callback-based programming is that basically all those regular flow control constructs you are used to are completely broken. However, the one I find most broken is the handling of exceptions. Javascript provides a fairly familiar try…catch construct for dealing with exceptions. The problem with exceptions is that they provide a great way of short-cutting errors up a call stack, but end up being completely useless if the error happens on a different stack…
+ > …L'un des meilleurs atouts de l'asynchrone, pour la programmation basée sur des fonctions de rappel, c'est que fondamentalement toutes ces constructions de contrôle de flux auxquelles vous êtes habitué sont complètement cassées. Cependant, celle que je trouve la plus cassée, c'est la gestion des exceptions. Javascript fournit une construction try…catch assez familière pour gérer les exceptions. Le problème avec les exceptions, c'est qu'elles fournissent un excellent moyen de court-circuiter les erreurs dans une pile d'appels, mais finissent par être complètement inutiles si l'erreur se produit sur une autre pile…
