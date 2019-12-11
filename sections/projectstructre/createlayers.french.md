@@ -1,13 +1,13 @@
-# Layer your app, keep Express within its boundaries
+# Organisez vos composants en strates, laissez Express gérer ses responsabilités
 
 <br/><br/>
 
- ### Separate component code into layers: web, services, and DAL
+ ### Séparez le code des composants en strates : web, services et DAL (couche d'accès aux données)
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Separate component code into layers")
+![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Séparez le code des composants en strates")
 
  <br/><br/>
 
-### 1 min explainer: The downside of mixing layers
+### Explication en 1 min : l'inconvénient de mélanger les strates
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/keepexpressinweb.gif "The downside of mixing layers")
+![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/keepexpressinweb.gif "L'inconvénient de mélanger les strates")
