@@ -1,13 +1,13 @@
-# Wrap common utilities as npm packages
+# Externalisez les utilitaires communs en paquets NPM
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-Once you start growing and have different components on different servers which consumes similar utilities, you should start managing the dependencies - how can you keep 1 copy of your utility code and let multiple consumer components use and deploy it? well, there is a tool for that, it's called npm... Start by wrapping 3rd party utility packages with your own code to make it easily replaceable in the future and publish your own code as private npm package. Now, all your code base can import that code and benefit free dependency management tool. It's possible to publish npm packages for your own private use without sharing it publicly using [private modules](https://docs.npmjs.com/private-modules/intro), [private registry](https://npme.npmjs.com/docs/tutorials/npm-enterprise-with-nexus.html) or [local npm packages](https://medium.com/@arnaudrinquin/build-modular-application-with-npm-local-modules-dfc5ff047bcc)
+Une fois que vous commencez à vous développer et que vous avez différents composants sur différents serveurs qui consomment des utilitaires similaires, vous devez commencer à gérer les dépendances - comment pouvez-vous conserver une copie de votre code utilitaire et laisser plusieurs composants consommateurs l'utiliser et le déployer ? Eh bien, il y a un outil pour ça, ça s'appelle npm ... Commencez par emballer des paquets d'utilitaires tiers avec votre propre code pour le rendre facilement remplaçable à l'avenir et publiez votre propre code en tant que package npm privé. Désormais, toute votre base de code peut importer ce code et bénéficier d'un outil de gestion des dépendances gratuit. Il est possible de publier des packages npm pour votre propre usage privé sans le partager publiquement à l'aide de [modules privés](https://docs.npmjs.com/private-modules/intro), [registre privé](https://npme.npmjs.com/docs/tutorials/npm-enterprise-with-nexus.html) ou de [paquets npm locaux](https://medium.com/@arnaudrinquin/build-modular-application-with-npm-local-modules-dfc5ff047bcc).
 
 <br/><br/>
 
-### Sharing your own common utilities across environments and components
+### Partage de vos propres utilitaires communs entre les environnements et les composants
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/Privatenpm.png "Structuring solution by components")
+![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/Privatenpm.png "Solution d'organisation par composants")
