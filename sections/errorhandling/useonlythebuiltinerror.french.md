@@ -1,26 +1,26 @@
-# Use only the built-in Error object
+# Utilisez uniquement l'objet intégré Error
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-The permissive nature of JavaScript along with its variety of code-flow options (e.g. EventEmitter, Callbacks, Promises, etc) pushes to great variance in how developers raise errors – some use strings, other define their own custom types. Using Node.js built-in Error object helps to keep uniformity within your code and with 3rd party libraries, it also preserves significant information like the StackTrace. When raising the exception, it’s usually a good practice to fill it with additional contextual properties like the error name and the associated HTTP error code. To achieve this uniformity and practices, consider extending the Error object with additional properties, see code example below
+La nature permissive de JavaScript ainsi que sa variété d'options de flux de code (par exemple, EventEmitter, fonction de rappel, promesses, etc.) peut faire varier considérablement la façon dont les développeurs génèrent des erreurs - certains utilisent des chaînes, d'autres définissent leurs propres types personnalisés. L'utilisation de l'objet Error intégré de Node.js aide à maintenir l'uniformité dans votre code et avec les bibliothèques tierces, il préserve également des informations importantes comme la StackTrace. Lors de la levée de l'exception, il est généralement recommandé de la remplir avec des propriétés contextuelles supplémentaires telles que le nom de l'erreur et le code d'erreur HTTP associé. Pour atteindre cette uniformité et ces pratiques, envisagez d'étendre l'objet Error avec des propriétés supplémentaires, voir l'exemple de code ci-dessous.
 
-### Code Example – doing it right
+### Exemple de code - la bonne méthode
 
 ```javascript
-// throwing an Error from typical function, whether sync or async
+// lève une Error depuis une fonction typique, qu'elle soit synchrone ou asynchrone
 if(!productToAdd)
-    throw new Error('How can I add new product when no value provided?');
+    throw new Error('Comment puis-je ajouter un nouveau produit lorsqu\'aucune valeur n\'est fournie ?');
 
-// 'throwing' an Error from EventEmitter
+// 'lève' une Error depuis EventEmitter
 const myEmitter = new MyEmitter();
-myEmitter.emit('error', new Error('whoops!'));
+myEmitter.emit('error', new Error('Oups !'));
 
-// 'throwing' an Error from a Promise
+// 'lève' une Error depuis une promesse
 const addProduct = async (productToAdd) => {
   try {
     const existingProduct = await DAL.getProduct(productToAdd.id);
     if (existingProduct !== null) {
-      throw new Error('Product already exists!');
+      throw new Error('Le produit existe déjà !');
     }
   } catch (err) {
     // ...
@@ -28,26 +28,26 @@ const addProduct = async (productToAdd) => {
 }
 ```
 
-### Code example – Anti Pattern
+### Exemple de code - la mauvaise méthode
 
 ```javascript
-// throwing a string lacks any stack trace information and other important data properties
+// lève une chaîne qui ne contient aucune information de trace de pile et autres propriétés de données importantes
 if(!productToAdd)
-    throw ('How can I add new product when no value provided?');
+    throw ('Comment puis-je ajouter un nouveau produit lorsqu\'aucune valeur n\'est fournie ?');
 ```
 
-### Code example – doing it even better
+### Exemple de code - une méthode encore meilleure
 
 <details>
 <summary><strong>Javascript</strong></summary>
 
 ```javascript
-// centralized error object that derives from Node’s Error
+// objet d'erreur centralisé qui dérive de Error de Node
 function AppError(name, httpCode, description, isOperational) {
     Error.call(this);
     Error.captureStackTrace(this);
     this.name = name;
-    //...other properties assigned here
+    //...d'autres propriétés attribuées ici
 };
 
 AppError.prototype = Object.create(Error.prototype);
@@ -55,9 +55,9 @@ AppError.prototype.constructor = AppError;
 
 module.exports.AppError = AppError;
 
-// client throwing an exception
+// le client levant une exception
 if(user == null)
-    throw new AppError(commonErrors.resourceNotFound, commonHTTPErrors.notFound, 'further explanation', true)
+    throw new AppError(commonErrors.resourceNotFound, commonHTTPErrors.notFound, 'plus d\'explications', true)
 ```
 </details>
 
@@ -65,7 +65,7 @@ if(user == null)
 <summary><strong>Typescript</strong></summary>
 
 ```typescript
-// centralized error object that derives from Node’s Error
+// objet d'erreur centralisé qui dérive de Error de Node
 export class AppError extends Error {
   public readonly name: string;
   public readonly httpCode: HttpCode;
@@ -74,7 +74,7 @@ export class AppError extends Error {
   constructor(name: string, httpCode: HttpCode, description: string, isOperational: boolean) {
     super(description);
 
-    Object.setPrototypeOf(this, new.target.prototype); // restore prototype chain
+    Object.setPrototypeOf(this, new.target.prototype); // restaure la chaîne du prototype
 
     this.name = name;
     this.httpCode = httpCode;
@@ -84,34 +84,34 @@ export class AppError extends Error {
   }
 }
 
-// client throwing an exception
+// le client levant une exception
 if(user == null)
-    throw new AppError(commonErrors.resourceNotFound, commonHTTPErrors.notFound, 'further explanation', true)
+    throw new AppError(commonErrors.resourceNotFound, commonHTTPErrors.notFound, 'plus d\'explications', true)
 ```
 </details>
 
-*Explanation about the `Object.setPrototypeOf` in Typescript: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html#support-for-newtarget*
+*Explication sur `Object.setPrototypeOf` en Typescript : https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html#support-for-newtarget*
 
-### Blog Quote: "I don’t see the value in having lots of different types"
+### Citation de blog : « Je ne vois pas l'intérêt d'avoir beaucoup de types d'objets d'erreur différents »
 
-From the blog, Ben Nadel ranked 5 for the keywords “Node.js error object”
+Extrait du blog de Ben Nadel classé en 5ème position pour les mots clés “Node.js error object”
 
->…”Personally, I don’t see the value in having lots of different types of error objects – JavaScript, as a language, doesn’t seem to cater to Constructor-based error-catching. As such, differentiating on an object property seems far easier than differentiating on a Constructor type…
+>… Personnellement, je ne vois pas l'intérêt d'avoir beaucoup de types d'objets d'erreur différents - JavaScript, en tant que langage, ne semble pas répondre à la capture d'erreurs basée sur le constructeur. En tant que tel, la différenciation sur une propriété d'objet semble beaucoup plus facile que la différenciation sur un type de constructeur…
 
-### Blog Quote: "A string is not an error"
+### Citation de blog : « Une chaîne n'est pas une erreur »
 
-From the blog, devthought.com ranked 6 for the keywords “Node.js error object”
+Extrait du blog de devthought.com classé en 6ème position pour les mots clés “Node.js error object”
 
-> …passing a string instead of an error results in reduced interoperability between modules. It breaks contracts with APIs that might be performing `instanceof` Error checks, or that want to know more about the error. Error objects, as we’ll see, have very interesting properties in modern JavaScript engines besides holding the message passed to the constructor…
+> …le passage d'une chaîne au lieu d'une erreur entraîne une interopérabilité réduite entre les modules. Il rompt les contrats avec les API qui pourraient effectuer des vérifications d'Error avec `instanceof`, ou qui veulent en savoir plus sur l'erreur. Les objets d'Error, comme nous le verrons, ont des propriétés très intéressantes dans les moteurs JavaScript modernes en plus de contenir le message transmis au constructeur…
 
-### Blog Quote: "Inheriting from Error doesn’t add too much value"
+### Citation de blog : « L'héritage d'Error n'ajoute pas trop de valeur »
 
-From the blog machadogj
+Extrait du blog de machadogj
 
-> …One problem that I have with the Error class is that is not so simple to extend. Of course, you can inherit the class and create your own Error classes like HttpError, DbError, etc. However, that takes time and doesn’t add too much value unless you are doing something with types. Sometimes, you just want to add a message and keep the inner error, and sometimes you might want to extend the error with parameters, and such…
+> …Un problème que j'ai avec la classe Error est qu'il n'est pas si simple à étendre. Bien sûr, vous pouvez hériter de la classe et créer vos propres classes d'erreur comme HttpError, DbError, etc. Cependant, cela prend du temps et n'ajoute pas trop de valeur à moins que vous ne fassiez quelque chose avec des types. Parfois, vous voulez simplement ajouter un message et conserver l'erreur interne, et parfois vous voudrez peut-être étendre l'erreur avec des paramètres, etc.…
 
-### Blog Quote: "All JavaScript and System errors raised by Node.js inherit from Error"
+### Citation de blog : « Toutes les erreurs JavaScript et Système levées par Node.js héritent de Error »
 
-From Node.js official documentation
+Extrait de la documentation officielle de Node.js
 
-> …All JavaScript and System errors raised by Node.js inherit from, or are instances of, the standard JavaScript Error class and are guaranteed to provide at least the properties available on that class. A generic JavaScript Error object that does not denote any specific circumstance of why the error occurred. Error objects capture a “stack trace” detailing the point in the code at which the Error was instantiated, and may provide a text description of the error. All errors generated by Node.js, including all System and JavaScript errors, will either be instances of or inherit from, the Error class…
+> …Toutes les erreurs JavaScript et Système levées par Node.js héritent de, ou sont des instances de, la classe Error du JavaScript standard et sont garantes de fournir au moins les propriétés disponibles sur cette classe. Un objet Error JavaScript générique n'indique aucune circonstance particulière expliquant pourquoi l'erreur s'est produite. Les objets d'erreur capturent une « trace de la pile » détaillant le point dans le code où l'erreur a été instanciée et peuvent fournir une description textuelle de l'erreur. Toutes les erreurs générées par Node.js, y compris toutes les erreurs système et JavaScript, seront des instances ou hériteront de la classe Error…
