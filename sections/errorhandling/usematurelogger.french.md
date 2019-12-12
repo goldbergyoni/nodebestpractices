@@ -1,16 +1,16 @@
-# Use a mature logger to increase errors visibility
+# Utilisez un outil de journalisation mature pour augmenter la visibilité des erreurs
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-We all love console.log but obviously, a reputable and persistent logger like [Winston][winston] (highly popular) or [Pino][pino] (the new kid in town which is focused on performance) is mandatory for serious projects. A set of practices and tools will help to reason about errors much quicker – (1) log frequently using different levels (debug, info, error), (2) when logging, provide contextual information as JSON objects, see example below. (3) Watch and filter logs using a log querying API (built-in in most loggers) or a log viewer software. (4) Expose and curate log statement for the operation team using operational intelligence tools like Splunk.
+Nous aimons tous console.log mais de toute évidence, un outil de journalisation réputé et persistant comme [Winston][winston] (très populaire) ou [Pino][pino] (le nouveau gamin de la ville qui se concentre sur la performance) est obligatoire pour les projets sérieux. Un ensemble de pratiques et d'outils aidera à comprendre les erreurs beaucoup plus rapidement - (1) journalisez fréquemment en utilisant différents niveaux (débogage, informations, erreur), (2) lors de la journalisation, fournissez des informations contextuelles sous forme d'objets JSON, voir l'exemple ci-dessous. (3) Regardez et filtrez les journaux à l'aide d'une API d'interrogation des journaux (intégrée dans la plupart des enregistreurs) ou d'un logiciel de visualisation des journaux. (4) Exposer et conserver le journal de bord pour l'équipe d'exploitation à l'aide d'outils d'intelligence opérationnelle comme Splunk.
 
 [winston]: https://www.npmjs.com/package/winston
 [pino]: https://www.npmjs.com/package/pino
 
-### Code Example – Winston Logger in action
+### Exemple de code - l'outil de journalisation Winston en action
 
 ```javascript
-// your centralized logger object
+// votre objet de journalisation centralisé
 const logger = new winston.Logger({
   level: 'info',
   transports: [
@@ -18,11 +18,11 @@ const logger = new winston.Logger({
   ]
 });
 
-// custom code somewhere using the logger
-logger.log('info', 'Test Log Message with some parameter %s', 'some parameter', { anything: 'This is metadata' });
+// code personnalisé quelque part à l'aide de l'outil de journalisation
+logger.log('info', 'Message du journal de test avec un paramètre %s', 'un paramètre', { anything: 'Ce sont des métadonnées' });
 ```
 
-### Code Example – Querying the log folder (searching for entries)
+### Exemple de code - Interrogation du répertoire du journal (recherche d'entrées)
 
 ```javascript
 const options = {
@@ -34,17 +34,17 @@ const options = {
   fields: ['message']
 };
 
-// Find items logged between today and yesterday.
+// Recherchez les éléments enregistrés entre aujourd'hui et hier.
 winston.query(options, (err, results) => {
-  // execute callback with results
+  // exécute la fonction de rappel avec results
 });
 ```
 
-### Blog Quote: "Logger Requirements"
+### Citation de blog : « Exigences d'un outil de journalisation »
 
- From the blog Strong Loop
+ Extrait du blog de Strong Loop
 
-> Lets identify a few requirements (for a logger):
-1. Timestamp each log line. This one is pretty self-explanatory – you should be able to tell when each log entry occurred.
-2. Logging format should be easily digestible by humans as well as machines.
-3. Allows for multiple configurable destination streams. For example, you might be writing trace logs to one file but when an error is encountered, write to the same file, then into error file and send an email at the same time…
+> Permet d'identifier quelques exigences (pour un outil de journalisation) :
+1. Chaque ligne du journal est horodatée. Celle-ci est assez explicite - vous devriez pouvoir dire quand chaque entrée du journal s'est produite.
+2. Le format d'enregistrement doit être facilement assimilable par les humains ainsi que par les machines.
+3. Permet plusieurs flux de destination configurables. Par exemple, vous pouvez écrire des journaux de trace dans un fichier, mais lorsqu'une erreur se produit, cela écrit dans le même fichier, puis dans le fichier d'erreur et envoi un e-mail en même temps…
