@@ -61,9 +61,9 @@ throw new AppError(errorManagement.commonErrors.InvalidInput, 'Describe here wha
 
 Extrait du blog de Joyent classé en 1ere position pour les mots clés “Node.js error handling”
 
- > …La meilleure façon de récupérer des erreurs de programmation est de planter immédiatement. Vous devez exécuter vos programmes à l'aide d'un redémarreur qui redémarrera automatiquement le programme en cas de plantage. Avec un redémarreur en place, le plantage est le moyen le plus rapide de restaurer un service fiable face à une erreur de programmation transitoire…
+ > …La meilleure façon de récupérer des erreurs de programmation est de planter immédiatement. Vous devez exécuter vos programmes à l'aide d'un « outil de redémarrage » qui redémarrera automatiquement le programme en cas de plantage. Avec un « outil de redémarrage » en place, le plantage est le moyen le plus rapide de restaurer un service fiable face à une erreur de programmation transitoire…
 
-### Citation de blog : « Aucun solution sûre pour sortir sans créer un état fragile indéfini »
+### Citation de blog : « Aucune solution sûre pour sortir sans créer un état fragile indéfini »
 
 Extrait de la documentation officielle de Node.js
 
@@ -75,7 +75,7 @@ Extrait du blog de debugable.com classé en 3ème position pour les mots clés �
 
  > …Donc, à moins que vous sachiez vraiment ce que vous faites, vous devez effectuer un redémarrage en douceur de votre service après avoir reçu un événement d'exception « uncaughtException ». Sinon, vous risquez que l'état de votre application, ou celui des bibliothèques tierces, ne devienne incohérent, conduisant à toutes sortes de bugs fous…
 
-### Citation de blog : « There are three schools of thoughts on error handling »
+### Citation de blog : « Il y a principalement trois écoles de réflexion sur la gestion des erreurs »
 
 Extrait du blog de JS Recipes
 
