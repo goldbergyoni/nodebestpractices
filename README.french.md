@@ -1,154 +1,154 @@
 [✔]: assets/images/checkbox-small-blue.png
 
-# Node.js Best Practices
+# Bonnes pratiques Node.js
 
 <h1 align="center">
-  <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices">
+  <img src="assets/images/banner-2.jpg" alt="Bonnes pratiques Node.js">
 </h1>
 
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2085%20Best%20Practices-blue.svg" alt="85 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20November%2012%202019-green.svg" alt="Last update: Oct 12, 2019"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.12.0-brightgreen.svg" alt="Updated for Node 12.12.0">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2085%20Best%20Practices-blue.svg" alt="85 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20November%2012%202019-green.svg" alt="Dernière mise à jour : 12 oct. 2019"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.12.0-brightgreen.svg" alt="Mis à jour pour node 12.12.0">
 </div>
 
 <br/>
 
-[![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
+[![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Suivez nous sur Twitter !** [**@nodepractices**](https://twitter.com/nodepractices/)
 
 <br/>
 
-Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
+Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** et ![TR](/assets/flags/TR.png)**TR** en cours !)](#traductions)
 
 <br/>
 
-###### Built and maintained by our [Steering Committee](#steering-committee) and [Collaborators](#collaborators)
+###### Construit et entretenu par notre [comité de pilotage](#comité-de-pilotage) et nos [collaborateurs](#collaborateurs)
 
-# Latest Best Practices and News
+# Dernières bonnes pratiques et nouveautés
 
-- **✅ New best practice:** 7.1: [Don't block the event loop](#7-draft-performance-best-practices) by Keith Holliday
+- **✅ Nouvelle bonne pratique :** 7.1: [Ne bloquez pas la boucle d'événements](#7-brouillon--performance) par Keith Holliday
 
-- **🇷🇺 Russian translation:** The amazing Alex Ivanov has just published a [Russian translation](/README.russian.md)
+- **🇷🇺 Traduction russe :** L'incroyable Alex Ivanov vient de publier une [traduction russe](/README.russian.md)
 
-- **We seek typescript contributors:** want to help contributing TypeScript examples? please approach by opening an issue
-
-<br/><br/>
-
-# Welcome! 3 Things You Ought To Know First
-
-**1. You are, in fact, reading dozens of the best Node.js articles -** this repository is a summary and curation of the top-ranked content on Node.js best practices, as well as content written here by collaborators
-
-**2. It is the largest compilation, and it is growing every week -** currently, more than 80 best practices, style guides, and architectural tips are presented. New issues and pull requests are created every day to keep this live book updated. We'd love to see you contributing here, whether that is fixing code mistakes, helping with translations, or suggesting brilliant new ideas. See our [writing guidelines here](/.operations/writing-guidelines.md)
-
-**3. Most best practices have additional info -** most bullets include a **🔗Read More** link that expands on the practice with code examples, quotes from selected blogs and more information
+- **Nous recherchons des contributeurs de Typescript :** vous voulez aider à fournir des exemples TypeScript ? Contactez-nous en ouvrant une issue
 
 <br/><br/>
 
-## Table of Contents
+# Bienvenue ! 3 Choses à savoir avant tout
 
-1. [Project Structure Practices (5)](#1-project-structure-practices)
-2. [Error Handling Practices (11) ](#2-error-handling-practices)
-3. [Code Style Practices (12) ](#3-code-style-practices)
-4. [Testing And Overall Quality Practices (12) ](#4-testing-and-overall-quality-practices)
-5. [Going To Production Practices (18) ](#5-going-to-production-practices)
-6. [Security Practices (25)](#6-security-best-practices)
-7. [Performance Practices (2) (Work In Progress️ ✍️)](#7-draft-performance-best-practices)
+**1. Vous êtes, en fait, en train de lire un regroupement des meilleurs articles sur Node.js. -** ce référentiel est un résumé et il conserve le contenu le mieux classé sur les bonnes pratiques Node.js, ainsi que du contenu écrit ici par des collaborateurs
+
+**2. Il s'agit du plus grand assemblage d'articles et il s'agrandit chaque semaine -** actuellement, plus de 80 bonnes pratiques, guides de style et astuces d'architecture sont présentés. Nous serions ravis de vous voir contribuer ici, qu'il s'agisse de corriger des erreurs de code, d'aider aux traductions ou de suggérer de nouvelles idées brillantes. Consultez nos [recommandations d'écriture](/.operations/writing-guidelines.french.md)
+
+**3. La plupart des bonnes pratiques contiennent des informations supplémentaires -** la plupart des points ont un lien **🔗Plus d'infos** qui développe la bonne pratique avec des exemples de code, des citations venant de pages sélectionnées et plus encore.
 
 <br/><br/>
 
-# `1. Project Structure Practices`
+## Table des matières
 
-## ![✔] 1.1 Structure your solution by components
-
-**TL;DR:** The worst large applications pitfall is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Instead, partition your code into components, each gets its own folder or a dedicated codebase, and ensure that each unit is kept small and simple. Visit 'Read More' below to see examples of correct project structure
-
-**Otherwise:** When developers who code new features struggle to realize the impact of their change and fear to break other dependent components - deployments become slower and riskier. It's also considered harder to scale-out when all the business units are not separated
-
-🔗 [**Read More: structure by components**](/sections/projectstructre/breakintcomponents.md)
-
-<br/><br/>
-
-## ![✔] 1.2 Layer your components, keep Express within its boundaries
-
-**TL;DR:** Each component should contain 'layers' - a dedicated object for the web, logic, and data access code. This not only draws a clean separation of concerns but also significantly eases mocking and testing the system. Though this is a very common pattern, API developers tend to mix layers by passing the web layer objects (Express req, res) to business logic and data layers - this makes your application dependent on and accessible by Express only
-
-**Otherwise:** App that mixes web objects with other layers cannot be accessed by testing code, CRON jobs, and other non-Express callers
-
-🔗 [**Read More: layer your app**](/sections/projectstructre/createlayers.md)
+1. [Structure de projet (5)](#1-structure-de-projet)
+2. [Gestion des erreurs (11) ](#2-gestion-des-erreurs)
+3. [Style du code (12) ](#3-style-du-code)
+4. [Test et qualité globale (12) ](#4-test-et-qualité-globale)
+5. [Mise en production (18) ](#5-mise-en-production)
+6. [Sécurité (25)](#6-sécurité)
+7. [Performance (2) (Travail en cours ✍️)](#7-brouillon--performance)
 
 <br/><br/>
 
-## ![✔] 1.3 Wrap common utilities as npm packages
+# `1. Structure de projet`
 
-**TL;DR:** In a large app that constitutes a large code base, cross-cutting-concern utilities like logger, encryption and alike, should be wrapped by your own code and exposed as private npm packages. This allows sharing them among multiple code bases and projects
+## ![✔] 1.1 Organisez votre projet en composants
 
-**Otherwise:** You'll have to invent your own deployment and dependency wheel
+**TL;PL :** Le pire obstacle des énormes applications est la maintenance d'une base de code immense contenant des centaines de dépendances - un tel monolithe ralentit les développeurs tentant d'ajouter de nouvelles fonctionnalités. Pour éviter cela, répartissez votre code en composants, chacun dans son propre dossier avec son code dédié, et assurez vous que chaque unité soit courte et simple. Visitez le lien 'Plus d'infos' plus bas pour voir des exemples de structure de projet correcte.
 
-🔗 [**Read More: Structure by feature**](/sections/projectstructre/wraputilities.md)
+**Autrement :** Lorsque les développeurs qui codent de nouvelles fonctionnalités ont du mal à réaliser l'impact de leur changement et craignent de casser d'autres composants dépendants - les déploiements deviennent plus lents et plus risqués. Il est aussi considéré plus difficile d'élargir un modèle d'application quand les unités opérationnelles ne sont pas séparées.
 
-<br/><br/>
-
-## ![✔] 1.4 Separate Express 'app' and 'server'
-
-**TL;DR:** Avoid the nasty habit of defining the entire [Express](https://expressjs.com/) app in a single huge file - separate your 'Express' definition to at least two files: the API declaration (app.js) and the networking concerns (WWW). For even better structure, locate your API declaration within components
-
-**Otherwise:** Your API will be accessible for testing via HTTP calls only (slower and much harder to generate coverage reports). It probably won't be a big pleasure to maintain hundreds of lines of code in a single file
-
-🔗 [**Read More: separate Express 'app' and 'server'**](/sections/projectstructre/separateexpress.md)
+🔗 [**Plus d'infos : Organisez en composants**](/sections/projectstructre/breakintcomponents.french.md)
 
 <br/><br/>
 
-## ![✔] 1.5 Use environment aware, secure and hierarchical config
+## ![✔] 1.2 Organisez vos composants en strates, gardez Express à l'intérieur de son périmètre
 
-**TL;DR:** A perfect and flawless configuration setup should ensure (a) keys can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are a few packages that can help tick most of those boxes like [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) and [config](https://www.npmjs.com/package/config)
+**TL;PL :** Chaque composant devrait contenir des « strates » - un objet dédié pour le web, un pour la logique et un pour le code d'accès aux données. Cela permet non seulement de séparer clairement les responsabilités mais permet aussi de simuler et de tester le système de manière plus simple. Bien qu'il s'agisse d'un modèle très courant, les développeurs d'API ont tendance à mélanger les strates en passant l'objet dédié au web (Express req, res) à la logique opérationnelle et aux strates de données - cela rend l'application dépendante et accessible seulement par Express.
 
-**Otherwise:** Failing to satisfy any of the config requirements will simply bog down the development or devops team. Probably both
+**Autrement :** Les tests, les jobs CRON et les autres middlewares non-Express ne peuvent pas accéder à une application qui mélange les objets web avec les autres strates.
 
-🔗 [**Read More: configuration best practices**](/sections/projectstructre/configguide.md)
+🔗 [**Plus d'infos : Organisez en strates votre app**](/sections/projectstructre/createlayers.french.md)
+
+<br/><br/>
+
+## ![✔] 1.3 Externalisez les utilitaires communs en paquets NPM
+
+**TL;PL :** Dans une grande appli rassemblant de nombreuses lignes de codes, les utilitaires opérant sur toutes les strates comme un logger, l'encryption et autres, devraient être inclus dans le code et exposés en tant que paquets NPM privés. Cela permet leur partage au sein de plusieurs projets.
+
+**Autrement :** Vous devrez inventer votre propre roue de déploiement et de dépendance
+
+🔗 [**Plus d'infos : Organisez par fonction**](/sections/projectstructre/wraputilities.french.md)
+
+<br/><br/>
+
+## ![✔] 1.4 Séparez Express 'app' et 'server'
+
+**TL;PL :** Evitez la sale habitude de définir l'appli [Express](https://expressjs.com/) toute entière dans un seul fichier immense - séparez la définition de votre 'Express' en au moins deux fichiers : la déclaration de l'API (app.js) et les responsabilités de gestion de réseau (WWW). Pour une structure encore plus poussée, localisez la déclaration de l'API dans les composants.
+
+**Autrement :** Votre API sera seulement accessible aux tests par le biais d'appels HTTP (plus lent et plus difficile de générer des rapports de couverture). Cela ne sera pas un réel plaisir de maintenir des centaines de lignes de code dans un fichier unique.
+
+🔗 [**Plus d'infos : Séparez Express 'app' et 'server'**](/sections/projectstructre/separateexpress.french.md)
+
+<br/><br/>
+
+## ![✔] 1.5 Utilisez une configuration respectueuse de l'environnement, sécurisée et hiérarchique
+
+**TL;PL :** La mise en place d'une configuration parfaite et sans faille doit garantir que (a) les clés peuvent être lues depuis un fichier ET à partir de la variable d'environnement (b) les secrets sont conservés hors du code source (c) la configuration est hiérarchique pour une recherche plus simple. Certains paquets peuvent gérer la plupart de ces points comme [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) et [config](https://www.npmjs.com/package/config).
+
+**Autrement :** Ne pas se soucier de ces exigences de configuration ne fera que ralentir l'équipe de développement ou l'équipe de devops. Probablement les deux.
+
+🔗 [**Plus d'infos : bonnes pratiques de configuration**](/sections/projectstructre/configguide.french.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-des-matières">⬆ Retourner en haut de la page</a></p>
 
-# `2. Error Handling Practices`
+# `2. Gestion des erreurs`
 
-## ![✔] 2.1 Use Async-Await or promises for async error handling
+## ![✔] 2.1 Utilisez Async-Await ou les promesses pour le traitement des erreurs asynchrones
 
-**TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using a reputable promise library or async-await instead which enables a much more compact and familiar code syntax like try-catch
+**TL;PL :** Gérer les erreurs asynchrone avec le style fonction de rappel est probablement le chemin le plus rapide vers l'enfer (ou la [pyramide condamnée](https://fr.wikipedia.org/wiki/Pyramide_condamn%C3%A9e)). Le meilleur cadeau que vous puissiez faire à votre code est d'utiliser une bibliothèque de promesses réputée ou async-await à la place, ceci permet une syntaxe de code beaucoup plus compacte et familière comme try-catch.
 
-**Otherwise:** Node.js callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting, and awkward coding patterns
+**Autrement :** Le style fonction de rappel de Node.js, function(err, response), constituent une autre manière d’obtenir une solution non maintenable mêlant gestion de l’erreur avec du code ordinaire, des imbrications excessives et une conception bancale.
 
-🔗 [**Read More: avoiding callbacks**](/sections/errorhandling/asyncerrorhandling.md)
-
-<br/><br/>
-
-## ![✔] 2.2 Use only the built-in Error object
-
-**TL;DR:** Many throw errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw an exception or emit an error – using only the built-in Error object will increase uniformity and prevent loss of information
-
-**Otherwise:** When invoking some component, being uncertain which type of errors come in return – it makes proper error handling much harder. Even worse, using custom types to describe errors might lead to loss of critical error information like the stack trace!
-
-🔗 [**Read More: using the built-in error object**](/sections/errorhandling/useonlythebuiltinerror.md)
+🔗 [**Plus d'infos : éviter les fonctions de rappel**](/sections/errorhandling/asyncerrorhandling.french.md)
 
 <br/><br/>
 
-## ![✔] 2.3 Distinguish operational vs programmer errors
+## ![✔] 2.2 Utilisez uniquement l'objet intégré Error
 
-**TL;DR:** Operational errors (e.g. API received an invalid input) refer to known cases where the error impact is fully understood and can be handled thoughtfully. On the other hand, programmer error (e.g. trying to read undefined variable) refers to unknown code failures that dictate to gracefully restart the application
+**TL;PL :** Beaucoup lèvent des erreurs sous forme de chaîne ou de type personnalisé - cela complique la logique de gestion des erreurs et l'interopérabilité entre les modules. Que vous rejetiez une promesse, leviez une exception ou émettiez une erreur - l'utilisation uniquement de l'objet intégré Error augmentera l'uniformité et empêchera la perte d'informations.
 
-**Otherwise:** You may always restart the application when an error appears, but why let ~5000 online users down because of a minor, predicted, operational error? the opposite is also not ideal – keeping the application up when an unknown issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
+**Autrement :** Lorsque vous appelez un composant, le type d'erreurs en retour étant incertain - cela rend la gestion des erreurs beaucoup plus difficile. Pire encore, l'utilisation de types personnalisés pour décrire des erreurs peut entraîner la perte d'informations d'erreurs critiques comme la trace de la pile !
 
-🔗 [**Read More: operational vs programmer error**](/sections/errorhandling/operationalvsprogrammererror.md)
+🔗 [**Plus d'infos : Utilisez uniquement l'objet intégré Error**](/sections/errorhandling/useonlythebuiltinerror.french.md)
 
 <br/><br/>
 
-## ![✔] 2.4 Handle errors centrally, not within an Express middleware
+## ![✔] 2.3 Distinguez les erreurs opérationnelles des erreurs de programmation
 
-**TL;DR:** Error handling logic such as mail to admin and logging should be encapsulated in a dedicated and centralized object that all endpoints (e.g. Express middleware, cron jobs, unit-testing) call when an error comes in
+**TL;PL :** Les erreurs opérationnelles (par exemple, l'API a reçu une entrée non valide) se rapportent à des cas connus où l'impact de l'erreur est entièrement compris et peut être géré de manière réfléchie. D'autre part, une erreur de programmation (par exemple, essayer de lire une variable non définie) fait référence à des échecs de code inconnus qui dictent de redémarrer l'application en douceur.
 
-**Otherwise:** Not handling errors within a single place will lead to code duplication and probably to improperly handled errors
+**Autrement :** Vous pouvez toujours redémarrer l'application lorsqu'une erreur apparaît, mais pourquoi lâcher environ 5000 utilisateurs en ligne en raison d'une erreur opérationnelle mineure prévue ? L'inverse n'est pas non plus idéal - laisser l'application en place lorsqu'un problème inconnu (erreur de programmation) s'est produit peut conduire à un comportement imprévu. Différencier les deux permet d'agir avec tact et d'appliquer une approche équilibrée en fonction du contexte donné.
 
-🔗 [**Read More: handling errors in a centralized place**](/sections/errorhandling/centralizedhandling.md)
+🔗 [**Plus d'infos : erreur opérationnelle vs erreur de programmation**](/sections/errorhandling/operationalvsprogrammererror.french.md)
+
+<br/><br/>
+
+## ![✔] 2.4 Gérez les erreurs de manière centralisée, pas dans un middleware Express
+
+**TL;PL :** Les logiques de gestion des erreurs telles que le mail à l'administrateur et la journalisation doivent être encapsulées dans un objet dédié et centralisé, pour que tous les points de terminaison (par exemple, middleware Express, tâches cron, tests unitaires) l'appellent lorsqu'une erreur survient.
+
+**Autrement :** Ne pas traiter les erreurs dans un seul endroit entraînera une duplication de code et probablement des erreurs mal gérées
+
+🔗 [**Plus d'infos : gestion des erreurs dans un lieu centralisé**](/sections/errorhandling/centralizedhandling.french.md)
 
 <br/><br/>
 
