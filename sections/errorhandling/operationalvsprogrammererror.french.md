@@ -1,20 +1,20 @@
-# Distinguish operational vs programmer errors
+# Distinguez les erreurs opérationnelles des erreurs de programmation
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-Distinguishing the following two error types will minimize your app downtime and helps avoid crazy bugs: Operational errors refer to situations where you understand what happened and the impact of it – for example, a query to some HTTP service failed due to connection problem. On the other hand, programmer errors refer to cases where you have no idea why and sometimes where an error came from – it might be some code that tried to read an undefined value or DB connection pool that leaks memory. Operational errors are relatively easy to handle – usually logging the error is enough. Things become hairy when a programmer error pops up, the application might be in an inconsistent state and there’s nothing better you can do than to restart gracefully
+La distinction des deux types d'erreur suivants minimisera l'indisponibilité de votre application et aidera à éviter les bogues fous : les erreurs opérationnelles se rapportent à des situations où vous comprenez ce qui s'est passé et son impact - par exemple, une requête vers un service HTTP a échoué en raison d'un problème de connexion. D'un autre côté, les erreurs de programmation se rapportent à des cas où vous n'avez aucune idée de la raison et parfois de l'origine d'une erreur - il peut s'agir d'un code qui a tenté de lire une valeur non définie ou d'un pool de connexions DB qui a une fuite mémoire. Les erreurs opérationnelles sont relativement faciles à gérer - la journalisation de l'erreur suffit généralement. Les choses deviennent compliquées lorsqu'une erreur de programmation apparaît, l'application peut être dans un état incohérent et il n'y a rien de mieux que de redémarrer en douceur.
 
-### Code Example – marking an error as operational (trusted)
+### Exemple de code - marquer une erreur comme opérationnelle (fiable)
 
 <details>
 <summary><strong>Javascript</strong></summary>
 
 ```javascript
-// marking an error object as operational 
-const myError = new Error('How can I add new product when no value provided?');
+// marquer un objet Error comme opérationnel
+const myError = new Error('Comment puis-je ajouter un nouveau produit lorsqu\'aucune valeur n\'est fournie ?');
 myError.isOperational = true;
 
-// or if you're using some centralized error factory (see other examples at the bullet "Use only the built-in Error object")
+// ou si vous utilisez une fabrique d'erreurs centralisée (voir d'autres exemples pour le point "Utilisez uniquement l'objet intégré Error")
 class AppError {
   constructor (commonType, description, isOperational) {
     Error.call(this);
@@ -25,7 +25,7 @@ class AppError {
   }
 };
 
-throw new AppError(errorManagement.commonErrors.InvalidInput, 'Describe here what happened', true);
+throw new AppError(errorManagement.commonErrors.InvalidInput, 'Décrivez ici ce qui s\'est passé', true);
 
 ```
 </details>
@@ -34,7 +34,7 @@ throw new AppError(errorManagement.commonErrors.InvalidInput, 'Describe here wha
 <summary><strong>Typescript</strong></summary>
 
 ```typescript
-// some centralized error factory (see other examples at the bullet "Use only the built-in Error object")
+// une fabrique d'erreurs centralisée (voir d'autres exemples pour le point "Utilisez uniquement l'objet intégré Error")
 export class AppError extends Error {
   public readonly commonType: string;
   public readonly isOperational: boolean;
@@ -42,7 +42,7 @@ export class AppError extends Error {
   constructor(commonType: string, description: string, isOperational: boolean) {
     super(description);
 
-    Object.setPrototypeOf(this, new.target.prototype); // restore prototype chain
+    Object.setPrototypeOf(this, new.target.prototype); // restaure la chaîne du prototype
 
     this.commonType = commonType;
     this.isOperational = isOperational;
@@ -51,35 +51,35 @@ export class AppError extends Error {
   }
 }
 
-// marking an error object as operational (true)
+// marquer un objet Error comme opérationnel (true)
 throw new AppError(errorManagement.commonErrors.InvalidInput, 'Describe here what happened', true);
 
 ```
 </details>
 
-### Blog Quote: "Programmer errors are bugs in the program"
+### Citation de blog : « Les erreurs du programmeur sont des bogues dans le programme »
 
-From the blog, Joyent ranked 1 for the keywords “Node.js error handling”
+Extrait du blog de Joyent classé en 1ere position pour les mots clés “Node.js error handling”
 
- > …The best way to recover from programmer errors is to crash immediately. You should run your programs using a restarter that will automatically restart the program in the event of a crash. With a restarter in place, crashing is the fastest way to restore reliable service in the face of a transient programmer error…
+ > …La meilleure façon de récupérer des erreurs de programmation est de planter immédiatement. Vous devez exécuter vos programmes à l'aide d'un redémarreur qui redémarrera automatiquement le programme en cas de plantage. Avec un redémarreur en place, le plantage est le moyen le plus rapide de restaurer un service fiable face à une erreur de programmation transitoire…
 
-### Blog Quote: "No safe way to leave without creating some undefined brittle state"
+### Citation de blog : « Aucun solution sûre pour sortir sans créer un état fragile indéfini »
 
-From Node.js official documentation
+Extrait de la documentation officielle de Node.js
 
- > …By the very nature of how throw works in JavaScript, there is almost never any way to safely “pick up where you left off”, without leaking references, or creating some other sort of undefined brittle state. The safest way to respond to a thrown error is to shut down the process. Of course, in a normal web server, you might have many connections open, and it is not reasonable to abruptly shut those down because an error was triggered by someone else. The better approach is to send an error response to the request that triggered the error while letting the others finish in their normal time, and stop listening for new requests in that worker.
+ > …De par la nature même du fonctionnement de throw en JavaScript, il n'y a presque jamais aucun moyen de « reprendre là où vous vous étiez arrêté » en toute sécurité, sans fuite de références, ou sans créer une autre sorte d'état fragile non défini. Le moyen le plus sûr de répondre à une erreur levée est d'arrêter le processus. Bien sûr, dans un serveur Web normal, de nombreuses connexions peuvent être ouvertes et il n'est pas raisonnable de les fermer brutalement car une erreur a été déclenchée par quelqu'un d'autre. La meilleure approche consiste à envoyer une réponse d'erreur à la demande qui a déclenché l'erreur tout en laissant les autres se terminer dans leur temps normal et à cesser d'écouter les nouvelles demandes de ce processus.
 
-### Blog Quote: "Otherwise you risk the state of your application"
+### Citation de blog : « Sinon, vous risquez l'état de votre application »
 
-From the blog, debugable.com ranked 3 for the keywords “Node.js uncaught exception”
+Extrait du blog de debugable.com classé en 3ème position pour les mots clés “Node.js uncaught exception”
 
- > …So, unless you really know what you are doing, you should perform a graceful restart of your service after receiving an “uncaughtException” exception event. Otherwise, you risk the state of your application, or that of 3rd party libraries to become inconsistent, leading to all kinds of crazy bugs…
+ > …Donc, à moins que vous sachiez vraiment ce que vous faites, vous devez effectuer un redémarrage en douceur de votre service après avoir reçu un événement d'exception « uncaughtException ». Sinon, vous risquez que l'état de votre application, ou celui des bibliothèques tierces, ne devienne incohérent, conduisant à toutes sortes de bugs fous…
 
-### Blog Quote: "There are three schools of thoughts on error handling"
+### Citation de blog : « There are three schools of thoughts on error handling »
 
-From the blog: JS Recipes
+Extrait du blog de JS Recipes
 
-> …There are primarily three schools of thoughts on error handling:
-1. Let the application crash and restart it.
-2. Handle all possible errors and never crash.
-3. A balanced approach between the two
+> …Il y a principalement trois écoles de réflexion sur la gestion des erreurs :
+1. Laissez l'application se planter et redémarrez-la.
+2. Gérez toutes les erreurs possibles et ne plantez jamais.
+3. Une approche équilibrée entre les deux
