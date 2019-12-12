@@ -1,17 +1,17 @@
-# Document API errors using Swagger or GraphQL
+# Documentez les erreurs de l'API à l'aide de Swagger ou GraphQL
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-REST APIs return results using HTTP status codes, it’s absolutely required for the API user to be aware not only about the API schema but also about potential errors – the caller may then catch an error and tactfully handle it. For example, your API documentation might state in advance that HTTP status 409 is returned when the customer name already exists (assuming the API register new users) so the caller can correspondingly render the best UX for the given situation. Swagger is a standard that defines the schema of API documentation offering an eco-system of tools that allow creating documentation easily online, see print screens below
+Les API REST renvoient des résultats à l'aide de codes d'état HTTP, il est absolument nécessaire que l'utilisateur de l'API soit informé non seulement du schéma de l'API, mais également des erreurs potentielles - l'appelant peut alors détecter une erreur et la gérer avec tact. Par exemple, la documentation de votre API peut indiquer à l'avance que l'état HTTP 409 est renvoyé lorsque le nom du client existe déjà (en supposant que l'API enregistre de nouveaux utilisateurs) afin que l'appelant puisse rendre en conséquence la meilleure expérience utilisateur pour la situation donnée. Swagger est une norme qui définit le schéma de la documentation de l'API offrant un éco-système d'outils permettant de créer facilement de la documentation en ligne, consulter les copies écrans ci-dessous.
 
-If you have already adopted GraphQL for your API endpoints, your schema already contains strict guarantees as to what errors should look like ([outlined in the spec](https://facebook.github.io/graphql/June2018/#sec-Errors)) and how they should be handled by your client-side tooling. In addition, you can also supplement them with comment-based documentation.
+Si vous avez déjà adopté GraphQL pour vos points de terminaison de l'API, votre schéma contient déjà des garanties strictes quant à la nature des erreurs à rechercher ([celles décrites dans la spécification](https://facebook.github.io/graphql/June2018/#sec-Errors)) et comment elles doivent être traités par vos outils côté client. De plus, vous pouvez également les compléter avec une documentation basée sur des commentaires.
 
-### GraphQL Error Example
+### Exemple d'erreur GraphQL
 
-> This example uses [SWAPI](https://graphql.org/swapi-graphql), the Star Wars API.
+> Cet exemple utilise [SWAPI](https://graphql.org/swapi-graphql), l'API de Star Wars.
 
 ```graphql
-# should fail because id is not valid
+# devrait échouer car l'id n'est pas valide
 {
   film(id: "1ZmlsbXM6MQ==") {
     title
@@ -23,7 +23,7 @@ If you have already adopted GraphQL for your API endpoints, your schema already 
 {
   "errors": [
     {
-      "message": "No entry in local cache for https://swapi.co/api/films/.../",
+      "message": "Aucune entrée dans le cache local pour https://swapi.co/api/films/.../",
       "locations": [
         {
           "line": 2,
@@ -41,12 +41,12 @@ If you have already adopted GraphQL for your API endpoints, your schema already 
 }
 ```
 
-### Blog Quote: "You have to tell your callers what errors can happen"
+### Citation de blog : « Vous devez dire à vos appelants quelles erreurs peuvent se produire »
 
-From the blog Joyent, ranked 1 for the keywords “Node.js logging”
+Extrait du blog de Joyent classé en 1ere position pour les mots clés “Node.js logging”
 
- > We’ve talked about how to handle errors, but when you’re writing a new function, how do you deliver errors to the code that called your function? …If you don’t know what errors can happen or don’t know what they mean, then your program cannot be correct except by accident. So if you’re writing a new function, you have to tell your callers what errors can happen and what they mean…
+ > Nous avons parlé de la façon de gérer les erreurs, mais lorsque vous écrivez une nouvelle fonction, comment envoyez-vous des erreurs au code qui a appelé votre fonction ? … Si vous ne savez pas quelles erreurs peuvent se produire ou si vous ne savez pas ce qu'elles signifient, alors votre programme ne peut être correct que par accident. Donc, si vous écrivez une nouvelle fonction, vous devez dire à vos appelants quelles erreurs peuvent se produire et ce qu'elles signifient…
 
-### Useful Tool: Swagger Online Documentation Creator
+### Outil utile : créateur de documentation en ligne Swagger
 
-![Swagger API Scheme](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/swaggerDoc.png "API error handling")
+![Schéma d'API Swagger](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/swaggerDoc.png "Gestion des erreurs de l'API")
