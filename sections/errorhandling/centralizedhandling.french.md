@@ -1,22 +1,22 @@
-# Handle errors centrally. Not within middlewares
+# Gérez les erreurs de manière centralisée, pas dans les middlewares
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-Without one dedicated object for error handling, greater are the chances of important errors hiding under the radar due to improper handling. The error handler object is responsible for making the error visible, for example by writing to a well-formatted logger, sending events to some monitoring product like [Sentry](https://sentry.io/), [Rollbar](https://rollbar.com/), or [Raygun](https://raygun.com/). Most web frameworks, like [Express](http://expressjs.com/en/guide/error-handling.html#writing-error-handlers), provide an error handling middleware mechanism. A typical error handling flow might be: Some module throws an error -> API router catches the error -> it propagates the error to the middleware (e.g. Express, KOA) who is responsible for catching errors -> a centralized error handler is called -> the middleware is being told whether this error is an untrusted error (not operational) so it can restart the app gracefully. Note that it’s a common, yet wrong, practice to handle errors within Express middleware – doing so will not cover errors that are thrown in non-web interfaces.
+En l'absence d'un objet dédié à la gestion des erreurs, les chances que des erreurs importantes se cachent sous le capot en raison d'une mauvaise manipulation sont plus grandes. L'objet gestionnaire d'erreur est là pour rendre l'erreur visible, par exemple en écrivant dans un logger bien formaté, en envoyant des événements à un produit de surveillance comme [Sentry](https://sentry.io/), [Rollbar](https://rollbar.com/) ou [Raygun](https://raygun.com/). La plupart des frameworks Web, comme [Express](http://expressjs.com/en/guide/error-handling.html#writing-error-handlers), fournissent un mécanisme de middleware de gestion des erreurs. Un flux de gestion d'erreurs typique pourrait être : des modules génèrent une erreur -> le routeur de l'API intercepte l'erreur -> il propage l'erreur au middleware (par exemple Express, KOA) qui est responsable de la capture des erreurs -> un gestionnaire d'erreurs centralisé est appelé -> le middleware est informé si cette erreur est une erreur non fiable (non opérationnelle) afin qu'il puisse redémarrer l'application avec douceur. Notez que c'est une pratique courante, mais erronée de gérer les erreurs dans le middleware Express - cela ne couvrira pas les erreurs qui sont lancées dans les interfaces non Web.
 
-### Code Example – a typical error flow
+### Exemple de code - un flux d'erreur typique
 
 <details>
 <summary><strong>Javascript</strong></summary>
 
 ```javascript
-// DAL layer, we don't handle errors here
+// Strate de la DAL, nous ne gérons pas les erreurs ici
 DB.addDocument(newCustomer, (error, result) => {
   if (error)
-    throw new Error('Great error explanation comes here', other useful parameters)
+    throw new Error('Une bonne explication de l\'erreur à cet endroit', autres parametres utiles)
 });
 
-// API route code, we catch both sync and async errors and forward to the middleware
+// Code de l'API route, nous interceptons les erreurs synchrone et asynchrone et les transmettons au middleware
 try {
   customerService.addNew(req.body).then((result) => {
     res.status(200).json(result);
@@ -28,7 +28,7 @@ catch (error) {
   next(error);
 }
 
-// Error handling middleware, we delegate the handling to the centralized error handler
+// Gestion des erreurs du middleware, nous déléguons la gestion au gestionnaire d'erreurs centralisé
 app.use(async (err, req, res, next) => {
   const isOperationalError = await errorHandler.handleError(err);
   if (!isOperationalError) {
@@ -42,13 +42,13 @@ app.use(async (err, req, res, next) => {
 <summary><strong>Typescript</strong></summary>
 
 ```typescript
-// DAL layer, we don't handle errors here
+// Strate de la DAL, nous ne gérons pas les erreurs ici
 DB.addDocument(newCustomer, (error: Error, result: Result) => {
   if (error)
-    throw new Error('Great error explanation comes here', other useful parameters)
+    throw new Error('Une bonne explication de l\'erreur à cet endroit', autres parametres utiles)
 });
 
-// API route code, we catch both sync and async errors and forward to the middleware
+// Code de l'API route, nous interceptons les erreurs synchrone et asynchrone et les transmettons au middleware
 try {
   customerService.addNew(req.body).then((result: Result) => {
     res.status(200).json(result);
@@ -60,7 +60,7 @@ catch (error) {
   next(error);
 }
 
-// Error handling middleware, we delegate the handling to the centralized error handler
+// Gestion des erreurs du middleware, nous déléguons la gestion au gestionnaire d'erreurs centralisé
 app.use(async (err: Error, req: Request, res: Response, next: NextFunction) => {
   const isOperationalError = await errorHandler.handleError(err);
   if (!isOperationalError) {
@@ -71,7 +71,7 @@ app.use(async (err: Error, req: Request, res: Response, next: NextFunction) => {
 </details>
 
 
-### Code example – handling errors within a dedicated object
+### Exemple de code - gestion des erreurs dans un objet dédié
 
 <details>
 <summary><strong>Javascript</strong></summary>
@@ -108,17 +108,17 @@ export const handler = new ErrorHandler();
 </details>
 
 
-### Code Example – Anti Pattern: handling errors within the middleware
+### Contre exemple de code - gestion des erreurs dans le middleware
 
 <details>
 <summary><strong>Javascript</strong></summary>
 
 ```javascript
-// middleware handling the error directly, who will handle Cron jobs and testing errors?
+// middleware traitant l'erreur directement, qui va gérer les tâches Cron et tester les erreurs ?
 app.use((err, req, res, next) => {
   logger.logError(err);
   if (err.severity == errors.high) {
-    mailer.sendMail(configuration.adminMail, 'Critical error occured', err);
+    mailer.sendMail(configuration.adminMail, 'Une erreur critique s\'est produite', err);
   }
   if (!err.isOperational) {
     next(err);
@@ -132,11 +132,11 @@ app.use((err, req, res, next) => {
 <summary><strong>Typescript</strong></summary>
 
 ```typescript
-// middleware handling the error directly, who will handle Cron jobs and testing errors?
+// middleware traitant l'erreur directement, qui va gérer les tâches Cron et tester les erreurs ?
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   logger.logError(err);
   if (err.severity == errors.high) {
-    mailer.sendMail(configuration.adminMail, 'Critical error occured', err);
+    mailer.sendMail(configuration.adminMail, 'Une erreur critique s\'est produite', err);
   }
   if (!err.isOperational) {
     next(err);
@@ -145,20 +145,20 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 ```
 </details>
 
-### Blog Quote: "Sometimes lower levels can’t do anything useful except propagate the error to their caller"
+### Citation de blog : « Parfois, les niveaux inférieurs ne peuvent rien faire d'utile, sauf propager l'erreur à leur appelant »
 
-From the blog Joyent, ranked 1 for the keywords “Node.js error handling”
+Extrait du blog de Joyent classé en 1ere position pour les mots clés “Node.js error handling”
 
-> …You may end up handling the same error at several levels of the stack. This happens when lower levels can’t do anything useful except propagate the error to their caller, which propagates the error to its caller, and so on. Often, only the top-level caller knows what the appropriate response is, whether that’s to retry the operation, report an error to the user, or something else. But that doesn’t mean you should try to report all errors to a single top-level callback, because that callback itself can’t know in what context the error occurred…
+> …Vous pouvez finir par gérer la même erreur à plusieurs niveaux de la pile. Cela se produit lorsque les niveaux inférieurs ne peuvent rien faire d'autre d'utile que de propager l'erreur à leur appelant, qui propage l'erreur à son appelant et ainsi de suite. Souvent, seul l'appelant de niveau supérieur sait quelle est la réponse appropriée, que ce soit pour réessayer l'opération, signaler une erreur à l'utilisateur ou autre chose. Mais cela ne signifie pas que vous devez essayer de signaler toutes les erreurs à une seule fonction de rappel de niveau supérieur, car cette fonction de rappel elle-même ne peut pas savoir dans quel contexte l'erreur s'est produite.…
 
-### Blog Quote: "Handling each err individually would result in tremendous duplication"
+### Citation de blog : « Gérer chaque erreur individuellement entraînerait une énorme duplication »
 
-From the blog JS Recipes ranked 17 for the keywords “Node.js error handling”
+Extrait du blog de JS Recipes classé en 17eme position pour les mots clés “Node.js error handling”
 
-> ……In Hackathon Starter api.js controller alone, there are over 79 occurrences of error objects. Handling each err individually would result in a tremendous amount of code duplication. The next best thing you can do is to delegate all error handling logic to an Express middleware…
+> ……Uniquement dans le contrôleur api.js de Hackathon Starter, il y a plus de 79 occurrences d'objets d'erreur. Gérer chaque erreur individuellement entraînerait une énorme duplication de code. La meilleure chose à faire est de déléguer toute la logique de gestion des erreurs à un middleware Express…
 
-### Blog Quote: "HTTP errors have no place in your database code"
+### Citation de blog : « les erreurs HTTP n'ont pas leur place dans le code de votre base de données »
 
-From the blog Daily JS ranked 14 for the keywords “Node.js error handling”
+Extrait du blog de Daily JS classé en 14eme position pour les mots clés “Node.js error handling”
 
-> ……You should set useful properties in error objects, but use such properties consistently. And, don’t cross the streams: HTTP errors have no place in your database code. Or for browser developers, Ajax errors have a place in the code that talks to the server, but not code that processes Mustache templates…
+> ……Vous devez définir des propriétés utiles dans les objets d'erreur, mais utilisez ces propriétés de manière cohérente. Et ne traversez pas les flux : les erreurs HTTP n'ont pas leur place dans le code de votre base de données. Ou pour les développeurs dans les navigateurs, les erreurs Ajax ont une place dans le code qui parle au serveur, mais pas dans le code qui traite les templates de Mustache…
