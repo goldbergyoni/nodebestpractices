@@ -1,18 +1,18 @@
-# Catch unhandled promise rejections
+# Capturez les rejets de promesses non gérés
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-Typically, most of modern Node.js/Express application code runs within promises – whether within the .then handler, a function callback or in a catch block. Surprisingly, unless a developer remembered to add a .catch clause, errors thrown at these places are not handled by the uncaughtException event-handler and disappear.  Recent versions of Node added a warning message when an unhandled rejection pops, though this might help to notice when things go wrong but it's obviously not a proper error handling method. The straightforward solution is to never forget adding .catch clauses within each promise chain call and redirect to a centralized error handler. However, building your error handling strategy only on developer’s discipline is somewhat fragile. Consequently, it’s highly recommended using a graceful fallback and subscribe to `process.on('unhandledRejection', callback)` – this will ensure that any promise error, if not handled locally, will get its treatment.
+En règle générale, la plupart du code d'application Node.js/Express moderne s'exécute dans le cadre de promesse - que ce soit dans le gestionnaire .then, un rappel de fonction ou dans un bloc catch. Étonnamment, à moins qu'un développeur n'ait pensé à ajouter une clause .catch, les erreurs lancées à ces endroits ne sont pas traitées par le gestionnaire d'événement uncaughtException et disparaissent. Les versions récentes de Node ont ajouté un message d'avertissement lorsqu'un rejet non géré apparaît, bien que cela puisse aider à remarquer quand les choses tournent mal, mais ce n'est évidemment pas une bonne méthode de gestion des erreurs. La solution simple consiste à ne jamais oublier d'ajouter des clauses .catch dans chaque appel de chaîne de promesse et de rediriger vers un gestionnaire d'erreurs centralisé. Cependant, la construction de votre stratégie de gestion des erreurs uniquement sur la discipline du développeur est quelque peu fragile. Par conséquent, il est fortement recommandé d'utiliser une solution de secours élégante et de vous abonner à `process.on('unhandledRejection', callback)` - cela garantira que toute erreur de promesse, si elle n'est pas traitée localement, sera traitée.
 
 <br/><br/>
 
-### Code example: these errors will not get caught by any error handler (except unhandledRejection)
+### Exemple de code : ces erreurs ne seront détectées par aucun gestionnaire d'erreurs (sauf unhandledRejection)
 
 ```javascript
 DAL.getUserById(1).then((johnSnow) => {
-  // this error will just vanish
+  // cette erreur disparaîtra
   if(johnSnow.isAlive === false)
       throw new Error('ahhhh');
 });
@@ -20,21 +20,21 @@ DAL.getUserById(1).then((johnSnow) => {
 
 <br/><br/>
 
-### Code example: Catching unresolved and rejected promises
+### Exemple de code : capturer des promesses non résolues et rejetées
 
 <details>
 <summary><strong>Javascript</strong></summary>
 
 ```javascript
 process.on('unhandledRejection', (reason, p) => {
-  // I just caught an unhandled promise rejection,
-  // since we already have fallback handler for unhandled errors (see below),
-  // let throw and let him handle that
+  // Je viens d'attraper un rejet de promesse non géré,
+  // puisque nous avons déjà un gestionnaire de secours pour les erreurs non gérées (voir ci-dessous),
+  // laissons throw et laissons-le gérer cela
   throw reason;
 });
 
 process.on('uncaughtException', (error) => {
-  // I just received an error that was never handled, time to handle it and then decide whether a restart is needed
+  // Je viens de recevoir une erreur qui n'a jamais été traitée, il est temps de la gérer et de décider ensuite si un redémarrage est nécessaire
   errorManagement.handler.handleError(error);
   if (!errorManagement.handler.isTrustedError(error))
     process.exit(1);
@@ -47,14 +47,14 @@ process.on('uncaughtException', (error) => {
 
 ```typescript
 process.on('unhandledRejection', (reason: string, p: Promise<any>) => {
-  // I just caught an unhandled promise rejection,
-  // since we already have fallback handler for unhandled errors (see below),
-  // let throw and let him handle that
+// Je viens d'attraper un rejet de promesse non géré,
+  // puisque nous avons déjà un gestionnaire de secours pour les erreurs non gérées (voir ci-dessous),
+  // laissons throw et laissons-le gérer cela
   throw reason;
 });
 
 process.on('uncaughtException', (error: Error) => {
-  // I just received an error that was never handled, time to handle it and then decide whether a restart is needed
+  // Je viens de recevoir une erreur qui n'a jamais été traitée, il est temps de la gérer et de décider ensuite si un redémarrage est nécessaire
   errorManagement.handler.handleError(error);
   if (!errorManagement.handler.isTrustedError(error))
     process.exit(1);
@@ -64,11 +64,11 @@ process.on('uncaughtException', (error: Error) => {
 
 <br/><br/>
 
-### Blog Quote: "If you can make a mistake, at some point you will"
+### Citation de blog : « Si vous pouvez faire une erreur, vous la ferez à un moment donné »
 
- From the blog James Nelson
+Extrait du blog de James Nelson
 
- > Let’s test your understanding. Which of the following would you expect to print an error to the console?
+ > Testons votre compréhension. Lequel des éléments suivants devrez afficher une erreur sur la console ?
 
 ```javascript
 Promise.resolve('promised value').then(() => {
@@ -84,4 +84,4 @@ new Promise((resolve, reject) => {
 });
 ```
 
-> I don’t know about you, but my answer is that I’d expect all of them to print an error. However, the reality is that a number of modern JavaScript environments won’t print errors for any of them.The problem with being human is that if you can make a mistake, at some point you will. Keeping this in mind, it seems obvious that we should design things in such a way that mistakes hurt as little as possible, and that means handling errors by default, not discarding them.
+> Je ne sais pas pour vous, mais ma réponse est que je m'attends à ce que tous affichent une erreur. Cependant, la réalité est qu'un certain nombre d'environnements JavaScript modernes n'imprimeront d'erreurs pour aucun d'entre eux. Le problème avec l'être humain est que si vous pouvez faire une erreur, vous la ferez à un moment donné. En gardant cela à l'esprit, il semble évident que nous devons concevoir les choses de manière à ce que les erreurs fassent le moins de mal possible, ce qui signifie gérer les erreurs par défaut, et non les éliminer.
