@@ -1,17 +1,17 @@
-# Monitoring
+# Surveillance
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-> At the very basic level, monitoring means you can *easily identify when bad things happen at production. For example, by getting notified by email or Slack. The challenge is to choose the right set of tools that will satisfy your requirements without breaking your bank. May I suggest, start with defining the core set of metrics that must be watched to ensure a healthy state – CPU, server RAM,  Node process RAM (less than 1.4GB), the number of errors in the last minute, number of process restarts, average response time. Then go over some advanced features you might fancy and add to your wish list. Some examples of a luxury monitoring feature: DB profiling, cross-service measuring (i.e. measure business transaction), front-end integration, expose raw data to custom BI clients, Slack notifications and many others.
+> Au niveau le plus élémentaire, la surveillance signifie que vous pouvez facilement identifier quand de mauvaises choses se produisent en production. Par exemple, en étant averti par email ou Slack. Le défi est de choisir le bon ensemble d'outils qui répondra à vos besoins sans vous ruiner. Permettez-moi de vous suggérer de commencer par définir l'ensemble des paramètres de base qui doivent être surveillés pour garantir un état sain - CPU, RAM du serveur, RAM du processus de Node (moins de 1,4 GB), le nombre d'erreurs dans la dernière minute, le nombre de redémarrages du processus , temps de réponse moyen. Ensuite, passez en revue certaines fonctionnalités avancées dont vous pourriez avoir envie et ajoutez-les à votre liste de souhaits. Quelques exemples d'une fonction de surveillance de luxe : profilage de base de données, mesure interservices (c.-à-d. mesurer les transactions commerciales), intégration frontale, exposer les données brutes aux clients BI personnalisés, notifications Slack et bien d'autres.
 
-Achieving the advanced features demands lengthy setup or buying a commercial product such as Datadog, newrelic and alike. Unfortunately, achieving even the basics is not a walk in the park as some metrics are hardware-related (CPU) and others live within the node process (internal errors) thus all the straightforward tools require some additional setup. For example, cloud vendor monitoring solutions (e.g. AWS CloudWatch, Google StackDriver) will tell you immediately about the hardware metric but nothing about the internal app behavior. On the other end, Log-based solutions such as ElasticSearch lack by default the hardware view. The solution is to augment your choice with missing metrics, for example, a popular choice is sending application logs to Elastic stack and configure some additional agent (e.g. Beat) to share hardware-related information to get the full picture.
+La réalisation des fonctionnalités avancées nécessite une configuration longue ou l'achat d'un produit commercial tel que Datadog, newrelic et similaires. Malheureusement, atteindre même les bases n'est pas une promenade de santé car certaines mesures sont liées au matériel (CPU) et d'autres vivent dans le processus de Node (erreurs internes), donc tous les outils simples nécessitent une configuration supplémentaire. Par exemple, les solutions de surveillance des fournisseurs de cloud (par exemple AWS CloudWatch, Google StackDriver) vous informeront immédiatement de la métrique du matériel, mais rien du comportement de l'application interne. À l'autre extrémité, les solutions basées sur les journaux telles que ElasticSearch manquent par défaut de la vue matérielle. La solution consiste à étendre votre choix avec des mesures manquantes, par exemple, un choix populaire consiste à envoyer des journaux d'application à la pile Elastic et à configurer un agent supplémentaire (par exemple Beat) pour partager des informations liées au matériel pour obtenir une image complète.
 
-### Blog Quote: "We have a problem with promises"
+### Citation de blog : « Nous avons un problème avec les promesses"
 
- From the blog, pouchdb.com ranked 11 for the keywords “Node Promises”
+ Extrait du blog de pouchdb.com classé en 11eme position pour les mots clés “Node Promises”
 
- > … We recommend you to watch these signals for all of your services: Error Rate: Because errors are user facing and immediately affect your customers.
-Response time: Because the latency directly affects your customers and business.
-Throughput: The traffic helps you to understand the context of increased error rates and the latency too.
-Saturation: It tells how “full” your service is. If the CPU usage is 90%, can your system handle more traffic?
+ > … Nous vous recommandons de surveiller ces signaux pour tous vos services : Taux d'erreur : parce que les erreurs sont confrontées à l'utilisateur et affectent immédiatement vos clients.
+Temps de réponse : car la latence affecte directement vos clients et votre entreprise.
+Débit : le trafic vous aide à comprendre le contexte de l'augmentation des taux d'erreur et de la latence également.
+Saturation : il indique à quel point votre service est « saturé ». Si l'utilisation du processeur est de 90%, votre système peut-il gérer plus de trafic ?
 …
