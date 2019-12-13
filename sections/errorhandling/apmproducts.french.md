@@ -1,28 +1,28 @@
-# Discover errors and downtime using APM products
+# Découvrez les erreurs et les indisponibilités à l'aide des produits de gestion de la performance applicative
 
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-Exception != Error. Traditional error handling assumes the existence of Exception but application errors might come in the form of slow code paths, API downtime, lack of computational resources and more. This is where APM products come in handy as they allow to detect a wide variety of ‘burried’ issues proactively with a minimal setup. Among the common features of APM products are for example alerting when the HTTP API returns errors, detect when the API response time drops below some threshold, detection of ‘code smells’, features to monitor server resources, operational intelligence dashboard with IT metrics and many other useful features. Most vendors offer a free plan.
+Exception != Erreur. La gestion des erreurs traditionnelle suppose l'existence d'une exception, mais les erreurs d'application peuvent se présenter sous la forme de parcours de code lents, d'indisponibilité de l'API, de manque de ressources de calcul, etc. C’est là que les produits de gestion de la performance applicative (En anglais Application Performance Management : APM) sont utiles car ils permettent de détecter de manière proactive une grande variété de problèmes « cachés » avec une configuration minimale. Parmi les caractéristiques communes des produits APM, on trouve par exemple les alertes lorsque l'API HTTP renvoie des erreurs, la détection lorsque le temps de réponse de l'API tombe en dessous d'un certain seuil, la détection des « [codes smells](https://fr.wikipedia.org/wiki/Code_smell) », les fonctionnalités de surveillance des ressources du serveur, le tableau de bord de l'intelligence opérationnelle avec des mesures informatiques et plusieurs autres fonctionnalités utiles. La plupart des fournisseurs proposent un forfait gratuit.
 
-### Wikipedia about APM
+### APM sur Wikipédia
 
-In the fields of information technology and systems management, Application Performance Management (APM) is the monitoring and management of performance and availability of software applications. APM strives to detect and diagnose complex application performance problems to maintain an expected level of service. APM is “the translation of IT metrics into business meaning ([i.e.] value)". Major products and segments.
+Dans les domaines des technologies de l'information et de la gestion des systèmes, « Application Performance Management » (APM) est la surveillance et la gestion des performances et de la disponibilité des applications logicielles. APM s'efforce de détecter et de diagnostiquer les problèmes de performances des applications complexes pour maintenir un niveau de service souhaité. APM est « la traduction des métriques informatiques en signification métier (c'est-à-dire en valeur) ».
 
-### Understanding the APM marketplace
+### Comprendre le marché APM
 
-APM products constitute 3 major segments:
+Les produits APM regroupent 3 pôles principaux :
 
-1. Website or API monitoring – external services that constantly monitor uptime and performance via HTTP requests. Can be set up in few minutes. Following are few selected contenders: [Pingdom](https://www.pingdom.com/), [Uptime Robot](https://uptimerobot.com/), and [New Relic](https://newrelic.com/application-monitoring)
+1. Surveillance de site Web ou d'API - services externes qui surveillent constamment la disponibilité et les performances via des requêtes HTTP. Peut être installé en quelques minutes. Voici quelques candidats sélectionnés : [Pingdom](https://www.pingdom.com/), [Uptime Robot](https://uptimerobot.com/) et [New Relic](https://newrelic.com/application-monitoring).
 
-2. Code instrumentation – product family which requires embedding an agent within the application to use features like slow code detection, exception statistics, performance monitoring and many more. Following are few selected contenders: New Relic, App Dynamics
+2. Instrumentation de code - famille de produits qui nécessite d'incorporer un agent dans l'application pour utiliser les fonctionnalités telles que la détection de code lent, les statistiques d'exception, la surveillance des performances et bien d'autres. Voici quelques candidats sélectionnés : New Relic, App Dynamics.
 
-3. Operational intelligence dashboard – this line of products is focused on facilitating the ops team with metrics and curated content that helps to easily stay on top of application performance. This usually involves aggregating multiple sources of information (application logs, DB logs, servers log, etc) and upfront dashboard design work. Following are few selected contenders: [Datadog](https://www.datadoghq.com/), [Splunk](https://www.splunk.com/), [Zabbix](https://www.zabbix.com/)
+3. Tableau de bord de l'intelligence opérationnelle - cette gamme de produits vise à faciliter la tâche de l'équipe d'exploitation avec des mesures et un contenu organisé qui permettent de rester facilement au fait de la performance des applications. Cela implique généralement l'agrégation de plusieurs sources d'informations (journaux d'application, journaux de base de données, journaux des serveurs, etc.) et le travail de conception du tableau de bord initial. Voici quelques candidats sélectionnés : [Datadog](https://www.datadoghq.com/), [Splunk](https://www.splunk.com/), [Zabbix](https://www.zabbix.com/).
 
 
 
- ### Example: UpTimeRobot.Com – Website monitoring dashboard
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/uptimerobot.jpg "Website monitoring dashboard")
+ ### Exemple : UpTimeRobot.Com - Tableau de bord de surveillance de site Web
+![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/uptimerobot.jpg "Tableau de bord de surveillance de site Web")
 
- ### Example: AppDynamics.Com – end to end monitoring combined with code instrumentation
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/app-dynamics-dashboard.png "end to end monitoring combined with code instrumentation")
+ ### Exemple : AppDynamics.Com - Surveillance de bout en bout combinée à une instrumentation de code
+![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/app-dynamics-dashboard.png "Surveillance de bout en bout combinée à une instrumentation de code")
