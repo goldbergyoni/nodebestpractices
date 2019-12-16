@@ -1,9 +1,9 @@
-# Using ESLint and Prettier
+# Utilisez ESLint et Prettier
 
 
-### Comparing ESLint and Prettier
+### Comparaison d'ESLint et de Prettier
 
-If you format this code using ESLint, it will just give you a warning that it's too wide (depends on your `max-len` setting). Prettier will automatically format it for you.
+Si vous formatez ce code à l'aide d'ESLint, il vous avertira simplement qu'il est trop large (dépend de votre paramètre `max-len`). Prettier le formatera automatiquement pour vous.
 
 ```javascript
 foo(reallyLongArg(), omgSoManyParameters(), IShouldRefactorThis(), isThereSeriouslyAnotherOne(), noWayYouGottaBeKiddingMe());
@@ -19,8 +19,8 @@ foo(
 );
 ```
 
-Source: [https://github.com/prettier/prettier-eslint/issues/101](https://github.com/prettier/prettier-eslint/issues/101)
+Source : [https://github.com/prettier/prettier-eslint/issues/101](https://github.com/prettier/prettier-eslint/issues/101)
 
-### Integrating ESLint and Prettier
+### Intégration d'ESLint et de Prettier
 
-ESLint and Prettier overlap in the code formatting feature but can be easily combined by using other packages like [prettier-eslint](https://github.com/prettier/prettier-eslint), [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier), and [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier). For more information about their differences, you can view the link [here](https://stackoverflow.com/questions/44690308/whats-the-difference-between-prettier-eslint-eslint-plugin-prettier-and-eslint).
+ESLint et Prettier se recoupent dans la fonction de formatage du code mais ils peuvent être facilement combinés en utilisant d'autres packages comme [prettier-eslint](https://github.com/prettier/prettier-eslint), [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier) et [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier). Pour plus d'informations sur leurs différences, vous pouvez consulter le lien [ici](https://stackoverflow.com/questions/44690308/whats-the-difference-between-prettier-eslint-eslint-plugin-prettier-and-eslint).
