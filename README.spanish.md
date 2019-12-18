@@ -47,7 +47,7 @@
 
 **De lo contrario:** Cuando desarrolladores codifican nuevas características luchan por darse cuenta del impacto de su cambio y temen romper otros componentes dependientes - las implementaciones se vuelven más lentas y más riesgosas. También se considera más difícil escalar cuando todas las unidades de negocios no están separadas
 
-🔗 [**Leer más: estructura en componentes**](/sections/projectstructre/breakintcomponents.md)
+🔗 [**Leer más: estructura en componentes**](/sections/projectstructre/breakintcomponents.spanish.md)
 
 <br/><br/>
 
@@ -57,7 +57,7 @@
 
 **De lo contrario:** Una aplicación que mezcla objectos de web con otras capas no puede ser accedida por código de pruebas, CRON jobs y otras llamadas que no son de Express.
 
-🔗 [**Leer más: Aplicar capas a tu aplicación**](/sections/projectstructre/createlayers.md)
+🔗 [**Leer más: Aplicar capas a tu aplicación**](/sections/projectstructre/createlayers.spanish.md)
 
 <br/><br/>
 
@@ -67,7 +67,7 @@
 
 **De lo contrario:** Tendrás que inventar tu propia implementación y rueda de dependencia
 
-🔗 [**Leer más: Estructura por característica**](/sections/projectstructre/wraputilities.md)
+🔗 [**Leer más: Estructura por característica**](/sections/projectstructre/wraputilities.spanish.md)
 
 <br/><br/>
 
@@ -77,7 +77,7 @@
 
 **De lo contrario:** Se podrá acceder a tu API para realizar pruebas solo a través de llamadas HTTP (más lento y mucho más difícil para generar informes de cobertura). Probablemente tampoco sea un placer enorme mantener cientos de líneas de código en un solo archivo
 
-🔗 [**Leer más: separar 'servidor' y 'aplicación' de express**](/sections/projectstructre/separateexpress.md)
+🔗 [**Leer más: separar 'servidor' y 'aplicación' de express**](/sections/projectstructre/separateexpress.spanish.md)
 
 <br/><br/>
 
@@ -87,7 +87,7 @@
 
 **De lo contrario:** No cumplir con ninguno de los requisitos de configuración simplemente frena al equipo de desarrollo o al equipo de devpos. Probablemente ambos
 
-🔗 [**Leer más: buenas prácticas de configuración**](/sections/projectstructre/configguide.md)
+🔗 [**Leer más: buenas prácticas de configuración**](/sections/projectstructre/configguide.spanish.md)
 
 
 <br/><br/><br/>
@@ -102,7 +102,7 @@
 
 **De lo contrario:** El estilo de callback de Node.JS, function (err, response), es una forma prometedora de código no mantenible debido a la combinación de manejo de errores con código accidentado, anidación excesiva y patrones de codificación incómodos
 
-🔗 [**Leer más: evitar callbacks**](/sections/errorhandling/asyncerrorhandling.md)
+🔗 [**Leer más: evitar callbacks**](/sections/errorhandling/asyncerrorhandling.spanish.md)
 
 <br/><br/>
 
@@ -113,7 +113,7 @@
 
 **De lo contrario:** Al invocar algún componente, no estar seguro de qué tipo de errores son retornados, hace que sea mucho más difícil manejar los errores de forma adecuada. Peor aún, el uso de tipos personalizados para describir los errores puede conducir a la pérdida de información de error crítico como el seguimiento de la pila.
 
-🔗 [**Leer más: utilizando el objeto de Error incorporado**](/sections/errorhandling/useonlythebuiltinerror.md)
+🔗 [**Leer más: utilizando el objeto de Error incorporado**](/sections/errorhandling/useonlythebuiltinerror.spanish.md)
 
 <br/><br/>
 
@@ -123,7 +123,7 @@
 
 **De lo contrario:** Siempre puedes reiniciar la aplicación cuando aparece un error, pero ¿por qué dejar ~5000 usuarios en línea abajo debido a un error operacional menor, previsto? lo contrario tampoco es ideal: mantener la aplicación activa cuando se produce un problema desconocido (error del programador) puede provocar un comportamiento imprevisto. La diferenciación de los dos permite actuar con tacto y aplicar un enfoque equilibrado basado en el contexto dado
 
-  🔗 [**Leer más: error operacional vs programador**](/sections/errorhandling/operationalvsprogrammererror.md)
+  🔗 [**Leer más: error operacional vs programador**](/sections/errorhandling/operationalvsprogrammererror.spanish.md)
 
 <br/><br/>
 
@@ -133,7 +133,7 @@
 
 **De lo contrario:** No manejar los errores dentro de un solo lugar dará lugar a la duplicación del código y, probablemente, a los errores que se manejan de forma incorrecta
 
-🔗 [**Leer más: manejo de errores en un lugar centralizado**](/sections/errorhandling/centralizedhandling.md)
+🔗 [**Leer más: manejo de errores en un lugar centralizado**](/sections/errorhandling/centralizedhandling.spanish.md)
 
 <br/><br/>
 
@@ -143,7 +143,7 @@
 
 **De lo contrario:** Un cliente del API podría decidir bloquearse y reiniciarse solo porque recibió un error que no pudo entender. Nota: la persona que llama de su API puede ser tu (muy típico en un entorno de microservicios)
 
-🔗 [**Leer más: documentación de errores en Swagger**](/sections/errorhandling/documentingusingswagger.md)
+🔗 [**Leer más: documentación de errores en Swagger**](/sections/errorhandling/documentingusingswagger.spanish.md)
 
 <br/><br/>
 
@@ -153,7 +153,7 @@
 
 **De lo contrario:** Cuando se detecta una excepción desconocida, algunos objetos pueden estar en un estado defectuoso (por ejemplo, un emisor de eventos que se usa globalmente y que ya no se activan debido a fallas internas) y todas las solicitudes futuras pueden fallar o comportarse de manera loca
 
-🔗 [**Leer más: cerrar el proceso**](/sections/errorhandling/shuttingtheprocess.md)
+🔗 [**Leer más: cerrar el proceso**](/sections/errorhandling/shuttingtheprocess.spanish.md)
 
 <br/><br/>
 
@@ -163,7 +163,7 @@
 
 **De lo contrario:** Navegando a través de console.logs o manualmente a través de un archivo de texto desordenado sin consultar herramientas o un lector de registro decente puede mantenerte ocupado en el trabajo hasta tarde
 
-🔗 [**Leer más: utilizando un registrador maduro**](/sections/errorhandling/usematurelogger.md)
+🔗 [**Leer más: utilizando un registrador maduro**](/sections/errorhandling/usematurelogger.spanish.md)
 
 <br/><br/>
 
@@ -173,7 +173,7 @@
 
 **De lo contrario:** Sin pruebas, ya sea automática o manualmente, no puedes confiar en nuestro código para devolver los errores correctos. Sin errores significativos, no hay manejo de errores
 
-🔗 [**Leer más: probar los flujos de error**](/sections/errorhandling/testingerrorflows.md)
+🔗 [**Leer más: probar los flujos de error**](/sections/errorhandling/testingerrorflows.spanish.md)
 
 <br/> <br/>
 
@@ -183,7 +183,7 @@
 
 **De lo contrario:** Es posible que dediques un gran esfuerzo a medir el rendimiento y los tiempos de inactividad de la API, probablemente nunca sabrás cuáles son las piezas de código más lentas en el escenario del mundo real y cómo afectan estas a la experiencia del usuario.
 
-🔗 [**Leer más: utilizando productos APM**](/sections/errorhandling/apmproducts.md)
+🔗 [**Leer más: utilizando productos APM**](/sections/errorhandling/apmproducts.spanish.md)
 
 <br/><br/>
 
@@ -193,7 +193,7 @@
 
 **De lo contrario:** Tus errores serán tragados y no dejarán rastros. Nada de que preocuparse
 
-🔗 [**Leer más: captura rechazos de promesas no controladas**](/sections/errorhandling/catchunhandledpromiserejection.md)
+🔗 [**Leer más: captura rechazos de promesas no controladas**](/sections/errorhandling/catchunhandledpromiserejection.spanish.md)
 
 <br/><br/>
 
@@ -203,7 +203,7 @@
 
 **De lo contrario:** Considera esto: tu función espera un argumento numérico "Descuento" que la persona que llama olvida pasar, más adelante su código comprueba si Descuento!= 0 (cantidad de descuento permitido es mayor que cero), entonces permitirás el usuario que disfrute de un descuento. Dios mío, qué desagradable error. ¿Puedes verlo?
 
-🔗 [**Leer más: falla rapidamente**](/sections/errorhandling/failfast.md)
+🔗 [**Leer más: falla rapidamente**](/sections/errorhandling/failfast.spanish.md)
 
 <br/><br/><br/>
 
@@ -217,7 +217,7 @@
 
 **De lo contrario:** Los desarrolladores podrían desperdiciar demasiado tiempo centrándose demasiado en el corregir los espacios y el ancho de línea del código
 
-🔗 [**Leer más: Usando ESLint y Prettier**](/sections/codestylepractices/eslint_prettier.md)
+🔗 [**Leer más: Usando ESLint y Prettier**](/sections/codestylepractices/eslint_prettier.spanish.md)
 
 <br/><br/>
 
@@ -432,7 +432,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Una implementación simplemente falló, una prueba llamada "Agregar producto" falló. ¿Esto te dice exactamente qué está funcionando mal?
 
-🔗 [**Leer más: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
+🔗 [**Leer más: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.spanish.md)
 
 <br/><br/>
 
@@ -442,7 +442,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** No solo pasa largas horas diarias entendiendo el código principal, ahora también lo que debería haber sido la parte simple del día (pruebas) ha ejercitado tu cerebro
 
-🔗 [**Leer más: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.md)
+🔗 [**Leer más: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.spanish.md)
 
 <br/><br/>
 
@@ -460,7 +460,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Considera un escenario en el que se cancela la implementación debido a las pruebas fallidas, el equipo ahora pasará un tiempo de investigación precioso que termina en una triste conclusión: el sistema funciona bien, las pruebas sin embargo interfieren entre sí y rompen la construcción
 
-🔗 [**Leer más: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
+🔗 [**Leer más: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.spanish.md)
 
 <br/><br/>
 
@@ -510,7 +510,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Con una mala calidad de código, los errores y el rendimiento siempre serán un problema que ninguna biblioteca nueva brillante o características de última generación podrá solucionar
 
-🔗 [**Leer más: Refactoring!**](/sections/testingandquality/refactoring.md)
+🔗 [**Leer más: Refactoring!**](/sections/testingandquality/refactoring.spanish.md)
 
 <br/><br/>
 
@@ -520,7 +520,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Elegir un proveedor de nicho puede bloquearlo una vez que necesite una personalización avanzada. Por otro lado, ir con Jenkins podría quemar un tiempo precioso en la configuración de la infraestructura
 
-🔗 [**Leer más: Choosing CI platform**](/sections/testingandquality/citools.md)
+🔗 [**Leer más: Choosing CI platform**](/sections/testingandquality/citools.spanish.md)
 
 <br/><br/><br/>
 
@@ -534,7 +534,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Failure === disappointed customers. Simple
 
-🔗 [**Read More: Monitoring!**](/sections/production/monitoring.md)
+🔗 [**Read More: Monitoring!**](/sections/production/monitoring.spanish.md)
 
 <br/><br/>
 
@@ -544,7 +544,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** You end up with a black box that is hard to reason about, then you start re-writing all logging statements to add additional information
 
-🔗 [**Read More: Increase transparency using smart logging**](/sections/production/smartlogging.md)
+🔗 [**Read More: Increase transparency using smart logging**](/sections/production/smartlogging.spanish.md)
 
 <br/><br/>
 
@@ -554,7 +554,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Your poor single thread will stay busy doing infrastructural tasks instead of dealing with your application core and performance will degrade accordingly
 
-🔗 [**Read More: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
+🔗 [**Read More: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.spanish.md)
 
 <br/><br/>
 
@@ -564,7 +564,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
 
-🔗 [**Read More: Lock dependencies**](/sections/production/lockdependencies.md)
+🔗 [**Read More: Lock dependencies**](/sections/production/lockdependencies.spanish.md)
 
 <br/><br/>
 
@@ -574,17 +574,17 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Running dozens of instances without a clear strategy and too many tools together (cluster management, docker, PM2) might lead to DevOps chaos
 
-🔗 [**Read More: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
+🔗 [**Read More: Guard process uptime using the right tool**](/sections/production/guardprocess.spanish.md)
 
 <br/><br/>
 
 ## ![✔] 5.6. Utilize all CPU cores
 
-**TL;DR:** At its basic form, a Node app runs on a single CPU core while all others are left idling. It’s your duty to replicate the Node process and utilize all CPUs – For small-medium apps you may use Node Cluster or PM2. For a larger app consider replicating the process using some Docker cluster (e.g. K8S, ECS) or deployment scripts that are based on Linux init system (e.g. systemd)
+**TL;DR:** At its basic form, a Node app runs on a single CPU core while all others are left idling. It’s your duty to replicate the Node process and utilize all CPUs – For small-medium apps you may use Node Cluster or PM2. For a larger app consider replicating the process using some Docker cluster (e.g. K8S, ECS) or deployment scripts that are based on Linux init system (e.g. systespanish.md)
 
 **Otherwise:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.js utilizes only 1 (even using PaaS services like AWS beanstalk!)
 
-🔗 [**Read More: Utilize all CPU cores**](/sections/production/utilizecpu.md)
+🔗 [**Read More: Utilize all CPU cores**](/sections/production/utilizecpu.spanish.md)
 
 <br/><br/>
 
@@ -594,7 +594,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
 
-🔗 [**Read More: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
+🔗 [**Read More: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.spanish.md)
 
 <br/><br/>
 
@@ -604,7 +604,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real-world scenario and how these affect the UX
 
-🔗 [**Read More: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
+🔗 [**Read More: Discover errors and downtime using APM products**](/sections/production/apmproducts.spanish.md)
 
 <br/><br/>
 
@@ -614,7 +614,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** A world champion IT/DevOps guy won’t save a system that is badly written
 
-🔗 [**Read More: Make your code production-ready**](/sections/production/productioncode.md)
+🔗 [**Read More: Make your code production-ready**](/sections/production/productioncode.spanish.md)
 
 <br/><br/>
 
@@ -624,7 +624,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Your process memory might leak a hundred megabytes a day like how it happened at [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
 
-🔗 [**Read More: Measure and guard the memory usage**](/sections/production/measurememory.md)
+🔗 [**Read More: Measure and guard the memory usage**](/sections/production/measurememory.spanish.md)
 
 <br/><br/>
 
@@ -634,7 +634,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Your single Node thread will be busy streaming hundreds of html/images/angular/react files instead of allocating all its resources for the task it was born for – serving dynamic content
 
-🔗 [**Read More: Get your frontend assets out of Node**](/sections/production/frontendout.md)
+🔗 [**Read More: Get your frontend assets out of Node**](/sections/production/frontendout.spanish.md)
 
 <br/><br/>
 
@@ -644,7 +644,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
 
-🔗 [**Read More: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
+🔗 [**Read More: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.spanish.md)
 
 <br/><br/>
 
@@ -654,7 +654,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Keeping your code clean from vulnerabilities without dedicated tools will require you to constantly follow online publications about new threats. Quite tedious
 
-🔗 [**Read More: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
+🔗 [**Read More: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.spanish.md)
 
 <br/><br/>
 
@@ -664,7 +664,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Looking at a production error log without the context – what happened before – makes it much harder and slower to reason about the issue
 
-🔗 [**Read More: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
+🔗 [**Read More: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.spanish.md)
 
 <br/><br/>
 
@@ -674,7 +674,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Omitting this simple property might greatly degrade performance. For example, when using Express for server-side rendering omitting `NODE_ENV` makes it slower by a factor of three!
 
-🔗 [**Read More: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
+🔗 [**Read More: Set NODE_ENV=production**](/sections/production/setnodeenv.spanish.md)
 
 <br/><br/>
 
@@ -692,7 +692,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Newly discovered bugs or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain
 
-🔗 [**Read More: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
+🔗 [**Read More: Use an LTS release of Node.js**](/sections/production/LTSrelease.spanish.md)
 
 <br/><br/>
 
@@ -702,7 +702,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Application handling log routing === hard to scale, loss of logs, poor separation of concerns
 
-🔗 [**Read More: Log Routing**](/sections/production/logrouting.md)
+🔗 [**Read More: Log Routing**](/sections/production/logrouting.spanish.md)
 
 <br/><br/><br/>
 
@@ -722,7 +722,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** What could have been a straightforward security weakness during development becomes a major issue in production. Also, the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories
 
-🔗 [**Read More: Lint rules**](/sections/security/lintrules.md)
+🔗 [**Read More: Lint rules**](/sections/security/lintrules.spanish.md)
 
 <br/><br/>
 
@@ -734,7 +734,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** An application could be subject to an attack resulting in a denial of service where real users receive a degraded or unavailable service.
 
-🔗 [**Read More: Implement rate limiting**](/sections/security/limitrequests.md)
+🔗 [**Read More: Implement rate limiting**](/sections/security/limitrequests.spanish.md)
 
 <br/><br/>
 
@@ -746,7 +746,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Source control, even for private repositories, can mistakenly be made public, at which point all secrets are exposed. Access to source control for an external party will inadvertently provide access to related systems (databases, apis, services, etc).
 
-🔗 [**Read More: Secret management**](/sections/security/secretmanagement.md)
+🔗 [**Read More: Secret management**](/sections/security/secretmanagement.spanish.md)
 
 <br/><br/>
 
@@ -758,7 +758,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Unvalidated or unsanitized user input could lead to operator injection when working with MongoDB for NoSQL, and not using a proper sanitization system or ORM will easily allow SQL injection attacks, creating a giant vulnerability.
 
-🔗 [**Read More: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.md)
+🔗 [**Read More: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.spanish.md)
 
 <br/><br/>
 
@@ -766,7 +766,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **TL;DR:** This is a collection of security advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
 
-🔗 [**Read More: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
+🔗 [**Read More: Common security best practices**](/sections/security/commonsecuritybestpractices.spanish.md)
 
 <br/><br/>
 
@@ -778,7 +778,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Attackers could perform direct attacks on your application's users, leading to huge security vulnerabilities
 
-🔗 [**Read More: Using secure headers in your application**](/sections/security/secureheaders.md)
+🔗 [**Read More: Using secure headers in your application**](/sections/security/secureheaders.spanish.md)
 
 <br/><br/>
 
@@ -790,7 +790,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** An attacker could detect your web framework and attack all its known vulnerabilities.
 
-🔗 [**Read More: Dependency security**](/sections/security/dependencysecurity.md)
+🔗 [**Read More: Dependency security**](/sections/security/dependencysecurity.spanish.md)
 
 <br/><br/>
 
@@ -802,7 +802,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Passwords or secrets that are persisted without using a secure function are vulnerable to brute forcing and dictionary attacks that will lead to their disclosure eventually.
 
-🔗 [**Read More: Use Bcrypt**](/sections/security/bcryptpasswords.md)
+🔗 [**Read More: Use Bcrypt**](/sections/security/bcryptpasswords.spanish.md)
 
 <br/><br/>
 
@@ -814,7 +814,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** An attacker might store malicious JavaScript code in your DB which will then be sent as-is to the poor clients
 
-🔗 [**Read More: Escape output**](/sections/security/escape-output.md)
+🔗 [**Read More: Escape output**](/sections/security/escape-output.spanish.md)
 
 <br/><br/>
 
@@ -826,7 +826,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Your generosity and permissive approach greatly increases the attack surface and encourages the attacker to try out many inputs until they find some combination to crash the application
 
-🔗 [**Read More: Validate incoming JSON schemas**](/sections/security/validation.md)
+🔗 [**Read More: Validate incoming JSON schemas**](/sections/security/validation.spanish.md)
 
 <br/><br/>
 
@@ -838,7 +838,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Expired, or misplaced tokens could be used maliciously by a third party to access an application and impersonate the owner of the token.
 
-🔗 [**Read More: Blacklist JSON Web Tokens**](/sections/security/expirejwt.md)
+🔗 [**Read More: Blacklist JSON Web Tokens**](/sections/security/expirejwt.spanish.md)
 
 <br/><br/>
 
@@ -853,7 +853,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** An attacker can issue unlimited automated password attempts to gain access to privileged accounts on an application
 
-🔗 [**Read More: Login rate limiting**](/sections/security/login-rate-limit.md)
+🔗 [**Read More: Login rate limiting**](/sections/security/login-rate-limit.spanish.md)
 
 <br/><br/>
 
@@ -865,7 +865,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** An attacker who manages to run a script on the server gets unlimited power over the local machine (e.g. change iptable and re-route traffic to his server)
 
-🔗 [**Read More: Run Node.js as non-root user**](/sections/security/non-root-user.md)
+🔗 [**Read More: Run Node.js as non-root user**](/sections/security/non-root-user.spanish.md)
 
 <br/><br/>
 
@@ -877,7 +877,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Your application will have to deal with large requests, unable to process the other important work it has to accomplish, leading to performance implications and vulnerability towards DOS attacks
 
-🔗 [**Read More: Limit payload size**](/sections/security/requestpayloadsizelimit.md)
+🔗 [**Read More: Limit payload size**](/sections/security/requestpayloadsizelimit.spanish.md)
 
 <br/><br/>
 
@@ -889,7 +889,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Malicious JavaScript code finds a way into text passed into `eval` or other real-time evaluating JavaScript language functions, and will gain complete access to JavaScript permissions on the page. This vulnerability is often manifested as an XSS attack.
 
-🔗 [**Read More: Avoid JavaScript eval statements**](/sections/security/avoideval.md)
+🔗 [**Read More: Avoid JavaScript eval statements**](/sections/security/avoideval.spanish.md)
 
 <br/><br/>
 
@@ -901,7 +901,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Poorly written regexes could be susceptible to Regular Expression DoS attacks that will block the event loop completely. For example, the popular `moment` package was found vulnerable with malicious RegEx usage in November of 2017
 
-🔗 [**Read More: Prevent malicious RegEx**](/sections/security/regex.md)
+🔗 [**Read More: Prevent malicious RegEx**](/sections/security/regex.spanish.md)
 
 <br/><br/>
 
@@ -913,7 +913,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Malicious user input could find its way to a parameter that is used to require tampered files, for example, a previously uploaded file on the filesystem, or access already existing system files.
 
-🔗 [**Read More: Safe module loading**](/sections/security/safemoduleloading.md)
+🔗 [**Read More: Safe module loading**](/sections/security/safemoduleloading.spanish.md)
 
 <br/><br/>
 
@@ -925,7 +925,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** A plugin can attack through an endless variety of options like infinite loops, memory overloading, and access to sensitive process environment variables
 
-🔗 [**Read More: Run unsafe code in a sandbox**](/sections/security/sandbox.md)
+🔗 [**Read More: Run unsafe code in a sandbox**](/sections/security/sandbox.spanish.md)
 
 <br/><br/>
 
@@ -937,7 +937,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Naive use of child processes could result in remote command execution or shell injection attacks due to malicious user input passed to an unsanitized system command.
 
-🔗 [**Read More: Be cautious when working with child processes**](/sections/security/childprocesses.md)
+🔗 [**Read More: Be cautious when working with child processes**](/sections/security/childprocesses.spanish.md)
 
 <br/><br/>
 
@@ -949,7 +949,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Sensitive application details such as server file paths, third party modules in use, and other internal workflows of the application which could be exploited by an attacker, could be leaked from information found in a stack trace
 
-🔗 [**Read More: Hide error details from client**](/sections/security/hideerrors.md)
+🔗 [**Read More: Hide error details from client**](/sections/security/hideerrors.spanish.md)
 
 <br/><br/>
 
@@ -971,7 +971,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Cookies could be sent over insecure connections, and an attacker might use session identification to identify the underlying framework of the web application, as well as module-specific vulnerabilities
 
-🔗 [**Read More: Cookie and session security**](/sections/security/sessions.md)
+🔗 [**Read More: Cookie and session security**](/sections/security/sessions.spanish.md)
 
 <br/><br/>
 
@@ -993,7 +993,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** If an attacker discovers that you are not validating external, user-supplied input, they may exploit this vulnerability by posting specially-crafted links on forums, social media, and other public places to get users to click it.
 
-🔗 [**Read More: Prevent unsafe redirects**](/sections/security/saferedirects.md)
+🔗 [**Read More: Prevent unsafe redirects**](/sections/security/saferedirects.spanish.md)
 
 <br/><br/>
 
@@ -1005,7 +1005,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Your project's API keys, passwords or other secrets are open to be abused by anyone who comes across them, which may result in financial loss, impersonation, and other risks.
 
-🔗 [**Read More: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.md)
+🔗 [**Read More: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.spanish.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
@@ -1022,7 +1022,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** As the Event Loop is blocked, Node.js will be unable to handle other request thus causing delays for concurrent users. **3000 users are waiting for a response, the content is ready to be served, but one single request blocks the server from dispatching the results back**
 
-🔗 [**Read More: Do not block the event loop**](/sections/performance/block-loop.md)
+🔗 [**Read More: Do not block the event loop**](/sections/performance/block-loop.spanish.md)
 
 <br /><br /><br />
 
@@ -1034,7 +1034,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** You'll have to maintain less performant projects where you could have simply used what was **already** available or dealt with a few more lines in exchange of a few more files.
 
-🔗 [**Read More: Native over user land utils**](/sections/performance/nativeoverutil.md)
+🔗 [**Read More: Native over user land utils**](/sections/performance/nativeoverutil.spanish.md)
 
 <br/><br/><br/>
 
