@@ -432,7 +432,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Una implementación simplemente falló, una prueba llamada "Agregar producto" falló. ¿Esto te dice exactamente qué está funcionando mal?
 
-🔗 [**Leer más: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.spanish.md)
+🔗 [**Leer más: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
 
 <br/><br/>
 
@@ -442,7 +442,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** No solo pasa largas horas diarias entendiendo el código principal, ahora también lo que debería haber sido la parte simple del día (pruebas) ha ejercitado tu cerebro
 
-🔗 [**Leer más: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.spanish.md)
+🔗 [**Leer más: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.md)
 
 <br/><br/>
 
@@ -460,7 +460,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Considera un escenario en el que se cancela la implementación debido a las pruebas fallidas, el equipo ahora pasará un tiempo de investigación precioso que termina en una triste conclusión: el sistema funciona bien, las pruebas sin embargo interfieren entre sí y rompen la construcción
 
-🔗 [**Leer más: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.spanish.md)
+🔗 [**Leer más: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
 
 <br/><br/>
 
@@ -510,7 +510,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Con una mala calidad de código, los errores y el rendimiento siempre serán un problema que ninguna biblioteca nueva brillante o características de última generación podrá solucionar
 
-🔗 [**Leer más: Refactoring!**](/sections/testingandquality/refactoring.spanish.md)
+🔗 [**Leer más: Refactoring!**](/sections/testingandquality/refactoring.md)
 
 <br/><br/>
 
@@ -614,7 +614,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** A world champion IT/DevOps guy won’t save a system that is badly written
 
-🔗 [**Read More: Make your code production-ready**](/sections/production/productioncode.spanish.md)
+🔗 [**Read More: Make your code production-ready**](/sections/production/productioncode.md)
 
 <br/><br/>
 
@@ -702,7 +702,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** Application handling log routing === hard to scale, loss of logs, poor separation of concerns
 
-🔗 [**Read More: Log Routing**](/sections/production/logrouting.spanish.md)
+🔗 [**Read More: Log Routing**](/sections/production/logrouting.md)
 
 <br/><br/><br/>
 
@@ -1022,7 +1022,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** As the Event Loop is blocked, Node.js will be unable to handle other request thus causing delays for concurrent users. **3000 users are waiting for a response, the content is ready to be served, but one single request blocks the server from dispatching the results back**
 
-🔗 [**Read More: Do not block the event loop**](/sections/performance/block-loop.spanish.md)
+🔗 [**Read More: Do not block the event loop**](/sections/performance/block-loop.md)
 
 <br /><br /><br />
 
@@ -1034,7 +1034,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **Otherwise:** You'll have to maintain less performant projects where you could have simply used what was **already** available or dealt with a few more lines in exchange of a few more files.
 
-🔗 [**Read More: Native over user land utils**](/sections/performance/nativeoverutil.spanish.md)
+🔗 [**Read More: Native over user land utils**](/sections/performance/nativeoverutil.md)
 
 <br/><br/><br/>
 
