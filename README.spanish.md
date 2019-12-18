@@ -30,10 +30,11 @@
 1. [Prácticas para estructura del proyecto (5)](#1-project-structure-practices)
 2. [Prácticas en manejo de errores (11) ](#2-error-handling-practices)
 3. [Prácticas de estilo de código (12) ](#3-code-style-practices)
-4. [Practicas de prueba y calidad en general (8) ](#4-testing-and-overall-quality-practices)
-5. [Prácticas de puesta en producción (16) ](#5-going-to-production-practices)
-6. Prácticas de Seguridad (próximamente)
-7. Prácticas de Rendimiento (próximamente)
+4. [Practicas de prueba y calidad en general (12) ](#4-testing-and-overall-quality-practices)
+5. [Prácticas de puesta en producción (18) ](#5-going-to-production-practices)
+6. [Prácticas de seguridad (25)](#6-security-best-practices)
+7. [Prácticas de rendimiento (1) (In Progress️ ✍️)](#7-performance-best-practices)
+
 
 
 <br/><br/><br/>
