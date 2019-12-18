@@ -331,7 +331,7 @@ function doSomething() {}
 
 ## ![✔] 3.7 Escoje const antes que let. No uses var
 
-**TL;DR:** Utilizar`const` significa que una vez que se asigna una variable, no se puede reasignar. Prefiriendo`const` te ayudaré a no sentirte tentado a usar la misma variable para diferentes usos y a aclarar tu código. Si una variable necesita ser reasignada, en un bucle for, por ejemplo, usa `let` para declararlo. Otro aspecto importante de `let`es que una variable declarada usando solo está disponible en el ámbito del bloque en el que se definió. `var` tiene ámbito de función, no ámbito de bloque, y [no debería ser utilizada en ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) ahora que tienes `const` y `let` a tu disposición
+**TL;DR:** Usar`const` significa que una vez que se asigna una variable, no se puede reasignar. Prefiriendo`const` te ayudaré a no sentirte tentado a usar la misma variable para diferentes usos y a aclarar tu código. Si una variable necesita ser reasignada, en un bucle for, por ejemplo, usa `let` para declararlo. Otro aspecto importante de `let`es que una variable declarada usando solo está disponible en el ámbito del bloque en el que se definió. `var` tiene ámbito de función, no ámbito de bloque, y [no debería ser usada en ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) ahora que tienes `const` y `let` a tu disposición
 
 **De lo contrario:** La depuración se vuelve mucho más engorrosa cuando se sigue una variable que cambia con frecuencia
 
@@ -341,39 +341,39 @@ function doSomething() {}
 
 ## ![✔] 3.8 Importa los módulos primero, no dentro de funciones
 
-**TL;DR:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top but also avoids a couple of potential problems
+**TL;DR:** Importa los módulos al comienzo de cada archivo, antes y fuera de cualquier función. Esta práctica recomendada simple no solo lo ayudará a identificar fácil y rápidamente las dependencias de un archivo en la parte superior, sino que también evitará un par de posibles problemas.
 
-**Otherwise:** Requires are run synchronously by Node.js. If they are called from within a function, it may block other requests from being handled at a more critical time. Also, if a required module or any of its own dependencies throw an error and crash the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function
+**De lo contrario:** Los requisitos se ejecutan sincrónicamente por Node.js. Si se los llama desde una función, puede bloquear el manejo de otras solicitudes en un momento más crítico. Además, si un módulo requerido o cualquiera de sus propias dependencias arroja un error y bloquea el servidor, es mejor averiguarlo lo antes posible, lo que podría no ser el caso si ese módulo se requiere desde una función
 
 <br/><br/>
 
-## ![✔] 3.9 Require modules by folders, opposed to the files directly
+## ![✔] 3.9 Importa los módulos por carpetas y no por archivos directamente
 
-**TL;DR:** When developing a module/library in a folder, place an index.js file that exposes the module's internals so every consumer will pass through it. This serves as an 'interface' to your module and eases future changes without breaking the contract
+**TL;DR:** Al desarrollar un módulo / biblioteca en una carpeta, coloca un archivo index.js que exponga los componentes internos del módulo para que todos los consumidores lo atraviesen. Esto sirve como una 'interfaz' para tu módulo y facilita los cambios futuros sin romper el contrato
 
-**Otherwise:** Changing the internal structure of files or the signature may break the interface with clients
+**De lo contrario:** Cambiar la estructura interna de los archivos o la firma puede romper la interfaz con los clientes
 
-### 3.9 Code example
+### 3.9 Ejemplo de código
 
 ```javascript
-// Do
+// Haz esto
 module.exports.SMSProvider = require('./SMSProvider');
 module.exports.SMSNumberResolver = require('./SMSNumberResolver');
 
-// Avoid
+// Evita esto
 module.exports.SMSProvider = require('./SMSProvider/SMSProvider.js');
 module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolver.js');
 ```
 
 <br/><br/>
 
-## ![✔] 3.10 Use the `===` operator
+## ![✔] 3.10 Usa el operador `===`
 
-**TL;DR:** Prefer the strict equality operator `===` over the weaker abstract equality operator `==`. `==` will compare two variables after converting them to a common type. There is no type conversion in `===`, and both variables must be of the same type to be equal
+**TL;DR:** Prioriza el operador de igualdad `===` por sobre de el operador de igualdad abstracto `==`. `==` comparará dos variables después de convertirlas a un tipo común. No hay conversión de tipo en `===`, y ambas variables deben ser del mismo tipo para ser iguales
 
-**Otherwise:** Unequal variables might return true when compared with the `==` operator
+**De lo contrario:** Variables que no son iguales pueden devolver `true` con el operador `==` 
 
-### 3.10 Code example
+### 3.10 Ejemplo de código
 
 ```javascript
 '' == '0'           // false
@@ -390,31 +390,31 @@ null == undefined   // true
 ' \t\r\n ' == 0     // true
 ```
 
-All statements above will return false if used with `===`
+Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <br/><br/>
 
-## ![✔] 3.11 Use Async Await, avoid callbacks
+## ![✔] 3.11 Usa Async Await, evita callbacks
 
-**TL;DR:** Node 8 LTS now has full support for Async-await. This is a new way of dealing with asynchronous code which supersedes callbacks and promises. Async-await is non-blocking, and it makes asynchronous code look synchronous. The best gift you can give to your code is using async-await which provides a much more compact and familiar code syntax like try-catch
+**TL;DR:** Node 8 LTS ahora tiene soporte completo para Async-await. Esta es una nueva forma de lidiar con el código asincrónico que reemplaza las devoluciones de llamada y las promesas. Async-await no bloquea y hace que el código asincrónico se vea sincrónico. El mejor regalo que puede dar a su código es usar async-await, que proporciona una sintaxis de código mucho más compacta y familiar como try-catch
 
-**Otherwise:** Handling async errors in callback style is probably the fastest way to hell - this style forces to check errors all over, deal with awkward code nesting and makes it difficult to reason about the code flow
+**De lo contrario:** El manejo de errores asíncronos en el estilo de callback es probablemente la forma más rápida de ir al infierno: este estilo obliga a verificar los errores por todas partes, lidiar con la incómoda anidación de código y hace que sea difícil razonar sobre el flujo de código
 
-🔗[**Read more:** Guide to async await 1.0](https://github.com/yortus/asyncawait)
+🔗[**Leer más:** Guide to async await 1.0](https://github.com/yortus/asyncawait)
 
 <br/><br/>
 
-## ![✔] 3.12 Use arrow function expressions (=>)
+## ![✔] 3.12 Usar funciones de flecha (=>)
 
-**TL;DR:** Though it's recommended to use async-await and avoid function parameters when dealing with older APIs that accept promises or callbacks - arrow functions make the code structure more compact and keep the lexical context of the root function (i.e. `this`)
+**TL;DR:** Aunque se recomienda usar async-wait y evitar parámetros de función cuando se trata de API más antiguas que aceptan promesas o callbacks. Las funciones de flecha hacen que la estructura del código sea más compacta y mantienen el contexto léxico de la función raíz (i.e. `this`)
 
-**Otherwise:** Longer code (in ES5 functions) is more prone to bugs and cumbersome to read
+**De lo contrario:** El código más largo (en las funciones de ES5) es más propenso a errores y engorroso de leer
 
-🔗 [**Read more: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
+🔗 [**Leer más: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Volver arriba</a></p>
 
 # `4. Testing And Overall Quality Practices`
 
