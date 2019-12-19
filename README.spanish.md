@@ -1,4 +1,5 @@
 
+
 [✔]: assets/images/checkbox-small-blue.png
 
 # Mejores prácticas de NodeJS
@@ -526,515 +527,515 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Volver arriba</a></p>
 
-# `5. Going To Production Practices`
+# `5. Yendo a las prácticas de producción`
 
-## ![✔] 5.1. Monitoring
+## ![✔] 5.1. Monitorización
 
-**TL;DR:** Monitoring is a game of finding out issues before customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that ticks all boxes. Click ‘The Gist’ below for an overview of the solutions
+**TL;DR:** Monitorear es un juego para descubrir problemas antes de que lo hagan los clientes; obviamente, se le debe asignar una importancia sin precedentes. El mercado está abrumado por las ofertas, por lo tanto, considera empezar con la definición de las métricas básicas que debe seguir (mis sugerencias en el interior), luego repasar características sofisticadas adicionales y elegir la solución que cumple todos los requisitos. Haga clic en "Lo esencial" a continuación para obtener una descripción general de las soluciones
 
-**Otherwise:** Failure === disappointed customers. Simple
+**De lo contrario:** Fallar === clientes decepcionados. Simple
 
-🔗 [**Read More: Monitoring!**](/sections/production/monitoring.spanish.md)
-
-<br/><br/>
-
-## ![✔] 5.2. Increase transparency using smart logging
-
-**TL;DR:** Logs can be a dumb warehouse of debug statements or the enabler of a beautiful dashboard that tells the story of your app. Plan your logging platform from day 1: how logs are collected, stored and analyzed to ensure that the desired information (e.g. error rate, following an entire transaction through services and servers, etc) can really be extracted
-
-**Otherwise:** You end up with a black box that is hard to reason about, then you start re-writing all logging statements to add additional information
-
-🔗 [**Read More: Increase transparency using smart logging**](/sections/production/smartlogging.spanish.md)
+🔗 [**Leer más: Monitoring!**](/sections/production/monitoring.spanish.md)
 
 <br/><br/>
 
-## ![✔] 5.3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy
+## ![✔] 5.2. Aumenta la transparencia utilizando unos registros inteligentes
 
-**TL;DR:** Node is awfully bad at doing CPU intensive tasks like gzipping, SSL termination, etc. You should use ‘real’ middleware services like nginx, HAproxy or cloud vendor services instead
+**TL;DR:** Los registros pueden ser un almacén tonto de declaraciones de depuración o el habilitador de un hermoso tablero que cuenta la historia de tu aplicación. Planifica tu plataforma de registro desde el día 1: cómo se recopilan, almacenan y analizan los registros para garantizar que la información deseada (por ejemplo, tasa de error, después de una transacción completa a través de servicios y servidores, etc.) realmente se pueda extraer
 
-**Otherwise:** Your poor single thread will stay busy doing infrastructural tasks instead of dealing with your application core and performance will degrade accordingly
+**De lo contrario:** Terminarás con un cuadro negro con el que es difícil razonar y luego empezaras a reescribir todas las declaraciones de registro para agregar información adicional
 
-🔗 [**Read More: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.spanish.md)
-
-<br/><br/>
-
-## ![✔] 5.4. Lock dependencies
-
-**TL;DR:** Your code must be identical across all environments, but amazingly npm lets dependencies drift across environments by default – when you install packages at various environments it tries to fetch packages’ latest patch version. Overcome this by using npm config files, .npmrc, that tell each environment to save the exact (not the latest) version of each package. Alternatively, for finer grained control use `npm shrinkwrap`. \*Update: as of NPM5, dependencies are locked by default. The new package manager in town, Yarn, also got us covered by default
-
-**Otherwise:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
-
-🔗 [**Read More: Lock dependencies**](/sections/production/lockdependencies.spanish.md)
+🔗 [**Leer mas: Increase transparency using smart logging**](/sections/production/smartlogging.spanish.md)
 
 <br/><br/>
 
-## ![✔] 5.5. Guard process uptime using the right tool
+## ![✔] 5.3. Delega todo lo posible (por ejemplo, gzip, SSL) a un proxy inverso
 
-**TL;DR:** The process must go on and get restarted upon failures. For simple scenarios, process management tools like PM2 might be enough but in today's ‘dockerized’ world, cluster management tools should be considered as well
+**TL;DR:** Node es terriblemente malo para realizar tareas intensivas de CPU como gzipping, terminación SSL, etc. En su lugar, debes usar servicios de middleware "reales" como nginx, HAproxy o servicios de proveedores en la nube
 
-**Otherwise:** Running dozens of instances without a clear strategy and too many tools together (cluster management, docker, PM2) might lead to DevOps chaos
+**De lo contrario:** Tu único subproceso se mantendrá ocupado haciendo tareas de infraestructura en lugar de ocuparse del núcleo de tu aplicación y el rendimiento se degradará en consecuencia
 
-🔗 [**Read More: Guard process uptime using the right tool**](/sections/production/guardprocess.spanish.md)
-
-<br/><br/>
-
-## ![✔] 5.6. Utilize all CPU cores
-
-**TL;DR:** At its basic form, a Node app runs on a single CPU core while all others are left idling. It’s your duty to replicate the Node process and utilize all CPUs – For small-medium apps you may use Node Cluster or PM2. For a larger app consider replicating the process using some Docker cluster (e.g. K8S, ECS) or deployment scripts that are based on Linux init system (e.g. systespanish.md)
-
-**Otherwise:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.js utilizes only 1 (even using PaaS services like AWS beanstalk!)
-
-🔗 [**Read More: Utilize all CPU cores**](/sections/production/utilizecpu.spanish.md)
+🔗 [**Leer más: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.spanish.md)
 
 <br/><br/>
 
-## ![✔] 5.7. Create a ‘maintenance endpoint’
+## ![✔] 5.4. Bloquear dependencias
 
-**TL;DR:** Expose a set of system-related information, like memory usage and REPL, etc in a secured API. Although it’s highly recommended to rely on standard and battle-tests tools, some valuable information and operations are easier done using code
+**TL;DR:** Tu código debe ser idéntico en todos los entornos, pero sorprendentemente npm permite que las dependencias se desplacen entre los entornos de forma predeterminada: cuando instala paquetes en varios entornos, intenta obtener la última versión del parche de los paquetes. Evita esto utilizando archivos de configuración npm, .npmrc, que le indican a cada entorno que guarde la versión exacta (no la última) de cada paquete. Alternativamente, para un control más fino usa `npm shrinkwrap`. \ * Actualización: a partir de NPM5, las dependencias están bloqueadas de forma predeterminada. El nuevo administrador de paquetes, Yarn, también lo cubre por defecto
 
-**Otherwise:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
+**De lo contrario:** El control de calidad probará a fondo el código y aprobará una versión que se comportará de manera diferente cuando está en producción. Peor aún, diferentes servidores en el mismo clúster de producción pueden ejecutar código diferente
 
-🔗 [**Read More: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.spanish.md)
-
-<br/><br/>
-
-## ![✔] 5.8. Discover errors and downtime using APM products
-
-**TL;DR:** Application monitoring and performance products (a.k.a APM) proactively gauge codebase and API so they can auto-magically go beyond traditional monitoring and measure the overall user-experience across services and tiers. For example, some APM products can highlight a transaction that loads too slow on the end-users side while suggesting the root cause
-
-**Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real-world scenario and how these affect the UX
-
-🔗 [**Read More: Discover errors and downtime using APM products**](/sections/production/apmproducts.spanish.md)
+🔗 [**Leer más: Lock dependencies**](/sections/production/lockdependencies.spanish.md)
 
 <br/><br/>
 
-## ![✔] 5.9. Make your code production-ready
+## ![✔] 5.5. Proteja la disponibilidad del proceso utilizando la herramienta adecuada
 
-**TL;DR:** Code with the end in mind, plan for production from day 1. This sounds a bit vague so I’ve compiled a few development tips that are closely related to production maintenance (click Gist below)
+**TL;DR:** El proceso debe continuar y reiniciarse si falla. Para escenarios simples, las herramientas de administración de procesos como PM2 pueden ser suficientes, pero en el mundo "dockerizado" de hoy en día, las herramientas de administración de clústeres también deben considerarse
 
-**Otherwise:** A world champion IT/DevOps guy won’t save a system that is badly written
+**De lo contrario:** Ejecutar docenas de instancias sin una estrategia clara y demasiadas herramientas juntas (administración de clúster, docker, PM2) podría conducir al caos de DevOps
 
-🔗 [**Read More: Make your code production-ready**](/sections/production/productioncode.md)
-
-<br/><br/>
-
-## ![✔] 5.10. Measure and guard the memory usage
-
-**TL;DR:** Node.js has controversial relationships with memory: the v8 engine has soft limits on memory usage (1.4GB) and there are known paths to leak memory in Node’s code – thus watching Node’s process memory is a must. In small apps, you may gauge memory periodically using shell commands but in medium-large apps consider baking your memory watch into a robust monitoring system
-
-**Otherwise:** Your process memory might leak a hundred megabytes a day like how it happened at [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
-
-🔗 [**Read More: Measure and guard the memory usage**](/sections/production/measurememory.spanish.md)
+🔗 [**Leer más: Guard process uptime using the right tool**](/sections/production/guardprocess.spanish.md)
 
 <br/><br/>
 
-## ![✔] 5.11. Get your frontend assets out of Node
+## ![✔] 5.6. Utiliza todos los núcleos de la CPU
 
-**TL;DR:** Serve frontend content using dedicated middleware (nginx, S3, CDN) because Node performance really gets hurt when dealing with many static files due to its single-threaded model
+**TL;DR:** En su forma básica, una aplicación Node se ejecuta en un solo núcleo de CPU mientras que todas las demás quedan inactivas. Es tu deber replicar el proceso Node y utilizar todas las CPU: para aplicaciones pequeñas y medianas, puedes usar Node Cluster o PM2. Para una aplicación más grande, considera replicar el proceso utilizando algún clúster de Docker (por ejemplo, K8S, ECS) o scripts de implementación basados en el sistema de inicio Linux (ej. systemd)
 
-**Otherwise:** Your single Node thread will be busy streaming hundreds of html/images/angular/react files instead of allocating all its resources for the task it was born for – serving dynamic content
+**De lo contrario:** Es probable que tu aplicación utilice solo el 25% de sus recursos disponibles (!) O incluso menos. Ten en cuenta que un servidor típico tiene 4 núcleos de CPU o más, la implementación ingenua de Node.js utiliza solo 1 (¡incluso utilizando servicios PaaS como AWS beanstalk!)
 
-🔗 [**Read More: Get your frontend assets out of Node**](/sections/production/frontendout.spanish.md)
-
-<br/><br/>
-
-## ![✔] 5.12. Be stateless, kill your servers almost every day
-
-**TL;DR:** Store any type of data (e.g. user sessions, cache, uploaded files) within external data stores. Consider ‘killing’ your servers periodically or use ‘serverless’ platform (e.g. AWS Lambda) that explicitly enforces a stateless behavior
-
-**Otherwise:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
-
-🔗 [**Read More: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.spanish.md)
+🔗 [**Leer más: Utilize all CPU cores**](/sections/production/utilizecpu.spanish.md)
 
 <br/><br/>
 
-## ![✔] 5.13. Use tools that automatically detect vulnerabilities
+## ![✔] 5.7. Crear un "punto final de mantenimiento"
 
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities (from time to time) that can put a system at risk. This can be easily tamed using community and commercial tools that constantly check for vulnerabilities and warn (locally or at GitHub), some can even patch them immediately
+**TL;DR:** Descubre un conjunto de información relacionada con el sistema, como el uso de memoria y REPL, etc. en una API segura. Aunque es muy recomendable confiar en herramientas estándar y de pruebas de batalla, parte de la información y las operaciones valiosas se hacen más fácilmente usando código
 
-**Otherwise:** Keeping your code clean from vulnerabilities without dedicated tools will require you to constantly follow online publications about new threats. Quite tedious
+**De lo contrario:** Descubrirás que estás realizando muchas "implementaciones de diagnóstico": envío de código a producción solo para extraer cierta información con fines de diagnóstico
 
-🔗 [**Read More: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.spanish.md)
-
-<br/><br/>
-
-## ![✔] 5.14. Assign a transaction id to each log statement
-
-**TL;DR:** Assign the same identifier, transaction-id: {some value}, to each log entry within a single request. Then when inspecting errors in logs, easily conclude what happened before and after. Unfortunately, this is not easy to achieve in Node due to its async nature, see code examples inside
-
-**Otherwise:** Looking at a production error log without the context – what happened before – makes it much harder and slower to reason about the issue
-
-🔗 [**Read More: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.spanish.md)
+🔗 [**Leer más: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.spanish.md)
 
 <br/><br/>
 
-## ![✔] 5.15. Set NODE_ENV=production
+## ![✔] 5.8. Descubre errores y tiempos de inactividad utilizando productos APM
 
-**TL;DR:** Set the environment variable NODE_ENV to ‘production’ or ‘development’ to flag whether production optimizations should get activated – many npm packages determine the current environment and optimize their code for production
+**TL;DR:** Los productos de monitoreo y rendimiento de aplicaciones (también conocido como APM) miden proactivamente la base de código y la API para que puedan ir automáticamente más allá del monitoreo tradicional y medir la experiencia general del usuario en todos los servicios y niveles. Por ejemplo, algunos productos APM pueden resaltar una transacción que se carga demasiado lentamente en el lado de los usuarios finales al tiempo que sugiere lo que lo podría provocar
 
-**Otherwise:** Omitting this simple property might greatly degrade performance. For example, when using Express for server-side rendering omitting `NODE_ENV` makes it slower by a factor of three!
+**De lo contrario:** Es posible que dediques un gran esfuerzo a medir el rendimiento de la API y los tiempos de inactividad, probablemente nunca te darás cuenta de cuáles son tus partes de código más lentas en un escenario del mundo real y cómo afectan a la experiencia de usuario
 
-🔗 [**Read More: Set NODE_ENV=production**](/sections/production/setnodeenv.spanish.md)
-
-<br/><br/>
-
-## ![✔] 5.16. Design automated, atomic and zero-downtime deployments
-
-**TL;DR:** Research shows that teams who perform many deployments lower the probability of severe production issues. Fast and automated deployments that don’t require risky manual steps and service downtime significantly improve the deployment process. You should probably achieve this using Docker combined with CI tools as they became the industry standard for streamlined deployment
-
-**Otherwise:** Long deployments -> production downtime & human-related error -> team unconfident in making deployment -> fewer deployments and features
+🔗 [**Leer más: Discover errors and downtime using APM products**](/sections/production/apmproducts.spanish.md)
 
 <br/><br/>
 
-## ![✔] 5.17. Use an LTS release of Node.js
+## ![✔] 5.9. Prepara tu código para la producción
 
-**TL;DR:** Ensure you are using an LTS version of Node.js to receive critical bug fixes, security updates and performance improvements
+**TL;DR:** Codifica con el fin en mente, planifica la producción desde el día 1. Esto suena un poco vago, así que he compilado algunos consejos de desarrollo que están estrechamente relacionados con el mantenimiento de la producción (haga clic en Gist a continuación)
 
-**Otherwise:** Newly discovered bugs or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain
+**De lo contrario:** Un campeón mundial de IT/DevOps no salvará un sistema mal escrito
 
-🔗 [**Read More: Use an LTS release of Node.js**](/sections/production/LTSrelease.spanish.md)
+🔗 [**Leer más: Make your code production-ready**](/sections/production/productioncode.md)
 
 <br/><br/>
 
-## ![✔] 5.18. Don't route logs within the app
+## ![✔] 5.10. Medir y proteger el uso de la memoria.
 
-**TL;DR:** Log destinations should not be hard-coded by developers within the application code, but instead should be defined by the execution environment the application runs in. Developers should write logs to `stdout` using a logger utility and then let the execution environment (container, server, etc.) pipe the `stdout` stream to the appropriate destination (i.e. Splunk, Graylog, ElasticSearch, etc.).
+**TL;DR:** Node.js tiene relaciones controvertidas con la memoria: el motor v8 tiene límites suaves en el uso de la memoria (1,4 GB) y hay rutas conocidas para perder memoria en el código de Node, por lo que es imprescindible observar la memoria de proceso de Node. En aplicaciones pequeñas, puedes medir la memoria periódicamente utilizando comandos de shell, pero en aplicaciones medianas y grandes, considera convertir tu reloj de memoria en un sistema de monitoreo robusto
 
-**Otherwise:** Application handling log routing === hard to scale, loss of logs, poor separation of concerns
+**De lo contrario:** Tu memoria de proceso podría perder cien megabytes por día, como sucedió a [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
 
-🔗 [**Read More: Log Routing**](/sections/production/logrouting.md)
+🔗 [**Leer más: Measure and guard the memory usage**](/sections/production/measurememory.spanish.md)
+
+<br/><br/>
+
+## ![✔] 5.11. Saca tus recursos frontend de Node
+
+**TL;DR:** Sirve el contenido frontend usando middleware dedicado (nginx, S3, CDN) porque el rendimiento de Node se ve  realmente afectado cuando se trata con muchos archivos estáticos debido a su modelo de subproceso único
+
+**De lo contrario:** Tu único hilo Node estará ocupado transmitiendo cientos de archivos html / images / angular / react en lugar de asignar todos sus recursos para la tarea para la que nació: servir contenido dinámico
+
+🔗 [**Leer más: Get your frontend assets out of Node**](/sections/production/frontendout.spanish.md)
+
+<br/><br/>
+
+## ![✔] 5.12. Se anti-estado, mata tus servidores casi todos los días
+
+**TL;DR:** Almacena cualquier tipo de datos (por ejemplo, sesiones de usuario, caché, archivos cargados) en almacenes de datos externos. Considera matar" sus servidores periódicamente o utilice la plataforma "sin servidor" (por ejemplo, AWS Lambda) que aplica explícitamente un comportamiento sin estado
+
+**De lo contrario:** Un fallo en un servidor dará como resultado el tiempo de inactividad de la aplicación en lugar de simplemente matar una máquina defectuosa. Además, la elasticidad de escalamiento será más difícil debido a la dependencia de un servidor específico
+
+🔗 [**Leer más: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.spanish.md)
+
+<br/><br/>
+
+## ![✔] 5.13. Usa herramientas que detecten vulnerabilidades automáticamente
+
+**TL;DR:** Incluso las dependencias de mayor reputación como Express tienen vulnerabilidades conocidas (de vez en cuando) que pueden poner en riesgo un sistema. Esto se puede dominar fácilmente usando herramientas comunitarias y comerciales que constantemente verifican vulnerabilidades y advierten (localmente o en GitHub), algunos incluso pueden parchearlas de inmediato
+
+**De lo contrario:** Mantener tu código limpio de vulnerabilidades sin herramientas dedicadas requerirá que sigas constantemente las publicaciones en línea sobre nuevas amenazas. Bastante tedioso
+
+🔗 [**Leer más: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.spanish.md)
+
+<br/><br/>
+
+## ![✔] 5.14. Asigna una identificación de transacción a cada instrucción del registro
+
+**TL;DR:** Asigna el mismo identificador, id-transacción: {algún valor}, a cada entrada de registro dentro de una sola solicitud. Luego, al inspeccionar los errores en los registros, encontrarás fácilmente lo que sucedió antes y después. Desafortunadamente, esto no es fácil de lograr en Node debido a su naturaleza asíncrona, vea ejemplos de código dentro
+
+**De lo contrario:** Ver un registro de errores de producción sin el contexto, lo que sucedió antes, hace que sea mucho más difícil y lento razonar sobre el problema
+
+🔗 [**Leer más: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.spanish.md)
+
+<br/><br/>
+
+## ![✔] 5.15. Establecer NODE_ENV=production
+
+**TL;DR:** Establece la variable de entorno NODE_ENV en "producción" o "desarrollo" para marcar si las optimizaciones de producción deben activarse; muchos paquetes npm determinan el entorno actual y optimizan su código para la producción
+
+**De lo contrario:** Omitir esta simple propiedad podría degradar en gran medida el rendimiento. Por ejemplo, cuando se usa Express para la representación del lado del servidor, omitir `NODE_ENV` lo hace un tercio más lento.
+
+🔗 [**Leer más: Set NODE_ENV=production**](/sections/production/setnodeenv.spanish.md)
+
+<br/><br/>
+
+## ![✔] 5.16. Diseña implementaciones automatizadas, atómicas y de tiempo de inactividad cero
+
+**TL;DR:** La investigación muestra que los equipos que realizan muchas implementaciones reducen la probabilidad de problemas graves de producción. Las implementaciones rápidas y automatizadas que no requieren pasos manuales riesgosos y el tiempo de inactividad del servicio mejoran significativamente el proceso de implementación. Probablemente deberías lograr esto usando Docker combinado con herramientas de CI, ya que se convirtieron en el estándar de la industria para la implementación simplificada
+
+**De lo contrario:** Implementaciones largas -> tiempo de inactividad de producción y error relacionado con el ser humano -> equipo desconfiado en la implementación -> menos implementaciones y características
+
+<br/><br/>
+
+## ![✔] 5.17. Usa una versión LTS de Node.js
+
+**TL;DR:** Asegúrate de estar utilizando una versión LTS de Node.js para recibir correcciones de errores críticos, actualizaciones de seguridad y mejoras de rendimiento.
+
+**De lo contrario:** Los errores o vulnerabilidades recientemente descubiertos podrían utilizarse para explotar una aplicación que se ejecuta en producción, y su aplicación puede dejar de ser compatible con varios módulos y ser más difícil de mantener
+
+🔗 [**Leer más: Use an LTS release of Node.js**](/sections/production/LTSrelease.spanish.md)
+
+<br/><br/>
+
+## ![✔] 5.18. No enrutes registros dentro de la aplicación
+
+**TL;DR:** Los desarrolladores no deben codificar los destinos de registro dentro del código de la aplicación, sino que deben estar definidos por el entorno de ejecución en el que se ejecuta la aplicación. Los desarrolladores deben escribir registros en 'stdout' utilizando una utilidad de registro y luego dejar que el entorno de ejecución (contenedor, servidor, etc.) canalice la secuencia `stdout` al destino apropiado (es decir, Splunk, Graylog, ElasticSearch, etc.).
+
+**De lo contrario** Aplicación de enrutamiento de registro de manejo === difícil de escalar, pérdida de registros, mala separación de preocupaciones
+
+🔗 [**Leer más: Log Routing**](/sections/production/logrouting.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Volver arriba</a></p>
 
-# `6. Security Best Practices`
+# `6. Mejores prácticas de seguridad`
 
 <div align="center">
 <img src="https://img.shields.io/badge/OWASP%20Threats-Top%2010-green.svg" alt="54 items"/>
 </div>
 
-## ![✔] 6.1. Embrace linter security rules
+## ![✔] 6.1. Adopta las reglas de seguridad de linter
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Make use of security-related linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to catch security vulnerabilities and issues as early as possible, preferably while they're being coded. This can help catching security weaknesses like using eval, invoking a child process or importing a module with a string literal (e.g. user input). Click 'Read more' below to see code examples that will get caught by a security linter
+**TL;DR:** Utiliza los complementos de interfaz relacionados con la seguridad, como [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) para detectar vulnerabilidades y problemas de seguridad lo antes posible, preferiblemente mientras se codifican. Esto puede ayudar a detectar debilidades de seguridad, como usar eval, invocar un proceso secundario o importar un módulo con un literal de cadena (por ejemplo, entrada del usuario). Haga clic en "Leer más" a continuación para ver ejemplos de código que quedarán atrapados por una interfaz de seguridad
 
-**Otherwise:** What could have been a straightforward security weakness during development becomes a major issue in production. Also, the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories
+**De lo contrario:** Lo que podría haber sido una debilidad de seguridad directa durante el desarrollo se convierte en un problema importante en la producción. Además, el proyecto puede no seguir prácticas de seguridad de código consistentes, lo que lleva a la introducción de vulnerabilidades o secretos confidenciales confiados en repositorios remotos
 
-🔗 [**Read More: Lint rules**](/sections/security/lintrules.spanish.md)
+🔗 [**Leer más: Lint rules**](/sections/security/lintrules.spanish.md)
 
 <br/><br/>
 
-## ![✔] 6.2. Limit concurrent requests using a middleware
+## ![✔] 6.2. Limita las solicitudes concurrentes utilizando un middleware
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** DOS attacks are very popular and relatively easy to conduct. Implement rate limiting using an external service such as cloud load balancers, cloud firewalls, nginx, [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) package, or (for smaller and less critical apps) a rate-limiting middleware (e.g. [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
+**TL;DR:** Los ataques DOS son muy populares y relativamente fáciles de realizar. Implementa la limitación de velocidad utilizando un servicio externo como balanceadores de carga en la nube, firewalls en la nube, nginx, [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) paquete, o (para aplicaciones más pequeñas y menos críticas) un middleware que limita la velocidad (e.j. [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
 
-**Otherwise:** An application could be subject to an attack resulting in a denial of service where real users receive a degraded or unavailable service.
+**De lo contrario:** Una aplicación podría estar sujeta a un ataque que resulte en una denegación de servicio donde los usuarios reales reciban un servicio degradado o no disponible.
 
-🔗 [**Read More: Implement rate limiting**](/sections/security/limitrequests.spanish.md)
+🔗 [**Leer más: Implement rate limiting**](/sections/security/limitrequests.spanish.md)
 
 <br/><br/>
 
-## ![✔] 6.3 Extract secrets from config files or use packages to encrypt them
+## ![✔] 6.3 Quita los secretos de los archivos de configuración o usa paquetes para cifrarlos
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A3:Sensitive%20Data%20Exposure%20-green.svg" alt=""/></a>
 
-**TL;DR:** Never store plain-text secrets in configuration files or source code. Instead, make use of secret-management systems like Vault products, Kubernetes/Docker Secrets, or using environment variables. As a last resort, secrets stored in source control must be encrypted and managed (rolling keys, expiring, auditing, etc). Make use of pre-commit/push hooks to prevent committing secrets accidentally
+**TL;DR:** Nunca almacenes secretos sin formato en archivos de configuración o código fuente. En su lugar, utiliza sistemas de gestión secreta como productos Vault, Kubernetes / Docker Secrets o variables de entorno. Como último recurso, los secretos almacenados en el control de código fuente deben ser encriptados y administrados (claves rodantes, vencimiento, auditoría, etc.). Utiliza los ganchos en pre-commit/push para evitar que se guarden secretos accidentalmente
 
-**Otherwise:** Source control, even for private repositories, can mistakenly be made public, at which point all secrets are exposed. Access to source control for an external party will inadvertently provide access to related systems (databases, apis, services, etc).
+**De lo contrario:** El control del código fuente, incluso para repositorios privados, puede hacerse público por error, momento en el que se exponen todos los secretos. El acceso al control de origen para una parte externa proporcionará inadvertidamente acceso a sistemas relacionados (bases de datos, API, servicios, etc.).
 
-🔗 [**Read More: Secret management**](/sections/security/secretmanagement.spanish.md)
+🔗 [**Leer más: Secret management**](/sections/security/secretmanagement.spanish.md)
 
 <br/><br/>
 
-## ![✔] 6.4. Prevent query injection vulnerabilities with ORM/ODM libraries
+## ![✔] 6.4. Prevenir vulnerabilidades de inyección de consultas con bibliotecas ORM / ODM
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
-**TL;DR:** To prevent SQL/NoSQL injection and other malicious attacks, always make use of an ORM/ODM or a database library that escapes data or supports named or indexed parameterized queries, and takes care of validating user input for expected types. Never just use JavaScript template strings or string concatenation to inject values into queries as this opens your application to a wide spectrum of vulnerabilities. All the reputable Node.js data access libraries (e.g. [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose)) have built-in protection against injection attacks.
+**TL;DR:** Para evitar la inyección de SQL / NoSQL y otros ataques maliciosos, utilice siempre un ORM / ODM o una biblioteca de base de datos que escape a los datos o admita consultas parametrizadas con nombre o indexadas, y se encarga de validar la entrada del usuario para los tipos esperados. Nunca utilices cadenas de plantillas de JavaScript o concatenación de cadenas para inyectar valores en las consultas, ya que esto abre su aplicación a un amplio espectro de vulnerabilidades. Todas las bibliotecas acreditadas de acceso a datos de Node.js (e.g. [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose)) tienen protección incorporada contra ataques de inyección.
 
-**Otherwise:** Unvalidated or unsanitized user input could lead to operator injection when working with MongoDB for NoSQL, and not using a proper sanitization system or ORM will easily allow SQL injection attacks, creating a giant vulnerability.
+**De lo contrario:** La entrada de usuario no validada o no higiénica podría conducir a la inyección del operador cuando se trabaja con MongoDB para NoSQL, y no usar un sistema de desinfección adecuado u ORM permitirá fácilmente ataques de inyección SQL, creando una vulnerabilidad gigante.
 
-🔗 [**Read More: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.spanish.md)
-
-<br/><br/>
-
-## ![✔] 6.5. Collection of generic security best practices
-
-**TL;DR:** This is a collection of security advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
-
-🔗 [**Read More: Common security best practices**](/sections/security/commonsecuritybestpractices.spanish.md)
+🔗 [**Leer más: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.spanish.md)
 
 <br/><br/>
 
-## ![✔] 6.6. Adjust the HTTP response headers for enhanced security
+## ![✔] 6.5. Colección de mejores prácticas de seguridad genéricas
+
+**TL;DR:** Esta es una colección de consejos de seguridad que no está relacionada directamente con Node.js: la implementación de Node no es muy diferente a la de cualquier otro idioma. Haz clic en leer más para hojear.
+
+🔗 [**Leer más: Common security best practices**](/sections/security/commonsecuritybestpractices.spanish.md)
+
+<br/><br/>
+
+## ![✔] 6.6. Ajusta los encabezados de respuesta HTTP para mayor seguridad
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Your application should be using secure headers to prevent attackers from using common attacks like cross-site scripting (XSS), clickjacking and other malicious attacks. These can be configured easily using modules like [helmet](https://www.npmjs.com/package/helmet).
+**TL;DR:** Tu aplicación debe usar encabezados seguros para evitar que los atacantes usen ataques comunes como scripting entre sitios (XSS), clickjacking y otros ataques maliciosos. Estos se pueden configurar fácilmente utilizando módulos como [helmet](https://www.npmjs.com/package/helmet).
 
-**Otherwise:** Attackers could perform direct attacks on your application's users, leading to huge security vulnerabilities
+**De lo contrario:** Los atacantes pueden realizar ataques directos a los usuarios de su aplicación, lo que genera enormes vulnerabilidades de seguridad
 
-🔗 [**Read More: Using secure headers in your application**](/sections/security/secureheaders.spanish.md)
+🔗 [**Leer más: Using secure headers in your application**](/sections/security/secureheaders.spanish.md)
 
 <br/><br/>
 
-## ![✔] 6.7. Constantly and automatically inspect for vulnerable dependencies
+## ![✔] 6.7. Inspeccionar de manera constante y automática las dependencias vulnerables
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Known%20Vulnerabilities%20-green.svg" alt=""/></a>
 
-**TL;DR:** With the npm ecosystem it is common to have many dependencies for a project. Dependencies should always be kept in check as new vulnerabilities are found. Use tools like [npm audit](https://docs.npmjs.com/cli/audit) or [snyk](https://snyk.io/) to track, monitor and patch vulnerable dependencies. Integrate these tools with your CI setup so you catch a vulnerable dependency before it makes it to production.
+**TL;DR:** Con el ecosistema npm es común tener muchas dependencias para un proyecto. Las dependencias siempre deben mantenerse bajo control a medida que se encuentran nuevas vulnerabilidades. Usa herramientas como [npm audit](https://docs.npmjs.com/cli/audit) o [snyk](https://snyk.io/) para rastrear, monitorear y parchear dependencias vulnerables. Integra estas herramientas con su configuración de CI para que pueda detectar una dependencia vulnerable antes de que llegue a producción.
 
-**Otherwise:** An attacker could detect your web framework and attack all its known vulnerabilities.
+**De lo contrario:** Un atacante podría detectar su marco web y atacar todas sus vulnerabilidades conocidas.
 
-🔗 [**Read More: Dependency security**](/sections/security/dependencysecurity.spanish.md)
+🔗 [**Leer más: Dependency security**](/sections/security/dependencysecurity.spanish.md)
 
 <br/><br/>
 
-## ![✔] 6.8. Avoid using the Node.js crypto library for handling passwords, use Bcrypt
+## ![✔] 6.8. Evita usar la biblioteca criptográfica Node.js para manejar contraseñas, use Bcrypt
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;DR:** Passwords or secrets (API keys) should be stored using a secure hash + salt function like `bcrypt`, that should be a preferred choice over its JavaScript implementation due to performance and security reasons.
+**TL;DR:** Las contraseñas o los secretos (claves API) deben almacenarse utilizando una función segura hash + salt como `bcrypt`, que debería ser la opción preferida sobre su implementación de JavaScript debido a razones de rendimiento y seguridad.
 
-**Otherwise:** Passwords or secrets that are persisted without using a secure function are vulnerable to brute forcing and dictionary attacks that will lead to their disclosure eventually.
+**De lo contrario:** Las contraseñas o los secretos que se conservan sin utilizar una función segura son vulnerables a la fuerza bruta y los ataques de diccionario que eventualmente conducirán a su divulgación.
 
-🔗 [**Read More: Use Bcrypt**](/sections/security/bcryptpasswords.spanish.md)
+🔗 [**Leer más: Use Bcrypt**](/sections/security/bcryptpasswords.spanish.md)
 
 <br/><br/>
 
-## ![✔] 6.9. Escape HTML, JS and CSS output
+## ![✔] 6.9. Escapa la salida de HTML, JS y CSS
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Untrusted data that is sent down to the browser might get executed instead of just being displayed, this is commonly referred as a cross-site-scripting (XSS) attack. Mitigate this by using dedicated libraries that explicitly mark the data as pure content that should never get executed (i.e. encoding, escaping)
+**TL;DR:** Los datos no confiables que se envían al navegador pueden ejecutarse en lugar de mostrarse, esto se conoce comúnmente como un ataque de scripting entre sitios (XSS). Mitiga esto mediante el uso de bibliotecas dedicadas que marquen explícitamente los datos como contenido puro que nunca debe ejecutarse (es decir, codificación, escape)
 
-**Otherwise:** An attacker might store malicious JavaScript code in your DB which will then be sent as-is to the poor clients
+**De lo contrario:** Un atacante podría almacenar código JavaScript malicioso en su base de datos que luego se enviará tal cual a los pobres clientes 
 
-🔗 [**Read More: Escape output**](/sections/security/escape-output.spanish.md)
+🔗 [**Leer más: Escape output**](/sections/security/escape-output.spanish.md)
 
 <br/><br/>
 
-## ![✔] 6.10. Validate incoming JSON schemas
+## ![✔] 6.10. Validar esquemas JSON entrantes
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7: XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a>
 
-**TL;DR:** Validate the incoming requests' body payload and ensure it meets expectations, fail fast if it doesn't. To avoid tedious validation coding within each route you may use lightweight JSON-based validation schemas such as [jsonschema](https://www.npmjs.com/package/jsonschema) or [joi](https://www.npmjs.com/package/joi)
+**TL;DR:** Valida la carga útil del cuerpo de las solicitudes entrantes y asegúrese de que cumpla con las expectativas, falle rápidamente si no lo hace. Para evitar la tediosa codificación de validación dentro de cada ruta, puede usar esquemas de validación ligeros basados en JSON, como [jsonschema](https://www.npmjs.com/package/jsonschema) o [joi](https://www.npmjs.com/package/joi)
 
-**Otherwise:** Your generosity and permissive approach greatly increases the attack surface and encourages the attacker to try out many inputs until they find some combination to crash the application
+**De lo contrario:** Tu generosidad y enfoque permisivo aumentan enormemente la superficie de ataque y ayuda al atacante a probar muchas entradas hasta que encuentren alguna combinación para bloquear la aplicación.
 
-🔗 [**Read More: Validate incoming JSON schemas**](/sections/security/validation.spanish.md)
+🔗 [**Leer más: Validate incoming JSON schemas**](/sections/security/validation.spanish.md)
 
 <br/><br/>
 
-## ![✔] 6.11. Support blacklisting JWTs
+## ![✔] 6.11. Admite las listas negras de JWT
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;DR:** When using JSON Web Tokens (for example, with [Passport.js](https://github.com/jaredhanson/passport)), by default there's no mechanism to revoke access from issued tokens. Once you discover some malicious user activity, there's no way to stop them from accessing the system as long as they hold a valid token. Mitigate this by implementing a blacklist of untrusted tokens that are validated on each request.
+**TL;DR:** Cuando se usan tokens web JSON (por ejemplo con [Passport.js](https://github.com/jaredhanson/passport)), de manera predeterminada, no existe un mecanismo para revocar el acceso de los tokens emitidos. Una vez que descubres alguna actividad maliciosa de los usuarios, no hay forma de evitar que accedan al sistema siempre que tengan un token válido. Soluciona esto implementando una lista negra de tokens no confiables que se validan en cada solicitud.
 
-**Otherwise:** Expired, or misplaced tokens could be used maliciously by a third party to access an application and impersonate the owner of the token.
+**De lo contrario:** Los tokens caducados o extraviados pueden ser utilizados maliciosamente por un tercero para acceder a una aplicación y hacerse pasar por el propietario del token.
 
-🔗 [**Read More: Blacklist JSON Web Tokens**](/sections/security/expirejwt.spanish.md)
+🔗 [**Leer más: Blacklist JSON Web Tokens**](/sections/security/expirejwt.spanish.md)
 
 <br/><br/>
 
-## ![✔] 6.12. Prevent brute-force attacks against authorization
+## ![✔] 6.12. Prevenir ataques de fuerza bruta contra la autorización
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;DR:** A simple and powerful technique is to limit authorization attempts using two metrics:
+**TL;DR:** Una técnica simple y poderosa es limitar los intentos de autorización utilizando dos métricas:
 
-1. The first is number of consecutive failed attempts by the same user unique ID/name and IP address.
-2. The second is number of failed attempts from an IP address over some long period of time. For example, block an IP address if it makes 100 failed attempts in one day.
+1. El primero es el número de intentos fallidos consecutivos por el mismo ID / nombre único de usuario y dirección IP.
+2. El segundo es el número de intentos fallidos de una dirección IP durante un largo período de tiempo. Por ejemplo, bloquee una dirección IP si realiza 100 intentos fallidos en un día.
 
-**Otherwise:** An attacker can issue unlimited automated password attempts to gain access to privileged accounts on an application
+**De lo contrario:** Un atacante puede emitir intentos de contraseña automatizados ilimitados para obtener acceso a cuentas privilegiadas en una aplicación
 
-🔗 [**Read More: Login rate limiting**](/sections/security/login-rate-limit.spanish.md)
+🔗 [**Leer más: Login rate limiting**](/sections/security/login-rate-limit.spanish.md)
 
 <br/><br/>
 
-## ![✔] 6.13. Run Node.js as non-root user
+## ![✔] 6.13. Ejecuta Node.js como usuario no root
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A5:Broken%20Access%20Access%20Control-green.svg" alt=""/></a>
 
-**TL;DR:** There is a common scenario where Node.js runs as a root user with unlimited permissions. For example, this is the default behaviour in Docker containers. It's recommended to create a non-root user and either bake it into the Docker image (examples given below) or run the process on this user's behalf by invoking the container with the flag "-u username"
+**TL;DR:** Hay un escenario común en el que Node.js se ejecuta como usuario root con permisos ilimitados. Por ejemplo, este es el comportamiento predeterminado en los contenedores Docker. Se recomienda crear un usuario no root y hornearlo en la imagen de Docker (ejemplos a continuación) o ejecutar el proceso en nombre de este usuario invocando el contenedor con la marca "-u username"
 
-**Otherwise:** An attacker who manages to run a script on the server gets unlimited power over the local machine (e.g. change iptable and re-route traffic to his server)
+**De lo contrario:** Un atacante que logra ejecutar un script en el servidor obtiene poder ilimitado sobre la máquina local (por ejemplo, cambiar iptable y redirigir el tráfico a su servidor)
 
-🔗 [**Read More: Run Node.js as non-root user**](/sections/security/non-root-user.spanish.md)
+🔗 [**Leer más: Run Node.js as non-root user**](/sections/security/non-root-user.spanish.md)
 
 <br/><br/>
 
-## ![✔] 6.14. Limit payload size using a reverse-proxy or a middleware
+## ![✔] 6.14. Limita el tamaño de la carga útil utilizando un proxy inverso o un middleware
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** The bigger the body payload is, the harder your single thread works in processing it. This is an opportunity for attackers to bring servers to their knees without tremendous amount of requests (DOS/DDOS attacks). Mitigate this limiting the body size of incoming requests on the edge (e.g. firewall, ELB) or by configuring [express body parser](https://github.com/expressjs/body-parser) to accept only small-size payloads
+**TL;DR:** Cuanto más grande es la carga útil del cuerpo, más difícil es que su único hilo trabaje en su procesamiento. Esta es una oportunidad para que los atacantes pongan a los servidores de rodillas sin una gran cantidad de solicitudes (ataques DOS / DDOS). Mitiga esto limitando el tamaño del cuerpo de las solicitudes entrantes en el borde (por ejemplo, firewall, ELB) o configurando [express body parser](https://github.com/expressjs/body-parser) para aceptar solo cargas pequeñas
 
-**Otherwise:** Your application will have to deal with large requests, unable to process the other important work it has to accomplish, leading to performance implications and vulnerability towards DOS attacks
+**De lo contrario:** Tu aplicación tendrá que lidiar con solicitudes grandes, incapaz de procesar el otro trabajo importante que tiene que realizar, lo que conlleva implicaciones de rendimiento y vulnerabilidad ante los ataques de DOS
 
-🔗 [**Read More: Limit payload size**](/sections/security/requestpayloadsizelimit.spanish.md)
+🔗 [**Leer más: Limit payload size**](/sections/security/requestpayloadsizelimit.spanish.md)
 
 <br/><br/>
 
-## ![✔] 6.15. Avoid JavaScript eval statements
+## ![✔] 6.15. Evita las sentencias eval de JavaScript
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** `eval` is evil as it allows executing custom JavaScript code during run time. This is not just a performance concern but also an important security concern due to malicious JavaScript code that may be sourced from user input. Another language feature that should be avoided is `new Function` constructor. `setTimeout` and `setInterval` should never be passed dynamic JavaScript code either.
+**TL;DR:** `eval` es malo, ya que permite ejecutar código JavaScript personalizado durante el tiempo de ejecución. Esto no es solo un problema de rendimiento, sino también un problema de seguridad importante debido al código JavaScript malicioso que puede obtenerse de la entrada del usuario. Otra característica del lenguaje que debe evitarse es el constructor `new Function`. `setTimeout` y` setInterval` y nunca deberían pasar el código JavaScript dinámico tampoco.
 
-**Otherwise:** Malicious JavaScript code finds a way into text passed into `eval` or other real-time evaluating JavaScript language functions, and will gain complete access to JavaScript permissions on the page. This vulnerability is often manifested as an XSS attack.
+**De lo contrario:** El código JavaScript malicioso encuentra una forma en el texto pasado a `eval` u otras funciones del lenguaje JavaScript de evaluación en tiempo real, y obtendrá acceso completo a los permisos de JavaScript en la página. Esta vulnerabilidad a menudo se manifiesta como un ataque XSS.
 
-🔗 [**Read More: Avoid JavaScript eval statements**](/sections/security/avoideval.spanish.md)
+🔗 [**Leer más: Avoid JavaScript eval statements**](/sections/security/avoideval.spanish.md)
 
 <br/><br/>
 
-## ![✔] 6.16. Prevent evil RegEx from overloading your single thread execution
+## ![✔] 6.16. Evita que el malvado de RegEx sobrecargue tu ejecución de subproceso único
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Regular Expressions, while being handy, pose a real threat to JavaScript applications at large, and the Node.js platform in particular. A user input for text to match might require an outstanding amount of CPU cycles to process. RegEx processing might be inefficient to an extent that a single request that validates 10 words can block the entire event loop for 6 seconds and set the CPU on 🔥. For that reason, prefer third-party validation packages like [validator.js](https://github.com/chriso/validator.js) instead of writing your own Regex patterns, or make use of [safe-regex](https://github.com/substack/safe-regex) to detect vulnerable regex patterns
+**TL;DR:** Las expresiones regulares, aunque son prácticas, representan una amenaza real para las aplicaciones de JavaScript en general, y para la plataforma Node.js en particular. Una entrada de usuario para que el texto coincida puede requerir una cantidad excepcional de ciclos de CPU para procesar. El procesamiento de RegEx puede ser ineficiente hasta el punto de que una sola solicitud que valida 10 palabras puede bloquear todo el bucle de eventos durante 6 segundos y activar la CPU a 🔥. Por esa razón, escoge paquetes de validación de terceros como [validator.js](https://github.com/chriso/validator.js) en lugar de escribir sus propios patrones Regex, o hacer uso de [safe-regex](https://github.com/substack/safe-regex) para detectar patrones de expresiones regulares vulnerables
 
-**Otherwise:** Poorly written regexes could be susceptible to Regular Expression DoS attacks that will block the event loop completely. For example, the popular `moment` package was found vulnerable with malicious RegEx usage in November of 2017
+**De lo contrario:** Las expresiones regulares mal escritas pueden ser susceptibles a los ataques DoS de Expresión regular que bloquearán el bucle de eventos por completo. Por ejemplo, el popular paquete `moment` fue encontrado vulnerable con el uso malicioso de RegEx en noviembre de 2017
 
-🔗 [**Read More: Prevent malicious RegEx**](/sections/security/regex.spanish.md)
+🔗 [**Leer más: Prevent malicious RegEx**](/sections/security/regex.spanish.md)
 
 <br/><br/>
 
-## ![✔] 6.17. Avoid module loading using a variable
+## ![✔] 6.17. Evita cargar módulos usando una variable
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** Avoid requiring/importing another file with a path that was given as parameter due to the concern that it could have originated from user input. This rule can be extended for accessing files in general (i.e. `fs.readFile()`) or other sensitive resource access with dynamic variables originating from user input. [Eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) linter can catch such patterns and warn early enough
+**TL;DR:** Evita requerir / importar otro archivo con una ruta que se proporcionó como parámetro debido a la preocupación de que podría haberse originado a partir de la entrada del usuario. Esta regla se puede extender para acceder a archivos en general (es decir, `fs.readFile ()`) u otro acceso a recursos confidenciales con variables dinámicas que se originan a partir de la entrada del usuario. [Eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) linter puede atrapar tales patrones y advertir lo suficientemente temprano
 
-**Otherwise:** Malicious user input could find its way to a parameter that is used to require tampered files, for example, a previously uploaded file on the filesystem, or access already existing system files.
+**De lo contrario:** La entrada de usuario malintencionado podría encontrar su camino hacia un parámetro que se utiliza para requerir archivos manipulados, por ejemplo, un archivo cargado previamente en el sistema de archivos, o acceder a archivos del sistema ya existentes.
 
-🔗 [**Read More: Safe module loading**](/sections/security/safemoduleloading.spanish.md)
+🔗 [**Leer más: Safe module loading**](/sections/security/safemoduleloading.spanish.md)
 
 <br/><br/>
 
-## ![✔] 6.18. Run unsafe code in a sandbox
+## ![✔] 6.18. Ejecuta código inseguro en un sandbox
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** When tasked to run external code that is given at run-time (e.g. plugin), use any sort of 'sandbox' execution environment that isolates and guards the main code against the plugin. This can be achieved using a dedicated process (e.g. `cluster.fork()`), serverless environment or dedicated npm packages that act as a sandbox
+**TL;DR:** Cuando se te asigne la tarea de ejecutar código externo que se proporciona en tiempo de ejecución (por ejemplo, un complemento), usa cualquier tipo de entorno de ejecución 'sandbox' que aísle y proteja el código principal contra el complemento. Esto se puede lograr mediante un proceso dedicado (por ejemplo, `cluster.fork ()`), entorno sin servidor o paquetes npm dedicados que actúan como un sandbox
 
-**Otherwise:** A plugin can attack through an endless variety of options like infinite loops, memory overloading, and access to sensitive process environment variables
+**De lo contrario:** Un complemento puede atacar a través de una variedad infinita de opciones como bucles infinitos, sobrecarga de memoria y acceso a variables de entorno de procesos sensibles.
 
-🔗 [**Read More: Run unsafe code in a sandbox**](/sections/security/sandbox.spanish.md)
+🔗 [**Leer más: Run unsafe code in a sandbox**](/sections/security/sandbox.spanish.md)
 
 <br/><br/>
 
-## ![✔] 6.19. Take extra care when working with child processes
+## ![✔] 6.19. Ten mucho cuidado al trabajar con procesos secundarios.
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** Avoid using child processes when possible and validate and sanitize input to mitigate shell injection attacks if you still have to. Prefer using `child_process.execFile` which by definition will only execute a single command with a set of attributes and will not allow shell parameter expansion.
+**TL;DR:** Evita el uso de procesos secundarios cuando sea posible y valide y desinfecta la entrada para mitigar los ataques de inyección de shell si aún tienes que hacerlo. Usa`child_process.execFile` que, por definición, solo ejecutará un solo comando con un conjunto de atributos y no permitirá la expansión de parámetros de shell.
 
-**Otherwise:** Naive use of child processes could result in remote command execution or shell injection attacks due to malicious user input passed to an unsanitized system command.
+**De lo contrario:** El uso ingenuo de procesos secundarios podría provocar la ejecución remota de comandos o ataques de inyección de shell debido a la entrada maliciosa del usuario transmitida a un comando del sistema no desinfectado.
 
-🔗 [**Read More: Be cautious when working with child processes**](/sections/security/childprocesses.spanish.md)
+🔗 [**Leer más: Be cautious when working with child processes**](/sections/security/childprocesses.spanish.md)
 
 <br/><br/>
 
-## ![✔] 6.20. Hide error details from clients
+## ![✔] 6.20. Ocultar detalles de error de los clientes
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** An integrated express error handler hides the error details by default. However, great are the chances that you implement your own error handling logic with custom Error objects (considered by many as a best practice). If you do so, ensure not to return the entire Error object to the client, which might contain some sensitive application details
+**TL;DR:** Un controlador de error express integrado oculta los detalles del error de forma predeterminada. Sin embargo, son grandes las posibilidades de que implemente su propia lógica de manejo de errores con objetos de error personalizados (considerado por muchos como una práctica recomendada). Si lo haces, asegúrate de no devolver todo el objeto Error al cliente, que podría contener algunos detalles confidenciales de la aplicación
 
-**Otherwise:** Sensitive application details such as server file paths, third party modules in use, and other internal workflows of the application which could be exploited by an attacker, could be leaked from information found in a stack trace
+**De lo contrario:** Los detalles confidenciales de la aplicación, como las rutas de archivos del servidor, los módulos de terceros en uso y otros flujos de trabajo internos de la aplicación que podrían ser explotados por un atacante, podrían filtrarse de la información encontrada en un seguimiento de la pila.
 
-🔗 [**Read More: Hide error details from client**](/sections/security/hideerrors.spanish.md)
+🔗 [**Leer más: Hide error details from client**](/sections/security/hideerrors.spanish.md)
 
 <br/><br/>
 
-## ![✔] 6.21. Configure 2FA for npm or Yarn
+## ![✔] 6.21. Configura 2FA para npm o Yarn
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Any step in the development chain should be protected with MFA (multi-factor authentication), npm/Yarn are a sweet opportunity for attackers who can get their hands on some developer's password. Using developer credentials, attackers can inject malicious code into libraries that are widely installed across projects and services. Maybe even across the web if published in public. Enabling 2-factor-authentication in npm leaves almost zero chances for attackers to alter your package code.
+**TL;DR:** Cualquier paso en la cadena de desarrollo debe protegerse con MFA (autenticación multifactor), npm / Yarn es una buena oportunidad para los atacantes que pueden tener en sus manos la contraseña de algún desarrollador. Utilizando credenciales de desarrollador, los atacantes pueden inyectar código malicioso en bibliotecas que están ampliamente instaladas en proyectos y servicios. Tal vez incluso en la web si se publica en público. Habilitar la autenticación de 2 factores en npm deja casi cero posibilidades para que los atacantes alteren el código de su paquete.
 
-**Otherwise:** [Have you heard about the eslint developer who's password was hijacked?](https://medium.com/@oprearocks/eslint-backdoor-what-it-is-and-how-to-fix-the-issue-221f58f1a8c8)
+**De lo contrario:** [¿Has oído hablar del desarrollador de eslint cuya contraseña fue secuestrada?](https://medium.com/@oprearocks/eslint-backdoor-what-it-is-and-how-to-fix-the-issue-221f58f1a8c8)
 
 <br/><br/>
 
-## ![✔] 6.22. Modify session middleware settings
+## ![✔] 6.22. Modificar la configuración del middleware de sesión
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Each web framework and technology has its known weaknesses - telling an attacker which web framework we use is a great help for them. Using the default settings for session middlewares can expose your app to module- and framework-specific hijacking attacks in a similar way to the `X-Powered-By` header. Try hiding anything that identifies and reveals your tech stack (E.g. Node.js, express)
+**TL;DR:** Cada marco web y tecnología tiene sus debilidades conocidas: decirle a un atacante qué marco web utilizamos es de gran ayuda para ellos. El uso de la configuración predeterminada para middlewares de sesión puede exponer su aplicación a ataques de secuestro específicos de módulos y marcos de manera similar al encabezado `X-Powered-By`. Intenta ocultar todo lo que identifique y revele tu stack tecnológico (por ejemplo, Node.js, express)
 
-**Otherwise:** Cookies could be sent over insecure connections, and an attacker might use session identification to identify the underlying framework of the web application, as well as module-specific vulnerabilities
+**De lo contrario:** Las cookies podrían enviarse a través de conexiones inseguras, y un atacante podría usar la identificación de sesión para identificar el marco subyacente de la aplicación web, así como las vulnerabilidades específicas del módulo
 
-🔗 [**Read More: Cookie and session security**](/sections/security/sessions.spanish.md)
+🔗 [**Leer más: Cookie and session security**](/sections/security/sessions.spanish.md)
 
 <br/><br/>
 
-## ![✔] 6.23. Avoid DOS attacks by explicitly setting when a process should crash
+## ![✔] 6.23. Evita los ataques de DOS estableciendo explícitamente cuándo debe fallar un proceso
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** The Node process will crash when errors are not handled. Many best practices even recommend to exit even though an error was caught and got handled. Express, for example, will crash on any asynchronous error - unless you wrap routes with a catch clause. This opens a very sweet attack spot for attackers who recognize what input makes the process crash and repeatedly send the same request. There's no instant remedy for this but a few techniques can mitigate the pain: Alert with critical severity anytime a process crashes due to an unhandled error, validate the input and avoid crashing the process due to invalid user input, wrap all routes with a catch and consider not to crash when an error originated within a request (as opposed to what happens globally)
+**TL;DR:** El proceso de Node se bloqueará cuando no se manejen los errores. Muchas de las mejores prácticas incluso recomiendan salir a pesar de que se detectó un error y se manejó. Express, por ejemplo, se bloqueará en cualquier error asincrónico, a menos que ajuste las rutas con una cláusula catch. Esto abre un punto de ataque muy dulce para los atacantes que reconocen qué información hace que el proceso se bloquee y envían repetidamente la misma solicitud. No hay remedio instantáneo para esto, pero algunas técnicas pueden mitigar el dolor: alerta con severidad crítica cada vez que un proceso se bloquea debido a un error no controlado, valida la entrada y evita que el proceso se bloquee debido a una entrada inválida del usuario, envuelve todas las rutas con una captura y considera no bloquearse cuando se origine un error dentro de una solicitud (en oposición a lo que sucede globalmente)
 
-**Otherwise:** This is just an educated guess: given many Node.js applications, if we try passing an empty JSON body to all POST requests - a handful of applications will crash. At that point, we can just repeat sending the same request to take down the applications with ease
+**De lo contrario:** Esto es solo una suposición educada: dadas muchas aplicaciones de Node.js, si intentamos pasar un cuerpo JSON vacío a todas las solicitudes POST, un puñado de aplicaciones se bloqueará. En ese momento, podemos repetir el envío de la misma solicitud para eliminar las aplicaciones con facilidad
 
 <br/><br/>
 
-## ![✔] 6.24. Prevent unsafe redirects
+## ![✔] 6.24. Prevenir redireccionamientos inseguros
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
-**TL;DR:** Redirects that do not validate user input can enable attackers to launch phishing scams, steal user credentials, and perform other malicious actions.
+**TL;DR:** Los redireccionamientos que no validan la entrada del usuario pueden permitir a los atacantes lanzar estafas de phishing, robar credenciales de usuario y realizar otras acciones maliciosas.
 
-**Otherwise:** If an attacker discovers that you are not validating external, user-supplied input, they may exploit this vulnerability by posting specially-crafted links on forums, social media, and other public places to get users to click it.
+**De lo contrario:** Si un atacante descubre que no está validando entradas externas proporcionadas por el usuario, puede aprovechar esta vulnerabilidad al publicar enlaces especialmente diseñados en foros, redes sociales y otros lugares públicos para que los usuarios hagan clic en él.
 
-🔗 [**Read More: Prevent unsafe redirects**](/sections/security/saferedirects.spanish.md)
+🔗 [**Leer más: Prevent unsafe redirects**](/sections/security/saferedirects.spanish.md)
 
 <br/><br/>
 
-## ![✔] 6.25. Avoid publishing secrets to the npm registry
+## ![✔] 6.25. Evita publicar secretos en el registro npm
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Precautions should be taken to avoid the risk of accidentally publishing secrets to public npm registries. An `.npmignore` file can be used to blacklist specific files or folders, or the `files` array in `package.json` can act as a whitelist.
+**TL;DR:** Se deben tomar precauciones para evitar el riesgo de publicar accidentalmente secretos en registros públicos de npm. Se puede usar un archivo `.npmignore` para poner en una lista negra archivos o carpetas específicos, o la matriz ` files` en `package.json` puede actuar como una lista blanca.
 
-**Otherwise:** Your project's API keys, passwords or other secrets are open to be abused by anyone who comes across them, which may result in financial loss, impersonation, and other risks.
+**De lo contrario:** Las claves de API, las contraseñas u otros secretos de su proyecto están abiertos a ser abusados por cualquier persona que los encuentre, lo que puede provocar pérdidas financieras, suplantación y otros riesgos.
 
-🔗 [**Read More: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.spanish.md)
+🔗 [**Leer más: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.spanish.md)
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Volver arriba</a></p>
 
-# `7. Draft: Performance Best Practices`
+# `7. Borrador: Mejores prácticas de rendimiento`
 
-## Our contributors are working on this section. [Would you like to join?](https://github.com/i0natan/nodebestpractices/issues/256)
+## Nuestros colaboradores están trabajando en esta sección. [¿Te gustaría unirte?](https://github.com/i0natan/nodebestpractices/issues/256)
 
 <br/><br/>
 
-## ![✔] 7.1. Don't block the event loop
+## ![✔] 7.1. No bloquees el bucle de eventos
 
-**TL;DR:** Avoid CPU intensive tasks as they will block the mostly single-threaded Event Loop and offload those to a dedicated thread, process or even a different technology based on the context.
+**TL;DR:** Evita las tareas intensivas de la CPU, ya que bloquearán el bucle de eventos en su mayoría de un solo subproceso y las descargarán en un subproceso dedicado, proceso o incluso una tecnología diferente según el contexto.
 
-**Otherwise:** As the Event Loop is blocked, Node.js will be unable to handle other request thus causing delays for concurrent users. **3000 users are waiting for a response, the content is ready to be served, but one single request blocks the server from dispatching the results back**
+**De lo contrario:** A medida que se bloquea el bucle de eventos, Node.js no podrá manejar otra solicitud, lo que provocará demoras para los usuarios concurrentes. **3000 usuarios están esperando una respuesta, el contenido está listo para ser servido, pero una sola solicitud impide que el servidor envíe los resultados**
 
-🔗 [**Read More: Do not block the event loop**](/sections/performance/block-loop.md)
+🔗 [**Leer más: Do not block the event loop**](/sections/performance/block-loop.md)
 
 <br /><br /><br />
 
 
-## ![✔] 7.2. Prefer native JS methods over user-land utils like Lodash
+## ![✔] 7.2. Escoge los métodos JS nativos sobre las utilidades de usuario como Lodash
 
- **TL;DR:** It's often more penalising to use utility libraries like `lodash` and `underscore` over native methods as it leads to unneeded dependencies and slower performance.
- Bear in mind that with the introduction of the new V8 engine alongside the new ES standards, native methods were improved in such a way that it's now about 50% more performant than utility libraries.
+ **TL;DR:** A menudo es más penalizador usar bibliotecas de utilidades como `lodash` y` underscore` sobre los métodos nativos, ya que conduce a dependencias innecesarias y un rendimiento más lento.
+Ten en cuenta que con la introducción del nuevo motor V8 junto con los nuevos estándares ES, los métodos nativos se mejoraron de tal manera que ahora es aproximadamente un 50% más eficiente que las bibliotecas de servicios públicos.
 
-**Otherwise:** You'll have to maintain less performant projects where you could have simply used what was **already** available or dealt with a few more lines in exchange of a few more files.
+**De lo contrario:** Tendrás que mantener proyectos de menor rendimiento en los que simplemente podría haber usado lo que **ya estaba** disponible o haber tratado algunas líneas más a cambio de algunos archivos más.
 
-🔗 [**Read More: Native over user land utils**](/sections/performance/nativeoverutil.md)
+🔗 [**Leer más: Native over user land utils**](/sections/performance/nativeoverutil.md)
 
 <br/><br/><br/>
 
