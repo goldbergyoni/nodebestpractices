@@ -1,28 +1,26 @@
-# Include 3 parts in each test name
+# Incluez 3 parties dans chaque nom de test
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-A test report should tell whether the current application revision satisfies the requirements for the people who are not necessarily familiar with the code: the tester, the DevOps engineer who is deploying and the future you two years from now. This can be achieved best if the tests speak at the requirements level and include 3 parts:
+Un rapport de test devrait indiquer si la révision actuelle de l'application satisfait aux exigences des personnes qui ne sont pas nécessairement familières avec le code : le testeur, l'ingénieur DevOps qui déploie et vous dans deux ans. Cela peut être mieux réalisé si les tests décrivent le niveau d'exigence et comprennent 3 parties :
 
-(1) What is being tested? For example, the ProductsService.addNewProduct method
+(1) Qu'est-ce qui est testé ? Par exemple, la méthode `ProductsService.addNewProduct`
 
-(2) Under what circumstances and scenario? For example, no price is passed to the method
+(2) Dans quelles circonstances et dans quel scénario ? Par exemple, aucun prix n'est transmis à la méthode
 
-(3) What is the expected result? For example, the new product is not approved
+(3) Quel est le résultat attendu ? Par exemple, le nouveau produit n'est pas approuvé<br/><br/>
 
-<br/><br/>
-
-### Code example: a test name that incluces 3 parts
+### Exemple de code : un nom de test qui comprend 3 parties
 ```javascript
-//1. unit under test
-describe('Products Service', () => {
-  describe('Add new product', () => {
-    //2. scenario and 3. expectation
-    it('When no price is specified, then the product status is pending approval', () => {
+//1. unité testée
+describe('Service Produits', () => {
+  describe('Ajoute un nouveau produit', () => {
+    //2. scénario et 3. attente
+    it('Quand aucun prix n\'est spécifié, alors le statut du produit est en attente d\'approbation', () => {
       const newProduct = new ProductService().add(...);
-      expect(newProduct.status).to.equal('pendingApproval');
+      expect(newProduct.status).to.equal('validationEnAttente');
     });
   });
 });
@@ -30,14 +28,14 @@ describe('Products Service', () => {
 
 <br/><br/>
 
-### Code Example – Anti Pattern: one must read the entire test code to understand the intent 
+### Contre exemple de code : il faut lire l'intégralité du code du test pour comprendre l'intention
 ```javascript
-describe('Products Service', () => {
-  describe('Add new product', () => {
-    it('Should return the right status', () => {
-        //hmm, what is this test checking? what are the scenario and expectation?
+describe('Service Produits', () => {
+  describe('Ajoute un nouveau produit', () => {
+    it('Devrait retourner le bon statut', () => {
+        //hmm, quelle est cette vérification de test ? quels sont le scénario et les attentes ?
       const newProduct = new ProductService().add(...);
-      expect(newProduct.status).to.equal('pendingApproval');
+      expect(newProduct.status).to.equal('validationEnAttente');
     });
   });
 });
@@ -45,10 +43,10 @@ describe('Products Service', () => {
 
 <br/><br/>
 
-###  "Doing It Right Example: The test report resembles the requirements document"
+###  « Un exemple à suivre : le rapport de test ressemble au document des spécifications »
 
- [From the blog "30 Node.js testing best practices" by Yoni Goldberg](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347)
+ [Extrait du blog de « 30 bonnes pratiques de test avec Node.js » par Yoni Goldberg](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347)
 
- ![A test report example](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/test-report-like-requirements.jpeg "A test report example")
+ ![Un exemple de rapport de test](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/test-report-like-requirements.jpeg "Un exemple de rapport de test")
 
 <br/><br/>
