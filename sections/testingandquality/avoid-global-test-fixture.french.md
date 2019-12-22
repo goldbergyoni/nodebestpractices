@@ -1,17 +1,17 @@
-# Avoid global test fixtures and seeds, add data per-test
+# Évitez les tests globaux, ajoutez des données pour chaque test
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
- Going by the golden testing rule - keep test cases dead-simple, each test should add and act on its own set of DB rows to prevent coupling and easily reason about the test flow. In reality, this is often violated by testers who seed the DB with data before running the tests (also known as ‘test fixture’) for the sake of performance improvement. While performance is indeed a valid concern — it can be mitigated (e.g. In-memory DB, see “Component testing” bullet), however, test complexity is a much painful sorrow that should govern other considerations. Practically, make each test case explicitly add the DB records it needs and act only on those records. If performance becomes a critical concern — a balanced compromise might come in the form of seeding the only suite of tests that are not mutating data (e.g. queries)
+ En suivant la règle d'or des tests - gardez d'une simplicité absolue les cas de test, chaque test doit ajouter et agir sur son propre ensemble d'enregistrement de la base de données pour éviter le chevauchement des tests et expliquer facilement le déroulement du test. En réalité, ceci est souvent transgressé par les testeurs qui inondent la base de données avant de lancer les tests (aussi connu sous le nom de « dispositif de test ») dans le but d'améliorer les performances. Bien que la performance soit effectivement une préoccupation valable - elle peut être atténuée (par exemple la base de données en mémoire, voir le point « Tests des composants »), la complexité des tests est toutefois un sujet très douloureux qui devrait dominer les autres préoccupations. En pratique, faites en sorte que chaque scénario de test ajoute explicitement les enregistrements à la base de données dont il a besoin et n'agisse que sur ces enregistrements. Si la performance devient une préoccupation critique - un compromis équilibré pourrait prendre la forme d'un remplissage d'une seule suite de tests qui ne mutent pas les données (par exemple, les requêtes).
 
 <br/><br/>
 
-### Code example: each test acts on its own set of data
+### Exemple de code : chaque test agit sur son propre ensemble de données
 ```javascript
-it('When updating site name, get successful confirmation', async () => {
-  //test is adding a fresh new records and acting on the records only
+it('Lors de la mise à jour du nom du site, obtenez une confirmation réussie', async () => {
+  // le test ajoute de nouveaux enregistrements et agit uniquement sur les enregistrements
   const siteUnderTest = await SiteService.addSite({
     name: 'siteForUpdateTest'
   });
@@ -22,21 +22,21 @@ it('When updating site name, get successful confirmation', async () => {
 
 <br/><br/>
 
-### Code Example – Anti Pattern:  tests are not independent and assume the existence of some pre-configured data
+### Contre exemple de code : les tests ne sont pas indépendants et supposent l'existence de certaines données préconfigurées
 ```javascript
 before(() => {
-  //adding sites and admins data to our DB. Where is the data? outside. At some external json or migration framework
+  // ajouter des données de sites et d'administrateurs à notre base de données. Où sont les données ? à l'extérieur. Sur un json externe ou un framework de migration
   await DB.AddSeedDataFromJson('seed.json');
 });
-it('When updating site name, get successful confirmation', async () => {
-  //I know that site name 'portal' exists - I saw it in the seed files
+it('Lors de la mise à jour du nom du site, obtenez une confirmation réussie', async () => {
+  // Je sais que le nom du site « Portal » existe - je l'ai vu dans les fichiers de remplissage
   const siteToUpdate = await SiteService.getSiteByName('Portal');
   const updateNameResult = await SiteService.changeName(siteToUpdate, 'newName');
   expect(updateNameResult).to.be(true);
 });
-it('When querying by site name, get the right site', async () => {
-  //I know that site name 'portal' exists - I saw it in the seed files
+it('Lorsque vous interrogez par le nom du site, obtenez le bon site', async () => {
+  // Je sais que le nom de site « Portal » existe - je l'ai vu dans les fichiers de remplissage
   const siteToCheck = await SiteService.getSiteByName('Portal');
-  expect(siteToCheck.name).to.be.equal('Portal'); //Failure! The previous test change the name :[
+  expect(siteToCheck.name).to.be.equal('Portal'); // Échec ! Le test précédent change le nom :[
 });
 ```
