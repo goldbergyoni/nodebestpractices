@@ -1,39 +1,39 @@
-# Make your app transparent using smart logs
+# Rendez votre application plus claire à l'aide de journaux intelligents
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-Since you print out log statements anyway and you're obviously in a need of some interface that wraps up production information where you can trace errors and core metrics (e.g. how many errors happen every hour and which is your slowest API end-point) why not invest some moderate effort in a robust logging framework that will tick all boxes? Achieving that requires a thoughtful decision on three steps:
+Puisque vous produisez de toute façon des relevés de log et que vous avez manifestement besoin d'une interface qui regroupe les informations de production et qui vous permette de suivre les erreurs et les mesures de base (par exemple, combien d'erreurs se produisent chaque heure ? Quel est le point de terminaison de votre API le plus lent ?), pourquoi ne pas investir un effort modéré dans un framework robuste de log qui cochera toutes les cases ? Pour y parvenir, il faut prendre une décision réfléchie en trois étapes :
 
-**1. smart logging** – at the bare minimum you need to use a reputable logging library like [Winston](https://github.com/winstonjs/winston), [Bunyan](https://github.com/trentm/node-bunyan) and write meaningful information at each transaction start and end. Consider to also format log statements as JSON and provide all the contextual properties (e.g. user id, operation type, etc) so that the operations team can act on those fields. Include also a unique transaction ID at each log line, for more information refer to the bullet below “Write transaction-id to log”. One last point to consider is also including an agent that logs the system resource like memory and CPU like Elastic Beat.
+**1. enregistrement intelligent** – au minimum, vous devez utiliser une bibliothèque de journalisation réputée comme [Winston](https://github.com/winstonjs/winston), [Bunyan](https://github.com/trentm/node-bunyan) et écrire des informations significatives à chaque début et fin de transaction. Pensez également à formater les relevés du journal en JSON et à fournir toutes les propriétés contextuelles (par exemple, l'ID utilisateur, le type d'opération, etc.) afin que l'équipe d'exploitation puisse agir sur ces champs. Incluez également un ID de transaction unique sur chaque ligne de journal, pour plus d'informations, reportez-vous à l'un des points suivants « Attribuez un ID de transaction à chaque relevé du journal ». Un dernier point à considérer, c'est également d'inclure un agent qui enregistre les ressources système de la mémoire et du processeur comme Elastic Beat.
 
-**2. smart aggregation** – once you have comprehensive information on your servers file system, it’s time to periodically push these to a system that aggregates, facilities and visualizes this data. The Elastic stack, for example, is a popular and free choice that offers all the components to aggregate and visualize data. Many commercial products provide similar functionality only they greatly cut down the setup time and require no hosting.
+**2. agrégation intelligente** – une fois que vous avez des informations complètes sur le système de fichiers de vos serveurs, il est temps de les transférer périodiquement vers un système qui agrège, installe et visualise ces données. Elastic stack, par exemple, est un choix populaire et gratuit qui offre tous les composants pour agréger et visualiser les données. De nombreux produits commerciaux offrent des fonctionnalités similaires, mais ils réduisent considérablement le temps d'installation et ne nécessitent pas d'hébergement.
 
-**3. smart visualization** – now the information is aggregated and searchable, one can be satisfied only with the power of easily searching the logs but this can go much further without coding or spending much effort. We can now show important operational metrics like error rate, average CPU throughout the day, how many new users opted-in in the last hour and any other metric that helps to govern and improve our app
-
-<br/><br/>
-
-### Visualization Example: Kibana (part of the Elastic stack) facilitates advanced searching on log content
-
-![Kibana facilitates advanced searching on log content](/assets/images/smartlogging1.png "Kibana facilitates advanced searching on log content")
+**3. visualisation intelligente** – maintenant que l'information est agrégée et consultable, on ne peut être que satisfait de la puissance d'une recherche facile dans les logs mais cela peut aller beaucoup plus loin sans codage ni effort. Nous pouvons maintenant afficher d'importantes mesures opérationnelles comme le taux d'erreur, le CPU moyen au cours de la journée, le nombre de nouveaux utilisateurs qui se sont inscrits au cours de la dernière heure et toute autre mesure qui aide à gérer et à améliorer notre application.
 
 <br/><br/>
 
-### Visualization Example: Kibana (part of the Elastic stack) visualizes data based on logs
+### Exemple de visualisation : Kibana (faisant partie de Elastic stack) facilite la recherche avancée sur le contenu des journaux
 
-![Kibana visualizes data based on logs](/assets/images/smartlogging2.jpg "Kibana visualizes data based on logs")
+![Kibana facilite la recherche avancée sur le contenu des journaux](/assets/images/smartlogging1.png "Kibana facilite la recherche avancée sur le contenu des journaux")
 
 <br/><br/>
 
-### Blog Quote: Logger Requirements
+### Exemple de visualisation : Kibana (qui fait partie de Elastic stack) visualise les données sur la base des journaux
 
-From the blog [Strong Loop](https://strongloop.com/strongblog/compare-node-js-logging-winston-bunyan/):
+![Kibana visualise les données sur la base des journaux](/assets/images/smartlogging2.jpg "Kibana visualise les données sur la base des journaux")
 
-> Lets identify a few requirements (for a logger):
-> 1. Timestamp each log line. This one is pretty self-explanatory – you should be able to tell when each log entry occurred.
-> 2. Logging format should be easily digestible by humans as well as machines.
-> 3. Allows for multiple configurable destination streams. For example, you might be writing trace logs to one file but when an error is encountered, write to the same file, then into error file and send an email at the same time…
+<br/><br/>
+
+### Citation de blog : « Exigences pour un enregistreur de journal »
+
+Extrait du blog [Strong Loop](https://strongloop.com/strongblog/compare-node-js-logging-winston-bunyan/) :
+
+> Permet d'identifier quelques exigences (pour un outil de journalisation) :
+1. Chaque ligne du journal est horodatée. Celle-ci est assez explicite - vous devriez pouvoir dire quand chaque entrée du journal s'est produite.
+2. Le format d'enregistrement doit être facilement assimilable par les humains ainsi que par les machines.
+3. Permet plusieurs flux de destination configurables. Par exemple, vous pouvez écrire des journaux de trace dans un fichier, mais lorsqu'une erreur se produit, cela écrit dans le même fichier, puis dans le fichier d'erreur et envoi un e-mail en même temps…
 
 <br/><br/>
 
