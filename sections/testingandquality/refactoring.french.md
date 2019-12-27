@@ -1,43 +1,43 @@
-# Refactoring
+# Refactorisation
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-Refactoring is an important process in the iterative development flow. Removing "Code Smells" (bad coding practices) such as Duplicated Code, Long Methods, Long Parameter list will improve your code and making it more maintainable. Using a static analysis tools will assist you in finding these code smells and build a process around refactoring. Adding these tools to your CI build will help automate the quality checking process. If your CI integrates with a tool like Sonar or Code Climate, the build will fail if it detects code smells and inform the author on how to address the issue. Theses static analysis tools will complement lint tools such as ESLint. Most linting tools will focus on code styles like indentation and missing semicolons (although some will find code smells like Long functions) in a single file while static analysis tools will focus on finding code smells (duplicate code, complexity analysis, etc) that are in single files and multiple files.
-
-<br/><br/>
-
-
-### Martin Fowler - Chief Scientist at ThoughtWorks
-
- From the book, "Refactoring - Improving the Design of Existing Code"
-
- > Refactoring is a controlled technique for improving the design of an existing code base.
+La refactorisation est un processus important dans le flux de développement itératif. La suppression des « Code Smells » (mauvaises pratiques de codage) telles que le code dupliqué, les trop longues méthodes et la trop longue liste de paramètre améliorera votre code et le rendra plus maintenable. L'utilisation d'outils d'analyse statique vous aidera à trouver ces « Code Smells » et à créer un processus de refactorisation. L'ajout de ces outils à votre CI aidera à automatiser le processus de vérification de la qualité. Si votre CI s'intègre à un outil comme Sonar ou Code Climate, la construction échouera s'il détecte des « Code Smells » et informera l'auteur sur la façon de résoudre le problème. Ces outils d'analyse statique complèteront les outils de Lint tels que ESLint. La plupart des outils de Lint se concentreront sur les styles de code comme l'indentation et les points-virgules manquants (bien que certains trouveront des « Code Smells » comme les fonctions trop longues) dans un seul fichier tandis que les outils d'analyse statique se concentreront sur la recherche de « Code Smell » (code en double, analyse de complexité, etc.) qui sont dans des fichiers uniques et dans plusieurs fichiers.
 
 <br/><br/>
 
-### Evan Burchard - Web Development Consultant and Author
 
- From the book, "Refactoring JavaScript: Turning Bad Code into Good Code"
+### Martin Fowler - Scientifique en chef à ThoughtWorks
 
- > No matter what framework or
-“compiles-to-JS” language or library you use, bugs and performance concerns
-will always be an issue if the underlying quality of your JavaScript is poor.
+ Extrait du livre, « Refactorisation - Amélioration de la conception du code existant »
+
+ > La refactorisation est une technique contrôlée pour améliorer la conception d'une base de code existante.
 
 <br/><br/>
 
- ### Example: Complex methods analysis with CodeClimate (commercial)
+### Evan Burchard - Auteur et consultant en développement web
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/codeanalysis-climate-complex-methods.PNG "Complex methods analysis")
+ Extrait du livre, « Refactorisation JavaScript : transformer un mauvais code en bon code »
 
-### Example: Code analysis trends and history with CodeClimate (commercial)
+> Quel que soit le framework,
+le langage ou la bibliothèque « compile-en-JS » que vous utilisez, les bogues et les problèmes de performances
+seront toujours un problème si la qualité implicite de votre JavaScript est mauvaise.
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/codeanalysis-climate-history.PNG "Code analysis history")
+<br/><br/>
 
-### Example: Code analysis summary and trends with SonarQube (commercial)
+ ### Exemple : analyse de méthodes complexes avec CodeClimate (commercial)
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/codeanalysis-sonarqube-dashboard.PNG "Code analysis history")
+![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/codeanalysis-climate-complex-methods.PNG "Analyse de méthodes complexes")
+
+### Exemple : tendances et historique de l'analyse de code avec CodeClimate (commercial)
+
+![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/codeanalysis-climate-history.PNG "Historique d'analyse de code")
+
+### Exemple : résumé et tendances de l'analyse de code avec SonarQube (commercial)
+
+![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/codeanalysis-sonarqube-dashboard.PNG "Historique d'analyse de code")
 
 
 <br/><br/>
