@@ -1,17 +1,17 @@
-# Delegate anything possible (e.g. static content, gzip) to a reverse proxy
+# Déléguez tout ce qui est possible (par exemple gzip, SSL) à un proxy inverse
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-It’s very tempting to cargo-cult Express and use its rich middleware offering for networking related tasks like serving static files, gzip encoding, throttling requests, SSL termination, etc. This is a performance kill due to its single threaded model which will keep the CPU busy for long periods (Remember, Node’s execution model is optimized for short tasks or async IO related tasks). A better approach is to use a tool that expertise in networking tasks – the most popular are nginx and HAproxy which are also used by the biggest cloud vendors to lighten the incoming load on node.js processes.
+Il est très tentant de faire appel à cargo-cult d'Express et d'utiliser son riche middleware pour les tâches liées au réseau, comme le service de fichiers statiques, l'encodage gzip, les requêtes de restriction, la terminaison SSL, etc. C'est une perte de performance due à son modèle de processus unique qui gardera le CPU occupé pendant de longues périodes (Rappelez-vous, le modèle d'exécution de Node est optimisé pour des tâches courtes ou des tâches liées à des E/S asynchrones). Une meilleure approche est d'utiliser un outil qui maîtrise les tâches réseau - les plus populaires sont nginx et HAproxy qui sont également utilisés par les plus grands vendeurs du cloud pour alléger la charge entrante sur les processus node.js.
 
 <br/><br/>
 
-### Nginx Config Example – Using nginx to compress server responses
+### Exemple de configuration Nginx - Utilisation de nginx pour compresser les réponses du serveur
 
 ```nginx
-# configure gzip compression
+# configure la compression gzip
 gzip on;
 gzip_comp_level 6;
 gzip_vary on;
@@ -23,15 +23,15 @@ upstream myApplication {
     keepalive 64;
 }
 
-#defining web server
+# définition du serveur web
 server {
-    # configure server with ssl and error pages
+    # configure le serveur avec ssl et des pages d'erreur
     listen 80;
     listen 443 ssl;
     ssl_certificate /some/location/sillyfacesociety.com.bundle.crt;
     error_page 502 /errors/502.html;
 
-    # handling static content
+    # gestion du contenu statique
     location ~ ^/(images/|img/|javascript/|js/|css/|stylesheets/|flash/|media/|static/|robots.txt|humans.txt|favicon.ico) {
     root /usr/local/silly_face_society/node/public;
     access_log off;
@@ -41,11 +41,11 @@ server {
 
 <br/><br/>
 
-### What Other Bloggers Say
+### Ce que disent les autres blogueurs
 
-* From the blog [Mubaloo](http://mubaloo.com/best-practices-deploying-node-js-applications):
-> …It’s very easy to fall into this trap – You see a package like Express and think “Awesome! Let’s get started” – you code away and you’ve got an application that does what you want. This is excellent and, to be honest, you’ve won a lot of the battle. However, you will lose the war if you upload your app to a server and have it listen on your HTTP port because you’ve forgotten a very crucial thing: Node is not a web server. **As soon as any volume of traffic starts to hit your application, you’ll notice that things start to go wrong: connections are dropped, assets stop being served or, at the very worst, your server crashes. What you’re doing is attempting to have Node deal with all of the complicated things that a proven web server does really well. Why reinvent the wheel?**
-> **This is just for one request, for one image and bearing in mind this is the memory that your application could be used for important stuff like reading a database or handling complicated logic; why would you cripple your application for the sake of convenience?**
+* Extrait du blog de [Mubaloo](http://mubaloo.com/best-practices-deploying-node-js-applications):
+> …Il est très facile de tomber dans ce piège - Vous voyez un paquet comme Express et pensez « Génial ! Commençons » - vous codez et vous avez une application qui fait ce que vous voulez. C'est excellent et, pour être honnête, vous avez gagné beaucoup de bataille. Cependant, vous perdrez la guerre si vous téléchargez votre application sur un serveur et que vous la faites écouter sur votre port HTTP parce que vous avez oublié une chose très cruciale : Node n'est pas un serveur Web. **Aussitôt qu'un volume de trafic quelconque commence à toucher votre application, vous remarquerez que les choses commencent à mal tourner : les connexions sont interrompues, les ressources cessent d'être servis ou, au pire, votre serveur se plante. Ce que vous faites est d'essayer de faire en sorte que Node s'occupe de toutes les choses compliquées qu'un serveur web éprouvé fait très bien. Pourquoi réinventer la roue ?**
+> **C'est juste pour une requête ou une image et en gardant à l'esprit que cette mémoire peut être utilisée par votre application pour des choses plus importantes comme la lecture d'une base de données ou la manipulation d'une logique compliquée, pourquoi paralyser votre application pour des raisons de commodité ?**
 
-* From the blog [Argteam](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load):
-> Although express.js has built-in static file handling through some connect middleware, you should never use it. **Nginx can do a much better job of handling static files and can prevent requests for non-dynamic content from clogging our node processes**…
+* Extrait du blog de [Argteam](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load) :
+> Bien qu'express.js ait une gestion intégrée des fichiers statiques via un middleware de connexion, vous ne devez jamais l'utiliser. **Nginx peut faire un bien meilleur travail de gestion des fichiers statiques et peut empêcher les requêtes de contenu non dynamique de saturer nos processus de node**…
