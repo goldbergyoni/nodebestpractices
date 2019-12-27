@@ -1,25 +1,25 @@
-# Lock dependencies
+# Verrouillez les dépendances
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-Your code depends on many external packages, let’s say it ‘requires’ and use momentjs-2.1.4, then by default when you deploy to production npm might fetch momentjs 2.1.5 which unfortunately brings some new bugs to the table. Using npm config files and the argument ```–save-exact=true``` instructs npm to refer to the *exact* same version that was installed so the next time you run ```npm install``` (in production or within a Docker container you plan to ship forward for testing) the same dependent version will be fetched. An alternative and popular approach is using a `.shrinkwrap` file (easily generated using npm) that states exactly which packages and versions should be installed so no environment can get tempted to fetch newer versions than expected.
+Votre code dépend de nombreux paquets externes, disons qu'il "requiert" et utilise momentjs-2.1.4, puis par défaut lorsque vous déployez en production, npm peut récupérer momentjs 2.1.5, ce qui malheureusement apporte quelques nouveaux bogues. L'utilisation de fichiers de configuration npm et de l'argument ```–save-exact=true``` indique à npm de se référer à la version *strictement* identique à celle qui a été installée, donc la prochaine fois que vous exécuterez ```npm install``` (en production ou dans un conteneur Docker que vous prévoyez d'expédier pour test), la même version dépendante sera récupérée. Une approche alternative et populaire utilise un fichier `.shrinkwrap` (facilement généré à l'aide de npm) qui indique exactement quels packages et versions doivent être installés afin qu'aucun environnement ne soit tenté de récupérer des versions plus récentes que prévu.
 
-* **Update:** as of npm 5, dependencies are locked automatically using .shrinkwrap. Yarn, an emerging package manager, also locks down dependencies by default.
+* **Mise à jour :** à partir de npm 5, les dépendances sont verrouillées automatiquement à l'aide de .shrinkwrap. Yarn, un nouveau gestionnaire de packages, verrouille également les dépendances par défaut.
 
 <br/><br/>
 
-### Code example: .npmrc file that instructs npm to use exact versions
+### Exemple de code : fichier .npmrc qui demande à npm d'utiliser des versions exactes
 
 ```npmrc
-// save this as .npmrc file on the project directory
+// enregistrez-le en tant que fichier .npmrc dans le répertoire du projet
 save-exact:true
 ```
 
 <br/><br/>
 
-### Code example: shrinkwrap.json file that distills the exact dependency tree
+### Exemple de code : fichier shrinkwrap.json qui extrait l'arbre exact des dépendances
 
 ```json
 {
@@ -39,7 +39,7 @@ save-exact:true
 
 <br/><br/>
 
-### Code example: npm 5 dependencies lock file – package.json
+### Exemple de code : fichier de verrouillage des dépendances npm 5 - package.json
 
 ```json
 {
