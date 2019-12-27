@@ -1,14 +1,14 @@
-# Carefully choose your CI platform
+# Choisissez soigneusement votre plateforme CI
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-The CI world used to be the flexibility of [Jenkins](https://jenkins.io/) vs the simplicity of SaaS vendors. The game is now changing as SaaS providers like [CircleCI](https://circleci.com/) and [Travis](https://travis-ci.org/) offer robust solutions including Docker containers with minimum setup time while Jenkins tries to compete on 'simplicity' segment as well. Though one can setup rich CI solution in the cloud, should it required to control the finest details Jenkins is still the platform of choice. The choice eventually boils down to which extent the CI process should be customized: free and setup free cloud vendors allow to run custom shell commands, custom docker images, adjust the workflow, run matrix builds and other rich features. However, if controlling the infrastructure or programming the CI logic using a formal programming language like Java is desired - Jenkins might still be the choice. Otherwise, consider opting for the simple and setup free cloud option
+Le monde des CI était autrefois caractérisé par la flexibilité de [Jenkins](https://jenkins.io/) par opposition à la simplicité des fournisseurs de SaaS. Le jeu est en train de changer car les fournisseurs SaaS comme [CircleCI](https://circleci.com/) et [Travis](https://travis-ci.org/) offrent des solutions robustes incluant des conteneurs Docker avec un temps de configuration minimum tandis que Jenkins essaie également de rivaliser sur le segment de la « simplicité ». Bien qu'il soit possible de mettre en place une solution CI riche dans le cloud, Jenkins reste la plateforme de choix si elle doit contrôler des détails plus fins. Le choix se résume finalement à la capacité dans laquelle le processus CI doit être personnalisé : les fournisseurs gratuits du cloud et sans configuration permettent d'exécuter des commandes shell personnalisées, des images de docker personnalisées, d'ajuster le flux de travail, d'exécuter des matrices et d'autres fonctionnalités riches. Cependant, si l'on souhaite contrôler l'infrastructure ou programmer la logique du CI à l'aide d'un langage de programmation formel comme Java, Jenkins peut toujours être le bon choix. Sinon, envisagez d'opter pour l'option simple du cloud et sans configuration.
 
 <br/><br/>
 
-### Code Example – a typical cloud CI configuration. Single .yml file and that's it
+### Exemple de code - une configuration typique CI du cloud. Fichier .yml unique et c'est tout
 
 ```yaml
 version: 2
@@ -20,7 +20,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install npm wee
+          name: Installer npm
           command: npm install
   test:
     docker:
@@ -32,7 +32,7 @@ jobs:
           name: Test
           command: npm test
       - run:
-          name: Generate code coverage
+          name: Générer une couverture de code
           command: './node_modules/.bin/nyc report --reporter=text-lcov'      
       - store_artifacts:
           path: coverage
@@ -40,12 +40,12 @@ jobs:
 
 ```
 
-### Circle CI - almost zero setup cloud CI
+### Circle CI - CI du cloud avec une configuration presque nul
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/circleci.png "API error handling")
+![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/circleci.png "Gestion des erreurs API")
 
-### Jenkins - sophisticated and robust CI 
+### Jenkins - CI sophistiqué et robuste
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/jenkins_dashboard.png "API error handling")
+![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/jenkins_dashboard.png "Gestion des erreurs API")
 
 <br/><br/>
