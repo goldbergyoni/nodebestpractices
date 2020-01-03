@@ -1,26 +1,26 @@
-# Utilize all CPU cores
+# Utilisez tous les cœurs du CPU
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-It might not come as a surprise that in its basic form, Node runs over a single thread=single process=single CPU. Paying for beefy hardware with 4 or 8 CPU and utilizing only one sounds crazy, right? The quickest solution which fits medium sized apps is using Node’s Cluster module which in 10 lines of code spawns a process for each logical core and route requests between the processes in a round-robin style. Even better, use PM2 which sugarcoats the clustering module with a simple interface and cool monitoring UI. While this solution works well for traditional applications, it might fall short for applications that require top-notch performance and robust DevOps flow. For those advanced use cases, consider replicating the NODE process using custom deployment script and balancing using a specialized tool such as nginx or use a container engine such as AWS ECS or Kubernetees that have advanced features for deployment and replication of processes.
-
-<br/><br/>
-
-### Comparison: Balancing using Node’s cluster vs nginx
-
-![Balancing using Node’s cluster vs nginx](/assets/images/utilizecpucores1.png "Balancing using Node’s cluster vs nginx")
+Il n'est pas surprenant que dans sa forme de base, Node fonctionne sur un unique thread=un unique processus=un seul CPU. Payer pour du matériel costaud avec 4 ou 8 CPU et n'en utiliser qu'un seul semble fou, non ? La solution la plus rapide qui convient aux applications de taille moyenne est l'utilisation du module Cluster de Node qui, en 10 lignes de code, génère un processus pour chaque cœur logique et achemine les requêtes entre les processus dans un style à tour de rôle. Mieux encore, utilisez PM2 qui enrobe le module de clustering avec une interface simple et une interface utilisateur de surveillance sympa. Bien que cette solution fonctionne bien pour les applications traditionnelles, elle pourrait ne pas convenir aux applications qui exigent des performances de premier ordre et un flux DevOps robuste. Pour ces cas d'utilisation avancés, envisagez de répliquer le processus NODE à l'aide d'un script de déploiement personnalisé et d'équilibrage (NdT, « balancing ») en utilisant un outil spécialisé tel que nginx ou utilisez un moteur de conteneur tel que AWS ECS ou Kubernetees qui disposent de fonctionnalités avancées pour le déploiement et la réplication des processus.
 
 <br/><br/>
 
-### What Other Bloggers Say
+### Comparaison : équilibrage à l'aide du cluster de Node vs nginx
 
-* From the [Node.js documentation](https://nodejs.org/api/cluster.html#cluster_how_it_works):
-> ... The second approach, Node clusters, should, in theory, give the best performance. In practice, however, distribution tends to be very unbalanced due to operating system scheduler vagaries. Loads have been observed where over 70% of all connections ended up in just two processes, out of a total of eight ...
+![Équilibrage à l'aide du cluster de Node vs nginx](/assets/images/utilizecpucores1.png "Équilibrage à l'aide du cluster de Node vs nginx")
 
-* From the blog [StrongLoop](https://strongloop.com/strongblog/best-practices-for-express-in-production-part-two-performance-and-reliability/):
-> ... Clustering is made possible with Node’s cluster module. This enables a master process to spawn worker processes and distribute incoming connections among the workers. However, rather than using this module directly, it’s far better to use one of the many tools out there that do it for you automatically; for example node-pm or cluster-service ...
+<br/><br/>
 
-* From the Medium post [Node.js process load balance performance: comparing cluster module, iptables, and Nginx](https://medium.com/@fermads/node-js-process-load-balancing-comparing-cluster-iptables-and-nginx-6746aaf38272)
-> ... Node cluster is simple to implement and configure, things are kept inside Node’s realm without depending on other software. Just remember your master process will work almost as much as your worker processes and with a little less request rate than the other solutions ...
+### Ce que disent les autres blogueurs
+
+* Extrait de la [documentation de Node.js](https://nodejs.org/api/cluster.html#cluster_how_it_works):
+> ... La seconde approche, les clusters de Node, devrait, en théorie, donner les meilleures performances. Dans la pratique, cependant, la distribution a tendance à être très déséquilibrée en raison des aléas du planificateur du système d'exploitation. Des charges ont été observées où plus de 70% de toutes les connexions se sont uniquement terminées sur deux processus, sur un total de huit ...
+
+* Extrait du blog de [StrongLoop](https://strongloop.com/strongblog/best-practices-for-express-in-production-part-two-performance-and-reliability/):
+> ... Le clustering est rendu possible avec le module de cluster de Node. Cela permet à un processus maître de générer des processus de travail et de répartir les connexions entrantes entre les processus de travail. Cependant, plutôt que d'utiliser directement ce module, il est préférable d'utiliser l'un des nombreux outils qui le font automatiquement pour vous; par exemple node-pm ou cluster-service ...
+
+* Extrait de l'article [Performance de l'équilibre de charge du processus Node.js : comparaison entre le module de cluster, iptables et Nginx](https://medium.com/@fermads/node-js-process-load-balancing-comparing-cluster-iptables-and-nginx-6746aaf38272) de Medium
+> ... Le cluster Node est simple à implémenter et à configurer, les choses sont conservées dans le domaine Node sans dépendre d'autres logiciels. N'oubliez pas que votre processus maître fonctionnera presque autant que vos processus de travail et avec un peu moins de taux de requête que les autres solutions. ...
