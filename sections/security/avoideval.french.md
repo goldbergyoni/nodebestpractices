@@ -1,23 +1,20 @@
-# Avoid JS eval statements
+# Éviter les déclarations d'évaluation de JS
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-`eval()`, `setTimeout()`, `setInterval()`, and `new Function()` are global functions, often used in Node.js, which accept a string parameter representing a JavaScript expression, statement, or sequence of statements. The security concern of using these functions is the possibility that untrusted user input might find its way into code execution leading to server compromise, as evaluating user code essentially allows an attacker to perform any actions that you can. It is suggested to refactor code to not rely on the usage of these functions where user input could be passed to the function and executed.
+`eval()`, `setTimeout()`, `setInterval()`, et `new Function()` sont des fonctions globales, souvent utilisées dans Node.js, qui acceptent comme paramètre une châine de caractères représentant une expression Javascript, une déclaration ou une suite de déclarations. Le problème de sécurité que pose ces fonctionnalités est la possibilité que les entrées d'un utilisateur non fiable se retrouvent dans le code exécuté, ce qui pourrait compromettre le serveur, l'évaluation du code permettant essentiellement à un attaquant d'effectuer toutes les actions possibles. Il est suggéré de refactoriser le code pour ne pas se fier à ces fonctions où les entrées de l'utilisateur pourraient y être passées et exécutées.
 
-### Code example
+### Exemple de code
 
 ```javascript
-// example of malicious code which an attacker was able to input
+// exemple d'un code malicieux qui permettait à un attaquant d'entrer
 const userInput = "require('child_process').spawn('rm', ['-rf', '/'])";
 
-// malicious code executed
+// code malicieux exécuté
 eval(userInput);
 ```
 
-### What other bloggers say
+### Ce que disent les autres blogueurs
 
-From the Essential Node.js Security book by [Liran Tal](https://leanpub.com/nodejssecurity):
-> The eval() function is perhaps of the most frowned upon JavaScript pieces from a security
-perspective. It parses a JavaScript string as text, and executes it as if it were a JavaScript code.
-Mixing that with untrusted user input that might find it’s way to eval() is a recipe for disaster that
-can end up with server compromise.
+Extrait du livre « Essential Node.js Security » de [Liran Tal](https://leanpub.com/nodejssecurity):
+> La fonction eval() est peut-être l'une des plus mal vues dans JavaScript du point de vue de la sécurité. Elle analyse une chaîne de caractère JavaScript comme du texte, et l'exécute comme si c'était du code JavaScript. En mélangeant cela avec des entrées d'utilisateurs non fiables qui pourraient trouver un moyen d'accéder à la fonction eval(), on obtient la recette d'un désastre qui peut finir par compromettre le serveur.
