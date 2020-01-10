@@ -14,6 +14,8 @@ Para aplicaciones de tamaño medio o superior, los monolitos son bastante malos.
 
 > Monolithic applications can be successful, but increasingly people are feeling frustrations with them - especially as more applications are being deployed to the cloud. Change cycles are tied together - a change made to a small part of the application requires the entire monolith to be rebuilt and deployed. Over time it's often hard to keep a good modular structure, making it harder to keep changes that ought to only affect one module within that module. Scaling requires scaling of the entire application rather than parts of it that require greater resource.
 
+> *Las aplicaciones monolíticas pueden tener éxito, pero cada vez más personas se sienten frustradas con ellas - especialmente mientras más aplicaciones son desplegadas en la nube. Ciclos de cambios están unidos - un cambio hecho a una pequeña parte de la aplicación requiere que el monolito sea reconstruido y desplegado. A través del tiempo es común que sea difícil mantener una buena estructura modular, haciendo difícil mantener los cambios que solo afectan un módulo dentro de ese otro módulo. Escalar requiere escalar la aplicación completa en vez de sólo partes que requieren mayores recursos*
+
 <br/><br/>
 
 ### Blog Quote: "So what does the architecture of your application scream?"
@@ -22,16 +24,18 @@ Para aplicaciones de tamaño medio o superior, los monolitos son bastante malos.
 
 > ...if you were looking at the architecture of a library, you’d likely see a grand entrance, an area for check-in-out clerks, reading areas, small conference rooms, and gallery after gallery capable of holding bookshelves for all the books in the library. That architecture would scream: Library.<br/>
 
-So what does the architecture of your application scream? When you look at the top level directory structure, and the source files in the highest level package; do they scream: Health Care System, or Accounting System, or Inventory Management System? Or do they scream: Rails, or Spring/Hibernate, or ASP?.
+> *...si observas la arquitectura de una biblioteca, es probable que veas una gran entrada, un área para entrada-salida de empleados, áreas de lectura, pequeñas salas de conferencias, y galería tras galería capaces de sostener estanterías para todos los libros en la biblioteca. Esa arquitectura gritaría: Biblioteca*
+
+Así que, ¿Qué gritaría la arquitectura de tu aplicación? Cuando ves la estructura del directorio superior, y los archivos fuente en el paquete de más alto nivel; ¿Gritan Sistema de Cuidado de Salud? o ¿Sistema de Contabilidad? o ¿Sistema de Manejo de Inventario? o a caso ¿gritan Rails? o ¿Spring/Hibernate? o ¿ASP?
 
 <br/><br/>
 
-### Good: Structure your solution by self-contained components
+### Bien: Estructura tu solución en componentes auto-contenidos
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Structuring solution by components")
+![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Solución estructurada en componentes")
 
 <br/><br/>
 
-### Bad: Group your files by technical role
+### Mal: Agrupa tus archivos según rol técnico
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebyroles.PNG "Structuring solution by technical roles")
+![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebyroles.PNG "Solución estructurada según roles técnicos")
