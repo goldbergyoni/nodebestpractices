@@ -1,32 +1,32 @@
-# Avoid using the Node.js Crypto library for passwords, use Bcrypt
+# Évitez d'utiliser la librairie Crypto de Node.js pour les mots de passe, utilisez Bcrypt
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-When storing user passwords, using an adaptive hashing algorithm such as bcrypt, offered by the [bcrypt npm module](https://www.npmjs.com/package/bcrypt) is recommended as opposed to using the native Node.js crypto module. `Math.random()` should also never be used as part of any password or token generation due to its predictability.
+Quand on stocke les mots de passe des utilisateurs, l'utilisation d'un algorithme de hachage adaptatif comme bcrypt, offert par le [module npm bcrypt](https://www.npmjs.com/package/bcrypt), est recommandée plutôt que d'utiliser le module crypto natif de Node.js. `Math.random()` ne devrait aussi jamais être utilisée dans la génération de mot de passe ou de token du fait de sa prévisibilité.
 
-The `bcrypt` module or similar should be used as opposed to the JavaScript implementation, as when using `bcrypt`, a number of 'rounds' can be specified in order to provide a secure hash. This sets the work factor or the number of 'rounds' the data is processed for, and more hashing rounds leads to more secure hash (although this at the cost of CPU time). The introduction of hashing rounds means that the brute force factor is significantly reduced, as password crackers are slowed down increasing the time required to generate one attempt.
+Le module `bcrypt` ou similaire devrait être utilisé par opposition à l'implémentation JavaScript, quand on utilise `bcrypt`, un nombre de « tours » peut être spécifié afin de fournir un hash sécurisé. Cela défini le facteur travail ou le nombre de « tours » pour lesquels les données sont traitées, et plus de tours de hachage mène à un hash plus sécurisé (bien que cela coûte plus de temps du CPU). L'introduction des tours de hachage signifie que le facteur de [force brute](https://fr.wikipedia.org/wiki/Attaque_par_force_brute) est significativement réduit, car les craqueurs de mot de passe sont réduits, ce qui augmente le temps requis pour une tentative.
 
-### Code example
+### Exemple de code
 
 ```javascript
 try {
-// asynchronously generate a secure password using 10 hashing rounds
+// Génère de manière asynchrone un mot de passe sécurisé en utilisant 10 tours de hachage
   const hash = await bcrypt.hash('myPassword', 10);
-  // Store secure hash in user record
+  // Conserve le hash sécurité au niveau de l'utilisateur
 
-  // compare a provided password input with saved hash
+  // Compare le mot de passe entré avec le hash enregistré
   const match = await bcrypt.compare('somePassword', hash);
   if (match) {
-   // Passwords match
+   // Les mots de passe correspondent
   } else {
-   // Passwords don't match
+   // Les mots de passe ne correspondent pas
   } 
 } catch {
   logger.error('could not hash password.')
 }
 ```
 
-### What other bloggers say
+### Ce que disent les autres blogueurs
 
-From the blog by [Max McCarty](https://dzone.com/articles/nodejs-and-password-storage-with-bcrypt):
-> ... it’s not just using the right hashing algorithm. I’ve talked extensively about how the right tool also includes the necessary ingredient of “time” as part of the password hashing algorithm and what it means for the attacker who’s trying to crack passwords through brute-force.
+Extrait du blog de [Max McCarty](https://dzone.com/articles/nodejs-and-password-storage-with-bcrypt):
+> ... il ne faut pas seulement utiliser le bon algorithme de hachage. J'ai beaucoup parlé de comment le bon outil inclus aussi l'ingrédient nécessaire de « temps » comme une partie de l'algorithme de hachage de mot de passe et de ce que cela signifie pour l'attaquant qui essaie de craquer les mots de passe par force brute.
