@@ -1,32 +1,32 @@
-# Create a maintenance endpoint
+# Créez un « point de terminaison de maintenance »
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-A maintenance endpoint is a highly secure HTTP API that is part of the app code and its purpose is to be used by the ops/production team to monitor and expose maintenance functionality. For example, it can return a heap dump (memory snapshot) of the process, report whether there are some memory leaks and even allow to execute REPL commands directly. This endpoint is needed where the conventional DevOps tools (monitoring products, logs, etc) fail to gather some specific type of information or you choose not to buy/install such tools. The golden rule is using professional and external tools for monitoring and maintaining the production, these are usually more robust and accurate. That said, there are likely to be cases where the generic tools will fail to extract information that is specific to Node or to your app – for example, should you wish to generate a memory snapshot at the moment GC completed a cycle – few npm libraries will be glad to perform this for you but popular monitoring tools will likely miss this functionality. It is important to keep this endpoint private and accessibly only by admins because it can become a target of a DDOS attack.
+Un point de terminaison de maintenance est une API HTTP hautement sécurisée qui fait partie du code de l'application et dont l'objectif est d'être utilisé par l'équipe d'exploitation/production pour surveiller et exposer les fonctionnalités de maintenance. Par exemple, il peut retourner un vidage de mémoire (instantané de la mémoire) du processus, signaler s'il y a des fuites de mémoire et même permettre d'exécuter directement des commandes REPL. Ce point de terminaison est nécessaire lorsque les outils DevOps classiques (produits de surveillance, journaux, etc.) ne parviennent pas à collecter un certain type d'informations spécifiques ou si vous choisissez de ne pas acheter/installer de tels outils. La règle d'or est d'utiliser des outils professionnels et externes pour le suivi et la maintenance de la production, ceux-ci sont généralement plus robustes et plus précis. Cela dit, il est probable que les outils génériques ne parviennent pas à extraire des informations spécifiques de Node ou de votre application - par exemple, si vous souhaitez générer un instantané de mémoire au moment où le GC (Garbage collection, NdT : [« Ramasse-miettes »](https://fr.wikipedia.org/wiki/Ramasse-miettes_(informatique))) a terminé un cycle - quelques bibliothèques npm se feront un plaisir de vous le faire, mais les outils de surveillance populaires manqueront probablement cette fonctionnalité. Il est important de garder ce point de terminaison privé et accessible uniquement par les administrateurs, car il peut devenir la cible d'une attaque DDOS.
 
 <br/><br/>
 
-### Code example: generating a heap dump via code
+### Exemple de code : génération d'un vidage mémoire via du code
 
 ```javascript
 const heapdump = require('heapdump');
 
-// Check if request is authorized 
+// Vérifie si la requête est autorisée
 function isAuthorized(req) {
     // ...
 }
 
 router.get('/ops/heapdump', (req, res, next) => {
     if (!isAuthorized(req)) {
-        return res.status(403).send('You are not authorized!');
+        return res.status(403).send('Vous n\'êtes pas autorisé !');
     }
 
-    logger.info('About to generate heapdump');
+    logger.info('À propos de la génération du vidage mémoire');
 
     heapdump.writeSnapshot((err, filename) => {
-        console.log('heapdump file is ready to be sent to the caller', filename);
+        console.log('le fichier heapdump est prêt à être envoyé au demandeur', filename);
         fs.readFile(filename, 'utf-8', (err, data) => {
             res.end(data);
         });
@@ -36,10 +36,10 @@ router.get('/ops/heapdump', (req, res, next) => {
 
 <br/><br/>
 
-### Recommended Resources
+### Ressources recommandées
 
-[Getting your Node.js app production ready (Slides)](http://naugtur.pl/pres3/node2prod)
+[Préparez votre application Node.js pour la production (Slides)](http://naugtur.pl/pres3/node2prod)
 
-▶ [Getting your Node.js app production ready (Video)](https://www.youtube.com/watch?v=lUsNne-_VIk)
+▶ [Préparez votre application Node.js pour la production (Video)](https://www.youtube.com/watch?v=lUsNne-_VIk)
 
-![Getting your Node.js app production ready](/assets/images/createmaintenanceendpoint1.png "Getting your Node.js app production ready")
+![Préparez votre application Node.js pour la production](/assets/images/createmaintenanceendpoint1.png "Préparez votre application Node.js pour la production")
