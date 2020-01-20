@@ -1,3 +1,22 @@
+# Contribution guidelines
+
+## What you should know first?
+
+### Lovely & friendly atmosphere
+
+Our code of conduct is 5 words long: we are all friends here
+
+We recognize that being professional and kind are the same thing and strive to maximize our professionalism
+
+### Maintenance work
+
+Our operations manual [can be found here](https://github.com/goldbergyoni/nodebestpractices/blob/master/.operations/operations-manual.md)
+
+### Writing guidelines
+
+Our content writing guidelines [can be found here](https://github.com/goldbergyoni/nodebestpractices/blob/master/.operations/writing-guidelines.md)
+
+
 ## Contribution model
 
 ### Steering committee 🏆
