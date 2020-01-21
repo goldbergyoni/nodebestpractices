@@ -4,8 +4,7 @@
 <br/><br/>
 
 ### One Paragraph Explainer
-
-Sometimes, using native methods is better than requiring `lodash` or `underscore` because it will not lead to performance loss or take up more space than needed.
+Sometimes, using native methods is better than requiring _lodash_ or _underscore_ because those libraries can lead to performance loss or take up more space than needed
 The performance using native methods result in an [overall ~50% gain](https://github.com/Berkmann18/NativeVsUtils/blob/master/analysis.xlsx) which includes the following methods: `Array.concat`, `Array.fill`, `Array.filter`, `Array.map`, `(Array|String).indexOf`, `Object.find`, ...
 
 
