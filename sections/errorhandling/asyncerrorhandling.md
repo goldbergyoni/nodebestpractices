@@ -7,15 +7,37 @@ Callbacks don’t scale well since most programmers are not familiar with them. 
 ### Code Example – using promises to catch errors
 
 ```javascript
-doWork()
- .then(doWork)
- .then(doOtherWork)
- .then((result) => doWork)
- .catch((error) => {throw error;})
- .then(verify);
+return functionA()
+  .then(functionB)
+  .then(functionC)
+  .then(functionD)
+  .catch((err) => logger.error(err))
+  .then(alwaysExecuteThisFunction)
+```
+
+
+### Code Example - using async/await to catch errors
+
+```javascript
+async function executeAsyncTask () {
+  try {
+    const valueA = await functionA();
+    const valueB = await functionB(valueA);
+    const valueC = await functionC(valueB);
+    return await functionD(valueC);
+  }
+  catch (err) {
+    logger.error(err);
+  } finally {
+    await alwaysExecuteThisFunction();
+  }
+}
 ```
 
 ### Anti pattern code example – callback style error handling
+
+<details>
+<summary><strong>Javascript</strong></summary>
 
 ```javascript
 getData(someParameter, function(err, result) {
@@ -27,7 +49,7 @@ getData(someParameter, function(err, result) {
                 getMoreData(b, function(c) {
                     getMoreData(d, function(e) {
                         if(err !== null ) {
-                            // you get the idea? 
+                            // you get the idea?
                         }
                     })
                 });
@@ -36,6 +58,31 @@ getData(someParameter, function(err, result) {
     }
 });
 ```
+</details>
+
+<details>
+<summary><strong>Typescript</strong></summary>
+
+```typescript
+getData(someParameter, function(err: Error | null, resultA: ResultA) {
+  if(err !== null) {
+    // do something like calling the given callback function and pass the error
+    getMoreData(resultA, function(err: Error | null, resultB: ResultB) {
+      if(err !== null) {
+        // do something like calling the given callback function and pass the error
+        getMoreData(resultB, function(resultC: ResultC) {
+          getMoreData(resultC, function(err: Error | null, d: ResultD) {
+            if(err !== null) {
+              // you get the idea?
+            }
+          })
+        });
+      }
+    });
+  }
+});
+```
+</details>
 
 ### Blog Quote: "We have a problem with promises"
 
@@ -59,4 +106,4 @@ getData(someParameter, function(err, result) {
 
 From the blog Benno’s
 
- > ……One of the best things about asynchronous, callback-based programming is that basically all those regular flow control constructs you are used to are completely broken. However, the one I find most broken is the handling of exceptions. Javascript provides a fairly familiar try…catch construct for dealing with exceptions. The problem with exceptions is that they provide a great way of short-cutting errors up a call stack, but end up being completely useless of the error happens on a different stack…
+ > ……One of the best things about asynchronous, callback-based programming is that basically all those regular flow control constructs you are used to are completely broken. However, the one I find most broken is the handling of exceptions. Javascript provides a fairly familiar try…catch construct for dealing with exceptions. The problem with exceptions is that they provide a great way of short-cutting errors up a call stack, but end up being completely useless if the error happens on a different stack…

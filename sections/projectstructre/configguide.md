@@ -14,13 +14,15 @@ When dealing with configuration data, many things can just annoy and slow down:
 
 4. some advanced configuration scenarios demand to inject configuration values via command line (vargs) or sync configuration info via a centralized cache like Redis so multiple servers will use the same configuration data.
 
+5. the application should fail as fast as possible and provide the immediate feedback if the required environment variables are not present at start-up, this can be achieved by using [convict](https://www.npmjs.com/package/convict) to validate the configuration.
+
 Some configuration libraries can provide most of these features for free, have a look at npm libraries like [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) and [config](https://www.npmjs.com/package/config) which tick many of these requirements.
 
 <br/><br/>
 
 ### Code Example – hierarchical config helps to find entries and maintain huge config files
 
-```json
+```json5
 {
   // Customer module configs 
   "Customer": {

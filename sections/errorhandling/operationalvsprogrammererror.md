@@ -6,9 +6,12 @@ Distinguishing the following two error types will minimize your app downtime and
 
 ### Code Example – marking an error as operational (trusted)
 
+<details>
+<summary><strong>Javascript</strong></summary>
+
 ```javascript
 // marking an error object as operational 
-const myError = new Error("How can I add new product when no value provided?");
+const myError = new Error('How can I add new product when no value provided?');
 myError.isOperational = true;
 
 // or if you're using some centralized error factory (see other examples at the bullet "Use only the built-in Error object")
@@ -22,9 +25,37 @@ class AppError {
   }
 };
 
-throw new AppError(errorManagement.commonErrors.InvalidInput, "Describe here what happened", true);
+throw new AppError(errorManagement.commonErrors.InvalidInput, 'Describe here what happened', true);
 
 ```
+</details>
+
+<details>
+<summary><strong>Typescript</strong></summary>
+
+```typescript
+// some centralized error factory (see other examples at the bullet "Use only the built-in Error object")
+export class AppError extends Error {
+  public readonly commonType: string;
+  public readonly isOperational: boolean;
+
+  constructor(commonType: string, description: string, isOperational: boolean) {
+    super(description);
+
+    Object.setPrototypeOf(this, new.target.prototype); // restore prototype chain
+
+    this.commonType = commonType;
+    this.isOperational = isOperational;
+
+    Error.captureStackTrace(this);
+  }
+}
+
+// marking an error object as operational (true)
+throw new AppError(errorManagement.commonErrors.InvalidInput, 'Describe here what happened', true);
+
+```
+</details>
 
 ### Blog Quote: "Programmer errors are bugs in the program"
 
@@ -44,7 +75,7 @@ From the blog, debugable.com ranked 3 for the keywords “Node.js uncaught excep
 
  > …So, unless you really know what you are doing, you should perform a graceful restart of your service after receiving an “uncaughtException” exception event. Otherwise, you risk the state of your application, or that of 3rd party libraries to become inconsistent, leading to all kinds of crazy bugs…
 
-### Blog Quote: "Blog Quote: There are three schools of thoughts on error handling"
+### Blog Quote: "There are three schools of thoughts on error handling"
 
 From the blog: JS Recipes
 

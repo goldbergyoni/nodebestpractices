@@ -2,32 +2,80 @@
 
 ### One Paragraph Explainer
 
-Somewhere within your code, an error handler object is responsible for deciding how to proceed when an error is thrown – if the error is trusted (i.e. operational error, see further explanation within best practice #3) then writing to log file might be enough. Things get hairy if the error is not familiar – this means that some component might be in a faulty state and all future requests are subject to failure. For example, assuming a singleton, stateful token issuer service that threw an exception and lost its state – from now it might behave unexpectedly and cause all requests to fail. Under this scenario, kill the process and use a ‘Restarter tool’ (like Forever, PM2, etc) to start over with a clean slate.
+Somewhere within your code, an error handler object is responsible for deciding how to proceed when an error is thrown – if the error is trusted (i.e. operational error, see further explanation within best practice #3) then writing to log file might be enough. Things get hairy if the error is not familiar – this means that some component might be in a faulty state and all future requests are subject to failure. For example, assuming a singleton, stateful token issuer service that threw an exception and lost its state – from now it might behave unexpectedly and cause all requests to fail. Under this scenario, kill the process and use a ‘Restarter tool’ (like Forever, PM2, etc) to start over with a clean state.
 
 ### Code example: deciding whether to crash
 
+<details>
+<summary><strong>Javascript</strong></summary>
+
 ```javascript
 // Assuming developers mark known operational errors with error.isOperational=true, read best practice #3
-process.on('uncaughtException', function(error) {
+process.on('uncaughtException', (error) => {
   errorManagement.handler.handleError(error);
   if(!errorManagement.handler.isTrustedError(error))
-  process.exit(1)
+    process.exit(1)
 });
 
 // centralized error handler encapsulates error-handling related logic
 function errorHandler() {
-  this.handleError = function (error) {
-    return logger.logError(err)
+  this.handleError = (error) => {
+    return logger.logError(error)
       .then(sendMailToAdminIfCritical)
       .then(saveInOpsQueueIfCritical)
       .then(determineIfOperationalError);
   }
 
-  this.isTrustedError = function (error) {
+  this.isTrustedError = (error) => {
     return error.isOperational;
   }
 }
 ```
+</details>
+
+<details>
+<summary><strong>Typescript</strong></summary>
+
+```typescript
+// Assuming developers mark known operational errors with error.isOperational=true, read best practice #3
+process.on('uncaughtException', (error: Error) => {
+  errorManagement.handler.handleError(error);
+  if(!errorManagement.handler.isTrustedError(error))
+    process.exit(1)
+});
+
+// centralized error object that derives from Node’s Error
+export class AppError extends Error {
+  public readonly isOperational: boolean;
+
+  constructor(description: string, isOperational: boolean) {
+    super(description);
+    Object.setPrototypeOf(this, new.target.prototype); // restore prototype chain
+    this.isOperational = isOperational;
+    Error.captureStackTrace(this);
+  }
+}
+
+// centralized error handler encapsulates error-handling related logic
+class ErrorHandler {
+  public async handleError(err: Error): Promise<void> {
+    await logger.logError(err);
+    await sendMailToAdminIfCritical();
+    await saveInOpsQueueIfCritical();
+    await determineIfOperationalError();
+  };
+
+  public isTrustedError(error: Error) {
+    if (error instanceof AppError) {
+      return error.isOperational;
+    }
+    return false;
+  }
+}
+
+export const handler = new ErrorHandler();
+```
+</details>
 
 ### Blog Quote: "The best way is to crash"
 

@@ -18,7 +18,10 @@ When creating your database logic you should watch out for eventual injection ve
 
 ```javascript
 // A query of
-db.balances.find( { active: true, $where: function() { return obj.credits - obj.debits < userInput; } } );
+db.balances.find({
+  active: true,
+  $where: (obj) => obj.credits - obj.debits < userInput
+});
 
 // Where userInput equals
 "(function(){var date = new Date(); do{curDate = new Date();}while(curDate-date<10000); return Math.max();})()"
@@ -40,7 +43,7 @@ SELECT username, firstname, lastname FROM users WHERE id = 'evil'input';
 
 🔗 [OWASP SQL Injection](https://www.owasp.org/index.php/SQL_Injection)
 
-🔗 [OWASP SQL Injection Prevention Cheat Sheet](https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet)
+🔗 [OWASP SQL Injection Prevention Cheat Sheet](https://github.com/OWASP/CheatSheetSeries)
 
 🔗 [Testing for NoSQL Injection](https://www.owasp.org/index.php/Testing_for_NoSQL_injection)
 
