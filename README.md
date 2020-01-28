@@ -1026,6 +1026,12 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
+## ![✔] 6.26. Have a SECURITY.MD File
+
+**TL;DR:** Have a SECURITY.MD file in the base directory of your Web Application. SECURITY.MD file should contain details of Security Researchers can report Vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent. 
+
+**Otherwise:** You may not be notified about the vulnerabilities. You will miss the opportunity to act on the vulnerabilities in time.
+
 # `7. Draft: Performance Best Practices`
 
 ## Our contributors are working on this section. [Would you like to join?](https://github.com/i0natan/nodebestpractices/issues/256)
