@@ -1026,9 +1026,15 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-## ![✔] 6.26. Have a SECURITY.MD File
+## ![✔] 6.26. Have a SECURITY.TXT File [PRODUCTION]
 
-**TL;DR:** Have a SECURITY.MD file in the base directory of your Web Application. SECURITY.MD file should contain details of Security Researchers can report Vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent. 
+**TL;DR:** Have a SECURITY.TXT file in the base directory of your Web Application in Production. SECURITY.TXT file should contain details using which Security Researchers can report Vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent. 
+
+**Otherwise:** You may not be notified about the vulnerabilities. You will miss the opportunity to act on the vulnerabilities in time.
+
+## ![✔] 6.27. Have a SECURITY.MD File [OPEN SOURCE]
+
+**TL;DR:** Have a SECURITY.MD file in the base directory of your Source Code Repository. SECURITY.MD file should contain details using which Security Researchers can report Vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent. 
 
 **Otherwise:** You may not be notified about the vulnerabilities. You will miss the opportunity to act on the vulnerabilities in time.
 
