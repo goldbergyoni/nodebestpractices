@@ -108,7 +108,7 @@ From the blog, devthought.com ranked 6 for the keywords “Node.js error object�
 
 From the blog machadogj
 
-> …One problem that I have with the Error class is that is not so simple to extend. Of course, you can inherit the class and create your own Error classes like HttpError, DbError, etc. However, that takes time and doesn’t add too much value [comparted to extending it only once for an AppError] unless you are doing something with types. Sometimes, you just want to add a message and keep the inner error, and sometimes you might want to extend the error with parameters, and such…
+> …One problem that I have with the Error class is that is not so simple to extend. Of course, you can inherit the class and create your own Error classes like HttpError, DbError, etc. However, that takes time and doesn’t add too much value [compared to extending it only once for an AppError] unless you are doing something with types. Sometimes, you just want to add a message and keep the inner error, and sometimes you might want to extend the error with parameters, and such…
 
 ### Blog Quote: "All JavaScript and System errors raised by Node.js inherit from Error"
 
