@@ -824,6 +824,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "AbdelrahmanHafez",
+      "name": "Hafez",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/19984935?v=4",
+      "profile": "https://github.com/AbdelrahmanHafez",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
