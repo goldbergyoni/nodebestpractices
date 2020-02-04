@@ -1,31 +1,31 @@
-# Be cautious when working with child processes
+# Soyez prudent lorsque vous travaillez avec des processus enfants
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-As great as child processes are, they should be used with caution. Passing in user input must be sanitized, if not avoided at all.
-The dangers of unsanitized input executing system-level logic are unlimited, reaching from remote code execution to the exposure of
-sensitive system data and even data loss. A check list of preparations could look like this
+Aussi importants que soient les processus enfants, ils doivent être utilisés avec prudence. Les entrées des utilisateurs qui y sont passées doivent être assainies (NdT *sanitize*), voire évitées. 
+Les dangers d'une entrée non assainie exécutant une logique au niveau du système sont illimités, allant de l'exécution de code à distance à l'exposition de données système sensibles et aussi de perte de données.
+Une liste de contrôle des préparatifs pourrait ressembler à ceci : 
 
-- avoid user input in every case, otherwise validate and sanitize it
-- limit the privileges of the parent and child processes using user/group identities
-- run your process inside of an isolated environment to prevent unwanted side-effects if the other preparations fail
+- éviter les entrées des utilisateurs dans tous les cas, autrement les valider et les assainir 
+- limiter les privilèges du parent et des processus enfants en utilisant les identités de groupe et d'utilisateur
+- exécuter votre processus dans un environnement isolé pour prévenir des effets secondaires indésirables si les autres préparations échouent
 
-### Code example: Dangers of unsanitized child process executions
+### Exemple de code : Les dangers de l'exécution de processus enfants non assainis
 
 ```javascript
 const { exec } = require('child_process');
 
 ...
 
-// as an example, take a script that takes two arguments, one of them is unsanitized user input
+// comme exemple, prenons un script qui prend deux arguments, l'un d'entre eux est une entrée utilisateur non assainie
 exec('"/path/to/test file/someScript.sh" --someOption ' + input);
 
-// -> imagine what could happen if the user simply enters something like '&& rm -rf --no-preserve-root /'
-// you'd be in for an unwanted surprise
+// -> imaginez ce qu'il se passerait si un utilisateur entrait simplement quelque chose comme '&& rm -rf --no-preserve-root /'
+// vous auriez une surprise indésirable
 ```
 
-### Additional resources
+### Ressources supplémentaires
 
-From the Node.js child process [documentation](https://nodejs.org/dist/latest-v8.x/docs/api/child_process.html#child_process_child_process_exec_command_options_callback):
+Extrait de la [documentation](https://nodejs.org/dist/latest-v8.x/docs/api/child_process.html#child_process_child_process_exec_command_options_callback) Node.js sur les processus enfants :
 
-> Never pass unsanitized user input to this function. Any input containing shell metacharacters may be used to trigger arbitrary command execution.
+> Ne jamais passer une entrée utilisateur non assainie à cette fonction. Toute entrée comportant des métacaractères du shell peut être utilisée pour déclencher une commande arbitrairement 
