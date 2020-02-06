@@ -1,25 +1,25 @@
-# Measure and guard the memory usage
+# Mesurez et protégez l'utilisation de la mémoire
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-In a perfect world, a web developer shouldn’t deal with memory leaks. In reality, memory issues are a known Node’s gotcha one must be aware of. Above all, memory usage must be monitored constantly. In the development and small production sites, you may gauge manually using Linux commands or npm tools and libraries like node-inspector and memwatch. The main drawback of this manual activities is that they require a human being actively monitoring – for serious production sites, it’s absolutely vital to use robust monitoring tools e.g. (AWS CloudWatch, DataDog or any similar proactive system) that alerts when a leak happens. There are also few development guidelines to prevent leaks: avoid storing data on the global level, use streams for data with dynamic size, limit variables scope using let and const.
+Dans un monde parfait, un développeur web ne devrait pas s'occuper des fuites de mémoire. En réalité, les problèmes de mémoire sont des phénomènes connus de Node dont il faut être conscient. Surtout, l'utilisation de la mémoire doit être constamment surveillée. Dans les sites de développement et les petits sites de production, vous pouvez mesurer manuellement en utilisant des commandes Linux ou des outils et des bibliothèques npm comme node-inspector et memwatch. Le principal inconvénient de ces activités manuelles est qu'elles nécessitent un être humain qui surveille activement - pour les sites de production sérieux, il est absolument vital d'utiliser des outils de surveillance robustes (AWS CloudWatch, DataDog ou tout autre système proactif similaire), par exemple qui alertent lorsqu'une fuite se produit. Il existe également peu de recommandations de développement pour anticiper des fuites : évitez de stocker les données au niveau global, utilisez des flux (NdT *streams*) pour les données de taille dynamique, limitez la portée des variables en utilisant des let et des const.
 
 <br/><br/>
 
-### What Other Bloggers Say
+### Ce que disent les autres blogueurs
 
-* From the blog [Dyntrace](http://apmblog.dynatrace.com/):
-> ... ”As we already learned, in Node.js JavaScript is compiled to native code by V8. The resulting native data structures don’t have much to do with their original representation and are solely managed by V8. This means that we cannot actively allocate or deallocate memory in JavaScript. V8 uses a well-known mechanism called garbage collection to address this problem.”
+* Extrait du blog de [Dyntrace](http://apmblog.dynatrace.com/) :
+> ... « Comme nous l'avons déjà appris, dans Node.js, JavaScript est compilé en code natif par V8. Les structures de données natives résultantes n'ont pas grand-chose à voir avec leur représentation d'origine et sont uniquement gérées par V8. Cela signifie que nous ne pouvons pas allouer ou désallouer activement de la mémoire en JavaScript. V8 utilise un mécanisme bien connu appelé le [ramasse-miettes](https://fr.wikipedia.org/wiki/Ramasse-miettes_(informatique)) (NdT *garbage collection*) pour résoudre ce problème. »
 
-* From the blog [Dyntrace](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load):
-> ... “Although this example leads to obvious results the process is always the same:
-Create heap dumps with some time and a fair amount of memory allocation in between
-Compare a few dumps to find out what’s growing”
+* Extrait du blog de [Dyntrace](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load) :
+> ... « Bien que cet exemple mène à des résultats évidents, le processus est toujours le même :
+Créez des copies de mémoires sur une certaine période avec une bonne quantité d'allocation de mémoire entre les deux
+Comparez ces copies pour découvrir ce qui augmente »
 
-* From the blog [Dyntrace](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load):
-> ... “fault, Node.js will try to use about 1.5GBs of memory, which has to be capped when running on systems with less memory. This is the expected behavior as garbage collection is a very costly operation.
-The solution for it was adding an extra parameter to the Node.js process:
-node –max_old_space_size=400 server.js –production ”
-“Why is garbage collection expensive? The V8 JavaScript engine employs a stop-the-world garbage collector mechanism. In practice, it means that the program stops execution while garbage collection is in progress.”
+* Extrait du blog de [Dyntrace](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load) :
+> ... « Par défaut, Node.js essaiera d'utiliser environ 1,5GB de mémoire, ce qui doit être plafonné lors de l'exécution sur des systèmes avec moins de mémoire. C'est le comportement attendu car la récupération de place est une opération très coûteuse.
+La solution pour cela a été d'ajouter un paramètre supplémentaire au processus de Node.js :
+node –max_old_space_size=400 server.js –production »
+« Pourquoi le ramasse-miettes coûte-t-il aussi cher ? Le moteur JavaScript V8 utilise un mécanisme d'arrêt lors du ramasse-miettes. En pratique, cela signifie que le programme arrête son exécution pendant que la récupération du ramasse-miettes est en cours. »
