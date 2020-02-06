@@ -1026,17 +1026,23 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-## ![✔] 6.26. Have a SECURITY.TXT File [PRODUCTION]
+## ![✔] 6.26. Have a security.txt File [PRODUCTION]
 
-**TL;DR:** Have a SECURITY.TXT file in the base directory of your Web Application in Production. SECURITY.TXT file should contain details using which Security Researchers can report Vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent. 
+**TL;DR:** Have a text file called ```security.txt``` under ```/.well-known```  directory (/.well-known/security.txt) or in the root directory (/security.txt) of your website or your Web Application in Production. ```security.txt``` file should contain details using which Security Researchers can report Vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent. 
+
+**Otherwise:** You may not be notified about the vulnerabilities. You will miss the opportunity to act on the vulnerabilities in time.
+
+🔗 [**Read More: security.txt**](https://securitytxt.org/)
+<br/><br/><br/>
+
+## ![✔] 6.27. Have a SECURITY.md File [OPEN SOURCE]
+
+**TL;DR:** To give people instructions for responsibly reporting security vulnerabilities in your project, you can add a SECURITY.md file to your repository's root, docs, or .github folder. SECURITY.md file should contain details using which Security Researchers can report Vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent. 
 
 **Otherwise:** You may not be notified about the vulnerabilities. You will miss the opportunity to act on the vulnerabilities in time.
 
-## ![✔] 6.27. Have a SECURITY.MD File [OPEN SOURCE]
-
-**TL;DR:** Have a SECURITY.MD file in the base directory of your Source Code Repository. SECURITY.MD file should contain details using which Security Researchers can report Vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent. 
-
-**Otherwise:** You may not be notified about the vulnerabilities. You will miss the opportunity to act on the vulnerabilities in time.
+🔗 [**Read More: SECURITY.md**](https://help.github.com/en/github/managing-security-vulnerabilities/adding-a-security-policy-to-your-repository)
+<br/><br/><br/>
 
 # `7. Draft: Performance Best Practices`
 
