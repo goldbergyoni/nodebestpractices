@@ -1,16 +1,16 @@
-# Make your code production-ready
+# Préparez votre code pour la production
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-Following is a list of development tips that greatly affect the production maintenance and stability:
+Voici une liste de conseils de développement qui ont un impact important sur la maintenance et la stabilité de la production :
 
-* The twelve-factor guide – Get familiar with the [Twelve factors](https://12factor.net/) guide
-* Be stateless – Save no data locally on a specific web server (see separate bullet – ‘Be Stateless’)
-* Cache – Utilize cache heavily, yet never fail because of cache mismatch
-* Test memory – gauge memory usage and leaks as part your development flow, tools such as ‘memwatch’ can greatly facilitate this task
-* Name functions – Minimize the usage of anonymous functions (i.e. inline callback) as a typical memory profiler will provide memory usage per method name
-* Use CI tools – Use CI tool to detect failures before sending to production. For example, use ESLint to detect reference errors and undefined variables. Use –trace-sync-io to identify code that uses synchronous APIs (instead of the async version)
-* Log wisely – Include in each log statement contextual information, hopefully in JSON format so log aggregators tools such as Elastic can search upon those properties (see separate bullet – ‘Increase visibility using smart logs’). Also, include transaction-id that identifies each request and allows to correlate lines that describe the same transaction (see separate bullet – ‘Include Transaction-ID’)
-* Error management – Error handling is the Achilles’ heel of Node.js production sites – many Node processes are crashing because of minor errors while others hang on alive in a faulty state instead of crashing. Setting your error handling strategy is absolutely critical, read here my [error handling best practices](http://goldbergyoni.com/checklist-best-practices-of-node-js-error-handling/)
+* Le guide douze facteurs – Familiarisez-vous avec le guide [Douze facteurs](https://12factor.net/fr/)
+* Soyez sans état – N'enregistrez aucune donnée localement sur un serveur web spécifique (consultez le point – « Soyez sans état »)
+* Mettez en cache – Utilisez beaucoup le cache, mais ne faites jamais échouer en raison de la non-concordance du cache
+* Testez la mémoire – Mesurez l'utilisation de la mémoire et les fuites dans le cadre de votre flux de développement, des outils tels que « memwatch » peuvent grandement faciliter cette tâche
+* Nommez les fonctions – Minimisez l'utilisation des fonctions anonymes (c'est à dire de fonction de rappel en ligne) car un profileur de mémoire classique fournit l'utilisation de la mémoire avec le nom de la méthode
+* Utilisez les outils CI – Utilisez l'outil CI pour détecter les échecs avant d'envoyer en production. Par exemple, utilisez ESLint pour détecter les erreurs de référence et les variables non définies. Utilisez –trace-sync-io pour identifier le code qui utilise des API synchrones (au lieu de la version asynchrone)
+* Journalisez à bon escient – Incluez dans le journal des informations contextuelles pour chaque instruction, si possible au format JSON, afin que les outils d'agrégation de journaux tels qu'Elastic puissent rechercher ces propriétés (consultez le point - « Augmentez la clarté à l'aide de la journalisation intelligente »). Incluez également l'ID de transaction qui identifie chaque requête et permet de corréler les lignes qui décrivent la même transaction (consultez le point - « Attribuez un ID de transaction à chaque relevé du journal »)
+* Gérez les erreurs – La gestion des erreurs est le talon d'Achille des sites de production de Node.js - de nombreux processus Node se bloquent en raison d'erreurs mineures tandis que d'autres restent en vie dans un état défectueux au lieu de se bloquer. La définition de votre stratégie de traitement des erreurs est absolument essentielle, lisez ici mes [meilleures pratiques de gestion des erreurs](http://goldbergyoni.com/checklist-best-practices-of-node-js-error-handling/)
