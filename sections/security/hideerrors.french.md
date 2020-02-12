@@ -1,16 +1,16 @@
-# Hide error details from client
+# Cachez les détails des erreurs au client
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-Exposing application error details to the client in production should be avoided due to the risk of exposing sensitive application details such as server file paths, third-party modules in use, and other internal workflows of the application which could be exploited by an attacker.
-Express comes with a built-in error handler, which takes care of any errors that might be encountered in the app. This default error-handling middleware function is added at the end of the middleware function stack.
-If you pass an error to `next()` and you do not handle it in a custom error handler, it will be handled by the built-in Express error handler; the error will be written to the client with the stack trace. This behaviour will be true when `NODE_ENV` is set to `development`, however when `NODE_ENV` is set to `production`, the stack trace is not written, only the HTTP response code.
+Exposer les détails des erreurs de l'application au client en production doit être évité du fait du risque de l'exposition de détails sensibles de l'application comme le chemin vers des fichiers du serveur, les modules tiers utilisés, et d'autres processus internes de l'application qui pourraient être exploités par un attaquant.
+Express vient avec un gestionnaire d'erreurs intégré, qui s'occupe de toutes les erreurs qui pourraient être rencontrées dans l'application. Cette fonction de gestion des erreurs par défaut de l'intergiciel (NdT *middleware*) est ajouté à la fin de la pile de fonctions de l'intergiciel.
+Si vous passez une erreur à `next()` et que vous ne la traitez pas dans un gestionnaire d'erreur personnalisé, elle sera traitée par le gestionnaire d'erreurs intégré d'Express; l'erreur sera affichée au client avec la pile d'erreurs (NdT *stacktrace*). Ce comportement sera vrai quand `NODE_ENV` est défini avec `development`, toutefois quand `NODE_ENV` est défini avec `production`, la pile d'erreurs n'est pas écrite, seulement le code de la réponse HTTP.
 
-### Code example: Express error handler
+### Exemple de code : Le gestionnaire d'erreurs d'Express
 
 ```javascript
-// production error handler
-// no stacktraces leaked to user
+// Traitement des erreurs en production
+// Aucune fuite de la pile d'erreurs n'est signalée à l'utilisateur
 app.use((err, req, res, next) => {
     res.status(err.status || 500);
     res.render('error', {
@@ -20,6 +20,6 @@ app.use((err, req, res, next) => {
 });
 ```
 
-### Additional resources
+### Ressources supplémentaires
 
-🔗 [Express.js error handling documentation](https://expressjs.com/en/guide/error-handling.html)
+🔗 [Documentation Express.js sur le traitement des erreurs](https://expressjs.com/en/guide/error-handling.html)
