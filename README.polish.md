@@ -1,6 +1,6 @@
 [✔]: assets/images/checkbox-small-blue.png
 
-# Node.js Najlepsze praktyki
+# Node.js - Najlepsze praktyki
 
 <h1 align="center">
   <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices">
@@ -36,9 +36,10 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 # Witamy! 3 rzeczy, które musisz wiedzieć na początku
 
-**1. W rzeczywistości czytasz dziesiątki najlepszych artykułów na temat Node.js - ** to repozytorium jest podsumowaniem i zbiorem najlepszych pozycji na temat najlepszych praktyk Node.js, a także treści napisanych tutaj przez współpracowników
-**2. Jest to największa kompilacja, która rośnie z każdym tygodniem - ** obecnie prezentowanych jest ponad 80 najlepszych praktyk, przewodników po stylach i wskazówek architektonicznych. Nowe wydania i pull requesty są tworzone codziennie, aby aktualizować tę książkę na żywo. Chcielibyśmy zobaczyć Twój wkład w to, czy to naprawiasz błędy w kodzie, pomagasz w tłumaczeniach, czy sugerujesz nowe genialne pomysły. Zobacz nasze [wskazówki dotyczące pisania tutaj] (/.Operations/writing-guidelines.md)
-**3. Większość najlepszych praktyk ma dodatkowe informacje - ** większość pocisków zawiera link **🔗Przeczytaj więcej**, który rozszerza praktykę o przykłady kodu, cytaty z wybranych blogów i więcej informacji
+**1. W rzeczywistości czytasz dziesiątki najlepszych artykułów na temat Node.js -** to repozytorium jest podsumowaniem i zbiorem najlepszych pozycji na temat najlepszych praktyk Node.js, a także treści napisanych tutaj przez współpracowników
+**2. Jest to największa kompilacja, która rośnie z każdym tygodniem -** obecnie prezentowanych jest ponad 80 najlepszych praktyk, przewodników po stylach i wskazówek architektonicznych. Nowe wydania i pull requesty są tworzone codziennie, aby aktualizować tę książkę na żywo. Chcielibyśmy zobaczyć Twój wkład w to, czy to naprawiasz błędy w kodzie, pomagasz w tłumaczeniach, czy sugerujesz nowe genialne pomysły. Zobacz nasze [wskazówki dotyczące pisania tutaj] (/.Operations/writing-guidelines.md)
+
+**3. Większość najlepszych praktyk ma dodatkowe informacje -** większość pocisków zawiera link **🔗Przeczytaj więcej**, który rozszerza praktykę o przykłady kodu, cytaty z wybranych blogów i więcej informacji
 <br/><br/>
 
 ## Spis treści
@@ -114,133 +115,133 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 <br/><br/>
 
-## ![✔] 2.2 Use only the built-in Error object
+## ![✔] 2.2 Używaj tylko wbudowanego obiektu Error
 
-**TL;DR:** Many throw errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw an exception or emit an error – using only the built-in Error object (or an object that extends the built-in Error object) will increase uniformity and prevent loss of information
+**TL;DR:** Wiele z nich wyrzuca błędy jako ciąg znaków lub jako niestandardowy typ - komplikuje to logikę obsługi błędów i interoperacyjność między modułami. Niezależnie od tego, czy odrzucisz obietnicę, rzucisz wyjątek, czy wyślesz błąd - użycie tylko wbudowanego obiektu Error (lub obiektu, który rozszerza wbudowany obiekt Error) zwiększy jednolitość i zapobiegnie utracie informacji
 
-**W przeciwnym razie:** When invoking some component, being uncertain which type of errors come in return – it makes proper error handling much harder. Even worse, using custom types to describe errors might lead to loss of critical error information like the stack trace!
+**W przeciwnym razie:** Podczas wywoływania jakiegoś komponentu brak pewności, jaki rodzaj błędów w zamian wraca - znacznie utrudnia prawidłowe zarządzanie błędami. Co gorsza, używanie niestandardowych typów do opisywania błędów może prowadzić do utraty krytycznych informacji o błędach, takich jak ślad stosu!
 
 🔗 [**Czytaj więcej: using the built-in error object**](/sections/errorhandling/useonlythebuiltinerror.md)
 
 <br/><br/>
 
-## ![✔] 2.3 Distinguish operational vs programmer errors
+## ![✔] 2.3 Rozróżnij błędy operacyjne i programistyczne
 
-**TL;DR:** Operational errors (e.g. API received an invalid input) refer to known cases where the error impact is fully understood and can be handled thoughtfully. On the other hand, programmer error (e.g. trying to read undefined variable) refers to unknown code failures that dictate to gracefully restart the application
+**TL;DR:** Błędy operacyjne (np. API otrzymało niepoprawne dane wejściowe) odnoszą się do znanych przypadków, w których wpływ błędu jest w pełni zrozumiały i można go starannie rozpatrzyć. Z drugiej strony błąd programisty (np. Próba odczytania niezdefiniowanej zmiennej) odnosi się do nieznanych błędów kodu, które zmuszają do płynnego restartu aplikacji
 
-**W przeciwnym razie:** You may always restart the application when an error appears, but why let ~5000 online users down because of a minor, predicted, operational error? the opposite is also not ideal – keeping the application up when an unknown issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
+**W przeciwnym razie:** Zawsze możesz ponownie uruchomić aplikację, gdy pojawi się błąd, ale dlaczego zawieść ~5000 użytkowników online z powodu drobnego, przewidywanego błędu operacyjnego? wręcz przeciwnie, nie jest też idealne - utrzymanie aplikacji w stanie, gdy wystąpi nieznany problem (błąd programisty), może prowadzić do nieprzewidzianego zachowania. Rozróżnienie tych dwóch pozwala działać taktownie i stosować zrównoważone podejście oparte na danym kontekście
 
 🔗 [**Czytaj więcej: operational vs programmer error**](/sections/errorhandling/operationalvsprogrammererror.md)
 
 <br/><br/>
 
-## ![✔] 2.4 Handle errors centrally, not within an Express middleware
+## ![✔] 2.4 Obsługuj błędy centralnie, a nie w oprogramowaniu pośrednim Express
 
-**TL;DR:** Error handling logic such as mail to admin and logging should be encapsulated in a dedicated and centralized object that all endpoints (e.g. Express middleware, cron jobs, unit-testing) call when an error comes in
+**TL;DR:** Obsługa błędów związanych z logiką, taką jak poczta do administratora i rejestrowanie, powinna być zamknięta w dedykowanym i scentralizowanym obiekcie, do którego wywoływane są wszystkie punkty końcowe (np. Express middleware, zadania cron, testy jednostkowe), gdy pojawia się błąd
 
-**W przeciwnym razie:** Not handling errors within a single place will lead to code duplication and probably to improperly handled errors
+**W przeciwnym razie:** Brak obsługi błędów w jednym miejscu prowadzi do duplikacji kodu i prawdopodobnie do nieprawidłowej obsługi błędów
 
 🔗 [**Czytaj więcej: handling errors in a centralized place**](/sections/errorhandling/centralizedhandling.md)
 
 <br/><br/>
 
-## ![✔] 2.5 Document API errors using Swagger or GraphQL
+## ![✔] 2.5 Dokumentuj błędy interfejsu API za pomocą Swagger lub GraphQL
 
-**TL;DR:** Let your API callers know which errors might come in return so they can handle these thoughtfully without crashing. For RESTful APIs, this is usually done with documentation frameworks like Swagger. If you're using GraphQL, you can utilize your schema and comments as well.
+**TL;DR:** Poinformuj osoby dzwoniące do interfejsu API, które błędy mogą w zamian otrzymać, aby mogły je starannie obsługiwać bez awarii. W przypadku interfejsów API RESTful odbywa się to zwykle w ramach dokumentacji takich jak Swagger. Jeśli korzystasz z GraphQL, możesz również wykorzystać swój schemat i komentarze.
 
-**W przeciwnym razie:** An API client might decide to crash and restart only because it received back an error it couldn’t understand. Note: the caller of your API might be you (very typical in a microservice environment)
+**W przeciwnym razie:** Klient API może zdecydować o awarii i ponownym uruchomieniu tylko dlatego, że otrzymał błąd, którego nie mógł zrozumieć. Uwaga: osobą wywołującą interfejs API może być Ty (bardzo typowe w środowisku mikrousług)
 
 🔗 [**Czytaj więcej: documenting API errors in Swagger or GraphQL**](/sections/errorhandling/documentingusingswagger.md)
 
 <br/><br/>
 
-## ![✔] 2.6 Exit the process gracefully when a stranger comes to town
+## ![✔] 2.6 Opuść ten proces z wdziękiem, gdy do miasta przyjedzie nieznajomy
 
-**TL;DR:** When an unknown error occurs (a developer error, see best practice 2.3) - there is uncertainty about the application healthiness. A common practice suggests restarting the process carefully using a process management tool like [Forever](https://www.npmjs.com/package/forever) or [PM2](http://pm2.keymetrics.io/)
+**TL;DR:** Gdy wystąpi nieznany błąd (błąd programisty, patrz najlepsza praktyka 2.3) - nie ma pewności co do kondycji aplikacji. Powszechna praktyka sugeruje ostrożne ponowne uruchomienie procesu za pomocą narzędzia do zarządzania procesami, takiego jak [Forever](https://www.npmjs.com/package/forever) lub [PM2](http://pm2.keymetrics.io/)
 
-**W przeciwnym razie:** When an unfamiliar exception occurs, some object might be in a faulty state (e.g. an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
+**W przeciwnym razie:** Gdy wystąpi nieznany wyjątek, niektóre obiekty mogą znajdować się w stanie wadliwym (np. Emiter zdarzeń, który jest używany globalnie i nie uruchamia już zdarzeń z powodu pewnych wewnętrznych awarii), a wszystkie przyszłe żądania mogą zawieść lub zachowywać się szaleńczo
 
 🔗 [**Czytaj więcej: shutting the process**](/sections/errorhandling/shuttingtheprocess.md)
 
 <br/><br/>
 
-## ![✔] 2.7 Use a mature logger to increase error visibility
+## ![✔] 2.7 Użyj dojrzałego programu rejestrującego, aby zwiększyć widoczność błędów
 
-**TL;DR:** A set of mature logging tools like [Winston](https://www.npmjs.com/package/winston), [Bunyan](https://github.com/trentm/node-bunyan), [Log4js](http://stritti.github.io/log4js/) or [Pino](https://github.com/pinojs/pino), will speed-up error discovery and understanding. So forget about console.log
+**TL;DR:** Zestaw dojrzałych narzędzi do rejestrowania, takich jak [Winston] (https://www.npmjs.com/package/winston), [Bunyan] (https://github.com/trentm/node-bunyan), [Log4js] (http : //stritti.github.io/log4js/) lub [Pino] (https://github.com/pinojs/pino), przyspieszy wykrywanie błędów i zrozumienie. Więc zapomnij o console.log
 
-**W przeciwnym razie:** Skimming through console.logs or manually through messy text file without querying tools or a decent log viewer might keep you busy at work until late
+**W przeciwnym razie:** Przeglądanie w pliku console.logs lub ręcznie przez niechlujny plik tekstowy bez korzystania z narzędzi zapytań lub porządnej przeglądarki dziennika może być zajęty w pracy do późna
 
 🔗 [**Czytaj więcej: using a mature logger**](/sections/errorhandling/usematurelogger.md)
 
 <br/><br/>
 
-## ![✔] 2.8 Test error flows using your favorite test framework
+## ![✔] 2.8 Przepływy błędów testowych przy użyciu ulubionego środowiska testowego
 
-**TL;DR:** Whether professional automated QA or plain manual developer testing – Ensure that your code not only satisfies positive scenarios but also handles and returns the right errors. Testing frameworks like Mocha & Chai can handle this easily (see code examples within the "Gist popup")
+**TL;DR:** Niezależnie od tego, czy jest to profesjonalna automatyczna kontrola jakości, czy zwykłe ręczne testowanie programisty - upewnij się, że Twój kod nie tylko spełnia pozytywne scenariusze, ale także obsługuje i zwraca odpowiednie błędy. Ramy testowe, takie jak Mocha i Chai, mogą sobie z tym poradzić (zobacz przykłady kodu w "Gist popup")
 
-**W przeciwnym razie:** Without testing, whether automatically or manually, you can’t rely on your code to return the right errors. Without meaningful errors – there’s no error handling
+**W przeciwnym razie:** Bez testowania, automatycznie lub ręcznie, nie można polegać na kodzie, który zwraca prawidłowe błędy. Bez znaczących błędów - nie ma obsługi błędów
 
 🔗 [**Czytaj więcej: testing error flows**](/sections/errorhandling/testingerrorflows.md)
 
 <br/><br/>
 
-## ![✔] 2.9 Discover errors and downtime using APM products
+## ![✔] 2.9 Odkryj błędy i przestoje przy użyciu produktów APM
 
-**TL;DR:** Monitoring and performance products (a.k.a APM) proactively gauge your codebase or API so they can automagically highlight errors, crashes and slow parts that you were missing
+**TL;DR:** Produkty do monitorowania i wydajności (np. APM) proaktywnie oceniają twoją bazę kodu lub interfejs API, aby mogły automatycznie zaznaczać błędy, awarie i spowalniające brakujące części
 
-**W przeciwnym razie:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which are your slowest code parts under real-world scenario and how these affect the UX
+**W przeciwnym razie:** Możesz poświęcić wiele wysiłku na pomiar wydajności interfejsu API i przestojów, prawdopodobnie nigdy nie będziesz wiedział, jakie są twoje najwolniejsze części kodu w rzeczywistym scenariuszu i jak wpływają one na UX
 
 🔗 [**Czytaj więcej: using APM products**](/sections/errorhandling/apmproducts.md)
 
 <br/><br/>
 
-## ![✔] 2.10 Catch unhandled promise rejections
+## ![✔] 2.10 Złap nieobsługiwane odrzucenia promise
 
-**TL;DR:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explicitly handle. Even if your code is subscribed to `process.uncaughtException`! Overcome this by registering to the event `process.unhandledRejection`
+**TL;DR:** Każdy wyjątek zgłoszony w ramach obietnicy zostanie połknięty i odrzucony, chyba że programista nie zapomni o jawnej obsłudze. Nawet jeśli Twój kod jest subskrybowany w `process.uncaughtException`! Sforsuj to, rejestrując się na wydarzeniu `process.unhandledRejection`
 
-**W przeciwnym razie:** Your errors will get swallowed and leave no trace. Nothing to worry about
+**W przeciwnym razie:** Twoje błędy zostaną połknięte i nie pozostawiają śladu. Nie ma się o co martwić
 
 🔗 [**Czytaj więcej: catching unhandled promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.md)
 
 <br/><br/>
 
-## ![✔] 2.11 Fail fast, validate arguments using a dedicated library
+## ![✔] 2.11 Szybko się nie powiedzie, sprawdź poprawność argumentów za pomocą dedykowanej biblioteki
 
-**TL;DR:** This should be part of your Express best practices – Assert API input to avoid nasty bugs that are much harder to track later. The validation code is usually tedious unless you are using a very cool helper library like Joi
+**TL;DR:** Powinno to być częścią najlepszych praktyk Express - Assert API, aby uniknąć nieprzyjemnych błędów, które później będą znacznie trudniejsze do wyśledzenia. Kod weryfikacyjny jest zwykle uciążliwy, chyba że używasz bardzo fajnej biblioteki pomocniczej, takiej jak Joi
 
-**W przeciwnym razie:** Consider this – your function expects a numeric argument “Discount” which the caller forgets to pass, later on, your code checks if Discount!=0 (amount of allowed discount is greater than zero), then it will allow the user to enjoy a discount. OMG, what a nasty bug. Can you see it?
+**W przeciwnym razie:** Rozważ to - twoja funkcja oczekuje argumentu liczbowego „Rabat”, który wywołujący zapomina przekazać, a następnie kod sprawdza, czy Rabat! = 0 (kwota dozwolonego rabatu jest większa od zera), a następnie pozwoli użytkownikowi cieszyć się zniżka. OMG, co za paskudny błąd. Możesz to zobaczyć?
 
 🔗 [**Czytaj więcej: failing fast**](/sections/errorhandling/failfast.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Wróć na górę</a></p>
 
-# `3. Code Style Practices`
+# `3. Praktyki stylu kodu`
 
-## ![✔] 3.1 Use ESLint
+## ![✔] 3.1 Użyj ESLint
 
-**TL;DR:** [ESLint](https://eslint.org) is the de-facto standard for checking possible code errors and fixing code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Though ESLint can automatically fix code styles, other tools like [prettier](https://www.npmjs.com/package/prettier) and [beautify](https://www.npmjs.com/package/js-beautify) are more powerful in formatting the fix and work in conjunction with ESLint
+**TL;DR:** [ESLint](https://eslint.org) jest de facto standardem sprawdzania możliwych błędów kodu i ustalania stylu kodu, nie tylko w celu zidentyfikowania drobiazgowych problemów z odstępami, ale także w celu wykrycia poważnych anty-wzorów kodu, takich jak programiści zgłaszający błędy bez klasyfikacji. Chociaż ESLint może automatycznie naprawiać style kodu, inne narzędzia, takie jak [ładniejsze] (https://www.npmjs.com/package/prettier) i [upiększyć] (https://www.npmjs.com/package/js-beautify) mają większą moc formatowania poprawki i współpracują z ESLint
 
-**W przeciwnym razie:** Developers will focus on tedious spacing and line-width concerns and time might be wasted overthinking the project's code style
+**W przeciwnym razie:** Programiści skoncentrują się na żmudnych odstępach i problemach z szerokością linii, a czas może zostać zmarnowany na przemyślenie stylu kodu projektu
 
 🔗 [**Czytaj więcej: Using ESLint and Prettier**](/sections/codestylepractices/eslint_prettier.md)
 
 <br/><br/>
 
-## ![✔] 3.2 Node.js specific plugins
+## ![✔] 3.2 Specyficzne wtyczki Node.js
 
-**TL;DR:** On top of ESLint standard rules that cover vanilla JavaScript, add Node.js specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
+**TL;DR:** Oprócz standardowych reguł ESLint obejmujących waniliowy JavaScript, dodaj wtyczki Node.js, takie jak [eslint-plugin-node] (https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin- mocha] (https://www.npmjs.com/package/eslint-plugin-mocha) i [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
-**W przeciwnym razie:** Many faulty Node.js code patterns might escape under the radar. For example, developers might require(variableAsPath) files with a variable given as path which allows attackers to execute any JS script. Node.js linters can detect such patterns and complain early
+**W przeciwnym razie:** Wiele wadliwych wzorców kodu Node.js może uciekać pod radarem. Na przykład programiści mogą wymagać plików (zmiennaAsPath) ze zmienną podaną jako ścieżka, która umożliwia atakującym wykonanie dowolnego skryptu JS. Linters Node.js mogą wcześnie wykrywać takie wzorce i narzekać
 
 <br/><br/>
 
-## ![✔] 3.3 Start a Codeblock's Curly Braces on the Same Line
+## ![✔] 3.3 Uruchom nawiasy klamrowe Codeblock na tej samej linii
 
-**TL;DR:** The opening curly braces of a code block should be on the same line as the opening statement
+**TL;DR:** Nawiasy klamrowe otwierające bloku kodu powinny znajdować się w tym samym wierszu, co instrukcja otwierająca
 
-### Code Example
+### Przykład kodu
 
 ```javascript
 // Do
@@ -255,21 +256,21 @@ function someFunction()
 }
 ```
 
-**W przeciwnym razie:** Deferring from this best practice might lead to unexpected results, as seen in the StackOverflow thread below:
+**W przeciwnym razie:** Odstąpienie od tej najlepszej praktyki może prowadzić do nieoczekiwanych rezultatów, jak widać w poniższym wątku StackOverflow:
 
 🔗 [**Czytaj więcej:** "Why do results vary based on curly brace placement?" (StackOverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
 <br/><br/>
 
-## ![✔] 3.4 Separate your statements properly
+## ![✔] 3.4 Oddziel swoje deklaracje poprawnie
 
-No matter if you use semicolons or not to separate your statements, knowing the common pitfalls of improper linebreaks or automatic semicolon insertion, will help you to eliminate regular syntax errors.
+Bez względu na to, czy używasz średników, czy też nie rozdzielasz swoich instrukcji, znajomość typowych pułapek niewłaściwych podziałów linii lub automatycznego wstawiania średników pomoże Ci wyeliminować regularne błędy składniowe.
 
-**TL;DR:** Use ESLint to gain awareness about separation concerns. [Prettier](https://prettier.io/) or [Standardjs](https://standardjs.com/) can automatically resolve these issues.
+**TL;DR:** Użyj ESLint, aby zyskać świadomość problemów związanych z separacją. [Ładniej](https://prettier.io/) lub [Standardjs](https://standardjs.com/) może automatycznie rozwiązać te issues.
 
-**W przeciwnym razie:** As seen in the previous section, JavaScript's interpreter automatically adds a semicolon at the end of a statement if there isn't one, or considers a statement as not ended where it should, which might lead to some undesired results. You can use assignments and avoid using immediate invoked function expressions to prevent most of unexpected errors.
+**W przeciwnym razie:** Jak widać w poprzedniej sekcji, interpreter JavaScript automatycznie dodaje średnik na końcu instrukcji, jeśli nie istnieje, lub uważa instrukcję za niezakończoną tam, gdzie powinna, co może prowadzić do niepożądanych wyników. Możesz używać przypisań i unikać używania natychmiastowych wywoływanych wyrażeń funkcyjnych, aby zapobiec większości nieoczekiwanych błędów.
 
-### Code example
+### Przykład kodu
 
 ```javascript
 // Do
@@ -305,21 +306,21 @@ const count = 2 // it tries to run 2(), but 2 is not a function
 
 <br/><br/>
 
-## ![✔] 3.5 Name your functions
+## ![✔] 3.5 Nazwij swoje funkcje
 
-**TL;DR:** Name all functions, including closures and callbacks. Avoid anonymous functions. This is especially useful when profiling a node app. Naming all functions will allow you to easily understand what you're looking at when checking a memory snapshot
+**TL;DR:** Nazwij wszystkie funkcje, w tym zamknięcia i połączenia zwrotne. Unikaj anonimowych funkcji. Jest to szczególnie przydatne podczas profilowania aplikacji węzła. Nazewnictwo wszystkich funkcji pozwoli ci łatwo zrozumieć, na co patrzysz podczas sprawdzania migawki pamięci
 
-**W przeciwnym razie:** Debugging production issues using a core dump (memory snapshot) might become challenging as you notice significant memory consumption from anonymous functions
+**W przeciwnym razie:** Debugowanie problemów produkcyjnych przy użyciu zrzutu pamięci (migawki pamięci) może stać się trudnym zadaniem, ponieważ zauważysz znaczne zużycie pamięci przez funkcje anonimowe
 
 <br/><br/>
 
-## ![✔] 3.6 Use naming conventions for variables, constants, functions and classes
+## ![✔] 3.6 Użyj konwencji nazewnictwa dla zmiennych, stałych, funkcji i klas
 
-**TL;DR:** Use **_lowerCamelCase_** when naming constants, variables and functions and **_UpperCamelCase_** (capital first letter as well) when naming classes. This will help you to easily distinguish between plain variables/functions, and classes that require instantiation. Use descriptive names, but try to keep them short
+**TL;DR:** Użyj **_lowerCamelCase_** podczas nazywania stałych, zmiennych i funkcji oraz **_UpperCamelCase_** (również pierwsza litera) podczas nazywania klas. Pomoże Ci to łatwo odróżnić zwykłe zmienne / funkcje od klas wymagających tworzenia instancji. Używaj opisowych nazw, ale staraj się, aby były krótkie
 
-**W przeciwnym razie:** Javascript is the only language in the world which allows invoking a constructor ("Class") directly without instantiating it first. Consequently, Classes and function-constructors are differentiated by starting with UpperCamelCase
+**W przeciwnym razie:** JavaScript jest jedynym językiem na świecie, który umożliwia bezpośrednie wywoływanie konstruktora („klasy”) bez uprzedniego jego tworzenia. W konsekwencji klasy i konstruktory funkcji są zróżnicowane, zaczynając od UpperCamelCase
 
-### 3.6 Code Example
+### 3.6 Przykład kodu
 
 ```javascript
 // for class name we use UpperCamelCase
@@ -337,31 +338,31 @@ function doSomething() {}
 
 <br/><br/>
 
-## ![✔] 3.7 Prefer const over let. Ditch the var
+## ![✔] 3.7 Wolę const nad let. Porzuć var
 
-**TL;DR:** Using `const` means that once a variable is assigned, it cannot be reassigned. Preferring `const` will help you to not be tempted to use the same variable for different uses, and make your code clearer. If a variable needs to be reassigned, in a for loop, for example, use `let` to declare it. Another important aspect of `let` is that a variable declared using it is only available in the block scope in which it was defined. `var` is function scoped, not block scoped, and [shouldn't be used in ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) now that you have `const` and `let` at your disposal
+**TL;DR:** Używanie `const` oznacza, że po przypisaniu zmiennej nie można jej ponownie przypisać. Preferowanie `const` pomoże ci nie ulec pokusie użycia tej samej zmiennej do różnych zastosowań i sprawi, że twój kod będzie wyraźniejszy. Jeśli zmienna wymaga ponownego przypisania, na przykład w pętli for, użyj `let`, aby ją zadeklarować. Innym ważnym aspektem „let” jest to, że zmienna zadeklarowana przy użyciu tej zmiennej jest dostępna tylko w zakresie bloku, w którym została zdefiniowana. `var` ma zasięg działania, a nie blok, i [nie powinien być używany w ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) teraz masz `const` i `let` do Twojej dyspozycji
 
-**W przeciwnym razie:** Debugging becomes way more cumbersome when following a variable that frequently changes
+**W przeciwnym razie:** Debugowanie staje się znacznie bardziej kłopotliwe, gdy podąża się za często zmieniającą się zmienną
 
 🔗 [**Czytaj więcej: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
 
 <br/><br/>
 
-## ![✔] 3.8 Require modules first, not inside functions
+## ![✔] 3.8 Wymagaj najpierw modułów, a nie funkcji wewnętrznych
 
-**TL;DR:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top but also avoids a couple of potential problems
+**TL;DR:** Wymagaj modułów na początku każdego pliku, przed dowolnymi funkcjami i poza nimi. Ta prosta najlepsza praktyka nie tylko pomoże ci łatwo i szybko określić zależności pliku na samej górze, ale także pozwoli uniknąć kilku potencjalnych problemów
 
-**W przeciwnym razie:** Requires are run synchronously by Node.js. If they are called from within a function, it may block other requests from being handled at a more critical time. Also, if a required module or any of its own dependencies throw an error and crash the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function
+**W przeciwnym razie:** Wymagania są uruchamiane synchronicznie przez Node.js. Jeśli są wywoływane z funkcji, może blokować obsługę innych żądań w bardziej krytycznym momencie. Ponadto, jeśli wymagany moduł lub dowolna z jego zależności zgłasza błąd i powoduje awarię serwera, najlepiej dowiedzieć się o nim jak najszybciej, co może nie mieć miejsca, jeśli moduł ten jest wymagany z funkcji
 
 <br/><br/>
 
-## ![✔] 3.9 Require modules by folders, opposed to the files directly
+## ![✔] 3.9 Wymagaj modułów według folderów, a nie bezpośrednio plików
 
-**TL;DR:** When developing a module/library in a folder, place an index.js file that exposes the module's internals so every consumer will pass through it. This serves as an 'interface' to your module and eases future changes without breaking the contract
+**TL;DR:** Podczas opracowywania modułu / biblioteki w folderze umieść plik index.js, który ujawnia elementy wewnętrzne modułu, aby każdy konsument mógł przez niego przejść. Służy to jako „interfejs” do modułu i ułatwia przyszłe zmiany bez zerwania umowy
 
-**W przeciwnym razie:** Changing the internal structure of files or the signature may break the interface with clients
+**W przeciwnym razie:** Zmiana wewnętrznej struktury plików lub podpisu może uszkodzić interfejs z klientami
 
-### 3.9 Code example
+### 3.9 Przykład kodu
 
 ```javascript
 // Do
@@ -375,13 +376,13 @@ module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolve
 
 <br/><br/>
 
-## ![✔] 3.10 Use the `===` operator
+## ![✔] 3.10 Używaj operatora `===`
 
-**TL;DR:** Prefer the strict equality operator `===` over the weaker abstract equality operator `==`. `==` will compare two variables after converting them to a common type. There is no type conversion in `===`, and both variables must be of the same type to be equal
+**TL;DR:** Preferuj operator ścisłej równości `===` zamiast słabszego abstrakcyjnego operatora równości `==`. `==` porówna dwie zmienne po przekształceniu ich we wspólny typ. W `===` nie ma konwersji typu i obie zmienne muszą być tego samego typu, aby były równe
 
-**W przeciwnym razie:** Unequal variables might return true when compared with the `==` operator
+**W przeciwnym razie:** Nierówne zmienne mogą zwracać wartość true w porównaniu z operatorem `==`
 
-### 3.10 Code example
+### 3.10 Przykład kodu
 
 ```javascript
 '' == '0'           // false
@@ -398,15 +399,15 @@ null == undefined   // true
 ' \t\r\n ' == 0     // true
 ```
 
-All statements above will return false if used with `===`
+Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte z `===`
 
 <br/><br/>
 
-## ![✔] 3.11 Use Async Await, avoid callbacks
+## ![✔] 3.11 Użyj Async Await, unikaj połączeń zwrotnych
 
-**TL;DR:** Node 8 LTS now has full support for Async-await. This is a new way of dealing with asynchronous code which supersedes callbacks and promises. Async-await is non-blocking, and it makes asynchronous code look synchronous. The best gift you can give to your code is using async-await which provides a much more compact and familiar code syntax like try-catch
+**TL;DR:** Node 8 LTS teraz ma pełne wsparcie dla Async-czekaj. Jest to nowy sposób radzenia sobie z kodem asynchronicznym, który zastępuje wywołania zwrotne i obiecuje. Oczekiwanie na asynchronizację nie jest blokowane i sprawia, że kod asynchroniczny wygląda na synchroniczny. Najlepszym prezentem, jaki możesz dać kodowi, jest użycie funkcji async-czekaj, która zapewnia znacznie bardziej zwartą i znaną składnię kodu, taką jak try-catch
 
-**W przeciwnym razie:** Handling async errors in callback style is probably the fastest way to hell - this style forces to check errors all over, deal with awkward code nesting and makes it difficult to reason about the code flow
+**W przeciwnym razie:** Obsługa błędów asynchronicznych w stylu wywołania zwrotnego jest prawdopodobnie najszybszą drogą do piekła - ten styl zmusza do sprawdzania błędów, radzenia sobie z dziwnym zagnieżdżaniem kodu i utrudnia uzasadnienie przepływu kodu
 
 🔗[**Czytaj więcej:** Guide to async await 1.0](https://github.com/yortus/asyncawait)
 
@@ -414,9 +415,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 3.12 Use arrow function expressions (=>)
 
-**TL;DR:** Though it's recommended to use async-await and avoid function parameters when dealing with older APIs that accept promises or callbacks - arrow functions make the code structure more compact and keep the lexical context of the root function (i.e. `this`)
+**TL;DR:** Chociaż zaleca się stosowanie asynchronicznego oczekiwania i unikania parametrów funkcji w przypadku starszych interfejsów API, które akceptują obietnice lub wywołania zwrotne - funkcje strzałek sprawiają, że struktura kodu jest bardziej zwarta i zachowuje kontekst leksykalny funkcji root (np. `this`)
 
-**W przeciwnym razie:** Longer code (in ES5 functions) is more prone to bugs and cumbersome to read
+**W przeciwnym razie:** Dłuższy kod (w funkcjach ES5) jest bardziej podatny na błędy i trudny do odczytania
 
 🔗 [**Czytaj więcej: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
 
@@ -424,365 +425,365 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `4. Testing And Overall Quality Practices`
+# `4. Testy i ogólne praktyki jakości`
 
-## ![✔] 4.1 At the very least, write API (component) testing
+## ![✔] 4.1 Przynajmniej napisz testowanie API (komponentu)
 
-**TL;DR:** Most projects just don't have any automated testing due to short timetables or often the 'testing project' ran out of control and was abandoned. For that reason, prioritize and start with API testing which is the easiest way to write and provides more coverage than unit testing (you may even craft API tests without code using tools like [Postman](https://www.getpostman.com/). Afterward, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc
+**TL;DR:** Większość projektów po prostu nie ma żadnych automatycznych testów z powodu krótkich harmonogramów lub często „projekt testowy” wymykał się spod kontroli i został porzucony. Z tego powodu ustal priorytetyzację i zacznij od testowania interfejsu API, który jest najłatwiejszym sposobem pisania i zapewnia większy zasięg niż testowanie jednostkowe (możesz nawet tworzyć testy API bez kodu za pomocą narzędzi takich jak [Postman] (https://www.getpostman.com/ Następnie, jeśli masz więcej zasobów i czasu, kontynuuj zaawansowane typy testów, takie jak testy jednostkowe, testy DB, testy wydajności itp.
 
-**W przeciwnym razie:** You may spend long days on writing unit tests to find out that you got only 20% system coverage
+**W przeciwnym razie:** Możesz spędzać długie dni na pisaniu testów jednostkowych, aby dowiedzieć się, że masz tylko 20% zasięgu systemu
 
 <br/><br/>
 
-## ![✔] 4.2 Include 3 parts in each test name
+## ![✔] 4.2 Dołącz 3 części do każdej nazwy testu
 
-**TL;DR:** Make the test speak at the requirements level so it's self explanatory also to QA engineers and developers who are not familiar with the code internals. State in the test name what is being tested (unit under test), under what circumstances and what is the expected result
+**TL;DR:** Spraw, aby test mówił na poziomie wymagań, aby był zrozumiały również dla inżynierów i programistów kontroli jakości, którzy nie znają wewnętrznych elementów kodu. Podaj w nazwie testu, co jest testowane (testowana jednostka), w jakich okolicznościach i jaki jest oczekiwany wynik
 
-**W przeciwnym razie:** A deployment just failed, a test named “Add product” failed. Does this tell you what exactly is malfunctioning?
+**W przeciwnym razie:** Wdrożenie właśnie nie powiodło się, test o nazwie „Dodaj produkt” nie powiódł się. Czy to mówi ci, co dokładnie działa nieprawidłowo?
 
 🔗 [**Czytaj więcej: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
 
 <br/><br/>
 
-## ![✔] 4.3 Structure tests by the AAA pattern
+## ![✔] 4.3 Testy struktury według wzorca AAA
 
-**TL;DR:** Structure your tests with 3 well-separated sections: Arrange, Act & Assert (AAA). The first part includes the test setup, then the execution of the unit under test and finally the assertion phase. Following this structure guarantees that the reader spends no brain CPU on understanding the test plan
+**TL;DR:** Ustrukturyzuj swoje testy za pomocą 3 dobrze oddzielonych sekcji: Arrange, Act & Assert (AAA). Pierwsza część obejmuje konfigurację testu, następnie wykonanie testowanego urządzenia i wreszcie fazę asercji. Przestrzeganie tej struktury gwarantuje, że czytelnik nie poświęci procesora mózgu na zrozumienie planu testu
 
-**W przeciwnym razie:** Not only you spend long daily hours on understanding the main code, now also what should have been the simple part of the day (testing) stretches your brain
+**W przeciwnym razie:** Nie tylko spędzasz długie codzienne godziny na zrozumieniu głównego kodu, ale także to, co powinno być prostą częścią dnia (testowanie) rozciąga Twój mózg
 
 🔗 [**Czytaj więcej: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.md)
 
 <br/><br/>
 
-## ![✔] 4.4 Detect code issues with a linter
+## ![✔] 4.4 Wykryj problemy z kodem za pomocą lintera
 
-**TL;DR:** Use a code linter to check basic quality and detect anti-patterns early. Run it before any test and add it as a pre-commit git-hook to minimize the time needed to review and correct any issue. Also check [Section 3](#3-code-style-practices) on Code Style Practices
+**TL;DR:** Użyj lintera kodu, aby sprawdzić podstawową jakość i wcześnie wykryć anty-wzory. Uruchom go przed jakimkolwiek testem i dodaj jako git-hook przed zatwierdzeniem, aby zminimalizować czas potrzebny na sprawdzenie i naprawienie dowolnego problemu. Sprawdź także [Część 3] (# 3-style-stylowe praktyki) w części Praktyki stylu kodu
 
-**W przeciwnym razie:** You may let pass some anti-pattern and possible vulnerable code to your production environment.
+**W przeciwnym razie:** Możesz przekazać kod anty-wzorcowy i potencjalnie podatny na atak do środowiska produkcyjnego.
 
 <br/><br/>
 
-## ![✔] 4.5 Avoid global test fixtures and seeds, add data per-test
+## ![✔] 4.5 Unikaj globalnych urządzeń testowych i nasion, dodawaj dane na test
 
-**TL;DR:** To prevent tests coupling and easily reason about the test flow, each test should add and act on its own set of DB rows. Whenever a test needs to pull or assume the existence of some DB data - it must explicitly add that data and avoid mutating any other records
+**TL;DR:** Aby zapobiec sprzężeniu testów i łatwo uzasadnić przebieg testu, każdy test powinien dodawać i działać na swoim własnym zestawie wierszy DB. Ilekroć test wymaga wyciągnięcia lub założenia istnienia niektórych danych DB - musi jawnie dodać te dane i unikać mutowania jakichkolwiek innych rekordów
 
-**W przeciwnym razie:** Consider a scenario where deployment is aborted due to failing tests, team is now going to spend precious investigation time that ends in a sad conclusion: the system works well, the tests however interfere with each other and break the build
+**W przeciwnym razie:** Rozważmy scenariusz, w którym wdrożenie zostało przerwane z powodu nieudanych testów, zespół zamierza teraz poświęcić cenny czas na dochodzenie, który kończy się smutnym wnioskiem: system działa dobrze, testy jednak przeszkadzają sobie nawzajem i przerywają kompilację
 
 🔗 [**Czytaj więcej: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
 
 <br/><br/>
 
-## ![✔] 4.6 Constantly inspect for vulnerable dependencies
+## ![✔] 4.6 Nieustannie sprawdzaj wrażliwe zależności
 
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [npm audit](https://docs.npmjs.com/cli/audit) and 🔗 [snyk.io](https://snyk.io) that can be invoked from your CI on every build
+**TL;DR:** Nawet najbardziej renomowane zależności, takie jak Express, mają znane luki w zabezpieczeniach. Można to łatwo oswoić za pomocą narzędzi społecznościowych i komercyjnych, takich jak 🔗 [npm audit] (https://docs.npmjs.com/cli/audit) i 🔗 [snyk.io] (https://snyk.io), które mogą być wywoływane z twojego CI na każdej kompilacji
 
-**W przeciwnym razie:** Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
-
-<br/><br/>
-
-## ![✔] 4.7 Tag your tests
-
-**TL;DR:** Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/): mocha --grep 'sanity'
-
-**W przeciwnym razie:** Running all the tests, including tests that perform dozens of DB queries, any time a developer makes a small change can be extremely slow and keeps developers away from running tests
+**W przeciwnym razie:** Utrzymywanie kodu w czystości przed lukami bez dedykowanych narzędzi będzie wymagało ciągłego śledzenia publikacji online na temat nowych zagrożeń. Dość nudne
 
 <br/><br/>
 
-## ![✔] 4.8 Check your test coverage, it helps to identify wrong test patterns
+## ![✔] 4.7 Oznacz swoje testy
 
-**TL;DR:** Code coverage tools like [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but not least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
+**TL;DR:** Różne testy muszą być uruchamiane w różnych scenariuszach: szybki dym, bez we / wy, testy powinny być uruchamiane, gdy programista zapisuje lub zatwierdza plik, pełne kompleksowe testy zwykle uruchamiane są po przesłaniu nowego żądania ściągnięcia itp. Można to osiągnąć poprzez oznaczenie testów słowami kluczowymi takimi jak #cold #api #sanity, aby można było grepować za pomocą uprzęży testującej i wywołać pożądany podzbiór. Na przykład w ten sposób można wywoływać tylko grupę testową rozsądku [Mocha](https://mochajs.org/): mocha --grep 'sanity'
 
-**W przeciwnym razie:** There won't be any automated metric telling you when a large portion of your code is not covered by testing
-
-<br/><br/>
-
-## ![✔] 4.9 Inspect for outdated packages
-
-**TL;DR:** Use your preferred tool (e.g. 'npm outdated' or [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) to detect installed packages which are outdated, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a severe scenario might be when an installed package is 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
-
-**W przeciwnym razie:** Your production will run packages that have been explicitly tagged by their author as risky
+**W przeciwnym razie:** Uruchamianie wszystkich testów, w tym testów, które wykonują dziesiątki zapytań DB, za każdym razem, gdy programista wprowadzi małą zmianę, może to być bardzo powolne i powstrzymuje programistów przed uruchomieniem testów
 
 <br/><br/>
 
-## ![✔] 4.10 Use production-like env for e2e testing
+## ![✔] 4.8 Sprawdź zasięg testu, pomaga zidentyfikować nieprawidłowe wzorce testowe
 
-**TL;DR:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Use an environment which is as closed to your real production as possible like a-continue
+**TL;DR:** Narzędzia pokrycia kodu, takie jak [Istanbul] (https://github.com/istanbuljs/istanbuljs) / [NYC] (https://github.com/istanbuljs/nyc) są świetne z 3 powodów: przychodzi za darmo (bez wysiłku jest niezbędny do skorzystania z tych raportów), pomaga zidentyfikować zmniejszenie zasięgu testowania, a na koniec podkreśla niedopasowania testowania: patrząc na kolorowe raporty pokrycia kodu można zauważyć, na przykład, obszary kodu, które nigdy nie są testowane jak catch klauzule (co oznacza, że testy wywołują tylko szczęśliwe ścieżki, a nie zachowanie aplikacji w przypadku błędów). Ustaw na niepowodzenia kompilacji, jeśli zasięg spadnie poniżej określonego progu
 
-**W przeciwnym razie:** Without docker-compose teams must maintain a testing DB for each testing environment including developers' machines, keep all those DBs in sync so test results won't vary across environments
+**W przeciwnym razie:** Nie będzie żadnych zautomatyzowanych danych informujących, kiedy duża część kodu nie jest objęta testowaniem
 
 <br/><br/>
 
-## ![✔] 4.11 Refactor regularly using static analysis tools
+## ![✔] 4.9 Sprawdź nieaktualne pakiety
 
-**TL;DR:** Using static analysis tools helps by giving objective ways to improve code quality and keeps your code maintainable. You can add static analysis tools to your CI build to fail when it finds code smells. Its main selling points over plain linting are the ability to inspect quality in the context of multiple files (e.g. detect duplications), perform advanced analysis (e.g. code complexity) and follow the history and progress of code issues. Two examples of tools you can use are [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) and [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)).
+**TL;DR:** Użyj preferowanego narzędzia (np. „Npm przestarzałe” lub [npm-check-updates] (https://www.npmjs.com/package/npm-check-updates), aby wykryć zainstalowane pakiety, które są nieaktualne, wstrzyknij to Potok CI, a nawet awaria kompilacji w trudnym scenariuszu. Na przykład poważnym scenariuszem może być sytuacja, gdy zainstalowany pakiet ma 5 łatek zatwierdzeń (np. Wersja lokalna to 1.3.1, a wersja repozytorium to 1.3.8) lub jest oznaczony jako przestarzałe przez jego autora - zabij kompilację i uniemożliwi wdrożenie tej wersji
 
-**W przeciwnym razie:** With poor code quality, bugs and performance will always be an issue that no shiny new library or state of the art features can fix
+**W przeciwnym razie:** Produkcja będzie uruchamiać pakiety, które zostały wyraźnie oznaczone przez autora jako ryzykowne
+
+<br/><br/>
+
+## ![✔] 4.10 Do testowania e2e używaj env zbliżonego do produkcji
+
+**TL;DR:** Testy end-to-end (e2e), które obejmują dane na żywo, były najsłabszym ogniwem procesu CI, ponieważ zależy to od wielu ciężkich usług, takich jak DB. Skorzystaj ze środowiska, które jest jak najbardziej zbliżone do Twojej rzeczywistej produkcji, jak a-continue
+
+**W przeciwnym razie:** Bez zespołów tworzących dokery muszą utrzymywać testową bazę danych dla każdego środowiska testowego, w tym na komputerach programistów, synchronizuj wszystkie te bazy danych, aby wyniki testów nie różniły się w zależności od środowiska
+
+<br/><br/>
+
+## ![✔] 4.11 Refaktoryzuj regularnie za pomocą narzędzi do analizy statycznej
+
+**TL;DR:** Korzystanie z narzędzi analizy statycznej pomaga, zapewniając obiektywne sposoby poprawy jakości kodu i utrzymując kod w łatwości konserwacji. Możesz dodać narzędzia analizy statycznej do kompilacji CI, aby zawieść, gdy wykryje zapach kodu. Jego głównymi zaletami w stosunku do zwykłego szarpania jest możliwość kontroli jakości w kontekście wielu plików (np. Wykrywanie duplikacji), przeprowadzania zaawansowanej analizy (np. Złożoności kodu) oraz śledzenia historii i postępu problemów z kodem. Dwa przykłady narzędzi, których możesz użyć, to [Sonarqube] (https://www.sonarqube.org/) (2600+ [gwiazdek] (https://github.com/SonarSource/sonarqube)) i [Code Climate] (https : //codeclimate.com/) (1500+ [gwiazdek] (https://github.com/codeclimate/codeclimate)).
+
+**W przeciwnym razie:** Przy złej jakości kodu błędy i wydajność zawsze będą stanowić problem, którego nie będzie w stanie naprawić żadna nowa błyszcząca biblioteka ani najnowocześniejsze funkcje
 
 🔗 [**Czytaj więcej: Refactoring!**](/sections/testingandquality/refactoring.md)
 
 <br/><br/>
 
-## ![✔] 4.12 Carefully choose your CI platform (Jenkins vs CircleCI vs Travis vs Rest of the world)
+## ![✔] 4.12 Ostrożnie wybierz swoją platformę CI (Jenkins vs CircleCI vs Travis vs Reszta świata)
 
-**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it should come with a vibrant ecosystem of plugins. [Jenkins](https://jenkins.io/) used to be the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Nowadays, it has become much easier to set up a CI solution using SaaS tools like [CircleCI](https://circleci.com) and others. These tools allow crafting a flexible CI pipeline without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
+**TL;DR:** Twoja platforma ciągłej integracji (CICD) będzie hostować wszystkie narzędzia wysokiej jakości (np. Test, strzępki), więc powinna mieć żywy ekosystem wtyczek. [Jenkins] (https://jenkins.io/) był domyślny dla wielu projektów, ponieważ ma największą społeczność wraz z bardzo potężną platformą w cenie złożonej konfiguracji, która wymaga stromej krzywej uczenia się. Obecnie znacznie łatwiej jest skonfigurować rozwiązanie CI za pomocą narzędzi SaaS, takich jak [CircleCI] (https://circleci.com) i innych. Narzędzia te umożliwiają stworzenie elastycznego potoku CI bez konieczności zarządzania całą infrastrukturą. Ostatecznie jest to kompromis między wytrzymałością a szybkością - wybierz stronę ostrożnie
 
-**W przeciwnym razie:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
+**W przeciwnym razie:** Wybranie jakiegoś niszowego dostawcy może spowodować zablokowanie użytkownika, gdy będzie potrzebne zaawansowane dostosowanie. Z drugiej strony pójście z Jenkinsem może skrócić cenny czas na konfigurację infrastruktury
 
 🔗 [**Czytaj więcej: Choosing CI platform**](/sections/testingandquality/citools.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Powrót do góry</a></p>
 
-# `5. Going To Production Practices`
+# `5. Przejście do praktyk produkcyjnych`
 
 ## ![✔] 5.1. Monitoring
 
-**TL;DR:** Monitoring is a game of finding out issues before customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that ticks all boxes. Click ‘The Gist’ below for an overview of the solutions
+**TL;DR:** Monitorowanie to gra polegająca na wykrywaniu problemów, zanim zrobią to klienci - oczywiście należy im to nadać niespotykane znaczenie. Rynek jest przytłoczony ofertami, dlatego rozważ rozpoczęcie od zdefiniowania podstawowych wskaźników, których należy przestrzegać (moje sugestie w środku), a następnie przejrzyj dodatkowe wymyślne funkcje i wybierz rozwiązanie, które zaznacza wszystkie pola. Kliknij „The Gist” poniżej, aby wyświetlić przegląd rozwiązań
 
-**W przeciwnym razie:** Failure === disappointed customers. Simple
+**W przeciwnym razie:** Awaria === rozczarowani klienci. Proste
 
 🔗 [**Czytaj więcej: Monitoring!**](/sections/production/monitoring.md)
 
 <br/><br/>
 
-## ![✔] 5.2. Increase transparency using smart logging
+## ![✔] 5.2. Zwiększ przejrzystość za pomocą inteligentnego rejestrowania
 
-**TL;DR:** Logs can be a dumb warehouse of debug statements or the enabler of a beautiful dashboard that tells the story of your app. Plan your logging platform from day 1: how logs are collected, stored and analyzed to ensure that the desired information (e.g. error rate, following an entire transaction through services and servers, etc) can really be extracted
+**TL;DR:** Dzienniki mogą być głupim magazynem instrukcji debugowania lub aktywować piękny pulpit nawigacyjny, który opowiada historię Twojej aplikacji. Zaplanuj swoją platformę rejestrowania od pierwszego dnia: w jaki sposób dzienniki są gromadzone, przechowywane i analizowane, aby zapewnić, że pożądane informacje (np. Poziom błędu, po całej transakcji za pośrednictwem usług i serwerów itp.) Mogą być naprawdę wydobyte
 
-**W przeciwnym razie:** You end up with a black box that is hard to reason about, then you start re-writing all logging statements to add additional information
+**W przeciwnym razie:** W rezultacie pojawia się czarna skrzynka, o której trudno uzasadnić, a następnie zaczynasz ponownie pisać wszystkie instrukcje rejestrowania, aby dodać dodatkowe informacje
 
 🔗 [**Czytaj więcej: Increase transparency using smart logging**](/sections/production/smartlogging.md)
 
 <br/><br/>
 
-## ![✔] 5.3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy
+## ![✔] 5.3. Deleguj wszystko, co możliwe (np. Gzip, SSL) na zwrotny serwer proxy
 
-**TL;DR:** Node is awfully bad at doing CPU intensive tasks like gzipping, SSL termination, etc. You should use ‘real’ middleware services like nginx, HAproxy or cloud vendor services instead
+**TL;DR:** Node jest strasznie kiepski w wykonywaniu zadań intensywnie wykorzystujących procesor, takich jak gzipping, zakończenie SSL itp. Zamiast tego należy używać „rzeczywistych” usług oprogramowania pośredniego, takich jak nginx, HAproxy lub usług dostawcy w chmurze
 
-**W przeciwnym razie:** Your poor single thread will stay busy doing infrastructural tasks instead of dealing with your application core and performance will degrade accordingly
+**W przeciwnym razie:** Twój słaby pojedynczy wątek pozostanie zajęty wykonywaniem zadań infrastrukturalnych zamiast zajmowania się rdzeniem aplikacji, a wydajność odpowiednio się obniży
 
 🔗 [**Czytaj więcej: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
 
 <br/><br/>
 
-## ![✔] 5.4. Lock dependencies
+## ![✔] 5.4. Zablokuj zależności
 
-**TL;DR:** Your code must be identical across all environments, but amazingly npm lets dependencies drift across environments by default – when you install packages at various environments it tries to fetch packages’ latest patch version. Overcome this by using npm config files, .npmrc, that tell each environment to save the exact (not the latest) version of each package. Alternatively, for finer grained control use `npm shrinkwrap`. \*Update: as of NPM5, dependencies are locked by default. The new package manager in town, Yarn, also got us covered by default
+**TL;DR:** Twój kod musi być identyczny we wszystkich środowiskach, ale zadziwiająco npm pozwala domyślnie dryfować zależności między środowiskami - podczas instalowania pakietów w różnych środowiskach próbuje pobrać najnowszą wersję łatek. Aby temu zaradzić, użyj plików konfiguracyjnych npm, .npmrc, które każą każdemu środowisku zapisać dokładną (nie najnowszą) wersję każdego pakietu. Alternatywnie, dla dokładniejszej kontroli ziarna, użyj „npm folię termokurczliwą”. \ * Aktualizacja: od NPM5 zależności są domyślnie zablokowane. Nowy menedżer pakietów w mieście, Yarn, również domyślnie nas objął
 
-**W przeciwnym razie:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
+**W przeciwnym razie:** Dział kontroli jakości dokładnie przetestuje kod i zatwierdzi wersję, która będzie zachowywać się inaczej w środowisku produkcyjnym. Co gorsza, różne serwery w tym samym klastrze produkcyjnym mogą uruchamiać inny kod
 
 🔗 [**Czytaj więcej: Lock dependencies**](/sections/production/lockdependencies.md)
 
 <br/><br/>
 
-## ![✔] 5.5. Guard process uptime using the right tool
+## ![✔] 5.5. Zabezpiecz czas pracy bez przestojów za pomocą odpowiedniego narzędzia
 
-**TL;DR:** The process must go on and get restarted upon failures. For simple scenarios, process management tools like PM2 might be enough but in today's ‘dockerized’ world, cluster management tools should be considered as well
+**TL;DR:** Proces musi trwać i uruchamiać się ponownie w przypadku awarii. W przypadku prostych scenariuszy narzędzia do zarządzania procesami, takie jak PM2, mogą być wystarczające, ale w dzisiejszym świecie „zadokowanym” należy również wziąć pod uwagę narzędzia do zarządzania klastrami
 
-**W przeciwnym razie:** Running dozens of instances without a clear strategy and too many tools together (cluster management, docker, PM2) might lead to DevOps chaos
+**W przeciwnym razie:** Uruchomienie dziesiątek instancji bez jasnej strategii i zbyt wielu narzędzi razem (zarządzanie klastrami, okno dokowane, PM2) może doprowadzić do chaosu DevOps
 
 🔗 [**Czytaj więcej: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
 
 <br/><br/>
 
-## ![✔] 5.6. Utilize all CPU cores
+## ![✔] 5.6. Wykorzystaj wszystkie rdzenie procesora
 
-**TL;DR:** At its basic form, a Node app runs on a single CPU core while all others are left idling. It’s your duty to replicate the Node process and utilize all CPUs – For small-medium apps you may use Node Cluster or PM2. For a larger app consider replicating the process using some Docker cluster (e.g. K8S, ECS) or deployment scripts that are based on Linux init system (e.g. systemd)
+**TL;DR:** W swojej podstawowej formie aplikacja Node działa na jednym rdzeniu procesora, podczas gdy wszystkie pozostałe pozostają bezczynne. Twoim obowiązkiem jest replikacja procesu Node i wykorzystanie wszystkich procesorów - w przypadku małych i średnich aplikacji możesz użyć Node Cluster lub PM2. W przypadku większej aplikacji rozważ replikację procesu przy użyciu klastra Docker (np. K8S, ECS) lub skryptów wdrażania opartych na systemie inicjującym Linux (np. systemd)
 
-**W przeciwnym razie:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.js utilizes only 1 (even using PaaS services like AWS beanstalk!)
+**W przeciwnym razie:** Twoja aplikacja prawdopodobnie wykorzysta tylko 25% dostępnych zasobów (!) Lub nawet mniej. Zauważ, że typowy serwer ma 4 rdzenie procesora lub więcej, naiwne wdrożenie Node.js wykorzystuje tylko 1 (nawet przy użyciu usług PaaS, takich jak AWS beanstalk!)
 
 🔗 [**Czytaj więcej: Utilize all CPU cores**](/sections/production/utilizecpu.md)
 
 <br/><br/>
 
-## ![✔] 5.7. Create a ‘maintenance endpoint’
+## ![✔] 5.7. Utwórz „punkt końcowy konserwacji”
 
-**TL;DR:** Expose a set of system-related information, like memory usage and REPL, etc in a secured API. Although it’s highly recommended to rely on standard and battle-tests tools, some valuable information and operations are easier done using code
+**TL;DR:** Ujawnij zestaw informacji związanych z systemem, takich jak użycie pamięci i REPL itp. W zabezpieczonym interfejsie API. Chociaż wysoce zalecane jest poleganie na standardowych i narzędziach do testów bitewnych, niektóre cenne informacje i operacje można łatwiej wykonać za pomocą kodu
 
-**W przeciwnym razie:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
+**W przeciwnym razie:** Przekonasz się, że wykonujesz wiele „wdrożeń diagnostycznych” - wysyłasz kod do produkcji tylko po to, aby wyodrębnić niektóre informacje do celów diagnostycznych
 
 🔗 [**Czytaj więcej: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
 
 <br/><br/>
 
-## ![✔] 5.8. Discover errors and downtime using APM products
+## ![✔] 5.8. Odkryj błędy i przestoje przy użyciu produktów APM
 
-**TL;DR:** Application monitoring and performance products (a.k.a APM) proactively gauge codebase and API so they can auto-magically go beyond traditional monitoring and measure the overall user-experience across services and tiers. For example, some APM products can highlight a transaction that loads too slow on the end-users side while suggesting the root cause
+**TL;DR:** Produkty do monitorowania aplikacji i wydajności (np. APM) proaktywnie oceniają bazę kodu i interfejs API, dzięki czemu mogą automatycznie wykraczać poza tradycyjny monitoring i mierzyć ogólne wrażenia użytkownika na różnych usługach i poziomach. Na przykład niektóre produkty APM mogą wyróżniać transakcję, która ładuje się zbyt wolno po stronie użytkowników końcowych, sugerując jednocześnie główną przyczynę
 
-**W przeciwnym razie:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real-world scenario and how these affect the UX
+**W przeciwnym razie:** Możesz poświęcić wiele wysiłku na pomiar wydajności interfejsu API i przestojów, prawdopodobnie nigdy nie będziesz wiedział, jakie są twoje najwolniejsze części kodu w rzeczywistym scenariuszu i jak wpływają one na UX
 
 🔗 [**Czytaj więcej: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
 
 <br/><br/>
 
-## ![✔] 5.9. Make your code production-ready
+## ![✔] 5.9. Przygotuj kod do produkcji
 
-**TL;DR:** Code with the end in mind, plan for production from day 1. This sounds a bit vague so I’ve compiled a few development tips that are closely related to production maintenance (click Gist below)
+**TL;DR:** Kod z myślą o końcu, plan produkcji od pierwszego dnia. Brzmi to nieco niejasno, dlatego opracowałem kilka wskazówek programistycznych, które są ściśle związane z utrzymaniem produkcji (kliknij przycisk Gist poniżej)
 
-**W przeciwnym razie:** A world champion IT/DevOps guy won’t save a system that is badly written
+**W przeciwnym razie:** Mistrz świata IT / DevOps nie uratuje źle napisanego systemu
 
 🔗 [**Czytaj więcej: Make your code production-ready**](/sections/production/productioncode.md)
 
 <br/><br/>
 
-## ![✔] 5.10. Measure and guard the memory usage
+## ![✔] 5.10. Zmierz i zabezpiecz zużycie pamięci
 
-**TL;DR:** Node.js has controversial relationships with memory: the v8 engine has soft limits on memory usage (1.4GB) and there are known paths to leak memory in Node’s code – thus watching Node’s process memory is a must. In small apps, you may gauge memory periodically using shell commands but in medium-large apps consider baking your memory watch into a robust monitoring system
+**TL;DR:** Node.js ma kontrowersyjne relacje z pamięcią: silnik v8 ma miękkie limity wykorzystania pamięci (1,4 GB) i istnieją znane ścieżki wycieku pamięci w kodzie Node - dlatego oglądanie pamięci procesu Node jest koniecznością. W małych aplikacjach możesz okresowo mierzyć pamięć za pomocą poleceń powłoki, ale w średnio-dużych aplikacjach rozważ umieszczenie zegarka pamięci w solidnym systemie monitorowania
 
-**W przeciwnym razie:** Your process memory might leak a hundred megabytes a day like how it happened at [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
+**W przeciwnym razie:** Pamięć procesowa może przeciekać sto megabajtów dziennie, jak to się stało [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
 
 🔗 [**Czytaj więcej: Measure and guard the memory usage**](/sections/production/measurememory.md)
 
 <br/><br/>
 
-## ![✔] 5.11. Get your frontend assets out of Node
+## ![✔] 5.11. Wydobądź swoje zasoby frontendowe Node
 
-**TL;DR:** Serve frontend content using dedicated middleware (nginx, S3, CDN) because Node performance really gets hurt when dealing with many static files due to its single-threaded model
+**TL;DR:** Podawaj zawartość interfejsu użytkownika za pomocą dedykowanego oprogramowania pośredniego (nginx, S3, CDN), ponieważ wydajność węzła naprawdę spada podczas pracy z wieloma plikami statycznymi ze względu na model jednowątkowy
 
-**W przeciwnym razie:** Your single Node thread will be busy streaming hundreds of html/images/angular/react files instead of allocating all its resources for the task it was born for – serving dynamic content
+**W przeciwnym razie:** Twój pojedynczy wątek Node'a będzie zajęty przesyłaniem strumieniowym setek plików HTML / images / Angular / React zamiast przydzielania wszystkich swoich zasobów do zadania, dla którego się urodził - udostępniania treści dynamicznych
 
 🔗 [**Czytaj więcej: Get your frontend assets out of Node**](/sections/production/frontendout.md)
 
 <br/><br/>
 
-## ![✔] 5.12. Be stateless, kill your servers almost every day
+## ![✔] 5.12. Bądź bezstanowy, zabijaj serwery prawie codziennie
 
-**TL;DR:** Store any type of data (e.g. user sessions, cache, uploaded files) within external data stores. Consider ‘killing’ your servers periodically or use ‘serverless’ platform (e.g. AWS Lambda) that explicitly enforces a stateless behavior
+**TL;DR:** Przechowuj wszelkiego rodzaju dane (np. Sesje użytkownika, pamięć podręczną, przesłane pliki) w zewnętrznych magazynach danych. Rozważ „zabijanie” swoich serwerów okresowo lub skorzystaj z platformy „bezserwerowej” (np. AWS Lambda), która wyraźnie wymusza zachowanie bezstanowe
 
-**W przeciwnym razie:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
+**W przeciwnym razie:** Awaria na danym serwerze spowoduje przestoje aplikacji, a nie tylko zabicie wadliwego komputera. Co więcej, elastyczność skalowania stanie się trudniejsza ze względu na zależność od konkretnego serwera
 
 🔗 [**Czytaj więcej: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
 
 <br/><br/>
 
-## ![✔] 5.13. Use tools that automatically detect vulnerabilities
+## ![✔] 5.13. Użyj narzędzi, które automatycznie wykrywają luki w zabezpieczeniach
 
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities (from time to time) that can put a system at risk. This can be easily tamed using community and commercial tools that constantly check for vulnerabilities and warn (locally or at GitHub), some can even patch them immediately
+**TL;DR:** Nawet najbardziej renomowane zależności, takie jak Express, mają znane luki (od czasu do czasu), które mogą stanowić zagrożenie dla systemu. Można to łatwo oswoić za pomocą narzędzi społecznościowych i komercyjnych, które stale sprawdzają luki w zabezpieczeniach i ostrzegają (lokalnie lub w GitHub), niektóre mogą nawet natychmiast je załatać
 
-**W przeciwnym razie:** Keeping your code clean from vulnerabilities without dedicated tools will require you to constantly follow online publications about new threats. Quite tedious
+**W przeciwnym razie:** Utrzymanie kodu w czystości przed lukami bez dedykowanych narzędzi będzie wymagało ciągłego śledzenia publikacji online na temat nowych zagrożeń. Dość nudne
 
 🔗 [**Czytaj więcej: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
 
 <br/><br/>
 
-## ![✔] 5.14. Assign a transaction id to each log statement
+## ![✔] 5.14. Przypisz identyfikator transakcji do każdej instrukcji dziennika
 
-**TL;DR:** Assign the same identifier, transaction-id: {some value}, to each log entry within a single request. Then when inspecting errors in logs, easily conclude what happened before and after. Unfortunately, this is not easy to achieve in Node due to its async nature, see code examples inside
+**TL;DR:** Przypisz ten sam identyfikator, identyfikator transakcji: {pewna wartość} do każdego wpisu dziennika w ramach jednego żądania. Następnie podczas sprawdzania błędów w logach łatwo wyciągnij wnioski przed i po. Niestety, nie jest to łatwe do osiągnięcia w Węźle ze względu na jego asynchroniczny charakter, patrz przykłady kodu wewnątrz
 
-**W przeciwnym razie:** Looking at a production error log without the context – what happened before – makes it much harder and slower to reason about the issue
+**W przeciwnym razie:** Patrzenie na dziennik błędów produkcyjnych bez kontekstu - co zdarzyło się wcześniej - sprawia, że znacznie trudniej i wolniej jest myśleć o problemie
 
 🔗 [**Czytaj więcej: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
 
 <br/><br/>
 
-## ![✔] 5.15. Set NODE_ENV=production
+## ![✔] 5.15. Ustaw NODE_ENV = produkcja
 
-**TL;DR:** Set the environment variable NODE_ENV to ‘production’ or ‘development’ to flag whether production optimizations should get activated – many npm packages determine the current environment and optimize their code for production
+**TL;DR:** Ustaw zmienną środowiskową NODE_ENV na „produkcja” lub „rozwój”, aby oznaczyć, czy optymalizacje produkcji powinny zostać aktywowane - wiele pakietów npm określa bieżące środowisko i optymalizuje kod do produkcji
 
-**W przeciwnym razie:** Omitting this simple property might greatly degrade performance. For example, when using Express for server-side rendering omitting `NODE_ENV` makes it slower by a factor of three!
+**W przeciwnym razie:** Pominięcie tej prostej właściwości może znacznie obniżyć wydajność. Na przykład, używając Express do renderowania po stronie serwera, pominięcie `NODE_ENV` powoduje spowolnienie trzykrotnie!
 
 🔗 [**Czytaj więcej: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
 
 <br/><br/>
 
-## ![✔] 5.16. Design automated, atomic and zero-downtime deployments
+## ![✔] 5.16. Projektowanie wdrożeń zautomatyzowanych, atomowych i bez przestojów
 
-**TL;DR:** Research shows that teams who perform many deployments lower the probability of severe production issues. Fast and automated deployments that don’t require risky manual steps and service downtime significantly improve the deployment process. You should probably achieve this using Docker combined with CI tools as they became the industry standard for streamlined deployment
+**TL;DR:** Badania pokazują, że zespoły wykonujące wiele wdrożeń zmniejszają prawdopodobieństwo poważnych problemów produkcyjnych. Szybkie i zautomatyzowane wdrożenia, które nie wymagają ryzykownych ręcznych kroków i przestojów usług, znacznie usprawniają proces wdrażania. Prawdopodobnie powinieneś to osiągnąć za pomocą Dockera w połączeniu z narzędziami CI, ponieważ stały się one standardem branżowym dla usprawnionego wdrażania
 
-**W przeciwnym razie:** Long deployments -> production downtime & human-related error -> team unconfident in making deployment -> fewer deployments and features
+**W przeciwnym razie:** Długie wdrożenia -> przestoje produkcyjne i błąd związany z człowiekiem -> zespół nie jest pewny co do wdrożenia -> mniej wdrożeń i funkcji
 
 <br/><br/>
 
-## ![✔] 5.17. Use an LTS release of Node.js
+## ![✔] 5.17. Użyj wersji LTS środowiska Node.js
 
-**TL;DR:** Ensure you are using an LTS version of Node.js to receive critical bug fixes, security updates and performance improvements
+**TL;DR:** Upewnij się, że używasz wersji LTS Node.js , aby otrzymywać krytyczne poprawki błędów, aktualizacje zabezpieczeń i ulepszenia wydajności
 
-**W przeciwnym razie:** Newly discovered bugs or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain
+**W przeciwnym razie:** Nowo odkryte błędy lub luki można wykorzystać do wykorzystania aplikacji działającej w środowisku produkcyjnym, a aplikacja może nie być obsługiwana przez różne moduły i trudniejsza do utrzymania
 
 🔗 [**Czytaj więcej: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
 
 <br/><br/>
 
-## ![✔] 5.18. Don't route logs within the app
+## ![✔] 5.18. Nie kieruj dzienników w aplikacji
 
-**TL;DR:** Log destinations should not be hard-coded by developers within the application code, but instead should be defined by the execution environment the application runs in. Developers should write logs to `stdout` using a logger utility and then let the execution environment (container, server, etc.) pipe the `stdout` stream to the appropriate destination (i.e. Splunk, Graylog, ElasticSearch, etc.).
+**TL;DR:** Miejsca docelowe dziennika nie powinny być zakodowane na stałe przez programistów w kodzie aplikacji, ale powinny być zdefiniowane przez środowisko wykonawcze, w którym działa aplikacja. Programiści powinni zapisywać dzienniki na `stdout` za pomocą narzędzia rejestrującego, a następnie pozwolić środowisku wykonawczemu (kontener, serwer itp.) potokuj strumień `stdout` do odpowiedniego miejsca docelowego (tj. Splunk, Graylog, ElasticSearch itp.).
 
-**W przeciwnym razie:** Application handling log routing === hard to scale, loss of logs, poor separation of concerns
+**W przeciwnym razie:** Trasowanie dzienników obsługi aplikacji === trudne do skalowania, utrata dzienników, słaba separacja problemów
 
 🔗 [**Czytaj więcej: Log Routing**](/sections/production/logrouting.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Powrót do góry</a></p>
 
-# `6. Security Best Practices`
+# `6. Najlepsze praktyki bezpieczeństwa`
 
 <div align="center">
 <img src="https://img.shields.io/badge/OWASP%20Threats-Top%2010-green.svg" alt="54 items"/>
 </div>
 
-## ![✔] 6.1. Embrace linter security rules
+## ![✔] 6.1. Ustanowienie zasad bezpieczeństwa linter
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Make use of security-related linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to catch security vulnerabilities and issues as early as possible, preferably while they're being coded. This can help catching security weaknesses like using eval, invoking a child process or importing a module with a string literal (e.g. user input). Click 'Czytaj więcej' below to see code examples that will get caught by a security linter
+**TL;DR:** Skorzystaj z wtyczek liniowych związanych z bezpieczeństwem, takich jak [eslint-plugin-security] (https://github.com/nodesecurity/eslint-plugin-security), aby wychwycić luki w zabezpieczeniach i problemy jak najwcześniej, najlepiej gdy są one jest kodowany. Może to pomóc w wykrywaniu słabych punktów bezpieczeństwa, takich jak używanie eval, wywoływanie procesu potomnego lub importowanie modułu z literałem łańcucha (np. Dane wejściowe użytkownika). Kliknij „Czytaj więcej” poniżej, aby zobaczyć przykłady kodu, które zostaną złapane przez linijkę bezpieczeństwa
 
-**W przeciwnym razie:** What could have been a straightforward security weakness during development becomes a major issue in production. Also, the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories
+**W przeciwnym razie:** To, co mogło być bezpośrednią słabością bezpieczeństwa podczas programowania, staje się poważnym problemem w produkcji. Ponadto projekt może nie być zgodny ze spójnymi praktykami bezpieczeństwa kodu, co prowadzi do wprowadzenia luk w zabezpieczeniach lub poufnych tajemnic popełnionych w zdalnych repozytoriach
 
 🔗 [**Czytaj więcej: Lint rules**](/sections/security/lintrules.md)
 
 <br/><br/>
 
-## ![✔] 6.2. Limit concurrent requests using a middleware
+## ![✔] 6.2. Ogranicz równoczesne żądania przy użyciu oprogramowania pośredniego
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** DOS attacks are very popular and relatively easy to conduct. Implement rate limiting using an external service such as cloud load balancers, cloud firewalls, nginx, [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) package, or (for smaller and less critical apps) a rate-limiting middleware (e.g. [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
+**TL;DR:** Ataki DOS są bardzo popularne i stosunkowo łatwe do przeprowadzenia. Wdrażanie ograniczenia prędkości za pomocą usługi zewnętrznej, takiej jak usługi równoważenia obciążenia w chmurze, zapory w chmurze, nginx, [szybkość-ogranicznik-elastyczny] (https://www.npmjs.com/package/rate-limiter-fiętki) pakiet lub (dla mniejszych i mniej krytycznych aplikacji) ograniczające szybkość oprogramowanie pośrednie (np. [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
 
-**W przeciwnym razie:** An application could be subject to an attack resulting in a denial of service where real users receive a degraded or unavailable service.
+**W przeciwnym razie:** Aplikacja może zostać zaatakowana, co spowoduje odmowę usługi, w wyniku której prawdziwi użytkownicy otrzymają usługę o obniżonej jakości lub niedostępną.
 
 🔗 [**Czytaj więcej: Implement rate limiting**](/sections/security/limitrequests.md)
 
 <br/><br/>
 
-## ![✔] 6.3 Extract secrets from config files or use packages to encrypt them
+## ![✔] 6.3 Wyodrębnij sekrety z plików konfiguracyjnych lub użyj pakietów, aby je zaszyfrować
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A3:Sensitive%20Data%20Exposure%20-green.svg" alt=""/></a>
 
-**TL;DR:** Never store plain-text secrets in configuration files or source code. Instead, make use of secret-management systems like Vault products, Kubernetes/Docker Secrets, or using environment variables. As a last resort, secrets stored in source control must be encrypted and managed (rolling keys, expiring, auditing, etc). Make use of pre-commit/push hooks to prevent committing secrets accidentally
+**TL;DR:** Nigdy nie przechowuj tajemnic zwykłego tekstu w plikach konfiguracyjnych lub kodzie źródłowym. Zamiast tego skorzystaj z systemów zarządzania sekretami, takich jak produkty Vault, Kubernetes / Docker Secrets lub wykorzystując zmienne środowiskowe. W ostateczności tajemnice przechowywane w kontroli źródła muszą być szyfrowane i zarządzane (klucze, wygasanie, kontrola itp.). Skorzystaj z haków poprzedzających zatwierdzenie / push, aby zapobiec przypadkowemu popełnieniu tajemnicy
 
-**W przeciwnym razie:** Source control, even for private repositories, can mistakenly be made public, at which point all secrets are exposed. Access to source control for an external party will inadvertently provide access to related systems (databases, apis, services, etc).
+**W przeciwnym razie:** Kontrola źródła, nawet w przypadku prywatnych repozytoriów, może zostać omyłkowo upubliczniona, w którym to momencie ujawniane są wszystkie tajemnice. Dostęp do kontroli źródła dla strony zewnętrznej nieumyślnie zapewni dostęp do powiązanych systemów (baz danych, apis, usług itp.).
 
 🔗 [**Czytaj więcej: Secret management**](/sections/security/secretmanagement.md)
 
 <br/><br/>
 
-## ![✔] 6.4. Prevent query injection vulnerabilities with ORM/ODM libraries
+## ![✔] 6.4. Zapobiegaj podatności na wstrzykiwanie zapytań w bibliotekach ORM / ODM
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
-**TL;DR:** To prevent SQL/NoSQL injection and other malicious attacks, always make use of an ORM/ODM or a database library that escapes data or supports named or indexed parameterized queries, and takes care of validating user input for expected types. Never just use JavaScript template strings or string concatenation to inject values into queries as this opens your application to a wide spectrum of vulnerabilities. All the reputable Node.js data access libraries (e.g. [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose)) have built-in protection against injection attacks.
+**TL;DR:** Aby zapobiec wstrzykiwaniu SQL / NoSQL i innym złośliwym atakom, zawsze używaj ORM / ODM lub biblioteki bazy danych, która ucieka przed danymi lub obsługuje nazwane lub indeksowane zapytania sparametryzowane, i dba o sprawdzenie poprawności danych wejściowych użytkownika dla oczekiwanych typów. Nigdy nie używaj ciągów szablonów JavaScript ani konkatenacji ciągów, aby wstrzykiwać wartości do zapytań, ponieważ otwiera to aplikację na szeroki zakres luk. Wszystkie renomowane biblioteki dostępu do danych Node.js (np. [Sequelize] (https://github.com/sequelize/sequelize), [Knex] (https://github.com/tgriesser/knex), [mongoose] (https://github.com/Automattic/mongoose)) mają wbudowaną ochronę przed atakami iniekcyjnymi.
 
-**W przeciwnym razie:** Unvalidated or unsanitized user input could lead to operator injection when working with MongoDB for NoSQL, and not using a proper sanitization system or ORM will easily allow SQL injection attacks, creating a giant vulnerability.
+**W przeciwnym razie:** Nieprawidłowe lub niezaangażowane dane wejściowe użytkownika mogą prowadzić do wstrzyknięcia przez operatora podczas pracy z MongoDB dla NoSQL, a niestosowanie odpowiedniego systemu odkażania lub ORM z łatwością pozwoli na ataki z zastrzykiem SQL, tworząc ogromną lukę.
 
 🔗 [**Czytaj więcej: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.md)
 
 <br/><br/>
 
-## ![✔] 6.5. Collection of generic security best practices
+## ![✔] 6.5. Zbiór ogólnych dobrych praktyk w zakresie bezpieczeństwa
 
-**TL;DR:** This is a collection of security advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click Czytaj więcej to skim through.
+**TL;DR:** Jest to zbiór porad bezpieczeństwa, które nie są bezpośrednio związane z Node.js - implementacja Node nie różni się niczym od żadnego innego języka. Kliknij Czytaj więcej, aby przejrzeć.
 
 🔗 [**Czytaj więcej: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
 
 <br/><br/>
 
-## ![✔] 6.6. Adjust the HTTP response headers for enhanced security
+## ![✔] 6.6. Dostosuj nagłówki odpowiedzi HTTP, aby zwiększyć bezpieczeństwo
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Your application should be using secure headers to prevent attackers from using common attacks like cross-site scripting (XSS), clickjacking and other malicious attacks. These can be configured easily using modules like [helmet](https://www.npmjs.com/package/helmet).
+**TL;DR:** Twoja aplikacja powinna korzystać z bezpiecznych nagłówków, aby uniemożliwić atakującym typowe ataki, takie jak skrypty cross-site scripting (XSS), kliknięcia i inne złośliwe ataki. Można je łatwo skonfigurować za pomocą modułów takich jak [helmet](https://www.npmjs.com/package/helmet).
 
 **W przeciwnym razie:** Attackers could perform direct attacks on your application's users, leading to huge security vulnerabilities
 
@@ -1117,9 +1118,9 @@ Deep specialist in JavaScript and its ecosystem — React, Node.js, MongoDB, pre
 
 <br/>
 
-## Collaborators
+## Współpracownicy
 
-Thank you to all our collaborators! 🙏
+Dziękujemy wzsystkim wpółpracownikom! 🙏
 
 Our collaborators are members who are contributing to the repository on a regular basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in helping us guide thousands of people to craft better Node.js applications, please read our [contributor guidelines](/.operations/CONTRIBUTING.md) 🎉
 
@@ -1127,7 +1128,7 @@ Our collaborators are members who are contributing to the repository on a regula
 | :--: | :--: |
 | [Ido Richter (Founder)](https://github.com/idori) | [Keith Holliday](https://github.com/TheHollidayInn) |
 
-### Byli współpracownicy
+### Wcześniejsza współpraca
 
 | <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"></a> |
 | :--: |
