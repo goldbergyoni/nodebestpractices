@@ -747,11 +747,11 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <br/><br/>
 
-## ![✔] 6.3 Wyodrębnij sekrety z plików konfiguracyjnych lub użyj pakietów, aby je zaszyfrować
+## ![✔] 6.3 Wyodrębnij dane wrażliwe z plików konfiguracyjnych lub użyj pakietów, aby je zaszyfrować
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A3:Sensitive%20Data%20Exposure%20-green.svg" alt=""/></a>
 
-**TL;DR:** Nigdy nie przechowuj tajemnic zwykłego tekstu w plikach konfiguracyjnych lub kodzie źródłowym. Zamiast tego skorzystaj z systemów zarządzania sekretami, takich jak produkty Vault, Kubernetes / Docker Secrets lub wykorzystując zmienne środowiskowe. W ostateczności tajemnice przechowywane w kontroli źródła muszą być szyfrowane i zarządzane (klucze, wygasanie, kontrola itp.). Skorzystaj z hooks poprzedzających zatwierdzenie / push, aby zapobiec przypadkowemu commitowaniu tajemnicy
+**TL;DR:** Nigdy nie przechowuj tajemnic zwykłego tekstu w plikach konfiguracyjnych lub kodzie źródłowym. Zamiast tego skorzystaj z systemów zarządzania danymi wrażliwymi, takich jak produkty Vault, Kubernetes / Docker Secrets lub wykorzystując zmienne środowiskowe. W ostateczności tajemnice przechowywane w kontroli źródła muszą być szyfrowane i zarządzane (klucze, wygasanie, kontrola itp.). Skorzystaj z hooks poprzedzających zatwierdzenie / push, aby zapobiec przypadkowemu commitowaniu tajemnicy
 
 **W przeciwnym razie:** Kontrola źródła, nawet w przypadku prywatnych repozytoriów, może zostać omyłkowo upubliczniona, w którym to momencie ujawniane są wszystkie tajemnice. Dostęp do kontroli źródła dla strony zewnętrznej nieumyślnie zapewni dostęp do powiązanych systemów (baz danych, API, usług itp.).
 
@@ -807,9 +807,9 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;DR:** Hasła lub sekrety (klucze API) powinny być przechowywane przy użyciu bezpiecznej funkcji hash + salt, takiej jak `bcrypt`, co powinno być preferowanym wyborem w stosunku do implementacji JavaScript ze względu na wydajność i bezpieczeństwo.
+**TL;DR:** Hasła lub dane wrażliwe (klucze API) powinny być przechowywane przy użyciu bezpiecznej funkcji hash + salt, takiej jak `bcrypt`, co powinno być preferowanym wyborem w stosunku do implementacji JavaScript ze względu na wydajność i bezpieczeństwo.
 
-**W przeciwnym razie:** Hasła lub tajemnice, które są utrwalane bez korzystania z bezpiecznej funkcji, są podatne na brutalne wymuszanie i ataki słownikowe, które ostatecznie doprowadzą do ich ujawnienia.
+**W przeciwnym razie:** Hasła lub tajemnice, które są utrwalane bez korzystania z bezpiecznej funkcji, są podatne na brute force i ataki słownikowe, które ostatecznie doprowadzą do ich ujawnienia.
 
 🔗 [**Czytaj więcej: Use Bcrypt**](/sections/security/bcryptpasswords.md)
 
@@ -851,7 +851,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <br/><br/>
 
-## ![✔] 6.12. Zapobiegaj brutalnym atakom na autoryzację
+## ![✔] 6.12. Zapobiegaj brute force na autoryzację
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
