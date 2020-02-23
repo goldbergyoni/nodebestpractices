@@ -18,7 +18,7 @@
 
 <br/>
 
-Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
+Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** i ![TR](/assets/flags/TR.png)**TR** w trakcie!)](#translations)
 
 <br/>
 
@@ -30,14 +30,14 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 - **🇷🇺 Rosyjskie tłumaczenie:** Niesamowity Alex Ivanov właśnie opublikował [rosyjskie tłumaczenie](/README.russian.md)
 
-- **Szukamy autorów typescript:** chcesz pomóc w tworzeniu przykładów TypeScript? weź udział, otwierając issue
+- **Szukamy autorów TypeScript:** chcesz pomóc w tworzeniu przykładów TypeScript? Weź udział, otwierając issue
 
 <br/><br/>
 
 # Witamy! 3 rzeczy, które musisz wiedzieć na początku
 
 **1. W rzeczywistości czytasz dziesiątki najlepszych artykułów na temat Node.js -** to repozytorium jest podsumowaniem i zbiorem najlepszych pozycji na temat najlepszych praktyk Node.js, a także treści napisanych tutaj przez współpracowników
-**2. Jest to największa kompilacja, która rośnie z każdym tygodniem -** obecnie prezentowanych jest ponad 80 najlepszych praktyk, przewodników po stylach i wskazówek architektonicznych. Nowe wydania i pull requesty są tworzone codziennie, aby aktualizować tę książkę na żywo. Chcielibyśmy zobaczyć Twój wkład w to, czy to naprawiasz błędy w kodzie, pomagasz w tłumaczeniach, czy sugerujesz nowe genialne pomysły. Zobacz nasze [wskazówki dotyczące pisania tutaj] (/.Operations/writing-guidelines.md)
+**2. Jest to największa kompilacja, która rośnie z każdym tygodniem -** obecnie prezentowanych jest ponad 80 najlepszych praktyk, przewodników po stylach i wskazówek architektonicznych. Nowe wydania i pull requesty są tworzone codziennie, aby aktualizować tę książkę na żywo. Chcielibyśmy zobaczyć Twój wkład w to, czy naprawiasz błędy w kodzie, pomagasz w tłumaczeniach, czy sugerujesz nowe genialne pomysły. Zobacz nasze [wskazówki dotyczące pisania tutaj] (/.Operations/writing-guidelines.md)
 
 **3. Większość najlepszych praktyk ma dodatkowe informacje -** większość pocisków zawiera link **🔗Przeczytaj więcej**, który rozszerza praktykę o przykłady kodu, cytaty z wybranych blogów i więcej informacji
 <br/><br/>
@@ -68,7 +68,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 ## ![✔] 1.2 Nakładaj warstwy na komponenty, zachowując Express w granicach
 
-**TL;DR:** Każdy komponent powinien zawierać „warstwy” - dedykowany obiekt dla sieci, logiki i kodu dostępu do danych. Nie tylko pozwala to na wyraźne oddzielenie problemów, ale także znacznie ułatwia drwiny i testowanie systemu. Chociaż jest to bardzo powszechny wzorzec, programiści API mają tendencję do mieszania warstw, przekazując obiekty warstwy internetowej (wymagania ekspresowe, res) do logiki biznesowej i warstw danych - dzięki temu aplikacja jest zależna i dostępna tylko przez Express
+**TL;DR:** Każdy komponent powinien zawierać „warstwy” - dedykowany obiekt dla sieci, logiki i kodu dostępu do danych. Nie tylko pozwala to na wyraźne oddzielenie problemów, ale także znacznie ułatwia mockowanie i testowanie systemu. Chociaż jest to bardzo powszechny wzorzec, programiści API mają tendencję do mieszania warstw, przekazując obiekty warstwy internetowej (wymagania Express, res) do logiki biznesowej i warstw danych - dzięki temu aplikacja jest zależna i dostępna tylko przez Express
 
 **W przeciwnym razie:** Nie można uzyskać dostępu do aplikacji, która miesza obiekty internetowe z innymi warstwami, testując kod, zadania CRON i inne obiekty wywołujące inne niż Express
 
@@ -95,8 +95,8 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 ## ![✔] 1.5 Używaj konfiguracji przyjaznej środowisku, bezpiecznej i hierarchicznej
 
-  **TL;DR:** Idealna i bezbłędna konfiguracja konfiguracji powinna zapewnić, że (a) klucze można odczytać z pliku ORAZ ze zmiennych środowiskowych (b) tajemnice są przechowywane poza zatwierdzonym kodem (c) konfiguracja jest hierarchiczna dla łatwiejszego wyszukiwania. Istnieje kilka pakietów, które mogą pomóc zaznaczyć większość z tych pól, takich jak [rc] (https://www.npmjs.com/package/rc), [nconf] (https://www.npmjs.com/package/nconf ) i [config] (https://www.npmjs.com/package/config)
-  **W przeciwnym razie:** Failing to satisfy any of the config requirements will simply bog down the development or devops team. Probably both
+  **TL;DR:** Idealne i bezbłędne ustawienie konfiguracji powinno zapewnić, że (a) klucze można odczytać z pliku ORAZ ze zmiennych środowiskowych (b) tajemnice są przechowywane poza zatwierdzonym kodem (c) konfiguracja jest hierarchiczna dla łatwiejszego wyszukiwania. Istnieje kilka pakietów, które mogą pomóc zaznaczyć większość z tych pól, takich jak [rc] (https://www.npmjs.com/package/rc), [nconf] (https://www.npmjs.com/package/nconf ) i [config] (https://www.npmjs.com/package/config)
+  **W przeciwnym razie:** Niespełnienie któregokolwiek z wymagań konfiguracji po prostu ugrzęźnie w zespole programistów lub DevOps. Prawdopodobnie jedno i drugie
 
 🔗 [**Czytaj więcej: najlepsze praktyki dotyczące konfiguracji**](/sections/projectstructre/configguide.md)
 
@@ -108,8 +108,8 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 ## ![✔] 2.1 Użyj Async-Await lub promises do obsługi błędów asynchronicznych
 
-**TL;DR:** Obsługa błędów asynchronicznych w stylu wywołania zwrotnego jest prawdopodobnie najszybszą drogą do piekła (znane też jako Piramida zagłady). Najlepszy prezent, jaki możesz dać kodowi, to skorzystanie z renomowanej biblioteki obietnic lub async-czekaj zamiast tego, co umożliwia znacznie bardziej zwartą i znaną składnię kodu, taką jak try-catch
-**W przeciwnym razie:** Node.js styl wywołania zwrotnego, funkcja (błąd, odpowiedź) jest obiecującym sposobem na niemożliwy do utrzymania kod ze względu na połączenie obsługi błędów z przypadkowym kodem, nadmiernym zagnieżdżaniem i niewygodnymi wzorcami kodowania
+**TL;DR:** Obsługa błędów asynchronicznych w stylu wywołania zwrotnego jest prawdopodobnie najszybszą drogą do piekła (znane też jako Piramida zagłady). Najlepszy prezent, jaki możesz dać kodowi, to skorzystanie z renomowanej biblioteki promise lub async-await zamiast tego, co umożliwia znacznie bardziej zwartą i znaną składnię kodu, taką jak try-catch
+**W przeciwnym razie:** styl wywołania zwrotnego Node.js, funkcja (błąd, odpowiedź) jest obiecującym sposobem na niemożliwy do utrzymania kod ze względu na połączenie obsługi błędów z przypadkowym kodem, nadmiernym zagnieżdżaniem i niewygodnymi wzorcami kodowania
 
 🔗 [**Czytaj więcej: avoiding callbacks**](/sections/errorhandling/asyncerrorhandling.md)
 
@@ -117,9 +117,9 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 ## ![✔] 2.2 Używaj tylko wbudowanego obiektu Error
 
-**TL;DR:** Wiele z nich wyrzuca błędy jako ciąg znaków lub jako niestandardowy typ - komplikuje to logikę obsługi błędów i interoperacyjność między modułami. Niezależnie od tego, czy odrzucisz obietnicę, rzucisz wyjątek, czy wyślesz błąd - użycie tylko wbudowanego obiektu Error (lub obiektu, który rozszerza wbudowany obiekt Error) zwiększy jednolitość i zapobiegnie utracie informacji
+**TL;DR:** Wiele z nich wyrzuca błędy jako ciąg znaków lub jako niestandardowy typ - komplikuje to logikę obsługi błędów i interoperacyjność między modułami. Niezależnie od tego, czy odrzucisz promise, rzucisz wyjątek, czy wyślesz błąd - użycie tylko wbudowanego obiektu Error (lub obiektu, który rozszerza wbudowany obiekt Error) zwiększy jednolitość i zapobiegnie utracie informacji
 
-**W przeciwnym razie:** Podczas wywoływania jakiegoś komponentu brak pewności, jaki rodzaj błędów w zamian wraca - znacznie utrudnia prawidłowe zarządzanie błędami. Co gorsza, używanie niestandardowych typów do opisywania błędów może prowadzić do utraty krytycznych informacji o błędach, takich jak ślad stosu!
+**W przeciwnym razie:** Podczas wywoływania jakiegoś komponentu brak pewności, jaki rodzaj błędów w zamian wraca - znacznie utrudnia prawidłowe zarządzanie błędami. Co gorsza, używanie niestandardowych typów do opisywania błędów może prowadzić do utraty krytycznych informacji o błędach, takich jak stack trace!
 
 🔗 [**Czytaj więcej: using the built-in error object**](/sections/errorhandling/useonlythebuiltinerror.md)
 
@@ -127,9 +127,9 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 ## ![✔] 2.3 Rozróżnij błędy operacyjne i programistyczne
 
-**TL;DR:** Błędy operacyjne (np. API otrzymało niepoprawne dane wejściowe) odnoszą się do znanych przypadków, w których wpływ błędu jest w pełni zrozumiały i można go starannie rozpatrzyć. Z drugiej strony błąd programisty (np. Próba odczytania niezdefiniowanej zmiennej) odnosi się do nieznanych błędów kodu, które zmuszają do płynnego restartu aplikacji
+**TL;DR:** Błędy operacyjne (np. API otrzymało niepoprawne dane wejściowe) odnoszą się do znanych przypadków, w których wpływ błędu jest w pełni zrozumiały i można go starannie rozpatrzyć. Z drugiej strony błąd programisty (np. próba odczytania niezdefiniowanej zmiennej) odnosi się do nieznanych błędów kodu, które zmuszają do płynnego restartu aplikacji
 
-**W przeciwnym razie:** Zawsze możesz ponownie uruchomić aplikację, gdy pojawi się błąd, ale dlaczego zawieść ~5000 użytkowników online z powodu drobnego, przewidywanego błędu operacyjnego? wręcz przeciwnie, nie jest też idealne - utrzymanie aplikacji w stanie, gdy wystąpi nieznany problem (błąd programisty), może prowadzić do nieprzewidzianego zachowania. Rozróżnienie tych dwóch pozwala działać taktownie i stosować zrównoważone podejście oparte na danym kontekście
+**W przeciwnym razie:** Zawsze możesz ponownie uruchomić aplikację, gdy pojawi się błąd, ale dlaczego zawieść ~5000 użytkowników online z powodu drobnego, przewidywanego błędu operacyjnego? Drugie rozwiązanie nie jest też idealne - utrzymanie aplikacji w stanie, gdy wystąpi nieznany problem (błąd programisty), może prowadzić do nieprzewidzianego zachowania. Rozróżnienie tych dwóch pozwala działać taktownie i stosować zrównoważone podejście oparte na danym kontekście
 
 🔗 [**Czytaj więcej: operational vs programmer error**](/sections/errorhandling/operationalvsprogrammererror.md)
 
@@ -147,9 +147,9 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 ## ![✔] 2.5 Dokumentuj błędy interfejsu API za pomocą Swagger lub GraphQL
 
-**TL;DR:** Poinformuj osoby dzwoniące do interfejsu API, które błędy mogą w zamian otrzymać, aby mogły je starannie obsługiwać bez awarii. W przypadku interfejsów API RESTful odbywa się to zwykle w ramach dokumentacji takich jak Swagger. Jeśli korzystasz z GraphQL, możesz również wykorzystać swój schemat i komentarze.
+**TL;DR:** Poinformuj osoby odwołujące się do interfejsu API, które błędy mogą w zamian otrzymać, aby mogły je starannie obsługiwać bez awarii. W przypadku interfejsów API RESTful odbywa się to zwykle w ramach frameworków takich jak Swagger. Jeśli korzystasz z GraphQL, możesz również wykorzystać swój schemat i komentarze.
 
-**W przeciwnym razie:** Klient API może zdecydować o awarii i ponownym uruchomieniu tylko dlatego, że otrzymał błąd, którego nie mógł zrozumieć. Uwaga: osobą wywołującą interfejs API może być Ty (bardzo typowe w środowisku mikrousług)
+**W przeciwnym razie:** Klient API może zdecydować o awarii i ponownym uruchomieniu tylko dlatego, że otrzymał błąd, którego nie mógł zrozumieć. Uwaga: osobą wywołującą interfejs API możesz być Ty (bardzo typowe w środowisku mikrousług)
 
 🔗 [**Czytaj więcej: documenting API errors in Swagger or GraphQL**](/sections/errorhandling/documentingusingswagger.md)
 
@@ -167,9 +167,9 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 ## ![✔] 2.7 Użyj dojrzałego programu rejestrującego, aby zwiększyć widoczność błędów
 
-**TL;DR:** Zestaw dojrzałych narzędzi do rejestrowania, takich jak [Winston] (https://www.npmjs.com/package/winston), [Bunyan] (https://github.com/trentm/node-bunyan), [Log4js] (http : //stritti.github.io/log4js/) lub [Pino] (https://github.com/pinojs/pino), przyspieszy wykrywanie błędów i zrozumienie. Więc zapomnij o console.log
+**TL;DR:** Zestaw dojrzałych narzędzi do rejestrowania, takich jak [Winston] (https://www.npmjs.com/package/winston), [Bunyan] (https://github.com/trentm/node-bunyan), [Log4js] (http://stritti.github.io/log4js/) lub [Pino] (https://github.com/pinojs/pino), przyspieszy wykrywanie błędów i zrozumienie. Więc zapomnij o console.log
 
-**W przeciwnym razie:** Przeglądanie w pliku console.logs lub ręcznie przez niechlujny plik tekstowy bez korzystania z narzędzi zapytań lub porządnej przeglądarki dziennika może być zajęty w pracy do późna
+**W przeciwnym razie:** Przeglądanie w pliku console.logs lub ręcznie przez niechlujny plik tekstowy bez korzystania z narzędzi zapytań lub porządnej przeglądarki dziennika może być zajęciem w pracy do późna
 
 🔗 [**Czytaj więcej: using a mature logger**](/sections/errorhandling/usematurelogger.md)
 
@@ -197,7 +197,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 ## ![✔] 2.10 Złap nieobsługiwane odrzucenia promise
 
-**TL;DR:** Każdy wyjątek zgłoszony w ramach obietnicy zostanie połknięty i odrzucony, chyba że programista nie zapomni o jawnej obsłudze. Nawet jeśli Twój kod jest subskrybowany w `process.uncaughtException`! Sforsuj to, rejestrując się na wydarzeniu `process.unhandledRejection`
+**TL;DR:** Każdy wyjątek zgłoszony w ramach promise zostanie połknięty i odrzucony, chyba że programista nie zapomni o jawnej obsłudze. Nawet jeśli Twój kod jest subskrybowany w `process.uncaughtException`! Sforsuj to, rejestrując się na wydarzeniu `process.unhandledRejection`
 
 **W przeciwnym razie:** Twoje błędy zostaną połknięte i nie pozostawiają śladu. Nie ma się o co martwić
 
@@ -209,7 +209,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **TL;DR:** Powinno to być częścią najlepszych praktyk Express - Assert API, aby uniknąć nieprzyjemnych błędów, które później będą znacznie trudniejsze do wyśledzenia. Kod weryfikacyjny jest zwykle uciążliwy, chyba że używasz bardzo fajnej biblioteki pomocniczej, takiej jak Joi
 
-**W przeciwnym razie:** Rozważ to - twoja funkcja oczekuje argumentu liczbowego „Rabat”, który wywołujący zapomina przekazać, a następnie kod sprawdza, czy Rabat! = 0 (kwota dozwolonego rabatu jest większa od zera), a następnie pozwoli użytkownikowi cieszyć się zniżka. OMG, co za paskudny błąd. Możesz to zobaczyć?
+**W przeciwnym razie:** Rozważ to - twoja funkcja oczekuje argumentu liczbowego „Discount”, który wywołujący zapomina przekazać, a następnie kod sprawdza, czy Discount!=0 (kwota dozwolonego discounta jest większa od zera), a następnie pozwoli użytkownikowi cieszyć się discountem. OMG, co za paskudny błąd. Widzisz to?
 
 🔗 [**Czytaj więcej: failing fast**](/sections/errorhandling/failfast.md)
 
@@ -221,7 +221,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 ## ![✔] 3.1 Użyj ESLint
 
-**TL;DR:** [ESLint](https://eslint.org) jest de facto standardem sprawdzania możliwych błędów kodu i ustalania stylu kodu, nie tylko w celu zidentyfikowania drobiazgowych problemów z odstępami, ale także w celu wykrycia poważnych anty-wzorów kodu, takich jak programiści zgłaszający błędy bez klasyfikacji. Chociaż ESLint może automatycznie naprawiać style kodu, inne narzędzia, takie jak [ładniejsze] (https://www.npmjs.com/package/prettier) i [upiększyć] (https://www.npmjs.com/package/js-beautify) mają większą moc formatowania poprawki i współpracują z ESLint
+**TL;DR:** [ESLint](https://eslint.org) jest de facto standardem sprawdzania możliwych błędów kodu i ustalania stylu kodu, nie tylko w celu zidentyfikowania drobiazgowych problemów z odstępami, ale także w celu wykrycia poważnych anty-wzorców kodu, takich jak programiści zgłaszający błędy bez klasyfikacji. Chociaż ESLint może automatycznie naprawiać style kodu, inne narzędzia, takie jak [prettier] (https://www.npmjs.com/package/prettier) i [beautify] (https://www.npmjs.com/package/js-beautify) mają większą moc formatowania poprawki i współpracują z ESLint
 
 **W przeciwnym razie:** Programiści skoncentrują się na żmudnych odstępach i problemach z szerokością linii, a czas może zostać zmarnowany na przemyślenie stylu kodu projektu
 
@@ -231,7 +231,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 ## ![✔] 3.2 Specyficzne wtyczki Node.js
 
-**TL;DR:** Oprócz standardowych reguł ESLint obejmujących waniliowy JavaScript, dodaj wtyczki Node.js, takie jak [eslint-plugin-node] (https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin- mocha] (https://www.npmjs.com/package/eslint-plugin-mocha) i [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
+**TL;DR:** Oprócz standardowych reguł ESLint obejmujących vanilla JavaScript, dodaj wtyczki Node.js, takie jak [eslint-plugin-node] (https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin- mocha] (https://www.npmjs.com/package/eslint-plugin-mocha) i [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
 **W przeciwnym razie:** Wiele wadliwych wzorców kodu Node.js może uciekać pod radarem. Na przykład programiści mogą wymagać plików (zmiennaAsPath) ze zmienną podaną jako ścieżka, która umożliwia atakującym wykonanie dowolnego skryptu JS. Linters Node.js mogą wcześnie wykrywać takie wzorce i narzekać
 
@@ -239,7 +239,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 ## ![✔] 3.3 Uruchom nawiasy klamrowe Codeblock na tej samej linii
 
-**TL;DR:** Nawiasy klamrowe otwierające bloku kodu powinny znajdować się w tym samym wierszu, co instrukcja otwierająca
+**TL;DR:** Nawiasy klamrowe otwierające bloki kodu powinny znajdować się w tym samym wierszu, co instrukcja otwierająca
 
 ### Przykład kodu
 
@@ -308,7 +308,7 @@ const count = 2 // it tries to run 2(), but 2 is not a function
 
 ## ![✔] 3.5 Nazwij swoje funkcje
 
-**TL;DR:** Nazwij wszystkie funkcje, w tym zamknięcia i połączenia zwrotne. Unikaj anonimowych funkcji. Jest to szczególnie przydatne podczas profilowania aplikacji węzła. Nazewnictwo wszystkich funkcji pozwoli ci łatwo zrozumieć, na co patrzysz podczas sprawdzania migawki pamięci
+**TL;DR:** Nazwij wszystkie funkcje, w tym zamknięcia i połączenia zwrotne. Unikaj anonimowych funkcji. Jest to szczególnie przydatne podczas profilowania aplikacji Node. Nazewnictwo wszystkich funkcji pozwoli ci łatwo zrozumieć, na co patrzysz podczas sprawdzania migawki pamięci
 
 **W przeciwnym razie:** Debugowanie problemów produkcyjnych przy użyciu zrzutu pamięci (migawki pamięci) może stać się trudnym zadaniem, ponieważ zauważysz znaczne zużycie pamięci przez funkcje anonimowe
 
@@ -405,7 +405,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 3.11 Użyj Async Await, unikaj połączeń zwrotnych
 
-**TL;DR:** Node 8 LTS teraz ma pełne wsparcie dla Async-czekaj. Jest to nowy sposób radzenia sobie z kodem asynchronicznym, który zastępuje wywołania zwrotne i obiecuje. Oczekiwanie na asynchronizację nie jest blokowane i sprawia, że kod asynchroniczny wygląda na synchroniczny. Najlepszym prezentem, jaki możesz dać kodowi, jest użycie funkcji async-czekaj, która zapewnia znacznie bardziej zwartą i znaną składnię kodu, taką jak try-catch
+**TL;DR:** Node 8 LTS teraz ma pełne wsparcie dla Async-await. Jest to nowy sposób radzenia sobie z kodem asynchronicznym, który zastępuje wywołania zwrotne i obiecuje. Oczekiwanie na asynchronizację nie jest blokowane i sprawia, że kod asynchroniczny wygląda na synchroniczny. Najlepszym prezentem, jaki możesz dać kodowi, jest użycie funkcji async-await, która zapewnia znacznie bardziej zwartą i znaną składnię kodu, taką jak try-catch
 
 **W przeciwnym razie:** Obsługa błędów asynchronicznych w stylu wywołania zwrotnego jest prawdopodobnie najszybszą drogą do piekła - ten styl zmusza do sprawdzania błędów, radzenia sobie z dziwnym zagnieżdżaniem kodu i utrudnia uzasadnienie przepływu kodu
 
@@ -413,9 +413,9 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <br/><br/>
 
-## ![✔] 3.12 Use arrow function expressions (=>)
+## ![✔] 3.12 Użyj wyrażeń arrow function (=>)
 
-**TL;DR:** Chociaż zaleca się stosowanie asynchronicznego oczekiwania i unikania parametrów funkcji w przypadku starszych interfejsów API, które akceptują obietnice lub wywołania zwrotne - funkcje strzałek sprawiają, że struktura kodu jest bardziej zwarta i zachowuje kontekst leksykalny funkcji root (np. `this`)
+**TL;DR:** Chociaż zaleca się stosowanie asynchronicznego oczekiwania i unikania parametrów funkcji w przypadku starszych interfejsów API, które akceptują promise lub wywołania zwrotne - funkcje strzałek sprawiają, że struktura kodu jest bardziej zwarta i zachowuje kontekst leksykalny funkcji root (np. `this`)
 
 **W przeciwnym razie:** Dłuższy kod (w funkcjach ES5) jest bardziej podatny na błędy i trudny do odczytania
 
@@ -429,7 +429,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 4.1 Przynajmniej napisz testowanie API (komponentu)
 
-**TL;DR:** Większość projektów po prostu nie ma żadnych automatycznych testów z powodu krótkich harmonogramów lub często „projekt testowy” wymykał się spod kontroli i został porzucony. Z tego powodu ustal priorytetyzację i zacznij od testowania interfejsu API, który jest najłatwiejszym sposobem pisania i zapewnia większy zasięg niż testowanie jednostkowe (możesz nawet tworzyć testy API bez kodu za pomocą narzędzi takich jak [Postman] (https://www.getpostman.com/ Następnie, jeśli masz więcej zasobów i czasu, kontynuuj zaawansowane typy testów, takie jak testy jednostkowe, testy DB, testy wydajności itp.
+**TL;DR:** Większość projektów po prostu nie ma żadnych automatycznych testów z powodu krótkich harmonogramów lub często „projekt testowy” wymykał się spod kontroli i został porzucony. Z tego powodu ustal priorytetyzację i zacznij od testowania interfejsu API, który jest najłatwiejszym sposobem pisania i zapewnia większy zasięg niż testowanie jednostkowe (możesz nawet tworzyć testy API bez kodu za pomocą narzędzi takich jak [Postman] (https://www.getpostman.com/). Następnie, jeśli masz więcej zasobów i czasu, kontynuuj zaawansowane typy testów, takie jak testy jednostkowe, testy DB, testy wydajności itp.
 
 **W przeciwnym razie:** Możesz spędzać długie dni na pisaniu testów jednostkowych, aby dowiedzieć się, że masz tylko 20% zasięgu systemu
 
@@ -447,7 +447,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 4.3 Testy struktury według wzorca AAA
 
-**TL;DR:** Ustrukturyzuj swoje testy za pomocą 3 dobrze oddzielonych sekcji: Arrange, Act & Assert (AAA). Pierwsza część obejmuje konfigurację testu, następnie wykonanie testowanego urządzenia i wreszcie fazę asercji. Przestrzeganie tej struktury gwarantuje, że czytelnik nie poświęci procesora mózgu na zrozumienie planu testu
+**TL;DR:** Ustrukturyzuj swoje testy za pomocą 3 dobrze oddzielonych sekcji: Arrange, Act & Assert (AAA). Pierwsza część obejmuje konfigurację testu, następnie wykonanie testowanego urządzenia i wreszcie fazę asercji. Przestrzeganie tej struktury gwarantuje, że czytelnik nie poświęci mózgu procesora na zrozumienie planu testu
 
 **W przeciwnym razie:** Nie tylko spędzasz długie codzienne godziny na zrozumieniu głównego kodu, ale także to, co powinno być prostą częścią dnia (testowanie) rozciąga Twój mózg
 
@@ -457,17 +457,17 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 4.4 Wykryj problemy z kodem za pomocą lintera
 
-**TL;DR:** Użyj lintera kodu, aby sprawdzić podstawową jakość i wcześnie wykryć anty-wzory. Uruchom go przed jakimkolwiek testem i dodaj jako git-hook przed zatwierdzeniem, aby zminimalizować czas potrzebny na sprawdzenie i naprawienie dowolnego problemu. Sprawdź także [Część 3] (# 3-style-stylowe praktyki) w części Praktyki stylu kodu
+**TL;DR:** Użyj lintera kodu, aby sprawdzić podstawową jakość i wcześnie wykryć anty-wzorce. Uruchom go przed jakimkolwiek testem i dodaj jako git-hook przed zatwierdzeniem, aby zminimalizować czas potrzebny na sprawdzenie i naprawienie dowolnego problemu. Sprawdź także [Część 3] (# 3-style-stylowe praktyki) w części Praktyki stylu kodu
 
 **W przeciwnym razie:** Możesz przekazać kod anty-wzorcowy i potencjalnie podatny na atak do środowiska produkcyjnego.
 
 <br/><br/>
 
-## ![✔] 4.5 Unikaj globalnych urządzeń testowych i nasion, dodawaj dane na test
+## ![✔] 4.5 Unikaj globalnych urządzeń testowych i seeds, dodawaj dane na test
 
 **TL;DR:** Aby zapobiec sprzężeniu testów i łatwo uzasadnić przebieg testu, każdy test powinien dodawać i działać na swoim własnym zestawie wierszy DB. Ilekroć test wymaga wyciągnięcia lub założenia istnienia niektórych danych DB - musi jawnie dodać te dane i unikać mutowania jakichkolwiek innych rekordów
 
-**W przeciwnym razie:** Rozważmy scenariusz, w którym wdrożenie zostało przerwane z powodu nieudanych testów, zespół zamierza teraz poświęcić cenny czas na dochodzenie, który kończy się smutnym wnioskiem: system działa dobrze, testy jednak przeszkadzają sobie nawzajem i przerywają kompilację
+**W przeciwnym razie:** Rozważmy scenariusz, w którym wdrożenie zostało przerwane z powodu nieudanych testów, zespół zamierza teraz poświęcić cenny czas na dochodzenie, które kończy się smutnym wnioskiem: system działa dobrze, testy jednak przeszkadzają sobie nawzajem i przerywają kompilację
 
 🔗 [**Czytaj więcej: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
 
@@ -483,7 +483,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 4.7 Oznacz swoje testy
 
-**TL;DR:** Różne testy muszą być uruchamiane w różnych scenariuszach: szybki dym, bez we / wy, testy powinny być uruchamiane, gdy programista zapisuje lub zatwierdza plik, pełne kompleksowe testy zwykle uruchamiane są po przesłaniu nowego żądania ściągnięcia itp. Można to osiągnąć poprzez oznaczenie testów słowami kluczowymi takimi jak #cold #api #sanity, aby można było grepować za pomocą uprzęży testującej i wywołać pożądany podzbiór. Na przykład w ten sposób można wywoływać tylko grupę testową rozsądku [Mocha](https://mochajs.org/): mocha --grep 'sanity'
+**TL;DR:** Różne testy muszą być uruchamiane w różnych scenariuszach: quick smoke, IO-less, testy powinny być uruchamiane, gdy programista zapisuje lub zatwierdza plik, pełne kompleksowe testy zwykle uruchamiane są po przesłaniu nowego pull requesta itp. Można to osiągnąć poprzez oznaczenie testów słowami kluczowymi takimi jak #cold #api #sanity, aby można było grepować za pomocą uprzęży testującej i wywołać pożądany podzbiór. Na przykład w ten sposób można wywoływać tylko grupę testową rozsądku [Mocha](https://mochajs.org/): mocha --grep 'sanity'
 
 **W przeciwnym razie:** Uruchamianie wszystkich testów, w tym testów, które wykonują dziesiątki zapytań DB, za każdym razem, gdy programista wprowadzi małą zmianę, może to być bardzo powolne i powstrzymuje programistów przed uruchomieniem testów
 
@@ -491,7 +491,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 4.8 Sprawdź zasięg testu, pomaga zidentyfikować nieprawidłowe wzorce testowe
 
-**TL;DR:** Narzędzia pokrycia kodu, takie jak [Istanbul] (https://github.com/istanbuljs/istanbuljs) / [NYC] (https://github.com/istanbuljs/nyc) są świetne z 3 powodów: przychodzi za darmo (bez wysiłku jest niezbędny do skorzystania z tych raportów), pomaga zidentyfikować zmniejszenie zasięgu testowania, a na koniec podkreśla niedopasowania testowania: patrząc na kolorowe raporty pokrycia kodu można zauważyć, na przykład, obszary kodu, które nigdy nie są testowane jak catch klauzule (co oznacza, że testy wywołują tylko szczęśliwe ścieżki, a nie zachowanie aplikacji w przypadku błędów). Ustaw na niepowodzenia kompilacji, jeśli zasięg spadnie poniżej określonego progu
+**TL;DR:** Narzędzia pokrycia kodu, takie jak [Istanbul] (https://github.com/istanbuljs/istanbuljs) / [NYC] (https://github.com/istanbuljs/nyc) są świetne z 3 powodów: przychodzi za darmo (bez wysiłku jest niezbędny do skorzystania z tych raportów), pomaga zidentyfikować zmniejszenie zasięgu testowania, a na koniec podkreśla niedopasowania testowania: patrząc na kolorowe raporty pokrycia kodu można zauważyć, na przykład, obszary kodu, które nigdy nie są testowane jak klauzule catch (co oznacza, że testy wywołują tylko szczęśliwe ścieżki, a nie zachowanie aplikacji w przypadku błędów). Ustaw na niepowodzenia kompilacji, jeśli zasięg spadnie poniżej określonego progu
 
 **W przeciwnym razie:** Nie będzie żadnych zautomatyzowanych danych informujących, kiedy duża część kodu nie jest objęta testowaniem
 
@@ -499,7 +499,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 4.9 Sprawdź nieaktualne pakiety
 
-**TL;DR:** Użyj preferowanego narzędzia (np. „Npm przestarzałe” lub [npm-check-updates] (https://www.npmjs.com/package/npm-check-updates), aby wykryć zainstalowane pakiety, które są nieaktualne, wstrzyknij to Potok CI, a nawet awaria kompilacji w trudnym scenariuszu. Na przykład poważnym scenariuszem może być sytuacja, gdy zainstalowany pakiet ma 5 łatek zatwierdzeń (np. Wersja lokalna to 1.3.1, a wersja repozytorium to 1.3.8) lub jest oznaczony jako przestarzałe przez jego autora - zabij kompilację i uniemożliwi wdrożenie tej wersji
+**TL;DR:** Użyj preferowanego narzędzia (np. „npm outdated” lub [npm-check-updates] (https://www.npmjs.com/package/npm-check-updates), aby wykryć zainstalowane pakiety, które są nieaktualne, wstrzyknij to w pipeline CI, a nawet zbuduj w trudnym scenariuszu. Na przykład poważnym scenariuszem może być sytuacja, gdy zainstalowany pakiet ma 5 łatek zatwierdzeń (np. Wersja lokalna to 1.3.1, a wersja repozytorium to 1.3.8) lub jest oznaczony jako przestarzałe przez jego autora - zabije kompilację i uniemożliwi wdrożenie tej wersji
 
 **W przeciwnym razie:** Produkcja będzie uruchamiać pakiety, które zostały wyraźnie oznaczone przez autora jako ryzykowne
 
@@ -515,7 +515,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 4.11 Refaktoryzuj regularnie za pomocą narzędzi do analizy statycznej
 
-**TL;DR:** Korzystanie z narzędzi analizy statycznej pomaga, zapewniając obiektywne sposoby poprawy jakości kodu i utrzymując kod w łatwości konserwacji. Możesz dodać narzędzia analizy statycznej do kompilacji CI, aby zawieść, gdy wykryje zapach kodu. Jego głównymi zaletami w stosunku do zwykłego szarpania jest możliwość kontroli jakości w kontekście wielu plików (np. Wykrywanie duplikacji), przeprowadzania zaawansowanej analizy (np. Złożoności kodu) oraz śledzenia historii i postępu problemów z kodem. Dwa przykłady narzędzi, których możesz użyć, to [Sonarqube] (https://www.sonarqube.org/) (2600+ [gwiazdek] (https://github.com/SonarSource/sonarqube)) i [Code Climate] (https : //codeclimate.com/) (1500+ [gwiazdek] (https://github.com/codeclimate/codeclimate)).
+**TL;DR:** Korzystanie z narzędzi analizy statycznej pomaga, zapewniając obiektywne sposoby poprawy jakości kodu i utrzymując kod w łatwości konserwacji. Możesz dodać narzędzia analizy statycznej do kompilacji CI, aby zawieść, gdy wykryje code smells. Jego głównymi zaletami w stosunku do zwykłego szarpania jest możliwość kontroli jakości w kontekście wielu plików (np. wykrywanie duplikacji), przeprowadzania zaawansowanej analizy (np. złożoności kodu) oraz śledzenia historii i postępu problemów z kodem. Dwa przykłady narzędzi, których możesz użyć, to [Sonarqube] (https://www.sonarqube.org/) (2600+ [gwiazdek] (https://github.com/SonarSource/sonarqube)) i [Code Climate] (https : //codeclimate.com/) (1500+ [gwiazdek] (https://github.com/codeclimate/codeclimate)).
 
 **W przeciwnym razie:** Przy złej jakości kodu błędy i wydajność zawsze będą stanowić problem, którego nie będzie w stanie naprawić żadna nowa błyszcząca biblioteka ani najnowocześniejsze funkcje
 
@@ -525,7 +525,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 4.12 Ostrożnie wybierz swoją platformę CI (Jenkins vs CircleCI vs Travis vs Reszta świata)
 
-**TL;DR:** Twoja platforma ciągłej integracji (CICD) będzie hostować wszystkie narzędzia wysokiej jakości (np. Test, strzępki), więc powinna mieć żywy ekosystem wtyczek. [Jenkins] (https://jenkins.io/) był domyślny dla wielu projektów, ponieważ ma największą społeczność wraz z bardzo potężną platformą w cenie złożonej konfiguracji, która wymaga stromej krzywej uczenia się. Obecnie znacznie łatwiej jest skonfigurować rozwiązanie CI za pomocą narzędzi SaaS, takich jak [CircleCI] (https://circleci.com) i innych. Narzędzia te umożliwiają stworzenie elastycznego potoku CI bez konieczności zarządzania całą infrastrukturą. Ostatecznie jest to kompromis między wytrzymałością a szybkością - wybierz stronę ostrożnie
+**TL;DR:** Twoja platforma ciągłej integracji (CICD) będzie hostować wszystkie narzędzia wysokiej jakości (np. test, lint), więc powinna mieć żywy ekosystem wtyczek. [Jenkins] (https://jenkins.io/) był domyślny dla wielu projektów, ponieważ ma największą społeczność wraz z bardzo potężną platformą w cenie złożonej konfiguracji, która wymaga stromej krzywej uczenia się. Obecnie znacznie łatwiej jest skonfigurować rozwiązanie CI za pomocą narzędzi SaaS, takich jak [CircleCI] (https://circleci.com) i innych. Narzędzia te umożliwiają stworzenie elastycznego potoku CI bez konieczności zarządzania całą infrastrukturą. Ostatecznie jest to kompromis między wytrzymałością a szybkością - wybierz stronę ostrożnie
 
 **W przeciwnym razie:** Wybranie jakiegoś niszowego dostawcy może spowodować zablokowanie użytkownika, gdy będzie potrzebne zaawansowane dostosowanie. Z drugiej strony pójście z Jenkinsem może skrócić cenny czas na konfigurację infrastruktury
 
@@ -539,7 +539,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 5.1. Monitoring
 
-**TL;DR:** Monitorowanie to gra polegająca na wykrywaniu problemów, zanim zrobią to klienci - oczywiście należy im to nadać niespotykane znaczenie. Rynek jest przytłoczony ofertami, dlatego rozważ rozpoczęcie od zdefiniowania podstawowych wskaźników, których należy przestrzegać (moje sugestie w środku), a następnie przejrzyj dodatkowe wymyślne funkcje i wybierz rozwiązanie, które zaznacza wszystkie pola. Kliknij „The Gist” poniżej, aby wyświetlić przegląd rozwiązań
+**TL;DR:** Monitorowanie to gra polegająca na wykrywaniu problemów, zanim zrobią to klienci - oczywiście należy nadać niespotykane znaczenie. Rynek jest przytłoczony ofertami, dlatego rozważ rozpoczęcie od zdefiniowania podstawowych wskaźników, których należy przestrzegać (moje sugestie w środku), a następnie przejrzyj dodatkowe wymyślne funkcje i wybierz rozwiązanie, które zaznacza wszystkie pola. Kliknij „The Gist” poniżej, aby wyświetlić przegląd rozwiązań
 
 **W przeciwnym razie:** Awaria === rozczarowani klienci. Proste
 
@@ -549,7 +549,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 5.2. Zwiększ przejrzystość za pomocą inteligentnego rejestrowania
 
-**TL;DR:** Dzienniki mogą być głupim magazynem instrukcji debugowania lub aktywować piękny pulpit nawigacyjny, który opowiada historię Twojej aplikacji. Zaplanuj swoją platformę rejestrowania od pierwszego dnia: w jaki sposób dzienniki są gromadzone, przechowywane i analizowane, aby zapewnić, że pożądane informacje (np. Poziom błędu, po całej transakcji za pośrednictwem usług i serwerów itp.) Mogą być naprawdę wydobyte
+**TL;DR:** Dzienniki mogą być głupim magazynem instrukcji debugowania lub aktywować piękny pulpit nawigacyjny, który opowiada historię Twojej aplikacji. Zaplanuj swoją platformę rejestrowania od pierwszego dnia: w jaki sposób dzienniki są gromadzone, przechowywane i analizowane, aby zapewnić, że pożądane informacje (np. poziom błędu, po całej transakcji za pośrednictwem usług i serwerów itp.) mogą być naprawdę wydobyte
 
 **W przeciwnym razie:** W rezultacie pojawia się czarna skrzynka, o której trudno uzasadnić, a następnie zaczynasz ponownie pisać wszystkie instrukcje rejestrowania, aby dodać dodatkowe informacje
 
@@ -569,7 +569,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 5.4. Zablokuj zależności
 
-**TL;DR:** Twój kod musi być identyczny we wszystkich środowiskach, ale zadziwiająco npm pozwala domyślnie dryfować zależności między środowiskami - podczas instalowania pakietów w różnych środowiskach próbuje pobrać najnowszą wersję łatek. Aby temu zaradzić, użyj plików konfiguracyjnych npm, .npmrc, które każą każdemu środowisku zapisać dokładną (nie najnowszą) wersję każdego pakietu. Alternatywnie, dla dokładniejszej kontroli ziarna, użyj „npm folię termokurczliwą”. \ * Aktualizacja: od NPM5 zależności są domyślnie zablokowane. Nowy menedżer pakietów w mieście, Yarn, również domyślnie nas objął
+**TL;DR:** Twój kod musi być identyczny we wszystkich środowiskach, ale zadziwiająco npm pozwala domyślnie dryfować zależnościom między środowiskami - podczas instalowania pakietów w różnych środowiskach próbuje pobrać najnowszą wersję łatek. Aby temu zaradzić, użyj plików konfiguracyjnych npm, .npmrc, które każą każdemu środowisku zapisać dokładną (nie najnowszą) wersję każdego pakietu. Alternatywnie, dla dokładniejszej kontroli grained, użyj „npm shrinkwrap”. \ * Aktualizacja: od NPM5 zależności są domyślnie zablokowane. Nowy menedżer pakietów w mieście, Yarn, również domyślnie nas objął
 
 **W przeciwnym razie:** Dział kontroli jakości dokładnie przetestuje kod i zatwierdzi wersję, która będzie zachowywać się inaczej w środowisku produkcyjnym. Co gorsza, różne serwery w tym samym klastrze produkcyjnym mogą uruchamiać inny kod
 
@@ -591,7 +591,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **TL;DR:** W swojej podstawowej formie aplikacja Node działa na jednym rdzeniu procesora, podczas gdy wszystkie pozostałe pozostają bezczynne. Twoim obowiązkiem jest replikacja procesu Node i wykorzystanie wszystkich procesorów - w przypadku małych i średnich aplikacji możesz użyć Node Cluster lub PM2. W przypadku większej aplikacji rozważ replikację procesu przy użyciu klastra Docker (np. K8S, ECS) lub skryptów wdrażania opartych na systemie inicjującym Linux (np. systemd)
 
-**W przeciwnym razie:** Twoja aplikacja prawdopodobnie wykorzysta tylko 25% dostępnych zasobów (!) Lub nawet mniej. Zauważ, że typowy serwer ma 4 rdzenie procesora lub więcej, naiwne wdrożenie Node.js wykorzystuje tylko 1 (nawet przy użyciu usług PaaS, takich jak AWS beanstalk!)
+**W przeciwnym razie:** Twoja aplikacja prawdopodobnie wykorzysta tylko 25% dostępnych zasobów (!) lub nawet mniej. Zauważ, że typowy serwer ma 4 rdzenie procesora lub więcej, naiwne wdrożenie Node.js wykorzystuje tylko 1 (nawet przy użyciu usług PaaS, takich jak AWS beanstalk!)
 
 🔗 [**Czytaj więcej: Utilize all CPU cores**](/sections/production/utilizecpu.md)
 
@@ -631,7 +631,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **TL;DR:** Node.js ma kontrowersyjne relacje z pamięcią: silnik v8 ma miękkie limity wykorzystania pamięci (1,4 GB) i istnieją znane ścieżki wycieku pamięci w kodzie Node - dlatego oglądanie pamięci procesu Node jest koniecznością. W małych aplikacjach możesz okresowo mierzyć pamięć za pomocą poleceń powłoki, ale w średnio-dużych aplikacjach rozważ umieszczenie zegarka pamięci w solidnym systemie monitorowania
 
-**W przeciwnym razie:** Pamięć procesowa może przeciekać sto megabajtów dziennie, jak to się stało [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
+**W przeciwnym razie:** Pamięć procesowa może przeciekać sto megabajtów dziennie, jak to się stało w [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
 
 🔗 [**Czytaj więcej: Measure and guard the memory usage**](/sections/production/measurememory.md)
 
@@ -649,7 +649,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 5.12. Bądź bezstanowy, zabijaj serwery prawie codziennie
 
-**TL;DR:** Przechowuj wszelkiego rodzaju dane (np. Sesje użytkownika, pamięć podręczną, przesłane pliki) w zewnętrznych magazynach danych. Rozważ „zabijanie” swoich serwerów okresowo lub skorzystaj z platformy „bezserwerowej” (np. AWS Lambda), która wyraźnie wymusza zachowanie bezstanowe
+**TL;DR:** Przechowuj wszelkiego rodzaju dane (np. sesje użytkownika, pamięć podręczną, przesłane pliki) w zewnętrznych magazynach danych. Rozważ „zabijanie” swoich serwerów okresowo lub skorzystaj z platformy „bezserwerowej” (np. AWS Lambda), która wyraźnie wymusza zachowanie bezstanowe
 
 **W przeciwnym razie:** Awaria na danym serwerze spowoduje przestoje aplikacji, a nie tylko zabicie wadliwego komputera. Co więcej, elastyczność skalowania stanie się trudniejsza ze względu na zależność od konkretnego serwera
 
@@ -669,7 +669,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 5.14. Przypisz identyfikator transakcji do każdej instrukcji dziennika
 
-**TL;DR:** Przypisz ten sam identyfikator, identyfikator transakcji: {pewna wartość} do każdego wpisu dziennika w ramach jednego żądania. Następnie podczas sprawdzania błędów w logach łatwo wyciągnij wnioski przed i po. Niestety, nie jest to łatwe do osiągnięcia w Węźle ze względu na jego asynchroniczny charakter, patrz przykłady kodu wewnątrz
+**TL;DR:** Przypisz ten sam identyfikator, identyfikator transakcji: {pewna wartość} do każdego wpisu dziennika w ramach jednego żądania. Następnie podczas sprawdzania błędów w logach łatwo wyciągnij wnioski przed i po. Niestety, nie jest to łatwe do osiągnięcia w Node ze względu na jego asynchroniczny charakter, patrz przykłady kodu wewnątrz
 
 **W przeciwnym razie:** Patrzenie na dziennik błędów produkcyjnych bez kontekstu - co zdarzyło się wcześniej - sprawia, że znacznie trudniej i wolniej jest myśleć o problemie
 
@@ -679,7 +679,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 5.15. Ustaw NODE_ENV = produkcja
 
-**TL;DR:** Ustaw zmienną środowiskową NODE_ENV na „produkcja” lub „rozwój”, aby oznaczyć, czy optymalizacje produkcji powinny zostać aktywowane - wiele pakietów npm określa bieżące środowisko i optymalizuje kod do produkcji
+**TL;DR:** Ustaw zmienną środowiskową NODE_ENV na 'production' lub 'development', aby oznaczyć, czy optymalizacje produkcji powinny zostać aktywowane - wiele pakietów npm określa bieżące środowisko i optymalizuje kod do produkcji
 
 **W przeciwnym razie:** Pominięcie tej prostej właściwości może znacznie obniżyć wydajność. Na przykład, używając Express do renderowania po stronie serwera, pominięcie `NODE_ENV` powoduje spowolnienie trzykrotnie!
 
@@ -727,7 +727,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Skorzystaj z wtyczek liniowych związanych z bezpieczeństwem, takich jak [eslint-plugin-security] (https://github.com/nodesecurity/eslint-plugin-security), aby wychwycić luki w zabezpieczeniach i problemy jak najwcześniej, najlepiej gdy są one jest kodowany. Może to pomóc w wykrywaniu słabych punktów bezpieczeństwa, takich jak używanie eval, wywoływanie procesu potomnego lub importowanie modułu z literałem łańcucha (np. Dane wejściowe użytkownika). Kliknij „Czytaj więcej” poniżej, aby zobaczyć przykłady kodu, które zostaną złapane przez linijkę bezpieczeństwa
+**TL;DR:** Skorzystaj z wtyczek liniowych związanych z bezpieczeństwem, takich jak [eslint-plugin-security] (https://github.com/nodesecurity/eslint-plugin-security), aby wychwycić luki w zabezpieczeniach i problemy jak najwcześniej, najlepiej gdy są one  kodowane. Może to pomóc w wykrywaniu słabych punktów bezpieczeństwa, takich jak używanie eval, wywoływanie procesu potomnego lub importowanie modułu z literałem łańcucha (np. dane wejściowe użytkownika). Kliknij „Czytaj więcej” poniżej, aby zobaczyć przykłady kodu, które zostaną złapane przez linijkę bezpieczeństwa
 
 **W przeciwnym razie:** To, co mogło być bezpośrednią słabością bezpieczeństwa podczas programowania, staje się poważnym problemem w produkcji. Ponadto projekt może nie być zgodny ze spójnymi praktykami bezpieczeństwa kodu, co prowadzi do wprowadzenia luk w zabezpieczeniach lub poufnych tajemnic popełnionych w zdalnych repozytoriach
 
@@ -739,7 +739,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Ataki DOS są bardzo popularne i stosunkowo łatwe do przeprowadzenia. Wdrażanie ograniczenia prędkości za pomocą usługi zewnętrznej, takiej jak usługi równoważenia obciążenia w chmurze, zapory w chmurze, nginx, [szybkość-ogranicznik-elastyczny] (https://www.npmjs.com/package/rate-limiter-fiętki) pakiet lub (dla mniejszych i mniej krytycznych aplikacji) ograniczające szybkość oprogramowanie pośrednie (np. [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
+**TL;DR:** Ataki DOS są bardzo popularne i stosunkowo łatwe do przeprowadzenia. Wdrażanie ograniczenia prędkości za pomocą usługi zewnętrznej, takiej jak usługi równoważenia obciążenia w chmurze, zapory w chmurze, nginx, pakiet [rate-limiting middleware] (https://www.npmjs.com/package/rate-limiter-fiętki) lub (dla mniejszych i mniej krytycznych aplikacji) ograniczające szybkość oprogramowanie pośrednie (np. [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
 
 **W przeciwnym razie:** Aplikacja może zostać zaatakowana, co spowoduje odmowę usługi, w wyniku której prawdziwi użytkownicy otrzymają usługę o obniżonej jakości lub niedostępną.
 
@@ -751,9 +751,9 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A3:Sensitive%20Data%20Exposure%20-green.svg" alt=""/></a>
 
-**TL;DR:** Nigdy nie przechowuj tajemnic zwykłego tekstu w plikach konfiguracyjnych lub kodzie źródłowym. Zamiast tego skorzystaj z systemów zarządzania sekretami, takich jak produkty Vault, Kubernetes / Docker Secrets lub wykorzystując zmienne środowiskowe. W ostateczności tajemnice przechowywane w kontroli źródła muszą być szyfrowane i zarządzane (klucze, wygasanie, kontrola itp.). Skorzystaj z haków poprzedzających zatwierdzenie / push, aby zapobiec przypadkowemu popełnieniu tajemnicy
+**TL;DR:** Nigdy nie przechowuj tajemnic zwykłego tekstu w plikach konfiguracyjnych lub kodzie źródłowym. Zamiast tego skorzystaj z systemów zarządzania sekretami, takich jak produkty Vault, Kubernetes / Docker Secrets lub wykorzystując zmienne środowiskowe. W ostateczności tajemnice przechowywane w kontroli źródła muszą być szyfrowane i zarządzane (klucze, wygasanie, kontrola itp.). Skorzystaj z hooks poprzedzających zatwierdzenie / push, aby zapobiec przypadkowemu commitowaniu tajemnicy
 
-**W przeciwnym razie:** Kontrola źródła, nawet w przypadku prywatnych repozytoriów, może zostać omyłkowo upubliczniona, w którym to momencie ujawniane są wszystkie tajemnice. Dostęp do kontroli źródła dla strony zewnętrznej nieumyślnie zapewni dostęp do powiązanych systemów (baz danych, apis, usług itp.).
+**W przeciwnym razie:** Kontrola źródła, nawet w przypadku prywatnych repozytoriów, może zostać omyłkowo upubliczniona, w którym to momencie ujawniane są wszystkie tajemnice. Dostęp do kontroli źródła dla strony zewnętrznej nieumyślnie zapewni dostęp do powiązanych systemów (baz danych, API, usług itp.).
 
 🔗 [**Czytaj więcej: Secret management**](/sections/security/secretmanagement.md)
 
@@ -819,7 +819,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Niezaufane dane wysyłane do przeglądarki mogą zostać wykonane zamiast po prostu wyświetlane, jest to powszechnie nazywane atakiem typu cross-site-scripting (XSS). Ogranicz to, używając dedykowanych bibliotek, które jawnie oznaczają dane jako czystą treść, która nigdy nie powinna zostać wykonana (tj. Kodowanie, ucieczka)
+**TL;DR:** Niezaufane dane wysyłane do przeglądarki mogą zostać wykonane zamiast po prostu wyświetlane, jest to powszechnie nazywane atakiem typu cross-site-scripting (XSS). Ogranicz to, używając dedykowanych bibliotek, które jawnie oznaczają dane jako czystą treść, która nigdy nie powinna zostać wykonana (tj. kodowanie, ucieczka)
 
 **W przeciwnym razie:** Osoba atakująca może przechowywać złośliwy kod JavaScript w bazie danych, który zostanie następnie wysłany „tak jak jest” do biednych klientów
 
@@ -872,7 +872,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **TL;DR:** Istnieje częsty scenariusz, w którym Node.js działa jako użytkownik root z nieograniczonymi uprawnieniami. Na przykład jest to domyślne zachowanie w kontenerach Docker. Zalecane jest utworzenie użytkownika innego niż root i upieczenie go w obrazie Docker (przykłady podane poniżej) lub uruchomienie procesu w imieniu tego użytkownika przez wywołanie kontenera z flagą "-u username"
 
-**W przeciwnym razie:** Atakujący, któremu uda się uruchomić skrypt na serwerze, uzyskuje nieograniczoną władzę nad maszyną lokalną (np. Zmienia iptable i przekierowuje ruch do swojego serwera)
+**W przeciwnym razie:** Atakujący, któremu uda się uruchomić skrypt na serwerze, uzyskuje nieograniczoną władzę nad maszyną lokalną (np. zmienia iptable i przekierowuje ruch do swojego serwera)
 
 🔗 [**Czytaj więcej: Run Node.js as non-root user**](/sections/security/non-root-user.md)
 
@@ -882,7 +882,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Im większy jest ładunek ciała, tym trudniej jest przetwarzać pojedynczy wątek. Jest to okazja dla atakujących, aby postawić serwery na kolanach bez ogromnej liczby żądań (ataki DOS / DDOS). Ogranicz to, ograniczając rozmiar ciała przychodzących żądań na krawędzi (np. Zapora ogniowa, ELB) lub konfigurując [ekspresowy parser treści] (https://github.com/expressjs/body-parser), aby akceptował tylko małe ładunki
+**TL;DR:** Im większy jest ładunek ciała, tym trudniej jest przetwarzać pojedynczy wątek. Jest to okazja dla atakujących, aby postawić serwery na kolanach bez ogromnej liczby żądań (ataki DOS / DDOS). Ogranicz to, ograniczając rozmiar ciała przychodzących żądań na krawędzi (np. zapora ogniowa, ELB) lub konfigurując [ekspresowy parser treści] (https://github.com/expressjs/body-parser), aby akceptował tylko małe ładunki
 
 **W przeciwnym razie:** Twoja aplikacja będzie musiała poradzić sobie z dużymi żądaniami, niezdolna do przetworzenia innej ważnej pracy, którą musi wykonać, co będzie miało wpływ na wydajność i podatność na ataki DOS
 
@@ -902,13 +902,13 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <br/><br/>
 
-## ![✔] 6.16. Zapobiegaj złemu RegExowi przed przeciążeniem wykonania pojedynczego wątku
+## ![✔] 6.16. Zapobiegaj złemu Regex'owi przed przeciążeniem wykonania pojedynczego wątku
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Wyrażenia regularne, chociaż są przydatne, stanowią prawdziwe zagrożenie dla aplikacji JavaScript w ogóle, w szczególności dla platformy Node.js. Wprowadzanie przez użytkownika tekstu w celu dopasowania może wymagać przetworzenia dużej liczby cykli procesora. Przetwarzanie RegEx może być nieefektywne w takim stopniu, że pojedyncze żądanie, które potwierdza 10 słów, może zablokować całą pętlę zdarzeń na 6 sekund i ustawić procesor na on. Z tego powodu preferuj pakiety walidacyjne innych firm, takie jak [validator.js] (https://github.com/chriso/validator.js) zamiast pisać własne wzorce Regex, lub skorzystaj z [safe-regex](https://github.com/substack/safe-regex) do wykrywania wrażliwych wzorców wyrażeń regularnych
+**TL;DR:** Wyrażenia regularne, chociaż są przydatne, stanowią prawdziwe zagrożenie dla aplikacji JavaScript w ogóle, w szczególności dla platformy Node.js. Wprowadzanie przez użytkownika tekstu w celu dopasowania może wymagać przetworzenia dużej liczby cykli procesora. Przetwarzanie Regex może być nieefektywne w takim stopniu, że pojedyncze żądanie, które potwierdza 10 słów, może zablokować całą pętlę zdarzeń na 6 sekund i ustawić procesor na on. Z tego powodu preferuj pakiety walidacyjne innych firm, takie jak [validator.js] (https://github.com/chriso/validator.js) zamiast pisać własne wzorce Regex, lub skorzystaj z [safe-regex](https://github.com/substack/safe-regex) do wykrywania wrażliwych wzorców wyrażeń regularnych
 
-**W przeciwnym razie:** Źle napisane wyrażenia regularne mogą być podatne na ataki DoS wyrażeń regularnych, które całkowicie zablokują pętlę zdarzeń. Na przykład popularny pakiet `moment` został uznany za podatny na złośliwe użycie RegEx w listopadzie 2017r.
+**W przeciwnym razie:** Źle napisane wyrażenia regularne mogą być podatne na ataki DoS wyrażeń regularnych, które całkowicie zablokują pętlę zdarzeń. Na przykład popularny pakiet `moment` został uznany za podatny na złośliwe użycie Regex w listopadzie 2017r.
 
 🔗 [**Czytaj więcej: Prevent malicious RegEx**](/sections/security/regex.md)
 
@@ -930,7 +930,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** W przypadku zadania uruchomienia kodu zewnętrznego, który jest podawany w czasie wykonywania (np. Wtyczki), użyj dowolnego środowiska wykonawczego „piaskownicy”, które izoluje i chroni główny kod przed wtyczką. Można to osiągnąć za pomocą dedykowanego procesu (np. `Cluster.fork ()`), środowiska bezserwerowego lub dedykowanych pakietów npm, które działają jak piaskownica
+**TL;DR:** W przypadku zadania uruchomienia kodu zewnętrznego, który jest podawany w czasie wykonywania (np. wtyczki), użyj dowolnego środowiska wykonawczego „piaskownicy”, które izoluje i chroni główny kod przed wtyczką. Można to osiągnąć za pomocą dedykowanego procesu (np. `Cluster.fork ()`), środowiska bezserwerowego lub dedykowanych pakietów npm, które działają jak piaskownica
 
 **W przeciwnym razie:** Wtyczka może atakować poprzez nieskończoną różnorodność opcji, takich jak nieskończone pętle, przeciążenie pamięci i dostęp do wrażliwych zmiennych środowiskowych procesu
 
@@ -956,7 +956,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **TL;DR:** Zintegrowana ekspresowa obsługa błędów domyślnie ukrywa szczegóły błędu. Jednak duże są szanse na wdrożenie własnej logiki obsługi błędów za pomocą niestandardowych obiektów Error (uważanych przez wielu za najlepszą praktykę). Jeśli to zrobisz, pamiętaj, aby nie zwracać całego obiektu Error do klienta, który może zawierać pewne wrażliwe szczegóły aplikacji
 
-**W przeciwnym razie:** Wrażliwe szczegóły aplikacji, takie jak ścieżki plików serwera, używane moduły stron trzecich i inne wewnętrzne przepływy pracy aplikacji, które mogą zostać wykorzystane przez atakującego, mogą zostać wyciekły z informacji znalezionych w śladzie stosu
+**W przeciwnym razie:** Wrażliwe szczegóły aplikacji, takie jak ścieżki plików serwera, używane moduły stron trzecich i inne wewnętrzne przepływy pracy aplikacji, które mogą zostać wykorzystane przez atakującego, mogą zostać wyciekły z informacji znalezionych w stack trace
 
 🔗 [**Czytaj więcej: Hide error details from client**](/sections/security/hideerrors.md)
 
@@ -968,7 +968,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **TL;DR:** Każdy krok w łańcuchu programowania powinien być chroniony za pomocą MFA (uwierzytelnianie wieloskładnikowe), npm / Yarn to słodka okazja dla atakujących, którzy mogą zdobyć hasło jakiegoś programisty. Korzystając z poświadczeń programistów, osoby atakujące mogą wstrzykiwać złośliwy kod do bibliotek szeroko instalowanych w projektach i usługach. Może nawet w Internecie, jeśli zostanie opublikowany publicznie. Włączenie uwierzytelniania 2-czynnikowego w npm pozostawia niemal zerowe szanse atakującym na zmianę kodu pakietu.
 
-**W przeciwnym razie:** [Czy wiesz o programiście eslint, którego hasło zostało przejęte?](https://medium.com/@oprearocks/eslint-backdoor-what-it-is-and-how-to-fix-the-issue-221f58f1a8c8)
+**W przeciwnym razie:** [Czy słyszałeś o programiście eslint, którego hasło zostało przejęte?](https://medium.com/@oprearocks/eslint-backdoor-what-it-is-and-how-to-fix-the-issue-221f58f1a8c8)
 
 <br/><br/>
 
@@ -976,7 +976,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Każda platforma sieciowa i technologia ma swoje znane słabości - informowanie atakującego, której struktury sieciowej używamy, jest dla nich bardzo pomocne. Korzystanie z domyślnych ustawień dla pośrednich sesji sesji może narazić twoją aplikację na ataki przejmujące specyficzne dla modułu i frameworka w podobny sposób jak nagłówek `X-Powered-By`. Spróbuj ukryć wszystko, co identyfikuje i ujawnia Twój stos technologii (np. Node.js, express)
+**TL;DR:** Każda platforma sieciowa i technologia ma swoje znane słabości - informowanie atakującego, której struktury sieciowej używamy, jest dla nich bardzo pomocne. Korzystanie z domyślnych ustawień dla pośrednich sesji może narazić twoją aplikację na ataki przejmujące specyficzne dla modułu i frameworka w podobny sposób jak nagłówek `X-Powered-By`. Spróbuj ukryć wszystko, co identyfikuje i ujawnia Twój stos technologii (np. Node.js, Express)
 
 **W przeciwnym razie:** Pliki cookie mogą być przesyłane za pośrednictwem niezabezpieczonych połączeń, a osoba atakująca może użyć identyfikacji sesji w celu zidentyfikowania podstawowej struktury aplikacji internetowej, a także podatności na uszkodzenia specyficzne dla modułu
 
@@ -1036,12 +1036,12 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 <br /><br /><br />
 
 
-## ![✔] 7.2. Preferuj natywne metody JS niż narzędzia ponad powierzchnią użytkownika, takie jak Lodash
+## ![✔] 7.2. Preferuj natywne metody JS, niż narzędzia ponad powierzchnią użytkownika, takie jak Lodash
 
- **TL;DR:** Korzystanie z bibliotek narzędziowych takich jak `lodash` i `podkreślenie` w porównaniu z metodami natywnymi jest często bardziej karalne, ponieważ prowadzi do niepotrzebnych zależności i spowalnia działanie.
+ **TL;DR:** Korzystanie z bibliotek narzędziowych takich jak `lodash` i `underscore` w porównaniu z metodami natywnymi jest często bardziej karalne, ponieważ prowadzi do niepotrzebnych zależności i spowalnia działanie.
   Należy pamiętać, że wraz z wprowadzeniem nowego silnika V8 wraz z nowymi standardami ES, natywne metody zostały ulepszone w taki sposób, że są teraz o około 50% wydajniejsze niż biblioteki narzędziowe.
 
-**W przeciwnym razie:** Będziesz musiał utrzymywać mniej wydajne projekty, w których mógłbyś po prostu użyć tego, co było ** już ** dostępne lub zająć się kilkoma kolejnymi liniami w zamian za kilka dodatkowych plików.
+**W przeciwnym razie:** Będziesz musiał utrzymywać mniej wydajne projekty, w których mógłbyś po prostu użyć tego, co było **już** dostępne lub zająć się kilkoma kolejnymi liniami w zamian za kilka dodatkowych plików.
 
 🔗 [**Czytaj więcej: Native over user land utils**](/sections/performance/nativeoverutil.md)
 
@@ -1060,10 +1060,10 @@ Wszystkie tłumaczenia pochodzą od społeczności. Z przyjemnością uzyskamy w
 
 ### Ukończone tłumaczenia
 
-- ![BR](/assets/flags/BR.png) [Brazilian Portuguese](./README.brazilian-portuguese.md) - Courtesy of [Marcelo Melo](https://github.com/marcelosdm)
-- ![CN](/assets/flags/CN.png) [Chinese](./README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
-- ![RU](/assets/flags/RU.png) [Russian](./README.russian.md) - Courtesy of [Alex Ivanov](https://github.com/contributorpw)
-- ![PL](/assets/flags/PL.png) [Polish](./README.polish.md) - Courtesy of [Michal Biesiada](https://github.com/mbiesiad)
+- ![BR](/assets/flags/BR.png) [Brazilian Portuguese](./README.brazilian-portuguese.md) - Dzięki uprzejmości [Marcelo Melo](https://github.com/marcelosdm)
+- ![CN](/assets/flags/CN.png) [Chinese](./README.chinese.md) - Dzięki uprzejmości [Matt Jin](https://github.com/mattjin)
+- ![RU](/assets/flags/RU.png) [Russian](./README.russian.md) - Dzięki uprzejmości [Alex Ivanov](https://github.com/contributorpw)
+- ![PL](/assets/flags/PL.png) [Polish](./README.polish.md) - Dzięki uprzejmości [Michal Biesiada](https://github.com/mbiesiad)
 
 ### Tłumaczenia w trakcie
 
@@ -1094,7 +1094,7 @@ Niezależny konsultant Node.js, który współpracuje z klientami w USA, Europie
 [Bruno Scheufler](https://github.com/BrunoScheufler)
 <a href="https://brunoscheufler.com/"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
-💻 full-stack web engineer, Node.js & GraphQL enthusiast
+💻 full-stack web engineer, entuzjasta Node.js & GraphQL
 
 <br/>
 
@@ -1121,9 +1121,9 @@ Głęboki specjalista w JavaScript i jego ekosystemie - React, Node.js, MongoDB,
 
 ## Współpracownicy
 
-Dziękujemy wzsystkim wpółpracownikom! 🙏
+Dziękujemy wszystkim wpółpracownikom! 🙏
 
-Nasi współpracownicy są członkami, którzy regularnie współuczestniczą w repozytorium, sugerując nowe najlepsze praktyki, analizując problemy, sprawdzając żądania ściągania i wiele więcej. Jeśli chcesz pomóc nam poprowadzić tysiące ludzi do tworzenia lepszych aplikacji Node.js, przeczytaj nasze [wytyczne dla współpracowników](/.operations/CONTRIBUTING.md) 🎉
+Nasi współpracownicy są członkami, którzy regularnie współuczestniczą w repozytorium, sugerując nowe najlepsze praktyki, analizując problemy, sprawdzając pull requesty i wiele więcej. Jeśli chcesz pomóc nam poprowadzić tysiące ludzi do tworzenia lepszych aplikacji Node.js, przeczytaj nasze [wytyczne dla współpracowników](/.operations/CONTRIBUTING.md) 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
 | :--: | :--: |
@@ -1139,5 +1139,5 @@ Nasi współpracownicy są członkami, którzy regularnie współuczestniczą w 
 
 ## Dziękujemy za uwagi
 
-Doceniamy każdy wkład, od poprawki pojedynczego słowa po nową najlepszą praktykę. Zobacz naszych autorów i [dokumentację tutaj!] (CONTRIBUTORS.md)
+Doceniamy każdy wkład, od poprawki pojedynczego słowa, po nową najlepszą praktykę. Zobacz naszych autorów i [dokumentację CONTRIBUTORS tutaj!](CONTRIBUTORS.md)
 <br/><br/><br/>
