@@ -95,7 +95,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 ## ![✔] 1.5 Używaj konfiguracji przyjaznej środowisku, bezpiecznej i hierarchicznej
 
-  **TL;DR:** Idealne i bezbłędne ustawienie konfiguracji powinno zapewnić, że (a) klucze można odczytać z pliku ORAZ ze zmiennych środowiskowych (b) tajemnice są przechowywane poza zatwierdzonym kodem (c) konfiguracja jest hierarchiczna dla łatwiejszego wyszukiwania. Istnieje kilka pakietów, które mogą pomóc zaznaczyć większość z tych pól, takich jak [rc] (https://www.npmjs.com/package/rc), [nconf] (https://www.npmjs.com/package/nconf ) i [config] (https://www.npmjs.com/package/config)
+  **TL;DR:** Idealne i bezbłędne ustawienie konfiguracji powinno zapewnić, że (a) klucze można odczytać z pliku ORAZ ze zmiennych środowiskowych (b) dane wrażliwe są przechowywane poza zatwierdzonym kodem (c) konfiguracja jest hierarchiczna dla łatwiejszego wyszukiwania. Istnieje kilka pakietów, które mogą pomóc zaznaczyć większość z tych pól, takich jak [rc] (https://www.npmjs.com/package/rc), [nconf] (https://www.npmjs.com/package/nconf ) i [config] (https://www.npmjs.com/package/config)
   **W przeciwnym razie:** Niespełnienie któregokolwiek z wymagań konfiguracji po prostu ugrzęźnie w zespole programistów lub DevOps. Prawdopodobnie jedno i drugie
 
 🔗 [**Czytaj więcej: najlepsze praktyki dotyczące konfiguracji**](/sections/projectstructre/configguide.md)
@@ -729,7 +729,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **TL;DR:** Skorzystaj z wtyczek liniowych związanych z bezpieczeństwem, takich jak [eslint-plugin-security] (https://github.com/nodesecurity/eslint-plugin-security), aby wychwycić luki w zabezpieczeniach i problemy jak najwcześniej, najlepiej gdy są one  kodowane. Może to pomóc w wykrywaniu słabych punktów bezpieczeństwa, takich jak używanie eval, wywoływanie procesu potomnego lub importowanie modułu z literałem łańcucha (np. dane wejściowe użytkownika). Kliknij „Czytaj więcej” poniżej, aby zobaczyć przykłady kodu, które zostaną złapane przez linijkę bezpieczeństwa
 
-**W przeciwnym razie:** To, co mogło być bezpośrednią słabością bezpieczeństwa podczas programowania, staje się poważnym problemem w produkcji. Ponadto projekt może nie być zgodny ze spójnymi praktykami bezpieczeństwa kodu, co prowadzi do wprowadzenia luk w zabezpieczeniach lub poufnych tajemnic popełnionych w zdalnych repozytoriach
+**W przeciwnym razie:** To, co mogło być bezpośrednią słabością bezpieczeństwa podczas programowania, staje się poważnym problemem w produkcji. Ponadto projekt może nie być zgodny ze spójnymi praktykami bezpieczeństwa kodu, co prowadzi do wprowadzenia luk w zabezpieczeniach lub poufnych danych wrażliwych popełnionych w zdalnych repozytoriach
 
 🔗 [**Czytaj więcej: Lint rules**](/sections/security/lintrules.md)
 
@@ -751,9 +751,9 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A3:Sensitive%20Data%20Exposure%20-green.svg" alt=""/></a>
 
-**TL;DR:** Nigdy nie przechowuj tajemnic zwykłego tekstu w plikach konfiguracyjnych lub kodzie źródłowym. Zamiast tego skorzystaj z systemów zarządzania danymi wrażliwymi, takich jak produkty Vault, Kubernetes / Docker Secrets lub wykorzystując zmienne środowiskowe. W ostateczności tajemnice przechowywane w kontroli źródła muszą być szyfrowane i zarządzane (klucze, wygasanie, kontrola itp.). Skorzystaj z hooks poprzedzających zatwierdzenie / push, aby zapobiec przypadkowemu commitowaniu tajemnicy
+**TL;DR:** Nigdy nie przechowuj danych wrażliwych jako zwykły tekst w plikach konfiguracyjnych lub kodzie źródłowym. Zamiast tego skorzystaj z systemów zarządzania danymi wrażliwymi, takich jak produkty Vault, Kubernetes / Docker Secrets lub wykorzystując zmienne środowiskowe. W ostateczności dane wrażliwe przechowywane w kontroli źródła muszą być szyfrowane i zarządzane (klucze, wygasanie, kontrola itp.). Skorzystaj z hooks poprzedzających zatwierdzenie / push, aby zapobiec przypadkowemu commitowaniu danych wrażliwych
 
-**W przeciwnym razie:** Kontrola źródła, nawet w przypadku prywatnych repozytoriów, może zostać omyłkowo upubliczniona, w którym to momencie ujawniane są wszystkie tajemnice. Dostęp do kontroli źródła dla strony zewnętrznej nieumyślnie zapewni dostęp do powiązanych systemów (baz danych, API, usług itp.).
+**W przeciwnym razie:** Kontrola źródła, nawet w przypadku prywatnych repozytoriów, może zostać omyłkowo upubliczniona, w którym to momencie ujawniane są wszystkie dane wrażliwe. Dostęp do kontroli źródła dla strony zewnętrznej nieumyślnie zapewni dostęp do powiązanych systemów (baz danych, API, usług itp.).
 
 🔗 [**Czytaj więcej: Secret management**](/sections/security/secretmanagement.md)
 
@@ -809,7 +809,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **TL;DR:** Hasła lub dane wrażliwe (klucze API) powinny być przechowywane przy użyciu bezpiecznej funkcji hash + salt, takiej jak `bcrypt`, co powinno być preferowanym wyborem w stosunku do implementacji JavaScript ze względu na wydajność i bezpieczeństwo.
 
-**W przeciwnym razie:** Hasła lub tajemnice, które są utrwalane bez korzystania z bezpiecznej funkcji, są podatne na brute force i ataki słownikowe, które ostatecznie doprowadzą do ich ujawnienia.
+**W przeciwnym razie:** Hasła lub dane wrażliwe, które są utrwalane bez korzystania z bezpiecznej funkcji, są podatne na brute force i ataki słownikowe, które ostatecznie doprowadzą do ich ujawnienia.
 
 🔗 [**Czytaj więcej: Use Bcrypt**](/sections/security/bcryptpasswords.md)
 
@@ -1006,13 +1006,13 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <br/><br/>
 
-## ![✔] 6.25. Unikaj publikowania tajemnic w rejestrze npm
+## ![✔] 6.25. Unikaj publikowania danych wrażliwych w rejestrze npm
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Należy podjąć środki ostrożności, aby uniknąć ryzyka przypadkowego opublikowania tajemnic w publicznych rejestrach npm. Plik `.npmignore` może być użyty do umieszczenia na czarnej liście określonych plików lub folderów, lub tablica` files` w `package.json` może działać jako biała lista.
+**TL;DR:** Należy podjąć środki ostrożności, aby uniknąć ryzyka przypadkowego opublikowania danych wrażliwych w publicznych rejestrach npm. Plik `.npmignore` może być użyty do umieszczenia na czarnej liście określonych plików lub folderów, lub tablica` files` w `package.json` może działać jako biała lista.
 
-**W przeciwnym razie:** Klucze API, hasła i inne tajemnice twojego projektu są otwarte na wykorzystywanie przez każdego, kto je napotka, co może spowodować straty finansowe, podszywanie się pod inne osoby i inne ryzyko.
+**W przeciwnym razie:** Klucze API, hasła i inne dane wrażliwe twojego projektu są otwarte na wykorzystywanie przez każdego, kto je napotka, co może spowodować straty finansowe, podszywanie się pod inne osoby i inne ryzyko.
 
 🔗 [**Czytaj więcej: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.md)
 <br/><br/><br/>
