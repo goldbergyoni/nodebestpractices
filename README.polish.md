@@ -1104,7 +1104,7 @@ Niezależny konsultant Node.js, który współpracuje z klientami w USA, Europie
 <a href="https://twitter.com/kylemartin_93"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
 <a href="https://www.linkedin.com/in/kylemartinnz"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
 
-Full Stack Developer & Site Reliability Engineer z siedzibą w Nowej Zelandii, zainteresowany bezpieczeństwem aplikacji internetowych oraz architekturą i budowaniem aplikacji Node.js do działania w skali globalnej.
+Full Stack Developer & Site Reliability Engineer z siedzibą w Nowej Zelandii, zainteresowany bezpieczeństwem aplikacji internetowych oraz architekturą i budowaniem aplikacji Node.js dla działania w skali globalnej.
 
 <br/>
 
@@ -1115,7 +1115,7 @@ Full Stack Developer & Site Reliability Engineer z siedzibą w Nowej Zelandii, z
 <a href="https://sagirk.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 <a href="https://linkedin.com/in/sagirk"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
 
-Głęboki specjalista w JavaScript i jego ekosystemie - React, Node.js, MongoDB, prawie wszystko, co wymaga użycia JavaScript / JSON w dowolnej warstwie systemu - tworzenie produktów przy użyciu platformy internetowej dla najbardziej rozpoznawalnych marek na świecie. Pojedynczy członek Fundacji Node.js, współpracujący przy inicjatywie redesign witryny internetowej komitetu społeczności.
+Doświadczony specjalista w JavaScript i jego ekosystemie - React, Node.js, MongoDB, prawie wszystko co wymaga użycia JavaScript / JSON w dowolnej warstwie systemu - tworzenie produktów przy użyciu platformy internetowej dla najbardziej rozpoznawalnych marek na świecie. Członek Fundacji Node.js, współpracujący przy inicjatywie redesign witryny internetowej komitetu społeczności.
 
 <br/>
 
