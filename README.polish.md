@@ -729,7 +729,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **TL;DR:** Skorzystaj z wtyczek liniowych związanych z bezpieczeństwem, takich jak [eslint-plugin-security] (https://github.com/nodesecurity/eslint-plugin-security), aby wychwycić luki w zabezpieczeniach i problemy jak najwcześniej, najlepiej gdy są one  kodowane. Może to pomóc w wykrywaniu słabych punktów bezpieczeństwa, takich jak używanie eval, wywoływanie procesu potomnego lub importowanie modułu z literałem łańcucha (np. dane wejściowe użytkownika). Kliknij „Czytaj więcej” poniżej, aby zobaczyć przykłady kodu, które zostaną złapane przez linijkę bezpieczeństwa
 
-**W przeciwnym razie:** To, co mogło być bezpośrednią słabością bezpieczeństwa podczas programowania, staje się poważnym problemem w produkcji. Ponadto projekt może nie być zgodny ze spójnymi praktykami bezpieczeństwa kodu, co prowadzi do wprowadzenia luk w zabezpieczeniach lub poufnych danych wrażliwych popełnionych w zdalnych repozytoriach
+**W przeciwnym razie:** To, co mogło być bezpośrednią słabością bezpieczeństwa podczas programowania, staje się poważnym problemem w produkcji. Ponadto projekt może nie być zgodny ze spójnymi praktykami bezpieczeństwa kodu, co prowadzi do wprowadzenia luk w zabezpieczeniach lub poufnych danych wrażliwych wrzuconych w zdalnych repozytoriach
 
 🔗 [**Czytaj więcej: Lint rules**](/sections/security/lintrules.md)
 
