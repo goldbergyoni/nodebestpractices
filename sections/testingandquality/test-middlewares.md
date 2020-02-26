@@ -8,19 +8,19 @@ Many avoid Middleware testing because they represent a small portion of the syst
 
 <br/><br/>
 
-### Code example: Testing middleware in isolation without issuing network calls and waking-up the entire web framework
+### Code example: Testing middleware in isolation
 
 ```javascript
 //the middleware we want to test
-const unitUnderTest = require('./middleware')
-const httpMocks = require('node-mocks-http');
+const unitUnderTest = require("./middleware");
+const httpMocks = require("node-mocks-http");
 //Jest syntax, equivelant to describe() & it() in Mocha
-test('A request without authentication header, should return http status 403', () => {
+test("A request without authentication header, should return http status 403", () => {
   const request = httpMocks.createRequest({
-    method: 'GET',
-    url: '/user/42',
+    method: "GET",
+    url: "/user/42",
     headers: {
-      authentication: ''
+      authentication: ""
     }
   });
   const response = httpMocks.createResponse();
