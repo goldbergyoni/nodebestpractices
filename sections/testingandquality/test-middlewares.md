@@ -14,7 +14,7 @@ Many avoid Middleware testing because they represent a small portion of the syst
 //the middleware we want to test
 const unitUnderTest = require("./middleware");
 const httpMocks = require("node-mocks-http");
-//Jest syntax, equivelant to describe() & it() in Mocha
+//Jest syntax, equivalent to describe() & it() in Mocha
 test("A request without authentication header, should return http status 403", () => {
   const request = httpMocks.createRequest({
     method: "GET",
