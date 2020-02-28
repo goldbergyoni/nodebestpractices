@@ -50,7 +50,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 2. [Error Handling Practices (11) ](#2-error-handling-practices)
 3. [Code Style Practices (12) ](#3-code-style-practices)
 4. [Testing And Overall Quality Practices (12) ](#4-testing-and-overall-quality-practices)
-5. [Going To Production Practices (18) ](#5-going-to-production-practices)
+5. [Going To Production Practices (19) ](#5-going-to-production-practices)
 6. [Security Practices (25)](#6-security-best-practices)
 7. [Performance Practices (2) (Work In Progress️ ✍️)](#7-draft-performance-best-practices)
 
@@ -719,6 +719,16 @@ All statements above will return false if used with `===`
 **Otherwise:** Application handling log routing === hard to scale, loss of logs, poor separation of concerns
 
 🔗 [**Read More: Log Routing**](/sections/production/logrouting.md)
+
+<br/><br/>
+
+## ![✔] 5.19. Install your packages with `npm ci`
+
+**TL;DR:** You have to be sure that production code uses the exact version of the packages you have tested it with. Run `npm ci` to do a clean install of your dependencies matching package.json and package-lock.json.
+
+**Otherwise:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
+
+🔗 [**Read More: Use npm ci**](/sections/production/installpackageswithnpmci.md)
 
 <br/><br/><br/>
 
