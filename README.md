@@ -28,7 +28,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 - **:tada: Node.js best practices reached 40k stars**: Thank you to each and every contributor who helped turning this project into what it is today! We've got lots of plans for the time ahead, as we expand our ever-growing list of Node.js best practices even further.
 
-- **:rocket: Continuously Improving**: We've been working hard on a new section about [using npm ci](https://github.com/goldbergyoni/nodebestpractices/pull/627) to preview the dependency state in production environments
+- **:rocket: Two New Best Practices**: We've been working hard on a new section about [using npm ci](https://github.com/goldbergyoni/nodebestpractices#-519-install-your-packages-with-npm-ci) to preview the dependency state in production environments and [testing your middlewares in isolation](https://github.com/goldbergyoni/nodebestpractices#-413-test-your-middlewares-in-isolation)
 
 - **:whale: Node.js + Docker best practices**: We've opened a [call for ideas](https://github.com/goldbergyoni/nodebestpractices/issues/620) to collect best practices related to running dockerized Node.js applications. If you've got any further best practices, don't hesitate to join the conversation!
 
