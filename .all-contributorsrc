@@ -833,6 +833,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "chandiran-dmc",
+      "name": "Chandiran",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/42678579?v=4",
+      "profile": "http://linkedin.com/in/chandiran-dmc",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
