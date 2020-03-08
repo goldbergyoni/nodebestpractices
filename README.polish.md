@@ -26,7 +26,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 # Najnowsze najlepsze praktyki i aktualności
 
-- **✅ Nowa najlepsza praktyka:** 7.1: [Nie blokuj pętli zdarzeń](#7-draft-performance-best-practices) od Keith Holliday
+- **✅ Nowa najlepsza praktyka:** 7.1: [Nie blokuj pętli zdarzeń](#7-wersja-robocza-najlepsze-praktyki-dotyczące-wydajności) od Keith Holliday
 
 - **🇷🇺 Rosyjskie tłumaczenie:** Niesamowity Alex Ivanov właśnie opublikował [rosyjskie tłumaczenie](/README.russian.md)
 
