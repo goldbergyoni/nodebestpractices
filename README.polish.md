@@ -37,20 +37,20 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 # Witamy! 3 rzeczy, które musisz wiedzieć na początku
 
 **1. W rzeczywistości czytasz dziesiątki najlepszych artykułów na temat Node.js -** to repozytorium jest podsumowaniem i zbiorem najlepszych pozycji na temat najlepszych praktyk Node.js, a także treści napisanych tutaj przez współpracowników
-**2. Jest to największa kompilacja, która rośnie z każdym tygodniem -** obecnie prezentowanych jest ponad 80 najlepszych praktyk, przewodników po stylach i wskazówek architektonicznych. Nowe wydania i pull requesty są tworzone codziennie, aby aktualizować tę książkę na żywo. Chcielibyśmy zobaczyć Twój wkład w to, czy naprawiasz błędy w kodzie, pomagasz w tłumaczeniach, czy sugerujesz nowe genialne pomysły. Zobacz nasze [wskazówki dotyczące pisania tutaj] (/.Operations/writing-guidelines.md)
+**2. Jest to największa kompilacja, która rośnie z każdym tygodniem -** obecnie prezentowanych jest ponad 80 najlepszych praktyk, przewodników po stylach i wskazówek architektonicznych. Nowe wydania i pull requesty są tworzone codziennie, aby aktualizować tę książkę na żywo. Chcielibyśmy zobaczyć Twój wkład w to, czy naprawiasz błędy w kodzie, pomagasz w tłumaczeniach, czy sugerujesz nowe genialne pomysły. Zobacz nasze [wskazówki dotyczące pisania tutaj](https://github.com/mbiesiad/nodebestpractices/blob/master/.operations/writing-guidelines.polish.md)
 
 **3. Większość najlepszych praktyk ma dodatkowe informacje -** większość pocisków zawiera link **🔗Przeczytaj więcej**, który rozszerza praktykę o przykłady kodu, cytaty z wybranych blogów i więcej informacji
 <br/><br/>
 
 ## Spis treści
 
-1. [Praktyki dotyczące struktury projektu (5)](#1-project-structure-practices)
-2. [Procedury obsługi błędów (11) ](#2-error-handling-practices)
-3. [Praktyki stylu kodu (12) ](#3-code-style-practices)
-4. [Testy i ogólne praktyki jakości (12) ](#4-testing-and-overall-quality-practices)
-5. [Przejście do praktyk produkcyjnych (18) ](#5-going-to-production-practices)
-6. [Praktyki bezpieczeństwa (25)](#6-security-best-practices)
-7. [Praktyki wydajnościowe (2) (Work In Progress️ ✍️)](#7-draft-performance-best-practices)
+1. [Praktyki dotyczące struktury projektu (5)](#1-praktyki-dotyczące-struktury-projektu)
+2. [Procedury obsługi błędów (11) ](#2-procedury-obsługi-błędów)
+3. [Praktyki stylu kodu (12) ](#3-praktyki-stylu-kodu)
+4. [Testy i ogólne praktyki jakości (12) ](#4-testy-i-ogólne-praktyki-jakości)
+5. [Przejście do praktyk produkcyjnych (18) ](#5-przejście-do-praktyk-produkcyjnych)
+6. [Praktyki bezpieczeństwa (25)](#6-najlepsze-praktyki-bezpieczeństwa)
+7. [Praktyki wydajnościowe (2) (Work In Progress️ ✍️)](#7-wersja-robocza-najlepsze-praktyki-dotyczące-wydajności)
 
 <br/><br/>
 
@@ -62,7 +62,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Gdy programiści, którzy kodują nowe funkcje, walczą o uświadomienie sobie wpływu ich zmian i boją się zniszczyć inne zależne komponenty - wdrożenia stają się wolniejsze i bardziej ryzykowne. Trudniej jest także skalować, gdy wszystkie jednostki biznesowe nie są rozdzielone
 
-🔗 [**Czytaj więcej: struktura według komponentów**](/sections/projectstructre/breakintcomponents.md)
+🔗 [**Czytaj więcej: struktura według komponentów**](/sections/projectstructre/breakintcomponents.polish.md)
 
 <br/><br/>
 
@@ -89,13 +89,14 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **TL;DR:** Unikaj nieprzyjemnego nawyku definiowania całości [Express](https://expressjs.com/) aplikacja w jednym dużym pliku - rozdziel definicję „Express” na co najmniej dwa pliki: deklarację API (app.js) i problemy z siecią (WWW). Aby uzyskać jeszcze lepszą strukturę, znajdź deklarację API w komponentach
 **W przeciwnym razie:** Twój interfejs API będzie dostępny do testowania tylko za pośrednictwem połączeń HTTP (wolniejsze i znacznie trudniejsze do generowania raportów zasięgu). Utrzymanie setek linii kodu w jednym pliku prawdopodobnie nie będzie wielką przyjemnością
+
 🔗 [**Czytaj więcej: oddzielna aplikacja „Express” i „serwer”**](/sections/projectstructre/separateexpress.md)
 
 <br/><br/>
 
 ## ![✔] 1.5 Używaj konfiguracji przyjaznej środowisku, bezpiecznej i hierarchicznej
 
-  **TL;DR:** Idealne i bezbłędne ustawienie konfiguracji powinno zapewnić, że (a) klucze można odczytać z pliku ORAZ ze zmiennych środowiskowych (b) dane wrażliwe są przechowywane poza zatwierdzonym kodem (c) konfiguracja jest hierarchiczna dla łatwiejszego wyszukiwania. Istnieje kilka pakietów, które mogą pomóc zaznaczyć większość z tych pól, takich jak [rc] (https://www.npmjs.com/package/rc), [nconf] (https://www.npmjs.com/package/nconf ) i [config] (https://www.npmjs.com/package/config)
+  **TL;DR:** Idealne i bezbłędne ustawienie konfiguracji powinno zapewnić, że (a) klucze można odczytać z pliku ORAZ ze zmiennych środowiskowych (b) dane wrażliwe są przechowywane poza zatwierdzonym kodem (c) konfiguracja jest hierarchiczna dla łatwiejszego wyszukiwania. Istnieje kilka pakietów, które mogą pomóc zaznaczyć większość z tych pól, takich jak [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf ) i [config](https://www.npmjs.com/package/config)
   **W przeciwnym razie:** Niespełnienie któregokolwiek z wymagań konfiguracji po prostu ugrzęźnie w zespole programistów lub DevOps. Prawdopodobnie jedno i drugie
 
 🔗 [**Czytaj więcej: najlepsze praktyki dotyczące konfiguracji**](/sections/projectstructre/configguide.md)
@@ -167,7 +168,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 ## ![✔] 2.7 Użyj dojrzałego programu rejestrującego, aby zwiększyć widoczność błędów
 
-**TL;DR:** Zestaw dojrzałych narzędzi do rejestrowania, takich jak [Winston] (https://www.npmjs.com/package/winston), [Bunyan] (https://github.com/trentm/node-bunyan), [Log4js] (http://stritti.github.io/log4js/) lub [Pino] (https://github.com/pinojs/pino), przyspieszy wykrywanie błędów i zrozumienie. Więc zapomnij o console.log
+**TL;DR:** Zestaw dojrzałych narzędzi do rejestrowania, takich jak [Winston](https://www.npmjs.com/package/winston), [Bunyan](https://github.com/trentm/node-bunyan), [Log4js](http://stritti.github.io/log4js/) lub [Pino](https://github.com/pinojs/pino), przyspieszy wykrywanie błędów i zrozumienie. Więc zapomnij o console.log
 
 **W przeciwnym razie:** Przeglądanie w pliku console.logs lub ręcznie przez niechlujny plik tekstowy bez korzystania z narzędzi zapytań lub porządnej przeglądarki dziennika może być zajęciem w pracy do późna
 
@@ -221,7 +222,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 ## ![✔] 3.1 Użyj ESLint
 
-**TL;DR:** [ESLint](https://eslint.org) jest de facto standardem sprawdzania możliwych błędów kodu i ustalania stylu kodu, nie tylko w celu zidentyfikowania drobiazgowych problemów z odstępami, ale także w celu wykrycia poważnych anty-wzorców kodu, takich jak programiści zgłaszający błędy bez klasyfikacji. Chociaż ESLint może automatycznie naprawiać style kodu, inne narzędzia, takie jak [prettier] (https://www.npmjs.com/package/prettier) i [beautify] (https://www.npmjs.com/package/js-beautify) mają większą moc formatowania poprawki i współpracują z ESLint
+**TL;DR:** [ESLint](https://eslint.org) jest de facto standardem sprawdzania możliwych błędów kodu i ustalania stylu kodu, nie tylko w celu zidentyfikowania drobiazgowych problemów z odstępami, ale także w celu wykrycia poważnych anty-wzorców kodu, takich jak programiści zgłaszający błędy bez klasyfikacji. Chociaż ESLint może automatycznie naprawiać style kodu, inne narzędzia, takie jak [prettier](https://www.npmjs.com/package/prettier) i [beautify](https://www.npmjs.com/package/js-beautify) mają większą moc formatowania poprawki i współpracują z ESLint
 
 **W przeciwnym razie:** Programiści skoncentrują się na żmudnych odstępach i problemach z szerokością linii, a czas może zostać zmarnowany na przemyślenie stylu kodu projektu
 
@@ -231,7 +232,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 ## ![✔] 3.2 Specyficzne wtyczki Node.js
 
-**TL;DR:** Oprócz standardowych reguł ESLint obejmujących vanilla JavaScript, dodaj wtyczki Node.js, takie jak [eslint-plugin-node] (https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin- mocha] (https://www.npmjs.com/package/eslint-plugin-mocha) i [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
+**TL;DR:** Oprócz standardowych reguł ESLint obejmujących vanilla JavaScript, dodaj wtyczki Node.js, takie jak [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin- mocha](https://www.npmjs.com/package/eslint-plugin-mocha) i [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
 **W przeciwnym razie:** Wiele wadliwych wzorców kodu Node.js może uciekać pod radarem. Na przykład programiści mogą wymagać plików (zmiennaAsPath) ze zmienną podaną jako ścieżka, która umożliwia atakującym wykonanie dowolnego skryptu JS. Linters Node.js mogą wcześnie wykrywać takie wzorce i narzekać
 
@@ -266,7 +267,7 @@ function someFunction()
 
 Bez względu na to, czy używasz średników, czy też nie rozdzielasz swoich instrukcji, znajomość typowych pułapek niewłaściwych podziałów linii lub automatycznego wstawiania średników pomoże Ci wyeliminować regularne błędy składniowe.
 
-**TL;DR:** Użyj ESLint, aby zyskać świadomość problemów związanych z separacją. [Ładniej](https://prettier.io/) lub [Standardjs](https://standardjs.com/) może automatycznie rozwiązać te issues.
+**TL;DR:** Użyj ESLint, aby zyskać świadomość problemów związanych z separacją. [Prettier](https://prettier.io/) lub [Standardjs](https://standardjs.com/) może automatycznie rozwiązać te issues.
 
 **W przeciwnym razie:** Jak widać w poprzedniej sekcji, interpreter JavaScript automatycznie dodaje średnik na końcu instrukcji, jeśli nie istnieje, lub uważa instrukcję za niezakończoną tam, gdzie powinna, co może prowadzić do niepożądanych wyników. Możesz używać przypisań i unikać używania natychmiastowych wywoływanych wyrażeń funkcyjnych, aby zapobiec większości nieoczekiwanych błędów.
 
@@ -429,7 +430,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 4.1 Przynajmniej napisz testowanie API (komponentu)
 
-**TL;DR:** Większość projektów po prostu nie ma żadnych automatycznych testów z powodu krótkich harmonogramów lub często „projekt testowy” wymykał się spod kontroli i został porzucony. Z tego powodu ustal priorytetyzację i zacznij od testowania interfejsu API, który jest najłatwiejszym sposobem pisania i zapewnia większy zasięg niż testowanie jednostkowe (możesz nawet tworzyć testy API bez kodu za pomocą narzędzi takich jak [Postman] (https://www.getpostman.com/). Następnie, jeśli masz więcej zasobów i czasu, kontynuuj zaawansowane typy testów, takie jak testy jednostkowe, testy DB, testy wydajności itp.
+**TL;DR:** Większość projektów po prostu nie ma żadnych automatycznych testów z powodu krótkich harmonogramów lub często „projekt testowy” wymykał się spod kontroli i został porzucony. Z tego powodu ustal priorytetyzację i zacznij od testowania interfejsu API, który jest najłatwiejszym sposobem pisania i zapewnia większy zasięg niż testowanie jednostkowe (możesz nawet tworzyć testy API bez kodu za pomocą narzędzi takich jak [Postman](https://www.getpostman.com/). Następnie, jeśli masz więcej zasobów i czasu, kontynuuj zaawansowane typy testów, takie jak testy jednostkowe, testy DB, testy wydajności itp.
 
 **W przeciwnym razie:** Możesz spędzać długie dni na pisaniu testów jednostkowych, aby dowiedzieć się, że masz tylko 20% zasięgu systemu
 
@@ -457,7 +458,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 4.4 Wykryj problemy z kodem za pomocą lintera
 
-**TL;DR:** Użyj lintera kodu, aby sprawdzić podstawową jakość i wcześnie wykryć anty-wzorce. Uruchom go przed jakimkolwiek testem i dodaj jako git-hook przed zatwierdzeniem, aby zminimalizować czas potrzebny na sprawdzenie i naprawienie dowolnego problemu. Sprawdź także [Część 3] (# 3-style-stylowe praktyki) w części Praktyki stylu kodu
+**TL;DR:** Użyj lintera kodu, aby sprawdzić podstawową jakość i wcześnie wykryć anty-wzorce. Uruchom go przed jakimkolwiek testem i dodaj jako git-hook przed zatwierdzeniem, aby zminimalizować czas potrzebny na sprawdzenie i naprawienie dowolnego problemu. Sprawdź także [Część 3](#3-praktyki-stylu-kodu) w części Praktyki stylu kodu
 
 **W przeciwnym razie:** Możesz przekazać kod anty-wzorcowy i potencjalnie podatny na atak do środowiska produkcyjnego.
 
@@ -475,7 +476,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 4.6 Nieustannie sprawdzaj wrażliwe zależności
 
-**TL;DR:** Nawet najbardziej renomowane zależności, takie jak Express, mają znane luki w zabezpieczeniach. Można to łatwo oswoić za pomocą narzędzi społecznościowych i komercyjnych, takich jak 🔗 [npm audit] (https://docs.npmjs.com/cli/audit) i 🔗 [snyk.io] (https://snyk.io), które mogą być wywoływane z twojego CI na każdej kompilacji
+**TL;DR:** Nawet najbardziej renomowane zależności, takie jak Express, mają znane luki w zabezpieczeniach. Można to łatwo oswoić za pomocą narzędzi społecznościowych i komercyjnych, takich jak 🔗 [npm audit](https://docs.npmjs.com/cli/audit) i 🔗 [snyk.io](https://snyk.io), które mogą być wywoływane z twojego CI na każdej kompilacji
 
 **W przeciwnym razie:** Utrzymywanie kodu w czystości przed lukami bez dedykowanych narzędzi będzie wymagało ciągłego śledzenia publikacji online na temat nowych zagrożeń. Dość nudne
 
@@ -491,7 +492,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 4.8 Sprawdź zasięg testu, pomaga zidentyfikować nieprawidłowe wzorce testowe
 
-**TL;DR:** Narzędzia pokrycia kodu, takie jak [Istanbul] (https://github.com/istanbuljs/istanbuljs) / [NYC] (https://github.com/istanbuljs/nyc) są świetne z 3 powodów: przychodzi za darmo (bez wysiłku jest niezbędny do skorzystania z tych raportów), pomaga zidentyfikować zmniejszenie zasięgu testowania, a na koniec podkreśla niedopasowania testowania: patrząc na kolorowe raporty pokrycia kodu można zauważyć, na przykład, obszary kodu, które nigdy nie są testowane jak klauzule catch (co oznacza, że testy wywołują tylko szczęśliwe ścieżki, a nie zachowanie aplikacji w przypadku błędów). Ustaw na niepowodzenia kompilacji, jeśli zasięg spadnie poniżej określonego progu
+**TL;DR:** Narzędzia pokrycia kodu, takie jak [Istanbul](https://github.com/istanbuljs/istanbuljs) / [NYC](https://github.com/istanbuljs/nyc) są świetne z 3 powodów: przychodzi za darmo (bez wysiłku jest niezbędny do skorzystania z tych raportów), pomaga zidentyfikować zmniejszenie zasięgu testowania, a na koniec podkreśla niedopasowania testowania: patrząc na kolorowe raporty pokrycia kodu można zauważyć, na przykład, obszary kodu, które nigdy nie są testowane jak klauzule catch (co oznacza, że testy wywołują tylko szczęśliwe ścieżki, a nie zachowanie aplikacji w przypadku błędów). Ustaw na niepowodzenia kompilacji, jeśli zasięg spadnie poniżej określonego progu
 
 **W przeciwnym razie:** Nie będzie żadnych zautomatyzowanych danych informujących, kiedy duża część kodu nie jest objęta testowaniem
 
@@ -499,7 +500,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 4.9 Sprawdź nieaktualne pakiety
 
-**TL;DR:** Użyj preferowanego narzędzia (np. „npm outdated” lub [npm-check-updates] (https://www.npmjs.com/package/npm-check-updates), aby wykryć zainstalowane pakiety, które są nieaktualne, wstrzyknij to w pipeline CI, a nawet zbuduj w trudnym scenariuszu. Na przykład poważnym scenariuszem może być sytuacja, gdy zainstalowany pakiet ma 5 łatek zatwierdzeń (np. Wersja lokalna to 1.3.1, a wersja repozytorium to 1.3.8) lub jest oznaczony jako przestarzałe przez jego autora - zabije kompilację i uniemożliwi wdrożenie tej wersji
+**TL;DR:** Użyj preferowanego narzędzia (np. „npm outdated” lub [npm-check-updates](https://www.npmjs.com/package/npm-check-updates), aby wykryć zainstalowane pakiety, które są nieaktualne, wstrzyknij to w pipeline CI, a nawet zbuduj w trudnym scenariuszu. Na przykład poważnym scenariuszem może być sytuacja, gdy zainstalowany pakiet ma 5 łatek zatwierdzeń (np. Wersja lokalna to 1.3.1, a wersja repozytorium to 1.3.8) lub jest oznaczony jako przestarzałe przez jego autora - zabije kompilację i uniemożliwi wdrożenie tej wersji
 
 **W przeciwnym razie:** Produkcja będzie uruchamiać pakiety, które zostały wyraźnie oznaczone przez autora jako ryzykowne
 
@@ -515,7 +516,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 4.11 Refaktoryzuj regularnie za pomocą narzędzi do analizy statycznej
 
-**TL;DR:** Korzystanie z narzędzi analizy statycznej pomaga, zapewniając obiektywne sposoby poprawy jakości kodu i utrzymując kod w łatwości konserwacji. Możesz dodać narzędzia analizy statycznej do kompilacji CI, aby zawieść, gdy wykryje code smells. Jego głównymi zaletami w stosunku do zwykłego szarpania jest możliwość kontroli jakości w kontekście wielu plików (np. wykrywanie duplikacji), przeprowadzania zaawansowanej analizy (np. złożoności kodu) oraz śledzenia historii i postępu problemów z kodem. Dwa przykłady narzędzi, których możesz użyć, to [Sonarqube] (https://www.sonarqube.org/) (2600+ [gwiazdek] (https://github.com/SonarSource/sonarqube)) i [Code Climate] (https : //codeclimate.com/) (1500+ [gwiazdek] (https://github.com/codeclimate/codeclimate)).
+**TL;DR:** Korzystanie z narzędzi analizy statycznej pomaga, zapewniając obiektywne sposoby poprawy jakości kodu i utrzymując kod w łatwości konserwacji. Możesz dodać narzędzia analizy statycznej do kompilacji CI, aby zawieść, gdy wykryje code smells. Jego głównymi zaletami w stosunku do zwykłego szarpania jest możliwość kontroli jakości w kontekście wielu plików (np. wykrywanie duplikacji), przeprowadzania zaawansowanej analizy (np. złożoności kodu) oraz śledzenia historii i postępu problemów z kodem. Dwa przykłady narzędzi, których możesz użyć, to [Sonarqube](https://www.sonarqube.org/) (2600+ [gwiazdek](https://github.com/SonarSource/sonarqube)) i [Code Climate](https : //codeclimate.com/) (1500+ [gwiazdek](https://github.com/codeclimate/codeclimate)).
 
 **W przeciwnym razie:** Przy złej jakości kodu błędy i wydajność zawsze będą stanowić problem, którego nie będzie w stanie naprawić żadna nowa błyszcząca biblioteka ani najnowocześniejsze funkcje
 
@@ -525,7 +526,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 4.12 Ostrożnie wybierz swoją platformę CI (Jenkins vs CircleCI vs Travis vs Reszta świata)
 
-**TL;DR:** Twoja platforma ciągłej integracji (CICD) będzie hostować wszystkie narzędzia wysokiej jakości (np. test, lint), więc powinna mieć żywy ekosystem wtyczek. [Jenkins] (https://jenkins.io/) był domyślny dla wielu projektów, ponieważ ma największą społeczność wraz z bardzo potężną platformą w cenie złożonej konfiguracji, która wymaga stromej krzywej uczenia się. Obecnie znacznie łatwiej jest skonfigurować rozwiązanie CI za pomocą narzędzi SaaS, takich jak [CircleCI] (https://circleci.com) i innych. Narzędzia te umożliwiają stworzenie elastycznego potoku CI bez konieczności zarządzania całą infrastrukturą. Ostatecznie jest to kompromis między wytrzymałością a szybkością - wybierz stronę ostrożnie
+**TL;DR:** Twoja platforma ciągłej integracji (CICD) będzie hostować wszystkie narzędzia wysokiej jakości (np. test, lint), więc powinna mieć żywy ekosystem wtyczek. [Jenkins](https://jenkins.io/) był domyślny dla wielu projektów, ponieważ ma największą społeczność wraz z bardzo potężną platformą w cenie złożonej konfiguracji, która wymaga stromej krzywej uczenia się. Obecnie znacznie łatwiej jest skonfigurować rozwiązanie CI za pomocą narzędzi SaaS, takich jak [CircleCI](https://circleci.com) i innych. Narzędzia te umożliwiają stworzenie elastycznego potoku CI bez konieczności zarządzania całą infrastrukturą. Ostatecznie jest to kompromis między wytrzymałością a szybkością - wybierz stronę ostrożnie
 
 **W przeciwnym razie:** Wybranie jakiegoś niszowego dostawcy może spowodować zablokowanie użytkownika, gdy będzie potrzebne zaawansowane dostosowanie. Z drugiej strony pójście z Jenkinsem może skrócić cenny czas na konfigurację infrastruktury
 
@@ -727,7 +728,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Skorzystaj z wtyczek liniowych związanych z bezpieczeństwem, takich jak [eslint-plugin-security] (https://github.com/nodesecurity/eslint-plugin-security), aby wychwycić luki w zabezpieczeniach i problemy jak najwcześniej, najlepiej gdy są one  kodowane. Może to pomóc w wykrywaniu słabych punktów bezpieczeństwa, takich jak używanie eval, wywoływanie procesu potomnego lub importowanie modułu z literałem łańcucha (np. dane wejściowe użytkownika). Kliknij „Czytaj więcej” poniżej, aby zobaczyć przykłady kodu, które zostaną złapane przez linijkę bezpieczeństwa
+**TL;DR:** Skorzystaj z wtyczek liniowych związanych z bezpieczeństwem, takich jak [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security), aby wychwycić luki w zabezpieczeniach i problemy jak najwcześniej, najlepiej gdy są one  kodowane. Może to pomóc w wykrywaniu słabych punktów bezpieczeństwa, takich jak używanie eval, wywoływanie procesu potomnego lub importowanie modułu z literałem łańcucha (np. dane wejściowe użytkownika). Kliknij „Czytaj więcej” poniżej, aby zobaczyć przykłady kodu, które zostaną złapane przez linijkę bezpieczeństwa
 
 **W przeciwnym razie:** To, co mogło być bezpośrednią słabością bezpieczeństwa podczas programowania, staje się poważnym problemem w produkcji. Ponadto projekt może nie być zgodny ze spójnymi praktykami bezpieczeństwa kodu, co prowadzi do wprowadzenia luk w zabezpieczeniach lub poufnych danych wrażliwych wrzuconych w zdalnych repozytoriach
 
@@ -739,7 +740,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Ataki DOS są bardzo popularne i stosunkowo łatwe do przeprowadzenia. Wdrażanie ograniczenia prędkości za pomocą usługi zewnętrznej, takiej jak usługi równoważenia obciążenia w chmurze, zapory w chmurze, nginx, pakiet [rate-limiting middleware] (https://www.npmjs.com/package/rate-limiter-fiętki) lub (dla mniejszych i mniej krytycznych aplikacji) ograniczające szybkość oprogramowanie pośrednie (np. [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
+**TL;DR:** Ataki DOS są bardzo popularne i stosunkowo łatwe do przeprowadzenia. Wdrażanie ograniczenia prędkości za pomocą usługi zewnętrznej, takiej jak usługi równoważenia obciążenia w chmurze, zapory w chmurze, nginx, pakiet [rate-limiting middleware](https://www.npmjs.com/package/rate-limiter-fiętki) lub (dla mniejszych i mniej krytycznych aplikacji) ograniczające szybkość oprogramowanie pośrednie (np. [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
 
 **W przeciwnym razie:** Aplikacja może zostać zaatakowana, co spowoduje odmowę usługi, w wyniku której prawdziwi użytkownicy otrzymają usługę o obniżonej jakości lub niedostępną.
 
@@ -763,7 +764,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
-**TL;DR:** Aby zapobiec wstrzykiwaniu SQL / NoSQL i innym złośliwym atakom, zawsze używaj ORM / ODM lub biblioteki bazy danych, która ucieka przed danymi lub obsługuje nazwane lub indeksowane zapytania sparametryzowane, i dba o sprawdzenie poprawności danych wejściowych użytkownika dla oczekiwanych typów. Nigdy nie używaj ciągów szablonów JavaScript ani konkatenacji ciągów, aby wstrzykiwać wartości do zapytań, ponieważ otwiera to aplikację na szeroki zakres luk. Wszystkie renomowane biblioteki dostępu do danych Node.js (np. [Sequelize] (https://github.com/sequelize/sequelize), [Knex] (https://github.com/tgriesser/knex), [mongoose] (https://github.com/Automattic/mongoose)) mają wbudowaną ochronę przed atakami iniekcyjnymi.
+**TL;DR:** Aby zapobiec wstrzykiwaniu SQL / NoSQL i innym złośliwym atakom, zawsze używaj ORM / ODM lub biblioteki bazy danych, która ucieka przed danymi lub obsługuje nazwane lub indeksowane zapytania sparametryzowane, i dba o sprawdzenie poprawności danych wejściowych użytkownika dla oczekiwanych typów. Nigdy nie używaj ciągów szablonów JavaScript ani konkatenacji ciągów, aby wstrzykiwać wartości do zapytań, ponieważ otwiera to aplikację na szeroki zakres luk. Wszystkie renomowane biblioteki dostępu do danych Node.js (np. [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose)) mają wbudowaną ochronę przed atakami iniekcyjnymi.
 
 **W przeciwnym razie:** Nieprawidłowe lub niezaangażowane dane wejściowe użytkownika mogą prowadzić do wstrzyknięcia przez operatora podczas pracy z MongoDB dla NoSQL, a niestosowanie odpowiedniego systemu odkażania lub ORM z łatwością pozwoli na ataki z zastrzykiem SQL, tworząc ogromną lukę.
 
@@ -795,7 +796,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Known%20Vulnerabilities%20-green.svg" alt=""/></a>
 
-**TL;DR:** W ekosystemie npm często występuje wiele zależności dla projektu. Zależności powinny być zawsze kontrolowane w miarę wykrycia nowych luk. Użyj narzędzi takich jak [npm audit] (https://docs.npmjs.com/cli/audit) lub [snyk] (https://snyk.io/) do śledzenia, monitorowania i łatania podatnych na zagrożenia zależności. Zintegruj te narzędzia z konfiguracją CI, aby złapać wrażliwą zależność, zanim przejdzie ona do produkcji.
+**TL;DR:** W ekosystemie npm często występuje wiele zależności dla projektu. Zależności powinny być zawsze kontrolowane w miarę wykrycia nowych luk. Użyj narzędzi takich jak [npm audit](https://docs.npmjs.com/cli/audit) lub [snyk](https://snyk.io/) do śledzenia, monitorowania i łatania podatnych na zagrożenia zależności. Zintegruj te narzędzia z konfiguracją CI, aby złapać wrażliwą zależność, zanim przejdzie ona do produkcji.
 
 **W przeciwnym razie:** Osoba atakująca może wykryć strukturę sieci i zaatakować wszystkie znane luki w zabezpieczeniach.
 
@@ -831,7 +832,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7: XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a>
 
-**TL;DR:** Zweryfikuj ładowność treści przychodzących żądań i upewnij się, że spełnia oczekiwania, jeśli nie, szybko zawiedzie. Aby uniknąć żmudnego kodowania sprawdzania poprawności na każdej trasie, możesz użyć lekkich schematów sprawdzania poprawności opartych na JSON, takich jak [jsonschema] (https://www.npmjs.com/package/jsonschema) lub [joi](https://www.npmjs.com/package/joi)
+**TL;DR:** Zweryfikuj ładowność treści przychodzących żądań i upewnij się, że spełnia oczekiwania, jeśli nie, szybko zawiedzie. Aby uniknąć żmudnego kodowania sprawdzania poprawności na każdej trasie, możesz użyć lekkich schematów sprawdzania poprawności opartych na JSON, takich jak [jsonschema](https://www.npmjs.com/package/jsonschema) lub [joi](https://www.npmjs.com/package/joi)
 
 **W przeciwnym razie:** Twoja hojność i liberalne podejście znacznie zwiększa powierzchnię ataku i zachęca atakującego do wypróbowania wielu danych wejściowych, dopóki nie znajdzie kombinacji umożliwiającej zawieszenie aplikacji
 
@@ -843,7 +844,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;DR:** Podczas korzystania z tokenów WWW JSON (na przykład z [Passport.js] (https://github.com/jaredhanson/passport)) domyślnie nie ma mechanizmu, aby odwołać dostęp z wydanych tokenów. Gdy odkryjesz jakąś szkodliwą aktywność użytkownika, nie ma sposobu, aby powstrzymać ich przed dostępem do systemu, o ile posiadają prawidłowy token. Ogranicz to, wdrażając czarną listę niezaufanych tokenów, które są sprawdzane przy każdym żądaniu.
+**TL;DR:** Podczas korzystania z tokenów WWW JSON (na przykład z [Passport.js](https://github.com/jaredhanson/passport)) domyślnie nie ma mechanizmu, aby odwołać dostęp z wydanych tokenów. Gdy odkryjesz jakąś szkodliwą aktywność użytkownika, nie ma sposobu, aby powstrzymać ich przed dostępem do systemu, o ile posiadają prawidłowy token. Ogranicz to, wdrażając czarną listę niezaufanych tokenów, które są sprawdzane przy każdym żądaniu.
 
 **W przeciwnym razie:** Wygasłe lub niewłaściwie umieszczone tokeny mogą być złośliwie wykorzystywane przez osoby trzecie do uzyskiwania dostępu do aplikacji i podszywania się pod właściciela tokena.
 
@@ -882,7 +883,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Im większy jest ładunek ciała, tym trudniej jest przetwarzać pojedynczy wątek. Jest to okazja dla atakujących, aby postawić serwery na kolanach bez ogromnej liczby żądań (ataki DOS / DDOS). Ogranicz to, ograniczając rozmiar ciała przychodzących żądań na krawędzi (np. zapora ogniowa, ELB) lub konfigurując [ekspresowy parser treści] (https://github.com/expressjs/body-parser), aby akceptował tylko małe ładunki
+**TL;DR:** Im większy jest ładunek ciała, tym trudniej jest przetwarzać pojedynczy wątek. Jest to okazja dla atakujących, aby postawić serwery na kolanach bez ogromnej liczby żądań (ataki DOS / DDOS). Ogranicz to, ograniczając rozmiar ciała przychodzących żądań na krawędzi (np. zapora ogniowa, ELB) lub konfigurując [ekspresowy parser treści](https://github.com/expressjs/body-parser), aby akceptował tylko małe ładunki
 
 **W przeciwnym razie:** Twoja aplikacja będzie musiała poradzić sobie z dużymi żądaniami, niezdolna do przetworzenia innej ważnej pracy, którą musi wykonać, co będzie miało wpływ na wydajność i podatność na ataki DOS
 
@@ -906,7 +907,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Wyrażenia regularne, chociaż są przydatne, stanowią prawdziwe zagrożenie dla aplikacji JavaScript w ogóle, w szczególności dla platformy Node.js. Wprowadzanie przez użytkownika tekstu w celu dopasowania może wymagać przetworzenia dużej liczby cykli procesora. Przetwarzanie Regex może być nieefektywne w takim stopniu, że pojedyncze żądanie, które potwierdza 10 słów, może zablokować całą pętlę zdarzeń na 6 sekund i ustawić procesor na on. Z tego powodu preferuj pakiety walidacyjne innych firm, takie jak [validator.js] (https://github.com/chriso/validator.js) zamiast pisać własne wzorce Regex, lub skorzystaj z [safe-regex](https://github.com/substack/safe-regex) do wykrywania wrażliwych wzorców wyrażeń regularnych
+**TL;DR:** Wyrażenia regularne, chociaż są przydatne, stanowią prawdziwe zagrożenie dla aplikacji JavaScript w ogóle, w szczególności dla platformy Node.js. Wprowadzanie przez użytkownika tekstu w celu dopasowania może wymagać przetworzenia dużej liczby cykli procesora. Przetwarzanie Regex może być nieefektywne w takim stopniu, że pojedyncze żądanie, które potwierdza 10 słów, może zablokować całą pętlę zdarzeń na 6 sekund i ustawić procesor na on. Z tego powodu preferuj pakiety walidacyjne innych firm, takie jak [validator.js](https://github.com/chriso/validator.js) zamiast pisać własne wzorce Regex, lub skorzystaj z [safe-regex](https://github.com/substack/safe-regex) do wykrywania wrażliwych wzorców wyrażeń regularnych
 
 **W przeciwnym razie:** Źle napisane wyrażenia regularne mogą być podatne na ataki DoS wyrażeń regularnych, które całkowicie zablokują pętlę zdarzeń. Na przykład popularny pakiet `moment` został uznany za podatny na złośliwe użycie Regex w listopadzie 2017r.
 
@@ -1050,7 +1051,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 # Milestones
 
-Aby utrzymać ten przewodnik i aktualizować go, stale aktualizujemy i ulepszamy wytyczne i najlepsze praktyki z pomocą społeczności. Możesz śledzić nasze [kamienie milowe] (https://github.com/i0natan/nodebestpractices/milestones) i dołączyć do grup roboczych, jeśli chcesz przyczynić się do tego projektu
+Aby utrzymać ten przewodnik i aktualizować go, stale aktualizujemy i ulepszamy wytyczne i najlepsze praktyki z pomocą społeczności. Możesz śledzić nasze [kamienie milowe](https://github.com/i0natan/nodebestpractices/milestones) i dołączyć do grup roboczych, jeśli chcesz przyczynić się do tego projektu
 
 <br/>
 
