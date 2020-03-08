@@ -95,5 +95,17 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 - Applying context-sensitive encoding when modifying the browser document on the client-side acts against DOM XSS
 - Enabling a Content-Security Policy (CSP) as a defense-in-depth mitigating control against XSS
 
+## ![✔] Protect Personally Identifyable Information (PII Data)
+
+- Personally identifiable information (PII) is any data that can be used to identify a specific individual
+- Protect Personally Identifyable Information in the Applications by encrypting them
+- Follow the data privacy laws of the land
+
+
+- Reference laws:
+
+- European Union: GDPR - https://ec.europa.eu/info/law/law-topic/data-protection_en
+- India: https://meity.gov.in/writereaddata/files/Personal_Data_Protection_Bill,2018.pdf
+- Singapore: https://www.pdpc.gov.sg/Legislation-and-Guidelines/Personal-Data-Protection-Act-Overview
 
 <br/><br/><br/>
