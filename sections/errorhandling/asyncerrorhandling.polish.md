@@ -90,19 +90,19 @@ getData(someParameter, function(err: Error | null, resultA: ResultA) {
 
  > ……And in fact, callbacks do something even more sinister: they deprive us of the stack, which is something we usually take for granted in programming languages. Writing code without a stack is a lot like driving a car without a brake pedal: you don’t realize how badly you need it until you reach for it and it’s not there. The whole point of promises is to give us back the language fundamentals we lost when we went async: return, throw, and the stack. But you have to know how to use promises correctly in order to take advantage of them.
 
-### Blog Quote: "The promises method is much more compact"
+### Cytat z Bloga: "The promises method is much more compact"
 
  Z bloga gosquared.com
 
  > ………The promises method is much more compact, clearer and quicker to write. If an error or exception occurs within any of the ops it is handled by the single .catch() handler. Having this single place to handle all errors means you don’t need to write error checking for each stage of the work.
 
-### Blog Quote: "Promises are native ES6, can be used with generators"
+### Cytat z Bloga: "Promises are native ES6, can be used with generators"
 
  Z bloga StrongLoop
 
  > ….Callbacks have a lousy error-handling story. Promises are better. Marry the built-in error handling in Express with promises and significantly lower the chances of an uncaught exception. Promises are native ES6, can be used with generators, and ES7 proposals like async/await through compilers like Babel
 
-### Blog Quote: "All those regular flow control constructs you are used to are completely broken"
+### Cytat z Bloga: "All those regular flow control constructs you are used to are completely broken"
 
 Z bloga Benno’a
 
