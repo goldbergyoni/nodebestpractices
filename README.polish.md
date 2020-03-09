@@ -800,7 +800,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Osoba atakująca może wykryć strukturę sieci i zaatakować wszystkie znane luki w zabezpieczeniach.
 
-🔗 [**Czytaj więcej: Dependency security**](/sections/security/dependencysecurity.md)
+🔗 [**Czytaj więcej: Dependency security**](/sections/security/dependencysecurity.polish.md)
 
 <br/><br/>
 
@@ -812,7 +812,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Hasła lub dane wrażliwe, które są utrwalane bez korzystania z bezpiecznej funkcji, są podatne na brute force i ataki słownikowe, które ostatecznie doprowadzą do ich ujawnienia.
 
-🔗 [**Czytaj więcej: Use Bcrypt**](/sections/security/bcryptpasswords.md)
+🔗 [**Czytaj więcej: Use Bcrypt**](/sections/security/bcryptpasswords.polish.md)
 
 <br/><br/>
 
@@ -824,7 +824,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Osoba atakująca może przechowywać złośliwy kod JavaScript w bazie danych, który zostanie następnie wysłany „tak jak jest” do biednych klientów
 
-🔗 [**Czytaj więcej: Escape output**](/sections/security/escape-output.md)
+🔗 [**Czytaj więcej: Escape output**](/sections/security/escape-output.polish.md)
 
 <br/><br/>
 
@@ -836,7 +836,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Twoja hojność i liberalne podejście znacznie zwiększa powierzchnię ataku i zachęca atakującego do wypróbowania wielu danych wejściowych, dopóki nie znajdzie kombinacji umożliwiającej zawieszenie aplikacji
 
-🔗 [**Czytaj więcej: Validate incoming JSON schemas**](/sections/security/validation.md)
+🔗 [**Czytaj więcej: Validate incoming JSON schemas**](/sections/security/validation.polish.md)
 
 <br/><br/>
 
@@ -848,7 +848,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Wygasłe lub niewłaściwie umieszczone tokeny mogą być złośliwie wykorzystywane przez osoby trzecie do uzyskiwania dostępu do aplikacji i podszywania się pod właściciela tokena.
 
-🔗 [**Czytaj więcej: Blacklist JSON Web Tokens**](/sections/security/expirejwt.md)
+🔗 [**Czytaj więcej: Blacklist JSON Web Tokens**](/sections/security/expirejwt.polish.md)
 
 <br/><br/>
 
@@ -863,7 +863,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Osoba atakująca może podejmować nieograniczoną liczbę zautomatyzowanych prób uzyskania hasła w celu uzyskania dostępu do uprzywilejowanych kont w aplikacji
 
-🔗 [**Czytaj więcej: Login rate limiting**](/sections/security/login-rate-limit.md)
+🔗 [**Czytaj więcej: Login rate limiting**](/sections/security/login-rate-limit.polish.md)
 
 <br/><br/>
 
@@ -875,7 +875,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Atakujący, któremu uda się uruchomić skrypt na serwerze, uzyskuje nieograniczoną władzę nad maszyną lokalną (np. zmienia iptable i przekierowuje ruch do swojego serwera)
 
-🔗 [**Czytaj więcej: Run Node.js as non-root user**](/sections/security/non-root-user.md)
+🔗 [**Czytaj więcej: Run Node.js as non-root user**](/sections/security/non-root-user.polish.md)
 
 <br/><br/>
 
@@ -887,7 +887,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Twoja aplikacja będzie musiała poradzić sobie z dużymi żądaniami, niezdolna do przetworzenia innej ważnej pracy, którą musi wykonać, co będzie miało wpływ na wydajność i podatność na ataki DOS
 
-🔗 [**Czytaj więcej: Limit payload size**](/sections/security/requestpayloadsizelimit.md)
+🔗 [**Czytaj więcej: Limit payload size**](/sections/security/requestpayloadsizelimit.polish.md)
 
 <br/><br/>
 
@@ -899,7 +899,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Złośliwy kod JavaScript znajduje drogę do tekstu przekazywanego do `eval` lub innych funkcji języka JavaScript oceniających w czasie rzeczywistym, i uzyskuje pełny dostęp do uprawnień JavaScript na stronie. Luka ta często objawia się jako atak XSS.
 
-🔗 [**Czytaj więcej: Avoid JavaScript eval statements**](/sections/security/avoideval.md)
+🔗 [**Czytaj więcej: Avoid JavaScript eval statements**](/sections/security/avoideval.polish.md)
 
 <br/><br/>
 
@@ -911,7 +911,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Źle napisane wyrażenia regularne mogą być podatne na ataki DoS wyrażeń regularnych, które całkowicie zablokują pętlę zdarzeń. Na przykład popularny pakiet `moment` został uznany za podatny na złośliwe użycie Regex w listopadzie 2017r.
 
-🔗 [**Czytaj więcej: Prevent malicious RegEx**](/sections/security/regex.md)
+🔗 [**Czytaj więcej: Prevent malicious RegEx**](/sections/security/regex.polish.md)
 
 <br/><br/>
 
@@ -923,7 +923,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Złośliwe dane wejściowe użytkownika mogą znaleźć drogę do parametru wymaganego do zmodyfikowania plików, na przykład wcześniej przesłanego pliku do systemu plików lub uzyskania dostępu do już istniejących plików systemowych.
 
-🔗 [**Czytaj więcej: Safe module loading**](/sections/security/safemoduleloading.md)
+🔗 [**Czytaj więcej: Safe module loading**](/sections/security/safemoduleloading.polish.md)
 
 <br/><br/>
 
@@ -935,7 +935,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Wtyczka może atakować poprzez nieskończoną różnorodność opcji, takich jak nieskończone pętle, przeciążenie pamięci i dostęp do wrażliwych zmiennych środowiskowych procesu
 
-🔗 [**Czytaj więcej: Run unsafe code in a sandbox**](/sections/security/sandbox.md)
+🔗 [**Czytaj więcej: Run unsafe code in a sandbox**](/sections/security/sandbox.polish.md)
 
 <br/><br/>
 
@@ -947,7 +947,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Naiwne użycie procesów potomnych może spowodować zdalne wykonanie poleceń lub ataki polegające na wstrzyknięciu powłoki z powodu wprowadzenia złośliwego użytkownika do niezarządzanego polecenia systemowego.
 
-🔗 [**Czytaj więcej: Be cautious when working with child processes**](/sections/security/childprocesses.md)
+🔗 [**Czytaj więcej: Be cautious when working with child processes**](/sections/security/childprocesses.polish.md)
 
 <br/><br/>
 
