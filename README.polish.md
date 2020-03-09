@@ -72,7 +72,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Nie można uzyskać dostępu do aplikacji, która miesza obiekty internetowe z innymi warstwami, testując kod, zadania CRON i inne obiekty wywołujące inne niż Express
 
-🔗 [**Czytaj więcej: warstwa twojej aplikacji**](/sections/projectstructre/createlayers.md)
+🔗 [**Czytaj więcej: warstwa twojej aplikacji**](/sections/projectstructre/createlayers.polish.md)
 
 <br/><br/>
 
@@ -81,7 +81,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 **TL;DR:** W dużej aplikacji, która stanowi dużą bazę kodu, kluczowe narzędzia, takie jak rejestrator, szyfrowanie i podobne, powinny być owinięte własnym kodem i udostępnione jako prywatne pakiety npm. Pozwala to na dzielenie się nimi między wieloma bazami kodów i projektami
 **W przeciwnym razie:** Będziesz musiał wymyślić własne koło wdrażania i zależności
 
-🔗 [**Czytaj więcej: Struktura według funkcji**](/sections/projectstructre/wraputilities.md)
+🔗 [**Czytaj więcej: Struktura według funkcji**](/sections/projectstructre/wraputilities.polish.md)
 
 <br/><br/>
 
@@ -90,7 +90,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 **TL;DR:** Unikaj nieprzyjemnego nawyku definiowania całości [Express](https://expressjs.com/) aplikacja w jednym dużym pliku - rozdziel definicję „Express” na co najmniej dwa pliki: deklarację API (app.js) i problemy z siecią (WWW). Aby uzyskać jeszcze lepszą strukturę, znajdź deklarację API w komponentach
 **W przeciwnym razie:** Twój interfejs API będzie dostępny do testowania tylko za pośrednictwem połączeń HTTP (wolniejsze i znacznie trudniejsze do generowania raportów zasięgu). Utrzymanie setek linii kodu w jednym pliku prawdopodobnie nie będzie wielką przyjemnością
 
-🔗 [**Czytaj więcej: oddzielna aplikacja „Express” i „serwer”**](/sections/projectstructre/separateexpress.md)
+🔗 [**Czytaj więcej: oddzielna aplikacja „Express” i „serwer”**](/sections/projectstructre/separateexpress.polish.md)
 
 <br/><br/>
 
@@ -99,7 +99,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
   **TL;DR:** Idealne i bezbłędne ustawienie konfiguracji powinno zapewnić, że (a) klucze można odczytać z pliku ORAZ ze zmiennych środowiskowych (b) dane wrażliwe są przechowywane poza zatwierdzonym kodem (c) konfiguracja jest hierarchiczna dla łatwiejszego wyszukiwania. Istnieje kilka pakietów, które mogą pomóc zaznaczyć większość z tych pól, takich jak [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf ) i [config](https://www.npmjs.com/package/config)
   **W przeciwnym razie:** Niespełnienie któregokolwiek z wymagań konfiguracji po prostu ugrzęźnie w zespole programistów lub DevOps. Prawdopodobnie jedno i drugie
 
-🔗 [**Czytaj więcej: najlepsze praktyki dotyczące konfiguracji**](/sections/projectstructre/configguide.md)
+🔗 [**Czytaj więcej: najlepsze praktyki dotyczące konfiguracji**](/sections/projectstructre/configguide.polish.md)
 
 <br/><br/><br/>
 
@@ -112,7 +112,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 **TL;DR:** Obsługa błędów asynchronicznych w stylu wywołania zwrotnego jest prawdopodobnie najszybszą drogą do piekła (znane też jako Piramida zagłady). Najlepszy prezent, jaki możesz dać kodowi, to skorzystanie z renomowanej biblioteki promise lub async-await zamiast tego, co umożliwia znacznie bardziej zwartą i znaną składnię kodu, taką jak try-catch
 **W przeciwnym razie:** styl wywołania zwrotnego Node.js, funkcja (błąd, odpowiedź) jest obiecującym sposobem na niemożliwy do utrzymania kod ze względu na połączenie obsługi błędów z przypadkowym kodem, nadmiernym zagnieżdżaniem i niewygodnymi wzorcami kodowania
 
-🔗 [**Czytaj więcej: avoiding callbacks**](/sections/errorhandling/asyncerrorhandling.md)
+🔗 [**Czytaj więcej: avoiding callbacks**](/sections/errorhandling/asyncerrorhandling.polish.md)
 
 <br/><br/>
 
@@ -122,7 +122,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Podczas wywoływania jakiegoś komponentu brak pewności, jaki rodzaj błędów w zamian wraca - znacznie utrudnia prawidłowe zarządzanie błędami. Co gorsza, używanie niestandardowych typów do opisywania błędów może prowadzić do utraty krytycznych informacji o błędach, takich jak stack trace!
 
-🔗 [**Czytaj więcej: using the built-in error object**](/sections/errorhandling/useonlythebuiltinerror.md)
+🔗 [**Czytaj więcej: using the built-in error object**](/sections/errorhandling/useonlythebuiltinerror.polish.md)
 
 <br/><br/>
 
@@ -132,7 +132,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Zawsze możesz ponownie uruchomić aplikację, gdy pojawi się błąd, ale dlaczego zawieść ~5000 użytkowników online z powodu drobnego, przewidywanego błędu operacyjnego? Drugie rozwiązanie nie jest też idealne - utrzymanie aplikacji w stanie, gdy wystąpi nieznany problem (błąd programisty), może prowadzić do nieprzewidzianego zachowania. Rozróżnienie tych dwóch pozwala działać taktownie i stosować zrównoważone podejście oparte na danym kontekście
 
-🔗 [**Czytaj więcej: operational vs programmer error**](/sections/errorhandling/operationalvsprogrammererror.md)
+🔗 [**Czytaj więcej: operational vs programmer error**](/sections/errorhandling/operationalvsprogrammererror.polish.md)
 
 <br/><br/>
 
@@ -142,7 +142,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Brak obsługi błędów w jednym miejscu prowadzi do duplikacji kodu i prawdopodobnie do nieprawidłowej obsługi błędów
 
-🔗 [**Czytaj więcej: handling errors in a centralized place**](/sections/errorhandling/centralizedhandling.md)
+🔗 [**Czytaj więcej: handling errors in a centralized place**](/sections/errorhandling/centralizedhandling.polish.md)
 
 <br/><br/>
 
@@ -152,7 +152,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Klient API może zdecydować o awarii i ponownym uruchomieniu tylko dlatego, że otrzymał błąd, którego nie mógł zrozumieć. Uwaga: osobą wywołującą interfejs API możesz być Ty (bardzo typowe w środowisku mikrousług)
 
-🔗 [**Czytaj więcej: documenting API errors in Swagger or GraphQL**](/sections/errorhandling/documentingusingswagger.md)
+🔗 [**Czytaj więcej: documenting API errors in Swagger or GraphQL**](/sections/errorhandling/documentingusingswagger.polish.md)
 
 <br/><br/>
 
@@ -162,7 +162,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Gdy wystąpi nieznany wyjątek, niektóre obiekty mogą znajdować się w stanie wadliwym (np. Emiter zdarzeń, który jest używany globalnie i nie uruchamia już zdarzeń z powodu pewnych wewnętrznych awarii), a wszystkie przyszłe żądania mogą zawieść lub zachowywać się szaleńczo
 
-🔗 [**Czytaj więcej: shutting the process**](/sections/errorhandling/shuttingtheprocess.md)
+🔗 [**Czytaj więcej: shutting the process**](/sections/errorhandling/shuttingtheprocess.polish.md)
 
 <br/><br/>
 
