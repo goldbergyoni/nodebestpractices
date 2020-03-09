@@ -172,7 +172,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Przeglądanie w pliku console.logs lub ręcznie przez niechlujny plik tekstowy bez korzystania z narzędzi zapytań lub porządnej przeglądarki dziennika może być zajęciem w pracy do późna
 
-🔗 [**Czytaj więcej: using a mature logger**](/sections/errorhandling/usematurelogger.md)
+🔗 [**Czytaj więcej: using a mature logger**](/sections/errorhandling/usematurelogger.polish.md)
 
 <br/><br/>
 
@@ -182,7 +182,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Bez testowania, automatycznie lub ręcznie, nie można polegać na kodzie, który zwraca prawidłowe błędy. Bez znaczących błędów - nie ma obsługi błędów
 
-🔗 [**Czytaj więcej: testing error flows**](/sections/errorhandling/testingerrorflows.md)
+🔗 [**Czytaj więcej: testing error flows**](/sections/errorhandling/testingerrorflows.polish.md)
 
 <br/><br/>
 
@@ -192,7 +192,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Możesz poświęcić wiele wysiłku na pomiar wydajności interfejsu API i przestojów, prawdopodobnie nigdy nie będziesz wiedział, jakie są twoje najwolniejsze części kodu w rzeczywistym scenariuszu i jak wpływają one na UX
 
-🔗 [**Czytaj więcej: using APM products**](/sections/errorhandling/apmproducts.md)
+🔗 [**Czytaj więcej: using APM products**](/sections/errorhandling/apmproducts.polish.md)
 
 <br/><br/>
 
@@ -202,7 +202,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Twoje błędy zostaną połknięte i nie pozostawiają śladu. Nie ma się o co martwić
 
-🔗 [**Czytaj więcej: catching unhandled promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.md)
+🔗 [**Czytaj więcej: catching unhandled promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.polish.md)
 
 <br/><br/>
 
@@ -212,7 +212,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Rozważ to - twoja funkcja oczekuje argumentu liczbowego „Discount”, który wywołujący zapomina przekazać, a następnie kod sprawdza, czy Discount!=0 (kwota dozwolonego discounta jest większa od zera), a następnie pozwoli użytkownikowi cieszyć się discountem. OMG, co za paskudny błąd. Widzisz to?
 
-🔗 [**Czytaj więcej: failing fast**](/sections/errorhandling/failfast.md)
+🔗 [**Czytaj więcej: failing fast**](/sections/errorhandling/failfast.polish.md)
 
 <br/><br/><br/>
 
@@ -226,7 +226,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Programiści skoncentrują się na żmudnych odstępach i problemach z szerokością linii, a czas może zostać zmarnowany na przemyślenie stylu kodu projektu
 
-🔗 [**Czytaj więcej: Using ESLint and Prettier**](/sections/codestylepractices/eslint_prettier.md)
+🔗 [**Czytaj więcej: Using ESLint and Prettier**](/sections/codestylepractices/eslint_prettier.polish.md)
 
 <br/><br/>
 
@@ -442,7 +442,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Wdrożenie właśnie nie powiodło się, test o nazwie „Dodaj produkt” nie powiódł się. Czy to mówi ci, co dokładnie działa nieprawidłowo?
 
-🔗 [**Czytaj więcej: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
+🔗 [**Czytaj więcej: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.polish.md)
 
 <br/><br/>
 
@@ -452,7 +452,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Nie tylko spędzasz długie codzienne godziny na zrozumieniu głównego kodu, ale także to, co powinno być prostą częścią dnia (testowanie) rozciąga Twój mózg
 
-🔗 [**Czytaj więcej: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.md)
+🔗 [**Czytaj więcej: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.polish.md)
 
 <br/><br/>
 
@@ -470,7 +470,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Rozważmy scenariusz, w którym wdrożenie zostało przerwane z powodu nieudanych testów, zespół zamierza teraz poświęcić cenny czas na dochodzenie, które kończy się smutnym wnioskiem: system działa dobrze, testy jednak przeszkadzają sobie nawzajem i przerywają kompilację
 
-🔗 [**Czytaj więcej: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
+🔗 [**Czytaj więcej: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.polish.md)
 
 <br/><br/>
 
@@ -520,7 +520,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Przy złej jakości kodu błędy i wydajność zawsze będą stanowić problem, którego nie będzie w stanie naprawić żadna nowa błyszcząca biblioteka ani najnowocześniejsze funkcje
 
-🔗 [**Czytaj więcej: Refactoring!**](/sections/testingandquality/refactoring.md)
+🔗 [**Czytaj więcej: Refactoring!**](/sections/testingandquality/refactoring.polish.md)
 
 <br/><br/>
 
@@ -530,7 +530,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Wybranie jakiegoś niszowego dostawcy może spowodować zablokowanie użytkownika, gdy będzie potrzebne zaawansowane dostosowanie. Z drugiej strony pójście z Jenkinsem może skrócić cenny czas na konfigurację infrastruktury
 
-🔗 [**Czytaj więcej: Choosing CI platform**](/sections/testingandquality/citools.md)
+🔗 [**Czytaj więcej: Choosing CI platform**](/sections/testingandquality/citools.polish.md)
 
 <br/><br/><br/>
 
@@ -544,7 +544,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Awaria === rozczarowani klienci. Proste
 
-🔗 [**Czytaj więcej: Monitoring!**](/sections/production/monitoring.md)
+🔗 [**Czytaj więcej: Monitoring!**](/sections/production/monitoring.polish.md)
 
 <br/><br/>
 
@@ -554,7 +554,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** W rezultacie pojawia się czarna skrzynka, o której trudno uzasadnić, a następnie zaczynasz ponownie pisać wszystkie instrukcje rejestrowania, aby dodać dodatkowe informacje
 
-🔗 [**Czytaj więcej: Increase transparency using smart logging**](/sections/production/smartlogging.md)
+🔗 [**Czytaj więcej: Increase transparency using smart logging**](/sections/production/smartlogging.polish.md)
 
 <br/><br/>
 
