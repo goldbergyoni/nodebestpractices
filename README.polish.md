@@ -103,7 +103,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#spis-treści">⬆ Wróć na górę</a></p>
 
   # `2. Procedury obsługi błędów`
 
@@ -216,7 +216,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Wróć na górę</a></p>
+<p align="right"><a href="#spis-treści">⬆ Wróć na górę</a></p>
 
 # `3. Praktyki stylu kodu`
 
@@ -424,7 +424,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#spis-treści">⬆ Wróć na górę</a></p>
 
 # `4. Testy i ogólne praktyki jakości`
 
@@ -534,7 +534,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Powrót do góry</a></p>
+<p align="right"><a href="#spis-treści">⬆ Powrót do góry</a></p>
 
 # `5. Przejście do praktyk produkcyjnych`
 
@@ -716,7 +716,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Powrót do góry</a></p>
+<p align="right"><a href="#spis-treści">⬆ Powrót do góry</a></p>
 
 # `6. Najlepsze praktyki bezpieczeństwa`
 
@@ -1018,7 +1018,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 🔗 [**Czytaj więcej: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.polish.md)
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#spis-treści">⬆ Powrót na górę</a></p>
 
 # `7. Wersja robocza: Najlepsze praktyki dotyczące wydajności`
 
