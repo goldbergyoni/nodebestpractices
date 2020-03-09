@@ -959,7 +959,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Wrażliwe szczegóły aplikacji, takie jak ścieżki plików serwera, używane moduły stron trzecich i inne wewnętrzne przepływy pracy aplikacji, które mogą zostać wykorzystane przez atakującego, mogą zostać wyciekły z informacji znalezionych w stack trace
 
-🔗 [**Czytaj więcej: Hide error details from client**](/sections/security/hideerrors.md)
+🔗 [**Czytaj więcej: Hide error details from client**](/sections/security/hideerrors.polish.md)
 
 <br/><br/>
 
@@ -981,7 +981,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Pliki cookie mogą być przesyłane za pośrednictwem niezabezpieczonych połączeń, a osoba atakująca może użyć identyfikacji sesji w celu zidentyfikowania podstawowej struktury aplikacji internetowej, a także podatności na uszkodzenia specyficzne dla modułu
 
-🔗 [**Czytaj więcej: Cookie and session security**](/sections/security/sessions.md)
+🔗 [**Czytaj więcej: Cookie and session security**](/sections/security/sessions.polish.md)
 
 <br/><br/>
 
@@ -1003,7 +1003,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Jeśli osoba atakująca odkryje, że nie weryfikujesz danych zewnętrznych dostarczonych przez użytkownika, może wykorzystać tę lukę, publikując specjalnie spreparowane łącza na forach, w mediach społecznościowych i innych miejscach publicznych, aby użytkownicy mogli ją kliknąć.
 
-🔗 [**Czytaj więcej: Prevent unsafe redirects**](/sections/security/saferedirects.md)
+🔗 [**Czytaj więcej: Prevent unsafe redirects**](/sections/security/saferedirects.polish.md)
 
 <br/><br/>
 
@@ -1015,7 +1015,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Klucze API, hasła i inne dane wrażliwe twojego projektu są otwarte na wykorzystywanie przez każdego, kto je napotka, co może spowodować straty finansowe, podszywanie się pod inne osoby i inne ryzyko.
 
-🔗 [**Czytaj więcej: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.md)
+🔗 [**Czytaj więcej: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.polish.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
@@ -1032,7 +1032,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Ponieważ pętla zdarzeń jest zablokowana, Node.js nie będzie w stanie obsłużyć innych żądań, co spowoduje opóźnienia dla równoczesnych użytkowników. **3000 użytkowników czeka na odpowiedź, treść jest gotowa do wyświetlenia, ale jedno pojedyncze żądanie blokuje serwerowi odesłanie wyników z powrotem**
 
-🔗 [**Czytaj więcej: Do not block the event loop**](/sections/performance/block-loop.md)
+🔗 [**Czytaj więcej: Do not block the event loop**](/sections/performance/block-loop.polish.md)
 
 <br /><br /><br />
 
@@ -1044,7 +1044,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Będziesz musiał utrzymywać mniej wydajne projekty, w których mógłbyś po prostu użyć tego, co było **już** dostępne lub zająć się kilkoma kolejnymi liniami w zamian za kilka dodatkowych plików.
 
-🔗 [**Czytaj więcej: Native over user land utils**](/sections/performance/nativeoverutil.md)
+🔗 [**Czytaj więcej: Native over user land utils**](/sections/performance/nativeoverutil.polish.md)
 
 <br/><br/><br/>
 
