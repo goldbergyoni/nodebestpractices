@@ -564,7 +564,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Twój słaby pojedynczy wątek pozostanie zajęty wykonywaniem zadań infrastrukturalnych zamiast zajmowania się rdzeniem aplikacji, a wydajność odpowiednio się obniży
 
-🔗 [**Czytaj więcej: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
+🔗 [**Czytaj więcej: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.polish.md)
 
 <br/><br/>
 
@@ -574,7 +574,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Dział kontroli jakości dokładnie przetestuje kod i zatwierdzi wersję, która będzie zachowywać się inaczej w środowisku produkcyjnym. Co gorsza, różne serwery w tym samym klastrze produkcyjnym mogą uruchamiać inny kod
 
-🔗 [**Czytaj więcej: Lock dependencies**](/sections/production/lockdependencies.md)
+🔗 [**Czytaj więcej: Lock dependencies**](/sections/production/lockdependencies.polish.md)
 
 <br/><br/>
 
@@ -584,7 +584,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Uruchomienie dziesiątek instancji bez jasnej strategii i zbyt wielu narzędzi razem (zarządzanie klastrami, okno dokowane, PM2) może doprowadzić do chaosu DevOps
 
-🔗 [**Czytaj więcej: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
+🔗 [**Czytaj więcej: Guard process uptime using the right tool**](/sections/production/guardprocess.polish.md)
 
 <br/><br/>
 
@@ -594,7 +594,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Twoja aplikacja prawdopodobnie wykorzysta tylko 25% dostępnych zasobów (!) lub nawet mniej. Zauważ, że typowy serwer ma 4 rdzenie procesora lub więcej, naiwne wdrożenie Node.js wykorzystuje tylko 1 (nawet przy użyciu usług PaaS, takich jak AWS beanstalk!)
 
-🔗 [**Czytaj więcej: Utilize all CPU cores**](/sections/production/utilizecpu.md)
+🔗 [**Czytaj więcej: Utilize all CPU cores**](/sections/production/utilizecpu.polish.md)
 
 <br/><br/>
 
@@ -604,7 +604,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Przekonasz się, że wykonujesz wiele „wdrożeń diagnostycznych” - wysyłasz kod do produkcji tylko po to, aby wyodrębnić niektóre informacje do celów diagnostycznych
 
-🔗 [**Czytaj więcej: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
+🔗 [**Czytaj więcej: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.polish.md)
 
 <br/><br/>
 
@@ -614,7 +614,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Możesz poświęcić wiele wysiłku na pomiar wydajności interfejsu API i przestojów, prawdopodobnie nigdy nie będziesz wiedział, jakie są twoje najwolniejsze części kodu w rzeczywistym scenariuszu i jak wpływają one na UX
 
-🔗 [**Czytaj więcej: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
+🔗 [**Czytaj więcej: Discover errors and downtime using APM products**](/sections/production/apmproducts.polish.md)
 
 <br/><br/>
 
@@ -624,7 +624,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Mistrz świata IT / DevOps nie uratuje źle napisanego systemu
 
-🔗 [**Czytaj więcej: Make your code production-ready**](/sections/production/productioncode.md)
+🔗 [**Czytaj więcej: Make your code production-ready**](/sections/production/productioncode.polish.md)
 
 <br/><br/>
 
@@ -634,7 +634,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Pamięć procesowa może przeciekać sto megabajtów dziennie, jak to się stało w [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
 
-🔗 [**Czytaj więcej: Measure and guard the memory usage**](/sections/production/measurememory.md)
+🔗 [**Czytaj więcej: Measure and guard the memory usage**](/sections/production/measurememory.polish.md)
 
 <br/><br/>
 
@@ -644,7 +644,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Twój pojedynczy wątek Node'a będzie zajęty przesyłaniem strumieniowym setek plików HTML / images / Angular / React zamiast przydzielania wszystkich swoich zasobów do zadania, dla którego się urodził - udostępniania treści dynamicznych
 
-🔗 [**Czytaj więcej: Get your frontend assets out of Node**](/sections/production/frontendout.md)
+🔗 [**Czytaj więcej: Get your frontend assets out of Node**](/sections/production/frontendout.polish.md)
 
 <br/><br/>
 
@@ -654,7 +654,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Awaria na danym serwerze spowoduje przestoje aplikacji, a nie tylko zabicie wadliwego komputera. Co więcej, elastyczność skalowania stanie się trudniejsza ze względu na zależność od konkretnego serwera
 
-🔗 [**Czytaj więcej: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
+🔗 [**Czytaj więcej: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.polish.md)
 
 <br/><br/>
 
@@ -664,7 +664,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Utrzymanie kodu w czystości przed lukami bez dedykowanych narzędzi będzie wymagało ciągłego śledzenia publikacji online na temat nowych zagrożeń. Dość nudne
 
-🔗 [**Czytaj więcej: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
+🔗 [**Czytaj więcej: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.polish.md)
 
 <br/><br/>
 
@@ -674,7 +674,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Patrzenie na dziennik błędów produkcyjnych bez kontekstu - co zdarzyło się wcześniej - sprawia, że znacznie trudniej i wolniej jest myśleć o problemie
 
-🔗 [**Czytaj więcej: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
+🔗 [**Czytaj więcej: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.polish.md)
 
 <br/><br/>
 
@@ -684,7 +684,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Pominięcie tej prostej właściwości może znacznie obniżyć wydajność. Na przykład, używając Express do renderowania po stronie serwera, pominięcie `NODE_ENV` powoduje spowolnienie trzykrotnie!
 
-🔗 [**Czytaj więcej: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
+🔗 [**Czytaj więcej: Set NODE_ENV=production**](/sections/production/setnodeenv.polish.md)
 
 <br/><br/>
 
@@ -702,7 +702,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Nowo odkryte błędy lub luki można wykorzystać do wykorzystania aplikacji działającej w środowisku produkcyjnym, a aplikacja może nie być obsługiwana przez różne moduły i trudniejsza do utrzymania
 
-🔗 [**Czytaj więcej: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
+🔗 [**Czytaj więcej: Use an LTS release of Node.js**](/sections/production/LTSrelease.polish.md)
 
 <br/><br/>
 
@@ -712,7 +712,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Trasowanie dzienników obsługi aplikacji === trudne do skalowania, utrata dzienników, słaba separacja problemów
 
-🔗 [**Czytaj więcej: Log Routing**](/sections/production/logrouting.md)
+🔗 [**Czytaj więcej: Log Routing**](/sections/production/logrouting.polish.md)
 
 <br/><br/><br/>
 
@@ -732,7 +732,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** To, co mogło być bezpośrednią słabością bezpieczeństwa podczas programowania, staje się poważnym problemem w produkcji. Ponadto projekt może nie być zgodny ze spójnymi praktykami bezpieczeństwa kodu, co prowadzi do wprowadzenia luk w zabezpieczeniach lub poufnych danych wrażliwych wrzuconych w zdalnych repozytoriach
 
-🔗 [**Czytaj więcej: Lint rules**](/sections/security/lintrules.md)
+🔗 [**Czytaj więcej: Lint rules**](/sections/security/lintrules.polish.md)
 
 <br/><br/>
 
@@ -744,7 +744,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Aplikacja może zostać zaatakowana, co spowoduje odmowę usługi, w wyniku której prawdziwi użytkownicy otrzymają usługę o obniżonej jakości lub niedostępną.
 
-🔗 [**Czytaj więcej: Implement rate limiting**](/sections/security/limitrequests.md)
+🔗 [**Czytaj więcej: Implement rate limiting**](/sections/security/limitrequests.polish.md)
 
 <br/><br/>
 
@@ -756,7 +756,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Kontrola źródła, nawet w przypadku prywatnych repozytoriów, może zostać omyłkowo upubliczniona, w którym to momencie ujawniane są wszystkie dane wrażliwe. Dostęp do kontroli źródła dla strony zewnętrznej nieumyślnie zapewni dostęp do powiązanych systemów (baz danych, API, usług itp.).
 
-🔗 [**Czytaj więcej: Secret management**](/sections/security/secretmanagement.md)
+🔗 [**Czytaj więcej: Secret management**](/sections/security/secretmanagement.polish.md)
 
 <br/><br/>
 
@@ -768,7 +768,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Nieprawidłowe lub niezaangażowane dane wejściowe użytkownika mogą prowadzić do wstrzyknięcia przez operatora podczas pracy z MongoDB dla NoSQL, a niestosowanie odpowiedniego systemu odkażania lub ORM z łatwością pozwoli na ataki z zastrzykiem SQL, tworząc ogromną lukę.
 
-🔗 [**Czytaj więcej: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.md)
+🔗 [**Czytaj więcej: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.polish.md)
 
 <br/><br/>
 
@@ -776,7 +776,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **TL;DR:** Jest to zbiór porad bezpieczeństwa, które nie są bezpośrednio związane z Node.js - implementacja Node nie różni się niczym od żadnego innego języka. Kliknij Czytaj więcej, aby przejrzeć.
 
-🔗 [**Czytaj więcej: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
+🔗 [**Czytaj więcej: Common security best practices**](/sections/security/commonsecuritybestpractices.polish.md)
 
 <br/><br/>
 
@@ -788,7 +788,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Atakujący mogą wykonywać bezpośrednie ataki na użytkowników aplikacji, co prowadzi do ogromnych luk w zabezpieczeniach
 
-🔗 [**Czytaj więcej: Using secure headers in your application**](/sections/security/secureheaders.md)
+🔗 [**Czytaj więcej: Using secure headers in your application**](/sections/security/secureheaders.polish.md)
 
 <br/><br/>
 
