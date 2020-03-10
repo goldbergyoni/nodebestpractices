@@ -2,20 +2,20 @@
 
 ### Объяснение в один абзац
 
-Лозволяющая природа JavaScript наряду с его разнообразием параметров потока кода (например, EventEmitter, Callbacks, Promises и т.д.) приводит к значительному расхождению в том, как разработчики выдают ошибки - некоторые используют строки, другие определяют свои собственные пользовательские типы. Использование встроенного объекта Error в Node.js помогает сохранить единообразие в вашем коде, а с помощью сторонних библиотек он также сохраняет важную информацию, такую ​​как StackTrace. При возникновении исключения обычно рекомендуется заполнить его дополнительными контекстными свойствами, такими как имя ошибки и связанный код ошибки HTTP. Чтобы добиться этого единообразия и практики, рассмотрите возможность расширения объекта Error дополнительными свойствами, см. пример кода ниже.
+Позволяющая природа JavaScript наряду с его разнообразием вариантов потока кода (например, EventEmitter, Callbacks, Promises и т.д.) приводит к значительному расхождению в том, как разработчики выдают ошибки - некоторые используют строки, другие определяют свои собственные пользовательские типы. Использование встроенного объекта Error в Node.js помогает сохранить единообразие в вашем коде, а с помощью сторонних библиотек он также сохраняет важную информацию, такую ​​как StackTrace. При возникновении исключения обычно рекомендуется заполнить его дополнительными контекстными свойствами, такими как имя ошибки и связанный код ошибки HTTP. Чтобы добиться этого единообразия и практики, рассмотрите возможность расширения объекта Error дополнительными свойствами, см. пример кода ниже.
 
 ### Пример кода - делай все правильно
 
 ```javascript
-// throwing an Error from typical function, whether sync or async
+// пробрасываем Error из типичной async или sync функции
 if(!productToAdd)
     throw new Error('How can I add new product when no value provided?');
 
-// 'throwing' an Error from EventEmitter
+// пробрасываем Error из EventEmitter
 const myEmitter = new MyEmitter();
 myEmitter.emit('error', new Error('whoops!'));
 
-// 'throwing' an Error from a Promise
+// пробрасываем Error из Promise
 const addProduct = async (productToAdd) => {
   try {
     const existingProduct = await DAL.getProduct(productToAdd.id);
@@ -31,23 +31,23 @@ const addProduct = async (productToAdd) => {
 ### Пример кода - антипаттерн
 
 ```javascript
-// throwing a string lacks any stack trace information and other important data properties
+// пробрасывая строку, теряем информацию о stack trace и другие важные параметры
 if(!productToAdd)
     throw ('How can I add new product when no value provided?');
 ```
 
-### Пример кода - делаем это еще лучше
+### Пример кода - делаем еще лучше
 
 <details>
 <summary><strong>Javascript</strong></summary>
 
 ```javascript
-// centralized error object that derives from Node’s Error
+// главные объект ошибки производный от нодовского Error
 function AppError(name, httpCode, description, isOperational) {
     Error.call(this);
     Error.captureStackTrace(this);
     this.name = name;
-    //...other properties assigned here
+    //... другие параметры тут
 };
 
 AppError.prototype = Object.create(Error.prototype);
@@ -55,7 +55,7 @@ AppError.prototype.constructor = AppError;
 
 module.exports.AppError = AppError;
 
-// client throwing an exception
+// клиент пробрасывает исключение
 if(user == null)
     throw new AppError(commonErrors.resourceNotFound, commonHTTPErrors.notFound, 'further explanation', true)
 ```
@@ -65,7 +65,7 @@ if(user == null)
 <summary><strong>Typescript</strong></summary>
 
 ```typescript
-// centralized error object that derives from Node’s Error
+// главные объект ошибки производный от нодовского Error
 export class AppError extends Error {
   public readonly name: string;
   public readonly httpCode: HttpCode;
@@ -74,7 +74,7 @@ export class AppError extends Error {
   constructor(name: string, httpCode: HttpCode, description: string, isOperational: boolean) {
     super(description);
 
-    Object.setPrototypeOf(this, new.target.prototype); // restore prototype chain
+    Object.setPrototypeOf(this, new.target.prototype); // восстанавливаем цепочку прототипов
 
     this.name = name;
     this.httpCode = httpCode;
@@ -84,7 +84,7 @@ export class AppError extends Error {
   }
 }
 
-// client throwing an exception
+// клиент пробрасывает исключение
 if(user == null)
     throw new AppError(commonErrors.resourceNotFound, commonHTTPErrors.notFound, 'further explanation', true)
 ```
@@ -96,21 +96,21 @@ if(user == null)
 
 Из блога Бен Надель, занял 5 место по ключевым словам "объект ошибки Node.js"
 
-> … Лично я не вижу смысла в том, чтобы иметь множество различных типов объектов ошибок - JavaScript, как язык, похоже, не предназначен для поиска ошибок на основе конструктора. Таким образом, дифференцирование по свойству объекта кажется гораздо проще, чем по типу Constructor …
+> … Лично я не вижу смысла в том, чтобы иметь множество различных типов объектов ошибок - JavaScript, как язык, похоже, не предназначен для поиска ошибок на основе конструктора. Таким образом, определение по свойству объекта кажется гораздо проще, чем по типу Constructor …
 
 ### Цитата блога: "Строка не является ошибкой"
 
 Из блога devthought.com, занял 6 место по ключевым словам "Объект ошибки Node.js"
 
-> … передача строки вместо ошибки приводит к снижению совместимости между модулями. Он нарушает контракты с API, которые могут выполнять проверки ошибок instanceof или хотят узнать больше об ошибке. Объекты ошибок, как мы увидим, обладают очень интересными свойствами в современных механизмах JavaScript, помимо хранения сообщения, переданного конструктору …
+> … передача строки вместо ошибки приводит к снижению совместимости между модулями. Это нарушает контракты с API, которые могут выполнять проверки ошибок с помощью instanceof или хотят узнать больше об ошибке. Объекты ошибок, как мы увидим, обладают очень интересными свойствами в современных механизмах JavaScript, помимо хранения сообщения, переданного конструктору …
 
-### Цитата из блога: "Наследование от ошибки не увеличивает ценность"
+### Цитата из блога: "Наследование от ошибки не увеличивает их ценность"
 
 Из блога Machadogj
 
 > … Одна проблема, которую я имею с классом Error, заключается в том, что его не так просто расширить. Конечно, вы можете наследовать класс и создавать свои собственные классы ошибок, такие как HttpError, DbError и т.д. Однако это занимает время и не добавляет слишком много значения, если вы не делаете что-то с типами. Иногда вам просто нужно добавить сообщение и сохранить внутреннюю ошибку, а иногда вам может понадобиться расширить ошибку с помощью параметров, и так далее …
 
-### Цитата из блога: "Все ошибки JavaScript и системы, возникающие в Node.js, наследуются от ошибок"
+### Цитата из блога: "Все ошибки JavaScript и системы, возникающие в Node.js, наследуются от Error"
 
 Из официальной документации Node.js
 
