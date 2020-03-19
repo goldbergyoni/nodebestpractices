@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2082%20Best%20Practices-blue.svg" alt="82 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Jun%205%202019-green.svg" alt="Last update: Jun 5, 2019"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.14.0%20LTS-brightgreen.svg" alt="Updated for Node 12.14.0 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2083%20Best%20Practices-blue.svg" alt="83 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Jun%205%202019-green.svg" alt="Last update: Jun 5, 2019"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.14.0%20LTS-brightgreen.svg" alt="Updated for Node 12.14.0 LTS">
 </div>
 
 <br/>
@@ -34,11 +34,11 @@
 
 <br/>
 
-# 안녕하세요! 먼저 알아야 할 3가지가 있습니다:
+# 어서오세요! 먼저 이 3가지를 알아두세요:
 
-**1. 이 문서를 읽는 것은 베스트 Node.js 문서 수십개를 읽는 것과 같습니다. -** 이 문서는 Node.js 의 가장 일반적인 모범사례(Best Practice)들을 모은 요약집 및 큐레이션입니다.
+**1. 이 문서를 읽는 것은 베스트 Node.js 문서 수십개를 읽는 것과 같습니다. -** 이 문서는 Node.js 의 가장 일반적인 Best Practice 모범사례들을 모은 요약집 및 큐레이션입니다.
 
-**2. 가장 큰 모음집이며, 매주 성장하고 있습니다. -** 현재 50개 이상의 모범사례들과 스타일 가이드 및 아키텍처 관련 팁들을 제공하고 있습니다. 이 문서를 계속 갱신하는 새로운 이슈들과 PR들이 매일 나오고 있습니다. 이 문서의 잘못된 코드를 고치거나 새로운 아이디어들을 제안하는 것은 매우 환영합니다. [마일스톤 보러가기](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
+**2. 가장 큰 모음집이며, 매주 성장하고 있습니다. -** 현재 80개 이상의 모범사례들과 스타일 가이드 및 아키텍처 관련 팁들을 제공하고 있습니다. 이 문서를 계속 갱신하는 새로운 이슈들과 PR들이 매일 나오고 있습니다. 이 문서의 잘못된 코드를 고치거나 새로운 아이디어들을 제안하는 것은 매우 환영합니다. [마일스톤 보러가기](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
 
 **3. 항목 대부분은 추가적인 정보가 있습니다 -** 항목 옆쪽에 존재하는 **🔗자세히 보기** 링크에서 코드 예제, 참조 블로그 또는 기타 정보들을 확인 할 수 있습니다.
 
@@ -49,10 +49,10 @@
 1. [프로젝트 구조 설계 (5)](#1-프로젝트-구조-설계)
 2. [에러 처리 방법 (11)](#2-에러-처리-방법)
 3. [코드 스타일 (12) ](#3-코드-스타일)
-4. [테스트 및 전체 품질 관리 (8) ](#4-테스트-및-전체-품질-관리)
+4. [테스트 및 전체 품질 관리 (13) ](#4-테스트-및-전체-품질-관리)
 5. [운영 환경으로 전환하기 (16) ](#5-운영-환경으로-전환하기)
-6.  보안 ([예정](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
-7.  성능 ([예정](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
+6. [보안 (25)](#6-security-best-practices)
+7. [성능 (2) (현재진행형 ✍️)](#7-draft-performance-best-practices)
 
 <br/><br/>
 
@@ -228,7 +228,7 @@
 
 ## ![✔] 3.1 ESLint를 사용하라
 
-**핵심요약:** [ESLint](https://eslint.org)는 발생 가능한 코드 에러를 체크하고 껄끄러운 간격(spacing)문제를 식별하는 것부터 프로그래머가 분별없이 에러를 던지는 것과 같은 코드의 심각한 안티 패턴을 감지하여 코드 스타일을 바꾸는 것에 대한 사실상의 표준이다. ESLint도 자동으로 코드스타일을 고칠 수 있지만 [prettier](https://www.npmjs.com/package/prettier)와 [beautify](https://www.npmjs.com/package/js-beautify)같은 수정 부분의 포맷을 맞춰주는 강력한 툴이 있고 ESLint와 함께 작동된다.  
+**핵심요약:** [ESLint](https://eslint.org)는 발생 가능한 코드 에러를 체크하고 껄끄러운 간격(spacing)문제를 식별하는 것부터 프로그래머가 분별없이 에러를 던지는 것과 같은 코드의 심각한 안티 패턴을 감지하여 코드 스타일을 바꾸는 것에 대한 사실상의 표준이다. ESLint도 자동으로 코드스타일을 고칠 수 있지만 [prettier](https://www.npmjs.com/package/prettier)와 [beautify](https://www.npmjs.com/package/js-beautify)같은 수정 부분의 포맷을 맞춰주는 강력한 툴이 있고 ESLint와 함께 작동된다.
 
 **그렇게 하지 않을 경우:** 프로그래머가 쓸데없는 간격과 한줄의 길이(line-width) 문제에 대해서 집중해야하고 프로젝트의 코드스타일에 대해 과도하게 생각하느라 시간을 낭비해야할 수도 있다.
 
@@ -279,12 +279,12 @@ function someFunction()
 
 **핵심요약:** 클로저와 콜백을 포함한 모든 함수에 이름을 붙여라. 익명함수를 피해라. 이것은 노드 앱을 프로파일링 할때 특히 유용하다. 모든 함수를 명명하는 것은 당신이 메모리 스냅샷을 확인할때 당신이 보고있는 것이 무엇인지 쉽게 이해 할수있도록 해준다.
 
-**그렇게 하지 않을 경우:** 
+**그렇게 하지 않을 경우:**
 당신이 익명함수에서 메모리 소비가 많다는 것을 확인 했을 때 코어 덤프(메모리 스냅샷)을 이용해 프로덕션 문제를 디버깅하는 것이 어려울 수도 있습니다.
 
 <br/><br/>
 
-## ![✔] 3.6 변수, 상수, 함수, 클래스의 명명 규칙(naming convention) 
+## ![✔] 3.6 변수, 상수, 함수, 클래스의 명명 규칙(naming convention)
 
 **핵심요약:** 상수와 변수 함수를 명명할때는 **_lowerCamelCase_** 를 사용하고 클래스를 명명 할때는 **_UpperCamelCase_**(첫 글자 대문자)를 사용하라. 이것은 일반 변수/함수와 인스턴스로 만들어야 하는 클래스를 구분하는데 도움을  것이다. 설명이 포함된 이름을 사용하되 이름을 짧게 유지하도록 해라.
 
@@ -397,102 +397,123 @@ null == undefined   // true
 
 # `4. 테스트 및 전체 품질 관리`
 
-## ![✔] 4.1 최소한, API(컴포넌트) 별로 테스트를 만들어라
+## ![✔] 4.1 다른건 못해도 최소한 API (컴포넌트) 테스트는 써라
 
-**핵심요약:** 대부분의 프로젝트는 짧은 일정으로 인해 자동화 된 테스트가 없거나 '프로젝트를 테스트하는 것'은 종종 통제를 벗어나서 버려진다. 그런 이유로 우선 순위를 정해서 가장 간단하고 단위 테스트보다 더 넓은 커버리지를 제공하는 API 테스트로 시작해야한다(당신은 심지어 [포스트맨](https://www.getpostman.com/)같은 도구를 이용하여 코드 없이 손수 API테스트를 만들수 있다). 당신이 시간과 자원이 많을때 단위 테스트, DB 테스트, 성능 테스트 등과 같은 고급 유형의 테스트를 계속 진행하면 된다.
+**핵심요약:** 대부분의 프로젝트는 짧은 일정으로 인해 자동화 된 테스트가 없거나 후일 통제를 벗어난 이른바 "시험용 프로젝트" 라는 이유로 버려진다. 그러므로, 쓰기에도 제일 쉽고 유닛 테스트보다 더 넓게 커버할 수 있는 API 테스트를 우선으로 시작해라. ([포스트맨](https://www.getpostman.com/) 같은 도구를 이용하지 않고도 API 테스트를 쓸 수 있다.) 나중에 시간과 자원이 더 나면 그때 유닛테스트, DB 테스트, 성능 테스트 등의 상급 테스트 종류를 계속 더해라.
 
-**그렇게 하지 않을 경우:** 단위 테스트를 만드는 것에 오랜 시간을 투자하였지만 테스트 범위가 전체 시스템의 20% 밖에 안되는것을 확인하게 될수도 있다
+**그렇게 하지 않을 경우:** 유닛 테스트 쓰는데 시간을 몇 날 며칠을 쓰고선 시스템 커버리지가 20% 밖에 안된다는걸 깨닫게 될 수 있다.
 
 <br/><br/>
 
-## ![✔] 4.2 각 테스트 이름에는 3 파트를 포함시켜라
+## ![✔] 4.2 테스트 이름에 이 3가지를 포함해라
 
-**핵심요약:** 테스트를 요구 사항 수준에서 작성하게 하여 내부 코드에 익숙하지 않은 QA 엔지니어 및 개발자도 이해하게 하라. 테스트 이름에 무엇을 테스트 중이고(테스트 중인 단위), 어떤 상황에서 테스트 중인지 그리고 예상되는 결과는 무엇인지 언급하라.
+**핵심요약:** 코드 내부에 익숙하지 않은 QA 엔지니어들과 개발자들에게 따로 설명이 필요 없도록 requirement 계층에서 이미 자명하도록 해라. 무엇을 (unit under test), 어떤 환경에서, 어떤 결과를 예상하고 테스트 하는 것인지 테스트 이름에 명시해라.
 
-**그렇게 하지 않을 경우:** 배포가 실패하더니, '기능 추가'라는 이름의 테스트가 실패했다고 한다. 당신은 정확히 어떤 것에서 오류가 났는지 알 수 있을까?
+
+**그렇게 하지 않을 경우:** 배포에 실패하였습니다, “프로덕트 추가” 라는 테스트가 실패했습니다. 이런 메시지를 보고 정확히 뭐가 잘못되었는지 알 수 있는가?
 
 🔗 [**자세히 보기: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
 
 <br/><br/>
 
-## ![✔] 4.3 린터(linter)를 통해서 코드 이슈를 확인하라
+## ![✔] 4.3 AAA 패턴을 따라 테스트를 구축해라
 
-**핵심요약:** 코드 린터를 사용해서 코드의 질을 확인하고 안티패턴을 미리 감지하라. 어떤 테스트든지 그 전에 실행하도록 하고 pre-commit git-hook에 추가하여 리뷰를 하는 시간을 최소화 하고 어떤 이슈든 고쳐지도록 하라. [Section 3](https://github.com/i0natan/nodebestpractices#3-code-style-practices)의 코드 스타일 역시 참고하라.
+**핵심요약:** 테스트를 다음 세가지 부분으로 명확히 나누어라: 준비 (arrange), 실행 (act), 표명 (assert). 제일 먼저 테스트를 준비하고, 그 다음 테스트 단위(unit under test)를 실행하고, 마지막은 확인 단계다. 이 구조를 따르는 것은 읽는이가 힘들여 머리를 쓰지 않고도 테스트 설계를 이해할 수 있도록 보장한다.
 
-**그렇게 하지 않을 경우:** 당신은 안티패턴과 취약한 코드를 상용환경에 노출 시킬 수 있다
+
+**그렇게 하지 않을 경우:** 매일 하루종일 주요 코드를 읽는데 시간을 오래 쓰는 것도 모자라 간단해야하는 테스트 부분에도 열심히 머리를 써야 할 것이다.
+
+
+🔗 [**Read More: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.md)
 
 <br/><br/>
 
-## ![✔] 4.4 공용으로 고정되어 사용되는 테스트 데이터를 피하고 테스트마다 데이터를 추가하라
+## ![✔] 4.4 린터를 사용해서 코드의 문제점을 찾아내라
 
-**핵심요약:** 테스트간의 간섭을 최소화하고 테스트 플로우에 대해 쉽게 추론하려면 각 테스트가 고유한 데이터를 추가하여 작동해야한다. 테스트가 일부 DB 데이터를 가져오거나 가정해야 할 때마다 명시적으로 데이터를 추가해야 하며 다른 레코드의 변경을 피해야 한다.
+**핵심요약:** 코드 린터를 사용해서 기본적인 품질을 확인하고 안티패턴을 초기에 찾아내라. 테스트 하기도 전에 먼저 돌리고, pre-commit git-hook으로 추가해서 문제를 검토하고 정정하는 시간을 최소화해라.  [3문단](#3-코드-스타일)의 코드 스타일 관례들도 확인해라.
 
-**그렇게 하지 않을 경우:** 테스트가 실패하여 배포가 중단되는 시나리오를 생각해보라. 귀중한 시간을 소모하여 조사 끝에 슬픈 결론으로 끝이 난다. "오류 보고서: 시스템은 잘 작동하지만 테스트의 상호 간섭으로 인해 배포 실패"
+**그렇게 하지 않을 경우:** 안티패턴과 취약한 코드가 상용환경에 넘어갈 수도 있다.
+
+<br/><br/>
+
+## ![✔] 4.5 고정적인 공용 테스트 데이터나 seeds는 피하고, 테스트별로 데이타를 붙여라
+
+**핵심요약:** 테스트간의 간섭과 결합도(coupling)를 최소화하고 테스트 흐름을 추론하기 쉽도록 테스트들은 각자 자신만의 DB 행 (row) 집합을 만들어 써야 한다. 테스트가 DB 데이터를 가져오거나 데이터가 존재한다고 간주해야 할 때마다 다른 레코드를 변형시키지 않도록 그 데이터를 직접 추가하여야 한다.
+
+
+**그렇게 하지 않을 경우:** 실패하는 테스트때문에 전개(deployment)가 중단되었다고 가정해 보자. 이제 팀원들은 소중한 시간을 조사하는데 소모한 뒤 슬픈 결론을 내릴 것이다: 시스템은 잘 작동하지만, 테스트간의 상호 간섭으로 빌드 실패.
 
 🔗 [**자세히 보기: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
 
 <br/><br/>
 
-## ![✔] 4.5 의존성의 취약점을 끊임없이 검사하라
+## ![✔] 4.6 끊임없이 취약한 dependency를 점검해라
 
-**핵심요약:** Express와 같은 가장 신뢰할 수있는 의존성 모듈 조차도 알려진 취약점이 있다. 이는 CI에서 빌드시마다 호출하도록 할수있는 🔗 [npm audit](https://docs.npmjs.com/cli/audit) and 🔗 [snyk.io](https://snyk.io)와 같은 커뮤니티 혹은 상업 도구를 사용하여 쉽게 해결할 수 있다.
+**핵심요약:** Express같은 네임드 dependency도 알려진 취약점이 있다. 이건CI에서 매 빌드마다 호출할 수 있는 🔗 [npm audit](https://docs.npmjs.com/cli/audit)나 🔗 [snyk.io](https://snyk.io)같은 커뮤니티 혹은 상업용 도구를 사용하면 쉽게 해결할 수 있다.
 
-**그렇게 하지 않을 경우:** 도구를 사용하지 않고 취약점으로부터 코드를 깨끗하게 유지하려면 새로운 위협에 관한 내용들을 지속적으로 따라야할것이다. 아주 지루하겠지만
-
-<br/><br/>
-
-## ![✔] 4.6 테스트를 태그하라 (#테스트)
-
-**핵심요약:** 다른 종류의 테스트는 서로 다른 시나리오에서 실행되어야한다. 빌드가 되는지 안되는지에 대한 테스트, IO가 없는 테스트 등은 개발자가 파일을 저장하거나 커밋 할 때 테스트를 실행해야 하고, 보통은 풀리퀘스트가 있을 때 전체 종단 간 테스트를 실행한다. #cold #api #sanity와 같은 키워드를 사용하여 테스트에 태그를 지정하여 테스트 장치로 가져와서 원하는 하위 집합을 호출 할 수 있다. 예를 들어, 다음은 [Mocha](https://mochajs.org/)와 함께 'sanity' 테스트 그룹을 호출하는 방법이다. `mocha --grep 'sanity'`
-
-**그렇게 하지 않을 경우:** 수십 개의 DB 쿼리를 수행하는 테스트를 포함하여 모든 테스트를 실행하면 개발자가 작은 변경을 할 때마다 매우 느려질 수 있으므로 테스트 실행을 방해 할 수 있다
+**그렇게 하지 않을 경우:** 전용 도구없이 코드를 취약점 없이 깨끗하게 유지하려면 온라인 출판물들을 항상 유심히 찾아읽어야 한다. 꽤나 성가신 일이다.
 
 <br/><br/>
 
-## ![✔] 4.7 테스트 범위를 확인하면 잘못 된 테스트 패턴을 확인하는 것을 도울 수 있다
+## ![✔] 4.7 테스트를 태그하라 (#테스트)
 
-**핵심요약:** [Istanbul/NYC ](https://github.com/gotwarlost/istanbul)와 같은 코드 커버리지 도구는 다음 세 가지 이유로 매우 유용하다. 첫째, 무료다(노력이 전혀 필요 없음). 둘째, 테스트 범위의 감소를 확인하는 데 도움을 준다. 마지막으로 테스트의 불일치를 강조합니다. 색이 입혀진 코드 범위 보고서를 보면서 알아 챘겠지만, 예를 들어 catch 절처럼 테스트되지 않은 코드 영역 (테스트에서는 오류가 발생했을 때의 실제 앱 동작 경로가 아니라 오류가 발생하지 않는 경로 만 호출한다는 의미)을 확인할 수 있다. 커버리지가 특정 임계 값 아래로 떨어지면 빌드 실패로 설정하라
+**핵심요약:** 다른 종류의 테스트는 서로 다른 시나리오를 바탕으로 실행해야한다: 빌드 성공유무 테스트(quick smoke)나 IO 입출력이 없는 테스트는 개발자가 파일을 저장하거나 commit 할 때마다 실행하고, 더 포괄적인 단대단 (end-to-end 테스트는 보통 풀리퀘스트를 제출 할 때마다 실행한다. 이건 테스트를 #cold #api #sanity 와 같은 키워드로 태그해서 원하는 테스트들만 부분적으로 grep 으로 test harness를 검색해서 실행하면 된다. 예를 들면, [모카](https://mochajs.org/)에서 sanity 테스트 그룹만 실행하고 싶다면 이렇게 하면 된다: mocha --grep 'sanity'
 
-**그렇게 하지 않을 경우:** 코드의 상당 부분이 테스트에 포함되지 않았다는 것을 알려주는 자동화된 측정 항목은 없다
-
-<br/><br/>
-
-## ![✔] 4.8 오래된 패키지를 검사하라 
-
-**핵심요약:** 원하는 도구(예: 'npm outdated' 또는 [npm-check-updates](https://www.npmjs.com/package/npm-check-updates))를 사용하여 오래된 패키지를 검사하고 CI 파이프 라인에 검사를 삽입하고, 심각한 시나리오에서는 빌드가 실패하도록 하라. 예를 들어 설치된 패키지가 5 패치 커밋 차이나거나(예: 로컬 버전이 1.3.1이고 저장소 버전이 1.3.8 임) 작성자가 더 이상 사용하지 않는 것으로 태그 지정된 경우에 빌드를 종료시키고 버전을 배포하지 못하게하라
-
-**그렇게 하지 않을 경우:** 당신의 상용 버전은 제작자가 위험하다고 태그한 패키지를 실행하게 될것이다
+**그렇게 하지 않을 경우:** 개발자가 조금씩 코드를 바꿀때마다 DB 쿼리를 한다스씩 보내는 테스까지 포함해서 전부 실행하면 개발 속도도 느려지고 개발자들도 점점 테스트를 실행하는걸 꺼리게 된다
 
 <br/><br/>
 
-## ![✔] 4.9 e2e 테스트를 위해 docker-compose를 사용하라
+## ![✔] 4.8 테스트 범위를 확인하여 안좋은 테스트 패턴을 잡아내라
 
-**핵심요약:** 실제 데이터가 포함된 엔드 투 엔드(e2e) 테스트는 DB와 같은 몇가지 무거운 서비스가 포함되어야 하기때문에 취약한 연결고리가 되고는 했다. docker-compose는 간단한 텍스트 파일과 쉬운 명령을 사용하여 상용 환경과 같은 환경을 만들어서 이 문제를 쉽게 만들어준다. 이것을 이용해서 e2e테스트에 필요한 모든 서비스, DB 그리고 격리된 네트워크를 만들 수 있다. 또한 마지막으로 각 테스트 전에 호출되고 바로 사라지는 무상태(stateless) 환경을 유지하게 해준다
+**핵심요약:** [이스탄불](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc)같은 코드 커버리지 도구가 좋은 이유는 세가지가 있다: 무료이고 (거져먹는거다), 테스트 범위가 줄어드는것을 잡아내주고, 마지막으로 테스트 부조화를 하이라이트한다: 색으로 나타낸 코드 커버리지 리포트를 보다보면 catch 절 같이 테스트 하지 않는 부분들을 알아채기 시작할것이다. (테스트는 보통 경로만 테스트하기에 앱이 에러가 날 경우에는 어떻게 반응하는지는...) 커버리지가 일정 기준 이하로 떨어지면 빌드가 자동으로 실패하게 해라.
 
-**그렇게 하지 않을 경우:** docker-compose가 없으면 개발자 머신을 포함한 각 테스트 환경에 대한 테스트 DB를 유지 관리해야하며 모든 DB를 동기화하여 테스트 결과가 환경에 따라 달라지지 않도록 해야한다
+**그렇게 하지 않을 경우:** 코드의 상당한 범위가 테스트로 커버되지 않더라도 자동적으로 측정하여 알 길이 없다.
 
 <br/><br/>
 
-## ![✔] 4.10 정적 분석 도구를 이용하여 정기적으로 리팩터링하라
+## ![✔] 4.9 오래되어 뒤떨어진 패키지는 없는지 검사해라
 
-**핵심요약:** 정적 분석 도구는 객관적인 방법으로 코드 품질을 향상시키고 코드를 유지 관리 가능하도록 도와 준다. CI 빌드에 정적 분석 도구를 추가하여 코드에서 수상한 낌새를 발견하면 실패하도록 할 수 있습니다. 일반 linting에 비해 더 나은 점은 여러 파일의 컨텍스트에서 품질을 검사하거나(예: 중복 검사) 고급 분석을 수행하고(예: 코드 복잡성) 코드 문제의 내역 및 진행 상황을 추적 할 수있다는 것이다. 사용할 수있는 도구의 두 가지 예는 [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube))와 [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate))입니다.
+**핵심요약:** 설치된 패키지중 outdated 된 패키지는 없는지 선호하는 도 (예: 'npm outdated'나 [npm-check-updates](https://www.npmjs.com/package/npm-check-updates))를 써서 확인하고, 심할 경우 빌드가 실패하도록 CI 경로에 이 체크를 주입해라. 예를 들면, 설치된 패키지가 패치 commit 5개 이상 뒤쳐졌거나 (예: 로컬은 1.3.1버젼인데 repository 버젼은 1.3.8이라던가) 제작자가 deprecated 되었다고 태그하면 빌드를 죽이고 이 버젼을 배포하지 못하게 막아라.
 
-**그렇게 하지 않을 경우:** 형편없는 코드의 품질로 인해 버그와 성능은 반짝이는 새로운 라이브러리나 최첨단 기술로는 고칠수 없는 문제가 되어버릴 것이다
+**그렇게 하지 않을 경우:** 제작자가 직접 불안정하다고 태그한 패키지가 프로덕션에서 놀아날 수 있다
+
+<br/><br/>
+
+## ![✔] 4.10 프로덕션과 비슷한 환경에서 e2e 테스트를 실행해라
+
+**핵심요약:** 실제 데이터를 쓰는 end to end 테스트는 DB같은 여러 묵직한 서비스에 의존하기에 CI 프로세스의 취약점이었다. 가능한 한 프로덕션과는 최대한 동떨어진 환경을 써라.
+
+**그렇게 하지 않을 경우:** docker-compose 없이는 팀들이 테스트 환경별로 (각 개발자의 컴퓨터 포함) 테스트 DB를 유지하고, 환경에 따라 테스트 결과가 다르게 나오지 않도록 이 모든 DB들을 동기화해야한다.
+
+<br/><br/>
+
+## ![✔] 4.11 정적분석도구를 이용해서 refactor를 정기적으로 해라
+
+**핵심요약:** 정적분석도구(static analysis tool)는 코드의 품질을 객관적으로 개선하고 코드 유지를 쉽게 해준다. 코드스멜을 감지하면 CI 빌드가 실패하도록 정적분석도구를 넣어주면 된다. 이게 단순한 린보팅다 나은 주된 이유로는 여러 파일에 걸친 맥락에서 품질을 점검할 수 있다는 점 (예: 중복된 코드 감지), 더 발달된 분석을 할 수 있다는 점 (예: 코드 복잡도), 코드 문제의 전적과 진전을 따라 볼 수 있다는 점이 있다. 쓸만한 도구의 예를 두가지를 들자면 [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) 와 [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate))가 있다.
+
+**그렇게 하지 않을 경우:** 제아무리 반짝이는 새로나온 라이브러리나 최첨단 기능을 써봤자 코드 품질이 불량하면 버그와 성능은 못고친다
 
 🔗 [**자세히 보기: Refactoring!**](/sections/testingandquality/refactoring.md)
 
 <br/><br/>
 
-## ![✔] 4.11 CI 플랫폼을 잘 선택하라 (Jenkins vs CircleCI vs Travis vs 기타 다른 모든 것들)
+## ![✔] 4.12 CI 플랫폼은 신중하게 선택해라 (Jenkins vs CircleCI vs Travis vs 나머지)
 
-**핵심요약:** 지속적 통합 플랫폼(CICD)은 모든 품질 도구들(test, lint 등)을 호스팅할것이기 때문에 다양한 생태계의 플러그인을 가지고 있어야 한다. Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it should come with a vibrant ecosystem of plugins. 예전에는 학습이 어렵고 복잡한 설정을 요구하는 [Jenkins](https://jenkins.io/)가 가장 큰 커뮤니티를 보유하고 있고 매우 강력한 플랫폼을 갖추고 있기 때문에 대부분의 프로젝트에서 기본 선택이었다. 요즘에는 [CircleCI](https://circleci.com)와 같은 SaaS 도구를 사용하여 CI 솔루션을 설정하는 것이 훨씬 쉬워졌다. 이러한 도구를 사용하면 전체 인프라 관리 부담없이 유연한 CI 파이프 라인을 만들 수 있다. 결국은 견고성과 속도 사이의 트레이드 오프라고 할수있다.
+**핵심요약:** 지속적 통합 플랫폼(CICD)은 품질 관리 도구(예: 테스트, 린트)들을 돌릴 수 있게 플러그인 생태계가 활발해야 한다. 예전에는 대부분의 프로젝트들이 배우기는 어려워도 커뮤니티도 제일 크고 강력한 플랫폼을 가진 [Jenkins](https://jenkins.io/)를 기본으로 썼다. 요즘엔 [CircleCI](https://circleci.com)등의 SaaS 해결책을 쓰는게 훨씬 더 쉬워졌다. 이런 도구들은 인프라 전체를 관리하는 부담 없이도 유연한 CI 경로를 만들 수 있게 해준다. 결국에는 안전성과 빠름의 상호 절충이다 - 조심해서 선택해라.
 
-**그렇게 하지 않을 경우:** CircleCI와 같은 중소 솔루션 업체를 선택하면 커스터마이즈가 많이 필요할 때 힘들 수 있다. 반대로 Jenkins를 사용하면 인프라 설치에 시간을 많이 소모하게 될 수 있다.
+**그렇게 하지 않을 경우:** 잘 알려지지 않은 중소 솔루션 업체를 쓰다간 흔치 않은 고급 설정을 써야할 때 막혀버릴 수도 있다. 하지만 반대로, Jenkins를 택하면 인프라를 수축하는데 소중한 시간을 다 빼앗길 수도 있다.
 
 🔗 [**자세히 보기: Choosing CI platform**](/sections/testingandquality/citools.korean.md)
 
-<br/><br/><br/>
+## ![✔] 4.13 미들웨어들은 따로 테스트해라
 
+**핵심요약:** 여러 요청에 걸친 막대한 로직을 미들웨어가 수용하는 경우, 웹 프레임워크 전체를 깨우지 않고 따로 테스트 할만한 가치가 있다. {req, res, next} 객체들을 스텁(stub)하여 염탐(spy)하면 쉽게 달성할 수 있다.
+
+**그렇게 하지 않을 경우:**  Express 미들웨어의 버그 === 거의 모든 요정의 버그
+
+🔗 [**자세히 보기: Test middlewares in isolation**](/sections/testingandquality/test-middlewares.md)
+
+<br/><br/><br/>
 
 <p align="right"><a href="#목차">⬆ 목차로 돌아가기</a></p>
 
@@ -1049,6 +1070,7 @@ Independent Node.js consultant who works with customers in USA, Europe, and Isra
 [Kyle Martin](https://github.com/js-kyle)
 <a href="https://twitter.com/kylemartin_93"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
 <a href="https://www.linkedin.com/in/kylemartinnz"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
+
 Full Stack Developer & Site Reliability Engineer based in New Zealand, interested in web application security, and architecting and building Node.js applications to perform at global scale.
 
 <br/>
@@ -1085,6 +1107,84 @@ Our collaborators are members who are contributing to the repository on a reguar
 ## 감사 노트
 
 하나의 단어를 고치는 것 부터 새로운 모범사례까지, 어떤 컨트리뷰트든 환영합니다. 아래는 이 프로젝트에 컨트리뷰트한 모든 사람의 리스트입니다. 🌻는 성공적인 풀리퀘스트를 표시하고, ⭐는 새로운 모범사례를 의미합니다.
+
+### Flowers
+
+🌻 [Kevin Rambaud](https://github.com/kevinrambaud),
+🌻 [Michael Fine](https://github.com/mfine15),
+🌻 [Shreya Dahal](https://github.com/squgeim),
+🌻 [ChangJoo Park](https://github.com/ChangJoo-Park),
+🌻 [Matheus Cruz Rocha](https://github.com/matheusrocha89),
+🌻 [Yog Mehta](https://github.com/BitYog),
+🌻 [Kudakwashe Paradzayi](https://github.com/kudapara),
+🌻 [t1st3](https://github.com/t1st3),
+🌻 [mulijordan1976](https://github.com/mulijordan1976),
+🌻 [Matan Kushner](https://github.com/matchai),
+🌻 [Fabio Hiroki](https://github.com/fabiothiroki),
+🌻 [James Sumners](https://github.com/jsumners),
+🌻 [Chandan Rai](https://github.com/crowchirp),
+🌻 [Dan Gamble](https://github.com/dan-gamble),
+🌻 [PJ Trainor](https://github.com/trainorpj),
+🌻 [Remek Ambroziak](https://github.com/reod),
+🌻 [Yoni Jah](https://github.com/yonjah),
+🌻 [Misha Khokhlov](https://github.com/hazolsky),
+🌻 [Evgeny Orekhov](https://github.com/EvgenyOrekhov),
+🌻 [Gediminas Petrikas](https://github.com/gediminasml),
+🌻 [Isaac Halvorson](https://github.com/hisaac),
+🌻 [Vedran Karačić](https://github.com/vkaracic),
+🌻 [lallenlowe](https://github.com/lallenlowe),
+🌻 [Nathan Wells](https://github.com/nwwells),
+🌻 [Paulo Vítor S Reis](https://github.com/paulovitin),
+🌻 [syzer](https://github.com/syzer),
+🌻 [David Sancho](https://github.com/davesnx),
+🌻 [Robert Manolea](https://github.com/pupix),
+🌻 [Xavier Ho](https://github.com/spaxe),
+🌻 [Aaron Arney](https://github.com/ocularrhythm),
+🌻 [Jan Charles Maghirang Adona](https://github.com/septa97),
+🌻 [Allen Fang](https://github.com/AllenFang),
+🌻 [Leonardo Villela](https://github.com/leonardovillela),
+🌻 [Michal Zalecki](https://github.com/MichalZalecki)
+🌻 [Chris Nicola](https://github.com/chrisnicola),
+🌻 [Alejandro Corredor](https://github.com/aecorredor),
+🌻 [Ye Min Htut](https://github.com/ymhtut),
+🌻 [cwar](https://github.com/cwar),
+🌻 [Yuwei](https://github.com/keyfoxth),
+🌻 [Utkarsh Bhatt](https://github.com/utkarshbhatt12),
+🌻 [Duarte Mendes](https://github.com/duartemendes),
+🌻 [Sagir Khan](https://github.com/sagirk),
+🌻 [Jason Kim](https://github.com/serv),
+🌻 [Mitja O.](https://github.com/Max101),
+🌻 [Sandro Miguel Marques](https://github.com/SandroMiguel),
+🌻 [Gabe Kuslansky](https://github.com/GabeKuslansky),
+🌻 [Ron Gross](https://github.com/ripper234),
+🌻 [Valeri Karpov](https://github.com/vkarpov15)
+🌻 [Sergio](https://github.com/imsergiobernal),
+🌻 [Duarte Mendes](https://github.com/duartemendes),
+🌻 [Nikola Telkedzhiev](https://github.com/ntelkedzhiev),
+🌻 [Vitor Godoy](https://github.com/vitordagamagodoy),
+🌻 [Manish Saraan](https://github.com/manishsaraan),
+🌻 [Sangbeom Han](https://github.com/uronly14me),
+🌻 [blackmatch](https://github.com/blackmatch),
+🌻 [Joe Reeve](https://github.com/ISNIT0),
+🌻 [Marcelo Melo](https://github.com/marcelosdm),
+🌻 [Ryan Busby](https://github.com/BusbyActual),
+🌻 [Iman Mohamadi](https://github.com/ImanMh),
+🌻 [Remek Ambroziak](https://github.com/reod),
+🌻 [Sergii Paryzhskyi](https://github.com/HeeL),
+🌻 [Kapil Patel](https://github.com/kapilepatel),
+🌻 [迷渡](https://github.com/justjavac),
+🌻 [Hozefa](https://github.com/hozefaj),
+🌻 [Ethan](https://github.com/el-ethan),
+🌻 [Sam](https://github.com/milkdeliver),
+🌻 [Arlind](https://github.com/ArlindXh),
+🌻 [Teddy Toussaint](https://github.com/ttous),
+🌻 [Lewis](https://github.com/LewisArdern),
+🌻 [DouglasMV](https://github.com/DouglasMV),
+🌻 [Corey Cleary](https://github.com/coreyc),
+🌻 [Mehmet Perk](https://github.com/mperk),
+🌻 [Ryan Ouyang](https://github.com/ryanouyang),
+🌻 [Gabriel Lidenor](https://github.com/GabrielLidenor),
+🌻 [Roman](https://github.com/animir),
 🌻 [Invvard](https://github.com/Invvard),
 🌻 [Rômulo Garofalo](https://github.com/romulogarofalo),
 🌻 [Tho Q Luong](https://github.com/thoqbk),
@@ -1092,6 +1192,15 @@ Our collaborators are members who are contributing to the repository on a reguar
 🌻 [Martin Muzatko](https://github.com/MartinMuzatko)
 
 
-We appreciate any contribution, from a single word fix to a new best practice. View our contributors and [contributing documentation here!](CONTRIBUTORS.md)
+### Stars
+
+⭐ [Kyle Martin](https://github.com/js-kyle),
+⭐ [Keith Holliday](https://github.com/TheHollidayInn),
+⭐ [Corey Cleary](https://github.com/coreyc),
+⭐ [Maximilian Berkmann](https://github.com/Berkmann18),
+⭐ [DouglasMV](https://github.com/DouglasMV),
+⭐ [Marcelo Melo](https://github.com/marcelosdm),
+⭐ [Mehmet Perk](https://github.com/mperk),
+⭐ [Ryan Ouyang](https://github.com/ryanouyang)
 
 <br/><br/><br/>
