@@ -232,6 +232,8 @@
 
 **그렇게 하지 않을 경우:** 프로그래머가 쓸데없는 간격과 한 줄의 길이(line-width) 문제에 대해서 집중해야 하고 프로젝트의 코드 스타일에 대해 과도하게 생각하느라 시간을 낭비해야 할 수도 있다.
 
+🔗 [**자세히 보기: ESLint와 Prettier 사용하기**](/sections/codestylepractices/eslint_prettier.korean.md)
+
 <br/><br/>
 
 ## ![✔] 3.2 Node.js에 특화된 플러그인들
