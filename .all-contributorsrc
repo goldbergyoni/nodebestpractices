@@ -860,6 +860,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "kennethfreitas",
+      "name": "Kenneth Freitas",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/55669043?v=4",
+      "profile": "https://kennethfreitas.github.io/",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
