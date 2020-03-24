@@ -851,6 +851,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "kiwikern",
+      "name": "Kim Kern",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/2671139?v=4",
+      "profile": "https://www.kimkern.de",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
