@@ -1,6 +1,6 @@
 # Użyj Async-Await lub promises do obsługi błędów asynchronicznych
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Callbacks nie skalują się dobrze, ponieważ większość programistów nie zna ich. Zmuszają do sprawdzania błędów, radzenia sobie z nieprzyjemnym zagnieżdżaniem kodu i utrudniają rozumowanie przepływu kodu. Biblioteki promises takie jak BlueBird, async i Q pakują standardowy styl kodu za pomocą RETURN i THROW do sterowania przebiegiem programu. W szczególności obsługują ulubiony styl obsługi błędów try-catch, który pozwala uwolnić główną ścieżkę kodu od radzenia sobie z błędami w każdej funkcji
 
