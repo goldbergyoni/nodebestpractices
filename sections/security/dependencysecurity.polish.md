@@ -1,6 +1,6 @@
 # Stale i automatycznie sprawdzaj podatne zależności
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Większość aplikacji Node.js polega w dużej mierze na dużej liczbie modułów innych firm, npm lub Yarn, które są popularnymi rejestrami pakietów, ze względu na łatwość i szybkość programowania. Jednak wadą tej korzyści jest ryzyko związane z bezpieczeństwem wynikające z włączenia nieznanych luk w zabezpieczeniach aplikacji, które to ryzyko jest rozpoznawane po umieszczeniu go na liście najważniejszych zagrożeń bezpieczeństwa aplikacji internetowych OWASP.
 
