@@ -1,6 +1,6 @@
 # Unikaj publikowania danych wrażliwych w rejestrze npm
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 Należy podjąć środki ostrożności, aby uniknąć ryzyka przypadkowego opublikowania danych wrażliwych w publicznych rejestrach npm. Plik `.npmignore` może być użyty do umieszczenia na czarnej liście określonych plików lub folderów, lub tablica `files` w `package.json` może działać jako biała lista.
 
 Aby uzyskać widok tego, co publikacja npm naprawdę opublikuje w rejestrze, można dodać flagę `--dry-run` do polecenia npm opublikuj, aby zapewnić pełny widok utworzonego pakietu tarbell.
