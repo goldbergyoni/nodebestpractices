@@ -1,6 +1,6 @@
 # Przepływy błędów testowych przy użyciu ulubionego środowiska testowego
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Testowanie „szczęśliwych” ścieżek nie jest lepsze niż testowanie błędów. Dobry zasięg kodu testowego wymaga testowania wyjątkowych ścieżek. W przeciwnym razie nie ma zaufania, że wyjątki rzeczywiście są obsługiwane poprawnie. Każda platforma testowania jednostek, jak [Mocha](https://mochajs.org/) i [Chai](http://chaijs.com/), obsługuje testowanie wyjątków (przykłady kodu poniżej). Jeśli okaże się, że testowanie każdej funkcji wewnętrznej i wyjątku jest uciążliwe, możesz zadowolić się testowaniem tylko błędów HTTP interfejsu REST API.
 
