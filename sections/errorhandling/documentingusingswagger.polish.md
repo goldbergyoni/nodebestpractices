@@ -1,8 +1,8 @@
 # Dokumentuj błędy interfejsu API za pomocą Swagger lub GraphQL
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
-REST API zwracają wyniki przy użyciu kodów stanu HTTP, użytkownik API musi bezwzględnie wiedzieć nie tylko o schemacie interfejsu API, ale także o potencjalnych błędach - osoba wywołująca może wtedy złapać błąd i taktownie go obsłużyć. Na przykład dokumentacja interfejsu API może z góry stwierdzać, że status HTTP 409 jest zwracany, gdy nazwa klienta już istnieje (zakładając, że interfejs API rejestruje nowych użytkowników), aby osoba wywołująca mogła odpowiednio wyświetlić najlepszy UX dla danej sytuacji. Swagger to standard definiujący schemat dokumentacji API oferujący ekosystem narzędzi umożliwiających łatwe tworzenie dokumentacji online, patrz ekrany drukowania poniżej
+REST API zwracają wyniki przy użyciu kodów stanu HTTP, użytkownik API musi bezwzględnie wiedzieć nie tylko o schemacie interfejsu API, ale także o potencjalnych błędach - osoba wywołująca może wtedy złapać błąd i taktownie go obsłużyć. Na przykład dokumentacja interfejsu API może z góry stwierdzać, że status HTTP 409 jest zwracany, gdy nazwa klienta już istnieje (zakładając, że interfejs API rejestruje nowych użytkowników), aby osoba wywołująca mogła odpowiednio wyświetlić najlepszy UX dla danej sytuacji. Swagger to standard definiujący schemat dokumentacji API oferujący ekosystem narzędzi umożliwiających łatwe tworzenie dokumentacji online, patrz ekrany drukowania poniżej.
 
 Jeśli już przyjąłeś GraphQL dla punktów końcowych API, twój schemat zawiera już ścisłe gwarancje, jak powinny wyglądać błędy ([przedstawione w specyfikacji](https://facebook.github.io/graphql/June2018/#sec-Errors)) i jak powinny być obsługiwane przez narzędzia po stronie klienta. Ponadto można również uzupełnić je dokumentacją opartą na komentarzach.
 
