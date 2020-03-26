@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Kod aplikacji nie powinien obsługiwać routingu dziennika, ale zamiast tego powinien używać narzędzia logger do pisania w `stdout / stderr`. „Log routing” oznacza pobieranie i przekazywanie dzienników do innej lokalizacji niż aplikacja lub proces aplikacji, na przykład zapisywanie dzienników w pliku, bazie danych itp. Powód tego jest w większości dwojaki: 1) separation of concerns oraz 2) [12-Factor best practices for modern applications](https://12factor.net/logs).
 
