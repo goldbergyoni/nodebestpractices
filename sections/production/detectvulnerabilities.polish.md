@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Nowoczesne aplikacje Node mają dziesiątki, a czasem setki zależności. Jeśli którakolwiek z zależności, z której korzystasz
 ma znaną lukę w zabezpieczeniach, Twoja aplikacja też.
