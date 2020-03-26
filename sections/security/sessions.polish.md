@@ -3,7 +3,7 @@
 <br/><br/>
 
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Wiele popularnych programów pośrednich sesji nie stosuje ustawień najlepszych praktyk / bezpiecznych plików cookie po wyjęciu z box'a. Dostosowanie tych ustawień w stosunku do ustawień domyślnych zapewnia lepszą ochronę zarówno dla użytkownika, jak i aplikacji, poprzez zmniejszenie zagrożenia atakami, takimi jak przejęcie sesji i identyfikacja sesji.
 
