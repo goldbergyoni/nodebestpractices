@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 W przypadku danych konfiguracyjnych wiele rzeczy może po prostu denerwować i spowalniać:
 
