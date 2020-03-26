@@ -1,8 +1,8 @@
 # Rozróżnij błędy operacyjne i programistyczne
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
-Rozróżnienie następujących dwóch typów błędów zminimalizuje przestoje aplikacji i pomoże uniknąć szalonych błędów: Błędy operacyjne odnoszą się do sytuacji, w których rozumiesz, co się stało i jego wpływ - na przykład zapytanie do jakiejś usługi HTTP nie powiodło się z powodu problemu z połączeniem. Z drugiej strony błędy programisty odnoszą się do przypadków, w których nie masz pojęcia, dlaczego, a czasem skąd pochodzi błąd - może to być jakiś kod, który próbował odczytać niezdefiniowaną wartość lub pula połączeń BD, która przecieka pamięć. Błędy operacyjne są stosunkowo łatwe w obsłudze - zwykle wystarczy zarejestrować błąd. Gdy pojawia się błąd programisty, rzeczy stają się włochate, aplikacja może być niespójna i nie ma nic lepszego niż zrestartować z wdziękiem
+Rozróżnienie następujących dwóch typów błędów zminimalizuje przestoje aplikacji i pomoże uniknąć szalonych błędów: Błędy operacyjne odnoszą się do sytuacji, w których rozumiesz, co się stało i ich wpływ - na przykład zapytanie do jakiejś usługi HTTP nie powiodło się z powodu problemu z połączeniem. Z drugiej strony błędy programisty odnoszą się do przypadków, w których nie masz pojęcia, dlaczego, a czasem skąd pochodzi błąd - może to być jakiś kod, który próbował odczytać niezdefiniowaną wartość lub pula połączeń BD, z której wycieka pamięć. Błędy operacyjne są stosunkowo łatwe w obsłudze - zwykle wystarczy zarejestrować błąd. Gdy pojawia się błąd programisty, rzeczy stają się zagmatwane, aplikacja może być niespójna i nie ma nic lepszego niż ją po prostu zrestartować.
 
 ### Przykład kodu - oznaczenie błędu jako działającego (zaufanego)
 
