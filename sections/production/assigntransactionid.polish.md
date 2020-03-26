@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Typowy dziennik to magazyn wpisów ze wszystkich komponentów i żądań. Po wykryciu jakiejś podejrzanej linii lub błędu staje się pokręcony, aby dopasować inne linie należące do tego samego określonego przepływu (np. użytkownik „John” próbował coś kupić). Staje się to jeszcze bardziej krytyczne i trudne w środowisku mikrousług, gdy żądanie / transakcja może obejmować wiele komputerów. Należy rozwiązać ten problem, przypisując unikalną wartość identyfikatora transakcji do wszystkich wpisów z tego samego żądania, aby po wykryciu jednej linii można skopiować identyfikator i wyszukać każdą linię o podobnym identyfikatorze transakcji. Jednak osiągnięcie tego w Node nie jest proste, ponieważ pojedynczy wątek służy do obsługi wszystkich żądań - rozważ użycie biblioteki, która może grupować dane na poziomie żądań - patrz przykład kodu na następnym slajdzie. Podczas wywoływania innej mikrousługi przekaż identyfikator transakcji za pomocą nagłówka HTTP, takiego jak „x-transaction-id”, aby zachować ten sam kontekst.
 
