@@ -1,6 +1,6 @@
 # Zapobiegaj złośliwemu RegExowi przeciążania wykonania pojedynczego wątku
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Ryzykiem nieodłącznie związanym z używaniem wyrażeń regularnych są zasoby obliczeniowe, które wymagają analizy tekstu i dopasowania do określonego wzorca. W przypadku platformy Node.js, w której dominuje jednowątkowa pętla zdarzeń, operacja związana z procesorem, taka jak rozwiązywanie wzorca wyrażeń regularnych, spowoduje, że aplikacja nie będzie odpowiadać.
 Jeśli to możliwe, unikaj RegEx lub odrocz zadanie do dedykowanej biblioteki, takiej jak [validator.js](https://github.com/chriso/validator.js) lub [safe-regex](https://github.com/substack/safe-regex), aby sprawdzić, czy wzorzec RegEx jest bezpieczny.
