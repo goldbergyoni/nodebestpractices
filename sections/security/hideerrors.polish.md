@@ -1,6 +1,6 @@
 # Ukryj szczegóły błędu przed klientem
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Należy unikać ujawniania klientowi szczegółów błędu aplikacji podczas produkcji ze względu na ryzyko ujawnienia wrażliwych szczegółów aplikacji, takich jak ścieżki plików serwera, używane moduły innych firm i inne wewnętrzne przepływy pracy aplikacji, które mogą zostać wykorzystane przez atakującego.
 Express jest wyposażony we wbudowany moduł obsługi błędów, który zajmuje się wszelkimi błędami, które mogą wystąpić w aplikacji. Ta domyślna funkcja oprogramowania pośredniego obsługująca błędy jest dodawana na końcu stosu funkcji oprogramowania pośredniego.
