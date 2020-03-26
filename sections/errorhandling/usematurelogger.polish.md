@@ -1,6 +1,6 @@
 # Użyj dojrzałego programu rejestrującego, aby zwiększyć widoczność błędów
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Wszyscy kochamy console.log, ale oczywiście poważny projekt to renomowany i trwały rejestrator, taki jak [Winston] [winston] (bardzo popularny) lub [Pino] [pino] (nowy dzieciak w mieście, który koncentruje się na wydajności). Zestaw praktyk i narzędzi pomoże znacznie szybciej uzasadnić błędy - (1) często rejestruj dane przy użyciu różnych poziomów (debugowanie, informacje, błąd), (2) podczas logowania, podaj informacje kontekstowe jako obiekty JSON, patrz przykład poniżej. (3) Oglądaj i filtruj dzienniki za pomocą interfejsu API do wysyłania zapytań (wbudowanego w większość programów rejestrujących) lub oprogramowania do przeglądania dzienników. (4) Ujawnij i wyślij oświadczenie dziennika dla zespołu operacyjnego za pomocą narzędzi wywiadu operacyjnego, takich jak Splunk.
 
