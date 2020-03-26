@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Raport z testu powinien informować, czy bieżąca wersja aplikacji spełnia wymagania osób, które niekoniecznie znają kod: testera, wdrażającego program DevOps i przyszłego ciebie za dwa lata. Można to najlepiej osiągnąć, jeśli testy mówią na poziomie wymagań i obejmują 3 części:
 
