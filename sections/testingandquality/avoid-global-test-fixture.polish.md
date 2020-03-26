@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Kierując się złotą zasadą testowania - spraw, aby przypadki testowe były wyjątkowo proste, każdy test powinien dodawać i działać na swoim własnym zestawie wierszy BD, aby zapobiec sprzężeniu i łatwo uzasadnić przebieg testu. W rzeczywistości jest to często naruszane przez testerów, którzy zapełniają bazę danych danymi przed uruchomieniem testów (znanych również jako „urządzenie testowe”) w celu poprawy wydajności. Chociaż wydajność jest istotnym problemem - można ją złagodzić (np. BD w pamięci, patrz punkt „Testowanie komponentów”), jednak złożoność testu jest bardzo bolesnym smutkiem, który powinien rządzić innymi rozważaniami. Praktycznie spraw, aby każdy przypadek testowy wyraźnie dodał potrzebne rekordy BD i działał tylko na tych rekordach. Jeśli wydajność stanie się kluczowym problemem - zrównoważony kompromis może przyjść w postaci inicjowania jedynego zestawu testów, które nie powodują mutacji danych (np. zapytania)
 
