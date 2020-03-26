@@ -2,7 +2,7 @@
 
 ### Wyjaśnienie jednym akapitem
 
-Gdzieś w twoim kodzie obiekt procedury obsługi błędów jest odpowiedzialny za podjęcie decyzji, jak postępować, gdy błąd zostanie zgłoszony - jeśli błąd jest zaufany (tj. błąd operacyjny, zobacz dalsze wyjaśnienie w najlepszych praktykach #3), zapisywanie w pliku dziennika może być wystarczające. Sprawa staje się pokręcona, jeśli błąd nie jest znany - oznacza to, że niektóre komponenty mogą być wadliwe, a wszystkie przyszłe żądania mogą ulec awarii. Na przykład, zakładając singletonową, stateful token issuer service, która zgłosiła wyjątek i utraciła swój stan - od teraz może zachowywać się niespodziewanie i powodować niepowodzenie wszystkich żądań. W tym scenariuszu zabij proces i użyj „narzędzia Restarter” (takiego jak Forever, PM2 itp.), Aby zacząć od nowa z czystym stanem.
+Gdzieś w twoim kodzie obiekt procedury obsługi błędów jest odpowiedzialny za podjęcie decyzji, jak postępować, gdy błąd zostanie zgłoszony - jeśli błąd jest zaufany (tj. błąd operacyjny, zobacz dalsze wyjaśnienie w najlepszych praktykach #3), zapisywanie w pliku dziennika może być wystarczające. Sprawa staje się pokręcona, jeśli błąd nie jest znany - oznacza to, że niektóre komponenty mogą być wadliwe, a wszystkie przyszłe żądania mogą ulec awarii. Na przykład, zakładając singletonowy serwis stateful token issuer, który zgłosił wyjątek i utracił swój stan - od teraz może zachowywać się niespodziewanie i powodować niepowodzenie wszystkich żądań. W tym scenariuszu zabij proces i użyj „narzędzia Restarter” (takiego jak Forever, PM2 itp.), Aby zacząć od nowa z czystym stanem.
 
 ### Przykład kodu: decydowanie o awarii
 
