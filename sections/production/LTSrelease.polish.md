@@ -1,6 +1,6 @@
 # Użyj wersji LTS Node.js w produkcji
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Upewnij się, że korzystasz z wersji LTS (Long Term Support) Node.js w produkcji, aby otrzymywać krytyczne poprawki błędów, aktualizacje zabezpieczeń i ulepszenia wydajności.
 
