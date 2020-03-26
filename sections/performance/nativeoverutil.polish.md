@@ -3,7 +3,7 @@
 
 <br/><br/>
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 Czasami użycie metod natywnych jest lepsze niż wymaganie _lodash_ lub _underscore_, ponieważ te biblioteki mogą prowadzić do utraty wydajności lub zajmować więcej miejsca niż potrzeba.
 Wydajność przy użyciu metod rodzimych skutkuje [ogólnym ~50% zyskiem](https://github.com/Berkmann18/NativeVsUtils/blob/master/analysis.xlsx), który obejmuje następujące metody: `Array.concat`,` Array.fill`, `Array.filter`, `Array.map`, `(Array|String).indexOf`, `Object.find`, ...
 
