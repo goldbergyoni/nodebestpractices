@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 W idealnym świecie programista nie powinien zajmować się wyciekami pamięci. W rzeczywistości problemy z pamięcią to znane problemy węzłów, o których trzeba pamiętać. Przede wszystkim należy stale monitorować zużycie pamięci. W witrynach programistycznych i małych zakładach produkcyjnych można ręcznie oceniać za pomocą poleceń systemu Linux lub narzędzi i bibliotek npm, takich jak inspektor węzłów i memwatch. Główną wadą tych ręcznych czynności jest to, że wymagają one aktywnego monitorowania przez człowieka - w przypadku poważnych zakładów produkcyjnych absolutnie niezbędne jest użycie solidnych narzędzi monitorowania, np. (AWS CloudWatch, DataDog lub inny podobny proaktywny system), który ostrzega o wystąpieniu wycieku. Istnieje również kilka wskazówek programistycznych, aby zapobiec wyciekom: unikaj przechowywania danych na poziomie globalnym, używaj strumieni danych o dynamicznym rozmiarze, ogranicz zakres zmiennych za pomocą let i const.
 
