@@ -1,6 +1,6 @@
 # Używaj tylko wbudowanego obiektu Error
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Zezwalająca natura JavaScript wraz z różnorodnymi opcjami przepływu kodu (np. EventEmitter, Callbacki, Promises itp.) popycha do dużej rozbieżności w sposobie, w jaki programiści zgłaszają błędy - niektóre ciągi znaków, inne definiują własne typy niestandardowe. Korzystanie z wbudowanego obiektu Error Node.js pomaga zachować jednolitość w kodzie, a dzięki bibliotekom stron trzecich zachowuje również istotne informacje, takie jak StackTrace. Zgłaszając wyjątek, zwykle dobrą praktyką jest wypełnienie go dodatkowymi właściwościami kontekstowymi, takimi jak nazwa błędu i powiązany kod błędu HTTP. Aby osiągnąć tę jednolitość i praktyki, rozważ rozszerzenie obiektu Error o dodatkowe właściwości, ale uważaj, aby go nie przesadzić. Ogólnie dobrym pomysłem jest rozszerzenie wbudowanego obiektu Error tylko raz o AppError dla wszystkich błędów na poziomie aplikacji i przekazanie wszelkich danych potrzebnych do rozróżnienia różnych rodzajów błędów jako argumentów. Nie trzeba wielokrotnie rozszerzać obiektu Error (jeden dla każdego przypadku błędu, takiego jak DbError, HttpError) Zobacz przykłady kodu poniżej
 
