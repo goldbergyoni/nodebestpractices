@@ -1,6 +1,6 @@
 # Ogranicz rozmiar payloada przy użyciu odwrotnego proxy lub oprogramowania pośredniego
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Analizowanie treści żądań, na przykład payloadów zakodowanych w JSON, jest operacją wymagającą dużej wydajności, szczególnie w przypadku większych żądań.
 Podczas obsługi żądań przychodzących w aplikacji internetowej należy ograniczyć rozmiar odpowiednich payloadów. Przychodzące requesty z
