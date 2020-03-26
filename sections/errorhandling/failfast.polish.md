@@ -1,6 +1,6 @@
 # Szybko się nie powiedzie, sprawdź poprawność argumentów za pomocą dedykowanej biblioteki
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Wszyscy wiemy, jak sprawdzanie argumentów i szybkie niepowodzenie jest ważne, aby uniknąć ukrytych błędów (patrz przykład kodu anty-wzorca poniżej). Jeśli nie, przeczytaj o programowaniu jawnym i programowaniu defensywnym. W rzeczywistości staramy się go unikać ze względu na irytację związaną z jego kodowaniem (np. myśl o sprawdzeniu poprawności hierarchicznego obiektu JSON za pomocą pól takich jak e-mail i daty) - biblioteki takie jak Joi i Validator zmieniają to żmudne zadanie w bryłę.
 
