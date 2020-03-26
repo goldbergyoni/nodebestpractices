@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Na bardzo podstawowym poziomie monitorowanie oznacza *łatwe* rozpoznanie, kiedy coś złego dzieje się na produkcji. Na przykład, otrzymując powiadomienie e-mailem lub Slack. Wyzwanie polega na wybraniu odpowiedniego zestawu narzędzi, które spełnią Twoje wymagania bez rozbijania banku. Mogę zasugerować, zacznij od zdefiniowania podstawowego zestawu wskaźników, które należy obserwować, aby zapewnić zdrowy stan - procesor, pamięć RAM serwera, pamięć RAM procesu węzła (mniej niż 1,4 GB), liczba błędów w ostatniej chwili, liczba ponownych uruchomień procesu, średni czas reakcji. Następnie zapoznaj się z zaawansowanymi funkcjami, które mogą ci się spodobać, i dodaj do swojej listy życzeń. Niektóre przykłady luksusowej funkcji monitorowania: profilowanie BD, pomiar między usługami (tj. mierzenie transakcji biznesowej), integracja frontendu, udostępnianie surowych danych niestandardowym klientom BI, powiadomienia Slack i wiele innych.
 
