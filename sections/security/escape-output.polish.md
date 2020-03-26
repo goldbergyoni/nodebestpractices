@@ -1,6 +1,6 @@
 # Escape Output
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 HTML i inne języki internetowe mieszają zawartość z kodem wykonywalnym - pojedynczy akapit HTML może zawierać wizualną reprezentację danych wraz z instrukcjami wykonywania JavaScript. Podczas renderowania HTML lub zwracania danych z API uważamy, że czysta treść może w rzeczywistości zawierać kod JavaScript, który zostanie zinterpretowany i wykonany przez przeglądarkę. Dzieje się tak na przykład podczas renderowania treści wstawionych przez osobę atakującą do bazy danych - na przykład `<div> <script> // szkodliwy kod </script> </div>`. Można to złagodzić, instruując przeglądarkę, aby traktowała każdą część niezaufanych danych tylko jako treść i nigdy jej nie interpretowała - ta technika nazywa się ucieczką. Wiele bibliotek NPM i silników szablonów HTML zapewnia możliwość zmiany znaczenia (przykład: [escape-html](https://github.com/component/escape-html), [node-esapi](https://github.com/ESAPI/node-esapi)). Należy unikać ucieczki nie tylko treści HTML, ale także CSS i JavaScript
 
