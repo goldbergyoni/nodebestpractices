@@ -2,9 +2,9 @@
 
 <br/><br/>
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
-Twój kod zależy od wielu zewnętrznych pakietów, powiedzmy, że „wymaga” i użyj momentjs-2.1.4, a następnie domyślnie po wdrożeniu do produkcji npm może pobrać momentjs 2.1.5, co niestety wprowadza kilka nowych błędów do tabeli. Użycie plików konfiguracyjnych npm i argumentu ``–save-exact = true`` instruuje npm, aby odwoływał się do *dokładnie* tej samej wersji, która została zainstalowana, więc następnym razem uruchomisz ``npm install`` (w wersji produkcyjnej lub w kontenerze Docker, który planujesz wysłać do testowania), zostanie pobrana ta sama zależna wersja. Alternatywnym i popularnym podejściem jest użycie pliku `.shrinkwrap` (łatwego do wygenerowania przy użyciu npm), który dokładnie określa, które pakiety i wersje powinny zostać zainstalowane, aby żadne środowisko nie mogło ulec pokusie pobierania nowszych wersji niż oczekiwano.
+Twój kod zależy od wielu zewnętrznych pakietów, powiedzmy, że „wymaga” i używa momentjs-2.1.4, a następnie domyślnie po wdrożeniu do produkcji npm może pobrać momentjs 2.1.5, co niestety wprowadza kilka nowych błędów do tabeli. Użycie plików konfiguracyjnych npm i argumentu ``–save-exact = true`` instruuje npm, aby odwoływał się do *dokładnie* tej samej wersji, która została zainstalowana, więc gdy następnym razem uruchomisz ``npm install`` (w wersji produkcyjnej lub w kontenerze Docker, który planujesz wysłać do testowania), zostanie pobrana ta sama zależna wersja. Alternatywnym i popularnym podejściem jest użycie pliku `.shrinkwrap` (łatwego do wygenerowania przy użyciu npm), który dokładnie określa, które pakiety i wersje powinny zostać zainstalowane, aby żadne środowisko nie mogło ulec pokusie pobierania nowszych wersji niż oczekiwano.
 
 * **Aktualizacja:** od npm 5 zależności są blokowane automatycznie przy użyciu .shrinkwrap. Yarn, nowy menedżer pakietów, domyślnie blokuje również zależności.
 
