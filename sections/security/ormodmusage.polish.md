@@ -1,6 +1,6 @@
 # Zapobieganie podatności na wstrzykiwanie bazy danych za pomocą bibliotek ORM / ODM lub innych pakietów DAL
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Podczas tworzenia logiki bazy danych należy uważać na ewentualne wektory wstrzykiwania, które mogą zostać wykorzystane przez potencjalnych atakujących. Ręczne pisanie zapytań do bazy danych, bez sprawdzania poprawności danych dla żądań użytkowników, jest najłatwiejszym sposobem na uwzględnienie tych luk. Sytuacji tej można jednak łatwo uniknąć, używając odpowiednich pakietów do sprawdzania poprawności danych wejściowych i obsługi operacji na bazie danych. W wielu przypadkach Twój system będzie bezpieczny i będzie działał przy użyciu biblioteki sprawdzania poprawności, takiej jak
 [joi](https://github.com/hapijs/joi) lub [yup](https://github.com/jquense/yup) i ORM / ODM z poniższej listy. Powinno to zagwarantować użycie sparametryzowanych zapytań i powiązań danych, aby zapewnić prawidłowe ucieczkę zweryfikowanych danych i obsługę ich bez otwierania niepożądanych wektorów ataku. Wiele z tych bibliotek ułatwi Ci życie jako programista, umożliwiając wiele przydatnych funkcji, takich jak brak konieczności ręcznego pisania skomplikowanych zapytań, dostarczanie typów dla systemów typów opartych na języku lub konwertowanie typów danych na pożądane formaty. Podsumowując: __zawsze__ sprawdzaj poprawność danych, które zamierzasz przechowywać, i używaj odpowiednich bibliotek mapowania danych do obsługi niebezpiecznej pracy.
