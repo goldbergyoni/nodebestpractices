@@ -3,7 +3,7 @@
 <br/><br/>
 
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Istnieją nagłówki związane z bezpieczeństwem, które służą do dalszego zabezpieczenia aplikacji. Najważniejsze nagłówki są wymienione poniżej. Możesz również odwiedzić witryny połączone na dole tej strony, aby uzyskać więcej informacji na ten temat. Możesz łatwo ustawić te nagłówki za pomocą modułu [Helmet](https://www.npmjs.com/package/helmet) modułu dla express ([Helmet for koa](https://www.npmjs.com/package/koa-helmet)).
 
