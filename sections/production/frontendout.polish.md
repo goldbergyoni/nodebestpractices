@@ -2,13 +2,13 @@
 
 <br/><br/>
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
-W klasycznej aplikacji internetowej backend obsługuje frontend / grafikę w przeglądarce, bardzo powszechnym podejściem w świecie Node jest użycie Express'owego oprogramowania pośredniego do usprawnienia plików statycznych w kliencie. ALE - Node nie jest typową aplikacją internetową, ponieważ wykorzystuje pojedynczy wątek, który nie jest zoptymalizowany do obsługi wielu plików jednocześnie. Zamiast tego rozważ użycie odwrotnego proxy (np. Nginx, HAProxy), magazynu w chmurze lub CDN (np. AWS S3, Azure Blob Storage itp.), który wykorzystuje wiele optymalizacji tego zadania i uzyskuje znacznie lepszą przepustowość. Na przykład specjalistyczne oprogramowanie pośrednie, takie jak nginx, zawiera bezpośrednie przechwytywanie między systemem plików a kartą sieciową i wykorzystuje podejście wielowątkowe, aby zminimalizować interwencję między wieloma żądaniami.
+W klasycznej aplikacji internetowej backend obsługuje frontend / grafikę w przeglądarce, bardzo powszechnym podejściem w świecie Node jest użycie Express'owego oprogramowania pośredniego do usprawnienia plików statycznych w kliencie. ALE - Node nie jest typową aplikacją internetową, ponieważ wykorzystuje pojedynczy wątek, który nie jest zoptymalizowany do obsługi wielu plików jednocześnie. Zamiast tego rozważ użycie reverse-proxy (np. Nginx, HAProxy), magazynu w chmurze lub CDN (np. AWS S3, Azure Blob Storage itp.), który wykorzystuje wiele optymalizacji tego zadania i uzyskuje znacznie lepszą przepustowość. Na przykład specjalistyczne oprogramowanie pośrednie, takie jak nginx, zawiera bezpośrednie przechwytywanie między systemem plików a kartą sieciową i wykorzystuje podejście wielowątkowe, aby zminimalizować interwencję między wieloma żądaniami.
 
 Twoje optymalne rozwiązanie może mieć jedną z następujących postaci:
 
-1. Korzystanie z odwrotnego proxy - twoje pliki statyczne będą znajdować się tuż obok aplikacji Node, tylko żądania do folderu plików statycznych będą obsługiwane przez proxy, które znajduje się przed aplikacją Node, taką jak nginx. Dzięki takiemu podejściu aplikacja Node jest odpowiedzialna za wdrażanie plików statycznych, ale nie za ich obsługę. Twój kolega z interfejsu użytkownika pokocha to podejście, ponieważ zapobiega ono prośbom o pochodzenie z tego interfejsu.
+1. Korzystanie z reverse-proxy - twoje pliki statyczne będą znajdować się tuż obok aplikacji Node, tylko żądania do folderu plików statycznych będą obsługiwane przez proxy, które znajduje się przed aplikacją Node, taką jak nginx. Dzięki takiemu podejściu aplikacja Node jest odpowiedzialna za wdrażanie plików statycznych, ale nie za ich obsługę. Twój kolega z interfejsu użytkownika pokocha to podejście, ponieważ zapobiega ono prośbom o pochodzenie z tego interfejsu.
 
 2. Przechowywanie w chmurze - pliki statyczne NIE będą częścią zawartości aplikacji Node, zostaną przesłane do usług takich jak AWS S3, Azure BlobStorage lub innych podobnych usług, które powstały w ramach tej misji. Korzystając z tego podejścia, twoja aplikacja Node nie jest odpowiedzialna za wdrażanie plików statycznych ani ich obsługę, dlatego następuje całkowite rozdzielenie pomiędzy Node i Frontendem, które i tak jest obsługiwane przez różne zespoły.
 
