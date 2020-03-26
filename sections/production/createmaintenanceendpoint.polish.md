@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Punkt końcowy konserwacji to wysoce bezpieczny interfejs API HTTP, który jest częścią kodu aplikacji, a jego celem jest wykorzystanie go przez zespół operacyjny / produkcyjny do monitorowania i udostępniania funkcji konserwacji. Na przykład może zwrócić zrzut stosu (migawkę pamięci) procesu, zgłosić, czy występują wycieki pamięci, a nawet pozwolić na bezpośrednie wykonywanie poleceń REPL. Ten punkt końcowy jest potrzebny tam, gdzie konwencjonalne narzędzia DevOps (produkty do monitorowania, logi itp.) Nie zbierają niektórych określonych informacji lub nie kupujesz / nie instalujesz takich narzędzi. Złotą zasadą jest stosowanie profesjonalnych i zewnętrznych narzędzi do monitorowania i utrzymania produkcji, które są zwykle bardziej niezawodne i dokładne. To powiedziawszy, mogą wystąpić przypadki, w których ogólne narzędzia nie wyodrębnią informacji specyficznych dla Node lub aplikacji - na przykład, jeśli chcesz wygenerować migawkę pamięci w momencie, gdy GC zakończy cykl - kilka bibliotek npm chętnie to zrobi za Ciebie, ale popularne narzędzia do monitorowania prawdopodobnie nie będą miały tej funkcji. Ważne jest, aby zachować ten punkt końcowy jako prywatny i dostępny tylko dla administratorów, ponieważ może on stać się celem ataku DDOS.
 
