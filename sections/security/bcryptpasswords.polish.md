@@ -1,6 +1,6 @@
 # Unikaj używania biblioteki Crypto Node.js dla haseł, używaj Bcrypt
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Podczas przechowywania haseł użytkowników zalecane jest użycie adaptacyjnego algorytmu haszującego, takiego jak bcrypt, oferowanego przez [bcrypt npm module](https://www.npmjs.com/package/bcrypt), w przeciwieństwie do korzystania z natywnego modułu kryptograficznego Node.js . `Math.random ()` również nie powinien być nigdy używany jako część generowania haseł lub tokenów ze względu na jego przewidywalność.
 
