@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Nic dziwnego, że w swojej podstawowej formie Node działa na jednym wątku = pojedynczy proces = pojedynczy procesor. Płacenie za mocny sprzęt z 4 lub 8 procesorami i używanie tylko jednego brzmi szalenie, prawda? Najszybszym rozwiązaniem, które pasuje do średnich aplikacji jest użycie modułu klastrowania Node, który w 10 liniach kodu tworzy proces dla każdego logicznego rdzenia i kieruje żądania między procesami w stylu round-robin. Jeszcze lepiej, użyj PM2, który otacza moduł klastrowania prostym interfejsem i fajnym interfejsem monitorowania. Chociaż to rozwiązanie działa dobrze w przypadku tradycyjnych aplikacji, może nie być wystarczające w przypadku aplikacji, które wymagają najwyższej wydajności i niezawodnego przepływu DevOps. W przypadku zaawansowanych przypadków użycia rozważ replikację procesu NODE przy użyciu niestandardowego skryptu wdrażania i równoważenie za pomocą specjalistycznego narzędzia, takiego jak nginx, lub użyj silnika kontenera, takiego jak AWS ECS lub Kubernetees, które mają zaawansowane funkcje wdrażania i replikacji procesów.
 
