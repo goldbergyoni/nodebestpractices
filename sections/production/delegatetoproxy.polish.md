@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 To bardzo kuszące dla kultowego Expressa i korzystania z bogatej oferty oprogramowania pośredniego do zadań związanych z siecią, takich jak serwowanie plików statycznych, kodowanie gzip, żądania ograniczania przepustowości, zakończenie SSL itp. Jest to zabójstwo wydajności ze względu na model jednowątkowy, który zachowa procesor zajęty przez długi czas (pamiętaj, że model wykonania węzła jest zoptymalizowany do krótkich zadań lub asynchronicznych zadań związanych z We / Wy). Lepszym rozwiązaniem jest użycie narzędzia, które specjalizuje się w zadaniach sieciowych - najbardziej popularne to nginx i HAproxy, które są również używane przez największych dostawców usług w chmurze, aby zmniejszyć obciążenie procesów procesowych Node.js.
 
