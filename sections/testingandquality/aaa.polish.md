@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 Naszym największym wyzwaniem do testowania jest brak przestrzeni nad głową - już mamy kod produkcyjny, który sprawia, że jesteśmy bardzo zajęci. Z tego powodu kod testowy musi pozostać śmiertelnie prosty i łatwy do zrozumienia. Podczas czytania przypadku testowego - nie powinno to przypominać czytania kodu imperatywnego (pętli, dziedziczenia), a raczej HTML - deklaratywne doświadczenie. Aby to osiągnąć, zachowaj konwencję AAA, aby czytelnicy mogli bez wysiłku przeanalizować cel testu. Istnieją inne podobne formaty tego wzorca, takie jak XUnit „Setup, Excercise, Verify, Teardown”. Oto trzy A:
 
 Pierwsze A - Arrange: Cały kod instalacyjny, aby wprowadzić system do scenariusza, który test ma na celu symulację. Może to obejmować tworzenie instancji testowanego konstruktora, dodawanie rekordów BD, mockowanie/stubbing obiektów i dowolny inny kod przygotowawczy
