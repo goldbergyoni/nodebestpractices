@@ -1,6 +1,6 @@
 # Zapobieganie atakom brute-force na autoryzację
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Pozostawienie wyżej uprzywilejowanych tras, takich jak `/ login` lub` / admin`, ujawnione bez ograniczenia wyjść, naraża aplikację na ataki słownikowe z użyciem siły brute force. Użycie strategii w celu ograniczenia żądań do takich tras może zapobiec powodzeniu, ograniczając liczbę prób zezwolenia na podstawie właściwości żądania, takiej jak ip, lub parametru treści, takiego jak nazwa użytkownika / adres e-mail.
 
