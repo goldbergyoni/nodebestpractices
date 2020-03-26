@@ -1,6 +1,6 @@
 # Zapobiegaj niebezpiecznym przekierowaniom
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Gdy przekierowania są implementowane w Node.js i/lub Express, ważne jest, aby przeprowadzić weryfikację danych wejściowych po stronie serwera.
 Jeśli osoba atakująca odkryje, że nie weryfikujesz danych zewnętrznych dostarczonych przez użytkownika, może wykorzystać tę lukę, publikując specjalnie spreparowane łącza na forach, w mediach społecznościowych i innych miejscach publicznych, aby użytkownicy mogli ją kliknąć.
