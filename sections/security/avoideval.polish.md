@@ -1,6 +1,6 @@
 # Unikaj JS eval statements
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 `eval()`, `setTimeout()`, `setInterval()`, i `new Function()` są funkcjami globalnymi, często używanymi w Node.js, które akceptują parametr ciągu znaków reprezentujący wyrażenie JavaScript, instrukcję lub sekwencję instrukcji. Problemem związanym z bezpieczeństwem korzystania z tych funkcji jest możliwość, że niezaufane dane wejściowe użytkownika mogą znaleźć drogę do wykonania kodu prowadzącego do naruszenia bezpieczeństwa serwera, ponieważ ocena kodu użytkownika zasadniczo pozwala atakującemu na wykonanie dowolnych działań. Sugeruje się, aby kod refaktoryzować, aby nie polegał na użyciu tych funkcji, w których dane wejściowe użytkownika mogą być przekazywane do funkcji i wykonywane.
 
