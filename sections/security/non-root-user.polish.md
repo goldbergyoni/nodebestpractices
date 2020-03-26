@@ -1,6 +1,6 @@
 # Uruchom Node.js jako Non-Root User
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Zgodnie z „zasadą najmniejszych uprawnień” użytkownik / proces musi mieć dostęp tylko do niezbędnych informacji i zasobów. Przydzielenie rootowi dostępu, atakującemu otwiera zupełnie nowy świat złośliwych pomysłów, takich jak kierowanie ruchu do innych serwerów. W praktyce większość aplikacji Node.js nie potrzebuje dostępu do konta root i nie działa z takimi uprawnieniami. Istnieją jednak dwa typowe scenariusze, które mogą wypychać do używania roota:
 
