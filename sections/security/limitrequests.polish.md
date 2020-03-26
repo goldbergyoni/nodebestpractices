@@ -1,6 +1,6 @@
 # Ogranicz równoczesne żądania za pomocą modułu równoważącego lub oprogramowania pośredniego
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 W aplikacji należy wprowadzić ograniczenie szybkości, aby chronić aplikację Node.js przed przytłoczeniem zbyt dużą liczbą żądań jednocześnie. Ograniczanie prędkości jest zadaniem najlepiej wykonywanym za pomocą usługi zaprojektowanej do tego zadania, takiej jak nginx, jednak jest to również możliwe przy użyciu opcji [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) pakietu lub oprogramowania pośredniego, takiego jak [express-rate-limiter](https://www.npmjs.com/package/express-rate-limit) dla aplikacji Express.js.
  
