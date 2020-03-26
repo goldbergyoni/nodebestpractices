@@ -1,6 +1,6 @@
 # Wyodrębnij dane wrażliwe z plików konfiguracyjnych lub użyj pakietu npm, który je szyfruje
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Najczęstszym i bezpiecznym sposobem zapewnienia dostępu aplikacji Node.js do kluczy i kluczy tajnych jest przechowywanie ich przy użyciu zmiennych środowiskowych w systemie, w którym jest uruchomiona. Po ustawieniu można uzyskać do nich dostęp z globalnego obiektu `process.env`.
 Testem lakmusowym sprawdzającym, czy aplikacja poprawnie skonfigurowała konfigurację z kodu, jest to, czy baza kodu może zostać w dowolnym momencie otwarta, bez narażania jakichkolwiek poświadczeń.
