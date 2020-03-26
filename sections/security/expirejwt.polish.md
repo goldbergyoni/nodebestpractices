@@ -1,6 +1,6 @@
 # Obsługa czarnych list JWT
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Z założenia JWT (JSON Web Tokens) są całkowicie bezstanowe, więc po podpisaniu ważnego tokena przez wystawcę token może zostać zweryfikowany przez aplikację jako autentyczny. Problemem z tym związanym jest problem związany z bezpieczeństwem, w którym przeciekający token może być nadal używany i nie może zostać odwołany, ponieważ podpis pozostaje ważny, dopóki podpis dostarczony przez problemy odpowiada oczekiwaniom aplikacji.
 Z tego powodu podczas korzystania z uwierzytelniania JWT aplikacja powinna zarządzać czarną listą wygasłych lub odwołanych tokenów, aby zachować bezpieczeństwo użytkownika na wypadek, gdyby token musiał zostać odwołany.
