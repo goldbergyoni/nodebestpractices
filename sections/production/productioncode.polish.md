@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Poniżej znajduje się lista wskazówek programistycznych, które znacznie wpływają na utrzymanie produkcji i stabilność:
 
