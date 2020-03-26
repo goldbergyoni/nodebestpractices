@@ -1,6 +1,6 @@
 # Zachowaj ostrożność podczas pracy z procesami potomnymi
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Niezależnie od tego, jak wielkie są procesy potomne, należy ich używać ostrożnie. Przekazywanie danych wejściowych przez użytkownika musi być sanitized, jeśli w ogóle nie można go uniknąć.
 Niebezpieczeństwa związane z niezaangażowanym wejściem wykonującym logikę na poziomie systemu są nieograniczone, od zdalnego wykonania kodu po ujawnienie
