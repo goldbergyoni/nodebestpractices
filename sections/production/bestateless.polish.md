@@ -1,8 +1,8 @@
-# Bądź stateless, zabijaj Serwery prawie codziennie
+# Bądź stateless, zabijaj serwery prawie codziennie
 
 <br/><br/>
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Czy kiedykolwiek napotkałeś poważny problem z produkcją, w którym na jednym serwerze brakowało jakiejś konfiguracji lub danych? Jest to prawdopodobnie spowodowane niepotrzebną zależnością od lokalnego zasobu, który nie jest częścią wdrożenia. Wiele udanych produktów traktuje serwery jak feniksa - umiera i odradza się okresowo bez żadnych uszkodzeń. Innymi słowy, serwer to tylko część sprzętu, która wykonuje twój kod przez pewien czas, a następnie jest wymieniana.
 To podejście
