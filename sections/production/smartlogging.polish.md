@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Ponieważ i tak drukujesz instrukcje dziennika i oczywiście potrzebujesz interfejsu, który zawija informacje produkcyjne, w których możesz śledzić błędy i podstawowe dane (np. ile błędów występuje co godzinę i który jest twój najwolniejszy punkt końcowy interfejsu API), dlaczego nie inwestować umiarkowanych wysiłków w solidne ramy rejestrowania, które zaznaczą wszystkie pola? Osiągnięcie tego wymaga przemyślanej decyzji w trzech krokach:
 
