@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Refaktoryzacja jest ważnym procesem w iteracyjnym przepływie rozwoju. Usunięcie „Code smells” (złych praktyk kodowania), takich jak powielony kod, długie metody, długa lista parametrów, poprawi kod i sprawi, że będzie on łatwiejszy w utrzymaniu. Korzystanie z narzędzi do analizy statycznej pomoże ci znaleźć te code smells i zbudować proces wokół refaktoryzacji. Dodanie tych narzędzi do kompilacji CI pomoże zautomatyzować proces kontroli jakości. Jeśli Twój CI zintegruje się z narzędziem takim jak Sonar lub Code Climate, kompilacja zakończy się niepowodzeniem, jeśli wykryje code smells i poinformuje autora, jak rozwiązać problem. Te narzędzia do analizy statycznej uzupełnią narzędzia do lintowania, takie jak ESLint. Większość narzędzi do lintowania skupia się na stylach kodu, takich jak wcięcia i brakujące średniki (chociaż niektóre code smells kodu jak Długie funkcje) w jednym pliku, podczas gdy narzędzia analizy statycznej skoncentrują się na wyszukiwaniu code smells (duplikat kodu, analiza złożoności itp.) pojedyncze pliki i wiele plików.
 
