@@ -1,6 +1,6 @@
 #Uruchom niebezpieczny kod w piaskownicy
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Z zasady należy uruchamiać tylko własne pliki JavaScript. Pomijając teorie, scenariusze w świecie rzeczywistym wymagają wykonywania plików JavaScript przekazywanych dynamicznie w czasie wykonywania. Rozważmy na przykład strukturę dynamiczną, taką jak webpack, która akceptuje niestandardowe programy ładujące i wykonuje je dynamicznie podczas kompilacji. W obecności szkodliwych wtyczek chcemy zminimalizować szkody, a może nawet pozwolić na pomyślne zakończenie przepływu - wymaga to uruchomienia wtyczek w środowisku piaskownicy, które jest w pełni izolowane pod względem zasobów, awarii i informacji, którymi się z nim dzielimy. Trzy główne opcje mogą pomóc w osiągnięciu tej izolacji:
 
