@@ -1,6 +1,6 @@
 # Ustanowienie zasad bezpieczeństwa linter
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Wtyczki bezpieczeństwa dla ESLint i TSLint, takie jak [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) i [tslint-config-security](https://www.npmjs.com/package/tslint-config-security) oferowują kontrole bezpieczeństwa kodu na podstawie szeregu znanych luk, takich jak niebezpieczne RegEx, niebezpieczne użycie `eval ()` i nieliterowe nazwy plików używane podczas uzyskiwania dostępu do systemu plików w aplikacji. Korzystanie z git hooks, takich jak [pre-git](https://github.com/bahmutov/pre-git), pozwala na dalsze egzekwowanie reguł dotyczących kontroli źródła, zanim zostaną one przekazane zdalnym, z których jednym może być sprawdzenie że do kontroli źródła nie dodano żadnych danych wrażliwych.
 
