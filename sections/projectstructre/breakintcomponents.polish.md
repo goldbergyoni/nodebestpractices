@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 W przypadku średnich aplikacji i wyższych monolity są naprawdę złe - posiadanie jednego dużego oprogramowania z wieloma zależnościami jest po prostu trudne do uzasadnienia i często prowadzi do kodu spaghetti. Nawet inteligentni architekci - ci, którzy są wystarczająco wykwalifikowani, aby oswoić bestię i ją „zmodularyzować” - poświęcają wielki wysiłek umysłowy na projektowanie, a każda zmiana wymaga starannej oceny wpływu na inne zależne obiekty. Ostatecznym rozwiązaniem jest opracowanie małego oprogramowania: podziel cały stos na niezależne komponenty, które nie współużytkują plików z innymi, każdy stanowi bardzo niewiele plików (np. API, usługa, dostęp do danych, test itp.), Dzięki czemu jest bardzo łatwo to uzasadnić. Niektórzy mogą nazywać tę architekturę „mikrousługami” - ważne jest, aby zrozumieć, że mikrousługi nie są specyfikacją, której należy przestrzegać, ale raczej zbiorem zasad. Możesz zastosować wiele zasad w pełnej architekturze mikrousług lub zastosować tylko kilka. Oba są dobre, o ile złożoność oprogramowania jest niska. To co, co najmniej powinieneś zrobić, to utworzyć podstawowe granice między komponentami, przypisać folder w katalogu głównym projektu dla każdego komponentu biznesowego i uczynić go samodzielnym - inne komponenty mogą korzystać z jego funkcji tylko za pośrednictwem publicznego interfejsu lub interfejsu API. Jest to podstawa do uproszczenia komponentów, uniknięcia piekła zależności i utorowania drogi do pełnej obsługi mikrousług w przyszłości, gdy Twoja aplikacja się rozwinie.
 <br/><br/>
