@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Procesowe zmienne środowiskowe to zestaw par klucz-wartość udostępniony dowolnemu działającemu programowi, zwykle w celach konfiguracyjnych. Mimo że można używać dowolnych zmiennych, Node zachęca do korzystania ze zmiennej o nazwie NODE_ENV w celu oznaczenia, czy obecnie jesteśmy w produkcji. To określenie umożliwia komponentom lepszą diagnostykę podczas programowania, na przykład poprzez wyłączenie buforowania lub wysyłanie pełnych instrukcji dziennika. Każde nowoczesne narzędzie do wdrażania - Chef, Puppet, CloudFormation i inne - obsługuje ustawianie zmiennych środowiskowych podczas wdrażania
 
