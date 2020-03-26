@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Wyjaśnienie jednego akapitu
+### Wyjaśnienie jednym akapitem
 
 Najnowszy generator Express ma świetną praktykę, którą warto zachować - deklaracja API jest oddzielona od konfiguracji związanej z siecią (port, protokół itp.). Umożliwia to testowanie interfejsu API w trakcie procesu, bez wykonywania połączeń sieciowych, ze wszystkimi korzyściami, które przynosi do tabeli: szybkie wykonywanie testów i uzyskiwanie wskaźników zasięgu kodu. Pozwala także na wdrożenie tego samego interfejsu API w elastycznych i różnych warunkach sieciowych. Bonus: lepsze rozdzielenie problemów i czystszy kod
 
