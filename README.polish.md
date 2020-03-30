@@ -89,7 +89,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 ## ![✔] 1.4 Oddzielna „aplikacja” i „serwer” Express
 
-**TL;DR:** Unikaj nieprzyjemnego nawyku definiowania całości [Express](https://expressjs.com/) aplikacja w jednym dużym pliku - rozdziel definicję „Express” na co najmniej dwa pliki: deklarację API (app.js) i problemy z siecią (WWW). Aby uzyskać jeszcze lepszą strukturę, znajdź deklarację API w komponentach
+**TL;DR:** Unikaj nieprzyjemnego nawyku definiowania całości aplikacji [Express](https://expressjs.com/) w jednym dużym pliku - rozdziel definicję „Express” na co najmniej dwa pliki: deklarację API (app.js) i problemy z siecią (WWW). Aby uzyskać jeszcze lepszą strukturę, znajdź deklarację API w komponentach
 
 **W przeciwnym razie:** Twój interfejs API będzie dostępny do testowania tylko za pośrednictwem połączeń HTTP (wolniejsze i znacznie trudniejsze do generowania raportów zasięgu). Utrzymanie setek linii kodu w jednym pliku prawdopodobnie nie będzie wielką przyjemnością
 
@@ -521,7 +521,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 4.11 Refaktoryzuj regularnie za pomocą narzędzi do analizy statycznej
 
-**TL;DR:** Korzystanie z narzędzi analizy statycznej pomaga, zapewniając obiektywne sposoby poprawy jakości kodu i utrzymując kod w łatwości konserwacji. Możesz dodać narzędzia analizy statycznej do kompilacji CI, aby zawieść, gdy wykryje code smells. Jego głównymi zaletami w stosunku do zwykłego szarpania jest możliwość kontroli jakości w kontekście wielu plików (np. wykrywanie duplikacji), przeprowadzania zaawansowanej analizy (np. złożoności kodu) oraz śledzenia historii i postępu problemów z kodem. Dwa przykłady narzędzi, których możesz użyć, to [Sonarqube](https://www.sonarqube.org/) (2600+ [gwiazdek](https://github.com/SonarSource/sonarqube)) i [Code Climate](https : //codeclimate.com/) (1500+ [gwiazdek](https://github.com/codeclimate/codeclimate)).
+**TL;DR:** Korzystanie z narzędzi analizy statycznej pomaga, zapewniając obiektywne sposoby poprawy jakości kodu i utrzymując kod w łatwości konserwacji. Możesz dodać narzędzia analizy statycznej do kompilacji CI, aby zawieść, gdy wykryje code smells. Jego głównymi zaletami w stosunku do zwykłego szarpania jest możliwość kontroli jakości w kontekście wielu plików (np. wykrywanie duplikacji), przeprowadzania zaawansowanej analizy (np. złożoności kodu) oraz śledzenia historii i postępu problemów z kodem. Dwa przykłady narzędzi, których możesz użyć, to [Sonarqube](https://www.sonarqube.org/) (2600+ [gwiazdek](https://github.com/SonarSource/sonarqube)) i [Code Climate](https://codeclimate.com/) (1500+ [gwiazdek](https://github.com/codeclimate/codeclimate)).
 
 **W przeciwnym razie:** Przy złej jakości kodu błędy i wydajność zawsze będą stanowić problem, którego nie będzie w stanie naprawić żadna nowa błyszcząca biblioteka ani najnowocześniejsze funkcje
 
