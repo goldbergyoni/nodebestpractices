@@ -80,6 +80,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 ## ![✔] 1.3 Opakuj typowe narzędzia jako pakiety npm
 
 **TL;DR:** W dużej aplikacji, która stanowi dużą bazę kodu, kluczowe narzędzia, takie jak rejestrator, szyfrowanie i podobne, powinny być owinięte własnym kodem i udostępnione jako prywatne pakiety npm. Pozwala to na dzielenie się nimi między wieloma bazami kodów i projektami
+
 **W przeciwnym razie:** Będziesz musiał wymyślić własne koło wdrażania i zależności
 
 🔗 [**Czytaj więcej: Struktura według funkcji**](/sections/projectstructre/wraputilities.polish.md)
@@ -89,6 +90,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 ## ![✔] 1.4 Oddzielna „aplikacja” i „serwer” Express
 
 **TL;DR:** Unikaj nieprzyjemnego nawyku definiowania całości [Express](https://expressjs.com/) aplikacja w jednym dużym pliku - rozdziel definicję „Express” na co najmniej dwa pliki: deklarację API (app.js) i problemy z siecią (WWW). Aby uzyskać jeszcze lepszą strukturę, znajdź deklarację API w komponentach
+
 **W przeciwnym razie:** Twój interfejs API będzie dostępny do testowania tylko za pośrednictwem połączeń HTTP (wolniejsze i znacznie trudniejsze do generowania raportów zasięgu). Utrzymanie setek linii kodu w jednym pliku prawdopodobnie nie będzie wielką przyjemnością
 
 🔗 [**Czytaj więcej: oddzielna aplikacja „Express” i „serwer”**](/sections/projectstructre/separateexpress.polish.md)
@@ -98,6 +100,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 ## ![✔] 1.5 Używaj konfiguracji przyjaznej środowisku, bezpiecznej i hierarchicznej
 
   **TL;DR:** Idealne i bezbłędne ustawienie konfiguracji powinno zapewnić, że (a) klucze można odczytać z pliku ORAZ ze zmiennych środowiskowych (b) dane wrażliwe są przechowywane poza zatwierdzonym kodem (c) konfiguracja jest hierarchiczna dla łatwiejszego wyszukiwania. Istnieje kilka pakietów, które mogą pomóc zaznaczyć większość z tych pól, takich jak [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf ) i [config](https://www.npmjs.com/package/config)
+  
   **W przeciwnym razie:** Niespełnienie któregokolwiek z wymagań konfiguracji po prostu ugrzęźnie w zespole programistów lub DevOps. Prawdopodobnie jedno i drugie
 
 🔗 [**Czytaj więcej: najlepsze praktyki dotyczące konfiguracji**](/sections/projectstructre/configguide.polish.md)
@@ -111,6 +114,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 ## ![✔] 2.1 Użyj Async-Await lub promises do obsługi błędów asynchronicznych
 
 **TL;DR:** Obsługa błędów asynchronicznych w stylu wywołania zwrotnego jest prawdopodobnie najszybszą drogą do piekła (znane też jako Piramida zagłady). Najlepszy prezent, jaki możesz dać kodowi, to skorzystanie z renomowanej biblioteki promise lub async-await zamiast tego, co umożliwia znacznie bardziej zwartą i znaną składnię kodu, taką jak try-catch
+
 **W przeciwnym razie:** styl wywołania zwrotnego Node.js, funkcja (błąd, odpowiedź) jest obiecującym sposobem na niemożliwy do utrzymania kod ze względu na połączenie obsługi błędów z przypadkowym kodem, nadmiernym zagnieżdżaniem i niewygodnymi wzorcami kodowania
 
 🔗 [**Czytaj więcej: avoiding callbacks**](/sections/errorhandling/asyncerrorhandling.polish.md)
