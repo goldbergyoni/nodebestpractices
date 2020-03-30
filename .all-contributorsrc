@@ -869,6 +869,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "songe",
+      "name": "songe",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1531561?v=4",
+      "profile": "https://github.com/songe",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
