@@ -869,6 +869,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "mindock",
+      "name": "mindock",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/32254667?v=4",
+      "profile": "https://github.com/mindock",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
