@@ -871,13 +871,12 @@
       ]
     },
     {
+
       "login": "AlbertRAR",
       "name": "Albert",
       "avatar_url": "https://avatars2.githubusercontent.com/u/6898522?v=4",
       "profile": "https://github.com/AlbertRAR",
       "contributions": [
-        "content"
-      ]
     }
   ],
   "projectName": "nodebestpractices",
