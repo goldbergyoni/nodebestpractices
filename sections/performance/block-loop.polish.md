@@ -5,7 +5,7 @@
 Node obsługuje pętlę zdarzeń głównie w jednym wątku obracającym się przez wiele kolejek. Operacje o wysokim stopniu złożoności, dużym parsowaniu jsonów, stosowaniu logiki na wielkich tablicach, niebezpiecznych zapytaniach regularnych i dużych operacjach We / Wy to niektóre z operacji, które mogą powodować zawieszanie się pętli zdarzeń. Unikaj odciążania zadań intensywnie wykorzystujących procesor do dedykowanej usługi (np. serwera zadań) lub dzielenia długich zadań na małe kroki, a następnie używanie puli pracowników to kilka przykładów tego, jak uniknąć blokowania pętli zdarzeń.
 
 ### Przykład: blokowanie pętli zdarzeń
-Let's take a look at an example from [Node Clinic](https://clinicjs.org/documentation/doctor/05-fixing-event-loop-problem).
+Spójrzmy na przykład z [Node Clinic](https://clinicjs.org/documentation/doctor/05-fixing-event-loop-problem).
 ```javascript
 function sleep (ms) {
   const future = Date.now() + ms
