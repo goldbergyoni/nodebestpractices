@@ -11,14 +11,14 @@ Istnieją nagłówki związane z bezpieczeństwem, które służą do dalszego z
 
 ### Spis treści
 - [HTTP Strict Transport Security (HSTS)](#http-strict-transport-security-hsts)
-- [Public Key Pinning for HTTP (HPKP)](#public-key-pinning-for-http-hpkp)
+- [Public Key Pinning dla HTTP (HPKP)](#public-key-pinning-dla-http-hpkp)
 - [X-Frame-Options](#x-frame-options)
 - [X-XSS-Protection](#x-xss-protection)
 - [X-Content-Type-Options](#x-content-type-options)
 - [Referrer-Policy](#referrer-policy)
 - [Expect-CT](#expect-ct)
 - [Content-Security-Policy](#content-security-policy)
-- [Additional Resource](#additional-resources)
+- [Additional Resource](#dodatkowe-zasoby)
 
 <br/><br/>
 
