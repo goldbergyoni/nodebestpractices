@@ -37,6 +37,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 # Witamy! 3 rzeczy, które musisz wiedzieć na początku
 
 **1. W rzeczywistości czytasz dziesiątki najlepszych artykułów na temat Node.js -** to repozytorium jest podsumowaniem i zbiorem najlepszych pozycji na temat najlepszych praktyk Node.js, a także treści napisanych tutaj przez współpracowników
+
 **2. Jest to największa kompilacja, która rośnie z każdym tygodniem -** obecnie prezentowanych jest ponad 80 najlepszych praktyk, przewodników po stylach i wskazówek architektonicznych. Nowe wydania i pull requesty są tworzone codziennie, aby aktualizować tę książkę na żywo. Chcielibyśmy zobaczyć Twój wkład w to, czy naprawiasz błędy w kodzie, pomagasz w tłumaczeniach, czy sugerujesz nowe genialne pomysły. Zobacz nasze [wskazówki dotyczące pisania tutaj](https://github.com/mbiesiad/nodebestpractices/blob/master/.operations/writing-guidelines.polish.md)
 
 **3. Większość najlepszych praktyk ma dodatkowe informacje -** większość pocisków zawiera link **🔗Przeczytaj więcej**, który rozszerza praktykę o przykłady kodu, cytaty z wybranych blogów i więcej informacji
