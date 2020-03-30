@@ -22,7 +22,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 <br/>
 
-###### Zbudowane i utrzymywane przez nasz [Steering Committee](#steering-committee) oraz [Collaborators](#collaborators)
+###### Zbudowane i utrzymywane przez nasz [Steering Committee](#steering-committee) oraz [Collaborators](#współpracownicy)
 
 # Najnowsze najlepsze praktyki i aktualności
 
