@@ -38,7 +38,7 @@ Robiąc to w ten sposób, aplikacja obsługuje teraz zarówno logikę aplikacji 
 <br/><br/>
 
 ### Przykład kodu - Lepsza obsługa dziennika + przykład Docker
-In the application:
+W aplikacji:
 ```javascript
 const logger = new winston.Logger({
   level: 'info',
@@ -49,7 +49,7 @@ const logger = new winston.Logger({
 
 logger.log('info', 'Test Log Message with some parameter %s', 'some parameter', { anything: 'This is metadata' });
 ```
-Then, in the docker container `daemon.json`:
+Następnie, w kontenerze dockera `daemon.json`:
 ```json5
 {
   "log-driver": "splunk", // just using Splunk as an example, it could be another storage type
