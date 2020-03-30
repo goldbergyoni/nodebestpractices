@@ -869,6 +869,16 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "mbiesiad",
+      "name": "Michal",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/18367606?v=4",
+      "profile": "http://c0dingp0int3r.design.blog",
+      "contributions": [
+        "translation",
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
