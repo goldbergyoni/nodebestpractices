@@ -871,14 +871,12 @@
       ]
     },
     {
-      "login": "mbiesiad",
-      "name": "Michal",
-      "avatar_url": "https://avatars0.githubusercontent.com/u/18367606?v=4",
-      "profile": "http://c0dingp0int3r.design.blog",
+
+      "login": "AlbertRAR",
+      "name": "Albert",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/6898522?v=4",
+      "profile": "https://github.com/AlbertRAR",
       "contributions": [
-        "translation",
-        "content"
-      ]
     }
   ],
   "projectName": "nodebestpractices",
