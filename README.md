@@ -16,9 +16,6 @@
 
 [![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
 
-<br/>
-
-[:green_book: Comprehensive 10 hours course on Node.js testing & quality best practices](https://testjavascript.com/)
 
 <br/>
 
