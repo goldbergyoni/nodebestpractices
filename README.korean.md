@@ -88,17 +88,17 @@
 
 **그렇게 하지 않을 경우:** 당신 자신만의 배포 및 종속 바퀴(dependency wheel)를 새로이 발명해야 할 것이다.
 
-🔗 [**자세히 보기: 기능으로 구조화 하기**](/sections/projectstructre/wraputilities.korean.md)
+🔗 [**자세히 보기: 기능별로 구조화 하기**](/sections/projectstructre/wraputilities.korean.md)
 
 <br/><br/>
 
-## ![✔] 1.4 Express의 app과 server를 분리하라
+## ![✔] 1.4 Express의 '앱'과 '서버'를 분리해라
 
 **핵심요약:** [Express](https://expressjs.com/) 앱을 통째로 하나의 큰 파일에 정의하는 나쁜 습관은 피해라 - 'Express' 정의를 최소한 둘로는 나누자: API 선언(app.js)과 네트워크 부분(WWW)으로. 더 좋은 구조는 API 선언을 컴포넌트 안에 놓는 것이다.
 
 **그렇게 하지 않을 경우:** HTTP 요청으로만 API 테스트가 가능하게 된다 (커버리지 보고서를 생성하기가 더 느려지고 훨씬 힘들어진다). 수백줄의 코드를 하나의 파일에서 관리하는 것이 크게 즐겁지는 않을 것이다.
 
-🔗 [**자세히 보기: Express를 'app'과 'server'로 분리하기**](/sections/projectstructre/separateexpress.korean.md)
+🔗 [**자세히 보기: Express의 '앱'과 '서버'를 분리해라**](/sections/projectstructre/separateexpress.korean.md)
 
 <br/><br/>
 
