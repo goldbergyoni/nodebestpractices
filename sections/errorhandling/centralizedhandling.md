@@ -6,11 +6,14 @@ Without one dedicated object for error handling, greater are the chances of impo
 
 ### Code Example – a typical error flow
 
+<details>
+<summary><strong>Javascript</strong></summary>
+
 ```javascript
 // DAL layer, we don't handle errors here
 DB.addDocument(newCustomer, (error, result) => {
   if (error)
-    throw new Error("Great error explanation comes here", other useful parameters)
+    throw new Error('Great error explanation comes here', other useful parameters)
 });
 
 // API route code, we catch both sync and async errors and forward to the middleware
@@ -33,14 +36,51 @@ app.use(async (err, req, res, next) => {
   }
 });
 ```
+</details>
+
+<details>
+<summary><strong>Typescript</strong></summary>
+
+```typescript
+// DAL layer, we don't handle errors here
+DB.addDocument(newCustomer, (error: Error, result: Result) => {
+  if (error)
+    throw new Error('Great error explanation comes here', other useful parameters)
+});
+
+// API route code, we catch both sync and async errors and forward to the middleware
+try {
+  customerService.addNew(req.body).then((result: Result) => {
+    res.status(200).json(result);
+  }).catch((error: Error) => {
+    next(error)
+  });
+}
+catch (error) {
+  next(error);
+}
+
+// Error handling middleware, we delegate the handling to the centralized error handler
+app.use(async (err: Error, req: Request, res: Response, next: NextFunction) => {
+  const isOperationalError = await errorHandler.handleError(err);
+  if (!isOperationalError) {
+    next(err);
+  }
+});
+```
+</details>
+
 
 ### Code example – handling errors within a dedicated object
+
+<details>
+<summary><strong>Javascript</strong></summary>
 
 ```javascript
 module.exports.handler = new errorHandler();
 
 function errorHandler() {
-  this.handleError = async function(err) {
+  this.handleError = async (err) => {
     await logger.logError(err);
     await sendMailToAdminIfCritical;
     await saveInOpsQueueIfCritical;
@@ -48,8 +88,30 @@ function errorHandler() {
   };
 }
 ```
+</details>
+
+<details>
+<summary><strong>Typescript</strong></summary>
+
+```typescript
+class ErrorHandler {
+  public async handleError(err: Error): Promise<void> {
+    await logger.logError(err);
+    await sendMailToAdminIfCritical();
+    await saveInOpsQueueIfCritical();
+    await determineIfOperationalError();
+  };
+}
+
+export const handler = new ErrorHandler();
+```
+</details>
+
 
 ### Code Example – Anti Pattern: handling errors within the middleware
+
+<details>
+<summary><strong>Javascript</strong></summary>
 
 ```javascript
 // middleware handling the error directly, who will handle Cron jobs and testing errors?
@@ -63,6 +125,25 @@ app.use((err, req, res, next) => {
   }
 });
 ```
+</details>
+
+
+<details>
+<summary><strong>Typescript</strong></summary>
+
+```typescript
+// middleware handling the error directly, who will handle Cron jobs and testing errors?
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+  logger.logError(err);
+  if (err.severity == errors.high) {
+    mailer.sendMail(configuration.adminMail, 'Critical error occured', err);
+  }
+  if (!err.isOperational) {
+    next(err);
+  }
+});
+```
+</details>
 
 ### Blog Quote: "Sometimes lower levels can’t do anything useful except propagate the error to their caller"
 

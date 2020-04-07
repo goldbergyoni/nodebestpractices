@@ -1,3 +1,22 @@
+# Contribution guidelines
+
+## What you should know first?
+
+### Lovely & friendly atmosphere
+
+Our code of conduct is 5 words long: we are all friends here
+
+We recognize that being professional and kind are the same thing and strive to maximize our professionalism
+
+### Maintenance work
+
+Our operations manual [can be found here](https://github.com/goldbergyoni/nodebestpractices/blob/master/.operations/operations-manual.md)
+
+### Writing guidelines
+
+Our content writing guidelines [can be found here](https://github.com/goldbergyoni/nodebestpractices/blob/master/.operations/writing-guidelines.md)
+
+
 ## Contribution model
 
 ### Steering committee 🏆
@@ -12,6 +31,14 @@ The role is in place to help the steering committee ensure that the content prov
 
 The steering committee periodically reviews the collaborator list to identify inactive collaborators. Inactive collaborators can choose to either continue in or step down from their role, in which case they are acknowledged as a past collaborator. They may later request that the steering committee restore them to active status.
 
-### Flowers and stars
+### Other contributions ✨
 
-Every addition to the project are acknowledged by the author gaining a place on the home page. A flower 🌻 marks a successful pull request. A star of honor ⭐ is assigned to contributors who propose and write a new best practice to our guide.
+This project follows the [All Contributors Specification](https://allcontributors.org/), which means we recognize all types of contributions, whether they are new suggested best practices/ideas, translations, or new content.
+
+If you have contributed to the project in some way and aren't listed, please add an entry for yourself by using the @all-contributors-bot in a Pull Request or issue. Examples:
+
+`@all-contributors-bot please add @js-kyle for code`
+
+`@all-contributors-bot please add @brunoscheufler for content`
+
+Contribution types are listed [here](https://allcontributors.org/docs/en/emoji-key).
