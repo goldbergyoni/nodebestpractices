@@ -4,8 +4,7 @@
 <br/><br/>
 
 ### One Paragraph Explainer
-
-Sometimes, using native methods is better than requiring `lodash` or `underscore` because it will not lead in a performance boost and use more space than necessary.
+Sometimes, using native methods is better than requiring _lodash_ or _underscore_ because those libraries can lead to performance loss or take up more space than needed
 The performance using native methods result in an [overall ~50% gain](https://github.com/Berkmann18/NativeVsUtils/blob/master/analysis.xlsx) which includes the following methods: `Array.concat`, `Array.fill`, `Array.filter`, `Array.map`, `(Array|String).indexOf`, `Object.find`, ...
 
 
@@ -20,10 +19,10 @@ The graph below shows the [mean of the benchmarks for a variety of Lodash method
 
 ### Code Example – Benchmark test on `_.concat`/`Array.concat`
 ```javascript
-const _ = require('lodash'),
-  __ = require('underscore'),
-  Suite = require('benchmark').Suite,
-  opts = require('./utils'); //cf. https://github.com/Berkmann18/NativeVsUtils/blob/master/utils.js
+const _ = require('lodash');
+const __ = require('underscore');
+const Suite = require('benchmark').Suite;
+const opts = require('./utils'); //cf. https://github.com/Berkmann18/NativeVsUtils/blob/master/utils.js
 
 const concatSuite = new Suite('concat', opts);
 const array = [0, 1, 2];

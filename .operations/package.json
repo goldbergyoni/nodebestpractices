@@ -5,7 +5,8 @@
   "main": "gen-html.js",
   "scripts": {
     "build": "cd .. && node .operations/gen-html.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "./node_modules/.bin/markdownlint ../README.md"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
     "imagemin": "^6.0.0",
     "imagemin-jpegtran": "^6.0.0",
     "imagemin-pngquant": "^6.0.0",
+    "markdownlint-cli": "^0.18.0",
     "showdown": "^1.9.0"
   }
 }
