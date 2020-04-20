@@ -75,7 +75,7 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 
 ## ![✔] OWASP A9: Using Components With Known Security Vulneraibilities
 
-- Scan docker images for known vulnerabilities (using Docker's and other vendors offer scanning services)
+- Scan docker images for known vulnerabilities (using Docker's and other vendors' scanning services)
 - Enable automatic instance (machine) patching and upgrades to avoid running old OS versions that lack security patches
 - Provide the user with both 'id', 'access' and 'refresh' token so the access token is short-lived and renewed with the refresh token
 - Log and audit each API call to cloud and management services (e.g who deleted the S3 bucket?) using services like AWS CloudTrail
