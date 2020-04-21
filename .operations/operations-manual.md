@@ -40,18 +40,14 @@ Each month, a maintainer on call will open an issue for maintenance work and rec
 
 | Month   | Maintainer on call |
 |---------|--------------------|
-| 10/2018 | Sagir              |
-| 11/2018 | Bruno              |
-| 12/2018 | Yoni               |
-| 01/2019 | Kyle               |
-| 02/2019 | Sagir              |
-| 03/2019 | Bruno              |
-| 04/2019 | Yoni               |
-| 05/2019 | Kyle               |
-| 06/2019 | Sagir              |
-| 07/2019 | Bruno              |
-| 09/2019 | Yoni               |
-
+| 10/2019 | Yoni               |
+| 12/2019 | Bruno              |
+| 02/2020 | Kyle               |
+| 04/2020 | Yoni               |
+| 06/2020 | Bruno              |
+| 08/2020 | Kyle               |
+| 10/2020 | Yoni               |
+| 12/2020 | Bruno              |
 
 <br/>
 
@@ -75,18 +71,19 @@ Each month, a maintainer on call will open an issue for maintenance work and rec
 
 | Language             | Assignee |
 |----------------------|----------|
-| Brazilian Portuguese | Sagir    |
-| Portuguese           | Sagir    |
+| Brazilian Portuguese | Bruno    |
+| Portuguese           | Kyke     |
 | Hebrew               | Yoni     |
 | German               | Bruno    |
 | Italian              | Kyle     |
 | Turkish              | Bruno    |
 | French               | Yoni     |
-| Russian              | Sagir    |
+| Russian              | Yoni     |
 | Korean               | Yoni     |
-| Spanish              | Kyle     |
+| Spanish              | Kevyn    |
 | Chinese              | Yoni     |
 | Korean               | Kyle     |
 | Egyptian             | Yoni     |
-| Ukrainian            | Bruno     |
+| Ukrainian            | Bruno    |
+| Polish.              | Kevyn    |
 
