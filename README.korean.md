@@ -116,13 +116,13 @@
 
 # `2. 에러 처리 방법`
 
-## ![✔] 2.1 비동기 에러 처리시에는 async-await 혹은 promise를 사용하라
+## ![✔] 2.1 비동기 에러 처리시에는 async-await이나 promise를 사용하라
 
 **핵심요약:** 비동기 에러를 콜백 스타일로 처리하는 것은 지옥으로 가는 급행열차나 마찬가지 (혹은 파멸의 피라미드). 당신이 코드에 줄 수 있는 가장 큰 선물은 평판이 좋은 promise 라이브러리를 사용하거나 훨신 작고 친숙한 코드 문법인 try-catch를 사용하게 해주는 async-await를 사용하는 것이다.
 
 **그렇게 하지 않을 경우:** Node.js의 function(err, response) 콜백 스타일은 에러 처리와 일반 코드의 혼합, 코드의 과도한 중첩, 어색한 코딩 패턴 때문에 유지보수가 불가능한 코드로 가는 확실한 길이다.
 
-🔗 [**자세히 보기: 콜백 피하기**](/sections/errorhandling/asyncerrorhandling.korean.md)
+🔗 [**자세히 보기: 콜백을 피해라**](/sections/errorhandling/asyncerrorhandling.korean.md)
 
 <br/><br/>
 
