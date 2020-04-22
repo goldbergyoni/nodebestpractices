@@ -1095,7 +1095,7 @@ null == undefined   // true
 
 - ![FR](/assets/flags/FR.png) [프랑스어](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/129))
 - ![HE](/assets/flags/HE.png) 히브리어 ([Discussion](https://github.com/i0natan/nodebestpractices/issues/156))
-- ![KR](/assets/flags/KR.png) [한국어](README.korean.md) - [한상범](https://github.com/uronly14me) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/94)) 제공
+- ![KR](/assets/flags/KR.png) [한국어](https://github.com/songe/nodebestpractices-korean/blob/master/README.korean.md) - [A. Song](https://github.com/songe) & [한상범](https://github.com/uronly14me) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/94)) 제공
 - ![ES](/assets/flags/ES.png) [스페인어](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/95))
 - ![TR](/assets/flags/TR.png) 터키어 ([Discussion](https://github.com/i0natan/nodebestpractices/issues/139))
 
