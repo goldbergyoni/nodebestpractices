@@ -85,5 +85,6 @@ Each month, a maintainer on call will open an issue for maintenance work and rec
 | Korean               | Kyle     |
 | Egyptian             | Yoni     |
 | Ukrainian            | Bruno    |
-| Polish.              | Kevyn    |
+| Polish               | Kevyn    |
+| Thai                 | Kevyn    |
 
