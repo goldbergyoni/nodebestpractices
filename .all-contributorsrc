@@ -878,6 +878,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "Ksedline",
+      "name": "Kirill Shekhovtsov",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/30693707?v=4",
+      "profile": "http://ksed.dev",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
