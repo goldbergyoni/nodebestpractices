@@ -108,4 +108,24 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 - India: https://meity.gov.in/writereaddata/files/Personal_Data_Protection_Bill,2018.pdf
 - Singapore: https://www.pdpc.gov.sg/Legislation-and-Guidelines/Personal-Data-Protection-Act-Overview
 
+## ![✔] Have a security.txt File [PRODUCTION]
+
+**TL;DR:** Have a text file called ```security.txt``` under ```/.well-known```  directory (/.well-known/security.txt) or in the root directory (/security.txt) of your website or your web application in production. ```security.txt``` file should contain details using which security researchers can report vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent. 
+
+**Otherwise:** You may not be notified about the vulnerabilities. You will miss the opportunity to act on the vulnerabilities in time.
+
+🔗 [**Read More: security.txt**](https://securitytxt.org/)
+<br/><br/><br/>
+
+## ![✔] Have a SECURITY.md File [OPEN SOURCE]
+
+**TL;DR:** To give people instructions for responsibly reporting security vulnerabilities in your project, you can add a SECURITY.md file to your repository's root, docs, or .github folder. SECURITY.md file should contain details using which security researchers can report vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent. 
+
+**Otherwise:** You may not be notified about the vulnerabilities. You will miss the opportunity to act on the vulnerabilities in time.
+
+🔗 [**Read More: SECURITY.md**](https://help.github.com/en/github/managing-security-vulnerabilities/adding-a-security-policy-to-your-repository)
+
+<br/><br/><br/>
+
+
 <br/><br/><br/>
