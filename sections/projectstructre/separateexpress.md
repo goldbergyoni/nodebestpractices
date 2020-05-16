@@ -80,7 +80,7 @@ request(app)
 <summary><strong>Typescript</strong></summary>
 
 ```typescript
-const request = require('supertest');
+import * as request from "supertest";
 const app = express();
 
 app.get('/user', (req: Request, res: Response) => {
