@@ -896,6 +896,24 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "keyrwinz",
+      "name": "keyrwinz",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/21241761?v=4",
+      "profile": "https://github.com/keyrwinz",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "nDmitry",
+      "name": "Dmitry Nikitenko",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2134568?v=4",
+      "profile": "https://github.com/nDmitry",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",

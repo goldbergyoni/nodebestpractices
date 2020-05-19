@@ -39,7 +39,7 @@ save-exact:true
 
 <br/><br/>
 
-### Code example: npm 5 dependencies lock file – package.json
+### Code example: npm 5 dependencies lock file – package-lock.json
 
 ```json
 {
