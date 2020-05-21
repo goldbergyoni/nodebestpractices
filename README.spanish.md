@@ -1050,14 +1050,14 @@ Para mantener esta guía y tenerla actualizada, estamos constantemente moderniza
 
 Todas las traducciones están contribuidas por la comunidad. Estaremos encantados de obtener ayuda con traducciones completas, en curso o nuevas.
 
-### Traducciónes Completadas
+### Traducciones Completadas
 
 - ![BR](/assets/flags/BR.png) [Brazilian Portuguese](./README.brazilian-portuguese.md) - Cortesía de [Marcelo Melo](https://github.com/marcelosdm)
 - ![CN](/assets/flags/CN.png) [Chinese](./README.chinese.md) - Cortesía de [Matt Jin](https://github.com/mattjin)
 - ![RU](/assets/flags/RU.png) [Russian](./README.russian.md) - Cortesía de [Alex Ivanov](https://github.com/contributorpw)
 - ![ES](/assets/flags/ES.png) [Spanish](./README.spanish.md) - Cortesía de [Jordi Castillo](https://github.com/Whitefox98)
 
-### Traducciónes en curso
+### Traducciones en curso
 
 - ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/129))
 - ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/i0natan/nodebestpractices/issues/156))
