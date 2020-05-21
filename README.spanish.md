@@ -1118,7 +1118,7 @@ Nuestros colaboradores son miembros que contribuyen regularmente al repositorio,
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
 | :--: | :--: |
-| [Ido Richter (Founder)](https://github.com/idori) | [Keith Holliday](https://github.com/TheHollidayInn) |
+| [Ido Richter (Fundador)](https://github.com/idori) | [Keith Holliday](https://github.com/TheHollidayInn) |
 
 ### Colaboradores anteriores
 
