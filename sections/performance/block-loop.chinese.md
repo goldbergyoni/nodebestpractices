@@ -2,10 +2,10 @@
 
 <br/><br/>
 
-Node handles the Event Loop mostly on a single thread rotating through multiple queues. Operations with high complexity, large json parsing, applying logic over huge arrays, unsafe regex queries, and large IO operations are some of the operations that can cause the Event Loop to stall. Avoid this off-loading CPU intensive tasks to a dedicated service (e.g. job server), or breaking long tasks into small steps then using the Worker Pool are some examples of how to avoid blocking the Event Loop.
+node主要处理在单个线程上轮转多个队列的事件循环。高复杂性的操作，解析大型json，大型数组上的逻辑，不安全的正则表达式查询和大型IO操作，都是可能导致事件循环停滞的一系列操作。通过专用服务（比如，job server）避免CPU密集型任务，或者拆分大任务，然后使用worker pool是如何避免阻塞事件循环的一些示例。
 
 ### 示例：堵塞事件循环（event loop）
-Let's take a look at an example from [Node Clinic](https://clinicjs.org/documentation/doctor/05-fixing-event-loop-problem).
+让我们看一下来自[Node Clinic](https://clinicjs.org/documentation/doctor/05-fixing-event-loop-problem)的示例。
 ```javascript
 function sleep (ms) {
   const future = Date.now() + ms
