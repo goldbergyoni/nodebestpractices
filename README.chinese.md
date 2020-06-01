@@ -32,7 +32,7 @@
 3. [编码规范实践 (12) ](#3-code-style-practices)
 4. [测试和总体质量实践 (8) ](#4-testing-and-overall-quality-practices)
 5. [进入生产实践 (16) ](#5-going-to-production-practices)
-6. :star: 新: [安全实践(23)](#6-security-best-practices)
+6. :star: 新: [安全实践(24)](#6-security-best-practices)
 7. Performance Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 
 
@@ -924,7 +924,7 @@ null == undefined   // true
 
 **否则:** 这只是一个起到教育意义的假设: 给定许多Node.js应用程序, 如果我们尝试传递一个空的JSON正文到所有POST请求 - 少数应用程序将崩溃。在这一点上, 我们可以只是重复发送相同的请求, 就可以轻松地搞垮应用程序。
 
-<br/><br/><br/>
+<br/><br/>
 
 ## ![✔] 6.24. 避免不安全的重定向
 
