@@ -26,7 +26,7 @@
 
 <br/><br/><br/>
 
-## [目录](#table-of-contents)
+## 目录
 1. [项目结构实践 (5) ](#1-project-structure-practices)
 2. [异常处理实践 (11) ](#2-error-handling-practices)
 3. [编码规范实践 (12) ](#3-code-style-practices)
@@ -90,7 +90,7 @@
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
+<p align="right"><a href="#目录">⬆ 返回顶部</a></p>
 
 <h1 id="2-error-handling-practices"><code>2. 错误处理最佳实践</code></h1>
 
@@ -214,7 +214,7 @@
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
+<p align="right"><a href="#目录">⬆ 返回顶部</a></p>
 
 <h1 id="3-code-style-practices"><code>3. 编码风格实践</code></h1>
 
@@ -386,7 +386,7 @@ null == undefined   // true
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
+<p align="right"><a href="#目录">⬆ 返回顶部</a></p>
 
 
 <h1 id="4-testing-and-overall-quality-practices"><code>4. 测试和总体的质量实践</code></h1>
@@ -462,7 +462,7 @@ null == undefined   // true
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
+<p align="right"><a href="#目录">⬆ 返回顶部</a></p>
 
 <h1 id="5-going-to-production-practices"><code>5. 上线实践</code></h1>
 
@@ -650,7 +650,7 @@ null == undefined   // true
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
+<p align="right"><a href="#目录">⬆ 返回顶部</a></p>
 
 <h1 id="6-security-best-practices"><code>6. 安全最佳实践</code></h1>
 
@@ -938,7 +938,7 @@ null == undefined   // true
 
 <br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#目录">⬆ 返回顶部</a></p>
 
 # `API Practices`
 
