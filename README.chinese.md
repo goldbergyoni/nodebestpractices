@@ -770,7 +770,7 @@ null == undefined   // true
 
 **否则:** 您疏忽和宽松的方法大大增加了攻击面, 并鼓励攻击者尝试许多输入, 直到他们找到一些组合, 使应用程序崩溃。
 
-🔗 [**更多: 验证传人的JSON schemas**](/sections/security/validation.md)
+🔗 [**更多: 验证传入的JSON schemas**](/sections/security/validation.md)
 
 <br/><br/>
 
