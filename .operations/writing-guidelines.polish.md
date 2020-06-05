@@ -16,7 +16,7 @@ Oprócz tego, że treść jest znacznie edytowana i niezawodna, przeglądanie w 
 
 ## 4. Spójne formatowanie
 
-Treść jest prezentowana przy użyciu stałych szablonów. Wszelkie przyszłe treści muszą być zgodne z tym samym szablonem. Jeśli chcesz dodać nowe punktory, skopiuj format punktora z istniejącego i rozszerz go do swoich potrzeb. Aby uzyskać dodatkowe informacje, zobacz [ten szablon](https://github.com/i0natan/nodebestpractices/blob/master/sections/template.md).
+Treść jest prezentowana przy użyciu stałych szablonów. Wszelkie przyszłe treści muszą być zgodne z tym samym szablonem. Jeśli chcesz dodać nowe punktory, skopiuj format punktora z istniejącego i rozszerz go do swoich potrzeb. Aby uzyskać dodatkowe informacje, zobacz [ten szablon](https://github.com/goldbergyoni/nodebestpractices/blob/master/sections/template.md).
 
 ## 5. To na temat Node.js
 

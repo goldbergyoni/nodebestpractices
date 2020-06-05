@@ -10,4 +10,4 @@ Kiedy zaczniesz się rozwijać i będziesz mieć różne komponenty na różnych
 
 ### Udostępnianie własnych wspólnych narzędzi w różnych środowiskach i komponentach
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/Privatenpm.png "Structuring solution by components")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/Privatenpm.png "Structuring solution by components")

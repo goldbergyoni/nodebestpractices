@@ -44,10 +44,10 @@ jobs:
 
  
  ### Circle CI - 几乎零设置的云CI
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/circleci.png "API error handling")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/circleci.png "API error handling")
 
 ### Jenkins - 完善和强大的CI
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/jenkins_dashboard.png "API error handling")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/jenkins_dashboard.png "API error handling")
 
  
 <br/><br/>
