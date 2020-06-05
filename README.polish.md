@@ -1027,7 +1027,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 # `7. Wersja robocza: Najlepsze praktyki dotyczące wydajności`
 
-## Nasi współpracownicy pracują nad tą sekcją. [Chciałbyś dołączyć?](https://github.com/i0natan/nodebestpractices/issues/256)
+## Nasi współpracownicy pracują nad tą sekcją. [Chciałbyś dołączyć?](https://github.com/goldbergyoni/nodebestpractices/issues/256)
 
 <br/><br/>
 
@@ -1056,7 +1056,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 # Milestones
 
-Aby utrzymać ten przewodnik i aktualizować go, stale aktualizujemy i ulepszamy wytyczne i najlepsze praktyki z pomocą społeczności. Możesz śledzić nasze [kamienie milowe](https://github.com/i0natan/nodebestpractices/milestones) i dołączyć do grup roboczych, jeśli chcesz przyczynić się do tego projektu
+Aby utrzymać ten przewodnik i aktualizować go, stale aktualizujemy i ulepszamy wytyczne i najlepsze praktyki z pomocą społeczności. Możesz śledzić nasze [kamienie milowe](https://github.com/goldbergyoni/nodebestpractices/milestones) i dołączyć do grup roboczych, jeśli chcesz przyczynić się do tego projektu
 
 <br/>
 
@@ -1073,21 +1073,21 @@ Wszystkie tłumaczenia pochodzą od społeczności. Z przyjemnością uzyskamy w
 
 ### Tłumaczenia w trakcie
 
-- ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/129))
-- ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/i0natan/nodebestpractices/issues/156))
-- ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Courtesy of [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/94))
-- ![ES](/assets/flags/ES.png) [Spanish](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/95))
-- ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/i0natan/nodebestpractices/issues/139))
+- ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/129))
+- ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/156))
+- ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Courtesy of [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94))
+- ![ES](/assets/flags/ES.png) [Spanish](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/95))
+- ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/139))
 
 <br/><br/>
 
 ## Steering Committee
 
-Spotkaj się z członkami komitetu sterującego - ludźmi, którzy pracują razem, aby zapewnić wytyczne i przyszłe kierunki projektu. Ponadto każdy członek komitetu prowadzi projekt śledzony w ramach naszych [projektów GitHub](https://github.com/i0natan/nodebestpractices/projects).
+Spotkaj się z członkami komitetu sterującego - ludźmi, którzy pracują razem, aby zapewnić wytyczne i przyszłe kierunki projektu. Ponadto każdy członek komitetu prowadzi projekt śledzony w ramach naszych [projektów GitHub](https://github.com/goldbergyoni/nodebestpractices/projects).
 
 <img align="left" width="100" height="100" src="assets/images/members/yoni.png">
 
-[Yoni Goldberg](https://github.com/i0natan)
+[Yoni Goldberg](https://github.com/goldbergyoni)
 <a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
 <a href="https://goldbergyoni.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 

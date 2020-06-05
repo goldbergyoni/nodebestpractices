@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/i0natan/nodebestpractices.git"
+    "url": "git+https://github.com/goldbergyoni/nodebestpractices.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/i0natan/nodebestpractices/issues"
+    "url": "https://github.com/goldbergyoni/nodebestpractices/issues"
   },
-  "homepage": "https://github.com/i0natan/nodebestpractices#readme",
+  "homepage": "https://github.com/goldbergyoni/nodebestpractices#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "github-api": "^3.0.0",
