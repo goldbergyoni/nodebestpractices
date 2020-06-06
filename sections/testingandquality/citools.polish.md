@@ -42,10 +42,10 @@ jobs:
 
 ### Circle CI - prawie zerowa konfiguracja CI w chmurze
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/circleci.png "API error handling")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/circleci.png "API error handling")
 
 ### Jenkins - wyrafinowany i solidny CI
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/jenkins_dashboard.png "API error handling")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/jenkins_dashboard.png "API error handling")
 
 <br/><br/>

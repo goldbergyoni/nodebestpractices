@@ -27,10 +27,10 @@ Więc co krzyczy architektura twojej aplikacji? Gdy spojrzysz na strukturę kata
 
 ### Dobre: Skonstruuj swoje rozwiązanie według samodzielnych komponentów
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Structuring solution by components")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Structuring solution by components")
 
 <br/><br/>
 
 ### Złe: Pogrupuj pliki według roli technicznej
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebyroles.PNG "Structuring solution by technical roles")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebyroles.PNG "Structuring solution by technical roles")

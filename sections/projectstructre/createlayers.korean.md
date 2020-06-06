@@ -4,10 +4,10 @@
 
  ### 컴포넌트 코드를 웹, 서비스, 데이터 접근 언어(DAL) 계층으로 나누어라
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Separate component code into layers")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Separate component code into layers")
 
  <br/><br/>
 
 ### 1분 설명: 계층을 섞으면 불리한 점
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/keepexpressinweb.gif "The downside of mixing layers")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/keepexpressinweb.gif "The downside of mixing layers")
