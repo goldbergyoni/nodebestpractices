@@ -18,10 +18,10 @@
 
 ### Хорошо: структурируйте свое решение по отдельным компонентам
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Structuring solution by components")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Structuring solution by components")
 
  <br/><br/>
 
 ### Плохо: сгруппируйте файлы по техническим ролям
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebyroles.PNG "Structuring solution by technical roles")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebyroles.PNG "Structuring solution by technical roles")

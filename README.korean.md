@@ -1050,7 +1050,7 @@ null == undefined   // true
 
 # `7. 초안: 성능`
 
-## 협력자들이 현재 작업중입니다. [함께 하시겠습니까?](https://github.com/i0natan/nodebestpractices/issues/256)
+## 협력자들이 현재 작업중입니다. [함께 하시겠습니까?](https://github.com/goldbergyoni/nodebestpractices/issues/256)
 
 <br/><br/>
 
@@ -1077,7 +1077,7 @@ null == undefined   // true
 
 # 마일스톤
 
-이 가이드를 관리하고 최신 버전을 유지하기 위해, 우리는 지속해서 가이드라인과 모범 사례들을 커뮤니티의 도움으로 업데이트하고 개선해 나가고 있습니다. [마일스톤](https://github.com/i0natan/nodebestpractices/milestones)을 확인하시고 이 프로젝트에 기여하고 싶다면 작업중인 그룹에 참여하세요!
+이 가이드를 관리하고 최신 버전을 유지하기 위해, 우리는 지속해서 가이드라인과 모범 사례들을 커뮤니티의 도움으로 업데이트하고 개선해 나가고 있습니다. [마일스톤](https://github.com/goldbergyoni/nodebestpractices/milestones)을 확인하시고 이 프로젝트에 기여하고 싶다면 작업중인 그룹에 참여하세요!
 
 <br/>
 
@@ -1093,21 +1093,21 @@ null == undefined   // true
 
 ### 번역 작업중
 
-- ![FR](/assets/flags/FR.png) [프랑스어](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/129))
-- ![HE](/assets/flags/HE.png) 히브리어 ([Discussion](https://github.com/i0natan/nodebestpractices/issues/156))
-- ![KR](/assets/flags/KR.png) [한국어](README.korean.md) - [한상범](https://github.com/uronly14me) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/94)) 제공
-- ![ES](/assets/flags/ES.png) [스페인어](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/95))
-- ![TR](/assets/flags/TR.png) 터키어 ([Discussion](https://github.com/i0natan/nodebestpractices/issues/139))
+- ![FR](/assets/flags/FR.png) [프랑스어](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/129))
+- ![HE](/assets/flags/HE.png) 히브리어 ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/156))
+- ![KR](/assets/flags/KR.png) [한국어](README.korean.md) - [한상범](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94)) 제공
+- ![ES](/assets/flags/ES.png) [스페인어](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/95))
+- ![TR](/assets/flags/TR.png) 터키어 ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/139))
 
 <br/><br/>
 
 ## 운영 위원회
 
-프로젝트를 지도하고 앞으로 나아갈 방향을 제시하는데 함께 일하는 운영 위원회 일원들을 소개합니다. 추가로, 위원회원들은 각자 [Github 프로젝트](https://github.com/i0natan/nodebestpractices/projects) 아래에 인행되는 프로젝트들을 인솔합니다.
+프로젝트를 지도하고 앞으로 나아갈 방향을 제시하는데 함께 일하는 운영 위원회 일원들을 소개합니다. 추가로, 위원회원들은 각자 [Github 프로젝트](https://github.com/goldbergyoni/nodebestpractices/projects) 아래에 인행되는 프로젝트들을 인솔합니다.
 
 <img align="left" width="100" height="100" src="assets/images/members/yoni.png">
 
-[요니 골드버그](https://github.com/i0natan)
+[요니 골드버그](https://github.com/goldbergyoni)
 <a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
 <a href="https://goldbergyoni.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 

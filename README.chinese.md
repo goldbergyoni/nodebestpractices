@@ -20,7 +20,7 @@
 # 欢迎! 首先您应该知道的三件事情:
 **1. 当您读到这里，实际上您读了很多关于Node.js的优秀文章 -** 这是对Node.js最佳实践中排名最高的内容的总结和分享
 
-**2. 这里是最大的汇集，且每周都在增长 -** 当前，超过50个最佳实现，样式指南，架构建议已经呈现。每天都有新的issue和PR被创建，以使这本在线书籍不断更新。我们很乐于见到您能在这里做出贡献，不管是修复一些代码的错误，或是提出绝妙的新想法。请查看我们的[milestones](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
+**2. 这里是最大的汇集，且每周都在增长 -** 当前，超过50个最佳实现，样式指南，架构建议已经呈现。每天都有新的issue和PR被创建，以使这本在线书籍不断更新。我们很乐于见到您能在这里做出贡献，不管是修复一些代码的错误，或是提出绝妙的新想法。请查看我们的[milestones](https://github.com/goldbergyoni/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
 
 **3. 大部分的条目包含额外的信息 -** 大部分的最佳实践条目的旁边，您将发现 **🔗Read More** 链接，它将呈现给您示例代码，博客引用和更多信息
 
@@ -33,7 +33,7 @@
 4. [测试和总体质量实践 (8) ](#4-testing-and-overall-quality-practices)
 5. [进入生产实践 (16) ](#5-going-to-production-practices)
 6. :star: 新: [安全实践(23)](#6-security-best-practices)
-7. Performance Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
+7. Performance Practices ([coming soon](https://github.com/goldbergyoni/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 
 
 <br/><br/><br/>
@@ -401,7 +401,7 @@ null == undefined   // true
 
 ## ![✔] 4.2 使用一个linter检测代码问题
 
-**TL;DR:** 使用代码linter检查基本质量并及早检测反模式。在任何测试之前运行它, 并将其添加为预提交的git钩子, 以最小化审查和更正任何问题所需的时间。也可在[Section 3](https://github.com/i0natan/nodebestpractices#3-code-style-practices)中查阅编码样式实践
+**TL;DR:** 使用代码linter检查基本质量并及早检测反模式。在任何测试之前运行它, 并将其添加为预提交的git钩子, 以最小化审查和更正任何问题所需的时间。也可在[Section 3](https://github.com/goldbergyoni/nodebestpractices#3-code-style-practices)中查阅编码样式实践
 
 **否则:** 您可能让一些反模式和易受攻击的代码传递到您的生产环境中。
 
@@ -939,7 +939,7 @@ null == undefined   // true
 <br/><br/><br/>
 
 # Milestones
-To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/i0natan/nodebestpractices/milestones) and join the working groups if you want to contribute to this project.
+To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/goldbergyoni/nodebestpractices/milestones) and join the working groups if you want to contribute to this project.
 
 <br/><br/>
 
