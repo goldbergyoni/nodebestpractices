@@ -924,6 +924,15 @@
         "review",
         "content"
       ]
+    },
+    {
+      "login": "benjamingr",
+      "name": "Benjamin Gruenbaum",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1315533?v=4",
+      "profile": "https://stackoverflow.com/users/1348195/benjamin-gruenbaum",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
