@@ -12,6 +12,7 @@ A docker image is not just a bunch of files rather constitutes multiple layers t
 
 <details>
 <summary><strong>Dockerfile</strong></summary>
+
 ```
 # syntax = docker/dockerfile:1.0-experimental
 
@@ -23,13 +24,16 @@ RUN --mount=type=secret,id=npm,target=/root/.npmrc npm ci
 # The rest comes here
 
 ```
+
 </details>
 
 <br/><br/>
 
 ### Code Example – Building securely using multi-stage build
 <details>
+
 <summary><strong>Dockerfile</strong></summary>
+
 
 ```
 
@@ -48,6 +52,7 @@ CMD ["node","index.js"]
 # The ARG and .npmrc won't appear in the final image, but can be found in the Docker daemon un-tagged images list - make sure to delete those
 
 ```
+
 </details>
 
 <br/><br/>
@@ -55,6 +60,7 @@ CMD ["node","index.js"]
 ### Code Example Anti Pattern – Using build time args
 
 <details>
+
 <summary><strong>Dockerfile</strong></summary>
 
 ```
@@ -72,7 +78,9 @@ RUN echo "//registry.npmjs.org/:\_authToken=\$NPM_TOKEN" > .npmrc && \
 CMD ["node","index.js"]
 
 ```
+
 </details>
+
 <br/><br/>
 
 ### Blog Quote: "These secrets aren’t saved in the final Docker"
