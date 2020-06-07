@@ -11,6 +11,7 @@ A docker image is not just a bunch of files rather constitutes multiple layers t
 ### Code Example – Using Docker mounted secrets (experimental but stable)
 
 <details>
+
 <summary><strong>Dockerfile</strong></summary>
 
 ```
@@ -22,7 +23,6 @@ COPY package.json package-lock.json ./
 RUN --mount=type=secret,id=npm,target=/root/.npmrc npm ci
 
 # The rest comes here
-
 ```
 
 </details>
@@ -50,7 +50,6 @@ COPY --from=build /dist /dist
 CMD ["node","index.js"]
 
 # The ARG and .npmrc won't appear in the final image, but can be found in the Docker daemon un-tagged images list - make sure to delete those
-
 ```
 
 </details>
@@ -76,7 +75,6 @@ RUN echo "//registry.npmjs.org/:\_authToken=\$NPM_TOKEN" > .npmrc && \
 # Deleting the .npmrc within the same copy command will not save it inside the layer, however it can be found in image history
 
 CMD ["node","index.js"]
-
 ```
 
 </details>
