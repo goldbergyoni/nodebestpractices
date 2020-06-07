@@ -30,10 +30,10 @@ RUN --mount=type=secret,id=npm,target=/root/.npmrc npm ci
 <br/><br/>
 
 ### Code Example – Building securely using multi-stage build
+
 <details>
 
 <summary><strong>Dockerfile</strong></summary>
-
 
 ```
 
@@ -88,4 +88,7 @@ CMD ["node","index.js"]
 From the blog, [Alexandra Ulsh](https://www.alexandraulsh.com/2019/02/24/docker-build-secrets-and-npmrc/?fbclid=IwAR0EAr1nr4_QiGzlNQcQKkd9rem19an9atJRO_8-n7oOZXwprToFQ53Y0KQ)
 
 > In November 2018 Docker 18.09 introduced a new --secret flag for docker build. This allows us to pass secrets from a file to our Docker builds. These secrets aren’t saved in the final Docker image, any intermediate images, or the image commit history. With build secrets, you can now securely build Docker images with private npm packages without build arguments and multi-stage builds.
+
+```
+
 ```
