@@ -54,6 +54,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 5. [Going To Production Practices (19) ](#5-going-to-production-practices)
 6. [Security Practices (25)](#6-security-best-practices)
 7. [Performance Practices (2) (Work In Progress️ ✍️)](#7-draft-performance-best-practices)
+8. [Docker Practices (Work In Progress️ ✍️)](#7-draft-docker-best-practices)
 
 <br/><br/>
 
@@ -1071,6 +1072,176 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 🔗 [**Read More: Native over user land utils**](/sections/performance/nativeoverutil.md)
 
 <br/><br/><br/>
+
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+
+# `7. Draft: Docker Best Practices`
+
+## Our contributors are working on this section. [Would you like to join?](https://github.com/goldbergyoni/nodebestpractices/issues/682)
+
+<br/><br/>
+
+## ![✔] 8.1. Clean npm cache
+
+**TL;DR:**
+
+**Otherwise:**
+
+🔗 [**Read More: Clean npm cache**](/sections/docker/file.md)
+
+<br /><br /><br />
+
+## ![✔] 8.2. Bootstrap the code using 'node' command, avoid 'npm run' scripts
+
+**TL;DR:**
+
+**Otherwise:**
+
+🔗 [**Read More: Clean npm cache**](/sections/docker/file.md)
+
+<br /><br /><br />
+
+## ![✔] 8.3. Install packages for production
+
+**TL;DR:**
+
+**Otherwise:**
+
+🔗 [**Read More: Bootstrap the code using 'node' command, avoid 'npm run' scripts**](/sections/docker/file.md)
+
+<br /><br /><br />
+
+## ![✔] 8.4. Lint your Dockerfile
+
+**TL;DR:**
+
+**Otherwise:**
+
+🔗 [**Read More: Lint your Dockerfile**](/sections/docker/file.md)
+
+<br /><br /><br />
+
+## ![✔] 8.5. Utilize caching for better build time
+
+**TL;DR:**
+
+**Otherwise:**
+
+🔗 [**Read More: Utilize caching for better build time**](/sections/docker/file.md)
+
+<br /><br /><br />
+
+## ![✔] 8.6. Set Docker memory limits which are in-par with v8 memory limit
+
+**TL;DR:**
+
+**Otherwise:**
+
+🔗 [**Read More: Set Docker memory limits which are in-par with v8 memory limit**](/sections/docker/file.md)
+
+<br /><br /><br />
+
+## ![✔] 8.7. Scan your image for vulnerabilities
+
+**TL;DR:**
+
+**Otherwise:**
+
+🔗 [**Read More: Scan your image for vulnerabilities**](/sections/docker/file.md)
+
+<br /><br /><br />
+
+## ![✔] 8.8. Use multistage builds
+
+**TL;DR:**
+
+**Otherwise:**
+
+🔗 [**Read More: Use multistage builds**](/sections/docker/file.md)
+
+<br /><br /><br />
+
+## ![✔] 8.9. Don't use "latest" tags, use a digest
+
+**TL;DR:**
+
+**Otherwise:**
+
+🔗 [**Read More: Don't use "latest", use a digest**](/sections/docker/file.md)
+
+<br /><br /><br />
+
+## ![✔] 8.10. Prefer smaller images
+
+**TL;DR:**
+
+**Otherwise:**
+
+🔗 [**Read More: Prefer smaller images**](/sections/docker/file.md)
+
+<br /><br /><br />
+
+## ![✔] 8.11. Graceful shutdown
+
+**TL;DR:**
+
+**Otherwise:**
+
+🔗 [**Read More: Graceful shutdown**](/sections/docker/file.md)
+
+<br /><br /><br />
+
+## ![✔] 8.12. Avoid sending secrets as build time arguments
+
+**TL;DR:**
+
+**Otherwise:**
+
+🔗 [**Read More: Avoid sending secrets as build time arguments**](/sections/docker/file.md)
+
+<br /><br /><br />
+
+## ![✔] 8.13. On the importance of docker ignore
+
+**TL;DR:**
+
+**Otherwise:**
+
+🔗 [**Read More: On the importance of docker ignore**](/sections/docker/file.md)
+
+<br /><br /><br />
+
+## ![✔] 8.14.  Avoid inconsistent images
+
+**TL;DR:**
+
+**Otherwise:**
+
+🔗 [**Read More: Avoid inconsistent images**](/sections/docker/file.md)
+
+<br /><br /><br />
+
+## ![✔] 8.15. Avoid process managers
+
+**TL;DR:**
+
+**Otherwise:**
+
+🔗 [**Read More: Avoid process managers**](/sections/docker/file.md)
+
+<br /><br /><br />
+
+## ![✔] 8.16. Generic Docker practices
+
+**TL;DR:**
+
+**Otherwise:**
+
+🔗 [**Read More: Generic Docker practices**](/sections/docker/file.md)
+
+<br /><br /><br />
+
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
 # Milestones
 
