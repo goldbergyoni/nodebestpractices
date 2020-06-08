@@ -1239,7 +1239,17 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 🔗 [**Read More: Generic Docker practices**](/sections/docker/file.md)
 
-<br /><br /><br />
+<br/><br /><br />
+
+## ![✔] 8.17. Let the Docker orchestrator restart and replicate processes
+
+**TL;DR:** When using a Docker run time orchestrator (e.g., Kubernetes), invoke the Node.js process directly without intermediating process managers or custom code that replicate the process (e.g., Cluster module). The runtime platform has the highest amount of data and visibility for making placement decision - It knows best how many processes are needed, how to spread them and what to do in case of crashes
+
+**Otherwise:** Container keeps crashing due to lack of resources will get restarted indifiently by the process manager. Should Kubernetes be aware of that, it could relocate it to a different roomy instance 
+
+🔗 [**Read More: Let the Docker orchestrator restart and replicate processes**](/sections/docker/restart-and-replicate-processes.md)
+
+<br/><br /><br />
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
