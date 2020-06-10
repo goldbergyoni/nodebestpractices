@@ -1183,11 +1183,11 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 ## ![✔] 8.11. Graceful shutdown
 
-**TL;DR:**
+**TL;DR:** Handle the process SIGTERM event and clean-up all existing conenction and resources. This should be done while responding to ongoing reqeusts. In Dockerized runtimes, shuting down containers is not a rare event rather a frequent occurence that happen as part of routine work. Acheiving this demand some thoughful code to orchestrate few moving parts: The load balancer, keep-alive connections, the HTTP server and other resources
 
-**Otherwise:**
+**Otherwise:** Dying immediately means not responding to thousands of disappointed users
 
-🔗 [**Read More: Graceful shutdown**](/sections/docker/file.md)
+🔗 [**Read More: Graceful shutdown**](/sections/docker/graceful-shutdown.md)
 
 <br /><br /><br />
 
@@ -1320,9 +1320,9 @@ Thank you to all our collaborators! 🙏
 
 Our collaborators are members who are contributing to the repository on a regular basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in helping us guide thousands of people to craft better Node.js applications, please read our [contributor guidelines](/.operations/CONTRIBUTING.md) 🎉
 
-| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |<a href="https://github.com/kevynb" target="_blank"><img src="assets/images/members/kevyn.png" width="59" height="59"></a> |
-| :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |:--------------------------------------------------------------------------------------------------------------------------------: |
-|                                    [Ido Richter (Founder)](https://github.com/idori)                                    |                                        [Keith Holliday](https://github.com/TheHollidayInn)                                         |                                       [Kevyn Bruyere](https://github.com/kevynb)                                         |
+| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> | <a href="https://github.com/kevynb" target="_blank"><img src="assets/images/members/kevyn.png" width="59" height="59"></a> |
+| :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: |
+|                                    [Ido Richter (Founder)](https://github.com/idori)                                    |                                        [Keith Holliday](https://github.com/TheHollidayInn)                                         |                                         [Kevyn Bruyere](https://github.com/kevynb)                                         |
 
 ### Past collaborators
 
