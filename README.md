@@ -1143,11 +1143,11 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 ## ![✔] 8.7. Scan your image for vulnerabilities
 
-**TL;DR:**
+**TL;DR:** Besides checking code dependencies vulnerabilities, also scan the final image that is shipped to production. Docker image scanners check the code dependencies but also the OS binaries. This E2E security scan covers more ground and verifies that no bad guy injected a vulnerability during the build. Consequently, it recommended running this as the last step before deployment. There a handful of free and commercial scanners that also provide CI/CD plugins
 
-**Otherwise:**
+**Otherwise:** Your code might be entirely free from vulnerabilities. However, it might still get hacked due to vulnerable version of OS-level binaries (e.g. OpenSSL, TarBall)  that commonly being used by applications
 
-🔗 [**Read More: Scan your image for vulnerabilities**](/sections/docker/file.md)
+🔗 [**Read More: Scan your image for vulnerabilities**](/sections/docker/scan-images.md)
 
 <br /><br /><br />
 
