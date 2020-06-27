@@ -32,7 +32,7 @@
 1. [Prácticas para estructura del proyecto (5)](#1-project-structure-practices)
 2. [Prácticas en manejo de errores (11) ](#2-error-handling-practices)
 3. [Prácticas de estilo de código (12) ](#3-code-style-practices)
-4. [Practicas de prueba y calidad en general (12) ](#4-testing-and-overall-quality-practices)
+4. [Prácticas de prueba y calidad en general (12) ](#4-testing-and-overall-quality-practices)
 5. [Prácticas de puesta en producción (18) ](#5-going-to-production-practices)
 6. [Prácticas de seguridad (25)](#6-security-best-practices)
 7. [Prácticas de rendimiento (1) (In Progress️ ✍️)](#7-performance-best-practices)
@@ -64,7 +64,7 @@
 
 ## ![✔] 1.3 Envuelve las utilidades comunes como paquetes de NPM
 
-**TL;DR:** En una aplicación grande que se constituye de múltples bases de código, utilidades transversales como los loggers, cifrado y similares, deben de estar envueltos por su propio código y expuestos como paquetes privados de NPM. Esto permite compartirlos entre múltiples base de código y proyectos.
+**TL;DR:** En una aplicación grande que se constituye de múltiples bases de código, utilidades transversales como los loggers, cifrado y similares, deben de estar envueltos por su propio código y expuestos como paquetes privados de NPM. Esto permite compartirlos entre múltiples base de código y proyectos.
 
 **De lo contrario:** Tendrás que inventar tu propia implementación y rueda de dependencia
 
@@ -86,7 +86,7 @@
 
 **TL;DR:** La configuración perfecta e impecable debe incluir (a) claves que se pueden leer desde el archivo Y desde la variable de entorno (b) los secretos se guardan fuera del código al que se ha hecho commit (c) config es jerárquica para facilitar la localización. Solo hay unos pocos paquetes que pueden ayudar a validar la mayoría de estos casos como [nconf](https://www.npmjs.com/package/nconf) y [config](https://www.npmjs.com/package/config)
 
-**De lo contrario:** No cumplir con ninguno de los requisitos de configuración simplemente frena al equipo de desarrollo o al equipo de devpos. Probablemente ambos
+**De lo contrario:** No cumplir con ninguno de los requisitos de configuración simplemente frena al equipo de desarrollo o al equipo de devops. Probablemente ambos
 
 🔗 [**Leer más: buenas prácticas de configuración**](/sections/projectstructre/configguide.spanish.md)
 
@@ -148,9 +148,9 @@
 
 <br/><br/>
 
-## ![✔] 2.6 Cerrar el proceso elegantemento cuando un extraño llega
+## ![✔] 2.6 Cerrar el proceso elegantemente cuando un extraño llega
 
-**TL; DR:** Cuando se produce un error desconocido (un error del desarrollador, consulta el número de práctica recomendada número #3): existe incertidumbre acerca del estado de la aplicación. Una práctica común sugiere reiniciar el proceso cuidadosamente usando una herramienta 'reiniciadora' como Forever y PM2.
+**TL; DR:** Cuando se produce un error desconocido (un error del desarrollador, consulta el número de práctica recomendada número #3): existe incertidumbre acerca del estado de la aplicación. Una práctica común sugiere reiniciar el proceso cuidadosamente usando una herramienta de gestión de procesos como Forever y PM2.
 
 **De lo contrario:** Cuando se detecta una excepción desconocida, algunos objetos pueden estar en un estado defectuoso (por ejemplo, un emisor de eventos que se usa globalmente y que ya no se activan debido a fallas internas) y todas las solicitudes futuras pueden fallar o comportarse de manera loca
 
@@ -204,7 +204,7 @@
 
 **De lo contrario:** Considera esto: tu función espera un argumento numérico "Descuento" que la persona que llama olvida pasar, más adelante su código comprueba si Descuento!= 0 (cantidad de descuento permitido es mayor que cero), entonces permitirás el usuario que disfrute de un descuento. Dios mío, qué desagradable error. ¿Puedes verlo?
 
-🔗 [**Leer más: falla rapidamente**](/sections/errorhandling/failfast.spanish.md)
+🔗 [**Leer más: falla rápidamente**](/sections/errorhandling/failfast.spanish.md)
 
 <br/><br/><br/>
 
@@ -302,7 +302,7 @@ const count = 2 // intenta ejecutar 2(), pero 2 no es una función
 
 **TL;DR:** Nombra todas las funciones, incluidos los cierres y las devoluciones de llamada. Evita funciones anónimas. Esto es especialmente útil cuando se perfila una aplicación de Node. Nombrar todas las funciones le permitirá comprender fácilmente lo que está viendo al revisar un registro de memoria
 
-**De lo contrario:** La depuración de problemas de producción utilizando un registro de memoria (log) puede ser un desafío ya que observa un numero significativo de funciones anónimas
+**De lo contrario:** La depuración de problemas de producción utilizando un registro de memoria (log) puede ser un desafío ya que observa un número significativo de funciones anónimas
 
 <br/><br/>
 
@@ -497,7 +497,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <br/><br/>
 
-## ![✔] 4.10 Usa ambiente de producción para pruebas e2e
+## ![✔] 4.10 Usa ambiente similar al de producción para pruebas e2e
 
 **TL;DR:** La prueba de extremo a extremo (e2e) que incluye datos en vivo solía ser el eslabón más débil del proceso de CI, ya que depende de múltiples servicios pesados como DB. Usa un entorno que esté lo más cerca posible de su producción real como a-continue
 
@@ -689,7 +689,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 ## ![✔] 5.17. Usa una versión LTS de Node.js
 
-**TL;DR:** Asegúrate de estar utilizando una versión LTS de Node.js para recibir correcciones de errores críticos, actualizaciones de seguridad y mejoras de rendimiento.
+**TL;DR:** Asegúrate de estar utilizando una versión LTS (de soporte a largo plazo) de Node.js para recibir correcciones de errores críticos, actualizaciones de seguridad y mejoras de rendimiento.
 
 **De lo contrario:** Los errores o vulnerabilidades recientemente descubiertos podrían utilizarse para explotar una aplicación que se ejecuta en producción, y su aplicación puede dejar de ser compatible con varios módulos y ser más difícil de mantener
 
