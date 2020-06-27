@@ -1113,9 +1113,9 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 ## ![✔] 8.4. Lint your Dockerfile
 
-**TL;DR:**
+**TL;DR:** Linting your Dockerfile is an important step to identify issues in your Dockerfile which differ from best practices. By checking for potential flaws using a specialised Docker linter, performance and security improvements can be easily identified.
 
-**Otherwise:**
+**Otherwise:** A Docker image built with errors or performance bottlenecks could result in security issues in production, or differing from best practices to the detriment of the application end user.
 
 🔗 [**Read More: Lint your Dockerfile**](/sections/docker/file.md)
 
@@ -1161,13 +1161,15 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 <br /><br /><br />
 
-## ![✔] 8.9. Don't use "latest" tags, use a digest
+## ![✔] 8.9. Understand image tags, and use the "latest" tag with caution
 
-**TL;DR:**
+**TL;DR:** The latest tag can be misleading, and is subject to much confusion. Developers are often led to believe that specifying the latest tag will provide them with the most recent image in the repository, however this is not the case.
 
-**Otherwise:**
+In addition, referring to an image tag means that the base image is subject to change, as image tags cannot be relied upon for a deterministic install. Instead, if a determinstic install is expected, a SHA256 digest can be used to reference an exact image.
 
-🔗 [**Read More: Don't use "latest", use a digest**](/sections/docker/file.md)
+**Otherwise:** A new version of a base image could be deployed into production with breaking changes, causing unintended application behaviour.
+
+🔗 [**Read More: Understand image tags, and use the "latest" tag with caution**](/sections/docker/file.md)
 
 <br /><br /><br />
 
