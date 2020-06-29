@@ -1040,35 +1040,35 @@ Ten en cuenta que con la introducción del nuevo motor V8 junto con los nuevos e
 <br/><br/><br/>
 
 
-# Milestones
+# Metas
 
-To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/i0natan/nodebestpractices/milestones) and join the working groups if you want to contribute to this project
+Para mantener esta guía y tenerla actualizada, estamos constantemente modernizando y mejorando las pautas y las mejores prácticas con la ayuda de la comunidad. Tu puedes seguir nuestras [metas](https://github.com/i0natan/nodebestpractices/milestones) y unirte a los grupos que trabajan si es que quieres contribuir a este proyecto.
 
 <br/>
 
-## Translations
+## Traducciones
 
-All translations are contributed by the community. We will be happy to get any help with either completed, ongoing or new translations!
+Todas las traducciones están contribuidas por la comunidad. Estaremos encantados de obtener ayuda con traducciones completas, en curso o nuevas.
 
-### Completed translations
+### Traducciones Completadas
 
-- ![BR](/assets/flags/BR.png) [Brazilian Portuguese](./README.brazilian-portuguese.md) - Courtesy of [Marcelo Melo](https://github.com/marcelosdm)
-- ![CN](/assets/flags/CN.png) [Chinese](./README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
-- ![RU](/assets/flags/RU.png) [Russian](./README.russian.md) - Courtesy of [Alex Ivanov](https://github.com/contributorpw)
-- ![ES](/assets/flags/ES.png) [Spanish](./README.spanish.md) - Courtesy of [Jordi Castillo](https://github.com/Whitefox98)
+- ![BR](/assets/flags/BR.png) [Brazilian Portuguese](./README.brazilian-portuguese.md) - Cortesía de [Marcelo Melo](https://github.com/marcelosdm)
+- ![CN](/assets/flags/CN.png) [Chinese](./README.chinese.md) - Cortesía de [Matt Jin](https://github.com/mattjin)
+- ![RU](/assets/flags/RU.png) [Russian](./README.russian.md) - Cortesía de [Alex Ivanov](https://github.com/contributorpw)
+- ![ES](/assets/flags/ES.png) [Spanish](./README.spanish.md) - Cortesía de [Jordi Castillo](https://github.com/Whitefox98)
 
-### Translations in progress
+### Traducciones en curso
 
 - ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/129))
 - ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/i0natan/nodebestpractices/issues/156))
-- ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Courtesy of [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/94))
+- ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Cortesía de [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/94))
 - ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/i0natan/nodebestpractices/issues/139))
 
 <br/><br/>
 
-## Steering Committee
+## Comité Directivo
 
-Meet the steering committee members - the people who work together to provide guidance and future direction to the project. In addition, each member of the committee leads a project tracked under our [Github projects](https://github.com/i0natan/nodebestpractices/projects).
+Conozca a los miembros del comité directivo: las personas que trabajan juntas para brindar orientación y dirección al proyecto. Además, cada miembro del comité lidera un proyecto seguido bajo nuestros [proyectos Github](https://github.com/i0natan/nodebestpractices/projects).
 
 <img align="left" width="100" height="100" src="assets/images/members/yoni.png">
 
@@ -1076,7 +1076,7 @@ Meet the steering committee members - the people who work together to provide gu
 <a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
 <a href="https://goldbergyoni.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
-Independent Node.js consultant who works with customers in the USA, Europe, and Israel on building large-scale Node.js applications. Many of the best practices above were first published at [goldbergyoni.com](https://goldbergyoni.com). Reach Yoni at [@goldbergyoni](https://github.com/goldbergyoni) or [me@goldbergyoni.com](mailto:me@goldbergyoni.com)
+Consultor independiente de Node.js que trabaja con clientes en EE. UU., Europa e Israel en la construcción de aplicaciones Node.js a gran escala. Muchas de las mejores prácticas anteriores se publicaron por primera vez en [goldbergyoni.com](https://goldbergyoni.com). Comuníquese con Yoni a través de [@goldbergyoni](https://github.com/goldbergyoni) o [me@goldbergyoni.com](mailto:me@goldbergyoni.com)
 
 <br/>
 
@@ -1085,7 +1085,7 @@ Independent Node.js consultant who works with customers in the USA, Europe, and 
 [Bruno Scheufler](https://github.com/BrunoScheufler)
 <a href="https://brunoscheufler.com/"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
-💻 full-stack web engineer, Node.js & GraphQL enthusiast
+💻 ingeniero web full-stack, entusiasta de Node.js y GraphQL
 
 <br/>
 
@@ -1095,7 +1095,7 @@ Independent Node.js consultant who works with customers in the USA, Europe, and 
 <a href="https://twitter.com/kylemartin_93"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
 <a href="https://www.linkedin.com/in/kylemartinnz"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
 
-Full Stack Developer & Site Reliability Engineer based in New Zealand, interested in web application security, and architecting and building Node.js applications to perform at global scale.
+Desarrollador Full Stack e ingeniero de confiabilidad de sitio con sede en Nueva Zelanda, interesado en la seguridad de aplicaciones web y en la arquitectura y creación de aplicaciones Node.js pque funcionan a escala global
 
 <br/>
 
@@ -1106,21 +1106,21 @@ Full Stack Developer & Site Reliability Engineer based in New Zealand, intereste
 <a href="https://sagirk.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 <a href="https://linkedin.com/in/sagirk"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
 
-Deep specialist in JavaScript and its ecosystem — React, Node.js, MongoDB, pretty much anything that involves using JavaScript/JSON in any layer of the system — building products using the web platform for the world’s most recognized brands. Individual Member of the Node.js Foundation, collaborating on the Community Committee's Website Redesign Initiative.
+Especialista en JavaScript y su ecosistema: React, Node.js, MongoDB, prácticamente cualquier cosa que implique el uso de JavaScript / JSON en cualquier capa del sistema: la creación de productos utilizando la plataforma web para las marcas más reconocidas del mundo. Miembro individual de la Fundación Node.js, colaborando en la Iniciativa de rediseño del sitio web del Comité de la Comunidad.
 
 <br/>
 
-## Collaborators
+## Colaboradores
 
-Thank you to all our collaborators! 🙏
+Gracias a todos nuestros colaboradores! 🙏
 
-Our collaborators are members who are contributing to the repository on a regular basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in helping us guide thousands of people to craft better Node.js applications, please read our [contributor guidelines](/.operations/CONTRIBUTING.md) 🎉
+Nuestros colaboradores son miembros que contribuyen regularmente al repositorio, sugiriendo nuevas mejores prácticas, problemas de evaluación, revisión de solicitudes de extracción y más. Si está interesado en ayudarnos a guiar a miles de personas para crear mejores aplicaciones de Node.js, lea nuestras [pautas para contribuyentes](/.operations/CONTRIBUTING.md) 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
 | :--: | :--: |
-| [Ido Richter (Founder)](https://github.com/idori) | [Keith Holliday](https://github.com/TheHollidayInn) |
+| [Ido Richter (Fundador)](https://github.com/idori) | [Keith Holliday](https://github.com/TheHollidayInn) |
 
-### Past collaborators
+### Colaboradores anteriores
 
 | <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"></a> |
 | :--: |
@@ -1128,8 +1128,9 @@ Our collaborators are members who are contributing to the repository on a regula
 
 <br/>
 
-## Thank You Notes
+## Agradecimientos
 
-We appreciate any contribution, from a single word fix to a new best practice. View our contributors and [contributing documentation here!](CONTRIBUTORS.md)
+Agradecemos cualquier contribución, desde una simple palabra hasta una nueva práctica en nuestra guía. Mira nuestros colaboradores y [documentación para contribuir aquí!](CONTRIBUTORS.md)
+
 
 <br/><br/><br/>
