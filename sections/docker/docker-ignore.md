@@ -4,7 +4,7 @@
 
 ### One Paragraph Explainer
 
-The Docker build command copies the local files into the build context environment over a virtual network. Cautious, development and CI folders contain secrets like .npmrc, .aws, .env files, and other sensitive files. Consequently, Docker images might hold secrets and expose them in unsafe territories (e.g. Docker repository, partners servers). In a better world, the Dockerfile should be explicit about what is being copied. On top of this, include a .dockerignore file that acts as the last safety net that filters out unnecessary folders and potential secrets. Doing so also boosts the build speed - By leaving out common development folders that have no use in production (e.g. .git, test results, IDE configuration), the build can better utilize the cache and achieve better performance
+The Docker build command copies the local files into the build context environment over a virtual network. Be careful - development and CI folders contain secrets like .npmrc, .aws, .env files, and other sensitive files. Consequently, Docker images might hold secrets and expose them in unsafe territories (e.g. Docker repository, partners servers). In a better world, the Dockerfile should be explicit about what is being copied. On top of this, include a .dockerignore file that acts as the last safety net that filters out unnecessary folders and potential secrets. Doing so also boosts the build speed - By leaving out common development folders that have no use in production (e.g. .git, test results, IDE configuration), the build can better utilize the cache and achieve better performance
 
 <br/><br/>
 
