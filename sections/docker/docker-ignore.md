@@ -8,7 +8,7 @@ The Docker build command copies the local files into the build context environme
 
 <br/><br/>
 
-### Code Example – A good default .dockerignore for Node.js apps
+### Code Example – A good default .dockerignore for Node.js
 
 <details>
 <summary><strong>.dockerignore</strong></summary>
