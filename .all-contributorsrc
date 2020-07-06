@@ -951,6 +951,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "OrBin",
+      "name": "Or Bin",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6897234?v=4",
+      "profile": "https://github.com/OrBin",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
