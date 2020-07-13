@@ -10,4 +10,4 @@
 
 ### 당신만의 공유 유틸리티들을 환경과 컴포넌츠에 공유하기
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/Privatenpm.png "Structuring solution by components")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/Privatenpm.png "Structuring solution by components")
