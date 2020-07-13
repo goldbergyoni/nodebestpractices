@@ -1028,7 +1028,7 @@ null == undefined   // true
 
 # `7. Черновик: Практики эффективности`
 
-## Наши соавторы работают над этим разделом. [Хотите присоединиться?](Https://github.com/i0natan/nodebestpractices/issues/256)
+## Наши соавторы работают над этим разделом. [Хотите присоединиться?](Https://github.com/goldbergyoni/nodebestpractices/issues/256)
 
 <br/><br/>
 
@@ -1057,7 +1057,7 @@ null == undefined   // true
 
 # Вехи
 
-Чтобы поддерживать это руководство и обновлять его, мы постоянно обновляем и совершенствуем рекомендации и лучшие практики с помощью сообщества. Вы можете следить за нашими [вехами](https://github.com/i0natan/nodebestpractices/milestones) и присоединиться к рабочим группам, если хотите внести свой вклад в этот проект.
+Чтобы поддерживать это руководство и обновлять его, мы постоянно обновляем и совершенствуем рекомендации и лучшие практики с помощью сообщества. Вы можете следить за нашими [вехами](https://github.com/goldbergyoni/nodebestpractices/milestones) и присоединиться к рабочим группам, если хотите внести свой вклад в этот проект.
 
 <br/>
 
@@ -1073,21 +1073,21 @@ null == undefined   // true
 
 ### Переводы в процессе
 
-- ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/129))
-- ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/i0natan/nodebestpractices/issues/156))
-- ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Любезно предоставлено [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/94))
-- ![ES](/assets/flags/ES.png) [Spanish](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/95))
-- ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/i0natan/nodebestpractices/issues/139))
+- ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/129))
+- ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/156))
+- ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Любезно предоставлено [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94))
+- ![ES](/assets/flags/ES.png) [Spanish](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/95))
+- ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/139))
 
 <br/><br/>
 
 ## Руководящий комитет
 
-Познакомьтесь с членами руководящего комитета -- людьми, которые работают вместе, чтобы обеспечить управление и дальнейшее руководство проектом. Кроме того, каждый член комитета руководит проектом, отслеживаемым в рамках наших [проектов Github](https://github.com/i0natan/nodebestpractices/projects).
+Познакомьтесь с членами руководящего комитета -- людьми, которые работают вместе, чтобы обеспечить управление и дальнейшее руководство проектом. Кроме того, каждый член комитета руководит проектом, отслеживаемым в рамках наших [проектов Github](https://github.com/goldbergyoni/nodebestpractices/projects).
 
 <img align="left" width="100" height="100" src="assets/images/members/yoni.png">
 
-[Yoni Goldberg](https://github.com/i0natan)
+[Yoni Goldberg](https://github.com/goldbergyoni)
 <a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
 <a href="https://goldbergyoni.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 

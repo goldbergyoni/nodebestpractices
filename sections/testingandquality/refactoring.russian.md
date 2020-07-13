@@ -29,15 +29,15 @@
 
 ### Пример: Анализ сложных методов с помощью CodeClimate (коммерческий)
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/codeanalysis-climate-complex-methods.PNG "Complex methods analysis")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-climate-complex-methods.PNG "Complex methods analysis")
 
 ### Пример: Тенденции и история анализа кода с CodeClimate (коммерческий)
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/codeanalysis-climate-history.PNG "Code analysis history")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-climate-history.PNG "Code analysis history")
 
 ### Пример: Сводка анализа кода и тенденции с SonarQube (коммерческий)
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/codeanalysis-sonarqube-dashboard.PNG "Code analysis history")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-sonarqube-dashboard.PNG "Code analysis history")
 
 
 <br/><br/>

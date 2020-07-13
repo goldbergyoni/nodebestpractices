@@ -22,7 +22,7 @@ Produkty APM stanowią 3 główne segmenty:
 
 
  ### Przykład: UpTimeRobot.Com – Website monitoring dashboard
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/uptimerobot.jpg "Website monitoring dashboard")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/uptimerobot.jpg "Website monitoring dashboard")
 
  ### Przykład: AppDynamics.Com – end to end monitoring combined with code instrumentation
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/app-dynamics-dashboard.png "end to end monitoring combined with code instrumentation")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/app-dynamics-dashboard.png "end to end monitoring combined with code instrumentation")

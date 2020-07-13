@@ -18,7 +18,7 @@
 除了大量编辑和可靠的内容, 通过它略读也应该提供全面覆盖的主题。不应排除重要的子主题
 
 ## 4. 一致的格式
-内容是使用固定模板显示的。任何将来的内容都必须符合同一模板。如果希望添加新项目符号, 请从现有项目符号复制项目符号格式, 并将其扩展以满足您的需要。有关其他信息, 请查看[模版](https://github.com/i0natan/nodebestpractices/blob/master/sections/template.md)
+内容是使用固定模板显示的。任何将来的内容都必须符合同一模板。如果希望添加新项目符号, 请从现有项目符号复制项目符号格式, 并将其扩展以满足您的需要。有关其他信息, 请查看[模版](https://github.com/goldbergyoni/nodebestpractices/blob/master/sections/template.md)
 
 ## 5. 关于Node.js
 每个建议都应直接与Node.js相关, 而不是一般软件开发。当我们建议在Node.js中实现通用模式/规则时, 内容应该集中在Node的实现上。例如, 当我们建议将所有请求的输入为了安全原因进行处理时, 应使用Node行话 - '使用中间件来处理请求输入'

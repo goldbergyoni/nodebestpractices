@@ -49,4 +49,4 @@ From the blog Joyent, ranked 1 for the keywords “Node.js logging”
 
 ### Useful Tool: Swagger Online Documentation Creator
 
-![Swagger API Scheme](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/swaggerDoc.png "API error handling")
+![Swagger API Scheme](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/swaggerDoc.png "API error handling")
