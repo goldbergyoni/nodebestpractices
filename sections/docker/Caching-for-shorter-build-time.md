@@ -2,16 +2,31 @@
 
 ## One paragraph explainer
 
-Docker images are a combination of layers, each instruction in your Dockerfile creates a layer. The docker daemon can reuse those layers between builds if the instructions and files used are identical.
+Docker images are a combination of layers, each instruction in your Dockerfile creates a layer. The docker daemon can reuse those layers between builds if the instructions are identicals or in the case of a `COPY` or `ADD` files used are identical.
 It is important to layout your Dockerfile correctly to reduce the number of moving parts in your build, the less updated instructions should be at the top and the ones constantly changing (like app code) should be at the bottom. 
 Rebuilding a whole docker image from cache can be nearly instantaneous if done correctly.
 
+⚠️ If the cache can't be used for a particular layer, all the subsquent layers will be invalidated too. That's why order is important.
 
 ![Docker layers](/assests/images/docker_layers_schema.png)
 
 * Image taken from [Digging into Docker layers](https://medium.com/@jessgreb01/digging-into-docker-layers-c22f948ed612) by jessgreb01*
 
 ### Rules
+
+#### Avoid LABEL that change all the time 
+
+If you have a label containing the build number at the top of your Dockerfile, the cache will be invalidated at every build 
+
+```Dockerfile
+#Beginning of the file
+FROM node:10.22.0-alpine3.11 as builder
+
+# Don't do that here!
+LABEL build_number="483"
+
+#... Rest of the Dockerfile
+```
 
 #### Have a good .dockerignore file
 
@@ -100,4 +115,6 @@ RUN npm prune --production
 CMD ["node", "dist/server.js"]
 ```
 
+## Useful links
 
+Docker docks: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#leverage-build-cache
