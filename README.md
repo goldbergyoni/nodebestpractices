@@ -1183,11 +1183,11 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 ## ![✔] 8.11. Graceful shutdown
 
-**TL;DR:**
+**TL;DR:** Handle the process SIGTERM event and clean-up all existing conenction and resources. This should be done while responding to ongoing reqeusts. In Dockerized runtimes, shuting down containers is not a rare event rather a frequent occurence that happen as part of routine work. Acheiving this demand some thoughful code to orchestrate few moving parts: The load balancer, keep-alive connections, the HTTP server and other resources
 
-**Otherwise:**
+**Otherwise:** Dying immediately means not responding to thousands of disappointed users
 
-🔗 [**Read More: Graceful shutdown**](/sections/docker/file.md)
+🔗 [**Read More: Graceful shutdown**](/sections/docker/graceful-shutdown.md)
 
 <br /><br /><br />
 
