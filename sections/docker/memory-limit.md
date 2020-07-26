@@ -71,6 +71,14 @@ spec:
 
 ### Kubernetes documentation: "If you do not specify a memory limit"
 
-From [K8S documentation](https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource/?fbclid=IwAR2gfRL-3UB2WIbxJNSl3jNdlEJF3rAU5WG049yNorLOVSVngmRY1xhrbqg#if-you-do-not-specify-a-memory-limit)
+From [K8S documentation](https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource/)
 
 > The Container has no upper bound on the amount of memory it uses. The Container could use all of the memory available on the Node where it is running which in turn could invoke the OOM Killer. Further, in case of an OOM Kill, a container with no resource limits will have a greater chance of being killed.
+
+<br/><br/>
+
+### Docker documentation: "it throws an OOME and starts killing processes "
+
+From [Docker official docs](https://docs.docker.com/config/containers/resource_constraints/)
+
+> It is important not to allow a running container to consume too much of the host machine’s memory. On Linux hosts, if the kernel detects that there is not enough memory to perform important system functions, it throws an OOME, or Out Of Memory Exception, and starts killing processes to free up memory.
