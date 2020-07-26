@@ -1193,7 +1193,7 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 ## ![✔] 8.12. Clean-out build-time secrets, avoid secrets in args
 
-**TL;DR:** Avoid secrets leaking from the docker build environment. A docker image is typically shared in multiple environment, like CI and a registry, that are not as sanitized as production. A typical example is a npm token which is usually passed to a dockerfile as argument. This token stays within the image long after it is needed and allows the attacker indefinite access to a private npm registry. This can be avoided by coping a secret file like .npmrc and then removing it using multi-stage build (beware, build history should be deleted as well) or by using Docker build-kit secret feature which leaves zero traces
+**TL;DR:** Avoid secrets leaking from the Docker build environment. A Docker image is typically shared in multiple environment, like CI and a registry, that are not as sanitized as production. A typical example is an npm token which is usually passed to a dockerfile as argument. This token stays within the image long after it is needed and allows the attacker indefinite access to a private npm registry. This can be avoided by coping a secret file like .npmrc and then removing it using multi-stage build (beware, build history should be deleted as well) or by using Docker build-kit secret feature which leaves zero traces
 
 
 **Otherwise:** Everyone with access to the CI and docker registry will also get as a bonus access to some precious organization secrets
