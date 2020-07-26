@@ -1081,13 +1081,14 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 <br/><br/>
 
-## ![✔] 8.1. Clean npm cache
+## ![✔] 8.1. Clean NODE_MODULE cache
 
-**TL;DR:**
+**TL;DR:** After installing dependencies in a container, remove the local cache. It doesn't make any sense to duplicate the dependencies for faster future installs since there won't be any further installs - A Docker image is immutable. By doing so, using a single line of code, tens of MB, typically 10-50% of the image size are shaved off
 
-**Otherwise:**
 
-🔗 [**Read More: Clean npm cache**](/sections/docker/file.md)
+**Otherwise:** The image that will get shipped to production will weigh 30% more due to files that will never get used
+
+🔗 [**Read More: Clean NODE_MODULE cache**](/sections/docker/clean-cache.md)
 
 <br /><br /><br />
 
