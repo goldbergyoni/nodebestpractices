@@ -38,6 +38,7 @@ RUN npm ci --production && npm clean cache --force
 FROM node:12-slim AS build
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
+# Two mistakes below: Installing dev dependencies, not deleting the cache after npm install
 RUN npm install
 
 # The rest comes here
