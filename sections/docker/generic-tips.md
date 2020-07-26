@@ -10,15 +10,15 @@ This common Docker guidelines section contains best practices that are standardi
 
 ## ![✔] Avoid updating the base OS
 
-**TL;DR:** Updating the local binaries during build (e.g. apt-get update) creates inconsistent images every time it runs and also demands high privilige. Instead use base images that are relatively updated
+**TL;DR:** Updating the local binaries during build (e.g. apt-get update) creates inconsistent images every time it runs and also demands elevated privileges. Instead use base images that are updated frequently
 
-## ![✔] Tag images using labels
+## ![✔] Classify images using labels
 
-**TL;DR:** Providing meta-data for each image might help Ops professional treat it adequately. For example, include the maintainer name, build date and other information that might prove useful when someone need to reason about an image
+**TL;DR:** Providing metadata for each image might help Ops professionals treat it adequately. For example, include the maintainer name, build date and other information that might prove useful when someone needs to reason about an image
 
 ## ![✔] Use unprivileged containers
 
-**TL;DR:** Privileged container have the same permissions and capabilities as the root user over the host machine. This is rarely needed and as a rule of thumb should be avoided
+**TL;DR:** Privileged container have the same permissions and capabilities as the root user over the host machine. This is rarely needed and as a rule of thumb one should use the 'node' user that is created within official Node images
 
 ## ![✔] Inspect and verify the final result
 
