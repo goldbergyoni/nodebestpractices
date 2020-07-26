@@ -1131,9 +1131,9 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 <br /><br /><br />
 
-## ![✔] 8.6. Set memory limits using Docker only
+## ![✔] 8.6. Set memory limits using Docker
 
-**TL;DR:** Configure a memory limit using Docker, not using V8. Use Docker command flag 'run --memory' or set the right values within the platform that runs Docker. By doing this, the runtime will be capable of making better decisions on when to scale, prevent one citizen from starving others, drive thoughtful crash decisions (e.g., Docker can allow slight burst deviations) and in-overall it's always better to move HW decisions to the OPS court
+**TL;DR:** Always configure a memory limit using Docker, optionally set also the v8 limits. Practically, use the Docker flag 'run --memory' or set the right values within the platform that runs Docker. By doing this, the runtime will be capable of making better decisions on when to scale, prevent one citizen from starving others, drive thoughtful crash decisions (e.g., Docker can allow slight burst deviations) and in-overall it's always better to move HW decisions to the OPS court  
 
 **Otherwise:** When setting limits using V8 --max-old-space-size the Docker runtime won't be aware of its capacity limits and will have to blindly place it in an instance that might not have the right size
 
