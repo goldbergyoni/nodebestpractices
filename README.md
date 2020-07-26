@@ -1234,11 +1234,10 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 ## ![✔] 8.16. Generic Docker practices
 
-**TL;DR:**
+**TL;DR:** This is a collection of Docker advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
 
-**Otherwise:**
 
-🔗 [**Read More: Generic Docker practices**](/sections/docker/file.md)
+🔗 [**Read More: Generic Docker practices**](/sections/docker/generic-tips.md)
 
 <br /><br /><br />
 
