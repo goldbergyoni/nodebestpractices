@@ -1201,13 +1201,13 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 <br /><br /><br />
 
-## ![✔] 8.13. On the importance of docker ignore
+## ![✔] Use .dockerignore to prevent leaking secrets
 
-**TL;DR:**
+**TL;DR:** Include a .dockerignore file that filters out common secret files and development artifacts. By doing so, you might prevent secrets from leaking into the image. As a bonus, the build time will significantly decrease. Also, ensure not to copy all files recursively rather explicitly choose what should be copied to Docker
 
-**Otherwise:**
+**Otherwise:** Common personal secret files like .env, .aws and .npmrc will be shared with anybody with access to the image (e.g. Docker repository)
 
-🔗 [**Read More: On the importance of docker ignore**](/sections/docker/file.md)
+🔗 [**Read More: On the importance of docker ignore**](/sections/docker/docker-ignore.md)
 
 <br /><br /><br />
 
