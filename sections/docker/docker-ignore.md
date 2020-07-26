@@ -24,6 +24,7 @@ The Docker build command copies the local files into the build context environme
 **/.env
 **/.editorconfig
 **/.aws
+**/dist
 ```
 
 </details>
