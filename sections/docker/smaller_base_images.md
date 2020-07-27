@@ -3,7 +3,8 @@
 Large Docker images can lead to higher exposure to vulnerabilities and increased resource consumption. Often, you don't need certain packages installed at runtime that are needed for building.
 Pulling and storing larger images will become more expensive at scale, when dealing with larger images. Minimal images may not come with common libraries needed for building native modules or packages
 useful for debugging (e.g. curl) pre-installed, by design. Using the Alpine Linux variants of images, can lead to a reduced footprint in terms of resources used and the amount of attack vectors
-present in fully-featured systems. The Node.js v14.4.0 Docker image is ~345MB in size versus ~39MB for the Alpine version.
+present in fully-featured systems. The Node.js v14.4.0 Docker image is ~345MB in size versus ~39MB for the Alpine version, which is almost 10x smaller. A Slim variant based on Debian, which is only 38MB in size and contains the minimal
+packages needed to run Node.js, is also a great choice.
 
 ### Blog Quote: "If you want to shrink your Docker images, have your services start faster and be more secure then try Alpine out."
 

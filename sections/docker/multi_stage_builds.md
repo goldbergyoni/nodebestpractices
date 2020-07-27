@@ -2,11 +2,7 @@
 
 ### One Paragraph Explainer
 
-Multi-stage builds allow to separate build- and runtime-specific environment details, such as available binaries, exposed environment variables, and even the underlying operating system.
-Splitting up your Dockerfiles into multiple stages will help to reduce final image and container size as you'll only ship what you really need to run your application. Sometimes, you'll need to
-include tools that are only needed during the build phase, for example development dependencies such as the TypeScript CLI. You can install it during the build stage and only use the final output in the run stage.
-This also means your image will shrink as some dependencies won't get copied over. You might also have to expose environment variables during build that should not be present at runtime, such as API Keys and secrets
-used for communicating with specific services. In the final stage, you can copy in pre-built resources such as your build folder, or production-only dependencies (which you can also fetch in a subsequent step).
+Multi-stage builds allow to separate build- and runtime-specific environment details, such as available binaries, exposed environment variables, and even the underlying operating system. Splitting up your Dockerfiles into multiple stages will help to reduce final image and container size as you'll only ship what you really need to run your application. Sometimes, you'll need to include tools that are only needed during the build phase, for example development dependencies such as the TypeScript CLI. You can install it during the build stage and only use the final output in the run stage. This also means your image will shrink as some dependencies won't get copied over. You might also have to expose environment variables during build that should not be present at runtime, such as API Keys and secrets used for communicating with specific services. In the final stage, you can copy in pre-built resources such as your build folder, or production-only dependencies (which you can also fetch in a subsequent step).
 
 ### Example
 
@@ -23,7 +19,7 @@ Let's imagine the following directory structure
   - README.md
 ```
 
-Your .dockerignore will already filter out files that won't be needed for building and running your application.
+Your [.dockerignore](/sections/docker/dockerignore.md) will already filter out files that won't be needed for building and running your application.
 
 ```
 # Don't copy in existing node_modules, we'll fetch our own
@@ -47,7 +43,7 @@ WORKDIR /home/node/app
 # Copy dependency information and install all dependencies
 COPY --chown=node:node package.json yarn.lock ./
 
-RUN yarn
+RUN yarn install --frozen-lockfile
 
 # Copy source code (and all other relevant files)
 COPY --chown=node:node src ./src
@@ -66,7 +62,7 @@ WORKDIR /home/node/app
 
 # Copy dependency information and install production-only dependencies
 COPY --chown=node:node package.json yarn.lock ./
-RUN yarn install --production
+RUN yarn install --frozen-lockfile --production
 
 # Copy results from previous stage
 COPY --chown=node:node --from=build /home/node/app/dist ./dist
