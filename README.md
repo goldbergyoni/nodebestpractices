@@ -1097,7 +1097,7 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 **TL;DR:** use `CMD ['node','server.js']` to start your app. This prevents problems with child-process, signal handling and avoid creating unnecessary processes.
 
 
-**Otherwise:** You'll have hard shutdowns, possibly losing current requests and/or data
+**Otherwise:** When no signals are passed in you'll have hard shutdowns, possibly losing current requests and/or data
 
 [**Read More: Bootstrap container using node command, avoid npm start**](/sections/docker/bootstrap-using-node.md)
 
