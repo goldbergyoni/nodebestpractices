@@ -2,11 +2,7 @@
 
 ## One paragraph explainer
 
-Docker images are a combination of layers, each instruction in your Dockerfile creates a layer. The docker daemon can reuse those layers between builds if the instructions are identicals or in the case of a `COPY` or `ADD` files used are identical.
-It is important to layout your Dockerfile correctly to reduce the number of moving parts in your build, the less updated instructions should be at the top and the ones constantly changing (like app code) should be at the bottom. 
-Rebuilding a whole docker image from cache can be nearly instantaneous if done correctly.
-
-⚠️ If the cache can't be used for a particular layer, all the subsquent layers will be invalidated too. That's why order is important.
+Docker images are a combination of layers, each instruction in your Dockerfile creates a layer. The docker daemon can reuse those layers between builds if the instructions are identicals or in the case of a `COPY` or `ADD` files used are identical. ⚠️ If the cache can't be used for a particular layer, all the subsquent layers will be invalidated too. That's why order is important. It is crucial to layout your Dockerfile correctly to reduce the number of moving parts in your build, the less updated instructions should be at the top and the ones constantly changing (like app code) should be at the bottom. It's also important to think that instructions that trigger long operation should be close to the top to ensure they happen only when really necessary (unless it changes everytime you build your docker image). Rebuilding a whole docker image from cache can be nearly instantaneous if done correctly.
 
 ![Docker layers](/assests/images/docker_layers_schema.png)
 
@@ -36,8 +32,8 @@ The docker ignore avoids copying files that could bust our cache logic, like tes
 
 #### Install "system" packages first
 
-If you need to install packages using `apt`,`yum`,`apk` or the likes, this should be one of the first instructions. You don't want to reinstall make,gcc or g++ every time you build your node app.
-Do not install package only for convenience. This is a production app, no need to get 
+It is recommended to create a base docker image that has all the system packages you use. If you **really** need to install packages using `apt`,`yum`,`apk` or the likes, this should be one of the first instructions. You don't want to reinstall make,gcc or g++ every time you build your node app.
+**Do not install package only for convenience, this is a production app.**
 
 #### First, only ADD your package.json and your lockfile
 
@@ -45,7 +41,6 @@ Do not install package only for convenience. This is a production app, no need t
 COPY "package.json" "package-lock.json" "./"
 RUN npm ci
 ```
-
 
 The lockfile and the package.json change less often. Copying them first will keep the `npm install` step in the cache, this saves precious time. 
 
