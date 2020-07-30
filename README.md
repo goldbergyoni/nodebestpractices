@@ -1153,13 +1153,14 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 <br /><br /><br />
 
-## ![✔] 8.8. Use multistage builds
+## ![✔] 8.8. Use multi-stage builds for leaner and more secure Docker images
 
-**TL;DR:**
+**TL;DR:** A lot of build-time dependencies and files are not needed for running your application. With multi-stage builds, these resources can be used during
+build, while the runtime environment contains only what's necessary. Multi-stage builds are an easy way to reduce overhead in size and vulnerabilities.
 
-**Otherwise:**
+**Otherwise:** Larger images will take longer to build and ship, build-only tools might contain vulnerabilities, and secrets only meant for the build phase might be leaked.
 
-🔗 [**Read More: Use multistage builds**](/sections/docker/file.md)
+🔗 [**Read More: Use multi-stage builds**](/sections/docker/multi_stage_builds.md)
 
 <br /><br /><br />
 
@@ -1173,13 +1174,13 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 <br /><br /><br />
 
-## ![✔] 8.10. Prefer smaller images
+## ![✔] 8.10. Prefer smaller Docker base images
 
-**TL;DR:**
+**TL;DR:** Large images lead to higher exposure to vulnerabilities and increased resource consumption. Using leaner Docker images, such as Alpine Linux variants, mitigates this issue.
 
-**Otherwise:**
+**Otherwise:** Building, pushing, and pulling images will take longer, unknown attack vectors can be used by malicious actors, and more resources are consumed.
 
-🔗 [**Read More: Prefer smaller images**](/sections/docker/file.md)
+🔗 [**Read More: Prefer smaller images**](/sections/docker/smaller_base_images.md)
 
 <br /><br /><br />
 
