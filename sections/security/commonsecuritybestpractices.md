@@ -75,7 +75,7 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 
 ## ![✔] OWASP A9: Using Components With Known Security Vulneraibilities
 
-- Scan docker images for known vulnerabilities (using Docker's and other vendors offer scanning services)
+- Scan docker images for known vulnerabilities (using Docker's and other vendors' scanning services)
 - Enable automatic instance (machine) patching and upgrades to avoid running old OS versions that lack security patches
 - Provide the user with both 'id', 'access' and 'refresh' token so the access token is short-lived and renewed with the refresh token
 - Log and audit each API call to cloud and management services (e.g who deleted the S3 bucket?) using services like AWS CloudTrail
@@ -94,6 +94,38 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 - Escaping untrusted HTTP request data based on the context in the HTML output (body, attribute, JavaScript, CSS, or URL) will resolve Reflected and Stored XSS vulnerabilities
 - Applying context-sensitive encoding when modifying the browser document on the client-side acts against DOM XSS
 - Enabling a Content-Security Policy (CSP) as a defense-in-depth mitigating control against XSS
+
+## ![✔] Protect Personally Identifyable Information (PII Data)
+
+- Personally identifiable information (PII) is any data that can be used to identify a specific individual
+- Protect Personally Identifyable Information in the Applications by encrypting them
+- Follow the data privacy laws of the land
+
+
+- Reference laws:
+
+- European Union: GDPR - https://ec.europa.eu/info/law/law-topic/data-protection_en
+- India: https://meity.gov.in/writereaddata/files/Personal_Data_Protection_Bill,2018.pdf
+- Singapore: https://www.pdpc.gov.sg/Legislation-and-Guidelines/Personal-Data-Protection-Act-Overview
+
+## ![✔] Have a security.txt File [PRODUCTION]
+
+**TL;DR:** Have a text file called ```security.txt``` under ```/.well-known```  directory (/.well-known/security.txt) or in the root directory (/security.txt) of your website or your web application in production. ```security.txt``` file should contain details using which security researchers can report vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent. 
+
+**Otherwise:** You may not be notified about the vulnerabilities. You will miss the opportunity to act on the vulnerabilities in time.
+
+🔗 [**Read More: security.txt**](https://securitytxt.org/)
+<br/><br/><br/>
+
+## ![✔] Have a SECURITY.md File [OPEN SOURCE]
+
+**TL;DR:** To give people instructions for responsibly reporting security vulnerabilities in your project, you can add a SECURITY.md file to your repository's root, docs, or .github folder. SECURITY.md file should contain details using which security researchers can report vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent. 
+
+**Otherwise:** You may not be notified about the vulnerabilities. You will miss the opportunity to act on the vulnerabilities in time.
+
+🔗 [**Read More: SECURITY.md**](https://help.github.com/en/github/managing-security-vulnerabilities/adding-a-security-policy-to-your-repository)
+
+<br/><br/><br/>
 
 
 <br/><br/><br/>

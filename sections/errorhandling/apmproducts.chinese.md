@@ -21,7 +21,7 @@ APM 产品由3个主要部分构成:
 
 
  ### 示例: UpTimeRobot.Com – 网站监控仪表板
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/uptimerobot.jpg "Website monitoring dashboard")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/uptimerobot.jpg "Website monitoring dashboard")
 
  ### 示例: AppDynamics.Com – 与代码检测结合的端到端监视
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/app-dynamics-dashboard.png "end to end monitoring combined with code instrumentation")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/app-dynamics-dashboard.png "end to end monitoring combined with code instrumentation")

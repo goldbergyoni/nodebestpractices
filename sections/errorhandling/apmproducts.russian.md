@@ -22,7 +22,7 @@
 
 
 ### Пример: UpTimeRobot.Com - панель мониторинга сайта
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/uptimerobot.jpg "Панель мониторинга сайта")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/uptimerobot.jpg "Панель мониторинга сайта")
 
  ### Пример: AppDynamics.Com – сквозной мониторинг в сочетании с инструментарием кода
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/app-dynamics-dashboard.png "Сквозной мониторинг в сочетании с инструментарием кода")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/app-dynamics-dashboard.png "Сквозной мониторинг в сочетании с инструментарием кода")
