@@ -1228,9 +1228,9 @@ In addition, referring to an image tag means that the base image is subject to c
 
 ## ![✔] 8.15. Lint your Dockerfile
 
-**TL;DR:** Linting your Dockerfile is an important step to identify issues in your Dockerfile which differ from best practices. By checking for potential flaws using a specialised Docker linter, performance and security improvements can be easily identified, saving countless hours of wasted time or security issues in production code
+**TL;DR:** Linting your Dockerfile is an important step to identify issues in your Dockerfile which differ from best practices. By checking for potential flaws using a specialised Docker linter, performance and security improvements can be easily identified, saving countless hours of wasted time or security issues in production code.
 
-**Otherwise:** A Docker image built with errors or performance bottlenecks could result in security issues in production, or differing from best practices to the detriment of the application end user
+**Otherwise:** Mistakenely the Dockerfile creator left Root as the production user, and also used an image from unknown source repository. This could be avoided with with just a simple linter.
 
 🔗 [**Read More: Lint your Dockerfile**](/sections/docker/lint-dockerfile.md)
 
