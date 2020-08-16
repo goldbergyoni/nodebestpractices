@@ -2,14 +2,14 @@
 
 ### One Paragraph Explainer
 
-As our core application code is linted to conform to best practices and eliminate issues and bugs before it could become a problem, so too should our Dockerfiles. Linting the Dockerfile means you can ensure that there aren’t any structural problems with the logic and instructions specified in your Dockerfiles.
+As our core application code is linted to conform to best practices and eliminate issues and bugs before it could become a problem, so too should our Dockerfiles. Linting the Dockerfile means increasing the chances of catching production issues on time with very light effort. For example, it can ensure that there aren’t any structural problems with the logic and instructions specified in your Dockerfiles like trying to copy from non-existing stage, copying from unknown online repository, running the app with power user (SUDO) and many more. The Open Source Dockerfile linter [Hadolint](https://github.com/hadolint/hadolint) can be used manually or as part of a CI process to lint your Dockerfile/s. Hadolint is a specialized Dockerfile linter that aims to embrace the [Docker best practices.](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+
 
 <br/>
 
-### Code example:
-The Open Source Dockerfile linter [Hadolint](https://github.com/hadolint/hadolint) can be used manually or as part of a CI process to lint your Dockerfile/s. Hadolint is a specialised Dockerfile linter that aims to embrace the [Docker best practices.](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+### Code example: Inspecting a Dockerfile using hadolint
 
-```bash
+```bash 
 hadolint production.Dockerfile
 hadolint --ignore DL3003 --ignore DL3006 <Dockerfile> # exclude specific rules
 hadolint --trusted-registry my-company.com:500 <Dockerfile> # Warn when using untrusted FROM images
