@@ -8,35 +8,8 @@ In a Dockerized runtime like Kubernetes, containers are born and die frequently.
 
 <br/><br/>
 
-### Code Example – A graceful shutdown when using Express and Kubernetes
 
-<details>
-
-<summary><strong>JavaScript</strong></summary>
-
-```
-TBD
-```
-
-</details>
-
-<br/><br/>
-
-### Code Example – Harsh shutdown
-
-<details>
-
-<summary><strong>JavaScript</strong></summary>
-
-```
-TBD
-```
-
-</details>
-
-<br/><br/>
-
-### Code Example – Making Node.js the root process allowing passing signals to the code
+### Code Example – Placing Node.js as the root process allows passing signals to the code
 
 <details>
 
@@ -109,7 +82,3 @@ CMD ["npm", "start"]
 From the blog, [Rising Stack](https://blog.risingstack.com/graceful-shutdown-node-js-kubernetes/)
 
 ![alt text](/assets/images/Kubernetes-graceful-shutdown-flowchart.png "The shutdown phases")
-
-```
-
-```

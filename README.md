@@ -1083,7 +1083,7 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 ## ![✔] 8.1 Use multi-stage builds for leaner and more secure Docker images
 
-**TL;DR:** A lot of build-time dependencies and files are not needed for running your application. With multi-stage builds, these resources can be used during build, while the runtime environment contains only what's necessary. Multi-stage builds are an easy way to reduce overhead in size and vulnerabilities.
+**TL;DR:** Use multi-stage build to copy only necessary production artifacts. A lot of build-time dependencies and files are not needed for running your application. With multi-stage builds, these resources can be used during build, while the runtime environment contains only what's necessary. Multi-stage builds are an easy way to get rid of overweight and security threats
 
 **Otherwise:** Larger images will take longer to build and ship, build-only tools might contain vulnerabilities, and secrets only meant for the build phase might be leaked.
 
