@@ -54,7 +54,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 5. [Going To Production Practices (19) ](#5-going-to-production-practices)
 6. [Security Practices (25)](#6-security-best-practices)
 7. [Performance Practices (2) (Work In Progress️ ✍️)](#7-draft-performance-best-practices)
-8. [Docker Practices (Work In Progress️ ✍️)](#7-draft-docker-best-practices)
+8. [Docker Practices](#8-docker-best-practices)
 
 <br/><br/>
 
@@ -1075,7 +1075,7 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `7. Draft: Docker Best Practices`
+# `8. Docker Best Practices`
 
 🏅 Many thanks to [Bret Fisher](https://github.com/BretFisher) from whom we learned many of the following practices
 
@@ -1145,9 +1145,9 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 ## ![✔] 8.7. Set memory limits using both Docker and v8
 
-**TL;DR:** Always configure a memory limit using Docker, optionally set also the v8 limits. Practically, use the Docker flag 'run --memory' or set the right values within the platform that runs Docker. By doing this, the runtime will be capable of making better decisions on when to scale, prevent one citizen from starving others, drive thoughtful crash decisions (e.g., Docker can allow slight burst deviations) and in-overall it's always better to move HW decisions to the OPS court  
+**TL;DR:** Always configure a memory limit using both Docker and the JavaScript runtime flags: Set the v8's old space memory to be a bit less than the container limit
 
-**Otherwise:** When setting limits using V8 --max-old-space-size the Docker runtime won't be aware of its capacity limits and will have to blindly place it in an instance that might not have the right size
+**Otherwise:** The docker definition is needed to perform thoughful scaling decision and prevent starving of other citizens. Without also defining the v8's limits, it will under utilize the container resources - Without explicit instructions it crashes when utilizing ~50-60% if its host resources
 
 🔗 [**Read More: Set memory limits using Docker only**](/sections/docker/memory-limit.md)
 
