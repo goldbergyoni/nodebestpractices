@@ -2,9 +2,9 @@
 
 ## One paragraph explainer
 
-Docker images are a combination of layers, each instruction in your Dockerfile creates a layer. The docker daemon can reuse those layers between builds if the instructions are identicals or in the case of a `COPY` or `ADD` files used are identical. ⚠️ If the cache can't be used for a particular layer, all the subsquent layers will be invalidated too. That's why order is important. It is crucial to layout your Dockerfile correctly to reduce the number of moving parts in your build, the less updated instructions should be at the top and the ones constantly changing (like app code) should be at the bottom. It's also important to think that instructions that trigger long operation should be close to the top to ensure they happen only when really necessary (unless it changes everytime you build your docker image). Rebuilding a whole docker image from cache can be nearly instantaneous if done correctly.
+Docker images are a combination of layers, each instruction in your Dockerfile creates a layer. The docker daemon can reuse those layers between builds if the instructions are identical or in the case of a `COPY` or `ADD` files used are identical. ⚠️ If the cache can't be used for a particular layer, all the subsequent layers will be invalidated too. That's why order is important. It is crucial to layout your Dockerfile correctly to reduce the number of moving parts in your build, the less updated instructions should be at the top and the ones constantly changing (like app code) should be at the bottom. It's also important to think that instructions that trigger long operation should be close to the top to ensure they happen only when really necessary (unless it changes every time you build your docker image). Rebuilding a whole docker image from cache can be nearly instantaneous if done correctly.
 
-![Docker layers](/assests/images/docker_layers_schema.png)
+![Docker layers](/assets/images/docker_layers_schema.png)
 
 * Image taken from [Digging into Docker layers](https://medium.com/@jessgreb01/digging-into-docker-layers-c22f948ed612) by jessgreb01*
 
