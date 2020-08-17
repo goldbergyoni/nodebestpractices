@@ -1103,7 +1103,7 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 ## ![✔] 8.3. Remove development dependencies
 
-**TL;DR:** Althoug DevDepencies are sometimes needed during the build and test life-cycle, eventually the image that is shipped to production should be minimal and clean from development depdencies. Doing so gurantess that only neccessary code is shipped and the amount of potnetial attacks (i.e. attack surface) is minimized. When using multi stage build (see dedicated bullet) this can be achieved by installing all dependencies first and finally running 'npm ci --production'
+**TL;DR:** Although Dev-Dependencies are sometimes needed during the build and test life-cycle, eventually the image that is shipped to production should be minimal and clean from development dependencies. Doing so guarantees that only necessary code is shipped, and the amount of potential attacks (i.e. attack surface) is minimized. When using multi-stage build (see dedicated bullet) this can be achieved by installing all dependencies first and finally running 'npm ci --production'
 
 **Otherwise:** Many of the infamous npm security breaches were found within development packages
 
@@ -1203,9 +1203,9 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 ## ![✔] Use .dockerignore to prevent leaking secrets
 
-**TL;DR:** Include a .dockerignore file that filters out common secret files and development artifacts. By doing so, you might prevent secrets from leaking into the image. As a bonus, the build time will significantly decrease. Also, ensure not to copy all files recursively rather explicitly choose what should be copied to Docker
+**TL;DR:** Include a `.dockerignore` file that filters out common secret files and development artifacts. By doing so, you might prevent secrets from leaking into the image. As a bonus, the build time will significantly decrease. Also, ensure not to copy all files recursively rather explicitly choose what should be copied to Docker
 
-**Otherwise:** Common personal secret files like .env, .aws and .npmrc will be shared with anybody with access to the image (e.g. Docker repository)
+**Otherwise:** Common personal secret files like `.env`, `.aws` and `.npmrc` will be shared with anybody with access to the image (e.g. Docker repository)
 
 🔗 [**Read More: On the importance of docker ignore**](/sections/docker/docker-ignore.md)
 
