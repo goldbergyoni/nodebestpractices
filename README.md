@@ -1155,11 +1155,11 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 ## ![✔] 8.8. Caching
 
-**TL;DR:**
+**TL;DR:** Rebuilding a whole docker image from cache can be nearly instantaneous if done correctly. The less updated instructions should be at the top of your Dockerfile and the ones constantly changing (like app code) should be at the bottom.
 
-**Otherwise:**
+**Otherwise:** Docker build will be very long, and consume lot of resources even when tiny changes are made
 
-🔗 [**Read More: Scan your image for vulnerabilities**](/sections/docker/file.md)
+🔗 [**Read More: Leverage caching to reduce build times**](/sections/docker/use-cache-for-shorter-build-time.md)
 
 
 <br /><br /><br />
