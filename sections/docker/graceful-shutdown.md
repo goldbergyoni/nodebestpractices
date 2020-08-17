@@ -4,12 +4,12 @@
 
 ### One Paragraph Explainer
 
-In a Dockerized runtime like Kubernetes, containers are born and die frequently. This happens not only when errors are thrown but also for good reasons like relocating containers, replacing them with a newer version and more. It's achieved by sending a notice (SIGTERM signal) to the process with a 30 second grace period. This puts a challenge on the developer to ensure the app is handling the ongoing requests and clean-up resources in a timely fashion. Otherwise, thousands of sad users will not get a response. Implementation-wise, the shutdown code should wait until all ongoing requests are flushed out and then clean-up resources. Easier said than done, practically it demands orchestrating few parts: Tell the LoadBalancer that the app is not ready to server more requests (via health-check), wait that existing requests are done, avoid handling new requests, clean-up resources and finally log some useful information before dying. If Keep-Alive connections are being used, the clients also must be notified that a new connection should be established - A library like [Stoppable](https://github.com/hunterloftis/stoppable) can greatly help achieving this.
+In a Dockerized runtime like Kubernetes, containers are born and die frequently. This happens not only when errors are thrown but also for good reasons like relocating containers, replacing them with a newer version and more. It's achieved by sending a notice (SIGTERM signal) to the process with a 30 second grace period. This puts a challenge on the developer to ensure the app is handling the ongoing requests and clean-up resources in a timely fashion. Otherwise thousands of sad users will not get a response. Implementation-wise, the shutdown code should wait until all ongoing requests are flushed out and then clean-up resources. Easier said than done, practically it demands orchestrating several parts: Tell the LoadBalancer that the app is not ready to serve more requests (via health-check), wait for existing requests to be done, avoid handling new requests, clean-up resources and finally log some useful information before dying. If Keep-Alive connections are being used, the clients must also be notified that a new connection should be established - A library like [Stoppable](https://github.com/hunterloftis/stoppable) can greatly help achieving this.
 
 <br/><br/>
 
 
-### Code Example – Placing Node.js as the root process allows passing signals to the code
+### Code Example – Placing Node.js as the root process allows passing signals to the code (see [/sections/docker/bootstrap-using-node.md])
 
 <details>
 

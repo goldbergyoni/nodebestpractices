@@ -1103,7 +1103,7 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 ## ![✔] 8.3. Let the Docker runtime handle replication and uptime
 
-**TL;DR:** When using a Docker run time orchestrator (e.g., Kubernetes), invoke the Node.js process directly without intermediating process managers or custom code that replicate the process (e.g. PM2, Cluster module). The runtime platform has the highest amount of data and visibility for making placement decision - It knows best how many processes are needed, how to spread them and what to do in case of crashes
+**TL;DR:** When using a Docker run time orchestrator (e.g., Kubernetes), invoke the Node.js process directly without intermediate process managers or custom code that replicate the process (e.g. PM2, Cluster module). The runtime platform has the highest amount of data and visibility for making placement decision - It knows best how many processes are needed, how to spread them and what to do in case of crashes
 
 **Otherwise:** Container keeps crashing due to lack of resources will get restarted indefinitely by the process manager. Should Kubernetes be aware of that, it could relocate it to a different roomy instance 
 
@@ -1124,7 +1124,7 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 ## ![✔] 8.5. Clean-up dependencies before production
 
-**TL;DR:** Althoug DevDependencies are sometimes needed during the build and test life-cycle, eventually the image that is shipped to production should be minimal and clean from development dependencies. Doing so gurantee that only neccessary code is shipped and the amount of potnetial attacks (i.e. attack surface) is minimized. When using multi stage build (see dedicated bullet) this can be achieved by installing all dependencies first and finally running 'npm ci --production'
+**TL;DR:** Although DevDependencies are sometimes needed during the build and test life-cycle, eventually the image that is shipped to production should be minimal and clean from development dependencies. Doing so guarantees that only necessary code is shipped and the amount of potential attacks (i.e. attack surface) is minimized. When using multi stage build (see dedicated bullet) this can be achieved by installing all dependencies first and finally running 'npm ci --production'
 
 **Otherwise:** Many of the infamous npm security breaches were found within development packages
 
@@ -1135,7 +1135,7 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 ## ![✔] 8.6. Shutdown smartly and gracefully 
 
-**TL;DR:** Handle the process SIGTERM event and clean-up all existing conenction and resources. This should be done while responding to ongoing reqeusts. In Dockerized runtimes, shuting down containers is not a rare event rather a frequent occurence that happen as part of routine work. Acheiving this demand some thoughful code to orchestrate few moving parts: The load balancer, keep-alive connections, the HTTP server and other resources
+**TL;DR:** Handle the process SIGTERM event and clean-up all existing connection and resources. This should be done while responding to ongoing requests. In Dockerized runtimes shutting down containers is not a rare event, rather a frequent occurrence that happen as part of routine work. Achieving this demands some thoughtful code to orchestrate several moving parts: The load balancer, keep-alive connections, the HTTP server and other resources
 
 **Otherwise:** Dying immediately means not responding to thousands of disappointed users
 
@@ -1147,7 +1147,7 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 **TL;DR:** Always configure a memory limit using both Docker and the JavaScript runtime flags: Set the v8's old space memory to be a bit less than the container limit
 
-**Otherwise:** The docker definition is needed to perform thoughful scaling decision and prevent starving of other citizens. Without also defining the v8's limits, it will under utilize the container resources - Without explicit instructions it crashes when utilizing ~50-60% if its host resources
+**Otherwise:** The docker definition is needed to perform thoughtful scaling decision and prevent starving other citizens. Without also defining the v8's limits, it will under utilize the container resources - Without explicit instructions it crashes when utilizing ~50-60% of its host resources
 
 🔗 [**Read More: Set memory limits using Docker only**](/sections/docker/memory-limit.md)
 
@@ -1157,22 +1157,22 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 **TL;DR:** Rebuilding a whole docker image from cache can be nearly instantaneous if done correctly. The less updated instructions should be at the top of your Dockerfile and the ones constantly changing (like app code) should be at the bottom.
 
-**Otherwise:** Docker build will be very long, and consume lot of resources even when tiny changes are made
+**Otherwise:** Docker build will be very long, and consume lot of resources even when making tiny changes
 
 🔗 [**Read More: Leverage caching to reduce build times**](/sections/docker/use-cache-for-shorter-build-time.md)
 
 
 <br /><br /><br />
 
-## ![✔] 8.9. Use explicit image reference, avoid 'latest' tag
+## ![✔] 8.9. Use explicit image reference, avoid `latest` tag
 
-**TL;DR:** The latest tag can be misleading, and is subject to much confusion. Developers are often led to believe that specifying the latest tag will provide them with the most recent image in the repository, however this is not the case. Using a digest guarantees that every instance of the service is running exactly the same code.
+**TL;DR:** The `latest` tag can be misleading, and is subject to much confusion. Developers are often led to believe that specifying the latest tag will provide them with the most recent image in the repository, however this is not the case. Using a digest guarantees that every instance of the service is running exactly the same code.
 
-In addition, referring to an image tag means that the base image is subject to change, as image tags cannot be relied upon for a deterministic install. Instead, if a determinstic install is expected, a SHA256 digest can be used to reference an exact image.
+In addition, referring to an image tag means that the base image is subject to change, as image tags cannot be relied upon for a deterministic install. Instead, if a deterministic install is expected, a SHA256 digest can be used to reference an exact image.
 
 **Otherwise:** A new version of a base image could be deployed into production with breaking changes, causing unintended application behaviour.
 
-🔗 [**Read More: Understand image tags, and use the "latest" tag with caution**](/sections/docker/image-tags.md)
+🔗 [**Read More: Understand image tags and use the "latest" tag with caution**](/sections/docker/image-tags.md)
 
 <br /><br /><br />
 
@@ -1180,7 +1180,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 **TL;DR:** Large images lead to higher exposure to vulnerabilities and increased resource consumption. Using leaner Docker images, such as Alpine Linux variants, mitigates this issue.
 
-**Otherwise:** Building, pushing, and pulling images will take longer, unknown attack vectors can be used by malicious actors, and more resources are consumed.
+**Otherwise:** Building, pushing, and pulling images will take longer, unknown attack vectors can be used by malicious actors and more resources are consumed.
 
 🔗 [**Read More: Prefer smaller images**](/sections/docker/smaller_base_images.md)
 
@@ -1189,10 +1189,9 @@ In addition, referring to an image tag means that the base image is subject to c
 
 ## ![✔] 8.11. Clean-out build-time secrets, avoid secrets in args
 
-**TL;DR:** Avoid secrets leaking from the Docker build environment. A Docker image is typically shared in multiple environment, like CI and a registry, that are not as sanitized as production. A typical example is an npm token which is usually passed to a dockerfile as argument. This token stays within the image long after it is needed and allows the attacker indefinite access to a private npm registry. This can be avoided by coping a secret file like .npmrc and then removing it using multi-stage build (beware, build history should be deleted as well) or by using Docker build-kit secret feature which leaves zero traces
+**TL;DR:** Avoid secrets leaking from the Docker build environment. A Docker image is typically shared in multiple environment like CI and a registry that are not as sanitized as production. A typical example is an npm token which is usually passed to a dockerfile as argument. This token stays within the image long after it is needed and allows the attacker indefinite access to a private npm registry. This can be avoided by coping a secret file like `.npmrc` and then removing it using multi-stage build (beware, build history should be deleted as well) or by using Docker build-kit secret feature which leaves zero traces
 
-
-**Otherwise:** Everyone with access to the CI and docker registry will also get as a bonus access to some precious organization secrets
+**Otherwise:** Everyone with access to the CI and docker registry will also get access to some precious organization secrets as a bonus
 
 🔗 [**Read More: Clean-out build-time secrets**](/sections/docker/avoid-build-time-secrets.md)
 
@@ -1209,8 +1208,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 ## ![✔] 8.13 Clean NODE_MODULE cache
 
-**TL;DR:** After installing dependencies in a container, remove the local cache. It doesn't make any sense to duplicate the dependencies for faster future installs since there won't be any further installs - A Docker image is immutable. By doing so, using a single line of code, tens of MB, typically 10-50% of the image size are shaved off
-
+**TL;DR:** After installing dependencies in a container, remove the local cache. It doesn't make any sense to duplicate the dependencies for faster future installs since there won't be any further installs - A Docker image is immutable. Using a single line of code tens of MB (typically 10-50% of the image size) are shaved off
 
 **Otherwise:** The image that will get shipped to production will weigh 30% more due to files that will never get used
 

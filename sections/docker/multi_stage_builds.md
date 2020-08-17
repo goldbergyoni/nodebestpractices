@@ -2,7 +2,7 @@
 
 ### One Paragraph Explainer
 
-Multi-stage builds allow to separate build- and runtime-specific environment details, such as available binaries, exposed environment variables, and even the underlying operating system. Splitting up your Dockerfiles into multiple stages will help to reduce final image and container size as you'll only ship what you really need to run your application. Sometimes, you'll need to include tools that are only needed during the build phase, for example development dependencies such as the TypeScript CLI. You can install it during the build stage and only use the final output in the run stage. This also means your image will shrink as some dependencies won't get copied over. You might also have to expose environment variables during build that should not be present at runtime, such as API Keys and secrets used for communicating with specific services. In the final stage, you can copy in pre-built resources such as your build folder, or production-only dependencies (which you can also fetch in a subsequent step).
+Multi-stage builds allow to separate build- and runtime-specific environment details, such as available binaries, exposed environment variables, and even the underlying operating system. Splitting up your Dockerfiles into multiple stages will help to reduce final image and container size as you'll only ship what you really need to run your application. Sometimes you'll need to include tools that are only needed during the build phase, for example development dependencies such as the TypeScript CLI. You can install it during the build stage and only use the final output in the run stage. This also means your image will shrink as some dependencies won't get copied over. You might also have to expose environment variables during build that should not be present at runtime (see [/sections/docker/avoid-build-time-secrets.md]), such as API Keys and secrets used for communicating with specific services. In the final stage, you can copy in pre-built resources such as your build folder, or production-only dependencies (which you can also fetch in a subsequent step).
 
 ### Example
 
@@ -29,9 +29,7 @@ node_modules
 docs
 ```
 
-Our Dockerfile will contain two phases: One for building the application using the fully-featured Node.js Docker image,
-and a second phase for running the application, based on the minimal Alpine image. We'll only copy over the built files to our second stage,
-and then install production dependencies.
+Our Dockerfile will contain two phases: One for building the application using the fully-featured Node.js Docker image and a second phase for running the application, based on the minimal Alpine image. We'll only copy over the built files to our second stage and then install production dependencies.
 
 ```dockerfile
 # Start with fully-featured Node.js base image

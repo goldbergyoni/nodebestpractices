@@ -1,10 +1,8 @@
-# Understand image tags vs digests, and use the "latest" tag with caution
+# Understand image tags vs digests and use the `:latest` tag with caution
 
 ### One Paragraph Explainer
 
-If this is a production situation, and security and stability are important, then just "convenience" is likely not the best deciding factor.
-
-In addition, the 'latest' tag is Docker's default tag. This means that a developer who forgets to add an explicit tag, will accidentally push a new version of an image as 'latest', which might end in very unintended results if the latest tag is being relied upon as the latest production image.
+If this is a production situation and security and stability are important then just "convenience" is likely not the best deciding factor. In addition the `:latest` tag is Docker's default tag. This means that a developer who forgets to add an explicit tag will accidentally push a new version of an image as `latest`, which might end in very unintended results if the `latest` tag is being relied upon as the latest production image.
 
 ### Code example:
 
