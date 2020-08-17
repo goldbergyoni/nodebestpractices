@@ -5,7 +5,7 @@
 ### One Paragraph Explainer
 
 
-A Docker image isn't just a bunch of files but rather multiple layers revealing what happened during build-time. In a very common scenario, developers need the npm token during build time (mostly for private registries) - this is falsely achieved by passing the token as a build time args. It might seem innocent and safe, however in fact this token can now be fetched from the developers machine Docker history, from the Docker registry and the CI. An attacker who get access to that token, is now capable of writing into the organization private npm registry. There are two more secured alternatives: The flawless one is using Docker --secret feature (experimental as of July 2020) which allows mounting a file during build time only. The second approach is using multi-stage build with args, building and then copying only the necessary files to production. The last technique will not ship the secrets with the images but will appear in the local Docker history - This is typically considered as secured enough for most organizations.
+A Docker image isn't just a bunch of files but rather multiple layers revealing what happened during build-time. In a very common scenario, developers need the npm token during build time (mostly for private registries) - this is falsely achieved by passing the token as a build time args. It might seem innocent and safe, however this token can now be fetched from the developer's machine Docker history, from the Docker registry and the CI. An attacker who gets access to that token is now capable of writing into the organization private npm registry. There are two more secured alternatives: The flawless one is using Docker --secret feature (experimental as of July 2020) which allows mounting a file during build time only. The second approach is using multi-stage build with args, building and then copying only the necessary files to production. The last technique will not ship the secrets with the images but will appear in the local Docker history - This is typically considered as secured enough for most organizations.
 
 <br/><br/>
 
@@ -50,7 +50,7 @@ FROM build as prod
 COPY --from=build /dist /dist
 CMD ["node","index.js"]
 
-# The ARG and .npmrc won't appear in the final image, but can be found in the Docker daemon un-tagged images list - make sure to delete those
+# The ARG and .npmrc won't appear in the final image but can be found in the Docker daemon un-tagged images list - make sure to delete those
 ```
 
 </details>
