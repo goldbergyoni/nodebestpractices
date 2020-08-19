@@ -29,9 +29,9 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 - **:tada: Node.js best practices reached 50k stars**: Thank you to each and every contributor who helped turning this project into what it is today! We've got lots of plans for the time ahead, as we expand our ever-growing list of Node.js best practices even further.
 
-- **:rocket: Two New Best Practices**: Yoni Goldberg from our team participated in the last JS Party Podcast (Very cool!) episode to speak about Node.js best practices, [🎧 listen here](https://changelog.com/jsparty/139)
+- **🎧 Podcast**: Yoni Goldberg from our team participated in the last JS Party Podcast (Very cool one!) episode to speak about Node.js best practices, [🎧 listen here](https://changelog.com/jsparty/139)
 
-- **:whale: Node.js + Docker best practices**: We've just release the Docker with Node.js section which includes 15 good practices
+- **:whale: Node.js + Docker best practices**: We've just release the Docker with Node.js section which includes 15 bullets about better coding techqniues with Docker
 
 <br/><br/>
 
