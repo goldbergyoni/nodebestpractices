@@ -1083,9 +1083,9 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 ## ![✔] 8.1 Use multi-stage builds for leaner and more secure Docker images
 
-**TL;DR:** Use multi-stage build to copy only necessary production artifacts. A lot of build-time dependencies and files are not needed for running your application. With multi-stage builds, these resources can be used during build, while the runtime environment contains only what's necessary. Multi-stage builds are an easy way to get rid of overweight and security threats
+**TL;DR:** Use multi-stage build to copy only necessary production artifacts. A lot of build-time dependencies and files are not needed for running your application. With multi-stage builds these resources can be used during build while the runtime environment contains only what's necessary. Multi-stage builds are an easy way to get rid of overweight and security threats
 
-**Otherwise:** Larger images will take longer to build and ship, build-only tools might contain vulnerabilities, and secrets only meant for the build phase might be leaked.
+**Otherwise:** Larger images will take longer to build and ship, build-only tools might contain vulnerabilities and secrets only meant for the build phase might be leaked.
 
 🔗 [**Read More: Use multi-stage builds**](/sections/docker/multi_stage_builds.md)
 
@@ -1113,12 +1113,11 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 ## ![✔] 8.4. Use .dockerignore to prevent leaking secrets
 
-**TL;DR**: Include a .dockerignore file that filters out common secret files and development artifacts. By doing so, you might prevent secrets from leaking into the image. As a bonus, the build time will significantly decrease. Also, ensure not to copy all files recursively rather explicitly choose what should be copied to Docker
+**TL;DR**: Include a .dockerignore file that filters out common secret files and development artifacts. By doing so, you might prevent secrets from leaking into the image. As a bonus the build time will significantly decrease. Also, ensure not to copy all files recursively rather explicitly choose what should be copied to Docker
 
 **Otherwise**: Common personal secret files like .env, .aws and .npmrc will be shared with anybody with access to the image (e.g. Docker repository)
 
 🔗 [**Read More: Use .dockerignore**](/sections/docker/lint-dockerfile.md)
-
 
 <br /><br /><br />
 
@@ -1129,7 +1128,6 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 **Otherwise:** Many of the infamous npm security breaches were found within development packages
 
 🔗 Read More: [Remove development dependencies](/sections/docker/install-for-production.md)
-
 
 <br /><br /><br />
 
@@ -1157,16 +1155,15 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 **TL;DR:** Rebuilding a whole docker image from cache can be nearly instantaneous if done correctly. The less updated instructions should be at the top of your Dockerfile and the ones constantly changing (like app code) should be at the bottom.
 
-**Otherwise:** Docker build will be very long, and consume lot of resources even when making tiny changes
+**Otherwise:** Docker build will be very long and consume lot of resources even when making tiny changes
 
 🔗 [**Read More: Leverage caching to reduce build times**](/sections/docker/use-cache-for-shorter-build-time.md)
-
 
 <br /><br /><br />
 
 ## ![✔] 8.9. Use explicit image reference, avoid `latest` tag
 
-**TL;DR:** The `latest` tag can be misleading, and is subject to much confusion. Developers are often led to believe that specifying the latest tag will provide them with the most recent image in the repository, however this is not the case. Using a digest guarantees that every instance of the service is running exactly the same code.
+**TL;DR:** The `latest` tag can be misleading and is subject to much confusion. Developers are often led to believe that specifying the `latest` tag will provide them with the most recent image in the repository however this is not the case. Using a digest guarantees that every instance of the service is running exactly the same code.
 
 In addition, referring to an image tag means that the base image is subject to change, as image tags cannot be relied upon for a deterministic install. Instead, if a deterministic install is expected, a SHA256 digest can be used to reference an exact image.
 
@@ -1184,7 +1181,6 @@ In addition, referring to an image tag means that the base image is subject to c
 
 🔗 [**Read More: Prefer smaller images**](/sections/docker/smaller_base_images.md)
 
-
 <br /><br /><br />
 
 ## ![✔] 8.11. Clean-out build-time secrets, avoid secrets in args
@@ -1199,16 +1195,15 @@ In addition, referring to an image tag means that the base image is subject to c
 
 ## ![✔] 8.12. Scan images for multi layers of vulnerabilities
 
-**TL;DR:** Besides checking code dependencies vulnerabilities, also scan the final image that is shipped to production. Docker image scanners check the code dependencies but also the OS binaries. This E2E security scan covers more ground and verifies that no bad guy injected bad things during the build. Consequently, it is recommended running this as the last step before deployment. There are a handful of free and commercial scanners that also provide CI/CD plugins
+**TL;DR:** Besides checking code dependencies vulnerabilities also scan the final image that is shipped to production. Docker image scanners check the code dependencies but also the OS binaries. This E2E security scan covers more ground and verifies that no bad guy injected bad things during the build. Consequently, it is recommended running this as the last step before deployment. There are a handful of free and commercial scanners that also provide CI/CD plugins
 
-**Otherwise:** Your code might be entirely free from vulnerabilities. However, it might still get hacked due to vulnerable version of OS-level binaries (e.g. OpenSSL, TarBall) that are commonly being used by applications
-
+**Otherwise:** Your code might be entirely free from vulnerabilities. However it might still get hacked due to vulnerable version of OS-level binaries (e.g. OpenSSL, TarBall) that are commonly being used by applications
 
 🔗 [**Read More: Generic Docker practices**](/sections/docker/scan-images.md)
 
 ## ![✔] 8.13 Clean NODE_MODULE cache
 
-**TL;DR:** After installing dependencies in a container, remove the local cache. It doesn't make any sense to duplicate the dependencies for faster future installs since there won't be any further installs - A Docker image is immutable. Using a single line of code tens of MB (typically 10-50% of the image size) are shaved off
+**TL;DR:** After installing dependencies in a container remove the local cache. It doesn't make any sense to duplicate the dependencies for faster future installs since there won't be any further installs - A Docker image is immutable. Using a single line of code tens of MB (typically 10-50% of the image size) are shaved off
 
 **Otherwise:** The image that will get shipped to production will weigh 30% more due to files that will never get used
 
@@ -1217,7 +1212,6 @@ In addition, referring to an image tag means that the base image is subject to c
 ## ![✔] 8.14. Generic Docker practices
 
 **TL;DR:** This is a collection of Docker advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
-
 
 🔗 [**Read More: Generic Docker practices**](/sections/docker/generic-tips.md)
 
