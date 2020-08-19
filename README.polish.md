@@ -99,7 +99,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 ## ![✔] 1.5 Używaj konfiguracji przyjaznej środowisku, bezpiecznej i hierarchicznej
 
-  **TL;DR:** Idealne i bezbłędne ustawienie konfiguracji powinno zapewnić, że (a) klucze można odczytać z pliku ORAZ ze zmiennych środowiskowych (b) dane wrażliwe są przechowywane poza zatwierdzonym kodem (c) konfiguracja jest hierarchiczna dla łatwiejszego wyszukiwania. Istnieje kilka pakietów, które mogą pomóc zaznaczyć większość z tych pól, takich jak [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf ) i [config](https://www.npmjs.com/package/config)
+  **TL;DR:** Idealne i bezbłędne ustawienie konfiguracji powinno zapewnić, że (a) klucze można odczytać z pliku ORAZ ze zmiennych środowiskowych (b) dane wrażliwe są przechowywane poza zatwierdzonym kodem (c) konfiguracja jest hierarchiczna dla łatwiejszego wyszukiwania. Istnieje kilka pakietów, które mogą pomóc zaznaczyć większość z tych pól, takich jak [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config) i [convict](https://www.npmjs.com/package/convict)
   
   **W przeciwnym razie:** Niespełnienie któregokolwiek z wymagań konfiguracji po prostu ugrzęźnie w zespole programistów lub DevOps. Prawdopodobnie jedno i drugie
 
