@@ -1117,7 +1117,7 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 **Otherwise**: Common personal secret files like .env, .aws and .npmrc will be shared with anybody with access to the image (e.g. Docker repository)
 
-🔗 [**Read More: Use .dockerignore**](/sections/docker/lint-dockerfile.md)
+🔗 [**Read More: Use .dockerignore**](/sections/docker/docker-ignore.md)
 
 <br /><br /><br />
 
