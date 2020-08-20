@@ -29,7 +29,52 @@ node_modules
 docs
 ```
 
-Our Dockerfile will contain two phases: One for building the application using the fully-featured Node.js Docker image and a second phase for running the application, based on the minimal Alpine image. We'll only copy over the built files to our second stage and then install production dependencies.
+#### Dockerfile with multiple stages
+
+```dockerfile
+FROM node:14.4.0 AS build
+
+COPY --chown=node:node . .
+RUN yarn install && yarn build
+
+FROM node:14.4.0
+
+USER node
+EXPOSE 8080
+
+# Copy results from previous stage
+COPY --chown=node:node --from=build /home/node/app/dist /home/node/app/package.json /home/node/app/yarn.lock ./
+RUN yarn install --production
+
+CMD [ "node", "dist/app.js" ]
+```
+
+#### Dockerfile with multiple stages and different base images
+
+```dockerfile
+FROM node:14.4.0 AS build
+
+COPY --chown=node:node . .
+RUN yarn install && yarn build
+
+# This will use a minimal base image for the runtime
+FROM node:14.4.0-alpine
+
+USER node
+EXPOSE 8080
+
+# Copy results from previous stage
+COPY --chown=node:node --from=build /home/node/app/dist /home/node/app/package.json /home/node/app/yarn.lock ./
+RUN yarn install --production
+
+CMD [ "node", "dist/app.js" ]
+```
+
+#### Full Dockerfile with multiple stages and different base images
+
+Our Dockerfile will contain two phases: One for building the application using the fully-featured Node.js Docker image,
+and a second phase for running the application, based on the minimal Alpine image. We'll only copy over the built files to our second stage,
+and then install production dependencies.
 
 ```dockerfile
 # Start with fully-featured Node.js base image
