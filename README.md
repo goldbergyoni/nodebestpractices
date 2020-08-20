@@ -1095,7 +1095,7 @@ FROM node:14.4.0 AS build
 COPY . .
 RUN npm install && npm run build
 
-FROM node:14.4.0
+FROM node:slim-14.4.0
 
 USER node
 EXPOSE 8080
@@ -1112,9 +1112,9 @@ CMD [ "node", "dist/app.js" ]
 
 ## ![✔] 8.2. Bootstrap using 'node' command, avoid npm start
 
-**TL;DR:** use `CMD ['node','server.js']` to start your app, avoid using npm scripts. This prevents problems with child-process, signal handling, graceful shutdown and unnecessary processes.
+**TL;DR:** use `CMD ['node','server.js']` to start your app, avoid using npm scripts which don't pass OS signals to the code. This prevents problems with child-process, signal handling, graceful shutdown and having processes.
 
-**Otherwise:** When no signals are passed in you'll have hard shutdowns, possibly losing current requests and/or data.
+**Otherwise:** When no signals are passed, your code will never be notified about shutdowns. Without this, it will lose its chance to close properly possibly losing current requests and/or data.
 
 [**Read More: Bootstrap container using node command, avoid npm start**](/sections/docker/bootstrap-using-node.md)
 
