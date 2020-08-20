@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2086%20Best%20Practices-blue.svg" alt="86 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20March%2012%202020-green.svg" alt="Last update: March, 2020"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.12.0-brightgreen.svg" alt="Updated for Node 13.1.0">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%20101%20Best%20Practices-blue.svg" alt="101 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20March%2012%202020-green.svg" alt="Last update: March, 2020"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.12.0-brightgreen.svg" alt="Updated for Node 13.1.0">
 </div>
 
 <br/>
@@ -27,11 +27,13 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 # Latest Best Practices and News
 
-- **:tada: Node.js best practices reached 40k stars**: Thank you to each and every contributor who helped turning this project into what it is today! We've got lots of plans for the time ahead, as we expand our ever-growing list of Node.js best practices even further.
+- **:tada: Node.js best practices reached 50k stars**: Thank you to each and every contributor who helped turning this project into what it is today! We've got lots of plans for the time ahead, as we expand our ever-growing list of Node.js best practices even further.
 
-- **:rocket: Two New Best Practices**: We've been working hard on two new best practices, a section about [using npm ci](https://github.com/goldbergyoni/nodebestpractices#-519-install-your-packages-with-npm-ci) to preview the dependency state in production environments and another on [testing your middlewares in isolation](https://github.com/goldbergyoni/nodebestpractices#-413-test-your-middlewares-in-isolation)
+- **🎧 Podcast**: Yoni Goldberg from our team participated in the last JS Party Podcast (Very cool one!) episode to speak about Node.js best practices, [🎧 listen here](https://changelog.com/jsparty/139)
 
-- **:whale: Node.js + Docker best practices**: We've opened a [call for ideas](https://github.com/goldbergyoni/nodebestpractices/issues/620) to collect best practices related to running dockerized Node.js applications. If you've got any further best practices, don't hesitate to join the conversation!
+- **:whale: Node.js + Docker best practices**: We've just release the Docker with Node.js section which includes 15 bullets about better coding techqniues with Docker
+
+- **🎤 A talk at OdessaJS**: We will speak about Node.js testing this week at the great [OdessaJS conference](https://odessajs.org/)
 
 <br/><br/>
 
@@ -54,7 +56,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 5. [Going To Production Practices (19) ](#5-going-to-production-practices)
 6. [Security Practices (25)](#6-security-best-practices)
 7. [Performance Practices (2) (Work In Progress️ ✍️)](#7-draft-performance-best-practices)
-8. [Docker Practices (Work In Progress️ ✍️)](#7-draft-docker-best-practices)
+8. [Docker Practices (15)](#8-docker-best-practices)
 
 <br/><br/>
 
@@ -736,7 +738,7 @@ All statements above will return false if used with `===`
 
 **TL;DR:** You have to be sure that production code uses the exact version of the packages you have tested it with. Run `npm ci` to do a clean install of your dependencies matching package.json and package-lock.json.
 
-**Otherwise:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
+**Otherwise:****** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
 
 🔗 [**Read More: Use npm ci**](/sections/production/installpackageswithnpmci.md)
 
@@ -1075,171 +1077,181 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `7. Draft: Docker Best Practices`
+# `8. Docker Best Practices`
 
-## Our contributors are working on this section. [Would you like to join?](https://github.com/goldbergyoni/nodebestpractices/issues/682)
+🏅 Many thanks to [Bret Fisher](https://github.com/BretFisher) from whom we learned many of the following practices
 
 <br/><br/>
 
-## ![✔] 8.1. Clean npm cache
+## ![✔] 8.1 Use multi-stage builds for leaner and more secure Docker images
 
-**TL;DR:**
+**TL;DR:** Use multi-stage build to copy only necessary production artifacts. A lot of build-time dependencies and files are not needed for running your application. With multi-stage builds these resources can be used during build while the runtime environment contains only what's necessary. Multi-stage builds are an easy way to get rid of overweight and security threats
 
-**Otherwise:**
+**Otherwise:** Larger images will take longer to build and ship, build-only tools might contain vulnerabilities and secrets only meant for the build phase might be leaked.
 
-🔗 [**Read More: Clean npm cache**](/sections/docker/file.md)
+### Example Dockerfile for multi-stage builds
 
-<br /><br /><br />
+```dockerfile
+FROM node:14.4.0 AS build
 
-## ![✔] 8.2. Bootstrap the code using 'node' command, avoid 'npm run' scripts
+COPY . .
+RUN npm install && npm run build
 
-**TL;DR:**
+FROM node:slim-14.4.0
 
-**Otherwise:**
+USER node
+EXPOSE 8080
 
-🔗 [**Read More: Clean npm cache**](/sections/docker/file.md)
+COPY --from=build /home/node/app/dist /home/node/app/package.json /home/node/app/package-lock.json ./
+RUN npm install --production
 
-<br /><br /><br />
+CMD [ "node", "dist/app.js" ]
+```
 
-## ![✔] 8.3. Remove development dependencies
-
-**TL;DR:** Although Dev-Dependencies are sometimes needed during the build and test life-cycle, eventually the image that is shipped to production should be minimal and clean from development dependencies. Doing so guarantees that only necessary code is shipped and the amount of potential attacks (i.e. attack surface) is minimized. When using multi-stage build (see dedicated bullet) this can be achieved by installing all dependencies first and finally running 'npm ci --production'
-
-**Otherwise:** Many of the infamous npm security breaches were found within development packages
-
-🔗 [**Read More: Remove development dependencies**](/sections/docker/install-for-production.md)
-
-<br /><br /><br />
-
-## ![✔] 8.4. Lint your Dockerfile
-
-**TL;DR:**
-
-**Otherwise:**
-
-🔗 [**Read More: Lint your Dockerfile**](/sections/docker/file.md)
+🔗 [**Read More: Use multi-stage builds**](/sections/docker/multi_stage_builds.md)
 
 <br /><br /><br />
 
-## ![✔] 8.5. Utilize caching for better build time
+## ![✔] 8.2. Bootstrap using 'node' command, avoid npm start
 
-**TL;DR:**
+**TL;DR:** use `CMD ['node','server.js']` to start your app, avoid using npm scripts which don't pass OS signals to the code. This prevents problems with child-process, signal handling, graceful shutdown and having processes.
 
-**Otherwise:**
+**Otherwise:** When no signals are passed, your code will never be notified about shutdowns. Without this, it will lose its chance to close properly possibly losing current requests and/or data.
 
-🔗 [**Read More: Utilize caching for better build time**](/sections/docker/file.md)
-
-<br /><br /><br />
-
-## ![✔] 8.6. Set Docker memory limits which are in-par with v8 memory limit
-
-**TL;DR:**
-
-**Otherwise:**
-
-🔗 [**Read More: Set Docker memory limits which are in-par with v8 memory limit**](/sections/docker/file.md)
+[**Read More: Bootstrap container using node command, avoid npm start**](/sections/docker/bootstrap-using-node.md)
 
 <br /><br /><br />
 
-## ![✔] 8.7. Scan your image for vulnerabilities
+## ![✔] 8.3. Let the Docker runtime handle replication and uptime
 
-**TL;DR:** Besides checking code dependencies vulnerabilities, also scan the final image that is shipped to production. Docker image scanners check the code dependencies but also the OS binaries. This E2E security scan covers more ground and verifies that no bad guy injected bad things during the build. Consequently, it is recommended running this as the last step before deployment. There are a handful of free and commercial scanners that also provide CI/CD plugins
+**TL;DR:** When using a Docker run time orchestrator (e.g., Kubernetes), invoke the Node.js process directly without intermediate process managers or custom code that replicate the process (e.g. PM2, Cluster module). The runtime platform has the highest amount of data and visibility for making placement decision - It knows best how many processes are needed, how to spread them and what to do in case of crashes
 
-**Otherwise:** Your code might be entirely free from vulnerabilities. However, it might still get hacked due to vulnerable version of OS-level binaries (e.g. OpenSSL, TarBall)  that are commonly being used by applications
+**Otherwise:** Container keeps crashing due to lack of resources will get restarted indefinitely by the process manager. Should Kubernetes be aware of that, it could relocate it to a different roomy instance
 
-🔗 [**Read More: Scan your image for vulnerabilities**](/sections/docker/scan-images.md)
+🔗 [**Read More: Let the Docker orchestrator restart and replicate processes**](/sections/docker/restart-and-replicate-processes.md)
 
-<br /><br /><br />
+<br/><br /><br />
 
-## ![✔] 8.8. Use multistage builds
+## ![✔] 8.4. Use .dockerignore to prevent leaking secrets
 
-**TL;DR:**
+**TL;DR**: Include a .dockerignore file that filters out common secret files and development artifacts. By doing so, you might prevent secrets from leaking into the image. As a bonus the build time will significantly decrease. Also, ensure not to copy all files recursively rather explicitly choose what should be copied to Docker
 
-**Otherwise:**
+**Otherwise**: Common personal secret files like .env, .aws and .npmrc will be shared with anybody with access to the image (e.g. Docker repository)
 
-🔗 [**Read More: Use multistage builds**](/sections/docker/file.md)
-
-<br /><br /><br />
-
-## ![✔] 8.9. Don't use "latest" tags, use a digest
-
-**TL;DR:**
-
-**Otherwise:**
-
-🔗 [**Read More: Don't use "latest", use a digest**](/sections/docker/file.md)
+🔗 [**Read More: Use .dockerignore**](/sections/docker/docker-ignore.md)
 
 <br /><br /><br />
 
-## ![✔] 8.10. Prefer smaller images
+## ![✔] 8.5. Clean-up dependencies before production
 
-**TL;DR:**
+**TL;DR:** Although DevDependencies are sometimes needed during the build and test life-cycle, eventually the image that is shipped to production should be minimal and clean from development dependencies. Doing so guarantees that only necessary code is shipped and the amount of potential attacks (i.e. attack surface) is minimized. When using multi stage build (see dedicated bullet) this can be achieved by installing all dependencies first and finally running 'npm ci --production'
 
-**Otherwise:**
+**Otherwise:** Many of the infamous npm security breaches were found within development packages (e.g. [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes))
 
-🔗 [**Read More: Prefer smaller images**](/sections/docker/file.md)
-
-<br /><br /><br />
-
-## ![✔] 8.11. Graceful shutdown
-
-**TL;DR:**
-
-**Otherwise:**
-
-🔗 [**Read More: Graceful shutdown**](/sections/docker/file.md)
+🔗 Read More: [Remove development dependencies](/sections/docker/install-for-production.md)
 
 <br /><br /><br />
 
-## ![✔] 8.12. Avoid sending secrets as build time arguments
+## ![✔] 8.6. Shutdown smartly and gracefully
 
-**TL;DR:**
+**TL;DR:** Handle the process SIGTERM event and clean-up all existing connection and resources. This should be done while responding to ongoing requests. In Dockerized runtimes shutting down containers is not a rare event, rather a frequent occurrence that happen as part of routine work. Achieving this demands some thoughtful code to orchestrate several moving parts: The load balancer, keep-alive connections, the HTTP server and other resources
 
-**Otherwise:**
+**Otherwise:** Dying immediately means not responding to thousands of disappointed users
 
-🔗 [**Read More: Avoid sending secrets as build time arguments**](/sections/docker/file.md)
+🔗 [**Read More: Graceful shutdown**](/sections/docker/graceful-shutdown.md)
 
 <br /><br /><br />
 
-## ![✔] Use .dockerignore to prevent leaking secrets
+## ![✔] 8.7. Set memory limits using both Docker and v8
+
+**TL;DR:** Always configure a memory limit using both Docker and the JavaScript runtime flags: Set the v8's old space memory to be a bit less than the container limit
+
+**Otherwise:** The docker definition is needed to perform thoughtful scaling decision and prevent starving other citizens. Without also defining the v8's limits, it will under utilize the container resources - Without explicit instructions it crashes when utilizing ~50-60% of its host resources
+
+🔗 [**Read More: Set memory limits using Docker only**](/sections/docker/memory-limit.md)
+
+<br /><br /><br />
+
+## ![✔] 8.8. Caching
+
+**TL;DR:** Rebuilding a whole docker image from cache can be nearly instantaneous if done correctly. The less updated instructions should be at the top of your Dockerfile and the ones constantly changing (like app code) should be at the bottom.
+
+**Otherwise:** Docker build will be very long and consume lot of resources even when making tiny changes
+
+🔗 [**Read More: Leverage caching to reduce build times**](/sections/docker/use-cache-for-shorter-build-time.md)
+
+<br /><br /><br />
+
+## ![✔] 8.9. Use explicit image reference, avoid `latest` tag
+
+**TL;DR:** Specify an explicit image digest or versioned label, never refer to 'latest'. Developers are often led to believe that specifying the `latest` tag will provide them with the most recent image in the repository however this is not the case. Using a digest guarantees that every instance of the service is running exactly the same code.
+
+In addition, referring to an image tag means that the base image is subject to change, as image tags cannot be relied upon for a deterministic install. Instead, if a deterministic install is expected, a SHA256 digest can be used to reference an exact image.
+
+**Otherwise:** A new version of a base image could be deployed into production with breaking changes, causing unintended application behaviour.
+
+🔗 [**Read More: Understand image tags and use the "latest" tag with caution**](/sections/docker/image-tags.md)
+
+<br /><br /><br />
+
+## ![✔] 8.10. Prefer smaller Docker base images
+
+**TL;DR:** Large images lead to higher exposure to vulnerabilities and increased resource consumption. Using leaner Docker images, such as Slim and Alpine Linux variants, mitigates this issue.
+
+**Otherwise:** Building, pushing, and pulling images will take longer, unknown attack vectors can be used by malicious actors and more resources are consumed.
+
+🔗 [**Read More: Prefer smaller images**](/sections/docker/smaller_base_images.md)
+
+<br /><br /><br />
+
+## ![✔] 8.11. Clean-out build-time secrets, avoid secrets in args
+
+**TL;DR:** Avoid secrets leaking from the Docker build environment. A Docker image is typically shared in multiple environment like CI and a registry that are not as sanitized as production. A typical example is an npm token which is usually passed to a dockerfile as argument. This token stays within the image long after it is needed and allows the attacker indefinite access to a private npm registry. This can be avoided by coping a secret file like `.npmrc` and then removing it using multi-stage build (beware, build history should be deleted as well) or by using Docker build-kit secret feature which leaves zero traces
+
+**Otherwise:** Everyone with access to the CI and docker registry will also get access to some precious organization secrets as a bonus
+
+🔗 [**Read More: Clean-out build-time secrets**](/sections/docker/avoid-build-time-secrets.md)
+
+<br /><br /><br />
+
+## ![✔] 8.12. Scan images for multi layers of vulnerabilities
 
 **TL;DR:** Include a `.dockerignore` file that filters out common secret files and development artifacts. By doing so, you might prevent secrets from leaking into the image. As a bonus, the build time will significantly decrease. Also, ensure not to copy all files recursively rather explicitly choose what should be copied to Docker
 
 **Otherwise:** Common personal secret files like `.env`, `.aws` and `.npmrc` will be shared with anybody with access to the image (e.g. Docker repository)
 
-🔗 [**Read More: On the importance of docker ignore**](/sections/docker/docker-ignore.md)
+🔗 [**Read More: Generic Docker practices**](/sections/docker/scan-images.md)
 
 <br /><br /><br />
 
-## ![✔] 8.14.  Avoid inconsistent images
+## ![✔] 8.13 Clean NODE_MODULE cache
 
-**TL;DR:**
+**TL;DR:** After installing dependencies in a container remove the local cache. It doesn't make any sense to duplicate the dependencies for faster future installs since there won't be any further installs - A Docker image is immutable. Using a single line of code tens of MB (typically 10-50% of the image size) are shaved off
 
-**Otherwise:**
+**Otherwise:** The image that will get shipped to production will weigh 30% more due to files that will never get used
 
-🔗 [**Read More: Avoid inconsistent images**](/sections/docker/file.md)
-
-<br /><br /><br />
-
-## ![✔] 8.15. Avoid process managers
-
-**TL;DR:**
-
-**Otherwise:**
-
-🔗 [**Read More: Avoid process managers**](/sections/docker/file.md)
+🔗 [**Read More: Clean NODE_MODULE cache**](/sections/docker/clean-cache.md)
 
 <br /><br /><br />
 
-## ![✔] 8.16. Generic Docker practices
+## ![✔] 8.14. Generic Docker practices
 
-**TL;DR:**
+**TL;DR:** This is a collection of Docker advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
 
-**Otherwise:**
+🔗 [**Read More: Generic Docker practices**](/sections/docker/generic-tips.md)
 
-🔗 [**Read More: Generic Docker practices**](/sections/docker/file.md)
+<br/><br /><br />
 
-<br /><br /><br />
+
+## ![✔] 8.15. Lint your Dockerfile
+
+**TL;DR:** Linting your Dockerfile is an important step to identify issues in your Dockerfile which differ from best practices. By checking for potential flaws using a specialised Docker linter, performance and security improvements can be easily identified, saving countless hours of wasted time or security issues in production code.
+
+**Otherwise:** Mistakenely the Dockerfile creator left Root as the production user, and also used an image from unknown source repository. This could be avoided with with just a simple linter.
+
+🔗 [**Read More: Lint your Dockerfile**](/sections/docker/lint-dockerfile.md)
+
+<br/><br /><br />
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
@@ -1303,6 +1315,15 @@ Full Stack Developer & Site Reliability Engineer based in New Zealand, intereste
 
 <br/>
 
+<img align="left" width="100" height="100" src="assets/images/members/kevyn.png">
+
+[Kevyn Bruyere](https://github.com/kevynb)
+<a href="https://www.linkedin.com/in/kevynbruyere/"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
+
+Independent full-stack developer with a taste for Ops and automation.
+
+<br/>
+
 ### Steering Committee Emeriti
 
 <img align="left" width="100" height="100" src="assets/images/members/sagir.png">
@@ -1322,9 +1343,9 @@ Thank you to all our collaborators! 🙏
 
 Our collaborators are members who are contributing to the repository on a regular basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in helping us guide thousands of people to craft better Node.js applications, please read our [contributor guidelines](/.operations/CONTRIBUTING.md) 🎉
 
-| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> | <a href="https://github.com/kevynb" target="_blank"><img src="assets/images/members/kevyn.png" width="59" height="59"></a> |
-| :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: |
-|                                    [Ido Richter (Founder)](https://github.com/idori)                                    |                                        [Keith Holliday](https://github.com/TheHollidayInn)                                         |                                         [Kevyn Bruyere](https://github.com/kevynb)                                         |
+| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
+| :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
+|                                    [Ido Richter (Founder)](https://github.com/idori)                                    |                                        [Keith Holliday](https://github.com/TheHollidayInn)                                         |
 
 ### Collaborator Emeriti
 
@@ -1482,6 +1503,7 @@ Thanks goes to these wonderful people who have contributed to this repository!
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/OrBin"><img src="https://avatars1.githubusercontent.com/u/6897234?v=4" width="100px;" alt=""/><br /><sub><b>Or Bin</b></sub></a><br /><a href="#content-OrBin" title="Content">🖋</a></td>
+    <td align="center"><a href="https://twitter.com/andreoav07"><img src="https://avatars2.githubusercontent.com/u/508827?v=4" width="100px;" alt=""/><br /><sub><b>Andreo Vieira</b></sub></a><br /><a href="#content-andreoav" title="Content">🖋</a></td>
   </tr>
 </table>
 
