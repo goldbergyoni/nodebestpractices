@@ -27,6 +27,37 @@ RUN npm ci --production && npm clean cache --force
 
 <br/><br/>
 
+### Code Example – Installing for production with multi-stage build
+
+<details>
+
+<summary><strong>Dockerfile</strong></summary>
+
+```
+FROM node:14.8.0-alpine AS build
+COPY --chown=node:node package.json package-lock.json ./
+# ✅ Safe install
+RUN npm ci
+COPY --chown=node:node src ./src
+RUN npm run build
+
+# Run-time stage
+FROM node:14.8.0-alpine
+COPY --chown=node:node --from=build package.json package-lock.json ./
+COPY --chown=node:node --from=build node_modules ./node_modules
+COPY --chown=node:node --from=build dist ./dist
+
+# ✅ Clean dev packages
+RUN npm prune --production
+
+CMD [ "node", "dist/app.js" ]
+```
+
+</details>
+
+
+<br/><br/>
+
 ### Code Example Anti-Pattern – Installing all dependencies
 
 <details>
