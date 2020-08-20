@@ -4,7 +4,7 @@
 
 ### One Paragraph Explainer
 
-Dev dependencies greatly increase the container attack surface (i.e. potential security weakness) and the container size. As an example, some of the most impactful npm security breaches were originated from devDependecies like [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes) or affected dev packages like [event-stream that was used by nodemon](https://snyk.io/blog/a-post-mortem-of-the-malicious-event-stream-backdoor/). For those reasons the image that is finally shipped to production should be safe and minimal. Running npm install with a `--production` is a great start, however it gets even safer to run 'npm ci' that ensures a fresh install and the existence of a lock file. Removing the local cache can shave additional tens of MB. Often there is a need to test or debug within a container using devDependencies - In that case, multi stage builds can help in having different sets of dependencies and finally only those for production (See dedicated bullet on multi stage builds)
+Dev dependencies greatly increase the container attack surface (i.e. potential security weakness) and the container size. As an example, some of the most impactful npm security breaches were originated from devDependencies like [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes) or affected dev packages like [event-stream that was used by nodemon](https://snyk.io/blog/a-post-mortem-of-the-malicious-event-stream-backdoor/). For those reasons the image that is finally shipped to production should be safe and minimal. Running npm install with a `--production` is a great start, however it gets even safer to run `npm ci` that ensures a fresh install and the existence of a lock file. Removing the local cache can shave additional tens of MB. Often there is a need to test or debug within a container using devDependencies - In that case, [multi stage builds](/sections/docker/multi_stage_builds.md) can help in having different sets of dependencies and finally only those for production.
 
 <br/><br/>
 
@@ -58,7 +58,7 @@ CMD [ "node", "dist/app.js" ]
 
 <br/><br/>
 
-### Code Example Anti-Pattern – Installing all dependencies
+### Code Example Anti-Pattern – Installing all dependencies in a single stage dockerfile
 
 <details>
 
