@@ -1103,7 +1103,7 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 ## ![✔] 8.3. Remove development dependencies
 
-**TL;DR:** Although Dev-Dependencies are sometimes needed during the build and test life-cycle, eventually the image that is shipped to production should be minimal and clean from development dependencies. Doing so guarantees that only necessary code is shipped, and the amount of potential attacks (i.e. attack surface) is minimized. When using multi-stage build (see dedicated bullet) this can be achieved by installing all dependencies first and finally running 'npm ci --production'
+**TL;DR:** Although Dev-Dependencies are sometimes needed during the build and test life-cycle, eventually the image that is shipped to production should be minimal and clean from development dependencies. Doing so guarantees that only necessary code is shipped and the amount of potential attacks (i.e. attack surface) is minimized. When using multi-stage build (see dedicated bullet) this can be achieved by installing all dependencies first and finally running 'npm ci --production'
 
 **Otherwise:** Many of the infamous npm security breaches were found within development packages
 
