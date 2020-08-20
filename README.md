@@ -1087,6 +1087,25 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 **Otherwise:** Larger images will take longer to build and ship, build-only tools might contain vulnerabilities and secrets only meant for the build phase might be leaked.
 
+### Example Dockerfile for multi-stage builds
+
+```dockerfile
+FROM node:14.4.0 AS build
+
+COPY . .
+RUN npm install && npm run build
+
+FROM node:14.4.0
+
+USER node
+EXPOSE 8080
+
+COPY --from=build /home/node/app/dist /home/node/app/package.json /home/node/app/package-lock.json ./
+RUN npm install --production
+
+CMD [ "node", "dist/app.js" ]
+```
+
 🔗 [**Read More: Use multi-stage builds**](/sections/docker/multi_stage_builds.md)
 
 <br /><br /><br />
