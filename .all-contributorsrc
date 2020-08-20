@@ -960,6 +960,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "andreoav",
+      "name": "Andreo Vieira",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/508827?v=4",
+      "profile": "https://twitter.com/andreoav07",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
