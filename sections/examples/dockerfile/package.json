@@ -4,7 +4,7 @@
   "description": "An example node app that uses docker to be built",
   "main": "src/app.ts",
   "scripts": {
-    "run": "dist/app.js",
+    "start": "node dist/app.js",
     "build": "tsc --outDir dist -m commonjs -t ES2020 src/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,10 +19,10 @@
   },
   "homepage": "https://github.com/goldbergyoni/nodebestpractices#readme",
   "dependencies": {
-    "koa": "^2.13.0"
+    "express": "^4.17.1"
   },
   "devDependencies": {
-    "@types/koa": "^2.11.4",
+    "@types/express": "^4.17.7",
     "typescript": "^3.9.7"
   }
 }
