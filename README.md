@@ -1144,7 +1144,7 @@ CMD [ "node", "dist/app.js" ]
 
 **TL;DR:** Although DevDependencies are sometimes needed during the build and test life-cycle, eventually the image that is shipped to production should be minimal and clean from development dependencies. Doing so guarantees that only necessary code is shipped and the amount of potential attacks (i.e. attack surface) is minimized. When using multi stage build (see dedicated bullet) this can be achieved by installing all dependencies first and finally running 'npm ci --production'
 
-**Otherwise:** Many of the infamous npm security breaches were found within development packages
+**Otherwise:** Many of the infamous npm security breaches were found within development packages (e.g. [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes))
 
 🔗 Read More: [Remove development dependencies](/sections/docker/install-for-production.md)
 
@@ -1182,7 +1182,7 @@ CMD [ "node", "dist/app.js" ]
 
 ## ![✔] 8.9. Use explicit image reference, avoid `latest` tag
 
-**TL;DR:** The `latest` tag can be misleading and is subject to much confusion. Developers are often led to believe that specifying the `latest` tag will provide them with the most recent image in the repository however this is not the case. Using a digest guarantees that every instance of the service is running exactly the same code.
+**TL;DR:** Specify an explicit image digest or versioned label, never refer to 'latest'. Developers are often led to believe that specifying the `latest` tag will provide them with the most recent image in the repository however this is not the case. Using a digest guarantees that every instance of the service is running exactly the same code.
 
 In addition, referring to an image tag means that the base image is subject to change, as image tags cannot be relied upon for a deterministic install. Instead, if a deterministic install is expected, a SHA256 digest can be used to reference an exact image.
 
@@ -1194,7 +1194,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 ## ![✔] 8.10. Prefer smaller Docker base images
 
-**TL;DR:** Large images lead to higher exposure to vulnerabilities and increased resource consumption. Using leaner Docker images, such as Alpine Linux variants, mitigates this issue.
+**TL;DR:** Large images lead to higher exposure to vulnerabilities and increased resource consumption. Using leaner Docker images, such as Slim and Alpine Linux variants, mitigates this issue.
 
 **Otherwise:** Building, pushing, and pulling images will take longer, unknown attack vectors can be used by malicious actors and more resources are consumed.
 
@@ -1220,6 +1220,8 @@ In addition, referring to an image tag means that the base image is subject to c
 
 🔗 [**Read More: Generic Docker practices**](/sections/docker/scan-images.md)
 
+<br /><br /><br />
+
 ## ![✔] 8.13 Clean NODE_MODULE cache
 
 **TL;DR:** After installing dependencies in a container remove the local cache. It doesn't make any sense to duplicate the dependencies for faster future installs since there won't be any further installs - A Docker image is immutable. Using a single line of code tens of MB (typically 10-50% of the image size) are shaved off
@@ -1227,6 +1229,8 @@ In addition, referring to an image tag means that the base image is subject to c
 **Otherwise:** The image that will get shipped to production will weigh 30% more due to files that will never get used
 
 🔗 [**Read More: Clean NODE_MODULE cache**](/sections/docker/clean-cache.md)
+
+<br /><br /><br />
 
 ## ![✔] 8.14. Generic Docker practices
 
