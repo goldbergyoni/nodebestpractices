@@ -19,7 +19,7 @@ Node package managers, npm & Yarn, cache the installed packages locally so that 
 FROM node:12-slim AS build
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
-RUN npm ci --production && npm clean cache --force
+RUN npm ci --production && npm cache clean --force
 
 # The rest comes here
 ```
