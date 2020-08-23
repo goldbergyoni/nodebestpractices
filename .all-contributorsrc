@@ -969,6 +969,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "mikicho",
+      "name": "Michael Solomon",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/11459632?v=4",
+      "profile": "https://github.com/mikicho",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
