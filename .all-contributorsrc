@@ -969,6 +969,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "jimmycallin",
+      "name": "Jimmy Callin",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2225828?v=4",
+      "profile": "https://github.com/jimmycallin",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
