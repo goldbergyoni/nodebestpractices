@@ -1114,7 +1114,7 @@ CMD [ "node", "dist/app.js" ]
 
 ## ![✔] 8.2. Bootstrap using 'node' command, avoid npm start
 
-**TL;DR:** use `CMD ['node','server.js']` to start your app, avoid using npm scripts which don't pass OS signals to the code. This prevents problems with child-process, signal handling, graceful shutdown and having processes.
+**TL;DR:** use `CMD ['node','server.js']` to start your app, avoid using npm scripts which don't pass OS signals to the code. This prevents problems with child-process, signal handling, graceful shutdown and having zombie processes.
 
 **Otherwise:** When no signals are passed, your code will never be notified about shutdowns. Without this, it will lose its chance to close properly possibly losing current requests and/or data.
 
