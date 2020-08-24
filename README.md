@@ -1164,7 +1164,7 @@ CMD [ "node", "dist/app.js" ]
 
 ## ![✔] 8.7. Set memory limits using both Docker and v8
 
-**TL;DR:** Always configure a memory limit using both Docker and the JavaScript runtime flags: Set the v8's old space memory to be a bit less than the container limit
+**TL;DR:** Always configure a memory limit using both Docker and the JavaScript runtime flags. The Docker limit is needed to make thoughtful container placement decision, the --v8's flag max-old-space is needed to kick off the GC on time and prevent under utilization of memory. Practically, set the v8's old space memory to be a just bit less than the container limit
 
 **Otherwise:** The docker definition is needed to perform thoughtful scaling decision and prevent starving other citizens. Without also defining the v8's limits, it will under utilize the container resources - Without explicit instructions it crashes when utilizing ~50-60% of its host resources
 
