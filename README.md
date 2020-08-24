@@ -1216,15 +1216,9 @@ In addition, referring to an image tag means that the base image is subject to c
 
 ## ![✔] 8.12. Scan images for multi layers of vulnerabilities
 
-<<<<<<< HEAD
-**TL;DR:** Include a `.dockerignore` file that filters out common secret files and development artifacts. By doing so, you might prevent secrets from leaking into the image. As a bonus, the build time will significantly decrease. Also, ensure not to copy all files recursively rather explicitly choose what should be copied to Docker
-
-**Otherwise:** Common personal secret files like `.env`, `.aws` and `.npmrc` will be shared with anybody with access to the image (e.g. Docker repository)
-=======
 **TL;DR:** Besides checking code dependencies vulnerabilities also scan the final image that is shipped to production. Docker image scanners check the code dependencies but also the OS binaries. This E2E security scan covers more ground and verifies that no bad guy injected bad things during the build. Consequently, it is recommended running this as the last step before deployment. There are a handful of free and commercial scanners that also provide CI/CD plugins
 
 **Otherwise:** Your code might be entirely free from vulnerabilities. However it might still get hacked due to vulnerable version of OS-level binaries (e.g. OpenSSL, TarBall) that are commonly being used by applications
->>>>>>> upstream/master
 
 🔗 [**Read More: Generic Docker practices**](/sections/docker/scan-images.md)
 
