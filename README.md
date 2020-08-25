@@ -227,6 +227,22 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
+## ![✔] 2.12 Always await promises before returning to avoid a partial stacktrace
+
+**TL;DR:** Always do `return await` when returning a promise to benefit full error stacktrace. If a
+function returns a promise, that function must be declared as `async` function and explicitly
+`await` the promise before returning it
+
+**Otherwise:** The function that returns a promise without awaiting won't appear in the stacktrace.
+Such missing frames would probably complicate the understanding of the flow that leads to the error,
+especially if the cause of the abnormal behavior is inside of the missing function
+
+🔗 [**Read More: returning promises**](/sections/errorhandling/returningpromises.md)
+
+<br/><br/><br/>
+
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+
 # `3. Code Style Practices`
 
 ## ![✔] 3.1 Use ESLint
