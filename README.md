@@ -1085,7 +1085,7 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 ## ![✔] 8.1 Use multi-stage builds for leaner and more secure Docker images
 
-**TL;DR:** Use multi-stage build to copy only necessary production artifacts. A lot of build-time dependencies and files are not needed for running your application. With multi-stage builds these resources can be used during build while the runtime environment contains only what's necessary. Multi-stage builds are an easy way to get rid of overweight and security threats
+**TL;DR:** Use multi-stage build to copy only necessary production artifacts. A lot of build-time dependencies and files are not needed for running your application. With multi-stage builds these resources can be used during build while the runtime environment contains only what's necessary. Multi-stage builds are an easy way to get rid of overweight and security threats. Since Docker is often used in continous integration environments it is recommended to use the `npm ci` command (instead of `npm install`). It is faster, stricter and reduces inconsistencies by using only the versions specified in the package-lock.json file. See [here](https://docs.npmjs.com/cli/ci.html#description) for more info.
 
 **Otherwise:** Larger images will take longer to build and ship, build-only tools might contain vulnerabilities and secrets only meant for the build phase might be leaked.
 
@@ -1095,7 +1095,7 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 FROM node:14.4.0 AS build
 
 COPY . .
-RUN npm install && npm run build
+RUN npm ci && npm run build
 
 FROM node:slim-14.4.0
 
@@ -1103,7 +1103,7 @@ USER node
 EXPOSE 8080
 
 COPY --from=build /home/node/app/dist /home/node/app/package.json /home/node/app/package-lock.json ./
-RUN npm install --production
+RUN npm ci --production
 
 CMD [ "node", "dist/app.js" ]
 ```
