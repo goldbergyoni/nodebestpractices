@@ -734,9 +734,9 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 5.19. Install your packages with `npm ci`
+## ![✔] 5.19. Install your packages with `npm ci` 
 
-**TL;DR:** You have to be sure that production code uses the exact version of the packages you have tested it with. Run `npm ci` to do a clean install of your dependencies matching package.json and package-lock.json.
+**TL;DR:** You have to be sure that production code uses the exact version of the packages you have tested it with. Run `npm ci` to do a clean install of your dependencies matching package.json and package-lock.json. Using this command is recommended in automated environments such as continuous integration pipelines. It is stricter by throwing an error if the versions in package.json and package-lock.json do not match. Since it can be significantly faster than `npm install`, it can also save you CI pipeline minutes. See [here](https://docs.npmjs.com/cli/ci.html#description) for more info.
 
 **Otherwise:****** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
 
@@ -1085,7 +1085,7 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 ## ![✔] 8.1 Use multi-stage builds for leaner and more secure Docker images
 
-**TL;DR:** Use multi-stage build to copy only necessary production artifacts. A lot of build-time dependencies and files are not needed for running your application. With multi-stage builds these resources can be used during build while the runtime environment contains only what's necessary. Multi-stage builds are an easy way to get rid of overweight and security threats. Since Docker is often used in continous integration environments it is recommended to use the `npm ci` command (instead of `npm install`). It is faster, stricter and reduces inconsistencies by using only the versions specified in the package-lock.json file. See [here](https://docs.npmjs.com/cli/ci.html#description) for more info.
+**TL;DR:** Use multi-stage build to copy only necessary production artifacts. A lot of build-time dependencies and files are not needed for running your application. With multi-stage builds these resources can be used during build while the runtime environment contains only what's necessary. Multi-stage builds are an easy way to get rid of overweight and security threats. Since Docker is often used in continuous integration environments it is recommended to use the `npm ci` command (instead of `npm install`). It is faster, stricter and reduces inconsistencies by using only the versions specified in the package-lock.json file. See [here](https://docs.npmjs.com/cli/ci.html#description) for more info.
 
 **Otherwise:** Larger images will take longer to build and ship, build-only tools might contain vulnerabilities and secrets only meant for the build phase might be leaked.
 
