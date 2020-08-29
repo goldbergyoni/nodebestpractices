@@ -590,7 +590,7 @@ All statements above will return false if used with `===`
 
 **TL;DR:** Your code must be identical across all environments, but amazingly npm lets dependencies drift across environments by default – when you install packages at various environments it tries to fetch packages’ latest patch version. Overcome this by using npm config files, .npmrc, that tell each environment to save the exact (not the latest) version of each package. Alternatively, for finer grained control use `npm shrinkwrap`. \*Update: as of NPM5, dependencies are locked by default. The new package manager in town, Yarn, also got us covered by default
 
-**Otherwise:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
+**Otherwise:** Quality assurance(QA) will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
 
 🔗 [**Read More: Lock dependencies**](/sections/production/lockdependencies.md)
 
