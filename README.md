@@ -736,9 +736,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.19. Install your packages with `npm ci` 
 
-**TL;DR:** You have to be sure that production code uses the exact version of the packages you have tested it with. Run `npm ci` to do a clean install of your dependencies matching package.json and package-lock.json. Using this command is recommended in automated environments such as continuous integration pipelines. It is stricter by throwing an error if the versions in package.json and package-lock.json do not match. Since it can be significantly faster than `npm install`, it can also save you CI pipeline minutes. See [here](https://docs.npmjs.com/cli/ci.html#description) for more info.
+**TL;DR:** You have to be sure that production code uses the exact version of the packages you have tested it with. Run `npm ci` to strictly do a clean install of your dependencies matching package.json and package-lock.json. Using this command is recommended in automated environments such as continuous integration pipelines.
 
-**Otherwise:****** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
+**Otherwise:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code.
 
 🔗 [**Read More: Use npm ci**](/sections/production/installpackageswithnpmci.md)
 
