@@ -996,6 +996,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "ryan3E0",
+      "name": "Ryan Smith",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1578766?v=4",
+      "profile": "https://ryansmith.tech/",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
