@@ -16,7 +16,7 @@
 
 5. Приложение должно работать как можно быстрее и обеспечивать немедленную обратную связь, если требуемые переменные среды отсутствуют при запуске, можно использовать [convict](https://www.npmjs.com/package/convict) для проверки конфигурации.
 
-Некоторые библиотеки конфигурации могут предоставить большинство этих функций бесплатно, посмотрите библиотеки npm, такие как [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) и [config](https://www.npmjs.com/package/config), которые отмечают многие из этих требований.
+Некоторые библиотеки конфигурации могут предоставить большинство этих функций бесплатно, посмотрите библиотеки npm, такие как [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config) и [convict](https://www.npmjs.com/package/convict),  которые отмечают многие из этих требований.
 
 <br/><br/>
 

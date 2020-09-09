@@ -104,7 +104,7 @@
 
 ## ![✔] 1.5 환경을 인식하는, 보안적인, 계층적인 설정을 사용하라
 
-**핵심요약:** 완벽하고 결점이 없는 구성 설정은 (a) 파일과 환경변수 모두에서 키 값을 읽을 수 있어야하고 (b) 보안 값들은 커밋된 코드 밖에서 관리되어야하며 (c) 설정은 좀 더 쉽게 찾을 수 있도록 계층적으로 관리해야 한다. [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config)와 같이 이러한 요구사항을 동작하게 해주는 몇가지 패키지가 존재한다.
+**핵심요약:** 완벽하고 결점이 없는 구성 설정은 (a) 파일과 환경변수 모두에서 키 값을 읽을 수 있어야하고 (b) 보안 값들은 커밋된 코드 밖에서 관리되어야하며 (c) 설정은 좀 더 쉽게 찾을 수 있도록 계층적으로 관리해야 한다. [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config), [convict](https://www.npmjs.com/package/convict)와 같이 이러한 요구사항을 동작하게 해주는 몇가지 패키지가 존재한다.
 
 **그렇게 하지 않을 경우:** 위의 구성 요구사항 중 하나라도 만족시키지 못한다면 개발팀이나 데브옵스팀을 늪으로 몰아갈 수 있다. 십중팔구 둘 다.
 
