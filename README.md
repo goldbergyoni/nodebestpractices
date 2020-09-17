@@ -734,11 +734,11 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 5.19. Install your packages with `npm ci`
+## ![✔] 5.19. Install your packages with `npm ci` 
 
-**TL;DR:** You have to be sure that production code uses the exact version of the packages you have tested it with. Run `npm ci` to do a clean install of your dependencies matching package.json and package-lock.json.
+**TL;DR:** You have to be sure that production code uses the exact version of the packages you have tested it with. Run `npm ci` to strictly do a clean install of your dependencies matching package.json and package-lock.json. Using this command is recommended in automated environments such as continuous integration pipelines.
 
-**Otherwise:****** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
+**Otherwise:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code.
 
 🔗 [**Read More: Use npm ci**](/sections/production/installpackageswithnpmci.md)
 
@@ -1085,7 +1085,7 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 ## ![✔] 8.1 Use multi-stage builds for leaner and more secure Docker images
 
-**TL;DR:** Use multi-stage build to copy only necessary production artifacts. A lot of build-time dependencies and files are not needed for running your application. With multi-stage builds these resources can be used during build while the runtime environment contains only what's necessary. Multi-stage builds are an easy way to get rid of overweight and security threats
+**TL;DR:** Use multi-stage build to copy only necessary production artifacts. A lot of build-time dependencies and files are not needed for running your application. With multi-stage builds these resources can be used during build while the runtime environment contains only what's necessary. Multi-stage builds are an easy way to get rid of overweight and security threats.
 
 **Otherwise:** Larger images will take longer to build and ship, build-only tools might contain vulnerabilities and secrets only meant for the build phase might be leaked.
 
@@ -1095,7 +1095,7 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 FROM node:14.4.0 AS build
 
 COPY . .
-RUN npm install && npm run build
+RUN npm ci && npm run build
 
 FROM node:slim-14.4.0
 
@@ -1103,7 +1103,7 @@ USER node
 EXPOSE 8080
 
 COPY --from=build /home/node/app/dist /home/node/app/package.json /home/node/app/package-lock.json ./
-RUN npm install --production
+RUN npm ci --production
 
 CMD [ "node", "dist/app.js" ]
 ```
