@@ -1005,6 +1005,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "bttger",
+      "name": "Tom Boettger",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/49961674?v=4",
+      "profile": "https://de.linkedin.com/in/tom-boettger",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
