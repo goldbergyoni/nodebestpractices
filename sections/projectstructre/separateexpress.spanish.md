@@ -8,7 +8,7 @@ El último generador de Express viene con una gran práctica que vale la pena ma
 
 <br/><br/>
 
-### Code example: API declaration, should reside in app.js
+### Código de ejemplo: La declaración de la API, debería residir en app.js
 
 ```javascript
 var app = express();
@@ -19,7 +19,7 @@ app.use("/api/forms", forms);
 
 <br/><br/>
 
-### Code example: Server network declaration, should reside in /bin/www
+### Código de ejemplo: La declaración de red del servidor, debería residir en /bin/www
 
 ```javascript
 var app = require('../app');
@@ -39,7 +39,7 @@ app.set('port', port);
 var server = http.createServer(app);
 ```
 
-### Example: test your API in-process using supertest (popular testing package)
+### Ejemplo: prueba el procesamiento de tu API usando supertest (paquete de testing popular)
 
 ```javascript
 const app = express();
