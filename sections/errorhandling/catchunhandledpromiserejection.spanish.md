@@ -8,7 +8,7 @@ Normalmente, la mayor parte de código en aplicaciones Node.js/Express modernas 
 
 <br/><br/>
 
-### Code example: these errors will not get caught by any error handler (except unhandledRejection)
+### Código de ejemplo: estos errores no serán capturados por ningún manejador de errores (excepto unhandledRejection)
 
 ```javascript
 DAL.getUserById(1).then((johnSnow) => {
@@ -21,7 +21,7 @@ DAL.getUserById(1).then((johnSnow) => {
 
 <br/><br/>
 
-### Code example: Catching unresolved and rejected promises
+### Código de ejemplo: Capturando promesas no resueltas y rechazadas
 
 ```javascript
 process.on('unhandledRejection', (reason, p) => {
@@ -39,24 +39,26 @@ process.on('uncaughtException', (error) => {
 
 <br/><br/>
 
-### Blog Quote: "If you can make a mistake, at some point you will"
+### Cita de blog: "Si puedes cometer un error, en algún punto lo harás"
 
- From the blog James Nelson
+Del blog James Nelson
 
- > Let’s test your understanding. Which of the following would you expect to print an error to the console?
+> Vamos a probar tu entendimiento. Cuál de los siguientes esperarías que imprima un error en la consola?
 
 ```javascript
-Promise.resolve(‘promised value’).then(() => {
-  throw new Error(‘error’);
+Promise.resolve('promised value').then(() => {
+  throw new Error('error');
 });
 
-Promise.reject(‘error value’).catch(() => {
-  throw new Error(‘error’);
+Promise.reject('error value').catch(() => {
+  throw new Error('error');
 });
 
 new Promise((resolve, reject) => {
-  throw new Error(‘error’);
+  throw new Error('error');
 });
 ```
 
 > I don’t know about you, but my answer is that I’d expect all of them to print an error. However, the reality is that a number of modern JavaScript environments won’t print errors for any of them.The problem with being human is that if you can make a mistake, at some point you will. Keeping this in mind, it seems obvious that we should design things in such a way that mistakes hurt as little as possible, and that means handling errors by default, not discarding them.
+
+> No sé tú, pero mi respuesta is que esperaría que todos impriman un error. Sin embargo, la realidad es que algunos ambientes modernos de JavaScript no imprimirán errores para ninguno de ellos. El problema de ser humano es que puedes cometer errores, en algún punto lo harás. Teniendo esto en cuenta, parece obvio que deberíamos diseñas las cosas de una forma tal que los errores lastimen lo menos posible, y eso significa manejar los errores por default, no descartarlos.
