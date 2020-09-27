@@ -8,7 +8,7 @@ A todos nos encanta console.log, pero evidentemente un logger persistente y con 
 [bunyan]: https://www.npmjs.com/package/bunyan
 [pino]: https://www.npmjs.com/package/pino
 
-### Code Example – Winston Logger in action
+### Código de ejemplo – Winston Logger en acción
 
 ```javascript
 // your centralized logger object
@@ -25,7 +25,7 @@ logger.log('info', 'Test Log Message with some parameter %s', 'some parameter', 
 
 ```
 
-### Code Example – Querying the log folder (searching for entries)
+### Código de ejemplo – Haciendo consultas a la carpeta de logs
 
 ```javascript
 var options = {
@@ -44,11 +44,16 @@ winston.query(options, function (err, results) {
 });
 ```
 
-### Blog Quote: "Logger Requirements"
+### Cita de blog: "Requerimientos del logger"
 
- From the blog Strong Loop
+Del blog Strong Loop
 
 > Lets identify a few requirements (for a logger):
 1. Timestamp each log line. This one is pretty self-explanatory – you should be able to tell when each log entry occurred.
 2. Logging format should be easily digestible by humans as well as machines.
 3. Allows for multiple configurable destination streams. For example, you might be writing trace logs to one file but when an error is encountered, write to the same file, then into error file and send an email at the same time…
+
+> Vamos a identificar algunos requerimientos (para un logger):
+1. Marca de tiempo en cada linea de log. Este es bastente auto-explicativo – deberías poder decir cuándo ocurrió cada entrada de log.
+2. El formato de logs debería ser fácilmente interpretado por humanos así como por máquinas
+3. Permite múltiples destinos configurables. Por ejemplo, podrías estar escribiendo logs de seguimiento en un archivo, pero cuando ocurre un error, escribir en el mismo archivo, luego en un archivo de errores y enviar un email al mismo tiempo…
