@@ -4,7 +4,7 @@
 
 La naturaleza permisiva de JS junto con sus variadas opciones de flujo de código (ej. EventEmitter, Callbacks, Promises, etc) provocan la existencia de una gran variedad de maneras de lanzar errores. Algunos utilizan strings, otros definen sus propios tipos personalizados. Utilizar el objeto nativo de Error presente en Node.js ayuda a mantener la uniformidad dentro de tu código y de librerías de terceros, así como a mantener información significativa como el StackTrace. Al lanzar la excepción, normalmente es buena práctica el agregar propiedades adicionales que aporten contexto, como el nombre del error y el código de error HTTP asociado. Para lograr esta uniformidad y estas prácticas, considera extender el objeto Error con propiedades adicionales, observa el ejemplo a continuación.
 
-### Código de ejemplo – Cómo hacerlo bien?
+### Código de ejemplo – ¿Cómo hacerlo bien?
 
 ```javascript
 // throwing an Error from typical function, whether sync or async
@@ -32,7 +32,7 @@ if(!productToAdd)
     throw ("How can I add new product when no value provided?");
 ```
 
-### Código de ejemplo – Cómo hacerlo aún mejor?
+### Código de ejemplo – ¿Cómo hacerlo aún mejor?
 
 ```javascript
 // centralized error object that derives from Node’s Error
