@@ -16,10 +16,10 @@ Los productos APM constituyen 3 segmentos principales:
 
 2. Instrumentación de código – familia de productos que requiere embeber un agente en la aplicación para usar características como detección de código lento, estadística de excepciones, monitoreo de performance y mucho más. Algunos ejemplos son New Relic, App Dynamics
 
-3. Tableros de inteligencia operativa – esta línea de productos está enfocada en facilitar al equipo de operaciones con métricas y contenido curado que ayude a fácilmente tener visibilidad de la performance de la aplicación. Esto en general involucra agregar múltiples fuentes de información (logs de aplicación, logs de BD, logs de servidores, etc) y trabajo de diseño de tableros por adelantado. Algunos ejemplos son [Datadog](https://www.datadoghq.com/), [Splunk](https://www.splunk.com/), [Zabbix](https://www.zabbix.com/)
+3. Tableros de inteligencia operativa – esta línea de productos está enfocada en facilitar métricas y contenido curado al equipo de operaciones que ayude a tener visibilidad de la performance de la aplicación con facilidad. Esto, en general, involucra agregar múltiples fuentes de información (logs de aplicación, logs de BD, logs de servidores, etc) y trabajo previo de diseño de tableros. Algunos ejemplos son [Datadog](https://www.datadoghq.com/), [Splunk](https://www.splunk.com/), [Zabbix](https://www.zabbix.com/)
 
 ### Ejemplo: UpTimeRobot.Com – Dashboard de monitoreo de Sitio web
 ![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/uptimerobot.jpg "Dashboard de monitoreo de Sitio web")
 
-### Ejemplo: AppDynamics.Com – Monitoreo and to end combinado con instrumentación de código
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/app-dynamics-dashboard.png "Monitoreo and to end combinado con instrumentación de código")
+### Ejemplo: AppDynamics.Com – Monitoreo end to end combinado con instrumentación de código
+![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/app-dynamics-dashboard.png "Monitoreo end to end combinado con instrumentación de código")

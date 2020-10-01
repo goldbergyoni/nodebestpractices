@@ -4,7 +4,7 @@
 
 Los callbacks no escalan bien ya que muchos programadores no están familiarizados con ellos. Te obligan a estar pendiente de errores por todos lados y a lidiar con un anidamiento de código excesivo, lo cual dificulta la comprensión del flujo de código. Librerías prometedoras como BlueBird, async y Q empaquetan un estilo de código estándar utilizando RETURN y THROW para controlar el flujo del programa. Específicamente, soportan el estilo favorito de gestión de errores try-catch, liberando a la ruta principal de código de tratar con errores en cada función.
 
-### Código de ejemplo – Uando promesas para capturar errores
+### Código de ejemplo – Usando promesas para capturar errores
 
 ```javascript
 doWork()

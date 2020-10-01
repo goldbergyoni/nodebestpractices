@@ -4,7 +4,7 @@
 
 Testear rutas de ejecución "felices" no es mejor que testear errores. Un buen coverage de código exige testear rutas de ejecución adversas. De lo contrario, no existe ninguna seguridad de que las excepciones se capturen y gestionen correctamente. Cada framework de testing unitario, como Mocha y Chai, admite testing de excepciones (códigos de ejemplo a continuación). Si te parece tedioso ir probando cada función y excepción internas, podrías quedarte solo con el testing de errores REST API HTTP.
 
-### Código de ejemplo: asegurando que la excepción correcta es disparada usando Mocha & Chai
+### Código de ejemplo: asegurando que se dispara la excepción correcta usando Mocha & Chai
 
 ```javascript
 describe("Facebook chat", () => {
