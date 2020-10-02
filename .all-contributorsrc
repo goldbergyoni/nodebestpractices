@@ -1014,6 +1014,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "jormaechea",
+      "name": "Joaquín Ormaechea",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/5612500?v=4",
+      "profile": "https://github.com/jormaechea",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
