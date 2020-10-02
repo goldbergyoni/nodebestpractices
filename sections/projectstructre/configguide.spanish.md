@@ -18,11 +18,11 @@ Algunas librerías de configuración pueden proporcionar muchas de estas caracte
 
 <br/><br/>
 
-### Code Example – hierarchical config helps to find entries and maintain huge config files
+### Código de ejemplo – La configuración jerárquica ayuda a encontrar las entradas y a mantener archivos de configuración muy grandes
 
 ```json
 {
-  // Customer module configs 
+  // Customer module configs
   "Customer": {
     "dbConfig": {
       "host": "localhost",
@@ -31,7 +31,7 @@ Algunas librerías de configuración pueden proporcionar muchas de estas caracte
     },
     "credit": {
       "initialLimit": 100,
-      // Set low for development 
+      // Set low for development
       "initialDays": 1
     }
   }

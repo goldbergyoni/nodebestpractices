@@ -1,13 +1,13 @@
-# Layer your app, keep Express within its boundaries
+# Aplicar capas para componentes, mantén Express dentro de sus límites
 
 <br/><br/>
 
- ### Separate component code into layers: web, services, and DAL
+### Separa el código de los componentes en capas: web, servicios y acceso a datos.
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Separate component code into layers")
+![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Separa el código de los componentes en capas")
 
- <br/><br/>
+<br/><br/>
 
-### 1 min explainer: The downside of mixing layers
+### Explicado en 1 minuto: La desventaja de mezclar capas
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/keepexpressinweb.gif "The downside of mixing layers")
+![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/keepexpressinweb.gif "La desventaja de mezclar capas")
