@@ -1,6 +1,6 @@
 [✔]: assets/images/checkbox-small-blue.png
 
-# Node.js Best Practices
+# Node.js ベストプラクティス
 
 <h1 align="center">
   <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices">
@@ -14,53 +14,53 @@
 
 <br/>
 
-[![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
+[![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **私たちの Twitter をフォローしましょう！** [**@nodepractices**](https://twitter.com/nodepractices/)
 
 
 <br/>
 
-Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
+他の言語で読む: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
 
 <br/>
 
-###### Built and maintained by our [Steering Committee](#steering-committee) and [Collaborators](#collaborators)
+###### [ステアリングコミッティー](#ステアリングコミッティー)と[コラボレーター](#コラボレーター)によって運営されています
 
-# Latest Best Practices and News
+# 最新のベストプラクティス・お知らせ
 
-- **:tada: Node.js best practices reached 50k stars**: Thank you to each and every contributor who helped turning this project into what it is today! We've got lots of plans for the time ahead, as we expand our ever-growing list of Node.js best practices even further.
+- **:tada: Node.js ベストプラクティスは 50k スターに到達しました**: このプロジェクトをこのようなものにしてくれた全てのコントリビューターに感謝申し上げます！ 私たちは、増え続ける Node.js のベストプラクティスリストをさらに拡大していくために、これから先たくさんの計画を画策しています。
 
-- **🎧 Podcast**: Yoni Goldberg from our team participated in the last JS Party Podcast (Very cool one!) episode to speak about Node.js best practices, [🎧 listen here](https://changelog.com/jsparty/139)
+- **🎧 ポッドキャスト**: 私たちのチームの Yoni Goldberg が、前回の JS Party Podcast（とってもクールなポッドキャストです！）のエピソードに出演して、Node.js ベストプラクティスについて話をしました。[🎧 ここから聞きましょう。](https://changelog.com/jsparty/139)
 
-- **:whale: Node.js + Docker best practices**: We've just release the Docker with Node.js section which includes 15 bullets about better coding techqniues with Docker
+- **:whale: Node.js + Docker ベストプラクティス**: Docker を用いたより良いコーディングテクニック 15 項目を含んだ、Docker と Node.js のセクションを新たに公開しました。
 
-- **🎤 A talk at OdessaJS**: We will speak about Node.js testing this week at the great [OdessaJS conference](https://odessajs.org/)
+- **🎤 OdessaJS でのトーク**: 今週、[OdessaJS conference](https://odessajs.org/) という素晴らしい舞台で、Node.js のテストについて話をします。
 
 <br/><br/>
 
-# Welcome! 3 Things You Ought To Know First
+# ようこそ！まず始めに知っておくべき 3 つのこと
 
-**1. You are, in fact, reading dozens of the best Node.js articles -** this repository is a summary and curation of the top-ranked content on Node.js best practices, as well as content written here by collaborators
+**1. 実際、あなたは何十もの Node.js の最高の記事を読んでいます -** このリポジトリは、Node.js のベストプラクティスに関するトップランクのコンテンツや、コラボレーターによって書かれたコンテンツをまとめたものです。
 
-**2. It is the largest compilation, and it is growing every week -** currently, more than 80 best practices, style guides, and architectural tips are presented. New issues and pull requests are created every day to keep this live book updated. We'd love to see you contributing here, whether that is fixing code mistakes, helping with translations, or suggesting brilliant new ideas. See our [writing guidelines here](/.operations/writing-guidelines.md)
+**2. 最大の集大成であり、毎週のように増え続けています -** 現在、80 以上のベストプラクティスやスタイルガイド、アーキテクチャのヒントが記載されています。この「生きた本」がアップデートされた状態を保つために、新しいイシューやプルリクエストは毎日のように作成されています。私たちは、コードの修正や翻訳作業、素晴らしい新たなアイデアの提案に至るまで、あなたの貢献を心待ちにしています。詳しくは[ライティングガイドライン](/.operations/writing-guidelines.japanese.md)をご覧ください。
 
-**3. Most best practices have additional info -** most bullets include a **🔗Read More** link that expands on the practice with code examples, quotes from selected blogs and more information
+**3. ほとんどのベストプラクティスには追加情報があります -** ほとんどの項目に **🔗Read More** というリンクがあります。このリンクは、コード例や厳選されたブログからの引用、その他多くの情報など、プラクティスを発展させる内容を含んでいます。
 
 <br/><br/>
 
 ## Table of Contents
 
-1. [Project Structure Practices (5)](#1-project-structure-practices)
-2. [Error Handling Practices (11) ](#2-error-handling-practices)
-3. [Code Style Practices (12) ](#3-code-style-practices)
-4. [Testing And Overall Quality Practices (13) ](#4-testing-and-overall-quality-practices)
-5. [Going To Production Practices (19) ](#5-going-to-production-practices)
-6. [Security Practices (25)](#6-security-best-practices)
-7. [Performance Practices (2) (Work In Progress️ ✍️)](#7-draft-performance-best-practices)
-8. [Docker Practices (15)](#8-docker-best-practices)
+1. [プロジェクト構成のプラクティス (5)](#1-プロジェクト構成のプラクティス)
+2. [エラーハンドリングのプラクティス (11) ](#2-エラーハンドリングのプラクティス)
+3. [コードスタイルのプラクティス (12) ](#3-コードスタイルのプラクティス)
+4. [テストと総合的な品質のプラクティス (13) ](#4-テストと総合的な品質のプラクティス)
+5. [本番環境移行のプラクティス (19) ](#5-本番環境移行のプラクティス)
+6. [セキュリティのプラクティス (25)](#6-セキュリティのプラクティス)
+7. [パフォーマンスのプラクティス (2) (進行中️ ✍️)](#7-draft-パフォーマンスのプラクティス)
+8. [Docker のプラクティス (15)](#8-docker-のプラクティス)
 
 <br/><br/>
 
-# `1. Project Structure Practices`
+# `1. プロジェクト構成のプラクティス`
 
 ## ![✔] 1.1 Structure your solution by components
 
@@ -114,7 +114,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `2. Error Handling Practices`
+# `2. エラーハンドリングのプラクティス`
 
 ## ![✔] 2.1 Use Async-Await or promises for async error handling
 
@@ -228,7 +228,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `3. Code Style Practices`
+# `3. コードスタイルのプラクティス`
 
 ## ![✔] 3.1 Use ESLint
 
@@ -436,7 +436,7 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `4. Testing And Overall Quality Practices`
+# `4. テストと総合的な品質のプラクティス`
 
 ## ![✔] 4.1 At the very least, write API (component) testing
 
@@ -554,7 +554,7 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `5. Going To Production Practices`
+# `5. 本番環境移行のプラクティス`
 
 ## ![✔] 5.1. Monitoring
 
@@ -746,7 +746,7 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `6. Security Best Practices`
+# `6. セキュリティのプラクティス`
 
 <div align="center">
 <img src="https://img.shields.io/badge/OWASP%20Threats-Top%2010-green.svg" alt="54 items"/>
@@ -1048,7 +1048,7 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `7. Draft: Performance Best Practices`
+# `7. Draft: パフォーマンスのプラクティス`
 
 ## Our contributors are working on this section. [Would you like to join?](https://github.com/goldbergyoni/nodebestpractices/issues/256)
 
@@ -1077,7 +1077,7 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `8. Docker Best Practices`
+# `8. Docker のプラクティス`
 
 🏅 Many thanks to [Bret Fisher](https://github.com/BretFisher) from whom we learned many of the following practices
 
@@ -1255,24 +1255,24 @@ In addition, referring to an image tag means that the base image is subject to c
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# Milestones
+# マイルストーン
 
-To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/goldbergyoni/nodebestpractices/milestones) and join the working groups if you want to contribute to this project
+このガイドを維持し最新に保つために、私たちはコミュニティの助けを借りながらガイドラインとベストプラクティスを常に更新、改良しています。このプロジェクトに貢献したい場合は、私たちの[マイルストーン](https://github.com/goldbergyoni/nodebestpractices/milestones)をチェックしたり、ワーキンググループに参加することができます。
 
 <br/>
 
-## Translations
+## 翻訳
 
-All translations are contributed by the community. We will be happy to get any help with either completed, ongoing or new translations!
+すべての翻訳はコミュニティによって支えられています。完成済みの翻訳、進行中の翻訳、または新たな翻訳のいずれにおいても、サポートを受けられたら幸いです！
 
-### Completed translations
+### 翻訳（完了済み）
 
 - ![BR](/assets/flags/BR.png) [Brazilian Portuguese](./README.brazilian-portuguese.md) - Courtesy of [Marcelo Melo](https://github.com/marcelosdm)
 - ![CN](/assets/flags/CN.png) [Chinese](./README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
 - ![RU](/assets/flags/RU.png) [Russian](./README.russian.md) - Courtesy of [Alex Ivanov](https://github.com/contributorpw)
 - ![PL](/assets/flags/PL.png) [Polish](./README.polish.md) - Courtesy of [Michal Biesiada](https://github.com/mbiesiad)
 
-### Translations in progress
+### 翻訳（進行中）
 
 - ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/129))
 - ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/156))
@@ -1282,9 +1282,9 @@ All translations are contributed by the community. We will be happy to get any h
 
 <br/><br/>
 
-## Steering Committee
+## ステアリングコミッティー
 
-Meet the steering committee members - the people who work together to provide guidance and future direction to the project. In addition, each member of the committee leads a project tracked under our [Github projects](https://github.com/goldbergyoni/nodebestpractices/projects).
+ステアリングコミッティーのメンバーをご紹介します。このプロジェクトのガイダンスと将来の方向性を提供するために協力してくださっている方々です。さらに、コミッティーの各メンバーは、[Github プロジェクト](https://github.com/goldbergyoni/nodebestpractices/projects)で管理されているプロジェクトをリードしています。
 
 <img align="left" width="100" height="100" src="assets/images/members/yoni.png">
 
@@ -1292,7 +1292,7 @@ Meet the steering committee members - the people who work together to provide gu
 <a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
 <a href="https://goldbergyoni.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
-Independent Node.js consultant who works with customers in the USA, Europe, and Israel on building large-scale Node.js applications. Many of the best practices above were first published at [goldbergyoni.com](https://goldbergyoni.com). Reach Yoni at [@goldbergyoni](https://github.com/goldbergyoni) or [me@goldbergyoni.com](mailto:me@goldbergyoni.com)
+アメリカ、ヨーロッパ、イスラエルにおいて、大規模な Node.js アプリケーション開発をサポートするコンサルタント。上記の多くのベストプラクティスは当初 [goldbergyoni.com](https://goldbergyoni.com) で公開されました。Yoni への連絡は [@goldbergyoni](https://github.com/goldbergyoni) または [me@goldbergyoni.com](mailto:me@goldbergyoni.com) までお願いします。
 
 <br/>
 
@@ -1301,7 +1301,7 @@ Independent Node.js consultant who works with customers in the USA, Europe, and 
 [Bruno Scheufler](https://github.com/BrunoScheufler)
 <a href="https://brunoscheufler.com/"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
-💻 full-stack web engineer, Node.js & GraphQL enthusiast
+💻 フルスタック web エンジニア、Node.js & GraphQL の熱狂的なファン
 
 <br/>
 
@@ -1311,7 +1311,7 @@ Independent Node.js consultant who works with customers in the USA, Europe, and 
 <a href="https://twitter.com/kylemartin_93"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
 <a href="https://www.linkedin.com/in/kylemartinnz"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
 
-Full Stack Developer & Site Reliability Engineer based in New Zealand, interested in web application security, and architecting and building Node.js applications to perform at global scale.
+ニュージーランドを拠点とするフルスタックデベロッパー & サイトリライアビリティエンジニア。Web アプリケーションセキュリティや、グローバルスケールで稼働する Node.js アプリケーションの構築に関心があります。
 
 <br/>
 
@@ -1320,11 +1320,11 @@ Full Stack Developer & Site Reliability Engineer based in New Zealand, intereste
 [Kevyn Bruyere](https://github.com/kevynb)
 <a href="https://www.linkedin.com/in/kevynbruyere/"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
 
-Independent full-stack developer with a taste for Ops and automation.
+Ops や自動化に関心のあるフルスタックデベロッパー。
 
 <br/>
 
-### Steering Committee Emeriti
+### ステアリングコミッティー・エメリティ
 
 <img align="left" width="100" height="100" src="assets/images/members/sagir.png">
 
@@ -1333,21 +1333,21 @@ Independent full-stack developer with a taste for Ops and automation.
 <a href="https://linkedin.com/in/sagirk"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
 <a href="https://sagirk.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
-Deep specialist in JavaScript and its ecosystem — React, Node.js, TypeScript, GraphQL, MongoDB, pretty much anything that involves JS/JSON in any layer of the system — building products using the web platform for the world’s most recognized brands. Individual Member of the Node.js Foundation.
+JavaScript とそのエコシステム（React、Node.js、TypeScript、GraphQL、MongoDBなど、システムのあらゆるレイヤーで JS/JSON が関係するものであるなら何でも）の専門家。世界で最も認知されているブランドのために Web プラットフォームを利用してプロダクトを構築しています。Node.js ファウンデーションの個人メンバー。
 
 <br/>
 
-## Collaborators
+## コラボレーター
 
-Thank you to all our collaborators! 🙏
+すべてのコラボレーターの方々に感謝いたします！ 🙏
 
-Our collaborators are members who are contributing to the repository on a regular basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in helping us guide thousands of people to craft better Node.js applications, please read our [contributor guidelines](/.operations/CONTRIBUTING.md) 🎉
+私たちのコラボレーターは、新たなベストプラクティスの提案やイシューの優先順位付け、プルリクエストのレビューなどその他多くのことを通じて、定期的にこのリポジトリに貢献してくださっているメンバーの方々です。多くの人々がより良い Node.js アプリケーションを構築できるように導く私たちをサポートすることにもし興味があるのであれば、[貢献ガイドライン](/.operations/CONTRIBUTING.md)をお読み下さい🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
 | :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
 |                                    [Ido Richter (Founder)](https://github.com/idori)                                    |                                        [Keith Holliday](https://github.com/TheHollidayInn)                                         |
 
-### Collaborator Emeriti
+### コラボレーター・エメリティ
 
 | <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"></a> |
 | :-------------------------------------------------------------------------------------------------------------------------: |
@@ -1355,12 +1355,12 @@ Our collaborators are members who are contributing to the repository on a regula
 
 <br/>
 
-## Contributing
-If you've ever wanted to contribute to open source, now is your chance! See the [contributing docs](.operations/CONTRIBUTING.md) for more information.
+## 貢献
+もしオープンソースに貢献したいと思ったことがあるのなら、いまがチャンスです！詳細は[貢献ドキュメント](.operations/CONTRIBUTING.md)を参照してください。
 
-## Contributors ✨
+## 貢献メンバー ✨
 
-Thanks goes to these wonderful people who have contributed to this repository!
+このリポジトリに貢献してくれた素晴らしい方々に感謝いたします。
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
