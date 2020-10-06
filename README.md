@@ -31,7 +31,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 - **🎧 Podcast**: Yoni Goldberg from our team participated in the last JS Party Podcast (Very cool one!) episode to speak about Node.js best practices, [🎧 listen here](https://changelog.com/jsparty/139)
 
-- **:whale: Node.js + Docker best practices**: We've just release the Docker with Node.js section which includes 15 bullets about better coding techqniues with Docker
+- **:whale: Node.js + Docker best practices**: We've just released the Docker with Node.js section which includes 15 bullets about better coding techniques with Docker
 
 - **🎤 A talk at OdessaJS**: We will speak about Node.js testing this week at the great [OdessaJS conference](https://odessajs.org/)
 
