@@ -68,7 +68,7 @@
 
 **さもないと:** 新しい機能をコーディングする開発者が、自分の変更の影響を理解するのに苦労したり、他の依存するコンポーネントを壊すことを恐れたりすると、デプロイが遅くなり、リスクが高くなります。また、すべてのビジネスユニットが分離されていない場合、スケールアウトするのは難しいと考えられています。
 
-🔗 [**さらに読む: コンポーネントで構成する**](/sections/projectstructre/breakintcomponents.japenese.md)
+🔗 [**さらに読む: コンポーネントで構成する**](/sections/projectstructre/breakintcomponents.japanese.md)
 
 <br/><br/>
 
