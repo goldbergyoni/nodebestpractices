@@ -62,13 +62,13 @@
 
 # `1. プロジェクト構成のプラクティス`
 
-## ![✔] 1.1 Structure your solution by components
+## ![✔] 1.1 コンポーネントによりソリューションを構築する
 
-**TL;DR:** The worst large applications pitfall is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Instead, partition your code into components, each gets its own folder or a dedicated codebase, and ensure that each unit is kept small and simple. Visit 'Read More' below to see examples of correct project structure
+**TL;DR:** 大規模アプリケーションの最悪の落とし穴は、何百もの依存関係を持つ巨大なコードベースを維持することです。- そのようなモノリスは、新しい機能を取り入れようとする開発者の速度を低下させます。その代わりに、コードをコンポーネントに分割し、それぞれが独自のフォルダや専用のコードベースを取得し、各ユニットが小さくシンプルに保たれていることを確認してください。正しいプロジェクト構造の例を見るには、以下の 'さらに読む' を参照してください。
 
-**Otherwise:** When developers who code new features struggle to realize the impact of their change and fear to break other dependent components - deployments become slower and riskier. It's also considered harder to scale-out when all the business units are not separated
+**さもなければ:** 新しい機能をコーディングする開発者が、自分の変更の影響を理解するのに苦労したり、他の依存するコンポーネントを壊すことを恐れたりすると、デプロイが遅くなり、リスクが高くなります。また、すべてのビジネスユニットが分離されていない場合、スケールアウトするのは難しいと考えられています。
 
-🔗 [**Read More: structure by components**](/sections/projectstructre/breakintcomponents.md)
+🔗 [**さらに読む: コンポーネントで構成する**](/sections/projectstructre/breakintcomponents.japenese.md)
 
 <br/><br/>
 
