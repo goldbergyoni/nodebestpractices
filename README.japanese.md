@@ -116,13 +116,13 @@
 
 # `2. エラーハンドリングのプラクティス`
 
-## ![✔] 2.1 Use Async-Await or promises for async error handling
+## ![✔] 2.1 非同期エラーハンドリングに Async-Await または promises を使う
 
-**TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using a reputable promise library or async-await instead which enables a much more compact and familiar code syntax like try-catch
+**TL;DR:** コールバックスタイルで非同期エラーを処理することは、おそらく地獄への最短経路でしょう（Pyramid of doom として知られています）。あなたができるコードへの最高の贈り物は、信頼できる promise ライブラリや async-await を使うことです。これらは、try-catch のような、よりコンパクトで親しみやすいコードシンタックスを可能にします。
 
-**Otherwise:** Node.js callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting, and awkward coding patterns
+**さもなければ:** Node.js のコールバックスタイル、つまり function(err, response) を利用することは、正常な処理を行うコードとエラーハンドリングの混同、過剰なネスト構造、そして厄介なコーディングパターンが原因となって、メンテナンス性の低いコードにつながります。
 
-🔗 [**Read More: avoiding callbacks**](/sections/errorhandling/asyncerrorhandling.md)
+🔗 [**さらに読む: コールバック関数の利用を避ける**](/sections/errorhandling/asyncerrorhandling.md)
 
 <br/><br/>
 
