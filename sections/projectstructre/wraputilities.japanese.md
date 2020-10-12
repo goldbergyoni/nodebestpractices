@@ -1,13 +1,13 @@
-# Wrap common utilities as npm packages
+# 一般的なユーティリティを npm パッケージとしてラップする
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-Once you start growing and have different components on different servers which consumes similar utilities, you should start managing the dependencies - how can you keep 1 copy of your utility code and let multiple consumer components use and deploy it? well, there is a tool for that, it's called npm... Start by wrapping 3rd party utility packages with your own code to make it easily replaceable in the future and publish your own code as private npm package. Now, all your code base can import that code and benefit free dependency management tool. It's possible to publish npm packages for your own private use without sharing it publicly using [private modules](https://docs.npmjs.com/private-modules/intro), [private registry](https://npme.npmjs.com/docs/tutorials/npm-enterprise-with-nexus.html) or [local npm packages](https://medium.com/@arnaudrinquin/build-modular-application-with-npm-local-modules-dfc5ff047bcc)
+成長を始めて、似たようなユーティリティを使用する異なるサーバ上の異なるコンポーネントを持つようになったら、依存関係の管理を始めなければなりません。 - ユーティリティコードのコピーを1つにして、複数のコンシューマコンポーネントに使用させてデプロイするにはどうすれば良いでしょう? そのためのツールとして、npm と呼ばれるものがあります。サードパーティのユーティリティパッケージを独自のコードでラップして、将来的に簡単に置き換えられるようにし、独自のコードをプライベートな npm パッケージとして公開することから始めましょう。そうすることで、あなたのすべてのコードベースは、コードをインポートし、無料の依存関係管理ツールの恩恵を受けることができます。[private modules](https://docs.npmjs.com/private-modules/intro) や [private registry](https://npme.npmjs.com/docs/tutorials/npm-enterprise-with-nexus.html)、[local npm packages](https://medium.com/@arnaudrinquin/build-modular-application-with-npm-local-modules-dfc5ff047bcc) を使うことで、公開せずに自分だけのプライベートな利用のために npm パッケージを公開することができます。
 
 <br/><br/>
 
-### Sharing your own common utilities across environments and components
+### 環境やコンポーネント横断で独自の共通ユーティリティを共有する
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/Privatenpm.png "Structuring solution by components")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/Privatenpm.png "コンポーネントでソリューションを構築する")
