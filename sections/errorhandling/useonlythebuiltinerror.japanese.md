@@ -1,21 +1,21 @@
-# Use only the built-in Error object
+# 組み込みのエラーオブジェクトのみを使用する
 
-### One Paragraph Explainer
+### 一段落説明
 
-The permissive nature of JavaScript along with its variety of code-flow options (e.g. EventEmitter, Callbacks, Promises, etc) pushes to great variance in how developers raise errors – some use strings, other define their own custom types. Using Node.js built-in Error object helps to keep uniformity within your code and with 3rd party libraries, it also preserves significant information like the StackTrace. When raising the exception, it’s usually a good practice to fill it with additional contextual properties like the error name and the associated HTTP error code. To achieve this uniformity and practices, consider extending the Error object with additional properties, but be careful not to overdo it. It's generally a good idea to extend the built-in Error object only once with an AppError for all the application level errors, and pass any data you need to differentiate between different kinds of errors as arguments. No need to extend the Error object multiple times (one for each error case, such as DbError, HttpError) See code examples below
+多くのコードフローの選択肢（EventEmitter、コールバック、Promises など）を持っているという JavaScript の寛容な性質が、開発者のエラー発生方法に大きな差をもたらしています - 文字列を使用する人もいれば、独自のカスタム型を定義する人もいます。Node.js の組み込みエラーオブジェクトを使用することは、コード内やサードパーティのライブラリ間において一貫性を保つことを助け、さらにスタックトレースのような重要な情報を保持します。通常、例外を発生させるときは、エラー名や関連する HTTP エラーコードといった追加のコンテキスト属性情報を付与することがベストプラクティスです。この一貫性保持やプラクティスを達成するために、エラーオブジェクトを追加プロパティで拡張することを考えますが、やりすぎには注意が必要です。一般的に、すべてのアプリケーションレベルのエラーに対して、AppError という形で一度だけ組み込みのエラーオブジェクトを拡張し、異なる種類のエラーを区別するために必要なデータを引数として渡すことをおすすめします。何回も（DbError、HttpError のようにそれぞれのケースに応じて）エラーオブジェクトを拡張する必要はありません。以下のコード例を参考にしてください。
 
-### Code Example – doing it right
+### コード例 – 正しい方法
 
 ```javascript
-// throwing an Error from typical function, whether sync or async
+// 同期または非同期に、典型的な関数からエラーを投げる
 if(!productToAdd)
     throw new Error('How can I add new product when no value provided?');
 
-// 'throwing' an Error from EventEmitter
+// EventEmitter からエラーを「投げる」
 const myEmitter = new MyEmitter();
 myEmitter.emit('error', new Error('whoops!'));
 
-// 'throwing' an Error from a Promise
+// Promise からエラーを「投げる」
 const addProduct = async (productToAdd) => {
   try {
     const existingProduct = await DAL.getProduct(productToAdd.id);
@@ -28,26 +28,26 @@ const addProduct = async (productToAdd) => {
 }
 ```
 
-### Code example – Anti Pattern
+### コード例 – アンチパターン
 
 ```javascript
-// throwing a string lacks any stack trace information and other important data properties
+// 文字列を投げると、スタックトレース情報やその他の重要なデータプロパティを失います
 if(!productToAdd)
     throw ('How can I add new product when no value provided?');
 ```
 
-### Code example – doing it even better
+### コード例 – より優れた方法
 
 <details>
 <summary><strong>Javascript</strong></summary>
 
 ```javascript
-// centralized error object that derives from Node’s Error
+// Node のエラーから派生した、集中化されたエラーオブジェクト
 function AppError(name, httpCode, description, isOperational) {
     Error.call(this);
     Error.captureStackTrace(this);
     this.name = name;
-    //...other properties assigned here
+    //...他のプロパティがここで割り当てられます
 };
 
 AppError.prototype = Object.create(Error.prototype);
@@ -55,7 +55,7 @@ AppError.prototype.constructor = AppError;
 
 module.exports.AppError = AppError;
 
-// client throwing an exception
+// 例外を投げるクライアント
 if(user == null)
     throw new AppError(commonErrors.resourceNotFound, commonHTTPErrors.notFound, 'further explanation', true)
 ```
@@ -65,7 +65,7 @@ if(user == null)
 <summary><strong>Typescript</strong></summary>
 
 ```typescript
-// centralized error object that derives from Node’s Error
+// Node のエラーから派生した、集中化されたエラーオブジェクト
 export class AppError extends Error {
   public readonly name: string;
   public readonly httpCode: HttpCode;
@@ -74,7 +74,7 @@ export class AppError extends Error {
   constructor(name: string, httpCode: HttpCode, description: string, isOperational: boolean) {
     super(description);
 
-    Object.setPrototypeOf(this, new.target.prototype); // restore prototype chain
+    Object.setPrototypeOf(this, new.target.prototype); // プロトタイプチェーンを復元する
 
     this.name = name;
     this.httpCode = httpCode;
@@ -84,34 +84,34 @@ export class AppError extends Error {
   }
 }
 
-// client throwing an exception
+// 例外を投げるクライアント
 if(user == null)
     throw new AppError(commonErrors.resourceNotFound, commonHTTPErrors.notFound, 'further explanation', true)
 ```
 </details>
 
-*Explanation about the `Object.setPrototypeOf` in Typescript: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html#support-for-newtarget*
+*TypeScript における `Object.setPrototypeOf` の説明: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html#support-for-newtarget*
 
-### Blog Quote: "I don’t see the value in having lots of different types"
+### ブログ引用: "I don’t see the value in having lots of different types"（たくさんの型を持つことに価値があるとは思えません）
 
-From the blog, Ben Nadel ranked 5 for the keywords “Node.js error object”
+ブログ Ben Nadel（「Node.js error object」というキーワードで 5 位）より
 
->…”Personally, I don’t see the value in having lots of different types of error objects [in contrast with having only one] – JavaScript, as a language, doesn’t seem to cater to Constructor-based error-catching. As such, differentiating on an object property seems far easier than differentiating on a Constructor type…
+>…「個人的には、（ただ一つのエラーオブジェクト型を持つことに比べて）たくさんのエラーオブジェクト型を持つことに価値があると思えません - JavaScript は言語として、コンストラクタベースのエラー捕捉には適していないようです。このように、オブジェクトのプロパティで区別することは、コンストラクタの型で区別するよりはるかに簡単です…
 
-### Blog Quote: "A string is not an error"
+### ブログ引用: "A string is not an error"（文字列はエラーではありません）
 
-From the blog, devthought.com ranked 6 for the keywords “Node.js error object”
+ブログ devthought.com（「Node.js error object」というキーワードで 6 位）より
 
-> …passing a string instead of an error results in reduced interoperability between modules. It breaks contracts with APIs that might be performing `instanceof` Error checks, or that want to know more about the error. Error objects, as we’ll see, have very interesting properties in modern JavaScript engines besides holding the message passed to the constructor…
+> …エラーの結果ではなく文字列を渡すことは、モジュール間の相互運用性を低下させます。`instanceof` エラーチェックを実施しているかもしれない、またはエラーについてより詳しく知りたい API との決まりごとを破壊します。エラーオブジェクトは、コンストラクタに渡されたメッセージを保持する以外にも、モダンな JavaScript エンジンにおいては非常に興味深いプロパティを持ってます…
 
-### Blog Quote: "Inheriting from Error doesn’t add too much value"
+### ブログ引用: "Inheriting from Error doesn’t add too much value"（Error からの継承はあまり付加価値がありません）
 
-From the blog machadogj
+ブログ machadogj より
 
-> …One problem that I have with the Error class is that is not so simple to extend. Of course, you can inherit the class and create your own Error classes like HttpError, DbError, etc. However, that takes time and doesn’t add too much value [compared to extending it only once for an AppError] unless you are doing something with types. Sometimes, you just want to add a message and keep the inner error, and sometimes you might want to extend the error with parameters, and such…
+> …Error クラスが抱える一つの問題は、拡張することが単純ではないということです。もちろん、Error クラスを継承して、HttpError や DbError といった独自のエラークラスを作成することも可能です。しかしながら、手間もかかりますし、型を使って何かをしない限りは（AppError といった形で一度だけ拡張することに比べて）あまり付加価値がありません。ただメッセージを加えて内部エラーを保持したいときもあれば、パラメータでエラーを拡張したい場合もあるでしょう…
 
-### Blog Quote: "All JavaScript and System errors raised by Node.js inherit from Error"
+### ブログ引用: "All JavaScript and System errors raised by Node.js inherit from Error"（Node.js で発生する全ての JavaScript エラーおよびシステムエラーは Error を継承しています）
 
-From Node.js official documentation
+Node.js 公式ドキュメントより
 
-> …All JavaScript and System errors raised by Node.js inherit from, or are instances of, the standard JavaScript Error class and are guaranteed to provide at least the properties available on that class. A generic JavaScript Error object that does not denote any specific circumstance of why the error occurred. Error objects capture a “stack trace” detailing the point in the code at which the Error was instantiated, and may provide a text description of the error. All errors generated by Node.js, including all System and JavaScript errors, will either be instances of or inherit from, the Error class…
+> …Node.js で発生する全ての JavaScript エラーおよびシステムエラーは、標準 JavaScript Error クラスを継承しているか、そのインスタンスとなっており、少なくともその標準クラスにおいて利用可能なプロパティが提供されることは保証されています。一般的な JavaScript エラーオブジェクトは、エラーが発生した原因の特定の状況を示しません。エラーオブジェクトは、エラーがインスタンス化されたコード内の箇所を詳細に示す「スタックトレース」をキャプチャし、エラーについてのテキスト説明を提供することができます。システムや JavaScript のエラーを含む、Node.js において作成されるすべてのエラーは、Error クラスのインスタンスであるか、クラスを継承したものとなるでしょう…
