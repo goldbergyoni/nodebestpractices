@@ -122,7 +122,7 @@
 
 **さもなければ:** Node.js のコールバックスタイル、つまり function(err, response) を利用することは、正常な処理を行うコードとエラーハンドリングの混同、過剰なネスト構造、そして厄介なコーディングパターンが原因となって、メンテナンス性の低いコードにつながります。
 
-🔗 [**さらに読む: コールバック関数の利用を避ける**](/sections/errorhandling/asyncerrorhandling.md)
+🔗 [**さらに読む: コールバック関数の利用を避ける**](/sections/errorhandling/asyncerrorhandling.japanese.md)
 
 <br/><br/>
 
