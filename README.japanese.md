@@ -82,13 +82,13 @@
 
 <br/><br/>
 
-## ![✔] 1.3 Wrap common utilities as npm packages
+## ![✔] 1.3 一般的なユーティリティを npm パッケージとしてラップする
 
-**TL;DR:** In a large app that constitutes a large code base, cross-cutting-concern utilities like logger, encryption and alike, should be wrapped by your own code and exposed as private npm packages. This allows sharing them among multiple code bases and projects
+**TL;DR:** 大規模なコードベースで構成される大規模なアプリでは、logger や暗号化などの横断的に関心のあるユーティリティは、独自のコードでラップし、プライベートな npm パッケージとして公開する必要があります。これにより、複数のコードベースやプロジェクト間で共有することができます。
 
-**Otherwise:** You'll have to invent your own deployment and dependency wheel
+**さもないと:** デプロイと依存関係の車輪の作成をしなければいけなくなります
 
-🔗 [**Read More: Structure by feature**](/sections/projectstructre/wraputilities.md)
+🔗 [**さらに読む: 機能で構成する**](/sections/projectstructre/wraputilities.japanese.md)
 
 <br/><br/>
 
