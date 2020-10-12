@@ -126,13 +126,13 @@
 
 <br/><br/>
 
-## ![✔] 2.2 Use only the built-in Error object
+## ![✔] 2.2 組み込みのエラーオブジェクトのみを使用する
 
-**TL;DR:** Many throw errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw an exception or emit an error – using only the built-in Error object (or an object that extends the built-in Error object) will increase uniformity and prevent loss of information
+**TL;DR:** 多くがエラーとして文字列やカスタム型を投げます - これはエラー処理ロジックとモジュール間の相互運用性を複雑にします。promise を reject したのか、例外を投げたのか、エラーを排出したのかに関わらず、組み込みのエラーオブジェクト（またはそれを拡張したオブジェクト）だけ使うことは一貫性を向上させ、情報の欠落を防ぎます。
 
-**Otherwise:** When invoking some component, being uncertain which type of errors come in return – it makes proper error handling much harder. Even worse, using custom types to describe errors might lead to loss of critical error information like the stack trace!
+**さもないと:** ある要素を呼び出したとき、どの型のエラーが返ってくるか不確かである - といった状況は、適切なエラー処理をより難しいものにします。さらに悪いことに、エラーを表現するためにカスタム型を使うことは、スタックトレースのような重大なエラー情報を失うことに繋がるかもしれません。
 
-🔗 [**Read More: using the built-in error object**](/sections/errorhandling/useonlythebuiltinerror.md)
+🔗 [**さらに読む: 組み込みのエラーオブジェクトのみを使用する**](/sections/errorhandling/useonlythebuiltinerror.japanese.md)
 
 <br/><br/>
 
