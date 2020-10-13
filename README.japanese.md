@@ -136,13 +136,13 @@
 
 <br/><br/>
 
-## ![✔] 2.3 Distinguish operational vs programmer errors
+## ![✔] 2.3 操作上のエラーとプログラマーのエラーを区別する
 
-**TL;DR:** Operational errors (e.g. API received an invalid input) refer to known cases where the error impact is fully understood and can be handled thoughtfully. On the other hand, programmer error (e.g. trying to read undefined variable) refers to unknown code failures that dictate to gracefully restart the application
+**TL;DR:** 操作上のエラー（例: API が無効な入力を受け取る）は、エラーの影響が十分に理解され、そして丁寧に処理される既知のエラーのことを指します。一方で、プログラマーのエラー（例: 未定義の変数を参照しようとする）は、アプリケーションをすぐさま再起動させる、未知のコードエラーのことを指します。
 
-**Otherwise:** You may always restart the application when an error appears, but why let ~5000 online users down because of a minor, predicted, operational error? the opposite is also not ideal – keeping the application up when an unknown issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
+**さもないと:** エラーが発生したときに毎回アプリケーションを再起動しているかもしれませんが、さほど重要でない、予測可能な、操作上のエラーを原因としてなぜ ~5000 人規模のオンラインユーザーをダウンさせるのでしょうか？その逆もまた理想的ではありません ー 未知のエラー（プログラマーのエラー）が発生したときにアプリケーションをそのまま起動し続けることは、予想外の振る舞いに繋がるかもしれません。この２つを区別することで、機転の利いた振る舞いをさせ、与えられたコンテキストに基づいた適切なアプローチを適用させることができます。
 
-🔗 [**Read More: operational vs programmer error**](/sections/errorhandling/operationalvsprogrammererror.md)
+🔗 [**さらに読む: 操作上のエラーとプログラマーのエラーを区別する**](/sections/errorhandling/operationalvsprogrammererror.japanese.md)
 
 <br/><br/>
 
