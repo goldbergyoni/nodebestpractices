@@ -1,14 +1,14 @@
-# Separate Express 'app' and 'server'
+# Express の「アプリ」と「サーバー」を分離する
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-The latest Express generator comes with a great practice that is worth to keep - the API declaration is separated from the network related configuration (port, protocol, etc). This allows testing the API in-process, without performing network calls, with all the benefits that it brings to the table: fast testing execution and getting coverage metrics of the code. It also allows deploying the same API under flexible and different network conditions. Bonus: better separation of concerns and cleaner code
+最新の Express ジェネレーターは、維持する価値がある素晴らしいプラクティスが付属しています。- API 宣言はネットワーク関連の設定 (ポート、プロトコルなど) から分離されています。これにより、ネットワークコールを実行せずに API をインプロセスでテストすることができ、高速なテスト実行やコードのカバレッジメトリクスの取得などのメリットが得られます。 また、柔軟で異なるネットワーク条件の下で同じ API をデプロイすることができます。ボーナス：懸念事項のより良い分離とよりクリーンなコード
 
 <br/><br/>
 
-### Code example: API declaration, should reside in app.js/app.ts
+### コード例: API 宣言は app.js/app.ts にあるべき
 
 ```javascript
 const app = express();
@@ -17,7 +17,7 @@ app.use('/api/events', events.API);
 app.use('/api/forms', forms);
 ```
 
-### Code example: Server network declaration, should reside in /bin/www
+### コード例: サーバーネットワーク定義は /bin/www にあるべき
 
 <details>
 <summary><strong>Javascript</strong></summary>
@@ -51,7 +51,7 @@ const server = http.createServer(app);
 ```
 </details>
 
-### Example: test your API in-process using supertest (popular testing package)
+### 例: supertest (一般的なテストパッケージ) を使用して API をインプロセスでテストする
 
 <details>
 <summary><strong>Javascript</strong></summary>
