@@ -26,7 +26,7 @@
 
 <br/><br/><br/>
 
-## 目录
+## [目录](#table-of-contents)
 1. [项目结构实践 (5) ](#1-project-structure-practices)
 2. [异常处理实践 (11) ](#2-error-handling-practices)
 3. [编码规范实践 (12) ](#3-code-style-practices)
@@ -82,7 +82,7 @@
 ## ![✔] 1.5 使用易于设置环境变量，安全和分级的配置
 
 
-**TL;DR:** 一个完美无瑕的配置安装应该确保 (a) 元素可以从文件中，也可以从环境变量中读取 (b) 密码排除在提交的代码之外 (c) 为了易于检索，配置是分级的。仅有几个包可以满足这样的条件，比如[rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) 和 [config](https://www.npmjs.com/package/config)。
+**TL;DR:** 一个完美无瑕的配置安装应该确保 (a) 元素可以从文件中，也可以从环境变量中读取 (b) 密码排除在提交的代码之外 (c) 为了易于检索，配置是分级的。仅有几个包可以满足这样的条件，比如[rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config) 和 [convict](https://www.npmjs.com/package/convict)。
 
 **否则:** 不能满足任意的配置要求将会使开发，运维团队，或者两者，易于陷入泥潭。
 
@@ -90,7 +90,7 @@
 
 <br/><br/><br/>
 
-<p align="right"><a href="#目录">⬆ 返回顶部</a></p>
+<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
 <h1 id="2-error-handling-practices"><code>2. 错误处理最佳实践</code></h1>
 
@@ -214,7 +214,7 @@
 
 <br/><br/><br/>
 
-<p align="right"><a href="#目录">⬆ 返回顶部</a></p>
+<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
 <h1 id="3-code-style-practices"><code>3. 编码风格实践</code></h1>
 
@@ -386,7 +386,7 @@ null == undefined   // true
 
 <br/><br/><br/>
 
-<p align="right"><a href="#目录">⬆ 返回顶部</a></p>
+<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
 
 <h1 id="4-testing-and-overall-quality-practices"><code>4. 测试和总体的质量实践</code></h1>
@@ -462,7 +462,7 @@ null == undefined   // true
 
 <br/><br/><br/>
 
-<p align="right"><a href="#目录">⬆ 返回顶部</a></p>
+<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
 <h1 id="5-going-to-production-practices"><code>5. 上线实践</code></h1>
 
@@ -650,7 +650,7 @@ null == undefined   // true
 
 <br/><br/><br/>
 
-<p align="right"><a href="#目录">⬆ 返回顶部</a></p>
+<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
 <h1 id="6-security-best-practices"><code>6. 安全最佳实践</code></h1>
 
@@ -924,7 +924,7 @@ null == undefined   // true
 
 **否则:** 这只是一个起到教育意义的假设: 给定许多Node.js应用程序, 如果我们尝试传递一个空的JSON正文到所有POST请求 - 少数应用程序将崩溃。在这一点上, 我们可以只是重复发送相同的请求, 就可以轻松地搞垮应用程序。
 
-<br/><br/>
+<br/><br/><br/>
 
 ## ![✔] 6.24. 避免不安全的重定向
 
@@ -936,9 +936,9 @@ null == undefined   // true
 
 🔗 [**阅读更多: 避免不安全的重定向**](/sections/security/saferedirects.chinese.md)
 
-<br/><br/>
+<br/><br/><br/>
 
-<p align="right"><a href="#目录">⬆ 返回顶部</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
 # `API Practices`
 
@@ -980,3 +980,4 @@ Full Stack Developer based in New Zealand, interested in architecting and buildi
 We appreciate any contribution, from a single word fix to a new best practice. View our contributors and [contributing documentation here!](CONTRIBUTORS.md)
 
 <br/><br/><br/>
+
