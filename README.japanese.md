@@ -146,13 +146,13 @@
 
 <br/><br/>
 
-## ![✔] 2.4 Handle errors centrally, not within a middleware
+## ![✔] 2.4 エラー処理を一元化し、ミドウェア内で処理をしない
 
-**TL;DR:** Error handling logic such as mail to admin and logging should be encapsulated in a dedicated and centralized object that all endpoints (e.g. Express middleware, cron jobs, unit-testing) call when an error comes in
+**TL;DR:** 管理者へのメールやロギングのようなエラー処理ロジックは、エラーが発生したときに全てのエンドポイント（Express ミドルウェア、cron ジョブ、ユニットテストなど）が呼び出す、エラー処理専用の一元化されたオブジェクトにカプセル化されているべきです。
 
-**Otherwise:** Not handling errors within a single place will lead to code duplication and probably to improperly handled errors
+**さもないと:** エラーを一箇所で処理しないと、コードの重複や、不適切に処理されたエラーの発生に繋がる可能性があります。
 
-🔗 [**Read More: handling errors in a centralized place**](/sections/errorhandling/centralizedhandling.md)
+🔗 [**さらに読む: エラー処理を一元化し、ミドウェア内で処理をしない**](/sections/errorhandling/centralizedhandling.japanese.md)
 
 <br/><br/>
 
