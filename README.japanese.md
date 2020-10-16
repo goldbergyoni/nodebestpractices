@@ -156,13 +156,13 @@
 
 <br/><br/>
 
-## ![✔] 2.5 Document API errors using Swagger or GraphQL
+## ![✔] 2.5 Swagger または GraphQL を利用して API のエラーをドキュメント化する
 
-**TL;DR:** Let your API callers know which errors might come in return so they can handle these thoughtfully without crashing. For RESTful APIs, this is usually done with documentation frameworks like Swagger. If you're using GraphQL, you can utilize your schema and comments as well.
+**TL;DR:** API の呼び出し元に、どのようなエラーが返ってくるかを示しておくことで、クラッシュすることなく丁寧にエラー処理を行うことができます。RESTful API の場合、通常 Swagger のようなドキュメントフレームワークを使用します。GraphQL を使用している場合は、スキーマやコメントも利用できます。
 
-**Otherwise:** An API client might decide to crash and restart only because it received back an error it couldn’t understand. Note: the caller of your API might be you (very typical in a microservice environment)
+**さもないと:** API クライアントがクラッシュして再起動するのは、不明なエラーを受け取ったからかもしれません。注意: API の呼び出し元はあなた自身かもしれません（マイクロサービス構成では非常によくあることです）
 
-🔗 [**Read More: documenting API errors in Swagger or GraphQL**](/sections/errorhandling/documentingusingswagger.md)
+🔗 [**さらに読む: Swagger または GraphQL を利用して API のエラーをドキュメント化する**](/sections/errorhandling/documentingusingswagger.japanese.md)
 
 <br/><br/>
 
