@@ -1,0 +1,13 @@
+name: 'Labeler for japanese-translation'
+on:
+  pull_request:
+    branches:
+      - japanese-translation
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/labeler@v2
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"

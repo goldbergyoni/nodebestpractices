@@ -1,22 +1,22 @@
-# Handle errors centrally. Not within middlewares
+# エラー処理を一元化し、ミドウェア内で処理をしない
 
-### One Paragraph Explainer
+### 一段落説明
 
-Without one dedicated object for error handling, greater are the chances of important errors hiding under the radar due to improper handling. The error handler object is responsible for making the error visible, for example by writing to a well-formatted logger, sending events to some monitoring product like [Sentry](https://sentry.io/), [Rollbar](https://rollbar.com/), or [Raygun](https://raygun.com/). Most web frameworks, like [Express](http://expressjs.com/en/guide/error-handling.html#writing-error-handlers), provide an error handling middleware mechanism. A typical error handling flow might be: Some module throws an error -> API router catches the error -> it propagates the error to the middleware (e.g. Express, KOA) who is responsible for catching errors -> a centralized error handler is called -> the middleware is being told whether this error is an untrusted error (not operational) so it can restart the app gracefully. Note that it’s a common, yet wrong, practice to handle errors within Express middleware – doing so will not cover errors that are thrown in non-web interfaces.
+エラー処理専用のオブジェクトがないと、不適切な処理が原因となって重要なエラーが発見されない可能性が高くなります。エラー処理オブジェクトは、エラーを可視化する責任をもちます。例えば、整形されたロガーに書き込んだり、[Sentry](https://sentry.io/), [Rollbar](https://rollbar.com/), [Raygun](https://raygun.com/) のようなモニタリングサービスにイベントを送信したりするといったことなどです。[Express](http://expressjs.com/en/guide/error-handling.html#writing-error-handlers) のようなほとんどの Web フレームワークは、エラー処理ミドルウェア機構を提供しています。典型的なエラー処理の流れは以下のようになります。いくつかのモジュールがエラーを投げる -> API router がエラーを捕捉する -> エラー捕捉に責任を持つミドルウェア（例: Express、KOA）にエラーを伝搬する -> 一元化されているエラーハンドラが呼び出される -> ミドルウェアは、補足したエラーが信頼されていないエラーかどうか（操作上のエラーでないか）が伝えられているので、アプリを直ちに再起動することができるようになっています。Express ミドルウェア内でエラー処理をすることは一般的ですが、実際には間違っていることに注意してください ー そうしてしまうと、ウェブ以外のインターフェイスで投げられたエラーをカバーすることができません。
 
-### Code Example – a typical error flow
+### コード例 – 典型的なエラーフロー
 
 <details>
 <summary><strong>Javascript</strong></summary>
 
 ```javascript
-// DAL layer, we don't handle errors here
+// DAL（データアクセスレイヤー）, ここではエラー処理を行いません
 DB.addDocument(newCustomer, (error, result) => {
   if (error)
     throw new Error('Great error explanation comes here', other useful parameters)
 });
 
-// API route code, we catch both sync and async errors and forward to the middleware
+// API route コード, 同期エラーと非同期エラーの両方を捕捉し、ミドルウェアへ進みます
 try {
   customerService.addNew(req.body).then((result) => {
     res.status(200).json(result);
@@ -28,7 +28,7 @@ catch (error) {
   next(error);
 }
 
-// Error handling middleware, we delegate the handling to the centralized error handler
+// エラー処理ミドルウェア、一元化されたエラーハンドラに処理を委譲します
 app.use(async (err, req, res, next) => {
   const isOperationalError = await errorHandler.handleError(err);
   if (!isOperationalError) {
@@ -42,13 +42,13 @@ app.use(async (err, req, res, next) => {
 <summary><strong>Typescript</strong></summary>
 
 ```typescript
-// DAL layer, we don't handle errors here
+// DAL（データアクセスレイヤー）, ここではエラー処理を行いません
 DB.addDocument(newCustomer, (error: Error, result: Result) => {
   if (error)
     throw new Error('Great error explanation comes here', other useful parameters)
 });
 
-// API route code, we catch both sync and async errors and forward to the middleware
+// API route コード, 同期エラーと非同期エラーの両方を捕捉し、ミドルウェアへ進みます
 try {
   customerService.addNew(req.body).then((result: Result) => {
     res.status(200).json(result);
@@ -60,7 +60,7 @@ catch (error) {
   next(error);
 }
 
-// Error handling middleware, we delegate the handling to the centralized error handler
+// エラー処理ミドルウェア、一元化されたエラーハンドラに処理を委譲します
 app.use(async (err: Error, req: Request, res: Response, next: NextFunction) => {
   const isOperationalError = await errorHandler.handleError(err);
   if (!isOperationalError) {
@@ -71,7 +71,7 @@ app.use(async (err: Error, req: Request, res: Response, next: NextFunction) => {
 </details>
 
 
-### Code example – handling errors within a dedicated object
+### コード例 – 専用オブジェクト内でのエラー処理
 
 <details>
 <summary><strong>Javascript</strong></summary>
@@ -108,13 +108,13 @@ export const handler = new ErrorHandler();
 </details>
 
 
-### Code Example – Anti Pattern: handling errors within the middleware
+### コード例 – アンチパターン: ミドルウェア内でのエラー処理
 
 <details>
 <summary><strong>Javascript</strong></summary>
 
 ```javascript
-// middleware handling the error directly, who will handle Cron jobs and testing errors?
+// エラーを直接的に処理するミドルウェア、Cron ジョブやテストエラーは誰が処理するのでしょうか？
 app.use((err, req, res, next) => {
   logger.logError(err);
   if (err.severity == errors.high) {
@@ -132,7 +132,7 @@ app.use((err, req, res, next) => {
 <summary><strong>Typescript</strong></summary>
 
 ```typescript
-// middleware handling the error directly, who will handle Cron jobs and testing errors?
+// エラーを直接的に処理するミドルウェア、Cron ジョブやテストエラーは誰が処理するのでしょうか？
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   logger.logError(err);
   if (err.severity == errors.high) {
@@ -145,20 +145,20 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 ```
 </details>
 
-### Blog Quote: "Sometimes lower levels can’t do anything useful except propagate the error to their caller"
+### ブログ引用: "Sometimes lower levels can’t do anything useful except propagate the error to their caller"（時に下位レベルはエラーを呼び出し元に伝搬すること以外に役に立ちません）
 
-From the blog Joyent, ranked 1 for the keywords “Node.js error handling”
+ブログ Joyent（“Node.js error handling”というキーワードで 1 位）より
 
-> …You may end up handling the same error at several levels of the stack. This happens when lower levels can’t do anything useful except propagate the error to their caller, which propagates the error to its caller, and so on. Often, only the top-level caller knows what the appropriate response is, whether that’s to retry the operation, report an error to the user, or something else. But that doesn’t mean you should try to report all errors to a single top-level callback, because that callback itself can’t know in what context the error occurred…
+> …スタックの複数レベルで同じエラーを処理することになるかもしれません。これは、呼び出し元にエラーを伝搬させ、その呼び出し元が伝搬されたエラーをその呼び出し元に伝搬させる、ということ繰り返す以外に、下位レベルの呼び出し元が役立つことをできない場合に起こります。多くの場合、操作を再試行するのか、ユーザーにエラーを報告するのか、はたまた何か他のことをするのか、最上位レベルの呼び出し元だけが適切な対応が何であるのかを知っています。しかし、これはすべてのエラーを単一のトップレベルのコールバックに報告しようとするべきだということを意味しているわけではありません。なぜならコールバック自身が、どのようなコンテキストでエラーが発生したのかを知ることができないためです。…
 
-### Blog Quote: "Handling each err individually would result in tremendous duplication"
+### ブログ引用: "Handling each err individually would result in tremendous duplication"（各エラーを個別に処理することは途方も無い重複をもたらします）
 
-From the blog JS Recipes ranked 17 for the keywords “Node.js error handling”
+ブログ JS Recipes（“Node.js error handling”というキーワードで 17 位）より
 
-> ……In Hackathon Starter api.js controller alone, there are over 79 occurrences of error objects. Handling each err individually would result in a tremendous amount of code duplication. The next best thing you can do is to delegate all error handling logic to an Express middleware…
+> ……Hackathon Starter の api.js コントローラーだけでも、79 個以上のエラーオブジェクトが存在しています。それぞれのエラーを個別に処理することは、途方も無い量のコードの重複をもたらします。次にできる最も優れた方法は、すべてのエラー処理ロジックを Express のミドルウェアに委譲することです。…
 
-### Blog Quote: "HTTP errors have no place in your database code"
+### ブログ引用: "HTTP errors have no place in your database code"（データベースコードに HTTP エラーの居場所はありません）
 
-From the blog Daily JS ranked 14 for the keywords “Node.js error handling”
+ブログ Daily JS（“Node.js error handling”というキーワードで 14 位）より
 
-> ……You should set useful properties in error objects, but use such properties consistently. And, don’t cross the streams: HTTP errors have no place in your database code. Or for browser developers, Ajax errors have a place in the code that talks to the server, but not code that processes Mustache templates…
+> ……エラーオブジェクトには便利なプロパティを設定するべきですが、設定したプロパティは一貫して使用して下さい。また、ストリームをまたいではいけません: データベースコードには HTTP エラーの居場所はありません。ブラウザ開発者にとっては、Ajax のエラーは、サーバーと通信をしているコードの中にありますが、Mustache テンプレートを処理するコードの中には無いのです。…
