@@ -1,9 +1,7 @@
 
 name: Labeler for japanese-translation
 on:
-  pull_request:
-    # branches:
-    #   - japanese-translation
+  pull_request
 
 jobs:
   label:
@@ -12,4 +10,3 @@ jobs:
       - uses: actions/labeler@v2
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
-          configuration-path: ".github/label.yml"
