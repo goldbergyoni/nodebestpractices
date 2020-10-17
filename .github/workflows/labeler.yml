@@ -1,7 +1,6 @@
-
-name: Labeler for japanese-translation
+name: 'Labeler for japanese-translation'
 on:
-  pull_request
+  - pull_request
 
 jobs:
   label:
