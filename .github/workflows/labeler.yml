@@ -1,7 +1,9 @@
 
 name: Labeler for japanese-translation
 on:
-  pull_request
+  pull_request:
+    branches:
+      - japanese-translation
 
 jobs:
   label:
