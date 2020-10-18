@@ -102,13 +102,13 @@
 
 <br/><br/>
 
-## ![✔] 1.5 Use environment aware, secure and hierarchical config
+## ![✔] 1.5 環境を意識したセキュアで階層的な設定を使用する
 
-**TL;DR:** A perfect and flawless configuration setup should ensure (a) keys can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are a few packages that can help tick most of those boxes like [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config), and [convict](https://www.npmjs.com/package/convict).
+**TL;DR:** 完璧で欠陥のない設定を行うには、次のようなことが必要です。(a) キーはファイルまたは環境変数から読み込むことができる (b) 秘密情報はコミットされたコードの外側に保持されている (c) 設定が階層化されており、見つけやすくなっている [rc](https://www.npmjs.com/package/rc) や [nconf](https://www.npmjs.com/package/nconf)、 [config](https://www.npmjs.com/package/config)、[convict](https://www.npmjs.com/package/convict) など、これらのボックスのほとんどを満たすのに役立つパッケージがいくつかあります。
 
-**Otherwise:** Failing to satisfy any of the config requirements will simply bog down the development or devops team. Probably both
+**さもないと:** 設定要件のどれかを満たさないと、開発チームや DevOps チーム、おそらく両方ともの頭を悩ませてしまいます。
 
-🔗 [**Read More: configuration best practices**](/sections/projectstructre/configguide.md)
+🔗 [**さらに読む: 構成のベストプラクティス**](/sections/projectstructre/configguide.md)
 
 <br/><br/><br/>
 
