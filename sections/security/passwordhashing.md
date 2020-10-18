@@ -59,7 +59,8 @@ try {
   const outSize = 64;
   const digest = 'blake2b512';
   const iterations = 12;
-  const hash = pbkdf2Sync('myPassword','someUniqueUserValueForSalt', iterations * 1000, digest, outSize).toString('hex');
+  const hash = crypto.pbkdf2Sync('myPassword','someUniqueUserValueForSalt', iterations * 1000, digest, outSize).toString('hex');
+
   // Store secure hash in user record
 
   // compare a provided password input with saved hash
