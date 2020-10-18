@@ -240,12 +240,11 @@
 
 <br/><br/>
 
-## ![✔] 3.2 Node.js specific plugins
+## ![✔] 3.2 Node.js に特化したプラグイン
 
-**TL;DR:** On top of ESLint standard rules that cover vanilla JavaScript, add Node.js specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
+**TL;DR:** vanilla JavaScript をカバーする ESLint の標準ルールに加えて、[eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node) や [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha)、[eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security) のような Node.js に特化したプラグインを追加します。
 
-**Otherwise:** Many faulty Node.js code patterns might escape under the radar. For example, developers might require(variableAsPath) files with a variable given as path which allows attackers to execute any JS script. Node.js linters can detect such patterns and complain early
-
+**さもないと:** 多くの欠陥のある Node.js のコードパターンは、レーダーを逃れてしまうかもしれません。例えば、開発者は攻撃者が任意の JS スクリプトを実行できるように、パスとして与えられた変数を持つファイルを require(variableAsPath) しているかもしれません。Node.js の linters は、そのようなパターンを早期に検出して知らせてくれます。
 <br/><br/>
 
 ## ![✔] 3.3 Start a Codeblock's Curly Braces on the Same Line
