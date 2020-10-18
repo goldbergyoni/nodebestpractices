@@ -1,10 +1,10 @@
-# Test error flows using your favorite test framework
+# お気に入りのテストフレームワークを使用してエラーフローをテストする
 
-### One Paragraph Explainer
+### 一段落説明
 
-Testing ‘happy’ paths is no better than testing failures. Good testing code coverage demands to test exceptional paths. Otherwise, there is no trust that exceptions are indeed handled correctly. Every unit testing framework, like [Mocha](https://mochajs.org/) & [Chai](http://chaijs.com/), supports exception testing (code examples below). If you find it tedious to test every inner function and exception you may settle with testing only REST API HTTP errors.
+「ハッピー」パスをテストすることは、失敗をテストすることも同然です。良いテストコードカバレッジは、例外パスをテストすることを要求します。さもなければ、例外が実際に正しく処理されるという信用はありません。[Mocha](https://mochajs.org/) や [Chai](http://chaijs.com/) といったすべてのユニットテストフレームワークは、例外テストをサポートしています（下記のコード例参照）。もしすべての内部関数や例外をテストすることが面倒だと感じたら、REST API の HTTP エラーのみをテストすることに落ち着くかもしれません。
 
-### Code example: ensuring the right exception is thrown using Mocha & Chai
+### コード例: Mocha と Chai を利用して正しい例外が投げられることを確認する
 
 <details>
 <summary><strong>Javascript</strong></summary>
@@ -34,7 +34,7 @@ describe('Facebook chat', () => {
 ```
 </details>
 
-### Code example: ensuring API returns the right HTTP error code
+### コード例: API が正しい HTTP エラーコードを返すことを確認する
 
 <details>
 <summary><strong>Javascript</strong></summary>
@@ -71,7 +71,7 @@ it('Creates new Facebook group', async () => {
       body: invalidGroupInfo,
       json: true
     })
-    // if we were to execute the code in this block, no error was thrown in the operation above
+    // このブロックで下記コードを実行した場合、上記オペレーションではエラーが発生しなかったことを意味します
     expect.fail('The request should have failed')
   } catch(response) {
     expect(400).to.equal(response.statusCode);
