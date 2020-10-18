@@ -108,11 +108,11 @@
 
 **さもないと:** 設定要件のどれかを満たさないと、開発チームや DevOps チーム、おそらく両方ともの頭を悩ませてしまいます。
 
-🔗 [**さらに読む: 構成のベストプラクティス**](/sections/projectstructre/configguide.md)
+🔗 [**さらに読む: 構成のベストプラクティス**](/sections/projectstructre/configguide.japanese.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ トップに戻る</a></p>
 
 # `2. エラーハンドリングのプラクティス`
 
