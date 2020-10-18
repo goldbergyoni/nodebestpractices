@@ -1,9 +1,9 @@
-# Using ESLint and Prettier
+# ESLint と Prettier を使う
 
 
-### Comparing ESLint and Prettier
+### ESLint と Prettier の比較
 
-If you format this code using ESLint, it will just give you a warning that it's too wide (depends on your `max-len` setting). Prettier will automatically format it for you.
+以下のコードを ESLint でフォーマットすると、幅が広すぎるという警告が表示されます( `max-len` の設定によります) 。Prettier はそれを自動的にフォーマットしてくれます。
 
 ```javascript
 foo(reallyLongArg(), omgSoManyParameters(), IShouldRefactorThis(), isThereSeriouslyAnotherOne(), noWayYouGottaBeKiddingMe());
@@ -19,8 +19,8 @@ foo(
 );
 ```
 
-Source: [https://github.com/prettier/prettier-eslint/issues/101](https://github.com/prettier/prettier-eslint/issues/101)
+ソース: [https://github.com/prettier/prettier-eslint/issues/101](https://github.com/prettier/prettier-eslint/issues/101)
 
-### Integrating ESLint and Prettier
+### ESLint と Prettier の統合
 
-ESLint and Prettier overlap in the code formatting feature but can be easily combined by using other packages like [prettier-eslint](https://github.com/prettier/prettier-eslint), [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier), and [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier). For more information about their differences, you can view the link [here](https://stackoverflow.com/questions/44690308/whats-the-difference-between-prettier-eslint-eslint-plugin-prettier-and-eslint).
+ESLint と Prettier はコードフォーマット機能で重複していますが、[prettier-eslint](https://github.com/prettier/prettier-eslint) や [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier)、[eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) のような他のパッケージを使うことで簡単に組み合わせることができます。それぞれの違いについての詳細は、リンク先の[こちら](https://stackoverflow.com/questions/44690308/whats-the-difference-between-prettier-eslint-eslint-plugin-prettier-and-eslint)をご覧ください。
