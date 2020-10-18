@@ -39,7 +39,8 @@ try {
 
 ```javascript
   const outSize = 64;
-  const hash = scryptSync('myUnlimitedPassword','someUniqueUserValueForSalt',outSize).toString('hex');
+  const hash = crypto.scryptSync('myUnlimitedPassword','someUniqueUserValueForSalt',outSize).toString('hex');
+
   // Store secure hash in user record
 
   // compare a provided password input with saved hash
