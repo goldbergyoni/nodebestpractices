@@ -1,23 +1,23 @@
-# Exit the process gracefully when a stranger comes to town
+# 見ず知らずの事象が起きたら潔くプロセスを終了する
 
-### One Paragraph Explainer
+### 一段落説明
 
-Somewhere within your code, an error handler object is responsible for deciding how to proceed when an error is thrown – if the error is trusted (i.e. operational error, see further explanation within best practice #3) then writing to log file might be enough. Things get hairy if the error is not familiar – this means that some component might be in a faulty state and all future requests are subject to failure. For example, assuming a singleton, stateful token issuer service that threw an exception and lost its state – from now it might behave unexpectedly and cause all requests to fail. Under this scenario, kill the process and use a ‘Restarter tool’ (like Forever, PM2, etc) to start over with a clean state.
+コード内のどこかで、エラーハンドラオブジェクトがエラー発生時にどのように処理するかを決定することに責任を負っているとき ー エラーが信頼されている場合は（すなわち、操作上のエラーのことである。ベストプラクティス 2.3 の説明を参照してください）、ログファイルに書き込むだけで十分かもしれません。不明なエラーの場合は、複雑になります ー 一部のコンポーネントが不完全な状態にあり、後に来るリクエストは失敗の対象となることを意味しています。例えば、シングルトンでステートフルなトークン発行者サービスが例外を投げて、保持していた状態を消失したと仮定しましょう ー これは、予期せぬ挙動をしたり、全てのリクエストが失敗する原因となっているかもしれません。このようなケースの場合は、プロセスを kill して、（Forever や PM2 などの）「再起動ツール」を利用してクリーンな状態からやり直してください。
 
-### Code example: deciding whether to crash
+### コード例: クラッシュするかどうか決定する
 
 <details>
 <summary><strong>Javascript</strong></summary>
 
 ```javascript
-// Assuming developers mark known operational errors with error.isOperational=true, read best practice #3
+// 開発者は既知のエラーに対して error.isOperational=true とマークをつけることを仮定しています。ベストプラクティス 2.3 を参照してください
 process.on('uncaughtException', (error) => {
   errorManagement.handler.handleError(error);
   if(!errorManagement.handler.isTrustedError(error))
     process.exit(1)
 });
 
-// centralized error handler encapsulates error-handling related logic
+// エラー処理関連のロジックをカプセル化した、集中化されたエラーハンドラ
 function errorHandler() {
   this.handleError = (error) => {
     return logger.logError(error)
@@ -37,14 +37,14 @@ function errorHandler() {
 <summary><strong>Typescript</strong></summary>
 
 ```typescript
-// Assuming developers mark known operational errors with error.isOperational=true, read best practice #3
+// 開発者は既知のエラーに対して error.isOperational=true とマークをつけることを仮定しています。ベストプラクティス 2.3 を参照してください
 process.on('uncaughtException', (error: Error) => {
   errorManagement.handler.handleError(error);
   if(!errorManagement.handler.isTrustedError(error))
     process.exit(1)
 });
 
-// centralized error object that derives from Node’s Error
+// Node のエラーオブジェクトを継承した、集中化されたエラーオブジェクト
 export class AppError extends Error {
   public readonly isOperational: boolean;
 
@@ -56,7 +56,7 @@ export class AppError extends Error {
   }
 }
 
-// centralized error handler encapsulates error-handling related logic
+// エラー処理関連のロジックをカプセル化した、集中化されたエラーハンドラ
 class ErrorHandler {
   public async handleError(err: Error): Promise<void> {
     await logger.logError(err);
@@ -77,23 +77,23 @@ export const handler = new ErrorHandler();
 ```
 </details>
 
-### Blog Quote: "The best way is to crash"
+### ブログ引用: "The best way is to crash"（最善の方法はクラッシュすることです）
 
-From the blog Joyent
+ブログ Joyent より
 
-> …The best way to recover from programmer errors is to crash immediately. You should run your programs using a restarter that will automatically restart the program in the event of a crash. With a restarter in place, crashing is the fastest way to restore reliable service in the face of a transient programmer error…
+> …プログラマーのエラーから復帰する最も良い方法は直ちにクラッシュさせることです。プログラムがクラッシュしたときに自動的に再起動してくれるリスターターを備えた、プログラムを動かすべきです。リスターターを備えている場合、一時的なプログラマーのエラーに直面した際に、安定したサービスへと復旧させるための一番手っ取り早い方法は、クラッシュさせることになります。
 
-### Blog Quote: "There are three schools of thoughts on error handling"
+### ブログ引用: "There are three schools of thoughts on error handling"（エラー処理について、3 つの考え方があります）
 
-From the blog: JS Recipes
+ブログ JS Recipes より
 
-> …There are primarily three schools of thoughts on error handling:
-1. Let the application crash and restart it.
-2. Handle all possible errors and never crash.
-3. A balanced approach between the two
+> …エラー処理について、主に以下の3つの考え方があります:
+1. アプリケーションをクラッシュさせ、再起動させる
+2. 起こりうるすべてのエラーを処理し、決してクラッシュさせない
+3. 上記 2 つをバランスよく取り入れたアプローチ
 
-### Blog Quote: "No safe way to leave without creating some undefined brittle state"
+### ブログ引用: "No safe way to leave without creating some undefined brittle state"（不明瞭で不安定な状態を作り出すことなしに、安全に中断する方法はありません）
 
-From Node.js official documentation
+Node.js 公式ドキュメントより
 
-> …By the very nature of how throw works in JavaScript, there is almost never any way to safely “pick up where you left off”, without leaking references, or creating some other sort of undefined brittle state. The safest way to respond to a thrown error is to shut down the process. Of course, in a normal web server, you might have many connections open, and it is not reasonable to abruptly shut those down because an error was triggered by someone else. The better approach is to send an error response to the request that triggered the error while letting the others finish in their normal time, and stop listening for new requests in that worker.
+> …JavaScript における throw の挙動の性質上、参照をリークさせたり、不明瞭で不安定な状態を作り出したりすることなく、安全に「中断したところから再開する」方法はほぼありません。投げられたエラーに対応する最も安全な方法は、プロセスをシャットダウンすることです。もちろん、通常のウェブサーバーでは、多くのコネクションがオープン状態になっているかもしれず、エラーが他の誰かによって引き起こされたからといって、それらを急にシャットダウンすることは合理的ではありません。より良いアプローチは、エラーの引き金となったリクエストにエラーレスポンスを送り、他のリクエストは通常の時間内に終了するようにして、そのワーカーにおいて新しいリクエストの受信を停止することです。
