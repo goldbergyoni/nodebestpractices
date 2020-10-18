@@ -176,13 +176,13 @@
 
 <br/><br/>
 
-## ![✔] 2.7 Use a mature logger to increase error visibility
+## ![✔] 2.7 エラーの可視性を高めるために成熟したロガーを使用する
 
-**TL;DR:** A set of mature logging tools like [Pino](https://github.com/pinojs/pino) or [Log4js](https://www.npmjs.com/package/log4js), will speed-up error discovery and understanding. So forget about console.log
+**TL;DR:** [Pino](https://github.com/pinojs/pino) や [Log4js](https://www.npmjs.com/package/log4js) のような成熟したロギングツールは、エラーの発見と理解を加速します。ですから、console.log のことは忘れましょう。
 
-**Otherwise:** Skimming through console.logs or manually through messy text file without querying tools or a decent log viewer might keep you busy at work until late
+**さもないと:** console.log によるログに目を通したり、クエリツールやまともなログビューア無しで扱いにくいテキストファイルを手動で確認したりすると、遅くまで仕事をする羽目になるかもしれません。
 
-🔗 [**Read More: using a mature logger**](/sections/errorhandling/usematurelogger.md)
+🔗 [**さらに読む: エラーの可視性を高めるために成熟したロガーを使用する**](/sections/errorhandling/usematurelogger.japanese.md)
 
 <br/><br/>
 

@@ -1,16 +1,16 @@
-# Use a mature logger to increase errors visibility
+# エラーの可視性を高めるために成熟したロガーを使用する
 
-### One Paragraph Explainer
+### 一段落説明
 
-We all love console.log but obviously, a reputable and persistent logger like [Winston][winston] (highly popular) or [Pino][pino] (the new kid in town which is focused on performance) is mandatory for serious projects. A set of practices and tools will help to reason about errors much quicker – (1) log frequently using different levels (debug, info, error), (2) when logging, provide contextual information as JSON objects, see example below. (3) Watch and filter logs using a log querying API (built-in in most loggers) or a log viewer software. (4) Expose and curate log statement for the operation team using operational intelligence tools like Splunk.
+私たちはみな console.log を愛用していますが、明らかに [Winston][winston]（非常に人気）や [Pino][pino]（パフォーマンスにフォーカスした新参者）のような、評価が高く永続的なロガーが真面目なプロジェクトにおいて必須となります。一連のプラクティスやツール群は、より素早くエラーについての考察を行うことに役立ちます ー （１）ログレベルを使い分ける（debug、info、error）、（２）ロギングする際は、JSON オブジェクトとしてコンテキスト情報を提供する（下記の例を参照）、（３）（多くのロガーに組み込まれている）ログクエリ API やログビューアソフトウェアを使用して、ログの確認やフィルタリングを行う、（４）Splunk のような運用ツールを使用して、運用チームのためにログステートメントを公開し、まとめる
 
 [winston]: https://www.npmjs.com/package/winston
 [pino]: https://www.npmjs.com/package/pino
 
-### Code Example – Winston Logger in action
+### コード例 – Winston 実践
 
 ```javascript
-// your centralized logger object
+// 集中化されたロガーオブジェクト
 const logger = new winston.Logger({
   level: 'info',
   transports: [
@@ -18,11 +18,11 @@ const logger = new winston.Logger({
   ]
 });
 
-// custom code somewhere using the logger
+// ロガーを使用したカスタムコード
 logger.log('info', 'Test Log Message with some parameter %s', 'some parameter', { anything: 'This is metadata' });
 ```
 
-### Code Example – Querying the log folder (searching for entries)
+### コード例 – ログフォルダをクエリする（エントリを検索する）
 
 ```javascript
 const options = {
@@ -34,17 +34,17 @@ const options = {
   fields: ['message']
 };
 
-// Find items logged between today and yesterday.
+// 1日前から今にかけてのログを見つける
 winston.query(options, (err, results) => {
-  // execute callback with results
+  // results を受け取ってコールバックを実行する
 });
 ```
 
-### Blog Quote: "Logger Requirements"
+### ブログ引用: "Logger Requirements"（ロガーの要件）
 
- From the blog Strong Loop
+ブログ Strong Loop より
 
-> Lets identify a few requirements (for a logger):
-1. Timestamp each log line. This one is pretty self-explanatory – you should be able to tell when each log entry occurred.
-2. Logging format should be easily digestible by humans as well as machines.
-3. Allows for multiple configurable destination streams. For example, you might be writing trace logs to one file but when an error is encountered, write to the same file, then into error file and send an email at the same time…
+> （ロガーのための）いくつかの要件を確認してみましょう:
+1. 各ログ行にタイムスタンプをつけましょう。これは非常に自明です ー 各ログエントリがいつ発生したのかをはっきりさせることができるはずです。
+2. ロギングフォーマットは、機械だけでなく人間にとっても容易に解釈できるものであるべきです。
+3. 複数の設定可能な送信先ストリームを許可しましょう。例えば、あるファイルにトレースログを書き込み、一方でエラーが発生した際は同様のファイルに書き込むと同時にエラーファイルにも書き込み、そして e メールを送信するかもしれません。
