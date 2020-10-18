@@ -186,13 +186,13 @@
 
 <br/><br/>
 
-## ![✔] 2.8 Test error flows using your favorite test framework
+## ![✔] 2.8 お気に入りのテストフレームワークを使用してエラーフローをテストする
 
-**TL;DR:** Whether professional automated QA or plain manual developer testing – Ensure that your code not only satisfies positive scenarios but also handles and returns the right errors. Testing frameworks like Mocha & Chai can handle this easily (see code examples within the "Gist popup")
+**TL;DR:** プロ仕様の自動化された QA であろうと単純な手動の開発者によるテストであろうと、コードが正常系のシナリオを満たすだけでなく、正しくエラーを処理して返すことを保証してください。Mocha や Chai のようなテストフレームワークは、これを簡単に処理することができます。（「さらに読む」の例を参照）
 
-**Otherwise:** Without testing, whether automatically or manually, you can’t rely on your code to return the right errors. Without meaningful errors – there’s no error handling
+**さもないと:** 自動であっても手動であっても、テストがなければ、コードが正しいエラーを返すと信用することはできません。意味のあるエラーがなければ、エラー処理はできません。
 
-🔗 [**Read More: testing error flows**](/sections/errorhandling/testingerrorflows.md)
+🔗 [**さらに読む: お気に入りのテストフレームワークを使用してエラーフローをテストする**](/sections/errorhandling/testingerrorflows.japanese.md)
 
 <br/><br/>
 
