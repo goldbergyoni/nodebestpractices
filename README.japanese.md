@@ -166,13 +166,13 @@
 
 <br/><br/>
 
-## ![✔] 2.6 Exit the process gracefully when a stranger comes to town
+## ![✔] 2.6 見ず知らずの事象が起きたら潔くプロセスを終了する
 
-**TL;DR:** When an unknown error occurs (a developer error, see best practice 2.3) - there is uncertainty about the application healthiness. A common practice suggests restarting the process carefully using a process management tool like [Forever](https://www.npmjs.com/package/forever) or [PM2](http://pm2.keymetrics.io/)
+**TL;DR:** 未知のエラーが発生した場合（プログラマーのエラー、ベストプラクティス 2.3 参照）、アプリケーションの健全性に不確実さがあります。一般的に、[Forever](https://www.npmjs.com/package/forever) や [PM2](http://pm2.keymetrics.io/) のようなプロセス管理ツールを利用してプロセスを慎重に再起動することが推奨されています。
 
-**Otherwise:** When an unfamiliar exception occurs, some object might be in a faulty state (e.g. an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
+**さもないと:** 不明な例外が発生した場合、一部のオブジェクトが不完全な状態（例えば、グローバルに使用されているイベントエミッタが内部的なエラーによりイベントを発火しなくなっている、など）になっている可能性があり、後に来るリクエストが失敗したり、予期せぬ挙動をしたりするかもしれません。
 
-🔗 [**Read More: shutting the process**](/sections/errorhandling/shuttingtheprocess.md)
+🔗 [**さらに読む: 見ず知らずの事象が起きたら潔くプロセスを終了する**](/sections/errorhandling/shuttingtheprocess.japanese.md)
 
 <br/><br/>
 
