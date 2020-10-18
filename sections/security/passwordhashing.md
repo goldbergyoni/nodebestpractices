@@ -65,7 +65,8 @@ try {
   // Store secure hash in user record
 
   // compare a provided password input with saved hash
-  const match = hash === pbkdf2Sync('somePassword','derivedSalt', iterations * 1000, digest, outSize).toString('hex');
+  const match = hash === crypto.pbkdf2Sync('somePassword','derivedSalt', iterations * 1000, digest, outSize).toString('hex');
+
   if (match) {
    // Passwords match
   } else {
