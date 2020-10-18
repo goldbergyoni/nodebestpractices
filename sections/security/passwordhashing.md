@@ -44,7 +44,8 @@ try {
   // Store secure hash in user record
 
   // compare a provided password input with saved hash
-  const match = hash === scryptSync('someUnlimitedPassword','derivedSalt',outSize).toString('hex');
+  const match = hash === crypto.scryptSync('someUnlimitedPassword','derivedSalt',outSize).toString('hex');
+
   if (match) {
    // Passwords match
   } else {
