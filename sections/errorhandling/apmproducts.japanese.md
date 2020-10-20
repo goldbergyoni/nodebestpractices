@@ -1,28 +1,28 @@
-# Discover errors and downtime using APM products
+# APM 製品を利用してエラーとダウンタイムを発見する
 
 
-### One Paragraph Explainer
+### 一段落説明
 
-Exception != Error. Traditional error handling assumes the existence of exception as a code related problem but application errors might come in the form of slow code paths, API downtime, lack of computational resources and more. This is where APM products come in handy as they allow to detect a wide variety of ‘burried’ issues proactively with a minimal setup. Among the common features of APM products are for example alerting when the HTTP API returns errors, detect when the API response time drops below some threshold, detection of ‘code smells’, features to monitor server resources, operational intelligence dashboard with IT metrics and many other useful features. Most vendors offer a free plan.
+例外 != エラーです。従来のエラー処理では、コードが関連する問題としての例外の存在を想定していましたが、アプリケーションエラーは処理の遅いコードの実行パス、API のダウンタイム、計算リソースの不足といった形で発生する可能性があります。そこで、最小限の設定で広範囲に渡る「埋もれた」問題をプロアクティブに検出することができるものとして、 APM 製品が役に立ちます。APM 製品の一般的な機能として、例えば HTTP の API がエラーを返した際のアラート、API の応答時間が閾値を下回った瞬間の検出、「コードの臭い」の検出、サーバーリソースをモニタリングする機能、IT メトリクスを確認できる運用管理ダッシュボード、そのほか多くの便利な機能があります。多くのベンダーは無料プランを提供しています。
 
-### Wikipedia about APM
+### ウィキペディア「APM」
 
-In the fields of information technology and systems management, Application Performance Management (APM) is the monitoring and management of performance and availability of software applications. APM strives to detect and diagnose complex application performance problems to maintain an expected level of service. APM is “the translation of IT metrics into business meaning ([i.e.] value)". Major products and segments.
+情報技術とシステム管理の分野においては、アプリケーション・パフォーマンス・マネジメント（APM）とはソフトウェア・アプリケーションのパフォーマンスと可用性をモニタリング、管理することです。APM は期待されるサービスレベルを維持するために、複雑なアプリケーションのパフォーマンスの問題を検知し、診断することに努めます。APM とは、「IT メトリクスをビジネス上の意味（すなわち、価値）に変換すること」です。
 
-### Understanding the APM marketplace
+### APM のマーケットプレイスを理解する
 
-APM products constitute 3 major segments:
+APM 製品は 3 つの主要なセグメントを構成しています:
 
-1. Website or API monitoring – external services that constantly monitor uptime and performance via HTTP requests. Can be set up in few minutes. Following are few selected contenders: [Pingdom](https://www.pingdom.com/), [Uptime Robot](https://uptimerobot.com/), and [New Relic](https://newrelic.com/application-monitoring)
+1. ウェブサイトまたは API モニタリング ー HTTP リクエストを通して、常時アップタイムとパフォーマンスを監視する外部サービスです。数分でセットアップが完了します。以下のようなサービスがあります: [Pingdom](https://www.pingdom.com/)、[Uptime Robot](https://uptimerobot.com/)、[New Relic](https://newrelic.com/application-monitoring)
 
-2. Code instrumentation – product family which requires embedding an agent within the application to use features like slow code detection, exception statistics, performance monitoring and many more. Following are few selected contenders: New Relic, App Dynamics
+2. コード計測 ー 遅いコードの検知、例外の統計的観測、パフォーマンスモニタリングといった機能を利用するために、アプリケーション内にエージェントを埋め込むことを必要とするプロダクト群です。以下のようなサービスがあります: New Relic、App Dynamics
 
-3. Operational intelligence dashboard – this line of products is focused on facilitating the ops team with metrics and curated content that helps to easily stay on top of application performance. This usually involves aggregating multiple sources of information (application logs, DB logs, servers log, etc) and upfront dashboard design work. Following are few selected contenders: [Datadog](https://www.datadoghq.com/), [Splunk](https://www.splunk.com/), [Zabbix](https://www.zabbix.com/)
+3. 運用管理ダッシュボード ー この製品群は、アプリケーションのパフォーマンスを簡単に把握するために役立つメトリクスと厳選されたコンテンツを使用して、ops チームの業務を促進することに焦点を当てています。これは通常、複数の情報ソース（アプリケーションログ、DB ログ、サーバーログなど）を集約して、ダッシュボードをデザインして構築することになります。以下のようなサービスがあります: [Datadog](https://www.datadoghq.com/)、[Splunk](https://www.splunk.com/)、[Zabbix](https://www.zabbix.com/)
 
 
 
- ### Example: UpTimeRobot.Com – Website monitoring dashboard
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/uptimerobot.jpg "Website monitoring dashboard")
+ ### 例: UpTimeRobot.Com – ウェブサイトモニタリングダッシュボード
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/uptimerobot.jpg "ウェブサイトモニタリングダッシュボード")
 
- ### Example: AppDynamics.Com – end to end monitoring combined with code instrumentation
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/app-dynamics-dashboard.png "end to end monitoring combined with code instrumentation")
+ ### 例: AppDynamics.Com – コード計測が統合されたエンドツーエンドモニタリング
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/app-dynamics-dashboard.png "コード計測が統合されたエンドツーエンドモニタリング")

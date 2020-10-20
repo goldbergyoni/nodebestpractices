@@ -196,13 +196,13 @@
 
 <br/><br/>
 
-## ![✔] 2.9 Discover errors and downtime using APM products
+## ![✔] 2.9 APM 製品を利用してエラーとダウンタイムを発見する
 
-**TL;DR:** Monitoring and performance products (a.k.a APM) proactively gauge your codebase or API so they can automagically highlight errors, crashes and slow parts that you were missing
+**TL;DR:** モニタリング・パフォーマンス計測を行う製品（APM として知られています）は、コードベースや API をプロアクティブに計測し、見落としていたエラーやクラッシュ、処理の遅い部分を自動的にハイライトすることができます。
 
-**Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which are your slowest code parts under real-world scenario and how these affect the UX
+**さもないと:** API のパフォーマンスとダウンタイムの計測に多大な労力を費やしているかもしれませんが、現実のシナリオにおいてどの部分のコードが最も遅いのか、そしてそれらがどのように UX に影響を及ぼしているのか、あなたが気づくことは恐らくないでしょう。
 
-🔗 [**Read More: using APM products**](/sections/errorhandling/apmproducts.md)
+🔗 [**さらに読む: APM 製品を利用してエラーとダウンタイムを発見する**](/sections/errorhandling/apmproducts.japanese.md)
 
 <br/><br/>
 
