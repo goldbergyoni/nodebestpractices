@@ -1,18 +1,18 @@
-# Catch unhandled promise rejections
+# 未処理の reject された promise を捕捉する
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-Typically, most of modern Node.js/Express application code runs within promises – whether within the .then handler, a function callback or in a catch block. Surprisingly, unless a developer remembered to add a .catch clause, errors thrown at these places are not handled by the uncaughtException event-handler and disappear.  Recent versions of Node added a warning message when an unhandled rejection pops, though this might help to notice when things go wrong but it's obviously not a proper error handling method. The straightforward solution is to never forget adding .catch clauses within each promise chain call and redirect to a centralized error handler. However, building your error handling strategy only on developer’s discipline is somewhat fragile. Consequently, it’s highly recommended using a graceful fallback and subscribe to `process.on('unhandledRejection', callback)` – this will ensure that any promise error, if not handled locally, will get its treatment.
+一般的に、モダンな Node.js/Express アプリケーションのコードの多くは、promise の中で実行されます ー .then ハンドラ、コールバック関数、あるいは catch ブロックのいずれかです。驚くべきことに、開発者が忘れずに .catch 節を追加しない限り、promise 内で投げられた例外は uncaughtException イベントハンドラで処理されず、消えてなくなります。最近の Node.js のバージョンでは、未処理の reject があった場合に警告メッセージを表示するようになりましたが、これは何かがうまくいっていないときに気づくのに役立つかもしれませんが、明らかに適切なエラー処理の方法ではありません。単純な解決策は、各 promise チェーンコール内に .catch 節を追加することを絶対に忘れず、集中化されたエラーハンドラに処理をリダイレクトすることです。しかしながら、開発者の規律だけでエラー処理の方針を構築することは、いささか脆いものです。したがって、潔いフォールバックを利用すること、そして `process.on('unhandledRejection', callback)` をサブスクライブすることを強く推奨します ー これは、全ての promise エラーが、ローカルで処理されていなくても、確実に処理されることを保証します。
 
 <br/><br/>
 
-### Code example: these errors will not get caught by any error handler (except unhandledRejection)
+### コード例: これらのエラーはどのエラーハンドラにも捕捉されません（unhandledRejection を除く）
 
 ```javascript
 DAL.getUserById(1).then((johnSnow) => {
-  // this error will just vanish
+  // このエラーはただ消えるだけです
   if(johnSnow.isAlive === false)
       throw new Error('ahhhh');
 });
@@ -20,21 +20,21 @@ DAL.getUserById(1).then((johnSnow) => {
 
 <br/><br/>
 
-### Code example: Catching unresolved and rejected promises
+### コード例: 未解決の promise や reject された promise を捕捉する
 
 <details>
 <summary><strong>Javascript</strong></summary>
 
 ```javascript
 process.on('unhandledRejection', (reason, p) => {
-  // I just caught an unhandled promise rejection,
-  // since we already have fallback handler for unhandled errors (see below),
-  // let throw and let him handle that
+  // 未処理の promise の reject を捕捉しました
+  // すでに未処理のエラーのためのフォールバックハンドラ（下記参照）を持っているので、
+  // 投げて、処理させましょう
   throw reason;
 });
 
 process.on('uncaughtException', (error) => {
-  // I just received an error that was never handled, time to handle it and then decide whether a restart is needed
+  // 未処理のエラーを受信したので、処理を行い、再起動が必要かどうかを判断してください
   errorManagement.handler.handleError(error);
   if (!errorManagement.handler.isTrustedError(error))
     process.exit(1);
@@ -47,14 +47,14 @@ process.on('uncaughtException', (error) => {
 
 ```typescript
 process.on('unhandledRejection', (reason: string, p: Promise<any>) => {
-  // I just caught an unhandled promise rejection,
-  // since we already have fallback handler for unhandled errors (see below),
-  // let throw and let him handle that
+  // 未処理の promise の reject を捕捉しました
+  // すでに未処理のエラーのためのフォールバックハンドラ（下記参照）を持っているので、
+  // 投げて、処理させましょう
   throw reason;
 });
 
 process.on('uncaughtException', (error: Error) => {
-  // I just received an error that was never handled, time to handle it and then decide whether a restart is needed
+  // 未処理のエラーを受信したので、処理を行い、再起動が必要かどうかを判断してください
   errorManagement.handler.handleError(error);
   if (!errorManagement.handler.isTrustedError(error))
     process.exit(1);
@@ -64,11 +64,11 @@ process.on('uncaughtException', (error: Error) => {
 
 <br/><br/>
 
-### Blog Quote: "If you can make a mistake, at some point you will"
+### ブログ引用: "If you can make a mistake, at some point you will"（ミスをすることができるなら、いつかするでしょう）
 
- From the blog James Nelson
+ブログ James Nelson より
 
- > Let’s test your understanding. Which of the following would you expect to print an error to the console?
+> 理解度をテストしてみましょう。次のうち、コンソールにエラーを表示するのはどれだと思いますか？
 
 ```javascript
 Promise.resolve('promised value').then(() => {
@@ -84,4 +84,4 @@ new Promise((resolve, reject) => {
 });
 ```
 
-> I don’t know about you, but my answer is that I’d expect all of them to print an error. However, the reality is that a number of modern JavaScript environments won’t print errors for any of them.The problem with being human is that if you can make a mistake, at some point you will. Keeping this in mind, it seems obvious that we should design things in such a way that mistakes hurt as little as possible, and that means handling errors by default, not discarding them.
+> あなたのことはわかりませんが、私の答えは、これらは全てエラーを表示すると思う、というものです。しかしながら、実際には、たくさんのモダンな JavaScript 環境はどのエラーも表示しません。人間であることの問題は、ミスをすることができるなら、いつかミスをするだろう、ということです。このことを念頭に置いていれば、ミスの影響ができるだけ小さくなるように設計をするべきであることが明らかであり、そしてこれはエラーの破棄ではなく、エラー処理をデフォルトで行うこと意味します。

@@ -206,13 +206,13 @@
 
 <br/><br/>
 
-## ![✔] 2.10 Catch unhandled promise rejections
+## ![✔] 2.10 未処理の reject された promise を捕捉する
 
-**TL;DR:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explicitly handle. Even if your code is subscribed to `process.uncaughtException`! Overcome this by registering to the event `process.unhandledRejection`
+**TL;DR:** promise の中で投げられた全ての例外は、開発者が明示的に処理を行うことを忘れていない限り、飲み込まれて破棄されます。たとえコードが `process.uncaughtException` をサブスクライブしていたとしてもです！`process.unhandledRejection` イベントに登録することで、この問題を乗り越えることができます。
 
-**Otherwise:** Your errors will get swallowed and leave no trace. Nothing to worry about
+**さもないと:** あなたのエラーは飲み込まれて、何のトレースも残しません。心配することは、何も残りません。
 
-🔗 [**Read More: catching unhandled promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.md)
+🔗 [**さらに読む: 未処理の reject された promise を捕捉する**](/sections/errorhandling/catchunhandledpromiserejection.japanese.md)
 
 <br/><br/>
 
