@@ -247,11 +247,11 @@
 **さもないと:** 多くの欠陥のある Node.js のコードパターンは、レーダーを逃れてしまうかもしれません。例えば、開発者は攻撃者が任意の JS スクリプトを実行できるように、パスとして与えられた変数を持つファイルを require(variableAsPath) しているかもしれません。Node.js の linters は、そのようなパターンを早期に検出して知らせてくれます。
 <br/><br/>
 
-## ![✔] 3.3 Start a Codeblock's Curly Braces on the Same Line
+## ![✔] 3.3 コードブロックの中括弧を同一行上でスタートさせる
 
-**TL;DR:** The opening curly braces of a code block should be on the same line as the opening statement
+**TL;DR:** コードブロックの冒頭の中括弧は、冒頭の文と同じ行でなければなりません。
 
-### Code Example
+### コード例
 
 ```javascript
 // Do
@@ -266,9 +266,9 @@ function someFunction()
 }
 ```
 
-**Otherwise:** Deferring from this best practice might lead to unexpected results, as seen in the StackOverflow thread below:
+**さもないと:** このベストプラクティスから逸脱すると、以下の StackOverflow スレッドにあるように、予期せぬ結果を招く可能性があります。:
 
-🔗 [**Read more:** "Why do results vary based on curly brace placement?" (StackOverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
+🔗 [**さらに読む:** "なぜ中括弧の配置によって結果が変わるのか?" (StackOverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
 <br/><br/>
 
