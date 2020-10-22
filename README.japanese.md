@@ -216,13 +216,13 @@
 
 <br/><br/>
 
-## ![✔] 2.11 Fail fast, validate arguments using a dedicated library
+## ![✔] 2.11 専用のライブラリを利用して引数の検証を高速に行う
 
-**TL;DR:** Assert API input to avoid nasty bugs that are much harder to track later. The validation code is usually tedious unless you are using a very cool helper library like [ajv](https://www.npmjs.com/package/ajv) and [Joi](https://www.npmjs.com/package/joi)
+**TL;DR:** API の入力をアサートすることで、後から追跡するのが非常に難しい厄介なバグを避けることができます。[ajv](https://www.npmjs.com/package/ajv) や [Joi](https://www.npmjs.com/package/joi) のような非常にクールなヘルパーライブラリを利用しない限り、バリデーションコードを書くことは一般的に退屈な作業です。
 
-**Otherwise:** Consider this – your function expects a numeric argument “Discount” which the caller forgets to pass, later on, your code checks if Discount!=0 (amount of allowed discount is greater than zero), then it will allow the user to enjoy a discount. OMG, what a nasty bug. Can you see it?
+**さもないと:** 考えてみて下さい ー 関数は数値の引数「Discount」を受け取ることを期待していますが、呼び出し元が値を渡すのを忘れてしまいました。その後、コードが Discount!=0 (許容されたディスカウントの量が 0 よりも大きいことを想定) であるということをチェックし、そのチェックをクリアした場合にユーザーがディスカウントを受けられるようにしました。オーマイガー、なんて厄介なバグなんでしょう。わかりますか？（訳注：「さらに読む」に具体的なコード例が載っています）
 
-🔗 [**Read More: failing fast**](/sections/errorhandling/failfast.md)
+🔗 [**さらに読む: 専用のライブラリを利用して引数の検証を高速に行う**](/sections/errorhandling/failfast.japanese.md)
 
 <br/><br/><br/>
 
