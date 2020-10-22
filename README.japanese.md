@@ -276,7 +276,7 @@ function someFunction()
 
 ステートメントを区切るためにセミコロンを使うか使わないかに関わらず、不適切な改行や自動セミコロン挿入のよくある落とし穴を知っておくことで、通常の構文エラーをなくすことができます。
 
-**TL;DR:** ESLint を使用して、分離の懸念についての認識する。 [Prettier](https://prettier.io/) や [Standardjs](https://standardjs.com/) は、これらの問題を自動的に解決することができます。
+**TL;DR:** ESLint を使用して、分離の懸念について認識する。 [Prettier](https://prettier.io/) や [Standardjs](https://standardjs.com/) は、これらの問題を自動的に解決することができます。
 
 **さもないと:** 前のセクションで見たように、JavaScript のインタープリタは、セミコロンがない場合は自動的に文の最後にセミコロンを追加したり、ステートメントが本来あるべき場所で終わっていないとみなしたりすることで、望まない結果になってしまう可能性があります。代入を使用し、即時に呼び出された関数式の使用を避けることで、予期せぬエラーのほとんどを防ぐことができます。
 
@@ -312,7 +312,7 @@ const count = 2 // 2() を実行しようとしますが、2 は関数ではあ�
 ```
 
 🔗 [**さらに読む:** "準 ESLint ルール"](https://eslint.org/docs/rules/semi)
-🔗 [**さらに読む:** "予期せぬ複数行の ESLint ルールがない"](https://eslint.org/docs/rules/no-unexpected-multiline)
+🔗 [**さらに読む:** "予期せぬ複数行を許さない ESLint のルール"](https://eslint.org/docs/rules/no-unexpected-multiline)
 
 <br/><br/>
 
