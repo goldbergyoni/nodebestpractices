@@ -316,11 +316,11 @@ const count = 2 // 2() を実行しようとしますが、2 は関数ではあ�
 
 <br/><br/>
 
-## ![✔] 3.5 Name your functions
+## ![✔] 3.5 関数に名前を付ける
 
-**TL;DR:** Name all functions, including closures and callbacks. Avoid anonymous functions. This is especially useful when profiling a node app. Naming all functions will allow you to easily understand what you're looking at when checking a memory snapshot
+**TL;DR:** クロージャやコールバックを含むすべての関数に名前を付けます。匿名関数は避けてください。これは特に node アプリをプロファイリングするときに便利です。すべての関数に名前を付けることで、メモリスナップショットをチェックする際に何を見ているのかを簡単に理解することができます。
 
-**Otherwise:** Debugging production issues using a core dump (memory snapshot) might become challenging as you notice significant memory consumption from anonymous functions
+**さもないと:** コアダンプ(メモリスナップショット)を使用した本番環境の問題のデバッグは、匿名関数からのメモリ消費が大きいことに気づくと、困難になるかもしれません。
 
 <br/><br/>
 
