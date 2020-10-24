@@ -1,25 +1,25 @@
-# Include 3 parts in each test name
+# 各テスト名に 3 つの要素を含む
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-A test report should tell whether the current application revision satisfies the requirements for the people who are not necessarily familiar with the code: the tester, the DevOps engineer who is deploying and the future you two years from now. This can be achieved best if the tests speak at the requirements level and include 3 parts:
+テストレポートは、コードに詳しくない人々のために、現在のアプリケーションの修正が要件を満たしているかどうか伝えるべきです: テスター、デプロイを担当している DevOps エンジニア、2 年後の未来のあなた自身といった人々のため、です。これは、テスト名が要件レベルを表し、次の 3 つの要素を含む場合に最もよく達成されます:
 
-(1) What is being tested? For example, the ProductsService.addNewProduct method
+(1) 何がテストされているのか？ 例: ProductsService.addNewProduct メソッド
 
-(2) Under what circumstances and scenario? For example, no price is passed to the method
+(2) どのような状況、シナリオ下なのか？ 例: price という引数がメソッドに渡されていない
 
-(3) What is the expected result? For example, the new product is not approved
+(3) 期待する結果は何か？ 例: 新しい製品（new product）が承認されない
 
 <br/><br/>
 
-### Code example: a test name that incluces 3 parts
+### コード例: 3 つの要素を含むテスト名
 ```javascript
-//1. unit under test
+//1. テスト対象のユニット
 describe('Products Service', () => {
   describe('Add new product', () => {
-    //2. scenario and 3. expectation
+    //2. シナリオ、そして 3. 期待する結果
     it('When no price is specified, then the product status is pending approval', () => {
       const newProduct = new ProductService().add(...);
       expect(newProduct.status).to.equal('pendingApproval');
@@ -30,12 +30,12 @@ describe('Products Service', () => {
 
 <br/><br/>
 
-### Code Example – Anti Pattern: one must read the entire test code to understand the intent 
+### コード例 – アンチパターン: 意図を理解するためにコード全体を読まなければならない
 ```javascript
 describe('Products Service', () => {
   describe('Add new product', () => {
     it('Should return the right status', () => {
-        //hmm, what is this test checking? what are the scenario and expectation?
+      // えーと、このテストは何をチェックしているのでしょうか？シナリオと期待する結果は何でしょうか？
       const newProduct = new ProductService().add(...);
       expect(newProduct.status).to.equal('pendingApproval');
     });
@@ -45,10 +45,10 @@ describe('Products Service', () => {
 
 <br/><br/>
 
-###  "Doing It Right Example: The test report resembles the requirements document"
+### "Doing It Right Example: The test report resembles the requirements document"（適切な例: テストレポートは要件ドキュメントに似ています）
 
- [From the blog "30 Node.js testing best practices" by Yoni Goldberg](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347)
+ [Yoni Goldberg によるブログ記事 "30 Node.js testing best practices"](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347)
 
- ![A test report example](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/test-report-like-requirements.jpeg "A test report example")
+ ![テストレポートの例](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/test-report-like-requirements.jpeg "テストレポートの例")
 
 <br/><br/>
