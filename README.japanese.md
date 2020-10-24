@@ -455,13 +455,13 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.3 Structure tests by the AAA pattern
+## ![✔] 4.3 AAA パターンを用いてテストを構成する
 
-**TL;DR:** Structure your tests with 3 well-separated sections: Arrange, Act & Assert (AAA). The first part includes the test setup, then the execution of the unit under test and finally the assertion phase. Following this structure guarantees that the reader spends no brain CPU on understanding the test plan
+**TL;DR:** 上手に分けられた 3 つのセクションを利用してテストを構成してください: Arrange、Act、そして Assert (AAA) です。まず最初の部分でテストのセットアップを行い、次にテスト対象のユニットの実行、そして最後にアサーションフェーズに入ります。この構造に従うことで、コードを読む人がテストプランを理解するために頭脳の CPU を費やさないことが保証されます。
 
-**Otherwise:** Not only you spend long daily hours on understanding the main code, now also what should have been the simple part of the day (testing) stretches your brain
+**さもないと:** メインコードを理解するのに長時間費やすだけでなく、今までシンプルな部分であったはずのもの（テスト）が、脳のリソースを奪います。
 
-🔗 [**Read More: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.md)
+🔗 [**さらに読む: AAA パターンを用いてテストを構成する**](/sections/testingandquality/aaa.japanese.md)
 
 <br/><br/>
 
