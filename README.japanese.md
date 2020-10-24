@@ -445,13 +445,13 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.2 Include 3 parts in each test name
+## ![✔] 4.2 各テスト名に 3 つの要素を含む
 
-**TL;DR:** Make the test speak at the requirements level so it's self explanatory also to QA engineers and developers who are not familiar with the code internals. State in the test name what is being tested (unit under test), under what circumstances and what is the expected result
+**TL;DR:** テストを要件レベルを表現することで、コード内部をよく知らない QA エンジニアや開発者に対しても説明的であるようにしてください。テスト名には、何がテストされていて（テスト対象のユニット）、どのような状況で、どのような結果が期待されているのかを記述してください。
 
-**Otherwise:** A deployment just failed, a test named “Add product” failed. Does this tell you what exactly is malfunctioning?
+**さもないと:** "Add product" という名付けられたテストが通らず、デプロイが失敗しました。これは、実際に何がうまく動作しなかったのかを示しているでしょうか？
 
-🔗 [**Read More: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
+🔗 [**さらに読む: 各テスト名に 3 つの要素を含む**](/sections/testingandquality/3-parts-in-name.japanese.md)
 
 <br/><br/>
 
