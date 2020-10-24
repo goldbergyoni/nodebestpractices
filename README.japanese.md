@@ -465,11 +465,11 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.4 Detect code issues with a linter
+## ![✔] 4.4 Linter を用いてコードの問題を検出する
 
-**TL;DR:** Use a code linter to check basic quality and detect anti-patterns early. Run it before any test and add it as a pre-commit git-hook to minimize the time needed to review and correct any issue. Also check [Section 3](#3-code-style-practices) on Code Style Practices
+**TL;DR:** Linter を使用して、コードの基本的な質をチェックし、アンチパターンを早期に検出してください。テスト前に Linter を実行し、コミット前の git-hook として追加しておけば、レビューや問題を修正するのに必要な時間を最小限に抑えることができます。[セクション 3](#3-コードスタイルのプラクティス) の「コードスタイルのプラクティス」も参考にしてください。
 
-**Otherwise:** You may let pass some anti-pattern and possible vulnerable code to your production environment.
+**さもないと:** アンチパターンや脆弱性を含む可能性のあるコードを本番環境に渡してしまうかもしれません。
 
 <br/><br/>
 
