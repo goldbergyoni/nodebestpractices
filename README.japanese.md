@@ -348,13 +348,13 @@ function doSomething() {}
 
 <br/><br/>
 
-## ![✔] 3.7 Prefer const over let. Ditch the var
+## ![✔] 3.7 let よりも const を優先してください。var はいりません。
 
-**TL;DR:** Using `const` means that once a variable is assigned, it cannot be reassigned. Preferring `const` will help you to not be tempted to use the same variable for different uses, and make your code clearer. If a variable needs to be reassigned, in a for loop, for example, use `let` to declare it. Another important aspect of `let` is that a variable declared using it is only available in the block scope in which it was defined. `var` is function scoped, not block scoped, and [shouldn't be used in ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) now that you have `const` and `let` at your disposal
+**TL;DR:** `const` を使うということは、一度代入された変数は再代入できないということを意味します。`const` を優先することで、同じ変数を異なる用途に使いたくなることを防ぎ、コードをより明確にすることができます。 例えば、for ループの中で変数を再割り当てする必要がある場合は、`let` を使って宣言します。もう一つの重要な点は、`let` を使って宣言された変数は、それが定義されたブロックスコープ内でのみ利用可能であるということです。`var` はブロックスコープではなく関数スコープであり、[ES6では使うべきではない](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) ので、`const` と `let` がある以上必要ありません。
 
-**Otherwise:** Debugging becomes way more cumbersome when following a variable that frequently changes
+**さもないと:** 頻繁に変化する変数に従うと、デバッグが非常に面倒になります。
 
-🔗 [**Read more: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
+🔗 [**さらに読む: JavaScript ES6+: var、let、それとも const ?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
 
 <br/><br/>
 
