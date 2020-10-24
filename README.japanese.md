@@ -324,24 +324,24 @@ const count = 2 // 2() を実行しようとしますが、2 は関数ではあ�
 
 <br/><br/>
 
-## ![✔] 3.6 Use naming conventions for variables, constants, functions and classes
+## ![✔] 3.6 変数、定数、関数、クラスの命名規則を使用する
 
-**TL;DR:** Use **_lowerCamelCase_** when naming constants, variables and functions and **_UpperCamelCase_** (capital first letter as well) when naming classes. This will help you to easily distinguish between plain variables/functions, and classes that require instantiation. Use descriptive names, but try to keep them short
+**TL;DR:** 定数、変数、関数の命名をするときは **_lowerCamelCase_**  を使用し、クラスの命名をするときは**_UpperCamelCase_** (頭文字も大文字) を使用してください。これは、プレーンな変数/関数とインスタンス化を必要とするクラスを簡単に区別するのに役立ちます。記述的な名前を使用しますが、短くしてください。
 
-**Otherwise:** Javascript is the only language in the world which allows invoking a constructor ("Class") directly without instantiating it first. Consequently, Classes and function-constructors are differentiated by starting with UpperCamelCase
+**さもないと:** Javascript は、最初にインスタンスを作成せずにコンストラクタ（「クラス」）を直接呼び出すことができる世界で唯一の言語です。その結果、クラスと関数構造体は UpperCamelCase から始まることで区別されます。
 
-### 3.6 Code Example
+### 3.6 コード例
 
 ```javascript
-// for class name we use UpperCamelCase
+// クラスには、UpperCamelCase を使用します
 class SomeClassExample {}
 
-// for const names we use the const keyword and lowerCamelCase
+// const 名には const キーワードと lowerCamelCase を使用します
 const config = {
   key: "value"
 };
 
-// for variables and functions names we use lowerCamelCase
+// 変数や関数名には lowerCamelCase を使用します
 let someVariableExample = "value";
 function doSomething() {}
 ```
