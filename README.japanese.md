@@ -423,17 +423,17 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 3.12 Use arrow function expressions (=>)
+## ![✔] 3.12 arrow 関数式 (=>) を使う
 
-**TL;DR:** Though it's recommended to use async-await and avoid function parameters when dealing with older APIs that accept promises or callbacks - arrow functions make the code structure more compact and keep the lexical context of the root function (i.e. `this`)
+**TL;DR:** プロミスやコールバックを受け入れる古い API を扱う場合は、async-await を使用して関数パラメータを避けることをお勧めしますが、arrow 関数はコード構造をよりコンパクトにし、ルート関数の語彙的なコンテキストを保持します。(すなわち `this` )
 
-**Otherwise:** Longer code (in ES5 functions) is more prone to bugs and cumbersome to read
+**さもないと:** コードが長いと（ ES5 の関数では）バグが発生しやすく、読むのが面倒になります。
 
-🔗 [**Read more: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
+🔗 [**さらに読む: arrow 関数を採用する時が来た**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ トップに戻る</a></p>
 
 # `4. テストと総合的な品質のプラクティス`
 
