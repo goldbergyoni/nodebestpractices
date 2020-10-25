@@ -358,11 +358,11 @@ function doSomething() {}
 
 <br/><br/>
 
-## ![✔] 3.8 Require modules first, not inside functions
+## ![✔] 3.8 関数の内部ではなく、まずモジュールを require する
 
-**TL;DR:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top but also avoids a couple of potential problems
+**TL;DR:** 各ファイルの先頭かつ、全ての関数の前かつ外でモジュールを require します。このシンプルなベストプラクティスは、ファイルの依存関係を簡単かつ迅速にトップに表示するのに役立つだけでなく、いくつかの潜在的な問題を回避することができます。
 
-**Otherwise:** Requires are run synchronously by Node.js. If they are called from within a function, it may block other requests from being handled at a more critical time. Also, if a required module or any of its own dependencies throw an error and crash the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function
+**さもないと:** Require は Node.js によって同期的に実行されます。関数内から呼び出された場合、他のリクエストがより重要なタイミングで処理されるのをブロックすることがあります。また、require されたモジュールやそれ自身の依存関係がエラーを出してサーバをクラッシュさせてしまった場合は、できるだけ早く見つけた方が良いでしょう。関数の中からモジュールが require されている場合は早く見つけることができないかもしれません。
 
 <br/><br/>
 
