@@ -473,13 +473,13 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.5 Avoid global test fixtures and seeds, add data per-test
+## ![✔] 4.5 グローバルなテストフィクスチャとシードを避け、テストごとにデータを追加する
 
-**TL;DR:** To prevent tests coupling and easily reason about the test flow, each test should add and act on its own set of DB rows. Whenever a test needs to pull or assume the existence of some DB data - it must explicitly add that data and avoid mutating any other records
+**TL;DR:** テスト同士が結合してしまうことを防ぎ、テストフローの理解を容易にするために、各テストは独自の DB データ行のセットを用意し、それらを利用して実行されるべきです。テストがいくつかの DB データをプルしたり、その存在を仮定する必要がある場合には、明示的にデータを追加し、他のレコードに変更を加えないようにしなければなりません。
 
-**Otherwise:** Consider a scenario where deployment is aborted due to failing tests, team is now going to spend precious investigation time that ends in a sad conclusion: the system works well, the tests however interfere with each other and break the build
+**さもないと:** テストが失敗したことによってデプロイが中止されるというシナリオを考えてみましょう。チームは貴重な時間を調査に費やし、結果として悲しい結論にたどり着きます: システムは機能していますが、テスト同士が干渉しあって、ビルドを壊しているのです。
 
-🔗 [**Read More: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
+🔗 [**さらに読む: グローバルなテストフィクスチャとシードを避け、テストごとにデータを追加する**](/sections/testingandquality/avoid-global-test-fixture.japanese.md)
 
 <br/><br/>
 
