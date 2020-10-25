@@ -366,20 +366,20 @@ function doSomething() {}
 
 <br/><br/>
 
-## ![✔] 3.9 Require modules by folders, opposed to the files directly
+## ![✔] 3.9 ファイルに直接アクセスするのではなく、フォルダごとにモジュールを require します
 
-**TL;DR:** When developing a module/library in a folder, place an index.js file that exposes the module's internals so every consumer will pass through it. This serves as an 'interface' to your module and eases future changes without breaking the contract
+**TL;DR:** モジュール/ライブラリをフォルダ内で開発する場合は、モジュールの内部を公開する index.js ファイルを配置し、すべての使用者がそれを通過するようにします。これはモジュールへの「インターフェース」として機能し、約束事を破ることなく将来の変更を容易にします。
 
-**Otherwise:** Changing the internal structure of files or the signature may break the interface with clients
+**さもないと:** ファイルの内部構造や署名を変更すると、クライアントとのインターフェイスが壊れてしまう可能性があります。
 
-### 3.9 Code example
+### 3.9 コード例
 
 ```javascript
-// Do
+// する
 module.exports.SMSProvider = require("./SMSProvider");
 module.exports.SMSNumberResolver = require("./SMSNumberResolver");
 
-// Avoid
+// 避ける
 module.exports.SMSProvider = require("./SMSProvider/SMSProvider.js");
 module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolver.js");
 ```
