@@ -386,11 +386,11 @@ module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolve
 
 <br/><br/>
 
-## ![✔] 3.10 Use the `===` operator
+## ![✔] 3.10 `===` 演算子を使用する
 
-**TL;DR:** Prefer the strict equality operator `===` over the weaker abstract equality operator `==`. `==` will compare two variables after converting them to a common type. There is no type conversion in `===`, and both variables must be of the same type to be equal
+**TL;DR:** 弱い抽象的な等号演算子 `==` よりも厳密な等号演算子 `===` を優先してください。`==` は2つの変数を共通の型に変換した後に比較します。`===` には型変換はなく、両方の変数が同じ型で等しくなければいけません。
 
-**Otherwise:** Unequal variables might return true when compared with the `==` operator
+**さもないと:**  `==` 演算子で比較すると、同じでない値でも真を返すかもしれません。
 
 ### 3.10 Code example
 
@@ -409,7 +409,7 @@ null == undefined; // true
 " \t\r\n " == 0; // true
 ```
 
-All statements above will return false if used with `===`
+`===` を使用した場合、上のすべてのステートメントは false を返します。
 
 <br/><br/>
 
