@@ -483,43 +483,43 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.6 Constantly inspect for vulnerable dependencies
+## ![✔] 4.6 脆弱性のある依存関係がないか常に検査する
 
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [npm audit](https://docs.npmjs.com/cli/audit) and 🔗 [snyk.io](https://snyk.io) that can be invoked from your CI on every build
+**TL;DR:** Express のような最も評判の良い依存関係にも、既知の脆弱性があります。これは、ビルド毎に CI において実行できる 🔗 [npm audit](https://docs.npmjs.com/cli/audit) や 🔗 [snyk.io](https://snyk.io) といったコミュニティや商用のツールを利用することで、簡単に検査することができます。
 
-**Otherwise:** Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
-
-<br/><br/>
-
-## ![✔] 4.7 Tag your tests
-
-**TL;DR:** Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/): mocha --grep 'sanity'
-
-**Otherwise:** Running all the tests, including tests that perform dozens of DB queries, any time a developer makes a small change can be extremely slow and keeps developers away from running tests
+**さもないと:** 専用のツールを使用せずに、コードを安全に保つには、新しい脅威についての情報を、常に追う必要があります。これは非常に面倒です。
 
 <br/><br/>
 
-## ![✔] 4.8 Check your test coverage, it helps to identify wrong test patterns
+## ![✔] 4.7 テストにタグをつける
 
-**TL;DR:** Code coverage tools like [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but not least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
+**TL;DR:** 異なるテストは、異なるシナリオ下において実行しなければなりません: I/O の無いクイックスモークテストは、開発者がファイルを保存したりコミットした際に実施し、完全なエンドツーエンドテストは新しいプルリクエストが出されたときに実施する、などです。これは、テストの手綱を掴んで望み通りのテストセットを実行できるように、 #cold #api #sanity といったようにキーワードでテストをタグ付けすることで実現できます。例えば、[Mocha](https://mochajs.org/) を利用して sanity テストグループを実施する方法は次の通りです: mocha --grep 'sanity'
 
-**Otherwise:** There won't be any automated metric telling you when a large portion of your code is not covered by testing
-
-<br/><br/>
-
-## ![✔] 4.9 Inspect for outdated packages
-
-**TL;DR:** Use your preferred tool (e.g. 'npm outdated' or [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) to detect installed packages which are outdated, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a severe scenario might be when an installed package is 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
-
-**Otherwise:** Your production will run packages that have been explicitly tagged by their author as risky
+**さもないと:** 小さな変更をするたびに多くの DB クエリを実施するテストを含む全てのテストを実行することは、非常に遅く、そして開発者がテストを実行しなくなります。
 
 <br/><br/>
 
-## ![✔] 4.10 Use production-like environment for e2e testing
+## ![✔] 4.8 間違ったテストパターンを特定するためにテストカバレッジをチェックする
 
-**TL;DR:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Use an environment which is as close to your real production environment as possible like a-continue (Missed -continue here, needs content. Judging by the **Otherwise** clause, this should mention docker-compose)
+**TL;DR:** [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) のようなコードカバレッジツールは 3 つの理由から素晴らしいといえます: 無料で提供されている（このレポートの恩恵を受けるために努力は必要ありません）、テストカバレッジの低下を特定するのに役立つ、そして最後に、テストのミスマッチを強調してくれることです。色付けされたコードカバレッジレポートを見ることで、例えば、キャッチ句のようなテストが全く実施されていない領域（つまり、テストがハッピーパスのみテストしていて、エラー時にどのように振る舞うかをテストしていない、ということです）に気づくかもしれません。カバレッジが特定に閾値を下回ったらビルドが失敗するように設定しましょう。
 
-**Otherwise:** Without docker-compose, teams must maintain a testing DB for each testing environment including developers' machines, keep all those DBs in sync so test results won't vary across environments
+**さもないと:** コードの大部分がテストでカバーされていないことを教えてくれる、自動化されたメトリックが存在しないことになります。
+
+<br/><br/>
+
+## ![✔] 4.9 パッケージが古くなっていないか点検する
+
+**TL;DR:** お気に入りのツール（例えば、「npm outdated」や「[npm-check-updates](https://www.npmjs.com/package/npm-check-updates)」など）を使って、インストールされたパッケージが古くなっていることを検出し、このチェックを CI パイプラインの中に組み込み、深刻な場合にはビルドを失敗させてください。深刻な場合とは例えば、インストールされているパッケージが 5 回のパッチコミット分遅れている場合（例えば、ローカルバージョンが 1.3.1 でリポジトリバージョンが 1.3.8 である、など）や、作者によって非推奨とタグ付けされている場合などがあります。ビルドをキルして、このバージョンのデプロイを禁止してください。
+
+**さもないと:** 作者によって明示的に危険であるとタグ付けされたパッケージを、本番環境で実行することになります。
+
+<br/><br/>
+
+## ![✔] 4.10 エンドツーエンドテストのために本番に近い環境を使用する
+
+**TL;DR:** ライブデータを含むエンドツーエンド（e2e）テストは、DB のような複数の重たいサービスに依存するため、CI プロセスにおける最も弱い接続部となっていました。できる限り本番環境に近い環境を使用してください。（注意: コンテンツが不足しています。「さもないと」から判断するに、docker-compose について言及されているはずです）
+
+**さもないと:** docker-compose を使用しない場合、チームは開発者のマシンを含む各テスト環境のためのテスト DB を管理し、環境によって結果に差異が出ないようにそれらすべての DB が同期された状態を保たなくてはなりません。
 
 <br/><br/>
 
