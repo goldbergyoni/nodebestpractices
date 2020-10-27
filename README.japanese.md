@@ -541,17 +541,17 @@ null == undefined; // true
 
 🔗 [**さらに読む: CI プラットフォームを選択する**](/sections/testingandquality/citools.japanese.md)
 
-## ![✔] 4.13 Test your middlewares in isolation
+## ![✔] 4.13 ミドルウェアを分離してテストする
 
-**TL;DR:** When a middleware holds some immense logic that spans many request, it worth testing it in isolation without waking up the entire web framework. This can be easily achieved by stubbing and spying on the {req, res, next} objects
+**TL;DR:** ミドルウェアが多くのリクエストにまたがる巨大なロジックを保持している場合は、ウェブフレームワーク全体を起動することなく、分離してテストする価値があります。これは、{req, res, next} オブジェクトをスタブ化してスパイすることで容易に達成することができます。
 
-**Otherwise:** A bug in Express middleware === a bug in all or most requests
+**さもないと:** Express ミドルウェアにおけるバグ === ほぼ全てのリクエストにおけるバグ
 
-🔗 [**Read More: Test middlewares in isolation**](/sections/testingandquality/test-middlewares.md)
+🔗 [**さらに読む: ミドルウェアを分離してテストする**](/sections/testingandquality/test-middlewares.japanese.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ トップに戻る</a></p>
 
 # `5. 本番環境移行のプラクティス`
 
