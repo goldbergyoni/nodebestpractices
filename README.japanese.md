@@ -523,13 +523,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 4.11 Refactor regularly using static analysis tools
+## ![✔] 4.11 静的解析ツールを使用して定期的にリファクタリングする
 
-**TL;DR:** Using static analysis tools helps by giving objective ways to improve code quality and keeps your code maintainable. You can add static analysis tools to your CI build to fail when it finds code smells. Its main selling points over plain linting are the ability to inspect quality in the context of multiple files (e.g. detect duplications), perform advanced analysis (e.g. code complexity) and follow the history and progress of code issues. Two examples of tools you can use are [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) and [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)).
+**TL;DR:** 静的解析ツールを利用することは、客観的な視点をもたらし、コードの品質向上や保守性の維持に役立ちます。静的解析ツールを CI に追加することで、コードの臭いを発見した際にビルドを失敗させることができます。シンプルな linting に勝るポイントとしては、複数ファイルを含むコンテキストで品質を検査できること（例：重複の検出）、高度な分析を実施できること（例：コードの複雑さ）、そしてコードの問題の履歴や進行状況を追跡できることです。使用できるツールの例としては、[Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) と [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)) の 2 つがあります。
 
-**Otherwise:** With poor code quality, bugs and performance will always be an issue that no shiny new library or state of the art features can fix
+**さもないと:** コードの品質が低いと、ピカピカの新しいライブラリや最新の機能では修正できない類のバグやパフォーマンスが常に問題となります。
 
-🔗 [**Read More: Refactoring!**](/sections/testingandquality/refactoring.md)
+🔗 [**さらに読む: リファクタリング！**](/sections/testingandquality/refactoring.japanese.md)
 
 <br/><br/>
 
