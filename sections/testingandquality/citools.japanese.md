@@ -1,14 +1,14 @@
-# Carefully choose your CI platform
+# CI プラットフォームを慎重に選択する
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-The CI world used to be the flexibility of [Jenkins](https://jenkins.io/) vs the simplicity of SaaS vendors. The game is now changing as SaaS providers like [CircleCI](https://circleci.com/) and [Travis](https://travis-ci.org/) offer robust solutions including Docker containers with minimum setup time while Jenkins tries to compete on 'simplicity' segment as well. Though one can setup rich CI solution in the cloud, should it required to control the finest details Jenkins is still the platform of choice. The choice eventually boils down to which extent the CI process should be customized: free and setup free cloud vendors allow to run custom shell commands, custom docker images, adjust the workflow, run matrix builds and other rich features. However, if controlling the infrastructure or programming the CI logic using a formal programming language like Java is desired - Jenkins might still be the choice. Otherwise, consider opting for the simple and setup free cloud option
+CI の世界において、かつては [Jenkins](https://jenkins.io/) の柔軟性と SaaS のシンプルさが争っていました。ところが、[CircleCI](https://circleci.com/) や [Travis](https://travis-ci.org/) のような SaaS プロバイダが Docker コンテナを含む堅牢なソリューションを最小限のセットアップ時間で提供しているのに対し、Jenkins は「シンプルさ」の面で勝負しようとしているため、ゲームは変化してきています。一方はクラウド上でリッチな CI ソリューションをセットアップすることができますが、細かな設定の制御が必要な場合には、Jenkins は依然として選択肢になります。どれを選択するかは、結局どの程度 CI プロセスをカスタマイズするかに帰結します: 無料かつ設定不要なクラウド型は、独自のシェルコマンド、独自の Docker イメージ、ワークフローの調整、マトリックスビルドの実行やその他リッチな機能を利用できます。しかしながら、インフラをコントロールして CI ロジックを Java のような正式なプログラミング言語を用いてプログラミングしたい場合には、Jenkins を選択するのがよいかもしれません。それ以外の場合は、シンプルで設定不要のクラウド型を選択することを検討してください。
 
 <br/><br/>
 
-### Code Example – a typical cloud CI configuration. Single .yml file and that's it
+### コード例 – 一般的なクラウドの CI 設定。一つの .yml ファイル、たったそれだけ
 
 ```yaml
 version: 2
@@ -40,12 +40,12 @@ jobs:
 
 ```
 
-### Circle CI - almost zero setup cloud CI
+### Circle CI - ほぼ設定の必要ないクラウド CI
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/circleci.png "API error handling")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/circleci.png "Circle CI")
 
-### Jenkins - sophisticated and robust CI 
+### Jenkins - 洗練された、堅牢な CI
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/jenkins_dashboard.png "API error handling")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/jenkins_dashboard.png "Jenkins")
 
 <br/><br/>
