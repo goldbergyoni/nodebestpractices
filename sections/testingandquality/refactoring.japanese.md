@@ -1,43 +1,41 @@
-# Refactoring
+# リファクタリング
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-Refactoring is an important process in the iterative development flow. Removing "Code Smells" (bad coding practices) such as Duplicated Code, Long Methods, Long Parameter list will improve your code and making it more maintainable. Using a static analysis tools will assist you in finding these code smells and build a process around refactoring. Adding these tools to your CI build will help automate the quality checking process. If your CI integrates with a tool like Sonar or Code Climate, the build will fail if it detects code smells and inform the author on how to address the issue. Theses static analysis tools will complement lint tools such as ESLint. Most linting tools will focus on code styles like indentation and missing semicolons (although some will find code smells like Long functions) in a single file while static analysis tools will focus on finding code smells (duplicate code, complexity analysis, etc) that are in single files and multiple files.
-
-<br/><br/>
-
-
-### Martin Fowler - Chief Scientist at ThoughtWorks
-
- From the book, "Refactoring - Improving the Design of Existing Code"
-
- > Refactoring is a controlled technique for improving the design of an existing code base.
+リファクタリングは反復開発フローにおいて重要なプロセスです。重複したコード、長いメソッド、長いパラメータリストといった「コードの臭い」（悪いコーディングプラクティス）を取り除くことで、コードが改善し、保守性が向上します。静的解析ツールを使用することは、そういったコードの臭いを発見しリファクタリングを中心としたプロセスを構築するのに役立ちます。こういったツールを CI に導入することで、品質チェックプロセスを自動化することができます。CI が Sonar や Code Climate といったツールと統合されている場合、コードの臭いを検出した際にビルドを失敗させ、作者に問題の対処方法を知らせます。これらの静的解析ツールは、ESLint のような lint ツールを補うものです。多くの linting ツールは、単一ファイルにおけるインデントやセミコロンの付け忘れ（長い関数のようなコードの臭いを見つけるものもありますが）といったコードスタイルにフォーカスしますが、静的解析ツールは単一のファイルおよび複数のファイルにおいてコードの臭いを発見する（重複したコード、複雑性解析など）ことにフォーカスしています。
 
 <br/><br/>
 
-### Evan Burchard - Web Development Consultant and Author
 
- From the book, "Refactoring JavaScript: Turning Bad Code into Good Code"
+### Martin Fowler - ThoughtWorks 社のチーフサイエンティスト
 
- > No matter what framework or
-“compiles-to-JS” language or library you use, bugs and performance concerns
-will always be an issue if the underlying quality of your JavaScript is poor.
+書籍 "Refactoring - Improving the Design of Existing Code" より
+
+> リファクタリングは、既存のコードベースの設計を改善するための、制御された技術です。
 
 <br/><br/>
 
- ### Example: Complex methods analysis with CodeClimate (commercial)
+### Evan Burchard - Web 開発コンサルタント、作家
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-climate-complex-methods.PNG "Complex methods analysis")
+書籍 "Refactoring JavaScript: Turning Bad Code into Good Code" より
 
-### Example: Code analysis trends and history with CodeClimate (commercial)
+> どのようなフレームワークや「JS にコンパイル可能な」言語、ライブラリを使用しようとも、JavaScript の根本的な質が低ければ、バグやパフォーマンスの懸念は常に問題になります。
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-climate-history.PNG "Code analysis history")
+<br/><br/>
 
-### Example: Code analysis summary and trends with SonarQube (commercial)
+### 例: CodeClimate を使用した複雑なメソッドの解析（商用）
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-sonarqube-dashboard.PNG "Code analysis history")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-climate-complex-methods.PNG "複雑なメソッドの解析")
+
+### 例: CodeClimate を使用したコード解析結果の傾向と履歴（商用）
+
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-climate-history.PNG "コード解析の履歴")
+
+### 例: コード解析結果のサマリーと傾向（商用）
+
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-sonarqube-dashboard.PNG "コード解析結果のサマリーと傾向")
 
 
 <br/><br/>
