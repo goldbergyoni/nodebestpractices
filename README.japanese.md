@@ -533,13 +533,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 4.12 Carefully choose your CI platform (Jenkins vs CircleCI vs Travis vs Rest of the world)
+## ![✔] 4.12 CI プラットフォームを慎重に選択する（Jenkins vs CircleCI vs Travis vs その他すべて）
 
-**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it should come with a vibrant ecosystem of plugins. [Jenkins](https://jenkins.io/) used to be the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Nowadays, it has become much easier to set up a CI solution using SaaS tools like [CircleCI](https://circleci.com) and others. These tools allow crafting a flexible CI pipeline without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
+**TL;DR:** 継続的インテグレーションプラットフォーム (CI/CD) は全ての品質に関わるツール（テストや lint など）をホストするので、プラグインのエコシステムが充実しているはずです。[Jenkins](https://jenkins.io/) は最大のコミュニティを持ち、非常に強力なプラットフォームであるため、多くのプロジェクトでデフォルトとして使われていましたが、複雑なセットアップと多大な学習コストが難点でした。最近では、[CircleCI](https://circleci.com) のような SaaS ツールを使用することで、CI ソリューションをセットアップすることが非常に簡単になってきました。こういったツールは、インフラ全体の管理にコストをかけることなく柔軟な CI パイプラインを構築することを可能にします。最終的には、堅牢性とスピードの間のトレードオフとなります ー 慎重にどちらを取るか選んでください。
 
-**Otherwise:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
+**さもないと:** ニッチなベンダーを選択すると、高度なカスタマイズが必要になった際に困るかもしれません。一方で、Jenkins を選択するとインフラのセットアップに貴重な時間を費やすことになる可能性があります。
 
-🔗 [**Read More: Choosing CI platform**](/sections/testingandquality/citools.md)
+🔗 [**さらに読む: CI プラットフォームを選択する**](/sections/testingandquality/citools.japanese.md)
 
 ## ![✔] 4.13 Test your middlewares in isolation
 
