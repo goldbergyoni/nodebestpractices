@@ -751,15 +751,15 @@ null == undefined; // true
 <img src="https://img.shields.io/badge/OWASP%20Threats-Top%2010-green.svg" alt="54 items"/>
 </div>
 
-## ![✔] 6.1. Embrace linter security rules
+## ![✔] 6.1. linter のセキュリティルールを受け入れる
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Make use of security-related linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to catch security vulnerabilities and issues as early as possible, preferably while they're being coded. This can help catching security weaknesses like using eval, invoking a child process or importing a module with a string literal (e.g. user input). Click 'Read more' below to see code examples that will get caught by a security linter
+**TL;DR:** [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) のようなセキュリティ関連の linter プラグインを利用して、セキュリティの脆弱性や問題をできる限り早く、できればコーディング段階で捕まえてください。これにより、eval の使用や子プロセスの呼び出し、（ユーザー入力などの）文字列リテラルを持つモジュールのインポートなど、セキュリティ上の弱点をキャッチするのに役立ちます。下記の「さらに読む」をクリックして、セキュリティ linter によって捕捉されるコード例を参照してください。
 
-**Otherwise:** What could have been a straightforward security weakness during development becomes a major issue in production. Also, the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories
+**さもなければ:** 開発時には単純なセキュリティ上の弱点だったかもしれないものが、本番環境では大きな問題となります。同様に、プロジェクトが一貫したコードセキュリティプラクティスに従わない場合もあり、脆弱性が入り込んだり、リモートリポジトリに機密情報がコミットされたりする可能性があります。
 
-🔗 [**Read More: Lint rules**](/sections/security/lintrules.md)
+🔗 [**さらに読む: Lint ルール**](/sections/security/lintrules.japanese.md)
 
 <br/><br/>
 
