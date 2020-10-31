@@ -1032,6 +1032,24 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "victor-homyakov",
+      "name": "Victor Homyakov",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/121449?v=4",
+      "profile": "https://github.com/victor-homyakov",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "josh-hemphill",
+      "name": "Josh",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/46608115?v=4",
+      "profile": "http://joshuahemphill.com",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
