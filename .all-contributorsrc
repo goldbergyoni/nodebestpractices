@@ -1041,6 +1041,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "josh-hemphill",
+      "name": "Josh",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/46608115?v=4",
+      "profile": "http://joshuahemphill.com",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
