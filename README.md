@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%20101%20Best%20Practices-blue.svg" alt="101 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20March%2012%202020-green.svg" alt="Last update: March, 2020"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.12.0-brightgreen.svg" alt="Updated for Node 13.1.0">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%20101%20Best%20Practices-blue.svg" alt="101 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20November%2012%202020-green.svg" alt="Last update: November, 2020"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.12.0-brightgreen.svg" alt="Updated for Node 13.1.0">
 </div>
 
 <br/>
@@ -27,13 +27,12 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 # Latest Best Practices and News
 
-- **:tada: Node.js best practices reached 50k stars**: Thank you to each and every contributor who helped turning this project into what it is today! We've got lots of plans for the time ahead, as we expand our ever-growing list of Node.js best practices even further.
+- **✅ New best practice:** Bullet 6.8. was added "Protect Users' Passwords/Secrets using BCrypt or Script". It contains an in-depth explanation about when and why each option suits a specific project. Don't miss this short guide with a brief overview of the various hashing options
 
-- **🎧 Podcast**: Yoni Goldberg from our team participated in the last JS Party Podcast (Very cool one!) episode to speak about Node.js best practices, [🎧 listen here](https://changelog.com/jsparty/139)
+- **:tada: Node.js best practices reached 50k stars**: Thank you to each and every contributor who helped turning this project into what it is today! We've got lots of plans for the time ahead, as we expand our ever-growing list of Node.js best practices even further
 
 - **:whale: Node.js + Docker best practices**: We've just released the Docker with Node.js section which includes 15 bullets about better coding techniques with Docker
 
-- **🎤 A talk at OdessaJS**: We will speak about Node.js testing this week at the great [OdessaJS conference](https://odessajs.org/)
 
 <br/><br/>
 
