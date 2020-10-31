@@ -27,15 +27,15 @@ A refatoração é um processo importante no fluxo de desenvolvimento iterativo.
 
  ### Exemplo: Análise de métodos complexos com CodeClimate (comercial)
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/codeanalysis-climate-complex-methods.PNG "Análise de métodos complexos")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-climate-complex-methods.PNG "Análise de métodos complexos")
 
 ### Exemplo: tendências de análise de código e histórico com CodeClimate (comercial)
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/codeanalysis-climate-history.PNG "Histórico de análise de código")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-climate-history.PNG "Histórico de análise de código")
 
 ### Exemplo: Resumo de análise de código e tendências com o SonarQube (comercial)
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/codeanalysis-sonarqube-dashboard.PNG "Histórico de análise de código")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-sonarqube-dashboard.PNG "Histórico de análise de código")
 
 
 <br/><br/>

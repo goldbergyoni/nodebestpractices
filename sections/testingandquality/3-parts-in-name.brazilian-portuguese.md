@@ -49,6 +49,6 @@ describe('Serviço de Produtos', function() {
 
  [Do blog "30 Node.js testing best practices" por Yoni Goldberg](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347)
 
- ![Um exemplo de relatório de teste](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/test-report-like-requirements.jpeg "Um exemplo de relatório de teste")
+ ![Um exemplo de relatório de teste](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/test-report-like-requirements.jpeg "Um exemplo de relatório de teste")
 
 <br/><br/>

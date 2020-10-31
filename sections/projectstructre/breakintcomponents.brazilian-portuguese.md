@@ -27,10 +27,10 @@ Então, o que a arquitetura da sua aplicação grita? Quando você olha para a e
 
 ### Bom: estruture sua solução por componentes independentes
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Solução de estruturação por componentes")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Solução de estruturação por componentes")
 
 <br/><br/>
 
 ### Ruim: Agrupe seus arquivos por papel técnico
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebyroles.PNG "Solução de estruturação por funções técnicas")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebyroles.PNG "Solução de estruturação por funções técnicas")

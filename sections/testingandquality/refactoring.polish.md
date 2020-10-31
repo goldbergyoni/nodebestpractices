@@ -29,15 +29,15 @@ will always be an issue if the underlying quality of your JavaScript is poor.
 
  ### Przykład: Analiza złożonych metod za pomocą CodeClimate (komercyjna)
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/codeanalysis-climate-complex-methods.PNG "Complex methods analysis")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-climate-complex-methods.PNG "Complex methods analysis")
 
 ### Przykład: trendy i historia analizy kodu za pomocą CodeClimate (komercyjna)
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/codeanalysis-climate-history.PNG "Code analysis history")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-climate-history.PNG "Code analysis history")
 
 ### Przykład: Podsumowanie analizy kodu i trendy w SonarQube (komercyjna)
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/codeanalysis-sonarqube-dashboard.PNG "Code analysis history")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-sonarqube-dashboard.PNG "Code analysis history")
 
 
 <br/><br/>

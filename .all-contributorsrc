@@ -914,6 +914,133 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "bushuai",
+      "name": "bushuai",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1875256?v=4",
+      "profile": "https://bushuai.cc",
+      "contributions": [
+        "review",
+        "content"
+      ]
+    },
+    {
+      "login": "benjamingr",
+      "name": "Benjamin Gruenbaum",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1315533?v=4",
+      "profile": "https://stackoverflow.com/users/1348195/benjamin-gruenbaum",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "byeze",
+      "name": "Ezequiel",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/7424138?v=4",
+      "profile": "https://github.com/byeze",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "juaoose",
+      "name": "Juan José Rodríguez",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/994594?v=4",
+      "profile": "https://github.com/juaoose",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "OrBin",
+      "name": "Or Bin",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6897234?v=4",
+      "profile": "https://github.com/OrBin",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "andreoav",
+      "name": "Andreo Vieira",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/508827?v=4",
+      "profile": "https://twitter.com/andreoav07",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "mikicho",
+      "name": "Michael Solomon",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/11459632?v=4",
+      "profile": "https://github.com/mikicho",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "jimmycallin",
+      "name": "Jimmy Callin",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2225828?v=4",
+      "profile": "https://github.com/jimmycallin",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "w01fS",
+      "name": "Siddharth",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/26025955?v=4",
+      "profile": "https://www.linkedin.com/in/siddharthofficial/",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "ryan3E0",
+      "name": "Ryan Smith",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1578766?v=4",
+      "profile": "https://ryansmith.tech/",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "bttger",
+      "name": "Tom Boettger",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/49961674?v=4",
+      "profile": "https://de.linkedin.com/in/tom-boettger",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "jormaechea",
+      "name": "Joaquín Ormaechea",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/5612500?v=4",
+      "profile": "https://github.com/jormaechea",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "dfrzuz",
+      "name": "dfrzuz",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/71859096?v=4",
+      "profile": "https://github.com/dfrzuz",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "victor-homyakov",
+      "name": "Victor Homyakov",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/121449?v=4",
+      "profile": "https://github.com/victor-homyakov",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",

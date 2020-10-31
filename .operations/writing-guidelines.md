@@ -16,7 +16,7 @@ Apart from the content being greatly edited and reliable, skimming through it sh
 
 ## 4. Consistent formatting
 
-The content is presented using fixed templates. Any future content must conform to the same template. If you wish to add new bullets copy a bullet format from an existing bullet and extend it to your needs. For additional information please view [this template](https://github.com/i0natan/nodebestpractices/blob/master/sections/template.md).
+The content is presented using fixed templates. Any future content must conform to the same template. If you wish to add new bullets copy a bullet format from an existing bullet and extend it to your needs. For additional information please view [this template](https://github.com/goldbergyoni/nodebestpractices/blob/master/sections/template.md).
 
 ## 5. It's About Node.js
 

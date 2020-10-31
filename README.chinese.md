@@ -20,7 +20,7 @@
 # 欢迎! 首先您应该知道的三件事情:
 **1. 当您读到这里，实际上您读了很多关于Node.js的优秀文章 -** 这是对Node.js最佳实践中排名最高的内容的总结和分享
 
-**2. 这里是最大的汇集，且每周都在增长 -** 当前，超过50个最佳实现，样式指南，架构建议已经呈现。每天都有新的issue和PR被创建，以使这本在线书籍不断更新。我们很乐于见到您能在这里做出贡献，不管是修复一些代码的错误，或是提出绝妙的新想法。请查看我们的[milestones](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
+**2. 这里是最大的汇集，且每周都在增长 -** 当前，超过50个最佳实现，样式指南，架构建议已经呈现。每天都有新的issue和PR被创建，以使这本在线书籍不断更新。我们很乐于见到您能在这里做出贡献，不管是修复一些代码的错误，或是提出绝妙的新想法。请查看我们的[milestones](https://github.com/goldbergyoni/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
 
 **3. 大部分的条目包含额外的信息 -** 大部分的最佳实践条目的旁边，您将发现 **🔗Read More** 链接，它将呈现给您示例代码，博客引用和更多信息
 
@@ -33,7 +33,7 @@
 4. [测试和总体质量实践 (8) ](#4-testing-and-overall-quality-practices)
 5. [进入生产实践 (16) ](#5-going-to-production-practices)
 6. :star: 新: [安全实践(23)](#6-security-best-practices)
-7. Performance Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
+7. Performance Practices ([coming soon](https://github.com/goldbergyoni/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 
 
 <br/><br/><br/>
@@ -82,7 +82,7 @@
 ## ![✔] 1.5 使用易于设置环境变量，安全和分级的配置
 
 
-**TL;DR:** 一个完美无瑕的配置安装应该确保 (a) 元素可以从文件中，也可以从环境变量中读取 (b) 密码排除在提交的代码之外 (c) 为了易于检索，配置是分级的。仅有几个包可以满足这样的条件，比如[rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) 和 [config](https://www.npmjs.com/package/config)。
+**TL;DR:** 一个完美无瑕的配置安装应该确保 (a) 元素可以从文件中，也可以从环境变量中读取 (b) 密码排除在提交的代码之外 (c) 为了易于检索，配置是分级的。仅有几个包可以满足这样的条件，比如[rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config) 和 [convict](https://www.npmjs.com/package/convict)。
 
 **否则:** 不能满足任意的配置要求将会使开发，运维团队，或者两者，易于陷入泥潭。
 
@@ -401,7 +401,7 @@ null == undefined   // true
 
 ## ![✔] 4.2 使用一个linter检测代码问题
 
-**TL;DR:** 使用代码linter检查基本质量并及早检测反模式。在任何测试之前运行它, 并将其添加为预提交的git钩子, 以最小化审查和更正任何问题所需的时间。也可在[Section 3](https://github.com/i0natan/nodebestpractices#3-code-style-practices)中查阅编码样式实践
+**TL;DR:** 使用代码linter检查基本质量并及早检测反模式。在任何测试之前运行它, 并将其添加为预提交的git钩子, 以最小化审查和更正任何问题所需的时间。也可在[Section 3](https://github.com/goldbergyoni/nodebestpractices#3-code-style-practices)中查阅编码样式实践
 
 **否则:** 您可能让一些反模式和易受攻击的代码传递到您的生产环境中。
 
@@ -666,7 +666,7 @@ null == undefined   // true
 
 **Otherwise:** 在开发过程中, 可能一个直白的安全隐患, 成为生产环境中一个严重问题。此外, 项目可能没有遵循一致的安全规范, 而导致引入漏洞, 或敏感信息被提交到远程仓库中。
 
-🔗 [**更多: Lint 规范**](/sections/security/lintrules.chinese.md)
+🔗 [**更多: Lint 规范**](/sections/security/lintrules.md)
 
 <br/><br/>
 
@@ -678,7 +678,7 @@ null == undefined   // true
 
 **否则:** 应用程序可能受到攻击, 导致拒绝服务, 在这种情况下, 真实用户会遭受服务降级或不可用。
 
-🔗 [**更多: 实施速率限制**](/sections/security/limitrequests.chinese.md)
+🔗 [**更多: 实施速率限制**](/sections/security/limitrequests.md)
 
 <br/><br/>
 
@@ -690,7 +690,7 @@ null == undefined   // true
 
 **否则:** 源代码管理, 即使对于私有仓库, 也可能会被错误地公开, 此时所有的秘密信息都会被公开。外部组织的源代码管理的访问权限将无意中提供对相关系统 (数据库、api、服务等) 的访问。
 
-🔗 [**更多: 安全管理**](/sections/security/secretmanagement.chinese.md)
+🔗 [**更多: 安全管理**](/sections/security/secretmanagement.md)
 
 <br/><br/>
 
@@ -702,7 +702,7 @@ null == undefined   // true
 
 **否则:** 未经验证或未脱敏处理的用户输入，可能会导致操作员在使用MongoDB进行NoSQL操作时进行注入, 而不使用适当的过滤系统或ORM很容易导致SQL注入攻击, 从而造成巨大的漏洞。
 
-🔗 [**更多: 使用 ORM/ODM 库防止查询注入**](/sections/security/ormodmusage.chinese.md)
+🔗 [**更多: 使用 ORM/ODM 库防止查询注入**](/sections/security/ormodmusage.md)
 
 <br/><br/>
 
@@ -710,7 +710,7 @@ null == undefined   // true
 
 **TL;DR:** 这些是与Node.js不直接相关的安全建议的集合-Node的实现与任何其他语言没有太大的不同。单击 "阅读更多" 浏览。
 
-🔗 [**更多: 通用安全最佳实际**](/sections/security/commonsecuritybestpractices.chinese.md)
+🔗 [**更多: 通用安全最佳实际**](/sections/security/commonsecuritybestpractices.md)
 
 <br/><br/>
 
@@ -722,7 +722,7 @@ null == undefined   // true
 
 **否则:** 攻击者可以对应用程序的用户进行直接攻击, 导致巨大的安全漏洞
 
-🔗 [**更多: 在应用程序中使用安全的header**](/sections/security/secureheaders.chinese.md)
+🔗 [**更多: 在应用程序中使用安全的header**](/sections/security/secureheaders.md)
 
 <br/><br/>
 
@@ -734,7 +734,7 @@ null == undefined   // true
 
 **否则:** 攻击者可以检测到您的web框架并攻击其所有已知的漏洞。
 
-🔗 [**更多: 安全依赖**](/sections/security/dependencysecurity.chinese.md)
+🔗 [**更多: 安全依赖**](/sections/security/dependencysecurity.md)
 
 <br/><br/>
 
@@ -758,7 +758,7 @@ null == undefined   // true
 
 **否则:** 攻击者可能会将恶意的JavaScript代码存储在您的DB中, 然后将其发送给可怜的客户端。
 
-🔗 [**更多: 转义输出**](/sections/security/escape-output.chinese.md)
+🔗 [**更多: 转义输出**](/sections/security/escape-output.md)
 
 <br/><br/>
 
@@ -770,7 +770,7 @@ null == undefined   // true
 
 **否则:** 您疏忽和宽松的方法大大增加了攻击面, 并鼓励攻击者尝试许多输入, 直到他们找到一些组合, 使应用程序崩溃。
 
-🔗 [**更多: 验证传人的JSON schemas**](/sections/security/validation.chinese.md)
+🔗 [**更多: 验证传入的JSON schemas**](/sections/security/validation.md)
 
 <br/><br/>
 
@@ -782,7 +782,7 @@ null == undefined   // true
 
 **否则:** 过期或错误的令牌可能被第三方恶意使用，以访问应用程序，并模拟令牌的所有者。
 
-🔗 [**更多: 为JSON Web Token添加黑名单**](/sections/security/expirejwt.chinese.md)
+🔗 [**更多: 为JSON Web Token添加黑名单**](/sections/security/expirejwt.md)
 
 <br/><br/>
 
@@ -794,7 +794,7 @@ null == undefined   // true
 
 **否则:** 攻击者可以发出无限制的密码匹配尝试, 以获取对应用程序中特权帐户的访问权限。
 
-🔗 [**更多: 限制登录频率**](/sections/security/login-rate-limit.chinese.md)
+🔗 [**更多: 限制登录频率**](/sections/security/login-rate-limit.md)
 
 <br/><br/>
 
@@ -806,7 +806,7 @@ null == undefined   // true
 
 **否则:** 在服务器上运行脚本的攻击者在本地计算机上获得无限制的权利 (例如，改变iptable，引流到他的服务器上)
 
-🔗 [**更多: 使用非root用户运行Node.js**](/sections/security/non-root-user.chinese.md)
+🔗 [**更多: 使用非root用户运行Node.js**](/sections/security/non-root-user.md)
 
 <br/><br/>
 
@@ -818,7 +818,7 @@ null == undefined   // true
 
 **否则:** 您的应用程序将不得不处理大的请求, 无法处理它必须完成的其他重要工作, 从而导致对DOS攻击的性能影响和脆弱性。
 
-🔗 [**更多: 限制负载大小**](/sections/security/requestpayloadsizelimit.chinese.md)
+🔗 [**更多: 限制负载大小**](/sections/security/requestpayloadsizelimit.md)
 
 <br/><br/>
 
@@ -842,7 +842,7 @@ null == undefined   // true
 
 **否则:** 写得不好的正则表达式可能容易受到正则表达式DoS攻击的影响, 这将完全阻止event loop。例如，流行的`moment`包在2017年的11月，被发现使用了错误的RegEx用法而易受攻击。
 
-🔗 [**更多: 防止恶意正则**](/sections/security/regex.chinese.md)
+🔗 [**更多: 防止恶意正则**](/sections/security/regex.md)
 
 <br/><br/>
 
@@ -890,7 +890,7 @@ null == undefined   // true
 
 **否则:** 敏感应用程序详细信息(如服务器文件路径、使用中的第三方模块和可能被攻击者利用的应用程序的其他内部工作流)可能会从stack trace发现的信息中泄露。
 
-🔗 [**更多: 隐藏客户端的错误详细信息**](/sections/security/hideerrors.chinese.md)
+🔗 [**更多: 隐藏客户端的错误详细信息**](/sections/security/hideerrors.md)
 
 <br/><br/>
 
@@ -912,7 +912,7 @@ null == undefined   // true
 
 **否则:** 可以通过不安全的连接发送cookie, 攻击者可能会使用会话标识来标识web应用程序的基础框架以及特定于模块的漏洞。
 
-🔗 [**更多: cookie和session安全**](/sections/security/sessions.chinese.md)
+🔗 [**更多: cookie和session安全**](/sections/security/sessions.md)
 
 <br/><br/>
 
@@ -923,6 +923,18 @@ null == undefined   // true
 **TL;DR:** 当错误未被处理时, Node进程将崩溃。即使错误被捕获并得到处理，许多最佳实践甚至建议退出。例如, Express会在任何异步错误上崩溃 - 除非使用catch子句包装路由。这将打开一个非常惬意的攻击点, 攻击者识别哪些输入会导致进程崩溃并重复发送相同的请求。没有即时补救办法, 但一些技术可以减轻苦楚: 每当进程因未处理的错误而崩溃，都会发出警报，验证输入并避免由于用户输入无效而导致进程崩溃，并使用catch将所有路由处理包装起来，并在请求中出现错误时, 考虑不要崩溃(与全局发生的情况相反)。
 
 **否则:** 这只是一个起到教育意义的假设: 给定许多Node.js应用程序, 如果我们尝试传递一个空的JSON正文到所有POST请求 - 少数应用程序将崩溃。在这一点上, 我们可以只是重复发送相同的请求, 就可以轻松地搞垮应用程序。
+
+<br/><br/><br/>
+
+## ![✔] 6.24. 避免不安全的重定向
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
+
+**TL;DR:** 不验证用户输入的重定向可使攻击者启动网络钓鱼诈骗，窃取用户凭据，以及执行其他恶意操作。
+
+**否则:** 当攻击者发现你没有校验用户提供的外部输入时，他们会在论坛、社交媒体以和其他公共场合发布他们精心制作的链接来诱使用户点击，以此达到漏洞利用的目的。
+
+🔗 [**阅读更多: 避免不安全的重定向**](/sections/security/saferedirects.chinese.md)
 
 <br/><br/><br/>
 
@@ -939,7 +951,7 @@ null == undefined   // true
 <br/><br/><br/>
 
 # Milestones
-To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/i0natan/nodebestpractices/milestones) and join the working groups if you want to contribute to this project.
+To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/goldbergyoni/nodebestpractices/milestones) and join the working groups if you want to contribute to this project.
 
 <br/><br/>
 
@@ -968,3 +980,4 @@ Full Stack Developer based in New Zealand, interested in architecting and buildi
 We appreciate any contribution, from a single word fix to a new best practice. View our contributors and [contributing documentation here!](CONTRIBUTORS.md)
 
 <br/><br/><br/>
+
