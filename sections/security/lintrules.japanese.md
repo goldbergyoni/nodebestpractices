@@ -1,12 +1,12 @@
-# Embrace linter security rules
+# linter のセキュリティルールを受け入れる
 
-### One Paragraph Explainer
+### 一段落説明
 
-Security plugins for ESLint and TSLint such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) and [tslint-config-security](https://www.npmjs.com/package/tslint-config-security) offer code security checks based on a number of known vulnerabilities, such as unsafe RegEx, unsafe use of `eval()`, and non-literal filenames being used when accessing the file system within an application. The use of git hooks such as [pre-git](https://github.com/bahmutov/pre-git) allows to further enforce any rules on source control before they get distributed to remotes, one of which can be to check that no secrets were added to source control.
+[eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) や [tslint-config-security](https://www.npmjs.com/package/tslint-config-security) といった ESLint や TSLint 用のセキュリティプラグインは、安全でない正規表現や安全でない `eval()` の使用、そしてアプリケーション内のファイルシステムにアクセスする際にリテラルでないファイル名を使用するといった、多くの既知の脆弱性に基づいたコードセキュリティチェックを提供しています。[pre-git](https://github.com/bahmutov/pre-git) のような git hooks の利用することで、リモートに配布される前に、シークレットがコードに含まれていないかチェックするなど、ソースコントロール上にさらなるルールを強制することができます。
 
-### `eslint-plugin-security` example
+### `eslint-plugin-security` の例
 
-Some examples of unsafe practice rules detected by `eslint-plugin-security`:
+`eslint-plugin-security` によって検出される安全でないプラクティスの例:
 
 `detect-pseudoRandomBytes`
 
@@ -34,11 +34,11 @@ eval(userinput);
 const unsafe = new RegExp('/(x+x+)+y/)');
 ```
 
-An example of running `eslint-plugin-security` on a Node.js project with the above unsafe code practices:
+上記の安全でないコード例を含んだ Node.js プロジェクトにおける `eslint-plugin-security` の実行例:
 
 ![nsp check example](/assets/images/eslint-plugin-security.png)
 
-### What other bloggers say
+### 他のブロガーが言っていること
 
-From the blog by [Adam Baldwin](https://www.safaribooksonline.com/blog/2014/03/28/using-eslint-plugins-node-js-app-security/):
-> Linting doesn’t have to be just a tool to enforce pedantic rules about whitespace, semicolons or eval statements. ESLint provides a powerful framework for eliminating a wide variety of potentially dangerous patterns in your code (regular expressions, input validation, and so on). I think it provides a powerful new tool that’s worthy of consideration by security-conscious JavaScript developers.
+[Adam Baldwin](https://www.safaribooksonline.com/blog/2014/03/28/using-eslint-plugins-node-js-app-security/) のブログより:
+> Linting は、空白やセミコロン、eval 文などの細かいルールを強制するだけのツールではありません。ESLint は、コード内の様々な潜在的に危険なパターン（正規表現、入力値の検証など）を取り除くための強力なフレームワークを提供します。それはセキュリティを意識する JavaScript デベロッパーにとって検討に値する強力なツールを提供してくれると思います。
