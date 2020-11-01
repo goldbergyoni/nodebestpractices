@@ -2,7 +2,7 @@
 
 ### One Paragraph Explainer
 
-**Always** hash users' passwords as opposed to storing them as text; there are three options that depend on your use case for hashing user passwords. All the below functions need to be implemented properly to provide any security. (Reference the miminums or see the [IETF's recommendations](https://tools.ietf.org/id/draft-whited-kitten-password-storage-00.html#name-kdf-recommendations) for what parameters to use for each) You should use the recommended properties as a minimum, using higher parameters and a combination that's unique to your program can help mitigate some of the damage if someone ever runs off with your password hashes. Also, always add a [salt](https://auth0.com/blog/adding-salt-to-hashing-a-better-way-to-store-passwords/) (reproducable data, unique to the user and your system) to your passwords before you hash.
+**Always** hash users' passwords as opposed to storing them as text; there are three options that depend on your use case for hashing user passwords. All the below functions need to be implemented properly to provide any security. (Reference the minimums or see the [IETF's recommendations](https://tools.ietf.org/id/draft-whited-kitten-password-storage-00.html#name-kdf-recommendations) for what parameters to use for each) You should use the recommended properties as a minimum, using higher parameters and a combination that's unique to your program can help mitigate some of the damage if someone ever runs off with your password hashes. Also, always add a [salt](https://auth0.com/blog/adding-salt-to-hashing-a-better-way-to-store-passwords/) (reproducible data, unique to the user and your system) to your passwords before you hash.
 
   - For the majority of use cases, the popular library [`bcrypt`](https://www.npmjs.com/package/bcrypt) can be used. (minimum: `cost:12`, password lengths must be <64)
   - For a slightly harder native solution, or for unlimited size passwords, use the [`scrypt`](https://nodejs.org/dist/latest-v14.x/docs/api/crypto.html#crypto_crypto_scrypt_password_salt_keylen_options_callback) function. (minimums: `N:32768, r:8, p:1`)
@@ -49,7 +49,7 @@ try {
   }
 ```
 
-### Code example - PBKDF2 (Password-Based Cryptography Specification Version 2.1)
+### Code example - PBKDF2 (Password-Based Key Derivation Function, Crypto Spec v2.1)
 
 ```javascript
 try {
@@ -91,6 +91,10 @@ All of the below algorithms/functions need to be implemented properly to provide
 
 The external dependency, [`bcrypt`](https://www.npmjs.com/package/bcrypt) is the most widely supported and should be used when possible, as when using `bcrypt`, a number of 'rounds' can be specified in order to provide a secure hash. This sets the work factor or the number of 'rounds' the data is processed for, and more hashing rounds leads to more secure hash (although this at the cost of CPU time). The introduction of hashing rounds means that the brute force factor is significantly reduced, as password crackers are slowed down increasing the time required to generate one attempt.
 
+##### Under the hood
+
+[`bcrypt`](https://www.npmjs.com/package/bcrypt) 
+
 The [`scrypt`](https://nodejs.org/dist/latest-v14.x/docs/api/crypto.html#crypto_crypto_scrypt_password_salt_keylen_options_callback) function included in the native crypto module can be used as it is a slight improvement over `bcrypt`, allowing for unlimited length passwords, and does not add a dependency, though it needs more configuration and is newer and thus less scrutinized. `scrypt` uses cost (to increase CPU/memory cost), blockSize (to increase memory cost), and parallelization (to increase the cost of breaking it up into separate operations) together to define how secure it is, how long it will take, and what it's most secure against.
 
 If FIPS or other compliance is absolutely necessary, the older [`PBKDF2`](https://nodejs.org/dist/latest-v14.x/docs/api/crypto.html#crypto_crypto_pbkdf2_password_salt_iterations_keylen_digest_callback) function included in the native crypto module should be used. `PBKDF2` has a similar api to `bcrypt` in that it uses an iteration count to define the strength and time to spend.
@@ -99,11 +103,26 @@ On track to be added sometime in 2021 (Through addition to OpenSSL) the `Argon2`
 
 #### Salting
 
-No matter what the algorithm/function, always inculde some string that's unquie to your system and the specific user. Some examples might be a combination of username/userid and your app name or the user's email and your business email. However this should also be considered when choosing your hashing algorithm/function since BCrypt limits you to 64 characters, whereas the more complicated SCrypt lets you use as much salt and password as you want.
+No matter what the algorithm/function, always include some string that's unique to your system and the specific user. Some examples might be a combination of username/userID and your app name or the user's email and your business email. However this should also be considered when choosing your hashing algorithm/function since BCrypt limits you to 64 characters, whereas the more complicated SCrypt lets you use as much salt and password as you want.
+
+##### Why use salt?
+
+Adding salt changes the hash and thus makes it different from a hash of the same password in someone elses
+system. If someone uses the same password for multiple sites, and a hash of their password is obtained from someone elses data breach, they won't be able to match it to the hash in your database. When everyone uses hashes, it becomes nearly impossible for attackers to identify patterns of password reuse.
+
+#### Password Length
+
+If your password plus salt has to come in under a limit, and if you use good salt, your users passwords will be even more limited. One way around this, which can be also be good generally, is to pre-hash the passwords. It can create administrative burden, but if you can commit to consistently using a single, simple, hash on the font-end you can set the pre-hash to generate hex strings of an exact length from the password before transmitting it to your server. This means you can have strong checks on your API; for example, only allowing hex characters of exactly 256 characters in length, but still giving users the ability to use passwords of any length with any characters. (You still need to use a good enough hashing that you don't accidentally create collisions where two different passwords create the same hash, it doesn't hurt to use more secure hashing for this, it just takes longer)
+
+Example Browser code would be `const hash = crypto.subtle.digest('sha-256', password)`;
 
 #### Randomness
 
 Whenever possible, leave the generation of randomness to the algorithms you choose. Notice, no mention of an alternative to `Math.random()` was provided, that's because you should even avoid using `crypto.random()` yourself, as *Randomness* is a special kind of limited resource on a computer, and abusing it can cause problems for your program and even other programs on the machine.
+
+#### How BCrypt/SCrypt Work
+
+Both BCrypt/SCrypt use iterations since their premise is that if it takes you X amount of time and resources to hash once, and the attacker X^some-big-number to break the hash with brute force, then if you hash the hash of a hash etc. then you're greatly increasing the magnitude of resources an attacker would have to expend to break your hash. SCrypt also has parameters for block/chunk size and parallelism to try and add "hardness" for attackers that try to assume they only need a certain amount of RAM or CPU cores, though the effectiveness of these parameters is hotly debated.
 
 #### References
 
