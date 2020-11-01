@@ -1,17 +1,17 @@
-# Extract secrets from config files or use npm package that encrypts them
+# 設定ファイルからシークレットを抽出する、もしくはパッケージを利用して暗号化する
 
-### One Paragraph Explainer
+### 一段落説明
 
-The most common and secure way to provide a Node.js application access to keys and secrets is to store them using environment variables on the system where it is being run. Once set, these can be accessed from the global `process.env` object.
-A litmus test for whether an app has all config correctly factored out of the code is whether the codebase could be made open source at any moment, without compromising any credentials.
+Node.js アプリケーションにキーやシークレットを渡すための最も一般的で安全な方法は、実行環境における環境変数にそれらの値を格納することです。環境変数に設定することで、それらの値にグローバルオブジェクトである `process.env` オブジェクトからアクセスできるようになります。
+アプリケーションが全ての設定をコードから正しく抽出できているかどうかのリトマステストとしては、クレデンシャルを晒すことなくコードをいつでもオープンソースにすることができるかどうか、というものがあります。
 
-For rare situations where secrets do need to be stored inside source control, using a package such as [cryptr](https://www.npmjs.com/package/cryptr) allows these to be stored in an encrypted form as opposed to in plain text.
+シークレットをソースコントロールの中に格納しなければならない稀な状況の場合においては、[cryptr](https://www.npmjs.com/package/cryptr) のようなパッケージを使用することで、平文ではなく暗号化された形で保存することができます。
 
-There are a variety of tools available which use git commit to audit commits and commit messages for accidental additions of secrets, such as [git-secrets](https://github.com/awslabs/git-secrets).
+[git-secrets](https://github.com/awslabs/git-secrets) のように、git commit においてコミットやコミットメッセージを監査して、誤ってシークレットを追加されていないかをチェックするツールが多く存在します。
 
-### Code example
+### コード例
 
-Accessing an API key stored in an environment variable:
+環境変数に格納された API キーにアクセスする:
 
 ```javascript
     const azure = require('azure');
@@ -20,7 +20,7 @@ Accessing an API key stored in an environment variable:
     const blobService = azure.createBlobService(apiKey);
 ```
 
-Using `cryptr` to store an encrypted secret:
+`cryptr` を死傷して暗号化されたシークレットを保存する:
 
 ```javascript
 const Cryptr = require('cryptr');
@@ -28,9 +28,9 @@ const cryptr = new Cryptr(process.env.SECRET);
  
 let accessToken = cryptr.decrypt('e74d7c0de21e72aaffc8f2eef2bdb7c1');
  
-console.log(accessToken);  // outputs decrypted string which was not stored in source control
+console.log(accessToken);  // ソースコントロールに保存されていない、復号化された文字列を出力します
 ```
 
-### What other bloggers say
+### 他のブロガーが言っていること
 
-> Env vars are easy to change between deploys without changing any code; unlike config files, there is little chance of them being checked into the code repo accidentally; and unlike custom config files, or other config mechanisms such as Java System Properties, they are a language- and OS-agnostic standard. [From: The 12 factor app](https://12factor.net/config)
+> 環境変数は、コードを変更することなくデプロイごとに簡単に変更できる。設定ファイルとは異なり、誤ってリポジトリにチェックインされる可能性はほとんどない。また、独自形式の設定ファイルや Java System Properties など他の設定の仕組みとは異なり、環境変数は言語や OS に依存しない標準である。[The 12 factor app より](https://12factor.net/ja/config)
