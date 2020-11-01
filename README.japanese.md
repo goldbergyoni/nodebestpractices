@@ -775,15 +775,15 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 6.3 Extract secrets from config files or use packages to encrypt them
+## ![✔] 6.3 設定ファイルからシークレットを抽出する、もしくはパッケージを利用して暗号化する
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A3:Sensitive%20Data%20Exposure%20-green.svg" alt=""/></a>
 
-**TL;DR:** Never store plain-text secrets in configuration files or source code. Instead, make use of secret-management systems like Vault products, Kubernetes/Docker Secrets, or using environment variables. As a last resort, secrets stored in source control must be encrypted and managed (rolling keys, expiring, auditing, etc). Make use of pre-commit/push hooks to prevent committing secrets accidentally
+**TL;DR:** 設定ファイルやソースコードに平文でシークレットを格納してはいけません。代わりに、Vault 製品や Kubernetes/Docker シークレット、環境変数のようなシークレット管理システムを利用してください。仕方なく、ソースコントロールにシークレットを格納する場合は、暗号化して管理（キーのローリング、有効期限の設定、監査など）をする必要があります。誤ってシークレットをコミットしないように、pre-commit/push hooks を利用してください。
 
-**Otherwise:** Source control, even for private repositories, can mistakenly be made public, at which point all secrets are exposed. Access to source control for an external party will inadvertently provide access to related systems (databases, apis, services, etc).
+**さもないと:** ソースコントロールは、たとえプライベートリポジトリであっても誤ってパブリックになる可能性があり、その時点で全てのシークレットが公開されてしまいます。外部サービスに与えられたソースコントロールへのアクセス権限は、関連するシステム（データベース、API、その他サービスなど）へのアクセス権限をうっかり与えてしまうことがあります。
 
-🔗 [**Read More: Secret management**](/sections/security/secretmanagement.md)
+🔗 [**さらに読む: シークレット管理**](/sections/security/secretmanagement.japanese.md)
 
 <br/><br/>
 
