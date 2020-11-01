@@ -91,10 +91,6 @@ All of the below algorithms/functions need to be implemented properly to provide
 
 The external dependency, [`bcrypt`](https://www.npmjs.com/package/bcrypt) is the most widely supported and should be used when possible, as when using `bcrypt`, a number of 'rounds' can be specified in order to provide a secure hash. This sets the work factor or the number of 'rounds' the data is processed for, and more hashing rounds leads to more secure hash (although this at the cost of CPU time). The introduction of hashing rounds means that the brute force factor is significantly reduced, as password crackers are slowed down increasing the time required to generate one attempt.
 
-##### Under the hood
-
-[`bcrypt`](https://www.npmjs.com/package/bcrypt) 
-
 The [`scrypt`](https://nodejs.org/dist/latest-v14.x/docs/api/crypto.html#crypto_crypto_scrypt_password_salt_keylen_options_callback) function included in the native crypto module can be used as it is a slight improvement over `bcrypt`, allowing for unlimited length passwords, and does not add a dependency, though it needs more configuration and is newer and thus less scrutinized. `scrypt` uses cost (to increase CPU/memory cost), blockSize (to increase memory cost), and parallelization (to increase the cost of breaking it up into separate operations) together to define how secure it is, how long it will take, and what it's most secure against.
 
 If FIPS or other compliance is absolutely necessary, the older [`PBKDF2`](https://nodejs.org/dist/latest-v14.x/docs/api/crypto.html#crypto_crypto_pbkdf2_password_salt_iterations_keylen_digest_callback) function included in the native crypto module should be used. `PBKDF2` has a similar api to `bcrypt` in that it uses an iteration count to define the strength and time to spend.
