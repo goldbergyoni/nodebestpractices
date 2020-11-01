@@ -1,10 +1,10 @@
-#  Limit concurrent requests using a balancer or a middleware
+# ミドルウェアを使用して同時リクエストを制限する
 
-### One Paragraph Explainer
+### 一段落説明
 
-Rate limiting should be implemented in your application to protect a Node.js application from being overwhelmed by too many requests at the same time. Rate limiting is a task best performed with a service designed for this task, such as nginx, however it is also possible with [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) package or middleware such as [express-rate-limiter](https://www.npmjs.com/package/express-rate-limit) for Express.js applications.
+同時に発生する多くのリクエストから Node.js アプリケーションを守るために、レートリミットを実装する必要があります。レート制限は、nginx のような、このタスクを実装するために最も適したサービスを使うべきですが、[rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) パッケージや、[express-rate-limiter](https://www.npmjs.com/package/express-rate-limit) のようなExpress.js アプリケーション向けのミドルウェアを使用することでも実現可能です。
  
-  ### Code example: pure Node.js app with [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible)
+### コード例: [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) を使用したシンプルな Node.js アプリケーション
  
   ```javascript
  const http = require('http');
@@ -20,13 +20,13 @@ Rate limiting should be implemented in your application to protect a Node.js app
    storeClient: redisClient,
    points: 20,
    duration: 1,
-   blockDuration: 2, // block for 2 seconds if consumed more than 20 points per second
+   blockDuration: 2, // 1 秒に 20 より多いポイントが消費された場合に、2 秒間ブロックします
  });
 
  http.createServer(async (req, res) => {
     try {
     const rateLimiterRes = await rateLimiter.consume(req.socket.remoteAddress);
-    // Some app logic here
+    // アプリケーションのロジックがここに入ります
 
     res.writeHead(200);
     res.end();
@@ -38,28 +38,28 @@ Rate limiting should be implemented in your application to protect a Node.js app
    .listen(3000);
  ```
 
-You can find [more examples in the documentation](https://github.com/animir/node-rate-limiter-flexible/wiki/Overall-example).
+[ドキュメントにより多くの例](https://github.com/animir/node-rate-limiter-flexible/wiki/Overall-example)があります。
 
-### Code example: Express rate limiting middleware for certain routes
+### コード例: 特定のルーティングに対する Express レートリミットミドルウェア
 
-Using [express-rate-limiter](https://www.npmjs.com/package/express-rate-limit) npm package
+npm パッケージ [express-rate-limiter](https://www.npmjs.com/package/express-rate-limit) を使用します。
 
 ```javascript
 const RateLimit = require('express-rate-limit');
-// important if behind a proxy to ensure client IP is passed to req.ip
+// Express アプリケーションをプロキシの背後で実行している場合、クライアントの IP アドレスが req.ip に渡されていることを保証するために重要です
 app.enable('trust proxy'); 
  
 const apiLimiter = new RateLimit({
-  windowMs: 15*60*1000, // 15 minutes
+  windowMs: 15*60*1000, // 15 分
   max: 100,
 });
  
-// only apply to requests that begin with /user/
+// /user/ で始まるリクエストにのみ適用します
 app.use('/user/', apiLimiter);
 ```
 
-### What Other Bloggers Say
+### 他のブロガーが言っていること
 
-From the [NGINX blog](https://www.nginx.com/blog/rate-limiting-nginx/):
-> Rate limiting can be used for security purposes, for example to slow down brute‑force password‑guessing attacks. It can help protect against DDoS attacks by limiting the incoming request rate to a value typical for real users, and (with logging) identify the targeted URLs. More generally, it is used to protect upstream application servers from being overwhelmed by too many user requests at the same time.
+[NGINX blog](https://www.nginx.com/blog/rate-limiting-nginx/) より:
+> レートリミットは、ブルートフォースパスワード推測攻撃を遅らせるなど、セキュリティを目的として使用することができます。受信リクエストのレートを実際のユーザーの現実的な値に制限することで DDoS 攻撃を対策するのに役立ち、（ロギングを行うことで）狙われている URL を特定することができます。より一般的には、一度に過剰なユーザーリクエストを受けた場合に、上流のアプリケーションサーバーを保護するために使用されます。
 

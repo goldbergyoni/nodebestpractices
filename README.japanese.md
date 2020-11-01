@@ -763,15 +763,15 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 6.2. Limit concurrent requests using a middleware
+## ![✔] 6.2. ミドルウェアを使用して同時リクエストを制限する
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** DOS attacks are very popular and relatively easy to conduct. Implement rate limiting using an external service such as cloud load balancers, cloud firewalls, nginx, [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) package, or (for smaller and less critical apps) a rate-limiting middleware (e.g. [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
+**TL;DR:** DOS 攻撃はとても非常に有名で、比較的簡単に実行することができます。クラウドのロードバランサーやファイアウォール、nginx、[rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) パッケージなどの外部サービス、または（小規模で重要度の低いアプリケーションの場合は）レートリミットミドルウェア（[express-rate-limit](https://www.npmjs.com/package/express-rate-limit) など）などを使用して、レートリミットを実装してください。
 
-**Otherwise:** An application could be subject to an attack resulting in a denial of service where real users receive a degraded or unavailable service.
+**さもないと:** アプリケーションは攻撃を受ける可能性があり、結果としてユーザーに不十分なサービスを提供したり、サービス停止をしなければならない状況に陥ります。
 
-🔗 [**Read More: Implement rate limiting**](/sections/security/limitrequests.md)
+🔗 [**さらに読む: レートリミットの実装**](/sections/security/limitrequests.japanese.md)
 
 <br/><br/>
 
