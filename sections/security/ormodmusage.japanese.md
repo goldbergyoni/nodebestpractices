@@ -1,11 +1,10 @@
-# Preventing database injection vulnerabilities by using ORM/ODM libraries or other DAL packages
+# ORM/ODM ライブラリを使用してクエリインジェクション脆弱性を防ぐ
 
-### One Paragraph Explainer
+### 一段落説明
 
-When creating your database logic you should watch out for eventual injection vectors that could be exploited by potential attackers. Writing database queries manually or not including data validation for user requests are the easiest methods to allow for these vulnerabilities. This situation is however easy to avoid when you use suitable packages for validating input and handling database operations. In many cases your system will be safe and sound by using a validation library like
-[joi](https://github.com/hapijs/joi) or [yup](https://github.com/jquense/yup) and an ORM/ODM from the list below. This should guarantee the use of parameterized queries and data bindings to ensure the validated data is properly escaped and handled without opening unwanted attack vectors. Many of these libraries will ease your life as a developer by enabling many useful features like not having to write complex queries manually, supplying types for language-based type systems or converting data types to wanted formats. To conclude, __always__ validate any data you are going to store and use proper data-mapping libraries to handle the dangerous work for you.
+データベースロジックを作成している際は、潜在的な攻撃者に悪用される可能性のある、偶発的なインジェクションの脆弱性に注意しなければなりません。データベースクエリを手動で書いたり、ユーザーリクエストに対してデータ検証を含まないことは、このような脆弱性をもたらす最も簡単な方法です。しかしながら、この状況は入力を検証したり、データベースのオペレーションを処理してくれる適切なパッケージを利用することで、容易に防ぐことができます。多くの場合、[joi](https://github.com/hapijs/joi) や [yup](https://github.com/jquense/yup) といった検証ライブラリや、下記のリストにあるような ORM/ODM を利用することで、システムは安全で確かなものになります。これによって、検証されたデータは適切にエスケープされていて、望まない攻撃を受けることなく処理されるということを明確にするために、パラメータ化されたクエリとデータバインディングの使用を保証します。これらのライブラリの多くは、複雑なクエリを自ら書く必要を無くすこと、言語ベースの型システム用の型を提供すること、データ型を希望の形式に変換してくれることなど、多くの便利な機能を実現し、開発者としての生活を楽にしてくれるでしょう。まとめると、__必ず__、 保存しようとしているデータを検証し、危険な仕事を処理してくれる適切なデータマッピングライブラリを使用してください。
 
-### Libraries
+### ライブラリ
 
 - [TypeORM](https://github.com/typeorm/typeorm)
 - [sequelize](https://github.com/sequelize/sequelize)
@@ -14,24 +13,24 @@ When creating your database logic you should watch out for eventual injection ve
 - [Objection.js](https://github.com/Vincit/objection.js)
 - [waterline](https://github.com/balderdashy/waterline)
 
-### Example - NoSQL query injection
+### 例 - NoSQL クエリインジェクション
 
 ```javascript
-// A query of
+// このクエリの
 db.balances.find({
   active: true,
   $where: (obj) => obj.credits - obj.debits < userInput
 });
 
-// Where userInput equals
+// userInput が下記のとき、
 "(function(){var date = new Date(); do{curDate = new Date();}while(curDate-date<10000); return Math.max();})()"
 
-// will trigger a denial of service
+// サービス停止を引き起こします
 
-// Another user input might inject other logic resulting in the database exposing sensitive data
+// このユーザー入力に他のロジックが注入された場合、センシティブなデータを晒してしまうことになるかもしれません
 ```
 
-### Example - SQL injection
+### 例 - SQL インジェクション
 
 ```
 SELECT username, firstname, lastname FROM users WHERE id = 'user input';
@@ -39,7 +38,7 @@ SELECT username, firstname, lastname FROM users WHERE id = 'user input';
 SELECT username, firstname, lastname FROM users WHERE id = 'evil'input';
 ```
 
-### Additional resources
+### その他のリソース
 
 🔗 [OWASP SQL Injection](https://www.owasp.org/index.php/SQL_Injection)
 
@@ -47,8 +46,8 @@ SELECT username, firstname, lastname FROM users WHERE id = 'evil'input';
 
 🔗 [Testing for NoSQL Injection](https://www.owasp.org/index.php/Testing_for_NoSQL_injection)
 
-### What other bloggers say
+### 他のブロガーが言っていること
 
-Risks of NoSQL injection from the [OWASP wiki](https://www.owasp.org/index.php/Testing_for_NoSQL_injection)
+[OWASP wiki](https://www.owasp.org/index.php/Testing_for_NoSQL_injection) より、NoSQL インジェクションのリスク
 
-> NoSQL injection attacks may execute in different areas of an application than traditional SQL injection. Where SQL injection would execute within the database engine, NoSQL variants may execute during within the application layer or the database layer, depending on the NoSQL API used and data model. Typically NoSQL injection attacks will execute where the attack string is parsed, evaluated, or concatenated into a NoSQL API call.
+> NoSQL インジェクション攻撃は、従来の SQL インジェクションとは異なる領域で実行される可能性があります。SQL インジェクションはデータベースエンジン内部で実行されるのに対し、NoSQL インジェクションは、使用される NoSQL API とデータモデルによっては、アプリケーションレイヤーとデータベースレイヤーの間で実行されるかもしれません。典型的には、NoSQL インジェクション攻撃は、攻撃文字列がパース、評価され、そして NoSQL API の呼び出しに結合された際に実行されます。
