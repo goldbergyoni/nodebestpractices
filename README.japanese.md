@@ -787,15 +787,15 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 6.4. Prevent query injection vulnerabilities with ORM/ODM libraries
+## ![✔] 6.4. ORM/ODM ライブラリを使用してクエリインジェクション脆弱性を防ぐ
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
-**TL;DR:** To prevent SQL/NoSQL injection and other malicious attacks, always make use of an ORM/ODM or a database library that escapes data or supports named or indexed parameterized queries, and takes care of validating user input for expected types. Never just use JavaScript template strings or string concatenation to inject values into queries as this opens your application to a wide spectrum of vulnerabilities. All the reputable Node.js data access libraries (e.g. [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose)) have built-in protection against injection attacks.
+**TL;DR:** SQL/NoSQL インジェクションやその他の悪意ある攻撃を防ぐために、データをエスケープしたり、名前付きやインデックス付きのパラメータ化されたクエリをサポートしていたり、ユーザー入力が期待する型となっているか検証してくれる ORM/ODM やデータベースライブラリを活用してください。JavaScript のテンプレート文字列や文字列の結合を使用して値をクエリに挿入してはいけません。これはアプリケーションに広範囲の脆弱性を与えます。全ての評判の良い Node.js データアクセスライブラリ（[Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose) など）はインジェクション攻撃に対してあらかじめ対策されています。
 
-**Otherwise:** Unvalidated or unsanitized user input could lead to operator injection when working with MongoDB for NoSQL, and not using a proper sanitization system or ORM will easily allow SQL injection attacks, creating a giant vulnerability.
+**さもないと:** 未検証またはサニタイズされていないユーザー入力は、MongoDB のような NoSQL データベースで作業している際にオペレーターインジェクションを招きますし、適切なサニタイズシステムまたは ORM を利用しないことは容易に SQL インジェクション攻撃を招き、多大な脆弱性を生みます。
 
-🔗 [**Read More: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.md)
+🔗 [**さらに読む: ORM/ODM ライブラリを使用してクエリインジェクション脆弱性を防ぐ**](/sections/security/ormodmusage.japanese.md)
 
 <br/><br/>
 
