@@ -1,39 +1,38 @@
-# Monitoring!
+# モニタリング!
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-At the very basic level, monitoring means you can *easily* identify when bad things happen at production. For example, by getting notified by email or Slack. The challenge is to choose the right set of tools that will satisfy your requirements without breaking your bank. May I suggest, start with defining the core set of metrics that must be watched to ensure a healthy state – CPU, server RAM,  Node process RAM (less than 1.4GB), the number of errors in the last minute, number of process restarts, average response time. Then go over some advanced features you might fancy and add to your wish list. Some examples of a luxury monitoring feature: DB profiling, cross-service measuring (i.e. measure business transaction), front-end integration, expose raw data to custom BI clients, Slack notifications and many others.
+非常に基本的なレベルでは、モニタリングは、プロダクションで悪いことが起こったときに*簡単に*識別できることを意味します。例えば、メールやSlackで通知を受けることで識別します。課題は、あなたの銀行口座を潰すことなく、あなたの要件を満たすための適切なツールのセットを選択することです。提案しますが、健全な状態を確保するために監視しなければならないメトリクスのコアセットを定義することから始めましょう - CPU、サーバー RAM、ノードプロセス RAM（1.4GB未満）、最後の1分間のエラーの数、プロセスの再起動の数、平均応答時間。その後、あなたが好きそうないくつかの高度な機能を確認し、あなたの希望のリストに追加してください。豪華なモニタリング機能の例をいくつか紹介します: DBプロファイリング、クロスサービス測定（ビジネストランザクションの測定など）、フロントエンド統合、カスタムBIクライアントへの生データの公開、Slack通知など。
 
-Achieving the advanced features demands lengthy setup or buying a commercial product such as Datadog, NewRelic and alike. Unfortunately, achieving even the basics is not a walk in the park as some metrics are hardware-related (CPU) and others live within the node process (internal errors) thus all the straightforward tools require some additional setup. For example, cloud vendor monitoring solutions (e.g. [AWS CloudWatch](https://aws.amazon.com/cloudwatch/), [Google StackDriver](https://cloud.google.com/stackdriver/)) will tell you immediately about the hardware metrics but not about the internal app behavior. On the other end, Log-based solutions such as ElasticSearch lack the hardware view by default. The solution is to augment your choice with missing metrics, for example, a popular choice is sending application logs to [Elastic stack](https://www.elastic.co/products) and configure some additional agent (e.g. [Beat](https://www.elastic.co/products)) to share hardware-related information to get the full picture.
-
-<br/><br/>
-
-### Monitoring example: AWS cloudwatch default dashboard. Hard to extract in-app metrics
-
-![AWS cloudwatch default dashboard. Hard to extract in-app metrics](/assets/images/monitoring1.png)
+高度な機能を実現するためには、セットアップに時間がかかるか、Datadog や NewRelic などの商用製品を購入する必要があります。残念ながら、いくつかのメトリクスはハードウェア関連（ CPU ）であり、他のメトリクスはノードプロセス内に存在する（内部エラー）ため、すべての簡単なツールは追加のセットアップが必要であり、基本的なことでさえも達成することはできません。例えば、クラウドベンダーの監視ソリューション（例：[AWS CloudWatch](https://aws.amazon.com/cloudwatch/)、[Google StackDriver](https://cloud.google.com/stackdriver/)）は、ハードウェアのメトリクスについてはすぐに教えてくれますが、内部のアプリの動作については教えてくれません。一方、ElasticSearch のようなログベースのソリューションは、デフォルトでハードウェアビューがありません。解決策は、欠落しているメトリクスを補強することです。例えば、一般的な選択肢は、アプリケーションログを [Elastic stack](https://www.elastic.co/products) に送信し、ハードウェア関連の情報を共有して全体像を把握するために、いくつかの追加エージェント(例えば [Beat](https://www.elastic.co/products) を設定することです。
 
 <br/><br/>
 
-### Monitoring example: StackDriver default dashboard. Hard to extract in-app metrics
+### モニタリング例: AWS cloudwatch のデフォルトダッシュボード。アプリ内メトリクスの抽出が難しい
 
-![StackDriver default dashboard. Hard to extract in-app metrics](/assets/images/monitoring2.jpg)
-
-<br/><br/>
-
-### Monitoring example: Grafana as the UI layer that visualizes raw data
-
-![Grafana as the UI layer that visualizes raw data](/assets/images/monitoring3.png)
+![AWS cloudwatch のデフォルトダッシュボード。アプリ内メトリクスの抽出が難しい](/assets/images/monitoring1.png)
 
 <br/><br/>
 
-### What Other Bloggers Say
+### モニタリング例: StackDriver のデフォルトダッシュボード。アプリ内メトリクスの抽出が難しい
 
-From the blog [Rising Stack](http://mubaloo.com/best-practices-deploying-node-js-applications/):
+![StackDriver のデフォルトダッシュボード。アプリ内メトリクスの抽出が難しい](/assets/images/monitoring2.jpg)
 
-> …We recommend you to watch these signals for all of your services:
-> Error Rate: Because errors are user facing and immediately affect your customers.
-> Response time: Because the latency directly affects your customers and business.
-> Throughput: The traffic helps you to understand the context of increased error rates and the latency too.
-> Saturation: It tells how “full” your service is. If the CPU usage is 90%, can your system handle more traffic? …
+<br/><br/>
+
+### モニタリング例: 生データを可視化するUIレイヤーとしての Grafana
+![生データを可視化するUIレイヤーとしての Grafana ](/assets/images/monitoring3.png)
+
+<br/><br/>
+
+### 他のブロガーが言っていること
+
+[Rising Stack](http://mubaloo.com/best-practices-deploying-node-js-applications/)　のブログより:
+
+> ...すべてのサービスのために、これらの信号を見ることをお勧めします:
+> エラー率: なぜなら、エラーはユーザーが直面するものであり、すぐに顧客に影響を与えるからです。
+> 応答時間: 待ち時間が直接顧客やビジネスに影響を与えるからです。
+> スループット: トラフィックは、エラー率と遅延の増加のコンテキストを理解するのに役立ちます。
+> 飽和: サービスがどの程度「フル」であるかを示します。CPU 使用率が 90% の場合、システムはより多くのトラフィックを処理できますか？…
