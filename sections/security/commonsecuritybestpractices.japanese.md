@@ -1,10 +1,10 @@
 [✔]: ../../assets/images/checkbox-small-blue.png
 
-# Common Node.js security best practices
+# 一般的な Node.js セキュリティベストプラクティス
 
-The common security guidelines section contains best practices that are standardized in many frameworks and conventions, running an application with SSL/TLS, for example, should be a common guideline and convention followed in every setup to achieve great security benefits.
+この一般的なセキュリティガイドラインのセクションには、多くのフレームワークや慣習において標準となっているベストプラクティスが含まれています。例えば、SSL/TLS を使用してアプリケーションを実行するということは、優れたセキュリティ上の利点を享受するためにあらゆる環境において従われる、よくあるガイドラインや慣習です。
 
-## ![✔] Use SSL/TLS to encrypt the client-server connection
+## ![✔] クライアント・サーバー間の通信を暗号化するために SSL/TLS を使用する
 
 **TL;DR:** In the times of [free SSL/TLS certificates](https://letsencrypt.org/) and easy configuration of those, you do no longer have to weigh advantages and disadvantages of using a secure server because the advantages such as security, support of modern technology and trust clearly outweigh the disadvantages like minimal overhead compared to pure HTTP.
 
@@ -14,7 +14,7 @@ The common security guidelines section contains best practices that are standard
 
 <br/><br/>
 
-## ![✔] Comparing secret values and hashes securely
+## ![✔] シークレット値とハッシュ値をセキュアに比較する
 
 **TL;DR:** When comparing secret values or hashes like HMAC digests, you should use the [`crypto.timingSafeEqual(a, b)`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_timingsafeequal_a_b) function Node provides out of the box since Node.js v6.6.0. This method compares two given objects and keeps comparing even if data does not match. The default equality comparison methods would simply return after a character mismatch, allowing timing attacks based on the operation length.
 
@@ -22,7 +22,7 @@ The common security guidelines section contains best practices that are standard
 
 <br/><br/>
 
-## ![✔] Generating random strings using Node.js
+## ![✔] Node.js を用いてランダムな文字列を生成する
 
 **TL;DR:** Using a custom-built function generating pseudo-random strings for tokens and other security-sensitive use cases might actually not be as random as you think, rendering your application vulnerable to cryptographic attacks. When you have to generate secure random strings, use the [`crypto.RandomBytes(size, [callback])`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_randombytes_size_callback) function using available entropy provided by the system.
 
@@ -32,7 +32,7 @@ The common security guidelines section contains best practices that are standard
 
 Going on, below we've listed some important bits of advice from the OWASP project.
 
-## ![✔] OWASP A2: Broken Authentication
+## ![✔] OWASP A2: 壊れた認証
 
 - Require MFA/2FA for important services and accounts
 - Rotate passwords and access keys frequently, including SSH keys
@@ -43,14 +43,14 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 - On login failure, don't let the user know whether the username or password verification failed, just return a common auth error
 - Consider using a centralized user management system to avoid managing multiple accounts per employee (e.g. GitHub, AWS, Jenkins, etc) and to benefit from a battle-tested user management system
 
-## ![✔] OWASP A5:  Broken access control
+## ![✔] OWASP A5: 壊れたアクセスコントロール
 
 - Respect the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)  -  every component and DevOps person should only have access to the necessary information and resources
 - **Never** work with the console/root (full-privilege) account except for account management
 - Run all instances/containers on behalf of a role/service account
 - Assign permissions to groups and not to users. This should make permission management easier and more transparent for most cases
 
-## ![✔] OWASP A6: Security Misconfiguration
+## ![✔] OWASP A6: セキュリティの設定ミス
 
 - Access to production environment internals is done through the internal network only, use SSH or other ways, but _never_ expose internal services
 - Restrict internal network access  - explicitly set which resource can access other resources (e.g. network policy or subnets)
@@ -62,7 +62,7 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 - Protect against DDoS attacks using HTTP(S) and TCP load balancers
 - Perform periodic penetration tests by specialized agencies
 
-## ![✔] OWASP A3: Sensitive Data Exposure
+## ![✔] OWASP A3: センシティブなデータの露出
 
 - Only accept SSL/TLS connections, enforce Strict-Transport-Security using headers
 - Separate the network into segments (i.e. subnets) and ensure each node has the least necessary networking access permissions
@@ -73,7 +73,7 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 - Don't include secrets in log statements
 - Avoid showing plain passwords in the frontend, take necessary measures in the backend and never store sensitive information in plaintext
 
-## ![✔] OWASP A9: Using Components With Known Security Vulneraibilities
+## ![✔] OWASP A9: 既知のセキュリティ脆弱性を持つコンポーネントの使用
 
 - Scan docker images for known vulnerabilities (using Docker's and other vendors' scanning services)
 - Enable automatic instance (machine) patching and upgrades to avoid running old OS versions that lack security patches
@@ -82,20 +82,20 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 - Run the security checker of your cloud provider (e.g. AWS security trust advisor)
 
 
-## ![✔] OWASP A10: Insufficient Logging & Monitoring
+## ![✔] OWASP A10: ロギングとモニタリングの不足
 
 - Alert on remarkable or suspicious auditing events like user login, new user creation, permission change, etc
 - Alert on irregular amount of login failures (or equivelant actions like forgot password)
 - Include the time and username that initiated the update in each DB record
 
-## ![✔] OWASP A7: Cross-Site-Scripting (XSS)
+## ![✔] OWASP A7: クロスサイトスクリプティング（XSS）
 
 - Use templating engines or frameworks that automatically escape XSS by design, such as EJS, Pug, React, or Angular. Learn the limitations of each mechanisms XSS protection and appropriately handle the use cases which are not covered
 - Escaping untrusted HTTP request data based on the context in the HTML output (body, attribute, JavaScript, CSS, or URL) will resolve Reflected and Stored XSS vulnerabilities
 - Applying context-sensitive encoding when modifying the browser document on the client-side acts against DOM XSS
 - Enabling a Content-Security Policy (CSP) as a defense-in-depth mitigating control against XSS
 
-## ![✔] Protect Personally Identifyable Information (PII Data)
+## ![✔] 個人識別可能な情報（PIIデータ）の保護
 
 - Personally identifiable information (PII) is any data that can be used to identify a specific individual
 - Protect Personally Identifyable Information in the Applications by encrypting them
@@ -108,7 +108,7 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 - India: https://meity.gov.in/writereaddata/files/Personal_Data_Protection_Bill,2018.pdf
 - Singapore: https://www.pdpc.gov.sg/Legislation-and-Guidelines/Personal-Data-Protection-Act-Overview
 
-## ![✔] Have a security.txt File [PRODUCTION]
+## ![✔] security.txt ファイルを配置する［プロダクション］
 
 **TL;DR:** Have a text file called ```security.txt``` under ```/.well-known```  directory (/.well-known/security.txt) or in the root directory (/security.txt) of your website or your web application in production. ```security.txt``` file should contain details using which security researchers can report vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent. 
 
@@ -117,7 +117,7 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 🔗 [**Read More: security.txt**](https://securitytxt.org/)
 <br/><br/><br/>
 
-## ![✔] Have a SECURITY.md File [OPEN SOURCE]
+## ![✔] SECURITY.md ファイルを配置する［オープンソース］
 
 **TL;DR:** To give people instructions for responsibly reporting security vulnerabilities in your project, you can add a SECURITY.md file to your repository's root, docs, or .github folder. SECURITY.md file should contain details using which security researchers can report vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent. 
 
