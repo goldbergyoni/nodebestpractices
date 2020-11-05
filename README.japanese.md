@@ -555,13 +555,13 @@ null == undefined; // true
 
 # `5. 本番環境移行のプラクティス`
 
-## ![✔] 5.1. Monitoring
+## ![✔] 5.1. モニタリング
 
-**TL;DR:** Monitoring is a game of finding out issues before customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that ticks all boxes. Click ‘The Gist’ below for an overview of the solutions
+**TL;DR:** モニタリングとは、顧客よりも先に問題を発見するゲームです。– 明らかに、これは類を見ないほど重要なこととして割り当てられるべきです。市場には多くのオファーが溢れていますので、まずはあなたが守らなければならない基本的な指標を定義することから始めてみてください（私の提案はこの中にあります）。その後、追加の手の込んだ機能を確認し、すべてのボックスにチェックを入れるソリューションを選択します。ソリューションの概要については、以下の「要点」をクリックしてください。
 
-**Otherwise:** Failure === disappointed customers. Simple
+**さもないと:** 失敗 === 失望したお客さん。シンプルです。
 
-🔗 [**Read More: Monitoring!**](/sections/production/monitoring.md)
+🔗 [**さらに読む: モニタリング!**](/sections/production/monitoring.japanese.md)
 
 <br/><br/>
 
