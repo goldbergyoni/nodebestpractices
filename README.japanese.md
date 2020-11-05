@@ -799,11 +799,11 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 6.5. Collection of generic security best practices
+## ![✔] 6.5. 一般的なセキュリティベストプラクティス集
 
-**TL;DR:** This is a collection of security advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
+**TL;DR:** Node.js とは直接関係のないセキュリティに関するアドバイス集です ー Node の実装は他の言語とあまり違いはありません。さらに読むをクリックして、読み進めてください。
 
-🔗 [**Read More: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
+🔗 [**さらに読む: 一般的なセキュリティベストプラクティス**](/sections/security/commonsecuritybestpractices.japanese.md)
 
 <br/><br/>
 
