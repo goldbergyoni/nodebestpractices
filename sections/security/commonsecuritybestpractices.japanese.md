@@ -6,11 +6,11 @@
 
 ## ![✔] クライアント・サーバー間の通信を暗号化するために SSL/TLS を使用する
 
-**TL;DR:** In the times of [free SSL/TLS certificates](https://letsencrypt.org/) and easy configuration of those, you do no longer have to weigh advantages and disadvantages of using a secure server because the advantages such as security, support of modern technology and trust clearly outweigh the disadvantages like minimal overhead compared to pure HTTP.
+**TL;DR:** [無料の SSL/TLS 証明書](https://letsencrypt.org/) とそれらの簡単な設定の時代には、セキュアなサーバーを使用することの利点と欠点を比較する必要はもはやありません。なぜなら、セキュリティやモダンなテクノロジーのサポート、そして信頼性といった利点は、明らかにHTTPと比べて最小限のオーバーヘッドであるといったような欠点を上回るためです。
 
-**Otherwise:** Attackers could perform man-in-the-middle attacks, spy on your users' behaviour and perform even more malicious actions when the connection is unencrypted
+**さもないと:** 接続が暗号化されていない場合には、攻撃者は中間者攻撃を行い、ユーザーの行動を監視し、さらに悪質なアクションを行ってくる可能性があります。
 
-🔗 [**Read More: Running a secure Node.js server**](/sections/security/secureserver.md)
+🔗 [**さらに読む: セキュアな Node.js サーバーを実行する**](/sections/security/secureserver.japanese.md)
 
 <br/><br/>
 
