@@ -1,129 +1,126 @@
 [✔]: ../../assets/images/checkbox-small-blue.png
 
-# Common Node.js security best practices
+# 一般的な Node.js セキュリティベストプラクティス
 
-The common security guidelines section contains best practices that are standardized in many frameworks and conventions, running an application with SSL/TLS, for example, should be a common guideline and convention followed in every setup to achieve great security benefits.
+この一般的なセキュリティガイドラインのセクションには、多くのフレームワークや慣習において標準となっているベストプラクティスが含まれています。例えば、SSL/TLS を使用してアプリケーションを実行するということは、優れたセキュリティ上の利点を享受するためにあらゆる環境において従われる、よくあるガイドラインや慣習です。
 
-## ![✔] Use SSL/TLS to encrypt the client-server connection
+## ![✔] クライアント・サーバー間の通信を暗号化するために SSL/TLS を使用する
 
-**TL;DR:** In the times of [free SSL/TLS certificates](https://letsencrypt.org/) and easy configuration of those, you do no longer have to weigh advantages and disadvantages of using a secure server because the advantages such as security, support of modern technology and trust clearly outweigh the disadvantages like minimal overhead compared to pure HTTP.
+**TL;DR:** [無料の SSL/TLS 証明書](https://letsencrypt.org/) が提供されそれらが簡単に設定できる時代には、セキュアなサーバーを使用することの利点と欠点を比較する必要はもはやありません。なぜなら、セキュリティやモダンなテクノロジーのサポート、そして信頼性といった利点は、明らかにHTTPと比べてオーバーヘッドが大きいといったような欠点を上回るためです。
 
-**Otherwise:** Attackers could perform man-in-the-middle attacks, spy on your users' behaviour and perform even more malicious actions when the connection is unencrypted
+**さもないと:** 接続が暗号化されていない場合には、攻撃者は中間者攻撃を行い、ユーザーの行動を監視し、さらに悪質なアクションを行ってくる可能性があります。
 
-🔗 [**Read More: Running a secure Node.js server**](/sections/security/secureserver.md)
-
-<br/><br/>
-
-## ![✔] Comparing secret values and hashes securely
-
-**TL;DR:** When comparing secret values or hashes like HMAC digests, you should use the [`crypto.timingSafeEqual(a, b)`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_timingsafeequal_a_b) function Node provides out of the box since Node.js v6.6.0. This method compares two given objects and keeps comparing even if data does not match. The default equality comparison methods would simply return after a character mismatch, allowing timing attacks based on the operation length.
-
-**Otherwise:** Using default equality comparison operators you might expose critical information based on the time taken to compare two objects
+🔗 [**さらに読む: セキュアな Node.js サーバーを実行する**](/sections/security/secureserver.japanese.md)
 
 <br/><br/>
 
-## ![✔] Generating random strings using Node.js
+## ![✔] シークレット値とハッシュ値をセキュアに比較する
 
-**TL;DR:** Using a custom-built function generating pseudo-random strings for tokens and other security-sensitive use cases might actually not be as random as you think, rendering your application vulnerable to cryptographic attacks. When you have to generate secure random strings, use the [`crypto.RandomBytes(size, [callback])`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_randombytes_size_callback) function using available entropy provided by the system.
+**TL;DR:** シークレット値や HMAC ダイジェストのようなハッシュを比較する場合は、Node.js v6.6.0 以降に Node が提供している [`crypto.timingSafeEqual(a, b)`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_timingsafeequal_a_b) 関数を使用するべきです。このメソッドは 2 つの与えられたオブジェクトを比較し、データが一致しない場合でも比較を続けます。デフォルトの等値比較メソッドは、文字の不一致だった場合には単純にリターンするだけなので、操作の長さに基づいたタイミング攻撃を可能にします。
 
-**Otherwise:** When generating pseudo-random strings without cryptographically secure methods, attackers might predict and reproduce the generated results, rendering your application insecure
+**さもないと:** デフォルトの等値比較演算子を使用すると、2 つのオブジェクトを比較するのにかかった時間に基づいて、重要な情報を漏出してしまうかもしれません。
 
 <br/><br/>
 
-Going on, below we've listed some important bits of advice from the OWASP project.
+## ![✔] Node.js を用いてランダムな文字列を生成する
 
-## ![✔] OWASP A2: Broken Authentication
+**TL;DR:** トークンやその他のセキュリティ上重要なユースケースを対象として、擬似ランダム文字列を生成する独自のカスタムビルド関数を使用すると、実際には思ったほどランダムではなく、アプリケーションが暗号攻撃に対して脆弱になる可能性があります。安全なランダム文字列を生成する必要がある場合は、システムが提供するエントロピーを用いて [`crypto.RandomBytes(size, [callback])`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_randombytes_size_callback) 関数を使用してください。
 
-- Require MFA/2FA for important services and accounts
-- Rotate passwords and access keys frequently, including SSH keys
-- Apply strong password policies, both for ops and in-application user management ([🔗 OWASP password recommendation](https://www.owasp.org/index.php/Authentication_Cheat_Sheet#Implement_Proper_Password_Strength_Controls.22))
-- Do not ship or deploy your application with any default credentials, particularly for admin users or external services you depend on
-- Use only standard authentication methods like OAuth, OpenID, etc.  - **avoid** basic authentication
-- Auth rate limiting: Disallow more than _X_ login attempts (including password recovery, etc.) in a period of _Y_
-- On login failure, don't let the user know whether the username or password verification failed, just return a common auth error
-- Consider using a centralized user management system to avoid managing multiple accounts per employee (e.g. GitHub, AWS, Jenkins, etc) and to benefit from a battle-tested user management system
+**さもないと:** 暗号学的に安全な方法を使わずに擬似ランダム文字列を生成すると、攻撃者が生成結果を予測して再現し、アプリケーションを安全ではないものにしてしまう可能性があります。
 
-## ![✔] OWASP A5:  Broken access control
+<br/><br/>
 
-- Respect the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)  -  every component and DevOps person should only have access to the necessary information and resources
-- **Never** work with the console/root (full-privilege) account except for account management
-- Run all instances/containers on behalf of a role/service account
-- Assign permissions to groups and not to users. This should make permission management easier and more transparent for most cases
+続けて以下に、OWASP プロジェクトから重要なアドバイスをいくつか挙げてみました。
 
-## ![✔] OWASP A6: Security Misconfiguration
+## ![✔] OWASP A2: 壊れた認証
 
-- Access to production environment internals is done through the internal network only, use SSH or other ways, but _never_ expose internal services
-- Restrict internal network access  - explicitly set which resource can access other resources (e.g. network policy or subnets)
-- If using cookies, configure it to "secured" mode where it's being sent over SSL only
-- If using cookies, configure it for "same site" only so only requests from same domain will get back the designated cookies
-- If using cookies, prefer "HttpOnly" configuration that prevent client-side JavaScript code from accessing the cookies
-- Protect each VPC with strict and restrictive access rules
-- Prioritize threats using any standard security threat modeling like STRIDE or DREAD
-- Protect against DDoS attacks using HTTP(S) and TCP load balancers
-- Perform periodic penetration tests by specialized agencies
+- 重要なサービスやアカウントは MFA/2FA を要求する
+- SSH キーも含め、パスワードやアクセスキーは頻繁に変更する
+- 運用とアプリケーション内両方のユーザー管理おいて、強力なパスワードポリシーを適用する（[🔗 OWASP パスワードの推奨事項](https://www.owasp.org/index.php/Authentication_Cheat_Sheet#Implement_Proper_Password_Strength_Controls.22)）
+- デフォルトのクレデンシャル情報を使用してアプリケーションを出荷またはデプロイしない（特に管理者ユーザーや外部サービスに依存している場合）
+- OAuth や OpenID のような標準的な認証方法のみを使用する - ベーシック認証の使用は **避ける**
+- 認証レートリミット: 期間 _Y_ における _X_ 回を超えるログインを拒否する
+- ログインに失敗した場合は、ユーザ名とパスワードのどちらの確認に失敗したかをユーザに知らせることなく、一般的な認証エラーを返す
+- 従業員ごとに複数のアカウント（例えば、GitHub、AWS、Jenkinsなど）を管理することを避け、歴戦のユーザー管理システムの恩恵を受けるために、一元化されたユーザー管理システムの利用を検討する
 
-## ![✔] OWASP A3: Sensitive Data Exposure
+## ![✔] OWASP A5: 壊れたアクセスコントロール
 
-- Only accept SSL/TLS connections, enforce Strict-Transport-Security using headers
-- Separate the network into segments (i.e. subnets) and ensure each node has the least necessary networking access permissions
-- Group all services/instances that need no internet access and explicitly disallow any outgoing connection (a.k.a private subnet)
-- Store all secrets in a vault products like AWS KMS, HashiCorp Vault or Google Cloud KMS
-- Lockdown sensitive instance metadata using metadata
-- Encrypt data in transit when it leaves a physical boundary
-- Don't include secrets in log statements
-- Avoid showing plain passwords in the frontend, take necessary measures in the backend and never store sensitive information in plaintext
+- [最小権限の原則](https://en.wikipedia.org/wiki/Principle_of_least_privilege)を尊重する - すべてのコンポーネントと DevOps 担当者は、必要最低限の情報とリソースにのみアクセスできるようにする
+- アカウント管理以外では、ルート（フル権限）アカウントでの作業は **絶対に** 行わない
+- ロール／サービスアカウントに代わって、すべてのインスタンス／コンテナを実行する
+- ユーザーではなくグループに権限を割り当てる。これにより、ほとんどの場合、権限管理がより簡単で透明性の高いものになるはずである
 
-## ![✔] OWASP A9: Using Components With Known Security Vulneraibilities
+## ![✔] OWASP A6: セキュリティの設定ミス
 
-- Scan docker images for known vulnerabilities (using Docker's and other vendors' scanning services)
-- Enable automatic instance (machine) patching and upgrades to avoid running old OS versions that lack security patches
-- Provide the user with both 'id', 'access' and 'refresh' token so the access token is short-lived and renewed with the refresh token
-- Log and audit each API call to cloud and management services (e.g who deleted the S3 bucket?) using services like AWS CloudTrail
-- Run the security checker of your cloud provider (e.g. AWS security trust advisor)
+- 本番環境内部へのアクセスは内部ネットワークを介してのみ行い、SSH または他の手段を利用するが、 _絶対に_ 内部サービスは外部に公開しない
+- 内部ネットワークアクセスを制限する - どのリソースが他のリソースにアクセスできるかを明示的に設定する（例えば、ネットワークポリシーやサブネットなど）
+- クッキー（cookies）を利用している場合は、クライアントサイドの JavaScript がクッキーにアクセスすることを防ぐために「HttpOnly」の設定を優先的に行う
+- クッキーを利用している場合は、「same site」を設定し、同ドメインからのリクエストのみ指定されたクッキーを取得できるようにする
+- 各 VPC を厳格で性異言されたアクセスルールで保護する
+- STRIDE や DREAD のような標準的なセキュリティ脅威モデルを利用して脅威に優先順位を付ける
+- HTTP(S) と TCP ロードバランサーを使用して DDoS 攻撃に対して保護をする
+- 専門機関による定期的なペネトレーションテストを実施する
 
+## ![✔] OWASP A3: センシティブなデータの露出
 
-## ![✔] OWASP A10: Insufficient Logging & Monitoring
+- SSL/TLS 接続のみを受け付け、ヘッダーを利用して String-Transport-Security を強制する
+- ネットワークをセグメント（サブネットなど）に分割し、各ノードが必要最低限のネットワークアクセス権限を持っていることを確認する
+- インターネットアクセスを必要としない全てのサービス/インスタンスをグループ化し、外向きの接続を明示的に禁止する（プライベートサブネット）
+- AWS KMS、HachiCorp Vault または Google Cloud KMS のような vault 製品にシークレットを保存する
+- メタデータを使用して、機密性の高いインスタンスメタデータを隔離する
+- データが物理的な境界線を超える際は、運んでいるデータを暗号化する
+- シークレットをログ情報の中に含まない
+- フロントエンドでは平文のパスワードを表示しないようにし、バックエンドでは必要な対策を講じて決して機密情報を平文で保存しないようにする
 
-- Alert on remarkable or suspicious auditing events like user login, new user creation, permission change, etc
-- Alert on irregular amount of login failures (or equivelant actions like forgot password)
-- Include the time and username that initiated the update in each DB record
+## ![✔] OWASP A9: 既知のセキュリティ脆弱性を持つコンポーネントの使用
 
-## ![✔] OWASP A7: Cross-Site-Scripting (XSS)
+- docker イメージをスキャンして既知の脆弱性を探す（Docker や他のベンダーのスキャンサービスを利用する）
+- インスタンス（マシン）の自動パッチ適用とアップグレードを有効にして、セキュリティパッチが不足している古いバージョンの OS を実行しないようにする
+- ユーザに「id」、「access」、「refresh」といったトークンを提供することで、アクセストークンの期限を短くして、refresh トークンで更新されるようにする
+- AWS CloudTrail のようなサービスを利用して、クラウドや管理サービスに対する API コール（例えば、誰がS3バケットを削除したのか？）のログを残し、監査を行う
+- クラウドプロバイダー（AWS Trusted Advisor など）のセキュリティチェッカーを実行する
 
-- Use templating engines or frameworks that automatically escape XSS by design, such as EJS, Pug, React, or Angular. Learn the limitations of each mechanisms XSS protection and appropriately handle the use cases which are not covered
-- Escaping untrusted HTTP request data based on the context in the HTML output (body, attribute, JavaScript, CSS, or URL) will resolve Reflected and Stored XSS vulnerabilities
-- Applying context-sensitive encoding when modifying the browser document on the client-side acts against DOM XSS
-- Enabling a Content-Security Policy (CSP) as a defense-in-depth mitigating control against XSS
+## ![✔] OWASP A10: ロギングとモニタリングの不足
 
-## ![✔] Protect Personally Identifyable Information (PII Data)
+- ユーザーログイン、新規ユーザー作成、権限変更といった操作において、目立った、または疑わしい監査対象イベントが発生したらアラートする
+- 異常な回数のログインの失敗（もしくはパスワードを忘れた、などの同様のアクション）が発生した場合にはアラートする
+- 各 DB レコードにおいて更新を行った時刻とユーザー名を含める
 
-- Personally identifiable information (PII) is any data that can be used to identify a specific individual
-- Protect Personally Identifyable Information in the Applications by encrypting them
-- Follow the data privacy laws of the land
+## ![✔] OWASP A7: クロスサイトスクリプティング（XSS）
 
+- EJS、Pug、React、Angular など、設計によって自動的に XSS 回避するテンプレートエンジンやフレームワークを使用する。XSS 対策のそれぞれのメカニズムの限界を知り、対象外のユースケースに適切に対処する
+- HTML 出力のコンテキスト（body、属性、JavaScript、CSS、URL など）に基づいて、信頼できない HTTP リクエストデータをエスケープすることで、反射型および格納型の XSS 脆弱性を解決する
+- クライアントサイドでブラウザの document を変更する際に context-sensitive エンコーディングを適用して DOM XSS 対策する
+- XSS を緩和する多層防御（defense-in-depth）として Content-Security Policy (CSP) を有効化する
 
-- Reference laws:
+## ![✔] 個人識別可能な情報（PIIデータ）の保護
 
-- European Union: GDPR - https://ec.europa.eu/info/law/law-topic/data-protection_en
-- India: https://meity.gov.in/writereaddata/files/Personal_Data_Protection_Bill,2018.pdf
-- Singapore: https://www.pdpc.gov.sg/Legislation-and-Guidelines/Personal-Data-Protection-Act-Overview
+- 個人情報（PII）とは、特定の個人を識別できるデータのことである
+- アプリケーションでは個人情報は暗号化して保護する
+- その地域におけるデータプライバシーに関する法律に従う
 
-## ![✔] Have a security.txt File [PRODUCTION]
+参考となる法律:
 
-**TL;DR:** Have a text file called ```security.txt``` under ```/.well-known```  directory (/.well-known/security.txt) or in the root directory (/security.txt) of your website or your web application in production. ```security.txt``` file should contain details using which security researchers can report vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent. 
+- 欧州連合（EU）: GDPR - https://ec.europa.eu/info/law/law-topic/data-protection_en
+- インド: https://meity.gov.in/writereaddata/files/Personal_Data_Protection_Bill,2018.pdf
+- シンガポール: https://www.pdpc.gov.sg/Legislation-and-Guidelines/Personal-Data-Protection-Act-Overview
 
-**Otherwise:** You may not be notified about the vulnerabilities. You will miss the opportunity to act on the vulnerabilities in time.
+## ![✔] security.txt ファイルを配置する［プロダクション］
 
-🔗 [**Read More: security.txt**](https://securitytxt.org/)
+**TL;DR:** 本番環境において、 Web サイトや Web アプリケーションの ```/.well-known``` ディレクトリ（/.well-known/security.txt）またはルートディレクトリ（/security.txt）配下に ```security.txt``` というテキストファイルを置いてください。```security.txt``` ファイルは、セキュリティリサーチャーが脆弱性を報告するための詳細と、報告の送り先となる責任者および組織の連絡先の詳細（E メール、電話番号）を含む必要があります。
+
+**さもないと:** 脆弱性についての報告を受けられない可能性があります。脆弱性への対応をすぐに行う機会を逃すことになります。
+
+🔗 [**さらに読む: security.txt**](https://securitytxt.org/)
 <br/><br/><br/>
 
-## ![✔] Have a SECURITY.md File [OPEN SOURCE]
+## ![✔] SECURITY.md ファイルを配置する［オープンソース］
 
-**TL;DR:** To give people instructions for responsibly reporting security vulnerabilities in your project, you can add a SECURITY.md file to your repository's root, docs, or .github folder. SECURITY.md file should contain details using which security researchers can report vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent. 
+**TL;DR:** プロジェクトのセキュリティ脆弱性を責任を持って報告するための方法を示すために、 SECURITY.md ファイルを、リポジトリのルートディレクトリ、docs ディレクトリ、もしくは .github ディレクトリの中に置いてください。SECURITY.md ファイルは、セキュリティリサーチャーが脆弱性を報告するための詳細と、報告の送り先となる責任者および組織の連絡先の詳細（E メール、電話番号）を含む必要があります。
 
-**Otherwise:** You may not be notified about the vulnerabilities. You will miss the opportunity to act on the vulnerabilities in time.
+**さもないと:** 脆弱性についての報告を受けられない可能性があります。脆弱性への対応をすぐに行う機会を逃すことになります。
 
-🔗 [**Read More: SECURITY.md**](https://help.github.com/en/github/managing-security-vulnerabilities/adding-a-security-policy-to-your-repository)
+🔗 [**さらに読む: SECURITY.md**](https://help.github.com/en/github/managing-security-vulnerabilities/adding-a-security-policy-to-your-repository)
 
 <br/><br/><br/>
 
