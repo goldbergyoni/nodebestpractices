@@ -14,13 +14,13 @@
 
 <br/><br/>
 
-### 可視化の例: Kibana (Elastic Stack の一部) はログコンテンツの高度な検索を容易にします
+### 可視化の例: Kibana (Elastic stack の一部) はログコンテンツの高度な検索を容易にします
 
-![Kibana はログコンテンツの高度な検索を容易にします](/assets/images/smartlogging1.png "Kibana はログコンテンツの高度な検索を容易にします。")
+![Kibana はログコンテンツの高度な検索を容易にします](/assets/images/smartlogging1.png "Kibana はログコンテンツの高度な検索を容易にします")
 
 <br/><br/>
 
-### 可視化の例: Kibana (Elastic Stack の一部) はログに基づいてデータを可視化します
+### 可視化の例: Kibana (Elastic stack の一部) はログに基づいてデータを可視化します
 
 ![Kibana はログを元にデータを可視化する](/assets/images/smartlogging2.jpg "Kibana はログを元にデータを可視化する")
 
