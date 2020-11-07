@@ -565,13 +565,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 5.2. Increase transparency using smart logging
+## ![✔] 5.2. スマートロギングで透明性を高める
 
-**TL;DR:** Logs can be a dumb warehouse of debug statements or the enabler of a beautiful dashboard that tells the story of your app. Plan your logging platform from day 1: how logs are collected, stored and analyzed to ensure that the desired information (e.g. error rate, following an entire transaction through services and servers, etc) can really be extracted
+**TL;DR:** ログは、デバッグ ステートメント用のゴミ倉庫にも、アプリのストーリーを伝える美しいダッシュボードのイネーブラーにもなり得ます。1日目からロギングプラットフォームを計画しましょう：ログをどのように収集、保存、分析するかで、必要な情報（エラー率、サービスやサーバーを介したトランザクション全体の追跡など）を実際に抽出できるようにします。
 
-**Otherwise:** You end up with a black box that is hard to reason about, then you start re-writing all logging statements to add additional information
+**さもないと** 推論するのが難しいブラックボックスになってしまい、追加情報を追加するためにすべてのロギングステートメントを書き直します。
 
-🔗 [**Read More: Increase transparency using smart logging**](/sections/production/smartlogging.md)
+🔗 [**さらに読む: スマートロギングで透明性を高める**](/sections/production/smartlogging.japanese.md)
 
 <br/><br/>
 
