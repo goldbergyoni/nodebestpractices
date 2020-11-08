@@ -1,37 +1,37 @@
-# Delegate anything possible (e.g. static content, gzip) to a reverse proxy
+# 可能な限りのこと全て(静的コンテンツや gzip など)をリバースプロキシに委譲する
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-It’s very tempting to cargo-cult Express and use its rich middleware offering for networking related tasks like serving static files, gzip encoding, throttling requests, SSL termination, etc. This is a performance kill due to its single threaded model which will keep the CPU busy for long periods (Remember, Node’s execution model is optimized for short tasks or async IO related tasks). A better approach is to use a tool that expertise in networking tasks – the most popular are nginx and HAproxy which are also used by the biggest cloud vendors to lighten the incoming load on node.js processes.
+Express を過剰に利用し、静的ファイルの提供、gzip エンコーディング、リクエストのスロットリング、SSL の終了などのネットワーク関連のタスクを提供してくれる、そのリッチなミドルウェアを使用することは非常に魅力的です。これは、CPU を長時間ビジー状態に保つシングルスレッドモデルのため、パフォーマンスを低下させます( Node の実行モデルは短いタスクや非同期 IO 関連のタスクに最適化されていることを覚えておいてください)。より良いアプローチは、ネットワーク作業の専門知識を持つツールを使用することです – 最も人気のあるのは nginx と HAproxy で、これらは最大手のクラウドベンダーも node.js プロセスへの負荷を軽減するために使用しています。
 
 <br/><br/>
 
-### Nginx Config Example – Using nginx to compress server responses
+### Nginx 設定例 – nginx を使ってサーバのレスポンスを圧縮する
 
 ```nginx
-# configure gzip compression
+# gzip 圧縮を設定する
 gzip on;
 gzip_comp_level 6;
 gzip_vary on;
 
-# configure upstream
+# アップストリームを設定する
 upstream myApplication {
     server 127.0.0.1:3000;
     server 127.0.0.1:3001;
     keepalive 64;
 }
 
-#defining web server
+# ウェブサーバーを定義する
 server {
-    # configure server with ssl and error pages
+    # サーバに ssl とエラーページを設定する
     listen 80;
     listen 443 ssl;
     ssl_certificate /some/location/sillyfacesociety.com.bundle.crt;
     error_page 502 /errors/502.html;
 
-    # handling static content
+    # 静的コンテンツをハンドリングする
     location ~ ^/(images/|img/|javascript/|js/|css/|stylesheets/|flash/|media/|static/|robots.txt|humans.txt|favicon.ico) {
     root /usr/local/silly_face_society/node/public;
     access_log off;
@@ -41,11 +41,11 @@ server {
 
 <br/><br/>
 
-### What Other Bloggers Say
+### 他のブロガーが言っていること
 
-* From the blog [Mubaloo](http://mubaloo.com/best-practices-deploying-node-js-applications):
-> …It’s very easy to fall into this trap – You see a package like Express and think “Awesome! Let’s get started” – you code away and you’ve got an application that does what you want. This is excellent and, to be honest, you’ve won a lot of the battle. However, you will lose the war if you upload your app to a server and have it listen on your HTTP port because you’ve forgotten a very crucial thing: Node is not a web server. **As soon as any volume of traffic starts to hit your application, you’ll notice that things start to go wrong: connections are dropped, assets stop being served or, at the very worst, your server crashes. What you’re doing is attempting to have Node deal with all of the complicated things that a proven web server does really well. Why reinvent the wheel?**
-> **This is just for one request, for one image and bearing in mind this is the memory that your application could be used for important stuff like reading a database or handling complicated logic; why would you cripple your application for the sake of convenience?**
+* ブログ [Mubaloo](http://mubaloo.com/best-practices-deploying-node-js-applications) より:
+> ...このトラップに陥るのは非常に簡単です - あなたは Express のようなパッケージを見て、「素晴らしい！さっそく始めよう」と思ってしまうのです。– あなたがコードを書くことで、あなたが望むアプリケーションを手に入れることができます。これは秀逸だし、正直言ってかなりの勝利を収めていますね。しかし、アプリをサーバーにアップロードして HTTP ポートでリッスンすると、戦争に負けることになります。なぜなら、あなたは非常に重要なことを忘れているからです: Node はウェブサーバーではありません。**トラフィックのボリュームがアプリケーションにヒットし始めると、すぐに物事がうまくいかなくなることに気づくでしょう: 接続が切断されたり、アセットが提供されなくなったり、最悪の場合はサーバーがクラッシュしたりします。あなたがやっていることは、実績のあるウェブサーバが本当によくやっている複雑なことのすべてを Node に処理させようとしていることです。なぜ車輪を再発明するのでしょうか？**
+> **これは、1つの画像のため、1つのリクエストのためのものであり、アプリケーションがデータベースを読んだり複雑なロジックを処理したりするような重要なものに使用できるメモリであることを念頭に置いてください; なぜ都合のいいようにアプリを廃人にするのでしょうか？**
 
-* From the blog [Argteam](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load):
-> Although express.js has built-in static file handling through some connect middleware, you should never use it. **Nginx can do a much better job of handling static files and can prevent requests for non-dynamic content from clogging our node processes**…
+* ブログ [Argteam](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load) より:
+> express.js にはいくつかの接続ミドルウェアを介した静的ファイル処理が組み込まれていますが、絶対に使ってはいけません。**Nginx は静的ファイルの処理をより良く行うことができ、動的ではないコンテンツへのリクエストがノードプロセスを詰まらせるのを防ぐことができます。**…

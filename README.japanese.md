@@ -569,19 +569,19 @@ null == undefined; // true
 
 **TL;DR:** ログは、デバッグ ステートメント用のゴミ倉庫にも、アプリのストーリーを伝える美しいダッシュボードのイネーブラーにもなり得ます。1日目からロギングプラットフォームを計画しましょう：ログをどのように収集、保存、分析するかで、必要な情報（エラー率、サービスやサーバーを介したトランザクション全体の追跡など）を実際に抽出できるようにします。
 
-**さもないと** 推論するのが難しいブラックボックスになってしまい、追加情報を追加するためにすべてのロギングステートメントを書き直します。
+**さもないと:** 推論するのが難しいブラックボックスになってしまい、追加情報を追加するためにすべてのロギングステートメントを書き直します。
 
 🔗 [**さらに読む: スマートロギングで透明性を高める**](/sections/production/smartlogging.japanese.md)
 
 <br/><br/>
 
-## ![✔] 5.3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy
+## ![✔] 5.3. 可能な限りのこと全て（ gzip、SSL など）をリバースプロキシに委譲する
 
-**TL;DR:** Node is awfully bad at doing CPU intensive tasks like gzipping, SSL termination, etc. You should use ‘real’ middleware services like nginx, HAproxy or cloud vendor services instead
+**TL;DR:** Node は gzip や SSL の終了などの CPU 負荷の高いタスクを行うのが非常に苦手です。代わりに nginx, HAproxy, クラウドベンダーのサービスのような「本物の」ミドルウェアサービスを使うべきです。
 
-**Otherwise:** Your poor single thread will stay busy doing infrastructural tasks instead of dealing with your application core and performance will degrade accordingly
+**さもないと:** 貧弱なシングルスレッドは、アプリケーションコアを処理する代わりにインフラタスクを行うことに忙しくなり、パフォーマンスはそれに応じて低下します。
 
-🔗 [**Read More: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
+🔗 [**さらに読む: 可能な限りのこと全て（ gzip、SSL など）をリバースプロキシに委譲する**](/sections/production/delegatetoproxy.japanese.md)
 
 <br/><br/>
 
