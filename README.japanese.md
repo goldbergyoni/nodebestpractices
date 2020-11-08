@@ -575,13 +575,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 5.3. 可能な限りのこと（ gzip、SSL など）をリバースプロキシに委譲する
+## ![✔] 5.3. 可能な限りのこと全て（ gzip、SSL など）をリバースプロキシに委譲する
 
 **TL;DR:** Node は gzip や SSL の終了などの CPU 負荷の高いタスクを行うのが非常に苦手です。代わりに nginx, HAproxy, クラウドベンダーのサービスのような「本物の」ミドルウェアサービスを使うべきです。
 
 **さもないと:** 貧弱なシングルスレッドは、アプリケーションコアを処理する代わりにインフラタスクを行うことに忙しくなり、パフォーマンスはそれに応じて低下します。
 
-🔗 [**さらに読む: 可能な限りのこと（ gzip、SSL など）をリバースプロキシに委譲する**](/sections/production/delegatetoproxy.japanese.md)
+🔗 [**さらに読む: 可能な限りのこと全て（ gzip、SSL など）をリバースプロキシに委譲する**](/sections/production/delegatetoproxy.japanese.md)
 
 <br/><br/>
 
