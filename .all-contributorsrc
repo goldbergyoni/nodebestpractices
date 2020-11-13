@@ -1050,6 +1050,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "alec-francis",
+      "name": "Alec Francis",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/32949882?v=4",
+      "profile": "https://github.com/alec-francis",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
