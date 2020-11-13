@@ -24,7 +24,7 @@ Sekcja wspólnych wskazówek bezpieczeństwa zawiera najlepsze praktyki, które 
 
 ## ![✔] Generowanie losowych ciągów za pomocą Node.js
 
-**TL;DR:** Korzystanie z niestandardowej funkcji generującej pseudolosowe ciągi znaków dla tokenów i innych wrażliwych na bezpieczeństwo przypadków użycia może nie być tak losowe, jak myślisz, co może narazić Twoją aplikację na ataki kryptograficzne. Gdy musisz wygenerować bezpieczne losowe ciągi, użyj [`crypto.RandomBytes(size,[callback])`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html# crypto_crypto_randombytes_size_callback) przy użyciu dostępnej entropii dostarczonej przez system.
+**TL;DR:** Korzystanie z niestandardowej funkcji generującej pseudolosowe ciągi znaków dla tokenów i innych wrażliwych na bezpieczeństwo przypadków użycia może nie być tak losowe, jak myślisz, co może narazić Twoją aplikację na ataki kryptograficzne. Gdy musisz wygenerować bezpieczne losowe ciągi, użyj [`crypto.randomBytes(size,[callback])`](https://nodejs.org/api/crypto.html#crypto_crypto_randombytes_size_callback) przy użyciu dostępnej entropii dostarczonej przez system.
 
 **W przeciwnym razie:** Podczas generowania pseudolosowych ciągów bez metod kryptograficznych osoby atakujące mogą przewidywać i odtwarzać wygenerowane wyniki, co powoduje, że aplikacja nie jest bezpieczna
 
