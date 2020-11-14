@@ -1,21 +1,24 @@
 name: textlint
 on:
-  - push
+  pull_request:
+    branches:
+      - japanese-translation
 
 jobs:
   textlint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: checkout
+        uses: actions/checkout@v2
 
-    - name: Setup Node.js environment
-      uses: actions/setup-node@v2.1.1
-      with:
-        node-version: '12.x'
-
-    - name: change directory
-      run: cd .operations/
-    - name: Install dependencies
-      run: npm install
-    - name: textlint for japanese.md files
-      run: npm run textlint
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.1
+        with:
+          node-version: '12.x'
+      
+      - name: change directory
+        run: cd .operations/
+      - name: Install dependencies
+        run: npm install
+      - name: textlint for japanese.md files
+        run: npm run textlint
