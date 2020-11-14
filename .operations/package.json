@@ -6,7 +6,8 @@
   "scripts": {
     "build": "cd .. && node .operations/gen-html.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "./node_modules/.bin/markdownlint ../README.md"
+    "lint": "./node_modules/.bin/markdownlint ../README.md",
+    "textlint": "./node_modules/.bin/textlint ../**/*japanese.md"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,10 @@
     "imagemin-jpegtran": "^6.0.0",
     "imagemin-pngquant": "^6.0.0",
     "markdownlint-cli": "^0.18.0",
-    "showdown": "^1.9.0"
+    "showdown": "^1.9.0",
+    "textlint": "^11.7.6",
+    "textlint-rule-no-dropping-the-ra": "^2.0.0",
+    "textlint-rule-no-mix-dearu-desumasu": "^4.0.1",
+    "textlint-rule-web-plus-db": "^1.1.5"
   }
 }

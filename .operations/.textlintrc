@@ -1,0 +1,8 @@
+{
+  "filters": {},
+  "rules": {
+    "no-mix-dearu-desumasu": true,
+    "web-plus-db": false,
+    "no-dropping-the-ra": true,
+  }
+}
