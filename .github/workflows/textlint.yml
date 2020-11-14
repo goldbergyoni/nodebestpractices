@@ -16,9 +16,7 @@ jobs:
         with:
           node-version: '12.x'
       
-      - name: change directory
-        run: cd .operations/
       - name: Install dependencies
-        run: npm install
+        run: cd .operations/ && npm install
       - name: textlint for japanese.md files
-        run: npm run textlint
+        run: cd .operations/ && npm run textlint
