@@ -807,15 +807,15 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 6.6. Adjust the HTTP response headers for enhanced security
+## ![✔] 6.6. セキュリティ強化するために HTTP レスポンスヘッダを調整する
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Your application should be using secure headers to prevent attackers from using common attacks like cross-site scripting (XSS), clickjacking and other malicious attacks. These can be configured easily using modules like [helmet](https://www.npmjs.com/package/helmet).
+**TL;DR:** クロスサイトスクリプティング（XSS）やクリックジャッキング、その他の悪意のある攻撃などの一般的な攻撃を攻撃者が行うことを防ぐために、アプリケーションは安全なヘッダを使用するべきです。これらは [helmet](https://www.npmjs.com/package/helmet) のようなモジュールを使って簡単に設定することができます。
 
-**Otherwise:** Attackers could perform direct attacks on your application's users, leading to huge security vulnerabilities
+**さもないと:** 攻撃者がアプリケーションユーザーに対して直接攻撃を行い、甚大なセキュリティ脆弱性につながる可能性があります。
 
-🔗 [**Read More: Using secure headers in your application**](/sections/security/secureheaders.md)
+🔗 [**さらに読む: アプリケーションでセキュアなヘッダーを利用する**](/sections/security/secureheaders.japanese.md)
 
 <br/><br/>
 

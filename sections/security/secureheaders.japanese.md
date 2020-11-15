@@ -1,15 +1,15 @@
-# Using security-related headers to secure your application against common attacks
+# セキュリティ関連のヘッダを使用して一般的な攻撃からアプリケーションを保護する
 
 <br/><br/>
 
 
-### One Paragraph Explainer
+### 一段落説明
 
-There are security-related headers used to secure your application further. The most important headers are listed below. You can also visit the sites linked at the bottom of this page to get more information on this topic. You can easily set these headers using the [Helmet](https://www.npmjs.com/package/helmet) module for express ([Helmet for koa](https://www.npmjs.com/package/koa-helmet)).
+アプリケーションをさらにセキュアにするために使用される、セキュリティ関連のヘッダがあります。以下に、最も重要なヘッダを示します。また、ページの下部のサイトにアクセスして、このトピックに関する詳細な情報を確認することができます。これらのヘッダは、express 用の [Helmet](https://www.npmjs.com/package/helmet) モジュール（[koa Helmet](https://www.npmjs.com/package/koa-helmet)）を使って簡単に設定することができます。
 
 <br/><br/>
 
-### Table of Contents
+### 目次
 - [HTTP Strict Transport Security (HSTS)](#http-strict-transport-security-hsts)
 - [Public Key Pinning for HTTP (HPKP)](#public-key-pinning-for-http-hpkp)
 - [X-Frame-Options](#x-frame-options)
@@ -24,140 +24,141 @@ There are security-related headers used to secure your application further. The 
 
 ### HTTP Strict Transport Security (HSTS)
 
-HTTP Strict Transport Security (HSTS) is a web security policy mechanism to protect websites against [protocol downgrade attacks](https://en.wikipedia.org/wiki/Downgrade_attack) and [cookie hijacking](https://www.owasp.org/index.php/Session_hijacking_attack). It allows web servers to declare that web browsers (or other complying user agents) should only interact with it using __secure HTTPS connections__, and __never__ via the insecure HTTP protocol. The HSTS policy is implemented by using the `Strict-Transport-Security` header over an existing HTTPS connection.
+HTTP Strict Transport Security (HSTS) は、[プロトコルのダウングレード攻撃](https://en.wikipedia.org/wiki/Downgrade_attack)や[クッキーハイジャッキング](https://www.owasp.org/index.php/Session_hijacking_attack)からウェブサイトを保護するための、ウェブセキュリティポリシーの仕組みです。これにより、Web サーバは、Web ブラウザ（または他の準拠するユーザエージェント）が __安全な HTTPS 接続__ でのみ通信し、 安全でない HTTP プロトコルを経由して __決して__ 通信しないことを宣言することができます。HSTS ポリシーは、既存の HTTPS 接続上で `Strict-Transport-Security` ヘッダを使用して実装されています。
 
-The Strict-Transport-Security Header accepts a `max-age` value in seconds, to notify the browser how long it should access the site using HTTPS only, and an `includeSubDomains` value to apply the Strict Transport Security rule to all of the site's subdomains.
+Strict-Transport-Security ヘッダには、どれくらいの期間 HTTPS のみを使用してサイトにアクセスするかをブラウザに通知するための秒単位の `max-age` 値と、サイトのすべてのサブドメインに Strict Transport Security ルールを適用するための `includeSubDomains` 値を指定します。
 
-Header Example - HSTS Policy enabled for one week, include subdomains
+ヘッダ例 - 1 週間有効化された、サブドメインを含む HSTS ポリシー
 ```
 Strict-Transport-Security: max-age=2592000; includeSubDomains
 ```
 
-🔗 [Read on OWASP Secure Headers Project](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#hsts)
+🔗 [OWASP Secure Headers Project で読む](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#hsts)
 
-🔗 [Read on MDN web docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)
+🔗 [MDN web docs で読む](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)
 
 <br/><br/>
 
 ### Public Key Pinning for HTTP (HPKP)
 
-HTTP Public Key Pinning (HPKP) is a security mechanism allowing HTTPS websites to resist impersonation by attackers using mis-issued or otherwise fraudulent SSL/TLS certificates.
+HTTP Public Key Pinning (HPKP) は、HTTPS のウェブサイトを、誤って発行された、もしくは不正な SSL/TLS 証明書を使用した攻撃者によるなりすましに対抗できるようにするセキュリティメカニズムです。
+（訳注：HPKP 自体は非推奨となっており、後述の `Expect-CT` ヘッダに置き換えられています）
 
-The HTTPS web server serves a list of public key hashes, and on subsequent connections clients expect that server to use one or more of those public keys in its certificate chain. Using this feature carefully, you can greatly reduce the risk of man-in-the-middle (MITM) attacks and other false authentication problems for your application's users without incurring undue risk.
+HTTPS ウェブサーバーは公開鍵ハッシュのリストを提供し、後続の接続では、証明書チェーンにおいてクライアントはサーバーがこれらの公開鍵のうちの 1 つ以上を使用することを期待します。この機能を注意して使用することで、アプリケーションのユーザが過度のリスクを負うことなく、中間者（MITM）攻撃やその他の誤認証の問題のリスクを大幅に減らすことができます。
 
-Before implementing you should have a look at the `Expect-CT` header first, due to its advanced flexibility for recovery from misconfiguration and other [advantages](https://groups.google.com/a/chromium.org/forum/m/#!msg/blink-dev/he9tr7p3rZ8/eNMwKPmUBAAJ).
+実装する前に、設定ミスからのリカバリのための高度な柔軟性やその他の[利点](https://groups.google.com/a/chromium.org/forum/m/#!msg/blink-dev/he9tr7p3rZ8/eNMwKPmUBAAJ)のために、まず `Expect-CT` ヘッダを見ておくべきです。
 
-The Public-Key-Pins header accepts 4 values, a `pin-sha256` value for adding the certificate public key, hashed using the SHA256 algorithm, which can be added multiple times for different public keys, a `max-age` value to tell the browser how long it should apply the rule, an `includeSubDomains` value to apply this rule to all subdomains and a `report-uri` value to report pin validation failures to the given URL.
+Public-Key-Pins ヘッダは、4つの値を受け付けることができます。証明書の公開鍵を追加するための `pin-sha256` 値（SHA256 アルゴリズムを使用してハッシュ化されているため、異なる公開鍵に対して複数回追加することができる）、ルールを適用する期間をブラウザに伝えるための `max-age` 値、すべてのサブドメインに適用するための `includeSubDomains` 値、そしてピンの検証に失敗した際に、失敗した旨を報告する URL を指定する `report-uri` 値があります。
 
-Header Example - HPKP Policy enabled for one week, include subdomains , report failures to an example URL and allow two public keys
+ヘッダ例 - 1 週間有効化され、サブドメインを含み、example URL に失敗を報告し、2 つの公開鍵を許可した HPKP ポリシー
 ```
 Public-Key-Pins: pin-sha256="d6qzRu9zOECb90Uez27xWltNsj0e1Md7GkYYkVoZWmM="; pin-sha256="E9CZ9INDbd+2eRQozYqqbQ2yXLVKB9+xcprMF+44U1g="; report-uri="http://example.com/pkp-report"; max-age=2592000; includeSubDomains
 ```
 
-🔗 [Read on OWASP Secure Headers Project](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#hpkp)
+🔗 [OWASP Secure Headers Project で読む](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#hpkp)
 
-🔗 [Read on MDN web docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning)
+🔗 [MDN web docs で読む](https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning)
 
 <br/><br/>
 
 ### X-Frame-Options
 
-The X-Frame-Options header secures the application against [Clickjacking](https://www.owasp.org/index.php/Clickjacking) attacks by declaring a policy whether your application may be embedded on other (external) pages using frames.
+X-Frame-Options ヘッダは、フレームを使用して他の（外部の）ページをアプリケーションを埋め込むことができるかどうかのポリシーを宣言することで、[クリックジャッキング](https://www.owasp.org/index.php/Clickjacking)攻撃からアプリケーションを保護します。
 
-X-Frame-Options allows 3 parameters, a `deny` parameter to disallow embedding the resource in general, a `sameorigin` parameter to allow embedding the resource on the same host/origin and an `allow-from` parameter to specify a host where embedding of the resource is allowed.
+X-Frame-Options は 3 つのパラメータを許可します。リソースの埋め込みを一般的に許可しないための `deny` パラメータ、同じホスト/オリジンのリソースの埋め込みを許可する `sameorigin` パラメータ、そして特定のホストを許可するための `allow-from` パラメータです。（訳注：`allow-from` は廃止されました）
 
-Header Example - Deny embedding of your application
+ヘッダ例 - アプリケーションの埋め込みを拒否する
 ```
 X-Frame-Options: deny
 ```
 
-🔗 [Read on OWASP Secure Headers Project](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#xfo)
+🔗 [OWASP Secure Headers Project を読む](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#xfo)
 
-🔗 [Read on MDN web docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options)
+🔗 [MDN web docs を読む](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options)
 
 <br/><br/>
 
 ### X-XSS-Protection
 
-This header enables the [Cross-site scripting](https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)) filter in your browser.
+このヘッダはブラウザの[クロスサイトスクリプティング](https://www.owasp.org/index.php/Cross-site_Scripting_(XSS))フィルタを有効化します。
 
-It accepts 4 parameters, `0` for disabling the filter, `1` for enabling the filter and enable automatic sanitization of the page, `mode=block` to enable the filter and prevent the page from rendering if a XSS attack is detected (this parameter has to be added to `1` using a semicolon, and `report=<domainToReport>` to report the violation (this parameter has to be added to `1`).
+これは 4 つのパラメータを受け付けます。フィルタを無効化する `0`、フィルタを有効化して、攻撃を検知した際にページの自動サニタイズを行う `1`、フィルタを有効化して、攻撃を検知した際にページのレンダリングを停止する `mode=block`（このパラメータは、`1` の後にセミコロンを足して追加する必要があります）、そして攻撃を検知した際に攻撃レポートを作成して送信する `report=<domainToReport>` です（同様に `1` の後に追加する必要があります）。
 
-Header Example - Enable XSS Protection and report violations to example URL
+ヘッダ例 - XSS プロテクションを有効化し、攻撃を example URL に送信する
 ```
 X-XSS-Protection: 1; report=http://example.com/xss-report
 ```
 
-🔗 [Read on OWASP Secure Headers Project](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#xxxsp)
+🔗 [OWASP Secure Headers Project で読む](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#xxxsp)
 
-🔗 [Read on OWASP Secure Headers Project](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection)
+🔗 [MDN web docs で読む](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection)
 
 <br/><br/>
 
 ### X-Content-Type-Options
 
-Setting this header will prevent the browser from [interpreting files as something else](https://en.wikipedia.org/wiki/Content_sniffing) than declared by the content type in the HTTP headers.
+このヘッダを設定すると、ブラウザがファイルを HTTP ヘッダで宣言されたファイルタイプと[別のものとして解釈する](https://en.wikipedia.org/wiki/Content_sniffing)ことを防ぎます。
 
-Header Example - Disallow Content sniffing
+ヘッダ例 - コンテンツスニッフィングを無効化する
 ```
 X-Content-Type-Options: nosniff
 ```
 
-🔗 [Read on OWASP Secure Headers Project](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#xcto)
+🔗 [OWASP Secure Headers Project で読む](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#xcto)
 
-🔗 [Read on MDN web docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options)
+🔗 [MDN web docs で読む](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options)
 
 
 <br/><br/>
 
 ### Referrer-Policy
 
-The Referrer-Policy HTTP header governs which referrer information, sent in the `Referer` header, should be included with requests made.
+Referrer-Policy HTTP ヘッダは、`Referer` ヘッダで送信される、リファラー情報をリクエストにどれだけ含めるかを制御します。
 
-It allows 8 parameters, a `no-referrer` parameter to remove the `Referer` header completely, a `no-referrer-when-downgrade` to remove the `Referer` header when downgraded for example HTTPS -> HTTP, an `origin` parameter to send the host origin (the host root) as referrer __only__, an `origin-when-cross-origin` parameter to send a full origin URL when staying on the same origin and send the host origin __only__ when otherwise, a `same-origin` parameter to send referrer information only for same-site origins and omit on cross-origin requests, a `strict-origin` parameter to keep the `Referer` header only on the same security-level (HTTPS -> HTTPS) and omit it on a less secure destination, a `strict-origin-when-cross-origin` parameter to send the full referrer URL to a same-origin destination, the origin __only__ to a cross-origin destination on the __same__ security level and no referrer on a less secure cross-origin destination, and an `unsafe-url` parameter to send the full referrer to same-origin or cross-origin destinations.
+これは 8 つのパラメータを許可しています。`Referer` ヘッダを完全に省略する `no-referrer` パラメータ、（水準が）ダウングレードされた際（HTTPS → HTTP）に `Referer` ヘッダを省略する `no-referrer-when-downgrade` パラメータ、ホストオリジン __のみ__ をリファラーとして送信する `origin` パラメータ、同一オリジンの際はフルオリジン URL を送信し、その他の場合はホストオリジンのみを送信する `origin-when-cross-origin` パラメータ、同じオリジンにのみリファラー情報を送信しクロスオリジンのリクエストの場合は省略する `same-origin` パラメータ、同じセキュリティレベル（HTTPS → HTTPS）の場合にのみ `Referer` ヘッダーを保持しそれに劣る水準の場合は省略する `strict-origin` パラメータ、同一オリジンの場合はフルリファラー URL を送信し、クロスオリジンで __同じ__ セキュリティレベルの送信先の場合はオリジン __のみ__ を送信し、安全性の劣るクロスドメインの送信先にはリファラーを送信しない `strict-origin-when-cross-origin` パラメータ、同一オリジン、クロスオリジンに関わらずフルリファラーを送信する `unsafe-url` パラメータです。
 
-Header Example - Remove the `Referer` header completely
+ヘッダー例 - 完全に `Referer` ヘッダを取り除く
 ```
 Referrer-Policy: no-referrer
 ```
 
-🔗 [Read on OWASP Secure Headers Project](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#rp)
+🔗 [OWASP Secure Headers Project で読む](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#rp)
 
-🔗 [Read on MDN web docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)
+🔗 [MDN web docs で読む](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)
 
 
 <br/><br/>
 
 ### Expect-CT
 
-The Expect-CT header is used by a server to indicate that browsers should evaluate connections to the host emitting the header for [Certificate Transparency](https://www.certificate-transparency.org/) compliance.
+Expect-CT ヘッダは、[認証透過性](https://www.certificate-transparency.org/)の要件に準拠しているかどうか確認するために、ヘッダを発行するホストへの接続をブラウザが評価すべきということを示すことを目的として、サーバによって使用されます。
 
-This header accepts 3 parameters, a `report-uri` parameter to supply a URL to report Expect-CT failures to, a `enforce` parameter to signal the browser that Certificate Transparency should be enforced (rather than only reported) and refuse future connections violating the Certificate Transparency, and a `max-age` parameter to specify the number of seconds the browser regard the host as a known Expect-CT host.
+このヘッダは 3 つのパラメータを受け付けます。Expect-CT の失敗を報告する URI を指定する `report-uri`、（報告するだけでなく）認証透過性ポリシーに従い、認証透過性ポリシーに違反するコネクションを拒否するようにブラウザに指示する `enforce` パラメータ、ブラウザが既知の Expect-CT ホストとみなすべき時間を秒数で指定する `max-age` パラメータです。
 
-Header Example - Enforce Certificate Transparency for a week and report to example URL
+ヘッダ例 - 1 週間、認証透過性ポリシーを強制、example URL に報告する
 ```
 Expect-CT: max-age=2592000, enforce, report-uri="https://example.com/report-cert-transparency"
 ```
 
-🔗 [Read on OWASP Secure Headers Project](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#ect)
+🔗 [OWASP Secure Headers Project で読む](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#ect)
 
 
 <br/><br/>
 
 ### Content-Security-Policy
 
-The HTTP Content-Security-Policy response header allows to control resources the user agent is allowed to load for a given page. With a few exceptions, policies mostly involve specifying server origins and script endpoints. This helps guard against [cross-site scripting attacks (XSS)](https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)).
+HTTP Content-Security-Policy レスポンスヘッダは、特定のページに対して、ユーザーエージェントが読み込みをすることができるリソースを制御することを可能にします。いくつかの例外を除いて、ほとんどの場合ポリシーはサーバオリジンとスクリプトのエンドポイントを指定します。これは、[クロスサイトスクリプティング攻撃（XSS）](https://www.owasp.org/index.php/Cross-site_Scripting_(XSS))対策に役立ちます。
 
-Header Example - Enable CSP and only execute scripts from the same origin
+ヘッダ例 - CSP を有効にして、同一オリジンからのスクリプトのみを実行する
 ```
 Content-Security-Policy: script-src 'self'
 ```
 
-There are many policies enabled with Content-Security-Policy that can be found on the sites linked below.
+以下のリンクで、Content-Security-Policy で有効になっている多くのポリシーを見ることができます。
 
-🔗 [Read on OWASP Secure Headers Project](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#csp)
+🔗 [OWASP Secure Headers Project で読む](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#csp)
 
-🔗 [Read on MDN web docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy)
+🔗 [MDN web docs で読む](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy)
 
 
 <br/><br/>
