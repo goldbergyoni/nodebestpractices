@@ -595,13 +595,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 5.5. Guard process uptime using the right tool
+## ![✔] 5.5. 適切なツールを使用してプロセスの稼働時間を守る
 
-**TL;DR:** The process must go on and get restarted upon failures. For simple scenarios, process management tools like PM2 might be enough but in today's ‘dockerized’ world, cluster management tools should be considered as well
+**TL;DR:** プロセスが進み、失敗した時点で再起動しなければなりません。単純なシナリオでは、PM2 のようなプロセス管理ツールで十分かもしれませんが、今日の「 docker 化」された世界では、クラスタ管理ツールも考慮する必要があります。
 
-**Otherwise:** Running dozens of instances without a clear strategy and too many tools together (cluster management, docker, PM2) might lead to DevOps chaos
+**さもないと:** 明確な戦略を持たずに何十ものインスタンスを実行し、あまりにも多くのツール（クラスタ管理、docker、PM2 ）を一緒に使いすぎると、DevOps のカオスにつながる可能性があります。
 
-🔗 [**Read More: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
+🔗 [**さらに読む:適切なツールを使用してプロセスの稼働時間を守る**](/sections/production/guardprocess.japanese.md)
 
 <br/><br/>
 
