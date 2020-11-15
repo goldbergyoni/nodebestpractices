@@ -585,13 +585,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 5.4. Lock dependencies
+## ![✔] 5.4. 依存関係をロックする
 
-**TL;DR:** Your code must be identical across all environments, but amazingly npm lets dependencies drift across environments by default – when you install packages at various environments it tries to fetch packages’ latest patch version. Overcome this by using npm config files, .npmrc, that tell each environment to save the exact (not the latest) version of each package. Alternatively, for finer grained control use `npm shrinkwrap`. \*Update: as of NPM5, dependencies are locked by default. The new package manager in town, Yarn, also got us covered by default
+**TL;DR:** コードはすべての環境で同一でなければなりませんが、驚くべきことに npm はデフォルトで環境間で依存関係をドリフトさせることができます。– 様々な環境でパッケージをインストールすると、パッケージの最新のパッチバージョンを取得しようとします。これを克服するには、各パッケージの正確な (最新版ではない) バージョンを保存するように各環境に指示する npm 設定ファイル .npmrc を使用します。あるいは、より細かい制御を行うには `npm shrinkwrap` を使用してください。\*更新: NPM5 では、依存関係はデフォルトでロックされています。新しいパッケージマネージャー、Yarn もデフォルトでカバーしてくれました。
 
-**Otherwise:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
+**さもないと:** QA はコードを徹底的にテストし、本番では異なる挙動をするバージョンを承認します。さらに悪いことに、同じクラスタ内の異なるサーバが異なるコードを実行する可能性があります。
 
-🔗 [**Read More: Lock dependencies**](/sections/production/lockdependencies.md)
+🔗 [**さらに読む: 依存関係をロックする**](/sections/production/lockdependencies.japanese.md)
 
 <br/><br/>
 
