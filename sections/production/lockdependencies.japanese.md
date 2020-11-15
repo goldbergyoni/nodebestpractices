@@ -1,25 +1,25 @@
-# Lock dependencies
+# 依存関係をロックする
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-Your code depends on many external packages, let’s say it ‘requires’ and use momentjs-2.1.4, then by default when you deploy to production npm might fetch momentjs 2.1.5 which unfortunately brings some new bugs to the table. Using npm config files and the argument ```–save-exact=true``` instructs npm to refer to the *exact* same version that was installed so the next time you run ```npm install``` (in production or within a Docker container you plan to ship forward for testing) the same dependent version will be fetched. An alternative and popular approach is using a `.shrinkwrap` file (easily generated using npm) that states exactly which packages and versions should be installed so no environment can get tempted to fetch newer versions than expected.
+あなたのコードは多くの外部パッケージに依存しています。例えば、'require' して momentjs-2.1.4 を使用しているとします。デフォルトでは、本番環境にデプロイするときに npm が momentjs 2.1.5 をフェッチすることがありますが、これは残念ながらテーブルにいくつかの新しいバグをもたらすことになります。npm の設定ファイルと引数 ```-save-exact=true``` を使うことで、インストールされた*正確な*同じバージョンを参照するように npm に指示します。そのため、次に ```npm install``` を実行したとき（本番環境やテスト用に出荷する予定の Docker コンテナ内で）、同じ依存バージョンが取得されます。別のポピュラーな方法としては、`.shrinkwrap` ファイル ( npm を使って簡単に生成されます) を使って、どのパッケージとバージョンをインストールすべきかを正確に記述することで、環境が期待以上に新しいバージョンを取得したくなることがないようにする方法があります。
 
-* **Update:** as of npm 5, dependencies are locked automatically using .shrinkwrap. Yarn, an emerging package manager, also locks down dependencies by default.
+* **更新:** npm 5 の時点で、依存関係は .shrinkwrap を使って自動的にロックされます。新興のパッケージマネージャである Yarn も、デフォルトで依存関係をロックしています。
 
 <br/><br/>
 
-### Code example: .npmrc file that instructs npm to use exact versions
+### コード例: 正確なバージョンを使用するように npm に指示する .npmrc ファイル
 
 ```npmrc
-// save this as .npmrc file on the project directory
+// これをプロジェクトディレクトリに .npmrc ファイルとして保存します
 save-exact:true
 ```
 
 <br/><br/>
 
-### Code example: shrinkwrap.json file that distills the exact dependency tree
+### コード例: 依存関係ツリーを正確に蒸留した shrinkwrap.json ファイル
 
 ```json
 {
@@ -39,7 +39,7 @@ save-exact:true
 
 <br/><br/>
 
-### Code example: npm 5 dependencies lock file – package-lock.json
+### コード例: npm 5 依存関係ロックファイル - package-lock.json
 
 ```json
 {
