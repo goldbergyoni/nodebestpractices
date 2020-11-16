@@ -601,7 +601,7 @@ null == undefined; // true
 
 **さもないと:** 明確な戦略を持たずに何十ものインスタンスを実行し、あまりにも多くのツール（クラスタ管理、docker、PM2 ）を一緒に使いすぎると、DevOps のカオスにつながる可能性があります。
 
-🔗 [**さらに読む:適切なツールを使用してプロセスの稼働時間を守る**](/sections/production/guardprocess.japanese.md)
+🔗 [**さらに読む: 適切なツールを使用してプロセスの稼働時間を守る**](/sections/production/guardprocess.japanese.md)
 
 <br/><br/>
 
