@@ -1,17 +1,17 @@
-# Guard and restart your process upon failure (using the right tool)
+# 障害が発生した場合は、プロセスを保護して再起動します（適切なツールを使用します）
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-At the base level, Node processes must be guarded and restarted upon failures. Simply put, for small apps and those who don’t use containers – tools like [PM2](https://www.npmjs.com/package/pm2-docker) are perfect as they bring simplicity, restarting capabilities and also rich integration with Node. Others with strong Linux skills might use systemd and run Node as a service. Things get more interesting for apps that use Docker or any container technology since those are usually accompanied by cluster management and orchestration tools (e.g. [AWS ECS](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html), [Kubernetes](https://kubernetes.io/), etc) that deploy, monitor and heal containers. Having all those rich cluster management features including container restart, why mess up with other tools like PM2? There’s no bulletproof answer. There are good reasons to keep PM2 within containers (mostly its containers specific version [pm2-docker](https://www.npmjs.com/package/pm2-docker)) as the first guarding tier – it’s much faster to restart a process and provide Node-specific features like flagging to the code when the hosting container asks to gracefully restart. Other might choose to avoid unnecessary layers. To conclude this write-up, no solution suits them all and getting to know the options is the important thing
+基本的なレベルとして、ノードプロセスはガードされ、障害が発生したときに再起動されなければなりません。簡単に言うと、小さなアプリやコンテナを使わない人向けに – [PM2](https://www.npmjs.com/package/pm2-docker) のようなツールは、シンプルさ、再起動機能、そして Node との豊富な統合をもたらすので完璧です。Linux に強い人は systemd を使って Node をサービスとして動かすかもしれません。Docker やコンテナ技術を使用しているアプリケーションでは、クラスタ管理やコンテナのデプロイ、監視、修復を行うことができるオーケストレーションツールを使用するのが一般的なので、状況はさらに面白くなります。(例：[AWS ECS](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html)、[Kubernetes](https://kubernetes.io/) など) コンテナの再起動を含む、すべての豊富なクラスタ管理機能を持つのに、なぜ PM2 のような他のツールに干渉してしまうのでしょうか？心配のない答えはありません。コンテナ内で PM2 を最初のガード層として維持するには十分な理由があります (主にコンテナ固有のバージョン [pm2-docker](https://www.npmjs.com/package/pm2-docker) ) – それは、プロセスを再起動する方がはるかに高速で、ホスティングコンテナが再起動を要求したときにコードにフラグを立てるなどの Node 固有の機能を提供します。不要なレイヤーを避けるために選ぶ人がいるかもしれません。この記事の結論としては、どのソリューションもそれらすべてに適しておらず、オプションを知ることが重要なことです。
 
 <br/><br/>
 
-### What Other Bloggers Say
+### 他のブロガーが言っていること
 
-* From the [Express Production Best Practices](https://expressjs.com/en/advanced/best-practice-performance.html):
-> ... In development, you started your app simply from the command line with node server.js or something similar. **But doing this in production is a recipe for disaster. If the app crashes, it will be offline** until you restart it. To ensure your app restarts if it crashes, use a process manager. A process manager is a “container” for applications that facilitate deployment, provides high availability, and enables you to manage the application at runtime.
+* [Express Production Best Practices(Express プロダクションのベストプラクティス)](https://expressjs.com/en/advanced/best-practice-performance.html) より:
+> ...開発では、node server.js などを使ってコマンドラインからアプリを起動するだけでした。**しかし、本番でこれを行うことは災いのもとです。アプリがクラッシュした場合、オフラインになってしまうでしょう。** 再起動するまで。 アプリがクラッシュした場合に確実に再起動するには、プロセスマネージャを使用します。プロセスマネージャは、デプロイを容易にし、高可用性を提供し、実行時にアプリケーションを管理できるようにするアプリケーションのための「コンテナ」です。
 
-* From the Medium blog post [Understanding Node Clustering](https://medium.com/@CodeAndBiscuits/understanding-nodejs-clustering-in-docker-land-64ce2306afef#.cssigr5z3):
-> ... Understanding Node.js Clustering in Docker-Land “Docker containers are streamlined, lightweight virtual environments, designed to simplify processes to their bare minimum. Processes that manage and coordinate their own resources are no longer as valuable. **Instead, management stacks like Kubernetes, Mesos, and Cattle have popularized the concept that these resources should be managed infrastructure-wide**. CPU and memory resources are allocated by “schedulers”, and network resources are managed by stack-provided load balancers.
+* Medium のブログポスト [Understanding Node Clustering(Node クラスタリングを理解する)](https://medium.com/@CodeAndBiscuits/understanding-nodejs-clustering-in-docker-land-64ce2306afef#.cssigr5z3) より:
+> ...Docker-Land で Node.js クラスタリングを理解する Docker コンテナは、プロセスを最小限に簡素化するために設計された、合理化された軽量な仮想環境です。自らの資源を管理・調整するプロセスは、もはや価値がありません。**代わりに、Kubernetes、Mesos、Cattle のような管理スタックは、これらのリソースをインフラストラクチャ全体で管理すべきだという概念を普及させてきました**。 CPUやメモリのリソースは「スケジューラ」によって割り当てられ、ネットワークリソースはスタック提供のロードバランサによって管理されます。
