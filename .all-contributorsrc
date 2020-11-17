@@ -1048,6 +1048,34 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/46608115?v=4",
       "profile": "http://joshuahemphill.com",
       "contributions": [
+        "content",
+        "security"
+      ]
+    },
+    {
+      "login": "alec-francis",
+      "name": "Alec Francis",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/32949882?v=4",
+      "profile": "https://github.com/alec-francis",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "arjun6610",
+      "name": "arjun6610",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/61268891?v=4",
+      "profile": "https://github.com/arjun6610",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "jan-osch",
+      "name": "Jan Osch",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/11651780?v=4",
+      "profile": "https://github.com/jan-osch",
+      "contributions": [
         "content"
       ]
     }
