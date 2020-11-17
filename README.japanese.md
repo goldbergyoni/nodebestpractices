@@ -831,15 +831,15 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 6.8. Avoid using the Node.js crypto library for handling passwords, use Bcrypt
+## ![✔] 6.8. パスワードの処理に Node.js の crypto ライブラリではなく Bcrypt を利用する
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;DR:** Passwords or secrets (API keys) should be stored using a secure hash + salt function like `bcrypt`, that should be a preferred choice over its JavaScript implementation due to performance and security reasons.
+**TL;DR:** パスワードやシークレット（API キー）は、JavaScript の実装においてパフォーマンス面・セキュリティ面で優れた選択肢である `bcrypt` のようなセキュアなハッシュ＋ソルト関数を利用して保存するべきです。
 
-**Otherwise:** Passwords or secrets that are persisted without using a secure function are vulnerable to brute forcing and dictionary attacks that will lead to their disclosure eventually.
+**さもないと:** セキュアな関数を使わずに永続化されたパスワードやシークレット情報は、ブルートフォース攻撃や辞書攻撃に弱く、結果として情報漏えいに繋がります。
 
-🔗 [**Read More: Use Bcrypt**](/sections/security/bcryptpasswords.md)
+🔗 [**さらに読む: Bcrypt を使用する**](/sections/security/bcryptpasswords.japanese.md)
 
 <br/><br/>
 
