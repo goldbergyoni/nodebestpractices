@@ -1,12 +1,12 @@
-# Constantly and automatically inspect for vulnerable dependencies
+# 定期的に、そして自動的に脆弱性のある依存関係を検査する
 
-### One Paragraph Explainer
+### 一段落説明
 
-The majority of Node.js applications rely heavily on a large number of third party modules from npm or Yarn, both popular package registries, due to ease and speed of development. However, the downside to this benefit is the security risks of including unknown vulnerabilities into your application, which is a risk recognised by its place in the OWASP top critical web application security risks list.
+Node.js アプリケーションの大部分は、開発の容易化とスピードアップを目的として、人気のあるパッケージレジストリである npm や Yarn に存在する多数のサードパーティモジュールに大きく依存しています。しかし、この利点の負の側面は、未知の脆弱性をアプリケーションに含めることによるセキュリティリスクです。このリスクは、OWSAP のクリティカルなウェブアプリケーションセキュリティリスクリストにおいて上位に位置するものです。
 
-There is a number of tools available to help identify third-party packages in Node.js applications which have been identified as vulnerable by the community to mitigate the risk of introducing them into your project. These can be used periodically from CLI tools or included as part of your application's build process.
+プロジェクトに脆弱性を注入してしまうリスクを軽減するために、コミュニティによって脆弱性があると識別された Node.js アプリケーションのサードパーティ製パッケージを特定することができるツールがいくつかあります。これらは CLI ツールから定期的に利用することができますし、アプリケーションのビルドプロセスの一部として含むこともできます。
 
-### Table of Contents
+### 目次
 
 - [NPM audit](#npm-audit)
 - [Snyk](#snyk)
@@ -14,39 +14,39 @@ There is a number of tools available to help identify third-party packages in No
 
 ### NPM Audit
 
-`npm audit` is a new cli tool introduced with NPM@6.
+`npm audit` は NPM@6 において導入された新しい CLI ツールです。
 
-Running `npm audit` will produce a report of security vulnerabilities with the affected package name, vulnerability severity and description, path, and other information, and, if available, commands to apply patches to resolve vulnerabilities.
+`npm audit` を実行すると、影響を受けるパッケージ名、脆弱性の深刻度と概要、パス、そしてその他の情報を含むセキュリティ脆弱性のレポートが作成され、さらに、利用可能な場合には脆弱性を解決するためのパッチを適用するためのコマンドが表示されます。
 
-![npm audit example](/assets/images/npm-audit.png)
+![npm audit の例](/assets/images/npm-audit.png)
 
-🔗 [Read on: NPM blog](https://docs.npmjs.com/getting-started/running-a-security-audit)
+🔗 [NPM blog で読む](https://docs.npmjs.com/getting-started/running-a-security-audit)
 
 ### Snyk
 
-Snyk offers a feature-rich CLI, as well as GitHub integration. Snyk goes further with this and in addition to notifying vulnerabilities, also automatically creates new pull requests fixing vulnerabilities as patches are released for known vulnerabilities.
+Snyk は機能豊富な CLI と GitHub インテグレーションを提供しています。Snyk はさらに、脆弱性を通知するだけでなく、既知の脆弱性に対するパッチがリリースされると、脆弱性を修正する新しいプルリクエストを自動的に作成します。
 
-Snyk's feature rich website also allows for ad-hoc assessment of dependencies when provided with a GitHub repository or npm module url. You can also search for npm packages which have vulnerabilities directly.
+Snyk の機能豊富なウェブサイトでは、GitHub リポジトリや npm モジュールの URL を与えると、依存性のアドホックな評価を実行することもできます。また、脆弱性がある npm パッケージを直接検索することもできます。
 
-An example of the output of the Synk GitHub integration automatically created pull request:
+Synk Github インテグレーションが自動的にプルリクエストを作成した際の出力結果例:
 ![synk GitHub example](/assets/images/snyk.png)
 
-🔗 [Read on: Snyk website](https://snyk.io/)
+🔗 [Snyk website で読む](https://snyk.io/)
 
-🔗 [Read on: Synk online tool to check npm packages and GitHub modules](https://snyk.io/test)
+🔗 [Synk online tool to check npm packages and GitHub modules で読む](https://snyk.io/test)
 
 ### Greenkeeper
 
-Greenkeeper is a service which offers real-time dependency updates, which keeps an application more secure by always using the most up to date and patched dependency versions.
+Greenkeeper はリアルタイムに依存関係のアップデート情報を提供するサービスで、常に最新のパッチが適用された依存関係のバージョンを使用することで、アプリケーションの安全性を維持します。
 
-Greenkeeper watches the npm dependencies specified in a repository's `package.json` file, and automatically creates a working branch with each dependency update. The repository CI suite is then run to reveal any breaking changes for the updated dependency version in the application. If CI fails due to the dependency update, a clear and concise issue is created in the repository to be auctioned, outlining the current and updated package versions, along with information and commit history of the updated version.
+Greenkeeper は、リポジトリの `package.json` ファイルで指定された npm 依存関係を監視し、依存関係のアップデートごとに作業ブランチを自動的に作成します。その後、リポジトリの CI が実行され、アプリケーション内でアップデートされた依存関係のバージョンの変更点を明らかにします。依存関係のアップデートが原因で CI が失敗した場合、現在のパッケージバージョンとアップデートされたパッケージバージョンの概要と、アップデートされたバージョンの情報とコミット履歴が記載された、明確で簡潔な issue がリポジトリに作成され、議論が交わされます。
 
-An example of the output of the Greenkeeper GitHub integration automatically created pull request:
+Greenkeeper GitHub インテグレーションが自動的にプルリクエストを作成した際の出力結果例:
 
 ![synk github example](/assets/images/greenkeeper.png)
-🔗 [Read on: Greenkeeper website](https://greenkeeper.io/)
+🔗 [Greenkeeper website で読む](https://greenkeeper.io/)
 
-### Additional resources
+### 追加資料
 
 🔗 [Rising Stack Blog: Node.js dependency risks](https://blog.risingstack.com/controlling-node-js-security-risk-npm-dependencies/)
 
