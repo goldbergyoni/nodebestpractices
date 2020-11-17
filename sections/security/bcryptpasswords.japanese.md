@@ -1,32 +1,32 @@
-# Avoid using the Node.js Crypto library for passwords, use Bcrypt
+# パスワードの処理に Node.js の crypto ライブラリではなく Bcrypt を利用する
 
-### One Paragraph Explainer
+### 一段落説明
 
-When storing user passwords, using an adaptive hashing algorithm such as bcrypt, offered by the [bcrypt npm module](https://www.npmjs.com/package/bcrypt) is recommended as opposed to using the native Node.js crypto module. `Math.random()` should also never be used as part of any password or token generation due to its predictability.
+ユーザーのパスワードを保存する際には、ネイティブの Node.js crypto モジュールを使用するのではなく、[bcrypt npm モジュール](https://www.npmjs.com/package/bcrypt)が提供するbcrypt のような、適応性のあるハッシュアルゴリズムを使用することをおすすめします。`Math.random()` は予測可能性があるため、パスワードやトークン生成の一部としては決して使用しないでください。
 
-The `bcrypt` module or similar should be used as opposed to the JavaScript implementation, as when using `bcrypt`, a number of 'rounds' can be specified in order to provide a secure hash. This sets the work factor or the number of 'rounds' the data is processed for, and more hashing rounds leads to more secure hash (although this at the cost of CPU time). The introduction of hashing rounds means that the brute force factor is significantly reduced, as password crackers are slowed down increasing the time required to generate one attempt.
+JavaScript の実装ではなく、`bcrypt` モジュールなどを使用しなければなりません。`bcrypt` を使う場合、安全なハッシュを提供するために 'ラウンド数' を指定することができます。これはワークファクターもしくはデータが処理される回数を指定し、ハッシュのラウンド数が増えるほど、より安全なハッシュが算出されます（ただし、CPU 計算時間のコストがかかります）。ハッシュラウンドの導入は、1回試行するために必要な時間を増加させることでパスワードクラッカーが減速されるため、ブルートフォース要因が大幅に削減されることを意味します。
 
-### Code example
+### コード例
 
 ```javascript
 try {
-// asynchronously generate a secure password using 10 hashing rounds
+// 10回のハッシュラウンドを設定して、非同期にセキュアなパスワードを生成する
   const hash = await bcrypt.hash('myPassword', 10);
-  // Store secure hash in user record
+  // セキュアなハッシュをユーザレコードに保存する
 
-  // compare a provided password input with saved hash
+  // 与えられたパスワード入力を保存されたハッシュと比較する
   const match = await bcrypt.compare('somePassword', hash);
   if (match) {
-   // Passwords match
+   // パスワードが合致した場合
   } else {
-   // Passwords don't match
+   // パスワードが合致しなかった場合
   } 
 } catch {
   logger.error('could not hash password.')
 }
 ```
 
-### What other bloggers say
+### 他のブロガーが言っていること
 
-From the blog by [Max McCarty](https://dzone.com/articles/nodejs-and-password-storage-with-bcrypt):
-> ... it’s not just using the right hashing algorithm. I’ve talked extensively about how the right tool also includes the necessary ingredient of “time” as part of the password hashing algorithm and what it means for the attacker who’s trying to crack passwords through brute-force.
+[Max McCarty](https://dzone.com/articles/nodejs-and-password-storage-with-bcrypt) のブログより:
+> ... 正しいハッシュアルゴリズムを使うだけではありません。正しいツールがパスワードハッシュアルゴリズムの一部として 「時間」という必要不可欠な要素を含んでいることと、それがブルートフォースでパスワードを解読しようとしている攻撃者にとって何を意味するのかについて、広範囲にわたって話してきました。
