@@ -1078,6 +1078,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "thiagotrs",
+      "name": "Thiago Rotondo Sampaio",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/32005779?v=4",
+      "profile": "https://github.com/thiagotrs",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
