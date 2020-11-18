@@ -605,13 +605,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 5.6. Utilize all CPU cores
+## ![✔] 5.6. すべての CPU コアを利用する
 
-**TL;DR:** At its basic form, a Node app runs on a single CPU core while all others are left idling. It’s your duty to replicate the Node process and utilize all CPUs – For small-medium apps you may use Node Cluster or PM2. For a larger app consider replicating the process using some Docker cluster (e.g. K8S, ECS) or deployment scripts that are based on Linux init system (e.g. systemd)
+**TL;DR:** 基本的な形として、Node アプリは他のすべてがアイドル状態のままで、単一のCPUコア上で動作します。 Node プロセスを複製し、すべてのCPUを利用するのはあなたの義務です。 – 中小規模のアプリでは、Node クラスタや PM2 を使用することができます。大規模なアプリケーションでは、Docker クラスタ( K8S や ECS など)や Linux の init システム( systemd など)をベースにしたデプロイスクリプトを使用してプロセスを複製することを検討してください。
 
-**Otherwise:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.js utilizes only 1 (even using PaaS services like AWS beanstalk!)
+**さもないと:** あなたのアプリは、利用可能なリソースの25%、もしくはそれ以下しか使用していない可能性が高いです（！）。一般的なサーバは4つ以上の CPU コアを持っていますが、 Node.js のナイーブなデプロイでは1つしか利用していないことに注意してください（ AWS beanstalk のような PaaS サービスを利用している場合でも！）。
 
-🔗 [**Read More: Utilize all CPU cores**](/sections/production/utilizecpu.md)
+🔗 [**さらに読む: すべての CPU コアを利用する**](/sections/production/utilizecpu.japanese.md)
 
 <br/><br/>
 
