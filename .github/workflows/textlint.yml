@@ -13,8 +13,11 @@ jobs:
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.1
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         with:
           node-version: '12.x'
+        
       
       - name: Install dependencies
         run: cd .operations/ && npm install

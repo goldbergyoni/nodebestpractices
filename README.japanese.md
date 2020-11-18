@@ -819,27 +819,27 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 6.7. Constantly and automatically inspect for vulnerable dependencies
+## ![✔] 6.7. 定期的に、そして自動的に脆弱性のある依存関係を検査する
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Known%20Vulnerabilities%20-green.svg" alt=""/></a>
 
-**TL;DR:** With the npm ecosystem it is common to have many dependencies for a project. Dependencies should always be kept in check as new vulnerabilities are found. Use tools like [npm audit](https://docs.npmjs.com/cli/audit) or [snyk](https://snyk.io/) to track, monitor and patch vulnerable dependencies. Integrate these tools with your CI setup so you catch a vulnerable dependency before it makes it to production.
+**TL;DR:** npm のエコシステムでは、プロジェクトにおいて多くの依存関係があることが一般的です。新たな脆弱性が発見された場合には、依存関係を常にチェックしておくべきです。[npm audit](https://docs.npmjs.com/cli/audit) や [snyk](https://snyk.io/) のようなツールを利用して、脆弱性のある依存関係を追跡、監視し、パッチを適用しましょう。これらのツールを CI セットアップと統合することで、本番環境にデプロイされる前に脆弱性のある依存関係を発見することができるでしょう。
 
-**Otherwise:** An attacker could detect your web framework and attack all its known vulnerabilities.
+**さもないと:** 攻撃者がウェブフレームワークを特定して、全ての既知の脆弱性を突いてくる可能性があります。
 
-🔗 [**Read More: Dependency security**](/sections/security/dependencysecurity.md)
+🔗 [**さらに読む: 依存性のセキュリティ**](/sections/security/dependencysecurity.japanese.md)
 
 <br/><br/>
 
-## ![✔] 6.8. Avoid using the Node.js crypto library for handling passwords, use Bcrypt
+## ![✔] 6.8. パスワードの処理に Node.js の crypto ライブラリではなく Bcrypt を利用する
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;DR:** Passwords or secrets (API keys) should be stored using a secure hash + salt function like `bcrypt`, that should be a preferred choice over its JavaScript implementation due to performance and security reasons.
+**TL;DR:** パスワードやシークレット（API キー）は、JavaScript の実装においてパフォーマンス面・セキュリティ面で優れた選択肢である `bcrypt` のようなセキュアなハッシュ＋ソルト関数を利用して保存するべきです。
 
-**Otherwise:** Passwords or secrets that are persisted without using a secure function are vulnerable to brute forcing and dictionary attacks that will lead to their disclosure eventually.
+**さもないと:** セキュアな関数を使わずに永続化されたパスワードやシークレット情報は、ブルートフォース攻撃や辞書攻撃に弱く、結果として情報漏えいに繋がります。
 
-🔗 [**Read More: Use Bcrypt**](/sections/security/bcryptpasswords.md)
+🔗 [**さらに読む: Bcrypt を使用する**](/sections/security/bcryptpasswords.japanese.md)
 
 <br/><br/>
 
