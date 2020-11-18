@@ -1,26 +1,26 @@
-# Utilize all CPU cores
+# すべての CPU コアを利用する
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-It might not come as a surprise that in its basic form, Node runs over a single thread=single process=single CPU. Paying for beefy hardware with 4 or 8 CPU and utilizing only one sounds crazy, right? The quickest solution which fits medium sized apps is using Node’s Cluster module which in 10 lines of code spawns a process for each logical core and route requests between the processes in a round-robin style. Even better, use PM2 which sugarcoats the clustering module with a simple interface and cool monitoring UI. While this solution works well for traditional applications, it might fall short for applications that require top-notch performance and robust DevOps flow. For those advanced use cases, consider replicating the NODE process using custom deployment script and balancing using a specialized tool such as nginx or use a container engine such as AWS ECS or Kubernetees that have advanced features for deployment and replication of processes.
-
-<br/><br/>
-
-### Comparison: Balancing using Node’s cluster vs nginx
-
-![Balancing using Node’s cluster vs nginx](/assets/images/utilizecpucores1.png "Balancing using Node’s cluster vs nginx")
+意外ではないかもしれませんが、基本的な形として、Node は単一のスレッド、単一のプロセス、単一の CPU 上で動作します。4もしくは8個のCPUがある頑丈なハードにお金を払っておいて、1つだけを利用するのはバカバカしく聞こえるのではないでしょうか？中規模なアプリケーションに適用する最速のソリューションは、10行のコードで各論理コアのためにプロセスを生成し、ラウンドロビン形式でプロセス間のリクエストをルーティングする、Node クラスターを使うことです。さらに良いのは、シンプルなインターフェースとクールなモニタリング UI でクラスタリングモジュールの体裁を整えている PM2 を使用することです。このソリューションは従来のアプリケーションには適していますが、一流のパフォーマンスと堅牢な DevOps フローを必要とするアプリケーションには不向きかもしれません。これらの高度なユースケースでは、カスタムデプロイスクリプトを使用して NODE プロセスをレプリケートし、nginx などの専用ツールを使用してバランシングを行うか、デプロイとプロセスのレプリケーションのための高度な機能を持つ AWS ECS や Kubernetees などのコンテナエンジンを使用することを検討してみてはいかがでしょうか。
 
 <br/><br/>
 
-### What Other Bloggers Say
+### 比較: Node クラスタと nginx それぞれを使ったバランシング
 
-* From the [Node.js documentation](https://nodejs.org/api/cluster.html#cluster_how_it_works):
-> ... The second approach, Node clusters, should, in theory, give the best performance. In practice, however, distribution tends to be very unbalanced due to operating system scheduler vagaries. Loads have been observed where over 70% of all connections ended up in just two processes, out of a total of eight ...
+![バランシングの比較 Node クラスタ vs nginx](/assets/images/utilizecpucores1.png "バランシングの比較 Node クラスタ vs nginx")
 
-* From the blog [StrongLoop](https://strongloop.com/strongblog/best-practices-for-express-in-production-part-two-performance-and-reliability/):
-> ... Clustering is made possible with Node’s cluster module. This enables a master process to spawn worker processes and distribute incoming connections among the workers. However, rather than using this module directly, it’s far better to use one of the many tools out there that do it for you automatically; for example node-pm or cluster-service ...
+<br/><br/>
 
-* From the Medium post [Node.js process load balance performance: comparing cluster module, iptables, and Nginx](https://medium.com/@fermads/node-js-process-load-balancing-comparing-cluster-iptables-and-nginx-6746aaf38272)
-> ... Node cluster is simple to implement and configure, things are kept inside Node’s realm without depending on other software. Just remember your master process will work almost as much as your worker processes and with a little less request rate than the other solutions ...
+### 他のブロガーが言っていること
+
+* [Node.js documentation](https://nodejs.org/api/cluster.html#cluster_how_it_works) より:
+> ... 2番目のアプローチである Node クラスタは、理論的には最高のパフォーマンスを発揮するはずです。しかし、実際には、オペレーティングシステムのスケジューラのばらつきのために、ディストリビューションは非常にアンバランスになる傾向があります。8つの全てのプロセスのうち、70%以上の接続が2つのプロセスで終了するという負荷が観測されています。 ...
+
+* ブログ [StrongLoop](https://strongloop.com/strongblog/best-practices-for-express-in-production-part-two-performance-and-reliability/) より:
+> ... クラスタリングは Node のクラスタモジュールで可能になります。これにより、マスタープロセスがワーカープロセスを spawn し、ワーカー間で着信接続を分配できるようになります。しかし、このモジュールを直接使用するよりも、自動的にそれを行ってくれる多くのツールのうちの一つを使用する方がはるかに良いでしょう; node-pm やクラスタサービスなど ...
+
+* Medium のポスト [Node.js process load balance performance: comparing cluster module, iptables, and Nginx](https://medium.com/@fermads/node-js-process-load-balancing-comparing-cluster-iptables-and-nginx-6746aaf38272) より
+> ... Node クラスタは実装と設定が簡単で、他のソフトウェアに依存することなくノードの領域内に保持されます。マスタープロセスは、他のソリューションに比べてリクエスト率が若干低くても、作業者のプロセスとほぼ同等に機能することを覚えておいてください。 ...
