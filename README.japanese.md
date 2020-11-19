@@ -843,15 +843,15 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 6.9. Escape HTML, JS and CSS output
+## ![✔] 6.9. HTML や JS、CSS の出力をエスケープする
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Untrusted data that is sent down to the browser might get executed instead of just being displayed, this is commonly referred as a cross-site-scripting (XSS) attack. Mitigate this by using dedicated libraries that explicitly mark the data as pure content that should never get executed (i.e. encoding, escaping)
+**TL;DR:** ブラウザに送信された信頼されていないデータは、ただ表示される代わりに実行される可能性があり、これは一般的にクロスサイトスクリプティング（XSS）攻撃と呼ばれています。これを軽減するには、データを、実行されるべきではない純粋なコンテンツとして明示的にマークする専用のライブラリを使用します（エンコーディング、エスケープなど）。
 
-**Otherwise:** An attacker might store malicious JavaScript code in your DB which will then be sent as-is to the poor clients
+**さもないと:** 攻撃者は悪意のある JavaScript のコードを DB に保存し、それをそのまま脆弱なクライアントに送信する可能性があります。
 
-🔗 [**Read More: Escape output**](/sections/security/escape-output.md)
+🔗 [**さらに読む: 出力をエスケープする**](/sections/security/escape-output.japanese.md)
 
 <br/><br/>
 
