@@ -1,19 +1,19 @@
-# Create a maintenance endpoint
+# メンテナンスエンドポイントの作成
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-A maintenance endpoint is a highly secure HTTP API that is part of the app code and its purpose is to be used by the ops/production team to monitor and expose maintenance functionality. For example, it can return a heap dump (memory snapshot) of the process, report whether there are some memory leaks and even allow to execute REPL commands directly. This endpoint is needed where the conventional DevOps tools (monitoring products, logs, etc) fail to gather some specific type of information or you choose not to buy/install such tools. The golden rule is using professional and external tools for monitoring and maintaining the production, these are usually more robust and accurate. That said, there are likely to be cases where the generic tools will fail to extract information that is specific to Node or to your app – for example, should you wish to generate a memory snapshot at the moment GC completed a cycle – few npm libraries will be glad to perform this for you but popular monitoring tools will likely miss this functionality. It is important to keep this endpoint private and accessibly only by admins because it can become a target of a DDOS attack.
+メンテナンス エンドポイントは、アプリのコードの一部であり、その目的は、ops/プロダクション チームがメンテナンス機能を監視し、公開するために使用する高度に安全な HTTP API です。 例えば、プロセスのヒープダンプ（メモリスナップショット）を返したり、メモリリークがあるかどうかを報告したり、REPL コマンドを直接実行したりすることができます。このエンドポイントは、従来の DevOps ツール（監視製品、ログなど）では特定の情報を収集できない場合や、そのようなツールを購入/インストールしないことを選択した場合に必要となります。黄金ルールは、生産の監視と維持のために専門的な外部ツールを使用していますが、これらは通常、より堅牢で正確です。とはいえ、一般的なツールでは、Node やアプリに固有の情報を抽出できない場合もあるでしょう。– 例えば、GC がサイクルを完了した瞬間にメモリスナップショットを生成したい場合は、以下のようになります – いくつかの npm ライブラリは喜んでこの機能を実行してくれますが、一般的なモニタリングツールはこの機能を見逃してしまう可能性があります。DDOS 攻撃の標的になる可能性があるため、このエンドポイントを非公開にし、管理者のみがアクセスできるようにしておくことが重要です。
 
 <br/><br/>
 
-### Code example: generating a heap dump via code
+### コード例: コードによるヒープダンプの生成
 
 ```javascript
 const heapdump = require('heapdump');
 
-// Check if request is authorized 
+// リクエストが許可されているかどうかを確認する
 function isAuthorized(req) {
     // ...
 }
@@ -36,10 +36,10 @@ router.get('/ops/heapdump', (req, res, next) => {
 
 <br/><br/>
 
-### Recommended Resources
+### 推奨リソース
 
-[Getting your Node.js app production ready (Slides)](http://naugtur.pl/pres3/node2prod)
+[Node.js アプリの制作準備 (スライド)](http://naugtur.pl/pres3/node2prod)
 
-▶ [Getting your Node.js app production ready (Video)](https://www.youtube.com/watch?v=lUsNne-_VIk)
+▶ [Node.js アプリの制作準備 (ビデオ)](https://www.youtube.com/watch?v=lUsNne-_VIk)
 
-![Getting your Node.js app production ready](/assets/images/createmaintenanceendpoint1.png "Getting your Node.js app production ready")
+![Node.js アプリの制作準備](/assets/images/createmaintenanceendpoint1.png "Node.js アプリの制作準備")

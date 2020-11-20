@@ -615,13 +615,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 5.7. Create a ‘maintenance endpoint’
+## ![✔] 5.7. 「メンテナンスエンドポイント」を作成する
 
-**TL;DR:** Expose a set of system-related information, like memory usage and REPL, etc in a secured API. Although it’s highly recommended to rely on standard and battle-tests tools, some valuable information and operations are easier done using code
+**TL;DR:** メモリ使用量や REPL などのシステム関連情報をセキュアな API で公開します。標準ツールやバトルテストツールに頼ることを強くお勧めしますが、貴重な情報や操作はコードを使った方が簡単にできるものもあります。
 
-**Otherwise:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
+**さもないと:** 多くの「診断デプロイ」を実行していることがわかります。– 診断目的のための情報を抽出するためだけにコードを本番環境に出荷するなど
 
-🔗 [**Read More: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
+🔗 [**さらに読む: 「メンテナンスエンドポイント」を作成する**](/sections/production/createmaintenanceendpoint.japanese.md)
 
 <br/><br/>
 
