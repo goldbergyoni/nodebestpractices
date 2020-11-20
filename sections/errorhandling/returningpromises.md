@@ -4,14 +4,11 @@
 
 ### One Paragraph Explainer
 
-There is a feature v8 called "zero-cost async stacktraces" that allow stacktraces not to be cut on the most recent
-`await`. But due to non-trivial implementation details, it will not work if the return value of a function (sync or
-async) is a promise. So, to avoid holes in stacktraces when returned promises would be rejected, we must always
-explicitly resolve promises with `await` before returning them from functions
+When an error occurs, whether from a synchronous or asynchronous flow, it's imperative to have a full stacktrace of the error flow. Surprisingly, if an async function returns a promise (e.g., calls other async function)  without awaiting, should an error occur then the caller function won't appear in the stacktrace. This will leave the person who diagnoses the error with partial information - All the more if the error cause lies within that caller function. There is a feature v8 called "zero-cost async stacktraces" that allow stacktraces not to be cut on the most recent `await`. But due to non-trivial implementation details, it will not work if the return value of a function (sync or async) is a promise. So, to avoid holes in stacktraces when returned promises would be rejected, we must always explicitly resolve promises with `await` before returning them from functions
 
 <br/>
 
-### Anti-pattern #1: return \<promise>
+### Code example Anti-Pattern: Calling async function without awaiting
 
 <details><summary>Javascript</summary>
 <p>
@@ -39,7 +36,7 @@ Error: missing returnWithoutAwait in the stacktrace
 </p>
 </details>
 
-### The right way to go: return await \<promise>
+### Code example: Calling and awaiting as appropriate
 
 <details><summary>Javascript</summary>
 <p>
@@ -71,7 +68,7 @@ Error: with all frames present
 
 <br/>
 
-### Anti-pattern #2: a sync function that returns a promise
+### Code example Anti-Pattern: Returning a promise without tagging the function as async
 
 <details><summary>Javascript</summary>
 <p>
@@ -105,7 +102,7 @@ Error: missing syncFn in the stacktrace
 </p>
 </details>
 
-### The right way to go: declare the function that returns a promise as async
+### Code example: Tagging the function that returns a promise as async
 
 <details><summary>Javascript</summary>
 <p>
@@ -142,7 +139,7 @@ Error: with all frames present
 
 </br>
 
-### Anti-pattern #3: direct usage of async callback where sync callback is expected
+### Code Example Anti-pattern #3: direct usage of async callback where sync callback is expected
 
 <details><summary>Javascript</summary>
 <p>
@@ -175,7 +172,7 @@ a line from internals of v8
 </p>
 </details>
 
-### The right way to go: wrap async callback in a dummy async function before passing it as a sync callback
+### Code example: wrap async callback in a dummy async function before passing it as a sync callback
 
 <details><summary>Javascript</summary>
 <p>
@@ -235,7 +232,7 @@ Error: [...]
 
 <br/>
 
-### Advanced explanation
+## Advanced explanation
 
 The mechanisms behind sync functions stacktraces and async functions stacktraces in v8 implementation are quite different:
 sync stacktrace is based on **stack** provided by operating system Node.js is running on (just like in most programming
