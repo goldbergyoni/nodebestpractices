@@ -1096,6 +1096,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "13luismb",
+      "name": "Luis A. Acurero",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/32210483?v=4",
+      "profile": "https://github.com/13luismb",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
