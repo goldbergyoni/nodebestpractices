@@ -1041,7 +1041,7 @@ Ten en cuenta que con la introducción del nuevo motor V8 junto con los nuevos e
 
 # `8. Mejores prácticas de Docker`
 
-🏅 Muchas gracias a [Bret Fisher](https://github.com/BretFisher) de quién hemos aprendido muchas de las siguientes prácticas
+🏅 Muchas gracias a [Bret Fisher](https://github.com/BretFisher) de quien hemos aprendido muchas de las siguientes prácticas
 
 <br/><br/>
 
