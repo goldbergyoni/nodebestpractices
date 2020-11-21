@@ -38,3 +38,5 @@ logger.info({ anything: 'This is metadata' }, 'Test Log Message with some parame
 
 For more information on why traditional favorites (e.g., Winston) may not be included in the current list of recommended best practices, please see #684.
 
+[#684]: #684
+
