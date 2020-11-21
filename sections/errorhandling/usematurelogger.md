@@ -27,13 +27,14 @@ logger.info({ anything: 'This is metadata' }, 'Test Log Message with some parame
 
 ### Blog Quote: "Logger Requirements"
 
- From the StrongLoop blog ("Comparing Winston and Bunyan Node.js Logging" by Alex Corbatchev, Jun 24, 2014)
+ From the StrongLoop blog ("Comparing Winston and Bunyan Node.js Logging" by Alex Corbatchev, Jun 24, 2014):
 
 > Let's identify a few requirements (for a logger):
-1. Timestamp each log line. This one is pretty self-explanatory – you should be able to tell when each log entry occurred.
-2. Logging format should be easily digestible by humans as well as machines.
-3. Allows for multiple configurable destination streams. For example, you might be writing trace logs to one file but when an error is encountered, write to the same file, then into error file and send an email at the same time.
+> 1. Timestamp each log line. This one is pretty self-explanatory – you should be able to tell when each log entry occurred.
+> 2. Logging format should be easily digestible by humans as well as machines.
+> 3. Allows for multiple configurable destination streams. For example, you might be writing trace logs to one file but when an error is encountered, write to the same file, then into error file and send an email at the same time.
 
 ### Where's Winston?
 
 For more information on why traditional favorites (e.g., Winston) may not be included in the current list of recommended best practices, please see #684.
+
