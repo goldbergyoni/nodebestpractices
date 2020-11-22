@@ -1,25 +1,25 @@
-# Sure user experience with APM products
+# APM 製品の確かなユーザー体験
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-APM (application performance monitoring) refers to a family of products that aims to monitor application performance from end to end, also from the customer perspective. While traditional monitoring solutions focus on Exceptions and standalone technical metrics (e.g. error tracking, slow server endpoints, etc), in the real world our app might create disappointed users without any code exceptions, for example, if some middleware service performed real slow. APM products measure the user experience from end to end, for example, given a system that encompasses frontend UI and multiple distributed services – some APM products can tell how fast a transaction that spans multiple tiers last. It can tell whether the user experience is solid and point to the problem. This attractive offering comes with a relatively high price tag hence it’s recommended for large-scale and complex products that require going beyond straightforward monitoring.
-
-<br/><br/>
-
-### APM example – a commercial product that visualizes cross-service app performance
-
-![APM example](/assets/images/apm1.png "APM example")
+APM（アプリケーション・パフォーマンス・モニタリング）とは、エンド・ツー・エンド、また顧客の視点からアプリケーションのパフォーマンスを監視することを目的とした製品群のことです。従来のモニタリングソリューションでは、例外やスタンドアロンの技術的なメトリクス（エラー追跡、遅いサーバーエンドポイントなど）に焦点を当てていましたが、現実の世界では、例えば、あるミドルウェアサービスが実際に遅い動作をしていた場合など、コードの例外がなくても、私たちのアプリがユーザーを失望させる可能性があります。APM 製品は、例えばフロントエンドの UI と複数の分散サービスを含むシステムを想定して、エンド・ツー・エンドまでのユーザーエクスペリエンスを測定します。 – APM 製品の中には、複数の階層にまたがるトランザクションがどのくらいの速さで最後に実行されるかを伝えることができるものがあります。ユーザー体験がしっかりしているかどうかが分かり、問題点を指摘してくれます。この魅力的な製品は比較的高い価格帯で提供されているため、単純なモニタリングの域を超えた大規模で複雑な製品にお勧めです。
 
 <br/><br/>
 
-### APM example – a commercial product that emphasizes the user experience score
+### APM の例 – サービス間のアプリパフォーマンスを可視化する商用製品
 
-![APM example](/assets/images/apm2.png "APM example")
+![APM の例](/assets/images/apm1.png "APM の例")
 
 <br/><br/>
 
-### APM example – a commercial product that highlights slow code paths
+### APM の例 – ユーザーエクスペリエンススコアを重視した市販品
 
-![APM example](/assets/images/apm3.png "APM example")
+![APM の例](/assets/images/apm2.png "APM の例")
+
+<br/><br/>
+
+### APM の例 – 遅いコードパスをハイライトする商用製品
+
+![APM の例](/assets/images/apm3.png "APM の例")
