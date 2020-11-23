@@ -1105,6 +1105,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "lromano97",
+      "name": "Lucas Romano",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/22394847?v=4",
+      "profile": "https://lromano97.github.io/",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
