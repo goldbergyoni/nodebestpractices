@@ -1,9 +1,9 @@
-# Using ESLint and Prettier
+# Usando ESLint y Prettier
 
 
-### Comparing ESLint and Prettier
+### Comparando ESLint y Prettier
 
-If you format this code using ESLint, it will just give you a warning that it's too wide (depends on your `max-len` setting). Prettier will automatically format it for you.
+Si le das formato a este código utilizando ESLint, te arrojará una alerta de que es muy largo (dependiendo del `max-len` configurado). Prettier le dará automáticamente formato por ti.
 
 ```javascript
 foo(reallyLongArg(), omgSoManyParameters(), IShouldRefactorThis(), isThereSeriouslyAnotherOne(), noWayYouGottaBeKiddingMe());
@@ -19,8 +19,8 @@ foo(
 );
 ```
 
-Source: [https://github.com/prettier/prettier-eslint/issues/101](https://github.com/prettier/prettier-eslint/issues/101)
+Fuente: [https://github.com/prettier/prettier-eslint/issues/101](https://github.com/prettier/prettier-eslint/issues/101)
 
-### Integrating ESLint and Prettier
+### Integrando ESLint y Prettier
 
-ESLint and Prettier overlap in the code formatting feature but can be easily combined by using other packages like [prettier-eslint](https://github.com/prettier/prettier-eslint), [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier), and [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier). For more information about their differences, you can view the link [here](https://stackoverflow.com/questions/44690308/whats-the-difference-between-prettier-eslint-eslint-plugin-prettier-and-eslint).
+ESLint y Prettier se solapan al darle formato al código pero pueden ser fácilmente combinados al usar otros paquetes como [prettier-eslint](https://github.com/prettier/prettier-eslint), [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier), y [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier). Para más información acerca de sus diferencias, puedes ver el link [aquí](https://stackoverflow.com/questions/44690308/whats-the-difference-between-prettier-eslint-eslint-plugin-prettier-and-eslint).
