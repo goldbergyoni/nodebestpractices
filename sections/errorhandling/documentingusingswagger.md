@@ -1,4 +1,4 @@
-# Document API errors using OpenAPI Specification (earliar known as Swagger) or GraphQL
+# Document API errors using OpenAPI Specification (earlier known as Swagger) or GraphQL
 
 ### One Paragraph Explainer
 
