@@ -635,13 +635,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 5.9. Make your code production-ready
+## ![✔] 5.9. コードを本番に即したものにする
 
-**TL;DR:** Code with the end in mind, plan for production from day 1. This sounds a bit vague so I’ve compiled a few development tips that are closely related to production maintenance (click Gist below)
+**TL;DR:** ゴールを意識してコードを作成し、1日目から制作計画を立てます。ちょっと漠然としているように聞こえるので、生産保守と密接に関係する開発のヒントをいくつかまとめてみました(下の Gist をクリックしてください)。
 
-**Otherwise:** A world champion IT/DevOps guy won’t save a system that is badly written
+**さもないと:** 世界チャンピオンの IT/DevOps の男でも、下手に書かれたシステムを救うことはできません。
 
-🔗 [**Read More: Make your code production-ready**](/sections/production/productioncode.md)
+🔗 [**さらに読む: コードを本番に即したものにする**](/sections/production/productioncode.japanese.md)
 
 <br/><br/>
 
