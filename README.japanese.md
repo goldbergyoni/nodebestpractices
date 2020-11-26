@@ -645,13 +645,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 5.10. Measure and guard the memory usage
+## ![✔] 5.10. メモリ使用量を測定してガードする
 
-**TL;DR:** Node.js has controversial relationships with memory: the v8 engine has soft limits on memory usage (1.4GB) and there are known paths to leak memory in Node’s code – thus watching Node’s process memory is a must. In small apps, you may gauge memory periodically using shell commands but in medium-large apps consider baking your memory watch into a robust monitoring system
+**TL;DR:** Node.js はメモリとの関係で物議を醸しています: v8 エンジンはメモリ使用量にソフトな制限(1.4 GB )があり、Node のコードにはメモリリークの経路が知られています。– そのため、Node のプロセスメモリを監視することは必須です。小さなアプリでは、シェルコマンドを使って定期的にメモリを測定することができますが、中規模以上のアプリでは、メモリ監視を堅牢な監視システムに組み込むことを検討してください。
 
-**Otherwise:** Your process memory might leak a hundred megabytes a day like how it happened at [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
+**さもないと:** あなたのプロセスメモリは、[Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak) で起こったように、1日に100メガバイトもリークするかもしれません。
 
-🔗 [**Read More: Measure and guard the memory usage**](/sections/production/measurememory.md)
+🔗 [**さらに読む: メモリ使用量を測定してガードする**](/sections/production/measurememory.japanese.md)
 
 <br/><br/>
 
