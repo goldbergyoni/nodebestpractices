@@ -1,10 +1,10 @@
-# Validate the incoming JSON schemas
+# 受信した JSON スキーマを検証する
 
-### One Paragraph Explainer
+### 一段落説明
 
-Validation is about being very explicit on what payload our app is willing to accept and failing fast should the input deviate from the expectations. This minimizes the attacker's surface who can no longer try out payloads with a different structure, values and length. Practically it prevents attacks like DDOS (code is unlikely to fail when the input is well defined) and Insecure Deserialization (JSON contain no surprises). Though validation can be coded or relied upon classes and types (TypeScript, ES6 classes) the community seems to increasingly like JSON-based schemas as these allow declaring complex rules without coding and share the expectations with the frontend. JSON-schema is an emerging standard that is supported by many npm libraries and tools (e.g. [jsonschema](https://www.npmjs.com/package/jsonschema), [Postman](http://blog.getpostman.com/2017/07/28/api-testing-tips-from-a-postman-professional/)), [joi](https://www.npmjs.com/package/@hapi/joi) is also highly popular with sweet syntax. Typically JSON syntax can't cover all validation scenario and custom code or pre-baked validation frameworks like [validator.js](https://github.com/chriso/validator.js/) come in handy. Regardless of the chosen syntax, ensure to run the validation as early as possible - For example, by using Express middleware that validates the request body before the request is passed to the route handler
+検証とは、アプリケーションがどのようなペイロードを受け付けるかを明確にし、入力が期待する値からかけ離れている場合には素早く失敗することです。これにより、攻撃者が異なる構造、値、長さのペイロードを試すことができなくなり、攻撃対象を最小限に抑えることができます。実際には、DDoS（入力が十分に定義されていればコードが失敗する可能性は低い）や、安全でないでシリアライゼーション（Insecure Deserialization、JSON に驚きはありません）のような攻撃を防ぐことができます。バリデーションはコード化されたり、クラスや型（TypeScript や ES6 クラス）に依存したりすることができますが、コーディングなしに複雑なルールを宣言できたり、フロントエンドと期待する条件を共有できるため、コミュニティはいっそう JSON ベースのスキーマを好むようになってきているようです。JSON スキーマは、多くの npm ライブラリやツール（例：[jsonschema](https://www.npmjs.com/package/jsonschema)、[Postman](http://blog.getpostman.com/2017/07/28/api-testing-tips-from-a-postman-professional/)）でサポートされている、急成長中の標準であり、[joi](https://www.npmjs.com/package/@hapi/joi) もまた、糖衣構文で非常に人気があります。一般的に、JSON 構文はすべての検証シナリオをカバーすることはできず、カスタムコードや [validator.js](https://github.com/chriso/validator.js/) のような、プリベークされた検証フレームワークが便利です。選択した構文にかからわず、できる限り早く検証を実施するようにしてください - 例えば、Express ミドルウェアを使用して、リクエストがルートハンドラに渡される前にリクエストボディを検証する、などです。
 
-### Example - JSON-Schema validation rules
+### 例 - JSON スキーマ検証ルール
 
 ```json
 {
@@ -27,7 +27,7 @@ Validation is about being very explicit on what payload our app is willing to ac
 ```
 
 
-### Example - Validating an entity using JSON-Schema
+### 例 - JSON スキーマを用いてエンティティを検証する
 
 ```javascript
 const JSONValidator = require('jsonschema').Validator;
@@ -47,22 +47,22 @@ class Product {
 
 ```
 
-### Example - Usage of middleware validator
+### 例 - ミドルウェアバリデータの使い方
 
 ```javascript
-// The validator is a generic middleware that gets the entity it should validate and takes care to return
-// HTTP status 400 (Bad Request) should the body payload validation fail
+// このバリデータは、エンティティを得て検証し、body ペイロードの検証が失敗した場合には
+// HTTP ステータス 400 （Bas Reqeust） を返す、総称的なミドルウェアです
 router.post('/' , **validator(Product.validate)**, async (req, res, next) => {
-    // route handling code goes here
+    // ルートハンドラのコードがここにきます
 });
 
 ```
 
 
 
-### What other bloggers say
+### 他のブロガーが言っていること
 
-From the blog [Gergely Nemeth](https://nemethgergely.com/nodejs-security-overview/):
-> Validating user input is one of the most important things to do when it comes to the security of your application. Failing to do it correctly can open up your application and users to a wide range of attacks, including command injection, SQL injection or stored cross-site scripting.<br/>
-
-To validate user input, one of the best libraries you can pick is joi. Joi is an object schema description language and validator for JavaScript objects.
+ブログ [Gergely Nemeth](https://nemethgergely.com/nodejs-security-overview/) より:
+> アプリケーションのセキュリティにおいて、ユーザーの入力を検証することは最も重要なことの一つです。それを正しく行うことができない場合、コマンドインジェクションや SQL インジェクション、格納型クロスサイトスクリプティングといった広範囲の攻撃に、アプリケーションやユーザーをさらすことになります。
+>
+> ユーザーの入力を検証するために、あなたが選ぶことができる最高のライブラリの1つは joiです。joi は JavaScript オブジェクトのための、オブジェクトスキーマ記述言語であり、バリデータです。

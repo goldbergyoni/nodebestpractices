@@ -855,15 +855,15 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 6.10. Validate incoming JSON schemas
+## ![✔] 6.10. 受信した JSON スキーマを検証する
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7: XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a>
 
-**TL;DR:** Validate the incoming requests' body payload and ensure it meets expectations, fail fast if it doesn't. To avoid tedious validation coding within each route you may use lightweight JSON-based validation schemas such as [jsonschema](https://www.npmjs.com/package/jsonschema) or [joi](https://www.npmjs.com/package/joi)
+**TL;DR:** 受信したリクエストの body ペイロードを検証し、期待する条件を満たすことを確認し、期待通りでない場合はすぐに失敗するようにしてください。各ルート内での面倒な検証コードの実装を避けるために、[jsonschema](https://www.npmjs.com/package/jsonschema) や [joi](https://www.npmjs.com/package/joi) のような、軽量の JSON ベースの検証ライブラリを利用するかもしれません。
 
-**Otherwise:** Your generosity and permissive approach greatly increases the attack surface and encourages the attacker to try out many inputs until they find some combination to crash the application
+**さもないと:** あなたの寛大で寛容なアプローチは攻撃対象を大幅に拡大させ、攻撃者がアプリケーションをクラッシュさせるための組み合わせを見つけるまで、多くの入力を試してみるように促すことに繋がります。
 
-🔗 [**Read More: Validate incoming JSON schemas**](/sections/security/validation.md)
+🔗 [**さらに読む: 受信した JSON スキーマを検証する**](/sections/security/validation.japanese.md)
 
 <br/><br/>
 
