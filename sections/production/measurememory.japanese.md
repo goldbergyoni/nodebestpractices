@@ -1,25 +1,25 @@
-# Measure and guard the memory usage
+# メモリ使用量を測定してガードする
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-In a perfect world, a web developer shouldn’t deal with memory leaks. In reality, memory issues are a known Node’s gotcha one must be aware of. Above all, memory usage must be monitored constantly. In the development and small production sites, you may gauge manually using Linux commands or npm tools and libraries like node-inspector and memwatch. The main drawback of this manual activities is that they require a human being actively monitoring – for serious production sites, it’s absolutely vital to use robust monitoring tools e.g. (AWS CloudWatch, DataDog or any similar proactive system) that alerts when a leak happens. There are also few development guidelines to prevent leaks: avoid storing data on the global level, use streams for data with dynamic size, limit variables scope using let and const.
+完璧な世界では、ウェブ開発者はメモリリークに対処すべきではありません。実際には、メモリの問題は既知の Node の問題であり、気をつけなければなりません。何よりも、メモリ使用量を常に監視する必要があります。開発現場や小規模なプロダクションサイトでは、Linux コマンドや node-inspector や memwatch のような npm ツールやライブラリを使って手動で測定することもあります。このマニュアル活動の最大の欠点は、人間が積極的に監視する必要があることです。– 深刻なプロダクションサイトでは、（ AWS CloudWatch、DataDog、または同様のプロアクティブシステム）などの堅牢な監視ツールを使用して、リークが発生した場合に警告を出すことが絶対的に重要です。漏洩を防ぐための開発ガイドラインもいくつかあります: グローバルレベルでのデータの保存を避ける、動的なサイズのデータにはストリームを使用する、let や const を使用して変数のスコープを制限する。
 
 <br/><br/>
 
-### What Other Bloggers Say
+### 他のブロガーが言っていること
 
-* From the blog [Dyntrace](http://apmblog.dynatrace.com/):
-> ... ”As we already learned, in Node.js JavaScript is compiled to native code by V8. The resulting native data structures don’t have much to do with their original representation and are solely managed by V8. This means that we cannot actively allocate or deallocate memory in JavaScript. V8 uses a well-known mechanism called garbage collection to address this problem.”
+* ブログ [Dyntrace](http://apmblog.dynatrace.com/) より:
+> ... ”すでに学習したように、Node.js JavaScript は V8 でネイティブコードにコンパイルされています。結果として得られるネイティブなデータ構造は、元の表現とはあまり関係がなく、もっぱら V8 によって管理されています。つまり、JavaScript では能動的にメモリを割り当てたり、解放したりすることができません。V8 はこの問題に対処するために、ガベージコレクションと呼ばれるよく知られたメカニズムを使用しています。”
 
-* From the blog [Dyntrace](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load):
-> ... “Although this example leads to obvious results the process is always the same:
-Create heap dumps with some time and a fair amount of memory allocation in between
-Compare a few dumps to find out what’s growing”
+* ブログ [Dyntrace](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load) より:
+> ... “この例では明らかな結果が得られますが、プロセスは常に同じです。:
+ある程度の時間をかけてヒープダンプを作成し、その間にかなりの量のメモリ割り当てを行います。
+いくつかのダンプを比較して、何が成長しているかを確認します。”
 
-* From the blog [Dyntrace](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load):
-> ... “fault, Node.js will try to use about 1.5GBs of memory, which has to be capped when running on systems with less memory. This is the expected behavior as garbage collection is a very costly operation.
-The solution for it was adding an extra parameter to the Node.js process:
+* ブログ [Dyntrace](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load) より:
+> ... “デフォルトでは、Node.js は約1.5 GB のメモリを使用しようとしますが、メモリの少ないシステムで実行する場合は上限を設定する必要があります。ガベージコレクションは非常にコストのかかる操作なので、これは予想される動作です。
+これを解決するには、Node.js のプロセスに余分なパラメータを追加する必要がありました。:
 node –max_old_space_size=400 server.js –production ”
-“Why is garbage collection expensive? The V8 JavaScript engine employs a stop-the-world garbage collector mechanism. In practice, it means that the program stops execution while garbage collection is in progress.”
+“なぜガベージコレクションはコストがかかるのでしょうか？V8 JavaScript エンジンは、stop-the-world ガベージコレクタ機構を採用しています。これは実際には、ガベージコレクションの実行中にプログラムの実行を停止することを意味します。”

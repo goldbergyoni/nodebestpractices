@@ -1,16 +1,16 @@
-# Make your code production-ready
+# コードを本番に即したものにする
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-Following is a list of development tips that greatly affect the production maintenance and stability:
+以下は、プロダクションのメンテナンスと安定性に大きく影響する開発のヒントのリストです。:
 
-* The twelve-factor guide – Get familiar with the [Twelve factors](https://12factor.net/) guide
-* Be stateless – Save no data locally on a specific web server (see separate bullet – ‘Be Stateless’)
-* Cache – Utilize cache heavily, yet never fail because of cache mismatch
-* Test memory – gauge memory usage and leaks as part your development flow, tools such as ‘memwatch’ can greatly facilitate this task
-* Name functions – Minimize the usage of anonymous functions (i.e. inline callback) as a typical memory profiler will provide memory usage per method name
-* Use CI tools – Use CI tool to detect failures before sending to production. For example, use ESLint to detect reference errors and undefined variables. Use –trace-sync-io to identify code that uses synchronous APIs (instead of the async version)
-* Log wisely – Include in each log statement contextual information, hopefully in JSON format so log aggregators tools such as Elastic can search upon those properties (see separate bullet – ‘Increase visibility using smart logs’). Also, include transaction-id that identifies each request and allows to correlate lines that describe the same transaction (see separate bullet – ‘Include Transaction-ID’)
-* Error management – Error handling is the Achilles’ heel of Node.js production sites – many Node processes are crashing because of minor errors while others hang on alive in a faulty state instead of crashing. Setting your error handling strategy is absolutely critical, read here my [error handling best practices](http://goldbergyoni.com/checklist-best-practices-of-node-js-error-handling/)
+* 12要素ガイド – [12要素](https://12factor.net/)のガイドに慣れる
+* ステートレスであれ – 特定の Web サーバーにデータをローカルに保存しない (別箇条を参照してください – 「ステートレスであれ」)
+* キャッシュ – キャッシュを多用しているが、キャッシュの不一致で失敗することはない
+* テストメモリ – 開発フローの一部としてメモリ使用量やリークを測定し、「memwatch」などのツールがこのタスクを大幅に促進します。
+* 関数に名前をつける – 一般的なメモリプロファイラでは、メソッド名ごとにメモリ使用量が表示されるため、匿名関数（インラインコールバックなど）の使用を最小限に抑えます。
+* CI ツールを使用する – CI ツールを使って、本番に送る前に失敗を検出する。例えば、ESLint を使って参照エラーや未定義変数を検出します。同期 API を使用するコードを識別するために -trace-sync-io を使用します (非同期バージョンではなく)。
+* 賢くログを取る – Elastic のようなログアグリゲータツールがそれらのプロパティを検索できるように、各ログ文にコンテキスト情報を含めて、できれば JSON 形式で表示してください(別項「スマートログを使った可視性の向上」を参照)。また、各リクエストを識別するトランザクション ID を含め、同じトランザクションを記述する行を関連付けることができます(別項の「トランザクション ID を含める」を参照)。
+* エラー管理 – エラー処理は Node.js プロダクションサイトのアキレス腱です。 – 多くのノードプロセスは小さなエラーのためにクラッシュしていますが、他のプロセスはクラッシュせずに障害のある状態で生き残っています。エラー処理戦略を設定することは絶対に重要です。私の [エラー処理のベストプラクティス](http://goldbergyoni.com/checklist-best-practices-of-node-js-error-handling/) を読んでください。

@@ -615,43 +615,43 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 5.7. Create a ‘maintenance endpoint’
+## ![✔] 5.7. 「メンテナンスエンドポイント」を作成する
 
-**TL;DR:** Expose a set of system-related information, like memory usage and REPL, etc in a secured API. Although it’s highly recommended to rely on standard and battle-tests tools, some valuable information and operations are easier done using code
+**TL;DR:** メモリ使用量や REPL などのシステム関連情報をセキュアな API で公開します。標準ツールや歴戦のツールに頼ることを強くお勧めしますが、貴重な情報や操作はコードを使った方が簡単にできるものもあります。
 
-**Otherwise:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
+**さもないと:** 多くの「診断デプロイ」を実行していることがわかります。– 診断目的のための情報を抽出するためだけにコードを本番環境に出荷するなど
 
-🔗 [**Read More: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
-
-<br/><br/>
-
-## ![✔] 5.8. Discover errors and downtime using APM products
-
-**TL;DR:** Application monitoring and performance products (a.k.a APM) proactively gauge codebase and API so they can auto-magically go beyond traditional monitoring and measure the overall user-experience across services and tiers. For example, some APM products can highlight a transaction that loads too slow on the end-users side while suggesting the root cause
-
-**Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real-world scenario and how these affect the UX
-
-🔗 [**Read More: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
+🔗 [**さらに読む: 「メンテナンスエンドポイント」を作成する**](/sections/production/createmaintenanceendpoint.japanese.md)
 
 <br/><br/>
 
-## ![✔] 5.9. Make your code production-ready
+## ![✔] 5.8. APM 製品を使用してエラーやダウンタイムを発見する
 
-**TL;DR:** Code with the end in mind, plan for production from day 1. This sounds a bit vague so I’ve compiled a few development tips that are closely related to production maintenance (click Gist below)
+**TL;DR:** アプリケーションモニタリングおよびパフォーマンス製品（ APM ）は、コードベースと API を積極的に測定することで、従来のモニタリングを超えて、サービスや階層間のユーザーエクスペリエンス全体を自動的に測定することができます。例えば、一部の APM 製品では、エンドユーザー側でロードが遅すぎるトランザクションを強調表示しながら、根本的な原因を示唆することができます。
 
-**Otherwise:** A world champion IT/DevOps guy won’t save a system that is badly written
+**さもないと:** API のパフォーマンスやダウンタイムの測定に多大な労力を費やすことになるかもしれません。実世界のシナリオで最も遅いコード部分はどれか、それが UX にどのように影響するのか、おそらくあなたは意識することはないでしょう。
 
-🔗 [**Read More: Make your code production-ready**](/sections/production/productioncode.md)
+🔗 [**さらに読む: APM 製品を使用してエラーやダウンタイムを発見する**](/sections/production/apmproducts.japanese.md)
 
 <br/><br/>
 
-## ![✔] 5.10. Measure and guard the memory usage
+## ![✔] 5.9. コードを本番に即したものにする
 
-**TL;DR:** Node.js has controversial relationships with memory: the v8 engine has soft limits on memory usage (1.4GB) and there are known paths to leak memory in Node’s code – thus watching Node’s process memory is a must. In small apps, you may gauge memory periodically using shell commands but in medium-large apps consider baking your memory watch into a robust monitoring system
+**TL;DR:** ゴールを意識してコードを作成し、1日目から制作計画を立てます。ちょっと漠然としているように聞こえるので、生産保守と密接に関係する開発のヒントをいくつかまとめてみました(下の Gist をクリックしてください)。
 
-**Otherwise:** Your process memory might leak a hundred megabytes a day like how it happened at [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
+**さもないと:** 世界チャンピオンの IT/DevOps の男でも、下手に書かれたシステムを救うことはできません。
 
-🔗 [**Read More: Measure and guard the memory usage**](/sections/production/measurememory.md)
+🔗 [**さらに読む: コードを本番に即したものにする**](/sections/production/productioncode.japanese.md)
+
+<br/><br/>
+
+## ![✔] 5.10. メモリ使用量を測定してガードする
+
+**TL;DR:** Node.js はメモリとの関係で物議を醸しています: v8 エンジンはメモリ使用量にソフトな制限(1.4 GB )があり、Node のコードにはメモリリークの経路が知られています。– そのため、Node のプロセスメモリを監視することは必須です。小さなアプリでは、シェルコマンドを使って定期的にメモリを測定することができますが、中規模以上のアプリでは、メモリ監視を堅牢な監視システムに組み込むことを検討してください。
+
+**さもないと:** あなたのプロセスメモリは、[Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak) で起こったように、1日に100メガバイトもリークするかもしれません。
+
+🔗 [**さらに読む: メモリ使用量を測定してガードする**](/sections/production/measurememory.japanese.md)
 
 <br/><br/>
 
