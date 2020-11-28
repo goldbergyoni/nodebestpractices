@@ -655,13 +655,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 5.11. Get your frontend assets out of Node
+## ![✔] 5.11. フロントエンドの資産を Node から取り出す
 
-**TL;DR:** Serve frontend content using dedicated middleware (nginx, S3, CDN) because Node performance really gets hurt when dealing with many static files due to its single-threaded model
+**TL;DR:** 専用のミドルウェア (nginx, S3, CDN) を使用してフロントエンドのコンテンツを提供します。なぜなら、シングルスレッドモデルのため、多くの静的ファイルを扱う場合、Node のパフォーマンスは非常に痛手を受けるからです。
 
-**Otherwise:** Your single Node thread will be busy streaming hundreds of html/images/angular/react files instead of allocating all its resources for the task it was born for – serving dynamic content
+**さもないと:** あなたの Node のシングルスレッドは、何百もの html/images/angular/react ファイルのストリーミングに忙殺され、本来の目的のために生まれたタスクにすべてのリソースを確保することができません。– 動的コンテンツの提供
 
-🔗 [**Read More: Get your frontend assets out of Node**](/sections/production/frontendout.md)
+🔗 [**さらに読む: フロントエンドの資産を Node から取り出す**](/sections/production/frontendout.japanese.md)
 
 <br/><br/>
 
