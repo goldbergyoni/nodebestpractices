@@ -40,6 +40,6 @@ expires max;
 
 ブログ [StrongLoop](https://strongloop.com/strongblog/best-practices-for-express-in-production-part-two-performance-and-reliability/) より:
 
->…開発では、[res.sendFile()](http://expressjs.com/4x/api.html#res.sendFile) を使用して静的ファイルを提供することができます。この関数はファイル要求ごとにファイルシステムから読み込まなければならず、大幅な待ち時間が発生し、アプリの全体的なパフォーマンスに影響を与えることになるため、本番環境では行わないでください。res.sendFile() は より効率的になる sendfile システムコールでは実装されていないことに注意してください。代わりに、Express アプリ用にファイルを提供するために最適化された serve-static ミドルウェア (または同等のもの) を使用してください。さらに良い方法は、静的ファイルを提供するリバースプロキシを使うことです。; 詳細については、リバースプロキシの使用を参照してください。…
+>…開発では、[res.sendFile()](http://expressjs.com/4x/api.html#res.sendFile) を使用して静的ファイルを提供することができます。この関数はファイル要求ごとにファイルシステムから読み込まなければならず、大幅な待ち時間が発生し、アプリの全体的なパフォーマンスに影響を与えることになるため、本番環境では行わないでください。res.sendFile() は、より効率的になる sendfile システムコールでは実装されていないことに注意してください。代わりに、Express アプリ用にファイルを提供するために最適化された serve-static ミドルウェア (または同等のもの) を使用してください。さらに良い方法は、静的ファイルを提供するリバースプロキシを使うことです。; 詳細については、リバースプロキシの使用を参照してください。…
 
 <br/><br/>
