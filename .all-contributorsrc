@@ -813,7 +813,8 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/13496126?v=4",
       "profile": "https://github.com/collierrgbsitisfise",
       "contributions": [
-        "content"
+        "content",
+        "translation"
       ]
     },
     {
@@ -1075,6 +1076,51 @@
       "name": "Jan Osch",
       "avatar_url": "https://avatars2.githubusercontent.com/u/11651780?v=4",
       "profile": "https://github.com/jan-osch",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "thiagotrs",
+      "name": "Thiago Rotondo Sampaio",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/32005779?v=4",
+      "profile": "https://github.com/thiagotrs",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "Alexsey",
+      "name": "Alexsey",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6392013?v=4",
+      "profile": "https://github.com/Alexsey",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "13luismb",
+      "name": "Luis A. Acurero",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/32210483?v=4",
+      "profile": "https://github.com/13luismb",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "lromano97",
+      "name": "Lucas Romano",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/22394847?v=4",
+      "profile": "https://lromano97.github.io/",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "denisecase",
+      "name": "Denise Case",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/13016516?v=4",
+      "profile": "https://github.com/denisecase",
       "contributions": [
         "content"
       ]
