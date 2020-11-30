@@ -1,42 +1,42 @@
-# Be stateless, kill your Servers almost every day
+# ステートレスのままで、ほぼ毎日サーバーを停止させる
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-Have you ever encountered a severe production issue where one server was missing some piece of configuration or data? That is probably due to some unnecessary dependency on some local asset that is not part of the deployment. Many successful products treat servers like a phoenix bird – it dies and is reborn periodically without any damage. In other words, a server is just a piece of hardware that executes your code for some time and is replaced after that.
-This approach
+1台のサーバーに設定やデータの一部が欠落しているという深刻な運用上の問題に遭遇したことはありませんか？これはおそらく、デプロイメントの一部ではないローカルアセットへの不必要な依存が原因であると思われます。多くの成功しているプロダクトが不死鳥のようにサーバーを扱います – それは何のダメージも受けずに死んで定期的に生まれ変わります。言い換えれば、サーバーとは、コードをしばらくの間実行して、その後に入れ替わるハードウェアの一部に過ぎません。
+このアプローチは、
 
-- allows scaling by adding and removing servers dynamically without any side-effects.
-- simplifies the maintenance as it frees our mind from evaluating each server state.
+- サーバを動的に追加したり削除したりすることで、副作用のないスケーリングを可能にします。
+- 各サーバの状態を評価することから解放されるので、メンテナンスが簡単になります。
 
 <br/><br/>
 
-### Code example: anti-patterns
+### コード例: アンチパターン
 
 ```javascript
-// Typical mistake 1: saving uploaded files locally on a server
-const multer = require('multer'); // express middleware for handling multipart uploads
+// 典型的な間違い 1: アップロードファイルのローカル保存
+const multer = require('multer'); // マルチパートアップロード処理用高速ミドルウェア
 const upload = multer({ dest: 'uploads/' });
 
 app.post('/photos/upload', upload.array('photos', 12), (req, res, next) => {});
 
-// Typical mistake 2: storing authentication sessions (passport) in a local file or memory
+// 典型的な間違い 2: 認証セッション(パスポート)をローカルファイルまたはメモリに保存する
 const FileStore = require('session-file-store')(session);
 app.use(session({
     store: new FileStore(options),
     secret: 'keyboard cat'
 }));
 
-// Typical mistake 3: storing information on the global object
+// 典型的な間違い 3: グローバルオブジェクトの情報を格納
 Global.someCacheLike.result = { somedata };
 ```
 
 <br/><br/>
 
-### What Other Bloggers Say
+### 他のブロガーが言っていること
 
-From the blog [Martin Fowler](https://martinfowler.com/bliki/PhoenixServer.html):
-> ...One day I had this fantasy of starting a certification service for operations. The certification assessment would consist of a colleague and I turning up at the corporate data center and setting about critical production servers with a baseball bat, a chainsaw, and a water pistol. The assessment would be based on how long it would take for the operations team to get all the applications up and running again. This may be a daft fantasy, but there’s a nugget of wisdom here. While you should forego the baseball bats, it is a good idea to virtually burn down your servers at regular intervals. A server should be like a phoenix, regularly rising from the ashes...
+ブログ [Martin Fowler](https://martinfowler.com/bliki/PhoenixServer.html) より:
+> ...ある日、私は運用のための認証サービスを始めたいという妄想を抱いた。認定審査は、同僚と私が会社のデータセンターに出向き、野球のバット、チェーンソー、水鉄砲を持って、重要な本番用サーバーを見て回るというものでした。評価は、運用チームがすべてのアプリケーションを再稼働させるまでにどれくらいの時間がかかるかに基づいて行われます。くだらない妄想かもしれませんが、ここには名言のヒントがあります。野球のバットは見送るべきですが、定期的にサーバーを仮想的に焼き尽くすのは良いアイデアです。サーバーは不死鳥のように灰の中から定期的に立ち上がるべきです...
 
 <br/><br/>

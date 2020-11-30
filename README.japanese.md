@@ -665,13 +665,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 5.12. Be stateless, kill your servers almost every day
+## ![✔] 5.12. ステートレスのままで、ほぼ毎日サーバーを停止させる
 
-**TL;DR:** Store any type of data (e.g. user sessions, cache, uploaded files) within external data stores. Consider ‘killing’ your servers periodically or use ‘serverless’ platform (e.g. AWS Lambda) that explicitly enforces a stateless behavior
+**TL;DR:** 任意のタイプのデータ（ユーザーセッション、キャッシュ、アップロードされたファイルなど）を外部データストア内に保存します。定期的にサーバを「停止する」ことを検討するか、ステートレスな動作を明示的に行う「サーバレス」プラットフォーム（AWS Lambda など）を使用することを検討してください。
 
-**Otherwise:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
+**Otherwise:** 特定のサーバーで障害が発生すると、障害のあるマシンを停止する代わりに、アプリケーションのダウンタイムが発生します。さらに、特定のサーバーに依存しているため、スケーリングアウトの弾力性はより困難になります。
 
-🔗 [**Read More: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
+🔗 [**さらに読む: ステートレスのままで、ほぼ毎日サーバーを停止させる**](/sections/production/bestateless.japanese.md)
 
 <br/><br/>
 
