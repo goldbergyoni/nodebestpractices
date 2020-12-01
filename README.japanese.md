@@ -675,13 +675,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 5.13. Use tools that automatically detect vulnerabilities
+## ![✔] 5.13. 脆弱性を自動的に検出するツールを使用する
 
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities (from time to time) that can put a system at risk. This can be easily tamed using community and commercial tools that constantly check for vulnerabilities and warn (locally or at GitHub), some can even patch them immediately
+**TL;DR:** Express のような最も評判の良い依存関係にも、(時折)システムを危険にさらす既知の脆弱性があります。 脆弱性を常にチェックして警告するコミュニティや商用ツール（ローカルまたはGitHub）を使えば簡単に手なずけることができ、いくつかはすぐにパッチを当てることもできます。
 
-**Otherwise:** Keeping your code clean from vulnerabilities without dedicated tools will require you to constantly follow online publications about new threats. Quite tedious
+**さもないと:** 専用のツールを使用せずに脆弱性からコードをクリーンに保つには、新しい脅威についてのオンライン出版物を常にフォローする必要があります。とても面倒です。
 
-🔗 [**Read More: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
+🔗 [**さらに読む: 脆弱性を自動的に検出するツールを使用する**](/sections/production/detectvulnerabilities.japanese.md)
 
 <br/><br/>
 
