@@ -1,20 +1,19 @@
-# Use tools that automatically detect vulnerable dependencies
+# 脆弱な依存関係を自動的に検出するツールを使用する
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-Modern Node applications have tens and sometimes hundreds of dependencies. If any of the dependencies
-you use has a known security vulnerability your app is vulnerable as well.
-The following tools automatically check for known security vulnerabilities in your dependencies:
+最近の Node アプリケーションは、数十、時には数百の依存関係を持っています。使用している依存関係のいずれかに既知のセキュリティ脆弱性がある場合、あなたのアプリも同様に脆弱です。
+以下のツールは、依存関係にある既知のセキュリティ脆弱性を自動的にチェックします。:
 
-- [npm audit](https://docs.npmjs.com/cli/audit) - npm audit
-- [snyk](https://snyk.io/) - Continuously find & fix vulnerabilities in your dependencies
+- [npm audit](https://docs.npmjs.com/cli/audit) - npm 監査
+- [snyk](https://snyk.io/) - 依存関係にある脆弱性を継続的に発見し、修正する
 
 <br/><br/>
 
-### What Other Bloggers Say
+### 他のブロガーが言っていること
 
-From the [StrongLoop](https://strongloop.com/strongblog/best-practices-for-express-in-production-part-one-security/) blog:
+ブログ [StrongLoop](https://strongloop.com/strongblog/best-practices-for-express-in-production-part-one-security/) より:
 
-> ...Using to manage your application’s dependencies is powerful and convenient. But the packages that you use may contain critical security vulnerabilities that could also affect your application. The security of your app is only as strong as the “weakest link” in your dependencies. Fortunately, there are two helpful tools you can use to ensure the third-party packages you use: nsp and requireSafe. These two tools do largely the same thing, so using both might be overkill, but “better safe than sorry” are words to live by when it comes to security...
+> ...アプリケーションの依存関係を管理するために使用することは、強力で便利です。しかし、使用しているパッケージには重要なセキュリティ上の脆弱性が含まれている可能性があり、アプリケーションにも影響を与える可能性があります。アプリのセキュリティは、依存関係の「最も弱いリンク」と同じくらい強力です。幸いなことに、使用するサードパーティ製パッケージのセキュリティを確保するために使用できる 2 つの便利なツールがあります: nsp と requireSafe です。この2つのツールは大体同じことをするので、両方を使うのはやりすぎかもしれませんが、セキュリティに関しては「後悔するよりも安全な方がいい」という言葉が生きてくるでしょう。...
