@@ -867,15 +867,15 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 6.11. Support blacklisting JWTs
+## ![✔] 6.11. JWT のブラックリスト化をサポートする
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;DR:** When using JSON Web Tokens (for example, with [Passport.js](https://github.com/jaredhanson/passport)), by default there's no mechanism to revoke access from issued tokens. Once you discover some malicious user activity, there's no way to stop them from accessing the system as long as they hold a valid token. Mitigate this by implementing a blacklist of untrusted tokens that are validated on each request.
+**TL;DR:** JSON Web Token を（例えば [Passport.js](https://github.com/jaredhanson/passport) などを用いて）利用する場合、デフォルトでは、発行されたトークンからのアクセスを無効にする仕組みはありません。悪意のあるユーザーのアクティビティを発見したとしても、そのユーザーが有効なトークンを持っている限り、システムへのアクセスを止めることはできません。各リクエストで検証される、信頼されていないトークンのブラックリストを実装することで、この問題をを緩和することができます。
 
-**Otherwise:** Expired, or misplaced tokens could be used maliciously by a third party to access an application and impersonate the owner of the token.
+**さもないと:** 期限切れや、誤って配置されたトークンは、アプリケーションにアクセスしたり、トークンの所有者になりすますために、サードパーティによって悪意を持って利用される可能性があります。
 
-🔗 [**Read More: Blacklist JSON Web Tokens**](/sections/security/expirejwt.md)
+🔗 [**さらに読む: JSON Web Token のブラックリスト**](/sections/security/expirejwt.japanese.md)
 
 <br/><br/>
 
