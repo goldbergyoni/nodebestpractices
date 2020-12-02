@@ -1,16 +1,16 @@
-# Prevent brute-force attacks against authorization
+# 認証に対するブルートフォース攻撃を阻止する
 
-### One Paragraph Explainer
+### 一段落説明
 
-Leaving higher privileged routes such as `/login` or `/admin` exposed without rate limiting leaves an application at risk of brute force password dictionary attacks. Using a strategy to limit requests to such routes can prevent the success of this by limiting the number of allow attempts based on a request property such as ip, or a body parameter such as username/email address.
+レートリミットを行わずに `/login` や `/admin` のような上位の特権ルートを公開したままにしておくと、アプリケーションをブルートフォースパスワード辞書攻撃のリスクに晒すことになります。このようなルートへのリクエストを制限する戦略を採用することで、IP のようなリクエストのプロパティや、ユーザ名/メールアドレスといった body パラメータに基づいて試行の許可回数を制限することとなり、攻撃の成功を防ぐことができます。
 
-### Code example: count consecutive failed authorisation attempts by user name and IP pair and total fails by IP address.
+### コード例: ユーザー名と IP アドレスのペアによる連続認証失敗回数と、IP アドレスによる合計失敗回数をカウントする
 
-Using [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) npm package.
+[rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) という npm パッケージを利用する。
 
-Create two limiters: 
-1. The first counts number of consecutive failed attempts and allows maximum 10 by username and IP pair. 
-2. The second blocks IP address for a day on 100 failed attempts per day.
+2 つのリミッターを作成します:
+1. 1 つ目は、連続した認証失敗回数をカウントし、ユーザー名と IP アドレスのペアに対して最大 10 回まで許可する
+2. 2 つ目は、1 日に 100 回試行に失敗した IP アドレスを 1 日ブロックする
 
 ```javascript
 const maxWrongAttemptsByIPperDay = 100;
@@ -21,21 +21,21 @@ const limiterSlowBruteByIP = new RateLimiterRedis({
   keyPrefix: 'login_fail_ip_per_day',
   points: maxWrongAttemptsByIPperDay,
   duration: 60 * 60 * 24,
-  blockDuration: 60 * 60 * 24, // Block for 1 day, if 100 wrong attempts per day
+  blockDuration: 60 * 60 * 24, // 1 日に 100 回失敗した場合、1 日間ブロックする
 });
 
 const limiterConsecutiveFailsByUsernameAndIP = new RateLimiterRedis({
   storeClient: redisClient,
   keyPrefix: 'login_fail_consecutive_username_and_ip',
   points: maxConsecutiveFailsByUsernameAndIP,
-  duration: 60 * 60 * 24 * 90, // Store number for 90 days since first fail
-  blockDuration: 60 * 60, // Block for 1 hour
+  duration: 60 * 60 * 24 * 90, // 最初の失敗から 90 日、間数字を保持する
+  blockDuration: 60 * 60, // 1 時間ブロックする
 });
 ```
 
-See complete example on [rate-limiter-flexible package's Wiki](https://github.com/animir/node-rate-limiter-flexible/wiki/Overall-example#login-endpoint-protection).
+[rate-limiter-flexible package's Wiki](https://github.com/animir/node-rate-limiter-flexible/wiki/Overall-example#login-endpoint-protection) で完全な例を確認してください。
 
 ### What other bloggers say
 
-From the Essential Node.js Security book by [Liran Tal](https://leanpub.com/nodejssecurity):
-> Brute-force attacks may be employed by an attacker to send a series of username/password pairs to your REST end-points over POST or another RESTful API that you have opened to implement them. Such a dictionary attack is very straight-forward and easy to execute and may be performed on any other parts of your API or page routing, unrelated to logins.
+[Liran Tal](https://leanpub.com/nodejssecurity) による書籍 Essential Node.js Security より:
+> ブルートフォース攻撃は、攻撃者が一連のユーザ名とパスワードのペアを REST エンドポイントに対して POST したり、開放しているその他の RESTful API に対してリクエストを送信する場合に採用されることがあります。このような辞書攻撃はとても簡単で実行しやすく、ログインとは関係なく、API やページルーティングの他の部分に対しても実行される可能性があります。
