@@ -685,13 +685,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 5.14. Assign a transaction id to each log statement
+## ![✔] 5.14. 各ログステートメントにトランザクション ID を割り当てる
 
-**TL;DR:** Assign the same identifier, transaction-id: {some value}, to each log entry within a single request. Then when inspecting errors in logs, easily conclude what happened before and after. Unfortunately, this is not easy to achieve in Node due to its async nature, see code examples inside
+**TL;DR:** transaction-id: {任意の値} で、単一のリクエスト内の各ログエントリに同じ識別子を割り当てます。そうすることで、ログのエラーを検査する際に、前後に何が起こったかを簡単に結論付けることができます。残念ながら、非同期の性質上、これを Node で実現するのは容易ではありません。内部のコード例を参照してください。
 
-**Otherwise:** Looking at a production error log without the context – what happened before – makes it much harder and slower to reason about the issue
+**さもないと:** – 前に何が起こったのか – というコンテキストなしでプロダクションのエラーログを見ると、問題の原因を究明するのが非常に難しくなり、時間がかかります。
 
-🔗 [**Read More: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
+🔗 [**さらに読む: 各ログ文に 'TransactionId' を割り当てる**](/sections/production/assigntransactionid.japanese.md)
 
 <br/><br/>
 
