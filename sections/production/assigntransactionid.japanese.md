@@ -1,17 +1,17 @@
-# Assign ‘TransactionId’ to each log statement
+# 各ログ文に 'TransactionId' を割り当てる
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-A typical log is a warehouse of entries from all components and requests. Upon detection of some suspicious line or error, it becomes hairy to match other lines that belong to the same specific flow (e.g. the user “John” tried to buy something). This becomes even more critical and challenging in a microservice environment when a request/transaction might span across multiple computers. Address this by assigning a unique transaction identifier value to all the entries from the same request so when detecting one line one can copy the id and search for every line that has similar transaction id. However, achieving this In Node is not straightforward as a single thread is used to serve all requests –consider using a library that that can group data on the request level – see code example on the next slide. When calling other microservices, pass the transaction id using an HTTP header like “x-transaction-id” to keep the same context.
+典型的なログは、すべてのコンポーネントとリクエストからのエントリーの倉庫です。不審なラインやエラーが検出されると、同じ特定のフローに属する他のラインをマッチさせるのが面倒になります(例えば、ユーザの "John" が何かを買おうとしたなど)。これは、リクエスト/トランザクションが複数のコンピュータにまたがる可能性がある場合、マイクロサービスの環境ではさらに重要で困難になります。これに対処するには、同じリクエストからのすべてのエントリに一意のトランザクション識別子の値を割り当てることで、1つの行を検出するときに、 ID をコピーして、類似のトランザクション ID を持つすべての行を検索できるようにします。しかし、1つのスレッドがすべてのリクエストを処理するために使用されるので、これを実現するためには Node では簡単ではありません - リクエストレベルでデータをグループ化できるライブラリを使用することを考えてください – 次のスライドのコード例を参照してください。他のマイクロサービスを呼び出す際には、同じコンテキストを保つために、"x-transaction-id” のような HTTP ヘッダを使ってトランザクション ID を渡してください。
 
 <br/><br/>
 
-### Code example: typical Express configuration
+### コード例: 典型的な Express の構成
 
 ```javascript
-// when receiving a new request, start a new isolated context and set a transaction id. The following example is using the npm library continuation-local-storage to isolate requests
+// 新しいリクエストを受信したときに、新しい隔離されたコンテキストを開始し、トランザクション ID を設定します。次の例は、npm ライブラリ continuation-local-storage を使用してリクエストを分離しています。
 
 const { createNamespace } = require('continuation-local-storage');
 const session = createNamespace('my session');
@@ -22,7 +22,7 @@ router.get('/:id', (req, res, next) => {
     logger.info('Starting now to get something by id');
 });
 
-// Now any other service or components can have access to the contextual, per-request, data
+// これで、他のサービスやコンポーネントは、コンテクスト、リクエストごと、データごとにアクセスできるようになりました。
 class someService {
     getById(id) {
         logger.info('Starting to get something by id');
@@ -30,7 +30,7 @@ class someService {
     }
 }
 
-// The logger can now append the transaction id to each entry so that entries from the same request will have the same value
+// ロガーは、同じリクエストからのエントリが同じ値を持つように、各エントリにトランザクション ID を追加することができるようになりました。
 class logger {
     info (message) {
         console.log(`${message} ${session.get('transactionId')}`);
