@@ -1,33 +1,33 @@
-# Set NODE_ENV = production
+# NODE_ENV = production を設定する
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-Process environment variables is a set of key-value pairs made available to any running program, usually for configuration purposes. Though any variables can be used, Node encourages the convention of using a variable called NODE_ENV to flag whether we’re in production right now. This determination allows components to provide better diagnostics during development, for example by disabling caching or emitting verbose log statements. Any modern deployment tool – Chef, Puppet, CloudFormation, others – support setting environment variables during deployment
+プロセス環境変数は、実行中のプログラムで利用できるキーと値のペアのセットで、通常は設定の目的で利用できます。任意の変数を使うことができますが、Node は NODE_ENV と呼ばれる変数を使って、現在本番環境であるかどうかのフラグを立てる慣習を推奨しています。この決定により、コンポーネントは開発中にキャッシングを無効にしたり、冗長なログ文を出力したりするなど、より良い診断を提供することができます。Chef、Puppet、CloudFormation、その他の最新のデプロイツールは、デプロイ時に環境変数を設定することをサポートしています。
 
 <br/><br/>
 
-### Code example: Setting and reading the NODE_ENV environment variable
+### コード例: 環境変数 NODE_ENV の設定と読み込み
 
 ```shell script
-// Setting environment variables in bash before starting the node process
+// ノードプロセスを起動する前に bash で環境変数を設定する
 $ NODE_ENV=development
 $ node
 ```
 
 ```javascript
-// Reading the environment variable using code
+// コードを使って環境変数を読み込む
 if (process.env.NODE_ENV === 'production')
     useCaching = true;
 ```
 
 <br/><br/>
 
-### What Other Bloggers Say
+### 他のブロガーが言っていること
 
-From the blog [dynatrace](https://www.dynatrace.com/blog/the-drastic-effects-of-omitting-node_env-in-your-express-js-applications/):
-> ...In Node.js there is a convention to use a variable called NODE_ENV to set the current mode. We see that it, in fact, reads NODE_ENV and defaults to ‘development’ if it isn’t set. We clearly see that by setting NODE_ENV to production the number of requests Node.js can handle jumps by around two-thirds while the CPU usage even drops slightly. *Let me emphasize this: Setting NODE_ENV to production makes your application 3 times faster!*
+ブログ [dynatrace](https://www.dynatrace.com/blog/the-drastic-effects-of-omitting-node_env-in-your-express-js-applications/) より:
+> ...Node.js では、現在のモードを設定するために node_env という変数を使用する慣習があります。実際には NODE_ENV を読み込んで、設定されていない場合は「development」にデフォルトで設定されていることがわかります。NODE_ENV を本番環境に設定することで、Node.js が処理できるリクエスト数が約3分の2に跳ね上がり、CPU の使用率はわずかに低下することが明らかになっています。*これだけは強調しておきます: NODE_ENV を本番環境に設定すると、アプリケーションが3倍速くなります！*
 
 ![NODE_ENV=production](/assets/images/setnodeenv1.png "NODE_ENV=production")
 
