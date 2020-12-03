@@ -695,13 +695,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 5.15. Set NODE_ENV=production
+## ![✔] 5.15. NODE_ENV=production を設定する
 
-**TL;DR:** Set the environment variable NODE_ENV to ‘production’ or ‘development’ to flag whether production optimizations should get activated – many npm packages determine the current environment and optimize their code for production
+**TL;DR:** 環境変数 NODE_ENV を「production」または「development」に設定して、本番環境での最適化を有効にするかどうかのフラグを立てます。– 多くの npm パッケージが現在の環境を判断し、本番用にコードを最適化します。
 
-**Otherwise:** Omitting this simple property might greatly degrade performance. For example, when using Express for server-side rendering omitting `NODE_ENV` makes it slower by a factor of three!
+**さもないと:** この単純なプロパティを省略すると、パフォーマンスが大きく低下する可能性があります。例えば、サーバサイドのレンダリングに Express を使用する場合、`NODE_ENV` を省略すると3倍も遅くなります。
 
-🔗 [**Read More: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
+🔗 [**さらに読む: NODE_ENV=production を設定する**](/sections/production/setnodeenv.japanese.md)
 
 <br/><br/>
 
