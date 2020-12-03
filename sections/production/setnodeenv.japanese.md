@@ -1,4 +1,4 @@
-# NODE_ENV=production を設定する
+# NODE_ENV = production を設定する
 
 <br/><br/>
 
