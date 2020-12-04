@@ -705,11 +705,11 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 5.16. Design automated, atomic and zero-downtime deployments
+## ![✔] 5.16. 自動化された、アトミックでゼロダウンタイムのデプロイメントを設計する
 
-**TL;DR:** Research shows that teams who perform many deployments lower the probability of severe production issues. Fast and automated deployments that don’t require risky manual steps and service downtime significantly improve the deployment process. You should probably achieve this using Docker combined with CI tools as they became the industry standard for streamlined deployment
+**TL;DR:** 調査によると、多くのデプロイメントを行うチームほど、深刻なプロダクションの問題が発生する確率が低くなることがわかっています。リスクの高い手動ステップやサービスのダウンタイムを必要としない高速で自動化されたデプロイメントは、デプロイメントプロセスを大幅に改善します。Docker と CI ツールを組み合わせることで、合理化されたデプロイのための業界標準となったため、これを達成する必要があるでしょう。
 
-**Otherwise:** Long deployments -> production downtime & human-related error -> team unconfident in making deployment -> fewer deployments and features
+**さもないと:** 長時間のデプロイ -> 本番のダウンタイムと人為的なミス -> デプロイに自信のないチーム -> デプロイ数と機能の減少
 
 <br/><br/>
 
