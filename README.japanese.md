@@ -894,15 +894,15 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 6.13. Run Node.js as non-root user
+## ![✔] 6.13. 非 root ユーザとして Node.js を実行する
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A5:Broken%20Access%20Access%20Control-green.svg" alt=""/></a>
 
-**TL;DR:** There is a common scenario where Node.js runs as a root user with unlimited permissions. For example, this is the default behaviour in Docker containers. It's recommended to create a non-root user and either bake it into the Docker image (examples given below) or run the process on this user's behalf by invoking the container with the flag "-u username"
+**TL;DR:** Node.js が無制限の権限を持った root ユーザとして実行されるという一般的なシナリオがあります。例えば、Docker コンテナにおけるデフォルトの挙動です。root ではないユーザを作成して Docker イメージに組み込む（例は以下にあります）か、"-u username" フラグを利用してコンテナを起動することで、非 root ユーザでプロセスを実行することが推奨されます。
 
-**Otherwise:** An attacker who manages to run a script on the server gets unlimited power over the local machine (e.g. change iptable and re-route traffic to his server)
+**さもないと:** サーバ上でスクリプトを実行することに成功した攻撃者が、ローカルマシンにおける無制限の権限を獲得してしまいます（例：iptable を変更して、攻撃者のサーバに再ルーティングする）。
 
-🔗 [**Read More: Run Node.js as non-root user**](/sections/security/non-root-user.md)
+🔗 [**さらに読む: 非 root ユーザとして Node.js を実行する**](/sections/security/non-root-user.japanese.md)
 
 <br/><br/>
 
