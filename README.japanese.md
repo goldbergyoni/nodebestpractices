@@ -713,13 +713,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 5.17. Use an LTS release of Node.js
+## ![✔] 5.17. Node.js の LTS リリースを使用する
 
-**TL;DR:** Ensure you are using an LTS version of Node.js to receive critical bug fixes, security updates and performance improvements
+**TL;DR:** 重要なバグフィックス、セキュリティアップデート、パフォーマンスの改善を受けるために、Node.js の LTS バージョンを使用していることを確認してください。
 
-**Otherwise:** Newly discovered bugs or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain
+**さもないと:** 新たに発見されたバグや脆弱性は、本番環境で運用中のアプリケーションを悪用するために使用される可能性があり、アプリケーションは様々なモジュールでサポートされておらず、保守が困難になる可能性があります。
 
-🔗 [**Read More: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
+🔗 [**さらに読む: Node.js の LTS リリースを使用する**](/sections/production/LTSrelease.japanese.md)
 
 <br/><br/>
 
