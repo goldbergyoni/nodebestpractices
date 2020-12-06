@@ -1124,6 +1124,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "elektronik2k5",
+      "name": "Nick Ribal",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1078554?v=4",
+      "profile": "http://stackoverflow.com/story/elektronik",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
