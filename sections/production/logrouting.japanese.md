@@ -1,26 +1,26 @@
-# Your application code should not handle log routing
+# アプリケーションコードでログのルーティングを処理してはいけません
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-Application code should not handle log routing, but instead should use a logger utility to write to `stdout/stderr`. “Log routing” means picking up and pushing logs to a some other location than your application or application process, for example, writing the logs to a file, database, etc. The reason for this is mostly two-fold: 1) separation of concerns and 2) [12-Factor best practices for modern applications](https://12factor.net/logs).
+アプリケーションコードはログルーティングを扱うべきではなく、代わりにロガーユーティリティを使用して `stdout/stderr` に書き込むべきです。「ログルーティング 」とは、ログを拾ってアプリケーションやアプリケーションプロセスとは別の場所にプッシュすること、例えば、ファイルやデータベースなどにログを書き込むことを意味します。その理由は主に2つあります: 1)懸念事項の分離と、2) [12-Factor best practices for modern applications(現代のアプリケーションのための12ファクターのベストプラクティス)](https://12factor.net/logs)。
 
-We often think of "separation of concerns" in terms of pieces of code between services and between services themselves, but this applies to the more “infrastructural” components as well. Your application code should not handle something that should be handled by infrastructure/the execution environment (most often these days, containers). What happens if you define the log locations in your application, but later you need to change that location? That results in a code change and deployment. When working with container-based/cloud-based platforms, containers can spin up and shut down when scaling to performance demands, so we can't be sure where a logfile will end up. The execution environment (container) should decide where the log files get routed to instead. The application should just log what it needs to to `stdout` / `stderr`, and the execution environment should be configured to pick up the log stream from there and route it to where it needs to go. Also, those on the team who need to specify and/or change the log destinations are often not application developers but are part of DevOps, and they might not have familiarity with the application code. This prevents them from easily making changes. 
+私たちはしばしば、サービス間やサービス自体の間のコードの断片という意味で「懸念の分離」を考えますが、これはより「インフラストラクチャ的」なコンポーネントにも適用されます。あなたのアプリケーションコードは、インフラストラクチャ/実行環境(最近ではコンテナが多い)で処理すべきものを処理すべきではありません。アプリケーションでログの場所を定義していて、後でその場所を変更する必要がある場合はどうなるでしょう？その結果、コードの変更とデプロイが必要になります。コンテナベース/クラウドベースのプラットフォームで作業する場合、パフォーマンスの要求に合わせてスケーリングする際にコンテナがスピンアップしたり、シャットダウンしたりすることがあるので、ログファイルがどこで終わるかわからないのです。そのため、ログファイルの行き先は実行環境 (コンテナ) が決めるべきです。アプリケーションは必要なものを `stdout` / `stderr` にログを記録し、実行環境はそこからログストリームを拾い、必要な場所にルートするように設定する必要があります。また、ログの送信先を指定したり変更したりする必要があるチームの人々は、アプリケーション開発者ではなく DevOps の一員であることが多く、アプリケーションのコードに精通していない可能性があります。このため、彼らが簡単に変更を行うことができません。
 
 <br/><br/>
 
-### Code Example – Anti-pattern: Log routing tightly coupled to application
+### コード例 – アンチパターン: アプリケーションと密接に結合されたログルーティング
 
 ```javascript
 const { createLogger, transports, winston } = require('winston');
 /**
-   * Requiring `winston-mongodb` will expose
-   * `winston.transports.MongoDB`
+   * `winston-mongodb` を require すると
+   * `winston.transports.MongoDB` が公開されます。
    */
 require('winston-mongodb');
  
-// log to two different files, which the application now must be concerned with
+// ログを2つの異なるファイルに保存します。これはアプリケーションが考慮する必要があります。
 const logger = createLogger({
   transports: [
     new transports.File({ filename: 'combined.log' }),
@@ -30,15 +30,15 @@ const logger = createLogger({
   ]
 });
  
-// log to MongoDB, which the application now must be concerned with
+// ログをMongoDBに保存します。これはアプリケーションが考慮する必要があります。
 winston.add(winston.transports.MongoDB, options);
 ```
-Doing it this way, the application now handles both application/business logic AND log routing logic!
+このようにして、アプリケーションはアプリケーション/ビジネスロジックとログルーティングロジックの両方を処理するようになりました。
 
 <br/><br/>
 
-### Code Example – Better log handling + Docker example
-In the application:
+### コード例 – より良いログ処理 + Docker の例
+アプリケーション内部:
 ```javascript
 const logger = new winston.Logger({
   level: 'info',
@@ -49,10 +49,10 @@ const logger = new winston.Logger({
 
 logger.log('info', 'Test Log Message with some parameter %s', 'some parameter', { anything: 'This is metadata' });
 ```
-Then, in the docker container `daemon.json`:
+そして、dockerコンテナの `daemon.json` で:
 ```json5
 {
-  "log-driver": "splunk", // just using Splunk as an example, it could be another storage type
+  "log-driver": "splunk", // Splunk を例に挙げていますが、別のストレージタイプを入力する可能性があります。
   "log-opts": {
     "splunk-token": "",
     "splunk-url": "",
@@ -60,28 +60,28 @@ Then, in the docker container `daemon.json`:
   }
 }
 ```
-So this example ends up looking like `log -> stdout -> Docker container -> Splunk`
+そのため、この例では `log -> stdout -> Docker container -> Splunk` のようになります。
 
 <br/><br/>
 
-### Blog Quote: "O'Reilly"
+### ブログ引用: 「オライリー」
 
-From the [O'Reilly blog](https://www.oreilly.com/ideas/a-cloud-native-approach-to-logs),
- > When you have a fixed number of instances on a fixed number of servers, storing logs on disk seems to make sense. However, when your application can dynamically go from 1 running instance to 100, and you have no idea where those instances are running, you need your cloud provider to deal with aggregating those logs on your behalf.
+[オライリーブログ](https://www.oreilly.com/ideas/a-cloud-native-approach-to-logs) より、
+ > 一定数のサーバ上に一定数のインスタンスがある場合、ディスク上にログを保存することは理にかなっているように思えます。しかし、アプリケーションが実行中の1つのインスタンスから100のインスタンスへと動的に変化し、それらのインスタンスがどこで実行されているのか分からない場合は、クラウドプロバイダーにログの集計を代行してもらう必要があります。
 
 <br/><br/>
 
-### Quote: "12-Factor"
+### 引用: 「12ファクター」
 
-From the [12-Factor best practices for logging](https://12factor.net/logs),
- > A twelve-factor app never concerns itself with routing or storage of its output stream. It should not attempt to write to or manage logfiles. Instead, each running process writes its event stream, unbuffered, to stdout.
+[12-Factor best practices for logging(ロギングのための12ファクターのベストプラクティス)](https://12factor.net/logs) より、
+ > 12 ファクターのアプリは、出力ストリームのルーティングやストレージには決して関心を持ちません。ログファイルへの書き込みや管理を試みるべきではありません。その代わり、各実行中のプロセスは、バッファリングされていないイベントストリームを標準出力に書き込みます。
  
- > In staging or production deploys, each process’ stream will be captured by the execution environment, collated together with all other streams from the app, and routed to one or more final destinations for viewing and long-term archival. These archival destinations are not visible to or configurable by the app, and instead are completely managed by the execution environment.
+ > ステージングまたは本番環境では、各プロセスのストリームは実行環境によってキャプチャされ、アプリからの他のすべてのストリームと照合され、1つまたはそれ以上の最終目的地にルーティングされて、表示および長期間アーカイブされます。これらのアーカイブ先は、アプリからは見えませんし、アプリで設定することもできず、代わりに実行環境によって完全に管理されます。
 
 <br/><br/>
 
- ### Example: Architecture overview using Docker and Splunk as an example
+ ### 例: Docker と Splunk を例にしたアーキテクチャの概要
 
-![alt text](/assets/images/logging-overview.png "Log routing overview")
+![alt text](assets/images/logging-overview.png "ログルーティングの概要")
 
 <br/><br/>
