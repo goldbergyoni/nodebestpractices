@@ -723,13 +723,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 5.18. Don't route logs within the app
+## ![✔] 5.18. アプリ内でログをルーティングしない
 
-**TL;DR:** Log destinations should not be hard-coded by developers within the application code, but instead should be defined by the execution environment the application runs in. Developers should write logs to `stdout` using a logger utility and then let the execution environment (container, server, etc.) pipe the `stdout` stream to the appropriate destination (i.e. Splunk, Graylog, ElasticSearch, etc.).
+**TL;DR:** ログの送信先は、アプリケーションコード内で開発者によってハードコーディングされるべきではなく、代わりに、アプリケーションが実行される実行環境によって定義されるべきです。開発者はロガーユーティリティを使って `stdout` にログを書き、実行環境 (コンテナやサーバなど) に `stdout` のストリームを適切な宛先 (Splunk, Graylog, ElasticSearch など) にパイプさせるべきです。
 
-**Otherwise:** Application handling log routing === hard to scale, loss of logs, poor separation of concerns
+**さもないと:** アプリケーションがログのルーティングをハンドリングする === スケールアップが難しい、ログの損失、懸念事項の分離が悪い
 
-🔗 [**Read More: Log Routing**](/sections/production/logrouting.md)
+🔗 [**さらに読む: ログルーティング**](/sections/production/logrouting.japanese.md)
 
 <br/><br/>
 
