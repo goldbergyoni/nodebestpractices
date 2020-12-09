@@ -1,30 +1,30 @@
 # Limit payload size using a reverse-proxy or a middleware
 
-### One Paragraph Explainer
+### 一段落説明
 
-Parsing request bodies, for example JSON-encoded payloads, is a performance-heavy operation, especially with larger requests.
-When handling incoming requests in your web application, you should limit the size of their respective payloads. Incoming requests with
-unlimited body/payload sizes can lead to your application performing badly or crashing due to a denial-of-service outage or other unwanted side-effects.
-Many popular middleware-solutions for parsing request bodies, such as the already-included `body-parser` package for express, expose
-options to limit the sizes of request payloads, making it easy for developers to implement this functionality. You can also
-integrate a request body size limit in your reverse-proxy/web server software if supported. Below are examples for limiting request sizes using
-`express` and/or `nginx`.
+JSON でエンコードされたペイロードなどのリクエストボディのパースは、特に大きなリクエストの場合、パフォーマンス的に重い処理となります。
+ウェブアプリケーションでリクエストを処理する際は、それぞれのペイロードのサイズを制限するべきです。
+サイズ無制限のボディ/ペイロードを含むリクエストを受任すると、アプリケーションのパフォーマンス著しく悪化したり、サービス停止に陥ったり、そのほか望まない副作用のためにクラッシュする恐れがあります。
+express に含まれている `body-parser` パッケージのような、リクエストボディを解析するための多くの一般的なミドルウェアソリューションは、
+リクエストペイロードのサイズを制限するオプションを提供しており、開発者がこの機能を実装するのを容易にしています。
+もしサポートされているのであれば、リクエストボディサイズの制限をリバースプロキシ/ウェブサーバソフトウェアに組み込むこともできます。
+以下に、`express` や `nginx` を用いてリクエストサイズを制限する例を示します。
 
-### Example code for `express`
+### `express` のコード例
 
 ```javascript
 const express = require('express');
 
 const app = express();
 
-app.use(express.json({ limit: '300kb' })); // body-parser defaults to a body size limit of 100kb
+app.use(express.json({ limit: '300kb' })); // body-parse のデフォルトは、100kb のボディサイズ制限です
 
-// Request with json body
+// json ボディを用いたリクエスト
 app.post('/json', (req, res) => {
 
-    // Check if request payload content-type matches json, because body-parser does not check for content types
+    // body-parser は content-type をチェックしないため、リクエストペイロードの content-type が json かどうかチェックする
     if (!req.is('json')) {
-        return res.sendStatus(415); // -> Unsupported media type if request doesn't have JSON body
+        return res.sendStatus(415); // リクエストが JSON ボディを持っていなければ、Unsupported media type を返す
     }
 
     res.send('Hooray, it worked!');
@@ -33,28 +33,28 @@ app.post('/json', (req, res) => {
 app.listen(3000, () => console.log('Example app listening on port 3000!'));
 ```
 
-🔗 [**Express docs for express.json()**](http://expressjs.com/en/4x/api.html#express.json)
+🔗 [**express.json() に関する Express ドキュメント**](http://expressjs.com/en/4x/api.html#express.json)
 
-### Example configuration for `nginx`
+### `nginx` の設定例
 
 ```nginx
 http {
     ...
-    # Limit the body size for ALL incoming requests to 1 MB
+    # すべての受信リクエストのボディサイズを 1MB に制限する
     client_max_body_size 1m;
 }
 
 server {
     ...
-    # Limit the body size for incoming requests to this specific server block to 1 MB
+    # この特定のサーバーに対する受信リクエストのボディサイズを 1MB に制限する
     client_max_body_size 1m;
 }
 
 location /upload {
     ...
-    # Limit the body size for incoming requests to this route to 1 MB
+    # このルートに対する受信リクエストのボディサイズを 1MB に制限する
     client_max_body_size 1m;
 }
 ```
 
-🔗 [**Nginx docs for client_max_body_size**](http://nginx.org/en/docs/http/ngx_http_core_module.html#client_max_body_size)
+🔗 [**client_max_body_size に関する Express ドキュメント**](http://nginx.org/en/docs/http/ngx_http_core_module.html#client_max_body_size)

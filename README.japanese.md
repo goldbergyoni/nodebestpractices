@@ -906,15 +906,15 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 6.14. Limit payload size using a reverse-proxy or a middleware
+## ![✔] 6.14. リバースプロキシまたはミドルウェアを使用してペイロードのサイズを制限する
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** The bigger the body payload is, the harder your single thread works in processing it. This is an opportunity for attackers to bring servers to their knees without tremendous amount of requests (DOS/DDOS attacks). Mitigate this limiting the body size of incoming requests on the edge (e.g. firewall, ELB) or by configuring [express body parser](https://github.com/expressjs/body-parser) to accept only small-size payloads
+**TL;DR:** Body ペイロードが大きければ大きいほど、シングルスレッドでの処理が重くなります。これは、攻撃者にとっては、膨大なリクエストを送信（DoS/DDoS 攻撃）せずともサーバーをダウンさせることができる機会となります。エッジ（例：firewall、ELB）で受信するリクエストのボデサイズを制限する、もしくは [express body parser](https://github.com/expressjs/body-parser) を用いて小さいサイズのペイロードのみを受け付けることで、緩和してください。
 
-**Otherwise:** Your application will have to deal with large requests, unable to process the other important work it has to accomplish, leading to performance implications and vulnerability towards DOS attacks
+**さもないと:** アプリケーションは大きなリクエストを処理しなければなくなり、他の重要な仕事を完遂させることができず、パフォーマンスへの影響や DDoS 攻撃に対する脆弱性につながります。
 
-🔗 [**Read More: Limit payload size**](/sections/security/requestpayloadsizelimit.md)
+🔗 [**さらに読む: ペイロードサイズを制限する**](/sections/security/requestpayloadsizelimit.japanese.md)
 
 <br/><br/>
 
