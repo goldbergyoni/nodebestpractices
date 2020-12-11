@@ -24,7 +24,7 @@ CI 環境や QA が、後に本番環境に送るものと全く同じパッケ�
 >  このコマンドは、継続的インテグレーション/継続的デプロイメントプロセスのためのビルドのパフォーマンスと信頼性を大幅に改善し、ワークフローで CI/CD を使用している開発者に一貫性のある高速な体験を提供します。
 
 [npmjs: dependencies と devDepencies](https://docs.npmjs.com/specifying-dependencies-and-devdependencies-in-a-package-json-file)
->    "dependencies"; 本番環境のアプリケーションに必要なパッケージ
->    "devDependencies"; ローカルでの開発やテストにのみ必要なパッケージ
+>    "dependencies": 本番環境のアプリケーションに必要なパッケージ
+>    "devDependencies": ローカルでの開発やテストにのみ必要なパッケージ
 
 <br/><br/>
