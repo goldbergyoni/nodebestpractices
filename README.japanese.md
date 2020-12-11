@@ -743,7 +743,7 @@ null == undefined; // true
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ トップに戻る</a></p>
 
 # `6. セキュリティのプラクティス`
 
