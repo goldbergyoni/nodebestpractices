@@ -930,15 +930,15 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 6.16. Prevent evil RegEx from overloading your single thread execution
+## ![✔] 6.16. 悪意のある RegEx がシングルスレッド実行をオーバーロードすることを防止する
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Regular Expressions, while being handy, pose a real threat to JavaScript applications at large, and the Node.js platform in particular. A user input for text to match might require an outstanding amount of CPU cycles to process. RegEx processing might be inefficient to an extent that a single request that validates 10 words can block the entire event loop for 6 seconds and set the CPU on 🔥. For that reason, prefer third-party validation packages like [validator.js](https://github.com/chriso/validator.js) instead of writing your own Regex patterns, or make use of [safe-regex](https://github.com/substack/safe-regex) to detect vulnerable regex patterns
+**TL;DR:** 正規表現（RegEx）は便利ですが、JavaScript アプリケーション全体、特に Node.js プラットフォームに対して真の脅威となります。テキストのユーザー入力をマッチさせることは、処理に大量の CPU サイクルを必要とするかもしれません。RegEx の処理は、10 ワードを検証する単一のリクエストが 6 秒間イベントループ全体をブロックし、CPU に 🔥 を点けるほどには非効率であるかもしれません。そのため、独自の RegExp パターンを記述する代わりに [validator.js](https://github.com/chriso/validator.js) のようなサードパーティ検証パッケージを利用するか、脆弱な正規表現パターンを検出するために [safe-regex](https://github.com/substack/safe-regex) を利用するようにしましょう。
 
-**Otherwise:** Poorly written regexes could be susceptible to Regular Expression DoS attacks that will block the event loop completely. For example, the popular `moment` package was found vulnerable with malicious RegEx usage in November of 2017
+**さもないと:** 下手な正規表現の記述は、イベントループを完全にブロックしてしまう正規表現 DoS 攻撃の影響を受ける可能性があります。例えば、人気のある `moment` パッケージでは、2017 年 11 月に悪意のある RegEx の使用による脆弱性が発見されています。
 
-🔗 [**Read More: Prevent malicious RegEx**](/sections/security/regex.md)
+🔗 [**さらに読む: 悪質な RegEx を防止する**](/sections/security/regex.japanese.md)
 
 <br/><br/>
 
