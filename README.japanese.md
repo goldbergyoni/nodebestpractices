@@ -589,7 +589,7 @@ null == undefined; // true
 
 **TL;DR:** コードはすべての環境で同一でなければなりませんが、驚くべきことに npm はデフォルトで環境間で依存関係をドリフトさせることができます。– 様々な環境でパッケージをインストールすると、パッケージの最新のパッチバージョンを取得しようとします。これを克服するには、各パッケージの正確な (最新版ではない) バージョンを保存するように各環境に指示する npm 設定ファイル .npmrc を使用します。あるいは、より細かい制御を行うには `npm shrinkwrap` を使用してください。\*更新: NPM5 では、依存関係はデフォルトでロックされています。新しいパッケージマネージャー、Yarn もデフォルトでカバーしてくれました。
 
-**さもないと:** QA はコードを徹底的にテストし、本番では異なる挙動をするバージョンを承認します。さらに悪いことに、同じクラスタ内の異なるサーバが異なるコードを実行する可能性があります。
+**さもないと:** QA はコードを徹底的にテストし、本番環境では異なる挙動をするバージョンを承認します。さらに悪いことに、同じクラスタ内の異なるサーバが異なるコードを実行する可能性があります。
 
 🔗 [**さらに読む: 依存関係をロックする**](/sections/production/lockdependencies.japanese.md)
 
@@ -733,17 +733,17 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 5.19. Install your packages with `npm ci` 
+## ![✔] 5.19. パッケージを `npm ci` でインストールする
 
-**TL;DR:** You have to be sure that production code uses the exact version of the packages you have tested it with. Run `npm ci` to strictly do a clean install of your dependencies matching package.json and package-lock.json. Using this command is recommended in automated environments such as continuous integration pipelines.
+**TL;DR:** 本番環境のコードが、テストしたパッケージの正確なバージョンを使用していることを確認する必要があります。 `npm ci` を実行して、package.json と package-lock.json に一致する依存関係のクリーンインストールを厳密に行います。このコマンドは、継続的インテグレーションパイプラインのような自動化された環境で使用することをお勧めします。
 
-**Otherwise:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code.
+**さもないと:** QA はコードを徹底的にテストし、本番環境では異なる動作をするバージョンを承認します。さらに悪いことに、同じプロダクションクラスタ内の異なるサーバが異なるコードを実行する可能性があります。
 
-🔗 [**Read More: Use npm ci**](/sections/production/installpackageswithnpmci.md)
+🔗 [**さらに読む: npm ci を使う**](/sections/production/installpackageswithnpmci.japanese.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ トップに戻る</a></p>
 
 # `6. セキュリティのプラクティス`
 

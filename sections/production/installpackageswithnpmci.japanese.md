@@ -1,30 +1,30 @@
-# Install packages with npm ci in production
+# 本番環境に npm ci を使ってパッケージをインストールする
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-You locked your dependencies following [**Lock dependencies**](/sections/production/lockdependencies.md) but you now need to make sure those exact package versions are used in production.
+[**依存関係をロックする**](/sections/production/lockdependencies.japanese.md) に従って依存関係をロックしましたが、本番環境で使用されているパッケージのバージョンが正確であることを確認する必要があります。
 
-Using `npm ci` to install packages will do exactly that and more.
-* It will fail if your `package.json` and your `package-lock.json` do not match (they should) or if you don't have a lock file
-* If a `node_modules` folder is present it will automatically remove it before installing
-* It is faster! Nearly twice as fast according to [the release blog post](https://blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable)
+パッケージのインストールに `npm ci` を使うと、まさにそれ以上のことができます。
+* `package.json` と `package-lock.json` が一致していない (一致しているはずの) 場合や、ロックファイルがない場合は失敗します。
+* もし `node_modules` フォルダが存在する場合は、インストールする前に自動的に削除される
+* より速くなります!  [リリースブログ記事](https://blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable) によると、2倍近く速くなっています。
 
-### When can this be useful?
-You are guaranteed that you CI environment or QA will test your software with exactly the same package version that the one you will later send to production.
-Also, if for some reason someone manually changes package.json, not through a cli command but rather by directly editing package.json, a gap between package.json & package-lock.json is created and an error will be thrown.
+### これはどんな時に役立つのでしょうか？
+CI 環境や QA が、後に本番環境に送るものと全く同じパッケージバージョンでソフトウェアをテストすることが保証されています。
+また、何らかの理由で cli コマンドではなく、直接 package.json を編集して手動で package.json を変更した場合、package.json と package-lock.json の間にギャップが生じてエラーが発生します。
 
-### What npm says
+### npm が言っていること
 
-From [npm ci documentation](https://docs.npmjs.com/cli/ci.html)
-> This command is similar to npm-install, except it’s meant to be used in automated environments such as test platforms, continuous integration, and deployment – or any situation where you want to make sure you’re doing a clean install of your dependencies.
+[npm ci ドキュメント](https://docs.npmjs.com/cli/ci.html) より
+> このコマンドは npm-install と似ていますが、テストプラットフォームや継続的インテグレーション、デプロイメントなどの自動化された環境や、依存関係をクリーンインストールしていることを確認したい状況で使用することを目的としています。
 
-[Blog post announcing the release of `ci` command](https://blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable)
->  The command offers massive improvements to both the performance and reliability of builds for continuous integration / continuous deployment processes, providing a consistent and fast experience for developers using CI/CD in their workflow.
+[ `ci` コマンドのリリースを発表しているブログポスト](https://blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable)
+>  このコマンドは、継続的インテグレーション/継続的デプロイメントプロセスのためのビルドのパフォーマンスと信頼性を大幅に改善し、ワークフローで CI/CD を使用している開発者に一貫性のある高速な体験を提供します。
 
-[npmjs: dependencies and devDepencies](https://docs.npmjs.com/specifying-dependencies-and-devdependencies-in-a-package-json-file)
->    "dependencies": Packages required by your application in production.
->    "devDependencies": Packages that are only needed for local development and testing.
+[npmjs: dependencies と devDepencies](https://docs.npmjs.com/specifying-dependencies-and-devdependencies-in-a-package-json-file)
+>    "dependencies": 本番環境のアプリケーションに必要なパッケージ
+>    "devDependencies": ローカルでの開発やテストにのみ必要なパッケージ
 
 <br/><br/>
