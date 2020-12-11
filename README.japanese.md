@@ -918,15 +918,15 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 6.15. Avoid JavaScript eval statements
+## ![✔] 6.15. JavaScript の eval 構文を避ける
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** `eval` is evil as it allows executing custom JavaScript code during run time. This is not just a performance concern but also an important security concern due to malicious JavaScript code that may be sourced from user input. Another language feature that should be avoided is `new Function` constructor. `setTimeout` and `setInterval` should never be passed dynamic JavaScript code either.
+**TL;DR:** `eval` は、ランタイムにおいてカスタム JavaScript コードの実行を許可しているため、有害です。これは単にパフォーマンス的な懸念だけではなく、ユーザーの入力を元にした悪意のある JavaScript コードのために、重大なセキュリティ的な懸念でもあります。その他の避けるべき言語仕様は、`new Function` コンストラクタです。`setTimeout` と `setInterval` も動的な JavaScript コードに渡されるべきではありません。
 
-**Otherwise:** Malicious JavaScript code finds a way into text passed into `eval` or other real-time evaluating JavaScript language functions, and will gain complete access to JavaScript permissions on the page. This vulnerability is often manifested as an XSS attack.
+**さもないと:** 悪意のある JavaScript コードが `eval` やその他のリアルタイムに評価する JavaScript の関数に渡されるテキストへたどり着き、そのページにおける JavaScript の完全な権限を獲得してしまいます。この脆弱性はしばしば XSS 攻撃として顕在化します。
 
-🔗 [**Read More: Avoid JavaScript eval statements**](/sections/security/avoideval.md)
+🔗 [**さらに読む: JavaScript の eval 構文を避ける**](/sections/security/avoideval.japanese.md)
 
 <br/><br/>
 
