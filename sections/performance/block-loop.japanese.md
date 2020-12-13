@@ -1,11 +1,11 @@
-# Don't block the event loop
+# イベントループをブロックしない
 
 <br/><br/>
 
-Node handles the Event Loop mostly on a single thread rotating through multiple queues. Operations with high complexity, large json parsing, applying logic over huge arrays, unsafe regex queries, and large IO operations are some of the operations that can cause the Event Loop to stall. Avoid this off-loading CPU intensive tasks to a dedicated service (e.g. job server), or breaking long tasks into small steps then using the Worker Pool are some examples of how to avoid blocking the Event Loop.
+Node はほとんどの場合、複数のキューをローテーションする単一のスレッド上でイベントループを処理します。複雑度の高い操作、大きな json の解析、巨大な配列へのロジックの適用、安全ではない正規表現クエリ、そして大きな IO 操作は、イベントループを停止させる原因となる操作です。これを避けるために、CPU集約的なタスクを専用サービス（ジョブサーバーなど）にオフロードしたり、長いタスクを小さなステップに分けてワーカープールを使用したりすることは、イベントループをブロックしないようにする方法のいくつかの例です。
 
-### Example: blocking the event loop
-Let's take a look at an example from [Node Clinic](https://clinicjs.org/documentation/doctor/05-fixing-event-loop-problem).
+### 例: イベントループをブロックする
+[Node Clinic](https://clinicjs.org/documentation/doctor/05-fixing-event-loop-problem) の例を見てみましょう。
 ```javascript
 function sleep (ms) {
   const future = Date.now() + ms
@@ -19,13 +19,12 @@ server.get('/', (req, res, next) => {
 })
 ```
 
-And when we benchmark this app, we start to see the latency caused by the long
-while loop.
+そして、このアプリをベンチマークしてみると、長時間の while ループによるレイテンシを確認することができます。
 
-### Run the benchmark 
+### ベンチマークの実行 
 `clinic doctor --on-port 'autocannon localhost:$PORT' -- node slow-event-loop`
 
-### The results
+### 結果
 
 ```
 ─────────┬────────┬────────┬────────┬────────┬───────────┬──────────┬───────────┐
@@ -40,11 +39,11 @@ while loop.
 ├───────────┼─────────┼─────────┼─────────┼────────┼─────────┼───────┼─────────┤
 ```
 
-## Image of the Event Loop
-![Event Loop](/assets/images/event-loop.png "Event Loop")
+## イベントループのイメージ図
+![イベントループ](/assets/images/event-loop.png "イベントループ")
 
->Here's a good rule of thumb for keeping your Node server speedy: Node is fast when the work associated with each client at any given time is "small".
->[Don't Block the Event Loop (or the Worker Pool) | Node.js](https://nodejs.org/en/docs/guides/dont-block-the-event-loop/)
+>ここに、Node サーバを高速に保つための良い経験則があります: Node は、与えられた時間にそれぞれのクライアントに関連する作業が 「小さい」 場合に高速です。
+>[イベントループ（またはワーカープール）をブロックしない | Node.js](https://nodejs.org/en/docs/guides/dont-block-the-event-loop/)
 
-> Most people fail their first few NodeJS apps merely due to the lack of understanding of the concepts such as the Event Loop, Error handling and asynchrony 
-[Event Loop Best Practices — NodeJS Event Loop Part 5](https://jsblog.insiderattack.net/event-loop-best-practices-nodejs-event-loop-part-5-e29b2b50bfe2)
+> イベントループ、エラー処理、非同期などの概念を理解していないことが原因で、ほとんどの人が最初の数回の NodeJS アプリで失敗します。
+[イベントループのベストプラクティス - NodeJS イベントループ Part 5](https://jsblog.insiderattack.net/event-loop-best-practices-nodejs-event-loop-part-5-e29b2b50bfe2)
