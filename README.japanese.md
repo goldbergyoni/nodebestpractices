@@ -1053,13 +1053,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 7.1. Don't block the event loop
+## ![✔] 7.1. イベントループをブロックしない
 
-**TL;DR:** Avoid CPU intensive tasks as they will block the mostly single-threaded Event Loop and offload those to a dedicated thread, process or even a different technology based on the context.
+**TL;DR:** 主にシングルスレッドのイベントループをブロックし、専用のスレッド、プロセス、またはコンテキストに基づいて別の技術にそれらをオフロードするため、CPU集約的なタスクを避けてください。
 
-**Otherwise:** As the Event Loop is blocked, Node.js will be unable to handle other request thus causing delays for concurrent users. **3000 users are waiting for a response, the content is ready to be served, but one single request blocks the server from dispatching the results back**
+**さもないと:** イベントループがブロックされると、Node.js は他のリクエストを処理することができなくなり、同時接続ユーザーの遅延を引き起こします。**3000人のユーザーがレスポンスを待っていて、コンテンツを提供する準備ができていますが、1つのリクエストがサーバからの結果のディスパッチをブロックしています***。
 
-🔗 [**Read More: Do not block the event loop**](/sections/performance/block-loop.md)
+🔗 [**さらに読む: イベントループをブロックしない**](/sections/performance/block-loop.japanese.md)
 
 <br /><br /><br />
 
