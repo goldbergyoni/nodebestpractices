@@ -1,23 +1,23 @@
-# Prefer native JS methods over user-land utils like Lodash
+# Lodash のようなユーザーランドのユーティリティよりも、ネイティブの JS メソッドを選ぶ
 
 
 <br/><br/>
 
-### One Paragraph Explainer
-Sometimes, using native methods is better than requiring _lodash_ or _underscore_ because those libraries can lead to performance loss or take up more space than needed
-The performance using native methods result in an [overall ~50% gain](https://github.com/Berkmann18/NativeVsUtils/blob/master/analysis.xlsx) which includes the following methods: `Array.concat`, `Array.fill`, `Array.filter`, `Array.map`, `(Array|String).indexOf`, `Object.find`, ...
+### 一段落説明
+_lodash_ や _underscore_ を require するよりもネイティブメソッドを使う方が良い場合もあります。なぜなら、これらのライブラリは、パフォーマンスの低下や必要以上にスペースを占有する可能性があるからです。
+以下のメソッドを含む、ネイティブメソッドを使用した場合のパフォーマンスは、 [全体的に ~50% 向上](https://github.com/Berkmann18/NativeVsUtils/blob/master/analysis.xlsx) になります: `Array.concat`, `Array.fill`, `Array.filter`, `Array.map`, `(Array|String).indexOf`, `Object.find`, ...
 
 
 <!-- comp here: https://gist.github.com/Berkmann18/3a99f308d58535ab0719ac8fc3c3b8bb-->
 
 <br/><br/>
 
-### Example: benchmark comparison - Lodash vs V8 (Native)
-The graph below shows the [mean of the benchmarks for a variety of Lodash methods](https://github.com/Berkmann18/NativeVsUtils/blob/master/nativeVsLodash.ods), this shows that Lodash methods take on average 146.23% more time to complete the same tasks as V8 methods.
+### 例: ベンチマーク比較 - Lodash vs V8 (Native)
+下のグラフは、[様々なLodashメソッドのベンチマークの平均](https://github.com/Berkmann18/NativeVsUtils/blob/master/nativeVsLodash.ods) を示しています。このグラフから、Lodash メソッドは V8 メソッドと同じタスクを完了するのに平均146.23%も時間がかかることがわかります。
 
 ![meanDiag](../../assets/images/sampleMeanDiag.png)
 
-### Code Example – Benchmark test on `_.concat`/`Array.concat`
+### コード例 – `_.concat`/`Array.concat` のベンチマークテスト
 ```javascript
 const _ = require('lodash');
 const __ = require('underscore');
@@ -33,21 +33,21 @@ concatSuite.add('lodash', () => _.concat(array, 3, 4, 5))
   .run({ 'async': true });
 ```
 
-Which returns this:
+これは以下のような結果になります:
 
 ![output](../../assets/images/concat-benchmark.png)
 
-You can find a bigger list of benchmarks [here](https://github.com/Berkmann18/NativeVsUtils/blob/master/index.txt) or alternatively [run this](https://github.com/Berkmann18/NativeVsUtils/blob/master/index.js) which would show the same but with colours.
+ベンチマークの大きなリストは[ここ](https://github.com/Berkmann18/NativeVsUtils/blob/master/index.txt) にあります。あるいは、同じように色をつけて表示される [run this](https://github.com/Berkmann18/NativeVsUtils/blob/master/index.js) があります。
 
-### Blog Quote: "You don't (may not) need Lodash/Underscore"
+### ブログ引用: "You don't (may not) need Lodash/Underscore (Lodash / Underscoreは必要ありません（必要ないかもしれません）。)"
 
-From the [repo on this matter which focuses on Lodash and Underscore](https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore).
+[repo on this matter which focuses on Lodash and Underscore(Lodash と Underscore を中心としたこの件についてのリポジトリ)](https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore) より
 
- > Lodash and Underscore are great modern JavaScript utility libraries, and they are widely used by Front-end developers. However, when you are targeting modern browsers, you may find out that there are many methods which are already supported natively thanks to ECMAScript5 [ES5] and ECMAScript2015 [ES6]. If you want your project to require fewer dependencies, and you know your target browser clearly, then you may not need Lodash/Underscore.
+ > LodashやUnderscoreは素晴らしいモダンな JavaScript ユーティリティライブラリであり、フロントエンド開発者に広く利用されています。しかし、最新のブラウザをターゲットにしている場合、ECMAScript5 [ES5] や ECMAScript2015 [ES6] のおかげですでにネイティブでサポートされているメソッドがたくさんあることに気づくかもしれません。プロジェクトに必要な依存関係を少なくしたい、ターゲットブラウザを明確に理解している場合は、Lodash/Underscore は必要ないかもしれません。
 
-### Example: Linting for non-native methods usage
-There's an [ESLint plugin](https://www.npmjs.com/package/eslint-plugin-you-dont-need-lodash-underscore) which detects where you're using libraries but don't need to by warning you with suggestions (cf. example below).<br>
-The way you set it up is by adding the `eslint-plugin-you-dont-need-lodash-underscore` plugin to your ESLint configuration file:
+### 例: 非ネイティブメソッドの使用法に対応した Lint
+ライブラリを使っているが必要のない場所を検知して、提案付きで警告してくれる[ ESLint プラグイン](https://www.npmjs.com/package/eslint-plugin-you-dont-need-lodash-underscore)というものがあります。<br>
+設定方法は、ESLint の設定ファイルに `eslint-plugin-you-dont-need-lodash-underscore` プラグインを追加することです:
 ```json
 {
   "extends": [
@@ -56,14 +56,14 @@ The way you set it up is by adding the `eslint-plugin-you-dont-need-lodash-under
 }
 ```
 
-### Example: detecting non-v8 util usage using a linter
-Consider the file below:
+### 例: linter を使用した非 v8 ユーティリティの使用状況の検出
+以下のファイルのようにすることを検討してみてください:
 ```js
 const _ = require('lodash');
-// ESLint will flag the line above with a suggestion
+// ESLint は上の行に提案のフラグを立てます。
 console.log(_.map([0, 1, 2, 4, 8, 16], x => `d${x}`));
 ```
-Here's what ESLint would output when using the YDNLU plugin.
+YDNLU プラグインを使った場合の ESLint の出力は以下の通りです。
 ![output](../../assets/images/ydnlu.png)
 
-Of course, the example above doesn't seem realistic considering what actual codebases would have but you get the idea.
+もちろん、上の例は、実際のコードベースがどのようなものであるかを考えると、現実的ではないように思えますが、アイデアを得ることはできます
