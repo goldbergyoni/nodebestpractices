@@ -13,7 +13,7 @@ _lodash_ や _underscore_ を require するよりもネイティブメソッド
 <br/><br/>
 
 ### 例: ベンチマーク比較 - Lodash vs V8 (Native)
-下のグラフは、[様々なLodashメソッドのベンチマークの平均](https://github.com/Berkmann18/NativeVsUtils/blob/master/nativeVsLodash.ods) を示しています。このグラフから、Lodash メソッドは V8 メソッドと同じタスクを完了するのに平均146.23%も時間がかかることがわかります。
+下のグラフは、[様々な Lodash メソッドのベンチマークの平均](https://github.com/Berkmann18/NativeVsUtils/blob/master/nativeVsLodash.ods) を示しています。このグラフから、Lodash メソッドは V8 メソッドと同じタスクを完了するのに平均146.23%も時間がかかることがわかります。
 
 ![meanDiag](../../assets/images/sampleMeanDiag.png)
 
@@ -37,13 +37,13 @@ concatSuite.add('lodash', () => _.concat(array, 3, 4, 5))
 
 ![output](../../assets/images/concat-benchmark.png)
 
-ベンチマークの大きなリストは[ここ](https://github.com/Berkmann18/NativeVsUtils/blob/master/index.txt) にあります。あるいは、同じように色をつけて表示される [run this](https://github.com/Berkmann18/NativeVsUtils/blob/master/index.js) があります。
+ベンチマークの大きなリストは[ここ](https://github.com/Berkmann18/NativeVsUtils/blob/master/index.txt) にあります。あるいは、同じように色をつけて表示される [run this](https://github.com/Berkmann18/NativeVsUtils/blob/master/index.js) にもあります。
 
 ### ブログ引用: "You don't (may not) need Lodash/Underscore ( Lodash / Underscore は必要ありません（必要ないかもしれません）。)"
 
 [repo on this matter which focuses on Lodash and Underscore(Lodash と Underscore を中心としたこの件についてのリポジトリ)](https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore) より
 
- > LodashやUnderscoreは素晴らしいモダンな JavaScript ユーティリティライブラリであり、フロントエンド開発者に広く利用されています。しかし、最新のブラウザをターゲットにしている場合、ECMAScript5 [ES5] や ECMAScript2015 [ES6] のおかげで、すでにネイティブでサポートされているメソッドがたくさんあることに気づくかもしれません。プロジェクトに必要な依存関係を少なくしたい、ターゲットブラウザを明確に理解している場合は、Lodash/Underscore は必要ないかもしれません。
+ > Lodash や Underscore は素晴らしいモダンな JavaScript ユーティリティライブラリであり、フロントエンド開発者に広く利用されています。しかし、最新のブラウザをターゲットにしている場合、ECMAScript5 [ES5] や ECMAScript2015 [ES6] のおかげで、すでにネイティブでサポートされているメソッドがたくさんあることに気づくかもしれません。プロジェクトに必要な依存関係を少なくしたく、ターゲットブラウザを明確に理解している場合は、Lodash/Underscore は必要ないかもしれません。
 
 ### 例: 非ネイティブメソッドの使用法に対応した Lint
 ライブラリを使っているが必要のない場所を検知して、提案付きで警告してくれる[ ESLint プラグイン](https://www.npmjs.com/package/eslint-plugin-you-dont-need-lodash-underscore)というものがあります。(下の例を参照)<br>
