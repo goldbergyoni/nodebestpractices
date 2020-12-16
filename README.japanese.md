@@ -1063,18 +1063,18 @@ null == undefined; // true
 
 <br /><br /><br />
 
-## ![✔] 7.2. Prefer native JS methods over user-land utils like Lodash
+## ![✔] 7.2. Lodash のようなユーザーランドのユーティリティよりも、ネイティブの JS メソッドを選ぶ
 
-**TL;DR:** It's often more penalising to use utility libraries like `lodash` and `underscore` over native methods as it leads to unneeded dependencies and slower performance.
-Bear in mind that with the introduction of the new V8 engine alongside the new ES standards, native methods were improved in such a way that it's now about 50% more performant than utility libraries.
+**TL;DR:** ネイティブメソッドよりも `lodash` や `underscore` のようなユーティリティライブラリを使う方が、不要な依存関係やパフォーマンスの低下につながるため、よりペナルティが大きいことがよくあります。
+新しい ES 標準と一緒に新しい V8 エンジンが導入されたことで、ネイティブメソッドが改善され、ユーティリティライブラリよりも約 50% のパフォーマンスが向上したことを覚えておいてください。
 
-**Otherwise:** You'll have to maintain less performant projects where you could have simply used what was **already** available or dealt with a few more lines in exchange of a few more files.
+**さもないと:** **すでに**利用可能なものを単純に使用できたり、いくつかのファイルと引き換えに、数行で処理することができるような、パフォーマンスの低いプロジェクトを維持しなければならないでしょう。
 
-🔗 [**Read More: Native over user land utils**](/sections/performance/nativeoverutil.md)
+🔗 [**さらに読む: ユーザーランドなユーティリティよりもネイティブを使用する**](/sections/performance/nativeoverutil.japanese.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ トップに戻る</a></p>
 
 # `8. Docker のプラクティス`
 
