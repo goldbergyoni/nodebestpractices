@@ -39,14 +39,14 @@ concatSuite.add('lodash', () => _.concat(array, 3, 4, 5))
 
 ベンチマークの大きなリストは[ここ](https://github.com/Berkmann18/NativeVsUtils/blob/master/index.txt) にあります。あるいは、同じように色をつけて表示される [run this](https://github.com/Berkmann18/NativeVsUtils/blob/master/index.js) があります。
 
-### ブログ引用: "You don't (may not) need Lodash/Underscore (Lodash / Underscoreは必要ありません（必要ないかもしれません）。)"
+### ブログ引用: "You don't (may not) need Lodash/Underscore ( Lodash / Underscore は必要ありません（必要ないかもしれません）。)"
 
 [repo on this matter which focuses on Lodash and Underscore(Lodash と Underscore を中心としたこの件についてのリポジトリ)](https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore) より
 
- > LodashやUnderscoreは素晴らしいモダンな JavaScript ユーティリティライブラリであり、フロントエンド開発者に広く利用されています。しかし、最新のブラウザをターゲットにしている場合、ECMAScript5 [ES5] や ECMAScript2015 [ES6] のおかげですでにネイティブでサポートされているメソッドがたくさんあることに気づくかもしれません。プロジェクトに必要な依存関係を少なくしたい、ターゲットブラウザを明確に理解している場合は、Lodash/Underscore は必要ないかもしれません。
+ > LodashやUnderscoreは素晴らしいモダンな JavaScript ユーティリティライブラリであり、フロントエンド開発者に広く利用されています。しかし、最新のブラウザをターゲットにしている場合、ECMAScript5 [ES5] や ECMAScript2015 [ES6] のおかげで、すでにネイティブでサポートされているメソッドがたくさんあることに気づくかもしれません。プロジェクトに必要な依存関係を少なくしたい、ターゲットブラウザを明確に理解している場合は、Lodash/Underscore は必要ないかもしれません。
 
 ### 例: 非ネイティブメソッドの使用法に対応した Lint
-ライブラリを使っているが必要のない場所を検知して、提案付きで警告してくれる[ ESLint プラグイン](https://www.npmjs.com/package/eslint-plugin-you-dont-need-lodash-underscore)というものがあります。<br>
+ライブラリを使っているが必要のない場所を検知して、提案付きで警告してくれる[ ESLint プラグイン](https://www.npmjs.com/package/eslint-plugin-you-dont-need-lodash-underscore)というものがあります。(下の例を参照)<br>
 設定方法は、ESLint の設定ファイルに `eslint-plugin-you-dont-need-lodash-underscore` プラグインを追加することです:
 ```json
 {
@@ -66,4 +66,4 @@ console.log(_.map([0, 1, 2, 4, 8, 16], x => `d${x}`));
 YDNLU プラグインを使った場合の ESLint の出力は以下の通りです。
 ![output](../../assets/images/ydnlu.png)
 
-もちろん、上の例は、実際のコードベースがどのようなものであるかを考えると、現実的ではないように思えますが、アイデアを得ることはできます
+もちろん、上の例は、実際のコードベースがどのようなものであるかを考えると、現実的ではないように思えますが、アイデアを得ることはできます。
