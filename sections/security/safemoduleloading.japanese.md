@@ -1,15 +1,15 @@
-# Avoid module loading using a variable
+# 変数を利用してモジュールを読み込むことを避ける
 
-### One Paragraph Explainer
+### 一段落説明
 
-Avoid requiring/importing another file with a path that was given as parameter due to the concern that it could have originated from user input. This rule can be extended for accessing files in general (i.e. `fs.readFile()`) or other sensitive resources with dynamic variables originating from user input.
+ユーザー入力が起因となって問題が生じる恐れがあるため、パラメータとして与えられたパスを用いて他のファイルを require/import しないようにしてください。この原則は、ユーザー入力に基づいた動的な変数を用いた、一般的なファイルアクセス（`fs.readFile()` など）やその他のセンシティブなリソースアクセスにも拡張することができます。
 
-### Code example
+### コード例
 
 ```javascript
-// insecure, as helperPath variable may have been modified by user input
+// セキュアでない例（変数 helperPath がユーザー入力によって変更される可能性がある）
 const badWayToRequireUploadHelpers = require(helperPath);
 
-// secure
-const uploadHelpers = require('./helpers/upload');
+// セキュアな例
+const uploadHelpers = require("./helpers/upload");
 ```
