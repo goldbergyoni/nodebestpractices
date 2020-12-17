@@ -954,15 +954,15 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 6.18. Run unsafe code in a sandbox
+## ![✔] 6.18. サンドボックス内で安全でないコードを実行する
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** When tasked to run external code that is given at run-time (e.g. plugin), use any sort of 'sandbox' execution environment that isolates and guards the main code against the plugin. This can be achieved using a dedicated process (e.g. `cluster.fork()`), serverless environment or dedicated npm packages that act as a sandbox
+**TL;DR:** ランタイムにおいて与えられた外部のコード（プラグインなど）を実行するようなタスクを行うとき、独立していて、メインコードをプラグインから保護する任意の「サンドボックス」実行環境を使用してください。これは、専用のプロセス（`cluster.fork()` など）やサーバーレス環境、またはサンドボックスとして動作する専用の npm パッケージを使用することで実現できます。
 
-**Otherwise:** A plugin can attack through an endless variety of options like infinite loops, memory overloading, and access to sensitive process environment variables
+**さもないと:** プラグインは、無限ループやメモリーオーバーロード、センシティブなプロセスの環境変数へのアクセスなど、あらゆる手段を通じて攻撃可能となります。
 
-🔗 [**Read More: Run unsafe code in a sandbox**](/sections/security/sandbox.md)
+🔗 [**さらに読む: サンドボックス内で安全でないコードを実行する**](/sections/security/sandbox.japanese.md)
 
 <br/><br/>
 
