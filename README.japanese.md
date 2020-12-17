@@ -966,15 +966,15 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 6.19. Take extra care when working with child processes
+## ![✔] 6.19. 子プロセスで処理を行う場合は特別な注意を払う
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** Avoid using child processes when possible and validate and sanitize input to mitigate shell injection attacks if you still have to. Prefer using `child_process.execFile` which by definition will only execute a single command with a set of attributes and will not allow shell parameter expansion.
+**TL;DR:** 可能なら子プロセスの仕様を避け、それでも使用する必要がある場合には、入力を検証しサニタイズすることで、シェルインジェクション攻撃を軽減してください。属性の集合を持つ単一コマンドのみを実行し、シェルパラメータ拡張を許可しない `child_process.execFile` の使用を優先してください。
 
-**Otherwise:** Naive use of child processes could result in remote command execution or shell injection attacks due to malicious user input passed to an unsanitized system command.
+**さもないと:** 子プロセスを愚直に利用することは、サニタイズされていないシステムコマンドに渡される悪意のあるユーザー入力が原因となって、結果としてリモートからのコマンド実行、またはシェルインジェクション攻撃を受けることにつながります。
 
-🔗 [**Read More: Be cautious when working with child processes**](/sections/security/childprocesses.md)
+🔗 [**さらに読む: 子プロセスで処理を行う場合は注意する**](/sections/security/childprocesses.japanese.md)
 
 <br/><br/>
 
