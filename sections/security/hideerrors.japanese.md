@@ -1,16 +1,16 @@
-# Hide error details from client
+# エラーの詳細をクライアントから隠す
 
-### One Paragraph Explainer
+### 一段落説明
 
-Exposing application error details to the client in production should be avoided due to the risk of exposing sensitive application details such as server file paths, third-party modules in use, and other internal workflows of the application which could be exploited by an attacker.
-Express comes with a built-in error handler, which takes care of any errors that might be encountered in the app. This default error-handling middleware function is added at the end of the middleware function stack.
-If you pass an error to `next()` and you do not handle it in a custom error handler, it will be handled by the built-in Express error handler; the error will be written to the client with the stack trace. This behaviour will be true when `NODE_ENV` is set to `development`, however when `NODE_ENV` is set to `production`, the stack trace is not written, only the HTTP response code.
+サーバファイルのパス、使用中のサードパーティモジュール、その他攻撃者に悪用される可能性のあるアプリケーションの内部ワークフローなど、機密性の高いアプリケーションの詳細情報が漏洩するリスクがあるため、本番環境においてクライアントにアプリケーションエラーの詳細を晒すべきではありません。
+Express には、アプリ内で発生する恐れのあるエラーを処理するエラーハンドラが組み込まれています。このデフォルトのエラー処理ミドルウェア関数は、ミドルウェア関数スタックの最後に追加されます。
+エラーを `next()` に渡し、カスタムエラーハンドラで処理しない場合は、組み込みの Express エラーハンドラで処理されます。エラーはスタックトレースと共にクライアントに書き込まれます。この動作は `NODE_ENV` が `development` に設定されている場合に有効ですが、`NODE_ENV` が `production` に設定されている場合は、スタックトレースは書き込まれず、HTTP レスポンスコードのみが書き込まれます。
 
-### Code example: Express error handler
+### コード例: Express エラーハンドラ
 
 ```javascript
-// production error handler
-// no stacktraces leaked to user
+// 本番のエラーハンドラ
+// スタックトレースがユーザーに漏洩しない
 app.use((err, req, res, next) => {
     res.status(err.status || 500);
     res.render('error', {
@@ -20,6 +20,6 @@ app.use((err, req, res, next) => {
 });
 ```
 
-### Additional resources
+### その他のリソース
 
-🔗 [Express.js error handling documentation](https://expressjs.com/en/guide/error-handling.html)
+🔗 [Express.js エラーハンドリングドキュメント](https://expressjs.com/en/guide/error-handling.html)
