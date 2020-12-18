@@ -978,15 +978,15 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 6.20. Hide error details from clients
+## ![✔] 6.20. エラーの詳細をクライアントから隠す
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** An integrated express error handler hides the error details by default. However, great are the chances that you implement your own error handling logic with custom Error objects (considered by many as a best practice). If you do so, ensure not to return the entire Error object to the client, which might contain some sensitive application details
+**TL;DR:** 統合されている express のエラーハンドラはデフォルトでエラーの詳細を隠します。しかし、（多くの人がベストプラクティスだと考えている）カスタムエラーオブジェクトを使用して独自のエラー処理ロジックを実装する可能性は大いにあります。その場合、クライアントに、機密なアプリケーション詳細を含む恐れのあるエラーオブジェクト全体を返さないようにしてください。
 
-**Otherwise:** Sensitive application details such as server file paths, third party modules in use, and other internal workflows of the application which could be exploited by an attacker, could be leaked from information found in a stack trace
+**さもないと:** 攻撃者によって悪用される可能性のある、サーバファイルのパス、使用中のサードパーティモジュール、アプリケーションのその他内部ワークフローなど、機密性の高いアプリケーションの詳細情報が、スタックトレース内に残された情報から漏洩する可能性があります。
 
-🔗 [**Read More: Hide error details from client**](/sections/security/hideerrors.md)
+🔗 [**さらに読む: エラーの詳細をクライアントから隠す**](/sections/security/hideerrors.japanese.md)
 
 <br/><br/>
 
