@@ -1,40 +1,39 @@
-# Modify the default session middleware settings
+# セッションミドルウェアの設定を変更する
 
 <br/><br/>
 
 
-### One Paragraph Explainer
+### 一段落説明
 
-Many popular session middlewares do not apply best practice/secure cookie settings out of the box. Tweaking these settings from the defaults offers greater protection for both the user and the application, by reducing the threat of attacks such as session hijacking and session identification.
+多くの有名なセッションミドルウェアは、そのまま利用できるような、ベストプラクティス/セキュア cookie 設定を適用していません。これらの設定をデフォルト値から調整することによって、セッションハイジャックやセッション識別のような攻撃の脅威を減らし、ユーザーとアプリケーションの両方により安全な保護を提供します。
 
-The most common setting left to default is the session `name` - in `express-session` this is `connect.sid`. An attacker can use this information to identify the underlying framework of the web application as well as module specific vulnerabilities. Changing this value to something other than the default will make it harder to determine what session mechanism is being used.
+デフォルト値のままになっている最も一般的な設定は、セッション名 `name` です - `express-session` では、`connect.sid` に値します。攻撃者はこの情報を利用して背後にある Web アプリケーションフレームワークや、モジュール固有の脆弱性を特定する可能性があります。この値を他の値に変更することで、どんなセッション機構が利用されているかの特定を難しくします。
 
-Also in `express-session`, the option `cookie.secure` is set to false as the default value. Changing this to true will restrict transport of the cookie to https only which provides safety from man-in-the-middle type attacks
+また `express-session` では、`cookie.secure` オプションがデフォルトで false に指定されています。この値を true に変更することで、cookie の送信を https のみに制限し、中間者攻撃からの保護を提供します。
 
 <br/><br/>
 
 
-### Code example: Setting secure cookie settings
+### コード例: 安全な cookie の設定を行う
 
  ```javascript
-// using the express session middleware
+// express セッションミドルウェアを使用する
 app.use(session({  
-  secret: 'youruniquesecret', // secret string used in the signing of the session ID that is stored in the cookie
-  name: 'youruniquename', // set a unique name to remove the default connect.sid
+  secret: 'youruniquesecret', // cookie に格納されるセッション ID に署名するために利用されるシークレット文字列
+  name: 'youruniquename', // デフォルトの connect.sid を取り除くために、ユニークな名前をセットする
   cookie: {
-    httpOnly: true, // minimize risk of XSS attacks by restricting the client from reading the cookie
-    secure: true, // only send cookie over https
-    maxAge: 60000*60*24 // set cookie expiry length in ms
+    httpOnly: true, // クライアントの cookie 読み取りを制限することで、XSS 攻撃のリスクを最小化する
+    secure: true, // https でのみ cookie を送信する
+    maxAge: 60000*60*24 // cookie の有効期限を ms で指定する
   }
 }));
 ```
 
 <br/><br/>
 
+### 他のブロガーが言っていること
 
-### What Other Bloggers Say
-
-From the [NodeSource blog](http://nodesource.com/blog/nine-security-tips-to-keep-express-from-getting-pwned/): 
-> ...Express has default cookie settings that aren’t highly secure. They can be manually tightened to enhance security - for both an application and its user.*
+[NodeSource blog](http://nodesource.com/blog/nine-security-tips-to-keep-express-from-getting-pwned/) より: 
+> ...Express にはデフォルトの cookie 設定がありますが、これはあまり安全ではありません。この設定は、アプリケーションとユーザーの両方にとってのセキュリティを強化するために、手動で厳しくすることができます。
 
 <br/><br/>

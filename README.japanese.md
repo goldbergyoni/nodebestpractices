@@ -1000,15 +1000,15 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 6.22. Modify session middleware settings
+## ![✔] 6.22. セッションミドルウェアの設定を変更する
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Each web framework and technology has its known weaknesses - telling an attacker which web framework we use is a great help for them. Using the default settings for session middlewares can expose your app to module- and framework-specific hijacking attacks in a similar way to the `X-Powered-By` header. Try hiding anything that identifies and reveals your tech stack (E.g. Node.js, express)
+**TL;DR:** それぞれの Web フレームワークや技術には、既知の弱点があります - 攻撃者に対してどの Web フレームワークを利用しているかを伝えることは、攻撃者にとって大きな助けになることです。セッションミドルウェアのデフォルトの設定を利用することは、`X-Powered-By` ヘッダー同様に、アプリケーションをモジュールやフレームワーク固有のハイジャック攻撃にさらす可能性があります。技術スタック（例：Node.js、express など）を識別したり、明らかにするものは極力隠すようにしてください。
 
-**Otherwise:** Cookies could be sent over insecure connections, and an attacker might use session identification to identify the underlying framework of the web application, as well as module-specific vulnerabilities
+**さもないと:** クッキーは安全でないコネクションを通じて送信される恐れがあり、攻撃者はセッション識別子を利用して背後にある Web アプリケーションフレームワークや、モジュール固有の脆弱性を特定する可能性があります。
 
-🔗 [**Read More: Cookie and session security**](/sections/security/sessions.md)
+🔗 [**さらに読む: クッキー（Cookie）とセッションの安全性**](/sections/security/sessions.md)
 
 <br/><br/>
 
