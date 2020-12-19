@@ -990,13 +990,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 6.21. Configure 2FA for npm or Yarn
+## ![✔] 6.21. npm や Yarn に2要素認証（2FA）を設定する
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Any step in the development chain should be protected with MFA (multi-factor authentication), npm/Yarn are a sweet opportunity for attackers who can get their hands on some developer's password. Using developer credentials, attackers can inject malicious code into libraries that are widely installed across projects and services. Maybe even across the web if published in public. Enabling 2-factor-authentication in npm leaves almost zero chances for attackers to alter your package code.
+**TL;DR:** 開発におけるどのステップも、MFA（多要素認証）で保護されるべきです。npm/Yarn は開発者のパスワードに触れることができる攻撃者にとって絶好の機会となります。開発者の認証情報を利用して、プロジェクトやサービスにおいて広くインストールされている攻撃者は悪意のあるコードを注入することができます。もしパブリックに公開されている場合は、ウェブ全体にまで及ぶかもしれません。npm において2要素認証を設定することで、攻撃者がパッケージコードを改ざんする可能性はほぼゼロになります。
 
-**Otherwise:** [Have you heard about the eslint developer whose password was hijacked?](https://medium.com/@oprearocks/eslint-backdoor-what-it-is-and-how-to-fix-the-issue-221f58f1a8c8)
+**さもないと:** [Have you heard about the eslint developer whose password was hijacked?（パスワードがハイジャックされた eslint 開発者の話を聞いたことがありますか？）](https://medium.com/@oprearocks/eslint-backdoor-what-it-is-and-how-to-fix-the-issue-221f58f1a8c8)
 
 <br/><br/>
 
