@@ -1012,13 +1012,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 6.23. Avoid DOS attacks by explicitly setting when a process should crash
+## ![✔] 6.23. 明示的にプロセスがいつクラッシュすべきか設定することで、DoS 攻撃を回避する
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** The Node process will crash when errors are not handled. Many best practices even recommend to exit even though an error was caught and got handled. Express, for example, will crash on any asynchronous error - unless you wrap routes with a catch clause. This opens a very sweet attack spot for attackers who recognize what input makes the process crash and repeatedly send the same request. There's no instant remedy for this but a few techniques can mitigate the pain: Alert with critical severity anytime a process crashes due to an unhandled error, validate the input and avoid crashing the process due to invalid user input, wrap all routes with a catch and consider not to crash when an error originated within a request (as opposed to what happens globally)
+**TL;DR:** エラーが処理されなかった場合、Node プロセスはクラッシュします。多くのベストプラクティスは、たとえエラーがキャッチされ処理されたとしても、exit することを推奨しています。例えば、Express は、非同期エラーが発生すると、ルートをキャッチ節でラップしない限りクラッシュします。これは、どんな入力がプロセスをクラッシュさせるのかを認識し、繰り返し同様のリクエストを送信する攻撃者にとって絶好の攻撃スポットを提供します。この問題に対する即席の対策はありませんが、いくつかのテクニックはペインを軽減することができます: 処理されていないエラーによってプロセスがクラッシュした場合は常に重大な警告を出す、入力を検証して無効なユーザー入力によるプロセスのクラッシュを回避する、すべてのルートをキャッチで囲み、（グローバルに発生した場合とは対象的に）リクエスト内でエラーが発生した際にクラッシュしないように考慮する、などです。
 
-**Otherwise:** This is just an educated guess: given many Node.js applications, if we try passing an empty JSON body to all POST requests - a handful of applications will crash. At that point, we can just repeat sending the same request to take down the applications with ease
+**さもないと:** これはあくまで経験に基づいた推測ですが、多くの Node.js アプリケーションを見たときに、すべての POST リクエストにおいて空の JSON ボディを渡そうとすると、一部のアプリケーションはクラッシュしてしまいます。その時点で、同じリクエストを繰り返し送信することによって簡単にアプリケーションを停止させることができます。
 
 <br/><br/>
 
