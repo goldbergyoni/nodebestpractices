@@ -1034,15 +1034,15 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 6.25. Avoid publishing secrets to the npm registry
+## ![✔] 6.25. npm レジストリへのシークレットの公開を避ける
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Precautions should be taken to avoid the risk of accidentally publishing secrets to public npm registries. An `.npmignore` file can be used to blacklist specific files or folders, or the `files` array in `package.json` can act as a whitelist.
+**TL;DR:** 誤ってシークレットをパブリック npm レジストリに公開してしまうリスクを回避するように、注意を払ってください。`.npmignore` ファイルを利用して、特定のファイルやフォルダをブラックリスト化したり、`package.json` 内の `files` 配列をホワイトリストとして利用することができます。
 
-**Otherwise:** Your project's API keys, passwords or other secrets are open to be abused by anyone who comes across them, which may result in financial loss, impersonation, and other risks.
+**さもないと:** プロジェクトの API キーやパスワード、その他のシークレットが公開され、その情報を目にしたすべての人に悪用されることで、結果として金銭的な損失、なりすまし、その他リスクに繋がってしまいます。
 
-🔗 [**Read More: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.md)
+🔗 [**さらに読む: シークレットの公開を避ける**](/sections/security/avoid_publishing_secrets.japanese.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
