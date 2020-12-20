@@ -1142,6 +1142,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "dijonkitchen",
+      "name": "Jonathan Chen",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/11434205?v=4",
+      "profile": "https://www.dijonkitchen.org/",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
