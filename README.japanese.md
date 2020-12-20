@@ -1078,17 +1078,17 @@ null == undefined; // true
 
 # `8. Docker のプラクティス`
 
-🏅 Many thanks to [Bret Fisher](https://github.com/BretFisher) from whom we learned many of the following practices
+🏅 [Bret Fisher](https://github.com/BretFisher)氏からは、次のような実践を多く学ぶことができました。感謝します。
 
 <br/><br/>
 
-## ![✔] 8.1 Use multi-stage builds for leaner and more secure Docker images
+## ![✔] 8.1 マルチステージビルドを使用して、より無駄のない、より安全な Docker イメージを構築する
 
-**TL;DR:** Use multi-stage build to copy only necessary production artifacts. A lot of build-time dependencies and files are not needed for running your application. With multi-stage builds these resources can be used during build while the runtime environment contains only what's necessary. Multi-stage builds are an easy way to get rid of overweight and security threats.
+**TL;DR:** マルチステージビルドを使用して、必要な本番環境のアーティファクトだけをコピーします。多くのビルド時の依存関係やファイルは、アプリケーションの実行には必要ありません。マルチステージビルドでは、これらのリソースをビルド中に使用することができ、ランタイム環境には必要なものだけが含まれています。マルチステージビルドは、過剰な負荷とセキュリティの脅威を取り除く簡単な方法です。
 
-**Otherwise:** Larger images will take longer to build and ship, build-only tools might contain vulnerabilities and secrets only meant for the build phase might be leaked.
+**さもないと:** イメージが大きくなるとビルドとリリースに時間がかかり、ビルド専用ツールには脆弱性が含まれている可能性があり、ビルド段階でのみ使用される秘密が漏洩する可能性があります。
 
-### Example Dockerfile for multi-stage builds
+### マルチステージビルド用の Dockerfile の例
 
 ```dockerfile
 FROM node:14.4.0 AS build
@@ -1107,7 +1107,7 @@ RUN npm ci --production
 CMD [ "node", "dist/app.js" ]
 ```
 
-🔗 [**Read More: Use multi-stage builds**](/sections/docker/multi_stage_builds.md)
+🔗 [**さらに読む: マルチステージビルドを使用する**](/sections/docker/multi_stage_builds.japanese.md)
 
 <br /><br /><br />
 
