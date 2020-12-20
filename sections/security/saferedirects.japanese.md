@@ -1,11 +1,11 @@
-# Prevent unsafe redirects
+# 安全でないリダイレクトを防ぐ
 
-### One Paragraph Explainer
+### 一段落説明
 
-When redirects are implemented in Node.js and/or Express, it's important to perform input validation on the server-side.
-If an attacker discovers that you are not validating external, user-supplied input, they may exploit this vulnerability by posting specially-crafted links on forums, social media, and other public places to get users to click it.
+Node.js、そして Express でリダイレクトを実装する際は、サーバーサイドで入力検証を行うことが重要です。
+もし攻撃者が、外部のユーザーから与えられた入力を検証していないことを発見した場合、特別に作成されたリンクをフォーラムやソーシャルメディア、その他のパブリックな場所に投稿してユーザーにクリックさせることで、この脆弱性を悪用する恐れがあります。
 
-Example: Unsafe express redirect using user input
+例: ユーザー入力を利用した、安全でない express リダイレクト
 ```javascript
 const express = require('express');
 const app = express();
@@ -19,21 +19,21 @@ app.get('/login', (req, res, next) => {
 }); 
 ```
 
-The suggested fix to avoid unsafe redirects is to avoid relying on user input. If user input must be used, safe redirect whitelists can be used to avoid exposing the vulnerability.
+安全でないリダイレクトを避けるために推奨される改善方法は、ユーザー入力を信頼しないということです。ユーザー入力を利用する必要がある場合には、脆弱性を晒すことを避けるために、安全なリダイレクトホワイトリストを利用することができます。
 
-Example: Safe redirect whitelist
+例: 安全なリダイレクトホワイトリスト
 ```javascript
 const whitelist = { 
   'https://google.com': 1 
 };
 
 function getValidRedirect(url) { 
-    // check if the url starts with a single slash 
+    // url がシングルスラッシュで始めっているかチェックする
   if (url.match(/^\/(?!\/)/)) { 
-    // Prepend our domain to make sure 
+    // 正しくドメインを付加する
     return 'https://example.com' + url; 
   } 
-    // Otherwise check against a whitelist
+    // または、ホワイトリストでチェックする
   return whitelist[url] ? url : '/'; 
 }
 
@@ -47,12 +47,12 @@ app.get('/login', (req, res, next) => {
 ```
 
 
-### What other bloggers say
+### 他のブロガーが言っていること
 
-From the blog by [NodeSwat](https://blog.nodeswat.com/unvalidated-redirects-b0a2885720db):
-> Fortunately the mitigation methods for this vulnerability are quite straightforward — don’t use unvalidated user input as the basis for redirect. 
+[NodeSwat](https://blog.nodeswat.com/unvalidated-redirects-b0a2885720db) のブログより:
+> 幸いなことに、この脆弱性に対する緩和策は非常にシンプルです - 検証されていないユーザー入力を、リダイレクトのための基準として扱わないことです。
 
-From the blog by [Hailstone](https://blog.hailstone.io/how-to-prevent-unsafe-redirects-in-node-js/)
-> However, if the server-side redirect logic does not validate data entering the url parameter, your users may end up on a site that looks exactly like yours (examp1e.com), but ultimately serves the needs of criminal hackers!
+[Hailstone](https://blog.hailstone.io/how-to-prevent-unsafe-redirects-in-node-js/) のブログより:
+> しかし、もしサーバーサイドのリダイレクトロジックが url パラメータを入力するデータを検証しない場合、ユーザーはまるであなたのサイトのように見える（examp1e.com）にたどり着き、犯罪者ハッカーの要求を満たす結果となりかねません。
 
 
