@@ -1008,7 +1008,7 @@ null == undefined; // true
 
 **さもないと:** クッキーは安全でないコネクションを通じて送信される恐れがあり、攻撃者はセッション識別子を利用して背後にある Web アプリケーションフレームワークや、モジュール固有の脆弱性を特定する可能性があります。
 
-🔗 [**さらに読む: クッキー（Cookie）とセッションの安全性**](/sections/security/sessions.md)
+🔗 [**さらに読む: クッキー（Cookie）とセッションの安全性**](/sections/security/sessions.japanese.md)
 
 <br/><br/>
 
@@ -1022,15 +1022,15 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 6.24. Prevent unsafe redirects
+## ![✔] 6.24. 安全でないリダイレクトを防ぐ
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
-**TL;DR:** Redirects that do not validate user input can enable attackers to launch phishing scams, steal user credentials, and perform other malicious actions.
+**TL;DR:** ユーザー入力を検証しないリダイレクトは、攻撃者がフィッシング詐欺をしたり、ユーザーの認証情報を盗んだり、その他の悪質なアクションを実行することを可能にします。
 
-**Otherwise:** If an attacker discovers that you are not validating external, user-supplied input, they may exploit this vulnerability by posting specially-crafted links on forums, social media, and other public places to get users to click it.
+**さもないと:** もし攻撃者が、外部のユーザーから与えられた入力を検証していないことを発見した場合、特別に作成されたリンクをフォーラムやソーシャルメディア、その他のパブリックな場所に投稿してユーザーにクリックさせることで、この脆弱性を悪用する恐れがあります。
 
-🔗 [**Read More: Prevent unsafe redirects**](/sections/security/saferedirects.md)
+🔗 [**さらに読む: 安全でないリダイレクトを防ぐ**](/sections/security/saferedirects.japanese.md)
 
 <br/><br/>
 
