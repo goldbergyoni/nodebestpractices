@@ -1,12 +1,12 @@
-# Use multi-stage builds
+# マルチステージビルドを使用する
 
-### One Paragraph Explainer
+### 一段落説明
 
-Multi-stage builds allow to separate build- and runtime-specific environment details, such as available binaries, exposed environment variables, and even the underlying operating system. Splitting up your Dockerfiles into multiple stages will help to reduce final image and container size as you'll only ship what you really need to run your application. Sometimes you'll need to include tools that are only needed during the build phase, for example development dependencies such as the TypeScript CLI. You can install it during the build stage and only use the final output in the run stage. This also means your image will shrink as some dependencies won't get copied over. You might also have to expose environment variables during build that should not be present at runtime (see [avoid build time secrets](/sections/docker/avoid-build-time-secrets.md)), such as API Keys and secrets used for communicating with specific services. In the final stage, you can copy in pre-built resources such as your build folder, or production-only dependencies (which you can also fetch in a subsequent step).
+マルチステージビルドでは、利用可能なバイナリや公開されている環境変数、さらには基礎となるオペレーティングシステムなど、ビルドとランタイム固有の環境の詳細を分離することができます。Dockerfile を複数のステージに分割することで、アプリケーションの実行に本当に必要なものだけをリリースすることができるので、最終的なイメージやコンテナのサイズを小さくすることができます。ビルド段階でのみ必要となるツール、例えば TypeScript CLI のような開発依存のツールを含める必要があることもあるでしょう。これらのツールはビルド段階でインストールし、最終的な出力のみ実行段階で使用することができます。これは、いくつかの依存関係がコピーオーバーされないため、イメージが縮小されることを意味します。また、実行時には存在してはいけない API キーや特定のサービスとの通信に使われるシークレットなどの環境変数をビルド中に公開しなければならないかもしれません([ビルド時のシークレットを避ける](/sections/docker/avoid-build-time-secrets.japanese.md) を参照してください。) 最終ステージでは、ビルドフォルダのようなビルド済みのリソースや本番環境専用の依存関係 (これは後のステップで取得することもできます) をコピーすることができます。
 
-### Example
+### 例
 
-Let's imagine the following directory structure
+以下のようなディレクトリ構造を想像してみましょう。
 
 ```
 - Dockerfile
@@ -19,19 +19,19 @@ Let's imagine the following directory structure
   - README.md
 ```
 
-Your [.dockerignore](/sections/docker/dockerignore.md) will already filter out files that won't be needed for building and running your application.
+[.dockerignore](/sections/docker/dockerignore.japanese.md) では、アプリケーションのビルドや実行に必要のないファイルをすでにフィルタリングしています。
 
 ```
-# Don't copy in existing node_modules, we'll fetch our own
+# 既存の node_modules をコピーしないで、自分たちで取得します。
 node_modules
 
-# Docs are large, we don't need them in our Docker image
+# ドキュメントは大きいので、Docker イメージには必要ありません。
 docs
 ```
 
-#### Dockerfile with multiple stages
+#### 複数のステージがある Dockerfile
 
-Since Docker is often used in continuous integration environments it is recommended to use the `npm ci` command (instead of `npm install`). It is faster, stricter and reduces inconsistencies by using only the versions specified in the package-lock.json file. See [here](https://docs.npmjs.com/cli/ci.html#description) for more info. This example uses yarn as package manager for which the equivalent to `npm ci` is the `yarn install --frozen-lockfile` [command](https://classic.yarnpkg.com/en/docs/cli/install/).
+Docker は継続的インテグレーション環境で使用されることが多いので、`npm install` ではなく `npm ci` コマンドを使用することをお勧めします。package-lock.json ファイルで指定されたバージョンのみを使用することで、より速く、より厳密になり、矛盾を減らすことができます。詳細は [こちら](https://docs.npmjs.com/cli/ci.html#description) を参照してください。この例ではパッケージマネージャとして yarn を使用していますが、`npm ci` と同等のものは `yarn install --frozen-lockfile` [command](https://classic.yarnpkg.com/en/docs/cli/install/) です。
 
 ```dockerfile
 FROM node:14.4.0 AS build
@@ -44,14 +44,14 @@ FROM node:14.4.0
 USER node
 EXPOSE 8080
 
-# Copy results from previous stage
+# 前のステージの結果をコピー
 COPY --chown=node:node --from=build /home/node/app/dist /home/node/app/package.json /home/node/app/yarn.lock ./
 RUN yarn install --frozen-lockfile --production
 
 CMD [ "node", "dist/app.js" ]
 ```
 
-#### Dockerfile with multiple stages and different base images
+#### 複数のステージと異なるベースイメージを持つ Dockerfile
 
 ```dockerfile
 FROM node:14.4.0 AS build
@@ -59,57 +59,55 @@ FROM node:14.4.0 AS build
 COPY --chown=node:node . .
 RUN yarn install --frozen-lockfile && yarn build
 
-# This will use a minimal base image for the runtime
+# ランタイム用に最小のベースイメージを使用
 FROM node:14.4.0-alpine
 
 USER node
 EXPOSE 8080
 
-# Copy results from previous stage
+# 前のステージの結果をコピー
 COPY --chown=node:node --from=build /home/node/app/dist /home/node/app/package.json /home/node/app/yarn.lock ./
 RUN yarn install --frozen-lockfile --production
 
 CMD [ "node", "dist/app.js" ]
 ```
 
-#### Full Dockerfile with multiple stages and different base images
+#### 複数のステージと異なるベースイメージを持つフル Dockerfile
 
-Our Dockerfile will contain two phases: One for building the application using the fully-featured Node.js Docker image,
-and a second phase for running the application, based on the minimal Alpine image. We'll only copy over the built files to our second stage,
-and then install production dependencies.
+私たちの Dockerfile には2つのフェーズが含まれています: 1つ目のフェーズは、フル機能を備えた Node.js の Docker イメージを使ってアプリケーションを構築するためのものです。２つ目のフェーズは、最小限の Alpine イメージに基づいて、アプリケーションを実行するためのものです。ビルドされたファイルのみを第二段階にコピーし、本番環境の依存関係をインストールします。
 
 ```dockerfile
-# Start with fully-featured Node.js base image
+# フル機能の Node.js ベースのイメージでスタート
 FROM node:14.4.0 AS build
 
 USER node
 WORKDIR /home/node/app
 
-# Copy dependency information and install all dependencies
+# 依存関係情報をコピーし、すべての依存関係をインストール
 COPY --chown=node:node package.json yarn.lock ./
 
 RUN yarn install --frozen-lockfile
 
-# Copy source code (and all other relevant files)
+# ソースコード（およびその他すべての関連ファイル）をコピー
 COPY --chown=node:node src ./src
 
-# Build code
+# コードのビルド
 RUN yarn build
 
-# Run-time stage
+# ランタイムステージ
 FROM node:14.4.0-alpine
 
-# Set non-root user and expose port 8080
+# 非 root ユーザを設定し、ポート 8080 を公開
 USER node
 EXPOSE 8080
 
 WORKDIR /home/node/app
 
-# Copy dependency information and install production-only dependencies
+# 依存関係情報をコピーして、本番環境のみの依存関係をインストール
 COPY --chown=node:node package.json yarn.lock ./
 RUN yarn install --frozen-lockfile --production
 
-# Copy results from previous stage
+# 前のステージの結果をコピー
 COPY --chown=node:node --from=build /home/node/app/dist ./dist
 
 CMD [ "node", "dist/app.js" ]
