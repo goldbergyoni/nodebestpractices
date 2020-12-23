@@ -1,10 +1,10 @@
-# Bootstrap container using node command instead of npm
+# npm の代わりに node コマンドを使用した Bootstrap コンテナ
 
-## One paragraph explainer
+## 一段落説明
 
-We are used to see code examples where folks start their app using `CMD 'npm start'`. This is a bad practice. The `npm` binary will not forward signals to your app which prevents graceful shutdown (see [/sections/docker/graceful-shutdown.md]). If you are using Child-processes they won’t be cleaned up correctly in case of unexpected shutdown, leaving zombie processes on your host. `npm start` also results in having an extra process for no benefit. To start you app use `CMD ['node','server.js']`. If your app spawns child-processes also use `TINI` as an entrypoint.
+`CMD 'npm start'`を使ってアプリを起動するコード例をよく見かけます。 This is a bad practice. The `npm` binary will not forward signals to your app which prevents graceful shutdown (see [/sections/docker/graceful-shutdown.md]). If you are using Child-processes they won’t be cleaned up correctly in case of unexpected shutdown, leaving zombie processes on your host. `npm start` also results in having an extra process for no benefit. To start you app use `CMD ['node','server.js']`. If your app spawns child-processes also use `TINI` as an entrypoint.
 
-### Code example - Bootsraping using Node
+### コード例 - node を使用した Bootsraping
 
 ```dockerfile
 
@@ -19,7 +19,7 @@ CMD ["node", "server.js"]
 ```
 
 
-### Code example - Using Tiny as entrypoint
+### コード例 - エントリーポイントとしての Tiny の使用
 
 ```dockerfile
 
@@ -39,7 +39,7 @@ ENTRYPOINT ["/tini", "--"]
 CMD ["node", "server.js"]
 ```
 
-### Antipatterns
+### アンチパターン
 
 Using npm start
 ```dockerfile
@@ -49,7 +49,7 @@ WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm ci --production && npm clean cache --force
 
-# don’t do that!
+# これはしないでください!
 CMD "npm start"
 ```
 
@@ -62,11 +62,11 @@ WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm ci --production && npm clean cache --force
 
-# don’t do that, it will start bash
+# これはしないでください、バッシングが始まります
 CMD "node server.js"
 ```
 
-Starting with npm, here’s the process tree:
+npm でスタートすると、プロセスツリーは以下のようになります。:
 ```
 $ ps falx
   UID   PID  PPID   COMMAND
@@ -74,9 +74,9 @@ $ ps falx
     0    16     1   sh -c node server.js
     0    17    16    \_ node server.js
 ```
-There is no advantage to those two extra process.
+その2つの余分なプロセスには何のメリットもありません。
 
-Sources:
+ソース:
 
 
 https://maximorlov.com/process-signals-inside-docker-containers/
