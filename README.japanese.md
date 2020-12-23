@@ -1111,13 +1111,13 @@ CMD [ "node", "dist/app.js" ]
 
 <br /><br /><br />
 
-## ![✔] 8.2. Bootstrap は ‘node' コマンドを使用して、npm start 避ける
+## ![✔] 8.2. 'node' コマンドを使用して、npm start 避けた Bootstrap 
 
 **TL;DR:** アプリの起動には `CMD ['node','server.js']` を使用し、OS のシグナルをコードに渡さない npm スクリプトの使用は避けてください。これにより、子プロセス、シグナル処理、グレースフルシャットダウン、ゾンビプロセスの問題を防ぐことができます。
 
 **さもないと:** シグナルが通らない場合、あなたのコードはシャットダウンについて通知されることはありません。これがなければ、適切に閉じる機会を失い、現在のリクエストやデータを失う可能性があります。
 
-[**さらに読む: Bootstrap コンテナは node コマンドを使用して 、npm の起動を避ける**](/sections/docker/bootstrap-using-node.japanese.md)
+[**さらに読む: node コマンドを使用して 、npm の起動を避けた Bootstrap コンテナ**](/sections/docker/bootstrap-using-node.japanese.md)
 
 <br /><br /><br />
 
