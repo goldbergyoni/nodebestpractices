@@ -2,7 +2,7 @@
 
 ## 一段落説明
 
-`CMD 'npm start'`を使ってアプリを起動するコード例をよく見かけます。 This is a bad practice. The `npm` binary will not forward signals to your app which prevents graceful shutdown (see [/sections/docker/graceful-shutdown.md]). If you are using Child-processes they won’t be cleaned up correctly in case of unexpected shutdown, leaving zombie processes on your host. `npm start` also results in having an extra process for no benefit. To start you app use `CMD ['node','server.js']`. If your app spawns child-processes also use `TINI` as an entrypoint.
+`CMD 'npm start'`を使ってアプリを起動するコード例をよく見かけます。これは悪いプラクティスです。`npm` バイナリはシグナルをアプリに転送しないので、グレースフルシャットダウンができません ( [/sections/docker/graceful-shutdown.japanese.md] を参照してください)。子プロセスを使用している場合、予期せぬシャットダウンの場合には正しくクリーンアップされず、ホスト上にゾンビプロセスが残ってしまいます。また、`npm start` を実行しても、何のメリットもなく余分なプロセスが発生してしまいます。アプリを起動するには、`CMD ['node','server.js’]` を使用します。アプリが子プロセスを生成する場合は、`TINI` をエントリポイントとして使用します。
 
 ### コード例 - node を使用した Bootsraping
 
