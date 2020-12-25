@@ -2,7 +2,7 @@
 
 ## 一段落説明
 
-`CMD 'npm start'`を使ってアプリを起動するコード例をよく見かけます。これは悪いプラクティスです。`npm` バイナリはシグナルをアプリに転送しないので、グレースフルシャットダウンができません ( [/sections/docker/graceful-shutdown.japanese.md] を参照してください)。子プロセスを使用している場合、予期せぬシャットダウンの場合には正しくクリーンアップされず、ホスト上にゾンビプロセスが残ってしまいます。また、`npm start` を実行しても、何のメリットもなく余分なプロセスが発生してしまいます。アプリを起動するには、`CMD ['node','server.js’]` を使用します。アプリが子プロセスを生成する場合は、`TINI` をエントリポイントとして使用します。
+`CMD 'npm start'` を使ってアプリを起動するコード例をよく見かけます。これは悪いプラクティスです。`npm` バイナリはシグナルをアプリに転送しないので、グレースフルシャットダウンができません ( [/sections/docker/graceful-shutdown.japanese.md] を参照してください)。子プロセスを使用している場合、予期せぬシャットダウンの場合には正しくクリーンアップされず、ホスト上にゾンビプロセスが残ってしまいます。また、`npm start` を実行しても、何のメリットもなく余分なプロセスが発生してしまいます。アプリを起動するには、`CMD ['node','server.js’]` を使用します。アプリが子プロセスを生成する場合は、`TINI` をエントリポイントとして使用します。
 
 ### コード例 - node を使用した Bootsraping
 
@@ -25,7 +25,7 @@ CMD ["node", "server.js"]
 
 FROM node:12-slim AS build
 
-# Add Tini if using child-processes
+# 子プロセスを使用している場合は、Tini を追加します。
 ENV TINI_VERSION v0.19.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
@@ -62,7 +62,7 @@ WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm ci --production && npm clean cache --force
 
-# これはしないでください、バッシングが始まります
+# これはしないでください、bash が起動されます。
 CMD "node server.js"
 ```
 
