@@ -1160,6 +1160,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "vladthelittleone",
+      "name": "vladthelittleone",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4215285?v=4",
+      "profile": "https://vectree.ru",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
