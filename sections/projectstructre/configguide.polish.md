@@ -16,7 +16,7 @@ W przypadku danych konfiguracyjnych wiele rzeczy może po prostu denerwować i s
 
 5. aplikacja powinna zakończyć się tak szybko, jak to możliwe i przekazać natychmiastowe informacje zwrotne, jeśli wymagane zmienne środowiskowe nie są obecne podczas uruchamiania, można to osiągnąć za pomocą [convict](https://www.npmjs.com/package/convict) aby sprawdzić poprawność konfiguracji.
 
-Niektóre biblioteki konfiguracyjne mogą zapewniać większość tych funkcji za darmo, zobacz biblioteki npm, takie jak [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) i [config](https://www.npmjs.com/package/config), które spełniają wiele z tych wymagań.
+Niektóre biblioteki konfiguracyjne mogą zapewniać większość tych funkcji za darmo, zobacz biblioteki npm, takie jak [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config) i [convict](https://www.npmjs.com/package/convict) które spełniają wiele z tych wymagań.
 
 <br/><br/>
 

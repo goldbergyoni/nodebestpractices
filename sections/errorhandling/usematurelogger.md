@@ -1,50 +1,42 @@
-# Use a mature logger to increase errors visibility
+# Use a mature logger to increase error visibility
 
 ### One Paragraph Explainer
 
-We all love console.log but obviously, a reputable and persistent logger like [Winston][winston] (highly popular) or [Pino][pino] (the new kid in town which is focused on performance) is mandatory for serious projects. A set of practices and tools will help to reason about errors much quicker – (1) log frequently using different levels (debug, info, error), (2) when logging, provide contextual information as JSON objects, see example below. (3) Watch and filter logs using a log querying API (built-in in most loggers) or a log viewer software. (4) Expose and curate log statement for the operation team using operational intelligence tools like Splunk.
+We love console.log but a reputable and persistent logger like [Pino][pino] (a newer option focused on performance) is mandatory for serious projects. 
+High-performance logging tools help identify errors and possible issues. Logging recommendations include:
 
-[winston]: https://www.npmjs.com/package/winston
+1. Log frequently using different levels (debug, info, error).
+2. When logging, provide contextual information as JSON objects. 
+3. Monitor and filter logs with a log querying API (built-in to many loggers) or log viewer software. 
+4. Expose and curate log statements with operational intelligence tools such as [Splunk][splunk].
+
 [pino]: https://www.npmjs.com/package/pino
+[splunk]: https://www.splunk.com/
 
-### Code Example – Winston Logger in action
+### Code Example
 
-```javascript
+```JavaScript
+const pino = require('pino');
+
 // your centralized logger object
-const logger = new winston.Logger({
-  level: 'info',
-  transports: [
-    new (winston.transports.Console)()
-  ]
-});
+const logger = pino();
 
 // custom code somewhere using the logger
-logger.log('info', 'Test Log Message with some parameter %s', 'some parameter', { anything: 'This is metadata' });
-```
-
-### Code Example – Querying the log folder (searching for entries)
-
-```javascript
-const options = {
-  from: Date.now() - 24 * 60 * 60 * 1000,
-  until: new Date(),
-  limit: 10,
-  start: 0,
-  order: 'desc',
-  fields: ['message']
-};
-
-// Find items logged between today and yesterday.
-winston.query(options, (err, results) => {
-  // execute callback with results
-});
+logger.info({ anything: 'This is metadata' }, 'Test Log Message with some parameter %s', 'some parameter');
 ```
 
 ### Blog Quote: "Logger Requirements"
 
- From the blog Strong Loop
+ From the StrongLoop blog ("Comparing Winston and Bunyan Node.js Logging" by Alex Corbatchev, Jun 24, 2014):
 
-> Lets identify a few requirements (for a logger):
-1. Timestamp each log line. This one is pretty self-explanatory – you should be able to tell when each log entry occurred.
-2. Logging format should be easily digestible by humans as well as machines.
-3. Allows for multiple configurable destination streams. For example, you might be writing trace logs to one file but when an error is encountered, write to the same file, then into error file and send an email at the same time…
+> Let's identify a few requirements (for a logger):
+> 1. Timestamp each log line. This one is pretty self-explanatory – you should be able to tell when each log entry occurred.
+> 2. Logging format should be easily digestible by humans as well as machines.
+> 3. Allows for multiple configurable destination streams. For example, you might be writing trace logs to one file but when an error is encountered, write to the same file, then into error file and send an email at the same time.
+
+### Where's Winston?
+
+For more information on why traditional favorites (e.g., Winston) may not be included in the current list of recommended best practices, please see [#684][#684].
+
+[#684]: #684
+
