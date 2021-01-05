@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-Node maneja el Event Loop mayormente en un único hilo rotando a través de múltiples colas. Operaciones con alta complejidad, parseo de largos json, aplicar lógica sobre grandes arrays, consultas inseguras de regex, y largas operaciones de IO son algunas de las operaciones que pueden causar que el Event Loop se sobrecargue. Evitar esta descarga de tareas intensas de la CPU a un servicio dedicado (por ejemplo, un job server), o separar largas tareas en pequeños pasos y luego usar el Worker Pool son algunos ejemplos de como evitar bloquear el Event Loop.
+Node maneja el Event Loop mayormente en un único hilo rotando a través de múltiples colas. Operaciones con alta complejidad, parseo de largos json, aplicar lógica sobre grandes arrays, consultas inseguras de regex, y largas operaciones de IO son algunas de las operaciones que pueden causar que el Event Loop se sobrecargue. Evitar esta descarga de tareas intensas de la CPU a un servicio dedicado (por ejemplo, un job server), o separar largas tareas en pequeños pasos y luego usar el Worker Pool son algunos ejemplos de cómo evitar bloquear el Event Loop.
 
 ### Ejemplo: bloqueando el event loop
 Observemos un ejemplo de [Node Clinic](https://clinicjs.org/documentation/doctor/05-fixing-event-loop-problem).
