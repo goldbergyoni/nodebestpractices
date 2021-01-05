@@ -47,7 +47,7 @@ Del [repositorio sobre este tema que se enfoca en Lodash y Underscore](https://g
  > Lodash y Underscore son bibliotecas de utilidades buenas de JavaScript moderno, y son ampliamente utilizadas por desarrolladores Front-end. Sin embargo, cuando estas apuntando a navegadores modernos, deberías descubrir que hay muchos métodos que ya se encuentran soportados nativamente gracias a ECMAScript5 [ES5] y ECMAScript2015 [ES6]. Si quieres que tu proyecto requiera menos dependencias, y conoces cual será el navegador utilizado, entonces tal vez no necesites Lodash/Underscore.
 
 ### Ejemplo: Linting para el uso de métodos no nativos
-Aquí hay un [plugin de ESLint](https://www.npmjs.com/package/eslint-plugin-you-dont-need-lodash-underscore) que detecta donde estas utilizando bibliotecas que no son necesarias y advierte con una sugerencia (cf. ejemplo debajo).<br>
+Aquí hay un [plugin de ESLint](https://www.npmjs.com/package/eslint-plugin-you-dont-need-lodash-underscore) que detecta dónde estás utilizando bibliotecas que no son necesarias y advierte con una sugerencia (cf. ejemplo debajo).<br>
 La manera de configurarlo es al agregar el plugin `eslint-plugin-you-dont-need-lodash-underscore` a tu archivo de configuración de ESLint:
 ```json
 {
@@ -58,7 +58,7 @@ La manera de configurarlo es al agregar el plugin `eslint-plugin-you-dont-need-l
 ```
 
 ### Ejemplo: detectando el uso de utilidades no pertencientes a v8 usando un linter
-Considerá el archivo debajo:
+Considera el archivo siguiente:
 ```javascript
 const _ = require('lodash');
 // ESLint marcará la línea de arriba con una sugerencia

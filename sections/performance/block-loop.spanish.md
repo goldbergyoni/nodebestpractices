@@ -43,8 +43,8 @@ while loop.
 ## Imagen del Event Loop
 ![Event Loop](/assets/images/event-loop.png "Event Loop")
 
->Esta es una buena regla del pulgar para mantener tu servidor de Node rápido: Node es rápido cuando el trabajo asociado con cada cliente en cualquier momento dado es "pequeño".
+> Esta es una manera práctica de mantener tu servidor de Node rápido: Node es rápido cuando el trabajo asociado con cada cliente en cualquier momento dado es "pequeño".
 >[Don't Block the Event Loop (or the Worker Pool) | Node.js](https://nodejs.org/en/docs/guides/dont-block-the-event-loop/)
 
-> La mayoría de las personas fallan en sus primeras aplicaciones de NodeJS principalmente debido a la falta de entendimiento de los conceptos como el del Event Loop, manejo de errores y asincronismo.
+> La mayoría de las personas fracasan en sus primeras aplicaciones de NodeJS principalmente debido a la falta de entendimiento de los conceptos como el del Event Loop, manejo de errores y asincronismo.
 [Event Loop Best Practices — NodeJS Event Loop Part 5](https://jsblog.insiderattack.net/event-loop-best-practices-nodejs-event-loop-part-5-e29b2b50bfe2)
