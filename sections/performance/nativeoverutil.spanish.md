@@ -59,7 +59,7 @@ La manera de configurarlo es al agregar el plugin `eslint-plugin-you-dont-need-l
 
 ### Ejemplo: detectando el uso de utilidades no pertencientes a v8 usando un linter
 Considerá el archivo debajo:
-```js
+```javascript
 const _ = require('lodash');
 // ESLint marcará la línea de arriba con una sugerencia
 console.log(_.map([0, 1, 2, 4, 8, 16], x => `d${x}`));
