@@ -6,7 +6,7 @@ Node maneja el Event Loop mayormente en un único hilo rotando a través de múl
 
 ### Ejemplo: bloqueando el event loop
 Observemos un ejemplo de [Node Clinic](https://clinicjs.org/documentation/doctor/05-fixing-event-loop-problem).
-```
+```javascript
 function sleep (ms) {
   const future = Date.now() + ms
   while (Date.now() < future);
