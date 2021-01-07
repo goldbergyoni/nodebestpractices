@@ -1178,6 +1178,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "kdaniel21",
+      "name": "Daniel Kiss",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/39854385?v=4",
+      "profile": "https://github.com/kdaniel21",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
