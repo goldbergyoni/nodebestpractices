@@ -49,7 +49,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 1. [Structure de projet (5)](#1-structure-de-projet)
 2. [Gestion des erreurs (11) ](#2-gestion-des-erreurs)
 3. [Style du code (12) ](#3-style-du-code)
-4. [Test et qualité globale (12) ](#4-test-et-qualité-globale)
+4. [Tests et pratiques générales de qualité (12) ](#4-tests-et-pratiques-générales-de-qualité)
 5. [Mise en production (18) ](#5-mise-en-production)
 6. [Sécurité (25)](#6-sécurité)
 7. [Performance (2) (Travail en cours ✍️)](#7-brouillon--performance)
@@ -432,115 +432,119 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 <p align="right"><a href="#table-des-matières">⬆ Retourner en haut de la page</a></p>
 
-# `4. Testing And Overall Quality Practices`
+# `4. Tests et pratiques générales de qualité`
 
-## ![✔] 4.1 At the very least, write API (component) testing
+## ![✔] 4.1 Au minimum, écrivez des tests API (pour chaque composant)
 
-**TL;DR:** Most projects just don't have any automated testing due to short timetables or often the 'testing project' ran out of control and was abandoned. For that reason, prioritize and start with API testing which is the easiest way to write and provides more coverage than unit testing (you may even craft API tests without code using tools like [Postman](https://www.getpostman.com/). Afterward, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc
+**TL;PL :** La plupart des projets n'ont tout simplement pas de test automatisé en raison de délais courts ou souvent le « projet de test » est devenu incontrôlable et a été abandonné. Pour cette raison, priorisez et commencez par les tests d'API, qui est le moyen le plus simple d'écrire et qui offre plus de couverture que les tests unitaires (vous pouvez même créer des tests d'API sans code à l'aide d'outils comme [Postman](https://www.getpostman.com/) Par la suite, si vous avez plus de ressources et de temps, continuez avec des types de tests avancés tels que les tests unitaires, les tests DB (base de données), les tests de performances, etc.
 
-**Otherwise:** You may spend long days on writing unit tests to find out that you got only 20% system coverage
-
-<br/><br/>
-
-## ![✔] 4.2 Include 3 parts in each test name
-
-**TL;DR:** Make the test speak at the requirements level so it's self explanatory also to QA engineers and developers who are not familiar with the code internals. State in the test name what is being tested (unit under test), under what circumstances and what is the expected result
-
-**Otherwise:** A deployment just failed, a test named “Add product” failed. Does this tell you what exactly is malfunctioning?
-
-🔗 [**Read More: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
+**Autrement :** Vous pouvez passer de longues journées à écrire des tests unitaires pour découvrir que vous n'avez qu'une couverture système de 20%
 
 <br/><br/>
 
-## ![✔] 4.3 Structure tests by the AAA pattern
+## ![✔] 4.2 Incluez 3 parties dans chaque nom de test
 
-**TL;DR:** Structure your tests with 3 well-separated sections: Arrange, Act & Assert (AAA). The first part includes the test setup, then the execution of the unit under test and finally the assertion phase. Following this structure guarantees that the reader spends no brain CPU on understanding the test plan
+**TL;PL :** Donnez un nom de test éloquent selon son niveau d'exigences pour qu'il soit compréhensible par les ingénieurs et développeurs de l'assurance qualité qui ne sont pas familiers avec les codes internes. Indiquez dans le nom du test ce qui est testé (élément du test), dans quelles circonstances et quel est le résultat attendu.
 
-**Otherwise:** Not only you spend long daily hours on understanding the main code, now also what should have been the simple part of the day (testing) stretches your brain
+**Autrement :** Un déploiement vient d'échouer, un test nommé « Ajoute un produit » a échoué. Cela vous indique-t-il exactement ce qui ne fonctionne pas correctement ?
 
-🔗 [**Read More: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.md)
-
-<br/><br/>
-
-## ![✔] 4.4 Detect code issues with a linter
-
-**TL;DR:** Use a code linter to check basic quality and detect anti-patterns early. Run it before any test and add it as a pre-commit git-hook to minimize the time needed to review and correct any issue. Also check [Section 3](#3-code-style-practices) on Code Style Practices
-
-**Otherwise:** You may let pass some anti-pattern and possible vulnerable code to your production environment.
+🔗[**Plus d'infos : Incluez 3 parties dans chaque nom de test**](/sections/testingandquality/3-parts-in-name.french.md)
 
 <br/><br/>
 
-## ![✔] 4.5 Avoid global test fixtures and seeds, add data per-test
+## ![✔] 4.3 Structurez vos tests avec le format AAA
 
-**TL;DR:** To prevent tests coupling and easily reason about the test flow, each test should add and act on its own set of DB rows. Whenever a test needs to pull or assume the existence of some DB data - it must explicitly add that data and avoid mutating any other records
+**TL;PL :** Structurez vos tests avec 3 sections bien séparées : Arrange, Act & Assert (AAA). La première partie comprend la configuration du test, puis l'exécution de l'unité testée et enfin la phase d'assertion (vérification). Le respect de cette structure garantit que le lecteur n'utilise pas de le CPU de son cerveau pour comprendre le plan de test.
 
-**Otherwise:** Consider a scenario where deployment is aborted due to failing tests, team is now going to spend precious investigation time that ends in a sad conclusion: the system works well, the tests however interfere with each other and break the build
+**Autrement :** Non seulement vous passez de longues heures par jour à comprendre le code principal, mais maintenant, ce qui aurait dû être la partie la plus simple de la journée (les tests) accroche votre cerveau
 
-🔗 [**Read More: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
-
-<br/><br/>
-
-## ![✔] 4.6 Constantly inspect for vulnerable dependencies
-
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [npm audit](https://docs.npmjs.com/cli/audit) and 🔗 [snyk.io](https://snyk.io) that can be invoked from your CI on every build
-
-**Otherwise:** Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
+🔗[**Plus d'infos : Structurez vos tests avec le format AAA**](/sections/testingandquality/aaa.french.md)
 
 <br/><br/>
 
-## ![✔] 4.7 Tag your tests
 
-**TL;DR:** Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/): mocha --grep 'sanity'
+## ![✔] 4.4 Détectez les problèmes de code avec un linter
 
-**Otherwise:** Running all the tests, including tests that perform dozens of DB queries, any time a developer makes a small change can be extremely slow and keeps developers away from running tests
+**TL;PL :** Utilisez un linter de code pour vérifier la qualité et détecter les antipatterns au plus tôt. Exécutez-le avant les tests et ajoutez-le en tant que git-hook de pré-commit pour diminuer le temps nécessaire pour examiner et corriger tout problème. Vérifiez également la [section 3](#3-style-du-code) sur les pratiques de style de code.
 
-<br/><br/>
-
-## ![✔] 4.8 Check your test coverage, it helps to identify wrong test patterns
-
-**TL;DR:** Code coverage tools like [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but not least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
-
-**Otherwise:** There won't be any automated metric telling you when a large portion of your code is not covered by testing
+**Autrement :** Vous pouvez laisser passer un code antipatterns et éventuellement vulnérable sur votre environnement de production.
 
 <br/><br/>
 
-## ![✔] 4.9 Inspect for outdated packages
+## ![✔] 4.5 Évitez les tests globaux, ajoutez des données pour chaque test
 
-**TL;DR:** Use your preferred tool (e.g. 'npm outdated' or [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) to detect installed packages which are outdated, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a severe scenario might be when an installed package is 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
+**TL;PL :** Pour éviter le chevauchement des tests et expliquer facilement le déroulement du test, chaque test doit ajouter et agir sur son propre ensemble d'enregistrement de la base de données. Chaque fois qu'un test a besoin de récupérer ou de présumer l'existence de certaines données de la BD - il doit explicitement ajouter ces données et éviter de modifier tout autre enregistrement.
 
-**Otherwise:** Your production will run packages that have been explicitly tagged by their author as risky
+****Autrement :** Considérez un scénario où le déploiement est interrompu à cause de l'échec des tests, l'équipe va maintenant passer un temps d'investigation précieux qui se terminera par une triste conclusion : le système fonctionne bien, les tests interfèrent cependant les uns avec les autres et interrompent la construction.
 
-<br/><br/>
-
-## ![✔] 4.10 Use production-like env for e2e testing
-
-**TL;DR:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Use an environment which is as closed to your real production as possible like a-continue
-
-**Otherwise:** Without docker-compose teams must maintain a testing DB for each testing environment including developers' machines, keep all those DBs in sync so test results won't vary across environments
+🔗[**Plus d'infos : Évitez les tests globaux, ajoutez des données pour chaque test**](/sections/testingandquality/avoid-global-test-fixture.french.md)
 
 <br/><br/>
 
-## ![✔] 4.11 Refactor regularly using static analysis tools
+## ![✔] 4.6 Inspectez en permanence les dépendances vulnérables
 
-**TL;DR:** Using static analysis tools helps by giving objective ways to improve code quality and keeps your code maintainable. You can add static analysis tools to your CI build to fail when it finds code smells. Its main selling points over plain linting are the ability to inspect quality in the context of multiple files (e.g. detect duplications), perform advanced analysis (e.g. code complexity) and follow the history and progress of code issues. Two examples of tools you can use are [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) and [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)).
+**TL;PL :** Même les dépendances les plus réputées telles qu'Express ont des vulnérabilités connues. Cela peut être facilement apprivoisé à l'aide d'outils communautaires et commerciaux tels que 🔗 [npm audit](https://docs.npmjs.com/cli/audit) et 🔗 [snyk.io](https://snyk.io) qui peuvent être appelé depuis votre CI pour chaque construction.
 
-**Otherwise:** With poor code quality, bugs and performance will always be an issue that no shiny new library or state of the art features can fix
-
-🔗 [**Read More: Refactoring!**](/sections/testingandquality/refactoring.md)
+**Autrement :** Garder votre code propre contre les vulnérabilités sans outils dédiés nécessitera de suivre en permanence les publications en ligne sur les nouvelles menaces. C'est assez fastidieux.
 
 <br/><br/>
 
-## ![✔] 4.12 Carefully choose your CI platform (Jenkins vs CircleCI vs Travis vs Rest of the world)
+## ![✔] 4.7 Étiquetez vos tests
 
-**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it should come with a vibrant ecosystem of plugins. [Jenkins](https://jenkins.io/) used to be the default for many projects as it has the biggest community along with a very powerful platform at the price of complex setup that demands a steep learning curve. Nowadays, it has become much easier to set up a CI solution using SaaS tools like [CircleCI](https://circleci.com) and others. These tools allow crafting a flexible CI pipeline without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
+**TL;PL :** Différents tests doivent s'exécuter selon différents scénarios : test d'intégrité, sans IO, les tests doivent s'exécuter lorsqu'un développeur enregistre ou commit un fichier, les tests complets de bout en bout s'exécutent généralement lorsqu'une nouvelle « pull request » est soumise, etc. Cela peut être réalisé en étiquetant les tests avec des mots clés comme #IO #api #integrite afin que vous puissiez utiliser votre harnais de test et invoquer le sous-ensemble souhaité. Par exemple, voici comment vous invoqueriez uniquement le groupe de test d'intégrité avec [Mocha](https://mochajs.org/) :
+```
+mocha --grep "sanity"
+```
+**Autrement :** Exécutez tous les tests, y compris les tests qui effectuent des dizaines de requêtes sur la base de données, chaque fois qu'un développeur apporte un petit changement, cela peut être extrêmement lent et souvent les développeurs s'abstiennent de faire des tests.
 
-**Otherwise:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
+<br/><br/>
 
-🔗 [**Read More: Choosing CI platform**](/sections/testingandquality/citools.md)
+## ![✔] 4.8 Vérifiez votre couverture de test, cela aide à identifier les mauvaises conception de test
+
+**TL;PL :** Les outils de couverture de code comme [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) sont parfaits pour 3 raisons : ils sont gratuits (aucun effort n'est nécessaire pour bénéficier de ces rapports), ils aident à identifier une diminution de la couverture des tests, et enfin et surtout, ils mettent en évidence les incompatibilités de test : en regardant les rapports de couverture de code en couleur, vous remarquerez peut-être, par exemple, des zones de code qui ne sont jamais testées comme les clauses catch (ce qui signifie que les tests invoquent uniquement les chemins positifs et non le comportement de l'application en cas d'erreur). Configurez-les pour faire échouer les constructions si la couverture tombe sous un certain seuil.
+
+**Autrement :** Il n'y aura aucune mesure automatisée vous indiquant quand une grande partie de votre code n'est pas couverte par les tests
+
+<br/><br/>
+
+## ![✔] 4.9 Inspectez les paquets obsolètes
+
+**TL;PL :** Utilisez votre outil préféré (par exemple, « npm outdated » ou [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) pour détecter les paquets installés qui sont obsolètes, injectez cette vérification dans votre CI et même faites échouer une construction dans un scénario critique. Par exemple, un scénario critique peut se produire lorsqu'un paquet installé a 5 patchs de retard (par exemple, la version locale est 1.3.1 et la version du référentiel est 1.3.8) ou quand il est marqué comme obsolète par son auteur - stoppez la construction et empêchez le déploiement de cette version.
+
+**Autrement :** Votre production exécutera des paquets qui ont été explicitement étiquetés par leur auteur comme risqués.
+
+<br/><br/>
+
+## ![✔] 4.10 Utilisez pour les tests e2e un environnement proche de la production
+
+**TL;PL :** Les tests de bout en bout (e2e) qui comprennent l'utilisation de données en direct sont les maillons les plus faibles du processus du CI car ils dépendent de plusieurs services complexes comme la base de données. Utilisez un environnement de test continue aussi proche que possible de votre production actuelle.
+
+**Autrement :** Sans docker-compose, les équipes doivent maintenir une base de données de test pour chaque environnement de test, y compris les machines des développeurs, garder toutes ces bases de données synchronisées afin que les résultats des tests ne varient pas d'un environnement à l'autre.
+
+<br/><br/>
+
+
+## ![✔] 4.11 Refactorisez régulièrement à l'aide d'outils d'analyse statique
+
+**TL;PL :** L'utilisation d'outils d'analyse statique vous aide en donnant des moyens concrets d'améliorer la qualité du code et permet de maintenir votre code. Vous pouvez ajouter des outils d'analyse statique à votre CI pour échouer lorsqu'il trouve du code incorrect. Ses principaux arguments de vente par rapport au contrôle ordinaire de code sont la capacité d'inspecter la qualité dans le contexte de plusieurs fichiers (par exemple, détecter les doublons), d'effectuer une analyse avancée (par exemple la complexité du code) et de suivre l'historique et la progression des problèmes de code. Deux exemples d'outils que vous pouvez utiliser sont [Sonarqube](https://www.sonarqube.org/) (+ de 2 600 [étoiles](https://github.com/SonarSource/sonarqube)) et [Code Climate](https://codeclimate.com/) (+ de 1 500 [étoiles](https://github.com/codeclimate/codeclimate)).
+
+**Autrement :** Avec une mauvaise qualité de code, les bogues et les performances seront toujours un problème qu'aucune nouvelle bibliothèque brillante ou fonctionnalité de pointe ne peut résoudre.
+
+🔗[**Plus d'infos: Refactorisation!**](/sections/testingandquality/refactoring.french.md)
+
+<br/><br/>
+
+## ![✔] 4.12 Choisissez soigneusement votre plateforme CI (Jenkins vs CircleCI vs Travis vs Rest of the world)
+
+**TL;PL :** Votre plateforme d'intégration continue (CICD) hébergera tous les outils de qualité (par exemple test, lint), elle devrait donc être accompagnée d'un écosystème dynamique de plugins. [Jenkins](https://jenkins.io/) était utilisé par défaut pour de nombreux projets car il a la plus grande communauté avec une plateforme très puissante au prix d'une configuration complexe qui nécessite une courbe d'apprentissage abrupte. De nos jours, il est devenu beaucoup plus facile de mettre en place une solution CI en utilisant des outils SaaS comme [CircleCI](https://circleci.com) et d'autres. Ces outils permettent de créer un pipeline de CI flexible sans avoir à gérer l'ensemble de l'infrastructure. Finalement, c'est un compromis entre robustesse et rapidité - choisissez votre camp avec soin.
+
+**Autrement :** Le choix d'un fournisseur de niche peut vous bloquer une fois que vous aurez besoin d'une personnalisation avancée. En revanche, faire appel à Jenkins pourrait vous faire perdre un temps précieux à la mise en place de l'infrastructure.
+
+🔗[**Plus d'infos : Choisissez soigneusement votre plateforme CI**](/sections/testingandquality/citools.french.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-des-matières">⬆ Retourner en haut de la page</a></p>
 
 # `5. Going To Production Practices`
 
