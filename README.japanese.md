@@ -1233,11 +1233,11 @@ In addition, referring to an image tag means that the base image is subject to c
 
 <br /><br /><br />
 
-## ![✔] 8.14. Generic Docker practices
+## ![✔] 8.14. 一般的な Docker のプラクティス
 
-**TL;DR:** This is a collection of Docker advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
+**TL;DR:** Node.js とは直接関係の無い、Docker に関するアドバイス集です - Node における実装は他の言語とあまり変わりません。「さらに読む」から読み進めてください。
 
-🔗 [**Read More: Generic Docker practices**](/sections/docker/generic-tips.md)
+🔗 [**さらに読む: 一般的な Docker のプラクティス**](/sections/docker/generic-tips.japanese.md)
 
 <br/><br /><br />
 

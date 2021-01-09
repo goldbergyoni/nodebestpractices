@@ -1,29 +1,29 @@
 [✔]: ../../assets/images/checkbox-small-blue.png
 
-# Common Node.js Docker best practices
+# 一般的な Docker のベストプラクティス
 
-This common Docker guidelines section contains best practices that are standardized among all programming languages and have no special Node.js interpretation
+この Docker ガイドラインのセクションでは、すべてのプログラミング言語の間で共通して通用するベストプラクティスを紹介しており、Node.js に限ったものではありません。
 
-## ![✔] Prefer COPY over ADD command
+## ![✔] COPY コマンドを ADD コマンドよりも優先する
 
-**TL;DR:** COPY is safer as it copies local files only while ADD supports fancier fetches like downloading binaries from remote sites
+**TL;DR:** ADD はリモートのサイトからバイナリをダウンロードするといった高度なフェッチ機能をサポートしていますが、COPY はローカルファイルをコピーするためより安全です。
 
-## ![✔] Avoid updating the base OS
+## ![✔] ベース OS をアップデートすることを避ける
 
-**TL;DR:** Updating the local binaries during build (e.g. apt-get update) creates inconsistent images every time it runs and also demands elevated privileges. Instead use base images that are updated frequently
+**TL;DR:** ビルド中にローカルのバイナリをアップデートする（例：apt-get update）と、実行のたびに一貫性のないイメージが作成され、高度な権限が要求されます。代わりに、頻繁に更新されるベースイメージを利用してください。
 
-## ![✔] Classify images using labels
+## ![✔] ラベルを利用してイメージを分類する
 
-**TL;DR:** Providing metadata for each image might help Ops professionals treat it adequately. For example, include the maintainer name, build date and other information that might prove useful when someone needs to reason about an image
+**TL;DR:** 各イメージにメタデータを提供することで、Ops の専任者がイメージを適切に扱うことの助けになるかもしれません。例えば、管理者名やビルド日時、その他の情報を含めることで、誰かがイメージについて推測する必要がある際に有用となる場合があります。
 
-## ![✔] Use unprivileged containers
+## ![✔] 権限の無いコンテナを利用する
 
-**TL;DR:** Privileged container have the same permissions and capabilities as the root user over the host machine. This is rarely needed and as a rule of thumb one should use the 'node' user that is created within official Node images
+**TL;DR:** 権限を持つコンテナは、ホストマシンの root ユーザと同じ権限と機能を持っています。このような権限が必要になることは滅多に無く、経験則として、公式の Node イメージ内で作成された「node」ユーザを使用するべきです。
 
-## ![✔] Inspect and verify the final result
+## ![✔] 最終的な結果を検査し、検証する
 
-**TL;DR:** Sometimes it's easy to overlook side effects in the build process like leaked secrets or unnecessary files. Inspecting the produced image using tools like [Dive](https://github.com/wagoodman/dive) can easily help to identify such issues
+**TL;DR:** シークレットの漏洩や、不要なファイルなど、ビルドプロセスでの副作用を見落としがちなことがあります。[Dive](https://github.com/wagoodman/dive) のようなツールを利用することで、作成されたイメージを検査し、そのような問題を用意に特定することができます。
 
-## ![✔] Perform integrity check
+## ![✔] 完全性チェックを行う
 
-**TL;DR:** While pulling base or final images, the network might be mislead and redirected to download malicious images. Nothing in the standard Docker protocol prevents this unless signing and verifying the content. [Docker Notary](https://docs.docker.com/notary/getting_started/) is one of the tools to achieve this
+**TL;DR:** ベースイメージや最終イメージをプルする際に、ネットワークがミスリードされて悪意のあるイメージをダウンロードするようにリダイレクトされる可能性があります。コンテンツに署名して検証しない限り、標準の Docker プロトコルではこれを防ぐことはできません。[Docker Notary](https://docs.docker.com/notary/getting_started/) はこれ防ぐためのツールの一つです。
