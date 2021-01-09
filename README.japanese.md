@@ -1223,13 +1223,13 @@ In addition, referring to an image tag means that the base image is subject to c
 
 <br /><br /><br />
 
-## ![✔] 8.13 Clean NODE_MODULE cache
+## ![✔] 8.13 NODE_MODULE キャッシュをクリーンアップする
 
-**TL;DR:** After installing dependencies in a container remove the local cache. It doesn't make any sense to duplicate the dependencies for faster future installs since there won't be any further installs - A Docker image is immutable. Using a single line of code tens of MB (typically 10-50% of the image size) are shaved off
+**TL;DR:** コンテナに依存関係をインストールした後は、ローカルのキャッシュを削除してください。今後のインストールを高速化することを目的として依存関係を複製しても、意味はありません - Docker イメージは不変です。一行のコードで、数十 MB（通常は画像サイズの 10~50%）を削ることができます。
 
-**Otherwise:** The image that will get shipped to production will weigh 30% more due to files that will never get used
+**さもないと:** 使用されないファイルが原因で、サイズが 3 割増のイメージがプロダクションにデプロイされることになります。
 
-🔗 [**Read More: Clean NODE_MODULE cache**](/sections/docker/clean-cache.md)
+🔗 [**さらに読む: NODE_MODULE キャッシュをクリーンアップする**](/sections/docker/clean-cache.japanese.md)
 
 <br /><br /><br />
 
