@@ -18,7 +18,7 @@
 
 <br/>
 
-Читайте на других языках: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
+Читайте на других языках: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![TR](/assets/flags/TR.png)**TR** in progress! and ![EU](/assets/flags/EU.png)**EU** in progress! )](#translations)
 
 <br/>
 
@@ -272,8 +272,7 @@ function someFunction() {
 }
 
 // Избегайте
-function someFunction()
-{
+function someFunction() {
   // code block
 }
 ```
@@ -350,11 +349,11 @@ class SomeClassExample {}
 
 // для константы мы используем служебное слово const и lowerCamelCase
 const config = {
-  key: 'value'
+  key: "value",
 };
 
 // для переменных и функций мы используем lowerCamelCase
-let someVariableExample = 'value';
+let someVariableExample = "value";
 function doSomething() {}
 ```
 
@@ -388,12 +387,12 @@ function doSomething() {}
 
 ```javascript
 // Делайте так
-module.exports.SMSProvider = require('./SMSProvider');
-module.exports.SMSNumberResolver = require('./SMSNumberResolver');
+module.exports.SMSProvider = require("./SMSProvider");
+module.exports.SMSNumberResolver = require("./SMSNumberResolver");
 
 // Избегайте
-module.exports.SMSProvider = require('./SMSProvider/SMSProvider.js');
-module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolver.js');
+module.exports.SMSProvider = require("./SMSProvider/SMSProvider.js");
+module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolver.js");
 ```
 
 <br/><br/>
@@ -407,18 +406,18 @@ module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolve
 ### Пример кода
 
 ```javascript
-'' == '0'           // false
-0 == ''             // true
-0 == '0'            // true
+"" == "0"; // false
+0 == ""; // true
+0 == "0"; // true
 
-false == 'false'    // false
-false == '0'        // true
+false == "false"; // false
+false == "0"; // true
 
-false == undefined  // false
-false == null       // false
-null == undefined   // true
+false == undefined; // false
+false == null; // false
+null == undefined; // true
 
-' \t\r\n ' == 0     // true
+" \t\r\n " == 0; // true
 ```
 
 Все приведенные выше операторы вернут false, если используются с `===`.
@@ -463,7 +462,7 @@ null == undefined   // true
 
 **Иначе:** Развертывание только что прошло, тест под названием "Добавить продукт" не прошел. Это говорит вам, что именно работает со сбоями?
 
-🔗 [**Подробнее:  Включите 3 части в каждое название теста**](/sections/testingandquality/3-parts-in-name.russian.md)
+🔗 [**Подробнее: Включите 3 части в каждое название теста**](/sections/testingandquality/3-parts-in-name.russian.md)
 
 <br/><br/>
 
@@ -1057,7 +1056,6 @@ null == undefined   // true
 
 <br/><br/><br/>
 
-
 ## ![✔] 7.2. Предпочитайте нативные методы JS, а не пользовательские утилиты типа Lodash
 
 **TL;DR:** Часто более утомительно использовать служебные библиотеки, такие как `lodash` и `underscore`, по сравнению с нативными методами, так как это приводит к ненужным зависимостям и снижению производительности.
@@ -1068,7 +1066,6 @@ null == undefined   // true
 🔗 [**Подробнее: Предпочитайте нативные методы JS над пользовательскими утилитами, такими как Lodash**](/sections/performance/nativeoverutil.russian.md)
 
 <br/><br/><br/>
-
 
 # Вехи
 
@@ -1147,14 +1144,14 @@ null == undefined   // true
 Наши соавторы являются участниками, которые регулярно вносят свой вклад в хранилище, предлагая новые лучшие практики, разбирая проблемы, просматривая запросы на изменение и многое другое. Если вы заинтересованы в том, чтобы помочь нам научить тысячи людей создавать более качественные приложения Node.js, ознакомьтесь с нашими [руководством для соавторов](/.operations/CONTRIBUTING.md) 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
-| :--: | :--: |
-| [Ido Richter (Founder)](https://github.com/idori) | [Keith Holliday](https://github.com/TheHollidayInn) |
+| :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
+|                                    [Ido Richter (Founder)](https://github.com/idori)                                    |                                        [Keith Holliday](https://github.com/TheHollidayInn)                                         |
 
 ### Прошлые соавторы
 
 | <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"></a> |
-| :--: |
-| [Refael Ackermann](https://github.com/refack) |
+| :-------------------------------------------------------------------------------------------------------------------------: |
+|                                        [Refael Ackermann](https://github.com/refack)                                        |
 
 <br/>
 

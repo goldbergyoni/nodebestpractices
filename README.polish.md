@@ -18,7 +18,7 @@
 
 <br/>
 
-Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** i ![TR](/assets/flags/TR.png)**TR** w trakcie!)](#tłumaczenia)
+Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![TR](/assets/flags/TR.png)**TR** w trakcie! i and ![EU](/assets/flags/EU.png)**EU** w trakcie!)](#translations))](#tłumaczenia)
 
 <br/>
 
@@ -100,7 +100,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 ## ![✔] 1.5 Używaj konfiguracji przyjaznej środowisku, bezpiecznej i hierarchicznej
 
   **TL;DR:** Idealne i bezbłędne ustawienie konfiguracji powinno zapewnić, że (a) klucze można odczytać z pliku ORAZ ze zmiennych środowiskowych (b) dane wrażliwe są przechowywane poza zatwierdzonym kodem (c) konfiguracja jest hierarchiczna dla łatwiejszego wyszukiwania. Istnieje kilka pakietów, które mogą pomóc zaznaczyć większość z tych pól, takich jak [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config) i [convict](https://www.npmjs.com/package/convict)
-  
+
   **W przeciwnym razie:** Niespełnienie któregokolwiek z wymagań konfiguracji po prostu ugrzęźnie w zespole programistów lub DevOps. Prawdopodobnie jedno i drugie
 
 🔗 [**Czytaj więcej: najlepsze praktyki dotyczące konfiguracji**](/sections/projectstructre/configguide.polish.md)
