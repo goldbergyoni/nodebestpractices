@@ -1288,7 +1288,7 @@ Komunitatearen ekarpena dira hemengo itzulpen guztiak eman. Oso pozik hartuko ge
 - ![KR](/assets/flags/KR.png) [Koreera](README.korean.md) - [Sangbeom Han](https://github.com/uronly14me)-ren eskutik ([Eztabaida](https://github.com/goldbergyoni/nodebestpractices/issues/94))
 - ![ES](/assets/flags/ES.png) [Gaztelera](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Eztabaida](https://github.com/goldbergyoni/nodebestpractices/issues/95))
 - ![TR](/assets/flags/TR.png) Turkiera ([Eztabaida](https://github.com/goldbergyoni/nodebestpractices/issues/139))
-- ![EU](/assets/flags/EU.png) Basque ([Eztabaida](https://github.com/goldbergyoni/nodebestpractices/issues/842))
+- ![EU](/assets/flags/EU.png) Euskara ([Eztabaida](https://github.com/goldbergyoni/nodebestpractices/issues/842))
 
 <br/><br/>
 
@@ -1330,7 +1330,6 @@ Full Stack Garatzailea eta Zelanda Berrian lan egiten duen Site Reliability Inge
 [Kevyn Bruyere](https://github.com/kevynb)
 <a href="https://www.linkedin.com/in/kevynbruyere/"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
 
-
 Full-stack garatzaile independentea, Ops eta automatizazioan zaletua dena
 
 <br/>
@@ -1356,7 +1355,7 @@ Gure kolaboratzaileak proiektuan maiz parte hartzen duten kideak dira, jardunbid
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
 | :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
-|                                    [Ido Richter (Fundatzailea)](https://github.com/idori)                                    |                                        [Keith Holliday](https://github.com/TheHollidayInn)                                         |
+|                                 [Ido Richter (Fundatzailea)](https://github.com/idori)                                  |                                        [Keith Holliday](https://github.com/TheHollidayInn)                                         |
 
 ### Emeriti Kolaboratzailea
 
