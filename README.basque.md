@@ -1,24 +1,24 @@
 [✔]: assets/images/checkbox-small-blue.png
 
-# Node.js Best Practices
+# Node.js-ren jardunbide egokiak
 
 <h1 align="center">
-  <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices">
+  <img src="assets/images/banner-2.jpg" alt="Node.js-ren jardunbide egokiak">
 </h1>
 
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%20102%20Best%20Practices-blue.svg" alt="102 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20December%2012%202020-green.svg" alt="Last update: November, 2020"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2014.0.0-brightgreen.svg" alt="Updated for Node 14.0.0">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%20102%20Best%20Practices-blue.svg" alt="102 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20December%2012%202020-green.svg" alt="Azken eguneratzea: 2020ko azaroa"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2014.0.0-brightgreen.svg" alt="Node 14.0.0rako eguneratua">
 </div>
 
 <br/>
 
-[![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
+[![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Hemen ere bagaude!** [**@nodepractices**](https://twitter.com/nodepractices/)
 
 <br/>
 
-Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![TR](/assets/flags/TR.png)**TR** in progress! and ![EU](/assets/flags/EU.png)**EU** in progress!)](#translations)
+Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** eta ![TR](/assets/flags/TR.png)**TR** aribidean!)](#translations)
 
 <br/>
 
@@ -38,7 +38,8 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 # Ongi etorri! Hasi aurretik jakin beharreko 3 gauza:
 
 **1. Hemen dozenaka artikulu dauzkazu, onenetarikoak Node.jsri buruz egindakoetan:** alegia, bilduma honek Node.jsren jardunbide egokienak jasotzen ditu, edukien arabera sailkatuta
-**2. Dagoen bildumarik handiena da, eta astetik astera handiagoa da:** une honetan 80tik gora jardunbide, estilo eskuliburu eta arkitektura aholku dauzkagu bilduta. Gustura asko jasoko genituzte zure ekarpenak bilduma hau eguneratuta edukitzeko, bai kode akatsak konponduz, bai itzulpenak eginez, bai ideia berriak proposatuz egin ditzakezunak: izan zaitez Node.jsren jardunbide egokienen liburuko partaide. Ikusi gure [idazketa jarraibideak](/.operations/writing-guidelines.md).
+
+**2. Dagoen bildumarik handiena da, eta astetik astera handiagoa da:** une honetan 80tik gora jardunbide, estilo eskuliburu eta arkitektura aholku dauzkagu bilduta. Gustura asko jasoko genituzte zure ekarpenak bilduma hau eguneratuta edukitzeko, bai kode akatsak konponduz, bai itzulpenak eginez, bai ideia berriak proposatuz egin ditzakezunak: izan zaitez Node.jsren jardunbide egokienen liburuko partaide. Ikusi gure [idazketa jarraibideak](/.operations/writing-guidelines.md)
 
 **3. Jarraibide gehienek informazio gehigarria dute.** Jarraibideko puntu bakoitzaren ondoan **🔗Informazio gehiago** esteka aurkituko duzu, jarraibidea osatzen duena kode adibideekin, blogetako aipu hautatuekin eta informazio osagarri gehiagorekin
 
@@ -332,7 +333,6 @@ const count = 2 // 2() burutzen saiatzen da, baina 2() ez da funtzio bat
 **Bestela:** zaila izan liteke produkzio arazoak araztea memoria erregistroak erabiliz (memoria argazkia), funtzio anonimoetako memoria kontsumoa handia denean
 
 <br/><br/>
-
 
 ## ![✔] 3.6 Erabili izen deskriptiboak aldagaiak, konstanteak, funtzioak eta klaseak izendatzeko
 
