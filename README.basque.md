@@ -509,7 +509,6 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 <br/><br/>
 
-
 ## ![✔] 4.8 Egiaztatu zure proben estaldura, proba eredu okerrak identifikatzen laguntzen du eta
 
 **TL;PL:** [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) bezalako estaldura tresnak oso aproposak dira 3 arrazoirengatik: dohainik dira, hau da, ez da lanik egin behar txostenak lortzeko; proben estaldura gutxitu den identifikatzen laguntzen dute; eta, azkenik, baina ez garrantzi txikiagokoa, proben desdoikuntzak agerian jartzen dituzte. Koloretako kode estalduraren txostenak aztertzean, baliteke harrapaketa kapsula moduan sekula testatzen ez diren kode arloak ikustea, adibidez. Horrek esan nahi du probek bide arrakastatsuak besterik ez dituztela antzematen eta ez aplikazioak nola jokatzen duen erroreak gertatzen direnean. Konfiguratu zure probak estaldura maila batetik behera jaisten denean erroreak eragiteko
@@ -686,7 +685,6 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 <br/><br/>
 
-
 ## ![✔] 5.13. Erabili ahuleziak automatikoki antzematen dituzten tresnak
 
 **TL;PL:** menpekotasun ezagunenek ere –Express, adibidez– badituzte (noizean behin) ahulezia ezagunak, sistema arriskuan jar ditzaketenak. Horrek konponbide erraza du, ordea, tresna komunitario eta komertzialak erabiliz gero, ahuleziak etengabe kontrolatu eta haien berri ematen dute eta (bertan edo GitHub-en)
@@ -757,350 +755,349 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 <p align="right"><a href="#table-of-contents">⬆ Itzuli hasierara</a></p>
 
-# `6. Security Best Practices`
+# `6. Segurtasuna`
 
 <div align="center">
 <img src="https://img.shields.io/badge/OWASP%20Threats-Top%2010-green.svg" alt="54 items"/>
 </div>
 
-## ![✔] 6.1. Embrace linter security rules
+## ![✔] 6.1. Erabili linter segurtasun arauak
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
 
-**TL;PL:** Make use of security-related linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to catch security vulnerabilities and issues as early as possible, preferably while they're being coded. This can help catching security weaknesses like using eval, invoking a child process or importing a module with a string literal (e.g. user input). Click 'Read more' below to see code examples that will get caught by a security linter
+**TL;PL:** erabili segurtasunarekin lotutako linter pluginak, [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) bezalako segurtasun ahuleziak eta arazoak lehenbailehen antzemateko, ahal bada kodetzen ari diren bitartean. Horrek segurtasun ahuleziak atzematen lagun dezake, hala nola eval erabiltzea, bigarren mailako prozesu bat deitzea edo modulu bat inportatzea kate literal batekin (adibidez, erabiltzailearen sarrera). Egin klik 'Gehiago irakurri' atalean segurtasun liner batek antzematen dituen kode adibideak ikusteko
 
-**Bestela:** What could have been a straightforward security weakness during development becomes a major issue in production. Also, the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories
+**Bestela:** garapenean zehar segurtasun ahulezia zuzena izan zitekeena produkzioaren arazo nagusia bihurtzen da. Gainera, baliteke proiektuak kodeen segurtasun praktika koherenterik ez jarraitzea, ahuleziak sartzea edo urruneko biltegietan sartutako sekretu konfidentzialak sortzea
 
-🔗 [**Informazio gehiago: Lint rules**](/sections/security/lintrules.md)
+🔗 [**Gehiago irakurri: lint arauak**](/sections/security/lintrules.md)
 
 <br/><br/>
 
-## ![✔] 6.2. Limit concurrent requests using a middleware
+## ![✔] 6.2. Mugatu aldi baterako eskaerak middleware bat erabiliz
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;PL:** DOS attacks are very popular and relatively easy to conduct. Implement rate limiting using an external service such as cloud load balancers, cloud firewalls, nginx, [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) package, or (for smaller and less critical apps) a rate-limiting middleware (e.g. [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
+**TL;PL:** DOS erasoak oso ezagunak dira, eta nahiko erraz eragin daitezke. Ezarri abiadura muga kanpoko zerbitzu bat erabiliz, hala nola hodeiko karga orekatzaileak, hodeiko suebakiak, nginx, [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) edo (aplikazio txikiagoak eta ez hain kritikoetarako) abiadura mugatzeko middleware bat (adibidez, [express-rate-limit](https://www.npmjs.com/package/express-rate-limit), express abiadura mugatzailea)
 
-**Bestela:** An application could be subject to an attack resulting in a denial of service where real users receive a degraded or unavailable service.
+**Bestela:** aplikazio batek erasoak jasan ahal ditu, haren erabiltzaileei ukatzen bazaie jaso beharko luketen zerbitzua, aplikazioa egoera txarrean dagoelako edo eskuragarri ez dagoelako
 
-🔗 [**Informazio gehiago: Implement rate limiting**](/sections/security/limitrequests.md)
+🔗 [**Gehiago irakurri: ezarri abiadura muga**](/sections/security/limitrequests.md)
 
 <br/><br/>
 
-## ![✔] 6.3 Extract secrets from config files or use packages to encrypt them
+## ![✔] 6.3 Kendu sekretuak konfigurazio fitxategietatik edo erabili paketeak enkriptatzeko
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A3:Sensitive%20Data%20Exposure%20-green.svg" alt=""/></a>
 
-**TL;PL:** Never store plain-text secrets in configuration files or source code. Instead, make use of secret-management systems like Vault products, Kubernetes/Docker Secrets, or using environment variables. As a last resort, secrets stored in source control must be encrypted and managed (rolling keys, expiring, auditing, etc). Make use of pre-commit/push hooks to prevent committing secrets accidentally
+**TL;PL:** ez gorde inoiz testu arrunteko sekreturik konfigurazio fitxategietan edo iturburu kodean. Horren ordez, erabili sekretuak kudeatzeko sistemak, hala nola Vault produktuak, Kubernetes / Docker Secrets edo ingurune aldagaiak. Azken baliabide gisa, iturburuko kontrolean gordetako sekretuak enkriptatu eta kudeatu egin behar dira (gako birakariak, iraungitzeak, ikuskaritza, etab.). Erabili aurre-commit/push kakoak, ustekabean sekreturik gordetzea saihesteko
 
-**Bestela:** Source control, even for private repositories, can mistakenly be made public, at which point all secrets are exposed. Access to source control for an external party will inadvertently provide access to related systems (databases, apis, services, etc).
+**Bestela:** iturburu kodearen kontrola publiko egin daiteke akats baten ondorioz, biltegi pribatuetan ere, eta orduan sekretu guztiak agerian geratzen dira. Kanpoko norbaitek iturburuko kontrolaren sarbidea ezagutzeak nahi gabe eragingo du erlazionatutako sistemetarako sarbideak ere ezagutzea (datu baseak, APIak, zerbitzuak, etab.)
 
-🔗 [**Informazio gehiago: Secret management**](/sections/security/secretmanagement.md)
+🔗 [**Gehiago irakurri: kudeaketa sekretua**](/sections/security/secretmanagement.md)
 
 <br/><br/>
 
-## ![✔] 6.4. Prevent query injection vulnerabilities with ORM/ODM libraries
+## ![✔] 6.4. Saihestu kontsultak injektatzeko ahultasunak ORM / ODM liburutegiekin
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
-**TL;PL:** To prevent SQL/NoSQL injection and other malicious attacks, always make use of an ORM/ODM or a database library that escapes data or supports named or indexed parameterized queries, and takes care of validating user input for expected types. Never just use JavaScript template strings or string concatenation to inject values into queries as this opens your application to a wide spectrum of vulnerabilities. All the reputable Node.js data access libraries (e.g. [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose)) have built-in protection against injection attacks.
+**TL;PL:** SQL / NoSQL injekzioa eta beste eraso maltzur batzuk ekiditeko, erabili beti ORM / ODM edo datuetatik ihes egiten duen datu baseen liburutegia, edo kontsulta parametro izendatuak edo indexatuak onartzen dituena eta espero diren erabiltzaileen sarrera balioztatzen duena. Inoiz ez erabili JavaScript txantiloien kateak edo katearen kateatzea balioak kontsultetan txertatzeko, horrek zure aplikazioa ahultasunen espektro zabalera irekitzen baitu. Node.js entzute handiko datuen liburutegi guztiek injekzio erasoen aurkako babesa dute (adibidez, [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose))
 
-**Bestela:** Unvalidated or unsanitized user input could lead to operator injection when working with MongoDB for NoSQL, and not using a proper sanitization system or ORM will easily allow SQL injection attacks, creating a giant vulnerability.
+**Bestela:** balidatu gabeko edo baimendu gabeko erabiltzaileen sarrerak operadorearen injekzioa ekar dezake NoSQLrako MongoDB-rekin lan egitean, eta saneamendu sistema edo ORM egokia ez erabiltzeak SQL injekzio erasoak ahalbidetuko ditu, ahultasun erraldoia sortuz
 
-🔗 [**Informazio gehiago: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.md)
-
-<br/><br/>
-
-## ![✔] 6.5. Collection of generic security best practices
-
-**TL;PL:** This is a collection of security advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
-
-🔗 [**Informazio gehiago: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
+🔗 [**Gehiago irakurri: kontsulten injekzioaren prebentzioa ORM / ODM liburutegiak erabiliz**](/sections/security/ormodmusage.md)
 
 <br/><br/>
 
-## ![✔] 6.6. Adjust the HTTP response headers for enhanced security
+## ![✔] 6.5. Segurtasuneko jardunbide egokien bilduma
+
+**TL;PL:** Node.jsekin zuzenean loturarik ez duen segurtasuneko aholku bilduma bat da: Noderen inplementazioa ez da hain desberdina beste edozein hizkuntzaren inplementazioaren aldean. Egin klik “irakurri gehiago” botoian sakontzeko
+
+🔗 [**Gehiago irakurri: segurtasuneko ohiko jardunbide egokienak**](/sections/security/commonsecuritybestpractices.md)
+
+<br/><br/>
+
+## ![✔] 6.6. Doitu HTTP erantzunen izenburuak segurtasun hobea lortzeko
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;PL:** Your application should be using secure headers to prevent attackers from using common attacks like cross-site scripting (XSS), clickjacking and other malicious attacks. These can be configured easily using modules like [helmet](https://www.npmjs.com/package/helmet).
+**TL;PL:** zure aplikazioak izenburu seguruak erabili beharko lituzke erasotzaileek gune arteko scriptak (XSS), clickjacking-a eta beste eraso maltzur arruntak erabiltzea saihesteko. Horiek erraz konfigura daitezke [helmet](https://www.npmjs.com/package/helmet) bezalako moduluak erabiliz
 
-**Bestela:** Attackers could perform direct attacks on your application's users, leading to huge security vulnerabilities
+**Bestela:** erasotzaileek zure aplikazioaren erabiltzaileen aurkako eraso zuzenak egin ditzakete, segurtasun ahultasun handiak sortuz
 
-🔗 [**Informazio gehiago: Using secure headers in your application**](/sections/security/secureheaders.md)
+🔗 [**Gehiago irakurri: erabili izenburu seguruak zure aplikazioan**](/sections/security/secureheaders.md)
 
 <br/><br/>
 
-## ![✔] 6.7. Constantly and automatically inspect for vulnerable dependencies
+## ![✔] 6.7. Etengabe eta automatikoki ikuskatu ba ote dagoen erasotzen errazak diren menpekotasunak
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Known%20Vulnerabilities%20-green.svg" alt=""/></a>
 
-**TL;PL:** With the npm ecosystem it is common to have many dependencies for a project. Dependencies should always be kept in check as new vulnerabilities are found. Use tools like [npm audit](https://docs.npmjs.com/cli/audit) or [snyk](https://snyk.io/) to track, monitor and patch vulnerable dependencies. Integrate these tools with your CI setup so you catch a vulnerable dependency before it makes it to production.
+**TL;PL:** npm ekosistemarekin ohikoa da proiektu batek menpekotasun ugari izatea. Menpekotasunak beti kontrolatuta egon behar dira ahultasun berriak aurkitzen diren heinean. Erabili [npm audit](https://docs.npmjs.com/cli/audit) edo [snyk](https://snyk.io/) bezalako tresnak, erasotzen errazak diren menpekotasunen jarraipena egiteko, kontrolatzeko eta adabakiak jartzeko. Tresna horiek zure IE konfigurazioarekin integratu, erasotzen errazak diren menpekotasunenak antzemateko ekoizpenera iritsi aurretik
 
-**Bestela:** An attacker could detect your web framework and attack all its known vulnerabilities.
+**Bestela:** erasotzaile batek zure web esparrua detektatu eta ageriko ahultasun guztiei eraso ahal die
 
-🔗 [**Informazio gehiago: Dependency security**](/sections/security/dependencysecurity.md)
+🔗 [**Gehiago irakurri: menpekotasunen segurtasuna**](/sections/security/dependencysecurity.md)
 
 <br/><br/>
 
-## ![✔] 6.8. Protect Users' Passwords/Secrets using brypt or scrypt
+## ![✔] 6.8. Babestu erabiltzaileen pasahitzak / sekretuak BCrypt edo Script erabiliz
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;PL:** Passwords or secrets (e.g. API keys) should be stored using a secure hash + salt function like `bcrypt`,`scrypt`, or worst case `pbkdf2`.
+**TL;PL:** pasahitzak eta sekretuak (adibidez API gakoak) gorde behar dira hash + gatz funtzio seguru bat erabiliz, esaterako, `bcrypt`edo `scrypt`; eta kasurik okerrenean, `pbkdf2`
 
-**Bestela:** Passwords and secrets that are stored without using a secure function are vulnerable to brute forcing and dictionary attacks that will lead to their disclosure eventually.
+**Bestela:** funtzio segururik erabili gabe gordetzen diren pasahitzak eta sekretuak bortxaz erasotuak izan daitezke edo hiztegi erasoak jasan ditzakete. Azkenean agerian gera daitezke, bai eta agian zabaldu ere
 
-🔗 [**Informazio gehiago: User Passwords**](/sections/security/userpasswords.md)
+🔗 [**Gehiago irakurri: erabiltzaileen pasahitzak**](/sections/security/userpasswords.md)
 
 <br/><br/>
 
-## ![✔] 6.9. Escape HTML, JS and CSS output
+## ![✔] 6.9. Ekidin HTML, JS eta CSS irteerak
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a>
 
-**TL;PL:** Untrusted data that is sent down to the browser might get executed instead of just being displayed, this is commonly referred as a cross-site-scripting (XSS) attack. Mitigate this by using dedicated libraries that explicitly mark the data as pure content that should never get executed (i.e. encoding, escaping)
+**TL;PL:** arakatzailera bidaltzen diren datu ez fidagarriak bistaratu beharrean exekutatu egin daitezke, normalean cross-site-scripting (XSS) erasoa deritzona. Arindu hori datuak inoiz exekutatu behar ez diren eduki huts gisa (hau da, kodetu, ihes)esplizituki markatzen dituzten liburutegi espezializatuak erabiliz
 
-**Bestela:** An attacker might store malicious JavaScript code in your DB which will then be sent as-is to the poor clients
+**Bestela:** erasotzaile batek JavaScript kodeketa kaltegarria gorde dezake zure DBn, gero bezero gizajoei dagoen moduan bidaliko zaiena
 
-🔗 [**Informazio gehiago: Escape output**](/sections/security/escape-output.md)
+🔗 [**Gehiago irakurri: ihes irteera**](/sections/security/escape-output.md)
 
 <br/><br/>
 
-## ![✔] 6.10. Validate incoming JSON schemas
+## ![✔] 6.10. Balidatu sarrerako JSON eskemak
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7: XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a>
 
-**TL;PL:** Validate the incoming requests' body payload and ensure it meets expectations, fail fast if it doesn't. To avoid tedious validation coding within each route you may use lightweight JSON-based validation schemas such as [jsonschema](https://www.npmjs.com/package/jsonschema) or [joi](https://www.npmjs.com/package/joi)
+**TL;PL:** balidatu sarrerako eskaeren gorputzeko zama erabilgarria eta ziurtatu zure itxaropenak betetzen dituela; eta, haiek bete ezean, huts eragin. Ibilbide bakoitzaren balioztatze kodetze neketsua saihesteko JSON oinarritutako balioztatze eskema arinak erabil ditzakezu, hala nola [jsonschema](https://www.npmjs.com/package/jsonschema) edo [joi](https://www.npmjs.com/package/joi)
 
-**Bestela:** Your generosity and permissive approach greatly increases the attack surface and encourages the attacker to try out many inputs until they find some combination to crash the application
+**Bestela:** zure eskuzabaltasunak eta ikuspegi permisiboak asko handitzen dute erasoaren tamainua, eta erasotzailea sarrera asko probatzera bultzatzen du, aplikazioa kraskatzeko konbinazio bat aurkitu arte
 
-🔗 [**Informazio gehiago: Validate incoming JSON schemas**](/sections/security/validation.md)
+🔗 [**Gehiago irakurri: balidatu sarrerako JSON eskemak**](/sections/security/validation.md)
 
 <br/><br/>
 
-## ![✔] 6.11. Support blacklisting JWTs
+## ![✔] 6.11. Onartu JWTen zerrenda beltzak
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;PL:** When using JSON Web Tokens (for example, with [Passport.js](https://github.com/jaredhanson/passport)), by default there's no mechanism to revoke access from issued tokens. Once you discover some malicious user activity, there's no way to stop them from accessing the system as long as they hold a valid token. Mitigate this by implementing a blacklist of untrusted tokens that are validated on each request.
+**TL;PL:** JSON web fitxak erabiltzean (adibidez, [Passport.js](https://github.com/jaredhanson/passport))-rekin), lehenespenez ez dago igorritako fitxen sarbidea ezeztatzeko mekanismorik. Erabiltzaileen jarduera maltzurren bat aurkitu ondoren, ez dago modurik sistemara sartzea eragozteko, baliozko fitxaren bat duten bitartean. Konpondu hori eskaera bakoitzean balioztatuko diren fitxa ezfidagarrien zerrenda beltza erabiliz
 
-**Bestela:** Expired, or misplaced tokens could be used maliciously by a third party to access an application and impersonate the owner of the token.
+**Bestela:** edozeinek erabil litzake iraungitako edo gaizki kokatutako fitxak, maltzurki aplikazio batera sartzeko eta fitxaren jabea ordezkatzeko
 
-🔗 [**Informazio gehiago: Blacklist JSON Web Tokens**](/sections/security/expirejwt.md)
+🔗 [**Gehiago irakurri: JSON web fitxen zerrenda beltzak**](/sections/security/expirejwt.md)
 
 <br/><br/>
 
-## ![✔] 6.12. Prevent brute-force attacks against authorization
+## ![✔] 6.12. Aurrea hartu baimenaren aurkako eraso basatiei
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;PL:** A simple and powerful technique is to limit authorization attempts using two metrics:
+**TL;PL:** oso teknika sinple eta eraginkorra da baimen saiakerak mugatzea bi metrika erabiliz:
 
-1. The first is number of consecutive failed attempts by the same user unique ID/name and IP address.
-2. The second is number of failed attempts from an IP address over some long period of time. For example, block an IP address if it makes 100 failed attempts in one day.
+1. Lehenengoa, erabiltzaile beraren ID / izen eta IP helbide bakarrak jarraian huts egin duen saiakera kopurua
+2. Bigarrena, IP helbide batek denbora tarte luze batean huts egin duen saiakera kopurua. Adibidez, blokeatu IP helbide bat, egun batean 100 saiakera huts egiten baditu
 
-**Bestela:** An attacker can issue unlimited automated password attempts to gain access to privileged accounts on an application
+**Bestela:** erasotzaile batek pasahitz automatizatuen saiakera mugagabeak egin ditzake aplikazio bateko kontu pribilegiatuetara sartzeko
 
-🔗 [**Informazio gehiago: Login rate limiting**](/sections/security/login-rate-limit.md)
+🔗 [**Gehiago irakurri: saioa hasteko saiakera kopurua mugatzea**](/sections/security/login-rate-limit.md)
 
 <br/><br/>
 
-## ![✔] 6.13. Run Node.js as non-root user
+## ![✔] 6.13. Exekutatu Node.js erro ez den erabiltzaile gisa
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A5:Broken%20Access%20Access%20Control-green.svg" alt=""/></a>
 
-**TL;PL:** There is a common scenario where Node.js runs as a root user with unlimited permissions. For example, this is the default behaviour in Docker containers. It's recommended to create a non-root user and either bake it into the Docker image (examples given below) or run the process on this user's behalf by invoking the container with the flag "-u username"
+**TL;PL:** eszenatoki arrunt batean Node.js baimen mugagabeak dituen erro erabiltzaile gisa exekutatzen da. Hori da, adibidez, Docker edukiontzietako portaera lehenetsia. Gomendagarria da erro ez den erabiltzaile bat sortzea eta Docker irudian sartzea (behean azaltzen dira adibideak) edo prozesua erabiltzaile horren izenean abiaraztea "-u username" marka duen edukiontzia deituz
 
-**Bestela:** An attacker who manages to run a script on the server gets unlimited power over the local machine (e.g. change iptable and re-route traffic to his server)
+**Bestela:** zerbitzarian script bat exekutatzea lortzen duten erasotzaileek botere mugagabea lortzen dute makina lokalaren gainean (adibidez, iptable aldatu eta trafikoa beren zerbitzarira bideratzea)
 
-🔗 [**Informazio gehiago: Run Node.js as non-root user**](/sections/security/non-root-user.md)
+🔗 [**Gehiago irakurri: exekutatu Node.js erro ez den erabiltzaile gisa**](/sections/security/non-root-user.md)
 
 <br/><br/>
 
-## ![✔] 6.14. Limit payload size using a reverse-proxy or a middleware
+## ![✔] 6.14. Mugatu kargaren tamaina alderantzizko proxy edo middleware bat erabiliz
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;PL:** The bigger the body payload is, the harder your single thread works in processing it. This is an opportunity for attackers to bring servers to their knees without tremendous amount of requests (DOS/DDOS attacks). Mitigate this limiting the body size of incoming requests on the edge (e.g. firewall, ELB) or by configuring [express body parser](https://github.com/expressjs/body-parser) to accept only small-size payloads
+**TL;PL:** zenbat eta gorputzaren karga handiagoa izan, orduan eta zailagoa da zure hari bakarra lan egitea hura prozesatzean. Hori da erasotzaileek zerbitzariak belauniko jartzeko aukera ona eskaera kopuru izugarririk egin gabe (DOS / DDOS erasoak). Murriztu arriskua ertzean jasotako eskaeren gorputzaren tamaina mugatuz (adibidez, suebakia, ELB) edo [express body parser](https://github.com/expressjs/body-parser) konfiguratuz tamaina txikiko kargak bakarrik onartzeko
 
-**Bestela:** Your application will have to deal with large requests, unable to process the other important work it has to accomplish, leading to performance implications and vulnerability towards DOS attacks
+**Bestela:** zure aplikazioak eskaera handiei aurre egin beharko die, eta ezingo du prozesatu egin behar duen beste lan garrantzitsua, ondorioz errendimendua gutxituz eta DOS erasoekiko ahulduz
 
-🔗 [**Informazio gehiago: Limit payload size**](/sections/security/requestpayloadsizelimit.md)
+🔗 [**Gehiago irakurri: mugatu kargaren tamaina**](/sections/security/requestpayloadsizelimit.md)
 
 <br/><br/>
 
-## ![✔] 6.15. Avoid JavaScript eval statements
+## ![✔] 6.15. Saihestu JavaScripten eval adierazpenak
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;PL:** `eval` is evil as it allows executing custom JavaScript code during run time. This is not just a performance concern but also an important security concern due to malicious JavaScript code that may be sourced from user input. Another language feature that should be avoided is `new Function` constructor. `setTimeout` and `setInterval` should never be passed dynamic JavaScript code either.
+**TL;PL:** `eval` arriskutsua da, exekutatzeko garaian JavaScript kode pertsonalizatua exekutatzea baimentzen baitu. Hori ez da errendimendu arazo bat bakarrik, baizik eta segurtasun arazo garrantzitsua, erabiltzaileen sarreratik JavaScript kode gaiztoa lor daiteke eta. Halaber, `new Function` sortzailea (constructor) ere saihestu beharra dago; eta, azkenik, `setTimeout` eta `setInterval`, ez dira inoiz pasatu behar, ezta JavaScript kode dinamikoa ere
 
-**Bestela:** Malicious JavaScript code finds a way into text passed into `eval` or other real-time evaluating JavaScript language functions, and will gain complete access to JavaScript permissions on the page. This vulnerability is often manifested as an XSS attack.
+**Bestela:** Javascript kode gaiztoak bidea aurkitzen du `eval` testura edo JavaScript hizkuntzak denbora errealean ebaluatzeko dituen funtzioetara sartzeko, eta sarbide osoa lortuko du JavaScripten orrialdeko baimenetara. Ahultasun hori XSS eraso gisa agertzen da askotan
 
-🔗 [**Informazio gehiago: Avoid JavaScript eval statements**](/sections/security/avoideval.md)
+🔗 [**Gehiago irakurri: saihestu JavaScript eval adierazpenak**](/sections/security/avoideval.md)
 
 <br/><br/>
 
-## ![✔] 6.16. Prevent evil RegEx from overloading your single thread execution
+## ![✔] 6.16. Saihestu RegEx gaiztoak zure hari bakarreko exekuzioa gainkargatzea
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;PL:** Regular Expressions, while being handy, pose a real threat to JavaScript applications at large, and the Node.js platform in particular. A user input for text to match might require an outstanding amount of CPU cycles to process. RegEx processing might be inefficient to an extent that a single request that validates 10 words can block the entire event loop for 6 seconds and set the CPU on 🔥. For that reason, prefer third-party validation packages like [validator.js](https://github.com/chriso/validator.js) instead of writing your own Regex patterns, or make use of [safe-regex](https://github.com/substack/safe-regex) to detect vulnerable regex patterns
+**TL;PL:** adierazpen erregularrak, oso erabilgarriak izan arren, benetako mehatxua dira JavaScript aplikazioentzat, oro har, eta Node.js plataformarentzat, bereziki. Erabiltzaile baten sarrera prozesatzeko testuarekin bat etor dadin, gerta liteke PUZeko ziklo kopuru handia behar izatea. RegExen prozesamenduaren eraginkortasuna hain txikia izan daiteke, ezen 10 hitz balioztatzen dituen eskaera bakar batek blokea baitezake gertaeren begizta osoa 6 segundoz, eta PUZa su hartzeko moduan jarri 🔥. Hori dela eta, erasotzen errazak diren ohiko adierazpen ahulen txantiloiak antzemateko erabili hirugarrenen balidazio paketeak -esaterako, [validator.js](https://github.com/chriso/validator.js)-, zuk zeure Regex ereduak idatzi edo [safe-regex](https://github.com/substack/safe-regex) erabili gabe
 
-**Bestela:** Poorly written regexes could be susceptible to Regular Expression DoS attacks that will block the event loop completely. For example, the popular `moment` package was found vulnerable with malicious RegEx usage in November of 2017
+**Bestela:** gaizki idatzitako ohiko adierazpenek Regular Expression DoSen erasoak jasan ditzakete, gertaeren begizta erabat blokeatuko dutenak. Adibidez, 2017ko azaroan, RegExen erabilera gaiztoak agerian jarri zuen `moment` pakete ezagunaren ahultasuna
 
-🔗 [**Informazio gehiago: Prevent malicious RegEx**](/sections/security/regex.md)
+🔗 [**Gehiago irakurri: saihestu RegEx gaiztoa erabiltzea**](/sections/security/regex.md)
 
 <br/><br/>
 
-## ![✔] 6.17. Avoid module loading using a variable
+## ![✔] 6.17. Saihestu moduluak kargatzea aldagai bat erabiliz
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;PL:** Avoid requiring/importing another file with a path that was given as parameter due to the concern that it could have originated from user input. This rule can be extended for accessing files in general (i.e. `fs.readFile()`) or other sensitive resource access with dynamic variables originating from user input. [Eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) linter can catch such patterns and warn early enough
+**TL;PL:** bide bat erabiltzailea sartu ondoren sortua ote den kezka baduzu eta horregatik parametro gisa ezarri baduzu, saihestu bide hori erabiltzea beste fitxategi bat deitzeko / inportatzeko. Arau hori, oro har, edozein fitxategitara sartzeko erabil daiteke (hau da, `fs.readFile()`) edo erabiltzailea sartu ondoren sortutako aldagai dinamikoak dituen beste baliabide konfidentzialetara sartzeko. [Eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) linterrek eredu horiek antzeman eta nahikoa goiz ohartaraz dezake
 
-**Bestela:** Malicious user input could find its way to a parameter that is used to require tampered files, for example, a previously uploaded file on the file system, or access already existing system files.
+**Bestela:** erabiltzaile gaiztoen sarrerak manipulatutako fitxategiak deitzeko erabiltzen den parametro batera jo dezake, adibidez, aurretik fitxategi sisteman kargatutako fitxategietara edo lehendik sisteman bazeuden fitxategietara sartzeko
 
-🔗 [**Informazio gehiago: Safe module loading**](/sections/security/safemoduleloading.md)
+🔗 [**Gehiago irakurri: moduluaren karga segurua**](/sections/security/safemoduleloading.md)
 
 <br/><br/>
 
-## ![✔] 6.18. Run unsafe code in a sandbox
+## ![✔] 6.18. Exekutatu kode ez segurua sandbox batean
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;PL:** When tasked to run external code that is given at run-time (e.g. plugin), use any sort of 'sandbox' execution environment that isolates and guards the main code against the plugin. This can be achieved using a dedicated process (e.g. `cluster.fork()`), serverless environment or dedicated npm packages that act as a sandbox
+**TL;PL:** exekuzio garaian ematen den kanpoko kodea exekutatu behar duzunean (adibidez, plugina), erabili kode nagusia isolatu eta pluginetik babesten duen 'sandbox' tankerako edozein exekuzio ingurune mota Hori lor daiteke prozesu dedikatu baten bidez (adibidez, `cluster.fork()`), zerbitzaririk gabeko ingurune bat erabiliz edo sandbox bat balitz bezala jokatzen duten npm pakete dedikatuak erabiliz
 
-**Bestela:** A plugin can attack through an endless variety of options like infinite loops, memory overloading, and access to sensitive process environment variables
+**Bestela:** plugin batek bide ugari erabil ditzake erasotzeko, hala nola begizta infinituak erabiliz, memoria gainkargatuz eta prozesu ingurumen eraso errazen aldagaiak eskuratuz
 
-🔗 [**Informazio gehiago: Run unsafe code in a sandbox**](/sections/security/sandbox.md)
+🔗 [**Gehiago irakurri: exekutatu kode ez segurua sandbox batean**](/sections/security/sandbox.md)
 
 <br/><br/>
 
-## ![✔] 6.19. Take extra care when working with child processes
+## ![✔] 6.19. Kontu handia izan bigarren mailako prozesuekin lan egitean
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;PL:** Avoid using child processes when possible and validate and sanitize input to mitigate shell injection attacks if you still have to. Prefer using `child_process.execFile` which by definition will only execute a single command with a set of attributes and will not allow shell parameter expansion.
+**TL;PL:** ahal dela, saihestu bigarren mailako prozesuak, eta, hala behar izanez gero, balioztatu eta garbitu sarrera, shell injekzioko erasoak arintzeko. Hobetsi `child_process.execFile` fitxategia, definizioz komando bakarra exekutatuko duena atributu multzo batekin eta shell parametroen hedapena onartuko ez duena
 
-**Bestela:** Naive use of child processes could result in remote command execution or shell injection attacks due to malicious user input passed to an unsanitized system command.
+**Bestela:** bigarren mailako prozesuak ganorarik gabe erabiltzeak urruneko komandoen exekuzioa edo shell injekzioko erasoak eragin ditzake, desinfektatu gabeko sistema komando batera erabiltzaile gaiztoren bat sartu dela eta
 
-🔗 [**Informazio gehiago: Be cautious when working with child processes**](/sections/security/childprocesses.md)
+🔗 [**Gehiago irakurri: kontuz ibili bigarren mailako prozesuekin lan egitean**](/sections/security/childprocesses.md)
 
 <br/><br/>
 
-## ![✔] 6.20. Hide error details from clients
+## ![✔] 6.20. Ezkutatu bezeroen erroreen xehetasunak
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;PL:** An integrated express error handler hides the error details by default. However, great are the chances that you implement your own error handling logic with custom Error objects (considered by many as a best practice). If you do so, ensure not to return the entire Error object to the client, which might contain some sensitive application details
+**TL;PL:** errore integratuen kudeatzaile lasterrek lehenespenez ezkutatzen dituzte erroreen xehetasunak. Haatik, aukera handia dago inplementa dezan errore pertsonalizatuak dituzten objektuak kudeatzeko berak daukan logika (batzuen ustez jardunbide egokia dena). Hala eginez gero, ziurtatu bezeroari errorearen objektu osoa ez itzultzea, horrek aplikazioen datu sentikorrak izan litzake eta
 
-**Bestela:** Sensitive application details such as server file paths, third party modules in use, and other internal workflows of the application which could be exploited by an attacker, could be leaked from information found in a stack trace
+**Bestela:** aplikazioaren xehetasun sentikorrak —hala nola, zerbitzariko fitxategien bideak, erabiltzen ari diren hirugarrenen moduluak eta erasotzaile batek balia ditzakeen aplikazioaren barneko beste lan fluxuak— atera daitezke pila aztarna batean aurkitutako informazioetatik
 
-🔗 [**Informazio gehiago: Hide error details from client**](/sections/security/hideerrors.md)
+🔗 [**Gehiago irakurri: ezkutatu bezeroaren erroreen xehetasunak**](/sections/security/hideerrors.md)
 
 <br/><br/>
 
-## ![✔] 6.21. Configure 2FA for npm or Yarn
+## ![✔] 6.21. Konfiguratu 2FA npm edo Yarn-entzat
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;PL:** Any step in the development chain should be protected with MFA (multi-factor authentication), npm/Yarn are a sweet opportunity for attackers who can get their hands on some developer's password. Using developer credentials, attackers can inject malicious code into libraries that are widely installed across projects and services. Maybe even across the web if published in public. Enabling 2-factor-authentication in npm leaves almost zero chances for attackers to alter your package code.
+**TL;PL:** garapen katearen edozein urrats MFArekin (faktore anitzeko autentifikazioarekin) babestu behar da. Iza ere, npm / Yarn aukera paregabea da garatzaile batzuen pasahitza eskuratu nahi duten erasotzaileentzat. Garatzaileen egiaztagiriak erabiliz, erasotzaileek kode gaiztoa txerta dezakete proiektu eta zerbitzuetan instalatuta dauden liburutegietan, eta, agian, sarean bertan ere, jendaurrean argitarauta badago. npm-n autentifikazioa 2 faktore bidez egin beharra ezartzeak ia zero aukera uzten die erasotzaileei zure pakete kodea aldatzeko
 
-**Bestela:** [Have you heard about the eslint developer whose password was hijacked?](https://medium.com/@oprearocks/eslint-backdoor-what-it-is-and-how-to-fix-the-issue-221f58f1a8c8)
+**Bestela:** [ba al duzu pasahitza bahitu zuten eslint garatzailearen berri?](https://medium.com/@oprearocks/eslint-backdoor-what-it-is-and-how-to-fix-the-issue-221f58f1a8c8)
 
 <br/><br/>
 
-## ![✔] 6.22. Modify session middleware settings
+## ![✔] 6.22. Aldatu saioko middlewarearen ezarpenak
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;PL:** Each web framework and technology has its known weaknesses - telling an attacker which web framework we use is a great help for them. Using the default settings for session middlewares can expose your app to module- and framework-specific hijacking attacks in a similar way to the `X-Powered-By` header. Try hiding anything that identifies and reveals your tech stack (E.g. Node.js, express)
+**TL;PL:** web esparru eta teknologia bakoitzak bere ahulguneak ditu: erasotzaileei esatea zein web esparru erabiltzen dugun laguntza handia da haientzat Saioaren middlewareen ezarpen lehenetsiak erabiltzeak eragin dezake zure moduluko eta esparruko berariazko bahiketa erasoak izatea zure aplikazioak, `X-Powered-By` izenburukoaren antzekoak. Saiatu ezkutatzen zure pila teknologkoa identifikatzen eta agerian uzten duen edozein gauza (adibidez, Node.js, express)
 
-**Bestela:** Cookies could be sent over insecure connections, and an attacker might use session identification to identify the underlying framework of the web application, as well as module-specific vulnerabilities
+**Bestela:** cookieak segurtasunik gabeko konexioen bidez bidal litezke, eta erasotzaile batek saioaren identifikazioa erabil lezake web aplikazioaren barruko esparrua eta moduluen berariazko ahultasunak ere identifikatzeko
 
-🔗 [**Informazio gehiago: Cookie and session security**](/sections/security/sessions.md)
+🔗 [**Gehiago irakurri: cookieak eta saioaren segurtasuna**](/sections/security/sessions.md)
 
 <br/><br/>
 
-## ![✔] 6.23. Avoid DOS attacks by explicitly setting when a process should crash
+## ![✔] 6.23. Saihestu DOS erasoak prozesu batek noiz huts egin behar duen berariaz ezarriz
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;PL:** The Node process will crash when errors are not handled. Many best practices even recommend to exit even though an error was caught and got handled. Express, for example, will crash on any asynchronous error - unless you wrap routes with a catch clause. This opens a very sweet attack spot for attackers who recognize what input makes the process crash and repeatedly send the same request. There's no instant remedy for this but a few techniques can mitigate the pain: Alert with critical severity anytime a process crashes due to an unhandled error, validate the input and avoid crashing the process due to invalid user input, wrap all routes with a catch and consider not to crash when an error originated within a request (as opposed to what happens globally)
+**TL;PL:** Node prozesuak huts egingo du akatsak kudeatzen ez direnean. Praktika egokienetako askok irtetea gomendatzen dute, akats bat atzeman eta kudeatuta badago ere. Expressek, adibidez, huts egiten du errore asinkronoren bat izanez gero –blokeatze klausula batekin ibilbideak biltzen ez badituzu behintzat. Horrek oso eraso bide aproposa irekitzen die erasotzaileei, zer informaziok eragiten duen prozesuaren blokeoa jakinda, behin eta berriz eskaera bera bidaltzen baitute prozesua blokeatzea lortu arte. Horretarako ez dago berehalako erremediorik, baina teknika batzuek mina arindu dezakete: abisatu zorroztasun kritikoarekin, kontrolatu gabeko errore baten ondorioz prozesuak huts egiten duen bakoitzean, balioztatu sarrera eta saihestu prozesua blokeatuta gelditzea erabiltzailearen sarrera baliogabea delako, bildu ibilbide guztiak cacth batekin eta kontuan hartu prozesuak ez duela huts egin behar eskaera batean errore bat sortzen denean (oro har, gertatzen denaren kontra)
 
-**Bestela:** This is just an educated guess: given many Node.js applications, if we try passing an empty JSON body to all POST requests - a handful of applications will crash. At that point, we can just repeat sending the same request to take down the applications with ease
+**Bestela:** hau uste oneko suposizio soil bat besterik ez da. Node.js aplikazio asko edukiz gero, JSON gorputz huts bat POST eskaera guztietara pasatzen saiatzen bagara, zenbait aplikazio blokeatu egingo dira. Une horretan, eskaera bera berbidal dezakegu, aplikazioak erraz ezabatzeko
 
 <br/><br/>
 
-## ![✔] 6.24. Prevent unsafe redirects
+## ![✔] 6.24. Saihestu birbideratze ez seguruak
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
-**TL;PL:** Redirects that do not validate user input can enable attackers to launch phishing scams, steal user credentials, and perform other malicious actions.
+**TL;PL:** erabiltzaileen sarrerak balioztatzen ez dituzten birbideratzeek ahalbidetzen dute erasotzaileek phishing iruzurrak abiatzea, erabiltzaileen egiaztagiriak lapurtzea eta beste ekintza kaltegarri batzuk burutzea
 
-**Bestela:** If an attacker discovers that you are not validating external, user-supplied input, they may exploit this vulnerability by posting specially-crafted links on forums, social media, and other public places to get users to click it.
+**Bestela:** erasotzailea ohartzen bada erabiltzaileek emandako kanpo sarrerarik ez dela balioztatzen, ahultasun hori balia dezake foroetan, sare sozialetan eta beste toki publiko batzuetan hartarako bereziki sortutako estekak argitaratzean, erabiltzaileek bertan klik egin dezaten
 
-🔗 [**Informazio gehiago: Prevent unsafe redirects**](/sections/security/saferedirects.md)
+🔗 [**Gehiago irakurri: saihestu birbideratze ez seguruak**](/sections/security/saferedirects.md)
 
 <br/><br/>
 
-## ![✔] 6.25. Avoid publishing secrets to the npm registry
+## ![✔] 6.25. Saihestu sekretuak npm erregistroan argitaratzea
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;PL:** Precautions should be taken to avoid the risk of accidentally publishing secrets to public npm registries. An `.npmignore` file can be used to blacklist specific files or folders, or the `files` array in `package.json` can act as a whitelist.
+**TL;PL:** neurriak hartu behar dira npm erregistro publikoetan sekretuak nahi gabe argitaratzeko arriskua ekiditeko. Erabil daiteke `.npmignore` fitxategi bat karpeta edo fitxategi espezikoak zerrenda beltz batean jartzeko eta `files` matrizea `package.json` artxiboarekin erabil daiteke zerrenda zuri moduan lan egin dezan
 
-**Bestela:** Your project's API keys, passwords or other secrets are open to be abused by anyone who comes across them, which may result in financial loss, impersonation, and other risks.
+**Bestela:** arriskua dago norbaitek zure proiektuaren API gakoak, pasahitzak edo beste sekretu batzuk aurkitu eta erasoak egiten saiatzeko, eta horrek galera ekonomikoak, nortasun arazoak eta bestelako arriskuak sor ditzake
 
-🔗 [**Informazio gehiago: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.md)
+🔗 [**Gehiago irakurri: saihestu sekretuak argitaratzea**](/sections/security/avoid_publishing_secrets.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Itzuli hasierara</a></p>
 
-# `7. Draft: Performance Best Practices`
+# `7. Errendimendua (zirriborroa)`
 
-## Our contributors are working on this section. [Would you like to join?](https://github.com/goldbergyoni/nodebestpractices/issues/256)
+## Gure laguntzaileak lanean ari dira atal honetan. [Parte hartu nahi zenuke?](https://github.com/goldbergyoni/nodebestpractices/issues/256)
 
 <br/><br/>
 
-## ![✔] 7.1. Don't block the event loop
+## ![✔] 7.1. Ez blokeatu gertaeraren begizta
 
-**TL;PL:** Avoid CPU intensive tasks as they will block the mostly single-threaded Event Loop and offload those to a dedicated thread, process or even a different technology based on the context.
+**TL;PL:** saihestu PUZen zeregin intentsiboak, gertaeraren begizta blokeatuko baitute. Izan ere, gertaera horietako gehienak azpiprozesu bakarrekoak dira, eta deskargatuak izango baitira azpiprozesu dedikatu batean, prozesu batean edo teknologia desberdinetan, dauden testuinguruaren arabera
 
-**Bestela:** As the Event Loop is blocked, Node.js will be unable to handle other request thus causing delays for concurrent users. **3000 users are waiting for a response, the content is ready to be served, but one single request blocks the server from dispatching the results back**
+**Bestela:** gertaeraren begizta blokeatuta dagoenez, Node.jsk ezin izango du beste eskaera bat kudeatu eta, ondorioz, atzerapena eragin diezaieke erabiltzaileei. **3000 erabiltzaile erantzunaren zain daude, edukia zerbitzatzeko prest dago, baina eskaera bakar batek emaitzak berriro bidaltzea galarazten dio zerbitzariari**
 
-🔗 [**Informazio gehiago: Do not block the event loop**](/sections/performance/block-loop.md)
+🔗 [**Gehiago irakurri: ez blokeatu gertaeraren begizta**](/sections/performance/block-loop.md)
 
 <br /><br /><br />
 
-## ![✔] 7.2. Prefer native JS methods over user-land utils like Lodash
+## ![✔] 7.2. Hobetsi jatorrizko JS metodoak Lodash bezalako erabiltzailearen baliabideak baino
 
-**TL;PL:** It's often more penalising to use utility libraries like `lodash` and `underscore` over native methods as it leads to unneeded dependencies and slower performance.
-Bear in mind that with the introduction of the new V8 engine alongside the new ES standards, native methods were improved in such a way that it's now about 50% more performant than utility libraries.
+**TL;PL:** askotan zorrotzagoa da `lodash` eta `underscore` bezalako baliabide liburutegiak erabiltzea jatorrizko metodoak baino, beharrezkoak ez diren menpekotasunak eragin eta abiadura moteltzen baitu. Gogoan izan, V8 motor berria ES estandar berriekin batera, bertako metodoak hobetu egin zirela, eta gaur egun baliabide liburutegiak % 50 inguru eraginkorragoak direla liburutegi publikoak baino
 
-**Bestela:** You'll have to maintain less performant projects where you could have simply used what was **already** available or dealt with a few more lines in exchange of a few more files.
+**Bestela:** errendimendu txikiagoko proiektuak mantendu beharko zenituzke, non **dagoeneko** eskura zenuena erabili beharko baitzenuke edo, fitxategi batzu gehiagoren truke, beste zenbait lerro landu
 
-🔗 [**Informazio gehiago: Native over user land utils**](/sections/performance/nativeoverutil.md)
+🔗 [**Gehiago irakurri: erabiltzaileen jatorrizko baliabideak**](/sections/performance/nativeoverutil.md)
 
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Itzuli hasierara</a></p>
 
-# `8. Docker Best Practices`
+# `8. Docker`
 
-🏅 Many thanks to [Bret Fisher](https://github.com/BretFisher) from whom we learned many of the following practices
+🏅 Mila esker [Bret Fisher](https://github.com/BretFisher)-i, ondorengo praktika hauetako asko ikasi baikenituen berarengandik
 
 <br/><br/>
 
-## ![✔] 8.1 Use multi-stage builds for leaner and more secure Docker images
+## ![✔] 8.1 Erabili etapa anitzeko konpilazioak Docker irudi finagoak eta seguruagoak lortzeko
 
-**TL;PL:** Use multi-stage build to copy only necessary production artifacts. A lot of build-time dependencies and files are not needed for running your application. With multi-stage builds these resources can be used during build while the runtime environment contains only what's necessary. Multi-stage builds are an easy way to get rid of overweight and security threats.
+**TL;PL:** erabili etapa anitzeko konpilazioak beharrezko produkzio objektuak soilik kopiatzeko. Konpilazio menpekotasun eta fitxategi asko ez dira beharrezkoak zure aplikazioa exekutatzeko. Etapa anitzeko konpilazioak erabiliz gero, baliabide horiek konpilazioan zehar erabil daitezke, denboraren exekuzio inguruneak beharrezko baliabideak besterik ez duen bitartean. Etapa anitzeko konpilazioak oao modu erraza dira gehiegizko pisua kendu eta segurtasun mehatxuak saihesteko
 
-**Bestela:** Larger images will take longer to build and ship, build-only tools might contain vulnerabilities and secrets only meant for the build phase might be leaked.
+**Bestela:** irudi handiagoek denbora gehiago beharko dute konpilatzeko eta zabaltzeko. Eraikitzeko soilik diren tresnek ahultasunak eduki ditzakete eta eraikitze faserako soilik gordetako sekretuak filtratu daitezke
 
-### Example Dockerfile for multi-stage builds
+### Etapa anitzeko eraikuntzetarako Dockerfile adibidea
 
 ```dockerfile
 FROM node:14.4.0 AS build
@@ -1119,182 +1116,185 @@ RUN npm ci --production
 CMD [ "node", "dist/app.js" ]
 ```
 
-🔗 [**Informazio gehiago: Use multi-stage builds**](/sections/docker/multi_stage_builds.md)
+🔗 [**Gehiago irakurri: erabili etapa anitzeko konpilazioak**](/sections/docker/multi_stage_builds.md)
 
 <br /><br /><br />
 
-## ![✔] 8.2. Bootstrap using 'node' command, avoid npm start
+## ![✔] 8.2. Abiarazi 'node' komandoa erabiliz, saihestu npm hastea
 
-**TL;PL:** use `CMD ['node','server.js']` to start your app, avoid using npm scripts which don't pass OS signals to the code. This prevents problems with child-process, signal handling, graceful shutdown and having zombie processes.
+**TL;PL:** erabili `CMD ['node','server.js']` aplikazioa abiarazteko, saihestu OS seinaleak kodera pasatzen ez dituzten npm scriptak erabiltzea. Horrek arazoak izatea ekiditen du bigarren mailako prozesuetan, seinaleak kudeatzean, itxiera seguruetan eta prozesu zonbietan
 
-**Bestela:** When no signals are passed, your code will never be notified about shutdowns. Without this, it will lose its chance to close properly possibly losing current requests and/or data.
+**Bestela:** seinalerik pasatzen ez denean, zure kodeak ez du inoiz izango itzalaldien berri, eta, hori gabe, ez da behar bezala itxiko, unean uneko eskaerak eta / edo datuak galduz
 
-[**Informazio gehiago: Bootstrap container using node command, avoid npm start**](/sections/docker/bootstrap-using-node.md)
+[**Gehiago irakurri: Bootstrap edukiontzia nodo komandoan erabiliz gero, saihestu npm abiaraztea**](/sections/docker/bootstrap-using-node.md)
 
 <br /><br /><br />
 
-## ![✔] 8.3. Let the Docker runtime handle replication and uptime
+## ![✔] 8.3. Utzi Dockerren exekuzio denborak kudea ditzala erreplikazioa eta aktibitatea
 
-**TL;PL:** When using a Docker run time orchestrator (e.g., Kubernetes), invoke the Node.js process directly without intermediate process managers or custom code that replicate the process (e.g. PM2, Cluster module). The runtime platform has the highest amount of data and visibility for making placement decision - It knows best how many processes are needed, how to spread them and what to do in case of crashes
+**TL;PL:** Dockerren exekuzio denboraren orkestratzailea erabiltzen duzunean (adibidez, Kubernetes), deitu Node.js prozesua zuzenean, prozesua errepikatzen duten bitarteko prozesuen kudeatzailerik edo koderik pertsonalizatu gabe (adibidez, PM2, Cluster modulua). Exekuzio denboraren plataformak datu kopuru eta ikusgarritasun handiena dauzka kokapenari buruzko erabakiak hartzeko: badaki zenbat prozesu behar diren, nola antolatu prozesuok eta zer egin huts eginez gero
 
-**Bestela:** Container keeps crashing due to lack of resources will get restarted indefinitely by the process manager. Should Kubernetes be aware of that, it could relocate it to a different roomy instance
+**Bestela:** edukiontziak huts egiten jarraituko du du baliabide faltagatik, eta prozesuen kudeatzaileak begin eta berriro berrabiaraziko du, gelditu gabe. Kubernetes horretaz jabetuko balitz, beste toki zabal batera lekualda lezake
 
-🔗 [**Informazio gehiago: Let the Docker orchestrator restart and replicate processes**](/sections/docker/restart-and-replicate-processes.md)
+🔗 [**Gehiago irakurri: utzi Dockerren orkestratzaileari prozesuak berrabiaraz eta errepika ditzala**](/sections/docker/restart-and-replicate-processes.md)
 
 <br/><br /><br />
 
-## ![✔] 8.4. Use .dockerignore to prevent leaking secrets
+## ![✔] 8.4. Erabili .dockerignore sekretuak filtratzea ekiditeko
 
-**TL;DR**: Include a `.dockerignore` file that filters out common secret files and development artifacts. By doing so, you might prevent secrets from leaking into the image. As a bonus the build time will significantly decrease. Also, ensure not to copy all files recursively rather explicitly choose what should be copied to Docker
+**TL;DR**: erabili `.dockerignore` fitxategia, fitxategi sekretu arruntak eta garapeneko objektuak iragazten ditu eta. Horrela, sekretuak irudira ez sartzea lor dezakezu. Eta onura gehigarri bat izango duzu: eraikitzeko denbora nabarmen murriztuko da. Gainera, ziurtatu fitxategi guztiak ez direla behin eta berriro kopiatzen eta berariaz aukeratu zer kopiatu behar den Dockerren
 
-**Bestela**: Common personal secret files like `.env`, `.aws` and `.npmrc` will be shared with anybody with access to the image (e.g. Docker repository)
+**Bestela**: irudira sarbidea duen edonorekin partekatuko dira `.env`, `.aws` eta `.npmrc` bezalako fitxategi sekretu pertsonal arruntak (adibidez, Docker biltegia)
 
-🔗 [**Informazio gehiago: Use .dockerignore**](/sections/docker/docker-ignore.md)
-
-<br /><br /><br />
-
-## ![✔] 8.5. Clean-up dependencies before production
-
-**TL;PL:** Although Dev-Dependencies are sometimes needed during the build and test life-cycle, eventually the image that is shipped to production should be minimal and clean from development dependencies. Doing so guarantees that only necessary code is shipped and the amount of potential attacks (i.e. attack surface) is minimized. When using multi-stage build (see dedicated bullet) this can be achieved by installing all dependencies first and finally running `npm ci --production`
-
-**Bestela:** Many of the infamous npm security breaches were found within development packages (e.g. [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes))
-
-🔗 Read More: [Remove development dependencies](/sections/docker/install-for-production.md)
+🔗 [**Gehiago irakurri: erabili .dockerignore**](/sections/docker/docker-ignore.md)
 
 <br /><br /><br />
 
-## ![✔] 8.6. Shutdown smartly and gracefully
+## ![✔] 8.5. Garbitu menpekotasunak ekoizpenaren aurretik
 
-**TL;PL:** Handle the process SIGTERM event and clean-up all existing connection and resources. This should be done while responding to ongoing requests. In Dockerized runtimes shutting down containers is not a rare event, rather a frequent occurrence that happen as part of routine work. Achieving this demands some thoughtful code to orchestrate several moving parts: The load balancer, keep-alive connections, the HTTP server and other resources
+**TL;PL:** nahiz eta dev-menpekotasunak (dev-dependencies) batzuetan eraikuntza eta probako bizitza zikloan zehar beharrezkoak izan, azkenean ekoizpenera bidaltzen den irudiak ahalik eta txikiena izan behar du eta ez du garapeneko menpekotasunik eduki behar. Hori eginez gero, beharrezko kodea soilik bidaliko dela eta balizko erasoen kopurua (hau da, erasoaren azalera) minimizatuko dela bermatzen da. Etapa anitzeko eraikuntza erabiltzerakoan (ikusi buleta dedikatua) lor daiteke mendekotasun guztiak lehenik instalatuz eta azkenean `npm ci --production` exekutatuz
 
-**Bestela:** Dying immediately means not responding to thousands of disappointed users
+**Bestela:** npm segurtasun arau hauste ezagun asko garapen paketeen barruan aurkitu izan dira (adibidez, [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes))
 
-🔗 [**Informazio gehiago: Graceful shutdown**](/sections/docker/graceful-shutdown.md)
-
-<br /><br /><br />
-
-## ![✔] 8.7. Set memory limits using both Docker and v8
-
-**TL;PL:** Always configure a memory limit using both Docker and the JavaScript runtime flags. The Docker limit is needed to make thoughtful container placement decision, the --v8's flag max-old-space is needed to kick off the GC on time and prevent under utilization of memory. Practically, set the v8's old space memory to be a just bit less than the container limit
-
-**Bestela:** The docker definition is needed to perform thoughtful scaling decision and prevent starving other citizens. Without also defining the v8's limits, it will under utilize the container resources - Without explicit instructions it crashes when utilizing ~50-60% of its host resources
-
-🔗 [**Informazio gehiago: Set memory limits using Docker only**](/sections/docker/memory-limit.md)
+🔗 ehiago irakurri: [kendu garapen menpekotasunak](/sections/docker/install-for-production.md)
 
 <br /><br /><br />
 
-## ![✔] 8.8. Plan for efficient caching
+## ![✔] 8.6. Itzali arazorik gabe eta dotore
 
-**TL;PL:** Rebuilding a whole docker image from cache can be nearly instantaneous if done correctly. The less updated instructions should be at the top of your Dockerfile and the ones constantly changing (like app code) should be at the bottom.
+**TL;PL:** kudeatu prozesuaren SIGTERM gertaera eta garbitu lehendik dauden konexio eta baliabide guztiak. Hori etengabeko eskaerei erantzutean egin behar da. Dockerized exekutatzen den bitartean edukiontziak ixtea ez da arraroa, baizik eta ohiko lanaren zati gisa maiz gertatzen den zerbait. Hori lortzeko ondo pentsatutako kodea prestatu beharra dago hainbat elementu koordinatuz: karga orekatzailea, mantentze konexioak, HTTP zerbitzaria eta beste baliabide batzuk
 
-**Bestela:** Docker build will be very long and consume lot of resources even when making tiny changes
+**Bestela:** berehala hiltzeak etsita dauden milaka erabiltzaileri ez erantzutea ekarriko du
 
-🔗 [**Informazio gehiago: Leverage caching to reduce build times**](/sections/docker/use-cache-for-shorter-build-time.md)
-
-<br /><br /><br />
-
-## ![✔] 8.9. Use explicit image reference, avoid `latest` tag
-
-**TL;PL:** Specify an explicit image digest or versioned label, never refer to `latest`. Developers are often led to believe that specifying the `latest` tag will provide them with the most recent image in the repository however this is not the case. Using a digest guarantees that every instance of the service is running exactly the same code.
-
-In addition, referring to an image tag means that the base image is subject to change, as image tags cannot be relied upon for a deterministic install. Instead, if a deterministic install is expected, a SHA256 digest can be used to reference an exact image.
-
-**Bestela:** A new version of a base image could be deployed into production with breaking changes, causing unintended application behaviour.
-
-🔗 [**Informazio gehiago: Understand image tags and use the "latest" tag with caution**](/sections/docker/image-tags.md)
+🔗 [**Gehiago irakurri: itzalaldi dotorea**](/sections/docker/graceful-shutdown.md)
 
 <br /><br /><br />
 
-## ![✔] 8.10. Prefer smaller Docker base images
+## ![✔] 8.7. Ezarri memoria mugak Docker eta v8 erabiliz
 
-**TL;PL:** Large images lead to higher exposure to vulnerabilities and increased resource consumption. Using leaner Docker images, such as Slim and Alpine Linux variants, mitigates this issue.
+**TL;PL:** konfiguratu beti memoria muga bai Docker bai JavaScript exekuzio adierazgaileak erabiliz. Dockerren muga beharrezkoa da edukiontzien kokapena erabakitzeko; --v8ren bandera max-old-space beharrezkoa da GC garaiz abiarazteko eta memoria erabiltzea saihesteko. Praktikan, ezarri v8rren espazio memoria zaharra edukiontziaren muga baino apur bat txikiagoa izan dadin
 
-**Bestela:** Building, pushing, and pulling images will take longer, unknown attack vectors can be used by malicious actors and more resources are consumed.
+**Bestela:** Dockerren definizioa beharrezkoa da eskalatutako erabakiak burutzeko eta beste herritarrak goseaz hiltzea ekiditeko. V8rren mugak zehaztu gabe ere, edukiontziaren baliabideak erabiliko ditu. Argibide espliziturik gabe, baliabideen% 50-60a erabiltzean huts egiten du
 
-🔗 [**Informazio gehiago: Prefer smaller images**](/sections/docker/smaller_base_images.md)
-
-<br /><br /><br />
-
-## ![✔] 8.11. Clean-out build-time secrets, avoid secrets in args
-
-**TL;PL:** Avoid secrets leaking from the Docker build environment. A Docker image is typically shared in multiple environment like CI and a registry that are not as sanitized as production. A typical example is an npm token which is usually passed to a dockerfile as argument. This token stays within the image long after it is needed and allows the attacker indefinite access to a private npm registry. This can be avoided by coping a secret file like `.npmrc` and then removing it using multi-stage build (beware, build history should be deleted as well) or by using Docker build-kit secret feature which leaves zero traces
-
-**Bestela:** Everyone with access to the CI and docker registry will also get access to some precious organization secrets as a bonus
-
-🔗 [**Informazio gehiago: Clean-out build-time secrets**](/sections/docker/avoid-build-time-secrets.md)
+🔗 [**Gehiago irakurri: ezarri memoria mugak Docker erabiliz soilik**](/sections/docker/memory-limit.md)
 
 <br /><br /><br />
 
-## ![✔] 8.12. Scan images for multi layers of vulnerabilities
+## ![✔] 8.8. Planifikatu cachean biltegiratzea modu eraginkorrean
 
-**TL;PL:** Besides checking code dependencies vulnerabilities also scan the final image that is shipped to production. Docker image scanners check the code dependencies but also the OS binaries. This E2E security scan covers more ground and verifies that no bad guy injected bad things during the build. Consequently, it is recommended running this as the last step before deployment. There are a handful of free and commercial scanners that also provide CI/CD plugins
+**TL;PL:** Dockerren irudi osoa cache-tik berreraikitzea ia berehalakoa izan daiteke, zuzen eginez gero. Eguneratu ez diren argibideek Dockerfile fitxategiaren goialdean egon behar dute, eta etengabe aldatzen ari direnek (aplikazioaren kodea, esate baterako) beheko aldean egon behar dute
 
-**Bestela:** Your code might be entirely free from vulnerabilities. However it might still get hacked due to vulnerable version of OS-level binaries (e.g. OpenSSL, TarBall) that are commonly being used by applications
+**Bestela:** Docker eraukitzeaka oso luze jo dezake eta baliabide asko kontsumituko ditu, nahiz eta aldaketa txikiak egin
 
-🔗 [**Informazio gehiago: Generic Docker practices**](/sections/docker/scan-images.md)
-
-<br /><br /><br />
-
-## ![✔] 8.13 Clean NODE_MODULE cache
-
-**TL;PL:** After installing dependencies in a container remove the local cache. It doesn't make any sense to duplicate the dependencies for faster future installs since there won't be any further installs - A Docker image is immutable. Using a single line of code tens of MB (typically 10-50% of the image size) are shaved off
-
-**Bestela:** The image that will get shipped to production will weigh 30% more due to files that will never get used
-
-🔗 [**Informazio gehiago: Clean NODE_MODULE cache**](/sections/docker/clean-cache.md)
+🔗 [**Gehiago irakurri: baliatu cachea eraikitze denborak murrizteko**](/sections/docker/use-cache-for-shorter-build-time.md)
 
 <br /><br /><br />
 
-## ![✔] 8.14. Generic Docker practices
+## ![✔] 8.9. Erabili irudiaren erreferentzia esplizitua, saihestu azken (`latest`)
 
-**TL;PL:** This is a collection of Docker advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
+etiketa
 
-🔗 [**Informazio gehiago: Generic Docker practices**](/sections/docker/generic-tips.md)
+**TL;PL:** zehaztu irudi laburpen esplizitu bat edo etiketa baten bertsioa, inoiz ez aipatu `latest`. Garatzaileek sarritan uste izaten dute, `latest` adieraziz gero, biltegiko azken irudia eskuratuko dutela, baina ez da horrela. Laburpena erabiltzeak zerbitzuaren instantzia guztiek kode bera exekutatuko dutela bermatzen du
+
+Gainera, irudi-etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke, ez baitago irudi etiketekin fidatzerik instalazio determinista bat egiteko orduan. Horren ordez, instalazioa determinista izanez gero, SHA256 laburpena erabil daiteke irudi zehatza erreferentziatzeko
+
+**Bestela:** oinarrizko irudi baten bertsio berri bat erabiliz gero, aldaketa handiak gerta litezke produkzioan, horrek aplikazioaren nahigabeko portaera sortuz
+
+🔗 [**Gehiago irakurri: ulertu irudi etiketak eta erabili "latest" etiketa kontu handiz**](/sections/docker/image-tags.md)
+
+<br /><br /><br />
+
+## ![✔] 8.10. Hobetsi Docker poinarrizko irudi txikiagoak
+
+**TL;PL:** irudi handiek ahultasun gehiago izateko arriskua handitu eta baliabideen kontsumoa areagotzen dute. Docker irudi arinagoak erabiltzeak, Slim eta Alpine Linux aldaerak adibidez, arazo hori arindu egiten du
+
+**Bestela:** batetik, denbora gehiago beharko da irudiak eraiki, txertatu eta ateratzeko; bestetik, erabiltzaile maltzurrek eraso bektore ezezagunak erabil ditzakete; eta, azkenik, baliabide gehiago beharko dira
+
+🔗 [**Gehiago irakurri: hobetsi irudi txikiagoa**](/sections/docker/smaller_base_images.md)
+
+<br /><br /><br />
+
+## ![✔] 8.11. Garbitu eraikitze faseko sekretuak, saihestu sekretuak argudioetan
+
+**TL;PL:** saihestu Dockerren konpilazio inguruneko sekretuak agerian geratzea. Docker irudi bat IE bezalako ingurune anitzetan eta ekoizpena bezain garbituta ez dauden erregistroetan partekatzen da normalean. Adibide tipikoa npm token bat da, normalean dockerfile batera pasatzen dena argumentu gisa. Token hori irudiaren barruan geratzen da denbora luzez beharrezkoa izateari ondoren ere, eta erasotzaileari npm erregistro pribatura sartzeko aukera ematen dio. Hori ekidin daiteke sekretua `.npmrc` bezalako fitxategi batean kopiatuz, eta, ondoren, sekretu hori kenduz etapa anitzeko eraikuntza bat erabiliz (kontuz, eraikitze historia ere ezabatu beharko litzateke) edo bat ere aztarnarik uzten dituen Docker build-kit funtzio sekretua erabiliz
+
+**Bestela:** IE eta docker erregistroan sartzeko aukera duten guztiek erakundearen sekretu preziatuak ere eskuratzeko aukera izango dute onura gehigarri gisa
+
+🔗 [**Gehiago irakurri: garbitu eraikitze faseko sekretuak**](/sections/docker/avoid-build-time-secrets.md)
+
+<br /><br /><br />
+
+## ![✔] 8.12. Eskaneatu irudiak ahultasun geruzen bila
+
+**TL;PL:** kode menpekotasunen ahultasunak egiaztatzeaz gain, eskaneatu ekoizpenera bidalitako azken irudia ere. Dockerren irudien eskanerrek kodeen menpekotasunak egiaztatzen dituzte, baina baita sistema eragilearen binarioak ere. E2E segurtasun eskaneatze horrek eremu handiago bat hartzen du eta egiaztatzen du inongo erabiltzaile maltzurrak ez duela maltzurkeriatik egin eraikitze aldian zerbait injektatuz. Ondorioz, hau exekutatzea gomendatzen da hedapenaren aurreko azken urrats gisa. Mordoska bat eskaner doako eta komertzial dago CI / CD pluginak ere eskaintzen dituztenak
+
+**Bestela:** baliteke zure kodeak ahultasunik ez izatea. Hala ere, baliteke oraindik ere hackeatua izatea, aplikazioek normalean erabiltzen dituzten sistema eragilearen mailako binarioen bertsioak ahultasunak dituelako (adibidez, OpenSSL, TarBall)
+
+🔗 [**Gehiago irakurri: Dockerren praktika arruntak**](/sections/docker/scan-images.md)
+
+<br /><br /><br />
+
+## ![✔] 8.13 Garbitu NODE_MODULE cachea
+
+**TL;PL:** menpekotasunak edukiontzi batean instalatu ondoren, kendu bertako cachea. Ez du inolako zentzurik etorkizuneko instalazio azkarragoetarako menpekotasunak bikoizteak, ez baita beste instalaziorik egingo: Docker-en irudiak aldaezinak dira. Kode lerro bakarra erabiliz dozenaka MB aurrezten dira (normalean, irudiaren tamainaren% 10-50)
+
+**Bestela:** ekoizpenera bidaliko den irudiak % 30 gehiago pisatuko du, inoiz erabiliko ez diren fitxategien ondorioz
+
+🔗 [**Gehiago irakurri: garbitu NODE_MODULE cachea**](/sections/docker/clean-cache.md)
+
+<br /><br /><br />
+
+## ![✔] 8.14. Docker-en praktika arruntak
+
+**TL;PL:** hemen duzu Node.jsekin zuzenean loturarik ez duen Docker aholkuen bilduma. Ez dago alderik Noderen eta beste edozein lengoaiaren inplementazioen artean. Egin klik “irakurri gehiago” botoian
+
+🔗 [**Gehiago irakurri: Dockeren praktika arruntak**](/sections/docker/generic-tips.md)
 
 <br/><br /><br />
 
-## ![✔] 8.15. Lint your Dockerfile
+## ![✔] 8.15. Garbitu zure Dockerfile-a
 
-**TL;PL:** Linting your Dockerfile is an important step to identify issues in your Dockerfile which differ from best practices. By checking for potential flaws using a specialised Docker linter, performance and security improvements can be easily identified, saving countless hours of wasted time or security issues in production code.
+**TL;PL:** Linterra erabiliz zure Dockerfileaa garbitzea urrats garrantzitsua da haren barruan jardunbide egokiak errespetatzen ez dituzten arazoak identifikatzeko. Docker linter espezializatu bat erabiliz errendimendu eta segurtasun hobekuntzak erraz antzematen dira, alferrikako ordu ugari aurreztea edo produkzio kodean segurtasun arazoak murriztea lortuz
 
-**Bestela:** Mistakenly the Dockerfile creator left Root as the production user, and also used an image from unknown source repository. This could be avoided with with just a simple linter.
+**Bestela:** okerrez, Dockerfileren sortzaileak root bat utzi zuen produkzio erabiltzaile moduan, eta jatorri ezezaguneko biltegi irudi bat ere erabili zuen. Hori liner soil batekin ekidin liteke.
 
-🔗 [**Informazio gehiago: Lint your Dockerfile**](/sections/docker/lint-dockerfile.md)
+🔗 [**Gehiago irakurri: garbitu zure Dockerfilea**](/sections/docker/lint-dockerfile.md)
 
 <br/><br /><br />
 
 <p align="right"><a href="#table-of-contents">⬆ Itzuli hasierara</a></p>
 
-# Milestones
+# Mugarriak
 
-To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/goldbergyoni/nodebestpractices/milestones) and join the working groups if you want to contribute to this project
+Gida hau mantentzeko eta eguneratuta egoteko, jarraibideak eta jardunbide egokiak eguneratzen eta hobetzen ari gara etengabe komunitatearen laguntzarekin. Proiektu honetan lagundu nahi baduzu, jarraitu gure [mugarriak](https://github.com/goldbergyoni/nodebestpractices/milestones) jarrai sartu lantaldeetan
 
 <br/>
 
-## Translations
+## Itzulpenak
 
-All translations are contributed by the community. We will be happy to get any help with either completed, ongoing or new translations!
+Komunitatearen ekarpena dira hemengo itzulpen guztiak eman. Oso pozik hartuko genituzke zure itzulpenak, bai dagoeneko eginda dauden testuenak zein egiten ari garen eta egingo ditugunenak
 
-### Completed translations
+### Amaitutako itzulpenak
 
-- ![BR](/assets/flags/BR.png) [Brazilian Portuguese](./README.brazilian-portuguese.md) - Courtesy of [Marcelo Melo](https://github.com/marcelosdm)
-- ![CN](/assets/flags/CN.png) [Chinese](./README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
-- ![RU](/assets/flags/RU.png) [Russian](./README.russian.md) - Courtesy of [Alex Ivanov](https://github.com/contributorpw)
-- ![PL](/assets/flags/PL.png) [Polish](./README.polish.md) - Courtesy of [Michal Biesiada](https://github.com/mbiesiad)
+- ![BR](/assets/flags/BR.png) [Brasilgo portugalera](./README.brazilian-portuguese.md) - [Marcelo Melo](https://github.com/marcelosdm)-ren eskutik
+- ![CN](/assets/flags/CN.png) [Txinera](./README.chinese.md) - [Matt Jin](https://github.com/mattjin)-ren eskutik
+- ![RU](/assets/flags/RU.png) [Errusiera](./README.russian.md) - [Alex Ivanov](https://github.com/contributorpw)-ren eskutik
+- ![PL](/assets/flags/PL.png) [Poloniera](./README.polish.md) - [Michal Biesiada](https://github.com/mbiesiad)-ren eskutik
 
 ### Translations in progress
 
-- ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/129))
-- ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/156))
-- ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Courtesy of [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94))
-- ![ES](/assets/flags/ES.png) [Spanish](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/95))
-- ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/139))
+- ![FR](/assets/flags/FR.png) [Frantsesa](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Eztabaida](https://github.com/goldbergyoni/nodebestpractices/issues/129))
+- ![HE](/assets/flags/HE.png) Hebrearra ([Eztabaida](https://github.com/goldbergyoni/nodebestpractices/issues/156))
+- ![KR](/assets/flags/KR.png) [Koreera](README.korean.md) - [Sangbeom Han](https://github.com/uronly14me)-ren eskutik ([Eztabaida](https://github.com/goldbergyoni/nodebestpractices/issues/94))
+- ![ES](/assets/flags/ES.png) [Gaztelera](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Eztabaida](https://github.com/goldbergyoni/nodebestpractices/issues/95))
+- ![TR](/assets/flags/TR.png) Turkiera ([Eztabaida](https://github.com/goldbergyoni/nodebestpractices/issues/139))
+- ![EU](/assets/flags/EU.png) Basque ([Eztabaida](https://github.com/goldbergyoni/nodebestpractices/issues/842))
 
 <br/><br/>
 
-## Steering Committee
+## Zuzendaritza Batzordea
 
-Meet the steering committee members - the people who work together to provide guidance and future direction to the project. In addition, each member of the committee leads a project tracked under our [Github projects](https://github.com/goldbergyoni/nodebestpractices/projects).
+Ezagutu Zuzendaritza Batzordeko kideak, proiektuaren orientazioa eta etorkizunerako jarraibideak emateko elkarlanean dirautenak. Gainera, batzordeko kide bakoitza gure [Github projects](https://github.com/goldbergyoni/nodebestpractices/projects)-pean dagoen proiektu baten buru da
 
 <img align="left" width="100" height="100" src="assets/images/members/yoni.png">
 
