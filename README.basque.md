@@ -564,193 +564,194 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 <p align="right"><a href="#table-of-contents">⬆ Itzuli hasierara</a></p>
 
-# `5. Going To Production Practices`
+# `5. Ekoizpena`
 
-## ![✔] 5.1. Monitoring
+## ![✔] 5.1. Monitorizazioa
 
-**TL;PL:** Monitoring is a game of finding out issues before customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that ticks all boxes. Click ‘The Gist’ below for an overview of the solutions
+**TL;PL:** bezeroek baino lehenago arazoak aurkitzeko joku bat da monitorizazioa. Jakina, garrantzi handia eman behar zaio. Merkatua eskaintzez gainezka dago, eta, beraz, komeni zaizu zehazten hastea zeintzuk diren hartu behar dituzun oinarrizko neurriak (hemen dituzu nire iradokizunak); ondoren, pentsatu zer neurri osagarri ezarri behar dituzun; eta, azkenik, aukeratu hipotesi guztiak kontuan hartzen dituen soluzioa. Egin klik hemen behean dagoen ‘Oinarrizkoa‘ estekan soluzioen ikuspegi orokorra izateko
 
-**Bestela:** Failure === disappointed customers. Simple
+**Bestela:** hutsegitea === bezero zapuztuak
 
-🔗 [**Informazio gehiago: Monitoring!**](/sections/production/monitoring.md)
-
-<br/><br/>
-
-## ![✔] 5.2. Increase transparency using smart logging
-
-**TL;PL:** Logs can be a dumb warehouse of debug statements or the enabler of a beautiful dashboard that tells the story of your app. Plan your logging platform from day 1: how logs are collected, stored and analyzed to ensure that the desired information (e.g. error rate, following an entire transaction through services and servers, etc) can really be extracted
-
-**Bestela:** You end up with a black box that is hard to reason about, then you start re-writing all logging statements to add additional information
-
-🔗 [**Informazio gehiago: Increase transparency using smart logging**](/sections/production/smartlogging.md)
+🔗 [**Irakurri gehiago: monitorizazioa!**](/sections/production/monitoring.md)
 
 <br/><br/>
 
-## ![✔] 5.3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy
+## ![✔] 5.2. Gardentasuna handitu erregistratze plataforma adimendunak erabiliz
 
-**TL;PL:** Node is awfully bad at doing CPU intensive tasks like gzipping, SSL termination, etc. You should use ‘real’ middleware services like nginx, HAproxy or cloud vendor services instead
+**TL;PL:** erregistroak arazketa adierazpen hutsalen biltegia izan daitezke edo zure aplikazioaren historia kontatzen duen aginte mahai praktikoa. Planifikatu zure erregistratze plataforma lehenengo egunetik: hau da, nola bildu, gorde eta aztertuko dituzun erregistroak, nahi duzun informazioa benetan eskura daitekeela bermatzeko (adibidez, zein den errore tasa, zerbitzu eta zerbitzarien bidez transakzio oso bat egin ondoren, eta abar)
 
-**Bestela:** Your poor single thread will stay busy doing infrastructural tasks instead of dealing with your application core and performance will degrade accordingly
+**Bestela:** kutxa beltz batekin amaituko duzu, eta zaila izango zaizu han jasotako ezarpenen zergatia aurkitzea. Azkenean, erregistro adierazpen guztiak idazten hasiko zara informazio osagarria gehitzeko
 
-🔗 [**Informazio gehiago: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
-
-<br/><br/>
-
-## ![✔] 5.4. Lock dependencies
-
-**TL;PL:** Your code must be identical across all environments, but amazingly npm lets dependencies drift across environments by default – when you install packages at various environments it tries to fetch packages’ latest patch version. Overcome this by using npm config files, .npmrc, that tell each environment to save the exact (not the latest) version of each package. Alternatively, for finer grained control use `npm shrinkwrap`. \*Update: as of NPM5, dependencies are locked by default. The new package manager in town, Yarn, also got us covered by default
-
-**Bestela:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
-
-🔗 [**Informazio gehiago: Lock dependencies**](/sections/production/lockdependencies.md)
+🔗 [**Gehiago irakurri: gardentasuna handitu erregistratze plataforma adimendunak erabiliz**](/sections/production/smartlogging.md)
 
 <br/><br/>
 
-## ![✔] 5.5. Guard process uptime using the right tool
+## ![✔] 5.3. Utzi ahal den guztia alderantzizko proxy batean (adibidez, gzip, SSL)
 
-**TL;PL:** The process must go on and get restarted upon failures. For simple scenarios, process management tools like PM2 might be enough but in today's ‘dockerized’ world, cluster management tools should be considered as well
+**TL;PL:** Node izugarri txarra da PUZen zeregin intentsiboak egiten, esate baterako, gzipping, SSL termination. Haien partez benetako middleware erabili behar dituzu zerbitzuak –hala nola nginx eta Haproxy– edo hornitzaileen lainoko zerbitzuak
 
-**Bestela:** Running dozens of instances without a clear strategy and too many tools together (cluster management, docker, PM2) might lead to DevOps chaos
+**Bestela:** zure hari bakarra lanpetuta egongo da azpiegitura lanak egiten, zure aplikazioaren guneari kasu egin beharrean, eta, ondorioz, haren errendimenduak behera egingo du
 
-🔗 [**Informazio gehiago: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
-
-<br/><br/>
-
-## ![✔] 5.6. Utilize all CPU cores
-
-**TL;PL:** At its basic form, a Node app runs on a single CPU core while all others are left idling. It’s your duty to replicate the Node process and utilize all CPUs – For small-medium apps you may use Node Cluster or PM2. For a larger app consider replicating the process using some Docker cluster (e.g. K8S, ECS) or deployment scripts that are based on Linux init system (e.g. systemd)
-
-**Bestela:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.js utilizes only 1 (even using PaaS services like AWS beanstalk!)
-
-🔗 [**Informazio gehiago: Utilize all CPU cores**](/sections/production/utilizecpu.md)
+🔗 [**Irakurri gehiago: utzi ahal den guztia alderantzizko proxy batean (adibidez, gzip, SSL)**](/sections/production/delegatetoproxy.md)
 
 <br/><br/>
 
-## ![✔] 5.7. Create a ‘maintenance endpoint’
+## ![✔] 5.4. Blokeatu menpekotasunak
 
-**TL;PL:** Expose a set of system-related information, like memory usage and REPL, etc in a secured API. Although it’s highly recommended to rely on standard and battle-tests tools, some valuable information and operations are easier done using code
+**TL;PL:** zure kodeak berdin-berdina izan behar du ingurune guztietan, baina harrigarria bada ere npm lehenetsita dago menpekotasunei ingurune batetik bestera pasatzen uzteko. Instalatzen dituzunean paketeak hainbat ingurunetan, paketeen azken bertsioa eskuratzen saiatzen da. Hori saihesteko, erabili npm edo .npmrc konfigurazio artxiboak, ingurune bakoitzean dagokion paketearen zein bertsio zehatz (eta ez derrigorrez berriena) komeni zaizun adieraziko dizu eta. Bestela, kontrola fintze aldera, erabili `npm shrinkwrap`. \*Eguneratzea: NPM5 bertsiotik aurrera, menpekotasunak defektuz blokeatzeko konfiguratuta dator. Yarn pakete kudeatzaile berria ere lehenetsita dago horrela lan egiteko
 
-**Bestela:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
+**Bestela:** QAk kodea xeheki probatuko du eta onartuko duen bertsioak desberdin jokatuko du produkzioan. Are okerrago, produkzio talde bereko zerbitzarien kodeak desberdinak izan litezke
 
-🔗 [**Informazio gehiago: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
-
-<br/><br/>
-
-## ![✔] 5.8. Discover errors and downtime using APM products
-
-**TL;PL:** Application monitoring and performance products (a.k.a APM) proactively gauge codebase and API so they can auto-magically go beyond traditional monitoring and measure the overall user-experience across services and tiers. For example, some APM products can highlight a transaction that loads too slow on the end-users side while suggesting the root cause
-
-**Bestela:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real-world scenario and how these affect the UX
-
-🔗 [**Informazio gehiago: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
+🔗 [**Informazio gehiago: blokeatu menpekotasunak**](/sections/production/lockdependencies.md)
 
 <br/><br/>
 
-## ![✔] 5.9. Make your code production-ready
+## ![✔] 5.5. Babestu prozesuaren erabilgarritasuna tresna egokiak erabiliz
 
-**TL;PL:** Code with the end in mind, plan for production from day 1. This sounds a bit vague so I’ve compiled a few development tips that are closely related to production maintenance (click Gist below)
+**TL;PL:** prozesuak huts eginez gero, aurrera egin eta berrabiarazi beharra dago. Egoera arruntetan, nahikoak izan daitezke PM2 bezalako prozesuak kudeatzeko tresnak, baina gaur egungo mundu ”docker”-izatuan, taldeak kudeatzeko tresnak ere kontuan hartu behar dira
 
-**Bestela:** A world champion IT/DevOps guy won’t save a system that is badly written
+**Bestela:** estrategia argirik gabe dozenaka eskaera exekutatzeak DevOpsa nahaste-borrastera eraman dezake, hartarako aldi berean tresna gehiegi (talde kudeaketa, dockerra, PM2) erabiliz gero
 
-🔗 [**Informazio gehiago: Make your code production-ready**](/sections/production/productioncode.md)
-
-<br/><br/>
-
-## ![✔] 5.10. Measure and guard the memory usage
-
-**TL;PL:** Node.js has controversial relationships with memory: the v8 engine has soft limits on memory usage (1.4GB) and there are known paths to leak memory in Node’s code – thus watching Node’s process memory is a must. In small apps, you may gauge memory periodically using shell commands but in medium-large apps consider baking your memory watch into a robust monitoring system
-
-**Bestela:** Your process memory might leak a hundred megabytes a day like how it happened at [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
-
-🔗 [**Informazio gehiago: Measure and guard the memory usage**](/sections/production/measurememory.md)
+🔗 [**Irakurri gehiago: babestu prozesuaren erabilgarritasuna tresna egokiak erabiliz**](/sections/production/guardprocess.md)
 
 <br/><br/>
 
-## ![✔] 5.11. Get your frontend assets out of Node
+## ![✔] 5.6. Erabili PUZeko nukleo guztiak
 
-**TL;PL:** Serve frontend content using dedicated middleware (nginx, S3, CDN) because Node performance really gets hurt when dealing with many static files due to its single-threaded model
+**TL;PL:** Noderen oinarrizko bertsioa PUZeko nukleo bakar batean exekutatzen da, eta beste nukleo guztiak geldi geratzen dira. Beharrezkoa da Noderen prozesua erreplikatzea PUZ guztiak erabiliz: aplikazio txiki eta ertainekin, Node Cluster edo PM2 erabil dezakezu; aplikazio handi samarrekin, berriz, saiatu erabiltzen Docker tankerako talderen bat (adibidez, K8S, ECS) edo Linux hasieratze sisteman oinarritutako garatze idazkerak (adibidez, systemd)
 
-**Bestela:** Your single Node thread will be busy streaming hundreds of html/images/angular/react files instead of allocating all its resources for the task it was born for – serving dynamic content
+**Bestela:** seguruenik, zure aplikazioak erabilgarri dituen baliabideen %25a besterik ez du erabiltzen (!), edo gutxiago, agian. Kontuan izan ohiko zerbitzariek gutxienez lau nukleo dituztela PUZen, eta Node.jsren garatzaile soilak bat bakarra erabiltzen duela (AWS beanstalk bezalako PaaS zerbitzuekin lan egiten duenean ere)
 
-🔗 [**Informazio gehiago: Get your frontend assets out of Node**](/sections/production/frontendout.md)
-
-<br/><br/>
-
-## ![✔] 5.12. Be stateless, kill your servers almost every day
-
-**TL;PL:** Store any type of data (e.g. user sessions, cache, uploaded files) within external data stores. Consider ‘killing’ your servers periodically or use ‘serverless’ platform (e.g. AWS Lambda) that explicitly enforces a stateless behavior
-
-**Bestela:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
-
-🔗 [**Informazio gehiago: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
+🔗 [**Informazio gehiago: erabili PUZeko nukleo guztiak**](/sections/production/utilizecpu.md)
 
 <br/><br/>
 
-## ![✔] 5.13. Use tools that automatically detect vulnerabilities
+## ![✔] 5.7. Sortu ‘bukerako mantentze puntua‘
 
-**TL;PL:** Even the most reputable dependencies such as Express have known vulnerabilities (from time to time) that can put a system at risk. This can be easily tamed using community and commercial tools that constantly check for vulnerabilities and warn (locally or at GitHub), some can even patch them immediately
+**TL;PL:** API seguru batean, jarri agerian sistemarekin lotutako informazio multzo bat, hala nola, memoriaren erabilera eta REPL, etab. Nahiz eta gomendagarria den proba estandarretan eta tresna arruntetan oinarritzea, zenbait informazio eta eragiketa baliotsuak errazago egiten dira kodea erabiliz
 
-**Bestela:** Keeping your code clean from vulnerabilities without dedicated tools will require you to constantly follow online publications about new threats. Quite tedious
+**Bestela:** konturatuko zara “diagnostiko-inplementazio“ asko egiten ari zarela, eta kodea produkziora bidaltzen duzula soilik informazioa lortzeko diagnostikoa egite aldera
 
-🔗 [**Informazio gehiago: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
-
-<br/><br/>
-
-## ![✔] 5.14. Assign a transaction id to each log statement
-
-**TL;PL:** Assign the same identifier, transaction-id: {some value}, to each log entry within a single request. Then when inspecting errors in logs, easily conclude what happened before and after. Unfortunately, this is not easy to achieve in Node due to its async nature, see code examples inside
-
-**Bestela:** Looking at a production error log without the context – what happened before – makes it much harder and slower to reason about the issue
-
-🔗 [**Informazio gehiago: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
+🔗 [**Informazio gehiago: sortu ‘bukerako mantentze puntua‘**](/sections/production/createmaintenanceendpoint.md)
 
 <br/><br/>
 
-## ![✔] 5.15. Set NODE_ENV=production
+## ![✔] 5.8. Aurkitu akatsak eta geldialdiak APM produktuak erabiliz
 
-**TL;PL:** Set the environment variable NODE_ENV to ‘production’ or ‘development’ to flag whether production optimizations should get activated – many npm packages determine the current environment and optimize their code for production
+**TL;PL:** aplikazioen jarraipen eta errendimendu produktuek (APM deritzona) modu proaktiboan neurtzen dituzte kode basea eta APIa, modu automatikoan ohiko jarraipenetik haratago joateko eta erabiltzaileen esperientzia arrunta zerbitzu eta maila guztietan neurtzeko. Adibidez, APM produktu batzuek agerian jarri dezakete azken erabiltzaileen aldean motelegi kargatzen dela transakzio bat, sakoneko arrazoia iradokitzen duten bitartean
 
-**Bestela:** Omitting this simple property might greatly degrade performance. For example, when using Express for server-side rendering omitting `NODE_ENV` makes it slower by a factor of three!
+**Bestela:** APIaren errendimendua eta geldialdiak neurtzeko ahalegin handia egin zenezake, eta, ziurrenik, ez zinateke jabetuko zein diren zure kodearen atalik motelenak mundu errealeko eszenatokian eta nola eragiten dioten zure erabiltzaile esperientziari
 
-🔗 [**Informazio gehiago: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
-
-<br/><br/>
-
-## ![✔] 5.16. Design automated, atomic and zero-downtime deployments
-
-**TL;PL:** Research shows that teams who perform many deployments lower the probability of severe production issues. Fast and automated deployments that don’t require risky manual steps and service downtime significantly improve the deployment process. You should probably achieve this using Docker combined with CI tools as they became the industry standard for streamlined deployment
-
-**Bestela:** Long deployments -> production downtime & human-related error -> team unconfident in making deployment -> fewer deployments and features
+🔗 [**Irakurri gehiago: aurkitu akatsak eta geldialdiak APM produktuak erabiliz**](/sections/production/apmproducts.md)
 
 <br/><br/>
 
-## ![✔] 5.17. Use an LTS release of Node.js
+## ![✔] 5.9. Prestatu zure kodea ekoizpenerako
 
-**TL;PL:** Ensure you are using an LTS version of Node.js to receive critical bug fixes, security updates and performance improvements
+**TL;PL:** programatu helburua kontuan izanik; planifikatu produkzioa lehenengo egunetik hasita. Horrek lausoa eta zehazgabea ematen duenez, produkzioaren mantentzeari estu-estu lotuta dauden garatze aholku batzuk bildu ditut (egin klik hemen behean dagoen Gist estekan)
 
-**Bestela:** Newly discovered bugs or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain
+**Bestela:** IT / DevOps arloko munduko txapeldun batek ere ez du salbatuko gaizki idatzita dagoen sistema
 
-🔗 [**Informazio gehiago: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
-
-<br/><br/>
-
-## ![✔] 5.18. Don't route logs within the app
-
-**TL;PL:** Log destinations should not be hard-coded by developers within the application code, but instead should be defined by the execution environment the application runs in. Developers should write logs to `stdout` using a logger utility and then let the execution environment (container, server, etc.) pipe the `stdout` stream to the appropriate destination (i.e. Splunk, Graylog, ElasticSearch, etc.).
-
-**Bestela:** Application handling log routing === hard to scale, loss of logs, poor separation of concerns
-
-🔗 [**Informazio gehiago: Log Routing**](/sections/production/logrouting.md)
+🔗 [**Irakurri gehiago: prestatu zure kodea ekoizpenerako**](/sections/production/productioncode.md)
 
 <br/><br/>
 
-## ![✔] 5.19. Install your packages with `npm ci`
+## ![✔] 5.10. Neurtu eta babestu memoriaren erabilera
 
-**TL;PL:** You have to be sure that production code uses the exact version of the packages you have tested it with. Run `npm ci` to strictly do a clean install of your dependencies matching package.json and package-lock.json. Using this command is recommended in automated environments such as continuous integration pipelines.
+**TL;PL:** Node.jsek harreman gatazkatsuak ditu memoriarekin: v8 motorrak muga leunak dauzka memoria erabiltzean (1,4 GB) eta ezaguna da zein bidetatik galtzen duen Noderen kodeak memoria. Beraz, ezinbestekoa da Noderen prozesu memoriari erreparatzea. Aplikazio txikietan memoria aldizka neur dezakezu geruza komandoak erabiliz; baina aplikazio ertainetan eta handietan aztertu ez ote zaizun komeni zure memoria erlojua kontrol sistema sendo baten erara erabiltzea
 
-**Bestela:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code.
+**Bestela:** zure memoria prozesuak 100 bat megabyte gal dezake egunean, [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)-i gertatu zitzaion bezala
 
-🔗 [**Informazio gehiago: Use npm ci**](/sections/production/installpackageswithnpmci.md)
+🔗 [**Irakurri gehiago: neurtu eta babestu memoriaren erabilera**](/sections/production/measurememory.md)
+
+<br/><br/>
+
+## ![✔] 5.11. Atera zure frontend modulu aktiboak Nodetik
+
+**TL;PL:** prestatu frontend edukia middleware dedikatu bat erabiliz (adibidez, nginx, S3, CDN), zeren Noderen errendimenduak behera egiten baitu artxibo estatiko askorekin lan egiten duenean, bera azpiprozesu bakarrekoa da eta
+
+**Bestela:** Node eduki dinamikoa eskaintzeko sortu zen arren, haren hari bakarra lanpetuta egongo da html / images / angular / react erako ehunka fitxategi bidaltzen, bera egiteko sortua izan zen zereginei esleitu barik bere baliabide guztiak
+
+🔗 [**Irakurri gehiago: atera zure frontend aktiboak Nodetik**](/sections/production/frontendout.md)
+
+<br/><br/>
+
+## ![✔] 5.12. Izan stateless, hil zerbitzariak ia egunero
+
+**TL;PL:** gorde edozein datu mota (adibidez, erabiltzaile saioak, cacheak, kargatutako fitxategiak) kanpoko datu biltegietan; eta aztertu ez ote zenituzkeen zure zerbitzari guztiak aldian behin “hil” beharko edo “zerbitzaririk gabe”ko plataformaren bat erabili (adibidez, AWS Lambda), berariaz stateless jokaera duena
+
+**Bestela:** zerbitzari jakin batek huts eginez gero, makina akastun bat hil beharrean, aplikazioen geldialdia eragingo du. Gainera, gero eta zailagoa izango da mailaketaren elastikotasuna, zerbitzari jakin baten menpeko izanda
+
+🔗 [**Irakurri gehiago: izan stateless, hil zerbitzariak ia egunero**](/sections/production/bestateless.md)
+
+<br/><br/>
+
+
+## ![✔] 5.13. Erabili ahuleziak automatikoki antzematen dituzten tresnak
+
+**TL;PL:** menpekotasun ezagunenek ere –Express, adibidez– badituzte (noizean behin) ahulezia ezagunak, sistema arriskuan jar ditzaketenak. Horrek konponbide erraza du, ordea, tresna komunitario eta komertzialak erabiliz gero, ahuleziak etengabe kontrolatu eta haien berri ematen dute eta (bertan edo GitHub-en)
+
+**Bestela:** zure kodea ahulezia eta zaurgarritasunetatik garbi mantentzeko tresna dedikaturik gabe, jarraipen estua egin beharko diezu mehatxu berriei buruz linean egiten diren argitalpenei, bide batez esanda, aspergarri samarra izaten dena
+
+🔗 [**Irakurri gehiago: erabili ahuleziak automatikoki antzematen dituzten tresnak**](/sections/production/detectvulnerabilities.md)
+
+<br/><br/>
+
+## ![✔] 5.14. Esleitu transakzio identifikazio bat adierazpen-erregistro bakoitzari
+
+**TL;PL:** esleitu identifikatzaile bera –transakzio-: {balioren bat}– erregistro sarrera bakoitzari eskaera bakar baten barruan. Ondoren, erregistroetako erroreak ikuskatzean, erraz konturatuko zara zer gertatu zen aurretik eta ondoren. Zoritxarrez, hori ez da erraz lortzen Noden, haren izaera asinkronoa da eta. Ikusi kodearen adibideak beheko estekan
+
+**Bestela:** produkzioko erroreen erregistroa testuingururik gabe ikustean – aurretik gertatu zena, alegia –, askoz zailagoa eta motelagoa da arazoa aztertzea
+
+🔗 [**Irakurri gehiago: esleitu ‘TransactionId’ adierazpen erregistro bakoitzari**](/sections/production/assigntransactionid.md)
+
+<br/><br/>
+
+## ![✔] 5.15. Ezarri NODE_ENV = produkzioa
+
+**TL;PL:** ezarri NODE_ENV ingurune aldagaia ‘produkzioa‘ edo ‘garapena‘ ataletan produkzioaren optimizazioak aktibatu beharra dagoen adierazteko; npm pakete askok uneko ingurunea zehazten dute eta haren kodea optimizatzen dute ekoizpenerako
+
+**Bestela:** ezaugarri soil hori gabe errendimendua asko jaits liteke. Adibidez, Express erabiltzean zerbitzarira bideratzeko `NODE_ENV` gabe, errendimendua heren bat moteltzen da
+
+🔗 [**Informazio gehiago: Ezarri NODE_ENV = produkzioa**](/sections/production/setnodeenv.md)
+
+<br/><br/>
+
+## ![✔] 5.16. Diseinatu inplementazio automatizatuak, atomikoak eta geldialdi gabekoak
+
+**TL;PL:** ikerketek frogatu dute inplementazio ugari egiten dituzten taldeek ekoizpen arazo kritikoak izateko probabilitatea txikiagotzen dutela. Eskuz egin beharreko urrats arriskutsurik eta zerbitzuen geldialdirik ez duten inplementazio azkar eta automatizatuek nabarmen hobetzen dute inplementazio prozesua. Baliteke hori bera lortzea Docker eta IE tresnak, biak batera, erabiliz, inplementazio sinplifikatuari dagokionez industriaren estandarra bihurtu dira eta
+
+**Bestela:** inplementazio luzeak -> produkzioaren geldialdia eta gizakiak eragindako erroreak -> inplementazioan konfiantzarik ez duen taldea -> inplementazio eta funtzio gutxiago egitea
+
+<br/><br/>
+
+## ![✔] 5.17. Erabili Node.jsren LTS bertsio berria
+
+**TL;PL:** ziurtatu Node.jsren LTS bertsioa erabiltzen ari zarela errore kritikoen zuzenketak, segurtasun eguneratzeak eta errendimenduaren hobekuntzak jasotzeko
+
+**Bestela:** aurkitu berri diren erroreak edo ahuleziak erabil litezke produkzioan exekutatzen den aplikazio bat ustiatzeko eta baliteke zure aplikazioa ez izatea bateragarria hainbat modulurekin eta zailagoa gertatzea hura mantentzea
+
+🔗 [**Irakurri gehiago: Erabili NTS.jsren LTS bertsioa**](/sections/production/LTSrelease.md)
+
+<br/><br/>
+
+## ![✔] 5.18. Ez bideratu erregistrorik aplikazioaren barruan
+
+**TL;PL:** garatzaileek ez dituzte erregistroen helmugak aplikazio kodearen barruan kodetu behar, aplikazioa exekutatzen den inguruneak berak definitu beharko ditu eta. Garatzaileek `stdout`-ean idatzi behar dituzte erregistroak erregistratze tresna bat erabiliz, eta gero exekuzio inguruneak (edukiontzia, zerbitzaria eta abar) bideratuko du `stdout` korrontea helmuga egokira (hau da, Splunk, Graylog, ElasticSearch eta abar)
+
+**Bestela:** aplikazioen kudeaketaren erregistroak bideratzea === zaila da eskalatzen, erregistroen galera dakar, eskasa izaten da kezken bereizketa
+
+🔗 [**Irakurri gehiago: erregistroen bideraketa**](/sections/production/logrouting.md)
+
+<br/><br/>
+
+## ![✔] 5.19. Instalatu zure paketeak `npm ci` erabiliz
+
+**TL;PL:** ziurtatu ekoizpen kodeak erabiltzen duela probak egiteko erabili dituzun paketeen bertsio berdina. Exekutatu `npm ci` zure package.json eta package-lock.json paketen menpekotasunen instalazio garbia egiteko
+
+**Bestela:** QAk kodea sakonki probatuko du eta produkzioan modu desberdinean jokatuko duen bertsioa onartuko du. Are okerrago, produkzio talde bateko hainbat zerbitzarik kode desberdinak exekuta ditzake
+
+🔗 [**Informazio gehiago: erabili npm ci**](/sections/production/installpackageswithnpmci.md)
 
 <br/><br/><br/>
 
