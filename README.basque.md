@@ -66,7 +66,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 **Bestela:** Bestela: funtzionalitate berriak programatzean, garatzaileek zailtasun handiak izaten dituzte aldaketa horien eragina antzemateko, eta beldur izaten dira funtzionalitateon menpeko osagaiak hautsiko ote dituzten. Ondorioz, inplementazioak motelagoak eta arriskutsuagoak izaten dira. Oro har, zailagoa izaten da aplikazio baten kodea luzatzea negozio unitateak banatuta ez daudenean
 
-🔗 [**RInformazio gehiago: antolatu zure proiektua osagai txikiagotan**](/sections/projectstructre/breakintcomponents.md)
+🔗 [**Informazio gehiago: antolatu zure proiektua osagai txikiagotan**](/sections/projectstructre/breakintcomponents.md)
 
 <br/><br/>
 
@@ -445,119 +445,120 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 <p align="right"><a href="#table-of-contents">⬆ Itzuli hasierara</a></p>
 
-# `4. Testing And Overall Quality Practices`
+# `4. Probak eta kalitate orokorra`
 
-## ![✔] 4.1 At the very least, write API (component) testing
+## ![✔] 4.1 Idatzi APIaren probak (osagaia), gutxienez
 
-**TL;PL:** Most projects just don't have any automated testing due to short timetables or often the 'testing project' ran out of control and was abandoned. For that reason, prioritize and start with API testing which is the easiest way to write and provides more coverage than unit testing (you may even craft API tests without code using tools like [Postman](https://www.getpostman.com/). Afterward, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc
+**TL;PL:** proiektu gehienei ez zaie proba automatikorik egiten denbora gutxian egiten direlako edo, maiz, 'proba proiektua' kontroletik kanpo geratu eta bertan behera uzten direlako. Hori dela eta, lehentasuna eman API probei eta hasi beraiek egiten; izan ere, hori da idazteko erarik errazena eta, gainera, proba unitarioek baino estaldura handiagoa eskaintzen dute; are gehiago, API probak sor ditzakezu, [Postman](https://www.getpostman.com/) bezalako tresnak erabiliz. Ondoren, baliabide eta denbora gehiago edukiz gero, jarraitu proba aurreratuak egiten, hala nola proba unitarioak, datu baseen probak, errendimendu probak, etab.
 
-**Bestela:** You may spend long days on writing unit tests to find out that you got only 20% system coverage
+**Bestela:** luzaroan aritu zintezke proba unitarioak idazten, azkenean soilik %20ko estaldura lortu duzula jakiteko
 
 <br/><br/>
 
-## ![✔] 4.2 Include 3 parts in each test name
+## ![✔] 4.2 Erabili 3 zati proba izen bakoitzean
 
-**TL;PL:** Make the test speak at the requirements level so it's self-explanatory also to QA engineers and developers who are not familiar with the code internals. State in the test name what is being tested (unit under test), under what circumstances, and what is the expected result
+**TL;PL:** proba adierazgarria izan behar da eskakizunen mailan, barne kodearekin lan egiten ohituta ez dauden QAko ingeniariek eta garatzaileek berez eta erraz uler dezaten. Probaren izenean adierazi zer ari den probatzen (probatzen ari den unitatea), zer egoeratan eta zer emaitza espero den
 
-**Bestela:** A deployment just failed, a test named “Add product” failed. Does this tell you what exactly is malfunctioning?
+**Bestela:** inplementazio batek huts egin du, “Gehitu produktua“ izeneko proba batek huts egin du. Esaten dizu horrek zehazki zer dabilen gaizki?
 
 🔗 [**Informazio gehiago: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
 
 <br/><br/>
 
-## ![✔] 4.3 Structure tests by the AAA pattern
+## ![✔] 4.3 Egitura proba k AAA ereduaren arabera
 
-**TL;PL:** Structure your tests with 3 well-separated sections: Arrange, Act & Assert (AAA). The first part includes the test setup, then the execution of the unit under test, and finally the assertion phase. Following this structure guarantees that the reader spends no brain CPU on understanding the test plan
+**TL;PL:** egituratu zure probak ondo bereizitako 3 ataletan: antolatu, aritu eta baieztatu (AAA). Lehenengo atalean probaren konfigurazioa egin behar da; ondoren proba egikaritu behar da; eta, azkenik, baieztapen fasea dator. Egitura horri jarraitzeak bermatzen du irakurleak garuneko PUZik ez gastatzea proba plana ulertzen
 
-**Bestela:** Not only you spend long daily hours on understanding the main code, but now also what should have been the simple part of the day (testing) stretches your brain
+**Bestela:** kode nagusia ulertzen egunero orduak eta orduak pasatzeaz gainera, orain zure garuna trebatzen pasatzen duzu bestela eguneko zatirik lasaiena izan behar zuena (probak)
 
-🔗 [**Informazio gehiago: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.md)
-
-<br/><br/>
-
-## ![✔] 4.4 Detect code issues with a linter
-
-**TL;PL:** Use a code linter to check the basic quality and detect anti-patterns early. Run it before any test and add it as a pre-commit git-hook to minimize the time needed to review and correct any issue. Also check [Section 3](#3-code-style-practices) on Code Style Practices
-
-**Bestela:** You may let pass some anti-pattern and possible vulnerable code to your production environment.
+🔗 [**Informazio gehiago: egitura probak AAA ereduaren arabera**](/sections/testingandquality/aaa.md)
 
 <br/><br/>
 
-## ![✔] 4.5 Avoid global test fixtures and seeds, add data per-test
+## ![✔] 4.4 Antzeman kodeko arazoak linter bat erabiliz
 
-**TL;PL:** To prevent test coupling and easily reason about the test flow, each test should add and act on its own set of DB rows. Whenever a test needs to pull or assume the existence of some DB data - it must explicitly add that data and avoid mutating any other records
+**TL;PL:** erabili kode linterra oinarrizko kalitatea egiaztatzeko eta antiereduak garaiz antzemateko. Exekutatu edozein proba baino lehen eta gehitu aurre-commit-a git kako moduan, edozein arazo berrikusteko eta zuzentzeko behar den denbora minimizatu ahal izateko. Era berean, egiaztatu [3. atala](#3-code-style-practices), kodearen estilo praktikei dagokienez
 
-**Bestela:** Consider a scenario where deployment is aborted due to failing tests, team is now going to spend precious investigation time that ends in a sad conclusion: the system works well, the tests however interfere with each other and break the build
-
-🔗 [**Informazio gehiago: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
+**Bestela:** kode antiereduren bat zuzendu gabe utz dezakezu, zure produkzio ingurunean ahula izan litekeena
 
 <br/><br/>
 
-## ![✔] 4.6 Constantly inspect for vulnerable dependencies
+## ![✔] 4.5 Saihestu datu globalak, gehitu datu pertsonalizatuak proba bakoitzean
 
-**TL;PL:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [npm audit](https://docs.npmjs.com/cli/audit) and 🔗 [snyk.io](https://snyk.io) that can be invoked from your CI on every build
+**TL;PL:** probak akopla daitezen ekiditeko eta proben fluxuari buruz erraz arrazoitzeko, proba bakoitzak bere datu baseko lerroen multzoan lan egin beharko luke. Proba batek datu baseko datu batzuk ba ote diren jakin nahi duenean edo haien beharra duen bakoitzean, berariaz erantsi behar dira datu horiek eta eragotzi beste erregistroren bat mutatzea
 
-**Bestela:** Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
+**Bestela:** probek huts egin dutela eta, inplementazioa bertan behera utzi beharra izan duzula pentsatu. Egoera horretan, lan taldeak denbora asko pasatuko du porrotaren zergatiak aztertzen, azkenean, ondorio tamalgarri honetara iristeko: sistema ondo dabil; probek, ordea, elkarri eragiten diote eta egitura hausten dute
 
-<br/><br/>
-
-## ![✔] 4.7 Tag your tests
-
-**TL;PL:** Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/): mocha --grep 'sanity'
-
-**Bestela:** Running all the tests, including tests that perform dozens of DB queries, any time a developer makes a small change can be extremely slow and keeps developers away from running tests
+🔗 [**Informazio gehiago: saihestu datu globalak**](/sections/testingandquality/avoid-global-test-fixture.md)
 
 <br/><br/>
 
-## ![✔] 4.8 Check your test coverage, it helps to identify wrong test patterns
+## ![✔] 4.6 Etengabe ikuskatu menpekotasun ahulak
 
-**TL;PL:** Code coverage tools like [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but not least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
+**TL;PL:** Express bezalako menpekotasun ospetsuenek ere ahultasun ezagunak dituzte, erraz gaindi daitezkeenak tresna komunitarioak eta komertzialak erabiliz, esaterako 🔗 [npm auditoria](https://docs.npmjs.com/cli/audit) eta 🔗 [snyk.io](https://snyk.io), zure CItik dei ditzakezunak konpilazio bakoitzean
 
-**Bestela:** There won't be any automated metric telling you when a large portion of your code is not covered by testing
-
-<br/><br/>
-
-## ![✔] 4.9 Inspect for outdated packages
-
-**TL;PL:** Use your preferred tool (e.g. 'npm outdated' or [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) to detect installed outdated packages, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a severe scenario might be when an installed package is 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
-
-**Bestela:** Your production will run packages that have been explicitly tagged by their author as risky
+**Bestela:** zure kodeak ahultasunik ez izatea lortzeko tresna dedikaturik erabili gabe, etengabe begiratu beharko duzu mehatxu berriei buruz onlinen zer argitaratzen den eta haren jarraipena egin
 
 <br/><br/>
 
-## ![✔] 4.10 Use production-like environment for e2e testing
+## ![✔] 4.7 Etiketatu zure probak
 
-**TL;PL:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Use an environment which is as close to your real production environment as possible like a-continue (Missed -continue here, needs content. Judging by the **Bestela** clause, this should mention docker-compose)
+**TL;PL:** egin beharreko probak desberdinak dira eszenatokiaren arabera; ke lasterrak, input-output gabekoak, garatzaileek artxibo bat gorde edo commit egiten dutenean erabiltzen diren testak, hasieratik amaierarainoko test erabatekoak presio eskaera berri bat bidaltzen denean egikaritzen direnak, etab. Hori lor daiteke #cold #api #sanity bezalako gako hitzak erabiliz probak etiketatzean, aukera izan dezazun zure proba tresnak erabiltzeko eta behar duzun azpimultzoari deitzeko. Adibidez, honela deitu ahal izango zenioke zentzutasun proba multzoari [Mocha](https://mochajs.org/) erabiliz: mocha --grep 'sanity'
 
-**Bestela:** Without docker-compose, teams must maintain a testing DB for each testing environment including developers' machines, keep all those DBs in sync so test results won't vary across environments
-
-<br/><br/>
-
-## ![✔] 4.11 Refactor regularly using static analysis tools
-
-**TL;PL:** Using static analysis tools helps by giving objective ways to improve code quality and keeps your code maintainable. You can add static analysis tools to your CI build to fail when it finds code smells. Its main selling points over plain linting are the ability to inspect quality in the context of multiple files (e.g. detect duplications), perform advanced analysis (e.g. code complexity), and follow the history and progress of code issues. Two examples of tools you can use are [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) and [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)).
-
-**Bestela:** With poor code quality, bugs and performance will always be an issue that no shiny new library or state of the art features can fix
-
-🔗 [**Informazio gehiago: Refactoring!**](/sections/testingandquality/refactoring.md)
+**Bestela:** garatzaile batek aldaketa txiki bat egiten duen bakoitzean oso motela izan daiteke proba guztiak exekutatzea, datu baseak kontsultatzen dituzten probak barne. Horrelako kasuetan, garatzaileei etsigarria gertatuko zaie probak egitea
 
 <br/><br/>
 
-## ![✔] 4.12 Carefully choose your CI platform (Jenkins vs CircleCI vs Travis vs Rest of the world)
 
-**TL;PL:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it should come with a vibrant ecosystem of plugins. [Jenkins](https://jenkins.io/) used to be the default for many projects as it has the biggest community along with a very powerful platform at the price of a complex setup that demands a steep learning curve. Nowadays, it has become much easier to set up a CI solution using SaaS tools like [CircleCI](https://circleci.com) and others. These tools allow crafting a flexible CI pipeline without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
+## ![✔] 4.8 Egiaztatu zure proben estaldura, proba eredu okerrak identifikatzen laguntzen du eta
 
-**Bestela:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
+**TL;PL:** [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) bezalako estaldura tresnak oso aproposak dira 3 arrazoirengatik: dohainik dira, hau da, ez da lanik egin behar txostenak lortzeko; proben estaldura gutxitu den identifikatzen laguntzen dute; eta, azkenik, baina ez garrantzi txikiagokoa, proben desdoikuntzak agerian jartzen dituzte. Koloretako kode estalduraren txostenak aztertzean, baliteke harrapaketa kapsula moduan sekula testatzen ez diren kode arloak ikustea, adibidez. Horrek esan nahi du probek bide arrakastatsuak besterik ez dituztela antzematen eta ez aplikazioak nola jokatzen duen erroreak gertatzen direnean. Konfiguratu zure probak estaldura maila batetik behera jaisten denean erroreak eragiteko
 
-🔗 [**Informazio gehiago: Choosing CI platform**](/sections/testingandquality/citools.md)
+**Bestela:** ez da inolako neurgailu automatizaturik egongo zure kodearen zati handi bat proben estalduratik kanpo dagoela esango dizuna
 
-## ![✔] 4.13 Test your middlewares in isolation
+<br/><br/>
 
-**TL;PL:** When a middleware holds some immense logic that spans many requests, it worth testing it in isolation without waking up the entire web framework. This can be easily achieved by stubbing and spying on the {req, res, next} objects
+## ![✔] 4.9 Ikuskatu pakete zaharkituak
 
-**Bestela:** A bug in Express middleware === a bug in all or most requests
+**TL;PL:** erabili zure tresnarik gogokoena (adibidez, 'npm outdated' edo [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) zaharkituta dauden paketeak antzemateko, ezarri kontrol hau zure IEren bideetan eta, are gehiago, eragin konpilazio batek huts egitea ingurune kritikoetan. Adibidez, agertoki kritikoa izan daiteke instalatutako pakete batek 5 adabaki baieztatuak dituenean (adibidez, bertsio lokala 1.3.1 da eta biltegi bertsioa 1.3.8) edo haren egileak zaharkitu etiketa jarri dionean. Kasu horretan, ezabatu konpilazioa eta ekidin bertsio hori erabiltzea
 
-🔗 [**Informazio gehiago: Test middlewares in isolation**](/sections/testingandquality/test-middlewares.md)
+**Bestela:** modu esplizituan arriskutsutzat etiketatuta dauden paketeak egikarituko ditu zure produkzioak
+
+<br/><br/>
+
+## ![✔] 4.10 Erabili production bezalako inguruneak e2e probetarako
+
+**TL;PL:** zuzeneko datuak erabiltzen dituen hasieratik amaierarainoko proba(e2e) lehen CIren prozesuko katebegirik ahulena izaten zen, datu baseak bezalako zerbitzu astun askoren menpean dago eta. Erabili zure ekoizpen errealetik ahalik eta hurbilen dagoen ingurunea
+
+**Bestela:** docker-compose erabili ezean, taldeek ingurune bakoitzeko proben datu baseak mantendu behar izaten dituzte, garatzaileen makinak barne. Mantendu beti datu base horiek sinkronizatuta, proben emaitzak alda ez daitezen ingurune batetik bestera
+
+<br/><br/>
+
+## ![✔] 4.11 Eguneratu probak aldizka analisi estatikoko tresnak erabiliz
+
+**TL;PL:** analisi estatikoko tresnak erabiltzeak lagundu egiten dizu kodearen kalitatea hobetzeko modu objektiboak lortzen eta zure kodea jasangarri izaten. Analisirako tresna estatikoak gehitu ahal dizkiozu zure IE konpilazioari, huts egingo duen susmoa duzuenean. Estaldurari dagokionean, bere aldeko puntu nagusiak dira kalitatea ikuskatzeko gaitasuna dutela fitxategi anitzen testuinguruan (adibidez, bikoizketak antzematea), azterketa aurreratuak egitea (adibidez, kodearen konplexutasuna hautematea), eta kode arazoen historiaren eta aurrerapenaren jarraipena egitea. Horretarako, bi tresna hauek erabil ditzakezu: [Sonarqube](https://www.sonarqube.org/) (2.600+ [izar](https://github.com/SonarSource/sonarqube)) eta [Code Climate](https://codeclimate.com/) (1.500+ [izar](https://github.com/codeclimate/codeclimate))
+
+**Bestela:** kodearen kalitatea txarra denean, erroreek eta errendimenduak beti emango dituzte arazoak, azken belaunaldiko ezaugarriak dituen liburutegi berri distiratsu batek ere konpontzerik izango ez dituenak
+
+🔗 [**Informazio gehiago: Berregituratu!**](/sections/testingandquality/refactoring.md)
+
+<br/><br/>
+
+## ![✔] 4.12 Aukeratu arretaz zure IE plataforma (Jenkins vs CircleCI vs Travis vs gainerako mundua)
+
+**TL;PL:** zure integrazio jarraituaren plataformak (CICD) kalitateko tresna guztiak (adib. testak, lintak) ostatatu behar ditu, eta, beraz, indartsua izan beharko du pluginen ekosistema. Aspaldian [Jenkins](https://jenkins.io/) proiektu askoren balio lehenetsia izan ohi zen, komunitaterik handiena eta oso plataforma indartsua baititu, ordainetan konfigurazio konplexu samarra eta ikaste kurba pikoa baditu ere. Gaur egun, askoz errazagoa da IE irtenbide bat sortzea [CircleCI](https://circleci.com) eta haren antzeko SaaS tresnak erabiliz. Tresna horiek IE hodi malgu bat sortzea ahalbidetzen dute azpiegitura osoa kudeatzeko zama hartu beharra izan gabe. Azken batean, sendotasuna eta abiaduraren arteko oreka lortzea da kontua. Egin zure aukera arretaz
+
+**Bestela:** hornitzaile espezializatu bat aukeratzeak blokeatu zaitzake, pertsonalizazio aurreratu bat behar duzunean. Bestalde, Jenkins erabiltzeak denbora asko eska dezake azpiegitura konfiguratzean
+
+🔗 [**Irakurri gehiago: IC plataforma aukeratzea**](/sections/testingandquality/citools.md)
+
+## ![✔] 4.13 Probatu zure middlewareak eurak bakarrik
+
+**TL;PL:** middlewareak eskaera askori erantzuten dion logika sendo bat duenean, merezi du middlewarea probatzea bera bakarrik, web esparru osoa aktibatu gabe. Hori erraz lor daiteke {req, res, next} objektuak antzemanez eta behatuz
+
+**Bestela:** middleware Expressean === errorea izanez gero, errorea gertatuko zaizu eskaera guztietan edo gehienetan
+
+🔗 [**Irakurri gehiago: probatu zure middlewareak eurak bakarrik**](/sections/testingandquality/test-middlewares.md)
 
 <br/><br/><br/>
 
