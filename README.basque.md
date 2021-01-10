@@ -1283,12 +1283,12 @@ Komunitatearen ekarpena dira hemengo itzulpen guztiak eman. Oso pozik hartuko ge
 
 ### Aribidean dauden itzulpenak
 
-- ![FR](/assets/flags/FR.png) [Frantsesa](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Eztabaida](https://github.com/goldbergyoni/nodebestpractices/issues/129))
-- ![HE](/assets/flags/HE.png) Hebrearra ([Eztabaida](https://github.com/goldbergyoni/nodebestpractices/issues/156))
-- ![KR](/assets/flags/KR.png) [Koreera](README.korean.md) - [Sangbeom Han](https://github.com/uronly14me)-ren eskutik ([Eztabaida](https://github.com/goldbergyoni/nodebestpractices/issues/94))
-- ![ES](/assets/flags/ES.png) [Gaztelera](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Eztabaida](https://github.com/goldbergyoni/nodebestpractices/issues/95))
-- ![TR](/assets/flags/TR.png) Turkiera ([Eztabaida](https://github.com/goldbergyoni/nodebestpractices/issues/139))
-- ![EU](/assets/flags/EU.png) Euskara ([Eztabaida](https://github.com/goldbergyoni/nodebestpractices/issues/842))
+- ![FR](/assets/flags/FR.png) [Frantsesa](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Eztabaidan](https://github.com/goldbergyoni/nodebestpractices/issues/129))
+- ![HE](/assets/flags/HE.png) Hebrearra ([Eztabaidan](https://github.com/goldbergyoni/nodebestpractices/issues/156))
+- ![KR](/assets/flags/KR.png) [Koreera](README.korean.md) - [Sangbeom Han](https://github.com/uronly14me)-ren eskutik ([Eztabaidan](https://github.com/goldbergyoni/nodebestpractices/issues/94))
+- ![ES](/assets/flags/ES.png) [Gaztelera](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Eztabaidan](https://github.com/goldbergyoni/nodebestpractices/issues/95))
+- ![TR](/assets/flags/TR.png) Turkiera ([Eztabaidan](https://github.com/goldbergyoni/nodebestpractices/issues/139))
+- ![EU](/assets/flags/EU.png) Euskara ([Eztabaidan](https://github.com/goldbergyoni/nodebestpractices/issues/842))
 
 <br/><br/>
 
