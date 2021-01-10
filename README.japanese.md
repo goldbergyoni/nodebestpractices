@@ -1213,13 +1213,13 @@ In addition, referring to an image tag means that the base image is subject to c
 
 <br /><br /><br />
 
-## ![✔] 8.12. Scan images for multi layers of vulnerabilities
+## ![✔] 8.12. イメージをスキャンして多層な脆弱性をチェックする
 
-**TL;DR:** Besides checking code dependencies vulnerabilities also scan the final image that is shipped to production. Docker image scanners check the code dependencies but also the OS binaries. This E2E security scan covers more ground and verifies that no bad guy injected bad things during the build. Consequently, it is recommended running this as the last step before deployment. There are a handful of free and commercial scanners that also provide CI/CD plugins
+**TL;DR:** コード依存関係の脆弱性をチェックすることに加えて、プロダクションで利用される最終的なイメージもスキャンするようにしてください。Docker イメージスキャナはコード依存関係だけでなく、OS のバイナリもチェックします。この E2E セキュリティスキャンはより多くの領域をカバーし、ビルド中に悪者が悪い因子を注入していないことを確認します。そのため、デプロイ前の最後のステップとしてこれを実行することをおすすめします。CI/CD プラグインも提供している、無料または商用のスキャナがいくつか存在します。
 
-**Otherwise:** Your code might be entirely free from vulnerabilities. However it might still get hacked due to vulnerable version of OS-level binaries (e.g. OpenSSL, TarBall) that are commonly being used by applications
+**さもないと:** コードは脆弱性から完全に脆弱性から解放されているかもしれませんが、アプリケーションで一般的に使用されている OS レベルのバイナリ（例：OpenSSL、TarBall）の脆弱性が原因となって、ハッキングされる可能性が依然としてあります。
 
-🔗 [**Read More: Generic Docker practices**](/sections/docker/scan-images.md)
+🔗 [**さらに読む: プロダクションの前にイメージ全体をスキャンする**](/sections/docker/scan-images.japanese.md)
 
 <br /><br /><br />
 
