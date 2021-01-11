@@ -1,14 +1,14 @@
-# Let the Docker orchestrator restart and replicate processes
+# Docker オーケストレーターでプロセスを再起動して複製する
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-Docker runtime orchestrators like Kubernetes are really good at making containers health and placement decisions: They will take care to maximize the number of containers, balance them across zones, and take into account many cluster factors while making these decisions. Goes without words, they identify failing processes (i.e., containers) and restart them in the right place. Despite that some may be tempted to use custom code or tools to replicate the Node process for CPU utilization or restart the process upon failure (e.g., Cluster module, PM2). These local tools don't have the perspective and the data that is available on the cluster level. For example, when the instances resources can host 3 containers and given 2 regions or zones, Kubernetes will take care to spread the containers across zones. This way, in case of a zonal or regional failure, the app will stay alive. On the contrary side when using local tools for restarting the process the Docker orchestrator is not aware of the errors and can not make thoughtful decisions like relocating the container to a new instance or zone.
+Kubernetes のような Docker ランタイムオーケストレータは、コンテナの健全性と配置の決定を行うのが本当に得意です。コンテナの数を最大化し、ゾーン間でバランスをとり、多くのクラスタ要因を考慮しながら、これらの決定を行います。言葉がなくても、彼らは失敗したプロセス(つまりコンテナ)を特定し、適切な場所で再起動します。にもかかわらず、CPU利用率のためにノードプロセスを複製したり、障害時にプロセスを再起動したりするために、カスタムコードやツールを使いたくなる人もいるかもしれません(例えば、クラスタモジュール、PM2)。これらのローカルツールは、クラスタレベルで利用可能な視点やデータを持っていません。例えば、インスタンスリソースが3つのコンテナをホストでき、2つのリージョンやゾーンが与えられている場合、Kubernetes はゾーン間でコンテナを分散させるように注意します。このようにして、ゾーンやリージョナルの障害が発生してもアプリは生き続けます。逆にローカルツールを使ってプロセスを再起動する場合、Docker オーケストレータはエラーに気づかず、コンテナを新しいインスタンスやゾーンに再配置するような思慮深い決定を下すことができません。
 
 <br/><br/>
 
-### Code Example – Invoking Node.js directly without intermediate tools
+### コード例 – 中間ツールを使わずに直接 Node.js を呼び出す
 
 <details>
 
@@ -18,7 +18,7 @@ Docker runtime orchestrators like Kubernetes are really good at making container
 
 FROM node:12-slim
 
-# The build logic comes here
+# ビルドロジックはこちら
 
 CMD ["node", "index.js"]
 ```
@@ -27,8 +27,7 @@ CMD ["node", "index.js"]
 
 <br/><br/>
 
-### Code Example Anti Pattern – Using a process manager
-
+### アンチパターン コード例 – プロセスマネージャを使用する
 <details>
 
 <summary><strong>Dockerfile</strong></summary>
@@ -36,7 +35,7 @@ CMD ["node", "index.js"]
 ```
 FROM node:12-slim
 
-# The build logic comes here
+# ビルドロジックはこちら
 
 CMD ["pm2-runtime", "indes.js"]
 ```
