@@ -1,16 +1,16 @@
-# Clean NODE_MODULE cache
+# NODE_MODULE キャッシュをクリーンアップする
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-Node package managers, npm & Yarn, cache the installed packages locally so that future projects which need the same libraries won't need to fetch from a remote repository. Although this duplicates the packages and consumes more storage - it pays off in a local development environment that typically keeps installing the same packages. In a Docker container this storage increase is worthless since it installs the dependency only once. By removing this cache, using a single line of code, tens of MB are shaved from the image. While doing so, ensure that it doesn't exit with non-zero code and fail the CI build because of caching issues - This can be avoided by including the --force flag.
+Node パッケージマネージャである npm や Yarn は、同じライブラリを必要とする将来のプロジェクトがリモートリポジトリから取得する必要が無いように、インストールされたパッケージをローカルにキャッシュします。これはパッケージを複製し、より多くのストレージを消費しますが、一般的に同じパッケージをインストールし続けるローカルの開発環境においては効果的です。Docker コンテナでは、依存関係をインストールするのは一度だけなので、このストレージの増加には意味がありません。一行のコードを利用してこのキャッシュを削除することで、イメージから数十 MB を削ることができます。そうする間、non-zero code で中断し、CI のビルドに失敗しないようにしてください - これは --force フラグを含めることで回避できます。
 
-*Please not that this is not relevant if you are using a multi-stage build as long as you don't install new packages in the last stage*
+*マルチステージビルドを利用している場合は、最後のステージで新しいパッケージをインストールしない限り、このプラクティスは関係が無いことに注意してください*
 
 <br/><br/>
 
-### Code Example – Clean cache
+### コード例 - キャシュをクリーンアップする
 
 <details>
 <summary><strong>Dockerfile</strong></summary>
@@ -21,7 +21,7 @@ WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm ci --production && npm cache clean --force
 
-# The rest comes here
+# 残りの部分がここに記述されます
 ```
 
 </details>
