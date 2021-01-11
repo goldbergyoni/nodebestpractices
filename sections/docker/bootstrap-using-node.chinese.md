@@ -2,7 +2,7 @@
 
 ## 一段解释
 
-我们经常看到开发者使用`CMD 'npm start'`启动app的代码示例。这是一个不好的做法。`npm`应用不会向您的app转发信号（signals），这将阻止应用优雅关闭（graceful shutdown），（见[/sections/docker/graceful-shutdown.chinese.md]）。如果您使用的是子进程（child-processes），则在意外关闭时无法正确清理它们，将僵尸进程留在主机上。`npm start`也导致无意义的增加一个额外进程。使用`CMD ['node','server.js']`启动您的应用吧。假如您的应用使用了子进程（child-processes），也可以使用`TINI`作为入口。
+我们经常看到开发者使用`CMD 'npm start'`启动app的代码示例。这是一个不好的做法。因为`npm`不会向您的app转发信号（signals），这将阻止应用优雅关闭（graceful shutdown），（见[/sections/docker/graceful-shutdown.md]）。如果您使用了子进程（child-processes），在意外关闭时则无法正确清理它们，将僵尸进程留在主机上。同时，`npm start`也导致无意义的增加一个额外进程。使用`CMD ['node','server.js']`启动您的应用吧。假如您的应用使用了子进程（child-processes），也可以使用`TINI`作为入口（entrypoint）。
 
 ### 代码示例 - 启动Node
 
@@ -19,13 +19,13 @@ CMD ["node", "server.js"]
 ```
 
 
-### 代码示例 - 使用Tiny作为入口 Using Tiny as entrypoint
+### 代码示例 - 使用Tiny作为入口（ENTRYPOINT）
 
 ```dockerfile
 
 FROM node:12-slim AS build
 
-# Add Tini if using child-processes
+# 使用子进程（child-processes）的情况下，添加Tini
 ENV TINI_VERSION v0.19.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
@@ -53,7 +53,7 @@ RUN npm ci --production && npm clean cache --force
 CMD "npm start"
 ```
 
-在同一字符串命令里面使用node将启动一个bash/ash脚本进程去执行您的命令。它和使用`npm`的效果类似。
+在同一字符串命令里面使用node，将启动一个bash/ash脚本进程去执行您的命令。它和使用`npm`的效果类似。
 
 ```dockerfile
 
