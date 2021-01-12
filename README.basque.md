@@ -22,7 +22,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 <br/>
 
-###### Gure [Zuzendaritza Batzordeak ](#steering-committee) eta [laguntzaileek](#collaborators) eraiki eta mantentzen dute webgune hau
+###### Gure [Zuzendaritza Batzordeak ](#zuzendaritza-batzordea) eta [laguntzaileek](#Languntzaileak) eraiki eta mantentzen dute webgune hau
 
 # Azken jardunbide egokiak eta albisteak
 
@@ -1347,9 +1347,9 @@ Javascripten eta bere ekosisteman (React, Node.js, TypeScript, GraphQL, MongoDB,
 
 <br/>
 
-## Kolaboratzaileak
+## Languntzaileak
 
-Mila esker gure kolaboratzaile guztiei! 🙏
+Mila esker gure laguntzaile guztiei! 🙏
 
 Gure kolaboratzaileak proiektuan maiz parte hartzen duten kideak dira, jardunbide egokiak proposatuz, gaien zerrenda ordenatuz, parte hartze eskaerak (pull request) aztertuz... Milaka pertsona Node.js aplikazioak hobeto sortzen laguntzen interesa baduzu, irakur ezazu gure [kolaboratzaile gida](/.operations/CONTRIBUTING.md) 🎉
 
