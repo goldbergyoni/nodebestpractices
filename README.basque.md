@@ -26,7 +26,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 # Azken jardunbide egokiak eta albisteak
 
-- **✅ Jardunbide egoki berria:** [Alexsey](https://github.com/Alexsey)-ren 2.12 bulletak erakusten du funtzio pila aztarnak uzten dituela. Hor arazo handia izan liteke salbuespenek eragindako arazoak konpontzean exekuzio fotogrametako batzuk ez dituzten produkzioetan
+- **✅ Jardunbide egoki berria:** [Alexsey](https://github.com/Alexsey)-ren 2.12 bulletak erakusten du funtzio asinkronikoen zain egon gabe itzultzeak pila aztarna partzialak uzten dituela. Hor arazo handia izan liteke salbuespenek eragindako arazoak konpontzean exekuzio fotogrametako batzuk ez dituzten produkzioetan
 
 - **✅ Jardunbide egoki berria:** Josh Hemphill-en 6.8 bulletak &quot;Erabiltzaileen pasahitzak / sekretuak BCrypt edo Script erabiliz&quot; babestea gomendatzen du. Azalpen sakona ematen du aukera bakoitza proiektu zehatz batera noiz eta zergatik egokitzen den jakiteko. Ez galdu gida labur hau hash-en aukeren azalpen labur bat eskaintzen duena
 
@@ -35,7 +35,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 <br/><br/>
 
-# Ongi etorri! Hasi aurretik jakin beharreko 3 gauza:
+# Ongi etorri! Hasi aurretik jakin beharreko 3 gauza
 
 **1. Hemen dozenaka artikulu dauzkazu, onenetarikoak Node.jsri buruz egindakoetan:** alegia, bilduma honek Node.jsren jardunbide egokienak jasotzen ditu, edukien arabera sailkatuta
 
