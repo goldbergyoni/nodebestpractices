@@ -1203,13 +1203,13 @@ In addition, referring to an image tag means that the base image is subject to c
 
 <br /><br /><br />
 
-## ![✔] 8.11. Clean-out build-time secrets, avoid secrets in args
+## ![✔] 8.11. ビルド時のシークレットをクリーンアウトし、引数にシークレットを含めることを避ける
 
-**TL;DR:** Avoid secrets leaking from the Docker build environment. A Docker image is typically shared in multiple environment like CI and a registry that are not as sanitized as production. A typical example is an npm token which is usually passed to a dockerfile as argument. This token stays within the image long after it is needed and allows the attacker indefinite access to a private npm registry. This can be avoided by coping a secret file like `.npmrc` and then removing it using multi-stage build (beware, build history should be deleted as well) or by using Docker build-kit secret feature which leaves zero traces
+**TL;DR:** Docker のビルド環境からシークレットが漏洩することを避けてください。Docker イメージは一般的に、 CI や本番環境ほどサニタイズされていないレジストリといった複数の環境で共有されます。典型例としては、通常 dockerfile に引数として渡される npm トークンがあります。このトークンは必要となったタイミング以降も残り続け、攻撃者がプライベート npm レジストリにアクセスすることを無期限に許可することになります。これは、シークレットを `.npmrc` のようなファイルにコピーしてマルチステージビルドを用いてそれを削除する（ビルド履歴も削除するべきであることに注意してください）か、トレースを残さない Docker build-kit のシークレット機能を利用することで回避することができます。
 
-**Otherwise:** Everyone with access to the CI and docker registry will also get access to some precious organization secrets as a bonus
+**さもないと:** CI と docker レジストリへのアクセス権限を持っている人は誰でも、おまけとして貴重な組織の情報にアクセスできてしまします。
 
-🔗 [**Read More: Clean-out build-time secrets**](/sections/docker/avoid-build-time-secrets.md)
+🔗 [**さらに読む: ビルド時のシークレットをクリーンアウトする**](/sections/docker/avoid-build-time-secrets.japanese.md)
 
 <br /><br /><br />
 
