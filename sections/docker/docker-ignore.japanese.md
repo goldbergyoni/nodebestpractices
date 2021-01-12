@@ -1,14 +1,14 @@
-# Use .dockerignore to prevent leaking secrets
+# .dockerignore を使用してシークレット情報の漏洩を防ぐ
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-The Docker build command copies the local files into the build context environment over a virtual network. Be careful - development and CI folders contain secrets like .npmrc, .aws, .env files and other sensitive files. Consequently, Docker images might hold secrets and expose them in unsafe territories (e.g. Docker repository, partners servers). In a better world the Dockerfile should be explicit about what is being copied. On top of this include a .dockerignore file that acts as the last safety net that filters out unnecessary folders and potential secrets. Doing so also boosts the build speed - By leaving out common development folders that have no use in production (e.g. .git, test results, IDE configuration), the builder can better utilize the cache and achieve better performance
+Docker ビルドコマンドは、仮想ネットワークを介してローカルファイルをビルドコンテキスト環境にコピーします。注意してください - 開発と CI のフォルダには、.npmrc、.aws、.envファイルなどの機密ファイルが含まれています。その結果、Docker イメージは秘密を保持し、危険な領域(Docker リポジトリやパートナーのサーバーなど)で公開される可能性があります。より良い世界では、Dockerfile は何がコピーされるのかを明確にすべきです。その上で、不要なフォルダや潜在的な秘密をフィルタリングする最後のセーフティネットとしての役割を果たす .dockerignore ファイルを含めてください。そうすることで、ビルド速度も向上します。- 本番では使わない一般的な開発フォルダ (例えば .git 、テスト結果、IDE の設定など) を省くことで、キャッシュをより有効に活用し、より良いパフォーマンスを得ることができます。
 
 <br/><br/>
 
-### Code Example – A good default .dockerignore for Node.js
+### コード例 – Node.js のための良いデフォルトの .dockerignore
 
 <details>
 <summary><strong>.dockerignore</strong></summary>
@@ -31,7 +31,7 @@ The Docker build command copies the local files into the build context environme
 
 <br/><br/>
 
-### Code Example Anti-Pattern – Recursive copy of all files
+### アンチパターン　コード例 – 全てのファイルの再帰的コピー
 
 <details>
 <summary><strong>Dockerfile</strong></summary>
@@ -39,10 +39,10 @@ The Docker build command copies the local files into the build context environme
 ```
 FROM node:12-slim AS build
 WORKDIR /usr/src/app
-# The next line copies everything
+# 次の行はすべてをコピーします
 COPY . .
 
-# The rest comes here
+# 残りはここに来ます
 
 ```
 
