@@ -39,7 +39,7 @@ save-exact:true
 
 <br/><br/>
 
-### Exemple de code : fichier de verrouillage des dépendances npm 5 - package.json
+### Exemple de code : fichier de verrouillage des dépendances npm 5 - package-lock.json
 
 ```json
 {

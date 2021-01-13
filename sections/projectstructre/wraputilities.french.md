@@ -10,4 +10,4 @@ Une fois que vous commencez à vous développer et que vous avez différents com
 
 ### Partage de vos propres utilitaires communs entre les environnements et les composants
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/Privatenpm.png "Solution d'organisation par composants")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/Privatenpm.png "Solution d'organisation par composants")

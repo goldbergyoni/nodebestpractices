@@ -2,12 +2,12 @@
 
 <br/><br/>
 
- ### Séparez le code des composants en strates : web, services et DAL (couche d'accès aux données)
+ ### Séparez le code des composants en strates : web, services et couche d'accès aux données (DAL)
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Séparez le code des composants en strates")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Séparez le code des composants en strates")
 
  <br/><br/>
 
 ### Explication en 1 min : l'inconvénient de mélanger les strates
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/keepexpressinweb.gif "L'inconvénient de mélanger les strates")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/keepexpressinweb.gif "L'inconvénient de mélanger les strates")

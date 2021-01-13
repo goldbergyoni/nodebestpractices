@@ -12,6 +12,8 @@ Un rapport de test devrait indiquer si la révision actuelle de l'application sa
 
 (3) Quel est le résultat attendu ? Par exemple, le nouveau produit n'est pas approuvé<br/><br/>
 
+<br/><br/>
+
 ### Exemple de code : un nom de test qui comprend 3 parties
 ```javascript
 //1. unité testée
@@ -47,6 +49,6 @@ describe('Service Produits', () => {
 
  [Extrait du blog de « 30 bonnes pratiques de test avec Node.js » par Yoni Goldberg](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347)
 
- ![Un exemple de rapport de test](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/test-report-like-requirements.jpeg "Un exemple de rapport de test")
+ ![Un exemple de rapport de test](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/test-report-like-requirements.jpeg "Un exemple de rapport de test")
 
 <br/><br/>

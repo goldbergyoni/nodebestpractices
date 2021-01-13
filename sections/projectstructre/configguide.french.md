@@ -16,7 +16,7 @@ Lorsqu'il s'agit de données de configuration, beaucoup de choses peuvent tout s
 
 5. l'application doit échouer le plus rapidement possible et fournir un retour immédiat si les variables d'environnement requises ne sont pas présentes au démarrage, ceci peut être réalisé en utilisant [convict](https://www.npmjs.com/package/convict) pour valider la configuration.
 
-Certaines bibliothèques de configuration peuvent fournir gratuitement la plupart de ces fonctionnalités, jetez un œil aux bibliothèques npm comme [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) et [config](https://www.npmjs.com/package/config) qui traitent un bon nombre de ces exigences.
+Certaines bibliothèques de configuration peuvent fournir gratuitement la plupart de ces fonctionnalités, jetez un œil aux bibliothèques npm comme [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config) et [convict](https://www.npmjs.com/package/convict) qui traitent un bon nombre de ces exigences.
 
 <br/><br/>
 

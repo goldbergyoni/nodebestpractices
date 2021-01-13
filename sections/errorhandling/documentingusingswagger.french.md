@@ -49,4 +49,4 @@ Extrait du blog de Joyent classé en 1ere position pour les mots clés “Node.j
 
 ### Outil utile : créateur de documentation en ligne Swagger
 
-![Schéma d'API Swagger](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/swaggerDoc.png "Gestion des erreurs de l'API")
+![Schéma d'API Swagger](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/swaggerDoc.png "Gestion des erreurs de l'API")

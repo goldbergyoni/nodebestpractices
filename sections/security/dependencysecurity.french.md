@@ -37,7 +37,7 @@ An example of the output of the Synk GitHub integration automatically created pu
 
 ### Greenkeeper
 
-Greenkeeper is a service which offers real-time dependency updates, which keeps an application more secure by always using the most update to date and patched dependency versions.
+Greenkeeper is a service which offers real-time dependency updates, which keeps an application more secure by always using the most up to date and patched dependency versions.
 
 Greenkeeper watches the npm dependencies specified in a repository's `package.json` file, and automatically creates a working branch with each dependency update. The repository CI suite is then run to reveal any breaking changes for the updated dependency version in the application. If CI fails due to the dependency update, a clear and concise issue is created in the repository to be auctioned, outlining the current and updated package versions, along with information and commit history of the updated version.
 
