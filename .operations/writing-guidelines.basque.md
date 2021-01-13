@@ -22,10 +22,10 @@ Edukia txantiloi finkoak erabiliz dago aurkeztua. Etorkizuneko beste edozein edu
 
 Aholku bakoitza zuzenean Node.jsekin erlazionatuta egon behar da, eta ez orokorrean software garapenarekin. Node.jsen eredu/arau generikoak ezatzea aholkatzen dugunean, edukia Noderen ezarpenean ardaztuta egon behar da. Adibidez, eskaera sarrera guztiak onbideratzea aholkatzen dugunean segurtasun arrazoiengatik, Node-lingo erabili beharko litzateke, ‘Middlewarea erabili eskaera sarrera onbideratzeko‘. Gai batek Node.jsen ezarpenik ez badauka (esaterako Python & Jaban bezala), gehitu edukiiontzi generiko batean, begiratu 6.5 gaia adibidetzat.
 
-## 6. Saltzaile nagusiak soilik
+## 6. Hornitzaile nagusiak soilik
 
-Batzuetan, npm paketeak, open source tresnak edota produktu komertzialak bezalako zenbait erronka eta arazo abordatzen dituzten saltzaileen izenak gehitzea erabilgarria da. Gainezka egiten duten zerrenda luzeak edota ospetsuak eta egonkorrak ez diren proiektuak ekiditeko, hurrengo arauak proposatu ditugu:
+Batzuetan, npm paketeak, open source tresnak edota produktu komertzialak bezalako zenbait erronka eta arazo abordatzen dituzten hornitzaileen izenak gehitzea erabilgarria da. Gainezka egiten duten zerrenda luzeak edota ospetsuak eta egonkorrak ez diren proiektuak ekiditeko, hurrengo arauak proposatu ditugu:
 
-- Soilik 3 saltzaile ezagunenak izan behar dira gomendatuak – hitz gako batentzat bilaketa motore bateko (Google edo Github ospearen arabera ordenatua) lehenengo 3 emaitzetan agertzen den saltzaile bat gure gomendioetan aipatu genezake
+- Soilik 3 hornitzaile ezagunenak izan behar dira gomendatuak – hitz gako batentzat bilaketa motore bateko (Google edo Github ospearen arabera ordenatua) lehenengo 3 emaitzetan agertzen den hornitzaile bat gure gomendioetan aipatu genezake
 - npm pakete bat bada, batazbeste egunean gutxienez 750 aldiz deskargatua izan behar da
 - Open source proiektu bat bada, azken 6 hilabeteetan gutxienez behin eguneratua izan behar da
