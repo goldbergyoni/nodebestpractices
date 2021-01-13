@@ -223,9 +223,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 🔗 [**Read More: failing fast**](/sections/errorhandling/failfast.md)
 
-<br/><br/><br/>
-
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<br/><br/>
 
 ## ![✔] 2.12 Always await promises before returning to avoid a partial stacktrace
 
