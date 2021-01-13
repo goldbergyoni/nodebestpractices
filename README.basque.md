@@ -96,7 +96,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 **Bestela:** probak egiteko, HTTP deien bidez baino ezingo da zure APIra sartu. Sarbide hori motelagoa da eta asko zailtzen du estaldura txostenak egitea. Gainera, ziur aski, ez da bat ere atsegina izango ehundaka lerro dituen kodea mantentzea
 
-🔗 [**Informazio gehiago: banandu Express 'aplikazioa' eta 'zerbitzaria'**](/sections/projectstructre/separateexpress.md)
+🔗 [**Informazio gehiago: banandu Express 'aplikazioa' eta 'zerbitzaria'**](/sections/projectstructre/separateexpress.basque.md)
 
 <br/><br/>
 
