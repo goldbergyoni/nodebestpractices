@@ -47,14 +47,14 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 ## Edukien aurkibidea
 
-1. [Proiektuaren egitura (5)](#1-project-structure-practices)
-2. [Akatsen kudeaketa (11) ](#2-error-handling-practices)
-3. [Kodearen estiloa (12) ](#3-code-style-practices)
-4. [Probak eta kalitate orokorra (13) ](#4-testing-and-overall-quality-practices)
-5. [Ekoizpena (19) ](#5-going-to-production-practices)
-6. [Segurtasuna (25)](#6-security-best-practices)
-7. [Errendimendua (2) (Aribidean ✍️)](#7-draft-performance-best-practices)
-8. [Docker (15)](#8-docker-best-practices)
+1. [Proiektuaren egitura (5)](#1-proiektuaren-egitura)
+2. [Akatsen kudeaketa (11) ](#2-akatsen-kudeaketa)
+3. [Kodearen estiloa (12) ](#3-kodearen-estiloa)
+4. [Probak eta kalitate orokorra (13) ](#4-probak-eta-kalitate-orokorra)
+5. [Ekoizpena (19) ](#5-ekoizpena)
+6. [Segurtasuna (25)](#6-segurtasuna)
+7. [Errendimendua (2) (Aribidean ✍️)](<#7-errendimendua-(zirriborroa)>)
+8. [Docker (15)](#8-docker)
 
 <br/><br/>
 
@@ -110,7 +110,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Itzuli hasierara</a></p>
+<p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
 
 # `2. Akatsen kudeaketa`
 
@@ -224,7 +224,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Itzuli hasierara</a></p>
+<p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
 
 ## ![✔] 2.12 Agintzen zain egon beti itzuli aurretik, pilak arrastorik uztea saihesteko
 
@@ -236,7 +236,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Itzuli hasierara</a></p>
+<p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
 
 # `3. Kodearen estiloa`
 
@@ -443,7 +443,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Itzuli hasierara</a></p>
+<p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
 
 # `4. Probak eta kalitate orokorra`
 
@@ -561,7 +561,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Itzuli hasierara</a></p>
+<p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
 
 # `5. Ekoizpena`
 
@@ -753,7 +753,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Itzuli hasierara</a></p>
+<p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
 
 # `6. Segurtasuna`
 
@@ -1055,7 +1055,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 🔗 [**Gehiago irakurri: saihestu sekretuak argitaratzea**](/sections/security/avoid_publishing_secrets.md)
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Itzuli hasierara</a></p>
+<p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
 
 # `7. Errendimendua (zirriborroa)`
 
@@ -1083,7 +1083,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Itzuli hasierara</a></p>
+<p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
 
 # `8. Docker`
 
@@ -1262,7 +1262,7 @@ Gainera, irudi-etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 <br/><br /><br />
 
-<p align="right"><a href="#table-of-contents">⬆ Itzuli hasierara</a></p>
+<p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
 
 # Mugarriak
 
