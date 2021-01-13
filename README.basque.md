@@ -86,7 +86,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 **Bestela:** zuk zeuk asmatu beharko duzu zeure inplementazioa eta menpekotasun gurpila
 
-🔗 [**Informazio gehiago: antolatu funtzioen arabera**](/sections/projectstructre/wraputilities.md)
+🔗 [**Informazio gehiago: antolatu funtzioen arabera**](/sections/projectstructre/wraputilities.basque.md)
 
 <br/><br/>
 
