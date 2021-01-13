@@ -76,7 +76,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 **Bestela:** aplikazio batean webeko objektuak beste geruzekin nahastuta badaude, ezingo da bertara sartu testak, CRON atazak eta Express middleware-ak baino erabiliz
 
-🔗 [**Informazio gehiago: antolatu zure aplikazioa geruzatan**](/sections/projectstructre/createlayers.md)
+🔗 [**Informazio gehiago: antolatu zure aplikazioa geruzatan**](/sections/projectstructre/createlayers.basque.md)
 
 <br/><br/>
 
