@@ -1187,6 +1187,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "forresst",
+      "name": "Forresst",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/163352?v=4",
+      "profile": "https://twitter.com/forresst17",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
