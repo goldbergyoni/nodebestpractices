@@ -1196,6 +1196,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "svenheden",
+      "name": "Jonathan Svenheden",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/76098?v=4",
+      "profile": "https://github.com/svenheden",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
