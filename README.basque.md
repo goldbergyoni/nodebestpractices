@@ -106,7 +106,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 **Bestela:** konfiguazioa egitean baldintza horietarikoren bat betetzen ez baduzu, lana moteldu egingo da, bai garapen taldearena, bai devops taldearena
 
-🔗 [**Informazio gehiago: konfigurazio jardunbide egokiak**](/sections/projectstructre/configguide.md)
+🔗 [**Informazio gehiago: konfigurazio jardunbide egokiak**](/sections/projectstructre/configguide.basque.md)
 
 <br/><br/><br/>
 
