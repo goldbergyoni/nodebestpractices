@@ -1,13 +1,13 @@
-# Prefer smaller Docker base images
+# 小さな Docker ベースイメージを優先する
 
-Large Docker images can lead to higher exposure to vulnerabilities and increased resource consumption. Often you don't need certain packages installed at runtime that are needed for building.
-Pulling and storing larger images will become more expensive at scale, when dealing with larger images. By design minimal images may not come with common libraries needed for building native modules or packages useful for debugging (e.g. curl) pre-installed.
-Using the Alpine Linux variants of images can lead to a reduced footprint in terms of resources used and the amount of attack vectors present in fully-featured systems. The Node.js v14.4.0 Docker image is ~345MB in size versus ~39MB for the Alpine version, which is almost 10x smaller.
-A Slim variant based on Debian, which is only 38MB in size and contains the minimal packages needed to run Node.js, is also a great choice.
+サイズの大きな Docker イメージは脆弱性にさらされる可能性を高め、リソースの消費量を増加させます。多くの場合、ビルド時に必要なパッケージは実行時にインストールする必要はありません。
+大きイメージを扱う場合において、イメージをプルして保存することは、規模が大きくなるにつれてコストが高くなるでしょう。設計上、ミニマルイメージには、ネイティブモジュールの構築に必要な共通して利用されるライブラリや、デバッグに便利なパッケージ（例：curl）がプリインストールされていない場合があります。
+Alpine Linux のイメージを利用することで、使用されるリソースと、フル機能を備えたシステムに存在する攻撃の因子の総数の観点において、その度合を抑えることができます。Node.js v14.4.0 Docker イメージは ~345MB であるのに対し、Alpine バージョンのイメージは ~39MB と、10倍近く小さくなっています。
+Debian をベースとした Slim 版も良い選択肢です。わずかサイズ 38MB であり、Node.js を実行するために必要な最小限のパッケージを含んでいます。
 
-### Blog Quote: "If you want to shrink your Docker images, have your services start faster and be more secure then try Alpine out."
+### ブログ引用: "If you want to shrink your Docker images, have your services start faster and be more secure then try Alpine out."（Docker イメージを縮小させ、サービスの起動を高速化し、より安全性を高めたい場合は、Alpine を試してください）
 
-From [Nick Janetakis' blog](https://nickjanetakis.com/blog/the-3-biggest-wins-when-using-alpine-as-a-base-docker-image)
+[Nick Janetakis のブログ](https://nickjanetakis.com/blog/the-3-biggest-wins-when-using-alpine-as-a-base-docker-image)より
 
-> It’s no secret by now that Docker is heavily using Alpine as a base image for official Docker images. This movement started near the beginning of 2016. [...]
-  When pulling down new Docker images onto a fresh server, you can expect the initial pull to be quite a bit faster on Alpine. The slower your network is, the bigger the difference it will be. [...] Another perk of being much smaller in size is that the surface area to be attacked is much less. When there’s not a lot of packages and libraries on your system, there’s very little that can go wrong.
+> Docker が、公式の Docker イメージのベースとなるイメージとして Alpine を多用していることは、もう周知の事実です。[...]
+> 新しいサーバーに新しい Docker イメージをプルする際は、Alpine を利用することで最初のプルが速くなると予想されます。ネットワークが遅ければ遅いほど、その差は歴然となります。[...] サイズがより小さくなることのもうひとつの利点は、攻撃される領域が小さくなることです。システム上のパッケージやライブラリの数が少ない場合、問題が発生する可能性は低くなります。

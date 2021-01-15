@@ -1193,13 +1193,13 @@ In addition, referring to an image tag means that the base image is subject to c
 
 <br /><br /><br />
 
-## ![✔] 8.10. Prefer smaller Docker base images
+## ![✔] 8.10. 小さな Docker ベースイメージを優先する
 
-**TL;DR:** Large images lead to higher exposure to vulnerabilities and increased resource consumption. Using leaner Docker images, such as Slim and Alpine Linux variants, mitigates this issue.
+**TL;DR:** 大きなイメージは、脆弱性にさらされる可能性を高め、リソースの消費量を増加させます。Slim や Alpine Linux のような、スリムな Docker イメージを使うことで、子の問題を軽減することができます。
 
-**Otherwise:** Building, pushing, and pulling images will take longer, unknown attack vectors can be used by malicious actors and more resources are consumed.
+**さもないと:** イメージのビルド、プッシュ、プルに時間を要し、未知の攻撃の因子が悪意のあるアクターによって使用され、より多くのリソースが消費されます。
 
-🔗 [**Read More: Prefer smaller images**](/sections/docker/smaller_base_images.md)
+🔗 [**さらに読む: 小さなイメージを優先する**](/sections/docker/smaller_base_images.japanese.md)
 
 <br /><br /><br />
 
