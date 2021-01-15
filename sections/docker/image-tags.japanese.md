@@ -1,27 +1,27 @@
-# Understand image tags vs digests and use the `:latest` tag with caution
+# イメージタグ vs ダイジェストを理解し、`:latest` タグは注意深く利用する
 
-### One Paragraph Explainer
+### 一段落説明
 
-If this is a production situation and security and stability are important then just "convenience" is likely not the best deciding factor. In addition the `:latest` tag is Docker's default tag. This means that a developer who forgets to add an explicit tag will accidentally push a new version of an image as `latest`, which might end in very unintended results if the `latest` tag is being relied upon as the latest production image.
+本番環境で、セキュリティと安定性を重視するのであれば、「利便性」はベストな決定要因ではないかもしれません。`:latest` タグは Docker のデフォルトタグです。これが意味することは、明示的なタグを追加し忘れた開発者は誤って新しいバージョンのイメージを `latest` としてプッシュしてしまうかもしれないということです。`latest` タグが最新の本番環境のイメージとして利用されている場合には、意図しない結果を招く可能性があります。
 
-### Code example:
+### コード例:
 
 ```bash
 $ docker build -t company/image_name:0.1 .
-# :latest image is not updated
+# :latest イメージはアップデートされない
 $ docker build -t company/image_name
-# :latest image is updated
+# :latest イメージはアップデートされる
 $ docker build -t company/image_name:0.2 .
-# :latest image is not updated
+# :latest イメージはアップデートされない
 $ docker build -t company/image_name:latest .
-# :latest image is updated
+# :latest イメージはアップデートされる
 ```
 
-### What Other Bloggers Say
-From the blog by [Vladislav Supalov](https://vsupalov.com/docker-latest-tag/):
-> Some people expect that :latest always points to the most-recently-pushed version of an image. That’s not true.
+### 他のブロガーが言っていること
 
-From the [Docker success center](https://success.docker.com/article/images-tagging-vs-digests)
-> 
+[Vladislav Supalov](https://vsupalov.com/docker-latest-tag/) のブログより:
+> 一部の人は、:latest タグは直近でプッシュされたバージョンのイメージを指していると思っています。しかし、そうではありません。
+
+[Docker success center](https://success.docker.com/article/images-tagging-vs-digests)
 
 <br/>

@@ -1181,21 +1181,21 @@ CMD [ "node", "dist/app.js" ]
 
 <br /><br /><br />
 
-## ![✔] 8.9. Use explicit image reference, avoid `latest` tag
+## ![✔] 8.9. `latest` タグは避け、明示的なイメージのリファレンスを使用する
 
-**TL;DR:** Specify an explicit image digest or versioned label, never refer to `latest`. Developers are often led to believe that specifying the `latest` tag will provide them with the most recent image in the repository however this is not the case. Using a digest guarantees that every instance of the service is running exactly the same code.
+**TL;DR:** 明示的なイメージダイジェスト、またはバージョンラベルを指定し、`latest` を参照しないようにしてください。開発者はしばしば、`latest` タグを指定することでリポジトリ内の最新のイメージが提供されると思い込みがちですが、そうではありません。ダイジェスト（digest）を利用することで、サービスのすべてのインスタンスが全く同じコードを実行していることが保証されます。
 
-In addition, referring to an image tag means that the base image is subject to change, as image tags cannot be relied upon for a deterministic install. Instead, if a deterministic install is expected, a SHA256 digest can be used to reference an exact image.
+さらに、イメージタグを参照することは、決定論的インストールにおいてイメージタグを頼りにすることができないために、ベースイメージが変更される可能性があることを意味します。代わりに、決定論的なインストールが想定される場合には、SHA256 ダイジェストを使用して正確なイメージを参照することができます。
 
-**Otherwise:** A new version of a base image could be deployed into production with breaking changes, causing unintended application behaviour.
+**さもないと:** 破壊的変更を含むベースイメージの新しいバージョンが本番環境にデプロイされ、意図しないアプリケーションの挙動を引き起こす可能性があります。
 
-🔗 [**Read More: Understand image tags and use the "latest" tag with caution**](/sections/docker/image-tags.md)
+🔗 [**さらに読む: イメージタグを理解して「latest」タグを注意して使う**](/sections/docker/image-tags.japanese.md)
 
 <br /><br /><br />
 
 ## ![✔] 8.10. 小さな Docker ベースイメージを優先する
 
-**TL;DR:** 大きなイメージは、脆弱性にさらされる可能性を高め、リソースの消費量を増加させます。Slim や Alpine Linux のような、スリムな Docker イメージを使うことで、子の問題を軽減することができます。
+**TL;DR:** 大きなイメージは、脆弱性にさらされる可能性を高め、リソースの消費量を増加させます。Slim や Alpine Linux のような、スリムな Docker イメージを使うことで、この問題を軽減することができます。
 
 **さもないと:** イメージのビルド、プッシュ、プルに時間を要し、未知の攻撃の因子が悪意のあるアクターによって使用され、より多くのリソースが消費されます。
 
