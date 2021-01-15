@@ -2,7 +2,7 @@
 
 <br/><br/>
 
- ### Separate component code into layers: web, services, and DAL
+ ### Separate component code into layers: web, services, and Data Access Layer (DAL)
 
 ![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Separate component code into layers")
 

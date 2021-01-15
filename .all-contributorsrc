@@ -1160,6 +1160,60 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "vladthelittleone",
+      "name": "vladthelittleone",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4215285?v=4",
+      "profile": "https://vectree.ru",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "nosvalds",
+      "name": "Nik Osvalds",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/60047271?v=4",
+      "profile": "https://www.nikolaso.com",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "kdaniel21",
+      "name": "Daniel Kiss",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/39854385?v=4",
+      "profile": "https://github.com/kdaniel21",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "forresst",
+      "name": "Forresst",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/163352?v=4",
+      "profile": "https://twitter.com/forresst17",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "svenheden",
+      "name": "Jonathan Svenheden",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/76098?v=4",
+      "profile": "https://github.com/svenheden",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "AustrisC",
+      "name": "AustrisC",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/12381652?v=4",
+      "profile": "https://github.com/AustrisC",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
