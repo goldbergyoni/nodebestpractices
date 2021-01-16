@@ -113,13 +113,13 @@ _`Object.setPrototypeOf`ri buruzko azalpena Typescripten: https://www.typescript
 
 ### Blogeko Aipua: "Ez dut mota ezberdin ugari edukitzean interesik ikusten"
 
-Ben Nadel blogetik, “Node.js errore objektua” 5 hitz gakori esker klasifikatua
+Ben Nadel blogetik, “Node.js errore objektua” 5 hitz gakori esker sailkatua
 
 > …”Modu pertsonalean, ez dut mota ezberdin ugari edukitzean interesik ikusten [bakarra edukitzearekin alderatuz] - Ez dirudi JavaScriptek, lengoaia gisa, eraikitzailez-oinarritutako errore-harrapaketa hornitzerik. Horrela, objektu baten ezaugarriak bereizteak Eraikitzaile motak bereiztea baino errazagoa dirudi…
 
 ### Blogeko Aipua: "String bat ez da errore bat"
 
-devthought.com blogetik, “Node.js errore objektua” 6 hitz gakori esker klasifikatua
+devthought.com blogetik, “Node.js errore objektua” 6 hitz gakori esker sailkatua
 
 > …String baten ordez errore bat pasatzeak moduluen arteko elkarreragintasuna murrizten du. `instanceof` errore egiaztapen arrakastatsuak izan litezken kontratuak apurtzen ditu APIekin. Errore objektuek, ikusiko dugun bezala, Javascript motore modernoetan ezaugarri interesgarriak dituzte eraikitzaileari pasatutako mezua kontserbatzeaz gain…
 

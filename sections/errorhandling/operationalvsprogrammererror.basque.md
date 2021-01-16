@@ -73,7 +73,7 @@ throw new AppErrorea(
 
 ### Blogeko Aipua: "Programatzaileen erroreak programan programazio-erroreak dira"
 
-Joyent blogetik, “Node.js errore kudeaketa" hitz gako bati esker klasifikatua
+Joyent blogetik, “Node.js errore kudeaketa" hitz gako bati esker sailkatua
 
 > …Programatzaile erroreetatik suspertzeko modurik hoberena berehala kraskadura eragitea da. Kraskadura baten aurrean automatikoki berrekingo dituen berrekite sistema bat erabiliaz exekutatu beharko zenituzte zure programak. Berrekite sistema bati esker, kraskadura da programatzaile errore pasakor baten aurrean zerbitzu fidagarri bat berreskuratzeko modurik azkarrena…
 
@@ -85,7 +85,7 @@ Node.js dokumentazio ofizialetik
 
 ### Blogeko Aipua: "Bestela zure aplikazioaren egoera arriskatu dezakezu"
 
-debugable.com blogetik, “Node.js harrapatu gabeko exzepzioa" 3 hitz gakori esker klasifikatua
+debugable.com blogetik, “Node.js harrapatu gabeko exzepzioa" 3 hitz gakori esker sailkatua
 
 > …Beraz, baldin eta benetan egiten ari zarena jakiten baduzu, “uncaughtException” exzepzio ebentua jaso ostean zure zerbitzuaren berrekite dotorea egin beharko zenuke. Bestela, zure aplikazioaren egoera arriskuan jar dezakezu, edota bere liburutegiak inkontsekuenteak bihurtuarazi, mota guztietako errore zoroak eraginez…
 
