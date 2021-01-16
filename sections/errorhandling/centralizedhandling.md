@@ -2,7 +2,7 @@
 
 ### One Paragraph Explainer
 
-Without one dedicated object for error handling, greater are the chances for incosistent errors handling: Errors that are thrown within web requests might get handled diffrently from those are raised during the startup phase and those which are raised by scheduled jobs. This might lead to some type of errors being handled impoperly. This single error handler object is responsible for making the error visible, for example by writing to a well-formatted logger, firing metrics using some monitoring product (like [Prometheus](https://prometheus.io/), [CloudWatch](https://aws.amazon.com/cloudwatch/), [DataDog](https://www.datadoghq.com/), and [Sentry](https://sentry.io/)) and to decide whether the process should crash. Most web frameworks provide an error catching middleware mechanism - A typical mistake is to place the error handling code within this middleware. By doing so, you won't be able to reuse the same handler for errors that are caught in different scenarios like scheudled jobs, message queue subscriber, and uncaught exceptions. Consequently, the error middleware should be used only to catch erros and forward to the handler. A typical error handling flow might be: Some module throws an error -> API router catches the error -> it propagates the error to the middleware (e.g. or to other mechanism for catching request-level error) who is responsible for catching errors -> a centralized error handler is called.
+Without one dedicated object for error handling, greater are the chances for inconsistent errors handling: Errors thrown within web requests might get handled differently from those raised during the startup phase and those raised by scheduled jobs. This might lead to some types of errors that are being mismanaged. This single error handler object is responsible for making the error visible, for example, by writing to a well-formatted logger, firing metrics using some monitoring product (like [Prometheus](https://prometheus.io/), [CloudWatch](https://aws.amazon.com/cloudwatch/), [DataDog](https://www.datadoghq.com/), and [Sentry](https://sentry.io/)) and to decide whether the process should crash. Most web frameworks provide an error catching middleware mechanism - A typical mistake is to place the error handling code within this middleware. By doing so, you won't be able to reuse the same handler for errors that are caught in different scenarios like scheduled jobs, message queue subscribers, and uncaught exceptions. Consequently, the error middleware should only catch errors and forward them to the handler. A typical error handling flow might be: Some module throws an error -> API router catches the error -> it propagates the error to the middleware (e.g. or to other mechanism for catching request-level error) who is responsible for catching errors -> a centralized error handler is called.
 
 ### Code Example – a typical error flow
 
@@ -34,11 +34,11 @@ app.use(async (err, req, res, next) => {
 });
 
 process.on("uncaughtException", error => {
-  await errorHandler.handleError(error);
+  errorHandler.handleError(error);
     });
 
-    process.on("unhandledRejection", (reason, p) => {
-        await errorHandler.handleError(reason);
+    process.on("unhandledRejection", (reason) => {
+        errorHandler.handleError(reason);
     });
 ```
 </details>
@@ -70,12 +70,12 @@ app.use(async (err: Error, req: Request, res: Response, next: NextFunction) => {
 await errorHandler.handleError(err, res);
 });
 
-process.on("uncaughtException", error:Error => {
-  await errorHandler.handleError(error);
+process.on("uncaughtException", (error:Error) => {
+  errorHandler.handleError(error);
     });
 
-    process.on("unhandledRejection", (reason, p) => {
-        await errorHandler.handleError(reason);
+    process.on("unhandledRejection", (reason) => {
+        errorHandler.handleError(reason);
     });
 ```
 </details>
@@ -107,7 +107,8 @@ class ErrorHandler {
   public async handleError(err: Error, responseStream: Response): Promise<void> {
     await logger.logError(error);
     await fireMonitoringMetric(error);
-    await crashIfUntrustedErrorOrSendResponse(error, responseStream);      };
+    await crashIfUntrustedErrorOrSendResponse(error, responseStream);      
+    };
 }
 
 export const handler = new ErrorHandler();
