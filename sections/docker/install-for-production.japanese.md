@@ -1,14 +1,14 @@
-# Remove development dependencies
+# 開発依存性の除去
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-Dev dependencies greatly increase the container attack surface (i.e. potential security weakness) and the container size. As an example, some of the most impactful npm security breaches were originated from devDependencies like [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes) or affected dev packages like [event-stream that was used by nodemon](https://snyk.io/blog/a-post-mortem-of-the-malicious-event-stream-backdoor/). For those reasons the image that is finally shipped to production should be safe and minimal. Running npm install with a `--production` is a great start, however it gets even safer to run `npm ci` that ensures a fresh install and the existence of a lock file. Removing the local cache can shave additional tens of MB. Often there is a need to test or debug within a container using devDependencies - In that case, [multi stage builds](/sections/docker/multi_stage_builds.md) can help in having different sets of dependencies and finally only those for production.
+Dev-Dependencies は、コンテナへの攻撃面 (つまり潜在的なセキュリティ上の弱点) とコンテナサイズを大幅に増加させます。例として、最も影響力のある npm のセキュリティ侵害のいくつかは、[eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes) のような devDependencies や、[nodeemon が使用していた event-stream](https://snyk.io/blog/a-post-mortem-of-the-malicious-event-stream-backdoor/) のような Dev-Dependencies に由来しています。これらの理由から、最終的に本番環境に出荷されるイメージは安全で最小限のものでなければなりません。npm install を `--production` で実行するのは素晴らしいスタートですが、新鮮なインストールとロックファイルの存在を保証する `npm ci` を実行するとさらに安全になります。ローカルキャッシュを削除することで、さらに数十 MB 削ることができます。devDependencies を使ってコンテナ内でテストやデバッグをする必要がある場合がよくあります - その場合、[multi stage builds](/sections/docker/multi_stage_builds.japanese.md) は、異なる依存関係のセットを持ち、最終的には本番用の依存関係だけを持つのに役立ちます。
 
 <br/><br/>
 
-### Code Example – Installing for production
+### コード例 – 本番環境向けのインストール
 
 <details>
 
@@ -20,14 +20,14 @@ WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm ci --production && npm clean cache --force
 
-# The rest comes here
+# 残りはここに来ます
 ```
 
 </details>
 
 <br/><br/>
 
-### Code Example – Installing for production with multi-stage build
+### コード例 – Iマルチステージビルドを使用した本番環境向けのインストール
 
 <details>
 
@@ -36,18 +36,18 @@ RUN npm ci --production && npm clean cache --force
 ```
 FROM node:14.8.0-alpine AS build
 COPY --chown=node:node package.json package-lock.json ./
-# ✅ Safe install
+# ✅ セーフインストール
 RUN npm ci
 COPY --chown=node:node src ./src
 RUN npm run build
 
-# Run-time stage
+# ランタイムステージ
 FROM node:14.8.0-alpine
 COPY --chown=node:node --from=build package.json package-lock.json ./
 COPY --chown=node:node --from=build node_modules ./node_modules
 COPY --chown=node:node --from=build dist ./dist
 
-# ✅ Clean dev packages
+# ✅ 開発パッケージをクリーンにする
 RUN npm prune --production
 
 CMD [ "node", "dist/app.js" ]
@@ -58,7 +58,7 @@ CMD [ "node", "dist/app.js" ]
 
 <br/><br/>
 
-### Code Example Anti-Pattern – Installing all dependencies in a single stage dockerfile
+### アンチパターン　コード例 – すべての依存関係を1つのステージの dockerfile にインストールする
 
 <details>
 
@@ -69,7 +69,7 @@ CMD [ "node", "dist/app.js" ]
 FROM node:12-slim AS build
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
-# Two mistakes below: Installing dev dependencies, not deleting the cache after npm install
+# 以下2つのミスがあります: dev の依存関係のインストールをし、npm インストール後にキャッシュを削除していません
 RUN npm install
 
 # The rest comes here
@@ -79,8 +79,8 @@ RUN npm install
 
 <br/><br/>
 
-### Blog Quote: "npm ci is also more strict than a regular install"
+### ブログ引用: "npm ci is also more strict than a regular install(npm ci は通常のインストールよりも厳格です)"
 
-From [npm documentation](https://docs.npmjs.com/cli/ci.html)
+[npm documentation](https://docs.npmjs.com/cli/ci.html) より
 
-> This command is similar to npm-install, except it’s meant to be used in automated environments such as test platforms, continuous integration, and deployment – or any situation where you want to make sure you’re doing a clean install of your dependencies. It can be significantly faster than a regular npm install by skipping certain user-oriented features. It is also more strict than a regular install, which can help catch errors or inconsistencies caused by the incrementally-installed local environments of most npm users.
+> このコマンドは npm-install と似ていますが、テストプラットフォームや継続的インテグレーション、デプロイメントなどの自動化された環境や、依存関係をクリーンにインストールしたい状況での使用を想定しています。ユーザー指向の機能をスキップすることで、通常の npm インストールよりも大幅に高速になります。また、通常のインストールよりも厳格で、ほとんどの npm ユーザのローカル環境がインクリメンタルにインストールされていることによるエラーや不整合を検出するのに役立ちます。
