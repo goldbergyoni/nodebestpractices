@@ -150,7 +150,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 **Bestela:** erroreak toki bakarrean ez kudeatzeak kodea bikoiztea eragiten du eta, ziur aski, erroreak gaizki kudeatzea ere bai
 
-🔗 [**Informazio gehiago: kudeatu erroreak gune bakar batean**](/sections/errorhandling/centralizedhandling.md)
+🔗 [**Informazio gehiago: kudeatu erroreak gune bakar batean**](/sections/errorhandling/centralizedhandling.basque.md)
 
 <br/><br/>
 
