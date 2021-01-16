@@ -130,7 +130,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 **Bestela:** osagairen bati deitzean erroreak zein motatakoak diren jakin gabe, askoz zailagoa da eurak kontrolatzea. Are okerrago, erroreak deskribatzeko modu pertsonalizatuak erabiltzeak errore kritikoen informazioa galtzea ekar dezake, pilaren aztarna, besteak beste
 
-🔗 [**Informazio gehiago: erabili soilik “Errorea” objektu kapsulatua**](/sections/errorhandling/useonlythebuiltinerror.md)
+🔗 [**Informazio gehiago: erabili soilik “Errorea” objektu kapsulatua**](/sections/errorhandling/useonlythebuiltinerror.basque.md)
 
 <br/><br/>
 
