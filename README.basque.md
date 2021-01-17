@@ -220,7 +220,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 **Bestela:** pentsatu zure funtzioa agintza numeriko baten zain dagoela, adibidez «deskontua», eskatzaileak bidaltzea ahaztu duena; geroago, haren kodeak baieztatzen du « deskontua! = 0 (baimendutako deskontua zero baino handiagoa da)», eta horrek ahalmena ematen dio erabiltzaileari deskontua izateko. Ene, nolako errore arriskutsua! Konturatzen zara?
 
-🔗 [**Informazio gehiago: huts egin azkar**](/sections/errorhandling/failfast.md)
+🔗 [**Informazio gehiago: huts egin azkar**](/sections/errorhandling/failfast.basque.md)
 
 <br/><br/><br/>
 
