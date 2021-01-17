@@ -1,61 +1,62 @@
-# Leverage caching to reduce build times
+# キャッシュを活用してビルド時間を短縮する
 
-## One paragraph explainer
+## 一段落説明
 
-Docker images are a combination of layers, each instruction in your Dockerfile creates a layer. The docker daemon can reuse those layers between builds if the instructions are identical or in the case of a `COPY` or `ADD` files used are identical. ⚠️ If the cache can't be used for a particular layer all the subsequent layers will be invalidated too. That's why order is important. It is crucial to layout your Dockerfile correctly to reduce the number of moving parts in your build; the less updated instructions should be at the top and the ones constantly changing (like app code) should be at the bottom. It's also important to think that instructions that trigger long operation should be close to the top to ensure they happen only when really necessary (unless it changes every time you build your docker image). Rebuilding a whole docker image from cache can be nearly instantaneous if done correctly.
+Docker イメージはレイヤーの組み合わせであり、Dockerfile 内の各指示はそれぞれレイヤーを作成します。もし指示が同じであるか、`COPY` や `ADD` の利用が同じであれば、docker デーモンはビルド間でそれらのレイヤーを再利用することができます。⚠️ キャッシュが特定のレイヤーで利用できなかった場合は、それ以降のすべてのレイヤーも無効になります。そのため、順番が重要なのです。Dockerfile を正しくレイアウトすることは、ビルドにおいて可変となっている部分の数を減らすために非常に重要です; あまり更新されない処理は Dockerfile の上の方に記述し、更新が多い処理（アプリケーションのコードなど）は下の方に記述するべきです。また、時間のかかるオペレーションをトリガーする指示は、（docker イメージをビルドするたびに変更されない限り）本当に必要なときにのみ実行されるように、上部に近い位置に配置するべきです。正しく行えば、ほぼ瞬時にキャッシュから Docker イメージ全体をリビルドすることができます。
 
 ![Docker layers](/assets/images/docker_layers_schema.png)
 
-* Image taken from [Digging into Docker layers](https://medium.com/@jessgreb01/digging-into-docker-layers-c22f948ed612) by jessgreb01*
+* jessgreb01 による [Digging into Docker layers](https://medium.com/@jessgreb01/digging-into-docker-layers-c22f948ed612) から画像引用*
 
-### Rules
+### ルール
 
-#### Avoid LABEL that change all the time 
+#### 毎回変わるラベルの使用を避ける
 
-If you have a label containing the build number at the top of your Dockerfile, the cache will be invalidated at every build 
+もし Dockerfile の上部にビルド番号を含むラベルを記述している場合、毎回のビルドでキャッシュが無効化されてしまいます。
 
 ```Dockerfile
-#Beginning of the file
+# ファイルの先頭
 FROM node:10.22.0-alpine3.11 as builder
 
-# Don't do that here!
+# ここでラベルの指定をしないでください！
 LABEL build_number="483"
 
-#... Rest of the Dockerfile
+#... Dockerfile の残りの部分がここにきます
 ```
 
-#### Have a good .dockerignore file
+#### 良い .dockerignore ファイルを持つ
 
-[**See: On the importance of docker ignore**](/sections/docker/docker-ignore.md)
+[**参照: docker ignore の重要性について**](/sections/docker/docker-ignore.md)
 
-The docker ignore avoids copying files that could bust our cache logic, like tests results reports, logs or temporary files.
+docker ignore ファイルは、テスト結果レポートやログ、一時ファイルなど、キャッシュのロジックを壊す可能性のあるファイルのコピーを回避します。
 
-#### Install "system" packages first
+#### 「system」パッケージを最初にインストールする
 
-It is recommended to create a base docker image that has all the system packages you use. If you **really** need to install packages using `apt`,`yum`,`apk` or the likes, this should be one of the first instructions. You don't want to reinstall make,gcc or g++ every time you build your node app.
-**Do not install package only for convenience, this is a production app.**
+使用するすべてのシステムパッケージが入ったベース Docker イメージを作成することをおすすめします。もし`apt` や `yum`、`apk` などを利用してパッケージインストールする必要が **本当に** あるのであれば、最初の指示にすべきです。Node アプリケーションをビルドするのに毎回 make や gcc、g++ を再インストールしたくはないでしょう。
+**プロダクションアプリケーションなので、便宜のためだけにパッケージをインストールしてはいけません。**
 
-#### First, only ADD your package.json and your lockfile
+#### まず最初に、package.json と lockfile を追加するだけにする
 
 ```Dockerfile
 COPY "package.json" "package-lock.json" "./"
 RUN npm ci
 ```
 
-The lockfile and the package.json change less often. Copying them first will keep the `npm install` step in the cache, this saves precious time. 
+lockfile と package.json はあまり頻繁に変更されません。それらを最初にコピーしておくことで、`npm install` ステップをキャッシュすることができ、貴重な時間を節約できます。
 
-### Then copy your files and run build step (if needed) 
+### その後、ファイルをコピーしてビルドステップを実行する（必要なら）
 
 ```Dockerfile
 COPY . .
 RUN npm run build
 ```
 
-## Examples
+## 例
 
-### Basic Example with node_modules needing OS dependencies
+### OS 依存関係を必要とする node_modules の基本的な例
+
 ```Dockerfile
-#Create node image version alias
+# node イメージバージョンのエイリアスを作成する
 FROM node:10.22.0-alpine3.11 as builder
 
 RUN apk add --no-cache \
@@ -80,9 +81,10 @@ CMD ["node", "dist/server.js"]
 ```
 
 
-### Example with a build step (when using typescript for example)
+### ビルドステップの例（例えば、typescript を利用する場合）
+
 ```Dockerfile
-#Create node image version alias
+# node イメージバージョンのエイリアスを作成する
 FROM node:10.22.0-alpine3.11 as builder
 
 RUN apk add --no-cache \
@@ -101,7 +103,7 @@ RUN npm run build
 FROM node as app
 USER node
 WORKDIR /app
-# Only copying the files that we need
+# 必要なファイルのみをコピーする
 COPY --from=builder /app/node_modules node_modules
 COPY --from=builder /app/package.json .
 COPY --from=builder /app/dist dist
@@ -110,6 +112,6 @@ RUN npm prune --production
 CMD ["node", "dist/server.js"]
 ```
 
-## Useful links
+## 便利なリンク
 
-Docker docks: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#leverage-build-cache
+Docker ドキュメント: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#leverage-build-cache
