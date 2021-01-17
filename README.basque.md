@@ -180,7 +180,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 **Bestela:** console.log-ak arakatu behar badituzu edo testua desordenatua duen artxibo batean erroreak eskuz, kontsulta tresnarik gabe edo erregistratze bisore ganorazkorik gabe bilatu behar badituzu, ordu asko emango dituzu lanean gaueko ordu txikiak arte
 
-🔗 [**Informazio gehiago: erabili erregistratze tresna helduak**](/sections/errorhandling/usematurelogger.md)
+🔗 [**Informazio gehiago: erabili erregistratze tresna helduak**](/sections/errorhandling/usematurelogger.basque.md)
 
 <br/><br/>
 
