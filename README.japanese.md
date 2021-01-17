@@ -1171,13 +1171,13 @@ CMD [ "node", "dist/app.js" ]
 
 <br /><br /><br />
 
-## ![✔] 8.8. Plan for efficient caching
+## ![✔] 8.8. 効率的なキャッシュを計画する
 
-**TL;DR:** Rebuilding a whole docker image from cache can be nearly instantaneous if done correctly. The less updated instructions should be at the top of your Dockerfile and the ones constantly changing (like app code) should be at the bottom.
+**TL;DR:** 正しく行えば、ほぼ瞬時にキャッシュから Docker イメージ全体をリビルドすることができます。あまり更新されない処理は Dockerfile の上の方に記述し、更新が多い処理（アプリケーションのコードなど）は下の方に記述するべきです。
 
-**Otherwise:** Docker build will be very long and consume lot of resources even when making tiny changes
+**さもないと:** Docker のビルドが非常に長くなり、小さな変更をした場合でも多くのリソースを消費することになります。
 
-🔗 [**Read More: Leverage caching to reduce build times**](/sections/docker/use-cache-for-shorter-build-time.md)
+🔗 [**さらに読む: キャッシュを活用してビルド時間を短縮する**](/sections/docker/use-cache-for-shorter-build-time.japanese.md)
 
 <br /><br /><br />
 
