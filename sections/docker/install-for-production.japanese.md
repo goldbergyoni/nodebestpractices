@@ -27,7 +27,7 @@ RUN npm ci --production && npm clean cache --force
 
 <br/><br/>
 
-### コード例 – Iマルチステージビルドを使用した本番環境向けのインストール
+### コード例 – マルチステージビルドを使用した本番環境向けのインストール
 
 <details>
 
