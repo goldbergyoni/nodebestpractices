@@ -200,7 +200,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 **Bestela:** denbora asko pasa zenezake zure aplikazioaren errendimendua eta jardunik gabeko uneak neurtzen, eta, hala ere, ez zenuke aurkituko zeintzuk diren zure kodearen zatirik motelenak egoera errealetan eta ez zenuke inoiz jakingo nola eragiten dioten erabiltzailearen lanari
 
-🔗 [**Informazio gehiago: APM produktuen erabilera**](/sections/errorhandling/apmproducts.md)
+🔗 [**Informazio gehiago: APM produktuen erabilera**](/sections/errorhandling/apmproducts.basque.md)
 
 <br/><br/>
 
