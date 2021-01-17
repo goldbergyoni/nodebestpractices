@@ -210,7 +210,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 **Bestela:** zure erroreak xurgatuak izango dira eta ez da haien arrastorik geratuko. Ez duzu zertaz kezkatu
 
-🔗 [**Informazio gehiago: atzeman kudeatu gabeko aginduen arbuioak**](/sections/errorhandling/catchunhandledpromiserejection.md)
+🔗 [**Informazio gehiago: atzeman kudeatu gabeko aginduen arbuioak**](/sections/errorhandling/catchunhandledpromiserejection.basque.md)
 
 <br/><br/>
 
