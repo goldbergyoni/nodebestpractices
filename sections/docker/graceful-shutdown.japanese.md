@@ -1,15 +1,15 @@
-# Shutdown gracefully
+# グレースフルにシャットダウンする
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-In a Dockerized runtime like Kubernetes, containers are born and die frequently. This happens not only when errors are thrown but also for good reasons like relocating containers, replacing them with a newer version and more. It's achieved by sending a notice (SIGTERM signal) to the process with a 30 second grace period. This puts a challenge on the developer to ensure the app is handling the ongoing requests and clean-up resources in a timely fashion. Otherwise thousands of sad users will not get a response. Implementation-wise, the shutdown code should wait until all ongoing requests are flushed out and then clean-up resources. Easier said than done, practically it demands orchestrating several parts: Tell the LoadBalancer that the app is not ready to serve more requests (via health-check), wait for existing requests to be done, avoid handling new requests, clean-up resources and finally log some useful information before dying. If Keep-Alive connections are being used, the clients must also be notified that a new connection should be established - A library like [Stoppable](https://github.com/hunterloftis/stoppable) can greatly help achieving this.
+Kubernetes のような Docker 化されたランタイムでは、コンテナは頻繁に生まれては死にます。これはエラーが発生したときだけでなく、コンテナの再配置や新しいバージョンへの置き換えなどの正当な理由でも起こります。これは、30秒の猶予期間を設けてプロセスに通知（SIGTERM シグナル）を送ることで達成されます。これは、アプリが進行中のリクエストやクリーンアップリソースをタイムリーに処理していることを確認するために、開発者に課題を課します。そうでなければ、何千人もの悲しいユーザーがレスポンスを得ることができません。実装的には、シャットダウンコードは進行中のすべてのリクエストが洗い流されるまで待機し、その後でリソースをクリーンアップします。言うのは簡単ですが、実際にはいくつかの部分をオーケストレーションする必要があります: ロードバランサーにアプリがそれ以上のリクエストを提供する準備ができていないことを伝え（ヘルスチェックで）、既存のリクエストが完了するのを待ち、新しいリクエストを処理しないようにし、リソースをクリーンアップし、最後に死ぬ前に有用な情報をログに記録します。キープアライブ接続を使用している場合は、クライアントにも新しい接続を確立するように通知する必要があります - [Stoppable](https://github.com/hunterloftis/stoppable) のようなライブラリはこれを実現するのに非常に役立ちます。
 
 <br/><br/>
 
 
-### Code Example – Placing Node.js as the root process allows passing signals to the code (see [bootstrap using node](/sections/docker/bootstrap-using-node.md))
+### コード例 – Node.js をルートプロセスとして配置することで、コードにシグナルを渡すことができます（[bootstrap using node](/sections/docker/bootstrap-using-node.japanese.md) を参照してください）。
 
 <details>
 
@@ -19,10 +19,10 @@ In a Dockerized runtime like Kubernetes, containers are born and die frequently.
 
 FROM node:12-slim
 
-# Build logic comes here
+# ビルドロジックはここ
 
 CMD ["node", "index.js"]
-#This line above will make Node.js the root process (PID1)
+#この行は Node.js をルートプロセス(PID1)にします。
 
 ```
 
@@ -30,7 +30,7 @@ CMD ["node", "index.js"]
 
 <br/><br/>
 
-### Code Example – Using Tiny process manager to forward signals to Node
+### コード例 – Tiny プロセスマネージャを使用してノードにシグナルを転送する
 
 <details>
 
@@ -40,7 +40,7 @@ CMD ["node", "index.js"]
 
 FROM node:12-slim
 
-# Build logic comes here
+# ビルドロジックはここ
 
 ENV TINI_VERSION v0.19.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
@@ -48,7 +48,7 @@ RUN chmod +x /tini
 ENTRYPOINT ["/tini", "--"]
 
 CMD ["node", "index.js"]
-#Now Node will run a sub-process of TINI which acts as PID1
+#これで Node は PID1 として動作する TINI のサブプロセスを実行します。
 
 ```
 
@@ -56,7 +56,7 @@ CMD ["node", "index.js"]
 
 <br/><br/>
 
-### Code Example Anti Pattern – Using npm scripts to initialize the process
+### アンチパターン　コード例 – npm スクリプトを使ってプロセスを初期化する
 
 <details>
 
@@ -66,10 +66,10 @@ CMD ["node", "index.js"]
 
 FROM node:12-slim
 
-# Build logic comes here
+# ビルドロジックはここ
 
 CMD ["npm", "start"]
-#Now Node will run a sub-process of npm and won't receive signals
+#これで、Node は npm のサブプロセスを実行してシグナルを受信しなくなりました。
 
 ```
 
@@ -77,8 +77,8 @@ CMD ["npm", "start"]
 
 <br/><br/>
 
-### Example - The shutdown phases
+### 例 - シャットダウンフェーズ
 
-From the blog, [Rising Stack](https://blog.risingstack.com/graceful-shutdown-node-js-kubernetes/)
+ブログ [Rising Stack](https://blog.risingstack.com/graceful-shutdown-node-js-kubernetes/)　より
 
 ![alt text](/assets/images/Kubernetes-graceful-shutdown-flowchart.png "The shutdown phases")
