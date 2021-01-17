@@ -1151,13 +1151,13 @@ CMD [ "node", "dist/app.js" ]
 
 <br /><br /><br />
 
-## ![✔] 8.6. Shutdown smartly and gracefully
+## ![✔] 8.6. シャットダウンをスマートに、そしてグレースフルに
 
-**TL;DR:** Handle the process SIGTERM event and clean-up all existing connection and resources. This should be done while responding to ongoing requests. In Dockerized runtimes shutting down containers is not a rare event, rather a frequent occurrence that happen as part of routine work. Achieving this demands some thoughtful code to orchestrate several moving parts: The load balancer, keep-alive connections, the HTTP server and other resources
+**TL;DR:** プロセス SIGTERM イベントを処理し、既存のすべての接続とリソースをクリーンアップします。これは進行中のリクエストに応答している間に行う必要があります。Docker 化されたランタイムでは、コンテナのシャットダウンは珍しいイベントではなく、むしろルーチン作業の一部として頻繁に発生します。これを実現するためには、いくつかの可動部分をオーケストレーションするための思慮深いコードが必要です: ロードバランサ、キープアライブ接続、HTTP サーバ、その他のリソースです。
 
-**Otherwise:** Dying immediately means not responding to thousands of disappointed users
+**さもないと:** 即座に kill してしまうことは、何千人もの失望したユーザーに対応しないことを意味します。
 
-🔗 [**Read More: Graceful shutdown**](/sections/docker/graceful-shutdown.md)
+🔗 [**さらに読む: グレースフルシャットダウン**](/sections/docker/graceful-shutdown.japanese.md)
 
 <br /><br /><br />
 
