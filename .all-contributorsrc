@@ -1214,6 +1214,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "cisco0808",
+      "name": "kyeongtae kim",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/60251188?v=4",
+      "profile": "https://github.com/cisco0808",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
