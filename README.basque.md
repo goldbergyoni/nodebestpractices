@@ -170,7 +170,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 **Bestela:** ezagutzen ez duzun zerbait gertatzen denean, izan daiteke objekturen batzuk egoera txarrean daudelako (esaterako, globalki erabiltzen den gertaera igorle bat, barneko erroreren batengatik ondo ez dabilena) eta gerta daiteke aurrerantzean abisuek huts egitea edo modu ero samarrean funtzionatzea
 
-🔗 [**Informazio gehiago: gelditu prozesua**](/sections/errorhandling/shuttingtheprocess.md)
+🔗 [**Informazio gehiago: gelditu prozesua**](/sections/errorhandling/shuttingtheprocess.basque.md)
 
 <br/><br/>
 

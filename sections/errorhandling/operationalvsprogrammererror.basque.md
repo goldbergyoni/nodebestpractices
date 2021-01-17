@@ -81,7 +81,7 @@ Joyent blogetik, “Node.js errore kudeaketa" hitz gako bati esker sailkatua
 
 Node.js dokumentazio ofizialetik
 
-> …JavaScripten throwen funtsezko funtzionamenduan, ez dago ia inoiz "alde batera utzitakoa jasotzeko" modu seguruan egiteko biderik, erreferentziak galdu gabe edota bestelako zehaztugabeko egoera hauskorrak sortu gabe. Jaurtitako errore bati erantzuteko modurik seguruena prozesua itzaltzea da. Jakina, ohiko web zerbitzari batean, konekxio ugari eduki ahal ditzakezu irekita, eta ez da zentzuzkoa tupustean hauek ixtea beste batek eragindako errore batengatik. Planteamendu hoeberena, errorea bidali duen eskariari errore erantzun bat bidaltzea da, besteei beren atazak bukatzeko denbora utziz, eta eskari berriei kasu egiteari utzi prozesu horretan.
+> …JavaScripten throwen funtsezko funtzionamenduan, ez dago ia inoiz "alde batera utzitakoa jasotzeko" modu seguruan egiteko biderik, erreferentziak galdu gabe edota bestelako zehaztugabeko egoera hauskorrak sortu gabe. Jaurtitako errore bati erantzuteko modurik seguruena prozesua itzaltzea da. Jakina, web zerbitzari arrunt batean, konekxio ugari eduki ahal ditzakezu irekita, eta ez da zentzuzkoa tupustean hauek ixtea beste batek eragindako errore batengatik. Planteamendu hoeberena, errorea bidali duen eskariari errore erantzun bat bidaltzea da, besteei beren atazak bukatzeko denbora utziz, eta eskari berriei kasu egiteari utzi prozesu horretan.
 
 ### Blogeko Aipua: "Bestela zure aplikazioaren egoera arriskatu dezakezu"
 
