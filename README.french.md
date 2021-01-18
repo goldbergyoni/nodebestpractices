@@ -557,7 +557,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 ## ![✔] 4.13 Testez vos middlewares de manière isolée
 
-**TL;PL :** Lorsqu'un middleware contient une logique immense qui couvre de nombreuses requêtes, cela vaut la peine de le tester de manière isolée sans pour autant éveiller tout le framework du web. Cela peut être facilement réalisé en espionnant les objets {req, res, next}.
+**TL;PL :** Lorsqu'un middleware contient une logique immense qui couvre de nombreuses requêtes, cela vaut la peine de le tester de manière isolée sans réveiller l'ensemble du framework du web. Cela peut être facilement réalisé en espionnant les objets {req, res, next}.
 
 **Autrement :** Un bogue dans le middleware Express === un bogue dans toutes ou la plupart des requêtes
 
@@ -1548,6 +1548,11 @@ Thanks goes to these wonderful people who have contributed to this repository!
     <td align="center"><a href="https://www.nikolaso.com"><img src="https://avatars0.githubusercontent.com/u/60047271?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nik Osvalds</b></sub></a><br /><a href="#content-nosvalds" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/kdaniel21"><img src="https://avatars0.githubusercontent.com/u/39854385?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Daniel Kiss</b></sub></a><br /><a href="https://github.com/goldbergyoni/nodebestpractices/commits?author=kdaniel21" title="Documentation">📖</a></td>
     <td align="center"><a href="https://twitter.com/forresst17"><img src="https://avatars2.githubusercontent.com/u/163352?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Forresst</b></sub></a><br /><a href="#content-forresst" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/svenheden"><img src="https://avatars1.githubusercontent.com/u/76098?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jonathan Svenheden</b></sub></a><br /><a href="#content-svenheden" title="Content">🖋</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/AustrisC"><img src="https://avatars2.githubusercontent.com/u/12381652?v=4?s=100" width="100px;" alt=""/><br /><sub><b>AustrisC</b></sub></a><br /><a href="#content-AustrisC" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/cisco0808"><img src="https://avatars0.githubusercontent.com/u/60251188?v=4?s=100" width="100px;" alt=""/><br /><sub><b>kyeongtae kim</b></sub></a><br /><a href="#translation-cisco0808" title="Translation">🌍</a></td>
   </tr>
 </table>
 

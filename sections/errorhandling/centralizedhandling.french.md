@@ -2,7 +2,7 @@
 
 ### Un paragraphe d'explication
 
-En l'absence d'un objet dédié à la gestion des erreurs, les chances que des erreurs importantes se cachent sous le capot en raison d'une mauvaise manipulation sont plus grandes. L'objet gestionnaire d'erreur est là pour rendre l'erreur visible, par exemple en écrivant dans un logger bien formaté, en envoyant des événements à un produit de surveillance comme [Sentry](https://sentry.io/), [Rollbar](https://rollbar.com/) ou [Raygun](https://raygun.com/). La plupart des frameworks Web, comme [Express](http://expressjs.com/en/guide/error-handling.html#writing-error-handlers), fournissent un mécanisme de middleware de gestion des erreurs. Un flux de gestion d'erreurs typique pourrait être : des modules génèrent une erreur -> le routeur de l'API intercepte l'erreur -> il propage l'erreur au middleware (par exemple Express, KOA) qui est responsable de la capture des erreurs -> un gestionnaire d'erreurs centralisé est appelé -> le middleware est informé si cette erreur est une erreur non fiable (non opérationnelle) afin qu'il puisse redémarrer l'application avec douceur. Notez que c'est une pratique courante, mais erronée de gérer les erreurs dans le middleware Express - cela ne couvrira pas les erreurs qui sont lancées dans les interfaces non Web.
+Sans un objet dédié au traitement des erreurs, les risques de traitement incohérent des erreurs sont plus grands : les erreurs lancées à l'intérieur des requêtes web peuvent être traitées différemment de celles qui sont levées lors de la phase de démarrage et de celles qui sont levées par les jobs planifiés. Cela peut conduire à certains types d'erreurs qui sont mal gérés. Cet objet unique de traitement des erreurs est chargé de rendre l'erreur visible, par exemple, en écrivant dans un journal bien formaté, en envoyant des mesures à l'aide d'un produit de surveillance (comme [Prometheus](https://prometheus.io/), [CloudWatch](https://aws.amazon.com/cloudwatch/), [DataDog](https://www.datadoghq.com/) et [Sentry](https://sentry.io/)) et de décider si le processus doit planter. La plupart des frameworks web fournissent un mécanisme de middleware pour la détection des erreurs - une erreur typique consiste à placer le code de gestion des erreurs dans ce middelware. Ce faisant, vous ne pourrez pas réutiliser le même gestionnaire pour les erreurs qui sont détectées dans différents scénarios comme les tâches planifiées, les abonnés à la file d'attente des messages et les exceptions non détectées. Par conséquent, le middleware de gestion des erreurs ne doit que capturer les erreurs et les transmettre au gestionnaire. Un flux typique de traitement des erreurs pourrait être : un module lance une erreur -> le routeur API capture l'erreur -> il propage l'erreur au middleware (par exemple ou à un autre mécanisme de capture d'erreur au niveau de la requête) qui est responsable de la capture des erreurs -> un gestionnaire d'erreur centralisé est appelé.
 
 ### Exemple de code - un flux d'erreur typique
 
@@ -30,11 +30,16 @@ catch (error) {
 
 // Gestion des erreurs du middleware, nous déléguons la gestion au gestionnaire d'erreurs centralisé
 app.use(async (err, req, res, next) => {
-  const isOperationalError = await errorHandler.handleError(err);
-  if (!isOperationalError) {
-    next(err);
-  }
+  await errorHandler.handleError(err, res);//Le gestionnaire d'erreur enverra une réponse
 });
+
+process.on("uncaughtException", error => {
+  errorHandler.handleError(error);
+    });
+
+    process.on("unhandledRejection", (reason) => {
+        errorHandler.handleError(reason);
+    });
 ```
 </details>
 
@@ -62,11 +67,16 @@ catch (error) {
 
 // Gestion des erreurs du middleware, nous déléguons la gestion au gestionnaire d'erreurs centralisé
 app.use(async (err: Error, req: Request, res: Response, next: NextFunction) => {
-  const isOperationalError = await errorHandler.handleError(err);
-  if (!isOperationalError) {
-    next(err);
-  }
+  await errorHandler.handleError(err, res);
 });
+
+process.on("uncaughtException", (error:Error) => {
+  errorHandler.handleError(error);
+    });
+
+    process.on("unhandledRejection", (reason) => {
+        errorHandler.handleError(reason);
+    });
 ```
 </details>
 
@@ -80,11 +90,10 @@ app.use(async (err: Error, req: Request, res: Response, next: NextFunction) => {
 module.exports.handler = new errorHandler();
 
 function errorHandler() {
-  this.handleError = async (err) => {
-    await logger.logError(err);
-    await sendMailToAdminIfCritical;
-    await saveInOpsQueueIfCritical;
-    await determineIfOperationalError;
+  this.handleError = async (error, responseStream) => {
+    await logger.logError(error);
+    await fireMonitoringMetric(error);
+    await crashIfUntrustedErrorOrSendResponse(error, responseStream);
   };
 }
 ```
@@ -95,12 +104,11 @@ function errorHandler() {
 
 ```typescript
 class ErrorHandler {
-  public async handleError(err: Error): Promise<void> {
-    await logger.logError(err);
-    await sendMailToAdminIfCritical();
-    await saveInOpsQueueIfCritical();
-    await determineIfOperationalError();
-  };
+  public async handleError(err: Error, responseStream: Response): Promise<void> {
+    await logger.logError(error);
+    await fireMonitoringMetric(error);
+    await crashIfUntrustedErrorOrSendResponse(error, responseStream);      
+    };
 }
 
 export const handler = new ErrorHandler();
@@ -144,6 +152,10 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 });
 ```
 </details>
+
+### Illustration : Les acteurs et le flux du traitement des erreurs
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/error-handling-flow.png "Flux de traitement des erreurs")
+
 
 ### Citation de blog : « Parfois, les niveaux inférieurs ne peuvent rien faire d'utile, sauf propager l'erreur à leur appelant »
 

@@ -47,7 +47,7 @@ Using npm start
 FROM node:12-slim AS build
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
-RUN npm ci --production && npm clean cache --force
+RUN npm ci --production && npm cache clean --force
 
 # don’t do that!
 CMD "npm start"
