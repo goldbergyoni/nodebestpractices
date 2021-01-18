@@ -2,30 +2,30 @@
 
 Nola hobetu gure bisitarien irakurketa eta ikasketa.
 
-## 1. Sinplea hobea baino hobea da
+## 1. Sinplea ezin hobea da
 
-Gure helburua irakurtzeko eta ezagutza xurgatzeko erraza egitea da, edukia zaintzen dugu. Berez, gai konplexu eta nekagarriak zerrenda erraztuetan eraldatzen zentratuta gaude, informazio astuna xehetasun laburtu eta zehaztugabeagoarekin aldatu, gai eztabaidagarri eta 'sukoiak' ekidin eta orokorrean onartutako jarraibideen alde ideia subjektiboak sahiestu.
+Gure helburua da irakurketa eta ezagutzaren xurgaketa erraztea: edukia zaintzen dugu. Horrenbestez, saiatzen gara gai konplexu eta nekagarriak zerrenda erraztu bihurtzen, informazio astuna zati txikiagoetan eta zehaztasun gutxiagokoetan eratzen dugu, gai eztabaidagarri eta 'sukoiak' eta ekiditen ditugu, ideia subjektiboak sahiestuz eta orokorrean onartutako jarraibideak erabiliz
 
-## 2. Izan nabaritasunean oinarritua eta fidagarria
+## 2. Oinarritu egitate frogatu eta fidagarrietan
 
-Gure irakurleek gainbegiratzen duten informazioa fidagarria izatean konfidantza handia izan behar dute. Hau lortzeko modua erreferentziak, datuak eta gai honekin erlazionatutako bestelako baliabideak bezalako ebidentziak sartzea da. Modu praktikoan, saiatu iturburu fidagarrietako aipuak aurkezten, erakutsi konparaketak, erlazionatutako diseinu ereduak edo neurketa zientifikoak zure baieztapenak frogatzeko.
+Gure irakurleek konfidantza handia izan behar dute irakurtzen duten informazioa fidagarria dela. Hori lortzeko, erreferentziak, datuak eta gaiarekin zerikusirik duten bestelako ebidentziak erabiltzen ditugu. Praktikan, gure baieztapenak frogatzeko, ahalegintzen gara iturburu fidagarrietako aipuak aurkezten eta konparaketak, erlazionatutako diseinu ereduak edo neurketa zientifikoak azaltzen
 
 ## 3. EEKS (Elkarrekiko Esklusiboa eta Kolektiboki Sakona)
 
-Edukia ederki zuzendua eta fidagarria izateaz gain, honen irakurketak gaia guztiz estaldu behar du. Garrantzi gabeko azpigaiak batertuak izan behar dira.
+Edukia ondo editatua eta fidagarria izateaz gain, haren irakurketak gaiaz bere osoan jabetzea bermatu behar du. Garrantzi gabeko azpigaiak batertuak izan behar dira
 
-## 4. Formatu kontsekuentea
+## 4. Formatu koherentea
 
-Edukia txantiloi finkoak erabiliz dago aurkeztua. Etorkizuneko beste edozein edukik txantiloi bera errespetatu behar du. Bineta berriak gehitu nahi izanez gero, kopiatu bineta formatua iada existitzen den bineta batetik eta moldatu zure beharretara. Informazio gehiago nahi izanez gero begiratu [txantiloi hau](../sections/template.basque.md).
+Edukia txantiloi finkoak erabiliz dago aurkeztua, eta etorkizuneko beste edozein edukik txantiloi bera errespetatu behar du. Eduki berriak gehitu nahi izanez gero, kopiatu buleta formatua iada existitzen den bulet batetik eta moldatu zure beharretara. Informazio gehiago nahi izanez gero begiratu [txantiloi hau](../sections/template.basque.md)
 
-## 5. Node.jsi buruz da
+## 5. Node.jsi buruz ari gara
 
-Aholku bakoitza zuzenean Node.jsekin erlazionatuta egon behar da, eta ez orokorrean software garapenarekin. Node.jsen eredu/arau generikoak ezatzea aholkatzen dugunean, edukia Noderen ezarpenean ardaztuta egon behar da. Adibidez, eskaera sarrera guztiak onbideratzea aholkatzen dugunean segurtasun arrazoiengatik, Node-lingo erabili beharko litzateke, ‘Middlewarea erabili eskaera sarrera onbideratzeko‘. Gai batek Node.jsen ezarpenik ez badauka (esaterako Python & Jaban bezala), gehitu edukiiontzi generiko batean, begiratu 6.5 gaia adibidetzat.
+Aholku bakoitzak zuzenean Node.jsekin erlazionatuta egon behar du, eta ez orokorrean software garapenarekin. Node.jsen eredu/arau generikoak ezartzea aholkatzen dugunean, edukiak Noderen ezarpenean ardaztuta egon behar da. Adibidez, eskaera sarrera guztiak onbideratzea aholkatzen dugunean, segurtasun arrazoiengatik, Node-lingo erabili behar da, ‘erabili middlewarea eskaera sarrera onbideratzeko‘. Gai batek Node.jsen ezarpenik ez badauka (esaterako Python & Jaban bezala), gehitu edukiontzi generiko batean, begiratu 6.5 gaia adibidetzat
 
 ## 6. Hornitzaile nagusiak soilik
 
-Batzuetan, npm paketeak, open source tresnak edota produktu komertzialak bezalako zenbait erronka eta arazo abordatzen dituzten hornitzaileen izenak gehitzea erabilgarria da. Gainezka egiten duten zerrenda luzeak edota ospetsuak eta egonkorrak ez diren proiektuak ekiditeko, hurrengo arauak proposatu ditugu:
+Batzuetan, npm paketeak, open source tresnak edota produktu komertzialak bezalako zenbait erronka eta arazo abordatzen dituzten hornitzaileen izenak gehitzea erabilgarria da. Gainezka egiten duten zerrenda luzeak edota ospetsuak eta egonkorrak ez diren proiektuak ekiditeko, hurrengo arauak proposatzen ditugu:
 
-- Soilik 3 hornitzaile ezagunenak izan behar dira gomendatuak – hitz gako batentzat bilaketa motore bateko (Google edo Github ospearen arabera ordenatua) lehenengo 3 emaitzetan agertzen den hornitzaile bat gure gomendioetan aipatu genezake
-- npm pakete bat bada, batazbeste egunean gutxienez 750 aldiz deskargatua izan behar da
-- Open source proiektu bat bada, azken 6 hilabeteetan gutxienez behin eguneratua izan behar da
+- Soilik 3 hornitzaile ezagunenak gomendatu behar dira: hitz gako batentzat bilaketa motore bateko (Google edo Github ospearen arabera ordenatua) lehenengo 3 emaitzetan agertzen den hornitzaile bat aipatu genezake gure gomendioetan
+- npm pakete bat bada, batazbeste egunean, gutxienez, 750 aldiz deskargatua izan behar da
+- Kode irekiko proiektu bat bada, azken 6 hilabeteetan gutxienez behin eguneratua izan behar da
