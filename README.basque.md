@@ -232,7 +232,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 **Bestela:** itxaron gabe agintza itzultzen duen funtzioa ez da pilaren arrastoan agertuko. Galdutako fotograma horiek akatsa eragingo duen fluxua ulertzea zailduko lukete, batez ere portaera anormalaren zergatia falta den funtzioaren barruan baldin badago
 
-🔗 [**Gehiago irakurri: agintzak itzultzea**](/sections/errorhandling/returningpromises.md)
+🔗 [**Gehiago irakurri: agintzak itzultzea**](/sections/errorhandling/returningpromises.basque.md)
 
 <br/><br/><br/>
 
