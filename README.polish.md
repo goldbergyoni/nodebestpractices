@@ -18,7 +18,7 @@
 
 <br/>
 
-Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![TR](/assets/flags/TR.png)**TR** w trakcie! i and ![EU](/assets/flags/EU.png)**EU** w trakcie!)](#translations))](#tłumaczenia)
+Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![TR](/assets/flags/TR.png)**TR**, [EU](/assets/flags/EU.png)**EU** w trakcie!)](#translations))](#tłumaczenia)
 
 <br/>
 
@@ -99,9 +99,9 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 ## ![✔] 1.5 Używaj konfiguracji przyjaznej środowisku, bezpiecznej i hierarchicznej
 
-  **TL;DR:** Idealne i bezbłędne ustawienie konfiguracji powinno zapewnić, że (a) klucze można odczytać z pliku ORAZ ze zmiennych środowiskowych (b) dane wrażliwe są przechowywane poza zatwierdzonym kodem (c) konfiguracja jest hierarchiczna dla łatwiejszego wyszukiwania. Istnieje kilka pakietów, które mogą pomóc zaznaczyć większość z tych pól, takich jak [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config) i [convict](https://www.npmjs.com/package/convict)
+**TL;DR:** Idealne i bezbłędne ustawienie konfiguracji powinno zapewnić, że (a) klucze można odczytać z pliku ORAZ ze zmiennych środowiskowych (b) dane wrażliwe są przechowywane poza zatwierdzonym kodem (c) konfiguracja jest hierarchiczna dla łatwiejszego wyszukiwania. Istnieje kilka pakietów, które mogą pomóc zaznaczyć większość z tych pól, takich jak [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config) i [convict](https://www.npmjs.com/package/convict)
 
-  **W przeciwnym razie:** Niespełnienie któregokolwiek z wymagań konfiguracji po prostu ugrzęźnie w zespole programistów lub DevOps. Prawdopodobnie jedno i drugie
+**W przeciwnym razie:** Niespełnienie któregokolwiek z wymagań konfiguracji po prostu ugrzęźnie w zespole programistów lub DevOps. Prawdopodobnie jedno i drugie
 
 🔗 [**Czytaj więcej: najlepsze praktyki dotyczące konfiguracji**](/sections/projectstructre/configguide.polish.md)
 
@@ -109,7 +109,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 <p align="right"><a href="#spis-treści">⬆ Wróć na górę</a></p>
 
-  # `2. Procedury obsługi błędów`
+# `2. Procedury obsługi błędów`
 
 ## ![✔] 2.1 Użyj Async-Await lub promises do obsługi błędów asynchronicznych
 
@@ -256,8 +256,7 @@ function someFunction() {
 }
 
 // Avoid
-function someFunction()
-{
+function someFunction() {
   // code block
 }
 ```
@@ -334,11 +333,11 @@ class SomeClassExample {}
 
 // for const names we use the const keyword and lowerCamelCase
 const config = {
-  key: 'value'
+  key: "value",
 };
 
 // for variables and functions names we use lowerCamelCase
-let someVariableExample = 'value';
+let someVariableExample = "value";
 function doSomething() {}
 ```
 
@@ -372,12 +371,12 @@ function doSomething() {}
 
 ```javascript
 // Do
-module.exports.SMSProvider = require('./SMSProvider');
-module.exports.SMSNumberResolver = require('./SMSNumberResolver');
+module.exports.SMSProvider = require("./SMSProvider");
+module.exports.SMSNumberResolver = require("./SMSNumberResolver");
 
 // Avoid
-module.exports.SMSProvider = require('./SMSProvider/SMSProvider.js');
-module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolver.js');
+module.exports.SMSProvider = require("./SMSProvider/SMSProvider.js");
+module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolver.js");
 ```
 
 <br/><br/>
@@ -391,18 +390,18 @@ module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolve
 ### 3.10 Przykład kodu
 
 ```javascript
-'' == '0'           // false
-0 == ''             // true
-0 == '0'            // true
+"" == "0"; // false
+0 == ""; // true
+0 == "0"; // true
 
-false == 'false'    // false
-false == '0'        // true
+false == "false"; // false
+false == "0"; // true
 
-false == undefined  // false
-false == null       // false
-null == undefined   // true
+false == undefined; // false
+false == null; // false
+null == undefined; // true
 
-' \t\r\n ' == 0     // true
+" \t\r\n " == 0; // true
 ```
 
 Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte z `===`
@@ -575,7 +574,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 ## ![✔] 5.4. Zablokuj zależności
 
-**TL;DR:** Twój kod musi być identyczny we wszystkich środowiskach, ale zadziwiająco npm pozwala domyślnie dryfować zależnościom między środowiskami - podczas instalowania pakietów w różnych środowiskach próbuje pobrać najnowszą wersję łatek. Aby temu zaradzić, użyj plików konfiguracyjnych npm, .npmrc, które każą każdemu środowisku zapisać dokładną (nie najnowszą) wersję każdego pakietu. Alternatywnie, dla dokładniejszej kontroli grained, użyj „npm shrinkwrap”. \ * Aktualizacja: od NPM5 zależności są domyślnie zablokowane. Nowy menedżer pakietów w mieście, Yarn, również domyślnie nas objął
+**TL;DR:** Twój kod musi być identyczny we wszystkich środowiskach, ale zadziwiająco npm pozwala domyślnie dryfować zależnościom między środowiskami - podczas instalowania pakietów w różnych środowiskach próbuje pobrać najnowszą wersję łatek. Aby temu zaradzić, użyj plików konfiguracyjnych npm, .npmrc, które każą każdemu środowisku zapisać dokładną (nie najnowszą) wersję każdego pakietu. Alternatywnie, dla dokładniejszej kontroli grained, użyj „npm shrinkwrap”. \ \* Aktualizacja: od NPM5 zależności są domyślnie zablokowane. Nowy menedżer pakietów w mieście, Yarn, również domyślnie nas objął
 
 **W przeciwnym razie:** Dział kontroli jakości dokładnie przetestuje kod i zatwierdzi wersję, która będzie zachowywać się inaczej w środowisku produkcyjnym. Co gorsza, różne serwery w tym samym klastrze produkcyjnym mogą uruchamiać inny kod
 
@@ -733,7 +732,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Skorzystaj z wtyczek liniowych związanych z bezpieczeństwem, takich jak [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security), aby wychwycić luki w zabezpieczeniach i problemy jak najwcześniej, najlepiej gdy są one  kodowane. Może to pomóc w wykrywaniu słabych punktów bezpieczeństwa, takich jak używanie eval, wywoływanie procesu potomnego lub importowanie modułu z literałem łańcucha (np. dane wejściowe użytkownika). Kliknij „Czytaj więcej” poniżej, aby zobaczyć przykłady kodu, które zostaną złapane przez linijkę bezpieczeństwa
+**TL;DR:** Skorzystaj z wtyczek liniowych związanych z bezpieczeństwem, takich jak [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security), aby wychwycić luki w zabezpieczeniach i problemy jak najwcześniej, najlepiej gdy są one kodowane. Może to pomóc w wykrywaniu słabych punktów bezpieczeństwa, takich jak używanie eval, wywoływanie procesu potomnego lub importowanie modułu z literałem łańcucha (np. dane wejściowe użytkownika). Kliknij „Czytaj więcej” poniżej, aby zobaczyć przykłady kodu, które zostaną złapane przez linijkę bezpieczeństwa
 
 **W przeciwnym razie:** To, co mogło być bezpośrednią słabością bezpieczeństwa podczas programowania, staje się poważnym problemem w produkcji. Ponadto projekt może nie być zgodny ze spójnymi praktykami bezpieczeństwa kodu, co prowadzi do wprowadzenia luk w zabezpieczeniach lub poufnych danych wrażliwych wrzuconych w zdalnych repozytoriach
 
@@ -1041,18 +1040,16 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <br /><br /><br />
 
-
 ## ![✔] 7.2. Preferuj natywne metody JS, niż narzędzia ponad powierzchnią użytkownika, takie jak Lodash
 
- **TL;DR:** Korzystanie z bibliotek narzędziowych takich jak `lodash` i `underscore` w porównaniu z metodami natywnymi jest często bardziej karalne, ponieważ prowadzi do niepotrzebnych zależności i spowalnia działanie.
-  Należy pamiętać, że wraz z wprowadzeniem nowego silnika V8 wraz z nowymi standardami ES, natywne metody zostały ulepszone w taki sposób, że są teraz o około 50% wydajniejsze niż biblioteki narzędziowe.
+**TL;DR:** Korzystanie z bibliotek narzędziowych takich jak `lodash` i `underscore` w porównaniu z metodami natywnymi jest często bardziej karalne, ponieważ prowadzi do niepotrzebnych zależności i spowalnia działanie.
+Należy pamiętać, że wraz z wprowadzeniem nowego silnika V8 wraz z nowymi standardami ES, natywne metody zostały ulepszone w taki sposób, że są teraz o około 50% wydajniejsze niż biblioteki narzędziowe.
 
 **W przeciwnym razie:** Będziesz musiał utrzymywać mniej wydajne projekty, w których mógłbyś po prostu użyć tego, co było **już** dostępne lub zająć się kilkoma kolejnymi liniami w zamian za kilka dodatkowych plików.
 
 🔗 [**Czytaj więcej: Native over user land utils**](/sections/performance/nativeoverutil.polish.md)
 
 <br/><br/><br/>
-
 
 # Milestones
 
@@ -1078,6 +1075,8 @@ Wszystkie tłumaczenia pochodzą od społeczności. Z przyjemnością uzyskamy w
 - ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Courtesy of [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94))
 - ![ES](/assets/flags/ES.png) [Spanish](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/95))
 - ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/139))
+- ![EU](/assets/flags/EU.png) [Basque](README.basque.md) - Courtesy of [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/842))
+
 
 <br/><br/>
 
@@ -1132,14 +1131,14 @@ Dziękujemy wszystkim wpółpracownikom! 🙏
 Nasi współpracownicy są członkami, którzy regularnie współuczestniczą w repozytorium, sugerując nowe najlepsze praktyki, analizując problemy, sprawdzając pull requesty i wiele więcej. Jeśli chcesz pomóc nam poprowadzić tysiące ludzi do tworzenia lepszych aplikacji Node.js, przeczytaj nasze [wytyczne dla współpracowników](/.operations/CONTRIBUTING.md) 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
-| :--: | :--: |
-| [Ido Richter (Founder)](https://github.com/idori) | [Keith Holliday](https://github.com/TheHollidayInn) |
+| :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
+|                                    [Ido Richter (Founder)](https://github.com/idori)                                    |                                        [Keith Holliday](https://github.com/TheHollidayInn)                                         |
 
 ### Wcześniejsza współpraca
 
 | <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"></a> |
-| :--: |
-| [Refael Ackermann](https://github.com/refack) |
+| :-------------------------------------------------------------------------------------------------------------------------: |
+|                                        [Refael Ackermann](https://github.com/refack)                                        |
 
 <br/>
 

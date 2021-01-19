@@ -257,8 +257,7 @@ function someFunction() {
 }
 
 // Avoid
-function someFunction()
-{
+function someFunction() {
   // code block
 }
 ```
@@ -335,11 +334,11 @@ class SomeClassExample {}
 
 // para nomes de constantes nós usamos a palavra const e lowerCamelCase
 const config = {
-  key: 'value'
+  key: "value",
 };
 
 // para nomes de variáveis e funções nós usamos lowerCamelCase
-let someVariableExample = 'value';
+let someVariableExample = "value";
 function doSomething() {}
 ```
 
@@ -374,12 +373,12 @@ function doSomething() {}
 
 ```javascript
 // Do
-module.exports.SMSProvider = require('./SMSProvider');
-module.exports.SMSNumberResolver = require('./SMSNumberResolver');
+module.exports.SMSProvider = require("./SMSProvider");
+module.exports.SMSNumberResolver = require("./SMSNumberResolver");
 
 // Avoid
-module.exports.SMSProvider = require('./SMSProvider/SMSProvider.js');
-module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolver.js');
+module.exports.SMSProvider = require("./SMSProvider/SMSProvider.js");
+module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolver.js");
 ```
 
 <br/><br/>
@@ -393,18 +392,18 @@ module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolve
 ### Exemplo de Código
 
 ```javascript
-'' == '0'           // false
-0 == ''             // true
-0 == '0'            // true
+"" == "0"; // false
+0 == ""; // true
+0 == "0"; // true
 
-false == 'false'    // false
-false == '0'        // true
+false == "false"; // false
+false == "0"; // true
 
-false == undefined  // false
-false == null       // false
-null == undefined   // true
+false == undefined; // false
+false == null; // false
+null == undefined; // true
 
-' \t\r\n ' == 0     // true
+" \t\r\n " == 0; // true
 ```
 
 Todas as declarações acima false se feitas com `===`.
@@ -1055,6 +1054,7 @@ Todas as traduções são contribuições da comunidade. Nós ficaremos felizes 
 - ![RU](/assets/flags/RU.png) [Russo](https://github.com/goldbergyoni/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/454))
 - ![ES](/assets/flags/ES.png) [Espanhol](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/95))
 - ![TR](/assets/flags/TR.png) Turco ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/139))
+- ![EU](/assets/flags/EU.png) [Basque](README.basque.md) - Cortesia de [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/842))
 
 <br/><br/>
 
@@ -1109,14 +1109,14 @@ Obrigado a todos nossos colaboradores! 🙏
 Nossos colaboradores são membros que estão contribuindo com o repositório em base regular, sugerindo novas práticas recomendadas, triando problemas, analisando solicitações de pull e muito mais. Se você estiver interessado em nos ajudar a orientar milhares de pessoas a criar melhores aplicações Node.js, leia nossas [diretrizes de colaborador](/.operations/CONTRIBUTING.md) 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
-| :--: | :--: |
-| [Ido Richter (Founder)](https://github.com/idori) | [Keith Holliday](https://github.com/TheHollidayInn) |
+| :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
+|                                    [Ido Richter (Founder)](https://github.com/idori)                                    |                                        [Keith Holliday](https://github.com/TheHollidayInn)                                         |
 
 ### Colaboradores anteriores
 
 | <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"></a> |
-| :--: |
-| [Refael Ackermann](https://github.com/refack) |
+| :-------------------------------------------------------------------------------------------------------------------------: |
+|                                        [Refael Ackermann](https://github.com/refack)                                        |
 
 <br/>
 
