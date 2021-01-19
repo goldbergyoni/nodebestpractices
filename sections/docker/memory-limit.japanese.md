@@ -1,14 +1,14 @@
-# Set memory limits using both Docker and v8
+# Docker と v8 の両方を使ってメモリ制限を設定する
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 一段落説明
 
-A memory limit tells the process/container the maximum allowed memory usage - a request or usage beyond this number will kill the process (OOMKill). Applying this is a great practice to ensure one citizen doesn't drink all the juice alone and leaves other components to starve. Memory limits also allow the runtime to place a container in the right instance - placing a container that consumes 500MB in an instance with 300MB memory available will lead to failures. Two different options allow configuring this limit: V8 flags (--max-old-space-size) and the Docker runtime, both are absolutely needed. Ensure to always configure the Docker runtime limits as it has a much wider perspective for making the right health decisions: Given this limit, the runtime knows how to scale and create more resources. It can also make a thoughtful decision on when to crash - if a container has a short burst in memory request and the hosting instance is capable of supporting this, Docker will let the container stay alive. Last, with Docker the Ops experts can set various production memory configurations that can be taken into account like memory swap. This by itself won't be enough - Without setting v8's --max-old-space-size, the JavaScript runtime won't push the garbage collection when getting close to the limits and will also crash when utilizing only 50-60% of the host environment. Consequently, set v8's limit to be 75-100% of Docker's memory limit.
+メモリ制限はプロセス/コンテナに許容されるメモリ使用量の最大値を伝えます - この数を超えるリクエストや使用はプロセスを強制終了させます ( OOMKill )。これを適用することは、一人の市民がジュースを一人で飲み干すことなく、他のコンポーネントを飢えさせないようにするための素晴らしいプラクティスになります。メモリ制限はまた、ランタイムがコンテナを適切なインスタンスに配置することを可能にします - 300MBのメモリが利用可能なインスタンスに500MBを消費するコンテナを配置すると失敗につながります。2つの異なるオプションでこの制限を設定することができます: V8 フラグ( --max-old-space-size )と Docker ランタイムですが、どちらも絶対に必要です。正しい健全性の判断をするためのより広い視野を持っているので、常に Docker ランタイムの制限を設定するようにしてください。この制限があると、ランタイムはどのようにスケールしてより多くのリソースを作成するかが分かります。また、いつクラッシュするかについても思慮深い判断を下すことができます - コンテナがメモリ要求の短いバーストを持っていて、ホスティングインスタンスがこれをサポートすることができる場合、Docker はコンテナを生きたままにしておきます。最後に、Docker を使って、Ops のエキスパートはメモリスワップのように考慮に入れることができる様々なプロダクションメモリの設定を設定することができます。これだけでは十分ではありません - v8 の--max-old-space-size を設定しないと、JavaScript ランタイムは限界に近づいたときにガベージコレクションをプッシュしませんし、ホスト環境の50～60%しか利用していないときにもクラッシュしてしまいます。結果的に、v8 の制限値を Docker のメモリ制限値の75～100%に設定します。
 
 <br/><br/>
 
-### Code Example – Memory limit with Docker
+### コード例 – Docker でのメモリ制限
 
 <details>
 <summary><strong>Bash</strong></summary>
@@ -21,7 +21,7 @@ docker run --memory 512m my-node-app
 
 <br/><br/>
 
-### Code Example – Memory limit with Kubernetes and v8
+### コード例 – Kubernetes と v8 でのメモリ制限
 
 <details>
 <summary><strong>Kubernetes deployment yaml</strong></summary>
@@ -47,24 +47,24 @@ spec:
 
 <br/><br/>
 
-### Kubernetes documentation: "If you do not specify a memory limit"
+### Kubernetes のドキュメント: "If you do not specify a memory limit(メモリ制限を指定しない場合)"
 
-From [K8S documentation](https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource/)
+[K8S ドキュメント](https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource/) より
 
-> The Container has no upper bound on the amount of memory it uses. The Container could use all of the memory available on the Node where it is running which in turn could invoke the OOM Killer. Further, in case of an OOM Kill, a container with no resource limits will have a greater chance of being killed.
-
-<br/><br/>
-
-### Docker documentation: "it throws an OOME and starts killing processes "
-
-From [Docker official docs](https://docs.docker.com/config/containers/resource_constraints/)
-
-> It is important not to allow a running container to consume too much of the host machine’s memory. On Linux hosts, if the kernel detects that there is not enough memory to perform important system functions, it throws an OOME, or Out Of Memory Exception, and starts killing processes to free up memory.
+> コンテナは使用するメモリ量に上限はありません。コンテナは、それが実行されているノードで利用可能なすべてのメモリを使用することができ、その結果、OOM Killer を呼び出すことができます。さらに、OOM Killer の場合、リソースの制限がないコンテナは kill される可能性が高くなります。
 
 <br/><br/>
 
-### Node.js documentation: "V8 will spend more time on garbage collection"
+### Docker のドキュメント: "it throws an OOME and starts killing processes(OOME を投げてプロセスを殺し始めます)"
 
-From [Node.js official docs](https://nodejs.org/api/cli.html#cli_max_old_space_size_size_in_megabytes)
+[Docker 公式ドキュメント](https://docs.docker.com/config/containers/resource_constraints/) より
 
-> Sets the max memory size of V8's old memory section. As memory consumption approaches the limit, V8 will spend more time on garbage collection in an effort to free unused memory. On a machine with 2GB of memory, consider setting this to 1536 (1.5GB) to leave some memory for other uses and avoid swapping.
+> 実行中のコンテナがホストマシンのメモリを消費しすぎないようにすることが重要です。Linux ホストでは、カーネルが重要なシステム機能を実行するのに十分なメモリがないことを検出すると、OOME (Out Of Memory Exception) をスローし、メモリを解放するためにプロセスの kill を開始します。
+
+<br/><br/>
+
+### Node.js のドキュメント: "V8 will spend more time on garbage collection(V8 はガーベージコレクションに時間を費やすことになります)"
+
+[Node.js 公式ドキュメント](https://nodejs.org/api/cli.html#cli_max_old_space_size_size_in_megabytes) より
+
+> V8 の古いメモリセクションの最大メモリサイズを設定します。メモリ消費量が限界に近づくと、V8 は未使用のメモリを解放するためにガベージコレクションに多くの時間を費やします。メモリが2GBのマシンでは、これを1536 (1.5GB)に設定して、他の用途のためにメモリを残し、スワップを避けることを検討してください。
