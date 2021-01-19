@@ -465,7 +465,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 <br/><br/>
 
-## ![✔] 4.3  
+## ![✔] 4.3
 
 **TL;PL:** egituratu zure probak ondo bereizitako 3 ataletan: antolatu, aritu eta baieztatu (AAA). Lehenengo atalean probaren konfigurazioa egin behar da; ondoren proba egikaritu behar da; eta, azkenik, baieztapen fasea dator. Egitura horri jarraitzeak bermatzen du irakurleak garuneko PUZik ez gastatzea proba plana ulertzen
 
@@ -489,7 +489,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 **Bestela:** probek huts egin dutela eta, inplementazioa bertan behera utzi beharra izan duzula pentsatu. Egoera horretan, lan taldeak denbora asko pasatuko du porrotaren zergatiak aztertzen, azkenean, ondorio tamalgarri honetara iristeko: sistema ondo dabil; probek, ordea, elkarri eragiten diote eta egitura hausten dute
 
-🔗 [**Informazio gehiago: saihestu datu globalak**](/sections/testingandquality/avoid-global-test-fixture.md)
+🔗 [**Informazio gehiago: saihestu datu globalak**](/sections/testingandquality/avoid-global-test-fixture.basque.md)
 
 <br/><br/>
 
