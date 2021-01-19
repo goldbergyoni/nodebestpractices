@@ -461,7 +461,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 **Bestela:** inplementazio batek huts egin du, “Gehitu produktua“ izeneko proba batek huts egin du. Esaten dizu horrek zehazki zer dabilen gaizki?
 
-🔗 [**Informazio gehiago: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
+🔗 [**Informazio gehiago: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.basque.md)
 
 <br/><br/>
 
@@ -550,6 +550,8 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 **Bestela:** hornitzaile espezializatu bat aukeratzeak blokeatu zaitzake, pertsonalizazio aurreratu bat behar duzunean. Bestalde, Jenkins erabiltzeak denbora asko eska dezake azpiegitura konfiguratzean
 
 🔗 [**Irakurri gehiago: IC plataforma aukeratzea**](/sections/testingandquality/citools.md)
+
+<br/><br/>
 
 ## ![✔] 4.13 Probatu zure middlewareak eurak bakarrik
 
