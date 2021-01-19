@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Osagaien kodea geruzatan banandu: web, zerbitzuak, and Datuen Sarbide Geruza (DSG) (Ingelesez Data Access Layer, DAL)
+### Osagaien kodea geruzatan banandu: web, zerbitzuak, eta Datuen Sarbide Geruza (DSG) (Ingelesez Data Access Layer, DAL)
 
 ![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Osagaien kodea geruzatan banandu")
 
