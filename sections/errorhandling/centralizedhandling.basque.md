@@ -4,7 +4,7 @@
 
 Errore kudeaketarako ardura bakarreko objektu bat ez izateak, errore garrantzitsuak ezkutatzeko aukerak ugaritzen ditu kudeaketa ezegoki baten eraginpean. Errore kudeaketarako objektua, errorea begibistako bihurtzearen arduradun da, adibidez, egoki formateatutako erregistro batean idatziz, ebentuak [Sentry](https://sentry.io/), [Rollbar](https://rollbar.com/), edota [Raygun](https://raygun.com/) bezalako monitorizazio sistemaren batera bidaliz. [Express](http://expressjs.com/en/guide/error-handling.html#writing-error-handlers) bezalako web framework gehienak, errore kudeaketa middleware mekanismo bat proposatzen dute. Errore kudeaketa fluxu tipiko bat hau izan daiteke: moduluren batek errore bat jaurtitzen du -> API routerrak errorea harrapatzen du -> errorea middlewarera hedatzen du, (adibidez Express edo KOA), zeinek erroreak harrapatzeko ardura duen -> errore kudeatzaile zentralizatu bati deitzen zaio -> middlewareari esaten zaio ia errore hau konfiantzazkoa den (ez operazio errorea) aplikazioa dotoreki berrekiteko. Kontutan izan Express midelwarean erroreak kudeatzea praktika arrunta dela, okerra izan arren. Hau egiteak ez ditu kontutan hartzen weba ez diren bestelako interfazeetako erroreak.
 
-### Kodearen Adibidea – ohizko errore fluxu bat
+### Kodearen adibidea – ohizko errore fluxu bat
 
 <details>
 <summary><strong>Javascript</strong></summary>
@@ -72,7 +72,7 @@ app.use(async (errorea: Error, req: Request, res: Response, next: NextFunction) 
 
 </details>
 
-### Kodearen Adibidea – erroreen kudeaketa ardura bakarreko objektu batekin
+### Kodearen adibidea – erroreen kudeaketa ardura bakarreko objektu batekin
 
 <details>
 <summary><strong>Javascript</strong></summary>
@@ -110,7 +110,7 @@ export const kudeatzailea = new ErroreKudeatzailea();
 
 </details>
 
-### Kodearen Adibidea – Anti Eredua: erroreak middleware barruan kudeatu
+### Kodearen adibidea – Anti Eredua: erroreak middleware barruan kudeatu
 
 <details>
 <summary><strong>Javascript</strong></summary>

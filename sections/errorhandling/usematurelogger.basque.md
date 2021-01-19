@@ -13,7 +13,7 @@ Errendimendu handiko erregistratze tresnek erroreak eta arazoa posibleak identif
 [pino]: https://www.npmjs.com/package/pino
 [splunk]: https://www.splunk.com/
 
-### Kodearen Adibidea
+### Kodearen adibidea
 
 ```JavaScript
 const pino = require('pino');

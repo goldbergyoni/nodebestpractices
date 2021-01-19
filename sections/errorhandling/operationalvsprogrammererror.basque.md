@@ -4,7 +4,7 @@
 
 Ondorengo bi errore mota hauek bereizteak zure aplikazioaren matxura-denbora gutxitu eta programazio-errore eroak ekiditen lagunduko du: eragiketa erroreek, gertatu dena eta honen ondorioak (adibidez, HTTP zerbitzu bati egindako deiak huts egitea konekxio arazo bat dela eta) ulertzen dituzun egoerei deritze. Aldiz, programazio erroreek, errorea zergatik eta nonkik etorri den (balio zehaztugabe bat irakurtzen saiatzen den kodea edo memoria ihes egiten dion datu-basea izan daitezke) ez dakizun egoerei deritze. Eragiketa erroreak erlatiboki kudeaerrezak dira, normalean errorea erregistratzea nahikoa da. Gauzak konplikatuagoak izan daitezke garatzaile errore bat tupustean agertzen denean, aplikazioa egoera inkontsekuente batean aurki daiteke eta dotoreki aplikazioa berrekitea baino hoberik ez duzu
 
-### Kodearen Adibidea – errore bat eragiketa errore (konfiantzazko) bihurtu
+### Kodearen adibidea – errore bat eragiketa errore (konfiantzazko) bihurtu
 
 <details>
 <summary><strong>Javascript</strong></summary>

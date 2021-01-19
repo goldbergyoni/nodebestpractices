@@ -4,7 +4,7 @@
 
 Bide ‘alaiak’ frogatzea ez da huts egiteak frogatzea baino hobea. Kode frogatze estaldura onak ezohiko bideak frogatzea eskatzen du. Bestela, ez dago exzepzioak modu zuzenean kudeatuta daudenaren inolako konfidantzarik. Unitate test framework guztiek, adibidez [Mocha](https://mochajs.org/) edo [Chai](http://chaijs.com/), exzepzio frogaketa sostengatzen dute (kode adibideak beherago). Gogaikarria iruditzen bazaizu funtzio eta exzepzio bakoitza frogatzea, soilik REST APIen HTTP erroreak frogatzea erabaki zenezake.
 
-### Kodearen Adibidea: Mocha eta Chai erabiliz ziurtatu exzepzio egokia jaurtitzen dela
+### Kodearen adibidea: Mocha eta Chai erabiliz ziurtatu exzepzio egokia jaurtitzen dela
 
 <details>
 <summary><strong>Javascript</strong></summary>
@@ -40,7 +40,7 @@ describe("Facebooken txata", () => {
 
 </details>
 
-### Kodearen Adibidea: APIak HTTP errore kode zuzena bueltatzen duela ziurtatu
+### Kodearen adibidea: APIak HTTP errore kode zuzena bueltatzen duela ziurtatu
 
 <details>
 <summary><strong>Javascript</strong></summary>

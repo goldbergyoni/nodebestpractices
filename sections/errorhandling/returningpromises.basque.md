@@ -139,7 +139,7 @@ Error: zati guztiak edukiz
 
 </br>
 
-### Kodearen Adibidea Anti-eredua #3: callback asinkrono baten erabilera zuzena callback sinkrono bat espero zen lekuan
+### Kodearen adibidea Anti-eredua #3: callback asinkrono baten erabilera zuzena callback sinkrono bat espero zen lekuan
 
 <details><summary>Javascript</summary>
 <p>
@@ -165,7 +165,7 @@ Error: pilaren aztarna falta da berreskuratuErabiltzailea deitu den lekuan
     async Promise.all-en barruan (index 2)
 ```
 
-*Apunte bat*: pentsa liteke `Promise.all (index 2)`ek `berreskuratuErabiltzailea` deitua izan den lekua ulertzen lagundu dezakela, baina [guztiz ezberdina den v8ko akatsa](https://bugs.chromium.org/p/v8/issues/detail?id=9023) dela eta, `(index 2)` v8 barneko lerro bat da 
+*Apunte bat*: pentsa liteke `Promise.all (index 2)`ek `berreskuratuErabiltzailea` deitua izan den lekua ulertzen lagundu dezakela, baina [guztiz ezberdina den v8ko akatsa](https://bugs.chromium.org/p/v8/issues/detail?id=9023) dela eta, `(index 2)` v8 barneko lerro bat da
 
 </p>
 </details>
@@ -245,7 +245,7 @@ pila aztarna asinkronoa Node.js martxan dagoen sistema eragileak emandako **pila
 
 1. Pila aztarna asinkronoak halako ezarpen korapilatsua izatearen beste arrazoietako bat pila aztarna beti modu sinkronoan eraiki behar izanaren muga da, ebentuaren begiztaren <span id="a1">[¹](#1)</span> momentu berean
 2. `throwAsync` barruan `await` gabe, kodea ebentu begiztaren fase berean exekutatuko litzateke. Hau, sistema eragilearen **pila** hustutzen ez deneko eta pila aztarna esplizituki funtzioaren emaitza itxaron gabe ere betetzen deneko kasu degeneratua da. Normalean, promesen erabilerak operazio asinkrono batzuk edukitzen ditu, non pilaren aztarnaren zati batzuk galduak izango diren
-3. Zero-kostuko pila aztarna asinkronoek promesa erabilera kasu konplikatuentzat ez dute funtzionatuko, adibidez askotan eta leku ezberdinetan itxarondako promesa bakarra 
+3. Zero-kostuko pila aztarna asinkronoek promesa erabilera kasu konplikatuentzat ez dute funtzionatuko, adibidez askotan eta leku ezberdinetan itxarondako promesa bakarra
 
 ### Erreferentziak:
   <span id="1">1. </span>[v8ko zero-kostuko pila aztarna asinkronoak blog argitarapena](https://v8.dev/blog/fast-async)

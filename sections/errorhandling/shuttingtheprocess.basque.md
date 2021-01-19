@@ -4,7 +4,7 @@
 
 Zure kodearen lekuren batean, errore kudeaketa objektua errore bat gertatzen denean nola jokatu erabakitzearen arduradun da, errorea konfiantzazkoa bada (adibidez operazio errorea, irakurri azalpen osatuagoa #3 jarraibide egokian) erregistro fitxategian idaztea nahikoa izango da. Gauzak okertzen dira errorea ezezaguna denean, honek osagairen bat egoera txarrean dagoela eta hurrengo eskaera guztiek huts egiteko aukera handia dutela esan nahi du eta. Adibidez, singleton bat edukiaz, token batek exzepzio bat jaurti eta ondoren bere egoera galdu duen zerbitzu batekin arazoa du, hemendik aurrera ustekabean joka dezake eta eskaera guztiek huts egitea eragin. Egoera honen aurrean, prozesua gelditu eta 'Berrekite tresna' erabili (Forever, PM2, etab. bezalakoak) egoera garbi batekin berriz hasteko.
 
-### Kodearen Adibidea: krak egin ala ez erabakitzen
+### Kodearen adibidea: krak egin ala ez erabakitzen
 
 <details>
 <summary><strong>Javascript</strong></summary>
