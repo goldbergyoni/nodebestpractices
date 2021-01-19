@@ -1,6 +1,6 @@
-# Gure eduki idazketa adierazpena
+# Gure agiria edukia hobeto idazteko
 
-Nola hobetu gure bisitarien irakurketa eta ikasketa.
+Nola hobetu gure bisitarien irakurtzeko eta ikasteko esperientzia
 
 ## 1. Sinplea ezin hobea da
 
