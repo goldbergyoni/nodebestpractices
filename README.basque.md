@@ -465,13 +465,13 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 <br/><br/>
 
-## ![✔] 4.3 Egitura proba k AAA ereduaren arabera
+## ![✔] 4.3  
 
 **TL;PL:** egituratu zure probak ondo bereizitako 3 ataletan: antolatu, aritu eta baieztatu (AAA). Lehenengo atalean probaren konfigurazioa egin behar da; ondoren proba egikaritu behar da; eta, azkenik, baieztapen fasea dator. Egitura horri jarraitzeak bermatzen du irakurleak garuneko PUZik ez gastatzea proba plana ulertzen
 
 **Bestela:** kode nagusia ulertzen egunero orduak eta orduak pasatzeaz gainera, orain zure garuna trebatzen pasatzen duzu bestela eguneko zatirik lasaiena izan behar zuena (probak)
 
-🔗 [**Informazio gehiago: egitura probak AAA ereduaren arabera**](/sections/testingandquality/aaa.md)
+🔗 [**Informazio gehiago: egitura probak AAA ereduaren arabera**](/sections/testingandquality/aaa.basque.md)
 
 <br/><br/>
 
