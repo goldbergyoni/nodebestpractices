@@ -539,7 +539,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 **Bestela:** kodearen kalitatea txarra denean, erroreek eta errendimenduak beti emango dituzte arazoak, azken belaunaldiko ezaugarriak dituen liburutegi berri distiratsu batek ere konpontzerik izango ez dituenak
 
-🔗 [**Informazio gehiago: Berregituratu!**](/sections/testingandquality/refactoring.md)
+🔗 [**Informazio gehiago: Berregituratu!**](/sections/testingandquality/refactoring.basque.md)
 
 <br/><br/>
 
