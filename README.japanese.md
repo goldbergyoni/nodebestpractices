@@ -1161,13 +1161,13 @@ CMD [ "node", "dist/app.js" ]
 
 <br /><br /><br />
 
-## ![✔] 8.7. Set memory limits using both Docker and v8
+## ![✔] 8.7. Docker と v8 の両方を使ってメモリ制限を設定する
 
-**TL;DR:** Always configure a memory limit using both Docker and the JavaScript runtime flags. The Docker limit is needed to make thoughtful container placement decision, the --v8's flag max-old-space is needed to kick off the GC on time and prevent under utilization of memory. Practically, set the v8's old space memory to be a just bit less than the container limit
+**TL;DR:** Docker と JavaScript のランタイムフラグの両方を使用して、常にメモリ制限を設定してください。Docker の制限は、コンテナ配置の思慮深い判断をするために必要であり、--v8 のフラグ max-old-space は、GC を時間通りにキックオフし、メモリ使用率の低下を防ぐために必要です。実質的には、v8 の古いスペースメモリをコンテナの制限値より少しだけ小さく設定します。
 
-**Otherwise:** The docker definition is needed to perform thoughtful scaling decision and prevent starving other citizens. Without also defining the v8's limits, it will under utilize the container resources - Without explicit instructions it crashes when utilizing ~50-60% of its host resources
+**さもないと:** docker の定義は、思慮深いスケーリングの決定を行い、他の市民を飢えさせないようにするために必要です。v8 の制限を定義しないと、コンテナリソースを十分に利用できません。 - 明示的な指示がないと、ホストリソースの ~50-60% を利用するときにクラッシュします。
 
-🔗 [**Read More: Set memory limits using Docker only**](/sections/docker/memory-limit.md)
+🔗 [**さらに読む: Docker のみを使用してメモリ制限を設定する**](/sections/docker/memory-limit.japanese.md)
 
 <br /><br /><br />
 
