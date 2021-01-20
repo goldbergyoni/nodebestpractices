@@ -549,7 +549,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 **Bestela:** hornitzaile espezializatu bat aukeratzeak blokeatu zaitzake, pertsonalizazio aurreratu bat behar duzunean. Bestalde, Jenkins erabiltzeak denbora asko eska dezake azpiegitura konfiguratzean
 
-🔗 [**Irakurri gehiago: IC plataforma aukeratzea**](/sections/testingandquality/citools.md)
+🔗 [**Irakurri gehiago: IC plataforma aukeratzea**](/sections/testingandquality/citools.basque.md)
 
 <br/><br/>
 
