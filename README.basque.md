@@ -559,7 +559,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 **Bestela:** middleware Expressean === errorea izanez gero, errorea gertatuko zaizu eskaera guztietan edo gehienetan
 
-🔗 [**Irakurri gehiago: probatu zure middlewareak eurak bakarrik**](/sections/testingandquality/test-middlewares.md)
+🔗 [**Irakurri gehiago: probatu zure middlewareak eurak bakarrik**](/sections/testingandquality/test-middlewares.basque.md)
 
 <br/><br/><br/>
 
