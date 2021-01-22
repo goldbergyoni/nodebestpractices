@@ -26,7 +26,7 @@ it("Webgune baten izena eguneratzerakoan, baieztapen arrakastatsua izan", async 
 
 <br/><br/>
 
-### Kodearen adibidea – Anti Erdua: probak ez dira independenteak eta aurrez konfiguratutako datuak egotea aintzat hartzen dute
+### Kodearen adibidea, Anti Erdua: probak ez dira independenteak eta aurrez konfiguratutako datuak egotea aintzat hartzen dute
 
 ```javascript
 before(() => {

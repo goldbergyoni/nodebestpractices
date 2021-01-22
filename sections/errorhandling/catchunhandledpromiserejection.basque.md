@@ -2,9 +2,9 @@
 
 <br/><br/>
 
-### Azalpen Paragrafoa
+### Azalpen paragrafoa
 
-Normalean, Node.js/Express aplikazio kode moderno gehienen promesen barruan funtzionatzen dute, .then kudeatzailearen, callback funtzio baten edota catch bloke baten barruan. Modu harrigarrian, garatzaileak .catch klausula gogoratu ezean, leku hauetan jaurtitako erroreak ez dira uncaughtException ebentu-kudeatzaileaz kudeatuak izaten eta desagertu egiten dira. Noderen bertsio berrienek ohartarazpen mezu bat gehitu dute kudeatu gabeko errefus bat agertzean, egia da honek gauzak ondo ez doazenean jakinarazten lagundu dezakela, baina argi dago ez dela erroreak kudeatzeko modu zuzena. Konponbide samurrena, promesa dei kate bakoitzaren barruan .catch klausula erabiltzen ez ahaztea eta errore kudeatzaile zentralizatu batera desbideratzea da. Hala ere, zure errore kudeaketa estrategia soilik garatzaile diziplinan oinarritua apurkorra da. Ondorioz, atzera-egite dotorea erabiltzea eta `process.on('unhandledRejection', callback)`-ra harpidetzea oso gomendatua dago, honek, promesa errore bakoitzak, lokalki kudeatuta egon ezean, bere tratamendua izango duela ziurtatuko du.
+Normalean, Node.js/Express aplikazio kode moderno gehienen promesen barruan funtzionatzen dute, .then kudeatzailearen, callback funtzio baten edota catch bloke baten barruan. Modu harrigarrian, garatzaileak .catch klausula gogoratu ezean, leku hauetan jaurtitako erroreak ez dira uncaughtException ebentu-kudeatzaileaz kudeatuak izaten eta desagertu egiten dira. Noderen bertsio berrienek ohartarazpen mezu bat gehitu dute kudeatu gabeko errefus bat agertzean, egia da honek gauzak ondo ez doazenean jakinarazten lagundu dezakela, baina argi dago ez dela erroreak kudeatzeko modu zuzena. Konponbide samurrena, promesa dei kate bakoitzaren barruan .catch klausula erabiltzen ez ahaztea eta errore kudeatzaile zentralizatu batera desbideratzea da. Hala ere, zure errore kudeaketa estrategia soilik garatzaile diziplinan oinarritua apurkorra da. Ondorioz, atzera-egite dotorea erabiltzea eta `process.on('unhandledRejection', callback)`ra harpidetzea oso gomendatua dago, honek, promesa errore bakoitzak, lokalki kudeatuta egon ezean, bere tratamendua izango duela ziurtatuko du.
 
 <br/><br/>
 
@@ -19,7 +19,7 @@ DAL.berreskuratuErabiltzaileaIdBidez(1).then((johnSnow) => {
 
 <br/><br/>
 
-### Kodearen adibidea: Kudeatu gabeko eta baztertutako promesak harrapatzen
+### Kodearen adibidea: kudeatu gabeko eta baztertutako promesak harrapatzen
 
 <details>
 <summary><strong>Javascript</strong></summary>
@@ -65,7 +65,7 @@ process.on("uncaughtException", (errorea: Error) => {
 
 <br/><br/>
 
-### Blogeko Aipua: "Akatsen bat egiteko gai bazara, momenturen batean egingo duzu"
+### Blogeko aipua: "Akatsen bat egiteko gai bazara, momenturen batean egingo duzu"
 
 James Nelson blogetik
 

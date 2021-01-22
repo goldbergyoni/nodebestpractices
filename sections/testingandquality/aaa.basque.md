@@ -38,7 +38,7 @@ describe.skip("Bezero klasifikatzailea", () => {
 
 <br/><br/>
 
-### Kodearen adibidea – Anti Eredua: bereizketarik ez, bloke bakarra, ulertzeko zailagoa
+### Kodearen adibidea, Anti Eredua: bereizketarik ez, bloke bakarra, ulertzeko zailagoa
 
 ```javascript
 test("Premium gisa klasifikatua izan beharko litzateke", () => {

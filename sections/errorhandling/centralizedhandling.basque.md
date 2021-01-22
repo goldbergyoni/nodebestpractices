@@ -1,10 +1,10 @@
 # Kudeatu erroreak gune bakar batean, Express middleware erabili partez
 
-### Azalpen Paragrafoa
+### Azalpen paragrafoa
 
 Errore kudeaketarako ardura bakarreko objektu bat ez izateak, errore garrantzitsuak ezkutatzeko aukerak ugaritzen ditu kudeaketa ezegoki baten eraginpean. Errore kudeaketarako objektua, errorea begibistako bihurtzearen arduradun da, adibidez, egoki formateatutako erregistro batean idatziz, ebentuak [Sentry](https://sentry.io/), [Rollbar](https://rollbar.com/), edota [Raygun](https://raygun.com/) bezalako monitorizazio sistemaren batera bidaliz. [Express](http://expressjs.com/en/guide/error-handling.html#writing-error-handlers) bezalako web framework gehienak, errore kudeaketa middleware mekanismo bat proposatzen dute. Errore kudeaketa fluxu tipiko bat hau izan daiteke: moduluren batek errore bat jaurtitzen du -> API routerrak errorea harrapatzen du -> errorea middlewarera hedatzen du, (adibidez Express edo KOA), zeinek erroreak harrapatzeko ardura duen -> errore kudeatzaile zentralizatu bati deitzen zaio -> middlewareari esaten zaio ia errore hau konfiantzazkoa den (ez operazio errorea) aplikazioa dotoreki berrekiteko. Kontutan izan Express midelwarean erroreak kudeatzea praktika arrunta dela, okerra izan arren. Hau egiteak ez ditu kontutan hartzen weba ez diren bestelako interfazeetako erroreak.
 
-### Kodearen adibidea – ohizko errore fluxu bat
+### Kodearen adibidea: ohizko errore fluxu bat
 
 <details>
 <summary><strong>Javascript</strong></summary>
@@ -72,7 +72,7 @@ app.use(async (errorea: Error, req: Request, res: Response, next: NextFunction) 
 
 </details>
 
-### Kodearen adibidea – erroreen kudeaketa ardura bakarreko objektu batekin
+### Kodearen adibidea: erroreen kudeaketa ardura bakarreko objektu batekin
 
 <details>
 <summary><strong>Javascript</strong></summary>
@@ -110,7 +110,7 @@ export const kudeatzailea = new ErroreKudeatzailea();
 
 </details>
 
-### Kodearen adibidea – Anti Eredua: erroreak middleware barruan kudeatu
+### Kodearen adibidea: anti Eredua: erroreak middleware barruan kudeatu
 
 <details>
 <summary><strong>Javascript</strong></summary>
@@ -156,19 +156,19 @@ app.use((errorea: Error, req: Request, res: Response, next: NextFunction) => {
 
 </details>
 
-### Blogeko Aipua: "Batzuetan maila baxuagoek beren deilariari errorea hedatzea baino ezer erabilgarriagorik ezin dute egin"
+### Blogeko aipua: "Batzuetan maila baxuagoek beren deilariari errorea hedatzea baino ezer erabilgarriagorik ezin dute egin"
 
 Joyent blogetik, “Node.js errore kudeaketa" hitz gako bati esker sailkatua
 
 > …Errore bera pilaren maila askotan kudeatzen bukatuko duzu. Hau, maila baxuenek beren deilariei (eta beste hauek beren deilariei, etab.) errorea hedatzea baino hoberik ez dutenean gertatzen da. Askotan, soilik goi mailako deilariak daki zein den erantzun zuzena, ia ahalegin operazio berria den, erabiltzaileari erroreari buruz eman, edo beste edozer. Baina honek ez du esan nahi errore guztiak goi mailako callback bakar bati jakinarazi behar dizkiozunik, callback honek ere errorea zein kontextutan gertatu den ez daki eta…
 
-### Blogeko Aipua: "Errore bakoitza bakarka kudeatzea bikoizte galanta izan daiteke"
+### Blogeko aipua: "Errore bakoitza bakarka kudeatzea bikoizte galanta izan daiteke"
 
 JS Recipes blogetik, “Node.js errore kudeaketa" 17 hitz gakori esker sailkatua
 
 > ……Hackathoneko Starter api.js kontrolatzaile bakarrean, 79 errore objektu inguru daude. Errore bakoitza bakarka kudeatzeak kodea ikaragarri bikoiztea eragin dezake. Hurrengo egin dezakezun gauza hoberena errore kudeaketa logika Express middleware bati uztea da…
 
-### Blogeko Aipua: "HTTP erroreak ezin dira zure datu-basearen kodean egon"
+### Blogeko aipua: "HTTP erroreak ezin dira zure datu-basearen kodean egon"
 
 Daily JS blogetik, “Node.js errore kudeaketa" 14 hitz gakori esker sailkatua
 

@@ -31,7 +31,7 @@ describe('Produktu Zerbitzua', () => {
 
 <br/><br/>
 
-### Kodearen adibidea – Anti Eredua: norberak proba osoaren kodea irakurri behar du eta asmoa ulertu
+### Kodearen adibidea, Anti Eredua: norberak proba osoaren kodea irakurri behar du eta asmoa ulertu
 
 ```javascript
 describe('Produktu Zerbitzua', () => {

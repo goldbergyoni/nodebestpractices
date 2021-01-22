@@ -1,6 +1,6 @@
 # Irten prozesutik elegantziarekin kanpoko norbait iristen denean hirira
 
-### Azalpen Paragrafoa
+### Azalpen paragrafoa
 
 Zure kodearen lekuren batean, errore kudeaketa objektua errore bat gertatzen denean nola jokatu erabakitzearen arduradun da, errorea konfiantzazkoa bada (adibidez operazio errorea, irakurri azalpen osatuagoa #3 jarraibide egokian) erregistro fitxategian idaztea nahikoa izango da. Gauzak okertzen dira errorea ezezaguna denean, honek osagairen bat egoera txarrean dagoela eta hurrengo eskaera guztiek huts egiteko aukera handia dutela esan nahi du eta. Adibidez, singleton bat edukiaz, token batek exzepzio bat jaurti eta ondoren bere egoera galdu duen zerbitzu batekin arazoa du, hemendik aurrera ustekabean joka dezake eta eskaera guztiek huts egitea eragin. Egoera honen aurrean, prozesua gelditu eta 'Berrekite tresna' erabili (Forever, PM2, etab. bezalakoak) egoera garbi batekin berriz hasteko.
 
@@ -77,13 +77,13 @@ export const kudeatzailea = new ErroreKudeatzailea();
 ```
 </details>
 
-### Blogeko Aipua: "Irtenbiderik hoberena krak egitea da"
+### Blogeko aipua: "Irtenbiderik hoberena krak egitea da"
 
 Joyent blogetik
 
 > …Programatzaile erroreetatik suspertzeko modurik hoberena berehala krak egitea da. Hutsegite gertaraki baten aurrean programa automatikoki berrekingo duen berrekite sistema bat erabili beharko zenuke zure programetan. Berrekite sistema baten erabileraz, programatzaile errore pasakor baten aurrean krak egitea zerbitzu fidagarri bat suspertzeko modurik azkarrena da…
 
-### Blogeko Aipua: "Errore kudeaketaren inguruko hiru ideia-eskola daude"
+### Blogeko aipua: "Errore kudeaketaren inguruko hiru ideia-eskola daude"
 
 JS Recipes blogetik
 
@@ -92,7 +92,7 @@ JS Recipes blogetik
 2. Errore posible guztiak kudeatu eta inoiz ez eduki kraskadurarik
 3. Bien arteko planteamendu bat
 
-### Blogeko Aipua: "Alde egiteko modu segururik ez zehaztugabeko egoera hauskor bat sortu gabe"
+### Blogeko aipua: "Alde egiteko modu segururik ez zehaztugabeko egoera hauskor bat sortu gabe"
 
 Node.js dokumentazio ofizialetik
 

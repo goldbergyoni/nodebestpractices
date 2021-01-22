@@ -1,6 +1,6 @@
 # Testeatu erroreen fluxua zure test framework gustukoena erabiliz
 
-### Azalpen Paragrafoa
+### Azalpen paragrafoa
 
 Bide ‘alaiak’ frogatzea ez da huts egiteak frogatzea baino hobea. Kode frogatze estaldura onak ezohiko bideak frogatzea eskatzen du. Bestela, ez dago exzepzioak modu zuzenean kudeatuta daudenaren inolako konfidantzarik. Unitate test framework guztiek, adibidez [Mocha](https://mochajs.org/) edo [Chai](http://chaijs.com/), exzepzio frogaketa sostengatzen dute (kode adibideak beherago). Gogaikarria iruditzen bazaizu funtzio eta exzepzio bakoitza frogatzea, soilik REST APIen HTTP erroreak frogatzea erabaki zenezake.
 

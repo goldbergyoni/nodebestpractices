@@ -4,7 +4,7 @@
 
 Callbackak ez dira kudeaerrezak programatzaile gehienek ondo ezagutzen ez dituzte eta. Callbackek etengabeko errore egiaztatzea eskatzen dute, kode korapilotsua jasanaraziz eta kodigoaren fluxuaren ulergarritasuna zailduz. BlueBird, async, eta Q bezalako promesa liburutegiek kodigo estilo estandarra RETURN eta THROW erabiliaz paketatzen dute, programaren fluxua kontrolatzeko. Zehazki, kodigo nagusia funtzio bakoitzean erroreak kuadeatzetik askatzea ahalbidetzen duen try-catch errore kudeaketa estilo gogokoena onartzen dute
 
-### Kodearen adibidea – promesen erabilera erroreak harrapatzeko
+### Kodearen adibidea: promesen erabilera erroreak harrapatzeko
 
 ```javascript
 return aFuntzioa()
@@ -15,7 +15,7 @@ return aFuntzioa()
   .then(betiExekutatuFuntzioHau);
 ```
 
-### Kodearen adibidea - async/awaiten erabilera erroreak harrapatzeko
+### Kodearen adibidea: async/awaiten erabilera erroreak harrapatzeko
 
 ```javascript
 async function exekutatuAtazaAsinkronoBat() {
@@ -32,7 +32,7 @@ async function exekutatuAtazaAsinkronoBat() {
 }
 ```
 
-### Anti ereduaren kodearen adibidea – callbackaren estiloko errore kudeaketa
+### Anti ereduaren kodearen adibidea: callbackaren estiloko errore kudeaketa
 
 <details>
 <summary><strong>Javascript</strong></summary>
@@ -93,25 +93,25 @@ datuakEskuratu(
 
 </details>
 
-### Blogeko Aipua: "Promesekin arazo bat dugu"
+### Blogeko aipua: "Promesekin arazo bat dugu"
 
 pouchdb.com blogetik
 
 > ……Izatez, callbackek zerbait oraindik maltzurragoa egiten dute: pilaz gabetzen gaituzte, programazio lengoaietan sarri egintzat jotzen duguna. Kodea pila gabe idaztea kotxe bat freno pedalik gabe gidatzea bezala da: ez zara konturatzen zein punturarte behar duzun erabiltzen saiatu eta ez dagoela konturatzen zaren momenturarte. Promesen interes guztia asinkronoa (async) erabiltzean galdutako lengoaien oinarri guztiak berreskuratzea da: return, throw eta pila. Baina promesak modu egokian erabiltzen jakin beharra dago beraien probetxua ateratzeko.
 
-### Blogeko Aipua: "Promesen metodoa askoz ere konpaktuagoa da"
+### Blogeko aipua: "Promesen metodoa askoz ere konpaktuagoa da"
 
 gosquared.com blogetik
 
 > ………Promesen metodoa askoz ere konpaktuagoa, argiagoa eta idatzeko azkarragoa da. Errore edo exzepzio bat gertatzen bada .catch() kudeatzaile bakar batek maneiatzen du. Errore guztiak kuadeatzeko leku bakar hau edukitzeak erroreen egiaztatzea lanaren fase bakoitzean idatzi beharrik ez dagoela adierazten du.
 
-### Blogeko Aipua: "Promises are native ES6, can be used with generators"
+### Blogeko aipua: "Promises are native ES6, can be used with generators"
 
 StrongLoop blogetik
 
 > ….Callbackek errore kudeaketa istorio kaskarra dute. Promesak hobeak dira. Promesekin, erabili Expressen errore kudeaketa kapsulatua eta horrela exzepzioren bat ez harrapatzeko aukerak murriztu. Promesak ES6ren berezkoak dira, generatzaileekin eta ES7ren async/await bezalako proposamenekin, Babel bezalako konpilatzaileetan, erabil daitezke.
 
-### Blogeko Aipua: "Ohiko fluxu kontrol erregular egitura guzti horiek guztiz apurtuta daude"
+### Blogeko aipua: "Ohiko fluxu kontrol erregular egitura guzti horiek guztiz apurtuta daude"
 
 Benno’s blogetik
 

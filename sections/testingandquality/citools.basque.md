@@ -8,7 +8,7 @@ CIaren munduak [Jenkins](https://jenkins.io/)en malgutasuna versus SaaS honitzai
 
 <br/><br/>
 
-### Kodearen adibidea – hodeieko CI ezarpen arrunta. .yml fitxategi bakar bat besterik ez
+### Kodearen adibidea: hodeieko CI ezarpen arrunta. .yml fitxategi bakar bat besterik ez
 
 ```yaml
 version: 2

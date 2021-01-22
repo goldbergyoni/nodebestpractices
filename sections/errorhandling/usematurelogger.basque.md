@@ -1,6 +1,6 @@
 # Erabili erregistratze tresna heldu bat erroreen ikusgaitasuna handitzeko
 
-### Azalpen Paragrafoa
+### Azalpen paragrafoa
 
 Gustuko dugu console.log, baina [Pino][pino] (errendimenduan zentratutako aukera berriago bat)a newer option focused on performance) bezalako erregistratzaile tresna ospetsu eta iraunkor bat ezinbestekoa da proiektu serioetarako.
 Errendimendu handiko erregistratze tresnek erroreak eta arazoa posibleak identifikatzen laguntzen dute. Erregistratze aholkuen artean:
@@ -25,7 +25,7 @@ const erregistratzailea = pino();
 erregistratzailea.info({ anything: 'Hau metadatua da' }, 'Frogatu Erregistro Mezua %s parametroren batekin', 'parametroren bat');
 ```
 
-### Blogeko Aipua: "Erregistratzailearen Betebeharrak"
+### Blogeko aipua: "Erregistratzailearen Betebeharrak"
 
 StrongLoop blogetik ("Winston eta Bunyanen Node.js Erregistratzaile sistemak konparatzen" Alex Corbatcheven eskutik, 2014ko ekainaren 24a):
 

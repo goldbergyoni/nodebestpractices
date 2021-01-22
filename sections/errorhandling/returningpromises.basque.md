@@ -2,13 +2,13 @@
 
 <br/>
 
-### Azalpen Paragrafoa
+### Azalpen paragrafoa
 
 Errore bat gertatzen denean, fluxu sinkrono edo asinkrono bat dela, errore fluxuaren pila aztarna guztia edukitzea derrigorrezkoa da. Funtzio asinkrono batek (adibidez beste funtzio asinkrono bat deitzen duena) itxaron gabe (await) promesak itzultzen dituenean, errore bat gertatuko litzateke eta jatorrizko funtzio honen izena ez litzateke pilaren aztarnan agertu beharko. Honek, errorea diagnostikatzen duen pertsona informazio partzialarekin utziko luke, are gehiago errorearen zergatiak jatorrizko funtzioan badu oinarria. Badago "zero-kostuko pila aztarna asinkronoak" deitzen den v8 funtzionalitate bat, pila aztarnak azken gertatu berri den `await`ean moztuak ez izatea ahalbidetzen duena. Garrantzirik gabeko inplementazio xehetasunak direla eta, honek ez du funtzionatuko funtzioak bueltatzen duen balioa (sinkronoa edo asinkronoa), promesa bat baldin bada. Promesak deuseztuak izango direnean pilaren aztarnan zuloak egotea ekiditeoko, promesak beti explizituki ebatzi behar ditugu `await` erabiliaz berauek funtzioetatik bueltatu baino lehen
 
 <br/>
 
-### Kodearen adibidea Anti-Eredua: Funtzio asinkrono bat deitu itxaron gabe
+### Kodearen adibidea Anti-Eredua: funtzio asinkrono bat deitu itxaron gabe
 
 <details><summary>Javascript</summary>
 <p>
@@ -36,7 +36,7 @@ Errorea: bueltatuItxaronGabe falta da pilaren aztarnan
 </p>
 </details>
 
-### Kodearen adibidea: Zuzenki deitu eta itxaron
+### Kodearen adibidea: zZuzenki deitu eta itxaron
 
 <details><summary>Javascript</summary>
 <p>
@@ -68,7 +68,7 @@ Error: zati guztiak edukiz
 
 <br/>
 
-### Kodearen adibidea Anti-Eredua: Promesa bat bueltatu funtzio bat asinkronotzat etiketatu gabe
+### Kodearen adibidea Anti-Eredua: promesa bat bueltatu funtzio bat asinkronotzat etiketatu gabe
 
 <details><summary>Javascript</summary>
 <p>
@@ -102,7 +102,7 @@ Error: syncFn falta da pilaren aztarnan
 </p>
 </details>
 
-### Kodearen adibidea: Etiketatu promesak asinkrono gista bueltatzen dituen funtzioa
+### Kodearen adibidea: etiketatu promesak asinkrono gista bueltatzen dituen funtzioa
 
 <details><summary>Javascript</summary>
 <p>
@@ -236,7 +236,7 @@ pila aztarna asinkronoa Node.js martxan dagoen sistema eragileak emandako **pila
 
 `await` bakoitzak mikro ataza berri bat sortzen du ebentuen begiztan, beraz `await` gehiago gehitzeak errendimendu isunak sortu ditzake. Hala ere, sareak edota datu baseak sortutako errendimendu isuna [ikaragarri handiagoa](https://colin-scott.github.io/personal_website/research/interactive_latency.html) da, beraz gehitutako `await`aren isuna ez da zerbitzariak edo CLIak garatzeko orduan kontutan hartu beharreko zerbait, eskaera edo komando zailen kodearentzat ez bada behintzat. Orduan, `await` ezabatzea `return await`etan errendimendu bultzada nabarmenak bilatzeko azken lekua izan beharko lukete eta, zalantzarik gabe, inoiz ez lirateke aldez aurretik eginak izan beharko
 
-### Zergatik await bueltatazea anti-eredutzat jotzen zen iraganean
+### Zergatik await bueltatazea anti eredutzat jotzen zen iraganean
 
 [Artikulu bikain](https://jakearchibald.com/2017/await-vs-return-vs-return-await/) ugari daude zergatik `return await`ak inoiz `try` bloke baten kanpoan erabili behar diren azaltzen dutenak, eta [ESLint arau](https://eslint.org/docs/rules/no-return-await) bat ere hau ezesten duena. Honen arrazoia async/await Node.js 0.10ko transpilatzaileekin (eta berezko sostengua lortu du Node.js 7.6n) erabilgarri bihurtu izana eta "zero kostuko pila aztarna asinkronoak" Node.js 10en gehitua izana eta ondoren Node.js 12n kenua, `return await` eta `return` guztiz parekoak ziren, edozein `try` kode bloketik kanpo. Oraindik ere berdina izaten jarraituko du seguraski ES motoreentzat. Honegatik, promesak kalkulatzea berauek bueltatu aurretik Node.jsentzat jarraibide egokiena da eta ez orokorrean EcmaScriptentzat
 

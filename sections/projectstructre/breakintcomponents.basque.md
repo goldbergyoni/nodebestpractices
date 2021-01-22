@@ -8,7 +8,7 @@ Tamaina ertaineko nahiz handiko aplikazioetarako, monolitoak benetan kaltegarria
 
 <br/><br/>
 
-### Blogeko Aipua: "Eskalatzeak aplikazio osoaren eskalatzea eskatzen du"
+### Blogeko aipua: "Eskalatzeak aplikazio osoaren eskalatzea eskatzen du"
 
 MartinFowler.com blogetik
 
@@ -16,7 +16,7 @@ MartinFowler.com blogetik
 
 <br/><br/>
 
-### Blogeko Aipua: "Zergatik egiten du garrasi zure aplikazioaren egiturak?"
+### Blogeko aipua: "Zergatik egiten du garrasi zure aplikazioaren egiturak?"
 
 [uncle-bob](https://8thlight.com/blog/uncle-bob/2011/09/30/Screaming-Architecture.html) blogetik
 

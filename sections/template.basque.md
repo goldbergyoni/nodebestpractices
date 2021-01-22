@@ -8,7 +8,7 @@ Testua
 
 <br/><br/>
 
-### Kode Adibidea – azalpena
+### Kode Adibidea: azalpena
 
 ```javascript
 kodea hemen
@@ -16,7 +16,7 @@ kodea hemen
 
 <br/><br/>
 
-### Kode Adibidea – beste azalpen bat
+### Kode Adibidea: beste azalpen bat
 
 ```javascript
 kodea hemen
@@ -24,23 +24,23 @@ kodea hemen
 
 <br/><br/>
 
-### Blogeko Aipua: "Izenburua"
+### Blogeko aipua: "Izenburua"
 
-Blogean, pouchdb.com-ek “Node Promesak hitz gakoarentzat 11.posizioa du
+Blogean, pouchdb.comek “Node Promesak hitz gakoarentzat 11.posizioa du
 
 > …testua hemen
 
 <br/><br/>
 
-### Adibidea: CodeClimate-rekin funtzio konplexuen analisia (iragarkia)
+### Adibidea: CodeClimaterekin funtzio konplexuen analisia (iragarkia)
 
 ![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-climate-complex-methods.PNG "Funtzio konplexuen analisia")
 
-### Adibidea: CodeClimate-rekin kode analisi joerak eta historia (iragarkia)
+### Adibidea: CodeClimaterekin kode analisi joerak eta historia (iragarkia)
 
 ![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-climate-history.PNG "Kode analisiaren historia")
 
-### Adibidea: SonarQube-rekin kode analisiaren laburpena eta joerak (iragarkia)
+### Adibidea: SonarQuberekin kode analisiaren laburpena eta joerak (iragarkia)
 
 ![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-sonarqube-dashboard.PNG "Kode analisiaren historia")
 
