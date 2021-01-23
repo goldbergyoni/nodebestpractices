@@ -59,7 +59,7 @@ throw new AppError(errorManagement.commonErrors.InvalidInput, 'Describe here wha
 
 ### ブログ引用: "Programmer errors are bugs in the program"（プログラマーのエラーはプログラムにおけるバグです）
 
-ブログ Joyent （“Node.js error handling”というキーワードで 1 位）より
+ブログ Joyent（“Node.js error handling”というキーワードで 1 位）より
 
  > …プログラマーのエラーから復帰する最も良い方法は直ちにクラッシュさせることです。プログラムがクラッシュしたときに自動的に再起動してくれるリスターターを備えた、プログラムを動かすべきです。リスターターを備えている場合、一時的なプログラマーのエラーに直面した際に、安定したサービスへと復旧させるための一番手っ取り早い方法は、クラッシュさせることになります。
 
@@ -71,7 +71,7 @@ Node.js 公式ドキュメントより
 
 ### ブログ引用: "Otherwise you risk the state of your application"（さもなければアプリケーションの状態を危険にさらします）
 
-ブログ debugable.com （“Node.js uncaught exception”というキーワードで 3 位）より
+ブログ debugable.com（“Node.js uncaught exception”というキーワードで 3 位）より
 
  > …ですから、自分が本当に何をしているのか理解していない限り、「uncaughtException」例外イベント受信後は直ちにサービスを再起動すべきです。そうしないと、アプリケーションの状態やサードパーティのライブラリの状態が一貫性を失い、あらゆる種類のとんでもないバグにつながる危険性があります。
 
