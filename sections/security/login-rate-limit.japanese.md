@@ -35,7 +35,7 @@ const limiterConsecutiveFailsByUsernameAndIP = new RateLimiterRedis({
 
 [rate-limiter-flexible package's Wiki](https://github.com/animir/node-rate-limiter-flexible/wiki/Overall-example#login-endpoint-protection) で完全な例を確認してください。
 
-### What other ブログgers say
+### 他のブロガーが言っていること
 
 [Liran Tal](https://leanpub.com/nodejssecurity) による書籍 Essential Node.js Security より:
 > ブルートフォース攻撃は、攻撃者が一連のユーザ名とパスワードのペアを REST エンドポイントに対して POST したり、開放しているその他の RESTful API に対してリクエストを送信する場合に採用されることがあります。このような辞書攻撃はとても簡単で実行しやすく、ログインとは関係なく、API やページルーティングの他の部分に対しても実行される可能性があります。
