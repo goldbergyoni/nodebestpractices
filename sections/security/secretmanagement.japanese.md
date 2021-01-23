@@ -7,7 +7,7 @@ Node.js アプリケーションにキーやシークレットを渡すための
 
 シークレットをソースコントロールの中に格納しなければならない稀な状況の場合においては、[cryptr](https://www.npmjs.com/package/cryptr) のようなパッケージを使用することで、平文ではなく暗号化された形で保存することができます。
 
-[git-secrets](https://github.com/awslabs/git-secrets) のように、git commit においてコミットやコミットメッセージを監査して、誤ってシークレットを追加されていないかをチェックするツールが多く存在します。
+[git-secrets](https://github.com/awslabs/git-secrets) のように、Git commit においてコミットやコミットメッセージを監査して、誤ってシークレットを追加されていないかをチェックするツールが多く存在します。
 
 ### コード例
 

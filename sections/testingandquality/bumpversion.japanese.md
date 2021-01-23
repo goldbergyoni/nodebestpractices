@@ -16,9 +16,9 @@ code here
 code here
 ```
 
-### Blog Quote: "Title"
+### ブログ Quote: "Title"
 
- From the blog, pouchdb.com ranked 11 for the keywords “Node Promises”
+ From the ブログ, pouchdb.com ranked 11 for the keywords “Node Promises”
 
  > …text here
 

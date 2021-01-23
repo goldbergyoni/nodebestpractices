@@ -8,9 +8,9 @@ For medium sized apps and above, monoliths are really bad - one big software wit
 
 <br/><br/>
 
-### Blog Quote: "Scaling requires scaling of the entire application"
+### ブログ Quote: "Scaling requires scaling of the entire application"
 
- From the blog MartinFowler.com
+ From the ブログ MartinFowler.com
 
  > Monolithic applications can be successful, but increasingly people are feeling frustrations with them - especially as more applications are being deployed to the cloud. Change cycles are tied together - a change made to a small part of the application requires the entire monolith to be rebuilt and deployed. Over time it's often hard to keep a good modular structure, making it harder to keep changes that ought to only affect one module within that module. Scaling requires scaling of the entire application rather than parts of it that require greater resource.
 

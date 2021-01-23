@@ -2,7 +2,7 @@
 
 ### 一段落説明
 
-[eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) や [tslint-config-security](https://www.npmjs.com/package/tslint-config-security) といった ESLint や TSLint 用のセキュリティプラグインは、安全でない正規表現や安全でない `eval()` の使用、そしてアプリケーション内のファイルシステムにアクセスする際にリテラルでないファイル名を使用するといった、多くの既知の脆弱性に基づいたコードセキュリティチェックを提供しています。[pre-git](https://github.com/bahmutov/pre-git) のような git hooks の利用することで、リモートに配布される前に、シークレットがコードに含まれていないかチェックするなど、ソースコントロール上にさらなるルールを強制することができます。
+[eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) や [tslint-config-security](https://www.npmjs.com/package/tslint-config-security) といった ESLint や TSLint 用のセキュリティプラグインは、安全でない正規表現や安全でない `eval()` の使用、そしてアプリケーション内のファイルシステムにアクセスする際にリテラルでないファイル名を使用するといった、多くの既知の脆弱性に基づいたコードセキュリティチェックを提供しています。[pre-git](https://github.com/bahmutov/pre-git) のような Git hooks の利用することで、リモートに配布される前に、シークレットがコードに含まれていないかチェックするなど、ソースコントロール上にさらなるルールを強制することができます。
 
 ### `eslint-plugin-security` の例
 

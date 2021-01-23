@@ -6,9 +6,9 @@
 
 Achieving the advanced features demands lengthy setup or buying a commercial product such as Datadog, newrelic and alike. Unfortunately, achieving even the basics is not a walk in the park as some metrics are hardware-related (CPU) and others live within the node process (internal errors) thus all the straightforward tools require some additional setup. For example, cloud vendor monitoring solutions (e.g. AWS CloudWatch, Google StackDriver) will tell you immediately about the hardware metric but nothing about the internal app behavior. On the other end, Log-based solutions such as ElasticSearch lack by default the hardware view. The solution is to augment your choice with missing metrics, for example, a popular choice is sending application logs to Elastic stack and configure some additional agent (e.g. Beat) to share hardware-related information to get the full picture.
 
-### Blog Quote: "We have a problem with promises"
+### ブログ Quote: "We have a problem with promises"
 
- From the blog, pouchdb.com ranked 11 for the keywords “Node Promises”
+ From the ブログ, pouchdb.com ranked 11 for the keywords “Node Promises”
 
  > … We recommend you to watch these signals for all of your services: Error Rate: Because errors are user facing and immediately affect your customers.
 Response time: Because the latency directly affects your customers and business.

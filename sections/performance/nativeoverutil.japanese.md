@@ -13,7 +13,7 @@ _lodash_ や _underscore_ を require するよりもネイティブメソッド
 <br/><br/>
 
 ### 例: ベンチマーク比較 - Lodash vs V8 (Native)
-下のグラフは、[様々な Lodash メソッドのベンチマークの平均](https://github.com/Berkmann18/NativeVsUtils/blob/master/nativeVsLodash.ods) を示しています。このグラフから、Lodash メソッドは V8 メソッドと同じタスクを完了するのに平均146.23%も時間がかかることがわかります。
+下のグラフは、[様々な Lodash メソッドのベンチマークの平均](https://github.com/Berkmann18/NativeVsUtils/blob/master/nativeVsLodash.ods) を示しています。このグラフから、Lodash メソッドは V8 メソッドと同じタスクを完了するのに平均146.23％も時間がかかることがわかります。
 
 ![meanDiag](../../assets/images/sampleMeanDiag.png)
 
