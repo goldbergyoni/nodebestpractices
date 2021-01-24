@@ -1122,6 +1122,7 @@ CMD [ "node", "dist/app.js" ]
 🔗 [**Gehiago irakurri: erabili etapa anitzeko konpilazioak**](/sections/docker/multi_stage_builds.basque.md)
 
 <br /><br /><br />
+
 # Edukiontzia autoabiatu node komandoa erabiliz, npm beharrean
 
 ## ![✔] 8.2. Edukiontzia abiarazi 'node' komandoa erabiliz, saihestu npm hastea
@@ -1140,7 +1141,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Bestela:** edukiontziak huts egiten jarraituko du baliabide faltagatik, eta prozesuen kudeatzaileak behin eta berriro berrabiaraziko du, gelditu gabe. Kubernetes horretaz jabetuko balitz, beste toki zabal batera lekualda lezake
 
-🔗 [**Gehiago irakurri: utzi Dockerren orkestratzaileari prozesuak berrabiaraz eta erreplika ditzala**](/sections/docker/restart-and-replicate-processes.md)
+🔗 [**Gehiago irakurri: utzi Dockerren orkestratzaileari prozesuak berrabiaraz eta erreplika ditzala**](/sections/docker/restart-and-replicate-processes.basque.md)
 
 <br/><br /><br />
 
