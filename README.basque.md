@@ -1122,6 +1122,7 @@ CMD [ "node", "dist/app.js" ]
 🔗 [**Gehiago irakurri: erabili etapa anitzeko konpilazioak**](/sections/docker/multi_stage_builds.md)
 
 <br /><br /><br />
+
 # Edukiontzia autoabiatu node komandoa erabiliz, npm beharrean
 
 ## ![✔] 8.2. Edukiontzia abiarazi 'node' komandoa erabiliz, saihestu npm hastea
@@ -1160,7 +1161,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Bestela:** npm segurtasun arau hauste ezagun asko garapen paketeen barruan aurkitu izan dira (adibidez, [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes))
 
-🔗 ehiago irakurri: [kendu garapen menpekotasunak](/sections/docker/install-for-production.md)
+🔗 Gehiago irakurri: [kendu garapen menpekotasunak](/sections/docker/install-for-production.md)
 
 <br /><br /><br />
 
