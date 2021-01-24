@@ -1171,7 +1171,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Bestela:** berehala hiltzeak etsita dauden milaka erabiltzaileri ez erantzutea ekarriko du
 
-🔗 [**Gehiago irakurri: itzalaldi dotorea**](/sections/docker/graceful-shutdown.md)
+🔗 [**Gehiago irakurri: itzalaldi dotorea**](/sections/docker/graceful-shutdown.basque.md)
 
 <br /><br /><br />
 
