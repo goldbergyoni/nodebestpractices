@@ -1151,7 +1151,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Bestela**: irudira sarbidea duen edonorekin partekatuko dira `.env`, `.aws` eta `.npmrc` bezalako fitxategi sekretu pertsonal arruntak (adibidez, Docker biltegia)
 
-🔗 [**Gehiago irakurri: erabili .dockerignore**](/sections/docker/docker-ignore.md)
+🔗 [**Gehiago irakurri: erabili .dockerignore**](/sections/docker/docker-ignore.basque.md)
 
 <br /><br /><br />
 
