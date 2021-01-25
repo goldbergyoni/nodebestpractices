@@ -1225,7 +1225,7 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 **Bestela:** IE eta docker erregistroan sartzeko aukera duten guztiek erakundearen sekretu preziatuak ere eskuratzeko aukera izango dute onura gehigarri gisa
 
-🔗 [**Gehiago irakurri: garbitu eraikitze faseko sekretuak**](/sections/docker/avoid-build-time-secrets.md)
+🔗 [**Gehiago irakurri: garbitu eraikitze faseko sekretuak**](/sections/docker/avoid-build-time-secrets.basque.md)
 
 <br /><br /><br />
 
@@ -1235,7 +1235,7 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 **Bestela:** baliteke zure kodeak ahultasunik ez izatea. Hala ere, baliteke oraindik ere hackeatua izatea, aplikazioek normalean erabiltzen dituzten sistema eragilearen mailako binarioen bertsioak ahultasunak dituelako (adibidez, OpenSSL, TarBall)
 
-🔗 [**Gehiago irakurri: Dockerren praktika arruntak**](/sections/docker/scan-images.md)
+🔗 [**Gehiago irakurri: Dockerren praktika arruntak**](/sections/docker/scan-images.basque.md)
 
 <br /><br /><br />
 
