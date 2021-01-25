@@ -1245,7 +1245,7 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 **Bestela:** ekoizpenera bidaliko den irudiak % 30 gehiago pisatuko du, inoiz erabiliko ez diren fitxategiak direla eta
 
-🔗 [**Gehiago irakurri: garbitu NODE_MODULE cachea**](/sections/docker/clean-cache.md)
+🔗 [**Gehiago irakurri: garbitu NODE_MODULE cachea**](/sections/docker/clean-cache.basque.md)
 
 <br /><br /><br />
 
