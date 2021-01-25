@@ -1205,7 +1205,7 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 **Bestela:** oinarrizko irudi baten bertsio berri bat erabiliz gero, aldaketa handiak gerta litezke produkzioan, horrek aplikazioaren nahigabeko portaera sortuz
 
-🔗 [**Gehiago irakurri: ulertu irudi etiketak eta erabili "latest" etiketa kontu handiz**](/sections/docker/image-tags.md)
+🔗 [**Gehiago irakurri: ulertu irudi etiketak eta erabili "latest" etiketa kontu handiz**](/sections/docker/image-tags.basque.md)
 
 <br /><br /><br />
 
