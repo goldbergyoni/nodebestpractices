@@ -1263,7 +1263,7 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 **Bestela:** okerrez, Dockerfileren sortzaileak root bat utzi zuen produkzio erabiltzaile moduan, eta jatorri ezezaguneko biltegi irudi bat ere erabili zuen. Hori liner soil batekin ekidin liteke.
 
-🔗 [**Gehiago irakurri: garbitu zure Dockerfilea**](/sections/docker/lint-dockerfile.md)
+🔗 [**Gehiago irakurri: garbitu zure Dockerfilea**](/sections/docker/lint-dockerfile.basque.md)
 
 <br/><br /><br />
 
