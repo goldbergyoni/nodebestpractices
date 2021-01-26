@@ -1259,7 +1259,7 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 ## ![✔] 8.15. Garbitu zure Dockerfilea
 
-**TL;PL:** Linterra erabiliz zure Dockerfileaa garbitzea urrats garrantzitsua da haren barruan jardunbide egokiak errespetatzen ez dituzten arazoak identifikatzeko. Docker linter espezializatu bat erabiliz errendimendu eta segurtasun hobekuntzak erraz antzematen dira, alferrikako ordu ugari aurreztea edo produkzio kodean segurtasun arazoak murriztea lortuz
+**TL;PL:** Linterra erabiliz zure Dockerfilea garbitzea urrats garrantzitsua da haren barruan jardunbide egokiak errespetatzen ez dituzten arazoak identifikatzeko. Docker linter espezializatu bat erabiliz errendimendu eta segurtasun hobekuntzak erraz antzematen dira, alferrikako ordu ugari aurreztea edo produkzio kodean segurtasun arazoak murriztea lortuz
 
 **Bestela:** okerrez, Dockerfileren sortzaileak root bat utzi zuen produkzio erabiltzaile moduan, eta jatorri ezezaguneko biltegi irudi bat ere erabili zuen. Hori liner soil batekin ekidin liteke.
 
