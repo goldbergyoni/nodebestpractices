@@ -4,12 +4,24 @@
 
 Correlation ID is one of the best problem-solving patterns. It lets you linking log records, even if they belong to different services. If your system consumes other services and is itself a producer service, adding a correlaction ID is a must. By this pattern, your transaction logs can become into a story that tells itself by filtering your logs with a specific correlation ID, instead of try linking the cross-server transaction logs to each other by yourself. Can save your day when a process including 20 microservices throw an exception in one of them, and you have no idea where did the problem started in the flow.
 
-### Blog Quote: "We have a problem with promises"
+<br/><br/>
 
- From the blog, pouchdb.com ranked 11 for the keywords “Node Promises”
+### Code Example: passing the correlation ID between services on the requets http context
+Here is an example of using [express-http-context](https://www.npmjs.com/package/express-http-context) library to set the forwarded correlation ID on the http context:
 
- > … We recommend you to watch these signals for all of your services: Error Rate: Because errors are user facing and immediately affect your customers.
-Response time: Because the latency directly affects your customers and business.
-Throughput: The traffic helps you to understand the context of increased error rates and the latency too.
-Saturation: It tells how “full” your service is. If the CPU usage is 90%, can your system handle more traffic?
-…
+```javascript
+const httpContext = require('express-http-context');
+
+app.use((req, res, next) => {
+  // Extract the correlation ID from the previous request, or creating it if this is the first request in the transaction
+  const correlationId = req.get('X-Correlation-ID') || uuid.v4();
+  
+  // Set the correaltion ID on the http context
+  httpContext.set('correlationId', correlationId);
+  
+  // Set the correaltion ID on the response
+  res.set('X-Correlation-ID', correlationId);
+
+  next();
+});
+```
