@@ -245,7 +245,7 @@ especially if the cause of the abnormal behavior is inside of the missing functi
 
 **Otherwise:** Once an error will occure, you might read the logs without any context of understanding what caused the unexpected input and which logs of other services are related to your investigated transaction.
 
-🔗 [**Read More: Correlation ID: help your logs tell you a story and give you error a context**](/sections/errorhandling/correlationid.md)
+🔗 [**Read More: Correlation ID: help your logs tell you a story and give your error a context**](/sections/errorhandling/correlationid.md)
 
 <br/><br/><br/>
 
