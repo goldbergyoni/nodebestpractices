@@ -1,4 +1,4 @@
-# Correlation ID: help your logs tell you a story and give you error a context
+# Correlation ID: help your logs tell you a story and give your error a context
 
 ### One Paragraph Explainer
 
