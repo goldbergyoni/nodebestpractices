@@ -239,7 +239,7 @@ especially if the cause of the abnormal behavior is inside of the missing functi
 
 <br/><br/>
 
-## ![✔] 2.13 Give you error's log a context by adding a correlation ID
+## ![✔] 2.13 Give your error's log a context by adding a correlation ID
 
 **TL;DR:** Correlation ID lets you linking log records, even if they belong to different services. It can save your day when a process that including 20 different microservices throws an exception in one of them, and you have no idea where did the problem started across the flow.
 
