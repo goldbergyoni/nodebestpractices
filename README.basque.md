@@ -1082,7 +1082,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** errendimendu txikiagoko proiektuak mantendu beharko zenituzke, non **dagoeneko** eskura zenuena erabili beharko baitzenuke edo, fitxategi batzu gehiagoren truke, beste zenbait lerro landu
 
-🔗 [**Gehiago irakurri: erabiltzaileen jatorrizko baliabideak**](/sections/performance/nativeoverutil.md)
+🔗 [**Gehiago irakurri: erabiltzaileen jatorrizko baliabideak**](/sections/performance/nativeoverutil.basque.md)
 
 <br/><br/><br/>
 
