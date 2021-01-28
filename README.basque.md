@@ -1066,13 +1066,13 @@ edo hornitzaileen lainoko zerbitzuak
 
 <br/><br/>
 
-## ![✔] 7.1. Ez blokeatu gertaeraren begizta
+## ![✔] 7.1. Ez blokeatu gertaeren begizta
 
-**TL;PL:** saihestu PUZen zeregin intentsiboak, gertaeraren begizta blokeatuko baitute. Izan ere, gertaera horietako gehienak azpiprozesu bakarrekoak dira, eta deskargatuak izango baitira azpiprozesu dedikatu batean, prozesu batean edo teknologia desberdinetan, dauden testuinguruaren arabera
+**TL;PL:** saihestu PUZen zeregin intentsiboak, gertaeren begizta blokeatuko baitute. Izan ere, gertaera horietako gehienak azpiprozesu bakarrekoak dira, eta deskargatuak izango baitira azpiprozesu dedikatu batean, prozesu batean edo teknologia desberdinetan, dauden testuinguruaren arabera
 
-**Bestela:** gertaeraren begizta blokeatuta dagoenez, Node.jsk ezin izango du beste eskaera bat kudeatu eta, ondorioz, atzerapena eragin diezaieke erabiltzaileei. **3000 erabiltzaile erantzunaren zain daude, edukia zerbitzatzeko prest dago, baina eskaera bakar batek emaitzak berriro bidaltzea galarazten dio zerbitzariari**
+**Bestela:** gertaeren begizta blokeatuta dagoenez, Node.jsk ezin izango du beste eskaera bat kudeatu eta, ondorioz, atzerapena eragin diezaieke erabiltzaileei. **3000 erabiltzaile erantzunaren zain daude, edukia zerbitzatzeko prest dago, baina eskaera bakar batek emaitzak berriro bidaltzea galarazten dio zerbitzariari**
 
-🔗 [**Gehiago irakurri: ez blokeatu gertaeraren begizta**](/sections/performance/block-loop.md)
+🔗 [**Gehiago irakurri: ez blokeatu gertaeren begizta**](/sections/performance/block-loop.basque.md)
 
 <br /><br /><br />
 
