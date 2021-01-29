@@ -1,20 +1,20 @@
-# Use tools that automatically detect vulnerable dependencies
+# Utilisez des outils qui détectent automatiquement les dépendances vulnérables
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-Modern Node applications have tens and sometimes hundreds of dependencies. If any of the dependencies
-you use has a known security vulnerability your app is vulnerable as well.
-The following tools automatically check for known security vulnerabilities in your dependencies:
+Les applications modernes de Node ont des dizaines et parfois des centaines de dépendances. Si l'une des dépendances que 
+vous utilisez présente une faille de sécurité connue, votre application est également vulnérable.
+Les outils suivants vérifient automatiquement les vulnérabilités de sécurité connues dans vos dépendances :
 
-- [npm audit](https://docs.npmjs.com/cli/audit) - npm audit
-- [snyk](https://snyk.io/) - Continuously find & fix vulnerabilities in your dependencies
+- [npm audit](https://docs.npmjs.com/cli/audit) - audit de npm
+- [snyk](https://snyk.io/) - Trouve et corrige continuellement les vulnérabilités de vos dépendances
 
 <br/><br/>
 
-### What Other Bloggers Say
+### Ce que disent les autres blogueurs
 
-From the [StrongLoop](https://strongloop.com/strongblog/best-practices-for-express-in-production-part-one-security/) blog:
+Extrait du blog de [StrongLoop](https://strongloop.com/strongblog/best-practices-for-express-in-production-part-one-security/) :
 
-> ...Using to manage your application’s dependencies is powerful and convenient. But the packages that you use may contain critical security vulnerabilities that could also affect your application. The security of your app is only as strong as the “weakest link” in your dependencies. Fortunately, there are two helpful tools you can use to ensure the third-party packages you use: nsp and requireSafe. These two tools do largely the same thing, so using both might be overkill, but “better safe than sorry” are words to live by when it comes to security...
+> ...L'utilisation pour gérer les dépendances de votre application est puissante et pratique. Mais les paquets que vous utilisez peuvent contenir des vulnérabilités de sécurité critiques qui pourraient également affecter votre application. La sécurité de votre application est uniquement assurée par le « maillon le plus faible » de vos dépendances. Heureusement, il existe deux outils utiles pour garantir la sécurité des paquets tiers que vous utilisez : nsp et requireSafe. Ces deux outils font en grande partie la même chose, donc les utiliser tous les deux peut être excessif, mais « mieux vaut prévenir que guérir » sont des mots à respecter en matière de sécurité...
