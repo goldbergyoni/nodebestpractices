@@ -1,42 +1,42 @@
-# Be stateless, kill your Servers almost every day
+# Soyez sans état, tuez vos serveurs presque tous les jours
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-Have you ever encountered a severe production issue where one server was missing some piece of configuration or data? That is probably due to some unnecessary dependency on some local asset that is not part of the deployment. Many successful products treat servers like a phoenix bird – it dies and is reborn periodically without any damage. In other words, a server is just a piece of hardware that executes your code for some time and is replaced after that.
-This approach
+Avez-vous déjà rencontré un grave problème en production où il manquait un élément de configuration ou une donnée sur un serveur ? Cela est probablement dû à une dépendance inutile avec une ressource locale qui ne fait pas partie du déploiement. De nombreux produits à succès traitent les serveurs comme un oiseau phénix - il meurt et renaît périodiquement sans aucun dommage. En d'autres termes, un serveur n'est qu'une pièce de matériel qui exécute votre code pendant un certain temps et qui est ensuite remplacé.
+Cette approche
 
-- allows scaling by adding and removing servers dynamically without any side-effects.
-- simplifies the maintenance as it frees our mind from evaluating each server state.
+- permet une mise à l'échelle par l'ajout et la suppression dynamiques de serveurs sans aucun effet secondaire.
+- simplifie la maintenance car elle libère notre esprit de l'évaluation de l'état de chaque serveur.
 
 <br/><br/>
 
-### Code example: anti-patterns
+### Exemple de code incorrect
 
 ```javascript
-// Typical mistake 1: saving uploaded files locally on a server
-const multer = require('multer'); // express middleware for handling multipart uploads
+// Erreur typique 1 : enregistrement des fichiers téléchargés localement sur un serveur
+const multer = require('multer'); // un middleware express pour gérer les téléchargements en plusieurs parties
 const upload = multer({ dest: 'uploads/' });
 
 app.post('/photos/upload', upload.array('photos', 12), (req, res, next) => {});
 
-// Typical mistake 2: storing authentication sessions (passport) in a local file or memory
+// Erreur typique 2 : stockage des sessions d'authentification (passeport) dans un fichier ou une mémoire locale
 const FileStore = require('session-file-store')(session);
 app.use(session({
     store: new FileStore(options),
     secret: 'keyboard cat'
 }));
 
-// Typical mistake 3: storing information on the global object
+// Erreur typique 3 : stockage d'informations sur l'objet global
 Global.someCacheLike.result = { somedata };
 ```
 
 <br/><br/>
 
-### What Other Bloggers Say
+### Ce que disent les autres blogueurs
 
-From the blog [Martin Fowler](https://martinfowler.com/bliki/PhoenixServer.html):
-> ...One day I had this fantasy of starting a certification service for operations. The certification assessment would consist of a colleague and I turning up at the corporate data center and setting about critical production servers with a baseball bat, a chainsaw, and a water pistol. The assessment would be based on how long it would take for the operations team to get all the applications up and running again. This may be a daft fantasy, but there’s a nugget of wisdom here. While you should forego the baseball bats, it is a good idea to virtually burn down your servers at regular intervals. A server should be like a phoenix, regularly rising from the ashes...
+Extrait du blog de [Martin Fowler](https://martinfowler.com/bliki/PhoenixServer.html) :
+> ...Un jour, j'ai eu le délire de lancer un service de certification des exploitations. L'évaluation de la certification consisterait pour un collègue et moi à nous rendre au centre de données de l'entreprise et à nous occuper des serveurs de production critiques avec une batte de base-ball, une tronçonneuse et un pistolet à eau. L'évaluation serait basée sur le temps qu'il faudrait à l'équipe d'exploitation pour remettre toutes les applications en marche. C'est peut-être une idée folle, mais il y a là une pincée de bon sens. Bien que vous deviez renoncer aux battes de base-ball, il est bon de détruire virtuellement vos serveurs à intervalles réguliers. Un serveur doit être comme un phénix, renaissant régulièrement de ses cendres...
 
 <br/><br/>
