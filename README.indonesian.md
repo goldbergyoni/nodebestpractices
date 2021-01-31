@@ -89,13 +89,13 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 <br/><br/>
 
-## ![✔] 1.4 Separate Express 'app' and 'server'
+## ![✔] 1.4 Pisahkan 'app' dan 'server' Express
 
-**TL;DR:** Avoid the nasty habit of defining the entire [Express](https://expressjs.com/) app in a single huge file - separate your 'Express' definition to at least two files: the API declaration (app.js) and the networking concerns (WWW). For even better structure, locate your API declaration within components
+**TL;DR:** Hindari kebiasaan buruk dalam mendefinisikan seluruh aplikasi [Express](https://expressjs.com/) dalam satu file besar - pisahkan definisi 'Express' Anda menjadi setidaknya dua file: deklarasi untuk API (app.js) dan untuk jaringan (WWW). Untuk struktur yang lebih baik lagi, letak deklarasi API Anda di dalam komponen
 
-**Otherwise:** Your API will be accessible for testing via HTTP calls only (slower and much harder to generate coverage reports). It probably won't be a big pleasure to maintain hundreds of lines of code in a single file
+**Jika tidak:** API Anda hanya dapat diakses untuk pengujian melalui panggilan HTTP (lebih lambat and lebih susah untuk membuat laporan cakupan pengujian). Mengurus ratusan baris kode dalam satu file mungkin bukanlah hal yang menyenangkan
 
-🔗 [**Read More: separate Express 'app' and 'server'**](/sections/projectstructre/separateexpress.md)
+🔗 [**Baca selengkapnya: separate Express 'app' and 'server'**](/sections/projectstructre/separateexpress.md)
 
 <br/><br/>
 
