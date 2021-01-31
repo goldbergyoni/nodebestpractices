@@ -46,7 +46,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 ## Daftar Isi
 
-1. [Praktik Struktur Proyek (5)](#1-project-structure-practices)
+1. [Praktik Struktur Proyek (5)](#1-praktik-struktur-proyek)
 2. [Praktik Penanganan Error (11) ](#2-error-handling-practices)
 3. [Praktik Gaya Kode (12) ](#3-code-style-practices)
 4. [Praktik Pengujian dan Kualitas Secara Keseluruhan (13) ](#4-testing-and-overall-quality-practices)
@@ -57,15 +57,15 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 <br/><br/>
 
-# `1. Project Structure Practices`
+# `1. Praktik Struktur Proyek`
 
-## ![✔] 1.1 Structure your solution by components
+## ![✔] 1.1 Susun solusi Anda berdasarkan komponen
 
-**TL;DR:** The worst large applications pitfall is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Instead, partition your code into components, each gets its folder or a dedicated codebase, and ensure that each unit is kept small and simple. Visit 'Read More' below to see examples of correct project structure
+**TL;DR:** Masalah terburuk pada aplikasi besar adalah mengurus basis kode yang sangat besar dengan ratusan dependensi - monolit seperti itu memperlambat pengembang saat mereka mencoba untuk menambahkan fitur baru. Sebaiknya, partisi kode Anda menjadi beberapa komponen, setiap komponen mendapatkan foldernya sendiri atau basis kode tersendiri, dan pastikan setiap unit untuk tetap kecil dan sederhana. Kunjungi 'Baca selengkapnya' di bawah ini untuk melihat contoh struktur proyek yang benar
 
-**Otherwise:** When developers who code new features struggle to realize the impact of their change and fear to break other dependent components - deployments become slower and riskier. It's also considered harder to scale-out when all the business units are not separated
+**Jika tidak:** Saat pengembang yang menambahkan fitur baru kesusahan untuk melihat dampak dari perubahan mereka dan takut akan merusak komponen lain yang bergantung - _deployments_ menjadi lebih lambat dan berisiko. Kode juga dianggap lebih sulit untuk dikembangkan ketika semua unit bisnis tidak dipisahkan
 
-🔗 [**Read More: structure by components**](/sections/projectstructre/breakintcomponents.md)
+🔗 [**Baca selengkapnya: structure by components**](/sections/projectstructre/breakintcomponents.md)
 
 <br/><br/>
 
