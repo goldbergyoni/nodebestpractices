@@ -1223,6 +1223,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "6gx7iycn53ioq2e8apk1j1ypwov4giui",
+      "name": "007",
+      "avatar_url": "https://avatars.githubusercontent.com/u/65741741?v=4",
+      "profile": "https://keybase.io/651z9pz968v2accj",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
