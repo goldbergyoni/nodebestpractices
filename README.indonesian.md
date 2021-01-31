@@ -79,13 +79,13 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 <br/><br/>
 
-## ![✔] 1.3 Wrap common utilities as npm packages
+## ![✔] 1.3 Bungkus utilitas umum sebagai paket npm
 
-**TL;DR:** In a large app that constitutes a large codebase, cross-cutting-concern utilities like a logger, encryption and alike, should be wrapped by your code and exposed as private npm packages. This allows sharing them among multiple codebases and projects
+**TL;DR:** Pada aplikasi besar yang memiliki basis kode yang besar, utilitas _cross-cutting-concern_ seperti logger, enkripsi and yang serupa, harus dibungkus oleh kode Anda dan terekspos sebagai paket npm tersendiri. Ini memungkinkan untuk membagikan utilitas tersebut di antara beberapa basis kode dan projek
 
-**Otherwise:** You'll have to invent your deployment and the dependency wheel
+**Jika tidak:** Anda harus membuat cara _deployment_ dan _dependency_ Anda sendiri
 
-🔗 [**Read More: Structure by feature**](/sections/projectstructre/wraputilities.md)
+🔗 [**Baca selengkapnya: Structure by feature**](/sections/projectstructre/wraputilities.md)
 
 <br/><br/>
 
