@@ -69,13 +69,13 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 <br/><br/>
 
-## ![✔] 1.2 Layer your components, keep the web layer within its boundaries
+## ![✔] 1.2 Lapisi komponen Anda, pastikan lapisan web tetap dalam batasannya
 
-**TL;DR:** Each component should contain 'layers' - a dedicated object for the web, logic, and data access code. This not only draws a clean separation of concerns but also significantly eases mocking and testing the system. Though this is a very common pattern, API developers tend to mix layers by passing the web layer objects (e.g. Express req, res) to business logic and data layers - this makes your application dependent on and accessible only by specific web frameworks
+**TL;DR:** Setiap komponen harus mengandung 'lapisan' - objek khusus untuk web, logika, dan kode akses data. Hal ini tidak hanya menggambarkan _separation of concerns_ dengan jelas namun juga memudahkan _mocking_ and pengujian sistem. Meskipun ini adalah pola yang sangan umum, pengembang API cenderung mencampur lapisan dengan meneruskan objek lapisan web (misalnya Express req, res) ke logika bisnis dan lapisan data - ini membuat aplikasi Anda bergantung dan hanya bisa diakses oleh frameworks web tertentu
 
-**Otherwise:** App that mixes web objects with other layers cannot be accessed by testing code, CRON jobs, triggers from message queues, etc
+**Jika tidak:** Aplikasi yang menggabungkan objek web dengan lapisan lain tidak dapat diakses oleh kode test, CRON jobs, triggers dari message queues, dll.
 
-🔗 [**Read More: layer your app**](/sections/projectstructre/createlayers.md)
+🔗 [**Baca selengkapnya: layer your app**](/sections/projectstructre/createlayers.md)
 
 <br/><br/>
 
