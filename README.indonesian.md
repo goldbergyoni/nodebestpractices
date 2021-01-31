@@ -99,13 +99,13 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 <br/><br/>
 
-## ![✔] 1.5 Use environment aware, secure and hierarchical config
+## ![✔] 1.5 Gunakan konfigurasi yang sadar atas lingkungan, aman dan hierarkis
 
-**TL;DR:** A perfect and flawless configuration setup should ensure (a) keys can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are a few packages that can help tick most of those boxes like [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config), and [convict](https://www.npmjs.com/package/convict).
+**TL;DR:** Pengaturan konfigurasi yang sempurna harus memastikan (a) kunci dapat dibaca dari file DAN dari variabel lingkungan (b) rahasia disimpan di luar kode (c) konfigurasi bersifat hierarkis agar mudah ditemukan. Ada beberapa paket yang dapat mempermudah pengaturan tersebut seperti [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config), dan [convict](https://www.npmjs.com/package/convict).
 
-**Otherwise:** Failing to satisfy any of the config requirements will simply bog down the development or DevOps team. Probably both
+**Jika tidak:** Gagal untuk memenuhi salah satu persyaratan konfigurasi hanya akan menghambat tim pengembang atau DevOps. Mungkin keduanya
 
-🔗 [**Read More: configuration best practices**](/sections/projectstructre/configguide.md)
+🔗 [**Baca selengkapnya: configuration best practices**](/sections/projectstructre/configguide.md)
 
 <br/><br/><br/>
 
