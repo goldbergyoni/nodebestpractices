@@ -173,13 +173,13 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 <br/><br/>
 
-## ![✔] 2.7 Use a mature logger to increase error visibility
+## ![✔] 2.7 Gunakan alat pencatat yang baik untuk meningkatkan visibilitas kesehatan
 
-**TL;DR:** A set of mature logging tools like [Pino](https://github.com/pinojs/pino) or [Log4js](https://www.npmjs.com/package/log4js), will speed-up error discovery and understanding. So forget about console.log
+**TL;DR:** Satu set alat pencatat yang baik seperti [Pino](https://github.com/pinojs/pino) atau [Log4js](https://www.npmjs.com/package/log4js), akan mempercepat penemuan dan pemahaman suatu kesalahan. Jadi tinggalkan console.log
 
-**Otherwise:** Skimming through console.logs or manually through messy text file without querying tools or a decent log viewer might keep you busy at work until late
+**Jika tidak:** Melihat beberapa console.log atau secara manual melalui file teks yang berantakan tanpa alat kueri atau penampil catatan yang baik dapat membuat Anda sibuk di tempat kerja hingga larut
 
-🔗 [**Read More: using a mature logger**](/sections/errorhandling/usematurelogger.md)
+🔗 [**Baca selengkapnya: using a mature logger**](/sections/errorhandling/usematurelogger.md)
 
 <br/><br/>
 
