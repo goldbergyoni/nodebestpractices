@@ -143,13 +143,13 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 <br/><br/>
 
-## ![✔] 2.4 Handle errors centrally, not within a middleware
+## ![✔] 2.4 Tangani kesalahan secara terpusat, bukan dalam middleware
 
-**TL;DR:** Error handling logic such as mail to admin and logging should be encapsulated in a dedicated and centralized object that all endpoints (e.g. Express middleware, cron jobs, unit-testing) call when an error comes in
+**TL;DR:** Logika penanganan kesalahan seperti pengiriman pesan ke admin dan pencatatan harus dikemas dalam objek khusus dan terpusat yang dipanggil oleh semua endpoint (contohnya middleware Express, pekerjaan cron, pengujian unit) ketika ada kesalahan
 
-**Otherwise:** Not handling errors within a single place will lead to code duplication and probably to improperly handled errors
+**Jika tidak:** Tidak menangani kesalahan dalam satu tempat akan menyebabkan duplikasi kode dan mungkin kesalahan yang tidak ditangani dengan tepat
 
-🔗 [**Read More: handling errors in a centralized place**](/sections/errorhandling/centralizedhandling.md)
+🔗 [**Baca selengkapnya: handling errors in a centralized place**](/sections/errorhandling/centralizedhandling.md)
 
 <br/><br/>
 
