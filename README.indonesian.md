@@ -123,13 +123,13 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 <br/><br/>
 
-## ![✔] 2.2 Use only the built-in Error object
+## ![✔] 2.2 Gunakan hanya objek Error bawaan
 
-**TL;DR:** Many throw errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw an exception or emit an error – using only the built-in Error object (or an object that extends the built-in Error object) will increase uniformity and prevent loss of information
+**TL;DR:** Banyak pengembang melempar error sebagai string atau tipe khusus – ini mempersulit logika penanganan kesalahan dan interoperabilitas antar modul. Maupun Anda menolak sebuah _promise_, melontarkan sebuah pengecualian atau mengeluarkan error – dengan hanya menggunakan objek Error bawaan (atau objek yang memperluas objek Error bawaan) dapat meningkatkan keseragaman dan mencegah hilangnya informasi
 
-**Otherwise:** When invoking some component, being uncertain which type of errors come in return – it makes proper error handling much harder. Even worse, using custom types to describe errors might lead to loss of critical error information like the stack trace!
+**Jika tidak:** Saat menjalankan beberapa komponen, karena tidak yakin jenis kesalahan yang akan di lempar – ini membuat penanganan kesalahan yang benar jauh lebih sulit. Lebih buruk lagi, menggunakan tipe khusus untuk mendeskripsikan kesalahan dapat menyebabkan hilangnya informasi kesalahan kritis seperti _stack trace_!
 
-🔗 [**Read More: using the built-in error object**](/sections/errorhandling/useonlythebuiltinerror.md)
+🔗 [**Baca selengkapnya: using the built-in error object**](/sections/errorhandling/useonlythebuiltinerror.md)
 
 <br/><br/>
 
