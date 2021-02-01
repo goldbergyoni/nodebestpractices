@@ -4,11 +4,11 @@
 
 ### Azalpen paragrafoa
 
-Normalean, Node.js/Express aplikazio kode moderno gehienen promesen barruan funtzionatzen dute, .then kudeatzailearen, callback funtzio baten edota catch bloke baten barruan. Modu harrigarrian, garatzaileak .catch klausula gogoratu ezean, leku hauetan jaurtitako erroreak ez dira uncaughtException ebentu-kudeatzaileaz kudeatuak izaten eta desagertu egiten dira. Noderen bertsio berrienek ohartarazpen mezu bat gehitu dute kudeatu gabeko errefus bat agertzean, egia da honek gauzak ondo ez doazenean jakinarazten lagundu dezakela, baina argi dago ez dela erroreak kudeatzeko modu zuzena. Konponbide samurrena, promesa dei kate bakoitzaren barruan .catch klausula erabiltzen ez ahaztea eta errore kudeatzaile zentralizatu batera desbideratzea da. Hala ere, zure errore kudeaketa estrategia soilik garatzaile diziplinan oinarritua apurkorra da. Ondorioz, atzera-egite dotorea erabiltzea eta `process.on('unhandledRejection', callback)`ra harpidetzea oso gomendatua dago, honek, promesa errore bakoitzak, lokalki kudeatuta egon ezean, bere tratamendua izango duela ziurtatuko du.
+Normalean, Node.js/Express aplikazio kode moderno gehienek promesen barruan funtzionatzen dute, .then kudeatzailearen, callback funtzio baten edota catch bloke baten barruan. Harrigarria bada ere, garatzaile batek .catch klausula bat gehitu zuela gogoratu ezean, leku hauetan jaurtitako erroreak ez dira uncaughtException ebentu kudeatzaileaz kudeatuak izaten, eta desagertu egiten dira. Noderen bertsio berrienek ohartarazpen mezu bat gehitu dute tratatu gabeko errefusa agertzen denean; egia da horrek, gauzak ondo ez doazenean, ohartzen lagun dezakeela, baina argi dago ez dela erroreak kudeatzeko modu egokia. Konponbide samurrena da ez ahaztea promesa kateko dei bakoitzaren barruan .catch klausula erabiltzen eta errore kudeatzaile zentralizatu batera desbideratzea. Hala ere, hauskorra da erroreak kudeatzeko estrategia garatzailearen diziplinan soilik oinarritzea. Ondorioz, oso gomendagarria da atzera egite dotorea erabiltzea eta `process.on('unhandledRejection', callback)`ra harpidetzea, horrek ziurtatuko baitu promesa erroreek, bere tratamendua izango dutela, lokalki kudeatzen ez badira.
 
 <br/><br/>
 
-### Kodearen adibidea: errore hauek ez ditu inolako errore kudeatzailek harrapatuko (unhandledRejection-ek izan ezik)
+### Kode adibidea: errore hauek ez ditu inolako errore kudeatzailek atzemango (unhandledRejection-ek izan ezik)
 
 ```javascript
 DAL.berreskuratuErabiltzaileaIdBidez(1).then((johnSnow) => {
@@ -19,7 +19,7 @@ DAL.berreskuratuErabiltzaileaIdBidez(1).then((johnSnow) => {
 
 <br/><br/>
 
-### Kodearen adibidea: kudeatu gabeko eta baztertutako promesak harrapatzen
+### Kode adibidea: kudeatu gabeko eta baztertutako promesak atzematen
 
 <details>
 <summary><strong>Javascript</strong></summary>
@@ -65,11 +65,11 @@ process.on("uncaughtException", (errorea: Error) => {
 
 <br/><br/>
 
-### Blogeko aipua: "Akatsen bat egiteko gai bazara, momenturen batean egingo duzu"
+### Blogeko aipua: "&quot;Erroreren bat egiteko gai bazara, momenturen batean egin egingo duzu"
 
-James Nelson blogetik
+James Nelson blogetik hartua
 
-> Froga dezagun zure ulermena. Hauetako zeinek uste duzu erakutsiko duela errore bat konsolan?
+> Proba dezagun zure ulermena. Hauetako zeinek uste duzu erakutsiko duela errore bat kontsolan?
 
 ```javascript
 Promise.resolve("agindutako balioa").then(() => {
@@ -85,4 +85,4 @@ new Promise((resolve, reject) => {
 });
 ```
 
-> Ez dakit zer pentsatzen duzun, baina nire erantzuna guztietan errore bat bistaratuko dela da, eta errealitatea, JavaScript ingurune moderno gehienek kasu hauetako batentzat ere ez dituztela erroreak bistaratuko da. Gizakien arazoa, akatsen bat egiteko gai bazara, momenturen batean egingo duzula da. Hau argi edukita, begibistakoa dirudi gauzak akatsen erruz ahalik eta gutxien hondatzeko diseinatu behar direla da, eta honek erroreak beti kudeatzea esan nahi du, alde batera utzi beharrean.
+> Ez dakit zer pentsatzen duzun, baina nire erantzuna da guztietan bistaratuko dela erroreren bat, eta errealitatea da JavaScript ingurune moderno gehienek kasu hauetako batentzat ere ez dituztela erroreak bistaratuko. Gizakien arazoa da, erroreen bat egiteko gai bazara, momenturen batean egingo duzula. Hori argi edukita, begibistakoa dirudi gauzak diseinatu behar direla erroreen erruz ahalik eta gutxien hondatzeko, eta horrek erroreak beti kudeatu beharra dagoela esan nahi du, alde batera utzi beharrean.

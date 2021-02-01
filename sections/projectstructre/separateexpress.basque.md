@@ -8,7 +8,7 @@ Azken Express sorgailuak mantentzea merezi duen sekulako jardunbide bikain bat d
 
 <br/><br/>
 
-### Kodearen adibidea: APIaren deklarazioak app.js/app.ts-en barruan egon beharko luke
+### Kode adibidea: APIaren deklarazioak app.js/app.ts-en barruan egon beharko luke
 
 ```javascript
 const app = express();
@@ -17,7 +17,7 @@ app.use("/api/events", events.API);
 app.use("/api/forms", forms);
 ```
 
-### Kodearen adibidea: zerbitzari sarearen deklarazioak /bin/www-en barruan egon beharko luke
+### Kode adibidea: zerbitzari sarearen deklarazioak /bin/www-en barruan egon beharko luke
 
 <details>
 <summary><strong>Javascript</strong></summary>
@@ -53,7 +53,7 @@ const server = http.createServer(app);
 
 </details>
 
-### Kodearen adibidea: zure APIa prozesua martxan den bitartean probatu supertest (frogentzako pakete ospetsua) erabiliz
+### Kode adibidea: zure APIa prozesua martxan den bitartean probatu supertest (frogentzako pakete ospetsua) erabiliz
 
 <details>
 <summary><strong>Javascript</strong></summary>

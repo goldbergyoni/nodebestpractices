@@ -112,7 +112,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 <p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
 
-# `2. Akatsen kudeaketa`
+# `2. Erroreen kudeaketa`
 
 ## ![✔] 2.1 Erabili Async-Await edo errore asinkronoak kudeatzeko promesak
 
@@ -174,7 +174,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 <br/><br/>
 
-## ![✔] 2.7 Erabili erregistratze tresna heldu bat erroreen ikusgaitasuna handitzeko
+## ![✔] 2.7 Erabili erregistratze tresna helduak erroreen ikusgaitasuna handitzeko
 
 **TL;PL:** erregistratze tresna helduen sortak erabiltzen badituzu –[Pino](https://github.com/pinojs/pino) edo [Log4js](https://www.npmjs.com/package/log4js), adibidez–, erroreak lehenago antzeman eta ulertuko dituzu. Beraz, utzi alde batera console.log
 
@@ -238,7 +238,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 <p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
 
-# `3. Kodearen estiloa`
+# `3. Kode estiloa`
 
 ## ![✔] 3.1 Erabili ESLint
 

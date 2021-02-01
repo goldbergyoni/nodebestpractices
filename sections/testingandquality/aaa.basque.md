@@ -4,14 +4,13 @@
 
 ### Azalpen Paragrafoa
 
-Probak egiterakoan daukagun erronka handiena memoria espazio falta da, iada badugu asko lanpentzen gaituen ekoizpen kodea. Honegatik, proba kodea sinplea eta ulergarria izan behar da. Proba kasu bat irakurtzean, ez du kode inperatiboa (begiztak, ondoretasun) irakurtzearen irudia eman behar, HTML moduan, esperientzia deklaratibo bat baizik. Hau lortzeko, erabili AAA eredua irakurtzaileek probaren asmoa esfortzu gabe uler dezaten. Eredu hau bezalako beste batzuk ere badaude, XUnit 'Prestatu, Aritu, Egiaztatu, Eraitsi' ('Setup, Excercise, Verify, Teardown') bezalakoak. Hauek dira hiru Ak:
+Probak egiterakoan daukagun erronka handiena memoriako espazio falta da, dagoeneko ekoizpen kodeak oso lanpetuta gauzka. Horregatik, proben kodeak sinplea eta ulergarria izan behar du. Probak irakurtzean, ez luke eman beharko kode inperatiboa irakurtzen ari zarela (begiztak, oinordetza), HTML moduan, esperientzia deklaratibo bat baizik. Hori lortzeko, erabili AAA eredua, irakurtzaileek probaren asmoa esfortzu gabe uler dezaten. Badaude hori bezalako beste eredu batzuk ere, adibidez: XUnit 'Prestatu, Aritu, Egiaztatu eta Eraitsi' ('Setup, Excercise, Verify, Teardown'). Hauek dira hiru Ak:
 
-Lehenengo A, Prestatu (Arrange): Sistema, proba kasuak simulatu nahi duen egoeran jartzeko, egin beharreko kodearen prestakuntza. Honek, eraikitzailearen unitate proba egitea eska lezake, datu-basean datuak gehitzea, objektuak antzeratuz (mock) eta beste edozein prestakuntza kode
+Lehenengo A, prestatu (Arrange): hau da, prestatu kodea lortzeko sistema jartzea probak simulatu nahi duen egoeran. Horrek, besteak beste, eraikitzailearen unitate proba egitea eska lezake, datu basean erregistroak gehitzea, objektuak mock/stub eta beste edozein prestakuntza kode eranstea
 
-Bigarren A, Jokatu: zure unitate proba exekutatko. Normalean kode ilara bat
+Bigarren A, jokatu: exekutatu zure unitate proba. Normalean kode ilara bat izaten da
 
-Hirugarren A, Baieztatu: Jasotako balioak esperotakoa errespetatzen duela ziurtatu. Normalean kode ilara bat
-
+Hirugarren A, baieztatu: ziurtatu jasotako balioak espero ziren modukoak direla. Normalean kode ilara bat izaten da
 <br/><br/>
 
 ### Kode adibidea: AAA ereduaz egituratutako proba bat
@@ -38,7 +37,7 @@ describe.skip("Bezero klasifikatzailea", () => {
 
 <br/><br/>
 
-### Kodearen adibidea, Anti Eredua: bereizketarik ez, bloke bakarra, ulertzeko zailagoa
+### Kode adibidea, anti eredua: bereizketarik ez, bloke bakarra, ulertzeko zailagoa
 
 ```javascript
 test("Premium gisa klasifikatua izan beharko litzateke", () => {
@@ -57,7 +56,7 @@ test("Premium gisa klasifikatua izan beharko litzateke", () => {
 
 ### "Erabili 6 zati proba bakoitzean"
 
-["30 Node.jsen proba jarraibide egokiak" blogetik, Yoni Goldbergen eskutik](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347)
+["30 Node.jsen proba jarraibide egokiak" blogetik hartua, Yoni Goldbergen eskutik](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347)
 
 ![Proba txostenaren adibidea](/assets/images/6-parts-in-test.jpg "Proba txostenaren adibidea")
 

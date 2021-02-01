@@ -2,9 +2,9 @@
 
 ### Azalpen paragrafoa
 
-Zure kodearen lekuren batean, errore kudeaketa objektua errore bat gertatzen denean nola jokatu erabakitzearen arduradun da, errorea konfiantzazkoa bada (adibidez operazio errorea, irakurri azalpen osatuagoa #3 jarraibide egokian) erregistro fitxategian idaztea nahikoa izango da. Gauzak okertzen dira errorea ezezaguna denean, honek osagairen bat egoera txarrean dagoela eta hurrengo eskaera guztiek huts egiteko aukera handia dutela esan nahi du eta. Adibidez, singleton bat edukiaz, token batek exzepzio bat jaurti eta ondoren bere egoera galdu duen zerbitzu batekin arazoa du, hemendik aurrera ustekabean joka dezake eta eskaera guztiek huts egitea eragin. Egoera honen aurrean, prozesua gelditu eta 'Berrekite tresna' erabili (Forever, PM2, etab. bezalakoak) egoera garbi batekin berriz hasteko.
+Zure kodearen lekuren batean, erroreren bat gertatzen denean erroreen kudeaketa objektuaren ardura da erabakitzea nola jokatu, eta, errorea konfiantzazkoa bada, nahikoa izango da erregistro fitxategian idaztea; errorea operazionala bada, berriz, irakurri azalpen osatuagoa #3 jarraibide egokian). Gauzak okertzen dira errorea ezezaguna denean, horrek osagairen bat egoera txarrean dagoela eta hurrengo eskaera guztiek huts egiteko aukera handia dutela esan nahi du eta. Adibidez, eman dezagun, singleton bat edukita, token batek salbuespen bat igorri duela eta ondoren bere egoera galdu duen zerbitzu batekin arazoa duela; hortik aurrera ustekabean joka dezake eta eskaera guztiek huts egitea eragin. Egoera horren aurrean, prozesua gelditu eta 'Berrekite tresna' erabili (Forever, PM2, etab. bezalakoak) egoera garbi batekin berriz hasteko.
 
-### Kodearen adibidea: krak egin ala ez erabakitzen
+### Kode adibidea: huts eragin ala ez erabakitzen
 
 <details>
 <summary><strong>Javascript</strong></summary>
@@ -77,23 +77,23 @@ export const kudeatzailea = new ErroreKudeatzailea();
 ```
 </details>
 
-### Blogeko aipua: "Irtenbiderik hoberena krak egitea da"
+### Blogeko aipua: "Irtenbiderik hoberena huts egitea da"
 
-Joyent blogetik
+Joyent blogetik hartua
 
-> …Programatzaile erroreetatik suspertzeko modurik hoberena berehala krak egitea da. Hutsegite gertaraki baten aurrean programa automatikoki berrekingo duen berrekite sistema bat erabili beharko zenuke zure programetan. Berrekite sistema baten erabileraz, programatzaile errore pasakor baten aurrean krak egitea zerbitzu fidagarri bat suspertzeko modurik azkarrena da…
+> …Programatzaileen erroreak konpontzeko modurik hoberena berehala krak egitea da. Programaren batek huts eginez gero, berrabiarazle bat erabiliz exekutatu beharko zenuke, automatikoki berrabiaraziko baitu. Berrabiarazlea dagoenean, huts egitea da programa fidagarria berreskuratzeko biderik azkarrena programatzailearen errore iragankor baten aurrean ...
 
-### Blogeko aipua: "Errore kudeaketaren inguruko hiru ideia-eskola daude"
+### Blogeko aipua: "Errore kudeaketaren inguruko hiru ideia eskola daude"
 
-JS Recipes blogetik
+JS Recipes blogetik hartua
 
-> …Errore kudeaketaren inguruko hiru ideia-eskola nagusi daude:
-1. Utzi aplikazioak kraskadura izan dezan eta ondoren berrekin ezazu
-2. Errore posible guztiak kudeatu eta inoiz ez eduki kraskadurarik
+> …Errore kudeaketaren inguruko hiru ideia eskola nagusi daude:
+1. Utzi aplikazioari huts egiten eta ondoren berrabiarazi
+2. Errore posible guztiak kudeatu eta inoiz ez huts egin
 3. Bien arteko planteamendu bat
 
-### Blogeko aipua: "Alde egiteko modu segururik ez zehaztugabeko egoera hauskor bat sortu gabe"
+### Blogeko aipua: "Ez dago modu segururik irteteko zehaztugabeko egoera hauskorrik sortu gabe"
 
-Node.js dokumentazio ofizialetik
+Node.js dokumentazio ofizialetik hartua
 
-> …JavaScripten throwen funtsezko funtzionamenduan, ez dago ia inoiz "alde batera utzitakoa jasotzeko" modu seguruan egiteko biderik, erreferentziak galdu gabe edota bestelako zehaztugabeko egoera hauskorrak sortu gabe. Jaurtitako errore bati erantzuteko modurik seguruena prozesua itzaltzea da. Jakina, web zerbitzari arrunt batean, konekxio ugari eduki ahal ditzakezu irekita, eta ez da zentzuzkoa tupustean hauek ixtea beste batek eragindako errore batengatik. Planteamendu hoeberena, errorea bidali duen eskariari errore erantzun bat bidaltzea da, besteei beren atazak bukatzeko denbora utziz, eta eskari berriei kasu egiteari utzi prozesu horretan.
+> …JavaScripten lanak nola exekutatzen diren kontuan izanda, ez dago ia inoiz lan bati ziurtasunez jarraipena emateko biderik utzitako puntuan hasita, erreferentziak galdu gabe edota bestelako zehaztugabeko egoera hauskorrik sortu gabe. Jaurtitako errore bati erantzuteko modurik seguruena prozesua itzaltzea da. Jakina, web zerbitzari arruntetan, konekxio ugari eduki ahal dituzu irekita, eta ez da zentzuzkoa tupustean haiek ixtea beste batek eragindako errore batengatik. Planteamendu hoberena da bidaltzea errore erantzun bat errorea bidali duen eskariari, besteei beren atazak bukatzeko denbora utziz, eta eskari berriei kasu egiteari uztea prozesu horretan.

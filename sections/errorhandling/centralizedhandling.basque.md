@@ -4,7 +4,7 @@
 
 Errore kudeaketarako ardura bakarreko objektu bat ez izateak, errore garrantzitsuak ezkutatzeko aukerak ugaritzen ditu kudeaketa ezegoki baten eraginpean. Errore kudeaketarako objektua, errorea begibistako bihurtzearen arduradun da, adibidez, egoki formateatutako erregistro batean idatziz, ebentuak [Sentry](https://sentry.io/), [Rollbar](https://rollbar.com/), edota [Raygun](https://raygun.com/) bezalako monitorizazio sistemaren batera bidaliz. [Express](http://expressjs.com/en/guide/error-handling.html#writing-error-handlers) bezalako web framework gehienak, errore kudeaketa middleware mekanismo bat proposatzen dute. Errore kudeaketa fluxu tipiko bat hau izan daiteke: moduluren batek errore bat jaurtitzen du -> API routerrak errorea harrapatzen du -> errorea middlewarera hedatzen du, (adibidez Express edo KOA), zeinek erroreak harrapatzeko ardura duen -> errore kudeatzaile zentralizatu bati deitzen zaio -> middlewareari esaten zaio ia errore hau konfiantzazkoa den (ez operazio errorea) aplikazioa dotoreki berrekiteko. Kontutan izan Express midelwarean erroreak kudeatzea praktika arrunta dela, okerra izan arren. Hau egiteak ez ditu kontutan hartzen weba ez diren bestelako interfazeetako erroreak.
 
-### Kodearen adibidea: ohizko errore fluxu bat
+### Kode adibidea: ohiko errore fluxua
 
 <details>
 <summary><strong>Javascript</strong></summary>
@@ -72,7 +72,7 @@ app.use(async (errorea: Error, req: Request, res: Response, next: NextFunction) 
 
 </details>
 
-### Kodearen adibidea: erroreen kudeaketa ardura bakarreko objektu batekin
+### Kode adibidea: erroreen kudeaketa ardura bakarreko objektuekin
 
 <details>
 <summary><strong>Javascript</strong></summary>
@@ -110,7 +110,7 @@ export const kudeatzailea = new ErroreKudeatzailea();
 
 </details>
 
-### Kodearen adibidea: anti Eredua: erroreak middleware barruan kudeatu
+### Anti ereduaren kode adibidea: kudeatu erroreak middleware barruan
 
 <details>
 <summary><strong>Javascript</strong></summary>
@@ -156,20 +156,20 @@ app.use((errorea: Error, req: Request, res: Response, next: NextFunction) => {
 
 </details>
 
-### Blogeko aipua: "Batzuetan maila baxuagoek beren deilariari errorea hedatzea baino ezer erabilgarriagorik ezin dute egin"
+### Blogeko aipua: "Batzuetan maila baxuagoek beren deitzaileari errorea bidaltzea baino ezer praktikoagorik ezin dute egin"
 
-Joyent blogetik, “Node.js errore kudeaketa" hitz gako bati esker sailkatua
+Joyent blogeko “Node.js errore kudeaketa" hitz gako bati esker sailkatua
 
-> …Errore bera pilaren maila askotan kudeatzen bukatuko duzu. Hau, maila baxuenek beren deilariei (eta beste hauek beren deilariei, etab.) errorea hedatzea baino hoberik ez dutenean gertatzen da. Askotan, soilik goi mailako deilariak daki zein den erantzun zuzena, ia ahalegin operazio berria den, erabiltzaileari erroreari buruz eman, edo beste edozer. Baina honek ez du esan nahi errore guztiak goi mailako callback bakar bati jakinarazi behar dizkiozunik, callback honek ere errorea zein kontextutan gertatu den ez daki eta…
+> …Errore bera pilaren maila askotan kudeatzen bukatuko duzu. Hau gertatzen da maila baxuenek beren deitzaileei (eta beste haiek beren deitzaileei, etab.) errorea bidaltzea baino beste ezer egokiagorik ezin dutenean egin. Askotan, soilik goi mailako deitzaileak daki zein den erantzun zuzena, ia ahalegin operazio berria den, erabiltzaileari errorearen berri eman behar dion, edo beste edozer. Baina horrek ez du esan nahi errore guztiak goi mailako callback bakar bati jakinarazi behar dizkiozunik, callback horrek ere errorea zein testuingurutan gertatu den ez daki eta…
 
 ### Blogeko aipua: "Errore bakoitza bakarka kudeatzea bikoizte galanta izan daiteke"
 
-JS Recipes blogetik, “Node.js errore kudeaketa" 17 hitz gakori esker sailkatua
+JS Recipes blogeko “Node.js errore kudeaketa" 17 hitz gakori esker sailkatua
 
-> ……Hackathoneko Starter api.js kontrolatzaile bakarrean, 79 errore objektu inguru daude. Errore bakoitza bakarka kudeatzeak kodea ikaragarri bikoiztea eragin dezake. Hurrengo egin dezakezun gauza hoberena errore kudeaketa logika Express middleware bati uztea da…
+> ……Hackathoneko Starter api.js kontrolatzaile bakarrean, 79 errore objektu inguru daude. Errore bakoitza bakarka kudeatzeak kodea ikaragarri bikoiztea eragin dezake. Hurrengo egin dezakezun gauza hoberena da errore kudeaketa logika Express middleware bati uztea…
 
-### Blogeko aipua: "HTTP erroreak ezin dira zure datu-basearen kodean egon"
+### Blogeko aipua: "HTTP erroreak ezin dira zure datu basearen kodean egon"
 
-Daily JS blogetik, “Node.js errore kudeaketa" 14 hitz gakori esker sailkatua
+Daily JS blogeko “Node.js errore kudeaketa" 14 hitz gakori esker sailkatua
 
-> ……Errore objektuetan ezaugarri erabilgarriak zehaztu beharko zenituzke, baina ezaugarri hauek tinkoki erabili. Eta, ez gurutzatu korronteak: HTTP erroreak ezin dira zure datu-basearen kodean egon. Edota, nabigatzaile garatzaileentzat, Ajax erroreak zerbitzariarekin hitz egiten duen kodean daitezke, baina Mustache txantiloiak prozesatzen dituen koderik ez…
+> ……Errore objektuetan ezaugarri erabilgarriak zehaztu beharko zenituzke, baina ezaugarri horiek tinko erabiliz. Eta, ez gurutzatu korronteak: HTTP erroreak ezin dira zure datu basearen kodean egon. Edota, nabigatzaile garatzaileentzat, Ajax erroreak zerbitzariarekin hitz egiten duten kodean egon daitezke, baina Mustache txantiloiak prozesatzen dituen koderik ez…

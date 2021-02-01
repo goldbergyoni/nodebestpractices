@@ -20,7 +20,7 @@ Konfigurazio liburutegi batzuek aipatutako funtzionalitate gehienak dohainik esk
 
 <br/><br/>
 
-### Kodearen adibidea: konfigurazio hierarkikoak balioak aurkitzen eta konfigurazio fitxategi handiak mantentzen laguntzen du
+### Kode adibidea: konfigurazio hierarkikoak balioak aurkitzen eta konfigurazio fitxategi handiak mantentzen laguntzen du
 
 ```json5
 {

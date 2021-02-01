@@ -4,11 +4,11 @@
 
 ### Azalpen paragrafoa
 
-Errore bat gertatzen denean, fluxu sinkrono edo asinkrono bat dela, errore fluxuaren pila aztarna guztia edukitzea derrigorrezkoa da. Funtzio asinkrono batek (adibidez beste funtzio asinkrono bat deitzen duena) itxaron gabe (await) promesak itzultzen dituenean, errore bat gertatuko litzateke eta jatorrizko funtzio honen izena ez litzateke pilaren aztarnan agertu beharko. Honek, errorea diagnostikatzen duen pertsona informazio partzialarekin utziko luke, are gehiago errorearen zergatiak jatorrizko funtzioan badu oinarria. Badago "zero-kostuko pila aztarna asinkronoak" deitzen den v8 funtzionalitate bat, pila aztarnak azken gertatu berri den `await`ean moztuak ez izatea ahalbidetzen duena. Garrantzirik gabeko inplementazio xehetasunak direla eta, honek ez du funtzionatuko funtzioak bueltatzen duen balioa (sinkronoa edo asinkronoa), promesa bat baldin bada. Promesak deuseztuak izango direnean pilaren aztarnan zuloak egotea ekiditeoko, promesak beti explizituki ebatzi behar ditugu `await` erabiliaz berauek funtzioetatik bueltatu baino lehen
+Errore bat gertatzen denean fluxu sinkrono edo asinkrono batetik abiatuta, derrigorrezkoa da errore fluxuaren pila aztarna osoa edukitzea. Harrigarria bada ere, funtzio asinkrono batek (adibidez beste funtzio asinkrono bat deitzen duena) itxaron gabe (await) promesak itzultzen dituenean, errore bat gertatuko litzateke eta jatorrizko funtzio horren izena ez litzateke pilaren aztarnan agertu beharko. Horrek informazio partziala emango dio errorea diagnostikatzen duenari, are gehiago errorearen zergatiak jatorrizko funtzioan badu oinarria. Badago "zero-kostuko pila aztarna asinkronoak" deitzen den v8 funtzionalitate bat, pila aztarnak azken gertatu berri den `await`ean moztuak ez izatea ahalbidetzen duena. Garrantzirik gabeko inplementazio xehetasunak direla eta, horrek ez du funtzionatuko funtzioak bueltatzen duen balioa (sinkronoa edo asinkronoa), promesa bat baldin bada. Promesak deusezten direnean pilaren aztarnan zuloak egotea ekiditeoko, promesak beti esplizituki ebatzi behar ditugu `await` erabiliz beraiek funtzioetatik bueltatu baino lehen
 
 <br/>
 
-### Kodearen adibidea Anti-Eredua: funtzio asinkrono bat deitu itxaron gabe
+### Anti ereduaren kode adibidea: funtzio asinkronoak deitu itxaron gabe
 
 <details><summary>Javascript</summary>
 <p>
@@ -36,7 +36,7 @@ Errorea: bueltatuItxaronGabe falta da pilaren aztarnan
 </p>
 </details>
 
-### Kodearen adibidea: zZuzenki deitu eta itxaron
+### Kode adibidea: zuzenean deitu eta itxaron
 
 <details><summary>Javascript</summary>
 <p>
@@ -68,7 +68,7 @@ Error: zati guztiak edukiz
 
 <br/>
 
-### Kodearen adibidea Anti-Eredua: promesa bat bueltatu funtzio bat asinkronotzat etiketatu gabe
+### Anti ereduaren kode adibidea: itzuli promesak funtzioak asinkronotzat etiketatu gabe
 
 <details><summary>Javascript</summary>
 <p>
@@ -102,7 +102,7 @@ Error: syncFn falta da pilaren aztarnan
 </p>
 </details>
 
-### Kodearen adibidea: etiketatu promesak asinkrono gista bueltatzen dituen funtzioa
+### Kode adibidea: etiketatu promesak asinkrono gisa itzultzen dituen funtzioa
 
 <details><summary>Javascript</summary>
 <p>
@@ -139,7 +139,7 @@ Error: zati guztiak edukiz
 
 </br>
 
-### Kodearen adibidea Anti-eredua #3: callback asinkrono baten erabilera zuzena callback sinkrono bat espero zen lekuan
+### Kode adibidea, anti eredua #3: callback asinkronoen erabilera zuzena callback sinkronoa espero zen lekuan
 
 <details><summary>Javascript</summary>
 <p>
@@ -170,7 +170,7 @@ Error: pilaren aztarna falta da berreskuratuErabiltzailea deitu den lekuan
 </p>
 </details>
 
-### Kodearen adibidea: callback asinkronoa funtzio asinkrono babo batekin bildu callback asinkrono gisa pasa aurretik
+### Kode adibidea: bildu callback asinkronoa funtzio asinkrono faltsu batean callback sinkrono gisa bidali aurretik
 
 <details><summary>Javascript</summary>
 <p>
@@ -225,33 +225,35 @@ Error: [...]
 
 <br/>
 
-zero-kostuko pila aztarna asinkronoak" deitzen den v8 funtzionalitate bat
+Zero kostuko pila aztarna asinkronoak" deitzen den v8 funtzionalitate bat
 
 ## Azalpen aurreratua
 
-Funtzio sinkronoen pila aztarnen eta funtzio asinkronoen pila aztarnen meknismoak v8ren ezarpenetan oso ezberdinak dira:
-pila aztarna asinkronoa Node.js martxan dagoen sistema eragileak emandako **pila**n oinarritua dago (programazio lengoaia gehienetan bezala). Funtzio asinkrono bat exekutatzen ari denean, sistema eragileko **pila** agerian jartzen da funtzioa bere lehen `await`era iristen den momentuan. Beraz, pilaren aztarna, sistema eragilearen **pila**ren eta baztertutako **promesa ebazpen katea**ren nahasketa bat da. Zero-kostuko pila aztarna asinkronoen ezarpenak **promesa ebazpen katea**ren du jatorria soilik promesa `itxaroten`  <span>[¹](#1)</span> ari den bitartean. Nola bakarrik funtzio `asinkrono`ek (`async`) `itxaron`go (`await`) duten, beti galduko da funtzio asinkronoa pilaren aztarna asinkrono batean, operazio asinkronoren bat egina izan bada funtzioa deitu eta gero <span>[²](#2)</span>
+Oso ezberdinak dira funtzio sinkronoen pila aztarnen eta funtzio asinkronoen pila aztarnen mekanismoak v8ren ezarpenetan: pila aztarna asinkronoa oinarritua dago Node.js martxan dagoen sistema eragileak emandako **pila**n (programazio lengoaia gehienak bezala). Funtzio asinkrono bat exekutatzen ari denean, sistema eragileko **pila** agerian jartzen da funtzioa bere lehen `await`era iristen den momentuan. Beraz, pilaren aztarna nahasketa bat da, hain zuzen, sistema eragilearen pilaren eta baztertutako **promesa ebazpen katea**rena. Zero kostuko pila aztarna asinkronoen ezarpenak **promesa ebazpen katea** luzatzen du bakarrik promesa `itxaroten`  <span>[¹](#1)</span> ari den bitartean. Funtzio asinkronoek bakarrik (`async`) itxaron (`await`) ahal dutenez, beti galduko da funtzio asinkronoa pilaren aztarna asinkrono batean, operazio asinkronoren bat izan bada funtzioa deitu eta gero <span>[²](#2)</span>
 
 ### The tradeoff (sektorea)
 
-`await` bakoitzak mikro ataza berri bat sortzen du ebentuen begiztan, beraz `await` gehiago gehitzeak errendimendu isunak sortu ditzake. Hala ere, sareak edota datu baseak sortutako errendimendu isuna [ikaragarri handiagoa](https://colin-scott.github.io/personal_website/research/interactive_latency.html) da, beraz gehitutako `await`aren isuna ez da zerbitzariak edo CLIak garatzeko orduan kontutan hartu beharreko zerbait, eskaera edo komando zailen kodearentzat ez bada behintzat. Orduan, `await` ezabatzea `return await`etan errendimendu bultzada nabarmenak bilatzeko azken lekua izan beharko lukete eta, zalantzarik gabe, inoiz ez lirateke aldez aurretik eginak izan beharko
+`await` bakoitzak mikro ataza berri bat sortzen du gertaeraren begiztan. Beraz `await` gehiago gehitzeak errendimendu zigorra ekarriko luke. Hala ere, sareak edota datu baseak sortutako errendimendu isuna [ikaragarri handiagoa](https://colin-scott.github.io/personal_website/research/interactive_latency.html) da, eta, beraz gehitutako `await`aren zigorra ez da zerbitzariak edo CLIak garatzeko orduan kontutan hartu beharreko zerbait, eskaera edo komando bakoitzeko oso kode beroa izan ezean behintzat. Orduan, `await` ezabatzeak `return await`etan errendimendu bultzada nabarmena bilatzeko azken lekua izan beharko luke eta, zalantzarik gabe, inoiz ez litzateke aldez aurretik egin beharko
 
-### Zergatik await bueltatazea anti eredutzat jotzen zen iraganean
 
-[Artikulu bikain](https://jakearchibald.com/2017/await-vs-return-vs-return-await/) ugari daude zergatik `return await`ak inoiz `try` bloke baten kanpoan erabili behar diren azaltzen dutenak, eta [ESLint arau](https://eslint.org/docs/rules/no-return-await) bat ere hau ezesten duena. Honen arrazoia async/await Node.js 0.10ko transpilatzaileekin (eta berezko sostengua lortu du Node.js 7.6n) erabilgarri bihurtu izana eta "zero kostuko pila aztarna asinkronoak" Node.js 10en gehitua izana eta ondoren Node.js 12n kenua, `return await` eta `return` guztiz parekoak ziren, edozein `try` kode bloketik kanpo. Oraindik ere berdina izaten jarraituko du seguraski ES motoreentzat. Honegatik, promesak kalkulatzea berauek bueltatu aurretik Node.jsentzat jarraibide egokiena da eta ez orokorrean EcmaScriptentzat
+### Zergatik jotzen zen await bueltatzea anti eredutzat iraganean
 
+[Artikulu bikain](https://jakearchibald.com/2017/await-vs-return-vs-return-await/) ugari daude azaltzen dutenak zergatik `return await`ak ez diren inoiz `try` bloketik kanpo erabili behar, bai eta [ESLint arau](https://eslint.org/docs/rules/no-return-await) arau bat ere hori debekatzen duena. Horren arrazoia da async/await Node.js 0.10ko transpilagailuekin erabilgarri bihurtu izana (eta jatorrizko laguntza lortu dutela Node.js 7.6 bertsioan) eta "zero kostuko pila aztarna asinkronoak" Node.js 10en gehitua izana eta ondoren Node.js 12tik kendua, `return await` eta `return` guztiz parekoak ziren, edozein `try` kode bloketik kanpo. Oraindik ere berdina izaten jarraituko du seguraski ES motoreentzat. Horregatik, Node.jsentzat jardunbide egokiena da promesak kalkulatzea beraiek bueltatu aurretik. EcmaScriptentzat, ordea, hori ez jardunbide egokiena.
 
 ### Oharrak:
 
-1. Pila aztarna asinkronoak halako ezarpen korapilatsua izatearen beste arrazoietako bat pila aztarna beti modu sinkronoan eraiki behar izanaren muga da, ebentuaren begiztaren <span id="a1">[¹](#1)</span> momentu berean
-2. `throwAsync` barruan `await` gabe, kodea ebentu begiztaren fase berean exekutatuko litzateke. Hau, sistema eragilearen **pila** hustutzen ez deneko eta pila aztarna esplizituki funtzioaren emaitza itxaron gabe ere betetzen deneko kasu degeneratua da. Normalean, promesen erabilerak operazio asinkrono batzuk edukitzen ditu, non pilaren aztarnaren zati batzuk galduak izango diren
-3. Zero-kostuko pila aztarna asinkronoek promesa erabilera kasu konplikatuentzat ez dute funtzionatuko, adibidez askotan eta leku ezberdinetan itxarondako promesa bakarra
+1. Pila aztarna asinkronoak halako ezarpen korapilatsua izatearen beste arrazoi bat da pila aztarna beti modu sinkronoan eraiki behar dela, gertaeraren begiztaren <span id="a1">[¹](#1)</span> momentu berean
+
+2. `throwAsync` barruan `await` gabe, gertaera begiztaren fase berean exekutatuko litzateke kodea. Hori, degeneratutako kasua da: sistema eragilearen **pila** ez litzateke hustuko, eta pila aztarna beteko litzateke funtzioaren emaitzari berariaz itxaron gabe ere. Normalean, promesen erabilerak operazio asinkrono batzuk edukitzen dituenez, pilaren aztarnaren zati batzuk galdu egingo lirateke
+
+3. Zero kostuko pila aztarna asinkronoek ez lukete funtzionatuko promesa erabileren kasu korapilatsuetan: promesa bakar bati hainbat aldiz eta leku ezberdinetan itxaron beharra dagoenean, adibidez.
+
 
 ### Erreferentziak:
-  <span id="1">1. </span>[v8ko zero-kostuko pila aztarna asinkronoak blog argitarapena](https://v8.dev/blog/fast-async)
+  <span id="1">1. </span>[v8ko zero kostuko pila aztarna asinkronoak blog argitarapena](https://v8.dev/blog/fast-async)
   <br>
 
-  <span id="2">2. </span>[zero-kostuko pila aztarna asinkronoei inguruko dokumentazioa ezarpen xehetasunekin hemen](
+  <span id="2">2. </span>[zero kostuko pila aztarna asinkronoei inguruko dokumentazioa ezarpen xehetasunekin hemen](
     https://docs.google.com/document/d/13Sy_kBIJGP0XT34V1CV3nkWya4TwYx9L3Yv45LdGB6Q/edit
   )
   <br>

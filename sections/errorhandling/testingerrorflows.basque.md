@@ -2,9 +2,10 @@
 
 ### Azalpen paragrafoa
 
-Bide ‘alaiak’ frogatzea ez da huts egiteak frogatzea baino hobea. Kode frogatze estaldura onak ezohiko bideak frogatzea eskatzen du. Bestela, ez dago exzepzioak modu zuzenean kudeatuta daudenaren inolako konfidantzarik. Unitate test framework guztiek, adibidez [Mocha](https://mochajs.org/) edo [Chai](http://chaijs.com/), exzepzio frogaketa sostengatzen dute (kode adibideak beherago). Gogaikarria iruditzen bazaizu funtzio eta exzepzio bakoitza frogatzea, soilik REST APIen HTTP erroreak frogatzea erabaki zenezake.
+Bide ‘alaiak’ probatzea ez da hutsegiteak probatzea baino hobea. Probako kodeen estaldura ona da salbuespenezko bideak probatzeko. Bestela, ez dago inolako konfidantzarik salbuespenak zuzen kudeatuta dauden. Unitateen azterketa esparru guztiek, [Mocha](https://mochajs.org/) edo [Chai](http://chaijs.com/) bezala, onartzen dituzte salbuespen probak (kode adibideak beherago). Gogaikarria iruditzen bazaizu funtzio eta salbuespen bakoitza probatzea, REST APIen HTTP erroreak bakarrik probatzea erabaki zenezake.
 
-### Kodearen adibidea: Mocha eta Chai erabiliz ziurtatu exzepzio egokia jaurtitzen dela
+
+### Kode adibidea: ziurtatu salbuespen egokia jaurtitzen dela Mocha eta Chai erabiliz
 
 <details>
 <summary><strong>Javascript</strong></summary>

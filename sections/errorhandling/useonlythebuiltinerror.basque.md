@@ -2,9 +2,9 @@
 
 ### Azalpen paragrafoa
 
-JavaScripten permisibitate naturalak, bere kode fluxuaren aukera guztiekin (adibidez EventEmitter, Callbackak, Promesak ...) garatzaileek erroreak kudeatzeko modu anitzak edukitzea eragiten du: batzuek stringak erabiltzen dituzte, besteek beren mota pertsonalizatuak zehazten dituzte. Node.jsen "Errorea" objektu kapsulatua erabiltzeak zure kodearen eta bestelako liburutegien arteko uniformetasuna gordetzen laguntzen du, eta gainera StracTracea bezalako informazio esanguratsua gordetzen du. Exzepzio bat jaurtitzean, errorearen izena edo erlazionatutako HTTP errore kodea bezalako kontextu ezaugarriekin osatzeza jarraibide egokia da. Uniformetasun eta praktika hau lortzeko, saiatu "Errorea" objektua beharrezko ezaugarriekin osatzen, baina kontu izan gehiegitan ez egitearekin. Orokorrean ideia ona da "Errorea" objektu kapsulatua behin bakarrik osatzea AppErrore batekin aplikazioaren maila guztietako erroreentzat, eta beharrezko duzun informazioa argumentu gisa pasatuz errore mota ezberdinak ezberdintzeko. Ez da beharrezkoa "Errorea" objektua askotan osatzea (errore kasu bakoitzerako behin, adibidez DbError, HttpError...). Begiratu ondorengo kode adibideak
+JavaScriptek berezko permisibitatea du, eta, bere kode fluxuaren aukera ugariarekin (adibidez EventEmitter, Callbackak, Promesak ...), garatzaileek erroreak kudeatzeko modu anitzak edukitzea eragiten du: batzuek stringak erabiltzen dituzte, besteek beren mota pertsonalizatuak zehazten dituzte. Node.jsen "Errorea" objektu kapsulatua erabiltzeak zure kodearen eta bestelako liburutegien arteko uniformetasuna gordetzen laguntzen du, eta gainera StracTracea bezalako informazio esanguratsua gordetzen du. Salbuespen bat jaurtitzean, jarraibide egokia da errorearen izena edo erlazionatutako HTTP errore kodea bezalako testuinguru ezaugarriekin osatzea. Uniformetasun eta praktika hau lortzeko, saiatu "Errorea" objektua beharrezko ezaugarriekin osatzen, baina kontu izan gehiegitan ez egiten. Orokorrean ideia ona da "Errorea" objektu kapsulatua behin bakarrik osatzea AppErrore batekin aplikazioaren maila guztietako erroreentzat, eta beharrezko duzun informazioa argumentu gisa pasatuz errore klase ezberdinak ezberdintzeko. Ez da beharrezkoa "Errorea" objektua askotan osatzea (errore kasu bakoitzerako behin, adibidez DbError, HttpError...). Begiratu ondorengo kode adibideak
 
-### Kodearen adibidea: era zuzenean egin
+### Kode adibidea: era zuzenean egin
 
 ```javascript
 // ohizko funtzio batean Error objektua jaurti, sinkronoa dela edo asinkronoa dela (sync async)
@@ -30,7 +30,7 @@ const gehituProduktua = async (gehitzekoProduktua) => {
 };
 ```
 
-### Kodearen adibidea: anti Jarraibidea
+### Anti jarraibidearen kode adibidea
 
 ```javascript
 // string baten jaurtiketak edozein pila informazio eta datu ezaugarri garrantzitsu falta ditu
@@ -38,7 +38,7 @@ if (!gehitzekoProduktua)
   throw "Nola gehi dezaket produktu bat baliorik ez duenean?";
 ```
 
-### Kodearen adibidea: oraindik ere era zuzenagoan egin
+### Kode adibidea: oraindik ere era zuzenagoan egin
 
 <details>
 <summary><strong>Javascript</strong></summary>
@@ -111,26 +111,26 @@ if (erabiltzailea == null)
 
 _`Object.setPrototypeOf`ri buruzko azalpena Typescripten: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html#support-for-newtarget_
 
-### Blogeko aipua: "Ez dut mota ezberdin ugari edukitzean interesik ikusten"
+### Blogeko aipua: "Ez diot interesik ikusten mota ezberdin ugari edukitzeari"
 
-Ben Nadel blogetik, “Node.js errore objektua” 5 hitz gakori esker sailkatua
+Ben Nadel blogeko “Node.js errore objektua” 5 hitz gakori esker sailkatua
 
-> …”Modu pertsonalean, ez dut mota ezberdin ugari edukitzean interesik ikusten [bakarra edukitzearekin alderatuz] - Ez dirudi JavaScriptek, lengoaia gisa, eraikitzailez-oinarritutako errore-harrapaketa hornitzerik. Horrela, objektu baten ezaugarriak bereizteak Eraikitzaile motak bereiztea baino errazagoa dirudi…
+> …”Nik neuk, ez diot interesik ikusten errore objektu klase ezberdin ugari edukitzeari [bakarra edukitzearekin alderatuz]. Ez dirudi JavaScriptek, lengoaia gisa, eraikitzailez oinarritutako errore harrapaketa hornitzen duenik. Horrela, objektu baten ezaugarriak bereizteak Eraikitzaile klaseak bereiztea baino errazagoa dirudi…
 
 ### Blogeko aipua: "String bat ez da errore bat"
 
-devthought.com blogetik, “Node.js errore objektua” 6 hitz gakori esker sailkatua
+devthought.com blogeko “Node.js errore objektua” 6 hitz gakori esker sailkatua
 
-> …String baten ordez errore bat pasatzeak moduluen arteko elkarreragintasuna murrizten du. `instanceof` errore egiaztapen arrakastatsuak izan litezken kontratuak apurtzen ditu APIekin. Errore objektuek, ikusiko dugun bezala, Javascript motore modernoetan ezaugarri interesgarriak dituzte eraikitzaileari pasatutako mezua kontserbatzeaz gain…
+> …String baten ordez errore bat pasatzeak moduluen arteko elkarreragintasuna murrizten du. instanceof errore egiaztapen arrakastatsuak izan litezken kontratuak apurtzen ditu APIekin. Ikusiko dugun bezala, errore objektuek, eraikitzaileari pasatutako mezua kontserbatzeaz gain, Javascript motore modernoetan ezaugarri interesgarriak dituzte…
 
 ### Blogeko aipua: "Erroretik jaraunsteak ez du balio askorik gehitzen"
 
-machadogj blogetik
+machadogj blogetik hartua
 
-> …Error klasearekin daukadan arazo bat jaraunsteko erraza ez izatea da. Noski, klasea jarauntsi dezakezu eta zure HttpError, DbError, etab. bezalako Error klase propioak sortu. Hala ere, horrek denbora eskatzen du eta ez du balio askorik gehitzen[AppError batentzat behin bakarrik jaraunsteaz alderatuz] baldin eta motekin zerbait egiten ez bazabiltza. Batzuetan, soilik mezu bat gehitu nahi duzu eta barruko errorea mantendu, beste batzuetan ordea, errorea parametro edo bestelako informazioekin osatu nahi zenezake…
+> …Errore klasea jaraunsteko erraza ez izatea arazo bat da. Noski, klasea jaraunts dezakezu eta zure HttpError, DbError, etab. bezalako Error klase propioak sortu. Hala ere, horrek denbora eskatzen du, eta ez du balio askorik gehitzen [AppError batentzat behin bakarrik jaraunsteaz alderatuz], baldin eta klaseekin zerbait egiten ez bazabiltza. Batzuetan, soilik mezu bat gehitu nahi duzu eta barruko errorea mantendu; beste batzuetan, ordea, errorea parametroekin edo bestelako informazioekin osatu nahi zenezake…
 
 ### Blogeko aipua: "Node.jsek jaurtitako JavaScript eta System errore guztiak "Error" objektutik datoz"
 
-Node.js dokumentazio ofizialetik
+Node.js dokumentazio ofizialetik hartua
 
-> …Node.jsek jaurtitako JavaScript eta System errore guztiak JavaScripten "Error" klase estandarretik datoz edo "Error" objektuaren instantziak dira eta gutxienez klase horretako ezaugarri erabilgarriak hornitzea bermatzen dute. Errorea zergatik gertatu den inolako berariazko baldintzarik adierazten ez duen JavaScript Error objektu generikoa. Error objektuek "pila aztarna" bat atzematen dute, Error instantziatua izan den kodearen lekua zehaztuz, eta errorearen testu deskribapena eduki dezakete. Node.jsek sortutako errore guztiak, System eta JavaScript erroreak barne, Error klasetik eratorritakoak edo Error klasearen instantziak izango dira…
+> …Node.jsek jaurtitako JavaScript eta System errore guztiak JavaScripten "Error" klase estandarretik datoz edo "Error" objektuaren instantziak dira, eta gutxienez horrelako ezaugarri erabilgarriak hornitzea bermatzen dute. JavaScript Error objektu generiko bat da, errorea zergatik gertatu den inolako berariazko baldintzarik adierazten ez duena. Error objektuek "pila aztarna" bat atzematen dute, Error instantziatua izan den kodearen lekua zehaztuz, eta errorearen testu deskribapena eduki dezakete. Node.jsek sortutako errore guztiak, System eta JavaScript erroreak barne, Error klasetik eratorritakoak edo Error motaren instantziak izango dira…
