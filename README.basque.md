@@ -53,7 +53,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 4. [Probak eta kalitate orokorra (13) ](#4-probak-eta-kalitate-orokorra)
 5. [Ekoizpena (19) ](#5-ekoizpena)
 6. [Segurtasuna (25)](#6-segurtasuna)
-7. [Errendimendua (2) (Aribidean ✍️)](#7-errendimendua-(zirriborroa))
+7. [Errendimendua (2) (Aribidean ✍️)](#7-zirriborroa-errendimendua)
 8. [Docker (15)](#8-docker)
 
 <br/><br/>
@@ -1060,7 +1060,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 <p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
 
-# 7. Errendimendua(zirriborroa)
+# `7. Zirriborroa: errendimendua`
 
 ## Gure laguntzaileak lanean ari dira atal honetan. [Parte hartu nahi zenuke?](https://github.com/goldbergyoni/nodebestpractices/issues/256)
 
