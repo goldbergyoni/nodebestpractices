@@ -4,7 +4,7 @@
 
 ### Azalpen paragrafoa
 
-Azken Express sorgailuak mantentzea merezi duen sekulako jardunbide bikain bat du. Izan ere, APIaren deklarazioa sarearekin erlazionatutako ezarpenetatik (portua, protokoloa, etab.) banandua dago. Horrek APIa prozesua martxan den bitartean egiaztatzea ahalbidetzen du, sare deiak egin gabe eta horrek dakartzan onura guztiekin: egiaztatze azkarren exekuzioa eta estalduraren metrikak eskuratzea. API bera sare baldintza malgu eta ezberdinetan inplementatzea ere ahalbidetzen du. Gehigarria: arduren bereizte hobea eta kode garbiagoa
+Azken Express sorgailuak mantentzea merezi duen sekulako jardunbide bikain bat du. Izan ere, APIaren deklarazioa sarearekin erlazionatutako ezarpenetatik (portua, protokoloa, etab.) banandua dago. Horrek APIa prozesua martxan den bitartean egiaztatzea ahalbidetzen du, sare deirik egin gabe eta horrek dakartzan onura guztiekin: egiaztatze azkarren exekuzioa eta estalduraren metrikak eskuratzea. API bera sare baldintza malgu eta ezberdinetan inplementatzea ere ahalbidetzen du. Gehigarria: arduren bereizte hobea eta kode garbiagoa
 
 <br/><br/>
 
@@ -53,7 +53,7 @@ const server = http.createServer(app);
 
 </details>
 
-### Kodearen adibidea: zure APIa prozesua martxan den bitartean frogatu supertest (frogentzako pakete ospetsua) erabiliz
+### Kodearen adibidea: zure APIa prozesua martxan den bitartean probatu supertest (frogentzako pakete ospetsua) erabiliz
 
 <details>
 <summary><strong>Javascript</strong></summary>
