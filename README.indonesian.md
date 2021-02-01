@@ -153,13 +153,13 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 <br/><br/>
 
-## ![✔] 2.5 Document API errors using Swagger or GraphQL
+## ![✔] 2.5 Mendokumentasikan kesalahan API menggunakan Swagger atau GraphQL
 
-**TL;DR:** Let your API callers know which errors might come in return so they can handle these thoughtfully without crashing. For RESTful APIs, this is usually done with documentation frameworks like Swagger. If you're using GraphQL, you can utilize your schema and comments as well.
+**TL;DR:** Beri tahu pemanggil API Anda kesalahan apa yang mungkin dapat diterima sehingga mereka dapat menanganinya dengan baik tanpa merusak aplikasinya. Untuk API RESTful, hal ini biasanya dilakukan dengan framework dokumentasi seperti Swagger. Jika Anda menggunakan GraphQL, Anda juga dapat memanfaatkan skema dan komentar.
 
-**Otherwise:** An API client might decide to crash and restart only because it received back an error it couldn’t understand. Note: the caller of your API might be you (very typical in a microservice environment)
+**Jika tidak:** Klien API mungkin memutuskan untuk memberhentikan aplikasi dan memulai ulang hanya karena menerima kesalahan yang tidak dapat dipahami. Catatan: pemanggil API mungkin adalah Anda (sangat umum dalam lingkungan _microservice_)
 
-🔗 [**Read More: documenting API errors in Swagger or GraphQL**](/sections/errorhandling/documentingusingswagger.md)
+🔗 [**Baca selengkapnya: documenting API errors in Swagger or GraphQL**](/sections/errorhandling/documentingusingswagger.md)
 
 <br/><br/>
 
