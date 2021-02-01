@@ -47,7 +47,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 ## Daftar Isi
 
 1. [Praktik Struktur Proyek (5)](#1-praktik-struktur-proyek)
-2. [Praktik Penanganan Error (11) ](#2-error-handling-practices)
+2. [Praktik Penanganan Kesalahan (11) ](#2-praktik-penanganan-kesalahan)
 3. [Praktik Gaya Kode (12) ](#3-code-style-practices)
 4. [Praktik Pengujian dan Kualitas Secara Keseluruhan (13) ](#4-testing-and-overall-quality-practices)
 5. [Praktik Dalam Produksi(19) ](#5-going-to-production-practices)
@@ -111,15 +111,15 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `2. Error Handling Practices`
+# `2. Praktik Penanganan Kesalahan`
 
-## ![✔] 2.1 Use Async-Await or promises for async error handling
+## ![✔] 2.1 Gunakan Async-Await atau promise untuk penanganan kesalahan asinkron
 
-**TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using a reputable promise library or async-await instead which enables a much more compact and familiar code syntax like try-catch
+**TL;DR:** Menangani kesalahan asinkron dalam panggilan balik mungkin adalah cara terburuk (a.k.a the pyramid of doom). Hal terbaik yang dapat Anda berikan ke kode Anda adalah dengan menggunakan pustaka promise dengan reputasi yang baik atau gunakan async-await yang membuat sintaks kode menjadi lebih ringkas dan familier seperti try-catch
 
-**Otherwise:** Node.js callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting, and awkward coding patterns
+**Jika tidak:** Gaya panggilan balik Node.js, function(err, response), adalah cara yang menjanjikan untuk kode yang tidak dapat dipelihara karena campuran dari penanganan kesalahan dengan kode kasual, bersarang yang berlebihan, dan pola pengkodean yang canggung
 
-🔗 [**Read More: avoiding callbacks**](/sections/errorhandling/asyncerrorhandling.md)
+🔗 [**Baca selengkapnya: avoiding callbacks**](/sections/errorhandling/asyncerrorhandling.md)
 
 <br/><br/>
 
