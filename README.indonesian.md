@@ -163,13 +163,13 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 <br/><br/>
 
-## ![✔] 2.6 Exit the process gracefully when a stranger comes to town
+## ![✔] 2.6 Hentikan proses dengan benar ketika orang asing datang ke kota
 
-**TL;DR:** When an unknown error occurs (a developer error, see best practice 2.3) - there is uncertainty about the application healthiness. Common practice suggests restarting the process carefully using a process management tool like [Forever](https://www.npmjs.com/package/forever) or [PM2](http://pm2.keymetrics.io/)
+**TL;DR:** Ketika terjadi kesalahan yang tidak diketahui (kesalahan pengembang, lihat praktik terbaik 2.3) - ada ketidakpastian tentang kesehatan aplikasi. Praktik umum menyarankan untuk memulai kembali proses dengan hati-hati menggunakan alat manajemen proses seperti [Forever](https://www.npmjs.com/package/forever) atau [PM2](http://pm2.keymetrics.io/)
 
-**Otherwise:** When an unfamiliar exception occurs, some object might be in a faulty state (e.g. an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
+**Jika tidak:** Ketika pengecualian yang tidak dikenal terjadi, beberapa objek mungkin dalam keadaan rusak (contohnya event emitter yang digunakan secara global dan tidak dapat mengaktifkan event lagi karena kesalahan internal) dan semua panggilan yang akan datang mungkin akan gagal atau tidak berperilaku dengan normal
 
-🔗 [**Read More: shutting the process**](/sections/errorhandling/shuttingtheprocess.md)
+🔗 [**Baca selengkapnya: shutting the process**](/sections/errorhandling/shuttingtheprocess.md)
 
 <br/><br/>
 
