@@ -49,7 +49,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 1. [Proiektuaren egitura (5)](#1-proiektuaren-egitura)
 2. [Erroreen kudeaketa (11) ](#2-erroreen-kudeaketa)
-3. [Kodearen estiloa (12) ](#3-kodearen-estiloa)
+3. [Kode estiloa (12) ](#3-kode-estiloa)
 4. [Probak eta kalitate orokorra (13) ](#4-probak-eta-kalitate-orokorra)
 5. [Ekoizpena (19) ](#5-ekoizpena)
 6. [Segurtasuna (25)](#6-segurtasuna)
