@@ -1060,7 +1060,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 <p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
 
-# 7. Errendimendua (zirriborroa)
+# 7. Errendimendua(zirriborroa)
 
 ## Gure laguntzaileak lanean ari dira atal honetan. [Parte hartu nahi zenuke?](https://github.com/goldbergyoni/nodebestpractices/issues/256)
 
