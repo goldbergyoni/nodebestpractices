@@ -135,7 +135,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 ## ![✔] 2.3 Membedakan kesalahan operasional dan kesalahan pengembang
 
-**TL;DR:** Kesalahan operasional (contohnya API menerima masukan yang tidak valid) merupakan kasus kesalahan yang diketahui di mana dampak dari kesalahannya dapat dipahami sepenuhnya dan dapat ditangani dengan cermat. Di sisi lain, kesalahan pengembang (contohnya mencoba membaca variabel yang tidak ditentukan) merupakan kegagalan kode yang tidak diketahui yang menentukan untuk memulai ulang aplikasi dengan baik
+**TL;DR:** Kesalahan operasional (contohnya API menerima masukan yang tidak valid) merupakan kasus kesalahan yang diketahui dimana dampak dari kesalahannya dapat dipahami sepenuhnya dan dapat ditangani dengan cermat. Di sisi lain, kesalahan pengembang (contohnya mencoba membaca variabel yang tidak ditentukan) merupakan kegagalan kode yang tidak diketahui yang menentukan untuk memulai ulang aplikasi dengan baik
 
 **Jika tidak:** Anda selalu dapat memulai ulang aplikasi Anda ketika kesalahan muncul, namun kenapa mengecewakan ~5000 pengguna hanya karena kesalahan operasional yang kecil dan dapat diprediksi? hal sebaliknya juga tidak ideal – membiarkan aplikasi tetap berjalan ketika terdapat kesalahan yang tidak diketahui (kesalahan oleh pengembang) dapat menyebabkan perilaku yang tidak terduga. Membedakan kedua kesalahan tersebut memungkinkan untuk melakukan tindakan yang benar dan menerapkan cara penyelesaian masalah yang sesuai dengan konteks yang diberikan
 
