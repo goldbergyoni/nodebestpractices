@@ -257,27 +257,28 @@ terutama jika penyebab perilaku yang tidak normal ada di dalam fungsi yang hilan
 
 <br/><br/>
 
-## ![✔] 3.3 Start a Codeblock's Curly Braces on the Same Line
+## ![✔] 3.3 Mulai kurung kurawal pada blok kode pada baris yang sama
 
-**TL;DR:** The opening curly braces of a code block should be on the same line as the opening statement
+**TL;DR:** Tanda kurung kurawal pembuka blok kode harus di baris yang sama dengan statement pembuka
 
-### Code Example
+### Contoh Kode
 
 ```javascript
-// Do
+// Lakukan
 function someFunction() {
-  // code block
+  // blok kode
 }
 
-// Avoid
-function someFunction() {
-  // code block
+// Hindari
+function someFunction() 
+{
+  // blok kode
 }
 ```
 
-**Otherwise:** Deferring from this best practice might lead to unexpected results, as seen in the StackOverflow thread below:
+**Jika tidak:** Tidak mengikuti praktik terbaik ini dapat menyebabkan hasil yang tidak terduga, seperti yang terlihat pada thread StackOverflow di bawah ini:
 
-🔗 [**Read more:** "Why do results vary based on curly brace placement?" (StackOverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
+🔗 [**Baca selengkapnya:** "Why do results vary based on curly brace placement?" (StackOverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
 <br/><br/>
 
