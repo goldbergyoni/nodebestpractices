@@ -213,13 +213,13 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 <br/><br/>
 
-## ![✔] 2.11 Fail fast, validate arguments using a dedicated library
+## ![✔] 2.11 Gagal lebih dini, validasi argumen menggunakan pustaka khusus
 
-**TL;DR:** Assert API input to avoid nasty bugs that are much harder to track later. The validation code is usually tedious unless you are using a very cool helper library like [ajv](https://www.npmjs.com/package/ajv) and [Joi](https://www.npmjs.com/package/joi)
+**TL;DR:** Tegaskan input API untuk menghindari bug yang lebih sulit dilacak nantinya. Kode untuk validasi biasanya berantakan kecuali Anda menggunakan pustaka pembantu yang keren seperti [ajv](https://www.npmjs.com/package/ajv) dan [Joi](https://www.npmjs.com/package/joi)
 
-**Otherwise:** Consider this – your function expects a numeric argument “Discount” which the caller forgets to pass, later on, your code checks if Discount!=0 (amount of allowed discount is greater than zero), then it will allow the user to enjoy a discount. OMG, what a nasty bug. Can you see it?
+**Jika tidak:** Anggap seperti ini – jika fungsi Anda mengharapkan argumen numerik “Diskon” yang lupa diletak oleh pemanggil, kemudian, kode Anda memeriksa jika Diskon!=0 (jumlah diskon yang diizinkan lebih besar dari nol), maka itu akan memungkinkan pengguna untuk menikmati diskon. OMG, bug yang sangat buruk. Bisakah Anda melihatnya?
 
-🔗 [**Read More: failing fast**](/sections/errorhandling/failfast.md)
+🔗 [**Baca selengkapnya: failing fast**](/sections/errorhandling/failfast.md)
 
 <br/><br/>
 
