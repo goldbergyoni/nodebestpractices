@@ -48,7 +48,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 1. [Praktik Struktur Proyek (5)](#1-praktik-struktur-proyek)
 2. [Praktik Penanganan Kesalahan (11) ](#2-praktik-penanganan-kesalahan)
-3. [Praktik Gaya Kode (12) ](#3-code-style-practices)
+3. [Praktik Gaya Kode (12) ](#3-praktik-gaya-kode)
 4. [Praktik Pengujian dan Kualitas Secara Keseluruhan (13) ](#4-testing-and-overall-quality-practices)
 5. [Praktik Dalam Produksi(19) ](#5-going-to-production-practices)
 6. [Praktik Keamanan (25)](#6-security-best-practices)
@@ -237,15 +237,15 @@ terutama jika penyebab perilaku yang tidak normal ada di dalam fungsi yang hilan
 
 <p align="right"><a href="#daftar-isi">⬆ Kembali ke atas</a></p>
 
-# `3. Code Style Practices`
+# `3. Praktik Gaya Kode`
 
-## ![✔] 3.1 Use ESLint
+## ![✔] 3.1 Gunakan ESLint
 
-**TL;DR:** [ESLint](https://eslint.org) is the de-facto standard for checking possible code errors and fixing code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Though ESLint can automatically fix code styles, other tools like [prettier](https://www.npmjs.com/package/prettier) and [beautify](https://www.npmjs.com/package/js-beautify) are more powerful in formatting the fix and work in conjunction with ESLint
+**TL;DR:** [ESLint](https://eslint.org) adalah standar de-facto untuk memeriksa kemungkinan kesalahan kode dan memperbaiki gaya kode, bukan hanya untuk mengidentifikasi masalah spasi tetapi juga untuk mendeteksi kode anti-pola yang serius seperti pengembang melemparkan kesalahan tanpa klasifikasi. Meskipun ESLint dapat memperbaiki gaya kode secara otomatis, alat lain seperti [prettier](https://www.npmjs.com/package/prettier) dan [beautify](https://www.npmjs.com/package/js-beautify) lebih baik dalam memformat perbaikan kodenya dan dapat bekerja sama dengan ESLint
 
-**Otherwise:** Developers will focus on tedious spacing and line-width concerns and time might be wasted overthinking the project's code style
+**Jika tidak:** Pengembang akan fokus pada masalah spasi dan lebar garis dan waktu mungkin akan terbuang hanya untuk memikirkan gaya kode pada projek
 
-🔗 [**Read More: Using ESLint and Prettier**](/sections/codestylepractices/eslint_prettier.md)
+🔗 [**Baca selengkapnya: Using ESLint and Prettier**](/sections/codestylepractices/eslint_prettier.md)
 
 <br/><br/>
 
