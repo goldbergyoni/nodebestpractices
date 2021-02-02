@@ -1,33 +1,33 @@
-# Set NODE_ENV = production
+# Définissez NODE_ENV = production
 
 <br/><br/>
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-Process environment variables is a set of key-value pairs made available to any running program, usually for configuration purposes. Though any variables can be used, Node encourages the convention of using a variable called NODE_ENV to flag whether we’re in production right now. This determination allows components to provide better diagnostics during development, for example by disabling caching or emitting verbose log statements. Any modern deployment tool – Chef, Puppet, CloudFormation, others – support setting environment variables during deployment
+Les variables d'environnement de processus sont un ensemble de paires de clé-valeur mises à la disposition de tout programme en cours d'exécution, généralement à des fins de configuration. Bien que toutes les variables puissent être utilisées, Node encourage d'utiliser par convention une variable appelée NODE_ENV pour signaler si nous sommes en production en ce moment. Cette indication permet aux composants de fournir de meilleurs diagnostics pendant le développement, par exemple en désactivant la mise en cache ou en diffusant des déclarations verbeuses dans le journal. Tout outil de déploiement moderne (Chef, Puppet, CloudFormation, autres) permet de définir des variables d'environnement pendant le déploiement.
 
 <br/><br/>
 
-### Code example: Setting and reading the NODE_ENV environment variable
+### Exemple de code : définition et lecture de la variable d'environnement NODE_ENV
 
 ```shell script
-// Setting environment variables in bash before starting the node process
+// Définition des variables d environnement en bash avant de lancer le processus node
 $ NODE_ENV=development
 $ node
 ```
 
 ```javascript
-// Reading the environment variable using code
+// Lecture de la variable d'environnement à l'aide d'un code
 if (process.env.NODE_ENV === 'production')
     useCaching = true;
 ```
 
 <br/><br/>
 
-### What Other Bloggers Say
+### Ce que disent les autres blogueurs
 
-From the blog [dynatrace](https://www.dynatrace.com/blog/the-drastic-effects-of-omitting-node_env-in-your-express-js-applications/):
-> ...In Node.js there is a convention to use a variable called NODE_ENV to set the current mode. We see that it, in fact, reads NODE_ENV and defaults to ‘development’ if it isn’t set. We clearly see that by setting NODE_ENV to production the number of requests Node.js can handle jumps by around two-thirds while the CPU usage even drops slightly. *Let me emphasize this: Setting NODE_ENV to production makes your application 3 times faster!*
+Extrait du blog de [dynatrace](https://www.dynatrace.com/blog/the-drastic-effects-of-omitting-node_env-in-your-express-js-applications/) :
+> ...Dans Node.js, il y a une convention pour définir le mode actuel, c'est d'utiliser une variable appelée NODE_ENV. Nous constatons qu'en fait, il lit NODE_ENV et se met par défaut en « development » si elle n'est pas définie. Nous voyons clairement qu'en définissant NODE_ENV sur production, le nombre de requêtes que Node.js peut traiter augmente d'environ deux tiers alors que l'utilisation du CPU diminue même légèrement. *Permettez-moi d'insister sur ce point : en mettant NODE_ENV sur production, votre application est 3 fois plus rapide !*
 
 ![NODE_ENV=production](/assets/images/setnodeenv1.png "NODE_ENV=production")
 
