@@ -109,7 +109,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#daftar-isi">⬆ Kembali ke atas</a></p>
 
 # `2. Praktik Penanganan Kesalahan`
 
@@ -235,7 +235,7 @@ terutama jika penyebab perilaku yang tidak normal ada di dalam fungsi yang hilan
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#daftar-isi">⬆ Kembali ke atas</a></p>
 
 # `3. Code Style Practices`
 
@@ -442,7 +442,7 @@ All statements above will return false if used with `===`
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#daftar-isi">⬆ Kembali ke atas</a></p>
 
 # `4. Testing And Overall Quality Practices`
 
@@ -560,7 +560,7 @@ All statements above will return false if used with `===`
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#daftar-isi">⬆ Kembali ke atas</a></p>
 
 # `5. Going To Production Practices`
 
@@ -752,7 +752,7 @@ All statements above will return false if used with `===`
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#daftar-isi">⬆ Kembali ke atas</a></p>
 
 # `6. Security Best Practices`
 
@@ -1054,7 +1054,7 @@ All statements above will return false if used with `===`
 🔗 [**Read More: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.md)
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#daftar-isi">⬆ Kembali ke atas</a></p>
 
 # `7. Draft: Performance Best Practices`
 
@@ -1083,7 +1083,7 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#daftar-isi">⬆ Kembali ke atas</a></p>
 
 # `8. Docker Best Practices`
 
@@ -1260,7 +1260,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 <br/><br /><br />
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#daftar-isi">⬆ Kembali ke atas</a></p>
 
 # Milestones
 
