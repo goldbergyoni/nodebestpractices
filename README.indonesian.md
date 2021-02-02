@@ -223,7 +223,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 <br/><br/>
 
-## ![✔] 2.12 Selalu tunggu _promise_ sebelum mengembalikan nilai untuk menghindari _stacktrace_ yang tidak lengkap
+## ![✔] 2.12 Selalu _await promise_ sebelum mengembalikan nilai untuk menghindari _stacktrace_ yang tidak lengkap
 
 **TL;DR:** Selalu lakukan `return await` ketika mengembalikan sebuah _promise_ untuk memanfaatkan _stacktrace_ kesalahan yang lengkap. Jika sebuah fungsi mengembalikan _promise_, fungsi tersebut harus dideklarasikan sebagai fungsi `async` dan `await` fungsi tersebut secara eksplisit sebelum mengembalikannya
 
