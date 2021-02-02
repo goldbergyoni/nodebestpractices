@@ -423,13 +423,13 @@ Semua pernyataan diatas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 3.11 Use Async Await, avoid callbacks
+## ![✔] 3.11 Gunakan Async Await, hindari panggilan balik
 
-**TL;DR:** Node 8 LTS now has full support for Async-await. This is a new way of dealing with asynchronous code which supersedes callbacks and promises. Async-await is non-blocking, and it makes asynchronous code look synchronous. The best gift you can give to your code is using async-await which provides a much more compact and familiar code syntax like try-catch
+**TL;DR:** Node 8 LTS sekarang memiliki dukungan penuh untuk Async-await. Ini adalah cara baru untuk menangani kode asinkron yang mengantikan panggilan balik dan _promise_. Async-await bersifat tidak memblokir, dan ini membuat kode asinkron terlihat seperti sinkron. Hadiah terbaik yang dapat Anda berikan untuk kode Anda adalah menggunakan async-await yang menyediakan sintaks yang lebih ringkas dan akrab seperti try-catch
 
-**Otherwise:** Handling async errors in callback style are probably the fastest way to hell - this style forces to check errors all over, deal with awkward code nesting, and makes it difficult to reason about the code flow
+**Jika tidak:** Menangani kesalahan asinkron dalam gaya panggilan balik mungkin adalah cara terburuk - gaya ini memeriksa kesalahan secara menyeluruh, menangani tumpukan kode yang canggung, dan menyulitkan untuk menjelaskan aliran kode
 
-🔗[**Read more:** Guide to async-await 1.0](https://github.com/yortus/asyncawait)
+🔗[**Baca selengkapnya:** Guide to async-await 1.0](https://github.com/yortus/asyncawait)
 
 <br/><br/>
 
