@@ -455,13 +455,13 @@ Semua pernyataan diatas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 4.2 Include 3 parts in each test name
+## ![✔] 4.2 Sertakan 3 bagian di setiap nama pengujian
 
-**TL;DR:** Make the test speak at the requirements level so it's self-explanatory also to QA engineers and developers who are not familiar with the code internals. State in the test name what is being tested (unit under test), under what circumstances, and what is the expected result
+**TL;DR:** Buatlah pengujian yang setara dengan tingkat persyaratan sehingga cukup jelas untuk _Engineer_ QA dan pengembang yang tidak terbiasa dengan kode internal. Sebutkan dalam nama pengujian apa yang akan diuji (unit dalam pengujian), dalam keadaan apa, dan apa hasil yang diharapkan
 
-**Otherwise:** A deployment just failed, a test named “Add product” failed. Does this tell you what exactly is malfunctioning?
+**Jika tidak:** Deployment baru saja gagal, sebuah pengujian bernama “Tambah produk” gagal. Apakah ini memberi tahu Anda dengan tepat apa yang tidak berfungsi?
 
-🔗 [**Read More: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
+🔗 [**Baca selengkapnya: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
 
 <br/><br/>
 
