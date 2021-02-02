@@ -326,11 +326,11 @@ const count = 2 // mencoba menjalankan 2(), tapi 2 bukanlah sebuah fungsi
 
 <br/><br/>
 
-## ![✔] 3.5 Name your functions
+## ![✔] 3.5 Namakan fungsi Anda
 
-**TL;DR:** Name all functions, including closures and callbacks. Avoid anonymous functions. This is especially useful when profiling a node app. Naming all functions will allow you to easily understand what you're looking at when checking a memory snapshot
+**TL;DR:** Namakan semua fungsi, termasuk closure dan panggilan balik. Hindari fungsi anonim. Ini sangat berguna saat mengukur sebuah aplikasi node. Menamakan semua fungsi memungkinkan Anda untuk memahami dengan mudah apa yang Anda lihat saat memeriksa snapshot memori 
 
-**Otherwise:** Debugging production issues using a core dump (memory snapshot) might become challenging as you notice significant memory consumption from anonymous functions
+**Jika tidak:** Men-debug masalah produksi menggunakan core dump (snapshot memori) dapat menjadi tantangan karena Anda melihat konsumsi memori yang signifikan dari fungsi anonim
 
 <br/><br/>
 
