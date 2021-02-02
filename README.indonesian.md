@@ -376,20 +376,20 @@ function doSomething() {}
 
 <br/><br/>
 
-## ![✔] 3.9 Require modules by folders, as opposed to the files directly
+## ![✔] 3.9 _Require_ modul berdasarkan folder, bukan file secara lansung
 
-**TL;DR:** When developing a module/library in a folder, place an index.js file that exposes the module's internals so every consumer will pass through it. This serves as an 'interface' to your module and eases future changes without breaking the contract
+**TL;DR:** Saat mengembangkan sebuah modul/pustaka dalam sebuah folder, letak file index.js yang mengekspos modul internal sehingga setiap konsumen akan melewatinya. Ini berfungsi sebagai 'antarmuka' ke modul Anda dan memudahkan perubahan di masa mendatang tanpa merusak kontrak
 
-**Otherwise:** Changing the internal structure of files or the signature may break the interface with clients
+**Jika tidak:** Mengubah struktur internal sebuah file atau tanda tangannya dapat merusak antarmuka dengan klien
 
-### 3.9 Code example
+### 3.9 Contoh kode
 
 ```javascript
-// Do
+// Lakukan
 module.exports.SMSProvider = require("./SMSProvider");
 module.exports.SMSNumberResolver = require("./SMSNumberResolver");
 
-// Avoid
+// Hindari
 module.exports.SMSProvider = require("./SMSProvider/SMSProvider.js");
 module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolver.js");
 ```
