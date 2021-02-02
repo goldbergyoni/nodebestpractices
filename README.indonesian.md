@@ -249,11 +249,11 @@ terutama jika penyebab perilaku yang tidak normal ada di dalam fungsi yang hilan
 
 <br/><br/>
 
-## ![✔] 3.2 Node.js specific plugins
+## ![✔] 3.2 Plugin khusus Node.js
 
-**TL;DR:** On top of ESLint standard rules that cover vanilla JavaScript, add Node.js specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
+**TL;DR:** Selain aturan standar ESLint yang mencakup vanilla JavaScript, tambahkan plugin khusus Node.js seperti [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) dan [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
-**Otherwise:** Many faulty Node.js code patterns might escape under the radar. For example, developers might require(variableAsPath) files with a variable given as a path which allows attackers to execute any JS script. Node.js linters can detect such patterns and complain early
+**Jika tidak:** Banyak pola kode Node.js yang salah dapat lolos dari radar. Contohnya, pengembang mungkin melakukan require(variableAsPath) pada file dengan variabel sebagai path yang memungkinkan penyerang untuk mengeksekusi skrip JS apa pun. Linters Node.js dapat mendeteksi pola tersebut dan memberikan peringatan lebih awal
 
 <br/><br/>
 
