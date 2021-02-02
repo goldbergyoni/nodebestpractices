@@ -334,24 +334,24 @@ const count = 2 // mencoba menjalankan 2(), tapi 2 bukanlah sebuah fungsi
 
 <br/><br/>
 
-## ![✔] 3.6 Use naming conventions for variables, constants, functions and classes
+## ![✔] 3.6 Gunakan konvensi penamaan untuk variabel, konstanta, fungsi and kelas
 
-**TL;DR:** Use **_lowerCamelCase_** when naming constants, variables and functions and **_UpperCamelCase_** (capital first letter as well) when naming classes. This will help you to easily distinguish between plain variables/functions, and classes that require instantiation. Use descriptive names, but try to keep them short
+**TL;DR:** Gunakan **_lowerCamelCase_** saat memberi nama konstanta, variabel dan fungsi dan **_UpperCamelCase_** (huruf besar pada huruf pertama) saat memberi nama kelas. Ini akan membantu Anda dengan mudah untuk membedakan variabel/fungsi biasa, dan kelas yang membutuhkan instansiasi. Gunakan nama yang deskriptif, tetapi usahakan untuk tetap pendek
 
-**Otherwise:** Javascript is the only language in the world that allows invoking a constructor ("Class") directly without instantiating it first. Consequently, Classes and function-constructors are differentiated by starting with UpperCamelCase
+**Jiak tidak:** Javascript adalah satu-satunya bahasa di dunia yang memungkinkan pemanggilan konstruktor kelas ("Class") secara lansung tanpa membuat instansinya terlebih dahulu. Akibatnya, kelas dan fungsi-konstruktor dibedakan dimulai dengan UpperCamelCase
 
-### 3.6 Code Example
+### 3.6 Contoh Kode
 
 ```javascript
-// for class name we use UpperCamelCase
+// untuk nama kelas kita gunakan UpperCamelCase
 class SomeClassExample {}
 
-// for const names we use the const keyword and lowerCamelCase
+// untuk nama const kita gunakan kata kunci const dan lowerCamelCase
 const config = {
   key: "value",
 };
 
-// for variables and functions names we use lowerCamelCase
+// untuk nama variable dan fungsi kita gunakan lowerCamelCase
 let someVariableExample = "value";
 function doSomething() {}
 ```
