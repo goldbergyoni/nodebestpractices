@@ -282,30 +282,30 @@ function someFunction()
 
 <br/><br/>
 
-## ![✔] 3.4 Separate your statements properly
+## ![✔] 3.4 Pisahkan statement Anda dengan benar
 
-No matter if you use semicolons or not to separate your statements, knowing the common pitfalls of improper linebreaks or automatic semicolon insertion, will help you to eliminate regular syntax errors.
+Tidak peduli jika Anda menggunakan titik koma atau tidak untuk memisahkan statement Anda, mengetahui akibat umum dari pemutusan baris yang tidak tepat atau penyisipan titik koma otomatis, akan membantu Anda mengurangi kesalahan sintaks biasa.
 
-**TL;DR:** Use ESLint to gain awareness about separation concerns. [Prettier](https://prettier.io/) or [Standardjs](https://standardjs.com/) can automatically resolve these issues.
+**TL;DR:** Gunakan ESLint untuk mendapatkan perhatian tentang masalah pemisahan. [Prettier](https://prettier.io/) atau [Standardjs](https://standardjs.com/) dapat menyelesaikan masalah ini secara otomatis.
 
-**Otherwise:** As seen in the previous section, JavaScript's interpreter automatically adds a semicolon at the end of a statement if there isn't one, or considers a statement as not ended where it should, which might lead to some undesired results. You can use assignments and avoid using immediately invoked function expressions to prevent most of the unexpected errors.
+**Jika tidak:** Seperti yang terlihat di bagian sebelumnya, penerjemah JavaScript secara otomatis menambah titik koma pada akhir statement jika tidak ada, atau anggap sebuah statement tidak diakhiri di tempat yang seharusnya, yang dapat mengarah pada hasil yang tidak diinginkan. Anda dapat menggunakan penetapan dan hindari pengunaan ekspresi fungsi yang lansung dipanggil untuk mencegah sebagian besar masalah yang tidak terduga.
 
-### Code example
+### Contoh kode
 
 ```javascript
-// Do
+// Lakukan
 function doThing() {
     // ...
 }
 
 doThing()
 
-// Do
+// Lakukan
 
 const items = [1, 2, 3]
 items.forEach(console.log)
 
-// Avoid — throws exception
+// Hindari — melempar pengecualian
 const m = new Map()
 const a = [1,2,3]
 [...m.values()].forEach(console.log)
@@ -313,16 +313,16 @@ const a = [1,2,3]
 >  ^^^
 > SyntaxError: Unexpected token ...
 
-// Avoid — throws exception
-const count = 2 // it tries to run 2(), but 2 is not a function
+// Hindari — melempar pengecualian
+const count = 2 // mencoba menjalankan 2(), tapi 2 bukanlah sebuah fungsi
 (function doSomething() {
-  // do something amazing
+  // lakukan sesuatu
 }())
-// put a semicolon before the immediate invoked function, after the const definition, save the return value of the anonymous function to a variable or avoid IIFEs alltogether
+// letakkan titik koma sebelum fungsi yang lansung dipanggil, setelah pendefinisian const, simpan nilai kembali dari fungsi anonim ke sebuah variabel atau hindari IIFE (ekspresi fungsi yang lansung dipanggil) sepenuhnya
 ```
 
-🔗 [**Read more:** "Semi ESLint rule"](https://eslint.org/docs/rules/semi)
-🔗 [**Read more:** "No unexpected multiline ESLint rule"](https://eslint.org/docs/rules/no-unexpected-multiline)
+🔗 [**Baca selengkapnya:** "Semi ESLint rule"](https://eslint.org/docs/rules/semi)
+🔗 [**Baca selengkapnya:** "No unexpected multiline ESLint rule"](https://eslint.org/docs/rules/no-unexpected-multiline)
 
 <br/><br/>
 
