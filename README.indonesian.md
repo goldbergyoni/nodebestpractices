@@ -475,11 +475,11 @@ Semua pernyataan diatas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 4.4 Detect code issues with a linter
+## ![✔] 4.4 Deteksi masalah kode dengan _linter_
 
-**TL;DR:** Use a code linter to check the basic quality and detect anti-patterns early. Run it before any test and add it as a pre-commit git-hook to minimize the time needed to review and correct any issue. Also check [Section 3](#3-code-style-practices) on Code Style Practices
+**TL;DR:** Gunakan _linter_ kode untuk memeriksa kualitas dasar dan mendeteksi anti-pola sejak dini. Jalankan _linter_ sebelum pengujian dan tambahkan _linter_ sebagai pra-commit git-hook untuk meminimalkan waktu yang dibutuhkan untuk meninjau dan memperbaiki masalah apa pun. Periksa juga [Bagian 3](#3-praktik-gaya-kode) tentang Praktik Gaya Kode
 
-**Otherwise:** You may let pass some anti-pattern and possible vulnerable code to your production environment.
+**Jika Tidak:** Anda dapat membiarkan beberapa kode dengan anti-pola dan mungkin kode yang tidak aman masuk ke lingkunan produksi Anda.
 
 <br/><br/>
 
