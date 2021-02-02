@@ -465,13 +465,13 @@ Semua pernyataan diatas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 4.3 Structure tests by the AAA pattern
+## ![✔] 4.3 Strukturkan pengujian Anda dengan pola AAA
 
-**TL;DR:** Structure your tests with 3 well-separated sections: Arrange, Act & Assert (AAA). The first part includes the test setup, then the execution of the unit under test, and finally the assertion phase. Following this structure guarantees that the reader spends no brain CPU on understanding the test plan
+**TL;DR:** Strukturkan pengujian dengan 3 bagian yang terpisah dengan baik: _Arrange, Act & Assert_ (AAA). Bagian pertama mencakup penyiapan untuk pengujian, kemudian eksekusi unit yang akan diuji, dan yang terakhir fase _assertion_. Mengikuti struktur ini menjamin bahwa pembaca tidak menghabiskan tenaga otak untuk memahami rencana pengujian
 
-**Otherwise:** Not only you spend long daily hours on understanding the main code, but now also what should have been the simple part of the day (testing) stretches your brain
+**Jika tidak:** Tidak hanya Anda menghabiskan waktu yang lama untuk memahami kode utama, tetapi sekarang hal paling mudah dari hari Anda (melakukan pengujian) dapat merengangkan otak Anda
 
-🔗 [**Read More: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.md)
+🔗 [**Baca selengkapnya: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.md)
 
 <br/><br/>
 
