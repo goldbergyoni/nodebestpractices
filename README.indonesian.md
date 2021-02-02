@@ -358,13 +358,13 @@ function doSomething() {}
 
 <br/><br/>
 
-## ![✔] 3.7 Prefer const over let. Ditch the var
+## ![✔] 3.7 Utamakan penggunaan const daripada let. Singkirkan var
 
-**TL;DR:** Using `const` means that once a variable is assigned, it cannot be reassigned. Preferring `const` will help you to not be tempted to use the same variable for different uses, and make your code clearer. If a variable needs to be reassigned, in a for loop, for example, use `let` to declare it. Another important aspect of `let` is that a variable declared using it is only available in the block scope in which it was defined. `var` is function scoped, not block-scoped, and [shouldn't be used in ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) now that you have `const` and `let` at your disposal
+**TL;DR:** Menggunakan `const` berarti bahwa setelah nilai variabel itu ditetapkan, nilainya tidak dapat ditetapkan kembali. Menggunakan `const` akan membantu Anda untuk tidak tergoda untuk menggunakan variabel yang sama untuk penggunaan yang berbeda, dan membuat kode Anda lebih jelas. Jika sebuah variabel perlu ditetapkan kembali nilainya, di dalam perulangan for, misalnya, deklarasikan menggunakan `let`. Aspek penting lainnya dari `let` adalah variable yang dideklarasikan menggunakan `let` hanya tersedia didalam cakupan blok dimana variabel itu didefinisikan. `var` memiliki cakupan dalam fungsi, bukan dalam blok, dan [tidak boleh digunakan di ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) setelah Anda mempunyai `const` dan `let`
 
-**Otherwise:** Debugging becomes way more cumbersome when following a variable that frequently changes
+**Jika tidak:** Men-debug menjadi lebih rumit saat mengikuti variabel yang sering berubah
 
-🔗 [**Read more: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
+🔗 [**Baca selengkapnya: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
 
 <br/><br/>
 
