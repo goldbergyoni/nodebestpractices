@@ -49,7 +49,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 1. [Praktik Struktur Proyek (5)](#1-praktik-struktur-proyek)
 2. [Praktik Penanganan Kesalahan (11) ](#2-praktik-penanganan-kesalahan)
 3. [Praktik Gaya Kode (12) ](#3-praktik-gaya-kode)
-4. [Praktik Pengujian dan Kualitas Secara Keseluruhan (13) ](#4-testing-and-overall-quality-practices)
+4. [Praktik Pengujian dan Kualitas Secara Keseluruhan (13) ](#4-praktik-pengujian-dan-kualitas-secara-keseluruhan )
 5. [Praktik Dalam Produksi(19) ](#5-going-to-production-practices)
 6. [Praktik Keamanan (25)](#6-security-best-practices)
 7. [Praktik Peforma (2) (Pekerjaan Dalam Proses ✍️)](#7-draft-performance-best-practices)
@@ -445,13 +445,13 @@ Semua pernyataan diatas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <p align="right"><a href="#daftar-isi">⬆ Kembali ke atas</a></p>
 
-# `4. Testing And Overall Quality Practices`
+# `4. Praktik Pengujian dan Kualitas Secara Keseluruhan `
 
-## ![✔] 4.1 At the very least, write API (component) testing
+## ![✔] 4.1 Paling tidak, buat pengujian API (komponen)
 
-**TL;DR:** Most projects just don't have any automated testing due to short timetables or often the 'testing project' ran out of control and was abandoned. For that reason, prioritize and start with API testing which is the easiest way to write and provides more coverage than unit testing (you may even craft API tests without code using tools like [Postman](https://www.getpostman.com/). Afterward, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc
+**TL;DR:** Sebagian besar proyek tidak memiliki pengujian otomatis karena jadwal yang singkat atau 'proyek pengujian' sering tidak terkendali dan ditinggalkan. Oleh karena itu, prioritaskan dan mulailah dengan pengujian API yang merupakan cara termudah untuk menulis dan memberikan cakupan yang lebih dari pengujian unit (Anda bahkan dapat membuat pengujian API tanpa kode menggunakan alat seperti [Postman](https://www.getpostman.com/). Setelah itu, jika Anda mempunyai waktu dan sumber daya yang lebih, lanjutkan dengan pengujian yang lebih tinggi seperti pengujian unit, pengujian DB, pengujian performa, dll.
 
-**Otherwise:** You may spend long days on writing unit tests to find out that you got only 20% system coverage
+**Jika tidak:** Anda mungkin menghabiskan waktu yang lama untuk menulis pengujian unit untuk mengetahui bahwa Anda hanya mencakup 20% dari sistem
 
 <br/><br/>
 
