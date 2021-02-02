@@ -223,17 +223,15 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 <br/><br/>
 
-## ![✔] 2.12 Always await promises before returning to avoid a partial stacktrace
+## ![✔] 2.12 Selalu tunggu _promise_ sebelum mengembalikan nilai untuk menghindari _stacktrace_ yang tidak lengkap
 
-**TL;DR:** Always do `return await` when returning a promise to benefit full error stacktrace. If a
-function returns a promise, that function must be declared as `async` function and explicitly
-`await` the promise before returning it
+**TL;DR:** Selalu lakukan `return await` ketika mengembalikan sebuah _promise_ untuk memanfaatkan _stacktrace_ kesalahan yang lengkap. Jika sebuah fungsi mengembalikan _promise_, fungsi tersebut harus dideklarasikan sebagai fungsi `async` dan `await` fungsi tersebut secara eksplisit sebelum mengembalikannya
 
-**Otherwise:** The function that returns a promise without awaiting won't appear in the stacktrace.
-Such missing frames would probably complicate the understanding of the flow that leads to the error,
-especially if the cause of the abnormal behavior is inside of the missing function
+**Jika tidak:** Fungsi yang mengembalikan _promise_ tanpa `await` tidak akan muncul di _stacktrace_.
+Kerangka yang hilang seperti itu mungkin akan mempersulit pemahaman tentang aliran yang mengarah ke kesalahan,
+terutama jika penyebab perilaku yang tidak normal ada di dalam fungsi yang hilang itu
 
-🔗 [**Read More: returning promises**](/sections/errorhandling/returningpromises.md)
+🔗 [**Baca selengkapnya: returning promises**](/sections/errorhandling/returningpromises.md)
 
 <br/><br/><br/>
 
