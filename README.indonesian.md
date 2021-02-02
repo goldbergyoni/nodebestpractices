@@ -203,13 +203,13 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 <br/><br/>
 
-## ![✔] 2.10 Catch unhandled promise rejections
+## ![✔] 2.10 Tangkap penolakan _promise_ yang tidak tertangani
 
-**TL;DR:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explicitly handle it. Even if your code is subscribed to `process.uncaughtException`! Overcome this by registering to the event `process.unhandledRejection`
+**TL;DR:** Semua pengecualian yang dilemparkan ke dalam _promise_ akan ditelan dan dibuang kecuali pengembang tidak lupa untuk menanganinya secara eksplisit. Meskipun kode Anda berlangganan ke `process.uncaughtException`! Atasi ini dengan mendaftarkan ke event `process.unhandledRejection`
 
-**Otherwise:** Your errors will get swallowed and leave no trace. Nothing to worry about
+**Jika tidak:** Kesalahan dari kode Anda akan ditelan dan hilang tanpa jejak. Tidak ada yang perlu dikhawatirkan
 
-🔗 [**Read More: catching unhandled promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.md)
+🔗 [**Baca selengkapnya: catching unhandled promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.md)
 
 <br/><br/>
 
