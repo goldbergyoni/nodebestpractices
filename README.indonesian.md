@@ -183,13 +183,13 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 <br/><br/>
 
-## ![✔] 2.8 Test error flows using your favorite test framework
+## ![✔] 2.8 Uji aliran kesalahan menggunakan framework pengujian favorit Anda
 
-**TL;DR:** Whether professional automated QA or plain manual developer testing – Ensure that your code not only satisfies positive scenarios but also handles and returns the right errors. Testing frameworks like Mocha & Chai can handle this easily (see code examples within the "Gist popup")
+**TL;DR:** Maupun itu QA otomatis profesional ataupun pengujian manual oleh pengembang – Pastikan bahwa kode Anda tidak hanya memenuhi skenario positif namun juga menangani dan mengembalikan jenis kesalahan yang tepat. Framework testing seperti Mocha & Chai dapat menangani ini dengan mudah (lihat contoh kode dalam "Gist popup")
 
-**Otherwise:** Without testing, whether automatically or manually, you can’t rely on your code to return the right errors. Without meaningful errors – there’s no error handling
+**Jika tidak:** Tanpa testing, maupun secara otomatis ataupun manual, Anda tidak dapat mengandalkan kode Anda untuk mengembalikan jenis kesalahan yang tepat. Tanpa jenis kesalahan yang berarti – tidak ada penanganan kesalahan
 
-🔗 [**Read More: testing error flows**](/sections/errorhandling/testingerrorflows.md)
+🔗 [**Baca selengkapnya: testing error flows**](/sections/errorhandling/testingerrorflows.md)
 
 <br/><br/>
 
