@@ -368,11 +368,11 @@ function doSomething() {}
 
 <br/><br/>
 
-## ![✔] 3.8 Require modules first, not inside functions
+## ![✔] 3.8 _Require_ module terlebih dahulu, bukan di dalam fungsi
 
-**TL;DR:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top but also avoids a couple of potential problems
+**TL;DR:** _Require_ module di awal setiap file, sebelum dan di luar semua fungsi. Praktik terbaik sederhana ini tidak hanya membantu Anda dengan mudah dan cepat untuk mengetahui dependensi file di awal sebuah file tetapi juga menghindari beberapa potensi masalah
 
-**Otherwise:** Requires are run synchronously by Node.js. If they are called from within a function, it may block other requests from being handled at a more critical time. Also, if a required module or any of its dependencies throw an error and crash the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function
+**Jika tidak:** _Require_ dijalankan secara sinkron oleh Node.js. Jika mereka dipanggil dalam sebuah fungsi, ini mungkin dapat memblokir permintaan lain untuk ditangani pada waktu yang lebih kritis. Selain itu, jika modul yang diperlukan atau salah satu dependensinya menimbulkan kesalahan dan merusak server, akan lebih baik untuk mengetahuinya sesegera mungkin, yang mungkin tidak akan terjadi jika modul itu dipanggil dalam sebuah fungsi
 
 <br/><br/>
 
