@@ -396,13 +396,13 @@ module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolve
 
 <br/><br/>
 
-## ![✔] 3.10 Use the `===` operator
+## ![✔] 3.10 Gunakan operator `===`
 
-**TL;DR:** Prefer the strict equality operator `===` over the weaker abstract equality operator `==`. `==` will compare two variables after converting them to a common type. There is no type conversion in `===`, and both variables must be of the same type to be equal
+**TL;DR:** Utamakan operator persamaan ketat `===` daripada operator persamaan abstrak `==` yang lebih lemah. `==` akan membandingkan dua variabel setelah mengubahnya ke tipe umum. Tidak ada konversi tipe di `===`, dan kedua variabel harus sejenis agar sama 
 
-**Otherwise:** Unequal variables might return true when compared with the `==` operator
+**Jika tidak:** Variabel yang tidak sama dapat mengembalikan _true_ ketika dibandingkan dengan operator `==`
 
-### 3.10 Code example
+### 3.10 Contoh kode
 
 ```javascript
 "" == "0"; // false
@@ -419,7 +419,7 @@ null == undefined; // true
 " \t\r\n " == 0; // true
 ```
 
-All statements above will return false if used with `===`
+Semua pernyataan diatas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
