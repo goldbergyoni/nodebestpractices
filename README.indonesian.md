@@ -193,13 +193,13 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 <br/><br/>
 
-## ![✔] 2.9 Discover errors and downtime using APM products
+## ![✔] 2.9 Temukan kesalahan dan waktu henti menggunakan produk APM
 
-**TL;DR:** Monitoring and performance products (a.k.a APM) proactively gauge your codebase or API so they can automagically highlight errors, crashes, and slow parts that you were missing
+**TL;DR:** Produk pemantauan dan kinerja (a.k.a APM) secara proaktif mengukur basis kode atau API sehingga mereka dapat secara otomatis menyorot kesalahan, kerusakan, dan bagian lambat yang Anda lewatkan
 
-**Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which are your slowest code parts under real-world scenario and how these affect the UX
+**Jika tidak:** Anda mungkin menghabiskan banyak usaha untuk mengukur kinerja dan waktu henti API, mungkin Anda tidak akan menyadari bagian kode mana yang paling lambat dalam skenario dunia nyata dan bagaimana hal ini dapat tmemengaruhi pengalaman pengguna
 
-🔗 [**Read More: using APM products**](/sections/errorhandling/apmproducts.md)
+🔗 [**Baca selengkapnya: using APM products**](/sections/errorhandling/apmproducts.md)
 
 <br/><br/>
 
