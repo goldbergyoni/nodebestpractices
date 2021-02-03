@@ -1232,6 +1232,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "YukiOta",
+      "name": "YukiOta",
+      "avatar_url": "https://avatars.githubusercontent.com/u/23182489?v=4",
+      "profile": "http://yukioh.net",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
