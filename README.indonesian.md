@@ -52,7 +52,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 4. [Praktik Pengujian dan Kualitas Secara Keseluruhan (13) ](#4-praktik-pengujian-dan-kualitas-secara-keseluruhan )
 5. [Praktik Dalam Produksi(19) ](#5-going-to-production-practices)
 6. [Praktik Keamanan (25)](#6-security-best-practices)
-7. [Praktik Peforma (2) (Pekerjaan Dalam Proses ✍️)](#7-draft-performance-best-practices)
+7. [Praktik Peforma (2) (Pekerjaan Dalam Proses ✍️)](#7-draf-praktik-terbaik-performa)
 8. [Praktik Docker (15)](#8-docker-best-practices)
 
 <br/><br/>
@@ -1057,30 +1057,30 @@ Semua pernyataan diatas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <p align="right"><a href="#daftar-isi">⬆ Kembali ke atas</a></p>
 
-# `7. Draft: Performance Best Practices`
+# `7. Draf: Praktik Terbaik Performa`
 
-## Our contributors are working on this section. [Would you like to join?](https://github.com/goldbergyoni/nodebestpractices/issues/256)
+## Kontributor kami sedang mengerjakan bagian ini. [Ingin bergabung?](https://github.com/goldbergyoni/nodebestpractices/issues/256)
 
 <br/><br/>
 
-## ![✔] 7.1. Don't block the event loop
+## ![✔] 7.1. Jangan memblokir _event loop_
 
-**TL;DR:** Avoid CPU intensive tasks as they will block the mostly single-threaded Event Loop and offload those to a dedicated thread, process or even a different technology based on the context.
+**TL;DR:** Hindari pekerjaan yang intensif CPU karena mereka akan memblokir _Event Loop_ dalam satu _thread_ dan pindahkan pekerjaan ini ke _thread_ khusus, proses atau  bahkan teknologi yang berbeda berdasarkan konteksnya.
 
-**Otherwise:** As the Event Loop is blocked, Node.js will be unable to handle other request thus causing delays for concurrent users. **3000 users are waiting for a response, the content is ready to be served, but one single request blocks the server from dispatching the results back**
+**Jika tidak:** Ketika _Event Loop_ diblokir, Node.js tidak akan dapat menangani permintaan lain sehingga menyebabkan penundaan bagi pengguna lain. **3000 pengguna sedang menunggu tanggapan, konten siap diberikan, tapi satu permintaan mencegah server-nya untuk mengirimkan hasilnya**
 
-🔗 [**Read More: Do not block the event loop**](/sections/performance/block-loop.md)
+🔗 [**Baca selengkapnya: Do not block the event loop**](/sections/performance/block-loop.md)
 
 <br /><br /><br />
 
-## ![✔] 7.2. Prefer native JS methods over user-land utils like Lodash
+## ![✔] 7.2. Utamakan penggunaan metode JS asli daripada utilitas berlebihan seperti Lodash
 
-**TL;DR:** It's often more penalising to use utility libraries like `lodash` and `underscore` over native methods as it leads to unneeded dependencies and slower performance.
-Bear in mind that with the introduction of the new V8 engine alongside the new ES standards, native methods were improved in such a way that it's now about 50% more performant than utility libraries.
+**TL;DR:** Seringkali lebih merugikan jika menggunakan pustaka seperti `lodash` dan `underscore` daripada metode asli karena mengarah kepada dependensi yang tidak diperlukan dan memperlambat performa.
+Ingatlah bahwa dengan diperkenalkannya mesin V8 baru bersama dengan standar ES baru, metode asli telah ditingkatkan sehingga sekarang sekitar 50% lebih baik daripada pustaka utilitas.
 
-**Otherwise:** You'll have to maintain less performant projects where you could have simply used what was **already** available or dealt with a few more lines in exchange of a few more files.
+**Jika tidak:** Anda harus mengurus proyek dengan kinerja yang lebih rendah di mana Anda dapat menggunakan apa yang **sudah** ada atau berurusan dengan lebih sedikit baris namun lebih banyak file sebagai gantinya.
 
-🔗 [**Read More: Native over user land utils**](/sections/performance/nativeoverutil.md)
+🔗 [**Baca selengkapnya: Native over user land utils**](/sections/performance/nativeoverutil.md)
 
 <br/><br/><br/>
 
