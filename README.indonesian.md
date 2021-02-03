@@ -635,13 +635,13 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 5.8. Discover errors and downtime using APM products
+## ![✔] 5.8. Temukan kesalahan dan downtime menggunakan produk APM
 
-**TL;DR:** Application monitoring and performance products (a.k.a APM) proactively gauge codebase and API so they can auto-magically go beyond traditional monitoring and measure the overall user-experience across services and tiers. For example, some APM products can highlight a transaction that loads too slow on the end-users side while suggesting the root cause
+**TL;DR:** _Application monitoring and performance products_ (a.k.a APM) secara proaktif mengukur basis kode dan API sehingga mereka dapat secara otomatis melampaui pemantauan tradisional dan mengukur pengalaman pengguna secara keseluruhan di semua layanan dan tingkatan. Misalnya, beberapa produk APM dapat menyoroti transaksi yang terlalu lambat di sisi pengguna sambil menyarankan penyebab utamanya
 
-**Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real-world scenario and how these affect the UX
+**Jika tidak:** Anda mungkin menghabiskan banyak tenaga untuk mengukur kinerja dan downtime API, mungkin Anda tidak akan pernah tau bagian kode mana yang paling lambat dalam skenario dunia nyata dan bagaimana hal ini dapat memengaruhi pengalaman pengguna
 
-🔗 [**Read More: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
+🔗 [**Baca selengkapnya: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
 
 <br/><br/>
 
