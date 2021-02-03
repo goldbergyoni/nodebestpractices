@@ -605,13 +605,13 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 5.5. Guard process uptime using the right tool
+## ![✔] 5.5. Jaga uptime proses menggunakan alat yang tepat
 
-**TL;DR:** The process must go on and get restarted upon failures. For simple scenarios, process management tools like PM2 might be enough but in today's ‘dockerized’ world, cluster management tools should be considered as well
+**TL;DR:** Proses harus tetap berjalan dan dimulai ulang jika terjadi kegagalan. Untuk skenario simpel, alat manajemen proses seperti PM2 mungkin sudah cukup namun di era ‘dockerized’, alat management cluster juga harus dipertimbangkan
 
-**Otherwise:** Running dozens of instances without a clear strategy and too many tools together (cluster management, docker, PM2) might lead to DevOps chaos
+**Jika tidak:** Menjalankan banyak instansi tanpa strategi yang jelas dan terlalu banyak alat (manajemen cluster, docker, PM2) dapat menyebabkan kekacauan DevOps
 
-🔗 [**Read More: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
+🔗 [**Baca selengkapnya: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
 
 <br/><br/>
 
