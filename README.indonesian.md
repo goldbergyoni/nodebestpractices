@@ -483,13 +483,13 @@ Semua pernyataan diatas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 4.5 Avoid global test fixtures and seeds, add data per-test
+## ![✔] 4.5 Hindari perlengkapan and benih global pada pengujian, tambah data pada setiap pengujian
 
-**TL;DR:** To prevent test coupling and easily reason about the test flow, each test should add and act on its own set of DB rows. Whenever a test needs to pull or assume the existence of some DB data - it must explicitly add that data and avoid mutating any other records
+**TL;DR:** Untuk mencegah pengujian yang tersambung dan memudahkan untuk memahami alur pengujian, setiap pengujian harus menambah dan bertindak pada kumpulan data di DB-nya sendiri. Setiap kali pengujian perlu menarik atau mengasumsikan keberadaan suatu data pada DB - pengujian tersebut harus menambah data tersebut secara eksplisit dan hindari memutasi kumpulan data lainnya
 
-**Otherwise:** Consider a scenario where deployment is aborted due to failing tests, team is now going to spend precious investigation time that ends in a sad conclusion: the system works well, the tests however interfere with each other and break the build
+**Jika tidak:** Anggap sebuah skenario di mana _deployment_ gagal karena pengujian yang gagal, tim seakarang akan menghabiskan waktu yang berharga untuk melakukan investigasi yang berakhir dengan kesimpulan yang menyedihkan: sistem berfungsi dengan baik, namun pengujian saling mengganggu dan merusak _build_-nya
 
-🔗 [**Read More: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
+🔗 [**Baca selengkapnya: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
 
 <br/><br/>
 
