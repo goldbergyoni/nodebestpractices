@@ -81,7 +81,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 ## ![✔] 1.3 Bungkus utilitas umum sebagai paket npm
 
-**TL;DR:** Pada aplikasi besar yang memiliki basis kode yang besar, utilitas _cross-cutting-concern_ seperti logger, enkripsi and yang serupa, harus dibungkus oleh kode Anda dan terekspos sebagai paket npm tersendiri. Ini memungkinkan untuk membagikan utilitas tersebut di antara beberapa basis kode dan projek
+**TL;DR:** Pada aplikasi besar yang memiliki basis kode yang besar, utilitas _cross-cutting-concern_ seperti logger, enkripsi and yang serupa, harus dibungkus oleh kode Anda dan terekspos sebagai paket npm tersendiri. Ini memungkinkan untuk membagikan utilitas tersebut di antara beberapa basis kode dan proyek
 
 **Jika tidak:** Anda harus membuat cara _deployment_ dan _dependency_ Anda sendiri
 
@@ -243,7 +243,7 @@ terutama jika penyebab perilaku yang tidak normal ada di dalam fungsi yang hilan
 
 **TL;DR:** [ESLint](https://eslint.org) adalah standar de-facto untuk memeriksa kemungkinan kesalahan kode dan memperbaiki gaya kode, bukan hanya untuk mengidentifikasi masalah spasi tetapi juga untuk mendeteksi kode anti-pola yang serius seperti pengembang melemparkan kesalahan tanpa klasifikasi. Meskipun ESLint dapat memperbaiki gaya kode secara otomatis, alat lain seperti [prettier](https://www.npmjs.com/package/prettier) dan [beautify](https://www.npmjs.com/package/js-beautify) lebih baik dalam memformat perbaikan kodenya dan dapat bekerja sama dengan ESLint
 
-**Jika tidak:** Pengembang akan fokus pada masalah spasi dan lebar garis dan waktu mungkin akan terbuang hanya untuk memikirkan gaya kode pada projek
+**Jika tidak:** Pengembang akan fokus pada masalah spasi dan lebar garis dan waktu mungkin akan terbuang hanya untuk memikirkan gaya kode pada proyek
 
 🔗 [**Baca selengkapnya: Using ESLint and Prettier**](/sections/codestylepractices/eslint_prettier.md)
 
