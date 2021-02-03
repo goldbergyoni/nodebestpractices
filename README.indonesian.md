@@ -595,13 +595,13 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 5.4. Lock dependencies
+## ![✔] 5.4. Kunci dependensi
 
-**TL;DR:** Your code must be identical across all environments, but amazingly npm lets dependencies drift across environments by default – when you install packages at various environments it tries to fetch packages’ latest patch version. Overcome this by using npm config files, .npmrc, that tell each environment to save the exact (not the latest) version of each package. Alternatively, for finer grained control use `npm shrinkwrap`. \*Update: as of NPM5, dependencies are locked by default. The new package manager in town, Yarn, also got us covered by default
+**TL;DR:** Kode Anda harus identik di semua lingkungan, namun npm dapat membiarkan dependensi berubah di lingkungan yang berbeda – saat Anda menginstal paket di lingkungan lain npm mencoba menginstal versi terbaru dari paket tersebut. Atasi ini dengan menggunakan file konfigurasi , .npmrc, yang memberi tahu setiap lingkungan untuk menyimpan versi yang tepat (bukan yang terbaru) dari setiap paket. Alternatifnya, untuk kontrol yang lebih baik, gunakan `npm shrinkwrap`. \*Pembaruan: pada NPM5, dependensi dikunci secara default. Manajer paket yang baru, Yarn, juga melakukan hal ini
 
-**Otherwise:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
+**Otherwise:** QA akan menguji kode secara menyeluruh dan menyetujui versi yang akan berperilaku berbeda dalam produksi. Lebih buruk lagi, server yang berbeda dalam kelompok produksi mungkin menjalankan kode yang berbeda
 
-🔗 [**Read More: Lock dependencies**](/sections/production/lockdependencies.md)
+🔗 [**Baca selengkapnya: Lock dependencies**](/sections/production/lockdependencies.md)
 
 <br/><br/>
 
