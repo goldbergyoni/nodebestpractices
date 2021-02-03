@@ -675,13 +675,13 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 5.12. Be stateless, kill your servers almost every day
+## ![✔] 5.12. Buat aplikasi yang stateless, matikan server Anda hampir setiap hari
 
-**TL;DR:** Store any type of data (e.g. user sessions, cache, uploaded files) within external data stores. Consider ‘killing’ your servers periodically or use ‘serverless’ platform (e.g. AWS Lambda) that explicitly enforces a stateless behavior
+**TL;DR:** Simpan semua jenis data (misalnya sesi pengguna, cache, file yang diunggah) ke tempat penyimpanan eksternal. Pertimbangkan untuk ‘mematikan’ server Anda secara berkala atau gunakan platform ‘serverless’ (misalnya AWS Lambda) yang secara eksplisit mengharuskan sifat stateless
 
-**Otherwise:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
+**Jika tidak:** Kegagalan di server tertentu akan mengakibatkan downtime aplikasi, bukannya hanya mematikan mesin yang rusak. Selain itu, elastisitas penskalaan akan menjadi lebih sulit karena ketergantungan pada server tertentu
 
-🔗 [**Read More: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
+🔗 [**Baca selengkapnya: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
 
 <br/><br/>
 
