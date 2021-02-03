@@ -525,11 +525,11 @@ Semua pernyataan diatas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 4.10 Use production-like environment for e2e testing
+## ![✔] 4.10 Gunakan lingkungan yang mirip dengan produksi untuk pengujian e2e
 
-**TL;DR:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Use an environment which is as close to your real production environment as possible like a-continue (Missed -continue here, needs content. Judging by the **Otherwise** clause, this should mention docker-compose)
+**TL;DR:** Pengujian _End to end_ (e2e) yang mencakup data asli dulunya merupakan titik terlemah pada proses CI karena pengujian itu bergantung pada beberapa layanan berat seperti DB. Gunakan lingkunan yang semirip mungkin dengan lingkungan pada produksi Anda seperti a-seterusnya (-seterusnya hilang, konten dibutuhkan. Dilihat dari klausa **Otherwise**, hal ini seharusnya menyebutkan tentang docker-compose)
 
-**Otherwise:** Without docker-compose, teams must maintain a testing DB for each testing environment including developers' machines, keep all those DBs in sync so test results won't vary across environments
+**Jika tidak:** Tanpa docker-compose, tim harus mengurus DB pengujian untuk setiap lingkungan pengujian termasuk mesin yang dimiliki oleh pengembang, pastikan semua DB tersebut tetap sinkron sehingga hasil pengujian tidak akan berbeda di lingkungan yang berbeda
 
 <br/><br/>
 
