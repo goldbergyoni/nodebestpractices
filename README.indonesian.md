@@ -655,13 +655,13 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 5.10. Measure and guard the memory usage
+## ![✔] 5.10. Ukur dan jaga penggunaan memori
 
-**TL;DR:** Node.js has controversial relationships with memory: the v8 engine has soft limits on memory usage (1.4GB) and there are known paths to leak memory in Node’s code – thus watching Node’s process memory is a must. In small apps, you may gauge memory periodically using shell commands but in medium-large apps consider baking your memory watch into a robust monitoring system
+**TL;DR:** Node.js memiliki hubungan yang kontroversial dengan memori: mesin v8 memiliki batas memori yang rendah (1.4GB) dan terdapat cara yang diketahui untuk terjadinya kebocoran memori dalam kode Node – sehingga mengamati memori proses Node adalah suatu keharusan. Pada aplikasi kecil, Anda dapat mengukur memori Anda secara berkala menggunakan perintah _shell_ namun di aplikasi menengah-besar pertimbangkan untuk membuat sistem pemantauan yang kuat untuk mengamati memori
 
-**Otherwise:** Your process memory might leak a hundred megabytes a day like how it happened at [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
+**Jika tidak:** Memori proses Anda mungkin bocor ratusan megabyte sehari seperti yang terjadi pada [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
 
-🔗 [**Read More: Measure and guard the memory usage**](/sections/production/measurememory.md)
+🔗 [**Baca selengkapnya: Measure and guard the memory usage**](/sections/production/measurememory.md)
 
 <br/><br/>
 
