@@ -501,11 +501,11 @@ Semua pernyataan diatas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 4.7 Tag your tests
+## ![✔] 4.7 Tandai pengujian Anda
 
-**TL;DR:** Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/): mocha --grep 'sanity'
+**TL;DR:** Pengujian yang berbeda harus dijalankan pada skenario yang berbeda: _quick smoke_, _IO-less_, pengujian harus dijalankan ketika pengembang menyimpan atau melakukan _commit_ pada file, pengujian _end-to-end_ biasanya dijalankan saat _pull request_ baru dikirimkan, dst. Hal ini dapat dicapai dengan menandai pengujian dengan kata kunci seperti _#cold #api #sanity_ sehingga Anda dapat melakukan `grep` pada pengujian Anda dan menjalankan subset yang diinginkan. Contohnya, ini adalah cara untuk memanggil pengujian pada kelompok _sanity_ dengan [Mocha](https://mochajs.org/): mocha --grep 'sanity'
 
-**Otherwise:** Running all the tests, including tests that perform dozens of DB queries, any time a developer makes a small change can be extremely slow and keeps developers away from running tests
+**Jika tidak:** Menjalankan semua pengujian, termasuk pengujian yang menjalankan banyak kueri DB, setiap kali pengembang membuat perubahan kecil bisa sangat lambat dan menjauhkan pengembang dari menjalankan pengujian
 
 <br/><br/>
 
