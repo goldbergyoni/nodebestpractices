@@ -6,8 +6,8 @@ Correlation ID is one of the best problem-solving patterns. It lets you linking 
 
 <br/>
 
-### Code Example: passing the correlation ID between services on the requets http context
-Here is an example of using [express-http-context](https://www.npmjs.com/package/express-http-context) library to set the forwarded correlation ID on the http context:
+### Code Example: passing the correlation ID between services on the requet http context
+Here is an example of using [express-http-context](https://www.npmjs.com/package/express-http-context) library to set the forwarded correlation ID on the http context after it was extracted from the request. If the correlation ID isn't existing on the request, since this may be the first request in the requests chain, it's being generated.
 
 ```javascript
 const httpContext = require('express-http-context');
@@ -25,3 +25,9 @@ app.use((req, res, next) => {
   next();
 });
 ```
+
+### Blog Quote: "The notion of a Correlation ID is simple. It’s a value that is common to all requests, messages and responses in a given transaction. With this simplicity you get a lot of power."
+
+From [rapid7](https://blog.rapid7.com/2016/12/23/the-value-of-correlation-ids/)
+
+> When you can group a transaction’s events under a unifying value, the Correlation ID, you can spend your time fixing the problem rather than finding the problem. Without a Correlation ID, well… there is a saying, “if you put a chimpanzee in front of typewriter for eternity, eventually the animal will type out Hamlet.” The same could be said for logging without a Correlation ID, except none of us will be here for eternity. Use a Correlation ID. You will be glad you did.
