@@ -495,7 +495,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 ## ![✔] 4.6 Periksa terus menerus dependensi yang rentan
 
-**TL;DR:** Bahkan dependensi yang paling terkemuka seperti Express memiliki banyak kerentanan yang diketahui. Hal ini dapat mudah diperbaiki menggunakan alat dari komunitas atau komersial seperti 🔗 [npm audit](https://docs.npmjs.com/cli/audit) dan 🔗 [snyk.io](https://snyk.io) yang dapat dipanggil dari CI Anda pada setiap _build_
+**TL;DR:** Bahkan dependensi yang paling terkemuka seperti Express memiliki kerentanan yang diketahui. Hal ini dapat dimitigasi dengan mudah menggunakan alat dari komunitas atau komersial seperti 🔗 [npm audit](https://docs.npmjs.com/cli/audit) dan 🔗 [snyk.io](https://snyk.io) yang dapat dipanggil dari CI Anda pada setiap _build_
 
 **Jika tidak:** Menjaga kode Anda bersih dari kerentanan tanpa alat khusus mengharuskan Anda untuk mengikuti publikasi online tentang ancaman baru. Cukup membosankan
 
