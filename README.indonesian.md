@@ -517,11 +517,11 @@ Semua pernyataan diatas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 4.9 Inspect for outdated packages
+## ![✔] 4.9 Periksa paket yang kedaluwarsa
 
-**TL;DR:** Use your preferred tool (e.g. 'npm outdated' or [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) to detect installed outdated packages, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a severe scenario might be when an installed package is 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
+**TL;DR:** Gunakan alat pilihan Anda (misalnya 'npm outdated' atau [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) untuk mendeteksi paket yang kedaluwarsa, masukkan pemeriksaan ini ke _pipeline CI_ dan bahkan gagalkan _build_-nya dalam skenario yang buruk. Contohnya, skenario yang buruk mungkin terjadi ketika paket yang digunakan tertinggal 5 _patch commit_ (misalnya versi lokal adalah 1.3.1 dan versi repositori adalah 1.3.8) atau paketnya ditandai _deprecated_ oleh pembuatnya - matikan _build_-nya dan cegah _deployment_ pada versi ini
 
-**Otherwise:** Your production will run packages that have been explicitly tagged by their author as risky
+**Jika tidak:** Produksi Anda akan menggunakan paket yang ditandai berisiko oleh pembuatnya secara eksplisit
 
 <br/><br/>
 
