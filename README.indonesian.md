@@ -705,13 +705,13 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 5.15. Set NODE_ENV=production
+## ![✔] 5.16. Atur NODE_ENV=production
 
-**TL;DR:** Set the environment variable NODE_ENV to ‘production’ or ‘development’ to flag whether production optimizations should get activated – many npm packages determine the current environment and optimize their code for production
+**TL;DR:** Atur variabel lingkungan NODE_ENV ke ‘production’ or ‘development’ untuk menandai apakah pengoptimalan produksi harus diaktifkan – banyak paket npm melihat lingkungan yang digunakan dan mengoptimalkan kodenya untuk produksi
 
-**Otherwise:** Omitting this simple property might greatly degrade performance. For example, when using Express for server-side rendering omitting `NODE_ENV` makes it slower by a factor of three!
+**Jika tidak:** Mengabaikan properti sederhana ini dapat menurunkan performa. Contohnya, pada saat menggunakan Express untuk rendering sisi server menghilangkan `NODE_ENV` membuat proses render lebih lambat hingga 3 kali lipat!
 
-🔗 [**Read More: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
+🔗 [**Baca selengkapnya: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
 
 <br/><br/>
 
