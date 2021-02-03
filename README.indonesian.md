@@ -615,13 +615,13 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 5.6. Utilize all CPU cores
+## ![✔] 5.6. Manfaatkan semua core CPU
 
-**TL;DR:** At its basic form, a Node app runs on a single CPU core while all others are left idling. It’s your duty to replicate the Node process and utilize all CPUs – For small-medium apps you may use Node Cluster or PM2. For a larger app consider replicating the process using some Docker cluster (e.g. K8S, ECS) or deployment scripts that are based on Linux init system (e.g. systemd)
+**TL;DR:** Pada dasarnya, aplikasi Node berjalan pada satu core CPU sementara core lainnya tidak digunakan. Ini merupakan tugas Anda untuk mereplika proses Node dan menggunakan semua CPU – Untuk aplikasi kecil-menengah Anda dapat menggunakan Node Cluster atau PM2. Untuk aplikasi yang lebih besar pertimbangkan untuk mereplika proses menggunakan beberapa Docker cluster (misalnya K8S, ECS) atau skrip _deployment_ yang didasarkan pada sistem Linux init (misalnya systemd)
 
-**Otherwise:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.js utilizes only 1 (even using PaaS services like AWS beanstalk!)
+**Jika tidak:** Aplikasi Anda kemungkinan hanya menggunakan 25% dari sumber daya yang tersedia(!) atau bahkan kurang. Ingat bahwa server tipikal memiliki 4 core CPU atau lebih, _deployment_ Node.js yang naif hanya menggunakan 1 (bahkan jika menggunakan layanan PaaS seperti AWS beanstalk!)
 
-🔗 [**Read More: Utilize all CPU cores**](/sections/production/utilizecpu.md)
+🔗 [**Baca selengkapnya: Utilize all CPU cores**](/sections/production/utilizecpu.md)
 
 <br/><br/>
 
