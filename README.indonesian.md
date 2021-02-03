@@ -543,13 +543,13 @@ Semua pernyataan diatas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 4.12 Carefully choose your CI platform (Jenkins vs CircleCI vs Travis vs Rest of the world)
+## ![✔] 4.12 Pilih platform CI Anda dengan hati-hati (Jenkins vs CircleCI vs Travis vs yang lainnya)
 
-**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g test, lint) so it should come with a vibrant ecosystem of plugins. [Jenkins](https://jenkins.io/) used to be the default for many projects as it has the biggest community along with a very powerful platform at the price of a complex setup that demands a steep learning curve. Nowadays, it has become much easier to set up a CI solution using SaaS tools like [CircleCI](https://circleci.com) and others. These tools allow crafting a flexible CI pipeline without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
+**TL;DR:** Platform _continuous integration_ (CICD) Anda akan mempunyai semua alat berkualitas (seperti test, lint) sehingga seharusnya dilengkapi dengan ekosistem plugin yang dinamis. [Jenkins](https://jenkins.io/) dulunya merupakan aplikasi default untuk banyak proyek harena mempunyai komunitas terbesar bersama dengan platform yang sangat kuat dengan kekurangan persiapan yang rumit yang menuntut kurva pembelajaran yang tajam. Saat ini, persiapan solusi CI jauh lebih mudah menggunakan alat SaaS seperti [CircleCI](https://circleci.com) dan lainnya. Alat ini memungkinkan pembuatan pipeline CI yang fleksibel tanpa beban untuk mengelola seluruh infrastruktur. Pada akhirnya, ini merupakan keseimbangan antara kecepatan dan kekuatan - pilih dengan hati-hati
 
-**Otherwise:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
+**Jika tidak:** Memilih vendor khusus mungkin akan membatasi Anda ketika Anda membutuhkan penyesuaian tingkat lanjut. Di sisi lain, menggunakan Jenkins dapat menghabiskan waktu berharga dalam penyiapan infrastruktur
 
-🔗 [**Read More: Choosing CI platform**](/sections/testingandquality/citools.md)
+🔗 [**Baca selengkapnya: Choosing CI platform**](/sections/testingandquality/citools.md)
 
 ## ![✔] 4.13 Test your middlewares in isolation
 
