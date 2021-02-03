@@ -695,13 +695,13 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 5.14. Assign a transaction id to each log statement
+## ![✔] 5.14. Tetapkan id transaksi di seetiap statement catatan
 
-**TL;DR:** Assign the same identifier, transaction-id: {some value}, to each log entry within a single request. Then when inspecting errors in logs, easily conclude what happened before and after. Unfortunately, this is not easy to achieve in Node due to its async nature, see code examples inside
+**TL;DR:** Tetapkan pengenal yang sama, transaksi-id: {sebuah nilai}, ke setiap entri catatan dalam satu permintaan. Kemudian saat memeriksa kesalahan di dalam catatan, simpulkan dengan mudah apa yang terjadi sebelum dan sesudahnya. Sayangnya, hal ini tidak mudah untuk dicapai di Node karena sifat asinkron-nya, lihat contoh kode di dalam
 
-**Otherwise:** Looking at a production error log without the context – what happened before – makes it much harder and slower to reason about the issue
+**Jika tidak:** Melihat catatan kesalahan produksi tanpa konteks – apa yang terjadi sebelumnya – membuat Anda lebih sulit untuk memahami penyebab kesalahannya
 
-🔗 [**Read More: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
+🔗 [**Baca selengkapnya: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
 
 <br/><br/>
 
