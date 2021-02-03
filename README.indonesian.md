@@ -733,13 +733,13 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 5.18. Don't route logs within the app
+## ![✔] 5.18. Jangan rutekan catatan di dalam aplikasi
 
-**TL;DR:** Log destinations should not be hard-coded by developers within the application code, but instead should be defined by the execution environment the application runs in. Developers should write logs to `stdout` using a logger utility and then let the execution environment (container, server, etc.) pipe the `stdout` stream to the appropriate destination (i.e. Splunk, Graylog, ElasticSearch, etc.).
+**TL;DR:** Tempat catatan tidak boleh dibuat oleh pengembang dalam kode aplikasi, tetapi harus ditentukan oleh lingkungan eksekusi dimana aplikasi itu dijalankan. Pengembang harus menuliskan catatan ke `stdout` menggunakan utilitas logger dan membiarkan lingkungan eksekusi (container, server, dll.) menyalurkan `stdout` ke tujuan yang sesuai (misalnya Splunk, Graylog, ElasticSearch, dll.).
 
-**Otherwise:** Application handling log routing === hard to scale, loss of logs, poor separation of concerns
+**Jika tidak:** Aplikasi menangani rute catatan === sulit untuk dikembangkan, kehilangan catatan, dan _separation of concerns_ yang buruk
 
-🔗 [**Read More: Log Routing**](/sections/production/logrouting.md)
+🔗 [**Baca selengkapnya: Log Routing**](/sections/production/logrouting.md)
 
 <br/><br/>
 
