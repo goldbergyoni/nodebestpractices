@@ -50,7 +50,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 2. [Praktik Penanganan Kesalahan (11) ](#2-praktik-penanganan-kesalahan)
 3. [Praktik Gaya Kode (12) ](#3-praktik-gaya-kode)
 4. [Praktik Pengujian dan Kualitas Secara Keseluruhan (13) ](#4-praktik-pengujian-dan-kualitas-secara-keseluruhan )
-5. [Praktik Dalam Produksi(19) ](#5-going-to-production-practices)
+5. [Praktik Dalam Produksi(19) ](#5-praktik-dalam-produksi)
 6. [Praktik Keamanan (25)](#6-security-best-practices)
 7. [Praktik Performa (2) (Pekerjaan Dalam Proses ✍️)](#7-draf-praktik-terbaik-performa)
 8. [Praktik Docker (15)](#8-docker-best-practices)
@@ -563,15 +563,15 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <p align="right"><a href="#daftar-isi">⬆ Kembali ke atas</a></p>
 
-# `5. Going To Production Practices`
+# `5. Praktik Dalam Produksi`
 
-## ![✔] 5.1. Monitoring
+## ![✔] 5.1. Pemantauan
 
-**TL;DR:** Monitoring is a game of finding out issues before customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that ticks all boxes. Click ‘The Gist’ below for an overview of the solutions
+**TL;DR:** Pemantauan adalah permainan mencari suatu masalah sebelum pelanggan menemukannya terlebih dahulu – yang jelas masalah itu merupakan masalah yang belum pernah terjadi sebelumnya. Pasar kewalahan dengan penawaran sehingga mempertimbangkan untuk memulai dengan menentukan metrik dasar yang harus Anda ikuti (saran saya di dalam), kemudian pertimbangkan fitur-fitur mewah tambahan dan pilih solusi yang mencentang semua kotak. Klik ‘Intinya’ di bawah untuk ringkasan dari berbagai solusi
 
-**Otherwise:** Failure === disappointed customers. Simple
+**Jika tidak:** Kegagalan === pelanggan kecewa. Sederhana
 
-🔗 [**Read More: Monitoring!**](/sections/production/monitoring.md)
+🔗 [**Baca selengkapnya: Monitoring!**](/sections/production/monitoring.md)
 
 <br/><br/>
 
