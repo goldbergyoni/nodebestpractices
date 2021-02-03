@@ -743,13 +743,13 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 5.19. Install your packages with `npm ci`
+## ![✔] 5.19. Install paket menggunakan `npm ci`
 
-**TL;DR:** You have to be sure that production code uses the exact version of the packages you have tested it with. Run `npm ci` to strictly do a clean install of your dependencies matching package.json and package-lock.json. Using this command is recommended in automated environments such as continuous integration pipelines.
+**TL;DR:** Anda harus memastikan bahwa kode produksi menggunakan versi paket yang sama dengan yang Anda gunakan pada saat pengujian. Jalankan `npm ci` untuk melakukan instalasi bersih dari dependensi di dalam package.json dan package-lock.json. Penggunaan perintah ini sangat direkomendasikan dalam lingkungan otomatis seperti pipeline continuous integration.
 
-**Otherwise:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code.
+**Jika tidak:** QA akan menguji kode secara menyeluruh dan menyetujui versi yang kemudian akan berperilaku berbeda dalam produksi. Lebih buruk lagi, server yang berbeda dalam kelompok produksi mungkin menjalankan kode yang berbeda.
 
-🔗 [**Read More: Use npm ci**](/sections/production/installpackageswithnpmci.md)
+🔗 [**Baca selengkapnya: Use npm ci**](/sections/production/installpackageswithnpmci.md)
 
 <br/><br/><br/>
 
