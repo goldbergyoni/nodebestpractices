@@ -509,11 +509,11 @@ Semua pernyataan diatas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 4.8 Check your test coverage, it helps to identify wrong test patterns
+## ![✔] 4.8 Periksa cakupan pengujian Anda, ini membantu untuk mengidentifikasikan pola pengujian yang salah
 
-**TL;DR:** Code coverage tools like [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but not least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
+**TL;DR:** Alat cakupan kode seperti [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) sangat bagus karena 3 alasan: gratis (sangat mudah untuk memanfaatkan laporan ini), alat ini membantu mengidentifikasikan pengurangan cakupan pengujian, dan yang terakhir, alat ini menyoroti ketidakcocokan pengujian: dengan melihat kode warna pada laporan cakupan Anda dapat melihat, misalnya, area kode yang tidak pernah diuji seperti klausa _catch_ (artinya pengujian hanya menggambil jalur yang benar dan bukan bagaimana aplikasi akan berperilaku jika ada kesalahan). Setel agar _build_-nya gagal jika cakupannya berada di bawah batas tertentu
 
-**Otherwise:** There won't be any automated metric telling you when a large portion of your code is not covered by testing
+**Jika tidak:** Tidak akan ada metrik otomatis yang memberi tahu Anda saat sebagian besar kode Anda tidak tercakup dalam pengujian
 
 <br/><br/>
 
