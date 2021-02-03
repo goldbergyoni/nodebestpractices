@@ -2,7 +2,7 @@
 
 ### One Paragraph Explainer
 
-Correlation ID is one of the best problem-solving patterns. It lets you link log records, even if they belong to different services. If your system consumes other services and is itself a producer service, adding a correlaction ID is a must. By this pattern, your transaction logs can become into a story that tells itself by filtering your logs with a specific correlation ID, instead of try linking the cross-services transaction logs to each other by yourself. It can save your day when a process including 20 different microservices throws an exception in one of them, and you have no idea where did the problem started across the flow.
+Correlation ID is one of the best problem-solving patterns. It lets you link log records, even if they belong to different services. If your system consumes other services and is itself a producer service, adding a correlaction ID is a must. By this pattern, your transaction logs can become into a story that tells itself by filtering your logs with a specific correlation ID, instead of try linking the cross-services transaction logs to each other by yourself. It can save your day when a process including 20 different microservices throws an exception in one of them, and you have no idea where did the problem start across the flow.
 
 <br/>
 
