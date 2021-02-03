@@ -533,13 +533,13 @@ Semua pernyataan diatas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 4.11 Refactor regularly using static analysis tools
+## ![✔] 4.11 Sering lakukan refactor menggunakan alat analisis statis
 
-**TL;DR:** Using static analysis tools helps by giving objective ways to improve code quality and keeps your code maintainable. You can add static analysis tools to your CI build to fail when it finds code smells. Its main selling points over plain linting are the ability to inspect quality in the context of multiple files (e.g. detect duplications), perform advanced analysis (e.g. code complexity), and follow the history and progress of code issues. Two examples of tools you can use are [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) and [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)).
+**TL;DR:** Menggunakan alat analisis statis membantu dengan memberikan cara yang obyektif untuk meningkatkan kualitias kode dan tetap menjaga kode Anda. Anda dapat menambahkan alat analisis statis ke _build_ CI untuk menggagalkan _build_-nya jika alat itu menemukan kode yang jelek. Nilai jual utamanya dibandingkan dengan _lintting_ biasa adalah kemampuan untuk memeriksa kualitas dalam konteks beberapa file (contohnya mendeteksi duplikasi), melakukan analisis lanjutan (contohnya kompleksitas kode), dan mengikuti riwayat dan perkembangan masalah kode. Dua contoh alat yang dapat Anda gunakan adalah [Sonarqube](https://www.sonarqube.org/) (2,600+ [bintang](https://github.com/SonarSource/sonarqube)) dan [Code Climate](https://codeclimate.com/) (1,500+ [bintang](https://github.com/codeclimate/codeclimate)).
 
-**Otherwise:** With poor code quality, bugs and performance will always be an issue that no shiny new library or state of the art features can fix
+**Jika tidak:** Dengan kualitas kode yang buruk, _bug_ dan performa selalu akan selalu menjadi masalah yang tidak dapat diperbaiki oleh pustaka baru atau fitur-fitur canggih
 
-🔗 [**Read More: Refactoring!**](/sections/testingandquality/refactoring.md)
+🔗 [**Baca selengkapnya: Refactoring!**](/sections/testingandquality/refactoring.md)
 
 <br/><br/>
 
