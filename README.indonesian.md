@@ -685,13 +685,13 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 5.13. Use tools that automatically detect vulnerabilities
+## ![✔] 5.13. Gunakan alat yang mendeteksi kerentanan secara otomatis
 
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities (from time to time) that can put a system at risk. This can be easily tamed using community and commercial tools that constantly check for vulnerabilities and warn (locally or at GitHub), some can even patch them immediately
+**TL;DR:** Bahkan dependensi yang paling terkemuka seperti Express memiliki kerentanan yang diketahui (dari waktu ke waktu) yang dapat membahayakan sistem. Hal ini dapat dimitigasi dengan mudah menggunakan alat dari komunitas atau komersial yang terus-menerus memeriksa kerentanan dan memberi peringatan (secara lokal atau di GitHub), beberapa bahkan dapat lansung memperbaikinya
 
-**Otherwise:** Keeping your code clean from vulnerabilities without dedicated tools will require you to constantly follow online publications about new threats. Quite tedious
+**Jika tidak:** Menjaga kode Anda bersih dari kerentanan tanpa alat khusus mengharuskan Anda untuk mengikuti publikasi online tentang ancaman baru. Cukup membosankan
 
-🔗 [**Read More: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
+🔗 [**Baca selengkapnya: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
 
 <br/><br/>
 
