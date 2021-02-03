@@ -18,7 +18,7 @@
 
 <br/>
 
-Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** and ![TR](/assets/flags/TR.png)**TR** dalam proses!)](#translations)
+Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** dan ![TR](/assets/flags/TR.png)**TR** dalam proses!)](#translations)
 
 <br/>
 
@@ -26,7 +26,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 # Praktik Terbaik Terbaru dan Berita
 
-- **✅ Praktik terbaik baru:** Poin 2.12 oleh [Alexsey](https://github.com/Alexsey) menunjukkan bagimana melakukan return tanpa await ke fungsi asinkron dapat mengarah ke _stacktraces_ parsial. Ini dapat menjadi masalah besar saat melakukan pemecahan masalah exception di produksi yang kekurangan beberapa bingkai eksekusi
+- **✅ Praktik terbaik baru:** Poin 2.12 oleh [Alexsey](https://github.com/Alexsey) menunjukkan bagaimana melakukan return tanpa await ke fungsi asinkron dapat mengarah ke _stacktraces_ parsial. Ini dapat menjadi masalah besar saat melakukan pemecahan masalah exception di produksi yang kekurangan beberapa bingkai eksekusi
 
 - **✅ Praktik terbaik baru:** Poin 6.8 oleh Josh Hemphill menyarankan "Protect Users' Passwords/Secrets using BCrypt or Script". Ini mengandung penjelasan secara mendalam tentang kapan dan kenapa setiap opsi sesuai untuk proyek tertentu. Jangan lewatkan panduan singkat ini dengan gambaran singkat tentang berbagai opsi hashing
 
@@ -36,11 +36,11 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 # Selamat Datang! 3 Hal Yang Harus Anda Ketahui
 
-**1. Anda sedang membaca berbagai artikel Node.js terbaik -** repository ini adalah ringkasan and kurasi dari konten peringkat teratas dalam praktik terbaik Node.js, serta konten yang ditulis oleh kolaborator
+**1. Anda sedang membaca berbagai artikel Node.js terbaik -** repositori ini adalah ringkasan dan kurasi dari konten peringkat teratas dalam praktik terbaik Node.js, serta konten yang ditulis oleh kolaborator
 
-**2. Ini adalah kompilasi terbesar, dan berkembang tiap minggu -** saat ini, lebih dari 80 praktik terbaik, panduan gaya, dan tips arsitektural tersajikan. Issue baru dan pull request dibuat setiap hari agar kontennya tetap diperbarui. Kami senang melihat Anda berkontribusi disini, maupun itu memperbaiki kesalahan kode, membantu dalam terjemahan, atau menyarankan ide cemerlang yang baru. Lihat [pedoman menulis](/.operations/writing-guidelines.md) kami
+**2. Ini adalah kompilasi terbesar, dan berkembang tiap minggu -** saat ini, lebih dari 80 praktik terbaik, panduan gaya, dan tips arsitektural tersajikan. Issue baru dan pull request dibuat setiap hari agar kontennya tetap diperbarui. Kami senang melihat Anda berkontribusi di sini, maupun itu memperbaiki kesalahan kode, membantu dalam terjemahan, atau menyarankan ide cemerlang yang baru. Lihat [pedoman menulis](/.operations/writing-guidelines.md) kami
 
-**3. Praktik terbaik mempunyai informasi tambahan -** kebanyakan poin mempunyai tautan **🔗Baca selengkapnya** yang memperluas praktiknya dengan contoh kode, kutipan dari blog terpilih, and informasi lebih lanjut
+**3. Praktik terbaik mempunyai informasi tambahan -** kebanyakan poin mempunyai tautan **🔗Baca selengkapnya** yang memperluas praktiknya dengan contoh kode, kutipan dari blog terpilih, dan informasi lebih lanjut
 
 <br/><br/>
 
@@ -52,7 +52,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 4. [Praktik Pengujian dan Kualitas Secara Keseluruhan (13) ](#4-praktik-pengujian-dan-kualitas-secara-keseluruhan )
 5. [Praktik Dalam Produksi(19) ](#5-going-to-production-practices)
 6. [Praktik Keamanan (25)](#6-security-best-practices)
-7. [Praktik Peforma (2) (Pekerjaan Dalam Proses ✍️)](#7-draf-praktik-terbaik-performa)
+7. [Praktik Performa (2) (Pekerjaan Dalam Proses ✍️)](#7-draf-praktik-terbaik-performa)
 8. [Praktik Docker (15)](#8-docker-best-practices)
 
 <br/><br/>
@@ -63,7 +63,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 **TL;DR:** Masalah terburuk pada aplikasi besar adalah mengurus basis kode yang sangat besar dengan ratusan dependensi - monolit seperti itu memperlambat pengembang saat mereka mencoba untuk menambahkan fitur baru. Sebaiknya, partisi kode Anda menjadi beberapa komponen, setiap komponen mendapatkan foldernya sendiri atau basis kode tersendiri, dan pastikan setiap unit untuk tetap kecil dan sederhana. Kunjungi 'Baca selengkapnya' di bawah ini untuk melihat contoh struktur proyek yang benar
 
-**Jika tidak:** Saat pengembang yang menambahkan fitur baru kesusahan untuk melihat dampak dari perubahan mereka dan takut akan merusak komponen lain yang bergantung - _deployments_ menjadi lebih lambat dan berisiko. Kode juga dianggap lebih sulit untuk dikembangkan ketika semua unit bisnis tidak dipisahkan
+**Jika tidak:** Saat pengembang yang menambahkan fitur baru kesusahan untuk melihat dampak dari perubahan mereka dan takut akan merusak komponen lain yang bergantung - _deployment_ menjadi lebih lambat dan berisiko. Kode juga dianggap lebih sulit untuk dikembangkan ketika semua unit bisnis tidak dipisahkan
 
 🔗 [**Baca selengkapnya: structure by components**](/sections/projectstructre/breakintcomponents.md)
 
@@ -71,9 +71,9 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 ## ![✔] 1.2 Lapisi komponen Anda, pastikan lapisan web tetap dalam batasannya
 
-**TL;DR:** Setiap komponen harus mengandung 'lapisan' - objek khusus untuk web, logika, dan kode akses data. Hal ini tidak hanya menggambarkan _separation of concerns_ dengan jelas namun juga memudahkan _mocking_ and pengujian sistem. Meskipun ini adalah pola yang sangan umum, pengembang API cenderung mencampur lapisan dengan meneruskan objek lapisan web (misalnya Express req, res) ke logika bisnis dan lapisan data - ini membuat aplikasi Anda bergantung dan hanya bisa diakses oleh frameworks web tertentu
+**TL;DR:** Setiap komponen harus mengandung 'lapisan' - objek khusus untuk web, logika, dan kode akses data. Hal ini tidak hanya menggambarkan _separation of concerns_ dengan jelas namun juga memudahkan _mocking_ dan pengujian sistem. Meskipun ini adalah pola yang sangan umum, pengembang API cenderung mencampur lapisan dengan meneruskan objek lapisan web (misalnya Express req, res) ke logika bisnis dan lapisan data - ini membuat aplikasi Anda bergantung dan hanya bisa diakses oleh framework web tertentu
 
-**Jika tidak:** Aplikasi yang menggabungkan objek web dengan lapisan lain tidak dapat diakses oleh kode test, CRON jobs, triggers dari message queues, dll.
+**Jika tidak:** Aplikasi yang menggabungkan objek web dengan lapisan lain tidak dapat diakses oleh kode pengujian, pekerjaan CRON, triggers dari message queues, dll.
 
 🔗 [**Baca selengkapnya: layer your app**](/sections/projectstructre/createlayers.md)
 
@@ -81,7 +81,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 ## ![✔] 1.3 Bungkus utilitas umum sebagai paket npm
 
-**TL;DR:** Pada aplikasi besar yang memiliki basis kode yang besar, utilitas _cross-cutting-concern_ seperti logger, enkripsi and yang serupa, harus dibungkus oleh kode Anda dan terekspos sebagai paket npm tersendiri. Ini memungkinkan untuk membagikan utilitas tersebut di antara beberapa basis kode dan proyek
+**TL;DR:** Pada aplikasi besar yang memiliki basis kode yang besar, utilitas _cross-cutting-concern_ seperti logger, enkripsi dan yang serupa, harus dibungkus oleh kode Anda dan terekspos sebagai paket npm tersendiri. Ini memungkinkan untuk membagikan utilitas tersebut di antara beberapa basis kode dan proyek
 
 **Jika tidak:** Anda harus membuat cara _deployment_ dan _dependency_ Anda sendiri
 
@@ -197,7 +197,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 **TL;DR:** Produk pemantauan dan kinerja (a.k.a APM) secara proaktif mengukur basis kode atau API sehingga mereka dapat secara otomatis menyorot kesalahan, kerusakan, dan bagian lambat yang Anda lewatkan
 
-**Jika tidak:** Anda mungkin menghabiskan banyak usaha untuk mengukur kinerja dan waktu henti API, mungkin Anda tidak akan menyadari bagian kode mana yang paling lambat dalam skenario dunia nyata dan bagaimana hal ini dapat tmemengaruhi pengalaman pengguna
+**Jika tidak:** Anda mungkin menghabiskan banyak usaha untuk mengukur kinerja dan waktu henti API, mungkin Anda tidak akan menyadari bagian kode mana yang paling lambat dalam skenario dunia nyata dan bagaimana hal ini dapat memengaruhi pengalaman pengguna
 
 🔗 [**Baca selengkapnya: using APM products**](/sections/errorhandling/apmproducts.md)
 
@@ -215,7 +215,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 ## ![✔] 2.11 Gagal lebih dini, validasi argumen menggunakan pustaka khusus
 
-**TL;DR:** Tegaskan input API untuk menghindari bug yang lebih sulit dilacak nantinya. Kode untuk validasi biasanya berantakan kecuali Anda menggunakan pustaka pembantu yang keren seperti [ajv](https://www.npmjs.com/package/ajv) dan [Joi](https://www.npmjs.com/package/joi)
+**TL;DR:** Tegaskan masukan API untuk menghindari bug yang lebih sulit dilacak nantinya. Kode untuk validasi biasanya berantakan kecuali Anda menggunakan pustaka pembantu yang keren seperti [ajv](https://www.npmjs.com/package/ajv) dan [Joi](https://www.npmjs.com/package/joi)
 
 **Jika tidak:** Anggap seperti ini – jika fungsi Anda mengharapkan argumen numerik “Diskon” yang lupa diletak oleh pemanggil, kemudian, kode Anda memeriksa jika Diskon!=0 (jumlah diskon yang diizinkan lebih besar dari nol), maka itu akan memungkinkan pengguna untuk menikmati diskon. OMG, bug yang sangat buruk. Bisakah Anda melihatnya?
 
@@ -288,7 +288,7 @@ Tidak peduli jika Anda menggunakan titik koma atau tidak untuk memisahkan statem
 
 **TL;DR:** Gunakan ESLint untuk mendapatkan perhatian tentang masalah pemisahan. [Prettier](https://prettier.io/) atau [Standardjs](https://standardjs.com/) dapat menyelesaikan masalah ini secara otomatis.
 
-**Jika tidak:** Seperti yang terlihat di bagian sebelumnya, penerjemah JavaScript secara otomatis menambah titik koma pada akhir statement jika tidak ada, atau anggap sebuah statement tidak diakhiri di tempat yang seharusnya, yang dapat mengarah pada hasil yang tidak diinginkan. Anda dapat menggunakan penetapan dan hindari pengunaan ekspresi fungsi yang lansung dipanggil untuk mencegah sebagian besar masalah yang tidak terduga.
+**Jika tidak:** Seperti yang terlihat di bagian sebelumnya, penerjemah JavaScript secara otomatis menambah titik koma pada akhir statement jika tidak ada, atau anggap sebuah statement tidak diakhiri di tempat yang seharusnya, yang dapat mengarah pada hasil yang tidak diinginkan. Anda dapat menggunakan penetapan dan hindari penggunaan ekspresi fungsi yang langsung dipanggil untuk mencegah sebagian besar masalah yang tidak terduga.
 
 ### Contoh kode
 
@@ -318,7 +318,7 @@ const count = 2 // mencoba menjalankan 2(), tapi 2 bukanlah sebuah fungsi
 (function doSomething() {
   // lakukan sesuatu
 }())
-// letakkan titik koma sebelum fungsi yang lansung dipanggil, setelah pendefinisian const, simpan nilai kembali dari fungsi anonim ke sebuah variabel atau hindari IIFE (ekspresi fungsi yang lansung dipanggil) sepenuhnya
+// letakkan titik koma sebelum fungsi yang langsung dipanggil, setelah pendefinisian const, simpan nilai kembali dari fungsi anonim ke sebuah variabel atau hindari IIFE (ekspresi fungsi yang langsung dipanggil) sepenuhnya
 ```
 
 🔗 [**Baca selengkapnya:** "Semi ESLint rule"](https://eslint.org/docs/rules/semi)
@@ -334,11 +334,11 @@ const count = 2 // mencoba menjalankan 2(), tapi 2 bukanlah sebuah fungsi
 
 <br/><br/>
 
-## ![✔] 3.6 Gunakan konvensi penamaan untuk variabel, konstanta, fungsi and kelas
+## ![✔] 3.6 Gunakan konvensi penamaan untuk variabel, konstanta, fungsi dan kelas
 
 **TL;DR:** Gunakan **_lowerCamelCase_** saat memberi nama konstanta, variabel dan fungsi dan **_UpperCamelCase_** (huruf besar pada huruf pertama) saat memberi nama kelas. Ini akan membantu Anda dengan mudah untuk membedakan variabel/fungsi biasa, dan kelas yang membutuhkan instansiasi. Gunakan nama yang deskriptif, tetapi usahakan untuk tetap pendek
 
-**Jiak tidak:** Javascript adalah satu-satunya bahasa di dunia yang memungkinkan pemanggilan konstruktor kelas ("Class") secara lansung tanpa membuat instansinya terlebih dahulu. Akibatnya, kelas dan fungsi-konstruktor dibedakan dimulai dengan UpperCamelCase
+**Jiak tidak:** Javascript adalah satu-satunya bahasa di dunia yang memungkinkan pemanggilan konstruktor kelas ("Class") secara langsung tanpa membuat instansinya terlebih dahulu. Akibatnya, kelas dan fungsi-konstruktor dibedakan dimulai dengan UpperCamelCase
 
 ### 3.6 Contoh Kode
 
@@ -351,7 +351,7 @@ const config = {
   key: "value",
 };
 
-// untuk nama variable dan fungsi kita gunakan lowerCamelCase
+// untuk nama variabel dan fungsi kita gunakan lowerCamelCase
 let someVariableExample = "value";
 function doSomething() {}
 ```
@@ -360,7 +360,7 @@ function doSomething() {}
 
 ## ![✔] 3.7 Utamakan penggunaan const daripada let. Singkirkan var
 
-**TL;DR:** Menggunakan `const` berarti bahwa setelah nilai variabel itu ditetapkan, nilainya tidak dapat ditetapkan kembali. Menggunakan `const` akan membantu Anda untuk tidak tergoda untuk menggunakan variabel yang sama untuk penggunaan yang berbeda, dan membuat kode Anda lebih jelas. Jika sebuah variabel perlu ditetapkan kembali nilainya, di dalam perulangan for, misalnya, deklarasikan menggunakan `let`. Aspek penting lainnya dari `let` adalah variable yang dideklarasikan menggunakan `let` hanya tersedia didalam cakupan blok di mana variabel itu didefinisikan. `var` memiliki cakupan dalam fungsi, bukan dalam blok, dan [tidak boleh digunakan di ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) setelah Anda mempunyai `const` dan `let`
+**TL;DR:** Menggunakan `const` berarti bahwa setelah nilai variabel itu ditetapkan, nilainya tidak dapat ditetapkan kembali. Menggunakan `const` akan membantu Anda untuk tidak tergoda untuk menggunakan variabel yang sama untuk penggunaan yang berbeda, dan membuat kode Anda lebih jelas. Jika sebuah variabel perlu ditetapkan kembali nilainya, di dalam perulangan for, misalnya, deklarasikan menggunakan `let`. Aspek penting lainnya dari `let` adalah variabel yang dideklarasikan menggunakan `let` hanya tersedia di dalam cakupan blok di mana variabel itu didefinisikan. `var` memiliki cakupan dalam fungsi, bukan dalam blok, dan [tidak boleh digunakan di ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) setelah Anda mempunyai `const` dan `let`
 
 **Jika tidak:** Men-debug menjadi lebih rumit saat mengikuti variabel yang sering berubah
 
@@ -368,15 +368,15 @@ function doSomething() {}
 
 <br/><br/>
 
-## ![✔] 3.8 _Require_ module terlebih dahulu, bukan di dalam fungsi
+## ![✔] 3.8 _Require_ modul terlebih dahulu, bukan di dalam fungsi
 
-**TL;DR:** _Require_ module di awal setiap file, sebelum dan di luar semua fungsi. Praktik terbaik sederhana ini tidak hanya membantu Anda dengan mudah dan cepat untuk mengetahui dependensi file di awal sebuah file tetapi juga menghindari beberapa potensi masalah
+**TL;DR:** _Require_ modul di awal setiap file, sebelum dan di luar semua fungsi. Praktik terbaik sederhana ini tidak hanya membantu Anda dengan mudah dan cepat untuk mengetahui dependensi file di awal sebuah file tetapi juga menghindari beberapa potensi masalah
 
 **Jika tidak:** _Require_ dijalankan secara sinkron oleh Node.js. Jika mereka dipanggil dalam sebuah fungsi, ini mungkin dapat memblokir permintaan lain untuk ditangani pada waktu yang lebih kritis. Selain itu, jika modul yang diperlukan atau salah satu dependensinya menimbulkan kesalahan dan merusak server, akan lebih baik untuk mengetahuinya sesegera mungkin, yang mungkin tidak akan terjadi jika modul itu dipanggil dalam sebuah fungsi
 
 <br/><br/>
 
-## ![✔] 3.9 _Require_ modul berdasarkan folder, bukan file secara lansung
+## ![✔] 3.9 _Require_ modul berdasarkan folder, bukan file secara langsung
 
 **TL;DR:** Saat mengembangkan sebuah modul/pustaka dalam sebuah folder, letak file index.js yang mengekspos modul internal sehingga setiap konsumen akan melewatinya. Ini berfungsi sebagai 'antarmuka' ke modul Anda dan memudahkan perubahan di masa mendatang tanpa merusak kontrak
 
@@ -419,13 +419,13 @@ null == undefined; // true
 " \t\r\n " == 0; // true
 ```
 
-Semua pernyataan diatas akan mengembalikan nilai _false_ jika menggunakan `===`
+Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
 ## ![✔] 3.11 Gunakan Async Await, hindari panggilan balik
 
-**TL;DR:** Node 8 LTS sekarang memiliki dukungan penuh untuk Async-await. Ini adalah cara baru untuk menangani kode asinkron yang mengantikan panggilan balik dan _promise_. Async-await bersifat tidak memblokir, dan ini membuat kode asinkron terlihat seperti sinkron. Hadiah terbaik yang dapat Anda berikan untuk kode Anda adalah menggunakan async-await yang menyediakan sintaks yang lebih ringkas dan akrab seperti try-catch
+**TL;DR:** Node 8 LTS sekarang memiliki dukungan penuh untuk Async-await. Ini adalah cara baru untuk menangani kode asinkron yang menggantikan panggilan balik dan _promise_. Async-await bersifat tidak memblokir, dan ini membuat kode asinkron terlihat seperti sinkron. Hadiah terbaik yang dapat Anda berikan untuk kode Anda adalah menggunakan async-await yang menyediakan sintaks yang lebih ringkas dan akrab seperti try-catch
 
 **Jika tidak:** Menangani kesalahan asinkron dalam gaya panggilan balik mungkin adalah cara terburuk - gaya ini memeriksa kesalahan secara menyeluruh, menangani tumpukan kode yang canggung, dan menyulitkan untuk menjelaskan aliran kode
 
@@ -469,7 +469,7 @@ Semua pernyataan diatas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **TL;DR:** Strukturkan pengujian dengan 3 bagian yang terpisah dengan baik: _Arrange, Act & Assert_ (AAA). Bagian pertama mencakup penyiapan untuk pengujian, kemudian eksekusi unit yang akan diuji, dan yang terakhir fase _assertion_. Mengikuti struktur ini menjamin bahwa pembaca tidak menghabiskan tenaga otak untuk memahami rencana pengujian
 
-**Jika tidak:** Tidak hanya Anda menghabiskan waktu yang lama untuk memahami kode utama, tetapi sekarang hal paling mudah dari hari Anda (melakukan pengujian) dapat merengangkan otak Anda
+**Jika tidak:** Tidak hanya Anda menghabiskan waktu yang lama untuk memahami kode utama, tetapi sekarang hal paling mudah dari hari Anda (melakukan pengujian) dapat meregangkan otak Anda
 
 🔗 [**Baca selengkapnya: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.md)
 
@@ -479,15 +479,15 @@ Semua pernyataan diatas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **TL;DR:** Gunakan _linter_ kode untuk memeriksa kualitas dasar dan mendeteksi anti-pola sejak dini. Jalankan _linter_ sebelum pengujian dan tambahkan _linter_ sebagai pra-commit git-hook untuk meminimalkan waktu yang dibutuhkan untuk meninjau dan memperbaiki masalah apa pun. Periksa juga [Bagian 3](#3-praktik-gaya-kode) tentang Praktik Gaya Kode
 
-**Jika Tidak:** Anda dapat membiarkan beberapa kode dengan anti-pola dan mungkin kode yang tidak aman masuk ke lingkunan produksi Anda.
+**Jika Tidak:** Anda dapat membiarkan beberapa kode dengan anti-pola dan mungkin kode yang tidak aman masuk ke lingkungan produksi Anda.
 
 <br/><br/>
 
-## ![✔] 4.5 Hindari perlengkapan and benih global pada pengujian, tambah data pada setiap pengujian
+## ![✔] 4.5 Hindari perlengkapan dan benih global pada pengujian, tambah data pada setiap pengujian
 
 **TL;DR:** Untuk mencegah pengujian yang tersambung dan memudahkan untuk memahami alur pengujian, setiap pengujian harus menambah dan bertindak pada kumpulan data di DB-nya sendiri. Setiap kali pengujian perlu menarik atau mengasumsikan keberadaan suatu data pada DB - pengujian tersebut harus menambah data tersebut secara eksplisit dan hindari memutasi kumpulan data lainnya
 
-**Jika tidak:** Anggap sebuah skenario di mana _deployment_ gagal karena pengujian yang gagal, tim seakarang akan menghabiskan waktu yang berharga untuk melakukan investigasi yang berakhir dengan kesimpulan yang menyedihkan: sistem berfungsi dengan baik, namun pengujian saling mengganggu dan merusak _build_-nya
+**Jika tidak:** Anggap sebuah skenario di mana _deployment_ gagal karena pengujian yang gagal, tim sekarang akan menghabiskan waktu yang berharga untuk melakukan investigasi yang berakhir dengan kesimpulan yang menyedihkan: sistem berfungsi dengan baik, namun pengujian saling mengganggu dan merusak _build_-nya
 
 🔗 [**Baca selengkapnya: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
 
@@ -511,7 +511,7 @@ Semua pernyataan diatas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 ## ![✔] 4.8 Periksa cakupan pengujian Anda, ini membantu untuk mengidentifikasikan pola pengujian yang salah
 
-**TL;DR:** Alat cakupan kode seperti [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) sangat bagus karena 3 alasan: gratis (sangat mudah untuk memanfaatkan laporan ini), alat ini membantu mengidentifikasikan pengurangan cakupan pengujian, dan yang terakhir, alat ini menyoroti ketidakcocokan pengujian: dengan melihat kode warna pada laporan cakupan Anda dapat melihat, misalnya, area kode yang tidak pernah diuji seperti klausa _catch_ (artinya pengujian hanya menggambil jalur yang benar dan bukan bagaimana aplikasi akan berperilaku jika ada kesalahan). Setel agar _build_-nya gagal jika cakupannya berada di bawah batas tertentu
+**TL;DR:** Alat cakupan kode seperti [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) sangat bagus karena 3 alasan: gratis (sangat mudah untuk memanfaatkan laporan ini), alat ini membantu mengidentifikasikan pengurangan cakupan pengujian, dan yang terakhir, alat ini menyoroti ketidakcocokan pengujian: dengan melihat kode warna pada laporan cakupan Anda dapat melihat, misalnya, area kode yang tidak pernah diuji seperti klausa _catch_ (artinya pengujian hanya mengambil jalur yang benar dan bukan bagaimana aplikasi akan berperilaku jika ada kesalahan). Setel agar _build_-nya gagal jika cakupannya berada di bawah batas tertentu
 
 **Jika tidak:** Tidak akan ada metrik otomatis yang memberi tahu Anda saat sebagian besar kode Anda tidak tercakup dalam pengujian
 
@@ -527,7 +527,7 @@ Semua pernyataan diatas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 ## ![✔] 4.10 Gunakan lingkungan yang mirip dengan produksi untuk pengujian e2e
 
-**TL;DR:** Pengujian _End to end_ (e2e) yang mencakup data asli dulunya merupakan titik terlemah pada proses CI karena pengujian itu bergantung pada beberapa layanan berat seperti DB. Gunakan lingkunan yang semirip mungkin dengan lingkungan pada produksi Anda seperti a-seterusnya (-seterusnya hilang, konten dibutuhkan. Dilihat dari klausa **Otherwise**, hal ini seharusnya menyebutkan tentang docker-compose)
+**TL;DR:** Pengujian _End to end_ (e2e) yang mencakup data asli dulunya merupakan titik terlemah pada proses CI karena pengujian itu bergantung pada beberapa layanan berat seperti DB. Gunakan lingkungan yang semirip mungkin dengan lingkungan pada produksi Anda seperti a-seterusnya (-seterusnya hilang, konten dibutuhkan. Dilihat dari klausa **Jika tidak**, hal ini seharusnya menyebutkan tentang docker-compose)
 
 **Jika tidak:** Tanpa docker-compose, tim harus mengurus DB pengujian untuk setiap lingkungan pengujian termasuk mesin yang dimiliki oleh pengembang, pastikan semua DB tersebut tetap sinkron sehingga hasil pengujian tidak akan berbeda di lingkungan yang berbeda
 
@@ -535,7 +535,7 @@ Semua pernyataan diatas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 ## ![✔] 4.11 Sering lakukan refactor menggunakan alat analisis statis
 
-**TL;DR:** Menggunakan alat analisis statis membantu dengan memberikan cara yang obyektif untuk meningkatkan kualitias kode dan tetap menjaga kode Anda. Anda dapat menambahkan alat analisis statis ke _build_ CI untuk menggagalkan _build_-nya jika alat itu menemukan kode yang jelek. Nilai jual utamanya dibandingkan dengan _lintting_ biasa adalah kemampuan untuk memeriksa kualitas dalam konteks beberapa file (contohnya mendeteksi duplikasi), melakukan analisis lanjutan (contohnya kompleksitas kode), dan mengikuti riwayat dan perkembangan masalah kode. Dua contoh alat yang dapat Anda gunakan adalah [Sonarqube](https://www.sonarqube.org/) (2,600+ [bintang](https://github.com/SonarSource/sonarqube)) dan [Code Climate](https://codeclimate.com/) (1,500+ [bintang](https://github.com/codeclimate/codeclimate)).
+**TL;DR:** Menggunakan alat analisis statis membantu dengan memberikan cara yang obyektif untuk meningkatkan kualitas kode dan tetap menjaga kode Anda. Anda dapat menambahkan alat analisis statis ke _build_ CI untuk menggagalkan _build_-nya jika alat itu menemukan kode yang jelek. Nilai jual utamanya dibandingkan dengan _linting_ biasa adalah kemampuan untuk memeriksa kualitas dalam konteks beberapa file (contohnya mendeteksi duplikasi), melakukan analisis lanjutan (contohnya kompleksitas kode), dan mengikuti riwayat dan perkembangan masalah kode. Dua contoh alat yang dapat Anda gunakan adalah [Sonarqube](https://www.sonarqube.org/) (2,600+ [bintang](https://github.com/SonarSource/sonarqube)) dan [Code Climate](https://codeclimate.com/) (1,500+ [bintang](https://github.com/codeclimate/codeclimate)).
 
 **Jika tidak:** Dengan kualitas kode yang buruk, _bug_ dan performa selalu akan selalu menjadi masalah yang tidak dapat diperbaiki oleh pustaka baru atau fitur-fitur canggih
 
@@ -545,7 +545,7 @@ Semua pernyataan diatas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 ## ![✔] 4.12 Pilih platform CI Anda dengan hati-hati (Jenkins vs CircleCI vs Travis vs yang lainnya)
 
-**TL;DR:** Platform _continuous integration_ (CICD) Anda akan mempunyai semua alat berkualitas (seperti test, lint) sehingga seharusnya dilengkapi dengan ekosistem plugin yang dinamis. [Jenkins](https://jenkins.io/) dulunya merupakan aplikasi default untuk banyak proyek harena mempunyai komunitas terbesar bersama dengan platform yang sangat kuat dengan kekurangan persiapan yang rumit yang menuntut kurva pembelajaran yang tajam. Saat ini, persiapan solusi CI jauh lebih mudah menggunakan alat SaaS seperti [CircleCI](https://circleci.com) dan lainnya. Alat ini memungkinkan pembuatan pipeline CI yang fleksibel tanpa beban untuk mengelola seluruh infrastruktur. Pada akhirnya, ini merupakan keseimbangan antara kecepatan dan kekuatan - pilih dengan hati-hati
+**TL;DR:** Platform _continuous integration_ (CICD) Anda akan mempunyai semua alat berkualitas (seperti test, lint) sehingga seharusnya dilengkapi dengan ekosistem plugin yang dinamis. [Jenkins](https://jenkins.io/) dulunya merupakan aplikasi default untuk banyak proyek karena mempunyai komunitas terbesar bersama dengan platform yang sangat kuat dengan kekurangan persiapan yang rumit yang menuntut kurva pembelajaran yang tajam. Saat ini, persiapan solusi CI jauh lebih mudah menggunakan alat SaaS seperti [CircleCI](https://circleci.com) dan lainnya. Alat ini memungkinkan pembuatan pipeline CI yang fleksibel tanpa beban untuk mengelola seluruh infrastruktur. Pada akhirnya, ini merupakan keseimbangan antara kecepatan dan kekuatan - pilih dengan hati-hati
 
 **Jika tidak:** Memilih vendor khusus mungkin akan membatasi Anda ketika Anda membutuhkan penyesuaian tingkat lanjut. Di sisi lain, menggunakan Jenkins dapat menghabiskan waktu berharga dalam penyiapan infrastruktur
 
@@ -1075,7 +1075,7 @@ Semua pernyataan diatas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 ## ![✔] 7.2. Utamakan penggunaan metode JS asli daripada utilitas berlebihan seperti Lodash
 
-**TL;DR:** Seringkali lebih merugikan jika menggunakan pustaka seperti `lodash` dan `underscore` daripada metode asli karena mengarah kepada dependensi yang tidak diperlukan dan memperlambat performa.
+**TL;DR:** Sering kali lebih merugikan jika menggunakan pustaka seperti `lodash` dan `underscore` daripada metode asli karena mengarah kepada dependensi yang tidak diperlukan dan memperlambat performa.
 Ingatlah bahwa dengan diperkenalkannya mesin V8 baru bersama dengan standar ES baru, metode asli telah ditingkatkan sehingga sekarang sekitar 50% lebih baik daripada pustaka utilitas.
 
 **Jika tidak:** Anda harus mengurus proyek dengan kinerja yang lebih rendah di mana Anda dapat menggunakan apa yang **sudah** ada atau berurusan dengan lebih sedikit baris namun lebih banyak file sebagai gantinya.
