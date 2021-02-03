@@ -551,13 +551,13 @@ Semua pernyataan diatas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 🔗 [**Baca selengkapnya: Choosing CI platform**](/sections/testingandquality/citools.md)
 
-## ![✔] 4.13 Test your middlewares in isolation
+## ![✔] 4.13 Uji middleware Anda secara terpisah
 
-**TL;DR:** When a middleware holds some immense logic that spans many requests, it is worth testing it in isolation without waking up the entire web framework. This can be easily achieved by stubbing and spying on the {req, res, next} objects
+**TL;DR:** Ketika middleware mempunyai beberapa logika besar yang mencakup banyak permintaan, ada baiknya untuk mengujinya secara terpisah tanpa membangun seluruh framework web. Hal ini dapat dicapai dengan mudah dengan melakukan _stubbing_ dan _spying_ pada objek {req, res, next}
 
-**Otherwise:** A bug in Express middleware === a bug in all or most requests
+**Otherwise:** Sebuah _bug_ di middleware Express === sebuah bug di semua atau banyak _request_
 
-🔗 [**Read More: Test middlewares in isolation**](/sections/testingandquality/test-middlewares.md)
+🔗 [**Baca selengkapnya: Test middlewares in isolation**](/sections/testingandquality/test-middlewares.md)
 
 <br/><br/><br/>
 
