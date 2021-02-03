@@ -625,13 +625,13 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 5.7. Create a ‘maintenance endpoint’
+## ![✔] 5.7. Buat ‘endpoint pemeliharaan’
 
-**TL;DR:** Expose a set of system-related information, like memory usage and REPL, etc in a secured API. Although it’s highly recommended to rely on standard and battle-tests tools, some valuable information and operations are easier done using code
+**TL;DR:** Sediakan sekumpulan informasi terkait sistem, seperti pengunaan memori dan REPL, dll. dalam API yang aman. Meskipun sangat disarankan untuk mengandalkan alat standard dan battle-test, beberapa informasi penting dan operasi lebih mudah dilakukan melalui kode
 
-**Otherwise:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
+**Jika tidak:** Anda akan melakukan banyak “deploy diagnostik” – mendeploy kode ke produksi hanya untuk mengekstrak beberapa informasi untuk keperluan diagnostik
 
-🔗 [**Read More: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
+🔗 [**Baca selengkapnya: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
 
 <br/><br/>
 
