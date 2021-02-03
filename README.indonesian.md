@@ -723,13 +723,13 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 5.17. Use an LTS release of Node.js
+## ![✔] 5.17. Gunakan versi LTS pada Node.js
 
-**TL;DR:** Ensure you are using an LTS version of Node.js to receive critical bug fixes, security updates and performance improvements
+**TL;DR:** Pastikan Anda menggunakan versi LTS pada Node.js untuk menerima perbaikan bug yang kritis, pembaruan keamanan dan peningkatan performa
 
-**Otherwise:** Newly discovered bugs or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain
+**Otherwise:** Bug atau kerentanan yang baru ditemukan dapat digunakan untuk mengeksploitasi aplikasi yang sedang berjalan dalam produksi, dan aplikasi Anda mungkin menjadi tidak didukung oleh berbagai modul dan lebih sulit untuk di dipelihara
 
-🔗 [**Read More: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
+🔗 [**Baca selengkapnya: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
 
 <br/><br/>
 
