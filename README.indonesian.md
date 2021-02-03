@@ -665,13 +665,13 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 5.11. Get your frontend assets out of Node
+## ![✔] 5.11. Keluarkan aset _frontend_ Anda dari Node
 
-**TL;DR:** Serve frontend content using dedicated middleware (nginx, S3, CDN) because Node performance really gets hurt when dealing with many static files due to its single-threaded model
+**TL;DR:** Sajikan konten _frontend_ menggunakan middleware khusus (nginx, S3, CDN) karena performa Node dapat berkurang ketika menangani banyak file statis karena model thread tunggalnya
 
-**Otherwise:** Your single Node thread will be busy streaming hundreds of html/images/angular/react files instead of allocating all its resources for the task it was born for – serving dynamic content
+**Jika tidak:** Thread tunggal Node Anda akan sibuk mengirimkan ratusan file html/gambar/angular/react alih-alih mengalokasikan semua sumber dayanya untuk tugas yang seharusnya – menyajikan konten dinamis
 
-🔗 [**Read More: Get your frontend assets out of Node**](/sections/production/frontendout.md)
+🔗 [**Baca selengkapnya: Get your frontend assets out of Node**](/sections/production/frontendout.md)
 
 <br/><br/>
 
