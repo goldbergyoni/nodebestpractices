@@ -599,7 +599,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **TL;DR:** Kode Anda harus identik di semua lingkungan, namun npm dapat membiarkan dependensi berubah di lingkungan yang berbeda – saat Anda menginstal paket di lingkungan lain npm mencoba menginstal versi terbaru dari paket tersebut. Atasi ini dengan menggunakan file konfigurasi , .npmrc, yang memberi tahu setiap lingkungan untuk menyimpan versi yang tepat (bukan yang terbaru) dari setiap paket. Alternatifnya, untuk kontrol yang lebih baik, gunakan `npm shrinkwrap`. \*Pembaruan: pada NPM5, dependensi dikunci secara default. Manajer paket yang baru, Yarn, juga melakukan hal ini
 
-**Jika tidak:** QA akan menguji kode secara menyeluruh dan menyetujui versi yang akan berperilaku berbeda dalam produksi. Lebih buruk lagi, server yang berbeda dalam kelompok produksi mungkin menjalankan kode yang berbeda
+**Jika tidak:** QA akan menguji kode secara menyeluruh dan menyetujui versi yang kemudian akan berperilaku berbeda dalam produksi. Lebih buruk lagi, server yang berbeda dalam kelompok produksi mungkin menjalankan kode yang berbeda
 
 🔗 [**Baca selengkapnya: Lock dependencies**](/sections/production/lockdependencies.md)
 
