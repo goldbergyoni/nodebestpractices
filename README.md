@@ -241,9 +241,9 @@ especially if the cause of the abnormal behavior is inside of the missing functi
 
 ## ![✔] 2.13 Give your error's log a context by adding a correlation ID
 
-**TL;DR:** Correlation ID lets you linking log records, even if they belong to different services. It can save your day when a process that including 20 different microservices throws an exception in one of them, and you have no idea where did the problem started across the flow.
+**TL;DR:** Correlation ID lets you link log records, even if they belong to different services. It can save your day when a process including 20 different microservices throws an exception in one of them, and you have no idea where did the problem start across the flow.
 
-**Otherwise:** Once an error will occure, you might read the logs without any context of understanding what caused the unexpected input and which logs of other services are related to your investigated transaction.
+**Otherwise:** Once an error will occure, you might read the logs without any context of understanding what caused the unexpected input and which logs of other services are related to your investigated issue.
 
 🔗 [**Read More: Correlation ID: help your logs tell you a story and give your error a context**](/sections/errorhandling/correlationid.md)
 
