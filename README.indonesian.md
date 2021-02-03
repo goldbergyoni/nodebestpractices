@@ -715,11 +715,11 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 5.16. Design automated, atomic and zero-downtime deployments
+## ![✔] 5.16. Rancang deployment otomatis, atomic dan tanpa downtime
 
-**TL;DR:** Research shows that teams who perform many deployments lower the probability of severe production issues. Fast and automated deployments that don’t require risky manual steps and service downtime significantly improve the deployment process. You should probably achieve this using Docker combined with CI tools as they became the industry standard for streamlined deployment
+**TL;DR:** Penelitian menunjukkan bahwa tim yang melakukan banyak deployment menurunkan kemungkinan masalah produksi yang buruk. Deployment yang otomatis dan cepat tidak memerlukan langkah manual yang berisiko dan waktu downtime layanan meningkatkan proses deployment. Anda mungkin harus melakukan ini menggunakan Docker yang dikombinasikan dengan alat CI karena mereka menjadi standar industri untuk deployment yang efisien
 
-**Otherwise:** Long deployments -> production downtime & human-related error -> team unconfident in making deployment -> fewer deployments and features
+**Jika tidak:** Deployment yang lama -> downtime produksi & kesalahan oleh manusia -> tim ragu dalam melakukan deployment -> lebih sedikit deployment dan fitur
 
 <br/><br/>
 
