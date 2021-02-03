@@ -685,7 +685,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 5.13. Gunakan alat yang mendeteksi kerentanan secara otomatis
+## ![✔] 5.13. Gunakan alat yang pendeteksi kerentanan secara otomatis
 
 **TL;DR:** Bahkan dependensi yang paling terkemuka seperti Express memiliki kerentanan yang diketahui (dari waktu ke waktu) yang dapat membahayakan sistem. Hal ini dapat dimitigasi dengan mudah menggunakan alat dari komunitas atau komersial yang terus-menerus memeriksa kerentanan dan memberi peringatan (secara lokal atau di GitHub), beberapa bahkan dapat lansung memperbaikinya
 
