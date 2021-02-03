@@ -575,13 +575,13 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 5.2. Increase transparency using smart logging
+## ![✔] 5.2. Tingkatkan transparansi dengan menggunakan logging yang cerdas
 
-**TL;DR:** Logs can be a dumb warehouse of debug statements or the enabler of a beautiful dashboard that tells the story of your app. Plan your logging platform from day 1: how logs are collected, stored and analyzed to ensure that the desired information (e.g. error rate, following an entire transaction through services and servers, etc) can really be extracted
+**TL;DR:** _Log_ dapat menjadi gudang statement debug yang bodoh atau papan cantik yang menceritakan kisah aplikasi Anda. Rencanakan platform logging Anda dari hari pertama: bagaimana log dikumpulkan, disimpan dan dianalisis untuk memastikan bahwa informasi yang diinginkan (misalnya tingkat kesalahan, mengikuti seluruh transaksi melalui layanan dan server, dst.) benar-benar dapat diekstrak
 
-**Otherwise:** You end up with a black box that is hard to reason about, then you start re-writing all logging statements to add additional information
+**Jika tidak:** Anda berakhir dengan kotak hitam yang sulit dimengerti, kemudian Anda mulai menulis ulang semua statement log untuk menambahkan informasi tambahan
 
-🔗 [**Read More: Increase transparency using smart logging**](/sections/production/smartlogging.md)
+🔗 [**Baca selengkapnya: Increase transparency using smart logging**](/sections/production/smartlogging.md)
 
 <br/><br/>
 
