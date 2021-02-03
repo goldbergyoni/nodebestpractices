@@ -24,7 +24,7 @@ The common security guidelines section contains best practices that are standard
 
 ## ![✔] Generating random strings using Node.js
 
-**TL;DR:** Using a custom-built function generating pseudo-random strings for tokens and other security-sensitive use cases might actually not be as random as you think, rendering your application vulnerable to cryptographic attacks. When you have to generate secure random strings, use the [`crypto.RandomBytes(size, [callback])`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_randombytes_size_callback) function using available entropy provided by the system.
+**TL;DR:** Using a custom-built function generating pseudo-random strings for tokens and other security-sensitive use cases might actually not be as random as you think, rendering your application vulnerable to cryptographic attacks. When you have to generate secure random strings, use the [`crypto.randomBytes(size, [callback])`](https://nodejs.org/api/crypto.html#crypto_crypto_randombytes_size_callback) function using available entropy provided by the system.
 
 **Otherwise:** When generating pseudo-random strings without cryptographically secure methods, attackers might predict and reproduce the generated results, rendering your application insecure
 
@@ -99,14 +99,10 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 
 - Personally identifiable information (PII) is any data that can be used to identify a specific individual
 - Protect Personally Identifyable Information in the Applications by encrypting them
-- Follow the data privacy laws of the land
-
-
-- Reference laws:
-
-- European Union: GDPR - https://ec.europa.eu/info/law/law-topic/data-protection_en
-- India: https://meity.gov.in/writereaddata/files/Personal_Data_Protection_Bill,2018.pdf
-- Singapore: https://www.pdpc.gov.sg/Legislation-and-Guidelines/Personal-Data-Protection-Act-Overview
+- Follow the data privacy laws of the land. Reference laws:
+  - European Union: GDPR - https://ec.europa.eu/info/law/law-topic/data-protection_en
+  - India: https://meity.gov.in/writereaddata/files/Personal_Data_Protection_Bill,2018.pdf
+  - Singapore: https://www.pdpc.gov.sg/Legislation-and-Guidelines/Personal-Data-Protection-Act-Overview
 
 ## ![✔] Have a security.txt File [PRODUCTION]
 

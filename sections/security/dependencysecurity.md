@@ -11,6 +11,7 @@ There is a number of tools available to help identify third-party packages in No
 - [NPM audit](#npm-audit)
 - [Snyk](#snyk)
 - [Greenkeeper](#greenkeeper)
+- [Additional Resources](#additional-resources)
 
 ### NPM Audit
 
@@ -28,8 +29,8 @@ Snyk offers a feature-rich CLI, as well as GitHub integration. Snyk goes further
 
 Snyk's feature rich website also allows for ad-hoc assessment of dependencies when provided with a GitHub repository or npm module url. You can also search for npm packages which have vulnerabilities directly.
 
-An example of the output of the Synk GitHub integration automatically created pull request:
-![synk GitHub example](/assets/images/snyk.png)
+An example of the output of the Snyk GitHub integration automatically created pull request:
+![snyk GitHub example](/assets/images/snyk.png)
 
 🔗 [Read on: Snyk website](https://snyk.io/)
 
