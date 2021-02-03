@@ -585,13 +585,13 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 5.3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy
+## ![✔] 5.3. Delegasikan apa pun yang mungkin (misalnya gzip, SSL) ke sebuah _reverse proxy_
 
-**TL;DR:** Node is awfully bad at doing CPU intensive tasks like gzipping, SSL termination, etc. You should use ‘real’ middleware services like nginx, HAproxy or cloud vendor services instead
+**TL;DR:** Node sangat buruk dalam melakukan pekerjaan yang intensif CPU seperti melakukan gzip, penghentian SSL, dll. Anda harus menggunakan layanan middleware yang ‘asli’ seperti nginx, HAproxy atau layanan vendor cloud
 
-**Otherwise:** Your poor single thread will stay busy doing infrastructural tasks instead of dealing with your application core and performance will degrade accordingly
+**Jika tidak:** Thread utama Anda akan tetap sibuk melakukan tugas infrastruktur alih-alih menangani inti aplikasi Anda dan performa akan menurun karenanya
 
-🔗 [**Read More: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
+🔗 [**Baca selengkapnya: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
 
 <br/><br/>
 
