@@ -645,13 +645,13 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 5.9. Make your code production-ready
+## ![✔] 5.9. Buat kode Anda siap produksi
 
-**TL;DR:** Code with the end in mind, plan for production from day 1. This sounds a bit vague so I’ve compiled a few development tips that are closely related to production maintenance (click Gist below)
+**TL;DR:** Buat kode dengan tujuan akhir ada dalam pikiran Anda, rencanakan untuk produksi dari hari pertama. Ini terdengar kurang jelas jadi saya telah mengumpulkan beberapa tips pengembangan yang berkaitan erat dengan perawatan produksi (klik intinya di bawah)
 
-**Otherwise:** A world champion IT/DevOps guy won’t save a system that is badly written
+**Jika tidak:** Seorang juara dunia IT/DevOps tidak akan memperbaiki sistem yang ditulis dengan buruk
 
-🔗 [**Read More: Make your code production-ready**](/sections/production/productioncode.md)
+🔗 [**Baca selengkapnya: Make your code production-ready**](/sections/production/productioncode.md)
 
 <br/><br/>
 
