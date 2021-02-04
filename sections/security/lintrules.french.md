@@ -1,12 +1,12 @@
-# Embrace linter security rules
+# Adoptez les règles de sécurité du linter
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-Security plugins for ESLint and TSLint such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) and [tslint-config-security](https://www.npmjs.com/package/tslint-config-security) offer code security checks based on a number of known vulnerabilities, such as unsafe RegEx, unsafe use of `eval()`, and non-literal filenames being used when accessing the file system within an application. The use of git hooks such as [pre-git](https://github.com/bahmutov/pre-git) allows to further enforce any rules on source control before they get distributed to remotes, one of which can be to check that no secrets were added to source control.
+Les plugins de sécurité pour ESLint et TSLint tels que [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) et [tslint-config-security](https://www.npmjs.com/package/tslint-config-security) offrent des contrôles de sécurité du code basés sur un certain nombre de vulnérabilités connues, telles que les RegEx non sécurisées, l'utilisation non sécurisée de `eval()`et les noms de fichiers non littéraux utilisés lors de l'accès au système de fichiers dans une application. L'utilisation de hooks de git comme [pre-git](https://github.com/bahmutov/pre-git) permet de renforcer les règles de contrôle des sources avant qu'elles ne soient distribuées à distance, l'une d'entre elles pouvant être de vérifier qu'aucun secret n'a été ajouté au contenu des sources.
 
-### `eslint-plugin-security` example
+### Exemple `eslint-plugin-security`
 
-Some examples of unsafe practice rules detected by `eslint-plugin-security`:
+Quelques exemples de règles de pratiques non sécurisées détectées par `eslint-plugin-security`:
 
 `detect-pseudoRandomBytes`
 
@@ -34,11 +34,11 @@ eval(userinput);
 const unsafe = new RegExp('/(x+x+)+y/)');
 ```
 
-An example of running `eslint-plugin-security` on a Node.js project with the above unsafe code practices:
+Un exemple de l'exécution de `eslint-plugin-security` sur un projet Node.js avec des pratiques de code non sécurisées ci-dessus :
 
-![nsp check example](/assets/images/eslint-plugin-security.png)
+![exemple de vérification nsp](/assets/images/eslint-plugin-security.png)
 
-### What other bloggers say
+### Ce que disent les autres blogueurs
 
-From the blog by [Adam Baldwin](https://www.safaribooksonline.com/blog/2014/03/28/using-eslint-plugins-node-js-app-security/):
-> Linting doesn’t have to be just a tool to enforce pedantic rules about whitespace, semicolons or eval statements. ESLint provides a powerful framework for eliminating a wide variety of potentially dangerous patterns in your code (regular expressions, input validation, and so on). I think it provides a powerful new tool that’s worthy of consideration by security-conscious JavaScript developers.
+Extrait du blog de [Adam Baldwin](https://www.safaribooksonline.com/blog/2014/03/28/using-eslint-plugins-node-js-app-security/) :
+> Lint ne doit pas être un simple outil pour faire respecter des règles pédantes sur les espaces, les points-virgules ou l'instruction eval. ESLint fournit un framework puissant pour éliminer une grande variété de modèles potentiellement dangereux dans votre code (expressions régulières, validation d'entrée, etc.). Je pense qu'il constitue un nouvel outil puissant qui mérite d'être pris en considération par les développeurs JavaScript soucieux de la sécurité.
