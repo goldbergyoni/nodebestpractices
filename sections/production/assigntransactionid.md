@@ -18,20 +18,20 @@ const app = express();
 
 app.use(rTracer.expressMiddleware());
 
-app.get('/getUserData/{id}', (req, res, next) => {
-    usersRepo.find(req.params.id)
-        .then((user) => {
-            // At any point in the app after cls-rtracer middleware was initialized, even when 'req' object doesn't exist, the TransactionId is reachable
-            const transactionId = rTracer.id();
-            logger.info(`user ${user.id} data was fetched successfully`, { transactionId });
+app.get('/getUserData/{id}', async (req, res, next) => {
+    try {
+        const user = async usersRepo.find(req.params.id);
 
-            res.json(user);
-        })
-        .catch(err) {
-            // As next step I'd recommand using rTracer.id() from inside the logger component, to prevent from using it all over the code
-            logger.error(`error while fetching user id ${req.params.id} data`, { transactionId: rTracer.id(), error: err });
-            next(err);
-        }
+        // At any point in the app after cls-rtracer middleware was initialized, even when 'req' object doesn't exist, the TransactionId is reachable
+        const transactionId = rTracer.id();
+        logger.info(`user ${user.id} data was fetched successfully`, { transactionId });
+
+        res.json(user);
+    } catch (err) {
+        // As next step I'd recommand using rTracer.id() from inside the logger component, to prevent from using it all over the code
+        logger.error(`error while fetching user id ${req.params.id} data`, { transactionId: rTracer.id(), error: err });
+        next(err);
+    }
 })
 ```
 
@@ -47,11 +47,6 @@ app.use(rTracer.expressMiddleware({
     // Request and respone header name
     headerName: 'x-transaction-id'
 }));
-
-// The supplied TransactionId will be now the one that was passed from the previous request; if this is the first request in the chain, it will be just generated
-const transactionId = rTracer.id();
-
-
 
 ```
 
