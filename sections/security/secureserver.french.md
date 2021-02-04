@@ -1,24 +1,24 @@
-# Using HTTPS to encrypt the client-server connection
+# Utilisation du HTTPS pour crypter la connexion client-serveur
 
 <br/><br/>
 
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-Using services such as [Let'sEncrypt](https://letsencrypt.org/), a certificate authority which provides __free__ SSL/TLS certificates, can help encrypt the communication of your applications. Node.js frameworks like [Express](http://expressjs.com/) (based on the core `https` module) support SSL/TLS, which can be implemented in a few lines of code.
+L'utilisation de services tels que [Let'sEncrypt](https://letsencrypt.org/), une autorité de certification qui fournit __gratuitement__ des certificats SSL/TLS, peut aider à crypter la communication de vos applications. Les frameworks Node.js comme [Express](http://expressjs.com/) (fondé sur le module de base `https`) prend en charge SSL/TLS, qui peut être implémenté en quelques lignes de code.
 
-You can also configure SSL/TLS on a reverse proxy, such as [NGINX](http://nginx.org/en/docs/http/configuring_https_servers.html) or HAProxy.
+Vous pouvez également configurer SSL/TLS sur un reverse proxy, tel que [NGINX](http://nginx.org/en/docs/http/configuring_https_servers.html) ou HAProxy.
 
 <br/><br/>
 
-### Code Example – Enabling SSL/TLS using the Express framework
+### Exemple de code - Activation SSL/TLS à l'aide du framework Express
 
 ```javascript
 const express = require('express');
 const https = require('https');
 const app = express();
 const options = {
-    // The path should be changed accordingly to your setup
+    // Le chemin doit être modifié en fonction de votre configuration
     cert: fs.readFileSync('./sslcert/fullchain.pem'),
     key: fs.readFileSync('./sslcert/privkey.pem')
 };
