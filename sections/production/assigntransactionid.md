@@ -39,6 +39,7 @@ app.get('/getUserData/{id}', async (req, res, next) => {
 })
 ```
 <br/>
+
 ### Code example: sharing TransactionId among microservices 
 
 ```javascript
