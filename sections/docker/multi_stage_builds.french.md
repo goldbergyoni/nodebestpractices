@@ -19,8 +19,10 @@ Let's imagine the following directory structure
   - README.md
 ```
 
-Your [.dockerignore](/sections/docker/dockerignore.md) will already filter out files that won't be needed for building and running your application.
+Your [.dockerignore](../docker/docker-ignore.md) will already filter out files that won't be needed for building and running your application.
 
+
+sections/docker/docker-ignore.md
 ```
 # Don't copy in existing node_modules, we'll fetch our own
 node_modules

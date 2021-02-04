@@ -16,10 +16,9 @@
 
 [![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Suivez nous sur Twitter !** [**@nodepractices**](https://twitter.com/nodepractices/)
 
-
 <br/>
 
-Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#traductions)
+Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md), [![JA](/assets/flags/JA.png)**JA**](/README.japanese.md), [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![TR](/assets/flags/TR.png)**TR** et ![EU](/assets/flags/EU.png)**EU** en cours ! )](#traductions)
 
 <br/>
 
@@ -32,7 +31,6 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 - **✅ Nouvelle bonne pratique :** Le point 6.8 de Josh Hemphill recommande de « protéger les mots de passe/secrets des utilisateurs en utilisant BCrypt ou Script ». Elle contient une explication approfondie sur le moment et les raisons pour lesquelles chaque option convient à un projet spécifique. Ne manquez pas ce petit guide avec un bref aperçu des différentes options de hachage
 
 - **:whale: Node.js + Bonnes pratiques Docker** : Nous venons de publier la section Docker avec Node.js qui comprend 15 points sur les meilleures techniques de codage avec Docker
-
 
 <br/><br/>
 
@@ -274,8 +272,7 @@ function someFunction() {
 }
 
 // À éviter
-function someFunction
-{
+function someFunction {
   // bloc de code
 }
 ```
@@ -352,7 +349,7 @@ class SomeClassExample {}
 
 // pour les noms de constantes, nous utilisons le mot-clé const et lowerCamelCase
 const config = {
-  key: "value"
+  key: "value",
 };
 
 // pour les noms de variables et de fonctions, nous utilisons lowerCamelCase
@@ -1255,7 +1252,6 @@ In addition, referring to an image tag means that the base image is subject to c
 
 <br/><br /><br />
 
-
 ## ![✔] 8.15. Lint your Dockerfile
 
 **TL;DR:** Linting your Dockerfile is an important step to identify issues in your Dockerfile which differ from best practices. By checking for potential flaws using a specialised Docker linter, performance and security improvements can be easily identified, saving countless hours of wasted time or security issues in production code.
@@ -1284,6 +1280,7 @@ All translations are contributed by the community. We will be happy to get any h
 - ![CN](/assets/flags/CN.png) [Chinese](./README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
 - ![RU](/assets/flags/RU.png) [Russian](./README.russian.md) - Courtesy of [Alex Ivanov](https://github.com/contributorpw)
 - ![PL](/assets/flags/PL.png) [Polish](./README.polish.md) - Courtesy of [Michal Biesiada](https://github.com/mbiesiad)
+- ![JA](/assets/flags/JA.png) [Japanese](./README.japanese.md) - Courtesy of [Yuki Ota](https://github.com/YukiOta), [Yuta Azumi](https://github.com/YA21)
 
 ### Translations in progress
 
@@ -1292,6 +1289,7 @@ All translations are contributed by the community. We will be happy to get any h
 - ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Courtesy of [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94))
 - ![ES](/assets/flags/ES.png) [Spanish](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/95))
 - ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/139))
+- ![EU](/assets/flags/EU.png) [Basque](README.basque.md) - Courtesy of [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/842))
 
 <br/><br/>
 
@@ -1369,6 +1367,7 @@ Our collaborators are members who are contributing to the repository on a regula
 <br/>
 
 ## Contributing
+
 If you've ever wanted to contribute to open source, now is your chance! See the [contributing docs](.operations/CONTRIBUTING.md) for more information.
 
 ## Contributors ✨
@@ -1553,6 +1552,8 @@ Thanks goes to these wonderful people who have contributed to this repository!
   <tr>
     <td align="center"><a href="https://github.com/AustrisC"><img src="https://avatars2.githubusercontent.com/u/12381652?v=4?s=100" width="100px;" alt=""/><br /><sub><b>AustrisC</b></sub></a><br /><a href="#content-AustrisC" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/cisco0808"><img src="https://avatars0.githubusercontent.com/u/60251188?v=4?s=100" width="100px;" alt=""/><br /><sub><b>kyeongtae kim</b></sub></a><br /><a href="#translation-cisco0808" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://keybase.io/651z9pz968v2accj"><img src="https://avatars.githubusercontent.com/u/65741741?v=4?s=100" width="100px;" alt=""/><br /><sub><b>007</b></sub></a><br /><a href="#content-6gx7iycn53ioq2e8apk1j1ypwov4giui" title="Content">🖋</a></td>
+    <td align="center"><a href="http://yukioh.net"><img src="https://avatars.githubusercontent.com/u/23182489?v=4?s=100" width="100px;" alt=""/><br /><sub><b>YukiOta</b></sub></a><br /><a href="#content-YukiOta" title="Content">🖋</a></td>
   </tr>
 </table>
 
