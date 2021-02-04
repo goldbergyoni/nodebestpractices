@@ -25,18 +25,21 @@ app.get('/getUserData/{id}', async (req, res, next) => {
 
         // At any point in the app after cls-rtracer middleware was initialized, even when 'req' object doesn't exist, the TransactionId is reachable
         const transactionId = rTracer.id();
+
         logger.info(`user ${user.id} data was fetched successfully`, { transactionId });
 
         res.json(user);
     } catch (err) {
+
         // As next step I'd recommand using rTracer.id() from inside the logger component, to prevent from using it all over the code
         logger.error(`error while fetching user id ${req.params.id} data`, { transactionId: rTracer.id(), error: err });
+
         next(err);
     }
 })
 ```
-
-### Code example: sharing TransactionId among  microservices 
+<br/>
+### Code example: sharing TransactionId among microservices 
 
 ```javascript
 // cls-tracer has the ability to store the TransactionId on your service outgoing requests headers, and extract the TransactionId from incoming requests headers, just by overriding the default middleware config
@@ -50,14 +53,14 @@ app.use(rTracer.expressMiddleware({
 }));
 
 ```
-
+<br/>
 
 ### Good: assign 'TransactionId' to your logs
 image TBD
-### Bad: write your logs without any common flow indication
+### Bad: logs without any flow correaltion 
 image TBD
 
-
+<br/>
 
 ### Blog Quote: "The notion of a Correlation ID is simple. It’s a value that is common to all requests, messages and responses in a given transaction. With this simplicity you get a lot of power."
 
