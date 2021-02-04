@@ -1,129 +1,125 @@
 [✔]: ../../assets/images/checkbox-small-blue.png
 
-# Common Node.js security best practices
+# Meilleures pratiques de sécurité communes avec Node.js
 
-The common security guidelines section contains best practices that are standardized in many frameworks and conventions, running an application with SSL/TLS, for example, should be a common guideline and convention followed in every setup to achieve great security benefits.
+La section des directives de sécurité communes contient les meilleures pratiques qui sont normalisées dans de nombreux frameworks et conventions. L'utilisation d'une application avec SSL/TLS, par exemple, devrait être une directive et une convention commune suivie dans chaque configuration pour obtenir des grands avantages en matière de sécurité.
 
-## ![✔] Use SSL/TLS to encrypt the client-server connection
+## ![✔] Utilisez SSL/TLS pour crypter la connexion client-serveur
 
-**TL;DR:** In the times of [free SSL/TLS certificates](https://letsencrypt.org/) and easy configuration of those, you do no longer have to weigh advantages and disadvantages of using a secure server because the advantages such as security, support of modern technology and trust clearly outweigh the disadvantages like minimal overhead compared to pure HTTP.
+**TL;PL :** À l'heure des [certificats SSL/TLS gratuits](https://letsencrypt.org/) et de la facilité de leur configuration, vous n'avez plus à peser les avantages et les inconvénients de l'utilisation d'un serveur sécurisé car les avantages tels que la sécurité, le support de la technologie moderne et de la confiance l'emportent clairement sur les inconvénients tels que la surcharge minimale par rapport au HTTP pur.
 
-**Otherwise:** Attackers could perform man-in-the-middle attacks, spy on your users' behaviour and perform even more malicious actions when the connection is unencrypted
+**Autrement :** Les attaquants peuvent effectuer des attaques de type "attaque de l'homme du milieu", espionner le comportement de vos utilisateurs et effectuer des actions encore plus malveillantes lorsque la connexion n'est pas cryptée.
 
-🔗 [**Read More: Running a secure Node.js server**](/sections/security/secureserver.md)
-
-<br/><br/>
-
-## ![✔] Comparing secret values and hashes securely
-
-**TL;DR:** When comparing secret values or hashes like HMAC digests, you should use the [`crypto.timingSafeEqual(a, b)`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_timingsafeequal_a_b) function Node provides out of the box since Node.js v6.6.0. This method compares two given objects and keeps comparing even if data does not match. The default equality comparison methods would simply return after a character mismatch, allowing timing attacks based on the operation length.
-
-**Otherwise:** Using default equality comparison operators you might expose critical information based on the time taken to compare two objects
+🔗 [**Plus d'infos : exécution d'un serveur Node.js sécurisé**](/sections/security/secureserver.french.md)
 
 <br/><br/>
 
-## ![✔] Generating random strings using Node.js
+## ![✔] Comparez les valeurs secrètes et les hachages en toute sécurité
 
-**TL;DR:** Using a custom-built function generating pseudo-random strings for tokens and other security-sensitive use cases might actually not be as random as you think, rendering your application vulnerable to cryptographic attacks. When you have to generate secure random strings, use the [`crypto.randomBytes(size, [callback])`](https://nodejs.org/api/crypto.html#crypto_crypto_randombytes_size_callback) function using available entropy provided by the system.
+**TL;PL :** Lorsque vous comparez des valeurs secrètes ou des hachages comme les digests HMAC, vous devez utiliser la fonction [`crypto.timingSafeEqual(a, b)`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_timingsafeequal_a_b) que Node fournit dès la version 6.6.0 de Node.js. Cette méthode compare deux objets donnés et continue de comparer même si les données ne correspondent pas. Les méthodes de comparaison d'égalité par défaut s'arrêteraient simplement après une discordance de caractères, permettant de chronométrer les attaques basées sur la longueur de l'opération.
 
-**Otherwise:** When generating pseudo-random strings without cryptographically secure methods, attackers might predict and reproduce the generated results, rendering your application insecure
+**Autrement :** En utilisant les opérateurs de comparaison d'égalité par défaut, vous pourriez exposer des informations critiques basées sur le temps nécessaire pour comparer deux objets.
 
 <br/><br/>
 
-Going on, below we've listed some important bits of advice from the OWASP project.
+## ![✔] Génération de chaînes aléatoires à l'aide de Node.js
 
-## ![✔] OWASP A2: Broken Authentication
+**TL;PL :** L'utilisation d'une fonction personnalisée générant des chaînes pseudo-aléatoires pour les jetons et autres cas d'utilisation sensibles à la sécurité pourrait en fait ne pas être aussi aléatoire que vous le pensez, rendant votre application vulnérable aux attaques cryptographiques. Lorsque vous devez générer des chaînes aléatoires sécurisées, utilisez la fonction [`crypto.randomBytes(size, [callback])`](https://nodejs.org/api/crypto.html#crypto_crypto_randombytes_size_callback) en utilisant l'entropie disponible fournie par le système.
 
-- Require MFA/2FA for important services and accounts
-- Rotate passwords and access keys frequently, including SSH keys
-- Apply strong password policies, both for ops and in-application user management ([🔗 OWASP password recommendation](https://www.owasp.org/index.php/Authentication_Cheat_Sheet#Implement_Proper_Password_Strength_Controls.22))
-- Do not ship or deploy your application with any default credentials, particularly for admin users or external services you depend on
-- Use only standard authentication methods like OAuth, OpenID, etc.  - **avoid** basic authentication
-- Auth rate limiting: Disallow more than _X_ login attempts (including password recovery, etc.) in a period of _Y_
-- On login failure, don't let the user know whether the username or password verification failed, just return a common auth error
-- Consider using a centralized user management system to avoid managing multiple accounts per employee (e.g. GitHub, AWS, Jenkins, etc) and to benefit from a battle-tested user management system
+**Autrement :** Lors de la génération de chaînes pseudo-aléatoires sans recourir à des méthodes cryptographiques sûres, les pirates peuvent prévoir et reproduire les résultats générés, ce qui rend votre application peu sûre.
 
-## ![✔] OWASP A5:  Broken access control
+<br/><br/>
 
-- Respect the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)  -  every component and DevOps person should only have access to the necessary information and resources
-- **Never** work with the console/root (full-privilege) account except for account management
-- Run all instances/containers on behalf of a role/service account
-- Assign permissions to groups and not to users. This should make permission management easier and more transparent for most cases
+Nous avons énuméré ci-dessous quelques conseils importants tirés du projet OWASP.
 
-## ![✔] OWASP A6: Security Misconfiguration
+## ![✔] OWASP A2 : Authentification frauduleuse
 
-- Access to production environment internals is done through the internal network only, use SSH or other ways, but _never_ expose internal services
-- Restrict internal network access  - explicitly set which resource can access other resources (e.g. network policy or subnets)
-- If using cookies, configure it to "secured" mode where it's being sent over SSL only
-- If using cookies, configure it for "same site" only so only requests from same domain will get back the designated cookies
-- If using cookies, prefer "HttpOnly" configuration that prevent client-side JavaScript code from accessing the cookies
-- Protect each VPC with strict and restrictive access rules
-- Prioritize threats using any standard security threat modeling like STRIDE or DREAD
-- Protect against DDoS attacks using HTTP(S) and TCP load balancers
-- Perform periodic penetration tests by specialized agencies
+- Exigez MFA/2FA pour les services et comptes importants
+- Changez fréquemment les mots de passe et les clés d'accès, y compris les clés SSH
+- Appliquez des politiques strictes en matière de mots de passe, tant pour l'exploitation que pour la gestion des utilisateurs dans l'application ([🔗 OWASP recommandation sur le mot de passe](https://www.owasp.org/index.php/Authentication_Cheat_Sheet#Implement_Proper_Password_Strength_Controls.22))
+- N'envoyez ou ne déployez pas votre application avec des identifiants par défaut, en particulier pour les utilisateurs de l'administration ou les services externes dont vous dépendez
+- Utilisez uniquement des méthodes d'authentification standard comme OAuth, OpenID, etc, **évitez** l'authentification de base
+- Limitez le taux d'authentification : interdisez plus de _X_ tentatives de connexion (y compris la récupération du mot de passe, etc.) pendant une période _Y_.
+- En cas d'échec de la connexion, n'indiquez pas à l'utilisateur si la vérification du nom d'utilisateur ou du mot de passe a échoué, mais renvoyez simplement une erreur d'authentification ordinaire.
+- Envisagez d'utiliser un système de gestion des utilisateurs centralisé pour éviter de gérer plusieurs comptes par employé (par exemple GitHub, AWS, Jenkins, etc.) et pour bénéficier d'un système de gestion des utilisateurs éprouvé
 
-## ![✔] OWASP A3: Sensitive Data Exposure
+## ![✔] OWASP A5 : Contrôle d'accès défectueux
 
-- Only accept SSL/TLS connections, enforce Strict-Transport-Security using headers
-- Separate the network into segments (i.e. subnets) and ensure each node has the least necessary networking access permissions
-- Group all services/instances that need no internet access and explicitly disallow any outgoing connection (a.k.a private subnet)
-- Store all secrets in a vault products like AWS KMS, HashiCorp Vault or Google Cloud KMS
-- Lockdown sensitive instance metadata using metadata
-- Encrypt data in transit when it leaves a physical boundary
-- Don't include secrets in log statements
-- Avoid showing plain passwords in the frontend, take necessary measures in the backend and never store sensitive information in plaintext
+- Respectez le [principe de moindre privilège](https://fr.wikipedia.org/wiki/Principe_de_moindre_privil%C3%A8ge)  -  chaque composant et chaque personne du DevOps ne doit avoir accès qu'aux informations et ressources nécessaires
+- **Ne travaillez jamais** avec le compte console/root (privilège total) sauf pour la gestion de compte
+- Exécutez toutes les instances/conteneurs sous le nom d'un compte de rôle/service
+- Attribuez des autorisations à des groupes et non à des utilisateurs. Cela devrait rendre la gestion des permissions plus facile et plus transparente dans la plupart des cas
 
-## ![✔] OWASP A9: Using Components With Known Security Vulneraibilities
+## ![✔] OWASP A6 : Mauvaise configuration de la sécurité
 
-- Scan docker images for known vulnerabilities (using Docker's and other vendors' scanning services)
-- Enable automatic instance (machine) patching and upgrades to avoid running old OS versions that lack security patches
-- Provide the user with both 'id', 'access' and 'refresh' token so the access token is short-lived and renewed with the refresh token
-- Log and audit each API call to cloud and management services (e.g who deleted the S3 bucket?) using services like AWS CloudTrail
-- Run the security checker of your cloud provider (e.g. AWS security trust advisor)
+- L'accès à l'environnement interne de production se fait uniquement par le réseau interne, en utilisant SSH ou d'autres moyens, mais _n'exposez jamais_ les services internes
+- Restreignez l'accès au réseau interne - définissez explicitement quelle ressource peut accéder à quelles autres ressources (par exemple, la politique du réseau ou des sous-réseaux)
+- Si vous utilisez des cookies, configurez-les en mode « sécurisés » afin qu'ils soient envoyés uniquement via SSL
+- Si vous utilisez des cookies, configurez-les uniquement pour un « même site » afin que seules les requêtes provenant d'un même domaine puissent récupérer les cookies indiqués.
+- Si vous utilisez des cookies, préférez une configuration « HttpOnly » qui empêche le code JavaScript côté client d'accéder aux cookies
+- Protégez chaque VPC par des règles d'accès strictes et restrictives
+- Priorisez les menaces en utilisant n'importe quel modèle standard de menace de sécurité comme STRIDE ou DREAD
+- Protégez-vous contre les attaques DDoS à l'aide d'équilibreurs de charge HTTP(S) et TCP
+- Effectuez des tests de pénétration périodiques par des agences spécialisées
 
+## ![✔] OWASP A3 : Exposition des données sensibles
 
-## ![✔] OWASP A10: Insufficient Logging & Monitoring
+- N'acceptez que les connexions SSL/TLS, appliquez Strict-Transport-Security en utilisant les entêtes
+- Séparez le réseau en segments (c'est-à-dire sous-réseaux) et assurez-vous que chaque nœud dispose uniquement des autorisations d'accès nécessaires au réseau
+- Regroupez tous les services/instances qui n'ont pas besoin d'accès à internet et interdisez explicitement toute connexion sortante (un sous-réseau privé)
+- Stockez tous les secrets dans un coffre-fort, des produits comme AWS KMS, HashiCorp Vault ou Google Cloud KMS
+- Verrouillez les métadonnées d'instance sensibles à l'aide de métadonnées
+- Cryptez les données en transit lorsqu'elles quittent une frontière physique
+- N'incluez pas de secrets dans les instructions de journal
+- Évitez d'afficher des mots de passe en clair dans le frontend, prenez les mesures nécessaires dans le backend et ne stockez jamais d'informations sensibles en clair
 
-- Alert on remarkable or suspicious auditing events like user login, new user creation, permission change, etc
-- Alert on irregular amount of login failures (or equivelant actions like forgot password)
-- Include the time and username that initiated the update in each DB record
+## ![✔] OWASP A9 : Utilisation de composants avec des vulnérabilités de sécurité connues
 
-## ![✔] OWASP A7: Cross-Site-Scripting (XSS)
-
-- Use templating engines or frameworks that automatically escape XSS by design, such as EJS, Pug, React, or Angular. Learn the limitations of each mechanisms XSS protection and appropriately handle the use cases which are not covered
-- Escaping untrusted HTTP request data based on the context in the HTML output (body, attribute, JavaScript, CSS, or URL) will resolve Reflected and Stored XSS vulnerabilities
-- Applying context-sensitive encoding when modifying the browser document on the client-side acts against DOM XSS
-- Enabling a Content-Security Policy (CSP) as a defense-in-depth mitigating control against XSS
-
-## ![✔] Protect Personally Identifyable Information (PII Data)
-
-- Personally identifiable information (PII) is any data that can be used to identify a specific individual
-- Protect Personally Identifyable Information in the Applications by encrypting them
-- Follow the data privacy laws of the land
+- Analysez les images des dockers à la recherche de vulnérabilités connues (en utilisant les services d'analyse de Docker et d'autres fournisseurs)
+- Activez les correctifs et les mises à jour automatiques des instances (machines) pour éviter d'utiliser des versions de systèmes d'exploitation anciennes qui ne disposent pas de correctifs de sécurité
+- Fournissez à l'utilisateur les jetons « id », « access » et « refresh » afin que le jeton d'accès soit de courte durée et renouvelé avec le jeton « refresh »
+- Enregistrez et auditerz chaque appel d'API vers les services de gestion et de cloud (par exemple, qui a supprimé le compartiment S3 ?) en utilisant des services comme AWS CloudTrail
+- Exécutez le contrôle de sécurité de votre fournisseur de services en ligne (par exemple, le conseiller en sécurité de AWS)
 
 
-- Reference laws:
+## ![✔] OWASP A10 : Journalisation et surveillance insuffisantes
 
-- European Union: GDPR - https://ec.europa.eu/info/law/law-topic/data-protection_en
-- India: https://meity.gov.in/writereaddata/files/Personal_Data_Protection_Bill,2018.pdf
-- Singapore: https://www.pdpc.gov.sg/Legislation-and-Guidelines/Personal-Data-Protection-Act-Overview
+- Alertez sur les événements d'audit significatifs ou suspects tels que la connexion d'un utilisateur, la création d'un nouvel utilisateur, le changement d'autorisation, etc.
+- Alertez sur le nombre irrégulier d'échecs de connexion (ou actions équivalentes comme l'oubli du mot de passe)
+- Indiquez l'heure et le nom de l'utilisateur qui a initié la mise à jour dans chaque enregistrement de la base de données
 
-## ![✔] Have a security.txt File [PRODUCTION]
+## ![✔] OWASP A7 : Cross-Site-Scripting (XSS)
 
-**TL;DR:** Have a text file called ```security.txt``` under ```/.well-known```  directory (/.well-known/security.txt) or in the root directory (/security.txt) of your website or your web application in production. ```security.txt``` file should contain details using which security researchers can report vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent. 
+- Utilisez des moteurs ou des frameworks de template qui échappent automatiquement le XSS par leur conception, comme EJS, Pug, React ou Angular. Apprenez les limites de chaque mécanisme de protection XSS et traiter de manière appropriée les cas d'utilisation qui ne sont pas couverts
+- Échappez les données de requête HTTP non fiables en fonction du contexte dans la sortie HTML (corps, attribut, JavaScript, CSS ou URL) résoudra les vulnérabilités XSS reflétées et stockées
+- L'application d'un encodage contextuel lors de la modification du document du navigateur côté client agit contre DOM XSS
+- Permettez une politique de sécurité des contenus (CSP) comme défense en profondeur pour atténuer le contrôle contre les XSS
 
-**Otherwise:** You may not be notified about the vulnerabilities. You will miss the opportunity to act on the vulnerabilities in time.
+## ![✔] Protégez les informations personnelles identifiables (données PII)
 
-🔗 [**Read More: security.txt**](https://securitytxt.org/)
+- Les informations personnelles identifiables (PII : Personally identifiable information) sont toutes les données qui peuvent être utilisées pour identifier une personne spécifique
+- Protégez les informations personnelles identifiables dans les applications en les cryptant
+- Respectez les lois du pays en matière de protection des données. Lois de référence :
+  - Union européenne : RGPD - https://ec.europa.eu/info/law/law-topic/data-protection_fr
+  - Inde : https://meity.gov.in/writereaddata/files/Personal_Data_Protection_Bill,2018.pdf
+  - Singapour : https://www.pdpc.gov.sg/Legislation-and-Guidelines/Personal-Data-Protection-Act-Overview
+
+## ![✔] Avoir un fichier security.txt [PRODUCTION]
+
+**TL;PL :** Ayez un fichier texte appelé ```security.txt``` sous le répertoire ```/.well-known``` (/.well-known/security.txt) ou dans le répertoire racine (/security.txt) de votre site web ou de votre application web en production. Le fichier ```security.txt``` doit contenir les détails permettant aux chercheurs en sécurité de signaler des vulnérabilités, ainsi que les coordonnées de la personne/du groupe responsable (adresse électronique et/ou numéros de téléphone) à qui les rapports doivent être envoyés.
+
+**Autrement :** Il se peut que vous ne soyez pas informé des vulnérabilités. Vous manquerez l'occasion d'agir à temps sur les vulnérabilités.
+
+🔗 [**Plus d'infos : security.txt**](https://securitytxt.org/)
 <br/><br/><br/>
 
-## ![✔] Have a SECURITY.md File [OPEN SOURCE]
+## ![✔] Avoir un fichier SECURITY.md [OPEN SOURCE]
 
-**TL;DR:** To give people instructions for responsibly reporting security vulnerabilities in your project, you can add a SECURITY.md file to your repository's root, docs, or .github folder. SECURITY.md file should contain details using which security researchers can report vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent. 
+**TL;PL :** Pour donner aux gens des instructions pour signaler de manière responsable les vulnérabilités de sécurité dans votre projet, vous pouvez ajouter un fichier SECURITY.md file à la racine de votre dépôt, dans le dossier docs ou .github. Le fichier SECURITY.md doit contenir les détails permettant aux chercheurs en sécurité de signaler les vulnérabilités, ainsi que les coordonnées de la personne/du groupe responsable (adresse électronique et/ou numéros de téléphone) à qui les rapports doivent être envoyés.
 
-**Otherwise:** You may not be notified about the vulnerabilities. You will miss the opportunity to act on the vulnerabilities in time.
+**Autrement :** Il se peut que vous ne soyez pas informé des vulnérabilités. Vous manquerez l'occasion d'agir à temps sur les vulnérabilités.
 
-🔗 [**Read More: SECURITY.md**](https://help.github.com/en/github/managing-security-vulnerabilities/adding-a-security-policy-to-your-repository)
+🔗 [**Plus d'infos : SECURITY.md**](https://help.github.com/en/github/managing-security-vulnerabilities/adding-a-security-policy-to-your-repository)
 
 <br/><br/><br/>
 
