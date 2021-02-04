@@ -1,172 +1,172 @@
-# Using security-related headers to secure your application against common attacks
+# Utilisation des entêtes de sécurité pour sécuriser votre application contre les attaques communes
 
 <br/><br/>
 
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-There are security-related headers used to secure your application further. The most important headers are listed below. You can also visit the sites linked at the bottom of this page to get more information on this topic. You can easily set these headers using the [Helmet](https://www.npmjs.com/package/helmet) module for express ([Helmet for koa](https://www.npmjs.com/package/koa-helmet)).
+Des entêtes de sécurité sont utilisés pour sécuriser davantage votre application. Les entêtes les plus importants sont énumérés ci-dessous. Vous pouvez également visiter les sites liés au bas de cette page pour obtenir plus d'informations sur ce sujet. Vous pouvez facilement définir ces entêtes en utilisant le module [Helmet](https://www.npmjs.com/package/helmet) pour Express ([Helmet pour koa](https://www.npmjs.com/package/koa-helmet)).
 
 <br/><br/>
 
-### Table of Contents
-- [HTTP Strict Transport Security (HSTS)](#http-strict-transport-security-hsts)
-- [Public Key Pinning for HTTP (HPKP)](#public-key-pinning-for-http-hpkp)
+### Table des matières
+- [Sécurité stricte des transports HTTP (HTTP Strict Transport Security : HSTS)](#sécurité-stricte-des-transports-http-http-strict-transport-security-hsts)
+- [Épinglage de clé publique HTTP (Public Key Pinning for HTTP : HPKP)](#épinglage-de-clé-publique-HTTP-public-key-pinning-for-http-hpkp)
 - [X-Frame-Options](#x-frame-options)
 - [X-XSS-Protection](#x-xss-protection)
 - [X-Content-Type-Options](#x-content-type-options)
 - [Referrer-Policy](#referrer-policy)
 - [Expect-CT](#expect-ct)
 - [Content-Security-Policy](#content-security-policy)
-- [Additional Resource](#additional-resources)
+- [Ressources complémentaires](#ressources-complémentaires)
 
 <br/><br/>
 
-### HTTP Strict Transport Security (HSTS)
+### Sécurité stricte des transports HTTP (HTTP Strict Transport Security : HSTS)
 
-HTTP Strict Transport Security (HSTS) is a web security policy mechanism to protect websites against [protocol downgrade attacks](https://en.wikipedia.org/wiki/Downgrade_attack) and [cookie hijacking](https://www.owasp.org/index.php/Session_hijacking_attack). It allows web servers to declare that web browsers (or other complying user agents) should only interact with it using __secure HTTPS connections__, and __never__ via the insecure HTTP protocol. The HSTS policy is implemented by using the `Strict-Transport-Security` header over an existing HTTPS connection.
+Le HTTP Strict Transport Security (HSTS) est un mécanisme de sécurité du web qui protège les sites web contre les [attaques par repli](https://fr.wikipedia.org/wiki/Attaque_par_repli) et le [détournement de cookies](https://www.owasp.org/index.php/Session_hijacking_attack). Il permet aux serveurs web de déclarer que les navigateurs web (ou autres agents utilisateurs conformes) ne doivent interagir avec lui qu'en utilisant des __connexions HTTPS sécurisées__ et __jamais__ via le protocole HTTP non sécurisé. La politique HSTS est mise en œuvre en utilisant l'entête `Strict-Transport-Security` sur une connexion HTTPS existante.
 
-The Strict-Transport-Security Header accepts a `max-age` value in seconds, to notify the browser how long it should access the site using HTTPS only, and an `includeSubDomains` value to apply the Strict Transport Security rule to all of the site's subdomains.
+L'entête Strict-Transport-Security accepte une valeur `max-age` en secondes, pour indiquer au navigateur combien de temps il doit accéder au site en utilisant uniquement le HTTPS, et une valeur `includeSubDomains` pour appliquer la règle Strict-Transport-Security à tous les sous-domaines du site.
 
-Header Example - HSTS Policy enabled for one week, include subdomains
+Exemple d'entête - Politique HSTS activée pendant une semaine, incluant les sous-domaines
 ```
 Strict-Transport-Security: max-age=2592000; includeSubDomains
 ```
 
-🔗 [Read on OWASP Secure Headers Project](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#hsts)
+🔗 [A lire sur le projet des entêtes sécurisés de OWASP](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#hsts)
 
-🔗 [Read on MDN web docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)
+🔗 [A lire sur la doc web de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)
 
 <br/><br/>
 
-### Public Key Pinning for HTTP (HPKP)
+### Épinglage de clé publique HTTP (Public Key Pinning for HTTP : HPKP)
 
-HTTP Public Key Pinning (HPKP) is a security mechanism allowing HTTPS websites to resist impersonation by attackers using mis-issued or otherwise fraudulent SSL/TLS certificates.
+Le HTTP Public Key Pinning (HPKP) est un mécanisme de sécurité permettant aux sites Web HTTPS de résister à l'usurpation d'identité par des attaquants utilisant des certificats SSL/TLS mal émis ou autrement frauduleux.
 
-The HTTPS web server serves a list of public key hashes, and on subsequent connections clients expect that server to use one or more of those public keys in its certificate chain. Using this feature carefully, you can greatly reduce the risk of man-in-the-middle (MITM) attacks and other false authentication problems for your application's users without incurring undue risk.
+Le serveur Web HTTPS diffuse une liste de hachages de clés publiques et lors des connexions suivantes, les clients s'attendent à ce que ce serveur utilise une ou plusieurs de ces clés publiques dans sa chaîne de certificats. En utilisant cette fonctionnalité avec précaution, vous pouvez réduire considérablement le risque d'attaques de type « man-in-the-middle » (MITM) et d'autres faux problèmes d'authentification pour les utilisateurs de votre application sans encourir de risques inutiles.
 
-Before implementing you should have a look at the `Expect-CT` header first, due to its advanced flexibility for recovery from misconfiguration and other [advantages](https://groups.google.com/a/chromium.org/forum/m/#!msg/blink-dev/he9tr7p3rZ8/eNMwKPmUBAAJ).
+Avant de le mettre en œuvre, vous devriez d'abord jeter un œil à l'entête `Expect-CT`, en raison de sa flexibilité avancée pour la récupération après une mauvaise configuration et bien d'autres [avantages](https://groups.google.com/a/chromium.org/forum/m/#!msg/blink-dev/he9tr7p3rZ8/eNMwKPmUBAAJ).
 
-The Public-Key-Pins header accepts 4 values, a `pin-sha256` value for adding the certificate public key, hashed using the SHA256 algorithm, which can be added multiple times for different public keys, a `max-age` value to tell the browser how long it should apply the rule, an `includeSubDomains` value to apply this rule to all subdomains and a `report-uri` value to report pin validation failures to the given URL.
+L'entête Public-Key-Pins accepte 4 valeurs, une valeur `pin-sha256` pour ajouter la clé publique du certificat, hachée à l'aide de l'algorithme SHA256, qui peut être ajoutée plusieurs fois pour différentes clés publiques, une valeur `max-age` pour indiquer au navigateur combien de temps il doit appliquer la règle, une valeur `includeSubDomains` pour appliquer cette règle à tous les sous-domaines et une valeur `report-uri` pour signaler les échecs de validation du pin vers l'URL donnée.
 
-Header Example - HPKP Policy enabled for one week, include subdomains , report failures to an example URL and allow two public keys
+Exemple d'entête - Politique HPKP activée pendant une semaine, incluant des sous-domaines, signalant les échecs vers un exemple d'URL et autorisant deux clés publiques
 ```
 Public-Key-Pins: pin-sha256="d6qzRu9zOECb90Uez27xWltNsj0e1Md7GkYYkVoZWmM="; pin-sha256="E9CZ9INDbd+2eRQozYqqbQ2yXLVKB9+xcprMF+44U1g="; report-uri="http://example.com/pkp-report"; max-age=2592000; includeSubDomains
 ```
 
-🔗 [Read on OWASP Secure Headers Project](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#hpkp)
+🔗 [A lire sur le projet des entêtes sécurisés de OWASP](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#hpkp)
 
-🔗 [Read on MDN web docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning)
+🔗 [A lire sur la doc web de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning)
 
 <br/><br/>
 
 ### X-Frame-Options
 
-The X-Frame-Options header secures the application against [Clickjacking](https://www.owasp.org/index.php/Clickjacking) attacks by declaring a policy whether your application may be embedded on other (external) pages using frames.
+L'entête X-Frame-Options protège l'application contre les attaques de type [Clickjacking] (https://www.owasp.org/index.php/Clickjacking) en indiquant si votre application peut être intégrée à d'autres pages (externes) à l'aide de frames.
 
-X-Frame-Options allows 3 parameters, a `deny` parameter to disallow embedding the resource in general, a `sameorigin` parameter to allow embedding the resource on the same host/origin and an `allow-from` parameter to specify a host where embedding of the resource is allowed.
+X-Frame-Options accepte 3 paramètres, un paramètre `deny` pour interdire l'intégration de la ressource en général, un paramètre `sameorigin` pour permettre l'intégration de la ressource sur le même hôte/origine et un paramètre `allow-from` pour spécifier un hôte où l'intégration de la ressource est autorisée.
 
-Header Example - Deny embedding of your application
+Exemple d'entête - Refuse une incorporation dans votre application
 ```
 X-Frame-Options: deny
 ```
 
-🔗 [Read on OWASP Secure Headers Project](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#xfo)
+🔗 [A lire sur le projet des entêtes sécurisés de OWASP](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#xfo)
 
-🔗 [Read on MDN web docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options)
+🔗 [A lire sur la doc web de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options)
 
 <br/><br/>
 
 ### X-XSS-Protection
 
-This header enables the [Cross-site scripting](https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)) filter in your browser.
+Cet entête active le filtre [Cross-site scripting](https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)) dans votre navigateur.
 
-It accepts 4 parameters, `0` for disabling the filter, `1` for enabling the filter and enable automatic sanitization of the page, `mode=block` to enable the filter and prevent the page from rendering if a XSS attack is detected (this parameter has to be added to `1` using a semicolon, and `report=<domainToReport>` to report the violation (this parameter has to be added to `1`).
+Elle accepte 4 paramètres, `0` pour désactiver le filtre, `1` pour activer le filtre et permettre le nettoyage automatique de la page, `mode=block` pour activer le filtre et empêcher le rendu de la page si une attaque XSS est détectée (ce paramètre doit être ajouté au `1` en utilisant un point-virgule, et `report=<domainToReport>` pour signaler la violation (ce paramètre doit être ajouté au `1`).
 
-Header Example - Enable XSS Protection and report violations to example URL
+Exemple d'entête - Activer la protection XSS et signale les violations vers l'URL d'exemple
 ```
 X-XSS-Protection: 1; report=http://example.com/xss-report
 ```
 
-🔗 [Read on OWASP Secure Headers Project](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#xxxsp)
+🔗 [A lire sur le projet des entêtes sécurisés de OWASP](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#xxxsp)
 
-🔗 [Read on OWASP Secure Headers Project](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection)
+🔗 [A lire sur le projet des entêtes sécurisés de OWASP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection)
 
 <br/><br/>
 
 ### X-Content-Type-Options
 
-Setting this header will prevent the browser from [interpreting files as something else](https://en.wikipedia.org/wiki/Content_sniffing) than declared by the content type in the HTTP headers.
+La définition de cet entête empêchera le navigateur d'[interpréter les fichiers comme quelque chose d'autre](https://en.wikipedia.org/wiki/Content_sniffing) que celui déclaré par le type de contenu dans les entêtes HTTP.
 
-Header Example - Disallow Content sniffing
+Exemple d'entête - Interdiction de scanner le contenu
 ```
 X-Content-Type-Options: nosniff
 ```
 
-🔗 [Read on OWASP Secure Headers Project](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#xcto)
+🔗 [A lire sur le projet des entêtes sécurisés de OWASP](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#xcto)
 
-🔗 [Read on MDN web docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options)
+🔗 [A lire sur la doc web de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options)
 
 
 <br/><br/>
 
 ### Referrer-Policy
 
-The Referrer-Policy HTTP header governs which referrer information, sent in the `Referer` header, should be included with requests made.
+L'entête HTTP Referrer-Policy détermine quelles informations de référent, envoyées dans l'entête `Referer`, doivent être incluses avec les requêtes effectuées.
 
-It allows 8 parameters, a `no-referrer` parameter to remove the `Referer` header completely, a `no-referrer-when-downgrade` to remove the `Referer` header when downgraded for example HTTPS -> HTTP, an `origin` parameter to send the host origin (the host root) as referrer __only__, an `origin-when-cross-origin` parameter to send a full origin URL when staying on the same origin and send the host origin __only__ when otherwise, a `same-origin` parameter to send referrer information only for same-site origins and omit on cross-origin requests, a `strict-origin` parameter to keep the `Referer` header only on the same security-level (HTTPS -> HTTPS) and omit it on a less secure destination, a `strict-origin-when-cross-origin` parameter to send the full referrer URL to a same-origin destination, the origin __only__ to a cross-origin destination on the __same__ security level and no referrer on a less secure cross-origin destination, and an `unsafe-url` parameter to send the full referrer to same-origin or cross-origin destinations.
+Elle accepte 8 paramètres, un paramètre `no-referrer` pour supprimer complètement l'entête `Referer`, un paramètre `no-referrer-when-downgrade` pour supprimer l'entête `Referer` lors d'une dégradation par exemple HTTPS -> HTTP, un paramètre `origin` pour envoyer l'origine de l'hôte (la racine de l'hôte) en tant que référent __uniquement__, un paramètre `origin-when-cross-origin` pour envoyer une URL d'origine complète lorsque l'on reste sur la même origine et pour envoyer l'origine de l'hôte __uniquement__ dans le cas contraire, un paramètre `same-origin` pour envoyer des informations de référent uniquement pour les origines du même site et pour omettre les requêtes de destination croisée (cross-origin), un paramètre `strict-origin` pour ne conserver l'entête `Referer` que sur le même niveau de sécurité (HTTPS -> HTTPS) et l'omettre sur une destination moins sûre, un paramètre `strict-origin-when-cross-origin` pour envoyer l'URL référent complète à une destination de même origine, l'origine __uniquement__ vers une destination croisée au __même__ niveau de sécurité et aucun référent sur une destination croisée moins sûre et enfin un paramètre `unsafe-url` pour envoyer le référent complet vers des destinations de même origine ou croisées.
 
-Header Example - Remove the `Referer` header completely
+Exemple d'entête - Supprime complètement l'entête `Referer`
 ```
 Referrer-Policy: no-referrer
 ```
 
-🔗 [Read on OWASP Secure Headers Project](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#rp)
+🔗 [A lire sur le projet des entêtes sécurisés de OWASP](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#rp)
 
-🔗 [Read on MDN web docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)
+🔗 [A lire sur la doc web de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)
 
 
 <br/><br/>
 
 ### Expect-CT
 
-The Expect-CT header is used by a server to indicate that browsers should evaluate connections to the host emitting the header for [Certificate Transparency](https://www.certificate-transparency.org/) compliance.
+L'entête Expect-CT est utilisé par un serveur pour indiquer que les navigateurs doivent examiner les connexions à l'hôte émettant l'entête pour respecter la technologie [Certificate Transparency](https://www.certificate-transparency.org/).
 
-This header accepts 3 parameters, a `report-uri` parameter to supply a URL to report Expect-CT failures to, a `enforce` parameter to signal the browser that Certificate Transparency should be enforced (rather than only reported) and refuse future connections violating the Certificate Transparency, and a `max-age` parameter to specify the number of seconds the browser regard the host as a known Expect-CT host.
+Cet entête accepte 3 paramètres, un paramètre `report-uri` pour fournir une URL à utiliser afin de signaler les échecs de Expect-CT, un paramètre `enforce` pour signaler au navigateur que la technologie _Certificate Transparency_ doit être appliquée (plutôt que de se contenter de la signaler) et refuser les futures connexions violant la technologie _Certificate Transparency_ et un paramètre `max-age` pour spécifier le nombre de secondes pendant lesquelles le navigateur considère l'hôte comme un hôte Expect-CT connu.
 
-Header Example - Enforce Certificate Transparency for a week and report to example URL
+Exemple d'entête - Fait respecter la technologie _Certificate Transparency_ pendant une semaine et transmet une URL d'exemple pour le signalement
 ```
 Expect-CT: max-age=2592000, enforce, report-uri="https://example.com/report-cert-transparency"
 ```
 
-🔗 [Read on OWASP Secure Headers Project](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#ect)
+🔗 [A lire sur le projet des entêtes sécurisés de OWASP](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#ect)
 
 
 <br/><br/>
 
 ### Content-Security-Policy
 
-The HTTP Content-Security-Policy response header allows to control resources the user agent is allowed to load for a given page. With a few exceptions, policies mostly involve specifying server origins and script endpoints. This helps guard against [cross-site scripting attacks (XSS)](https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)).
+L'entête de réponse HTTP Content-Security-Policy permet de contrôler les ressources que l'agent utilisateur est autorisé à charger pour une page donnée. À quelques exceptions près, les stratégies impliquent principalement de spécifier l'origine des serveurs et les points de terminaison des scripts. Cela permet de se prémunir contre les [attaques de script intersites (XSS)](https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)).
 
-Header Example - Enable CSP and only execute scripts from the same origin
+Exemple d'entête - Active le CSP et n'exécute que des scripts depuis la même origine
 ```
 Content-Security-Policy: script-src 'self'
 ```
 
-There are many policies enabled with Content-Security-Policy that can be found on the sites linked below.
+Il existe de nombreuses politiques activées avec Content-Security-Policy qui peuvent être trouvées sur les sites liés ci-dessous.
 
-🔗 [Read on OWASP Secure Headers Project](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#csp)
+🔗 [A lire sur le projet des entêtes sécurisés de OWASP](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#csp)
 
-🔗 [Read on MDN web docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy)
+🔗 [A lire sur la doc web de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy)
 
 
 <br/><br/>
 
-### Additional resources
+### Ressources complémentaires
 
-🔗 [OWASP Secure Headers Project](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#tab=Headers)
+🔗 [OWASP Projet d'entêtes sécurisés](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#tab=Headers)
 
-🔗 [Node.js Security Checklist (RisingStack)](https://blog.risingstack.com/node-js-security-checklist/)
+🔗 [Node.js Liste de contrôle de sécurité (RisingStack)](https://blog.risingstack.com/node-js-security-checklist/)
 
 
 <br/><br/>
