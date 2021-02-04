@@ -27,9 +27,9 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 # Dernières bonnes pratiques et nouveautés
 
-- - **✅ Nouvelle bonne pratique :** Le point 2.12 de [Alexsey](https://github.com/Alexsey) montre comment le retour sans attendre (await) les fonctions async conduit à des traces de pile partielles. Cela peut devenir un problème important lors du dépannage des exceptions en production qui ne disposent pas de certaines trames d'exécution
+- **✅ Nouvelle bonne pratique :** Le point 2.12 de [Alexsey](https://github.com/Alexsey) montre comment le retour sans attendre (await) des fonctions async conduit à des traces de pile partielles. Cela peut devenir très problématique lors du dépannage des exceptions en production qui ne disposent pas de certaines trames d'exécution
 
-- **✅ Nouvelle bonne pratique :** Le point 6.8 de Josh Hemphill recommande de "protéger les mots de passe/secrets des utilisateurs en utilisant BCrypt ou Script". Elle contient une explication approfondie sur le moment et les raisons pour lesquelles chaque option convient à un projet spécifique. Ne manquez pas ce petit guide avec un bref aperçu des différentes options de hachage
+- **✅ Nouvelle bonne pratique :** Le point 6.8 de Josh Hemphill recommande de « protéger les mots de passe/secrets des utilisateurs en utilisant BCrypt ou Script ». Elle contient une explication approfondie sur le moment et les raisons pour lesquelles chaque option convient à un projet spécifique. Ne manquez pas ce petit guide avec un bref aperçu des différentes options de hachage
 
 - **:whale: Node.js + Bonnes pratiques Docker** : Nous venons de publier la section Docker avec Node.js qui comprend 15 points sur les meilleures techniques de codage avec Docker
 
@@ -40,7 +40,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **1. Vous êtes en train de lire un regroupement des meilleurs articles sur Node.js. -** ce référentiel est un résumé et il conserve le contenu le mieux classé sur les bonnes pratiques Node.js, ainsi que du contenu écrit ici par des collaborateurs
 
-**2. Il s'agit du plus grand assemblage d'articles et il s'agrandit chaque semaine -** actuellement, plus de 80 bonnes pratiques, guides de style et astuces d'architecture sont présentés. Nous serions ravis de vous voir contribuer ici, qu'il s'agisse de corriger des erreurs de code, d'aider aux traductions ou de suggérer de nouvelles idées brillantes. Consultez nos [recommandations d'écriture](/.operations/writing-guidelines.french.md)
+**2. Il s'agit du plus grand assemblage d'articles et il s'agrandit chaque semaine -** actuellement, plus de 80 bonnes pratiques, guides de style et astuces d'architecture sont présentées. Nous serions ravis de vous voir contribuer ici, qu'il s'agisse de corriger des erreurs de code, d'aider aux traductions ou de suggérer de nouvelles idées brillantes. Consultez nos [recommandations d'écriture](/.operations/writing-guidelines.french.md)
 
 **3. Les bonnes pratiques contiennent des informations supplémentaires -** la plupart des points ont un lien **🔗Plus d'infos** qui développe la bonne pratique avec des exemples de code, des citations venant de pages sélectionnées et plus encore.
 
@@ -52,7 +52,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 2. [Gestion des erreurs (11) ](#2-gestion-des-erreurs)
 3. [Style du code (12) ](#3-style-du-code)
 4. [Tests et pratiques générales de qualité (13) ](#4-tests-et-pratiques-générales-de-qualité)
-5. [Mise en production (19) ](#5-mise-en-production)
+5. [Pratiques de mise en production (19) ](#5-pratiques-de-mise-en-production)
 6. [Sécurité (25)](#6-sécurité)
 7. [Performance (2) (Travail en cours ✍️)](#7-brouillon--performance)
 8. [Pratiques de Docker (15)](#8-bonnes-pratiques-de-docker)
@@ -63,7 +63,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 ## ![✔] 1.1 Organisez votre projet en composants
 
-**TL;PL :** Le pire obstacle des énormes applications est la maintenance d'une base de code immense contenant des centaines de dépendances - un tel monolithe ralentit les développeurs tentant d'ajouter de nouvelles fonctionnalités. Pour éviter cela, répartissez votre code en composants, chacun dans son dossier avec son code dédié, et assurez vous que chaque unité soit courte et simple. Visitez le lien 'Plus d'infos' plus bas pour voir des exemples de structure de projet correcte.
+**TL;PL :** Le pire obstacle des énormes applications est la maintenance d'une base de code immense contenant des centaines de dépendances - un tel monolithe ralentit les développeurs tentant d'ajouter de nouvelles fonctionnalités. Pour éviter cela, répartissez votre code en composants, chacun dans son dossier avec son code dédié, et assurez vous que chaque unité soit courte et simple. Visitez le lien « Plus d'infos » plus bas pour voir des exemples de structure de projet correcte.
 
 **Autrement :** Lorsque les développeurs qui codent de nouvelles fonctionnalités ont du mal à réaliser l'impact de leur changement et craignent de casser d'autres composants dépendants - les déploiements deviennent plus lents et plus risqués. Il est aussi considéré plus difficile d'élargir un modèle d'application quand les unités opérationnelles ne sont pas séparées.
 
@@ -187,7 +187,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 ## ![✔] 2.8 Testez les flux d'erreurs en utilisant votre framework de test préféré
 
-**TL;PL :** Qu'il s'agisse d'un outil automatisée d'assurance qualité professionnelle ou de tests manuels simples pour les développeurs - Assurez-vous que votre code non seulement satisfait les scénarios positifs, mais gère et renvoie également les bonnes erreurs. Les frameworks de test comme Mocha & Chai peuvent gérer cela facilement (voir les exemples de code dans la "popup Gist")
+**TL;PL :** Qu'il s'agisse d'un outil automatisée d'assurance qualité professionnelle ou de tests manuels simples pour les développeurs - Assurez-vous que votre code non seulement satisfait les scénarios positifs, mais gère et renvoie également les bonnes erreurs. Les frameworks de test comme Mocha & Chai peuvent gérer cela facilement (voir les exemples de code dans « Plus d'infos »)
 
 **Autrement :** Sans test, que ce soit automatiquement ou manuellement, vous ne pouvez pas compter sur votre code pour renvoyer les bonnes erreurs. Sans erreurs significatives - il n'y a pas de gestion des erreurs.
 
@@ -282,7 +282,7 @@ function someFunction
 
 **Autrement :** Le non-respect de cette bonne pratique peut conduire à des résultats inattendus, comme le montre la discussion de StackOverflow ci-dessous :
 
-🔗 [**Plus d'infos :** "Pourquoi les résultats varient-ils en fonction du placement des accolades ?" (StackOverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
+🔗 [**Plus d'infos :** « Pourquoi les résultats varient-ils en fonction du placement des accolades ? » (StackOverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
 <br/><br/>
 
@@ -325,8 +325,8 @@ const count = 2 // il essaie d'exécuter 2(), mais 2 n'est pas une fonction
 // placez un point-virgule avant la fonction immédiatement invoquée, après la définition de const, enregistrez la valeur de retour de la fonction anonyme dans une variable ou évitez tous les IIFE
 ```
 
-🔗 [**Plus d'infos :** "Règle de ESLint : points-virgules"](https://eslint.org/docs/rules/semi)
-🔗 [**Plus d'infos :** "Règle de ESLint : pas de multiligne inattendue"](https://eslint.org/docs/rules/no-unexpected-multiline)
+🔗 [**Plus d'infos :** « Règle de ESLint : points-virgules »](https://eslint.org/docs/rules/semi)
+🔗 [**Plus d'infos :** « Règle de ESLint : pas de multiligne inattendue »](https://eslint.org/docs/rules/no-unexpected-multiline)
 
 <br/><br/>
 
@@ -465,7 +465,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Un déploiement vient d'échouer, un test nommé « Ajoute un produit » a échoué. Cela vous indique-t-il exactement ce qui ne fonctionne pas correctement ?
 
-🔗[**Plus d'infos : Incluez 3 parties dans chaque nom de test**](/sections/testingandquality/3-parts-in-name.french.md)
+🔗[**Plus d'infos : incluez 3 parties dans chaque nom de test**](/sections/testingandquality/3-parts-in-name.french.md)
 
 <br/><br/>
 
@@ -475,7 +475,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Non seulement vous passez de longues heures par jour à comprendre le code principal, mais maintenant, ce qui aurait dû être la partie la plus simple de la journée (les tests) accroche votre cerveau
 
-🔗[**Plus d'infos : Structurez vos tests avec le format AAA**](/sections/testingandquality/aaa.french.md)
+🔗[**Plus d'infos : structurez vos tests avec le format AAA**](/sections/testingandquality/aaa.french.md)
 
 <br/><br/>
 
@@ -493,7 +493,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 ****Autrement :** Considérez un scénario où le déploiement est interrompu à cause de l'échec des tests, l'équipe va maintenant passer un temps d'investigation précieux qui se terminera par une triste conclusion : le système fonctionne bien, les tests interfèrent cependant les uns avec les autres et interrompent la construction.
 
-🔗[**Plus d'infos : Évitez les tests globaux, ajoutez des données pour chaque test**](/sections/testingandquality/avoid-global-test-fixture.french.md)
+🔗[**Plus d'infos : évitez les tests globaux, ajoutez des données pour chaque test**](/sections/testingandquality/avoid-global-test-fixture.french.md)
 
 <br/><br/>
 
@@ -543,7 +543,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Avec une mauvaise qualité de code, les bogues et les performances seront toujours un problème qu'aucune nouvelle bibliothèque brillante ou fonctionnalité de pointe ne peut résoudre.
 
-🔗[**Plus d'infos: Refactorisation!**](/sections/testingandquality/refactoring.french.md)
+🔗[**Plus d'infos: refactorisation !**](/sections/testingandquality/refactoring.french.md)
 
 <br/><br/>
 
@@ -553,7 +553,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Le choix d'un fournisseur de niche peut vous bloquer une fois que vous aurez besoin d'une personnalisation avancée. En revanche, faire appel à Jenkins pourrait vous faire perdre un temps précieux à la mise en place de l'infrastructure.
 
-🔗[**Plus d'infos : Choisissez soigneusement votre plateforme CI**](/sections/testingandquality/citools.french.md)
+🔗[**Plus d'infos : choisissez soigneusement votre plateforme CI**](/sections/testingandquality/citools.french.md)
 
 ## ![✔] 4.13 Testez vos middlewares de manière isolée
 
@@ -561,203 +561,203 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Un bogue dans le middleware Express === un bogue dans toutes ou la plupart des requêtes
 
-🔗 [**Plus d'infos : Testez vos middlewares de manière isolée**](/sections/testingandquality/test-middlewares.french.md)
+🔗 [**Plus d'infos : testez vos middlewares de manière isolée**](/sections/testingandquality/test-middlewares.french.md)
 
 <br/><br/><br/>
 
 <p align="right"><a href="#table-des-matières">⬆ Retourner en haut de la page</a></p>
 
-# `5. Going To Production Practices`
+# `5. Pratiques de mise en production`
 
-## ![✔] 5.1. Monitoring
+## ![✔] 5.1. Surveillance
 
-**TL;DR:** Monitoring is a game of finding out issues before customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that ticks all boxes. Click ‘The Gist’ below for an overview of the solutions
+**TL;PL :** La surveillance est un jeu qui consiste à découvrir les problèmes avant que les clients ne les trouvent - il est évident qu'il faut accorder une importance sans précédent à cette question. Le marché est submergé d'offres, pensez donc à commencer par définir les mesures de base que vous devez suivre (mes suggestions à l'intérieur), puis passez en revue les fonctionnalités supplémentaires et choisissez la solution qui coche toutes les cases. Cliquez sur « l'essentiel » ci-dessous pour un aperçu des solutions.
 
-**Otherwise:** Failure === disappointed customers. Simple
+**Autrement :** Échec === clients déçus. C'est simple.
 
-🔗 [**Read More: Monitoring!**](/sections/production/monitoring.md)
-
-<br/><br/>
-
-## ![✔] 5.2. Increase transparency using smart logging
-
-**TL;DR:** Logs can be a dumb warehouse of debug statements or the enabler of a beautiful dashboard that tells the story of your app. Plan your logging platform from day 1: how logs are collected, stored and analyzed to ensure that the desired information (e.g. error rate, following an entire transaction through services and servers, etc) can really be extracted
-
-**Otherwise:** You end up with a black box that is hard to reason about, then you start re-writing all logging statements to add additional information
-
-🔗 [**Read More: Increase transparency using smart logging**](/sections/production/smartlogging.md)
+🔗 [**Plus d'infos : surveillance !**](/sections/production/monitoring.french.md)
 
 <br/><br/>
 
-## ![✔] 5.3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy
+## ![✔] 5.2. Augmentez la clarté à l'aide de la journalisation intelligente
 
-**TL;DR:** Node is awfully bad at doing CPU intensive tasks like gzipping, SSL termination, etc. You should use ‘real’ middleware services like nginx, HAproxy or cloud vendor services instead
+**TL;PL :** Les journaux peuvent être un stupide inventaire de relevés de débogage ou le facilitateur d'un magnifique tableau de bord qui raconte l'histoire de votre application. Prévoyez votre plateforme de journalisation dès le premier jour : comment les logs sont collectés, stockés et analysés pour s'assurer que les informations souhaitées (par exemple le taux d'erreur, le suivi d'une transaction complète via des services et des serveurs, etc.) peuvent réellement être exploitées.
 
-**Otherwise:** Your poor single thread will stay busy doing infrastructural tasks instead of dealing with your application core and performance will degrade accordingly
+**Autrement :** Vous vous retrouvez avec une boîte noire qui est difficile à analyser, puis vous commencez à réécrire toutes les instructions de journalisation pour ajouter des informations supplémentaires.
 
-🔗 [**Read More: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
-
-<br/><br/>
-
-## ![✔] 5.4. Lock dependencies
-
-**TL;DR:** Your code must be identical across all environments, but amazingly npm lets dependencies drift across environments by default – when you install packages at various environments it tries to fetch packages’ latest patch version. Overcome this by using npm config files, .npmrc, that tell each environment to save the exact (not the latest) version of each package. Alternatively, for finer grained control use `npm shrinkwrap`. \*Update: as of NPM5, dependencies are locked by default. The new package manager in town, Yarn, also got us covered by default
-
-**Otherwise:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
-
-🔗 [**Read More: Lock dependencies**](/sections/production/lockdependencies.md)
+🔗 [**Plus d'infos : augmentez la clarté à l'aide de la journalisation intelligente**](/sections/production/smartlogging.french.md)
 
 <br/><br/>
 
-## ![✔] 5.5. Guard process uptime using the right tool
+## ![✔] 5.3. Déléguez tout ce qui est possible (par exemple gzip, SSL) à un proxy inverse
 
-**TL;DR:** The process must go on and get restarted upon failures. For simple scenarios, process management tools like PM2 might be enough but in today's ‘dockerized’ world, cluster management tools should be considered as well
+**TL;PL :** Node est terriblement mauvais pour faire des tâches gourmandes en CPU comme la compression avec gzip, terminaison SSL, etc. Vous devriez utiliser à la place des services de middleware « réels » comme nginx, HAproxy ou des services de fournisseurs du cloud.
 
-**Otherwise:** Running dozens of instances without a clear strategy and too many tools together (cluster management, docker, PM2) might lead to DevOps chaos
+**Autrement :** Votre pauvre processus restera occupé à faire des tâches d'infrastructure au lieu de s'occuper du cœur de votre application et les performances se dégraderont en conséquence.
 
-🔗 [**Read More: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
-
-<br/><br/>
-
-## ![✔] 5.6. Utilize all CPU cores
-
-**TL;DR:** At its basic form, a Node app runs on a single CPU core while all others are left idling. It’s your duty to replicate the Node process and utilize all CPUs – For small-medium apps you may use Node Cluster or PM2. For a larger app consider replicating the process using some Docker cluster (e.g. K8S, ECS) or deployment scripts that are based on Linux init system (e.g. systemd)
-
-**Otherwise:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.js utilizes only 1 (even using PaaS services like AWS beanstalk!)
-
-🔗 [**Read More: Utilize all CPU cores**](/sections/production/utilizecpu.md)
+🔗 [**Plus d'infos : déléguez tout ce qui est possible (par exemple gzip, SSL) à un proxy inverse**](/sections/production/delegatetoproxy.french.md)
 
 <br/><br/>
 
-## ![✔] 5.7. Create a ‘maintenance endpoint’
+## ![✔] 5.4. Verrouillez les dépendances
 
-**TL;DR:** Expose a set of system-related information, like memory usage and REPL, etc in a secured API. Although it’s highly recommended to rely on standard and battle-tests tools, some valuable information and operations are easier done using code
+**TL;PL :** Votre code doit être identique dans tous les environnements, mais étonnamment npm laisse les dépendances fluctuer entre les environnements par défaut - lorsque vous installez des paquets dans différents environnements, il essaie de récupérer la dernière version du patch des paquets. Surmontez cela en utilisant les fichiers de configuration de npm, .npmrc, qui indiquent à chaque environnement de sauvegarder la version exacte (et non la dernière) de chaque paquet. Alternativement, pour un contrôle plus fin, utilisez `npm shrinkwrap`. \*Mise à jour : à partir de NPM5, les dépendances sont verrouillées par défaut. Le nouveau gestionnaire de paquets en place, Yarn, nous a aussi fourni une couverture par défaut.
 
-**Otherwise:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
+**Autrement :** Le service qualité testera le code de manière approfondie et approuvera une version qui se comportera différemment en production. Pire encore, différents serveurs dans le même cluster de production peuvent exécuter un code différent.
 
-🔗 [**Read More: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
-
-<br/><br/>
-
-## ![✔] 5.8. Discover errors and downtime using APM products
-
-**TL;DR:** Application monitoring and performance products (a.k.a APM) proactively gauge codebase and API so they can auto-magically go beyond traditional monitoring and measure the overall user-experience across services and tiers. For example, some APM products can highlight a transaction that loads too slow on the end-users side while suggesting the root cause
-
-**Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real-world scenario and how these affect the UX
-
-🔗 [**Read More: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
+🔗 [**Plus d'infos : verrouillez les dépendances**](/sections/production/lockdependencies.french.md)
 
 <br/><br/>
 
-## ![✔] 5.9. Make your code production-ready
+## ![✔] 5.5. Protégez la disponibilité du processus avec des bons outils
 
-**TL;DR:** Code with the end in mind, plan for production from day 1. This sounds a bit vague so I’ve compiled a few development tips that are closely related to production maintenance (click Gist below)
+**TL;PL :** Le processus doit continuer et être redémarré en cas d'échec. Pour des scénarios simples, des outils de gestion de processus comme PM2 peuvent suffire, mais dans le monde « dockérizé » d'aujourd'hui, les outils de gestion de cluster doivent également être pris en compte.
 
-**Otherwise:** A world champion IT/DevOps guy won’t save a system that is badly written
+**Autrement :** L'exécution simultanée de dizaines d'instances sans stratégie claire et trop d'outils (gestion de cluster, docker, PM2) pourrait conduire au chaos du DevOps.
 
-🔗 [**Read More: Make your code production-ready**](/sections/production/productioncode.md)
-
-<br/><br/>
-
-## ![✔] 5.10. Measure and guard the memory usage
-
-**TL;DR:** Node.js has controversial relationships with memory: the v8 engine has soft limits on memory usage (1.4GB) and there are known paths to leak memory in Node’s code – thus watching Node’s process memory is a must. In small apps, you may gauge memory periodically using shell commands but in medium-large apps consider baking your memory watch into a robust monitoring system
-
-**Otherwise:** Your process memory might leak a hundred megabytes a day like how it happened at [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
-
-🔗 [**Read More: Measure and guard the memory usage**](/sections/production/measurememory.md)
+🔗 [**Plus d'infos : protégez la disponibilité du processus avec des bons outils**](/sections/production/guardprocess.french.md)
 
 <br/><br/>
 
-## ![✔] 5.11. Get your frontend assets out of Node
+## ![✔] 5.6. Utilisez tous les cœurs du CPU
 
-**TL;DR:** Serve frontend content using dedicated middleware (nginx, S3, CDN) because Node performance really gets hurt when dealing with many static files due to its single-threaded model
+**TL;PL :** Dans sa forme de base, une application Node fonctionne sur un seul cœur de CPU alors que tous les autres sont laissés au repos. Il est de votre devoir de répliquer le processus Node et d'utiliser tous les CPU - Pour les petites et moyennes applications, vous pouvez utiliser Node Cluster ou PM2. Pour une application plus grande, pensez à répliquer le processus à l'aide d'un cluster Docker (par exemple K8S, ECS) ou des scripts de déploiement basés sur le système d'initialisation Linux (par exemple systemd).
 
-**Otherwise:** Your single Node thread will be busy streaming hundreds of html/images/angular/react files instead of allocating all its resources for the task it was born for – serving dynamic content
+**Autrement :** Votre application n'utilisera probablement que 25% de ses ressources disponibles (!) ou même moins. Notez qu'un serveur typique possède 4 cœurs CPU ou plus, le déploiement naïf de Node.js n'en utilise qu'un (même en utilisant des services PaaS comme AWS beanstalk !)
 
-🔗 [**Read More: Get your frontend assets out of Node**](/sections/production/frontendout.md)
-
-<br/><br/>
-
-## ![✔] 5.12. Be stateless, kill your servers almost every day
-
-**TL;DR:** Store any type of data (e.g. user sessions, cache, uploaded files) within external data stores. Consider ‘killing’ your servers periodically or use ‘serverless’ platform (e.g. AWS Lambda) that explicitly enforces a stateless behavior
-
-**Otherwise:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
-
-🔗 [**Read More: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
+🔗 [**Plus d'infos : utilisez tous les cœurs du CPU**](/sections/production/utilizecpu.french.md)
 
 <br/><br/>
 
-## ![✔] 5.13. Use tools that automatically detect vulnerabilities
+## ![✔] 5.7. Créez un « point de terminaison de maintenance »
 
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities (from time to time) that can put a system at risk. This can be easily tamed using community and commercial tools that constantly check for vulnerabilities and warn (locally or at GitHub), some can even patch them immediately
+**TL;PL :** Exposez dans une API sécurisée un ensemble d'informations liées au système, comme l'utilisation de la mémoire et le REPL, etc. Bien qu'il soit fortement recommandé de s'appuyer sur des outils standard et éprouvés au combat, certaines informations et opérations précieuses sont plus faciles à utiliser à l'aide de code.
 
-**Otherwise:** Keeping your code clean from vulnerabilities without dedicated tools will require you to constantly follow online publications about new threats. Quite tedious
+**Autrement :** Vous constaterez que vous effectuez de nombreuses « livraisons de diagnostics » - la livraison de code vers la production uniquement pour extraire des informations à des fins de diagnostic.
 
-🔗 [**Read More: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
-
-<br/><br/>
-
-## ![✔] 5.14. Assign a transaction id to each log statement
-
-**TL;DR:** Assign the same identifier, transaction-id: {some value}, to each log entry within a single request. Then when inspecting errors in logs, easily conclude what happened before and after. Unfortunately, this is not easy to achieve in Node due to its async nature, see code examples inside
-
-**Otherwise:** Looking at a production error log without the context – what happened before – makes it much harder and slower to reason about the issue
-
-🔗 [**Read More: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
+🔗 [**Plus d'infos : créez un « point de terminaison de maintenance »**](/sections/production/createmaintenanceendpoint.french.md)
 
 <br/><br/>
 
-## ![✔] 5.15. Set NODE_ENV=production
+## ![✔] 5.8. Découvrez les erreurs et les indisponibilités à l'aide des produits APM
 
-**TL;DR:** Set the environment variable NODE_ENV to ‘production’ or ‘development’ to flag whether production optimizations should get activated – many npm packages determine the current environment and optimize their code for production
+**TL;PL :** Les produits de surveillance et de performance des applications (a.k.a APM) mesurent de manière proactive la base de code et l'API afin qu'ils puissent aller automatiquement au-delà de la surveillance traditionnelle et mesurer l'expérience utilisateur globale à travers les services et les tiers. Par exemple, certains produits APM peuvent mettre en évidence une transaction qui se charge trop lentement du côté des utilisateurs finaux tout en suggérant la cause principale.
 
-**Otherwise:** Omitting this simple property might greatly degrade performance. For example, when using Express for server-side rendering omitting `NODE_ENV` makes it slower by a factor of three!
+**Autrement :** Vous pourriez consacrer beaucoup d'efforts à mesurer les performances et l'indisponibilité de l'API, vous ne saurez probablement jamais quelles sont vos parties de code les plus lentes dans le scénario du monde réel et comment celles-ci affectent l'expérience utilisateur.
 
-🔗 [**Read More: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
-
-<br/><br/>
-
-## ![✔] 5.16. Design automated, atomic and zero-downtime deployments
-
-**TL;DR:** Research shows that teams who perform many deployments lower the probability of severe production issues. Fast and automated deployments that don’t require risky manual steps and service downtime significantly improve the deployment process. You should probably achieve this using Docker combined with CI tools as they became the industry standard for streamlined deployment
-
-**Otherwise:** Long deployments -> production downtime & human-related error -> team unconfident in making deployment -> fewer deployments and features
+🔗 [**Plus d'infos : découvrez les erreurs et les indisponibilités à l'aide des produits APM**](/sections/production/apmproducts.french.md)
 
 <br/><br/>
 
-## ![✔] 5.17. Use an LTS release of Node.js
+## ![✔] 5.9. Préparez votre code pour la production
 
-**TL;DR:** Ensure you are using an LTS version of Node.js to receive critical bug fixes, security updates and performance improvements
+**TL;PL :** Codez en pensant à la solution définitive, planifiez la production dès le premier jour. Cela semble un peu vague, j'ai donc compilé quelques conseils de développement qui sont étroitement liés à la maintenance de la production (cliquez sur l'essentiel ci-dessous)
 
-**Otherwise:** Newly discovered bugs or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain
+**Autrement :** Même le champion du monde Architecte/DevOps ne sauvera pas un système mal écrit.
 
-🔗 [**Read More: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
-
-<br/><br/>
-
-## ![✔] 5.18. Don't route logs within the app
-
-**TL;DR:** Log destinations should not be hard-coded by developers within the application code, but instead should be defined by the execution environment the application runs in. Developers should write logs to `stdout` using a logger utility and then let the execution environment (container, server, etc.) pipe the `stdout` stream to the appropriate destination (i.e. Splunk, Graylog, ElasticSearch, etc.).
-
-**Otherwise:** Application handling log routing === hard to scale, loss of logs, poor separation of concerns
-
-🔗 [**Read More: Log Routing**](/sections/production/logrouting.md)
+🔗 [**Plus d'infos : préparez votre code pour la production**](/sections/production/productioncode.french.md)
 
 <br/><br/>
 
-## ![✔] 5.19. Install your packages with `npm ci`
+## ![✔] 5.10. Mesurez et protégez l'utilisation de la mémoire
 
-**TL;DR:** You have to be sure that production code uses the exact version of the packages you have tested it with. Run `npm ci` to do a clean install of your dependencies matching package.json and package-lock.json.
+**TL;PL :** Node.js a des relations controversées avec la mémoire : le moteur v8 a de faibles limites sur l'utilisation de la mémoire (1.4GB) et il y a des moyens connus pour faire fuir la mémoire dans le code de Node - donc surveiller la mémoire du processus de Node est une chose indispensable. Dans les petites applications, vous pouvez mesurer la mémoire périodiquement en utilisant des commandes shell mais dans les applications de taille moyenne, vous pouvez envisager de faire de votre surveillance mémoire via un système de surveillance robuste.
 
-**Otherwise:****** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
+**Autrement :** La mémoire de votre processus peut fuir une centaine de mégaoctets par jour, comme cela s'est produit chez [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
 
-🔗 [**Read More: Use npm ci**](/sections/production/installpackageswithnpmci.md)
+🔗 [**Plus d'infos : mesurez et protégez l'utilisation de la mémoire**](/sections/production/measurememory.french.md)
+
+<br/><br/>
+
+## ![✔] 5.11. Retirez vos ressources frontend de Node
+
+**TL;PL :** Servez le contenu du frontend en utilisant un middleware dédié (nginx, S3, CDN) parce que les performances de Node sont vraiment diminuées lors du traitement de nombreux fichiers statiques en raison de son modèle mono-processus.
+
+**Autrement :** Votre unique processus de Node sera occupé à diffuser des centaines de fichiers html/images/angular/react au lieu d'allouer toutes ses ressources à la tâche pour laquelle il est conçu - fournir du contenu dynamique
+
+🔗 [**Plus d'infos : retirez vos ressources frontend de Node**](/sections/production/frontendout.french.md)
+
+<br/><br/>
+
+## ![✔] 5.12. Soyez sans état, tuez vos serveurs presque tous les jours
+
+**TL;PL :** Stockez tout type de données (par exemple, sessions utilisateur, cache, fichiers téléchargés) dans des stockages de données externes. Envisagez de « tuer » vos serveurs périodiquement ou d'utiliser une plateforme « sans serveur » (par exemple AWS Lambda) qui impose explicitement un comportement sans état.
+
+**Autrement :** La défaillance d'un serveur particulier entraînera l'arrêt des applications au lieu de simplement tuer une machine défectueuse. De plus, l'élasticité de l'extensibilité sera plus difficile à obtenir en raison de la dépendance à un serveur spécifique.
+
+🔗 [**Plus d'infos : soyez sans état, tuez vos serveurs presque tous les jours**](/sections/production/bestateless.french.md)
+
+<br/><br/>
+
+## ![✔] 5.13. Utilisez des outils qui détectent automatiquement les vulnérabilités
+
+**TL;PL :** Même les dépendances les plus réputées comme Express ont des vulnérabilités connues (de temps en temps) qui peuvent mettre un système en danger. Cela peut être facilement maîtrisé en utilisant des outils communautaires et commerciaux qui vérifient constamment les vulnérabilités et avertissent (localement ou sur GitHub), certains peuvent même les corriger immédiatement.
+
+**Autrement :** Si vous ne disposez pas d'outils dédiés pour protéger votre code contre les vulnérabilités, vous devrez suivre en permanence les publications en ligne sur les nouvelles menaces. C'est assez fastidieux.
+
+🔗 [**Plus d'infos : Utilisez des outils qui détectent automatiquement les vulnérabilités**](/sections/production/detectvulnerabilities.french.md)
+
+<br/><br/>
+
+## ![✔] 5.14. Attribuez un id de transaction à chaque relevé du journal
+
+**TL;PL :** Attribuez le même identifiant, transaction-id : {une valeur}, à chaque entrée du journal à l'intérieur d'une même requête. Ensuite, lors de l'inspection des erreurs dans les journaux, il est facile de conclure ce qui s'est passé avant et après. Malheureusement, cela n'est pas facile à réaliser dans Node en raison de sa nature asynchrone, consultez les exemples de code.
+
+**Autrement :** L'examen d'un journal d'erreurs de production sans le contexte (ce qui s'est passé auparavant) rend le travail de réflexion beaucoup plus difficile et lent.
+
+🔗 [**Plus d'infos : attribuez un ‘TransactionId’ à chaque relevé du journal**](/sections/production/assigntransactionid.french.md)
+
+<br/><br/>
+
+## ![✔] 5.15. Définissez NODE_ENV=production
+
+**TL;PL :** Définissez la variable d'environnement NODE_ENV avec « production » ou « development » pour indiquer si les optimisations de production doivent être activées - de nombreux paquets npm déterminent l'environnement en cours et optimisent leur code pour la production.
+
+**Autrement :** L'omission de cette simple propriété pourrait fortement dégrader les performances. Par exemple, lors de l'utilisation d'Express pour le rendu côté serveur, l'omission de `NODE_ENV` le rend trois fois plus lent !
+
+🔗 [**Plus d'infos : définissez NODE_ENV=production**](/sections/production/setnodeenv.french.md)
+
+<br/><br/>
+
+## ![✔] 5.16. Concevez des déploiements automatisés, atomiques et sans interruption de service
+
+**TL;PL :** Les études montrent que les équipes qui effectuent de nombreux déploiements réduisent la probabilité de graves problèmes en production. Les déploiements rapides et automatisés qui ne nécessitent pas d'étapes manuelles risquées ni d'interruptions de service améliorent considérablement le processus de déploiement. Vous devriez probablement y parvenir en utilisant Docker combiné à des outils de CI, car ils sont devenus la norme du secteur pour un déploiement optimisé.
+
+**Autrement :** Déploiements longs -> arrêt de la production et erreur humaine -> équipe peu confiante dans la réalisation du déploiement -> moins de déploiements et de fonctionnalités.
+
+<br/><br/>
+
+## ![✔] 5.17. Utilisez une version LTS de Node.js
+
+**TL;PL :** Assurez-vous d'utiliser une version LTS de Node.js pour recevoir les corrections de bogues critiques, les mises à jour de sécurité et les améliorations de performance
+
+**Autrement :** Les bogues ou vulnérabilités récemment découverts pourraient être utilisés pour exploiter une application en production, et votre application pourrait devenir non supportée par divers modules et plus difficile à maintenir
+
+🔗 [**Plus d'infos : Utilisez une version LTS de Node.js**](/sections/production/LTSrelease.french.md)
+
+<br/><br/>
+
+## ![✔] 5.18. Ne redirigez pas les journaux vers l'application
+
+**TL;PL :** Les destinations des journaux ne devraient pas être codées en dur par les développeurs dans le code de l'application, mais devraient plutôt être définies par l'environnement d'exécution dans lequel l'application s'exécute. Les développeurs doivent écrire des journaux dans `stdout` en utilisant un utilitaire de journalisation et laisser l'environnement d'exécution (conteneur, serveur, etc.) diriger le flux `stdout` vers la destination appropriée (c'est-à-dire Splunk, Graylog, ElasticSearch, etc.).
+
+**Autrement :** Acheminement des journaux de gestion des applications === difficile à dimensionner, perte de journaux, mauvaise séparation des informations.
+
+🔗 [**Plus d'infos : redirection du journal**](/sections/production/logrouting.french.md)
+
+<br/><br/>
+
+## ![✔] 5.19. Installez vos paquets avec `npm ci`
+
+**TL;PL :** Vous devez vous assurer que le code de production utilise la version exacte des paquets avec lesquels vous l'avez testé. Exécutez `npm ci` pour faire une installation propre de vos dépendances correspondant aux fichiers package.json et package-lock.json.
+
+**Autrement :****** Le service qualité testera le code de manière approfondie et approuvera une version qui se comportera différemment en production. Pire encore, différents serveurs dans le même cluster de production peuvent exécuter un code différent.
+
+🔗 [**Plus d'infos : utilisez npm ci**](/sections/production/installpackageswithnpmci.french.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-des-matières">⬆ Retourner en haut de la page</a></p>
 
 # `6. Security Best Practices`
 
