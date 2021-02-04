@@ -773,15 +773,15 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.2. Limit concurrent requests using a middleware
+## ![✔] 6.2. Batasi request serentak dengan menggunakan middleware
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** DOS attacks are very popular and relatively easy to conduct. Implement rate limiting using an external service such as cloud load balancers, cloud firewalls, nginx, [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) package, or (for smaller and less critical apps) a rate-limiting middleware (e.g. [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
+**TL;DR:** Serangan DOS sangat populer dan relatif mudah untuk dilakukan. Terapkan pembatasan rate menggunakan layanan eksternal seperti _cloud load balancers_, _cloud firewalls_, nginx, paket [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible), atau (untuk aplikasi yang lebih kecil dan kurang penting) sebuah middleware _rate-limiting_ (misalnya [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
 
-**Otherwise:** An application could be subject to an attack resulting in a denial of service where real users receive a degraded or unavailable service.
+**Jika tidak:** Aplikasi dapat terkena serangan _denial of service_ sementara pengguna asli menggunakan layanan yang terdegradasi atau tidak tersedia.
 
-🔗 [**Read More: Implement rate limiting**](/sections/security/limitrequests.md)
+🔗 [**Baca selengkapnya: Implement rate limiting**](/sections/security/limitrequests.md)
 
 <br/><br/>
 
