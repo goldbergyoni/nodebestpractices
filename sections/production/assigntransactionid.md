@@ -8,32 +8,54 @@ A typical log is a warehouse of entries from all components and requests. Upon d
 
 <br/><br/>
 
-### Code example: typical Express configuration
+### Code example: sharing TransactionId among current request functions, using [cls-rtracer](https://www.npmjs.com/package/cls-rtracer) (a library based on [async-local-storage](https://nodejs.org/api/async_hooks.html#async_hooks_class_asynclocalstorage), implemented for Express & Koa middlewares and Fastify & Hapi plugins)
 
 ```javascript
-// when receiving a new request, start a new isolated context and set a transaction id. The following example is using the npm library continuation-local-storage to isolate requests
+const express = require('express');
+const rTracer = require('cls-rtracer');
 
-const { createNamespace } = require('continuation-local-storage');
-const session = createNamespace('my session');
+const app = express();
 
-router.get('/:id', (req, res, next) => {
-    session.set('transactionId', 'some unique GUID');
-    someService.getById(req.params.id);
-    logger.info('Starting now to get something by id');
-});
+app.use(rTracer.expressMiddleware());
 
-// Now any other service or components can have access to the contextual, per-request, data
-class someService {
-    getById(id) {
-        logger.info('Starting to get something by id');
-        // other logic comes here
-    }
-}
+app.get('/getUserData/{id}', (req, res, next) => {
+    usersRepo.find(req.params.id)
+        .then((user) => {
+            // At any point in the app after cls-rtracer middleware was initialized, even when 'req' object doesn't exist, the TransactionId is reachable
+            const transactionId = rTracer.id();
+            logger.info(`user ${user.id} data was fetched successfully`, { transactionId });
 
-// The logger can now append the transaction id to each entry so that entries from the same request will have the same value
-class logger {
-    info (message) {
-        console.log(`${message} ${session.get('transactionId')}`);
-    }
-}
+            res.json(user);
+        })
+        .catch(e) {
+            // As next step I'd recommand using rTracer.id() from inside the logger component, to prevent from using it all over the code
+            logger.error(`error while fetching user id ${req.params.id} data`, { transactionId: rTracer.id() });
+            next(e);
+        }
+})
 ```
+
+### Code example: sharing TransactionId among  microservices 
+
+```javascript
+// cls-tracer has the ability to store the TransactionId on your service outgoing requests headers, and extract the TransactionId from incoming requests headers, just by overriding the default middleware config
+app.use(rTracer.expressMiddleware({
+    echoHeader: true,
+    useHeader: true,
+    headerName: 'x-transaction-id'
+}));
+```
+
+
+### Good: assign 'TransactionId' to your logs
+image TBD
+### Bad: write your logs without any common flow indication
+image TBD
+
+
+
+### Blog Quote: "The notion of a Correlation ID is simple. It’s a value that is common to all requests, messages and responses in a given transaction. With this simplicity you get a lot of power."
+
+From [rapid7](https://blog.rapid7.com/2016/12/23/the-value-of-correlation-ids/)
+
+> In the old days when transactional behavior happened in a single domain, in step-by-step procedures, keeping track of request/response behavior was a simple undertaking. However, today one request to a particular domain can involve a myriad of subsequent asynchronous requests from the starting domain to others. For example, you send a request to Expedia, but behind the scenes Expedia is forwarding your request as a message to a message broker. Then that message is consumed by a hotel, airline and car rental agency that responds asynchronously too. So the question comes up, with your one request being passed about to a multitude of processing consumers, how do we keep track of the transaction? The answer is: use a Correlation ID.
