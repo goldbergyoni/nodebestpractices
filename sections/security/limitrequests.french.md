@@ -1,10 +1,10 @@
-#  Limit concurrent requests using a balancer or a middleware
+# Limitez les requêtes simultanées en utilisant un équilibreur ou un middleware
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-Rate limiting should be implemented in your application to protect a Node.js application from being overwhelmed by too many requests at the same time. Rate limiting is a task best performed with a service designed for this task, such as nginx, however it is also possible with [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) package or middleware such as [express-rate-limiter](https://www.npmjs.com/package/express-rate-limit) for Express.js applications.
+La limitation des débits doit être mise en œuvre dans votre application pour éviter qu'une application Node.js ne soit submergée par un trop grand nombre de requêtes en même temps. La limitation de débit est une tâche qui s'effectue mieux avec un service conçu pour cette tâche, comme nginx, mais elle est également possible avec le paquet [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) ou un middleware comme [express-rate-limiter](https://www.npmjs.com/package/express-rate-limit) pour les applications Express.js.
  
-  ### Code example: pure Node.js app with [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible)
+  ### Exemple de code : application pure Node.js avec [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible)
  
   ```javascript
  const http = require('http');
@@ -15,38 +15,38 @@ Rate limiting should be implemented in your application to protect a Node.js app
    enable_offline_queue: false,
  });
 
- // Maximum 20 requests per second
+ // 20 requêtes maximum par seconde
  const rateLimiter = new RateLimiterRedis({
    storeClient: redisClient,
    points: 20,
    duration: 1,
-   blockDuration: 2, // block for 2 seconds if consumed more than 20 points per second
+   blockDuration: 2, // bloque pendant 2 secondes s'il est utilisé plus de 20 fois par seconde
  });
 
  http.createServer(async (req, res) => {
     try {
     const rateLimiterRes = await rateLimiter.consume(req.socket.remoteAddress);
-    // Some app logic here
+    // Un peu de logique applicative ici
 
     res.writeHead(200);
     res.end();
     } catch {
     res.writeHead(429);
-    res.end('Too Many Requests');
+    res.end('Trop de requêtes');
     }
  })
    .listen(3000);
  ```
 
-You can find [more examples in the documentation](https://github.com/animir/node-rate-limiter-flexible/wiki/Overall-example).
+Vous pouvez trouver [plus d'exemples dans la documentation](https://github.com/animir/node-rate-limiter-flexible/wiki/Overall-example).
 
-### Code example: Express rate limiting middleware for certain routes
+### Exemple de code : middleware limitant les débits express pour certaines routes
 
-Using [express-rate-limiter](https://www.npmjs.com/package/express-rate-limit) npm package
+Utilisation du paquet npm [express-rate-limiter](https://www.npmjs.com/package/express-rate-limit)
 
 ```javascript
 const RateLimit = require('express-rate-limit');
-// important if behind a proxy to ensure client IP is passed to req.ip
+// important si placé derrière un proxy pour s'assurer que l'IP du client soit passée à req.ip
 app.enable('trust proxy'); 
  
 const apiLimiter = new RateLimit({
@@ -54,12 +54,12 @@ const apiLimiter = new RateLimit({
   max: 100,
 });
  
-// only apply to requests that begin with /user/
+// ne s'appliquent qu'aux requêtes qui commencent par /user/
 app.use('/user/', apiLimiter);
 ```
 
-### What Other Bloggers Say
+### Ce que disent les autres blogueurs
 
-From the [NGINX blog](https://www.nginx.com/blog/rate-limiting-nginx/):
-> Rate limiting can be used for security purposes, for example to slow down brute‑force password‑guessing attacks. It can help protect against DDoS attacks by limiting the incoming request rate to a value typical for real users, and (with logging) identify the targeted URLs. More generally, it is used to protect upstream application servers from being overwhelmed by too many user requests at the same time.
+Extrait du [blog NGINX](https://www.nginx.com/blog/rate-limiting-nginx/) :
+> La limitation des débits peut être utilisée à des fins de sécurité, par exemple pour ralentir les attaques brute-force visant à deviner des mots de passe. Elle peut contribuer à la protection contre les attaques DDoS en limitant le taux de requêtes entrantes à une valeur donnée pour les utilisateurs réels, et (avec journalisation) identifier les URL ciblées. Plus généralement, il est utilisé pour protéger les serveurs d'application en amont contre les requêtes simultanées d'un trop grand nombre d'utilisateurs.
 
