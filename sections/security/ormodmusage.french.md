@@ -1,11 +1,11 @@
-# Preventing database injection vulnerabilities by using ORM/ODM libraries or other DAL packages
+# Prévention des vulnérabilités d'injection de bases de données en utilisant les bibliothèques ORM/ODM ou d'autres paquets DAL
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-When creating your database logic you should watch out for eventual injection vectors that could be exploited by potential attackers. Writing database queries manually or not including data validation for user requests are the easiest methods to allow for these vulnerabilities. This situation is however easy to avoid when you use suitable packages for validating input and handling database operations. In many cases your system will be safe and sound by using a validation library like
-[joi](https://github.com/hapijs/joi) or [yup](https://github.com/jquense/yup) and an ORM/ODM from the list below. This should guarantee the use of parameterized queries and data bindings to ensure the validated data is properly escaped and handled without opening unwanted attack vectors. Many of these libraries will ease your life as a developer by enabling many useful features like not having to write complex queries manually, supplying types for language-based type systems or converting data types to wanted formats. To conclude, __always__ validate any data you are going to store and use proper data-mapping libraries to handle the dangerous work for you.
+Lorsque vous créez la logique de votre base de données, vous devez faire attention aux éventuels vecteurs d'injection qui pourraient être exploités par des attaquants potentiels. L'écriture manuelle des queries dans la base de données ou l'absence de validation des données pour les demandes des utilisateurs sont les méthodes les plus simples pour permettre ces vulnérabilités. Cette situation est cependant facile à éviter lorsque vous utilisez des paquets appropriés pour valider les entrées et traiter les opérations de la base de données. Dans de nombreux cas, votre système sera sûr et solide en utilisant une bibliothèque de validation comme
+[joi](https://github.com/hapijs/joi) ou [yup](https://github.com/jquense/yup) et un ORM/ODM de la liste ci-dessous. Cela devrait garantir l'utilisation de queries paramétrées et de liaisons de données afin de s'assurer que les données validées sont correctement échappées et traitées sans ouvrir de vecteurs d'attaque indésirables. Nombre de ces bibliothèques vous faciliteront la vie en tant que développeur en vous permettant de bénéficier de nombreuses fonctionnalités utiles, comme le fait de ne pas avoir à écrire manuellement des queries complexes, la fourniture de types pour les systèmes de types basés sur le langage ou la conversion des types de données dans les formats souhaités. Pour conclure, validez __toujours__ toutes les données que vous allez stocker et utilisez les bibliothèques de conversion de données appropriées pour effectuer le travail dangereux à votre place.
 
-### Libraries
+### Bibliothèques
 
 - [TypeORM](https://github.com/typeorm/typeorm)
 - [sequelize](https://github.com/sequelize/sequelize)
@@ -14,24 +14,24 @@ When creating your database logic you should watch out for eventual injection ve
 - [Objection.js](https://github.com/Vincit/objection.js)
 - [waterline](https://github.com/balderdashy/waterline)
 
-### Example - NoSQL query injection
+### Exemple - Injection de query NoSQL
 
 ```javascript
-// A query of
+// Une query
 db.balances.find({
   active: true,
   $where: (obj) => obj.credits - obj.debits < userInput
 });
 
-// Where userInput equals
+// Où userInput est égal à
 "(function(){var date = new Date(); do{curDate = new Date();}while(curDate-date<10000); return Math.max();})()"
 
-// will trigger a denial of service
+// déclenchera un déni de service
 
-// Another user input might inject other logic resulting in the database exposing sensitive data
+// Une autre entrée de l'utilisateur pourrait injecter une autre logique, ce qui aurait pour conséquence d'exposer des données sensibles dans la base de données
 ```
 
-### Example - SQL injection
+### Exemple - injection SQL
 
 ```
 SELECT username, firstname, lastname FROM users WHERE id = 'user input';
@@ -39,16 +39,16 @@ SELECT username, firstname, lastname FROM users WHERE id = 'user input';
 SELECT username, firstname, lastname FROM users WHERE id = 'evil'input';
 ```
 
-### Additional resources
+### Ressources supplémentaires
 
-🔗 [OWASP SQL Injection](https://www.owasp.org/index.php/SQL_Injection)
+🔗 [OWASP injection SQL](https://www.owasp.org/index.php/SQL_Injection)
 
-🔗 [OWASP SQL Injection Prevention Cheat Sheet](https://github.com/OWASP/CheatSheetSeries)
+🔗 [OWASP Aide-mémoire sur la prévention des injections SQL](https://github.com/OWASP/CheatSheetSeries)
 
-🔗 [Testing for NoSQL Injection](https://www.owasp.org/index.php/Testing_for_NoSQL_injection)
+🔗 [Tests pour l'injection NoSQL](https://www.owasp.org/index.php/Testing_for_NoSQL_injection)
 
-### What other bloggers say
+### Ce que disent les autres blogueurs
 
-Risks of NoSQL injection from the [OWASP wiki](https://www.owasp.org/index.php/Testing_for_NoSQL_injection)
+Risques de l'injection NoSQL extrait du [wiki OWASP](https://www.owasp.org/index.php/Testing_for_NoSQL_injection)
 
-> NoSQL injection attacks may execute in different areas of an application than traditional SQL injection. Where SQL injection would execute within the database engine, NoSQL variants may execute during within the application layer or the database layer, depending on the NoSQL API used and data model. Typically NoSQL injection attacks will execute where the attack string is parsed, evaluated, or concatenated into a NoSQL API call.
+> Les attaques par injection NoSQL peuvent s'exécuter dans des zones différentes d'une application que celle de l'injection SQL traditionnelle. Là où l'injection SQL s'exécuterait dans le moteur de base de données, les versions NoSQL peuvent s'exécuter, selon l'API NoSQL utilisée et le modèle de données, dans la couche applicative ou dans la couche base de données. En général, les attaques par injection NoSQL s'exécutent lorsque la chaîne d'attaque est analysée, évaluée ou concaténée à l'intérieur d'un appel d'une API NoSQL.
