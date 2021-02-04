@@ -1,17 +1,17 @@
-# Extract secrets from config files or use npm package that encrypts them
+# Retirez les secrets des fichiers de configuration ou utiliser des paquets pour les crypter
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-The most common and secure way to provide a Node.js application access to keys and secrets is to store them using environment variables on the system where it is being run. Once set, these can be accessed from the global `process.env` object.
-A litmus test for whether an app has all config correctly factored out of the code is whether the codebase could be made open source at any moment, without compromising any credentials.
+La façon la plus courante et la plus sûre de permettre à une application Node.js d'accéder à des clés et à des secrets est de les stocker en utilisant des variables d'environnement sur le système où elle est exécutée. Une fois ces variables définies, on peut y accéder à partir de l'objet global `process.env`.
+Un test décisif pour savoir si une application a correctement pris en compte toutes les configurations dans le code, c'est de savoir si la base du code peut être rendue open source à tout moment, sans compromettre les références.
 
-For rare situations where secrets do need to be stored inside source control, using a package such as [cryptr](https://www.npmjs.com/package/cryptr) allows these to be stored in an encrypted form as opposed to in plain text.
+Dans les rares cas où des secrets doivent être stockés dans le contenu des sources, l'utilisation d'un logiciel tel que [cryptr](https://www.npmjs.com/package/cryptr) permet de les stocker sous une forme cryptée plutôt qu'en texte brut.
 
-There are a variety of tools available which use git commit to audit commits and commit messages for accidental additions of secrets, such as [git-secrets](https://github.com/awslabs/git-secrets).
+Il existe une variété d'outils qui utilisent git pour auditer les commits et les messages de commit pour les ajouts accidentels de secrets, tels que [git-secrets](https://github.com/awslabs/git-secrets).
 
-### Code example
+### Exemple de code
 
-Accessing an API key stored in an environment variable:
+Accès à une clé d'une API stockée dans une variable d'environnement :
 
 ```javascript
     const azure = require('azure');
@@ -20,7 +20,7 @@ Accessing an API key stored in an environment variable:
     const blobService = azure.createBlobService(apiKey);
 ```
 
-Using `cryptr` to store an encrypted secret:
+Utilisation de `cryptr` pour stocker un secret crypté :
 
 ```javascript
 const Cryptr = require('cryptr');
@@ -28,9 +28,9 @@ const cryptr = new Cryptr(process.env.SECRET);
  
 let accessToken = cryptr.decrypt('e74d7c0de21e72aaffc8f2eef2bdb7c1');
  
-console.log(accessToken);  // outputs decrypted string which was not stored in source control
+console.log(accessToken);  // produit une chaîne décryptée qui n'a pas été stockée dans le contenu de la source
 ```
 
-### What other bloggers say
+### Ce que disent les autres blogueurs
 
-> Env vars are easy to change between deploys without changing any code; unlike config files, there is little chance of them being checked into the code repo accidentally; and unlike custom config files, or other config mechanisms such as Java System Properties, they are a language- and OS-agnostic standard. [From: The 12 factor app](https://12factor.net/config)
+> Les variables d'environnement sont faciles à modifier entre les déploiements sans changer le code, contrairement aux fichiers de configuration, il y a peu de chances qu'elles soient enregistrées accidentellement dans le dépôt de code et contrairement aux fichiers de configuration personnalisés ou à d'autres mécanismes de configuration tels que les propriétés du système Java, elles sont une norme qui ne tient pas compte du langage et du système d'exploitation. [Extrait de l'application 12 facteurs](https://12factor.net/config).
