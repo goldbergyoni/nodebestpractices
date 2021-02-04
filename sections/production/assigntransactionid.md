@@ -8,7 +8,8 @@ A typical log is a warehouse of entries from all components and requests. Upon d
 
 <br/><br/>
 
-### Code example: sharing TransactionId among current request functions, using [cls-rtracer](https://www.npmjs.com/package/cls-rtracer) (a library based on [async-local-storage](https://nodejs.org/api/async_hooks.html#async_hooks_class_asynclocalstorage), implemented for Express & Koa middlewares and Fastify & Hapi plugins)
+### Code example: sharing TransactionId among current request functions 
+using [cls-rtracer](https://www.npmjs.com/package/cls-rtracer) (a library based on [async-local-storage](https://nodejs.org/api/async_hooks.html#async_hooks_class_asynclocalstorage), implemented for Express & Koa middlewares and Fastify & Hapi plugins)
 
 ```javascript
 const express = require('express');
