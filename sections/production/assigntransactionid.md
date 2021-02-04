@@ -27,10 +27,10 @@ app.get('/getUserData/{id}', (req, res, next) => {
 
             res.json(user);
         })
-        .catch(e) {
+        .catch(err) {
             // As next step I'd recommand using rTracer.id() from inside the logger component, to prevent from using it all over the code
-            logger.error(`error while fetching user id ${req.params.id} data`, { transactionId: rTracer.id() });
-            next(e);
+            logger.error(`error while fetching user id ${req.params.id} data`, { transactionId: rTracer.id(), error: err });
+            next(err);
         }
 })
 ```
@@ -40,10 +40,19 @@ app.get('/getUserData/{id}', (req, res, next) => {
 ```javascript
 // cls-tracer has the ability to store the TransactionId on your service outgoing requests headers, and extract the TransactionId from incoming requests headers, just by overriding the default middleware config
 app.use(rTracer.expressMiddleware({
+    // Add TransactionId to the header
     echoHeader: true,
+    // Respect TransactionId from header
     useHeader: true,
+    // Request and respone header name
     headerName: 'x-transaction-id'
 }));
+
+// The supplied TransactionId will be now the one that was passed from the previous request; if this is the first request in the chain, it will be just generated
+const transactionId = rTracer.id();
+
+
+
 ```
 
 
