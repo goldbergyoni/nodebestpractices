@@ -1223,6 +1223,42 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "6gx7iycn53ioq2e8apk1j1ypwov4giui",
+      "name": "007",
+      "avatar_url": "https://avatars.githubusercontent.com/u/65741741?v=4",
+      "profile": "https://keybase.io/651z9pz968v2accj",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "anediaz",
+      "name": "Ane Diaz de Tuesta",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17216937?v=4",
+      "profile": "http://www.anediaz.com",
+            "contributions": [
+        "translation"
+      ]
+
+},{
+      "login": "YukiOta",
+      "name": "YukiOta",
+      "avatar_url": "https://avatars.githubusercontent.com/u/23182489?v=4",
+      "profile": "http://yukioh.net",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "Fdawgs",
+      "name": "Frazer Smith",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43814140?v=4",
+      "profile": "https://www.yeovilhospital.co.uk/",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
