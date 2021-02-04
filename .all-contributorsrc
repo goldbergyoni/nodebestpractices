@@ -1250,6 +1250,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "Fdawgs",
+      "name": "Frazer Smith",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43814140?v=4",
+      "profile": "https://www.yeovilhospital.co.uk/",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
