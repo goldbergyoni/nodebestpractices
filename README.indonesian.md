@@ -51,7 +51,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 3. [Praktik Gaya Kode (12) ](#3-praktik-gaya-kode)
 4. [Praktik Pengujian dan Kualitas Secara Keseluruhan (13) ](#4-praktik-pengujian-dan-kualitas-secara-keseluruhan )
 5. [Praktik Dalam Produksi(19) ](#5-praktik-dalam-produksi)
-6. [Praktik Keamanan (25)](#6-security-best-practices)
+6. [Praktik Keamanan (25)](#6-praktik-terbaik-keamanan)
 7. [Praktik Performa (2) (Pekerjaan Dalam Proses ✍️)](#7-draf-praktik-terbaik-performa)
 8. [Praktik Docker (15)](#8-docker-best-practices)
 
@@ -755,21 +755,21 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <p align="right"><a href="#daftar-isi">⬆ Kembali ke atas</a></p>
 
-# `6. Security Best Practices`
+# `6. Praktik Terbaik Keamanan`
 
 <div align="center">
 <img src="https://img.shields.io/badge/OWASP%20Threats-Top%2010-green.svg" alt="54 items"/>
 </div>
 
-## ![✔] 6.1. Embrace linter security rules
+## ![✔] 6.1. Terapkan aturan keamanan linter
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Make use of security-related linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to catch security vulnerabilities and issues as early as possible, preferably while they're being coded. This can help catching security weaknesses like using eval, invoking a child process or importing a module with a string literal (e.g. user input). Click 'Read more' below to see code examples that will get caught by a security linter
+**TL;DR:** Manfaatkan plugin linter yang berhubungan dengan keamanan seperti [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) untuk menangkap kerentanan dan masalah keamanan sedini mungkin, lebih baik lagi jika dalam proses pembuatan kode. Hal ini dapat membantu menangkap keamanan yang lemah seperti penggunaan eval, menjalankan child process atau memanggil modul menggunakan literal string (misalnya masukan pengguna). Klik 'Baca selengkapnya' di bawah ini untuk melihat contoh kode yang akan dideteksi oleh linter keamanan
 
-**Otherwise:** What could have been a straightforward security weakness during development becomes a major issue in production. Also, the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories
+**Jika tidak:** Kelemahan keamanan yang jelas selama masa pengembangan malah menjadi menjadi masalah besar dalam produksi. Selain itu, proyek mungkin tidak mengikuti praktik kode keamanan yang konsisten, yang mengarah ke kerentanan baru, atau rahasia sensitif yang ter-_commit_ ke dalam repositori remote
 
-🔗 [**Read More: Lint rules**](/sections/security/lintrules.md)
+🔗 [**Baca selengkapnya: Lint rules**](/sections/security/lintrules.md)
 
 <br/><br/>
 
