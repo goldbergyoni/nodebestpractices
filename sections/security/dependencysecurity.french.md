@@ -1,53 +1,54 @@
-# Constantly and automatically inspect for vulnerable dependencies
+# Inspectez constamment et automatiquement les dépendances vulnérables
 
-### One Paragraph Explainer
+### Un paragraphe d'explication
 
-The majority of Node.js applications rely heavily on a large number of third party modules from npm or Yarn, both popular package registries, due to ease and speed of development. However, the downside to this benefit is the security risks of including unknown vulnerabilities into your application, which is a risk recognised by its place in the OWASP top critical web application security risks list.
+La majorité des applications Node.js pour des raisons de facilité et de rapidité de développement reposent largement sur un grand nombre de modules tiers de npm ou de Yarn, deux registres de paquets populaires. Cependant, l'inconvénient de cet avantage est le risque d'inclure des vulnérabilités inconnues dans votre application, risque reconnu par son classement dans la liste des principaux risques de sécurité des applications web critiques de l'OWASP.
 
-There is a number of tools available to help identify third-party packages in Node.js applications which have been identified as vulnerable by the community to mitigate the risk of introducing them into your project. These can be used periodically from CLI tools or included as part of your application's build process.
+Il existe un certain nombre d'outils disponibles pour aider à identifier les paquets tiers dans les applications Node.js qui ont été identifiés comme vulnérables par la communauté afin d'atténuer le risque de les introduire dans votre projet. Ceux-ci peuvent être utilisés périodiquement à partir des outils CLI ou inclus dans le cadre du processus de construction de votre application.
 
-### Table of Contents
+### Table des matières
 
 - [NPM audit](#npm-audit)
 - [Snyk](#snyk)
 - [Greenkeeper](#greenkeeper)
+- [Ressources complémentaires](#ressources-complémentaires)
 
 ### NPM Audit
 
-`npm audit` is a new cli tool introduced with NPM@6.
+`npm audit` est un nouvel outil cli introduit avec NPM@6.
 
-Running `npm audit` will produce a report of security vulnerabilities with the affected package name, vulnerability severity and description, path, and other information, and, if available, commands to apply patches to resolve vulnerabilities.
+L'exécution de `npm audit` produira un rapport des vulnérabilités de sécurité avec le nom du paquet affecté, la gravité et la description de la vulnérabilité, le chemin et d'autres informations, et si disponibles, des commandes pour appliquer des correctifs pour résoudre les vulnérabilités.
 
-![npm audit example](/assets/images/npm-audit.png)
+![exemple npm audit](/assets/images/npm-audit.png)
 
-🔗 [Read on: NPM blog](https://docs.npmjs.com/getting-started/running-a-security-audit)
+🔗 [A lire : NPM blog](https://docs.npmjs.com/getting-started/running-a-security-audit)
 
 ### Snyk
 
-Snyk offers a feature-rich CLI, as well as GitHub integration. Snyk goes further with this and in addition to notifying vulnerabilities, also automatically creates new pull requests fixing vulnerabilities as patches are released for known vulnerabilities.
+Snyk propose une CLI riche en fonctionnalités, ainsi qu'une intégration dans GitHub. Snyk va plus loin dans cette démarche et en plus de notifier les vulnérabilités, il crée automatiquement de nouvelles pull requests corrigeant les vulnérabilités au fur et à mesure que des correctifs sont publiés pour des vulnérabilités connues.
 
-Snyk's feature rich website also allows for ad-hoc assessment of dependencies when provided with a GitHub repository or npm module url. You can also search for npm packages which have vulnerabilities directly.
+Le site web riche en fonctionnalités de Snyk permet également une évaluation adéquate des dépendances lorsqu'il est associé avec un dépôt GitHub ou une URL de module npm. Vous pouvez également rechercher directement les paquets npm qui présentent des vulnérabilités.
 
-An example of the output of the Synk GitHub integration automatically created pull request:
-![synk GitHub example](/assets/images/snyk.png)
+Un exemple d'affichage de l'intégration de Snyk avec GitHub qui crée automatiquement un pull request :
+![exemple GitHub avec snyk](/assets/images/snyk.png)
 
-🔗 [Read on: Snyk website](https://snyk.io/)
+🔗 [A lire : Site web de Snyk](https://snyk.io/)
 
-🔗 [Read on: Synk online tool to check npm packages and GitHub modules](https://snyk.io/test)
+🔗 [A lire : Outil en ligne Synk pour vérifier les paquets npm et les modules GitHub](https://snyk.io/test)
 
 ### Greenkeeper
 
-Greenkeeper is a service which offers real-time dependency updates, which keeps an application more secure by always using the most up to date and patched dependency versions.
+Greenkeeper est un service qui propose des mises à jour de dépendances en temps réel, ce qui permet de garder une application plus sûre en utilisant toujours les versions de dépendances les plus récentes et les plus corrigées.
 
-Greenkeeper watches the npm dependencies specified in a repository's `package.json` file, and automatically creates a working branch with each dependency update. The repository CI suite is then run to reveal any breaking changes for the updated dependency version in the application. If CI fails due to the dependency update, a clear and concise issue is created in the repository to be auctioned, outlining the current and updated package versions, along with information and commit history of the updated version.
+Greenkeeper surveille les dépendances npm spécifiées dans le fichier `package.json` d'un dépôt et crée automatiquement une branche de travail avec chaque mise à jour de dépendance. La suite CI du dépôt est ensuite exécutée pour révéler les changements de rupture de la version de dépendance mise à jour dans l'application. Si le CI échoue en raison de la mise à jour des dépendances, une issue claire et concise est créée dans le dépôt pour être traitée, décrivant les versions actuelles et mises à jour du paquet, ainsi que les informations et l'historique des commits de la version mise à jour.
 
-An example of the output of the Greenkeeper GitHub integration automatically created pull request:
+Un exemple d'affichage de l'intégration de Greenkeeper avec GitHub qui crée automatiquement un pull request :
 
-![synk github example](/assets/images/greenkeeper.png)
-🔗 [Read on: Greenkeeper website](https://greenkeeper.io/)
+![exemple Github avec Greenkeeper](/assets/images/greenkeeper.png)
+🔗 [A lire : Site web de Greenkeeper](https://greenkeeper.io/)
 
-### Additional resources
+### Ressources complémentaires
 
-🔗 [Rising Stack Blog: Node.js dependency risks](https://blog.risingstack.com/controlling-node-js-security-risk-npm-dependencies/)
+🔗 [Blog de Rising Stack : Risques de dépendance de Node.js](https://blog.risingstack.com/controlling-node-js-security-risk-npm-dependencies/)
 
-🔗 [NodeSource Blog: Improving npm security](https://nodesource.com/blog/how-to-reduce-risk-and-improve-security-around-npm)
+🔗 [Blog de NodeSource : Améliorez la sécurité de npm](https://nodesource.com/blog/how-to-reduce-risk-and-improve-security-around-npm)
