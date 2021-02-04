@@ -785,15 +785,15 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.3 Extract secrets from config files or use packages to encrypt them
+## ![✔] 6.3 Keluarkan rahasia dari file konfigurasi atau gunakan paket untuk mengenkripsinya
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A3:Sensitive%20Data%20Exposure%20-green.svg" alt=""/></a>
 
-**TL;DR:** Never store plain-text secrets in configuration files or source code. Instead, make use of secret-management systems like Vault products, Kubernetes/Docker Secrets, or using environment variables. As a last resort, secrets stored in source control must be encrypted and managed (rolling keys, expiring, auditing, etc). Make use of pre-commit/push hooks to prevent committing secrets accidentally
+**TL;DR:** Jangan pernah menyimpan rahasia dalam bentuk teks biasa dalam file konfigurasi atau kode sumber. Sebagai gantinya, gunakan sistem manajemen rahasia seperti produk _Vault_, _Kubernetes/Docker Secrets_, atau gunakan variabel lingkungan. Sebagai cara terakhir, rahasia yang disimpan di kontrol kode harus terenkripsi dan teratur (kunci bergulir, kedaluwarsa, audit, dll.). Manfaatkan hook pra-_commit_/_push_ untuk mencegah agar rahasia tidak ter-_commit_  secara tidak sengaja
 
-**Otherwise:** Source control, even for private repositories, can mistakenly be made public, at which point all secrets are exposed. Access to source control for an external party will inadvertently provide access to related systems (databases, apis, services, etc).
+**Jika tidak:** Kontrol sumber, bahkan untuk repositori pribadi, dapat di buat publik secara tidak sengaja, di mana semua rahasia dapat terungkap. Akses kontrol sumber dari pihak eksternal dapat memberikan akses ke sistem terkait (database, api, layanan, dll.) secara tidak sengaja.
 
-🔗 [**Read More: Secret management**](/sections/security/secretmanagement.md)
+🔗 [**Baca selengkapnya: Secret management**](/sections/security/secretmanagement.md)
 
 <br/><br/>
 
