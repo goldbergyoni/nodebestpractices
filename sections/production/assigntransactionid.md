@@ -62,7 +62,7 @@ const response = await axios.get('https://externalService.com/api/getAllUsers');
 ![alt text](https://i.ibb.co/YjJwgbN/logs-with-transaction-id.jpg "Logs with transaction id")
 <br/><br/>
 
-### Bad: logs without a TransactionId - no option to use a filter and see only a single flow, you need understand by yourself which logs are relevant between all the "noise"
+### Bad: logs without a TransactionId - no option to use a filter and see only a single flow, you need to understand by yourself which logs are relevant between all the "noise" around
 ![alt text](https://i.ibb.co/PFgVNfn/logs-withtout-transaction-id.jpg "Logs with transaction id")
 
 <br/><br/>
