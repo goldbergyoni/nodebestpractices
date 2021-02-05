@@ -797,15 +797,15 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.4. Prevent query injection vulnerabilities with ORM/ODM libraries
+## ![✔] 6.4. Cegah  injeksi kueri dengan menggunakan pustaka ORM/ODM
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
-**TL;DR:** To prevent SQL/NoSQL injection and other malicious attacks, always make use of an ORM/ODM or a database library that escapes data or supports named or indexed parameterized queries, and takes care of validating user input for expected types. Never just use JavaScript template strings or string concatenation to inject values into queries as this opens your application to a wide spectrum of vulnerabilities. All the reputable Node.js data access libraries (e.g. [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose)) have built-in protection against injection attacks.
+**TL;DR:** Untuk mencegah injeksi SQL/NoSQL dan serangan buruk lainnya, selalu gunakan ORM/ODM atau pustaka database yang melakukan _escape_ pada data atau mendukung kueri berparameter yang bernama atau diindeks, dan tangani validasi input pengguna agar sesuai dengan tipe yang diharapkan. Jangan pernah hanya menggunakan template string JavaScript atau penggabungan string untuk memasukkan nilai ke dalam kueri karena ini membuka aplikasi Anda ke spektrum kerentanan yang luas. Semua pustaka akses data pada Node.js (misalnya [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose)) memiliki perlindungan bawaan untuk menghindari serangan injeksi.
 
-**Otherwise:** Unvalidated or unsanitized user input could lead to operator injection when working with MongoDB for NoSQL, and not using a proper sanitization system or ORM will easily allow SQL injection attacks, creating a giant vulnerability.
+**Jika tidak:** Masukan pengguna yang tidak divalidasi atau tidak disanitasi dapat menyebabkan injeksi operator saat menggunakan MongoDB untuk NoSQL, dan dengan tidak menggunakan sistem sanitasi atau ORM dapat memungkinkan serangan injeksi SQL, membuat suatu kerentanan yang besar.
 
-🔗 [**Read More: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.md)
+🔗 [**Baca selengkapnya: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.md)
 
 <br/><br/>
 
