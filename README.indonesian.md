@@ -865,15 +865,15 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.10. Validate incoming JSON schemas
+## ![✔] 6.10. Validasi skema JSON yang diterima
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7: XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a>
 
-**TL;DR:** Validate the incoming requests' body payload and ensure it meets expectations, fail fast if it doesn't. To avoid tedious validation coding within each route you may use lightweight JSON-based validation schemas such as [jsonschema](https://www.npmjs.com/package/jsonschema) or [joi](https://www.npmjs.com/package/joi)
+**TL;DR:** Validasi muatan _body_ pada request dan pastikan agar muatan memenuhi ekspektasi, gagalkan dengan cepat jika muatan tidak memenuhi ekspektasi. Untuk menghindari kode validasi yang berantakan dalam setiap rute Anda dapat menggunakan validasi skema berbasis JSON yang ringan seperti [jsonschema](https://www.npmjs.com/package/jsonschema) atau [joi](https://www.npmjs.com/package/joi)
 
-**Otherwise:** Your generosity and permissive approach greatly increases the attack surface and encourages the attacker to try out many inputs until they find some combination to crash the application
+**Jika tidak:** Kemurahan hati dan cara permisif Anda dapat meningkatkan kemungkinan penyerangan dan mendorong penyerang untuk mencoba banyak masukan sampai mereka menemukan beberapa kombinasi untuk merusak aplikasi
 
-🔗 [**Read More: Validate incoming JSON schemas**](/sections/security/validation.md)
+🔗 [**Baca selengkapnya: Validate incoming JSON schemas**](/sections/security/validation.md)
 
 <br/><br/>
 
