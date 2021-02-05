@@ -58,6 +58,47 @@ const response = await axios.get('https://externalService.com/api/getAllUsers');
 ```
 <br/><br/>
 
+
+There are two restrictions on using cls-rtracer, due to its dependence on async-local-storage (You can think of async-local-storage as the node.js alternative to thread local storage, more details in the link attached above):
+1. async-local-storage requires Node v.14. 
+2. async-local-storage is based on a lower level construct in Node called async_hooks which is still experimental, so you may have the fear of performance problems. Even if they do exist, they are very negligible, but you should make your own considerations.
+
+<br/>
+
+<details>
+<summary><strong>Code example - typical Express configuration without async-local-storage dependence</strong></summary>
+
+```javascript
+// when receiving a new request, start a new isolated context and set a transaction id. The following example is using the npm library continuation-local-storage to isolate requests
+
+const { createNamespace } = require('continuation-local-storage');
+const session = createNamespace('my session');
+
+router.get('/:id', (req, res, next) => {
+    session.set('transactionId', 'some unique GUID');
+    someService.getById(req.params.id);
+    logger.info('Starting now to get something by id');
+});
+
+// Now any other service or components can have access to the contextual, per-request, data
+class someService {
+    getById(id) {
+        logger.info('Starting to get something by id');
+        // other logic comes here
+    }
+}
+
+// The logger can now append the transaction id to each entry so that entries from the same request will have the same value
+class logger {
+    info (message) {
+        console.log(`${message} ${session.get('transactionId')}`);
+    }
+}
+```
+</details>
+
+<br/><br/>
+
 ### Good: Logs with an assigned TransactionId - can be used as filter to see only a single flow
 ![alt text](https://i.ibb.co/YjJwgbN/logs-with-transaction-id.jpg "Logs with transaction id")
 <br/><br/>
