@@ -841,15 +841,15 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.8. Protect Users' Passwords/Secrets using brypt or scrypt
+## ![✔] 6.8. Lindungi kata sandi/rahasia pengguna menggunakan bcrypt atau scrypt
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;DR:** Passwords or secrets (e.g. API keys) should be stored using a secure hash + salt function like `bcrypt`,`scrypt`, or worst case `pbkdf2`.
+**TL;DR:** Kata sandi atau rahasia (seperti API keys) harus disimpan menggunakan fungsi hash + salt yang aman seperti `bcrypt`,`scrypt`, atau setidaknya `pbkdf2`.
 
-**Otherwise:** Passwords and secrets that are stored without using a secure function are vulnerable to brute forcing and dictionary attacks that will lead to their disclosure eventually.
+**Jika tidak:** Kata sandi dan rahasia yang disimpan tanpa fungsi yang aman akan rentan terhadap _brute force_ dan penyerangan kamus yang pada akhirnya akan mengarah pada data rahasia yang terekspos.
 
-🔗 [**Read More: User Passwords**](/sections/security/userpasswords.md)
+🔗 [**Baca selengkapnya: User Passwords**](/sections/security/userpasswords.md)
 
 <br/><br/>
 
