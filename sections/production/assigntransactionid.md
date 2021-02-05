@@ -59,7 +59,7 @@ const response = await axios.get('https://externalService.com/api/getAllUsers');
 <br/><br/>
 
 
-There are two restrictions on using cls-rtracer, due to its dependence on async-local-storage (You can think of async-local-storage as the node.js alternative to thread local storage, more details in the link attached above):
+There are two restrictions on using cls-rtracer, due to its dependence on async-local-storage (You can think of async-local-storage as the node.js alternative to thread local storage, more details [here](https://www.freecodecamp.org/news/async-local-storage-nodejs/)):
 1. async-local-storage requires Node v.14. 
 2. async-local-storage is based on a lower level construct in Node called async_hooks which is still experimental, so you may have the fear of performance problems. Even if they do exist, they are very negligible, but you should make your own considerations.
 
