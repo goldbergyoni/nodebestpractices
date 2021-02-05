@@ -853,15 +853,15 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.9. Escape HTML, JS and CSS output
+## ![✔] 6.9. Escape keluaran HTML, JS dan CSS
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Untrusted data that is sent down to the browser might get executed instead of just being displayed, this is commonly referred as a cross-site-scripting (XSS) attack. Mitigate this by using dedicated libraries that explicitly mark the data as pure content that should never get executed (i.e. encoding, escaping)
+**TL;DR:** Data yang tidak terpercaya yang dikirim ke browser mungkin akan tereksekusi alih-alih hanya ditampilkan, hal ini biasanya disebut dengan serangan _cross-site-scripting_ (XSS). Hindari hal ini dengan menggunakan pustaka khusus yang secara eksplisit menandai data sebagai konten yang tidak boleh dieksekusi (misalnya encoding, escaping)
 
-**Otherwise:** An attacker might store malicious JavaScript code in your DB which will then be sent as-is to the poor clients
+**Jika tidak:** Penyerang mungkin menyimpan kode JavaScript yang berbahaya di DB Anda yang kemudian akan dikirim apa adanya ke pengguna
 
-🔗 [**Read More: Escape output**](/sections/security/escape-output.md)
+🔗 [**Baca selengkapnya: Escape output**](/sections/security/escape-output.md)
 
 <br/><br/>
 
