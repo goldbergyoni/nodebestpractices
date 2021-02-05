@@ -817,15 +817,15 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.6. Adjust the HTTP response headers for enhanced security
+## ![✔] 6.6. Sesuaikan header response HTTP untuk meningkatkan keamanan
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Your application should be using secure headers to prevent attackers from using common attacks like cross-site scripting (XSS), clickjacking and other malicious attacks. These can be configured easily using modules like [helmet](https://www.npmjs.com/package/helmet).
+**TL;DR:** Aplikasi Anda harus menggunakan _header_ yang aman untuk mencegah penyerang dari serangan umum seperti _cross-site scripting_ (XSS), _clickjacking_ dan serangan berbahaya lainnya. Hal ini dapat dikonfigurasikan dengan mudah menggunakan modul seperti [helmet](https://www.npmjs.com/package/helmet).
 
-**Otherwise:** Attackers could perform direct attacks on your application's users, leading to huge security vulnerabilities
+**Jika tidak:** Penyerang dapat melakukan serangan langsung pada pengguna aplikasi, yang menyebabkan kerentanan keamanan yang sangat besar
 
-🔗 [**Read More: Using secure headers in your application**](/sections/security/secureheaders.md)
+🔗 [**Baca selengkapnya: Using secure headers in your application**](/sections/security/secureheaders.md)
 
 <br/><br/>
 
