@@ -889,18 +889,18 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.12. Prevent brute-force attacks against authorization
+## ![✔] 6.12. Cegah serangan _brute-force_ terhadap otorisasi
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;DR:** A simple and powerful technique is to limit authorization attempts using two metrics:
+**TL;DR:** Teknik sederhana dan kuat adalah membatasi upaya otorisasi menggunakan dua metrik:
 
-1. The first is number of consecutive failed attempts by the same user unique ID/name and IP address.
-2. The second is number of failed attempts from an IP address over some long period of time. For example, block an IP address if it makes 100 failed attempts in one day.
+1. Pertama adalah upaya gagal berturut-turut oleh ID / nama unik dan alamat IP yang sama.
+2. Kedua adalah jumlah upaya gagal dari sebuah alamat IP selama jangka waktu yang lama. Misalnya, blokir alamat IP jika IP tersebut melakukan 100 upaya gagal dalam satu hari.
 
-**Otherwise:** An attacker can issue unlimited automated password attempts to gain access to privileged accounts on an application
+**Jika tidak:** Penyerang dapat melakukan percobaan kata sandi otomatis tanpa batas untuk mendapatkan akses ke akun yang memiliki hak istimewa pada suatu aplikasi
 
-🔗 [**Read More: Login rate limiting**](/sections/security/login-rate-limit.md)
+🔗 [**Baca selengkapnya: Login rate limiting**](/sections/security/login-rate-limit.md)
 
 <br/><br/>
 
