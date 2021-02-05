@@ -57,11 +57,11 @@ app.use(rTracer.expressMiddleware({
 <br/><br/>
 
 ### Good: Logs with an assigned TransactionId - can be used it as filter to see only a single flow
-![alt text](https://github.com/yedidyas/nodebestpractices/blob/master/assets/images/logs-with-transaction-id.jpg "Logs with transaction id")
+![alt text](https://i.ibb.co/YjJwgbN/logs-with-transaction-id.jpg "Logs with transaction id")
 <br/><br/>
 
 ### Bad: logs without a TransactionId - no option to use a filter and see only a single flow, you need understand by yourself which logs are relevant between all the "noise"
-![alt text](https://github.com/yedidyas/nodebestpractices/blob/master/assets/images/logs-withtout-transaction-id.jpg "Logs with transaction id")
+![alt text](https://i.ibb.co/PFgVNfn/logs-withtout-transaction-id.jpg "Logs with transaction id")
 
 <br/><br/>
 
