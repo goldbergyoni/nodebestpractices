@@ -877,15 +877,15 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.11. Support blacklisting JWTs
+## ![✔] 6.11. Dukung daftar hitam JWT
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;DR:** When using JSON Web Tokens (for example, with [Passport.js](https://github.com/jaredhanson/passport)), by default there's no mechanism to revoke access from issued tokens. Once you discover some malicious user activity, there's no way to stop them from accessing the system as long as they hold a valid token. Mitigate this by implementing a blacklist of untrusted tokens that are validated on each request.
+**TL;DR:** Ketika menggunakan _JSON Web Tokens_ (misalnya, dengan [Passport.js](https://github.com/jaredhanson/passport)), secara default tidak ada cara untuk mencabut akses dari token yang dibuat. Setelah Anda menemukan beberapa aktifitas pengguna yang berbahaya, tidak ada cara untuk mengentikan mereka dari mengakses sistem selama mereka mempunyai token yang valid. Hindari ini dengan menerapkan daftar hitam untuk token yang tidak tepercaya yang divalidasi pada setiap request.
 
-**Otherwise:** Expired, or misplaced tokens could be used maliciously by a third party to access an application and impersonate the owner of the token.
+**Jika tidak:** Token yang kedaluwarsa atau salah ditempatkan dapat digunakan secara jahat oleh pihak ketiga untuk mengakses aplikasi dan menyamar sebagai pemilik token.
 
-🔗 [**Read More: Blacklist JSON Web Tokens**](/sections/security/expirejwt.md)
+🔗 [**Baca selengkapnya: Blacklist JSON Web Tokens**](/sections/security/expirejwt.md)
 
 <br/><br/>
 
