@@ -829,15 +829,15 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.7. Constantly and automatically inspect for vulnerable dependencies
+## ![✔] 6.7. Selalu periksa dependensi dari kerentanan secara otomatis
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Known%20Vulnerabilities%20-green.svg" alt=""/></a>
 
-**TL;DR:** With the npm ecosystem it is common to have many dependencies for a project. Dependencies should always be kept in check as new vulnerabilities are found. Use tools like [npm audit](https://docs.npmjs.com/cli/audit) or [snyk](https://snyk.io/) to track, monitor and patch vulnerable dependencies. Integrate these tools with your CI setup so you catch a vulnerable dependency before it makes it to production.
+**TL;DR:** Dengan ekosistem npm, sangat umum pada suatu proyek untuk memiliki banyak dependensi. Dependensi harus selalu diperiksa ketika kerentanan baru ditemukan. Gunakan alat seperti [npm audit](https://docs.npmjs.com/cli/audit) atau [snyk](https://snyk.io/) untuk melacak, memantau dan memperbaiki dependensi yang rentan. Integrasikan alat-alat ini dengan setup CI Anda sehingga Anda dapat menemukan dependensi yang rentan sebelum masuk ke produksi.
 
-**Otherwise:** An attacker could detect your web framework and attack all its known vulnerabilities.
+**Jika tidak:** Penyerang dapat mendeteksi framework web Anda dan menyerang semua kerentanan yang diketahui.
 
-🔗 [**Read More: Dependency security**](/sections/security/dependencysecurity.md)
+🔗 [**Baca selengkapnya: Dependency security**](/sections/security/dependencysecurity.md)
 
 <br/><br/>
 
