@@ -38,7 +38,7 @@ app.get('/getUserData/{id}', async (req, res, next) => {
     }
 })
 ```
-<br/>
+<br/><br/>
 
 ### Code example: sharing TransactionId among microservices 
 
@@ -49,19 +49,21 @@ app.use(rTracer.expressMiddleware({
     echoHeader: true,
     // Respect TransactionId from header
     useHeader: true,
-    // Request and respone header name
+    // TransactionId header name
     headerName: 'x-transaction-id'
 }));
 
 ```
-<br/>
+<br/><br/>
 
-### Good: assign 'TransactionId' to your logs
-image TBD
-### Bad: logs without any flow correaltion 
-image TBD
+### Good: Logs with an assigned TransactionId - can be used it as filter to see only a single flow
+![alt text](https://github.com/yedidyas/nodebestpractices/blob/master/assets/images/logs-with-transaction-id.jpg "Logs with transaction id")
+<br/><br/>
 
-<br/>
+### Bad: logs without a TransactionId - no option to use a filter and see only a single flow, you need understand by yourself which logs are relevant between all the "noise"
+![alt text](https://github.com/yedidyas/nodebestpractices/blob/master/assets/images/logs-withtout-transaction-id.jpg "Logs with transaction id")
+
+<br/><br/>
 
 ### Blog Quote: "The notion of a Correlation ID is simple. It’s a value that is common to all requests, messages and responses in a given transaction. With this simplicity you get a lot of power."
 
