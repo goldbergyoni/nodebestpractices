@@ -809,11 +809,11 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.5. Collection of generic security best practices
+## ![✔] 6.5. Kumpulan praktik terbaik keamanan umum
 
-**TL;DR:** This is a collection of security advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
+**TL;DR:** Ini adalah kumpulan saran keamanan yang tidak berhubungan langsung dengan Node.js - implementasi pada Node tidak jauh berbeda dengan implementasi pada bahasa lain. Klik 'Baca selengkapnya' untuk membaca kilasannya.
 
-🔗 [**Read More: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
+🔗 [**Baca selengkapnya: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
 
 <br/><br/>
 
