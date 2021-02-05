@@ -916,15 +916,15 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.14. Limit payload size using a reverse-proxy or a middleware
+## ![✔] 6.14. Batasi ukuran payload menggunakan reverse-proxy atau middleware
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** The bigger the body payload is, the harder your single thread works in processing it. This is an opportunity for attackers to bring servers to their knees without tremendous amount of requests (DOS/DDOS attacks). Mitigate this limiting the body size of incoming requests on the edge (e.g. firewall, ELB) or by configuring [express body parser](https://github.com/expressjs/body-parser) to accept only small-size payloads
+**TL;DR:** Semakin besar ukuran payload-nya, semakin sulit thread tunggal Anda untuk memprosesnya. Ini adalah kesempatan bagi penyerang untuk membuat server bertekuk lutut tanpa banyak mengirimkan request (penyerangan DOS/DDOS). Hindari ini dengan membatasi ukuran body dari request yang masuk di ujung (misalnya firewall, ELB) atau mengonfigurasi [express body parser](https://github.com/expressjs/body-parser) agar hanya menerima payload dengan ukuran kecil
 
-**Otherwise:** Your application will have to deal with large requests, unable to process the other important work it has to accomplish, leading to performance implications and vulnerability towards DOS attacks
+**Jika tidak:** Aplikasi Anda harus menangani request yang besar, tidak dapat memproses pekerjaan penting lainnya yang harus diselesaikan, yang mengarah ke implikasi performa dan kerentanan terhadap serangan DOS
 
-🔗 [**Read More: Limit payload size**](/sections/security/requestpayloadsizelimit.md)
+🔗 [**Baca selengkapnya: Limit payload size**](/sections/security/requestpayloadsizelimit.md)
 
 <br/><br/>
 
