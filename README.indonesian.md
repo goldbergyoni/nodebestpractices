@@ -928,15 +928,15 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.15. Avoid JavaScript eval statements
+## ![✔] 6.15. Hindari statement eval pada JavaScript
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** `eval` is evil as it allows executing custom JavaScript code during run time. This is not just a performance concern but also an important security concern due to malicious JavaScript code that may be sourced from user input. Another language feature that should be avoided is `new Function` constructor. `setTimeout` and `setInterval` should never be passed dynamic JavaScript code either.
+**TL;DR:** `eval` sangat buruk karena memungkinkan untuk mengeksekusi kode JavaScript dalam _run time_. Ini bukan hanya menjadi perhatian dalam performa tetapi juga pehatian dalam masalah keamanan penting karena kode JavaScript dapat bersumber dari masukan pengguna. Fitur bahasa lain yang harus dihindari adalah konstruktor `new Function`. `setTimeout` dan `setInterval` juga tidak boleh diberikan kode JavaScript yang dinamis.
 
-**Otherwise:** Malicious JavaScript code finds a way into text passed into `eval` or other real-time evaluating JavaScript language functions, and will gain complete access to JavaScript permissions on the page. This vulnerability is often manifested as an XSS attack.
+**Jika tidak:** Kode JavaScript yang berbahaya menemukan jalan ke dalam teks yang diteruskan ke `eval` atau fungsi evaluasi _real-time_ bahasa Javascript lainnya, dan akan mendapatkan akses penuh ke izin JavaScript di halaman tersebut. Kerentanan ini sering kali diwujudkan sebagai serangan XSS.
 
-🔗 [**Read More: Avoid JavaScript eval statements**](/sections/security/avoideval.md)
+🔗 [**Baca selengkapnya: Avoid JavaScript eval statements**](/sections/security/avoideval.md)
 
 <br/><br/>
 
