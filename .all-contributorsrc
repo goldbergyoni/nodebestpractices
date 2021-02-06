@@ -1238,11 +1238,11 @@
       "name": "Ane Diaz de Tuesta",
       "avatar_url": "https://avatars.githubusercontent.com/u/17216937?v=4",
       "profile": "http://www.anediaz.com",
-            "contributions": [
+      "contributions": [
         "translation"
       ]
-
-},{
+    },
+    {
       "login": "YukiOta",
       "name": "YukiOta",
       "avatar_url": "https://avatars.githubusercontent.com/u/23182489?v=4",
@@ -1256,6 +1256,15 @@
       "name": "Frazer Smith",
       "avatar_url": "https://avatars.githubusercontent.com/u/43814140?v=4",
       "profile": "https://www.yeovilhospital.co.uk/",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "rluvaton",
+      "name": "Raz Luvaton",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16746759?v=4",
+      "profile": "https://github.com/rluvaton",
       "contributions": [
         "content"
       ]
