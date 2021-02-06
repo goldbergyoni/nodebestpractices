@@ -939,7 +939,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** Javascript kode gaiztoak bidea aurkitzen du `eval` testura edo JavaScript hizkuntzak denbora errealean ebaluatzeko dituen funtzioetara sartzeko, eta sarbide osoa lortuko du JavaScripten orrialdeko baimenetara. Ahultasun hori XSS eraso gisa agertzen da askotan
 
-🔗 [**Gehiago irakurri: saihestu JavaScript eval adierazpenak**](/sections/security/avoideval.md)
+🔗 [**Gehiago irakurri: saihestu JavaScript eval adierazpenak**](/sections/security/avoideval.basque.md)
 
 <br/><br/>
 
