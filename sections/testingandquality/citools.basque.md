@@ -1,14 +1,15 @@
-# Zure CI plataforma arretaz aukeratu
+# Aukeratu arretaz zure IE plataforma
 
 <br/><br/>
 
 ### Azalpen paragrafoa
 
-CIaren munduak [Jenkins](https://jenkins.io/)en malgutasuna versus SaaS honitzaileen sinpletasunaren arteko lehia ohi izan zen. Egoera aldatzen ari da [CircleCI](https://circleci.com/) eta [Travis](https://travis-ci.org/) bezalako hornitzaileek prestatze-denbora minimodun Docker kontainerrak bezalako soluzio irmoak proposatzen dituztenetik, Jenkins 'sinpletasunean' ere lehiatzen den bitartean. Edozeinek hodeiean CI soluzio aberats bat prestatu ahal dezan arren, oraindik ere plataformaren erabakia da Jenkinsen xehetasun finenak kontrolatu behar izatea ala ez. Erabakia askotan CI prozesua pertsonalizatua izan beharrak zehazten du: hodeieko dohaineko hornitzaileek shell komando pertsonalizatuak exekutatzea ahalbidetzen dute, docker irudi pertsonalizatuak, lan fluxuaren doitzea, matrize eraikitzeak exekutatzea eta bestelako funtzionalitate aberatsak dituzte . Hala ere, infraestruktura edo Java bezalako programazio lengoaia formal bat erabiliaz CIaren logika programatzea nahi bada, Jenkins izan daiteke oraindik aukera hoberena. Bestela, aukeratu dohainekoa eta sinplea den hodeirako soluzio bat
+IEaren mundua [Jenkins](https://jenkins.io/)en malgutasuna versus SaaS hornitzaileen sinpletasunaren arteko lehia izan ohi zen. Jokoa aldatzen ari da, [CircleCI](https://circleci.com/) eta [Travis](https://travis-ci.org/) bezalako SaaS hornitzaileek irtenbide sendoak eskaintzen baitituzte Docker edukiontziak barne, gutxieneko konfigurazio denborarekin Jenkins-ek "soiltasun" segmentuan ere lehiatzen saiatzen den bitartean. Hodeian edozeinek IE irtenbide aberatsa presta dezakeen arren, prozesua xehetasun handiz kontrolatu beharra izanez gero, Jenkins da oraindik ere aukeratutako plataforma. Erabakia askotan IE prozesua zenbateraino pertsonalizatu behar den zehazten du: hodeiko dohaineko hornitzaileek/ doako eta konfiguratutako doako hodei saltzaileek ahalbidetzen dute shell komando pertsonalizatuak, docker irudi pertsonalizatuak, lan fluxu doitua, matrizearen eraikuntzak exekutatzea, eta bestelako funtzionalitate aberats batzuk dituzte. Hala ere, Java bezalako programazio lengoaia formal bat erabiliz azpiegitura kontrolatu edo IE logika programatu nahi izanez gero, Jenkins izan daiteke oraindik aukera. Bestela, aukeratu dohainekoa eta sinplea den hodeko soluzioren bat.
+
 
 <br/><br/>
 
-### Kodearen adibidea: hodeieko CI ezarpen arrunta. .yml fitxategi bakar bat besterik ez
+### Kode adibidea: hodeiko IE ezarpen arrunta. .yml fitxategi bakarra besterik ez
 
 ```yaml
 version: 2
@@ -40,11 +41,11 @@ jobs:
 
 ```
 
-### Circle CI - ia zero prestakuntzadun hodeieko CIa
+### Circle CI: ia zero prestakuntzadun hodeieko IEa
 
 ![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/circleci.png "API erroreen kudeaketa")
 
-### Jenkins - CI sofistikatu eta sendoa 
+### Jenkins - IE sofistikatu eta sendoa 
 
 ![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/jenkins_dashboard.png "API erroreen kudeaketa")
 

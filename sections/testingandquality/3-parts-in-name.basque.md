@@ -4,17 +4,17 @@
 
 ### Azalpen Paragrafoa
 
-Proben txostenak, aplikazioaren berrikuspenak kodea ezagun ez dutenentzako baldintzak betetzen dituen aipatu behar du: saiatzailea, inplementazioa egiten ari den DevOpsa eta hemendik bi urterako etorkizuneko zu. Hau hoberen lor daiteke probak eskatutako baldintzak kontuan hartzen baditu eta hiru zatiz osatua badago:
+Proben txostenak esan behar du aplikazioaren berrikuspenak erantzuten dien kodea nahitaez ezagutzen ez duten pertsonen beharrei: probatzailea, inplementazioa egiten ari den DevOps injinaria eta zu zeu hemendik bi urtera. Hori errazago lortuko duzu probak eskatutako baldintzak kontuan hartzen baditu eta hiru zatiz osatua badago:
 
-(1) Zer ari gara frogatzen? Adibidez, ProduktuZerbitzua.gehituProduktuBerria funtzioa
+(1) Zer ari gara probatzen? Adibidez, ProduktuZerbitzua.gehituProduktuBerria funtzioa
 
-(2) Zein egoera eta kasutan? Adibidez, ez zaio preziorik pasatu funtzioari
+(2) Zein egoera eta agertokitan? Adibidez, ez zaio preziorik pasatzen funtzioari
 
-(3) Zein da esperotako emaitza? Adibidez, produktu berria ez da onartua
+(3) Zein da espero den emaitza? Adibidez, produktu berria ez dago onartua
 
 <br/><br/>
 
-### Kodearen adibidea: 3 zati dituen proba izena
+### Kode adibidea: 3 zati dituen proba izena
 
 ```javascript
 //1. unitatea frogapean
@@ -31,8 +31,7 @@ describe('Produktu Zerbitzua', () => {
 
 <br/><br/>
 
-### Kodearen adibidea, Anti Eredua: norberak proba osoaren kodea irakurri behar du eta asmoa ulertu
-
+### Kode adibidea, anti eredua: norberak proba osoaren kodea irakurri behar du eta asmoa ulertu
 ```javascript
 describe('Produktu Zerbitzua', () => {
   describe('Produktu berria gehitu', () => {
@@ -47,9 +46,9 @@ describe('Produktu Zerbitzua', () => {
 
 <br/><br/>
 
-### "Zuzen Egitearen Adibidea: Proben txostenak dokumentuaren baldintzak biltzen ditu"
+### "Zuzen egiteko adibidea: proben txostenak dokumentuaren baldintzak biltzen ditu"
 
-["30 Node.jsen proba jarraibide egokiak" blogetik, Yoni Goldbergen eskutik](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347)
+["30 Node.jsen proba jardunbide egokiak" blogetik hartua, Yoni Goldbergen eskutik](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347)
 
 ![Proba txostenaren adibidea](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/test-report-like-requirements.jpeg "Proba txostenaren adibidea")
 

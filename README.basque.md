@@ -48,12 +48,12 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 ## Edukien aurkibidea
 
 1. [Proiektuaren egitura (5)](#1-proiektuaren-egitura)
-2. [Akatsen kudeaketa (11) ](#2-akatsen-kudeaketa)
-3. [Kodearen estiloa (12) ](#3-kodearen-estiloa)
+2. [Erroreen kudeaketa (11) ](#2-erroreen-kudeaketa)
+3. [Kode estiloa (12) ](#3-kode-estiloa)
 4. [Probak eta kalitate orokorra (13) ](#4-probak-eta-kalitate-orokorra)
 5. [Ekoizpena (19) ](#5-ekoizpena)
 6. [Segurtasuna (25)](#6-segurtasuna)
-7. [Errendimendua (2) (Aribidean ✍️)](<#7-errendimendua-(zirriborroa)>)
+7. [Errendimendua (2) (Aribidean ✍️)](#7-zirriborroa-errendimendua)
 8. [Docker (15)](#8-docker)
 
 <br/><br/>
@@ -112,7 +112,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 <p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
 
-# `2. Akatsen kudeaketa`
+# `2. Erroreen kudeaketa`
 
 ## ![✔] 2.1 Erabili Async-Await edo errore asinkronoak kudeatzeko promesak
 
@@ -174,7 +174,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 <br/><br/>
 
-## ![✔] 2.7 Erabili erregistratze tresna heldu bat erroreen ikusgaitasuna handitzeko
+## ![✔] 2.7 Erabili erregistratze tresna helduak erroreen ikusgaitasuna handitzeko
 
 **TL;PL:** erregistratze tresna helduen sortak erabiltzen badituzu –[Pino](https://github.com/pinojs/pino) edo [Log4js](https://www.npmjs.com/package/log4js), adibidez–, erroreak lehenago antzeman eta ulertuko dituzu. Beraz, utzi alde batera console.log
 
@@ -238,7 +238,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 <p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
 
-# `3. Kodearen estiloa`
+# `3. Kode estiloa`
 
 ## ![✔] 3.1 Erabili ESLint
 
@@ -1060,7 +1060,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 <p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
 
-# `7. Errendimendua (zirriborroa)`
+# `7. Zirriborroa: errendimendua`
 
 ## Gure laguntzaileak lanean ari dira atal honetan. [Parte hartu nahi zenuke?](https://github.com/goldbergyoni/nodebestpractices/issues/256)
 
@@ -1259,7 +1259,7 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 ## ![✔] 8.15. Garbitu zure Dockerfilea
 
-**TL;PL:** Linterra erabiliz zure Dockerfileaa garbitzea urrats garrantzitsua da haren barruan jardunbide egokiak errespetatzen ez dituzten arazoak identifikatzeko. Docker linter espezializatu bat erabiliz errendimendu eta segurtasun hobekuntzak erraz antzematen dira, alferrikako ordu ugari aurreztea edo produkzio kodean segurtasun arazoak murriztea lortuz
+**TL;PL:** Linterra erabiliz zure Dockerfilea garbitzea urrats garrantzitsua da haren barruan jardunbide egokiak errespetatzen ez dituzten arazoak identifikatzeko. Docker linter espezializatu bat erabiliz errendimendu eta segurtasun hobekuntzak erraz antzematen dira, alferrikako ordu ugari aurreztea edo produkzio kodean segurtasun arazoak murriztea lortuz
 
 **Bestela:** okerrez, Dockerfileren sortzaileak root bat utzi zuen produkzio erabiltzaile moduan, eta jatorri ezezaguneko biltegi irudi bat ere erabili zuen. Hori liner soil batekin ekidin liteke.
 

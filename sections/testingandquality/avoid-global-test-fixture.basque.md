@@ -4,11 +4,11 @@
 
 ### Azalpen paragrafoa
 
-Hau da urrezko proba araua: egin proba kasuak sinpleak, proba bakoitzak bere datu-baseko ilarak sortu eta erabili behar ditu menpekotasunak ekiditeko eta probaren fluxua ondo ulertzeko. Egia esan, garatzaileek hau askotan urratzen dute, datu-baseak beteaz probak exekutatu aurretik (‘test instalazioa‘ bezala ere ezagutuak), errendimendua hobetzeko xedearekin. Errendimendua gai garrantzitsua izan arren arindua izan daiteke (adibidez Memoria Datu-Baseak, begiratu "Osagarrien probrak" atala), baina proben konplexutasuna da kontutan hartu beharreko gai mingarriena. Praktikan, sortu proba kasu bakoitza explizituki datu-basean beharrezko informazioa gehitzeko eta jokatu bakarrik datu horiekin. Errendimendua arazo larria bihurtzen bada, oreka akordio bat aurki daiteke soilik datuak gehituko dituen proba bat idazten eta ondoren hau bikoizten beste probentzat (adibidez queries)
+Urrezko proba arauari jarraituz egin proba kasu/eredu sinpleak: proba bakoitzak bere datu baseko ilarak sortu eta erabili behar ditu menpekotasunak ekiditeko eta probaren fluxua ondo ulertzeko. Egia esan, garatzaileek askotan urratzen dute hori, datu baseak betez probak exekutatu aurretik (‘test instalazioa‘ bezala ere ezagutuak), errendimendua hobetzeko xedearekin. Errendimendua gai garrantzitsua izan arren, arindua izan daiteke (adibidez, begiratu Memoria Datu Baseak "Osagarrien probak" atalean), baina proben konplexutasuna da buruko min asko ematen dituen gai, kontutan hartu beharrekoa. Praktikan, sortu proba kasu bakoitza berariaz datu basean beharrezko informazioa gehitzeko eta jokatu bakarrik datu horiekin. Errendimendua arazo larria bihurtzen bada, adostasun orekatua aurki daiteke soilik datuak gehituko dituen proba bat idatziz eta ondoren hori bikoiztuz beste probentzat (adibidez queries)
 
 <br/><br/>
 
-### Kodearen adibidea: proba bakoitzat bere datu multzoa bakarrik ikutzen du
+### Kode adibidea: proba bakoitzak bere datu multzoarekin bakarrik egiten du lan
 
 ```javascript
 it("Webgune baten izena eguneratzerakoan, baieztapen arrakastatsua izan", async () => {
@@ -26,7 +26,7 @@ it("Webgune baten izena eguneratzerakoan, baieztapen arrakastatsua izan", async 
 
 <br/><br/>
 
-### Kodearen adibidea, Anti Erdua: probak ez dira independenteak eta aurrez konfiguratutako datuak egotea aintzat hartzen dute
+### Kode adibidea, anti eredua: probak ez dira independenteak eta aurrez konfiguratutako datuak daudela supotzen dute
 
 ```javascript
 before(() => {
