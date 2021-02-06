@@ -951,7 +951,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** gaizki idatzitako ohiko adierazpenek Regular Expression DoSen erasoak jasan ditzakete, gertaeren begizta erabat blokeatuko dutenak. Adibidez, 2017ko azaroan, RegExen erabilera gaiztoak agerian jarri zuen `moment` pakete ezagunaren ahultasuna
 
-🔗 [**Gehiago irakurri: saihestu RegEx gaiztoa erabiltzea**](/sections/security/regex.md)
+🔗 [**Gehiago irakurri: saihestu RegEx gaiztoa erabiltzea**](/sections/security/regex.basque.md)
 
 <br/><br/>
 
