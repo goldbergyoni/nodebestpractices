@@ -19,7 +19,7 @@ Imajina dezagun ondorengo direktorio egitura
   - README.md
 ```
 
-Zure [.dockerignore](/sections/docker/dockerignore.md)k dagoeneko aplikazioaren eraikitze eta exekuzioan beharrezkoak ez diren fitxategiak filtratuko ditu.
+Zure [.dockerignore](../docker/docker-ignore.basque.md)k dagoeneko aplikazioaren eraikitze eta exekuzioan beharrezkoak ez diren fitxategiak filtratuko ditu.
 
 ```
 # Ez kopiatu existitzen diren node_modules karpetan, gure node_modules propioa berreskuratuko dugu
