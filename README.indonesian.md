@@ -1010,15 +1010,15 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.22. Modify session middleware settings
+## ![✔] 6.22. Ubah pengaturan middleware sesi
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Each web framework and technology has its known weaknesses - telling an attacker which web framework we use is a great help for them. Using the default settings for session middlewares can expose your app to module- and framework-specific hijacking attacks in a similar way to the `X-Powered-By` header. Try hiding anything that identifies and reveals your tech stack (E.g. Node.js, express)
+**TL;DR:** Setiap framework dan teknologi web mempunyai kelemahannya masing-masing - memberi tahu penyerang framework web apa yang digunakan sangat membantu mereka. Menggunakan setelan default untuk middleware sesi dapat membuat aplikasi Anda terkena pembajakan spesifik untuk module dan framework dengan cara yang mirip dengan header `X-Powered-By`. Coba sembunyikan apa pun yang mengidentifikasikan dan mengungkapkan teknologi yang Anda gunakan (misalnya Node.js, express)
 
-**Otherwise:** Cookies could be sent over insecure connections, and an attacker might use session identification to identify the underlying framework of the web application, as well as module-specific vulnerabilities
+**Jika tidak:** Cookie dapat dikirim melalui koneksi yang tidak aman, dan penyerang dapat menggunakan identifikasi sesi untuk mengidentifikasi framework dari aplikasi web, serta kerentanan masing-masing modul
 
-🔗 [**Read More: Cookie and session security**](/sections/security/sessions.md)
+🔗 [**Baca selengkapnya: Cookie and session security**](/sections/security/sessions.md)
 
 <br/><br/>
 
