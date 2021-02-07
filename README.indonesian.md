@@ -952,15 +952,15 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.17. Avoid module loading using a variable
+## ![✔] 6.17. Hindari pemuatan modul menggunakan variabel
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** Avoid requiring/importing another file with a path that was given as parameter due to the concern that it could have originated from user input. This rule can be extended for accessing files in general (i.e. `fs.readFile()`) or other sensitive resource access with dynamic variables originating from user input. [Eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) linter can catch such patterns and warn early enough
+**TL;DR:** Hindari pemuatan file lain dengan jalur yang diberikan sebagai parameter karena dikhawatirkan dapat berasal dari masukan pengguna. Aturan ini dapat diperluas untuk mengakses file secara umum (yaitu `fs.readFile()`) atau pengaksesan sumber sensitif lainnya dengan variabel dinamis yang berasal dari masukan pengguna. Linter [Eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) dapat menangkap pola seperti itu dan memberi peringatan cukup dini
 
-**Otherwise:** Malicious user input could find its way to a parameter that is used to require tampered files, for example, a previously uploaded file on the file system, or access already existing system files.
+**Jika tidak:** Masukan pengguna yang berbahaya dapat menemukan jalannya ke parameter yang digunakan untuk memuat file, misalnya, file yang sebelumnya diunggah ke sistem file, atau pengaksesan file sistem yang sudah ada.
 
-🔗 [**Read More: Safe module loading**](/sections/security/safemoduleloading.md)
+🔗 [**Baca selengkapnya: Safe module loading**](/sections/security/safemoduleloading.md)
 
 <br/><br/>
 
