@@ -1000,13 +1000,13 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.21. Configure 2FA for npm or Yarn
+## ![✔] 6.21. Konfigurasi 2FA untuk npm atau Yarn
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Any step in the development chain should be protected with MFA (multi-factor authentication), npm/Yarn are a sweet opportunity for attackers who can get their hands on some developer's password. Using developer credentials, attackers can inject malicious code into libraries that are widely installed across projects and services. Maybe even across the web if published in public. Enabling 2-factor-authentication in npm leaves almost zero chances for attackers to alter your package code.
+**TL;DR:** Setiap langkah dalam rantai pengembangan harus dilindungi dengan MFA (_multi-factor authentication_), npm/Yarn menjadi peluang yang bagus bagi penyerang yang ingin mendapatkan kata sandi pengembang. Dengan menggunakan kredensial pengembang, penyerang dapat memasukkan kode berbahaya kedalam pustaka yang diinstal secara luas di seluruh proyek dan layanan. Bahkan mungkin di seluruh web jika dipublikasikan. Mengaktifkan _2-factor-authentication_ dalam npm akan meninggalkan hampir nol peluang bagi penyerang untuk mengubah kode paket Anda.
 
-**Otherwise:** [Have you heard about the eslint developer whose password was hijacked?](https://medium.com/@oprearocks/eslint-backdoor-what-it-is-and-how-to-fix-the-issue-221f58f1a8c8)
+**Jika tidak:** [Pernahkah Anda mendegar tentang pengembang eslint yang kata sandinya dibajak?](https://medium.com/@oprearocks/eslint-backdoor-what-it-is-and-how-to-fix-the-issue-221f58f1a8c8)
 
 <br/><br/>
 
