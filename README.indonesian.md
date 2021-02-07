@@ -964,15 +964,15 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.18. Run unsafe code in a sandbox
+## ![✔] 6.18. Jalankan kode yang tidak aman di sandbox
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** When tasked to run external code that is given at run-time (e.g. plugin), use any sort of 'sandbox' execution environment that isolates and guards the main code against the plugin. This can be achieved using a dedicated process (e.g. `cluster.fork()`), serverless environment or dedicated npm packages that act as a sandbox
+**TL;DR:** Saat ditugaskan untuk menjalankan kode eksternal yang diberikan pada run-time (misalnya plugin), gunakan segala jenis lingkungan eksekusi 'sandbox' yang mengisolasi dan melindungi kode utama dari plugin tersebut. Hal ini dapat dicapai dengan menggunakan proses khusus (misalnya `cluster.fork()`), lingkungan _serverless_ atau paket npm khusus yang bertindak sebagai sandbox
 
-**Otherwise:** A plugin can attack through an endless variety of options like infinite loops, memory overloading, and access to sensitive process environment variables
+**JIka tidak:** Sebuah plugin dapat menyerang dengan berbagai pilihan seperti perulangan tak tertabas, memberi muatan lebih pada memory, dan mengakses variabel lingkungan sensitif pada proses
 
-🔗 [**Read More: Run unsafe code in a sandbox**](/sections/security/sandbox.md)
+🔗 [**Baca selengkapnya: Run unsafe code in a sandbox**](/sections/security/sandbox.md)
 
 <br/><br/>
 
