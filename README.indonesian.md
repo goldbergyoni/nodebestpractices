@@ -940,15 +940,15 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.16. Prevent evil RegEx from overloading your single thread execution
+## ![✔] 6.16. Cegah RegEx yang buruk agar tidak membebani eksekusi thread tunggal Anda
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Regular Expressions, while being handy, pose a real threat to JavaScript applications at large, and the Node.js platform in particular. A user input for text to match might require an outstanding amount of CPU cycles to process. RegEx processing might be inefficient to an extent that a single request that validates 10 words can block the entire event loop for 6 seconds and set the CPU on 🔥. For that reason, prefer third-party validation packages like [validator.js](https://github.com/chriso/validator.js) instead of writing your own Regex patterns, or make use of [safe-regex](https://github.com/substack/safe-regex) to detect vulnerable regex patterns
+**TL;DR:** _Regular Expressions_, meskipun berguna, dapat menimbulkan ancaman pada aplikasi JavaScript secara luas, dan platform Node.js pada khususnya. Masukan teks pengguna mungkin memerlukan jumlah siklus CPU yang luar biasa untuk diproses. Pemrosesan RegEx mungkin tidak efisien sampai-sampai satu request yang memvalidasi 10 kata dapat memblokir seluruh event loop selama 6 detik dan membuat CPU-nya 🔥. Oleh karena itu, gunakan paket validasi pihak ketiga seperti [validator.js](https://github.com/chriso/validator.js) daripada menuliskan pola Regex Anda sendiri, atau gunakan [safe-regex](https://github.com/substack/safe-regex) untuk mendeteksi pola regex yang rentan
 
-**Otherwise:** Poorly written regexes could be susceptible to Regular Expression DoS attacks that will block the event loop completely. For example, the popular `moment` package was found vulnerable with malicious RegEx usage in November of 2017
+**Jika tidak:** Regex yang ditulis dengan buruk dapat rentan terhadap serangan DoS Regular Expression yang akan memblokir event loop sepenuhnya. MIsalnya, paket `moment` yang populer ditemukan rentan terhadap penggunaan Regex pada November 2017
 
-🔗 [**Read More: Prevent malicious RegEx**](/sections/security/regex.md)
+🔗 [**Baca selengkapnya: Prevent malicious RegEx**](/sections/security/regex.md)
 
 <br/><br/>
 
