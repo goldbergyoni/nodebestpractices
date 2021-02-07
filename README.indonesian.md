@@ -988,15 +988,15 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.20. Hide error details from clients
+## ![✔] 6.20. Sembunyikan detail kesalahan dari klien
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** An integrated express error handler hides the error details by default. However, great are the chances that you implement your own error handling logic with custom Error objects (considered by many as a best practice). If you do so, ensure not to return the entire Error object to the client, which might contain some sensitive application details
+**TL;DR:** Penangan kesalahan express menyembunyikan detail kesalahan secara default. Namun, besar kemungkinan Anda menerapkan logika penanganan kesalahan Anda sendiri dengan objek Error kustom (dianggap sebagai praktik terbaik oleh banyak orang). Jika iya, pastikan Anda tidak mengembalikan seluruh objek error ke klien, yang mungkin mengandung beberapa informasi aplikasi yang sensitif
 
-**Otherwise:** Sensitive application details such as server file paths, third party modules in use, and other internal workflows of the application which could be exploited by an attacker, could be leaked from information found in a stack trace
+**Jika tidak:** Informasi sensitif aplikasi seperti path file server, modul pihak ketiga yang digunakan, dan alur kerja internal aplikasi lainnya yang dapat dieksploitasi oleh penyerang, dapat dibocorkan dari informasi yang ditemukan di dalam stack trace
 
-🔗 [**Read More: Hide error details from client**](/sections/security/hideerrors.md)
+🔗 [**Baca selengkapnya: Hide error details from client**](/sections/security/hideerrors.md)
 
 <br/><br/>
 
