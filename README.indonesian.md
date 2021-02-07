@@ -976,15 +976,15 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.19. Take extra care when working with child processes
+## ![✔] 6.19. Berhati-hati saat menggunakan _child processes_
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** Avoid using child processes when possible and validate and sanitize input to mitigate shell injection attacks if you still have to. Prefer using `child_process.execFile` which by definition will only execute a single command with a set of attributes and will not allow shell parameter expansion.
+**TL;DR:** Hindari penggunaan _child processes_ jika memungkinkan dan validasi serta sanitasi masukan untuk menghindari serangan injeksi shell jika Anda masih perlu menggunakannya. Utamakan penggunaan `child_process.execFile` yang menurut definisi hanya akan menjalankan satu perintah dengan sekumpulan atribut dan tidak akan mengizinkan perluasan parameter shell.
 
-**Otherwise:** Naive use of child processes could result in remote command execution or shell injection attacks due to malicious user input passed to an unsanitized system command.
+**Jika tidak:** Penggunaan child process yang naif dapat mengakibatkan eksekusi perintah secara remote atau serangan injeksi shell karena masukan pengguna yang berbahaya diteruskan ke perintah sistem yang tidak disanitasi.
 
-🔗 [**Read More: Be cautious when working with child processes**](/sections/security/childprocesses.md)
+🔗 [**Baca selengkapnya: Be cautious when working with child processes**](/sections/security/childprocesses.md)
 
 <br/><br/>
 
