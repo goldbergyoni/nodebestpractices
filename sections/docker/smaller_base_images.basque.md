@@ -6,7 +6,7 @@ Debianen oinarritutako bariante arina, 38MBko tamaina duena eta Node abiatzeko b
 
 ### Blogeko aipua: "Zure Docker irudiak txikiagotu nahi badituzu, zure zerbitzuen abiaratze azkarragoa izan, seguruagoa izan eta orduan probatu Alpine."
 
-[Nick Janetakis'](https://nickjanetakis.com/blog/the-3-biggest-wins-when-using-alpine-as-a-base-docker-image) blogetik
+[Nick Janetakis](https://nickjanetakis.com/blog/the-3-biggest-wins-when-using-alpine-as-a-base-docker-image) blogetik
 
 > Gaur egun jakina da Dockerrek Alpine maiz erabiltzen duela Dockerren irudi ofizialetarako. Mugimendu hau 2016ko hasieran hasi zen gutxi gora-behera. [...]
   Zerbitzari berri batean Docker irudiak argitaratzean, espero dezakezu hasierako argitarapena pixkat azkarragoa izatea. Sarea geroz eta motelagoa izan, ezberdintasuna orduan eta handiagoa izango da. [...] Tamaina txikiaren beste abantailetako bat erasotze-azala txikiagoa izatea da. Zure sisteman pakete eta liburutegi asko ez daudenean, gaizki irten daitezken oso gauza gutxi daude.
