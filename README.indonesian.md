@@ -1032,15 +1032,15 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.24. Prevent unsafe redirects
+## ![✔] 6.24. Hindari pengalihan yang tidak aman
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
-**TL;DR:** Redirects that do not validate user input can enable attackers to launch phishing scams, steal user credentials, and perform other malicious actions.
+**TL;DR:** Pengalihan yang tidak memvalidasi masukan pengguna dapat memungkinkan penyerang untuk meluncurkan penipuan phising, mencuri kredensial pengguna, dan melakukan tindakan berbahaya lainnya.
 
-**Otherwise:** If an attacker discovers that you are not validating external, user-supplied input, they may exploit this vulnerability by posting specially-crafted links on forums, social media, and other public places to get users to click it.
+**Jika tidak:** Jika penyerang menemukan bahwa Anda tidak memvalidasi masukan eksternal yang diberikan oleh pengguna, mereka dapat mengeksploitasi kerentanan ini dengan memposting tautan yang dibuat khusus di forum, media sosial, dan tempat publik lainnya agar pengguna mengkliknya.
 
-🔗 [**Read More: Prevent unsafe redirects**](/sections/security/saferedirects.md)
+🔗 [**Baca selengkapnya: Prevent unsafe redirects**](/sections/security/saferedirects.md)
 
 <br/><br/>
 
