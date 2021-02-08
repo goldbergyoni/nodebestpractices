@@ -1044,15 +1044,15 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.25. Avoid publishing secrets to the npm registry
+## ![✔] 6.25. Hindari menerbitkan rahasia ke registri npm
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Precautions should be taken to avoid the risk of accidentally publishing secrets to public npm registries. An `.npmignore` file can be used to blacklist specific files or folders, or the `files` array in `package.json` can act as a whitelist.
+**TL;DR:** Tindakan pencegahan harus diambil untuk menghindari risiko penerbitan rahasia ke registri publik npm secara tidak sengaja. File `.npmignore` dapat digunakan untuk memasukkan file atau folder ke dalam blacklist, atau array `files` dalam `package.json` dapat digunakan sebagai whitelist.
 
-**Otherwise:** Your project's API keys, passwords or other secrets are open to be abused by anyone who comes across them, which may result in financial loss, impersonation, and other risks.
+**Jika tidak:** Kunci API, kata sandi atau rahasia lain proyek Anda dapat disalahgunakan oleh siapapun yang menemukannya, yang dapat mengakibatkan kerugian finansial, peniruan identitas, dan risiko lainnya.
 
-🔗 [**Read More: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.md)
+🔗 [**Baca selengkapnya: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#daftar-isi">⬆ Kembali ke atas</a></p>
