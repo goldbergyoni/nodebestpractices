@@ -41,7 +41,7 @@ CMD ["node", "server.js"]
 
 ### Anti ereduak
 
-Using npm start
+npm start erabilita
 
 ```dockerfile
 

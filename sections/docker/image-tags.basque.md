@@ -17,9 +17,9 @@ $ docker build -t company/image_name:latest .
 # :azken irudia eguneratua da
 ```
 
-### Bete bloglariek diotena
+### Beste bloglariek diotena
 
-Blogetik, [Vladislav Supalov](https://vsupalov.com/docker-latest-tag/)ren eskutik:
+Blogetik, [Vladislav Supalov](https://vsupalov.com/docker-latest-tag/)en eskutik:
 
 > Batzuek espero dute :latestek beti irudi baten bertsio berrienari erreferentzia egiten dioa. Hau ez da egia.
 

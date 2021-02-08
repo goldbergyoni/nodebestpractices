@@ -65,7 +65,7 @@ CMD ["node", "index.js"]
 
 FROM node:12-slim
 
-# Build logic comes here
+# Eraikitze logika hemen dator
 
 CMD ["npm", "start"]
 #Hemendik aurrera Nodek azpi prozesuak abiatuko ditu eta npmek ez ditu seinaleak jasoko
