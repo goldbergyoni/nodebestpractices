@@ -1022,13 +1022,13 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.23. Avoid DOS attacks by explicitly setting when a process should crash
+## ![✔] 6.23. Hindari serangan DOS dengan mengatur kapan proses harus berhenti secara eksplisit
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** The Node process will crash when errors are not handled. Many best practices even recommend to exit even though an error was caught and got handled. Express, for example, will crash on any asynchronous error - unless you wrap routes with a catch clause. This opens a very sweet attack spot for attackers who recognize what input makes the process crash and repeatedly send the same request. There's no instant remedy for this but a few techniques can mitigate the pain: Alert with critical severity anytime a process crashes due to an unhandled error, validate the input and avoid crashing the process due to invalid user input, wrap all routes with a catch and consider not to crash when an error originated within a request (as opposed to what happens globally)
+**TL;DR:** Proses Node akan berhenti ketika ada kesalahan yang tidak ditangani. Banyak praktik terbaik bahkan merekomendasikan untuk menghentikan aplikasi meskipun ada kesalahan yang tertangkap dan ditangani. Express, misalnya, akan berhenti jika ada kesalahan asinkron apa pun - kecuali Anda membungkus rute dengan klausa catch. Ini memberikan kesempatan serangan yang sangat bagus bagi penyerang yang mengetahui masukan apa yang memberhentikan proses dan mengirim request yang sama berulang kali. Tidak ada solusi instan untuk ini tapi ada beberapa teknik yang dapat mengurangi hal ini: Beri peringatan kritis setiap kali proses berhenti karena ada kesalahan yang ditangani, validasi masukan dan hindari memberhentikan proses karena masukan pengguna tidak valid, bungkus semua rute dengan catch dan pertimbangkan untuk tidak memberhentikan aplikasi ketika kesalahan berasal dari dalam request (alih-alih apa yang terjadi secara global)
 
-**Otherwise:** This is just an educated guess: given many Node.js applications, if we try passing an empty JSON body to all POST requests - a handful of applications will crash. At that point, we can just repeat sending the same request to take down the applications with ease
+**Jika tidak:** Ini hanya tebakan: mengingat banyak aplikasi Node.js, jika kita memberikan JSON kosong ke semua request POST - banyak aplikasi akan berhenti. Pada saat itu, kita dapat mengirim permintaan yang sama berulang kali untuk memberhentikan aplikasi itu dengan mudah
 
 <br/><br/>
 
