@@ -16,7 +16,7 @@ Konfigurazio datuekin jardutean, hainbat gauza gogaikarri eta moteltzaile aurki 
 
 5. aplikazioak ahalik eta azkarren huts egin behar du eta berehalako erantzuna eman aplikazioaren abiaraztean, beharrezko ingurune aldagaiak zehaztuta ez badaude. Konfigurazioa balioztatzeko [convict](https://www.npmjs.com/package/convict) erabiliz lor daiteke hori
 
-Konfigurazio liburutegi batzuek aipatutako funtzionalitate gehienak dohainik eskaintzen dituzte. Eman begirada bat [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config), eta [convict](https://www.npmjs.com/package/convict) bezalako npm liburutegiei, non aipatutako ezaugarri gehienak betetzen dituzten
+Konfigurazio liburutegi batzuek aipatutako funtzionalitate gehienak dohainik eskaintzen dituzte. Eman begirada bat [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config), eta [convict](https://www.npmjs.com/package/convict) bezalako npm liburutegiei, non aipatutako ezaugarri gehienak betetzen dituzten.
 
 <br/><br/>
 
