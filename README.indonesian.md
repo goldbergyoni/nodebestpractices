@@ -53,7 +53,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 5. [Praktik Dalam Produksi(19) ](#5-praktik-dalam-produksi)
 6. [Praktik Keamanan (25)](#6-praktik-terbaik-keamanan)
 7. [Praktik Performa (2) (Pekerjaan Dalam Proses ✍️)](#7-draf-praktik-terbaik-performa)
-8. [Praktik Docker (15)](#8-docker-best-practices)
+8. [Praktik Docker (15)](#8-praktik-terbaik-docker)
 
 <br/><br/>
 
@@ -1086,19 +1086,19 @@ Ingatlah bahwa dengan diperkenalkannya mesin V8 baru bersama dengan standar ES b
 
 <p align="right"><a href="#daftar-isi">⬆ Kembali ke atas</a></p>
 
-# `8. Docker Best Practices`
+# `8. Praktik Terbaik Docker`
 
-🏅 Many thanks to [Bret Fisher](https://github.com/BretFisher) from whom we learned many of the following practices
+🏅 Terima kasih banyak kepada [Bret Fisher](https://github.com/BretFisher) yang mengajari kami banyak dari praktik berikut
 
 <br/><br/>
 
-## ![✔] 8.1 Use multi-stage builds for leaner and more secure Docker images
+## ![✔] 8.1 Gunakan build multi tahap untuk gambar Docker yang lebih kecil dan aman
 
-**TL;DR:** Use multi-stage build to copy only necessary production artifacts. A lot of build-time dependencies and files are not needed for running your application. With multi-stage builds these resources can be used during build while the runtime environment contains only what's necessary. Multi-stage builds are an easy way to get rid of overweight and security threats.
+**TL;DR:** Gunakan build multi tahap hanya untuk menyalin artefak produksi yang diperlukan. Banyak file dan dependensi build-time yang tidak diperlukan untuk menjalankan aplikasi Anda. Dengan build multi tahap resource ini dapat digunakan selama build sementara lingkungan runtime hanya berisikan dengan resource yang diperlukan. Build multi tahap adalah cara mudah untuk menyingkirkan kelebihan berat dan ancaman keamanan.
 
-**Otherwise:** Larger images will take longer to build and ship, build-only tools might contain vulnerabilities and secrets only meant for the build phase might be leaked.
+**Jika tidak:** Gambar yang lebih besar akan memakan waktu yang lebih lama untuk di-build dan dikirim, alat khusus build mungkin mengandung kerentanan dan rahasia yang hanya dimaksudkan untuk fase build mungkin dapat bocor.
 
-### Example Dockerfile for multi-stage builds
+### Contoh dockerfle untuk build multi tahap
 
 ```dockerfile
 FROM node:14.4.0 AS build
@@ -1117,7 +1117,7 @@ RUN npm ci --production
 CMD [ "node", "dist/app.js" ]
 ```
 
-🔗 [**Read More: Use multi-stage builds**](/sections/docker/multi_stage_builds.md)
+🔗 [**Baca selengkapnya: Use multi-stage builds**](/sections/docker/multi_stage_builds.md)
 
 <br /><br /><br />
 
