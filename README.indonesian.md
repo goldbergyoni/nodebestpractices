@@ -1131,13 +1131,13 @@ CMD [ "node", "dist/app.js" ]
 
 <br /><br /><br />
 
-## ![✔] 8.3. Let the Docker runtime handle replication and uptime
+## ![✔] 8.3. Biarkan runtime Docker menangani replikasi dan uptime
 
-**TL;DR:** When using a Docker run time orchestrator (e.g., Kubernetes), invoke the Node.js process directly without intermediate process managers or custom code that replicate the process (e.g. PM2, Cluster module). The runtime platform has the highest amount of data and visibility for making placement decision - It knows best how many processes are needed, how to spread them and what to do in case of crashes
+**TL;DR:** Ketika menggunakan orkestrator run time Docker (misalnya Kubernetes), aktifkan proses Node.js seecara lansung tanpa manajer proses perantara atau kode khusus yang mereplikasi proses (misalnya PM2, modul Cluster). Platform runtime mempunyai jumlah data dan visibilitas tertinggi untuk membuat keputusan penempatan - Platform ini mengetahui dengan baik berapa banyak proses yang diperlukan, cara menyebarkannya dan apa yang harus dilakukan jika terjadi kerusakan
 
-**Otherwise:** Container keeps crashing due to lack of resources will get restarted indefinitely by the process manager. Should Kubernetes be aware of that, it could relocate it to a different roomy instance
+**Jika tidak:** Kontainer tetap rusak karena kekurangan sumber daya akan dimulai ulang tanpa batas oleh manajer proses. Jika Kubernetes menyadari hal ini, Kubernetes dapat memindahkannya ke banyak instance yang berbeda 
 
-🔗 [**Read More: Let the Docker orchestrator restart and replicate processes**](/sections/docker/restart-and-replicate-processes.md)
+🔗 [**Baca selengkapnya: Let the Docker orchestrator restart and replicate processes**](/sections/docker/restart-and-replicate-processes.md)
 
 <br/><br /><br />
 
