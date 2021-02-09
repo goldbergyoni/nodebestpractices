@@ -1151,13 +1151,13 @@ CMD [ "node", "dist/app.js" ]
 
 <br /><br /><br />
 
-## ![✔] 8.5. Clean-up dependencies before production
+## ![✔] 8.5. Bersihkan dependensi sebelum produksi
 
-**TL;DR:** Although Dev-Dependencies are sometimes needed during the build and test life-cycle, eventually the image that is shipped to production should be minimal and clean from development dependencies. Doing so guarantees that only necessary code is shipped and the amount of potential attacks (i.e. attack surface) is minimized. When using multi-stage build (see dedicated bullet) this can be achieved by installing all dependencies first and finally running `npm ci --production`
+**TL;DR:** Meskipun dependensi pengembangan terkadang diperlukan selama siklus hidup build pengujian, pada akhirnya gambar yang dikirim ke produksi harus minimal dan bersih dari dependensi pengembangan. Hal tersebut dapat menjamin hanya kode yang diperlukan yang dikirim dan jumlah potensi serangan (misalnya attack surface) diminimalkan. Ketika menggunakan build multi tahap (lihat poin khusus) hal ini dapat dicapai dengan menginstal semua dependensi terlebih dahulu dan kemudian menjalankan `npm ci --production`
 
-**Otherwise:** Many of the infamous npm security breaches were found within development packages (e.g. [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes))
+**Jika tidak:** Banyak penerobosan keamanan npm yang buruk ditemukan dalam paket pengembangan (misalnya [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes))
 
-🔗 Read More: [Remove development dependencies](/sections/docker/install-for-production.md)
+🔗 [**Baca selengkapnya: Remove development dependencies](/sections/docker/install-for-production.md)
 
 <br /><br /><br />
 
