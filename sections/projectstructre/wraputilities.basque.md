@@ -1,4 +1,4 @@
-# Antolatu baliabide komunak npm paketetan
+# Kokatu baliabide komunak npm paketetan
 
 <br/><br/>
 
