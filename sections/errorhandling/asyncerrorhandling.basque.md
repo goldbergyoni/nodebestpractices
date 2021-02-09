@@ -4,7 +4,7 @@
 
 Callbackak ez dira kudea errazak programatzaile gehienek ez dituzte ondo ezagutzen eta. Callbackek etengabeko errore egiaztatzea eskatzen dute, kode korapilotsua jasanaraziz eta kodigoaren fluxuaren ulergarritasuna zailduz. BlueBird, async, eta Q bezalako promesa liburutegiek kodigo estilo estandarra RETURN eta THROW erabiliz paketatzen dute, programaren fluxua kontrolatzeko. Zehazki, kodigo nagusia funtzio bakoitzean erroreak kuadeatzetik askatzea ahalbidetzen duen try-catch errore kudeaketa estilo gogokoena onartzen dute
 
-### Kode adibidea: promesen erabilera erroreak antzemateko
+### Kode adibidea: promesen erabilera erroreak atzemateko
 
 ```javascript
 return aFuntzioa()
@@ -15,7 +15,7 @@ return aFuntzioa()
   .then(betiExekutatuFuntzioHau);
 ```
 
-### Kode adibidea: async/awaiten erabilera erroreak antzemateko
+### Kode adibidea: async/awaiten erabilera erroreak atzemateko
 
 ```javascript
 async function exekutatuAtazaAsinkronoBat() {
@@ -109,7 +109,7 @@ gosquared.com blogetik hartua
 
 StrongLoop blogetik hartua
 
-> ….Callbackek erroreen kudeaketa istorio kaskarra dute. Promesak hobeak dira. Promesekin, erabili Expressen errore kudeaketa kapsulatua eta horrela salbuespenen bat ez antzemateko aukerak murriztuko dituzu. Promesak jatorriz ES6ak dira, eta sorgailuekin eta ES7ren async/await bezalako proposamenekin erabil daitezke Babel bezalako konpilatzaileetan.
+> ….Callbackek erroreen kudeaketa istorio kaskarra dute. Promesak hobeak dira. Promesekin, erabili Expressen errore kudeaketa kapsulatua eta horrela salbuespenen bat ez atzemateko aukerak murriztuko dituzu. Promesak jatorriz ES6ak dira, eta sorgailuekin eta ES7ren async/await bezalako proposamenekin erabil daitezke Babel bezalako konpilatzaileetan.
 
 ### Blogeko aipua: "Ohiko fluxu kontrol erregularren egitura guzti horiek guztiz apurtuta daude"
 

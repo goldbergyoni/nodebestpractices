@@ -17,7 +17,7 @@ Hirugarren A, baieztatu: ziurtatu jasotako balioak espero ziren modukoak direla.
 
 ```javascript
 describe.skip("Bezero klasifikatzailea", () => {
-  test("Bezeroak 500$ baino gehiago gastatzen dituenean, premium gisa kasifikatua izan behar da", () => {
+  test("Bezeroak 500$ baino gehiago gastatzen dituenean, premium gisa klasifikatua izan behar da", () => {
     //Prestatu
     const klasifikatzekoBezeroa = { gastatuak: 505, sortua: new Date(), id: 1 };
     const DBAntzeratua = sinon
@@ -66,4 +66,4 @@ test("Premium gisa klasifikatua izan beharko litzateke", () => {
 
 [XUnit Patterns](http://xunitpatterns.com/Four%20Phase%20Test.html) liburutik:
 
-> Garrantzitsua da proba irakurtzen duen pertsonarentzat, proba zein jokaera egiaztatzen ari den azkar jakiteko gai izatea. Oso nahasgarria izan daiteke jokaera ugari probaren barruan (SUT) deituak izatea, batzuk SUTaren proba aurreko egoera prestatzeko (instalazioa), beste batzuk SUTa jokatzeko eta beste batzuk SUTaren proba ondorengo egoera egiaztatzeko. Lau faseak modu argian identifikatzeak probaren asmoa ikustea askoz errazago egiten dute
+> Garrantzitsua da proba irakurtzen duen pertsonarentzat, proba zein jokaera egiaztatzen ari den azkar jakiteko gai izatea. Oso nahasgarria izan daiteke jokaera ugari probaren barruan (SUT) deituak izatea, batzuk SUTaren proba aurreko egoera prestatzeko (instalazioa), beste batzuk SUTa jokatzeko eta beste batzuk SUTaren proba ondorengo egoera egiaztatzeko. Lau faseak modu argian identifikatzeak probaren asmoa ikustea askoz errazago egiten dute.
