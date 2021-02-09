@@ -1141,13 +1141,13 @@ CMD [ "node", "dist/app.js" ]
 
 <br/><br /><br />
 
-## ![✔] 8.4. Use .dockerignore to prevent leaking secrets
+## ![✔] 8.4. Gunakan .dockerignore untuk mencegah pembocoran rahasia
 
-**TL;DR**: Include a `.dockerignore` file that filters out common secret files and development artifacts. By doing so, you might prevent secrets from leaking into the image. As a bonus the build time will significantly decrease. Also, ensure not to copy all files recursively rather explicitly choose what should be copied to Docker
+**TL;DR**: Sertakan file `.dockerignore` yang memfilter file rahasia umum dan artefak pengembangan. Dengan melakukan itu, Anda dapat mencegah kebocoran rahasia ke dalam gambar. Sebagai bonus waktu build akan berkurang secara signifikan. Pastikan juga untuk tidak menyalin semua file secara rekursif melainkan pilih file yang harus disalin ke Docker secara eksplisit
 
-**Otherwise**: Common personal secret files like `.env`, `.aws` and `.npmrc` will be shared with anybody with access to the image (e.g. Docker repository)
+**Jika tidak**: File rahasia pribadi umum seperti `.env`, `.aws` dan `.npmrc` akan dibagikan dengan siapapun yang memiliki akses ke image (misalnya repositori Docker)
 
-🔗 [**Read More: Use .dockerignore**](/sections/docker/docker-ignore.md)
+🔗 [**Baca selengkapnya: Use .dockerignore**](/sections/docker/docker-ignore.md)
 
 <br /><br /><br />
 
