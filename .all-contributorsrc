@@ -1268,6 +1268,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "YA21",
+      "name": "Yuta Azumi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/37298463?v=4",
+      "profile": "https://github.com/YA21",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
