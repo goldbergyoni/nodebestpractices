@@ -1,8 +1,8 @@
-# Bereizi eragiketa erroreak eta programazio erroreak
+# Bereizi eragiketa erroreak eta programatze erroreak
 
 ### Azalpen paragrafoa
 
-Ondorengo bi errore mota hauek bereizteak zure aplikazioaren matxura denbora gutxitu eta programazio errore eroak ekiditen lagunduko dizu. Batetik, eragiketa erroreak daude, gertatutako arazoa eta haren ondorioak ulertzen dituzunean (adibidez, HTTP zerbitzu bati egindako deiak huts egitea, konexio arazoak direla eta. Bestetik, errorea zergatik eta nondik etorri den ez dakizun egoerei programatze errore deritze (balio zehaztugabe bat irakurtzen saiatzen den kodea edo memoria ihes egiten dion datu basea izan daitezke). Eragiketa erroreak besteen aldean kudea errazak dira, eta normalean nahikoa izaten da errorea erregistratzea. Gauzak konplikatuagoak izan daitezke garatzaile errore bat tupustean agertzen denean, aplikazioa egoera aldakorrean aurki baitaiteke. Horrelakoetan, aplikazioa berrabiarazi baino irtenbide hoberik ez duzu
+Ondorengo bi errore mota hauek bereizteak zure aplikazioaren matxura denbora gutxitu eta programazio errore eroak ekiditen lagunduko dizu. Batetik, eragiketa erroreak daude, gertatutako arazoa eta haren ondorioak ulertzen dituzunean (adibidez, HTTP zerbitzu bati egindako deiak huts egitea, konexio arazoak direla eta). Bestetik, errorea zergatik eta nondik etorri den ez dakizun egoerei programatze errore deritze (balio zehaztugabe bat irakurtzen saiatzen den kodea edo memoria ihes egiten dion datu basea izan daitezke). Eragiketa erroreak besteen aldean kudea errazak dira, eta normalean nahikoa izaten da errorea erregistratzea. Gauzak konplikatuagoak izan daitezke garatzaile errore bat tupustean agertzen denean, aplikazioa egoera aldakorrean aurki baitaiteke. Horrelakoetan, aplikazioa berrabiarazi baino irtenbide hoberik ez duzu
 
 ### Kode adibidea: erroreak eragiketa errore (konfiantzazko) bihurtu
 
@@ -75,7 +75,7 @@ throw new AppErrorea(
 
 Joyent blogeko “Node.js errore kudeaketa" hitz gako bati esker sailkatua
 
-> …Programatzaile erroreak gainditzeko modurik hoberena berehala huts eragitea da. Huts egiteren bat gertatzean automatikoki berrekingo dituen berrekite sistemaren bat erabiliz exekutatu beharko zenituzte zure programak. Berrekite sistemei esker, huts egitea da modurik azkarrena programatzaile errore iragankorrak gertatzean zerbitzua berreskuratzeko modu fidagarrian…
+> …Programatze erroreak gainditzeko modurik hoberena berehala huts eragitea da. Huts egiteren bat gertatzean automatikoki berrekingo dituen berrekite sistemaren bat erabiliz exekutatu beharko zenituzte zure programak. Berrekite sistemei esker, huts egitea da modurik azkarrena programatzaile errore iragankorrak gertatzean zerbitzua berreskuratzeko modu fidagarrian…
 
 ### Blogeko aipua: "Alde egiteko modu segururik ez dago zehaztugabeko egoera hauskorrik sortu gabe"
 
@@ -85,7 +85,7 @@ Node.js dokumentazio ofizialetik hartua
 
 ### Blogeko aipua: "Bestela zure aplikazioaren egoera arriskuan jar dezakezu"
 
-debugable.com blogetik, “Node.js harrapatu gabeko exzepzioa" 3 hitz gakori esker sailkatua
+debugable.com blogetik, “Node.js harrapatu gabeko salbuespena" 3 hitz gakori esker sailkatua
 
 > …Beraz, baldin eta benetan egiten ari zarena jakiten baduzu, “uncaughtException” exzepzio ebentua jaso ostean zure zerbitzuaren berrekite dotorea egin beharko zenuke. Bestela, zure aplikazioaren egoera arriskuan jar dezakezu, edota haren liburutegiak aldakor bihurtuarazi, mota guztietako errore zoroak eraginez…
 
@@ -96,5 +96,5 @@ JS Recipes blogetik hartua
 > …Errore kudeaketaren inguruko hiru ideia eskola daude:
 
 1. Utzi aplikazioak huts egin dezan eta ondoren berrekin.
-2. Kudeatu errore posible guztiak kudeatu eta inoiz ez huts egin.
+2. Errore posible guztiak kudeatu eta inoiz ez huts egin.
 3. Bien arteko planteamendu bat.
