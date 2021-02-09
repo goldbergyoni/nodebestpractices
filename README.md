@@ -26,7 +26,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 # Latest Best Practices and News
 
-- **🇯🇵 Japanese translation:** Our guide is now also translated to Janapense! Courtesy of the amazing [YukiOta](https://github.com/YukiOta) and [Yuta Azumi](https://github.com/YA21)
+- **🇯🇵 Japanese translation:** Our guide is now also translated to Japanense! Courtesy of the amazing [YukiOta](https://github.com/YukiOta) and [Yuta Azumi](https://github.com/YA21)
 
 - **✅ New best practice:** Bullet 6.8 by Josh Hemphill recommends "Protect Users' Passwords/Secrets using BCrypt or Script". It contains an in-depth explanation about when and why each option suits a specific project. Don't miss this short guide with a brief overview of the various hashing options
 
