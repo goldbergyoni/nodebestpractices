@@ -116,7 +116,7 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 
 ## ![✔] 2.1 Erabili Async-Await edo errore asinkronoak kudeatzeko promesak
 
-**TL;PL:** errore asinkronoak callback erabiliz kudeatzen badituzu, infernurako biderik azkarrena hartuko duzu edo galbiderako piramidean sartuko zara. Zure kodeari opari on bat egin nahi badiozu, erabili agintzen biblioteka ezagun bat edo async-await, try-catch erakoa adibidez kode sintaxis askoz trinkoago eta ohikoago bat eskaintzen duena
+**TL;PL:** errore asinkronoak callback erabiliz kudeatzen badituzu, infernurako biderik azkarrena hartuko duzu edo galbiderako piramidean sartuko zara. Zure kodeari opari on bat egin nahi badiozu, erabili agintzen liburutegi ezagun bat edo async-await, try-catch erakoa adibidez kode sintaxis askoz trinkoago eta ohikoago bat eskaintzen duena
 
 **Bestela:** Node.js-en callback teknika (“err, response” prozedura) erabiltzen baduzu, kode ez jasangarriak sortuko dituzu, batera suertatuko baitira kode arrunta duten erroreen kudeaketa, habiaratze sarriegiak eta kodetze eredu ez erosoak
 
@@ -136,17 +136,17 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 
 ## ![✔] 2.3 Bereizi eragiketa erroreak eta programatze erroreak
 
-**TL; DR:** errore operazionalek (adibidez, APIak balio gabeko sarrera jasotzea) agerian jartzen dituzten arazoak ezagunak izaten dira, eta, haien eragina guztiz ulertu eta kontuz kudeatzeko modukoak izaten dira. Bestetik, programatzaileen erroreak (adibidez, zehaztu gabeko aldagaia irakurtzen saiatzea) aplikazioa berrabiarazteko agindua ematen duten kode hutsegite ezezagunak izaten dira
+**TL; PL:** eragiketa erroreek (adibidez, APIak balio gabeko sarrera jasotzea) agerian jartzen dituzten arazoak ezagunak izaten dira, eta, haien eragina guztiz ulertu eta kontuz kudeatzeko modukoak izaten dira. Bestetik, programatze erroreak (adibidez, zehaztu gabeko aldagaia irakurtzen saiatzea) aplikazioa berrabiarazteko agindua ematen duten kode hutsegite ezezagunak izaten dira
 
-**Bestela:** eti berrabiaraz dezakezu aplikazioa errore bat agertzen denean. Baina zergatik utzi 5.000 erabiltzaile offline iragarri daitekeen errore funtzional txiki batengatik? Kontrakoa ere ez da egokia: arazo ezezagun bat gertatzen denean -programatzailearen errore bat, esaterako- aplikazioa martxan mantentzeak ezusteko jokaerak eragin ditzake. Biak bereizteak aukera ematen du kontuz jokatzeko eta ikuspegi orekatu bat aplikatzeko testuinguruan oinarrituz
+**Bestela:** beti berrabiaraz dezakezu aplikazioa errore bat agertzen denean. Baina zergatik utzi 5.000 erabiltzaile offline iragarri daitekeen errore funtzional txiki batengatik? Kontrakoa ere ez da egokia: arazo ezezagun bat gertatzen denean -programatze errore bat, esaterako- aplikazioa martxan mantentzeak ezusteko jokaerak eragin ditzake. Biak bereizteak aukera ematen du kontuz jokatzeko eta ikuspegi orekatu bat aplikatzeko testuinguruan oinarrituz
 
 🔗 [**Informazio gehiago: eragiketa erroreak vs programazio erroreak**](/sections/errorhandling/operationalvsprogrammererror.basque.md)
 
 <br/><br/>
 
-## ![✔] 2.4 Kudeatu erroreak gune bakar batean, Express middleware erabili partez
+## ![✔] 2.4 Kudeatu erroreak gune bakar batean, Express middlewarea erabili partez
 
-**TL;PL:** erroreak kudeatzeko logika -hala nola, haien erregistroa eramatea eta administratzaileari mezuak bidaltzea- objektu dedikatu zentralizatu batean kapsulatu behar da, erroreren bat gertatzen denean helmuga guztiek (adibidez, Express middleware, cron atazak, atalkako egiaztatzeak) hara deitu dezaten
+**TL;PL:** erroreak kudeatzeko logika -hala nola, haien erregistroa eramatea eta administratzaileari mezuak bidaltzea- objektu dedikatu zentralizatu batean kapsulatu behar da, erroreren bat gertatzen denean helmuga guztiek (adibidez, Express middlewarea, cron atazak, atalkako egiaztatzeak) hara deitu dezaten
 
 **Bestela:** erroreak toki bakarrean ez kudeatzeak kodea bikoiztea eragiten du eta, ziur aski, erroreak gaizki kudeatzea ere bai
 
@@ -186,7 +186,7 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 
 ## ![✔] 2.8 Testeatu erroreen fluxua zure test framework gustukoena erabiliz
 
-**TL;PL:** kalitate profesionaleko kontrol tresna automatizatu bat izan zein programatzaileentzako eskuzko test soil bat izan, bermatu zure kodeak ez duela egoera positiboetan bakarrik lan egiten, baizik eta errore zuzenak ere kudeatu eta birbidaltzen dituela. Mocha & Chai bezalako unitate test frameworkek erraz egin dezakete lan hori (ikusi “Gist leiho”ko kode adibideak)
+**TL;PL:** kalitate profesionaleko kontrol tresna automatizatu bat izan zein programatzaileentzako eskuzko test soil bat izan, bermatu zure kodeak ez duela egoera positiboetan bakarrik lan egiten, baizik eta errore zuzenak ere kudeatu eta birbidaltzen dituela. Mocha eta Chai bezalako unitate test frameworkek erraz egin dezakete lan hori (ikusi “Gist leiho”ko kode adibideak)
 
 **Bestela:** automatikoki zein eskuz probarik egin gabe ezin duzu konfiantzarik izan zure kodeak benetako erroreak antzemango dituen. Errore adierazgarririk gabe ez dago erroreak kudeatzerik
 
@@ -228,7 +228,7 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 
 ## ![✔] 2.12 Agintzen zain egon beti itzuli aurretik, pilak arrastorik uztea saihesteko
 
-**TL; DR:** beti egin `return await` promesa bat itzultzean, pila osoaren jarraipena egin ahal izateko. Funtzio batek promesa bat itzultzen badu, funtzio hori `async`, hau da, asinkronotzat jo behar da, eta esplizituki `await`, itxaron agintza, itzuli aurretik
+**TL; PL:** beti egin `return await` promesa bat itzultzean, pila osoaren jarraipena egin ahal izateko. Funtzio batek promesa bat itzultzen badu, funtzio hori `async`, hau da, asinkronotzat jo behar da, eta esplizituki `await`, itxaron agintza, itzuli aurretik
 
 **Bestela:** itxaron gabe agintza itzultzen duen funtzioa ez da pilaren arrastoan agertuko. Galdutako fotograma horiek akatsa eragingo duen fluxua ulertzea zailduko lukete, batez ere portaera anormalaren zergatia falta den funtzioaren barruan baldin badago
 
