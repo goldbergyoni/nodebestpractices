@@ -1121,13 +1121,13 @@ CMD [ "node", "dist/app.js" ]
 
 <br /><br /><br />
 
-## ![✔] 8.2. Bootstrap using 'node' command, avoid npm start
+## ![✔] 8.2. Lakukan bootstrap menggunakan perintah 'node', hindari npm start
 
-**TL;DR:** use `CMD ['node','server.js']` to start your app, avoid using npm scripts which don't pass OS signals to the code. This prevents problems with child-process, signal handling, graceful shutdown and having zombie processes.
+**TL;DR:** Gunakan `CMD ['node','server.js']` untuk memulai aplikasi Anda, hindari menggunakan skrip npm yang tidak meneruskan sinyal OS ke kode. Ini mencegah masalah dengan proses anak, penanganan sinyal, pemberhentian yang baik dan proses zombie.
 
-**Otherwise:** When no signals are passed, your code will never be notified about shutdowns. Without this, it will lose its chance to close properly possibly losing current requests and/or data.
+**Jika tidak:** Ketika tidak ada sinyal yang dilewatkan, kode Anda tidak akan pernah diberi tahu tentang penghentian. Tanpa itu, kode Anda akan kehilangan kesempatan untuk berhenti dengan benar dan kehilangan permintaan dan/atau data dapat terjadi.
 
-[**Read More: Bootstrap container using node command, avoid npm start**](/sections/docker/bootstrap-using-node.md)
+[**Baca selengkapnya: Bootstrap container using node command, avoid npm start**](/sections/docker/bootstrap-using-node.md)
 
 <br /><br /><br />
 
