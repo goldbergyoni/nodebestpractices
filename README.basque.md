@@ -252,9 +252,9 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 
 ## ![✔] 3.2 Node.jsentzako plugin espezifikoak
 
-**TL;PL:** ESLintek JavaScript vainilla babesteko dituen arau estandarretatik aparte, komeni da Node.jsen osagai espeziko batzuk erabiltzea, hala nola [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) eta [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
+**TL;PL:** ESLintek Vanilla JavaScript babesteko dituen arau estandarretatik aparte, komeni da Node.jsen osagai espeziko batzuk erabiltzea, hala nola [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) eta [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
-**Bestela:** Node.jsen arau akastun batzuek radarraren kontrolari ihes egin ahal diote. Esaterako, garatzaileek sarbide moduan aldagai jakin baten beharra izan dezakete (require(variableCommeChemin)), edozein script JS erabiltzeko aukera ematen diena erasotzaileei. Node.jsen lintersek patroi horiek antzeman ditzakete eta garaiz jo alarma
+**Bestela:** Node.jsen arau akastun batzuek radarraren kontrolari ihes egin ahal diote. Esaterako, garatzaileek sarbide moduan aldagai jakin baten beharra izan dezakete (require(variableCommeChemin)), edozein script JS erabiltzeko aukera ematen diena erasotzaileei. Node.jsen linterrek patroi horiek antzeman ditzakete eta garaiz jo alarma
 
 <br/><br/>
 
@@ -288,7 +288,7 @@ Ez dio axola instrukzioak bereizteko puntu eta koma erabiltzen duzun edo ez, ohi
 
 **TL;PL:** erabili ESLint bereizketetan izaten diren erroreez jabetzeko. [Prettier](https://prettier.io/) edo [Standardjs](https://standardjs.com/) erabiliz automatikoki konpon ditzakezu arazo horiek
 
-**Bestela:** aurreko atalean esan bezala, JavaScripteko interpreteak automatikoki “puntu eta koma” gehitzen du instrukzio baten amaieran “punto eta koma”rik ez badago edo instrukzioa behar den tokian ez dela amaitu eta horrek okerreko emaitzak eragin ditzakeela pentsatzen badu. Ustekabeko errore gehienak ekiditeko, esleipenak erabil ditzakezu eta, horrela, berehala deitutako funtzio adierazpenak erabiltzea saihestuko duzu
+**Bestela:** aurreko atalean esan bezala, JavaScripteko interpreteak automatikoki “puntu eta koma” gehitzen du instrukzio baten amaieran “puntu eta koma”rik ez badago edo instrukzioa behar den tokian ez dela amaitu eta horrek okerreko emaitzak eragin ditzakeela pentsatzen badu. Ustekabeko errore gehienak ekiditeko, esleipenak erabil ditzakezu eta, horrela, berehala deitutako funtzio adierazpenak erabiltzea saihestuko duzu
 
 ### Kodearen adibidea
 
@@ -305,7 +305,7 @@ eginZerbait()
 const items = [1, 2, 3]
 items.forEach(console.log)
 
-// Baztertu — exception bat jaurtitzen du
+// Baztertu — salbuespen bat jaurtitzen du
 const m = new Map()
 const a = [1,2,3]
 [...m.values()].forEach(console.log)
@@ -313,7 +313,7 @@ const a = [1,2,3]
 >  ^^^
 > SyntaxError: Unexpected token ...
 
-// egin zerbait — exception bat jaurtitzen du
+// egin zerbait — salbuespen bat jaurtitzen du
 const count = 2 // 2() burutzen saiatzen da, baina 2() ez da funtzio bat
 (function egin zerbait() {
   // egin zerbait paregabea
@@ -328,9 +328,9 @@ const count = 2 // 2() burutzen saiatzen da, baina 2() ez da funtzio bat
 
 ## ![✔] 3.5 Izendatu funtzio guztiak
 
-**TL;PL:** izendatu funtzio guztiak, itxierak eta deiak. Saihestu funtzio anonimoak. Hau bereziki erabilgarria da nodo aplikazio bat profilatzerakoan. Funtzio guztiak izendatzeak memoria argazkia egiaztatzean aukera emango dizu zer bilatzen ari zaren ulertzen
+**TL;PL:** izendatu funtzio guztiak, itxierak eta deiak. Saihestu funtzio anonimoak. Hau bereziki erabilgarria da node aplikazio bat profilatzerakoan. Funtzio guztiak izendatzeak memoria argazkia egiaztatzean aukera emango dizu zer bilatzen ari zaren ulertzen
 
-**Bestela:** zaila izan liteke produkzio arazoak araztea memoria erregistroak erabiliz (memoria argazkia), funtzio anonimoetako memoria kontsumoa handia denean
+**Bestela:** zaila izan liteke ekoizpen arazoak araztea memoria erregistroak erabiliz (memoria argazkia), funtzio anonimoetako memoria kontsumoa handia denean
 
 <br/><br/>
 
@@ -370,7 +370,7 @@ function eginZerbait() {}
 
 ## ![✔] 3.8 Erabili moduluak lehenengo, barne funtzioen partez
 
-**TL;PL:** moduluak fitxategi bakoitzaren hasieran erabili behar dira, edozein funtzioren aurretik eta kanpo. Jardunbide on eta sinple honek lagunduko dizu fitxategiaren menpekotasunak erraz eta azkar antzematen haren eskuineko goi aldean, baita arazo posible batzuk ekiditen ere
+**TL;PL:** moduluak fitxategi bakoitzaren hasieran erabili behar dira, edozein funtzioren aurretik eta kanpo. Jardunbide on eta sinple honek lagunduko dizu fitxategiaren menpekotasunak erraz eta azkar atzematen haren eskuineko goi aldean, baita arazo posible batzuk ekiditen ere
 
 **Bestela:** Node.js.k aldi berean exekutatzen ditu require-ak. Funtzio batek dei egiten badie, egoera kritikoago batean dauden beste eskaera batzuk blokea daitezke. Gainera, deitutako moduluetako batek edo haren menpeko ataza batek errore bat izanez gero, komeni da lehenbailehen haren berri jakitea, eta agian ezingo da hori egin, modulu horri funtzio batek deitzen badio
 
@@ -400,7 +400,7 @@ module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolve
 
 **TL;PL:** hobetsi berdintasunaren eragile zorrotza `===` berdintasun abstraktuaren eragile ahulagoa baino `==`. `==` eragileak bi aldagai alderatuko ditu, behin aldagai arrunt bihurtu ondoren. `===` eragileak ez du aldagai motaren bihurketarik egiten, eta bi aldagaiek mota berekoak izan behar dute berdinak izateko
 
-**Bestela:** `==`eragileak, berdinak ez diren aldagaiak alderatuz gero, berdinak direlako mezua helaraz dezake
+**Bestela:** `==` eragileak, berdinak ez diren aldagaiak alderatuz gero, berdinak direlako mezua helaraz dezake
 
 ### 3.10 Kodearen adibidea
 
@@ -425,7 +425,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 ## ![✔] 3.11 Erabili Async Await, ekidin callbackak
 
-**TL;PL:** Node 8 LTS erabat bateragarria da orain Async-waitekin, eta, horrela kode asinkronikoa kudeatzeko aukera ematen du, callbackik eta agintzarik erabili gabe. Async-waitek ez du blokeorik eragiten, eta kode asinkronikoak sinkroniko bihurtzen ditu. Zure kodeari egin ahal diozun oparirik onena async-wait erabiltzea da, eskaintzen duen kode sintaxia askoz ere trinkoagoa eta ezagunagoa da eta
+**TL;PL:** Node 8 LTS erabat bateragarria da orain Async-awaitekin, eta, horrela kode asinkronikoa kudeatzeko aukera ematen du, callbackik eta agintzarik erabili gabe. Async-awaitek ez du blokeorik eragiten, eta kode asinkronikoak sinkroniko bihurtzen ditu. Zure kodeari egin ahal diozun oparirik onena async-await erabiltzea da, eskaintzen duen kode sintaxia askoz ere trinkoagoa eta ezagunagoa da eta
 
 **Bestela:** gaizki pasatu eta infernura joateko biderik azkarrena hartu nahi baduzu, erabili callbackak errore asinkronoak kudeatzeko, seguruenik, infernura joateko biderik azkarrena aukeratuko duzu. Estilo honek gune guztietako erroreak egiaztatzera behartzen du, eta, gainera, kode habiaratze beti deserosoaren kudeaketa eta kode fluxua ulertzea zailtzen du
 
@@ -435,7 +435,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 ## ![✔] 3.12 Erabili gezi funtzioak (=>)
 
-**TL;PL:** agintzak eta callbackak onartzen dituzten API zaharrekin async-wait erabiltzea eta funtzio parametroak ekiditea gomendarria bada ere, gezi funtzioek kodearen egitura trinkotu egiten dute eta erro funtzioaren testuinguru lexikoa bermatu (hau da, `this` )
+**TL;PL:** agintzak eta callbackak onartzen dituzten API zaharrekin async-await erabiltzea eta funtzio parametroak ekiditea gomendarria bada ere, gezi funtzioek kodearen egitura trinkotu egiten dute eta erro funtzioaren testuinguru lexikoa bermatu (hau da, `this` )
 
 **Bestela:** (ES5 funtzioetan) kode luzeek erroreak izateko joera handiagoa dute, eta, gainera, irakurtzeko astunak dira
 
