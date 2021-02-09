@@ -64,7 +64,7 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 
 **TL;PL:** aplikazio handien oztoporik handiena kode base erraldoi bat mantendu beharra da, ehundaka lotura eta menpekotasun dituena. Horrelako lan monolitikoek programatzaileen lana motelarazten dute, funtzionalitate berriak gehitzen saiatzen dira eta. Hori gerta ez dadin, zatitu zure kodea osagai txikiagotan, bakoitza bere datuekin karpeta banatan, eta bermatu osagai bakoitza laburra eta sinplea izatea. Bisitatu hemen behean dagoen “Informazio gehiago” esteka, proiektu egoki baten egitura zuzenaren adibideak ikusteko
 
-**Bestela:** funtzionalitate berriak programatzean, garatzaileek zailtasun handiak izaten dituzte aldaketa horien eragina antzemateko, eta beldur izaten dira funtzionalitateon menpeko osagaiak hautsiko ote dituzten. Ondorioz, inplementazioak motelagoak eta arriskutsuagoak izaten dira. Oro har, zailagoa izaten da aplikazio baten kodea luzatzea negozio unitateak banatuta ez daudenean
+**Bestela:** funtzionalitate berriak programatzean, garatzaileek zailtasun handiak izaten dituzte aldaketa horien eragina atzemateko, eta beldur izaten dira funtzionalitateon menpeko osagaiak hautsiko ote dituzten. Ondorioz, inplementazioak motelagoak eta arriskutsuagoak izaten dira. Oro har, zailagoa izaten da aplikazio baten kodea luzatzea negozio unitateak banatuta ez daudenean
 
 🔗 [**Informazio gehiago: antolatu zure proiektua osagai txikiagotan**](/sections/projectstructre/breakintcomponents.basque.md)
 
@@ -176,7 +176,7 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 
 ## ![✔] 2.7 Erabili erregistratze tresna helduak erroreen ikusgaitasuna handitzeko
 
-**TL;PL:** erregistratze tresna helduen sortak erabiltzen badituzu –[Pino](https://github.com/pinojs/pino) edo [Log4js](https://www.npmjs.com/package/log4js), adibidez–, erroreak lehenago antzeman eta ulertuko dituzu. Beraz, utzi alde batera console.log
+**TL;PL:** erregistratze tresna helduen sortak erabiltzen badituzu –[Pino](https://github.com/pinojs/pino) edo [Log4js](https://www.npmjs.com/package/log4js), adibidez–, erroreak lehenago atzeman eta ulertuko dituzu. Beraz, utzi alde batera console.log
 
 **Bestela:** console.log-ak arakatu behar badituzu edo testua desordenatua duen artxibo batean erroreak eskuz, kontsulta tresnarik gabe edo erregistratze bisore ganorazkorik gabe bilatu behar badituzu, ordu asko emango dituzu lanean gaueko ordu txikiak arte
 
@@ -188,7 +188,7 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 
 **TL;PL:** kalitate profesionaleko kontrol tresna automatizatu bat izan zein programatzaileentzako eskuzko test soil bat izan, bermatu zure kodeak ez duela egoera positiboetan bakarrik lan egiten, baizik eta errore zuzenak ere kudeatu eta birbidaltzen dituela. Mocha eta Chai bezalako unitate test frameworkek erraz egin dezakete lan hori (ikusi “Gist leiho”ko kode adibideak)
 
-**Bestela:** automatikoki zein eskuz probarik egin gabe ezin duzu konfiantzarik izan zure kodeak benetako erroreak antzemango dituen. Errore adierazgarririk gabe ez dago erroreak kudeatzerik
+**Bestela:** automatikoki zein eskuz probarik egin gabe ezin duzu konfiantzarik izan zure kodeak benetako erroreak atzemango dituen. Errore adierazgarririk gabe ez dago erroreak kudeatzerik
 
 🔗 [**Informazio gehiago: testeatu erroreen fluxua**](/sections/errorhandling/testingerrorflows.basque.md)
 
@@ -254,7 +254,7 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 
 **TL;PL:** ESLintek Vanilla JavaScript babesteko dituen arau estandarretatik aparte, komeni da Node.jsen osagai espeziko batzuk erabiltzea, hala nola [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) eta [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
-**Bestela:** Node.jsen arau akastun batzuek radarraren kontrolari ihes egin ahal diote. Esaterako, garatzaileek sarbide moduan aldagai jakin baten beharra izan dezakete (require(variableCommeChemin)), edozein script JS erabiltzeko aukera ematen diena erasotzaileei. Node.jsen linterrek patroi horiek antzeman ditzakete eta garaiz jo alarma
+**Bestela:** Node.jsen arau akastun batzuek radarraren kontrolari ihes egin ahal diote. Esaterako, garatzaileek sarbide moduan aldagai jakin baten beharra izan dezakete (require(variableCommeChemin)), edozein script JS erabiltzeko aukera ematen diena erasotzaileei. Node.jsen linterrek patroi horiek atzeman ditzakete eta garaiz jo alarma
 
 <br/><br/>
 
@@ -449,7 +449,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 ## ![✔] 4.1 Idatzi APIaren probak (osagaia), gutxienez
 
-**TL;PL:** proiektu gehienei ez zaie proba automatikorik egiten denbora gutxian egiten direlako edo, maiz, 'proba proiektua' kontroletik kanpo geratu eta bertan behera uzten direlako. Hori dela eta, lehentasuna eman API probei eta hasi beraiek egiten; izan ere, hori da idazteko erarik errazena eta, gainera, proba unitarioek baino estaldura handiagoa eskaintzen dute; are gehiago, API probak sor ditzakezu, [Postman](https://www.getpostman.com/) bezalako tresnak erabiliz. Ondoren, baliabide eta denbora gehiago edukiz gero, jarraitu proba aurreratuak egiten, hala nola proba unitarioak, datu baseen probak, errendimendu probak, etab.
+**TL;PL:** proiektu gehienei ez zaie proba automatikorik egiten denbora gutxian egiten direlako edo, maiz, 'proba proiektua' kontroletik kanpo geratu eta bertan behera uzten delako. Hori dela eta, lehentasuna eman API probei eta hasi beraiek egiten; izan ere, hori da idazteko erarik errazena eta, gainera, proba unitarioek baino estaldura handiagoa eskaintzen dute; are gehiago, API probak sor ditzakezu, [Postman](https://www.getpostman.com/) bezalako tresnak erabiliz. Ondoren, baliabide eta denbora gehiago edukiz gero, jarraitu proba aurreratuak egiten, hala nola proba unitarioak, datu baseen probak, errendimendu probak, etab.
 
 **Bestela:** luzaroan aritu zintezke proba unitarioak idazten, azkenean soilik %20ko estaldura lortu duzula jakiteko
 
@@ -457,7 +457,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 ## ![✔] 4.2 Erabili 3 zati proba izen bakoitzean
 
-**TL;PL:** proba adierazgarria izan behar da eskakizunen mailan, barne kodearekin lan egiten ohituta ez dauden QAko ingeniariek eta garatzaileek berez eta erraz uler dezaten. Probaren izenean adierazi zer ari den probatzen (probatzen ari den unitatea), zer egoeratan eta zer emaitza espero den
+**TL;PL:** proba adierazgarria izan behar da eskakizunen mailan, barne kodearekin lan egiten ohituta ez dauden QAko ingeniariek eta garatzaileek berez eta erraz uler dezaten. Probaren izenean adierazi zer ari den probatzen (probapean dagoen unitatea), zer egoeratan eta zer emaitza espero den
 
 **Bestela:** inplementazio batek huts egin du, “Gehitu produktua“ izeneko proba batek huts egin du. Esaten dizu horrek zehazki zer dabilen gaizki?
 
@@ -475,11 +475,11 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 <br/><br/>
 
-## ![✔] 4.4 Antzeman kodeko arazoak linter bat erabiliz
+## ![✔] 4.4 Atzeman kodeko arazoak linter bat erabiliz
 
-**TL;PL:** erabili kode linterra oinarrizko kalitatea egiaztatzeko eta antiereduak garaiz antzemateko. Exekutatu edozein proba baino lehen eta gehitu aurre-commit-a git kako moduan, edozein arazo berrikusteko eta zuzentzeko behar den denbora minimizatu ahal izateko. Era berean, egiaztatu [3. atala](#3-code-style-practices), kodearen estilo praktikei dagokienez
+**TL;PL:** erabili kode linterra oinarrizko kalitatea egiaztatzeko eta antiereduak garaiz atzemateko. Exekutatu edozein proba baino lehen eta gehitu aurre-commit-a git kako moduan, edozein arazo berrikusteko eta zuzentzeko behar den denbora minimizatu ahal izateko. Era berean, egiaztatu [3. atala](#3-code-style-practices), kodearen estilo praktikei dagokienez
 
-**Bestela:** kode antiereduren bat zuzendu gabe utz dezakezu, zure produkzio ingurunean ahula izan litekeena
+**Bestela:** kode antiereduren bat zuzendu gabe utz dezakezu, zure ekoizpen ingurunean ahula izan litekeena
 
 <br/><br/>
 
@@ -511,7 +511,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 ## ![✔] 4.8 Egiaztatu zure proben estaldura, proba eredu okerrak identifikatzen laguntzen du eta
 
-**TL;PL:** [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) bezalako estaldura tresnak oso aproposak dira 3 arrazoirengatik: dohainik dira, hau da, ez da lanik egin behar txostenak lortzeko; proben estaldura gutxitu den identifikatzen laguntzen dute; eta, azkenik, baina ez garrantzi txikiagokoa, proben desdoikuntzak agerian jartzen dituzte. Koloretako kode estalduraren txostenak aztertzean, baliteke harrapaketa kapsula moduan sekula testatzen ez diren kode arloak ikustea, adibidez. Horrek esan nahi du probek bide arrakastatsuak besterik ez dituztela antzematen eta ez aplikazioak nola jokatzen duen erroreak gertatzen direnean. Konfiguratu zure probak estaldura maila batetik behera jaisten denean erroreak eragiteko
+**TL;PL:** [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) bezalako estaldura tresnak oso aproposak dira 3 arrazoirengatik: dohainik dira, hau da, ez da lanik egin behar txostenak lortzeko; proben estaldura gutxitu den identifikatzen laguntzen dute; eta, azkenik, baina ez garrantzi txikiagokoa, proben desdoikuntzak agerian jartzen dituzte. Koloretako kode estalduraren txostenak aztertzean, baliteke harrapaketa kapsula moduan sekula testatzen ez diren kode arloak ikustea, adibidez. Horrek esan nahi du probek bide arrakastatsuak besterik ez dituztela atzematen eta ez aplikazioak nola jokatzen duen erroreak gertatzen direnean. Konfiguratu zure probak estaldura maila batetik behera jaisten denean erroreak eragiteko
 
 **Bestela:** ez da inolako neurgailu automatizaturik egongo zure kodearen zati handi bat proben estalduratik kanpo dagoela esango dizuna
 
@@ -519,7 +519,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 ## ![✔] 4.9 Ikuskatu pakete zaharkituak
 
-**TL;PL:** erabili zure tresnarik gogokoena (adibidez, 'npm outdated' edo [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) zaharkituta dauden paketeak antzemateko, ezarri kontrol hau zure IEren bideetan eta, are gehiago, eragin konpilazio batek huts egitea ingurune kritikoetan. Adibidez, agertoki kritikoa izan daiteke instalatutako pakete batek 5 adabaki baieztatuak dituenean (adibidez, bertsio lokala 1.3.1 da eta biltegi bertsioa 1.3.8) edo haren egileak zaharkitu etiketa jarri dionean. Kasu horretan, ezabatu konpilazioa eta ekidin bertsio hori erabiltzea
+**TL;PL:** erabili zure tresnarik gogokoena (adibidez, 'npm outdated' edo [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) zaharkituta dauden paketeak atzemateko, ezarri kontrol hau zure IEren bideetan eta, are gehiago, eragin konpilazio batek huts egitea ingurune kritikoetan. Adibidez, agertoki kritikoa izan daiteke instalatutako pakete batek 5 adabaki baieztatuak dituenean (adibidez, bertsio lokala 1.3.1 da eta biltegi bertsioa 1.3.8) edo haren egileak zaharkitu etiketa jarri dionean. Kasu horretan, ezabatu konpilazioa eta ekidin bertsio hori erabiltzea
 
 **Bestela:** modu esplizituan arriskutsutzat etiketatuta dauden paketeak egikarituko ditu zure produkzioak
 
@@ -527,7 +527,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 ## ![✔] 4.10 Erabili production bezalako inguruneak e2e probetarako
 
-**TL;PL:** zuzeneko datuak erabiltzen dituen hasieratik amaierarainoko proba(e2e) lehen CIren prozesuko katebegirik ahulena izaten zen, datu baseak bezalako zerbitzu astun askoren menpean dago eta. Erabili zure ekoizpen errealetik ahalik eta hurbilen dagoen ingurunea
+**TL;PL:** zuzeneko datuak erabiltzen dituen hasieratik amaierarainoko proba (e2e) lehen IEren prozesuko katebegirik ahulena izaten zen, datu baseak bezalako zerbitzu astun askoren menpean dago eta. Erabili zure ekoizpen errealetik ahalik eta hurbilen dagoen ingurunea
 
 **Bestela:** docker-compose erabili ezean, taldeek ingurune bakoitzeko proben datu baseak mantendu behar izaten dituzte, garatzaileen makinak barne. Mantendu beti datu base horiek sinkronizatuta, proben emaitzak alda ez daitezen ingurune batetik bestera
 
@@ -535,7 +535,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 ## ![✔] 4.11 Eguneratu probak aldizka analisi estatikoko tresnak erabiliz
 
-**TL;PL:** analisi estatikoko tresnak erabiltzeak lagundu egiten dizu kodearen kalitatea hobetzeko modu objektiboak lortzen eta zure kodea jasangarri izaten. Analisirako tresna estatikoak gehitu ahal dizkiozu zure IE konpilazioari, huts egingo duen susmoa duzuenean. Estaldurari dagokionean, bere aldeko puntu nagusiak dira kalitatea ikuskatzeko gaitasuna dutela fitxategi anitzen testuinguruan (adibidez, bikoizketak antzematea), azterketa aurreratuak egitea (adibidez, kodearen konplexutasuna hautematea), eta kode arazoen historiaren eta aurrerapenaren jarraipena egitea. Horretarako, bi tresna hauek erabil ditzakezu: [Sonarqube](https://www.sonarqube.org/) (2.600+ [izar](https://github.com/SonarSource/sonarqube)) eta [Code Climate](https://codeclimate.com/) (1.500+ [izar](https://github.com/codeclimate/codeclimate))
+**TL;PL:** analisi estatikoko tresnak erabiltzeak lagundu egiten dizu kodearen kalitatea hobetzeko modu objektiboak lortzen eta zure kodea jasangarri izaten. Analisirako tresna estatikoak gehitu ahal dizkiozu zure IE konpilazioari, huts egingo duen susmoa duzuenean. Estaldurari dagokionean, bere aldeko puntu nagusiak dira kalitatea ikuskatzeko gaitasuna dutela fitxategi anitzen testuinguruan (adibidez, bikoizketak atzematea), azterketa aurreratuak egitea (adibidez, kodearen konplexutasuna hautematea), eta kode arazoen historiaren eta aurrerapenaren jarraipena egitea. Horretarako, bi tresna hauek erabil ditzakezu: [Sonarqube](https://www.sonarqube.org/) (2.600+ [izar](https://github.com/SonarSource/sonarqube)) eta [Code Climate](https://codeclimate.com/) (1.500+ [izar](https://github.com/codeclimate/codeclimate))
 
 **Bestela:** kodearen kalitatea txarra denean, erroreek eta errendimenduak beti emango dituzte arazoak, azken belaunaldiko ezaugarriak dituen liburutegi berri distiratsu batek ere konpontzerik izango ez dituenak
 
@@ -545,7 +545,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 ## ![✔] 4.12 Aukeratu arretaz zure IE plataforma (Jenkins vs CircleCI vs Travis vs gainerako mundua)
 
-**TL;PL:** zure integrazio jarraituaren plataformak (CICD) kalitateko tresna guztiak (adib. testak, lintak) ostatatu behar ditu, eta, beraz, indartsua izan beharko du pluginen ekosistema. Aspaldian [Jenkins](https://jenkins.io/) proiektu askoren balio lehenetsia izan ohi zen, komunitaterik handiena eta oso plataforma indartsua baititu, ordainetan konfigurazio konplexu samarra eta ikaste kurba pikoa baditu ere. Gaur egun, askoz errazagoa da IE irtenbide bat sortzea [CircleCI](https://circleci.com) eta haren antzeko SaaS tresnak erabiliz. Tresna horiek IE hodi malgu bat sortzea ahalbidetzen dute azpiegitura osoa kudeatzeko zama hartu beharra izan gabe. Azken batean, sendotasuna eta abiaduraren arteko oreka lortzea da kontua. Egin zure aukera arretaz
+**TL;PL:** zure integrazio jarraituaren plataformak (CICD) kalitateko tresna guztiak (adib. testak, lintak) ostatatu behar ditu, eta, beraz, indartsua izan beharko du bere pluginen ekosistemak. Aspaldian [Jenkins](https://jenkins.io/) proiektu askoren balio lehenetsia izan ohi zen, komunitaterik handiena eta oso plataforma indartsua baititu, ordainetan konfigurazio konplexu samarra eta ikaste kurba pikoa baditu ere. Gaur egun, askoz errazagoa da IE irtenbide bat sortzea [CircleCI](https://circleci.com) eta haren antzeko SaaS tresnak erabiliz. Tresna horiek IE hodi malgu bat sortzea ahalbidetzen dute azpiegitura osoa kudeatzeko zama hartu beharra izan gabe. Azken batean, sendotasuna eta abiaduraren arteko oreka lortzea da kontua. Egin zure aukera arretaz
 
 **Bestela:** hornitzaile espezializatu bat aukeratzeak blokeatu zaitzake, pertsonalizazio aurreratu bat behar duzunean. Bestalde, Jenkins erabiltzeak denbora asko eska dezake azpiegitura konfiguratzean
 
@@ -555,7 +555,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 ## ![✔] 4.13 Probatu zure middlewareak eurak bakarrik
 
-**TL;PL:** middlewareak eskaera askori erantzuten dion logika sendo bat duenean, merezi du middlewarea probatzea bera bakarrik, web esparru osoa aktibatu gabe. Hori erraz lor daiteke {req, res, next} objektuak antzemanez eta behatuz
+**TL;PL:** middlewareak eskaera askori erantzuten dion logika sendo bat duenean, merezi du middlewarea probatzea bera bakarrik, web esparru osoa aktibatu gabe. Hori erraz lor daiteke {req, res, next} objektuak atzemanez eta behatuz
 
 **Bestela:** middleware Expressean === errorea izanez gero, errorea gertatuko zaizu eskaera guztietan edo gehienetan
 
@@ -688,13 +688,13 @@ edo hornitzaileen lainoko zerbitzuak
 
 <br/><br/>
 
-## ![✔] 5.13. Erabili ahuleziak automatikoki antzematen dituzten tresnak
+## ![✔] 5.13. Erabili ahuleziak automatikoki atzematen dituzten tresnak
 
 **TL;PL:** menpekotasun ezagunenek ere –Express, adibidez– badituzte (noizean behin) ahulezia ezagunak, sistema arriskuan jar ditzaketenak. Horrek konponbide erraza du, ordea, tresna komunitario eta komertzialak erabiliz gero, ahuleziak etengabe kontrolatu eta haien berri ematen dute eta (bertan edo GitHub-en)
 
 **Bestela:** zure kodea ahulezia eta zaurgarritasunetatik garbi mantentzeko tresna dedikaturik gabe, jarraipen estua egin beharko diezu mehatxu berriei buruz linean egiten diren argitalpenei, bide batez esanda, aspergarri samarra izaten dena
 
-🔗 [**Irakurri gehiago: erabili ahuleziak automatikoki antzematen dituzten tresnak**](/sections/production/detectvulnerabilities.md)
+🔗 [**Irakurri gehiago: erabili ahuleziak automatikoki atzematen dituzten tresnak**](/sections/production/detectvulnerabilities.md)
 
 <br/><br/>
 
@@ -768,7 +768,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
 
-**TL;PL:** erabili segurtasunarekin lotutako linter pluginak, [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) bezalako segurtasun ahuleziak eta arazoak lehenbailehen antzemateko, ahal bada kodetzen ari diren bitartean. Horrek segurtasun ahuleziak atzematen lagun dezake, hala nola eval erabiltzea, bigarren mailako prozesu bat deitzea edo modulu bat inportatzea kate literal batekin (adibidez, erabiltzailearen sarrera). Egin klik 'Gehiago irakurri' atalean segurtasun liner batek antzematen dituen kode adibideak ikusteko
+**TL;PL:** erabili segurtasunarekin lotutako linter pluginak, [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) bezalako segurtasun ahuleziak eta arazoak lehenbailehen atzemateko, ahal bada kodetzen ari diren bitartean. Horrek segurtasun ahuleziak atzematen lagun dezake, hala nola eval erabiltzea, bigarren mailako prozesu bat deitzea edo modulu bat inportatzea kate literal batekin (adibidez, erabiltzailearen sarrera). Egin klik 'Gehiago irakurri' atalean segurtasun liner batek atzematen dituen kode adibideak ikusteko
 
 **Bestela:** garapenean zehar segurtasun ahulezia zuzena izan zitekeena produkzioaren arazo nagusia bihurtzen da. Gainera, baliteke proiektuak kodeen segurtasun praktika koherenterik ez jarraitzea, ahuleziak sartzea edo urruneko biltegietan sartutako sekretu konfidentzialak sortzea
 
@@ -836,7 +836,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Known%20Vulnerabilities%20-green.svg" alt=""/></a>
 
-**TL;PL:** npm ekosistemarekin ohikoa da proiektu batek menpekotasun ugari izatea. Menpekotasunak beti kontrolatuta egon behar dira ahultasun berriak aurkitzen diren heinean. Erabili [npm audit](https://docs.npmjs.com/cli/audit) edo [snyk](https://snyk.io/) bezalako tresnak, erasotzen errazak diren menpekotasunen jarraipena egiteko, kontrolatzeko eta adabakiak jartzeko. Tresna horiek zure IE konfigurazioarekin integratu, erasotzen errazak diren menpekotasunenak antzemateko ekoizpenera iritsi aurretik
+**TL;PL:** npm ekosistemarekin ohikoa da proiektu batek menpekotasun ugari izatea. Menpekotasunak beti kontrolatuta egon behar dira ahultasun berriak aurkitzen diren heinean. Erabili [npm audit](https://docs.npmjs.com/cli/audit) edo [snyk](https://snyk.io/) bezalako tresnak, erasotzen errazak diren menpekotasunen jarraipena egiteko, kontrolatzeko eta adabakiak jartzeko. Tresna horiek zure IE konfigurazioarekin integratu, erasotzen errazak diren menpekotasunenak atzemateko ekoizpenera iritsi aurretik
 
 **Bestela:** erasotzaile batek zure web esparrua detektatu eta ageriko ahultasun guztiei eraso ahal die
 
@@ -947,7 +947,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;PL:** adierazpen erregularrak, oso erabilgarriak izan arren, benetako mehatxua dira JavaScript aplikazioentzat, oro har, eta Node.js plataformarentzat, bereziki. Erabiltzaile baten sarrera prozesatzeko testuarekin bat etor dadin, gerta liteke PUZeko ziklo kopuru handia behar izatea. RegExen prozesamenduaren eraginkortasuna hain txikia izan daiteke, ezen 10 hitz balioztatzen dituen eskaera bakar batek blokea baitezake gertaeren begizta osoa 6 segundoz, eta PUZa su hartzeko moduan jarri 🔥. Hori dela eta, erasotzen errazak diren ohiko adierazpen ahulen txantiloiak antzemateko erabili hirugarrenen balidazio paketeak -esaterako, [validator.js](https://github.com/chriso/validator.js)-, zuk zeure Regex ereduak idatzi edo [safe-regex](https://github.com/substack/safe-regex) erabili gabe
+**TL;PL:** adierazpen erregularrak, oso erabilgarriak izan arren, benetako mehatxua dira JavaScript aplikazioentzat, oro har, eta Node.js plataformarentzat, bereziki. Erabiltzaile baten sarrera prozesatzeko testuarekin bat etor dadin, gerta liteke PUZeko ziklo kopuru handia behar izatea. RegExen prozesamenduaren eraginkortasuna hain txikia izan daiteke, ezen 10 hitz balioztatzen dituen eskaera bakar batek blokea baitezake gertaeren begizta osoa 6 segundoz, eta PUZa su hartzeko moduan jarri 🔥. Hori dela eta, erasotzen errazak diren ohiko adierazpen ahulen txantiloiak atzemateko erabili hirugarrenen balidazio paketeak -esaterako, [validator.js](https://github.com/chriso/validator.js)-, zuk zeure Regex ereduak idatzi edo [safe-regex](https://github.com/substack/safe-regex) erabili gabe
 
 **Bestela:** gaizki idatzitako ohiko adierazpenek Regular Expression DoSen erasoak jasan ditzakete, gertaeren begizta erabat blokeatuko dutenak. Adibidez, 2017ko azaroan, RegExen erabilera gaiztoak agerian jarri zuen `moment` pakete ezagunaren ahultasuna
 
@@ -959,7 +959,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;PL:** bide bat erabiltzailea sartu ondoren sortua ote den kezka baduzu eta horregatik parametro gisa ezarri baduzu, saihestu bide hori erabiltzea beste fitxategi bat deitzeko / inportatzeko. Arau hori, oro har, edozein fitxategitara sartzeko erabil daiteke (hau da, `fs.readFile()`) edo erabiltzailea sartu ondoren sortutako aldagai dinamikoak dituen beste baliabide konfidentzialetara sartzeko. [Eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) linterrek eredu horiek antzeman eta nahikoa goiz ohartaraz dezake
+**TL;PL:** bide bat erabiltzailea sartu ondoren sortua ote den kezka baduzu eta horregatik parametro gisa ezarri baduzu, saihestu bide hori erabiltzea beste fitxategi bat deitzeko / inportatzeko. Arau hori, oro har, edozein fitxategitara sartzeko erabil daiteke (hau da, `fs.readFile()`) edo erabiltzailea sartu ondoren sortutako aldagai dinamikoak dituen beste baliabide konfidentzialetara sartzeko. [Eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) linterrek eredu horiek atzeman eta nahikoa goiz ohartaraz dezake
 
 **Bestela:** erabiltzaile gaiztoen sarrerak manipulatutako fitxategiak deitzeko erabiltzen den parametro batera jo dezake, adibidez, aurretik fitxategi sisteman kargatutako fitxategietara edo lehendik sisteman bazeuden fitxategietara sartzeko
 
@@ -1259,7 +1259,7 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 ## ![✔] 8.15. Garbitu zure Dockerfilea
 
-**TL;PL:** Linterra erabiliz zure Dockerfilea garbitzea urrats garrantzitsua da haren barruan jardunbide egokiak errespetatzen ez dituzten arazoak identifikatzeko. Docker linter espezializatu bat erabiliz errendimendu eta segurtasun hobekuntzak erraz antzematen dira, alferrikako ordu ugari aurreztea edo produkzio kodean segurtasun arazoak murriztea lortuz
+**TL;PL:** Linterra erabiliz zure Dockerfilea garbitzea urrats garrantzitsua da haren barruan jardunbide egokiak errespetatzen ez dituzten arazoak identifikatzeko. Docker linter espezializatu bat erabiliz errendimendu eta segurtasun hobekuntzak erraz atzematen dira, alferrikako ordu ugari aurreztea edo produkzio kodean segurtasun arazoak murriztea lortuz
 
 **Bestela:** okerrez, Dockerfileren sortzaileak root bat utzi zuen produkzio erabiltzaile moduan, eta jatorri ezezaguneko biltegi irudi bat ere erabili zuen. Hori liner soil batekin ekidin liteke.
 
