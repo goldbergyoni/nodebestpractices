@@ -30,7 +30,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 - **✅ New best practice:** Bullet 6.8 by Josh Hemphill recommends "Protect Users' Passwords/Secrets using BCrypt or Script". It contains an in-depth explanation about when and why each option suits a specific project. Don't miss this short guide with a brief overview of the various hashing options
 
-- **:🎊: 60,000 stars!**: Our repo was starred and trusted by 60,100 developers. We're speechless
+- **🎊 60,000 stars!**: Our repo was starred and trusted by 60,100 developers. We're speechless
 
 <br/><br/>
 
