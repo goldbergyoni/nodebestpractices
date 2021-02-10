@@ -1277,6 +1277,24 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "andrewjbarbour",
+      "name": "andrewjbarbour",
+      "avatar_url": "https://avatars.githubusercontent.com/u/77080074?v=4",
+      "profile": "https://github.com/andrewjbarbour",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "MasujimaRyohei",
+      "name": "mr",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17163541?v=4",
+      "profile": "https://MasujimaRyohei.jp",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
