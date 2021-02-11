@@ -1161,13 +1161,13 @@ CMD [ "node", "dist/app.js" ]
 
 <br /><br /><br />
 
-## ![✔] 8.6. Shutdown smartly and gracefully
+## ![✔] 8.6. Matikan aplikasi dengan baik dan cerdas
 
-**TL;DR:** Handle the process SIGTERM event and clean-up all existing connection and resources. This should be done while responding to ongoing requests. In Dockerized runtimes shutting down containers is not a rare event, rather a frequent occurrence that happen as part of routine work. Achieving this demands some thoughtful code to orchestrate several moving parts: The load balancer, keep-alive connections, the HTTP server and other resources
+**TL;DR:** Tangani proses event SIGTERM dan bersihkan semua koneksi dan sumber daya yang ada. Hal ini harus dilakukan sambil menanggapi permintaan yang sedang berlangsung. Dalam runtime Docker, mematikan kontainer bukanlah peristiwa yang jarang terjadi, melainkan sesuatu yang sering terjadi sebagai bagian dari pekerjaan rutin. Untuk mencapai hal ini, diperlukan beberapa kode yang baik untuk mengatur beberapa bagian yang bergerak: load balancer, koneksi keep-alive, server HTTP dan sumber daya lainnya
 
-**Otherwise:** Dying immediately means not responding to thousands of disappointed users
+**Jika tidak:** Mematikan aplikasi secara langsung berarti tidak menanggapi ribuan pengguna yang kecewa
 
-🔗 [**Read More: Graceful shutdown**](/sections/docker/graceful-shutdown.md)
+🔗 [**Baca selengkapnya: Graceful shutdown**](/sections/docker/graceful-shutdown.md)
 
 <br /><br /><br />
 
