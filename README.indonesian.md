@@ -1191,15 +1191,15 @@ CMD [ "node", "dist/app.js" ]
 
 <br /><br /><br />
 
-## ![✔] 8.9. Use explicit image reference, avoid `latest` tag
+## ![✔] 8.9. Gunakan referensi gambar eksplisit, hindari tag `latest`
 
-**TL;DR:** Specify an explicit image digest or versioned label, never refer to `latest`. Developers are often led to believe that specifying the `latest` tag will provide them with the most recent image in the repository however this is not the case. Using a digest guarantees that every instance of the service is running exactly the same code.
+**TL;DR:** Tentukan `digest` eksplisit gambar atau label berversi, jangan pernah merujuk ke `latest`. Pengembang sering kali percaya bahwa menetapkan tag `latest` akan memberi mereka gambar terbaru di repository namun hal ini tidak benar. Menggunakan `digest` menjamin bahwa setiap instansi layanan menjalankan kode yang sama persis.
 
-In addition, referring to an image tag means that the base image is subject to change, as image tags cannot be relied upon for a deterministic install. Instead, if a deterministic install is expected, a SHA256 digest can be used to reference an exact image.
+Selain itu, merujuk ke sebuah tag gambar berarti gambar dasar dapat berubah, karena tag image tidak dapat diandalkan untuk penginstalan deterministik. Jika penginstalan deterministik diharapkan, digest SHA256 dapat digunakan untuk mereferensikan ke gambar exact yang tepat.
 
-**Otherwise:** A new version of a base image could be deployed into production with breaking changes, causing unintended application behaviour.
+**Otherwise:** Versi baru gambar dasar dapat dideploy ke produksi dengan perubahan yang dapat merusak, menyebabkan perilaku aplikasi yang tidak diinginkan.
 
-🔗 [**Read More: Understand image tags and use the "latest" tag with caution**](/sections/docker/image-tags.md)
+🔗 [**Baca selengkapnya: Understand image tags and use the "latest" tag with caution**](/sections/docker/image-tags.md)
 
 <br /><br /><br />
 
