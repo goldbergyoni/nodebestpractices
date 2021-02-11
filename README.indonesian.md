@@ -1181,13 +1181,13 @@ CMD [ "node", "dist/app.js" ]
 
 <br /><br /><br />
 
-## ![✔] 8.8. Plan for efficient caching
+## ![✔] 8.8. Rencanakan caching yang efisien
 
-**TL;DR:** Rebuilding a whole docker image from cache can be nearly instantaneous if done correctly. The less updated instructions should be at the top of your Dockerfile and the ones constantly changing (like app code) should be at the bottom.
+**TL;DR:** Membangun ulang seluruh image docker dari cache dapat dilakukan hampir seketika jika dilakukan dengan benar. Instruksi yang jarang diperbarui harus berada di atas Dockerfile Anda dan yang terus berubah (seperti kode app) harus berada di bawah.
 
-**Otherwise:** Docker build will be very long and consume lot of resources even when making tiny changes
+**Jika tidak:** Build Docker akan sangat lama dan memakan banyak sumber daya bahkan saat melakukan perubahan kecil
 
-🔗 [**Read More: Leverage caching to reduce build times**](/sections/docker/use-cache-for-shorter-build-time.md)
+🔗 [**Baca selengkapnya: Leverage caching to reduce build times**](/sections/docker/use-cache-for-shorter-build-time.md)
 
 <br /><br /><br />
 
