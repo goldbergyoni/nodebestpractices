@@ -1171,13 +1171,13 @@ CMD [ "node", "dist/app.js" ]
 
 <br /><br /><br />
 
-## ![✔] 8.7. Set memory limits using both Docker and v8
+## ![✔] 8.7. Tetapkan batas memori menggunakan Docker dan v8
 
-**TL;DR:** Always configure a memory limit using both Docker and the JavaScript runtime flags. The Docker limit is needed to make thoughtful container placement decision, the --v8's flag max-old-space is needed to kick off the GC on time and prevent under utilization of memory. Practically, set the v8's old space memory to be a just bit less than the container limit
+**TL;DR:** Selalu konfigurasikan batas memori menggunakan Docker dan runtime flag JavaScript. Batas pada Docker diperlukan untuk membuat keputusan penempatan kontainer yang baik, flag `max-old-space` pada --v8 diperlukan untuk memulai GC tepat waktu untuk mencegah penggunaan memori yang kurang. Secara praktis, tetapkan batas memori `max-old-space` pada v8 sedikit lebih rendah dari pada batas memori kontainer
 
-**Otherwise:** The docker definition is needed to perform thoughtful scaling decision and prevent starving other citizens. Without also defining the v8's limits, it will under utilize the container resources - Without explicit instructions it crashes when utilizing ~50-60% of its host resources
+**Jika tidak:** Defenisi Docker diperlukan untuk melakukan keputusan penskalaan yang baik dan mencegah kelaparan warga lain. Tanpa menentukan batas pada v8 juga, sumber daya kontainer juga akan kurang digunakan oleh Node - Tanpa instruksi eksplisit Node akan berhenti saat menggunakan ~50-60% dari sumber daya hostnya
 
-🔗 [**Read More: Set memory limits using Docker only**](/sections/docker/memory-limit.md)
+🔗 [**Baca selengkapnya: Set memory limits using Docker only**](/sections/docker/memory-limit.md)
 
 <br /><br /><br />
 
