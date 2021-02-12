@@ -1233,13 +1233,13 @@ Selain itu, merujuk ke sebuah tag gambar berarti gambar dasar dapat berubah, kar
 
 <br /><br /><br />
 
-## ![✔] 8.13 Clean NODE_MODULE cache
+## ![✔] 8.13 Bersihkan cache NODE_MODULE
 
-**TL;DR:** After installing dependencies in a container remove the local cache. It doesn't make any sense to duplicate the dependencies for faster future installs since there won't be any further installs - A Docker image is immutable. Using a single line of code tens of MB (typically 10-50% of the image size) are shaved off
+**TL;DR:** Setelah menginstal dependensi dalam kontainer, hapus cache lokal. Tidak masuk akal untuk menduplikasi dependensi untuk penginstalan lebih cepat di masa mendatang karena tidak akan ada penginstalan lagi seterusnya - Image Docker tidak dapat diubah. Dengan menggunakan satu baris kode, puluhan MB (biasanya 10-50% dari ukuran gambar) dihilangkan
 
-**Otherwise:** The image that will get shipped to production will weigh 30% more due to files that will never get used
+**Jika tidak:** Gambar yang akan dikirim ke produksi akan menjadi 30% lebih besar karena file yang tidak akan pernah digunakan
 
-🔗 [**Read More: Clean NODE_MODULE cache**](/sections/docker/clean-cache.md)
+🔗 [**Baca selengkapnya: Clean NODE_MODULE cache**](/sections/docker/clean-cache.md)
 
 <br /><br /><br />
 
