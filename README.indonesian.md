@@ -811,7 +811,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 ## ![✔] 6.5. Kumpulan praktik terbaik keamanan umum
 
-**TL;DR:** Ini adalah kumpulan saran keamanan yang tidak berhubungan langsung dengan Node.js - implementasi pada Node tidak jauh berbeda dengan implementasi pada bahasa lain. Klik 'Baca selengkapnya' untuk membaca kilasannya.
+**TL;DR:** Ini adalah kumpulan saran keamanan yang tidak berhubungan langsung dengan Node.js - implementasi pada Node tidak jauh berbeda dengan implementasi pada bahasa lain. Klik 'Baca selengkapnya' untuk membaca sekilas.
 
 🔗 [**Baca selengkapnya: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
 
