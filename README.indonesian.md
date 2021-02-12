@@ -1243,11 +1243,11 @@ Selain itu, merujuk ke sebuah tag gambar berarti gambar dasar dapat berubah, kar
 
 <br /><br /><br />
 
-## ![✔] 8.14. Generic Docker practices
+## ![✔] 8.14. Praktik Docker umum
 
-**TL;DR:** This is a collection of Docker advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
+**TL;DR:** Ini adalah kumpulan saran Docker yang tidak terkait lansung dengan Node.js - implementasi pada Node tidak jauh berbeda dengan bahasa lain. Klik baca selengkapnya untuk membaca sekilas.
 
-🔗 [**Read More: Generic Docker practices**](/sections/docker/generic-tips.md)
+🔗 [**Baca selengkapnya: Generic Docker practices**](/sections/docker/generic-tips.md)
 
 <br/><br /><br />
 
