@@ -1251,13 +1251,13 @@ Selain itu, merujuk ke sebuah tag gambar berarti gambar dasar dapat berubah, kar
 
 <br/><br /><br />
 
-## ![✔] 8.15. Lint your Dockerfile
+## ![✔] 8.15. Lint Dockerfile Anda
 
-**TL;DR:** Linting your Dockerfile is an important step to identify issues in your Dockerfile which differ from best practices. By checking for potential flaws using a specialised Docker linter, performance and security improvements can be easily identified, saving countless hours of wasted time or security issues in production code.
+**TL;DR:** Melakukan lint pada Dockerfile Anda adalah langkah yang penting untuk mengidentifikasi masalah di Dockerfile Anda yang tidak ada di praktik terbaik. Dengan memeriksa potensi kekurangan menggunakan linter Docker khusus, peningkatan performa dan keamanan dapat dengan mudah diidentifikasi, menghemat waktu yang terbuang atau mengurangi masalah keamanan dalam kode produksi.
 
-**Otherwise:** Mistakenly the Dockerfile creator left Root as the production user, and also used an image from unknown source repository. This could be avoided with with just a simple linter.
+**Jika tidak:** Secara tidak sengaja pembuat Dockerfile meninggalkan Root sebagai pengguna produksi, dan juga menggunakan gambar dari repositori yang tidak dikenal. Hal ini dapat dihindari hanya dengan linter sederhana.
 
-🔗 [**Read More: Lint your Dockerfile**](/sections/docker/lint-dockerfile.md)
+🔗 [**Baca selengkapnya: Lint your Dockerfile**](/sections/docker/lint-dockerfile.md)
 
 <br/><br /><br />
 
