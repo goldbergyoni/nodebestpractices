@@ -1213,13 +1213,13 @@ Selain itu, merujuk ke sebuah tag gambar berarti gambar dasar dapat berubah, kar
 
 <br /><br /><br />
 
-## ![✔] 8.11. Clean-out build-time secrets, avoid secrets in args
+## ![✔] 8.11. Bersihkan rahasia pada build-time, hindari rahasia di args
 
-**TL;DR:** Avoid secrets leaking from the Docker build environment. A Docker image is typically shared in multiple environment like CI and a registry that are not as sanitized as production. A typical example is an npm token which is usually passed to a dockerfile as argument. This token stays within the image long after it is needed and allows the attacker indefinite access to a private npm registry. This can be avoided by coping a secret file like `.npmrc` and then removing it using multi-stage build (beware, build history should be deleted as well) or by using Docker build-kit secret feature which leaves zero traces
+**TL;DR:** Hindari rahasia yang bocor dari lingkungan build Docker. Gambar Docker biasanya terbagi di beberapa lingkungan seperti CI dan registri yang tidak disterilkan seperti lingkungan produksi. Contoh tipikalnya adalah token npm yang biasanya diteruskan ke dockerfile sebagai argumen. Token ini tetap berada di dalam gambar lama setelah diperlukan dan memungkinkan penyerang mengakses tanpa batas ke registri npm pribadi. Hal ini dapat dihindari dengan mengatasi file rahasia seperti `.npmrc` dan kemudian menghapusnya menggunakan build mutli tahap (hati-hati, rahasia build juga harus dihapus) atau dengan menggunakan fitur rahasia build-kit Docker yang tidak meninggalkan jejak
 
-**Otherwise:** Everyone with access to the CI and docker registry will also get access to some precious organization secrets as a bonus
+**Jika tidak:** Setiap orang yang mempunyai akses ke CI dan registri Docker juga akan mendapatkan akses ke rahasia organisasi yang berharga sebagai bonus
 
-🔗 [**Read More: Clean-out build-time secrets**](/sections/docker/avoid-build-time-secrets.md)
+🔗 [**Baca selengkapnya: Clean-out build-time secrets**](/sections/docker/avoid-build-time-secrets.md)
 
 <br /><br /><br />
 
