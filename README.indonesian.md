@@ -1223,13 +1223,13 @@ Selain itu, merujuk ke sebuah tag gambar berarti gambar dasar dapat berubah, kar
 
 <br /><br /><br />
 
-## ![✔] 8.12. Scan images for multi layers of vulnerabilities
+## ![✔] 8.12. Pindai gambar untuk menemukan lapisan kerentanan
 
-**TL;DR:** Besides checking code dependencies vulnerabilities also scan the final image that is shipped to production. Docker image scanners check the code dependencies but also the OS binaries. This E2E security scan covers more ground and verifies that no bad guy injected bad things during the build. Consequently, it is recommended running this as the last step before deployment. There are a handful of free and commercial scanners that also provide CI/CD plugins
+**TL;DR:** Selain memeriksa kerentanan kode dependensi pastikan juga untuk memindai gambar akhir yang dikirim ke produksi. Pemindai gambar Docker memeriksa kode dependensi tapi juga binari OS. Pemindaian keamanan E2E ini mencakup lebih banyak hal dan memverifikasi bahwa tidak ada orang jahat yang menginjeksi hal-hal buruk selama build. Oleh karena itu, disarankan untuk menjalankan hal ini sebagai langkah terakhir sebelum proses deployment. Ada beberapa pemindai gratis dan komersial yang juga menyediakan plugin CI/CD
 
-**Otherwise:** Your code might be entirely free from vulnerabilities. However it might still get hacked due to vulnerable version of OS-level binaries (e.g. OpenSSL, TarBall) that are commonly being used by applications
+**Jika tidak:** Kode Anda mungkin sepenuhnya bebas dari kerentanan. Namun itu mungkin masih dapat diretas karena versi binari OS-level yang rentan (misalnya OpenSSL, TarBall) yang biasanya digunakan oleh aplikasi
 
-🔗 [**Read More: Generic Docker practices**](/sections/docker/scan-images.md)
+🔗 [**Baca selengkapnya: Generic Docker practices**](/sections/docker/scan-images.md)
 
 <br /><br /><br />
 
