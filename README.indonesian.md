@@ -1203,13 +1203,13 @@ Selain itu, merujuk ke sebuah tag gambar berarti gambar dasar dapat berubah, kar
 
 <br /><br /><br />
 
-## ![✔] 8.10. Prefer smaller Docker base images
+## ![✔] 8.10. Utamakan gambar dasar Docker yang lebih kecil
 
-**TL;DR:** Large images lead to higher exposure to vulnerabilities and increased resource consumption. Using leaner Docker images, such as Slim and Alpine Linux variants, mitigates this issue.
+**TL;DR:** Gambar yang besar mempunyai tingkat kerentanan yang lebih tinggi dan meningkatkan konsumsi sumber daya. Menggunakan gambar docker yang lebih ramping, seperti varian Linux Slim dan Alpine, dapat mengurangi masalah ini.
 
-**Otherwise:** Building, pushing, and pulling images will take longer, unknown attack vectors can be used by malicious actors and more resources are consumed.
+**Jika tidak:** Membangun, mendorong, dan menarik gambar akan membutuhkan waktu yang lebih lama, vektor serangan yang tidak diketahui dapat digunakan oleh aktor jahat dan lebih banyak sumber daya yang dikonsumsi.
 
-🔗 [**Read More: Prefer smaller images**](/sections/docker/smaller_base_images.md)
+🔗 [**Baca selengkapnya: Prefer smaller images**](/sections/docker/smaller_base_images.md)
 
 <br /><br /><br />
 
