@@ -1238,11 +1238,11 @@
       "name": "Ane Diaz de Tuesta",
       "avatar_url": "https://avatars.githubusercontent.com/u/17216937?v=4",
       "profile": "http://www.anediaz.com",
-            "contributions": [
+      "contributions": [
         "translation"
       ]
-
-},{
+    },
+    {
       "login": "YukiOta",
       "name": "YukiOta",
       "avatar_url": "https://avatars.githubusercontent.com/u/23182489?v=4",
@@ -1256,6 +1256,51 @@
       "name": "Frazer Smith",
       "avatar_url": "https://avatars.githubusercontent.com/u/43814140?v=4",
       "profile": "https://www.yeovilhospital.co.uk/",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "rluvaton",
+      "name": "Raz Luvaton",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16746759?v=4",
+      "profile": "https://github.com/rluvaton",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "YA21",
+      "name": "Yuta Azumi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/37298463?v=4",
+      "profile": "https://github.com/YA21",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "andrewjbarbour",
+      "name": "andrewjbarbour",
+      "avatar_url": "https://avatars.githubusercontent.com/u/77080074?v=4",
+      "profile": "https://github.com/andrewjbarbour",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "MasujimaRyohei",
+      "name": "mr",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17163541?v=4",
+      "profile": "https://MasujimaRyohei.jp",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "kubanac95",
+      "name": "Aleksandar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16191931?v=4",
+      "profile": "https://github.com/kubanac95",
       "contributions": [
         "content"
       ]
