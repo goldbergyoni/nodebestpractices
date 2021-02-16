@@ -627,7 +627,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 ## ![✔] 5.7. Buat ‘endpoint pemeliharaan’
 
-**TL;DR:** Sediakan sekumpulan informasi terkait sistem, seperti pengunaan memori dan REPL, dll. dalam API yang aman. Meskipun sangat disarankan untuk mengandalkan alat standard dan battle-test, beberapa informasi penting dan operasi lebih mudah dilakukan melalui kode
+**TL;DR:** Sediakan sekumpulan informasi terkait sistem, seperti penggunaan memori dan REPL, dll. dalam API yang aman. Meskipun sangat disarankan untuk mengandalkan alat standar dan battle-test, beberapa informasi penting dan operasi lebih mudah dilakukan melalui kode
 
 **Jika tidak:** Anda akan melakukan banyak “deploy diagnostik” – mendeploy kode ke produksi hanya untuk mengekstrak beberapa informasi untuk keperluan diagnostik
 
@@ -687,7 +687,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 ## ![✔] 5.13. Gunakan alat yang pendeteksi kerentanan secara otomatis
 
-**TL;DR:** Bahkan dependensi yang paling terkemuka seperti Express memiliki kerentanan yang diketahui (dari waktu ke waktu) yang dapat membahayakan sistem. Hal ini dapat dimitigasi dengan mudah menggunakan alat dari komunitas atau komersial yang terus-menerus memeriksa kerentanan dan memberi peringatan (secara lokal atau di GitHub), beberapa bahkan dapat lansung memperbaikinya
+**TL;DR:** Bahkan dependensi yang paling terkemuka seperti Express memiliki kerentanan yang diketahui (dari waktu ke waktu) yang dapat membahayakan sistem. Hal ini dapat dimitigasi dengan mudah menggunakan alat dari komunitas atau komersial yang terus-menerus memeriksa kerentanan dan memberi peringatan (secara lokal atau di GitHub), beberapa bahkan dapat langsung memperbaikinya
 
 **Jika tidak:** Menjaga kode Anda bersih dari kerentanan tanpa alat khusus mengharuskan Anda untuk mengikuti publikasi online tentang ancaman baru. Cukup membosankan
 
@@ -767,7 +767,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **TL;DR:** Manfaatkan plugin linter yang berhubungan dengan keamanan seperti [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) untuk menangkap kerentanan dan masalah keamanan sedini mungkin, lebih baik lagi jika dalam proses pembuatan kode. Hal ini dapat membantu menangkap keamanan yang lemah seperti penggunaan eval, menjalankan child process atau memanggil modul menggunakan literal string (misalnya masukan pengguna). Klik 'Baca selengkapnya' di bawah ini untuk melihat contoh kode yang akan dideteksi oleh linter keamanan
 
-**Jika tidak:** Kelemahan keamanan yang jelas selama masa pengembangan malah menjadi menjadi masalah besar dalam produksi. Selain itu, proyek mungkin tidak mengikuti praktik kode keamanan yang konsisten, yang mengarah ke kerentanan baru, atau rahasia sensitif yang ter-_commit_ ke dalam repositori remote
+**Jika tidak:** Kelemahan keamanan yang jelas selama masa pengembangan malah menjadi masalah besar dalam produksi. Selain itu, proyek mungkin tidak mengikuti praktik kode keamanan yang konsisten, yang mengarah ke kerentanan baru, atau rahasia sensitif yang ter-_commit_ ke dalam repositori remote
 
 🔗 [**Baca selengkapnya: Lint rules**](/sections/security/lintrules.md)
 
@@ -801,7 +801,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
-**TL;DR:** Untuk mencegah injeksi SQL/NoSQL dan serangan buruk lainnya, selalu gunakan ORM/ODM atau pustaka database yang melakukan _escape_ pada data atau mendukung kueri berparameter yang bernama atau diindeks, dan tangani validasi input pengguna agar sesuai dengan tipe yang diharapkan. Jangan pernah hanya menggunakan template string JavaScript atau penggabungan string untuk memasukkan nilai ke dalam kueri karena ini membuka aplikasi Anda ke spektrum kerentanan yang luas. Semua pustaka akses data pada Node.js (misalnya [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose)) memiliki perlindungan bawaan untuk menghindari serangan injeksi.
+**TL;DR:** Untuk mencegah injeksi SQL/NoSQL dan serangan buruk lainnya, selalu gunakan ORM/ODM atau pustaka database yang melakukan _escape_ pada data atau mendukung kueri berparameter yang bernama atau diindeks, dan tangani validasi masukan pengguna agar sesuai dengan tipe yang diharapkan. Jangan pernah hanya menggunakan template string JavaScript atau penggabungan string untuk memasukkan nilai ke dalam kueri karena ini membuka aplikasi Anda ke spektrum kerentanan yang luas. Semua pustaka akses data pada Node.js (misalnya [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose)) memiliki perlindungan bawaan untuk menghindari serangan injeksi.
 
 **Jika tidak:** Masukan pengguna yang tidak divalidasi atau tidak disanitasi dapat menyebabkan injeksi operator saat menggunakan MongoDB untuk NoSQL, dan dengan tidak menggunakan sistem sanitasi atau ORM dapat memungkinkan serangan injeksi SQL, membuat suatu kerentanan yang besar.
 
@@ -908,7 +908,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A5:Broken%20Access%20Access%20Control-green.svg" alt=""/></a>
 
-**TL;DR:** Ada skenario umum di mana Node.js dijalankan sebagai pengguna root dengan izin tanpa batas. Misalnya, ini adalah perilaku default di kontainer Docker. Direkomendasikan untuk membuat pengguna yang bukan root dan _bake_ pengguna itu kedalam _Docker image_ (contoh ada di bawah) atau jalankan proses atas nama pengguna ini dengan menjalankan kontainer dengan _flag_ "-u username"
+**TL;DR:** Ada skenario umum di mana Node.js dijalankan sebagai pengguna root dengan izin tanpa batas. Misalnya, ini adalah perilaku default di kontainer Docker. Direkomendasikan untuk membuat pengguna yang bukan root dan _bake_ pengguna itu ke dalam _Docker image_ (contoh ada di bawah) atau jalankan proses atas nama pengguna ini dengan menjalankan kontainer dengan _flag_ "-u username"
 
 **Jika tidak:** Penyerang yang berhasil menjalankan skrip di server mendapatkan kekuatan tak terbatas atas mesin lokal (misalnya mengganti iptable dan merutekan ulang traffic ke servernya)
 
@@ -932,7 +932,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** `eval` sangat buruk karena memungkinkan untuk mengeksekusi kode JavaScript dalam _run time_. Ini bukan hanya menjadi perhatian dalam performa tetapi juga pehatian dalam masalah keamanan penting karena kode JavaScript dapat bersumber dari masukan pengguna. Fitur bahasa lain yang harus dihindari adalah konstruktor `new Function`. `setTimeout` dan `setInterval` juga tidak boleh diberikan kode JavaScript yang dinamis.
+**TL;DR:** `eval` sangat buruk karena memungkinkan untuk mengeksekusi kode JavaScript dalam _run time_. Ini bukan hanya menjadi perhatian dalam performa tetapi juga perhatian dalam masalah keamanan penting karena kode JavaScript dapat bersumber dari masukan pengguna. Fitur bahasa lain yang harus dihindari adalah konstruktor `new Function`. `setTimeout` dan `setInterval` juga tidak boleh diberikan kode JavaScript yang dinamis.
 
 **Jika tidak:** Kode JavaScript yang berbahaya menemukan jalan ke dalam teks yang diteruskan ke `eval` atau fungsi evaluasi _real-time_ bahasa Javascript lainnya, dan akan mendapatkan akses penuh ke izin JavaScript di halaman tersebut. Kerentanan ini sering kali diwujudkan sebagai serangan XSS.
 
@@ -970,7 +970,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **TL;DR:** Saat ditugaskan untuk menjalankan kode eksternal yang diberikan pada run-time (misalnya plugin), gunakan segala jenis lingkungan eksekusi 'sandbox' yang mengisolasi dan melindungi kode utama dari plugin tersebut. Hal ini dapat dicapai dengan menggunakan proses khusus (misalnya `cluster.fork()`), lingkungan _serverless_ atau paket npm khusus yang bertindak sebagai sandbox
 
-**JIka tidak:** Sebuah plugin dapat menyerang dengan berbagai pilihan seperti perulangan tak tertabas, memberi muatan lebih pada memory, dan mengakses variabel lingkungan sensitif pada proses
+**JIka tidak:** Sebuah plugin dapat menyerang dengan berbagai pilihan seperti perulangan tak terbatas, memberi muatan lebih pada memori, dan mengakses variabel lingkungan sensitif pada proses
 
 🔗 [**Baca selengkapnya: Run unsafe code in a sandbox**](/sections/security/sandbox.md)
 
@@ -1004,9 +1004,9 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Setiap langkah dalam rantai pengembangan harus dilindungi dengan MFA (_multi-factor authentication_), npm/Yarn menjadi peluang yang bagus bagi penyerang yang ingin mendapatkan kata sandi pengembang. Dengan menggunakan kredensial pengembang, penyerang dapat memasukkan kode berbahaya kedalam pustaka yang diinstal secara luas di seluruh proyek dan layanan. Bahkan mungkin di seluruh web jika dipublikasikan. Mengaktifkan _2-factor-authentication_ dalam npm akan meninggalkan hampir nol peluang bagi penyerang untuk mengubah kode paket Anda.
+**TL;DR:** Setiap langkah dalam rantai pengembangan harus dilindungi dengan MFA (_multi-factor authentication_), npm/Yarn menjadi peluang yang bagus bagi penyerang yang ingin mendapatkan kata sandi pengembang. Dengan menggunakan kredensial pengembang, penyerang dapat memasukkan kode berbahaya ke dalam pustaka yang diinstal secara luas di seluruh proyek dan layanan. Bahkan mungkin di seluruh web jika dipublikasikan. Mengaktifkan _2-factor-authentication_ dalam npm akan meninggalkan hampir nol peluang bagi penyerang untuk mengubah kode paket Anda.
 
-**Jika tidak:** [Pernahkah Anda mendegar tentang pengembang eslint yang kata sandinya dibajak?](https://medium.com/@oprearocks/eslint-backdoor-what-it-is-and-how-to-fix-the-issue-221f58f1a8c8)
+**Jika tidak:** [Pernahkah Anda mendengar tentang pengembang eslint yang kata sandinya dibajak?](https://medium.com/@oprearocks/eslint-backdoor-what-it-is-and-how-to-fix-the-issue-221f58f1a8c8)
 
 <br/><br/>
 
@@ -1133,7 +1133,7 @@ CMD [ "node", "dist/app.js" ]
 
 ## ![✔] 8.3. Biarkan runtime Docker menangani replikasi dan uptime
 
-**TL;DR:** Ketika menggunakan orkestrator run time Docker (misalnya Kubernetes), aktifkan proses Node.js seecara lansung tanpa manajer proses perantara atau kode khusus yang mereplikasi proses (misalnya PM2, modul Cluster). Platform runtime mempunyai jumlah data dan visibilitas tertinggi untuk membuat keputusan penempatan - Platform ini mengetahui dengan baik berapa banyak proses yang diperlukan, cara menyebarkannya dan apa yang harus dilakukan jika terjadi kerusakan
+**TL;DR:** Ketika menggunakan orkestrator run time Docker (misalnya Kubernetes), aktifkan proses Node.js seecara langsung tanpa manajer proses perantara atau kode khusus yang mereplikasi proses (misalnya PM2, modul Cluster). Platform runtime mempunyai jumlah data dan visibilitas tertinggi untuk membuat keputusan penempatan - Platform ini mengetahui dengan baik berapa banyak proses yang diperlukan, cara menyebarkannya dan apa yang harus dilakukan jika terjadi kerusakan
 
 **Jika tidak:** Kontainer tetap rusak karena kekurangan sumber daya akan dimulai ulang tanpa batas oleh manajer proses. Jika Kubernetes menyadari hal ini, Kubernetes dapat memindahkannya ke banyak instance yang berbeda 
 
@@ -1175,7 +1175,7 @@ CMD [ "node", "dist/app.js" ]
 
 **TL;DR:** Selalu konfigurasikan batas memori menggunakan Docker dan runtime flag JavaScript. Batas pada Docker diperlukan untuk membuat keputusan penempatan kontainer yang baik, flag `max-old-space` pada --v8 diperlukan untuk memulai GC tepat waktu untuk mencegah penggunaan memori yang kurang. Secara praktis, tetapkan batas memori `max-old-space` pada v8 sedikit lebih rendah dari pada batas memori kontainer
 
-**Jika tidak:** Defenisi Docker diperlukan untuk melakukan keputusan penskalaan yang baik dan mencegah kelaparan warga lain. Tanpa menentukan batas pada v8 juga, sumber daya kontainer juga akan kurang digunakan oleh Node - Tanpa instruksi eksplisit Node akan berhenti saat menggunakan ~50-60% dari sumber daya hostnya
+**Jika tidak:** Definisi Docker diperlukan untuk melakukan keputusan penskalaan yang baik dan mencegah kelaparan warga lain. Tanpa menentukan batas pada v8 juga, sumber daya kontainer juga akan kurang digunakan oleh Node - Tanpa instruksi eksplisit Node akan berhenti saat menggunakan ~50-60% dari sumber daya hostnya
 
 🔗 [**Baca selengkapnya: Set memory limits using Docker only**](/sections/docker/memory-limit.md)
 
@@ -1193,11 +1193,11 @@ CMD [ "node", "dist/app.js" ]
 
 ## ![✔] 8.9. Gunakan referensi gambar eksplisit, hindari tag `latest`
 
-**TL;DR:** Tentukan `digest` eksplisit gambar atau label berversi, jangan pernah merujuk ke `latest`. Pengembang sering kali percaya bahwa menetapkan tag `latest` akan memberi mereka gambar terbaru di repository namun hal ini tidak benar. Menggunakan `digest` menjamin bahwa setiap instansi layanan menjalankan kode yang sama persis.
+**TL;DR:** Tentukan `digest` eksplisit gambar atau label berversi, jangan pernah merujuk ke `latest`. Pengembang sering kali percaya bahwa menetapkan tag `latest` akan memberi mereka gambar terbaru di repositori namun hal ini tidak benar. Menggunakan `digest` menjamin bahwa setiap instansi layanan menjalankan kode yang sama persis.
 
-Selain itu, merujuk ke sebuah tag gambar berarti gambar dasar dapat berubah, karena tag image tidak dapat diandalkan untuk penginstalan deterministik. Jika penginstalan deterministik diharapkan, digest SHA256 dapat digunakan untuk mereferensikan ke gambar exact yang tepat.
+Selain itu, merujuk ke sebuah tag gambar berarti gambar dasar dapat berubah, karena tag image tidak dapat diandalkan untuk penginstalan deterministik. Jika penginstalan deterministik diharapkan, digest SHA256 dapat digunakan untuk mereferensikan ke gambar yang tepat.
 
-**Otherwise:** Versi baru gambar dasar dapat dideploy ke produksi dengan perubahan yang dapat merusak, menyebabkan perilaku aplikasi yang tidak diinginkan.
+**Jika tidak:** Versi baru gambar dasar dapat dideploy ke produksi dengan perubahan yang dapat merusak, menyebabkan perilaku aplikasi yang tidak diinginkan.
 
 🔗 [**Baca selengkapnya: Understand image tags and use the "latest" tag with caution**](/sections/docker/image-tags.md)
 
@@ -1245,7 +1245,7 @@ Selain itu, merujuk ke sebuah tag gambar berarti gambar dasar dapat berubah, kar
 
 ## ![✔] 8.14. Praktik Docker umum
 
-**TL;DR:** Ini adalah kumpulan saran Docker yang tidak terkait lansung dengan Node.js - implementasi pada Node tidak jauh berbeda dengan bahasa lain. Klik baca selengkapnya untuk membaca sekilas.
+**TL;DR:** Ini adalah kumpulan saran Docker yang tidak terkait langsung dengan Node.js - implementasi pada Node tidak jauh berbeda dengan bahasa lain. Klik baca selengkapnya untuk membaca sekilas.
 
 🔗 [**Baca selengkapnya: Generic Docker practices**](/sections/docker/generic-tips.md)
 
@@ -1271,7 +1271,7 @@ Untuk menjaga panduan ini agar tetap mutakir, kami terus memperbarui dan meningk
 
 ## Terjemahan
 
-Semua terjemahan merupakan kontribusi dari komunitas. Kami akan dengan senang hati mendapatkan bantuan baik untuk terjemahan yang telah selesai, sedang berlansung atau yang baru!
+Semua terjemahan merupakan kontribusi dari komunitas. Kami akan dengan senang hati mendapatkan bantuan baik untuk terjemahan yang telah selesai, sedang berlangsung atau yang baru!
 
 ### Terjemahan selesai
 
@@ -1284,7 +1284,7 @@ Semua terjemahan merupakan kontribusi dari komunitas. Kami akan dengan senang ha
 
 - ![FR](/assets/flags/FR.png) [Prancis](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/129))
 - ![HE](/assets/flags/HE.png) Ibrani ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/156))
-- ![KR](/assets/flags/KR.png) [Korea](README.korean.md) - Courtesy of [Sangbeom Han](https://github.com/uronly14me) ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/94))
+- ![KR](/assets/flags/KR.png) [Korea](README.korean.md) - Terima kasih kepada [Sangbeom Han](https://github.com/uronly14me) ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/94))
 - ![ES](/assets/flags/ES.png) [Spanyol](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/95))
 - ![TR](/assets/flags/TR.png) Turki ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/139))
 
@@ -1300,7 +1300,7 @@ Memperkenalkan anggota komite pengarah - orang-orang yang bekerja sama untuk mem
 <a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
 <a href="https://goldbergyoni.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
-Konsultan Node.js independen yang bekerja dengan pelanggan di AS, Eropa, dan Israel dalam membangun aplikasi Node.js berskala besar. Banyak pratik terbaik di atas pertama kali dipublikasikan di [goldbergyoni.com](https://goldbergyoni.com). Hubungi Yoni di [@goldbergyoni](https://github.com/goldbergyoni) atau [me@goldbergyoni.com](mailto:me@goldbergyoni.com)
+Konsultan Node.js independen yang bekerja dengan pelanggan di AS, Eropa, dan Israel dalam membangun aplikasi Node.js berskala besar. Banyak praktik terbaik di atas pertama kali dipublikasikan di [goldbergyoni.com](https://goldbergyoni.com). Hubungi Yoni di [@goldbergyoni](https://github.com/goldbergyoni) atau [me@goldbergyoni.com](mailto:me@goldbergyoni.com)
 
 <br/>
 
@@ -1349,7 +1349,7 @@ Spesialis mendalam dalam JavaScript dan ekosistemnya — React, Node.js, TypeScr
 
 Terima kasih untuk semua kolaborator kami! 🙏
 
-Kolaborator kami adalah anggota yang sering berkontribusi ke repositori ini, melalui menyarankan praktik terbaik baru, menyortir masalah, meninjau pull request dan banyak lagi. Jika Anda tertarik untuk membantu kami helping memandu ribuan orang untuk membuat aplikasi Node.js yang lebih baik, silahkan baca [contributor guidelines](/.operations/CONTRIBUTING.md) 🎉
+Kolaborator kami adalah anggota yang sering berkontribusi ke repositori ini, melalui menyarankan praktik terbaik baru, menyortir masalah, meninjau pull request dan banyak lagi. Jika Anda tertarik untuk membantu kami memandu ribuan orang untuk membuat aplikasi Node.js yang lebih baik, silakan baca [contributor guidelines](/.operations/CONTRIBUTING.md) 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
 | :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
