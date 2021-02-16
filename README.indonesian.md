@@ -22,7 +22,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 <br/>
 
-###### Dibuat dan dijaga oleh [Steering Committee](#steering-committee) dan [kolaborator](#Kolaborator)
+###### Dibuat dan dijaga oleh [Komite Pengarah](#komite-pengarah) dan [kolaborator](#Kolaborator)
 
 # Praktik Terbaik Terbaru dan Berita
 
@@ -1263,36 +1263,36 @@ Selain itu, merujuk ke sebuah tag gambar berarti gambar dasar dapat berubah, kar
 
 <p align="right"><a href="#daftar-isi">⬆ Kembali ke atas</a></p>
 
-# Milestones
+# Tonggak Sejarah
 
-To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/goldbergyoni/nodebestpractices/milestones) and join the working groups if you want to contribute to this project
+Untuk menjaga panduan ini agar tetap mutakir, kami terus memperbarui dan meningkatkan pedoman dan praktik terbaik ini dengan bantuan komunitas. Anda dapat mengikuti [milestones](https://github.com/goldbergyoni/nodebestpractices/milestones) dan bergabung dalam kelompok kerja jika Anda ingin berkontribusi pada proyek ini
 
 <br/>
 
-## Translations
+## Terjemahan
 
-All translations are contributed by the community. We will be happy to get any help with either completed, ongoing or new translations!
+Semua terjemahan merupakan kontribusi dari komunitas. Kami akan dengan senang hati mendapatkan bantuan baik untuk terjemahan yang telah selesai, sedang berlansung atau yang baru!
 
-### Completed translations
+### Terjemahan selesai
 
-- ![BR](/assets/flags/BR.png) [Brazilian Portuguese](./README.brazilian-portuguese.md) - Courtesy of [Marcelo Melo](https://github.com/marcelosdm)
-- ![CN](/assets/flags/CN.png) [Chinese](./README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
-- ![RU](/assets/flags/RU.png) [Russian](./README.russian.md) - Courtesy of [Alex Ivanov](https://github.com/contributorpw)
-- ![PL](/assets/flags/PL.png) [Polish](./README.polish.md) - Courtesy of [Michal Biesiada](https://github.com/mbiesiad)
+- ![BR](/assets/flags/BR.png) [Portugis Brazil](./README.brazilian-portuguese.md) - Terima kasih kepada [Marcelo Melo](https://github.com/marcelosdm)
+- ![CN](/assets/flags/CN.png) [Cina](./README.chinese.md) - Terima kasih kepada [Matt Jin](https://github.com/mattjin)
+- ![RU](/assets/flags/RU.png) [Rusia](./README.russian.md) - Terima kasih kepada [Alex Ivanov](https://github.com/contributorpw)
+- ![PL](/assets/flags/PL.png) [Polandia](./README.polish.md) - Terima kasih kepada [Michal Biesiada](https://github.com/mbiesiad)
 
-### Translations in progress
+### Terjemahan dalam proses
 
-- ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/129))
-- ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/156))
-- ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Courtesy of [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94))
-- ![ES](/assets/flags/ES.png) [Spanish](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/95))
-- ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/139))
+- ![FR](/assets/flags/FR.png) [Prancis](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/129))
+- ![HE](/assets/flags/HE.png) Ibrani ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/156))
+- ![KR](/assets/flags/KR.png) [Korea](README.korean.md) - Courtesy of [Sangbeom Han](https://github.com/uronly14me) ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/94))
+- ![ES](/assets/flags/ES.png) [Spanyol](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/95))
+- ![TR](/assets/flags/TR.png) Turki ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/139))
 
 <br/><br/>
 
-## Steering Committee
+## Komite Pengarah
 
-Meet the steering committee members - the people who work together to provide guidance and future direction to the project. In addition, each member of the committee leads a project tracked under our [Github projects](https://github.com/goldbergyoni/nodebestpractices/projects).
+Memperkenalkan anggota komite pengarah - orang-orang yang bekerja sama untuk memberikan panduan dan arahan masa depan proyek. Selain itu, setiap anggota komite memimpin proyek yang dilacak dalam [Github projects](https://github.com/goldbergyoni/nodebestpractices/projects) kami.
 
 <img align="left" width="100" height="100" src="assets/images/members/yoni.png">
 
@@ -1300,7 +1300,7 @@ Meet the steering committee members - the people who work together to provide gu
 <a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
 <a href="https://goldbergyoni.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
-Independent Node.js consultant who works with customers in the USA, Europe, and Israel on building large-scale Node.js applications. Many of the best practices above were first published at [goldbergyoni.com](https://goldbergyoni.com). Reach Yoni at [@goldbergyoni](https://github.com/goldbergyoni) or [me@goldbergyoni.com](mailto:me@goldbergyoni.com)
+Konsultan Node.js independen yang bekerja dengan pelanggan di AS, Eropa, dan Israel dalam membangun aplikasi Node.js berskala besar. Banyak pratik terbaik di atas pertama kali dipublikasikan di [goldbergyoni.com](https://goldbergyoni.com). Hubungi Yoni di [@goldbergyoni](https://github.com/goldbergyoni) atau [me@goldbergyoni.com](mailto:me@goldbergyoni.com)
 
 <br/>
 
@@ -1309,7 +1309,7 @@ Independent Node.js consultant who works with customers in the USA, Europe, and 
 [Bruno Scheufler](https://github.com/BrunoScheufler)
 <a href="https://brunoscheufler.com/"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
-💻 full-stack web engineer, Node.js & GraphQL enthusiast
+💻 Engineer web full-stack, penggemar Node.js & GraphQL
 
 <br/>
 
@@ -1319,7 +1319,7 @@ Independent Node.js consultant who works with customers in the USA, Europe, and 
 <a href="https://twitter.com/kylemartin_93"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
 <a href="https://www.linkedin.com/in/kylemartinnz"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
 
-Full Stack Developer & Site Reliability Engineer based in New Zealand, interested in web application security, and architecting and building Node.js applications to perform at global scale.
+Pengembang Full Stack & Site Reliability Engineer yang berbasis di Selandia Baru, tertarik pada keamanan aplikasi web, dan merancang serta membangun aplikasi Node.js untuk bekerja dalam skala global.
 
 <br/>
 
@@ -1328,11 +1328,11 @@ Full Stack Developer & Site Reliability Engineer based in New Zealand, intereste
 [Kevyn Bruyere](https://github.com/kevynb)
 <a href="https://www.linkedin.com/in/kevynbruyere/"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
 
-Independent full-stack developer with a taste for Ops and automation.
+Pengembang full-stack independen dengan selera untuk Ops dan otomatisasi.
 
 <br/>
 
-### Steering Committee Emeriti
+### Mantan Komite Pengarah
 
 <img align="left" width="100" height="100" src="assets/images/members/sagir.png">
 
@@ -1341,21 +1341,21 @@ Independent full-stack developer with a taste for Ops and automation.
 <a href="https://linkedin.com/in/sagirk"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
 <a href="https://sagirk.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
-Deep specialist in JavaScript and its ecosystem — React, Node.js, TypeScript, GraphQL, MongoDB, pretty much anything that involves JS/JSON in any layer of the system — building products using the web platform for the world’s most recognized brands. Individual Member of the Node.js Foundation.
+Spesialis mendalam dalam JavaScript dan ekosistemnya — React, Node.js, TypeScript, GraphQL, MongoDB, hampir semua hal yang berhubungan dengan JS/JSON di setiap lapisan sistem — membuat produk menggunakan platform web untuk merek paling terkenal di dunia. Anggota perorangan dari Node.js Foundation.
 
 <br/>
 
-## Collaborators
+## Kolaborator
 
-Thank you to all our collaborators! 🙏
+Terima kasih untuk semua kolaborator kami! 🙏
 
-Our collaborators are members who are contributing to the repository on a regular basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in helping us guide thousands of people to craft better Node.js applications, please read our [contributor guidelines](/.operations/CONTRIBUTING.md) 🎉
+Kolaborator kami adalah anggota yang sering berkontribusi ke repositori ini, melalui menyarankan praktik terbaik baru, menyortir masalah, meninjau pull request dan banyak lagi. Jika Anda tertarik untuk membantu kami helping memandu ribuan orang untuk membuat aplikasi Node.js yang lebih baik, silahkan baca [contributor guidelines](/.operations/CONTRIBUTING.md) 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
 | :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
 |                                    [Ido Richter (Founder)](https://github.com/idori)                                    |                                        [Keith Holliday](https://github.com/TheHollidayInn)                                         |
 
-### Collaborator Emeriti
+### Mantan Kolaborator
 
 | <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"></a> |
 | :-------------------------------------------------------------------------------------------------------------------------: |
@@ -1363,13 +1363,13 @@ Our collaborators are members who are contributing to the repository on a regula
 
 <br/>
 
-## Contributing
+## Kontribusi
 
-If you've ever wanted to contribute to open source, now is your chance! See the [contributing docs](.operations/CONTRIBUTING.md) for more information.
+Jika Anda pernah ingin berkontribusi pada open source, sekarang kesempatan Anda! Lihat [contributing docs](.operations/CONTRIBUTING.md) untuk informasi lebih lanjut.
 
-## Contributors ✨
+## Kontributor ✨
 
-Thanks goes to these wonderful people who have contributed to this repository!
+Terima kasih kepada orang-orang hebat ini yang telah berkontribusi pada repositori ini!
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
