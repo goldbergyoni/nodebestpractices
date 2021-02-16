@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%20102%20Best%20Practices-blue.svg" alt="102 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20December%2012%202020-green.svg" alt="Dernière mise à jour : Novembre 2020"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2014.0.0-brightgreen.svg" alt="Mis à jour pour Node 14.0.0">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%20102%20Best%20Practices-blue.svg" alt="102 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20February%2012%202021-green.svg" alt="Dernière mise à jour : Novembre 2020"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2014.0.0-brightgreen.svg" alt="Mis à jour pour Node 14.0.0">
 </div>
 
 <br/>
@@ -26,11 +26,11 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 # Dernières bonnes pratiques et nouveautés
 
-- **✅ Nouvelle bonne pratique :** Le point 2.12 de [Alexsey](https://github.com/Alexsey) montre comment le retour sans attendre (await) des fonctions async conduit à des traces de pile partielles. Cela peut devenir très problématique lors du dépannage des exceptions en production qui ne disposent pas de certaines trames d'exécution
+- **🇯🇵 traduction japonaise :** Notre guide est désormais également traduit en japonais ! Avec l'aimable autorisation des extraordinaires [YukiOta](https://github.com/YukiOta) et [Yuta Azumi](https://github.com/YA21).
 
 - **✅ Nouvelle bonne pratique :** Le point 6.8 de Josh Hemphill recommande de « protéger les mots de passe/secrets des utilisateurs en utilisant BCrypt ou Script ». Elle contient une explication approfondie sur le moment et les raisons pour lesquelles chaque option convient à un projet spécifique. Ne manquez pas ce petit guide avec un bref aperçu des différentes options de hachage
 
-- **:whale: Node.js + Bonnes pratiques Docker** : Nous venons de publier la section Docker avec Node.js qui comprend 15 points sur les meilleures techniques de codage avec Docker
+- **🎊 60,000 stars !** : Notre dépôt a reçu la reconnaissance et la confiance de 60 100 développeurs. Nous sommes sans voix.
 
 <br/><br/>
 
@@ -272,7 +272,8 @@ function someFunction() {
 }
 
 // À éviter
-function someFunction {
+function someFunction
+{
   // bloc de code
 }
 ```
@@ -339,7 +340,7 @@ const count = 2 // il essaie d'exécuter 2(), mais 2 n'est pas une fonction
 
 **TL;PL :** Utilisez **_LowerCamelCase_** lorsque vous nommez des constantes, des variables et des fonctions et **_UpperCamelCase_** (première lettre en majuscule également) lorsque vous nommez des classes. Cela vous aidera à distinguer facilement les simples variables/fonctions et les classes qui nécessitent une instanciation. Utilisez des noms évocateurs, mais efforcez-vous de les garder concis.
 
-**Autrement :** Javascript est le seul langage au monde qui permet d'invoquer directement un constructeur (« Class ») sans l'instancier au préalable. Par conséquent, les classes et les fonctions-constructeurs sont différenciés en commençant par UpperCamelCase.
+**Autrement :** JavaScript est le seul langage au monde qui permet d'invoquer directement un constructeur (« Class ») sans l'instancier au préalable. Par conséquent, les classes et les fonctions-constructeurs sont différenciés en commençant par UpperCamelCase.
 
 ### 3.6 Exemple de code
 
@@ -450,7 +451,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 ## ![✔] 4.1 Au minimum, écrivez des tests API (pour chaque composant)
 
-**TL;PL :** La plupart des projets n'ont tout simplement pas de test automatisé en raison de délais courts ou souvent le « projet de test » est devenu incontrôlable et a été abandonné. Pour cette raison, priorisez et commencez par les tests d'API, qui est le moyen le plus simple d'écrire et qui offre plus de couverture que les tests unitaires (vous pouvez même créer des tests d'API sans code à l'aide d'outils comme [Postman](https://www.getpostman.com/) Par la suite, si vous avez plus de ressources et de temps, continuez avec des types de tests avancés tels que les tests unitaires, les tests DB (base de données), les tests de performances, etc.
+**TL;PL :** La plupart des projets n'ont tout simplement pas de test automatisé en raison de délais courts ou souvent le « projet de test » est devenu incontrôlable et a été abandonné. Pour cette raison, priorisez et commencez par les tests d'API, qui est le moyen le plus simple d'écrire et qui offre plus de couverture que les tests unitaires (vous pouvez même créer des tests d'API sans code à l'aide d'outils comme [Postman](https://www.getpostman.com/)). Par la suite, si vous avez plus de ressources et de temps, continuez avec des types de tests avancés tels que les tests unitaires, les tests DB (base de données), les tests de performances, etc.
 
 **Autrement :** Vous pouvez passer de longues journées à écrire des tests unitaires pour découvrir que vous n'avez qu'une couverture système de 20%
 
@@ -520,7 +521,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 ## ![✔] 4.9 Inspectez les paquets obsolètes
 
-**TL;PL :** Utilisez votre outil préféré (par exemple, « npm outdated » ou [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) pour détecter les paquets installés qui sont obsolètes, injectez cette vérification dans votre CI et même faites échouer une construction dans un scénario critique. Par exemple, un scénario critique peut se produire lorsqu'un paquet installé a 5 patchs de retard (par exemple, la version locale est 1.3.1 et la version du référentiel est 1.3.8) ou quand il est marqué comme obsolète par son auteur - stoppez la construction et empêchez le déploiement de cette version.
+**TL;PL :** Utilisez votre outil préféré (par exemple, `npm outdated` ou [npm-check-updates](https://www.npmjs.com/package/npm-check-updates)) pour détecter les paquets installés qui sont obsolètes, injectez cette vérification dans votre CI et même faites échouer une construction dans un scénario critique. Par exemple, un scénario critique peut se produire lorsqu'un paquet installé a 5 patchs de retard (par exemple, la version locale est 1.3.1 et la version du référentiel est 1.3.8) ou quand il est marqué comme obsolète par son auteur - stoppez la construction et empêchez le déploiement de cette version.
 
 **Autrement :** Votre production exécutera des paquets qui ont été explicitement étiquetés par leur auteur comme risqués.
 
@@ -706,9 +707,9 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 <br/><br/>
 
-## ![✔] 5.15. Définissez NODE_ENV=production
+## ![✔] 5.15. Définissez `NODE_ENV=production`
 
-**TL;PL :** Définissez la variable d'environnement NODE_ENV avec « production » ou « development » pour indiquer si les optimisations de production doivent être activées - de nombreux paquets npm déterminent l'environnement en cours et optimisent leur code pour la production.
+**TL;PL :** Définissez la variable d'environnement `NODE_ENV` avec « production » ou « development » pour indiquer si les optimisations de production doivent être activées - de nombreux paquets npm déterminent l'environnement en cours et optimisent leur code pour la production.
 
 **Autrement :** L'omission de cette simple propriété pourrait fortement dégrader les performances. Par exemple, lors de l'utilisation d'Express pour le rendu côté serveur, l'omission de `NODE_ENV` le rend trois fois plus lent !
 
@@ -1122,9 +1123,9 @@ CMD [ "node", "dist/app.js" ]
 
 <br /><br /><br />
 
-## ![✔] 8.2. Bootstrap using 'node' command, avoid npm start
+## ![✔] 8.2. Bootstrap using `node` command, avoid `npm start`
 
-**TL;DR:** use `CMD ['node','server.js']` to start your app, avoid using npm scripts which don't pass OS signals to the code. This prevents problems with child-process, signal handling, graceful shutdown and having zombie processes.
+**TL;DR:** use `CMD ['node','server.js']` to start your app, avoid using npm scripts which don't pass OS signals to the code. This prevents problems with child-processes, signal handling, graceful shutdown and having zombie processes.
 
 **Otherwise:** When no signals are passed, your code will never be notified about shutdowns. Without this, it will lose its chance to close properly possibly losing current requests and/or data.
 
@@ -1295,7 +1296,7 @@ All translations are contributed by the community. We will be happy to get any h
 
 ## Steering Committee
 
-Meet the steering committee members - the people who work together to provide guidance and future direction to the project. In addition, each member of the committee leads a project tracked under our [Github projects](https://github.com/goldbergyoni/nodebestpractices/projects).
+Meet the steering committee members - the people who work together to provide guidance and future direction to the project. In addition, each member of the committee leads a project tracked under our [GitHub projects](https://github.com/goldbergyoni/nodebestpractices/projects).
 
 <img align="left" width="100" height="100" src="assets/images/members/yoni.png">
 
@@ -1553,7 +1554,16 @@ Thanks goes to these wonderful people who have contributed to this repository!
     <td align="center"><a href="https://github.com/AustrisC"><img src="https://avatars2.githubusercontent.com/u/12381652?v=4?s=100" width="100px;" alt=""/><br /><sub><b>AustrisC</b></sub></a><br /><a href="#content-AustrisC" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/cisco0808"><img src="https://avatars0.githubusercontent.com/u/60251188?v=4?s=100" width="100px;" alt=""/><br /><sub><b>kyeongtae kim</b></sub></a><br /><a href="#translation-cisco0808" title="Translation">🌍</a></td>
     <td align="center"><a href="https://keybase.io/651z9pz968v2accj"><img src="https://avatars.githubusercontent.com/u/65741741?v=4?s=100" width="100px;" alt=""/><br /><sub><b>007</b></sub></a><br /><a href="#content-6gx7iycn53ioq2e8apk1j1ypwov4giui" title="Content">🖋</a></td>
-    <td align="center"><a href="http://yukioh.net"><img src="https://avatars.githubusercontent.com/u/23182489?v=4?s=100" width="100px;" alt=""/><br /><sub><b>YukiOta</b></sub></a><br /><a href="#content-YukiOta" title="Content">🖋</a></td>
+    <td align="center"><a href="http://www.anediaz.com"><img src="https://avatars.githubusercontent.com/u/17216937?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ane Diaz de Tuesta</b></sub></a><br /><a href="#translation-anediaz" title="Translation">🌍</a></td>
+    <td align="center"><a href="http://yukioh.net"><img src="https://avatars.githubusercontent.com/u/23182489?v=4?s=100" width="100px;" alt=""/><br /><sub><b>YukiOta</b></sub></a><br /><a href="#translation-YukiOta" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://www.yeovilhospital.co.uk/"><img src="https://avatars.githubusercontent.com/u/43814140?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Frazer Smith</b></sub></a><br /><a href="#content-Fdawgs" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/rluvaton"><img src="https://avatars.githubusercontent.com/u/16746759?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Raz Luvaton</b></sub></a><br /><a href="#content-rluvaton" title="Content">🖋</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/YA21"><img src="https://avatars.githubusercontent.com/u/37298463?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Yuta Azumi</b></sub></a><br /><a href="#content-YA21" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/andrewjbarbour"><img src="https://avatars.githubusercontent.com/u/77080074?v=4?s=100" width="100px;" alt=""/><br /><sub><b>andrewjbarbour</b></sub></a><br /><a href="#content-andrewjbarbour" title="Content">🖋</a></td>
+    <td align="center"><a href="https://MasujimaRyohei.jp"><img src="https://avatars.githubusercontent.com/u/17163541?v=4?s=100" width="100px;" alt=""/><br /><sub><b>mr</b></sub></a><br /><a href="#content-MasujimaRyohei" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/kubanac95"><img src="https://avatars.githubusercontent.com/u/16191931?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Aleksandar</b></sub></a><br /><a href="#content-kubanac95" title="Content">🖋</a></td>
   </tr>
 </table>
 

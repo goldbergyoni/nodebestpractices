@@ -18,7 +18,7 @@ Dev dependencies greatly increase the container attack surface (i.e. potential s
 FROM node:12-slim AS build
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
-RUN npm ci --production && npm clean cache --force
+RUN npm ci --production && npm cache clean --force
 
 # The rest comes here
 ```
