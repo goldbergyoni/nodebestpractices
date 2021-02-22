@@ -127,6 +127,8 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **TL;DR:** Many throw errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw an exception or emit an error – using only the built-in Error object (or an object that extends the built-in Error object) will increase uniformity and prevent loss of information
 
+There is `no-throw-literal` ESLint rule that strict that (although it have some [limitations](https://eslint.org/docs/rules/no-throw-literal))
+
 **Otherwise:** When invoking some component, being uncertain which type of errors come in return – it makes proper error handling much harder. Even worse, using custom types to describe errors might lead to loss of critical error information like the stack trace!
 
 🔗 [**Read More: using the built-in error object**](/sections/errorhandling/useonlythebuiltinerror.md)
