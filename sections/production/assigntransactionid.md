@@ -8,9 +8,9 @@ A typical log is a warehouse of entries from all components and requests. Upon d
 
 <br/>
 
-### Code example: sharing TransactionId among current request functions using [async-local-storage](https://nodejs.org/api/async_hooks.html#async_hooks_class_asynclocalstorage)
+### Code example: sharing TransactionId among request functions and between services using [async-local-storage](https://nodejs.org/api/async_hooks.html#async_hooks_class_asynclocalstorage)
 
- **What is async-local-storage?** You can think of it as the node.js alternative to thread local storage. 
+ **What is async-local-storage?** You can think of it as the Node alternative to thread local storage. 
  It is basically a storage for asynchronous flows in Node. You can read more about it [here](https://www.freecodecamp.org/news/async-local-storage-nodejs/).
 
 ```javascript
@@ -36,20 +36,43 @@ const transactionIdMiddleware = (req, res, next) => {
 };
 
 const app = express();
-app.use(requestIdMiddleware);
+app.use(transactionIdMiddleware);
 
 // Set outgoing requests TransactionId
 app.get('/', (req, res) => {
-    // Once it's been initialized inside the middleware, TransactionId is accessible at any point of the request flow
+    // Once TransactionId has been initialized inside the middleware, it's accessible at any point of the request flow
     const transactionId = asyncLocalStorage.getStore().get('transactionId');
 
-    // Add TransactionId as header
-    const response = await axios.get('https://externalService.com/api/getAllUsers', headers: {
-    'x-transaction-id': transactionId
-    });
+    try {
+        // Add TransactionId as header in order to pass it to the next service
+        const response = await axios.get('https://externalService.com/api/getAllUsers', headers: {
+        'x-transaction-id': transactionId
+        });
+    } catch (err) {
+        // The error is being passed to the middleware, and there's no need to send over the TransactionId
+        next(err);
+    }
 
-    res.send('externalService was successfully called with TransactionId header');
+    logger.info('externalService was successfully called with TransactionId header');
+
+    res.send('OK');
 });
+
+// Error handling middleware calls the logger
+app.use(async (err, req, res, next) => {
+    await logger.error(err);
+});
+
+// The logger can now append the TransactionId to each entry so that entries from the same request will have the same value
+class logger {
+    error(err) {
+        console.error(`${err} ${asyncLocalStorage.getStore().get('transactionId')}`);
+    }
+
+    info(message) {
+        console.log(`${message} ${asyncLocalStorage.getStore().get('transactionId')}`);
+    }
+}
 ```
 <br/>
 
@@ -68,25 +91,33 @@ app.use(rTracer.expressMiddleware());
 
 app.get('/getUserData/{id}', async (req, res, next) => {
     try {
-        const user = async usersRepo.find(req.params.id);
+        const user = await usersRepo.find(req.params.id);
 
-        // At any point in the app after cls-rtracer middleware was initialized, even when 'req' object doesn't exist, the TransactionId is reachable
-        const transactionId = rTracer.id();
-        logger.info(`user ${user.id} data was fetched successfully`, { transactionId });
+        // The TransactionId is reachable from inside the logger, there's no need to send it over
+        logger.info(`user ${user.id} data was fetched successfully`);
 
         res.json(user);
     } catch (err) {
-        // The error is being passed to the middleware, and there's no need to send over the TransactionId
+        // The error is being passed to the middleware
         next(err);
     }
 })
 
-// Error handling middleware has access to the TransactionId
+// Error handling middleware calls the logger
 app.use(async (err, req, res, next) => {
-    err.transactionId = rTracer.id();
-
-    await errorHandler.handleError(err, res);
+    await logger.error(err);
 });
+
+// The logger can now append the TransactionId to each entry so that entries from the same request will have the same value
+class logger {
+    error(err) {
+        console.error(`${err} ${rTracer.id()}`);
+    }
+    
+    info(message) {
+        console.log(`${message} ${rTracer.id()}`);
+    }
+}
 ```
 <br/>
 
