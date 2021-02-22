@@ -8,8 +8,20 @@ A typical log is a warehouse of entries from all components and requests. Upon d
 
 <br/><br/>
 
-### Code example: sharing TransactionId among current request functions 
-using [cls-rtracer](https://www.npmjs.com/package/cls-rtracer) (a library based on [async-local-storage](https://nodejs.org/api/async_hooks.html#async_hooks_class_asynclocalstorage), implemented for Express & Koa middlewares and Fastify & Hapi plugins)
+### Code example: sharing TransactionId among current request functions using [async-local-storage](https://nodejs.org/api/async_hooks.html#async_hooks_class_asynclocalstorage):
+
+ You can think of async-local-storage as the node.js alternative to thread local storage. 
+ It is basically a storage for asynchronous flows in Node (more details [here](https://www.freecodecamp.org/news/async-local-storage-nodejs/)).
+
+```javascript
+code here
+```
+<br/>
+
+<details>
+<summary><strong>Code example: Using helper library to simplify the syntax</strong></summary>
+
+Sharing TransactionId among current request functions using [cls-rtracer](https://www.npmjs.com/package/cls-rtracer) (a library based on async-local-storage, implemented for Express & Koa middlewares and Fastify & Hapi plugins)
 
 ```javascript
 const express = require('express');
@@ -29,16 +41,21 @@ app.get('/getUserData/{id}', async (req, res, next) => {
 
         res.json(user);
     } catch (err) {
-        // If not for the example, I'd recommand using rTracer.id() from inside the logger component, to prevent from using it all over the code
-        logger.error(`error while fetching user id ${req.params.id} data`, { transactionId: rTracer.id(), error: err });
-
+        // The error is being passed to the middleware, and there's no need to pass over the TransactionId
         next(err);
     }
 })
-```
-<br/><br/>
 
-### Code example: sharing TransactionId among microservices 
+// Error handling middleware has access to the TransactionId
+app.use(async (err, req, res, next) => {
+    err.transactionId = rTracer.id();
+
+    await errorHandler.handleError(err, res);
+});
+```
+<br/>
+
+Sharing TransactionId among microservices
 
 ```javascript
 // cls-tracer has the ability to store the TransactionId on your service outgoing requests headers, and extract the TransactionId from incoming requests headers, just by overriding the default middleware config
@@ -56,12 +73,12 @@ const axios = require("axios");
 // Now, the external service will automaticlly get the current TransactionId as header
 const response = await axios.get('https://externalService.com/api/getAllUsers');
 ```
-<br/><br/>
+</details>
+<br/>
 
-
-There are two restrictions on using cls-rtracer, due to its dependence on async-local-storage (You can think of async-local-storage as the node.js alternative to thread local storage, more details [here](https://www.freecodecamp.org/news/async-local-storage-nodejs/)):
-1. async-local-storage requires Node v.14. 
-2. async-local-storage is based on a lower level construct in Node called async_hooks which is still experimental, so you may have the fear of performance problems. Even if they do exist, they are very negligible, but you should make your own considerations.
+NOTICE: there are two restrictions on using async-local-storage:
+1. It requires Node v.14. 
+2. It is based on a lower level construct in Node called async_hooks which is still experimental, so you may have the fear of performance problems. Even if they do exist, they are very negligible, but you should make your own considerations.
 
 <br/>
 
