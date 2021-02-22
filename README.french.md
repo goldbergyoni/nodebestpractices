@@ -52,7 +52,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 4. [Tests et pratiques générales de qualité (13) ](#4-tests-et-pratiques-générales-de-qualité)
 5. [Pratiques de mise en production (19) ](#5-pratiques-de-mise-en-production)
 6. [Sécurité (25)](#6-bonnes-pratiques-de-sécurité)
-7. [Performance (2) (Travail en cours ✍️)](#7-brouillon--performance)
+7. [Performance (2) (Travail en cours ✍️)](#7-brouillon-bonnes-pratiques-de-performance)
 8. [Pratiques de Docker (15)](#8-bonnes-pratiques-de-docker)
 
 <br/><br/>
@@ -1059,34 +1059,34 @@ Votre application devra faire face à de grosses requêtes, incapable de traiter
 
 <p align="right"><a href="#table-des-matières">⬆ Retourner en haut de la page</a></p>
 
-# `7. Draft: Performance Best Practices`
+# `7. Brouillon : Bonnes pratiques de performance`
 
-## Our contributors are working on this section. [Would you like to join?](https://github.com/goldbergyoni/nodebestpractices/issues/256)
+## Nos contributeurs travaillent sur cette section. [Voulez-vous nous rejoindre ?](https://github.com/goldbergyoni/nodebestpractices/issues/256)
 
 <br/><br/>
 
-## ![✔] 7.1. Don't block the event loop
+## ![✔] 7.1. Ne bloquez pas la boucle d'événement
 
-**TL;DR:** Avoid CPU intensive tasks as they will block the mostly single-threaded Event Loop and offload those to a dedicated thread, process or even a different technology based on the context.
+**TL;PL :** Évitez les tâches gourmandes en CPU car elles bloqueront la boucle d'événement principalement mono-thread, il faut les décharger vers un thread dédié, un processus ou même une technologie différente en fonction du contexte.
 
-**Otherwise:** As the Event Loop is blocked, Node.js will be unable to handle other request thus causing delays for concurrent users. **3000 users are waiting for a response, the content is ready to be served, but one single request blocks the server from dispatching the results back**
+**Autrement :** Comme la boucle d'événements est bloquée, Node.js sera incapable de traiter d'autres requêtes, ce qui entraînera des retards pour les utilisateurs concurrents. **3000 utilisateurs attendent une réponse, le contenu est prêt à être servi, mais une seule requêtes bloque le serveur pour qu'il ne puisse pas renvoyer les résultats**.
 
-🔗 [**Read More: Do not block the event loop**](/sections/performance/block-loop.md)
+🔗 [**Plus d'infos : ne bloquez pas la boucle d'événement**](/sections/performance/block-loop.french.md)
 
 <br /><br /><br />
 
-## ![✔] 7.2. Prefer native JS methods over user-land utils like Lodash
+## ![✔] 7.2. Préférez les méthodes JS natives aux utilitaires comme Lodash
 
-**TL;DR:** It's often more penalising to use utility libraries like `lodash` and `underscore` over native methods as it leads to unneeded dependencies and slower performance.
-Bear in mind that with the introduction of the new V8 engine alongside the new ES standards, native methods were improved in such a way that it's now about 50% more performant than utility libraries.
+**TL;PL :** Il est souvent plus pénalisant d'utiliser des bibliothèques utilitaires telles que `lodash` et `underscore` plutôt que des méthodes natives car cela conduit à des dépendances inutiles et à des performances plus lentes.
+Gardez à l'esprit qu'avec l'introduction du nouveau moteur V8 en parallèle des nouvelles normes ES, les méthodes natives ont été améliorées de telle manière qu'elles sont maintenant environ 50% plus performantes que les bibliothèques utilitaires.
 
-**Otherwise:** You'll have to maintain less performant projects where you could have simply used what was **already** available or dealt with a few more lines in exchange of a few more files.
+**Autrement :** Vous devez maintenir des projets moins performants où vous auriez pu simplement utiliser ce qui était **déjà** disponible ou traiter quelques lignes supplémentaires en échange de quelques fichiers supplémentaires.
 
-🔗 [**Read More: Native over user land utils**](/sections/performance/nativeoverutil.md)
+🔗 [**Plus d'infos : natif supérieur aux utilitaires**](/sections/performance/nativeoverutil.french.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-des-matières">⬆ Retourner en haut de la page</a></p>
 
 # `8. Docker Best Practices`
 
