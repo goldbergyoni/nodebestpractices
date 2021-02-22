@@ -6,15 +6,50 @@
 
 A typical log is a warehouse of entries from all components and requests. Upon detection of some suspicious line or error, it becomes hairy to match other lines that belong to the same specific flow (e.g. the user “John” tried to buy something). This becomes even more critical and challenging in a microservice environment when a request/transaction might span across multiple computers. Address this by assigning a unique transaction identifier value to all the entries from the same request so when detecting one line one can copy the id and search for every line that has similar transaction id. However, achieving this In Node is not straightforward as a single thread is used to serve all requests –consider using a library that that can group data on the request level – see code example on the next slide. When calling other microservices, pass the transaction id using an HTTP header like “x-transaction-id” to keep the same context.
 
-<br/><br/>
+<br/>
 
-### Code example: sharing TransactionId among current request functions using [async-local-storage](https://nodejs.org/api/async_hooks.html#async_hooks_class_asynclocalstorage):
+### Code example: sharing TransactionId among current request functions using [async-local-storage](https://nodejs.org/api/async_hooks.html#async_hooks_class_asynclocalstorage)
 
- You can think of async-local-storage as the node.js alternative to thread local storage. 
- It is basically a storage for asynchronous flows in Node (more details [here](https://www.freecodecamp.org/news/async-local-storage-nodejs/)).
+ **What is async-local-storage?** You can think of it as the node.js alternative to thread local storage. 
+ It is basically a storage for asynchronous flows in Node. You can read more about it [here](https://www.freecodecamp.org/news/async-local-storage-nodejs/).
 
 ```javascript
-code here
+const express = require('express');
+const { AsyncLocalStorage } = require('async_hooks');
+const uuid = require('uuid/v4');
+
+const asyncLocalStorage = new AsyncLocalStorage();
+
+// Set incoming requests TransactionId
+const transactionIdMiddleware = (req, res, next) => {
+    // The first asyncLocalStorage.run argument is the initialization of the store state, the second argument is the function that has access to that store
+    asyncLocalStorage.run(new Map(), () => {
+        // Try to extract the TransactionId from the request header, or generate a new one if it doesn't exist
+        const transactionId = req.headers['transactionId'] || uuid();
+
+        // Set the TransactionId inside the store
+        asyncLocalStorage.getStore().set('transactionId', transactionId);
+        
+        // By calling next() inside the function, we make sure all other middlewares run within the same AsyncLocalStorage context 
+        next();
+    });
+};
+
+const app = express();
+app.use(requestIdMiddleware);
+
+// Set outgoing requests TransactionId
+app.get('/', (req, res) => {
+    // Once it's been initialized inside the middleware, TransactionId is accessible at any point of the request flow
+    const transactionId = asyncLocalStorage.getStore().get('transactionId');
+
+    // Add TransactionId as header
+    const response = await axios.get('https://externalService.com/api/getAllUsers', headers: {
+    'x-transaction-id': transactionId
+    });
+
+    res.send('externalService was successfully called with TransactionId header');
+});
 ```
 <br/>
 
@@ -41,7 +76,7 @@ app.get('/getUserData/{id}', async (req, res, next) => {
 
         res.json(user);
     } catch (err) {
-        // The error is being passed to the middleware, and there's no need to pass over the TransactionId
+        // The error is being passed to the middleware, and there's no need to send over the TransactionId
         next(err);
     }
 })
@@ -68,7 +103,7 @@ app.use(rTracer.expressMiddleware({
     headerName: 'x-transaction-id'
 }));
 
-const axios = require("axios");
+const axios = require('axios');
 
 // Now, the external service will automaticlly get the current TransactionId as header
 const response = await axios.get('https://externalService.com/api/getAllUsers');
@@ -76,7 +111,7 @@ const response = await axios.get('https://externalService.com/api/getAllUsers');
 </details>
 <br/>
 
-NOTICE: there are two restrictions on using async-local-storage:
+**NOTICE: there are two restrictions on using async-local-storage:**
 1. It requires Node v.14. 
 2. It is based on a lower level construct in Node called async_hooks which is still experimental, so you may have the fear of performance problems. Even if they do exist, they are very negligible, but you should make your own considerations.
 
