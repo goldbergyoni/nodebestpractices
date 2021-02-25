@@ -125,7 +125,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 ## ![✔] 2.2 Utilisez uniquement l'objet intégré Error
 
-**TL;PL :** Beaucoup lèvent des erreurs sous forme de chaîne ou de type personnalisé - cela complique la logique de gestion des erreurs et l'interopérabilité entre les modules. Que vous rejetiez une promesse, leviez une exception ou émettiez une erreur - l'utilisation uniquement de l'objet intégré Error (ou un objet qui étend l'objet Error) augmentera l'uniformité et empêchera la perte d'informations.
+**TL;PL :** Beaucoup lèvent des erreurs sous forme de chaîne ou de type personnalisé - cela complique la logique de gestion des erreurs et l'interopérabilité entre les modules. Que vous rejetiez une promesse, leviez une exception ou émettiez une erreur - l'utilisation uniquement de l'objet intégré Error (ou un objet qui étend l'objet Error) augmentera l'uniformité et empêchera la perte d'informations. Il existe une règle ESLint `no-throw-literal` qui vérifie strictement cela (bien qu'elle ait quelques [limitations](https://eslint.org/docs/rules/no-throw-literal) qui peuvent être résolues en utilisant TypeScript et en définissant la règle `@typescript-eslint/no-throw-literal`).
 
 **Autrement :** Lorsque vous appelez un composant, le type d'erreurs en retour étant incertain - cela rend la gestion des erreurs beaucoup plus difficile. Pire encore, l'utilisation de types personnalisés pour décrire des erreurs peut entraîner la perte d'informations d'erreurs critiques comme la trace de la pile !
 
