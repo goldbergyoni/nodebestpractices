@@ -706,11 +706,11 @@ null == undefined   // true
 
 <br/><br/>
 
-## ![✔] 6.5. 通用安全最佳实际集合
+## ![✔] 6.5. 通用安全最佳实践集合
 
 **TL;DR:** 这些是与Node.js不直接相关的安全建议的集合-Node的实现与任何其他语言没有太大的不同。单击 "阅读更多" 浏览。
 
-🔗 [**更多: 通用安全最佳实际**](/sections/security/commonsecuritybestpractices.md)
+🔗 [**更多: 通用安全最佳实践**](/sections/security/commonsecuritybestpractices.md)
 
 <br/><br/>
 
