@@ -1313,6 +1313,16 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "yedidyas",
+      "name": "Yedidya Schwartz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/36074789?v=4",
+      "profile": "https://github.com/yedidyas",
+      "contributions": [
+        "content",
+        "example"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
