@@ -47,7 +47,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 ## Table of Contents
 
 1. [Project Structure Practices (5)](#1-project-structure-practices)
-2. [Error Handling Practices (11) ](#2-error-handling-practices)
+2. [Error Handling Practices (12) ](#2-error-handling-practices)
 3. [Code Style Practices (12) ](#3-code-style-practices)
 4. [Testing And Overall Quality Practices (13) ](#4-testing-and-overall-quality-practices)
 5. [Going To Production Practices (19) ](#5-going-to-production-practices)
@@ -699,7 +699,9 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.14. Assign a transaction id to each log statement
 
-**TL;DR:** Assign the same identifier, transaction-id: {some value}, to each log entry within a single request. Then when inspecting errors in logs, easily conclude what happened before and after. Unfortunately, this is not easy to achieve in Node due to its async nature, see code examples inside
+Also known as correlation id / transit id / tracing id / request id / request context / etc.
+
+**TL;DR:** Assign the same identifier, transaction-id: {some value}, to each log entry within a single request. Then when inspecting errors in logs, easily conclude what happened before and after. Until version 14 of Node, this was not easy to achieve due to Node's async nature, but since AsyncLocalStorage came to town, this became possible and easy than ever. see code examples inside
 
 **Otherwise:** Looking at a production error log without the context – what happened before – makes it much harder and slower to reason about the issue
 
