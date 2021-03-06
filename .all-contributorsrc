@@ -1304,6 +1304,25 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "SuspiciousLookingOwl",
+      "name": "Owl",
+      "avatar_url": "https://avatars.githubusercontent.com/u/32597776?v=4",
+      "profile": "http://vincentjonathan.com",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "yedidyas",
+      "name": "Yedidya Schwartz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/36074789?v=4",
+      "profile": "https://github.com/yedidyas",
+      "contributions": [
+        "content",
+        "example"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
