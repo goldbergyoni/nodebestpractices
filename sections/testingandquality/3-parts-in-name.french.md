@@ -35,7 +35,7 @@ describe('Service Produits', () => {
 describe('Service Produits', () => {
   describe('Ajoute un nouveau produit', () => {
     it('Devrait retourner le bon statut', () => {
-        //hmm, quelle est cette vérification de test ? quels sont le scénario et les attentes ?
+      //hmm, quelle est cette vérification de test ? quels sont le scénario et les attentes ?
       const newProduct = new ProductService().add(...);
       expect(newProduct.status).to.equal('validationEnAttente');
     });

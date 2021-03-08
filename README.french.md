@@ -47,7 +47,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 ## Table des matières
 
 1. [Structure de projet (5)](#1-structure-de-projet)
-2. [Gestion des erreurs (11) ](#2-gestion-des-erreurs)
+2. [Gestion des erreurs (12) ](#2-gestion-des-erreurs)
 3. [Style du code (12) ](#3-style-du-code)
 4. [Tests et pratiques générales de qualité (13) ](#4-tests-et-pratiques-générales-de-qualité)
 5. [Pratiques de mise en production (19) ](#5-pratiques-de-mise-en-production)
@@ -699,7 +699,9 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 ## ![✔] 5.14. Attribuez un id de transaction à chaque relevé du journal
 
-**TL;PL :** Attribuez le même identifiant, transaction-id : {une valeur}, à chaque entrée du journal à l'intérieur d'une même requête. Ensuite, lors de l'inspection des erreurs dans les journaux, il est facile de conclure ce qui s'est passé avant et après. Malheureusement, cela n'est pas facile à réaliser dans Node en raison de sa nature asynchrone, consultez les exemples de code.
+Également connu sous le nom de corrélation id / transit id / tracing id / request id / request context / etc.
+
+**TL;PL :** Attribuez le même identifiant, transaction-id : {une valeur}, à chaque entrée du journal à l'intérieur d'une même requête. Ensuite, lors de l'inspection des erreurs dans les journaux, il est facile de conclure ce qui s'est passé avant et après. Malheureusement, cela n'est pas facile à réaliser dans Node en raison de sa nature asynchrone, consultez les exemples de code. Jusqu'à la version 14 de Node, cela n'était pas facile à réaliser en raison de la nature asynchrone de Node, mais depuis l'arrivée de AsyncLocalStorage, cela est devenu possible et plus facile que jamais. Consultez les exemples de code fournis.
 
 **Autrement :** L'examen d'un journal d'erreurs de production sans le contexte (ce qui s'est passé auparavant) rend le travail de réflexion beaucoup plus difficile et lent.
 
@@ -1564,6 +1566,8 @@ Thanks goes to these wonderful people who have contributed to this repository!
     <td align="center"><a href="https://github.com/andrewjbarbour"><img src="https://avatars.githubusercontent.com/u/77080074?v=4?s=100" width="100px;" alt=""/><br /><sub><b>andrewjbarbour</b></sub></a><br /><a href="#content-andrewjbarbour" title="Content">🖋</a></td>
     <td align="center"><a href="https://MasujimaRyohei.jp"><img src="https://avatars.githubusercontent.com/u/17163541?v=4?s=100" width="100px;" alt=""/><br /><sub><b>mr</b></sub></a><br /><a href="#content-MasujimaRyohei" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/kubanac95"><img src="https://avatars.githubusercontent.com/u/16191931?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Aleksandar</b></sub></a><br /><a href="#content-kubanac95" title="Content">🖋</a></td>
+    <td align="center"><a href="http://vincentjonathan.com"><img src="https://avatars.githubusercontent.com/u/32597776?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Owl</b></sub></a><br /><a href="#content-SuspiciousLookingOwl" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/yedidyas"><img src="https://avatars.githubusercontent.com/u/36074789?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Yedidya Schwartz</b></sub></a><br /><a href="#content-yedidyas" title="Content">🖋</a> <a href="#example-yedidyas" title="Examples">💡</a></td>
   </tr>
 </table>
 

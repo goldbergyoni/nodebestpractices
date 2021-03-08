@@ -11,11 +11,15 @@
 ### Exemple de code : chaque test agit sur son propre ensemble de données
 ```javascript
 it('Lors de la mise à jour du nom du site, obtenez une confirmation réussie', async () => {
-  // le test ajoute de nouveaux enregistrements et agit uniquement sur les enregistrements
+  // Arrange (Préparer) - le test ajoute de nouveaux enregistrements et agit uniquement sur les enregistrements
   const siteUnderTest = await SiteService.addSite({
     name: 'siteForUpdateTest'
   });
+
+  // Act (Agir)
   const updateNameResult = await SiteService.changeName(siteUnderTest, 'newName');
+
+  // Assert (Vérifier)
   expect(updateNameResult).to.be(true);
 });
 ```
@@ -28,15 +32,23 @@ before(() => {
   // ajouter des données de sites et d'administrateurs à notre base de données. Où sont les données ? à l'extérieur. Sur un json externe ou un framework de migration
   await DB.AddSeedDataFromJson('seed.json');
 });
+
 it('Lors de la mise à jour du nom du site, obtenez une confirmation réussie', async () => {
-  // Je sais que le nom du site « Portal » existe - je l'ai vu dans les fichiers de remplissage
+  // Arrange (Préparer) - Je sais que le nom du site « Portal » existe - je l'ai vu dans les fichiers de remplissage
   const siteToUpdate = await SiteService.getSiteByName('Portal');
+
+  // Act (Agir)
   const updateNameResult = await SiteService.changeName(siteToUpdate, 'newName');
+
+  // Assert (Vérifier)
   expect(updateNameResult).to.be(true);
 });
+
 it('Lorsque vous interrogez par le nom du site, obtenez le bon site', async () => {
-  // Je sais que le nom de site « Portal » existe - je l'ai vu dans les fichiers de remplissage
+  // Act (Agir) - Je sais que le nom de site « Portal » existe - je l'ai vu dans les fichiers de remplissage
   const siteToCheck = await SiteService.getSiteByName('Portal');
+
+  // Assert (Vérifier)
   expect(siteToCheck.name).to.be.equal('Portal'); // Échec ! Le test précédent change le nom :[
 });
 ```
