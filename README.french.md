@@ -1090,19 +1090,19 @@ Gardez à l'esprit qu'avec l'introduction du nouveau moteur V8 en parallèle des
 
 <p align="right"><a href="#table-des-matières">⬆ Retourner en haut de la page</a></p>
 
-# `8. Docker Best Practices`
+# `8. Bonnes pratiques de Docker`
 
-🏅 Many thanks to [Bret Fisher](https://github.com/BretFisher) from whom we learned many of the following practices
+🏅 Un grand merci à [Bret Fisher](https://github.com/BretFisher) de qui nous avons appris plusieurs des pratiques suivantes
 
 <br/><br/>
 
-## ![✔] 8.1 Use multi-stage builds for leaner and more secure Docker images
+## ![✔] 8.1 Utilisez multi-stage builds pour des images Docker plus légères et plus sûres
 
-**TL;DR:** Use multi-stage build to copy only necessary production artifacts. A lot of build-time dependencies and files are not needed for running your application. With multi-stage builds these resources can be used during build while the runtime environment contains only what's necessary. Multi-stage builds are an easy way to get rid of overweight and security threats.
+**TL;PL :** Utilisez multi-stage builds pour copier uniquement les artefacts de production nécessaires. Un grand nombre de dépendances et de fichiers au moment de la construction ne sont pas nécessaires pour exécuter votre application. Avec multi-stage builds, ces ressources peuvent être utilisées pendant la construction tandis que l'environnement d'exécution ne contient que ce qui est nécessaire. multi-stage builds est un moyen facile de se débarrasser du surpoids et des menaces de sécurité.
 
-**Otherwise:** Larger images will take longer to build and ship, build-only tools might contain vulnerabilities and secrets only meant for the build phase might be leaked.
+**Autrement :** Les images plus grandes prendront plus de temps à construire et à livrer. Les outils uniquement de construction peuvent contenir des vulnérabilités. Et des secrets destinés uniquement à la phase de construction peuvent être divulgués.
 
-### Example Dockerfile for multi-stage builds
+### Exemple de Dockerfile pour le multi-stage builds
 
 ```dockerfile
 FROM node:14.4.0 AS build
@@ -1121,147 +1121,147 @@ RUN npm ci --production
 CMD [ "node", "dist/app.js" ]
 ```
 
-🔗 [**Read More: Use multi-stage builds**](/sections/docker/multi_stage_builds.md)
+🔗 [**Plus d'infos : utilisez multi-stage builds**](/sections/docker/multi_stage_builds.french.md)
 
 <br /><br /><br />
 
-## ![✔] 8.2. Bootstrap using `node` command, avoid `npm start`
+## ![✔] 8.2. Démarrez à l'aide de la commande `node`, évitez `npm start`
 
-**TL;DR:** use `CMD ['node','server.js']` to start your app, avoid using npm scripts which don't pass OS signals to the code. This prevents problems with child-processes, signal handling, graceful shutdown and having zombie processes.
+**TL;PL :** Utilisez `CMD ['node','server.js']` pour démarrer votre application, évitez d'utiliser des scripts npm qui ne transmettent pas les signaux du système d'exploitation au code. Cela empêche les problèmes de processus fils, de gestion du signal, d'arrêt progressif et de processus zombies.
 
-**Otherwise:** When no signals are passed, your code will never be notified about shutdowns. Without this, it will lose its chance to close properly possibly losing current requests and/or data.
+**Autrement :** Si aucun signal n'est transmis, votre code ne sera jamais notifié des interruptions. Sans cela, il perdra sa chance de se fermer correctement, ce qui pourrait entraîner la perte de requêtes et/ou de données en cours.
 
-[**Read More: Bootstrap container using node command, avoid npm start**](/sections/docker/bootstrap-using-node.md)
+[**Plus d'infos : Démarrez un conteneur à l'aide de la commande node, évitez npm start**](/sections/docker/bootstrap-using-node.french.md)
 
 <br /><br /><br />
 
-## ![✔] 8.3. Let the Docker runtime handle replication and uptime
+## ![✔] 8.3. Laissez le système d'exécution Docker s'occuper de la réplication et de la disponibilité
 
-**TL;DR:** When using a Docker run time orchestrator (e.g., Kubernetes), invoke the Node.js process directly without intermediate process managers or custom code that replicate the process (e.g. PM2, Cluster module). The runtime platform has the highest amount of data and visibility for making placement decision - It knows best how many processes are needed, how to spread them and what to do in case of crashes
+**TL;PL :** Lorsque vous utilisez un orchestrateur d'exécution Docker (par exemple, Kubernetes), appelez le processus Node.js directement sans gestionnaires de processus intermédiaires ou code personnalisé qui réplique le processus (par exemple, PM2, module Cluster). La plateforme d'exécution possède la plus grande quantité de données et la meilleure visibilité pour prendre des décisions de placement - Elle sait mieux que quiconque combien de processus sont nécessaires, comment les répartir et quoi faire en cas de plantage.
 
-**Otherwise:** Container keeps crashing due to lack of resources will get restarted indefinitely by the process manager. Should Kubernetes be aware of that, it could relocate it to a different roomy instance
+**Autrement :** Le conteneur continue de se planter par manque de ressources et sera redémarré indéfiniment par le responsable du processus. Si Kubernetes est au courant de cela, il pourrait le déplacer vers une autre instance plus importante.
 
-🔗 [**Read More: Let the Docker orchestrator restart and replicate processes**](/sections/docker/restart-and-replicate-processes.md)
+🔗 [**Plus d'infos : laissez l'orchestrateur Docker redémarrer et répliquer les processus**](/sections/docker/restart-and-replicate-processes.french.md)
 
 <br/><br /><br />
 
-## ![✔] 8.4. Use .dockerignore to prevent leaking secrets
+## ![✔] 8.4. Utilisez .dockerignore pour éviter les divulgations de secrets
 
-**TL;DR**: Include a `.dockerignore` file that filters out common secret files and development artifacts. By doing so, you might prevent secrets from leaking into the image. As a bonus the build time will significantly decrease. Also, ensure not to copy all files recursively rather explicitly choose what should be copied to Docker
+**TL;PL :** Ajoutez un fichier `.dockerignore` qui filtre les fichiers secrets courants et les artefacts de développement. Ainsi, vous pouvez éviter que des secrets ne s'infiltrent dans l'image. En prime, le temps de construction sera considérablement réduit. De plus, assurez-vous de ne pas copier tous les fichiers récursivement, choisissez plutôt explicitement ce qui doit être copié dans Docker.
 
-**Otherwise**: Common personal secret files like `.env`, `.aws` and `.npmrc` will be shared with anybody with access to the image (e.g. Docker repository)
+**Autrement :** Les fichiers secrets personnels habituels comme `.env`, `.aws` et `.npmrc` seront partagés avec toute personne ayant accès à l'image (par exemple le dépôt Docker).
 
-🔗 [**Read More: Use .dockerignore**](/sections/docker/docker-ignore.md)
-
-<br /><br /><br />
-
-## ![✔] 8.5. Clean-up dependencies before production
-
-**TL;DR:** Although Dev-Dependencies are sometimes needed during the build and test life-cycle, eventually the image that is shipped to production should be minimal and clean from development dependencies. Doing so guarantees that only necessary code is shipped and the amount of potential attacks (i.e. attack surface) is minimized. When using multi-stage build (see dedicated bullet) this can be achieved by installing all dependencies first and finally running `npm ci --production`
-
-**Otherwise:** Many of the infamous npm security breaches were found within development packages (e.g. [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes))
-
-🔗 Read More: [Remove development dependencies](/sections/docker/install-for-production.md)
+🔗 [**Plus d'infos : utilisez .dockerignore**](/sections/docker/docker-ignore.french.md)
 
 <br /><br /><br />
 
-## ![✔] 8.6. Shutdown smartly and gracefully
+## ![✔] 8.5. Nettoyez les dépendances avant la production
 
-**TL;DR:** Handle the process SIGTERM event and clean-up all existing connection and resources. This should be done while responding to ongoing requests. In Dockerized runtimes shutting down containers is not a rare event, rather a frequent occurrence that happen as part of routine work. Achieving this demands some thoughtful code to orchestrate several moving parts: The load balancer, keep-alive connections, the HTTP server and other resources
+**TL;PL :** Bien que des dépendances de développement soient parfois nécessaires pendant le cycle de vie de la construction et des tests, l'image qui est envoyée à la production doit être minimale et exempte de toute dépendance de développement. Cela garantit que seul le code nécessaire est livré et que la quantité d'attaques potentielles (c'est-à-dire la surface d'attaque) soit réduite au minimum. Lorsque l'on utilise un multi-stage build (voir le point consacré à ce sujet), cela peut être réalisé en installant d'abord toutes les dépendances et en exécutant enfin `npm ci --production`.
 
-**Otherwise:** Dying immediately means not responding to thousands of disappointed users
+**Autrement :** De nombreuses failles célèbres de sécurité de npm ont été trouvées dans des packages de développement (par exemple [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes))
 
-🔗 [**Read More: Graceful shutdown**](/sections/docker/graceful-shutdown.md)
-
-<br /><br /><br />
-
-## ![✔] 8.7. Set memory limits using both Docker and v8
-
-**TL;DR:** Always configure a memory limit using both Docker and the JavaScript runtime flags. The Docker limit is needed to make thoughtful container placement decision, the --v8's flag max-old-space is needed to kick off the GC on time and prevent under utilization of memory. Practically, set the v8's old space memory to be a just bit less than the container limit
-
-**Otherwise:** The docker definition is needed to perform thoughtful scaling decision and prevent starving other citizens. Without also defining the v8's limits, it will under utilize the container resources - Without explicit instructions it crashes when utilizing ~50-60% of its host resources
-
-🔗 [**Read More: Set memory limits using Docker only**](/sections/docker/memory-limit.md)
+🔗 Plus d'infos : [supprimez les dépendances de développement](/sections/docker/install-for-production.french.md)
 
 <br /><br /><br />
 
-## ![✔] 8.8. Plan for efficient caching
+## ![✔] 8.6. Arrêtez intelligemment et progressivement
 
-**TL;DR:** Rebuilding a whole docker image from cache can be nearly instantaneous if done correctly. The less updated instructions should be at the top of your Dockerfile and the ones constantly changing (like app code) should be at the bottom.
+**TL;PL :** Gérez l'événement SIGTERM du processus et nettoyez toutes les connexions et ressources existantes. Cela doit être fait tout en répondant aux requêtes en cours. Dans des environnements d'exécution Dockerisés, l'arrêt des conteneurs n'est pas un événement rare, mais plutôt une occurrence fréquente qui se produit dans le cadre du travail routinier. Pour y parvenir, il faut un code réfléchi pour orchestrer plusieurs pièces mobiles : l'équilibreur de charge, les connexions persistantes, le serveur HTTP et d'autres ressources.
 
-**Otherwise:** Docker build will be very long and consume lot of resources even when making tiny changes
+**Autrement :** S'éteindre immédiatement signifie ne pas répondre aux milliers d'utilisateurs qui seront déçus.
 
-🔗 [**Read More: Leverage caching to reduce build times**](/sections/docker/use-cache-for-shorter-build-time.md)
-
-<br /><br /><br />
-
-## ![✔] 8.9. Use explicit image reference, avoid `latest` tag
-
-**TL;DR:** Specify an explicit image digest or versioned label, never refer to `latest`. Developers are often led to believe that specifying the `latest` tag will provide them with the most recent image in the repository however this is not the case. Using a digest guarantees that every instance of the service is running exactly the same code.
-
-In addition, referring to an image tag means that the base image is subject to change, as image tags cannot be relied upon for a deterministic install. Instead, if a deterministic install is expected, a SHA256 digest can be used to reference an exact image.
-
-**Otherwise:** A new version of a base image could be deployed into production with breaking changes, causing unintended application behaviour.
-
-🔗 [**Read More: Understand image tags and use the "latest" tag with caution**](/sections/docker/image-tags.md)
+🔗 [**Plus d'infos : arrêt progressif**](/sections/docker/graceful-shutdown.french.md)
 
 <br /><br /><br />
 
-## ![✔] 8.10. Prefer smaller Docker base images
+## ![✔] 8.7. Définissez des limites de mémoire en utilisant à la fois Docker et v8
 
-**TL;DR:** Large images lead to higher exposure to vulnerabilities and increased resource consumption. Using leaner Docker images, such as Slim and Alpine Linux variants, mitigates this issue.
+**TL;PL :** Configurez toujours une limite de mémoire en utilisant à la fois Docker et les indicateurs d'exécution JavaScript. La limite de Docker est nécessaire pour prendre une décision judicieuse de placement des conteneurs, l'indicateur max-old-space de --v8 est nécessaire pour lancer le GC à temps et éviter la sous-utilisation de la mémoire. Concrètement, il faut que cet indicateur de v8 soit juste un peu plus petit que la limite du conteneur.
 
-**Otherwise:** Building, pushing, and pulling images will take longer, unknown attack vectors can be used by malicious actors and more resources are consumed.
+**Autrement :** La définition de docker est nécessaire pour prendre une décision judicieuse pour la mise à l'échelle et éviter de priver d'autres consommateurs de mémoire. Sans définir également les limites de v8, il sous-utilisera les ressources du conteneur - Sans instructions explicites, il se plantera lorsqu'il utilisera ~50-60% des ressources de ses hôtes.
 
-🔗 [**Read More: Prefer smaller images**](/sections/docker/smaller_base_images.md)
-
-<br /><br /><br />
-
-## ![✔] 8.11. Clean-out build-time secrets, avoid secrets in args
-
-**TL;DR:** Avoid secrets leaking from the Docker build environment. A Docker image is typically shared in multiple environment like CI and a registry that are not as sanitized as production. A typical example is an npm token which is usually passed to a dockerfile as argument. This token stays within the image long after it is needed and allows the attacker indefinite access to a private npm registry. This can be avoided by coping a secret file like `.npmrc` and then removing it using multi-stage build (beware, build history should be deleted as well) or by using Docker build-kit secret feature which leaves zero traces
-
-**Otherwise:** Everyone with access to the CI and docker registry will also get access to some precious organization secrets as a bonus
-
-🔗 [**Read More: Clean-out build-time secrets**](/sections/docker/avoid-build-time-secrets.md)
+🔗 [**Plus d'infos : définissez des limites de mémoire en utilisant uniquement Docker**](/sections/docker/memory-limit.french.md)
 
 <br /><br /><br />
 
-## ![✔] 8.12. Scan images for multi layers of vulnerabilities
+## ![✔] 8.8. Organisez une mise en cache efficace
 
-**TL;DR:** Besides checking code dependencies vulnerabilities also scan the final image that is shipped to production. Docker image scanners check the code dependencies but also the OS binaries. This E2E security scan covers more ground and verifies that no bad guy injected bad things during the build. Consequently, it is recommended running this as the last step before deployment. There are a handful of free and commercial scanners that also provide CI/CD plugins
+**TL;PL :** La reconstruction d'une image entière de docker à partir du cache peut être presque instantanée si elle est faite correctement. Les instructions qui changent peu devraient se trouver en haut de votre Dockerfile et celles qui changent constamment (comme le code de l'application) devraient se trouver en bas.
 
-**Otherwise:** Your code might be entirely free from vulnerabilities. However it might still get hacked due to vulnerable version of OS-level binaries (e.g. OpenSSL, TarBall) that are commonly being used by applications
+**Autrement :** La construction de docker sera très longue et consommera beaucoup de ressources, même en cas de changements minimes.
 
-🔗 [**Read More: Generic Docker practices**](/sections/docker/scan-images.md)
-
-<br /><br /><br />
-
-## ![✔] 8.13 Clean NODE_MODULE cache
-
-**TL;DR:** After installing dependencies in a container remove the local cache. It doesn't make any sense to duplicate the dependencies for faster future installs since there won't be any further installs - A Docker image is immutable. Using a single line of code tens of MB (typically 10-50% of the image size) are shaved off
-
-**Otherwise:** The image that will get shipped to production will weigh 30% more due to files that will never get used
-
-🔗 [**Read More: Clean NODE_MODULE cache**](/sections/docker/clean-cache.md)
+🔗 [**Plus d'infos : exploiter la mise en cache pour réduire les temps de construction**](/sections/docker/use-cache-for-shorter-build-time.french.md)
 
 <br /><br /><br />
 
-## ![✔] 8.14. Generic Docker practices
+## ![✔] 8.9. Utilisez une référence explicite de l'image, évitez le tag `latest`
 
-**TL;DR:** This is a collection of Docker advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
+**TL;PL :** Précisez un condensé (_digest_) d'image explicite ou une étiquette versionnée, ne faites jamais référence à `latest`. Les développeurs sont souvent amenés à croire que la spécification du tag `latest` leur fournira l'image la plus récente dans le dépôt, mais ce n'est pas le cas. L'utilisation d'un digest garantit que chaque instance du service exécute exactement le même code.
 
-🔗 [**Read More: Generic Docker practices**](/sections/docker/generic-tips.md)
+En outre, la référence à un tag d'une image signifie que l'image de base est sujette à des modifications, car on ne peut pas se fier aux tags image pour une installation déterminée. En revanche, si une installation déterminée est prévue, un digest SHA256 peut être utilisé pour faire référence à une image exacte.
+
+**Autrement :** Une nouvelle version d'une image de base pourrait être déployée en production avec des modifications importantes, provoquant un comportement non souhaité de l'application.
+
+🔗 [**Plus d'infos : Comprendre les tags d'image et utiliser le tag "latest" avec précaution**](/sections/docker/image-tags.french.md)
+
+<br /><br /><br />
+
+## ![✔] 8.10. Privilégiez les plus petites images de base Docker 
+
+**TL;PL :** Les images de grande taille entraînent une plus grande exposition aux vulnérabilités et une consommation accrue des ressources. L'utilisation d'images Docker plus fines, telles que les variantes Slim et Alpine de Linux, atténue ce problème.
+
+**Autrement :** Construire, pousser et tirer des images prendra plus de temps, des vecteurs d'attaque inconnus peuvent être utilisés par des acteurs malveillants et plus de ressources sont consommées.
+
+🔗 [**Plus d'infos : privilégiez les plus petites images**](/sections/docker/smaller_base_images.french.md)
+
+<br /><br /><br />
+
+## ![✔] 8.11. Nettoyez les secrets de construction, évitez les secrets dans les arguments
+
+**TL;PL :** Évitez que des secrets ne s'échappent de l'environnement de construction du Docker. Une image Docker est généralement partagée dans plusieurs environnements comme les CI et un registre qui ne sont pas aussi aseptisés que la production. Un exemple typique est un jeton npm qui est généralement transmis à un fichier Docker en tant qu'argument. Ce jeton reste dans l'image longtemps après qu'on en ait eu besoin et permet à l'attaquant d'accéder indéfiniment à un registre npm privé. Cela peut être évité en copiant un fichier secret comme `.npmrc` et en le supprimant en utilisant une construction en plusieurs étapes (attention, l'historique de la construction doit également être supprimé) ou en utilisant la fonctionnalité secrète Docker build-kit qui ne laisse aucune trace.
+
+**Autrement :** Toute personne ayant accès au CI et au registre des dockers aura également accès, en prime, à certains secrets précieux de l'organisation
+
+🔗 [**Plus d'infos : nettoyez les secrets de construction**](/sections/docker/avoid-build-time-secrets.french.md)
+
+<br /><br /><br />
+
+## ![✔] 8.12. Analysez les images pour détecter les multiples catégories de vulnérabilités
+
+**TL;PL :** En plus de vérifier les vulnérabilités des dépendances du code, il analyse également l'image finale qui est envoyée à la production. Les scanners d'images Docker vérifient les dépendances du code mais aussi les binaires du système d'exploitation. Ce scan de sécurité E2E couvre plus de terrain et vérifie qu'aucun mauvais gars n'a injecté de mauvaises choses pendant la construction. Par conséquent, il est recommandé de l'exécuter comme dernière étape avant le déploiement. Il existe une poignée de scanners gratuits et commerciaux qui fournissent également des plugins CI/CD.
+
+**Autrement :** Votre code pourrait être entièrement exempt de vulnérabilités. Cependant, il peut être piraté en raison de la vulnérabilité des versions binaires au niveau OS (par exemple, OpenSSL, TarBall) qui sont couramment utilisées par les applications.
+
+🔗 [**Plus d'infos : scannez l'ensemble de l'image avant la production**](/sections/docker/scan-images.french.md)
+
+<br /><br /><br />
+
+## ![✔] 8.13 Nettoyez le cache NODE_MODULE
+
+**TL;PL :** Après avoir installé les dépendances dans un conteneur, il faut supprimer le cache local. Il n'est pas logique de dupliquer les dépendances pour des installations futures plus rapides puisqu'il n'y aura pas d'autres installations - Une image du Docker est immuable. Une image du Docker est immuable. En utilisant une seule ligne de code, des dizaines de Mo (généralement 10 à 50 % de la taille de l'image) sont supprimées.
+
+**Autrement :** L'image qui sera envoyée à la production pèsera 30 % de plus à cause de fichiers qui ne seront jamais utilisés.
+
+🔗 [**Plus d'infos : nettoyez le cache NODE_MODULE**](/sections/docker/clean-cache.french.md)
+
+<br /><br /><br />
+
+## ![✔] 8.14. Les pratiques de Docker en général
+
+**TL;PL :** Il s'agit d'un recueil de conseils de Docker qui n'est pas directement lié à Node.js - la mise en œuvre de Node n'est pas très différente de celle de tout autre langage. Cliquez pour en savoir plus.
+
+🔗 [**Plus d'infos : les pratiques de Docker en général**](/sections/docker/generic-tips.french.md)
 
 <br/><br /><br />
 
-## ![✔] 8.15. Lint your Dockerfile
+## ![✔] 8.15. Lintez votre Dockerfile
 
-**TL;DR:** Linting your Dockerfile is an important step to identify issues in your Dockerfile which differ from best practices. By checking for potential flaws using a specialised Docker linter, performance and security improvements can be easily identified, saving countless hours of wasted time or security issues in production code.
+**TL;PL :** Linter votre Dockerfile est une étape importante pour identifier les problèmes de votre Dockerfile qui diffèrent des meilleures pratiques. En vérifiant les failles potentielles à l'aide d'un linter Docker spécialisé, les améliorations de performance et de sécurité peuvent être facilement identifiées, ce qui permet d'économiser d'innombrables heures de perte de temps ou des problèmes de sécurité dans le code de production.
 
-**Otherwise:** Mistakenly the Dockerfile creator left Root as the production user, and also used an image from unknown source repository. This could be avoided with with just a simple linter.
+**Autrement :** Par erreur, le créateur du Dockerfile a laissé Root comme utilisateur de production, et a également utilisé une image provenant d'un dépôt de source inconnue. Cela pourrait être évité avec un simple linter.
 
-🔗 [**Read More: Lint your Dockerfile**](/sections/docker/lint-dockerfile.md)
+🔗 [**Plus d'infos : lintez your Dockerfile**](/sections/docker/lint-dockerfile.french.md)
 
 <br/><br /><br />
 
