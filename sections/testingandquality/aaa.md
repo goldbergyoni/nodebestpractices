@@ -37,12 +37,12 @@ describe.skip('Customer classifier', () => {
 ### Code Example – Anti Pattern: no separation, one bulk, harder to interpret
 ```javascript
 test('Should be classified as premium', () => {
-        const customerToClassify = {spent:505, joined: new Date(), id:1}
-        const DBStub = sinon.stub(dataAccess, 'getCustomer')
-            .reply({id:1, classification: 'regular'});
-        const receivedClassification = customerClassifier.classifyCustomer(customerToClassify);
-        expect(receivedClassification).toMatch('premium');
-    });
+    const customerToClassify = {spent:505, joined: new Date(), id:1}
+    const DBStub = sinon.stub(dataAccess, 'getCustomer')
+        .reply({id:1, classification: 'regular'});
+    const receivedClassification = customerClassifier.classifyCustomer(customerToClassify);
+    expect(receivedClassification).toMatch('premium');
+});
 ```
 
 <br/><br/>
