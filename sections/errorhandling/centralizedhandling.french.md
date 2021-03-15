@@ -35,11 +35,11 @@ app.use(async (err, req, res, next) => {
 
 process.on("uncaughtException", error => {
   errorHandler.handleError(error);
-    });
+});
 
-    process.on("unhandledRejection", (reason) => {
-        errorHandler.handleError(reason);
-    });
+process.on("unhandledRejection", (reason) => {
+  errorHandler.handleError(reason);
+});
 ```
 </details>
 
@@ -72,11 +72,11 @@ app.use(async (err: Error, req: Request, res: Response, next: NextFunction) => {
 
 process.on("uncaughtException", (error:Error) => {
   errorHandler.handleError(error);
-    });
+});
 
-    process.on("unhandledRejection", (reason) => {
-        errorHandler.handleError(reason);
-    });
+process.on("unhandledRejection", (reason) => {
+  errorHandler.handleError(reason);
+});
 ```
 </details>
 
