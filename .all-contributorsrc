@@ -1332,6 +1332,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "Vispercept",
+      "name": "Thomas König",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7080389?v=4",
+      "profile": "http://www.koenigthomas.de/",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
