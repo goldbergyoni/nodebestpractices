@@ -1323,6 +1323,15 @@
         "content",
         "example"
       ]
+    },
+    {
+      "login": "ariel-diaz",
+      "name": "ari",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20423540?v=4",
+      "profile": "https://github.com/ariel-diaz",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
