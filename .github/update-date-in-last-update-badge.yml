@@ -1,0 +1,30 @@
+name: Update date in last update badge
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  run:
+    name: Update the date in last update badge to today
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Update last update badge
+        run: |
+          # Make file runnable
+          chmod +x "${GITHUB_WORKSPACE}/.github/update-last-update-badge.sh"
+
+          # Run script
+          "${GITHUB_WORKSPACE}/.github/update-last-update-badge.sh" "${GITHUB_WORKSPACE}/README.md"
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v7
+        if: env.DID_LAST_UPDATE_BADGE_UPDATED
+        with:
+          author_name: github-actions
+          author_email: 41898282+github-actions[bot]@users.noreply.github.com
+          message: 'update the last update badge to today [skip ci]'
+          add: 'README.md'
