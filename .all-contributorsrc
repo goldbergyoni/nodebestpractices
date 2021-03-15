@@ -1341,6 +1341,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "coocos",
+      "name": "Kalle Lämsä",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1397804?v=4",
+      "profile": "https://github.com/coocos",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
