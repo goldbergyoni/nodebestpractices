@@ -1233,7 +1233,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 **Otherwise:** Your code might be entirely free from vulnerabilities. However it might still get hacked due to vulnerable version of OS-level binaries (e.g. OpenSSL, TarBall) that are commonly being used by applications
 
-🔗 [**Read More: Generic Docker practices**](/sections/docker/scan-images.md)
+🔗 [**Read More: Scan the entire image before production**](/sections/docker/scan-images.md)
 
 <br /><br /><br />
 
