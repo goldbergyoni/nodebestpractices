@@ -628,13 +628,13 @@ edo hornitzaileen lainoko zerbitzuak
 
 <br/><br/>
 
-## ![✔] 5.7. Sortu ‘bukaerako mantentze puntua‘
+## ![✔] 5.7. Sortu ‘mantentze lanen amaiera puntua‘
 
 **TL;PL:** API seguru batean, jarri agerian sistemarekin lotutako informazio multzo bat, hala nola, memoriaren erabilera eta REPL, etab. Nahiz eta gomendagarria den proba estandarretan eta tresna arruntetan oinarritzea, zenbait informazio eta eragiketa baliotsu errazago egiten dira kodea erabiliz
 
 **Bestela:** konturatuko zara “diagnostiko-inplementazio“ asko egiten ari zarela, eta kodea produkziora bidaltzen duzula soilik informazioa lortzeko diagnostikoa egite aldera
 
-🔗 [**Informazio gehiago: sortu ‘bukerako mantentze puntua‘**](/sections/production/createmaintenanceendpoint.md)
+🔗 [** Informazio gehiago: sortu ‘mantentze lanen amaiera puntua‘**](/sections/production/createmaintenanceendpoint.basque.md)
 
 <br/><br/>
 
