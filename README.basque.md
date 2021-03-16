@@ -638,13 +638,13 @@ edo hornitzaileen lainoko zerbitzuak
 
 <br/><br/>
 
-## ![✔] 5.8. Aurkitu akatsak eta geldialdiak APM produktuak erabiliz
+## ![✔] 5.8. Aurkitu erroreak eta geldialdiak APM produktuak erabiliz
 
 **TL;PL:** aplikazioen jarraipen eta errendimendu produktuek (APM deritzona) modu proaktiboan neurtzen dituzte kode basea eta APIa, modu automatikoan ohiko jarraipenetik haratago joateko eta erabiltzaileen esperientzia arrunta zerbitzu eta maila guztietan neurtzeko. Adibidez, APM produktu batzuek agerian jarri dezakete azken erabiltzaileen aldean motelegi kargatzen dela transakzio bat, sakoneko arrazoia iradokitzen duten bitartean
 
 **Bestela:** APIaren errendimendua eta geldialdiak neurtzeko ahalegin handia egin zenezake, eta, ziurrenik, ez zinateke jabetuko zein diren zure kodearen atalik motelenak mundu errealeko eszenatokian eta nola eragiten dioten zure erabiltzaile esperientziari
 
-🔗 [**Irakurri gehiago: aurkitu akatsak eta geldialdiak APM produktuak erabiliz**](/sections/production/apmproducts.md)
+🔗 [**Irakurri gehiago: aurkitu erroreak eta geldialdiak APM produktuak erabiliz**](/sections/production/apmproducts.basque.md)
 
 <br/><br/>
 
