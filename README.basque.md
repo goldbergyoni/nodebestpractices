@@ -654,7 +654,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** IT / DevOps arloko munduko txapeldun batek ere ez du salbatuko gaizki idatzita dagoen sistema
 
-🔗 [**Irakurri gehiago: prestatu zure kodea ekoizpenerako**](/sections/production/productioncode.md)
+🔗 [**Irakurri gehiago: prestatu zure kodea ekoizpenerako**](/sections/production/productioncode.basque.md)
 
 <br/><br/>
 
