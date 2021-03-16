@@ -674,7 +674,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** Node eduki dinamikoa eskaintzeko sortu zen arren, haren hari bakarra lanpetuta egongo da html / images / angular / react erako ehunka fitxategi bidaltzen, bera egiteko sortua izan zen zereginei esleitu barik bere baliabide guztiak
 
-🔗 [**Irakurri gehiago: atera zure frontend aktiboak Nodetik**](/sections/production/frontendout.md)
+🔗 [**Irakurri gehiago: atera zure frontend/interfazeko modulu aktiboak Nodetik**](/sections/production/frontendout.basque.md)
 
 <br/><br/>
 
