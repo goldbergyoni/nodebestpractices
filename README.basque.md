@@ -624,7 +624,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** seguruenik, zure aplikazioak erabilgarri dituen baliabideen %25a besterik ez du erabiltzen (!), edo gutxiago, agian. Kontuan izan ohiko zerbitzariek gutxienez lau nukleo dituztela PUZen, eta Node.jsren garatzaile soilak bat bakarra erabiltzen duela (AWS beanstalk bezalako PaaS zerbitzuekin lan egiten duenean ere)
 
-🔗 [**Informazio gehiago: erabili PUZeko nukleo guztiak**](/sections/production/utilizecpu.md)
+🔗 [**Informazio gehiago: erabili PUZeko nukleo guztiak**](/sections/production/utilizecpu.basque.md)
 
 <br/><br/>
 
