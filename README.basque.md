@@ -587,7 +587,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 <br/><br/>
 
-## ![✔] 5.3. Utzi ahal den guztia alderantzizko proxy batean (adibidez, gzip, SSL)
+## ![✔] 5.3. Delegatu ahal den guztia alderantzizko proxy batean (adibidez, gzip, SSL)
 
 **TL;PL:** Node izugarri txarra da PUZen zeregin intentsiboak egiten, esate baterako, gzipping, SSL termination. Haien partez benetako middleware zerbitzuak erabili behar dituzu –hala nola nginx eta Haproxy–
 edo hornitzaileen lainoko zerbitzuak
@@ -688,7 +688,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 <br/><br/>
 
-## ![✔] 5.13. Erabili ahuleziak automatikoki atzematen dituzten tresnak
+## ![✔] 5.13. Erabili menpekotasunak automatikoki atzematen dituzten tresnak
 
 **TL;PL:** menpekotasun ezagunenek ere –Express, adibidez– badituzte (noizean behin) ahulezia ezagunak, sistema arriskuan jar ditzaketenak. Horrek konponbide erraza du, ordea, tresna komunitario eta komertzialak erabiliz gero, ahuleziak etengabe kontrolatu eta haien berri ematen dute eta (bertan edo GitHub-en)
 
@@ -698,13 +698,13 @@ edo hornitzaileen lainoko zerbitzuak
 
 <br/><br/>
 
-## ![✔] 5.14. Esleitu transakzio identifikazio bat adierazpen-erregistro bakoitzari
+## ![✔] 5.14. Esleitu transakzio identifikazio bana adierazpen erregistro bakoitzari
 
 **TL;PL:** esleitu identifikatzaile bera –transakzio-: {balioren bat}– erregistro sarrera bakoitzari eskaera bakar baten barruan. Ondoren, erregistroetako erroreak ikuskatzean, erraz konturatuko zara zer gertatu zen aurretik eta ondoren. Zoritxarrez, hori ez da erraz lortzen Noden, haren izaera asinkronoa da eta. Ikusi kodearen adibideak beheko estekan
 
 **Bestela:** produkzioko erroreen erregistroa testuingururik gabe ikustean – aurretik gertatu zena, alegia –, askoz zailagoa eta motelagoa da arazoa aztertzea
 
-🔗 [**Irakurri gehiago: esleitu ‘TransactionId’ adierazpen erregistro bakoitzari**](/sections/production/assigntransactionid.md)
+🔗 [**Irakurri gehiago: esleitu transakzio identifikazio bana adierazpen erregistro bakoitzari**](/sections/production/assigntransactionid.basque.md)
 
 <br/><br/>
 
