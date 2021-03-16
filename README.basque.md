@@ -573,7 +573,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 **Bestela:** hutsegitea === bezero zapuztuak
 
-🔗 [**Irakurri gehiago: monitorizazioa!**](/sections/production/monitoring.md)
+🔗 [**Irakurri gehiago: monitorizazioa!**](/sections/production/monitoring.basque.md)
 
 <br/><br/>
 
