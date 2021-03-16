@@ -594,7 +594,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** zure hari bakarra lanpetuta egongo da azpiegitura lanak egiten, zure aplikazioaren guneari kasu egin beharrean, eta, ondorioz, haren errendimenduak behera egingo du
 
-🔗 [**Irakurri gehiago: utzi ahal den guztia alderantzizko proxy batean (adibidez, gzip, SSL)**](/sections/production/delegatetoproxy.md)
+🔗 [**Irakurri gehiago: delegatu ahal den guztia alderantzizko proxy batean (adibidez, gzip, SSL)**](/sections/production/delegatetoproxy.basque.md)
 
 <br/><br/>
 
