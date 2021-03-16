@@ -752,7 +752,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** QAk kodea sakonki probatuko du eta produkzioan modu desberdinean jokatuko duen bertsioa onartuko du. Are okerrago, produkzio talde bateko hainbat zerbitzarik kode desberdinak exekuta ditzake
 
-🔗 [**Informazio gehiago: erabili npm ci**](/sections/production/installpackageswithnpmci.md)
+🔗 [**Informazio gehiago: erabili npm ci**](/sections/production/installpackageswithnpmci.basque.md)
 
 <br/><br/><br/>
 
