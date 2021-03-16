@@ -614,7 +614,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** estrategia argirik gabe dozenaka eskaera exekutatzeak DevOpsa nahaste-borrastera eraman dezake, hartarako aldi berean tresna gehiegi (talde kudeaketa, dockerra, PM2) erabiliz gero
 
-🔗 [**Irakurri gehiago: babestu prozesuaren erabilgarritasuna tresna egokiak erabiliz**](/sections/production/guardprocess.md)
+🔗 [**Irakurri gehiago: babestu prozesuaren erabilgarritasuna tresna egokiak erabiliz**](/sections/production/guardprocess.basque.md)
 
 <br/><br/>
 
