@@ -583,7 +583,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 **Bestela:** kutxa beltz batekin amaituko duzu, eta zaila izango zaizu han jasotako ezarpenen zergatia aurkitzea. Azkenean, erregistro adierazpen guztiak idazten hasiko zara informazio osagarria gehitzeko
 
-🔗 [**Gehiago irakurri: gardentasuna handitu erregistratze plataforma adimendunak erabiliz**](/sections/production/smartlogging.md)
+🔗 [**Gehiago irakurri: gardentasuna handitu erregistratze plataforma adimendunak erabiliz**](/sections/production/smartlogging.basque.md)
 
 <br/><br/>
 
