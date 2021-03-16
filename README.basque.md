@@ -732,7 +732,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** aurkitu berri diren erroreak edo ahuleziak erabil litezke produkzioan exekutatzen den aplikazio bat ustiatzeko eta baliteke zure aplikazioa ez izatea bateragarria hainbat modulurekin eta zailagoa gertatzea hura mantentzea
 
-🔗 [**Irakurri gehiago: Erabili NTS.jsren LTS bertsioa**](/sections/production/LTSrelease.md)
+🔗 [**Irakurri gehiago: Erabili NTS.jsren LTS bertsioa**](/sections/production/LTSrelease.basque.md)
 
 <br/><br/>
 
