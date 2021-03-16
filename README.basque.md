@@ -694,7 +694,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** zure kodea ahulezia eta zaurgarritasunetatik garbi mantentzeko tresna dedikaturik gabe, jarraipen estua egin beharko diezu mehatxu berriei buruz linean egiten diren argitalpenei, bide batez esanda, aspergarri samarra izaten dena
 
-🔗 [**Irakurri gehiago: erabili ahuleziak automatikoki atzematen dituzten tresnak**](/sections/production/detectvulnerabilities.md)
+🔗 [**Irakurri gehiago: erabili menpekotasunak automatikoki atzematen dituzten tresnak**](/sections/production/detectvulnerabilities.basque.md)
 
 <br/><br/>
 
