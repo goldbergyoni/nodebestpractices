@@ -714,7 +714,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** ezaugarri soil hori gabe errendimendua asko jaits liteke. Adibidez, Express erabiltzean zerbitzarira bideratzeko `NODE_ENV` gabe, errendimendua heren bat moteltzen da
 
-🔗 [**Informazio gehiago: Ezarri NODE_ENV = produkzioa**](/sections/production/setnodeenv.md)
+🔗 [**Informazio gehiago: Ezarri NODE_ENV = produkzioa**](/sections/production/setnodeenv.basque.md)
 
 <br/><br/>
 
