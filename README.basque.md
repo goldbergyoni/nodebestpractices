@@ -604,7 +604,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** QAk kodea xeheki probatuko du eta onartuko duen bertsioak desberdin jokatuko du produkzioan. Are okerrago, produkzio talde bereko zerbitzarien kodeak desberdinak izan litezke
 
-🔗 [**Informazio gehiago: blokeatu menpekotasunak**](/sections/production/lockdependencies.md)
+🔗 [**Informazio gehiago: blokeatu menpekotasunak**](/sections/production/lockdependencies.basque.md)
 
 <br/><br/>
 
