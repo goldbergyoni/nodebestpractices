@@ -678,13 +678,13 @@ edo hornitzaileen lainoko zerbitzuak
 
 <br/><br/>
 
-## ![✔] 5.12. Izan stateless, hil zerbitzariak ia egunero
+## ![✔] 5.12. Izan aberri gabea, hil zerbitzariak ia egunero
 
 **TL;PL:** gorde edozein datu mota (adibidez, erabiltzaile saioak, cacheak, kargatutako fitxategiak) kanpoko datu biltegietan; eta aztertu ez ote zenituzkeen zure zerbitzari guztiak aldian behin “hil” beharko edo “zerbitzaririk gabe”ko plataformaren bat erabili (adibidez, AWS Lambda), berariaz stateless jokaera duena
 
 **Bestela:** zerbitzari jakin batek huts eginez gero, makina akastun bat hil beharrean, aplikazioen geldialdia eragingo du. Gainera, gero eta zailagoa izango da mailaketaren elastikotasuna, zerbitzari jakin baten menpeko izanda
 
-🔗 [**Irakurri gehiago: izan stateless, hil zerbitzariak ia egunero**](/sections/production/bestateless.md)
+🔗 [** Irakurri gehiago: izan aberri gabea, hil zerbitzariak ia egunero**](/sections/production/bestateless.basque.md)
 
 <br/><br/>
 
