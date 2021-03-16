@@ -103,8 +103,7 @@ No matter what the algorithm/function, always include some string that's unique 
 
 ##### Why use salt?
 
-Adding salt changes the hash and thus makes it different from a hash of the same password in someone elses
-system. If someone uses the same password for multiple sites, and a hash of their password is obtained from someone elses data breach, they won't be able to match it to the hash in your database. When everyone uses hashes, it becomes nearly impossible for attackers to identify patterns of password reuse.
+Adding salt changes the hash and thus makes it different from a hash of the same password in someone elses system. If someone uses the same password for multiple sites, and a hash of their password is obtained from someone elses data breach, they won't be able to match it to the hash in your database. When everyone uses hashes, it becomes nearly impossible for attackers to identify patterns of password reuse.
 
 #### Password Length
 
