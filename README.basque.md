@@ -742,7 +742,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** aplikazioen kudeaketaren erregistroak bideratzea === zaila da eskalatzen, erregistroen galera dakar, eskasa izaten da kezken bereizketa
 
-🔗 [**Irakurri gehiago: erregistroen bideraketa**](/sections/production/logrouting.md)
+🔗 [**Irakurri gehiago: erregistroen bideraketa**](/sections/production/logrouting.basque.md)
 
 <br/><br/>
 
