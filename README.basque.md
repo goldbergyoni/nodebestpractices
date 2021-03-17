@@ -796,7 +796,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** iturburu kodearen kontrola publiko egin daiteke akats baten ondorioz, biltegi pribatuetan ere, eta orduan sekretu guztiak agerian geratzen dira. Kanpoko norbaitek iturburuko kontrolaren sarbidea ezagutzeak nahi gabe eragingo du erlazionatutako sistemetarako sarbideak ere ezagutzea (datu baseak, APIak, zerbitzuak, etab.)
 
-🔗 [**Gehiago irakurri: kudeaketa sekretua**](/sections/security/secretmanagement.md)
+🔗 [**Gehiago irakurri: kudeaketa sekretua**](/sections/security/secretmanagement.basque.md)
 
 <br/><br/>
 
