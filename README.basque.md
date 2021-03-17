@@ -840,7 +840,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** erasotzaile batek zure web esparrua detektatu eta ageriko ahultasun guztiei eraso ahal die
 
-🔗 [**Gehiago irakurri: menpekotasunen segurtasuna**](/sections/security/dependencysecurity.md)
+🔗 [**Gehiago irakurri: menpekotasunen segurtasuna**](/sections/security/dependencysecurity.basque.md)
 
 <br/><br/>
 
