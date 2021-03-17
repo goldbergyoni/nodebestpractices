@@ -776,7 +776,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 <br/><br/>
 
-## ![✔] 6.2. Mugatu aldi baterako eskaerak middleware bat erabiliz
+## ![✔] 6.2. Mugatu aldi baterako eskaerak middlewareak erabiliz
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
@@ -784,7 +784,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** aplikazio batek erasoak jasan ahal ditu, haren erabiltzaileei ukatzen bazaie jaso beharko luketen zerbitzua, aplikazioa egoera txarrean dagoelako edo eskuragarri ez dagoelako
 
-🔗 [**Gehiago irakurri: ezarri abiadura muga**](/sections/security/limitrequests.md)
+🔗 [**Gehiago irakurri: ezarri abiadura muga**](/sections/security/limitrequests.basque.md)
 
 <br/><br/>
 
