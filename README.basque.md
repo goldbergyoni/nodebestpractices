@@ -876,7 +876,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** zure eskuzabaltasunak eta ikuspegi permisiboak asko handitzen dute erasoaren tamainua, eta erasotzailea sarrera asko probatzera bultzatzen du, aplikazioa kraskatzeko konbinazio bat aurkitu arte
 
-🔗 [**Gehiago irakurri: balidatu sarrerako JSON eskemak**](/sections/security/validation.md)
+🔗 [**Gehiago irakurri: balidatu sarrerako JSON eskemak**](/sections/security/validation.basque.md)
 
 <br/><br/>
 
