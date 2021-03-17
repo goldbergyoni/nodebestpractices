@@ -3,7 +3,7 @@
 <br/><br/>
 
 ### One Paragraph Explainer
-Our biggest testing challenge is the lack of headspace - we already have the production code keeping us super-busy. For this reason the testing code must stay dead-simple and easy to understand. When reading a test case - it shouldn't feel like reading imperative code (loops, inheritance) rather more like HTML - a declarative experience. To achieve this, keep the AAA convention so the readers' mind will parse the test intent effortlessly. There are some other similar formats to this pattern, like XUnit 'Setup, Excercise, Verify, Teardown'. These are the three A:
+Our biggest testing challenge is the lack of headspace - we already have the production code keeping us super-busy. For this reason the testing code must stay dead-simple and easy to understand. When reading a test case - it shouldn't feel like reading imperative code (loops, inheritance) rather more like HTML - a declarative experience. To achieve this, keep the AAA convention so the readers' mind will parse the test intent effortlessly. There are some other similar formats to this pattern, like XUnit 'Setup, Exercise, Verify, Teardown'. These are the three A:
 
 The 1st A - Arrange: All the setup code to bring the system to the scenario the test aims to simulate. This might include instantiating the unit under test constructor, adding DB records, mocking/stubbing on objects and any other preparation code
 
@@ -14,7 +14,7 @@ The 3rd A - Assert: Ensure that the received value satisfies the expectation. Us
 
 <br/><br/>
 
-### Code example: a test strcutured with the AAA pattern
+### Code example: a test structured with the AAA pattern
 ```javascript
 describe.skip('Customer classifier', () => {
     test('When customer spent more than 500$, should be classified as premium', () => {
@@ -37,12 +37,12 @@ describe.skip('Customer classifier', () => {
 ### Code Example – Anti Pattern: no separation, one bulk, harder to interpret
 ```javascript
 test('Should be classified as premium', () => {
-        const customerToClassify = {spent:505, joined: new Date(), id:1}
-        const DBStub = sinon.stub(dataAccess, 'getCustomer')
-            .reply({id:1, classification: 'regular'});
-        const receivedClassification = customerClassifier.classifyCustomer(customerToClassify);
-        expect(receivedClassification).toMatch('premium');
-    });
+    const customerToClassify = {spent:505, joined: new Date(), id:1}
+    const DBStub = sinon.stub(dataAccess, 'getCustomer')
+        .reply({id:1, classification: 'regular'});
+    const receivedClassification = customerClassifier.classifyCustomer(customerToClassify);
+    expect(receivedClassification).toMatch('premium');
+});
 ```
 
 <br/><br/>

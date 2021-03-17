@@ -2,7 +2,7 @@
 
 ### One Paragraph Explainer
 
-Without one dedicated object for error handling, greater are the chances of important errors hiding under the radar due to improper handling. The error handler object is responsible for making the error visible, for example by writing to a well-formatted logger, sending events to some monitoring product like [Sentry](https://sentry.io/), [Rollbar](https://rollbar.com/), or [Raygun](https://raygun.com/). Most web frameworks, like [Express](http://expressjs.com/en/guide/error-handling.html#writing-error-handlers), provide an error handling middleware mechanism. A typical error handling flow might be: Some module throws an error -> API router catches the error -> it propagates the error to the middleware (e.g. Express, KOA) who is responsible for catching errors -> a centralized error handler is called -> the middleware is being told whether this error is an untrusted error (not operational) so it can restart the app gracefully. Note that it’s a common, yet wrong, practice to handle errors within Express middleware – doing so will not cover errors that are thrown in non-web interfaces.
+Without one dedicated object for error handling, greater are the chances for inconsistent errors handling: Errors thrown within web requests might get handled differently from those raised during the startup phase and those raised by scheduled jobs. This might lead to some types of errors that are being mismanaged. This single error handler object is responsible for making the error visible, for example, by writing to a well-formatted logger, firing metrics using some monitoring product (like [Prometheus](https://prometheus.io/), [CloudWatch](https://aws.amazon.com/cloudwatch/), [DataDog](https://www.datadoghq.com/), and [Sentry](https://sentry.io/)) and to decide whether the process should crash. Most web frameworks provide an error catching middleware mechanism - A typical mistake is to place the error handling code within this middleware. By doing so, you won't be able to reuse the same handler for errors that are caught in different scenarios like scheduled jobs, message queue subscribers, and uncaught exceptions. Consequently, the error middleware should only catch errors and forward them to the handler. A typical error handling flow might be: Some module throws an error -> API router catches the error -> it propagates the error to the middleware (e.g. or to other mechanism for catching request-level error) who is responsible for catching errors -> a centralized error handler is called.
 
 ### Code Example – a typical error flow
 
@@ -30,10 +30,15 @@ catch (error) {
 
 // Error handling middleware, we delegate the handling to the centralized error handler
 app.use(async (err, req, res, next) => {
-  const isOperationalError = await errorHandler.handleError(err);
-  if (!isOperationalError) {
-    next(err);
-  }
+  await errorHandler.handleError(err, res);//The error handler will send a response
+});
+
+process.on("uncaughtException", error => {
+  errorHandler.handleError(error);
+});
+
+process.on("unhandledRejection", (reason) => {
+  errorHandler.handleError(reason);
 });
 ```
 </details>
@@ -62,10 +67,15 @@ catch (error) {
 
 // Error handling middleware, we delegate the handling to the centralized error handler
 app.use(async (err: Error, req: Request, res: Response, next: NextFunction) => {
-  const isOperationalError = await errorHandler.handleError(err);
-  if (!isOperationalError) {
-    next(err);
-  }
+await errorHandler.handleError(err, res);
+});
+
+process.on("uncaughtException", (error:Error) => {
+  errorHandler.handleError(error);
+});
+
+process.on("unhandledRejection", (reason) => {
+  errorHandler.handleError(reason);
 });
 ```
 </details>
@@ -80,11 +90,10 @@ app.use(async (err: Error, req: Request, res: Response, next: NextFunction) => {
 module.exports.handler = new errorHandler();
 
 function errorHandler() {
-  this.handleError = async (err) => {
-    await logger.logError(err);
-    await sendMailToAdminIfCritical;
-    await saveInOpsQueueIfCritical;
-    await determineIfOperationalError;
+  this.handleError = async (error, responseStream) => {
+    await logger.logError(error);
+    await fireMonitoringMetric(error);
+    await crashIfUntrustedErrorOrSendResponse(error, responseStream);    
   };
 }
 ```
@@ -95,12 +104,11 @@ function errorHandler() {
 
 ```typescript
 class ErrorHandler {
-  public async handleError(err: Error): Promise<void> {
-    await logger.logError(err);
-    await sendMailToAdminIfCritical();
-    await saveInOpsQueueIfCritical();
-    await determineIfOperationalError();
-  };
+  public async handleError(error: Error, responseStream: Response): Promise<void> {
+    await logger.logError(error);
+    await fireMonitoringMetric(error);
+    await crashIfUntrustedErrorOrSendResponse(error, responseStream);      
+    };
 }
 
 export const handler = new ErrorHandler();
@@ -144,6 +152,10 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 });
 ```
 </details>
+
+ ### Illustration: The error handling actors and flow
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/error-handling-flow.png "Error handling flow")
+
 
 ### Blog Quote: "Sometimes lower levels can’t do anything useful except propagate the error to their caller"
 

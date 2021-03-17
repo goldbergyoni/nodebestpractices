@@ -938,6 +938,18 @@ null == undefined   // true
 
 <br/><br/><br/>
 
+## ![✔] 6.25. 避免将机密信息发布到NPM仓库
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
+
+**TL;DR:** 您应该采取预防措施来避免偶然地将机密信息发布到npm仓库的风险。 一个 `.npmignore` 文件可以被用作忽略掉特定的文件或目录, 或者一个在 `package.json` 中的 `files` 数组可以起到一个白名单的作用.
+
+**否则:** 您项目的API密钥、密码或者其它机密信息很容易被任何碰到的人滥用，这可能会导致经济损失、身份冒充以及其它风险。
+
+🔗 [**阅读更多: 避免发布机密信息**](/sections/security/avoid_publishing_secrets.md)
+
+<br/><br/><br/>
+
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
 # `API Practices`
