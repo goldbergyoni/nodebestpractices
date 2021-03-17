@@ -864,7 +864,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** erasotzaile batek JavaScript kodeketa kaltegarria gorde dezake zure DBn, gero bezero gizajoei dagoen moduan bidaliko zaiena
 
-🔗 [**Gehiago irakurri: ihes irteera**](/sections/security/escape-output.md)
+🔗 [**Gehiago irakurri: ihes irteera**](/sections/security/escape-output.basque.md)
 
 <br/><br/>
 
