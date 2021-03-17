@@ -772,7 +772,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** garapenean zehar segurtasun ahulezia zuzena izan zitekeena produkzioaren arazo nagusia bihurtzen da. Gainera, baliteke proiektuak kodeen segurtasun praktika koherenterik ez jarraitzea, ahuleziak sartzea edo urruneko biltegietan sartutako sekretu konfidentzialak sortzea
 
-🔗 [**Gehiago irakurri: lint arauak**](/sections/security/lintrules.md)
+🔗 [**Gehiago irakurri: lint arauak**](/sections/security/lintrules.basque.md)
 
 <br/><br/>
 
