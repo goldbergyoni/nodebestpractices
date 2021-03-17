@@ -828,7 +828,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** erasotzaileek zure aplikazioaren erabiltzaileen aurkako eraso zuzenak egin ditzakete, segurtasun ahultasun handiak sortuz
 
-🔗 [**Gehiago irakurri: erabili izenburu seguruak zure aplikazioan**](/sections/security/secureheaders.md)
+🔗 [**Gehiago irakurri: erabili izenburu seguruak zure aplikazioan**](/sections/security/secureheaders.basque.md)
 
 <br/><br/>
 
