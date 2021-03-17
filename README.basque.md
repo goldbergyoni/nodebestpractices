@@ -816,7 +816,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **TL;PL:** Node.jsekin zuzenean loturarik ez duen segurtasuneko aholku bilduma bat da: Noderen inplementazioa ez da hain desberdina beste edozein hizkuntzaren inplementazioaren aldean. Egin klik “irakurri gehiago” botoian sakontzeko
 
-🔗 [**Gehiago irakurri: segurtasuneko ohiko jardunbide egokienak**](/sections/security/commonsecuritybestpractices.md)
+🔗 [**Gehiago irakurri: ohiko segurtasun jardunbide egokienak**](/sections/security/commonsecuritybestpractices.basque.md)
 
 <br/><br/>
 
