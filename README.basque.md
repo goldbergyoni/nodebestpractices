@@ -852,7 +852,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** funtzio segururik erabili gabe gordetzen diren pasahitzak eta sekretuak bortxaz erasotuak izan daitezke edo hiztegi erasoak jasan ditzakete. Azkenean agerian gera daitezke, bai eta agian zabaldu ere
 
-🔗 [**Gehiago irakurri: erabiltzaileen pasahitzak**](/sections/security/userpasswords.md)
+🔗 [**Gehiago irakurri: erabiltzaileen pasahitzak**](/sections/security/userpasswords.basque.md)
 
 <br/><br/>
 
