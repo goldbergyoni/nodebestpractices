@@ -1,23 +1,24 @@
-# Saihestu RegEx gaiztoak zure exekuzio hari bakarra gainkargatzen
+# Saihestu RegEx maltzurra zure hari bakarreko exekuzioa gainkargatzea
 
-### Azalpen paragrafoa
+### Azalpena
 
-Expresio Erregularrak erabiltzearen arriskua, analisi sintaktikoa behar duten eta eredu jakin batekin bat datozen testuen konputazio baliabideak dira. Node.js plataforman, non hari bakarraren gertaeren begizta menderatzaile den, expresio erregular bateko eredua ebaztea bezalako PUZeko operazio batek aplikazioa erabilezin bihur dezake. Saihestu RegEx posible den einean edo [validator.js](https://github.com/chriso/validator.js), edo [safe-regex](https://github.com/substack/safe-regex) bezalako liburutegi dedikatu baten esku utzi zeregin hau, RegEx expresioa segurua den kontrolatzeko alegia.
+Adierazpen Erregularrak (Regular Expressions) erabiltzearen berezko arriskua da testuaren analisi sintaktikoa egin eta testu hori eredu jakin batekin bat egiteko behar diren konputazio baliabideak. Node.js plataforman hari bakarreko gertaeren begizta gailentzen delarik, PUZarekin lotutako operazio batek, adierazpen erregular bateko eredua sortzearen tankerakoa, aplikazioa erabilezin bihur dezake. Ekidin RegEx erabiltzea posible den heinean, edo [validator.js](https://github.com/chriso/validator.js), edo [safe-regex](https://github.com/substack/safe-regex) bezalako liburutegi dedikatu baten esku utzi zeregin hori, RegExen adierazpena segurua den kontrolatzeko, alegia.
 
-Hainbat [OWASP adibide](https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS) RegEx eredu erasoerrazentzat:
+
+Hainbat [OWASP adibide](https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS) RegEx eredu erasogarrientzat:
 
 - (a|aa)+
 - ([a-zA-Z]+)\*
 
 <br/><br/>
 
-### Kodearen adibidea: denbora exponentzialaren RegEx baten balioztatzea RegExen partez balioztatzaileak erabiliz
+### Kode adibidea: denbora esponentzialeko RegEx balioztatzea eta RegEx-en ordez balioztatzaileak erabiltzea
 
 ```javascript
 const regexSegurua = require("safe-regex");
 const postaElektronikoaRegex = /^([a-zA-Z0-9])(([\-.]|[_]+)?([a-zA-Z0-9]+))*(@){1}[a-z0-9]+[.]{1}(([a-z]{2,3})|([a-z]{2,3}[.]{1}[a-z]{2,3}))$/;
 
-// false bistaratu beharko luke, postaElektronikoaRegex erasoerraza baita
+// alse bistaratu beharko luke, postaElektronikoaRegex eraso erraza baita
 console.log(regexSegurua(postaElektronikoaRegex));
 
 // regex ereduaren ordez, erabili balioztatzailea:
@@ -27,8 +28,8 @@ console.log(balioztatzailea.postaElektronikoaDa("liran.tal@gmail.com"));
 
 <br/><br/>
 
-### Liburuko aipua: "Expresio Erregular erasoerraza errepikapena erabiltzen duena bezala da ezaguna"
+### Liburuko aipua: "Errepikapena erabiltzen duen adierazpenari deritzo adierazpen erregular erasogarria"
 
-[Ezinbesteko Node.jsen Segurtasuna](https://leanpub.com/nodejssecurity) liburutik, Liran Talen eskutik
+Liran Talen E[Ezinbesteko Node.jsen Segurtasuna](https://leanpub.com/nodejssecurity) liburua:
 
-> Askotak, programatzaileek RegEx erabiliko dute erabiltzaile sarrera esperotako baldintzekin bat datorrela balioztatzeko. Expresio Erregular erasoerraz bat ezaguna da multzo batean errepikapena erabiltzeagatik, non aztertutako testuaren aitzizkia bakarrik bat datorren zuzena den ereduarekin, baina ez testuaren gainontzekoa.
+> Askotan, programatzaileek RegEx erabiliko dute erabiltzaileen sarrerak esperotako baldintzekin bat datozela balioztatzeko. Errepikatzen den atzemate multzoei errepikapena aplikatzen adierazpenei deritze Adierazpen Erregular erasogarria, non kointzidentzia eredu onargarri batek eta atzemate taldearekin bat ez datozen karaktere batzuek osatzen baitute bat etorri behar duen katea.
