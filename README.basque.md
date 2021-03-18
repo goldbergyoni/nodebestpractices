@@ -888,7 +888,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** edozeinek erabil litzake iraungitako edo gaizki kokatutako fitxak, maltzurki aplikazio batera sartzeko eta fitxaren jabea ordezkatzeko
 
-🔗 [**Gehiago irakurri: JSON web fitxen zerrenda beltzak**](/sections/security/expirejwt.md)
+🔗 [**Gehiago irakurri: JSON web fitxen zerrenda beltzak**](/sections/security/expirejwt.basque.md)
 
 <br/><br/>
 
