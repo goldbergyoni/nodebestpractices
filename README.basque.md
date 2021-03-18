@@ -1076,7 +1076,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 <br /><br /><br />
 
-## ![✔] 7.2. Hobetsi jatorrizko JS metodoak Lodash bezalako erabiltzailearen baliabideak baino
+## ![✔] 7.2. Hobetsi jatorrizko JS metodoak Lodash bezalako erabiltzaileen baliabideak baino
 
 **TL;PL:** askotan zorrotzagoa da `lodash` eta `underscore` bezalako baliabide liburutegiak erabiltzea jatorrizko metodoak baino, beharrezkoak ez diren menpekotasunak eragin eta abiadura moteltzen baitu. Gogoan izan, V8 motor berria ES estandar berriekin batera, bertako metodoak hobetu egin zirela, eta gaur egun baliabide liburutegiak % 50 inguru eraginkorragoak direla liburutegi publikoak baino
 
