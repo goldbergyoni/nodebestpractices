@@ -2,11 +2,11 @@
 
 <br/><br/>
 
-Nodek gertaeren begizta nagusiki hari bakarraren barruan kuadeatzen du, hainbat ilaren artean txandakatuz. Konplexutasun handiko ekintzak, json fitxategi handien sintaxi analisiak, logikaren erabilera array oso handietan, seguruak ez diren expresio erregularren kontsultak eta sarrera/irteera operazio garrantzitsuak gertaeren egintza geldiaraztea eragin dezakete. Sahiestu PUZarentzat zeregin intentsibo hauek zerbitzu kontsakratu batean (adibidez ataza zerbitzaria) egitea eta sahiatu Worker Pool erabiliaz zeregin luzeak pauso txikietan banatzea, hauexek, gertaeren begizta blokeatzea ekiditeko moduetako batzuk dira.
+Nodek gertaeren begizta nagusiki hari bakarraren barruan kudeatzen du, hainbat ilaren artean txandakatuz. Prozesu horretan, bada eragile bat baino gehiago gertaeren begizta geldiaraz dezakeena, hala nola konplexutasun handiko ekintzak, json fitxategi handien sintaxi analisiak, logikaren erabilera sorta oso handietan, seguruak ez diren adierazpen erregularren kontsultak eta sarrera/irteera operazio garrantzitsuak. Ekidin ataza intentsibo horiek PUZetik zerbitzu dedikatu batera pasatzea (adibidez, ataza zerbitzaria) edo ataza luzeak urrats txikietan banatzea eta gero Worker Pool erabiltzea. Horiexek dira gertaeren begizta blokeatzea ekiditeko bideetako batzuk.
 
-### Adibidea: gertaeren begiztan blokeatua izan
+### Adibidea: gertaeren begizta blokeatzea
 
-[Node Clinic](https://clinicjs.org/documentation/doctor/05-fixing-event-loop-problem)go adibide bat begira dezagun
+Ikusi [Node Clinic](https://clinicjs.org/documentation/doctor/05-fixing-event-loop-problem)-en adibide bat
 
 ```javascript
 function lokartu(ms) {
@@ -21,9 +21,9 @@ server.get("/", (req, res, next) => {
 });
 ```
 
-Aplikazio honen frogak egitean, 'while' komandoak sortutako latentzia ikusiko dugu
+Aplikazio honen probak egitean, 'while' komandoak sortutako latentzia ikusiko dugu
 
-### Exekutatu frogen segida
+### Egikaritu proben segida
 
 `clinic doctor --on-port 'autocannon localhost:$PORT' -- node slow-event-loop`
 
@@ -42,12 +42,12 @@ Aplikazio honen frogak egitean, 'while' komandoak sortutako latentzia ikusiko du
 ├────────────┼────────┼────────┼────────┼────────┼────────────────┼──────────┼───────────┤
 ```
 
-## Gertaeren begiztatzearen irudia
+## Gertaeren begiztaren irudia
 
-![Gertaeren begiztatzea](/assets/images/event-loop.png "Gertaeren begiztatzea")
+![Gertaeren begiztaren irudia](/assets/images/event-loop.png "Gertaeren begiztaren irudia")
 
-> Hemen dago oinarrizko arau bat zure Node zerbitzaria azkarra izaten mantentzeko: Nore azkarra da edozein momentutan bezero bakoitzarekin duen elkarlana "txikia" denean.
-> [Ez blokeatu gertaeren begiaztatzea (edota atazen begiaztatzea) | Node.js](https://nodejs.org/en/docs/guides/dont-block-the-event-loop/)
+> Hemen duzu oinarrizko arau bat zure Node zerbitzaria azkarra izaten jarraitzeko: Node azkarra da une jakin batean bezero bakoitzarekin lotutako lana "txikia" denean.
+> [Ez blokeatu gertaeren begizta (edota atazen begizta) | Node.js](https://nodejs.org/en/docs/guides/dont-block-the-event-loop/)
 
-> Gehiengo batek huts egiten du beren lehenengo NodeJS aplikazioak egiterako orduan, gertaeren begiaztatzea, erroreen kudeaketa eta asinkronoaren inguruko kontzeptuak ez ulertzeagatik.
-> [Gertaeren begiaztatzearen jarraibide egokiak — NodeJS gertaeren begiaztatzea, 5.partea](https://jsblog.insiderattack.net/event-loop-best-practices-nodejs-event-loop-part-5-e29b2b50bfe2)
+> Gehiengo batek huts egiten du beren lehenengo NodeJS aplikazioak egiterako orduan, gertaeren begizta, erroreen kudeaketa eta asinkronoaren inguruko kontzeptuak ez ulertzeagatik.
+> [Gertaeren begiztaren jarraibide egokiak — NodeJS gertaeren begizta, 5.partea](https://jsblog.insiderattack.net/event-loop-best-practices-nodejs-event-loop-part-5-e29b2b50bfe2)
