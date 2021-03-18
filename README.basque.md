@@ -907,7 +907,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 <br/><br/>
 
-## ![✔] 6.13. Exekutatu Node.js erro ez den erabiltzaile gisa
+## ![✔] 6.13. Exekutatu Node.js erabiltzaile ez-erro gisa
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A5:Broken%20Access%20Access%20Control-green.svg" alt=""/></a>
 
@@ -915,7 +915,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** zerbitzarian script bat exekutatzea lortzen duten erasotzaileek botere mugagabea lortzen dute makina lokalaren gainean (adibidez, iptable aldatu eta trafikoa beren zerbitzarira bideratzea)
 
-🔗 [**Gehiago irakurri: exekutatu Node.js erro ez den erabiltzaile gisa**](/sections/security/non-root-user.md)
+🔗 [**Gehiago irakurri: exekutatu Node.js erabiltzaile ez-erro gisa**](/sections/security/non-root-user.basque.md)
 
 <br/><br/>
 
