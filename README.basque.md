@@ -1161,7 +1161,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Bestela:** npm segurtasun arau hauste ezagun asko garapen paketeen barruan aurkitu izan dira (adibidez, [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes))
 
-🔗 Gehiago irakurri: [kendu garapen menpekotasunak](/sections/docker/install-for-production.basque.md)
+🔗 Gehiago irakurri: [ezabatu garapen menpekotasunak](/sections/docker/install-for-production.basque.md)
 
 <br /><br /><br />
 
