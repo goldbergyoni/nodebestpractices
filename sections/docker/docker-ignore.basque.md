@@ -2,13 +2,13 @@
 
 <br/><br/>
 
-### Azalpen paragrafoa
+### Azalpena
 
-Dockerren eraikitze komandoak lekuko fitxategiak sare birtual bateko eraikitze ingurune kontextuan kopiatzen ditu. Kontuz ibili, garapen eta CI karpetek .npmrc, .aws, .env fitxategiak eta beste fitxategi garrantzitsu batzuk eduki ditzakete eta. Ondorioz, Docker irudiek sekretuak gorde ditzakete eta hauek lurralde arriskutsuetan (esaterako Docker bilgailua, kideen zerbitzariak) agerian utz ditzakete. Mundu hobe batean, Dockerfilea argia izan beharko litzateke kopiatzen ari denari buruz. Honetaz gain, azken segustasun sare gisa, beharrezko ez diren karpetak eta sekretu pontentzialak irazkiko dituen .dockerignore fitxategi bat gehitu. Hau egiteak abiadura azkartzen du gainera, ekoizpenean erabilerarik ez duten garapen karpeta arruntak (adibidez .git, proben emaitzak, garatze programen konfigurazioak) alde batera utziz, eraikitzaileak cachea hobeto erabil dezake eta errendimendu hobea eskuratu
+Docker konpilazio komandoak tokian tokiko fitxategiak konpilazioaren testuinguruko ingurunean kopiatzen ditu sare birtual baten bidez. Kontuz ibili, garapen eta IE karpetek .npmrc, .aws, .env fitxategiak eta beste fitxategi garrantzitsu batzuk eduki ditzakete eta. Ondorioz, gertatu daiteke Dockereko irudiek sekretuak gordetzea eta lurralde arriskutsuetan agerian uztea (esaterako Docker bilgailua, kideen zerbitzariak). Mundu hobe batean Dockerfilek zehaztu beharko luke zer ari den kopiatzen. Horretaz gainera, azken segurtasun sare gisa, gehitu .dockerignore fitxategia, beharrezkoak ez diren karpetak eta balizko sekretuak iragazten dituena. Hori egiteak abiadura azkartzen du gainera, ekoizpenean erabilerarik ez duten garapen karpeta arruntak alde batera utziz (adibidez .git, proben emaitzak, garatze programen konfigurazioak), eraikitzaileak cachea hobeto erabil dezake eta errendimendu hobea eskuratu
 
 <br/><br/>
 
-### Kodearen adibidea: .dockerignore fitxategi lehenetsi ona Node.jsentzat
+### Kode adibidea: .dockerignore fitxategi lehenetsi ona Node.jsentzat
 
 <details>
 <summary><strong>.dockerignore</strong></summary>
@@ -31,7 +31,7 @@ Dockerren eraikitze komandoak lekuko fitxategiak sare birtual bateko eraikitze i
 
 <br/><br/>
 
-### Anti ereduaren kode adibidea: Fitxategi guztientzat kopia errekurtsiboa
+### Anti ereduaren kode adibidea: kopia errekurtsiboa fitxategi guztientzat
 
 <details>
 <summary><strong>Dockerfile</strong></summary>
@@ -42,7 +42,7 @@ WORKDIR /usr/src/app
 # The next line copies everything
 COPY . .
 
-# Beste guztia hemen dator
+# Hemen duzu beste guztia
 
 ```
 
