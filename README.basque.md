@@ -991,7 +991,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 <br/><br/>
 
-## ![✔] 6.20. Ezkutatu bezeroen erroreen xehetasunak
+## ![✔] 6.20. Ezkutatu bezeroari erroreen xehetasunak
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
@@ -999,7 +999,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** aplikazioaren xehetasun sentikorrak —hala nola, zerbitzariko fitxategien bideak, erabiltzen ari diren hirugarrenen moduluak eta erasotzaile batek balia ditzakeen aplikazioaren barneko beste lan fluxuak— atera daitezke pila aztarna batean aurkitutako informazioetatik
 
-🔗 [**Gehiago irakurri: ezkutatu bezeroaren erroreen xehetasunak**](/sections/security/hideerrors.md)
+🔗 [**Gehiago irakurri: ezkutatu bezeroari erroreen xehetasunak**](/sections/security/hideerrors.basque.md)
 
 <br/><br/>
 
