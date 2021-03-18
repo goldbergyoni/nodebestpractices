@@ -1125,13 +1125,13 @@ CMD [ "node", "dist/app.js" ]
 
 # Edukiontzia autoabiatu node komandoa erabiliz, npm beharrean
 
-## ![✔] 8.2. Edukiontzia abiarazi 'node' komandoa erabiliz, saihestu npm hastea
+## ![✔] 8.2. Abiarazi edukiontzia node komandoa erabiliz, saihestu npm
 
 **TL;PL:** erabili `CMD ['node','server.js']` aplikazioa abiarazteko, saihestu OS seinaleak kodera pasatzen ez dituzten npm scriptak erabiltzea. Horrek arazoak izatea ekiditen du bigarren mailako prozesuetan, seinaleak kudeatzean, itxiera seguruetan eta prozesu zonbietan
 
 **Bestela:** seinalerik pasatzen ez denean, zure kodeak ez du inoiz izango itzalaldien berri, eta, hori gabe, ez da behar bezala itxiko, unean uneko eskaerak eta / edo datuak galduz
 
-[**Gehiago irakurri: Edukiontzia abiarazi 'node' komandoa erabiliz, sahiestu npm hastea**](/sections/docker/bootstrap-using-node.basque.md)
+[**Gehiago irakurri: abiarazi edukiontzia 'node' komandoa erabiliz, saihestu npm abiatzea**](/sections/docker/bootstrap-using-node.basque.md)
 
 <br /><br /><br />
 

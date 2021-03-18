@@ -1,11 +1,10 @@
-# Edukiontzia abiarazi node komandoa erabiliz, sahiestu npm
+# Abiarazi edukiontzia node komandoa erabiliz npm erabili ordez
 
-## Azalpen paragrafoa
+## Azalpena
 
-Aplikazioen hastea `CMD 'npm start'` erabiltzen duten kode adibideak ikusten ohituak gaude. Hau desegokia da.
-`npm` binarioak ez ditu itzaltze dotorea galaraziko duen seinaleak zure aplikaziora bueltatuko (begiratu [/sections/docker/graceful-shutdown.md]). Azpi prozesuak erabiltzen ari bazara, hauek ez dira behar bezala garbituak izango ustekabeko itzaltze bat gertatzen bada, prozesu zonbiak utziaz. `npm start`ek ere onuragarria ez den prozesu estra bat du. Zure aplikazioa abiarazteko erabili `CMD ['node','server.js']`. Zure aplikazioak azpi prozesuak baditu erabili gainera `TINI` helmuga gisa.
+Ohikoa da jendeak `CMD 'npm start'` erabiltzea bere aplikazioa abiarazteko kodea egitea. Praktika txarra da hori, ordea. `npm` bitarrak ez du seinalerik birbidaliko zure aplikaziora, aplikazioa behar bezala ixtea eragozten duena (ikus [/sections/docker/graceful-shutdown.basque.md]). Bigarren mailako prozesuak  erabiltzen badituzu, ez dira behar bezala garbituko ustekabeko itzaltzeren bat gertatzen bada, prozesu automatak  utziko dituena. `npm start`ek ere onuragarria ez den prozesu bat gehiago egiten du. Erabili `CMD ['node','server.js']` zure aplikazioa abiarazteko. Zure aplikazioak bigarren mailako prozesuak baditu, erabili gainera `TINI`sarbide gisa.
 
-### Kodearen adibidea: Abiarazi Node erabilita
+### Kode adibidea: abiarazi aplikazioa Node erabiliz
 
 ```dockerfile
 
@@ -19,13 +18,13 @@ RUN npm ci --production && npm clean cache --force
 CMD ["node", "server.js"]
 ```
 
-### Kodearen adibidea: Erabili Tiny helmuga gisa
+### Kode adibidea: erabili Tiny sarbide gisa
 
 ```dockerfile
 
 FROM node:12-slim AS build
 
-# Gehitu Tini azpi prozesuak erabiliz gero
+# Gehitu Tini bigarren mailako prozesuak erabiltzen badituzu
 ENV TINI_VERSION v0.19.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
@@ -41,7 +40,7 @@ CMD ["node", "server.js"]
 
 ### Anti ereduak
 
-npm start erabilita
+npm start erabiliz
 
 ```dockerfile
 
@@ -53,8 +52,7 @@ RUN npm ci --production && npm clean cache --force
 # ez egin hau!
 CMD "npm start"
 ```
-
-Node erabilita string bakarrean bash/ash shell prozesu bat abiatuko du zure komandoa exekutatzeko. Hau ia `npm` erabiltzea moduan da
+Node string bakarrean erabiltzeak zure komandoa egikaritzeko bash/ash shell prozesu bat abiaraziko du. Hori ia `npm` erabiltzea modukoa da
 
 ```dockerfile
 
