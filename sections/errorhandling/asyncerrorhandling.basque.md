@@ -1,6 +1,6 @@
 # Erabili Async-Await edo errore asinkronoak kudeatzeko promesak
 
-### Azalpen paragrafoa
+### Azalpena
 
 Callbackak ez dira kudea errazak programatzaile gehienek ez dituzte ondo ezagutzen eta. Callbackek etengabeko errore egiaztatzea eskatzen dute, kode korapilotsua jasanaraziz eta kodigoaren fluxuaren ulergarritasuna zailduz. BlueBird, async, eta Q bezalako promesa liburutegiek kodigo estilo estandarra RETURN eta THROW erabiliz paketatzen dute, programaren fluxua kontrolatzeko. Zehazki, kodigo nagusia funtzio bakoitzean erroreak kuadeatzetik askatzea ahalbidetzen duen try-catch errore kudeaketa estilo gogokoena onartzen dute
 

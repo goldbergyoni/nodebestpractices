@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Azalpen paragrafoa
+### Azalpena
 
 Normalean, Node.js/Express aplikazio kode moderno gehienek promesen barruan funtzionatzen dute, .then kudeatzailearen, callback funtzio baten edota catch bloke baten barruan. Harrigarria bada ere, garatzaile batek .catch klausula bat gehitu zuela gogoratu ezean, leku hauetan jaurtitako erroreak ez dira uncaughtException ebentu kudeatzaileaz kudeatuak izaten, eta desagertu egiten dira. Noderen bertsio berrienek ohartarazpen mezu bat gehitu dute tratatu gabeko errefusa agertzen denean; egia da horrek, gauzak ondo ez doazenean, ohartzen lagun dezakeela, baina argi dago ez dela erroreak kudeatzeko modu egokia. Konponbide samurrena da ez ahaztea promesa kateko dei bakoitzaren barruan .catch klausula erabiltzen eta errore kudeatzaile zentralizatu batera desbideratzen. Hala ere, hauskorra da erroreak kudeatzeko estrategia garatzailearen diziplinan soilik oinarritzea. Ondorioz, oso gomendagarria da atzera egite dotorea erabiltzea eta `process.on('unhandledRejection', callback)`ra harpidetzea, horrek ziurtatuko baitu promesa erroreek bere tratamendua izango dutela, lokalki kudeatzen ez badira.
 

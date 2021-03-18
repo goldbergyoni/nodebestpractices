@@ -2,7 +2,7 @@
 
 <br/>
 
-### Azalpen paragrafoa
+### Azalpena
 
 Errore bat gertatzen denean fluxu sinkrono edo asinkrono batetik abiatuta, derrigorrezkoa da errore fluxuaren pila aztarna osoa edukitzea. Harrigarria bada ere, funtzio asinkrono batek (adibidez beste funtzio asinkrono bat deitzen duena) itxaron gabe (await) promesak itzultzen dituenean, errore bat gertatuko litzateke eta jatorrizko funtzio horren izena ez litzateke pilaren aztarnan agertu beharko. Horrek informazio partziala emango dio errorea diagnostikatzen duenari, are gehiago errorearen zergatiak jatorrizko funtzioan badu oinarria. Badago "zero-kostuko pila aztarna asinkronoak" deitzen den v8 funtzionalitate bat, pila aztarnak azken gertatu berri den `await`ean moztuak ez izatea ahalbidetzen duena. Garrantzirik gabeko inplementazio xehetasunak direla eta, horrek ez du funtzionatuko funtzioak bueltatzen duen balioa (sinkronoa edo asinkronoa), promesa bat baldin bada. Promesak deusezten direnean pilaren aztarnan zuloak egotea ekiditeoko, promesak beti esplizituki ebatzi behar ditugu `await` erabiliz beraiek funtzioetatik bueltatu baino lehen.
 

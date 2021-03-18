@@ -1,6 +1,6 @@
 # Erabili soilik “Errorea” objektu kapsulatua
 
-### Azalpen paragrafoa
+### Azalpena
 
 JavaScriptek berezko permisibitatea du, eta, bere kode fluxuaren aukera ugariarekin (adibidez EventEmitter, Callbackak, Promesak ...), garatzaileek erroreak kudeatzeko modu anitzak edukitzea eragiten du: batzuek stringak erabiltzen dituzte, besteek beren mota pertsonalizatuak zehazten dituzte. Node.jsen "Errorea" objektu kapsulatua erabiltzeak zure kodearen eta bestelako liburutegien arteko uniformetasuna gordetzen laguntzen du, eta gainera StrackTracea bezalako informazio esanguratsua gordetzen du. Salbuespen bat jaurtitzean, jarraibide egokia da errorearen izena edo erlazionatutako HTTP errore kodea bezalako testuinguru ezaugarriekin osatzea. Uniformetasun eta praktika hau lortzeko, saiatu "Errorea" objektua beharrezko ezaugarriekin osatzen, baina kontu izan gehiegitan ez egiten. Orokorrean ideia ona da "Errorea" objektu kapsulatua behin bakarrik osatzea AppErrore batekin aplikazioaren maila guztietako erroreentzat, eta beharrezko duzun informazioa argumentu gisa pasatuz errore klase ezberdinak ezberdintzeko. Ez da beharrezkoa "Errorea" objektua askotan osatzea (errore kasu bakoitzerako behin, adibidez DbError, HttpError...). Begiratu ondorengo kode adibideak
 

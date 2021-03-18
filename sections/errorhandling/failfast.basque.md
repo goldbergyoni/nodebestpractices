@@ -1,6 +1,6 @@
 # Huts egin azkar, balidatu argudioak liburutegi dedikatu baten laguntzarekin
 
-### Azalpen paragrafoa
+### Azalpena
 
 Denok dakigu argudioak egiaztatzea eta azkar huts egitea garrantzitsua dela ezkutuko erroreak ekiditeko (ikusi ereduaren aurkako kodearen adibidea behean). Bestela, irakurri zerbait programazio esplizituaren eta babes programazioaren gainean. Errealitatean, hori ekiditeko ohitura daukagu, kodea idazteak suposatzen duen gogaikarritasuna dela eta (adibidez pentsatu posta elektronikoa eta datak bezalako alorrak dituen JSON objektu hierarkiko bat balioztatzea). Joi eta Validator bezalako liburutegiek asko leuntzen dute lan hori.
 

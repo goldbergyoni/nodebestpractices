@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Azalpen paragrafoa
+### Azalpena
 
 IEaren mundua [Jenkins](https://jenkins.io/)en malgutasuna versus SaaS hornitzaileen sinpletasunaren arteko lehia izan ohi zen. Jokoa aldatzen ari da, [CircleCI](https://circleci.com/) eta [Travis](https://travis-ci.org/) bezalako SaaS hornitzaileek irtenbide sendoak eskaintzen baitituzte Docker edukiontziak barne, gutxieneko konfigurazio denborarekin Jenkins-ek "soiltasun" segmentuan ere lehiatzen saiatzen den bitartean. Hodeian edozeinek IE irtenbide aberatsa presta dezakeen arren, prozesua xehetasun handiz kontrolatu beharra izanez gero, Jenkins da oraindik ere aukeratutako plataforma. Erabakia askotan IE prozesua zenbateraino pertsonalizatu behar den zehazten du: hodeieko dohaineko hornitzaileek/ doako eta konfiguratutako doako hodei saltzaileek ahalbidetzen dute shell komando pertsonalizatuak, docker irudi pertsonalizatuak, lan fluxu doitua, matrizearen eraikuntzak exekutatzea, eta bestelako funtzionalitate aberats batzuk dituzte. Hala ere, Java bezalako programazio lengoaia formal bat erabiliz azpiegitura kontrolatu edo IE logika programatu nahi izanez gero, Jenkins izan daiteke oraindik aukera. Bestela, aukeratu dohainekoa eta sinplea den hoideko soluzioren bat.
 
