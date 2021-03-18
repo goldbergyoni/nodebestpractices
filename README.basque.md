@@ -919,7 +919,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 <br/><br/>
 
-## ![✔] 6.14. Mugatu kargaren tamaina alderantzizko proxy edo middleware bat erabiliz
+## ![✔] 6.14. Mugatu kargaren tamaina alderantzizko proxy edo middlewareak erabiliz
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
@@ -927,7 +927,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** zure aplikazioak eskaera handiei aurre egin beharko die, eta ezingo du prozesatu egin behar duen beste lan garrantzitsua, ondorioz errendimendua gutxituz eta DOS erasoekiko ahulduz
 
-🔗 [**Gehiago irakurri: mugatu kargaren tamaina**](/sections/security/requestpayloadsizelimit.md)
+🔗 [**Gehiago irakurri: mugatu kargaren tamaina**](/sections/security/requestpayloadsizelimit.basque.md)
 
 <br/><br/>
 
