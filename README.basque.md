@@ -975,7 +975,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** plugin batek bide ugari erabil ditzake erasotzeko, hala nola begizta infinituak erabiliz, memoria gainkargatuz eta prozesu ingurune eraso errazen aldagaiak eskuratuz
 
-🔗 [**Gehiago irakurri: exekutatu kode ez segurua sandbox batean**](/sections/security/sandbox.md)
+🔗 [**Gehiago irakurri: exekutatu kode ez segurua sandbox batean**](/sections/security/sandbox.basque.md)
 
 <br/><br/>
 
