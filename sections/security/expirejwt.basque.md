@@ -40,5 +40,5 @@ app.get('/logout', (req, res) => {
 
 ### Beste blogari batzuek diotena
 
-[Marc Busqué](http://waiting-for-dev.github.io/blog/2017/01/25/jwt_secure_usage/)ren bloga:
+[Marc Busqué](http://waiting-for-dev.github.io/blog/2017/01/25/jwt_secure_usage/)-ren bloga:
 > ...gehitu baliogabetze geruza bat JWTri, izaera apatrida galtzea suposatzen badu ere.

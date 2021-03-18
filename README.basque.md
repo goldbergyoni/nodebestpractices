@@ -903,7 +903,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** erasotzaile batek pasahitz automatizatuen saiakera mugagabeak egin ditzake aplikazio bateko kontu pribilegiatuetara sartzeko
 
-🔗 [**Gehiago irakurri: saioa hasteko saiakera kopurua mugatzea**](/sections/security/login-rate-limit.md)
+🔗 [**Gehiago irakurri: mugatu saioa hasteko abiadura**](/sections/security/login-rate-limit.md)
 
 <br/><br/>
 
