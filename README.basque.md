@@ -54,7 +54,7 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 5. [Ekoizpena (19) ](#5-ekoizpena)
 6. [Segurtasuna (25)](#6-segurtasuna)
 7. [Errendimendua (2) (Aribidean ✍️)](#7-zirriborroa-errendimendua)
-8. [Docker (15)](#8-docker)
+8. [Docker (15)](#8-docker-jardunbide-egokienak)
 
 <br/><br/>
 
@@ -1088,13 +1088,13 @@ edo hornitzaileen lainoko zerbitzuak
 
 <p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
 
-# `8. Docker`
+# `8. Docker, jardunbide egokienak`
 
 🏅 Mila esker [Bret Fisher](https://github.com/BretFisher)-i, ondorengo praktika hauetako asko ikasi baikenituen berarengandik
 
 <br/><br/>
 
-## ![✔] 8.1 Erabili etapa anitzeko konpilazioak Docker irudi finagoak eta seguruagoak lortzeko
+## ![✔] 8.1 Erabili etapa anitzeko konpilazioak Docker irudi sinpleagoak eta seguruagoak lortzeko
 
 **TL;PL:** erabili etapa anitzeko konpilazioak beharrezko produkzio objektuak soilik kopiatzeko. Konpilazio menpekotasun eta fitxategi asko ez dira beharrezkoak zure aplikazioa exekutatzeko. Etapa anitzeko konpilazioak erabiliz gero, baliabide horiek konpilazioan zehar erabil daitezke, denboraren exekuzio inguruneak beharrezko baliabideak besterik ez duen bitartean. Etapa anitzeko konpilazioak oso modu erraza dira gehiegizko pisua kendu eta segurtasun mehatxuak saihesteko
 
