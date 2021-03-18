@@ -2,13 +2,13 @@
 
 <br/><br/>
 
-### Azalpen paragrafoa
+### Azalpena
 
-Kubernetes bezalako exekuzio ingurune Dockerizatu batean, kontainerrak sarri jaio eta hiltzen dira. Hau erroreak jaurtitzen direnean gertatzen da, baina baita kontainerrak berrerabiltzea, kontainerrak bertsio berriago batekin ordezkatzea eta bestelako arrazoi onak direla eta. Prozesuari, 30 segunduko itxarote iraupen bat duen abisu bat (SIGTERM seinalea) bidalita lortzen da. Honek erronka bat gehitzen dio garatzaileari, applikazioak eskarien kuadeaketa eta baliabideen garbitzea denbora mugatu batean egitea inposatuz. Bestela, milaka erabiltzaile goibelek ez lukete erantzunik jasoko. Inplementazio jakintza da hauxe: itzaltze kodeak, egindako eskaera guztiak bukatuta egon arte itxaron eta ondoren baliabideak garbitu beharko lituzke. Errazagoa da esatea egitea baino, praktikan hainbat zati kudeatzea eskatzen du: LoadBalancerari esan aplikazioak ezin dituela eskaera gehiago onartu (health-checkaren bidez), itxaron egindako eskarian amaituta egon arte, eskari berriak kudeatzen ekiditu, baliabideak garbitu eta azkenik informazio baliagarria erregistratu hil aurretik. Bizirik-matentzeko konexioak erabileran badaude, konexio berriak sortu behar direla jakinarazi behar zaie erabiltzaileei, [Stoppable](https://github.com/hunterloftis/stoppable) bezalako liburutegia laguntza handia izan daiteke hau lortzeko.
+Kubernetes bezalako exekuzio ingurune Dockerizatu batean, edukiontziak sarri jaio eta hiltzen dira. Erroreak jaurtitzen direnean gertatzen da hori, baina baita bestelako arrazoi onak direla eta, hala nola edukiontziak berrerabiltzeagatik edo kontainerrak bertsio berriago batekin ordezkatzeagatik. Eta hori lortzen da prozesuari 30 segunduko itxarote iraupena duen abisu bat (SIGTERM seinalea) bidaliz. Horrek erronka bat gehitzen dio garatzaileari bermatu behar baitu aplikazioa modu egokian ari dela kudeatzen une horretan bertan egikaritzen ari diren eskaerak eta garbiketako baliabideak. Bestela, milaka erabiltzaile goibelduko lirateke erantzunik jasoko ez luketelako. Inplementazioari dagokionez, itzaltze kodeak itxoin beharko du uneko eskaera guztiak bukatuta egon eta ondoren baliabideak garbituta egon arte. Errazagoa da esatea egitea baino, ordea, praktikan hainbat zati kudeatzea eskatzen du eta: esan LoadBalancerari aplikazioak ezin duela eskaera gehiago onartu (health-checkaren bidez), itxaron uneko eskariak amaituta egon arte, ekidin eskaera berriak kudeatzea, garbitu baliabideak eta, azkenik, erregistratu informazio baliagarria hil aurretik. Bizirik matentzeko konexioak (Keep-Alive) erabiliz gero, konexio berriak sortu behar direla jakinarazi behar zaie erabiltzaileei. [Stoppable](https://github.com/hunterloftis/stoppable) bezalako liburutegia laguntza handia izan daiteke hori lortzeko.
 
 <br/><br/>
 
-### Kodearen adibidea: Node.js prozesu errotzat definitzeak kodeari seinaleak pasatzea ahalbidetzen du (ikusi [abiarazi node erabiliz](/sections/docker/bootstrap-using-node.basque.md))
+### Kode adibidea: Node.js prozesu errotzat definitzeak kodeari seinaleak pasatzea ahalbidetzen du ([ikusi abiarazi node erabiliz](/sections/docker/bootstrap-using-node.basque.md))
 
 <details>
 
@@ -29,7 +29,7 @@ CMD ["node", "index.js"]
 
 <br/><br/>
 
-### Kodearen adibidea: Erabili Tily prozesu kudeatzailea seinaleak Noderi berbidaltzeko
+### Kode adibidea: erabili Tily prozesu kudeatzailea seinaleak Noderi berbidaltzeko
 
 <details>
 
@@ -55,7 +55,7 @@ CMD ["node", "index.js"]
 
 <br/><br/>
 
-### Anti ereduaren kodearen adibidea: npm scriptak erabili prozesua hasieratzeko
+### Anti ereduaren kode adibidea: erabili npm scriptak prozesua hasieratzeko
 
 <details>
 
@@ -68,7 +68,7 @@ FROM node:12-slim
 # Eraikitze logika hemen dator
 
 CMD ["npm", "start"]
-#Hemendik aurrera Nodek azpi prozesuak abiatuko ditu eta npmek ez ditu seinaleak jasoko
+#Hemendik aurrera Nodek bigarren mailako prozesuak abiatuko ditu eta npmek ez ditu seinaleak jasoko
 
 ```
 
