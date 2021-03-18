@@ -1,14 +1,14 @@
-# Eraikitze garaiko sekretuak garbitu, argurioz pasatako sekretuak ekidin
+# Garbitu eraikitze faseko sekretuak, saihestu sekretuak argudioetan
 
 <br/><br/>
 
-### Azalpen paragrafoa
+### Azalpena
 
-Docker irudi bat ez da soilik fitxategi pilo bat, ekaikitze garaian gertatutakoa kontatzen duten geruza anitzak baizik. Kasu arrunt batean, garatzaileek npm giltza behar dute eraikitze garaian (gehienetan erregistro pribatuetarako), hau modu faltsuan lortzen da giltza eraikitze garaiko argudio bezala pasata. Xalo eta segurua eman dezake, hala ere, giltza hau garaitzailearen ordenagailuko Docker historiatik, Docker erregistrotik eta CItik berreskuratua izan daiteke. Giltza hau berreskuratzen duen erasotzaile bat gai izango da enpresaren npm erregistro pribatuan idazteko. Bi aukera seguruago daude: bikainena Dockerren sekretuen funtzioalitatea (2020ko uztailetik esperimentala) erabiltzea, fitxategi bat muntatzea ahalbidetzen duena eraikitze garaian. Bigarrenak etapa anitzdun eraikizea argudioekin erabiltzen du, bakarrik beharrezko diren fitxategiak eraiki eta kopiatzen dituena ekoizpenerako. Azken teknika honek ez ditu sekretuak irudiekin igortzen, baina sekretuak Dockerren historian agertuko dira, hau enpresa gehienentzat nahikoa segurua kontsideratua dagoelarik
+Docker irudi bat ez da soilik fitxategi pilo bat, eraikitze garaian gertatutakoa kontatzen duten geruza anitz baizik. Oso ohikoa izaten da garatzaileek npm giltza (tokena) behar izatea eraikitze garaian (gehienetan erregistro pribatuetarako), eta horretarako sasibide bat erabiltzen dute giltza eraikitze garaiko argudio bezala pasatuz. Sinplea eta segurua eman dezake, baina giltza hori garatzailearen ordenagailuko Docker historiatik, Docker erregistrotik eta IEtik eskura daiteke. Giltza eskuratzea lortzen duen erasotzailea gai izango da erakunde horren npm erregistro pribatuan idazteko. Bi aukera daude, hori baino  seguruagoak direnak: bikainena, Docker --secret funtzioalitatea erabiltzea (2020ko uztailetik aurrera esperimentala), fitxategi bat antolatzea ahalbidetzen duena eraikitze garaian. Bigarrenak, lehenengo, etapa anitzeko konpilazioa argudioekin erabiltzen du; gero, konpilazioa egiten du; eta, azkenik, bakarrik beharrezkoak diren fitxategiak kopiatzen ditu ekoizpenean. Azken teknika horrek ez du sekreturik igortzen irudiekin, baina sekretuak Dockeren historian agertuko dira. Normalean, erakunde gehienenek nahikoa segurutzat jotzen dute.
 
 <br/><br/>
 
-### Kodearen adibidea: Docker erabili sekretu muntatuentzat (esperimentala baina egonkorra)
+### Kode adibidea: erabili Docker sekretu instalatuentzat (esperimentala, baina egonkorra)
 
 <details>
 
@@ -29,7 +29,7 @@ RUN --mount=type=secret,id=npm,target=/root/.npmrc npm ci
 
 <br/><br/>
 
-### Kodearen adibidea: Modu seguruan eraiki etapa anitzdun eraikitzea erabiliz
+### Kode adibidea: modu seguruan eraiki etapa anitzeko konpilazioa erabiliz
 
 <details>
 
@@ -56,7 +56,7 @@ CMD ["node","index.js"]
 
 <br/><br/>
 
-### Anti-ereduaren kodearen adibidea: Eraikitze garaiko argudioak erabili
+### Anti ereduaren kode adibidea: erabili eraikitze garaiko argudioak
 
 <details>
 
@@ -81,11 +81,11 @@ CMD ["node","index.js"]
 
 <br/><br/>
 
-### Blogeko aipua: "Sekretu hauek ez dira bukaerako Dockerrean gordeak"
+### Blogeko aipua: "Sekretu hauek ez dira azken Dockerean gordetzen"
 
-[Alexandra Ulsh](https://www.alexandraulsh.com/2019/02/24/docker-build-secrets-and-npmrc/?fbclid=IwAR0EAr1nr4_QiGzlNQcQKkd9rem19an9atJRO_8-n7oOZXwprToFQ53Y0KQ) blogetik
+[Alexandra Ulsh](https://www.alexandraulsh.com/2019/02/24/docker-build-secrets-and-npmrc/?fbclid=IwAR0EAr1nr4_QiGzlNQcQKkd9rem19an9atJRO_8-n7oOZXwprToFQ53Y0KQ)en bloga
 
-> 2018ko azaroan, Docker 18.09k docker eraikuntzarentzat sekretu bandera berria gehitu zuen. Honek fitxategi batetik Docker eraikuntzara sekretuak pasatzea ahalbidetzen du. Sekretu hauek, edozein tarteko irudi edota argitarapenen historia irudiak ez dira bukaerako Docker irudian gordeak. Eraikitze sekretuei esker, npm pakete pribatudun Docker irudiak eraiki ditzakezu, eraikitze argudiorik gabe eta etapa anitzekin.
+> 2018ko azaroan, Docker 18.09k sekretu bandera berria gehitu zuen docker eraikuntzarentzat. Horrek aukera ematen digu gure fitxategi baten sekretuak Docker eraikuntzara pasatzeko. Sekretu horiek ez dira ez Dokeren azken irudian gordetzen, ez tarteko irudietan, ez irudiaren balioztatze historian. Eraikitze sekretuei esker, npm pakete pribatudun Docker irudiak eraiki ditzakezu, eraikitze argudiorik gabe eta etapa anitzekin.
 
 ```
 
