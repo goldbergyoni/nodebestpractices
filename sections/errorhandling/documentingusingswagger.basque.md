@@ -1,6 +1,6 @@
 # Dokumentatu API erroreak OpenAPI (aurretik Swagger bezala ezagutua) edo GraphQL-ren laguntzarekin
 
-### Azalpen paragrafoa
+### Azalpena
 
 REST APIek HTTP estatus kodigoak erabiliz bueltatzen dituzte emaitzak. APIaren erabiltzailearentzat guztiz beharrezkoa da APIaren egituraren eta baita ere errore posibleen berri izatea, erabiltzaileak errorea atzeman eta kontu handiz kudea dezake eta. Adibidez, zure APIaren dokumentazioak aurrez azaldu behar du 409 HTTP estatus kodea bueltatzen dela bezeroaren izena iada existitzen denean (APIak bezero berriak gordetzen dituela ziurtzat joz), APIaren erabiltzaileak egoera bakoitzerako bistaratze egokiena proposa dezan. OpenAPI (aintzina Swagger) APIaren dokumentaziorako eskema bat zehazten duen estandar bat da, dokumentazioa online modu errazean sortzea ahalbidetzen duten tresna ekosistema bat proposatuz. Begiratu hurrengo pantailako argazkiak beherago
 

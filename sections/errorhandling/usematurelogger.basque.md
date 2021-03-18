@@ -1,6 +1,6 @@
 # Erabili erregistratze tresna helduak erroreen ikusgaitasuna handitzeko
 
-### Azalpen paragrafoa
+### Azalpena
 
 
 Gustuko dugu console.log, baina [Pino][pino] bezalako erregistratzaile tresna ospetsu eta iraunkorra (errendimenduan zentratutako aukera berriagoa) ezinbestekoa da proiektu serioetarako. Errendimendu handiko erregistratze tresnek erroreak eta arazo posibleak identifikatzen laguntzen dute. Erregistratze aholkuen artean:

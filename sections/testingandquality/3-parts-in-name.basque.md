@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Azalpen Paragrafoa
+### Azalpena
 
 Proben txostenak esan behar du aplikazioaren berrikuspenak erantzuten dien kodea nahitaez ezagutzen ez duten pertsonen beharrei: probatzailea, inplementazioa egiten ari den DevOps injinaria eta zu zeu hemendik bi urtera. Hori errazago lortuko duzu probak eskatutako baldintzak kontuan hartzen baditu eta hiru zatiz osatua badago:
 

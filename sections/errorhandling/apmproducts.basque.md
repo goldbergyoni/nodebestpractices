@@ -1,6 +1,6 @@
 # Aurkitu erroreak eta jardunik gabeko uneak APM produktuak erabiliz
 
-### Azalpen paragrafoa
+### Azalpena
 
 Salbuespena != Errorea. Erroreen kudeaketa tradizionalak kodearekin erlazionatutako arazotzat hartzen ditu salbuespenak, baina aplikazioen erroreak formularioko kode bide motelen, APIen jardunik gabeko uneen eta baliabide konputazionalen gabezien ondorio izan daitezke. Horra non APM produktuak oso erabilgarriak diren, 'lurperatutako' askotariko gaiak modu proaktiboan detektatzeko aukera ematen baitute gutxieneko konfigurazioarekin. APM produktuen ohiko funtzionalitateen artean daude, adibidez, HTTP APIak erroreak bidaltzen dituenean alerta jotzea, APIaren erantzunaren denbora aurretik zehaztutako denbora muga baino luzeagoa denean atzematea, ‘kode usainak’ hautematea, monitorizazio zerbitzariaren baliabideentzako funtzionalitateak, operazio inteligentziadun panelak (dashboard) IT metrikekin eta beste funtzionalitate batzuk oso erabilgarriak direnak. Hornitzaile gehienek dohaineko plana eskaintzen dute
 

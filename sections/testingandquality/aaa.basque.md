@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Azalpen Paragrafoa
+### Azalpena
 
 Probak egiterakoan daukagun erronka handiena memoriako espazio falta da, dagoeneko ekoizpen kodeak oso lanpetuta gauzka. Horregatik, proben kodeak sinplea eta ulergarria izan behar du. Probak irakurtzean, ez luke eman beharko kode inperatiboa irakurtzen ari zarela (begiztak, oinordetza), HTML moduan, esperientzia deklaratibo bat baizik. Hori lortzeko, erabili AAA eredua, irakurtzaileek probaren asmoa esfortzu gabe uler dezaten. Badaude hori bezalako beste eredu batzuk ere, adibidez: XUnit 'Prestatu, Aritu, Egiaztatu eta Eraitsi' ('Setup, Excercise, Verify, Teardown'). Hauek dira hiru Ak:
 

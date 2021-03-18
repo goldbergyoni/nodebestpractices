@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Azalpen paragrafoa
+### Azalpena
 
 Konfigurazio datuekin jardutean, hainbat gauza gogaikarri eta moteltzaile aurki genitzake:
 

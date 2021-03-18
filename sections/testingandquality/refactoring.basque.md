@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Azalpen paragrafoa
+### Azalpena
 
 Garapen iteratiboaren fluxuan, berregituratzea prozesu garrantzitsua da. "Kodearen usainak" (kodetze jardunbide okerrak) ezabatzen badituzu –hala nola, Bikoiztutako Kodea, Funtzio Luzeak, Parametro Zerrenda Luzeak-, zure kodea hobetuko duzu, eta mantentzea erreztuko. Analisi estatikoko tresnak erabiltzeak kode usain horiek aurkitzen eta berregiturazio prozesu bat eraikitzen lagunduko dizu.
 

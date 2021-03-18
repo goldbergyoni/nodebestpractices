@@ -1,6 +1,6 @@
 # Irten prozesutik elegantziarekin kanpoko norbait iristen denean hirira
 
-### Azalpen paragrafoa
+### Azalpena
 
 Zure kodearen lekuren batean erroreren bat gertatzen denean, erroreen kudeaketa objektuaren ardura da nola jokatu erabakitzea, eta, errorea konfiantzazkoa bada, nahikoa izango da erregistro fitxategian idaztea; eragiketa errorea bada, berriz, irakurri azalpen osatuagoa #3 jarraibide egokian). Gauzak okertzen dira errorea ezezaguna denean, horrek osagairen bat egoera txarrean dagoela eta hurrengo eskaera guztiek huts egiteko aukera handia dutela esan nahi du eta. Adibidez, eman dezagun, singleton bat edukita, token batek salbuespen bat igorri duela eta ondoren bere egoera galdu duen zerbitzu batekin arazoa duela; hortik aurrera ustekabean joka dezake eta eskaera guztiek huts egitea eragin. Egoera horren aurrean, prozesua gelditu eta 'Berrekite tresna' erabili (Forever, PM2, etab. bezalakoak) egoera garbi batekin berriz hasteko.
 

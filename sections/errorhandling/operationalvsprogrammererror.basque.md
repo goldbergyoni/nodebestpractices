@@ -1,6 +1,6 @@
 # Bereizi eragiketa erroreak eta programatze erroreak
 
-### Azalpen paragrafoa
+### Azalpena
 
 Ondorengo bi errore mota hauek bereizteak zure aplikazioaren matxura denbora gutxitu eta programazio errore eroak ekiditen lagunduko dizu. Batetik, eragiketa erroreak daude, gertatutako arazoa eta haren ondorioak ulertzen dituzunean (adibidez, HTTP zerbitzu bati egindako deiak huts egitea, konexio arazoak direla eta). Bestetik, errorea zergatik eta nondik etorri den ez dakizun egoerei programatze errore deritze (balio zehaztugabe bat irakurtzen saiatzen den kodea edo memoria ihes egiten dion datu basea izan daitezke). Eragiketa erroreak besteen aldean kudea errazak dira, eta normalean nahikoa izaten da errorea erregistratzea. Gauzak konplikatuagoak izan daitezke garatzaile errore bat tupustean agertzen denean, aplikazioa egoera aldakorrean aurki baitaiteke. Horrelakoetan, aplikazioa berrabiarazi baino irtenbide hoberik ez duzu
 
