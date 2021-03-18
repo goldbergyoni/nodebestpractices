@@ -1227,13 +1227,13 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 <br /><br /><br />
 
-## ![✔] 8.12. Eskaneatu irudiak ahultasun geruzen bila
+## ![✔] 8.12. Eskaneatu ahultasun geruza anitzeko irudiak
 
 **TL;PL:** kode menpekotasunen ahultasunak egiaztatzeaz gain, eskaneatu ekoizpenera bidalitako azken irudia ere. Dockerren irudien eskanerrek kodeen menpekotasunak egiaztatzen dituzte, baina baita sistema eragilearen binarioak ere. E2E segurtasun eskaneatze horrek eremu handiago bat hartzen du eta egiaztatzen du inongo erabiltzaile maltzurrak ez duela maltzurkeriatik egin eraikitze aldian zerbait injektatuz. Ondorioz, hau exekutatzea gomendatzen da hedapenaren aurreko azken urrats gisa. Mordoska bat eskaner doako eta komertzial dago CI / CD pluginak ere eskaintzen dituztenak
 
 **Bestela:** baliteke zure kodeak ahultasunik ez izatea. Hala ere, baliteke oraindik ere hackeatua izatea, aplikazioek normalean erabiltzen dituzten sistema eragilearen mailako binarioen bertsioak ahultasunak dituelako (adibidez, OpenSSL, TarBall)
 
-🔗 [**Gehiago irakurri: Dockerren praktika arruntak**](/sections/docker/scan-images.basque.md)
+🔗 [**Gehiago irakurri: Docker jardunbide arruntak**](/sections/docker/scan-images.basque.md)
 
 <br /><br /><br />
 

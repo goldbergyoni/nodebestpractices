@@ -1,14 +1,14 @@
-# Eskaneatu irudi osoa ekoizpenera bidali aurretik
+# Eskaneatu irudi osoa ekoiztu aurretik
 
 <br/><br/>
 
-### Azalpen paragrafoa
+### Azalpena
 
-Kodea eskaneatzea ahultasunak aurkitzeko baliodun ekintza da baina ez du mehatxu guztietatik babesten. Zergatik? Ahultasunak sistema eragilean ere existitzen direlako eta Shell, Tarball eta OpenSSL bezalako binarioak exekuta ditzakelako. Gainera, ahulduradun menpekotasunak kodea eskaneatu ondoren gehituak izan daitezke (adibidez hornikuntza kataiaren erasoak), hori dela eta, zuzenena, bukaerako irudia zehazki ekoizpenera bidali aurretik eskaneatzea da. Ideia honek E2E proben antza du, zati bakoitza modu isolatuan probatu ondoren, beharrezkoa da guztiak batutako paketea frogatzea. 3 eskaner familia nagusi daude: datu baseen cacheatutako ahulduradun lekuko edo CIko binarioak, eskanerrak zerbitzu gisa hodeiean, eta gehienetan azkarrena, [Trivvy](https://github.com/aquasecurity/trivy), [Anchore](https://github.com/anchore/anchore) eta [Snyk](https://support.snyk.io/hc/en-us/articles/360003946897-Container-security-overview) bezalako tresnak aztertzeak merezi du. CI hornitzaile gehienek lekuko plugin bat proposatzen dute, eskaner hauekin elkarrekintza errezten dutenak. Eskanerrek eremu handiak estaltzen dituztela kontutan hartzekoa da, eta ia eskaner bakoitzean aurkikuntzak erakutsiko dituzte, muga altua zehaztu gainezka egitea ekiditeko.
+Kodea eskaneatzea ahultasunak aurkitzeko ekintza baliotsua da, baina ez du mehatxu guztietatik babesten. Zergatik? Sistema eragilean ere badirelako ahultasunak, eta Shell, Tarball eta OpenSSL bezalako binarioak exekuta ditzakeelako aplikazioak. Gainera, erasogarriak diren menpekotasunak kodea eskaneatu ondoren gehitu daitezke (adibidez hornikuntza katearen erasoak). Hori dela eta, zuzenena da bukaerako irudia eskaneatzea zehazki ekoizpenera bidali aurretik. Ideia horrek E2E proben antza du, zati bakoitza modu isolatuan probatu ondoren, guztiak batutako paketea probatzea komeni da. 3 eskaner familia nagusi daude: tokiko/IEko binarioak, cachean ahultasunak dituzten datu base eta guzti; hodeiko zerbitzu gisa antolatutako eskanerrak; eta baliabide sorta bat, dockera bera konpilatu bitartean eskaneatzen duena. Lehenengo taldea da ezagunena eta normalean azkarrena. Merezi du [Trivvy](https://github.com/aquasecurity/trivy), [Anchore](https://github.com/anchore/anchore) eta [Snyk](https://support.snyk.io/hc/en-us/articles/360003946897-Container-security-overview) bezalako tresnak ikertzea. IE hornitzaile gehienek lekuko plugin bat proposatzen dute, eskaner horiekin elkarrekintza errazten dutenak. Kontuan izan behar da eskaner horiek eremu handiak hartzen dituztela, eta, beraz, emaitzak izaten dituztela ia eskaneatze guztietan. Aztertu ez ote den komeni atalase maila handi samarra ezartzea larrialdiak izatea ekiditeko.
 
 <br/><br/>
 
-### Kodearen adibidea: Trivvyrekin eskaneatu
+### Kode adibidea: eskaneatu Trivvyrekin
 
 <details>
 
@@ -25,6 +25,6 @@ trivy image [YOUR_IMAGE_NAME]
 
 <br/><br/>
 
-### Txostenaren adibidea: Docker eskanerraren emaitzak (Anchoren eskutik)
+### Txosten adibidea: Docker eskanerraren emaitzak (Anchoren eskutik)
 
-![Txostenen adibideak](/assets/images/anchore-report.png "Docker eskanerraren txostena")
+![Txosten adibideak](/assets/images/anchore-report.png "Docker eskanerraren txostena")
