@@ -1185,13 +1185,13 @@ CMD [ "node", "dist/app.js" ]
 
 <br /><br /><br />
 
-## ![✔] 8.8. Planifikatu cachean biltegiratzea modu eraginkorrean
+## ![✔] 8.8. Baliatu cachea konpilazio denborak murrizteko
 
 **TL;PL:** Dockerren irudi osoa cache-tik berreraikitzea ia berehalakoa izan daiteke, zuzen eginez gero. Eguneratu ez diren argibideek Dockerfile fitxategiaren goialdean egon behar dute, eta etengabe aldatzen ari direnek (aplikazioaren kodea, esate baterako) beheko aldean egon behar dute
 
 **Bestela:** Docker eraikitzeak oso luze jo dezake eta baliabide asko kontsumituko ditu, nahiz eta aldaketa txikiak egin
 
-🔗 [**Gehiago irakurri: baliatu cachea eraikitze denborak murrizteko**](/sections/docker/use-cache-for-shorter-build-time.basque.md)
+🔗 [**Gehiago irakurri: baliatu cachea konpilazio denborak murrizteko**](/sections/docker/use-cache-for-shorter-build-time.basque.md)
 
 <br /><br /><br />
 
