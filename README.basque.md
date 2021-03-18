@@ -1072,7 +1072,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** gertaeren begizta blokeatuta dagoenez, Node.jsk ezin izango du beste eskaera bat kudeatu eta, ondorioz, atzerapena eragin diezaieke erabiltzaileei. **3000 erabiltzaile erantzunaren zain daude, edukia zerbitzatzeko prest dago, baina eskaera bakar batek emaitzak berriro bidaltzea galarazten dio zerbitzariari**
 
-🔗 [**Gehiago irakurri: ez blokeatu gertaeren begizta**](/sections/performance/block-loop.basque.md)
+🔗 [**Gehiago irakurri: ez blokeatu gertaeraren begizta**](/sections/performance/block-loop.basque.md)
 
 <br /><br /><br />
 
