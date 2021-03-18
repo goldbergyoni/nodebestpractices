@@ -1213,7 +1213,7 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 **Bestela:** batetik, denbora gehiago beharko da irudiak eraiki, txertatu eta ateratzeko; bestetik, erabiltzaile maltzurrek eraso bektore ezezagunak erabil ditzakete; eta, azkenik, baliabide gehiago beharko dira
 
-🔗 [**Gehiago irakurri: hobetsi irudi txikiagoa**](/sections/docker/smaller_base_images.basque.md)
+🔗 [**Gehiago irakurri: hobetsi irudi txikiagoak**](/sections/docker/smaller_base_images.basque.md)
 
 <br /><br /><br />
 
