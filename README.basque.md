@@ -1195,9 +1195,7 @@ CMD [ "node", "dist/app.js" ]
 
 <br /><br /><br />
 
-## ![✔] 8.9. Erabili irudiaren erreferentzia esplizitua, saihestu azken (`latest`)
-
-etiketa
+## ![✔] 8.9. Erabili irudiaren erreferentzia esplizitua, saihestu "azken" (`latest`) etiketa
 
 **TL;PL:** zehaztu irudi laburpen esplizitu bat edo etiketa baten bertsioa, inoiz ez aipatu `latest`. Garatzaileek sarritan uste izaten dute, `latest` adieraziz gero, biltegiko azken irudia eskuratuko dutela, baina ez da horrela. Laburpena erabiltzeak zerbitzuaren instantzia guztiek kode bera exekutatuko dutela bermatzen du
 
@@ -1205,7 +1203,7 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 **Bestela:** oinarrizko irudi baten bertsio berri bat erabiliz gero, aldaketa handiak gerta litezke produkzioan, horrek aplikazioaren nahigabeko portaera sortuz
 
-🔗 [**Gehiago irakurri: ulertu irudi etiketak eta erabili "latest" etiketa kontu handiz**](/sections/docker/image-tags.basque.md)
+🔗 [**Gehiago irakurri: ulertu irudi etiketak eta erabili "azken" (`latest`) etiketa kontu handiz**](/sections/docker/image-tags.basque.md)
 
 <br /><br /><br />
 

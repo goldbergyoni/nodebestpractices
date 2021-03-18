@@ -1,10 +1,10 @@
-# Ulertu irudi etiketak eta erabili "latest" etiketa kontu handiz
+# Ulertu irudi etiketak eta laburpenak eta erabili "azken" (latest) etiketak kontu handiz
 
-### Azalpen paragrafoa
+### Azalpena
 
-Ekoizpen egoera da hau eta segurtasuna eta egonkortasuna garrantzitsuak dira, eta "komenigarritasuna" ez da erabakitze faktore hoberena. Gainera, `:latest` Dockerren lehenetsitako etiketa da. Honek esan nahi du etiketa explizitu bat gehitzea ahaztu duen garatzaile batek irudi baten bertsio berri bat `latest` moduan argitaratuko duela, espero gabeko emaitzak sor ditzakena `latest` etiketa azken ekoizpen irudian fidatzen bada.
+Ekoizpen aldian segurtasuna eta egonkortasuna garrantzitsuak dira, eta "erosotasuna" ez da erabakitze faktore egokiena. Gainera, `:latest` Dockeren lehenetsitako etiketa da. Horrek esan nahi du etiketa esplizitua gehitzea ahaztu duen garatzaileak nahi gabe irudi baten bertsio berria argitaratuko duela, espero gabeko emaitzak sor ditzakeena `latest` etiketa ekoizpeneko azken irudia izatea erabakiz gero.
 
-### Kodearen adibidea:
+### Kode adibidea:
 
 ```bash
 $ docker build -t company/image_name:0.1 .
@@ -19,11 +19,11 @@ $ docker build -t company/image_name:latest .
 
 ### Beste bloglariek diotena
 
-Blogetik, [Vladislav Supalov](https://vsupalov.com/docker-latest-tag/)en eskutik:
+[Vladislav Supalov](https://vsupalov.com/docker-latest-tag/)en bloga:
 
-> Batzuek espero dute :latestek beti irudi baten bertsio berrienari erreferentzia egiten dioa. Hau ez da egia.
+> Batzuek espero dute :latestek beti irudi baten bertsio berrienari erreferentzia egingo diola. Hori ez da egia.
 
-[Docker success center](https://success.docker.com/article/images-tagging-vs-digests) blogetik
+[Docker success center](https://success.docker.com/article/images-tagging-vs-digests) bloga
 
 >
 
