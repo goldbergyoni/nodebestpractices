@@ -1021,7 +1021,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** cookieak segurtasunik gabeko konexioen bidez bidal litezke, eta erasotzaile batek saioaren identifikazioa erabil lezake web aplikazioaren barruko esparrua eta moduluen berariazko ahultasunak ere identifikatzeko
 
-🔗 [**Gehiago irakurri: cookieak eta saioaren segurtasuna**](/sections/security/sessions.md)
+🔗 [**Gehiago irakurri: cookieak eta saioaren segurtasuna**](/sections/security/sessions.basque.md)
 
 <br/><br/>
 
