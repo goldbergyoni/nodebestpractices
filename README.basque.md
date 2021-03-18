@@ -1025,7 +1025,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 <br/><br/>
 
-## ![✔] 6.23. Saihestu DOS erasoak prozesu batek noiz huts egin behar duen berariaz ezarriz
+## ![✔] 6.23. Saihestu DOS erasoak prozesuak noiz huts egin behar duen berariaz ezarriz
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
