@@ -1255,7 +1255,7 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 <br/><br /><br />
 
-## ![✔] 8.15. Garbitu zure Dockerfilea
+## ![✔] 8.15. Garbitu zure Dockerfile fitxategia Linterra erabiliz
 
 **TL;PL:** Linterra erabiliz zure Dockerfilea garbitzea urrats garrantzitsua da haren barruan jardunbide egokiak errespetatzen ez dituzten arazoak identifikatzeko. Docker linter espezializatu bat erabiliz errendimendu eta segurtasun hobekuntzak erraz atzematen dira, alferrikako ordu ugari aurreztea edo produkzio kodean segurtasun arazoak murriztea lortuz
 

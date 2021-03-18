@@ -1,13 +1,12 @@
-# Garbitu zure Dockerfilea Linterra erabiliz
+# Garbitu zure Dockerfile fitxategia
 
-### Azalpen paragrafoa
+### Azalpena
 
-Zure zuztar aplikazioa garbitua da jardunbide egokietara moldatzeko eta akatsak ezabatzeko arazo bihurtu aurretik, eta gure Dockerfileek berdin egin beharko lukete. Dockerfilea garbitzeak, aldez aurretik eta oso ahalegin gutxi eginda, ekoizpenean gerta litezkeen arazoak tratatzeko aukera gehiago izatea laguntzen du. Adibidez, zure Dockefilean zehaztutako logikarekin eta aginduekin inolako egitura arazorik ez dagoela ziurta dezake, esaterako, existitzen ez den etapa bat kopiatzea, urrutiko biltegi ezezagun batetik kopiak egitea, aplikazioa super erabiltzailearekin (SUDO) exekutatzea eta beste horrenbeste. Dockerfileren [Hadolint](https://github.com/hadolint/hadolint) linter irekia (Open Source) eskuz edota CI prozesuaren zati gisa erabil daiteke zure Dockerfilea(k) garbitzeko. Hadolint Dockerfile garbitzaile aurreratua da, [Dockerren jardunbide egokiak](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) bultzatzen dituena.
-
+Gure oinarrizko aplikazioaren kodea jardunbide onen arabera lan egiteko eta arazo bihurtu aurretik arazoak eta akatsak ezabatzeko eratuta dago, eta gure Dockerfileek ere hala beharko lukete. Dockerfile fitxategiak garbitzeak ekoizpen arazoak garaiz atzemateko aukerak handitzea dakar oso ahalegin txikiarekin. Adibidez, zure Dockefileetan zehaztutako logikarekin eta aginduekin inolako egiturazko arazorik ez dagoela ziurtatu dezake; esaterako, existitzen ez den etapa bat kopiatzea, onlineko biltegi ezezagun batetik kopiak egitea, aplikazioa super erabiltzailearekin (SUDO) exekutatzea eta beste hainbat. Dockerfileren [Hadolint](https://github.com/hadolint/hadolint) linter irekia (Open Source) eskuz edota IE prozesuaren zati gisa erabil daiteke zure Dockerfilea(k) garbitzeko. Hadolint Dockerfile garbitzaile aurreratua da, [Dockerren jardunbide egokiak](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) bultzatzen dituena.
 
 <br/>
 
-### Kodearen adibidea: Dockerfilea arakatu hadolint erabiliz
+### Kode adibidea: arakatu Dockerfilea hadolint erabiliz
 
 ```bash
 hadolint production.Dockerfile
@@ -17,9 +16,11 @@ hadolint --trusted-registry my-company.com:500 <Dockerfile> # Erabiltzailea jaki
 
 ### Beste bloglariek diotena
 
-Blogetik, [Josh Reichardt](https://thepracticalsysadmin.com/lint-your-dockerfiles-with-hadolint/)en eskutik:
-> Oraindik ez badaukazu zure Dockerfileak garbitzeko ohiturarik, ohitu zaitez egitera. Kode garbiketa software garapeneko praktika arrunta da, arazo eta akatsak aurkitu, identifikatu eta ezabatzen laguntzen duena benetako arazo bihurtu aurretik. Zure kodea garbitzearen abantaila handienetako bat, arazo bihurtu aurretik, akats txiki korapilasuak identifikatzen eta ezabatzen laguntzen duela da.
+[Josh Reichardt](https://thepracticalsysadmin.com/lint-your-dockerfiles-with-hadolint/)en bloga:
 
-Blogetik, [Jamie Phillips](https://www.phillipsj.net/posts/hadolint-linting-your-dockerfile/)en eskutik:
-> Linterrak garapenean sarri erabiliak dira, lan-taldeei programazio eta estilo erroreak atzematen laguntzeko. Hadolint Haskell erabiliz sortutako linterra da, Dockerfileentzat. Tresna honek zure Dockerfilea sintatikoki aztertzen du eta Dockerrek zehaztutako jarraibide egokiak kontutan hartu. Plataforma nagusi gehienetarako balio du, eta tutorial honek kontainerra garbiketa etsenplu Dockerfile batean berau erabiltzen bultzatuko du.
-<br/>
+> Oraindik ez badaukazu zure Dockerfileak garbitzeko ohiturarik, ohitu zaitez egiten. Kode garbiketa software garapeneko praktika arrunta da, arazo eta akatsak aurkitu, identifikatu eta ezabatzen laguntzen duena benetako arazo bihurtu aurretik. Zure kodea garbitzearen abantaila handienetako bat da akats txiki korapilasuak atzematen eta ezabatzen laguntzen duela, arazo bihurtu aurretik.
+
+[Jamie Phillips](https://www.phillipsj.net/posts/hadolint-linting-your-dockerfile/)en bloga:
+
+> Linterrak sarri erabiltzen dira garapenean, lan taldeei programazio eta estilo erroreak atzematen laguntzeko. Hadolint Haskell erabiliz Dockerfileentzat sortutako linterra da. Tresna horrek zure Dockerfilearen sintaxia aztertzen du eta Dockerek zehaztutako jardunbide egokiak kontutan hartu. Plataforma nagusi gehienetarako balio du, eta tutorial honek edukiontzia erabiliko du Dockerfile batean garbiketa egiteko.
+> <br/>
