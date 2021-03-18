@@ -1,10 +1,10 @@
 # Saihestu JavaScript eval adierazpenak
 
-### Azalpen paragrafoa
+### Azalpena
 
-`eval()`, `setTimeout()`, `setInterval()`, eta `new Function()` Node.jsen maiz erabiliak dire funtzioak dira, JavaScript expresio bat, adierazpen bat edo adierazpen segida bat bezalako string motako parametroak onartzen dituztenak. Funtzio hauek erabiltzearen segurtasun kezka, fidagarria ez den erabiltzaile sarrera bat zerbitzarian exekutatuko den kodean sartu ahal izatea da, hau arriskuan jarriz, erabiltzaile kodea ebaluatzeak erasotzaile bati nahi duen ekintzak burutzea ahalbidetzen baitio. Gomendagarria da kodea garbitzea, funtzio hauek bukaerako funtzioari pasatzea eta exekutatuak izatea ekiditeko.
+`eval()`, `setTimeout()`, `setInterval()`, eta `new Function()` funtzio globalak dira, Node.jsen maiz erabiltzen direnak, eta JavaScript expresio bat, adierazpen bat edo adierazpen segida bat jasotzen dituen kate parametroak onartzen dituztenak. Funtzio horiek erabiltzeak segurtasun arazoak sortzen ditu. Izan ere, fidagarria ez den erabiltzaileren bat sartzen bada zerbitzarian kodea exekutatu eta zerbitzaria arriskuan jarri ahal izango du, erabiltzaile kodearen ebaluazioa gainditzeak ahalmena ematen baitie erasotzaileei nahi dituzten ekintzak burutzeko. Gomendagarria da kodea garbitzea, funtzio horiek bukaerako funtzioari pasatu eta exekutatuak izatea ekiditeko.
 
-### Kodearen adibidea
+### Kode adibidea
 
 ```javascript
 // erasotzailea sartzeko gai izan den kode maltzurraren adibidea
@@ -17,7 +17,7 @@ eval(erabiltzaileSarrera);
 
 ### Beste bloglari batzuk diotena
 
-Essential Node.js Security liburutik, [Liran Tal](https://leanpub.com/nodejssecurity)ren eskutik:
+[Liran Tal](https://leanpub.com/nodejssecurity)-en Essential Node.js Security liburua:
 
-> Berharbada, eval() funtzioa segurtasun ikuspuntutik, gaizkien ikusita dagoen JavaScripten ataletako bat da. JavaScriptaren analisi sintaktikoa egiten du, hau testutzat hartuz, eta berau exekutatzen du JavaScript kodea balitz bezala.
-> Hau, eval() dei dezaken fidagarria ez den erabiltzaile sarrerarekin nahastuta, oso kaltegarria izan daiteke zerbitzariarentzat.
+> Berharbada, segurtasunaren ikuspuntutik, eval() funtzioa gaizkien ikusita dagoen JavaScripten ataletako bat da. JavaScript kateak testu moduan aztertzen ditu eta JavaScript kodea balitz bezala exekutatzen ditu.
+> Horrekin batera, fidagarria ez den erabiltzaileren bat sartzen bada kodearen egiaztapena gaindituz, hondamendirako bide arriskutsua da, zerbitzariaren funtzionamendua larriki kaltetu dezakeena.
