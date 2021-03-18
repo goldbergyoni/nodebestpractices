@@ -1247,11 +1247,11 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 <br /><br /><br />
 
-## ![✔] 8.14. Dockeren praktika arruntak
+## ![✔] 8.14. Docker jardunbide generikoak
 
 **TL;PL:** hemen duzu Node.jsekin zuzenean loturarik ez duen Docker aholkuen bilduma. Ez dago alderik Noderen eta beste edozein lengoaiaren inplementazioen artean. Egin klik “irakurri gehiago” botoian
 
-🔗 [**Gehiago irakurri: Dockeren praktika arruntak**](/sections/docker/generic-tips.basque.md)
+🔗 [**Gehiago irakurri: Dockeren jardunbide generikoak**](/sections/docker/generic-tips.basque.md)
 
 <br/><br /><br />
 
