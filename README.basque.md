@@ -963,7 +963,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** erabiltzaile gaiztoen sarrerak manipulatutako fitxategiak deitzeko erabiltzen den parametro batera jo dezake, adibidez, aurretik fitxategi sisteman kargatutako fitxategietara edo lehendik sisteman bazeuden fitxategietara sartzeko
 
-🔗 [**Gehiago irakurri: moduluaren karga segurua**](/sections/security/safemoduleloading.md)
+🔗 [**Gehiago irakurri: moduluaren karga segurua**](/sections/security/safemoduleloading.basque.md)
 
 <br/><br/>
 
