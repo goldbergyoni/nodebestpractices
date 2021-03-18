@@ -1,29 +1,29 @@
 [✔]: ../../assets/images/checkbox-small-blue.png
 
-# Dockerren Node.js praktika arruntak
+# Common Node.js Dockeren jardunbide egokienak
 
-Dockerren jarraibide arrunten atal honek programazio lengoaia guztietan araupetuta dauden jarraibide egokiak biltzen ditu, ez dira Node.jsentzat bakarrik
+Dockeren jardunbide arrunten atal honek programazio lengoaia guztietan araupetuta dauden jardunbide egokiak biltzen ditu, ez dira Node.jsentzat bakarrik
 
 ## ![✔] Nahiago COPY, ADD komandoa baino
 
-**TL;PL:** COPY seguruagoa da, bakarrik lekuko fitxategiak kopiatzen ditu eta, ADDek aldiz bestelako funtzionalitateak onartzen ditu, adibidez urruneko webguneetatik binarioak deskargatzea bezalakoak
+**TL;PL:** COPY seguruagoa da, bakarrik lekuko fitxategiak kopiatzen ditu eta; ADDek, aldiz, bestelako funtzionalitateak onartzen ditu, adibidez, urruneko webguneetatik binarioak deskargatzea
 
-## ![✔] Oinarrizko sistema eragilea eguneratzea ekidin
+## ![✔] Ekidin oinarrizko sistema eragilea eguneratzea
 
-**TL;PL:** Eraikitze prozesuaren bitartean lekuko binarioak eguneratzeak (adibidez apt-get update), exekutatzen duen bakoitzean irudi inkontsekuenteak sortzen ditu, eta pribilegio gorenak eskatzen ditu. Honen ordez sarri eguneratuak diren base irudiak erabil etzazu
+**TL;PL:** eraikitze prozesuaren lekuko binarioak eguneratzeak (adibidez apt-get update) sendotasunik gabeko irudiak sortzen ditu exekutatzen duen bakoitzean eta pribilegio handiak eskatzen ditu. Horren ordez, erabili sarri eguneratzen diren oinarrizko irudiak
 
-## ![✔] Klasifikatu irudiak etiketen bidez
+## ![✔] Sailkatu irudiak etiketen bidez
 
-**TL;PL:** Irudi bakoitzaren metadatuak hornitzeak Ops adituari modu egokiak tratatzen lagun diezaioke. Adibidez, gehitu mantentzailearen izena, eraikitze-data eta bestelako informazioa, irudi bat erabili behar duenari lagungarria izango zaiona
+**TL;PL:** irudi bakoitzaren metadatuak emateak Ops-eko profesionalei modu egokian tratatzen lagundu diezaieke. Adibidez, gehitu mantentze arduradunaren izena, eraikitze data eta bestelako informazioa, irudi bat erabili behar duenari lagungarria izango zaiona
 
-## ![✔] Erabili pribilegiodun kontainerrak
+## ![✔] Erabili pribilegiorik gabeko edukiontziak
 
-**TL;PL:** Pribilegiodun kontainer batek erabiltzaile nagusiak makina ostalariak dituen baimen eta gaitasun berdinak ditu. Hau nekez da beharrezkoa, eta arau sinple gisa Node irudi ofizialetan sortutako 'node' erabiltzailea erabiltzea hobeto da
+**TL;PL:** pribilegiodun edukiontziek erabiltzaile nagusiak (root) dituen baimen eta gaitasun berdinak ditu makina ostalariaren gainean. Hori ia inoiz ez da beharrezkoa, eta, normalean, Node irudi ofizialetan sortzen den 'node' erabiltzailea erabili behar da
 
-## ![✔] Bukaerako emaitza arakatu eta egiaztatu
+## ![✔] Arakatu eta egiaztatu bukaerako emaitza
 
-**TL;PL:** Batzuetan eraikitze prozesuko albo-efektuak ahaztea erraza da, adibidez sekretu filtratuak edota beharrezkoak ez diren fitxategiak. [Dive](https://github.com/wagoodman/dive) bezalako tresnak erabiltzeak sortutako irudia arakatzeko horrelako arazoak identifikatzen lagun dezake
+**TL;PL:** batzuetan erraza da eraikitze prozesuko albo efektuak ahaztea, hala nola sekretu filtratuak edota beharrezkoak ez diren fitxategiak. [Dive](https://github.com/wagoodman/dive) bezalako tresnak erabiltzeak sortutako irudia arakatzeko horrelako arazoak identifikatzen lagun dezake
 
-## ![✔] Integritate egiaztapena burutu
+## ![✔] Burutu osotasunaren egiaztapena
 
-**TL;PL:** Oinarrizko edo bukaerako irudiak argitaratzean, sarea tronpatua izan daiteke eta irudi maltzurrak deskargatu. Dockerren protokolo estandarrean ez dago ezer hau ekidin dezana, edukia sinatzea eta egiaztatzea izan ezik. [Docker Notary](https://docs.docker.com/notary/getting_started/) hau lortzea ahalbidetzen duen tresnetako bat da
+**TL;PL:** oinarrizko edo bukaerako irudiak argitaratzen ari zaren bitartean, sarea engainatu eta birbideratu egin daiteke irudi maltzurrak deskargatzeko. Dockeren protokolo estandarrak ez du ezer eragozten edukia sinatu eta egiaztatu ezean. [Docker Notary](https://docs.docker.com/notary/getting_started/) da hori lortzea ahalbidetzen duten tresnetako bat da
