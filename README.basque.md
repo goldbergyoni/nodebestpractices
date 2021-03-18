@@ -987,7 +987,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** bigarren mailako prozesuak ganorarik gabe erabiltzeak urruneko komandoen exekuzioa edo shell injekzioko erasoak eragin ditzake, desinfektatu gabeko sistema komando batera erabiltzaile gaiztoren bat sartu dela eta
 
-🔗 [**Gehiago irakurri: kontuz ibili bigarren mailako prozesuekin lan egitean**](/sections/security/childprocesses.md)
+🔗 [**Gehiago irakurri: kontuz ibili bigarren mailako prozesuekin lan egitean**](/sections/security/childprocesses.basque.md)
 
 <br/><br/>
 
