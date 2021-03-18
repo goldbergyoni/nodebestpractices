@@ -1,12 +1,10 @@
 # Hobetsi Docker oinarrizko irudi txikiagoak
 
-Docker irudi handiek ahulbide gehiago sor ditzakete eta baliabideen kontsumoa handitu. Sarri, erakitzerako orduan beharrezkoak diren pakete batzuk, ez dituzu exekuzio garaian instalatuak izaterik behar. Irudi handiak argitaratu eta gordetzea eskalatzerako orduan garestiagoa bihurtuko da. Diseinu aldetik, irudi txikiek ez dituzte edukiko debugeatzeko erabilgarriak diren aurre-instalatutako oinarrizko moduluak edo paketeak (adibidez curl).
-Linuxen Alpine irudi bariantea erabiltzeak baliabide erabilera eta funtzionalitate guztiak dituzten sistemenganako erasoen murrizketa ekar dezake. Node.jsen v14.4.0 Docker irudiak gutxi gora behera 345MBko tamaina du, aldiz Alpine bertsioak 39MB, ia 10 aldiz txikiagoa dena.
-Debianen oinarritutako bariante arina, 38MBko tamaina duena eta Node abiatzeko beharrezkoak diren pakete minimoak dituena ere aukera bikaina da.
+Docker irudi handiek ahultasun gehiago sor ditzakete eta baliabideen kontsumoa handitu. Askotan, exekutatzeko garaian instalatutako zenbait pakete ez dituzu behar konpilatzeko orduan. Zenbat eta irudi handiagoak argitaratu eta gorde, garestiagoa izango da eskalatzerako orduan. Gerta daiteke irudi txikiak diseinuz ez etortzea aldez aurretik instalatuta ohiko liburutegi arruntetan (adibidez, curl), modulu natiboak sortu edo arazketak egiteko erabilgarriak diren paketeak sortzeko beharrezkoak direnak. Alpine Linuxen irudien aldaerak erabiltzeak aztarna murriztarazi dezake, erabilitako baliabideei eta sistema guztietan dauden eraso bektoreei dagokienez. Node.jsen v14.4.0 Docker irudiak gutxi gora behera 345MBko tamaina du; Alpine bertsioak, aldiz, 39MB, hau da, ia 10 aldiz txikiagoa da. Aukera bikaina da ere Debianen oinarritutako aldaera arina (Slim), 38 MB besterik ez duena eta Node.js exekutatzeko behar diren gutxieneko paketeak dituena.
 
-### Blogeko aipua: "Zure Docker irudiak txikiagotu nahi badituzu, zure zerbitzuen abiaratze azkarragoa izan, seguruagoa izan eta orduan probatu Alpine."
+### Blogeko aipua: "Zure zerbitzuen abiaratzea azkarragoa eta seguruagoa izan dadin Docker irudiak txikiagoak izatea nahi baduzu, probatu Alpine."
 
-[Nick Janetakis](https://nickjanetakis.com/blog/the-3-biggest-wins-when-using-alpine-as-a-base-docker-image) blogetik
+[Nick Janetakis](https://nickjanetakis.com/blog/the-3-biggest-wins-when-using-alpine-as-a-base-docker-image)-en bloga
 
-> Gaur egun jakina da Dockerrek Alpine maiz erabiltzen duela Dockerren irudi ofizialetarako. Mugimendu hau 2016ko hasieran hasi zen gutxi gora-behera. [...]
-  Zerbitzari berri batean Docker irudiak argitaratzean, espero dezakezu hasierako argitarapena pixkat azkarragoa izatea. Sarea geroz eta motelagoa izan, ezberdintasuna orduan eta handiagoa izango da. [...] Tamaina txikiaren beste abantailetako bat erasotze-azala txikiagoa izatea da. Zure sisteman pakete eta liburutegi asko ez daudenean, gaizki irten daitezken oso gauza gutxi daude.
+> Gaur egun jakina da Dockerek Alpine maiz erabiltzen duela Dockeren irudi ofizialetarako. Mugimendu hori 2016ko hasieran hasi zen gutxi gora-behera. [...]
+> Zerbitzari berri batean Docker irudiak argitaratzean, espero dezakezu hasierako argitalpena pixka bat azkarragoa izatea. Sarea gero eta motelagoa izan, ezberdintasuna orduan eta handiagoa izango da. [...] Tamaina txikiaren beste abantailetako bat da erasotze azala txikiagoa dela. Zure sisteman pakete eta liburutegi asko ez dagoenean, oso gauza gutxi daude gaizki irten daitezkeenak.
