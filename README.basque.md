@@ -1135,13 +1135,13 @@ CMD [ "node", "dist/app.js" ]
 
 <br /><br /><br />
 
-## ![✔] 8.3. Utzi Dockerren exekuzio denborak kudea ditzala erreplikazioa eta aktibitatea
+## ![✔] 8.3. Utzi Dockeren egikaritze denborari erreplikatu eta jardueraren iraupena kudeatzen
 
 **TL;PL:** Dockerren exekuzio denboraren orkestratzailea erabiltzen duzunean (adibidez, Kubernetes), deitu Node.js prozesua zuzenean, prozesua errepikatzen duten bitarteko prozesuen kudeatzailerik edo koderik pertsonalizatu gabe (adibidez, PM2, Cluster modulua). Exekuzio denboraren plataformak datu kopuru eta ikusgarritasun handiena dauzka kokapenari buruzko erabakiak hartzeko: badaki zenbat prozesu behar diren, nola antolatu prozesuok eta zer egin huts eginez gero
 
 **Bestela:** edukiontziak huts egiten jarraituko du baliabide faltagatik, eta prozesuen kudeatzaileak behin eta berriro berrabiaraziko du, gelditu gabe. Kubernetes horretaz jabetuko balitz, beste toki zabal batera lekualda lezake
 
-🔗 [**Gehiago irakurri: utzi Dockerren orkestratzaileari prozesuak berrabiaraz eta erreplika ditzala**](/sections/docker/restart-and-replicate-processes.basque.md)
+🔗 [**Gehiago irakurri: utzi Dockeren exekuzio denborari erreplikatu eta jardueraren iraupena kudeatzen**](/sections/docker/restart-and-replicate-processes.basque.md)
 
 <br/><br /><br />
 

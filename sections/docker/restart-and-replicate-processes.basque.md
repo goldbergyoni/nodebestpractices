@@ -1,18 +1,18 @@
-# Utzi Dockerren exekuzio tresnak prozesuak berrekin eta erreplika ditzala
+# Utzi Dockeren exekuzio denborari erreplikatzea eta jardueraren iraupena kudeatzen
 
 <br/><br/>
 
-### Azalpen paragrafoa
+### Azalpena
 
-Kubernetes bezalako Dockerren exekuzio denborako kudeatzaileak kontainerren osasun eta ezarpen erabakiak hartzen benetan onak dira: kontainer kopurua maximizatzeaz arduratuko dira, hauek zonalde ezberdinetara orekatu eta clusterren faktore ugari kontuan hartuko dituztelarik erabaki hauek hartzeku bitartean. Ez da hitzik behar hau azaltzeko, huts egindako prozesuak identifikatzen dituzte (adibidez kontainerrak) eta leku egokian berrabiatzen dituzte. Batzuk kode pertsonalizatua erabiltzeko edo PUZaren erabilerarako Node prozesuak erreplikatzeko edo huts egite batean prozesua berrabiatzeko (adibidez Cluster modulua, PM2) tentatuta egon arren. Lekuko tresna hauek ez dituzte clusterraren mailan erabilgarri dauden perspektiba eta datuak. Adibidez, instantzia baliabideek 3 kontainer eta 2 eskualde ostatatu ditzaketenean, Kubernetes kontainerrak zonalde ezberdinetan hedatzen arduratuko da. Honela, zonalde edo eskualde huts egitea gertatuz gero, aplikazioak bizirik jarraituko du. Alderantziz, lekuko tresnak erabiltzean prozesua berrekiteko, Dockerren kudeatzailea ez da erroreen jabe eta kontainerra zonalde edo instantzia berri batean ipintzea moduko erabaki pentsatu gabeak har ditzake.
+Dockeren exekuzio denboraren kudeatzaileak, Kubernetes bezala, benetan onak dira edukiontzien osasun eta ezarpen erabakiak hartzen: edukiontzi  kopurua maximizatzen, edukiontziak zonaldeen artean orekatzen eta klusterren faktore ugari kontuan hartzen dituzte erabaki horiek hartzen dituzten bitartean. Esan gabe doa: huts egiten duten prozesuak (hau da, edukiontziak) identifikatzen dituzte eta leku egokian berrabiarazten dituzte. Hala ere, batzuek kode pertsonalizatuak edo tresnak erabiltzeko tentazioa izan dezakete Node prozesua erreplikatuz PUZa erabili eta, huts eginez gero, prozesua berrabiarazte aldera (adibidez,PM2  kluster modulua, ). Tokiko tresna horiek ez dituzte kluster mailako  ikuspegia eta eskuragarri dauden datuak. Adibidez, instantzien baliabideek 3 edukiontzi eta 2 eskualde ostatatu ditzaketenean, edukiontziak hainbat eskualdetan hedatzen arduratuko da Kubernetes. Horrela, zonaldeak edo eskualdeak huts egitea gertatuz gero, aplikazioak bizirik jarraituko du. Aitzitik, tokiko tresnak erabiltzean prozesua berrekiteko, Dockeren kudeatzailea ez da erroreez jabetzen eta ezin du ondo pentsatutako erabakirik hartu, edukiontzia zonalde edo instantzia berri batean ipintzea bezala.
 
 <br/><br/>
 
-### Kodearen adibidea: Node.js deitu zuzenean, tarteko tresnarik gabe
+### Kode adibidea: deitu Node.js zuzenean, tarteko tresnarik gabe
 
 <details>
 
-<summary><strong>Dockerfile</strong></summary>
+<summary><strong>Dockerfile artxiboa</strong></summary>
 
 ```
 
@@ -27,11 +27,11 @@ CMD ["node", "index.js"]
 
 <br/><br/>
 
-### Anti ereduaren kodearen adibidea: Prozesu kudeatzailea erabili
+### Anti ereduaren kode adibidea: erabili prozesu kudeatzailea
 
 <details>
 
-<summary><strong>Dockerfile</strong></summary>
+<summary><strong>Dockerfile artxiboa</strong></summary>
 
 ```
 FROM node:12-slim
