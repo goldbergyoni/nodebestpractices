@@ -1043,7 +1043,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** erasotzailea ohartzen bada erabiltzaileek emandako kanpo sarrerarik ez dela balioztatzen, ahultasun hori balia dezake foroetan, sare sozialetan eta beste toki publiko batzuetan hartarako bereziki sortutako estekak argitaratzean, erabiltzaileek bertan klik egin dezaten
 
-🔗 [**Gehiago irakurri: saihestu birbideratze ez seguruak**](/sections/security/saferedirects.md)
+🔗 [**Gehiago irakurri: saihestu birbideratze ez seguruak**](/sections/security/saferedirects.basque.md)
 
 <br/><br/>
 
