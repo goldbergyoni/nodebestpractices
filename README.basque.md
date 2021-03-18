@@ -1055,7 +1055,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** arriskua dago norbaitek zure proiektuaren API gakoak, pasahitzak edo beste sekretu batzuk aurkitu eta erasoak egiten saiatzeko, eta horrek galera ekonomikoak, nortasun arazoak eta bestelako arriskuak sor ditzake
 
-🔗 [**Gehiago irakurri: saihestu sekretuak argitaratzea**](/sections/security/avoid_publishing_secrets.md)
+🔗 [**Gehiago irakurri: saihestu sekretuak argitaratzea**](/sections/security/avoid_publishing_secrets.basque.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
