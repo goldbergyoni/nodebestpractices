@@ -2,13 +2,13 @@
 
 <br/><br/>
 
-### Azalpen paragrafoa
+### Azalpena
 
-Garapen menpekotasunek asko handitzen dute kontainerraren eraso azalera (esaterako segurtasun ahulezia potentzialak) eta kontainerraren tamaina. Adibide gisa, npm segurtasun zulo handienak [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes) bezakako garapen menpekotasunek sortuak izan ziren, edo [nodemonek erabilitako ebentu katea](https://snyk.io/blog/a-post-mortem-of-the-malicious-event-stream-backdoor/) bezalako garapenerako paketeek. Arrazoi hauek direla eta, ekoizpenerako bidaliko den irudia segurua eta txikia izan behar da. npm install komandoa `--production`ekin abiatzeak hasiera bikaina da, hala ere, `npm ci` erabiltzea oraindik seguruagoa da, zerotik sortutako instalazioa eta sarrail filtxategiaren sorrera ziurtatzen dituena. Lekuko cachea ezabatzeak gainerako hamarkada MB berreskuratzen lagun dezake. Askotan, kontainer baten barruan, garapen menpekotasunak erabiliaz probak egiteko edo debuggeatzeko beharra dago, kasu honetan [etapa anitzdun erakitzeek](/sections/docker/multi_stage_builds.md) menpekotasun sorta ezberdinak eta azkenik ekoizpenekoak bakarrik edukitzen lagun dezakete.
+Garapen menpekotasunek asko handitzen dute edukiontziaren eraso azalera (esaterako, segurtasun ahulezia potentzialak) eta edukiontziaren tamaina. Adibide gisa, npm segurtasun zulo handienak [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes) bezakako garapen menpekotasunek sortuak izan ziren, edo [nodemonek erabilitako ebentu katea](https://snyk.io/blog/a-post-mortem-of-the-malicious-event-stream-backdoor/) bezalako garapenerako paketeek. Arrazoi horiek direla eta, ekoizpenerako bidaliko den irudiak segurua eta txikia izan behar du. Hasiera bikaina da npm install komandoa `--production`ekin abiatzea. Hala ere, `npm ci` erabiltzea oraindik seguruagoa da, hutsetik sortutako instalazioa eta sarrail filtxategiaren sorrera ziurtatzen ditu eta. Tokiko cachea ezabatzeak hamarkada MB gehiago berreskuratzen lagun dezake. Sarritan edukiontzi batean probatu edo araztu behar izaten da devDependencies erabiliz. Kasu horretan, [etapa anitzeko konpilazioek](/sections/docker/multi_stage_builds.md) menpekotasun multzo zenbaita izaten lagun dezakete eta, azkenik, ekoizpenerako behar direnak soilik.
 
 <br/><br/>
 
-### Kodearen adibidea: ekoizpenerako instalazioa
+### Kode adibidea: ekoizpenerako instalazioa
 
 <details>
 
@@ -27,7 +27,7 @@ RUN npm ci --production && npm clean cache --force
 
 <br/><br/>
 
-### Kodearen adibidea: Ekoizpenerako instalazioa egin etapa anitzdun eraikitzearekin
+### Kode adibidea: ekoizpenerako instalazioa etapa anitzeko  eraikuntzarekin
 
 <details>
 
@@ -57,7 +57,7 @@ CMD [ "node", "dist/app.js" ]
 
 <br/><br/>
 
-### Anti ereduaren kodearen adibidea: Dockerfileko etapa bakarrean menpekotasun guztiak instalatu
+### Anti ereduaren kode adibidea: instalatu menpekotasun guztiak Dockerfileko etapa bakarrean
 
 <details>
 
@@ -78,8 +78,8 @@ RUN npm install
 
 <br/><br/>
 
-### Blogeko aipua: "npm ci instalazio arrunta baino zorrotzagoa da gainera"
+### Blogeko aipua: "gainera, instalazio arrunta baino zorrotzagoa da npm ci"
 
-[npmen dokumentaziotik](https://docs.npmjs.com/cli/ci.html)
+[npmen dokumentazioa](https://docs.npmjs.com/cli/ci.html)
 
-> Komando hau npm-installen antzekoa da, baina proben plataformak, integrazio jarraitua eta inplementazioa bezalako ingurune automatizatuetan, edo zure menpekotasunen instalazio garbi bat egiten ari zarela ziur zauden egoeretan, erabiltzeko pentsatua dago. npm install komando arrunta baino askoz azkarragoa izan liteke, erabiltzaileentzako funtzionalitate batzuk alde batera uzten dituelako. Instalazio arrunt bat baino zorrotzagoa ere bada, npm erabiltzaile gehienen gutxinaka-gutxinaka instalatutako lekuko inguruneek sortutako erroreak edo kontraesanak identifikatzen laguntzen duena.
+> Komando hau npm-installen antzekoa da, salbu eta ingurune automatizatuetan erabiltzeko sortua dela, hala nola, proben plataformak, integrazio eta inplementazio  jarraituak, edo zure menpekotasunen instalazio garbi bat egiten ari zarela ziur zauden egoeretan. npm install askoz azkarragoa izan liteke komando arrunta baino, erabiltzaileentzako funtzionalitate batzuk alde batera uzten dituelako. Instalazio arrunt bat baino zorrotzagoa ere bada, npm erabiltzaile gehienek gutxinaka-gutxinaka instalatutako tokiko inguruneek sortzen dituzten erroreak edo kontraesanak identifikatzen lagungarri izan daitekeena.
