@@ -33,10 +33,6 @@ is_last_update_badge_date_is_today() {
     fi
 }
 
-set_update_result() {
-    echo "DID_LAST_UPDATE_BADGE_UPDATED=$1" >> $GITHUB_ENV
-}
-
 
 # We use already encoded string emoji because I'm on Windows and the calendar emoji failed to render
 CALENDAR_EMOJI_ENCODED='%F0%9F%93%85'
@@ -59,10 +55,7 @@ fi
 
 if is_last_update_badge_date_is_today "$INPUT_FILE" "$UPDATED_LAST_UPDATE_BADGE"; then
     echo "No need to update the $INPUT_FILE, the last update badge already pointing to today"
-    set_update_result "false"
     exit 0
 fi
 
 sed -i "s/$LAST_UPDATE_BADGE_REGEX/$UPDATED_LAST_UPDATE_BADGE/" "$INPUT_FILE"
-
-set_update_result "true"
