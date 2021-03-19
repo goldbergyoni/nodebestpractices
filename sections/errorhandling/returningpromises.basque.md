@@ -231,7 +231,7 @@ Zero kostuko pila aztarna asinkronoak" deitzen den v8 funtzionalitate bat
 
 Oso ezberdinak dira funtzio sinkronoen pila aztarnen eta funtzio asinkronoen pila aztarnen mekanismoak v8ren ezarpenetan: pila aztarna asinkronoa oinarritua dago Node.js martxan dagoen sistema eragileak emandako **pila**n (programazio lengoaia gehienak bezala). Funtzio asinkrono bat exekutatzen ari denean, sistema eragileko **pila** agerian jartzen da funtzioa bere lehen `await`era iristen den momentuan. Beraz, pilaren aztarna nahasketa bat da, hain zuzen, sistema eragilearen pilaren eta baztertutako **promesa ebazpen katea**rena. Zero kostuko pila aztarna asinkronoen ezarpenak **promesa ebazpen katea** luzatzen du bakarrik promesa `itxaroten`  <span>[¹](#1)</span> ari den bitartean. Funtzio asinkronoek (`async`) bakarrik itxaron (`await`) ahal dutenez, beti galduko da funtzio asinkronoa pilaren aztarna asinkrono batean, operazio asinkronoren bat izan bada funtzioa deitu eta gero <span>[²](#2)</span>.
 
-### The tradeoff (sektorea)
+### Erdibidea
 
 `await` bakoitzak mikro ataza berri bat sortzen du gertaeraren begiztan. Beraz `await` gehiago gehitzeak errendimendu zigorra ekarriko luke. Hala ere, sareak edota datu baseak sortutako errendimendu isuna [ikaragarri handiagoa](https://colin-scott.github.io/personal_website/research/interactive_latency.html) da, eta, beraz gehitutako `await`aren zigorra ez da zerbitzariak edo CLIak garatzeko orduan kontutan hartu beharreko zerbait, eskaera edo komando bakoitzeko oso kode beroa izan ezean behintzat. Orduan, `await` ezabatzeak `return await`etan errendimendu bultzada nabarmena bilatzeko azken lekua izan beharko luke eta, zalantzarik gabe, inoiz ez litzateke aldez aurretik egin beharko.
 
