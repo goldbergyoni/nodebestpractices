@@ -26,12 +26,11 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 
 # Azken jardunbide egokiak eta albisteak
 
-- **✅ Jardunbide egoki berria:** [Alexsey](https://github.com/Alexsey)-ren 2.12 bulletak erakusten du funtzio asinkronikoen zain egon gabe itzultzeak pila aztarna partzialak uzten dituela. Hor arazo handia izan liteke salbuespenek eragindako arazoak konpontzean exekuzio fotogrametako batzuk ez dituzten produkzioetan
+- **🇯🇵 Japonierazko itzulpena:** hemendik aurrera japonieraz erabili daiteke gure gida, [YukiOta](https://github.com/YukiOta) eta [Yuta Azumi](https://github.com/YA21) gure laguntzaile ikaragarriei esker
 
-- **✅ Jardunbide egoki berria:** Josh Hemphill-en 6.8 bulletak &quot;Erabiltzaileen pasahitzak / sekretuak BCrypt edo Script erabiliz&quot; babestea gomendatzen du. Azalpen sakona ematen du aukera bakoitza proiektu zehatz batera noiz eta zergatik egokitzen den jakiteko. Ez galdu gida labur hau hash-en aukeren azalpen bat eskaintzen duena
+- **✅ Jardunbide egiki berria:** Josh Hemphill-en 6.8 buletak " Babestu erabiltzaileen pasahitzak / sekretuak BCrypt edo Script erabiliz" gomendatzen du. Azalpen sakona jasotzen du jakiteko aukera bakoitza noiz eta zergatik den egokia proiektu zehatz baterako. Ez galdu gida labur hau, aztarna bakoitzaren berri ematen duena
 
-- **:whale: Node.js + Docker-en jardunbide egokiak:** Atal berri bat argitaratu berri dugu, 15 jardunbide egoki jasotzen
-  dituena Dockerrekin erabili beharreko kodetze teknikei buruzkoak
+- **🎊 60.000 izar!**: Gure biltegiak 60.100 garatzaileren aitortza eta konfiantza jaso ditu. Hitzik gabe gaude
 
 <br/><br/>
 
