@@ -232,7 +232,7 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 
 **Bestela:** itxaron gabe agintza itzultzen duen funtzioa ez da pilaren arrastoan agertuko. Galdutako fotograma horiek akatsa eragingo duen fluxua ulertzea zailduko lukete, batez ere portaera anormalaren zergatia falta den funtzioaren barruan baldin badago
 
-🔗 [**Gehiago irakurri: agintzak itzultzea**](/sections/errorhandling/returningpromises.basque.md)
+🔗 [**Informazio gehiago: agintzak itzultzea**](/sections/errorhandling/returningpromises.basque.md)
 
 <br/><br/><br/>
 
@@ -364,7 +364,7 @@ function eginZerbait() {}
 
 **Bestela:** arazketa askoz ere astunagoa da, maiz aldatzen den aldagai baten jarraipena egitean
 
-🔗 [**Gehiago irakurri: JavaScript ES6 +: var, let, edo const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
+🔗 [**Informazio gehiago: JavaScript ES6 +: var, let, edo const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
 
 <br/><br/>
 
@@ -461,7 +461,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 **Bestela:** inplementazio batek huts egin du, “Gehitu produktua“ izeneko proba batek huts egin du. Esaten dizu horrek zehazki zer dabilen gaizki?
 
-🔗 [**Irakurri gehiago: erabili 3 zati proba izen bakoitzean**](/sections/testingandquality/3-parts-in-name.basque.md)
+🔗 [**Informazio gehiago: erabili 3 zati proba izen bakoitzean**](/sections/testingandquality/3-parts-in-name.basque.md)
 
 <br/><br/>
 
@@ -549,7 +549,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 **Bestela:** hornitzaile espezializatu bat aukeratzeak blokeatu zaitzake, pertsonalizazio aurreratu bat behar duzunean. Bestalde, Jenkins erabiltzeak denbora asko eska dezake azpiegitura konfiguratzean
 
-🔗 [**Irakurri gehiago: IC plataforma aukeratzea**](/sections/testingandquality/citools.basque.md)
+🔗 [**Informazio gehiago: IC plataforma aukeratzea**](/sections/testingandquality/citools.basque.md)
 
 <br/><br/>
 
@@ -559,7 +559,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 **Bestela:** middleware Expressean === errorea izanez gero, errorea gertatuko zaizu eskaera guztietan edo gehienetan
 
-🔗 [**Irakurri gehiago: probatu zure middlewareak eurak bakarrik**](/sections/testingandquality/test-middlewares.basque.md)
+🔗 [**Informazio gehiago: probatu zure middlewareak eurak bakarrik**](/sections/testingandquality/test-middlewares.basque.md)
 
 <br/><br/><br/>
 
@@ -573,7 +573,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 **Bestela:** hutsegitea === bezero zapuztuak
 
-🔗 [**Irakurri gehiago: monitorizazioa!**](/sections/production/monitoring.basque.md)
+🔗 [**Informazio gehiago: monitorizazioa!**](/sections/production/monitoring.basque.md)
 
 <br/><br/>
 
@@ -583,7 +583,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 **Bestela:** kutxa beltz batekin amaituko duzu, eta zaila izango zaizu han jasotako ezarpenen zergatia aurkitzea. Azkenean, erregistro adierazpen guztiak idazten hasiko zara informazio osagarria gehitzeko
 
-🔗 [**Gehiago irakurri: gardentasuna handitu erregistratze plataforma adimendunak erabiliz**](/sections/production/smartlogging.basque.md)
+🔗 [**Informazio gehiago: gardentasuna handitu erregistratze plataforma adimendunak erabiliz**](/sections/production/smartlogging.basque.md)
 
 <br/><br/>
 
@@ -594,7 +594,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** zure hari bakarra lanpetuta egongo da azpiegitura lanak egiten, zure aplikazioaren guneari kasu egin beharrean, eta, ondorioz, haren errendimenduak behera egingo du
 
-🔗 [**Irakurri gehiago: delegatu ahal den guztia alderantzizko proxy batean (adibidez, gzip, SSL)**](/sections/production/delegatetoproxy.basque.md)
+🔗 [**Informazio gehiago: delegatu ahal den guztia alderantzizko proxy batean (adibidez, gzip, SSL)**](/sections/production/delegatetoproxy.basque.md)
 
 <br/><br/>
 
@@ -614,7 +614,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** estrategia argirik gabe dozenaka eskaera exekutatzeak DevOpsa nahaste-borrastera eraman dezake, hartarako aldi berean tresna gehiegi (talde kudeaketa, dockerra, PM2) erabiliz gero
 
-🔗 [**Irakurri gehiago: babestu prozesuaren erabilgarritasuna tresna egokiak erabiliz**](/sections/production/guardprocess.basque.md)
+🔗 [**Informazio gehiago: babestu prozesuaren erabilgarritasuna tresna egokiak erabiliz**](/sections/production/guardprocess.basque.md)
 
 <br/><br/>
 
@@ -644,7 +644,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** APIaren errendimendua eta geldialdiak neurtzeko ahalegin handia egin zenezake, eta, ziurrenik, ez zinateke jabetuko zein diren zure kodearen atalik motelenak mundu errealeko eszenatokian eta nola eragiten dioten zure erabiltzaile esperientziari
 
-🔗 [**Irakurri gehiago: aurkitu erroreak eta geldialdiak APM produktuak erabiliz**](/sections/production/apmproducts.basque.md)
+🔗 [**Informazio gehiago: aurkitu erroreak eta geldialdiak APM produktuak erabiliz**](/sections/production/apmproducts.basque.md)
 
 <br/><br/>
 
@@ -654,7 +654,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** IT / DevOps arloko munduko txapeldun batek ere ez du salbatuko gaizki idatzita dagoen sistema
 
-🔗 [**Irakurri gehiago: prestatu zure kodea ekoizpenerako**](/sections/production/productioncode.basque.md)
+🔗 [**Informazio gehiago: prestatu zure kodea ekoizpenerako**](/sections/production/productioncode.basque.md)
 
 <br/><br/>
 
@@ -664,7 +664,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** zure memoria prozesuak 100 bat megabyte gal dezake egunean, [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)-i gertatu zitzaion bezala
 
-🔗 [**Irakurri gehiago: neurtu eta babestu memoriaren erabilera**](/sections/production/measurememory.basque.md)
+🔗 [**Informazio gehiago: neurtu eta babestu memoriaren erabilera**](/sections/production/measurememory.basque.md)
 
 <br/><br/>
 
@@ -674,7 +674,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** Node eduki dinamikoa eskaintzeko sortu zen arren, haren hari bakarra lanpetuta egongo da html / images / angular / react erako ehunka fitxategi bidaltzen, bera egiteko sortua izan zen zereginei esleitu barik bere baliabide guztiak
 
-🔗 [**Irakurri gehiago: atera zure frontend/interfazeko modulu aktiboak Nodetik**](/sections/production/frontendout.basque.md)
+🔗 [**Informazio gehiago: atera zure frontend/interfazeko modulu aktiboak Nodetik**](/sections/production/frontendout.basque.md)
 
 <br/><br/>
 
@@ -684,7 +684,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** zerbitzari jakin batek huts eginez gero, makina akastun bat hil beharrean, aplikazioen geldialdia eragingo du. Gainera, gero eta zailagoa izango da mailaketaren elastikotasuna, zerbitzari jakin baten menpeko izanda
 
-🔗 [** Irakurri gehiago: izan aberri gabea, hil zerbitzariak ia egunero**](/sections/production/bestateless.basque.md)
+🔗 [**Informazio gehiago: izan aberri gabea, hil zerbitzariak ia egunero**](/sections/production/bestateless.basque.md)
 
 <br/><br/>
 
@@ -694,7 +694,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** zure kodea ahulezia eta zaurgarritasunetatik garbi mantentzeko tresna dedikaturik gabe, jarraipen estua egin beharko diezu mehatxu berriei buruz linean egiten diren argitalpenei, bide batez esanda, aspergarri samarra izaten dena
 
-🔗 [**Irakurri gehiago: erabili menpekotasunak automatikoki atzematen dituzten tresnak**](/sections/production/detectvulnerabilities.basque.md)
+🔗 [**Informazio gehiago: erabili menpekotasunak automatikoki atzematen dituzten tresnak**](/sections/production/detectvulnerabilities.basque.md)
 
 <br/><br/>
 
@@ -704,7 +704,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** produkzioko erroreen erregistroa testuingururik gabe ikustean – aurretik gertatu zena, alegia –, askoz zailagoa eta motelagoa da arazoa aztertzea
 
-🔗 [**Irakurri gehiago: esleitu transakzio identifikazio bana adierazpen erregistro bakoitzari**](/sections/production/assigntransactionid.basque.md)
+🔗 [**Informazio gehiago: esleitu transakzio identifikazio bana adierazpen erregistro bakoitzari**](/sections/production/assigntransactionid.basque.md)
 
 <br/><br/>
 
@@ -732,7 +732,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** aurkitu berri diren erroreak edo ahuleziak erabil litezke produkzioan exekutatzen den aplikazio bat ustiatzeko eta baliteke zure aplikazioa ez izatea bateragarria hainbat modulurekin eta zailagoa gertatzea hura mantentzea
 
-🔗 [**Irakurri gehiago: Erabili NTS.jsren LTS bertsioa**](/sections/production/LTSrelease.basque.md)
+🔗 [**Informazio gehiago: Erabili NTS.jsren LTS bertsioa**](/sections/production/LTSrelease.basque.md)
 
 <br/><br/>
 
@@ -742,7 +742,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** aplikazioen kudeaketaren erregistroak bideratzea === zaila da eskalatzen, erregistroen galera dakar, eskasa izaten da kezken bereizketa
 
-🔗 [**Irakurri gehiago: erregistroen bideraketa**](/sections/production/logrouting.basque.md)
+🔗 [**Informazio gehiago: erregistroen bideraketa**](/sections/production/logrouting.basque.md)
 
 <br/><br/>
 
@@ -768,11 +768,11 @@ edo hornitzaileen lainoko zerbitzuak
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
 
-**TL;PL:** erabili segurtasunarekin lotutako linter pluginak, [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) bezalako segurtasun ahuleziak eta arazoak lehenbailehen atzemateko, ahal bada kodetzen ari diren bitartean. Horrek segurtasun ahuleziak atzematen lagun dezake, hala nola eval erabiltzea, bigarren mailako prozesu bat deitzea edo modulu bat inportatzea kate literal batekin (adibidez, erabiltzailearen sarrera). Egin klik 'Gehiago irakurri' atalean segurtasun liner batek atzematen dituen kode adibideak ikusteko
+**TL;PL:** erabili segurtasunarekin lotutako linter pluginak, [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) bezalako segurtasun ahuleziak eta arazoak lehenbailehen atzemateko, ahal bada kodetzen ari diren bitartean. Horrek segurtasun ahuleziak atzematen lagun dezake, hala nola eval erabiltzea, bigarren mailako prozesu bat deitzea edo modulu bat inportatzea kate literal batekin (adibidez, erabiltzailearen sarrera). Egin klik 'Informazio gehiago' atalean segurtasun liner batek atzematen dituen kode adibideak ikusteko
 
 **Bestela:** garapenean zehar segurtasun ahulezia zuzena izan zitekeena produkzioaren arazo nagusia bihurtzen da. Gainera, baliteke proiektuak kodeen segurtasun praktika koherenterik ez jarraitzea, ahuleziak sartzea edo urruneko biltegietan sartutako sekretu konfidentzialak sortzea
 
-🔗 [**Gehiago irakurri: lint arauak**](/sections/security/lintrules.basque.md)
+🔗 [**Informazio gehiago: lint arauak**](/sections/security/lintrules.basque.md)
 
 <br/><br/>
 
@@ -784,7 +784,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** aplikazio batek erasoak jasan ahal ditu, haren erabiltzaileei ukatzen bazaie jaso beharko luketen zerbitzua, aplikazioa egoera txarrean dagoelako edo eskuragarri ez dagoelako
 
-🔗 [**Gehiago irakurri: ezarri abiadura muga**](/sections/security/limitrequests.basque.md)
+🔗 [**Informazio gehiago: ezarri abiadura muga**](/sections/security/limitrequests.basque.md)
 
 <br/><br/>
 
@@ -796,7 +796,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** iturburu kodearen kontrola publiko egin daiteke akats baten ondorioz, biltegi pribatuetan ere, eta orduan sekretu guztiak agerian geratzen dira. Kanpoko norbaitek iturburuko kontrolaren sarbidea ezagutzeak nahi gabe eragingo du erlazionatutako sistemetarako sarbideak ere ezagutzea (datu baseak, APIak, zerbitzuak, etab.)
 
-🔗 [**Gehiago irakurri: kudeaketa sekretua**](/sections/security/secretmanagement.basque.md)
+🔗 [**Informazio gehiago: kudeaketa sekretua**](/sections/security/secretmanagement.basque.md)
 
 <br/><br/>
 
@@ -808,15 +808,15 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** balidatu gabeko edo baimendu gabeko erabiltzaileen sarrerak operadorearen injekzioa ekar dezake NoSQLrako MongoDB-rekin lan egitean, eta saneamendu sistema edo ORM egokia ez erabiltzeak SQL injekzio erasoak ahalbidetuko ditu, ahultasun erraldoia sortuz
 
-🔗 [**Gehiago irakurri: kontsulten injekzioaren prebentzioa ORM / ODM liburutegiak erabiliz**](/sections/security/ormodmusage.basque.md)
+🔗 [**Informazio gehiago: kontsulten injekzioaren prebentzioa ORM / ODM liburutegiak erabiliz**](/sections/security/ormodmusage.basque.md)
 
 <br/><br/>
 
 ## ![✔] 6.5. Segurtasuneko jardunbide egokien bilduma
 
-**TL;PL:** Node.jsekin zuzenean loturarik ez duen segurtasuneko aholku bilduma bat da: Noderen inplementazioa ez da hain desberdina beste edozein hizkuntzaren inplementazioaren aldean. Egin klik “irakurri gehiago” botoian sakontzeko
+**TL;PL:** Node.jsekin zuzenean loturarik ez duen segurtasuneko aholku bilduma bat da: Noderen inplementazioa ez da hain desberdina beste edozein hizkuntzaren inplementazioaren aldean. Egin klik “Informazio gehiago” botoian sakontzeko
 
-🔗 [**Gehiago irakurri: ohiko segurtasun jardunbide egokienak**](/sections/security/commonsecuritybestpractices.basque.md)
+🔗 [**Informazio gehiago: ohiko segurtasun jardunbide egokienak**](/sections/security/commonsecuritybestpractices.basque.md)
 
 <br/><br/>
 
@@ -828,7 +828,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** erasotzaileek zure aplikazioaren erabiltzaileen aurkako eraso zuzenak egin ditzakete, segurtasun ahultasun handiak sortuz
 
-🔗 [**Gehiago irakurri: erabili izenburu seguruak zure aplikazioan**](/sections/security/secureheaders.basque.md)
+🔗 [**Informazio gehiago: erabili izenburu seguruak zure aplikazioan**](/sections/security/secureheaders.basque.md)
 
 <br/><br/>
 
@@ -840,7 +840,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** erasotzaile batek zure web esparrua detektatu eta ageriko ahultasun guztiei eraso ahal die
 
-🔗 [**Gehiago irakurri: menpekotasunen segurtasuna**](/sections/security/dependencysecurity.basque.md)
+🔗 [**Informazio gehiago: menpekotasunen segurtasuna**](/sections/security/dependencysecurity.basque.md)
 
 <br/><br/>
 
@@ -852,7 +852,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** funtzio segururik erabili gabe gordetzen diren pasahitzak eta sekretuak bortxaz erasotuak izan daitezke edo hiztegi erasoak jasan ditzakete. Azkenean agerian gera daitezke, bai eta agian zabaldu ere
 
-🔗 [**Gehiago irakurri: erabiltzaileen pasahitzak**](/sections/security/userpasswords.basque.md)
+🔗 [**Informazio gehiago: erabiltzaileen pasahitzak**](/sections/security/userpasswords.basque.md)
 
 <br/><br/>
 
@@ -864,7 +864,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** erasotzaile batek JavaScript kodeketa kaltegarria gorde dezake zure DBn, gero bezero gizajoei dagoen moduan bidaliko zaiena
 
-🔗 [**Gehiago irakurri: ihes irteera**](/sections/security/escape-output.basque.md)
+🔗 [**Informazio gehiago: ihes irteera**](/sections/security/escape-output.basque.md)
 
 <br/><br/>
 
@@ -876,7 +876,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** zure eskuzabaltasunak eta ikuspegi permisiboak asko handitzen dute erasoaren tamainua, eta erasotzailea sarrera asko probatzera bultzatzen du, aplikazioa kraskatzeko konbinazio bat aurkitu arte
 
-🔗 [**Gehiago irakurri: balidatu sarrerako JSON eskemak**](/sections/security/validation.basque.md)
+🔗 [**Informazio gehiago: balidatu sarrerako JSON eskemak**](/sections/security/validation.basque.md)
 
 <br/><br/>
 
@@ -888,7 +888,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** edozeinek erabil litzake iraungitako edo gaizki kokatutako fitxak, maltzurki aplikazio batera sartzeko eta fitxaren jabea ordezkatzeko
 
-🔗 [**Gehiago irakurri: JSON web fitxen zerrenda beltzak**](/sections/security/expirejwt.basque.md)
+🔗 [**Informazio gehiago: JSON web fitxen zerrenda beltzak**](/sections/security/expirejwt.basque.md)
 
 <br/><br/>
 
@@ -903,7 +903,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** erasotzaile batek pasahitz automatizatuen saiakera mugagabeak egin ditzake aplikazio bateko kontu pribilegiatuetara sartzeko
 
-🔗 [**Gehiago irakurri: mugatu saioa hasteko abiadura**](/sections/security/login-rate-limit.md)
+🔗 [**Informazio gehiago: mugatu saioa hasteko abiadura**](/sections/security/login-rate-limit.md)
 
 <br/><br/>
 
@@ -915,7 +915,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** zerbitzarian script bat exekutatzea lortzen duten erasotzaileek botere mugagabea lortzen dute makina lokalaren gainean (adibidez, iptable aldatu eta trafikoa beren zerbitzarira bideratzea)
 
-🔗 [**Gehiago irakurri: exekutatu Node.js erabiltzaile ez-erro gisa**](/sections/security/non-root-user.basque.md)
+🔗 [**Informazio gehiago: exekutatu Node.js erabiltzaile ez-erro gisa**](/sections/security/non-root-user.basque.md)
 
 <br/><br/>
 
@@ -927,7 +927,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** zure aplikazioak eskaera handiei aurre egin beharko die, eta ezingo du prozesatu egin behar duen beste lan garrantzitsua, ondorioz errendimendua gutxituz eta DOS erasoekiko ahulduz
 
-🔗 [**Gehiago irakurri: mugatu kargaren tamaina**](/sections/security/requestpayloadsizelimit.basque.md)
+🔗 [**Informazio gehiago: mugatu kargaren tamaina**](/sections/security/requestpayloadsizelimit.basque.md)
 
 <br/><br/>
 
@@ -939,7 +939,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** Javascript kode gaiztoak bidea aurkitzen du `eval` testura edo JavaScript hizkuntzak denbora errealean ebaluatzeko dituen funtzioetara sartzeko, eta sarbide osoa lortuko du JavaScripten orrialdeko baimenetara. Ahultasun hori XSS eraso gisa agertzen da askotan
 
-🔗 [**Gehiago irakurri: saihestu JavaScript eval adierazpenak**](/sections/security/avoideval.basque.md)
+🔗 [**Informazio gehiago: saihestu JavaScript eval adierazpenak**](/sections/security/avoideval.basque.md)
 
 <br/><br/>
 
@@ -951,7 +951,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** gaizki idatzitako ohiko adierazpenek Regular Expression DoSen erasoak jasan ditzakete, gertaeren begizta erabat blokeatuko dutenak. Adibidez, 2017ko azaroan, RegExen erabilera gaiztoak agerian jarri zuen `moment` pakete ezagunaren ahultasuna
 
-🔗 [**Gehiago irakurri: saihestu RegEx gaiztoa erabiltzea**](/sections/security/regex.basque.md)
+🔗 [**Informazio gehiago: saihestu RegEx gaiztoa erabiltzea**](/sections/security/regex.basque.md)
 
 <br/><br/>
 
@@ -963,7 +963,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** erabiltzaile gaiztoen sarrerak manipulatutako fitxategiak deitzeko erabiltzen den parametro batera jo dezake, adibidez, aurretik fitxategi sisteman kargatutako fitxategietara edo lehendik sisteman bazeuden fitxategietara sartzeko
 
-🔗 [**Gehiago irakurri: moduluaren karga segurua**](/sections/security/safemoduleloading.basque.md)
+🔗 [**Informazio gehiago: moduluaren karga segurua**](/sections/security/safemoduleloading.basque.md)
 
 <br/><br/>
 
@@ -975,7 +975,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** plugin batek bide ugari erabil ditzake erasotzeko, hala nola begizta infinituak erabiliz, memoria gainkargatuz eta prozesu ingurune eraso errazen aldagaiak eskuratuz
 
-🔗 [**Gehiago irakurri: exekutatu kode ez segurua sandbox batean**](/sections/security/sandbox.basque.md)
+🔗 [**Informazio gehiago: exekutatu kode ez segurua sandbox batean**](/sections/security/sandbox.basque.md)
 
 <br/><br/>
 
@@ -987,7 +987,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** bigarren mailako prozesuak ganorarik gabe erabiltzeak urruneko komandoen exekuzioa edo shell injekzioko erasoak eragin ditzake, desinfektatu gabeko sistema komando batera erabiltzaile gaiztoren bat sartu dela eta
 
-🔗 [**Gehiago irakurri: kontuz ibili bigarren mailako prozesuekin lan egitean**](/sections/security/childprocesses.basque.md)
+🔗 [**Informazio gehiago: kontuz ibili bigarren mailako prozesuekin lan egitean**](/sections/security/childprocesses.basque.md)
 
 <br/><br/>
 
@@ -999,7 +999,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** aplikazioaren xehetasun sentikorrak —hala nola, zerbitzariko fitxategien bideak, erabiltzen ari diren hirugarrenen moduluak eta erasotzaile batek balia ditzakeen aplikazioaren barneko beste lan fluxuak— atera daitezke pila aztarna batean aurkitutako informazioetatik
 
-🔗 [**Gehiago irakurri: ezkutatu bezeroari erroreen xehetasunak**](/sections/security/hideerrors.basque.md)
+🔗 [**Informazio gehiago: ezkutatu bezeroari erroreen xehetasunak**](/sections/security/hideerrors.basque.md)
 
 <br/><br/>
 
@@ -1021,7 +1021,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** cookieak segurtasunik gabeko konexioen bidez bidal litezke, eta erasotzaile batek saioaren identifikazioa erabil lezake web aplikazioaren barruko esparrua eta moduluen berariazko ahultasunak ere identifikatzeko
 
-🔗 [**Gehiago irakurri: cookieak eta saioaren segurtasuna**](/sections/security/sessions.basque.md)
+🔗 [**Informazio gehiago: cookieak eta saioaren segurtasuna**](/sections/security/sessions.basque.md)
 
 <br/><br/>
 
@@ -1043,7 +1043,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** erasotzailea ohartzen bada erabiltzaileek emandako kanpo sarrerarik ez dela balioztatzen, ahultasun hori balia dezake foroetan, sare sozialetan eta beste toki publiko batzuetan hartarako bereziki sortutako estekak argitaratzean, erabiltzaileek bertan klik egin dezaten
 
-🔗 [**Gehiago irakurri: saihestu birbideratze ez seguruak**](/sections/security/saferedirects.basque.md)
+🔗 [**Informazio gehiago: saihestu birbideratze ez seguruak**](/sections/security/saferedirects.basque.md)
 
 <br/><br/>
 
@@ -1055,7 +1055,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** arriskua dago norbaitek zure proiektuaren API gakoak, pasahitzak edo beste sekretu batzuk aurkitu eta erasoak egiten saiatzeko, eta horrek galera ekonomikoak, nortasun arazoak eta bestelako arriskuak sor ditzake
 
-🔗 [**Gehiago irakurri: saihestu sekretuak argitaratzea**](/sections/security/avoid_publishing_secrets.basque.md)
+🔗 [**Informazio gehiago: saihestu sekretuak argitaratzea**](/sections/security/avoid_publishing_secrets.basque.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
@@ -1072,7 +1072,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** gertaeren begizta blokeatuta dagoenez, Node.jsk ezin izango du beste eskaera bat kudeatu eta, ondorioz, atzerapena eragin diezaieke erabiltzaileei. **3000 erabiltzaile erantzunaren zain daude, edukia zerbitzatzeko prest dago, baina eskaera bakar batek emaitzak berriro bidaltzea galarazten dio zerbitzariari**
 
-🔗 [**Gehiago irakurri: ez blokeatu gertaeraren begizta**](/sections/performance/block-loop.basque.md)
+🔗 [**Informazio gehiago: ez blokeatu gertaeraren begizta**](/sections/performance/block-loop.basque.md)
 
 <br /><br /><br />
 
@@ -1082,7 +1082,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** errendimendu txikiagoko proiektuak mantendu beharko zenituzke, non **dagoeneko** eskura zenuena erabili beharko baitzenuke edo, fitxategi batzu gehiagoren truke, beste zenbait lerro landu
 
-🔗 [**Gehiago irakurri: erabiltzaileen jatorrizko baliabideak**](/sections/performance/nativeoverutil.basque.md)
+🔗 [**Informazio gehiago: erabiltzaileen jatorrizko baliabideak**](/sections/performance/nativeoverutil.basque.md)
 
 <br/><br/><br/>
 
@@ -1119,7 +1119,7 @@ RUN npm ci --production
 CMD [ "node", "dist/app.js" ]
 ```
 
-🔗 [**Gehiago irakurri: erabili etapa anitzeko konpilazioak**](/sections/docker/multi_stage_builds.basque.md)
+🔗 [**Informazio gehiago: erabili etapa anitzeko konpilazioak**](/sections/docker/multi_stage_builds.basque.md)
 
 <br /><br /><br />
 
@@ -1131,7 +1131,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Bestela:** seinalerik pasatzen ez denean, zure kodeak ez du inoiz izango itzalaldien berri, eta, hori gabe, ez da behar bezala itxiko, unean uneko eskaerak eta / edo datuak galduz
 
-[**Gehiago irakurri: abiarazi edukiontzia 'node' komandoa erabiliz, saihestu npm abiatzea**](/sections/docker/bootstrap-using-node.basque.md)
+[**Informazio gehiago: abiarazi edukiontzia 'node' komandoa erabiliz, saihestu npm abiatzea**](/sections/docker/bootstrap-using-node.basque.md)
 
 <br /><br /><br />
 
@@ -1141,7 +1141,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Bestela:** edukiontziak huts egiten jarraituko du baliabide faltagatik, eta prozesuen kudeatzaileak behin eta berriro berrabiaraziko du, gelditu gabe. Kubernetes horretaz jabetuko balitz, beste toki zabal batera lekualda lezake
 
-🔗 [**Gehiago irakurri: utzi Dockeren exekuzio denborari erreplikatu eta jardueraren iraupena kudeatzen**](/sections/docker/restart-and-replicate-processes.basque.md)
+🔗 [**Informazio gehiago: utzi Dockeren exekuzio denborari erreplikatu eta jardueraren iraupena kudeatzen**](/sections/docker/restart-and-replicate-processes.basque.md)
 
 <br/><br /><br />
 
@@ -1151,7 +1151,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Bestela**: irudira sarbidea duen edonorekin partekatuko dira `.env`, `.aws` eta `.npmrc` bezalako fitxategi sekretu pertsonal arruntak (adibidez, Docker biltegia)
 
-🔗 [**Gehiago irakurri: erabili .dockerignore**](/sections/docker/docker-ignore.basque.md)
+🔗 [**Informazio gehiago: erabili .dockerignore**](/sections/docker/docker-ignore.basque.md)
 
 <br /><br /><br />
 
@@ -1161,7 +1161,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Bestela:** npm segurtasun arau hauste ezagun asko garapen paketeen barruan aurkitu izan dira (adibidez, [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes))
 
-🔗 Gehiago irakurri: [ezabatu garapen menpekotasunak](/sections/docker/install-for-production.basque.md)
+🔗 Informazio gehiago: [ezabatu garapen menpekotasunak](/sections/docker/install-for-production.basque.md)
 
 <br /><br /><br />
 
@@ -1171,7 +1171,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Bestela:** berehala hiltzeak etsita dauden milaka erabiltzaileri ez erantzutea ekarriko du
 
-🔗 [**Gehiago irakurri: itzalaldi dotorea**](/sections/docker/graceful-shutdown.basque.md)
+🔗 [**Informazio gehiago: itzalaldi dotorea**](/sections/docker/graceful-shutdown.basque.md)
 
 <br /><br /><br />
 
@@ -1181,7 +1181,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Bestela:** Dockerren definizioa beharrezkoa da eskalatutako erabakiak burutzeko eta beste herritarrak gosez hiltzea ekiditeko. V8rren mugak zehaztu gabe ere, edukiontziaren baliabideak erabiliko ditu. Argibide espliziturik gabe, baliabideen %50-60a erabiltzean huts egiten du
 
-🔗 [**Gehiago irakurri: ezarri memoria mugak Docker erabiliz soilik**](/sections/docker/memory-limit.basque.md)
+🔗 [**Informazio gehiago: ezarri memoria mugak Docker erabiliz soilik**](/sections/docker/memory-limit.basque.md)
 
 <br /><br /><br />
 
@@ -1191,7 +1191,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Bestela:** Docker eraikitzeak oso luze jo dezake eta baliabide asko kontsumituko ditu, nahiz eta aldaketa txikiak egin
 
-🔗 [**Gehiago irakurri: baliatu cachea konpilazio denborak murrizteko**](/sections/docker/use-cache-for-shorter-build-time.basque.md)
+🔗 [**Informazio gehiago: baliatu cachea konpilazio denborak murrizteko**](/sections/docker/use-cache-for-shorter-build-time.basque.md)
 
 <br /><br /><br />
 
@@ -1203,7 +1203,7 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 **Bestela:** oinarrizko irudi baten bertsio berri bat erabiliz gero, aldaketa handiak gerta litezke produkzioan, horrek aplikazioaren nahigabeko portaera sortuz
 
-🔗 [**Gehiago irakurri: ulertu irudi etiketak eta erabili "azken" (`latest`) etiketa kontu handiz**](/sections/docker/image-tags.basque.md)
+🔗 [**Informazio gehiago: ulertu irudi etiketak eta erabili "azken" (`latest`) etiketa kontu handiz**](/sections/docker/image-tags.basque.md)
 
 <br /><br /><br />
 
@@ -1213,7 +1213,7 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 **Bestela:** batetik, denbora gehiago beharko da irudiak eraiki, txertatu eta ateratzeko; bestetik, erabiltzaile maltzurrek eraso bektore ezezagunak erabil ditzakete; eta, azkenik, baliabide gehiago beharko dira
 
-🔗 [**Gehiago irakurri: hobetsi irudi txikiagoak**](/sections/docker/smaller_base_images.basque.md)
+🔗 [**Informazio gehiago: hobetsi irudi txikiagoak**](/sections/docker/smaller_base_images.basque.md)
 
 <br /><br /><br />
 
@@ -1223,7 +1223,7 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 **Bestela:** IE eta docker erregistroan sartzeko aukera duten guztiek erakundearen sekretu preziatuak ere eskuratzeko aukera izango dute onura gehigarri gisa
 
-🔗 [**Gehiago irakurri: garbitu eraikitze faseko sekretuak**](/sections/docker/avoid-build-time-secrets.basque.md)
+🔗 [**Informazio gehiago: garbitu eraikitze faseko sekretuak**](/sections/docker/avoid-build-time-secrets.basque.md)
 
 <br /><br /><br />
 
@@ -1233,7 +1233,7 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 **Bestela:** baliteke zure kodeak ahultasunik ez izatea. Hala ere, baliteke oraindik ere hackeatua izatea, aplikazioek normalean erabiltzen dituzten sistema eragilearen mailako binarioen bertsioak ahultasunak dituelako (adibidez, OpenSSL, TarBall)
 
-🔗 [**Gehiago irakurri: Docker jardunbide arruntak**](/sections/docker/scan-images.basque.md)
+🔗 [**Informazio gehiago: Docker jardunbide arruntak**](/sections/docker/scan-images.basque.md)
 
 <br /><br /><br />
 
@@ -1243,15 +1243,15 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 **Bestela:** ekoizpenera bidaliko den irudiak % 30 gehiago pisatuko du, inoiz erabiliko ez diren fitxategiak direla eta
 
-🔗 [**Gehiago irakurri: garbitu NODE_MODULE cachea**](/sections/docker/clean-cache.basque.md)
+🔗 [**Informazio gehiago: garbitu NODE_MODULE cachea**](/sections/docker/clean-cache.basque.md)
 
 <br /><br /><br />
 
 ## ![✔] 8.14. Docker jardunbide generikoak
 
-**TL;PL:** hemen duzu Node.jsekin zuzenean loturarik ez duen Docker aholkuen bilduma. Ez dago alderik Noderen eta beste edozein lengoaiaren inplementazioen artean. Egin klik “irakurri gehiago” botoian
+**TL;PL:** hemen duzu Node.jsekin zuzenean loturarik ez duen Docker aholkuen bilduma. Ez dago alderik Noderen eta beste edozein lengoaiaren inplementazioen artean. Egin klik “Informazio gehiago” botoian
 
-🔗 [**Gehiago irakurri: Dockeren jardunbide generikoak**](/sections/docker/generic-tips.basque.md)
+🔗 [**Informazio gehiago: Dockeren jardunbide generikoak**](/sections/docker/generic-tips.basque.md)
 
 <br/><br /><br />
 
@@ -1261,7 +1261,7 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 **Bestela:** okerrez, Dockerfileren sortzaileak root bat utzi zuen produkzio erabiltzaile moduan, eta jatorri ezezaguneko biltegi irudi bat ere erabili zuen. Hori liner soil batekin ekidin liteke.
 
-🔗 [**Gehiago irakurri: garbitu zure Dockerfilea**](/sections/docker/lint-dockerfile.basque.md)
+🔗 [**Informazio gehiago: garbitu zure Dockerfilea**](/sections/docker/lint-dockerfile.basque.md)
 
 <br/><br /><br />
 
