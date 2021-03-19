@@ -10,7 +10,7 @@ Ohiko segurtasun jardunbideen atalak esparru eta konbentzio askotan estandarizat
 
 **Bestela:** erasotzaileek erdi-erdiko erasoak egin ditzakete, zure erabiltzaileen portaera zelatatu eta are ekintza maltzurragoak egin ditzakete konexioa enkriptatu gabe dagoenean.
 
-🔗 [**Gehiago irakurri: Node.js zerbitzari segurua egikaritzea**](/sections/security/secureserver.basque.md)
+🔗 [**Informazio gehiago: Node.js zerbitzari segurua egikaritzea**](/sections/security/secureserver.basque.md)
 
 <br/><br/>
 
@@ -120,7 +120,7 @@ Jarraian, OWASP proiektuko hainbat gomendio garrantzitsu zerrendatu ditugu
 
 **Bestela:** baliteke ahulezien berri ez izatea. Ahulezien gainean garaiz jarduteko aukera galduko duzu.
 
-🔗 [**Gehiago irakurri: SECURITY.md**](https://help.github.com/en/github/managing-security-vulnerabilities/adding-a-security-policy-to-your-repository)
+🔗 [**Informazio gehiago: SECURITY.md**](https://help.github.com/en/github/managing-security-vulnerabilities/adding-a-security-policy-to-your-repository)
 
 <br/><br/><br/>
 
