@@ -18,7 +18,7 @@
 
 <br/>
 
-Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** dan ![TR](/assets/flags/TR.png)**TR** dalam proses!)](#translations)
+Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md), [![EU](/assets/flags/EU.png)**EU**](/README.basque.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** dan ![TR](/assets/flags/TR.png)**TR** dalam proses!)](#translations)
 
 <br/>
 
@@ -49,7 +49,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 1. [Praktik Struktur Proyek (5)](#1-praktik-struktur-proyek)
 2. [Praktik Penanganan Kesalahan (11) ](#2-praktik-penanganan-kesalahan)
 3. [Praktik Gaya Kode (12) ](#3-praktik-gaya-kode)
-4. [Praktik Pengujian dan Kualitas Secara Keseluruhan (13) ](#4-praktik-pengujian-dan-kualitas-secara-keseluruhan )
+4. [Praktik Pengujian dan Kualitas Secara Keseluruhan (13) ](#4-praktik-pengujian-dan-kualitas-secara-keseluruhan)
 5. [Praktik Dalam Produksi(19) ](#5-praktik-dalam-produksi)
 6. [Praktik Keamanan (25)](#6-praktik-terbaik-keamanan)
 7. [Praktik Performa (2) (Pekerjaan Dalam Proses ✍️)](#7-draf-praktik-terbaik-performa)
@@ -270,8 +270,7 @@ function someFunction() {
 }
 
 // Hindari
-function someFunction() 
-{
+function someFunction() {
   // blok kode
 }
 ```
@@ -328,7 +327,7 @@ const count = 2 // mencoba menjalankan 2(), tapi 2 bukanlah sebuah fungsi
 
 ## ![✔] 3.5 Namakan fungsi Anda
 
-**TL;DR:** Namakan semua fungsi, termasuk closure dan panggilan balik. Hindari fungsi anonim. Ini sangat berguna saat mengukur sebuah aplikasi node. Menamakan semua fungsi memungkinkan Anda untuk memahami dengan mudah apa yang Anda lihat saat memeriksa snapshot memori 
+**TL;DR:** Namakan semua fungsi, termasuk closure dan panggilan balik. Hindari fungsi anonim. Ini sangat berguna saat mengukur sebuah aplikasi node. Menamakan semua fungsi memungkinkan Anda untuk memahami dengan mudah apa yang Anda lihat saat memeriksa snapshot memori
 
 **Jika tidak:** Men-debug masalah produksi menggunakan core dump (snapshot memori) dapat menjadi tantangan karena Anda melihat konsumsi memori yang signifikan dari fungsi anonim
 
@@ -398,7 +397,7 @@ module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolve
 
 ## ![✔] 3.10 Gunakan operator `===`
 
-**TL;DR:** Utamakan operator persamaan ketat `===` daripada operator persamaan abstrak `==` yang lebih lemah. `==` akan membandingkan dua variabel setelah mengubahnya ke tipe umum. Tidak ada konversi tipe di `===`, dan kedua variabel harus sejenis agar sama 
+**TL;DR:** Utamakan operator persamaan ketat `===` daripada operator persamaan abstrak `==` yang lebih lemah. `==` akan membandingkan dua variabel setelah mengubahnya ke tipe umum. Tidak ada konversi tipe di `===`, dan kedua variabel harus sejenis agar sama
 
 **Jika tidak:** Variabel yang tidak sama dapat mengembalikan _true_ ketika dibandingkan dengan operator `==`
 
@@ -789,7 +788,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A3:Sensitive%20Data%20Exposure%20-green.svg" alt=""/></a>
 
-**TL;DR:** Jangan pernah menyimpan rahasia dalam bentuk teks biasa dalam file konfigurasi atau kode sumber. Sebagai gantinya, gunakan sistem manajemen rahasia seperti produk _Vault_, _Kubernetes/Docker Secrets_, atau gunakan variabel lingkungan. Sebagai cara terakhir, rahasia yang disimpan di kontrol kode harus terenkripsi dan teratur (kunci bergulir, kedaluwarsa, audit, dll.). Manfaatkan hook pra-_commit_/_push_ untuk mencegah agar rahasia tidak ter-_commit_  secara tidak sengaja
+**TL;DR:** Jangan pernah menyimpan rahasia dalam bentuk teks biasa dalam file konfigurasi atau kode sumber. Sebagai gantinya, gunakan sistem manajemen rahasia seperti produk _Vault_, _Kubernetes/Docker Secrets_, atau gunakan variabel lingkungan. Sebagai cara terakhir, rahasia yang disimpan di kontrol kode harus terenkripsi dan teratur (kunci bergulir, kedaluwarsa, audit, dll.). Manfaatkan hook pra-_commit_/_push_ untuk mencegah agar rahasia tidak ter-_commit_ secara tidak sengaja
 
 **Jika tidak:** Kontrol sumber, bahkan untuk repositori pribadi, dapat di buat publik secara tidak sengaja, di mana semua rahasia dapat terungkap. Akses kontrol sumber dari pihak eksternal dapat memberikan akses ke sistem terkait (database, api, layanan, dll.) secara tidak sengaja.
 
@@ -797,7 +796,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <br/><br/>
 
-## ![✔] 6.4. Cegah  injeksi kueri dengan menggunakan pustaka ORM/ODM
+## ![✔] 6.4. Cegah injeksi kueri dengan menggunakan pustaka ORM/ODM
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
@@ -1065,7 +1064,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 ## ![✔] 7.1. Jangan memblokir _event loop_
 
-**TL;DR:** Hindari pekerjaan yang intensif CPU karena mereka akan memblokir _Event Loop_ dalam satu _thread_ dan pindahkan pekerjaan ini ke _thread_ khusus, proses atau  bahkan teknologi yang berbeda berdasarkan konteksnya.
+**TL;DR:** Hindari pekerjaan yang intensif CPU karena mereka akan memblokir _Event Loop_ dalam satu _thread_ dan pindahkan pekerjaan ini ke _thread_ khusus, proses atau bahkan teknologi yang berbeda berdasarkan konteksnya.
 
 **Jika tidak:** Ketika _Event Loop_ diblokir, Node.js tidak akan dapat menangani permintaan lain sehingga menyebabkan penundaan bagi pengguna lain. **3000 pengguna sedang menunggu tanggapan, konten siap diberikan, tapi satu permintaan mencegah server-nya untuk mengirimkan hasilnya**
 
@@ -1135,7 +1134,7 @@ CMD [ "node", "dist/app.js" ]
 
 **TL;DR:** Ketika menggunakan orkestrator run time Docker (misalnya Kubernetes), aktifkan proses Node.js seecara langsung tanpa manajer proses perantara atau kode khusus yang mereplikasi proses (misalnya PM2, modul Cluster). Platform runtime mempunyai jumlah data dan visibilitas tertinggi untuk membuat keputusan penempatan - Platform ini mengetahui dengan baik berapa banyak proses yang diperlukan, cara menyebarkannya dan apa yang harus dilakukan jika terjadi kerusakan
 
-**Jika tidak:** Kontainer tetap rusak karena kekurangan sumber daya akan dimulai ulang tanpa batas oleh manajer proses. Jika Kubernetes menyadari hal ini, Kubernetes dapat memindahkannya ke banyak instance yang berbeda 
+**Jika tidak:** Kontainer tetap rusak karena kekurangan sumber daya akan dimulai ulang tanpa batas oleh manajer proses. Jika Kubernetes menyadari hal ini, Kubernetes dapat memindahkannya ke banyak instance yang berbeda
 
 🔗 [**Baca selengkapnya: Let the Docker orchestrator restart and replicate processes**](/sections/docker/restart-and-replicate-processes.md)
 
@@ -1157,7 +1156,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Jika tidak:** Banyak penerobosan keamanan npm yang buruk ditemukan dalam paket pengembangan (misalnya [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes))
 
-🔗 [**Baca selengkapnya: Remove development dependencies](/sections/docker/install-for-production.md)
+🔗 [\*\*Baca selengkapnya: Remove development dependencies](/sections/docker/install-for-production.md)
 
 <br /><br /><br />
 
@@ -1279,6 +1278,7 @@ Semua terjemahan merupakan kontribusi dari komunitas. Kami akan dengan senang ha
 - ![CN](/assets/flags/CN.png) [Cina](./README.chinese.md) - Terima kasih kepada [Matt Jin](https://github.com/mattjin)
 - ![RU](/assets/flags/RU.png) [Rusia](./README.russian.md) - Terima kasih kepada [Alex Ivanov](https://github.com/contributorpw)
 - ![PL](/assets/flags/PL.png) [Polandia](./README.polish.md) - Terima kasih kepada [Michal Biesiada](https://github.com/mbiesiad)
+- ![EU](/assets/flags/EU.png) [Basque](README.basque.md) - Terima kasih kepada [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta
 
 ### Terjemahan dalam proses
 

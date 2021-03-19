@@ -22,7 +22,7 @@
 
 <br/>
 
-다른 언어로 읽기: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** and ![TR](/assets/flags/TR.png)**TR** 은 작업중입니다!)](#translations)
+다른 언어로 읽기: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![EU](/assets/flags/EU.png)**EU**](/README.basque.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** and ![TR](/assets/flags/TR.png)**TR** 은 작업중입니다!)](#translations)
 
 <br/>
 
@@ -259,8 +259,7 @@ function someFunction() {
 }
 
 // 나쁜 예
-function someFunction()
-{
+function someFunction() {
   // 코드 블록
 }
 ```
@@ -325,7 +324,7 @@ const count = 2 // 2()를 호출하려 하지만, 2는 함수가 아니다
 
 ## ![✔] 3.6 변수, 상수, 함수, 클래스의 명명 규칙(naming convention)
 
-**핵심요약:** 상수와 변수 함수를 명명할때는 **_lowerCamelCase_** 를 사용하고 클래스를 명명 할때는 **_UpperCamelCase_**(첫 글자 대문자)를 사용하라. 이것은 일반 변수/함수와 인스턴스로 만들어야 하는 클래스를 구분하는데 도움을  것이다. 설명이 포함된 이름을 사용하되 이름을 짧게 유지하도록 해라.
+**핵심요약:** 상수와 변수 함수를 명명할때는 **_lowerCamelCase_** 를 사용하고 클래스를 명명 할때는 **_UpperCamelCase_**(첫 글자 대문자)를 사용하라. 이것은 일반 변수/함수와 인스턴스로 만들어야 하는 클래스를 구분하는데 도움을 것이다. 설명이 포함된 이름을 사용하되 이름을 짧게 유지하도록 해라.
 
 **그렇게 하지 않을 경우:** 자바스크립트는 먼저 인스턴스로 만들지 않고 직접 생성자("Class")를 호출할 수 있는 세계 유일의 언어이다. 그러므로 클래스와 함수생성자는 UpperCamelCase를 통해 구분된다.
 
@@ -337,11 +336,11 @@ class SomeClassExample {}
 
 // 상수명은 const 키워드와 lowerCamelCase 사용
 const config = {
-  key: 'value'
+  key: "value",
 };
 
 // 변수와 함수 이름은 lowerCamelCase 사용
-let someVariableExample = 'value';
+let someVariableExample = "value";
 function doSomething() {}
 ```
 
@@ -375,12 +374,12 @@ function doSomething() {}
 
 ```javascript
 // 좋은 예
-module.exports.SMSProvider = require('./SMSProvider');
-module.exports.SMSNumberResolver = require('./SMSNumberResolver');
+module.exports.SMSProvider = require("./SMSProvider");
+module.exports.SMSNumberResolver = require("./SMSNumberResolver");
 
 // 나쁜 예
-module.exports.SMSProvider = require('./SMSProvider/SMSProvider.js');
-module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolver.js');
+module.exports.SMSProvider = require("./SMSProvider/SMSProvider.js");
+module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolver.js");
 ```
 
 <br/><br/>
@@ -394,18 +393,18 @@ module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolve
 ### 코드 예제
 
 ```javascript
-'' == '0'           // false
-0 == ''             // true
-0 == '0'            // true
+"" == "0"; // false
+0 == ""; // true
+0 == "0"; // true
 
-false == 'false'    // false
-false == '0'        // true
+false == "false"; // false
+false == "0"; // true
 
-false == undefined  // false
-false == null       // false
-null == undefined   // true
+false == undefined; // false
+false == null; // false
+null == undefined; // true
 
-' \t\r\n ' == 0     // true
+" \t\r\n " == 0; // true
 ```
 
 위의 모든 문장은 `===`를 사용했다면 false를 반환 했을것이다.
@@ -448,7 +447,6 @@ null == undefined   // true
 
 **핵심요약:** 코드 내부에 익숙하지 않은 QA 엔지니어들과 개발자들에게 따로 설명이 필요 없도록 requirement 계층에서 이미 자명하도록 해라. 무엇을 (unit under test), 어떤 환경에서, 어떤 결과를 예상하고 테스트 하는 것인지 테스트 이름에 명시해라.
 
-
 **그렇게 하지 않을 경우:** 배포에 실패하였습니다, “프로덕트 추가” 라는 테스트가 실패했습니다. 이런 메시지를 보고 정확히 뭐가 잘못되었는지 알 수 있는가?
 
 🔗 [**자세히 보기: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
@@ -460,7 +458,6 @@ null == undefined   // true
 **핵심요약:** 테스트를 다음 세가지 부분으로 명확히 나누어라: 준비 (arrange), 실행 (act), 표명 (assert). 제일 먼저 테스트를 준비하고, 그 다음 테스트 단위(unit under test)를 실행하고, 마지막은 확인 단계다. 이 구조를 따르는 것은 읽는이가 힘들여 머리를 쓰지 않고도 테스트 설계를 이해할 수 있도록 보장한다.
 
 **그렇게 하지 않을 경우:** 매일 하루종일 주요 코드를 읽는데 시간을 오래 쓰는 것도 모자라 간단해야하는 테스트 부분에도 열심히 머리를 써야 할 것이다.
-
 
 🔗 [**Read More: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.md)
 
@@ -546,7 +543,7 @@ null == undefined   // true
 
 **핵심요약:** 여러 요청에 걸친 막대한 로직을 미들웨어가 수용하는 경우, 웹 프레임워크 전체를 깨우지 않고 격리 상태로 테스트 할만한 가치가 있다. {req, res, next} 객체들을 스텁(stub)하여 염탐(spy)하면 쉽게 달성할 수 있다.
 
-**그렇게 하지 않을 경우:**  Express 미들웨어의 버그 === 거의 모든 요청의 버그
+**그렇게 하지 않을 경우:** Express 미들웨어의 버그 === 거의 모든 요청의 버그
 
 🔗 [**자세히 보기: Test middlewares in isolation**](/sections/testingandquality/test-middlewares.md)
 
@@ -588,7 +585,7 @@ null == undefined   // true
 
 ## ![✔] 5.4. 의존성을 잠궈라(Lock dependencies)
 
-**핵심요약:** 코드는 모든 환경에서 동일해야하지만 놀랍게도 npm을 사용하면 기본적으로 환경간에 종속성이 달라질 수 있는데, 다양한 환경에서 패키지를 설치하면 패키지의 최신 패치 버전을 가져오기 때문이다. npm config 파일인 .npmrc를 사용하여이 문제를 극복해라. 각 환경에 각 패키지의 최신 버전이 아닌 정확한 버전을 저장하도록 알려준다. 또는 세밀하게 제어하려면 `npm shrinkwrap`을 사용하라. \* 업데이트 : NPM5부터는 종속성이  기본적으로 잠겨 있다. 새로운 패키지 관리자인 Yarn도 기본적으로 잠겨 있다.
+**핵심요약:** 코드는 모든 환경에서 동일해야하지만 놀랍게도 npm을 사용하면 기본적으로 환경간에 종속성이 달라질 수 있는데, 다양한 환경에서 패키지를 설치하면 패키지의 최신 패치 버전을 가져오기 때문이다. npm config 파일인 .npmrc를 사용하여이 문제를 극복해라. 각 환경에 각 패키지의 최신 버전이 아닌 정확한 버전을 저장하도록 알려준다. 또는 세밀하게 제어하려면 `npm shrinkwrap`을 사용하라. \* 업데이트 : NPM5부터는 종속성이 기본적으로 잠겨 있다. 새로운 패키지 관리자인 Yarn도 기본적으로 잠겨 있다.
 
 **그렇게 하지 않을 경우:** QA팀은 코드를 철저히 테스트 했음에도 테스트 환경과는 다르게 작동하는 버전을 승인할 것이다. 심지어 같은 프로덕션 클러스터의 여러 서버가 서로 다른 코드를 실행할 수도 있다.
 
@@ -899,7 +896,7 @@ null == undefined   // true
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A5:Broken%20Access%20Access%20Control-green.svg" alt=""/></a>
 
-**핵심요약:** Node.js가 승인에 제한이 없는 루트 사용자로써 실행하는 일이 비일비재하다. 예를 들면, 도커 컨테이너 안에서는 이것이 기본적인 설정이다. 루트가 아닌 사용자를 만들어 도커 이미지에 구워넣거나 (아래예시) 프로세스를 "-u username" 플래그를 써서  이 사용자를 대신해서 실행하는것을 추천한다.
+**핵심요약:** Node.js가 승인에 제한이 없는 루트 사용자로써 실행하는 일이 비일비재하다. 예를 들면, 도커 컨테이너 안에서는 이것이 기본적인 설정이다. 루트가 아닌 사용자를 만들어 도커 이미지에 구워넣거나 (아래예시) 프로세스를 "-u username" 플래그를 써서 이 사용자를 대신해서 실행하는것을 추천한다.
 
 **그렇게 하지 않을 경우:** 공격자가 서버에 스크립트를 실행하는데 성공하면 로컬 머신을 마음대로 할 권리를 무제한으로 갖게 된다 (예: iptable을 바꾼다던가 트래픽 경로를 자기 서버로 변경 한다던가)
 
@@ -995,7 +992,7 @@ null == undefined   // true
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**핵심요약:** 개발 과정의 모든 단계는 다중인증(MFA: multi-factor authentication)을 사용해서 보호해야한다. npm이나 Yarn은 공격자들이 개발자 암호를 수집할 수 있는 절호의 기회다. 공격자들은 개발자의 크리덴셜을 사용하면 악의적인 코드를 다양한 프로젝트와 서비스에 널리 설치된 라이브러리에 주입할 수 있다. 공개 출판 되었다면  웹상에서도 가능하다. npm 이중인증을 활성화 해 두면 공격자들이 패키지 코드를 변경할 확률이 0에 가까워진다.
+**핵심요약:** 개발 과정의 모든 단계는 다중인증(MFA: multi-factor authentication)을 사용해서 보호해야한다. npm이나 Yarn은 공격자들이 개발자 암호를 수집할 수 있는 절호의 기회다. 공격자들은 개발자의 크리덴셜을 사용하면 악의적인 코드를 다양한 프로젝트와 서비스에 널리 설치된 라이브러리에 주입할 수 있다. 공개 출판 되었다면 웹상에서도 가능하다. npm 이중인증을 활성화 해 두면 공격자들이 패키지 코드를 변경할 확률이 0에 가까워진다.
 
 **그렇게 하지 않을 경우:** [암호를 하이재킹 당한 eslint 개발자에 대해 들어봤는가?](https://medium.com/@oprearocks/eslint-backdoor-what-it-is-and-how-to-fix-the-issue-221f58f1a8c8)
 
@@ -1152,8 +1149,8 @@ null == undefined   // true
 공동 저자들은 새로운 모범사례를 제안하거나, 사안을 분류하거나, 풀리퀘스트를 검토하는 등 리포지토리에 정기적으로 기여하는 일원들입니다. 수천명의 사람들이 더 나은 Node.js 애플리케이션을 만들 수 있도록 안내하며 돕는데 관심이 있으시다면 [기여자 지침서](/.operations/CONTRIBUTING.md)를 읽어주세요 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> | <a href="https://github.com/kevynb" target="_blank"><img src="assets/images/members/kevyn.png" width="59" height="59"></a> |
-| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-|        [이도 릭터 (창립주)](https://github.com/idori)        |      [키스 홀리데이](https://github.com/TheHollidayInn)      |          [케빈 브뤼예르](https://github.com/kevynb)          |
+| :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: |
+|                                     [이도 릭터 (창립주)](https://github.com/idori)                                      |                                         [키스 홀리데이](https://github.com/TheHollidayInn)                                         |                                         [케빈 브뤼예르](https://github.com/kevynb)                                         |
 
 ### 전 공동 저자
 
@@ -1164,6 +1161,7 @@ null == undefined   // true
 <br/>
 
 ## 기여하기
+
 오픈소스에 참여하고 싶으시다면 지금이 바로 기회! [기여자 지침서](.operations/CONTRIBUTING.md)에서 더 자세한 내용을 확인하세요.
 
 ## 기여자 ✨
@@ -1303,4 +1301,5 @@ null == undefined   // true
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
