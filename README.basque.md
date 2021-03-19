@@ -254,7 +254,7 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 
 **TL;PL:** ESLintek Vanilla JavaScript babesteko dituen arau estandarretatik aparte, komeni da Node.jsen osagai espeziko batzuk erabiltzea, hala nola [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) eta [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
-**Bestela:** Node.jsen arau akastun batzuek radarraren kontrolari ihes egin ahal diote. Esaterako, garatzaileek sarbide moduan aldagai jakin baten beharra izan dezakete (require(variableCommeChemin)), edozein script JS erabiltzeko aukera ematen diena erasotzaileei. Node.jsen linterrek patroi horiek atzeman ditzakete eta garaiz jo alarma
+**Bestela:** Node.jsen arau akastun batzuek radarraren kontrolari ihes egin ahal diote. Esaterako, garatzaileek sarbide moduan aldagai jakin baten beharra izan dezakete (require(variableCommeChemin)), edozein JS script erabiltzeko aukera ematen diena erasotzaileei. Node.jsen linterrek patroi horiek atzeman ditzakete eta garaiz jo alarma
 
 <br/><br/>
 
@@ -678,13 +678,13 @@ edo hornitzaileen lainoko zerbitzuak
 
 <br/><br/>
 
-## ![✔] 5.12. Izan aberri gabea, hil zerbitzariak ia egunero
+## ![✔] 5.12. Izan aberrigabea, hil zerbitzariak ia egunero
 
-**TL;PL:** gorde edozein datu mota (adibidez, erabiltzaile saioak, cacheak, kargatutako fitxategiak) kanpoko datu biltegietan; eta aztertu ez ote zenituzkeen zure zerbitzari guztiak aldian behin “hil” beharko edo “zerbitzaririk gabe”ko plataformaren bat erabili (adibidez, AWS Lambda), berariaz stateless jokaera duena
+**TL;PL:** gorde edozein datu mota (adibidez, erabiltzaile saioak, cacheak, kargatutako fitxategiak) kanpoko datu biltegietan; eta aztertu ez ote zenituzkeen zure zerbitzari guztiak aldian behin “hil” beharko edo “zerbitzaririk gabe”ko plataformaren bat erabili (adibidez, AWS Lambda), berariaz aberrigabe (stateless) jokaera duena
 
 **Bestela:** zerbitzari jakin batek huts eginez gero, makina akastun bat hil beharrean, aplikazioen geldialdia eragingo du. Gainera, gero eta zailagoa izango da mailaketaren elastikotasuna, zerbitzari jakin baten menpeko izanda
 
-🔗 [**Informazio gehiago: izan aberri gabea, hil zerbitzariak ia egunero**](/sections/production/bestateless.basque.md)
+🔗 [**Informazio gehiago: izan aberrigabea, hil zerbitzariak ia egunero**](/sections/production/bestateless.basque.md)
 
 <br/><br/>
 
@@ -780,7 +780,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;PL:** DOS erasoak oso ezagunak dira, eta nahiko erraz eragin daitezke. Ezarri abiadura muga kanpoko zerbitzu bat erabiliz, hala nola hodeiko karga orekatzaileak, hodeiko suebakiak, nginx, [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) edo (aplikazio txikiagoak eta ez hain kritikoetarako) abiadura mugatzeko middleware bat (adibidez, [express-rate-limit](https://www.npmjs.com/package/express-rate-limit), express abiadura mugatzailea)
+**TL;PL:** DOS erasoak oso ezagunak dira, eta nahiko erraz eragin daitezke. Ezarri abiadura muga kanpoko zerbitzu bat erabiliz, hala nola hodeiko karga orekatzaileak, hodeiko suebakiak, nginx, [abiadura-mugatzaile-malgua](https://www.npmjs.com/package/rate-limiter-flexible) (rate-limiter-flexible) edo (aplikazio txikiagoak eta ez hain kritikoetarako) abiadura mugatzeko middleware bat (adibidez, [express-rate-limit](https://www.npmjs.com/package/express-rate-limit), express abiadura mugatzailea)
 
 **Bestela:** aplikazio batek erasoak jasan ahal ditu, haren erabiltzaileei ukatzen bazaie jaso beharko luketen zerbitzua, aplikazioa egoera txarrean dagoelako edo eskuragarri ez dagoelako
 
@@ -848,7 +848,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;PL:** pasahitzak eta sekretuak (adibidez API gakoak) gorde behar dira hash + gatz funtzio seguru bat erabiliz, esaterako, `bcrypt`edo `scrypt`; eta kasurik okerrenean, `pbkdf2`
+**TL;PL:** pasahitzak eta sekretuak (adibidez API giltzak) gorde behar dira hash + gatz funtzio seguru bat erabiliz, esaterako, `bcrypt`edo `scrypt`; eta kasurik okerrenean, `pbkdf2`
 
 **Bestela:** funtzio segururik erabili gabe gordetzen diren pasahitzak eta sekretuak bortxaz erasotuak izan daitezke edo hiztegi erasoak jasan ditzakete. Azkenean agerian gera daitezke, bai eta agian zabaldu ere
 
@@ -1053,7 +1053,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **TL;PL:** neurriak hartu behar dira npm erregistro publikoetan sekretuak nahi gabe argitaratzeko arriskua ekiditeko. Erabil daiteke `.npmignore` fitxategi bat karpeta edo fitxategi espezikoak zerrenda beltz batean jartzeko eta `files` matrizea `package.json` artxiboarekin erabil daiteke zerrenda zuri moduan lan egin dezan
 
-**Bestela:** arriskua dago norbaitek zure proiektuaren API gakoak, pasahitzak edo beste sekretu batzuk aurkitu eta erasoak egiten saiatzeko, eta horrek galera ekonomikoak, nortasun arazoak eta bestelako arriskuak sor ditzake
+**Bestela:** arriskua dago norbaitek zure proiektuaren API giltzak, pasahitzak edo beste sekretu batzuk aurkitu eta erasoak egiten saiatzeko, eta horrek galera ekonomikoak, nortasun arazoak eta bestelako arriskuak sor ditzake
 
 🔗 [**Informazio gehiago: saihestu sekretuak argitaratzea**](/sections/security/avoid_publishing_secrets.basque.md)
 <br/><br/><br/>
@@ -1100,7 +1100,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** irudi handiagoek denbora gehiago beharko dute konpilatzeko eta zabaltzeko. Eraikitzeko soilik diren tresnek ahultasunak eduki ditzakete eta eraikitze faserako soilik gordetako sekretuak filtratu daitezke
 
-### Etapa anitzeko eraikuntzetarako Dockerfile adibidea
+### Etapa anitzeko eraikuntzetarako Dockerfile fitxategiaren adibidea
 
 ```dockerfile
 FROM node:14.4.0 AS build
@@ -1219,7 +1219,7 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 ## ![✔] 8.11. Garbitu eraikitze faseko sekretuak, saihestu sekretuak argudioetan
 
-**TL;PL:** saihestu Dockerren konpilazio inguruneko sekretuak agerian geratzea. Docker irudi bat IE bezalako ingurune anitzetan eta ekoizpena bezain garbituta ez dauden erregistroetan partekatzen da normalean. Adibide tipikoa npm token da, normalean dockerfile batera pasatzen dena argumentu gisa. Token hori irudiaren barruan geratzen da denbora luzez beharrezkoa izateari utzi ondoren ere, eta erasotzaileari npm erregistro pribatura sartzeko aukera ematen dio. Hori ekidin daiteke sekretua `.npmrc` bezalako fitxategi batean kopiatuz, eta, ondoren, sekretu hori kenduz etapa anitzeko eraikuntza bat erabiliz (kontuz, eraikitze historia ere ezabatu beharko litzateke) edo bat ere aztarnarik uzten dituen Docker build-kit funtzio sekretua erabiliz
+**TL;PL:** saihestu Dockerren konpilazio inguruneko sekretuak agerian geratzea. Docker irudi bat IE bezalako ingurune anitzetan eta ekoizpena bezain garbituta ez dauden erregistroetan partekatzen da normalean. Adibide tipikoa npm giltza (tokena) da, normalean dockerfile fitxategi batera pasatzen dena argumentu gisa. Giltza hori irudiaren barruan geratzen da denbora luzez beharrezkoa izateari utzi ondoren ere, eta erasotzaileari npm erregistro pribatura sartzeko aukera ematen dio. Hori ekidin daiteke sekretua `.npmrc` bezalako fitxategi batean kopiatuz, eta, ondoren, sekretu hori kenduz etapa anitzeko eraikuntza bat erabiliz (kontuz, eraikitze historia ere ezabatu beharko litzateke) edo bat ere aztarnarik uzten dituen Docker build-kit funtzio sekretua erabiliz
 
 **Bestela:** IE eta docker erregistroan sartzeko aukera duten guztiek erakundearen sekretu preziatuak ere eskuratzeko aukera izango dute onura gehigarri gisa
 
@@ -1257,11 +1257,11 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 ## ![✔] 8.15. Garbitu zure Dockerfile fitxategia Linterra erabiliz
 
-**TL;PL:** Linterra erabiliz zure Dockerfilea garbitzea urrats garrantzitsua da haren barruan jardunbide egokiak errespetatzen ez dituzten arazoak identifikatzeko. Docker linter espezializatu bat erabiliz errendimendu eta segurtasun hobekuntzak erraz atzematen dira, alferrikako ordu ugari aurreztea edo produkzio kodean segurtasun arazoak murriztea lortuz
+**TL;PL:** Linterra erabiliz zure Dockerfile fitxategia garbitzea urrats garrantzitsua da haren barruan jardunbide egokiak errespetatzen ez dituzten arazoak identifikatzeko. Docker garbitzaile (linter) espezializatu bat erabiliz errendimendu eta segurtasun hobekuntzak erraz atzematen dira, alferrikako ordu ugari aurreztea edo produkzio kodean segurtasun arazoak murriztea lortuz
 
-**Bestela:** okerrez, Dockerfileren sortzaileak root bat utzi zuen produkzio erabiltzaile moduan, eta jatorri ezezaguneko biltegi irudi bat ere erabili zuen. Hori liner soil batekin ekidin liteke.
+**Bestela:** okerrez, Dockerfile fitxategiaren sortzaileak nagusi (root) bat utzi zuen produkzio erabiltzaile moduan, eta jatorri ezezaguneko biltegi irudi bat ere erabili zuen. Hori liner soil batekin ekidin liteke.
 
-🔗 [**Informazio gehiago: garbitu zure Dockerfilea**](/sections/docker/lint-dockerfile.basque.md)
+🔗 [**Informazio gehiago: garbitu zure Dockerfile fitxategia**](/sections/docker/lint-dockerfile.basque.md)
 
 <br/><br /><br />
 

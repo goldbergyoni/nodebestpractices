@@ -57,7 +57,7 @@ CMD [ "node", "dist/app.js" ]
 
 <br/><br/>
 
-### Anti ereduaren kode adibidea: instalatu menpekotasun guztiak Dockerfileko etapa bakarrean
+### Anti ereduaren kode adibidea: instalatu menpekotasun guztiak Dockerfile fitxategiko etapa bakarrean
 
 <details>
 

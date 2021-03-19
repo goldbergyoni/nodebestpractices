@@ -6,7 +6,7 @@
 
 ### Kode adibidea: zenbatu jarraian huts egin duten baimen saiakerak erabiltzaile izenaren eta IP bikotearen arabera, eta guztira izandako hutsegiteak IP helbidearen arabera.
 
-Erabili [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) npm paketea.
+Erabili [abiadura-mugatzaile-malgua](https://www.npmjs.com/package/rate-limiter-flexible) (rate-limiter-flexible) npm paketea.
 
 Sortu bi mugatzaile:
 

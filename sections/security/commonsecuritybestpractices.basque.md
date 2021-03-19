@@ -24,7 +24,7 @@ Ohiko segurtasun jardunbideen atalak esparru eta konbentzio askotan estandarizat
 
 ## ![✔] Ausazko kateak sortzea Node.js erabiliz
 
-**TL; DR:** tokenetarako eta segurtasunaren menpekoak diren beste kasu batzuetarako sasi ausazko kateak sortzen dituen funtzio pertsonalizatua erabiltzea ez da, agian, uste bezain ausazkoa izango, eta, ondorioz, zure aplikazioa eraso kriptografikoen aurrean zaurgarria izan daditeke. Ausazko kate seguruak sortu behar dituzunean, erabili [`crypto.randomBytes(size, [callback])`](https://nodejs.org/api/crypto.html#crypto_crypto_randombytes_size_callback) funtzioa sistemak eskaintzen duen entropia baliatuz.
+**TL; DR:** tokenetarako (giltzak) eta segurtasunaren menpekoak diren beste kasu batzuetarako sasi ausazko kateak sortzen dituen funtzio pertsonalizatua erabiltzea ez da, agian, uste bezain ausazkoa izango, eta, ondorioz, zure aplikazioa eraso kriptografikoen aurrean zaurgarria izan daditeke. Ausazko kate seguruak sortu behar dituzunean, erabili [`crypto.randomBytes(size, [callback])`](https://nodejs.org/api/crypto.html#crypto_crypto_randombytes_size_callback) funtzioa sistemak eskaintzen duen entropia baliatuz.
 
 **Bestela:** sasi ausazko kateak sortzen direnean kriptografikoki seguruak diren metodorik gabe, erasotzaileek sortutako emaitzak aurreikusi eta erreproduzi ditzakete, zure aplikazioa segurtasunik gabe geldituz.
 
@@ -35,7 +35,7 @@ Jarraian, OWASP proiektuko hainbat gomendio garrantzitsu zerrendatu ditugu
 ## ![✔] OWASP A2: hautsitako autentifikazioa
 
 - Eskatu MFA / 2FA zerbitzu eta kontu garrantzitsuetarako
-- Biratu pasahitzak eta atzitzeko gakoak maiz, SSH gakoak/giltzak barne
+- Biratu pasahitzak eta atzitzeko gakoak maiz, SSH giltzak barne
 - Aplikatu pasahitz politika sendoak, bai operazioetarako, bai aplikazioko erabiltzaileen kudeaketarako ([🔗 OWASP pasahitz gomendioa](https://www.owasp.org/index.php/Authentication_Cheat_Sheet#Implement_Proper_Password_Strength_Controls.22))
 - Ez bidali edo zabaldu zure aplikazioa lehenespenezko kredentzialekin, batez ere administratzaile erabiltzaileentzat edo menpeko dituzun kanpoko zerbitzuentzat
 - Erabili OAuth, OpenID eta horiek bezalako autentifikazio metodo estandarrak, eta **saihestu** oinarrizko autentifikazioa
@@ -78,7 +78,7 @@ Jarraian, OWASP proiektuko hainbat gomendio garrantzitsu zerrendatu ditugu
 
 - Eskaneatu dockeren irudiak ahulezia ezagunak aurkitzeko (Dockeren eta beste hornitzaile batzuen eskaneatze zerbitzuak erabiliz)
 - Gaitu instantzia automatikoen (makina) adabakiak eta bertsio berritzea segurtasun adabakirik ez duten sistema eragileen bertsio zaharrak exekutatzea ekiditeko
-- Eman erabiltzaileari 'id', 'sarbidea' eta 'eguneratu'ren tokenak, sarbide tokenak iraupen laburra izan dezan eta tokenarekin egunera dadin
+- Eman erabiltzaileari 'id', 'sarbidea' eta 'eguneratu'ren giltzak(tokenak), sarbide giltzak (tokenak) iraupen laburra izan dezan eta giltzarekin (tokenarekin) egunera dadin
 - Erregistratu eta ikuskatu APIaren dei guztiak hodei eta kudeaketa zerbitzuetara (adibidez, nork ezabatu zuen S3 ontzia?) AWS CloudTrail bezalako zerbitzuak erabiliz
 - Exekutatu zure hodei hornitzailearen segurtasun egiaztatzailea (adibidez, AWS segurtasun fidagarritasun aholkularia)
 
