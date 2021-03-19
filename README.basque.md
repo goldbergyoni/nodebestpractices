@@ -1282,6 +1282,7 @@ Komunitatearen ekarpena dira hemengo itzulpen guztiak eman. Oso pozik hartuko ge
 - ![CN](/assets/flags/CN.png) [Txinera](./README.chinese.md) - [Matt Jin](https://github.com/mattjin)-ren eskutik
 - ![RU](/assets/flags/RU.png) [Errusiera](./README.russian.md) - [Alex Ivanov](https://github.com/contributorpw)-ren eskutik
 - ![PL](/assets/flags/PL.png) [Poloniera](./README.polish.md) - [Michal Biesiada](https://github.com/mbiesiad)-ren eskutik
+- ![EU](/assets/flags/EU.png) [Euskara](README.basque.md) - [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuestaren eskutik
 
 ### Aribidean dauden itzulpenak
 
@@ -1290,7 +1291,6 @@ Komunitatearen ekarpena dira hemengo itzulpen guztiak eman. Oso pozik hartuko ge
 - ![KR](/assets/flags/KR.png) [Koreera](README.korean.md) - [Sangbeom Han](https://github.com/uronly14me)-ren eskutik ([Eztabaidan](https://github.com/goldbergyoni/nodebestpractices/issues/94))
 - ![ES](/assets/flags/ES.png) [Gaztelera](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Eztabaidan](https://github.com/goldbergyoni/nodebestpractices/issues/95))
 - ![TR](/assets/flags/TR.png) Turkiera ([Eztabaidan](https://github.com/goldbergyoni/nodebestpractices/issues/139))
-- ![EU](/assets/flags/EU.png) [Euskara](README.basque.md) - [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuestaren eskutik ([Eztabaidan](https://github.com/goldbergyoni/nodebestpractices/issues/842))
 
 <br/><br/>
 
