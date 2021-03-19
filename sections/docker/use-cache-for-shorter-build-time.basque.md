@@ -2,7 +2,7 @@
 
 ## Azalpena
 
-Docker irudiak geruzen konbinazioak dira. Izan ere, zure Dockerfileko agindu bakoitzak geruza bat sortzen du. Dockeren daemonak konpilazioen arteko geruza horiek erabil ditzake, aginduak berdinak badira edo `COPY` edo `ADD` fitxategiak berdinak badira. ⚠️ Cachea ezin bada geruza jakin batean erabili, ondorengo geruza guztiak ere ezgaituak izango dira. Horrexegatik, ordena garrantzitsua da. Zure Dockerfilea zuzen diseinatzea ezinbestekoa da, zure konpilazioan atal mugikorren kopurua murrizteko; gutxien eguneratzen diren aginduak goialdean egon beharko lirateke, eta etengabe aldatzen ari diren aginduak (aplikazioaren kodea, esaterako), berriz, behe aldean.
+Docker irudiak geruzen konbinazioak dira. Izan ere, zure Dockerfile fitxategiko agindu bakoitzak geruza bat sortzen du. Dockeren daemonak konpilazioen arteko geruza horiek erabil ditzake, aginduak berdinak badira edo `COPY` edo `ADD` fitxategiak berdinak badira. ⚠️ Cachea ezin bada geruza jakin batean erabili, ondorengo geruza guztiak ere ezgaituak izango dira. Horrexegatik, ordena garrantzitsua da. Zure Dockerfile fitxategia zuzen diseinatzea ezinbestekoa da, zure konpilazioan atal mugikorren kopurua murrizteko; gutxien eguneratzen diren aginduak goialdean egon beharko lirateke, eta etengabe aldatzen ari diren aginduak (aplikazioaren kodea, esaterako), berriz, behe aldean.
 Baita ere, garrantzitsua da jakitea operazio luzeak abiarazten dituzten aginduek puntu gorenaren inguruan egon beharko luketeela, horrela bermatuko delako bakarrik beharrezkoak direnean gertatzea (docker irudia eraikitzen duzun bakoitzean aldatzen ez badira behintzat). Cachetik Docker irudi bat berreraikitzea ia-ia berehalakoa izan daiteke era egokian eginez gero.
 
 ![Dockeren geruzak](/assets/images/docker_layers_schema.png)
@@ -13,7 +13,7 @@ Baita ere, garrantzitsua da jakitea operazio luzeak abiarazten dituzten aginduek
 
 #### Ekidin une oro aldatzen den Avoid LABEL (etiketa)
 
-Zure Dockerfilearen hasieran konpilazio zenbakia duen etiketaren bat badaukazu, cachea baliogabetua izango da konpilazio bakoitzean
+Zure Dockerfile fitxategiaren hasieran konpilazio zenbakia duen etiketaren bat badaukazu, cachea baliogabetua izango da konpilazio bakoitzean
 
 ```Dockerfile
 #Fitxategiaren hasiea
@@ -22,7 +22,7 @@ FROM node:10.22.0-alpine3.11 as builder
 # Ez egin hau hemen!
 LABEL build_number="483"
 
-#... Dockerfilearen gainontzeko guztia
+#... Dockerfile fitxategiaren gainontzeko guztia
 ```
 
 #### Eduki .dockerignore fitxategi egokia

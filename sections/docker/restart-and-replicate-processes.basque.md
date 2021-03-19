@@ -12,7 +12,7 @@ Dockeren exekuzio denboraren kudeatzaileak, Kubernetes bezala, benetan onak dira
 
 <details>
 
-<summary><strong>Dockerfile artxiboa</strong></summary>
+<summary><strong>Dockerfile fitxategia</strong></summary>
 
 ```
 
@@ -31,7 +31,7 @@ CMD ["node", "index.js"]
 
 <details>
 
-<summary><strong>Dockerfile artxiboa</strong></summary>
+<summary><strong>Dockerfile fitxategia</strong></summary>
 
 ```
 FROM node:12-slim

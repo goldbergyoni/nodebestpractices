@@ -7,7 +7,7 @@
 Hona hemen produkzioaren mantentzean eta egonkortasunean asko eragiten duten garapen aholkuen zerrenda:
 
 - Hamabi faktoreen gida: ezagutu [hamabi faktoreen](https://12factor.net/) gida
-- Izan aberri gabea: ez gorde daturik tokiko web zerbitzari jakin batean (ikusi buleta bereizia: 'Izan aberri gabea)
+- Izan aberrigabea: ez gorde daturik tokiko web zerbitzari jakin batean (ikusi buleta bereizia: 'Izan aberrigabea)
 - Cachea: erabili asko cachea, baina inoiz ez huts eragin cache ez datorrelako bat
 - Probatu memoria: neurtu memoriaren erabilera eta ihesak zure garapen fluxuaren zati gisa; "memwatch" bezalako tresnek asko erraz dezakete zeregin hori
 - Izen funtzioak: gutxitu funtzio anonimoen erabilera (hau da, lineako deiak itzultzea), memoria profilatzaile tipiko batek metodoaren izen bakoitzeko memoria erabiliko baitu

@@ -40,4 +40,4 @@ const unsafe = new RegExp('/(x+x+)+y/)');
 ### Beste blogari batzuek diotena
 
 [Adam Baldwin](https://www.safaribooksonline.com/blog/2014/03/28/using-eslint-plugins-node-js-app-security/)en blogetik hartua:
-> Linting ez da zuriune, puntu eta koma edo eval enuntziatuei buruzko arau pedanteak betearazteko tresna soilik izan behar. ESLintek esparru indartsua eskaintzen du zure kodean arriskutsuak izan daitezkeen eredu ugari ezabatzeko (adierazpen erregularrak, sarrera balioztatzea, eta abar). Segurtasunaz arduratzen diren JavaScript garatzaileek kontuan hartu beharreko tresna indartsu berria eskaintzen duela uste dut.
+> Garbitzailea (Linting) ez da zuriune, puntu eta koma edo eval enuntziatuei buruzko arau pedanteak betearazteko tresna soilik izan behar. ESLintek esparru indartsua eskaintzen du zure kodean arriskutsuak izan daitezkeen eredu ugari ezabatzeko (adierazpen erregularrak, sarrera balioztatzea, eta abar). Segurtasunaz arduratzen diren JavaScript garatzaileek kontuan hartu beharreko tresna indartsu berria eskaintzen duela uste dut.

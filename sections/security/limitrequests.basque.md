@@ -60,5 +60,5 @@ app.use('/user/', apiLimiter);
 ### Beste blogari batzuek diotena
 
 [NGINX bloga](https://www.nginx.com/blog/rate-limiting-nginx/):
-> Abiadura mugatzea segurtasun helburuak lortzeko erabil daiteke, adibidez, bortxa erabiliz pasahitzak asmatzeko erasoak moteltze aldera. DDoS erasoen aurka babesten lagun dezake sarrerako eskaera tasa benetako erabiltzaileentzako ohiko balio batera mugatuz eta (erregistroarekin batera) bideratutako URLak identifikatuz. Oro har, abiadura mugatzen da  hasierako (upstream) aplikazioen zerbitzariak babesteko erabiltzaileek aldi berean eskaera gehiegi bidaltzen dutenean.
+> Abiadura mugatzea segurtasun helburuak lortzeko erabil daiteke, adibidez, bortxa erabiliz pasahitzak asmatzeko erasoak moteltze aldera. DDoS erasoen aurka babesten lagun dezake sarrerako eskaera tasa benetako erabiltzaileentzako ohiko balio batera mugatuz eta (erregistroarekin batera) bideratutako URLak identifikatuz. Oro har, abiadura mugatzen da hasierako (upstream) aplikazioen zerbitzariak babesteko erabiltzaileek aldi berean eskaera gehiegi bidaltzen dutenean.
 

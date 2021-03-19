@@ -1,4 +1,4 @@
-# Izan aberri gabea, hil zure zerbitzariak ia egunero
+# Izan aberrigabea, hil zure zerbitzariak ia egunero
 
 <br/><br/>
 

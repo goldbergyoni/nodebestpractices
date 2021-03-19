@@ -12,7 +12,7 @@ Hauetako bat izan daiteke zure irtenbide egokiena:
 1. Alderantzizko proxy bat erabiltzea: zure fitxategi estatikoak Node aplikazioaren ondoan kokatuko dira, eta Node aplikazioaren aurrean jartzen den proxy batek (adibidez, nginx) bideratuko ditu fitxategien karpeta estatikoari egindako eskaerak.
    Horrela, zure Node aplikazioa arduratzen da fitxategi estatikoak hedatzeaz, baina ez zerbitzatzeaz. Zure frontden/interfazeko lankideari asko gustatuko zaio antolaketa hau, frontden/interfazeko eskaerak galarazten baititu.
 
-2. Hodeian biltegiratzea: zure fitxategi estatikoak EZ dira zure Node aplikazioaren edukiaren zati izango, eginkizun horretarako sortu diren AWS S3, Azure BlobStorage edo antzeko beste zerbitzu batzuetara igoko dira eta. Antolaketa hau erabiliz, zure Node aplikazioak ez du fitxategi estatikoak hedatzeko ardurarik izango, ezta horiek zerbitzatzeko ere; beraz, Node eta Frontend/interfazea erabat banatuta egongo dira, edonola ere talde desberdinek kudeatuta baitaude.
+2. Hodeian biltegiratzea: zure fitxategi estatikoak EZ dira zure Node aplikazioaren edukiaren zati izango, eginkizun horretarako sortu diren AWS S3, Azure BlobStorage edo antzeko beste zerbitzu batzuetara igoko dira eta. Antolaketa hau erabiliz, zure Node aplikazioak ez du fitxategi estatikoak hedatzeko ardurarik izango, ezta horiek zerbitzatzeko ere; beraz, Node eta Frontenda/interfazea erabat banatuta egongo dira, edonola ere talde desberdinek kudeatuta baitaude.
 
 <br/><br/>
 
