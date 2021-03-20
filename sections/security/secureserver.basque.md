@@ -4,13 +4,14 @@
 
 ### Azalpena
 
-[Let'sEncrypt](https://letsencrypt.org/) bezalako zerbitzuak erabiltzeak, **dohaineko** SSL/TLS ziurtagiriak hornitzen dituen autoritate ziurtagiri-emailea, zure aplikazioetan komunikazioa enkriptatzen lagun dezake. [Express](http://expressjs.com/) bezalako Node.jsen frameworkek (`https` moduluan oinarritua) SSL/TLS onartzen dute, kodigo ilara gutxi batzuetan egin daitekeena.
+
+[Let'sEncrypt](https://letsencrypt.org/) bezalako zerbitzuak erabiltzeak, **dohaineko** SSL/TLS ziurtagiriak hornitzen dituen autoritate ziurtagiri-emailea, zure aplikazioetan komunikazioa enkriptatzen lagun dezake. [Express](http://expressjs.com/) bezalako Node.jsen frameworkek (`https` moduluan oinarritua) SSL/TLS onartzen dute, kode ilara gutxi batzuetan egin daitekeena.
 
 SSL/TLS ezarri zenezake alderantzizko proxy batean, esaterako [NGINX](http://nginx.org/en/docs/http/configuring_https_servers.html) edo HAProxy.
 
 <br/><br/>
 
-### Kode adibidea : Express frameworka erabiliz SSL/TLS gaitu
+### Kode adibidea: gaitu Express frameworka erabiliz SSL/TLS
 
 ```javascript
 const express = require("express");
