@@ -4,7 +4,7 @@
 
 ### Azalpena
 
-Garapen menpekotasunek asko handitzen dute edukiontziaren eraso azalera (esaterako, segurtasun ahulezia potentzialak) eta edukiontziaren tamaina. Adibide gisa, npm segurtasun zulo handienak [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes) bezakako garapen menpekotasunek sortuak izan ziren, edo [nodemonek erabilitako ebentu katea](https://snyk.io/blog/a-post-mortem-of-the-malicious-event-stream-backdoor/) bezalako garapenerako paketeek. Arrazoi horiek direla eta, ekoizpenerako bidaliko den irudiak segurua eta txikia izan behar du. Hasiera bikaina da npm install komandoa `--production`ekin abiatzea. Hala ere, `npm ci` erabiltzea oraindik seguruagoa da, hutsetik sortutako instalazioa eta sarrail filtxategiaren sorrera ziurtatzen ditu eta. Tokiko cachea ezabatzeak hamarkada MB gehiago berreskuratzen lagun dezake. Sarritan edukiontzi batean probatu edo araztu behar izaten da devDependencies erabiliz. Kasu horretan, [etapa anitzeko konpilazioek](/sections/docker/multi_stage_builds.md) menpekotasun multzo zenbaita izaten lagun dezakete eta, azkenik, ekoizpenerako behar direnak soilik.
+Garapen menpekotasunek asko handitzen dute edukiontziaren eraso azalera (esaterako, segurtasun ahulezia potentzialak) eta edukiontziaren tamaina. Adibide gisa, npm segurtasun zulo handienak [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes) bezakako garapen menpekotasunek sortuak izan ziren, edo [nodemonek erabilitako ebentu katea](https://snyk.io/blog/a-post-mortem-of-the-malicious-event-stream-backdoor/) bezalako garapenerako paketeek. Arrazoi horiek direla eta, ekoizpenerako bidaliko den irudiak segurua eta txikia izan behar du. Hasiera bikaina da npm install komandoa `--production`ekin abiatzea. Hala ere, `npm ci` erabiltzea oraindik seguruagoa da, hutsetik sortutako instalazioa eta sarrail filtxategiaren sorrera ziurtatzen ditu eta. Tokiko cachea ezabatzeak hamarkada MB gehiago berreskuratzen lagun dezake. Sarritan edukiontzi batean probatu edo araztu behar izaten da devDependencies erabiliz. Kasu horretan, [etapa anitzeko konpilazioek](/sections/docker/multi_stage_builds.basque.md) menpekotasun multzo zenbaita izaten lagun dezakete eta, azkenik, ekoizpenerako behar direnak soilik.
 
 <br/><br/>
 
@@ -27,7 +27,7 @@ RUN npm ci --production && npm clean cache --force
 
 <br/><br/>
 
-### Kode adibidea: ekoizpenerako instalazioa etapa anitzeko  eraikuntzarekin
+### Kode adibidea: ekoizpenerako instalazioa etapa anitzeko eraikuntzarekin
 
 <details>
 
@@ -82,4 +82,4 @@ RUN npm install
 
 [npmen dokumentazioa](https://docs.npmjs.com/cli/ci.html)
 
-> Komando hau npm-installen antzekoa da, salbu eta ingurune automatizatuetan erabiltzeko sortua dela, hala nola, proben plataformak, integrazio eta inplementazio  jarraituak, edo zure menpekotasunen instalazio garbi bat egiten ari zarela ziur zauden egoeretan. npm install askoz azkarragoa izan liteke komando arrunta baino, erabiltzaileentzako funtzionalitate batzuk alde batera uzten dituelako. Instalazio arrunt bat baino zorrotzagoa ere bada, npm erabiltzaile gehienek gutxinaka-gutxinaka instalatutako tokiko inguruneek sortzen dituzten erroreak edo kontraesanak identifikatzen lagungarri izan daitekeena.
+> Komando hau npm-installen antzekoa da, salbu eta ingurune automatizatuetan erabiltzeko sortua dela, hala nola, proben plataformak, integrazio eta inplementazio jarraituak, edo zure menpekotasunen instalazio garbi bat egiten ari zarela ziur zauden egoeretan. npm install askoz azkarragoa izan liteke komando arrunta baino, erabiltzaileentzako funtzionalitate batzuk alde batera uzten dituelako. Instalazio arrunt bat baino zorrotzagoa ere bada, npm erabiltzaile gehienek gutxinaka-gutxinaka instalatutako tokiko inguruneek sortzen dituzten erroreak edo kontraesanak identifikatzen lagungarri izan daitekeena.
