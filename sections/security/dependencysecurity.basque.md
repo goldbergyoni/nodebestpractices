@@ -11,7 +11,7 @@ Node.js aplikazioetan tresna ugari erabil daitezke hirugarrenen paketeetan ahula
 - [NPM audit](#npm-audit)
 - [Snyk](#snyk)
 - [Greenkeeper](#greenkeeper)
-- [Additional Resources](#additional-resources)
+- [Baliabide osagarriak](#baliabide-osagarriak)
 
 ### NPM Audit
 
