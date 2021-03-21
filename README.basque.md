@@ -426,7 +426,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 **Bestela:** gaizki pasatu eta infernura joateko biderik azkarrena hartu nahi baduzu, erabili callbackak errore asinkronoak kudeatzeko, seguruenik, infernura joateko biderik azkarrena aukeratuko duzu. Estilo honek gune guztietako erroreak egiaztatzera behartzen du, eta, gainera, kode habiaratze beti deserosoaren kudeaketa eta kode fluxua ulertzea zailtzen du
 
-🔗[**Informazio gehiago:** async wait 1.0ren gida](https://github.com/yortus/asyncawait)
+🔗[**Informazio gehiago:** async-await 1.0ren gida](https://github.com/yortus/asyncawait)
 
 <br/><br/>
 
