@@ -47,13 +47,13 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 ## Edukien aurkibidea
 
 1. [Proiektuaren egitura (5)](#1-proiektuaren-egitura)
-2. [Erroreen kudeaketa (11) ](#2-erroreen-kudeaketa)
+2. [Erroreen kudeaketa (12) ](#2-erroreen-kudeaketa)
 3. [Kode estiloa (12) ](#3-kode-estiloa)
 4. [Probak eta kalitate orokorra (13) ](#4-probak-eta-kalitate-orokorra)
 5. [Ekoizpena (19) ](#5-ekoizpena)
 6. [Segurtasuna (25)](#6-segurtasuna)
 7. [Errendimendua (2) (Aribidean ✍️)](#7-zirriborroa-errendimendua)
-8. [Docker (15)](#8-docker-jardunbide-egokienak)
+8. [Docker, jardunbide egokienak (15)](#8-docker-jardunbide-egokienak)
 
 <br/><br/>
 
@@ -222,8 +222,6 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 🔗 [**Informazio gehiago: huts egin azkar**](/sections/errorhandling/failfast.basque.md)
 
 <br/><br/><br/>
-
-<p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
 
 ## ![✔] 2.12 Agintzen zain egon beti itzuli aurretik, pilak arrastorik uztea saihesteko
 
