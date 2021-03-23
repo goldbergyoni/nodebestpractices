@@ -4,8 +4,7 @@
 
 ### Azalpena
 
-Askok middlewarearen probak alde batera uzten dituzte sistemaren zati txiki bat adierazten dutelako eta zuzeneko Express zerbitzaria edukitzea behar dutelako. Bi arrazoi horiek okerrak dira: middlewareak txikiak dira, baina eskaera guztiei edo gehienei eragiten diete, eta erraz probatu daitezke {req,res} JS objektuak berreskuratzen dituzten funtzio huts gisa. Middleware funtzioak probatzeko, norberak funtzioa deitu behar du eta {req,res} objektuekin dagoen elkarrekintza espiatu (spy) ([erabili Sinon adibide gisa](https://www.npmjs.com/package/sinon)), funtzioak ekintza zuzena egin duela ziurtatzeko. [node-mock-http](https://www.npmjs.com/package/node-mocks-http) liburutegia oraindik ere urrutiago doa eta {req,res} objektuak faktorizatzen ditu beraien jokaera espiatuz. Adibidez, res objektuan zehaztutako http estatus bat espero den balioarekin bat datorren baiezta dezake (ikusi beheko adibidea).
-
+Askok middlewarearen probak alde batera uzten dituzte sistemaren zati txiki bat adierazten dutelako eta zuzeneko Express zerbitzaria edukitzea behar dutelako. Bi arrazoi horiek okerrak dira: middlewareak txikiak dira, baina eskaera guztiei edo gehienei eragiten diete, eta erraz probatu daitezke {req,res} JS objektuak berreskuratzen dituzten funtzio huts gisa. Middleware funtzioak probatzeko, norberak funtzioa deitu behar du eta {req,res} objektuekin dagoen elkarrekintza espiatu (spy) ([erabili Sinon adibide gisa](https://www.npmjs.com/package/sinon)), funtzioak ekintza zuzena egin duela ziurtatzeko. [node-mock-http](https://www.npmjs.com/package/node-mocks-http) liburutegia oraindik ere urrutiago doa eta {req,res} objektuak faktorizatzen ditu beraien jokaera espiatuz. Adibidez, res objektuan zehaztutako http estatus bat espero den balioarekin bat datorren baiezta dezake (ikusi beheko adibidea)
 
 <br/><br/>
 
