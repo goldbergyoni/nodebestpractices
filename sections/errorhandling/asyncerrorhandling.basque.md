@@ -2,9 +2,9 @@
 
 ### Azalpena
 
-Callbackak ez dira kudea errazak programatzaile gehienek ez dituzte ondo ezagutzen eta. Callbackek etengabeko errore egiaztatzea eskatzen dute, kode korapilotsua jasanaraziz eta kodigoaren fluxuaren ulergarritasuna zailduz. BlueBird, async, eta Q bezalako promesa liburutegiek kodigo estilo estandarra RETURN eta THROW erabiliz paketatzen dute, programaren fluxua kontrolatzeko. Zehazki, kodigo nagusia funtzio bakoitzean erroreak kuadeatzetik askatzea ahalbidetzen duen try-catch errore kudeaketa estilo gogokoena onartzen dute
+Callbackak ez dira kudea errazak programatzaile gehienek ez dituzte ondo ezagutzen eta. Callbackek etengabeko errore egiaztatzea eskatzen dute, kode korapilotsua jasanaraziz eta kodigoaren fluxuaren ulergarritasuna zailduz. BlueBird, async, eta Q bezalako promesa liburutegiek kodigo estilo estandarra RETURN eta THROW erabiliz paketatzen dute, programaren fluxua kontrolatzeko. Zehazki, kodigo nagusia funtzio bakoitzean erroreak kudeatzetik askatzea ahalbidetzen duen try-catch errore kudeaketa estilo gogokoena onartzen dute
 
-### Kode adibidea: promesen erabilera erroreak atzemateko
+### Kode adibidea: promesen erabilera erroreak antzemateko
 
 ```javascript
 return aFuntzioa()
@@ -15,7 +15,7 @@ return aFuntzioa()
   .then(betiExekutatuFuntzioHau);
 ```
 
-### Kode adibidea: async/awaiten erabilera erroreak atzemateko
+### Kode adibidea: async/awaiten erabilera erroreak antzemateko
 
 ```javascript
 async function exekutatuAtazaAsinkronoBat() {
@@ -93,26 +93,26 @@ datuakEskuratu(
 
 </details>
 
-### Blogeko aipua: "Promesekin arazo bat dugu"
+### Blog aipua: "Promesekin arazo bat dugu"
 
-pouchdb.com blogetik hartua
+pouchdb.com bloga
 
-> ……Izatez, callbackek zerbait oraindik maltzurragoa egiten dute: pilaz gabetzen gaituzte, programazio lengoaietan sarri egintzat jotzen duguna. Kodea pila gabe idaztea kotxe bat freno pedalik gabe gidatzea bezala da: ez zara konturatzen zein puntura arte behar duzun erabiltzen saiatu eta ez dagoela konturatzen zaren momentura arte. Promesen helburu nagusia da asinkronoa (async) erabiltzean galdutako lengoaien oinarri guztiak berreskuratzea: return, throw eta pila. Baina promesak modu egokian erabiltzen jakin beharra dago beraiei probetxua ateratzeko.
+> ……Izatez, callbackek zerbait oraindik maltzurragoa egiten dute: pilaz gabetzen gaituzte, programazio lengoaietan sarri egintzat jotzen duguna. Kodea pila gabe idaztea kotxe bat freno pedalik gabe gidatzea bezala da: ez zara konturatzen zein puntura arte behar duzun erabiltzen saiatu eta ez dagoela konturatzen zaren momentura arte. Promesen helburu nagusia da asinkronoa (async) erabiltzean galdutako lengoaien oinarri guztiak berreskuratzea: return, throw eta pila. Baina promesak modu egokian erabiltzen jakin beharra dago beraiei probetxua ateratzeko
 
-### Blogeko aipua: "Promesen metodoa askoz ere trinkoagoa da"
+### Blog aipua: "Promesen metodoa askoz ere trinkoagoa da"
 
-gosquared.com blogetik hartua
+gosquared.com bloga
 
-> ………Promesen metodoa askoz ere trinkoagoa, argiagoa eta idatzeko azkarragoa da. Errore edo salbuespen bat gertatzen bada, .catch() kudeatzaile bakar batek maneiatzen du. Errore guztiak kudeatzeko leku bakarra edukitzeak erroreen egiaztatzea lanaren fase bakoitzean idatzi beharrik ez dagoela adierazten du.
+> ………Promesen metodoa askoz ere trinkoagoa, argiagoa eta idazteko azkarragoa da. Errore edo salbuespen bat gertatzen bada, .catch() kudeatzaile bakar batek maneiatzen du. Errore guztiak kudeatzeko leku bakarra edukitzeak erroreen egiaztatzea lanaren fase bakoitzean idatzi beharrik ez dagoela adierazten du
 
-### Blogeko aipua: "Promesak jatorrizko ES6 dira, eta sorgailuekin erabil daitezke"
+### Blog aipua: "Promesak jatorrizko ES6 dira, eta sorgailuekin erabil daitezke"
 
-StrongLoop blogetik hartua
+StrongLoop bloga
 
-> ….Callbackek erroreen kudeaketa istorio kaskarra dute. Promesak hobeak dira. Promesekin, erabili Expressen errore kudeaketa kapsulatua eta horrela salbuespenen bat ez atzemateko aukerak murriztuko dituzu. Promesak jatorriz ES6ak dira, eta sorgailuekin eta ES7ren async/await bezalako proposamenekin erabil daitezke Babel bezalako konpilatzaileetan.
+> ……Callbackek erroreen kudeaketa istorio kaskarra dute. Promesak hobeak dira. Promesekin, erabili Expressen errore kudeaketa kapsulatua eta horrela salbuespenen bat ez antzemateko aukerak murriztuko dituzu. Promesak jatorriz ES6ak dira, eta  generatzaileekin eta ES7ren async/await bezalako proposamenekin erabil daitezke Babel bezalako konpilatzaileetan
 
-### Blogeko aipua: "Ohiko fluxu kontrol erregularren egitura guzti horiek guztiz apurtuta daude"
+### Blog aipua: "Ohiko fluxu kontrol erregularren egitura guzti horiek guztiz apurtuta daude"
 
-Benno’s blogetik hartua
+Benno’s bloga
 
 > ……Asinkronoaren, hau da, callbacketan oinarritutako programazioaren gauza hoberenetako bat da ohituta zauden fluxu kontrol erregularren egitura guzti horiek guztiz apurtuta daudela. Hala ere, salbuespenen kudeaketa da niretzat apurtuen dagoena. Javascriptek nahiko try…catch egitura ezaguna hornitzen du. Salbuespenen arazoa da, erroreak pila batean ekiditeko aukera ona eman arren, errorea beste pila batean gertatzen bada guztiz alferrikakoak izaten bukatzen dutela…
