@@ -1,14 +1,13 @@
-# Erabili erregistratze tresna helduak erroreen ikusgaitasuna handitzeko
+# Erabili erregistratze tresna heldu bat erroreen ikusgaitasuna handitzeko
 
 ### Azalpena
 
-
-Gustuko dugu console.log, baina [Pino][pino] bezalako erregistratzaile tresna ospetsu eta iraunkorra (errendimenduan zentratutako aukera berriagoa) ezinbestekoa da proiektu serioetarako. Errendimendu handiko erregistratze tresnek erroreak eta arazo posibleak identifikatzen laguntzen dute. Erregistratze aholkuen artean:
+Gustuko dugu console.log, baina [Pino][pino] bezalako erregistratzaile tresna ospetsu eta iraunkorra (errendimenduan zentratutako aukera berriagoa) ezinbestekoa da proiektu serioetarako. Errendimendu handiko erregistratze tresnek erroreak eta arazo posibleak identifikatzen laguntzen dute. Erregistratze aholkuen artean:
 
 1. Maiz erregistratu maila ezberdinak erabiliz (debug, info, error)
 2. Erregistratzerako orduan, eman testuinguruaren informazioa JSON objektu eran
 3. Monitorizatu erregistro kontsultak API batekin (erregistro sistema ezberdinetarako erabilgarria) edota erregistro ikustailearen software batekin
-4. Erakutsi erregistroen informazioa [Splunk][splunk] bezalako operazio inteligentzia tresnekin
+4. Erakutsi erregistroen informazioa [Splunk][splunk] bezalako operazio inteligentzia tresnekin
 
 [pino]: https://www.npmjs.com/package/pino
 [splunk]: https://www.splunk.com/
@@ -25,9 +24,9 @@ const erregistratzailea = pino();
 erregistratzailea.info({ anything: 'Hau metadatua da' }, 'Frogatu Erregistro Mezua %s parametroren batekin', 'parametroren bat');
 ```
 
-### Blogeko aipua: "Erregistratzailearen betebeharrak"
+### Blog aipua: "Erregistratzailearen betebeharrak"
 
-StrongLoop blogetik hartua ("Winston eta Bunyanen Node.js Erregistratzaile sistemak konparatzen" Alex Corbatcheven eskutik, 2014ko ekainaren 24a):
+StrongLoop bloga ("Winston eta Bunyanen Node.js Erregistratzaile sistemak konparatzen" Alex Corbatcheven eskutik, 2014ko ekainaren 24a):
 
 > Identifika ditzagun betebehar gutxi batzuk (erregistratzaile batentzat):
 >
@@ -37,7 +36,6 @@ StrongLoop blogetik hartua ("Winston eta Bunyanen Node.js Erregistratzaile siste
 
 ### Non dago Winston?
 
-Zergatik ohiko faboritoak (adibidez, Winston) ez dauden aholkatutako jardunbide
-onenen egungo zerrendan jakiteko, begiratu [#684][#684]an
+Zergatik ohiko faboritoak (adibidez, Winston) ez dauden aholkatutako jardunbide onenen egungo zerrendan jakiteko, begiratu # [#684][#684]an
 
 [#684]: https://github.com/goldbergyoni/nodebestpractices/issues/684
