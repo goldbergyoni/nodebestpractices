@@ -160,7 +160,7 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 
 **Bestela:** aplikazio baten bezeroak erabaki dezake aplikazioa itxi eta berrabiaraztea, ulertzen ez duen errore baten abisua jaso duelako soil-soilik. Oharra: zu zeu izan zaitezke zure aplikaziotik deitzen duena (oso ohikoa mikrozerbitzu inguruneetan)
 
-🔗 [**Informazio gehiago: dokumentatu aplikazioaren akatsak Swagger edo GraphQLren laguntzarekin**](/sections/errorhandling/documentingusingswagger.basque.md)
+🔗 [**Informazio gehiago: dokumentatu aplikazioaren erroreak Swagger edo GraphQLren laguntzarekin**](/sections/errorhandling/documentingusingswagger.basque.md)
 
 <br/><br/>
 
