@@ -320,7 +320,7 @@ const count = 2 // 2() burutzen saiatzen da, baina 2() ez da funtzio bat
 ```
 
 🔗 [**Informazio gehiago:** "Semi ESLint araua"](https://eslint.org/docs/rules/semi)
-🔗 [**Informazio gehiago:** "stekabeko ESLint arau lerroaniztunik ez"](https://eslint.org/docs/rules/no-unexpected-multiline)
+🔗 [**Informazio gehiago:** "Ez dago ustekabeko ESLint arau lerroaniztunik"](https://eslint.org/docs/rules/no-unexpected-multiline)
 
 <br/><br/>
 
