@@ -260,7 +260,7 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 
 **TL;PL:** kode bloke baten hasierako parentesiak irekiera instrukzioaren lerroan egon behar du
 
-### Kodearen adibidea
+### Kode adibidea
 
 ```javascript
 // Egin
@@ -288,7 +288,7 @@ Ez dio axola instrukzioak bereizteko puntu eta koma erabiltzen duzun edo ez, ohi
 
 **Bestela:** aurreko atalean esan bezala, JavaScripteko interpreteak automatikoki “puntu eta koma” gehitzen du instrukzio baten amaieran “puntu eta koma”rik ez badago edo instrukzioa behar den tokian ez dela amaitu eta horrek okerreko emaitzak eragin ditzakeela pentsatzen badu. Ustekabeko errore gehienak ekiditeko, esleipenak erabil ditzakezu eta, horrela, berehala deitutako funtzio adierazpenak erabiltzea saihestuko duzu
 
-### Kodearen adibidea
+### Kode adibidea
 
 ```javascript
 // Egin
@@ -380,7 +380,7 @@ function eginZerbait() {}
 
 **Bestela:** fitxategien barne egitura edo sinadura aldatzeak erabiltzaileen interfazea apur dezake
 
-### 3.9 Kodearen adibidea
+### 3.9 Kodea adibidea
 
 ```javascript
 // Egin
@@ -400,7 +400,7 @@ module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolve
 
 **Bestela:** `==` eragileak, berdinak ez diren aldagaiak alderatuz gero, berdinak direlako mezua helaraz dezake
 
-### 3.10 Kodearen adibidea
+### 3.10 Kode adibidea
 
 ```javascript
 "" == "0"; // false
