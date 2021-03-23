@@ -256,7 +256,7 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 
 <br/><br/>
 
-## ![✔] 3.3 Jarri kode multzo baten giltzak lerro bakar batean
+## ![✔] 3.3 Jarri kode multzo baten giltzak lerro bakarrean
 
 **TL;PL:** kode bloke baten hasierako parentesiak irekiera instrukzioaren lerroan egon behar du
 
