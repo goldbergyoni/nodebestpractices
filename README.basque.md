@@ -144,7 +144,7 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 
 <br/><br/>
 
-## ![✔] 2.4 Kudeatu erroreak gune bakar batean, Express middlewarea erabili partez
+## ![✔] 2.4 Kudeatu erroreak gune bakar batean, Express middleware erabili partez
 
 **TL;PL:** erroreak kudeatzeko logika -hala nola, haien erregistroa eramatea eta administratzaileari mezuak bidaltzea- objektu dedikatu zentralizatu batean kapsulatu behar da, erroreren bat gertatzen denean helmuga guztiek (adibidez, Express middlewarea, cron atazak, atalkako egiaztatzeak) hara deitu dezaten
 
