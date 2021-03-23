@@ -4,7 +4,7 @@
 
 ### Azalpena
 
-Urrezko proba arauari jarraituz egin proba kasu/eredu sinpleak: proba bakoitzak bere datu baseko ilarak sortu eta erabili behar ditu menpekotasunak ekiditeko eta probaren fluxua ondo ulertzeko. Egia esan, garatzaileek askotan urratzen dute hori, datu baseak betez probak exekutatu aurretik (‘test instalazioa‘ bezala ere ezagutuak), errendimendua hobetzeko xedearekin. Errendimendua gai garrantzitsua izan arren, arindua izan daiteke (adibidez, begiratu Memoria Datu Baseak "Osagarrien probak" atalean), baina proben konplexutasuna da buruko min asko ematen dituen gaia, kontutan hartu beharrekoa. Praktikan, sortu proba kasu bakoitza berariaz datu basean beharrezko informazioa gehitzeko eta jokatu bakarrik datu horiekin. Errendimendua arazo larria bihurtzen bada, adostasun orekatua aurki daiteke soilik datuak gehituko dituen proba bat idatziz eta ondoren hori bikoiztuz beste probentzat (adibidez queries)
+Urrezko proba arauari jarraituz egin proben kasu sinpleak: proba bakoitzak bere datu baseko ilarak sortu eta erabili behar ditu menpekotasunak ekiditeko eta probaren fluxua ondo ulertzeko. Egia esan, garatzaileek askotan urratzen dute hori, datu baseak betez probak exekutatu aurretik (‘test instalazioa‘ bezala ere ezagutuak), errendimendua hobetzeko xedearekin. Errendimendua gai garrantzitsua izan arren, arindua izan daiteke (adibidez, begiratu Memoria Datu Baseak "Osagarrien probak" atalean), baina proben konplexutasuna da buruko min asko ematen dituen gai, kontutan hartu beharrekoa. Praktikan, sortu proben kasu bakoitza berariaz datu basean beharrezko informazioa gehitzeko eta jokatu bakarrik datu horiekin. Errendimendua arazo larria bihurtzen bada, adostasun orekatua aurki daiteke soilik datuak gehituko dituen proba bat idatziz eta ondoren hori bikoiztuz beste probentzat (adibidez queries)
 
 <br/><br/>
 
@@ -26,7 +26,7 @@ it("Webgune baten izena eguneratzerakoan, baieztapen arrakastatsua izan", async 
 
 <br/><br/>
 
-### Kode adibidea, anti eredua: probak ez dira independenteak eta aurrez konfiguratutako datuak daudela supotzen dute
+### Anti ereduaren kode adibidea: probak ez dira independenteak eta aurrez konfiguratutako datuak daudela suposatzen dute
 
 ```javascript
 before(() => {

@@ -473,7 +473,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 <br/><br/>
 
-## ![✔] 4.4 Atzeman kodeko arazoak linter bat erabiliz
+## ![✔] 4.4 Antzeman kodeko arazoak linter bat erabiliz
 
 **TL;PL:** erabili kode linterra oinarrizko kalitatea egiaztatzeko eta antiereduak garaiz atzemateko. Exekutatu edozein proba baino lehen eta gehitu aurre-commit-a git kako moduan, edozein arazo berrikusteko eta zuzentzeko behar den denbora minimizatu ahal izateko. Era berean, egiaztatu [3. atala](#3-kode-estiloa), kodearen estilo praktikei dagokienez
 
