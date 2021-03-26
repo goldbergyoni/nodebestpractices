@@ -33,16 +33,12 @@ is_last_update_badge_date_is_today() {
     fi
 }
 
-set_update_result() {
-    echo "DID_LAST_UPDATE_BADGE_UPDATED=$1" >> $GITHUB_ENV
-}
-
 
 # We use already encoded string emoji because I'm on Windows and the calendar emoji failed to render
 CALENDAR_EMOJI_ENCODED='%F0%9F%93%85'
 
 # Date format example: March 03, 2021
-CURRENT_DATE=`date +"%B %m, %Y"`
+CURRENT_DATE=`date +"%B %d, %Y"`
 
 # We explicitly matching the img.shields.io/badge because when we change the provider of the badge the input will be changed too
 LAST_UPDATE_BADGE_REGEX='<img id="last-update-badge" src="https:\/\/img\.shields\.io\/badge\/[^>]*>'
@@ -59,10 +55,7 @@ fi
 
 if is_last_update_badge_date_is_today "$INPUT_FILE" "$UPDATED_LAST_UPDATE_BADGE"; then
     echo "No need to update the $INPUT_FILE, the last update badge already pointing to today"
-    set_update_result "false"
     exit 0
 fi
 
 sed -i "s/$LAST_UPDATE_BADGE_REGEX/$UPDATED_LAST_UPDATE_BADGE/" "$INPUT_FILE"
-
-set_update_result "true"
