@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-### Azalpen paragrafo bat
+### Azalpena
 
 Testua
 

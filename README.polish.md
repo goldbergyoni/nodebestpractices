@@ -18,7 +18,7 @@
 
 <br/>
 
-Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![TR](/assets/flags/TR.png)**TR**, ![EU](/assets/flags/EU.png)**EU** w trakcie! )](#tłumaczenia)
+Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![EU](/assets/flags/EU.png)**EU**](/README.basque.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![TR](/assets/flags/TR.png)**TR** w trakcie! )](#tłumaczenia)
 
 <br/>
 
@@ -1067,6 +1067,7 @@ Wszystkie tłumaczenia pochodzą od społeczności. Z przyjemnością uzyskamy w
 - ![CN](/assets/flags/CN.png) [Chinese](./README.chinese.md) - Dzięki uprzejmości [Matt Jin](https://github.com/mattjin)
 - ![RU](/assets/flags/RU.png) [Russian](./README.russian.md) - Dzięki uprzejmości [Alex Ivanov](https://github.com/contributorpw)
 - ![PL](/assets/flags/PL.png) [Polish](./README.polish.md) - Dzięki uprzejmości [Michal Biesiada](https://github.com/mbiesiad)
+- ![EU](/assets/flags/EU.png) [Basque](README.basque.md) - Dzięki uprzejmości [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta
 
 ### Tłumaczenia w trakcie
 
@@ -1075,7 +1076,6 @@ Wszystkie tłumaczenia pochodzą od społeczności. Z przyjemnością uzyskamy w
 - ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Courtesy of [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94))
 - ![ES](/assets/flags/ES.png) [Spanish](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/95))
 - ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/139))
-- ![EU](/assets/flags/EU.png) [Basque](README.basque.md) - Courtesy of [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/842))
 
 <br/><br/>
 

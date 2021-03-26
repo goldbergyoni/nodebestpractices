@@ -18,7 +18,7 @@
 
 <br/>
 
-Читайте на других языках: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![TR](/assets/flags/TR.png)**TR** and ![EU](/assets/flags/EU.png)**EU** in progress! )](#translations)
+Читайте на других языках: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![EU](/assets/flags/EU.png)**EU**](/README.basque.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** and ![TR](/assets/flags/TR.png)**TR** in progress! )](#translations)
 
 <br/>
 
@@ -1082,6 +1082,7 @@ null == undefined; // true
 - ![BR](/assets/flags/BR.png) [Brazilian Portuguese](./README.brazilian-portuguese.md) - Любезно предоставлено [Marcelo Melo](https://github.com/marcelosdm)
 - ![CN](/assets/flags/CN.png) [Chinese](./README.chinese.md) - Любезно предоставлено [Matt Jin](https://github.com/mattjin)
 - ![RU](/assets/flags/RU.png) [Russian](./README.russian.md) - Любезно предоставлено [Alex Ivanov](https://github.com/contributorpw)
+- ![EU](/assets/flags/EU.png) [Basque](README.basque.md) - Любезно предоставлено [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta
 
 ### Переводы в процессе
 
@@ -1090,7 +1091,6 @@ null == undefined; // true
 - ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Любезно предоставлено [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94))
 - ![ES](/assets/flags/ES.png) [Spanish](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/95))
 - ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/139))
-- ![EU](/assets/flags/EU.png) [Basque](README.basque.md) - Любезно предоставлено [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/842))
 
 <br/><br/>
 

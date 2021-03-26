@@ -2,11 +2,11 @@
 
 <br/><br/>
 
-### Azalpen Paragrafoa
+### Azalpena
 
 Probak egiterakoan daukagun erronka handiena memoriako espazio falta da, dagoeneko ekoizpen kodeak oso lanpetuta gauzka. Horregatik, proben kodeak sinplea eta ulergarria izan behar du. Probak irakurtzean, ez luke eman beharko kode inperatiboa irakurtzen ari zarela (begiztak, oinordetza), HTML moduan, esperientzia deklaratibo bat baizik. Hori lortzeko, erabili AAA eredua, irakurtzaileek probaren asmoa esfortzu gabe uler dezaten. Badaude hori bezalako beste eredu batzuk ere, adibidez: XUnit 'Prestatu, Aritu, Egiaztatu eta Eraitsi' ('Setup, Excercise, Verify, Teardown'). Hauek dira hiru Ak:
 
-Lehenengo A, prestatu (Arrange): hau da, prestatu kodea lortzeko sistema jartzea probak simulatu nahi duen egoeran. Horrek, besteak beste, eraikitzailearen unitate proba egitea eska lezake, datu basean erregistroak gehitzea, objektuak mock/stub eta beste edozein prestakuntza kode eranstea
+Lehenengo A, prestatu: hau da, prestatu kodea probak simulatu nahi duen egoeran jartzeko sistema. Horrek, besteak beste, eraikitzailearen unitate proba egitea eska lezake, datu basean erregistroak gehitzea, objektuen  mock-ak/stub-ak eta beste edozein prestakuntza kode eranstea
 
 Bigarren A, jokatu: exekutatu zure unitate proba. Normalean kode ilara bat izaten da
 
@@ -17,7 +17,7 @@ Hirugarren A, baieztatu: ziurtatu jasotako balioak espero ziren modukoak direla.
 
 ```javascript
 describe.skip("Bezero klasifikatzailea", () => {
-  test("Bezeroak 500$ baino gehiago gastatzen dituenean, premium gisa kasifikatua izan behar da", () => {
+  test("Bezeroak 500$ baino gehiago gastatzen dituenean, premium gisa klasifikatua izan behar da", () => {
     //Prestatu
     const klasifikatzekoBezeroa = { gastatuak: 505, sortua: new Date(), id: 1 };
     const DBAntzeratua = sinon
@@ -66,4 +66,4 @@ test("Premium gisa klasifikatua izan beharko litzateke", () => {
 
 [XUnit Patterns](http://xunitpatterns.com/Four%20Phase%20Test.html) liburutik:
 
-> Garrantzitsua da proba irakurtzen duen pertsonarentzat, proba zein jokaera egiaztatzen ari den azkar jakiteko gai izatea. Oso nahasgarria izan daiteke jokaera ugari probaren barruan (SUT) deituak izatea, batzuk SUTaren proba aurreko egoera prestatzeko (instalazioa), beste batzuk SUTa jokatzeko eta beste batzuk SUTaren proba ondorengo egoera egiaztatzeko. Lau faseak modu argian identifikatzeak probaren asmoa ikustea askoz errazago egiten dute
+> Garrantzitsua da proba irakurtzen duen pertsonarentzat, proba zein jokaera egiaztatzen ari den azkar jakiteko gai izatea. Oso nahasgarria izan daiteke jokaera ugari probaren barruan (SUT) deituak izatea, batzuk SUTaren proba aurreko egoera prestatzeko (instalazioa), beste batzuk SUTa jokatzeko eta beste batzuk SUTaren proba ondorengo egoera egiaztatzeko. Lau faseak modu argian identifikatzeak probaren asmoa ikustea askoz errazago egiten dute.
