@@ -1352,6 +1352,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "ZhyMC",
+      "name": "Wyatt",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10328430?v=4",
+      "profile": "http://math.cat",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
