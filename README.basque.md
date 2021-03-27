@@ -26,9 +26,9 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 
 # Azken jardunbide egokiak eta albisteak
 
-- **🇯🇵 Japonierazko itzulpena:** hemendik aurrera japonieraz erabili daiteke gure gida, [YukiOta](https://github.com/YukiOta) eta [Yuta Azumi](https://github.com/YA21) gure laguntzaile ikaragarriei esker
+- **![EU](/assets/flags/EU.png) Euskarazko itzulpena!:** wow gure euskal irakurleek ere gida hau beraien ama-hizkuntzan irakur dezakete! [Ane Diaz de Tuesta](https://github.com/anediaz) eta Joxefe Diaz de Tuestaren eskutik
 
-- **✅ Jardunbide egiki berria:** Josh Hemphill-en 6.8 buletak " Babestu erabiltzaileen pasahitzak / sekretuak BCrypt edo Script erabiliz" gomendatzen du. Azalpen sakona jasotzen du jakiteko aukera bakoitza noiz eta zergatik den egokia proiektu zehatz baterako. Ez galdu gida labur hau, aztarna bakoitzaren berri ematen duena
+- **🇯🇵 Japonierazko itzulpena:** hemendik aurrera japonieraz erabili daiteke gure gida, [YukiOta](https://github.com/YukiOta) eta [Yuta Azumi](https://github.com/YA21) gure laguntzaile ikaragarriei esker
 
 - **🎊 60.000 izar!**: Gure biltegiak 60.100 garatzaileren aitortza eta konfiantza jaso ditu. Hitzik gabe gaude
 
