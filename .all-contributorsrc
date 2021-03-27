@@ -1361,6 +1361,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "tkhadir",
+      "name": "KHADIR Tayeb",
+      "avatar_url": "https://avatars.githubusercontent.com/u/45130488?v=4",
+      "profile": "http://libkhadir.fr",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
