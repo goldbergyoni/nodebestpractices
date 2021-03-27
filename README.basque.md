@@ -36,7 +36,6 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 
 # Ongi etorri! Hasi aurretik jakin beharreko 3 gauza
 
-
 **1. Hemen dozenaka artikulu dauzkazu, onenetarikoak Node.jsri buruz egindakoetan:** alegia, bilduma honek Node.jsren jardunbide egokienak jasotzen ditu, edukien arabera sailkatuta
 
 **2. Dagoen bildumarik handiena da, eta astetik astera handiagoa da:** une honetan 80tik gora jardunbide, estilo eskuliburu eta arkitektura aholku dauzkagu bilduta. Gustura asko jasoko genituzte zure ekarpenak bilduma hau eguneratuta edukitzeko, bai kode akatsak konponduz, bai itzulpenak eginez, bai ideia berriak proposatuz egin ditzakezunak: izan zaitez Node.jsren jardunbide egokienen liburuko partaide. Ikusi gure [idazketa jarraibideak](/.operations/writing-guidelines.basque.md)
@@ -901,7 +900,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** erasotzaile batek pasahitz automatizatuen saiakera mugagabeak egin ditzake aplikazio bateko kontu pribilegiatuetara sartzeko
 
-🔗 [**Informazio gehiago: mugatu saioa hasteko abiadura**](/sections/security/login-rate-limit.md)
+🔗 [**Informazio gehiago: mugatu saioa hasteko abiadura**](/sections/security/login-rate-limit.basque.md)
 
 <br/><br/>
 
@@ -1120,8 +1119,6 @@ CMD [ "node", "dist/app.js" ]
 🔗 [**Informazio gehiago: erabili etapa anitzeko konpilazioak**](/sections/docker/multi_stage_builds.basque.md)
 
 <br /><br /><br />
-
-# Edukiontzia autoabiatu node komandoa erabiliz, npm beharrean
 
 ## ![✔] 8.2. Abiarazi edukiontzia node komandoa erabiliz, saihestu npm
 
