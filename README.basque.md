@@ -536,7 +536,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 **Bestela:** kodearen kalitatea txarra denean, erroreek eta errendimenduak beti emango dituzte arazoak, azken belaunaldiko ezaugarriak dituen liburutegi berri distiratsu batek ere konpontzerik izango ez dituenak
 
-🔗 [**Informazio gehiago: Berregituratu!**](/sections/testingandquality/refactoring.basque.md)
+🔗 [**Informazio gehiago: berregituratu!**](/sections/testingandquality/refactoring.basque.md)
 
 <br/><br/>
 
@@ -546,7 +546,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 **Bestela:** hornitzaile espezializatu bat aukeratzeak blokeatu zaitzake, pertsonalizazio aurreratu bat behar duzunean. Bestalde, Jenkins erabiltzeak denbora asko eska dezake azpiegitura konfiguratzean
 
-🔗 [**Informazio gehiago: IE plataforma aukeratzea**](/sections/testingandquality/citools.basque.md)
+🔗 [**Informazio gehiago: aukeratu IE plataforma**](/sections/testingandquality/citools.basque.md)
 
 <br/><br/>
 
@@ -1180,7 +1180,7 @@ CMD [ "node", "dist/app.js" ]
 
 <br /><br /><br />
 
-## ![✔] 8.8. Baliatu cachea konpilazio denborak murrizteko
+## ![✔] 8.8. Baliatu cachea konpilazio denbora murrizteko
 
 **TL;PL:** Dockerren irudi osoa cache-tik berreraikitzea ia berehalakoa izan daiteke, zuzen eginez gero. Eguneratu ez diren argibideek Dockerfile fitxategiaren goialdean egon behar dute, eta etengabe aldatzen ari direnek (aplikazioaren kodea, esate baterako) beheko aldean egon behar dute
 
@@ -1242,7 +1242,7 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 <br /><br /><br />
 
-## ![✔] 8.14. Docker jardunbide generikoak
+## ![✔] 8.14. Dockeren jardunbide generikoak
 
 **TL;PL:** hemen duzu Node.jsekin zuzenean loturarik ez duen Docker aholkuen bilduma. Ez dago alderik Noderen eta beste edozein lengoaiaren inplementazioen artean. Egin klik “Informazio gehiago” botoian
 
