@@ -32,7 +32,7 @@ db.balances.find({
 
 ### Adibidea: SQL injekzioa
 
-```
+```sql
 SELECT username, firstname, lastname FROM users WHERE id = 'user input';
 
 SELECT username, firstname, lastname FROM users WHERE id = 'evil'input';

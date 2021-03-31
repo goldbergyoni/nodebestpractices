@@ -8,7 +8,7 @@ HTML eta beste web lengoaia batzuek kode egikarigarriarekin nahasten dute edukia
 
 ### Kode adibidea: ez jarri fidagarritasunik gabeko daturik zure HTMLan
 
-```javascript
+```html
 <script>...INOIZ EZ JARRI FIDAGARRIA EZ DEN KODEA HEMEN...</script>   zuzenean scriptean
 
  <!--...INOIZ EZ JARRI FIDAGARRIA EZ DEN KODEA HEMEN...-->             HTML komentario baten barruan
@@ -23,7 +23,7 @@ HTML eta beste web lengoaia batzuek kode egikarigarriarekin nahasten dute edukia
 
 ### Kode adibidea: datu base batean txerta daitekeen eduki kaltegarria
 
-```javascript
+```html
 <div>
   <b>Komentario bat</b>
   <script>
