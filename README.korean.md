@@ -259,7 +259,8 @@ function someFunction() {
 }
 
 // 나쁜 예
-function someFunction() {
+function someFunction()
+{
   // 코드 블록
 }
 ```
