@@ -19,6 +19,7 @@ A Docker image isn't just a bunch of files but rather multiple layers revealing 
 # syntax = docker/dockerfile:1.0-experimental
 
 FROM node:12-slim
+
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN --mount=type=secret,id=npm,target=/root/.npmrc npm ci

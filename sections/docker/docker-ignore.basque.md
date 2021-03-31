@@ -36,8 +36,9 @@ Docker konpilazio komandoak tokian tokiko fitxategiak konpilazioaren testuinguru
 <details>
 <summary><strong>Dockerfile</strong></summary>
 
-```
+```dockerfile
 FROM node:12-slim AS build
+
 WORKDIR /usr/src/app
 # The next line copies everything
 COPY . .

@@ -14,10 +14,11 @@ Docker irudi bat ez da soilik fitxategi pilo bat, eraikitze garaian gertatutakoa
 
 <summary><strong>Dockerfile</strong></summary>
 
-```
+```dockerfile
 # syntax = docker/dockerfile:1.0-experimental
 
 FROM node:12-slim
+
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN --mount=type=secret,id=npm,target=/root/.npmrc npm ci
@@ -35,19 +36,23 @@ RUN --mount=type=secret,id=npm,target=/root/.npmrc npm ci
 
 <summary><strong>Dockerfile</strong></summary>
 
-```
-
+```dockerfile
 FROM node:12-slim AS build
+
 ARG NPM_TOKEN
+
 WORKDIR /usr/src/app
 COPY . /dist
 RUN echo "//registry.npmjs.org/:\_authToken=\$NPM_TOKEN" > .npmrc && \
  npm ci --production && \
  rm -f .npmrc
 
+
 FROM build as prod
+
 COPY --from=build /dist /dist
-CMD ["node","index.js"]
+
+CMD ["node", "index.js"]
 
 # ARG eta .npmrc ez dira agertuko azken irudian baina Docker daemonen etiketatu gabeko irudien zerrendan ager daitezke, ziurtatu hauek ezabatu dituzula
 ```
@@ -62,10 +67,11 @@ CMD ["node","index.js"]
 
 <summary><strong>Dockerfile</strong></summary>
 
-```
-
+```dockerfile
 FROM node:12-slim
+
 ARG NPM_TOKEN
+
 WORKDIR /usr/src/app
 COPY . /dist
 RUN echo "//registry.npmjs.org/:\_authToken=\$NPM_TOKEN" > .npmrc && \
@@ -74,7 +80,7 @@ RUN echo "//registry.npmjs.org/:\_authToken=\$NPM_TOKEN" > .npmrc && \
 
 # .npmrc copy komando berean ezabatzeari esker ez du geruzan gordeko, hala ere, irudi historian aurki ahalko dugu
 
-CMD ["node","index.js"]
+CMD ["node", "index.js"]
 ```
 
 </details>

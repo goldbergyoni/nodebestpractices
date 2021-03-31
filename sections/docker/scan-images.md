@@ -14,11 +14,11 @@ Scanning the code for vulnerabilities is a valuable act but it doesn't cover all
 
 <summary><strong>Bash</strong></summary>
 
-```
-sudo apt-get install rpm
+```console
+$ sudo apt-get install rpm
 $ wget https://github.com/aquasecurity/trivy/releases/download/{TRIVY_VERSION}/trivy_{TRIVY_VERSION}_Linux-64bit.deb
 $ sudo dpkg -i trivy_{TRIVY_VERSION}_Linux-64bit.deb
-trivy image [YOUR_IMAGE_NAME]
+$ trivy image [YOUR_IMAGE_NAME]
 ```
 
 </details>

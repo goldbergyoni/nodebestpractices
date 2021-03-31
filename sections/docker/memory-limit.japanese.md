@@ -13,7 +13,7 @@
 <details>
 <summary><strong>Bash</strong></summary>
 
-```
+```bash
 docker run --memory 512m my-node-app
 ```
 
@@ -26,7 +26,7 @@ docker run --memory 512m my-node-app
 <details>
 <summary><strong>Kubernetes deployment yaml</strong></summary>
 
-```
+```yml
 apiVersion: v1
 kind: Pod
 metadata:

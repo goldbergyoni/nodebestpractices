@@ -7,9 +7,7 @@ We are used to see code examples where folks start their app using `CMD 'npm sta
 ### Code example - Bootsraping using Node
 
 ```dockerfile
-
 FROM node:12-slim AS build
-
 
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
@@ -22,7 +20,6 @@ CMD ["node", "server.js"]
 ### Code example - Using Tiny as entrypoint
 
 ```dockerfile
-
 FROM node:12-slim AS build
 
 # Add Tini if using child-processes
@@ -43,8 +40,8 @@ CMD ["node", "server.js"]
 
 Using npm start
 ```dockerfile
-
 FROM node:12-slim AS build
+
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm ci --production && npm cache clean --force
@@ -56,8 +53,8 @@ CMD "npm start"
 Using node in a single string will start a bash/ash shell process to execute your command. That is almost the same as using `npm`
 
 ```dockerfile
-
 FROM node:12-slim AS build
+
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm ci --production && npm clean cache --force
@@ -67,7 +64,7 @@ CMD "node server.js"
 ```
 
 Starting with npm, here’s the process tree:
-```
+```console
 $ ps falx
   UID   PID  PPID   COMMAND
     0     1     0   npm

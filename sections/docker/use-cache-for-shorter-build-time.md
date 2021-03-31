@@ -70,7 +70,9 @@ COPY "package.json" "package-lock.json" "./"
 RUN npm ci --production
 COPY . "./"
 
+
 FROM node as app
+
 USER node
 WORKDIR /app
 COPY --from=builder /app/ "./"
@@ -98,7 +100,9 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
+
 FROM node as app
+
 USER node
 WORKDIR /app
 # Only copying the files that we need
