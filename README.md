@@ -844,11 +844,11 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 <br/><br/>
 
-## ![✔] 6.8. Protect Users' Passwords/Secrets using bcrypt or scrypt
+## ![✔] 6.8. Protect Users' Passwords/Secrets using argon2id, bcrypt or scrypt
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;DR:** Passwords or secrets (e.g. API keys) should be stored using a secure hash + salt function like `bcrypt`,`scrypt`, or worst case `pbkdf2`.
+**TL;DR:** Passwords or secrets (e.g. API keys) should be stored using a secure hash + salt function like `argon2id`, `bcrypt`,`scrypt`, or worst case `pbkdf2`. The winner of password hashing competition is argon2 algorithm and recommended method for password storage by OWASP.
 
 **Otherwise:** Passwords and secrets that are stored without using a secure function are vulnerable to brute forcing and dictionary attacks that will lead to their disclosure eventually.
 
