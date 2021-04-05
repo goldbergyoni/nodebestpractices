@@ -1,9 +1,9 @@
 [✔]: assets/images/checkbox-small-blue.png
 
-# Node.js-ren jardunbide egokiak
+# Node.js-ren praktika onak
 
 <h1 align="center">
-  <img src="assets/images/banner-2.jpg" alt="Node.js-ren jardunbide egokiak">
+  <img src="assets/images/banner-2.jpg" alt="Node.js-ren praktika onak">
 </h1>
 
 <br/>
@@ -24,7 +24,7 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 
 ###### Gure [Zuzendaritza Batzordeak ](#zuzendaritza-batzordea) eta [laguntzaileek](#Languntzaileak) eraiki eta mantentzen dute webgune hau
 
-# Azken jardunbide egokiak eta albisteak
+# Azken praktika onak eta albisteak
 
 - **![EU](/assets/flags/EU.png) Euskarazko itzulpena!:** wow gure euskal irakurleek ere gida hau bere ama-hizkuntzan irakur dezakete! [Ane Diaz de Tuesta](https://github.com/anediaz) eta Joxefe Diaz de Tuestaren eskutik
 
@@ -36,9 +36,9 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 
 # Ongi etorri! Hasi aurretik jakin beharreko 3 gauza
 
-**1. Hemen dozenaka artikulu dauzkazu, onenetarikoak Node.jsri buruz egindakoetan:** alegia, bilduma honek Node.jsren jardunbide egokienak jasotzen ditu, edukien arabera sailkatuta
+**1. Hemen dozenaka artikulu dauzkazu, onenetarikoak Node.jsri buruz egindakoetan:** alegia, bilduma honek Node.jsren praktika onak jasotzen ditu, edukien arabera sailkatuta
 
-**2. Dagoen bildumarik handiena da, eta astetik astera handiagoa da:** une honetan 80tik gora jardunbide, estilo eskuliburu eta arkitektura aholku dauzkagu bilduta. Gustura asko jasoko genituzte zure ekarpenak bilduma hau eguneratuta edukitzeko, bai kode akatsak konponduz, bai itzulpenak eginez, bai ideia berriak proposatuz egin ditzakezunak: izan zaitez Node.jsren jardunbide egokienen liburuko partaide. Ikusi gure [idazketa jarraibideak](/.operations/writing-guidelines.basque.md)
+**2. Dagoen bildumarik handiena da, eta astetik astera handiagoa da:** une honetan 80tik gora praktika, estilo eskuliburu eta arkitektura aholku dauzkagu bilduta. Gustura asko jasoko genituzte zure ekarpenak bilduma hau eguneratuta edukitzeko, bai kode akatsak konponduz, bai itzulpenak eginez, bai ideia berriak proposatuz egin ditzakezunak: izan zaitez Node.jsren praktika onen liburuko partaide. Ikusi gure [idazketa jarraibideak](/.operations/writing-guidelines.basque.md)
 
 **3. Jarraibide gehienek informazio gehigarria dute.** Jarraibideko puntu bakoitzaren ondoan **🔗Informazio gehiago** esteka aurkituko duzu, jarraibidea osatzen duena kode adibideekin, blogetako aipu hautatuekin eta informazio osagarri gehiagorekin
 
@@ -53,7 +53,7 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 5. [Ekoizpena (19) ](#5-ekoizpena)
 6. [Segurtasuna (25)](#6-segurtasuna)
 7. [Errendimendua (2) (Aribidean ✍️)](#7-zirriborroa-errendimendua)
-8. [Docker, jardunbide egokienak (15)](#8-docker-jardunbide-egokienak)
+8. [Docker, praktika onak (15)](#8-docker-praktika-onak)
 
 <br/><br/>
 
@@ -105,7 +105,7 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 
 **Bestela:** konfiguazioa egitean baldintza horietarikoren bat betetzen ez baduzu, lana moteldu egingo da, bai garapen taldearena, bai devops taldearena
 
-🔗 [**Informazio gehiago: konfigurazio jardunbide egokiak**](/sections/projectstructre/configguide.basque.md)
+🔗 [**Informazio gehiago: konfigurazio praktika onak**](/sections/projectstructre/configguide.basque.md)
 
 <br/><br/><br/>
 
@@ -165,7 +165,7 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 
 ## ![✔] 2.6 Irten prozesutik elegantziarekin kanpoko norbait iristen denean hirira
 
-**TL;PL:** errore ezezagun bat gertatzen denean (programazio errore bat, ikusi 2.3 jardunbide egokia), zalantza izaten da era egokian lanean ote dabilen aplikazioa. Kasu horietan, oso ohikoa izaten da prozesuak kudeatzeko tresna bat erabiltzea [Forever](https://www.npmjs.com/package/forever), [PM2](http://pm2.keymetrics.io/) edo antzekoren bat– prozesua berriro hasteko
+**TL;PL:** errore ezezagun bat gertatzen denean (programazio errore bat, ikusi 2.3 praktika ona), zalantza izaten da era egokian lanean ote dabilen aplikazioa. Kasu horietan, oso ohikoa izaten da prozesuak kudeatzeko tresna bat erabiltzea [Forever](https://www.npmjs.com/package/forever), [PM2](http://pm2.keymetrics.io/) edo antzekoren bat– prozesua berriro hasteko
 
 **Bestela:** ezagutzen ez duzun zerbait gertatzen denean, izan daiteke objekturen batzuk egoera txarrean daudelako (esaterako, globalki erabiltzen den gertaera igorle bat, barneko erroreren batengatik ondo ez dabilena) eta gerta daiteke aurrerantzean abisuek huts egitea edo modu ero samarrean funtzionatzea
 
@@ -215,7 +215,7 @@ Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.
 
 ## ![✔] 2.11 Huts egin azkar, balidatu argudioak liburutegi dedikatu baten laguntzarekin
 
-**TL;PL:** Express erabiltzen duzunean, zure jardunbide egokietako bat izan beharko litzateke aplikazioaren sarbidea kontrolatzea, ustegabeko erroreak ekiditeko, aurrerago erroreak atzematea askoz zailagoa izaten da eta. Balidazio kodea gogaikarria izan ohi da, [ajv](https://www.npmjs.com/package/ajv) eta [Joi](https://www.npmjs.com/package/joi) bezalako laguntza liburutegi moderno bat erabili ezean
+**TL;PL:** Express erabiltzen duzunean, zure praktika onetako bat izan beharko litzateke aplikazioaren sarbidea kontrolatzea, ustegabeko erroreak ekiditeko, aurrerago erroreak atzematea askoz zailagoa izaten da eta. Balidazio kodea gogaikarria izan ohi da, [ajv](https://www.npmjs.com/package/ajv) eta [Joi](https://www.npmjs.com/package/joi) bezalako laguntza liburutegi moderno bat erabili ezean
 
 **Bestela:** pentsatu zure funtzioa agintza numeriko baten zain dagoela, adibidez «deskontua», eskatzaileak bidaltzea ahaztu duena; geroago, haren kodeak baieztatzen du « deskontua! = 0 (baimendutako deskontua zero baino handiagoa da)», eta horrek ahalmena ematen dio erabiltzaileari deskontua izateko. Ene, nolako errore arriskutsua! Konturatzen zara?
 
@@ -273,7 +273,7 @@ function edozeinFuntzio() {
 }
 ```
 
-**Bestela:** jardunbide egoki hau ez erabiltzeak ustekabeko emaitzak eragin ditzake, behean dagoen StackOverflow-en eztabaida harian ikus daitekeen bezala:
+**Bestela:** praktika on hau ez erabiltzeak ustekabeko emaitzak eragin ditzake, behean dagoen StackOverflow-en eztabaida harian ikus daitekeen bezala:
 
 🔗 [**Informazio gehiago:** “Zergatik aldatzen dira emaitzak giltzen kokapenaren arabera?” (StackOverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
@@ -367,7 +367,7 @@ function eginZerbait() {}
 
 ## ![✔] 3.8 Erabili moduluak lehenengo, barne funtzioen partez
 
-**TL;PL:** moduluak fitxategi bakoitzaren hasieran erabili behar dira, edozein funtzioren aurretik eta kanpo. Jardunbide on eta sinple honek lagunduko dizu fitxategiaren menpekotasunak erraz eta azkar atzematen haren eskuineko goi aldean, baita arazo posible batzuk ekiditen ere
+**TL;PL:** moduluak fitxategi bakoitzaren hasieran erabili behar dira, edozein funtzioren aurretik eta kanpo. Praktika on eta sinple honek lagunduko dizu fitxategiaren menpekotasunak erraz eta azkar atzematen haren eskuineko goi aldean, baita arazo posible batzuk ekiditen ere
 
 **Bestela:** Node.js.k aldi berean exekutatzen ditu require-ak. Funtzio batek dei egiten badie, egoera kritikoago batean dauden beste eskaera batzuk blokea daitezke. Gainera, deitutako moduluetako batek edo haren menpeko ataza batek errore bat izanez gero, komeni da lehenbailehen haren berri jakitea, eta agian ezingo da hori egin, modulu horri funtzio batek deitzen badio
 
@@ -809,11 +809,11 @@ edo hornitzaileen lainoko zerbitzuak
 
 <br/><br/>
 
-## ![✔] 6.5. Segurtasuneko jardunbide egokien bilduma
+## ![✔] 6.5. Segurtasuneko praktika onen bilduma
 
 **TL;PL:** Node.jsekin zuzenean loturarik ez duen segurtasuneko aholku bilduma bat da: Noderen inplementazioa ez da hain desberdina beste edozein hizkuntzaren inplementazioaren aldean. Egin klik “Informazio gehiago” botoian sakontzeko
 
-🔗 [**Informazio gehiago: ohiko segurtasun jardunbide egokienak**](/sections/security/commonsecuritybestpractices.basque.md)
+🔗 [**Informazio gehiago: ohiko segurtasun praktika onak**](/sections/security/commonsecuritybestpractices.basque.md)
 
 <br/><br/>
 
@@ -992,7 +992,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;PL:** errore integratuen kudeatzaile lasterrek lehenespenez ezkutatzen dituzte erroreen xehetasunak. Haatik, aukera handia dago inplementa dezan errore pertsonalizatuak dituzten objektuak kudeatzeko berak daukan logika (batzuen ustez jardunbide egokia dena). Hala eginez gero, ziurtatu bezeroari errorearen objektu osoa ez itzultzea, horrek aplikazioen datu sentikorrak izan litzake eta
+**TL;PL:** errore integratuen kudeatzaile lasterrek lehenespenez ezkutatzen dituzte erroreen xehetasunak. Haatik, aukera handia dago inplementa dezan errore pertsonalizatuak dituzten objektuak kudeatzeko berak daukan logika (batzuen ustez praktika ona dena). Hala eginez gero, ziurtatu bezeroari errorearen objektu osoa ez itzultzea, horrek aplikazioen datu sentikorrak izan litzake eta
 
 **Bestela:** aplikazioaren xehetasun sentikorrak —hala nola, zerbitzariko fitxategien bideak, erabiltzen ari diren hirugarrenen moduluak eta erasotzaile batek balia ditzakeen aplikazioaren barneko beste lan fluxuak— atera daitezke pila aztarna batean aurkitutako informazioetatik
 
@@ -1026,7 +1026,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;PL:** Node prozesuak huts egingo du akatsak kudeatzen ez direnean. Jardunbide egokienetako askok irtetea gomendatzen dute, akats bat atzeman eta kudeatuta badago ere. Expressek, adibidez, huts egiten du errore asinkronoren bat izanez gero –blokeatze klausula batekin ibilbideak biltzen ez badituzu behintzat. Horrek oso eraso bide aproposa irekitzen die erasotzaileei, zer informaziok eragiten duen prozesuaren blokeoa jakinda, behin eta berriz eskaera bera bidaltzen baitute prozesua blokeatzea lortu arte. Horretarako ez dago berehalako erremediorik, baina teknika batzuek mina arindu dezakete: abisatu zorroztasun kritikoarekin, kontrolatu gabeko errore baten ondorioz prozesuak huts egiten duen bakoitzean, balioztatu sarrera eta saihestu prozesua blokeatuta gelditzea erabiltzailearen sarrera baliogabea delako, bildu ibilbide guztiak cacth batekin eta kontuan hartu prozesuak ez duela huts egin behar eskaera batean errore bat sortzen denean (oro har, gertatzen denaren kontra)
+**TL;PL:** Node prozesuak huts egingo du akatsak kudeatzen ez direnean. Praktika onetako askok irtetea gomendatzen dute, akats bat atzeman eta kudeatuta badago ere. Expressek, adibidez, huts egiten du errore asinkronoren bat izanez gero –blokeatze klausula batekin ibilbideak biltzen ez badituzu behintzat. Horrek oso eraso bide aproposa irekitzen die erasotzaileei, zer informaziok eragiten duen prozesuaren blokeoa jakinda, behin eta berriz eskaera bera bidaltzen baitute prozesua blokeatzea lortu arte. Horretarako ez dago berehalako erremediorik, baina teknika batzuek mina arindu dezakete: abisatu zorroztasun kritikoarekin, kontrolatu gabeko errore baten ondorioz prozesuak huts egiten duen bakoitzean, balioztatu sarrera eta saihestu prozesua blokeatuta gelditzea erabiltzailearen sarrera baliogabea delako, bildu ibilbide guztiak cacth batekin eta kontuan hartu prozesuak ez duela huts egin behar eskaera batean errore bat sortzen denean (oro har, gertatzen denaren kontra)
 
 **Bestela:** hau uste oneko suposizio soil bat besterik ez da. Node.js aplikazio asko edukiz gero, JSON gorputz huts bat POST eskaera guztietara pasatzen saiatzen bagara, zenbait aplikazio blokeatu egingo dira. Une horretan, eskaera bera berbidal dezakegu, aplikazioak erraz ezabatzeko
 
@@ -1085,7 +1085,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 <p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
 
-# `8. Docker, jardunbide egokienak`
+# `8. Docker, praktika onak`
 
 🏅 Mila esker [Bret Fisher](https://github.com/BretFisher)-i, ondorengo praktika hauetako asko ikasi baikenituen berarengandik
 
@@ -1228,7 +1228,7 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 **Bestela:** baliteke zure kodeak ahultasunik ez izatea. Hala ere, baliteke oraindik ere hackeatua izatea, aplikazioek normalean erabiltzen dituzten sistema eragilearen mailako binarioen bertsioak ahultasunak dituelako (adibidez, OpenSSL, TarBall)
 
-🔗 [**Informazio gehiago: Docker jardunbide arruntak**](/sections/docker/scan-images.basque.md)
+🔗 [**Informazio gehiago: Docker praktika arruntak**](/sections/docker/scan-images.basque.md)
 
 <br /><br /><br />
 
@@ -1242,17 +1242,17 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 <br /><br /><br />
 
-## ![✔] 8.14. Dockeren jardunbide generikoak
+## ![✔] 8.14. Dockeren praktika generikoak
 
 **TL;PL:** hemen duzu Node.jsekin zuzenean loturarik ez duen Docker aholkuen bilduma. Ez dago alderik Noderen eta beste edozein lengoaiaren inplementazioen artean. Egin klik “Informazio gehiago” botoian
 
-🔗 [**Informazio gehiago: Dockeren jardunbide generikoak**](/sections/docker/generic-tips.basque.md)
+🔗 [**Informazio gehiago: Dockeren praktika generikoak**](/sections/docker/generic-tips.basque.md)
 
 <br/><br /><br />
 
 ## ![✔] 8.15. Garbitu zure Dockerfile fitxategia Linterra erabiliz
 
-**TL;PL:** Linterra erabiliz zure Dockerfile fitxategia garbitzea urrats garrantzitsua da haren barruan jardunbide egokiak errespetatzen ez dituzten arazoak identifikatzeko. Docker garbitzaile (linter) espezializatu bat erabiliz errendimendu eta segurtasun hobekuntzak erraz atzematen dira, alferrikako ordu ugari aurreztea edo produkzio kodean segurtasun arazoak murriztea lortuz
+**TL;PL:** Linterra erabiliz zure Dockerfile fitxategia garbitzea urrats garrantzitsua da haren barruan praktika onak errespetatzen ez dituzten arazoak identifikatzeko. Docker garbitzaile (linter) espezializatu bat erabiliz errendimendu eta segurtasun hobekuntzak erraz atzematen dira, alferrikako ordu ugari aurreztea edo produkzio kodean segurtasun arazoak murriztea lortuz
 
 **Bestela:** okerrez, Dockerfile fitxategiaren sortzaileak nagusi (root) bat utzi zuen produkzio erabiltzaile moduan, eta jatorri ezezaguneko biltegi irudi bat ere erabili zuen. Hori liner soil batekin ekidin liteke.
 
@@ -1264,7 +1264,7 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 # Mugarriak
 
-Gida hau mantentzeko eta eguneratuta egoteko, jarraibideak eta jardunbide egokiak eguneratzen eta hobetzen ari gara etengabe komunitatearen laguntzarekin. Proiektu honetan lagundu nahi baduzu, jarraitu gure [mugarriak](https://github.com/goldbergyoni/nodebestpractices/milestones) jarrai sartu lantaldeetan
+Gida hau mantentzeko eta eguneratuta egoteko, jarraibideak eta praktika onak eguneratzen eta hobetzen ari gara etengabe komunitatearen laguntzarekin. Proiektu honetan lagundu nahi baduzu, jarraitu gure [mugarriak](https://github.com/goldbergyoni/nodebestpractices/milestones) jarrai sartu lantaldeetan
 
 <br/>
 
@@ -1300,7 +1300,7 @@ Ezagutu Zuzendaritza Batzordeko kideak, proiektuaren orientazioa eta etorkizuner
 <a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
 <a href="https://goldbergyoni.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
-EEBB-etan, Europan eta Israelen, bezeroekin tamaina handiko Node.js aplikazioen sorkuntzan lan egiten duen Node.jsen inguruko aholkulari independentea. Gida honetako jardunbide egoki asko lehenengo aldiz [goldbergyoni.com](https://goldbergyoni.com)-en argitaratuak izan ziren. Jar zaitez Yoni-rekin kontatuan [@goldbergyoni](https://github.com/goldbergyoni)-en edo [me@goldbergyoni.com](mailto:me@goldbergyoni.com) helbidearen bidez
+EEBB-etan, Europan eta Israelen, bezeroekin tamaina handiko Node.js aplikazioen sorkuntzan lan egiten duen Node.jsen inguruko aholkulari independentea. Gida honetako praktika on asko lehenengo aldiz [goldbergyoni.com](https://goldbergyoni.com)-en argitaratuak izan ziren. Jar zaitez Yoni-rekin kontatuan [@goldbergyoni](https://github.com/goldbergyoni)-en edo [me@goldbergyoni.com](mailto:me@goldbergyoni.com) helbidearen bidez
 
 <br/>
 
@@ -1349,7 +1349,7 @@ Javascripten eta bere ekosisteman (React, Node.js, TypeScript, GraphQL, MongoDB,
 
 Mila esker gure laguntzaile guztiei! 🙏
 
-Gure kolaboratzaileak proiektuan maiz parte hartzen duten kideak dira, jardunbide egokiak proposatuz, gaien zerrenda ordenatuz, parte hartze eskaerak (pull request) aztertuz... Milaka pertsona Node.js aplikazioak hobeto sortzen laguntzen interesa baduzu, irakur ezazu gure [kolaboratzaile gida](/.operations/CONTRIBUTING.md) 🎉
+Gure kolaboratzaileak proiektuan maiz parte hartzen duten kideak dira, praktika onak proposatuz, gaien zerrenda ordenatuz, parte hartze eskaerak (pull request) aztertuz... Milaka pertsona Node.js aplikazioak hobeto sortzen laguntzen interesa baduzu, irakur ezazu gure [kolaboratzaile gida](/.operations/CONTRIBUTING.md) 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
 | :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |

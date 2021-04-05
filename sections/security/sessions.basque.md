@@ -4,7 +4,7 @@
 
 ### Azalpena
 
-middleware programa ezagun askok ez dituzte jardunbide egokienak/cookie ezarpenak segurtasunez ezartzen. Ezarpen lehenetsi horiek moldatzeak babes handiagoa eskaintzen die erabiltzaileari eta aplikazioari, saio bahiketa eta saioaren identifikazioa bezalako erasoen mehatxua murriztuz.
+middleware programa ezagun askok ez dituzte praktika egokienak/cookie ezarpenak segurtasunez ezartzen. Ezarpen lehenetsi horiek moldatzeak babes handiagoa eskaintzen die erabiltzaileari eta aplikazioari, saio bahiketa eta saioaren identifikazioa bezalako erasoen mehatxua murriztuz.
 
 Lehenetsitako ezarpen ohikoena saioaren `izena` da; eta, `express-session`-ean, hori `connect.sid` da. Erasotzaileren batek informazio hori erabil dezake web aplikazioaren azpiko plataforma eta moduluen ahultasun espezifikoak identifikatzeko. Balio horren ordez lehenetsia ez den besteren bat aukeratzeak zaildu egingo du jakitea zein saio mekanismo erabiltzen ari den.
 

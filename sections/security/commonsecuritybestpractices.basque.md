@@ -1,8 +1,8 @@
 [✔]: ../../assets/images/checkbox-small-blue.png
 
-# Node.jsen ohiko segurtasun jardunbide egokienak
+# Node.jsen ohiko segurtasun praktika onak
 
-Ohiko segurtasun jardunbideen atalak esparru eta konbentzio askotan estandarizatuta dauden jardunbide onak biltzen ditu. Adibidez, aplikazio bat exekutatzea SSL / TLS-rekin konfigurazio guztietan erabili beharko litzatekeen jardunbide eta konbentzio arrunta da, horrela segurtasun abantaila handiak lortuko lirateke eta.
+Ohiko segurtasun praktiken atalak esparru eta konbentzio askotan estandarizatuta dauden praktika onak biltzen ditu. Adibidez, aplikazio bat exekutatzea SSL / TLS-rekin konfigurazio guztietan erabili beharko litzatekeen praktika eta konbentzio arrunta da, horrela segurtasun abantaila handiak lortuko lirateke eta.
 
 ## ![✔] Erabili SSL / TLS bezeroen zerbitzariaren konexioa enkriptatzeko
 

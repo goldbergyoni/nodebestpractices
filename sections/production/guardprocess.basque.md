@@ -10,7 +10,7 @@ Oinarrizko mailan, Node prozesuak babestu eta berrabiarazi behar dira hutsegitea
 
 ### Beste blogari batzuek diotena
 
-- [Express Produkzioaren Jardunbide Onenak](https://expressjs.com/en/advanced/best-practice-performance.html): bloga:
+- [Express Produkzioaren Praktika Onak](https://expressjs.com/en/advanced/best-practice-performance.html): bloga:
 
 > ... Garapenean, zure aplikazioa komando lerrotik hasi zenuen node server.js edo antzeko zerbait erabiliz. **Baina hori bera ekoizpenean egitea hondamendiaren errezeta da. Aplikazioak huts egiten badu, lineaz kanpo egongo da** berrabiarazi arte. Aplikazioak huts egiten badu berrabiarazten dela ziurtatzeko, erabili prozesu kudeatzailea. Prozesuen kudeatzailea inplementazioa errazten duen, erabilgarritasun handia eskaintzen duen eta aplikazioa exekuzio garaian kudeatzeko aukera ematen duen "edukiontzia" da.
 
