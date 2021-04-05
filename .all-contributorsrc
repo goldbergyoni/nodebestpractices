@@ -1379,6 +1379,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "codebyshubham",
+      "name": "Shubham",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10389723?v=4",
+      "profile": "https://github.com/codebyshubham",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
