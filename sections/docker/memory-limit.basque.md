@@ -63,8 +63,8 @@ spec:
 
 <br/><br/>
 
-### Node.jsen dokumentazioa: "V8k denbora gehiago pasako du zabor bilketan"
+### Node.jsren dokumentazioa: "V8k denbora gehiago pasako du zabor bilketan"
 
-[Node.jsen dokumentu ofiziala](https://nodejs.org/api/cli.html#cli_max_old_space_size_size_in_megabytes)
+[Node.jsren dokumentu ofiziala](https://nodejs.org/api/cli.html#cli_max_old_space_size_size_in_megabytes)
 
 > Ezarri V8ren atal zaharraren gehienezko memoria tamaina. Memoriaren kontsumoa mugara gerturatzen denean, V8k denbora gehiago pasako du zabor bilketan, erabili gabeko memoria askatzen baino. 2GBko memoria duen makina batean, komeni da 1536Mgb (1.5GB) ezartzea, beste erabiltzaileentzat memoria pixkat bat uzteko eta memoria trukea ekiditeko.

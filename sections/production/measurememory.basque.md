@@ -12,7 +12,7 @@ Mundu perfektu batean, web garatzaile batek ez luke memoria ihesei aurre egin be
 
 [Dyntrace](http://apmblog.dynatrace.com/) bloga:
 
-> ... ”Dagoeneko badakigun bezala, Node.jsen V8k jatorrizko kodean konpilatzen du JavaScript. Sortzen diren jatorrizko datu egiturek ez dute zerikusi handirik jatorrizko irudikapenarekin, eta V8k kudeatzen ditu soilik. Horrek esan nahi du ezin dugula memoria aktiboki esleitu edo banatu JavaScripten. V8k zabor bilketa izeneko mekanismo ezaguna erabiltzen du arazo horri aurre egiteko".
+> ... ”Dagoeneko badakigun bezala, Node.jsren V8k jatorrizko kodean konpilatzen du JavaScript. Sortzen diren jatorrizko datu egiturek ez dute zerikusi handirik jatorrizko irudikapenarekin, eta V8k kudeatzen ditu soilik. Horrek esan nahi du ezin dugula memoria aktiboki esleitu edo banatu JavaScripten. V8k zabor bilketa izeneko mekanismo ezaguna erabiltzen du arazo horri aurre egiteko".
 
 [Dyntrace](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load) bloga:
 

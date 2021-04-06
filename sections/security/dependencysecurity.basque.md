@@ -49,6 +49,6 @@ Greenkeeper GitHub integrazioaren irteeraren adibide bat erauzte eskaera automat
 
 ### Baliabide osagarriak
 
-🔗 [Rising Stack bloga: Node.jsen menpekotasun arriskuak](https://blog.risingstack.com/controlling-node-js-security-risk-npm-dependencies/)
+🔗 [Rising Stack bloga: Node.jsren menpekotasun arriskuak](https://blog.risingstack.com/controlling-node-js-security-risk-npm-dependencies/)
 
 🔗 [NodeSource Bloga: npmen  segurtasuna hobetzea](https://nodesource.com/blog/how-to-reduce-risk-and-improve-security-around-npm)

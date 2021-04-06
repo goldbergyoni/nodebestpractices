@@ -18,7 +18,7 @@ Erabilera aurreratuen kasuetarako, pentsa ezazu NODE prozesua errepikatzea perts
 
 ### Beste blogari batzuek diotena
 
-- [Node.jsen dokumentazioa](https://nodejs.org/api/cluster.html#cluster_how_it_works):
+- [Node.jsren dokumentazioa](https://nodejs.org/api/cluster.html#cluster_how_it_works):
 
 > ... Bigarren planteamendua, teorian Node klusterrak eman beharko luke errendimendu onena. Praktikan, ordea, banaketa oso desorekatua izan ohi da sistema eragilearen antolatzaileen gorabeheren ondorioz. Atzeman da hainbat kasutan konexio guztien % 70a baino gehiago kargak bi prozesutan soilik egin direla, zortzitan egin beharrean...
 

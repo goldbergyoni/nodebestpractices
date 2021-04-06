@@ -29,6 +29,6 @@ console.log(balioztatzailea.postaElektronikoaDa("liran.tal@gmail.com"));
 
 ### Liburuko aipua: "Errepikapena erabiltzen duen adierazpenari deritzo adierazpen erregular erasogarria"
 
-Liran Talen [Ezinbesteko Node.jsen Segurtasuna](https://leanpub.com/nodejssecurity) liburua:
+Liran Talen [Ezinbesteko Node.jsren Segurtasuna](https://leanpub.com/nodejssecurity) liburua:
 
 > Askotan, programatzaileek RegEx erabiliko dute erabiltzaileen sarrerak esperotako baldintzekin bat datozela balioztatzeko. Errepikatzen den atzemate multzoei errepikapena aplikatzen adierazpenei deritze Adierazpen Erregular erasogarria, non kointzidentzia eredu onargarri batek eta atzemate taldearekin bat ez datozen karaktere batzuek osatzen baitute bat etorri behar duen katea.

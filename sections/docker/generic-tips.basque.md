@@ -2,7 +2,7 @@
 
 # Common Node.js Dockeren praktika onak
 
-Dockeren praktika arrunten atal honek programazio lengoaia guztietan araupetuta dauden praktika onak biltzen ditu, ez dira Node.jsentzat bakarrik
+Dockeren praktika arrunten atal honek programazio lengoaia guztietan araupetuta dauden praktika onak biltzen ditu, ez dira Node.jsrentzat bakarrik
 
 ## ![✔] Nahiago COPY, ADD komandoa baino
 

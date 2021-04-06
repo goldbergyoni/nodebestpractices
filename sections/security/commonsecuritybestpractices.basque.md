@@ -1,6 +1,6 @@
 [✔]: ../../assets/images/checkbox-small-blue.png
 
-# Node.jsen ohiko segurtasun praktika onak
+# Node.jsren ohiko segurtasun praktika onak
 
 Ohiko segurtasun praktiken atalak esparru eta konbentzio askotan estandarizatuta dauden praktika onak biltzen ditu. Adibidez, aplikazio bat exekutatzea SSL / TLS-rekin konfigurazio guztietan erabili beharko litzatekeen praktika eta konbentzio arrunta da, horrela segurtasun abantaila handiak lortuko lirateke eta.
 

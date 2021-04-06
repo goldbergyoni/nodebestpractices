@@ -18,9 +18,9 @@ Edukia ondo editatua eta fidagarria izateaz gain, haren irakurketak gaiaz bere o
 
 Edukia txantiloi finkoak erabiliz dago aurkeztua, eta etorkizuneko beste edozein edukik txantiloi bera errespetatu behar du. Eduki berriak gehitu nahi izanez gero, kopiatu buleta formatua iada existitzen den bulet batetik eta moldatu zure beharretara. Informazio gehiago nahi izanez gero begiratu [txantiloi hau](../sections/template.basque.md)
 
-## 5. Node.jsi buruz ari gara
+## 5. Node.jsri buruz ari gara
 
-Aholku bakoitzak zuzenean Node.jsekin erlazionatuta egon behar du, eta ez orokorrean software garapenarekin. Node.jsen eredu/arau generikoak ezartzea aholkatzen dugunean, edukiak Noderen ezarpenean ardaztuta egon behar du. Adibidez, eskaera sarrera guztiak onbideratzea aholkatzen dugunean, segurtasun arrazoiengatik, Node-lingo erabili behar da, ‘erabili middlewarea eskaera sarrera onbideratzeko‘. Gai batek Node.jsen ezarpenik ez badauka (esaterako Python & Jaban bezala), gehitu edukiontzi generiko batean, begiratu 6.5 gaia adibidetzat
+Aholku bakoitzak zuzenean Node.jsrekin erlazionatuta egon behar du, eta ez orokorrean software garapenarekin. Node.jsren eredu/arau generikoak ezartzea aholkatzen dugunean, edukiak Noderen ezarpenean ardaztuta egon behar du. Adibidez, eskaera sarrera guztiak onbideratzea aholkatzen dugunean, segurtasun arrazoiengatik, Node-lingo erabili behar da, ‘erabili middlewarea eskaera sarrera onbideratzeko‘. Gai batek Node.jsren ezarpenik ez badauka (esaterako Python & Jaban bezala), gehitu edukiontzi generiko batean, begiratu 6.5 gaia adibidetzat
 
 ## 6. Hornitzaile nagusiak soilik
 
