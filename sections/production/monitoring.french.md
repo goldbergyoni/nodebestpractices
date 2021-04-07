@@ -30,7 +30,7 @@ La réalisation des fonctionnalités avancées nécessite une configuration long
 
 ### Ce que disent les autres blogueurs
 
-Extrait du blog de [Rising Stack](http://mubaloo.com/best-practices-deploying-node-js-applications/) :
+Extrait du blog de [Rising Stack](https://blog.risingstack.com/node-js-performance-monitoring-with-prometheus/) :
 
 > …Nous vous recommandons de surveiller ces signaux pour tous vos services :
 > Taux d'erreur : parce que les erreurs sont confrontées à l'utilisateur et affectent immédiatement vos clients.

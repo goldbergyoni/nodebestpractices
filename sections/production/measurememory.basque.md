@@ -10,7 +10,7 @@ Mundu perfektu batean, web garatzaile batek ez luke memoria ihesei aurre egin be
 
 ### Beste blogari batzuek diotena
 
-[Dyntrace](http://apmblog.dynatrace.com/) bloga:
+[Dyntrace](https://www.dynatrace.com/news/blog/understanding-garbage-collection-and-hunting-memory-leaks-in-node-js/) bloga:
 
 > ... ”Dagoeneko badakigun bezala, Node.jsen V8k jatorrizko kodean konpilatzen du JavaScript. Sortzen diren jatorrizko datu egiturek ez dute zerikusi handirik jatorrizko irudikapenarekin, eta V8k kudeatzen ditu soilik. Horrek esan nahi du ezin dugula memoria aktiboki esleitu edo banatu JavaScripten. V8k zabor bilketa izeneko mekanismo ezaguna erabiltzen du arazo horri aurre egiteko".
 
@@ -18,7 +18,7 @@ Mundu perfektu batean, web garatzaile batek ez luke memoria ihesei aurre egin be
 
 > ... ... "Adibide honek ageriko emaitzak lortzen baditu ere, prozesua beti berdina da: sortu pila zabortegiak denbora pixka bat eta memoria asko esleituta. Konparatu zabortegi batzuk zer hazten ari den jakiteko"
 
-[Dyntrace](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load) bloga:
+[Rising Stack](https://blog.risingstack.com/finding-a-memory-leak-in-node-js/) bloga:
 
 > ... “hutsegitea, Node.js 1,5 GB memoria inguru erabiltzen saiatuko da, eta hori mugatu egin behar da memoria gutxiago duten sistemetan exekutatzen denean. Hori da espero den jokabidea, zabor bilketa oso operazio garestia baita. Horren irtenbidea izan zen Node.js prozesuari beste parametro bat gehitzea: nodo –max_old_space_size = 400 server.js –production . "
 

@@ -10,7 +10,7 @@
 
 ### 他のブロガーが言っていること
 
-* ブログ [Dyntrace](http://apmblog.dynatrace.com/) より:
+* ブログ [Dyntrace](https://www.dynatrace.com/news/blog/understanding-garbage-collection-and-hunting-memory-leaks-in-node-js/) より:
 > ... ”すでに学習したように、Node.js JavaScript は V8 でネイティブコードにコンパイルされています。結果として得られるネイティブなデータ構造は、元の表現とはあまり関係がなく、もっぱら V8 によって管理されています。つまり、JavaScript では能動的にメモリを割り当てたり、解放したりすることができません。V8 はこの問題に対処するために、ガベージコレクションと呼ばれるよく知られたメカニズムを使用しています。”
 
 * ブログ [Dyntrace](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load) より:
@@ -18,7 +18,7 @@
 ある程度の時間をかけてヒープダンプを作成し、その間にかなりの量のメモリ割り当てを行います。
 いくつかのダンプを比較して、何が成長しているかを確認します。”
 
-* ブログ [Dyntrace](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load) より:
+* ブログ [Rising Stack](https://blog.risingstack.com/finding-a-memory-leak-in-node-js/) より:
 > ... “デフォルトでは、Node.js は約1.5 GB のメモリを使用しようとしますが、メモリの少ないシステムで実行する場合は上限を設定する必要があります。ガベージコレクションは非常にコストのかかる操作なので、これは予想される動作です。
 これを解決するには、Node.js のプロセスに余分なパラメータを追加する必要がありました。:
 node –max_old_space_size=400 server.js –production ”

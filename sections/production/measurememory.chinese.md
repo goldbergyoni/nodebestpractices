@@ -11,13 +11,13 @@
 
 ### 其他博客说了什么
 
-* 摘自博客 [Dyntrace](http://apmblog.dynatrace.com/):
+* 摘自博客 [Dyntrace](https://www.dynatrace.com/news/blog/understanding-garbage-collection-and-hunting-memory-leaks-in-node-js/):
 > ... ”正如我们所了解到的，在Node.js 中，JavaScript被V8编译为机器码。由此产生的机器码数据结构与原始表达没有多大关系，只能由V8管理. 这意味着我们不能主动分配或释放JavaScript中的内存. V8 使用了一个众所周知的垃圾收集机制来解决这个问题.”
 
 * 摘自博客 [Dyntrace](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load):
 > ... “虽然这个例子导致了明显的结果，但这个过程总是一样的：用一些时间和相当数量的内存分配创建heap dumps，比较dumps，以找出正在增长的内存泄露。”
 
-* 摘自博客 [Dyntrace](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load):
+* 摘自博客 [Rising Stack](https://blog.risingstack.com/finding-a-memory-leak-in-node-js/):
 > ... “故障, 在内存较少的系统上运行时必须限制内存，Node.js会尝试使用大约1.5GB的内存。这是预期的行为，垃圾收集是一个代价很高的操作。
 解决方案是为Node.js进程添加一个额外的参数:
 node –max_old_space_size=400 server.js –production ”
