@@ -18,7 +18,7 @@
 
 <br/>
 
-Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU**, ![TR](/assets/flags/TR.png)**TR** e ![EU](/assets/flags/EU.png)**EU** em progresso!)](#translations)](#translations)
+Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![EU](/assets/flags/EU.png)**EU**](/README.basque.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** e ![TR](/assets/flags/TR.png)**TR** em progresso!)](#translations)](#translations)
 
 <br/>
 
@@ -1045,6 +1045,7 @@ Todas as traduções são contribuições da comunidade. Nós ficaremos felizes 
 
 - ![BR](/assets/flags/BR.png) [Português Brasileiro](/README.brazilian-portuguese.md) - Cortesia de [Marcelo Melo](https://github.com/marcelosdm)
 - ![CN](/assets/flags/CN.png) [Chinês](README.chinese.md) - Cortesia de [Matt Jin](https://github.com/mattjin)
+- ![EU](/assets/flags/EU.png) [Vasco](README.basque.md) - Cortesia de [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta
 
 ### Traduções em andamento
 
@@ -1054,7 +1055,6 @@ Todas as traduções são contribuições da comunidade. Nós ficaremos felizes 
 - ![RU](/assets/flags/RU.png) [Russo](https://github.com/goldbergyoni/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/454))
 - ![ES](/assets/flags/ES.png) [Espanhol](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/95))
 - ![TR](/assets/flags/TR.png) Turco ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/139))
-- ![EU](/assets/flags/EU.png) [Vasco](README.basque.md) - Cortesia de [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/842))
 
 <br/><br/>
 

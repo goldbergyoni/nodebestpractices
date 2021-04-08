@@ -1,12 +1,12 @@
-# Huts egin azkar, balidatu argudioak liburutegi dedikatu baten laguntzarekin
+# Huts eragin azkar, balidatu argudioak liburutegi dedikatu baten laguntzarekin
 
-### Azalpen paragrafoa
+### Azalpena
 
-Denok dakigu argudioak egiaztatzea eta azkar huts egitea garrantzitsua dela ezkutuko erroreak ekiditeko (ikusi ereduaren aurkako kodearen adibidea behean). Bestela, irakurri zerbait programazio esplizituaren eta babes programazioaren gainean. Errealitatean, hori ekiditeko ohitura daukagu, kodea idazteak suposatzen duen gogaikarritasuna dela eta (adibidez pentsatu posta elektronikoa eta datak bezalako alorrak dituen JSON objektu hierarkiko bat balioztatzea). Joi eta Validator bezalako liburutegiek asko leuntzen dute lan hori.
+Denok dakigu argudioak egiaztatzea eta azkar huts egitea garrantzitsua dela ezkutuko erroreak ekiditeko (ikusi ereduaren aurkako kodearen adibidea behean). Bestela, irakurri zerbait programazio esplizituaren eta babes programazioaren gainean. Errealitatean, hori ekiditeko ohitura daukagu, kodea idazteak suposatzen duen gogaikarritasuna dela eta (adibidez pentsatu posta elektronikoa eta datak bezalako alorrak dituen JSON objektu hierarkiko bat balioztatzea). Joi eta Validator bezalako liburutegiek asko leuntzen dute lan hori
 
 ### Wikipedia: programazio defentsiboa
 
-Programazio defentsiboa softwarea eta iturburu kodea hobetzeko ikuspuntua da, kalitate orokorrari dagokionez, software errore eta arazo kopurua murriztuz. Iturburu kodea ulergarria izango bada, irakurgarria eta ulergarria izan behar da kode auditoria batean onartua izan dadin. Softwarea aurreikusteko moduko eran jokatzeko egin behar da, ustekabeko sarrerak edo erabiltzaile ekintzak gertatu arren.
+Programazio defentsiboa softwarea eta iturburu kodea hobetzeko ikuspuntua da, kalitate orokorrari dagokionez, software errore eta arazo kopurua murriztuz. Iturburu kodea ulergarria izango bada, irakurgarria eta ulergarria izan behar da kode auditoria batean onartua izan dadin. Softwarea aurreikusteko moduko eran jokatzeko egin behar da, ustekabeko sarrerak edo erabiltzaile ekintzak gertatu arren
 
 ### Kode adibidea: balioztatu JSON sarrera koplexua ‘Joi’ erabiliz
 
@@ -64,8 +64,8 @@ bidaliDeskontuTiketakInprimatzera(httpResponse, kiderenBat, -12);
 
 </details>
 
-### Blogeko aipua: "Errore hauek zuzenean jaurti beharko zenituzke"
+### Blog aipua: "Errore hauek zuzenean jaurti beharko zenituzke"
 
-Joyent blogetik hartua
+Joyent bloga
 
-> Kasu degeneratu bat da norbaitek funtzio asinkrono bat callback gabe deitzea atzera deirik egin gabe. Errore horiek berehala jaurti beharko zenituzke programa apurtuta baitago eta hori arazteak gutxienez pila arrastoa eta errorearen lekuko fitxategia berreskuratzea eskatzen du. Hori egiteko, funtzioaren hasieran argudio guztien motak balioztatzea gomendatzen dugu.
+> Kasu degeneratu bat da norbaitek funtzio asinkrono bat callback gabe deitzea atzera deirik egin gabe. Errore horiek berehala jaurti beharko zenituzke programa apurtuta baitago eta hori arazteak gutxienez pila arrastoa eta errorearen lekuko fitxategia berreskuratzea eskatzen du. Hori egiteko, funtzioaren hasieran argudio guztien motak balioztatzea gomendatzen dugu

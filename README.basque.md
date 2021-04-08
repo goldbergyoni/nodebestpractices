@@ -18,7 +18,7 @@
 
 <br/>
 
-Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** eta ![TR](/assets/flags/TR.png)**TR** aribidean!)](#translations)
+Irakurri beste hizkuntza batzuetan: [![EN](/assets/flags/EN.png)**EN**](/README.md), [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** eta ![TR](/assets/flags/TR.png)**TR** aribidean!)](#itzulpenak)
 
 <br/>
 
@@ -26,16 +26,16 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 # Azken jardunbide egokiak eta albisteak
 
-- **✅ Jardunbide egoki berria:** [Alexsey](https://github.com/Alexsey)-ren 2.12 bulletak erakusten du funtzio asinkronikoen zain egon gabe itzultzeak pila aztarna partzialak uzten dituela. Hor arazo handia izan liteke salbuespenek eragindako arazoak konpontzean exekuzio fotogrametako batzuk ez dituzten produkzioetan
+- **🇯🇵 Japonierazko itzulpena:** hemendik aurrera japonieraz erabili daiteke gure gida, [YukiOta](https://github.com/YukiOta) eta [Yuta Azumi](https://github.com/YA21) gure laguntzaile ikaragarriei esker
 
-- **✅ Jardunbide egoki berria:** Josh Hemphill-en 6.8 bulletak &quot;Erabiltzaileen pasahitzak / sekretuak BCrypt edo Script erabiliz&quot; babestea gomendatzen du. Azalpen sakona ematen du aukera bakoitza proiektu zehatz batera noiz eta zergatik egokitzen den jakiteko. Ez galdu gida labur hau hash-en aukeren azalpen labur bat eskaintzen duena
+- **✅ Jardunbide egiki berria:** Josh Hemphill-en 6.8 buletak " Babestu erabiltzaileen pasahitzak / sekretuak BCrypt edo Script erabiliz" gomendatzen du. Azalpen sakona jasotzen du jakiteko aukera bakoitza noiz eta zergatik den egokia proiektu zehatz baterako. Ez galdu gida labur hau, aztarna bakoitzaren berri ematen duena
 
-- **:whale: Node.js + Docker-en jardunbide egokiak:** Atal berri bat argitaratu berri dugu, 15 jardunbide egoki jasotze
-  dituena Dockerrekin erabili beharreko kodetze teknikei buruzkoak
+- **🎊 60.000 izar!**: Gure biltegiak 60.100 garatzaileren aitortza eta konfiantza jaso ditu. Hitzik gabe gaude
 
 <br/><br/>
 
 # Ongi etorri! Hasi aurretik jakin beharreko 3 gauza
+
 
 **1. Hemen dozenaka artikulu dauzkazu, onenetarikoak Node.jsri buruz egindakoetan:** alegia, bilduma honek Node.jsren jardunbide egokienak jasotzen ditu, edukien arabera sailkatuta
 
@@ -48,13 +48,13 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 ## Edukien aurkibidea
 
 1. [Proiektuaren egitura (5)](#1-proiektuaren-egitura)
-2. [Erroreen kudeaketa (11) ](#2-erroreen-kudeaketa)
+2. [Erroreen kudeaketa (12) ](#2-erroreen-kudeaketa)
 3. [Kode estiloa (12) ](#3-kode-estiloa)
 4. [Probak eta kalitate orokorra (13) ](#4-probak-eta-kalitate-orokorra)
 5. [Ekoizpena (19) ](#5-ekoizpena)
 6. [Segurtasuna (25)](#6-segurtasuna)
 7. [Errendimendua (2) (Aribidean ✍️)](#7-zirriborroa-errendimendua)
-8. [Docker (15)](#8-docker)
+8. [Docker, jardunbide egokienak (15)](#8-docker-jardunbide-egokienak)
 
 <br/><br/>
 
@@ -64,7 +64,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 **TL;PL:** aplikazio handien oztoporik handiena kode base erraldoi bat mantendu beharra da, ehundaka lotura eta menpekotasun dituena. Horrelako lan monolitikoek programatzaileen lana motelarazten dute, funtzionalitate berriak gehitzen saiatzen dira eta. Hori gerta ez dadin, zatitu zure kodea osagai txikiagotan, bakoitza bere datuekin karpeta banatan, eta bermatu osagai bakoitza laburra eta sinplea izatea. Bisitatu hemen behean dagoen “Informazio gehiago” esteka, proiektu egoki baten egitura zuzenaren adibideak ikusteko
 
-**Bestela:** Bestela: funtzionalitate berriak programatzean, garatzaileek zailtasun handiak izaten dituzte aldaketa horien eragina antzemateko, eta beldur izaten dira funtzionalitateon menpeko osagaiak hautsiko ote dituzten. Ondorioz, inplementazioak motelagoak eta arriskutsuagoak izaten dira. Oro har, zailagoa izaten da aplikazio baten kodea luzatzea negozio unitateak banatuta ez daudenean
+**Bestela:** funtzionalitate berriak programatzean, garatzaileek zailtasun handiak izaten dituzte aldaketa horien eragina atzemateko, eta beldur izaten dira funtzionalitateon menpeko osagaiak hautsiko ote dituzten. Ondorioz, inplementazioak motelagoak eta arriskutsuagoak izaten dira. Oro har, zailagoa izaten da aplikazio baten kodea luzatzea negozio unitateak banatuta ez daudenean
 
 🔗 [**Informazio gehiago: antolatu zure proiektua osagai txikiagotan**](/sections/projectstructre/breakintcomponents.basque.md)
 
@@ -80,9 +80,9 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 <br/><br/>
 
-## ![✔] 1.3 Kokatu baliabide komunak NPM paketetan
+## ![✔] 1.3 Kokatu baliabide komunak npm paketetan
 
-**TL;PL:** data base askok osatzen duten aplikazio handi bat prestatzen dugunean, geruza guztietan lan egiten duten zeharkako tresna bakoitzak –erregistragailuak, zifragailuak eta beste– bere kodearen barruan egon behar du, NPM pakete pribatu moduan, tresna horiek hainbat proiektutan partekatu ahal izatea ahalbidetzen duena
+**TL;PL:** datu base askok osatzen duten aplikazio handi bat prestatzen dugunean, geruza guztietan lan egiten duten zeharkako tresna bakoitzak –erregistragailuak, zifragailuak eta beste– bere kodearen barruan egon behar du, npm pakete pribatu moduan, tresna horiek hainbat proiektutan partekatu ahal izatea ahalbidetzen duena
 
 **Bestela:** zuk zeuk asmatu beharko duzu zeure inplementazioa eta menpekotasun gurpila
 
@@ -102,7 +102,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 ## ![✔] 1.5 Erabili ingurunea errespetatzen duen konfigurazio seguru eta hierarkiko bat
 
-**TL;PL:** akatsik gabeko konfigurazio perfektu batek bermatu behar du (a) giltzak fitxategietatik eta inguruneko aldagaietatik irakurri ahal izatea, (b) sekretuak iturri kodetik kanpo gordeta egotea, eta, (c), bilaketak errazte aldera, konfigurazioa hierarkikoa izatea. Hori dena lortzeko badira paketeak, hala nola, rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config) eta [convict](https://www.npmjs.com/package/convict).
+**TL;PL:** akatsik gabeko konfigurazio perfektu batek bermatu behar du (a) giltzak fitxategietatik eta inguruneko aldagaietatik irakurri ahal izatea, (b) sekretuak iturri kodetik kanpo gordeta egotea, eta, (c), bilaketak errazte aldera, konfigurazioa hierarkikoa izatea. Hori dena lortzeko badira paketeak, hala nola, rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config) eta [convict](https://www.npmjs.com/package/convict)
 
 **Bestela:** konfiguazioa egitean baldintza horietarikoren bat betetzen ez baduzu, lana moteldu egingo da, bai garapen taldearena, bai devops taldearena
 
@@ -116,7 +116,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 ## ![✔] 2.1 Erabili Async-Await edo errore asinkronoak kudeatzeko promesak
 
-**TL;PL:** errore asinkronoak callback erabiliz kudeatzen badituzu, infernurako biderik azkarrena hartuko duzu edo galbiderako piramidean sartuko zara. Zure kodeari opari on bat egin nahi badiozu, erabili agintzen biblioteka ezagun bat edo async-await, try-catch erakoa adibidez kode sintaxis askoz trinkoago eta ohikoago bat eskaintzen duena
+**TL;PL:** errore asinkronoak callback erabiliz kudeatzen badituzu, infernurako biderik azkarrena hartuko duzu edo galbiderako piramidean sartuko zara. Zure kodeari opari on bat egin nahi badiozu, erabili agintzen liburutegi ezagun bat edo async-await, try-catch erakoa adibidez kode sintaxis askoz trinkoago eta ohikoago bat eskaintzen duena
 
 **Bestela:** Node.js-en callback teknika (“err, response” prozedura) erabiltzen baduzu, kode ez jasangarriak sortuko dituzu, batera suertatuko baitira kode arrunta duten erroreen kudeaketa, habiaratze sarriegiak eta kodetze eredu ez erosoak
 
@@ -136,17 +136,17 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 ## ![✔] 2.3 Bereizi eragiketa erroreak eta programatze erroreak
 
-**TL; DR:** errore operazionalek (adibidez, APIak balio gabeko sarrera jasotzea) agerian jartzen dituzten arazoak ezagunak izaten dira, eta, haien eragina guztiz ulertu eta kontuz kudeatzeko modukoak izaten dira. Bestetik, programatzaileen erroreak (adibidez, zehaztu gabeko aldagaia irakurtzen saiatzea) aplikazioa berrabiarazteko agindua ematen duten kode hutsegite ezezagunak izaten dira
+**TL; PL:** eragiketa erroreek (adibidez, APIak balio gabeko sarrera jasotzea) agerian jartzen dituzten arazoak ezagunak izaten dira, eta, haien eragina guztiz ulertu eta kontuz kudeatzeko modukoak izaten dira. Bestetik, programatze erroreak (adibidez, zehaztu gabeko aldagaia irakurtzen saiatzea) aplikazioa berrabiarazteko agindua ematen duten kode hutsegite ezezagunak izaten dira
 
-**Bestela:** eti berrabiaraz dezakezu aplikazioa errore bat agertzen denean. Baina zergatik utzi 5.000 erabiltzaile offline iragarri daitekeen errore funtzional txiki batengatik? Kontrakoa ere ez da egokia: arazo ezezagun bat gertatzen denean -programatzailearen errore bat, esaterako- aplikazioa martxan mantentzeak ezusteko jokaerak eragin ditzake. Biak bereizteak aukera ematen du kontuz jokatzeko eta ikuspegi orekatu bat aplikatzeko testuinguruan oinarrituz
+**Bestela:** beti berrabiaraz dezakezu aplikazioa errore bat agertzen denean. Baina zergatik utzi 5.000 erabiltzaile offline iragarri daitekeen errore funtzional txiki batengatik? Kontrakoa ere ez da egokia: arazo ezezagun bat gertatzen denean -programatze errore bat, esaterako- aplikazioa martxan mantentzeak ezusteko jokaerak eragin ditzake. Biak bereizteak aukera ematen du kontuz jokatzeko eta ikuspegi orekatu bat aplikatzeko testuinguruan oinarrituz
 
-🔗 [**Informazio gehiago: eragiketa erroreak vs programazio erroreak**](/sections/errorhandling/operationalvsprogrammererror.basque.md)
+🔗 [**Informazio gehiago: eragiketa erroreak vs programatze erroreak**](/sections/errorhandling/operationalvsprogrammererror.basque.md)
 
 <br/><br/>
 
 ## ![✔] 2.4 Kudeatu erroreak gune bakar batean, Express middleware erabili partez
 
-**TL;PL:** erroreak kudeatzeko logika -hala nola, haien erregistroa eramatea eta administratzaileari mezuak bidaltzea- objektu dedikatu zentralizatu batean kapsulatu behar da, erroreren bat gertatzen denean helmuga guztiek (adibidez, Express middleware, cron atazak, atalkako egiaztatzeak) hara deitu dezaten
+**TL;PL:** erroreak kudeatzeko logika -hala nola, haien erregistroa eramatea eta administratzaileari mezuak bidaltzea- objektu dedikatu zentralizatu batean kapsulatu behar da, erroreren bat gertatzen denean helmuga guztiek (adibidez, Express middlewarea, cron atazak, atalkako egiaztatzeak) hara deitu dezaten
 
 **Bestela:** erroreak toki bakarrean ez kudeatzeak kodea bikoiztea eragiten du eta, ziur aski, erroreak gaizki kudeatzea ere bai
 
@@ -160,7 +160,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 **Bestela:** aplikazio baten bezeroak erabaki dezake aplikazioa itxi eta berrabiaraztea, ulertzen ez duen errore baten abisua jaso duelako soil-soilik. Oharra: zu zeu izan zaitezke zure aplikaziotik deitzen duena (oso ohikoa mikrozerbitzu inguruneetan)
 
-🔗 [**Informazio gehiago: dokumentatu aplikazioaren akatsak Swagger edo GraphQLren laguntzarekin**](/sections/errorhandling/documentingusingswagger.basque.md)
+🔗 [**Informazio gehiago: dokumentatu aplikazioaren erroreak Swagger edo GraphQLren laguntzarekin**](/sections/errorhandling/documentingusingswagger.basque.md)
 
 <br/><br/>
 
@@ -176,7 +176,7 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 ## ![✔] 2.7 Erabili erregistratze tresna helduak erroreen ikusgaitasuna handitzeko
 
-**TL;PL:** erregistratze tresna helduen sortak erabiltzen badituzu –[Pino](https://github.com/pinojs/pino) edo [Log4js](https://www.npmjs.com/package/log4js), adibidez–, erroreak lehenago antzeman eta ulertuko dituzu. Beraz, utzi alde batera console.log
+**TL;PL:** erregistratze tresna helduen sortak erabiltzen badituzu –[Pino](https://github.com/pinojs/pino) edo [Log4js](https://www.npmjs.com/package/log4js), adibidez–, erroreak lehenago atzeman eta ulertuko dituzu. Beraz, utzi alde batera console.log
 
 **Bestela:** console.log-ak arakatu behar badituzu edo testua desordenatua duen artxibo batean erroreak eskuz, kontsulta tresnarik gabe edo erregistratze bisore ganorazkorik gabe bilatu behar badituzu, ordu asko emango dituzu lanean gaueko ordu txikiak arte
 
@@ -186,9 +186,9 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 ## ![✔] 2.8 Testeatu erroreen fluxua zure test framework gustukoena erabiliz
 
-**TL;PL:** kalitate profesionaleko kontrol tresna automatizatu bat izan zein programatzaileentzako eskuzko test soil bat izan, bermatu zure kodeak ez duela egoera positiboetan bakarrik lan egiten, baizik eta errore zuzenak ere kudeatu eta birbidaltzen dituela. Mocha & Chai bezalako unitate test frameworkek erraz egin dezakete lan hori (ikusi “Gist leiho”ko kode adibideak)
+**TL;PL:** kalitate profesionaleko kontrol tresna automatizatu bat izan zein programatzaileentzako eskuzko test soil bat izan, bermatu zure kodeak ez duela egoera positiboetan bakarrik lan egiten, baizik eta errore zuzenak ere kudeatu eta birbidaltzen dituela. Mocha eta Chai bezalako unitate test frameworkek erraz egin dezakete lan hori (ikusi “Gist leiho”ko kode adibideak)
 
-**Bestela:** automatikoki zein eskuz probarik egin gabe ezin duzu konfiantzarik izan zure kodeak benetako erroreak antzemango dituen. Errore adierazgarririk gabe ez dago erroreak kudeatzerik
+**Bestela:** automatikoki zein eskuz probarik egin gabe ezin duzu konfiantzarik izan zure kodeak benetako erroreak atzemango dituen. Errore adierazgarririk gabe ez dago erroreak kudeatzerik
 
 🔗 [**Informazio gehiago: testeatu erroreen fluxua**](/sections/errorhandling/testingerrorflows.basque.md)
 
@@ -220,19 +220,17 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 **Bestela:** pentsatu zure funtzioa agintza numeriko baten zain dagoela, adibidez «deskontua», eskatzaileak bidaltzea ahaztu duena; geroago, haren kodeak baieztatzen du « deskontua! = 0 (baimendutako deskontua zero baino handiagoa da)», eta horrek ahalmena ematen dio erabiltzaileari deskontua izateko. Ene, nolako errore arriskutsua! Konturatzen zara?
 
-🔗 [**Informazio gehiago: huts egin azkar**](/sections/errorhandling/failfast.basque.md)
+🔗 [**Informazio gehiago: huts eragin azkar**](/sections/errorhandling/failfast.basque.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
-
 ## ![✔] 2.12 Agintzen zain egon beti itzuli aurretik, pilak arrastorik uztea saihesteko
 
-**TL; DR:** beti egin `return await` promesa bat itzultzean, pila osoaren jarraipena egin ahal izateko. Funtzio batek promesa bat itzultzen badu, funtzio hori `async`, hau da, asinkronotzat jo behar da, eta esplizituki `await`, itxaron agintza, itzuli aurretik
+**TL; PL:** beti egin `return await` promesa bat itzultzean, pila osoaren jarraipena egin ahal izateko. Funtzio batek promesa bat itzultzen badu, funtzio hori `async`, hau da, asinkronotzat jo behar da, eta esplizituki `await`, itxaron agintza, itzuli aurretik
 
 **Bestela:** itxaron gabe agintza itzultzen duen funtzioa ez da pilaren arrastoan agertuko. Galdutako fotograma horiek akatsa eragingo duen fluxua ulertzea zailduko lukete, batez ere portaera anormalaren zergatia falta den funtzioaren barruan baldin badago
 
-🔗 [**Gehiago irakurri: agintzak itzultzea**](/sections/errorhandling/returningpromises.basque.md)
+🔗 [**Informazio gehiago: agintzak itzultzea**](/sections/errorhandling/returningpromises.basque.md)
 
 <br/><br/><br/>
 
@@ -252,17 +250,17 @@ Irakurri beste hizkuntza batzuetan: [![CN](/assets/flags/CN.png)**CN**](/README.
 
 ## ![✔] 3.2 Node.jsentzako plugin espezifikoak
 
-**TL;PL:** ESLintek JavaScript vainilla babesteko dituen arau estandarretatik aparte, komeni da Node.jsen osagai espeziko batzuk erabiltzea, hala nola [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) eta [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
+**TL;PL:** ESLintek Vanilla JavaScript babesteko dituen arau estandarretatik aparte, komeni da Node.jsen osagai espeziko batzuk erabiltzea, hala nola [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) eta [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
-**Bestela:** Node.jsen arau akastun batzuek radarraren kontrolari ihes egin ahal diote. Esaterako, garatzaileek sarbide moduan aldagai jakin baten beharra izan dezakete (require(variableCommeChemin)), edozein script JS erabiltzeko aukera ematen diena erasotzaileei. Node.jsen lintersek patroi horiek antzeman ditzakete eta garaiz jo alarma
+**Bestela:** Node.jsen arau akastun batzuek radarraren kontrolari ihes egin ahal diote. Esaterako, garatzaileek sarbide moduan aldagai jakin baten beharra izan dezakete (require(variableCommeChemin)), edozein JS script erabiltzeko aukera ematen diena erasotzaileei. Node.jsen linterrek patroi horiek atzeman ditzakete eta garaiz jo alarma
 
 <br/><br/>
 
-## ![✔] 3.3 Jarri kode multzo baten giltzak lerro bakar batean
+## ![✔] 3.3 Jarri kode multzo baten giltzak lerro bakarrean
 
 **TL;PL:** kode bloke baten hasierako parentesiak irekiera instrukzioaren lerroan egon behar du
 
-### Kodearen adibidea
+### Kode adibidea
 
 ```javascript
 // Egin
@@ -288,9 +286,9 @@ Ez dio axola instrukzioak bereizteko puntu eta koma erabiltzen duzun edo ez, ohi
 
 **TL;PL:** erabili ESLint bereizketetan izaten diren erroreez jabetzeko. [Prettier](https://prettier.io/) edo [Standardjs](https://standardjs.com/) erabiliz automatikoki konpon ditzakezu arazo horiek
 
-**Bestela:** aurreko atalean esan bezala, JavaScripteko interpreteak automatikoki “puntu eta koma” gehitzen du instrukzio baten amaieran “punto eta koma”rik ez badago edo instrukzioa behar den tokian ez dela amaitu eta horrek okerreko emaitzak eragin ditzakeela pentsatzen badu. Ustekabeko errore gehienak ekiditeko, esleipenak erabil ditzakezu eta, horrela, berehala deitutako funtzio adierazpenak erabiltzea saihestuko duzu
+**Bestela:** aurreko atalean esan bezala, JavaScripteko interpreteak automatikoki “puntu eta koma” gehitzen du instrukzio baten amaieran “puntu eta koma”rik ez badago edo instrukzioa behar den tokian ez dela amaitu eta horrek okerreko emaitzak eragin ditzakeela pentsatzen badu. Ustekabeko errore gehienak ekiditeko, esleipenak erabil ditzakezu eta, horrela, berehala deitutako funtzio adierazpenak erabiltzea saihestuko duzu
 
-### Kodearen adibidea
+### Kode adibidea
 
 ```javascript
 // Egin
@@ -305,7 +303,7 @@ eginZerbait()
 const items = [1, 2, 3]
 items.forEach(console.log)
 
-// Baztertu — exception bat jaurtitzen du
+// Baztertu — salbuespen bat jaurtitzen du
 const m = new Map()
 const a = [1,2,3]
 [...m.values()].forEach(console.log)
@@ -313,7 +311,7 @@ const a = [1,2,3]
 >  ^^^
 > SyntaxError: Unexpected token ...
 
-// egin zerbait — exception bat jaurtitzen du
+// egin zerbait — salbuespen bat jaurtitzen du
 const count = 2 // 2() burutzen saiatzen da, baina 2() ez da funtzio bat
 (function egin zerbait() {
   // egin zerbait paregabea
@@ -322,15 +320,15 @@ const count = 2 // 2() burutzen saiatzen da, baina 2() ez da funtzio bat
 ```
 
 🔗 [**Informazio gehiago:** "Semi ESLint araua"](https://eslint.org/docs/rules/semi)
-🔗 [**Informazio gehiago:** "stekabeko ESLint arau lerroaniztunik ez"](https://eslint.org/docs/rules/no-unexpected-multiline)
+🔗 [**Informazio gehiago:** "Ez dago ustekabeko ESLint arau lerroaniztunik"](https://eslint.org/docs/rules/no-unexpected-multiline)
 
 <br/><br/>
 
 ## ![✔] 3.5 Izendatu funtzio guztiak
 
-**TL;PL:** izendatu funtzio guztiak, itxierak eta deiak. Saihestu funtzio anonimoak. Hau bereziki erabilgarria da nodo aplikazio bat profilatzerakoan. Funtzio guztiak izendatzeak memoria argazkia egiaztatzean aukera emango dizu zer bilatzen ari zaren ulertzen
+**TL;PL:** izendatu funtzio guztiak, itxierak eta deiak. Saihestu funtzio anonimoak. Hau bereziki erabilgarria da node aplikazio bat profilatzerakoan. Funtzio guztiak izendatzeak memoria argazkia egiaztatzean aukera emango dizu zer bilatzen ari zaren ulertzen
 
-**Bestela:** zaila izan liteke produkzio arazoak araztea memoria erregistroak erabiliz (memoria argazkia), funtzio anonimoetako memoria kontsumoa handia denean
+**Bestela:** zaila izan liteke ekoizpen arazoak araztea memoria erregistroak erabiliz (memoria argazkia), funtzio anonimoetako memoria kontsumoa handia denean
 
 <br/><br/>
 
@@ -364,13 +362,13 @@ function eginZerbait() {}
 
 **Bestela:** arazketa askoz ere astunagoa da, maiz aldatzen den aldagai baten jarraipena egitean
 
-🔗 [**Gehiago irakurri: JavaScript ES6 +: var, let, edo const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
+🔗 [**Informazio gehiago: JavaScript ES6 +: var, let, edo const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
 
 <br/><br/>
 
 ## ![✔] 3.8 Erabili moduluak lehenengo, barne funtzioen partez
 
-**TL;PL:** moduluak fitxategi bakoitzaren hasieran erabili behar dira, edozein funtzioren aurretik eta kanpo. Jardunbide on eta sinple honek lagunduko dizu fitxategiaren menpekotasunak erraz eta azkar antzematen haren eskuineko goi aldean, baita arazo posible batzuk ekiditen ere
+**TL;PL:** moduluak fitxategi bakoitzaren hasieran erabili behar dira, edozein funtzioren aurretik eta kanpo. Jardunbide on eta sinple honek lagunduko dizu fitxategiaren menpekotasunak erraz eta azkar atzematen haren eskuineko goi aldean, baita arazo posible batzuk ekiditen ere
 
 **Bestela:** Node.js.k aldi berean exekutatzen ditu require-ak. Funtzio batek dei egiten badie, egoera kritikoago batean dauden beste eskaera batzuk blokea daitezke. Gainera, deitutako moduluetako batek edo haren menpeko ataza batek errore bat izanez gero, komeni da lehenbailehen haren berri jakitea, eta agian ezingo da hori egin, modulu horri funtzio batek deitzen badio
 
@@ -382,7 +380,7 @@ function eginZerbait() {}
 
 **Bestela:** fitxategien barne egitura edo sinadura aldatzeak erabiltzaileen interfazea apur dezake
 
-### 3.9 Kodearen adibidea
+### 3.9 Kodea adibidea
 
 ```javascript
 // Egin
@@ -400,9 +398,9 @@ module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolve
 
 **TL;PL:** hobetsi berdintasunaren eragile zorrotza `===` berdintasun abstraktuaren eragile ahulagoa baino `==`. `==` eragileak bi aldagai alderatuko ditu, behin aldagai arrunt bihurtu ondoren. `===` eragileak ez du aldagai motaren bihurketarik egiten, eta bi aldagaiek mota berekoak izan behar dute berdinak izateko
 
-**Bestela:** `==`eragileak, berdinak ez diren aldagaiak alderatuz gero, berdinak direlako mezua helaraz dezake
+**Bestela:** `==` eragileak, berdinak ez diren aldagaiak alderatuz gero, berdinak direlako mezua helaraz dezake
 
-### 3.10 Kodearen adibidea
+### 3.10 Kode adibidea
 
 ```javascript
 "" == "0"; // false
@@ -425,17 +423,17 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 ## ![✔] 3.11 Erabili Async Await, ekidin callbackak
 
-**TL;PL:** Node 8 LTS erabat bateragarria da orain Async-waitekin, eta, horrela kode asinkronikoa kudeatzeko aukera ematen du, callbackik eta agintzarik erabili gabe. Async-waitek ez du blokeorik eragiten, eta kode asinkronikoak sinkroniko bihurtzen ditu. Zure kodeari egin ahal diozun oparirik onena async-wait erabiltzea da, eskaintzen duen kode sintaxia askoz ere trinkoagoa eta ezagunagoa da eta
+**TL;PL:** Node 8 LTS erabat bateragarria da orain Async-awaitekin, eta, horrela kode asinkronikoa kudeatzeko aukera ematen du, callbackik eta agintzarik erabili gabe. Async-awaitek ez du blokeorik eragiten, eta kode asinkronikoak sinkroniko bihurtzen ditu. Zure kodeari egin ahal diozun oparirik onena async-await erabiltzea da, eskaintzen duen kode sintaxia askoz ere trinkoagoa eta ezagunagoa da eta
 
 **Bestela:** gaizki pasatu eta infernura joateko biderik azkarrena hartu nahi baduzu, erabili callbackak errore asinkronoak kudeatzeko, seguruenik, infernura joateko biderik azkarrena aukeratuko duzu. Estilo honek gune guztietako erroreak egiaztatzera behartzen du, eta, gainera, kode habiaratze beti deserosoaren kudeaketa eta kode fluxua ulertzea zailtzen du
 
-🔗[**Informazio gehiago:** async wait 1.0ren gida](https://github.com/yortus/asyncawait)
+🔗[**Informazio gehiago:** async-await 1.0ren gida](https://github.com/yortus/asyncawait)
 
 <br/><br/>
 
 ## ![✔] 3.12 Erabili gezi funtzioak (=>)
 
-**TL;PL:** agintzak eta callbackak onartzen dituzten API zaharrekin async-wait erabiltzea eta funtzio parametroak ekiditea gomendarria bada ere, gezi funtzioek kodearen egitura trinkotu egiten dute eta erro funtzioaren testuinguru lexikoa bermatu (hau da, `this` )
+**TL;PL:** agintzak eta callbackak onartzen dituzten API zaharrekin async-await erabiltzea eta funtzio parametroak ekiditea gomendarria bada ere, gezi funtzioek kodearen egitura trinkotu egiten dute eta erro funtzioaren testuinguru lexikoa bermatu (hau da, `this`)
 
 **Bestela:** (ES5 funtzioetan) kode luzeek erroreak izateko joera handiagoa dute, eta, gainera, irakurtzeko astunak dira
 
@@ -449,7 +447,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 ## ![✔] 4.1 Idatzi APIaren probak (osagaia), gutxienez
 
-**TL;PL:** proiektu gehienei ez zaie proba automatikorik egiten denbora gutxian egiten direlako edo, maiz, 'proba proiektua' kontroletik kanpo geratu eta bertan behera uzten direlako. Hori dela eta, lehentasuna eman API probei eta hasi beraiek egiten; izan ere, hori da idazteko erarik errazena eta, gainera, proba unitarioek baino estaldura handiagoa eskaintzen dute; are gehiago, API probak sor ditzakezu, [Postman](https://www.getpostman.com/) bezalako tresnak erabiliz. Ondoren, baliabide eta denbora gehiago edukiz gero, jarraitu proba aurreratuak egiten, hala nola proba unitarioak, datu baseen probak, errendimendu probak, etab.
+**TL;PL:** proiektu gehienei ez zaie proba automatikorik egiten denbora gutxian egiten direlako edo, maiz, 'proba proiektua' kontroletik kanpo geratu eta bertan behera uzten delako. Hori dela eta, lehentasuna eman API probei eta hasi beraiek egiten; izan ere, hori da idazteko erarik errazena eta, gainera, proba unitarioek baino estaldura handiagoa eskaintzen dute; are gehiago, API probak sor ditzakezu, [Postman](https://www.getpostman.com/) bezalako tresnak erabiliz. Ondoren, baliabide eta denbora gehiago edukiz gero, jarraitu proba aurreratuak egiten, hala nola proba unitarioak, datu baseen probak, errendimendu probak, etab.
 
 **Bestela:** luzaroan aritu zintezke proba unitarioak idazten, azkenean soilik %20ko estaldura lortu duzula jakiteko
 
@@ -457,11 +455,11 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 ## ![✔] 4.2 Erabili 3 zati proba izen bakoitzean
 
-**TL;PL:** proba adierazgarria izan behar da eskakizunen mailan, barne kodearekin lan egiten ohituta ez dauden QAko ingeniariek eta garatzaileek berez eta erraz uler dezaten. Probaren izenean adierazi zer ari den probatzen (probatzen ari den unitatea), zer egoeratan eta zer emaitza espero den
+**TL;PL:** proba adierazgarria izan behar da eskakizunen mailan, barne kodearekin lan egiten ohituta ez dauden QAko ingeniariek eta garatzaileek berez eta erraz uler dezaten. Probaren izenean adierazi zer ari den probatzen (probapean dagoen unitatea), zer egoeratan eta zer emaitza espero den
 
 **Bestela:** inplementazio batek huts egin du, “Gehitu produktua“ izeneko proba batek huts egin du. Esaten dizu horrek zehazki zer dabilen gaizki?
 
-🔗 [**Irakurri gehiago: erabili 3 zati proba izen bakoitzean**](/sections/testingandquality/3-parts-in-name.basque.md)
+🔗 [**Informazio gehiago: erabili 3 zati proba izen bakoitzean**](/sections/testingandquality/3-parts-in-name.basque.md)
 
 <br/><br/>
 
@@ -477,9 +475,9 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 ## ![✔] 4.4 Antzeman kodeko arazoak linter bat erabiliz
 
-**TL;PL:** erabili kode linterra oinarrizko kalitatea egiaztatzeko eta antiereduak garaiz antzemateko. Exekutatu edozein proba baino lehen eta gehitu aurre-commit-a git kako moduan, edozein arazo berrikusteko eta zuzentzeko behar den denbora minimizatu ahal izateko. Era berean, egiaztatu [3. atala](#3-code-style-practices), kodearen estilo praktikei dagokienez
+**TL;PL:** erabili kode linterra oinarrizko kalitatea egiaztatzeko eta antiereduak garaiz atzemateko. Exekutatu edozein proba baino lehen eta gehitu aurre-commit-a git kako moduan, edozein arazo berrikusteko eta zuzentzeko behar den denbora minimizatu ahal izateko. Era berean, egiaztatu [3. atala](#3-kode-estiloa), kodearen estilo praktikei dagokienez
 
-**Bestela:** kode antiereduren bat zuzendu gabe utz dezakezu, zure produkzio ingurunean ahula izan litekeena
+**Bestela:** kode antiereduren bat zuzendu gabe utz dezakezu, zure ekoizpen ingurunean ahula izan litekeena
 
 <br/><br/>
 
@@ -511,7 +509,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 ## ![✔] 4.8 Egiaztatu zure proben estaldura, proba eredu okerrak identifikatzen laguntzen du eta
 
-**TL;PL:** [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) bezalako estaldura tresnak oso aproposak dira 3 arrazoirengatik: dohainik dira, hau da, ez da lanik egin behar txostenak lortzeko; proben estaldura gutxitu den identifikatzen laguntzen dute; eta, azkenik, baina ez garrantzi txikiagokoa, proben desdoikuntzak agerian jartzen dituzte. Koloretako kode estalduraren txostenak aztertzean, baliteke harrapaketa kapsula moduan sekula testatzen ez diren kode arloak ikustea, adibidez. Horrek esan nahi du probek bide arrakastatsuak besterik ez dituztela antzematen eta ez aplikazioak nola jokatzen duen erroreak gertatzen direnean. Konfiguratu zure probak estaldura maila batetik behera jaisten denean erroreak eragiteko
+**TL;PL:** [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) bezalako estaldura tresnak oso aproposak dira 3 arrazoirengatik: dohainik dira, hau da, ez da lanik egin behar txostenak lortzeko; proben estaldura gutxitu den identifikatzen laguntzen dute; eta, azkenik, baina ez garrantzi txikiagokoa, proben desdoikuntzak agerian jartzen dituzte. Koloretako kode estalduraren txostenak aztertzean, baliteke harrapaketa kapsula moduan sekula testatzen ez diren kode arloak ikustea, adibidez. Horrek esan nahi du probek bide arrakastatsuak besterik ez dituztela atzematen eta ez aplikazioak nola jokatzen duen erroreak gertatzen direnean. Konfiguratu zure probak estaldura maila batetik behera jaisten denean erroreak eragiteko
 
 **Bestela:** ez da inolako neurgailu automatizaturik egongo zure kodearen zati handi bat proben estalduratik kanpo dagoela esango dizuna
 
@@ -519,7 +517,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 ## ![✔] 4.9 Ikuskatu pakete zaharkituak
 
-**TL;PL:** erabili zure tresnarik gogokoena (adibidez, 'npm outdated' edo [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) zaharkituta dauden paketeak antzemateko, ezarri kontrol hau zure IEren bideetan eta, are gehiago, eragin konpilazio batek huts egitea ingurune kritikoetan. Adibidez, agertoki kritikoa izan daiteke instalatutako pakete batek 5 adabaki baieztatuak dituenean (adibidez, bertsio lokala 1.3.1 da eta biltegi bertsioa 1.3.8) edo haren egileak zaharkitu etiketa jarri dionean. Kasu horretan, ezabatu konpilazioa eta ekidin bertsio hori erabiltzea
+**TL;PL:** erabili zure tresnarik gogokoena (adibidez, 'npm outdated' edo [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) zaharkituta dauden paketeak atzemateko, ezarri kontrol hau zure IEren bideetan eta, are gehiago, eragin konpilazio batek huts egitea ingurune kritikoetan. Adibidez, agertoki kritikoa izan daiteke instalatutako pakete batek 5 adabaki baieztatuak dituenean (adibidez, bertsio lokala 1.3.1 da eta biltegi bertsioa 1.3.8) edo haren egileak zaharkitu etiketa jarri dionean. Kasu horretan, ezabatu konpilazioa eta ekidin bertsio hori erabiltzea
 
 **Bestela:** modu esplizituan arriskutsutzat etiketatuta dauden paketeak egikarituko ditu zure produkzioak
 
@@ -527,7 +525,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 ## ![✔] 4.10 Erabili production bezalako inguruneak e2e probetarako
 
-**TL;PL:** zuzeneko datuak erabiltzen dituen hasieratik amaierarainoko proba(e2e) lehen CIren prozesuko katebegirik ahulena izaten zen, datu baseak bezalako zerbitzu astun askoren menpean dago eta. Erabili zure ekoizpen errealetik ahalik eta hurbilen dagoen ingurunea
+**TL;PL:** zuzeneko datuak erabiltzen dituen hasieratik amaierarainoko proba (e2e) lehen IEren prozesuko katebegirik ahulena izaten zen, datu baseak bezalako zerbitzu astun askoren menpean dago eta. Erabili zure ekoizpen errealetik ahalik eta hurbilen dagoen ingurunea
 
 **Bestela:** docker-compose erabili ezean, taldeek ingurune bakoitzeko proben datu baseak mantendu behar izaten dituzte, garatzaileen makinak barne. Mantendu beti datu base horiek sinkronizatuta, proben emaitzak alda ez daitezen ingurune batetik bestera
 
@@ -535,7 +533,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 ## ![✔] 4.11 Eguneratu probak aldizka analisi estatikoko tresnak erabiliz
 
-**TL;PL:** analisi estatikoko tresnak erabiltzeak lagundu egiten dizu kodearen kalitatea hobetzeko modu objektiboak lortzen eta zure kodea jasangarri izaten. Analisirako tresna estatikoak gehitu ahal dizkiozu zure IE konpilazioari, huts egingo duen susmoa duzuenean. Estaldurari dagokionean, bere aldeko puntu nagusiak dira kalitatea ikuskatzeko gaitasuna dutela fitxategi anitzen testuinguruan (adibidez, bikoizketak antzematea), azterketa aurreratuak egitea (adibidez, kodearen konplexutasuna hautematea), eta kode arazoen historiaren eta aurrerapenaren jarraipena egitea. Horretarako, bi tresna hauek erabil ditzakezu: [Sonarqube](https://www.sonarqube.org/) (2.600+ [izar](https://github.com/SonarSource/sonarqube)) eta [Code Climate](https://codeclimate.com/) (1.500+ [izar](https://github.com/codeclimate/codeclimate))
+**TL;PL:** analisi estatikoko tresnak erabiltzeak lagundu egiten dizu kodearen kalitatea hobetzeko modu objektiboak lortzen eta zure kodea jasangarri izaten. Analisirako tresna estatikoak gehitu ahal dizkiozu zure IE konpilazioari, huts egingo duen susmoa duzuenean. Estaldurari dagokionean, bere aldeko puntu nagusiak dira kalitatea ikuskatzeko gaitasuna dutela fitxategi anitzen testuinguruan (adibidez, bikoizketak atzematea), azterketa aurreratuak egitea (adibidez, kodearen konplexutasuna hautematea), eta kode arazoen historiaren eta aurrerapenaren jarraipena egitea. Horretarako, bi tresna hauek erabil ditzakezu: [Sonarqube](https://www.sonarqube.org/) (2.600+ [izar](https://github.com/SonarSource/sonarqube)) eta [Code Climate](https://codeclimate.com/) (1.500+ [izar](https://github.com/codeclimate/codeclimate))
 
 **Bestela:** kodearen kalitatea txarra denean, erroreek eta errendimenduak beti emango dituzte arazoak, azken belaunaldiko ezaugarriak dituen liburutegi berri distiratsu batek ere konpontzerik izango ez dituenak
 
@@ -545,21 +543,21 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 ## ![✔] 4.12 Aukeratu arretaz zure IE plataforma (Jenkins vs CircleCI vs Travis vs gainerako mundua)
 
-**TL;PL:** zure integrazio jarraituaren plataformak (CICD) kalitateko tresna guztiak (adib. testak, lintak) ostatatu behar ditu, eta, beraz, indartsua izan beharko du pluginen ekosistema. Aspaldian [Jenkins](https://jenkins.io/) proiektu askoren balio lehenetsia izan ohi zen, komunitaterik handiena eta oso plataforma indartsua baititu, ordainetan konfigurazio konplexu samarra eta ikaste kurba pikoa baditu ere. Gaur egun, askoz errazagoa da IE irtenbide bat sortzea [CircleCI](https://circleci.com) eta haren antzeko SaaS tresnak erabiliz. Tresna horiek IE hodi malgu bat sortzea ahalbidetzen dute azpiegitura osoa kudeatzeko zama hartu beharra izan gabe. Azken batean, sendotasuna eta abiaduraren arteko oreka lortzea da kontua. Egin zure aukera arretaz
+**TL;PL:** zure integrazio jarraituaren plataformak (CICD) kalitateko tresna guztiak (adib. testak, lintak) ostatatu behar ditu, eta, beraz, indartsua izan beharko du bere pluginen ekosistemak. Aspaldian [Jenkins](https://jenkins.io/) proiektu askoren balio lehenetsia izan ohi zen, komunitaterik handiena eta oso plataforma indartsua baititu, ordainetan konfigurazio konplexu samarra eta ikaste kurba pikoa baditu ere. Gaur egun, askoz errazagoa da IE irtenbide bat sortzea [CircleCI](https://circleci.com) eta haren antzeko SaaS tresnak erabiliz. Tresna horiek IE hodi malgu bat sortzea ahalbidetzen dute azpiegitura osoa kudeatzeko zama hartu beharra izan gabe. Azken batean, sendotasuna eta abiaduraren arteko oreka lortzea da kontua. Egin zure aukera arretaz
 
 **Bestela:** hornitzaile espezializatu bat aukeratzeak blokeatu zaitzake, pertsonalizazio aurreratu bat behar duzunean. Bestalde, Jenkins erabiltzeak denbora asko eska dezake azpiegitura konfiguratzean
 
-🔗 [**Irakurri gehiago: IC plataforma aukeratzea**](/sections/testingandquality/citools.basque.md)
+🔗 [**Informazio gehiago: IE plataforma aukeratzea**](/sections/testingandquality/citools.basque.md)
 
 <br/><br/>
 
 ## ![✔] 4.13 Probatu zure middlewareak eurak bakarrik
 
-**TL;PL:** middlewareak eskaera askori erantzuten dion logika sendo bat duenean, merezi du middlewarea probatzea bera bakarrik, web esparru osoa aktibatu gabe. Hori erraz lor daiteke {req, res, next} objektuak antzemanez eta behatuz
+**TL;PL:** middlewareak eskaera askori erantzuten dion logika sendo bat duenean, merezi du middlewarea probatzea bera bakarrik, web esparru osoa aktibatu gabe. Hori erraz lor daiteke {req, res, next} objektuak atzemanez eta behatuz
 
 **Bestela:** middleware Expressean === errorea izanez gero, errorea gertatuko zaizu eskaera guztietan edo gehienetan
 
-🔗 [**Irakurri gehiago: probatu zure middlewareak eurak bakarrik**](/sections/testingandquality/test-middlewares.basque.md)
+🔗 [**Informazio gehiago: probatu zure middlewareak eurak bakarrik**](/sections/testingandquality/test-middlewares.basque.md)
 
 <br/><br/><br/>
 
@@ -573,7 +571,7 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 **Bestela:** hutsegitea === bezero zapuztuak
 
-🔗 [**Irakurri gehiago: monitorizazioa!**](/sections/production/monitoring.md)
+🔗 [**Informazio gehiago: monitorizazioa!**](/sections/production/monitoring.basque.md)
 
 <br/><br/>
 
@@ -583,18 +581,18 @@ Aurreko azalpen guztiak faltsuak izango lirateke `===` eragilea erabili izan bal
 
 **Bestela:** kutxa beltz batekin amaituko duzu, eta zaila izango zaizu han jasotako ezarpenen zergatia aurkitzea. Azkenean, erregistro adierazpen guztiak idazten hasiko zara informazio osagarria gehitzeko
 
-🔗 [**Gehiago irakurri: gardentasuna handitu erregistratze plataforma adimendunak erabiliz**](/sections/production/smartlogging.md)
+🔗 [**Informazio gehiago: gardentasuna handitu erregistratze plataforma adimendunak erabiliz**](/sections/production/smartlogging.basque.md)
 
 <br/><br/>
 
-## ![✔] 5.3. Utzi ahal den guztia alderantzizko proxy batean (adibidez, gzip, SSL)
+## ![✔] 5.3. Delegatu ahal den guztia alderantzizko proxy batean (adibidez, gzip, SSL)
 
 **TL;PL:** Node izugarri txarra da PUZen zeregin intentsiboak egiten, esate baterako, gzipping, SSL termination. Haien partez benetako middleware zerbitzuak erabili behar dituzu –hala nola nginx eta Haproxy–
 edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** zure hari bakarra lanpetuta egongo da azpiegitura lanak egiten, zure aplikazioaren guneari kasu egin beharrean, eta, ondorioz, haren errendimenduak behera egingo du
 
-🔗 [**Irakurri gehiago: utzi ahal den guztia alderantzizko proxy batean (adibidez, gzip, SSL)**](/sections/production/delegatetoproxy.md)
+🔗 [**Informazio gehiago: delegatu ahal den guztia alderantzizko proxy batean (adibidez, gzip, SSL)**](/sections/production/delegatetoproxy.basque.md)
 
 <br/><br/>
 
@@ -604,7 +602,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** QAk kodea xeheki probatuko du eta onartuko duen bertsioak desberdin jokatuko du produkzioan. Are okerrago, produkzio talde bereko zerbitzarien kodeak desberdinak izan litezke
 
-🔗 [**Informazio gehiago: blokeatu menpekotasunak**](/sections/production/lockdependencies.md)
+🔗 [**Informazio gehiago: blokeatu menpekotasunak**](/sections/production/lockdependencies.basque.md)
 
 <br/><br/>
 
@@ -614,7 +612,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** estrategia argirik gabe dozenaka eskaera exekutatzeak DevOpsa nahaste-borrastera eraman dezake, hartarako aldi berean tresna gehiegi (talde kudeaketa, dockerra, PM2) erabiliz gero
 
-🔗 [**Irakurri gehiago: babestu prozesuaren erabilgarritasuna tresna egokiak erabiliz**](/sections/production/guardprocess.md)
+🔗 [**Informazio gehiago: babestu prozesuaren erabilgarritasuna tresna egokiak erabiliz**](/sections/production/guardprocess.basque.md)
 
 <br/><br/>
 
@@ -624,27 +622,27 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** seguruenik, zure aplikazioak erabilgarri dituen baliabideen %25a besterik ez du erabiltzen (!), edo gutxiago, agian. Kontuan izan ohiko zerbitzariek gutxienez lau nukleo dituztela PUZen, eta Node.jsren garatzaile soilak bat bakarra erabiltzen duela (AWS beanstalk bezalako PaaS zerbitzuekin lan egiten duenean ere)
 
-🔗 [**Informazio gehiago: erabili PUZeko nukleo guztiak**](/sections/production/utilizecpu.md)
+🔗 [**Informazio gehiago: erabili PUZeko nukleo guztiak**](/sections/production/utilizecpu.basque.md)
 
 <br/><br/>
 
-## ![✔] 5.7. Sortu ‘bukaerako mantentze puntua‘
+## ![✔] 5.7. Sortu ‘mantentze lanen amaiera puntua‘
 
 **TL;PL:** API seguru batean, jarri agerian sistemarekin lotutako informazio multzo bat, hala nola, memoriaren erabilera eta REPL, etab. Nahiz eta gomendagarria den proba estandarretan eta tresna arruntetan oinarritzea, zenbait informazio eta eragiketa baliotsu errazago egiten dira kodea erabiliz
 
 **Bestela:** konturatuko zara “diagnostiko-inplementazio“ asko egiten ari zarela, eta kodea produkziora bidaltzen duzula soilik informazioa lortzeko diagnostikoa egite aldera
 
-🔗 [**Informazio gehiago: sortu ‘bukerako mantentze puntua‘**](/sections/production/createmaintenanceendpoint.md)
+🔗 [** Informazio gehiago: sortu ‘mantentze lanen amaiera puntua‘**](/sections/production/createmaintenanceendpoint.basque.md)
 
 <br/><br/>
 
-## ![✔] 5.8. Aurkitu akatsak eta geldialdiak APM produktuak erabiliz
+## ![✔] 5.8. Aurkitu erroreak eta geldialdiak APM produktuak erabiliz
 
 **TL;PL:** aplikazioen jarraipen eta errendimendu produktuek (APM deritzona) modu proaktiboan neurtzen dituzte kode basea eta APIa, modu automatikoan ohiko jarraipenetik haratago joateko eta erabiltzaileen esperientzia arrunta zerbitzu eta maila guztietan neurtzeko. Adibidez, APM produktu batzuek agerian jarri dezakete azken erabiltzaileen aldean motelegi kargatzen dela transakzio bat, sakoneko arrazoia iradokitzen duten bitartean
 
 **Bestela:** APIaren errendimendua eta geldialdiak neurtzeko ahalegin handia egin zenezake, eta, ziurrenik, ez zinateke jabetuko zein diren zure kodearen atalik motelenak mundu errealeko eszenatokian eta nola eragiten dioten zure erabiltzaile esperientziari
 
-🔗 [**Irakurri gehiago: aurkitu akatsak eta geldialdiak APM produktuak erabiliz**](/sections/production/apmproducts.md)
+🔗 [**Informazio gehiago: aurkitu erroreak eta geldialdiak APM produktuak erabiliz**](/sections/production/apmproducts.basque.md)
 
 <br/><br/>
 
@@ -654,7 +652,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** IT / DevOps arloko munduko txapeldun batek ere ez du salbatuko gaizki idatzita dagoen sistema
 
-🔗 [**Irakurri gehiago: prestatu zure kodea ekoizpenerako**](/sections/production/productioncode.md)
+🔗 [**Informazio gehiago: prestatu zure kodea ekoizpenerako**](/sections/production/productioncode.basque.md)
 
 <br/><br/>
 
@@ -664,7 +662,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** zure memoria prozesuak 100 bat megabyte gal dezake egunean, [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)-i gertatu zitzaion bezala
 
-🔗 [**Irakurri gehiago: neurtu eta babestu memoriaren erabilera**](/sections/production/measurememory.md)
+🔗 [**Informazio gehiago: neurtu eta babestu memoriaren erabilera**](/sections/production/measurememory.basque.md)
 
 <br/><br/>
 
@@ -674,37 +672,37 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** Node eduki dinamikoa eskaintzeko sortu zen arren, haren hari bakarra lanpetuta egongo da html / images / angular / react erako ehunka fitxategi bidaltzen, bera egiteko sortua izan zen zereginei esleitu barik bere baliabide guztiak
 
-🔗 [**Irakurri gehiago: atera zure frontend aktiboak Nodetik**](/sections/production/frontendout.md)
+🔗 [**Informazio gehiago: atera zure frontend/interfazeko modulu aktiboak Nodetik**](/sections/production/frontendout.basque.md)
 
 <br/><br/>
 
-## ![✔] 5.12. Izan stateless, hil zerbitzariak ia egunero
+## ![✔] 5.12. Izan aberrigabea, hil zerbitzariak ia egunero
 
-**TL;PL:** gorde edozein datu mota (adibidez, erabiltzaile saioak, cacheak, kargatutako fitxategiak) kanpoko datu biltegietan; eta aztertu ez ote zenituzkeen zure zerbitzari guztiak aldian behin “hil” beharko edo “zerbitzaririk gabe”ko plataformaren bat erabili (adibidez, AWS Lambda), berariaz stateless jokaera duena
+**TL;PL:** gorde edozein datu mota (adibidez, erabiltzaile saioak, cacheak, kargatutako fitxategiak) kanpoko datu biltegietan; eta aztertu ez ote zenituzkeen zure zerbitzari guztiak aldian behin “hil” beharko edo “zerbitzaririk gabe”ko plataformaren bat erabili (adibidez, AWS Lambda), berariaz aberrigabe (stateless) jokaera duena
 
 **Bestela:** zerbitzari jakin batek huts eginez gero, makina akastun bat hil beharrean, aplikazioen geldialdia eragingo du. Gainera, gero eta zailagoa izango da mailaketaren elastikotasuna, zerbitzari jakin baten menpeko izanda
 
-🔗 [**Irakurri gehiago: izan stateless, hil zerbitzariak ia egunero**](/sections/production/bestateless.md)
+🔗 [**Informazio gehiago: izan aberrigabea, hil zerbitzariak ia egunero**](/sections/production/bestateless.basque.md)
 
 <br/><br/>
 
-## ![✔] 5.13. Erabili ahuleziak automatikoki antzematen dituzten tresnak
+## ![✔] 5.13. Erabili menpekotasunak automatikoki atzematen dituzten tresnak
 
 **TL;PL:** menpekotasun ezagunenek ere –Express, adibidez– badituzte (noizean behin) ahulezia ezagunak, sistema arriskuan jar ditzaketenak. Horrek konponbide erraza du, ordea, tresna komunitario eta komertzialak erabiliz gero, ahuleziak etengabe kontrolatu eta haien berri ematen dute eta (bertan edo GitHub-en)
 
 **Bestela:** zure kodea ahulezia eta zaurgarritasunetatik garbi mantentzeko tresna dedikaturik gabe, jarraipen estua egin beharko diezu mehatxu berriei buruz linean egiten diren argitalpenei, bide batez esanda, aspergarri samarra izaten dena
 
-🔗 [**Irakurri gehiago: erabili ahuleziak automatikoki antzematen dituzten tresnak**](/sections/production/detectvulnerabilities.md)
+🔗 [**Informazio gehiago: erabili menpekotasunak automatikoki atzematen dituzten tresnak**](/sections/production/detectvulnerabilities.basque.md)
 
 <br/><br/>
 
-## ![✔] 5.14. Esleitu transakzio identifikazio bat adierazpen-erregistro bakoitzari
+## ![✔] 5.14. Esleitu transakzio identifikazio bana adierazpen erregistro bakoitzari
 
 **TL;PL:** esleitu identifikatzaile bera –transakzio-: {balioren bat}– erregistro sarrera bakoitzari eskaera bakar baten barruan. Ondoren, erregistroetako erroreak ikuskatzean, erraz konturatuko zara zer gertatu zen aurretik eta ondoren. Zoritxarrez, hori ez da erraz lortzen Noden, haren izaera asinkronoa da eta. Ikusi kodearen adibideak beheko estekan
 
 **Bestela:** produkzioko erroreen erregistroa testuingururik gabe ikustean – aurretik gertatu zena, alegia –, askoz zailagoa eta motelagoa da arazoa aztertzea
 
-🔗 [**Irakurri gehiago: esleitu ‘TransactionId’ adierazpen erregistro bakoitzari**](/sections/production/assigntransactionid.md)
+🔗 [**Informazio gehiago: esleitu transakzio identifikazio bana adierazpen erregistro bakoitzari**](/sections/production/assigntransactionid.basque.md)
 
 <br/><br/>
 
@@ -714,7 +712,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** ezaugarri soil hori gabe errendimendua asko jaits liteke. Adibidez, Express erabiltzean zerbitzarira bideratzeko `NODE_ENV` gabe, errendimendua heren bat moteltzen da
 
-🔗 [**Informazio gehiago: Ezarri NODE_ENV = produkzioa**](/sections/production/setnodeenv.md)
+🔗 [**Informazio gehiago: Ezarri NODE_ENV = produkzioa**](/sections/production/setnodeenv.basque.md)
 
 <br/><br/>
 
@@ -732,7 +730,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** aurkitu berri diren erroreak edo ahuleziak erabil litezke produkzioan exekutatzen den aplikazio bat ustiatzeko eta baliteke zure aplikazioa ez izatea bateragarria hainbat modulurekin eta zailagoa gertatzea hura mantentzea
 
-🔗 [**Irakurri gehiago: Erabili NTS.jsren LTS bertsioa**](/sections/production/LTSrelease.md)
+🔗 [**Informazio gehiago: Erabili NTS.jsren LTS bertsioa**](/sections/production/LTSrelease.basque.md)
 
 <br/><br/>
 
@@ -742,7 +740,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** aplikazioen kudeaketaren erregistroak bideratzea === zaila da eskalatzen, erregistroen galera dakar, eskasa izaten da kezken bereizketa
 
-🔗 [**Irakurri gehiago: erregistroen bideraketa**](/sections/production/logrouting.md)
+🔗 [**Informazio gehiago: erregistroen bideraketa**](/sections/production/logrouting.basque.md)
 
 <br/><br/>
 
@@ -752,7 +750,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** QAk kodea sakonki probatuko du eta produkzioan modu desberdinean jokatuko duen bertsioa onartuko du. Are okerrago, produkzio talde bateko hainbat zerbitzarik kode desberdinak exekuta ditzake
 
-🔗 [**Informazio gehiago: erabili npm ci**](/sections/production/installpackageswithnpmci.md)
+🔗 [**Informazio gehiago: erabili npm ci**](/sections/production/installpackageswithnpmci.basque.md)
 
 <br/><br/><br/>
 
@@ -768,23 +766,23 @@ edo hornitzaileen lainoko zerbitzuak
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
 
-**TL;PL:** erabili segurtasunarekin lotutako linter pluginak, [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) bezalako segurtasun ahuleziak eta arazoak lehenbailehen antzemateko, ahal bada kodetzen ari diren bitartean. Horrek segurtasun ahuleziak atzematen lagun dezake, hala nola eval erabiltzea, bigarren mailako prozesu bat deitzea edo modulu bat inportatzea kate literal batekin (adibidez, erabiltzailearen sarrera). Egin klik 'Gehiago irakurri' atalean segurtasun liner batek antzematen dituen kode adibideak ikusteko
+**TL;PL:** erabili segurtasunarekin lotutako linter pluginak, [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) bezalako segurtasun ahuleziak eta arazoak lehenbailehen atzemateko, ahal bada kodetzen ari diren bitartean. Horrek segurtasun ahuleziak atzematen lagun dezake, hala nola eval erabiltzea, bigarren mailako prozesu bat deitzea edo modulu bat inportatzea kate literal batekin (adibidez, erabiltzailearen sarrera). Egin klik 'Informazio gehiago' atalean segurtasun liner batek atzematen dituen kode adibideak ikusteko
 
 **Bestela:** garapenean zehar segurtasun ahulezia zuzena izan zitekeena produkzioaren arazo nagusia bihurtzen da. Gainera, baliteke proiektuak kodeen segurtasun praktika koherenterik ez jarraitzea, ahuleziak sartzea edo urruneko biltegietan sartutako sekretu konfidentzialak sortzea
 
-🔗 [**Gehiago irakurri: lint arauak**](/sections/security/lintrules.md)
+🔗 [**Informazio gehiago: lint arauak**](/sections/security/lintrules.basque.md)
 
 <br/><br/>
 
-## ![✔] 6.2. Mugatu aldi baterako eskaerak middleware bat erabiliz
+## ![✔] 6.2. Mugatu aldi baterako eskaerak middlewareak erabiliz
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;PL:** DOS erasoak oso ezagunak dira, eta nahiko erraz eragin daitezke. Ezarri abiadura muga kanpoko zerbitzu bat erabiliz, hala nola hodeiko karga orekatzaileak, hodeiko suebakiak, nginx, [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) edo (aplikazio txikiagoak eta ez hain kritikoetarako) abiadura mugatzeko middleware bat (adibidez, [express-rate-limit](https://www.npmjs.com/package/express-rate-limit), express abiadura mugatzailea)
+**TL;PL:** DOS erasoak oso ezagunak dira, eta nahiko erraz eragin daitezke. Ezarri abiadura muga kanpoko zerbitzu bat erabiliz, hala nola hodeiko karga orekatzaileak, hodeiko suebakiak, nginx, [abiadura-mugatzaile-malgua](https://www.npmjs.com/package/rate-limiter-flexible) (rate-limiter-flexible) edo (aplikazio txikiagoak eta ez hain kritikoetarako) abiadura mugatzeko middleware bat (adibidez, [express-rate-limit](https://www.npmjs.com/package/express-rate-limit), express abiadura mugatzailea)
 
 **Bestela:** aplikazio batek erasoak jasan ahal ditu, haren erabiltzaileei ukatzen bazaie jaso beharko luketen zerbitzua, aplikazioa egoera txarrean dagoelako edo eskuragarri ez dagoelako
 
-🔗 [**Gehiago irakurri: ezarri abiadura muga**](/sections/security/limitrequests.md)
+🔗 [**Informazio gehiago: ezarri abiadura muga**](/sections/security/limitrequests.basque.md)
 
 <br/><br/>
 
@@ -796,7 +794,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** iturburu kodearen kontrola publiko egin daiteke akats baten ondorioz, biltegi pribatuetan ere, eta orduan sekretu guztiak agerian geratzen dira. Kanpoko norbaitek iturburuko kontrolaren sarbidea ezagutzeak nahi gabe eragingo du erlazionatutako sistemetarako sarbideak ere ezagutzea (datu baseak, APIak, zerbitzuak, etab.)
 
-🔗 [**Gehiago irakurri: kudeaketa sekretua**](/sections/security/secretmanagement.md)
+🔗 [**Informazio gehiago: kudeaketa sekretua**](/sections/security/secretmanagement.basque.md)
 
 <br/><br/>
 
@@ -808,15 +806,15 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** balidatu gabeko edo baimendu gabeko erabiltzaileen sarrerak operadorearen injekzioa ekar dezake NoSQLrako MongoDB-rekin lan egitean, eta saneamendu sistema edo ORM egokia ez erabiltzeak SQL injekzio erasoak ahalbidetuko ditu, ahultasun erraldoia sortuz
 
-🔗 [**Gehiago irakurri: kontsulten injekzioaren prebentzioa ORM / ODM liburutegiak erabiliz**](/sections/security/ormodmusage.md)
+🔗 [**Informazio gehiago: kontsulten injekzioaren prebentzioa ORM / ODM liburutegiak erabiliz**](/sections/security/ormodmusage.basque.md)
 
 <br/><br/>
 
 ## ![✔] 6.5. Segurtasuneko jardunbide egokien bilduma
 
-**TL;PL:** Node.jsekin zuzenean loturarik ez duen segurtasuneko aholku bilduma bat da: Noderen inplementazioa ez da hain desberdina beste edozein hizkuntzaren inplementazioaren aldean. Egin klik “irakurri gehiago” botoian sakontzeko
+**TL;PL:** Node.jsekin zuzenean loturarik ez duen segurtasuneko aholku bilduma bat da: Noderen inplementazioa ez da hain desberdina beste edozein hizkuntzaren inplementazioaren aldean. Egin klik “Informazio gehiago” botoian sakontzeko
 
-🔗 [**Gehiago irakurri: segurtasuneko ohiko jardunbide egokienak**](/sections/security/commonsecuritybestpractices.md)
+🔗 [**Informazio gehiago: ohiko segurtasun jardunbide egokienak**](/sections/security/commonsecuritybestpractices.basque.md)
 
 <br/><br/>
 
@@ -828,7 +826,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** erasotzaileek zure aplikazioaren erabiltzaileen aurkako eraso zuzenak egin ditzakete, segurtasun ahultasun handiak sortuz
 
-🔗 [**Gehiago irakurri: erabili izenburu seguruak zure aplikazioan**](/sections/security/secureheaders.md)
+🔗 [**Informazio gehiago: erabili izenburu seguruak zure aplikazioan**](/sections/security/secureheaders.basque.md)
 
 <br/><br/>
 
@@ -836,11 +834,11 @@ edo hornitzaileen lainoko zerbitzuak
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Known%20Vulnerabilities%20-green.svg" alt=""/></a>
 
-**TL;PL:** npm ekosistemarekin ohikoa da proiektu batek menpekotasun ugari izatea. Menpekotasunak beti kontrolatuta egon behar dira ahultasun berriak aurkitzen diren heinean. Erabili [npm audit](https://docs.npmjs.com/cli/audit) edo [snyk](https://snyk.io/) bezalako tresnak, erasotzen errazak diren menpekotasunen jarraipena egiteko, kontrolatzeko eta adabakiak jartzeko. Tresna horiek zure IE konfigurazioarekin integratu, erasotzen errazak diren menpekotasunenak antzemateko ekoizpenera iritsi aurretik
+**TL;PL:** npm ekosistemarekin ohikoa da proiektu batek menpekotasun ugari izatea. Menpekotasunak beti kontrolatuta egon behar dira ahultasun berriak aurkitzen diren heinean. Erabili [npm audit](https://docs.npmjs.com/cli/audit) edo [snyk](https://snyk.io/) bezalako tresnak, erasotzen errazak diren menpekotasunen jarraipena egiteko, kontrolatzeko eta adabakiak jartzeko. Tresna horiek zure IE konfigurazioarekin integratu, erasotzen errazak diren menpekotasunenak atzemateko ekoizpenera iritsi aurretik
 
 **Bestela:** erasotzaile batek zure web esparrua detektatu eta ageriko ahultasun guztiei eraso ahal die
 
-🔗 [**Gehiago irakurri: menpekotasunen segurtasuna**](/sections/security/dependencysecurity.md)
+🔗 [**Informazio gehiago: menpekotasunen segurtasuna**](/sections/security/dependencysecurity.basque.md)
 
 <br/><br/>
 
@@ -848,11 +846,11 @@ edo hornitzaileen lainoko zerbitzuak
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;PL:** pasahitzak eta sekretuak (adibidez API gakoak) gorde behar dira hash + gatz funtzio seguru bat erabiliz, esaterako, `bcrypt`edo `scrypt`; eta kasurik okerrenean, `pbkdf2`
+**TL;PL:** pasahitzak eta sekretuak (adibidez API giltzak) gorde behar dira hash + gatz funtzio seguru bat erabiliz, esaterako, `bcrypt`edo `scrypt`; eta kasurik okerrenean, `pbkdf2`
 
 **Bestela:** funtzio segururik erabili gabe gordetzen diren pasahitzak eta sekretuak bortxaz erasotuak izan daitezke edo hiztegi erasoak jasan ditzakete. Azkenean agerian gera daitezke, bai eta agian zabaldu ere
 
-🔗 [**Gehiago irakurri: erabiltzaileen pasahitzak**](/sections/security/userpasswords.md)
+🔗 [**Informazio gehiago: erabiltzaileen pasahitzak**](/sections/security/userpasswords.basque.md)
 
 <br/><br/>
 
@@ -864,7 +862,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** erasotzaile batek JavaScript kodeketa kaltegarria gorde dezake zure DBn, gero bezero gizajoei dagoen moduan bidaliko zaiena
 
-🔗 [**Gehiago irakurri: ihes irteera**](/sections/security/escape-output.md)
+🔗 [**Informazio gehiago: ihes irteera**](/sections/security/escape-output.basque.md)
 
 <br/><br/>
 
@@ -876,7 +874,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** zure eskuzabaltasunak eta ikuspegi permisiboak asko handitzen dute erasoaren tamainua, eta erasotzailea sarrera asko probatzera bultzatzen du, aplikazioa kraskatzeko konbinazio bat aurkitu arte
 
-🔗 [**Gehiago irakurri: balidatu sarrerako JSON eskemak**](/sections/security/validation.md)
+🔗 [**Informazio gehiago: balidatu sarrerako JSON eskemak**](/sections/security/validation.basque.md)
 
 <br/><br/>
 
@@ -888,7 +886,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** edozeinek erabil litzake iraungitako edo gaizki kokatutako fitxak, maltzurki aplikazio batera sartzeko eta fitxaren jabea ordezkatzeko
 
-🔗 [**Gehiago irakurri: JSON web fitxen zerrenda beltzak**](/sections/security/expirejwt.md)
+🔗 [**Informazio gehiago: JSON web fitxen zerrenda beltzak**](/sections/security/expirejwt.basque.md)
 
 <br/><br/>
 
@@ -903,11 +901,11 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** erasotzaile batek pasahitz automatizatuen saiakera mugagabeak egin ditzake aplikazio bateko kontu pribilegiatuetara sartzeko
 
-🔗 [**Gehiago irakurri: saioa hasteko saiakera kopurua mugatzea**](/sections/security/login-rate-limit.md)
+🔗 [**Informazio gehiago: mugatu saioa hasteko abiadura**](/sections/security/login-rate-limit.md)
 
 <br/><br/>
 
-## ![✔] 6.13. Exekutatu Node.js erro ez den erabiltzaile gisa
+## ![✔] 6.13. Exekutatu Node.js erabiltzaile ez-erro gisa
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A5:Broken%20Access%20Access%20Control-green.svg" alt=""/></a>
 
@@ -915,11 +913,11 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** zerbitzarian script bat exekutatzea lortzen duten erasotzaileek botere mugagabea lortzen dute makina lokalaren gainean (adibidez, iptable aldatu eta trafikoa beren zerbitzarira bideratzea)
 
-🔗 [**Gehiago irakurri: exekutatu Node.js erro ez den erabiltzaile gisa**](/sections/security/non-root-user.md)
+🔗 [**Informazio gehiago: exekutatu Node.js erabiltzaile ez-erro gisa**](/sections/security/non-root-user.basque.md)
 
 <br/><br/>
 
-## ![✔] 6.14. Mugatu kargaren tamaina alderantzizko proxy edo middleware bat erabiliz
+## ![✔] 6.14. Mugatu kargaren tamaina alderantzizko proxy edo middlewareak erabiliz
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
@@ -927,7 +925,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** zure aplikazioak eskaera handiei aurre egin beharko die, eta ezingo du prozesatu egin behar duen beste lan garrantzitsua, ondorioz errendimendua gutxituz eta DOS erasoekiko ahulduz
 
-🔗 [**Gehiago irakurri: mugatu kargaren tamaina**](/sections/security/requestpayloadsizelimit.md)
+🔗 [**Informazio gehiago: mugatu kargaren tamaina**](/sections/security/requestpayloadsizelimit.basque.md)
 
 <br/><br/>
 
@@ -939,19 +937,19 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** Javascript kode gaiztoak bidea aurkitzen du `eval` testura edo JavaScript hizkuntzak denbora errealean ebaluatzeko dituen funtzioetara sartzeko, eta sarbide osoa lortuko du JavaScripten orrialdeko baimenetara. Ahultasun hori XSS eraso gisa agertzen da askotan
 
-🔗 [**Gehiago irakurri: saihestu JavaScript eval adierazpenak**](/sections/security/avoideval.md)
+🔗 [**Informazio gehiago: saihestu JavaScript eval adierazpenak**](/sections/security/avoideval.basque.md)
 
 <br/><br/>
 
-## ![✔] 6.16. Saihestu RegEx gaiztoak zure hari bakarreko exekuzioa gainkargatzea
+## ![✔] 6.16. Saihestu RegEx gaiztoak zure exekuzio hari bakarra gainkargatzea
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;PL:** adierazpen erregularrak, oso erabilgarriak izan arren, benetako mehatxua dira JavaScript aplikazioentzat, oro har, eta Node.js plataformarentzat, bereziki. Erabiltzaile baten sarrera prozesatzeko testuarekin bat etor dadin, gerta liteke PUZeko ziklo kopuru handia behar izatea. RegExen prozesamenduaren eraginkortasuna hain txikia izan daiteke, ezen 10 hitz balioztatzen dituen eskaera bakar batek blokea baitezake gertaeren begizta osoa 6 segundoz, eta PUZa su hartzeko moduan jarri 🔥. Hori dela eta, erasotzen errazak diren ohiko adierazpen ahulen txantiloiak antzemateko erabili hirugarrenen balidazio paketeak -esaterako, [validator.js](https://github.com/chriso/validator.js)-, zuk zeure Regex ereduak idatzi edo [safe-regex](https://github.com/substack/safe-regex) erabili gabe
+**TL;PL:** adierazpen erregularrak, oso erabilgarriak izan arren, benetako mehatxua dira JavaScript aplikazioentzat, oro har, eta Node.js plataformarentzat, bereziki. Erabiltzaile baten sarrera prozesatzeko testuarekin bat etor dadin, gerta liteke PUZeko ziklo kopuru handia behar izatea. RegExen prozesamenduaren eraginkortasuna hain txikia izan daiteke, ezen 10 hitz balioztatzen dituen eskaera bakar batek blokea baitezake gertaeren begizta osoa 6 segundoz, eta PUZa su hartzeko moduan jarri 🔥. Hori dela eta, erasotzen errazak diren ohiko adierazpen ahulen txantiloiak atzemateko erabili hirugarrenen balidazio paketeak -esaterako, [validator.js](https://github.com/chriso/validator.js)-, zuk zeure Regex ereduak idatzi edo [safe-regex](https://github.com/substack/safe-regex) erabili gabe
 
 **Bestela:** gaizki idatzitako ohiko adierazpenek Regular Expression DoSen erasoak jasan ditzakete, gertaeren begizta erabat blokeatuko dutenak. Adibidez, 2017ko azaroan, RegExen erabilera gaiztoak agerian jarri zuen `moment` pakete ezagunaren ahultasuna
 
-🔗 [**Gehiago irakurri: saihestu RegEx gaiztoa erabiltzea**](/sections/security/regex.md)
+🔗 [**Informazio gehiago: saihestu RegEx gaiztoa erabiltzea**](/sections/security/regex.basque.md)
 
 <br/><br/>
 
@@ -959,11 +957,11 @@ edo hornitzaileen lainoko zerbitzuak
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;PL:** bide bat erabiltzailea sartu ondoren sortua ote den kezka baduzu eta horregatik parametro gisa ezarri baduzu, saihestu bide hori erabiltzea beste fitxategi bat deitzeko / inportatzeko. Arau hori, oro har, edozein fitxategitara sartzeko erabil daiteke (hau da, `fs.readFile()`) edo erabiltzailea sartu ondoren sortutako aldagai dinamikoak dituen beste baliabide konfidentzialetara sartzeko. [Eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) linterrek eredu horiek antzeman eta nahikoa goiz ohartaraz dezake
+**TL;PL:** bide bat erabiltzailea sartu ondoren sortua ote den kezka baduzu eta horregatik parametro gisa ezarri baduzu, saihestu bide hori erabiltzea beste fitxategi bat deitzeko / inportatzeko. Arau hori, oro har, edozein fitxategitara sartzeko erabil daiteke (hau da, `fs.readFile()`) edo erabiltzailea sartu ondoren sortutako aldagai dinamikoak dituen beste baliabide konfidentzialetara sartzeko. [Eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) linterrek eredu horiek atzeman eta nahikoa goiz ohartaraz dezake
 
 **Bestela:** erabiltzaile gaiztoen sarrerak manipulatutako fitxategiak deitzeko erabiltzen den parametro batera jo dezake, adibidez, aurretik fitxategi sisteman kargatutako fitxategietara edo lehendik sisteman bazeuden fitxategietara sartzeko
 
-🔗 [**Gehiago irakurri: moduluaren karga segurua**](/sections/security/safemoduleloading.md)
+🔗 [**Informazio gehiago: moduluaren karga segurua**](/sections/security/safemoduleloading.basque.md)
 
 <br/><br/>
 
@@ -975,7 +973,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** plugin batek bide ugari erabil ditzake erasotzeko, hala nola begizta infinituak erabiliz, memoria gainkargatuz eta prozesu ingurune eraso errazen aldagaiak eskuratuz
 
-🔗 [**Gehiago irakurri: exekutatu kode ez segurua sandbox batean**](/sections/security/sandbox.md)
+🔗 [**Informazio gehiago: exekutatu kode ez segurua sandbox batean**](/sections/security/sandbox.basque.md)
 
 <br/><br/>
 
@@ -987,11 +985,11 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** bigarren mailako prozesuak ganorarik gabe erabiltzeak urruneko komandoen exekuzioa edo shell injekzioko erasoak eragin ditzake, desinfektatu gabeko sistema komando batera erabiltzaile gaiztoren bat sartu dela eta
 
-🔗 [**Gehiago irakurri: kontuz ibili bigarren mailako prozesuekin lan egitean**](/sections/security/childprocesses.md)
+🔗 [**Informazio gehiago: kontuz ibili bigarren mailako prozesuekin lan egitean**](/sections/security/childprocesses.basque.md)
 
 <br/><br/>
 
-## ![✔] 6.20. Ezkutatu bezeroen erroreen xehetasunak
+## ![✔] 6.20. Ezkutatu bezeroari erroreen xehetasunak
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
@@ -999,7 +997,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** aplikazioaren xehetasun sentikorrak —hala nola, zerbitzariko fitxategien bideak, erabiltzen ari diren hirugarrenen moduluak eta erasotzaile batek balia ditzakeen aplikazioaren barneko beste lan fluxuak— atera daitezke pila aztarna batean aurkitutako informazioetatik
 
-🔗 [**Gehiago irakurri: ezkutatu bezeroaren erroreen xehetasunak**](/sections/security/hideerrors.md)
+🔗 [**Informazio gehiago: ezkutatu bezeroari erroreen xehetasunak**](/sections/security/hideerrors.basque.md)
 
 <br/><br/>
 
@@ -1021,11 +1019,11 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** cookieak segurtasunik gabeko konexioen bidez bidal litezke, eta erasotzaile batek saioaren identifikazioa erabil lezake web aplikazioaren barruko esparrua eta moduluen berariazko ahultasunak ere identifikatzeko
 
-🔗 [**Gehiago irakurri: cookieak eta saioaren segurtasuna**](/sections/security/sessions.md)
+🔗 [**Informazio gehiago: cookieak eta saioaren segurtasuna**](/sections/security/sessions.basque.md)
 
 <br/><br/>
 
-## ![✔] 6.23. Saihestu DOS erasoak prozesu batek noiz huts egin behar duen berariaz ezarriz
+## ![✔] 6.23. Saihestu DOS erasoak prozesuak noiz huts egin behar duen berariaz ezarriz
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
@@ -1043,7 +1041,7 @@ edo hornitzaileen lainoko zerbitzuak
 
 **Bestela:** erasotzailea ohartzen bada erabiltzaileek emandako kanpo sarrerarik ez dela balioztatzen, ahultasun hori balia dezake foroetan, sare sozialetan eta beste toki publiko batzuetan hartarako bereziki sortutako estekak argitaratzean, erabiltzaileek bertan klik egin dezaten
 
-🔗 [**Gehiago irakurri: saihestu birbideratze ez seguruak**](/sections/security/saferedirects.md)
+🔗 [**Informazio gehiago: saihestu birbideratze ez seguruak**](/sections/security/saferedirects.basque.md)
 
 <br/><br/>
 
@@ -1053,9 +1051,9 @@ edo hornitzaileen lainoko zerbitzuak
 
 **TL;PL:** neurriak hartu behar dira npm erregistro publikoetan sekretuak nahi gabe argitaratzeko arriskua ekiditeko. Erabil daiteke `.npmignore` fitxategi bat karpeta edo fitxategi espezikoak zerrenda beltz batean jartzeko eta `files` matrizea `package.json` artxiboarekin erabil daiteke zerrenda zuri moduan lan egin dezan
 
-**Bestela:** arriskua dago norbaitek zure proiektuaren API gakoak, pasahitzak edo beste sekretu batzuk aurkitu eta erasoak egiten saiatzeko, eta horrek galera ekonomikoak, nortasun arazoak eta bestelako arriskuak sor ditzake
+**Bestela:** arriskua dago norbaitek zure proiektuaren API giltzak, pasahitzak edo beste sekretu batzuk aurkitu eta erasoak egiten saiatzeko, eta horrek galera ekonomikoak, nortasun arazoak eta bestelako arriskuak sor ditzake
 
-🔗 [**Gehiago irakurri: saihestu sekretuak argitaratzea**](/sections/security/avoid_publishing_secrets.md)
+🔗 [**Informazio gehiago: saihestu sekretuak argitaratzea**](/sections/security/avoid_publishing_secrets.basque.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
@@ -1066,41 +1064,41 @@ edo hornitzaileen lainoko zerbitzuak
 
 <br/><br/>
 
-## ![✔] 7.1. Ez blokeatu gertaeraren begizta
+## ![✔] 7.1. Ez blokeatu gertaeren begizta
 
-**TL;PL:** saihestu PUZen zeregin intentsiboak, gertaeraren begizta blokeatuko baitute. Izan ere, gertaera horietako gehienak azpiprozesu bakarrekoak dira, eta deskargatuak izango baitira azpiprozesu dedikatu batean, prozesu batean edo teknologia desberdinetan, dauden testuinguruaren arabera
+**TL;PL:** saihestu PUZen zeregin intentsiboak, gertaeren begizta blokeatuko baitute. Izan ere, gertaera horietako gehienak azpiprozesu bakarrekoak dira, eta deskargatuak izango baitira azpiprozesu dedikatu batean, prozesu batean edo teknologia desberdinetan, dauden testuinguruaren arabera
 
-**Bestela:** gertaeraren begizta blokeatuta dagoenez, Node.jsk ezin izango du beste eskaera bat kudeatu eta, ondorioz, atzerapena eragin diezaieke erabiltzaileei. **3000 erabiltzaile erantzunaren zain daude, edukia zerbitzatzeko prest dago, baina eskaera bakar batek emaitzak berriro bidaltzea galarazten dio zerbitzariari**
+**Bestela:** gertaeren begizta blokeatuta dagoenez, Node.jsk ezin izango du beste eskaera bat kudeatu eta, ondorioz, atzerapena eragin diezaieke erabiltzaileei. **3000 erabiltzaile erantzunaren zain daude, edukia zerbitzatzeko prest dago, baina eskaera bakar batek emaitzak berriro bidaltzea galarazten dio zerbitzariari**
 
-🔗 [**Gehiago irakurri: ez blokeatu gertaeraren begizta**](/sections/performance/block-loop.md)
+🔗 [**Informazio gehiago: ez blokeatu gertaeraren begizta**](/sections/performance/block-loop.basque.md)
 
 <br /><br /><br />
 
-## ![✔] 7.2. Hobetsi jatorrizko JS metodoak Lodash bezalako erabiltzailearen baliabideak baino
+## ![✔] 7.2. Hobetsi jatorrizko JS metodoak Lodash bezalako erabiltzaileen baliabideak baino
 
 **TL;PL:** askotan zorrotzagoa da `lodash` eta `underscore` bezalako baliabide liburutegiak erabiltzea jatorrizko metodoak baino, beharrezkoak ez diren menpekotasunak eragin eta abiadura moteltzen baitu. Gogoan izan, V8 motor berria ES estandar berriekin batera, bertako metodoak hobetu egin zirela, eta gaur egun baliabide liburutegiak % 50 inguru eraginkorragoak direla liburutegi publikoak baino
 
 **Bestela:** errendimendu txikiagoko proiektuak mantendu beharko zenituzke, non **dagoeneko** eskura zenuena erabili beharko baitzenuke edo, fitxategi batzu gehiagoren truke, beste zenbait lerro landu
 
-🔗 [**Gehiago irakurri: erabiltzaileen jatorrizko baliabideak**](/sections/performance/nativeoverutil.md)
+🔗 [**Informazio gehiago: erabiltzaileen jatorrizko baliabideak**](/sections/performance/nativeoverutil.basque.md)
 
 <br/><br/><br/>
 
 <p align="right"><a href="#edukien-aurkibidea">⬆ Itzuli hasierara</a></p>
 
-# `8. Docker`
+# `8. Docker, jardunbide egokienak`
 
 🏅 Mila esker [Bret Fisher](https://github.com/BretFisher)-i, ondorengo praktika hauetako asko ikasi baikenituen berarengandik
 
 <br/><br/>
 
-## ![✔] 8.1 Erabili etapa anitzeko konpilazioak Docker irudi finagoak eta seguruagoak lortzeko
+## ![✔] 8.1 Erabili etapa anitzeko konpilazioak Docker irudi sinpleagoak eta seguruagoak lortzeko
 
 **TL;PL:** erabili etapa anitzeko konpilazioak beharrezko produkzio objektuak soilik kopiatzeko. Konpilazio menpekotasun eta fitxategi asko ez dira beharrezkoak zure aplikazioa exekutatzeko. Etapa anitzeko konpilazioak erabiliz gero, baliabide horiek konpilazioan zehar erabil daitezke, denboraren exekuzio inguruneak beharrezko baliabideak besterik ez duen bitartean. Etapa anitzeko konpilazioak oso modu erraza dira gehiegizko pisua kendu eta segurtasun mehatxuak saihesteko
 
 **Bestela:** irudi handiagoek denbora gehiago beharko dute konpilatzeko eta zabaltzeko. Eraikitzeko soilik diren tresnek ahultasunak eduki ditzakete eta eraikitze faserako soilik gordetako sekretuak filtratu daitezke
 
-### Etapa anitzeko eraikuntzetarako Dockerfile adibidea
+### Etapa anitzeko eraikuntzetarako Dockerfile fitxategiaren adibidea
 
 ```dockerfile
 FROM node:14.4.0 AS build
@@ -1119,29 +1117,29 @@ RUN npm ci --production
 CMD [ "node", "dist/app.js" ]
 ```
 
-🔗 [**Gehiago irakurri: erabili etapa anitzeko konpilazioak**](/sections/docker/multi_stage_builds.md)
+🔗 [**Informazio gehiago: erabili etapa anitzeko konpilazioak**](/sections/docker/multi_stage_builds.basque.md)
 
 <br /><br /><br />
 
 # Edukiontzia autoabiatu node komandoa erabiliz, npm beharrean
 
-## ![✔] 8.2. Edukiontzia abiarazi 'node' komandoa erabiliz, saihestu npm hastea
+## ![✔] 8.2. Abiarazi edukiontzia node komandoa erabiliz, saihestu npm
 
 **TL;PL:** erabili `CMD ['node','server.js']` aplikazioa abiarazteko, saihestu OS seinaleak kodera pasatzen ez dituzten npm scriptak erabiltzea. Horrek arazoak izatea ekiditen du bigarren mailako prozesuetan, seinaleak kudeatzean, itxiera seguruetan eta prozesu zonbietan
 
 **Bestela:** seinalerik pasatzen ez denean, zure kodeak ez du inoiz izango itzalaldien berri, eta, hori gabe, ez da behar bezala itxiko, unean uneko eskaerak eta / edo datuak galduz
 
-[**Gehiago irakurri: Edukiontzia abiarazi 'node' komandoa erabiliz, sahiestu npm hastea**](/sections/docker/bootstrap-using-node.md)
+[**Informazio gehiago: abiarazi edukiontzia 'node' komandoa erabiliz, saihestu npm abiatzea**](/sections/docker/bootstrap-using-node.basque.md)
 
 <br /><br /><br />
 
-## ![✔] 8.3. Utzi Dockerren exekuzio denborak kudea ditzala erreplikazioa eta aktibitatea
+## ![✔] 8.3. Utzi Dockeren egikaritze denborari erreplikatu eta jardueraren iraupena kudeatzen
 
 **TL;PL:** Dockerren exekuzio denboraren orkestratzailea erabiltzen duzunean (adibidez, Kubernetes), deitu Node.js prozesua zuzenean, prozesua errepikatzen duten bitarteko prozesuen kudeatzailerik edo koderik pertsonalizatu gabe (adibidez, PM2, Cluster modulua). Exekuzio denboraren plataformak datu kopuru eta ikusgarritasun handiena dauzka kokapenari buruzko erabakiak hartzeko: badaki zenbat prozesu behar diren, nola antolatu prozesuok eta zer egin huts eginez gero
 
 **Bestela:** edukiontziak huts egiten jarraituko du baliabide faltagatik, eta prozesuen kudeatzaileak behin eta berriro berrabiaraziko du, gelditu gabe. Kubernetes horretaz jabetuko balitz, beste toki zabal batera lekualda lezake
 
-🔗 [**Gehiago irakurri: utzi Dockerren orkestratzaileari prozesuak berrabiaraz eta erreplika ditzala**](/sections/docker/restart-and-replicate-processes.md)
+🔗 [**Informazio gehiago: utzi Dockeren exekuzio denborari erreplikatu eta jardueraren iraupena kudeatzen**](/sections/docker/restart-and-replicate-processes.basque.md)
 
 <br/><br /><br />
 
@@ -1151,7 +1149,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Bestela**: irudira sarbidea duen edonorekin partekatuko dira `.env`, `.aws` eta `.npmrc` bezalako fitxategi sekretu pertsonal arruntak (adibidez, Docker biltegia)
 
-🔗 [**Gehiago irakurri: erabili .dockerignore**](/sections/docker/docker-ignore.md)
+🔗 [**Informazio gehiago: erabili .dockerignore**](/sections/docker/docker-ignore.basque.md)
 
 <br /><br /><br />
 
@@ -1161,7 +1159,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Bestela:** npm segurtasun arau hauste ezagun asko garapen paketeen barruan aurkitu izan dira (adibidez, [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes))
 
-🔗 Gehiago irakurri: [kendu garapen menpekotasunak](/sections/docker/install-for-production.md)
+🔗 Informazio gehiago: [ezabatu garapen menpekotasunak](/sections/docker/install-for-production.basque.md)
 
 <br /><br /><br />
 
@@ -1171,7 +1169,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Bestela:** berehala hiltzeak etsita dauden milaka erabiltzaileri ez erantzutea ekarriko du
 
-🔗 [**Gehiago irakurri: itzalaldi dotorea**](/sections/docker/graceful-shutdown.md)
+🔗 [**Informazio gehiago: itzalaldi dotorea**](/sections/docker/graceful-shutdown.basque.md)
 
 <br /><br /><br />
 
@@ -1181,23 +1179,21 @@ CMD [ "node", "dist/app.js" ]
 
 **Bestela:** Dockerren definizioa beharrezkoa da eskalatutako erabakiak burutzeko eta beste herritarrak gosez hiltzea ekiditeko. V8rren mugak zehaztu gabe ere, edukiontziaren baliabideak erabiliko ditu. Argibide espliziturik gabe, baliabideen %50-60a erabiltzean huts egiten du
 
-🔗 [**Gehiago irakurri: ezarri memoria mugak Docker erabiliz soilik**](/sections/docker/memory-limit.md)
+🔗 [**Informazio gehiago: ezarri memoria mugak Docker erabiliz soilik**](/sections/docker/memory-limit.basque.md)
 
 <br /><br /><br />
 
-## ![✔] 8.8. Planifikatu cachean biltegiratzea modu eraginkorrean
+## ![✔] 8.8. Baliatu cachea konpilazio denborak murrizteko
 
 **TL;PL:** Dockerren irudi osoa cache-tik berreraikitzea ia berehalakoa izan daiteke, zuzen eginez gero. Eguneratu ez diren argibideek Dockerfile fitxategiaren goialdean egon behar dute, eta etengabe aldatzen ari direnek (aplikazioaren kodea, esate baterako) beheko aldean egon behar dute
 
 **Bestela:** Docker eraikitzeak oso luze jo dezake eta baliabide asko kontsumituko ditu, nahiz eta aldaketa txikiak egin
 
-🔗 [**Gehiago irakurri: baliatu cachea eraikitze denborak murrizteko**](/sections/docker/use-cache-for-shorter-build-time.md)
+🔗 [**Informazio gehiago: baliatu cachea konpilazio denborak murrizteko**](/sections/docker/use-cache-for-shorter-build-time.basque.md)
 
 <br /><br /><br />
 
-## ![✔] 8.9. Erabili irudiaren erreferentzia esplizitua, saihestu azken (`latest`)
-
-etiketa
+## ![✔] 8.9. Erabili irudiaren erreferentzia esplizitua, saihestu "azken" (`latest`) etiketa
 
 **TL;PL:** zehaztu irudi laburpen esplizitu bat edo etiketa baten bertsioa, inoiz ez aipatu `latest`. Garatzaileek sarritan uste izaten dute, `latest` adieraziz gero, biltegiko azken irudia eskuratuko dutela, baina ez da horrela. Laburpena erabiltzeak zerbitzuaren instantzia guztiek kode bera exekutatuko dutela bermatzen du
 
@@ -1205,7 +1201,7 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 **Bestela:** oinarrizko irudi baten bertsio berri bat erabiliz gero, aldaketa handiak gerta litezke produkzioan, horrek aplikazioaren nahigabeko portaera sortuz
 
-🔗 [**Gehiago irakurri: ulertu irudi etiketak eta erabili "latest" etiketa kontu handiz**](/sections/docker/image-tags.md)
+🔗 [**Informazio gehiago: ulertu irudi etiketak eta erabili "azken" (`latest`) etiketa kontu handiz**](/sections/docker/image-tags.basque.md)
 
 <br /><br /><br />
 
@@ -1215,27 +1211,27 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 **Bestela:** batetik, denbora gehiago beharko da irudiak eraiki, txertatu eta ateratzeko; bestetik, erabiltzaile maltzurrek eraso bektore ezezagunak erabil ditzakete; eta, azkenik, baliabide gehiago beharko dira
 
-🔗 [**Gehiago irakurri: hobetsi irudi txikiagoa**](/sections/docker/smaller_base_images.md)
+🔗 [**Informazio gehiago: hobetsi irudi txikiagoak**](/sections/docker/smaller_base_images.basque.md)
 
 <br /><br /><br />
 
 ## ![✔] 8.11. Garbitu eraikitze faseko sekretuak, saihestu sekretuak argudioetan
 
-**TL;PL:** saihestu Dockerren konpilazio inguruneko sekretuak agerian geratzea. Docker irudi bat IE bezalako ingurune anitzetan eta ekoizpena bezain garbituta ez dauden erregistroetan partekatzen da normalean. Adibide tipikoa npm token da, normalean dockerfile batera pasatzen dena argumentu gisa. Token hori irudiaren barruan geratzen da denbora luzez beharrezkoa izateari utzi ondoren ere, eta erasotzaileari npm erregistro pribatura sartzeko aukera ematen dio. Hori ekidin daiteke sekretua `.npmrc` bezalako fitxategi batean kopiatuz, eta, ondoren, sekretu hori kenduz etapa anitzeko eraikuntza bat erabiliz (kontuz, eraikitze historia ere ezabatu beharko litzateke) edo bat ere aztarnarik uzten dituen Docker build-kit funtzio sekretua erabiliz
+**TL;PL:** saihestu Dockerren konpilazio inguruneko sekretuak agerian geratzea. Docker irudi bat IE bezalako ingurune anitzetan eta ekoizpena bezain garbituta ez dauden erregistroetan partekatzen da normalean. Adibide tipikoa npm giltza (tokena) da, normalean dockerfile fitxategi batera pasatzen dena argumentu gisa. Giltza hori irudiaren barruan geratzen da denbora luzez beharrezkoa izateari utzi ondoren ere, eta erasotzaileari npm erregistro pribatura sartzeko aukera ematen dio. Hori ekidin daiteke sekretua `.npmrc` bezalako fitxategi batean kopiatuz, eta, ondoren, sekretu hori kenduz etapa anitzeko eraikuntza bat erabiliz (kontuz, eraikitze historia ere ezabatu beharko litzateke) edo bat ere aztarnarik uzten dituen Docker build-kit funtzio sekretua erabiliz
 
 **Bestela:** IE eta docker erregistroan sartzeko aukera duten guztiek erakundearen sekretu preziatuak ere eskuratzeko aukera izango dute onura gehigarri gisa
 
-🔗 [**Gehiago irakurri: garbitu eraikitze faseko sekretuak**](/sections/docker/avoid-build-time-secrets.md)
+🔗 [**Informazio gehiago: garbitu eraikitze faseko sekretuak**](/sections/docker/avoid-build-time-secrets.basque.md)
 
 <br /><br /><br />
 
-## ![✔] 8.12. Eskaneatu irudiak ahultasun geruzen bila
+## ![✔] 8.12. Eskaneatu ahultasun geruza anitzeko irudiak
 
 **TL;PL:** kode menpekotasunen ahultasunak egiaztatzeaz gain, eskaneatu ekoizpenera bidalitako azken irudia ere. Dockerren irudien eskanerrek kodeen menpekotasunak egiaztatzen dituzte, baina baita sistema eragilearen binarioak ere. E2E segurtasun eskaneatze horrek eremu handiago bat hartzen du eta egiaztatzen du inongo erabiltzaile maltzurrak ez duela maltzurkeriatik egin eraikitze aldian zerbait injektatuz. Ondorioz, hau exekutatzea gomendatzen da hedapenaren aurreko azken urrats gisa. Mordoska bat eskaner doako eta komertzial dago CI / CD pluginak ere eskaintzen dituztenak
 
 **Bestela:** baliteke zure kodeak ahultasunik ez izatea. Hala ere, baliteke oraindik ere hackeatua izatea, aplikazioek normalean erabiltzen dituzten sistema eragilearen mailako binarioen bertsioak ahultasunak dituelako (adibidez, OpenSSL, TarBall)
 
-🔗 [**Gehiago irakurri: Dockerren praktika arruntak**](/sections/docker/scan-images.md)
+🔗 [**Informazio gehiago: Docker jardunbide arruntak**](/sections/docker/scan-images.basque.md)
 
 <br /><br /><br />
 
@@ -1245,25 +1241,25 @@ Gainera, irudi etiketa bat aipatzen bada, oinarrizko irudia aldatu egin daiteke,
 
 **Bestela:** ekoizpenera bidaliko den irudiak % 30 gehiago pisatuko du, inoiz erabiliko ez diren fitxategiak direla eta
 
-🔗 [**Gehiago irakurri: garbitu NODE_MODULE cachea**](/sections/docker/clean-cache.md)
+🔗 [**Informazio gehiago: garbitu NODE_MODULE cachea**](/sections/docker/clean-cache.basque.md)
 
 <br /><br /><br />
 
-## ![✔] 8.14. Dockeren praktika arruntak
+## ![✔] 8.14. Docker jardunbide generikoak
 
-**TL;PL:** hemen duzu Node.jsekin zuzenean loturarik ez duen Docker aholkuen bilduma. Ez dago alderik Noderen eta beste edozein lengoaiaren inplementazioen artean. Egin klik “irakurri gehiago” botoian
+**TL;PL:** hemen duzu Node.jsekin zuzenean loturarik ez duen Docker aholkuen bilduma. Ez dago alderik Noderen eta beste edozein lengoaiaren inplementazioen artean. Egin klik “Informazio gehiago” botoian
 
-🔗 [**Gehiago irakurri: Dockeren praktika arruntak**](/sections/docker/generic-tips.md)
+🔗 [**Informazio gehiago: Dockeren jardunbide generikoak**](/sections/docker/generic-tips.basque.md)
 
 <br/><br /><br />
 
-## ![✔] 8.15. Garbitu zure Dockerfilea
+## ![✔] 8.15. Garbitu zure Dockerfile fitxategia Linterra erabiliz
 
-**TL;PL:** Linterra erabiliz zure Dockerfilea garbitzea urrats garrantzitsua da haren barruan jardunbide egokiak errespetatzen ez dituzten arazoak identifikatzeko. Docker linter espezializatu bat erabiliz errendimendu eta segurtasun hobekuntzak erraz antzematen dira, alferrikako ordu ugari aurreztea edo produkzio kodean segurtasun arazoak murriztea lortuz
+**TL;PL:** Linterra erabiliz zure Dockerfile fitxategia garbitzea urrats garrantzitsua da haren barruan jardunbide egokiak errespetatzen ez dituzten arazoak identifikatzeko. Docker garbitzaile (linter) espezializatu bat erabiliz errendimendu eta segurtasun hobekuntzak erraz atzematen dira, alferrikako ordu ugari aurreztea edo produkzio kodean segurtasun arazoak murriztea lortuz
 
-**Bestela:** okerrez, Dockerfileren sortzaileak root bat utzi zuen produkzio erabiltzaile moduan, eta jatorri ezezaguneko biltegi irudi bat ere erabili zuen. Hori liner soil batekin ekidin liteke.
+**Bestela:** okerrez, Dockerfile fitxategiaren sortzaileak nagusi (root) bat utzi zuen produkzio erabiltzaile moduan, eta jatorri ezezaguneko biltegi irudi bat ere erabili zuen. Hori liner soil batekin ekidin liteke.
 
-🔗 [**Gehiago irakurri: garbitu zure Dockerfilea**](/sections/docker/lint-dockerfile.md)
+🔗 [**Informazio gehiago: garbitu zure Dockerfile fitxategia**](/sections/docker/lint-dockerfile.basque.md)
 
 <br/><br /><br />
 
@@ -1285,6 +1281,7 @@ Komunitatearen ekarpena dira hemengo itzulpen guztiak eman. Oso pozik hartuko ge
 - ![CN](/assets/flags/CN.png) [Txinera](./README.chinese.md) - [Matt Jin](https://github.com/mattjin)-ren eskutik
 - ![RU](/assets/flags/RU.png) [Errusiera](./README.russian.md) - [Alex Ivanov](https://github.com/contributorpw)-ren eskutik
 - ![PL](/assets/flags/PL.png) [Poloniera](./README.polish.md) - [Michal Biesiada](https://github.com/mbiesiad)-ren eskutik
+- ![EU](/assets/flags/EU.png) [Euskara](README.basque.md) - [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuestaren eskutik
 
 ### Aribidean dauden itzulpenak
 
@@ -1293,7 +1290,6 @@ Komunitatearen ekarpena dira hemengo itzulpen guztiak eman. Oso pozik hartuko ge
 - ![KR](/assets/flags/KR.png) [Koreera](README.korean.md) - [Sangbeom Han](https://github.com/uronly14me)-ren eskutik ([Eztabaidan](https://github.com/goldbergyoni/nodebestpractices/issues/94))
 - ![ES](/assets/flags/ES.png) [Gaztelera](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Eztabaidan](https://github.com/goldbergyoni/nodebestpractices/issues/95))
 - ![TR](/assets/flags/TR.png) Turkiera ([Eztabaidan](https://github.com/goldbergyoni/nodebestpractices/issues/139))
-- ![EU](/assets/flags/EU.png) [Euskara](README.basque.md) - [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuestaren eskutik ([Eztabaidan](https://github.com/goldbergyoni/nodebestpractices/issues/842))
 
 <br/><br/>
 

@@ -706,11 +706,11 @@ null == undefined   // true
 
 <br/><br/>
 
-## ![✔] 6.5. 通用安全最佳实际集合
+## ![✔] 6.5. 通用安全最佳实践集合
 
 **TL;DR:** 这些是与Node.js不直接相关的安全建议的集合-Node的实现与任何其他语言没有太大的不同。单击 "阅读更多" 浏览。
 
-🔗 [**更多: 通用安全最佳实际**](/sections/security/commonsecuritybestpractices.md)
+🔗 [**更多: 通用安全最佳实践**](/sections/security/commonsecuritybestpractices.md)
 
 <br/><br/>
 
@@ -935,6 +935,18 @@ null == undefined   // true
 **否则:** 当攻击者发现你没有校验用户提供的外部输入时，他们会在论坛、社交媒体以和其他公共场合发布他们精心制作的链接来诱使用户点击，以此达到漏洞利用的目的。
 
 🔗 [**阅读更多: 避免不安全的重定向**](/sections/security/saferedirects.chinese.md)
+
+<br/><br/><br/>
+
+## ![✔] 6.25. 避免将机密信息发布到NPM仓库
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
+
+**TL;DR:** 您应该采取预防措施来避免偶然地将机密信息发布到npm仓库的风险。 一个 `.npmignore` 文件可以被用作忽略掉特定的文件或目录, 或者一个在 `package.json` 中的 `files` 数组可以起到一个白名单的作用.
+
+**否则:** 您项目的API密钥、密码或者其它机密信息很容易被任何碰到的人滥用，这可能会导致经济损失、身份冒充以及其它风险。
+
+🔗 [**阅读更多: 避免发布机密信息**](/sections/security/avoid_publishing_secrets.md)
 
 <br/><br/><br/>
 

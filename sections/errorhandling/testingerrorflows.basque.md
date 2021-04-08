@@ -1,8 +1,8 @@
 # Testeatu erroreen fluxua zure test framework gustukoena erabiliz
 
-### Azalpen paragrafoa
+### Azalpena
 
-Bide ‘alaiak’ probatzea ez da hutsegiteak probatzea baino hobea. Probako kodeen estaldura ona da salbuespenezko bideak probatzeko. Bestela, ez dago inolako konfidantzarik salbuespenak zuzen kudeatuta dauden. Unitateen azterketa esparru guztiek, [Mocha](https://mochajs.org/) edo [Chai](http://chaijs.com/) bezala, onartzen dituzte salbuespen probak (kode adibideak beherago). Gogaikarria iruditzen bazaizu funtzio eta salbuespen bakoitza probatzea, REST APIen HTTP erroreak bakarrik probatzea erabaki zenezake.
+Bide ‘alaiak’ probatzea ez da hutsegiteak probatzea baino hobea. Probako kodeen estaldura ona da salbuespenezko bideak probatzeko. Bestela, ez dago inolako konfidantzarik salbuespenak zuzen kudeatuta dauden. Unitateen azterketa esparru guztiek, [Mocha](https://mochajs.org/) eta [Chai](http://chaijs.com/)k bezala, onartzen dituzte salbuespen probak (kode adibideak beherago). Gogaikarria iruditzen bazaizu funtzio eta salbuespen bakoitza probatzea, REST APIen HTTP erroreak bakarrik probatzea erabaki zenezake
 
 
 ### Kode adibidea: ziurtatu salbuespen egokia jaurtitzen dela Mocha eta Chai erabiliz

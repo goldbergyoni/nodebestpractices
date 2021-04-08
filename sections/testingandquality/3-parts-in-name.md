@@ -35,7 +35,7 @@ describe('Products Service', () => {
 describe('Products Service', () => {
   describe('Add new product', () => {
     it('Should return the right status', () => {
-        //hmm, what is this test checking? what are the scenario and expectation?
+      //hmm, what is this test checking? what are the scenario and expectation?
       const newProduct = new ProductService().add(...);
       expect(newProduct.status).to.equal('pendingApproval');
     });
