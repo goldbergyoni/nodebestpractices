@@ -7,9 +7,7 @@ Ohikoa da jendeak `CMD 'npm start'` erabiltzea bere aplikazioa abiarazteko kodea
 ### Kode adibidea: abiarazi aplikazioa Node erabiliz
 
 ```dockerfile
-
 FROM node:12-slim AS build
-
 
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
@@ -21,7 +19,6 @@ CMD ["node", "server.js"]
 ### Kode adibidea: erabili Tiny sarbide gisa
 
 ```dockerfile
-
 FROM node:12-slim AS build
 
 # Gehitu Tini bigarren mailako prozesuak erabiltzen badituzu
@@ -43,8 +40,8 @@ CMD ["node", "server.js"]
 npm start erabiliz
 
 ```dockerfile
-
 FROM node:12-slim AS build
+
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm ci --production && npm clean cache --force
@@ -55,8 +52,8 @@ CMD "npm start"
 Node string bakarrean erabiltzeak zure komandoa egikaritzeko bash/ash shell prozesu bat abiaraziko du. Hori ia `npm` erabiltzea modukoa da
 
 ```dockerfile
-
 FROM node:12-slim AS build
+
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm ci --production && npm clean cache --force
@@ -67,7 +64,7 @@ CMD "node server.js"
 
 npmrekin abiatuz, hau da prozesuaren zuhaitza:
 
-```
+```console
 $ ps falx
   UID   PID  PPID   COMMAND
     0     1     0   npm

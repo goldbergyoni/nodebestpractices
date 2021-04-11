@@ -7,9 +7,7 @@
 ### コード例 - node を使用した Bootsraping
 
 ```dockerfile
-
 FROM node:12-slim AS build
-
 
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
@@ -22,7 +20,6 @@ CMD ["node", "server.js"]
 ### コード例 - エントリーポイントとしての Tiny の使用
 
 ```dockerfile
-
 FROM node:12-slim AS build
 
 # 子プロセスを使用している場合は、Tini を追加します。
@@ -43,8 +40,8 @@ CMD ["node", "server.js"]
 
 Using npm start
 ```dockerfile
-
 FROM node:12-slim AS build
+
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm ci --production && npm clean cache --force
@@ -56,8 +53,8 @@ CMD "npm start"
 Using node in a single string will start a bash/ash shell process to execute your command. That is almost the same as using `npm`
 
 ```dockerfile
-
 FROM node:12-slim AS build
+
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm ci --production && npm clean cache --force
@@ -67,7 +64,7 @@ CMD "node server.js"
 ```
 
 npm でスタートすると、プロセスツリーは以下のようになります。:
-```
+```console
 $ ps falx
   UID   PID  PPID   COMMAND
     0     1     0   npm

@@ -7,7 +7,7 @@ HTML and other web languages mix content with executable code - a single HTML pa
 
 ### Code example - Don't put untrusted data into your HTML 
 
-```javascript
+```html
 <script>...NEVER PUT UNTRUSTED DATA HERE...</script>   directly in a script
  
  <!--...NEVER PUT UNTRUSTED DATA HERE...-->             inside an HTML comment
@@ -22,7 +22,7 @@ HTML and other web languages mix content with executable code - a single HTML pa
 
 ### Code example - Malicious content that might be injected into a DB
 
-```javascript
+```html
 <div>
   <b>A pseudo comment to the a post</b>
   <script>

@@ -13,7 +13,7 @@ Memoria mugatzeak prozesuari/edukiontziari adierazten dio zer tamainako memoria 
 <details>
 <summary><strong>Bash</strong></summary>
 
-```
+```bash
 docker run --memory 512m nire-node-aplikazioa
 ```
 
@@ -26,7 +26,7 @@ docker run --memory 512m nire-node-aplikazioa
 <details>
 <summary><strong>Kubernetesen inplementaziorako yamla</strong></summary>
 
-```
+```yml
 apiVersion: v1
 kind: Pod
 metadata:

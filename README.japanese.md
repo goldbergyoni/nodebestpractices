@@ -1094,6 +1094,7 @@ FROM node:14.4.0 AS build
 COPY . .
 RUN npm ci && npm run build
 
+
 FROM node:slim-14.4.0
 
 USER node
