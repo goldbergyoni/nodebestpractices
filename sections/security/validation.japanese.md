@@ -62,7 +62,7 @@ router.post('/' , **validator(Product.validate)**, async (req, res, next) => {
 
 ### 他のブロガーが言っていること
 
-ブログ [Gergely Nemeth](https://nemethgergely.com/nodejs-security-overview/) より:
+ブログ [Gergely Nemeth](https://nemethgergely.com/blog/nodejs-security-overview) より:
 > アプリケーションのセキュリティにおいて、ユーザーの入力を検証することは最も重要なことの一つです。それを正しく行うことができない場合、コマンドインジェクションや SQL インジェクション、格納型クロスサイトスクリプティングといった広範囲の攻撃に、アプリケーションやユーザーをさらすことになります。
 >
 > ユーザーの入力を検証するために、あなたが選ぶことができる最高のライブラリの1つは joiです。joi は JavaScript オブジェクトのための、オブジェクトスキーマ記述言語であり、バリデータです。

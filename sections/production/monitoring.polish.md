@@ -30,7 +30,7 @@ Osiągnięcie zaawansowanych funkcji wymaga długiej konfiguracji lub zakupu kom
 
 ### Co mówią inni blogerzy
 
-Z bloga [Rising Stack](http://mubaloo.com/best-practices-deploying-node-js-applications/):
+Z bloga [Rising Stack](https://blog.risingstack.com/node-js-performance-monitoring-with-prometheus/):
 
 > …We recommend you to watch these signals for all of your services:
 > Error Rate: Because errors are user facing and immediately affect your customers.

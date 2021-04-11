@@ -30,7 +30,7 @@ Atingir os recursos avançados exige uma configuração demorada ou a compra de 
 
 ### O que Outros Blogueiros Dizem
 
-Do blog [Rising Stack](http://mubaloo.com/best-practices-deploying-node-js-applications/):
+Do blog [Rising Stack](https://blog.risingstack.com/node-js-performance-monitoring-with-prometheus/):
 
 > …Recomendamos que você observe esses sinais para todos os seus serviços:
 > Taxa de erros: porque os erros são enfrentados pelo usuário e afetam imediatamente seus clientes.

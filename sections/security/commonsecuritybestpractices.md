@@ -102,7 +102,7 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 - Follow the data privacy laws of the land. Reference laws:
   - European Union: GDPR - https://ec.europa.eu/info/law/law-topic/data-protection_en
   - India: https://meity.gov.in/writereaddata/files/Personal_Data_Protection_Bill,2018.pdf
-  - Singapore: https://www.pdpc.gov.sg/Legislation-and-Guidelines/Personal-Data-Protection-Act-Overview
+  - Singapore: https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act
 
 ## ![✔] Have a security.txt File [PRODUCTION]
 

@@ -103,7 +103,7 @@ Jarraian, OWASP proiektuko hainbat gomendio garrantzitsu zerrendatu ditugu
 - Jarraitu tokian tokiko datuen pribatutasun legeak. Erreferentzia legeak:
   - Europar Batasuna: GDPR - https://ec.europa.eu/info/law/law-topic/data-protection_en
   - India: https://meity.gov.in/writereaddata/files/Personal_Data_Protection_Bill,2018.pdf
-  - Singapur: https://www.pdpc.gov.sg/Legislation-and-Guidelines/Personal-Data-Protection-Act-Overview
+  - Singapur: https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act
 
 ## ![✔] Izan security.txt fitxategia [PRODUKZIOA]
 

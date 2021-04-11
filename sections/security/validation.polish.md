@@ -62,7 +62,7 @@ router.post('/' , **validator(Product.validate)**, async (req, res, next) => {
 
 ### Co inni blogerzy mówią
 
-Z bloga [Gergely Nemeth](https://nemethgergely.com/nodejs-security-overview/):
+Z bloga [Gergely Nemeth](https://nemethgergely.com/blog/nodejs-security-overview):
 > Validating user input is one of the most important things to do when it comes to the security of your application. Failing to do it correctly can open up your application and users to a wide range of attacks, including command injection, SQL injection or stored cross-site scripting.<br/>
 
 Aby sprawdzić poprawność danych wprowadzanych przez użytkownika, jedną z najlepszych bibliotek, jaką możesz wybrać, jest joi. Joi jest językiem opisu i sprawdzania poprawności schematów obiektów dla obiektów JavaScript.

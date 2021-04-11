@@ -30,7 +30,7 @@ Funtzio aurreratuak lortu nahi badituzu, konfigurazio luzea egin beharko duzu ed
 
 ### Beste blogari batzuek diotena
 
-[Rising Stack](http://mubaloo.com/best-practices-deploying-node-js-applications/) bloga :
+[Rising Stack](https://blog.risingstack.com/node-js-performance-monitoring-with-prometheus/) bloga :
 
 > …Zure zerbitzu guztietako seinale horiek ikustea gomendatzen dizugu.
 > Errorea: erroreek erabiltzaileei aurre egiten dietelako eta zure bezeroei berehala eragiten dietelako
