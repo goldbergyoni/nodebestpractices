@@ -1,4 +1,4 @@
-# Zure aukeratu arretaz IE plataforma
+# Aukeratu arretaz zure IE plataforma
 
 <br/><br/>
 

@@ -4,7 +4,7 @@
 
 ### Azalpena
 
-Oso tentagarria da cargo-cult Express-a kargatzea, eta haren middleware eskaintza aberatsa erabiltzea sarearekin zerikusia duten zereginetarako, hala nola, fitxategi estatikoak zerbitzatzea, gzip kodetzea, eskaerak murriztea, SSL amaierak, etab. Hori denbora alperrik galtzea da, zeren eta, azpiprozesu bakarrekoa izanik, PUZa denbora luzez edukiko baitu lanean (Gogoan izan Noderen exekuzio eredua optimizatuta dagoela zeregin laburretarako edo E / S zeregin asinkronizatuetarako). Egokiagoa da sareko zereginetan erabili ohi den tresnaren bat erabiltzea. Ezagunenak nginx eta HAproxy dira, hodeiko saltzaile handienek node.jsen prozesuetan sarrerako karga arintzeko ere erabiltzen dituztenak.
+Oso tentagarria da cargo-cult Express-a kargatzea, eta haren middleware eskaintza aberatsa erabiltzea sarearekin zerikusia duten zereginetarako, hala nola, fitxategi estatikoak zerbitzatzea, gzip kodetzea, eskaerak murriztea, SSL amaierak, etab. Hori denbora alperrik galtzea da, zeren eta, azpiprozesu bakarrekoa izanik, PUZa denbora luzez edukiko baitu lanean (Gogoan izan Noderen exekuzio eredua optimizatuta dagoela zeregin laburretarako edo E / S zeregin asinkronizatuetarako). Egokiagoa da sareko zereginetan erabili ohi den tresnaren bat erabiltzea. Ezagunenak nginx eta HAproxy dira, hodeiko saltzaile handienek Node.jsren prozesuetan sarrerako karga arintzeko ere erabiltzen dituztenak.
 
 <br/><br/>
 

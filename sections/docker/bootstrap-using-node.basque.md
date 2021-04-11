@@ -2,7 +2,7 @@
 
 ## Azalpena
 
-Ohikoa da jendeak `CMD 'npm start'` erabiltzea bere aplikazioa abiarazteko kodea egitea. Praktika txarra da hori, ordea. `npm` bitarrak ez du seinalerik birbidaliko zure aplikaziora, aplikazioa behar bezala ixtea eragozten duena (ikus [/sections/docker/graceful-shutdown.basque.md]). Bigarren mailako prozesuak  erabiltzen badituzu, ez dira behar bezala garbituko ustekabeko itzaltzeren bat gertatzen bada, prozesu zonbieak utziko dituena. `npm start`ek ere onuragarria ez den prozesu bat gehiago egiten du. Erabili `CMD ['node','server.js']` zure aplikazioa abiarazteko. Zure aplikazioak bigarren mailako prozesuak baditu, erabili gainera `TINI`sarbide gisa.
+Ohikoa da jendeak `CMD 'npm start'` erabiltzea bere aplikazioa abiarazteko kodea egitea. Praktika txarra da hori, ordea. `npm` bitarrak ez du seinalerik birbidaliko zure aplikaziora, aplikazioa behar bezala ixtea eragozten duena (ikus [/sections/docker/graceful-shutdown.basque.md]). Bigarren mailako prozesuak  erabiltzen badituzu, ez dira behar bezala garbituko ustekabeko itzaltzeren bat gertatzen bada, prozesu zonbiak utziko dituena. `npm start`ek ere onuragarria ez den prozesu bat gehiago egiten du. Erabili `CMD ['node','server.js']` zure aplikazioa abiarazteko. Zure aplikazioak bigarren mailako prozesuak baditu, erabili gainera `TINI`sarbide gisa.
 
 ### Kode adibidea: abiarazi aplikazioa Node erabiliz
 

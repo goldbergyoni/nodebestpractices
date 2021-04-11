@@ -26,7 +26,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 # Latest Best Practices and News
 
-- **![EU](/assets/flags/EU.png) Basque translation!:** wow even our Basque readers can read in their mother-tongue language! Courtesy of [Ane Diaz de Tuesta](https://github.com/anediaz) who did this all by her self
+- **![EU](/assets/flags/EU.png) Basque translation!:** wow even our Basque readers can read in their mother-tongue language! Courtesy of [Ane Diaz de Tuesta](https://github.com/anediaz) and Joxefe Diaz de Tuesta, who did this all by theirselves
 
 - **🇯🇵 Japanese translation:** Our guide is now also translated to Japanese! Courtesy of the amazing [YukiOta](https://github.com/YukiOta) and [Yuta Azumi](https://github.com/YA21)
 

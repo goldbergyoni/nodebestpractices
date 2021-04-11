@@ -4,7 +4,7 @@
 
 ### Azalpena
 
-Mundu perfektu batean, web garatzaile batek ez luke memoria ihesei aurre egin beharko. Egia esan, memoria arazoak Nodek duen arazo ezaguna da eta ezagutu egin behar dena. Node erabiltzen denean, batez ere, memoriaren erabilera etengabe kontrolatu beharra dago. Garapen eta produkzio txikiko guneetan, neurketa eskuz egin dezakezu Linux komandoak edo npm tresnak eta liburutegiak erabiliz, nodo-inspector eta memwatch bezalakoak. Eskuzko jarduera horren eragozpen nagusia da eskatzen dutela jarraipena gizaki batek egitea modu aktiboan. Ekoizpen gune serioetarako, guztiz funtsezkoa da kontrol tresna sendoak erabiltzea, adibidez (AWS CloudWatch, DataDog edo antzeko edozein sistema proaktibo), iragazkia gertatzen denean ohartarazten duena. Badaude garapen jardunbide gutxi batzuk ere ihesak saihesteko: saihestu datuak gordetzea maila globalean, erabili tamaina dinamikoa duten datuentzako fluxuak, mugatu aldagaiak let eta const erabiliz.
+Mundu perfektu batean, web garatzaile batek ez luke memoria ihesei aurre egin beharko. Egia esan, memoria arazoak Nodek duen arazo ezaguna da eta ezagutu egin behar dena. Node erabiltzen denean, batez ere, memoriaren erabilera etengabe kontrolatu beharra dago. Garapen eta produkzio txikiko guneetan, neurketa eskuz egin dezakezu Linux komandoak edo npm tresnak eta liburutegiak erabiliz, nodo-inspector eta memwatch bezalakoak. Eskuzko jarduera horren eragozpen nagusia da eskatzen dutela jarraipena gizaki batek egitea modu aktiboan. Ekoizpen gune serioetarako, guztiz funtsezkoa da kontrol tresna sendoak erabiltzea, adibidez (AWS CloudWatch, DataDog edo antzeko edozein sistema proaktibo), iragazkia gertatzen denean ohartarazten duena. Badaude garapen praktika gutxi batzuk ere ihesak saihesteko: saihestu datuak gordetzea maila globalean, erabili tamaina dinamikoa duten datuentzako fluxuak, mugatu aldagaiak let eta const erabiliz.
 
 <br/><br/>
 
@@ -12,7 +12,7 @@ Mundu perfektu batean, web garatzaile batek ez luke memoria ihesei aurre egin be
 
 [Dyntrace](https://www.dynatrace.com/news/blog/understanding-garbage-collection-and-hunting-memory-leaks-in-node-js/) bloga:
 
-> ... ”Dagoeneko badakigun bezala, Node.jsen V8k jatorrizko kodean konpilatzen du JavaScript. Sortzen diren jatorrizko datu egiturek ez dute zerikusi handirik jatorrizko irudikapenarekin, eta V8k kudeatzen ditu soilik. Horrek esan nahi du ezin dugula memoria aktiboki esleitu edo banatu JavaScripten. V8k zabor bilketa izeneko mekanismo ezaguna erabiltzen du arazo horri aurre egiteko".
+> ... ”Dagoeneko badakigun bezala, Node.jsren V8k jatorrizko kodean konpilatzen du JavaScript. Sortzen diren jatorrizko datu egiturek ez dute zerikusi handirik jatorrizko irudikapenarekin, eta V8k kudeatzen ditu soilik. Horrek esan nahi du ezin dugula memoria aktiboki esleitu edo banatu JavaScripten. V8k zabor bilketa izeneko mekanismo ezaguna erabiltzen du arazo horri aurre egiteko".
 
 [Dyntrace](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load) bloga:
 

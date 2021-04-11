@@ -18,7 +18,7 @@
 
 <br/>
 
-Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md), [![JA](/assets/flags/JA.png)**JA**](/README.japanese.md), [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![TR](/assets/flags/TR.png)**TR** et ![EU](/assets/flags/EU.png)**EU** en cours ! )](#traductions)
+Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md), [![JA](/assets/flags/JA.png)**JA**](/README.japanese.md), [![EU](/assets/flags/EU.png)**EU**](/README.basque.md), [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** et ![TR](/assets/flags/TR.png)**TR** en cours ! )](#traductions)
 
 <br/>
 
@@ -26,9 +26,9 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 # Dernières bonnes pratiques et nouveautés
 
-- **🇯🇵 traduction japonaise :** Notre guide est désormais également traduit en japonais ! Avec l'aimable autorisation des extraordinaires [YukiOta](https://github.com/YukiOta) et [Yuta Azumi](https://github.com/YA21).
+- **![EU](/assets/flags/EU.png) traduction basque!:** wow même nos lecteurs basques peuvent dès à présent le lire dans leur langue natale! Avec l'aimable autorisation de [Ane Diaz de Tuesta](https://github.com/anediaz) et Joxefe Diaz de Tuesta.
 
-- **✅ Nouvelle bonne pratique :** Le point 6.8 de Josh Hemphill recommande de « protéger les mots de passe/secrets des utilisateurs en utilisant BCrypt ou Script ». Elle contient une explication approfondie sur le moment et les raisons pour lesquelles chaque option convient à un projet spécifique. Ne manquez pas ce petit guide avec un bref aperçu des différentes options de hachage
+- **🇯🇵 traduction japonaise :** Notre guide est désormais également traduit en japonais ! Avec l'aimable autorisation des extraordinaires [YukiOta](https://github.com/YukiOta) et [Yuta Azumi](https://github.com/YA21).
 
 - **🎊 60,000 stars !** : Notre dépôt a reçu la reconnaissance et la confiance de 60 100 développeurs. Nous sommes sans voix.
 
@@ -330,7 +330,7 @@ const count = 2 // il essaie d'exécuter 2(), mais 2 n'est pas une fonction
 
 ## ![✔] 3.5 Nommez vos fonctions
 
-**TL;PL :** Nommez toutes les fonctions, y compris les fermetures *(closures, NdT)* et les fonctions de rappel. Évitez les fonctions anonymes. Cela est particulièrement utile lors du profilage d'une application de Node. Nommer toutes les fonctions vous permettra de comprendre facilement ce que vous regardez lors de la vérification d'un instantané de mémoire *(snapshot memory, NdT)*.
+**TL;PL :** Nommez toutes les fonctions, y compris les fermetures _(closures, NdT)_ et les fonctions de rappel. Évitez les fonctions anonymes. Cela est particulièrement utile lors du profilage d'une application de Node. Nommer toutes les fonctions vous permettra de comprendre facilement ce que vous regardez lors de la vérification d'un instantané de mémoire _(snapshot memory, NdT)_.
 
 **Autrement :** Le débogage des problèmes de production à l'aide d'un vidage de mémoire (instantané de mémoire) peut devenir difficile lorsque vous remarquez une consommation de mémoire importante de la part de fonctions anonymes.
 
@@ -489,7 +489,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **TL;PL :** Pour éviter le chevauchement de test et expliquer facilement le déroulement du test, chaque test doit ajouter et agir sur son propre ensemble d'enregistrement de la base de données. Chaque fois qu'un test a besoin de récupérer ou de présumer l'existence de certaines données de la BD - il doit explicitement ajouter ces données et éviter de modifier tout autre enregistrement.
 
-****Autrement :** Considérez un scénario où le déploiement est interrompu à cause de l'échec des tests, l'équipe va maintenant passer un temps d'investigation précieux qui se terminera par une triste conclusion : le système fonctionne bien, les tests interfèrent cependant les uns avec les autres et interrompent la construction.
+\***\*Autrement :** Considérez un scénario où le déploiement est interrompu à cause de l'échec des tests, l'équipe va maintenant passer un temps d'investigation précieux qui se terminera par une triste conclusion : le système fonctionne bien, les tests interfèrent cependant les uns avec les autres et interrompent la construction.
 
 🔗[**Plus d'infos : évitez les tests globaux, ajoutez des données pour chaque test**](/sections/testingandquality/avoid-global-test-fixture.french.md)
 
@@ -751,7 +751,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **TL;PL :** Vous devez vous assurer que le code de production utilise la version exacte des paquets avec lesquels vous l'avez testé. Exécutez `npm ci` pour faire une installation propre de vos dépendances correspondant aux fichiers package.json et package-lock.json.
 
-**Autrement :****** Le service qualité testera le code de manière approfondie et approuvera une version qui se comportera différemment en production. Pire encore, différents serveurs dans le même cluster de production peuvent exécuter un code différent.
+**Autrement :\*\*\*\*** Le service qualité testera le code de manière approfondie et approuvera une version qui se comportera différemment en production. Pire encore, différents serveurs dans le même cluster de production peuvent exécuter un code différent.
 
 🔗 [**Plus d'infos : utilisez npm ci**](/sections/production/installpackageswithnpmci.french.md)
 
@@ -777,7 +777,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 <br/><br/>
 
-## ![✔] 6.2. Limitez les requêtes simultanées en utilisant un  middleware
+## ![✔] 6.2. Limitez les requêtes simultanées en utilisant un middleware
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
@@ -972,7 +972,7 @@ Votre application devra faire face à de grosses requêtes, incapable de traiter
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;PL :** Lorsqu'il s'agit d'exécuter du code externe donné en cours d'exécution (par exemple un plugin), utilisez un environnement d'exécution de type « bac à  sable » (« sandbox ») qui isole et protège le code principal contre le plugin. Ceci peut être réalisé en utilisant un processus dédié (par exemple `cluster.fork()`), un environnement sans serveur ou des paquets npm dédiés qui agissent comme un bac à sable.
+**TL;PL :** Lorsqu'il s'agit d'exécuter du code externe donné en cours d'exécution (par exemple un plugin), utilisez un environnement d'exécution de type « bac à sable » (« sandbox ») qui isole et protège le code principal contre le plugin. Ceci peut être réalisé en utilisant un processus dédié (par exemple `cluster.fork()`), un environnement sans serveur ou des paquets npm dédiés qui agissent comme un bac à sable.
 
 **Autrement :** Un plugin peut attaquer à travers une variété infinie d'options comme les boucles infinies, la surcharge de la mémoire et l'accès aux variables sensibles de l'environnement du processus.
 
@@ -1061,7 +1061,7 @@ Votre application devra faire face à de grosses requêtes, incapable de traiter
 
 <p align="right"><a href="#table-des-matières">⬆ Retourner en haut de la page</a></p>
 
-# `7. Brouillon : Bonnes pratiques de performance`
+# `7. Brouillon : Bonnes pratiques de performance`
 
 ## Nos contributeurs travaillent sur cette section. [Voulez-vous nous rejoindre ?](https://github.com/goldbergyoni/nodebestpractices/issues/256)
 
@@ -1208,7 +1208,7 @@ En outre, la référence à un tag d'une image signifie que l'image de base est 
 
 <br /><br /><br />
 
-## ![✔] 8.10. Privilégiez les plus petites images de base Docker 
+## ![✔] 8.10. Privilégiez les plus petites images de base Docker
 
 **TL;PL :** Les images de grande taille entraînent une plus grande exposition aux vulnérabilités et une consommation accrue des ressources. L'utilisation d'images Docker plus fines, telles que les variantes Slim et Alpine de Linux, atténue ce problème.
 
@@ -1285,6 +1285,7 @@ Toutes les traductions sont fournies par la communauté. Nous serons heureux de 
 - ![RU](/assets/flags/RU.png) [Russe](./README.russian.md) - Avec l'aimable autorisation de [Alex Ivanov](https://github.com/contributorpw)
 - ![PL](/assets/flags/PL.png) [Polonais](./README.polish.md) - Avec l'aimable autorisation de [Michal Biesiada](https://github.com/mbiesiad)
 - ![JA](/assets/flags/JA.png) [Japonais](./README.japanese.md) - Avec l'aimable autorisation de [Yuki Ota](https://github.com/YukiOta), [Yuta Azumi](https://github.com/YA21)
+- ![EU](/assets/flags/EU.png) [Basque](README.basque.md) - Avec l'aimable autorisation de [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta
 
 ### Traductions en cours
 
@@ -1293,7 +1294,6 @@ Toutes les traductions sont fournies par la communauté. Nous serons heureux de 
 - ![KR](/assets/flags/KR.png) [Coréen](README.korean.md) - Avec l'aimable autorisation de [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94))
 - ![ES](/assets/flags/ES.png) [Espagnol](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/95))
 - ![TR](/assets/flags/TR.png) Turque ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/139))
-- ![EU](/assets/flags/EU.png) [Basque](README.basque.md) - Avec l'aimable autorisation de [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/842))
 
 <br/><br/>
 
@@ -1541,7 +1541,7 @@ Merci à ces merveilleuses personnes qui ont contribué à ce dépôt !
     <td align="center"><a href="https://github.com/13luismb"><img src="https://avatars1.githubusercontent.com/u/32210483?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Luis A. Acurero</b></sub></a><br /><a href="#translation-13luismb" title="Translation">🌍</a></td>
     <td align="center"><a href="https://lromano97.github.io/"><img src="https://avatars1.githubusercontent.com/u/22394847?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Lucas Romano</b></sub></a><br /><a href="#translation-lromano97" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/denisecase"><img src="https://avatars0.githubusercontent.com/u/13016516?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Denise Case</b></sub></a><br /><a href="#content-denisecase" title="Content">🖋</a></td>
-    <td align="center"><a href="http://stackoverflow.com/story/elektronik"><img src="https://avatars3.githubusercontent.com/u/1078554?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nick Ribal</b></sub></a><br /><a href="#content-elektronik2k5" title="Content">🖋</a></td>
+    <td align="center"><a href="http://stackoverflow.com/story/elektronik"><img src="https://avatars3.githubusercontent.com/u/1078554?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nick Ribal</b></sub></a><br /><a href="#content-elektronik2k5" title="Content">🖋</a> <a href="https://github.com/goldbergyoni/nodebestpractices/pulls?q=is%3Apr+reviewed-by%3Aelektronik2k5" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://github.com/0xflotus"><img src="https://avatars3.githubusercontent.com/u/26602940?v=4?s=100" width="100px;" alt=""/><br /><sub><b>0xflotus</b></sub></a><br /><a href="#content-0xflotus" title="Content">🖋</a></td>
   </tr>
   <tr>
@@ -1557,7 +1557,7 @@ Merci à ces merveilleuses personnes qui ont contribué à ce dépôt !
     <td align="center"><a href="https://github.com/AustrisC"><img src="https://avatars2.githubusercontent.com/u/12381652?v=4?s=100" width="100px;" alt=""/><br /><sub><b>AustrisC</b></sub></a><br /><a href="#content-AustrisC" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/cisco0808"><img src="https://avatars0.githubusercontent.com/u/60251188?v=4?s=100" width="100px;" alt=""/><br /><sub><b>kyeongtae kim</b></sub></a><br /><a href="#translation-cisco0808" title="Translation">🌍</a></td>
     <td align="center"><a href="https://keybase.io/651z9pz968v2accj"><img src="https://avatars.githubusercontent.com/u/65741741?v=4?s=100" width="100px;" alt=""/><br /><sub><b>007</b></sub></a><br /><a href="#content-6gx7iycn53ioq2e8apk1j1ypwov4giui" title="Content">🖋</a></td>
-    <td align="center"><a href="http://www.anediaz.com"><img src="https://avatars.githubusercontent.com/u/17216937?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ane Diaz de Tuesta</b></sub></a><br /><a href="#translation-anediaz" title="Translation">🌍</a></td>
+    <td align="center"><a href="http://www.anediaz.com"><img src="https://avatars.githubusercontent.com/u/17216937?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ane Diaz de Tuesta</b></sub></a><br /><a href="#translation-anediaz" title="Translation">🌍</a> <a href="#content-anediaz" title="Content">🖋</a></td>
     <td align="center"><a href="http://yukioh.net"><img src="https://avatars.githubusercontent.com/u/23182489?v=4?s=100" width="100px;" alt=""/><br /><sub><b>YukiOta</b></sub></a><br /><a href="#translation-YukiOta" title="Translation">🌍</a></td>
     <td align="center"><a href="https://www.yeovilhospital.co.uk/"><img src="https://avatars.githubusercontent.com/u/43814140?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Frazer Smith</b></sub></a><br /><a href="#content-Fdawgs" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/rluvaton"><img src="https://avatars.githubusercontent.com/u/16746759?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Raz Luvaton</b></sub></a><br /><a href="#content-rluvaton" title="Content">🖋</a></td>
@@ -1574,6 +1574,8 @@ Merci à ces merveilleuses personnes qui ont contribué à ce dépôt !
   <tr>
     <td align="center"><a href="http://www.koenigthomas.de/"><img src="https://avatars.githubusercontent.com/u/7080389?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Thomas König</b></sub></a><br /><a href="#content-Vispercept" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/coocos"><img src="https://avatars.githubusercontent.com/u/1397804?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kalle Lämsä</b></sub></a><br /><a href="#content-coocos" title="Content">🖋</a></td>
+    <td align="center"><a href="http://math.cat"><img src="https://avatars.githubusercontent.com/u/10328430?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Wyatt</b></sub></a><br /><a href="#content-ZhyMC" title="Content">🖋</a></td>
+    <td align="center"><a href="http://libkhadir.fr"><img src="https://avatars.githubusercontent.com/u/45130488?v=4?s=100" width="100px;" alt=""/><br /><sub><b>KHADIR Tayeb</b></sub></a><br /><a href="#content-tkhadir" title="Content">🖋</a></td>
   </tr>
 </table>
 

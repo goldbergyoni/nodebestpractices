@@ -1,4 +1,4 @@
-# Utzi Dockeren exekuzio denborari erreplikatzea eta jardueraren iraupena kudeatzen
+# Utzi Dockeren exekuzio denborari erreplikatu eta jardueraren iraupena kudeatzen
 
 <br/><br/>
 

@@ -33,7 +33,7 @@ eval(userinput);
 ```javascript
 const unsafe = new RegExp('/(x+x+)+y/)');
 ```
-`eslint-plugin-security` erabiliz antzemandako jardunbide ez-seguruen adibide batzuk:
+`eslint-plugin-security` erabiliz antzemandako praktika ez-seguruen adibide batzuk:
 
 ![nsp check adibidea](/assets/images/eslint-plugin-security.png)
 
