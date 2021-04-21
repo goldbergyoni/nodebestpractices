@@ -10,15 +10,15 @@ npm publish が実際にレジストリに何をパブリッシュするのか�
 ### コード例
 .npmignore file の例
 ```
-#tests
+# Tests
 test
 coverage
 
-#build tools
+# Build tools
 .travis.yml
 .jenkins.yml
 
-#environment
+# Environment
 .env
 .config
 
@@ -26,7 +26,7 @@ coverage
 
 package.json 内の files 配列の利用例
 
-```
+```json
 { 
   "files" : [
     "dist/moment.js",

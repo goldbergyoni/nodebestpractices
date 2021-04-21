@@ -4,7 +4,7 @@
 
 ### Azalpena
 
-Azken Express sorgailuak mantentzea merezi duen sekulako jardunbide bikain bat du. Izan ere, APIaren deklarazioa sarearekin erlazionatutako ezarpenetatik (portua, protokoloa, etab.) banandua dago. Horrek ahalbidetzen du APIa egiaztatzea prozesua martxan den bitartean, sare deirik egin gabe eta horrek dakartzan onura guztiekin: egiaztatze azkarren exekuzioa eta estalduraren metrikak eskuratzea. API bera sare baldintza malgu eta ezberdinetan inplementatzea ere ahalbidetzen du. Gehigarria: arduren bereizte hobea eta kode garbiagoa
+Azken Express sorgailuak mantentzea merezi duen sekulako praktika bikaina du. Izan ere, APIaren deklarazioa sarearekin erlazionatutako ezarpenetatik (portua, protokoloa, etab.) banandua dago. Horrek ahalbidetzen du APIa egiaztatzea prozesua martxan den bitartean, sare deirik egin gabe eta horrek dakartzan onura guztiekin: egiaztatze azkarren exekuzioa eta estalduraren metrikak eskuratzea. API bera sare baldintza malgu eta ezberdinetan inplementatzea ere ahalbidetzen du. Gehigarria: arduren bereizte hobea eta kode garbiagoa
 
 <br/><br/>
 

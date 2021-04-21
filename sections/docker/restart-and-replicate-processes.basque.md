@@ -1,4 +1,4 @@
-# Utzi Dockeren exekuzio denborari erreplikatzea eta jardueraren iraupena kudeatzen
+# Utzi Dockeren exekuzio denborari erreplikatu eta jardueraren iraupena kudeatzen
 
 <br/><br/>
 
@@ -14,8 +14,7 @@ Dockeren exekuzio denboraren kudeatzaileak, Kubernetes bezala, benetan onak dira
 
 <summary><strong>Dockerfile fitxategia</strong></summary>
 
-```
-
+```dockerfile
 FROM node:12-slim
 
 # Eraikitze logika hemen dago
@@ -33,7 +32,7 @@ CMD ["node", "index.js"]
 
 <summary><strong>Dockerfile fitxategia</strong></summary>
 
-```
+```dockerfile
 FROM node:12-slim
 
 # Eraikitze logika hemen dago

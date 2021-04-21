@@ -8,7 +8,7 @@ Docker konpilazio komandoak tokian tokiko fitxategiak konpilazioaren testuinguru
 
 <br/><br/>
 
-### Kode adibidea: .dockerignore fitxategi lehenetsi ona Node.jsentzat
+### Kode adibidea: .dockerignore fitxategi lehenetsi ona Node.jsrentzat
 
 <details>
 <summary><strong>.dockerignore</strong></summary>
@@ -36,8 +36,9 @@ Docker konpilazio komandoak tokian tokiko fitxategiak konpilazioaren testuinguru
 <details>
 <summary><strong>Dockerfile</strong></summary>
 
-```
+```dockerfile
 FROM node:12-slim AS build
+
 WORKDIR /usr/src/app
 # The next line copies everything
 COPY . .

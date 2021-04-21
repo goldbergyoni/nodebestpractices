@@ -2,7 +2,7 @@
 
 ### Azalpena
 
-Zure datu basearen logika sortzerakoan kontuz ibili beharko zenuke erasotzaile potentzialek baliatu ditzaketen injekzio bektoreekin. Datu basearen kontsultak eskuz idaztea edo erabiltzaileen eskaeretarako datuak balioztatu gabe sartzea, horiek dira ahultasun horietaz ohartzeko metodorik errazenak. Erraza da, ordea, egoera hori saihesten, datu baseko eragiketen sarrerak balioztatzeko eta kudeatzeko pakete egokiak erabiltzen dituzunean. Kasu askotan, zure sistema egokia eta segurua izatea lortuko duzu [joi](https://github.com/hapijs/joi) edo [yup](https://github.com/jquense/yup) bezalako balioztatze liburutegiren bat eta beheko zerrendako ORM / ODM bat erabiliz. Horrek bermatu beharko luke kontsulta parametrizatuen eta datuen loturen erabilera datu balioztatuak behar bezala sahiestua eta kudeatuko direla ziurtatzeko nahi gabeko eraso bektoreak ireki gabe. Liburutegi horietako askok bizimodua erraztuko dizute, programatzaile zaren aldetik, funtzio erabilgarri ugari ahalbidetuz: esaterako, kontsulta konplexuak eskuz idatzi beharrik ez izatea, lengoaietan oinarritutako sistemetarako letra tipoak hornitzea edo zenbait datu mota nahi duzun formatuetara pasatzea. Amaitzeko, __beti__ balioztatu gorde nahi dituzun datuak eta erabili datuen mapaketa liburutegi egokiak zure lan arriskutsua kudeatzeko.
+Zure datu basearen logika sortzerakoan kontuz ibili beharko zenuke erasotzaile potentzialek baliatu ditzaketen injekzio bektoreekin. Datu basearen kontsultak eskuz idaztea edo erabiltzaileen eskaeretarako datuak balioztatu gabe sartzea, horiek dira ahultasun horietaz ohartzeko metodorik errazenak. Erraza da, ordea, egoera hori saihesten, datu baseko eragiketen sarrerak balioztatzeko eta kudeatzeko pakete egokiak erabiltzen dituzunean. Kasu askotan, zure sistema egokia eta segurua izatea lortuko duzu [joi](https://github.com/hapijs/joi) edo [yup](https://github.com/jquense/yup) bezalako balioztatze liburutegiren bat eta beheko zerrendako ORM / ODM bat erabiliz. Horrek bermatu beharko luke kontsulta parametrizatuen eta datuen loturen erabilera datu balioztatuak behar bezala saihestu eta kudeatuko direla ziurtatzeko nahi gabeko eraso bektoreak ireki gabe. Liburutegi horietako askok bizimodua erraztuko dizute, programatzaile zaren aldetik, funtzio erabilgarri ugari ahalbidetuz: esaterako, kontsulta konplexuak eskuz idatzi beharrik ez izatea, lengoaietan oinarritutako sistemetarako letra tipoak hornitzea edo zenbait datu mota nahi duzun formatuetara pasatzea. Amaitzeko, __beti__ balioztatu gorde nahi dituzun datuak eta erabili datuen mapaketa liburutegi egokiak zure lan arriskutsua kudeatzeko.
 
 ### Liburutegiak
 
@@ -32,7 +32,7 @@ db.balances.find({
 
 ### Adibidea: SQL injekzioa
 
-```
+```sql
 SELECT username, firstname, lastname FROM users WHERE id = 'user input';
 
 SELECT username, firstname, lastname FROM users WHERE id = 'evil'input';

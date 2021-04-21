@@ -57,7 +57,7 @@ router.post('/' , **validator(Product.validate)**, async (req, res, next) => {
 
 ### Beste blogari batzuek diotena
 
-[Gergely Nemeth](https://nemethgergely.com/nodejs-security-overview/) bloga:
+[Gergely Nemeth](https://nemethgergely.com/blog/nodejs-security-overview) bloga:
 
 > Zure aplikazioaren segurtasunari dagokionez, erabiltzaileen sarrera balioztatzea da egin behar dituzun gauzarik garrantzitsuenetako bat. Behar bezala egiten ez baduzu, zure aplikazioa eta erabiltzaileak eraso ugari izateko arriskuan egon daitezke, besteak beste, komando injekzioa, SQL injekzioa edo gordetako guneetako scriptak.<br/>
 

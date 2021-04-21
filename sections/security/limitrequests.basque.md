@@ -2,7 +2,7 @@
 
 ### Azalpena
 
-Abiadura muga ezarri beharko litzateke zure aplikazioan Node.jsen aplikazio batek gainezka egin ez dezan aldi berean eskaera gehiegi dituelako, eta hori hobeto egiten da hartarako diseinatutako zerbitzua batekin, hala nola nginx. Baina, abiadura mugatzeko pakete malgu batekin ([rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible)) edo Express.js aplikazioetako abiadura-mugatzaile-malgua ([rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible)) bezalako middlewareekin ere egin daiteke.
+Abiadura muga ezarri beharko litzateke zure aplikazioan Node.jsren aplikazio batek gainezka egin ez dezan aldi berean eskaera gehiegi dituelako, eta hori hobeto egiten da hartarako diseinatutako zerbitzua batekin, hala nola nginx. Baina, abiadura mugatzeko pakete malgu batekin ([rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible)) edo Express.js aplikazioetako abiadura-mugatzaile-malgua ([rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible)) bezalako middlewareekin ere egin daiteke.
 
   ### Kode adibidea: Node.js aplikazio hutsa, abiadura-mugatzaile-malgua(https://www.npmjs.com/package/rate-limiter-flexible)
 

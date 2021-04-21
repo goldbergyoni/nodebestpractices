@@ -32,7 +32,7 @@ db.balances.find({
 
 ### 例 - SQL インジェクション
 
-```
+```sql
 SELECT username, firstname, lastname FROM users WHERE id = 'user input';
 
 SELECT username, firstname, lastname FROM users WHERE id = 'evil'input';

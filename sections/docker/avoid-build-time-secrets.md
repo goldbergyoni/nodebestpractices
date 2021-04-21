@@ -15,10 +15,11 @@ A Docker image isn't just a bunch of files but rather multiple layers revealing 
 
 <summary><strong>Dockerfile</strong></summary>
 
-```
+```dockerfile
 # syntax = docker/dockerfile:1.0-experimental
 
 FROM node:12-slim
+
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN --mount=type=secret,id=npm,target=/root/.npmrc npm ci
@@ -36,19 +37,23 @@ RUN --mount=type=secret,id=npm,target=/root/.npmrc npm ci
 
 <summary><strong>Dockerfile</strong></summary>
 
-```
-
+```dockerfile
 FROM node:12-slim AS build
+
 ARG NPM_TOKEN
+
 WORKDIR /usr/src/app
 COPY . /dist
+
 RUN echo "//registry.npmjs.org/:\_authToken=\$NPM_TOKEN" > .npmrc && \
  npm ci --production && \
  rm -f .npmrc
 
+
 FROM build as prod
+
 COPY --from=build /dist /dist
-CMD ["node","index.js"]
+CMD ["node", "index.js"]
 
 # The ARG and .npmrc won't appear in the final image but can be found in the Docker daemon un-tagged images list - make sure to delete those
 ```
@@ -63,19 +68,21 @@ CMD ["node","index.js"]
 
 <summary><strong>Dockerfile</strong></summary>
 
-```
-
+```dockerfile
 FROM node:12-slim
+
 ARG NPM_TOKEN
+
 WORKDIR /usr/src/app
 COPY . /dist
+
 RUN echo "//registry.npmjs.org/:\_authToken=\$NPM_TOKEN" > .npmrc && \
  npm ci --production && \
  rm -f .npmrc
 
 # Deleting the .npmrc within the same copy command will not save it inside the layer, however it can be found in image history
 
-CMD ["node","index.js"]
+CMD ["node", "index.js"]
 ```
 
 </details>

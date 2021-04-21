@@ -1,8 +1,8 @@
 [✔]: ../../assets/images/checkbox-small-blue.png
 
-# Node.jsen ohiko segurtasun jardunbide egokienak
+# Node.jsren ohiko segurtasun praktika onak
 
-Ohiko segurtasun jardunbideen atalak esparru eta konbentzio askotan estandarizatuta dauden jardunbide onak biltzen ditu. Adibidez, aplikazio bat exekutatzea SSL / TLS-rekin konfigurazio guztietan erabili beharko litzatekeen jardunbide eta konbentzio arrunta da, horrela segurtasun abantaila handiak lortuko lirateke eta.
+Ohiko segurtasun praktiken atalak esparru eta konbentzio askotan estandarizatuta dauden praktika onak biltzen ditu. Adibidez, aplikazio bat exekutatzea SSL / TLS-rekin konfigurazio guztietan erabili beharko litzatekeen praktika eta konbentzio arrunta da, horrela segurtasun abantaila handiak lortuko lirateke eta.
 
 ## ![✔] Erabili SSL / TLS bezeroen zerbitzariaren konexioa enkriptatzeko
 
@@ -103,7 +103,7 @@ Jarraian, OWASP proiektuko hainbat gomendio garrantzitsu zerrendatu ditugu
 - Jarraitu tokian tokiko datuen pribatutasun legeak. Erreferentzia legeak:
   - Europar Batasuna: GDPR - https://ec.europa.eu/info/law/law-topic/data-protection_en
   - India: https://meity.gov.in/writereaddata/files/Personal_Data_Protection_Bill,2018.pdf
-  - Singapur: https://www.pdpc.gov.sg/Legislation-and-Guidelines/Personal-Data-Protection-Act-Overview
+  - Singapur: https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act
 
 ## ![✔] Izan security.txt fitxategia [PRODUKZIOA]
 

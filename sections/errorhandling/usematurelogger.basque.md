@@ -36,6 +36,6 @@ StrongLoop bloga ("Winston eta Bunyanen Node.js Erregistratzaile sistemak konpar
 
 ### Non dago Winston?
 
-Zergatik ohiko faboritoak (adibidez, Winston) ez dauden aholkatutako jardunbide onenen egungo zerrendan jakiteko, begiratu # [#684][#684]an
+Zergatik ohiko faboritoak (adibidez, Winston) ez dauden aholkatutako pratika onenen egungo zerrendan jakiteko, begiratu # [#684][#684]an
 
 [#684]: https://github.com/goldbergyoni/nodebestpractices/issues/684

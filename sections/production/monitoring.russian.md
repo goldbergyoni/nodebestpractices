@@ -30,7 +30,7 @@
 
 ### Что говорят другие блоггеры
 
-Из блога [Rising Stack](http://mubaloo.com/best-practices-deploying-node-js-applications/):
+Из блога [Rising Stack](https://blog.risingstack.com/node-js-performance-monitoring-with-prometheus/):
 
 > … Мы рекомендуем вам смотреть эти сигналы для всех ваших услуг:
 > Частота ошибок: потому что ошибки связаны с пользователем и сразу же влияют на ваших клиентов.

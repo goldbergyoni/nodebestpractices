@@ -1,5 +1,5 @@
 language: node_js
-node_js: 8
+node_js: lts/*
 script:  
   - cd .operations
   - npm i

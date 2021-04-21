@@ -102,7 +102,7 @@ Nous avons énuméré ci-dessous quelques conseils importants tirés du projet O
 - Respectez les lois du pays en matière de protection des données. Lois de référence :
   - Union européenne : RGPD - https://ec.europa.eu/info/law/law-topic/data-protection_fr
   - Inde : https://meity.gov.in/writereaddata/files/Personal_Data_Protection_Bill,2018.pdf
-  - Singapour : https://www.pdpc.gov.sg/Legislation-and-Guidelines/Personal-Data-Protection-Act-Overview
+  - Singapour : https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act
 
 ## ![✔] Avoir un fichier security.txt [PRODUCTION]
 

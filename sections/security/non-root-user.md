@@ -11,6 +11,7 @@ According to the 'Principle of least privilege' a user/process must be able to a
 
 ```dockerfile
 FROM node:latest
+
 COPY package.json .
 RUN npm install
 COPY . .
