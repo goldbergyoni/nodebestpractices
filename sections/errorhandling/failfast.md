@@ -11,7 +11,7 @@ Defensive programming is an approach to improve software and source code, in ter
 ### Code example: validating complex JSON input using ‘Joi’
 
 ```javascript
-var memberSchema = Joi.object().keys({
+const memberSchema = Joi.object().keys({
  password: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/),
  birthyear: Joi.number().integer().min(1900).max(2013),
  email: Joi.string().email()

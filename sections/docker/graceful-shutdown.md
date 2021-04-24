@@ -15,8 +15,7 @@ In a Dockerized runtime like Kubernetes, containers are born and die frequently.
 
 <summary><strong>Dockerfile</strong></summary>
 
-```
-
+```dockerfile
 FROM node:12-slim
 
 # Build logic comes here
@@ -36,8 +35,7 @@ CMD ["node", "index.js"]
 
 <summary><strong>Dockerfile</strong></summary>
 
-```
-
+```dockerfile
 FROM node:12-slim
 
 # Build logic comes here
@@ -62,8 +60,7 @@ CMD ["node", "index.js"]
 
 <summary><strong>Dockerfile</strong></summary>
 
-```
-
+```dockerfile
 FROM node:12-slim
 
 # Build logic comes here

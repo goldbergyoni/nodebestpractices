@@ -7,9 +7,7 @@
 ### 代码示例 - 启动Node
 
 ```dockerfile
-
 FROM node:12-slim AS build
-
 
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
@@ -22,7 +20,6 @@ CMD ["node", "server.js"]
 ### 代码示例 - 使用Tiny作为入口（ENTRYPOINT）
 
 ```dockerfile
-
 FROM node:12-slim AS build
 
 # 使用子进程（child-processes）的情况下，添加Tini
@@ -43,8 +40,8 @@ CMD ["node", "server.js"]
 
 使用npm start
 ```dockerfile
-
 FROM node:12-slim AS build
+
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm ci --production && npm clean cache --force
@@ -56,8 +53,8 @@ CMD "npm start"
 在同一字符串命令里面使用node，将启动一个bash/ash脚本进程去执行您的命令。它和使用`npm`的效果类似。
 
 ```dockerfile
-
 FROM node:12-slim AS build
+
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm ci --production && npm clean cache --force
@@ -67,7 +64,7 @@ CMD "node server.js"
 ```
 
 使用npm启动，这里是进程树：
-```
+```console
 $ ps falx
   UID   PID  PPID   COMMAND
     0     1     0   npm

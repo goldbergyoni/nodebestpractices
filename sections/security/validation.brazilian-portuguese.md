@@ -62,7 +62,7 @@ router.post("/" , **validator(Product.validate)**, async (req, res, next) => {
 
 ### O que Outros Blogueiros Dizem
 
-Do blog [Gergely Nemeth](https://nemethgergely.com/nodejs-security-overview/):
+Do blog [Gergely Nemeth](https://nemethgergely.com/blog/nodejs-security-overview):
 > Validar a entrada do usuário é uma das coisas mais importantes a fazer quando se trata da segurança do seu aplicativo. Não fazer isso corretamente pode abrir o aplicativo e os usuários para uma ampla variedade de ataques, incluindo injeção de comando, injeção de SQL ou scripts de sites cruzados armazenados.<br/>
 
 Para validar a entrada do usuário, uma das melhores bibliotecas que você pode escolher é a joi. Joi é uma linguagem de descrição de esquemas de objeto e um validador para objetos JavaScript.

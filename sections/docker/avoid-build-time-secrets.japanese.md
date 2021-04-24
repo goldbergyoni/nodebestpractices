@@ -15,10 +15,11 @@ Docker イメージは単なるファイルの束ではなく、ビルド時に�
 
 <summary><strong>Dockerfile</strong></summary>
 
-```
+```dockerfile
 # syntax = docker/dockerfile:1.0-experimental
 
 FROM node:12-slim
+
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN --mount=type=secret,id=npm,target=/root/.npmrc npm ci
@@ -36,19 +37,23 @@ RUN --mount=type=secret,id=npm,target=/root/.npmrc npm ci
 
 <summary><strong>Dockerfile</strong></summary>
 
-```
-
+```dockerfile
 FROM node:12-slim AS build
+
 ARG NPM_TOKEN
+
 WORKDIR /usr/src/app
 COPY . /dist
+
 RUN echo "//registry.npmjs.org/:\_authToken=\$NPM_TOKEN" > .npmrc && \
  npm ci --production && \
  rm -f .npmrc
 
+
 FROM build as prod
+
 COPY --from=build /dist /dist
-CMD ["node","index.js"]
+CMD ["node", "index.js"]
 
 # ARG と .npmrc は最終的なイメージには現れませんが、Docker デーモンの un-tagged イメージリストから見つけることができます - これらを忘れずに削除してください
 ```
@@ -63,10 +68,11 @@ CMD ["node","index.js"]
 
 <summary><strong>Dockerfile</strong></summary>
 
-```
-
+```dockerfile
 FROM node:12-slim
+
 ARG NPM_TOKEN
+
 WORKDIR /usr/src/app
 COPY . /dist
 RUN echo "//registry.npmjs.org/:\_authToken=\$NPM_TOKEN" > .npmrc && \
@@ -75,7 +81,7 @@ RUN echo "//registry.npmjs.org/:\_authToken=\$NPM_TOKEN" > .npmrc && \
 
 # .npmrc を同じ copy コマンド内で削除するとレイヤー内には保存されませんが、イメージ履歴から見つけることができます
 
-CMD ["node","index.js"]
+CMD ["node", "index.js"]
 ```
 
 </details>

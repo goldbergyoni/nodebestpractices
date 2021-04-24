@@ -16,7 +16,7 @@
 
 ### コード例: 安全な Cookie の設定を行う
 
- ```javascript
+```javascript
 // express セッションミドルウェアを使用する
 app.use(session({  
   secret: 'youruniquesecret', // cookie に格納されるセッション ID に署名するために利用されるシークレット文字列

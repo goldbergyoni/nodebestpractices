@@ -2,9 +2,9 @@
 
 <br/><br/>
 
-### Azalpen Paragrafoa
+### Azalpena
 
-Proben txostenak esan behar du aplikazioaren berrikuspenak erantzuten dien kodea nahitaez ezagutzen ez duten pertsonen beharrei: probatzailea, inplementazioa egiten ari den DevOps injinaria eta zu zeu hemendik bi urtera. Hori errazago lortuko duzu probak eskatutako baldintzak kontuan hartzen baditu eta hiru zatiz osatua badago:
+Proben txostenak esan behar du aplikazioaren berrikuspenak erantzuten dien kodea nahitaez ezagutzen ez duten pertsonen beharrei: probatzailea, inplementazioa egiten ari den DevOps injinerua eta zu zeu hemendik bi urtera. Hori errazago lortuko duzu probak eskatutako baldintzak kontuan hartzen baditu eta hiru zatiz osatua badago:
 
 (1) Zer ari gara probatzen? Adibidez, ProduktuZerbitzua.gehituProduktuBerria funtzioa
 
@@ -31,7 +31,7 @@ describe('Produktu Zerbitzua', () => {
 
 <br/><br/>
 
-### Kode adibidea, anti eredua: norberak proba osoaren kodea irakurri behar du eta asmoa ulertu
+### Anti ereduaren kode adibidea: norberak proba osoaren kodea irakurri behar du eta asmoa ulertu
 ```javascript
 describe('Produktu Zerbitzua', () => {
   describe('Produktu berria gehitu', () => {
@@ -48,7 +48,7 @@ describe('Produktu Zerbitzua', () => {
 
 ### "Zuzen egiteko adibidea: proben txostenak dokumentuaren baldintzak biltzen ditu"
 
-["30 Node.jsen proba jardunbide egokiak" blogetik hartua, Yoni Goldbergen eskutik](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347)
+["30 Node.jsren proba jarraibide egokiak" blogetik hartua, Yoni Goldbergen eskutik](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347)
 
 ![Proba txostenaren adibidea](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/test-report-like-requirements.jpeg "Proba txostenaren adibidea")
 

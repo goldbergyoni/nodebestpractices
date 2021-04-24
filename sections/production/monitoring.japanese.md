@@ -29,7 +29,7 @@
 
 ### 他のブロガーが言っていること
 
-[Rising Stack](http://mubaloo.com/best-practices-deploying-node-js-applications/) のブログより:
+[Rising Stack](https://blog.risingstack.com/node-js-performance-monitoring-with-prometheus/) のブログより:
 
 > ...すべてのサービスのために、これらの信号を見ることをお勧めします:
 > エラー率: なぜなら、エラーはユーザーが直面するものであり、すぐに顧客に影響を与えるからです。

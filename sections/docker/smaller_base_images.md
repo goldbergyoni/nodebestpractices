@@ -1,4 +1,3 @@
-# Prefer smaller Docker base images
 
 Large Docker images can lead to higher exposure to vulnerabilities and increased resource consumption. Often you don't need certain packages installed at runtime that are needed for building.
 Pulling and storing larger images will become more expensive at scale, when dealing with larger images. By design minimal images may not come with common libraries needed for building native modules or packages useful for debugging (e.g. curl) pre-installed.
