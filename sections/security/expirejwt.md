@@ -13,10 +13,14 @@ An example of using Nodejs and a Redis store containing your denylist. Keeping y
 const redis = require("redis");
 const redisClient = redis.createClient();
 
+// Make sure you handle the creation and verification of the JWT before checking its logout status
+
 // Check for logout middleware
 app.use((req,res,next)=>{
-  const { token } = req;
-  redisClient.get(token, (error, data) => {
+   const { userId, tokenIssuedAt } = req;
+
+  // Using the token itself as the matching key is not reliable, so use the content of the JWT
+  redisClient.get(userId + tokenIssuedAt, (error, data) => {
     if (error) {
       return res.status(400).send({ error });
     }
@@ -30,10 +34,10 @@ app.use((req,res,next)=>{
 });
 
 app.get('/logout', (req, res) => {
-   const { userId, token, tokenExp } = req;
+   const { userId, tokenExpiresAt, tokenIssuedAt } = req;
       // Redis lets you set an expiration,
       // so we'll use that to keep it clean of expired JWTs 
-      redisClient.set(token, tokenExp, true);
+      redisClient.set(userId + tokenIssuedAt, tokenExp, true);
 
       return res.send({
         status: 'success',
