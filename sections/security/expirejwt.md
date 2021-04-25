@@ -2,39 +2,43 @@
 
 ### One Paragraph Explainer
 
-By design, JWTs (JSON Web Tokens) are completely stateless, so once a valid token is signed by an issuer, the token may be verified as authentic by the application. The problem this leads to is the security concern where a leaked token could still be used and unable to be revoked, due to the signature remaining valid as long as the signature provided by the issues matches what the application is expecting.
-Due to this, when using JWT authentication, an application should manage a blacklist of expired or revoked tokens to retain user's security in the case a token needs to be revoked.
+By design, JWTs (JSON Web Tokens) are completely stateless, so once a valid token is signed by an issuer, the token may be verified as authentic by the application. The problem this leads to is the security concern where a leaked token could still be used and be unable to be revoked, due to the signature remaining valid as long as the signature provided by the issues matches what the application is expecting.
+Due to this, when using JWT authentication, an application should manage a denylist of expired or revoked tokens to retain user's security in the case a token needs to be revoked.
 
-### `express-jwt-blacklist` example
+### redis  example
 
-An example of running `express-jwt-blacklist` on a Node.js project using the `express-jwt`. Note that it is important to not use the default store settings (in-memory) cache of `express-jwt-blacklist`, but to use an external store such as Redis to revoke tokens across many Node.js processes.
+An example of using Nodejs and a Redis store containing your denylist. Keeping your denylist in an array or object is not recommended since if you restart, you'd lose it, and other instances wouldn't know if someone was explicitly logged out. So this assumes you have a running instance of Redis or some persistent key-value store and middleware handling login/JWT creation, and JWT verification since this is also not an extensive example of JWT implementation.
 
 ```javascript
-const jwt = require('express-jwt');
-const blacklist = require('express-jwt-blacklist');
+const redis = require("redis");
+const redisClient = redis.createClient();
 
-blacklist.configure({
-  tokenId: 'jti',
-  strict: true,
-  store: {
-    type: 'memcached',
-    host: '127.0.0.1',
-    port: 11211,
-    keyPrefix: 'mywebapp:',
-    options: {
-      timeout: 1000
+// Check for logout middleware
+app.use((req,res,next)=>{
+  const { token } = req;
+  redisClient.get(token, (error, data) => {
+    if (error) {
+      return res.status(400).send({ error });
     }
-  }
+    if (data !== null) {
+      return res.send({
+        message: 'You have to login!',
+      });
+    }
+    return next();
+  })
 });
 
-app.use(jwt({
-  secret: 'my-secret',
-  isRevoked: blacklist.isRevoked
-}));
-
 app.get('/logout', (req, res) => {
-  blacklist.revoke(req.user)
-  res.sendStatus(200);
+   const { userId, token, tokenExp } = req;
+      // Redis lets you set an expiration,
+      // so we'll use that to keep it clean of expired JWTs 
+      redisClient.set(token, tokenExp, true);
+
+      return res.send({
+        status: 'success',
+        message: 'Logout successful',
+      });
 });
 ```
 
@@ -42,3 +46,7 @@ app.get('/logout', (req, res) => {
 
 From the blog by [Marc Busqué](http://waiting-for-dev.github.io/blog/2017/01/25/jwt_secure_usage/):
 > ...add a revocation layer on top of JWT, even if it implies losing its stateless nature.
+
+### References
+
+See the [blog post by Tosin Moronfolu](https://dev.to/chukwutosin_/how-to-invalidate-a-jwt-using-a-blacklist-28dl) for a more detailed implementation guide.
