@@ -5,7 +5,7 @@
 By design, JWTs (JSON Web Tokens) are completely stateless, so once a valid token is signed by an issuer, the token may be verified as authentic by the application. The problem this leads to is the security concern where a leaked token could still be used and be unable to be revoked, due to the signature remaining valid as long as the signature provided by the issues matches what the application is expecting.
 Due to this, when using JWT authentication, an application should manage a denylist of expired or revoked tokens to retain user's security in the case a token needs to be revoked.
 
-### redis  example
+### Redis example
 
 An example of using Nodejs and a Redis store containing your denylist. Keeping your denylist in an array or object is not recommended since if you restart, you'd lose it, and other instances wouldn't know if someone was explicitly logged out. So this assumes you have a running instance of Redis or some persistent key-value store and middleware handling login/JWT creation, and JWT verification since this is also not an extensive example of JWT implementation.
 
@@ -16,7 +16,7 @@ const redisClient = redis.createClient();
 // Make sure you handle the creation and verification of the JWT before checking its logout status
 
 // Check for logout middleware
-app.use((req,res,next)=>{
+app.use((req,res,next) => {
    const { userId, tokenIssuedAt } = req;
 
   // Using the token itself as the matching key is not reliable, so use the content of the JWT
