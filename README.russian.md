@@ -272,7 +272,8 @@ function someFunction() {
 }
 
 // Избегайте
-function someFunction() {
+function someFunction() 
+{
   // code block
 }
 ```
