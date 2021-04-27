@@ -67,7 +67,7 @@ catch (error) {
 
 // Error handling middleware, we delegate the handling to the centralized error handler
 app.use(async (err: Error, req: Request, res: Response, next: NextFunction) => {
-await errorHandler.handleError(err, res);
+  await errorHandler.handleError(err, res);
 });
 
 process.on("uncaughtException", (error:Error) => {
