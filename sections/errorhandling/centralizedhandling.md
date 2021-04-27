@@ -93,7 +93,7 @@ function errorHandler() {
   this.handleError = async (error, responseStream) => {
     await logger.logError(error);
     await fireMonitoringMetric(error);
-    await crashIfUntrustedErrorOrSendResponse(error, responseStream);    
+    await crashIfUntrustedErrorOrSendResponse(error, responseStream);
   };
 }
 ```
