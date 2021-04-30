@@ -1,0 +1,29 @@
+name: CI
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-20.04
+    env:
+      NODE_ENV: test
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v2.1.2
+      with:
+        node-version: '14'
+
+    - run: cd .operations && npm install
+    - run: cd .operations && npm run lint
+    - run: cd .operations && npm run build
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        IS_FORK: ${{ github.event.pull_request.head.repo.full_name != 'goldbergyoni/nodebestpractices' }}
