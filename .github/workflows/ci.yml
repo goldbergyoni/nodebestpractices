@@ -21,7 +21,7 @@ jobs:
       with:
         node-version: '14'
 
-    - run: cd .operations && npm ci
+    - run: cd .operations && npm install
     - run: cd .operations && npm run lint
 
   build:
