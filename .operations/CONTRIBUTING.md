@@ -16,6 +16,13 @@ Our operations manual [can be found here](https://github.com/goldbergyoni/nodebe
 
 Our content writing guidelines [can be found here](https://github.com/goldbergyoni/nodebestpractices/blob/master/.operations/writing-guidelines.md)
 
+### Handling issues and PRs
+
+- Greet the person who contribute out of a good will
+- If a strighforward fix is suggested (e.g., TYPO, linting fix, grammaer improvement, etc) - Approve and merge
+- When a the proposed PR deals with a more opionionated topic - Encourage at least 2 reviewer and let the PR land for a few days to let more folks chime-in
+- Add the contributor to the contributions credit list with this command: `@all-contributors please add @username for content`
+
 
 ## Contribution model
 
