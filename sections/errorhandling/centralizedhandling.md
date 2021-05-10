@@ -67,7 +67,7 @@ catch (error) {
 
 // Error handling middleware, we delegate the handling to the centralized error handler
 app.use(async (err: Error, req: Request, res: Response, next: NextFunction) => {
-await errorHandler.handleError(err, res);
+  await errorHandler.handleError(err, res);
 });
 
 process.on("uncaughtException", (error:Error) => {
@@ -93,7 +93,7 @@ function errorHandler() {
   this.handleError = async (error, responseStream) => {
     await logger.logError(error);
     await fireMonitoringMetric(error);
-    await crashIfUntrustedErrorOrSendResponse(error, responseStream);    
+    await crashIfUntrustedErrorOrSendResponse(error, responseStream);
   };
 }
 ```
@@ -107,8 +107,8 @@ class ErrorHandler {
   public async handleError(error: Error, responseStream: Response): Promise<void> {
     await logger.logError(error);
     await fireMonitoringMetric(error);
-    await crashIfUntrustedErrorOrSendResponse(error, responseStream);      
-    };
+    await crashIfUntrustedErrorOrSendResponse(error, responseStream);
+  };
 }
 
 export const handler = new ErrorHandler();
