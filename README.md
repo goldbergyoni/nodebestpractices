@@ -1582,7 +1582,6 @@ Thanks goes to these wonderful people who have contributed to this repository!
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/benjaminudoh10"><img src="https://avatars.githubusercontent.com/u/9018331?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Benjamin</b></sub></a><br /><a href="#content-benjaminudoh10" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/YJoe"><img src="https://avatars.githubusercontent.com/u/13971637?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Joe Pauley</b></sub></a><br /><a href="#content-yjoe" title="Content">🖋</a></td>
   </tr>
 </table>
 

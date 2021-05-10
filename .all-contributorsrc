@@ -1406,15 +1406,6 @@
       "contributions": [
         "content"
       ]
-    },
-    {
-      "login": "yjoe",
-      "name": "Joe Pauley",
-      "avatar_url": "https://avatars.githubusercontent.com/u/13971637?v=4",
-      "profile": "https://github.com/YJoe",
-      "contributions": [
-        "content"
-      ]
     }
   ],
   "projectName": "nodebestpractices",
