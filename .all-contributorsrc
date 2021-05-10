@@ -1406,6 +1406,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "yjoer",
+      "name": "Yeoh Joer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/47742486?v=4",
+      "profile": "https://www.yjoer.com",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
