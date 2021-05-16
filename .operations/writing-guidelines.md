@@ -20,7 +20,7 @@ The content is presented using fixed templates. Any future content must conform 
 
 ## 5. It's About Node.js
 
-Each advice should be related directly to Node.js and not to software development in general. When we advise to implement generic pattern/rule in Node.js, the content should focus on the Node implementation. For example, when we advise to sanitize all requests input for security reasons, Node-lingo should be used - ‘Use middleware to sanitize request input’. If an item has no specific implementation in Node.js (e.g. it looks the same in Python & Jaba) - include it within a generic container item, see item 6.5 for example.
+Each advice should be related directly to Node.js and not to software development in general. When we advise to implement generic pattern/rule in Node.js, the content should focus on the Node implementation. For example, when we advise to sanitize all requests input for security reasons, Node-lingo should be used - ‘Use middleware to sanitize request input’. If an item has no specific implementation in Node.js (e.g. it looks the same in Python & Java) - include it within a generic container item, see item 6.5 for example.
 
 ## 6. Leading vendors only
 
