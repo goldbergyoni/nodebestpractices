@@ -1415,6 +1415,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "Miigon",
+      "name": "Miigon",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16161991?v=4",
+      "profile": "https://blog.miigon.net",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
