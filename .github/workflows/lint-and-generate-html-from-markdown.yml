@@ -1,9 +1,14 @@
-name: CI
+name: Lint & Generate HTML from Markdown
 on:
   push:
     branches:
       - master
   pull_request:
+
+defaults:
+  run:
+    shell: bash
+    working-directory: .operations
 
 jobs:
   lint:
@@ -21,8 +26,8 @@ jobs:
       with:
         node-version: '14'
 
-    - run: cd .operations && npm install
-    - run: cd .operations && npm run lint
+    - run: npm install
+    - run: npm run lint
 
   build:
     name: Build
@@ -37,8 +42,8 @@ jobs:
       with:
         node-version: '14'
 
-    - run: cd .operations && npm install
-    - run: cd .operations && npm run build
+    - run: npm install
+    - run: npm run build
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         IS_FORK: ${{ github.repository != 'goldbergyoni/nodebestpractices' }}
