@@ -1424,6 +1424,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "Egregor2011",
+      "name": "Rostislav Bogorad",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3630318?v=4",
+      "profile": "http://brainstorage.me/Egregor2011",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
