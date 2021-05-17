@@ -1433,6 +1433,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "Flouse",
+      "name": "Flouse",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1297478?v=4",
+      "profile": "https://github.com/Flouse",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
