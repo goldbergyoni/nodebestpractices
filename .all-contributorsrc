@@ -1442,6 +1442,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "taranttini",
+      "name": "Tarantini Pereira",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6922125?v=4",
+      "profile": "http://taranttini.com",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
