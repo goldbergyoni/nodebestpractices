@@ -1451,6 +1451,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "kzmat",
+      "name": "Kazuki Matsuo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/34614358?v=4",
+      "profile": "https://github.com/kzmat",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
