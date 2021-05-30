@@ -1460,6 +1460,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "burkybang",
+      "name": "Adam Smith",
+      "avatar_url": "https://avatars.githubusercontent.com/u/927886?v=4",
+      "profile": "https://github.com/burkybang",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
