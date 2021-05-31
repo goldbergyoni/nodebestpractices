@@ -31,6 +31,9 @@ jobs:
           branch: update-last-update-badge
           delete-branch: true
           title: 'Update last update badge to today [skip ci]'
+          labels: |
+            update-last-update-badge
+            auto-merge
           
           # Force empty body as the action have default body
           body: ''

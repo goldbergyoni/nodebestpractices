@@ -18,7 +18,7 @@
 
 <br/>
 
-Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![EU](/assets/flags/EU.png)**EU**](/README.basque.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** e ![TR](/assets/flags/TR.png)**TR** em progresso!)](#translations)](#translations)
+Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md), [![JA](/assets/flags/JA.png)**JA**](/README.japanese.md), [![EU](/assets/flags/EU.png)**EU**](/README.basque.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** and ![TR](/assets/flags/TR.png)**TR** em progresso! )](#translations)
 
 <br/>
 
@@ -31,6 +31,8 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 - **Nova Boa Prática:** 6.25: [Evite publicar segredos no registro do npm](/sections/security/avoid_publishing_secrets.brazilian-portuguese.md)
 
 - **Nova tradução:** ![BR](/assets/flags/BR.png) [Português Brasileiro](/README.brazilian-portuguese.md) disponível agora, cortesia de [Marcelo Melo](https://github.com/marcelosdm)! ❤️
+
+- **🎊 60,000 estrelas!**: Nosso repo recebeu estrela e a confiança de 60.100 desenvolvedores. Estamos sem palavras
 
 <br/><br/>
 
@@ -47,10 +49,10 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 ## Índice
 
 1.  [Práticas de Estrutura de Projeto (5)](#1-práticas-de-estrutura-de-projeto)
-2.  [Práticas de Tratamento de Erros (11) ](#2-práticas-de-tratamento-de-erros)
-3.  [Práticas de Estilo de Código (12) ](#3-práticas-de-estilo-de-código)
-4.  [Práticas de Testes e Qualidade Geral (11) ](#4-práticas-de-testes-e-qualidade-geral)
-5.  [Práticas de Produção (18) ](#5-boas-práticas-de-produção)
+2.  [Práticas de Tratamento de Erros (12) ](#2-práticas-de-tratamento-de-erros)
+3.  [Práticas de Estilo de Código (13) ](#3-práticas-de-estilo-de-código)
+4.  [Práticas de Testes e Qualidade Geral (13) ](#4-práticas-de-testes-e-qualidade-geral)
+5.  [Práticas de Produção (19) ](#5-boas-práticas-de-produção)
 6.  [Práticas de Segurança (25)](#6-boas-práticas-em-segurança)
 7.  [Práticas de Performance (1) (Em Progresso ✍️)](#7-boas-práticas-em-performance)
 
@@ -164,7 +166,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 ## ![✔] 2.6 Finalize o processo quando um estranho chegar
 
-**TL;DR:** Quando ocorre um erro desconhecido (um erro de programação, veja a melhor prática #3) - há incerteza sobre a integridade da aplicação. Uma prática comum sugere reiniciar cuidadosamente o processo utilizando uma ferramenta de “reinicialização” como Forever e PM2.
+**TL;DR:** Quando ocorre um erro desconhecido (um erro de programação, veja a melhor prática #3) - há incerteza sobre a integridade da aplicação. Uma prática comum sugere reiniciar cuidadosamente o processo utilizando uma ferramenta de “reinicialização” como [Forever](https://www.npmjs.com/package/forever) e [PM2](http://pm2.keymetrics.io/).
 
 **Caso contrário:** Quando uma exceção desconhecida é lançada, algum objeto pode estar com defeito (por exemplo, um emissor de evento que é usado globalmente e não dispara mais eventos devido a alguma falha interna) e todas as requisições futuras podem falhar ou se comportar loucamente.
 
@@ -174,7 +176,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 ## ![✔] 2.7 Use um agente de log maduro para aumentar a visibilidade de erros
 
-**TL;DR:** Um conjunto de ferramentas de registro maduras como Winston, Bunyan ou Log4j, irão acelerar a descoberta e entendimento de erros. Portanto, esqueça o console.log.
+**TL;DR:** Um conjunto de ferramentas de registro maduras como [Pino](https://www.npmjs.com/package/pino), [Winston](https://www.npmjs.com/package/winston), [Bunyan](https://www.npmjs.com/package/bunyan) ou [Log4js](https://www.npmjs.com/package/log4js), irão acelerar a descoberta e entendimento de erros. Portanto, esqueça o console.log.
 
 **Caso contrário:** Ficar procurando através de console.logs ou manualmente em arquivos de texto confusos sem utilizar ferramentas de consulta ou um visualizador de log decente, pode mantê-lo ocupado até tarde.
 
@@ -219,6 +221,18 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 **Caso contrário:** Considere isto: sua função espera receber um “Desconto” como argumento numérico que foi esquecido de passar. Mais adiante, seu código verifica se Desconto!=0 (valor do desconto permitido é maior que zero). Depois, irá permitir que o usuário desfrute de um desconto. Meu Deus, que baita bug. Entendeu?
 
 🔗 [**Leia Mais: falhando rápido**](/sections/errorhandling/failfast.brazilian-portuguese.md)
+
+<br/><br/>
+
+## ![✔] 2.12 Sempre use 'await' antes de retornar as 'promises' para evitar um rastreamento parcial da pilha de erro
+
+**TL;DR:** Sempre use `return await` quando retornar uma 'promise' para beneficiar o rastreamento completo da pilha de erro. Se um função retorna uma 'promise', essa função deve ser declarada como função `async` e  explicitamente `await` na `promise` antes de devolvê-la
+
+**Caso contrário:** Uma função que retorna uma `promise` sem o `await` não aparecerá na pilha de erro.
+A ausência dessas informações provavelmente complicariam a compreensão do fluxo que leva ao erro,
+especialmente se a causa do comportamento anormal estiver dentro da função ausente 
+
+<!-- 🔗 [**Leia Mais: retornando promises**](/sections/errorhandling/returningpromises.brazilian-portuguese.md) -->
 
 <br/><br/><br/>
 
@@ -452,7 +466,17 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.3 Detecte problemas de código com um linter
+## ![✔] 4.3 Estutura de testes padrão AAA 
+
+**TL;DR:** Estruture seus testes com 3 seções bem separadas: Arrange, Act & Assert (AAA). A primeira parte inclui a configuração do teste, depois a execução do teste unitário, e finalmente, a fase de asserção. Seguir esta estrutura garante que o leitor não gaste nenhuma CPU cerebral para entender o plano de teste 
+
+**Caso contrário:** Você não somente passará várias horas do dia para entender o código principal, mas agora também gastará várias horas no que deveria ter sido uma simples parte do dia (testando) esticando seu cérebro. 
+
+<!-- 🔗 [**Leia Mais: Estutura de testes padrão AAA**](/sections/testingandquality/aaa.brazilian-portuguese.md) -->
+
+<br/><br/>
+
+## ![✔] 4.4 Detecte problemas de código com um linter
 
 **TL;DR:** Use um code linter para checar a qualidade básica e detectar antipadrões antecipadamente. Rode-o antes de qualquer teste e adicione-o como um pre-commit git-hook para minimizar o tempo necessário para revisar e corrigir qualquer problema. Veja também [Seção 3](https://github.com/goldbergyoni/nodebestpractices#3-code-style-practices) no Prática de Estilo de Código.
 
@@ -460,7 +484,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.4 Evite dados fixos e sementes para teste, adicione os dados no teste
+## ![✔] 4.5 Evite dados fixos e sementes para teste, adicione os dados no teste
 
 **TL;DR:** Para evitar o acoplamento de testes e facilitar o entendimento do fluxo do teste, cada teste deve adicionar e atuar em seu próprio conjunto de linhas de banco de dados. Sempre que um teste precisar extrair ou assumir a existência de alguns dados do banco de dados - ele deve incluir explicitamente esses dados e evitar a mutação de outros registros
 
@@ -470,7 +494,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.5 Inspencione constantemente por dependências vulneráveis
+## ![✔] 4.6 Inspencione constantemente por dependências vulneráveis
 
 **TL;DR:** Até mesmo as dependências mais confiáveis, como o Express, têm vulnerabilidades conhecidas. Isso pode ser facilmente contornado usando ferramentas comunitárias e comerciais como 🔗 [nsp](https://github.com/nodesecurity/nsp) que pode ser invocado a partir do seu CI em cada build.
 
@@ -478,7 +502,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.6 Marque seus testes
+## ![✔] 4.7 Marque seus testes
 
 **TL;DR:** Diferentes testes devem rodar em diferentes cenários: testes de rápidos, sem IO, devem ser executados quando um desenvolvedor salva ou faz commit em um arquivo, testes completos de ponta a ponta geralmente são executados quando uma nova solicitação de request é enviada, etc. Isso pode ser conseguido através da marcação de testes com palavras-chave como #cold #api #sanity. Assim você pode invocar o subconjunto desejado. Por exemplo, é desta forma que você invocaria apenas o grupo de sanity test usando o [Mocha](https://mochajs.org/): mocha --grep 'sanity'
 
@@ -486,7 +510,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.7 Verifique a cobertura de seu teste, isso te ajuda a identificar padrões incorretos de teste
+## ![✔] 4.8 Verifique a cobertura de seu teste, isso te ajuda a identificar padrões incorretos de teste
 
 **TL;DR:** Ferramentas de cobertura de código como [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc), são ótimas por 3 motivos: elas são gratuitas (nenhum esforço é necessário para beneficiar esses relatórios), elas ajuda a identificar diminuição na cobertura de testes, e por último mas não menos importante, ela destacam a incompatibilidade de testes: olhando relatórios coloridos de cobertura de código, você pode notar, por exemplo, áreas de código que nunca são testadas como cláusulas catch (o que significa que os testes só invocam os caminhos felizes e não como o aplicativo se comporta em erros). Configure-o para falhas se a cobertura estiver abaixo de um certo limite.
 
@@ -494,7 +518,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.8 Inspecione pacotes desatualizados
+## ![✔] 4.9 Inspecione pacotes desatualizados
 
 **TL;DR:** Use sua ferramenta preferida (por exemplo, 'npm outdated' ou [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) para detectar pacotes instalados que estão desatualizados, injetar essa verificação em seu pipeline de CI e até mesmo fazer uma falha grave em um cenário grave. Por exemplo, um cenário grave pode ser quando um pacote instalado esteja há 5 commits atrás (por exemplo, a versão local é 1.3.1 e a versão no repositório é 1.3.8) ou está marcada como descontinuada pelo autor - mate o build e impeça a implantação desta versão.
 
@@ -502,7 +526,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.9 Use docker-compose para testes e2e
+## ![✔] 4.10 Use docker-compose para testes e2e
 
 **TL;DR:** Teste de ponta a ponta (end to end, ou e2e), que inclui dados ativos, costumava ser o elo mais fraco do processo de CI, já que depende de vários serviços pesados como o banco de dados. O docker-compose deixa isso mamão com açúcar, criando um ambiente de produção usando um arquivo de texto simples e comandos fáceis. Isto permite criar todos os serviços dependentes, banco de dados e rede isolada para teste e2e. Por último mas não menos importante, ele pode manter um ambiente sem estado que é invocado antes de cada suíte de testes e é encerrado logo após.
 
@@ -510,7 +534,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.10 Refatore regularmente usando ferramentas de análise estática
+## ![✔] 4.11 Refatore regularmente usando ferramentas de análise estática
 
 **TL;DR:** O uso de ferramentas de análise estática ajuda fornecendo maneiras objetivas de melhorar a qualidade do código e manter seu código sustentável. Você pode adicionar ferramentas de análise estática para seu build de Integração Contínua (CI) falhar quando encontre code smells. Seus principais pontos de vantagem sobre o linting são a abilidade de inspecionar a qualidade no contexto de múltiplos arquivos (por exemplo, detectar duplicidades), realizar análises avançadas (por exemplo, complexidade de código), e acompanhar histórico e progresso de problemas de código. Dois dexemplos de ferramentas que podem ser utilizadas são [Sonarqube](https://www.sonarqube.org/) (mais de 2.600 [stars](https://github.com/SonarSource/sonarqube)) e [Code Climate](https://codeclimate.com/) (mais de 1.500 [stars](https://github.com/codeclimate/codeclimate)).
 
@@ -520,13 +544,23 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.11 Escolha cuidadosamente sua plataforma de Integração Contínua - CI (Jenkins vs CircleCI vs Travis vs Resto do mundo)
+## ![✔] 4.12 Escolha cuidadosamente sua plataforma de Integração Contínua - CI (Jenkins vs CircleCI vs Travis vs Resto do mundo)
 
 **TL;DR:** Sua plataforma de integração contínua (CICD) irá hospedar todas as ferramentas de qualidade (por exemplo, teste, lint), então ela deve vir com um ecosistema de plugins arrebatador. O [Jenkins](https://jenkins.io/) costumava ser o padrão de muitos projetos, pois tem a maior comunidade, juntamente com uma poderosa plataforma, ao preço de configuração complexa que exige uma curva de aprendizado íngreme. Atualmente, ficou bem mais fácil para configurar uma solução de CI usando ferramentas SaaS como [CircleCI](https://circleci.com) e outras. Essas ferramentas permitem a criação de um pipeline de CI flexível sem o peso de gerenciar toda a infraestrutura. Eventualmente, é um perde e ganha entre robustez e velocidade - escolha seu lado com cuidado!
 
 **Caso contrário:** Escolher algum fornecedor de nicho pode fazer com que você fique engessado quando precisar de alguma personalização avançada. Por outro lado, escolher o Jenkins pode ser uma perda de tempo precioso na configuração da infraestrutura.
 
 🔗 [**Leia Mais: Escolhendo a plataforma de CI**](/sections/testingandquality/citools.brazilian-portuguese.md)
+
+<br><br>
+
+## ![✔] 4.13 Teste seus 'middlewares' isolatdamente
+
+**TL;DR:** quando um 'middleware' contém alguma lógica imensa que abrange muitas solicitações, vale a pena testá-lo isoladamente, sem ativar todo o framework. Isso pode ser facilmente alcançado por 'stubbing' e espionando os objetos {req, res, next} 
+
+**Caso contrário:** Um bug no 'middleware Express' === um bug em todas ou na maioria das solicitações 
+
+<!-- 🔗 [**Read More: Test middlewares in isolation**](/sections/testingandquality/test-middlewares.brazilian-portuguese.md) -->
 
 <br/><br/><br/>
 
@@ -709,6 +743,16 @@ Todas as declarações acima false se feitas com `===`.
 **Caso contrário:** Aplicações manipulando o roteamento de log === difícil de dimensionar, perda de logs, separação ruim de preocupações.
 
 🔗 [**Leia Mais: Roteamento de Logs**](/sections/production/logrouting.brazilian-portuguese.md)
+
+<br/><br/>
+
+## ![✔] 5.19. Instale seus pacotes com `npm ci`
+
+**TL;DR:** Você precisa ter certeza de que o código de produção usa a versão exata dos pacotes que você realizou os testes. Execute `npm ci` para fazer estritamente uma instalação limpa de suas dependências correspondentes do package.json e do package-lock.json. O uso desse comando é recomendado em ambientes automatizados, como pipelines de integração contínua. 
+
+**Caso contrário:** o QA testará completamente o código e aprovará uma versão que se comportará de maneira diferente em produção. Pior ainda, diferentes servidores no mesmo cluster de produção podem executar códigos diferentes.
+
+<!-- 🔗 [**Read More: Use npm ci**](/sections/production/installpackageswithnpmci.md) -->
 
 <br/><br/><br/>
 
