@@ -1,6 +1,6 @@
 # Contribution guidelines
 
-## What you should know first?
+## What you should know first
 
 ### Lovely & friendly atmosphere
 
@@ -16,6 +16,13 @@ Our operations manual [can be found here](https://github.com/goldbergyoni/nodebe
 
 Our content writing guidelines [can be found here](https://github.com/goldbergyoni/nodebestpractices/blob/master/.operations/writing-guidelines.md)
 
+### Handling issues and PRs
+
+- Great the contributor with kindness
+- If a straightforward fix is suggested (e.g., TYPO, linting fix, grammar improvement, etc) - Approve and merge
+- When the proposed PR deals with a more opionionated topic - Encourage at least 2 reviewers, leave the PR open for a few days to allow more folks to chime-in
+- Add the contributor to the contributor credit list with this command: `@all-contributors please add @username for content`
+
 
 ## Contribution model
 
@@ -27,7 +34,7 @@ Members of the steering committee work together to provide guidance and future d
 
 Collaborators are members who are contributing to the repository on a regular basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. Along with the steering committee, each collaborator leads a project tracked under our Github projects.
 
-The role is in place to help the steering committee ensure that the content provided is of a high standard, up-to-date with the industry, and available in many languages. Members who frequently participate in these activities will be invited to become a collaborator, based on the quality of their contributions.
+The role is in place to help the steering committee ensure that the content provided is of high standard, up-to-date with the industry, and available in many languages. Members who frequently participate in these activities will be invited to become a collaborator, based on the quality of their contributions.
 
 The steering committee periodically reviews the collaborator list to identify inactive collaborators. Inactive collaborators can choose to either continue in or step down from their role, in which case they are acknowledged as a past collaborator. They may later request that the steering committee restore them to active status.
 

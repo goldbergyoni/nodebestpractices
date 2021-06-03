@@ -1,10 +1,10 @@
 # Operations Manual - Organizing and Maximizing Our Work
-Building a community and knowledge by efficiently handling issues
+Building knowledge and a community by efficiently handling issues
 
-## Handling issues and PR
+## Handling issues and PRs
 
 <br/>
-In a nutshell, every issue and PR should get tagged by one of our core team and routed to the person who specializes in the related topic. This person then, will warmly welcome and kick the discussion shortly (hopefully within 48 hours). The goal of each issue/PR is to learn new thing that might improve our repo and try joining the opener to our forces.
+In a nutshell, every issue and PR should get tagged by one of our core team and routed to the person who specializes in the related topic. This person then, will warmly welcome the contributor and then kick off the discussion (hopefully within 48 hours). The goal of each issue/PR is to learn new thing that might improve our repo and try to include the contributor in our army.
 
 There is no specific person on call who assigns inquiries rather we count on our core team to visit almost everyday and assign issues/PR - this way, the workflow is not depend upon any specific person rather on our entire team.
 
@@ -13,7 +13,7 @@ Any new content should conform to our [writing guidelines](https://github.com/go
 ## Monthly maintenance
 
 <br/>
-Each month, a maintainer on call will open an issue for maintenance work and record within all the actions to perform by the end of the month (e.g. assign flower to a contributor). On the end of the corresponding month, the maintainer will run the following checklist
+Each month, a maintainer on call will open an issue for a maintenance work checklist and write down all the actions to perform by the end of the month (e.g. assign flower to a contributor). At the end of the month, that maintainer will perform the tasks on the checklist.
 
  ---
  
@@ -55,8 +55,8 @@ Each month, a maintainer on call will open an issue for maintenance work and rec
 
 | Topic                    | Examples                                            | Assignee                           |
 |--------------------------|-----------------------------------------------------|------------------------------------|
-| Code standards and fixes | Code typos, code standards,  examples refinements   | Bruno                              |
-| Translations             | Adding new language,  merging language PRs          | Monthly rotation  October - Yoni   |
+| Code standards and fixes | Code typos, code standards, examples refinements    | Bruno                              |
+| Translations             | Adding new language, merging language PRs           | Monthly rotation  October - Yoni   |
 | General Writing quality  | Typos, text clarify                                 | Bruno                              |
 | Javascript runtime       | JS runtime, syntax correctness                      | Sagir                              |
 | Devops                   | Monitoring, hardening a production site, deployment | Kyle                               |

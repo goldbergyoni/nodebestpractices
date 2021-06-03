@@ -1397,6 +1397,78 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "benjaminudoh10",
+      "name": "Benjamin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9018331?v=4",
+      "profile": "https://github.com/benjaminudoh10",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "yjoer",
+      "name": "Yeoh Joer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/47742486?v=4",
+      "profile": "https://www.yjoer.com",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "Miigon",
+      "name": "Miigon",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16161991?v=4",
+      "profile": "https://blog.miigon.net",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "Egregor2011",
+      "name": "Rostislav Bogorad",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3630318?v=4",
+      "profile": "http://brainstorage.me/Egregor2011",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "Flouse",
+      "name": "Flouse",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1297478?v=4",
+      "profile": "https://github.com/Flouse",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "taranttini",
+      "name": "Tarantini Pereira",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6922125?v=4",
+      "profile": "http://taranttini.com",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "kzmat",
+      "name": "Kazuki Matsuo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/34614358?v=4",
+      "profile": "https://github.com/kzmat",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "burkybang",
+      "name": "Adam Smith",
+      "avatar_url": "https://avatars.githubusercontent.com/u/927886?v=4",
+      "profile": "https://github.com/burkybang",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",

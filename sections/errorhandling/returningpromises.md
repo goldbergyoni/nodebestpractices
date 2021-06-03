@@ -266,7 +266,7 @@ is why resolving promises before returning them is the best practice for Node.js
 
 ### Notes:
 
-1. One another reason why async stacktrace has such tricky implementation is the limitation that stacktrace
+1. One other reason why async stacktrace has such tricky implementation is the limitation that stacktrace
 must always be built synchronously, on the same tick of event loop <span id="a1">[¹](#1)</span>
 2. Without `await` in `throwAsync` the code would be executed in the same phase of event loop. This is a
 degenerated case when OS **stack** would not get empty and stacktrace be full even without explicitly
