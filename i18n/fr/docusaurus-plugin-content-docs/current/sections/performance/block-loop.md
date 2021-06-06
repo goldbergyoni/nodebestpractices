@@ -41,7 +41,7 @@ while loop.
 ```
 
 ## Image of the Event Loop
-![Event Loop](/assets/images/event-loop.png "Event Loop")
+![Event Loop](./assets/images/event-loop.png)
 
 >Here's a good rule of thumb for keeping your Node server speedy: Node is fast when the work associated with each client at any given time is "small".
 >[Don't Block the Event Loop (or the Worker Pool) | Node.js](https://nodejs.org/en/docs/guides/dont-block-the-event-loop/)
