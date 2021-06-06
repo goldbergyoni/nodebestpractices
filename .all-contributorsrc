@@ -1469,6 +1469,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "k906506",
+      "name": "Dohyeon Ko",
+      "avatar_url": "https://avatars.githubusercontent.com/u/33795856?v=4",
+      "profile": "https://codekodo.tistory.com",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
