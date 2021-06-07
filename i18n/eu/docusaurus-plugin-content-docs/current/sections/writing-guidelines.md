@@ -16,7 +16,7 @@ Edukia ondo editatua eta fidagarria izateaz gain, haren irakurketak gaiaz bere o
 
 ## 4. Formatu koherentea
 
-Edukia txantiloi finkoak erabiliz dago aurkeztua, eta etorkizuneko beste edozein edukik txantiloi bera errespetatu behar du. Eduki berriak gehitu nahi izanez gero, kopiatu buleta formatua iada existitzen den bulet batetik eta moldatu zure beharretara. Informazio gehiago nahi izanez gero begiratu [txantiloi hau](../sections/template.basque.md)
+Edukia txantiloi finkoak erabiliz dago aurkeztua, eta etorkizuneko beste edozein edukik txantiloi bera errespetatu behar du. Eduki berriak gehitu nahi izanez gero, kopiatu buleta formatua iada existitzen den bulet batetik eta moldatu zure beharretara. Informazio gehiago nahi izanez gero begiratu [txantiloi hau](../sections/template.md)
 
 ## 5. Node.jsri buruz ari gara
 
