@@ -68,7 +68,7 @@
 
 **그렇게 하지 않을 경우:** 새로운 기능을 작성하는 개발자가 변경사항이 어떤 영향을 미치는지 알기가 힘들면 의존하고 있는 다른 컴포넌트를 망칠까 두려워 하게 되고, 이는 배포를 더 느리고 더 불안전하게 만든다. 비지니스 단위가 나눠져 있지 않으면 확장(scale-out)하기도 쉽지 않게 된다.
 
-🔗 [**자세히 보기: 컴포넌트로 구조화하기**](./sections/projectstructre/breakintcomponents.korean.md)
+🔗 [**자세히 보기: 컴포넌트로 구조화하기**](./sections/projectstructre/breakintcomponents.md)
 
 <br/><br/>
 
@@ -78,7 +78,7 @@
 
 **그렇게 하지 않을 경우:** 웹 객체와 다른 계층을 뒤섞은 앱은 테스트 코드, CRON 작업이나 Express가 아닌 다른 곳에서의 접근을 불가능하게 한다.
 
-🔗 [**자세히 보기: 앱을 계층화하기**](./sections/projectstructre/createlayers.korean.md)
+🔗 [**자세히 보기: 앱을 계층화하기**](./sections/projectstructre/createlayers.md)
 
 <br/><br/>
 
@@ -88,7 +88,7 @@
 
 **그렇게 하지 않을 경우:** 당신 자신만의 배포 및 종속 바퀴(dependency wheel)를 새로이 발명해야 할 것이다.
 
-🔗 [**자세히 보기: 기능으로 구조화 하기**](./sections/projectstructre/wraputilities.korean.md)
+🔗 [**자세히 보기: 기능으로 구조화 하기**](./sections/projectstructre/wraputilities.md)
 
 <br/><br/>
 
@@ -98,7 +98,7 @@
 
 **그렇게 하지 않을 경우:** HTTP 요청으로만 API 테스트가 가능하게 된다 (커버리지 보고서를 생성하기가 더 느려지고 훨씬 힘들어진다). 수백줄의 코드를 하나의 파일에서 관리하는 것이 크게 즐겁지는 않을 것이다.
 
-🔗 [**자세히 보기: Express를 'app'과 'server'로 분리하기**](./sections/projectstructre/separateexpress.korean.md)
+🔗 [**자세히 보기: Express를 'app'과 'server'로 분리하기**](./sections/projectstructre/separateexpress.md)
 
 <br/><br/>
 
@@ -108,7 +108,7 @@
 
 **그렇게 하지 않을 경우:** 위의 구성 요구사항 중 하나라도 만족시키지 못한다면 개발팀이나 데브옵스팀을 늪으로 몰아갈 수 있다. 십중팔구 둘 다.
 
-🔗 [**자세히 보기: 구성 모범 사례**](./sections/projectstructre/configguide.korean.md)
+🔗 [**자세히 보기: 구성 모범 사례**](./sections/projectstructre/configguide.md)
 
 <br/><br/><br/>
 
@@ -122,7 +122,7 @@
 
 **그렇게 하지 않을 경우:** Node.js의 function(err, response) 콜백 스타일은 에러 처리와 일반 코드의 혼합, 코드의 과도한 중첩, 어색한 코딩 패턴 때문에 유지보수가 불가능한 코드로 가는 확실한 길이다.
 
-🔗 [**자세히 보기: 콜백 피하기**](./sections/errorhandling/asyncerrorhandling.korean.md)
+🔗 [**자세히 보기: 콜백 피하기**](./sections/errorhandling/asyncerrorhandling.md)
 
 <br/><br/>
 
@@ -132,7 +132,7 @@
 
 **그렇게 하지 않을 경우:** 일부 컴포넌트를 호출할때 어떤 에러의 타입이 반환될지 불확실해져서 적절한 에러처리가 매우 어려워진다. 게다가 임의적인 타입으로 에러를 나타내는 것은 스택 정보(stack trace)와 같은 중요한 에러 관련 정보 손실을 일으킬 수 있다!
 
-🔗 [**자세히 보기: 내장된 Error 객체 사용하기**](./sections/errorhandling/useonlythebuiltinerror.korean.md)
+🔗 [**자세히 보기: 내장된 Error 객체 사용하기**](./sections/errorhandling/useonlythebuiltinerror.md)
 
 <br/><br/>
 
@@ -142,7 +142,7 @@
 
 **그렇게 하지 않을 경우:** 에러가 날 때마다 어플리케이션을 다시 시작할수도 있지만, 왜 사소하고 예측가능한 동작상의 오류때문에 5000명의 온라인 사용자를 다운시키는 것인가? 그 반대도 이상적이지 않다. 알수없는 이슈 (프로그래머 에러)가 났는데 어플리케이션을 그대로 두는 것은 예측이 불가능한 반응을 일으킬 수 있다. 두 가지를 구별하면 요령있는 처신과 주어진 상황에 따른 균형잡힌 접근이 가능하다.
 
-🔗 [**자세히 보기: 동작상의 에러와 프로그래머 에러**](./sections/errorhandling/operationalvsprogrammererror.korean.md)
+🔗 [**자세히 보기: 동작상의 에러와 프로그래머 에러**](./sections/errorhandling/operationalvsprogrammererror.md)
 
 <br/><br/>
 
@@ -152,7 +152,7 @@
 
 **그렇게 하지 않을 경우:** 한 곳에서 에러를 처리하지 않는 것은 코드 중복과 부적절한 에러처리로 이어진다.
 
-🔗 [**자세히 보기: 중앙집중적으로 에러 처리하기**](./sections/errorhandling/centralizedhandling.korean.md)
+🔗 [**자세히 보기: 중앙집중적으로 에러 처리하기**](./sections/errorhandling/centralizedhandling.md)
 
 <br/><br/>
 
@@ -162,7 +162,7 @@
 
 **그렇게 하지 않을 경우:** API 클라이언트는 알수 없는 에러로 인한 충돌 후에 재시작을 결정할수도 있을 것이다. 참고로 당신의 API를 호출한 사람이 당신 자신 일수도 있다 (마이크로서비스 환경에서는 아주 일반적이다).
 
-🔗 [**자세히 보기: Swagger에서 에러 문서화하기**](./sections/errorhandling/documentingusingswagger.korean.md)
+🔗 [**자세히 보기: Swagger에서 에러 문서화하기**](./sections/errorhandling/documentingusingswagger.md)
 
 <br/><br/>
 
@@ -172,7 +172,7 @@
 
 **그렇게 하지 않을 경우:** 익숙치 않은 예외가 발생하면 일부 객체가 오류 상태 (예를 들어 전역적으로 사용되지만 내부 오류로 인해 이벤트를 더이상 내보내지 않는 event emitter)라서 향후의 모든 요청을 실패시키거나 미친것처럼 작동할 수 있다.
 
-🔗 [**자세히 보기: 프로세스 중단하기**](./sections/errorhandling/shuttingtheprocess.korean.md)
+🔗 [**자세히 보기: 프로세스 중단하기**](./sections/errorhandling/shuttingtheprocess.md)
 
 <br/><br/>
 
@@ -182,7 +182,7 @@
 
 **그렇게 하지 않을 경우:** 로그 검색 도구나 제대로 된 로그 뷰어 없이 console.log을 훑어보거나 복잡하게 꼬인 텍스트 파일을 일일이 읽어 보는 것은 야근을 부를 수 있다.
 
-🔗 [**자세히 보기: 발전된 로거를 사용하기**](./sections/errorhandling/usematurelogger.korean.md)
+🔗 [**자세히 보기: 발전된 로거를 사용하기**](./sections/errorhandling/usematurelogger.md)
 
 <br/><br/>
 
@@ -192,7 +192,7 @@
 
 **그렇게 하지 않을 경우:** 자동이든 수동이든 테스트가 없다면 당신은 당신의 코드가 올바른 에러를 반환하는지 믿지 못할 것이다. 의미 있는 에러가 없다면 에러 처리도 없는 것이다.
 
-🔗 [**자세히 보기: 에러 흐름 테스트하기**](./sections/errorhandling/testingerrorflows.korean.md)
+🔗 [**자세히 보기: 에러 흐름 테스트하기**](./sections/errorhandling/testingerrorflows.md)
 
 <br/><br/>
 
@@ -202,7 +202,7 @@
 
 **그렇게 하지 않을 경우:** API의 성능과 다운타임을 측정하기위해 많은 노력을 들여야 할지도 모른다. 아마 당신은 실제 상황에서 어떤 코드 부분이 가장 느린지, 그것이 UX에 어떻게 영향을 미칠지 절대 알수없을 것이다.
 
-🔗 [**자세히 보기: APM 제품 사용하기**](./sections/errorhandling/apmproducts.korean.md)
+🔗 [**자세히 보기: APM 제품 사용하기**](./sections/errorhandling/apmproducts.md)
 
 <br/><br/>
 
@@ -212,7 +212,7 @@
 
 **그렇게 하지 않을 경우:** 당신의 에러는 삼켜지고 어떤 흔적도 남기지 않을 것이다. 걱정할 것이 없긴 하다.
 
-🔗 [**자세히 보기: 처리되지 않은 promise 거부 잡기**](./sections/errorhandling/catchunhandledpromiserejection.korean.md)
+🔗 [**자세히 보기: 처리되지 않은 promise 거부 잡기**](./sections/errorhandling/catchunhandledpromiserejection.md)
 
 <br/><br/>
 
@@ -222,7 +222,7 @@
 
 **그렇게 하지 않을 경우:** 이런 상황을 생각해보자. 당신의 함수가 "Discount"라는 숫자를 받아야하는데 요청하는 사람이 넘겨주는 것을 깜빡했다. 그 후에 당신의 코드는 Discount!=0인지 아닌지 체크한다(사실 허용된 Discount의 값은 0보다 커야 한다). 그러면 사용자가 할인을 받게될 것이다. 보이는가? 엄청나게 지저분한 버그이다.
 
-🔗 [**자세히 보기: 빠르게 실패하기**](./sections/errorhandling/failfast.korean.md)
+🔗 [**자세히 보기: 빠르게 실패하기**](./sections/errorhandling/failfast.md)
 
 <br/><br/><br/>
 
@@ -537,7 +537,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 잘 알려지지 않은 중소 솔루션 업체를 쓰다간 흔치 않은 고급 설정을 커스터마이징 해야할 때 막혀버릴 수도 있다. 하지만 반대로, Jenkins를 택하면 인프라를 수축하는데 소중한 시간을 다 빼앗길 수도 있다.
 
-🔗 [**자세히 보기: Choosing CI platform**](./sections/testingandquality/citools.korean.md)
+🔗 [**자세히 보기: Choosing CI platform**](./sections/testingandquality/citools.md)
 
 ## ![✔] 4.13 미들웨어들은 격리시켜 테스트해라
 
@@ -1092,7 +1092,7 @@ null == undefined; // true
 
 - ![FR](./assets/flags/FR.png) [프랑스어](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/129))
 - ![HE](./assets/flags/HE.png) 히브리어 ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/156))
-- ![KR](./assets/flags/KR.png) [한국어](./README.korean.md) - [한상범](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94)) 제공
+- ![KR](./assets/flags/KR.png) [한국어](./README.md) - [한상범](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94)) 제공
 - ![ES](./assets/flags/ES.png) [스페인어](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/95))
 - ![TR](./assets/flags/TR.png) 터키어 ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/139))
 
