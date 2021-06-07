@@ -1478,6 +1478,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "vlad99902",
+      "name": "Vladislav Legkov",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67615003?v=4",
+      "profile": "https://github.com/vlad99902",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
