@@ -27,7 +27,7 @@ LABEL build_number="483"
 
 #### Eduki .dockerignore fitxategi egokia
 
-[**Begiratu: docker ignoreren garrantzia**](./sections/docker/docker-ignore.basque.md)
+[**Begiratu: docker ignoreren garrantzia**](./sections/docker/docker-ignore.md)
 
 Cachearen logika hondatu dezaketen fitxategien kopia ekiditen dute Docker ignorek, adibidez proben emaitzen txostenak, erregistroak edota aldi baterako fitxategiak.
 

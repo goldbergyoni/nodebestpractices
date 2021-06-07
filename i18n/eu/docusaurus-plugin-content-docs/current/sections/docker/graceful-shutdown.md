@@ -8,7 +8,7 @@ Kubernetes bezalako exekuzio ingurune Dockerizatu batean, edukiontziak sarri jai
 
 <br/><br/>
 
-### Kode adibidea: Node.js prozesu errotzat definitzeak kodeari seinaleak pasatzea ahalbidetzen du ([ikusi abiarazi node erabiliz](./sections/docker/bootstrap-using-node.basque.md))
+### Kode adibidea: Node.js prozesu errotzat definitzeak kodeari seinaleak pasatzea ahalbidetzen du ([ikusi abiarazi node erabiliz](./sections/docker/bootstrap-using-node.md))
 
 <details>
 
