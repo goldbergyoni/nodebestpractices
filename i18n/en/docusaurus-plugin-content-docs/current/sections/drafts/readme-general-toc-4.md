@@ -4,7 +4,7 @@
   <img src="./assets/images/banner-4.jpg" alt="Node.js Best Practices" />
 </h1>
 
-<img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2053%20Best%20practices-blue.svg" alt="53 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%206%20days%20ago-green.svg" alt="Last update: 7 days ago"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.4-brightgreen.svg" alt="Updated for Node v.8.4">
+<img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2053%20Best%20practices-blue.svg" alt="53 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%206%20days%20ago-green.svg" alt="Last update: 7 days ago"/> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.4-brightgreen.svg" alt="Updated for Node v.8.4"/>
 
 <!--- ![Node.js Best Practices](assets/images/banner-1.png) -->
 
@@ -25,7 +25,7 @@ Welcome to the biggest compilation of Node.js best practices, based on our check
 
 ## ![](./assets/images/checkbox-sm.png) 1. Structure your solution by feature ('microservices')
 
-**TL&DR:** The worst large applications pitfal is a huge code base where hundreds of dependencies slow down developers as try to incorporate new features. Partioning into small units ensures that each unit is kept simple and very easy to maintain. This strategy pushes the complexity to the higher level - designing the cross-component interactions. 
+**TL&DR:** The worst large applications pitfal is a huge code base where hundreds of dependencies slow down developers as try to incorporate new features. Partioning into small units ensures that each unit is kept simple and very easy to maintain. This strategy pushes the complexity to the higher level - designing the cross-component interactions.
 
 **Otherwise:** Developing a new feature with a change to few objects demands to evaluate how this changes might affect dozends of dependants and ach deployment becomes a fear.
 
@@ -82,7 +82,7 @@ Welcome to the biggest compilation of Node.js best practices, based on our check
 # `Error Handling Practices`
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-## <img src="./assets/images/checkbox-sm.png"> Use async-await for async error handling
+## <img src="./assets/images/checkbox-sm.png"/> Use async-await for async error handling
 
 **TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using instead a reputable promise library or async-await which provides much compact and familiar code syntax like try-catch
 
@@ -92,7 +92,7 @@ Welcome to the biggest compilation of Node.js best practices, based on our check
 
 <br/><br/>
 
-## <img src="./assets/images/checkbox-sm.png"> Use async-await for async error handling
+## <img src="./assets/images/checkbox-sm.png"/> Use async-await for async error handling
 
 **TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using instead a reputable promise library or async-await which provides much compact and familiar code syntax like try-catch
 

@@ -3,13 +3,13 @@
 # Melhores Práticas em Node.js
 
 <h1 align="center">
-  <img src="./assets/images/banner-2.jpg" alt="Node.js Best Practices">
+  <img src="./assets/images/banner-2.jpg" alt="Node.js Best Practices"/>
 </h1>
 
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Contagem%20de%20Items%20-%2083%20Boas%20Práticas-blue.svg" alt="83 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Última%20Atualização%20-%20Jun%205%202019-green.svg" alt="Última Atualização: June 5, 2019"> <img src="https://img.shields.io/badge/%E2%9C%94%20Atualizado%20Para%20Versão%20-%20Node%2012.4.0%20LTS-brightgreen.svg" alt="Atualizado para Node 12.4.0 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Contagem%20de%20Items%20-%2083%20Boas%20Práticas-blue.svg" alt="83 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Última%20Atualização%20-%20Jun%205%202019-green.svg" alt="Última Atualização: June 5, 2019"/> <img src="https://img.shields.io/badge/%E2%9C%94%20Atualizado%20Para%20Versão%20-%20Node%2012.4.0%20LTS-brightgreen.svg" alt="Atualizado para Node 12.4.0 LTS"/>
 </div>
 
 <br/>
@@ -870,7 +870,7 @@ Todas as declarações acima false se feitas com `===`.
 
 ## ![✔] 6.10. Valide os esquemas de entrada JSON
 
-<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7: XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a>
+<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7: XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"/><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a>
 
 **TL;DR:** Valide as requisições do body e garanta que elas atendem as expectativas e falhem rápido se não atender. Para evitar o tédio de códigos de validação para cada rota, você pode usar leves esquemas de validação baseados em JSON, como [jsonschema](https://www.npmjs.com/package/jsonschema) ou [joi](https://www.npmjs.com/package/joi)
 
@@ -933,7 +933,7 @@ Todas as declarações acima false se feitas com `===`.
 
 ## ![✔] 6.15. Evite instruções eval do JavaScript
 
-<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
+<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"/><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
 **TL;DR:** `eval` é do mal, pois permite a execução de um código JavaScript personalizado durante o tempo de execução. Isso não é apenas uma preocupação de desempenho, mas também uma importante preocupação de segurança devido ao código JavaScript malicioso que pode ser originado da entrada do usuário. Outra feature da linguagem que deve ser evitada é o construtor `new Function` constructor. `setTimeout` e `setInterval` também não devem ser receber código JavaScript dinâmico.
 
@@ -957,7 +957,7 @@ Todas as declarações acima false se feitas com `===`.
 
 ## ![✔] 6.17. Evite o carregamento de módulos usando uma variável
 
-<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
+<a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"/><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
 **TL;DR:** Evite fazer require ou importar outro arquivo com um caminho que tenha sido fornecido como parâmetro devido à preocupação de que ele possa ter se originado da entrada do usuário. Esta regra pode ser estendida para acessar arquivos em geral (ou seja, `fs.readFile()`) ou outro acesso a recursos confidenciais com variáveis dinâmicas provenientes da entrada do usuário. O linter [Eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) pode pegar esses padrões e avisar o quanto antes.
 
@@ -1106,7 +1106,7 @@ Todas as traduções são contribuições da comunidade. Nós ficaremos felizes 
 
 Conheça os membros do comitê diretivo - as pessoas que trabalham juntas para fornecer orientação e direção futura para o projeto. Além disso, cada membro do comitê lidera um projeto rastreado em nossos [projetos do Github](https://github.com/goldbergyoni/nodebestpractices/projects).
 
-<img align="left" width="100" height="100" src="./assets/images/members/yoni.png">
+<img align="left" width="100" height="100" src="./assets/images/members/yoni.png"/>
 
 [Yoni Goldberg](https://github.com/goldbergyoni)
 <a href="https://twitter.com/goldbergyoni"><img src="./assets/images/twitter-s.png" width="16" height="16"></img></a>
@@ -1116,7 +1116,7 @@ Consultor de Node.js independente, que trabalha com clientes nos EUA, Europa e I
 
 <br/>
 
-<img align="left" width="100" height="100" src="./assets/images/members/bruno.png">
+<img align="left" width="100" height="100" src="./assets/images/members/bruno.png"/>
 
 [Bruno Scheufler](https://github.com/BrunoScheufler)
 <a href="https://brunoscheufler.com/"><img src="./assets/images/www.png" width="16" height="16"></img></a>
@@ -1125,7 +1125,7 @@ Consultor de Node.js independente, que trabalha com clientes nos EUA, Europa e I
 
 <br/>
 
-<img align="left" width="100" height="100" src="./assets/images/members/kyle.png">
+<img align="left" width="100" height="100" src="./assets/images/members/kyle.png"/>
 
 [Kyle Martin](https://github.com/js-kyle)
 <a href="https://twitter.com/kylemartin_93"><img src="./assets/images/twitter-s.png" width="16" height="16"></img></a>
@@ -1135,7 +1135,7 @@ Full Stack Developer e Engenheiro de Confiabilidade de Sites com sede na Nova Ze
 
 <br/>
 
-<img align="left" width="100" height="100" src="./assets/images/members/sagir.png">
+<img align="left" width="100" height="100" src="./assets/images/members/sagir.png"/>
 
 [Sagir Khan](https://github.com/sagirk)
 <a href="https://twitter.com/sagir_k"><img src="./assets/images/twitter-s.png" width="16" height="16"></img></a>
@@ -1152,13 +1152,13 @@ Obrigado a todos nossos colaboradores! 🙏
 
 Nossos colaboradores são membros que estão contribuindo com o repositório em base regular, sugerindo novas práticas recomendadas, triando problemas, analisando solicitações de pull e muito mais. Se você estiver interessado em nos ajudar a orientar milhares de pessoas a criar melhores aplicações Node.js, leia nossas [diretrizes de colaborador](./.operations/CONTRIBUTING.md) 🎉
 
-| <a href="https://github.com/idori" target="_blank"><img src="./assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="./assets/images/members/keith.png" width="75" height="75"></a> |
+| <a href="https://github.com/idori" target="_blank"><img src="./assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="./assets/images/members/keith.png" width="75" height="75"/></a> |
 | :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
 |                                    [Ido Richter (Founder)](https://github.com/idori)                                    |                                        [Keith Holliday](https://github.com/TheHollidayInn)                                         |
 
 ### Colaboradores anteriores
 
-| <a href="https://github.com/refack" target="_blank"><img src="./assets/images/members/refael.png" width="50" height="50"></a> |
+| <a href="https://github.com/refack" target="_blank"><img src="./assets/images/members/refael.png" width="50" height="50"/></a> |
 | :-------------------------------------------------------------------------------------------------------------------------: |
 |                                        [Refael Ackermann](https://github.com/refack)                                        |
 
