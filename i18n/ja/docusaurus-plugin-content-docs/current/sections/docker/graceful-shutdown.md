@@ -9,7 +9,7 @@ Kubernetes のような Docker 化されたランタイムでは、コンテナ�
 <br/><br/>
 
 
-### コード例 – Node.js をルートプロセスとして配置することで、コードにシグナルを渡すことができます（[bootstrap using node](./sections/docker/bootstrap-using-node.japanese.md) を参照してください）。
+### コード例 – Node.js をルートプロセスとして配置することで、コードにシグナルを渡すことができます（[bootstrap using node](./sections/docker/bootstrap-using-node.md) を参照してください）。
 
 <details>
 
