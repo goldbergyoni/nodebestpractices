@@ -1105,7 +1105,7 @@ null == undefined; // true
 <a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
 <a href="https://goldbergyoni.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
-Независимый консультант Node.js, который работает с клиентами в США, Европе и Израиле над созданием масштабируемых масштабируемых приложений Node. Многие из приведенных выше лучших практик были впервые опубликованы на [goldbergyoni.com](https://goldbergyoni.com). Свяжитесь с Yoni как @goldbergyoni или me@goldbergyoni.com
+Независимый консультант Node.js, который работает с клиентами в США, Европе и Израиле над созданием масштабируемых приложений Node. Многие из приведенных выше лучших практик были впервые опубликованы на [goldbergyoni.com](https://goldbergyoni.com). Свяжитесь с Yoni как @goldbergyoni или me@goldbergyoni.com
 
 <br/>
 
