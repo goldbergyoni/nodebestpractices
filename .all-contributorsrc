@@ -1487,6 +1487,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "kerolloz",
+      "name": "Kerollos Magdy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/36763164?v=4",
+      "profile": "http://kerolloz.github.io",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
