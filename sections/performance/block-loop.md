@@ -43,8 +43,17 @@ while loop.
 ## Image of the Event Loop
 ![Event Loop](/assets/images/event-loop.png "Event Loop")
 
->Here's a good rule of thumb for keeping your Node server speedy: Node is fast when the work associated with each client at any given time is "small".
->[Don't Block the Event Loop (or the Worker Pool) | Node.js](https://nodejs.org/en/docs/guides/dont-block-the-event-loop/)
 
-> Most people fail their first few NodeJS apps merely due to the lack of understanding of the concepts such as the Event Loop, Error handling and asynchrony 
-[Event Loop Best Practices — NodeJS Event Loop Part 5](https://blog.insiderattack.net/event-loop-best-practices-nodejs-event-loop-part-5-e29b2b50bfe2)
+### "Here's a good rule of thumb for keeping your Node server speedy: _Node is fast when the work associated with each client at any given time is 'small'_."
+From Node.js Documentation - [Don't Block the Event Loop (or the Worker Pool)](https://nodejs.org/en/docs/guides/dont-block-the-event-loop/)
+
+> The secret to the scalability of Node.js is that it uses a small number of threads to handle many clients.
+> If Node.js can make do with fewer threads, then it can spend more of your system's time and memory working on clients rather than on paying space and time overheads for threads (memory, context-switching).
+> But because Node.js has only a few threads, you must structure your application to use them wisely.
+> 
+> Here's a good rule of thumb for keeping your Node.js server speedy: Node.js is fast when the work associated with each client at any given time is "small".
+> This applies to callbacks on the Event Loop and tasks on the Worker Pool.
+
+### "Most people fail their first few NodeJS apps merely due to the lack of understanding of the concepts such as the Event Loop, Error handling and asynchrony"
+From Deepal's Blog - [Event Loop Best Practices — NodeJS Event Loop Part 5](https://blog.insiderattack.net/event-loop-best-practices-nodejs-event-loop-part-5-e29b2b50bfe2)
+
