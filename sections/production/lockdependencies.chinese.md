@@ -43,7 +43,7 @@ save-exact:true
 
 <br/><br/>
 
-### 代码示例: npm5依赖锁文件 - package.json
+### 代码示例: npm5依赖锁文件 - package-lock.json
 
 ```javascript
 {
