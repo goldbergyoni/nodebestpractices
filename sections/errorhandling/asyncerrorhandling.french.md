@@ -16,7 +16,7 @@ return fonctionA()
 ```
 
 
-### Exemple de code - utiliser async/wait pour détecter les erreurs
+### Exemple de code - utiliser async/await pour détecter les erreurs
 
 ```javascript
 async function executeAsyncTask () {
@@ -100,7 +100,7 @@ getData(someParameter, function(err: Error | null, resultA: ResultA) {
 
  Extrait du blog de StrongLoop
 
-> …. Les fonctions de rappel ont un mauvais historique de gestion des erreurs. Les promesses sont meilleures. Marier la gestion des erreurs intégrée dans Express avec des promesses permet de réduire considérablement les chances d'une exception non capturée. Les promesses sont natives en ES6, elles peuvent être utilisées avec des générateurs et des propositions ES7 comme async/wait via des compilateurs comme Babel.
+> …. Les fonctions de rappel ont un mauvais historique de gestion des erreurs. Les promesses sont meilleures. Marier la gestion des erreurs intégrée dans Express avec des promesses permet de réduire considérablement les chances d'une exception non capturée. Les promesses sont natives en ES6, elles peuvent être utilisées avec des générateurs et des propositions ES7 comme async/await via des compilateurs comme Babel.
 
 ### Citation de blog : « Toutes ces constructions de contrôle de flux auxquelles vous êtes habitué sont complètement cassées »
 
