@@ -84,234 +84,234 @@ Zie onze [schrijfrichtlijnen hier](/.operations/writing-guidelines.md).
 
 <br/><br/>
 
-## ![✔] 1.3 Wrap common utilities as npm packages
+## ![✔] 1.3 Verpak algemene hulpprogramma's als npm packages
 
-**TL;DR:** In a large app that constitutes a large codebase, cross-cutting-concern utilities like a logger, encryption and alike, should be wrapped by your code and exposed as private npm packages. This allows sharing them among multiple codebases and projects
+**TL;DR:** In een grote app die een grote codebasis vormt, moeten transversale hulpprogramma's zoals een logger, codering en dergelijke, worden verpakt door uw code en worden weergegeven als privé-npm-pakketten. Hierdoor kunnen ze worden gedeeld tussen meerdere codebases en projecten
 
-**Anders:** You'll have to invent your deployment and the dependency wheel
+**Anders:** U zult uw implementatie en het afhankelijkheidswiel moeten uitvinden
 
-🔗 [**Read More: Structure by feature**](/sections/projectstructre/wraputilities.md)
-
-<br/><br/>
-
-## ![✔] 1.4 Separate Express 'app' and 'server'
-
-**TL;DR:** Avoid the nasty habit of defining the entire [Express](https://expressjs.com/) app in a single huge file - separate your 'Express' definition to at least two files: the API declaration (app.js) and the networking concerns (WWW). For even better structure, locate your API declaration within components
-
-**Anders:** Your API will be accessible for testing via HTTP calls only (slower and much harder to generate coverage reports). It probably won't be a big pleasure to maintain hundreds of lines of code in a single file
-
-🔗 [**Read More: separate Express 'app' and 'server'**](/sections/projectstructre/separateexpress.md)
+🔗 [**Lees meer: ​​Structuur per functie**](/sections/projectstructre/wraputilities.md)
 
 <br/><br/>
 
-## ![✔] 1.5 Use environment aware, secure and hierarchical config
+## ![✔] 1.4 Aparte Express 'app' en 'server'
 
-**TL;DR:** A perfect and flawless configuration setup should ensure (a) keys can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are a few packages that can help tick most of those boxes like [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config), and [convict](https://www.npmjs.com/package/convict).
+**TL;DR:** Vermijd de vervelende gewoonte om de hele [Express](https://expressjs.com/) app in één groot bestand te definiëren - scheid uw 'Express'-definitie in ten minste twee bestanden: de API-declaratie (app.js) en de netwerkproblemen (WWW). Zoek voor een nog betere structuur uw API-declaratie in componenten
 
-**Anders:** Failing to satisfy any of the config requirements will simply bog down the development or DevOps team. Probably both
+**Anders:** Uw API is alleen toegankelijk voor testen via HTTP-aanroepen (langzamer en veel moeilijker om dekkingsrapporten te genereren). Het zal waarschijnlijk geen groot genoegen zijn om honderden regels code in een enkel bestand te bewaren
 
-🔗 [**Read More: configuration best practices**](/sections/projectstructre/configguide.md)
+🔗 [**Lees meer: ​​aparte Express 'app' en 'server'**](/sections/projectstructre/separateexpress.md)
+
+<br/><br/>
+
+## ![✔] 1.5 Gebruik omgevingsbewuste, veilige en hiërarchische configuratie
+
+**TL;DR:** Een perfecte en foutloze configuratie moet ervoor zorgen dat (a) sleutels uit het bestand kunnen worden gelezen EN uit de omgevingsvariabele (b) geheimen buiten de vastgelegde code worden bewaard (c) de configuratie hiërarchisch is voor een betere vindbaarheid. Er zijn een paar pakketten die kunnen helpen om de meeste van die vakjes aan te vinken, zoals [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config), en [convict](https://www.npmjs.com/package/convict).
+
+**Anders:** Als u niet aan een van de configuratievereisten voldoet, loopt het ontwikkelings- of DevOps-team vast. Waarschijnlijk beide
+
+🔗 [**Lees meer: ​​best practices voor configuratie**](/sections/projectstructre/configguide.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Ga terug naar boven</a></p>
 
-# `2. Error Handling Practices`
+# `2. Foutafhandelingspraktijken`
 
-## ![✔] 2.1 Use Async-Await or promises for async error handling
+## ![✔] 2.1 Gebruik Async-Await of promises voor asynchrone foutafhandeling
 
-**TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using a reputable promise library or async-await instead which enables a much more compact and familiar code syntax like try-catch
+**TL;DR:** Het afhandelen van asynchrone fouten in callback-stijl is waarschijnlijk de snelste weg naar de hel (ook wel de piramide van onheil genoemd). Het beste cadeau dat u aan uw code kunt, is door in plaats daarvan een mogelijke beloftebibliotheek of asyntaxis, wat een veel compactre en bekendere codesyntaxis, zoals try-catch
 
-**Anders:** Node.js callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting, and awkward coding patterns
+**Anders:** Node.js callback-stijl, functie (handige manier om niet-onderhoudbare code te krijgen vanwege de mix foutaf met loss code, overmatige nesting en one codeerpatronen)
 
-🔗 [**Read More: avoiding callbacks**](/sections/errorhandling/asyncerrorhandling.md)
-
-<br/><br/>
-
-## ![✔] 2.2 Use only the built-in Error object
-
-**TL;DR:** Many throw errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw an exception or emit an error – using only the built-in Error object (or an object that extends the built-in Error object) will increase uniformity and prevent loss of information. There is `no-throw-literal` ESLint rule that strictly checks that (although it have some [limitations](https://eslint.org/docs/rules/no-throw-literal) which can be solved when using TypeScript and setting the `@typescript-eslint/no-throw-literal` rule)
-
-**Anders:** When invoking some component, being uncertain which type of errors come in return – it makes proper error handling much harder. Even worse, using custom types to describe errors might lead to loss of critical error information like the stack trace!
-
-🔗 [**Read More: using the built-in error object**](/sections/errorhandling/useonlythebuiltinerror.md)
+🔗 [**Lees meer: ​​terugbellen vermijden**](/sections/errorhandling/asyncerrorhandling.md)
 
 <br/><br/>
 
-## ![✔] 2.3 Distinguish operational vs programmer errors
+## ![✔] 2.2 Gebruik alleen het ingebouwde Error-object
 
-**TL;DR:** Operational errors (e.g. API received an invalid input) refer to known cases where the error impact is fully understood and can be handled thoughtfully. On the other hand, programmer error (e.g. trying to read an undefined variable) refers to unknown code failures that dictate to gracefully restart the application
+**TL;DR:** Veel werpfouten als een string of als een aangepast type - dit bemoeilijkt de foutafhandelingslogica en de interoperabiliteit tussen modules. Of u nu een belofte afwijst, een uitzondering maakt of een fout uitzendt - het gebruik van alleen het ingebouwde Error-object (of een object dat het ingebouwde Error-object uitbreidt) zal de uniformiteit vergroten en verlies van informatie voorkomen. Er is een `no-throw-literal` ESLint-regel die dat strikt controleert (hoewel het enkele [beperkingen](https://eslint.org/docs/rules/no-throw-literal) heeft die kunnen worden opgelost bij gebruik van TypeScript en de regel `@typescript-eslint/no-throw-literal` instellen)
 
-**Anders:** You may always restart the application when an error appears, but why let ~5000 online users down because of a minor, predicted, operational error? the opposite is also not ideal – keeping the application up when an unknown issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
+**Anders:** Wanneer u een onderdeel aanroept, en niet zeker weet welk type fouten ervoor terugkomt, wordt een juiste foutafhandeling veel moeilijker. Erger nog, het gebruik van aangepaste typen om fouten te beschrijven kan leiden tot verlies van kritieke foutinformatie zoals de stacktracering!
 
-🔗 [**Read More: operational vs programmer error**](/sections/errorhandling/operationalvsprogrammererror.md)
-
-<br/><br/>
-
-## ![✔] 2.4 Handle errors centrally, not within a middleware
-
-**TL;DR:** Error handling logic such as mail to admin and logging should be encapsulated in a dedicated and centralized object that all endpoints (e.g. Express middleware, cron jobs, unit-testing) call when an error comes in
-
-**Anders:** Not handling errors within a single place will lead to code duplication and probably to improperly handled errors
-
-🔗 [**Read More: handling errors in a centralized place**](/sections/errorhandling/centralizedhandling.md)
+🔗 [**Lees meer: ​​het ingebouwde foutobject gebruiken**](/sections/errorhandling/useonlythebuiltinerror.md)
 
 <br/><br/>
 
-## ![✔] 2.5 Document API errors using Swagger or GraphQL
+## ![✔] 2.3 Onderscheid operationele en programmeerfouten
 
-**TL;DR:** Let your API callers know which errors might come in return so they can handle these thoughtfully without crashing. For RESTful APIs, this is usually done with documentation frameworks like Swagger. If you're using GraphQL, you can utilize your schema and comments as well.
+**TL;DR:** Operationele fouten (bijv. API heeft een ongeldige invoer ontvangen) verwijzen naar bekende gevallen waarin de impact van de fout volledig wordt begrepen en zorgvuldig kan worden afgehandeld. Aan de andere kant verwijst programmeerfout (bijvoorbeeld proberen een niet-gedefinieerde variabele te lezen) naar onbekende codefouten die dicteren om de toepassing gracieus opnieuw te starten
 
-**Anders:** An API client might decide to crash and restart only because it received back an error it couldn’t understand. Note: the caller of your API might be you (very typical in a microservice environment)
+**Anders:** U kunt de toepassing altijd opnieuw starten wanneer er een fout optreedt, maar waarom zou u ~5000 online gebruikers teleurstellen vanwege een kleine, voorspelde operationele fout? het tegenovergestelde is ook niet ideaal - de toepassing in de lucht houden wanneer een onbekend probleem (programmeerfout) optrad, kan leiden tot onvoorspelbaar gedrag. Door de twee te onderscheiden, kunt u tactvol handelen en een evenwichtige benadering toepassen op basis van de gegeven context
 
-🔗 [**Read More: documenting API errors in Swagger or GraphQL**](/sections/errorhandling/documentingusingswagger.md)
-
-<br/><br/>
-
-## ![✔] 2.6 Exit the process gracefully when a stranger comes to town
-
-**TL;DR:** When an unknown error occurs (a developer error, see best practice 2.3) - there is uncertainty about the application healthiness. Common practice suggests restarting the process carefully using a process management tool like [Forever](https://www.npmjs.com/package/forever) or [PM2](http://pm2.keymetrics.io/)
-
-**Anders:** When an unfamiliar exception occurs, some object might be in a faulty state (e.g. an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
-
-🔗 [**Read More: shutting the process**](/sections/errorhandling/shuttingtheprocess.md)
+🔗 [**Lees meer: ​​operationele versus programmeerfout**](/sections/errorhandling/operationalvsprogrammererror.md)
 
 <br/><br/>
 
-## ![✔] 2.7 Use a mature logger to increase error visibility
+## ![✔] 2.4 Verwerk fouten centraal, niet binnen een middleware
 
-**TL;DR:** A set of mature logging tools like [Pino](https://github.com/pinojs/pino) or [Log4js](https://www.npmjs.com/package/log4js), will speed-up error discovery and understanding. So forget about console.log
+**TL;DR:** Foutafhandelingslogica zoals mail naar admin en logboekregistratie moeten worden ingekapseld in een speciaal en gecentraliseerd object dat alle eindpunten (bijv. Express-middleware, cron-taken, unit-testing) aanroepen wanneer er een fout optreedt
 
-**Anders:** Skimming through console.logs or manually through messy text file without querying tools or a decent log viewer might keep you busy at work until late
+**Anders:** Als u fouten niet op één plek afhandelt, leidt dit tot codeduplicatie en waarschijnlijk tot onjuist afgehandelde fouten
 
-🔗 [**Read More: using a mature logger**](/sections/errorhandling/usematurelogger.md)
-
-<br/><br/>
-
-## ![✔] 2.8 Test error flows using your favorite test framework
-
-**TL;DR:** Whether professional automated QA or plain manual developer testing – Ensure that your code not only satisfies positive scenarios but also handles and returns the right errors. Testing frameworks like Mocha & Chai can handle this easily (see code examples within the "Gist popup")
-
-**Anders:** Without testing, whether automatically or manually, you can’t rely on your code to return the right errors. Without meaningful errors – there’s no error handling
-
-🔗 [**Read More: testing error flows**](/sections/errorhandling/testingerrorflows.md)
+🔗 [**Lees meer: ​​fouten afhandelen op een gecentraliseerde plaats**](/sections/errorhandling/centralizedhandling.md)
 
 <br/><br/>
 
-## ![✔] 2.9 Discover errors and downtime using APM products
+## ![✔] 2.5 Documenteer API-fouten met Swagger of GraphQL
 
-**TL;DR:** Monitoring and performance products (a.k.a APM) proactively gauge your codebase or API so they can automagically highlight errors, crashes, and slow parts that you were missing
+**TL;DR:** Laat uw API-callers weten welke fouten ervoor terug kunnen komen, zodat ze deze zorgvuldig kunnen afhandelen zonder te crashen. Voor RESTful API's wordt dit meestal gedaan met documentatiekaders zoals Swagger. Als u GraphQL gebruikt, kunt u ook uw schema en opmerkingen gebruiken.
 
-**Anders:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which are your slowest code parts under real-world scenario and how these affect the UX
+**Anders:** Een API-client kan alleen besluiten te crashen en opnieuw op te starten omdat hij een fout heeft ontvangen die hij niet kon begrijpen. Let op: de aanroeper van uw API zou u kunnen zijn (heel typisch in een microservice-omgeving)
 
-🔗 [**Read More: using APM products**](/sections/errorhandling/apmproducts.md)
-
-<br/><br/>
-
-## ![✔] 2.10 Catch unhandled promise rejections
-
-**TL;DR:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explicitly handle it. Even if your code is subscribed to `process.uncaughtException`! Overcome this by registering to the event `process.unhandledRejection`
-
-**Anders:** Your errors will get swallowed and leave no trace. Nothing to worry about
-
-🔗 [**Read More: catching unhandled promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.md)
+🔗 [**Lees meer: ​​API-fouten documenteren in Swagger of GraphQL**](/sections/errorhandling/documentingusingswagger.md)
 
 <br/><br/>
 
-## ![✔] 2.11 Fail fast, validate arguments using a dedicated library
+## ![✔] 2.6 Verlaat het proces gracieus wanneer een vreemdeling naar de stad komt
 
-**TL;DR:** Assert API input to avoid nasty bugs that are much harder to track later. The validation code is usually tedious unless you are using a very cool helper library like [ajv](https://www.npmjs.com/package/ajv) and [Joi](https://www.npmjs.com/package/joi)
+**TL;DR:** Wanneer een onbekende fout optreedt (een ontwikkelaarsfout, zie best practice 2.3) - is er onzekerheid over de gezondheid van de toepassing. Het is gebruikelijk om het proces voorzichtig opnieuw te starten met behulp van een procesbeheertool zoals [Forever](https://www.npmjs.com/package/forever) of [PM2](http://pm2.keymetrics.io/)
 
-**Anders:** Consider this – your function expects a numeric argument “Discount” which the caller forgets to pass, later on, your code checks if Discount!=0 (amount of allowed discount is greater than zero), then it will allow the user to enjoy a discount. OMG, what a nasty bug. Can you see it?
+**Anders:** Wanneer een onbekende uitzondering optreedt, kan een object zich in een defecte staat bevinden (bijv. een gebeurteniszender die wereldwijd wordt gebruikt en geen gebeurtenissen meer activeert vanwege een interne fout) en alle toekomstige verzoeken kunnen mislukken of zich gek gedragen
 
-🔗 [**Read More: failing fast**](/sections/errorhandling/failfast.md)
+🔗 [**Lees meer: ​​het proces afsluiten**](/sections/errorhandling/shuttingtheprocess.md)
 
 <br/><br/>
 
-## ![✔] 2.12 Always await promises before returning to avoid a partial stacktrace
+## ![✔] 2.7 Gebruik een volwassen logger om de zichtbaarheid van fouten te vergroten
 
-**TL;DR:** Always do `return await` when returning a promise to benefit full error stacktrace. If a
-function returns a promise, that function must be declared as `async` function and explicitly
-`await` the promise before returning it
+**TL;DR:** Een reeks volwassen logging-tools zoals [Pino](https://github.com/pinojs/pino) of [Log4js](https://www.npmjs.com/package/log4js), zal het ontdekken van fouten versnellen en begrip. Dus vergeet console.log
 
-**Anders:** The function that returns a promise without awaiting won't appear in the stacktrace.
-Such missing frames would probably complicate the understanding of the flow that leads to the error,
-especially if the cause of the abnormal behavior is inside of the missing function
+**Anders:** Door console.logs bladeren of handmatig door een rommelig tekstbestand bladeren zonder hulpprogramma's of een fatsoenlijke logviewer te raadplegen, kan u tot laat op het werk bezig houden
 
-🔗 [**Read More: returning promises**](/sections/errorhandling/returningpromises.md)
+🔗 [**Lees meer: ​​een volwassen logger gebruiken**](/sections/errorhandling/usematurelogger.md)
+
+<br/><br/>
+
+## ![✔] 2.8 Test foutstromen met uw favoriete testframework
+
+**TL;DR:** Of het nu gaat om professionele geautomatiseerde QA of eenvoudige handmatige ontwikkelaarstests - zorg ervoor dat uw code niet alleen voldoet aan positieve scenario's, maar ook de juiste fouten verwerkt en retourneert. Testframeworks zoals Mocha & Chai kunnen dit gemakkelijk aan (zie codevoorbeelden in de "Gist-popup")
+
+**Anders:** Zonder testen, automatisch of handmatig, kunt u er niet op vertrouwen dat uw code de juiste fouten retourneert. Zonder betekenisvolle fouten – er is geen foutafhandeling
+
+🔗 [**Lees meer: ​​foutstromen testen**](/sections/errorhandling/testingerrorflows.md)
+
+<br/><br/>
+
+## ![✔] 2.9 Ontdek fouten en downtime met APM-producten
+
+**TL;DR:** Monitoring- en prestatieproducten (ook wel APM genoemd) meten proactief uw codebase of API, zodat ze automatisch fouten, crashes en langzame onderdelen die u miste kunnen markeren
+
+**Anders:** Je zou veel moeite kunnen doen om API-prestaties en downtime te meten, waarschijnlijk zul je nooit weten wat je langzaamste codeonderdelen zijn in het echte scenario en hoe deze de UX beïnvloeden
+
+🔗 [**Lees meer: ​​APM-producten gebruiken**](/sections/errorhandling/apmproducts.md)
+
+<br/><br/>
+
+## ![✔] 2.10 Onverwerkte afwijzingen van beloftes opvangen
+
+**TL;DR:** Elke uitzondering die binnen een belofte wordt gegooid, wordt ingeslikt en weggegooid, tenzij een ontwikkelaar niet is vergeten deze expliciet te behandelen. Zelfs als uw code is geabonneerd op `process.unaughtException`! Overwin dit door u te registreren voor het evenement `process.unhandledRejection`
+
+**Anders:** Uw fouten worden ingeslikt en laten geen spoor achter. Niets om je zorgen over te maken
+
+🔗 [**Lees meer: ​​onverwerkte afwijzing van beloftes opvangen**](/sections/errorhandling/catchunhandledpromiserejection.md)
+
+<br/><br/>
+
+## ![✔] 2.11 Misluk snel, valideer argumenten met behulp van een speciale bibliotheek
+
+**TL;DR:** Bevestig API-invoer om vervelende bugs te voorkomen die later veel moeilijker te traceren zijn. De validatiecode is meestal vervelend, tenzij je een erg coole helperbibliotheek gebruikt zoals [ajv](https://www.npmjs.com/package/ajv) en [Joi](https://www.npmjs.com/package /joi)
+
+**Anders:** Overweeg dit - uw functie verwacht een numeriek argument "Korting" dat de beller vergeet door te geven, later controleert uw code of Korting! = 0 (hoeveelheid toegestane korting is groter dan nul), dan kan de gebruiker genieten van een korting. OMG, wat een vervelende bug. Kun je het zien?
+
+🔗 [**Lees meer: ​​snel falen**](/sections/errorhandling/failfast.md)
+
+<br/><br/>
+
+## ![✔] 2.12 Wacht altijd op beloften voordat u terugkeert om een ​​gedeeltelijke stacktrace te voorkomen
+
+**TL;DR:** Doe altijd `return wait` bij het retourneren van een belofte om te profiteren van volledige foutstacktrace. Als een
+functie retourneert een belofte, die functie moet worden gedeclareerd als `async` functie en expliciet
+'wacht' op de belofte voordat je deze teruggeeft
+
+**Anders:** De functie die een belofte retourneert zonder te wachten, verschijnt niet in de stacktrace.
+Dergelijke ontbrekende frames zouden waarschijnlijk het begrip van de stroom die tot de fout leidt, bemoeilijken,
+vooral als de oorzaak van het abnormale gedrag binnen de ontbrekende functie ligt
+
+🔗 [**Lees meer: ​​beloftes nakomen**](/sections/errorhandling/returningpromises.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Ga terug naar boven</a></p>
 
-# `3. Code Style Practices`
+# `3. Codestijlpraktijken`
 
-## ![✔] 3.1 Use ESLint
+## ![✔] 3.1 Gebruik ESLint
 
-**TL;DR:** [ESLint](https://eslint.org) is the de-facto standard for checking possible code errors and fixing code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Though ESLint can automatically fix code styles, other tools like [prettier](https://www.npmjs.com/package/prettier) and [beautify](https://www.npmjs.com/package/js-beautify) are more powerful in formatting the fix and work in conjunction with ESLint
+**TL;DR:** [ESLint](https://eslint.org) is de de-facto standaard voor het controleren van mogelijke codefouten en het corrigeren van codestijlen, niet alleen om nitty-gritty spatiëringproblemen te identificeren, maar ook om ernstige code-anti-patronen te detecteren, zoals ontwikkelaars die fouten maken zonder classificatie. Hoewel ESLint automatisch codestijlen kan corrigeren, kunnen andere tools zoals [prettier](https://www.npmjs.com/package/prettier) en [beautify](https://www.npmjs.com/package/js-beautify) zijn krachtiger in het formatteren van de fix en werken samen met ESLint
 
-**Anders:** Developers will focus on tedious spacing and line-width concerns and time might be wasted overthinking the project's code style
+**Anders:** Ontwikkelaars zullen zich concentreren op vervelende spatiëring en regelbreedte, en er kan tijd worden verspild aan het overdenken van de codestijl van het project
 
-🔗 [**Read More: Using ESLint and Prettier**](/sections/codestylepractices/eslint_prettier.md)
-
-<br/><br/>
-
-## ![✔] 3.2 Node.js specific plugins
-
-**TL;DR:** On top of ESLint standard rules that cover vanilla JavaScript, add Node.js specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
-
-**Anders:** Many faulty Node.js code patterns might escape under the radar. For example, developers might require(variableAsPath) files with a variable given as a path which allows attackers to execute any JS script. Node.js linters can detect such patterns and complain early
+🔗 [**Lees meer: ​​ESLint en Prettier gebruiken**](/sections/codestylepractices/eslint_prettier.md)
 
 <br/><br/>
 
-## ![✔] 3.3 Start a Codeblock's Curly Braces on the Same Line
+## ![✔] 3.2 Node.js-specifieke plug-ins
 
-**TL;DR:** The opening curly braces of a code block should be on the same line as the opening statement
+**TL;DR:** Voeg bovenop de standaard ESLint-regels die vanille-JavaScript dekken, Node.js-specifieke plug-ins toe, zoals [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin- mokka](https://www.npmjs.com/package/eslint-plugin-mocha) en [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
-### Code Example
+**Anders:** Veel defecte Node.js-codepatronen kunnen onder de radar ontsnappen. Ontwikkelaars kunnen bijvoorbeeld (variableAsPath) bestanden nodig hebben met een variabele die is opgegeven als een pad waarmee aanvallers elk JS-script kunnen uitvoeren. Node.js-linters kunnen dergelijke patronen detecteren en vroegtijdig klagen
+
+<br/><br/>
+
+## ![✔] 3.3 De accolades van een codeblok op dezelfde lijn starten
+
+**TL;DR:** De openingsaccolades van een codeblok moeten op dezelfde regel staan ​​als de openingsinstructie
+
+### Codevoorbeeld
 
 ```javascript
-// Do
+// Doen
 function someFunction() {
-  // code block
+  // code blok
 }
 
-// Avoid
+// Vermijd
 function someFunction() {
-  // code block
+  // code blok
 }
 ```
 
-**Anders:** Deferring from this best practice might lead to unexpected results, as seen in the StackOverflow thread below:
+**Anders:** Afwijken van deze best practice kan leiden tot onverwachte resultaten, zoals te zien is in de StackOverflow-thread hieronder:
 
-🔗 [**Read more:** "Why do results vary based on curly brace placement?" (StackOverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
+🔗 [**Lees meer:** "Waarom variëren de resultaten op basis van de plaatsing van een accolade?" (StackOverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
 <br/><br/>
 
-## ![✔] 3.4 Separate your statements properly
+## ![✔] 3.4 Scheid uw verklaringen op de juiste manier
 
-No matter if you use semicolons or not to separate your statements, knowing the common pitfalls of improper linebreaks or automatic semicolon insertion, will help you to eliminate regular syntax errors.
+Het maakt niet uit of u puntkomma's gebruikt of niet om uw uitspraken te scheiden, het kennen van de veelvoorkomende valkuilen van onjuiste regeleinden of automatische puntkomma-invoeging, zal u helpen om regelmatige syntaxisfouten te elimineren.
 
-**TL;DR:** Use ESLint to gain awareness about separation concerns. [Prettier](https://prettier.io/) or [Standardjs](https://standardjs.com/) can automatically resolve these issues.
+**TL;DR:** Gebruik ESLint om bewustzijn te krijgen over scheidingsproblemen. [Prettier](https://prettier.io/) of [Standardjs](https://standardjs.com/) kunnen deze problemen automatisch oplossen.
 
-**Anders:** As seen in the previous section, JavaScript's interpreter automatically adds a semicolon at the end of a statement if there isn't one, or considers a statement as not ended where it should, which might lead to some undesired results. You can use assignments and avoid using immediately invoked function expressions to prevent most of the unexpected errors.
+**Anders:** Zoals te zien is in de vorige sectie, voegt de interpreter van JavaScript automatisch een puntkomma toe aan het einde van een instructie als die er niet is, of beschouwt een instructie als niet beëindigd waar hij zou moeten, wat tot ongewenste resultaten kan leiden. U kunt toewijzingen gebruiken en het gebruik van onmiddellijk aangeroepen functie-expressies vermijden om de meeste onverwachte fouten te voorkomen.
 
-### Code example
+### Codevoorbeeld
 
 ```javascript
-// Do
+// Doen
 function doThing() {
     // ...
 }
 
 doThing()
 
-// Do
+// Doen
 
 const items = [1, 2, 3]
 items.forEach(console.log)
 
-// Avoid — throws exception
+// Vermijden — throws exception
 const m = new Map()
 const a = [1,2,3]
 [...m.values()].forEach(console.log)
@@ -319,96 +319,96 @@ const a = [1,2,3]
 >  ^^^
 > SyntaxError: Unexpected token ...
 
-// Avoid — throws exception
+// Vermijden — throws exception
 const count = 2 // it tries to run 2(), but 2 is not a function
 (function doSomething() {
-  // do something amazing
+  // iets geweldigs doen
 }())
-// put a semicolon before the immediate invoked function, after the const definition, save the return value of the anonymous function to a variable or avoid IIFEs altogether
+// plaats een puntkomma voor de onmiddellijk aangeroepen functie, na de const-definitie, sla de geretourneerde waarde van de anonieme functie op in een variabele of vermijd IIFE's helemaal
 ```
 
-🔗 [**Read more:** "Semi ESLint rule"](https://eslint.org/docs/rules/semi)
-🔗 [**Read more:** "No unexpected multiline ESLint rule"](https://eslint.org/docs/rules/no-unexpected-multiline)
+🔗 [**Lees meer:** "Semi ESLint-regel"](https://eslint.org/docs/rules/semi)
+🔗 [**Lees meer:** "Geen onverwachte multiline ESLint-regel"](https://eslint.org/docs/rules/no-unexpected-multiline)
 
 <br/><br/>
 
-## ![✔] 3.5 Name your functions
+## ![✔] 3.5 Geef je functies een naam
 
-**TL;DR:** Name all functions, including closures and callbacks. Avoid anonymous functions. This is especially useful when profiling a node app. Naming all functions will allow you to easily understand what you're looking at when checking a memory snapshot
+**TL;DR:** Geef alle functies een naam, inclusief sluitingen en callbacks. Vermijd anonieme functies. Dit is vooral handig bij het profileren van een node-app. Door alle functies een naam te geven, kunt u gemakkelijk begrijpen waar u naar kijkt bij het controleren van een geheugensnapshot
 
-**Anders:** Debugging production issues using a core dump (memory snapshot) might become challenging as you notice significant memory consumption from anonymous functions
+**Anders:** Het opsporen van productieproblemen met behulp van een kerndump (snapshot van het geheugen) kan een uitdaging worden omdat u merkt dat er veel geheugen wordt verbruikt door anonieme functies
 
 <br/><br/>
 
-## ![✔] 3.6 Use naming conventions for variables, constants, functions and classes
+## ![✔] 3.6 Gebruik naamgevingsconventies voor variabelen, constanten, functies en klassen
 
-**TL;DR:** Use **_lowerCamelCase_** when naming constants, variables and functions and **_UpperCamelCase_** (capital first letter as well) when naming classes. This will help you to easily distinguish between plain variables/functions, and classes that require instantiation. Use descriptive names, but try to keep them short
+**TL;DR:** Gebruik **_lowerCamelCase_** bij het benoemen van constanten, variabelen en functies en **_UpperCamelCase_** (ook hoofdletter) bij het benoemen van klassen. Dit zal u helpen om eenvoudig onderscheid te maken tussen gewone variabelen/functies en klassen die moeten worden geïnstantieerd. Gebruik beschrijvende namen, maar probeer ze kort te houden
 
-**Anders:** JavaScript is the only language in the world that allows invoking a constructor ("Class") directly without instantiating it first. Consequently, Classes and function-constructors are differentiated by starting with UpperCamelCase
+**Anders:** JavaScript is de enige taal ter wereld waarmee een constructor ("Class") rechtstreeks kan worden aangeroepen zonder deze eerst te instantiëren. Bijgevolg worden klassen en functieconstructors gedifferentieerd door te beginnen met UpperCamelCase
 
-### 3.6 Code Example
+### 3.6 Codevoorbeeld
 
 ```javascript
-// for class name we use UpperCamelCase
+// voor klassenaam gebruiken we UpperCamelCase
 class SomeClassExample {}
 
-// for const names we use the const keyword and lowerCamelCase
+// voor const-namen gebruiken we het const-sleutelwoord en lowerCamelCase
 const config = {
   key: "value",
 };
 
-// for variables and functions names we use lowerCamelCase
+// voor namen van variabelen en functies gebruiken we lowerCamelCase
 let someVariableExample = "value";
 function doSomething() {}
 ```
 
 <br/><br/>
 
-## ![✔] 3.7 Prefer const over let. Ditch the var
+## ![✔] 3.7 Liever const dan let. Ditch de var
 
-**TL;DR:** Using `const` means that once a variable is assigned, it cannot be reassigned. Preferring `const` will help you to not be tempted to use the same variable for different uses, and make your code clearer. If a variable needs to be reassigned, in a for loop, for example, use `let` to declare it. Another important aspect of `let` is that a variable declared using it is only available in the block scope in which it was defined. `var` is function scoped, not block-scoped, and [shouldn't be used in ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) now that you have `const` and `let` at your disposal
+**TL;DR:** Het gebruik van 'const' betekent dat als een variabele eenmaal is toegewezen, deze niet opnieuw kan worden toegewezen. Als u de voorkeur geeft aan `const`, komt u niet in de verleiding om dezelfde variabele voor verschillende doeleinden te gebruiken en wordt uw code duidelijker. Als een variabele opnieuw moet worden toegewezen, bijvoorbeeld in een for-lus, gebruik dan `let` om deze te declareren. Een ander belangrijk aspect van `let` is dat een variabele die ermee gedeclareerd is, alleen beschikbaar is in het blokbereik waarin deze is gedefinieerd. `var` heeft een functiebereik, niet een blokbereik en [moet niet worden gebruikt in ES6] (https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) nu je ` const` en `let` tot je beschikking
 
-**Anders:** Debugging becomes way more cumbersome when following a variable that frequently changes
+**Anders:** Foutopsporing wordt veel omslachtiger bij het volgen van een variabele die vaak verandert
 
-🔗 [**Read more: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
-
-<br/><br/>
-
-## ![✔] 3.8 Require modules first, not inside functions
-
-**TL;DR:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top but also avoids a couple of potential problems
-
-**Anders:** Requires are run synchronously by Node.js. If they are called from within a function, it may block other requests from being handled at a more critical time. Also, if a required module or any of its dependencies throw an error and crash the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function
+🔗 [**Lees meer: ​​JavaScript ES6+: var, let of const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
 
 <br/><br/>
 
-## ![✔] 3.9 Require modules by folders, as opposed to the files directly
+## ![✔] 3.8 Vereist eerst modules, niet interne functies
 
-**TL;DR:** When developing a module/library in a folder, place an index.js file that exposes the module's internals so every consumer will pass through it. This serves as an 'interface' to your module and eases future changes without breaking the contract
+**TL;DR:** Vereist modules aan het begin van elk bestand, voor en buiten alle functies. Deze eenvoudige best practice helpt je niet alleen om snel en gemakkelijk de afhankelijkheden van een bestand bovenaan te vertellen, maar voorkomt ook een aantal potentiële problemen
 
-**Anders:** Changing the internal structure of files or the signature may break the interface with clients
+**Anders:** Vereisten worden synchroon uitgevoerd door Node.js. Als ze vanuit een functie worden aangeroepen, kan het voorkomen dat andere verzoeken op een kritieker moment worden afgehandeld. Ook als een vereiste module of een van zijn afhankelijkheden een fout veroorzaakt en de server crasht, is het het beste om er zo snel mogelijk achter te komen, wat misschien niet het geval is als die module vanuit een functie vereist is
 
-### 3.9 Code example
+<br/><br/>
+
+## ![✔] 3.9 Vereist modules per map, in tegenstelling tot de bestanden rechtstreeks
+
+**TL;DR:** Wanneer u een module/bibliotheek in een map ontwikkelt, plaatst u een index.js-bestand dat de interne onderdelen van de module blootlegt, zodat elke consument er doorheen kan. Dit dient als een 'interface' naar uw module en vereenvoudigt toekomstige wijzigingen zonder het contract te verbreken
+
+**Anders:** Het wijzigen van de interne structuur van bestanden of de handtekening kan de interface met clients breken
+
+### 3.9 Codevoorbeeld
 
 ```javascript
-// Do
+// Doen
 module.exports.SMSProvider = require("./SMSProvider");
 module.exports.SMSNumberResolver = require("./SMSNumberResolver");
 
-// Avoid
+// Vermijden
 module.exports.SMSProvider = require("./SMSProvider/SMSProvider.js");
 module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolver.js");
 ```
 
 <br/><br/>
 
-## ![✔] 3.10 Use the `===` operator
+## ![✔] 3.10 Gebruik de `===` operator
 
-**TL;DR:** Prefer the strict equality operator `===` over the weaker abstract equality operator `==`. `==` will compare two variables after converting them to a common type. There is no type conversion in `===`, and both variables must be of the same type to be equal
+**TL;DR:** Geef de voorkeur aan de operator voor strikte gelijkheid `===` boven de zwakkere operator voor abstracte gelijkheid `==`. `==` vergelijkt twee variabelen nadat ze naar een algemeen type zijn geconverteerd. Er is geen typeconversie in `===`, en beide variabelen moeten van hetzelfde type zijn om gelijk te zijn
 
-**Anders:** Unequal variables might return true when compared with the `==` operator
+**Anders:** Ongelijke variabelen kunnen true retourneren in vergelijking met de `==` operator
 
-### 3.10 Code example
+### 3.10 Codevoorbeeld
 
 ```javascript
 "" == "0"; // false
@@ -425,31 +425,31 @@ null == undefined; // true
 " \t\r\n " == 0; // true
 ```
 
-All statements above will return false if used with `===`
+Alle bovenstaande uitspraken zullen false retourneren als ze worden gebruikt met `===`
 
 <br/><br/>
 
-## ![✔] 3.11 Use Async Await, avoid callbacks
+## ![✔] 3.11 Gebruik Async Await, vermijd callback
 
-**TL;DR:** Node 8 LTS now has full support for Async-await. This is a new way of dealing with asynchronous code which supersedes callbacks and promises. Async-await is non-blocking, and it makes asynchronous code look synchronous. The best gift you can give to your code is using async-await which provides a much more compact and familiar code syntax like try-catch
+**TL;DR:** Node 8 LTS heeft nu volledige ondersteuning voor Async-wait. Dit is een nieuwe manier om met asynchrone code om te gaan die callbacks en beloften vervangt. Async-wait blokkeert niet en zorgt ervoor dat asynchrone code er synchroon uitziet. Het beste cadeau dat u aan uw code kunt geven, is het gebruik van async-wait, wat een veel compactere en bekendere codesyntaxis biedt, zoals try-catch
 
-**Anders:** Handling async errors in callback style are probably the fastest way to hell - this style forces to check errors all over, deal with awkward code nesting, and makes it difficult to reason about the code flow
+**Anders:** Het afhandelen van asynchrone fouten in callback-stijl is waarschijnlijk de snelste weg naar de hel - deze stijl dwingt om fouten overal te controleren, om te gaan met lastige code-nesting en maakt het moeilijk om over de codestroom te redeneren
 
-🔗[**Read more:** Guide to async-await 1.0](https://github.com/yortus/asyncawait)
+🔗[**Lees meer:** Gids voor async-wacht 1.0](https://github.com/yortus/asyncawait)
 
 <br/><br/>
 
-## ![✔] 3.12 Use arrow function expressions (=>)
+## ![✔] 3.12 Uitdrukkingen voor pijlfuncties gebruiken (=>)
 
-**TL;DR:** Though it's recommended to use async-await and avoid function parameters when dealing with older APIs that accept promises or callbacks - arrow functions make the code structure more compact and keep the lexical context of the root function (i.e. `this`)
+**TL;DR:** Hoewel het wordt aanbevolen om async-wait te gebruiken en functieparameters te vermijden bij het omgaan met oudere API's die beloften of callbacks accepteren - pijlfuncties maken de codestructuur compacter en behouden de lexicale context van de hoofdfunctie (d.w.z. `this`)
 
-**Anders:** Longer code (in ES5 functions) is more prone to bugs and cumbersome to read
+**Anders:** Langere code (in ES5-functies) is vatbaarder voor bugs en lastig te lezen
 
-🔗 [**Read more: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
+🔗 [**Lees meer: ​​het is tijd om de pijlfuncties te omarmen**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Ga terug naar boven</a></p>
 
 # `4. Testing And Overall Quality Practices`
 
