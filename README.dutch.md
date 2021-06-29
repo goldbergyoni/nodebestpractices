@@ -124,7 +124,7 @@ Zie onze [schrijfrichtlijnen hier](/.operations/writing-guidelines.md).
 
 **Anders:** Node.js callback-stijl, functie (handige manier om niet-onderhoudbare code te krijgen vanwege de mix foutaf met loss code, overmatige nesting en one codeerpatronen)
 
-🔗 [**Lees meer: ​​terugbellen vermijden**](/sections/errorhandling/asyncerrorhandling.md)
+🔗 [**Lees meer: callback vermijden**](/sections/errorhandling/asyncerrorhandling.md)
 
 <br/><br/>
 
@@ -218,7 +218,7 @@ Zie onze [schrijfrichtlijnen hier](/.operations/writing-guidelines.md).
 
 <br/><br/>
 
-## ![✔] 2.11 Misluk snel, valideer argumenten met behulp van een speciale bibliotheek
+## ![✔] 2.11 Fail fast, valideer argumenten met behulp van een speciale bibliotheek
 
 **TL;DR:** Bevestig API-invoer om vervelende bugs te voorkomen die later veel moeilijker te traceren zijn. De validatiecode is meestal vervelend, tenzij je een erg coole helperbibliotheek gebruikt zoals [ajv](https://www.npmjs.com/package/ajv) en [Joi](https://www.npmjs.com/package /joi)
 
@@ -228,7 +228,7 @@ Zie onze [schrijfrichtlijnen hier](/.operations/writing-guidelines.md).
 
 <br/><br/>
 
-## ![✔] 2.12 Wacht altijd op beloften voordat u terugkeert om een ​​gedeeltelijke stacktrace te voorkomen
+## ![✔] 2.12 Wacht altijd op promise voordat u terugkeert om een ​​gedeeltelijke stacktrace te voorkomen
 
 **TL;DR:** Doe altijd `return wait` bij het retourneren van een belofte om te profiteren van volledige foutstacktrace. Als een
 functie retourneert een belofte, die functie moet worden gedeclareerd als `async` functie en expliciet
@@ -238,7 +238,7 @@ functie retourneert een belofte, die functie moet worden gedeclareerd als `async
 Dergelijke ontbrekende frames zouden waarschijnlijk het begrip van de stroom die tot de fout leidt, bemoeilijken,
 vooral als de oorzaak van het abnormale gedrag binnen de ontbrekende functie ligt
 
-🔗 [**Lees meer: ​​beloftes nakomen**](/sections/errorhandling/returningpromises.md)
+🔗 [**Lees meer: promise nakomen**](/sections/errorhandling/returningpromises.md)
 
 <br/><br/><br/>
 
@@ -451,119 +451,121 @@ Alle bovenstaande uitspraken zullen false retourneren als ze worden gebruikt met
 
 <p align="right"><a href="#table-of-contents">⬆ Ga terug naar boven</a></p>
 
-# `4. Testing And Overall Quality Practices`
+# `4. Testen en algemene kwaliteitspraktijken`
 
-## ![✔] 4.1 At the very least, write API (component) testing
+## ![✔] 4.1 Schrijf op zijn minst API (component) testen
 
-**TL;DR:** Most projects just don't have any automated testing due to short timetables or often the 'testing project' ran out of control and was abandoned. For that reason, prioritize and start with API testing which is the easiest way to write and provides more coverage than unit testing (you may even craft API tests without code using tools like [Postman](https://www.getpostman.com/)). Afterward, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc
+**TL;DR:** De meeste projecten hebben gewoon geen geautomatiseerd testen vanwege korte tijdschema's of vaak liep het 'testproject' uit de hand en werd het stopgezet. Geef daarom prioriteit aan en begin met API-testen, wat de gemakkelijkste manier is om te schrijven en meer dekking biedt dan unit-testen (je kunt zelfs API-tests maken zonder code met tools zoals [Postman](https://www.getpostman.com/)). Mocht u daarna meer middelen en tijd hebben, ga dan verder met geavanceerde testtypes zoals unit testing, DB testing, performance testing, enz.
 
-**Anders:** You may spend long days on writing unit tests to find out that you got only 20% system coverage
-
-<br/><br/>
-
-## ![✔] 4.2 Include 3 parts in each test name
-
-**TL;DR:** Make the test speak at the requirements level so it's self-explanatory also to QA engineers and developers who are not familiar with the code internals. State in the test name what is being tested (unit under test), under what circumstances, and what is the expected result
-
-**Anders:** A deployment just failed, a test named “Add product” failed. Does this tell you what exactly is malfunctioning?
-
-🔗 [**Read More: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
+**Anders:** Kunt u lange dagen besteden aan het schrijven van unit-tests om erachter te komen dat u slechts 20% systeemdekking heeft
 
 <br/><br/>
 
-## ![✔] 4.3 Structure tests by the AAA pattern
+## ![✔] 4.2 Neem 3 delen op in elke testnaam
 
-**TL;DR:** Structure your tests with 3 well-separated sections: Arrange, Act & Assert (AAA). The first part includes the test setup, then the execution of the unit under test, and finally the assertion phase. Following this structure guarantees that the reader spends no brain CPU on understanding the test plan
+**TL;DR:** Laat de test spreken op het niveau van de vereisten, zodat het ook duidelijk is voor QA-ingenieurs en ontwikkelaars die niet bekend zijn met de interne code. Vermeld in de testnaam wat er wordt getest (eenheid die wordt getest), onder welke omstandigheden en wat het verwachte resultaat is
 
-**Anders:** Not only you spend long daily hours on understanding the main code, but now also what should have been the simple part of the day (testing) stretches your brain
+**Anders:** Een implementatie is zojuist mislukt, een test met de naam 'Product toevoegen' is mislukt. Zegt dit u wat er precies defect is?
 
-🔗 [**Read More: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.md)
-
-<br/><br/>
-
-## ![✔] 4.4 Detect code issues with a linter
-
-**TL;DR:** Use a code linter to check the basic quality and detect anti-patterns early. Run it before any test and add it as a pre-commit git-hook to minimize the time needed to review and correct any issue. Also check [Section 3](#3-code-style-practices) on Code Style Practices
-
-**Anders:** You may let pass some anti-pattern and possible vulnerable code to your production environment.
+🔗 [**Lees meer: ​​neem 3 delen op in elke testnaam**](/sections/testingandquality/3-parts-in-name.md)
 
 <br/><br/>
 
-## ![✔] 4.5 Avoid global test fixtures and seeds, add data per-test
+## ![✔] 4.3 Structuurtests volgens het AAA-patroon
 
-**TL;DR:** To prevent test coupling and easily reason about the test flow, each test should add and act on its own set of DB rows. Whenever a test needs to pull or assume the existence of some DB data - it must explicitly add that data and avoid mutating any other records
+**TL;DR:** Structureer je toetsen met 3 goed gescheiden secties: Arrange, Act & Assert (AAA). Het eerste deel omvat de testopstelling, vervolgens de uitvoering van de te testen eenheid en ten slotte de bevestigingsfase. Het volgen van deze structuur garandeert dat de lezer geen hersen-CPU besteedt aan het begrijpen van het testplan
 
-**Anders:** Consider a scenario where deployment is aborted due to failing tests, team is now going to spend precious investigation time that ends in a sad conclusion: the system works well, the tests however interfere with each other and break the build
+**Anders:** Je besteedt niet alleen lange dagelijkse uren aan het begrijpen van de hoofdcode, maar nu ook wat het simpele deel van de dag had moeten zijn (testen) rekt je hersenen
 
-🔗 [**Read More: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
-
-<br/><br/>
-
-## ![✔] 4.6 Constantly inspect for vulnerable dependencies
-
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [npm audit](https://docs.npmjs.com/cli/audit) and 🔗 [snyk.io](https://snyk.io) that can be invoked from your CI on every build
-
-**Anders:** Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
+🔗 [**Lees meer: ​​Structuurtests volgens het AAA-patroon**](/sections/testingandquality/aaa.md)
 
 <br/><br/>
 
-## ![✔] 4.7 Tag your tests
+## ![✔] 4.4 Detecteer codeproblemen met een linter
 
-**TL;DR:** Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/): mocha --grep 'sanity'
+**TL;DR:** Gebruik een codelinter om de basiskwaliteit te controleren en anti-patronen vroegtijdig te detecteren. Voer het uit vóór een test en voeg het toe als een pre-commit git-hook om de tijd die nodig is om een ​​probleem te bekijken en op te lossen te minimaliseren. Controleer ook [Section 3](#3-code-style-practices) op Code Style Practices
 
-**Anders:** Running all the tests, including tests that perform dozens of DB queries, any time a developer makes a small change can be extremely slow and keeps developers away from running tests
+**Anders:** U kunt wat anti-patroon en mogelijk kwetsbare code doorgeven aan uw productieomgeving.
 
 <br/><br/>
 
-## ![✔] 4.8 Check your test coverage, it helps to identify wrong test patterns
+## ![✔] 4.5 Vermijd globale testopstellingen en zaden, voeg gegevens per test toe
 
-**TL;DR:** Code coverage tools like [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but not least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
+**TL;DR:** Om testkoppeling te voorkomen en gemakkelijk te redeneren over de teststroom, moet elke test zijn eigen set DB-rijen toevoegen en erop reageren. Wanneer een test het bestaan ​​van sommige DB-gegevens moet ophalen of aannemen, moet deze expliciet die gegevens toevoegen en voorkomen dat andere records worden gemuteerd
+
+**Anders:** Overweeg een scenario waarin de implementatie wordt afgebroken vanwege mislukte tests, het team gaat nu kostbare onderzoekstijd besteden die eindigt in een trieste conclusie: het systeem werkt goed, de tests interfereren echter met elkaar en breken de build
+
+🔗 [**Lees meer: ​​Vermijd global testopstellingen**](/sections/testingandquality/avoid-global-test-fixture.md)
+
+<br/><br/>
+
+## ![✔] 4.6 Inspecteer voortdurend op kwetsbare dependencies
+
+**TL;DR:** Zelfs de meest gerenommeerde afhankelijkheden zoals Express hebben bekende kwetsbaarheden. Dit kan gemakkelijk worden getemd met behulp van community- en commerciële tools zoals 🔗 [npm audit](https://docs.npmjs.com/cli/audit) en 🔗 [snyk.io](https://snyk.io) die worden aangeroepen vanuit uw CI bij elke build
+
+**Anders:** Om uw code vrij te houden van kwetsbaarheden zonder speciale tools, moet u voortdurend online publicaties over nieuwe bedreigingen volgen. Best vervelend
+
+<br/><br/>
+
+## ![✔] 4.7 Tag je testen
+
+**TL;DR:** Verschillende tests moeten op verschillende scenario's worden uitgevoerd: snel roken, IO-loos, tests moeten worden uitgevoerd wanneer een ontwikkelaar een bestand opslaat of commit, volledige end-to-end-tests worden meestal uitgevoerd wanneer een nieuw pull-verzoek wordt ingediend, enz. Dit kan worden bereikt door tests te taggen met trefwoorden zoals #cold #api #sanity, zodat u uw testharnas kunt gebruiken en de gewenste subset kunt oproepen. Dit is bijvoorbeeld hoe u alleen de sanity-testgroep zou aanroepen met [Mocha](https://mochajs.org/): mocha --grep 'sanity'
+
+**Anders:** Het uitvoeren van alle tests, inclusief tests die tientallen DB-query's uitvoeren, kan elke keer dat een ontwikkelaar een kleine wijziging aanbrengt, extreem traag zijn en ontwikkelaars ervan weerhouden tests uit te voeren
+
+<br/><br/>
+
+## ![✔] 4.8 Controleer uw testdekking, het helpt om verkeerde testpatronen te identificeren
+
+**TL;DR:** Codedekkingstools zoals [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) zijn geweldig om drie redenen: het is gratis (geen moeite is vereist om van deze rapporten te profiteren), helpt het om een ​​afname van de testdekking te identificeren, en last but not least, het wijst op testmismatches: door naar gekleurde codedekkingsrapporten te kijken, ziet u bijvoorbeeld codegebieden die nooit worden getest clausules (wat betekent dat tests alleen de gelukkige paden aanroepen en niet hoe de app zich gedraagt ​​​​bij fouten). Stel het in op mislukte builds als de dekking onder een bepaalde drempel valt
 
 **Anders:** There won't be any automated metric telling you when a large portion of your code is not covered by testing
 
 <br/><br/>
 
-## ![✔] 4.9 Inspect for outdated packages
+## ![✔] 4.9 Inspecteren op verouderde packages
 
-**TL;DR:** Use your preferred tool (e.g. `npm outdated` or [npm-check-updates](https://www.npmjs.com/package/npm-check-updates)) to detect installed outdated packages, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a severe scenario might be when an installed package is 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
+**TL;DR:** Gebruik uw favoriete tool (bijv. `npm outdated` of [npm-check-updates](https://www.npmjs.com/package/npm-check-updates)) om geïnstalleerde verouderde pakketten te detecteren, injecteer deze controle in uw CI pijplijn en zelfs een build mislukken in een ernstig scenario. Een ernstig scenario kan bijvoorbeeld zijn wanneer een geïnstalleerd pakket 5 patch-commits achterloopt (bijv. de lokale versie is 1.3.1 en de repository-versie is 1.3.8) of het is getagd als verouderd door de auteur - stop de build en voorkom dat deze wordt geïmplementeerd versie
 
-**Anders:** Your production will run packages that have been explicitly tagged by their author as risky
-
-<br/><br/>
-
-## ![✔] 4.10 Use production-like environment for e2e testing
-
-**TL;DR:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Use an environment which is as close to your real production environment as possible like a-continue (Missed -continue here, needs content. Judging by the **Anders** clause, this should mention docker-compose)
-
-**Anders:** Without docker-compose, teams must maintain a testing DB for each testing environment including developers' machines, keep all those DBs in sync so test results won't vary across environments
+**Anders:** Uw productie voert packages uit die door de auteur expliciet als risicovol zijn getagd
 
 <br/><br/>
 
-## ![✔] 4.11 Refactor regularly using static analysis tools
+## ![✔] 4.10 Gebruik een productie-achtige omgeving voor e2e-testing
 
-**TL;DR:** Using static analysis tools helps by giving objective ways to improve code quality and keeps your code maintainable. You can add static analysis tools to your CI build to fail when it finds code smells. Its main selling points over plain linting are the ability to inspect quality in the context of multiple files (e.g. detect duplications), perform advanced analysis (e.g. code complexity), and follow the history and progress of code issues. Two examples of tools you can use are [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) and [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)).
+**TL;DR:** End-to-end (e2e) testen die live gegevens bevatten, waren vroeger de zwakste schakel van het CI-proces, omdat het afhankelijk is van meerdere zware services zoals DB. Gebruik een omgeving die zo dicht mogelijk bij uw echte productieomgeving ligt, zoals a-continue (Gemist -ga hier verder, heeft inhoud nodig. Afgaande op de **Anders**-clausule, zou dit docker-compose moeten vermelden)
 
-**Anders:** With poor code quality, bugs and performance will always be an issue that no shiny new library or state of the art features can fix
-
-🔗 [**Read More: Refactoring!**](/sections/testingandquality/refactoring.md)
+**Anders:** Zonder docker-compose moeten teams een test-DB bijhouden voor elke testomgeving, inclusief de machines van ontwikkelaars, en al die DB's gesynchroniseerd houden, zodat de testresultaten niet per omgeving verschillen.
 
 <br/><br/>
 
-## ![✔] 4.12 Carefully choose your CI platform (Jenkins vs CircleCI vs Travis vs Rest of the world)
+## ![✔] 4.11 Refactor regelmatig met behulp van statische analysetools
 
-**TL;DR:** Your continuous integration platform (CICD) will host all the quality tools (e.g. test, lint) so it should come with a vibrant ecosystem of plugins. [Jenkins](https://jenkins.io/) used to be the default for many projects as it has the biggest community along with a very powerful platform at the price of a complex setup that demands a steep learning curve. Nowadays, it has become much easier to set up a CI solution using SaaS tools like [CircleCI](https://circleci.com) and others. These tools allow crafting a flexible CI pipeline without the burden of managing the whole infrastructure. Eventually, it's a trade-off between robustness and speed - choose your side carefully
+**TL;DR:** Het gebruik van statische analysetools helpt door objectieve manieren te bieden om de codekwaliteit te verbeteren en uw code onderhoudbaar te houden. U kunt statische analysetools toevoegen aan uw CI-build om te mislukken wanneer deze codegeuren vindt. De belangrijkste verkoopargumenten ten opzichte van gewoon linting zijn de mogelijkheid om de kwaliteit te inspecteren in de context van meerdere bestanden (bijv. Duplicaties detecteren), geavanceerde analyses uit te voeren (bijv. Codecomplexiteit) en de geschiedenis en voortgang van codeproblemen te volgen. Twee voorbeelden van tools die u kunt gebruiken zijn [Sonarqube](https://www.sonarqube.org/) (2600+ [stars](https://github.com/SonarSource/sonarqube)) en [Code Climate](https ://codeclimate.com/) (1.500+ [sterren](https://github.com/codeclimate/codeclimate)).
 
-**Anders:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
+**Anders:** Met een slechte codekwaliteit zullen bugs en prestaties altijd een probleem zijn dat geen glimmende nieuwe bibliotheek of geavanceerde functies kunnen oplossen
 
-🔗 [**Read More: Choosing CI platform**](/sections/testingandquality/citools.md)
+🔗 [**Lees meer: ​​Refactoring!**](/sections/testingandquality/refactoring.md)
+
+<br/><br/>
+
+## ![✔] 4.12 Kies zorgvuldig uw CI-platform (Jenkins vs CircleCI vs Travis vs Rest van de wereld)
+
+**TL;DR:** Uw platform voor continue integratie (CICD) zal alle kwaliteitstools hosten (bijv. Test, lint), dus het moet worden geleverd met een levendig ecosysteem van plug-ins. [Jenkins](https://jenkins.io/) was de standaard voor veel projecten, omdat het de grootste community en een zeer krachtig platform heeft voor de prijs van een complexe setup die een steile leercurve vereist. Tegenwoordig is het veel eenvoudiger geworden om een ​​CI-oplossing op te zetten met behulp van SaaS-tools zoals [CircleCI](https://circleci.com) en andere. Met deze tools kan een flexibele CI-pijplijn worden gemaakt zonder de last van het beheer van de hele infrastructuur. Uiteindelijk is het een afweging tussen robuustheid en snelheid - kies zorgvuldig uw kant
+
+**Anders:** Als u een niche-leverancier kiest, wordt u mogelijk geblokkeerd als u eenmaal geavanceerde aanpassingen nodig heeft. Aan de andere kant kan het werken met Jenkins kostbare tijd verspillen aan het instellen van de infrastructuur
+
+🔗 [**Lees meer: ​​CI-platform kiezen**](/sections/testingandquality/citools.md)
+
+<br/><br/>
 
 ## ![✔] 4.13 Test your middlewares in isolation
 
 **TL;DR:** When a middleware holds some immense logic that spans many requests, it is worth testing it in isolation without waking up the entire web framework. This can be easily achieved by stubbing and spying on the {req, res, next} objects
 
-**Anders:** A bug in Express middleware === a bug in all or most requests
+**Anders:** Een bug in Express-middleware === een bug in alle of de meeste verzoeken
 
-🔗 [**Read More: Test middlewares in isolation**](/sections/testingandquality/test-middlewares.md)
+🔗 [**Lees meer: Middlewares afzonderlijk testen**](/sections/testingandquality/test-middlewares.md)
 
 <br/><br/><br/>
 
