@@ -1,10 +1,10 @@
-# 优先使用原生 JS 方法，而不是像 Lodash 这样的用户端工具
+# 优先使用原生JS方法，而不是像Lodash这样的用户端工具
 
 
 <br/><br/>
 
 ### 一段解释
-有时，使用原生方法比require _lodash_ 或 _underscore_ 更好，因为这些库会导致性能损失 或 占用更多的空间，
+有时，使用原生方法比require _lodash_ 或 _underscore_ 更好，因为这些库会导致性能损失或占用更多的空间，
 使用原生方法的性能导致 [总体 ~50% 增益](https://github.com/Berkmann18/NativeVsUtils/blob/master/analysis.xlsx)，其中包括以下方法：`Array.concat`、`Array .fill`、`Array.filter`、`Array.map`、`(Array|String).indexOf`、`Object.find`、...
 
 
@@ -13,7 +13,7 @@
 <br/><br/>
 
 ### 示例：基准比较 - Lodash 与 V8（原生）
-下图显示了[各种 Lodash 方法的基准的平均值](https://github.com/Berkmann18/NativeVsUtils/blob/master/nativeVsLodash.ods)，这表明 Lodash 方法 与 V8 方法 相比完成相同的任务平均多占用 146.23% 的时间。
+下图显示了[各种Lodash方法的基准的平均值](https://github.com/Berkmann18/NativeVsUtils/blob/master/nativeVsLodash.ods)，这表明 Lodash 方法与 V8 方法相比完成相同的任务平均多占用146.23%的时间。
 
 ![meanDiag](../../assets/images/sampleMeanDiag.png)
 
@@ -45,7 +45,7 @@ concatSuite.add('lodash', () => _.concat(array, 3, 4, 5))
  > Lodash 和 Underscore 是很棒的现代 JavaScript 实用程序库，它们被前端开发人员广泛使用。 但是，当您面向现代浏览器时，您可能会发现由于 ECMAScript5 [ES5] 和 ECMAScript2015 [ES6]，有许多方法已经被原生支持。 如果你希望你的项目需要更少的依赖，并且你清楚地知道你的目标浏览器，那么你可能不需要 Lodash/Underscore。
 
 ### 示例：用于非原生方法使用的 Linting
-一个 [ESLint 插件](https://www.npmjs.com/package/eslint-plugin-you-dont-need-lodash-underscore) 可以检测你在哪里使用库但不需要警告你 带有建议（参见下面的示例）。<br>
+一个 [ESLint 插件](https://www.npmjs.com/package/eslint-plugin-you-dont-need-lodash-underscore) 可以检测你在哪里使用库但不需要警告你带有建议（参见下面的示例）。<br>
 你设置它的方法是将 `eslint-plugin-you-dont-need-lodash-underscore` 插件添加到你的 ESLint 配置文件中：
 ```json
 {

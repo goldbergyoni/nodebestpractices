@@ -34,6 +34,6 @@ app.use(session({
 ### 其他博主怎么说
 
 来自 [NodeSource 博客](http://nodesource.com/blog/nine-security-tips-to-keep-express-from-getting-pwned/)：
-> ...Express 的默认 cookie 设置不是很安全。 它们可以手动收紧以增强安全性 - 对于应用程序及其用户。*
+> ...Express 的默认 cookie 设置不是很安全。它们可以手动收紧以增强安全性 - 对于应用程序及其用户。*
 
 <br/><br/>

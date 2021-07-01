@@ -2,8 +2,8 @@
 
 ### 一段解释
 
-使用正则表达式固有的风险是需要解析文本和匹配给定模式的计算资源。对于单线程事件循环占主导地位的 Node.js 平台，像解析正则表达式模式这样的 CPU 绑定的操作将使应用程序无响应。
-尽可能避免使用 RegEx 或将任务推迟到专用库，如 [validator.js](https://github.com/chriso/validator.js) 或 [safe-regex](https://github.com/substack/safe-regex) 来检查 RegEx 模式是否安全。
+使用正则表达式的固有风险是解析文本和匹配指定模式所需的计算资源。对于单线程事件循环占主导地位的 Node.js 平台，像解析正则表达式模式这样的 CPU 绑定的操作将使应用程序无响应。
+尽可能避免使用 RegEx 或将任务交给一些专用库，如 [validator.js](https://github.com/chriso/validator.js) 或 [safe-regex](https://github.com/substack/safe-regex) 来检查 RegEx 模式是否安全。
 
 针对易受攻击的 RegEx 模式的一些 [OWASP示例](https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS):
 * (a|aa)+

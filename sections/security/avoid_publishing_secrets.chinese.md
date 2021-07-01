@@ -1,11 +1,11 @@
 # 避免将机密信息发布到NPM仓库
 
 ### 一段解释
-应采取预防措施以避免意外将机密发布到公共 npm 仓库的风险。 `.npmignore` 文件可用于将特定文件或文件夹列入黑名单，或者 将`package.json` 中的 `files` 数组可以充当白名单。
+应采取预防措施以避免意外将机密发布到公共 npm 仓库的风险。`.npmignore`文件可用于将特定文件或文件夹列入黑名单，或者将`package.json` 中的 `files` 数组可以充当白名单。
 
 要查看 npm publish 将真正发布到npm中的内容，可以在 npm publish 命令中添加 `--dry-run` 标志，以查看创建的 tarbell 包的详情。
 
-需要注意的是，如果一个项目同时使用了`.npmignore` 和`.gitignore` 文件，那么不在`.npmignore` 中的所有内容都会被发布到npm仓库中（即`.npmignore` 文件覆盖了`.gitignore` 文件)。 这种情况是混乱的源头，可能导致泄露机密的问题。 开发人员可能最终会更新 `.gitignore` 文件，但忘记更新 `.npmignore`，这可能导致潜在的敏感文件未被推送到源代码控制，但仍包含在 npm 包中。
+需要注意的是，如果一个项目同时使用了`.npmignore`和`.gitignore`文件，那么不在`.npmignore`中的所有内容都会被发布到npm仓库中（即`.npmignore` 文件覆盖了`.gitignore` 文件)。 这种情况是混乱的源头，可能导致泄露机密的问题。开发人员可能最终会更新 `.gitignore` 文件，但忘记更新 `.npmignore`，这可能导致潜在的敏感文件未被推送到源代码控制，但仍包含在 npm 包中。
 
 ### 代码示例
 .npmignore文件示例
