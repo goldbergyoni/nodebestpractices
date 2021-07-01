@@ -40,6 +40,6 @@ router.get('/ops/heapdump', (req, res, next) => {
 
 [Préparez votre application Node.js pour la production (Slides)](http://naugtur.pl/pres3/node2prod)
 
-▶ [Préparez votre application Node.js pour la production (Video)](https://www.youtube.com/watch?v=lUsNne-_VIk)
+▶ [Préparez votre application Node.js pour la production (Vidéo)](https://www.youtube.com/watch?v=lUsNne-_VIk)
 
 ![Préparez votre application Node.js pour la production](/assets/images/createmaintenanceendpoint1.png "Préparez votre application Node.js pour la production")

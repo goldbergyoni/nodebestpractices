@@ -11,7 +11,7 @@ La programmation défensive est une approche pour améliorer les logiciels et le
 ### Exemple de code : validation d'une entrée JSON complexe à l'aide de « Joi »
 
 ```javascript
-var memberSchema = Joi.object().keys({
+const memberSchema = Joi.object().keys({
  password: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/),
  birthyear: Joi.number().integer().min(1900).max(2013),
  email: Joi.string().email()
