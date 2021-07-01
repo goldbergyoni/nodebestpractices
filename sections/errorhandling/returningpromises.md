@@ -137,7 +137,7 @@ Error: with all frames present
 </p>
 </details>
 
-</br>
+<br/>
 
 ### Code Example Anti-pattern #3: direct usage of async callback where sync callback is expected
 

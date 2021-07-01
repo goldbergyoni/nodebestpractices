@@ -137,7 +137,7 @@ Error: avec toutes les instructions présentes
 </p>
 </details>
 
-</br>
+<br/>
 
 ### Exemple de code incorrect : utilisation directe du rappel async lorsque le rappel sync est attendu
 

@@ -137,7 +137,7 @@ Error: zati guztiak edukiz
 </p>
 </details>
 
-</br>
+<br/>
 
 ### #3 anti ereduaren kode adibidea: callback asinkronoen erabilera zuzena callback sinkronoa espero zen lekuan
 
