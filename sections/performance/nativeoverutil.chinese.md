@@ -5,7 +5,7 @@
 
 ### 一段解释
 有时，使用原生方法比require _lodash_ 或 _underscore_ 更好，因为这些库会导致性能损失或占用更多的空间，
-使用原生方法的性能导致 [总体 ~50% 增益](https://github.com/Berkmann18/NativeVsUtils/blob/master/analysis.xlsx)，其中包括以下方法：`Array.concat`、`Array .fill`、`Array.filter`、`Array.map`、`(Array|String).indexOf`、`Object.find`、...
+使用原生方法的性能导致[总体~50%增益](https://github.com/Berkmann18/NativeVsUtils/blob/master/analysis.xlsx)，其中包括以下方法：`Array.concat`、`Array .fill`、`Array.filter`、`Array.map`、`(Array|String).indexOf`、`Object.find`、...
 
 
 <!-- comp here: https://gist.github.com/Berkmann18/3a99f308d58535ab0719ac8fc3c3b8bb-->
@@ -40,9 +40,9 @@ concatSuite.add('lodash', () => _.concat(array, 3, 4, 5))
 您可以在 [此处看到结果](https://github.com/Berkmann18/NativeVsUtils/blob/master/index.txt) 或 [运行该代码](https://github.com/Berkmann18/NativeVsUtils/blob/master/index.js) (区别在于：内容相同但带有颜色)。
 
 ### 引用博客：“您不需要（可能不需要）Lodash/Underscore”
-来自 [仓库，聚焦 Lodash 和 Underscore](https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore).
+来自 [回购在这个问题上，聚焦 Lodash 和 Underscore](https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore).
 
- > Lodash 和 Underscore 是很棒的现代 JavaScript 实用程序库，它们被前端开发人员广泛使用。 但是，当您面向现代浏览器时，您可能会发现由于 ECMAScript5 [ES5] 和 ECMAScript2015 [ES6]，有许多方法已经被原生支持。 如果你希望你的项目需要更少的依赖，并且你清楚地知道你的目标浏览器，那么你可能不需要 Lodash/Underscore。
+ > Lodash 和 Underscore 是很棒的现代 JavaScript 实用程序库，它们被前端开发人员广泛使用。 但是，当您面向现代浏览器时，您可能会发现由于 ECMAScript5 [ES5] 和 ECMAScript2015 [ES6]，有许多方法已经被原生支持。如果你希望你的项目需要更少的依赖，并且你清楚地知道你的目标浏览器，那么你可能不需要 Lodash/Underscore。
 
 ### 示例：用于非原生方法使用的 Linting
 一个 [ESLint 插件](https://www.npmjs.com/package/eslint-plugin-you-dont-need-lodash-underscore) 可以检测你在哪里使用库但不需要警告你带有建议（参见下面的示例）。<br>
