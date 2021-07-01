@@ -277,9 +277,9 @@ awaited many times in different places
 
 ### References:
   <span id="1">1. </span>[Blog post on zero-cost async stacktraces in v8](https://v8.dev/blog/fast-async)
-  <br>
+  <br/>
 
   <span id="2">2. </span>[Document on zero-cost async stacktraces with mentioned here implementation details](
     https://docs.google.com/document/d/13Sy_kBIJGP0XT34V1CV3nkWya4TwYx9L3Yv45LdGB6Q/edit
   )
-  <br>
+  <br/>

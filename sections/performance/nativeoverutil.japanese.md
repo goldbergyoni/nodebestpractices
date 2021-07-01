@@ -46,7 +46,7 @@ concatSuite.add('lodash', () => _.concat(array, 3, 4, 5))
  > Lodash や Underscore は素晴らしいモダンな JavaScript ユーティリティライブラリであり、フロントエンド開発者に広く利用されています。しかし、最新のブラウザをターゲットにしている場合、ECMAScript5 [ES5] や ECMAScript2015 [ES6] のおかげで、すでにネイティブでサポートされているメソッドがたくさんあることに気づくかもしれません。プロジェクトに必要な依存関係を少なくしたく、ターゲットブラウザを明確に理解している場合は、Lodash/Underscore は必要ないかもしれません。
 
 ### 例: 非ネイティブメソッドの使用法に対応した Lint
-ライブラリを使っているが必要のない場所を検知して、提案付きで警告してくれる[ ESLint プラグイン](https://www.npmjs.com/package/eslint-plugin-you-dont-need-lodash-underscore)というものがあります。(下の例を参照)<br>
+ライブラリを使っているが必要のない場所を検知して、提案付きで警告してくれる[ ESLint プラグイン](https://www.npmjs.com/package/eslint-plugin-you-dont-need-lodash-underscore)というものがあります。(下の例を参照)<br/>
 設定方法は、ESLint の設定ファイルに `eslint-plugin-you-dont-need-lodash-underscore` プラグインを追加することです:
 ```json
 {

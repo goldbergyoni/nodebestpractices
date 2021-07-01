@@ -49,7 +49,7 @@ Non hau bueltatzen duen:
 
 ### Adibidea: jatorrizkoak ez diren metodoak erabiltzeko linting-a
 
-Badago [ESLint plugin](https://www.npmjs.com/package/eslint-plugin-you-dont-need-lodash-underscore) bat behar ez dituzun liburutegiak atzeman eta aholkuak ematen dizkizuna (behean duzu adibidea).<br> Plugin hori erabili nahi baduzu, gehitu `eslint-plugin-you-dont-need-lodash-underscore` plugina zure ESLint ezarpen fitxategiari:
+Badago [ESLint plugin](https://www.npmjs.com/package/eslint-plugin-you-dont-need-lodash-underscore) bat behar ez dituzun liburutegiak atzeman eta aholkuak ematen dizkizuna (behean duzu adibidea).<br/> Plugin hori erabili nahi baduzu, gehitu `eslint-plugin-you-dont-need-lodash-underscore` plugina zure ESLint ezarpen fitxategiari:
 
 ```json
 {
