@@ -3,13 +3,13 @@
 # Praktik Terbaik Node.js
 
 <h1 align="center">
-  <img src="assets/images/banner-2.jpg" alt="Praktik Terbaik Node.js">
+  <img src="assets/images/banner-2.jpg" alt="Praktik Terbaik Node.js"/>
 </h1>
 
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%20102%20Best%20Practices-blue.svg" alt="102 item"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20December%2012%202020-green.svg" alt="Pembaruan terakhir: November, 2020"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2014.0.0-brightgreen.svg" alt="Diperbarui untuk Node 14.0.0">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%20102%20Best%20Practices-blue.svg" alt="102 item"/> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20December%2012%202020-green.svg" alt="Pembaruan terakhir: November, 2020"/> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2014.0.0-brightgreen.svg" alt="Diperbarui untuk Node 14.0.0"/>
 </div>
 
 <br/>
@@ -1295,7 +1295,7 @@ Semua terjemahan merupakan kontribusi dari komunitas. Kami akan dengan senang ha
 
 Memperkenalkan anggota komite pengarah - orang-orang yang bekerja sama untuk memberikan panduan dan arahan masa depan proyek. Selain itu, setiap anggota komite memimpin proyek yang dilacak dalam [Github projects](https://github.com/goldbergyoni/nodebestpractices/projects) kami.
 
-<img align="left" width="100" height="100" src="assets/images/members/yoni.png">
+<img align="left" width="100" height="100" src="assets/images/members/yoni.png"/>
 
 [Yoni Goldberg](https://github.com/goldbergyoni)
 <a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
@@ -1305,7 +1305,7 @@ Konsultan Node.js independen yang bekerja dengan pelanggan di AS, Eropa, dan Isr
 
 <br/>
 
-<img align="left" width="100" height="100" src="assets/images/members/bruno.png">
+<img align="left" width="100" height="100" src="assets/images/members/bruno.png"/>
 
 [Bruno Scheufler](https://github.com/BrunoScheufler)
 <a href="https://brunoscheufler.com/"><img src="assets/images/www.png" width="16" height="16"></img></a>
@@ -1314,7 +1314,7 @@ Konsultan Node.js independen yang bekerja dengan pelanggan di AS, Eropa, dan Isr
 
 <br/>
 
-<img align="left" width="100" height="100" src="assets/images/members/kyle.png">
+<img align="left" width="100" height="100" src="assets/images/members/kyle.png"/>
 
 [Kyle Martin](https://github.com/js-kyle)
 <a href="https://twitter.com/kylemartin_93"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
@@ -1324,7 +1324,7 @@ Pengembang Full Stack & Site Reliability Engineer yang berbasis di Selandia Baru
 
 <br/>
 
-<img align="left" width="100" height="100" src="assets/images/members/kevyn.png">
+<img align="left" width="100" height="100" src="assets/images/members/kevyn.png"/>
 
 [Kevyn Bruyere](https://github.com/kevynb)
 <a href="https://www.linkedin.com/in/kevynbruyere/"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
@@ -1335,7 +1335,7 @@ Pengembang full-stack independen dengan selera untuk Ops dan otomatisasi.
 
 ### Mantan Komite Pengarah
 
-<img align="left" width="100" height="100" src="assets/images/members/sagir.png">
+<img align="left" width="100" height="100" src="assets/images/members/sagir.png"/>
 
 [Sagir Khan](https://github.com/sagirk)
 <a href="https://twitter.com/sagir_k"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
@@ -1352,13 +1352,13 @@ Terima kasih untuk semua kolaborator kami! 🙏
 
 Kolaborator kami adalah anggota yang sering berkontribusi ke repositori ini, melalui menyarankan praktik terbaik baru, menyortir masalah, meninjau pull request dan banyak lagi. Jika Anda tertarik untuk membantu kami memandu ribuan orang untuk membuat aplikasi Node.js yang lebih baik, silakan baca [contributor guidelines](/.operations/CONTRIBUTING.md) 🎉
 
-| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
+| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"/></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"/></a> |
 | :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
 |                                    [Ido Richter (Founder)](https://github.com/idori)                                    |                                        [Keith Holliday](https://github.com/TheHollidayInn)                                         |
 
 ### Mantan Kolaborator
 
-| <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"></a> |
+| <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"/></a> |
 | :-------------------------------------------------------------------------------------------------------------------------: |
 |                                        [Refael Ackermann](https://github.com/refack)                                        |
 

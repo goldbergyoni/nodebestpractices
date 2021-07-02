@@ -3,13 +3,13 @@
 # Node.js 모범 사례
 
 <h1 align="center">
-  <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices">
+  <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices"/>
 </h1>
 
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2086%20Best%20Practices-blue.svg" alt="86 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20March%2012%202020-green.svg" alt="Last update: March, 2020"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.12.0-brightgreen.svg" alt="Updated for Node 13.1.0">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2086%20Best%20Practices-blue.svg" alt="86 items"/> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20March%2012%202020-green.svg" alt="Last update: March, 2020"/> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.12.0-brightgreen.svg" alt="Updated for Node 13.1.0"/>
 </div>
 
 <br/>
@@ -1103,7 +1103,7 @@ null == undefined; // true
 
 프로젝트를 지도하고 앞으로 나아갈 방향을 제시하는데 함께 일하는 운영 위원회 일원들을 소개합니다. 추가로, 위원회원들은 각자 [Github 프로젝트](https://github.com/goldbergyoni/nodebestpractices/projects) 아래에 인행되는 프로젝트들을 인솔합니다.
 
-<img align="left" width="100" height="100" src="assets/images/members/yoni.png">
+<img align="left" width="100" height="100" src="assets/images/members/yoni.png"/>
 
 [요니 골드버그](https://github.com/goldbergyoni)
 <a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
@@ -1113,7 +1113,7 @@ null == undefined; // true
 
 <br/>
 
-<img align="left" width="100" height="100" src="assets/images/members/bruno.png">
+<img align="left" width="100" height="100" src="assets/images/members/bruno.png"/>
 
 [브루노 슈플러](https://github.com/BrunoScheufler)
 <a href="https://brunoscheufler.com/"><img src="assets/images/www.png" width="16" height="16"></img></a>
@@ -1122,7 +1122,7 @@ null == undefined; // true
 
 <br/>
 
-<img align="left" width="100" height="100" src="assets/images/members/kyle.png">
+<img align="left" width="100" height="100" src="assets/images/members/kyle.png"/>
 
 [카일 마틴](https://github.com/js-kyle)
 <a href="https://twitter.com/kylemartin_93"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
@@ -1132,7 +1132,7 @@ null == undefined; // true
 
 <br/>
 
-<img align="left" width="100" height="100" src="assets/images/members/sagir.png">
+<img align="left" width="100" height="100" src="assets/images/members/sagir.png"/>
 
 [사기르 칸](https://github.com/sagirk)
 <a href="https://twitter.com/sagir_k"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
@@ -1149,13 +1149,13 @@ null == undefined; // true
 
 공동 저자들은 새로운 모범사례를 제안하거나, 사안을 분류하거나, 풀리퀘스트를 검토하는 등 리포지토리에 정기적으로 기여하는 일원들입니다. 수천명의 사람들이 더 나은 Node.js 애플리케이션을 만들 수 있도록 안내하며 돕는데 관심이 있으시다면 [기여자 지침서](/.operations/CONTRIBUTING.md)를 읽어주세요 🎉
 
-| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> | <a href="https://github.com/kevynb" target="_blank"><img src="assets/images/members/kevyn.png" width="59" height="59"></a> |
+| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"/></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"/></a> | <a href="https://github.com/kevynb" target="_blank"><img src="assets/images/members/kevyn.png" width="59" height="59"/></a> |
 | :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: |
 |                                     [이도 릭터 (창립주)](https://github.com/idori)                                      |                                         [키스 홀리데이](https://github.com/TheHollidayInn)                                         |                                         [케빈 브뤼예르](https://github.com/kevynb)                                         |
 
 ### 전 공동 저자
 
-| <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"></a> |
+| <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"/></a> |
 | :-------------------------------------------------------------------------------------------------------------------------: |
 |                                        [Refael Ackermann](https://github.com/refack)                                        |
 
