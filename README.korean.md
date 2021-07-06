@@ -838,7 +838,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 보안함수(secure function)를 쓰지 않고 저장된 암호나 기밀사항들은 억지기법이나 사전공격에 취약해져 결국엔 다 뚫리게 된다.
 
-🔗 [**자세히 보기: Use Bcrypt**](/sections/security/bcryptpasswords.md)
+🔗 [**자세히 보기: Use Bcrypt**](/sections/security/userpasswords.md)
 
 <br/><br/>
 
