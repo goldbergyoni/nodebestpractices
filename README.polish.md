@@ -1143,5 +1143,5 @@ Nasi współpracownicy są członkami, którzy regularnie współuczestniczą w 
 
 ## Dziękujemy za uwagi
 
-Doceniamy każdy wkład, od poprawki pojedynczego słowa, po nową najlepszą praktykę. Zobacz naszych autorów i [dokumentację CONTRIBUTORS tutaj!](./.operations/CONTRIBUTORS.md)
+Doceniamy każdy wkład, od poprawki pojedynczego słowa, po nową najlepszą praktykę. Zobacz naszych autorów i [dokumentację CONTRIBUTORS tutaj!](./.operations/CONTRIBUTING.md)
 <br/><br/><br/>

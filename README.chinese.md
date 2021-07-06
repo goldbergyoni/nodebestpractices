@@ -1014,7 +1014,7 @@ Full Stack Developer based in New Zealand, interested in architecting and buildi
 
 ## Thank You Notes
 
-We appreciate any contribution, from a single word fix to a new best practice. View our contributors and [contributing documentation here!](./.operations/CONTRIBUTORS.md)
+We appreciate any contribution, from a single word fix to a new best practice. View our contributors and [contributing documentation here!](./.operations/CONTRIBUTING.md)
 
 <br/><br/><br/>
 
