@@ -1166,6 +1166,6 @@ Nossos colaboradores são membros que estão contribuindo com o repositório em 
 
 ## Thank You Notes
 
-We appreciate any contribution, from a single word fix to a new best practice. View our contributors and [contributing documentation here!](./.operations/CONTRIBUTING.md)
+We appreciate any contribution, from a single word fix to a new best practice. View our contributors and [contributing documentation here!](./README.md#contributors-)
 
 <br/><br/><br/>
