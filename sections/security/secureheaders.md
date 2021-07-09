@@ -5,7 +5,7 @@
 
 ### One Paragraph Explainer
 
-There are security-related headers used to secure your application further. The most important headers are listed below. You can also visit the sites linked at the bottom of this page to get more information on this topic. You can easily set these headers using the [Helmet](https://www.npmjs.com/package/helmet) module for express ([Helmet for koa](https://www.npmjs.com/package/koa-helmet)).
+There are security-related headers used to secure your application further. The most important headers are listed below. You can also visit the sites linked at the bottom of this page to get more information on this topic. You can easily set these headers using the [Helmet](https://www.npmjs.com/package/helmet) module for Express ([Helmet for koa](https://www.npmjs.com/package/koa-helmet)).
 
 <br/><br/>
 
@@ -18,7 +18,7 @@ There are security-related headers used to secure your application further. The 
 - [Referrer-Policy](#referrer-policy)
 - [Expect-CT](#expect-ct)
 - [Content-Security-Policy](#content-security-policy)
-- [Additional Resource](#additional-resources)
+- [Additional Resources](#additional-resources)
 
 <br/><br/>
 

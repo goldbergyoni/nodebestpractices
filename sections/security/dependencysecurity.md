@@ -11,6 +11,7 @@ There is a number of tools available to help identify third-party packages in No
 - [NPM audit](#npm-audit)
 - [Snyk](#snyk)
 - [Greenkeeper](#greenkeeper)
+- [Additional Resources](#additional-resources)
 
 ### NPM Audit
 
@@ -28,8 +29,8 @@ Snyk offers a feature-rich CLI, as well as GitHub integration. Snyk goes further
 
 Snyk's feature rich website also allows for ad-hoc assessment of dependencies when provided with a GitHub repository or npm module url. You can also search for npm packages which have vulnerabilities directly.
 
-An example of the output of the Synk GitHub integration automatically created pull request:
-![synk GitHub example](/assets/images/snyk.png)
+An example of the output of the Snyk GitHub integration automatically created pull request:
+![snyk GitHub example](/assets/images/snyk.png)
 
 🔗 [Read on: Snyk website](https://snyk.io/)
 
@@ -37,7 +38,7 @@ An example of the output of the Synk GitHub integration automatically created pu
 
 ### Greenkeeper
 
-Greenkeeper is a service which offers real-time dependency updates, which keeps an application more secure by always using the most update to date and patched dependency versions.
+Greenkeeper is a service which offers real-time dependency updates, which keeps an application more secure by always using the most up to date and patched dependency versions.
 
 Greenkeeper watches the npm dependencies specified in a repository's `package.json` file, and automatically creates a working branch with each dependency update. The repository CI suite is then run to reveal any breaking changes for the updated dependency version in the application. If CI fails due to the dependency update, a clear and concise issue is created in the repository to be auctioned, outlining the current and updated package versions, along with information and commit history of the updated version.
 

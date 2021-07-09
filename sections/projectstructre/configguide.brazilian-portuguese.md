@@ -14,7 +14,7 @@ Ao lidar com dados de configuração, muitas coisas podem simplesmente incomodar
 
 4. Alguns cenários de configuração avançada exigem a injeção de valores de configuração via linha de comando (vargs) ou informações de configuração de sincronização por meio de um cache centralizado, como o Redis, para que vários servidores usem os mesmos dados de configuração.
 
-Algumas bibliotecas de configuração podem fornecer a maioria desses recursos gratuitamente, dê uma olhada nas bibliotecas npm como [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) e [config](https://www.npmjs.com/package/config) que satisfazem muitos desses requisitos.
+Algumas bibliotecas de configuração podem fornecer a maioria desses recursos gratuitamente, dê uma olhada nas bibliotecas npm como [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config) e [convict](https://www.npmjs.com/package/convict) que satisfazem muitos desses requisitos.
 
 <br/><br/>
 

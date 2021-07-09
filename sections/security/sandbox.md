@@ -11,23 +11,23 @@ As a rule of thumb, one should run his own JavaScript files only. Theories aside
 ### Code example - Using Sandbox library to run code in isolation
 
 ```javascript
-const Sandbox = require("sandbox")
-  , s = new Sandbox()
+const Sandbox = require('sandbox');
+const s = new Sandbox();
 
-s.run( "lol)hai", function( output ) {
+s.run('lol)hai', (output) => {
   console.log(output);
   //output='Syntax error'
 });
 
 // Example 4 - Restricted code
-s.run( "process.platform", function( output ) {
+s.run('process.platform', (output) => {
   console.log(output);
   //output=Null
-})
+});
 
 // Example 5 - Infinite loop
-s.run( "while (true) {}", function( output ) {
+s.run('while (true) {}', (output) => {
   console.log(output);
   //output='Timeout'
-})
+});
 ```

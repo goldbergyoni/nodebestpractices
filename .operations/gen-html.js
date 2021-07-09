@@ -7,6 +7,7 @@ const { readdir, readFile, writeFile } = require('graceful-fs');
 const imagemin = require('imagemin');
 const imageminJpegtran = require('imagemin-jpegtran');
 const imageminPngquant = require('imagemin-pngquant');
+const CIInfo = require('ci-info');
 
 const converter = new showdown.Converter();
 
@@ -21,8 +22,8 @@ const imageminOpts = {
 
 console.info(`Working in [${process.cwd()}]`);
 
-const { GITHUB_TOKEN, TRAVIS_BRANCH, TRAVIS, TRAVIS_REPO_SLUG } = process.env;
-const isCI = !!TRAVIS;
+const { isCI } = CIInfo;
+const { GITHUB_TOKEN, OWNER_AND_REPO, BRANCH, IS_PR, IS_FORK } = getConfigFromEnv();
 
 readDirPromise('./')
     .then(async (fileNames) => {
@@ -35,15 +36,15 @@ readDirPromise('./')
                 const templateHTML = await readFilePromise(templateFilePath);
                 const processedTemplateHTML = await inlineResources(templateHTML);
                 const outputHTML = await processMDFile(fileName, processedTemplateHTML);
-                console.info(`Completed Generation in [${(Date.now() - startTime) / 1000}s]`);
+                console.info(`Completed Generation in [${computeElapsedTime(startTime)}s]`);
 
                 const outFileName = path.parse(fileName).name + '.html';
                 const outFilePath = path.join('.operations', 'out', outFileName);
                 console.info(`Writing output to [${outFilePath}]`);
                 await writeFilePromise(outFilePath, outputHTML);
 
-                if (isCI && TRAVIS_BRANCH === 'master') {
-                    const repo = new Repository(TRAVIS_REPO_SLUG, {
+                if(shouldUpdateGitHubPages()) {
+                    const repo = new Repository(OWNER_AND_REPO, {
                         token: GITHUB_TOKEN
                     });
 
@@ -51,7 +52,7 @@ readDirPromise('./')
                     await repo.writeFile('gh-pages', outFileName, outputHTML, ':loudspeaker: :robot: Automatically updating built HTML file', {});
                 }
             } catch (err) {
-                console.error(`Failed to generate from [${fileName}] in [${(Date.now() - startTime) / 1000}s]`, err);
+                console.error(`Failed to generate from [${fileName}] in [${computeElapsedTime(startTime)}s]`, err);
                 process.exit(1);
             }
         }
@@ -60,6 +61,40 @@ readDirPromise('./')
         console.log(`🎉 Finished gen-html 🎉`);
     })
 
+function getConfigFromEnv() {
+    if (CIInfo.GITHUB_ACTIONS) {
+        return getConfigFromGithubActionEnv()
+    }
+    return process.env;
+}
+
+function getConfigFromGithubActionEnv() {
+    const config = {
+        ...process.env,
+
+        OWNER_AND_REPO: process.env.GITHUB_REPOSITORY,
+        
+        IS_PR: CIInfo.IS_PR !== null ? CIInfo.IS_PR : process.env.GITHUB_EVENT_NAME === 'pull_request',
+        
+        // We assume we're in PR and and we get the source for the PR
+        BRANCH: process.env.GITHUB_HEAD_REF,
+    };
+
+    if(!config.IS_PR) {
+        // GITHUB_REF example: `refs/heads/main`
+        config.BRANCH = process.env.GITHUB_REF.substring('refs/heads/'.length);
+    }
+
+    return config;
+}
+
+function shouldUpdateGitHubPages() {
+    return isCI && !IS_FORK && !IS_PR && BRANCH === 'master';
+}
+
+function computeElapsedTime(startTime) {
+    return (Date.now() - startTime) / 1000;
+}
 
 
 async function processMDFile(filePath = '/', templateHTML = null) {

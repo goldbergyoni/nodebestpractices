@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2082%20Best%20Practices-blue.svg" alt="82 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Jun%205%202019-green.svg" alt="Last update: June 5, 2019"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.4.0%20LTS-brightgreen.svg" alt="Updated for Node 12.4.0 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2082%20Best%20Practices-blue.svg" alt="82 items"/> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Jun%205%202019-green.svg" alt="Last update: June 5, 2019"/> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.4.0%20LTS-brightgreen.svg" alt="Updated for Node 12.4.0 LTS"/>
 </div>
 
 <br/>
@@ -20,7 +20,7 @@
 # 欢迎! 首先您应该知道的三件事情:
 **1. 当您读到这里，实际上您读了很多关于Node.js的优秀文章 -** 这是对Node.js最佳实践中排名最高的内容的总结和分享
 
-**2. 这里是最大的汇集，且每周都在增长 -** 当前，超过50个最佳实现，样式指南，架构建议已经呈现。每天都有新的issue和PR被创建，以使这本在线书籍不断更新。我们很乐于见到您能在这里做出贡献，不管是修复一些代码的错误，或是提出绝妙的新想法。请查看我们的[milestones](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
+**2. 这里是最大的汇集，且每周都在增长 -** 当前，超过50个最佳实现，样式指南，架构建议已经呈现。每天都有新的issue和PR被创建，以使这本在线书籍不断更新。我们很乐于见到您能在这里做出贡献，不管是修复一些代码的错误，或是提出绝妙的新想法。请查看我们的[milestones](https://github.com/goldbergyoni/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
 
 **3. 大部分的条目包含额外的信息 -** 大部分的最佳实践条目的旁边，您将发现 **🔗Read More** 链接，它将呈现给您示例代码，博客引用和更多信息
 
@@ -33,7 +33,7 @@
 4. [测试和总体质量实践 (8) ](#4-testing-and-overall-quality-practices)
 5. [进入生产实践 (16) ](#5-going-to-production-practices)
 6. :star: 新: [安全实践(23)](#6-security-best-practices)
-7. Performance Practices ([coming soon](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
+7. Performance Practices ([coming soon](https://github.com/goldbergyoni/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 
 
 <br/><br/><br/>
@@ -82,7 +82,7 @@
 ## ![✔] 1.5 使用易于设置环境变量，安全和分级的配置
 
 
-**TL;DR:** 一个完美无瑕的配置安装应该确保 (a) 元素可以从文件中，也可以从环境变量中读取 (b) 密码排除在提交的代码之外 (c) 为了易于检索，配置是分级的。仅有几个包可以满足这样的条件，比如[rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) 和 [config](https://www.npmjs.com/package/config)。
+**TL;DR:** 一个完美无瑕的配置安装应该确保 (a) 元素可以从文件中，也可以从环境变量中读取 (b) 密码排除在提交的代码之外 (c) 为了易于检索，配置是分级的。仅有几个包可以满足这样的条件，比如[rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config) 和 [convict](https://www.npmjs.com/package/convict)。
 
 **否则:** 不能满足任意的配置要求将会使开发，运维团队，或者两者，易于陷入泥潭。
 
@@ -401,7 +401,7 @@ null == undefined   // true
 
 ## ![✔] 4.2 使用一个linter检测代码问题
 
-**TL;DR:** 使用代码linter检查基本质量并及早检测反模式。在任何测试之前运行它, 并将其添加为预提交的git钩子, 以最小化审查和更正任何问题所需的时间。也可在[Section 3](https://github.com/i0natan/nodebestpractices#3-code-style-practices)中查阅编码样式实践
+**TL;DR:** 使用代码linter检查基本质量并及早检测反模式。在任何测试之前运行它, 并将其添加为预提交的git钩子, 以最小化审查和更正任何问题所需的时间。也可在[Section 3](https://github.com/goldbergyoni/nodebestpractices#3-code-style-practices)中查阅编码样式实践
 
 **否则:** 您可能让一些反模式和易受攻击的代码传递到您的生产环境中。
 
@@ -706,11 +706,11 @@ null == undefined   // true
 
 <br/><br/>
 
-## ![✔] 6.5. 通用安全最佳实际集合
+## ![✔] 6.5. 通用安全最佳实践集合
 
 **TL;DR:** 这些是与Node.js不直接相关的安全建议的集合-Node的实现与任何其他语言没有太大的不同。单击 "阅读更多" 浏览。
 
-🔗 [**更多: 通用安全最佳实际**](/sections/security/commonsecuritybestpractices.md)
+🔗 [**更多: 通用安全最佳实践**](/sections/security/commonsecuritybestpractices.md)
 
 <br/><br/>
 
@@ -770,7 +770,7 @@ null == undefined   // true
 
 **否则:** 您疏忽和宽松的方法大大增加了攻击面, 并鼓励攻击者尝试许多输入, 直到他们找到一些组合, 使应用程序崩溃。
 
-🔗 [**更多: 验证传人的JSON schemas**](/sections/security/validation.md)
+🔗 [**更多: 验证传入的JSON schemas**](/sections/security/validation.md)
 
 <br/><br/>
 
@@ -926,20 +926,69 @@ null == undefined   // true
 
 <br/><br/><br/>
 
+## ![✔] 6.24. 避免不安全的重定向
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
+
+**TL;DR:** 不验证用户输入的重定向可使攻击者启动网络钓鱼诈骗，窃取用户凭据，以及执行其他恶意操作。
+
+**否则:** 当攻击者发现你没有校验用户提供的外部输入时，他们会在论坛、社交媒体以和其他公共场合发布他们精心制作的链接来诱使用户点击，以此达到漏洞利用的目的。
+
+🔗 [**阅读更多: 避免不安全的重定向**](/sections/security/saferedirects.chinese.md)
+
+<br/><br/><br/>
+
+## ![✔] 6.25. 避免将机密信息发布到NPM仓库
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
+
+**TL;DR:** 您应该采取预防措施来避免偶然地将机密信息发布到npm仓库的风险。 一个 `.npmignore` 文件可以被用作忽略掉特定的文件或目录, 或者一个在 `package.json` 中的 `files` 数组可以起到一个白名单的作用.
+
+**否则:** 您项目的API密钥、密码或者其它机密信息很容易被任何碰到的人滥用，这可能会导致经济损失、身份冒充以及其它风险。
+
+🔗 [**阅读更多: 避免发布机密信息**](/sections/security/avoid_publishing_secrets.md)
+
+<br/><br/><br/>
+
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+
+# `7. 草稿: 有关性能的最佳实践`
+
+## 我们的贡献者们正在努力完善这个章节。 [你想要加入吗?](https://github.com/goldbergyoni/nodebestpractices/issues/256)
+
+<br/><br/>
+
+## ![✔] 7.1. 不要阻塞事件循环
+
+**TL;DR:** 避免执行CPU密集型的任务，并将这些任务转移到基于上下文的专用线程中，因为它们会阻塞大多数单线程事件循环。
+
+**否则:** 由于事件循环被阻塞了，Node.js 将无法处理其它请求，从而导致同时请求的用户的延迟。 **3000 位用户正在等待响应，内容本身已经准备好了提供服务， 但是一个单独的请求阻止了服务器将结果分发回去。**
+
+🔗 [**阅读更多: 不要阻塞事件循环**](/sections/performance/block-loop.md)
+
+<br /><br /><br />
+
+## ![✔] 7.2. 优先使用原生的JS方法，而不是像 Lodash 这样的用户空间级别的实用工具
+
+**TL;DR:** 使用像 `lodash` 和 `underscore` 这样的实用库替代原生的JS方法，通常来说这么做更不好，因为它导致了一些不必要的依赖项以及更差的性能表现。
+请记住，随着新的V8引擎以及新的ES标准的引入，原生方法得到了改进，它们现在会比这些实用工具库高出大概 50% 的性能。
+
+**否则:** 你将不得不维护一些性能更低的项目，在这些项目中，你本可以很简单的使用那些已经可以用的东西，或者用几行代码来取代掉几个文件。
+
+🔗 [**阅读更多: 原生方法胜过实用工具**](/sections/performance/nativeoverutil.md)
+
+<br/><br/><br/>
+
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
 # `API Practices`
 
 ## Our contributors are working on this section. Would you like to join?
 
-# `Performance Practices`
-
-## Our contributors are working on this section. Would you like to join?
-
 <br/><br/><br/>
 
 # Milestones
-To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/i0natan/nodebestpractices/milestones) and join the working groups if you want to contribute to this project.
+To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/goldbergyoni/nodebestpractices/milestones) and join the working groups if you want to contribute to this project.
 
 <br/><br/>
 
@@ -968,3 +1017,4 @@ Full Stack Developer based in New Zealand, interested in architecting and buildi
 We appreciate any contribution, from a single word fix to a new best practice. View our contributors and [contributing documentation here!](CONTRIBUTORS.md)
 
 <br/><br/><br/>
+

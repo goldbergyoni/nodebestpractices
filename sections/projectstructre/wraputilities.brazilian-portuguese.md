@@ -10,4 +10,4 @@ Quando você começa a crescer e tem componentes diferentes em servidores difere
 
 ### Compartilhando seus próprios utilitários comuns em ambientes e componentes
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/Privatenpm.png "Solução de estruturação por componentes")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/Privatenpm.png "Solução de estruturação por componentes")

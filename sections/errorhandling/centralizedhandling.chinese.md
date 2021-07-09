@@ -43,11 +43,11 @@ app.use(function (err, req, res, next) {
 ```javascript
 module.exports.handler = new errorHandler();
  
-function errorHandler(){
+function errorHandler() {
     this.handleError = function (err) {
         return logger.logError(err).then(sendMailToAdminIfCritical).then(saveInOpsQueueIfCritical).then(determineIfOperationalError);
     }
-
+}
 ```
 
 ### 代码示例 – 反模式：在中间件内处理错误

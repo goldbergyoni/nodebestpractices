@@ -11,17 +11,17 @@ Some [OWASP examples](https://www.owasp.org/index.php/Regular_expression_Denial_
 
 <br/><br/>
 
-### Code Example – Enabling SSL/TLS using the Express framework
+### Code Example – Validating exponential time RegEx and using validators instead of RegEx
 
 ```javascript
-var saferegex = require('safe-regex');
-var emailRegex = /^([a-zA-Z0-9])(([\-.]|[_]+)?([a-zA-Z0-9]+))*(@){1}[a-z0-9]+[.]{1}(([a-z]{2,3})|([a-z]{2,3}[.]{1}[a-z]{2,3}))$/;
+const saferegex = require('safe-regex');
+const emailRegex = /^([a-zA-Z0-9])(([\-.]|[_]+)?([a-zA-Z0-9]+))*(@){1}[a-z0-9]+[.]{1}(([a-z]{2,3})|([a-z]{2,3}[.]{1}[a-z]{2,3}))$/;
 
 // should output false because the emailRegex is vulnerable to redos attacks
 console.log(saferegex(emailRegex));
 
 // instead of the regex pattern, use validator:
-var validator = require('validator');
+const validator = require('validator');
 console.log(validator.isEmail('liran.tal@gmail.com'));
 ```
 

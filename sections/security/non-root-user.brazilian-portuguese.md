@@ -9,8 +9,9 @@ De acordo com o "Princípio do menor privilégio", um usuário/processo deve ser
 
 ### Exemplo de código - Criando uma imagem do Docker como não root
 
-```javascript
+```dockerfile
 FROM node:latest
+
 COPY package.json .
 RUN npm install
 COPY . .

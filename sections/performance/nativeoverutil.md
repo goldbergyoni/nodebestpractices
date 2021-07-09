@@ -4,8 +4,7 @@
 <br/><br/>
 
 ### One Paragraph Explainer
-
-Sometimes, using native methods is better than requiring `lodash` or `underscore` because it will not lead in a performance boost and use more space than necessary.
+Sometimes, using native methods is better than requiring _lodash_ or _underscore_ because those libraries can lead to performance loss or take up more space than needed
 The performance using native methods result in an [overall ~50% gain](https://github.com/Berkmann18/NativeVsUtils/blob/master/analysis.xlsx) which includes the following methods: `Array.concat`, `Array.fill`, `Array.filter`, `Array.map`, `(Array|String).indexOf`, `Object.find`, ...
 
 
@@ -20,10 +19,10 @@ The graph below shows the [mean of the benchmarks for a variety of Lodash method
 
 ### Code Example – Benchmark test on `_.concat`/`Array.concat`
 ```javascript
-const _ = require('lodash'),
-  __ = require('underscore'),
-  Suite = require('benchmark').Suite,
-  opts = require('./utils'); //cf. https://github.com/Berkmann18/NativeVsUtils/blob/master/utils.js
+const _ = require('lodash');
+const __ = require('underscore');
+const Suite = require('benchmark').Suite;
+const opts = require('./utils'); //cf. https://github.com/Berkmann18/NativeVsUtils/blob/master/utils.js
 
 const concatSuite = new Suite('concat', opts);
 const array = [0, 1, 2];
@@ -47,7 +46,7 @@ From the [repo on this matter which focuses on Lodash and Underscore](https://gi
  > Lodash and Underscore are great modern JavaScript utility libraries, and they are widely used by Front-end developers. However, when you are targeting modern browsers, you may find out that there are many methods which are already supported natively thanks to ECMAScript5 [ES5] and ECMAScript2015 [ES6]. If you want your project to require fewer dependencies, and you know your target browser clearly, then you may not need Lodash/Underscore.
 
 ### Example: Linting for non-native methods usage
-There's an [ESLint plugin](https://www.npmjs.com/package/eslint-plugin-you-dont-need-lodash-underscore) which detects where you're using libraries but don't need to by warning you with suggestions (cf. example below).<br>
+There's an [ESLint plugin](https://www.npmjs.com/package/eslint-plugin-you-dont-need-lodash-underscore) which detects where you're using libraries but don't need to by warning you with suggestions (cf. example below).<br/>
 The way you set it up is by adding the `eslint-plugin-you-dont-need-lodash-underscore` plugin to your ESLint configuration file:
 ```json
 {

@@ -8,12 +8,13 @@ Callbacks don’t scale well since most programmers are not familiar with them. 
 
 ```javascript
 return functionA()
-  .then((valueA) => functionB(valueA))
-  .then((valueB) => functionC(valueB))
-  .then((valueC) => functionD(valueC))
+  .then(functionB)
+  .then(functionC)
+  .then(functionD)
   .catch((err) => logger.error(err))
-  .then(alwaysExecuteThisFunction())
+  .then(alwaysExecuteThisFunction)
 ```
+
 
 ### Code Example - using async/await to catch errors
 
@@ -25,13 +26,18 @@ async function executeAsyncTask () {
     const valueC = await functionC(valueB);
     return await functionD(valueC);
   }
-  catch(err) {
+  catch (err) {
     logger.error(err);
+  } finally {
+    await alwaysExecuteThisFunction();
   }
 }
 ```
 
 ### Anti pattern code example – callback style error handling
+
+<details>
+<summary><strong>Javascript</strong></summary>
 
 ```javascript
 getData(someParameter, function(err, result) {
@@ -43,7 +49,7 @@ getData(someParameter, function(err, result) {
                 getMoreData(b, function(c) {
                     getMoreData(d, function(e) {
                         if(err !== null ) {
-                            // you get the idea? 
+                            // you get the idea?
                         }
                     })
                 });
@@ -52,6 +58,31 @@ getData(someParameter, function(err, result) {
     }
 });
 ```
+</details>
+
+<details>
+<summary><strong>Typescript</strong></summary>
+
+```typescript
+getData(someParameter, function(err: Error | null, resultA: ResultA) {
+  if(err !== null) {
+    // do something like calling the given callback function and pass the error
+    getMoreData(resultA, function(err: Error | null, resultB: ResultB) {
+      if(err !== null) {
+        // do something like calling the given callback function and pass the error
+        getMoreData(resultB, function(resultC: ResultC) {
+          getMoreData(resultC, function(err: Error | null, d: ResultD) {
+            if(err !== null) {
+              // you get the idea?
+            }
+          })
+        });
+      }
+    });
+  }
+});
+```
+</details>
 
 ### Blog Quote: "We have a problem with promises"
 

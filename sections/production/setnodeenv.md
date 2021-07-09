@@ -10,13 +10,15 @@ Process environment variables is a set of key-value pairs made available to any 
 
 ### Code example: Setting and reading the NODE_ENV environment variable
 
-```javascript
+```shell script
 // Setting environment variables in bash before starting the node process
 $ NODE_ENV=development
 $ node
+```
 
+```javascript
 // Reading the environment variable using code
-if (process.env.NODE_ENV === “production”)
+if (process.env.NODE_ENV === 'production')
     useCaching = true;
 ```
 
