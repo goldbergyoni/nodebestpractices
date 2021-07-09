@@ -11,7 +11,7 @@ Defensive programming is an approach to improve software and source code, in ter
 ### Code example: validating complex JSON input using ‘Joi’
 
 ```javascript
-var memberSchema = Joi.object().keys({
+const memberSchema = Joi.object().keys({
  password: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/),
  birthyear: Joi.number().integer().min(1900).max(2013),
  email: Joi.string().email()
@@ -22,10 +22,14 @@ function addNewMember(newMember) {
  Joi.assert(newMember, memberSchema); //throws if validation fails
  // other logic here
 }
-
 ```
 
+
+
 ### Anti-pattern: no validation yields nasty bugs
+
+<details>
+<summary><strong>Javascript</strong></summary>
 
 ```javascript
 // if the discount is positive let's then redirect the user to print his discount coupons
@@ -37,8 +41,24 @@ function redirectToPrintDiscount(httpResponse, member, discount) {
 
 redirectToPrintDiscount(httpResponse, someMember);
 // forgot to pass the parameter discount, why the heck was the user redirected to the discount screen?
-
 ```
+</details>
+
+<details>
+<summary><strong>Typescript</strong></summary>
+
+```typescript
+// if the discount is positive let's then redirect the user to print his discount coupons
+function redirectToPrintDiscount(httpResponse: Response, member: Member, discount: number) {
+  if (discount != 0) {
+    httpResponse.redirect(`/discountPrintView/${member.id}`);
+  }
+}
+
+redirectToPrintDiscount(httpResponse, someMember, -12);
+// We passed a negative parameter discount, why the heck was the user redirected to the discount screen?
+```
+</details>
 
 ### Blog Quote: "You should throw these errors immediately"
 

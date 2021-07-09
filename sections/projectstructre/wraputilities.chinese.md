@@ -11,4 +11,4 @@
 
 
  ### 在环境和组件中共享你自己的公用实用工具
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/Privatenpm.png "构建解决方案的组件")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/Privatenpm.png "构建解决方案的组件")

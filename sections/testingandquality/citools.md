@@ -10,7 +10,7 @@ The CI world used to be the flexibility of [Jenkins](https://jenkins.io/) vs the
 
 ### Code Example – a typical cloud CI configuration. Single .yml file and that's it
 
-```javascript
+```yaml
 version: 2
 jobs:
   build:
@@ -42,10 +42,10 @@ jobs:
 
 ### Circle CI - almost zero setup cloud CI
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/circleci.png "API error handling")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/circleci.png "API error handling")
 
 ### Jenkins - sophisticated and robust CI 
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/jenkins_dashboard.png "API error handling")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/jenkins_dashboard.png "API error handling")
 
 <br/><br/>

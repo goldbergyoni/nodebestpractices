@@ -2,12 +2,12 @@
 
 <br/><br/>
 
- ### Separate component code into layers: web, services, and DAL
+ ### Separate component code into layers: web, services, and Data Access Layer (DAL)
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Separate component code into layers")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Separate component code into layers")
 
  <br/><br/>
 
 ### 1 min explainer: The downside of mixing layers
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/keepexpressinweb.gif "The downside of mixing layers")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/keepexpressinweb.gif "The downside of mixing layers")

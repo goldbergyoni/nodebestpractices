@@ -30,7 +30,7 @@
 
 <br/><br/>
 ### 其他博主说了什么
-  摘自博客 [Rising Stack](http://mubaloo.com/best-practices-deploying-node-js-applications/):
+  摘自博客 [Rising Stack](https://blog.risingstack.com/node-js-performance-monitoring-with-prometheus/):
 
 > ...我们建议您为所有服务监听这些信号：
 > 错误率：因为错误是用户面对的，并立即会影响您的客户。
