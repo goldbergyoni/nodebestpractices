@@ -103,12 +103,11 @@ No matter what the algorithm/function, always include some string that's unique 
 
 ##### Why use salt?
 
-Adding salt changes the hash and thus makes it different from a hash of the same password in someone elses
-system. If someone uses the same password for multiple sites, and a hash of their password is obtained from someone elses data breach, they won't be able to match it to the hash in your database. When everyone uses hashes, it becomes nearly impossible for attackers to identify patterns of password reuse.
+Adding salt changes the hash and thus makes it different from a hash of the same password in someone elses system. If someone uses the same password for multiple sites, and a hash of their password is obtained from someone elses data breach, they won't be able to match it to the hash in your database. When everyone uses hashes, it becomes nearly impossible for attackers to identify patterns of password reuse.
 
 #### Password Length
 
-If your password plus salt has to come in under a limit, and if you use good salt, your users passwords will be even more limited. One way around this, which can be also be good generally, is to pre-hash the passwords. It can create administrative burden, but if you can commit to consistently using a single, simple, hash on the font-end you can set the pre-hash to generate hex strings of an exact length from the password before transmitting it to your server. This means you can have strong checks on your API; for example, only allowing hex characters of exactly 256 characters in length, but still giving users the ability to use passwords of any length with any characters. (You still need to use a good enough hashing that you don't accidentally create collisions where two different passwords create the same hash, it doesn't hurt to use more secure hashing for this, it just takes longer)
+If your password plus salt has to come in under a limit, and if you use good salt, your users passwords will be even more limited. One way around this, which can be also be good generally, is to pre-hash the passwords. It can create administrative burden, but if you can commit to consistently using a single, simple, hash on the front-end you can set the pre-hash to generate hex strings of an exact length from the password before transmitting it to your server. This means you can have strong checks on your API; for example, only allowing hex characters of exactly 256 characters in length, but still giving users the ability to use passwords of any length with any characters. (You still need to use a good enough hashing that you don't accidentally create collisions where two different passwords create the same hash, it doesn't hurt to use more secure hashing for this, it just takes longer)
 
 Example Browser code would be `const hash = crypto.subtle.digest('sha-256', password)`;
 

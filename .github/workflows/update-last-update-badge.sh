@@ -44,7 +44,7 @@ CURRENT_DATE=`date +"%B %d, %Y"`
 LAST_UPDATE_BADGE_REGEX='<img id="last-update-badge" src="https:\/\/img\.shields\.io\/badge\/[^>]*>'
 
 UPDATED_BADGE_URL="https:\/\/img.shields.io\/badge\/${CALENDAR_EMOJI_ENCODED}$(url_encode " Last update - ${CURRENT_DATE}-green").svg"
-UPDATED_LAST_UPDATE_BADGE="<img id=\"last-update-badge\" src=\"$UPDATED_BADGE_URL\" alt=\"Last update: $CURRENT_DATE\">"
+UPDATED_LAST_UPDATE_BADGE="<img id=\"last-update-badge\" src=\"$UPDATED_BADGE_URL\" alt=\"Last update: $CURRENT_DATE\" />"
 
 
 if ! is_there_last_update_badge "$INPUT_FILE" "$LAST_UPDATE_BADGE_REGEX"; then
@@ -58,4 +58,4 @@ if is_last_update_badge_date_is_today "$INPUT_FILE" "$UPDATED_LAST_UPDATE_BADGE"
     exit 0
 fi
 
-sed -i "s/$LAST_UPDATE_BADGE_REGEX/$UPDATED_LAST_UPDATE_BADGE/" "$INPUT_FILE"
+sed -i "s@$LAST_UPDATE_BADGE_REGEX@$UPDATED_LAST_UPDATE_BADGE@" "$INPUT_FILE"

@@ -40,11 +40,16 @@ HTML eta beste web lengoaia batzuek kode egikarigarriarekin nahasten dute edukia
 [benramsey.com](https://benramsey.com/articles/escape-output/) bloga:
 > Datuak modu askotara irten daitezke  zure aplikaziotik: web nabigatzaile bati bidalitako HTML moduan, SQL datu basera bidalita, XML RSS irakurgailura bidalita, WML haririk gabeko gailu batera bidalita, etab. Aukerak mugagabeak dira. Horietako bakoitzak bere karaktere bereziak ditu, multzoka jasotzen dituena, eta  jasotako gainerako testu arruntaren aldean desberdin interpretatzen dena. Batzuetan, karaktere berezi horiek bidali nahi ditugu interpretatuak izan ahal izateko (HTML nabigatzaile batera bidalitako HTML etiketak, adibidez); beste batzuetan (erabiltzaileek edo beste iturri batzuek egindako sarreren kasuan), ez dugu nahi karaktere horiek interpretatuak izan daitezen, eta, beraz, ihes egin behar diegu.
 
-> Ihes egiteari kodetzea ere esaten zaio batzuetan: ihes egitea edo kodetzea,  laburbilduz,, datuak egikaritu edo interpretatuko ez diren moduan irudikatzeko prozesua da, alegia. Adibidez, HTMLk honako testu hau letra lodiz idatziko du web nabigatzaile batean <strong>etiketek esanahi berezia dutelako:
-<strong>Testu hau letra lodiz idatzita dago.<strong>
-Baina, demagun etiketak nabigatzailean kargatu nahi ditudala eta haien interpretazioa ekidin nahi dudala. Orduan, HTMLan esanahi berezia duten parentesi angeluarretatik ihes egin behar dut. Hona hemen ihes egindako HTMLa:
-&lt;strong&gt;Testu hau letra lodiz idatzita dago.&lt;/strong&gt;
-
+> Ihes egiteari kodetzea ere esaten zaio batzuetan: ihes egitea edo kodetzea,  laburbilduz,, datuak egikaritu edo interpretatuko ez diren moduan irudikatzeko prozesua da, alegia. Adibidez, HTMLk honako testu hau letra lodiz idatziko du web nabigatzaile batean `<strong>`etiketek esanahi berezia dutelako:
+> ```html
+> <strong>Testu hau letra lodiz idatzita dago.<strong>
+> ```
+>
+> Baina, demagun etiketak nabigatzailean kargatu nahi ditudala eta haien interpretazioa ekidin nahi dudala. Orduan, HTMLan esanahi berezia duten parentesi angeluarretatik ihes egin behar dut. Hona hemen ihes egindako HTMLa:
+>
+> ```html
+> &lt;strong&gt;Testu hau letra lodiz idatzita dago.&lt;/strong&gt;`
+> ```
 
 <br/><br/>
 
@@ -58,4 +63,4 @@ OWASP [XSS (Cross Site Scripting) Prebentzio tranpa orria](https://www.owasp.org
 ### Blog aipua: "Ihes sintaxia erabili behar duzu HTML zatian"
 
 OWASP [XSS (Cross Site Scripting) Prebentzio tranpa orria](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet) bloga:
-> "Baina HTML entitate kodeketak ez du ondo funtzionatzen <script> etiketa baten barruan datu ez fidagarriak jartzen badituzu edozein lekutan, edo onmouseover bezalako gertaeren kudeatzailearen atributu batean edo CSS barruan, edo URL batean. Beraz, toki guztietan HTML entitate kodeketaren bat erabiltzen baduzu ere, ziurrena da XSSen erasoekiko zaurgarria izaten jarraituko duela. Ihes sintaxia erabili behar duzu fidagarriak ez diren datuak jartzen ari zaren HTML dokumentuaren zatian."
+> "Baina HTML entitate kodeketak ez du ondo funtzionatzen `<script>` etiketa baten barruan datu ez fidagarriak jartzen badituzu edozein lekutan, edo onmouseover bezalako gertaeren kudeatzailearen atributu batean edo CSS barruan, edo URL batean. Beraz, toki guztietan HTML entitate kodeketaren bat erabiltzen baduzu ere, ziurrena da XSSen erasoekiko zaurgarria izaten jarraituko duela. Ihes sintaxia erabili behar duzu fidagarriak ez diren datuak jartzen ari zaren HTML dokumentuaren zatian."

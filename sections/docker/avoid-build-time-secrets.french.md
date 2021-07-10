@@ -44,6 +44,7 @@ ARG NPM_TOKEN
 
 WORKDIR /usr/src/app
 COPY . /dist
+
 RUN echo "//registry.npmjs.org/:\_authToken=\$NPM_TOKEN" > .npmrc && \
  npm ci --production && \
  rm -f .npmrc
@@ -74,6 +75,7 @@ ARG NPM_TOKEN
 
 WORKDIR /usr/src/app
 COPY . /dist
+
 RUN echo "//registry.npmjs.org/:\_authToken=\$NPM_TOKEN" > .npmrc && \
  npm ci --production && \
  rm -f .npmrc

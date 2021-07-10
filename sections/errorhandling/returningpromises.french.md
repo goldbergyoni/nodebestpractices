@@ -137,7 +137,7 @@ Error: avec toutes les instructions présentes
 </p>
 </details>
 
-</br>
+<br/>
 
 ### Exemple de code incorrect : utilisation directe du rappel async lorsque le rappel sync est attendu
 
@@ -277,9 +277,9 @@ attendue à plusieurs reprises dans différents endroits
 
 ### Références :
   <span id="1">1. </span>[article de blog sur zero-cost async stacktraces en v8](https://v8.dev/blog/fast-async)
-  <br>
+  <br/>
 
   <span id="2">2. </span>[Document sur zero-cost async stacktraces avec les détails de mise en œuvre mentionnés ici](
     https://docs.google.com/document/d/13Sy_kBIJGP0XT34V1CV3nkWya4TwYx9L3Yv45LdGB6Q/edit
   )
-  <br>
+  <br/>

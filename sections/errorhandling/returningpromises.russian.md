@@ -12,7 +12,7 @@
 
 <br/>
 
-### Анти-паттерн №1: return \<promise>
+### Анти-паттерн №1: return `promise`
 
 <details><summary>Javascript</summary>
 <p>
@@ -41,7 +41,7 @@ Error: missing returnWithoutAwait in the stacktrace
 </p>
 </details>
 
-### Как правильно: return await \<promise>
+### Как правильно: return await `promise`
 
 <details><summary>Javascript</summary>
 <p>
@@ -142,7 +142,7 @@ Error: with all frames present
 </p>
 </details>
 
-</br>
+<br/>
 
 ### Анти-паттерн №3: прямая передача асинхронного коллбэка в месте где ожидается синхронный коллбек
 
@@ -281,9 +281,9 @@ Error: [...]
 
 ### References:
   <span id="1">1. </span>[Блогпост о бесплатных асинхронных стектрейсах в v8](https://v8.dev/blog/fast-async)
-  <br>
+  <br/>
 
   <span id="2">2. </span>[Документ о бесплатных асинхронных стектрейсах в v8 с упомянутыми тут деталями реализации](
     https://docs.google.com/document/d/13Sy_kBIJGP0XT34V1CV3nkWya4TwYx9L3Yv45LdGB6Q/edit
   )
-  <br>
+  <br/>

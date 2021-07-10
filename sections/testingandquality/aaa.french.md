@@ -59,3 +59,20 @@ test('Doit être classé comme premium', () => {
 Extrait du livre [XUnit Patterns](http://xunitpatterns.com/Four%20Phase%20Test.html):
 
 > Il est important que le lecteur du test soit capable de déterminer rapidement quel comportement le test vérifie. Cela peut être très déroutant lorsque diverses portions du « système en test » (SUT : system under test) sont invoquées, certaines pour configurer l'état avant le test (fixture) du SUT, d'autres pour exécuter le SUT et d'autres pour vérifier l'état après le test du SUT. L'identification claire des quatre phases facilite la vision du test.
+
+<br/><br/>
+
+### « Une technique utile [...] est que l'écriture de l'`Assert` en premier est un excellent point de départ. »
+Extrait de l'article [Arrange, Act, Assert](https://xp123.com/articles/3a-arrange-act-assert/) par Bill Wake qui a été le premier à observer et à nommer le format
+
+> **Par où commencer ?**
+>
+> Vous pourriez penser que le `Arrange` est la chose naturelle à écrire en premier, puisqu'il vient en premier.
+> Lorsque je travaille systématiquement sur les comportements d'un objet, je peux écrire la ligne `Act` en premier. 
+>
+> Mais une technique utile que j'ai apprise de Jim Newkirk, c'est d'écrire l'`Assert` en premier, car c'est un excellent point de départ. Lorsque vous avez un nouveau comportement que vous savez vouloir tester, l'`Assert` en premier vous permet de commencer par vous interroger : « Supposons que cela fonctionne ; comment pourrais-je le savoir ». Une fois l'`Assert` en place, vous pouvez faire ce que la logique industrielle appelle "Frame First" et vous vous appuyer sur l'IDE pour « remplir les blancs ».
+<br/><br/>
+
+### « Une fois que vous vous êtes habitué à ce format, vous pouvez lire et comprendre les tests plus facilement »
+Extrait du livre [Tests unitaires, principes, pratiques et modèles](https://freecontent.manning.com/making-better-unit-tests-part-1-the-aaa-pattern/)
+> Le format 3A est simple et fournit une structure uniforme pour tous les tests de la suite. Cette structure uniforme est l'un de ses plus grands avantages : une fois que vous vous êtes habitué à ce format, vous pouvez lire et comprendre les tests plus facilement. Cela permet de réduire les coûts de maintenance de l'ensemble de votre suite de tests.

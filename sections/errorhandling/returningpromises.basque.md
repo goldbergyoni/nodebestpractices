@@ -137,7 +137,7 @@ Error: zati guztiak edukiz
 </p>
 </details>
 
-</br>
+<br/>
 
 ### #3 anti ereduaren kode adibidea: callback asinkronoen erabilera zuzena callback sinkronoa espero zen lekuan
 
@@ -251,9 +251,9 @@ Oso ezberdinak dira funtzio sinkronoen pila aztarnen eta funtzio asinkronoen pil
 
 ### Erreferentziak:
   <span id="1">1. </span>[v8ko zero kostuko pila aztarna asinkronoak blog argitarapena](https://v8.dev/blog/fast-async)
-  <br>
+  <br/>
 
   <span id="2">2. </span>[zero kostuko pila aztarna asinkronoei inguruko dokumentazioa ezarpen xehetasunekin hemen](
     https://docs.google.com/document/d/13Sy_kBIJGP0XT34V1CV3nkWya4TwYx9L3Yv45LdGB6Q/edit
   )
-  <br>
+  <br/>
