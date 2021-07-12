@@ -14,11 +14,11 @@
 
 <br/>
 
-[![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
+[![nodepractices](./assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
 
 <br/>
 
-Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![FR](/assets/flags/FR.png)**FR**](/README.french.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md), [![JA](/assets/flags/JA.png)**JA**](/README.japanese.md), [![EU](/assets/flags/EU.png)**EU**](/README.basque.md) [(![ES](/assets/flags/ES.png)**ES**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** and ![TR](/assets/flags/TR.png)**TR** in progress! )](#translations)
+Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md), [![FR](./assets/flags/FR.png)**FR**](./README.french.md), [![BR](./assets/flags/BR.png)**BR**](./README.brazilian-portuguese.md), [![RU](./assets/flags/RU.png)**RU**](./README.russian.md), [![PL](./assets/flags/PL.png)**PL**](./README.polish.md), [![JA](./assets/flags/JA.png)**JA**](./README.japanese.md), [![EU](./assets/flags/EU.png)**EU**](./README.basque.md) [(![ES](./assets/flags/ES.png)**ES**, ![HE](./assets/flags/HE.png)**HE**, ![KR](./assets/flags/KR.png)**KR** and ![TR](./assets/flags/TR.png)**TR** in progress! )](#translations)
 
 <br/>
 
@@ -26,7 +26,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 # Latest Best Practices and News
 
-- **![FR](/assets/flags/FR.png) French translation!1! :** The latest translation that joins our international guide is French. Bienvenue
+- **![FR](./assets/flags/FR.png) French translation!1! :** The latest translation that joins our international guide is French. Bienvenue
 
 - **🇯🇵 Japanese translation:** Our guide is now also translated to Japanese! Courtesy of the amazing [YukiOta](https://github.com/YukiOta) and [Yuta Azumi](https://github.com/YA21)
 
@@ -38,7 +38,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **1. You are reading dozens of the best Node.js articles -** this repository is a summary and curation of the top-ranked content on Node.js best practices, as well as content written here by collaborators
 
-**2. It is the largest compilation, and it is growing every week -** currently, more than 80 best practices, style guides, and architectural tips are presented. New issues and pull requests are created every day to keep this live book updated. We'd love to see you contributing here, whether that is fixing code mistakes, helping with translations, or suggesting brilliant new ideas. See our [writing guidelines here](/.operations/writing-guidelines.md)
+**2. It is the largest compilation, and it is growing every week -** currently, more than 80 best practices, style guides, and architectural tips are presented. New issues and pull requests are created every day to keep this live book updated. We'd love to see you contributing here, whether that is fixing code mistakes, helping with translations, or suggesting brilliant new ideas. See our [writing guidelines here](./.operations/writing-guidelines.md)
 
 **3. Best practices have additional info -** most bullets include a **🔗Read More** link that expands on the practice with code examples, quotes from selected blogs, and more information
 
@@ -65,7 +65,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** When developers who code new features struggle to realize the impact of their change and fear to break other dependent components - deployments become slower and riskier. It's also considered harder to scale-out when all the business units are not separated
 
-🔗 [**Read More: structure by components**](/sections/projectstructre/breakintcomponents.md)
+🔗 [**Read More: structure by components**](./sections/projectstructre/breakintcomponents.md)
 
 <br/><br/>
 
@@ -75,7 +75,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** App that mixes web objects with other layers cannot be accessed by testing code, CRON jobs, triggers from message queues, etc
 
-🔗 [**Read More: layer your app**](/sections/projectstructre/createlayers.md)
+🔗 [**Read More: layer your app**](./sections/projectstructre/createlayers.md)
 
 <br/><br/>
 
@@ -85,7 +85,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** You'll have to invent your deployment and the dependency wheel
 
-🔗 [**Read More: Structure by feature**](/sections/projectstructre/wraputilities.md)
+🔗 [**Read More: Structure by feature**](./sections/projectstructre/wraputilities.md)
 
 <br/><br/>
 
@@ -95,7 +95,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** Your API will be accessible for testing via HTTP calls only (slower and much harder to generate coverage reports). It probably won't be a big pleasure to maintain hundreds of lines of code in a single file
 
-🔗 [**Read More: separate Express 'app' and 'server'**](/sections/projectstructre/separateexpress.md)
+🔗 [**Read More: separate Express 'app' and 'server'**](./sections/projectstructre/separateexpress.md)
 
 <br/><br/>
 
@@ -105,7 +105,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** Failing to satisfy any of the config requirements will simply bog down the development or DevOps team. Probably both
 
-🔗 [**Read More: configuration best practices**](/sections/projectstructre/configguide.md)
+🔗 [**Read More: configuration best practices**](./sections/projectstructre/configguide.md)
 
 <br/><br/><br/>
 
@@ -119,7 +119,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** Node.js callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting, and awkward coding patterns
 
-🔗 [**Read More: avoiding callbacks**](/sections/errorhandling/asyncerrorhandling.md)
+🔗 [**Read More: avoiding callbacks**](./sections/errorhandling/asyncerrorhandling.md)
 
 <br/><br/>
 
@@ -129,7 +129,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** When invoking some component, being uncertain which type of errors come in return – it makes proper error handling much harder. Even worse, using custom types to describe errors might lead to loss of critical error information like the stack trace!
 
-🔗 [**Read More: using the built-in error object**](/sections/errorhandling/useonlythebuiltinerror.md)
+🔗 [**Read More: using the built-in error object**](./sections/errorhandling/useonlythebuiltinerror.md)
 
 <br/><br/>
 
@@ -139,7 +139,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** You may always restart the application when an error appears, but why let ~5000 online users down because of a minor, predicted, operational error? the opposite is also not ideal – keeping the application up when an unknown issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
 
-🔗 [**Read More: operational vs programmer error**](/sections/errorhandling/operationalvsprogrammererror.md)
+🔗 [**Read More: operational vs programmer error**](./sections/errorhandling/operationalvsprogrammererror.md)
 
 <br/><br/>
 
@@ -149,7 +149,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** Not handling errors within a single place will lead to code duplication and probably to improperly handled errors
 
-🔗 [**Read More: handling errors in a centralized place**](/sections/errorhandling/centralizedhandling.md)
+🔗 [**Read More: handling errors in a centralized place**](./sections/errorhandling/centralizedhandling.md)
 
 <br/><br/>
 
@@ -159,7 +159,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** An API client might decide to crash and restart only because it received back an error it couldn’t understand. Note: the caller of your API might be you (very typical in a microservice environment)
 
-🔗 [**Read More: documenting API errors in Swagger or GraphQL**](/sections/errorhandling/documentingusingswagger.md)
+🔗 [**Read More: documenting API errors in Swagger or GraphQL**](./sections/errorhandling/documentingusingswagger.md)
 
 <br/><br/>
 
@@ -169,7 +169,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** When an unfamiliar exception occurs, some object might be in a faulty state (e.g. an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
 
-🔗 [**Read More: shutting the process**](/sections/errorhandling/shuttingtheprocess.md)
+🔗 [**Read More: shutting the process**](./sections/errorhandling/shuttingtheprocess.md)
 
 <br/><br/>
 
@@ -179,7 +179,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** Skimming through console.logs or manually through messy text file without querying tools or a decent log viewer might keep you busy at work until late
 
-🔗 [**Read More: using a mature logger**](/sections/errorhandling/usematurelogger.md)
+🔗 [**Read More: using a mature logger**](./sections/errorhandling/usematurelogger.md)
 
 <br/><br/>
 
@@ -189,7 +189,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** Without testing, whether automatically or manually, you can’t rely on your code to return the right errors. Without meaningful errors – there’s no error handling
 
-🔗 [**Read More: testing error flows**](/sections/errorhandling/testingerrorflows.md)
+🔗 [**Read More: testing error flows**](./sections/errorhandling/testingerrorflows.md)
 
 <br/><br/>
 
@@ -199,7 +199,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which are your slowest code parts under real-world scenario and how these affect the UX
 
-🔗 [**Read More: using APM products**](/sections/errorhandling/apmproducts.md)
+🔗 [**Read More: using APM products**](./sections/errorhandling/apmproducts.md)
 
 <br/><br/>
 
@@ -209,7 +209,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** Your errors will get swallowed and leave no trace. Nothing to worry about
 
-🔗 [**Read More: catching unhandled promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.md)
+🔗 [**Read More: catching unhandled promise rejection**](./sections/errorhandling/catchunhandledpromiserejection.md)
 
 <br/><br/>
 
@@ -219,7 +219,7 @@ Read in a different language: [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Otherwise:** Consider this – your function expects a numeric argument “Discount” which the caller forgets to pass, later on, your code checks if Discount!=0 (amount of allowed discount is greater than zero), then it will allow the user to enjoy a discount. OMG, what a nasty bug. Can you see it?
 
-🔗 [**Read More: failing fast**](/sections/errorhandling/failfast.md)
+🔗 [**Read More: failing fast**](./sections/errorhandling/failfast.md)
 
 <br/><br/>
 
@@ -233,7 +233,7 @@ function returns a promise, that function must be declared as `async` function a
 Such missing frames would probably complicate the understanding of the flow that leads to the error,
 especially if the cause of the abnormal behavior is inside of the missing function
 
-🔗 [**Read More: returning promises**](/sections/errorhandling/returningpromises.md)
+🔗 [**Read More: returning promises**](./sections/errorhandling/returningpromises.md)
 
 <br/><br/><br/>
 
@@ -247,7 +247,7 @@ especially if the cause of the abnormal behavior is inside of the missing functi
 
 **Otherwise:** Developers will focus on tedious spacing and line-width concerns and time might be wasted overthinking the project's code style
 
-🔗 [**Read More: Using ESLint and Prettier**](/sections/codestylepractices/eslint_prettier.md)
+🔗 [**Read More: Using ESLint and Prettier**](./sections/codestylepractices/eslint_prettier.md)
 
 <br/><br/>
 
@@ -463,7 +463,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** A deployment just failed, a test named “Add product” failed. Does this tell you what exactly is malfunctioning?
 
-🔗 [**Read More: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
+🔗 [**Read More: Include 3 parts in each test name**](./sections/testingandquality/3-parts-in-name.md)
 
 <br/><br/>
 
@@ -473,7 +473,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Not only you spend long daily hours on understanding the main code, but now also what should have been the simple part of the day (testing) stretches your brain
 
-🔗 [**Read More: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.md)
+🔗 [**Read More: Structure tests by the AAA pattern**](./sections/testingandquality/aaa.md)
 
 <br/><br/>
 
@@ -491,7 +491,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Consider a scenario where deployment is aborted due to failing tests, team is now going to spend precious investigation time that ends in a sad conclusion: the system works well, the tests however interfere with each other and break the build
 
-🔗 [**Read More: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
+🔗 [**Read More: Avoid global test fixtures**](./sections/testingandquality/avoid-global-test-fixture.md)
 
 <br/><br/>
 
@@ -541,7 +541,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** With poor code quality, bugs and performance will always be an issue that no shiny new library or state of the art features can fix
 
-🔗 [**Read More: Refactoring!**](/sections/testingandquality/refactoring.md)
+🔗 [**Read More: Refactoring!**](./sections/testingandquality/refactoring.md)
 
 <br/><br/>
 
@@ -551,7 +551,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
 
-🔗 [**Read More: Choosing CI platform**](/sections/testingandquality/citools.md)
+🔗 [**Read More: Choosing CI platform**](./sections/testingandquality/citools.md)
 
 ## ![✔] 4.13 Test your middlewares in isolation
 
@@ -559,7 +559,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** A bug in Express middleware === a bug in all or most requests
 
-🔗 [**Read More: Test middlewares in isolation**](/sections/testingandquality/test-middlewares.md)
+🔗 [**Read More: Test middlewares in isolation**](./sections/testingandquality/test-middlewares.md)
 
 <br/><br/><br/>
 
@@ -573,7 +573,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Failure === disappointed customers. Simple
 
-🔗 [**Read More: Monitoring!**](/sections/production/monitoring.md)
+🔗 [**Read More: Monitoring!**](./sections/production/monitoring.md)
 
 <br/><br/>
 
@@ -583,7 +583,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** You end up with a black box that is hard to reason about, then you start re-writing all logging statements to add additional information
 
-🔗 [**Read More: Increase transparency using smart logging**](/sections/production/smartlogging.md)
+🔗 [**Read More: Increase transparency using smart logging**](./sections/production/smartlogging.md)
 
 <br/><br/>
 
@@ -593,7 +593,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Your poor single thread will stay busy doing infrastructural tasks instead of dealing with your application core and performance will degrade accordingly
 
-🔗 [**Read More: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
+🔗 [**Read More: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](./sections/production/delegatetoproxy.md)
 
 <br/><br/>
 
@@ -603,7 +603,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
 
-🔗 [**Read More: Lock dependencies**](/sections/production/lockdependencies.md)
+🔗 [**Read More: Lock dependencies**](./sections/production/lockdependencies.md)
 
 <br/><br/>
 
@@ -613,7 +613,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Running dozens of instances without a clear strategy and too many tools together (cluster management, docker, PM2) might lead to DevOps chaos
 
-🔗 [**Read More: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
+🔗 [**Read More: Guard process uptime using the right tool**](./sections/production/guardprocess.md)
 
 <br/><br/>
 
@@ -623,7 +623,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.js utilizes only 1 (even using PaaS services like AWS beanstalk!)
 
-🔗 [**Read More: Utilize all CPU cores**](/sections/production/utilizecpu.md)
+🔗 [**Read More: Utilize all CPU cores**](./sections/production/utilizecpu.md)
 
 <br/><br/>
 
@@ -633,7 +633,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
 
-🔗 [**Read More: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
+🔗 [**Read More: Create a ‘maintenance endpoint’**](./sections/production/createmaintenanceendpoint.md)
 
 <br/><br/>
 
@@ -643,7 +643,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real-world scenario and how these affect the UX
 
-🔗 [**Read More: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
+🔗 [**Read More: Discover errors and downtime using APM products**](./sections/production/apmproducts.md)
 
 <br/><br/>
 
@@ -653,7 +653,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** A world champion IT/DevOps guy won’t save a system that is badly written
 
-🔗 [**Read More: Make your code production-ready**](/sections/production/productioncode.md)
+🔗 [**Read More: Make your code production-ready**](./sections/production/productioncode.md)
 
 <br/><br/>
 
@@ -663,7 +663,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Your process memory might leak a hundred megabytes a day like how it happened at [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
 
-🔗 [**Read More: Measure and guard the memory usage**](/sections/production/measurememory.md)
+🔗 [**Read More: Measure and guard the memory usage**](./sections/production/measurememory.md)
 
 <br/><br/>
 
@@ -673,7 +673,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Your single Node thread will be busy streaming hundreds of html/images/angular/react files instead of allocating all its resources for the task it was born for – serving dynamic content
 
-🔗 [**Read More: Get your frontend assets out of Node**](/sections/production/frontendout.md)
+🔗 [**Read More: Get your frontend assets out of Node**](./sections/production/frontendout.md)
 
 <br/><br/>
 
@@ -683,7 +683,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
 
-🔗 [**Read More: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
+🔗 [**Read More: Be stateless, kill your Servers almost every day**](./sections/production/bestateless.md)
 
 <br/><br/>
 
@@ -693,7 +693,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Keeping your code clean from vulnerabilities without dedicated tools will require you to constantly follow online publications about new threats. Quite tedious
 
-🔗 [**Read More: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
+🔗 [**Read More: Use tools that automatically detect vulnerabilities**](./sections/production/detectvulnerabilities.md)
 
 <br/><br/>
 
@@ -705,7 +705,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** Looking at a production error log without the context – what happened before – makes it much harder and slower to reason about the issue
 
-🔗 [**Read More: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
+🔗 [**Read More: Assign ‘TransactionId’ to each log statement**](./sections/production/assigntransactionid.md)
 
 <br/><br/>
 
@@ -715,7 +715,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** Omitting this simple property might greatly degrade performance. For example, when using Express for server-side rendering omitting `NODE_ENV` makes it slower by a factor of three!
 
-🔗 [**Read More: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
+🔗 [**Read More: Set NODE_ENV=production**](./sections/production/setnodeenv.md)
 
 <br/><br/>
 
@@ -733,7 +733,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** Newly discovered bugs or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain
 
-🔗 [**Read More: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
+🔗 [**Read More: Use an LTS release of Node.js**](./sections/production/LTSrelease.md)
 
 <br/><br/>
 
@@ -743,7 +743,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** Application handling log routing === hard to scale, loss of logs, poor separation of concerns
 
-🔗 [**Read More: Log Routing**](/sections/production/logrouting.md)
+🔗 [**Read More: Log Routing**](./sections/production/logrouting.md)
 
 <br/><br/>
 
@@ -753,7 +753,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code.
 
-🔗 [**Read More: Use npm ci**](/sections/production/installpackageswithnpmci.md)
+🔗 [**Read More: Use npm ci**](./sections/production/installpackageswithnpmci.md)
 
 <br/><br/><br/>
 
@@ -773,7 +773,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** What could have been a straightforward security weakness during development becomes a major issue in production. Also, the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories
 
-🔗 [**Read More: Lint rules**](/sections/security/lintrules.md)
+🔗 [**Read More: Lint rules**](./sections/security/lintrules.md)
 
 <br/><br/>
 
@@ -785,7 +785,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** An application could be subject to an attack resulting in a denial of service where real users receive a degraded or unavailable service.
 
-🔗 [**Read More: Implement rate limiting**](/sections/security/limitrequests.md)
+🔗 [**Read More: Implement rate limiting**](./sections/security/limitrequests.md)
 
 <br/><br/>
 
@@ -797,7 +797,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** Source control, even for private repositories, can mistakenly be made public, at which point all secrets are exposed. Access to source control for an external party will inadvertently provide access to related systems (databases, apis, services, etc).
 
-🔗 [**Read More: Secret management**](/sections/security/secretmanagement.md)
+🔗 [**Read More: Secret management**](./sections/security/secretmanagement.md)
 
 <br/><br/>
 
@@ -809,7 +809,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** Unvalidated or unsanitized user input could lead to operator injection when working with MongoDB for NoSQL, and not using a proper sanitization system or ORM will easily allow SQL injection attacks, creating a giant vulnerability.
 
-🔗 [**Read More: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.md)
+🔗 [**Read More: Query injection prevention using ORM/ODM libraries**](./sections/security/ormodmusage.md)
 
 <br/><br/>
 
@@ -817,7 +817,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **TL;DR:** This is a collection of security advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
 
-🔗 [**Read More: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
+🔗 [**Read More: Common security best practices**](./sections/security/commonsecuritybestpractices.md)
 
 <br/><br/>
 
@@ -829,7 +829,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** Attackers could perform direct attacks on your application's users, leading to huge security vulnerabilities
 
-🔗 [**Read More: Using secure headers in your application**](/sections/security/secureheaders.md)
+🔗 [**Read More: Using secure headers in your application**](./sections/security/secureheaders.md)
 
 <br/><br/>
 
@@ -841,7 +841,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** An attacker could detect your web framework and attack all its known vulnerabilities.
 
-🔗 [**Read More: Dependency security**](/sections/security/dependencysecurity.md)
+🔗 [**Read More: Dependency security**](./sections/security/dependencysecurity.md)
 
 <br/><br/>
 
@@ -853,7 +853,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** Passwords and secrets that are stored without using a secure function are vulnerable to brute forcing and dictionary attacks that will lead to their disclosure eventually.
 
-🔗 [**Read More: User Passwords**](/sections/security/userpasswords.md)
+🔗 [**Read More: User Passwords**](./sections/security/userpasswords.md)
 
 <br/><br/>
 
@@ -865,7 +865,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** An attacker might store malicious JavaScript code in your DB which will then be sent as-is to the poor clients
 
-🔗 [**Read More: Escape output**](/sections/security/escape-output.md)
+🔗 [**Read More: Escape output**](./sections/security/escape-output.md)
 
 <br/><br/>
 
@@ -877,7 +877,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** Your generosity and permissive approach greatly increases the attack surface and encourages the attacker to try out many inputs until they find some combination to crash the application
 
-🔗 [**Read More: Validate incoming JSON schemas**](/sections/security/validation.md)
+🔗 [**Read More: Validate incoming JSON schemas**](./sections/security/validation.md)
 
 <br/><br/>
 
@@ -889,7 +889,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** Expired, or misplaced tokens could be used maliciously by a third party to access an application and impersonate the owner of the token.
 
-🔗 [**Read More: Blocklist JSON Web Tokens**](/sections/security/expirejwt.md)
+🔗 [**Read More: Blocklist JSON Web Tokens**](./sections/security/expirejwt.md)
 
 <br/><br/>
 
@@ -904,7 +904,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** An attacker can issue unlimited automated password attempts to gain access to privileged accounts on an application
 
-🔗 [**Read More: Login rate limiting**](/sections/security/login-rate-limit.md)
+🔗 [**Read More: Login rate limiting**](./sections/security/login-rate-limit.md)
 
 <br/><br/>
 
@@ -916,7 +916,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** An attacker who manages to run a script on the server gets unlimited power over the local machine (e.g. change iptable and re-route traffic to his server)
 
-🔗 [**Read More: Run Node.js as non-root user**](/sections/security/non-root-user.md)
+🔗 [**Read More: Run Node.js as non-root user**](./sections/security/non-root-user.md)
 
 <br/><br/>
 
@@ -928,7 +928,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** Your application will have to deal with large requests, unable to process the other important work it has to accomplish, leading to performance implications and vulnerability towards DOS attacks
 
-🔗 [**Read More: Limit payload size**](/sections/security/requestpayloadsizelimit.md)
+🔗 [**Read More: Limit payload size**](./sections/security/requestpayloadsizelimit.md)
 
 <br/><br/>
 
@@ -940,7 +940,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** Malicious JavaScript code finds a way into text passed into `eval` or other real-time evaluating JavaScript language functions, and will gain complete access to JavaScript permissions on the page. This vulnerability is often manifested as an XSS attack.
 
-🔗 [**Read More: Avoid JavaScript eval statements**](/sections/security/avoideval.md)
+🔗 [**Read More: Avoid JavaScript eval statements**](./sections/security/avoideval.md)
 
 <br/><br/>
 
@@ -952,7 +952,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** Poorly written regexes could be susceptible to Regular Expression DoS attacks that will block the event loop completely. For example, the popular `moment` package was found vulnerable with malicious RegEx usage in November of 2017
 
-🔗 [**Read More: Prevent malicious RegEx**](/sections/security/regex.md)
+🔗 [**Read More: Prevent malicious RegEx**](./sections/security/regex.md)
 
 <br/><br/>
 
@@ -964,7 +964,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** Malicious user input could find its way to a parameter that is used to require tampered files, for example, a previously uploaded file on the file system, or access already existing system files.
 
-🔗 [**Read More: Safe module loading**](/sections/security/safemoduleloading.md)
+🔗 [**Read More: Safe module loading**](./sections/security/safemoduleloading.md)
 
 <br/><br/>
 
@@ -976,7 +976,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** A plugin can attack through an endless variety of options like infinite loops, memory overloading, and access to sensitive process environment variables
 
-🔗 [**Read More: Run unsafe code in a sandbox**](/sections/security/sandbox.md)
+🔗 [**Read More: Run unsafe code in a sandbox**](./sections/security/sandbox.md)
 
 <br/><br/>
 
@@ -988,7 +988,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** Naive use of child processes could result in remote command execution or shell injection attacks due to malicious user input passed to an unsanitized system command.
 
-🔗 [**Read More: Be cautious when working with child processes**](/sections/security/childprocesses.md)
+🔗 [**Read More: Be cautious when working with child processes**](./sections/security/childprocesses.md)
 
 <br/><br/>
 
@@ -1000,7 +1000,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** Sensitive application details such as server file paths, third party modules in use, and other internal workflows of the application which could be exploited by an attacker, could be leaked from information found in a stack trace
 
-🔗 [**Read More: Hide error details from client**](/sections/security/hideerrors.md)
+🔗 [**Read More: Hide error details from client**](./sections/security/hideerrors.md)
 
 <br/><br/>
 
@@ -1022,7 +1022,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** Cookies could be sent over insecure connections, and an attacker might use session identification to identify the underlying framework of the web application, as well as module-specific vulnerabilities
 
-🔗 [**Read More: Cookie and session security**](/sections/security/sessions.md)
+🔗 [**Read More: Cookie and session security**](./sections/security/sessions.md)
 
 <br/><br/>
 
@@ -1044,7 +1044,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** If an attacker discovers that you are not validating external, user-supplied input, they may exploit this vulnerability by posting specially-crafted links on forums, social media, and other public places to get users to click it.
 
-🔗 [**Read More: Prevent unsafe redirects**](/sections/security/saferedirects.md)
+🔗 [**Read More: Prevent unsafe redirects**](./sections/security/saferedirects.md)
 
 <br/><br/>
 
@@ -1056,7 +1056,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** Your project's API keys, passwords or other secrets are open to be abused by anyone who comes across them, which may result in financial loss, impersonation, and other risks.
 
-🔗 [**Read More: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.md)
+🔗 [**Read More: Avoid publishing secrets**](./sections/security/avoid_publishing_secrets.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
@@ -1073,7 +1073,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **Otherwise:** As the Event Loop is blocked, Node.js will be unable to handle other request thus causing delays for concurrent users. **3000 users are waiting for a response, the content is ready to be served, but one single request blocks the server from dispatching the results back**
 
-🔗 [**Read More: Do not block the event loop**](/sections/performance/block-loop.md)
+🔗 [**Read More: Do not block the event loop**](./sections/performance/block-loop.md)
 
 <br /><br /><br />
 
@@ -1084,7 +1084,7 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 **Otherwise:** You'll have to maintain less performant projects where you could have simply used what was **already** available or dealt with a few more lines in exchange of a few more files.
 
-🔗 [**Read More: Native over user land utils**](/sections/performance/nativeoverutil.md)
+🔗 [**Read More: Native over user land utils**](./sections/performance/nativeoverutil.md)
 
 <br/><br/><br/>
 
@@ -1122,7 +1122,7 @@ RUN npm ci --production
 CMD [ "node", "dist/app.js" ]
 ```
 
-🔗 [**Read More: Use multi-stage builds**](/sections/docker/multi_stage_builds.md)
+🔗 [**Read More: Use multi-stage builds**](./sections/docker/multi_stage_builds.md)
 
 <br /><br /><br />
 
@@ -1132,7 +1132,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Otherwise:** When no signals are passed, your code will never be notified about shutdowns. Without this, it will lose its chance to close properly possibly losing current requests and/or data.
 
-[**Read More: Bootstrap container using node command, avoid npm start**](/sections/docker/bootstrap-using-node.md)
+[**Read More: Bootstrap container using node command, avoid npm start**](./sections/docker/bootstrap-using-node.md)
 
 <br /><br /><br />
 
@@ -1142,7 +1142,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Otherwise:** Container keeps crashing due to lack of resources will get restarted indefinitely by the process manager. Should Kubernetes be aware of that, it could relocate it to a different roomy instance
 
-🔗 [**Read More: Let the Docker orchestrator restart and replicate processes**](/sections/docker/restart-and-replicate-processes.md)
+🔗 [**Read More: Let the Docker orchestrator restart and replicate processes**](./sections/docker/restart-and-replicate-processes.md)
 
 <br/><br /><br />
 
@@ -1152,7 +1152,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Otherwise**: Common personal secret files like `.env`, `.aws` and `.npmrc` will be shared with anybody with access to the image (e.g. Docker repository)
 
-🔗 [**Read More: Use .dockerignore**](/sections/docker/docker-ignore.md)
+🔗 [**Read More: Use .dockerignore**](./sections/docker/docker-ignore.md)
 
 <br /><br /><br />
 
@@ -1162,7 +1162,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Otherwise:** Many of the infamous npm security breaches were found within development packages (e.g. [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes))
 
-🔗 Read More: [Remove development dependencies](/sections/docker/install-for-production.md)
+🔗 Read More: [Remove development dependencies](./sections/docker/install-for-production.md)
 
 <br /><br /><br />
 
@@ -1172,7 +1172,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Otherwise:** Dying immediately means not responding to thousands of disappointed users
 
-🔗 [**Read More: Graceful shutdown**](/sections/docker/graceful-shutdown.md)
+🔗 [**Read More: Graceful shutdown**](./sections/docker/graceful-shutdown.md)
 
 <br /><br /><br />
 
@@ -1182,7 +1182,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Otherwise:** The docker definition is needed to perform thoughtful scaling decision and prevent starving other citizens. Without also defining the v8's limits, it will under utilize the container resources - Without explicit instructions it crashes when utilizing ~50-60% of its host resources
 
-🔗 [**Read More: Set memory limits using Docker only**](/sections/docker/memory-limit.md)
+🔗 [**Read More: Set memory limits using Docker only**](./sections/docker/memory-limit.md)
 
 <br /><br /><br />
 
@@ -1192,7 +1192,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Otherwise:** Docker build will be very long and consume lot of resources even when making tiny changes
 
-🔗 [**Read More: Leverage caching to reduce build times**](/sections/docker/use-cache-for-shorter-build-time.md)
+🔗 [**Read More: Leverage caching to reduce build times**](./sections/docker/use-cache-for-shorter-build-time.md)
 
 <br /><br /><br />
 
@@ -1204,7 +1204,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 **Otherwise:** A new version of a base image could be deployed into production with breaking changes, causing unintended application behaviour.
 
-🔗 [**Read More: Understand image tags and use the "latest" tag with caution**](/sections/docker/image-tags.md)
+🔗 [**Read More: Understand image tags and use the "latest" tag with caution**](./sections/docker/image-tags.md)
 
 <br /><br /><br />
 
@@ -1214,7 +1214,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 **Otherwise:** Building, pushing, and pulling images will take longer, unknown attack vectors can be used by malicious actors and more resources are consumed.
 
-🔗 [**Read More: Prefer smaller images**](/sections/docker/smaller_base_images.md)
+🔗 [**Read More: Prefer smaller images**](./sections/docker/smaller_base_images.md)
 
 <br /><br /><br />
 
@@ -1224,7 +1224,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 **Otherwise:** Everyone with access to the CI and docker registry will also get access to some precious organization secrets as a bonus
 
-🔗 [**Read More: Clean-out build-time secrets**](/sections/docker/avoid-build-time-secrets.md)
+🔗 [**Read More: Clean-out build-time secrets**](./sections/docker/avoid-build-time-secrets.md)
 
 <br /><br /><br />
 
@@ -1234,7 +1234,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 **Otherwise:** Your code might be entirely free from vulnerabilities. However it might still get hacked due to vulnerable version of OS-level binaries (e.g. OpenSSL, TarBall) that are commonly being used by applications
 
-🔗 [**Read More: Scan the entire image before production**](/sections/docker/scan-images.md)
+🔗 [**Read More: Scan the entire image before production**](./sections/docker/scan-images.md)
 
 <br /><br /><br />
 
@@ -1244,7 +1244,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 **Otherwise:** The image that will get shipped to production will weigh 30% more due to files that will never get used
 
-🔗 [**Read More: Clean NODE_MODULE cache**](/sections/docker/clean-cache.md)
+🔗 [**Read More: Clean NODE_MODULE cache**](./sections/docker/clean-cache.md)
 
 <br /><br /><br />
 
@@ -1252,7 +1252,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 **TL;DR:** This is a collection of Docker advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
 
-🔗 [**Read More: Generic Docker practices**](/sections/docker/generic-tips.md)
+🔗 [**Read More: Generic Docker practices**](./sections/docker/generic-tips.md)
 
 <br/><br /><br />
 
@@ -1262,7 +1262,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 **Otherwise:** Mistakenly the Dockerfile creator left Root as the production user, and also used an image from unknown source repository. This could be avoided with with just a simple linter.
 
-🔗 [**Read More: Lint your Dockerfile**](/sections/docker/lint-dockerfile.md)
+🔗 [**Read More: Lint your Dockerfile**](./sections/docker/lint-dockerfile.md)
 
 <br/><br /><br />
 
@@ -1280,20 +1280,20 @@ All translations are contributed by the community. We will be happy to get any h
 
 ### Completed translations
 
-- ![BR](/assets/flags/BR.png) [Brazilian Portuguese](./README.brazilian-portuguese.md) - Courtesy of [Marcelo Melo](https://github.com/marcelosdm)
-- ![CN](/assets/flags/CN.png) [Chinese](./README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
-- ![RU](/assets/flags/RU.png) [Russian](./README.russian.md) - Courtesy of [Alex Ivanov](https://github.com/contributorpw)
-- ![PL](/assets/flags/PL.png) [Polish](./README.polish.md) - Courtesy of [Michal Biesiada](https://github.com/mbiesiad)
-- ![JA](/assets/flags/JA.png) [Japanese](./README.japanese.md) - Courtesy of [Yuki Ota](https://github.com/YukiOta), [Yuta Azumi](https://github.com/YA21)
-- ![EU](/assets/flags/EU.png) [Basque](README.basque.md) - Courtesy of [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta
+- ![BR](./assets/flags/BR.png) [Brazilian Portuguese](./README.brazilian-portuguese.md) - Courtesy of [Marcelo Melo](https://github.com/marcelosdm)
+- ![CN](./assets/flags/CN.png) [Chinese](./README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
+- ![RU](./assets/flags/RU.png) [Russian](./README.russian.md) - Courtesy of [Alex Ivanov](https://github.com/contributorpw)
+- ![PL](./assets/flags/PL.png) [Polish](./README.polish.md) - Courtesy of [Michal Biesiada](https://github.com/mbiesiad)
+- ![JA](./assets/flags/JA.png) [Japanese](./README.japanese.md) - Courtesy of [Yuki Ota](https://github.com/YukiOta), [Yuta Azumi](https://github.com/YA21)
+- ![EU](./assets/flags/EU.png) [Basque](README.basque.md) - Courtesy of [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta
 
 ### Translations in progress
 
-- ![FR](/assets/flags/FR.png) [French](https://github.com/goldbergyoni/nodebestpractices/blob/master/README.french.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/129))
-- ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/156))
-- ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Courtesy of [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94))
-- ![ES](/assets/flags/ES.png) [Spanish](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/95))
-- ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/139))
+- ![FR](./assets/flags/FR.png) [French](https://github.com/goldbergyoni/nodebestpractices/blob/master/README.french.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/129))
+- ![HE](./assets/flags/HE.png) Hebrew ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/156))
+- ![KR](./assets/flags/KR.png) [Korean](README.korean.md) - Courtesy of [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94))
+- ![ES](./assets/flags/ES.png) [Spanish](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/95))
+- ![TR](./assets/flags/TR.png) Turkish ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/139))
 
 <br/><br/>
 
@@ -1356,7 +1356,7 @@ Deep specialist in JavaScript and its ecosystem — React, Node.js, TypeScript, 
 
 Thank you to all our collaborators! 🙏
 
-Our collaborators are members who are contributing to the repository on a regular basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in helping us guide thousands of people to craft better Node.js applications, please read our [contributor guidelines](/.operations/CONTRIBUTING.md) 🎉
+Our collaborators are members who are contributing to the repository on a regular basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in helping us guide thousands of people to craft better Node.js applications, please read our [contributor guidelines](./.operations/CONTRIBUTING.md) 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"/></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"/></a> | <a href="https://github.com/rluvaton" target="_blank"><img src="assets/images/members/raz-luvaton.jpg" width="75" height="75" alt="Raz Luvaton" loading="lazy"/></a> | <a href="https://github.com/josh-hemphill" target="_blank"><img src="assets/images/members/jhemphill.jpg" width="75" height="75" alt="Josh Hemphill" loading="lazy"/></a> |
 | :--: | :--: | :--: | :--: |

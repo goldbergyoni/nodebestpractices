@@ -4,7 +4,7 @@
 
 ### One Paragraph Explainer
 
-You locked your dependencies following [**Lock dependencies**](/sections/production/lockdependencies.md) but you now need to make sure those exact package versions are used in production.
+You locked your dependencies following [**Lock dependencies**](./lockdependencies.md) but you now need to make sure those exact package versions are used in production.
 
 Using `npm ci` to install packages will do exactly that and more.
 * It will fail if your `package.json` and your `package-lock.json` do not match (they should) or if you don't have a lock file

@@ -16,13 +16,13 @@ Ponieważ i tak drukujesz instrukcje dziennika i oczywiście potrzebujesz interf
 
 ### Przykład wizualizacji: Kibana (część Elastic stack) ułatwia zaawansowane wyszukiwanie zawartości dziennika
 
-![Kibana facilitates advanced searching on log content](/assets/images/smartlogging1.png "Kibana facilitates advanced searching on log content")
+![Kibana facilitates advanced searching on log content](../../assets/images/smartlogging1.png "Kibana facilitates advanced searching on log content")
 
 <br/><br/>
 
 ### Przykład wizualizacji: Kibana (część Elastic stack) wizualizuje dane na podstawie logów
 
-![Kibana visualizes data based on logs](/assets/images/smartlogging2.jpg "Kibana visualizes data based on logs")
+![Kibana visualizes data based on logs](../../assets/images/smartlogging2.jpg "Kibana visualizes data based on logs")
 
 <br/><br/>
 

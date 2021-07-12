@@ -12,19 +12,19 @@ Atingir os recursos avançados exige uma configuração demorada ou a compra de 
 
 ### Exemplo de monitoramento: painel padrão do AWS cloudwatch. Difícil de extrair métricas na aplicação
 
-![Painel padrão do AWS cloudwatch. Difícil de extrair métricas na aplicação](/assets/images/monitoring1.png)
+![Painel padrão do AWS cloudwatch. Difícil de extrair métricas na aplicação](../../assets/images/monitoring1.png)
 
 <br/><br/>
 
 ### Exemplo de monitoramento: painel padrão do StackDriver. Difícil de extrair métricas na aplicação
 
-![Painel padrão do StackDriver. Difícil de extrair métricas na aplicação](/assets/images/monitoring2.jpg)
+![Painel padrão do StackDriver. Difícil de extrair métricas na aplicação](../../assets/images/monitoring2.jpg)
 
 <br/><br/>
 
 ### Exemplo de monitoramento: Grafana como camada de interface do usuário que visualiza dados brutos
 
-![Grafana como camada de interface do usuário que visualiza dados brutos](/assets/images/monitoring3.png)
+![Grafana como camada de interface do usuário que visualiza dados brutos](../../assets/images/monitoring3.png)
 
 <br/><br/>
 

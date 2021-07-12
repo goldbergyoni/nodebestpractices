@@ -16,13 +16,13 @@
 
 ### Пример визуализации: Kibana (часть стека Elastic) облегчает расширенный поиск по содержимому журнала
 
-![Kibana facilitates advanced searching on log content](/assets/images/smartlogging1.png "Kibana facilitates advanced searching on log content")
+![Kibana facilitates advanced searching on log content](../../assets/images/smartlogging1.png "Kibana facilitates advanced searching on log content")
 
 <br/><br/>
 
 ### Пример визуализации: Kibana (часть стека Elastic) визуализирует данные на основе журналов
 
-![Kibana visualizes data based on logs](/assets/images/smartlogging2.jpg "Kibana visualizes data based on logs")
+![Kibana visualizes data based on logs](../../assets/images/smartlogging2.jpg "Kibana visualizes data based on logs")
 
 <br/><br/>
 

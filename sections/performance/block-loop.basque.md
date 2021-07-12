@@ -44,7 +44,7 @@ Aplikazio honen probak egitean, 'while' komandoak sortutako latentzia ikusiko du
 
 ## Gertaeren begiztaren irudia
 
-![Gertaeren begiztaren irudia](/assets/images/event-loop.png "Gertaeren begiztaren irudia")
+![Gertaeren begiztaren irudia](../../assets/images/event-loop.png "Gertaeren begiztaren irudia")
 
 > Hemen duzu oinarrizko arau bat zure Node zerbitzaria azkarra izaten jarraitzeko: Node azkarra da une jakin batean bezero bakoitzarekin lotutako lana "txikia" denean.
 > [Ez blokeatu gertaeren begizta (edota atazen begizta) | Node.js](https://nodejs.org/en/docs/guides/dont-block-the-event-loop/)

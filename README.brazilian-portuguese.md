@@ -14,11 +14,11 @@
 
 <br/>
 
-[![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Siga-nos no Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
+[![nodepractices](./assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Siga-nos no Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
 
 <br/>
 
-Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md), [![JA](/assets/flags/JA.png)**JA**](/README.japanese.md), [![EU](/assets/flags/EU.png)**EU**](/README.basque.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** and ![TR](/assets/flags/TR.png)**TR** em progresso! )](#translations)
+Leia em diferentes idiomas: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md), [![BR](./assets/flags/BR.png)**BR**](./README.brazilian-portuguese.md), [![RU](./assets/flags/RU.png)**RU**](./README.russian.md), [![PL](./assets/flags/PL.png)**PL**](./README.polish.md), [![JA](./assets/flags/JA.png)**JA**](./README.japanese.md), [![EU](./assets/flags/EU.png)**EU**](./README.basque.md) [(![ES](./assets/flags/ES.png)**ES**, ![FR](./assets/flags/FR.png)**FR**, ![HE](./assets/flags/HE.png)**HE**, ![KR](./assets/flags/KR.png)**KR** and ![TR](./assets/flags/TR.png)**TR** em progresso! )](#translations)
 
 <br/>
 
@@ -28,9 +28,9 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 - **Nova Boa Prática:** 4.4: [Evite dados fixos e sementes para teste, adicione os dados no teste](#4-práticas-de-testes-e-qualidade-geral)
 
-- **Nova Boa Prática:** 6.25: [Evite publicar segredos no registro do npm](/sections/security/avoid_publishing_secrets.brazilian-portuguese.md)
+- **Nova Boa Prática:** 6.25: [Evite publicar segredos no registro do npm](./sections/security/avoid_publishing_secrets.brazilian-portuguese.md)
 
-- **Nova tradução:** ![BR](/assets/flags/BR.png) [Português Brasileiro](/README.brazilian-portuguese.md) disponível agora, cortesia de [Marcelo Melo](https://github.com/marcelosdm)! ❤️
+- **Nova tradução:** ![BR](./assets/flags/BR.png) [Português Brasileiro](./README.brazilian-portuguese.md) disponível agora, cortesia de [Marcelo Melo](https://github.com/marcelosdm)! ❤️
 
 - **🎊 60,000 estrelas!**: Nosso repo recebeu estrela e a confiança de 60.100 desenvolvedores. Estamos sem palavras
 
@@ -66,7 +66,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Quando desenvolvendo novos recursos, desenvolvedores têm dificuldade para perceber o impacto de suas modificações e temem estragar outros componentes dependentes - deploys se tornam mais lentos e arriscados. Também é considerado mais difícil de escalar quando nenhuma unidade de negócio está separada.
 
-🔗 [**Leia mais: estruture por componentes**](/sections/projectstructre/breakintcomponents.brazilian-portuguese.md)
+🔗 [**Leia mais: estruture por componentes**](./sections/projectstructre/breakintcomponents.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -76,7 +76,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Uma aplicação que misture objetos WEB com outras camadas não podem ser acessadas por códigos de teste, CRON jobs e outras chamadas não oriundas do Express.
 
-🔗 [**Leia Mais: seu app em camadas**](/sections/projectstructre/createlayers.brazilian-portuguese.md)
+🔗 [**Leia Mais: seu app em camadas**](./sections/projectstructre/createlayers.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -86,7 +86,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Você deverá criar seu próprio ciclo de implantação e dependência.
 
-🔗 [**Leia Mais: estrutura por característica**](/sections/projectstructre/wraputilities.brazilian-portuguese.md)
+🔗 [**Leia Mais: estrutura por característica**](./sections/projectstructre/wraputilities.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -96,7 +96,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Sua API será acessível apenas para testes via chamadas HTTP (mais lentos e muito mais difíceis de gerar relatórios de cobertura). Provavelmente não será um grande prazer manter centenas de linhas de código em um único arquivo.
 
-🔗 [**Leia Mais: separe 'app' e 'server' no Express**](/sections/projectstructre/separateexpress.brazilian-portuguese.md)
+🔗 [**Leia Mais: separe 'app' e 'server' no Express**](./sections/projectstructre/separateexpress.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -106,7 +106,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Deixar de satisfazer qualquer um dos requisitos de configuração simplesmente atrapalhará a equipe de desenvolvimento ou devops. Provavelmente ambas.
 
-🔗 [**Leia Mais: melhores práticas de configuração**](/sections/projectstructre/configguide.brazilian-portuguese.md)
+🔗 [**Leia Mais: melhores práticas de configuração**](./sections/projectstructre/configguide.brazilian-portuguese.md)
 
 <br/><br/><br/>
 
@@ -120,7 +120,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** O estilo de callback do Node.js, function(err, response), é um caminho promissor para um código insustentável devido à combinação de manipulação de erro com código casual, aninhamento excessivo e padrões de codificação inadequados.
 
-🔗 [**Leia Mais: evitando callbacks**](/sections/errorhandling/asyncerrorhandling.brazilian-portuguese.md)
+🔗 [**Leia Mais: evitando callbacks**](./sections/errorhandling/asyncerrorhandling.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -130,7 +130,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Ao invocar algum componente, sendo incerto qual tipo de erro irá retornar - isso faz com que o tratamento de erros seja muito mais difícil. Até pior, usar tipos personalizados para descrever erros pode levar à perda de informações de erros críticos, como o stack trace!
 
-🔗 [**Leia Mais: usando o objeto interno de erro**](/sections/errorhandling/useonlythebuiltinerror.brazilian-portuguese.md)
+🔗 [**Leia Mais: usando o objeto interno de erro**](./sections/errorhandling/useonlythebuiltinerror.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -140,7 +140,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Você pode sempre reiniciar o aplicativo quando um erro aparecer, mas por que derrubar aproximadamente 5000 usuários que estavam online por causa de um pequeno erro operacional previsto? O contrário também não é ideal - manter a aplicação rodando quando um problema desconhecido (erro de programação) ocorreu, pode levar para um comportamento não esperado. Diferenciá-los, permite agir com tato e aplicar uma abordagem equilibrada baseada no dado contexto.
 
-🔗 [**Leia Mais: erros operacionais vs erros de programação**](/sections/errorhandling/operationalvsprogrammererror.brazilian-portuguese.md)
+🔗 [**Leia Mais: erros operacionais vs erros de programação**](./sections/errorhandling/operationalvsprogrammererror.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -150,7 +150,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Não tratar os erros em um mesmo lugar irá levar à duplicidade de código, e provavelmente, a erros tratados incorretamente.
 
-🔗 [**Leia Mais: tratando erros de forma centralizada**](/sections/errorhandling/centralizedhandling.brazilian-portuguese.md)
+🔗 [**Leia Mais: tratando erros de forma centralizada**](./sections/errorhandling/centralizedhandling.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -160,7 +160,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Um cliente de uma API pode decidir travar e reiniciar, apenas pelo motivo de ter recebido de volta um erro que não conseguiu entender. Nota: o visitante de sua API pode ser você (muito comum em um ambiente de microsserviço).
 
-🔗 [**Leia Mais: documentando erros de API no Swagger ou GraphQL**](/sections/errorhandling/documentingusingswagger.brazilian-portuguese.md)
+🔗 [**Leia Mais: documentando erros de API no Swagger ou GraphQL**](./sections/errorhandling/documentingusingswagger.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -170,7 +170,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Quando uma exceção desconhecida é lançada, algum objeto pode estar com defeito (por exemplo, um emissor de evento que é usado globalmente e não dispara mais eventos devido a alguma falha interna) e todas as requisições futuras podem falhar ou se comportar loucamente.
 
-🔗 [**Leia Mais: finalizando o processo**](/sections/errorhandling/shuttingtheprocess.brazilian-portuguese.md)
+🔗 [**Leia Mais: finalizando o processo**](./sections/errorhandling/shuttingtheprocess.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -180,7 +180,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Ficar procurando através de console.logs ou manualmente em arquivos de texto confusos sem utilizar ferramentas de consulta ou um visualizador de log decente, pode mantê-lo ocupado até tarde.
 
-🔗 [**Leia Mais: usando um logger maduro**](/sections/errorhandling/usematurelogger.brazilian-portuguese.md)
+🔗 [**Leia Mais: usando um logger maduro**](./sections/errorhandling/usematurelogger.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -190,7 +190,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Sem testes, seja automático ou manual, não podemos confiar em nosso código para retornar os erros certos. Sem erros significantes, não há tratamento de erros.
 
-🔗 [**Leia Mais: fluxos de testes de erros**](/sections/errorhandling/testingerrorflows.brazilian-portuguese.md)
+🔗 [**Leia Mais: fluxos de testes de erros**](./sections/errorhandling/testingerrorflows.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -200,7 +200,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Você pode gastar muito esforço medindo o desempenho e os tempos de inatividade (downtime) da API. Provavelmente, você nunca saberá quais são suas partes de código mais lentas no cenário real e como elas afetam o UX.
 
-🔗 [**Leia Mais: usando APM**](/sections/errorhandling/apmproducts.brazilian-portuguese.md)
+🔗 [**Leia Mais: usando APM**](./sections/errorhandling/apmproducts.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -210,7 +210,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Seus erros serão engolidos e não vão deixar rastros. Nada para se preocupar.
 
-🔗 [**Leia Mais: capturando rejeições de promises não tratadas**](/sections/errorhandling/catchunhandledpromiserejection.brazilian-portuguese.md)
+🔗 [**Leia Mais: capturando rejeições de promises não tratadas**](./sections/errorhandling/catchunhandledpromiserejection.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -220,7 +220,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Considere isto: sua função espera receber um “Desconto” como argumento numérico que foi esquecido de passar. Mais adiante, seu código verifica se Desconto!=0 (valor do desconto permitido é maior que zero). Depois, irá permitir que o usuário desfrute de um desconto. Meu Deus, que baita bug. Entendeu?
 
-🔗 [**Leia Mais: falhando rápido**](/sections/errorhandling/failfast.brazilian-portuguese.md)
+🔗 [**Leia Mais: falhando rápido**](./sections/errorhandling/failfast.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -246,7 +246,7 @@ especialmente se a causa do comportamento anormal estiver dentro da função aus
 
 **Caso contrário:** Desenvolvedores irão focar nas preocupações tediosas de espaçamento e largura de linha e o tempo poderá ser desperdiçado pensando sobre o estilo de código do projeto.
 
-🔗 [**Leia Mais: Usando ESLint e Prettier**](/sections/codestylepractices/eslint_prettier.brazilian-portuguese.md)
+🔗 [**Leia Mais: Usando ESLint e Prettier**](./sections/codestylepractices/eslint_prettier.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -462,7 +462,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Uma implantação falhou, um teste chamado "Adicionar produto" falhou. Isso lhe diz exatamente o que está errado?
 
-🔗 [**Leia Mais: Inclua 3 partes em cada nome de teste**](/sections/testingandquality/3-parts-in-name.brazilian-portuguese.md)
+🔗 [**Leia Mais: Inclua 3 partes em cada nome de teste**](./sections/testingandquality/3-parts-in-name.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -490,7 +490,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Considere um cenário em que a implementação é abortada devido a falhas nos testes. Agora, a equipe gastará um tempo precioso de investigação que termina em uma triste conclusão: o sistema funciona bem, mas os testes interferem uns nos outros e quebram a compilação
 
-🔗 [**Leia Mais: Evite dados fixos para teste**](/sections/testingandquality/avoid-global-test-fixture.brazilian-portuguese.md)
+🔗 [**Leia Mais: Evite dados fixos para teste**](./sections/testingandquality/avoid-global-test-fixture.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -540,7 +540,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Com qualidade de código ruim, bugs e desempenho sempre serão um problema que nenhuma nova biblioteca maravilhosa ou recursos de última geração podem corrigir.
 
-🔗 [**Leia Mais: Refatoração!**](/sections/testingandquality/refactoring.brazilian-portuguese.md)
+🔗 [**Leia Mais: Refatoração!**](./sections/testingandquality/refactoring.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -550,7 +550,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Escolher algum fornecedor de nicho pode fazer com que você fique engessado quando precisar de alguma personalização avançada. Por outro lado, escolher o Jenkins pode ser uma perda de tempo precioso na configuração da infraestrutura.
 
-🔗 [**Leia Mais: Escolhendo a plataforma de CI**](/sections/testingandquality/citools.brazilian-portuguese.md)
+🔗 [**Leia Mais: Escolhendo a plataforma de CI**](./sections/testingandquality/citools.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -574,7 +574,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Falha === clientes desapontados. Simples
 
-🔗 [**Leia Mais: Monitoramento!**](/sections/production/monitoring.brazilian-portuguese.md)
+🔗 [**Leia Mais: Monitoramento!**](./sections/production/monitoring.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -584,7 +584,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Você acaba com uma caixa preta que é difícil de raciocinar, então você começa a reescrever todas as declarações de log para adicionar informações adicionais.
 
-🔗 [**Leia Mais: Aumente a transparência usando smart logging**](/sections/production/smartlogging.brazilian-portuguese.md)
+🔗 [**Leia Mais: Aumente a transparência usando smart logging**](./sections/production/smartlogging.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -594,7 +594,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Seu único e pobre thread permanecerá ocupado fazendo tarefas de infra-estrutura em vez de lidar com o núcleo da sua aplicação e o desempenho certamente será degradado.
 
-🔗 [**Leia Mais: Delegue tudo o que for possível (por exemplo, gzip, SSL) a um proxy reverso**](/sections/production/delegatetoproxy.brazilian-portuguese.md)
+🔗 [**Leia Mais: Delegue tudo o que for possível (por exemplo, gzip, SSL) a um proxy reverso**](./sections/production/delegatetoproxy.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -604,7 +604,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** O QA testará completamente o código e aprovará uma versão que se comportará de maneira diferente na produção. Pior ainda, servidores diferentes no mesmo cluster de produção podem executar código diferente.
 
-🔗 [**Leia Mais: Bloqueio de dependências**](/sections/production/lockdependencies.brazilian-portuguese.md)
+🔗 [**Leia Mais: Bloqueio de dependências**](./sections/production/lockdependencies.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -614,7 +614,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Rodar dezenas de instâncias sem uma estratégia clara e muitas ferramentas juntas (gerenciamento de cluster, docker, PM2) pode levar o DevOps ao caos.
 
-🔗 [**Leia Mais: Poupe tempo de atividade do processo usando a ferramenta certa**](/sections/production/guardprocess.brazilian-portuguese.md)
+🔗 [**Leia Mais: Poupe tempo de atividade do processo usando a ferramenta certa**](./sections/production/guardprocess.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -624,7 +624,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Sua aplicação vai utilizar apenas 25% dos recursos disponíveis(!) ou talvez até menos. Note que um servidor típico possui 4 núcleos de processamento ou mais, o deploy ingênuo do Node.js utiliza apenas 1 (mesmo usando serviços de PaaS como AWS Beanstalk!)
 
-🔗 [**Leia Mais: Utilize todos os núcleos do processador**](/sections/production/utilizecpu.brazilian-portuguese.md)
+🔗 [**Leia Mais: Utilize todos os núcleos do processador**](./sections/production/utilizecpu.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -634,7 +634,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Você perceberá que está realizando muitos “deploys de diagnóstico” - enviando código para produção apenas para extrair algumas informações para fins de diagnóstico.
 
-🔗 [**Leia Mais: Crie um ‘endpoint de manutenção’**](/sections/production/createmaintenanceendpoint.brazilian-portuguese.md)
+🔗 [**Leia Mais: Crie um ‘endpoint de manutenção’**](./sections/production/createmaintenanceendpoint.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -644,7 +644,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Você pode gastar muito esforço medindo o desempenho e os tempos de inatividade da API, provavelmente você nunca saberá quais são suas partes de código mais lentas no cenário do mundo real e como elas afetam o UX.
 
-🔗 [**Leia Mais: Descubra erros e tempo de inatividade usando produtos APM**](/sections/production/apmproducts.brazilian-portuguese.md)
+🔗 [**Leia Mais: Descubra erros e tempo de inatividade usando produtos APM**](./sections/production/apmproducts.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -654,7 +654,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Uma pessoa fera em TI/DevOps não salvará um sistema mal escrito.
 
-🔗 [**Leia Mais: Deixe seu código pronto para produção**](/sections/production/productioncode.brazilian-portuguese.md)
+🔗 [**Leia Mais: Deixe seu código pronto para produção**](./sections/production/productioncode.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -664,7 +664,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** A memória de seus processos pode vazar cem megabytes por dia, assim como aconteceu no [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak).
 
-🔗 [**Leia Mais: Meça e proteja o uso de memória**](/sections/production/measurememory.brazilian-portuguese.md)
+🔗 [**Leia Mais: Meça e proteja o uso de memória**](./sections/production/measurememory.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -674,7 +674,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Seu único thread do Node ficará ocupado fazendo streaming the centenas de arquivos de html/imagens/angular/react ao invés de alocar todo seu recurso para a tarefa que ele foi designado - servir conteúdo dinâmico.
 
-🔗 [**Leia Mais: Deixe seus recursos de frontend fora do Node**](/sections/production/frontendout.brazilian-portuguese.md)
+🔗 [**Leia Mais: Deixe seus recursos de frontend fora do Node**](./sections/production/frontendout.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -684,7 +684,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Falha em um determinado servidor resultará em tempo de inatividade da aplicação, em vez de apenas matar uma máquina defeituosa. Além do mais, dimensionar a elasticidade será mais desafiador devido à dependência de um servidor específico.
 
-🔗 [**Leia Mais: Seja stateless, mate seus Servidores quase todos os dias**](/sections/production/bestateless.brazilian-portuguese.md)
+🔗 [**Leia Mais: Seja stateless, mate seus Servidores quase todos os dias**](./sections/production/bestateless.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -694,7 +694,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Manter seu código limpo com vulnerabilidades sem ferramentas dedicadas exigirá o acompanhamento constante de publicações online sobre novas ameaças. Bem entendiante.
 
-🔗 [**Leia Mais: Utilize ferramentas que detectam vulnerabilidades automaticamente**](/sections/production/detectvulnerabilities.brazilian-portuguese.md)
+🔗 [**Leia Mais: Utilize ferramentas que detectam vulnerabilidades automaticamente**](./sections/production/detectvulnerabilities.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -704,7 +704,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Observar um log de erros de produção sem o contexto - o que aconteceu antes - torna muito mais difícil e mais lento raciocinar sobre o problema.
 
-🔗 [**Leia Mais: Atribua ‘TransactionId’ para cada declaração de log**](/sections/production/assigntransactionid.brazilian-portuguese.md)
+🔗 [**Leia Mais: Atribua ‘TransactionId’ para cada declaração de log**](./sections/production/assigntransactionid.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -714,7 +714,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Omitir esta simples propriedade pode degradar muito o desempenho. Por exemplo, ao utilizar o Express para renderização do lado do servidor, omitir o NODE_ENV o torna mais lento!
 
-🔗 [**Leia Mais: Defina NODE_ENV=production**](/sections/production/setnodeenv.brazilian-portuguese.md)
+🔗 [**Leia Mais: Defina NODE_ENV=production**](./sections/production/setnodeenv.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -732,7 +732,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Bugs recentemente descobertos e vulnerabilidades podem ser usados para explorar uma aplicação em produção, e sua aplicação pode se tornar incompatível com vários módulos e mais difícil de manter.
 
-🔗 [**Leia Mais: Use uma versão LTS do Node.js**](/sections/production/LTSrelease.brazilian-portuguese.md)
+🔗 [**Leia Mais: Use uma versão LTS do Node.js**](./sections/production/LTSrelease.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -742,7 +742,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Aplicações manipulando o roteamento de log === difícil de dimensionar, perda de logs, separação ruim de preocupações.
 
-🔗 [**Leia Mais: Roteamento de Logs**](/sections/production/logrouting.brazilian-portuguese.md)
+🔗 [**Leia Mais: Roteamento de Logs**](./sections/production/logrouting.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -808,7 +808,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** A entrada de usuários não validados pode levar à injeção do operador ao trabalhar com MongoDB para NoSQL e não usar um sistema próprio ou ORM irão permitir facilmente um ataque de SQL injection, criando uma grande vulnerabilidade.
 
-🔗 [**Leia Mais: Prevenção de query injection usando bibliotecas de ORM/ODM**](/sections/security/ormodmusage.brazilian-portuguese.md)
+🔗 [**Leia Mais: Prevenção de query injection usando bibliotecas de ORM/ODM**](./sections/security/ormodmusage.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -816,7 +816,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **TL;DR:** Esta é uma coleção de conselhos de segurança que não estão relacionadas diretamente com Node.js - a implementação do Node não é muito diferente comparado a outras linguagens. Clique em “leia mais” para dar uma olhada.
 
-🔗 [**Leia Mais: Boas práticas comuns de segurança**](/sections/security/commonsecuritybestpractices.brazilian-portuguese.md)
+🔗 [**Leia Mais: Boas práticas comuns de segurança**](./sections/security/commonsecuritybestpractices.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -828,7 +828,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Invasores podem realizar ataques diretos aos usuários de sua aplicação, levando a grandes vulnerabilidades de segurança.
 
-🔗 [**Leia Mais: Usando headers seguros em sua aplicação**](/sections/security/secureheaders.brazilian-portuguese.md)
+🔗 [**Leia Mais: Usando headers seguros em sua aplicação**](./sections/security/secureheaders.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -840,7 +840,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Um invasor pode detectar seu framework web e atacar todas suas vulnerabilidades.
 
-🔗 [**Leia Mais: Segurança de dependências**](/sections/security/dependencysecurity.brazilian-portuguese.md)
+🔗 [**Leia Mais: Segurança de dependências**](./sections/security/dependencysecurity.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -852,7 +852,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Senhas ou segredos que são persistidos sem o uso de uma função segura, são vulneráveis a força bruta e ataques de dicionário que levarão eventualmente à sua divulgação.
 
-🔗 [**Leia Mais: Use o Bcrypt**](/sections/security/bcryptpasswords.brazilian-portuguese.md)
+🔗 [**Leia Mais: Use o Bcrypt**](./sections/security/bcryptpasswords.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -864,7 +864,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Um invasor pode armazenar um código JavaScript malicioso em seu banco de dados, que será enviado para os clientes.
 
-🔗 [**Leia Mais: Evite saídas**](/sections/security/escape-output.brazilian-portuguese.md)
+🔗 [**Leia Mais: Evite saídas**](./sections/security/escape-output.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -876,7 +876,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Sua generosidade e abordagem permissiva aumentam muito a superfície de ataque e incentivam o invasor a experimentar muitas entradas até encontrar alguma combinação para travar a aplicação.
 
-🔗 [**Leia Mais: Valide os esquemas de entrada JSON**](/sections/security/validation.brazilian-portuguese.md)
+🔗 [**Leia Mais: Valide os esquemas de entrada JSON**](./sections/security/validation.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -888,7 +888,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Tokens expirados ou extraviados, podem ser usados maliciosamente por terceiros para acessar uma aplicação e para representar o proprietário do token.
 
-🔗 [**Leia Mais: Blacklist de JSON Web Tokens**](/sections/security/expirejwt.brazilian-portuguese.md)
+🔗 [**Leia Mais: Blacklist de JSON Web Tokens**](./sections/security/expirejwt.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -903,7 +903,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Um invasor pode emitir tentativas ilimitadas de senha automatizada para obter acesso a contas com privilégios em uma aplicação.
 
-🔗 [**Leia Mais: Limitando a taxa de login**](/sections/security/login-rate-limit.brazilian-portuguese.md)
+🔗 [**Leia Mais: Limitando a taxa de login**](./sections/security/login-rate-limit.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -915,7 +915,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Um invasor que consiga executar um script no servidor obtém poder ilimitado sobre a máquina local (por exemplo, alterar o iptable e redirecionar o tráfego para seu servidor).
 
-🔗 [**Leia Mais: Rode o Node.js com um usuário não raiz**](/sections/security/non-root-user.brazilian-portuguese.md)
+🔗 [**Leia Mais: Rode o Node.js com um usuário não raiz**](./sections/security/non-root-user.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -927,7 +927,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Sua aplicação terá que lidar com solicitações grandes, incapazes de processar o outro trabalho importante que ele precisa realizar, o que leva a implicações de desempenho e vulnerabilidade em relação a ataques DOS.
 
-🔗 [**Leia Mais: Limite o tamanho dos payloads**](/sections/security/requestpayloadsizelimit.brazilian-portuguese.md)
+🔗 [**Leia Mais: Limite o tamanho dos payloads**](./sections/security/requestpayloadsizelimit.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -939,7 +939,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** o código JavaScript malicioso encontra um caminho para um texto passado para o eval ou outras funções de avaliação em tempo real da linguagem JavaScript, e terá acesso total às permissões do JavaScript na página. Essa vulnerabilidade geralmente se manifesta como um ataque XSS.
 
-🔗 [**Leia Mais: Evite instruções eval do JavaScript**](/sections/security/avoideval.brazilian-portuguese.md)
+🔗 [**Leia Mais: Evite instruções eval do JavaScript**](./sections/security/avoideval.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -951,7 +951,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Expressões regulares mal escritas podem ser suscetíveis a ataques de Regular Expresssion DoS, que irão bloquear completamente o loop de eventos. Por exemplo, o popular pacote `moment` foi encontrado com vulnerabilidades de uso de RegEx maliciosos em novembro de 2017.
 
-🔗 [**Leia Mais: Evite RegEx maliciosos**](/sections/security/regex.brazilian-portuguese.md)
+🔗 [**Leia Mais: Evite RegEx maliciosos**](./sections/security/regex.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -963,7 +963,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** A entrada de usuário mal-intencionada pode encontrar o caminho para um parâmetro usado para require de arquivos adulterados, por exemplo, um arquivo carregado anteriormente no sistema de arquivos ou para acessar arquivos de sistema já existentes.
 
-🔗 [**Leia Mais: Carregamento seguro de módulos**](/sections/security/safemoduleloading.brazilian-portuguese.md)
+🔗 [**Leia Mais: Carregamento seguro de módulos**](./sections/security/safemoduleloading.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -975,7 +975,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Um plugin pode atacar através de uma infinita variedade de opções, como loops infinitos, sobrecarga de memória e acesso a variáveis sensíveis do ambiente de processo.
 
-🔗 [**Leia Mais: Rode códigos não seguros em uma sandbox**](/sections/security/sandbox.brazilian-portuguese.md)
+🔗 [**Leia Mais: Rode códigos não seguros em uma sandbox**](./sections/security/sandbox.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -987,7 +987,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** O uso ingênuo de processos filhos pode resultar na execução de comandos remotos ou em ataques de shell injection, devido à entrada do usuário mal-intencionado passada para um comando do sistema não-autorizado.
 
-🔗 [**Leia Mais: Tenha cautela ao trabalhar com processos filhos**](/sections/security/childprocesses.brazilian-portuguese.md)
+🔗 [**Leia Mais: Tenha cautela ao trabalhar com processos filhos**](./sections/security/childprocesses.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -999,7 +999,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Detalhes confidenciais da aplicação como caminhos e arquivos do servidor, módulos de terceiros em uso e outros workflows internos da aplicação poderiam ser explorados e expostos por um invasor.
 
-🔗 [**Leia Mais: Oculte detalhes de erros dos usuários**](/sections/security/hideerrors.brazilian-portuguese.md)
+🔗 [**Leia Mais: Oculte detalhes de erros dos usuários**](./sections/security/hideerrors.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -1021,7 +1021,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Cookies podem ser enviados através de conexões não seguras, e um hacker pode usar a sessão do usuário para identificar o framework utilizado na aplicação, bem como vulnerabilidades específicas do módulo.
 
-🔗 [**Leia Mais: Segurança de cookies e sessões**](/sections/security/sessions.brazilian-portuguese.md)
+🔗 [**Leia Mais: Segurança de cookies e sessões**](./sections/security/sessions.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -1043,7 +1043,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Se um invasor descobrir que você não está validando informações externas fornecidas pelo usuário, ele poderá explorar essa vulnerabilidade postando links especialmente em fóruns, mídias sociais e outros locais públicos para que os usuários cliquem.
 
-🔗 [**Leia Mais: Impeça redirecionamentos não seguros**](/sections/security/saferedirects.brazilian-portuguese.md)
+🔗 [**Leia Mais: Impeça redirecionamentos não seguros**](./sections/security/saferedirects.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -1055,7 +1055,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** As chaves, as senhas ou outros segredos da API do seu projeto estão sujeitos a abusos por qualquer pessoa que os encontre, o que pode resultar em perda financeira, falsificação de identidade e outros riscos.
 
-🔗 [**Leia Mais: Evite publicar segredos**](/sections/security/avoid_publishing_secrets.brazilian-portuguese.md)
+🔗 [**Leia Mais: Evite publicar segredos**](./sections/security/avoid_publishing_secrets.brazilian-portuguese.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#índice">⬆ Voltar ao topo</a></p>
@@ -1071,7 +1071,7 @@ Tenha em mente que, com a introdução do novo motor V8 juntamente com os novos 
 
 **Caso contrário:** Você terá que manter projetos de menor desempenho onde você poderia simplesmente ter usado o que **já estava** disponível ou lidar com mais algumas linhas em troca de mais alguns arquivos.
 
-🔗 [**Leia Mais: Prefira métodos nativos ao invés de utilitários do usuário como Lodash**](/sections/performance/nativeoverutil.brazilian-portuguese.md)
+🔗 [**Leia Mais: Prefira métodos nativos ao invés de utilitários do usuário como Lodash**](./sections/performance/nativeoverutil.brazilian-portuguese.md)
 
 <br/><br/><br/>
 
@@ -1087,18 +1087,18 @@ Todas as traduções são contribuições da comunidade. Nós ficaremos felizes 
 
 ### Traduções concluídas
 
-- ![BR](/assets/flags/BR.png) [Português Brasileiro](/README.brazilian-portuguese.md) - Cortesia de [Marcelo Melo](https://github.com/marcelosdm)
-- ![CN](/assets/flags/CN.png) [Chinês](README.chinese.md) - Cortesia de [Matt Jin](https://github.com/mattjin)
-- ![EU](/assets/flags/EU.png) [Vasco](README.basque.md) - Cortesia de [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta
+- ![BR](./assets/flags/BR.png) [Português Brasileiro](./README.brazilian-portuguese.md) - Cortesia de [Marcelo Melo](https://github.com/marcelosdm)
+- ![CN](./assets/flags/CN.png) [Chinês](README.chinese.md) - Cortesia de [Matt Jin](https://github.com/mattjin)
+- ![EU](./assets/flags/EU.png) [Vasco](README.basque.md) - Cortesia de [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta
 
 ### Traduções em andamento
 
-- ![FR](/assets/flags/FR.png) [Francês](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/129))
-- ![HE](/assets/flags/HE.png) Hebraico ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/156))
-- ![KR](/assets/flags/KR.png) [Coreano](https://github.com/goldbergyoni/nodebestpractices/blob/korean-translation/README.md) ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/94))
-- ![RU](/assets/flags/RU.png) [Russo](https://github.com/goldbergyoni/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/454))
-- ![ES](/assets/flags/ES.png) [Espanhol](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/95))
-- ![TR](/assets/flags/TR.png) Turco ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/139))
+- ![FR](./assets/flags/FR.png) [Francês](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/129))
+- ![HE](./assets/flags/HE.png) Hebraico ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/156))
+- ![KR](./assets/flags/KR.png) [Coreano](https://github.com/goldbergyoni/nodebestpractices/blob/korean-translation/README.md) ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/94))
+- ![RU](./assets/flags/RU.png) [Russo](https://github.com/goldbergyoni/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/454))
+- ![ES](./assets/flags/ES.png) [Espanhol](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/95))
+- ![TR](./assets/flags/TR.png) Turco ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/139))
 
 <br/><br/>
 
@@ -1150,7 +1150,7 @@ Especialista profundo em JavaScript e seu ecossistema - React, Node.js, MongoDB,
 
 Obrigado a todos nossos colaboradores! 🙏
 
-Nossos colaboradores são membros que estão contribuindo com o repositório em base regular, sugerindo novas práticas recomendadas, triando problemas, analisando solicitações de pull e muito mais. Se você estiver interessado em nos ajudar a orientar milhares de pessoas a criar melhores aplicações Node.js, leia nossas [diretrizes de colaborador](/.operations/CONTRIBUTING.md) 🎉
+Nossos colaboradores são membros que estão contribuindo com o repositório em base regular, sugerindo novas práticas recomendadas, triando problemas, analisando solicitações de pull e muito mais. Se você estiver interessado em nos ajudar a orientar milhares de pessoas a criar melhores aplicações Node.js, leia nossas [diretrizes de colaborador](./.operations/CONTRIBUTING.md) 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"/></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"/></a> |
 | :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |

@@ -16,13 +16,13 @@ Puisque vous produisez de toute façon des relevés de log et que vous avez mani
 
 ### Exemple de visualisation : Kibana (faisant partie de Elastic stack) facilite la recherche avancée sur le contenu des journaux
 
-![Kibana facilite la recherche avancée sur le contenu des journaux](/assets/images/smartlogging1.png "Kibana facilite la recherche avancée sur le contenu des journaux")
+![Kibana facilite la recherche avancée sur le contenu des journaux](../../assets/images/smartlogging1.png "Kibana facilite la recherche avancée sur le contenu des journaux")
 
 <br/><br/>
 
 ### Exemple de visualisation : Kibana (qui fait partie de Elastic stack) visualise les données sur la base des journaux
 
-![Kibana visualise les données sur la base des journaux](/assets/images/smartlogging2.jpg "Kibana visualise les données sur la base des journaux")
+![Kibana visualise les données sur la base des journaux](../../assets/images/smartlogging2.jpg "Kibana visualise les données sur la base des journaux")
 
 <br/><br/>
 

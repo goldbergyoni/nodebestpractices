@@ -14,7 +14,7 @@
 
 <br/>
 
-[![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **트위터에서 팔로우 하세요!** [**@nodepractices**](https://twitter.com/nodepractices/)
+[![nodepractices](./assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **트위터에서 팔로우 하세요!** [**@nodepractices**](https://twitter.com/nodepractices/)
 
 <br/>
 
@@ -22,7 +22,7 @@
 
 <br/>
 
-다른 언어로 읽기: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![EU](/assets/flags/EU.png)**EU**](/README.basque.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** and ![TR](/assets/flags/TR.png)**TR** 은 작업중입니다!)](#translations)
+다른 언어로 읽기: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md), [![BR](./assets/flags/BR.png)**BR**](./README.brazilian-portuguese.md), [![RU](./assets/flags/RU.png)**RU**](./README.russian.md), [![EU](./assets/flags/EU.png)**EU**](./README.basque.md) [(![ES](./assets/flags/ES.png)**ES**, ![FR](./assets/flags/FR.png)**FR**, ![HE](./assets/flags/HE.png)**HE**, ![KR](./assets/flags/KR.png)**KR** and ![TR](./assets/flags/TR.png)**TR** 은 작업중입니다!)](#translations)
 
 <br/>
 
@@ -42,7 +42,7 @@
 
 **1. 이 문서를 읽는 것은 베스트 Node.js 문서 수십개를 읽는 것과 같습니다. -** 이 문서는 Node.js 의 가장 일반적인 Best Practice 모범사례들을 모은 요약집 및 큐레이션입니다.
 
-**2. 가장 큰 모음집이며, 매주 성장하고 있습니다. -** 현재 80개 이상의 모범사례들과 스타일 가이드 및 아키텍처 관련 팁들을 제공하고 있습니다. 이 문서를 계속 갱신하는 새로운 이슈들과 PR들이 매일 나오고 있습니다. 이 문서의 잘못된 코드를 고치거나 새로운 아이디어들을 제안하는 것은 매우 환영합니다. [글쓰기 지침은 여기](/.operations/writing-guidelines.md)서 확인하세요
+**2. 가장 큰 모음집이며, 매주 성장하고 있습니다. -** 현재 80개 이상의 모범사례들과 스타일 가이드 및 아키텍처 관련 팁들을 제공하고 있습니다. 이 문서를 계속 갱신하는 새로운 이슈들과 PR들이 매일 나오고 있습니다. 이 문서의 잘못된 코드를 고치거나 새로운 아이디어들을 제안하는 것은 매우 환영합니다. [글쓰기 지침은 여기](./.operations/writing-guidelines.md)서 확인하세요
 
 **3. 항목 대부분은 추가적인 정보가 있습니다 -** 항목 옆쪽에 존재하는 **🔗자세히 보기** 링크에서 코드 예제, 참조 블로그 또는 기타 정보들을 확인 할 수 있습니다.
 
@@ -68,7 +68,7 @@
 
 **그렇게 하지 않을 경우:** 새로운 기능을 작성하는 개발자가 변경사항이 어떤 영향을 미치는지 알기가 힘들면 의존하고 있는 다른 컴포넌트를 망칠까 두려워 하게 되고, 이는 배포를 더 느리고 더 불안전하게 만든다. 비지니스 단위가 나눠져 있지 않으면 확장(scale-out)하기도 쉽지 않게 된다.
 
-🔗 [**자세히 보기: 컴포넌트로 구조화하기**](/sections/projectstructre/breakintcomponents.korean.md)
+🔗 [**자세히 보기: 컴포넌트로 구조화하기**](./sections/projectstructre/breakintcomponents.korean.md)
 
 <br/><br/>
 
@@ -78,7 +78,7 @@
 
 **그렇게 하지 않을 경우:** 웹 객체와 다른 계층을 뒤섞은 앱은 테스트 코드, CRON 작업이나 Express가 아닌 다른 곳에서의 접근을 불가능하게 한다.
 
-🔗 [**자세히 보기: 앱을 계층화하기**](/sections/projectstructre/createlayers.korean.md)
+🔗 [**자세히 보기: 앱을 계층화하기**](./sections/projectstructre/createlayers.korean.md)
 
 <br/><br/>
 
@@ -88,7 +88,7 @@
 
 **그렇게 하지 않을 경우:** 당신 자신만의 배포 및 종속 바퀴(dependency wheel)를 새로이 발명해야 할 것이다.
 
-🔗 [**자세히 보기: 기능으로 구조화 하기**](/sections/projectstructre/wraputilities.korean.md)
+🔗 [**자세히 보기: 기능으로 구조화 하기**](./sections/projectstructre/wraputilities.korean.md)
 
 <br/><br/>
 
@@ -98,7 +98,7 @@
 
 **그렇게 하지 않을 경우:** HTTP 요청으로만 API 테스트가 가능하게 된다 (커버리지 보고서를 생성하기가 더 느려지고 훨씬 힘들어진다). 수백줄의 코드를 하나의 파일에서 관리하는 것이 크게 즐겁지는 않을 것이다.
 
-🔗 [**자세히 보기: Express를 'app'과 'server'로 분리하기**](/sections/projectstructre/separateexpress.korean.md)
+🔗 [**자세히 보기: Express를 'app'과 'server'로 분리하기**](./sections/projectstructre/separateexpress.korean.md)
 
 <br/><br/>
 
@@ -108,7 +108,7 @@
 
 **그렇게 하지 않을 경우:** 위의 구성 요구사항 중 하나라도 만족시키지 못한다면 개발팀이나 데브옵스팀을 늪으로 몰아갈 수 있다. 십중팔구 둘 다.
 
-🔗 [**자세히 보기: 구성 모범 사례**](/sections/projectstructre/configguide.korean.md)
+🔗 [**자세히 보기: 구성 모범 사례**](./sections/projectstructre/configguide.korean.md)
 
 <br/><br/><br/>
 
@@ -122,7 +122,7 @@
 
 **그렇게 하지 않을 경우:** Node.js의 function(err, response) 콜백 스타일은 에러 처리와 일반 코드의 혼합, 코드의 과도한 중첩, 어색한 코딩 패턴 때문에 유지보수가 불가능한 코드로 가는 확실한 길이다.
 
-🔗 [**자세히 보기: 콜백 피하기**](/sections/errorhandling/asyncerrorhandling.korean.md)
+🔗 [**자세히 보기: 콜백 피하기**](./sections/errorhandling/asyncerrorhandling.korean.md)
 
 <br/><br/>
 
@@ -132,7 +132,7 @@
 
 **그렇게 하지 않을 경우:** 일부 컴포넌트를 호출할때 어떤 에러의 타입이 반환될지 불확실해져서 적절한 에러처리가 매우 어려워진다. 게다가 임의적인 타입으로 에러를 나타내는 것은 스택 정보(stack trace)와 같은 중요한 에러 관련 정보 손실을 일으킬 수 있다!
 
-🔗 [**자세히 보기: 내장된 Error 객체 사용하기**](/sections/errorhandling/useonlythebuiltinerror.korean.md)
+🔗 [**자세히 보기: 내장된 Error 객체 사용하기**](./sections/errorhandling/useonlythebuiltinerror.korean.md)
 
 <br/><br/>
 
@@ -142,7 +142,7 @@
 
 **그렇게 하지 않을 경우:** 에러가 날 때마다 어플리케이션을 다시 시작할수도 있지만, 왜 사소하고 예측가능한 동작상의 오류때문에 5000명의 온라인 사용자를 다운시키는 것인가? 그 반대도 이상적이지 않다. 알수없는 이슈 (프로그래머 에러)가 났는데 어플리케이션을 그대로 두는 것은 예측이 불가능한 반응을 일으킬 수 있다. 두 가지를 구별하면 요령있는 처신과 주어진 상황에 따른 균형잡힌 접근이 가능하다.
 
-🔗 [**자세히 보기: 동작상의 에러와 프로그래머 에러**](/sections/errorhandling/operationalvsprogrammererror.korean.md)
+🔗 [**자세히 보기: 동작상의 에러와 프로그래머 에러**](./sections/errorhandling/operationalvsprogrammererror.korean.md)
 
 <br/><br/>
 
@@ -152,7 +152,7 @@
 
 **그렇게 하지 않을 경우:** 한 곳에서 에러를 처리하지 않는 것은 코드 중복과 부적절한 에러처리로 이어진다.
 
-🔗 [**자세히 보기: 중앙집중적으로 에러 처리하기**](/sections/errorhandling/centralizedhandling.korean.md)
+🔗 [**자세히 보기: 중앙집중적으로 에러 처리하기**](./sections/errorhandling/centralizedhandling.korean.md)
 
 <br/><br/>
 
@@ -162,7 +162,7 @@
 
 **그렇게 하지 않을 경우:** API 클라이언트는 알수 없는 에러로 인한 충돌 후에 재시작을 결정할수도 있을 것이다. 참고로 당신의 API를 호출한 사람이 당신 자신 일수도 있다 (마이크로서비스 환경에서는 아주 일반적이다).
 
-🔗 [**자세히 보기: Swagger에서 에러 문서화하기**](/sections/errorhandling/documentingusingswagger.korean.md)
+🔗 [**자세히 보기: Swagger에서 에러 문서화하기**](./sections/errorhandling/documentingusingswagger.korean.md)
 
 <br/><br/>
 
@@ -172,7 +172,7 @@
 
 **그렇게 하지 않을 경우:** 익숙치 않은 예외가 발생하면 일부 객체가 오류 상태 (예를 들어 전역적으로 사용되지만 내부 오류로 인해 이벤트를 더이상 내보내지 않는 event emitter)라서 향후의 모든 요청을 실패시키거나 미친것처럼 작동할 수 있다.
 
-🔗 [**자세히 보기: 프로세스 중단하기**](/sections/errorhandling/shuttingtheprocess.korean.md)
+🔗 [**자세히 보기: 프로세스 중단하기**](./sections/errorhandling/shuttingtheprocess.korean.md)
 
 <br/><br/>
 
@@ -182,7 +182,7 @@
 
 **그렇게 하지 않을 경우:** 로그 검색 도구나 제대로 된 로그 뷰어 없이 console.log을 훑어보거나 복잡하게 꼬인 텍스트 파일을 일일이 읽어 보는 것은 야근을 부를 수 있다.
 
-🔗 [**자세히 보기: 발전된 로거를 사용하기**](/sections/errorhandling/usematurelogger.korean.md)
+🔗 [**자세히 보기: 발전된 로거를 사용하기**](./sections/errorhandling/usematurelogger.korean.md)
 
 <br/><br/>
 
@@ -192,7 +192,7 @@
 
 **그렇게 하지 않을 경우:** 자동이든 수동이든 테스트가 없다면 당신은 당신의 코드가 올바른 에러를 반환하는지 믿지 못할 것이다. 의미 있는 에러가 없다면 에러 처리도 없는 것이다.
 
-🔗 [**자세히 보기: 에러 흐름 테스트하기**](/sections/errorhandling/testingerrorflows.korean.md)
+🔗 [**자세히 보기: 에러 흐름 테스트하기**](./sections/errorhandling/testingerrorflows.korean.md)
 
 <br/><br/>
 
@@ -202,7 +202,7 @@
 
 **그렇게 하지 않을 경우:** API의 성능과 다운타임을 측정하기위해 많은 노력을 들여야 할지도 모른다. 아마 당신은 실제 상황에서 어떤 코드 부분이 가장 느린지, 그것이 UX에 어떻게 영향을 미칠지 절대 알수없을 것이다.
 
-🔗 [**자세히 보기: APM 제품 사용하기**](/sections/errorhandling/apmproducts.korean.md)
+🔗 [**자세히 보기: APM 제품 사용하기**](./sections/errorhandling/apmproducts.korean.md)
 
 <br/><br/>
 
@@ -212,7 +212,7 @@
 
 **그렇게 하지 않을 경우:** 당신의 에러는 삼켜지고 어떤 흔적도 남기지 않을 것이다. 걱정할 것이 없긴 하다.
 
-🔗 [**자세히 보기: 처리되지 않은 promise 거부 잡기**](/sections/errorhandling/catchunhandledpromiserejection.korean.md)
+🔗 [**자세히 보기: 처리되지 않은 promise 거부 잡기**](./sections/errorhandling/catchunhandledpromiserejection.korean.md)
 
 <br/><br/>
 
@@ -222,7 +222,7 @@
 
 **그렇게 하지 않을 경우:** 이런 상황을 생각해보자. 당신의 함수가 "Discount"라는 숫자를 받아야하는데 요청하는 사람이 넘겨주는 것을 깜빡했다. 그 후에 당신의 코드는 Discount!=0인지 아닌지 체크한다(사실 허용된 Discount의 값은 0보다 커야 한다). 그러면 사용자가 할인을 받게될 것이다. 보이는가? 엄청나게 지저분한 버그이다.
 
-🔗 [**자세히 보기: 빠르게 실패하기**](/sections/errorhandling/failfast.korean.md)
+🔗 [**자세히 보기: 빠르게 실패하기**](./sections/errorhandling/failfast.korean.md)
 
 <br/><br/><br/>
 
@@ -450,7 +450,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 배포에 실패하였습니다, “프로덕트 추가” 라는 테스트가 실패했습니다. 이런 메시지를 보고 정확히 뭐가 잘못되었는지 알 수 있는가?
 
-🔗 [**자세히 보기: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
+🔗 [**자세히 보기: Include 3 parts in each test name**](./sections/testingandquality/3-parts-in-name.md)
 
 <br/><br/>
 
@@ -460,7 +460,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 매일 하루종일 주요 코드를 읽는데 시간을 오래 쓰는 것도 모자라 간단해야하는 테스트 부분에도 열심히 머리를 써야 할 것이다.
 
-🔗 [**Read More: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.md)
+🔗 [**Read More: Structure tests by the AAA pattern**](./sections/testingandquality/aaa.md)
 
 <br/><br/>
 
@@ -478,7 +478,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 실패하는 테스트때문에 전개(deployment)가 중단되었다고 가정해 보자. 이제 팀원들은 소중한 시간을 조사하는데 소모한 뒤 슬픈 결론을 내릴 것이다: 시스템은 잘 작동하지만, 테스트간의 상호 간섭으로 빌드 실패.
 
-🔗 [**자세히 보기: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
+🔗 [**자세히 보기: Avoid global test fixtures**](./sections/testingandquality/avoid-global-test-fixture.md)
 
 <br/><br/>
 
@@ -528,7 +528,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 아무리 반짝이는 새로나온 라이브러리나 최첨단 기능을 써봤자 코드 품질이 불량하면 버그와 성능은 못고친다
 
-🔗 [**자세히 보기: Refactoring!**](/sections/testingandquality/refactoring.md)
+🔗 [**자세히 보기: Refactoring!**](./sections/testingandquality/refactoring.md)
 
 <br/><br/>
 
@@ -538,7 +538,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 잘 알려지지 않은 중소 솔루션 업체를 쓰다간 흔치 않은 고급 설정을 커스터마이징 해야할 때 막혀버릴 수도 있다. 하지만 반대로, Jenkins를 택하면 인프라를 수축하는데 소중한 시간을 다 빼앗길 수도 있다.
 
-🔗 [**자세히 보기: Choosing CI platform**](/sections/testingandquality/citools.korean.md)
+🔗 [**자세히 보기: Choosing CI platform**](./sections/testingandquality/citools.korean.md)
 
 ## ![✔] 4.13 미들웨어들은 격리시켜 테스트해라
 
@@ -546,7 +546,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** Express 미들웨어의 버그 === 거의 모든 요청의 버그
 
-🔗 [**자세히 보기: Test middlewares in isolation**](/sections/testingandquality/test-middlewares.md)
+🔗 [**자세히 보기: Test middlewares in isolation**](./sections/testingandquality/test-middlewares.md)
 
 <br/><br/><br/>
 
@@ -560,7 +560,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 오류 === 고객의 실망. 간단하다
 
-🔗 [**자세히 보기: 모니터링!**](/sections/production/monitoring.md)
+🔗 [**자세히 보기: 모니터링!**](./sections/production/monitoring.md)
 
 <br/><br/>
 
@@ -570,7 +570,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 이해하기 힘든 블랙박스가 되어버려서 필요한 정보를 추가하기 위해 모든 로그를 다시 작성하게 될것이다
 
-🔗 [**자세히 보기: Increase transparency using smart logging**](/sections/production/smartlogging.md)
+🔗 [**자세히 보기: Increase transparency using smart logging**](./sections/production/smartlogging.md)
 
 <br/><br/>
 
@@ -580,7 +580,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 불쌍한 싱글 스레드가 어플리케이션의 코어를 처리하는 대신 인프라 작업을 수행하느라 바빠져서 성능이 저하될 것이다
 
-🔗 [**자세히 보기: 가능한 모든 것들(예: gzip, SSL)을 reverse proxy에 위임하라**](/sections/production/delegatetoproxy.md)
+🔗 [**자세히 보기: 가능한 모든 것들(예: gzip, SSL)을 reverse proxy에 위임하라**](./sections/production/delegatetoproxy.md)
 
 <br/><br/>
 
@@ -590,7 +590,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** QA팀은 코드를 철저히 테스트 했음에도 테스트 환경과는 다르게 작동하는 버전을 승인할 것이다. 심지어 같은 프로덕션 클러스터의 여러 서버가 서로 다른 코드를 실행할 수도 있다.
 
-🔗 [**자세히 보기: Lock dependencies**](/sections/production/lockdependencies.md)
+🔗 [**자세히 보기: Lock dependencies**](./sections/production/lockdependencies.md)
 
 <br/><br/>
 
@@ -600,7 +600,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 명확한 전략없이 수십 개의 인스턴스와 너무 많은 도구 (클러스터 관리, 도커, PM2)를 실행하면 데브옵스가 혼란을 겪을 수 있다
 
-🔗 [**자세히 보기: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
+🔗 [**자세히 보기: Guard process uptime using the right tool**](./sections/production/guardprocess.md)
 
 <br/><br/>
 
@@ -610,7 +610,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 앱이 사용 가능한 리소스 중 25%(!)에도 못 미치게 활용할 것이다. 일반적인 서버는 CPU 코어가 4개 이상임에도 Node를 기본형으로 배포하면 그 중 단 1 개만 사용하게 될것이다 (AWS beanstalk과 같은 PaaS 서비스 사용해도 마찬가지)
 
-🔗 [**자세히 보기: 모든 CPU를 활용하라**](/sections/production/utilizecpu.md)
+🔗 [**자세히 보기: 모든 CPU를 활용하라**](./sections/production/utilizecpu.md)
 
 <br/><br/>
 
@@ -620,7 +620,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 단지 서버 진단을 목적으로 일부 정보를 추출하기 위하여 상용서버에 코드를 배포하는 "진단용 배포"를 자주 수행하고 있게 될 것이다
 
-🔗 [**자세히 보기: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
+🔗 [**자세히 보기: Create a ‘maintenance endpoint’**](./sections/production/createmaintenanceendpoint.md)
 
 <br/><br/>
 
@@ -630,7 +630,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** API 성능 및 가동 중지 시간을 측정하는 데 많은 노력을 기울임에도 실전에서 가장 느린 코드 부분이 어느것인지, 그리고 이것이 UX에 미치는 영향을 알지 못할 것이다
 
-🔗 [**자세히 보기: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
+🔗 [**자세히 보기: Discover errors and downtime using APM products**](./sections/production/apmproducts.md)
 
 <br/><br/>
 
@@ -640,7 +640,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 세계 최고의 IT/DevOps 전문가도 형편없이 쓰여진 코드로 이루어진 시스템은 구하지 못한다
 
-🔗 [**자세히 보기: Make your code production-ready**](/sections/production/productioncode.md)
+🔗 [**자세히 보기: Make your code production-ready**](./sections/production/productioncode.md)
 
 <br/><br/>
 
@@ -650,7 +650,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** [월마트](https://www.joyent.com/blog/walmart-node-js-memory-leak)에서 일어났던 것처럼 메모리가 하루에 수백 메가바이트씩 누수 될 수 있다
 
-🔗 [**자세히 보기: 메모리 사용량 측정 및 보호**](/sections/production/measurememory.md)
+🔗 [**자세히 보기: 메모리 사용량 측정 및 보호**](./sections/production/measurememory.md)
 
 <br/><br/>
 
@@ -660,7 +660,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 단일 노드 스레드는 수백 개의 html/이미지/angular/react 파일을 스트리밍 하느라 바빠서 정작 천직인 동적 컨텐츠를 전달하는 작업에는 신경쓸 겨를이 없을것이다.
 
-🔗 [**자세히 보기: Get your frontend assets out of Node**](/sections/production/frontendout.md)
+🔗 [**자세히 보기: Get your frontend assets out of Node**](./sections/production/frontendout.md)
 
 <br/><br/>
 
@@ -670,7 +670,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 해당서버에 오류가 발생하면 해당 서버만 제거하면 되는 것이 아니라 어플리케이션의 다운타임이 발생하게된다. 게다가 특정 서버에 의존하기 때문에 수평적 확장이 힘들어질 것이다
 
-🔗 [**자세히 보기: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
+🔗 [**자세히 보기: Be stateless, kill your Servers almost every day**](./sections/production/bestateless.md)
 
 <br/><br/>
 
@@ -680,7 +680,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 전용 도구없이 취약점으로부터 코드를 깨끗하게 유지하려면 새로운 취약점에 대한 데이터를 지속적으로 확인해야 할것이다
 
-🔗 [**자세히 보기: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
+🔗 [**자세히 보기: Use tools that automatically detect vulnerabilities**](./sections/production/detectvulnerabilities.md)
 
 <br/><br/>
 
@@ -690,7 +690,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 이전에 어떤일이 일어났는지에 대한 컨텍스트 없이 에러 로그를 확인하는 것은 문제를 해결하는 것을 더 어렵고 느리게 만든다
 
-🔗 [**자세히 보기: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
+🔗 [**자세히 보기: Assign ‘TransactionId’ to each log statement**](./sections/production/assigntransactionid.md)
 
 <br/><br/>
 
@@ -700,7 +700,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 이 단순한 속성을 빠뜨리면 성능이 크게 저하된다. 예를 들어 Express에서 서버 사이드 렌더링(Server Side Rendering, SSP)을 사용할때 `NODE_ENV`를 빠뜨리면 3배 느려진다
 
-🔗 [**자세히 보기: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
+🔗 [**자세히 보기: Set NODE_ENV=production**](./sections/production/setnodeenv.md)
 
 <br/><br/>
 
@@ -718,7 +718,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 새로 발견된 버그나 취약점이 상용에서 운영중인 어플리케이션을 악용하는데 사용될 수 있으며, 다양한 모듈들에서 지원을 하지 않게 되고 유지보수하는 것이 힘들어 지게될것이다
 
-🔗 [**자세히 보기: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
+🔗 [**자세히 보기: Use an LTS release of Node.js**](./sections/production/LTSrelease.md)
 
 <br/><br/>
 
@@ -728,7 +728,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 어플리케이션 로그 라우팅 처리 === 확장성 저하, 로그 유실, 관심사의 분리 실패(Separation of Concerns, SoC)
 
-🔗 [**자세히 보기: Log Routing**](/sections/production/logrouting.md)
+🔗 [**자세히 보기: Log Routing**](./sections/production/logrouting.md)
 
 <br/><br/>
 
@@ -738,7 +738,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** QA팀이 코드를 승인하기 전에 철저히 테스트해도 상용환경에서는 다르게 작동할것이다. 게다가 같은 프로덕션 클러스터의 다른 서버들이 서로 다른 코드를 실행할 수도 있다.
 
-🔗 [**자세히 보기: npm ci 쓰기**](/sections/production/installpackageswithnpmci.md)
+🔗 [**자세히 보기: npm ci 쓰기**](./sections/production/installpackageswithnpmci.md)
 
 <br/><br/><br/>
 
@@ -758,7 +758,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 개발과정에서는 이해하기 쉬운 보안 약점이었음에도 상용환경에서는 주요쟁점이 된다. 또, 프로젝트가 일관된 보안 프렉티스를 따르지 않아, 취약점이 노출되거나 민감한 정보가 원격 저장소에 유출될 수 있다.
 
-🔗 [**자세히 보기: Lint rules**](/sections/security/lintrules.md)
+🔗 [**자세히 보기: Lint rules**](./sections/security/lintrules.md)
 
 <br/><br/>
 
@@ -770,7 +770,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 애플리케이션이 서비스 거부 공격을 받으면 실제 이용자들이 받는 서비스가 저하되거나 먹통이 된다.
 
-🔗 [**자세히 보기: Implement rate limiting**](/sections/security/limitrequests.md)
+🔗 [**자세히 보기: Implement rate limiting**](./sections/security/limitrequests.md)
 
 <br/><br/>
 
@@ -782,7 +782,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 비공개 저장소라 하여도 소스 제어가 실수로 공개되면 모든 기밀사항이 그대로 드러난다. 외부관계자가 소스제어에 접근이 가능해지면 의도치 않아도 관련 시스템(데이터베이스, API, 서비스 등)에도 접근을 허락하는것과 마찬가지다.
 
-🔗 [**자세히 보기: Secret management**](/sections/security/secretmanagement.md)
+🔗 [**자세히 보기: Secret management**](./sections/security/secretmanagement.md)
 
 <br/><br/>
 
@@ -794,7 +794,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 확인되지 않거나 (unvalidated) 살균되지 않은 (unsanitized) 사용자 입력은 MangoDB for NoSQL를 쓸 때 operator injection를 초래할 수 있고, 제대로 된 위생처리 시스템이나 ORM을 쓰지 않는것은 SQL 주입 공격을 쉽게 만들어 엄청난 취약점을 만들어낼 수 있다.
 
-🔗 [**자세히 보기: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.md)
+🔗 [**자세히 보기: Query injection prevention using ORM/ODM libraries**](./sections/security/ormodmusage.md)
 
 <br/><br/>
 
@@ -802,7 +802,7 @@ null == undefined; // true
 
 **핵심요약:** 이것은 Node.js와는 직접적으로 관련되지 않은 보안과 관련된 조언 모음집이지만, Node의 시행도 다른 언어들과 그닥 다르지 않다. 자세히 보기를 클릭해서 읽어봐라.
 
-🔗 [**자세히 보기: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
+🔗 [**자세히 보기: Common security best practices**](./sections/security/commonsecuritybestpractices.md)
 
 <br/><br/>
 
@@ -814,7 +814,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 공격자들이 애플리케이션 사용자들을 직접적으로 공격할 수 있게되면 엄청난 보안 취약점을 초래할 수 있다
 
-🔗 [**자세히 보기: Using secure headers in your application**](/sections/security/secureheaders.md)
+🔗 [**자세히 보기: Using secure headers in your application**](./sections/security/secureheaders.md)
 
 <br/><br/>
 
@@ -826,7 +826,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 공격자가 당신의 웹 프레임워크를 감지하면 알려진 모든 취약점을 공격할 수 있다.
 
-🔗 [**자세히 보기: Dependency security**](/sections/security/dependencysecurity.md)
+🔗 [**자세히 보기: Dependency security**](./sections/security/dependencysecurity.md)
 
 <br/><br/>
 
@@ -838,7 +838,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 보안함수(secure function)를 쓰지 않고 저장된 암호나 기밀사항들은 억지기법이나 사전공격에 취약해져 결국엔 다 뚫리게 된다.
 
-🔗 [**자세히 보기: Use Bcrypt**](/sections/security/userpasswords.md)
+🔗 [**자세히 보기: Use Bcrypt**](./sections/security/userpasswords.md)
 
 <br/><br/>
 
@@ -850,7 +850,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 공격자가 악의적인 자바스크립트 코드를 당신 DB에 저장하면 불쌍한 클라이언트에게 그대로 보내질 수 있다
 
-🔗 [**자세히 보기: Escape output**](/sections/security/escape-output.md)
+🔗 [**자세히 보기: Escape output**](./sections/security/escape-output.md)
 
 <br/><br/>
 
@@ -862,7 +862,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 입력에 대해 너그럽고 관대하면 공격 받을 수 있는 면적이 넓어지고, 공격자에게 애플리케이션을 끌어내리는 조합을 찾을때까지 다양한 입력값을 시도해보도록 장려하는 꼴이 된다.
 
-🔗 [**자세히 보기: Validate incoming JSON schemas**](/sections/security/validation.md)
+🔗 [**자세히 보기: Validate incoming JSON schemas**](./sections/security/validation.md)
 
 <br/><br/>
 
@@ -874,7 +874,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 제삼자가 만료되었거나 부적절한 토큰을 악의적으로 사용하여 애플리케이션에 접근하거나 토큰 소유자인 척 가장할 수 있다.
 
-🔗 [**자세히 보기: Blacklist JSON Web Tokens**](/sections/security/expirejwt.md)
+🔗 [**자세히 보기: Blacklist JSON Web Tokens**](./sections/security/expirejwt.md)
 
 <br/><br/>
 
@@ -889,7 +889,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 공격자가 무제한으로 암호를 시도해서 특권있는 계좌에 접근할 수 있다
 
-🔗 [**자세히 보기: Login rate limiting**](/sections/security/login-rate-limit.md)
+🔗 [**자세히 보기: Login rate limiting**](./sections/security/login-rate-limit.md)
 
 <br/><br/>
 
@@ -901,7 +901,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 공격자가 서버에 스크립트를 실행하는데 성공하면 로컬 머신을 마음대로 할 권리를 무제한으로 갖게 된다 (예: iptable을 바꾼다던가 트래픽 경로를 자기 서버로 변경 한다던가)
 
-🔗 [**자세히 보기: Run Node.js as non-root user**](/sections/security/non-root-user.md)
+🔗 [**자세히 보기: Run Node.js as non-root user**](./sections/security/non-root-user.md)
 
 <br/><br/>
 
@@ -913,7 +913,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 애플리케이션이 커다란 요청을 처리해야하면 다른 중요한 일을 완수할 수 없게 되어 성능이 영향을 받고 DOS 공격에 취약하게 된다
 
-🔗 [**자세히 보기: Limit payload size**](/sections/security/requestpayloadsizelimit.md)
+🔗 [**자세히 보기: Limit payload size**](./sections/security/requestpayloadsizelimit.md)
 
 <br/><br/>
 
@@ -925,7 +925,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 악의적인 자바스크립트 코드가 `eval`같이 실시간으로 평가하는 자바스크립트 언어 함수에 넘어가면 페이지 안의 자바스크립트 승인을 완전히 장악하게 된다. 이 취약점은 XSS 공격 형태로 자주 나타난다.
 
-🔗 [**자세히 보기: Avoid JavaScript eval statements**](/sections/security/avoideval.md)
+🔗 [**자세히 보기: Avoid JavaScript eval statements**](./sections/security/avoideval.md)
 
 <br/><br/>
 
@@ -937,7 +937,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 저조하게 쓰여진 정규표현들은 이벤트 루프를 완전히 정체시킬 수 있는 정규표현 DOS 공격에 취약해진다. 예를들면, 자주 쓰이는 `moment` 패키지 또한 2017년 11월에 악성 정규표현 사용에 취약하다는 것이 발견되었다
 
-🔗 [**자세히 보기: Prevent malicious RegEx**](/sections/security/regex.md)
+🔗 [**자세히 보기: Prevent malicious RegEx**](./sections/security/regex.md)
 
 <br/><br/>
 
@@ -949,7 +949,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 악의적인 사용자 입력이 이전에 파일시스템에 업로드되었거나 이미 시스템에 존재하는 흑화된 파일을 require 하는데 쓰이는 매개변수로 들어가게 될 수 있다.
 
-🔗 [**자세히 보기: Safe module loading**](/sections/security/safemoduleloading.md)
+🔗 [**자세히 보기: Safe module loading**](./sections/security/safemoduleloading.md)
 
 <br/><br/>
 
@@ -961,7 +961,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 플러그인이 무한 루프나, 메모리 과부화나, 민감한 프로세스 환경 변수로의 접근과 같이 무한히 가지각색으로 공격할 수 있다
 
-🔗 [**자세히 보기: Run unsafe code in a sandbox**](/sections/security/sandbox.md)
+🔗 [**자세히 보기: Run unsafe code in a sandbox**](./sections/security/sandbox.md)
 
 <br/><br/>
 
@@ -973,7 +973,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 순진무구하게 자식 프로세스를 썼다가는 악의적인 사용자 입력이 무결처리 되지 않은 시스템 명령어로 인한 원격 커맨드 실행이나 쉘 주입 공격을 초래할 수 있다.
 
-🔗 [**자세히 보기: Be cautious when working with child processes**](/sections/security/childprocesses.md)
+🔗 [**자세히 보기: Be cautious when working with child processes**](./sections/security/childprocesses.md)
 
 <br/><br/>
 
@@ -985,7 +985,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 서버 파일 경로나, 사용중인 제삼자 모듈, 그리고 그 외 애플리케이션 내부 작업 순서 같이 공격자가 악용할 수 있는 민감한 애플리케이션 세부사항이 스택트레이스에 보여지는 정보로 새어나갈 수 있다
 
-🔗 [**자세히 보기: Hide error details from client**](/sections/security/hideerrors.md)
+🔗 [**자세히 보기: Hide error details from client**](./sections/security/hideerrors.md)
 
 <br/><br/>
 
@@ -1007,7 +1007,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 쿠키가 insecure 연결로 송신되면 공격자가 세션 ID를 보고 웹 어플리케이션 프레임워크를 식별하고, 모듈관련 취약점도 찾아낼 수 있다
 
-🔗 [**자세히 보기: Cookie and session security**](/sections/security/sessions.md)
+🔗 [**자세히 보기: Cookie and session security**](./sections/security/sessions.md)
 
 <br/><br/>
 
@@ -1029,7 +1029,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 공격자가 당신이 외부 유저로부터 조달된 입력을 검사하지 않는다는 것을 발견 할 경우, 특수 조작된 포럼 링크를 포럼이나 소셜 미디어, 그 외 공공 장소에 게재해서 유저들이 클릭하도록 해서 이 취약점을 악용할 수 있다.
 
-🔗 [**자세히 보기: Prevent unsafe redirects**](/sections/security/saferedirects.md)
+🔗 [**자세히 보기: Prevent unsafe redirects**](./sections/security/saferedirects.md)
 
 <br/><br/>
 
@@ -1041,7 +1041,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 프로젝트의 API key나, 암호나, 그 외 기밀사항들이 이것들을 우연히 발견한 이들 누구나에 의해 남용되면 재정적 손실이나 사칭과 같은 위험을 초래할 수 있다.
 
-🔗 [**자세히 보기: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.md)
+🔗 [**자세히 보기: Avoid publishing secrets**](./sections/security/avoid_publishing_secrets.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#목차">⬆ Return to top</a></p>
@@ -1058,7 +1058,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 이벤트 루프가 블로킹되면 Node.js는 다른 요청을 처리할 수 없게 되어 동시성 (concurrent) 사용자들을 지체하게 한다. **사용자 3000명이 응답을 기다리고 있고, 콘텐츠도 제공될 준비가 되어있는데, 단 하나의 요청이 서버가 결과물을 발송하지 못하도록 블로킹 할 수 있다**
 
-🔗 [**자세히 보기: Do not block the event loop**](/sections/performance/block-loop.md)
+🔗 [**자세히 보기: Do not block the event loop**](./sections/performance/block-loop.md)
 
 <br /><br /><br />
 
@@ -1069,7 +1069,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 기본적으로 **이미** 내장된 코드를 쓰거나 코드를 몇줄 더 써서 파일을 몇개 더 써야 하는 것을 막을 수 있었음에도 불구하고 더 비능률적인 프로젝트를 유지해야 할 것이다.
 
-🔗 [**자세히 보기: Native over user land utils**](/sections/performance/nativeoverutil.md)
+🔗 [**자세히 보기: Native over user land utils**](./sections/performance/nativeoverutil.md)
 
 <br/><br/><br/>
 
@@ -1085,17 +1085,17 @@ null == undefined; // true
 
 ### 번역 작업 완료
 
-- ![BR](/assets/flags/BR.png) [브라질식 포르투갈어](./README.brazilian-portuguese.md) - [마르셀로 멜로](https://github.com/marcelosdm) 제공
-- ![CN](/assets/flags/CN.png) [중국어](./README.chinese.md) - [맷 진](https://github.com/mattjin) 제공
-- ![RU](/assets/flags/RU.png) [러시아어](./README.russian.md) - [알렉스 이바노브](https://github.com/contributorpw) 제공
+- ![BR](./assets/flags/BR.png) [브라질식 포르투갈어](./README.brazilian-portuguese.md) - [마르셀로 멜로](https://github.com/marcelosdm) 제공
+- ![CN](./assets/flags/CN.png) [중국어](./README.chinese.md) - [맷 진](https://github.com/mattjin) 제공
+- ![RU](./assets/flags/RU.png) [러시아어](./README.russian.md) - [알렉스 이바노브](https://github.com/contributorpw) 제공
 
 ### 번역 작업중
 
-- ![FR](/assets/flags/FR.png) [프랑스어](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/129))
-- ![HE](/assets/flags/HE.png) 히브리어 ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/156))
-- ![KR](/assets/flags/KR.png) [한국어](README.korean.md) - [한상범](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94)) 제공
-- ![ES](/assets/flags/ES.png) [스페인어](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/95))
-- ![TR](/assets/flags/TR.png) 터키어 ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/139))
+- ![FR](./assets/flags/FR.png) [프랑스어](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/129))
+- ![HE](./assets/flags/HE.png) 히브리어 ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/156))
+- ![KR](./assets/flags/KR.png) [한국어](README.korean.md) - [한상범](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94)) 제공
+- ![ES](./assets/flags/ES.png) [스페인어](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/95))
+- ![TR](./assets/flags/TR.png) 터키어 ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/139))
 
 <br/><br/>
 
@@ -1147,7 +1147,7 @@ null == undefined; // true
 
 모든 공동 저자 분들께 감사드립니다! 🙏
 
-공동 저자들은 새로운 모범사례를 제안하거나, 사안을 분류하거나, 풀리퀘스트를 검토하는 등 리포지토리에 정기적으로 기여하는 일원들입니다. 수천명의 사람들이 더 나은 Node.js 애플리케이션을 만들 수 있도록 안내하며 돕는데 관심이 있으시다면 [기여자 지침서](/.operations/CONTRIBUTING.md)를 읽어주세요 🎉
+공동 저자들은 새로운 모범사례를 제안하거나, 사안을 분류하거나, 풀리퀘스트를 검토하는 등 리포지토리에 정기적으로 기여하는 일원들입니다. 수천명의 사람들이 더 나은 Node.js 애플리케이션을 만들 수 있도록 안내하며 돕는데 관심이 있으시다면 [기여자 지침서](./.operations/CONTRIBUTING.md)를 읽어주세요 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"/></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"/></a> | <a href="https://github.com/kevynb" target="_blank"><img src="assets/images/members/kevyn.png" width="59" height="59"/></a> |
 | :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: |

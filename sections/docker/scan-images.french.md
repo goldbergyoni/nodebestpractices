@@ -27,4 +27,4 @@ $ trivy image [YOUR_IMAGE_NAME]
 
 ### Report Example – Docker scan results (By Anchore)
 
-![Report examples](/assets/images/anchore-report.png "Docker scan report")
+![Report examples](../../assets/images/anchore-report.png "Docker scan report")

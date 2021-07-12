@@ -40,7 +40,7 @@ server.get('/', (req, res, next) => {
 ```
 
 ## イベントループのイメージ図
-![イベントループ](/assets/images/event-loop.png "イベントループ")
+![イベントループ](../../assets/images/event-loop.png "イベントループ")
 
 >ここに、Node サーバを高速に保つための良い経験則があります: Node は、与えられた時間にそれぞれのクライアントに関連する作業が 「小さい」 場合に高速です。
 >[イベントループ（またはワーカープール）をブロックしない | Node.js](https://nodejs.org/en/docs/guides/dont-block-the-event-loop/)

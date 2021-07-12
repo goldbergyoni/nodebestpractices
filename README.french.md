@@ -14,11 +14,11 @@
 
 <br/>
 
-[![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Suivez nous sur Twitter !** [**@nodepractices**](https://twitter.com/nodepractices/)
+[![nodepractices](./assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Suivez nous sur Twitter !** [**@nodepractices**](https://twitter.com/nodepractices/)
 
 <br/>
 
-Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md), [![JA](/assets/flags/JA.png)**JA**](/README.japanese.md), [![EU](/assets/flags/EU.png)**EU**](/README.basque.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** and ![TR](/assets/flags/TR.png)**TR** en cours ! )](#traductions)
+Lire dans une autre langue : [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md), [![BR](./assets/flags/BR.png)**BR**](./README.brazilian-portuguese.md), [![RU](./assets/flags/RU.png)**RU**](./README.russian.md), [![PL](./assets/flags/PL.png)**PL**](./README.polish.md), [![JA](./assets/flags/JA.png)**JA**](./README.japanese.md), [![EU](./assets/flags/EU.png)**EU**](./README.basque.md) [(![ES](./assets/flags/ES.png)**ES**, ![FR](./assets/flags/FR.png)**FR**, ![HE](./assets/flags/HE.png)**HE**, ![KR](./assets/flags/KR.png)**KR** and ![TR](./assets/flags/TR.png)**TR** en cours ! )](#traductions)
 
 <br/>
 
@@ -26,7 +26,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 # Dernières bonnes pratiques et nouveautés
 
-- **![EU](/assets/flags/EU.png) Traduction en basque par le père et la fille !** Ouah, même nos lecteurs basques peuvent lire dans leur langue maternelle ! Avec l'aimable autorisation de [Ane Diaz de Tuesta](https://github.com/anediaz) et de son père Joxefe Diaz de Tuesta 💜. Un beau travail en famille
+- **![EU](./assets/flags/EU.png) Traduction en basque par le père et la fille !** Ouah, même nos lecteurs basques peuvent lire dans leur langue maternelle ! Avec l'aimable autorisation de [Ane Diaz de Tuesta](https://github.com/anediaz) et de son père Joxefe Diaz de Tuesta 💜. Un beau travail en famille
 
 - **🇯🇵 traduction japonaise :** Notre guide est désormais également traduit en japonais ! Avec l'aimable autorisation des extraordinaires [YukiOta](https://github.com/YukiOta) et [Yuta Azumi](https://github.com/YA21).
 
@@ -38,7 +38,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **1. Vous êtes en train de lire un regroupement des meilleurs articles sur Node.js. -** ce référentiel est un résumé et il conserve le contenu le mieux classé sur les bonnes pratiques Node.js, ainsi que du contenu écrit ici par des collaborateurs
 
-**2. Il s'agit du plus grand assemblage d'articles et il s'agrandit chaque semaine -** actuellement, plus de 80 bonnes pratiques, guides de style et astuces d'architecture sont présentées. Nous serions ravis de vous voir contribuer ici, qu'il s'agisse de corriger des erreurs de code, d'aider aux traductions ou de suggérer de nouvelles idées brillantes. Consultez nos [recommandations d'écriture](/.operations/writing-guidelines.french.md)
+**2. Il s'agit du plus grand assemblage d'articles et il s'agrandit chaque semaine -** actuellement, plus de 80 bonnes pratiques, guides de style et astuces d'architecture sont présentées. Nous serions ravis de vous voir contribuer ici, qu'il s'agisse de corriger des erreurs de code, d'aider aux traductions ou de suggérer de nouvelles idées brillantes. Consultez nos [recommandations d'écriture](./.operations/writing-guidelines.french.md)
 
 **3. Les bonnes pratiques contiennent des informations supplémentaires -** la plupart des points ont un lien **🔗Plus d'infos** qui développe la bonne pratique avec des exemples de code, des citations venant de pages sélectionnées et plus encore.
 
@@ -65,7 +65,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Autrement :** Lorsque les développeurs qui codent de nouvelles fonctionnalités ont du mal à réaliser l'impact de leur changement et craignent de casser d'autres composants dépendants - les déploiements deviennent plus lents et plus risqués. Il est aussi considéré plus difficile d'élargir un modèle d'application quand les unités opérationnelles ne sont pas séparées.
 
-🔗 [**Plus d'infos : organisez en composants**](/sections/projectstructre/breakintcomponents.french.md)
+🔗 [**Plus d'infos : organisez en composants**](./sections/projectstructre/breakintcomponents.french.md)
 
 <br/><br/>
 
@@ -75,7 +75,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Autrement :** Les tests, les jobs CRON, les déclencheurs des files d'attente de messages et etc ne peuvent pas accéder à une application qui mélange les objets web avec les autres strates.
 
-🔗 [**Plus d'infos : organisez en strates votre app**](/sections/projectstructre/createlayers.french.md)
+🔗 [**Plus d'infos : organisez en strates votre app**](./sections/projectstructre/createlayers.french.md)
 
 <br/><br/>
 
@@ -85,7 +85,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Autrement :** Vous devrez inventer votre propre roue de déploiement et de dépendance
 
-🔗 [**Plus d'infos : organisez par fonction**](/sections/projectstructre/wraputilities.french.md)
+🔗 [**Plus d'infos : organisez par fonction**](./sections/projectstructre/wraputilities.french.md)
 
 <br/><br/>
 
@@ -95,7 +95,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Autrement :** Votre API sera seulement accessible aux tests par le biais d'appels HTTP (plus lent et plus difficile de générer des rapports de couverture). Cela ne sera pas un réel plaisir de maintenir des centaines de lignes de code dans un fichier unique.
 
-🔗 [**Plus d'infos : séparez Express 'app' et 'server'**](/sections/projectstructre/separateexpress.french.md)
+🔗 [**Plus d'infos : séparez Express 'app' et 'server'**](./sections/projectstructre/separateexpress.french.md)
 
 <br/><br/>
 
@@ -105,7 +105,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Autrement :** Ne pas se soucier de ces exigences de configuration ne fera que ralentir l'équipe de développement ou l'équipe de DevOps. Probablement les deux.
 
-🔗 [**Plus d'infos : bonnes pratiques de configuration**](/sections/projectstructre/configguide.french.md)
+🔗 [**Plus d'infos : bonnes pratiques de configuration**](./sections/projectstructre/configguide.french.md)
 
 <br/><br/><br/>
 
@@ -119,7 +119,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Autrement :** Le style fonction de rappel de Node.js, function(err, response), constituent une autre manière d’obtenir une solution non maintenable mêlant gestion de l’erreur avec du code ordinaire, des imbrications excessives et une conception bancale.
 
-🔗 [**Plus d'infos : évitez les fonctions de rappel**](/sections/errorhandling/asyncerrorhandling.french.md)
+🔗 [**Plus d'infos : évitez les fonctions de rappel**](./sections/errorhandling/asyncerrorhandling.french.md)
 
 <br/><br/>
 
@@ -129,7 +129,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Autrement :** Lorsque vous appelez un composant, le type d'erreurs en retour étant incertain - cela rend la gestion des erreurs beaucoup plus difficile. Pire encore, l'utilisation de types personnalisés pour décrire des erreurs peut entraîner la perte d'informations d'erreurs critiques comme la trace de la pile !
 
-🔗 [**Plus d'infos : utilisez uniquement l'objet intégré Error**](/sections/errorhandling/useonlythebuiltinerror.french.md)
+🔗 [**Plus d'infos : utilisez uniquement l'objet intégré Error**](./sections/errorhandling/useonlythebuiltinerror.french.md)
 
 <br/><br/>
 
@@ -139,7 +139,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Autrement :** Vous pouvez toujours redémarrer l'application lorsqu'une erreur apparaît, mais pourquoi lâcher environ 5000 utilisateurs en ligne en raison d'une erreur opérationnelle mineure prévue ? L'inverse n'est pas non plus idéal - laisser l'application en place lorsqu'un problème inconnu (erreur de programmation) s'est produit peut conduire à un comportement imprévu. Différencier les deux permet d'agir avec tact et d'appliquer une approche équilibrée en fonction du contexte donné.
 
-🔗 [**Plus d'infos : erreur opérationnelle vs erreur de programmation**](/sections/errorhandling/operationalvsprogrammererror.french.md)
+🔗 [**Plus d'infos : erreur opérationnelle vs erreur de programmation**](./sections/errorhandling/operationalvsprogrammererror.french.md)
 
 <br/><br/>
 
@@ -149,7 +149,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Autrement :** Ne pas traiter les erreurs dans un seul endroit entraînera une duplication de code et probablement des erreurs mal gérées
 
-🔗 [**Plus d'infos : gestion des erreurs dans un lieu centralisé**](/sections/errorhandling/centralizedhandling.french.md)
+🔗 [**Plus d'infos : gestion des erreurs dans un lieu centralisé**](./sections/errorhandling/centralizedhandling.french.md)
 
 <br/><br/>
 
@@ -159,7 +159,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Autrement :** Un client d'une API peut décider de planter et de redémarrer uniquement parce qu'il a reçu une erreur qu'il ne comprend pas. Remarque: l'appelant de votre API peut être vous (très typique dans un environnement de microservice)
 
-🔗 [**Plus d'infos : documentez les erreurs de l'API à l'aide de Swagger ou GraphQL**](/sections/errorhandling/documentingusingswagger.french.md)
+🔗 [**Plus d'infos : documentez les erreurs de l'API à l'aide de Swagger ou GraphQL**](./sections/errorhandling/documentingusingswagger.french.md)
 
 <br/><br/>
 
@@ -169,7 +169,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Autrement :** Lorsqu'une exception inconnue se produit, certains objets peuvent être dans un état défectueux (par exemple, un émetteur d'événements qui est utilisé globalement et qui ne déclenche plus d'événements en raison d'une défaillance interne) et toutes les demandes futures peuvent échouer ou se comporter de manière folle.
 
-🔗 [**Plus d'infos : arrêtez le processus**](/sections/errorhandling/shuttingtheprocess.french.md)
+🔗 [**Plus d'infos : arrêtez le processus**](./sections/errorhandling/shuttingtheprocess.french.md)
 
 <br/><br/>
 
@@ -179,7 +179,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Autrement :** En parcourant les console.logs ou manuellement par le biais d'un fichier texte désordonné sans outils d'interrogation ou d'une visionneuse de journaux décente, vous pourriez être occupé au travail jusqu'à tard dans la nuit.
 
-🔗 [**Plus d'infos : utilisation d'un outil de journalisation mature**](/sections/errorhandling/usematurelogger.french.md)
+🔗 [**Plus d'infos : utilisation d'un outil de journalisation mature**](./sections/errorhandling/usematurelogger.french.md)
 
 <br/><br/>
 
@@ -189,7 +189,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Autrement :** Sans test, que ce soit automatiquement ou manuellement, vous ne pouvez pas compter sur votre code pour renvoyer les bonnes erreurs. Sans erreurs significatives - il n'y a pas de gestion des erreurs.
 
-🔗 [**Plus d'infos : test des flux d'erreurs**](/sections/errorhandling/testingerrorflows.french.md)
+🔗 [**Plus d'infos : test des flux d'erreurs**](./sections/errorhandling/testingerrorflows.french.md)
 
 <br/><br/>
 
@@ -199,7 +199,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Autrement :** Vous pourriez consacrer beaucoup d'efforts à mesurer les performances et les indisponibilités de l'API, vous ne saurez probablement jamais quelles sont vos parties de code les plus lentes dans le scénario du monde réel et comment celles-ci affectent l'expérience utilisateur.
 
-🔗 [**Plus d'infos : utilisation des produits GPA**](/sections/errorhandling/apmproducts.french.md)
+🔗 [**Plus d'infos : utilisation des produits GPA**](./sections/errorhandling/apmproducts.french.md)
 
 <br/><br/>
 
@@ -209,7 +209,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Autrement :** Vos erreurs seront absorbées et ne laisseront aucune trace. Il n'y a pas de quoi s'inquiéter.
 
-🔗 [**Plus d'infos : capturez les rejets de promesses non gérés**](/sections/errorhandling/catchunhandledpromiserejection.french.md)
+🔗 [**Plus d'infos : capturez les rejets de promesses non gérés**](./sections/errorhandling/catchunhandledpromiserejection.french.md)
 
 <br/><br/>
 
@@ -219,7 +219,7 @@ Lire dans une autre langue : [![CN](/assets/flags/CN.png)**CN**](/README.chines
 
 **Autrement :** Considérez ceci - votre fonction attend un argument numérique « Discount » que l'appelant oublie de passer, plus loin dans le code, il vérifie si Discount!= 0 (le montant de la remise autorisée est supérieur à zéro), ensuite le code permet à l'utilisateur de profiter d'un remise. OMG, quel méchant bug. Le vois-tu ?
 
-🔗 [**Plus d'infos : échec rapide**](/sections/errorhandling/failfast.french.md)
+🔗 [**Plus d'infos : échec rapide**](./sections/errorhandling/failfast.french.md)
 
 <br/><br/>
 
@@ -233,7 +233,7 @@ attendre (`await`) la promesse avant de la retourner.
 De telles trames manquantes compliqueraient probablement la compréhension du flux qui conduit à l'erreur,
 surtout si la cause du comportement anormal se situe à l'intérieur de la fonction manquante
 
-🔗 [**Plus d'infos : le retour des promesses**](/sections/errorhandling/returningpromises.french.md)
+🔗 [**Plus d'infos : le retour des promesses**](./sections/errorhandling/returningpromises.french.md)
 
 <br/><br/><br/>
 
@@ -247,7 +247,7 @@ surtout si la cause du comportement anormal se situe à l'intérieur de la fonct
 
 **Autrement :** Les développeurs se concentreront sur les problèmes fastidieux d'espacement et de largeur de ligne, ce qui pourrait faire perdre du temps à trop réfléchir sur le style de code du projet.
 
-🔗 [**Plus d'infos : Utilisez ESLint et Prettier**](/sections/codestylepractices/eslint_prettier.french.md)
+🔗 [**Plus d'infos : Utilisez ESLint et Prettier**](./sections/codestylepractices/eslint_prettier.french.md)
 
 <br/><br/>
 
@@ -463,7 +463,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Un déploiement vient d'échouer, un test nommé « Ajoute un produit » a échoué. Cela vous indique-t-il exactement ce qui ne fonctionne pas correctement ?
 
-🔗[**Plus d'infos : incluez 3 parties dans chaque nom de test**](/sections/testingandquality/3-parts-in-name.french.md)
+🔗[**Plus d'infos : incluez 3 parties dans chaque nom de test**](./sections/testingandquality/3-parts-in-name.french.md)
 
 <br/><br/>
 
@@ -473,7 +473,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Non seulement vous passez de longues heures par jour à comprendre le code principal, mais maintenant, ce qui aurait dû être la partie la plus simple de la journée (les tests) accroche votre cerveau
 
-🔗[**Plus d'infos : structurez vos tests avec le format AAA**](/sections/testingandquality/aaa.french.md)
+🔗[**Plus d'infos : structurez vos tests avec le format AAA**](./sections/testingandquality/aaa.french.md)
 
 <br/><br/>
 
@@ -491,7 +491,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 \***\*Autrement :** Considérez un scénario où le déploiement est interrompu à cause de l'échec des tests, l'équipe va maintenant passer un temps d'investigation précieux qui se terminera par une triste conclusion : le système fonctionne bien, les tests interfèrent cependant les uns avec les autres et interrompent la construction.
 
-🔗[**Plus d'infos : évitez les tests globaux, ajoutez des données pour chaque test**](/sections/testingandquality/avoid-global-test-fixture.french.md)
+🔗[**Plus d'infos : évitez les tests globaux, ajoutez des données pour chaque test**](./sections/testingandquality/avoid-global-test-fixture.french.md)
 
 <br/><br/>
 
@@ -541,7 +541,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Avec une mauvaise qualité de code, les bogues et les performances seront toujours un problème qu'aucune nouvelle bibliothèque brillante ou fonctionnalité de pointe ne peut résoudre.
 
-🔗[**Plus d'infos: refactorisation !**](/sections/testingandquality/refactoring.french.md)
+🔗[**Plus d'infos: refactorisation !**](./sections/testingandquality/refactoring.french.md)
 
 <br/><br/>
 
@@ -551,7 +551,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Le choix d'un fournisseur de niche peut vous bloquer une fois que vous aurez besoin d'une personnalisation avancée. En revanche, faire appel à Jenkins pourrait vous faire perdre un temps précieux à la mise en place de l'infrastructure.
 
-🔗[**Plus d'infos : choisissez soigneusement votre plateforme CI**](/sections/testingandquality/citools.french.md)
+🔗[**Plus d'infos : choisissez soigneusement votre plateforme CI**](./sections/testingandquality/citools.french.md)
 
 ## ![✔] 4.13 Testez vos middlewares de manière isolée
 
@@ -559,7 +559,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Un bogue dans le middleware Express === un bogue dans toutes ou la plupart des requêtes
 
-🔗 [**Plus d'infos : testez vos middlewares de manière isolée**](/sections/testingandquality/test-middlewares.french.md)
+🔗 [**Plus d'infos : testez vos middlewares de manière isolée**](./sections/testingandquality/test-middlewares.french.md)
 
 <br/><br/><br/>
 
@@ -573,7 +573,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Échec === clients déçus. C'est simple.
 
-🔗 [**Plus d'infos : surveillance !**](/sections/production/monitoring.french.md)
+🔗 [**Plus d'infos : surveillance !**](./sections/production/monitoring.french.md)
 
 <br/><br/>
 
@@ -583,7 +583,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Vous vous retrouvez avec une boîte noire qui est difficile à analyser, puis vous commencez à réécrire toutes les instructions de journalisation pour ajouter des informations supplémentaires.
 
-🔗 [**Plus d'infos : augmentez la clarté à l'aide de la journalisation intelligente**](/sections/production/smartlogging.french.md)
+🔗 [**Plus d'infos : augmentez la clarté à l'aide de la journalisation intelligente**](./sections/production/smartlogging.french.md)
 
 <br/><br/>
 
@@ -593,7 +593,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Votre pauvre processus restera occupé à faire des tâches d'infrastructure au lieu de s'occuper du cœur de votre application et les performances se dégraderont en conséquence.
 
-🔗 [**Plus d'infos : déléguez tout ce qui est possible (par exemple gzip, SSL) à un proxy inverse**](/sections/production/delegatetoproxy.french.md)
+🔗 [**Plus d'infos : déléguez tout ce qui est possible (par exemple gzip, SSL) à un proxy inverse**](./sections/production/delegatetoproxy.french.md)
 
 <br/><br/>
 
@@ -603,7 +603,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Le service qualité testera le code de manière approfondie et approuvera une version qui se comportera différemment en production. Pire encore, différents serveurs dans le même cluster de production peuvent exécuter un code différent.
 
-🔗 [**Plus d'infos : verrouillez les dépendances**](/sections/production/lockdependencies.french.md)
+🔗 [**Plus d'infos : verrouillez les dépendances**](./sections/production/lockdependencies.french.md)
 
 <br/><br/>
 
@@ -613,7 +613,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** L'exécution simultanée de dizaines d'instances sans stratégie claire et trop d'outils (gestion de cluster, docker, PM2) pourrait conduire au chaos du DevOps.
 
-🔗 [**Plus d'infos : protégez la disponibilité du processus avec des bons outils**](/sections/production/guardprocess.french.md)
+🔗 [**Plus d'infos : protégez la disponibilité du processus avec des bons outils**](./sections/production/guardprocess.french.md)
 
 <br/><br/>
 
@@ -623,7 +623,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Votre application n'utilisera probablement que 25% de ses ressources disponibles (!) ou même moins. Notez qu'un serveur typique possède 4 cœurs CPU ou plus, le déploiement naïf de Node.js n'en utilise qu'un (même en utilisant des services PaaS comme AWS beanstalk !)
 
-🔗 [**Plus d'infos : utilisez tous les cœurs du CPU**](/sections/production/utilizecpu.french.md)
+🔗 [**Plus d'infos : utilisez tous les cœurs du CPU**](./sections/production/utilizecpu.french.md)
 
 <br/><br/>
 
@@ -633,7 +633,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Vous constaterez que vous effectuez de nombreuses « livraisons de diagnostics » - la livraison de code vers la production uniquement pour extraire des informations à des fins de diagnostic.
 
-🔗 [**Plus d'infos : créez un « point de terminaison de maintenance »**](/sections/production/createmaintenanceendpoint.french.md)
+🔗 [**Plus d'infos : créez un « point de terminaison de maintenance »**](./sections/production/createmaintenanceendpoint.french.md)
 
 <br/><br/>
 
@@ -643,7 +643,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Vous pourriez consacrer beaucoup d'efforts à mesurer les performances et l'indisponibilité de l'API, vous ne saurez probablement jamais quelles sont vos parties de code les plus lentes dans le scénario du monde réel et comment celles-ci affectent l'expérience utilisateur.
 
-🔗 [**Plus d'infos : découvrez les erreurs et les indisponibilités à l'aide des produits APM**](/sections/production/apmproducts.french.md)
+🔗 [**Plus d'infos : découvrez les erreurs et les indisponibilités à l'aide des produits APM**](./sections/production/apmproducts.french.md)
 
 <br/><br/>
 
@@ -653,7 +653,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Même le champion du monde Architecte/DevOps ne sauvera pas un système mal écrit.
 
-🔗 [**Plus d'infos : préparez votre code pour la production**](/sections/production/productioncode.french.md)
+🔗 [**Plus d'infos : préparez votre code pour la production**](./sections/production/productioncode.french.md)
 
 <br/><br/>
 
@@ -663,7 +663,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** La mémoire de votre processus peut fuir une centaine de mégaoctets par jour, comme cela s'est produit chez [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
 
-🔗 [**Plus d'infos : mesurez et protégez l'utilisation de la mémoire**](/sections/production/measurememory.french.md)
+🔗 [**Plus d'infos : mesurez et protégez l'utilisation de la mémoire**](./sections/production/measurememory.french.md)
 
 <br/><br/>
 
@@ -673,7 +673,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Votre unique processus de Node sera occupé à diffuser des centaines de fichiers html/images/angular/react au lieu d'allouer toutes ses ressources à la tâche pour laquelle il est conçu - fournir du contenu dynamique
 
-🔗 [**Plus d'infos : retirez vos ressources frontend de Node**](/sections/production/frontendout.french.md)
+🔗 [**Plus d'infos : retirez vos ressources frontend de Node**](./sections/production/frontendout.french.md)
 
 <br/><br/>
 
@@ -683,7 +683,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** La défaillance d'un serveur particulier entraînera l'arrêt des applications au lieu de simplement tuer une machine défectueuse. De plus, l'élasticité de l'extensibilité sera plus difficile à obtenir en raison de la dépendance à un serveur spécifique.
 
-🔗 [**Plus d'infos : soyez sans état, tuez vos serveurs presque tous les jours**](/sections/production/bestateless.french.md)
+🔗 [**Plus d'infos : soyez sans état, tuez vos serveurs presque tous les jours**](./sections/production/bestateless.french.md)
 
 <br/><br/>
 
@@ -693,7 +693,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Si vous ne disposez pas d'outils dédiés pour protéger votre code contre les vulnérabilités, vous devrez suivre en permanence les publications en ligne sur les nouvelles menaces. C'est assez fastidieux.
 
-🔗 [**Plus d'infos : Utilisez des outils qui détectent automatiquement les vulnérabilités**](/sections/production/detectvulnerabilities.french.md)
+🔗 [**Plus d'infos : Utilisez des outils qui détectent automatiquement les vulnérabilités**](./sections/production/detectvulnerabilities.french.md)
 
 <br/><br/>
 
@@ -705,7 +705,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** L'examen d'un journal d'erreurs de production sans le contexte (ce qui s'est passé auparavant) rend le travail de réflexion beaucoup plus difficile et lent.
 
-🔗 [**Plus d'infos : attribuez un ‘TransactionId’ à chaque relevé du journal**](/sections/production/assigntransactionid.french.md)
+🔗 [**Plus d'infos : attribuez un ‘TransactionId’ à chaque relevé du journal**](./sections/production/assigntransactionid.french.md)
 
 <br/><br/>
 
@@ -715,7 +715,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** L'omission de cette simple propriété pourrait fortement dégrader les performances. Par exemple, lors de l'utilisation d'Express pour le rendu côté serveur, l'omission de `NODE_ENV` le rend trois fois plus lent !
 
-🔗 [**Plus d'infos : définissez NODE_ENV=production**](/sections/production/setnodeenv.french.md)
+🔗 [**Plus d'infos : définissez NODE_ENV=production**](./sections/production/setnodeenv.french.md)
 
 <br/><br/>
 
@@ -733,7 +733,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Les bogues ou vulnérabilités récemment découverts pourraient être utilisés pour exploiter une application en production, et votre application pourrait devenir non supportée par divers modules et plus difficile à maintenir
 
-🔗 [**Plus d'infos : Utilisez une version LTS de Node.js**](/sections/production/LTSrelease.french.md)
+🔗 [**Plus d'infos : Utilisez une version LTS de Node.js**](./sections/production/LTSrelease.french.md)
 
 <br/><br/>
 
@@ -743,7 +743,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Acheminement des journaux de gestion des applications === difficile à dimensionner, perte de journaux, mauvaise séparation des informations.
 
-🔗 [**Plus d'infos : redirection du journal**](/sections/production/logrouting.french.md)
+🔗 [**Plus d'infos : redirection du journal**](./sections/production/logrouting.french.md)
 
 <br/><br/>
 
@@ -753,7 +753,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :\*\*\*\*** Le service qualité testera le code de manière approfondie et approuvera une version qui se comportera différemment en production. Pire encore, différents serveurs dans le même cluster de production peuvent exécuter un code différent.
 
-🔗 [**Plus d'infos : utilisez npm ci**](/sections/production/installpackageswithnpmci.french.md)
+🔗 [**Plus d'infos : utilisez npm ci**](./sections/production/installpackageswithnpmci.french.md)
 
 <br/><br/><br/>
 
@@ -773,7 +773,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Ce qui aurait pu être une simple défaillance de sécurité pendant le développement devient un problème majeur en production. En outre, le projet peut ne pas suivre des pratiques de sécurité de code conformes, ce qui peut entraîner l'introduction de vulnérabilités ou la divulgation de secrets sensibles dans des dépôts distants.
 
-🔗 [**Plus d'infos : régles du linter**](/sections/security/lintrules.french.md)
+🔗 [**Plus d'infos : régles du linter**](./sections/security/lintrules.french.md)
 
 <br/><br/>
 
@@ -785,7 +785,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Une application pourrait faire l'objet d'une attaque entraînant un déni de service, de ce fait, les utilisateurs réels obtiennent un service dégradé ou indisponible.
 
-🔗 [**Plus d'infos : mettez en œuvre la limitation de débit**](/sections/security/limitrequests.french.md)
+🔗 [**Plus d'infos : mettez en œuvre la limitation de débit**](./sections/security/limitrequests.french.md)
 
 <br/><br/>
 
@@ -797,7 +797,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Le contenu des sources, même pour les dépôts privés, peut être rendu public par erreur, et tous les secrets sont alors dévoilés. L'accès au contenu des sources pour une partie externe donnera par inadvertance accès à des systèmes connexes (bases de données, apis, services, etc.).
 
-🔗 [**Plus d'infos : gestion des secrets**](/sections/security/secretmanagement.french.md)
+🔗 [**Plus d'infos : gestion des secrets**](./sections/security/secretmanagement.french.md)
 
 <br/><br/>
 
@@ -809,7 +809,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Une entrée utilisateur non validée ou non assainie pourrait conduire à l'injection de l'opérateur lorsqu'on travaille avec MongoDB pour NoSQL, et le fait de ne pas utiliser un système d'assainissement approprié ou un ORM permettra facilement des attaques par injection SQL, créant une énorme vulnérabilité.
 
-🔗 [**Plus d'infos : Prévention de l'injection de queries à l'aide des bibliothèques ORM/ODM**](/sections/security/ormodmusage.french.md)
+🔗 [**Plus d'infos : Prévention de l'injection de queries à l'aide des bibliothèques ORM/ODM**](./sections/security/ormodmusage.french.md)
 
 <br/><br/>
 
@@ -817,7 +817,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **TL;PL :** Il s'agit d'une collection de conseils de sécurité qui n'est pas directement liée à Node.js, l'implémentation de Node n'est pas très différente de toute autre langage. Cliquez pour en savoir plus.
 
-🔗 [**Plus d'infos : les meilleures pratiques communes en matière de sécurité**](/sections/security/commonsecuritybestpractices.french.md)
+🔗 [**Plus d'infos : les meilleures pratiques communes en matière de sécurité**](./sections/security/commonsecuritybestpractices.french.md)
 
 <br/><br/>
 
@@ -829,7 +829,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Les attaquants pourraient lancer des attaques directes sur les utilisateurs de votre application, ce qui entraînerait d'énormes vulnérabilités de sécurité.
 
-🔗 [**Plus d'infos : utilisation d'entêtes sécurisés dans votre application**](/sections/security/secureheaders.french.md)
+🔗 [**Plus d'infos : utilisation d'entêtes sécurisés dans votre application**](./sections/security/secureheaders.french.md)
 
 <br/><br/>
 
@@ -841,7 +841,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Un attaquant pourrait détecter votre framework Web et attaquer toutes ses vulnérabilités connues.
 
-🔗 [**Plus d'infos : sécurité des dépendances**](/sections/security/dependencysecurity.french.md)
+🔗 [**Plus d'infos : sécurité des dépendances**](./sections/security/dependencysecurity.french.md)
 
 <br/><br/>
 
@@ -853,7 +853,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Les mots de passe et les secrets qui sont stockés sans utiliser de fonction sécurisée sont vulnérables au brute-force et aux attaques de dictionnaire qui mèneront à leur divulgation.
 
-🔗 [**Plus d'infos : mots de passe utilisateur**](/sections/security/userpasswords.french.md)
+🔗 [**Plus d'infos : mots de passe utilisateur**](./sections/security/userpasswords.french.md)
 
 <br/><br/>
 
@@ -865,7 +865,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Un attaquant pourrait stocker du code JavaScript malveillant dans votre base de données qui sera ensuite envoyé tel quel aux pauvres clients.
 
-🔗 [**Plus d'infos : échappez la sortie**](/sections/security/escape-output.french.md)
+🔗 [**Plus d'infos : échappez la sortie**](./sections/security/escape-output.french.md)
 
 <br/><br/>
 
@@ -877,7 +877,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Votre générosité et votre approche permissive augmentent considérablement la surface d'attaque et encouragent l'attaquant à essayer de nombreuses entrées jusqu'à ce qu'il trouve une combinaison pour planter l'application.
 
-🔗 [**Plus d'infos : validez les schémas JSON entrants**](/sections/security/validation.french.md)
+🔗 [**Plus d'infos : validez les schémas JSON entrants**](./sections/security/validation.french.md)
 
 <br/><br/>
 
@@ -889,7 +889,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Les jetons expirés ou égarés pourraient être utilisés de manière malveillante par un tiers pour accéder à une application et se faire passer pour le propriétaire du jeton.
 
-🔗 [**Plus d'infos : bloquez les jetons Web JSON**](/sections/security/expirejwt.french.md)
+🔗 [**Plus d'infos : bloquez les jetons Web JSON**](./sections/security/expirejwt.french.md)
 
 <br/><br/>
 
@@ -904,7 +904,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Un attaquant peut lancer des tentatives de mot de passe automatisées illimitées pour accéder à des comptes privilégiés sur une application.
 
-🔗 [**Plus d'infos : restrictions du nombre de connexions**](/sections/security/login-rate-limit.french.md)
+🔗 [**Plus d'infos : restrictions du nombre de connexions**](./sections/security/login-rate-limit.french.md)
 
 <br/><br/>
 
@@ -916,7 +916,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Un attaquant qui réussit à exécuter un script sur le serveur obtient un pouvoir illimité sur la machine locale (par exemple, modifier iptable et réacheminer le trafic vers son serveur).
 
-🔗 [**Plus d'infos : exécutez Node.js en tant qu'utilisateur non root**](/sections/security/non-root-user.french.md)
+🔗 [**Plus d'infos : exécutez Node.js en tant qu'utilisateur non root**](./sections/security/non-root-user.french.md)
 
 <br/><br/>
 
@@ -928,7 +928,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 **Autrement :** Votre application devra traiter des requêtes importantes, incapable de traiter les autres travaux importants qu'elle doit accomplir, ce qui aura des conséquences sur les performances et la vulnérabilité aux attaques DOS.
 Votre application devra faire face à de grosses requêtes, incapable de traiter les autres travaux importants qu'elle doit accomplir, entraînant des implications en termes de performances et une vulnérabilité face aux attaques DOS.
-🔗 [**Plus d'infos : limitez la capacité des données utiles**](/sections/security/requestpayloadsizelimit.french.md)
+🔗 [**Plus d'infos : limitez la capacité des données utiles**](./sections/security/requestpayloadsizelimit.french.md)
 
 <br/><br/>
 
@@ -940,7 +940,7 @@ Votre application devra faire face à de grosses requêtes, incapable de traiter
 
 **Autrement :** Un code JavaScript malveillant trouve un moyen d'accéder au texte passé dans `eval` ou d'autres fonctions d'évaluation en temps réel du langage JavaScript, et obtiendra un accès complet aux autorisations JavaScript sur la page. Cette vulnérabilité se manifeste souvent par une attaque XSS.
 
-🔗 [**Plus d'infos : évitez les instruction eval de JavaScript**](/sections/security/avoideval.french.md)
+🔗 [**Plus d'infos : évitez les instruction eval de JavaScript**](./sections/security/avoideval.french.md)
 
 <br/><br/>
 
@@ -952,7 +952,7 @@ Votre application devra faire face à de grosses requêtes, incapable de traiter
 
 **Autrement :** Des RegEx mal écrites pourraient être susceptibles de faire l'objet d'attaques DoS par expression régulière qui bloqueraient complètement la boucle de l'événement. Par exemple, le populaire paquet "moment" a été déclaré vulnérable par une utilisation malveillante de RegEx en novembre 2017.
 
-🔗 [**Plus d'infos : empêcher une RegEx malveillante**](/sections/security/regex.french.md)
+🔗 [**Plus d'infos : empêcher une RegEx malveillante**](./sections/security/regex.french.md)
 
 <br/><br/>
 
@@ -964,7 +964,7 @@ Votre application devra faire face à de grosses requêtes, incapable de traiter
 
 **Autrement :** Une entrée utilisateur malveillante pourrait trouver son chemin vers un paramètre qui est utilisé pour exiger des fichiers falsifiés, par exemple, un fichier précédemment téléchargé sur le système de fichiers, ou accéder à des fichiers système déjà existants.
 
-🔗 [**Plus d'infos : chargement sécurisé des modules**](/sections/security/safemoduleloading.french.md)
+🔗 [**Plus d'infos : chargement sécurisé des modules**](./sections/security/safemoduleloading.french.md)
 
 <br/><br/>
 
@@ -976,7 +976,7 @@ Votre application devra faire face à de grosses requêtes, incapable de traiter
 
 **Autrement :** Un plugin peut attaquer à travers une variété infinie d'options comme les boucles infinies, la surcharge de la mémoire et l'accès aux variables sensibles de l'environnement du processus.
 
-🔗 [**Plus d'infos : exécutez un code dangereux dans un bac à sable**](/sections/security/sandbox.french.md)
+🔗 [**Plus d'infos : exécutez un code dangereux dans un bac à sable**](./sections/security/sandbox.french.md)
 
 <br/><br/>
 
@@ -988,7 +988,7 @@ Votre application devra faire face à de grosses requêtes, incapable de traiter
 
 **Autrement :** L'utilisation naïve de processus fils pourrait entraîner l'exécution de commandes à distance ou des attaques par injection dans l'interface système en raison d'une entrée utilisateur malveillante transmise à une commande système non assainie.
 
-🔗 [**Plus d'infos : soyez prudents lorsque vous travaillez avec des processus fils**](/sections/security/childprocesses.french.md)
+🔗 [**Plus d'infos : soyez prudents lorsque vous travaillez avec des processus fils**](./sections/security/childprocesses.french.md)
 
 <br/><br/>
 
@@ -1000,7 +1000,7 @@ Votre application devra faire face à de grosses requêtes, incapable de traiter
 
 **Autrement :** Des détails sensibles de l'application pourraient être divulgués à partir d'informations trouvées dans une trace de pile, tels que les chemins d'accès aux fichiers du serveur, les modules tiers utilisés et d'autres flux de travail internes de l'application qui pourraient être exploités par un attaquant.
 
-🔗 [**Plus d'infos : masquez les détails des erreurs au client**](/sections/security/hideerrors.french.md)
+🔗 [**Plus d'infos : masquez les détails des erreurs au client**](./sections/security/hideerrors.french.md)
 
 <br/><br/>
 
@@ -1022,7 +1022,7 @@ Votre application devra faire face à de grosses requêtes, incapable de traiter
 
 **Autrement :** Les cookies peuvent être envoyés via des connexions non sécurisées, et un attaquant peut utiliser l'identification de session pour identifier le framework sous-jacent de l'application web, ainsi que les vulnérabilités spécifiques aux modules.
 
-🔗 [**Plus d'infos : cookie et sécurité des sessions**](/sections/security/sessions.french.md)
+🔗 [**Plus d'infos : cookie et sécurité des sessions**](./sections/security/sessions.french.md)
 
 <br/><br/>
 
@@ -1044,7 +1044,7 @@ Votre application devra faire face à de grosses requêtes, incapable de traiter
 
 **Autrement :** Si un attaquant découvre que vous ne validez pas les données externes fournies par l'utilisateur, il peut exploiter cette vulnérabilité en publiant des liens spécialement conçus sur des forums, des médias sociaux et d'autres lieux publics pour inciter les utilisateurs à cliquer.
 
-🔗 [**Plus d'infos : empêchez les redirections dangereuses**](/sections/security/saferedirects.french.md)
+🔗 [**Plus d'infos : empêchez les redirections dangereuses**](./sections/security/saferedirects.french.md)
 
 <br/><br/>
 
@@ -1056,7 +1056,7 @@ Votre application devra faire face à de grosses requêtes, incapable de traiter
 
 **Autrement :** Les clés API, mots de passe ou autres secrets de votre projet sont susceptibles d'être utilisés abusivement par toute personne qui les découvre, ce qui peut entraîner des pertes financières, une usurpation d'identité et d'autres risques.
 
-🔗 [**Plus d'infos : évitez de publier des secrets**](/sections/security/avoid_publishing_secrets.french.md)
+🔗 [**Plus d'infos : évitez de publier des secrets**](./sections/security/avoid_publishing_secrets.french.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#table-des-matières">⬆ Retourner en haut de la page</a></p>
@@ -1073,7 +1073,7 @@ Votre application devra faire face à de grosses requêtes, incapable de traiter
 
 **Autrement :** Comme la boucle d'événements est bloquée, Node.js sera incapable de traiter d'autres requêtes, ce qui entraînera des retards pour les utilisateurs concurrents. **3000 utilisateurs attendent une réponse, le contenu est prêt à être servi, mais une seule requêtes bloque le serveur pour qu'il ne puisse pas renvoyer les résultats**.
 
-🔗 [**Plus d'infos : ne bloquez pas la boucle d'événement**](/sections/performance/block-loop.french.md)
+🔗 [**Plus d'infos : ne bloquez pas la boucle d'événement**](./sections/performance/block-loop.french.md)
 
 <br /><br /><br />
 
@@ -1084,7 +1084,7 @@ Gardez à l'esprit qu'avec l'introduction du nouveau moteur V8 en parallèle des
 
 **Autrement :** Vous devez maintenir des projets moins performants où vous auriez pu simplement utiliser ce qui était **déjà** disponible ou traiter quelques lignes supplémentaires en échange de quelques fichiers supplémentaires.
 
-🔗 [**Plus d'infos : natif supérieur aux utilitaires**](/sections/performance/nativeoverutil.french.md)
+🔗 [**Plus d'infos : natif supérieur aux utilitaires**](./sections/performance/nativeoverutil.french.md)
 
 <br/><br/><br/>
 
@@ -1122,7 +1122,7 @@ RUN npm ci --production
 CMD [ "node", "dist/app.js" ]
 ```
 
-🔗 [**Plus d'infos : utilisez multi-stage builds**](/sections/docker/multi_stage_builds.french.md)
+🔗 [**Plus d'infos : utilisez multi-stage builds**](./sections/docker/multi_stage_builds.french.md)
 
 <br /><br /><br />
 
@@ -1132,7 +1132,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Autrement :** Si aucun signal n'est transmis, votre code ne sera jamais notifié des interruptions. Sans cela, il perdra sa chance de se fermer correctement, ce qui pourrait entraîner la perte de requêtes et/ou de données en cours.
 
-[**Plus d'infos : Démarrez un conteneur à l'aide de la commande node, évitez npm start**](/sections/docker/bootstrap-using-node.french.md)
+[**Plus d'infos : Démarrez un conteneur à l'aide de la commande node, évitez npm start**](./sections/docker/bootstrap-using-node.french.md)
 
 <br /><br /><br />
 
@@ -1142,7 +1142,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Autrement :** Le conteneur continue de se planter par manque de ressources et sera redémarré indéfiniment par le responsable du processus. Si Kubernetes est au courant de cela, il pourrait le déplacer vers une autre instance plus importante.
 
-🔗 [**Plus d'infos : laissez l'orchestrateur Docker redémarrer et répliquer les processus**](/sections/docker/restart-and-replicate-processes.french.md)
+🔗 [**Plus d'infos : laissez l'orchestrateur Docker redémarrer et répliquer les processus**](./sections/docker/restart-and-replicate-processes.french.md)
 
 <br/><br /><br />
 
@@ -1152,7 +1152,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Autrement :** Les fichiers secrets personnels habituels comme `.env`, `.aws` et `.npmrc` seront partagés avec toute personne ayant accès à l'image (par exemple le dépôt Docker).
 
-🔗 [**Plus d'infos : utilisez .dockerignore**](/sections/docker/docker-ignore.french.md)
+🔗 [**Plus d'infos : utilisez .dockerignore**](./sections/docker/docker-ignore.french.md)
 
 <br /><br /><br />
 
@@ -1162,7 +1162,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Autrement :** De nombreuses failles célèbres de sécurité de npm ont été trouvées dans des packages de développement (par exemple [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes))
 
-🔗 Plus d'infos : [supprimez les dépendances de développement](/sections/docker/install-for-production.french.md)
+🔗 Plus d'infos : [supprimez les dépendances de développement](./sections/docker/install-for-production.french.md)
 
 <br /><br /><br />
 
@@ -1172,7 +1172,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Autrement :** S'éteindre immédiatement signifie ne pas répondre aux milliers d'utilisateurs qui seront déçus.
 
-🔗 [**Plus d'infos : arrêt progressif**](/sections/docker/graceful-shutdown.french.md)
+🔗 [**Plus d'infos : arrêt progressif**](./sections/docker/graceful-shutdown.french.md)
 
 <br /><br /><br />
 
@@ -1182,7 +1182,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Autrement :** La définition de docker est nécessaire pour prendre une décision judicieuse pour la mise à l'échelle et éviter de priver d'autres consommateurs de mémoire. Sans définir également les limites de v8, il sous-utilisera les ressources du conteneur - Sans instructions explicites, il se plantera lorsqu'il utilisera ~50-60% des ressources de ses hôtes.
 
-🔗 [**Plus d'infos : définissez des limites de mémoire en utilisant uniquement Docker**](/sections/docker/memory-limit.french.md)
+🔗 [**Plus d'infos : définissez des limites de mémoire en utilisant uniquement Docker**](./sections/docker/memory-limit.french.md)
 
 <br /><br /><br />
 
@@ -1192,7 +1192,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Autrement :** La construction de docker sera très longue et consommera beaucoup de ressources, même en cas de changements minimes.
 
-🔗 [**Plus d'infos : exploiter la mise en cache pour réduire les temps de construction**](/sections/docker/use-cache-for-shorter-build-time.french.md)
+🔗 [**Plus d'infos : exploiter la mise en cache pour réduire les temps de construction**](./sections/docker/use-cache-for-shorter-build-time.french.md)
 
 <br /><br /><br />
 
@@ -1204,7 +1204,7 @@ En outre, la référence à un tag d'une image signifie que l'image de base est 
 
 **Autrement :** Une nouvelle version d'une image de base pourrait être déployée en production avec des modifications importantes, provoquant un comportement non souhaité de l'application.
 
-🔗 [**Plus d'infos : Comprendre les tags d'image et utiliser le tag "latest" avec précaution**](/sections/docker/image-tags.french.md)
+🔗 [**Plus d'infos : Comprendre les tags d'image et utiliser le tag "latest" avec précaution**](./sections/docker/image-tags.french.md)
 
 <br /><br /><br />
 
@@ -1214,7 +1214,7 @@ En outre, la référence à un tag d'une image signifie que l'image de base est 
 
 **Autrement :** Construire, pousser et tirer des images prendra plus de temps, des vecteurs d'attaque inconnus peuvent être utilisés par des acteurs malveillants et plus de ressources sont consommées.
 
-🔗 [**Plus d'infos : privilégiez les plus petites images**](/sections/docker/smaller_base_images.french.md)
+🔗 [**Plus d'infos : privilégiez les plus petites images**](./sections/docker/smaller_base_images.french.md)
 
 <br /><br /><br />
 
@@ -1224,7 +1224,7 @@ En outre, la référence à un tag d'une image signifie que l'image de base est 
 
 **Autrement :** Toute personne ayant accès au CI et au registre des dockers aura également accès, en prime, à certains secrets précieux de l'organisation
 
-🔗 [**Plus d'infos : nettoyez les secrets de construction**](/sections/docker/avoid-build-time-secrets.french.md)
+🔗 [**Plus d'infos : nettoyez les secrets de construction**](./sections/docker/avoid-build-time-secrets.french.md)
 
 <br /><br /><br />
 
@@ -1234,7 +1234,7 @@ En outre, la référence à un tag d'une image signifie que l'image de base est 
 
 **Autrement :** Votre code pourrait être entièrement exempt de vulnérabilités. Cependant, il peut être piraté en raison de la vulnérabilité des versions binaires au niveau OS (par exemple, OpenSSL, TarBall) qui sont couramment utilisées par les applications.
 
-🔗 [**Plus d'infos : scannez l'ensemble de l'image avant la production**](/sections/docker/scan-images.french.md)
+🔗 [**Plus d'infos : scannez l'ensemble de l'image avant la production**](./sections/docker/scan-images.french.md)
 
 <br /><br /><br />
 
@@ -1244,7 +1244,7 @@ En outre, la référence à un tag d'une image signifie que l'image de base est 
 
 **Autrement :** L'image qui sera envoyée à la production pèsera 30 % de plus à cause de fichiers qui ne seront jamais utilisés.
 
-🔗 [**Plus d'infos : nettoyez le cache NODE_MODULE**](/sections/docker/clean-cache.french.md)
+🔗 [**Plus d'infos : nettoyez le cache NODE_MODULE**](./sections/docker/clean-cache.french.md)
 
 <br /><br /><br />
 
@@ -1252,7 +1252,7 @@ En outre, la référence à un tag d'une image signifie que l'image de base est 
 
 **TL;PL :** Il s'agit d'un recueil de conseils de Docker qui n'est pas directement lié à Node.js - la mise en œuvre de Node n'est pas très différente de celle de tout autre langage. Cliquez pour en savoir plus.
 
-🔗 [**Plus d'infos : les pratiques de Docker en général**](/sections/docker/generic-tips.french.md)
+🔗 [**Plus d'infos : les pratiques de Docker en général**](./sections/docker/generic-tips.french.md)
 
 <br/><br /><br />
 
@@ -1262,7 +1262,7 @@ En outre, la référence à un tag d'une image signifie que l'image de base est 
 
 **Autrement :** Par erreur, le créateur du Dockerfile a laissé Root comme utilisateur de production, et a également utilisé une image provenant d'un dépôt de source inconnue. Cela pourrait être évité avec un simple linter.
 
-🔗 [**Plus d'infos : lintez your Dockerfile**](/sections/docker/lint-dockerfile.french.md)
+🔗 [**Plus d'infos : lintez your Dockerfile**](./sections/docker/lint-dockerfile.french.md)
 
 <br/><br /><br />
 
@@ -1280,20 +1280,20 @@ Toutes les traductions sont fournies par la communauté. Nous serons heureux de 
 
 ### Traductions terminées
 
-- ![BR](/assets/flags/BR.png) [Portugais brésilien](./README.brazilian-portuguese.md) - Avec l'aimable autorisation de [Marcelo Melo](https://github.com/marcelosdm)
-- ![CN](/assets/flags/CN.png) [Chinois](./README.chinese.md) - Avec l'aimable autorisation de [Matt Jin](https://github.com/mattjin)
-- ![RU](/assets/flags/RU.png) [Russe](./README.russian.md) - Avec l'aimable autorisation de [Alex Ivanov](https://github.com/contributorpw)
-- ![PL](/assets/flags/PL.png) [Polonais](./README.polish.md) - Avec l'aimable autorisation de [Michal Biesiada](https://github.com/mbiesiad)
-- ![JA](/assets/flags/JA.png) [Japonais](./README.japanese.md) - Avec l'aimable autorisation de [Yuki Ota](https://github.com/YukiOta), [Yuta Azumi](https://github.com/YA21)
-- ![EU](/assets/flags/EU.png) [Basque](README.basque.md) - Avec l'aimable autorisation de [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta
+- ![BR](./assets/flags/BR.png) [Portugais brésilien](./README.brazilian-portuguese.md) - Avec l'aimable autorisation de [Marcelo Melo](https://github.com/marcelosdm)
+- ![CN](./assets/flags/CN.png) [Chinois](./README.chinese.md) - Avec l'aimable autorisation de [Matt Jin](https://github.com/mattjin)
+- ![RU](./assets/flags/RU.png) [Russe](./README.russian.md) - Avec l'aimable autorisation de [Alex Ivanov](https://github.com/contributorpw)
+- ![PL](./assets/flags/PL.png) [Polonais](./README.polish.md) - Avec l'aimable autorisation de [Michal Biesiada](https://github.com/mbiesiad)
+- ![JA](./assets/flags/JA.png) [Japonais](./README.japanese.md) - Avec l'aimable autorisation de [Yuki Ota](https://github.com/YukiOta), [Yuta Azumi](https://github.com/YA21)
+- ![EU](./assets/flags/EU.png) [Basque](README.basque.md) - Avec l'aimable autorisation de [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta
 
 ### Traductions en cours
 
-- ![FR](/assets/flags/FR.png) [Français](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/129))
-- ![HE](/assets/flags/HE.png) Hébreu ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/156))
-- ![KR](/assets/flags/KR.png) [Coréen](README.korean.md) - Avec l'aimable autorisation de [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94))
-- ![ES](/assets/flags/ES.png) [Espagnol](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/95))
-- ![TR](/assets/flags/TR.png) Turque ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/139))
+- ![FR](./assets/flags/FR.png) [Français](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/129))
+- ![HE](./assets/flags/HE.png) Hébreu ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/156))
+- ![KR](./assets/flags/KR.png) [Coréen](README.korean.md) - Avec l'aimable autorisation de [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94))
+- ![ES](./assets/flags/ES.png) [Espagnol](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/95))
+- ![TR](./assets/flags/TR.png) Turque ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/139))
 
 <br/><br/>
 
@@ -1356,7 +1356,7 @@ Spécialiste de JavaScript et de son écosystème - React, Node.js, TypeScript, 
 
 Merci à tous nos collaborateurs ! 🙏
 
-Nos collaborateurs sont des membres qui contribuent régulièrement au dépôt, en suggérant de nouvelles bonnes pratiques, en triant les issues, en examinant les pull request et bien d'autres choses encore. Si vous souhaitez nous aider à guider des milliers de personnes à créer de meilleures applications Node.js, veuillez lire nos [directives pour les contributeurs](/.operations/CONTRIBUTING.md) 🎉
+Nos collaborateurs sont des membres qui contribuent régulièrement au dépôt, en suggérant de nouvelles bonnes pratiques, en triant les issues, en examinant les pull request et bien d'autres choses encore. Si vous souhaitez nous aider à guider des milliers de personnes à créer de meilleures applications Node.js, veuillez lire nos [directives pour les contributeurs](./.operations/CONTRIBUTING.md) 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"/></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"/></a> | <a href="https://github.com/rluvaton" target="_blank"><img src="assets/images/members/raz-luvaton.jpg" width="75" height="75" alt="Raz Luvaton" loading="lazy"/></a> |
 | :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |

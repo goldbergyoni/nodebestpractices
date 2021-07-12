@@ -10,7 +10,7 @@ A seção de boas práticas comuns de segurança contém as práticas recomendad
 
 **Caso contrário:** invasores podem executar ataques man-in-the-middle, espionar o comportamento de seus usuários e executar ações ainda mais maliciosas quando a conexão não é criptografada.
 
-🔗 [**Leia Mais: Executando um servidor Node.js seguro**](/sections/security/secureserver.brazilian-portuguese.md)
+🔗 [**Leia Mais: Executando um servidor Node.js seguro**](./secureserver.brazilian-portuguese.md)
 
 <br/><br/>
 

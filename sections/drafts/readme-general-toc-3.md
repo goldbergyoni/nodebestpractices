@@ -1,7 +1,7 @@
 <!--- # Node.js Best Practices -->
 <!--- ![Node.js Best Practices](assets/images/banner-2.jpg) -->
 <h1 align="center">
-  <img src="/assets/images/banner-3.jpg" alt="Node.js Best Practices" />
+  <img src="../../assets/images/banner-3.jpg" alt="Node.js Best Practices" />
 </h1>
 
 <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2053%20Best%20practices-blue.svg" alt="53 items"/> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%206%20days%20ago-green.svg" alt="Last update: 7 days ago"/> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.4-brightgreen.svg" alt="Updated for Node v.8.4"/>
@@ -37,7 +37,7 @@ Welcome to the biggest compilation of Node.js best practices, based on our check
 
 **Otherwise:** Application can be accessed by Express only and require to create complex testing mocks
 
-🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncerrorhandling.md)
+🔗 [**Read More: Structure by feature*](../errorhandling/asyncerrorhandling.md)
 
 
 <br/><br/>
@@ -48,7 +48,7 @@ Welcome to the biggest compilation of Node.js best practices, based on our check
 
 **Otherwise:** You end-up with a blackbox that is hard to reason about, then you start re-writing all logging statements to add additional information
 
-🔗 [**Read More: Structure by feature*](/sections/errorhandling/asyncerrorhandling.md)
+🔗 [**Read More: Structure by feature*](../errorhandling/asyncerrorhandling.md)
 
 
 <br/><br/><br/>
@@ -65,7 +65,7 @@ Welcome to the biggest compilation of Node.js best practices, based on our check
 
 **Otherwise:** Node.js callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting and awkward coding patterns
 
-🔗 [**Use async-await for async error handling**](/sections/errorhandling/asyncerrorhandling.md)
+🔗 [**Use async-await for async error handling**](../errorhandling/asyncerrorhandling.md)
 
 
 
