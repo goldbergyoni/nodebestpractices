@@ -19,7 +19,7 @@
   - README.md
 ```
 
-[.dockerignore](/sections/docker/dockerignore.japanese.md) では、アプリケーションのビルドや実行に必要のないファイルをすでにフィルタリングしています。
+[.dockerignore](./docker-ignore.japanese.md) では、アプリケーションのビルドや実行に必要のないファイルをすでにフィルタリングしています。
 
 ```
 # 既存の node_modules をコピーしないで、自分たちで取得します。
