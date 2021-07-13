@@ -5,7 +5,7 @@
 Docker irudiak geruzen konbinazioak dira. Izan ere, zure Dockerfile fitxategiko agindu bakoitzak geruza bat sortzen du. Dockeren daemonak konpilazioen arteko geruza horiek erabil ditzake, aginduak berdinak badira edo `COPY` edo `ADD` fitxategiak berdinak badira. ⚠️ Cachea ezin bada geruza jakin batean erabili, ondorengo geruza guztiak ere ezgaituak izango dira. Horrexegatik, ordena garrantzitsua da. Zure Dockerfile fitxategia zuzen diseinatzea ezinbestekoa da, zure konpilazioan atal mugikorren kopurua murrizteko; gutxien eguneratzen diren aginduak goialdean egon beharko lirateke, eta etengabe aldatzen ari diren aginduak (aplikazioaren kodea, esaterako), berriz, behe aldean.
 Baita ere, garrantzitsua da jakitea operazio luzeak abiarazten dituzten aginduek puntu gorenaren inguruan egon beharko luketeela, horrela bermatuko delako bakarrik beharrezkoak direnean gertatzea (docker irudia eraikitzen duzun bakoitzean aldatzen ez badira behintzat). Cachetik Docker irudi bat berreraikitzea ia-ia berehalakoa izan daiteke era egokian eginez gero.
 
-![Dockeren geruzak](/assets/images/docker_layers_schema.png)
+![Dockeren geruzak](../../assets/images/docker_layers_schema.png)
 
 - [Digging into Docker layers](https://medium.com/@jessgreb01/digging-into-docker-layers-c22f948ed612)-etik hartutako irudia, jessgreb01-i esker\*
 
@@ -27,7 +27,7 @@ LABEL build_number="483"
 
 #### Eduki .dockerignore fitxategi egokia
 
-[**Begiratu: docker ignoreren garrantzia**](/sections/docker/docker-ignore.basque.md)
+[**Begiratu: docker ignoreren garrantzia**](./docker-ignore.basque.md)
 
 Cachearen logika hondatu dezaketen fitxategien kopia ekiditen dute Docker ignorek, adibidez proben emaitzen txostenak, erregistroak edota aldi baterako fitxategiak.
 

@@ -13,20 +13,20 @@
 
 ### 监控示例：AWS cloudwatch默认仪表板。很难提取应用内指标 
 
-![AWS cloudwatch default dashboard. Hard to extract in-app metrics](/assets/images/monitoring1.png)
+![AWS cloudwatch default dashboard. Hard to extract in-app metrics](../../assets/images/monitoring1.png)
 
 <br/><br/>
 
 ### 监控示例：StackDriver默认仪表板。很难提取应用内指标
 
-![StackDriver default dashboard. Hard to extract in-app metrics](/assets/images/monitoring2.jpg)
+![StackDriver default dashboard. Hard to extract in-app metrics](../../assets/images/monitoring2.jpg)
 
 <br/><br/>
 
 ### 监控示例：Grafana作为可视化原始数据的UI层
 
 
-![Grafana as the UI layer that visualizes raw data](/assets/images/monitoring3.png)
+![Grafana as the UI layer that visualizes raw data](../../assets/images/monitoring3.png)
 
 <br/><br/>
 ### 其他博主说了什么

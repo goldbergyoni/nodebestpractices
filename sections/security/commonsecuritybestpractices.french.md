@@ -10,7 +10,7 @@ La section des directives de sécurité communes contient les meilleures pratiqu
 
 **Autrement :** Les attaquants peuvent effectuer des attaques de type "attaque de l'homme du milieu", espionner le comportement de vos utilisateurs et effectuer des actions encore plus malveillantes lorsque la connexion n'est pas cryptée.
 
-🔗 [**Plus d'infos : exécution d'un serveur Node.js sécurisé**](/sections/security/secureserver.french.md)
+🔗 [**Plus d'infos : exécution d'un serveur Node.js sécurisé**](./secureserver.french.md)
 
 <br/><br/>
 

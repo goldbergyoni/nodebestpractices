@@ -42,4 +42,4 @@ router.get('/ops/heapdump', (req, res, next) => {
 
 ▶ [Node.js アプリの制作準備 (ビデオ)](https://www.youtube.com/watch?v=lUsNne-_VIk)
 
-![Node.js アプリの制作準備](/assets/images/createmaintenanceendpoint1.png "Node.js アプリの制作準備")
+![Node.js アプリの制作準備](../../assets/images/createmaintenanceendpoint1.png "Node.js アプリの制作準備")

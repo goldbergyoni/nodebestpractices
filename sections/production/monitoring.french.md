@@ -12,19 +12,19 @@ La réalisation des fonctionnalités avancées nécessite une configuration long
 
 ### Exemple de surveillance : tableau de bord par défaut AWS cloudwatch. Difficile d'extraire des mesures intégrées à l'application
 
-![Tableau de bord par défaut AWS cloudwatch. Difficile d'extraire des mesures intégrées à l'application](/assets/images/monitoring1.png)
+![Tableau de bord par défaut AWS cloudwatch. Difficile d'extraire des mesures intégrées à l'application](../../assets/images/monitoring1.png)
 
 <br/><br/>
 
 ### Exemple de surveillance : tableau de bord par défaut de StackDriver. Difficile d'extraire des mesures intégrées à l'application
 
-![Tableau de bord par défaut de StackDriver. Difficile d'extraire des mesures intégrées à l'application](/assets/images/monitoring2.jpg)
+![Tableau de bord par défaut de StackDriver. Difficile d'extraire des mesures intégrées à l'application](../../assets/images/monitoring2.jpg)
 
 <br/><br/>
 
 ### Exemple de surveillance : Grafana comme couche d'interface utilisateur qui visualise les données brutes
 
-![Grafana comme couche d'interface utilisateur qui visualise les données brutes](/assets/images/monitoring3.png)
+![Grafana comme couche d'interface utilisateur qui visualise les données brutes](../../assets/images/monitoring3.png)
 
 <br/><br/>
 

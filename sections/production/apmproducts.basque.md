@@ -10,16 +10,16 @@ APM (aplikazioaren errendimenduaren jarraipena) produktu familia bat da, aplikaz
 
 ### APM adibidea: zerbitzuen arteko aplikazioen errendimendua ikusarazten duen produktu komertziala
 
-![APM adibidea](/assets/images/apm1.png "APM adibidea")
+![APM adibidea](../../assets/images/apm1.png "APM adibidea")
 
 <br/><br/>
 
 ### APM adibidea: erabiltzailearen esperientziaren puntuazioa azpimarratzen duen produktu komertziala
 
-![APM adibidea](/assets/images/apm2.png "APM adibidea")
+![APM adibidea](../../assets/images/apm2.png "APM adibidea")
 
 <br/><br/>
 
 ### APM adibidea: kode geldoen bideak nabarmentzen dituen produktu komertziala
 
-![APM adibidea](/assets/images/apm3.png "APM adibidea")
+![APM adibidea](../../assets/images/apm3.png "APM adibidea")

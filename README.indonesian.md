@@ -14,11 +14,11 @@
 
 <br/>
 
-[![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Ikuti kami di Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
+[![nodepractices](./assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Ikuti kami di Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
 
 <br/>
 
-Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md), [![EU](/assets/flags/EU.png)**EU**](/README.basque.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** dan ![TR](/assets/flags/TR.png)**TR** dalam proses!)](#translations)
+Baca dalam bahasa yang berbeda: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md), [![BR](./assets/flags/BR.png)**BR**](./README.brazilian-portuguese.md), [![RU](./assets/flags/RU.png)**RU**](./README.russian.md), [![PL](./assets/flags/PL.png)**PL**](./README.polish.md), [![EU](./assets/flags/EU.png)**EU**](./README.basque.md) [(![ES](./assets/flags/ES.png)**ES**, ![FR](./assets/flags/FR.png)**FR**, ![HE](./assets/flags/HE.png)**HE**, ![KR](./assets/flags/KR.png)**KR** dan ![TR](./assets/flags/TR.png)**TR** dalam proses!)](#translations)
 
 <br/>
 
@@ -38,7 +38,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 **1. Anda sedang membaca berbagai artikel Node.js terbaik -** repositori ini adalah ringkasan dan kurasi dari konten peringkat teratas dalam praktik terbaik Node.js, serta konten yang ditulis oleh kolaborator
 
-**2. Ini adalah kompilasi terbesar, dan berkembang tiap minggu -** saat ini, lebih dari 80 praktik terbaik, panduan gaya, dan tips arsitektural tersajikan. Issue baru dan pull request dibuat setiap hari agar kontennya tetap diperbarui. Kami senang melihat Anda berkontribusi di sini, maupun itu memperbaiki kesalahan kode, membantu dalam terjemahan, atau menyarankan ide cemerlang yang baru. Lihat [pedoman menulis](/.operations/writing-guidelines.md) kami
+**2. Ini adalah kompilasi terbesar, dan berkembang tiap minggu -** saat ini, lebih dari 80 praktik terbaik, panduan gaya, dan tips arsitektural tersajikan. Issue baru dan pull request dibuat setiap hari agar kontennya tetap diperbarui. Kami senang melihat Anda berkontribusi di sini, maupun itu memperbaiki kesalahan kode, membantu dalam terjemahan, atau menyarankan ide cemerlang yang baru. Lihat [pedoman menulis](./.operations/writing-guidelines.md) kami
 
 **3. Praktik terbaik mempunyai informasi tambahan -** kebanyakan poin mempunyai tautan **🔗Baca selengkapnya** yang memperluas praktiknya dengan contoh kode, kutipan dari blog terpilih, dan informasi lebih lanjut
 
@@ -65,7 +65,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 **Jika tidak:** Saat pengembang yang menambahkan fitur baru kesusahan untuk melihat dampak dari perubahan mereka dan takut akan merusak komponen lain yang bergantung - _deployment_ menjadi lebih lambat dan berisiko. Kode juga dianggap lebih sulit untuk dikembangkan ketika semua unit bisnis tidak dipisahkan
 
-🔗 [**Baca selengkapnya: structure by components**](/sections/projectstructre/breakintcomponents.md)
+🔗 [**Baca selengkapnya: structure by components**](./sections/projectstructre/breakintcomponents.md)
 
 <br/><br/>
 
@@ -75,7 +75,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 **Jika tidak:** Aplikasi yang menggabungkan objek web dengan lapisan lain tidak dapat diakses oleh kode pengujian, pekerjaan CRON, triggers dari message queues, dll.
 
-🔗 [**Baca selengkapnya: layer your app**](/sections/projectstructre/createlayers.md)
+🔗 [**Baca selengkapnya: layer your app**](./sections/projectstructre/createlayers.md)
 
 <br/><br/>
 
@@ -85,7 +85,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 **Jika tidak:** Anda harus membuat cara _deployment_ dan _dependency_ Anda sendiri
 
-🔗 [**Baca selengkapnya: Structure by feature**](/sections/projectstructre/wraputilities.md)
+🔗 [**Baca selengkapnya: Structure by feature**](./sections/projectstructre/wraputilities.md)
 
 <br/><br/>
 
@@ -95,7 +95,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 **Jika tidak:** API Anda hanya dapat diakses untuk pengujian melalui panggilan HTTP (lebih lambat and lebih susah untuk membuat laporan cakupan pengujian). Mengurus ratusan baris kode dalam satu file mungkin bukanlah hal yang menyenangkan
 
-🔗 [**Baca selengkapnya: separate Express 'app' and 'server'**](/sections/projectstructre/separateexpress.md)
+🔗 [**Baca selengkapnya: separate Express 'app' and 'server'**](./sections/projectstructre/separateexpress.md)
 
 <br/><br/>
 
@@ -105,7 +105,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 **Jika tidak:** Gagal untuk memenuhi salah satu persyaratan konfigurasi hanya akan menghambat tim pengembang atau DevOps. Mungkin keduanya
 
-🔗 [**Baca selengkapnya: configuration best practices**](/sections/projectstructre/configguide.md)
+🔗 [**Baca selengkapnya: configuration best practices**](./sections/projectstructre/configguide.md)
 
 <br/><br/><br/>
 
@@ -119,7 +119,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 **Jika tidak:** Gaya panggilan balik Node.js, function(err, response), adalah cara yang menjanjikan untuk kode yang tidak dapat dipelihara karena campuran dari penanganan kesalahan dengan kode kasual, bersarang yang berlebihan, dan pola pengkodean yang canggung
 
-🔗 [**Baca selengkapnya: avoiding callbacks**](/sections/errorhandling/asyncerrorhandling.md)
+🔗 [**Baca selengkapnya: avoiding callbacks**](./sections/errorhandling/asyncerrorhandling.md)
 
 <br/><br/>
 
@@ -129,7 +129,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 **Jika tidak:** Saat menjalankan beberapa komponen, karena tidak yakin jenis kesalahan yang akan di lempar – ini membuat penanganan kesalahan yang benar jauh lebih sulit. Lebih buruk lagi, menggunakan tipe khusus untuk mendeskripsikan kesalahan dapat menyebabkan hilangnya informasi kesalahan kritis seperti _stack trace_!
 
-🔗 [**Baca selengkapnya: using the built-in error object**](/sections/errorhandling/useonlythebuiltinerror.md)
+🔗 [**Baca selengkapnya: using the built-in error object**](./sections/errorhandling/useonlythebuiltinerror.md)
 
 <br/><br/>
 
@@ -139,7 +139,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 **Jika tidak:** Anda selalu dapat memulai ulang aplikasi Anda ketika kesalahan muncul, namun kenapa mengecewakan ~5000 pengguna hanya karena kesalahan operasional yang kecil dan dapat diprediksi? hal sebaliknya juga tidak ideal – membiarkan aplikasi tetap berjalan ketika terdapat kesalahan yang tidak diketahui (kesalahan oleh pengembang) dapat menyebabkan perilaku yang tidak terduga. Membedakan kedua kesalahan tersebut memungkinkan untuk melakukan tindakan yang benar dan menerapkan cara penyelesaian masalah yang sesuai dengan konteks yang diberikan
 
-🔗 [**Baca selengkapnya: operational vs programmer error**](/sections/errorhandling/operationalvsprogrammererror.md)
+🔗 [**Baca selengkapnya: operational vs programmer error**](./sections/errorhandling/operationalvsprogrammererror.md)
 
 <br/><br/>
 
@@ -149,7 +149,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 **Jika tidak:** Tidak menangani kesalahan dalam satu tempat akan menyebabkan duplikasi kode dan mungkin kesalahan yang tidak ditangani dengan tepat
 
-🔗 [**Baca selengkapnya: handling errors in a centralized place**](/sections/errorhandling/centralizedhandling.md)
+🔗 [**Baca selengkapnya: handling errors in a centralized place**](./sections/errorhandling/centralizedhandling.md)
 
 <br/><br/>
 
@@ -159,7 +159,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 **Jika tidak:** Klien API mungkin memutuskan untuk memberhentikan aplikasi dan memulai ulang hanya karena menerima kesalahan yang tidak dapat dipahami. Catatan: pemanggil API mungkin adalah Anda (sangat umum dalam lingkungan _microservice_)
 
-🔗 [**Baca selengkapnya: documenting API errors in Swagger or GraphQL**](/sections/errorhandling/documentingusingswagger.md)
+🔗 [**Baca selengkapnya: documenting API errors in Swagger or GraphQL**](./sections/errorhandling/documentingusingswagger.md)
 
 <br/><br/>
 
@@ -169,7 +169,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 **Jika tidak:** Ketika pengecualian yang tidak dikenal terjadi, beberapa objek mungkin dalam keadaan rusak (contohnya event emitter yang digunakan secara global dan tidak dapat mengaktifkan event lagi karena kesalahan internal) dan semua panggilan yang akan datang mungkin akan gagal atau tidak berperilaku dengan normal
 
-🔗 [**Baca selengkapnya: shutting the process**](/sections/errorhandling/shuttingtheprocess.md)
+🔗 [**Baca selengkapnya: shutting the process**](./sections/errorhandling/shuttingtheprocess.md)
 
 <br/><br/>
 
@@ -179,7 +179,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 **Jika tidak:** Melihat beberapa console.log atau secara manual melalui file teks yang berantakan tanpa alat kueri atau penampil catatan yang baik dapat membuat Anda sibuk di tempat kerja hingga larut
 
-🔗 [**Baca selengkapnya: using a mature logger**](/sections/errorhandling/usematurelogger.md)
+🔗 [**Baca selengkapnya: using a mature logger**](./sections/errorhandling/usematurelogger.md)
 
 <br/><br/>
 
@@ -189,7 +189,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 **Jika tidak:** Tanpa testing, maupun secara otomatis ataupun manual, Anda tidak dapat mengandalkan kode Anda untuk mengembalikan jenis kesalahan yang tepat. Tanpa jenis kesalahan yang berarti – tidak ada penanganan kesalahan
 
-🔗 [**Baca selengkapnya: testing error flows**](/sections/errorhandling/testingerrorflows.md)
+🔗 [**Baca selengkapnya: testing error flows**](./sections/errorhandling/testingerrorflows.md)
 
 <br/><br/>
 
@@ -199,7 +199,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 **Jika tidak:** Anda mungkin menghabiskan banyak usaha untuk mengukur kinerja dan waktu henti API, mungkin Anda tidak akan menyadari bagian kode mana yang paling lambat dalam skenario dunia nyata dan bagaimana hal ini dapat memengaruhi pengalaman pengguna
 
-🔗 [**Baca selengkapnya: using APM products**](/sections/errorhandling/apmproducts.md)
+🔗 [**Baca selengkapnya: using APM products**](./sections/errorhandling/apmproducts.md)
 
 <br/><br/>
 
@@ -209,7 +209,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 **Jika tidak:** Kesalahan dari kode Anda akan ditelan dan hilang tanpa jejak. Tidak ada yang perlu dikhawatirkan
 
-🔗 [**Baca selengkapnya: catching unhandled promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.md)
+🔗 [**Baca selengkapnya: catching unhandled promise rejection**](./sections/errorhandling/catchunhandledpromiserejection.md)
 
 <br/><br/>
 
@@ -219,7 +219,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 
 **Jika tidak:** Anggap seperti ini – jika fungsi Anda mengharapkan argumen numerik “Diskon” yang lupa diletak oleh pemanggil, kemudian, kode Anda memeriksa jika Diskon!=0 (jumlah diskon yang diizinkan lebih besar dari nol), maka itu akan memungkinkan pengguna untuk menikmati diskon. OMG, bug yang sangat buruk. Bisakah Anda melihatnya?
 
-🔗 [**Baca selengkapnya: failing fast**](/sections/errorhandling/failfast.md)
+🔗 [**Baca selengkapnya: failing fast**](./sections/errorhandling/failfast.md)
 
 <br/><br/>
 
@@ -231,7 +231,7 @@ Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chin
 Kerangka yang hilang seperti itu mungkin akan mempersulit pemahaman tentang aliran yang mengarah ke kesalahan,
 terutama jika penyebab perilaku yang tidak normal ada di dalam fungsi yang hilang itu
 
-🔗 [**Baca selengkapnya: returning promises**](/sections/errorhandling/returningpromises.md)
+🔗 [**Baca selengkapnya: returning promises**](./sections/errorhandling/returningpromises.md)
 
 <br/><br/><br/>
 
@@ -245,7 +245,7 @@ terutama jika penyebab perilaku yang tidak normal ada di dalam fungsi yang hilan
 
 **Jika tidak:** Pengembang akan fokus pada masalah spasi dan lebar garis dan waktu mungkin akan terbuang hanya untuk memikirkan gaya kode pada proyek
 
-🔗 [**Baca selengkapnya: Using ESLint and Prettier**](/sections/codestylepractices/eslint_prettier.md)
+🔗 [**Baca selengkapnya: Using ESLint and Prettier**](./sections/codestylepractices/eslint_prettier.md)
 
 <br/><br/>
 
@@ -460,7 +460,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Deployment baru saja gagal, sebuah pengujian bernama “Tambah produk” gagal. Apakah ini memberi tahu Anda dengan tepat apa yang tidak berfungsi?
 
-🔗 [**Baca selengkapnya: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
+🔗 [**Baca selengkapnya: Include 3 parts in each test name**](./sections/testingandquality/3-parts-in-name.md)
 
 <br/><br/>
 
@@ -470,7 +470,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Tidak hanya Anda menghabiskan waktu yang lama untuk memahami kode utama, tetapi sekarang hal paling mudah dari hari Anda (melakukan pengujian) dapat meregangkan otak Anda
 
-🔗 [**Baca selengkapnya: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.md)
+🔗 [**Baca selengkapnya: Structure tests by the AAA pattern**](./sections/testingandquality/aaa.md)
 
 <br/><br/>
 
@@ -488,7 +488,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Anggap sebuah skenario di mana _deployment_ gagal karena pengujian yang gagal, tim sekarang akan menghabiskan waktu yang berharga untuk melakukan investigasi yang berakhir dengan kesimpulan yang menyedihkan: sistem berfungsi dengan baik, namun pengujian saling mengganggu dan merusak _build_-nya
 
-🔗 [**Baca selengkapnya: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
+🔗 [**Baca selengkapnya: Avoid global test fixtures**](./sections/testingandquality/avoid-global-test-fixture.md)
 
 <br/><br/>
 
@@ -538,7 +538,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Dengan kualitas kode yang buruk, _bug_ dan performa selalu akan selalu menjadi masalah yang tidak dapat diperbaiki oleh pustaka baru atau fitur-fitur canggih
 
-🔗 [**Baca selengkapnya: Refactoring!**](/sections/testingandquality/refactoring.md)
+🔗 [**Baca selengkapnya: Refactoring!**](./sections/testingandquality/refactoring.md)
 
 <br/><br/>
 
@@ -548,7 +548,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Memilih vendor khusus mungkin akan membatasi Anda ketika Anda membutuhkan penyesuaian tingkat lanjut. Di sisi lain, menggunakan Jenkins dapat menghabiskan waktu berharga dalam penyiapan infrastruktur
 
-🔗 [**Baca selengkapnya: Choosing CI platform**](/sections/testingandquality/citools.md)
+🔗 [**Baca selengkapnya: Choosing CI platform**](./sections/testingandquality/citools.md)
 
 ## ![✔] 4.13 Uji middleware Anda secara terpisah
 
@@ -556,7 +556,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Otherwise:** Sebuah _bug_ di middleware Express === sebuah bug di semua atau banyak _request_
 
-🔗 [**Baca selengkapnya: Test middlewares in isolation**](/sections/testingandquality/test-middlewares.md)
+🔗 [**Baca selengkapnya: Test middlewares in isolation**](./sections/testingandquality/test-middlewares.md)
 
 <br/><br/><br/>
 
@@ -570,7 +570,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Kegagalan === pelanggan kecewa. Sederhana
 
-🔗 [**Baca selengkapnya: Monitoring!**](/sections/production/monitoring.md)
+🔗 [**Baca selengkapnya: Monitoring!**](./sections/production/monitoring.md)
 
 <br/><br/>
 
@@ -580,7 +580,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Anda berakhir dengan kotak hitam yang sulit dimengerti, kemudian Anda mulai menulis ulang semua statement log untuk menambahkan informasi tambahan
 
-🔗 [**Baca selengkapnya: Increase transparency using smart logging**](/sections/production/smartlogging.md)
+🔗 [**Baca selengkapnya: Increase transparency using smart logging**](./sections/production/smartlogging.md)
 
 <br/><br/>
 
@@ -590,7 +590,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Thread utama Anda akan tetap sibuk melakukan tugas infrastruktur alih-alih menangani inti aplikasi Anda dan performa akan menurun karenanya
 
-🔗 [**Baca selengkapnya: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.md)
+🔗 [**Baca selengkapnya: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](./sections/production/delegatetoproxy.md)
 
 <br/><br/>
 
@@ -600,7 +600,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** QA akan menguji kode secara menyeluruh dan menyetujui versi yang kemudian akan berperilaku berbeda dalam produksi. Lebih buruk lagi, server yang berbeda dalam kelompok produksi mungkin menjalankan kode yang berbeda
 
-🔗 [**Baca selengkapnya: Lock dependencies**](/sections/production/lockdependencies.md)
+🔗 [**Baca selengkapnya: Lock dependencies**](./sections/production/lockdependencies.md)
 
 <br/><br/>
 
@@ -610,7 +610,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Menjalankan banyak instansi tanpa strategi yang jelas dan terlalu banyak alat (manajemen cluster, docker, PM2) dapat menyebabkan kekacauan DevOps
 
-🔗 [**Baca selengkapnya: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
+🔗 [**Baca selengkapnya: Guard process uptime using the right tool**](./sections/production/guardprocess.md)
 
 <br/><br/>
 
@@ -620,7 +620,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Aplikasi Anda kemungkinan hanya menggunakan 25% dari sumber daya yang tersedia(!) atau bahkan kurang. Ingat bahwa server tipikal memiliki 4 core CPU atau lebih, _deployment_ Node.js yang naif hanya menggunakan 1 (bahkan jika menggunakan layanan PaaS seperti AWS beanstalk!)
 
-🔗 [**Baca selengkapnya: Utilize all CPU cores**](/sections/production/utilizecpu.md)
+🔗 [**Baca selengkapnya: Utilize all CPU cores**](./sections/production/utilizecpu.md)
 
 <br/><br/>
 
@@ -630,7 +630,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Anda akan melakukan banyak “deploy diagnostik” – mendeploy kode ke produksi hanya untuk mengekstrak beberapa informasi untuk keperluan diagnostik
 
-🔗 [**Baca selengkapnya: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
+🔗 [**Baca selengkapnya: Create a ‘maintenance endpoint’**](./sections/production/createmaintenanceendpoint.md)
 
 <br/><br/>
 
@@ -640,7 +640,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Anda mungkin menghabiskan banyak tenaga untuk mengukur kinerja dan downtime API, mungkin Anda tidak akan pernah tau bagian kode mana yang paling lambat dalam skenario dunia nyata dan bagaimana hal ini dapat memengaruhi pengalaman pengguna
 
-🔗 [**Baca selengkapnya: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
+🔗 [**Baca selengkapnya: Discover errors and downtime using APM products**](./sections/production/apmproducts.md)
 
 <br/><br/>
 
@@ -650,7 +650,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Seorang juara dunia IT/DevOps tidak akan memperbaiki sistem yang ditulis dengan buruk
 
-🔗 [**Baca selengkapnya: Make your code production-ready**](/sections/production/productioncode.md)
+🔗 [**Baca selengkapnya: Make your code production-ready**](./sections/production/productioncode.md)
 
 <br/><br/>
 
@@ -660,7 +660,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Memori proses Anda mungkin bocor ratusan megabyte sehari seperti yang terjadi pada [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
 
-🔗 [**Baca selengkapnya: Measure and guard the memory usage**](/sections/production/measurememory.md)
+🔗 [**Baca selengkapnya: Measure and guard the memory usage**](./sections/production/measurememory.md)
 
 <br/><br/>
 
@@ -670,7 +670,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Thread tunggal Node Anda akan sibuk mengirimkan ratusan file html/gambar/angular/react alih-alih mengalokasikan semua sumber dayanya untuk tugas yang seharusnya – menyajikan konten dinamis
 
-🔗 [**Baca selengkapnya: Get your frontend assets out of Node**](/sections/production/frontendout.md)
+🔗 [**Baca selengkapnya: Get your frontend assets out of Node**](./sections/production/frontendout.md)
 
 <br/><br/>
 
@@ -680,7 +680,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Kegagalan di server tertentu akan mengakibatkan downtime aplikasi, bukannya hanya mematikan mesin yang rusak. Selain itu, elastisitas penskalaan akan menjadi lebih sulit karena ketergantungan pada server tertentu
 
-🔗 [**Baca selengkapnya: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
+🔗 [**Baca selengkapnya: Be stateless, kill your Servers almost every day**](./sections/production/bestateless.md)
 
 <br/><br/>
 
@@ -690,7 +690,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Menjaga kode Anda bersih dari kerentanan tanpa alat khusus mengharuskan Anda untuk mengikuti publikasi online tentang ancaman baru. Cukup membosankan
 
-🔗 [**Baca selengkapnya: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
+🔗 [**Baca selengkapnya: Use tools that automatically detect vulnerabilities**](./sections/production/detectvulnerabilities.md)
 
 <br/><br/>
 
@@ -700,7 +700,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Melihat catatan kesalahan produksi tanpa konteks – apa yang terjadi sebelumnya – membuat Anda lebih sulit untuk memahami penyebab kesalahannya
 
-🔗 [**Baca selengkapnya: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
+🔗 [**Baca selengkapnya: Assign ‘TransactionId’ to each log statement**](./sections/production/assigntransactionid.md)
 
 <br/><br/>
 
@@ -710,7 +710,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Mengabaikan properti sederhana ini dapat menurunkan performa. Contohnya, pada saat menggunakan Express untuk rendering sisi server menghilangkan `NODE_ENV` membuat proses render lebih lambat hingga 3 kali lipat!
 
-🔗 [**Baca selengkapnya: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
+🔗 [**Baca selengkapnya: Set NODE_ENV=production**](./sections/production/setnodeenv.md)
 
 <br/><br/>
 
@@ -728,7 +728,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Otherwise:** Bug atau kerentanan yang baru ditemukan dapat digunakan untuk mengeksploitasi aplikasi yang sedang berjalan dalam produksi, dan aplikasi Anda mungkin menjadi tidak didukung oleh berbagai modul dan lebih sulit untuk di dipelihara
 
-🔗 [**Baca selengkapnya: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
+🔗 [**Baca selengkapnya: Use an LTS release of Node.js**](./sections/production/LTSrelease.md)
 
 <br/><br/>
 
@@ -738,7 +738,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Aplikasi menangani rute catatan === sulit untuk dikembangkan, kehilangan catatan, dan _separation of concerns_ yang buruk
 
-🔗 [**Baca selengkapnya: Log Routing**](/sections/production/logrouting.md)
+🔗 [**Baca selengkapnya: Log Routing**](./sections/production/logrouting.md)
 
 <br/><br/>
 
@@ -748,7 +748,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** QA akan menguji kode secara menyeluruh dan menyetujui versi yang kemudian akan berperilaku berbeda dalam produksi. Lebih buruk lagi, server yang berbeda dalam kelompok produksi mungkin menjalankan kode yang berbeda.
 
-🔗 [**Baca selengkapnya: Use npm ci**](/sections/production/installpackageswithnpmci.md)
+🔗 [**Baca selengkapnya: Use npm ci**](./sections/production/installpackageswithnpmci.md)
 
 <br/><br/><br/>
 
@@ -768,7 +768,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Kelemahan keamanan yang jelas selama masa pengembangan malah menjadi masalah besar dalam produksi. Selain itu, proyek mungkin tidak mengikuti praktik kode keamanan yang konsisten, yang mengarah ke kerentanan baru, atau rahasia sensitif yang ter-_commit_ ke dalam repositori remote
 
-🔗 [**Baca selengkapnya: Lint rules**](/sections/security/lintrules.md)
+🔗 [**Baca selengkapnya: Lint rules**](./sections/security/lintrules.md)
 
 <br/><br/>
 
@@ -780,7 +780,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Aplikasi dapat terkena serangan _denial of service_ sementara pengguna asli menggunakan layanan yang terdegradasi atau tidak tersedia.
 
-🔗 [**Baca selengkapnya: Implement rate limiting**](/sections/security/limitrequests.md)
+🔗 [**Baca selengkapnya: Implement rate limiting**](./sections/security/limitrequests.md)
 
 <br/><br/>
 
@@ -792,7 +792,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Kontrol sumber, bahkan untuk repositori pribadi, dapat di buat publik secara tidak sengaja, di mana semua rahasia dapat terungkap. Akses kontrol sumber dari pihak eksternal dapat memberikan akses ke sistem terkait (database, api, layanan, dll.) secara tidak sengaja.
 
-🔗 [**Baca selengkapnya: Secret management**](/sections/security/secretmanagement.md)
+🔗 [**Baca selengkapnya: Secret management**](./sections/security/secretmanagement.md)
 
 <br/><br/>
 
@@ -804,7 +804,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Masukan pengguna yang tidak divalidasi atau tidak disanitasi dapat menyebabkan injeksi operator saat menggunakan MongoDB untuk NoSQL, dan dengan tidak menggunakan sistem sanitasi atau ORM dapat memungkinkan serangan injeksi SQL, membuat suatu kerentanan yang besar.
 
-🔗 [**Baca selengkapnya: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.md)
+🔗 [**Baca selengkapnya: Query injection prevention using ORM/ODM libraries**](./sections/security/ormodmusage.md)
 
 <br/><br/>
 
@@ -812,7 +812,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **TL;DR:** Ini adalah kumpulan saran keamanan yang tidak berhubungan langsung dengan Node.js - implementasi pada Node tidak jauh berbeda dengan implementasi pada bahasa lain. Klik 'Baca selengkapnya' untuk membaca sekilas.
 
-🔗 [**Baca selengkapnya: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
+🔗 [**Baca selengkapnya: Common security best practices**](./sections/security/commonsecuritybestpractices.md)
 
 <br/><br/>
 
@@ -824,7 +824,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Penyerang dapat melakukan serangan langsung pada pengguna aplikasi, yang menyebabkan kerentanan keamanan yang sangat besar
 
-🔗 [**Baca selengkapnya: Using secure headers in your application**](/sections/security/secureheaders.md)
+🔗 [**Baca selengkapnya: Using secure headers in your application**](./sections/security/secureheaders.md)
 
 <br/><br/>
 
@@ -836,7 +836,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Penyerang dapat mendeteksi framework web Anda dan menyerang semua kerentanan yang diketahui.
 
-🔗 [**Baca selengkapnya: Dependency security**](/sections/security/dependencysecurity.md)
+🔗 [**Baca selengkapnya: Dependency security**](./sections/security/dependencysecurity.md)
 
 <br/><br/>
 
@@ -848,7 +848,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Kata sandi dan rahasia yang disimpan tanpa fungsi yang aman akan rentan terhadap _brute force_ dan penyerangan kamus yang pada akhirnya akan mengarah pada data rahasia yang terekspos.
 
-🔗 [**Baca selengkapnya: User Passwords**](/sections/security/userpasswords.md)
+🔗 [**Baca selengkapnya: User Passwords**](./sections/security/userpasswords.md)
 
 <br/><br/>
 
@@ -860,7 +860,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Penyerang mungkin menyimpan kode JavaScript yang berbahaya di DB Anda yang kemudian akan dikirim apa adanya ke pengguna
 
-🔗 [**Baca selengkapnya: Escape output**](/sections/security/escape-output.md)
+🔗 [**Baca selengkapnya: Escape output**](./sections/security/escape-output.md)
 
 <br/><br/>
 
@@ -872,7 +872,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Kemurahan hati dan cara permisif Anda dapat meningkatkan kemungkinan penyerangan dan mendorong penyerang untuk mencoba banyak masukan sampai mereka menemukan beberapa kombinasi untuk merusak aplikasi
 
-🔗 [**Baca selengkapnya: Validate incoming JSON schemas**](/sections/security/validation.md)
+🔗 [**Baca selengkapnya: Validate incoming JSON schemas**](./sections/security/validation.md)
 
 <br/><br/>
 
@@ -884,7 +884,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Token yang kedaluwarsa atau salah ditempatkan dapat digunakan secara jahat oleh pihak ketiga untuk mengakses aplikasi dan menyamar sebagai pemilik token.
 
-🔗 [**Baca selengkapnya: Blacklist JSON Web Tokens**](/sections/security/expirejwt.md)
+🔗 [**Baca selengkapnya: Blacklist JSON Web Tokens**](./sections/security/expirejwt.md)
 
 <br/><br/>
 
@@ -899,7 +899,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Penyerang dapat melakukan percobaan kata sandi otomatis tanpa batas untuk mendapatkan akses ke akun yang memiliki hak istimewa pada suatu aplikasi
 
-🔗 [**Baca selengkapnya: Login rate limiting**](/sections/security/login-rate-limit.md)
+🔗 [**Baca selengkapnya: Login rate limiting**](./sections/security/login-rate-limit.md)
 
 <br/><br/>
 
@@ -911,7 +911,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Penyerang yang berhasil menjalankan skrip di server mendapatkan kekuatan tak terbatas atas mesin lokal (misalnya mengganti iptable dan merutekan ulang traffic ke servernya)
 
-🔗 [**Baca selengkapnya: Run Node.js as non-root user**](/sections/security/non-root-user.md)
+🔗 [**Baca selengkapnya: Run Node.js as non-root user**](./sections/security/non-root-user.md)
 
 <br/><br/>
 
@@ -923,7 +923,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Aplikasi Anda harus menangani request yang besar, tidak dapat memproses pekerjaan penting lainnya yang harus diselesaikan, yang mengarah ke implikasi performa dan kerentanan terhadap serangan DOS
 
-🔗 [**Baca selengkapnya: Limit payload size**](/sections/security/requestpayloadsizelimit.md)
+🔗 [**Baca selengkapnya: Limit payload size**](./sections/security/requestpayloadsizelimit.md)
 
 <br/><br/>
 
@@ -935,7 +935,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Kode JavaScript yang berbahaya menemukan jalan ke dalam teks yang diteruskan ke `eval` atau fungsi evaluasi _real-time_ bahasa Javascript lainnya, dan akan mendapatkan akses penuh ke izin JavaScript di halaman tersebut. Kerentanan ini sering kali diwujudkan sebagai serangan XSS.
 
-🔗 [**Baca selengkapnya: Avoid JavaScript eval statements**](/sections/security/avoideval.md)
+🔗 [**Baca selengkapnya: Avoid JavaScript eval statements**](./sections/security/avoideval.md)
 
 <br/><br/>
 
@@ -947,7 +947,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Regex yang ditulis dengan buruk dapat rentan terhadap serangan DoS Regular Expression yang akan memblokir event loop sepenuhnya. MIsalnya, paket `moment` yang populer ditemukan rentan terhadap penggunaan Regex pada November 2017
 
-🔗 [**Baca selengkapnya: Prevent malicious RegEx**](/sections/security/regex.md)
+🔗 [**Baca selengkapnya: Prevent malicious RegEx**](./sections/security/regex.md)
 
 <br/><br/>
 
@@ -959,7 +959,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Masukan pengguna yang berbahaya dapat menemukan jalannya ke parameter yang digunakan untuk memuat file, misalnya, file yang sebelumnya diunggah ke sistem file, atau pengaksesan file sistem yang sudah ada.
 
-🔗 [**Baca selengkapnya: Safe module loading**](/sections/security/safemoduleloading.md)
+🔗 [**Baca selengkapnya: Safe module loading**](./sections/security/safemoduleloading.md)
 
 <br/><br/>
 
@@ -971,7 +971,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **JIka tidak:** Sebuah plugin dapat menyerang dengan berbagai pilihan seperti perulangan tak terbatas, memberi muatan lebih pada memori, dan mengakses variabel lingkungan sensitif pada proses
 
-🔗 [**Baca selengkapnya: Run unsafe code in a sandbox**](/sections/security/sandbox.md)
+🔗 [**Baca selengkapnya: Run unsafe code in a sandbox**](./sections/security/sandbox.md)
 
 <br/><br/>
 
@@ -983,7 +983,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Penggunaan child process yang naif dapat mengakibatkan eksekusi perintah secara remote atau serangan injeksi shell karena masukan pengguna yang berbahaya diteruskan ke perintah sistem yang tidak disanitasi.
 
-🔗 [**Baca selengkapnya: Be cautious when working with child processes**](/sections/security/childprocesses.md)
+🔗 [**Baca selengkapnya: Be cautious when working with child processes**](./sections/security/childprocesses.md)
 
 <br/><br/>
 
@@ -995,7 +995,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Informasi sensitif aplikasi seperti path file server, modul pihak ketiga yang digunakan, dan alur kerja internal aplikasi lainnya yang dapat dieksploitasi oleh penyerang, dapat dibocorkan dari informasi yang ditemukan di dalam stack trace
 
-🔗 [**Baca selengkapnya: Hide error details from client**](/sections/security/hideerrors.md)
+🔗 [**Baca selengkapnya: Hide error details from client**](./sections/security/hideerrors.md)
 
 <br/><br/>
 
@@ -1017,7 +1017,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Cookie dapat dikirim melalui koneksi yang tidak aman, dan penyerang dapat menggunakan identifikasi sesi untuk mengidentifikasi framework dari aplikasi web, serta kerentanan masing-masing modul
 
-🔗 [**Baca selengkapnya: Cookie and session security**](/sections/security/sessions.md)
+🔗 [**Baca selengkapnya: Cookie and session security**](./sections/security/sessions.md)
 
 <br/><br/>
 
@@ -1039,7 +1039,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Jika penyerang menemukan bahwa Anda tidak memvalidasi masukan eksternal yang diberikan oleh pengguna, mereka dapat mengeksploitasi kerentanan ini dengan memposting tautan yang dibuat khusus di forum, media sosial, dan tempat publik lainnya agar pengguna mengkliknya.
 
-🔗 [**Baca selengkapnya: Prevent unsafe redirects**](/sections/security/saferedirects.md)
+🔗 [**Baca selengkapnya: Prevent unsafe redirects**](./sections/security/saferedirects.md)
 
 <br/><br/>
 
@@ -1051,7 +1051,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Kunci API, kata sandi atau rahasia lain proyek Anda dapat disalahgunakan oleh siapapun yang menemukannya, yang dapat mengakibatkan kerugian finansial, peniruan identitas, dan risiko lainnya.
 
-🔗 [**Baca selengkapnya: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.md)
+🔗 [**Baca selengkapnya: Avoid publishing secrets**](./sections/security/avoid_publishing_secrets.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#daftar-isi">⬆ Kembali ke atas</a></p>
@@ -1068,7 +1068,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 **Jika tidak:** Ketika _Event Loop_ diblokir, Node.js tidak akan dapat menangani permintaan lain sehingga menyebabkan penundaan bagi pengguna lain. **3000 pengguna sedang menunggu tanggapan, konten siap diberikan, tapi satu permintaan mencegah server-nya untuk mengirimkan hasilnya**
 
-🔗 [**Baca selengkapnya: Do not block the event loop**](/sections/performance/block-loop.md)
+🔗 [**Baca selengkapnya: Do not block the event loop**](./sections/performance/block-loop.md)
 
 <br /><br /><br />
 
@@ -1079,7 +1079,7 @@ Ingatlah bahwa dengan diperkenalkannya mesin V8 baru bersama dengan standar ES b
 
 **Jika tidak:** Anda harus mengurus proyek dengan kinerja yang lebih rendah di mana Anda dapat menggunakan apa yang **sudah** ada atau berurusan dengan lebih sedikit baris namun lebih banyak file sebagai gantinya.
 
-🔗 [**Baca selengkapnya: Native over user land utils**](/sections/performance/nativeoverutil.md)
+🔗 [**Baca selengkapnya: Native over user land utils**](./sections/performance/nativeoverutil.md)
 
 <br/><br/><br/>
 
@@ -1117,7 +1117,7 @@ RUN npm ci --production
 CMD [ "node", "dist/app.js" ]
 ```
 
-🔗 [**Baca selengkapnya: Use multi-stage builds**](/sections/docker/multi_stage_builds.md)
+🔗 [**Baca selengkapnya: Use multi-stage builds**](./sections/docker/multi_stage_builds.md)
 
 <br /><br /><br />
 
@@ -1127,7 +1127,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Jika tidak:** Ketika tidak ada sinyal yang dilewatkan, kode Anda tidak akan pernah diberi tahu tentang penghentian. Tanpa itu, kode Anda akan kehilangan kesempatan untuk berhenti dengan benar dan kehilangan permintaan dan/atau data dapat terjadi.
 
-[**Baca selengkapnya: Bootstrap container using node command, avoid npm start**](/sections/docker/bootstrap-using-node.md)
+[**Baca selengkapnya: Bootstrap container using node command, avoid npm start**](./sections/docker/bootstrap-using-node.md)
 
 <br /><br /><br />
 
@@ -1137,7 +1137,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Jika tidak:** Kontainer tetap rusak karena kekurangan sumber daya akan dimulai ulang tanpa batas oleh manajer proses. Jika Kubernetes menyadari hal ini, Kubernetes dapat memindahkannya ke banyak instance yang berbeda
 
-🔗 [**Baca selengkapnya: Let the Docker orchestrator restart and replicate processes**](/sections/docker/restart-and-replicate-processes.md)
+🔗 [**Baca selengkapnya: Let the Docker orchestrator restart and replicate processes**](./sections/docker/restart-and-replicate-processes.md)
 
 <br/><br /><br />
 
@@ -1147,7 +1147,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Jika tidak**: File rahasia pribadi umum seperti `.env`, `.aws` dan `.npmrc` akan dibagikan dengan siapapun yang memiliki akses ke image (misalnya repositori Docker)
 
-🔗 [**Baca selengkapnya: Use .dockerignore**](/sections/docker/docker-ignore.md)
+🔗 [**Baca selengkapnya: Use .dockerignore**](./sections/docker/docker-ignore.md)
 
 <br /><br /><br />
 
@@ -1157,7 +1157,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Jika tidak:** Banyak penerobosan keamanan npm yang buruk ditemukan dalam paket pengembangan (misalnya [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes))
 
-🔗 [\*\*Baca selengkapnya: Remove development dependencies](/sections/docker/install-for-production.md)
+🔗 [\*\*Baca selengkapnya: Remove development dependencies](./sections/docker/install-for-production.md)
 
 <br /><br /><br />
 
@@ -1167,7 +1167,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Jika tidak:** Mematikan aplikasi secara langsung berarti tidak menanggapi ribuan pengguna yang kecewa
 
-🔗 [**Baca selengkapnya: Graceful shutdown**](/sections/docker/graceful-shutdown.md)
+🔗 [**Baca selengkapnya: Graceful shutdown**](./sections/docker/graceful-shutdown.md)
 
 <br /><br /><br />
 
@@ -1177,7 +1177,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Jika tidak:** Definisi Docker diperlukan untuk melakukan keputusan penskalaan yang baik dan mencegah kelaparan warga lain. Tanpa menentukan batas pada v8 juga, sumber daya kontainer juga akan kurang digunakan oleh Node - Tanpa instruksi eksplisit Node akan berhenti saat menggunakan ~50-60% dari sumber daya hostnya
 
-🔗 [**Baca selengkapnya: Set memory limits using Docker only**](/sections/docker/memory-limit.md)
+🔗 [**Baca selengkapnya: Set memory limits using Docker only**](./sections/docker/memory-limit.md)
 
 <br /><br /><br />
 
@@ -1187,7 +1187,7 @@ CMD [ "node", "dist/app.js" ]
 
 **Jika tidak:** Build Docker akan sangat lama dan memakan banyak sumber daya bahkan saat melakukan perubahan kecil
 
-🔗 [**Baca selengkapnya: Leverage caching to reduce build times**](/sections/docker/use-cache-for-shorter-build-time.md)
+🔗 [**Baca selengkapnya: Leverage caching to reduce build times**](./sections/docker/use-cache-for-shorter-build-time.md)
 
 <br /><br /><br />
 
@@ -1199,7 +1199,7 @@ Selain itu, merujuk ke sebuah tag gambar berarti gambar dasar dapat berubah, kar
 
 **Jika tidak:** Versi baru gambar dasar dapat dideploy ke produksi dengan perubahan yang dapat merusak, menyebabkan perilaku aplikasi yang tidak diinginkan.
 
-🔗 [**Baca selengkapnya: Understand image tags and use the "latest" tag with caution**](/sections/docker/image-tags.md)
+🔗 [**Baca selengkapnya: Understand image tags and use the "latest" tag with caution**](./sections/docker/image-tags.md)
 
 <br /><br /><br />
 
@@ -1209,7 +1209,7 @@ Selain itu, merujuk ke sebuah tag gambar berarti gambar dasar dapat berubah, kar
 
 **Jika tidak:** Membangun, mendorong, dan menarik gambar akan membutuhkan waktu yang lebih lama, vektor serangan yang tidak diketahui dapat digunakan oleh aktor jahat dan lebih banyak sumber daya yang dikonsumsi.
 
-🔗 [**Baca selengkapnya: Prefer smaller images**](/sections/docker/smaller_base_images.md)
+🔗 [**Baca selengkapnya: Prefer smaller images**](./sections/docker/smaller_base_images.md)
 
 <br /><br /><br />
 
@@ -1219,7 +1219,7 @@ Selain itu, merujuk ke sebuah tag gambar berarti gambar dasar dapat berubah, kar
 
 **Jika tidak:** Setiap orang yang mempunyai akses ke CI dan registri Docker juga akan mendapatkan akses ke rahasia organisasi yang berharga sebagai bonus
 
-🔗 [**Baca selengkapnya: Clean-out build-time secrets**](/sections/docker/avoid-build-time-secrets.md)
+🔗 [**Baca selengkapnya: Clean-out build-time secrets**](./sections/docker/avoid-build-time-secrets.md)
 
 <br /><br /><br />
 
@@ -1229,7 +1229,7 @@ Selain itu, merujuk ke sebuah tag gambar berarti gambar dasar dapat berubah, kar
 
 **Jika tidak:** Kode Anda mungkin sepenuhnya bebas dari kerentanan. Namun itu mungkin masih dapat diretas karena versi binari OS-level yang rentan (misalnya OpenSSL, TarBall) yang biasanya digunakan oleh aplikasi
 
-🔗 [**Baca selengkapnya: Generic Docker practices**](/sections/docker/scan-images.md)
+🔗 [**Baca selengkapnya: Generic Docker practices**](./sections/docker/scan-images.md)
 
 <br /><br /><br />
 
@@ -1239,7 +1239,7 @@ Selain itu, merujuk ke sebuah tag gambar berarti gambar dasar dapat berubah, kar
 
 **Jika tidak:** Gambar yang akan dikirim ke produksi akan menjadi 30% lebih besar karena file yang tidak akan pernah digunakan
 
-🔗 [**Baca selengkapnya: Clean NODE_MODULE cache**](/sections/docker/clean-cache.md)
+🔗 [**Baca selengkapnya: Clean NODE_MODULE cache**](./sections/docker/clean-cache.md)
 
 <br /><br /><br />
 
@@ -1247,7 +1247,7 @@ Selain itu, merujuk ke sebuah tag gambar berarti gambar dasar dapat berubah, kar
 
 **TL;DR:** Ini adalah kumpulan saran Docker yang tidak terkait langsung dengan Node.js - implementasi pada Node tidak jauh berbeda dengan bahasa lain. Klik baca selengkapnya untuk membaca sekilas.
 
-🔗 [**Baca selengkapnya: Generic Docker practices**](/sections/docker/generic-tips.md)
+🔗 [**Baca selengkapnya: Generic Docker practices**](./sections/docker/generic-tips.md)
 
 <br/><br /><br />
 
@@ -1257,7 +1257,7 @@ Selain itu, merujuk ke sebuah tag gambar berarti gambar dasar dapat berubah, kar
 
 **Jika tidak:** Secara tidak sengaja pembuat Dockerfile meninggalkan Root sebagai pengguna produksi, dan juga menggunakan gambar dari repositori yang tidak dikenal. Hal ini dapat dihindari hanya dengan linter sederhana.
 
-🔗 [**Baca selengkapnya: Lint your Dockerfile**](/sections/docker/lint-dockerfile.md)
+🔗 [**Baca selengkapnya: Lint your Dockerfile**](./sections/docker/lint-dockerfile.md)
 
 <br/><br /><br />
 
@@ -1275,19 +1275,19 @@ Semua terjemahan merupakan kontribusi dari komunitas. Kami akan dengan senang ha
 
 ### Terjemahan selesai
 
-- ![BR](/assets/flags/BR.png) [Portugis Brazil](./README.brazilian-portuguese.md) - Terima kasih kepada [Marcelo Melo](https://github.com/marcelosdm)
-- ![CN](/assets/flags/CN.png) [Cina](./README.chinese.md) - Terima kasih kepada [Matt Jin](https://github.com/mattjin)
-- ![RU](/assets/flags/RU.png) [Rusia](./README.russian.md) - Terima kasih kepada [Alex Ivanov](https://github.com/contributorpw)
-- ![PL](/assets/flags/PL.png) [Polandia](./README.polish.md) - Terima kasih kepada [Michal Biesiada](https://github.com/mbiesiad)
-- ![EU](/assets/flags/EU.png) [Basque](README.basque.md) - Terima kasih kepada [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta
+- ![BR](./assets/flags/BR.png) [Portugis Brazil](./README.brazilian-portuguese.md) - Terima kasih kepada [Marcelo Melo](https://github.com/marcelosdm)
+- ![CN](./assets/flags/CN.png) [Cina](./README.chinese.md) - Terima kasih kepada [Matt Jin](https://github.com/mattjin)
+- ![RU](./assets/flags/RU.png) [Rusia](./README.russian.md) - Terima kasih kepada [Alex Ivanov](https://github.com/contributorpw)
+- ![PL](./assets/flags/PL.png) [Polandia](./README.polish.md) - Terima kasih kepada [Michal Biesiada](https://github.com/mbiesiad)
+- ![EU](./assets/flags/EU.png) [Basque](README.basque.md) - Terima kasih kepada [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta
 
 ### Terjemahan dalam proses
 
-- ![FR](/assets/flags/FR.png) [Prancis](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/129))
-- ![HE](/assets/flags/HE.png) Ibrani ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/156))
-- ![KR](/assets/flags/KR.png) [Korea](README.korean.md) - Terima kasih kepada [Sangbeom Han](https://github.com/uronly14me) ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/94))
-- ![ES](/assets/flags/ES.png) [Spanyol](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/95))
-- ![TR](/assets/flags/TR.png) Turki ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/139))
+- ![FR](./assets/flags/FR.png) [Prancis](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/129))
+- ![HE](./assets/flags/HE.png) Ibrani ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/156))
+- ![KR](./assets/flags/KR.png) [Korea](README.korean.md) - Terima kasih kepada [Sangbeom Han](https://github.com/uronly14me) ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/94))
+- ![ES](./assets/flags/ES.png) [Spanyol](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/95))
+- ![TR](./assets/flags/TR.png) Turki ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/139))
 
 <br/><br/>
 
@@ -1350,7 +1350,7 @@ Spesialis mendalam dalam JavaScript dan ekosistemnya — React, Node.js, TypeScr
 
 Terima kasih untuk semua kolaborator kami! 🙏
 
-Kolaborator kami adalah anggota yang sering berkontribusi ke repositori ini, melalui menyarankan praktik terbaik baru, menyortir masalah, meninjau pull request dan banyak lagi. Jika Anda tertarik untuk membantu kami memandu ribuan orang untuk membuat aplikasi Node.js yang lebih baik, silakan baca [contributor guidelines](/.operations/CONTRIBUTING.md) 🎉
+Kolaborator kami adalah anggota yang sering berkontribusi ke repositori ini, melalui menyarankan praktik terbaik baru, menyortir masalah, meninjau pull request dan banyak lagi. Jika Anda tertarik untuk membantu kami memandu ribuan orang untuk membuat aplikasi Node.js yang lebih baik, silakan baca [contributor guidelines](./.operations/CONTRIBUTING.md) 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"/></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"/></a> |
 | :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |

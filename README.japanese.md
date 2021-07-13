@@ -14,11 +14,11 @@
 
 <br/>
 
-[![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **私たちの Twitter をフォローしましょう！** [**@nodepractices**](https://twitter.com/nodepractices/)
+[![nodepractices](./assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **私たちの Twitter をフォローしましょう！** [**@nodepractices**](https://twitter.com/nodepractices/)
 
 <br/>
 
-他の言語で読む: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md), [![JA](/assets/flags/JA.png)**JA**](/README.japanese.md), [![EU](/assets/flags/EU.png)**EU**](/README.basque.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
+他の言語で読む: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md), [![BR](./assets/flags/BR.png)**BR**](./README.brazilian-portuguese.md), [![RU](./assets/flags/RU.png)**RU**](./README.russian.md), [![PL](./assets/flags/PL.png)**PL**](./README.polish.md), [![JA](./assets/flags/JA.png)**JA**](./README.japanese.md), [![EU](./assets/flags/EU.png)**EU**](./README.basque.md) [(![ES](./assets/flags/ES.png)**ES**, ![FR](./assets/flags/FR.png)**FR**, ![HE](./assets/flags/HE.png)**HE**, ![KR](./assets/flags/KR.png)**KR** and ![TR](./assets/flags/TR.png)**TR** in progress!)](#translations)
 
 <br/>
 
@@ -40,7 +40,7 @@
 
 **1. 実際、あなたは何十もの Node.js の最高の記事を読んでいます -** このリポジトリは、Node.js のベストプラクティスに関するトップランクのコンテンツや、コラボレーターによって書かれたコンテンツをまとめたものです。
 
-**2. 最大の集大成であり、毎週のように増え続けています -** 現在、80 以上のベストプラクティスやスタイルガイド、アーキテクチャのヒントが記載されています。この「生きた本」がアップデートされた状態を保つために、新しいイシューやプルリクエストは毎日のように作成されています。私たちは、コードの修正や翻訳作業、素晴らしい新たなアイデアの提案に至るまで、あなたの貢献を心待ちにしています。詳しくは[ライティングガイドライン](/.operations/writing-guidelines.japanese.md)をご覧ください。
+**2. 最大の集大成であり、毎週のように増え続けています -** 現在、80 以上のベストプラクティスやスタイルガイド、アーキテクチャのヒントが記載されています。この「生きた本」がアップデートされた状態を保つために、新しいイシューやプルリクエストは毎日のように作成されています。私たちは、コードの修正や翻訳作業、素晴らしい新たなアイデアの提案に至るまで、あなたの貢献を心待ちにしています。詳しくは[ライティングガイドライン](./.operations/writing-guidelines.japanese.md)をご覧ください。
 
 **3. ほとんどのベストプラクティスには追加情報があります -** ほとんどの項目に **🔗 さらに読む** というリンクがあります。このリンクは、コード例や厳選されたブログからの引用、その他多くの情報など、プラクティスを発展させる内容を含んでいます。
 
@@ -67,7 +67,7 @@
 
 **さもないと:** 新しい機能をコーディングする開発者が、自分の変更の影響を理解するのに苦労したり、他の依存するコンポーネントを壊すことを恐れたりすると、デプロイが遅くなり、リスクが高くなります。また、すべてのビジネスユニットが分離されていない場合、スケールアウトするのは難しいと考えられています。
 
-🔗 [**さらに読む: コンポーネントで構成する**](/sections/projectstructre/breakintcomponents.japanese.md)
+🔗 [**さらに読む: コンポーネントで構成する**](./sections/projectstructre/breakintcomponents.japanese.md)
 
 <br/><br/>
 
@@ -77,7 +77,7 @@
 
 **さもないと:** Web オブジェクトと他のレイヤーが混在するアプリには、テストコードや CRON ジョブ、メッセージキューからのトリガーなどからアクセスすることはできません。
 
-🔗 [**さらに読む: アプリケーションを階層化する**](/sections/projectstructre/createlayers.japanese.md)
+🔗 [**さらに読む: アプリケーションを階層化する**](./sections/projectstructre/createlayers.japanese.md)
 
 <br/><br/>
 
@@ -87,7 +87,7 @@
 
 **さもないと:** デプロイと依存関係の車輪の作成をしなければいけなくなります
 
-🔗 [**さらに読む: 機能で構成する**](/sections/projectstructre/wraputilities.japanese.md)
+🔗 [**さらに読む: 機能で構成する**](./sections/projectstructre/wraputilities.japanese.md)
 
 <br/><br/>
 
@@ -97,7 +97,7 @@
 
 **さもないと:** API は HTTP 呼び出しのみでテストにアクセスできるようになります（カバレッジレポートを生成するのがより遅く、はるかに困難になります）。何百行ものコードを一つのファイルで管理するのは、おそらく大きな喜びではないでしょう。
 
-🔗 [**さらに読む: Express の「アプリ」と「サーバー」を分離する**](/sections/projectstructre/separateexpress.japanese.md)
+🔗 [**さらに読む: Express の「アプリ」と「サーバー」を分離する**](./sections/projectstructre/separateexpress.japanese.md)
 
 <br/><br/>
 
@@ -107,7 +107,7 @@
 
 **さもないと:** 設定要件のどれかを満たさないと、開発チームや DevOps チーム、おそらく両方ともの頭を悩ませてしまいます。
 
-🔗 [**さらに読む: 構成のベストプラクティス**](/sections/projectstructre/configguide.japanese.md)
+🔗 [**さらに読む: 構成のベストプラクティス**](./sections/projectstructre/configguide.japanese.md)
 
 <br/><br/><br/>
 
@@ -121,7 +121,7 @@
 
 **さもなければ:** Node.js のコールバックスタイル、つまり function(err, response) を利用することは、正常な処理を行うコードとエラーハンドリングの混同、過剰なネスト構造、そして厄介なコーディングパターンが原因となって、メンテナンス性の低いコードにつながります。
 
-🔗 [**さらに読む: コールバック関数の利用を避ける**](/sections/errorhandling/asyncerrorhandling.japanese.md)
+🔗 [**さらに読む: コールバック関数の利用を避ける**](./sections/errorhandling/asyncerrorhandling.japanese.md)
 
 <br/><br/>
 
@@ -131,7 +131,7 @@
 
 **さもないと:** ある要素を呼び出したとき、どの型のエラーが返ってくるか不確かである - といった状況は、適切なエラー処理をより難しいものにします。さらに悪いことに、エラーを表現するためにカスタム型を使うことは、スタックトレースのような重大なエラー情報を失うことに繋がるかもしれません。
 
-🔗 [**さらに読む: 組み込みのエラーオブジェクトのみを使用する**](/sections/errorhandling/useonlythebuiltinerror.japanese.md)
+🔗 [**さらに読む: 組み込みのエラーオブジェクトのみを使用する**](./sections/errorhandling/useonlythebuiltinerror.japanese.md)
 
 <br/><br/>
 
@@ -141,7 +141,7 @@
 
 **さもないと:** エラーが発生したときに毎回アプリケーションを再起動しているかもしれませんが、さほど重要でない、予測可能な、操作上のエラーを原因としてなぜ ~5000 人規模のオンラインユーザーをダウンさせるのでしょうか？ その逆もまた理想的ではありません ー 未知のエラー（プログラマーのエラー）が発生したときにアプリケーションをそのまま起動し続けることは、予想外の振る舞いに繋がるかもしれません。この２つを区別することで、機転の利いた振る舞いをさせ、与えられたコンテキストに基づいた適切なアプローチを適用させることができます。
 
-🔗 [**さらに読む: 操作上のエラーとプログラマーのエラーを区別する**](/sections/errorhandling/operationalvsprogrammererror.japanese.md)
+🔗 [**さらに読む: 操作上のエラーとプログラマーのエラーを区別する**](./sections/errorhandling/operationalvsprogrammererror.japanese.md)
 
 <br/><br/>
 
@@ -151,7 +151,7 @@
 
 **さもないと:** エラーを一箇所で処理しないと、コードの重複や、不適切に処理されたエラーの発生に繋がる可能性があります。
 
-🔗 [**さらに読む: エラー処理を一元化し、ミドウェア内で処理をしない**](/sections/errorhandling/centralizedhandling.japanese.md)
+🔗 [**さらに読む: エラー処理を一元化し、ミドウェア内で処理をしない**](./sections/errorhandling/centralizedhandling.japanese.md)
 
 <br/><br/>
 
@@ -161,7 +161,7 @@
 
 **さもないと:** API クライアントがクラッシュして再起動するのは、不明なエラーを受け取ったからかもしれません。注意: API の呼び出し元はあなた自身かもしれません（マイクロサービス構成では非常によくあることです）
 
-🔗 [**さらに読む: Swagger または GraphQL を利用して API のエラーをドキュメント化する**](/sections/errorhandling/documentingusingswagger.japanese.md)
+🔗 [**さらに読む: Swagger または GraphQL を利用して API のエラーをドキュメント化する**](./sections/errorhandling/documentingusingswagger.japanese.md)
 
 <br/><br/>
 
@@ -171,7 +171,7 @@
 
 **さもないと:** 不明な例外が発生した場合、一部のオブジェクトが不完全な状態（例えば、グローバルに使用されているイベントエミッタが内部的なエラーによりイベントを発火しなくなっている、など）になっている可能性があり、後に来るリクエストが失敗したり、予期せぬ挙動をしたりするかもしれません。
 
-🔗 [**さらに読む: 見ず知らずの事象が起きたら潔くプロセスを終了する**](/sections/errorhandling/shuttingtheprocess.japanese.md)
+🔗 [**さらに読む: 見ず知らずの事象が起きたら潔くプロセスを終了する**](./sections/errorhandling/shuttingtheprocess.japanese.md)
 
 <br/><br/>
 
@@ -181,7 +181,7 @@
 
 **さもないと:** console.log によるログに目を通したり、クエリツールやまともなログビューア無しで扱いにくいテキストファイルを手動で確認したりすると、遅くまで仕事をする羽目になるかもしれません。
 
-🔗 [**さらに読む: エラーの可視性を高めるために成熟したロガーを使用する**](/sections/errorhandling/usematurelogger.japanese.md)
+🔗 [**さらに読む: エラーの可視性を高めるために成熟したロガーを使用する**](./sections/errorhandling/usematurelogger.japanese.md)
 
 <br/><br/>
 
@@ -191,7 +191,7 @@
 
 **さもないと:** 自動であっても手動であっても、テストがなければ、コードが正しいエラーを返すと信用することはできません。意味のあるエラーがなければ、エラー処理はできません。
 
-🔗 [**さらに読む: お気に入りのテストフレームワークを使用してエラーフローをテストする**](/sections/errorhandling/testingerrorflows.japanese.md)
+🔗 [**さらに読む: お気に入りのテストフレームワークを使用してエラーフローをテストする**](./sections/errorhandling/testingerrorflows.japanese.md)
 
 <br/><br/>
 
@@ -201,7 +201,7 @@
 
 **さもないと:** API のパフォーマンスとダウンタイムの計測に多大な労力を費やしているかもしれませんが、現実のシナリオにおいてどの部分のコードが最も遅いのか、そしてそれらがどのように UX に影響を及ぼしているのか、あなたが気づくことは恐らくないでしょう。
 
-🔗 [**さらに読む: APM 製品を利用してエラーとダウンタイムを発見する**](/sections/errorhandling/apmproducts.japanese.md)
+🔗 [**さらに読む: APM 製品を利用してエラーとダウンタイムを発見する**](./sections/errorhandling/apmproducts.japanese.md)
 
 <br/><br/>
 
@@ -211,7 +211,7 @@
 
 **さもないと:** あなたのエラーは飲み込まれて、何のトレースも残しません。心配することは、何も残りません。
 
-🔗 [**さらに読む: 未処理の reject された promise を捕捉する**](/sections/errorhandling/catchunhandledpromiserejection.japanese.md)
+🔗 [**さらに読む: 未処理の reject された promise を捕捉する**](./sections/errorhandling/catchunhandledpromiserejection.japanese.md)
 
 <br/><br/>
 
@@ -221,7 +221,7 @@
 
 **さもないと:** 考えてみて下さい ー 関数は数値の引数「Discount」を受け取ることを期待していますが、呼び出し元が値を渡すのを忘れてしまいました。その後、コードが Discount!=0 (許容されたディスカウントの量が 0 よりも大きいことを想定) であるということをチェックし、そのチェックをクリアした場合にユーザーがディスカウントを受けられるようにしました。オーマイガー、なんて厄介なバグなんでしょう。わかりますか？（訳注：「さらに読む」に具体的なコード例が載っています）
 
-🔗 [**さらに読む: 専用のライブラリを利用して引数の検証を高速に行う**](/sections/errorhandling/failfast.japanese.md)
+🔗 [**さらに読む: 専用のライブラリを利用して引数の検証を高速に行う**](./sections/errorhandling/failfast.japanese.md)
 
 <br/><br/><br/>
 
@@ -235,7 +235,7 @@
 
 **さもないと:** 開発者は退屈な間隔や線幅の問題に集中し、プロジェクトのコードスタイルを考えすぎて時間を無駄にしてしまうかもしれません。
 
-🔗 [**さらに読む: ESLint と Prettier を使う**](/sections/codestylepractices/eslint_prettier.japanese.md)
+🔗 [**さらに読む: ESLint と Prettier を使う**](./sections/codestylepractices/eslint_prettier.japanese.md)
 
 <br/><br/>
 
@@ -450,7 +450,7 @@ null == undefined; // true
 
 **さもないと:** "Add product" という名付けられたテストが通らず、デプロイが失敗しました。これは、実際に何がうまく動作しなかったのかを示しているでしょうか？
 
-🔗 [**さらに読む: 各テスト名に 3 つの要素を含む**](/sections/testingandquality/3-parts-in-name.japanese.md)
+🔗 [**さらに読む: 各テスト名に 3 つの要素を含む**](./sections/testingandquality/3-parts-in-name.japanese.md)
 
 <br/><br/>
 
@@ -460,7 +460,7 @@ null == undefined; // true
 
 **さもないと:** メインコードを理解するのに長時間費やすだけでなく、今までシンプルな部分であったはずのもの（テスト）が、脳のリソースを奪います。
 
-🔗 [**さらに読む: AAA パターンを用いてテストを構成する**](/sections/testingandquality/aaa.japanese.md)
+🔗 [**さらに読む: AAA パターンを用いてテストを構成する**](./sections/testingandquality/aaa.japanese.md)
 
 <br/><br/>
 
@@ -478,7 +478,7 @@ null == undefined; // true
 
 **さもないと:** テストが失敗したことによってデプロイが中止されるというシナリオを考えてみましょう。チームは貴重な時間を調査に費やし、結果として悲しい結論にたどり着きます: システムは機能していますが、テスト同士が干渉しあって、ビルドを壊しているのです。
 
-🔗 [**さらに読む: グローバルなテストフィクスチャとシードを避け、テストごとにデータを追加する**](/sections/testingandquality/avoid-global-test-fixture.japanese.md)
+🔗 [**さらに読む: グローバルなテストフィクスチャとシードを避け、テストごとにデータを追加する**](./sections/testingandquality/avoid-global-test-fixture.japanese.md)
 
 <br/><br/>
 
@@ -528,7 +528,7 @@ null == undefined; // true
 
 **さもないと:** コードの品質が低いと、ピカピカの新しいライブラリや最新の機能では修正できない類のバグやパフォーマンスが常に問題となります。
 
-🔗 [**さらに読む: リファクタリング！**](/sections/testingandquality/refactoring.japanese.md)
+🔗 [**さらに読む: リファクタリング！**](./sections/testingandquality/refactoring.japanese.md)
 
 <br/><br/>
 
@@ -538,7 +538,7 @@ null == undefined; // true
 
 **さもないと:** ニッチなベンダーを選択すると、高度なカスタマイズが必要になった際に困るかもしれません。一方で、Jenkins を選択するとインフラのセットアップに貴重な時間を費やすことになる可能性があります。
 
-🔗 [**さらに読む: CI プラットフォームを選択する**](/sections/testingandquality/citools.japanese.md)
+🔗 [**さらに読む: CI プラットフォームを選択する**](./sections/testingandquality/citools.japanese.md)
 
 ## ![✔] 4.13 ミドルウェアを分離してテストする
 
@@ -546,7 +546,7 @@ null == undefined; // true
 
 **さもないと:** Express ミドルウェアにおけるバグ === ほぼ全てのリクエストにおけるバグ
 
-🔗 [**さらに読む: ミドルウェアを分離してテストする**](/sections/testingandquality/test-middlewares.japanese.md)
+🔗 [**さらに読む: ミドルウェアを分離してテストする**](./sections/testingandquality/test-middlewares.japanese.md)
 
 <br/><br/><br/>
 
@@ -560,7 +560,7 @@ null == undefined; // true
 
 **さもないと:** 失敗 === 失望したお客さん。シンプルです。
 
-🔗 [**さらに読む: モニタリング!**](/sections/production/monitoring.japanese.md)
+🔗 [**さらに読む: モニタリング!**](./sections/production/monitoring.japanese.md)
 
 <br/><br/>
 
@@ -570,7 +570,7 @@ null == undefined; // true
 
 **さもないと:** 推論するのが難しいブラックボックスになってしまい、追加情報を追加するためにすべてのロギングステートメントを書き直します。
 
-🔗 [**さらに読む: スマートロギングで透明性を高める**](/sections/production/smartlogging.japanese.md)
+🔗 [**さらに読む: スマートロギングで透明性を高める**](./sections/production/smartlogging.japanese.md)
 
 <br/><br/>
 
@@ -580,7 +580,7 @@ null == undefined; // true
 
 **さもないと:** 貧弱なシングルスレッドは、アプリケーションコアを処理する代わりにインフラタスクを行うことに忙しくなり、パフォーマンスはそれに応じて低下します。
 
-🔗 [**さらに読む: 可能な限りのこと全て（ gzip、SSL など）をリバースプロキシに委譲する**](/sections/production/delegatetoproxy.japanese.md)
+🔗 [**さらに読む: 可能な限りのこと全て（ gzip、SSL など）をリバースプロキシに委譲する**](./sections/production/delegatetoproxy.japanese.md)
 
 <br/><br/>
 
@@ -590,7 +590,7 @@ null == undefined; // true
 
 **さもないと:** QA はコードを徹底的にテストし、本番環境では異なる挙動をするバージョンを承認します。さらに悪いことに、同じクラスタ内の異なるサーバが異なるコードを実行する可能性があります。
 
-🔗 [**さらに読む: 依存関係をロックする**](/sections/production/lockdependencies.japanese.md)
+🔗 [**さらに読む: 依存関係をロックする**](./sections/production/lockdependencies.japanese.md)
 
 <br/><br/>
 
@@ -600,7 +600,7 @@ null == undefined; // true
 
 **さもないと:** 明確な戦略を持たずに何十ものインスタンスを実行し、あまりにも多くのツール（クラスタ管理、docker、PM2）を一緒に使いすぎると、DevOps のカオスにつながる可能性があります。
 
-🔗 [**さらに読む: 適切なツールを使用してプロセスの稼働時間を守る**](/sections/production/guardprocess.japanese.md)
+🔗 [**さらに読む: 適切なツールを使用してプロセスの稼働時間を守る**](./sections/production/guardprocess.japanese.md)
 
 <br/><br/>
 
@@ -610,7 +610,7 @@ null == undefined; // true
 
 **さもないと:** あなたのアプリは、利用可能なリソースの 25％、もしくはそれ以下しか使用していない可能性が高いです(!)。一般的なサーバは 4 つ以上の CPU コアを持っていますが、 Node.js のナイーブなデプロイでは 1 つしか利用していないことに注意してください（ AWS beanstalk のような PaaS サービスを利用している場合でも!）。
 
-🔗 [**さらに読む: すべての CPU コアを利用する**](/sections/production/utilizecpu.japanese.md)
+🔗 [**さらに読む: すべての CPU コアを利用する**](./sections/production/utilizecpu.japanese.md)
 
 <br/><br/>
 
@@ -620,7 +620,7 @@ null == undefined; // true
 
 **さもないと:** 多くの「診断デプロイ」を実行していることがわかります。– 診断目的のための情報を抽出するためだけにコードを本番環境に出荷するなど
 
-🔗 [**さらに読む: 「メンテナンスエンドポイント」を作成する**](/sections/production/createmaintenanceendpoint.japanese.md)
+🔗 [**さらに読む: 「メンテナンスエンドポイント」を作成する**](./sections/production/createmaintenanceendpoint.japanese.md)
 
 <br/><br/>
 
@@ -630,7 +630,7 @@ null == undefined; // true
 
 **さもないと:** API のパフォーマンスやダウンタイムの測定に多大な労力を費やすことになるかもしれません。実世界のシナリオで最も遅いコード部分はどれか、それが UX にどのように影響するのか、おそらくあなたは意識することはないでしょう。
 
-🔗 [**さらに読む: APM 製品を使用してエラーやダウンタイムを発見する**](/sections/production/apmproducts.japanese.md)
+🔗 [**さらに読む: APM 製品を使用してエラーやダウンタイムを発見する**](./sections/production/apmproducts.japanese.md)
 
 <br/><br/>
 
@@ -640,7 +640,7 @@ null == undefined; // true
 
 **さもないと:** 世界チャンピオンの IT/DevOps の男でも、下手に書かれたシステムを救うことはできません。
 
-🔗 [**さらに読む: コードを本番に即したものにする**](/sections/production/productioncode.japanese.md)
+🔗 [**さらに読む: コードを本番に即したものにする**](./sections/production/productioncode.japanese.md)
 
 <br/><br/>
 
@@ -650,7 +650,7 @@ null == undefined; // true
 
 **さもないと:** あなたのプロセスメモリは、[Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak) で起こったように、1 日に 10MB もリークするかもしれません。
 
-🔗 [**さらに読む: メモリ使用量を測定してガードする**](/sections/production/measurememory.japanese.md)
+🔗 [**さらに読む: メモリ使用量を測定してガードする**](./sections/production/measurememory.japanese.md)
 
 <br/><br/>
 
@@ -660,7 +660,7 @@ null == undefined; // true
 
 **さもないと:** あなたの Node のシングルスレッドは、何百もの html/images/angular/react ファイルのストリーミングに忙殺され、本来の目的のために生まれたタスクにすべてのリソースを確保することができません。– 動的コンテンツの提供
 
-🔗 [**さらに読む: フロントエンドの資産を Node から取り出す**](/sections/production/frontendout.japanese.md)
+🔗 [**さらに読む: フロントエンドの資産を Node から取り出す**](./sections/production/frontendout.japanese.md)
 
 <br/><br/>
 
@@ -670,7 +670,7 @@ null == undefined; // true
 
 **Otherwise:** 特定のサーバーで障害が発生すると、障害のあるマシンを停止する代わりに、アプリケーションのダウンタイムが発生します。さらに、特定のサーバーに依存しているため、スケーリングアウトの弾力性はより困難になります。
 
-🔗 [**さらに読む: ステートレスのままで、ほぼ毎日サーバーを停止させる**](/sections/production/bestateless.japanese.md)
+🔗 [**さらに読む: ステートレスのままで、ほぼ毎日サーバーを停止させる**](./sections/production/bestateless.japanese.md)
 
 <br/><br/>
 
@@ -680,7 +680,7 @@ null == undefined; // true
 
 **さもないと:** 専用のツールを使用せずに脆弱性からコードをクリーンに保つには、新しい脅威についてのオンライン出版物を常にフォローする必要があります。とても面倒です。
 
-🔗 [**さらに読む: 脆弱性を自動的に検出するツールを使用する**](/sections/production/detectvulnerabilities.japanese.md)
+🔗 [**さらに読む: 脆弱性を自動的に検出するツールを使用する**](./sections/production/detectvulnerabilities.japanese.md)
 
 <br/><br/>
 
@@ -690,7 +690,7 @@ null == undefined; // true
 
 **さもないと:** – 前に何が起こったのか – というコンテキストなしでプロダクションのエラーログを見ると、問題の原因を究明するのが非常に難しくなり、時間がかかります。
 
-🔗 [**さらに読む: 各ログ文に 'TransactionId' を割り当てる**](/sections/production/assigntransactionid.japanese.md)
+🔗 [**さらに読む: 各ログ文に 'TransactionId' を割り当てる**](./sections/production/assigntransactionid.japanese.md)
 
 <br/><br/>
 
@@ -700,7 +700,7 @@ null == undefined; // true
 
 **さもないと:** この単純なプロパティを省略すると、パフォーマンスが大きく低下する可能性があります。例えば、サーバサイドのレンダリングに Express を使用する場合、`NODE_ENV` を省略すると 3 倍も遅くなります。
 
-🔗 [**さらに読む: NODE_ENV=production を設定する**](/sections/production/setnodeenv.japanese.md)
+🔗 [**さらに読む: NODE_ENV=production を設定する**](./sections/production/setnodeenv.japanese.md)
 
 <br/><br/>
 
@@ -718,7 +718,7 @@ null == undefined; // true
 
 **さもないと:** 新たに発見されたバグや脆弱性は、本番環境で運用中のアプリケーションを悪用するために使用される可能性があり、アプリケーションは様々なモジュールでサポートされておらず、保守が困難になる可能性があります。
 
-🔗 [**さらに読む: Node.js の LTS リリースを使用する**](/sections/production/LTSrelease.japanese.md)
+🔗 [**さらに読む: Node.js の LTS リリースを使用する**](./sections/production/LTSrelease.japanese.md)
 
 <br/><br/>
 
@@ -728,7 +728,7 @@ null == undefined; // true
 
 **さもないと:** アプリケーションがログのルーティングをハンドリングする === スケールアップが難しい、ログの損失、懸念事項の分離が悪い
 
-🔗 [**さらに読む: ログルーティング**](/sections/production/logrouting.japanese.md)
+🔗 [**さらに読む: ログルーティング**](./sections/production/logrouting.japanese.md)
 
 <br/><br/>
 
@@ -738,7 +738,7 @@ null == undefined; // true
 
 **さもないと:** QA はコードを徹底的にテストし、本番環境では異なる動作をするバージョンを承認します。さらに悪いことに、同じプロダクションクラスタ内の異なるサーバが異なるコードを実行する可能性があります。
 
-🔗 [**さらに読む: npm ci を使う**](/sections/production/installpackageswithnpmci.japanese.md)
+🔗 [**さらに読む: npm ci を使う**](./sections/production/installpackageswithnpmci.japanese.md)
 
 <br/><br/><br/>
 
@@ -758,7 +758,7 @@ null == undefined; // true
 
 **さもなければ:** 開発時には単純なセキュリティ上の弱点だったかもしれないものが、本番環境では大きな問題となります。同様に、プロジェクトが一貫したコードセキュリティプラクティスに従わない場合もあり、脆弱性が入り込んだり、リモートリポジトリに機密情報がコミットされたりする可能性があります。
 
-🔗 [**さらに読む: Lint ルール**](/sections/security/lintrules.japanese.md)
+🔗 [**さらに読む: Lint ルール**](./sections/security/lintrules.japanese.md)
 
 <br/><br/>
 
@@ -770,7 +770,7 @@ null == undefined; // true
 
 **さもないと:** アプリケーションは攻撃を受ける可能性があり、結果としてユーザーに不十分なサービスを提供したり、サービス停止をしなければならない状況に陥ります。
 
-🔗 [**さらに読む: レートリミットの実装**](/sections/security/limitrequests.japanese.md)
+🔗 [**さらに読む: レートリミットの実装**](./sections/security/limitrequests.japanese.md)
 
 <br/><br/>
 
@@ -782,7 +782,7 @@ null == undefined; // true
 
 **さもないと:** ソースコントロールは、たとえプライベートリポジトリであっても誤ってパブリックになる可能性があり、その時点で全てのシークレットが公開されてしまいます。外部サービスに与えられたソースコントロールへのアクセス権限は、関連するシステム（データベース、API、その他サービスなど）へのアクセス権限をうっかり与えてしまうことがあります。
 
-🔗 [**さらに読む: シークレット管理**](/sections/security/secretmanagement.japanese.md)
+🔗 [**さらに読む: シークレット管理**](./sections/security/secretmanagement.japanese.md)
 
 <br/><br/>
 
@@ -794,7 +794,7 @@ null == undefined; // true
 
 **さもないと:** 未検証またはサニタイズされていないユーザー入力は、MongoDB のような NoSQL データベースで作業している際にオペレーターインジェクションを招きますし、適切なサニタイズシステムまたは O/R マッパ を利用しないことは容易に SQL インジェクション攻撃を招き、多大な脆弱性を生みます。
 
-🔗 [**さらに読む: ORM/ODM ライブラリを使用してクエリインジェクション脆弱性を防ぐ**](/sections/security/ormodmusage.japanese.md)
+🔗 [**さらに読む: ORM/ODM ライブラリを使用してクエリインジェクション脆弱性を防ぐ**](./sections/security/ormodmusage.japanese.md)
 
 <br/><br/>
 
@@ -802,7 +802,7 @@ null == undefined; // true
 
 **TL;DR:** Node.js とは直接関係のないセキュリティに関するアドバイス集です ー Node における実装は他の言語とあまり違いはありません。さらに読むをクリックして、読み進めてください。
 
-🔗 [**さらに読む: 一般的なセキュリティベストプラクティス**](/sections/security/commonsecuritybestpractices.japanese.md)
+🔗 [**さらに読む: 一般的なセキュリティベストプラクティス**](./sections/security/commonsecuritybestpractices.japanese.md)
 
 <br/><br/>
 
@@ -814,7 +814,7 @@ null == undefined; // true
 
 **さもないと:** 攻撃者がアプリケーションユーザーに対して直接攻撃を行い、甚大なセキュリティ脆弱性につながる可能性があります。
 
-🔗 [**さらに読む: アプリケーションでセキュアなヘッダーを利用する**](/sections/security/secureheaders.japanese.md)
+🔗 [**さらに読む: アプリケーションでセキュアなヘッダーを利用する**](./sections/security/secureheaders.japanese.md)
 
 <br/><br/>
 
@@ -826,7 +826,7 @@ null == undefined; // true
 
 **さもないと:** 攻撃者がウェブフレームワークを特定して、全ての既知の脆弱性を突いてくる可能性があります。
 
-🔗 [**さらに読む: 依存性のセキュリティ**](/sections/security/dependencysecurity.japanese.md)
+🔗 [**さらに読む: 依存性のセキュリティ**](./sections/security/dependencysecurity.japanese.md)
 
 <br/><br/>
 
@@ -838,7 +838,7 @@ null == undefined; // true
 
 **さもないと:** セキュアな関数を使わずに永続化されたパスワードやシークレット情報は、ブルートフォース攻撃や辞書攻撃に弱く、結果として情報漏えいに繋がります。
 
-🔗 [**さらに読む: Bcrypt を使用する**](/sections/security/bcryptpasswords.japanese.md)
+🔗 [**さらに読む: Bcrypt を使用する**](./sections/security/bcryptpasswords.japanese.md)
 
 <br/><br/>
 
@@ -850,7 +850,7 @@ null == undefined; // true
 
 **さもないと:** 攻撃者は悪意のある JavaScript のコードを DB に保存し、それをそのまま脆弱なクライアントに送信する可能性があります。
 
-🔗 [**さらに読む: 出力をエスケープする**](/sections/security/escape-output.japanese.md)
+🔗 [**さらに読む: 出力をエスケープする**](./sections/security/escape-output.japanese.md)
 
 <br/><br/>
 
@@ -862,7 +862,7 @@ null == undefined; // true
 
 **さもないと:** あなたの寛大で寛容なアプローチは攻撃対象を大幅に拡大させ、攻撃者がアプリケーションをクラッシュさせるための組み合わせを見つけるまで、多くの入力を試してみるように促すことに繋がります。
 
-🔗 [**さらに読む: 受信した JSON スキーマを検証する**](/sections/security/validation.japanese.md)
+🔗 [**さらに読む: 受信した JSON スキーマを検証する**](./sections/security/validation.japanese.md)
 
 <br/><br/>
 
@@ -874,7 +874,7 @@ null == undefined; // true
 
 **さもないと:** 期限切れや、誤って配置されたトークンは、アプリケーションにアクセスしたり、トークンの所有者になりすますために、サードパーティによって悪意を持って利用される可能性があります。
 
-🔗 [**さらに読む: JSON Web Token のブラックリスト**](/sections/security/expirejwt.japanese.md)
+🔗 [**さらに読む: JSON Web Token のブラックリスト**](./sections/security/expirejwt.japanese.md)
 
 <br/><br/>
 
@@ -889,7 +889,7 @@ null == undefined; // true
 
 **さもないと:** 攻撃者が、アプリケーションの特権アカウントへのアクセス権を得るために、無制限の自動化されたパスワード試行を行うことができます。
 
-🔗 [**さらに読む: ログインレートリミット**](/sections/security/login-rate-limit.japanese.md)
+🔗 [**さらに読む: ログインレートリミット**](./sections/security/login-rate-limit.japanese.md)
 
 <br/><br/>
 
@@ -901,7 +901,7 @@ null == undefined; // true
 
 **さもないと:** サーバ上でスクリプトを実行することに成功した攻撃者が、ローカルマシンにおける無制限の権限を獲得してしまいます（例：iptable を変更して、攻撃者のサーバに再ルーティングする）。
 
-🔗 [**さらに読む: 非 root ユーザとして Node.js を実行する**](/sections/security/non-root-user.japanese.md)
+🔗 [**さらに読む: 非 root ユーザとして Node.js を実行する**](./sections/security/non-root-user.japanese.md)
 
 <br/><br/>
 
@@ -913,7 +913,7 @@ null == undefined; // true
 
 **さもないと:** アプリケーションは大きなリクエストを処理しなければなくなり、他の重要な仕事を完遂させることができず、パフォーマンスへの影響や DDoS 攻撃に対する脆弱性につながります。
 
-🔗 [**さらに読む: ペイロードサイズを制限する**](/sections/security/requestpayloadsizelimit.japanese.md)
+🔗 [**さらに読む: ペイロードサイズを制限する**](./sections/security/requestpayloadsizelimit.japanese.md)
 
 <br/><br/>
 
@@ -925,7 +925,7 @@ null == undefined; // true
 
 **さもないと:** 悪意のある JavaScript コードが `eval` やその他のリアルタイムに評価する JavaScript の関数に渡されるテキストへたどり着き、そのページにおける JavaScript の完全な権限を獲得してしまいます。この脆弱性はしばしば XSS 攻撃として顕在化します。
 
-🔗 [**さらに読む: JavaScript の eval 構文を避ける**](/sections/security/avoideval.japanese.md)
+🔗 [**さらに読む: JavaScript の eval 構文を避ける**](./sections/security/avoideval.japanese.md)
 
 <br/><br/>
 
@@ -937,7 +937,7 @@ null == undefined; // true
 
 **さもないと:** 下手な正規表現の記述は、イベントループを完全にブロックしてしまう正規表現 DoS 攻撃の影響を受ける可能性があります。例えば、人気のある `moment` パッケージでは、2017 年 11 月に悪意のある RegEx の使用による脆弱性が発見されています。
 
-🔗 [**さらに読む: 悪質な RegEx を防止する**](/sections/security/regex.japanese.md)
+🔗 [**さらに読む: 悪質な RegEx を防止する**](./sections/security/regex.japanese.md)
 
 <br/><br/>
 
@@ -949,7 +949,7 @@ null == undefined; // true
 
 **さもないと:** 悪意のあるユーザー入力は、既存のシステムファイルに、前にファイルシステムにアップロードされたファイルのような改変されたファイルを要求したり、既存のシステムファイルにアクセスするために利用されるパラメータを操作する可能性があります。
 
-🔗 [**さらに読む: 安全なモジュール読み込み**](/sections/security/safemoduleloading.japanese.md)
+🔗 [**さらに読む: 安全なモジュール読み込み**](./sections/security/safemoduleloading.japanese.md)
 
 <br/><br/>
 
@@ -961,7 +961,7 @@ null == undefined; // true
 
 **さもないと:** プラグインは、無限ループやメモリーオーバーロード、センシティブなプロセスの環境変数へのアクセスなど、あらゆる手段を通じて攻撃可能となります。
 
-🔗 [**さらに読む: サンドボックス内で安全でないコードを実行する**](/sections/security/sandbox.japanese.md)
+🔗 [**さらに読む: サンドボックス内で安全でないコードを実行する**](./sections/security/sandbox.japanese.md)
 
 <br/><br/>
 
@@ -973,7 +973,7 @@ null == undefined; // true
 
 **さもないと:** 子プロセスを愚直に利用することは、サニタイズされていないシステムコマンドに渡される悪意のあるユーザー入力が原因となって、結果としてリモートからのコマンド実行、またはシェルインジェクション攻撃を受けることにつながります。
 
-🔗 [**さらに読む: 子プロセスで処理を行う場合は注意する**](/sections/security/childprocesses.japanese.md)
+🔗 [**さらに読む: 子プロセスで処理を行う場合は注意する**](./sections/security/childprocesses.japanese.md)
 
 <br/><br/>
 
@@ -985,7 +985,7 @@ null == undefined; // true
 
 **さもないと:** 攻撃者によって悪用される可能性のある、サーバファイルのパス、使用中のサードパーティモジュール、アプリケーションのその他内部ワークフローなど、機密性の高いアプリケーションの詳細情報が、スタックトレース内に残された情報から漏洩する可能性があります。
 
-🔗 [**さらに読む: エラーの詳細をクライアントから隠す**](/sections/security/hideerrors.japanese.md)
+🔗 [**さらに読む: エラーの詳細をクライアントから隠す**](./sections/security/hideerrors.japanese.md)
 
 <br/><br/>
 
@@ -1007,7 +1007,7 @@ null == undefined; // true
 
 **さもないと:** Cookie は安全でないコネクションを通じて送信される恐れがあり、攻撃者はセッション識別子を利用して背後にある Web アプリケーションフレームワークや、モジュール固有の脆弱性を特定する可能性があります。
 
-🔗 [**さらに読む: クッキー（Cookie）とセッションの安全性**](/sections/security/sessions.japanese.md)
+🔗 [**さらに読む: クッキー（Cookie）とセッションの安全性**](./sections/security/sessions.japanese.md)
 
 <br/><br/>
 
@@ -1029,7 +1029,7 @@ null == undefined; // true
 
 **さもないと:** もし攻撃者が、外部のユーザーから与えられた入力を検証していないことを発見した場合、特別に作成されたリンクをフォーラムやソーシャルメディア、その他のパブリックな場所に投稿してユーザーにクリックさせることで、この脆弱性を悪用する恐れがあります。
 
-🔗 [**さらに読む: 安全でないリダイレクトを防ぐ**](/sections/security/saferedirects.japanese.md)
+🔗 [**さらに読む: 安全でないリダイレクトを防ぐ**](./sections/security/saferedirects.japanese.md)
 
 <br/><br/>
 
@@ -1041,7 +1041,7 @@ null == undefined; // true
 
 **さもないと:** プロジェクトの API キーやパスワード、その他のシークレットが公開され、その情報を目にしたすべての人に悪用されることで、結果として金銭的な損失、なりすまし、その他リスクに繋がってしまいます。
 
-🔗 [**さらに読む: シークレットの公開を避ける**](/sections/security/avoid_publishing_secrets.japanese.md)
+🔗 [**さらに読む: シークレットの公開を避ける**](./sections/security/avoid_publishing_secrets.japanese.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ トップに戻る</a></p>
@@ -1058,7 +1058,7 @@ null == undefined; // true
 
 **さもないと:** イベントループがブロックされると、Node.js は他のリクエストを処理することができなくなり、同時接続ユーザーの遅延を引き起こします。**3000 人のユーザーがレスポンスを待っていて、コンテンツを提供する準備ができていたとしても、1 つのリクエストがサーバからの結果のディスパッチをブロックしていしまいます\***
 
-🔗 [**さらに読む: イベントループをブロックしない**](/sections/performance/block-loop.japanese.md)
+🔗 [**さらに読む: イベントループをブロックしない**](./sections/performance/block-loop.japanese.md)
 
 <br /><br /><br />
 
@@ -1069,7 +1069,7 @@ null == undefined; // true
 
 **さもないと:** **すでに**利用可能なものを単純に使用できたり、いくつかのファイルと引き換えに、数行で処理することができるような、パフォーマンスの低いプロジェクトを維持しなければならないでしょう。
 
-🔗 [**さらに読む: ユーザーランドなユーティリティよりもネイティブを使用する**](/sections/performance/nativeoverutil.japanese.md)
+🔗 [**さらに読む: ユーザーランドなユーティリティよりもネイティブを使用する**](./sections/performance/nativeoverutil.japanese.md)
 
 <br/><br/><br/>
 
@@ -1107,7 +1107,7 @@ RUN npm ci --production
 CMD [ "node", "dist/app.js" ]
 ```
 
-🔗 [**さらに読む: マルチステージビルドを使用する**](/sections/docker/multi_stage_builds.japanese.md)
+🔗 [**さらに読む: マルチステージビルドを使用する**](./sections/docker/multi_stage_builds.japanese.md)
 
 <br /><br /><br />
 
@@ -1117,7 +1117,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと:** シグナルが渡されない場合、あなたのコードはシャットダウンについて通知されることはありません。これがなければ、適切に閉じる機会を失い、現在のリクエストやデータを失う可能性があります。
 
-[**さらに読む: node コマンドを使用して 、npm の起動を避けた Bootstrap コンテナ**](/sections/docker/bootstrap-using-node.japanese.md)
+[**さらに読む: node コマンドを使用して 、npm の起動を避けた Bootstrap コンテナ**](./sections/docker/bootstrap-using-node.japanese.md)
 
 <br /><br /><br />
 
@@ -1127,7 +1127,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと:** リソース不足でクラッシュし続けるコンテナは、プロセスマネージャによって無期限に再起動されてしまいます。Kubernetes がそれを認識していれば、別の余裕のあるインスタンスに移すことができます。
 
-🔗 [**さらに読む: プロセスを再起動と複製を Docker オーケストレーターに任せる**](/sections/docker/restart-and-replicate-processes.japanese.md)
+🔗 [**さらに読む: プロセスを再起動と複製を Docker オーケストレーターに任せる**](./sections/docker/restart-and-replicate-processes.japanese.md)
 
 <br/><br /><br />
 
@@ -1137,7 +1137,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと**: `.env`, `.aws`, `.npmrc` のような共通の個人秘密ファイルは、イメージにアクセスできる人全員に共有されます (例: Docker リポジトリ)。
 
-🔗 [**さらに読む: .dockerignore を使用する**](/sections/docker/docker-ignore.japanese.md)
+🔗 [**さらに読む: .dockerignore を使用する**](./sections/docker/docker-ignore.japanese.md)
 
 <br /><br /><br />
 
@@ -1147,7 +1147,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと:** 悪名高い npm のセキュリティ侵害の多くは開発パッケージ内で発見されました (例: [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes)
 
-🔗 さらに読む: [開発依存性の除去](/sections/docker/install-for-production.japanese.md)
+🔗 さらに読む: [開発依存性の除去](./sections/docker/install-for-production.japanese.md)
 
 <br /><br /><br />
 
@@ -1157,7 +1157,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと:** 即座に kill してしまうことは、何千人もの失望したユーザーに対応しないことを意味します。
 
-🔗 [**さらに読む: グレースフルシャットダウン**](/sections/docker/graceful-shutdown.japanese.md)
+🔗 [**さらに読む: グレースフルシャットダウン**](./sections/docker/graceful-shutdown.japanese.md)
 
 <br /><br /><br />
 
@@ -1167,7 +1167,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと:** docker の定義は、思慮深いスケーリングの決定を行い、他の市民を飢えさせないようにするために必要です。v8 の制限を定義しないと、コンテナリソースを十分に利用できません。 - 明示的な指示がないと、ホストリソースの ~50-60％ を利用するときにクラッシュします。
 
-🔗 [**さらに読む: Docker のみを使用してメモリ制限を設定する**](/sections/docker/memory-limit.japanese.md)
+🔗 [**さらに読む: Docker のみを使用してメモリ制限を設定する**](./sections/docker/memory-limit.japanese.md)
 
 <br /><br /><br />
 
@@ -1177,7 +1177,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと:** Docker のビルドが非常に長くなり、小さな変更をした場合でも多くのリソースを消費することになります。
 
-🔗 [**さらに読む: キャッシュを活用してビルド時間を短縮する**](/sections/docker/use-cache-for-shorter-build-time.japanese.md)
+🔗 [**さらに読む: キャッシュを活用してビルド時間を短縮する**](./sections/docker/use-cache-for-shorter-build-time.japanese.md)
 
 <br /><br /><br />
 
@@ -1189,7 +1189,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと:** 破壊的変更を含むベースイメージの新しいバージョンが本番環境にデプロイされ、意図しないアプリケーションの挙動を引き起こす可能性があります。
 
-🔗 [**さらに読む: イメージタグを理解して「latest」タグを注意して使う**](/sections/docker/image-tags.japanese.md)
+🔗 [**さらに読む: イメージタグを理解して「latest」タグを注意して使う**](./sections/docker/image-tags.japanese.md)
 
 <br /><br /><br />
 
@@ -1199,7 +1199,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと:** イメージのビルド、プッシュ、プルに時間を要し、未知の攻撃の因子が悪意のあるアクターによって使用され、より多くのリソースが消費されます。
 
-🔗 [**さらに読む: 小さなイメージを優先する**](/sections/docker/smaller_base_images.japanese.md)
+🔗 [**さらに読む: 小さなイメージを優先する**](./sections/docker/smaller_base_images.japanese.md)
 
 <br /><br /><br />
 
@@ -1209,7 +1209,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと:** CI と docker レジストリへのアクセス権限を持っている人は誰でも、おまけとして貴重な組織の情報にアクセスできてしまいます。
 
-🔗 [**さらに読む: ビルド時のシークレットをクリーンアウトする**](/sections/docker/avoid-build-time-secrets.japanese.md)
+🔗 [**さらに読む: ビルド時のシークレットをクリーンアウトする**](./sections/docker/avoid-build-time-secrets.japanese.md)
 
 <br /><br /><br />
 
@@ -1219,7 +1219,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと:** コードは脆弱性から完全に脆弱性から解放されているかもしれませんが、アプリケーションで一般的に使用されている OS レベルのバイナリ（例：OpenSSL、TarBall）の脆弱性が原因となって、ハッキングされる可能性が依然としてあります。
 
-🔗 [**さらに読む: プロダクションの前にイメージ全体をスキャンする**](/sections/docker/scan-images.japanese.md)
+🔗 [**さらに読む: プロダクションの前にイメージ全体をスキャンする**](./sections/docker/scan-images.japanese.md)
 
 <br /><br /><br />
 
@@ -1229,7 +1229,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと:** 使用されないファイルが原因で、サイズが 3 割増のイメージがプロダクションにデプロイされることになります。
 
-🔗 [**さらに読む: NODE_MODULE キャッシュをクリーンアップする**](/sections/docker/clean-cache.japanese.md)
+🔗 [**さらに読む: NODE_MODULE キャッシュをクリーンアップする**](./sections/docker/clean-cache.japanese.md)
 
 <br /><br /><br />
 
@@ -1237,7 +1237,7 @@ CMD [ "node", "dist/app.js" ]
 
 **TL;DR:** Node.js とは直接関係の無い、Docker に関するアドバイス集です - Node における実装は他の言語とあまり変わりません。「さらに読む」から読み進めてください。
 
-🔗 [**さらに読む: 一般的な Docker のプラクティス**](/sections/docker/generic-tips.japanese.md)
+🔗 [**さらに読む: 一般的な Docker のプラクティス**](./sections/docker/generic-tips.japanese.md)
 
 <br/><br /><br />
 
@@ -1247,7 +1247,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと:** Dockerfile の作者が誤って root を本番ユーザーにしてしまい、不明なソースリポジトリからの Docker イメージを使用してしまう、といったことが起こり得ます。これは、シンプルな litner を利用することで回避することができます。
 
-🔗 [**さらに読む: Dockerfile を lint する**](/sections/docker/lint-dockerfile.japanese.md)
+🔗 [**さらに読む: Dockerfile を lint する**](./sections/docker/lint-dockerfile.japanese.md)
 
 <br/><br /><br />
 
@@ -1265,20 +1265,20 @@ CMD [ "node", "dist/app.js" ]
 
 ### 翻訳（完了済み）
 
-- ![BR](/assets/flags/BR.png) [Brazilian Portuguese](./README.brazilian-portuguese.md) - Courtesy of [Marcelo Melo](https://github.com/marcelosdm)
-- ![CN](/assets/flags/CN.png) [Chinese](./README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
-- ![RU](/assets/flags/RU.png) [Russian](./README.russian.md) - Courtesy of [Alex Ivanov](https://github.com/contributorpw)
-- ![PL](/assets/flags/PL.png) [Polish](./README.polish.md) - Courtesy of [Michal Biesiada](https://github.com/mbiesiad)
-- ![JA](/assets/flags/JA.png) [Japanese](./README.japanese.md) - Courtesy of [Yuki Ota](https://github.com/YukiOta), [Yuta Azumi](https://github.com/YA21)
-- ![EU](/assets/flags/EU.png) [Basque](README.basque.md) - Courtesy of [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta
+- ![BR](./assets/flags/BR.png) [Brazilian Portuguese](./README.brazilian-portuguese.md) - Courtesy of [Marcelo Melo](https://github.com/marcelosdm)
+- ![CN](./assets/flags/CN.png) [Chinese](./README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
+- ![RU](./assets/flags/RU.png) [Russian](./README.russian.md) - Courtesy of [Alex Ivanov](https://github.com/contributorpw)
+- ![PL](./assets/flags/PL.png) [Polish](./README.polish.md) - Courtesy of [Michal Biesiada](https://github.com/mbiesiad)
+- ![JA](./assets/flags/JA.png) [Japanese](./README.japanese.md) - Courtesy of [Yuki Ota](https://github.com/YukiOta), [Yuta Azumi](https://github.com/YA21)
+- ![EU](./assets/flags/EU.png) [Basque](README.basque.md) - Courtesy of [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta
 
 ### 翻訳（進行中）
 
-- ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/129))
-- ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/156))
-- ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Courtesy of [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94))
-- ![ES](/assets/flags/ES.png) [Spanish](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/95))
-- ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/139))
+- ![FR](./assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/129))
+- ![HE](./assets/flags/HE.png) Hebrew ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/156))
+- ![KR](./assets/flags/KR.png) [Korean](README.korean.md) - Courtesy of [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94))
+- ![ES](./assets/flags/ES.png) [Spanish](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/95))
+- ![TR](./assets/flags/TR.png) Turkish ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/139))
 
 <br/><br/>
 
@@ -1341,7 +1341,7 @@ JavaScript とそのエコシステム（React、Node.js、TypeScript、GraphQL�
 
 すべてのコラボレーターの方々に感謝いたします！ 🙏
 
-私たちのコラボレーターは、新たなベストプラクティスの提案やイシューの優先順位付け、プルリクエストのレビューなどその他多くのことを通じて、定期的にこのリポジトリに貢献してくださっているメンバーの方々です。多くの人々がより良い Node.js アプリケーションを構築できるように導く私たちをサポートすることにもし興味があるのであれば、[貢献ガイドライン](/.operations/CONTRIBUTING.md)をお読み下さい 🎉
+私たちのコラボレーターは、新たなベストプラクティスの提案やイシューの優先順位付け、プルリクエストのレビューなどその他多くのことを通じて、定期的にこのリポジトリに貢献してくださっているメンバーの方々です。多くの人々がより良い Node.js アプリケーションを構築できるように導く私たちをサポートすることにもし興味があるのであれば、[貢献ガイドライン](./.operations/CONTRIBUTING.md)をお読み下さい 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"/></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"/></a> |
 | :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |

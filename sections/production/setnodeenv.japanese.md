@@ -29,6 +29,6 @@ if (process.env.NODE_ENV === 'production')
 ブログ [dynatrace](https://www.dynatrace.com/blog/the-drastic-effects-of-omitting-node_env-in-your-express-js-applications/) より:
 > ...Node.js では、現在のモードを設定するために node_env という変数を使用する慣習があります。実際には NODE_ENV を読み込んで、設定されていない場合は「development」にデフォルトで設定されていることがわかります。NODE_ENV を本番環境に設定することで、Node.js が処理できるリクエスト数が約3分の2に跳ね上がり、CPU の使用率はわずかに低下することが明らかになっています。*これだけは強調しておきます: NODE_ENV を本番環境に設定すると、アプリケーションが3倍速くなります！*
 
-![NODE_ENV=production](/assets/images/setnodeenv1.png "NODE_ENV=production")
+![NODE_ENV=production](../../assets/images/setnodeenv1.png "NODE_ENV=production")
 
 <br/><br/>

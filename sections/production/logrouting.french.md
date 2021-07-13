@@ -82,6 +82,6 @@ Extrait de [12-Factor les meilleures pratiques pour la journalisation](https://1
 
  ### Exemple : aperçu de l'architecture en utilisant Docker et Splunk comme exemple
 
-![alt text](/assets/images/logging-overview.png "Aperçu du routage des journaux")
+![alt text](../../assets/images/logging-overview.png "Aperçu du routage des journaux")
 
 <br/><br/>

@@ -12,19 +12,19 @@
 
 ### Пример мониторинга: панель инструментов AWS cloudwatch по умолчанию. Трудно извлечь метрики в приложении
 
-![AWS cloudwatch default dashboard. Hard to extract in-app metrics](/assets/images/monitoring1.png)
+![AWS cloudwatch default dashboard. Hard to extract in-app metrics](../../assets/images/monitoring1.png)
 
 <br/><br/>
 
 ### Пример мониторинга: панель мониторинга по умолчанию для StackDriver. Трудно извлечь метрики в приложении
 
-![StackDriver default dashboard. Hard to extract in-app metrics](/assets/images/monitoring2.jpg)
+![StackDriver default dashboard. Hard to extract in-app metrics](../../assets/images/monitoring2.jpg)
 
 <br/><br/>
 
 ### Пример мониторинга: Grafana как слой пользовательского интерфейса, который визуализирует необработанные данные
 
-![Grafana as the UI layer that visualizes raw data](/assets/images/monitoring3.png)
+![Grafana as the UI layer that visualizes raw data](../../assets/images/monitoring3.png)
 
 <br/><br/>
 

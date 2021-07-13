@@ -4,7 +4,7 @@
 
 Docker イメージはレイヤーの組み合わせであり、Dockerfile 内の各指示はそれぞれレイヤーを作成します。もし指示が同じであるか、`COPY` や `ADD` の利用が同じであれば、docker デーモンはビルド間でそれらのレイヤーを再利用することができます。⚠️ キャッシュが特定のレイヤーで利用できなかった場合は、それ以降のすべてのレイヤーも無効になります。そのため、順番が重要なのです。Dockerfile を正しくレイアウトすることは、ビルドにおいて可変となっている部分の数を減らすために非常に重要です; あまり更新されない処理は Dockerfile の上の方に記述し、更新が多い処理（アプリケーションのコードなど）は下の方に記述するべきです。また、時間のかかるオペレーションをトリガーする指示は、（docker イメージをビルドするたびに変更されない限り）本当に必要なときにのみ実行されるように、上部に近い位置に配置するべきです。正しく行えば、ほぼ瞬時にキャッシュから Docker イメージ全体をリビルドすることができます。
 
-![Docker layers](/assets/images/docker_layers_schema.png)
+![Docker layers](../../assets/images/docker_layers_schema.png)
 
 * jessgreb01 による [Digging into Docker layers](https://medium.com/@jessgreb01/digging-into-docker-layers-c22f948ed612) から画像引用*
 
@@ -26,7 +26,7 @@ LABEL build_number="483"
 
 #### 良い .dockerignore ファイルを持つ
 
-[**参照: docker ignore の重要性について**](/sections/docker/docker-ignore.md)
+[**参照: docker ignore の重要性について**](./docker-ignore.md)
 
 docker ignore ファイルは、テスト結果レポートやログ、一時ファイルなど、キャッシュのロジックを壊す可能性のあるファイルのコピーを回避します。
 

@@ -79,6 +79,6 @@ Do [guia de boas práticas 12-Factor](https://12factor.net/logs),
 
  ### Exemplo: Visão geral da arquitetura usando o Docker e o Splunk como exemplo
 
-![alt text](/assets/images/logging-overview.png "Visão geral de roteamento de log")
+![alt text](../../assets/images/logging-overview.png "Visão geral de roteamento de log")
 
 <br/><br/>
