@@ -1597,7 +1597,16 @@ Thanks goes to these wonderful people who have contributed to this repository!
   </tr>
 </table>
 
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
+
+<!--
+
+markdownlint-restore
+
+-->
+<!--
+
+prettier-ignore-end
+
+-->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
