@@ -90,6 +90,6 @@ Beraz adibide honek `log -> stdout -> Docker container -> Splunk`-en antza du
 
 ### Adibidea: arkitekturaren ikuspegi orokorra Docker eta Splunk erabiliz adibide gisa
 
-![alt text](/assets/images/logging-overview.png "Arkitekturaren ikuspegi orokorra")
+![alt text](../../assets/images/logging-overview.png "Arkitekturaren ikuspegi orokorra")
 
 <br/><br/>

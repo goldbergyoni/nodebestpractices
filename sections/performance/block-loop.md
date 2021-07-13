@@ -41,7 +41,7 @@ while loop.
 ```
 
 ## Image of the Event Loop
-![Event Loop](/assets/images/event-loop.png "Event Loop")
+![Event Loop](../../assets/images/event-loop.png "Event Loop")
 
 
 ### "Here's a good rule of thumb for keeping your Node server speedy: _Node is fast when the work associated with each client at any given time is 'small'_."

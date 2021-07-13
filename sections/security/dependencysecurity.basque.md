@@ -19,7 +19,7 @@ Node.js aplikazioetan tresna ugari erabil daitezke hirugarrenen paketeetan ahula
 
 Npm auditoretza exekutatzeak segurtasun ahultasunen txostena sortuko du kaltetutako paketearen izenarekin, zaurgarritasunaren larritasunarekin eta deskribapenarekin, bidearekin eta bestelako informazioarekin, eta, gainera, ahultasunak konpontzeko adabakiak aplikatzeko aginduak emango ditu, eskuragarri egonez gero.
 
-![npm audit adibidea](/assets/images/npm-audit.png)
+![npm audit adibidea](../../assets/images/npm-audit.png)
 
 🔗 [Irakurri: NPM bloga](https://docs.npmjs.com/getting-started/running-a-security-audit)
 
@@ -30,7 +30,7 @@ Snykek funtzio aberatsa duen CLI bat eskaintzen du, baita GitHub integrazioa ere
 Snyken webgune aberatsak mendekotasunak ad-hoc ebaluatzeko aukera ere ematen du GitHub biltegiarekin edo npm moduluaren URLarekin hornituta. Ahuleziak dituzten npm paketeak ere bila ditzakezu zuzenean.
 
 Synk GitHub integrazioaren irteeraren adibide bat, erauzte eskaera automatikoki sortuz:
-![snyk GitHub adibidea](/assets/images/snyk.png)
+![snyk GitHub adibidea](../../assets/images/snyk.png)
 
 🔗 [ Irakurri hemen: Snyk webgunea](https://snyk.io/)
 
@@ -44,7 +44,7 @@ Greenkeeperrek biltegi baten `package.json` fitxategian zehaztutako npm menpekot
 
 Greenkeeper GitHub integrazioaren irteeraren adibide bat erauzte eskaera automatikoki sortuz:
 
-![synk github adibidea](/assets/images/greenkeeper.png)
+![synk github adibidea](../../assets/images/greenkeeper.png)
 🔗 [Irakurri: Greenkeeper webgunea](https://greenkeeper.io/)
 
 ### Baliabide osagarriak

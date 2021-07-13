@@ -12,7 +12,7 @@ Erabilera aurreratuen kasuetarako, pentsa ezazu NODE prozesua errepikatzea perts
 
 ### Alderaketa: Noderen klusterra versus nginx
 
-![Noderen klusterra versus nginx](/assets/images/utilizecpucores1.png "Noderen klusterra versus nginx")
+![Noderen klusterra versus nginx](../../assets/images/utilizecpucores1.png "Noderen klusterra versus nginx")
 
 <br/><br/>
 

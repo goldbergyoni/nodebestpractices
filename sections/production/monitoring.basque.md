@@ -12,19 +12,19 @@ Funtzio aurreratuak lortu nahi badituzu, konfigurazio luzea egin beharko duzu ed
 
 ### Jarraipen adibidea: AWS cloudwatch panel lehenetsia. Zaila da aplikazioko metrika ateratzea
 
-![AWS cloudwatch panel lehenetsia. Zaila da aplikazioko metrika ateratzea](/assets/images/monitoring1.png)
+![AWS cloudwatch panel lehenetsia. Zaila da aplikazioko metrika ateratzea](../../assets/images/monitoring1.png)
 
 <br/><br/>
 
 ### Jarraipen adibidea: StackDriver panel lehenetsia. Zaila da aplikazioko metrika ateratzea
 
-![StackDriver panel lehenetsia. Zaila da aplikazioko metrika ateratzea](/assets/images/monitoring2.jpg)
+![StackDriver panel lehenetsia. Zaila da aplikazioko metrika ateratzea](../../assets/images/monitoring2.jpg)
 
 <br/><br/>
 
 ### Adibidea: Grafana datu gordinak bistaratzen dituen UI geruza gisa
 
-![Grafana datu gordinak bistaratzen dituen UI geruza gisa](/assets/images/monitoring3.png)
+![Grafana datu gordinak bistaratzen dituen UI geruza gisa](../../assets/images/monitoring3.png)
 
 <br/><br/>
 

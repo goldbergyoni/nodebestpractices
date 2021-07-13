@@ -4,7 +4,7 @@
 
 ### Un paragraphe d'explication
 
-Vous avez verrouillé vos dépendances en utilisant [**Verrouillez les dépendances**](/sections/production/lockdependencies.french.md), mais maintenant, vous devez vous assurer que ces versions précises des paquets sont utilisées en production.
+Vous avez verrouillé vos dépendances en utilisant [**Verrouillez les dépendances**](./lockdependencies.french.md), mais maintenant, vous devez vous assurer que ces versions précises des paquets sont utilisées en production.
 
 L'utilisation de `npm ci` pour installer des paquets fera exactement cela et plus encore.
 * Il échouera si votre `package.json` et votre `package-lock.json` ne correspondent pas (ils devraient) ou si vous n'avez pas de fichier lock

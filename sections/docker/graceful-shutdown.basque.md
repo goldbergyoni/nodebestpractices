@@ -8,7 +8,7 @@ Kubernetes bezalako exekuzio ingurune Dockerizatu batean, edukiontziak sarri jai
 
 <br/><br/>
 
-### Kode adibidea: Node.js prozesu errotzat definitzeak kodeari seinaleak pasatzea ahalbidetzen du ([ikusi abiarazi node erabiliz](/sections/docker/bootstrap-using-node.basque.md))
+### Kode adibidea: Node.js prozesu errotzat definitzeak kodeari seinaleak pasatzea ahalbidetzen du ([ikusi abiarazi node erabiliz](./bootstrap-using-node.basque.md))
 
 <details>
 
@@ -77,4 +77,4 @@ CMD ["npm", "start"]
 
 [Rising Stack](https://blog.risingstack.com/graceful-shutdown-node-js-kubernetes/) blogetik
 
-![alt text](/assets/images/Kubernetes-graceful-shutdown-flowchart.png "Itzaltze faseak")
+![alt text](../../assets/images/Kubernetes-graceful-shutdown-flowchart.png "Itzaltze faseak")

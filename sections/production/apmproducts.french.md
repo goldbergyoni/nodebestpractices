@@ -10,16 +10,16 @@ APM (NdT, « Application Performance Monitoring » : surveillance des performa
 
 ### Exemple APM – un produit commercial qui visualise les performances des applications interservices
 
-![Exemple APM](/assets/images/apm1.png "Exemple APM")
+![Exemple APM](../../assets/images/apm1.png "Exemple APM")
 
 <br/><br/>
 
 ### Exemple APM – un produit commercial qui met l'accent sur le score de l'expérience utilisateur
 
-![Exemple APM](/assets/images/apm2.png "Exemple APM")
+![Exemple APM](../../assets/images/apm2.png "Exemple APM")
 
 <br/><br/>
 
 ### Exemple APM – un produit commercial qui met en évidence les chemins de code lents
 
-![Exemple APM](/assets/images/apm3.png "Exemple APM")
+![Exemple APM](../../assets/images/apm3.png "Exemple APM")

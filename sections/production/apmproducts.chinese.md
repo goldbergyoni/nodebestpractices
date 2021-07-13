@@ -11,16 +11,16 @@ APM（应用程序性能监视）指的是一个产品系列, 目的是从端到
 
 
 ### APM 示例 – 一种可视化显示跨服务应用性能的商业产品
-![APM example](/assets/images/apm1.png "APM example")
+![APM example](../../assets/images/apm1.png "APM example")
 
 <br/><br/>
 
 ### APM 示例 – 一种强调用户体验评分的商业产品
 
-![APM example](/assets/images/apm2.png "APM example")
+![APM example](../../assets/images/apm2.png "APM example")
 
 <br/><br/>
 
 ### APM 示例 – 一种突出显示慢速代码路径的商业产品
 
-![APM example](/assets/images/apm3.png "APM example")
+![APM example](../../assets/images/apm3.png "APM example")

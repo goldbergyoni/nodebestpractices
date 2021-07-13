@@ -4,7 +4,7 @@
 
 ### Azalpena
 
-Zure menpekotasunak blokeatu dituzu [**Blokeatu menpekotasunak**](/sections/production/lockdependencies.basque.md) jarraituz, baina orain ziurtatu behar duzu pakete bertsio zehatzak erabiltzen direla ekoizpenean.
+Zure menpekotasunak blokeatu dituzu [**Blokeatu menpekotasunak**](./lockdependencies.basque.md) jarraituz, baina orain ziurtatu behar duzu pakete bertsio zehatzak erabiltzen direla ekoizpenean.
 
 Paketeak instalatzeko `npm ci` erabiltzen baduzu, hori eta gehiago lortuko duzu.
 

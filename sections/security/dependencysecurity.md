@@ -19,7 +19,7 @@ There is a number of tools available to help identify third-party packages in No
 
 Running `npm audit` will produce a report of security vulnerabilities with the affected package name, vulnerability severity and description, path, and other information, and, if available, commands to apply patches to resolve vulnerabilities.
 
-![npm audit example](/assets/images/npm-audit.png)
+![npm audit example](../../assets/images/npm-audit.png)
 
 🔗 [Read on: NPM blog](https://docs.npmjs.com/getting-started/running-a-security-audit)
 
@@ -30,7 +30,7 @@ Snyk offers a feature-rich CLI, as well as GitHub integration. Snyk goes further
 Snyk's feature rich website also allows for ad-hoc assessment of dependencies when provided with a GitHub repository or npm module url. You can also search for npm packages which have vulnerabilities directly.
 
 An example of the output of the Snyk GitHub integration automatically created pull request:
-![snyk GitHub example](/assets/images/snyk.png)
+![snyk GitHub example](../../assets/images/snyk.png)
 
 🔗 [Read on: Snyk website](https://snyk.io/)
 
@@ -44,7 +44,7 @@ Greenkeeper watches the npm dependencies specified in a repository's `package.js
 
 An example of the output of the Greenkeeper GitHub integration automatically created pull request:
 
-![synk github example](/assets/images/greenkeeper.png)
+![synk github example](../../assets/images/greenkeeper.png)
 🔗 [Read on: Greenkeeper website](https://greenkeeper.io/)
 
 ### Additional resources

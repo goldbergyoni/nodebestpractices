@@ -82,6 +82,6 @@ Z [12-Factor best practices for logging](https://12factor.net/logs),
 
  ### Przykład: Przegląd architektury na przykładzie Docker i Splunk
 
-![alt text](/assets/images/logging-overview.png "Log routing overview")
+![alt text](../../assets/images/logging-overview.png "Log routing overview")
 
 <br/><br/>

@@ -10,7 +10,7 @@
 
 **さもないと:** 接続が暗号化されていない場合には、攻撃者は中間者攻撃を行い、ユーザーの行動を監視し、さらに悪質なアクションを行ってくる可能性があります。
 
-🔗 [**さらに読む: セキュアな Node.js サーバーを実行する**](/sections/security/secureserver.japanese.md)
+🔗 [**さらに読む: セキュアな Node.js サーバーを実行する**](./secureserver.japanese.md)
 
 <br/><br/>
 

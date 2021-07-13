@@ -12,19 +12,19 @@ Achieving the advanced features demands lengthy setup or buying a commercial pro
 
 ### Monitoring example: AWS cloudwatch default dashboard. Hard to extract in-app metrics
 
-![AWS cloudwatch default dashboard. Hard to extract in-app metrics](/assets/images/monitoring1.png)
+![AWS cloudwatch default dashboard. Hard to extract in-app metrics](../../assets/images/monitoring1.png)
 
 <br/><br/>
 
 ### Monitoring example: StackDriver default dashboard. Hard to extract in-app metrics
 
-![StackDriver default dashboard. Hard to extract in-app metrics](/assets/images/monitoring2.jpg)
+![StackDriver default dashboard. Hard to extract in-app metrics](../../assets/images/monitoring2.jpg)
 
 <br/><br/>
 
 ### Monitoring example: Grafana as the UI layer that visualizes raw data
 
-![Grafana as the UI layer that visualizes raw data](/assets/images/monitoring3.png)
+![Grafana as the UI layer that visualizes raw data](../../assets/images/monitoring3.png)
 
 <br/><br/>
 
