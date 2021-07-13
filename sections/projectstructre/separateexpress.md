@@ -15,6 +15,8 @@ const app = express();
 app.use(bodyParser.json());
 app.use('/api/events', events.API);
 app.use('/api/forms', forms);
+
+module.exports = app;
 ```
 
 ### Code example: Server network declaration, should reside in /bin/www
