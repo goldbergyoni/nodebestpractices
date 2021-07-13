@@ -1598,15 +1598,8 @@ Thanks goes to these wonderful people who have contributed to this repository!
 </table>
 
 
-<!--
-
-markdownlint-restore
-
--->
-<!--
-
-prettier-ignore-end
-
--->
+<!-- Must have few lines before the HTML comments as these comments will be consider part of the HTML and be converted to React using Docusaurus which would fail the build as HTML comments in React are unsupported -->
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->

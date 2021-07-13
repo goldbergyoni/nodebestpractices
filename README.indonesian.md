@@ -1572,15 +1572,10 @@ Terima kasih kepada orang-orang hebat ini yang telah berkontribusi pada reposito
     <td align="center"><a href="http://libkhadir.fr"><img src="https://avatars.githubusercontent.com/u/45130488?v=4?s=100" width="100px;" alt=""/><br /><sub><b>KHADIR Tayeb</b></sub></a><br /><a href="#content-tkhadir" title="Content">🖋</a></td>
   </tr>
 </table>
-<!--
 
-markdownlint-restore
 
--->
-<!--
-
-prettier-ignore-end
-
--->
+<!-- Must have few lines before the HTML comments as these comments will be consider part of the HTML and be converted to React using Docusaurus which would fail the build as HTML comments in React are unsupported -->
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
