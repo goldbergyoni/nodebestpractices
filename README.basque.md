@@ -1573,6 +1573,7 @@ Eskerrik asko proiektu honetan parte hartu duten pertsona zoragarriei!
     <td align="center"><a href="http://libkhadir.fr"><img src="https://avatars.githubusercontent.com/u/45130488?v=4?s=100" width="100px;" alt=""/><br /><sub><b>KHADIR Tayeb</b></sub></a><br /><a href="#content-tkhadir" title="Content">🖋</a></td>
   </tr>
 </table>
+
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 
