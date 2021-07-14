@@ -1496,6 +1496,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "erezLieberman",
+      "name": "Erez Lieberman",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3277260?v=4",
+      "profile": "https://www.linkedin.com/in/erez-lieberman-b90b7219/",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
