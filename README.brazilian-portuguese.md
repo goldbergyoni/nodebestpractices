@@ -752,7 +752,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** o QA testará completamente o código e aprovará uma versão que se comportará de maneira diferente em produção. Pior ainda, diferentes servidores no mesmo cluster de produção podem executar códigos diferentes.
 
-🔗 [**Read More: Use npm ci**](/sections/production/installpackageswithnpmci.md)
+🔗 [**Read More: Use npm ci**](./sections/production/installpackageswithnpmci.md)
 
 <br/><br/><br/>
 
