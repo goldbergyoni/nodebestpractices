@@ -12,18 +12,18 @@
 
 ### モニタリング例: AWS cloudwatch のデフォルトダッシュボード。アプリ内メトリクスの抽出が難しい
 
-![AWS cloudwatch のデフォルトダッシュボード。アプリ内メトリクスの抽出が難しい](/assets/images/monitoring1.png)
+![AWS cloudwatch のデフォルトダッシュボード。アプリ内メトリクスの抽出が難しい](../../assets/images/monitoring1.png)
 
 <br/><br/>
 
 ### モニタリング例: StackDriver のデフォルトダッシュボード。アプリ内メトリクスの抽出が難しい
 
-![StackDriver のデフォルトダッシュボード。アプリ内メトリクスの抽出が難しい](/assets/images/monitoring2.jpg)
+![StackDriver のデフォルトダッシュボード。アプリ内メトリクスの抽出が難しい](../../assets/images/monitoring2.jpg)
 
 <br/><br/>
 
 ### モニタリング例: 生データを可視化するUIレイヤーとしての Grafana
-![生データを可視化するUIレイヤーとしての Grafana ](/assets/images/monitoring3.png)
+![生データを可視化するUIレイヤーとしての Grafana ](../../assets/images/monitoring3.png)
 
 <br/><br/>
 

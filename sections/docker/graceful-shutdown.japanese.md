@@ -9,7 +9,7 @@ Kubernetes のような Docker 化されたランタイムでは、コンテナ�
 <br/><br/>
 
 
-### コード例 – Node.js をルートプロセスとして配置することで、コードにシグナルを渡すことができます（[bootstrap using node](/sections/docker/bootstrap-using-node.japanese.md) を参照してください）。
+### コード例 – Node.js をルートプロセスとして配置することで、コードにシグナルを渡すことができます（[bootstrap using node](./bootstrap-using-node.japanese.md) を参照してください）。
 
 <details>
 
@@ -78,4 +78,4 @@ CMD ["npm", "start"]
 
 ブログ [Rising Stack](https://blog.risingstack.com/graceful-shutdown-node-js-kubernetes/)　より
 
-![alt text](/assets/images/Kubernetes-graceful-shutdown-flowchart.png "The shutdown phases")
+![alt text](../../assets/images/Kubernetes-graceful-shutdown-flowchart.png "The shutdown phases")

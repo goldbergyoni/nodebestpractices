@@ -10,7 +10,7 @@ Il n'est pas surprenant que dans sa forme de base, Node fonctionne sur un unique
 
 ### Comparaison : équilibrage à l'aide du cluster de Node vs nginx
 
-![Équilibrage à l'aide du cluster de Node vs nginx](/assets/images/utilizecpucores1.png "Équilibrage à l'aide du cluster de Node vs nginx")
+![Équilibrage à l'aide du cluster de Node vs nginx](../../assets/images/utilizecpucores1.png "Équilibrage à l'aide du cluster de Node vs nginx")
 
 <br/><br/>
 

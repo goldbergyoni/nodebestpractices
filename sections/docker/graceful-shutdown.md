@@ -9,7 +9,7 @@ In a Dockerized runtime like Kubernetes, containers are born and die frequently.
 <br/><br/>
 
 
-### Code Example – Placing Node.js as the root process allows passing signals to the code (see [bootstrap using node](/sections/docker/bootstrap-using-node.md))
+### Code Example – Placing Node.js as the root process allows passing signals to the code (see [bootstrap using node](./bootstrap-using-node.md))
 
 <details>
 
@@ -78,4 +78,4 @@ CMD ["npm", "start"]
 
 From the blog, [Rising Stack](https://blog.risingstack.com/graceful-shutdown-node-js-kubernetes/)
 
-![alt text](/assets/images/Kubernetes-graceful-shutdown-flowchart.png "The shutdown phases")
+![alt text](../../assets/images/Kubernetes-graceful-shutdown-flowchart.png "The shutdown phases")

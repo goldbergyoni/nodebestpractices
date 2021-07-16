@@ -10,7 +10,7 @@ Ohiko segurtasun praktiken atalak esparru eta konbentzio askotan estandarizatuta
 
 **Bestela:** erasotzaileek erdi-erdiko erasoak egin ditzakete, zure erabiltzaileen portaera zelatatu eta are ekintza maltzurragoak egin ditzakete konexioa enkriptatu gabe dagoenean.
 
-🔗 [**Informazio gehiago: Node.js zerbitzari segurua egikaritzea**](/sections/security/secureserver.basque.md)
+🔗 [**Informazio gehiago: Node.js zerbitzari segurua egikaritzea**](./secureserver.basque.md)
 
 <br/><br/>
 

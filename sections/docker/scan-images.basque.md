@@ -27,4 +27,4 @@ $ trivy image [YOUR_IMAGE_NAME]
 
 ### Txosten adibidea: Docker eskanerraren emaitzak (Anchoren eskutik)
 
-![Txosten adibideak](/assets/images/anchore-report.png "Docker eskanerraren txostena")
+![Txosten adibideak](../../assets/images/anchore-report.png "Docker eskanerraren txostena")

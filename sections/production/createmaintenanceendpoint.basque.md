@@ -45,4 +45,4 @@ router.get("/ops/heapdump", (req, res, next) => {
 
 ▶ [Zure Node.js aplikazioaren ekoizpena prestatzea (bideoa)](https://www.youtube.com/watch?v=lUsNne-_VIk)
 
-![Zure Node.js aplikazioaren ekoizpena prestatzea](/assets/images/createmaintenanceendpoint1.png "Zure Node.js aplikazioaren ekoizpena prestatzea")
+![Zure Node.js aplikazioaren ekoizpena prestatzea](../../assets/images/createmaintenanceendpoint1.png "Zure Node.js aplikazioaren ekoizpena prestatzea")

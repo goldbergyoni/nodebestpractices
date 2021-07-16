@@ -16,13 +16,13 @@ Erregistroen adierazpenak inprimatzen dituzu eta, jakina, produkzioari buruzko i
 
 ### Bistaratze adibidea: Kibana-k (Elastic stack-en zati bat) erregistroen edukian bilaketa aurreratua errazten du
 
-![Kibana-k (Elastic stack-en zati bat) erregistroen edukian bilaketa aurreratua errazten du](/assets/images/smartlogging1.png "Kibana-k (Elastic stack-en zati bat) erregistroen edukian bilaketa aurreratua errazten du")
+![Kibana-k (Elastic stack-en zati bat) erregistroen edukian bilaketa aurreratua errazten du](../../assets/images/smartlogging1.png "Kibana-k (Elastic stack-en zati bat) erregistroen edukian bilaketa aurreratua errazten du")
 
 <br/><br/>
 
 ### Bistaratze adibidea: Kibana-k (Elastic stack-eko zati bat) erregistroetan oinarritutako datuak bistaratzen ditu
 
-![Kibana-k (Elastic stack-eko zati bat) erregistroetan oinarritutako datuak bistaratzen ditu](/assets/images/smartlogging2.jpg "Kibana-k (Elastic stack-eko zati bat) erregistroetan oinarritutako datuak bistaratzen ditu")
+![Kibana-k (Elastic stack-eko zati bat) erregistroetan oinarritutako datuak bistaratzen ditu](../../assets/images/smartlogging2.jpg "Kibana-k (Elastic stack-eko zati bat) erregistroetan oinarritutako datuak bistaratzen ditu")
 
 <br/><br/>
 

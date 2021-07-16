@@ -10,7 +10,7 @@ Sekcja wspólnych wskazówek bezpieczeństwa zawiera najlepsze praktyki, które 
 
 **W przeciwnym razie:** Atakujący mogą przeprowadzać ataki typu man-in-the-middle, szpiegować zachowanie użytkowników i wykonywać jeszcze bardziej złośliwe działania, gdy połączenie nie jest szyfrowane
 
-🔗 [**Czytaj więcej: Running a secure Node.js server**](/sections/security/secureserver.md)
+🔗 [**Czytaj więcej: Running a secure Node.js server**](./secureserver.md)
 
 <br/><br/>
 

@@ -10,7 +10,7 @@
 
 ### 比較: Node クラスタと nginx それぞれを使ったバランシング
 
-![バランシングの比較 Node クラスタ vs nginx](/assets/images/utilizecpucores1.png "バランシングの比較 Node クラスタ vs nginx")
+![バランシングの比較 Node クラスタ vs nginx](../../assets/images/utilizecpucores1.png "バランシングの比較 Node クラスタ vs nginx")
 
 <br/><br/>
 

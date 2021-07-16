@@ -10,7 +10,7 @@ Pode não ser uma surpresa que, em sua forma básica, o Node seja executado em u
 
 ### Comparação: balanceamento usando o cluster do Node versus o nginx
 
-![Balanceamento usando o cluster do Node versus o nginx](/assets/images/utilizecpucores1.png "Balanceamento usando o cluster do Node versus o nginx")
+![Balanceamento usando o cluster do Node versus o nginx](../../assets/images/utilizecpucores1.png "Balanceamento usando o cluster do Node versus o nginx")
 
 <br/><br/>
 

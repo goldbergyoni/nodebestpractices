@@ -35,7 +35,7 @@ const unsafe = new RegExp('/(x+x+)+y/)');
 ```
 `eslint-plugin-security` erabiliz antzemandako praktika ez-seguruen adibide batzuk:
 
-![nsp check adibidea](/assets/images/eslint-plugin-security.png)
+![nsp check adibidea](../../assets/images/eslint-plugin-security.png)
 
 ### Beste blogari batzuek diotena
 

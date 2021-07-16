@@ -82,6 +82,6 @@ logger.log('info', 'Test Log Message with some parameter %s', 'some parameter', 
 
  ### 例: Docker と Splunk を例にしたアーキテクチャの概要
 
-![alt text](/assets/images/logging-overview.png "ログルーティングの概要")
+![alt text](../../assets/images/logging-overview.png "ログルーティングの概要")
 
 <br/><br/>

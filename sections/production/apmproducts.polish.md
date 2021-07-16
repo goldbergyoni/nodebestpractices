@@ -10,16 +10,16 @@ APM (application performance monitoring) odnosi się do rodziny produktów, któ
 
 ### APM przykład - produkt komercyjny, który wizualizuje wydajność aplikacji między usługami
 
-![APM example](/assets/images/apm1.png "APM example")
+![APM example](../../assets/images/apm1.png "APM example")
 
 <br/><br/>
 
 ### APM przykład - produkt komercyjny, który podkreśla ocenę doświadczenia użytkownika
 
-![APM example](/assets/images/apm2.png "APM example")
+![APM example](../../assets/images/apm2.png "APM example")
 
 <br/><br/>
 
 ### APM przykład - produkt komercyjny, który wyróżnia wolne ścieżki kodu
 
-![APM example](/assets/images/apm3.png "APM example")
+![APM example](../../assets/images/apm3.png "APM example")

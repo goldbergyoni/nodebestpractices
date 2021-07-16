@@ -58,7 +58,7 @@ test("Premium gisa klasifikatua izan beharko litzateke", () => {
 
 ["30 Node.jsren proba jarraibide egokiak" blogetik hartua, Yoni Goldbergen eskutik](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347)
 
-![Proba txostenaren adibidea](/assets/images/6-parts-in-test.jpg "Proba txostenaren adibidea")
+![Proba txostenaren adibidea](../../assets/images/6-parts-in-test.jpg "Proba txostenaren adibidea")
 
 <br/><br/>
 
