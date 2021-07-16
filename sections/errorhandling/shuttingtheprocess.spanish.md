@@ -6,28 +6,76 @@ En algún lugar del código, un objeto gestor de errores es responsable de decid
 
 ### Código de ejemplo: Decidiendo si terminar el proceso
 
+<details>
+<summary><strong>Javascript</strong></summary>
+
 ```javascript
-// Assuming developers mark known operational errors with error.isOperational=true, read best practice #3
-process.on('uncaughtException', function(error) {
+// Asumiendo desarrolladores marquen errores operacionales conocidos con error.isOperational=true, ver mejor práctica #3
+process.on('uncaughtException', (error) => {
   errorManagement.handler.handleError(error);
   if(!errorManagement.handler.isTrustedError(error))
-  process.exit(1)
+    process.exit(1)
 });
 
-// centralized error handler encapsulates error-handling related logic
+// Manejador de errores centralizado encapsula la lógica relacionada al manejo de errores
 function errorHandler() {
-  this.handleError = function (error) {
-    return logger.logError(err)
+  this.handleError = (error) => {
+    return logger.logError(error)
       .then(sendMailToAdminIfCritical)
       .then(saveInOpsQueueIfCritical)
       .then(determineIfOperationalError);
   }
 
-  this.isTrustedError = function (error) {
+  this.isTrustedError = (error) => {
     return error.isOperational;
   }
 }
 ```
+</details>
+
+<details>
+<summary><strong>Typescript</strong></summary>
+
+```typescript
+// Asumiendo desarrolladores marquen errores operacionales conocidos con error.isOperational=true, ver mejor práctica #3
+process.on('uncaughtException', (error: Error) => {
+  errorManagement.handler.handleError(error);
+  if(!errorManagement.handler.isTrustedError(error))
+    process.exit(1)
+});
+
+// Manejador de errores centralizado encapsula la lógica relacionada al manejo de errores
+export class AppError extends Error {
+  public readonly isOperational: boolean;
+
+  constructor(description: string, isOperational: boolean) {
+    super(description);
+    Object.setPrototypeOf(this, new.target.prototype); // restaura cadena de prototipo
+    this.isOperational = isOperational;
+    Error.captureStackTrace(this);
+  }
+}
+
+// Manejador de errores centralizado encapsula la lógica relacionada al manejo de errores
+class ErrorHandler {
+  public async handleError(err: Error): Promise<void> {
+    await logger.logError(err);
+    await sendMailToAdminIfCritical();
+    await saveInOpsQueueIfCritical();
+    await determineIfOperationalError();
+  };
+
+  public isTrustedError(error: Error) {
+    if (error instanceof AppError) {
+      return error.isOperational;
+    }
+    return false;
+  }
+}
+
+export const handler = new ErrorHandler();
+```
+</details>
 
 ### Cita de blog: "La mejor manera es terminar el proceso"
 
@@ -47,9 +95,9 @@ Del blog: JS Recipes
 3. A balanced approach between the two
 
 > …Hay principalmente tres escuelas de pensamiento sobre el manejo de errores:
-1. Deja que la aplicación falle y reiníciala.
+1. Deja que la aplicación falle y reiniciala.
 2. Maneja todos los errores y nunca falles.
-3. Un enfoque balanceado entre las dos anteriores
+3. Un enfoque balanceado entre las dos anteriores.
 
 ### Cita de blog: "No hay una forma segura de irse sin crear un estado frágil indefinido"
 
@@ -57,4 +105,4 @@ From Node.js official documentation
 
 > …By the very nature of how throw works in JavaScript, there is almost never any way to safely “pick up where you left off”, without leaking references, or creating some other sort of undefined brittle state. The safest way to respond to a thrown error is to shut down the process. Of course, in a normal web server, you might have many connections open, and it is not reasonable to abruptly shut those down because an error was triggered by someone else. The better approach is to send an error response to the request that triggered the error while letting the others finish in their normal time, and stop listening for new requests in that worker.
 
- > …Por la misma naturaleza de cómo throw funciona en JavaScript, casi nunca hay una forma segura de "seguir donde lo dejaste", sin generar fugas de referencias, o sin crear algún otro tipo de estado frágil indefinido. La forma más segura de responder a un error lanzado es apagar el proceso. Claro, en un web server normal, podrías tener muchas conexiones abiertas, y no es razonable cerrarlas abruptamente porque un error haya sido disparado por alguna otra persona. El mejor enfoque es enviar una respuesta de error a la petición que disparó el error mientras dejas las otras terminar en su tiempo normal, y parar de escuchar nuevas peticiones en ese worker.
+ > …Por la misma naturaleza de cómo throw funciona en JavaScript, casi nunca hay una forma segura de "seguir donde lo dejaste", sin generar fugas de referencias, o sin crear algún otro tipo de estado frágil indefinido. La forma más segura de responder a un error lanzado es terminar el proceso. Claro, en un servidor web normal, podrías tener muchas conexiones abiertas, y no es razonable cerrarlas abruptamente porque un error haya sido disparado por alguna otra persona. El mejor enfoque es enviar una respuesta de error a la petición que disparó el error mientras dejas las otras terminar en su tiempo normal, y parar de escuchar nuevas peticiones en ese worker.
