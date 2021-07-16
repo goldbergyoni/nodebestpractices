@@ -18,7 +18,7 @@
 
 <br/>
 
-Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md), [![EU](/assets/flags/EU.png)**EU**](/README.basque.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** dan ![TR](/assets/flags/TR.png)**TR** dalam proses!)](#translations)
+Baca dalam bahasa yang berbeda: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md), [![EU](/assets/flags/EU.png)**EU**](/README.basque.md) [(![ES](/assets/flags/ES.png)**ES**, **NL**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** dan ![TR](/assets/flags/TR.png)**TR** dalam proses!)](#translations)
 
 <br/>
 
@@ -1287,6 +1287,7 @@ Semua terjemahan merupakan kontribusi dari komunitas. Kami akan dengan senang ha
 - ![HE](/assets/flags/HE.png) Ibrani ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/156))
 - ![KR](/assets/flags/KR.png) [Korea](README.korean.md) - Terima kasih kepada [Sangbeom Han](https://github.com/uronly14me) ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/94))
 - ![ES](/assets/flags/ES.png) [Spanyol](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/95))
+- Dutch ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/1020))
 - ![TR](/assets/flags/TR.png) Turki ([Diskusi](https://github.com/goldbergyoni/nodebestpractices/issues/139))
 
 <br/><br/>
