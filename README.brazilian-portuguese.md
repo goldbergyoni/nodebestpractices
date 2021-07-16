@@ -232,7 +232,7 @@ Leia em diferentes idiomas: [![CN](./assets/flags/CN.png)**CN**](./README.chines
 A ausência dessas informações provavelmente complicariam a compreensão do fluxo que leva ao erro,
 especialmente se a causa do comportamento anormal estiver dentro da função ausente 
 
-<!-- 🔗 [**Leia Mais: retornando promises**](/sections/errorhandling/returningpromises.brazilian-portuguese.md) -->
+🔗 [**Leia Mais: retornando promises**](./sections/errorhandling/returningpromises.md)
 
 <br/><br/><br/>
 
@@ -472,7 +472,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Você não somente passará várias horas do dia para entender o código principal, mas agora também gastará várias horas no que deveria ter sido uma simples parte do dia (testando) esticando seu cérebro. 
 
-<!-- 🔗 [**Leia Mais: Estutura de testes padrão AAA**](/sections/testingandquality/aaa.brazilian-portuguese.md) -->
+🔗 [**Leia Mais: Estutura de testes padrão AAA**](./sections/testingandquality/aaa.md)
 
 <br/><br/>
 
@@ -560,7 +560,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Um bug no 'middleware Express' === um bug em todas ou na maioria das solicitações 
 
-<!-- 🔗 [**Read More: Test middlewares in isolation**](/sections/testingandquality/test-middlewares.brazilian-portuguese.md) -->
+🔗 [**Read More: Test middlewares in isolation**](./sections/testingandquality/test-middlewares.md)
 
 <br/><br/><br/>
 
@@ -752,7 +752,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** o QA testará completamente o código e aprovará uma versão que se comportará de maneira diferente em produção. Pior ainda, diferentes servidores no mesmo cluster de produção podem executar códigos diferentes.
 
-<!-- 🔗 [**Read More: Use npm ci**](/sections/production/installpackageswithnpmci.md) -->
+🔗 [**Read More: Use npm ci**](./sections/production/installpackageswithnpmci.md)
 
 <br/><br/><br/>
 
