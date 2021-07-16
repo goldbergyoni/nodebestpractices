@@ -18,7 +18,10 @@ When creating your database logic you should watch out for eventual injection ve
 
 ```javascript
 // A query of
-db.balances.find( { active: true, $where: function() { return obj.credits - obj.debits < userInput; } } );
+db.balances.find({
+  active: true,
+  $where: (obj) => obj.credits - obj.debits < userInput
+});
 
 // Where userInput equals
 "(function(){var date = new Date(); do{curDate = new Date();}while(curDate-date<10000); return Math.max();})()"
@@ -30,7 +33,7 @@ db.balances.find( { active: true, $where: function() { return obj.credits - obj.
 
 ### Example - SQL injection
 
-```
+```sql
 SELECT username, firstname, lastname FROM users WHERE id = 'user input';
 
 SELECT username, firstname, lastname FROM users WHERE id = 'evil'input';

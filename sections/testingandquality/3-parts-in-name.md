@@ -17,10 +17,10 @@ A test report should tell whether the current application revision satisfies the
 ### Code example: a test name that incluces 3 parts
 ```javascript
 //1. unit under test
-describe('Products Service', function() {
-  describe('Add new product', function() {
+describe('Products Service', () => {
+  describe('Add new product', () => {
     //2. scenario and 3. expectation
-    it('When no price is specified, then the product status is pending approval', ()=> {
+    it('When no price is specified, then the product status is pending approval', () => {
       const newProduct = new ProductService().add(...);
       expect(newProduct.status).to.equal('pendingApproval');
     });
@@ -32,10 +32,10 @@ describe('Products Service', function() {
 
 ### Code Example – Anti Pattern: one must read the entire test code to understand the intent 
 ```javascript
-describe('Products Service', function() {
-  describe('Add new product', function() {
-    it('Should return the right status', ()=> {
-        //hmm, what is this test checking? what are the scenario and expectation?
+describe('Products Service', () => {
+  describe('Add new product', () => {
+    it('Should return the right status', () => {
+      //hmm, what is this test checking? what are the scenario and expectation?
       const newProduct = new ProductService().add(...);
       expect(newProduct.status).to.equal('pendingApproval');
     });
@@ -49,6 +49,6 @@ describe('Products Service', function() {
 
  [From the blog "30 Node.js testing best practices" by Yoni Goldberg](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347)
 
- ![A test report example](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/test-report-like-requirements.jpeg "A test report example")
+ ![A test report example](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/test-report-like-requirements.jpeg "A test report example")
 
 <br/><br/>

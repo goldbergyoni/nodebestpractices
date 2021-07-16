@@ -10,13 +10,15 @@ Process environment variables is a set of key-value pairs made available to any 
 
 ### Code example: Setting and reading the NODE_ENV environment variable
 
-```javascript
+```shell script
 // Setting environment variables in bash before starting the node process
 $ NODE_ENV=development
 $ node
+```
 
+```javascript
 // Reading the environment variable using code
-if (process.env.NODE_ENV === “production”)
+if (process.env.NODE_ENV === 'production')
     useCaching = true;
 ```
 
@@ -27,6 +29,6 @@ if (process.env.NODE_ENV === “production”)
 From the blog [dynatrace](https://www.dynatrace.com/blog/the-drastic-effects-of-omitting-node_env-in-your-express-js-applications/):
 > ...In Node.js there is a convention to use a variable called NODE_ENV to set the current mode. We see that it, in fact, reads NODE_ENV and defaults to ‘development’ if it isn’t set. We clearly see that by setting NODE_ENV to production the number of requests Node.js can handle jumps by around two-thirds while the CPU usage even drops slightly. *Let me emphasize this: Setting NODE_ENV to production makes your application 3 times faster!*
 
-![NODE_ENV=production](/assets/images/setnodeenv1.png "NODE_ENV=production")
+![NODE_ENV=production](../../assets/images/setnodeenv1.png "NODE_ENV=production")
 
 <br/><br/>

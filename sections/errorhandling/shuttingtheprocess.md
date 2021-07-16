@@ -6,28 +6,76 @@ Somewhere within your code, an error handler object is responsible for deciding 
 
 ### Code example: deciding whether to crash
 
+<details>
+<summary><strong>Javascript</strong></summary>
+
 ```javascript
 // Assuming developers mark known operational errors with error.isOperational=true, read best practice #3
-process.on('uncaughtException', function(error) {
+process.on('uncaughtException', (error) => {
   errorManagement.handler.handleError(error);
   if(!errorManagement.handler.isTrustedError(error))
-  process.exit(1)
+    process.exit(1)
 });
 
 // centralized error handler encapsulates error-handling related logic
 function errorHandler() {
-  this.handleError = function (error) {
-    return logger.logError(err)
+  this.handleError = (error) => {
+    return logger.logError(error)
       .then(sendMailToAdminIfCritical)
       .then(saveInOpsQueueIfCritical)
       .then(determineIfOperationalError);
   }
 
-  this.isTrustedError = function (error) {
+  this.isTrustedError = (error) => {
     return error.isOperational;
   }
 }
 ```
+</details>
+
+<details>
+<summary><strong>Typescript</strong></summary>
+
+```typescript
+// Assuming developers mark known operational errors with error.isOperational=true, read best practice #3
+process.on('uncaughtException', (error: Error) => {
+  errorManagement.handler.handleError(error);
+  if(!errorManagement.handler.isTrustedError(error))
+    process.exit(1)
+});
+
+// centralized error object that derives from Node’s Error
+export class AppError extends Error {
+  public readonly isOperational: boolean;
+
+  constructor(description: string, isOperational: boolean) {
+    super(description);
+    Object.setPrototypeOf(this, new.target.prototype); // restore prototype chain
+    this.isOperational = isOperational;
+    Error.captureStackTrace(this);
+  }
+}
+
+// centralized error handler encapsulates error-handling related logic
+class ErrorHandler {
+  public async handleError(err: Error): Promise<void> {
+    await logger.logError(err);
+    await sendMailToAdminIfCritical();
+    await saveInOpsQueueIfCritical();
+    await determineIfOperationalError();
+  };
+
+  public isTrustedError(error: Error) {
+    if (error instanceof AppError) {
+      return error.isOperational;
+    }
+    return false;
+  }
+}
+
+export const handler = new ErrorHandler();
+```
+</details>
 
 ### Blog Quote: "The best way is to crash"
 

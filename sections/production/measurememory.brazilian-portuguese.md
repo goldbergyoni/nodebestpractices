@@ -10,7 +10,7 @@ Em um mundo perfeito, um desenvolvedor Web não deve lidar com vazamentos de mem
 
 ### O que Outros Blogueiros Dizem
 
-* Do blog [Dyntrace](http://apmblog.dynatrace.com/):
+* Do blog [Dyntrace](https://www.dynatrace.com/news/blog/understanding-garbage-collection-and-hunting-memory-leaks-in-node-js/):
 > ... ”Como já aprendemos, no Node.js o JavaScript é compilado para código nativo pelo V8. As estruturas de dados nativas resultantes não têm muito a ver com a representação original e são gerenciadas exclusivamente pelo V8. Isso significa que não podemos alocar ou desalocar ativamente a memória em JavaScript. O V8 usa um mecanismo bem conhecido chamado coleta de lixo para resolver esse problema.”
 
 * Do blog [Dyntrace](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load):
@@ -18,7 +18,7 @@ Em um mundo perfeito, um desenvolvedor Web não deve lidar com vazamentos de mem
 Crie dumps de heap com algum tempo e uma boa quantidade de alocação de memória entre
 Compare alguns dumps para descobrir o que está crescendo”
 
-* Do blog [Dyntrace](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load):
+* Do blog [Rising Stack](https://blog.risingstack.com/finding-a-memory-leak-in-node-js/):
 > ... “falha, o Node.js tentará usar cerca de 1,5 GB de memória, que deve ser limitado quando executado em sistemas com menos memória. Esse é o comportamento esperado, pois a coleta de lixo é uma operação muito cara.
 A solução para isso foi adicionar um parâmetro extra ao processo Node.js:
 node –max_old_space_size=400 server.js –production ”

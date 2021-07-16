@@ -27,7 +27,7 @@ router.get('/ops/heapdump', (req, res, next) => {
 
     heapdump.writeSnapshot((err, filename) => {
         console.log('heapdump file is ready to be sent to the caller', filename);
-        fs.readFile(filename, "utf-8", (err, data) => {
+        fs.readFile(filename, 'utf-8', (err, data) => {
             res.end(data);
         });
     });
@@ -42,4 +42,4 @@ router.get('/ops/heapdump', (req, res, next) => {
 
 ▶ [Getting your Node.js app production ready (Video)](https://www.youtube.com/watch?v=lUsNne-_VIk)
 
-![Getting your Node.js app production ready](/assets/images/createmaintenanceendpoint1.png "Getting your Node.js app production ready")
+![Getting your Node.js app production ready](../../assets/images/createmaintenanceendpoint1.png "Getting your Node.js app production ready")

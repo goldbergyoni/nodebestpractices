@@ -8,7 +8,7 @@ Avoid requiring/importing another file with a path that was given as parameter d
 
 ```javascript
 // insecure, as helperPath variable may have been modified by user input
-const uploadHelpers = require(helperPath);
+const badWayToRequireUploadHelpers = require(helperPath);
 
 // secure
 const uploadHelpers = require('./helpers/upload');

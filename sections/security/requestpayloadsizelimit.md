@@ -37,7 +37,7 @@ app.listen(3000, () => console.log('Example app listening on port 3000!'));
 
 ### Example configuration for `nginx`
 
-```
+```nginx
 http {
     ...
     # Limit the body size for ALL incoming requests to 1 MB

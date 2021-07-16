@@ -1,0 +1,28 @@
+{
+  "name": "node-app-with-docker",
+  "version": "1.0.0",
+  "description": "An example node app that uses docker to be built",
+  "main": "src/app.ts",
+  "scripts": {
+    "start": "node dist/app.js",
+    "build": "tsc --outDir dist -m commonjs -t ES2020 src/app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goldbergyoni/nodebestpractices.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/goldbergyoni/nodebestpractices/issues"
+  },
+  "homepage": "https://github.com/goldbergyoni/nodebestpractices#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.7",
+    "typescript": "^3.9.7"
+  }
+}

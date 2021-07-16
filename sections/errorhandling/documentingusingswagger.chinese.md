@@ -13,4 +13,4 @@ REST API使用HTTP代码返回结果, API用户不仅绝对需要了解API schem
 
  
  ### 有用的工具: Swagger 在线文档创建工具
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/swaggerDoc.png "API error handling")
+![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/swaggerDoc.png "API error handling")
