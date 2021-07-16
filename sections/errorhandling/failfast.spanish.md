@@ -1,4 +1,4 @@
-# Falla rápido, valida los argumentos mediante una librería dedicada
+# Falla rápido, valida los argumentos mediante una biblioteca dedicada
 
 ### Párrafo de explicación
 
@@ -6,7 +6,7 @@ Todos sabemos que revisar argumentos y fallar cuanto antes es importante para ev
 
 ### Wikipedia: Programación defensiva
 
-La programación defensiva es un efoque para mejorar el software y el código, en térmios de calidad general – reduciendo el número de bugs y problems. Haciendo el código comprensible – el código debe ser legible y entendible por lo cual es aprobado en una auditoría de código. Haciendo que el software se comporte de una forma predecible a pesar de entradas inesperadas o acciones del usuario.
+La programación defensiva es un enfoque para mejorar el software y el código, en términos de calidad general – reduciendo el número de bugs y problems. Haciendo el código comprensible – el código debe ser legible y entendible por lo cual es aprobado en una auditoría de código. Haciendo que el software se comporte de una forma predecible a pesar de entradas inesperadas o acciones del usuario.
 
 ### Código de ejemplo: validando una entrada JSON compleja usando Joi
 
@@ -19,27 +19,47 @@ var memberSchema = Joi.object().keys({
 
 function addNewMember(newMember)
 {
- // assertions come first
- Joi.assert(newMember, memberSchema); //throws if validation fails
- // other logic here
+ // validación viene primero
+ Joi.assert(newMember, memberSchema); //Tira error si la validación falla
+ // otra lógica va aquí
 }
 
 ```
 
 ### Anti patrón: no validar produce bugs horribles
 
+<details>
+<summary><strong>Javascript</strong></summary>
+
 ```javascript
-// if the discount is positive let's then redirect the user to pring his discount coupons
-function redirectToPrintDiscount(httpResponse, member, discount)
-{
-    if(discount != 0)
+// Si el descuento es positivo, redirigimos al usuario a imprimir sus cupones de descuento
+function redirectToPrintDiscount(httpResponse, member, discount) {
+    if (discount != 0) {
         httpResponse.redirect(`/discountPrintView/${member.id}`);
+    }
 }
 
 redirectToPrintDiscount(httpResponse, someMember);
-// forgot to pass the parameter discount, why the heck was the user redirected to the discount screen?
-
+// Olvidamos pasar el parámetro descuento ¿Porqué rayos el usuario fue redirigido a la pantalla de descuento?
 ```
+</details>
+
+<details>
+<summary><strong>Typescript</strong></summary>
+
+```typescript
+// Si el descuento es positivo, redirigimos al usuario a imprimir sus cupones de descuento
+function redirectToPrintDiscount(httpResponse: Response, member: Member, discount: number) {
+  if (discount != 0) {
+    httpResponse.redirect(`/discountPrintView/${member.id}`);
+  }
+}
+
+redirectToPrintDiscount(httpResponse, someMember, -12);
+// We passed a negative parameter discount, why the heck was the user redirected to the discount screen?
+//Pasamos un valor de descuento negativo, ¿Porqué rayos el usuario fue redirigido a la pantalla de descuento?
+```
+</details>
 
 ### Cita de blog: "Deberías arrojar esos errores inmediatamente"
 

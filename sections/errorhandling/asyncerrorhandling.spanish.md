@@ -2,32 +2,52 @@
 
 ### Párrafo de explicación
 
-Los callbacks no escalan bien ya que muchos programadores no están familiarizados con ellos. Te obligan a estar pendiente de errores por todos lados y a lidiar con un anidamiento de código excesivo, lo cual dificulta la comprensión del flujo de código. Librerías prometedoras como BlueBird, async y Q empaquetan un estilo de código estándar utilizando RETURN y THROW para controlar el flujo del programa. Específicamente, soportan el estilo favorito de gestión de errores try-catch, liberando a la ruta principal de código de tratar con errores en cada función.
+Los callbacks no escalan bien ya que muchos programadores no están familiarizados con ellos. Te obligan a estar pendiente de errores por todos lados y a lidiar con un anidamiento de código excesivo, lo cual dificulta la comprensión del flujo de código. Bibliotecas prometedoras como BlueBird, async y Q empaquetan un estilo de código estándar utilizando RETURN y THROW para controlar el flujo del programa. Específicamente, soportan el estilo favorito de gestión de errores try-catch, liberando a la ruta principal de código de tratar con errores en cada función.
 
 ### Código de ejemplo – Usando promesas para capturar errores
 
 ```javascript
-doWork()
- .then(doWork)
- .then(doOtherWork)
- .then((result) => doWork)
- .catch((error) => {throw error;})
- .then(verify);
+return functionA()
+  .then(functionB)
+  .then(functionC)
+  .then(functionD)
+  .catch((err) => logger.error(err))
+  .then(alwaysExecuteThisFunction)
 ```
 
+### Código de ejemplo - Usando async/await para capturar errores
+
+```javascript
+async function executeAsyncTask () {
+  try {
+    const valueA = await functionA();
+    const valueB = await functionB(valueA);
+    const valueC = await functionC(valueB);
+    return await functionD(valueC);
+  }
+  catch (err) {
+    logger.error(err);
+  } finally {
+    await alwaysExecuteThisFunction();
+  }
+}
+```
 ### Código de ejemplo de anti patrón – Manejo de errores con callbacks
+
+<details>
+<summary><strong>Javascript</strong></summary>
 
 ```javascript
 getData(someParameter, function(err, result) {
     if(err !== null) {
-        // do something like calling the given callback function and pass the error
+        // Hacer algo como llamar el callback y pasar el error
         getMoreData(a, function(err, result) {
             if(err !== null) {
-                // do something like calling the given callback function and pass the error
+                // Hacer algo como llamar el callback y pasar el error
                 getMoreData(b, function(c) {
                     getMoreData(d, function(e) {
                         if(err !== null ) {
-                            // you get the idea? 
+                            // ¿Ya te diste cuenta? 
                         }
                     })
                 });
@@ -36,6 +56,32 @@ getData(someParameter, function(err, result) {
     }
 });
 ```
+
+</details>
+
+<details>
+<summary><strong>Typescript</strong></summary>
+
+```typescript
+getData(someParameter, function(err: Error | null, resultA: ResultA) {
+  if(err !== null) {
+    // do something like calling the given callback function and pass the error
+    getMoreData(resultA, function(err: Error | null, resultB: ResultB) {
+      if(err !== null) {
+        // do something like calling the given callback function and pass the error
+        getMoreData(resultB, function(resultC: ResultC) {
+          getMoreData(resultC, function(err: Error | null, d: ResultD) {
+            if(err !== null) {
+              // you get the idea?
+            }
+          })
+        });
+      }
+    });
+  }
+});
+```
+</details>
 
 ### Cita de blog: "Tenemos un problema con las promesas"
 
@@ -68,4 +114,4 @@ getData(someParameter, function(err, result) {
  > ……One of the best things about asynchronous, callback-based programming is that basically all those regular flow control constructs you are used to are completely broken. However, the one I find most broken is the handling of exceptions. Javascript provides a fairly familiar try…catch construct for dealing with exceptions. The problem with exceptions is that they provide a great way of short-cutting errors up a call stack, but end up being completely useless of the error happens on a different stack…
 
 
- > ……Una de las mejores cosas sobre la programación asíncrona, basada en callbacks es que basicamente todas esas construcciones de control de flujo a las que estás acostumbrado están completamente rotas. Sin embargo, la que encuentro más rota es el manejo de excepciones. Javascript provee una construcción bastante familiar de try…catch para manejar excepciones. El problema con las excepciones es que proveen una excelente forma de enviar errores hacia arriba en el stack de llamadas, pero termina siendo completamente inútil si el error ocurre en un stack diferente...
+ > ……Una de las mejores cosas sobre la programación asíncrona, basada en callbacks es que básicamente todas esas construcciones de control de flujo a las que estás acostumbrado están completamente rotas. Sin embargo, la que encuentro más rota es el manejo de excepciones. Javascript provee una construcción bastante familiar de try…catch para manejar excepciones. El problema con las excepciones es que proveen una excelente forma de enviar errores hacia arriba en el stack de llamadas, pero termina siendo completamente inútil si el error ocurre en un stack diferente...

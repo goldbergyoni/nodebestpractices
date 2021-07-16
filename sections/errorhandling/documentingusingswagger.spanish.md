@@ -1,8 +1,45 @@
-# Documentar errores API mediante Swagger
+# Documentar errores API utilizando la especificación OpenAPI (previamente conocida como Swagger) o GraphQL
 
 ### Párrafo de explicación
 
-Las APIs basadas en REST devuelven resultados utilizando códigos de estado HTTP. Es absolutamente necesario para el usuario de la API el ser consciente, no solo del esquema API, sino también de los errores potenciales. De ese modo puede atrapar el error y actuar en consecuencia. Por ejemplo, la documentación de tu API puede aclarar por adelantado que se devuelve el código HTTP 409 cuando el nombre del cliente ya existe (asumiendo que la API registre nuevos usuarios), por tanto la aplicación que consume la API puede proporcionar la mejor UX para la situación dada. Swagger es un estándar que define un esquema para generar documentación API, ofreciendo un ecosistema de herramientas que permiten crear fácilmente documentación online. Observa las siguientes capturas de pantalla.
+Las APIs basadas en REST devuelven resultados utilizando códigos de estado HTTP. Es absolutamente necesario para el usuario de la API el ser consciente, no solo del esquema API, sino también de los errores potenciales. De ese modo puede atrapar el error y actuar en consecuencia. Por ejemplo, la documentación de tu API puede aclarar por adelantado que se devuelve el código HTTP 409 cuando el nombre del cliente ya existe (asumiendo que la API registre nuevos usuarios), por tanto la aplicación que consume la API puede proporcionar la mejor UX para la situación dada. OpenAPI (antes Swagger) es un estándar que define un esquema para generar documentación API, ofreciendo un ecosistema de herramientas que permiten crear fácilmente documentación online. Observa las siguientes capturas de pantalla.
+
+Si ya está utilizando GraphQL para tus endpoints, su esquema ya contiene garantías estrictas de como se verán los errores ([descritos en las especificaciones](https://facebook.github.io/graphql/June2018/#sec-Errors)) y como las herramientas del cliente deberían de tratarlos. Ademas, puede complementarlo con documentación basada en comentarios
+
+### Ejemplo de error de GraphQL
+
+> TEste ejemplo usa [SWAPI](https://graphql.org/swapi-graphql), la API de Star Wars.
+
+```graphql
+# debería fallar porque el id no es válido
+{
+  film(id: "1ZmlsbXM6MQ==") {
+    title
+  }
+}
+```
+
+```json
+{
+  "errors": [
+    {
+      "message": "No entry in local cache for https://swapi.co/api/films/.../",
+      "locations": [
+        {
+          "line": 2,
+          "column": 3
+        }
+      ],
+      "path": [
+        "film"
+      ]
+    }
+  ],
+  "data": {
+    "film": null
+  }
+}
+```
 
 ### Cita de blog: "Debes decirle a tus clientes qué errores pueden ocurrir"
 

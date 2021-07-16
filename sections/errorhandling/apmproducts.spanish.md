@@ -6,7 +6,7 @@ Exception != Error. La gestión tradicional de errores asume la existencia de Ex
 
 ### Wikipedia sobre APM
 
-En los campos de tecnología de la información y sistemas de administración, Administración de Performance de la Aplicación (APM, por sus siglas en inglés) es el monitoreo y administración de la performance y disponibilidad de aplicaciones de software. APM se encarga de detectar y diagnosticar problemas de performance de aplicaciones complejas para mantener el nivel de servicio esperado. APM es "la traducción de métricas de TI a significado de negocio."
+En los campos de tecnología de la información y administración de sistemas, Administración de Rendimiento de la Aplicación (APM, por sus siglas en inglés) es el monitoreo y administración del rendimiento y disponibilidad de aplicaciones de software. APM se encarga de detectar y diagnosticar problemas de rendimiento de aplicaciones complejas para mantener el nivel de servicio esperado. APM es "la traducción de métricas de TI a significado de negocio."
 
 ### Entendiendo el mercado de APM
 
@@ -16,10 +16,10 @@ Los productos APM constituyen 3 segmentos principales:
 
 2. Instrumentación de código – familia de productos que requiere embeber un agente en la aplicación para usar características como detección de código lento, estadística de excepciones, monitoreo de performance y mucho más. Algunos ejemplos son New Relic, App Dynamics
 
-3. Tableros de inteligencia operativa – esta línea de productos está enfocada en facilitar métricas y contenido curado al equipo de operaciones que ayude a tener visibilidad de la performance de la aplicación con facilidad. Esto, en general, involucra agregar múltiples fuentes de información (logs de aplicación, logs de BD, logs de servidores, etc) y trabajo previo de diseño de tableros. Algunos ejemplos son [Datadog](https://www.datadoghq.com/), [Splunk](https://www.splunk.com/), [Zabbix](https://www.zabbix.com/)
+3. Tableros de inteligencia operativa – esta línea de productos está enfocada en facilitar métricas y contenido curado al equipo de operaciones que ayude a tener visibilidad del rendimiento de la aplicación con facilidad. Esto, en general, involucra agregar múltiples fuentes de información (logs de aplicación, logs de BD, logs de servidores, etc) y trabajo previo de diseño de tableros. Algunos ejemplos son [Datadog](https://www.datadoghq.com/), [Splunk](https://www.splunk.com/), [Zabbix](https://www.zabbix.com/)
 
 ### Ejemplo: UpTimeRobot.Com – Dashboard de monitoreo de Sitio web
 ![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/uptimerobot.jpg "Dashboard de monitoreo de Sitio web")
 
-### Ejemplo: AppDynamics.Com – Monitoreo end to end combinado con instrumentación de código
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/app-dynamics-dashboard.png "Monitoreo end to end combinado con instrumentación de código")
+### Ejemplo: AppDynamics.Com – Monitoreo punto a punto combinado con instrumentación de código
+![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/app-dynamics-dashboard.png "Monitoreo punto a punto combinado con instrumentación de código")
