@@ -4,22 +4,22 @@
 
 ### Párrafo de explicación
 
-Tu código depende de muchos paquetes externos. Digamos que 'requiere' y usa momentjs-2.1.4, entonces, por defecto, al deployear a producción NPM quizá baje momentjs 2.1.5, lo que por desgracia arroja nuevos bugs a la sopa. Utilizando archivos de configuración de NPM y el argumento ```–save-exact=true``` se le ordena a NPM hacer uso de la versión exacta que se instaló para que la próxima vez que ejecutes ```npm install``` (en producción o en un contenedor Docker que vas a mandar para testing) se instale la misma versión del paquete. Una solución alternativa y popular es usar un archivo `.shrinkwrap` (generado fácilmente con NPM) que declara con exactitud qué paquetes y versiones deben instalarse de modo que ningún entorno pueda verse tentado a buscar versiones más recientes.
+Tu código depende de muchos paquetes externos. Digamos que 'requiere' y usa momentjs-2.1.4, entonces, por defecto, al desplegar a producción NPM quizá baje momentjs 2.1.5, lo que por desgracia arroja nuevos bugs a la sopa. Utilizando archivos de configuración de NPM y el argumento `–save-exact=true` se le ordena a NPM hacer uso de la versión exacta que se instaló para que la próxima vez que ejecutes `npm install` (en producción o en un contenedor Docker que vas a mandar para pruebas) se instale la misma versión del paquete. Una solución alternativa y popular es usar un archivo `.shrinkwrap` (generado fácilmente con NPM) que declara con exactitud qué paquetes y versiones deben instalarse de modo que ningún entorno pueda verse tentado a buscar versiones más recientes.
 
 * **Actualización:** a partir de NPM 5, las dependencias se bloquean automáticamente mediante .shrinkwrap. Yarn, un gestor de paquetes en auge, también bloquea las dependencias por defecto.
 
 <br/><br/>
 
-### Code example: .npmrc file that instructs NPM to use exact versions
+### Código de ejemplo: archivo .npmrc que instruye a npm a usar las versiones exactas
 
 ```npmrc
-// save this as .npmrc file on the project directory
+// guarda este archivo como .npmrc en el directorio del proyecto
 save-exact:true
 ```
 
 <br/><br/>
 
-### Code example: shrinkwrap.json file that distills the exact dependency tree
+### Código de ejemplo: archivo shrinkwrap.json que destila exactamente el mismo árbol de dependencias
 
 ```json
 {
@@ -39,7 +39,7 @@ save-exact:true
 
 <br/><br/>
 
-### Code example: NPM 5 dependencies lock file – package.json
+### Código de ejemplo: archivo de dependencias bloqueado de NPM 5 – package.json
 
 ```json
 {

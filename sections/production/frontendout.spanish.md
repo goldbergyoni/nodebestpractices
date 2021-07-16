@@ -14,19 +14,19 @@ Tu solución óptima podría seguir uno de los siguientes modelos:
 
 <br/><br/>
 
-### Configuration example: typical nginx configuration for serving static files
+### Ejemplo de configuración: configuración común de Nginx para servir archivos estáticos
 
 ```nginx
-# configure gzip compression
+# configura compresión gzip
 gzip on;
 keepalive 64;
 
-# defining web server
+# definiendo servidor web
 server {
 listen 80;
 listen 443 ssl;
 
-# handle static content
+# manejando contenido estático
 location ~ ^/(images/|img/|javascript/|js/|css/|stylesheets/|flash/|media/|static/|robots.txt|humans.txt|favicon.ico) {
 root /usr/local/silly_face_society/node/public;
 access_log off;
@@ -36,10 +36,12 @@ expires max;
 
 <br/><br/>
 
-### What Other Bloggers Say
+### Blog quote: "usa un middleware de servicio estático, que está optimizado para servir archivos en aplicaciones Express"
 
-From the blog [StrongLoop](https://strongloop.com/strongblog/best-practices-for-express-in-production-part-two-performance-and-reliability/):
+del Blog: [StrongLoop](https://strongloop.com/strongblog/best-practices-for-express-in-production-part-two-performance-and-reliability/)
 
 >…In development, you can use [res.sendFile()](http://expressjs.com/4x/api.html#res.sendFile) to serve static files. But don’t do this in production, because this function has to read from the file system for every file request, so it will encounter significant latency and affect the overall performance of the app. Note that res.sendFile() is not implemented with the sendfile system call, which would make it far more efficient. Instead, use serve-static middleware (or something equivalent), that is optimized for serving files for Express apps. An even better option is to use a reverse proxy to serve static files; see Use a reverse proxy for more information…
+
+> En desarrollo, puedes utilizar [res.sendFile()](http://expressjs.com/4x/api.html#res.sendFile) para servir archivos estáticos. Pero no hagas esto en producción, por que esta función tiene que leer del archivo del sistema para cada petición de archivo, por lo que encontrarás una latencia significante y afectará el rendimiento general de la aplicación. Nota que res.sendFile() no está implementada con la invocación de sistema sendfile, lo que la haría mas eficiente. En su lugar, usa un middleware de servicio estático (o algo equivalente) que está optimizado para servir archivos en aplicaciones Express. Una opción mucho mejor es usar un proxy inverso para servir los archivos estáticos...
 
 <br/><br/>
