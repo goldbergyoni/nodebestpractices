@@ -3,38 +3,55 @@
 # Mejores prácticas de NodeJS
 
 <h1 align="center">
-  <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices" />
+  <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices"/>
 </h1>
 
 <br/>
 
 <div align="center">
-<img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2053%20Best%20practices-blue.svg" alt="50 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Oct%2020%202017-green.svg" alt="Last update: Oct 20, 2017"> <img src="https://img.shields.io/badge/%E2%9C%94%20Updated%20For%20Version%20-%20Node%208.4-brightgreen.svg" alt="Updated for Node v.8.4">
-	</div>
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%20102%20Best%20Practices-blue.svg" alt="102 items"/> <img id="last-update-badge" src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20July%2004%2C%202021-green.svg" alt="Last update: July 04, 2021" /> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2014.0.0-brightgreen.svg" alt="Updated for Node 14.0.0"/>
+</div>
 
 <br/>
 
- [![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **¡Síguenos en Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
- <br/>
+[![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **¡Síguenos en** [**@nodepractices**](https://twitter.com/nodepractices/)
+
+<br/>
+
+Lee en un idioma diferente: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![FR](/assets/flags/FR.png)**FR**](/README.french.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md), [![JA](/assets/flags/JA.png)**JA**](/README.japanese.md), [![EU](/assets/flags/EU.png)**EU**](/README.basque.md) [(![ES](/assets/flags/ES.png)**ES**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** and ![TR](/assets/flags/TR.png)**TR** ¡En proceso! )](#translations)
+
+<br/>
+
+###### Built and maintained by our [Steering Committee](#steering-committee) and [Collaborators](#collaborators)
+
+# Latest Best Practices and News
+
+- **![FR](/assets/flags/FR.png) French translation!1! :** The latest translation that joins our international guide is French. Bienvenue
+
+- **🇯🇵 Japanese translation:** Our guide is now also translated to Japanese! Courtesy of the amazing [YukiOta](https://github.com/YukiOta) and [Yuta Azumi](https://github.com/YA21)
+
+- **🎊 60,000 stars!**: Our repo was starred and trusted by 60,100 developers. We're speechless
+
+<br/><br/>
 
 # ¡Bienvenido! 3 cosas que deberías saber primero:
 **1. Aquí encontrarás docenas de los mejores artículos sobre Node.JS -** este es un resumen y conservación del contenido mejor clasificado de las mejores prácticas de NodeJS
 
-**2. Es la compilación más grande y crece cada semana -** actualmente, se presentan más de 50 prácticas, guías de estilo y consejos arquitectónicos. Damos la bienvenida a issues y pull requests para mantener este libro actualizado. Nos encantaría verte contribuir aquí, ya sea corrigiendo algunos errores de código o sugiriendo nuevas ideas brillantes: se parte del libro de mejores prácticas de Node.JS
+**2. Es la compilación más grande y crece cada semana -** actualmente, se presentan más de 80 prácticas, guías de estilo y consejos arquitectónicos. Nuevos issues y pull request son creados cada día para mantener esta guía actualizada. Nos encantaría verte contribuyendo, ya sea arreglando errores en el código, ayudando en traducciones, o sugiriendo nuevas ideas. Ve las [Normas de contribución](./operations/writing-guidelines.spanish.md)
 
-**3. La mayoría de los puntos tienen información adicional -** Encontrás cerca de cada punto de mejores prácticas el enlace **🔗Leer más** que te dará algunos ejemplos de código, citas de blogs seleccionados y mas información
+**3. La mayoría de los puntos tienen información adicional -** Encontrarás cerca de cada punto de mejores prácticas el enlace **🔗Leer más** que te dará algunos ejemplos de código, citas de blogs seleccionados y mas información
 
 <br/><br/><br/>
 
 ## Tabla de contenidos
 1. [Prácticas para estructura del proyecto (5)](#1-prácticas-de-estructura-del-proyecto)
-2. [Prácticas en manejo de errores (11) ](#2-prácticas-en-manejo-de-errores)
+2. [Prácticas en manejo de errores (12) ](#2-prácticas-en-manejo-de-errores)
 3. [Prácticas de estilo de código (12) ](#3-prácticas-de-estilo-de-código)
-4. [Prácticas de prueba y calidad en general (12) ](#4-pruebas-y-prácticas-generales-de-calidad)
-5. [Prácticas de puesta en producción (18) ](#5-yendo-a-las-prácticas-de-producción)
+4. [Prácticas de prueba y calidad en general (13) ](#4-pruebas-y-prácticas-generales-de-calidad)
+5. [Prácticas de puesta en producción (19) ](#5-yendo-a-las-prácticas-de-producción)
 6. [Prácticas de seguridad (25)](#6-mejores-prácticas-de-seguridad)
-7. [Prácticas de rendimiento (1) (In Progress️ ✍️)](#7-borrador-mejores-prácticas-de-rendimiento)
-8. [Prácticas de Docker (1)](#8-mejores-prácticas-de-docker)
+7. [Prácticas de rendimiento (2) (En Progreso ✍️)](#7-borrador-mejores-prácticas-de-rendimiento)
+8. [Prácticas de Docker (15)](#8-mejores-prácticas-de-docker)
 
 
 <br/><br/><br/>
@@ -42,11 +59,11 @@
 
 ## ![✔] 1.1 Estructura tu solución en componentes
 
-**TL;DR:** El peor inconveniente de las grandes aplicaciones es mantener una gran base de código con cientos de dependencias, un monolito que ralentiza a los desarrolladores que intentan incorporar nuevas características. En cambio, particiona tu código en componentes, cada uno obtiene su propia carpeta o una base de código dedicada, y asegúrate de que cada unidad se mantenga pequeña y simple. Visita 'Leer más' a continuación para ver ejemplos de la estructura correcta del proyecto
+**TL;DR:** El peor inconveniente de las grandes aplicaciones es mantener una gran base de código con cientos de dependencias, un monolito que ralentiza a los desarrolladores que intentan incorporar nuevas características. En cambio, divide tu código en componentes, cada uno obtiene su propia carpeta o una base de código dedicada, y asegúrate de que cada unidad se mantenga pequeña y simple. Visita 'Leer más' a continuación para ver ejemplos de la estructura correcta del proyecto
 
 **De lo contrario:** Cuando desarrolladores codifican nuevas características luchan por darse cuenta del impacto de su cambio y temen romper otros componentes dependientes - las implementaciones se vuelven más lentas y más riesgosas. También se considera más difícil escalar cuando todas las unidades de negocios no están separadas
 
-🔗 [**Leer más: estructura en componentes**](/sections/projectstructre/breakintcomponents.spanish.md)
+🔗 [**Leer más: estructura en componentes**](./sections/projectstructre/breakintcomponents.spanish.md)
 
 <br/><br/>
 
@@ -54,9 +71,9 @@
 
 **TL;DR:** Cada componente debería contener 'capas'- un objeto dedicado para la web, la lógica y código para acceso a datos. Esto no solo genera una clara separación de conceptos sino que también facilita significativamente los mocks y la pruebas del sistema. Aunque este es un patrón muy común, los desarrolladores de APIs tienden a mezclar capas pasando los objetos de la capa web (Express req, res) a la lógica de negocios y capas de datos, esto hace que su aplicación dependa y solo sea accesible por Express.
 
-**De lo contrario:** Una aplicación que mezcla objectos de web con otras capas no puede ser accedida por código de pruebas, CRON jobs y otras llamadas que no son de Express.
+**De lo contrario:** Una aplicación que mezcla objectos de web con otras capas no puede ser accedida por código de pruebas, CRON jobs, eventos de colas de mensajes, entre otros.
 
-🔗 [**Leer más: Aplicar capas a tu aplicación**](/sections/projectstructre/createlayers.spanish.md)
+🔗 [**Leer más: Aplicar capas a tu aplicación**](./sections/projectstructre/createlayers.spanish.md)
 
 <br/><br/>
 
@@ -66,7 +83,7 @@
 
 **De lo contrario:** Tendrás que inventar tu propia implementación y rueda de dependencia
 
-🔗 [**Leer más: Estructura por característica**](/sections/projectstructre/wraputilities.spanish.md)
+🔗 [**Leer más: Estructura por característica**](./sections/projectstructre/wraputilities.spanish.md)
 
 <br/><br/>
 
@@ -76,17 +93,17 @@
 
 **De lo contrario:** Se podrá acceder a tu API para realizar pruebas solo a través de llamadas HTTP (más lento y mucho más difícil para generar informes de cobertura). Probablemente tampoco sea un placer enorme mantener cientos de líneas de código en un solo archivo
 
-🔗 [**Leer más: separar 'servidor' y 'aplicación' de express**](/sections/projectstructre/separateexpress.spanish.md)
+🔗 [**Leer más: separar 'servidor' y 'aplicación' de express**](./sections/projectstructre/separateexpress.spanish.md)
 
 <br/><br/>
 
 ## ![✔] 1.5 Usar una configuración segura, jerárquica y consciente del entorno
 
-**TL;DR:** La configuración perfecta e impecable debe incluir (a) claves que se pueden leer desde el archivo Y desde la variable de entorno (b) los secretos se guardan fuera del código al que se ha hecho commit (c) config es jerárquica para facilitar la localización. Solo hay unos pocos paquetes que pueden ayudar a validar la mayoría de estos casos como [nconf](https://www.npmjs.com/package/nconf) y [config](https://www.npmjs.com/package/config)
+**TL;DR:** La configuración perfecta e impecable debe incluir (a) claves que se pueden leer desde el archivo Y desde la variable de entorno (b) los secretos se guardan fuera del código al que se ha hecho commit (c) config es jerárquica para facilitar la localización. Solo hay unos pocos paquetes que pueden ayudar a validar la mayoría de estos casos como [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config), y [convict](https://www.npmjs.com/package/convict)
 
-**De lo contrario:** No cumplir con ninguno de los requisitos de configuración simplemente frena al equipo de desarrollo o al equipo de devops. Probablemente ambos
+**De lo contrario:** No cumplir con ninguno de los requisitos de configuración simplemente frena al equipo de desarrollo o al equipo de devOps. Probablemente ambos
 
-🔗 [**Leer más: buenas prácticas de configuración**](/sections/projectstructre/configguide.spanish.md)
+🔗 [**Leer más: buenas prácticas de configuración**](./sections/projectstructre/configguide.spanish.md)
 
 
 <br/><br/><br/>
@@ -97,112 +114,122 @@
 
 ## ![✔] 2.1  Usa Async-Await o promesas para manejo de errores asíncronos
 
-**TL;DR:** El manejo de errores asincrónicos en el estilo de callback es probablemente la manera más rápida de ir al infierno (a.k.a, pyramid of doom o pirámide de la perdición). El mejor regalo que le puedes dar a tu código es utilizar una biblioteca de promesas seria o async-await que proporcione una sintaxis de código muy compacta y familiar como try-catch
+**TL;DR:** El manejo de errores asíncronos en el estilo de callback es probablemente la manera más rápida de ir al infierno (a.k.a, pyramid of doom o pirámide de la perdición). El mejor regalo que le puedes dar a tu código es utilizar una biblioteca de promesas seria o async-await que proporciona una sintaxis de código muy compacta y similar al try-catch
 
-**De lo contrario:** El estilo de callback de Node.JS, function (err, response), es una forma prometedora de código no mantenible debido a la combinación de manejo de errores con código accidentado, anidación excesiva y patrones de codificación incómodos
+**De lo contrario:** El estilo de callback de Node.JS, function (err, response), es una forma prometedora de código no mantenible debido a la combinación de manejo de errores con código normal, anidación excesiva y patrones de codificación incómodos
 
-🔗 [**Leer más: evitar callbacks**](/sections/errorhandling/asyncerrorhandling.spanish.md)
+🔗 [**Leer más: evitar callbacks**](./sections/errorhandling/asyncerrorhandling.spanish.md)
 
 <br/><br/>
 
 
-## ![✔] 2.2 Usa solo el objeto Error incorporado
+## ![✔] 2.2 Usa solo el objeto Error nativo
 
-**TL;DR:** Muchos arrojan errores como una cadena o como un tipo personalizado; esto complica la lógica de manejo de errores y la interoperabilidad entre módulos. Ya sea que rechace una promesa, genere una excepción o emita un error, usar solo el objeto de Error incorporado aumentará la uniformidad y evitará la pérdida de información.
+**TL;DR:** Muchos arrojan errores como una cadena o como un tipo personalizado; esto complica la lógica de manejo de errores y la interoperatividad entre módulos. Ya sea que rechace una promesa, genere una excepción o emita un error, usar solo el objeto de Error nativo (o un objecto que herede del objeto Error nativo) aumentará la uniformidad y evitará la pérdida de información. Existe la regla `no-throw-literal` de ESLint que revisa esto (aunque tiene unas [limitaciones](http://eslint.org/docs/rules/no-throw-literal) que pueden ser solucionadas al usar TypeScript y configurando la regla `eslint/no-throw-literal`).
 
 **De lo contrario:** Al invocar algún componente, no estar seguro de qué tipo de errores son retornados, hace que sea mucho más difícil manejar los errores de forma adecuada. Peor aún, el uso de tipos personalizados para describir los errores puede conducir a la pérdida de información de error crítico como el seguimiento de la pila.
 
-🔗 [**Leer más: utilizando el objeto de Error incorporado**](/sections/errorhandling/useonlythebuiltinerror.spanish.md)
+🔗 [**Leer más: utilizando el objeto de Error incorporado**](./sections/errorhandling/useonlythebuiltinerror.spanish.md)
 
 <br/><br/>
 
 ## ![✔] 2.3 Distinguir errores operacionales contra errores del programador
 
-**TL;DR:** Los errores operacionales (por ejemplo, el API recibió una entrada no válida) se refieren a casos conocidos en los que el impacto del error se entiende completamente y se pueden manejar con cuidado. Por otro lado, el error del programador (por ejemplo, tratar de leer la variable no definida) se refiere a fallas desconocidas del código que ordenan reiniciar correctamente la aplicación
+**TL;DR:** Los errores operacionales (por ejemplo, el API recibió una entrada no válida) se refieren a casos conocidos en los que el impacto del error se entiende completamente y se pueden manejar con cuidado. Por otro lado, el error del programador (por ejemplo, tratar de leer la variable no definida) se refiere a fallas desconocidas del código que ordenan reiniciar correctamente la aplicación.
 
-**De lo contrario:** Siempre puedes reiniciar la aplicación cuando aparece un error, pero ¿por qué dejar ~5000 usuarios en línea abajo debido a un error operacional menor, previsto? lo contrario tampoco es ideal: mantener la aplicación activa cuando se produce un problema desconocido (error del programador) puede provocar un comportamiento imprevisto. La diferenciación de los dos permite actuar con tacto y aplicar un enfoque equilibrado basado en el contexto dado
+**De lo contrario:** Siempre puedes reiniciar la aplicación cuando aparece un error, pero ¿Por qué dejar ~5000 usuarios en línea abajo debido a un error operacional menor, previsto? lo contrario tampoco es ideal: Mantener la aplicación activa cuando se produce un problema desconocido (error del programador) puede provocar un comportamiento imprevisto. La diferenciación de los dos permite actuar con tacto y aplicar un enfoque equilibrado basado en el contexto dado.
 
-  🔗 [**Leer más: error operacional vs programador**](/sections/errorhandling/operationalvsprogrammererror.spanish.md)
+  🔗 [**Leer más: error operacional vs programador**](./sections/errorhandling/operationalvsprogrammererror.spanish.md)
 
 <br/><br/>
 
 ## ![✔] 2.4 Manejar los errores centralmente, no dentro de un middleware Express
 
-**TL;DR:** La lógica de manejo de errores, como un correo al administrador y registro de logs, debe encapsularse en un objeto dedicado y centralizado al que todos los end-points (por ejemplo, Express middleware, cron jobs, unit-testing) llaman cuando se produce un error .
+**TL;DR:** La lógica de manejo de errores, como un correo al administrador y registro de logs, debe encapsularse en un objeto dedicado y centralizado al que todos los end-points (por ejemplo, Express middleware, cron jobs, unit-testing) llamen cuando se produce un error.
 
 **De lo contrario:** No manejar los errores dentro de un solo lugar dará lugar a la duplicación del código y, probablemente, a los errores que se manejan de forma incorrecta
 
-🔗 [**Leer más: manejo de errores en un lugar centralizado**](/sections/errorhandling/centralizedhandling.spanish.md)
+🔗 [**Leer más: manejo de errores en un lugar centralizado**](./sections/errorhandling/centralizedhandling.spanish.md)
 
 <br/><br/>
 
-## ![✔] 2.5 Errores del API Document con Swagger
+## ![✔] 2.5 Errores del API Document con Swagger o GraphQL
 
-**TL;DR:** Deja que los clientes de tu API sepan qué errores podrían presentarse como respuesta para que puedan manejarlos cuidadosamente sin fallar. Esto se hace generalmente con frameworks de documentación REST API como Swagger
+**TL;DR:** Deja que los clientes de tu API sepan qué errores podrían presentarse como respuesta, para que puedan manejarlos cuidadosamente sin fallar. Para API's RESTful esto se hace generalmente con frameworks de documentación REST API como Swagger. Si estás utilizando GraphQL, también puedes utilizar tus esquemas y comentarios.
 
-**De lo contrario:** Un cliente del API podría decidir bloquearse y reiniciarse solo porque recibió un error que no pudo entender. Nota: la persona que llama de su API puede ser tu (muy típico en un entorno de microservicios)
+**De lo contrario:** Un cliente del API podría decidir bloquearse y reiniciarse solo porque recibió un error que no pudo entender. Nota: la persona que llama de su API puede ser tu (muy típico en un entorno de microservicios).
 
-🔗 [**Leer más: documentación de errores en Swagger**](/sections/errorhandling/documentingusingswagger.spanish.md)
+🔗 [**Leer más: documentación de errores en Swagger o GraphQL**](./sections/errorhandling/documentingusingswagger.spanish.md)
 
 <br/><br/>
 
 ## ![✔] 2.6 Cerrar el proceso elegantemente cuando un extraño llega
 
-**TL; DR:** Cuando se produce un error desconocido (un error del desarrollador, consulta el número de práctica recomendada número #3): existe incertidumbre acerca del estado de la aplicación. Una práctica común sugiere reiniciar el proceso cuidadosamente usando una herramienta de gestión de procesos como Forever y PM2.
+**TL; DR:** Cuando se produce un error desconocido (un error del desarrollador, consulta el número de práctica recomendada número 2.3): existe incertidumbre acerca del estado de la aplicación. Una práctica común sugiere reiniciar el proceso cuidadosamente usando una herramienta de gestión de procesos como [Forever](https://www.npmjs.com/package/forever) y [PM2](https://pm2.keymetrics.io/).
 
-**De lo contrario:** Cuando se detecta una excepción desconocida, algunos objetos pueden estar en un estado defectuoso (por ejemplo, un emisor de eventos que se usa globalmente y que ya no se activan debido a fallas internas) y todas las solicitudes futuras pueden fallar o comportarse de manera loca
+**De lo contrario:** Cuando se detecta una excepción desconocida, algunos objetos pueden estar en un estado defectuoso (por ejemplo, un emisor de eventos que se usa globalmente y que ya no se activan debido a fallas internas) y todas las solicitudes futuras pueden fallar o comportarse de manera loca.
 
-🔗 [**Leer más: cerrar el proceso**](/sections/errorhandling/shuttingtheprocess.spanish.md)
+🔗 [**Leer más: cerrar el proceso**](./sections/errorhandling/shuttingtheprocess.spanish.md)
 
 <br/><br/>
 
 ## ![✔] 2.7 Usa un logger maduro para aumentar la visibilidad de los errores
 
-**TL;DR:** Un conjunto de herramientas de registro maduras como Winston, Bunyan o Log4J acelerará el descubrimiento y la comprensión de errores. Así que olvídate de console.log.
+**TL;DR:** Un conjunto de herramientas de registro maduras como [Pino](https://github.com/pinojs/pino) o [Log4js](https:www.npmjs.com/package/log4js) acelerará el descubrimiento y la comprensión de errores. Así que olvídate de console.log.
 
-**De lo contrario:** Navegando a través de console.logs o manualmente a través de un archivo de texto desordenado sin consultar herramientas o un lector de registro decente puede mantenerte ocupado en el trabajo hasta tarde
+**De lo contrario:** Navegando a través de console.logs o manualmente a través de un archivo de texto desordenado sin herramientas de consulta o un visor de registro decente puede mantenerte ocupado en el trabajo hasta tarde
 
-🔗 [**Leer más: utilizando un registrador maduro**](/sections/errorhandling/usematurelogger.spanish.md)
+🔗 [**Leer más: utilizando un registrador maduro**](./sections/errorhandling/usematurelogger.spanish.md)
 
 <br/><br/>
 
-## ![✔] 2.8 Flujos de errores de prueba usando su test framework favorito
+## ![✔] 2.8 Flujos de errores de prueba usando su framework de prueba favorito
 
-**TL;DR:** Ya sea que se trate de un profesional de QA automatizado o de una prueba de desarrollador manual: asegúrate de que tu código no solo satisfaga un escenario positivo sino que también maneje y devuelva los errores correctos. Frameworks de prueba como Mocha & Chai pueden manejar esto fácilmente (vea ejemplos de código dentro del "Gist emergente")
+**TL;DR:** Ya sea que se trate de un profesional de QA automatizado o de una prueba de desarrollador manual: asegúrate de que tu código no solo satisfaga un escenario positivo sino que también maneje y devuelva los errores correctos. Frameworks de prueba como Mocha & Chai pueden manejar esto fácilmente (vea ejemplos de código dentro del "Gist emergente").
 
-**De lo contrario:** Sin pruebas, ya sea automática o manualmente, no puedes confiar en nuestro código para devolver los errores correctos. Sin errores significativos, no hay manejo de errores
+**De lo contrario:** Sin pruebas, ya sea automática o manualmente, no puedes confiar en su código para devolver los errores correctos. Sin errores significativos, no hay manejo de errores.
 
-🔗 [**Leer más: probar los flujos de error**](/sections/errorhandling/testingerrorflows.spanish.md)
+🔗 [**Leer más: probar los flujos de error**](./sections/errorhandling/testingerrorflows.spanish.md)
 
 <br/> <br/>
 
 ## ![✔] 2.9 Descubre errores y tiempo de inactividad usando productos APM
 
-**TL;DR:** Los productos de monitoreo y rendimiento (a.k.a APM) miden de forma proactiva tu base de código o API para auto-mágicamente resaltar errores, bloqueos y ralentizar automáticamente partes que echas en falta.
+**TL;DR:** Los productos de monitoreo y rendimiento (a.k.a APM) miden de forma proactiva tu base de código o API para auto-mágicamente resaltar errores, bloqueos y ralentizar partes que no te das cuenta.
 
 **De lo contrario:** Es posible que dediques un gran esfuerzo a medir el rendimiento y los tiempos de inactividad de la API, probablemente nunca sabrás cuáles son las piezas de código más lentas en el escenario del mundo real y cómo afectan estas a la experiencia del usuario.
 
-🔗 [**Leer más: utilizando productos APM**](/sections/errorhandling/apmproducts.spanish.md)
+🔗 [**Leer más: utilizando productos APM**](./sections/errorhandling/apmproducts.spanish.md)
 
 <br/><br/>
 
 ## ![✔] 2.10 Captura rechazos de promesas no controladas
 
-**TL;DR:** Cualquier excepción lanzada dentro de una promesa será tragada y descartada a menos que un desarrollador no se olvide de manejarla de manera explícita. ¡Incluso si su código está suscrito a process.uncaughtException! Supera esto registrándose en el proceso del evento.
+**TL;DR:** Cualquier excepción lanzada dentro de una promesa será tragada y descartada a menos que un desarrollador no se olvide de manejarla de manera explícita. ¡Incluso si su código está suscrito a `process.uncaughtException`! Supera esto registrándose en el proceso del evento `process.unhandledRejection`.
 
 **De lo contrario:** Tus errores serán tragados y no dejarán rastros. Nada de que preocuparse
 
-🔗 [**Leer más: captura rechazos de promesas no controladas**](/sections/errorhandling/catchunhandledpromiserejection.spanish.md)
+🔗 [**Leer más: captura rechazos de promesas no controladas**](./sections/errorhandling/catchunhandledpromiserejection.spanish.md)
 
 <br/><br/>
 
 ## ![✔] 2.11 Falla rápidamente, valida argumentos usando una biblioteca dedicada
 
-**TL; DR:** Esto debería ser parte de sus mejores prácticas para Express - API de Assert para evitar errores desagradables que son mucho más difíciles de seguir más adelante. El código de validación suele ser tedioso a menos que se utilicen bibliotecas muy interesantes como Joi
+**TL; DR:** Valida los datos de entrada en la API para evitar bugs molestos que son difíciles de rastrear mas adelante. La validación de código suele ser tediosa amenos que tengas ona librería que pueda ayudar como [ajv](https://www.npmjs.com/package/ajv) y [Joi](https://www.npmjs.com/package/joi).
 
-**De lo contrario:** Considera esto: tu función espera un argumento numérico "Descuento" que la persona que llama olvida pasar, más adelante su código comprueba si Descuento!= 0 (cantidad de descuento permitido es mayor que cero), entonces permitirás el usuario que disfrute de un descuento. Dios mío, qué desagradable error. ¿Puedes verlo?
+**De lo contrario:** Considera esto: tu función espera un argumento numérico "Descuento" que la persona que llama la función olvida pasar, más adelante su código comprueba si Descuento!= 0 (cantidad de descuento permitido es mayor que cero), entonces permitirás el usuario que disfrute de un descuento. Dios mío, qué desagradable error. ¿Puedes verlo?
 
-🔗 [**Leer más: falla rápidamente**](/sections/errorhandling/failfast.spanish.md)
+🔗 [**Leer más: falla rápidamente**](./sections/errorhandling/failfast.spanish.md)
+
+<br><br>
+
+## ![✔] 2.12 Siempre resuelve las promesas antes de retornarlas para evitar stacktrace parcial
+
+**TL;DR:** Siempre utiliza `return await` cuando regreses una promesa para tener un error stacktrace completo. Si la función regresa una promesa, esa función debe ser declarada como `async` y explícitamente esperar (`await`) la promesa antes de retornarla.
+
+**De lo contrario** La función que regresa una promesa sin esperar no aparecerá en el stacktrace. Esas piezas faltantes probablemente complicarán el entendimiento del flujo que lleva al error, especialmente si la causa del comportamiento está en la función faltante.
+
+🔗 [**Leer más: retornar promesas**](./sections/errorhandling/returningpromises.spanish.md)
 
 <br/><br/><br/>
 
@@ -216,7 +243,7 @@
 
 **De lo contrario:** Los desarrolladores podrían desperdiciar demasiado tiempo centrándose demasiado en el corregir los espacios y el ancho de línea del código
 
-🔗 [**Leer más: Usando ESLint y Prettier**](/sections/codestylepractices/eslint_prettier.spanish.md)
+🔗 [**Leer más: Usando ESLint y Prettier**](./sections/codestylepractices/eslint_prettier.spanish.md)
 
 <br/><br/>
 
@@ -328,9 +355,9 @@ function doSomething() {}
 
 <br/><br/>
 
-## ![✔] 3.7 Escoje const antes que let. No uses var
+## ![✔] 3.7 Escoge const antes que let. No uses var
 
-**TL;DR:** Usar`const` significa que una vez que se asigna una variable, no se puede reasignar. Prefiriendo`const` te ayudaré a no sentirte tentado a usar la misma variable para diferentes usos y a aclarar tu código. Si una variable necesita ser reasignada, en un bucle for, por ejemplo, usa `let` para declararlo. Otro aspecto importante de `let`es que una variable declarada usando solo está disponible en el ámbito del bloque en el que se definió. `var` tiene ámbito de función, no ámbito de bloque, y [no debería ser usada en ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) ahora que tienes `const` y `let` a tu disposición
+**TL;DR:** Usar `const` significa que una vez que se asigna una variable, no se puede reasignar. Prefiriendo `const` te ayudará a no sentirte tentado a usar la misma variable para diferentes usos y a aclarar tu código. Si una variable necesita ser reasignada, en un bucle for, por ejemplo, usa `let` para declararlo. Otro aspecto importante de `let`es que una variable declarada usando solo está disponible en el ámbito del bloque en el que se definió. `var` tiene ámbito de función, no ámbito de bloque, y [no debería ser usada en ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) ahora que tienes `const` y `let` a tu disposición
 
 **De lo contrario:** La depuración se vuelve mucho más engorrosa cuando se sigue una variable que cambia con frecuencia
 
@@ -342,7 +369,7 @@ function doSomething() {}
 
 **TL;DR:** Importa los módulos al comienzo de cada archivo, antes y fuera de cualquier función. Esta práctica recomendada simple no solo lo ayudará a identificar fácil y rápidamente las dependencias de un archivo en la parte superior, sino que también evitará un par de posibles problemas.
 
-**De lo contrario:** Los requisitos se ejecutan sincrónicamente por Node.js. Si se los llama desde una función, puede bloquear el manejo de otras solicitudes en un momento más crítico. Además, si un módulo requerido o cualquiera de sus propias dependencias arroja un error y bloquea el servidor, es mejor averiguarlo lo antes posible, lo que podría no ser el caso si ese módulo se requiere desde una función
+**De lo contrario:** Los requisitos se ejecutan de manera síncrona por Node.js. Si se los llama desde una función, puede bloquear el manejo de otras solicitudes en un momento más crítico. Además, si un módulo requerido o cualquiera de sus propias dependencias arroja un error y bloquea el servidor, es mejor averiguarlo lo antes posible, lo que podría no ser el caso si ese módulo se requiere desde una función
 
 <br/><br/>
 
@@ -368,7 +395,7 @@ module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolve
 
 ## ![✔] 3.10 Usa el operador `===`
 
-**TL;DR:** Prioriza el operador de igualdad `===` por sobre de el operador de igualdad abstracto `==`. `==` comparará dos variables después de convertirlas a un tipo común. No hay conversión de tipo en `===`, y ambas variables deben ser del mismo tipo para ser iguales
+**TL;DR:** Prioriza el operador de igualdad estricto `===` sobre el operador de igualdad abstracto `==`. `==` comparará dos variables después de convertirlas a un tipo común. No hay conversión de tipo en `===`, y ambas variables deben ser del mismo tipo para ser iguales
 
 **De lo contrario:** Variables que no son iguales pueden devolver `true` con el operador `==` 
 
@@ -395,7 +422,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 ## ![✔] 3.11 Usa Async Await, evita callbacks
 
-**TL;DR:** Node 8 LTS ahora tiene soporte completo para Async-await. Esta es una nueva forma de lidiar con el código asincrónico que reemplaza las devoluciones de llamada y las promesas. Async-await no bloquea y hace que el código asincrónico se vea sincrónico. El mejor regalo que puede dar a su código es usar async-await, que proporciona una sintaxis de código mucho más compacta y familiar como try-catch
+**TL;DR:** Node 8 LTS ahora tiene soporte completo para Async-await. Esta es una nueva forma de lidiar con el código asíncrono que reemplaza las devoluciones de llamada y las promesas. Async-await no bloquea y hace que el código asíncrono se vea síncrono. El mejor regalo que puede dar a su código es usar async-await, que proporciona una sintaxis de código mucho más compacta y familiar a try-catch.
 
 **De lo contrario:** El manejo de errores asíncronos en el estilo de callback es probablemente la forma más rápida de ir al infierno: este estilo obliga a verificar los errores por todas partes, lidiar con la incómoda anidación de código y hace que sea difícil razonar sobre el flujo de código
 
@@ -405,7 +432,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 ## ![✔] 3.12 Usar funciones de flecha (=>)
 
-**TL;DR:** Aunque se recomienda usar async-wait y evitar parámetros de función cuando se trata de API más antiguas que aceptan promesas o callbacks. Las funciones de flecha hacen que la estructura del código sea más compacta y mantienen el contexto léxico de la función raíz (i.e. `this`)
+**TL;DR:** Aunque se recomienda usar async-await y evitar parámetros de función cuando se trata de API más antiguas que aceptan promesas o callbacks. Las funciones de flecha hacen que la estructura del código sea más compacta y mantienen el contexto léxico de la función raíz (i.e. `this`)
 
 **De lo contrario:** El código más largo (en las funciones de ES5) es más propenso a errores y engorroso de leer
 
@@ -431,7 +458,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Una implementación simplemente falló, una prueba llamada "Agregar producto" falló. ¿Esto te dice exactamente qué está funcionando mal?
 
-🔗 [**Leer más: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
+🔗 [**Leer más: Incluye 3 partes en cada nombre de prueba**](./sections/testingandquality/3-parts-in-name.spanish.md)
 
 <br/><br/>
 
@@ -441,15 +468,15 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** No solo pasa largas horas diarias entendiendo el código principal, ahora también lo que debería haber sido la parte simple del día (pruebas) ha ejercitado tu cerebro
 
-🔗 [**Leer más: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.md)
+🔗 [**Leer más: Pruebas de estructura por el patrón AAA**](./sections/testingandquality/aaa.spanish.md)
 
 <br/><br/>
 
 ## ![✔] 4.4 Detecta problemas de código con un linter
 
-**TL;DR:** Usa un código de interfaz para verificar la calidad básica y detectar antipatrones temprano. Ejecútala antes de cualquier prueba y agrégalo como un git-hook previo al commit para minimizar el tiempo necesario para revisar y corregir cualquier problema. También verifica la [Sección 3](#3-code-style-practices) sobre las prácticas de estilo de código
+**TL;DR:** Usa un código de interfaz para verificar la calidad básica y detectar anti-patrones temprano. Ejecútala antes de cualquier prueba y agrégalo como un git-hook previo al commit para minimizar el tiempo necesario para revisar y corregir cualquier problema. También verifica la [Sección 3](#3-code-style-practices) sobre las prácticas de estilo de código.
 
-**De lo contrario:** Puede dejar pasar algún código antipatrón y posible código vulnerable a su entorno de producción.
+**De lo contrario:** Puede dejar pasar algún código anti-patrón y posible código vulnerable a su entorno de producción.
 
 <br/><br/>
 
@@ -459,7 +486,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Considera un escenario en el que se cancela la implementación debido a las pruebas fallidas, el equipo ahora pasará un tiempo de investigación precioso que termina en una triste conclusión: el sistema funciona bien, las pruebas sin embargo interfieren entre sí y rompen la construcción
 
-🔗 [**Leer más: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
+🔗 [**Leer más: Evita datos globales**](./sections/testingandquality/avoid-global-test-fixture.spanish.md)
 
 <br/><br/>
 
@@ -499,7 +526,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **TL;DR:** La prueba de extremo a extremo (e2e) que incluye datos en vivo solía ser el eslabón más débil del proceso de CI, ya que depende de múltiples servicios pesados como DB. Usa un entorno que esté lo más cerca posible de su producción real como a-continue
 
-**De lo contrario:** Sin los equipos compuestos por docker, deben mantener una base de datos de prueba para cada entorno de prueba, incluidas las máquinas de los desarrolladores, mantener todas esas bases de datos sincronizadas para que los resultados de la prueba no varíen entre entornos.
+**De lo contrario:** Sin 'docker-compose',los equipos deben mantener una base de datos de prueba para cada entorno de prueba, incluidas las máquinas de los desarrolladores, mantener todas esas bases de datos sincronizadas para que los resultados de la prueba no varíen entre entornos.
 
 <br/><br/>
 
@@ -509,17 +536,27 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Con una mala calidad de código, los errores y el rendimiento siempre serán un problema que ninguna biblioteca nueva brillante o características de última generación podrá solucionar
 
-🔗 [**Leer más: Refactoring!**](/sections/testingandquality/refactoring.md)
+🔗 [**Leer más: Refactoriza!**](./sections/testingandquality/refactoring.spanish.md)
 
 <br/><br/>
 
 ## ![✔] 4.12 Elije con cuidado tu plataforma CI (Jenkins vs CircleCI vs Travis vs Resto del mundo)
 
-**TL;DR:** Tu plataforma de integración continua (CICD) alojará todas las herramientas de calidad (por ejemplo, prueba, pelusa), por lo que debería venir con un ecosistema vibrante de complementos. [Jenkins](https://jenkins.io/) solía ser el valor predeterminado para muchos proyectos, ya que tiene la comunidad más grande junto con una plataforma muy poderosa al precio de una configuración compleja que exige una curva de aprendizaje empinada. Hoy en día, se ha vuelto mucho más fácil configurar una solución de CI utilizando herramientas SaaS como [CircleCI](https://circleci.com) y otros. Estas herramientas permiten crear una tubería de CI flexible sin la carga de administrar toda la infraestructura. Eventualmente, es una compensación entre robustez y velocidad: elije tu lado con cuidado
+**TL;DR:** Tu plataforma de integración continua (CI/CD) alojará todas las herramientas de calidad (por ejemplo, prueba, lint), por lo que debería venir con un ecosistema vibrante de complementos. [Jenkins](https://jenkins.io/) solía ser el valor predeterminado para muchos proyectos, ya que tiene la comunidad más grande junto con una plataforma muy poderosa al precio de una configuración compleja que exige una curva de aprendizaje empinada. Hoy en día, se ha vuelto mucho más fácil configurar una solución de CI utilizando herramientas SaaS como [CircleCI](https://circleci.com) y otros. Estas herramientas permiten crear una tubería de CI flexible sin la carga de administrar toda la infraestructura. Eventualmente, es una compensación entre robustez y velocidad: elije tu lado con cuidado
 
 **De lo contrario:** Elegir un proveedor de nicho puede bloquearlo una vez que necesite una personalización avanzada. Por otro lado, ir con Jenkins podría quemar un tiempo precioso en la configuración de la infraestructura
 
-🔗 [**Leer más: Choosing CI platform**](/sections/testingandquality/citools.spanish.md)
+🔗 [**Leer más: Elige tu plataforma CI**](./sections/testingandquality/citools.spanish.md)
+
+<br><br>
+
+## ![✔] 4.13 Prueba tu middleware por separado
+
+**TL;DR:** Cuando tu middleware tiene una lógica inmensa que se extiende a muchas peticiones, vale la pena realizar pruebas por separado, sin necesidad de despertar todo el framework web. Esto puede hacerse fácilmente pisando y espiando en los objetos {req, res, next}.
+
+**De lo contrario** Un bug en un middleware de express === un bug en todas o casi todas las peticiones
+
+🔗 [**Leer más: Prueba tu middleware por separado**](./sections/testingandquality/test-middlewares.spanish.md)
 
 <br/><br/><br/>
 
@@ -533,17 +570,17 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Fallar === clientes decepcionados. Simple
 
-🔗 [**Leer más: Monitoring!**](/sections/production/monitoring.spanish.md)
+🔗 [**Leer más: Monitorización!**](./sections/production/monitoring.spanish.md)
 
 <br/><br/>
 
 ## ![✔] 5.2. Aumenta la transparencia utilizando unos registros inteligentes
 
-**TL;DR:** Los registros pueden ser un almacén tonto de declaraciones de depuración o el habilitador de un hermoso tablero que cuenta la historia de tu aplicación. Planifica tu plataforma de registro desde el día 1: cómo se recopilan, almacenan y analizan los registros para garantizar que la información deseada (por ejemplo, tasa de error, después de una transacción completa a través de servicios y servidores, etc.) realmente se pueda extraer
+**TL;DR:** Los registros pueden ser un almacén tonto de declaraciones de depuración o el habilitador de un hermoso tablero que cuenta la historia de tu aplicación. Planifica tu plataforma de registro desde el día 1: cómo se recopilan, almacenan y analizan los registros para garantizar que la información deseada (por ejemplo, tasa de error, seguir una transacción completa a través de servicios y servidores, etc.) realmente se pueda extraer
 
 **De lo contrario:** Terminarás con un cuadro negro con el que es difícil razonar y luego empezaras a reescribir todas las declaraciones de registro para agregar información adicional
 
-🔗 [**Leer mas: Increase transparency using smart logging**](/sections/production/smartlogging.spanish.md)
+🔗 [**Leer mas: Aumenta la transparencia utilizando unos registros inteligentes**](./sections/production/smartlogging.spanish.md)
 
 <br/><br/>
 
@@ -553,7 +590,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Tu único subproceso se mantendrá ocupado haciendo tareas de infraestructura en lugar de ocuparse del núcleo de tu aplicación y el rendimiento se degradará en consecuencia
 
-🔗 [**Leer más: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.spanish.md)
+🔗 [**Leer más: Delega todo lo posible a un proxy inverso**](./sections/production/delegatetoproxy.spanish.md)
 
 <br/><br/>
 
@@ -563,7 +600,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** El control de calidad probará a fondo el código y aprobará una versión que se comportará de manera diferente cuando está en producción. Peor aún, diferentes servidores en el mismo clúster de producción pueden ejecutar código diferente
 
-🔗 [**Leer más: Lock dependencies**](/sections/production/lockdependencies.spanish.md)
+🔗 [**Leer más: Bloquear dependencias**](./sections/production/lockdependencies.spanish.md)
 
 <br/><br/>
 
@@ -573,7 +610,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Ejecutar docenas de instancias sin una estrategia clara y demasiadas herramientas juntas (administración de clúster, docker, PM2) podría conducir al caos de DevOps
 
-🔗 [**Leer más: Guard process uptime using the right tool**](/sections/production/guardprocess.spanish.md)
+🔗 [**Leer más: Proteja la disponibilidad del proceso utilizando la herramienta adecuada**](./sections/production/guardprocess.spanish.md)
 
 <br/><br/>
 
@@ -583,17 +620,17 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Es probable que tu aplicación utilice solo el 25% de sus recursos disponibles (!) O incluso menos. Ten en cuenta que un servidor típico tiene 4 núcleos de CPU o más, la implementación ingenua de Node.js utiliza solo 1 (¡incluso utilizando servicios PaaS como AWS beanstalk!)
 
-🔗 [**Leer más: Utilize all CPU cores**](/sections/production/utilizecpu.spanish.md)
+🔗 [**Leer más: Utiliza todos los núcleos de la CPU**](./sections/production/utilizecpu.spanish.md)
 
 <br/><br/>
 
-## ![✔] 5.7. Crear un "punto final de mantenimiento"
+## ![✔] 5.7. Crear un "end point de mantenimiento"
 
 **TL;DR:** Descubre un conjunto de información relacionada con el sistema, como el uso de memoria y REPL, etc. en una API segura. Aunque es muy recomendable confiar en herramientas estándar y de pruebas de batalla, parte de la información y las operaciones valiosas se hacen más fácilmente usando código
 
 **De lo contrario:** Descubrirás que estás realizando muchas "implementaciones de diagnóstico": envío de código a producción solo para extraer cierta información con fines de diagnóstico
 
-🔗 [**Leer más: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.spanish.md)
+🔗 [**Leer más: Crea un ‘endpoint de mantenimiento**](./sections/production/createmaintenanceendpoint.spanish.md)
 
 <br/><br/>
 
@@ -603,7 +640,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Es posible que dediques un gran esfuerzo a medir el rendimiento de la API y los tiempos de inactividad, probablemente nunca te darás cuenta de cuáles son tus partes de código más lentas en un escenario del mundo real y cómo afectan a la experiencia de usuario
 
-🔗 [**Leer más: Discover errors and downtime using APM products**](/sections/production/apmproducts.spanish.md)
+🔗 [**Leer más: Descubre errores y tiempos de inactividad utilizando productos APM**](./sections/production/apmproducts.spanish.md)
 
 <br/><br/>
 
@@ -613,17 +650,17 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Un campeón mundial de IT/DevOps no salvará un sistema mal escrito
 
-🔗 [**Leer más: Make your code production-ready**](/sections/production/productioncode.md)
+🔗 [**Leer más: Prepara tu código para la producción**](./sections/production/productioncode.spanish.md)
 
 <br/><br/>
 
-## ![✔] 5.10. Medir y proteger el uso de la memoria.
+## ![✔] 5.10. Medir y proteger el uso de la memoria
 
-**TL;DR:** Node.js tiene relaciones controvertidas con la memoria: el motor v8 tiene límites suaves en el uso de la memoria (1,4 GB) y hay rutas conocidas para perder memoria en el código de Node, por lo que es imprescindible observar la memoria de proceso de Node. En aplicaciones pequeñas, puedes medir la memoria periódicamente utilizando comandos de shell, pero en aplicaciones medianas y grandes, considera convertir tu reloj de memoria en un sistema de monitoreo robusto
+**TL;DR:** Node.js tiene relaciones controversiales con la memoria: el motor v8 tiene límites suaves en el uso de la memoria (1,4 GB) y hay maneras conocidas para perder memoria en el código de Node, por lo que es imprescindible observar la memoria de proceso de Node. En aplicaciones pequeñas, puedes medir la memoria periódicamente utilizando comandos de shell, pero en aplicaciones medianas y grandes, considera convertir tu reloj de memoria en un sistema de monitoreo robusto
 
 **De lo contrario:** Tu memoria de proceso podría perder cien megabytes por día, como sucedió a [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
 
-🔗 [**Leer más: Measure and guard the memory usage**](/sections/production/measurememory.spanish.md)
+🔗 [**Leer más:  Medir y proteger el uso de la memoria**](./sections/production/measurememory.spanish.md)
 
 <br/><br/>
 
@@ -633,17 +670,17 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Tu único hilo Node estará ocupado transmitiendo cientos de archivos html / images / angular / react en lugar de asignar todos sus recursos para la tarea para la que nació: servir contenido dinámico
 
-🔗 [**Leer más: Get your frontend assets out of Node**](/sections/production/frontendout.spanish.md)
+🔗 [**Leer más: Saca tus recursos frontend de Node**](./sections/production/frontendout.spanish.md)
 
 <br/><br/>
 
 ## ![✔] 5.12. Se anti-estado, mata tus servidores casi todos los días
 
-**TL;DR:** Almacena cualquier tipo de datos (por ejemplo, sesiones de usuario, caché, archivos cargados) en almacenes de datos externos. Considera matar" sus servidores periódicamente o utilice la plataforma "sin servidor" (por ejemplo, AWS Lambda) que aplica explícitamente un comportamiento sin estado
+**TL;DR:** Almacena cualquier tipo de datos (por ejemplo, sesiones de usuario, caché, archivos cargados) en almacenes de datos externos. Considera "matar" sus servidores periódicamente o utilice la plataforma "sin servidor" (por ejemplo, AWS Lambda) que aplica explícitamente un comportamiento sin estado
 
 **De lo contrario:** Un fallo en un servidor dará como resultado el tiempo de inactividad de la aplicación en lugar de simplemente matar una máquina defectuosa. Además, la elasticidad de escalamiento será más difícil debido a la dependencia de un servidor específico
 
-🔗 [**Leer más: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.spanish.md)
+🔗 [**Leer más: Se anti-estado, mata tus servidores casi todos los días**](./sections/production/bestateless.spanish.md)
 
 <br/><br/>
 
@@ -653,35 +690,37 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Mantener tu código limpio de vulnerabilidades sin herramientas dedicadas requerirá que sigas constantemente las publicaciones en línea sobre nuevas amenazas. Bastante tedioso
 
-🔗 [**Leer más: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.spanish.md)
+🔗 [**Leer más: Usa herramientas que detecten vulnerabilidades automáticamente**](./sections/production/detectvulnerabilities.spanish.md)
 
 <br/><br/>
 
-## ![✔] 5.14. Asigna una identificación de transacción a cada instrucción del registro
+## ![✔] 5.14. Asigna un id de transacción a cada instrucción del registro
 
-**TL;DR:** Asigna el mismo identificador, id-transacción: {algún valor}, a cada entrada de registro dentro de una sola solicitud. Luego, al inspeccionar los errores en los registros, encontrarás fácilmente lo que sucedió antes y después. Desafortunadamente, esto no es fácil de lograr en Node debido a su naturaleza asíncrona, vea ejemplos de código dentro
+También conocido como correlation id / transit id / tracing id / request id / request context / etc.
+
+**TL;DR:** Asigna el mismo identificador, id-transacción: {algún valor}, a cada entrada de registro dentro de una sola solicitud. Luego, al inspeccionar los errores en los registros, encontrarás fácilmente lo que sucedió antes y después. Antes de la version 14 de Node, esto no era fácil de hacer debido a la naturaleza asíncrona de Node, pero desde `AsyncLocalStorage` llegó, esto se volvió posible y mas fácil que nunca. Ver códigos de ejemplo adentro
 
 **De lo contrario:** Ver un registro de errores de producción sin el contexto, lo que sucedió antes, hace que sea mucho más difícil y lento razonar sobre el problema
 
-🔗 [**Leer más: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.spanish.md)
+🔗 [**Leer más: asigna un ‘Id de transacción’ a cada instrucción del registro**](./sections/production/assigntransactionid.spanish.md)
 
 <br/><br/>
 
-## ![✔] 5.15. Establecer NODE_ENV=production
+## ![✔] 5.15. Establecer `NODE_ENV=production`
 
-**TL;DR:** Establece la variable de entorno NODE_ENV en "producción" o "desarrollo" para marcar si las optimizaciones de producción deben activarse; muchos paquetes npm determinan el entorno actual y optimizan su código para la producción
+**TL;DR:** Establece la variable de entorno NODE_ENV a "producción" o "desarrollo" para marcar si las optimizaciones de producción deben activarse; muchos paquetes npm determinan el entorno actual y optimizan su código para la producción
 
 **De lo contrario:** Omitir esta simple propiedad podría degradar en gran medida el rendimiento. Por ejemplo, cuando se usa Express para la representación del lado del servidor, omitir `NODE_ENV` lo hace un tercio más lento.
 
-🔗 [**Leer más: Set NODE_ENV=production**](/sections/production/setnodeenv.spanish.md)
+🔗 [**Leer más: Establecer NODE_ENV=production**](./sections/production/setnodeenv.spanish.md)
 
 <br/><br/>
 
-## ![✔] 5.16. Diseña implementaciones automatizadas, atómicas y de tiempo de inactividad cero
+## ![✔] 5.16. Diseña implementaciones automatizadas, atómicas y sin tiempo de inactividad
 
-**TL;DR:** La investigación muestra que los equipos que realizan muchas implementaciones reducen la probabilidad de problemas graves de producción. Las implementaciones rápidas y automatizadas que no requieren pasos manuales riesgosos y el tiempo de inactividad del servicio mejoran significativamente el proceso de implementación. Probablemente deberías lograr esto usando Docker combinado con herramientas de CI, ya que se convirtieron en el estándar de la industria para la implementación simplificada
+**TL;DR:** Las investigaciónes muestran que los equipos que realizan muchas implementaciones reducen la probabilidad de problemas graves de producción. Las implementaciones rápidas y automatizadas que no requieren pasos manuales riesgosos y el tiempo de inactividad del servicio mejoran significativamente el proceso de implementación. Deberías lograr esto usando Docker combinado con herramientas de CI, ya que se convirtieron en el estándar de la industria para la implementación simplificada
 
-**De lo contrario:** Implementaciones largas -> tiempo de inactividad de producción y error relacionado con el ser humano -> equipo desconfiado en la implementación -> menos implementaciones y características
+**De lo contrario:** Implementaciones largas -> tiempo de inactividad de producción y error humano -> equipo desconfiado en la implementación -> menos implementaciones y características
 
 <br/><br/>
 
@@ -691,7 +730,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Los errores o vulnerabilidades recientemente descubiertos podrían utilizarse para explotar una aplicación que se ejecuta en producción, y su aplicación puede dejar de ser compatible con varios módulos y ser más difícil de mantener
 
-🔗 [**Leer más: Use an LTS release of Node.js**](/sections/production/LTSrelease.spanish.md)
+🔗 [**Leer más: Usa una versión LTS de Node.js**](./sections/production/LTSrelease.spanish.md)
 
 <br/><br/>
 
@@ -701,7 +740,17 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario** Aplicación de enrutamiento de registro de manejo === difícil de escalar, pérdida de registros, mala separación de preocupaciones
 
-🔗 [**Leer más: Log Routing**](/sections/production/logrouting.md)
+🔗 [**Leer más: Enrutamiento de registros**](./sections/production/logrouting.spanish.md)
+
+<br><br>
+
+## ![✔] 5.19. Instala tus paquetes con `npm ci`
+
+**TL;DR:** Tienes que asegurate que el código de producción utiliza la misma versión de los paquetes con los que realizaste pruebas. Corre `npm ci` para estrictamente instalar de manera limpia las dependencias que correspondan al package.json y package-lock.json. Usando este comando es recomendado en ambientes automatizados, como los canalizadores de integración contínua (continuos integration pipelines).
+
+**De lo contrario** QA va probar exhaustivamente el código y aprobar una version que se va a comportar diferente en producción. Peor aún, servidores en el mismo cluster de producción podría correr distinto código.
+
+🔗 [**Leer más: Instala tus paquetes con npm ci**](./sections/production/installpackageswithnpmci.spanish.md)
 
 <br/><br/><br/>
 
@@ -721,7 +770,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Lo que podría haber sido una debilidad de seguridad directa durante el desarrollo se convierte en un problema importante en la producción. Además, el proyecto puede no seguir prácticas de seguridad de código consistentes, lo que lleva a la introducción de vulnerabilidades o secretos confidenciales confiados en repositorios remotos
 
-🔗 [**Leer más: Lint rules**](/sections/security/lintrules.spanish.md)
+🔗 [**Leer más: Reglas de seguridad de linter**](./sections/security/lintrules.spanish.md)
 
 <br/><br/>
 
@@ -733,7 +782,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Una aplicación podría estar sujeta a un ataque que resulte en una denegación de servicio donde los usuarios reales reciban un servicio degradado o no disponible.
 
-🔗 [**Leer más: Implement rate limiting**](/sections/security/limitrequests.spanish.md)
+🔗 [**Leer más: Limita la tasa de solicitudes**](./sections/security/limitrequests.spanish.md)
 
 <br/><br/>
 
@@ -745,7 +794,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** El control del código fuente, incluso para repositorios privados, puede hacerse público por error, momento en el que se exponen todos los secretos. El acceso al control de origen para una parte externa proporcionará inadvertidamente acceso a sistemas relacionados (bases de datos, API, servicios, etc.).
 
-🔗 [**Leer más: Secret management**](/sections/security/secretmanagement.spanish.md)
+🔗 [**Leer más: Manejo de secretos**](./sections/security/secretmanagement.spanish.md)
 
 <br/><br/>
 
@@ -757,15 +806,15 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** La entrada de usuario no validada o no higiénica podría conducir a la inyección del operador cuando se trabaja con MongoDB para NoSQL, y no usar un sistema de desinfección adecuado u ORM permitirá fácilmente ataques de inyección SQL, creando una vulnerabilidad gigante.
 
-🔗 [**Leer más: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.spanish.md)
+🔗 [**Leer más: Prevención de inyección de consultas utilizando bibliotecas ORM/ODM**](./sections/security/ormodmusage.spanish.md)
 
 <br/><br/>
 
 ## ![✔] 6.5. Colección de mejores prácticas de seguridad genéricas
 
-**TL;DR:** Esta es una colección de consejos de seguridad que no está relacionada directamente con Node.js: la implementación de Node no es muy diferente a la de cualquier otro idioma. Haz clic en leer más para hojear.
+**TL;DR:** Esta es una colección de consejos de seguridad que no está relacionada directamente con Node.js: la implementación de Node no es muy diferente a la de cualquier otro idioma. Haz clic en leer más para mas información.
 
-🔗 [**Leer más: Common security best practices**](/sections/security/commonsecuritybestpractices.spanish.md)
+🔗 [**Leer más: Common security best practices**](./sections/security/commonsecuritybestpractices.spanish.md)
 
 <br/><br/>
 
@@ -777,7 +826,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Los atacantes pueden realizar ataques directos a los usuarios de su aplicación, lo que genera enormes vulnerabilidades de seguridad
 
-🔗 [**Leer más: Using secure headers in your application**](/sections/security/secureheaders.spanish.md)
+🔗 [**Leer más: Usando encabezados seguros en su aplicación**](./sections/security/secureheaders.spanish.md)
 
 <br/><br/>
 
@@ -787,21 +836,21 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **TL;DR:** Con el ecosistema npm es común tener muchas dependencias para un proyecto. Las dependencias siempre deben mantenerse bajo control a medida que se encuentran nuevas vulnerabilidades. Usa herramientas como [npm audit](https://docs.npmjs.com/cli/audit) o [snyk](https://snyk.io/) para rastrear, monitorear y parchear dependencias vulnerables. Integra estas herramientas con su configuración de CI para que pueda detectar una dependencia vulnerable antes de que llegue a producción.
 
-**De lo contrario:** Un atacante podría detectar su marco web y atacar todas sus vulnerabilidades conocidas.
+**De lo contrario:** Un atacante podría detectar su framework web y atacar todas sus vulnerabilidades conocidas.
 
-🔗 [**Leer más: Dependency security**](/sections/security/dependencysecurity.spanish.md)
+🔗 [**Leer más: Seguridad de dependencias**](./sections/security/dependencysecurity.spanish.md)
 
 <br/><br/>
 
-## ![✔] 6.8. Evita usar la biblioteca criptográfica Node.js para manejar contraseñas, use Bcrypt
+## ![✔] 6.8. Proteja las contraseñas/secretos de sus usuarios usando bcrypt o scrypt
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;DR:** Las contraseñas o los secretos (claves API) deben almacenarse utilizando una función segura hash + salt como `bcrypt`, que debería ser la opción preferida sobre su implementación de JavaScript debido a razones de rendimiento y seguridad.
+**TL;DR:** Las contraseñas o los secretos (claves API) deben almacenarse utilizando una función segura hash + salt como `bcrypt`, o en le peor de los casos `pbkdf2`.
 
 **De lo contrario:** Las contraseñas o los secretos que se conservan sin utilizar una función segura son vulnerables a la fuerza bruta y los ataques de diccionario que eventualmente conducirán a su divulgación.
 
-🔗 [**Leer más: Use Bcrypt**](/sections/security/bcryptpasswords.spanish.md)
+🔗 [**Leer más: Usa Bcrypt**](./sections/security/bcryptpasswords.spanish.md)
 
 <br/><br/>
 
@@ -813,7 +862,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Un atacante podría almacenar código JavaScript malicioso en su base de datos que luego se enviará tal cual a los pobres clientes 
 
-🔗 [**Leer más: Escape output**](/sections/security/escape-output.spanish.md)
+🔗 [**Leer más: Escapa la salida**](./sections/security/escape-output.spanish.md)
 
 <br/><br/>
 
@@ -825,7 +874,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Tu generosidad y enfoque permisivo aumentan enormemente la superficie de ataque y ayuda al atacante a probar muchas entradas hasta que encuentren alguna combinación para bloquear la aplicación.
 
-🔗 [**Leer más: Validate incoming JSON schemas**](/sections/security/validation.spanish.md)
+🔗 [**Leer más: Valida esquemas JSON entrantes**](./sections/security/validation.spanish.md)
 
 <br/><br/>
 
@@ -837,7 +886,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Los tokens caducados o extraviados pueden ser utilizados maliciosamente por un tercero para acceder a una aplicación y hacerse pasar por el propietario del token.
 
-🔗 [**Leer más: Blacklist JSON Web Tokens**](/sections/security/expirejwt.spanish.md)
+🔗 [**Leer más: Bloquea JSON Web Tokens caducados**](./sections/security/expirejwt.spanish.md)
 
 <br/><br/>
 
@@ -852,7 +901,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Un atacante puede emitir intentos de contraseña automatizados ilimitados para obtener acceso a cuentas privilegiadas en una aplicación
 
-🔗 [**Leer más: Login rate limiting**](/sections/security/login-rate-limit.spanish.md)
+🔗 [**Leer más: Limita tasa de login**](./sections/security/login-rate-limit.spanish.md)
 
 <br/><br/>
 
@@ -864,7 +913,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Un atacante que logra ejecutar un script en el servidor obtiene poder ilimitado sobre la máquina local (por ejemplo, cambiar iptable y redirigir el tráfico a su servidor)
 
-🔗 [**Leer más: Run Node.js as non-root user**](/sections/security/non-root-user.spanish.md)
+🔗 [**Leer más: Ejecuta Node.js como usuario no root**](./sections/security/non-root-user.spanish.md)
 
 <br/><br/>
 
@@ -876,7 +925,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Tu aplicación tendrá que lidiar con solicitudes grandes, incapaz de procesar el otro trabajo importante que tiene que realizar, lo que conlleva implicaciones de rendimiento y vulnerabilidad ante los ataques de DOS
 
-🔗 [**Leer más: Limit payload size**](/sections/security/requestpayloadsizelimit.spanish.md)
+🔗 [**Leer más: Limita tamaño de carga**](./sections/security/requestpayloadsizelimit.spanish.md)
 
 <br/><br/>
 
@@ -888,7 +937,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** El código JavaScript malicioso encuentra una forma en el texto pasado a `eval` u otras funciones del lenguaje JavaScript de evaluación en tiempo real, y obtendrá acceso completo a los permisos de JavaScript en la página. Esta vulnerabilidad a menudo se manifiesta como un ataque XSS.
 
-🔗 [**Leer más: Avoid JavaScript eval statements**](/sections/security/avoideval.spanish.md)
+🔗 [**Leer más: Evita sentencias eval**](./sections/security/avoideval.spanish.md)
 
 <br/><br/>
 
@@ -900,7 +949,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Las expresiones regulares mal escritas pueden ser susceptibles a los ataques DoS de Expresión regular que bloquearán el bucle de eventos por completo. Por ejemplo, el popular paquete `moment` fue encontrado vulnerable con el uso malicioso de RegEx en noviembre de 2017
 
-🔗 [**Leer más: Prevent malicious RegEx**](/sections/security/regex.spanish.md)
+🔗 [**Leer más: Evita RegEx malicioso**](./sections/security/regex.spanish.md)
 
 <br/><br/>
 
@@ -908,11 +957,11 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** Evita requerir / importar otro archivo con una ruta que se proporcionó como parámetro debido a la preocupación de que podría haberse originado a partir de la entrada del usuario. Esta regla se puede extender para acceder a archivos en general (es decir, `fs.readFile ()`) u otro acceso a recursos confidenciales con variables dinámicas que se originan a partir de la entrada del usuario. [Eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) linter puede atrapar tales patrones y advertir lo suficientemente temprano
+**TL;DR:** Evita requerir / importar otro archivo con una ruta que se proporcionó como parámetro debido a la preocupación de que podría haberse originado a partir de la entrada del usuario. Esta regla se puede extender para acceder a archivos en general (es decir, `fs.readFile ()`) u otro acceso a recursos confidenciales con variables dinámicas que se originan a partir de la entrada del usuario. [Eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) linter puede atrapar tales patrones y advertirlo de manera temprana
 
 **De lo contrario:** La entrada de usuario malintencionado podría encontrar su camino hacia un parámetro que se utiliza para requerir archivos manipulados, por ejemplo, un archivo cargado previamente en el sistema de archivos, o acceder a archivos del sistema ya existentes.
 
-🔗 [**Leer más: Safe module loading**](/sections/security/safemoduleloading.spanish.md)
+🔗 [**Leer más: Carga de módulos segura**](./sections/security/safemoduleloading.spanish.md)
 
 <br/><br/>
 
@@ -924,7 +973,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Un complemento puede atacar a través de una variedad infinita de opciones como bucles infinitos, sobrecarga de memoria y acceso a variables de entorno de procesos sensibles.
 
-🔗 [**Leer más: Run unsafe code in a sandbox**](/sections/security/sandbox.spanish.md)
+🔗 [**Leer más: Ejecuta código inseguro en un sandbox**](./sections/security/sandbox.spanish.md)
 
 <br/><br/>
 
@@ -932,11 +981,11 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** Evita el uso de procesos secundarios cuando sea posible y valide y desinfecta la entrada para mitigar los ataques de inyección de shell si aún tienes que hacerlo. Usa`child_process.execFile` que, por definición, solo ejecutará un solo comando con un conjunto de atributos y no permitirá la expansión de parámetros de shell.
+**TL;DR:** Evita el uso de procesos secundarios cuando sea posible y valide y desinfecta la entrada para mitigar los ataques de inyección de shell si aún tienes que hacerlo. Usa `child_process.execFile` que, por definición, solo ejecutará un solo comando con un conjunto de atributos y no permitirá la expansión de parámetros de shell.
 
 **De lo contrario:** El uso ingenuo de procesos secundarios podría provocar la ejecución remota de comandos o ataques de inyección de shell debido a la entrada maliciosa del usuario transmitida a un comando del sistema no desinfectado.
 
-🔗 [**Leer más: Be cautious when working with child processes**](/sections/security/childprocesses.spanish.md)
+🔗 [**Leer más: Ten cuidado al trabajar con procesos secundarios**](./sections/security/childprocesses.spanish.md)
 
 <br/><br/>
 
@@ -948,7 +997,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Los detalles confidenciales de la aplicación, como las rutas de archivos del servidor, los módulos de terceros en uso y otros flujos de trabajo internos de la aplicación que podrían ser explotados por un atacante, podrían filtrarse de la información encontrada en un seguimiento de la pila.
 
-🔗 [**Leer más: Hide error details from client**](/sections/security/hideerrors.spanish.md)
+🔗 [**Leer más: Oculta detalles de error de los cliente**](./sections/security/hideerrors.spanish.md)
 
 <br/><br/>
 
@@ -966,11 +1015,11 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Cada marco web y tecnología tiene sus debilidades conocidas: decirle a un atacante qué marco web utilizamos es de gran ayuda para ellos. El uso de la configuración predeterminada para middlewares de sesión puede exponer su aplicación a ataques de secuestro específicos de módulos y marcos de manera similar al encabezado `X-Powered-By`. Intenta ocultar todo lo que identifique y revele tu stack tecnológico (por ejemplo, Node.js, express)
+**TL;DR:** Cada framework web y tecnología tiene sus debilidades conocidas: decirle a un atacante qué framework web utilizamos es de gran ayuda para ellos. El uso de la configuración predeterminada para middlewares de sesión puede exponer su aplicación a ataques de secuestro específicos de módulos y frameworks de manera similar al encabezado `X-Powered-By`. Intenta ocultar todo lo que identifique y revele tu stack tecnológico (por ejemplo, Node.js, express)
 
-**De lo contrario:** Las cookies podrían enviarse a través de conexiones inseguras, y un atacante podría usar la identificación de sesión para identificar el marco subyacente de la aplicación web, así como las vulnerabilidades específicas del módulo
+**De lo contrario:** Las cookies podrían enviarse a través de conexiones inseguras, y un atacante podría usar la identificación de sesión para identificar el framework subyacente de la aplicación web, así como las vulnerabilidades específicas del módulo
 
-🔗 [**Leer más: Cookie and session security**](/sections/security/sessions.spanish.md)
+🔗 [**Leer más: Seguridad de Cookies y sesiones**](./sections/security/sessions.spanish.md)
 
 <br/><br/>
 
@@ -978,7 +1027,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** El proceso de Node se bloqueará cuando no se manejen los errores. Muchas de las mejores prácticas incluso recomiendan salir a pesar de que se detectó un error y se manejó. Express, por ejemplo, se bloqueará en cualquier error asincrónico, a menos que ajuste las rutas con una cláusula catch. Esto abre un punto de ataque muy dulce para los atacantes que reconocen qué información hace que el proceso se bloquee y envían repetidamente la misma solicitud. No hay remedio instantáneo para esto, pero algunas técnicas pueden mitigar el dolor: alerta con severidad crítica cada vez que un proceso se bloquea debido a un error no controlado, valida la entrada y evita que el proceso se bloquee debido a una entrada inválida del usuario, envuelve todas las rutas con una captura y considera no bloquearse cuando se origine un error dentro de una solicitud (en oposición a lo que sucede globalmente)
+**TL;DR:** El proceso de Node se bloqueará cuando no se manejen los errores. Muchas de las mejores prácticas incluso recomiendan salir a pesar de que se detectó un error y se manejó. Express, por ejemplo, se bloqueará en cualquier error asíncrono, a menos que ajuste las rutas con una cláusula catch. Esto abre un punto de ataque muy dulce para los atacantes que reconocen qué información hace que el proceso se bloquee y envían repetidamente la misma solicitud. No hay remedio instantáneo para esto, pero algunas técnicas pueden mitigar el dolor: alerta con severidad crítica cada vez que un proceso se bloquea debido a un error no controlado, valida la entrada y evita que el proceso se bloquee debido a una entrada inválida del usuario, envuelve todas las rutas con una captura y considera no bloquearse cuando se origine un error dentro de una solicitud (en oposición a lo que sucede globalmente)
 
 **De lo contrario:** Esto es solo una suposición educada: dadas muchas aplicaciones de Node.js, si intentamos pasar un cuerpo JSON vacío a todas las solicitudes POST, un puñado de aplicaciones se bloqueará. En ese momento, podemos repetir el envío de la misma solicitud para eliminar las aplicaciones con facilidad
 
@@ -992,7 +1041,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 **De lo contrario:** Si un atacante descubre que no está validando entradas externas proporcionadas por el usuario, puede aprovechar esta vulnerabilidad al publicar enlaces especialmente diseñados en foros, redes sociales y otros lugares públicos para que los usuarios hagan clic en él.
 
-🔗 [**Leer más: Prevent unsafe redirects**](/sections/security/saferedirects.spanish.md)
+🔗 [**Leer más: Evita redireccionamientos inseguros**](./sections/security/saferedirects.spanish.md)
 
 <br/><br/>
 
@@ -1000,11 +1049,11 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Se deben tomar precauciones para evitar el riesgo de publicar accidentalmente secretos en registros públicos de npm. Se puede usar un archivo `.npmignore` para poner en una lista negra archivos o carpetas específicos, o la matriz ` files` en `package.json` puede actuar como una lista blanca.
+**TL;DR:** Se deben tomar precauciones para evitar el riesgo de publicar accidentalmente secretos en registros públicos de npm. Se puede usar un archivo `.npmignore` para poner en una lista negra archivos o carpetas específicos, o el arreglo `files` en `package.json` puede actuar como una lista blanca.
 
 **De lo contrario:** Las claves de API, las contraseñas u otros secretos de su proyecto están abiertos a ser abusados por cualquier persona que los encuentre, lo que puede provocar pérdidas financieras, suplantación y otros riesgos.
 
-🔗 [**Leer más: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.spanish.md)
+🔗 [**Leer más: Evita publicar secretos**](./sections/security/avoid_publishing_secrets.spanish.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Volver arriba</a></p>
@@ -1017,23 +1066,23 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 ## ![✔] 7.1. No bloquees el bucle de eventos
 
-**TL;DR:** Evita las tareas intensivas de la CPU, ya que bloquearán el bucle de eventos en su mayoría de un solo subproceso y las descargarán en un subproceso dedicado, proceso o incluso una tecnología diferente según el contexto.
+**TL;DR:** Evita las tareas intensivas de la CPU, ya que bloquearán el bucle de eventos en su mayoría de un solo subproceso y descargalas en un subproceso dedicado, proceso o incluso una tecnología diferente según el contexto.
 
 **De lo contrario:** A medida que se bloquea el bucle de eventos, Node.js no podrá manejar otra solicitud, lo que provocará demoras para los usuarios concurrentes. **3000 usuarios están esperando una respuesta, el contenido está listo para ser servido, pero una sola solicitud impide que el servidor envíe los resultados**
 
-🔗 [**Leer más: Do not block the event loop**](/sections/performance/block-loop.md)
+🔗 [**Leer más: No bloquees el bucle de eventos**](./sections/performance/block-loop.spanish.md)
 
 <br /><br /><br />
 
 
 ## ![✔] 7.2. Escoge los métodos JS nativos sobre las utilidades de usuario como Lodash
 
- **TL;DR:** A menudo es más penalizador usar bibliotecas de utilidades como `lodash` y` underscore` sobre los métodos nativos, ya que conduce a dependencias innecesarias y un rendimiento más lento.
+**TL;DR:** A menudo es más penalizador usar bibliotecas de utilidades como `lodash` y ` underscore` sobre los métodos nativos, ya que conduce a dependencias innecesarias y un rendimiento más lento.
 Ten en cuenta que con la introducción del nuevo motor V8 junto con los nuevos estándares ES, los métodos nativos se mejoraron de tal manera que ahora es aproximadamente un 50% más eficiente que las bibliotecas de servicios públicos.
 
 **De lo contrario:** Tendrás que mantener proyectos de menor rendimiento en los que simplemente podría haber usado lo que **ya estaba** disponible o haber tratado algunas líneas más a cambio de algunos archivos más.
 
-🔗 [**Leer más: Native over user land utils**](/sections/performance/nativeoverutil.md)
+🔗 [**Leer más: Nativo sobre implementaciones externas**](./sections/performance/nativeoverutil.spanish.md)
 
 <br/><br/><br/>
 
@@ -1045,7 +1094,7 @@ Ten en cuenta que con la introducción del nuevo motor V8 junto con los nuevos e
 
 <br/><br/>
 
-## ![✔] 8.1 Utilice compilaciones de múltiples etapas para obtener imágenes de Docker más sencillas y seguras
+## ![✔] 8.1. Utilice compilaciones de múltiples etapas para obtener imágenes de Docker más sencillas y seguras
 
 **TL;DR:** Utilice la compilación de múltiples etapas para copiar únicamente los artefactos de producción necesarios. Un montón de dependencias y archivos de tiempo de compilación no son necesarios para ejecutar tu aplicación. Haciendo uso de compilaciones de múltiples etapas, estos recursos pueden ser utilizados durante la compilación mientras que el entorno de tiempo de ejecución sólo contiene lo necesario. Las compilaciones de múltiples etapas representan una forma sencilla de deshacerse del sobrepeso y las amenazas de seguridad.
 
@@ -1070,13 +1119,156 @@ RUN npm ci --production
 CMD [ "node", "dist/app.js" ]
 ```
 
-🔗 [**Leer más: Use multi-stage builds**](/sections/docker/multi_stage_builds.md)
+🔗 [**Leer más: Utilice compilaciones múltiples**](./sections/docker/multi_stage_builds.spanish.md)
 
 <br /><br /><br />
 
+## ![✔] 8.2. Arranque usando el comando `node`, evita `npm start`
+
+**TL;DR:** usa `CMD ['node', 'server.js']` para iniciar su aplicación, evita usar los scripts de npm, los cuales no pasan señales del sistema operativo (OS) al código. Para prevenir estos problemas en los procesos secundarios, manejo de señales y apagado simple sin tener procesos zombie.
+
+**De lo contrario** Cuando no se pasan señales, su código nunca será notificado cuando se detenga el proceso, Sin esto, Se perderá la oportunidad de cerrar de manera apropiada, posiblemente perdiendo peticiones o datos actuales.
+
+🔗 [**Leer más: Arranque usando node, evite npm start**](./sections/docker/bootstrap-using-node.spanish.md)
+
+
+<br><br><br>
+
+## ![✔] 8.3. Permite a Docker manejar replicación y tiempo de ejecución
+
+**TL;DR:** Cuando se usa un manejador de tiempo de ejecución de Docker (Por ejemplo, Kubernetes), invoque el proceso de Node.js directamente, sin manejadores de proceso intermedios o código personalizado que replica el proceso (Por ejemplo, PM2, Cluster Module). La plataforma de tiempo de ejecución tiene la mayor cantidad de datos y visibilidad al hacer la decisión de posicionamiento: Sabe mejor que nadie cuantos procesos son necesarios, como distribuirlos y que hacer en caso de errores.
+
+**De lo contrario** El contenedor sigue cayendo debido a la escasez de recursos se estará reiniciando de manera indefinida por el manejador de procesos. Si Kubernetes supiera esto, lo podría redirreccionar a una instancia diferente.
+
+🔗 [**Leer más: Permita al manejador Docker reiniciar y replicar procesos**](./sections/docker/restart-and-replicate-processes.spanish.md)
+
+<br><br><br>
+
+## ![✔] 8.4. Utilize .dockerignore para prevenir fuga de secretos
+
+**TL;DR:** Incluye un archivo `.dockerignore` que filtra todos los archivos con secretos comúnes y artefactos de desarrollo. Al hacer esto. Puede evitar que sus secretos salgan a la luz. Ademas el tiempo de compilación se va a reducir de manera significante. También asegúrese de no copiar todos los archivos recursivamente, mejor selecciones cuales deben ser copiados a docker de manera explícita.
+
+**De lo contrario** Archivos comúnes de secretos como `.env`, `.aws`, y `.npmrc` serán compartidos con cualquiera que tenga acceso a la imágen (Por ejemplo un repositorio Docker).
+
+🔗 [**Leer más: Utiliza .dockerignore**](./sections/docker/docker-ignore.spanish-md)
+
+<br><br><br>
+
+## ![✔] 8.5. Limpie dependencias antes de ir a producción
+
+**TL;DR:** Aunque algunas dependencias de desarrollo son necesarios durante los ciclos de compilación y prueba, eventualmente la imágen que será enviada a producción debe estar los mas limpia posible de dependencias de desarrollador. Haciendo esto garantiza que solo el código necesario es cargado y la cantidad de ataques potenciales (Por ejemplo. attack surface (ataque de superficie)) sea mínimo. Cuando se use compilación multi-pasos (Vea punto dedicado) esto puede ser logrado al instalar todas las dependencias primero y finalmente ejecutar `npm ci --production`.
+
+**De lo contrario** Muchas brechas de seguridad conocidas fueron encontradas dentro de paquetes de desarrollo (Por ejemplo. [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes)).
+
+🔗 [**Leer más: Remueva dependencias de desarrollo**](./sections/docker/install-for-production.spanish.md)
+
+<br><br><br>
+
+## ![✔] 8.6. Apague de manera inteligente y gentil
+
+**TL;DR:** Maneje el evento de proceso SIGTERM y limpie todas las conexiones existentes y recursos. Esto debería hacerse mientra se responden a peticiones activas. En tiempos de ejecución de Docker, apagar contenedores no es un evento raro, sino un evento frecuente que es parte de una rutina de trabajo. Hacer esto requiere un código bien pensado para manejar muchas partes separadas: El balance de carga, mantener las conexiones, el servidor HTTP y otros recursos.
+
+**De lo contrario** Apagando de manera inmediata significa no responder a cientos de usuarios decepcionados.
+
+🔗 [**Leer más: Apagado gentil**](./sections/docker/graceful-shutdown.spanish.md)
+
+<br><br><br>
+
+## ![✔] 8.7. Asigne límites de memoria utilizando Docker y v8
+
+**TL;DR:** Siempre configure un límite de memoria utilizando Docker y las marcas de tiempo de ejecución de JavaScript. El límite de Docker es necesario para hacer decisiones de posicionamiento bien pensadas, la marca --v8 max-old-space es necesaria para arrancar el GC a tiempo y prevenir desperdicio de recursos. En la práctica, asignale a la marca max-old-space de v8 un tamaño un poco menor al límite del contenedor.
+
+**De lo contrario** La definición de Docker es necesaria para realizar decisiones bien pensadas de escalación y prevenir la escasez para otros procesos. Si tampoco defines los límites de v8, no va a utilizar completamente los recursos de contenedor; Sin instrucciones explícitas, se colapsará cuando se use ~50-60% de los recursos del host
+
+🔗 [**Leer más: Asigne límites de memoria en Docker**](./sections/docker/memory-limit.spanish.md)
+
+<br><br><br>
+
+## ![✔] 8.8. Planee caché eficientemente
+
+**TL;DR:** Re-compilar toda la imágen de Docker mediante caché puede ser casi instantáneo si se hace correctamente. Las instrucciones que se actualizan con menor frecuencia deben estar hasta arriba en su Dockerfile y las que cambian constantemente (Como el código de la aplicación) deberían estar hasta abajo.
+
+**De lo contrario** La compilación de Docker va a ser muy larga y consumir demasiados recursos, incluso al hacer cambios menores.
+
+🔗 [**Leer más: Maneje el caché para reducir tiempos de compilación**](./sections/docker/use-cache-for-shorter-build-time.spanish.md)
+
+<br><br><br>
+
+## ![✔] 8.9. Utilize imágen de referencia explícita, evite la etiqueta `latest`
+
+**TL;DR:** Especifíque la etiqueta de versión de la imágen de manera explícita, nunca utilice `latest`. Desarrolladores piensan que al especificar la etiqueta `latest` recibirán la imágen mas reciente del repositorio, Sin embargo, este no es el caso, Usando una explícita garantiza que cada instancia del servicio esta corriendo exactamente el mismo código.
+
+Como extra, refiriéndose a una etiqueta de imágen significa que la imágen base esta sujeta a cambios, por ello las etiquetas de imágen no pueden ser confiables para una instalación determinista. En su lugar, si se espera un instalación determinista una SHA256 puede ser usada como referencia a la imágen exacta.
+
+**De lo contrario** Una nueva versión de la imágen base puede ser desplegada a producción con cambios severos, causando comportamiento anormal.
+
+🔗 [**Leer más: Entender las etiquetas de imágen y utilizar las etiqueta "lates" con precaución**](./sections/docker/image-tags.spanish.md)
+
+<br><br><br>
+
+## ![✔] 8.10. Utilize imágenes base pequeñas
+
+**TL;DR:** Imágenes grandes conducen a una mayor exposición de vulnerabilidades y a un aumento del uso de recursos. Usando imágenes mas apoyadas como Slim y Alpine Linux reduce este problema.
+
+**De lo contrario** Compilar, enviar y recibir cambios de imágenes va a tomar mas tiempo, terceros pueden utilizar ataques de vectores desconocidos y consumir mar recursos.
+
+🔗 [**Leer más: Utilice imágenes pequeñas**](./sections/docker/image-tags.spanish.md)
+
+<br><br><br>
+
+## ![✔] 8.11. Limpie secretos en tiempo de compilación, evite secretos en argumentos
+
+**TL;DR:** Evite la fuga de secretos en el entorno compilación de Docker. Una imágen de Docker normalmente es compartida por multiples entornos como CI y un registro que no está tan limpio como producción. Un ejemplo común is un token npm que suele ser pasado a dockerfile como argumento. Este token permanece en la imágen después de ser utilizada y permite al atacante acceso indefinido a un registro npm privado. Esto puede ser evitado al copiar un archivo secreto como `.npmrc` y después removiéndolo usando la compilación multi-pasos (Cuidado, la historia de compilación debe ser borrada también) o usando el build-kit de Docker que no deja ningún rastro.
+
+**De lo contrario** Cualquiera con acceso al CI y al registro Docker también tendrá acceso a unos preciosos secretos de la empresa como regalo.
+
+🔗 [**Leer más: Limpia tus secretos de tiempo de compilación**](./sections/docker/avoid-build-time-secrets.spanish.md)
+
+<br><br><br>
+
+## ![✔] 8.12. Escanea imágenes para vulnerabilidades multi-capa
+
+**TL;DR:** Además de revisar vulnerabilidades de las dependencias, escanee la imágen final que será enviada a producción, Los escáneres de imágen de Docker revisan las dependencias del código, pero también los binarios del sistema operativo (OS binaries). Este escaneo de seguridad de punto a punto abarca mas espacio y verifica que nadie haya implantado cosas maliciosas durante la compilación. Consecuentemente, se recomienda hacer esto como último paso antes del despliegue. Hay una buena cantidad de escáneres gratuitos y de paga que también proporcionan extensiones CI/CD.
+
+**De lo contrario** Su código puede estar completamente libre de vulnerabilidades. Pero puede llegar a ser hackeado debido a una version vulnerable de los binarios a nivel SO (Por ejemplo. OpenSSL, TarBall), los cuales son usados comúnmente por las aplicaciones.
+
+🔗 [**Leer más: Escanea la imágen completa antes de producción**](./sections/docker/scan-images.spanish.md)
+
+<br><br><br>
+
+## ![✔] 8.13. Limpie el caché de NODE_MODULE
+
+**TL;DR:** Después de instalar dependencias en un contenedor remueva el caché local. No tiene sentido duplicar las dependencias para instalaciones mas rápidas futuras, debido a que no habrá instalaciones futuras. Una imágen de Docker is inmutable. Utilizando una sola línea de código decenas de MB (normalmente ~10-50% del tamaño de la imágen) son podados.
+
+**De lo contrario** La imágen que será enviada a producción pesara un 30% extra debido a archivos que no serán utilizados.
+
+🔗 [**Leer más: Limpie el caché de NODE_MODULE**](./sections/docker/clean-cache.spanish.md)
+
+<br><br><br>
+
+## ![✔] 8.14. Prácticas de Docker generales
+
+**TL;DR:** Esta es una colección de los consejos de Docker que no están relacionados directamente con Docker: La implementación de Docker no es muy diferente a cualquier otro lenguaje, Da click en leer más para mas información.
+
+🔗 [**Leer más: Prácticas de Docker generales](./sections/docker/generic-tips.spanish.md)
+
+<br><br><br>
+
+## ![✔] 8.15. utilize Lint en su Dockerfile
+
+**TL;DR:** Utilizar una herramienta de lint en su Dockerfile es un paso importante para identificar problemas en su Dockerfile que difieran de las mejores prácticas. Al escanear por fallas potenciales usando un linter especializado de a Docker, se pueden identificar fácilmente mejoras a la seguridad y rendimiento, salvando incontables horas de tiempo en problemas de seguridad en código de producción.
+
+**De lo contrario** Dejar por error a Root como el usuario de producción en el Dockerfile, y también usar una imágen de un repositorio de una fuente desconocida. Esto puede ser fácilmente evitado usando un linter.
+
+🔗 [**Leer más: Utilize Lint en su Dockerfile**](./sections/docker/lint-dockerfile.spanish.md)
+
+<br/><br /><br />
+
+<p align="right"><a href="#table-of-contents">⬆ Volver arriba</a></p>
+
 # Metas
 
-Para mantener esta guía y tenerla actualizada, estamos constantemente modernizando y mejorando las pautas y las mejores prácticas con la ayuda de la comunidad. Tu puedes seguir nuestras [metas](https://github.com/i0natan/nodebestpractices/milestones) y unirte a los grupos que trabajan si es que quieres contribuir a este proyecto.
+Para mantener esta guía y tenerla actualizada, estamos constantemente modernizando y mejorando las pautas y las mejores prácticas con la ayuda de la comunidad. Puede seguir nuestras [metas](https://github.com/goldbergyoni/nodebestpractices/milestones) y unirte a los grupos que trabajan si es que quieres contribuir a este proyecto.
 
 <br/>
 
@@ -1089,14 +1281,17 @@ Todas las traducciones están contribuidas por la comunidad. Estaremos encantado
 - ![BR](/assets/flags/BR.png) [Brazilian Portuguese](./README.brazilian-portuguese.md) - Cortesía de [Marcelo Melo](https://github.com/marcelosdm)
 - ![CN](/assets/flags/CN.png) [Chinese](./README.chinese.md) - Cortesía de [Matt Jin](https://github.com/mattjin)
 - ![RU](/assets/flags/RU.png) [Russian](./README.russian.md) - Cortesía de [Alex Ivanov](https://github.com/contributorpw)
-- ![ES](/assets/flags/ES.png) [Spanish](./README.spanish.md) - Cortesía de [Jordi Castillo](https://github.com/Whitefox98)
+- ![PL](/assets/flags/PL.png) [Polish](./README.polish.md) - Cortesía de [Michal Biesiada](https://github.com/mbiesiad)
+- ![JA](/assets/flags/JA.png) [Japanese](./README.japanese.md) - Cortesía de [Yuki Ota](https://github.com/YukiOta), [Yuta Azumi](https://github.com/YA21)
+- ![EU](/assets/flags/EU.png) [Basque](README.basque.md) - Cortesía de [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta
 
 ### Traducciones en curso
 
-- ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/129))
-- ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/i0natan/nodebestpractices/issues/156))
-- ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Cortesía de [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/94))
-- ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/i0natan/nodebestpractices/issues/139))
+- ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/129))
+- ![HE](/assets/flags/HE.png) Hebreo ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/156))
+- ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Cortesía de [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94))
+- ![ES](/assets/flags/ES.png) [Spanish](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/95))
+- ![TR](/assets/flags/TR.png) Turco ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/139))
 
 <br/><br/>
 
@@ -1106,7 +1301,7 @@ Conozca a los miembros del comité directivo: las personas que trabajan juntas p
 
 <img align="left" width="100" height="100" src="assets/images/members/yoni.png">
 
-[Yoni Goldberg](https://github.com/i0natan)
+[Yoni Goldberg](https://github.com/goldbergyoni)
 <a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
 <a href="https://goldbergyoni.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
@@ -1129,11 +1324,22 @@ Consultor independiente de Node.js que trabaja con clientes en EE. UU., Europa e
 <a href="https://twitter.com/kylemartin_93"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
 <a href="https://www.linkedin.com/in/kylemartinnz"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
 
-Desarrollador Full Stack e ingeniero de confiabilidad de sitio con sede en Nueva Zelanda, interesado en la seguridad de aplicaciones web y en la arquitectura y creación de aplicaciones Node.js pque funcionan a escala global
+Desarrollador Full Stack e ingeniero de confiabilidad de sitio con sede en Nueva Zelanda, interesado en la seguridad de aplicaciones web y en la arquitectura y creación de aplicaciones Node.js que funcionan a escala global
 
 <br/>
 
 <img align="left" width="100" height="100" src="assets/images/members/sagir.png">
+
+<br/>
+
+<img align="left" width="100" height="100" src="assets/images/members/kevyn.png">
+
+[Kevyn Bruyere](https://github.com/kevynb)
+<a href="https://www.linkedin.com/in/kevynbruyere/"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
+
+Desarrollador full-stack independiente, con una pizca de Ops y automatización.
+
+### Comité directivo Emérito
 
 [Sagir Khan](https://github.com/sagirk)
 <a href="https://twitter.com/sagir_k"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
@@ -1148,7 +1354,7 @@ Especialista en JavaScript y su ecosistema: React, Node.js, MongoDB, prácticame
 
 Gracias a todos nuestros colaboradores! 🙏
 
-Nuestros colaboradores son miembros que contribuyen regularmente al repositorio, sugiriendo nuevas mejores prácticas, problemas de evaluación, revisión de solicitudes de extracción y más. Si está interesado en ayudarnos a guiar a miles de personas para crear mejores aplicaciones de Node.js, lea nuestras [pautas para contribuyentes](/.operations/CONTRIBUTING.md) 🎉
+Nuestros colaboradores son miembros que contribuyen regularmente al repositorio, sugiriendo nuevas mejores prácticas, problemas de evaluación, revisión de solicitudes de extracción y más. Si está interesado en ayudarnos a guiar a miles de personas para crear mejores aplicaciones de Node.js, lea nuestras [pautas para contribuyentes](/.operations/CONTRIBUTING.spanish.md) 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
 | :--: | :--: |
