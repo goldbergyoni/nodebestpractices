@@ -15,7 +15,7 @@ node包管理器，npm和Yarn，会本地缓存安装过的包，以便在未来
 <details>
 <summary><strong>Dockerfile</strong></summary>
 
-```
+```dockerfile
 FROM node:12-slim AS build
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
