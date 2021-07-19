@@ -31,7 +31,7 @@ Docker的build命令会通过一个虚拟网络（virtual network）拷贝本地
 
 <br/><br/>
 
-### 代码示例 反模式 - 遍历拷贝所以文件
+### 代码示例 反模式 - 遍历拷贝所有文件
 
 <details>
 <summary><strong>Dockerfile</strong></summary>

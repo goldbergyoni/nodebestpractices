@@ -1,8 +1,8 @@
 [✔]: ../../assets/images/checkbox-small-blue.png
 
-# 通用Node.js的Docker最佳实践
+# 通用的Node.js Docker最佳实践
 
-此通用Docker指南部分包含在所有编程语言中标准化的最佳实践，并没有针对Node.js的特殊解释
+此通用Docker指南部分包含所有编程语言中标准化的最佳实践，并没有针对Node.js的特殊解释
 
 ## ![✔] 使用命令COPY优于ADD
 
@@ -10,8 +10,7 @@
 
 ## ![✔] 避免更新基础OS
 
-**TL;DR:** 在构建期间更新本地二进制文件（例如apt get update）会在每次运行时创建不一致的映像，并且还需要提升权限。取而代之，使用经常更新的基本镜像
-Updating the local binaries during build (e.g. apt-get update) creates inconsistent images every time it runs and also demands elevated privileges. Instead use base images that are updated frequently
+**TL;DR:** 在构建期间更新本地二进制文件（例如apt get update）会在每次运行时创建不一致的映像，并且还需要提升权限。取而代之，使用经常更新的基础镜像
 
 ## ![✔] 使用标签对镜像分类
 
@@ -27,4 +26,4 @@ Updating the local binaries during build (e.g. apt-get update) creates inconsist
 
 ## ![✔] 执行完整性检查
 
-**TL;DR:** 在拉取基本镜像或最终镜像时，网络可能会被误导并重定向到下载恶意镜像。除非对内容进行签名和验证，否则标准Docker协议中没有任何内容可以防止这种情况。[Docker Notary](https://docs.docker.com/notary/getting_started/)是一个可以执行检查的工具
+**TL;DR:** 在拉取基本镜像或最终镜像时，网络可能会被误导并重定向到下载恶意镜像。除非对内容进行签名和验证，否则标准Docker协议中没有任何内容可以防止这种情况。[Docker Notary](https://docs.docker.com/notary/getting_started/)是一个可以执行此类检查的工具
