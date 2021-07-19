@@ -12,4 +12,4 @@ Hazten hasi eta zerbitzari ezberdinetan antzeko baliabideak erabiltzen dituzten 
 
 ### Partekatu zure baliabide propioak ingurune eta osagaietan
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/Privatenpm.png "Antolatu proiektua osagaietan")
+![alt text](../../assets/images/Privatenpm.png "Antolatu proiektua osagaietan")

@@ -28,10 +28,10 @@
 
 ### 良い: 自己完結型のコンポーネントでソリューションを構築する
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "コンポーネントによるソリューションの構築")
+![alt text](../../assets/images/structurebycomponents.PNG "コンポーネントによるソリューションの構築")
 
 <br/><br/>
 
 ### 悪い: 技術的な役割ごとにファイルをグループ化
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebyroles.PNG "技術的な役割によるソリューションの構築")
+![alt text](../../assets/images/structurebyroles.PNG "技術的な役割によるソリューションの構築")

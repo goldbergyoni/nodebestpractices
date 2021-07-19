@@ -10,4 +10,4 @@
 
 ### 環境やコンポーネント横断で独自の共通ユーティリティを共有する
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/Privatenpm.png "コンポーネントでソリューションを構築する")
+![alt text](../../assets/images/Privatenpm.png "コンポーネントでソリューションを構築する")

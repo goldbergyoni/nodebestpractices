@@ -29,15 +29,15 @@ seront toujours un problème si la qualité implicite de votre JavaScript est ma
 
  ### Exemple : analyse de méthodes complexes avec CodeClimate (commercial)
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-climate-complex-methods.PNG "Analyse de méthodes complexes")
+![alt text](../../assets/images/codeanalysis-climate-complex-methods.PNG "Analyse de méthodes complexes")
 
 ### Exemple : tendances et historique de l'analyse de code avec CodeClimate (commercial)
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-climate-history.PNG "Historique d'analyse de code")
+![alt text](../../assets/images/codeanalysis-climate-history.PNG "Historique d'analyse de code")
 
 ### Exemple : résumé et tendances de l'analyse de code avec SonarQube (commercial)
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-sonarqube-dashboard.PNG "Historique d'analyse de code")
+![alt text](../../assets/images/codeanalysis-sonarqube-dashboard.PNG "Historique d'analyse de code")
 
 
 <br/><br/>

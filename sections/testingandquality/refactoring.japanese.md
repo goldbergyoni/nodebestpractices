@@ -27,15 +27,15 @@
 
 ### 例: CodeClimate を使用した複雑なメソッドの解析（商用）
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-climate-complex-methods.PNG "複雑なメソッドの解析")
+![alt text](../../assets/images/codeanalysis-climate-complex-methods.PNG "複雑なメソッドの解析")
 
 ### 例: CodeClimate を使用したコード解析結果の傾向と履歴（商用）
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-climate-history.PNG "コード解析の履歴")
+![alt text](../../assets/images/codeanalysis-climate-history.PNG "コード解析の履歴")
 
 ### 例: コード解析結果のサマリーと傾向（商用）
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-sonarqube-dashboard.PNG "コード解析結果のサマリーと傾向")
+![alt text](../../assets/images/codeanalysis-sonarqube-dashboard.PNG "コード解析結果のサマリーと傾向")
 
 
 <br/><br/>

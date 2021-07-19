@@ -16,7 +16,7 @@ Selain konten yang sangat diedit dan dapat diandalkan, membaca sekilas konten ju
 
 ## 4. Pemformatan yang konsisten
 
-Konten disajikan menggunakan templat tetap. Setiap konten di masa mendatang harus sesuai dengan template yang sama. Jika Anda ingin menambahkan poin baru, salin format poin dari poin yang ada dan kembangkan sesuai kebutuhan Anda. Untuk informasi tambahan, silakan lihat [template ini] (https://github.com/goldbergyoni/nodebestpractices/blob/master/sections/template.md).
+Konten disajikan menggunakan templat tetap. Setiap konten di masa mendatang harus sesuai dengan template yang sama. Jika Anda ingin menambahkan poin baru, salin format poin dari poin yang ada dan kembangkan sesuai kebutuhan Anda. Untuk informasi tambahan, silakan lihat [template ini] (/sections/template.md).
 
 ## 5. Ini Tentang Node.js
 

@@ -16,7 +16,7 @@ En plus d'être d'une grande fiabilité et d'une grande qualité rédactionnelle
 
 ## 4. Formatage cohérent
 
-Le contenu est présenté à l'aide de modèles prédéfinis. Tout contenu futur doit être conforme au même modèle. Si vous souhaitez ajouter de nouveaux points, copiez le format d'un point existant et complétez-le selon vos besoins. Pour plus d'informations, veuillez consulter [ce modèle](https://github.com/goldbergyoni/nodebestpractices/blob/master/sections/template.md).
+Le contenu est présenté à l'aide de modèles prédéfinis. Tout contenu futur doit être conforme au même modèle. Si vous souhaitez ajouter de nouveaux points, copiez le format d'un point existant et complétez-le selon vos besoins. Pour plus d'informations, veuillez consulter [ce modèle](/sections/template.md).
 
 ## 5. C'est à propos de Node.js
 

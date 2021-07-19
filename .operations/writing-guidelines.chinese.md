@@ -16,7 +16,7 @@
 
 ## 4. 一致的格式
 
-内容是使用固定模板显示的。任何新的内容都必须遵守这一模板。如果希望添加新项目符号，请从现有项目符号复制项目符号格式，并将其扩展以满足您的需要。有关其他信息，请查看[模版](https://github.com/goldbergyoni/nodebestpractices/blob/master/sections/template.md)
+内容是使用固定模板显示的。任何新的内容都必须遵守这一模板。如果希望添加新项目符号，请从现有项目符号复制项目符号格式，并将其扩展以满足您的需要。有关其他信息，请查看[模版](/sections/template.md)
 
 ## 5. Node.js 相关
 

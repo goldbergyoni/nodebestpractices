@@ -24,4 +24,4 @@ code here
 
 ### Image title
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/swaggerDoc.png "API error handling")
+![alt text](../../assets/images/swaggerDoc.png "API error handling")
