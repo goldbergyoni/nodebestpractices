@@ -1505,6 +1505,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "breno404",
+      "name": "Breno Macedo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/48841329?v=4",
+      "profile": "https://www.linkedin.com/in/breno-macedo-ernani-de-s%C3%A1-110223158/",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
