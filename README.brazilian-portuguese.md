@@ -554,7 +554,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.13 Teste seus 'middlewares' isolatdamente
+## ![✔] 4.13 Teste seus 'middlewares' isoladamente
 
 **TL;DR:** quando um 'middleware' contém alguma lógica imensa que abrange muitas solicitações, vale a pena testá-lo isoladamente, sem ativar todo o framework. Isso pode ser facilmente alcançado por 'stubbing' e espionando os objetos {req, res, next} 
 
