@@ -18,10 +18,10 @@ Pour les applications de taille moyenne et supérieure, les monolithes sont vrai
 
 ### Bon : Organisez votre solution avec des composants autonomes
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Solution d'organisation par composants")
+![alt text](../../assets/images/structurebycomponents.PNG "Solution d'organisation par composants")
 
 <br/><br/>
 
 ### Mauvais : Regroupez vos fichiers selon leur rôle technique
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebyroles.PNG "Solution d'organisation par rôles techniques")
+![alt text](../../assets/images/structurebyroles.PNG "Solution d'organisation par rôles techniques")

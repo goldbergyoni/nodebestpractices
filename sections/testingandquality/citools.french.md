@@ -42,10 +42,10 @@ jobs:
 
 ### Circle CI - CI du cloud avec une configuration presque nul
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/circleci.png "Gestion des erreurs API")
+![alt text](../../assets/images/circleci.png "Gestion des erreurs API")
 
 ### Jenkins - CI sophistiqué et robuste
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/jenkins_dashboard.png "Gestion des erreurs API")
+![alt text](../../assets/images/jenkins_dashboard.png "Gestion des erreurs API")
 
 <br/><br/>

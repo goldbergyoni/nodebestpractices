@@ -34,14 +34,14 @@ Blogean, pouchdb.comek “Node Promesak hitz gakoarentzat 11.posizioa du
 
 ### Adibidea: CodeClimaterekin funtzio konplexuen analisia (iragarkia)
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-climate-complex-methods.PNG "Funtzio konplexuen analisia")
+![alt text](../assets/images/codeanalysis-climate-complex-methods.PNG "Funtzio konplexuen analisia")
 
 ### Adibidea: CodeClimaterekin kode analisi joerak eta historia (iragarkia)
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-climate-history.PNG "Kode analisiaren historia")
+![alt text](../assets/images/codeanalysis-climate-history.PNG "Kode analisiaren historia")
 
 ### Adibidea: SonarQuberekin kode analisiaren laburpena eta joerak (iragarkia)
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-sonarqube-dashboard.PNG "Kode analisiaren historia")
+![alt text](../assets/images/codeanalysis-sonarqube-dashboard.PNG "Kode analisiaren historia")
 
 <br/><br/>

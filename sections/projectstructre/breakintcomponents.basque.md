@@ -26,10 +26,10 @@ Beraz, zer oihukatzen du zure aplikazioaren egiturak? Zure direktorioko egiturar
 
 ### Zuzena: antolatu zure proiektua aparteko osagaietan
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Antolatu proiektua osagaietan")
+![alt text](../../assets/images/structurebycomponents.PNG "Antolatu proiektua osagaietan")
 
 <br/><br/>
 
 ### Okerra: taldekatu zure fitxategiak rol teknikoen arabera
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebyroles.PNG "Antolatu proiektua rol teknikoen arabera")
+![alt text](../../assets/images/structurebyroles.PNG "Antolatu proiektua rol teknikoen arabera")

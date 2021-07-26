@@ -22,7 +22,7 @@ Les produits APM regroupent 3 pôles principaux :
 
 
  ### Exemple : UpTimeRobot.Com - Tableau de bord de surveillance de site Web
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/uptimerobot.jpg "Tableau de bord de surveillance de site Web")
+![alt text](../../assets/images/uptimerobot.jpg "Tableau de bord de surveillance de site Web")
 
  ### Exemple : AppDynamics.Com - Surveillance de bout en bout combinée à une instrumentation de code
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/app-dynamics-dashboard.png "Surveillance de bout en bout combinée à une instrumentation de code")
+![alt text](../../assets/images/app-dynamics-dashboard.png "Surveillance de bout en bout combinée à une instrumentation de code")

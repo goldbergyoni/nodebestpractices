@@ -20,8 +20,8 @@ APM produktuek 3 segmentu nagusi dituzte:
 
 ### Adibidea: UpTimeRobot.Com: webguneak monitorizatzeko panela
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/uptimerobot.jpg "Webgune monitorizazio aurreko panela")
+![alt text](../../assets/images/uptimerobot.jpg "Webgune monitorizazio aurreko panela")
 
 ### Adibidea: AppDynamics.Com: hasieratik amaierarainoko monitorizazioa kode instrumentazioarekin konbinatutakoa
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/app-dynamics-dashboard.png "kode instrumentazioarekin konbinatutako hasieratik amaierarainoko monitorizazioa")
+![alt text](../../assets/images/app-dynamics-dashboard.png "kode instrumentazioarekin konbinatutako hasieratik amaierarainoko monitorizazioa")

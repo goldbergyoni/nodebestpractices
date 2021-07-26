@@ -10,11 +10,11 @@ We recognize that being professional and kind are the same thing and strive to m
 
 ### Maintenance work
 
-Our operations manual [can be found here](https://github.com/goldbergyoni/nodebestpractices/blob/master/.operations/operations-manual.md)
+Our operations manual [can be found here](./operations-manual.md)
 
 ### Writing guidelines
 
-Our content writing guidelines [can be found here](https://github.com/goldbergyoni/nodebestpractices/blob/master/.operations/writing-guidelines.md)
+Our content writing guidelines [can be found here](./writing-guidelines.md)
 
 ### Handling issues and PRs
 
