@@ -1514,6 +1514,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "JFernando122",
+      "name": "Fernando Flores",
+      "avatar_url": "https://avatars.githubusercontent.com/u/40414805?v=4",
+      "profile": "https://github.com/JFernando122",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
