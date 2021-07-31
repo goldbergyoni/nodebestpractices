@@ -10,19 +10,19 @@ Implementar tales funciones avanzadas requiere de una instalación más bien lar
 
 <br/><br/>
 
-### Monitoring example: AWS cloudwatch default dashboard. Hard to extract in-app metrics
+### Ejemplo de monitoreo: AWS cloudwatch default dashboard. Difícil de extraer métricas dentro de la aplicación
 
 ![AWS cloudwatch default dashboard. Hard to extract in-app metrics](/assets/images/monitoring1.png)
 
 <br/><br/>
 
-### Monitoring example: StackDriver default dashboard. Hard to extract in-app metrics
+### Ejemplo de monitoreo: StackDriver default dashboard. Difícil de extraer métricas dentro de la aplicación
 
 ![StackDriver default dashboard. Hard to extract in-app metrics](/assets/images/monitoring2.jpg)
 
 <br/><br/>
 
-### Monitoring example: Grafana as the UI layer that visualizes raw data
+### Ejemplo de monitoreo: Grafana como la capa UI que visualiza los datos brutos
 
 ![Grafana as the UI layer that visualizes raw data](/assets/images/monitoring3.png)
 
@@ -37,3 +37,9 @@ From the blog [Rising Stack](http://mubaloo.com/best-practices-deploying-node-js
 > Response time: Because the latency directly affects your customers and business.
 > Throughput: The traffic helps you to understand the context of increased error rates and the latency too.
 > Saturation: It tells how “full” your service is. If the CPU usage is 90%, can your system handle more traffic? …
+
+> ... Recomendamos vigilar estas señales para todos tus servicios:
+> Tasa de Error: Por que los errores están de cara al usuario y afectan inmediatamente a tus clientes.
+> Tiempo de Respuesta: Por que la latencia afecta directamente a tus clientes y negocios.
+> Rendimiento: El tráfico te ayuda a entender el contexto de tasa de errores aumentadas y de latencia.
+> Saturación: Te dice que tan "lleno" está tu servicio. Si el uso del CPU es %90, ¿Puede tu sistema manejar más tráfico? ...

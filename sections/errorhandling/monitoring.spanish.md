@@ -1,17 +1,17 @@
-# Monitoring
+# Monitorear
 
-### One Paragraph Explainer
+### Párrafo de explicación
 
 > At the very basic level, monitoring means you can *easily identify when bad things happen at production. For example, by getting notified by email or Slack. The challenge is to choose the right set of tools that will satisfy your requirements without breaking your bank. May I suggest, start with defining the core set of metrics that must be watched to ensure a healthy state – CPU, server RAM,  Node process RAM (less than 1.4GB), the number of errors in the last minute, number of process restarts, average response time. Then go over some advanced features you might fancy and add to your wish list. Some examples of a luxury monitoring feature: DB profiling, cross-service measuring (i.e. measure business transaction), front-end integration, expose raw data to custom BI clients, Slack notifications and many others.
 
-Achieving the advanced features demands lengthy setup or buying a commercial product such as Datadog, newrelic and alike. Unfortunately, achieving even the basics is not a walk in the park as some metrics are hardware-related (CPU) and others live within the node process (internal errors) thus all the straightforward tools require some additional setup. For example, cloud vendor monitoring solutions (e.g. AWS CloudWatch, Google StackDriver) will tell you immediately about the hardware metric but nothing about the internal app behavior. On the other end, Log-based solutions such as ElasticSearch lack by default the hardware view. The solution is to augment your choice with missing metrics, for example, a popular choice is sending application logs to Elastic stack and configure some additional agent (e.g. Beat) to share hardware-related information to get the full picture.
+> En el nivel más básico, monitorear significa *identificar fácilmente cuando ocurren cosas malas en producción. Por ejemplo, siendo notificados via correo o Slack. El reto es escoger las herramientas adecuadas que satisfagan los requerimientos sin romper nada. Podemos sugerir, empezar definiendo un conjunto de métricas principal, que debe ser vigilado para asegurar un estado sano: CPU, RAM de servidor, RAM del proceso node (menos de 1.4GB), el número de errores en el último minuto, número de re-inicios de proceso, tiempo de respuesta promedio. Después ir por características mas avanzadas que desees agregar a tu lista de deseos. Unos ejemplos de monitorio avanzados serían: Perfilamento de DB, medición entre servicios (Por ejemplo, medir una transacción comercial), integración del front-end, exponer renglones de data a clientes BI personalizados, notificaciones Slack, y muchas mas.
 
-### Blog Quote: "We have a problem with promises"
+Logrando características avanzadas requiere una gran configuración o comprar un producto comercial como Datalog, newrelic y similares. Lamentablemente, lograr lo básico tampoco es tan simple, debido a que algunas métricas son relacionadas con el Hardware (CPU) y otras viven dentro del proceso de Node (Errores internos), por ello todas las herramientas básicas requieren una configuración adicional. Por ejemplo, un vendedor de monitoreo en la nube (Por ejemplo. AWS CloudWatch, Google StackDriver) le dirán inmediatamente acerca de las métricas del Hardware, pero no tendrán nada respecto a el comportamiento interno de la aplicación. Por el otro lado, soluciones basadas en logueo como ElasticSearch no tienen en vista al hardware. La solución es aumentar su decisión con métricas faltantes, por ejemplo, una opción popular es enviar logs de la aplicación a Elastic stack y configurar un agente adicional (Por ejemplo. Beat) para compartir información relacionada al hardware y obtener la imágen completa
+
+### Cita de blog: "Tenemos un problema con Promises"
 
  From the blog, pouchdb.com ranked 11 for the keywords “Node Promises”
 
- > … We recommend you to watch these signals for all of your services: Error Rate: Because errors are user facing and immediately affect your customers.
-Response time: Because the latency directly affects your customers and business.
-Throughput: The traffic helps you to understand the context of increased error rates and the latency too.
-Saturation: It tells how “full” your service is. If the CPU usage is 90%, can your system handle more traffic?
-…
+ > … We recommend you to watch these signals for all of your services: Error Rate: Because errors are user facing and immediately affect your customers. Response time: Because the latency directly affects your customers and business. Throughput: The traffic helps you to understand the context of increased error rates and the latency too. Saturation: It tells how “full” your service is. If the CPU usage is 90%, can your system handle more traffic?…
+
+ > … Le recomendamos vigilar estas señales para todos sus servicios: Tasa de error: Por qué los errores encaran a los usuarios y tienen efectos inmediatos en los clientes; Tiempo de respuesta: Por qué la latencia afecta directamente los clientes y negocios; Rendimiento: El tráfico ayuda a entender el contexto de aumento de errores y de latencia. Saturación: Muestra que tan "lleno" está su servicio. Si el uso del CPU en 90%, ¿Su sistema puede manejar más tráfico?…

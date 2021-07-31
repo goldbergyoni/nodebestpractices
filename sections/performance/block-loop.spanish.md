@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-Node maneja el Event Loop mayormente en un único hilo rotando a través de múltiples colas. Operaciones con alta complejidad, parseo de largos json, aplicar lógica sobre grandes arrays, consultas inseguras de regex, y largas operaciones de IO son algunas de las operaciones que pueden causar que el Event Loop se sobrecargue. Evitar esta descarga de tareas intensas de la CPU a un servicio dedicado (por ejemplo, un job server), o separar largas tareas en pequeños pasos y luego usar el Worker Pool son algunos ejemplos de cómo evitar bloquear el Event Loop.
+Node maneja el Event Loop mayormente en un único hilo rotando a través de múltiples colas. Operaciones con alta complejidad, conversión de JSON largos, aplicar lógica sobre grandes arreglos, consultas inseguras de regex, y largas operaciones de IO son algunas de las operaciones que pueden causar que el Event Loop se sobrecargue. Evitar esta descarga de tareas intensas de la CPU a un servicio dedicado (por ejemplo, un job server), o separar largas tareas en pequeños pasos y luego usar el Worker Pool son algunos ejemplos de cómo evitar bloquear el Event Loop.
 
 ### Ejemplo: bloqueando el event loop
 Observemos un ejemplo de [Node Clinic](https://clinicjs.org/documentation/doctor/05-fixing-event-loop-problem).
@@ -43,8 +43,14 @@ while loop.
 ## Imagen del Event Loop
 ![Event Loop](/assets/images/event-loop.png "Event Loop")
 
+>Here's a good rule of thumb for keeping your Node server speedy: Node is fast when the work associated with each client at any given time is "small".
+>[Don't Block the Event Loop (or the Worker Pool) | Node.js](https://nodejs.org/en/docs/guides/dont-block-the-event-loop/)
+
 > Esta es una manera práctica de mantener tu servidor de Node rápido: Node es rápido cuando el trabajo asociado con cada cliente en cualquier momento dado es "pequeño".
 >[Don't Block the Event Loop (or the Worker Pool) | Node.js](https://nodejs.org/en/docs/guides/dont-block-the-event-loop/)
 
-> La mayoría de las personas fracasan en sus primeras aplicaciones de NodeJS principalmente debido a la falta de entendimiento de los conceptos como el del Event Loop, manejo de errores y asincronismo.
+> Most people fail their first few NodeJS apps merely due to the lack of understanding of the concepts such as the Event Loop, Error handling and asynchrony 
+[Event Loop Best Practices — NodeJS Event Loop Part 5](https://blog.insiderattack.net/event-loop-best-practices-nodejs-event-loop-part-5-e29b2b50bfe2)
+
+> La mayoría de las personas fracasan en sus primeras aplicaciones de NodeJS principalmente debido a la falta de entendimiento de los conceptos como el Event Loop, manejo de errores y asíncronismo.
 [Event Loop Best Practices — NodeJS Event Loop Part 5](https://jsblog.insiderattack.net/event-loop-best-practices-nodejs-event-loop-part-5-e29b2b50bfe2)
