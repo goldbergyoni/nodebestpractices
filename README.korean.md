@@ -30,11 +30,11 @@
 
 # 최근 모범사례와 뉴스
 
-- **:tada: Node.js 모범사례가 4만 별에 도달했습니다**: 이 프로젝트가 지금 여기까지 올 수 있도록 도와주신 모든 협력자분들께 감사드립니다. 앞으로도 계속 늘어나는 Node.js 모범사례들을 추가하여 더욱더 확장시킬 계획입니다.
+- **![FR](./assets/flags/FR.png) 프랑스어 번역!1! :** 우리의 국제 가이드에 합류한 최신 번역은 프랑스어입니다. Bienvenue(어서오세요.)
 
-- **:rocket: 새로운 모범사례 둘 추가**: 그동안 열심히 만든 dependency state를 production 환경에서 미리 볼 수 있는 [npm ci 사용](https://github.com/goldbergyoni/nodebestpractices#-519-install-your-packages-with-npm-ci) 관련 부분과, [미들웨어 격리 테스트](https://github.com/goldbergyoni/nodebestpractices#-413-test-your-middlewares-in-isolation)에 관한 새로운 모범사례들을 두 개 추가했습니다.
+- **🇯🇵 Japanese translation:** 우리 가이드는 이제 일본어로도 번역됩니다! 뛰어난 [YukiOta](https://github.com/YukiOta)와 [Yuta Azumi](https://github.com/YA21)의 제공입니다.
 
-- **:whale: Node.js + Docker 모범사례**: dockerized 된 Node.js 애플리케이션 관련 모범사례 [아이디어 수집](https://github.com/goldbergyoni/nodebestpractices/issues/620)을 개시합니다. 그 외에 다른 모범사례가 있다면 주저말고 대화에 참여해주세요!
+- **🎊 60,000 stars!**: 우리 리포지토리는 60,100명의 개발자에게 별을 받고 신뢰를 얻었습니다. 말문이 막힐 정도입니다.
 
 <br/><br/>
 
