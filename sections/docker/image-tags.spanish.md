@@ -1,10 +1,10 @@
 # Comprenda las etiquetas de imagen vs digests, y use la etiqueta `:latest` con precaución
 
-### Un párrafo explicativo
+### Párrafo de explicación
 
 Si se trata de una situación de producción, y la seguridad y estabilidad son importantes, es probable que la "conveniencia" no sea el mejor factor decisivo. Además, la etiqueta `:latest` es la etiqueta predeterminada de Docker. Esto significa que un desarrollador que se olvide añadir una etiqueta explícita insertará accidentalmente una nueva versión de una imagen como `latest`, lo que podría dar lugar a resultados inesperados si se confía en la etiqueta `latest` como la imagen de producción más reciente.
 
-### Ejemplo de código:
+### Código de ejemplo:
 
 ```bash
 $ docker build -t company/image_name:0.1 .
