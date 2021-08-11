@@ -31,7 +31,7 @@ El comando de compilación de Docker copia los archivos locales en el entorno de
 
 <br/><br/>
 
-### Código antipatrón de ejemplo – Copia recursiva de todos los archivos
+### Código de ejemplo anti-patrón – Copia recursiva de todos los archivos
 
 <details>
 <summary><strong>Dockerfile</strong></summary>

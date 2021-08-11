@@ -62,7 +62,7 @@ CMD ["node", "index.js"]
 
 <br/><br/>
 
-### Código antipatrón de ejemplo – Usando argumentos de tiempo de compilación
+### Código de ejemplo anti-patrón – Usando argumentos de tiempo de compilación
 
 <details>
 
