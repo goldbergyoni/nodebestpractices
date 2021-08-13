@@ -1523,6 +1523,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "rafaelconcept",
+      "name": "Rafael Brito",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43880669?v=4",
+      "profile": "https://www.linkedin.com/in/rafaelconcept/",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
