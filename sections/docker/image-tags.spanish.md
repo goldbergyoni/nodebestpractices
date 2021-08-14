@@ -19,6 +19,8 @@ $ docker build -t company/image_name:latest .
 
 ### Lo que dicen otros Blogueros
 Del blog de [Vladislav Supalov](https://vsupalov.com/docker-latest-tag/):
+> Some people expect that :latest always points to the most-recently-pushed version of an image. That’s not true.
+
 > Algunas personas esperan que :latest siempre apunte a la versión más reciente de una imagen. Eso no es cierto.
 
 Desde el [Docker success center](https://success.docker.com/article/images-tagging-vs-digests)
