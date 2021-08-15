@@ -1532,6 +1532,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "emiperalta",
+      "name": "Emiliano Peralta",
+      "avatar_url": "https://avatars.githubusercontent.com/u/63617637?v=4",
+      "profile": "https://emiliano-peralta-portfolio.vercel.app/",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
