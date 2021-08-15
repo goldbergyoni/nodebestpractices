@@ -1541,6 +1541,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "lannex",
+      "name": "Shin, SJ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7369541?v=4",
+      "profile": "https://lannex.github.io",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
