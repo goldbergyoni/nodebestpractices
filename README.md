@@ -356,7 +356,7 @@ const CONFIG = {
 // in javascript Math.PI module
 const PI = 3.141592653589793;
 
-// https://github.com/nodejs/node/blob/master/lib/internal/http2/core.js
+// https://github.com/nodejs/node/blob/b9f36062d7b5c5039498e98d2f2c180dca2a7065/lib/internal/http2/core.js#L303
 // in nodejs http2 module
 const HTTP_STATUS_OK = 200;
 const HTTP_STATUS_CREATED = 201;
