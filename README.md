@@ -371,7 +371,7 @@ class SomeClassExample {
 function doSomething() {
   // for scoped variable names we use the const/let keyword and lowerCamelCase
   const someConstExample = "immutable value";
-  let someVariableExample = "mutable value";
+  let someMutableExample = "mutable value";
 }
 ```
 
