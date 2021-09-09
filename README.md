@@ -352,6 +352,15 @@ const CONFIG = {
   key: "value",
 };
 
+// examples of UPPER_SNAKE_CASE convetion in nodejs/javascript ecosystem
+// in javascript Math.PI module
+const PI = 3.141592653589793;
+
+// https://github.com/nodejs/node/blob/master/lib/internal/http2/core.js
+// in nodejs http2 module
+const HTTP_STATUS_OK = 200;
+const HTTP_STATUS_CREATED = 201;
+
 // for class name we use UpperCamelCase
 class SomeClassExample {
   // for static class properties we use UPPER_SNAKE_CASE
