@@ -338,7 +338,7 @@ const count = 2 // it tries to run 2(), but 2 is not a function
 
 ## ![✔] 3.6 Use naming conventions for variables, constants, functions and classes
 
-**TL;DR:** Use **_lowerCamelCase_** when naming constants, variables and functions and **_UpperCamelCase_** (capital first letter as well) when naming classes, **_UPPER_SNAKE_CASE_** when naming global or static variables. This will help you to easily distinguish between plain variables/functions, classes that require instantiation and variables declared at global module scope. Use descriptive names, but try to keep them short
+**TL;DR:** Use **_lowerCamelCase_** when naming constants, variables and functions, **_UpperCamelCase_** (capital first letter as well) when naming classes and **_UPPER_SNAKE_CASE_** when naming global or static variables. This will help you to easily distinguish between plain variables, functions, classes that require instantiation and variables declared at global module scope. Use descriptive names, but try to keep them short
 
 **Otherwise:** JavaScript is the only language in the world that allows invoking a constructor ("Class") directly without instantiating it first. Consequently, Classes and function-constructors are differentiated by starting with UpperCamelCase
 
