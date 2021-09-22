@@ -16,7 +16,9 @@
 
 [![nodepractices](./assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
 
-👨‍🏫 [Nodeconf 2021](https://www.nodeconfremote.com/#workshops) is just around the corner, and will **host a 5 hours testing workshop with Yoni Goldberg**. [Register here](https://www.nodeconfremote.com/#workshops)
+<br/>
+
+✨ 👨‍🏫 [Nodeconf 2021](https://www.nodeconfremote.com/#workshops) is just around the corner, and will **host a 5 hours testing workshop with Yoni Goldberg**. [Register here](https://www.nodeconfremote.com/#workshops)
 
 
 <br/>
