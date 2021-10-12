@@ -30,7 +30,7 @@
 
 1. [專案架構實踐 (5) ](#1-project-structure-practices)
 2. [錯誤處理實踐 (11) ](#2-error-handling-practices)
-3. [原始碼規範實踐 (12) ](#3-code-style-practices)
+3. [撰寫風格實踐 (12) ](#3-code-style-practices)
 4. [測試和總體品質實踐 (8) ](#4-testing-and-overall-quality-practices)
 5. [進入產品階段實踐 (16) ](#5-going-to-production-practices)
 6. [安全性實踐(23)](#6-security-best-practices)
@@ -222,172 +222,205 @@
 
 <p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
-<h1 id="3-code-style-practices"><code>3. 编码风格實踐</code></h1>
+# `3. 撰寫風格實踐`
 
 ## ![✔] 3.1 使用ESLint
 
-**TL;DR:** [ESLint](https://eslint.org)是检查可能的代码錯誤和修复代码样式的事实上的标准，不仅可以识别实际的间距问题, 而且还可以检测严重的反模式代码, 如开发人员在不分类的情况下抛出錯誤。尽管ESlint可以自动修复代码样式，但其他的工具比如[prettier](https://www.npmjs.com/package/prettier)和[beautify](https://www.npmjs.com/package/js-beautify)在格式化修复上功能强大，可以和Eslint结合起来使用。
+**TL;DR:** [ESLint](https://eslint.org)是檢查可能的代碼錯誤和修復撰寫風格的業界標準，不僅可以識別細微的間距問題，還可以檢測嚴重的反模式(anti-patterns)程式碼，如開發人員拋出的錯誤沒有分類。雖然ESLint可以自動修復撰寫風格，但其他工具如 [prettier](https://www.npmjs.com/package/prettier) 和 [beautify](https://www.npmjs.com/package/js-beautify) 在格式化修復方面更加強大，並與ESLint同時運作。
 
-**否則:** 开发人员将必须关注单调乏味的间距和线宽问题, 并且时间可能会浪费在过多考虑项目的代码样式。
+**否則:** 開發人員將專注於繁瑣的間距和行寬問題，時間可能被浪費在過度考慮各種撰寫風格上。
 
 <br/><br/>
 
 ## ![✔] 3.2 Node.js特定的插件
 
-**TL;DR:** 除了仅仅涉及 vanilla JS 的 ESLint 标准规则，添加 Node 相关的插件，比如[eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
+**TL;DR:** 除了僅僅涉及 vanilla JS 的 ESLint 標準規則，加入 Node 相關的插件，比如[eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
-**否則:** 许多錯誤的Node.js代码模式可能在检测下逃生。例如，开发人员可能需要某些文件，把一个变量作为路径名 (variableAsPath) ，这会导致攻击者可以执行任何JS脚本。Node.JS linters可以检测这类模式，并及早预警。
+**否則:** 許多錯誤的Node.js設計模式可能在檢測下逃生。例如，開發人員可能需要某些文件，把一個變數作為路徑名 (variableAsPath) ，這會導致攻擊者可以執行任何JS程式。Node.JS linters可以檢測這類模式，並提早預警。
 
 <br/><br/>
 
-## ![✔] 3.3 在同一行开始一个代码块的大括号
+## ![✔] 3.3 在同一行上開始一個區塊(Codeblock)的大括號
 
-**TL;DR:** 代码块的第一个大括号应该和声明的起始保持在同一行中。
+**TL;DR:** 區塊(Codeblock)的開頭大括號應與開頭語句在同一行中
 
-### 代码示例
+### 範例程式
 ```javascript
-  // 建议
+  // 建議
   function someFunction() {
-    // 代码块
+    // code block
   }
 
   // 避免
   function someFunction()
   {
-    // 代码块
+    // code block
   }
 ```
 
-**否則:** 不遵守这项最佳實踐可能导致意外的结果，在Stackoverflow的帖子中可以查看到，如下：
+**否則:** 不遵守這項最佳實踐可能導致意外的结果，在Stackoverflow的討論中可以看到，如下：
 
 🔗 [**更多:** "Why does a results vary based on curly brace placement?" (Stackoverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
 <br/><br/>
 
-## ![✔] 3.4 不要忘记分号
+## ![✔] 3.4 不要忘記分號
 
-**TL;DR:** 即使没有获得一致的认同，但在每一个表达式后面放置分号还是值得推荐的。这将使您的代码, 对于其他阅读代码的开发者来说，可读性，明确性更强。
+無論你是否使用分號來分隔你的語句，了解不適當的斷行或自動分號插入的常見陷阱，將有助於你消除基本的語法錯誤。
 
-**否則:** 在前面的章节里面已经提到，如果表达式的末尾没有添加分号，JavaScript的解释器会在自动添加一个，这可能会导致一些意想不到的结果。
+**TL;DR:** 使用ESLint來獲得對分離問題的認識。[Prettier](https://prettier.io/) 或 [Standardjs](https://standardjs.com/)可以自動解決這些問題。
 
-<br/><br/>
+**否則:** 正如在上一節中所看到的，JavaScript的解釋器會在沒有分號的情況下自動在語句的末尾加上分號，或者認為語句在應該結束的地方沒有結束，這可能會導致一些不想要的結果。你可以使用賦值，避免使用立即調用的函數表達式，以防止大多數意外的錯誤。
 
-## ![✔] 3.5 命名您的方法
+### Code example
 
-**TL;DR:** 命名所有的方法，包含闭包和回调, 避免匿名方法。当剖析一个node应用的时候，这是特别有用的。命名所有的方法将会使您非常容易的理解内存快照中您正在查看的内容。
-
-**否則:** 使用一个核心dump（内存快照）调试线上问题，会是一项非常挑战的事项，因为你注意到的严重内存泄漏问题极有可能产生于匿名的方法。
-
-<br/><br/>
-
-## ![✔] 3.6 变量、常量、函数和类的命名约定
-
-**TL;DR:** 当命名变量和方法的时候，使用 ***lowerCamelCase*** ，当命名类的时候，使用 ***UpperCamelCase*** （首字母大写），对于常量，则 ***UPPERCASE*** 。这将帮助您轻松地区分普通变量/函数和需要实例化的类。使用描述性名称，但使它们尽量简短。
-
-**否則:** JavaScript是世界上唯一一门不需要实例化，就可以直接调用构造函数（"Class"）的编码语言。因此，类和函数的构造函数由采用UpperCamelCase开始区分。
-
-### 代码示例 ###
 ```javascript
-  // 使用UpperCamelCase命名类名
-  class SomeClassExample () {
+// Do
+function doThing() {
+    // ...
+}
 
-    // 常量使用const关键字，并使用lowerCamelCase命名
-    const config = {
-      key: 'value'
-    };
+doThing()
 
-    // 变量和方法使用lowerCamelCase命名
-    let someVariableExample = 'value';
-    function doSomething() {
+// Do
 
-    }
+const items = [1, 2, 3]
+items.forEach(console.log)
 
-  }
+// Avoid — throws exception
+const m = new Map()
+const a = [1,2,3]
+[...m.values()].forEach(console.log)
+> [...m.values()].forEach(console.log)
+>  ^^^
+> SyntaxError: Unexpected token ...
+
+// Avoid — throws exception
+const count = 2 // it tries to run 2(), but 2 is not a function
+(function doSomething() {
+  // do something amazing
+}())
+// put a semicolon before the immediate invoked function, after the const definition, save the return value of the anonymous function to a variable or avoid IIFEs altogether
+```
+
+🔗 [**Read more:** "Semi ESLint rule"](https://eslint.org/docs/rules/semi)
+🔗 [**Read more:** "No unexpected multiline ESLint rule"](https://eslint.org/docs/rules/no-unexpected-multiline)
+
+<br/><br/>
+
+## ![✔] 3.5 命名您的函數
+
+**TL;DR:** 命名所有的函數，包括閉包(closures)和回調(callbacks)。避免使用匿名函數。這在對 Node 應用程式進行分析時特別有用。命名所有的函數將允許你在檢查記憶體快照時輕鬆地了解你在看什麽。
+
+**否則:** 使用 core dump (記憶體快照) 調試產品(production)的問題可能會變得具有挑戰性，因為你注意到匿名函數消耗大量的記憶體
+
+<br/><br/>
+
+## ![✔] 3.6 使用變數、常數、函數和class的命名慣例
+
+**TL;DR:** 在命名常數、變數和函數時使用**_lowerCamelCase_**，在命名class時使用**_UpperCamelCase_** (也是大寫的第一個字母)。這將幫助你輕鬆區分普通變數/函數和需要實例化的class。使用描述性的名字，但盡量保持簡短
+
+**否則:** JavaScript是世界上唯一一種允許直接調用構造函數 ("Class") 而不需要先將其實例化的語言。因此，"Class" 和函數建構子(function-constructors)是以UpperCamelCase開頭來區分的。
+
+### 3.6 範例程式
+
+```javascript
+// class 我們使用 UpperCamelCase 命名
+class SomeClassExample {}
+
+// 針對常數我們使用 lowerCamelCase 命名
+const config = {
+  key: "value",
+};
+
+// 針對變數和函數我們使用 lowerCamelCase 命名
+let someVariableExample = "value";
+function doSomething() {}
 ```
 
 <br/><br/>
 
-## ![✔] 3.7 使用const优于let，废弃var
+## ![✔] 3.7 使用const優於let，廢棄var
 
-**TL;DR:** 使用`const`意味着一旦一个变量被分配，它不能被重新分配。使用const将帮助您免于使用相同的变量用于不同的用途，并使你的代码更清晰。如果一个变量需要被重新分配，以在一个循环为例，使用`let`声明它。let的另一个重要方面是，使用let声明的变量只在定义它的块作用域中可用。 `var`是函数作用域，不是块级作用域，既然您有const和let让您随意使用，那么[不应该在ES6中使用var](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70)。
+**TL;DR:** 使用 "const" 代表著一旦變數被賦值，它就不能被重新賦值。傾向於使用`const`將幫助你不被誘惑於將同一個變數用於不同的用途，並使你的程式碼更加清晰。如果一個變數需要被重新賦值，例如在for循環中，使用`let`來宣告它。`let`的另一個重要方面是，用它宣告的變數只在定義它的範圍內可用。`var`是函數作用域，不是塊作用域，而且[不應該在ES6中使用](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70)，現在你有`const`和`let`可以使用了。
 
-**否則:** 当经常更改变量时，调试变得更麻烦了。
+**否則:** 當變數經常變換的時候，除錯變得更加困難
 
 🔗 [**更多: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
 
 <br/><br/>
 
-## ![✔] 3.8 先require, 而不是在方法内部
+## ![✔] 3.8 先require, 而不是在函數内
 
-**TL;DR:** 在每个文件的起始位置，在任何函数的前面和外部require模块。这种简单的最佳實踐，不仅能帮助您轻松快速地在文件顶部辨别出依赖关系，而且避免了一些潜在的问题。
+**TL;DR:** 在每個文件的起始位置，在任何函數的前面和外部require模組(module)。這種簡單的最佳實踐，不僅能幫助您輕鬆快速地在文件頂部辨別出相依關係，而且避免了一些潛在的問題。
 
-**否則:** 在Node.js中，require 是同步运行的。如果从函数中调用它们，它可能会阻塞其他请求，在更关键的时间得到处理。另外，如果所require的模块或它自己的任何依赖项抛出錯誤并使服务器崩溃，最好尽快查明它，如果该模块在函数中require的，则可能不是这样的情况。
+**否則:** 在Node.js中，require 是同步運行的。如果從函數中調用它們，它可能會阻塞其他請求，在更關鍵的時間得到處理。另外，如果所require的模組(module)或它自己的任何相依套件拋出錯誤並使伺服器崩潰，最好盡快查明它，如果該模組(module)在函數中require的，則可能不是這樣的情況。
 
 <br/><br/>
 
-## ![✔] 3.9 require 文件夹，而不是文件
+## ![✔] 3.9 require 資料夾，而不是文件
 
-**TL;DR:** 当在一个文件夹中开发库/模块，放置一个文件index.js暴露模块的
-内部，这样每个消费者都会通过它。这将作为您模块的一个接口，并使未来的变化简单而不违反规则。
+**TL;DR:** 當在一個資料夾中開發一個模組(module)/函式庫(library)時，放置一個index.js文件，暴露模塊的內部結構，這樣每個消費者都會通過它。這可以作為你的模組(module)的 "接口"，並在不破壞合同的情況下減輕未來的變化。
 
-**否則:** 更改文件内部结构或签名可能会破坏与客户端的接口。
+**否則:** 改變文件的內部結構或檔名可能會破壞與客戶的接口。
 
-### 代码示例
+### 3.9 範例程式
 ```javascript
-  // 建议
-  module.exports.SMSProvider = require('./SMSProvider');
-  module.exports.SMSNumberResolver = require('./SMSNumberResolver');
+// 建議
+module.exports.SMSProvider = require('./SMSProvider');
+module.exports.SMSNumberResolver = require('./SMSNumberResolver');
 
-  // 避免
-  module.exports.SMSProvider = require('./SMSProvider/SMSProvider.js');
-  module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolver.js');
+// 避免
+module.exports.SMSProvider = require('./SMSProvider/SMSProvider.js');
+module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolver.js');
 ```
 
 <br/><br/>
 
 
-## ![✔] 3.10 使用 `===` 操作符
+## ![✔] 3.10 使用 `===` 運算子
 
-**TL;DR:** 对比弱等于 `==`，优先使用严格的全等于 `===` 。`==`将在它们转换为普通类型后比较两个变量。在 `===` 中没有类型转换，并且两个变量必须是相同的类型。
+**TL;DR:** 對比弱等於 `==`，優先使用嚴格的全等於 `===` 。`==`將在它們轉換為普通類型後比叫兩個變數。在 `===` 中沒有類型轉換，並且兩個變數必須是相同的類型。
 
-**否則:** 与 `==` 操作符比较，不相等的变量可能会返回true。
+**否則:** 與 `==` 操作符比較，不相等的變數可能會返回true。
 
-### 代码示例
+### 3.10 範例程式
 ```javascript
-'' == '0'           // false
-0 == ''             // true
-0 == '0'            // true
+"" == "0"; // false
+0 == ""; // true
+0 == "0"; // true
 
-false == 'false'    // false
-false == '0'        // true
+false == "false"; // false
+false == "0"; // true
 
-false == undefined  // false
-false == null       // false
-null == undefined   // true
+false == undefined; // false
+false == null; // false
+null == undefined; // true
 
-' \t\r\n ' == 0     // true
+" \t\r\n " == 0; // true
 ```
-如果使用`===`， 上面所有语句都将返回 false。
+
+如果使用`===`， 上面所有判斷都將回傳 false。
 
 <br/><br/>
 
-## ![✔] 3.11 使用 Async Await, 避免回调
+## ![✔] 3.11 使用 Async Await, 避免使用 callback
 
-**TL;DR:** Node 8 LTS现已全面支持异步等待。这是一种新的方式处理异步请求，取代回调和promise。Async-await是非阻塞的，它使异步代码看起来像是同步的。您可以给你的代码的最好的礼物是用async-await提供了一个更紧凑的，熟悉的，类似try catch的代码语法。
+**TL;DR:** Node 8 LTS現已全面支援異步等待(async-await)。這是一種新的方式處理異步請求，取代 callbacks 和 promise 。Async-await 是非阻塞的，它使異步程式看起來像是同步的。您可以給你的程式的最好的禮物是用 async-await 提供了一個更緊湊的，熟悉的，類似 try catch 的代碼語法。
 
-**否則:** 使用回调的方式处理异步錯誤可能是陷入困境最快的方式 - 这种方式必须面对不停地检测錯誤，处理别扭的代码内嵌，难以推理编码流。
+**否則:** 使用 callbacks 的方式處理異步錯誤可能是陷入困境最快的方式 - 這種方式必須面對不停地檢測錯誤，處理彆扭的巢狀程式，難以推理程式流程。
 
-🔗[**更多:** async await 1.0 引导](https://github.com/yortus/asyncawait)
+🔗[**更多:** async await 1.0 指引](https://github.com/yortus/asyncawait)
 
 <br/><br/>
 
-## ![✔] 3.12 使用 (=>) 箭头函数
+## ![✔] 3.12 使用 (=>) 箭頭函式
 
-**TL;DR:** 尽管使用 async-await 和避免方法作为参数是被推荐的, 但当处理那些接受promise和回调的老的API的时候 - 箭头函数使代码结构更加紧凑，并保持了根方法上的语义上下文 (例如 'this')。
+**TL;DR:** 盡管使用 async-await 和避免方法作為參數是被推薦的, 但當處理那些接受promise和 callbacks 的老的API的時候 - 箭頭函式使程式結構更加緊湊，並保持了根方法上的語義上下文 (例如 'this')。
 
-**否則:** 更长的代码（在ES5方法中）更易于产生缺陷，并读起来很是笨重。
+**否則:** 更長的程式碼 (在ES5方法中) 更易於產生缺陷，並且讀起來很是笨重。
 
-🔗 [**更多: 这是拥抱箭头函数的时刻**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
+🔗 [**更多: 這是擁抱箭頭函式的時刻**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
 
 
 <br/><br/><br/>
