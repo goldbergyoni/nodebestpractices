@@ -220,7 +220,7 @@
 
 🔗 [**Read More: 回傳 promises**](./sections/errorhandling/returningpromises.md)
 
-<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
+<p align="right"><a href="#table-of-contents">⬆ 返回頂部</a></p>
 
 # `3. 撰寫風格實踐`
 
@@ -425,85 +425,132 @@ null == undefined; // true
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
+<p align="right"><a href="#table-of-contents">⬆ 返回頂部</a></p>
 
 
-<h1 id="4-testing-and-overall-quality-practices"><code>4. 测试和总体的质量實踐</code></h1>
+# `4. 測試和總體品質實踐`
 
-## ![✔] 4.1 至少，编写API（组件）测试
+## ![✔] 4.1 至少，寫個API (元件 (component)) 測試
 
-**TL;DR:** 大多数项目只是因为时间表太短而没有进行任何自动化测试，或者测试项目失控而正被遗弃。因此，优先从API测试开始，这是最简单的编写和提供比单元测试更多覆盖率的事情（你甚至可能不需要编码而进行API测试，像[Postman](https://www.getpostman.com/)。之后，如果您有更多的资源和时间，继续使用高级测试类型，如单元测试、DB测试、性能测试等。
+**TL;DR:** 大多數專案只是因為時程太短而沒有進行任何自動化測試，或者「測試專案」失控而正被遺棄。因此，優先從API測試開始，這是最簡單的撰寫和提供比單元測試更多覆蓋率的事情(你甚至可能不需要撰寫任何程式而進行API測試，像[Postman](https://www.getpostman.com/))。之後，如果您有更多的資源和時間，繼續使用高級測試類型，如單元測試、DB測試、性能測試等。
 
-**否則:** 您可能需要花很长时间编写单元测试，才發現只有20%的系统覆盖率。
-
-<br/><br/>
-
-## ![✔] 4.2 使用一个linter检测代码问题
-
-**TL;DR:** 使用代码linter检查基本质量并及早检测反模式。在任何测试之前运行它, 并将其添加为预提交的git钩子, 以最小化审查和更正任何问题所需的时间。也可在[Section 3](https://github.com/goldbergyoni/nodebestpractices#3-code-style-practices)中查阅编码样式實踐
-
-**否則:** 您可能让一些反模式和易受攻击的代码传递到您的生产环境中。
-
+**否則:** 您可能需要花很長時間編寫單元測試，才發現只有20%的系統覆蓋率。
 
 <br/><br/>
 
-## ![✔] 4.3 仔细挑选您的持续集成（CI）平台
+## ![✔] 4.2 在每個測試名稱中包含3個部分
 
-**TL;DR:** 您的持续集成平台（cicd）将集成各种质量工具（如测试、lint），所以它应该是一个充满活力的生态系统，包含各种插件。[jenkins](https://jenkins.io/)曾经是许多项目的默认选项，因为它有最大的社区，同时也是一个非常强大的平台，这样的代价是要求一个陡峭的学习曲线。如今，使用SaaS工具，比如[CircleCI](https://circleci.com)及其他，安装一套CI解决方案，相对是一件容易的事情。这些工具允许构建灵活的CI管道，而无需管理整个基础设施。最终，这是一个鲁棒性和速度之间的权衡 - 仔细选择您支持的方案。
+**TL;DR:** 讓測試在需求層面上說話，這樣對不熟悉程式內部的QA工程師和開發人員來說也是不言自明的。在測試名稱中說明：什麽是被測試的 (被測單元)、在什麽情況下、預期結果是什麽。
 
-**否則:** 一旦您需要一些高级定制，选择一些细分市场供应商可能会让您停滞不前。另一方面，伴随着jenkins，可能会在基础设施设置上浪费宝贵的时间。
+**Otherwise:** 一個部署剛剛失敗，一個名為 "添加產品 "的測試失敗。這樣你知道哪裡故障了？
 
-🔗 [**更多: 挑选 CI 平台**](./sections/testingandquality/citools.chinese.md)
-
-<br/><br/>
-
-## ![✔] 4.4 经常检查易受攻击的依赖
-
-**TL;DR:** 即使是那些最有名的依赖模块，比如Express，也有已知的漏洞。使用社区和商业工具，比如 🔗 [npm audit](https://docs.npmjs.com/cli/audit) ，集成在您的CI平台上，在每一次构建的时候都会被调用，这样可以很容易地解决漏洞问题。
-
-**否則:** 在没有专用工具的情况下，使代码清除漏洞，需要不断地跟踪有关新威胁的在线出版物，相当繁琐。
+🔗 [**Read More: 在每個測試名稱中包含3個部分**](./sections/testingandquality/3-parts-in-name.md)
 
 <br/><br/>
 
-## ![✔] 4.5 测试标签化
+## ![✔] 4.3 按AAA模式進行結構測試
 
-**TL;DR:**  不同的测试必须运行在不同的情景：quick smoke，IO-less，当开发者保存或提交一个文件，测试应该启动；完整的端到端的测试通常运行在一个新的pull request被提交之后，等等。这可以通过对测试用例设置标签，比如关键字像#cold #api #sanity，来完成。这样您可以对您的测试集进行grep，调用需要的子集。例如，这就是您通过[Mocha](https://mochajs.org/)仅仅调用sanity测试集所需要做的：mocha --grep 'sanity'。
+**TL;DR:** 用3個分開的部分來組織你的測試。安排 (Arrange) ，行動 (Act) 和斷言 (Assert) **AAA**。第一部分包括測試設置，然後是被測單元的執行，最後是斷言階段。遵循這個結構可以保證讀者不花腦筋去理解測試計劃
 
-**否則:** 运行所有的测试，包括执行数据库查询的几十个测试，任何时候开发者进行小的改动都可能很慢，这使得开发者不愿意运行测试。
+**Otherwise:** 你不僅會每天花很長的時間來理解主要程式，而且現在本應是一天中最簡單的部分 (測試) 也讓你的大腦捉襟見肘。
+
+🔗 [**Read More: 按AAA模式進行結構測試**](./sections/testingandquality/aaa.md)
 
 <br/><br/>
 
-## ![✔] 4.6 检查测试覆盖率，它有助于识别錯誤的测试模式
+## ![✔] 4.4 使用一個linter檢測程式碼問題
 
-**TL;DR:** 代码覆盖工具比如 [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc)，很好用有3个原因：它是免费的（获得这份报告不需要任何开销），它有助于确定测试覆盖率降低的部分，以及最后但非最不重要的是它指出了测试中的不匹配：通过查看颜色标记的代码覆盖报告您可以注意到，例如，从来不会被测到的代码片段像catch语句（即测试只是调用正确的路径，而不调用应用程序发生錯誤时的行为）。如果覆盖率低于某个阈值，则将其设置为失败的构建。
+**TL;DR:** 使用程式碼linter檢查基本品質並及早檢測反模式(anti-patterns)。在任何測試之前執行它, 並將其添加為提交前的git-hook, 以最小化審查和更正任何問題所需的時間。也可在[Section 3](https://github.com/goldbergyoni/nodebestpractices#3-code-style-practices)中查閱撰寫風格實踐
 
-**否則:** 当你的大部分代码没有被测试覆盖时，就不会有任何自动化的度量指标告诉你了。
-
+**否則:** 您可能讓一些反模式(anti-patterns)和易受攻擊的程式碼傳遞到您的生產環境中。
 
 
 <br/><br/>
 
-## ![✔] 4.7 检查过期的依赖包
+## ![✔] 4.5 避免全域測試 fixtures 和 seeds ，按每個測試需求添加數據
 
-**TL;DR:** 使用您的首选工具 (例如 “npm outdated” or [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) 来检测已安装的过期依赖包, 将此检查注入您的 CI 管道, 甚至在严重的情况下使构建失败。例如, 当一个已安装的依赖包滞后5个补丁时 (例如:本地版本是1.3.1 的, 存储库版本是1.3.8 的), 或者它被其作者标记为已弃用, 可能会出现严重的情况 - 停掉这次构建并防止部署此版本。
+**TL;DR:** 為了防止測試耦合和容易推理測試流程，每個測試都應該添加和作用於它自己的一組DB數據。每當一個測試需要拉動或假設一些DB數據的存在 - 它必須明確地添加該數據，避免任何突變影響其他記錄。
 
-**否則:** 您的生产环境将运行已被其作者明确标记为有风险的依赖包
+**Otherwise:** 考慮這樣一種情況：由於測試失敗，部署被中止，團隊現在要花費寶貴的調查時間，最後得出一個可悲的結論：系統運行良好，但測試相互干擾，破壞了部署上線。
+
+🔗 [**Read More: 避免全域測試 fixtures**](./sections/testingandquality/avoid-global-test-fixture.md)
 
 <br/><br/>
 
-## ![✔] 4.8 对于e2e testing，使用docker-compose
+## ![✔] 4.6 经常检查易受攻击的依赖
 
-**TL;DR:** 端对端(e2e)测试包含现场数据，由于它依赖于很多重型服务如数据库，习惯被认为是CI过程中最薄弱的环节。Docker-compose通过制定类似生产的环境，并使用一个简单的文本文件和简单的命令，轻松化解了这个问题。它为了e2e测试，允许制作所有相关服务，数据库和隔离网络。最后但并非最不重要的一点是，它可以保持一个无状态环境，该环境在每个测试套件之前被调用，然后立即消失。
+**TL;DR:** 即使是那些最有名的依賴模塊，比如Express，也有已知的漏洞。使用社區和商業工具，比如 🔗 [npm audit](https://docs.npmjs.com/cli/audit) ，集成在您的CI平台上，在每一次構建的時候都會被調用，這樣可以很容易地解決漏洞問題。
+
+**否則:** 在沒有專用工具的情況下，使程式碼清除漏洞，需要不斷地跟蹤有關新威脅的在線出版物，相當繁瑣。
+
+<br/><br/>
+
+## ![✔] 4.7 測試標簽化
+
+**TL;DR:**  不同的測試必須運行在不同的情景：quick smoke，IO-less，當開發者保存或提交一個文件，測試應該啟動；完整的端到端的測試通常運行在一個新的pull request被提交之後，等等。這可以通過對測試用例設置標簽，比如關鍵字像#cold #api #sanity，來完成。這樣您可以對您的測試集進行grep，調用需要的子集合。例如，這就是您通過[Mocha](https://mochajs.org/)僅僅調用sanity測試集所需要做的：mocha --grep 'sanity'。
+
+**否則:** 執行所有的測試，包括執行資料庫查詢的幾十個測試，任何時候開發者進行小的改動都可能很慢，這使得開發者不願意進行測試。
+
+<br/><br/>
+
+## ![✔] 4.8 檢查測試覆蓋率，它有助於識別錯誤的測試模式
+
+**TL;DR:** 代碼覆蓋工具比如 [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc)，很好用有3個原因：它是免費的(獲得這份報告不需要任何開銷)，它有助於確定測試覆蓋率降低的部分，以及最後但非最不重要的是它指出了測試中的不匹配：通過查看顏色標記的程式碼覆蓋報告您可以注意到，例如，從來不會被測到的程式碼片段像catch語句(即測試只是調用正確的路徑，而不調用應用程式發生錯誤時的行為)。如果覆蓋率低於某個閾值，則將其設置為失敗的構建。
+
+**否則:** 當你的大部分代碼沒有被測試覆蓋時，就不會有任何自動化的度量化數據告訴你了。
+
+<br/><br/>
+
+## ![✔] 4.9 檢查過期的依賴包
+
+**TL;DR:** 使用您的首選工具 (例如 `npm outdated` or [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) 來檢查已安裝的過期相依套件，將此檢查注入您的 CI 管道(pipeline)，甚至在嚴重的情況下使構建失敗。例如，當一個已安裝的相依套件落後5個版本時 (例如:本地版本是1.3.1 的, 存儲庫(repository)版本是1.3.8 的)，或者它被其作者標記為已棄用，可能會出現嚴重的情況 - 停掉這次構建並防止部署此版本。
+
+**否則:** 您的生產環境將執行已被其作者明確標記為有風險的相依套件
+
+<br/><br/>
+
+## ![✔] 4.10 對於e2e testing，使用docker-compose
+
+**TL;DR:** 包括實時數據的端到端 (e2e) 測試曾經是CI過程中最薄弱的環節，因為它依賴於DB等多個重度服務。使用一個盡可能接近真實生產環境的環境，如a-continue (這里錯過了-continue，需要內容。從**否則**條款來看，這應該提到docker-compose)
 
 
-**否則:** 没有docker-compose，团队必须维护一个测试数据库在每一个测试环境上，包含开发机器，保持所有数据同步，这样测试结果不会因环境不同而不同。
+**否則:** 沒有docker-compose，團隊必須維護一個測試數據庫在每一個測試環境上，包含開發機器，保持所有數據同步，這樣測試結果不會因環境不同而不同。
 
+<br/><br/>
+
+## ![✔] 4.11 使用靜態分析工具定期進行重構
+
+**TL;DR:** 使用靜態分析工具有助於通過提供客觀的方法來提高程式碼品質，並保持你的程式碼可維護性。你可以將靜態分析工具添加到你的CI構建中，當它發現程式碼有異味時就會失效。與普通的提示相比，它的主要賣點是能夠在多個文件的背景下檢查品質 (如檢測重覆)，執行高級分析(如程式碼複雜性)，並追蹤程式碼問題的歷史和進展。你可以使用的兩個工具的例子是[Sonarqube](https://www.sonarqube.org/) (2,600+ [star](https://github.com/SonarSource/sonarqube))和[Code Climate](https://codeclimate.com/) (1,500+ [star](https://github.com/codeclimate/codeclimate)) 。
+
+**Otherwise:** 由於程式碼品質差，錯誤和性能將永遠是一個問題，任何閃亮的新套件或最先進的功能都無法解決這個問題。
+
+🔗 [**Read More: 重構!**](./sections/testingandquality/refactoring.md)
+
+<br/><br/>
+
+## ![✔] 4.12 仔細挑選您的持續集成（CI）平台
+
+**TL;DR:** 您的持續集成平台 (CICD) 將集成各種品質工具 (如測試、lint)，所以它應該是一個充滿活力的生態系統，包含各種插件。[jenkins](https://jenkins.io/)曾經是許多項目的默認選項，因為它有最大的社區，同時也是一個非常強大的平台，這樣的代價是要求一個陡峭的學習曲線。如今，使用SaaS工具，比如[CircleCI](https://circleci.com)及其他，安裝一套CI解決方案，相對是一件容易的事情。這些工具允許構建靈活的CI管道(pipeline)，而無需管理整個基礎設施。最終，這是在穩健性和速度之間的權衡 - 謹慎選擇你的一方
+
+**否則:** 一旦您需要一些進一步的客製化，選擇一些細分市場供應商可能會讓您停滯不前。另一方面，伴隨著jenkins，可能會在基礎設施設置上浪費寶貴的時間。
+
+🔗 [**更多: 挑選 CI 平台**](./sections/testingandquality/citools.chinese.md)
+
+<br/><br/>
+
+## ![✔] 4.13 隔離測試你的中間件
+
+**TL;DR:** 當一個中間件擁有一些跨越許多請求的巨大邏輯時，值得在不喚醒整個Web框架的情況下對其進行隔離測試。這可以通過存根和監視 {req, res, next} 物件來輕鬆實現
+
+**否則:** 在 Express middleware 有 bug === 大多數或者所有請求有 bug
+
+🔗 [**Read More: 隔離測試你的中間件**](./sections/testingandquality/test-middlewares.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
+<p align="right"><a href="#table-of-contents">⬆ 返回頂部</a></p>
 
-<h1 id="5-going-to-production-practices"><code>5. 上线實踐</code></h1>
+# `5. 進入產品階段實踐`
 
 ## ![✔] 5.1. 监控!
 
@@ -689,7 +736,7 @@ null == undefined; // true
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
+<p align="right"><a href="#table-of-contents">⬆ 返回頂部</a></p>
 
 <h1 id="6-security-best-practices"><code>6. 安全最佳實踐</code></h1>
 
