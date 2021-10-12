@@ -96,127 +96,129 @@
 
 <p align="right"><a href="#table-of-contents">⬆ 返回頂部</a></p>
 
-<h1 id="2-error-handling-practices"><code>2. 错误处理最佳實踐</code></h1>
+# `2. 錯誤處理實踐`
 
-## ![✔] 2.1  使用 Async-Await 和 promises 用于异步错误处理
+## ![✔] 2.1  使用 Async-Await 和 promises 用於異步錯誤處理
 
-**TL;DR:** 使用回调的方式处理异步错误可能是导致灾难的最快的方式(a.k.a the pyramid of doom)。对您的代码来说，最好的礼物就是使用规范的promise库或async-await来替代，这会使其像try-catch一样更加简洁，具有熟悉的代码结构。
+**TL;DR:** 使用 `callback` 的方式處理異步錯誤可能是導致災難的最快的方式(a.k.a the pyramid of doom)。對您的程式碼来說，最好的禮物就是使用規範的promise函式庫或async-await来替代，這會使程式更加簡潔以及熟悉，就如try-catch一樣。
 
-**否則:** Node.js回调特性, function(err, response), 是导致不可维护代码的一个必然的方式。究其原因，是由于混合了随意的错误处理代码，臃肿的内嵌，蹩脚的代码模式。
+**否則:** Node.js `callback` 特性, function(err, response), 是導致不可維護程式的一個必然的方式。究其原因，是由於混合了隨意的錯誤處理代碼，臃腫的内嵌，鱉腳的設計模式。
 
-🔗 [**更多: 避免回调**](./sections/errorhandling/asyncerrorhandling.chinese.md)
-
-<br/><br/>
-
-## ![✔] 2.2 仅使用内建的错误对象
-
-**TL;DR:** 很多人抛出异常使用字符串类型或一些自定义类型 - 这会导致错误处理逻辑和模块间的调用复杂化。是否您reject一个promise，抛出异常或发出(emit)错误 - 使用内建的错误对象将会增加设计一致性，并防止信息的丢失。
-
-
-**否則:** 调用某些模块，将不确定哪种错误类型会返回 - 这将会使恰当的错误处理更加困难。更坏的情况是，使用特定的类型描述错误，会导致重要的错误信息缺失，比如stack trace！
-
-🔗 [**更多: 使用内建错误对象**](./sections/errorhandling/useonlythebuiltinerror.chinese.md)
+🔗 [**更多: 避免 `callback` **](./sections/errorhandling/asyncerrorhandling.chinese.md)
 
 <br/><br/>
 
-## ![✔] 2.3 区分运行错误和程序设计错误
+## ![✔] 2.2 僅使用内建的錯誤物件
 
-**TL;DR:** 运行错误（例如, API接受到一个无效的输入）指的是一些已知场景下的错误，这类错误的影响已经完全被理解，并能被考虑周全的处理掉。同时，程序设计错误（例如，尝试读取未定义的变量）指的是未知的编码问题，影响到应用得当的重启。
+**TL;DR:** 很多人使用字串類型或一些自定義類型來拋出錯誤 - 這會導致錯誤處理邏輯和模組間的調用複雜化。是否您reject一個promise，抛出異常或發出(emit)錯誤 - 使用内建的錯誤對象將會增加設計一致性，並防止資訊的遺失。有一個規則 `no-throw-literal`，會在`ESLint` 中進行嚴謹確認 (雖然在使用 `Typescript` 的時候他有一些可以透過設定 `@typescript-eslint/no-throw-literal` 被解決的[限制](https://eslint.org/docs/rules/no-throw-literal)存在)
 
-**否則:** 当一个错误产生的时候，您总是得重启应用，但为什么要让 ~5000 个在线用户不能访问，仅仅是因为一个细微的，可以预测的，运行时错误？相反的方案，也不完美 – 当未知的问题（程序问题）产生的时候，使应用依旧可以访问，可能导致不可预测行为。区分两者会使处理更有技巧，并在给定的上下文下给出一个平衡的对策。
+**否則:** 調用某些元件時，將不確定會返回哪種錯誤類型 - 這使得正確的錯誤處理變得更加困難。更糟糕的情况是，使用自定義类型來描述錯誤，可能會導致重要的錯誤資訊遺失，比如stack trace！
 
-🔗 [**更多: 运行错误和程序设计错误**](./sections/errorhandling/operationalvsprogrammererror.chinese.md)
-
-<br/><br/>
-
-## ![✔] 2.4 集中处理错误，不要在Express中间件中处理错误
-
-**TL;DR:** 错误处理逻辑，比如给管理员发送邮件，日志应该封装在一个特定的，集中的对象当中，这样当错误产生的时候，所有的终端（例如 Express中间件，cron任务，单元测试）都可以调用。
-
-**否則:** 错误处理的逻辑不放在一起将会导致代码重复和非常可能不恰当的错误处理。
-
-🔗 [**更多: 集中处理错误**](./sections/errorhandling/centralizedhandling.chinese.md)
+🔗 [**更多: 使用内建錯誤物件**](./sections/errorhandling/useonlythebuiltinerror.chinese.md)
 
 <br/><br/>
 
-## ![✔] 2.5 对API错误使用Swagger文档化
+## ![✔] 2.3 區分執行錯誤和程式設計錯誤
 
-**TL;DR:** 让你的API调用者知道哪种错误会返回，这样他们就能完全的处理这些错误，而不至于系统崩溃。Swagger，REST API的文档框架，通常处理这类问题。
+**TL;DR:** 執行錯誤 (例如, API接受到一個無效的輸入) 指的是一些已知情境下的錯誤，這類錯誤的影響已經完全被理解，並能被考慮周全地處理掉。同時，程式設計錯誤 (例如，嘗試讀取未定義的變數) 指的是未知的程式問題，影響到應用程式(application)的重新啟動。
 
-**否則:** 任何API的客户端可能决定崩溃并重启，仅仅因为它收到一个不能处理的错误。注意：API的调用者可能是你（在微服务环境中非常典型）。
+**否則:** 當一個錯誤產生的時候，您總是得重新啟動應用程式(application)，但為什麼要讓 ~5000 個在線用戶，僅僅是因為一個細微的，可以預測的，運行時的錯誤，而不能使用呢？相反的方案，也不完美 – 當未知的問題 (程式問題) 產生的時後，使應用程式(application)依舊可以使用，可能導致不可預測的行為。區分兩者會使處理更有技巧，並在給定的上下文中找出適當的決策。
 
-
-🔗 [**更多: 使用Swagger记录错误**](./sections/errorhandling/documentingusingswagger.chinese.md)
-
-<br/><br/>
-
-## ![✔] 2.6 当一个特殊的情况产生，停掉服务是得体的
-
-**TL;DR:** 当一个不确定错误产生（一个开发错误，最佳實踐条款#3) - 这就意味着对应用运转健全的不确定。一个普通的實踐将是建议仔细地重启进程，并使用一些‘启动器’工具，比如Forever和PM2。
-
-**否則:** 当一个未知的异常被抛出，意味着某些对象包含错误的状态（例如某个全局事件发生器由于某些内在的错误，不在产生事件），未来的请求可能失败或者行为异常。
-
-🔗 [**更多: 停掉服务**](./sections/errorhandling/shuttingtheprocess.chinese.md)
+🔗 [**更多: 區分執行錯誤和程式設計錯誤**](./sections/errorhandling/operationalvsprogrammererror.chinese.md)
 
 <br/><br/>
 
+## ![✔] 2.4 集中處理錯誤，不要在Express中介層(middleware)中處理錯誤
 
+**TL;DR:** 錯誤處理邏輯，例如給管理員的郵件和日志，應該被封裝在一個專門的、集中的物件中，當有錯誤出現時，所有的端點 (例如: Express中介層(middleware)、cron jobs、單元測試) 都會調用這個物件。
 
-## ![✔] 2.7 使用一个成熟的日志工具提高错误的可见性
+**否則:** 錯誤處理的邏輯不放在一起將會導致程式碼重物和非常可能不妥當的錯誤處理。
 
-**TL;DR:** 一系列成熟的日志工具，比如Winston，Bunyan和Log4J，会加速错误的發現和理解。忘记console.log吧。
-
-**否則:** 浏览console的log，和不通过查询工具或者一个好的日志查看器，手动浏览繁琐的文本文件，会使你忙于工作到很晚。
-
-🔗 [**更多: 使用好用的日志工具**](./sections/errorhandling/usematurelogger.chinese.md)
-
+🔗 [**更多: 集中处理錯誤**](./sections/errorhandling/centralizedhandling.chinese.md)
 
 <br/><br/>
 
+## ![✔] 2.5 對API錯誤使用 Swagger 或是 GraphQL 文件化
 
-## ![✔] 2.8 使用你最喜欢的测试框架测试错误流
+**TL;DR:** 讓你的API使用者知道會回傳哪種錯誤，這樣他们就能完全的處理這些錯誤，而不至於系統崩潰。對於 RESTful APIs 通常使用文件框架像是 Swagger 來完成。如果你是使用 GraphQL 你可以利用 schema 和 comments。
 
-**TL;DR:** 无论专业的自动化测试或者简单的手动开发测试 - 确保您的代码不仅满足正常的场景，而且处理并且返回正确的错误。测试框架，比如Mocha & Chai可以非常容易的处理这些问题（在"Gist popup"中查看代码实例） 。
+**否則:** 任何一個API客戶端可能會導致崩潰並重新啟動，只因為它收到了一個它無法處理的錯誤。注意：你的API的使用者可能是你 (這在微服務環境中非常典型)。
 
-**否則:** 没有测试，不管自动还是手动，您不可能依赖代码去返回正确的错误。而没有可以理解的错误，那将毫无错误处理可言。
-
-
-🔗 [**更多: 测试错误流向**](./sections/errorhandling/testingerrorflows.chinese.md)
+🔗 [**更多: 對API錯誤使用 Swagger 或是 GraphQL 文件化**](./sections/errorhandling/documentingusingswagger.chinese.md)
 
 <br/><br/>
 
-## ![✔] 2.9 使用APM产品發現错误和宕机时间
+## ![✔] 2.6 當特殊情況發生時，優雅地關閉服務
 
-**TL;DR:** 监控和性能产品 (别名 APM) 先前一步的检测您的代码库和API，这样他们能自动的，像使用魔法一样的强调错误，宕机和您忽略的性能慢的部分。
+**TL;DR:** 當一個未知的錯誤發生時 (開發者錯誤，見最佳實踐2.3) - 應用程序的健康性存在不確定性。通常的做法是，使用像 [Forever](https://www.npmjs.com/package/forever) 或是 [PM2](http://pm2.keymetrics.io/) 這樣的流程管理工具小心翼翼地重新啟動流程。
 
-**否則:** 您花了很多的力气在测量API的性能和错误，但可能您从来没有意识到真实场景下您最慢的代码块和他们对UX的影响。
+**否則:** 當一個不熟悉的異常發生時，一些物件可能處於故障狀態 (例如一個全局使用的事件觸發器，由於某些內部故障而不再觸發事件)，所有未來的請求都可能失敗或表現得很異常。
 
-
-🔗 [**更多: 使用APM产品**](./sections/errorhandling/apmproducts.chinese.md)
-
-<br/><br/>
-
-
-## ![✔] 2.10 捕获未处理的promise rejections
-
-**TL;DR:** 任何在promise中被抛出的异常将被收回和遗弃，除非开发者没有忘记去明确的处理。即使您的代码调用的是process.uncaughtException！解决这个问题可以注册到事件process.unhandledRejection。
-
-**否則:** 您的错误将被回收，无踪迹可循。没有什么可以需要考虑。
-
-
-🔗 [**更多: 捕获未处理的promise rejection**](./sections/errorhandling/catchunhandledpromiserejection.chinese.md)
+🔗 [**更多: 停掉服務**](./sections/errorhandling/shuttingtheprocess.chinese.md)
 
 <br/><br/>
 
-## ![✔] 2.11 快速查错，验证参数使用一个专门的库
+## ![✔] 2.7 使用一個成熟的日誌工具提高錯誤的可見性
 
-**TL;DR:** 这应该是您的Express最佳實踐中的一部分 – assert API输入避免难以理解的漏洞，这类漏洞以后会非常难以追踪。而验证代码通常是一件乏味的事情，除非使用一些非常炫酷的帮助库比如Joi。
+**TL;DR:** 一系列成熟的日誌工具，比如 [Pino](https://github.com/pinojs/pino) 或是 [Log4js](https://www.npmjs.com/package/log4js)，會加速錯誤的發現和理解。放棄console.log吧。
 
-**否則:** 考虑这种情况 – 您的功能期望一个数字参数 “Discount” ，然而调用者忘记传值，之后在您的代码中检查是否 Discount!=0 （允许的折扣值大于零），这样它将允许用户使用一个折扣。OMG，多么不爽的一个漏洞。你能明白吗？
+**否則:** 在沒有查詢工具或像樣的日志查看器的情況下，略過console.logs或手動查看混亂的文本文件可能會讓你在工作中忙到很晚。
 
-🔗 [**更多: 快速查错**](./sections/errorhandling/failfast.chinese.md)
+🔗 [**更多: 使用好用的日誌工具**](./sections/errorhandling/usematurelogger.chinese.md)
 
-<br/><br/><br/>
+<br/><br/>
+
+## ![✔] 2.8 使用你最喜歡的測試框架測試錯誤流程
+
+**TL;DR:** 無論是專業的自動化QA還是普通的手動開發者測試 - 確保你的程式碼不僅能滿足積極的情境，還能處理並回傳正確的錯誤。Mocha和Chai等測試框架可以輕松地處理這個問題 (見 "Gist popup" 中的程式範例)
+
+**否則:** 如果沒有測試，無論是自動還是手動，你都不能依靠你的代碼來返回正確的錯誤。沒有有意義的錯誤 - 等於沒做"錯誤處理"
+
+🔗 [**更多: 測試錯誤流程**](./sections/errorhandling/testingerrorflows.chinese.md)
+
+<br/><br/>
+
+## ![✔] 2.9 使用APM產品發現錯誤和當機時間
+
+**TL;DR:** 監測和性能產品 (又稱APM) 主動測量你的程式庫或API，因此它們可以自動凸顯出你所忽略的錯誤、崩潰和緩慢部分。
+
+**否則:** 你可能會花很大的精力去測量API的性能和停機時間，但你可能永遠不會知道在真實場景(real-world)的情況下，哪些程式是你最慢的部分，以及這些是如何影響用戶體驗的。
+
+🔗 [**更多: 使用APM產品**](./sections/errorhandling/apmproducts.chinese.md)
+
+<br/><br/>
+
+## ![✔] 2.10 捕捉未處理的promise rejections
+
+**TL;DR:** 任何在 promise 中拋出的異常都會被吞噬和丟棄，除非開發者沒有忘記且明確地處理它。即使你的程式已經訂閱了(subscribed) `process.uncaughtException` ! 通過注冊到事件 `process.unhandledRejection` 來克服這個問題。
+
+**否則:** 您的錯誤將被回收，無跡可尋。毫無懸念。
+
+🔗 [**更多: 捕捉未處理的promise rejection**](./sections/errorhandling/catchunhandledpromiserejection.chinese.md)
+
+<br/><br/>
+
+## ![✔] 2.11 快速查錯，驗證參數使用一個專門的套件
+
+**TL;DR:** Assert API 輸入藉此避免討厭的bug，這些bug以後更難追蹤。驗證程式通常很繁瑣，除非你使用一個非常酷的套件，如 [ajv](https://www.npmjs.com/package/ajv) 和 [Joi](https://www.npmjs.com/package/joi)
+
+**否則:** 想一下這個情況 - 你的函數期望一個數字參數 "Discount"，而調用者忘記了傳遞這個參數，後來，你的程式檢查是否Discount!=0 (允許的折扣金額大於0)，那麽它將允許用戶享受折扣。OMG，真是個討厭的錯誤。有fu了嗎？
+
+🔗 [**更多: 快速查錯**](./sections/errorhandling/failfast.chinese.md)
+
+<br/><br/>
+
+## ![✔] 2.12 始終在回傳之前 await promise，以避免出現部分 stacktrace
+
+**TL;DR:** 當回傳一個 `promise` 時，一定要做 `return await` ，以獲得完整的 `stacktrace` 。如果一個
+函式回傳一個 `promise` ，該函式必須被聲明為 `async function` ，並在回傳前明確地
+在回傳 `promise` 之前 `await promise`
+
+**Otherwise:** 回傳一個沒有 `await promise` 的函式不會出現在 `stacktrace` 中。
+這種缺失的框架可能會使對導致錯誤的流程的理解變得複雜。
+特別是如果異常行為的原因是在有問題的函式中
+
+🔗 [**Read More: 回傳 promises**](./sections/errorhandling/returningpromises.md)
 
 <p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
 
@@ -224,7 +226,7 @@
 
 ## ![✔] 3.1 使用ESLint
 
-**TL;DR:** [ESLint](https://eslint.org)是检查可能的代码错误和修复代码样式的事实上的标准，不仅可以识别实际的间距问题, 而且还可以检测严重的反模式代码, 如开发人员在不分类的情况下抛出错误。尽管ESlint可以自动修复代码样式，但其他的工具比如[prettier](https://www.npmjs.com/package/prettier)和[beautify](https://www.npmjs.com/package/js-beautify)在格式化修复上功能强大，可以和Eslint结合起来使用。
+**TL;DR:** [ESLint](https://eslint.org)是检查可能的代码錯誤和修复代码样式的事实上的标准，不仅可以识别实际的间距问题, 而且还可以检测严重的反模式代码, 如开发人员在不分类的情况下抛出錯誤。尽管ESlint可以自动修复代码样式，但其他的工具比如[prettier](https://www.npmjs.com/package/prettier)和[beautify](https://www.npmjs.com/package/js-beautify)在格式化修复上功能强大，可以和Eslint结合起来使用。
 
 **否則:** 开发人员将必须关注单调乏味的间距和线宽问题, 并且时间可能会浪费在过多考虑项目的代码样式。
 
@@ -234,7 +236,7 @@
 
 **TL;DR:** 除了仅仅涉及 vanilla JS 的 ESLint 标准规则，添加 Node 相关的插件，比如[eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
-**否則:** 许多错误的Node.js代码模式可能在检测下逃生。例如，开发人员可能需要某些文件，把一个变量作为路径名 (variableAsPath) ，这会导致攻击者可以执行任何JS脚本。Node.JS linters可以检测这类模式，并及早预警。
+**否則:** 许多錯誤的Node.js代码模式可能在检测下逃生。例如，开发人员可能需要某些文件，把一个变量作为路径名 (variableAsPath) ，这会导致攻击者可以执行任何JS脚本。Node.JS linters可以检测这类模式，并及早预警。
 
 <br/><br/>
 
@@ -319,7 +321,7 @@
 
 **TL;DR:** 在每个文件的起始位置，在任何函数的前面和外部require模块。这种简单的最佳實踐，不仅能帮助您轻松快速地在文件顶部辨别出依赖关系，而且避免了一些潜在的问题。
 
-**否則:** 在Node.js中，require 是同步运行的。如果从函数中调用它们，它可能会阻塞其他请求，在更关键的时间得到处理。另外，如果所require的模块或它自己的任何依赖项抛出错误并使服务器崩溃，最好尽快查明它，如果该模块在函数中require的，则可能不是这样的情况。
+**否則:** 在Node.js中，require 是同步运行的。如果从函数中调用它们，它可能会阻塞其他请求，在更关键的时间得到处理。另外，如果所require的模块或它自己的任何依赖项抛出錯誤并使服务器崩溃，最好尽快查明它，如果该模块在函数中require的，则可能不是这样的情况。
 
 <br/><br/>
 
@@ -373,7 +375,7 @@ null == undefined   // true
 
 **TL;DR:** Node 8 LTS现已全面支持异步等待。这是一种新的方式处理异步请求，取代回调和promise。Async-await是非阻塞的，它使异步代码看起来像是同步的。您可以给你的代码的最好的礼物是用async-await提供了一个更紧凑的，熟悉的，类似try catch的代码语法。
 
-**否則:** 使用回调的方式处理异步错误可能是陷入困境最快的方式 - 这种方式必须面对不停地检测错误，处理别扭的代码内嵌，难以推理编码流。
+**否則:** 使用回调的方式处理异步錯誤可能是陷入困境最快的方式 - 这种方式必须面对不停地检测錯誤，处理别扭的代码内嵌，难以推理编码流。
 
 🔗[**更多:** async await 1.0 引导](https://github.com/yortus/asyncawait)
 
@@ -438,9 +440,9 @@ null == undefined   // true
 
 <br/><br/>
 
-## ![✔] 4.6 检查测试覆盖率，它有助于识别错误的测试模式
+## ![✔] 4.6 检查测试覆盖率，它有助于识别錯誤的测试模式
 
-**TL;DR:** 代码覆盖工具比如 [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc)，很好用有3个原因：它是免费的（获得这份报告不需要任何开销），它有助于确定测试覆盖率降低的部分，以及最后但非最不重要的是它指出了测试中的不匹配：通过查看颜色标记的代码覆盖报告您可以注意到，例如，从来不会被测到的代码片段像catch语句（即测试只是调用正确的路径，而不调用应用程序发生错误时的行为）。如果覆盖率低于某个阈值，则将其设置为失败的构建。
+**TL;DR:** 代码覆盖工具比如 [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc)，很好用有3个原因：它是免费的（获得这份报告不需要任何开销），它有助于确定测试覆盖率降低的部分，以及最后但非最不重要的是它指出了测试中的不匹配：通过查看颜色标记的代码覆盖报告您可以注意到，例如，从来不会被测到的代码片段像catch语句（即测试只是调用正确的路径，而不调用应用程序发生錯誤时的行为）。如果覆盖率低于某个阈值，则将其设置为失败的构建。
 
 **否則:** 当你的大部分代码没有被测试覆盖时，就不会有任何自动化的度量指标告诉你了。
 
@@ -474,7 +476,7 @@ null == undefined   // true
 
 **TL;DR:** 监控是一种在顾客之前發現问题的游戏 – 显然这应该被赋予前所未有的重要性。考虑从定义你必须遵循的基本度量标准开始（我的建议在里面），到检查附加的花哨特性并选择解决所有问题的解决方案。市场已经淹没其中。点击下面的 ‘The Gist’ ，了解解决方案的概述。
 
-**否則:** 错误 === 失望的客户. 非常简单.
+**否則:** 錯誤 === 失望的客户. 非常简单.
 
 
 🔗 [**更多: 监控!**](./sections/production/monitoring.chinese.md)
@@ -483,7 +485,7 @@ null == undefined   // true
 
 ## ![✔] 5.2. 使用智能日志增加透明度
 
-**TL;DR:** 日志可以是调试语句的一个不能说话的仓库，或者表述应用运行过程的一个漂亮仪表板的驱动。从第1天计划您的日志平台：如何收集、存储和分析日志，以确保所需信息（例如，错误率、通过服务和服务器等完成整个事务）都能被提取出来。
+**TL;DR:** 日志可以是调试语句的一个不能说话的仓库，或者表述应用运行过程的一个漂亮仪表板的驱动。从第1天计划您的日志平台：如何收集、存储和分析日志，以确保所需信息（例如，錯誤率、通过服务和服务器等完成整个事务）都能被提取出来。
 
 **否則:** 您最终像是面对一个黑盒，不知道发生了什么事情，然后你开始重新写日志语句添加额外的信息。
 
@@ -548,14 +550,14 @@ null == undefined   // true
 
 <br/><br/>
 
-## ![✔] 5.8. 使用APM产品發現错误和宕机时间
+## ![✔] 5.8. 使用APM产品發現錯誤和宕机时间
 
 **TL;DR:** 监控和性能的产品（即APM）先前一步地评估代码库和API，自动的超过传统的监测，并测量在服务和层级上的整体用户体验。例如，一些APM产品可以突显导致最终用户负载过慢的事务，同时指出根本原因。
 
 **否則:** 你可能会花大力气测量API性能和停机时间，也许你永远不会知道，真实场景下哪个是你最慢的代码部分，这些怎么影响用户体验。
 
 
-🔗 [**更多: 使用APM产品發現错误和宕机时间**](./sections/production/apmproducts.chinese.md)
+🔗 [**更多: 使用APM产品發現錯誤和宕机时间**](./sections/production/apmproducts.chinese.md)
 
 
 <br/><br/>
@@ -623,9 +625,9 @@ null == undefined   // true
 
 ## ![✔] 5.14. 在每一个log语句中指明 ‘TransactionId’
 
-**TL;DR:** 在每一个请求的每一条log入口，指明同一个标识符，transaction-id: {某些值}。然后在检查日志中的错误时，很容易总结出前后发生的事情。不幸的是，由于Node异步的天性自然，这是不容易办到的，看下代码里面的例子
+**TL;DR:** 在每一个请求的每一条log入口，指明同一个标识符，transaction-id: {某些值}。然后在检查日志中的錯誤时，很容易总结出前后发生的事情。不幸的是，由于Node异步的天性自然，这是不容易办到的，看下代码里面的例子
 
-**否則:** 在没有上下文的情况下查看生产错误日志，这会使问题变得更加困难和缓慢去解决。
+**否則:** 在没有上下文的情况下查看生产錯誤日志，这会使问题变得更加困难和缓慢去解决。
 
 
 🔗 [**更多: 在每一个log语句中指明 ‘TransactionId’**](./sections/production/assigntransactionid.chinese.md)
@@ -650,7 +652,7 @@ null == undefined   // true
 
 **TL;DR:** 研究表明，执行许多部署的团队降低了严重上线问题的可能性。不需要危险的手动步骤和服务停机时间的快速和自动化部署大大改善了部署过程。你应该达到使用Docker结合CI工具，使他们成为简化部署的行业标准。
 
-**否則:** 长时间部署 -> 线上宕机 & 和人相关的错误 -> 团队部署时不自信 -> 更少的部署和需求
+**否則:** 长时间部署 -> 线上宕机 & 和人相关的錯誤 -> 团队部署时不自信 -> 更少的部署和需求
 
 <br/><br/><br/>
 
@@ -692,7 +694,7 @@ null == undefined   // true
 
 **TL;DR:** 不要在配置文件或源代码中存储纯文本机密信息。相反, 使用诸如Vault产品、Kubernetes/Docker Secrets或使用环境变量之类的安全管理系统。最后一个结果是, 存储在源代码管理中的机密信息必须进行加密和管理 (滚动密钥(rolling keys)、过期时间、审核等)。使用pre-commit/push钩子防止意外提交机密信息。
 
-**否則:** 源代码管理, 即使对于私有仓库, 也可能会被错误地公开, 此时所有的秘密信息都会被公开。外部组织的源代码管理的访问权限将无意中提供对相关系统 (数据库、api、服务等) 的访问。
+**否則:** 源代码管理, 即使对于私有仓库, 也可能会被錯誤地公开, 此时所有的秘密信息都会被公开。外部组织的源代码管理的访问权限将无意中提供对相关系统 (数据库、api、服务等) 的访问。
 
 🔗 [**更多: 安全管理**](./sections/security/secretmanagement.md)
 
@@ -784,7 +786,7 @@ null == undefined   // true
 
 **TL;DR:** 当使用JSON Web Tokens(例如, 通过[Passport.js](https://github.com/jaredhanson/passport)), 默认情况下, 没有任何机制可以从发出的令牌中撤消访问权限。一旦發現了一些恶意用户活动, 只要它们持有有效的标记, 就无法阻止他们访问系统。通过实现一个不受信任令牌的黑名单，并在每个请求上验证，来减轻此问题。
 
-**否則:** 过期或错误的令牌可能被第三方恶意使用，以访问应用程序，并模拟令牌的所有者。
+**否則:** 过期或錯誤的令牌可能被第三方恶意使用，以访问应用程序，并模拟令牌的所有者。
 
 🔗 [**更多: 为JSON Web Token添加黑名单**](./sections/security/expirejwt.md)
 
@@ -844,7 +846,7 @@ null == undefined   // true
 
 **TL;DR:** 正则表达式，在方便的同时，对JavaScript应用构成了真正的威胁，特别是Node.js平台。匹配文本的用户输入需要大量的CPU周期来处理。在某种程度上，正则处理是效率低下的，比如验证10个单词的单个请求可能阻止整个event loop长达6秒，并让CPU引火烧身。由于这个原因，偏向第三方的验证包，比如[validator.js](https://github.com/chriso/validator.js)，而不是采用正则，或者使用[safe-regex](https://github.com/substack/safe-regex)来检测有问题的正则表达式。
 
-**否則:** 写得不好的正则表达式可能容易受到正则表达式DoS攻击的影响, 这将完全阻止event loop。例如，流行的`moment`包在2017年的11月，被發現使用了错误的RegEx用法而易受攻击。
+**否則:** 写得不好的正则表达式可能容易受到正则表达式DoS攻击的影响, 这将完全阻止event loop。例如，流行的`moment`包在2017年的11月，被發現使用了錯誤的RegEx用法而易受攻击。
 
 🔗 [**更多: 防止恶意正则**](./sections/security/regex.md)
 
@@ -886,15 +888,15 @@ null == undefined   // true
 
 <br/><br/>
 
-## ![✔] 6.20. 隐藏客户端的错误详细信息
+## ![✔] 6.20. 隐藏客户端的錯誤详细信息
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** 默认情况下, 集成的express错误处理程序隐藏错误详细信息。但是, 极有可能, 您实现自己的错误处理逻辑与自定义错误对象(被许多人认为是最佳做法)。如果这样做, 请确保不将整个Error对象返回到客户端, 这可能包含一些敏感的应用程序详细信息。
+**TL;DR:** 默认情况下, 集成的express錯誤处理程序隐藏錯誤详细信息。但是, 极有可能, 您实现自己的錯誤处理邏輯与自定义錯誤对象(被许多人认为是最佳做法)。如果这样做, 请确保不将整个Error对象返回到客户端, 这可能包含一些敏感的应用程序详细信息。
 
 **否則:** 敏感应用程序详细信息(如服务器文件路径、使用中的第三方模块和可能被攻击者利用的应用程序的其他内部工作流)可能会从stack trace發現的信息中泄露。
 
-🔗 [**更多: 隐藏客户端的错误详细信息**](./sections/security/hideerrors.md)
+🔗 [**更多: 隐藏客户端的錯誤详细信息**](./sections/security/hideerrors.md)
 
 <br/><br/>
 
@@ -924,7 +926,7 @@ null == undefined   // true
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** 当错误未被处理时, Node进程将崩溃。即使错误被捕获并得到处理，许多最佳實踐甚至建议退出。例如, Express会在任何异步错误上崩溃 - 除非使用catch子句包装路由。这将打开一个非常惬意的攻击点, 攻击者识别哪些输入会导致进程崩溃并重复发送相同的请求。没有即时补救办法, 但一些技术可以减轻苦楚: 每当进程因未处理的错误而崩溃，都会发出警报，验证输入并避免由于用户输入无效而导致进程崩溃，并使用catch将所有路由处理包装起来，并在请求中出现错误时, 考虑不要崩溃(与全局发生的情况相反)。
+**TL;DR:** 当錯誤未被处理时, Node进程将崩溃。即使錯誤被捕获并得到处理，许多最佳實踐甚至建议退出。例如, Express会在任何异步錯誤上崩溃 - 除非使用catch子句包装路由。这将打开一个非常惬意的攻击点, 攻击者识别哪些输入会导致进程崩溃并重复发送相同的请求。没有即时补救办法, 但一些技术可以减轻苦楚: 每当进程因未处理的錯誤而崩溃，都会发出警报，验证输入并避免由于用户输入无效而导致进程崩溃，并使用catch将所有路由处理包装起来，并在请求中出现錯誤时, 考虑不要崩溃(与全局发生的情况相反)。
 
 **否則:** 这只是一个起到教育意义的假设: 给定许多Node.js应用程序, 如果我们尝试传递一个空的JSON正文到所有POST请求 - 少数应用程序将崩溃。在这一点上, 我们可以只是重复发送相同的请求, 就可以轻松地搞垮应用程序。
 
