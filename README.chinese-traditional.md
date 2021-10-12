@@ -22,7 +22,7 @@
 
 **2. 這裡是最大的彙整，且每周都在成長 -** 目前，呈現了超過80個最佳實踐，樣式指南，架構建議。每天都有新的issue和PR被新增，以使這本線上書籍不斷更新。我們很樂於見到您能在這裡做出貢獻，不管是修正一些原始碼的錯誤，或是提出絕佳的新想法。請查看我們的[writing guidelines here](./.operations/writing-guidelines.md)
 
-**3. 大多的最佳實踐有額外資訊 -** 大部分的最佳實踐項目的旁邊，您將發現 **🔗Read More** 連結，它將呈現给您原始碼範例，部落格引用和更多資訊
+**3. 大多的最佳實踐有額外資訊 -** 大部分的最佳實踐項目的旁邊，您將發現 **🔗閱讀更多** 連結，它將呈現给您原始碼範例，部落格引用和更多資訊
 
 <br/><br/>
 
@@ -122,7 +122,7 @@
 
 **TL;DR:** 執行錯誤 (例如，API接受到一個無效的輸入) 指的是一些已知情境下的錯誤，這類錯誤的影響已經完全被理解，並能被考慮周全地處理掉。同時，程式設計錯誤 (例如，嘗試讀取未定義的變數) 指的是未知的程式問題，影響到應用程式(application)的重新啟動。
 
-**否則:** 當一個錯誤產生的時候，您總是得重新啟動應用程式(application)，但為什麼要讓 ~5000 個在線用戶，僅僅是因為一個細微的，可以預測的，運行時的錯誤，而不能使用呢？相反的方案，也不完美 – 當未知的問題 (程式問題) 產生的時後，使應用程式(application)依舊可以使用，可能導致不可預測的行為。區分兩者會使處理更有技巧，並在給定的上下文中找出適當的決策。
+**否則:** 當一個錯誤產生的時候，您總是得重新啟動應用程式(application)，但為什麼要讓 ~5000 個在線用戶，僅僅是因為一個細微的，可以預測的，執行時的錯誤，而不能使用呢？相反的方案，也不完美 – 當未知的問題 (程式問題) 產生的時後，使應用程式(application)依舊可以使用，可能導致不可預測的行為。區分兩者會使處理更有技巧，並在給定的上下文中找出適當的決策。
 
 🔗 [**更多: 區分執行錯誤和程式設計錯誤**](./sections/errorhandling/operationalvsprogrammererror.chinese.md)
 
@@ -214,11 +214,11 @@
 函式回傳一個 `promise` ，該函式必須被聲明為 `async function` ，並在回傳前明確地
 在回傳 `promise` 之前 `await promise`
 
-**Otherwise:** 回傳一個沒有 `await promise` 的函式不會出現在 `stacktrace` 中。
+**否則:** 回傳一個沒有 `await promise` 的函式不會出現在 `stacktrace` 中。
 這種缺失的框架可能會使對導致錯誤的流程的理解變得複雜。
 特別是如果異常行為的原因是在有問題的函式中
 
-🔗 [**Read More: 回傳 promises**](./sections/errorhandling/returningpromises.md)
+🔗 [**閱讀更多: 回傳 promises**](./sections/errorhandling/returningpromises.md)
 
 <p align="right"><a href="#table-of-contents">⬆ 返回頂部</a></p>
 
@@ -303,8 +303,8 @@ const count = 2 // it tries to run 2()，but 2 is not a function
 // put a semicolon before the immediate invoked function，after the const definition，save the return value of the anonymous function to a variable or avoid IIFEs altogether
 ```
 
-🔗 [**Read more:** "Semi ESLint rule"](https://eslint.org/docs/rules/semi)
-🔗 [**Read more:** "No unexpected multiline ESLint rule"](https://eslint.org/docs/rules/no-unexpected-multiline)
+🔗 [**閱讀更多:** "Semi ESLint rule"](https://eslint.org/docs/rules/semi)
+🔗 [**閱讀更多:** "No unexpected multiline ESLint rule"](https://eslint.org/docs/rules/no-unexpected-multiline)
 
 <br/><br/>
 
@@ -354,7 +354,7 @@ function doSomething() {}
 
 **TL;DR:** 在每個文件的起始位置，在任何函數的前面和外部require模組(module)。這種簡單的最佳實踐，不僅能幫助您輕鬆快速地在文件頂部辨別出相依關係，而且避免了一些潛在的問題。
 
-**否則:** 在Node.js中，require 是同步運行的。如果從函數中調用它們，它可能會阻塞其他請求，在更關鍵的時間得到處理。另外，如果所require的模組(module)或它自己的任何相依套件拋出錯誤並使伺服器崩潰，最好盡快查明它，如果該模組(module)在函數中require的，則可能不是這樣的情況。
+**否則:** 在Node.js中，require 是同步執行的。如果從函數中調用它們，它可能會阻塞其他請求，在更關鍵的時間得到處理。另外，如果所require的模組(module)或它自己的任何相依套件拋出錯誤並使伺服器崩潰，最好盡快查明它，如果該模組(module)在函數中require的，則可能不是這樣的情況。
 
 <br/><br/>
 
@@ -442,9 +442,9 @@ null == undefined; // true
 
 **TL;DR:** 讓測試在需求層面上說話，這樣對不熟悉程式內部的QA工程師和開發人員來說也是不言自明的。在測試名稱中說明：什麽是被測試的 (被測單元)、在什麽情況下、預期結果是什麽。
 
-**Otherwise:** 一個部署剛剛失敗，一個名為 "添加產品 "的測試失敗。這樣你知道哪裡故障了？
+**否則:** 一個部署剛剛失敗，一個名為 "添加產品 "的測試失敗。這樣你知道哪裡故障了？
 
-🔗 [**Read More: 在每個測試名稱中包含3個部分**](./sections/testingandquality/3-parts-in-name.md)
+🔗 [**閱讀更多: 在每個測試名稱中包含3個部分**](./sections/testingandquality/3-parts-in-name.md)
 
 <br/><br/>
 
@@ -452,9 +452,9 @@ null == undefined; // true
 
 **TL;DR:** 用3個分開的部分來組織你的測試。安排 (Arrange) ，行動 (Act) 和斷言 (Assert) **AAA**。第一部分包括測試設置，然後是被測單元的執行，最後是斷言階段。遵循這個結構可以保證讀者不花腦筋去理解測試計劃
 
-**Otherwise:** 你不僅會每天花很長的時間來理解主要程式，而且現在本應是一天中最簡單的部分 (測試) 也讓你的大腦捉襟見肘。
+**否則:** 你不僅會每天花很長的時間來理解主要程式，而且現在本應是一天中最簡單的部分 (測試) 也讓你的大腦捉襟見肘。
 
-🔗 [**Read More: 按AAA模式進行結構測試**](./sections/testingandquality/aaa.md)
+🔗 [**閱讀更多: 按AAA模式進行結構測試**](./sections/testingandquality/aaa.md)
 
 <br/><br/>
 
@@ -471,9 +471,9 @@ null == undefined; // true
 
 **TL;DR:** 為了防止測試耦合和容易推理測試流程，每個測試都應該添加和作用於它自己的一組DB數據。每當一個測試需要拉動或假設一些DB數據的存在 - 它必須明確地添加該數據，避免任何突變影響其他記錄。
 
-**Otherwise:** 考慮這樣一種情況：由於測試失敗，部署被中止，團隊現在要花費寶貴的調查時間，最後得出一個可悲的結論：系統運行良好，但測試相互干擾，破壞了部署上線。
+**否則:** 考慮這樣一種情況：由於測試失敗，部署被中止，團隊現在要花費寶貴的調查時間，最後得出一個可悲的結論：系統執行良好，但測試相互干擾，破壞了部署上線。
 
-🔗 [**Read More: 避免全域測試 fixtures**](./sections/testingandquality/avoid-global-test-fixture.md)
+🔗 [**閱讀更多: 避免全域測試 fixtures**](./sections/testingandquality/avoid-global-test-fixture.md)
 
 <br/><br/>
 
@@ -485,9 +485,9 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 4.7 測試標簽化
+## ![✔] 4.7 測試標籤化
 
-**TL;DR:**  不同的測試必須運行在不同的情景：quick smoke，IO-less，當開發者保存或提交一個文件，測試應該啟動；完整的端到端的測試通常運行在一個新的pull request被提交之後，等等。這可以通過對測試用例設置標簽，比如關鍵字像#cold #api #sanity，來完成。這樣您可以對您的測試集進行grep，調用需要的子集合。例如，這就是您通過[Mocha](https://mochajs.org/)僅僅調用sanity測試集所需要做的：mocha --grep 'sanity'。
+**TL;DR:**  不同的測試必須執行在不同的情景：quick smoke，IO-less，當開發者保存或提交一個文件，測試應該啟動；完整的端到端的測試通常執行在一個新的pull request被提交之後，等等。這可以通過對測試用例設置標籤，比如關鍵字像#cold #api #sanity，來完成。這樣您可以對您的測試集進行grep，調用需要的子集合。例如，這就是您通過[Mocha](https://mochajs.org/)僅僅調用sanity測試集所需要做的：mocha --grep 'sanity'。
 
 **否則:** 執行所有的測試，包括執行資料庫查詢的幾十個測試，任何時候開發者進行小的改動都可能很慢，這使得開發者不願意進行測試。
 
@@ -522,9 +522,9 @@ null == undefined; // true
 
 **TL;DR:** 使用靜態分析工具有助於通過提供客觀的方法來提高程式碼品質，並保持你的程式碼可維護性。你可以將靜態分析工具添加到你的CI構建中，當它發現程式碼有異味時就會失效。與普通的提示相比，它的主要賣點是能夠在多個文件的背景下檢查品質 (如檢測重覆)，執行高級分析(如程式碼複雜性)，並追蹤程式碼問題的歷史和進展。你可以使用的兩個工具的例子是[Sonarqube](https://www.sonarqube.org/) (2,600+ [star](https://github.com/SonarSource/sonarqube))和[Code Climate](https://codeclimate.com/) (1,500+ [star](https://github.com/codeclimate/codeclimate)) 。
 
-**Otherwise:** 由於程式碼品質差，錯誤和性能將永遠是一個問題，任何閃亮的新套件或最先進的功能都無法解決這個問題。
+**否則:** 由於程式碼品質差，錯誤和性能將永遠是一個問題，任何閃亮的新套件或最先進的功能都無法解決這個問題。
 
-🔗 [**Read More: 重構!**](./sections/testingandquality/refactoring.md)
+🔗 [**閱讀更多: 重構!**](./sections/testingandquality/refactoring.md)
 
 <br/><br/>
 
@@ -544,7 +544,7 @@ null == undefined; // true
 
 **否則:** 在 Express middleware 有 bug === 大多數或者所有請求有 bug
 
-🔗 [**Read More: 隔離測試你的中間件**](./sections/testingandquality/test-middlewares.md)
+🔗 [**閱讀更多: 隔離測試你的中間件**](./sections/testingandquality/test-middlewares.md)
 
 <br/><br/><br/>
 
@@ -598,9 +598,9 @@ null == undefined; // true
 
 ## ![✔] 5.5. 使用正確的工具保護執行緒正常執行
 
-**TL;DR:** 執行緒必須持續運行，並在失敗時重新啟動。對於簡單的情況下，"重啟"工具如PM2可能足夠，但在今天的"Dockerized"世界 – 集群管理工具也值得考慮
+**TL;DR:** 執行緒必須持續執行，並在失敗時重新啟動。對於簡單的情況下，"重啟"工具如PM2可能足夠，但在今天的"Dockerized"世界 – 集群管理工具也值得考慮
 
-**否則:** 運行幾十個實體沒有明確的戰略和太多的工具(集群管理，docker，PM2)可能導致DevOps的混亂
+**否則:** 執行幾十個實體沒有明確的戰略和太多的工具(集群管理，docker，PM2)可能導致DevOps的混亂
 
 
 🔗 [**更多: 使用正確的工具保護執行緒正常執行**](./sections/production/guardprocess.chinese.md)
@@ -610,7 +610,7 @@ null == undefined; // true
 
 ## ![✔] 5.6. 利用CPU多核
 
-**TL;DR:** 在基本形式上，node應用程式運行在單個CPU核心上，而其他都處於空閑狀態。複製node執行緒和利用多核，這是您的職責 – 對於中小應用，您可以使用Node Cluster和PM2. 對於一個大的應用，可以考慮使用一些Docker cluster(例如k8s，ECS)複製執行緒或基於Linux init system(例如systemd)的部署腳本
+**TL;DR:** 在基本形式上，node應用程式執行在單個CPU核心上，而其他都處於空閑狀態。複製node執行緒和利用多核，這是您的職責 – 對於中小應用，您可以使用Node Cluster和PM2. 對於一個大的應用，可以考慮使用一些Docker cluster(例如k8s，ECS)複製執行緒或基於Linux init system(例如systemd)的部署腳本
 
 **否則:** 您的應用可能只是使用了其可用資源中的25% (!)，甚至更少。注意，一台典型的伺服器有4個或更多的CPU，默認的Node.js部署僅僅用了一個CPU(甚至使用PaaS服務，比如AWS beanstalk，也一樣)。
 
@@ -741,19 +741,19 @@ null == undefined; // true
 
 **TL;DR:** 確保你使用的是Node.js的LTS版本，以獲得關鍵的錯誤修復、安全更新和性能改進。
 
-**Otherwise:** 新發現的錯誤或漏洞可能被用來攻擊在生產環境中運行的應用程式，你的應用程式可能變得不受各種模組(modules)的支援，更難維護。
+**否則:** 新發現的錯誤或漏洞可能被用來攻擊在生產環境中執行的應用程式，你的應用程式可能變得不受各種模組(modules)的支援，更難維護。
 
-🔗 [**Read More: 使用長期支援版本的 Node.js**](./sections/production/LTSrelease.md)
+🔗 [**閱讀更多: 使用長期支援版本的 Node.js**](./sections/production/LTSrelease.md)
 
 <br/><br/>
 
 ## ![✔] 5.18. 不要在應用程式內決定紀錄(logs)的位置
 
-**TL;DR:** 紀錄目的地不應該由開發人員在應用程式碼中寫死(hard-coded)，而應該由應用程序運行的執行環境來定義。開發者應該使用紀錄工具將紀錄寫入`stdout`，然後讓執行環境 (容器、服務器等) 將`stdout`導向適當的目的地 (即Splunk、Graylog、ElasticSearch等)。
+**TL;DR:** 紀錄目的地不應該由開發人員在應用程式碼中寫死(hard-coded)，而應該由應用程序執行的執行環境來定義。開發者應該使用紀錄工具將紀錄寫入`stdout`，然後讓執行環境 (容器、服務器等) 將`stdout`導向適當的目的地 (即Splunk、Graylog、ElasticSearch等)。
 
-**Otherwise:** Application handling log routing === hard to scale，loss of logs，poor separation of concerns
+**否則:** Application handling log routing === hard to scale，loss of logs，poor separation of concerns
 
-🔗 [**Read More: Log Routing**](./sections/production/logrouting.md)
+🔗 [**閱讀更多: Log Routing**](./sections/production/logrouting.md)
 
 <br/><br/>
 
@@ -761,9 +761,9 @@ null == undefined; // true
 
 **TL;DR:** 你必須確保生產環境下的程式碼使用你測試過的套件包的準確版本。執行`npm ci`，配合package.json和package-lock.json，來嚴格地對你的相依套件進行簡潔安裝(clean install)。建議在自動化環境中使用此指令，如持續集成管道(CI pipelines)。
 
-**Otherwise:** QA會徹底測試程式碼，並批准一個在生產環境中會有不同表現的版本。更糟糕的是，同一生產集群中的不同伺服器可能會執行著不同的代碼。
+**否則:** QA會徹底測試程式碼，並批准一個在生產環境中會有不同表現的版本。更糟糕的是，同一生產集群中的不同伺服器可能會執行著不同的代碼。
 
-🔗 [**Read More: 使用 npm ci**](./sections/production/installpackageswithnpmci.md)
+🔗 [**閱讀更多: 使用 npm ci**](./sections/production/installpackageswithnpmci.md)
 
 <br/><br/><br/>
 
@@ -924,9 +924,9 @@ null == undefined; // true
 
 **TL;DR:** Node.js 作為一個具有無限權限的 root 用戶執行，這是一種普遍的情況。例如，在 Docker 容器中，這是預設行為。建議創建一個非 root 用戶，並保存到 Docker image 中(下面給出了範例)，或者通過調用帶有 "-u username" 的容器來代表此用戶執行該執行緒。
 
-**否則:** 在伺服器上運行腳本的攻擊者在本地機器上獲得無限制的權利 (例如，改變iptable，引流到他的伺服器上)
+**否則:** 在伺服器上執行腳本的攻擊者在本地機器上獲得無限制的權利 (例如，改變iptable，引流到他的伺服器上)
 
-🔗 [**更多: 使用非 root 用戶運行 Node.js**](./sections/security/non-root-user.md)
+🔗 [**更多: 使用非 root 用戶執行 Node.js**](./sections/security/non-root-user.md)
 
 <br/><br/>
 
@@ -946,7 +946,7 @@ null == undefined; // true
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** `eval` 是邪惡的，因為它允許在運行時執行自定義的 JavaScript 程式碼。這不僅是一個性能方面的問題，而且也是一個重要的安全問題，因為惡意的 JavaScript 程式碼可能源自於用戶輸入。應該避免的另一種語言功能是 `new Function` 構造函數。`setTimeout` 和 `setInterval` 也不應該傳入動態 JavaScript 程式碼。
+**TL;DR:** `eval` 是邪惡的，因為它允許在執行時執行自定義的 JavaScript 程式碼。這不僅是一個性能方面的問題，而且也是一個重要的安全問題，因為惡意的 JavaScript 程式碼可能源自於用戶輸入。應該避免的另一種語言功能是 `new Function` 構造函數。`setTimeout` 和 `setInterval` 也不應該傳入動態 JavaScript 程式碼。
 
 **否則:** 惡意 JavaScript 程式碼查找傳入 `eval` 或其他實時判斷的 JavaScript 函數的文本的方法，並將獲得在該頁面上 JavaScript 權限的完全存取權。此漏洞通常為XSS攻擊。
 
@@ -986,7 +986,7 @@ null == undefined; // true
 
 **否則:** 插件可以通過無限循環、記憶體超載和對敏感執行緒環境變數的訪問等多種選項進行攻擊
 
-🔗 [**更多: 在沙箱中運行不安全程式碼**](./sections/security/sandbox.chinese.md)
+🔗 [**更多: 在沙箱中執行不安全程式碼**](./sections/security/sandbox.chinese.md)
 
 <br/><br/>
 
@@ -1103,17 +1103,17 @@ null == undefined; // true
 
 # `8. Docker Best Practices`
 
-🏅 Many thanks to [Bret Fisher](https://github.com/BretFisher) from whom we learned many of the following practices
+🏅 對於 [Bret Fisher](https://github.com/BretFisher) 非常感謝，透過他，我們學到很多最佳實踐。
 
 <br/><br/>
 
-## ![✔] 8.1 Use multi-stage builds for leaner and more secure Docker images
+## ![✔] 8.1 使用多階段構建以獲得更精簡、更安全的 Docker images
 
-**TL;DR:** Use multi-stage build to copy only necessary production artifacts. A lot of build-time dependencies and files are not needed for running your application. With multi-stage builds these resources can be used during build while the runtime environment contains only what's necessary. Multi-stage builds are an easy way to get rid of overweight and security threats.
+**TL;DR:** 使用多階段構建，只複製必要的生產工件(artifacts)。很多構建時的依賴和文件在執行你的應用程式時是不需要的。通過多階段構建，這些資源可以在構建期間使用，而執行時環境只包含必要的內容。多階段構建是擺脫超重和安全威脅的一個簡單方法。
 
-**Otherwise:** Larger images will take longer to build and ship, build-only tools might contain vulnerabilities and secrets only meant for the build phase might be leaked.
+**否則:** 較大的 image 將需要更長的時間來構建和運輸，僅有的構建工具可能包含漏洞，只用於構建階段的秘密可能會被泄露。
 
-### Example Dockerfile for multi-stage builds
+### 多階段構建的 Dockerfile 範例
 
 ```dockerfile
 FROM node:14.4.0 AS build
@@ -1133,160 +1133,155 @@ RUN npm ci --production
 CMD [ "node", "dist/app.js" ]
 ```
 
-🔗 [**Read More: Use multi-stage builds**](./sections/docker/multi_stage_builds.md)
+🔗 [**閱讀更多: 多階段構建**](./sections/docker/multi_stage_builds.md)
 
 <br /><br /><br />
 
-## ![✔] 8.2. Bootstrap using `node` command, avoid `npm start`
+## ![✔] 8.2. 使用 `node` 啟動，避免使用 `npm start`
 
-**TL;DR:** use `CMD ['node','server.js']` to start your app, avoid using npm scripts which don't pass OS signals to the code. This prevents problems with child-processes, signal handling, graceful shutdown and having zombie processes.
+**TL;DR:** 使用 `CMD ['node','server.js']` 來啟動你的應用程式，避免使用不向代碼傳遞操作系統信號的 npm 腳本。這可以防止子執行緒、信號處理、優雅關閉和僵屍執行緒的問題。
 
-**Otherwise:** When no signals are passed, your code will never be notified about shutdowns. Without this, it will lose its chance to close properly possibly losing current requests and/or data.
+**否則:** 當沒有信號傳遞時，你的程式將永遠不會得到關閉的通知。沒有這一點，它將失去正確關閉的機會，可能會丟失當前的請求和/或數據。
 
-[**Read More: Bootstrap container using node command, avoid npm start**](./sections/docker/bootstrap-using-node.md)
+[**閱讀更多: 使用 node 指令啟動容器，避免 npm start**](./sections/docker/bootstrap-using-node.md)
 
 <br /><br /><br />
 
-## ![✔] 8.3. Let the Docker runtime handle replication and uptime
+## ![✔] 8.3. 讓 Docker 執行時處理複製和正常執行時間
 
-**TL;DR:** When using a Docker run time orchestrator (e.g., Kubernetes), invoke the Node.js process directly without intermediate process managers or custom code that replicate the process (e.g. PM2, Cluster module). The runtime platform has the highest amount of data and visibility for making placement decision - It knows best how many processes are needed, how to spread them and what to do in case of crashes
+**TL;DR:** 當使用 Docker 執行時協調器 (如Kubernetes) 時，直接調用 Node.js 執行緒，不要使用中間執行緒管理器或複製執行緒的自定義編號（如PM2、Cluster模組）。執行時平台擁有最高的數據量和可視性，可以做出放置決策 - 它最清楚需要多少個執行緒，如何拆分它們，以及在崩潰的情況下該怎麽做
 
-**Otherwise:** Container keeps crashing due to lack of resources will get restarted indefinitely by the process manager. Should Kubernetes be aware of that, it could relocate it to a different roomy instance
+**否則:** 容器由於缺乏資源而不斷崩潰，會被執行緒管理器無限期地重新啟動。如果 Kubernetes 意識到這一點，它可以把它重新安置到一個不同的空間實例上
 
-🔗 [**Read More: Let the Docker orchestrator restart and replicate processes**](./sections/docker/restart-and-replicate-processes.md)
+🔗 [**閱讀更多: 讓 Docker 協調器來重啟和複製執行緒**](./sections/docker/restart-and-replicate-processes.md)
 
 <br/><br /><br />
 
-## ![✔] 8.4. Use .dockerignore to prevent leaking secrets
+## ![✔] 8.4. 使用 .dockerignore 來防止泄露秘密
 
-**TL;DR**: Include a `.dockerignore` file that filters out common secret files and development artifacts. By doing so, you might prevent secrets from leaking into the image. As a bonus the build time will significantly decrease. Also, ensure not to copy all files recursively rather explicitly choose what should be copied to Docker
+**TL;DR**: 包括一個 `.dockerignore` 文件，過濾掉常見的秘密文件和開發工件(artifacts)。透過這樣做，你可以防止秘密泄漏到 image 中。作為一種獎勵，構建時間將大大減少。另外，確保不要遞歸地複製所有文件，而是明確地選擇哪些文件應該被複製到 Docker 上
 
-**Otherwise**: Common personal secret files like `.env`, `.aws` and `.npmrc` will be shared with anybody with access to the image (e.g. Docker repository)
+**否則**: 普通的個人秘密文件，如`.env`、`.aws `和`.npmrc`，將與任何能夠存取 image 的人共享（例如Docker倉庫）。
 
-🔗 [**Read More: Use .dockerignore**](./sections/docker/docker-ignore.md)
-
-<br /><br /><br />
-
-## ![✔] 8.5. Clean-up dependencies before production
-
-**TL;DR:** Although Dev-Dependencies are sometimes needed during the build and test life-cycle, eventually the image that is shipped to production should be minimal and clean from development dependencies. Doing so guarantees that only necessary code is shipped and the amount of potential attacks (i.e. attack surface) is minimized. When using multi-stage build (see dedicated bullet) this can be achieved by installing all dependencies first and finally running `npm ci --production`
-
-**Otherwise:** Many of the infamous npm security breaches were found within development packages (e.g. [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes))
-
-🔗 Read More: [Remove development dependencies](./sections/docker/install-for-production.md)
+🔗 [**閱讀更多: 使用 .dockerignore**](./sections/docker/docker-ignore.md)
 
 <br /><br /><br />
 
-## ![✔] 8.6. Shutdown smartly and gracefully
+## ![✔] 8.5. 正式上線前清理相依關係
 
-**TL;DR:** Handle the process SIGTERM event and clean-up all existing connection and resources. This should be done while responding to ongoing requests. In Dockerized runtimes shutting down containers is not a rare event, rather a frequent occurrence that happen as part of routine work. Achieving this demands some thoughtful code to orchestrate several moving parts: The load balancer, keep-alive connections, the HTTP server and other resources
+**TL;DR:** 雖然在構建和測試的生命周期中有時需要開發依賴，但最終運往正式環境的 image 應該是最小的，沒有開發依賴的。這樣做可以保證只有必要的程式碼被運出，潛在的攻擊量(即攻擊面)被最小化。當使用多階段構建時(見專門章節)，可以通過先安裝所有的依賴項，最後運行`npm ci --production`來實現。
 
-**Otherwise:** Dying immediately means not responding to thousands of disappointed users
+**否則:** 許多臭名昭著的 npm 安全漏洞是在開發套件中發現的。(e.g. [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes))
 
-🔗 [**Read More: Graceful shutdown**](./sections/docker/graceful-shutdown.md)
-
-<br /><br /><br />
-
-## ![✔] 8.7. Set memory limits using both Docker and v8
-
-**TL;DR:** Always configure a memory limit using both Docker and the JavaScript runtime flags. The Docker limit is needed to make thoughtful container placement decision, the --v8's flag max-old-space is needed to kick off the GC on time and prevent under utilization of memory. Practically, set the v8's old space memory to be a just bit less than the container limit
-
-**Otherwise:** The docker definition is needed to perform thoughtful scaling decision and prevent starving other citizens. Without also defining the v8's limits, it will under utilize the container resources - Without explicit instructions it crashes when utilizing ~50-60% of its host resources
-
-🔗 [**Read More: Set memory limits using Docker only**](./sections/docker/memory-limit.md)
+🔗 閱讀更多: [Remove development dependencies](./sections/docker/install-for-production.md)
 
 <br /><br /><br />
 
-## ![✔] 8.8. Plan for efficient caching
+## ![✔] 8.6. 聰明地、優雅地關機
 
-**TL;DR:** Rebuilding a whole docker image from cache can be nearly instantaneous if done correctly. The less updated instructions should be at the top of your Dockerfile and the ones constantly changing (like app code) should be at the bottom.
+**TL;DR:** 處理執行緒 SIGTERM 事件並清理所有現有的連接和資源。這應該在響應正在進行的請求的同時進行。在 Docker 化的執行系統中，關閉容器不是一個罕見的事件，而是作為日常工作的一部分經常發生的事情。要做到這一點，需要一些周到的程式碼來協調幾個移動部件(parts)。負載平衡器(load-balancer)、保持連接(keep-alive connections)、 HTTP 伺服器和其他資源。
 
-**Otherwise:** Docker build will be very long and consume lot of resources even when making tiny changes
+**否則:** 立即死亡意味著不對成千上萬的失望的用戶作出回應
 
-🔗 [**Read More: Leverage caching to reduce build times**](./sections/docker/use-cache-for-shorter-build-time.md)
-
-<br /><br /><br />
-
-## ![✔] 8.9. Use explicit image reference, avoid `latest` tag
-
-**TL;DR:** Specify an explicit image digest or versioned label, never refer to `latest`. Developers are often led to believe that specifying the `latest` tag will provide them with the most recent image in the repository however this is not the case. Using a digest guarantees that every instance of the service is running exactly the same code.
-
-In addition, referring to an image tag means that the base image is subject to change, as image tags cannot be relied upon for a deterministic install. Instead, if a deterministic install is expected, a SHA256 digest can be used to reference an exact image.
-
-**Otherwise:** A new version of a base image could be deployed into production with breaking changes, causing unintended application behaviour.
-
-🔗 [**Read More: Understand image tags and use the "latest" tag with caution**](./sections/docker/image-tags.md)
+🔗 [**閱讀更多: 優雅地關機**](./sections/docker/graceful-shutdown.md)
 
 <br /><br /><br />
 
-## ![✔] 8.10. Prefer smaller Docker base images
+## ![✔] 8.7. 同時使用 Docker 和 V8 設置記憶體限制
 
-**TL;DR:** Large images lead to higher exposure to vulnerabilities and increased resource consumption. Using leaner Docker images, such as Slim and Alpine Linux variants, mitigates this issue.
+**TL;DR:** 始終使用 Docker 和 JavaScript 執行時旗標(flags)配置記憶體限制。Docker的限制是為了做出深思熟慮的容器放置決定，而 --v8 的旗標(flag) max-old-space 是為了及時啟動 GC ，防止記憶體利用不足。實際上，將 v8 的舊空間記憶體設置為略低於容器的限制
 
-**Otherwise:** Building, pushing, and pulling images will take longer, unknown attack vectors can be used by malicious actors and more resources are consumed.
+**否則:** docker 定義是需要的，以執行周到的擴展決策，並防止搶走其他容器的資源。如果不同時定義 v8 的限制，它就會對容器資源利用不足 - 如果沒有明確的指示，它在利用其主機資源的50-60%時就會崩潰。
 
-🔗 [**Read More: Prefer smaller images**](./sections/docker/smaller_base_images.md)
-
-<br /><br /><br />
-
-## ![✔] 8.11. Clean-out build-time secrets, avoid secrets in args
-
-**TL;DR:** Avoid secrets leaking from the Docker build environment. A Docker image is typically shared in multiple environment like CI and a registry that are not as sanitized as production. A typical example is an npm token which is usually passed to a dockerfile as argument. This token stays within the image long after it is needed and allows the attacker indefinite access to a private npm registry. This can be avoided by coping a secret file like `.npmrc` and then removing it using multi-stage build (beware, build history should be deleted as well) or by using Docker build-kit secret feature which leaves zero traces
-
-**Otherwise:** Everyone with access to the CI and docker registry will also get access to some precious organization secrets as a bonus
-
-🔗 [**Read More: Clean-out build-time secrets**](./sections/docker/avoid-build-time-secrets.md)
+🔗 [**閱讀更多: 僅使用Docker設置記憶體限制**](./sections/docker/memory-limit.md)
 
 <br /><br /><br />
 
-## ![✔] 8.12. Scan images for multi layers of vulnerabilities
+## ![✔] 8.8. 為高效的快取制定計劃
 
-**TL;DR:** Besides checking code dependencies vulnerabilities also scan the final image that is shipped to production. Docker image scanners check the code dependencies but also the OS binaries. This E2E security scan covers more ground and verifies that no bad guy injected bad things during the build. Consequently, it is recommended running this as the last step before deployment. There are a handful of free and commercial scanners that also provide CI/CD plugins
+**TL;DR:** 如果操作正確，從快取中重建整個 docker image 幾乎是瞬間完成的。更新較少的指令應該放在 Docker 文件的頂部，而不斷變化的指令(如應用程式碼)應該放在底部。
 
-**Otherwise:** Your code might be entirely free from vulnerabilities. However it might still get hacked due to vulnerable version of OS-level binaries (e.g. OpenSSL, TarBall) that are commonly being used by applications
+**否則:** Docker 構建的時間會很長，即使是做微小的改動也會消耗大量的資源
 
-🔗 [**Read More: Scan the entire image before production**](./sections/docker/scan-images.md)
-
-<br /><br /><br />
-
-## ![✔] 8.13 Clean NODE_MODULE cache
-
-**TL;DR:** After installing dependencies in a container remove the local cache. It doesn't make any sense to duplicate the dependencies for faster future installs since there won't be any further installs - A Docker image is immutable. Using a single line of code tens of MB (typically 10-50% of the image size) are shaved off
-
-**Otherwise:** The image that will get shipped to production will weigh 30% more due to files that will never get used
-
-🔗 [**Read More: Clean NODE_MODULE cache**](./sections/docker/clean-cache.md)
+🔗 [**閱讀更多: 利用快取來減少構建時間**](./sections/docker/use-cache-for-shorter-build-time.md)
 
 <br /><br /><br />
 
-## ![✔] 8.14. Generic Docker practices
+## ![✔] 8.9. 使用明確的 image 參考，避免使用 `latest` 標籤
 
-**TL;DR:** This is a collection of Docker advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
+**TL;DR:** 指定一個明確的 image 摘要或版本標籤，永遠不要提到 `latest`。開發人員經常被引導相信，指定`latest`標籤將為他們提供版本庫中最新的圖像，但事實並非如此。使用摘要可以保證服務的每個實例都在執行完全相同的程式碼。
 
-🔗 [**Read More: Generic Docker practices**](./sections/docker/generic-tips.md)
+此外，引用一個 image 標籤代表著基本 image 可能會發生變化，因為 image 標籤不能被用於確定的安裝。反之，如果期望有一個確定的安裝，可以使用 SHA256 摘要來引用一個準確的圖像。
+
+**否則:** 一個新版本的基本 image 可能會被部署到正式環境中，並帶來破壞性的變化，導致非預期的應用行為。
+
+🔗 [**閱讀更多: 理解 image 標籤，謹慎使用 "latest" 標籤**](./sections/docker/image-tags.md)
+
+<br /><br /><br />
+
+## ![✔] 8.10. 傾向於更小的 Docker 基礎 image
+
+**TL;DR:** 大型 image 會導致更高的漏洞暴露和更多的資源消耗。使用更精簡的 Docker image，如 Slim 和 Alpine Linux 變體，可以緩解這個問題。
+
+**否則:** 構建(building)、推送(pushing)和拉動(pulling) image 將花費更長的時間，未知的攻擊載體可能會被惡意行為者使用，並且會消耗更多的資源。
+
+🔗 [**閱讀更多: 傾向於更小的 image**](./sections/docker/smaller_base_images.md)
+
+<br /><br /><br />
+
+## ![✔] 8.11. 清除構建時的秘密，避免 args 中的秘密
+
+**TL;DR:** 避免 Docker 構建環境中的秘密泄露。一個 Docker image通常在多個環境中共享，如 CI 和倉庫，而這些環境並不像正式環境那樣經過過濾。一個典型的例子是 npm token，它通常作為參數傳遞給 dockerfile 。這個 token 在需要它的時候還留在 image 中，並允許攻擊者無限期地存取一個私有的 npm 倉庫。這可以透過複製一個秘密文件如`.npmrc`來避免，然後使用多階段構建將其刪除(注意，構建歷史也應該被刪除)，或者使用 Docker build-kit 的秘密功能，這樣就不會留下任何痕跡。
+
+**否則:** 每個能夠存取 CI 和 docker 倉庫的人還將獲得一些珍貴的組織秘密作為獎勵。
+
+🔗 [**閱讀更多: 清除構建時的秘密**](./sections/docker/avoid-build-time-secrets.md)
+
+<br /><br /><br />
+
+## ![✔] 8.12. 掃描 image 的多層漏洞
+
+**TL;DR:** 除了檢查程式碼的依賴性外，漏洞也會掃描被運送到正式環境中的最終 image。Docker image 掃描器不僅檢查程式碼的依賴性，還檢查操作系統的二進制文件。這種 E2E 安全掃描覆蓋了更多的領域，並驗證了在構建過程中沒有壞人注入壞東西。因此，建議在部署前的最後一步執行這個掃描。有一些免費和商業的掃描器也提供 CI/CD 插件
+
+**否則:** 你的代碼可能是完全沒有漏洞的。但是，由於應用程序通常使用的操作系統級二進制文件(如OpenSSL、TarBall)的脆弱版本，它仍然可能被黑客攻擊。
+
+🔗 [**閱讀更多: 正式上線前掃描整個 image**](./sections/docker/scan-images.md)
+
+<br /><br /><br />
+
+## ![✔] 8.13 清除 NODE_MODULE 快取
+
+**TL;DR:** 在容器中安裝完依賴套件後，刪除本地快取。為了今後更快地安裝，複製相依關係沒有任何意義，因為不會有任何進一步的安裝 - Docker image 是不可改變的。使用一行原始碼就可以減少幾十 MB(通常是 image 大小的10-50%)。
+
+**否則:** 將被運往線上的 image 將由於永遠不會被使用的文件而多出30%的空間。
+
+🔗 [**閱讀更多: 清除 NODE_MODULE 快取**](./sections/docker/clean-cache.md)
+
+<br /><br /><br />
+
+## ![✔] 8.14. 通用的 Docker 實踐
+
+**TL;DR:** 這是一個與 Node.js 沒有直接關係的 Docker 建議集 - Node 的實現與其他語言沒有太大區別。點擊 閱讀更多 的內容來瀏覽。
+
+🔗 [**閱讀更多: 通用的 Docker 實踐**](./sections/docker/generic-tips.md)
 
 <br/><br /><br />
 
-## ![✔] 8.15. Lint your Dockerfile
+## ![✔] 8.15. 檢查(Lint)你的 Dockerfile
 
-**TL;DR:** Linting your Dockerfile is an important step to identify issues in your Dockerfile which differ from best practices. By checking for potential flaws using a specialised Docker linter, performance and security improvements can be easily identified, saving countless hours of wasted time or security issues in production code.
+**TL;DR:** 對 Dockerfile 進行檢查是識別 Dockerfile 中與最佳實踐不同的問題的一個重要步驟。通過使用專門的 Docker linter 檢查潛在的缺陷，可以很容易地發現性能和安全方面的改進，從而節省無數的時間浪費或線上程式中的安全問題。
 
-**Otherwise:** Mistakenly the Dockerfile creator left Root as the production user, and also used an image from unknown source repository. This could be avoided with with just a simple linter.
+**否則:** Dockerfile 的作者錯誤地將 Root 作為線上用戶，而且還使用了一個來自未知資源庫的 image。這可以通過一個簡單的 linter 來避免。
 
-🔗 [**Read More: Lint your Dockerfile**](./sections/docker/lint-dockerfile.md)
+🔗 [**閱讀更多: 檢查(Lint)你的 Dockerfile**](./sections/docker/lint-dockerfile.md)
 
 <br/><br /><br />
 
 <p align="right"><a href="#table-of-contents">⬆ 返回頂部</a></p>
 
-# `API Practices`
-
-## Our contributors are working on this section. Would you like to join?
-
-<br/><br/><br/>
-
 # Milestones
-To maintain this guide and keep it up to date，we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/goldbergyoni/nodebestpractices/milestones) and join the working groups if you want to contribute to this project.
+
+To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/goldbergyoni/nodebestpractices/milestones) and join the working groups if you want to contribute to this project
 
 <br/><br/>
 
