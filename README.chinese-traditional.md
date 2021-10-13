@@ -18,9 +18,9 @@
  <br/>
 
 # 歡迎! 首先您應該知道的三件事情:
-**1. 當您讀到這裡，實際上您讀了很多關於Node.js的優秀文章 -** 這是對Node.js最佳實踐中排名最高的内容的總結和分享
+**1. 您正在閱讀幾十篇最棒的 Node.js 文章 -** 這是對Node.js最佳實踐中排名最高的内容的總結和分享
 
-**2. 這裡是最大的彙整，且每周都在成長 -** 目前，呈現了超過80個最佳實踐，樣式指南，架構建議。每天都有新的issue和PR被新增，以使這本線上書籍不斷更新。我們很樂於見到您能在這裡做出貢獻，不管是修正一些原始碼的錯誤，或是提出絕佳的新想法。請查看我們的[writing guidelines here](./.operations/writing-guidelines.md)
+**2. 這裡是最大的彙整站，且每周都在成長 -** 目前，呈現了超過80個最佳實踐，樣式指南，架構建議。每天都有新的issue和PR被新增，以使這本線上書籍不斷更新。我們很樂於見到您能在這裡做出貢獻，不管是修正一些原始碼的錯誤，或是提出絕佳的新想法。請查看我們的[writing guidelines here](./.operations/writing-guidelines.md)
 
 **3. 大多的最佳實踐有額外資訊 -** 大部分的最佳實踐項目的旁邊，您將發現 **🔗閱讀更多** 連結，它將呈現给您原始碼範例，部落格引用和更多資訊
 
@@ -44,7 +44,7 @@
 
 ## ![✔] 1.1 將解決方案元件化
 
- **TL;DR:** 大型專案中，最大的隱患就是要維護一個龐大的，含有幾百個相依套件 - 當開發者準備加入一個新的功能時，這麼一個龐然大物勢必拖慢了開發效率。反之，把您的程式碼元件化，每一個元件有它自己的資料架和專用函式庫，並且確保每一個元件小而簡單。查看正確的專案架構範例請造訪下面的「更多」連結。
+ **TL;DR:** 大型專案中，最大的隱患就是要維護一個龐大的，含有幾百個相依套件的程式碼 - 當開發者準備加入一個新的功能時，這麼一個龐然大物勢必拖慢了開發效率。反之，把您的程式碼元件化，每一個元件有它自己的資料夾和專用函式庫，並且確保每一個元件小而簡單。查看正確的專案架構範例請造訪下面的「更多」連結。
 
 **否則:** 當撰寫新功能的開發者逐步意識到他所調整後的影響，並擔心會破壞其他相依元件 - 部署會變得更慢，風險更大。當所有商業邏輯沒有被分開，這也會被認為很難擴充。
 
@@ -54,9 +54,9 @@
 
 ## ![✔] 1.2 分層設計元件，將網路層保持在特定範圍內
 
-**TL;DR:** 每個元件都應該包含"層級" - 網路、邏輯和存取數據的原始碼的專用對象。這不僅是對關注點的簡潔分離，而且也大大簡化了系統的模擬和測試。雖然這是一個非常常見的模式，但API開發者傾向於通過將Web層對象(例如Express req，res)傳遞給商業邏輯和數據層來混合各層 - 這使得你的應用程式依賴於特定的Web框架，並只能由其訪問。
+**TL;DR:** 每個元件都應該包含"層級" - 一個用於網路、邏輯和存取數據的原始碼的專用物件。這不僅是對關注點的簡潔分離，而且也大大簡化了系統的模擬和測試。雖然這是一個非常常見的模式，但 API 開發者傾向於通過將 Web 層物件(例如Express req，res)傳遞給商業邏輯和數據層來混合各層 - 這使得你的應用程式依賴於特定的 Web 框架，並只能由他來存取。
 
-**否則:** 混合了網路對象和其他層的應用程式無法被測試、CRON jobs、消息隊列的觸發器等。
+**否則:** 混合了網路物件和其他層的應用程式無法被測試、CRON jobs、消息隊列的觸發器等。
 
 
 🔗 [**更多: 應用分層**](./sections/projectstructre/createlayers.chinese.md)
@@ -65,9 +65,9 @@
 
 ## ![✔] 1.3 將通用函式庫包裝成 npm 套件
 
-**TL;DR:** 在一個構成大型代碼庫的大型應用中，跨領域的實用程式，如記錄器、加密等，應該將其包裝起來，並作為私有的npm包公開。這樣就可以在多個函式庫和專案中共享它們。
+**TL;DR:** 在一個構成大型程式庫的大型應用中，跨領域的實用程式，如記錄器(logger)、加密(encryption)等，應該將其包裝起來，並作為私有的 npm 套件公開。這樣就可以在多個函式庫和專案中共享它們。
 
-**否則:** 您將不得不重造部署和相異的輪子
+**否則:** 您將不得不重造和部署相依的輪子
 
 🔗 [**更多: 透過需求來構建**](./sections/projectstructre/wraputilities.chinese.md)
 
@@ -75,9 +75,9 @@
 
 ## ![✔] 1.4 將 Express 'app' and 'server' 拆分
 
-**TL;DR:** 避免定義整個[Express](https://expressjs.com/)應用程式在一個單獨的大文件裡， 這是一個不好的習慣 - 拆分您的 'Express' 定義至少在兩個文件中： API宣告(app.js) 和 網路相關(WWW)。對於更好的結構，是把你的API宣告放在元件中。
+**TL;DR:** 避免定義整個 [Express](https://expressjs.com/) 應用程式在一個單獨的大文件裡，這是一個不好的習慣 - 拆分您的 'Express' 定義至少在兩個文件中： API 宣告(app.js) 和 網路相關(WWW)。對於更好的結構，是把你的 API 宣告放在元件中。
 
-**否則:** 您的API將只能透過HTTP的呼叫進行測試(慢，並且很難產生測試覆蓋報告)。維護一個有著上百行原始碼的文件也不是一件令人開心的事情。
+**否則:** 您的 API 將只能透過 HTTP 的呼叫進行測試(慢，並且很難產生測試覆蓋報告)。要維護一個上百行原始碼的文件也不是一件令人開心的事。
 
 🔗 [**更多: 將 Express 'app' and 'server' 拆分**](./sections/projectstructre/separateexpress.chinese.md)
 
@@ -85,10 +85,10 @@
 
 ## ![✔] 1.5 使用易於設定環境變數，安全和分級的設定
 
-**TL;DR:** 一個完美無瑕的配置設定應該確保(a)密鑰可以從文件和環境變量中讀取(b)秘密被保存在已提交的原始碼之外(c)配置是分層的，更容易找到。有一些套件包可以幫助勾選其中的大部分方框，如[rc](https://www.npmjs.com/package/rc)，[nconf](https://www.npmjs.com/package/nconf)，[config](https://www.npmjs.com/package/config)，and [convict](https://www.npmjs.com/package/convict)。
+**TL;DR:** 一個完美無瑕的配置設定應該確保 (a) 密鑰可以從文件和環境變數中讀取 (b) 秘密被保存在已提交的原始碼之外 (c) 配置是分層的，更容易找到。有一些套件包可以幫助勾選其中的大部分方框，如 [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config) 和 [convict](https://www.npmjs.com/package/convict)。
 
 
-**否則:** 不能滿足任意的配置要求將會使開發，維運團隊，或者兩者，易於陷入泥沼。
+**否則:** 不能滿足任意配置的要求將會使開發，維運團隊，更甚兩者，易於陷入泥沼。
 
 🔗 [**更多: 配置最佳實踐**](./sections/projectstructre/configguide.chinese.md)
 
@@ -100,7 +100,7 @@
 
 ## ![✔] 2.1  使用 Async-Await 和 promises 用於異步錯誤處理
 
-**TL;DR:** 使用 `callback` 的方式處理異步錯誤可能是導致災難的最快的方式(a.k.a the pyramid of doom)。對您的程式碼来說，最好的禮物就是使用規範的promise函式庫或async-await来替代，這會使程式更加簡潔以及熟悉，就如try-catch一樣。
+**TL;DR:** 使用 `callback` 的方式處理異步錯誤可能是導致災難的最快的方式(又稱 the pyramid of doom)。對您的程式碼来說，最好的禮物就是使用規範的 promise 函式庫或 async-await 来替代，這會使程式更加簡潔以及熟悉，就如 try-catch 一樣。
 
 **否則:** Node.js `callback` 特性，function(err，response)，是導致不可維護程式的一個必然的方式。究其原因，是由於混合了隨意的錯誤處理代碼，臃腫的内嵌，鱉腳的設計模式。
 
@@ -110,9 +110,9 @@
 
 ## ![✔] 2.2 僅使用内建的錯誤物件
 
-**TL;DR:** 很多人使用字串類型或一些自定義類型來拋出錯誤 - 這會導致錯誤處理邏輯和模組間的調用複雜化。是否您reject一個promise，抛出異常或發出(emit)錯誤 - 使用内建的錯誤對象將會增加設計一致性，並防止資訊的遺失。有一個規則 `no-throw-literal`，會在`ESLint` 中進行嚴謹確認 (雖然在使用 `Typescript` 的時候他有一些可以透過設定 `@typescript-eslint/no-throw-literal` 被解決的[限制](https://eslint.org/docs/rules/no-throw-literal)存在)
+**TL;DR:** 很多人使用字串類型或一些自定義類型來拋出錯誤 - 這會導致錯誤處理邏輯和模組間的調用複雜化。是否您 reject 一個 promise，抛出異常或發出(emit)錯誤 - 使用内建的錯誤對象將會增加設計一致性，並防止資訊的遺失。有一個規則 `no-throw-literal`，會在`ESLint` 中進行嚴謹確認 (雖然在使用 `Typescript` 的時候他有一些可以透過設定 `@typescript-eslint/no-throw-literal` 被解決的[限制](https://eslint.org/docs/rules/no-throw-literal)存在)
 
-**否則:** 調用某些元件時，將不確定會返回哪種錯誤類型 - 這使得正確的錯誤處理變得更加困難。更糟糕的情况是，使用自定義类型來描述錯誤，可能會導致重要的錯誤資訊遺失，比如stack trace！
+**否則:** 調用某些元件時，將不確定會返回哪種錯誤類型 - 這使得正確的錯誤處理變得更加困難。更糟糕的情况是，使用自定義類型來描述錯誤，可能會導致重要的錯誤資訊遺失，比如 stack trace！
 
 🔗 [**更多: 使用内建錯誤物件**](./sections/errorhandling/useonlythebuiltinerror.chinese.md)
 
@@ -130,9 +130,9 @@
 
 ## ![✔] 2.4 集中處理錯誤，不要在Express中介層(middleware)中處理錯誤
 
-**TL;DR:** 錯誤處理邏輯，例如給管理員的郵件和日志，應該被封裝在一個專門的、集中的物件中，當有錯誤出現時，所有的端點 (例如: Express中介層(middleware)、cron jobs、單元測試) 都會調用這個物件。
+**TL;DR:** 錯誤處理邏輯，例如給管理員的郵件和日誌，應該被封裝在一個專門的、集中的物件中，當有錯誤出現時，所有的端點 (例如: Express中介層(middleware)、cron jobs、單元測試) 都會調用這個物件。
 
-**否則:** 錯誤處理的邏輯不放在一起將會導致程式碼重物和非常可能不妥當的錯誤處理。
+**否則:** 錯誤處理的邏輯不放在一起將會導致程式碼重複和非常可能不妥當的錯誤處理。
 
 🔗 [**更多: 集中处理錯誤**](./sections/errorhandling/centralizedhandling.chinese.md)
 
@@ -162,7 +162,7 @@
 
 **TL;DR:** 一系列成熟的日誌工具，比如 [Pino](https://github.com/pinojs/pino) 或是 [Log4js](https://www.npmjs.com/package/log4js)，會加速錯誤的發現和理解。放棄console.log吧。
 
-**否則:** 在沒有查詢工具或像樣的日志查看器的情況下，略過console.logs或手動查看混亂的文本文件可能會讓你在工作中忙到很晚。
+**否則:** 在沒有查詢工具或像樣的日誌查看器的情況下，略過console.logs或手動查看混亂的文本文件可能會讓你在工作中忙到很晚。
 
 🔗 [**更多: 使用好用的日誌工具**](./sections/errorhandling/usematurelogger.chinese.md)
 
@@ -170,9 +170,9 @@
 
 ## ![✔] 2.8 使用你最喜歡的測試框架測試錯誤流程
 
-**TL;DR:** 無論是專業的自動化QA還是普通的手動開發者測試 - 確保你的程式碼不僅能滿足積極的情境，還能處理並回傳正確的錯誤。Mocha和Chai等測試框架可以輕松地處理這個問題 (見 "Gist popup" 中的程式範例)
+**TL;DR:** 無論是專業的自動化QA還是普通的手動開發者測試 - 確保你的程式碼不僅能滿足積極的情境，還能處理並回傳正確的錯誤。Mocha和Chai等測試框架可以輕鬆地處理這個問題 (見 "Gist popup" 中的程式範例)
 
-**否則:** 如果沒有測試，無論是自動還是手動，你都不能依靠你的代碼來返回正確的錯誤。沒有有意義的錯誤 - 等於沒做"錯誤處理"
+**否則:** 如果沒有測試，無論是自動還是手動，你都不能依靠你的程式碼來返回正確的錯誤。沒有有意義的錯誤 - 等於沒做"錯誤處理"
 
 🔗 [**更多: 測試錯誤流程**](./sections/errorhandling/testingerrorflows.chinese.md)
 
@@ -198,9 +198,9 @@
 
 <br/><br/>
 
-## ![✔] 2.11 快速查錯，驗證參數使用一個專門的套件
+## ![✔] 2.11 使用一個專門的套件驗證參數，並且及早報錯
 
-**TL;DR:** Assert API 輸入藉此避免討厭的bug，這些bug以後更難追蹤。驗證程式通常很繁瑣，除非你使用一個非常酷的套件，如 [ajv](https://www.npmjs.com/package/ajv) 和 [Joi](https://www.npmjs.com/package/joi)
+**TL;DR:** Assert API 輸入藉此避免討厭的 bug，這些 bug 以後更難追蹤。驗證程式通常很繁瑣，除非你使用一個非常酷的套件，如 [ajv](https://www.npmjs.com/package/ajv) 和 [Joi](https://www.npmjs.com/package/joi)
 
 **否則:** 想一下這個情況 - 你的函數期望一個數字參數 "Discount"，而調用者忘記了傳遞這個參數，後來，你的程式檢查是否Discount!=0 (允許的折扣金額大於0)，那麽它將允許用戶享受折扣。OMG，真是個討厭的錯誤。有fu了嗎？
 
@@ -215,7 +215,7 @@
 在回傳 `promise` 之前 `await promise`
 
 **否則:** 回傳一個沒有 `await promise` 的函式不會出現在 `stacktrace` 中。
-這種缺失的框架可能會使對導致錯誤的流程的理解變得複雜。
+這種缺陷的框架可能會使對導致錯誤的流程的理解變得複雜。
 特別是如果異常行為的原因是在有問題的函式中
 
 🔗 [**閱讀更多: 回傳 promises**](./sections/errorhandling/returningpromises.md)
@@ -226,7 +226,7 @@
 
 ## ![✔] 3.1 使用ESLint
 
-**TL;DR:** [ESLint](https://eslint.org)是檢查可能的代碼錯誤和修復撰寫風格的業界標準，不僅可以識別細微的間距問題，還可以檢測嚴重的反模式(anti-patterns)程式碼，如開發人員拋出的錯誤沒有分類。雖然ESLint可以自動修復撰寫風格，但其他工具如 [prettier](https://www.npmjs.com/package/prettier) 和 [beautify](https://www.npmjs.com/package/js-beautify) 在格式化修復方面更加強大，並與ESLint同時運作。
+**TL;DR:** [ESLint](https://eslint.org) 是檢查可能的程式碼錯誤和修復撰寫風格的業界標準，不僅可以識別細微的間距問題，還可以檢測嚴重的反模式(anti-patterns)程式碼，如開發人員拋出的錯誤沒有分類。雖然ESLint可以自動修復撰寫風格，但其他工具如 [prettier](https://www.npmjs.com/package/prettier) 和 [beautify](https://www.npmjs.com/package/js-beautify) 在格式化修復方面更加強大，並與ESLint同時運作。
 
 **否則:** 開發人員將專注於繁瑣的間距和行寬問題，時間可能被浪費在過度考慮各種撰寫風格上。
 
@@ -406,7 +406,7 @@ null == undefined; // true
 
 ## ![✔] 3.11 使用 Async Await，避免使用 callback
 
-**TL;DR:** Node 8 LTS現已全面支援異步等待(async-await)。這是一種新的方式處理異步請求，取代 callbacks 和 promise 。Async-await 是非阻塞的，它使異步程式看起來像是同步的。您可以給你的程式的最好的禮物是用 async-await 提供了一個更緊湊的，熟悉的，類似 try catch 的代碼語法。
+**TL;DR:** Node 8 LTS現已全面支援異步等待(async-await)。這是一種新的方式處理異步請求，取代 callbacks 和 promise 。Async-await 是非阻塞的，它使異步程式看起來像是同步的。您可以給你的程式的最好的禮物是用 async-await 提供了一個更緊湊的，熟悉的，類似 try catch 的語法。
 
 **否則:** 使用 callbacks 的方式處理異步錯誤可能是陷入困境最快的方式 - 這種方式必須面對不停地檢測錯誤，處理彆扭的巢狀程式，難以推理程式流程。
 
@@ -442,7 +442,7 @@ null == undefined; // true
 
 **TL;DR:** 讓測試在需求層面上說話，這樣對不熟悉程式內部的QA工程師和開發人員來說也是不言自明的。在測試名稱中說明：什麽是被測試的 (被測單元)、在什麽情況下、預期結果是什麽。
 
-**否則:** 一個部署剛剛失敗，一個名為 "添加產品 "的測試失敗。這樣你知道哪裡故障了？
+**否則:** 一個部署剛剛失敗，一個名為 "新增產品 "的測試失敗。這樣你知道哪裡故障了？
 
 🔗 [**閱讀更多: 在每個測試名稱中包含3個部分**](./sections/testingandquality/3-parts-in-name.md)
 
@@ -460,16 +460,16 @@ null == undefined; // true
 
 ## ![✔] 4.4 使用一個linter檢測程式碼問題
 
-**TL;DR:** 使用程式碼linter檢查基本品質並及早檢測反模式(anti-patterns)。在任何測試之前執行它，並將其添加為提交前的git-hook，以最小化審查和更正任何問題所需的時間。也可在[Section 3](https://github.com/goldbergyoni/nodebestpractices#3-code-style-practices)中查閱撰寫風格實踐
+**TL;DR:** 使用程式碼linter檢查基本品質並及早檢測反模式(anti-patterns)。在任何測試之前執行它，並將其新增為提交前的git-hook，以最小化審查和更正任何問題所需的時間。也可在[Section 3](https://github.com/goldbergyoni/nodebestpractices#3-code-style-practices)中查閱撰寫風格實踐
 
 **否則:** 您可能讓一些反模式(anti-patterns)和易受攻擊的程式碼傳遞到您的生產環境中。
 
 
 <br/><br/>
 
-## ![✔] 4.5 避免全域測試 fixtures 和 seeds ，按每個測試需求添加數據
+## ![✔] 4.5 避免全域測試 fixtures 和 seeds ，按每個測試需求新增數據
 
-**TL;DR:** 為了防止測試耦合和容易推理測試流程，每個測試都應該添加和作用於它自己的一組DB數據。每當一個測試需要拉動或假設一些DB數據的存在 - 它必須明確地添加該數據，避免任何突變影響其他記錄。
+**TL;DR:** 為了防止測試耦合和容易推理測試流程，每個測試都應該新增和作用於它自己的一組DB數據。每當一個測試需要拉動或假設一些DB數據的存在 - 它必須明確地新增該數據，避免任何突變影響其他記錄。
 
 **否則:** 考慮這樣一種情況：由於測試失敗，部署被中止，團隊現在要花費寶貴的調查時間，最後得出一個可悲的結論：系統執行良好，但測試相互干擾，破壞了部署上線。
 
@@ -495,9 +495,9 @@ null == undefined; // true
 
 ## ![✔] 4.8 檢查測試覆蓋率，它有助於識別錯誤的測試模式
 
-**TL;DR:** 代碼覆蓋工具比如 [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc)，很好用有3個原因：它是免費的(獲得這份報告不需要任何開銷)，它有助於確定測試覆蓋率降低的部分，以及最後但非最不重要的是它指出了測試中的不匹配：通過查看顏色標記的程式碼覆蓋報告您可以注意到，例如，從來不會被測到的程式碼片段像catch語句(即測試只是調用正確的路徑，而不調用應用程式發生錯誤時的行為)。如果覆蓋率低於某個閾值，則將其設置為失敗的構建。
+**TL;DR:** 程式碼覆蓋工具比如 [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc)，很好用有3個原因：它是免費的(獲得這份報告不需要任何開銷)，它有助於確定測試覆蓋率降低的部分，以及最後但非最不重要的是它指出了測試中的不匹配：通過查看顏色標記的程式碼覆蓋報告您可以注意到，例如，從來不會被測到的程式碼片段像catch語句(即測試只是調用正確的路徑，而不調用應用程式發生錯誤時的行為)。如果覆蓋率低於某個閾值，則將其設置為失敗的構建。
 
-**否則:** 當你的大部分代碼沒有被測試覆蓋時，就不會有任何自動化的度量化數據告訴你了。
+**否則:** 當你的大部分程式碼沒有被測試覆蓋時，就不會有任何自動化的度量化數據告訴你了。
 
 <br/><br/>
 
@@ -520,7 +520,7 @@ null == undefined; // true
 
 ## ![✔] 4.11 使用靜態分析工具定期進行重構
 
-**TL;DR:** 使用靜態分析工具有助於通過提供客觀的方法來提高程式碼品質，並保持你的程式碼可維護性。你可以將靜態分析工具添加到你的CI構建中，當它發現程式碼有異味時就會失效。與普通的提示相比，它的主要賣點是能夠在多個文件的背景下檢查品質 (如檢測重覆)，執行高級分析(如程式碼複雜性)，並追蹤程式碼問題的歷史和進展。你可以使用的兩個工具的例子是[Sonarqube](https://www.sonarqube.org/) (2,600+ [star](https://github.com/SonarSource/sonarqube))和[Code Climate](https://codeclimate.com/) (1,500+ [star](https://github.com/codeclimate/codeclimate)) 。
+**TL;DR:** 使用靜態分析工具有助於通過提供客觀的方法來提高程式碼品質，並保持你的程式碼可維護性。你可以將靜態分析工具新增到你的CI構建中，當它發現程式碼有異味時就會失效。與普通的提示相比，它的主要賣點是能夠在多個文件的背景下檢查品質 (如檢測重覆)，執行高級分析(如程式碼複雜性)，並追蹤程式碼問題的歷史和進展。你可以使用的兩個工具的例子是[Sonarqube](https://www.sonarqube.org/) (2,600+ [star](https://github.com/SonarSource/sonarqube))和[Code Climate](https://codeclimate.com/) (1,500+ [star](https://github.com/codeclimate/codeclimate)) 。
 
 **否則:** 由於程式碼品質差，錯誤和性能將永遠是一個問題，任何閃亮的新套件或最先進的功能都無法解決這個問題。
 
@@ -567,7 +567,7 @@ null == undefined; // true
 
 **TL;DR:** 紀錄(logs)可以是除錯語句的一個不能說話的倉庫，或者表述應用執行過程的一個漂亮儀表板的驅動。從第1天計劃您的紀錄平台(logging platform)：如何收集、儲存和分析紀錄，以確保所需資訊 (例如，錯誤率、通過服務和伺服器等完成整個交易(transaction)) 都能被提取出來。
 
-**否則:** 您最終像是面對一個黑盒子，不知道發生了什麽事情，然後你開始重新寫紀錄語句添加額外的資訊。
+**否則:** 您最終像是面對一個黑盒子，不知道發生了什麽事情，然後你只能開始重新寫 log 來新增額外的資訊。
 
 
 🔗 [**更多: 使用智慧紀錄 (smart logging) 增加透明度**](./sections/production/smartlogging.chinese.md)
@@ -576,9 +576,9 @@ null == undefined; // true
 
 ## ![✔] 5.3. 委托可能的一切 (例如：gzip，SSL) 給反向代理
 
-**TL;DR:** Node處理CPU密集型任務，如gzipping，SSL termination等，表現糟糕。相反，使用一個 ‘真正’ 的中介層服務像Nginx，HAProxy或者雲端供應商的服務。
+**TL;DR:** Node 在處理 CPU 密集型任務上表現不好，如 gzipping, SSL termination 等。相反，使用一個 "真正" 的中介層服務像 Nginx, HAProxy 或者雲端供應商的服務。
 
-**否則:** 可憐的單執行緒Node將不幸地忙於處理網路任務，而不是處理應用程式核心，性能會相應降低。
+**否則:** 可憐的單執行緒 Node 將不幸地忙於處理網路任務，而不是處理應用程式核心，性能會相對應地降低。
 
 
 🔗 [**更多: 委托可能的一切 (例如：gzip，SSL) 給反向代理**](./sections/production/delegatetoproxy.chinese.md)
@@ -761,7 +761,7 @@ null == undefined; // true
 
 **TL;DR:** 你必須確保生產環境下的程式碼使用你測試過的套件包的準確版本。執行`npm ci`，配合package.json和package-lock.json，來嚴格地對你的相依套件進行簡潔安裝(clean install)。建議在自動化環境中使用此指令，如持續集成管道(CI pipelines)。
 
-**否則:** QA會徹底測試程式碼，並批准一個在生產環境中會有不同表現的版本。更糟糕的是，同一生產集群中的不同伺服器可能會執行著不同的代碼。
+**否則:** QA會徹底測試程式碼，並批准一個在生產環境中會有不同表現的版本。更糟糕的是，同一生產集群中的不同伺服器可能會執行著不同的程式碼。
 
 🔗 [**閱讀更多: 使用 npm ci**](./sections/production/installpackageswithnpmci.md)
 
@@ -899,7 +899,7 @@ null == undefined; // true
 
 **否則:** 過期或錯誤的令牌可能被第三方惡意使用，以訪問應用程式，並模擬 token 的所有者。
 
-🔗 [**更多: 為JSON Web Token添加黑名單**](./sections/security/expirejwt.md)
+🔗 [**更多: 為JSON Web Token新增黑名單**](./sections/security/expirejwt.md)
 
 <br/><br/>
 
@@ -1139,7 +1139,7 @@ CMD [ "node", "dist/app.js" ]
 
 ## ![✔] 8.2. 使用 `node` 啟動，避免使用 `npm start`
 
-**TL;DR:** 使用 `CMD ['node','server.js']` 來啟動你的應用程式，避免使用不向代碼傳遞操作系統信號的 npm 腳本。這可以防止子執行緒、信號處理、優雅關閉和僵屍執行緒的問題。
+**TL;DR:** 使用 `CMD ['node','server.js']` 來啟動你的應用程式，避免使用不向程式碼傳遞操作系統信號的 npm 腳本。這可以防止子執行緒、信號處理、優雅關閉和僵屍執行緒的問題。
 
 **否則:** 當沒有信號傳遞時，你的程式將永遠不會得到關閉的通知。沒有這一點，它將失去正確關閉的機會，可能會丟失當前的請求和/或數據。
 
@@ -1243,7 +1243,7 @@ CMD [ "node", "dist/app.js" ]
 
 **TL;DR:** 除了檢查程式碼的依賴性外，漏洞也會掃描被運送到正式環境中的最終 image。Docker image 掃描器不僅檢查程式碼的依賴性，還檢查操作系統的二進制文件。這種 E2E 安全掃描覆蓋了更多的領域，並驗證了在構建過程中沒有壞人注入壞東西。因此，建議在部署前的最後一步執行這個掃描。有一些免費和商業的掃描器也提供 CI/CD 插件
 
-**否則:** 你的代碼可能是完全沒有漏洞的。但是，由於應用程序通常使用的操作系統級二進制文件(如OpenSSL、TarBall)的脆弱版本，它仍然可能被黑客攻擊。
+**否則:** 你的程式碼可能是完全沒有漏洞的。但是，由於應用程序通常使用的操作系統級二進制文件(如OpenSSL、TarBall)的脆弱版本，它仍然可能被黑客攻擊。
 
 🔗 [**閱讀更多: 正式上線前掃描整個 image**](./sections/docker/scan-images.md)
 
