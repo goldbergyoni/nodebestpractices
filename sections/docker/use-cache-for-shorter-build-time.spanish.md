@@ -32,7 +32,7 @@ El docker ignore evita copiar los archivos que pueden consumir la memoria caché
 
 #### Instala primero los paquetes del "sistema"
 
-Es recomendado crear una base para la imagen de Docker que contenga todos los paquetes del sistema a utilizar. Si es realmente necesario instalar paquetes usando 'apt', 'yum', 'apk' o algo por el estilo, debes ser una de las primeras instrucciones. No debes reinstalar 'make', 'gcc' o 'g++' cada vez que compiles tu aplicación en Node.
+Es recomendado crear una base para la imagen de Docker que contenga todos los paquetes del sistema a utilizar. Si es realmente necesario instalar paquetes usando `apt`, `yum`, `apk` o algo por el estilo, debes ser una de las primeras instrucciones. No debes reinstalar `make`, `gcc` o `g++` cada vez que compiles tu aplicación en Node.
 **No instales paquetes a tu conveniencia, esta es una aplicación de producción**
 
 #### Primero debes agregar tu package.json y tu package-lock.json
@@ -42,7 +42,7 @@ COPY "package.json" "package-lock.json" "./"
 RUN npm ci
 ```
 
-Ambos archivos cambian con menor frecuencia. Copiarlos primero mantendrá el paso de 'npm install' en la caché, lo cual ahorrarás tiempo valioso.
+Ambos archivos cambian con menor frecuencia. Copiarlos primero mantendrá el paso de `npm install` en la caché, lo cual ahorrarás tiempo valioso.
  
 ### Después copia todos los archivos y realiza un paso de compilación (si es necesario)
 
