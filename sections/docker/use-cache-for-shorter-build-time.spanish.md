@@ -1,6 +1,6 @@
 # Aprovechar el almacenamiento en caché para reducir los tiempos de compilación
 
-## Explicación en un párrafo
+## Párrafo de explicación
 
 Las imágenes de Docker son una combinación de capas, cada instrucción de su Dockerfile genera una capa. Puede reutilizar esas capas entre compilaciones sí cada instrucción son idénticas o en el caso de no cambiar los archivos utilizados por las instrucciones de `COPY` o `ADD`. ⚠️ Si el caché falla en una capa particular, las capas posteriores se invalidarán. Por lo tanto el orden es importante, ya que es crucial que cada capa de tu Dockerfile sea correcta para reducir el número de instrucciones de compilación, es decir las instrucciones actualizadas con menor frecuencia deberán estar en la parte superior mientras que las instrucciones con cambios constantes (por ejemplo el código de tu proyecto) deberán estar en la parte inferior. De igual manera, es importante pensar que las instrucciones que desencadenan una operación prolongada deberían estar en la parte superior para garantizar que sucedan solo cuando sea realmente necesario (a menos que en cada cambio construya una imagen de Docker). La reconstrucción de una imagen desde el caché puede ser casi instantánea si se hace correctamente. 
 
