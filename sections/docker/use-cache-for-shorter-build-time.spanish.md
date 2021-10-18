@@ -12,7 +12,7 @@ Las imágenes de Docker son una combinación de capas, cada instrucción de su D
 
 #### Evitar las etiquetas con cambios constantes
 
-Si tienen una etiqueta en la parte superior con un gran número de cambios, el caché se invalidará en cada compilación.
+Si se tiene una etiqueta en la parte superior con un gran número de cambios, el caché se invalidará en cada compilación.
 
 ```Dockerfile
 #Inicio del archivo
