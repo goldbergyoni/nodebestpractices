@@ -6,7 +6,7 @@ Las imágenes de Docker son una combinación de capas, cada instrucción de su D
 
 ![Capas en Docker](../../assets/images/docker_layers_schema.png)
 
-* Imagen tomada desde el artículo, [Digging into Docker layers](https://medium.com/@jessgreb01/digging-into-docker-layers-c22f948ed612), escrita por essgreb01*
+* Imagen tomada del artículo, [Digging into Docker layers](https://medium.com/@jessgreb01/digging-into-docker-layers-c22f948ed612), escrita por essgreb01*
 
 ### Reglas
 
