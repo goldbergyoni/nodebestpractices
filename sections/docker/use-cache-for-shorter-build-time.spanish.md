@@ -42,7 +42,7 @@ COPY "package.json" "package-lock.json" "./"
 RUN npm ci
 ```
 
-Ambos archivos cambian con menor frecuencia. Copiarlos primero mantendrá el paso de `npm install` en la caché, lo cual ahorrarás tiempo valioso.
+Ambos archivos cambian con menor frecuencia. Copiarlos primero mantendrá el paso de `npm install` en el caché, lo cual ahorrarás tiempo valioso.
  
 ### Después copia todos los archivos y realiza un paso de compilación (si es necesario)
 
