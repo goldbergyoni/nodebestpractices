@@ -55,13 +55,12 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
     <a href="#1-project-structure-practices">1. Project Structure Practices (5)</a>
   </summary>
 
-   <ul style="list-style-type:none;">
-    <li><a href="#-11-structure-your-solution-by-components">1.1 Structure your solution by components</a></li>
-    <li><a href="#-12-layer-your-components-keep-the-web-layer-within-its-boundaries">1.2 Layer your components, keep the web layer within its boundaries</a></li>
-    <li><a href="#-13-wrap-common-utilities-as-npm-packages">1.3 Wrap common utilities as npm packages</a></li>
-    <li><a href="#-14-separate-express-app-and-server">1.4 Separate Express 'app' and 'server'</a></li>
-    <li><a href="#-15-use-environment-aware-secure-and-hierarchical-config">1.5 Use environment aware, secure and hierarchical config</a></li>
-  </ul>
+&emsp;&emsp;<a href="#-11-structure-your-solution-by-components">1.1 Structure your solution by components</a></br>
+&emsp;&emsp;<a href="#-12-layer-your-components-keep-the-web-layer-within-its-boundaries">1.2 Layer your components, keep the web layer within its boundaries</a></br>
+&emsp;&emsp;<a href="#-13-wrap-common-utilities-as-npm-packages">1.3 Wrap common utilities as npm packages</a></br>
+&emsp;&emsp;<a href="#-14-separate-express-app-and-server">1.4 Separate Express 'app' and 'server'</a></br>
+&emsp;&emsp;<a href="#-15-use-environment-aware-secure-and-hierarchical-config">1.5 Use environment aware, secure and hierarchical config</a></br>
+
 </details>
 
 <details>
@@ -69,20 +68,19 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
     <a href="#2-error-handling-practices">2. Error Handling Practices (12)</a>
   </summary>
 
-  <ul style="list-style-type:none;">
-    <li><a href="#-21-use-async-await-or-promises-for-async-error-handling">2.1 Use Async-Await or promises for async error handling</a></li>
-    <li><a href="#-22-use-only-the-built-in-error-object">2.2 Use only the built-in Error object</a></li>
-    <li><a href="#-23-distinguish-operational-vs-programmer-errors">2.3 Distinguish operational vs programmer errors</a></li>
-    <li><a href="#-24-handle-errors-centrally-not-within-a-middleware">2.4 Handle errors centrally, not within a middleware</a></li>
-    <li><a href="#-25-document-api-errors-using-swagger-or-graphql">2.5 Document API errors using Swagger or GraphQL</a></li>
-    <li><a href="#-26-exit-the-process-gracefully-when-a-stranger-comes-to-town">2.6 Exit the process gracefully when a stranger comes to town</a></li>
-    <li><a href="#-27-use-a-mature-logger-to-increase-error-visibility">2.7 Use a mature logger to increase error visibility</a></li>
-    <li><a href="#-28-test-error-flows-using-your-favorite-test-framework">2.8 Test error flows using your favorite test framework</a></li>
-    <li><a href="#-29-discover-errors-and-downtime-using-apm-products">2.9 Discover errors and downtime using APM products</a></li>
-    <li><a href="#-210-catch-unhandled-promise-rejections">2.10 Catch unhandled promise rejections</a></li>
-    <li><a href="#-211-fail-fast-validate-arguments-using-a-dedicated-library">2.11 Fail fast, validate arguments using a dedicated library</a></li>
-    <li><a href="#-212-always-await-promises-before-returning-to-avoid-a-partial-stacktrace">2.12 Always await promises before returning to avoid a partial stacktrace</a></li>
-  </ul>
+&emsp;&emsp;<a href="#-21-use-async-await-or-promises-for-async-error-handling">2.1 Use Async-Await or promises for async error handling</a></br>
+&emsp;&emsp;<a href="#-22-use-only-the-built-in-error-object">2.2 Use only the built-in Error object</a></br>
+&emsp;&emsp;<a href="#-23-distinguish-operational-vs-programmer-errors">2.3 Distinguish operational vs programmer errors</a></br>
+&emsp;&emsp;<a href="#-24-handle-errors-centrally-not-within-a-middleware">2.4 Handle errors centrally, not within a middleware</a></br>
+&emsp;&emsp;<a href="#-25-document-api-errors-using-swagger-or-graphql">2.5 Document API errors using Swagger or GraphQL</a></br>
+&emsp;&emsp;<a href="#-26-exit-the-process-gracefully-when-a-stranger-comes-to-town">2.6 Exit the process gracefully when a stranger comes to town</a></br>
+&emsp;&emsp;<a href="#-27-use-a-mature-logger-to-increase-error-visibility">2.7 Use a mature logger to increase error visibility</a></br>
+&emsp;&emsp;<a href="#-28-test-error-flows-using-your-favorite-test-framework">2.8 Test error flows using your favorite test framework</a></br>
+&emsp;&emsp;<a href="#-29-discover-errors-and-downtime-using-apm-products">2.9 Discover errors and downtime using APM products</a></br>
+&emsp;&emsp;<a href="#-210-catch-unhandled-promise-rejections">2.10 Catch unhandled promise rejections</a></br>
+&emsp;&emsp;<a href="#-211-fail-fast-validate-arguments-using-a-dedicated-library">2.11 Fail fast, validate arguments using a dedicated library</a></br>
+&emsp;&emsp;<a href="#-212-always-await-promises-before-returning-to-avoid-a-partial-stacktrace">2.12 Always await promises before returning to avoid a partial stacktrace</a></br>
+
 </details>
 
 <details>
@@ -90,20 +88,19 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
     <a href="#3-code-style-practices">3. Code Style Practices (12)</a>
   </summary>
 
-  <ul style="list-style-type:none;">
-    <li><a href="#-31-use-eslint">3.1 Use ESLint</a></li>
-    <li><a href="#-32-nodejs-specific-plugins">3.2 Node.js specific plugins</a></li>
-    <li><a href="#-33-start-a-codeblocks-curly-braces-on-the-same-line">3.3 Start a Codeblock's Curly Braces on the Same Line</a></li>
-    <li><a href="#-34-separate-your-statements-properly">3.4 Separate your statements properly</a></li>
-    <li><a href="#-35-name-your-functions">3.5 Name your functions</a></li>
-    <li><a href="#-36-use-naming-conventions-for-variables-constants-functions-and-classes">3.6 Use naming conventions for variables, constants, functions and classes</a></li>
-    <li><a href="#-37-prefer-const-over-let-ditch-the-var">3.7 Prefer const over let. Ditch the var</a></li>
-    <li><a href="#-38-require-modules-first-not-inside-functions">3.8 Require modules first, not inside functions</a></li>
-    <li><a href="#-39-require-modules-by-folders-as-opposed-to-the-files-directly">3.9 Require modules by folders, as opposed to the files directly</a></li>
-    <li><a href="#-310-use-the--operator">3.10 Use the === operator</a></li>
-    <li><a href="#-311-use-async-await-avoid-callbacks">3.11 Use Async Await, avoid callbacks</a></li>
-    <li><a href="#-312-use-arrow-function-expressions-">3.12 Use arrow function expressions (=>)</a></li>
-  </ul>
+&emsp;&emsp;<a href="#-31-use-eslint">3.1 Use ESLint</a></br>
+&emsp;&emsp;<a href="#-32-nodejs-specific-plugins">3.2 Node.js specific plugins</a></br>
+&emsp;&emsp;<a href="#-33-start-a-codeblocks-curly-braces-on-the-same-line">3.3 Start a Codeblock's Curly Braces on the Same Line</a></br>
+&emsp;&emsp;<a href="#-34-separate-your-statements-properly">3.4 Separate your statements properly</a></br>
+&emsp;&emsp;<a href="#-35-name-your-functions">3.5 Name your functions</a></br>
+&emsp;&emsp;<a href="#-36-use-naming-conventions-for-variables-constants-functions-and-classes">3.6 Use naming conventions for variables, constants, functions and classes</a></br>
+&emsp;&emsp;<a href="#-37-prefer-const-over-let-ditch-the-var">3.7 Prefer const over let. Ditch the var</a></br>
+&emsp;&emsp;<a href="#-38-require-modules-first-not-inside-functions">3.8 Require modules first, not inside functions</a></br>
+&emsp;&emsp;<a href="#-39-require-modules-by-folders-as-opposed-to-the-files-directly">3.9 Require modules by folders, as opposed to the files directly</a></br>
+&emsp;&emsp;<a href="#-310-use-the--operator">3.10 Use the === operator</a></br>
+&emsp;&emsp;<a href="#-311-use-async-await-avoid-callbacks">3.11 Use Async Await, avoid callbacks</a></br>
+&emsp;&emsp;<a href="#-312-use-arrow-function-expressions-">3.12 Use arrow function expressions (=>)</a></br>
+
 </details>
 
 <details>
@@ -111,21 +108,20 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
     <a href="#4-testing-and-overall-quality-practices">4. Testing And Overall Quality Practices (13)</a>
   </summary>
 
-  <ul style="list-style-type:none;">
-    <li><a href="#-41-at-the-very-least-write-api-component-testing">4.1 At the very least, write API (component) testing</a></li>
-    <li><a href="#-42-include-3-parts-in-each-test-name">4.2 Include 3 parts in each test name</a></li>
-    <li><a href="#-43-structure-tests-by-the-aaa-pattern">4.3 Structure tests by the AAA pattern</a></li>
-    <li><a href="#-44-detect-code-issues-with-a-linter">4.4 Detect code issues with a linter</a></li>
-    <li><a href="#-45-avoid-global-test-fixtures-and-seeds-add-data-per-test">4.5 Avoid global test fixtures and seeds, add data per-test</a></li>
-    <li><a href="#-46-constantly-inspect-for-vulnerable-dependencies">4.6 Constantly inspect for vulnerable dependencies</a></li>
-    <li><a href="#-47-tag-your-tests">4.7 Tag your tests</a></li>
-    <li><a href="#-48-check-your-test-coverage-it-helps-to-identify-wrong-test-patterns">4.8 Check your test coverage, it helps to identify wrong test patterns</a></li>
-    <li><a href="#-49-inspect-for-outdated-packages">4.9 Inspect for outdated packages</a></li>
-    <li><a href="#-410-use-production-like-environment-for-e2e-testing">4.10 Use production-like environment for e2e testing</a></li>
-    <li><a href="#-411-refactor-regularly-using-static-analysis-tools">4.11 Refactor regularly using static analysis tools</a></li>
-    <li><a href="#-412-carefully-choose-your-ci-platform-jenkins-vs-circleci-vs-travis-vs-rest-of-the-world">4.12 Carefully choose your CI platform (Jenkins vs CircleCI vs Travis vs Rest of the world)</a></li>
-    <li><a href="#-413-test-your-middlewares-in-isolation">4.13 Test your middlewares in isolation</a></li>
-  </ul>
+&emsp;&emsp;<a href="#-41-at-the-very-least-write-api-component-testing">4.1 At the very least, write API (component) testing</a></br>
+&emsp;&emsp;<a href="#-42-include-3-parts-in-each-test-name">4.2 Include 3 parts in each test name</a></br>
+&emsp;&emsp;<a href="#-43-structure-tests-by-the-aaa-pattern">4.3 Structure tests by the AAA pattern</a></br>
+&emsp;&emsp;<a href="#-44-detect-code-issues-with-a-linter">4.4 Detect code issues with a linter</a></br>
+&emsp;&emsp;<a href="#-45-avoid-global-test-fixtures-and-seeds-add-data-per-test">4.5 Avoid global test fixtures and seeds, add data per-test</a></br>
+&emsp;&emsp;<a href="#-46-constantly-inspect-for-vulnerable-dependencies">4.6 Constantly inspect for vulnerable dependencies</a></br>
+&emsp;&emsp;<a href="#-47-tag-your-tests">4.7 Tag your tests</a></br>
+&emsp;&emsp;<a href="#-48-check-your-test-coverage-it-helps-to-identify-wrong-test-patterns">4.8 Check your test coverage, it helps to identify wrong test patterns</a></br>
+&emsp;&emsp;<a href="#-49-inspect-for-outdated-packages">4.9 Inspect for outdated packages</a></br>
+&emsp;&emsp;<a href="#-410-use-production-like-environment-for-e2e-testing">4.10 Use production-like environment for e2e testing</a></br>
+&emsp;&emsp;<a href="#-411-refactor-regularly-using-static-analysis-tools">4.11 Refactor regularly using static analysis tools</a></br>
+&emsp;&emsp;<a href="#-412-carefully-choose-your-ci-platform-jenkins-vs-circleci-vs-travis-vs-rest-of-the-world">4.12 Carefully choose your CI platform (Jenkins vs CircleCI vs Travis vs Rest of the world)</a></br>
+&emsp;&emsp;<a href="#-413-test-your-middlewares-in-isolation">4.13 Test your middlewares in isolation</a></br>
+
 </details>
 
 <details>
@@ -133,27 +129,26 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
     <a href="#5-going-to-production-practices">5. Going To Production Practices (19)</a>
   </summary>
 
-  <ul style="list-style-type:none;">
-    <li><a href="#-51-monitoring">5.1. Monitoring</a></li>
-    <li><a href="#-52-increase-transparency-using-smart-logging">5.2. Increase transparency using smart logging</a></li>
-    <li><a href="#-53-delegate-anything-possible-eg-gzip-ssl-to-a-reverse-proxy">5.3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy</a></li>
-    <li><a href="#-54-lock-dependencies">5.4. Lock dependencies</a></li>
-    <li><a href="#-55-guard-process-uptime-using-the-right-tool">5.5. Guard process uptime using the right tool</a></li>
-    <li><a href="#-56-utilize-all-cpu-cores">5.6. Utilize all CPU cores</a></li>
-    <li><a href="#-57-create-a-maintenance-endpoint">5.7. Create a ‘maintenance endpoint’</a></li>
-    <li><a href="#-58-discover-errors-and-downtime-using-apm-products">5.8. Discover errors and downtime using APM products</a></li>
-    <li><a href="#-59-make-your-code-production-ready">5.9. Make your code production-ready</a></li>
-    <li><a href="#-510-measure-and-guard-the-memory-usage">5.10. Measure and guard the memory usage</a></li>
-    <li><a href="#-511-get-your-frontend-assets-out-of-node">5.11. Get your frontend assets out of Node</a></li>
-    <li><a href="#-512-be-stateless-kill-your-servers-almost-every-day">5.12. Be stateless, kill your servers almost every day</a></li>
-    <li><a href="#-513-use-tools-that-automatically-detect-vulnerabilities">5.13. Use tools that automatically detect vulnerabilities</a></li>
-    <li><a href="#-514-assign-a-transaction-id-to-each-log-statement">5.14. Assign a transaction id to each log statement</a></li>
-    <li><a href="#-515-set-node_envproduction">5.15. Set NODE_ENV=production</a></li>
-    <li><a href="#-516-design-automated-atomic-and-zero-downtime-deployments">5.16. Design automated, atomic and zero-downtime deployments</a></li>
-    <li><a href="#-517-use-an-lts-release-of-nodejs">5.17. Use an LTS release of Node.js</a></li>
-    <li><a href="#-518-dont-route-logs-within-the-app">5.18. Don't route logs within the app</a></li>
-    <li><a href="#-519-install-your-packages-with-npm-ci">5.19. Install your packages with npm ci</a></li>
-  </ul>
+&emsp;&emsp;<a href="#-51-monitoring">5.1. Monitoring</a></br>
+&emsp;&emsp;<a href="#-52-increase-transparency-using-smart-logging">5.2. Increase transparency using smart logging</a></br>
+&emsp;&emsp;<a href="#-53-delegate-anything-possible-eg-gzip-ssl-to-a-reverse-proxy">5.3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy</a></br>
+&emsp;&emsp;<a href="#-54-lock-dependencies">5.4. Lock dependencies</a></br>
+&emsp;&emsp;<a href="#-55-guard-process-uptime-using-the-right-tool">5.5. Guard process uptime using the right tool</a></br>
+&emsp;&emsp;<a href="#-56-utilize-all-cpu-cores">5.6. Utilize all CPU cores</a></br>
+&emsp;&emsp;<a href="#-57-create-a-maintenance-endpoint">5.7. Create a ‘maintenance endpoint’</a></br>
+&emsp;&emsp;<a href="#-58-discover-errors-and-downtime-using-apm-products">5.8. Discover errors and downtime using APM products</a></br>
+&emsp;&emsp;<a href="#-59-make-your-code-production-ready">5.9. Make your code production-ready</a></br>
+&emsp;&emsp;<a href="#-510-measure-and-guard-the-memory-usage">5.10. Measure and guard the memory usage</a></br>
+&emsp;&emsp;<a href="#-511-get-your-frontend-assets-out-of-node">5.11. Get your frontend assets out of Node</a></br>
+&emsp;&emsp;<a href="#-512-be-stateless-kill-your-servers-almost-every-day">5.12. Be stateless, kill your servers almost every day</a></br>
+&emsp;&emsp;<a href="#-513-use-tools-that-automatically-detect-vulnerabilities">5.13. Use tools that automatically detect vulnerabilities</a></br>
+&emsp;&emsp;<a href="#-514-assign-a-transaction-id-to-each-log-statement">5.14. Assign a transaction id to each log statement</a></br>
+&emsp;&emsp;<a href="#-515-set-node_envproduction">5.15. Set NODE_ENV=production</a></br>
+&emsp;&emsp;<a href="#-516-design-automated-atomic-and-zero-downtime-deployments">5.16. Design automated, atomic and zero-downtime deployments</a></br>
+&emsp;&emsp;<a href="#-517-use-an-lts-release-of-nodejs">5.17. Use an LTS release of Node.js</a></br>
+&emsp;&emsp;<a href="#-518-dont-route-logs-within-the-app">5.18. Don't route logs within the app</a></br>
+&emsp;&emsp;<a href="#-519-install-your-packages-with-npm-ci">5.19. Install your packages with npm ci</a></br>
+
 </details>
 
 <details>
@@ -161,33 +156,32 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
     <a href="#6-security-best-practices">6. Security Practices (25)</a>
   </summary>
 
-  <ul style="list-style-type:none;">
-    <li><a href="#-61-embrace-linter-security-rules">6.1. Embrace linter security rules</a></li>
-    <li><a href="#-62-limit-concurrent-requests-using-a-middleware">6.2. Limit concurrent requests using a middleware</a></li>
-    <li><a href="#-63-extract-secrets-from-config-files-or-use-packages-to-encrypt-them">6.3 Extract secrets from config files or use packages to encrypt them</a></li>
-    <li><a href="#-64-prevent-query-injection-vulnerabilities-with-ormodm-libraries">6.4. Prevent query injection vulnerabilities with ORM/ODM libraries</a></li>
-    <li><a href="#-65-collection-of-generic-security-best-practices">6.5. Collection of generic security best practices</a></li>
-    <li><a href="#-66-adjust-the-http-response-headers-for-enhanced-security">6.6. Adjust the HTTP response headers for enhanced security</a></li>
-    <li><a href="#-67-constantly-and-automatically-inspect-for-vulnerable-dependencies">6.7. Constantly and automatically inspect for vulnerable dependencies</a></li>
-    <li><a href="#-68-protect-users-passwordssecrets-using-bcrypt-or-scrypt">6.8. Protect Users' Passwords/Secrets using bcrypt or scrypt</a></li>
-    <li><a href="#-69-escape-html-js-and-css-output">6.9. Escape HTML, JS and CSS output</a></li>
-    <li><a href="#-610-validate-incoming-json-schemas">6.10. Validate incoming JSON schemas</a></li>
-    <li><a href="#-611-support-blocklisting-jwts">6.11. Support blocklisting JWTs</a></li>
-    <li><a href="#-612-prevent-brute-force-attacks-against-authorization">6.12. Prevent brute-force attacks against authorization</a></li>
-    <li><a href="#-613-run-nodejs-as-non-root-user">6.13. Run Node.js as non-root user</a></li>
-    <li><a href="#-614-limit-payload-size-using-a-reverse-proxy-or-a-middleware">6.14. Limit payload size using a reverse-proxy or a middleware</a></li>
-    <li><a href="#-615-avoid-javascript-eval-statements">6.15. Avoid JavaScript eval statements</a></li>
-    <li><a href="#-616-prevent-evil-regex-from-overloading-your-single-thread-execution">6.16. Prevent evil RegEx from overloading your single thread execution</a></li>
-    <li><a href="#-617-avoid-module-loading-using-a-variable">6.17. Avoid module loading using a variable</a></li>
-    <li><a href="#-618-run-unsafe-code-in-a-sandbox">6.18. Run unsafe code in a sandbox</a></li>
-    <li><a href="#-619-take-extra-care-when-working-with-child-processes">6.19. Take extra care when working with child processes</a></li>
-    <li><a href="#-620-hide-error-details-from-clients">6.20. Hide error details from clients</a></li>
-    <li><a href="#-621-configure-2fa-for-npm-or-yarn">6.21. Configure 2FA for npm or Yarn</a></li>
-    <li><a href="#-622-modify-session-middleware-settings">6.22. Modify session middleware settings</a></li>
-    <li><a href="#-623-avoid-dos-attacks-by-explicitly-setting-when-a-process-should-crash">6.23. Avoid DOS attacks by explicitly setting when a process should crash</a></li>
-    <li><a href="#-624-prevent-unsafe-redirects">6.24. Prevent unsafe redirects</a></li>
-    <li><a href="#-625-avoid-publishing-secrets-to-the-npm-registry">6.25. Avoid publishing secrets to the npm registry</a></li>
-  </ul>
+&emsp;&emsp;<a href="#-61-embrace-linter-security-rules">6.1. Embrace linter security rules</a></br>
+&emsp;&emsp;<a href="#-62-limit-concurrent-requests-using-a-middleware">6.2. Limit concurrent requests using a middleware</a></br>
+&emsp;&emsp;<a href="#-63-extract-secrets-from-config-files-or-use-packages-to-encrypt-them">6.3 Extract secrets from config files or use packages to encrypt them</a></br>
+&emsp;&emsp;<a href="#-64-prevent-query-injection-vulnerabilities-with-ormodm-libraries">6.4. Prevent query injection vulnerabilities with ORM/ODM libraries</a></br>
+&emsp;&emsp;<a href="#-65-collection-of-generic-security-best-practices">6.5. Collection of generic security best practices</a></br>
+&emsp;&emsp;<a href="#-66-adjust-the-http-response-headers-for-enhanced-security">6.6. Adjust the HTTP response headers for enhanced security</a></br>
+&emsp;&emsp;<a href="#-67-constantly-and-automatically-inspect-for-vulnerable-dependencies">6.7. Constantly and automatically inspect for vulnerable dependencies</a></br>
+&emsp;&emsp;<a href="#-68-protect-users-passwordssecrets-using-bcrypt-or-scrypt">6.8. Protect Users' Passwords/Secrets using bcrypt or scrypt</a></br>
+&emsp;&emsp;<a href="#-69-escape-html-js-and-css-output">6.9. Escape HTML, JS and CSS output</a></br>
+&emsp;&emsp;<a href="#-610-validate-incoming-json-schemas">6.10. Validate incoming JSON schemas</a></br>
+&emsp;&emsp;<a href="#-611-support-blocklisting-jwts">6.11. Support blocklisting JWTs</a></br>
+&emsp;&emsp;<a href="#-612-prevent-brute-force-attacks-against-authorization">6.12. Prevent brute-force attacks against authorization</a></br>
+&emsp;&emsp;<a href="#-613-run-nodejs-as-non-root-user">6.13. Run Node.js as non-root user</a></br>
+&emsp;&emsp;<a href="#-614-limit-payload-size-using-a-reverse-proxy-or-a-middleware">6.14. Limit payload size using a reverse-proxy or a middleware</a></br>
+&emsp;&emsp;<a href="#-615-avoid-javascript-eval-statements">6.15. Avoid JavaScript eval statements</a></br>
+&emsp;&emsp;<a href="#-616-prevent-evil-regex-from-overloading-your-single-thread-execution">6.16. Prevent evil RegEx from overloading your single thread execution</a></br>
+&emsp;&emsp;<a href="#-617-avoid-module-loading-using-a-variable">6.17. Avoid module loading using a variable</a></br>
+&emsp;&emsp;<a href="#-618-run-unsafe-code-in-a-sandbox">6.18. Run unsafe code in a sandbox</a></br>
+&emsp;&emsp;<a href="#-619-take-extra-care-when-working-with-child-processes">6.19. Take extra care when working with child processes</a></br>
+&emsp;&emsp;<a href="#-620-hide-error-details-from-clients">6.20. Hide error details from clients</a></br>
+&emsp;&emsp;<a href="#-621-configure-2fa-for-npm-or-yarn">6.21. Configure 2FA for npm or Yarn</a></br>
+&emsp;&emsp;<a href="#-622-modify-session-middleware-settings">6.22. Modify session middleware settings</a></br>
+&emsp;&emsp;<a href="#-623-avoid-dos-attacks-by-explicitly-setting-when-a-process-should-crash">6.23. Avoid DOS attacks by explicitly setting when a process should crash</a></br>
+&emsp;&emsp;<a href="#-624-prevent-unsafe-redirects">6.24. Prevent unsafe redirects</a></br>
+&emsp;&emsp;<a href="#-625-avoid-publishing-secrets-to-the-npm-registry">6.25. Avoid publishing secrets to the npm registry</a></br>
+
 </details>
 
 <details>
@@ -195,10 +189,9 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
     <a href="#7-draft-performance-best-practices">7. Performance Practices (2) (Work In Progress️ ✍️)</a>
   </summary>
 
-  <ul style="list-style-type:none;">
-    <li><a href="#-71-dont-block-the-event-loop">7.1. Don't block the event loop</a></li>
-    <li><a href="#-72-prefer-native-js-methods-over-user-land-utils-like-lodash">7.2. Prefer native JS methods over user-land utils like Lodash</a></li>
-  </ul>
+&emsp;&emsp;<a href="#-71-dont-block-the-event-loop">7.1. Don't block the event loop</a></br>
+&emsp;&emsp;<a href="#-72-prefer-native-js-methods-over-user-land-utils-like-lodash">7.2. Prefer native JS methods over user-land utils like Lodash</a></br>
+
 </details>
 
 <details>
@@ -206,23 +199,22 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
     <a href="#8-docker-best-practices">8. Docker Practices (15)</a>
   </summary>
 
-  <ul style="list-style-type:none;">
-    <li><a href="#-81-use-multi-stage-builds-for-leaner-and-more-secure-docker-images">8.1 Use multi-stage builds for leaner and more secure Docker images</a></li>
-    <li><a href="#-82-bootstrap-using-node-command-avoid-npm-start">8.2. Bootstrap using node command, avoid npm start</a></li>
-    <li><a href="#-83-let-the-docker-runtime-handle-replication-and-uptime">8.3. Let the Docker runtime handle replication and uptime</a></li>
-    <li><a href="#-84-use-dockerignore-to-prevent-leaking-secrets">8.4. Use .dockerignore to prevent leaking secrets</a></li>
-    <li><a href="#-85-clean-up-dependencies-before-production">8.5. Clean-up dependencies before production</a></li>
-    <li><a href="#-86-shutdown-smartly-and-gracefully">8.6. Shutdown smartly and gracefully</a></li>
-    <li><a href="#-87-set-memory-limits-using-both-docker-and-v8">8.7. Set memory limits using both Docker and v8</a></li>
-    <li><a href="#-88-plan-for-efficient-caching">8.8. Plan for efficient caching</a></li>
-    <li><a href="#-89-use-explicit-image-reference-avoid-latest-tag">8.9. Use explicit image reference, avoid latest tag</a></li>
-    <li><a href="#-810-prefer-smaller-docker-base-images">8.10. Prefer smaller Docker base images</a></li>
-    <li><a href="#-811-clean-out-build-time-secrets-avoid-secrets-in-args">8.11. Clean-out build-time secrets, avoid secrets in args</a></li>
-    <li><a href="#-812-scan-images-for-multi-layers-of-vulnerabilities">8.12. Scan images for multi layers of vulnerabilities</a></li>
-    <li><a href="#-813-clean-node_module-cache">8.13 Clean NODE_MODULE cache</a></li>
-    <li><a href="#-814-generic-docker-practices">8.14. Generic Docker practices</a></li>
-    <li><a href="#-815-lint-your-dockerfile">8.15. Lint your Dockerfile</a></li>
-  </ul>
+&emsp;&emsp;<a href="#-81-use-multi-stage-builds-for-leaner-and-more-secure-docker-images">8.1 Use multi-stage builds for leaner and more secure Docker images</a></br>
+&emsp;&emsp;<a href="#-82-bootstrap-using-node-command-avoid-npm-start">8.2. Bootstrap using node command, avoid npm start</a></br>
+&emsp;&emsp;<a href="#-83-let-the-docker-runtime-handle-replication-and-uptime">8.3. Let the Docker runtime handle replication and uptime</a></br>
+&emsp;&emsp;<a href="#-84-use-dockerignore-to-prevent-leaking-secrets">8.4. Use .dockerignore to prevent leaking secrets</a></br>
+&emsp;&emsp;<a href="#-85-clean-up-dependencies-before-production">8.5. Clean-up dependencies before production</a></br>
+&emsp;&emsp;<a href="#-86-shutdown-smartly-and-gracefully">8.6. Shutdown smartly and gracefully</a></br>
+&emsp;&emsp;<a href="#-87-set-memory-limits-using-both-docker-and-v8">8.7. Set memory limits using both Docker and v8</a></br>
+&emsp;&emsp;<a href="#-88-plan-for-efficient-caching">8.8. Plan for efficient caching</a></br>
+&emsp;&emsp;<a href="#-89-use-explicit-image-reference-avoid-latest-tag">8.9. Use explicit image reference, avoid latest tag</a></br>
+&emsp;&emsp;<a href="#-810-prefer-smaller-docker-base-images">8.10. Prefer smaller Docker base images</a></br>
+&emsp;&emsp;<a href="#-811-clean-out-build-time-secrets-avoid-secrets-in-args">8.11. Clean-out build-time secrets, avoid secrets in args</a></br>
+&emsp;&emsp;<a href="#-812-scan-images-for-multi-layers-of-vulnerabilities">8.12. Scan images for multi layers of vulnerabilities</a></br>
+&emsp;&emsp;<a href="#-813-clean-node_module-cache">8.13 Clean NODE_MODULE cache</a></br>
+&emsp;&emsp;<a href="#-814-generic-docker-practices">8.14. Generic Docker practices</a></br>
+&emsp;&emsp;<a href="#-815-lint-your-dockerfile">8.15. Lint your Dockerfile</a></br>
+
 </details>
 
 <br/><br/>
