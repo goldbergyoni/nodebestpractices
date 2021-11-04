@@ -10,7 +10,7 @@ The common security guidelines section contains best practices that are standard
 
 **Otherwise:** Attackers could perform man-in-the-middle attacks, spy on your users' behaviour and perform even more malicious actions when the connection is unencrypted
 
-🔗 [**Read More: Running a secure Node.js server**](/sections/security/secureserver.md)
+🔗 [**Read More: Running a secure Node.js server**](./secureserver.md)
 
 <br/><br/>
 
@@ -24,7 +24,7 @@ The common security guidelines section contains best practices that are standard
 
 ## ![✔] Generating random strings using Node.js
 
-**TL;DR:** Using a custom-built function generating pseudo-random strings for tokens and other security-sensitive use cases might actually not be as random as you think, rendering your application vulnerable to cryptographic attacks. When you have to generate secure random strings, use the [`crypto.RandomBytes(size, [callback])`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_randombytes_size_callback) function using available entropy provided by the system.
+**TL;DR:** Using a custom-built function generating pseudo-random strings for tokens and other security-sensitive use cases might actually not be as random as you think, rendering your application vulnerable to cryptographic attacks. When you have to generate secure random strings, use the [`crypto.randomBytes(size, [callback])`](https://nodejs.org/api/crypto.html#crypto_crypto_randombytes_size_callback) function using available entropy provided by the system.
 
 **Otherwise:** When generating pseudo-random strings without cryptographically secure methods, attackers might predict and reproduce the generated results, rendering your application insecure
 
@@ -75,7 +75,7 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 
 ## ![✔] OWASP A9: Using Components With Known Security Vulneraibilities
 
-- Scan docker images for known vulnerabilities (using Docker's and other vendors offer scanning services)
+- Scan docker images for known vulnerabilities (using Docker's and other vendors' scanning services)
 - Enable automatic instance (machine) patching and upgrades to avoid running old OS versions that lack security patches
 - Provide the user with both 'id', 'access' and 'refresh' token so the access token is short-lived and renewed with the refresh token
 - Log and audit each API call to cloud and management services (e.g who deleted the S3 bucket?) using services like AWS CloudTrail
@@ -99,13 +99,29 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 
 - Personally identifiable information (PII) is any data that can be used to identify a specific individual
 - Protect Personally Identifyable Information in the Applications by encrypting them
-- Follow the data privacy laws of the land
+- Follow the data privacy laws of the land. Reference laws:
+  - European Union: GDPR - https://ec.europa.eu/info/law/law-topic/data-protection_en
+  - India: https://meity.gov.in/writereaddata/files/Personal_Data_Protection_Bill,2018.pdf
+  - Singapore: https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act
 
+## ![✔] Have a security.txt File [PRODUCTION]
 
-- Reference laws:
+**TL;DR:** Have a text file called ```security.txt``` under ```/.well-known```  directory (/.well-known/security.txt) or in the root directory (/security.txt) of your website or your web application in production. ```security.txt``` file should contain details using which security researchers can report vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent. 
 
-- European Union: GDPR - https://ec.europa.eu/info/law/law-topic/data-protection_en
-- India: https://meity.gov.in/writereaddata/files/Personal_Data_Protection_Bill,2018.pdf
-- Singapore: https://www.pdpc.gov.sg/Legislation-and-Guidelines/Personal-Data-Protection-Act-Overview
+**Otherwise:** You may not be notified about the vulnerabilities. You will miss the opportunity to act on the vulnerabilities in time.
+
+🔗 [**Read More: security.txt**](https://securitytxt.org/)
+<br/><br/><br/>
+
+## ![✔] Have a SECURITY.md File [OPEN SOURCE]
+
+**TL;DR:** To give people instructions for responsibly reporting security vulnerabilities in your project, you can add a SECURITY.md file to your repository's root, docs, or .github folder. SECURITY.md file should contain details using which security researchers can report vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent. 
+
+**Otherwise:** You may not be notified about the vulnerabilities. You will miss the opportunity to act on the vulnerabilities in time.
+
+🔗 [**Read More: SECURITY.md**](https://help.github.com/en/github/managing-security-vulnerabilities/adding-a-security-policy-to-your-repository)
+
+<br/><br/><br/>
+
 
 <br/><br/><br/>

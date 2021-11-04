@@ -18,7 +18,7 @@ Há várias ferramentas disponíveis para ajudar a identificar pacotes de tercei
 
 A execução de `npm audit` produzirá um relatório de vulnerabilidades de segurança com o nome do pacote afetado, gravidade da vulnerabilidade e descrição, caminho e outras informações e, se disponíveis, comandos para aplicar correções para resolver vulnerabilidades.
 
-![exemplos do npm audit](/assets/images/npm-audit.png)
+![exemplos do npm audit](../../assets/images/npm-audit.png)
 
 🔗 [Leia em: NPM blog](https://docs.npmjs.com/getting-started/running-a-security-audit)
 
@@ -29,7 +29,7 @@ O Snyk oferece uma CLI rica em recursos, bem como integração com o GitHub. O S
 O site do Snyk, rico em recursos, também permite uma avaliação ad-hoc das dependências, quando fornecido com um repositório do GitHub ou url do módulo npm. Você também pode procurar por pacotes npm que possuem vulnerabilidades diretamente.
 
 Um exemplo da saída da integração do Synk GitHub, solicitação de pull criada automaticamente:
-![exemplo do synk GitHub](/assets/images/snyk.png)
+![exemplo do synk GitHub](../../assets/images/snyk.png)
 
 🔗 [Leia em: Snyk website](https://snyk.io/)
 
@@ -43,7 +43,7 @@ O Greenkeeper observa as dependências npm especificadas no arquivo `package.jso
 
 Um exemplo da saída da solicitação do Greenkeeper GitHub automaticamente criado pull request:
 
-![exemplo do synk github](/assets/images/greenkeeper.png)
+![exemplo do synk github](../../assets/images/greenkeeper.png)
 🔗 [Leia em: site do Greenkeeper](https://greenkeeper.io/)
 
 ### Recursos Adicionais

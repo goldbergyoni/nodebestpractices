@@ -10,7 +10,7 @@ A seção de boas práticas comuns de segurança contém as práticas recomendad
 
 **Caso contrário:** invasores podem executar ataques man-in-the-middle, espionar o comportamento de seus usuários e executar ações ainda mais maliciosas quando a conexão não é criptografada.
 
-🔗 [**Leia Mais: Executando um servidor Node.js seguro**](/sections/security/secureserver.brazilian-portuguese.md)
+🔗 [**Leia Mais: Executando um servidor Node.js seguro**](./secureserver.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -24,7 +24,7 @@ A seção de boas práticas comuns de segurança contém as práticas recomendad
 
 ## ![✔] Gerando strings aleatórias usando Node.js
 
-**TL;DR:** Usar uma função personalizada que gera sequências pseudo-aleatórias para tokens e outros casos de uso sensíveis à segurança pode não ser tão aleatório quanto você pensa, tornando seu aplicativo vulnerável a ataques criptográficos. Quando você precisar gerar strings aleatórias seguras, use a função [`crypto.RandomBytes(size, [callback])`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_randombytes_size_callback) usando a entropia disponível fornecida pelo sistema.
+**TL;DR:** Usar uma função personalizada que gera sequências pseudo-aleatórias para tokens e outros casos de uso sensíveis à segurança pode não ser tão aleatório quanto você pensa, tornando seu aplicativo vulnerável a ataques criptográficos. Quando você precisar gerar strings aleatórias seguras, use a função [`crypto.randomBytes(size, [callback])`](https://nodejs.org/api/crypto.html#crypto_crypto_randombytes_size_callback) usando a entropia disponível fornecida pelo sistema.
 
 **Caso contrário:** Ao gerar strings pseudo-aleatórias sem métodos criptograficamente seguros, os invasores podem prever e reproduzir os resultados gerados, tornando seu aplicativo inseguro.
 

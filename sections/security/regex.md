@@ -11,7 +11,7 @@ Some [OWASP examples](https://www.owasp.org/index.php/Regular_expression_Denial_
 
 <br/><br/>
 
-### Code Example – Enabling SSL/TLS using the Express framework
+### Code Example – Validating exponential time RegEx and using validators instead of RegEx
 
 ```javascript
 const saferegex = require('safe-regex');

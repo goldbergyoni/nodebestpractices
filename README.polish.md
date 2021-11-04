@@ -3,22 +3,22 @@
 # Node.js - Najlepsze praktyki
 
 <h1 align="center">
-  <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices">
+  <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices"/>
 </h1>
 
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2085%20Best%20Practices-blue.svg" alt="85 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20November%2012%202019-green.svg" alt="Last update: Oct 12, 2019"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.12.0-brightgreen.svg" alt="Updated for Node 12.12.0">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2085%20Best%20Practices-blue.svg" alt="85 items"/> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20November%2012%202019-green.svg" alt="Last update: Oct 12, 2019"/> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.12.0-brightgreen.svg" alt="Updated for Node 12.12.0"/>
 </div>
 
 <br/>
 
-[![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
+[![nodepractices](./assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
 
 <br/>
 
-Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** i ![TR](/assets/flags/TR.png)**TR** w trakcie!)](#tłumaczenia)
+Przeczytaj także w innych językach: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md), [![BR](./assets/flags/BR.png)**BR**](./README.brazilian-portuguese.md), [![RU](./assets/flags/RU.png)**RU**](./README.russian.md), [![EU](./assets/flags/EU.png)**EU**](./README.basque.md) [(![ES](./assets/flags/ES.png)**ES**, ![FR](./assets/flags/FR.png)**FR**, ![HE](./assets/flags/HE.png)**HE**, ![KR](./assets/flags/KR.png)**KR**, ![TR](./assets/flags/TR.png)**TR** w trakcie! )](#tłumaczenia)
 
 <br/>
 
@@ -28,7 +28,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 - **✅ Nowa najlepsza praktyka:** 7.1: [Nie blokuj pętli zdarzeń](#7-wersja-robocza-najlepsze-praktyki-dotyczące-wydajności) od Keith Holliday
 
-- **🇷🇺 Rosyjskie tłumaczenie:** Niesamowity Alex Ivanov właśnie opublikował [rosyjskie tłumaczenie](/README.russian.md)
+- **🇷🇺 Rosyjskie tłumaczenie:** Niesamowity Alex Ivanov właśnie opublikował [rosyjskie tłumaczenie](./README.russian.md)
 
 - **Szukamy autorów TypeScript:** chcesz pomóc w tworzeniu przykładów TypeScript? Weź udział, otwierając issue
 
@@ -63,7 +63,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Gdy programiści, którzy kodują nowe funkcje, walczą o uświadomienie sobie wpływu ich zmian i boją się zniszczyć inne zależne komponenty - wdrożenia stają się wolniejsze i bardziej ryzykowne. Trudniej jest także skalować, gdy wszystkie jednostki biznesowe nie są rozdzielone
 
-🔗 [**Czytaj więcej: struktura według komponentów**](/sections/projectstructre/breakintcomponents.polish.md)
+🔗 [**Czytaj więcej: struktura według komponentów**](./sections/projectstructre/breakintcomponents.polish.md)
 
 <br/><br/>
 
@@ -73,7 +73,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Nie można uzyskać dostępu do aplikacji, która miesza obiekty internetowe z innymi warstwami, testując kod, zadania CRON i inne obiekty wywołujące inne niż Express
 
-🔗 [**Czytaj więcej: warstwa twojej aplikacji**](/sections/projectstructre/createlayers.polish.md)
+🔗 [**Czytaj więcej: warstwa twojej aplikacji**](./sections/projectstructre/createlayers.polish.md)
 
 <br/><br/>
 
@@ -83,7 +83,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Będziesz musiał wymyślić własne koło wdrażania i zależności
 
-🔗 [**Czytaj więcej: Struktura według funkcji**](/sections/projectstructre/wraputilities.polish.md)
+🔗 [**Czytaj więcej: Struktura według funkcji**](./sections/projectstructre/wraputilities.polish.md)
 
 <br/><br/>
 
@@ -93,23 +93,23 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Twój interfejs API będzie dostępny do testowania tylko za pośrednictwem połączeń HTTP (wolniejsze i znacznie trudniejsze do generowania raportów zasięgu). Utrzymanie setek linii kodu w jednym pliku prawdopodobnie nie będzie wielką przyjemnością
 
-🔗 [**Czytaj więcej: oddzielna aplikacja „Express” i „serwer”**](/sections/projectstructre/separateexpress.polish.md)
+🔗 [**Czytaj więcej: oddzielna aplikacja „Express” i „serwer”**](./sections/projectstructre/separateexpress.polish.md)
 
 <br/><br/>
 
 ## ![✔] 1.5 Używaj konfiguracji przyjaznej środowisku, bezpiecznej i hierarchicznej
 
-  **TL;DR:** Idealne i bezbłędne ustawienie konfiguracji powinno zapewnić, że (a) klucze można odczytać z pliku ORAZ ze zmiennych środowiskowych (b) dane wrażliwe są przechowywane poza zatwierdzonym kodem (c) konfiguracja jest hierarchiczna dla łatwiejszego wyszukiwania. Istnieje kilka pakietów, które mogą pomóc zaznaczyć większość z tych pól, takich jak [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf ) i [config](https://www.npmjs.com/package/config)
-  
-  **W przeciwnym razie:** Niespełnienie któregokolwiek z wymagań konfiguracji po prostu ugrzęźnie w zespole programistów lub DevOps. Prawdopodobnie jedno i drugie
+**TL;DR:** Idealne i bezbłędne ustawienie konfiguracji powinno zapewnić, że (a) klucze można odczytać z pliku ORAZ ze zmiennych środowiskowych (b) dane wrażliwe są przechowywane poza zatwierdzonym kodem (c) konfiguracja jest hierarchiczna dla łatwiejszego wyszukiwania. Istnieje kilka pakietów, które mogą pomóc zaznaczyć większość z tych pól, takich jak [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config) i [convict](https://www.npmjs.com/package/convict)
 
-🔗 [**Czytaj więcej: najlepsze praktyki dotyczące konfiguracji**](/sections/projectstructre/configguide.polish.md)
+**W przeciwnym razie:** Niespełnienie któregokolwiek z wymagań konfiguracji po prostu ugrzęźnie w zespole programistów lub DevOps. Prawdopodobnie jedno i drugie
+
+🔗 [**Czytaj więcej: najlepsze praktyki dotyczące konfiguracji**](./sections/projectstructre/configguide.polish.md)
 
 <br/><br/><br/>
 
 <p align="right"><a href="#spis-treści">⬆ Wróć na górę</a></p>
 
-  # `2. Procedury obsługi błędów`
+# `2. Procedury obsługi błędów`
 
 ## ![✔] 2.1 Użyj Async-Await lub promises do obsługi błędów asynchronicznych
 
@@ -117,7 +117,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** styl wywołania zwrotnego Node.js, funkcja (błąd, odpowiedź) jest obiecującym sposobem na niemożliwy do utrzymania kod ze względu na połączenie obsługi błędów z przypadkowym kodem, nadmiernym zagnieżdżaniem i niewygodnymi wzorcami kodowania
 
-🔗 [**Czytaj więcej: avoiding callbacks**](/sections/errorhandling/asyncerrorhandling.polish.md)
+🔗 [**Czytaj więcej: avoiding callbacks**](./sections/errorhandling/asyncerrorhandling.polish.md)
 
 <br/><br/>
 
@@ -127,7 +127,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Podczas wywoływania jakiegoś komponentu brak pewności, jaki rodzaj błędów w zamian wraca - znacznie utrudnia prawidłowe zarządzanie błędami. Co gorsza, używanie niestandardowych typów do opisywania błędów może prowadzić do utraty krytycznych informacji o błędach, takich jak stack trace!
 
-🔗 [**Czytaj więcej: using the built-in error object**](/sections/errorhandling/useonlythebuiltinerror.polish.md)
+🔗 [**Czytaj więcej: using the built-in error object**](./sections/errorhandling/useonlythebuiltinerror.polish.md)
 
 <br/><br/>
 
@@ -137,7 +137,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Zawsze możesz ponownie uruchomić aplikację, gdy pojawi się błąd, ale dlaczego zawieść ~5000 użytkowników online z powodu drobnego, przewidywanego błędu operacyjnego? Drugie rozwiązanie nie jest też idealne - utrzymanie aplikacji w stanie, gdy wystąpi nieznany problem (błąd programisty), może prowadzić do nieprzewidzianego zachowania. Rozróżnienie tych dwóch pozwala działać taktownie i stosować zrównoważone podejście oparte na danym kontekście
 
-🔗 [**Czytaj więcej: operational vs programmer error**](/sections/errorhandling/operationalvsprogrammererror.polish.md)
+🔗 [**Czytaj więcej: operational vs programmer error**](./sections/errorhandling/operationalvsprogrammererror.polish.md)
 
 <br/><br/>
 
@@ -147,7 +147,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Brak obsługi błędów w jednym miejscu prowadzi do duplikacji kodu i prawdopodobnie do nieprawidłowej obsługi błędów
 
-🔗 [**Czytaj więcej: handling errors in a centralized place**](/sections/errorhandling/centralizedhandling.polish.md)
+🔗 [**Czytaj więcej: handling errors in a centralized place**](./sections/errorhandling/centralizedhandling.polish.md)
 
 <br/><br/>
 
@@ -157,7 +157,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Klient API może zdecydować o awarii i ponownym uruchomieniu tylko dlatego, że otrzymał błąd, którego nie mógł zrozumieć. Uwaga: osobą wywołującą interfejs API możesz być Ty (bardzo typowe w środowisku mikrousług)
 
-🔗 [**Czytaj więcej: documenting API errors in Swagger or GraphQL**](/sections/errorhandling/documentingusingswagger.polish.md)
+🔗 [**Czytaj więcej: documenting API errors in Swagger or GraphQL**](./sections/errorhandling/documentingusingswagger.polish.md)
 
 <br/><br/>
 
@@ -167,7 +167,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Gdy wystąpi nieznany wyjątek, niektóre obiekty mogą znajdować się w stanie wadliwym (np. Emiter zdarzeń, który jest używany globalnie i nie uruchamia już zdarzeń z powodu pewnych wewnętrznych awarii), a wszystkie przyszłe żądania mogą zawieść lub zachowywać się szaleńczo
 
-🔗 [**Czytaj więcej: shutting the process**](/sections/errorhandling/shuttingtheprocess.polish.md)
+🔗 [**Czytaj więcej: shutting the process**](./sections/errorhandling/shuttingtheprocess.polish.md)
 
 <br/><br/>
 
@@ -177,7 +177,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Przeglądanie w pliku console.logs lub ręcznie przez niechlujny plik tekstowy bez korzystania z narzędzi zapytań lub porządnej przeglądarki dziennika może być zajęciem w pracy do późna
 
-🔗 [**Czytaj więcej: using a mature logger**](/sections/errorhandling/usematurelogger.polish.md)
+🔗 [**Czytaj więcej: using a mature logger**](./sections/errorhandling/usematurelogger.polish.md)
 
 <br/><br/>
 
@@ -187,7 +187,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Bez testowania, automatycznie lub ręcznie, nie można polegać na kodzie, który zwraca prawidłowe błędy. Bez znaczących błędów - nie ma obsługi błędów
 
-🔗 [**Czytaj więcej: testing error flows**](/sections/errorhandling/testingerrorflows.polish.md)
+🔗 [**Czytaj więcej: testing error flows**](./sections/errorhandling/testingerrorflows.polish.md)
 
 <br/><br/>
 
@@ -197,7 +197,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Możesz poświęcić wiele wysiłku na pomiar wydajności interfejsu API i przestojów, prawdopodobnie nigdy nie będziesz wiedział, jakie są twoje najwolniejsze części kodu w rzeczywistym scenariuszu i jak wpływają one na UX
 
-🔗 [**Czytaj więcej: using APM products**](/sections/errorhandling/apmproducts.polish.md)
+🔗 [**Czytaj więcej: using APM products**](./sections/errorhandling/apmproducts.polish.md)
 
 <br/><br/>
 
@@ -207,7 +207,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Twoje błędy zostaną połknięte i nie pozostawiają śladu. Nie ma się o co martwić
 
-🔗 [**Czytaj więcej: catching unhandled promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.polish.md)
+🔗 [**Czytaj więcej: catching unhandled promise rejection**](./sections/errorhandling/catchunhandledpromiserejection.polish.md)
 
 <br/><br/>
 
@@ -217,7 +217,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Rozważ to - twoja funkcja oczekuje argumentu liczbowego „Discount”, który wywołujący zapomina przekazać, a następnie kod sprawdza, czy Discount!=0 (kwota dozwolonego discounta jest większa od zera), a następnie pozwoli użytkownikowi cieszyć się discountem. OMG, co za paskudny błąd. Widzisz to?
 
-🔗 [**Czytaj więcej: failing fast**](/sections/errorhandling/failfast.polish.md)
+🔗 [**Czytaj więcej: failing fast**](./sections/errorhandling/failfast.polish.md)
 
 <br/><br/><br/>
 
@@ -231,7 +231,7 @@ Przeczytaj także w innych językach: [![CN](/assets/flags/CN.png)**CN**](/READM
 
 **W przeciwnym razie:** Programiści skoncentrują się na żmudnych odstępach i problemach z szerokością linii, a czas może zostać zmarnowany na przemyślenie stylu kodu projektu
 
-🔗 [**Czytaj więcej: Using ESLint and Prettier**](/sections/codestylepractices/eslint_prettier.polish.md)
+🔗 [**Czytaj więcej: Using ESLint and Prettier**](./sections/codestylepractices/eslint_prettier.polish.md)
 
 <br/><br/>
 
@@ -256,8 +256,7 @@ function someFunction() {
 }
 
 // Avoid
-function someFunction()
-{
+function someFunction() {
   // code block
 }
 ```
@@ -334,11 +333,11 @@ class SomeClassExample {}
 
 // for const names we use the const keyword and lowerCamelCase
 const config = {
-  key: 'value'
+  key: "value",
 };
 
 // for variables and functions names we use lowerCamelCase
-let someVariableExample = 'value';
+let someVariableExample = "value";
 function doSomething() {}
 ```
 
@@ -372,12 +371,12 @@ function doSomething() {}
 
 ```javascript
 // Do
-module.exports.SMSProvider = require('./SMSProvider');
-module.exports.SMSNumberResolver = require('./SMSNumberResolver');
+module.exports.SMSProvider = require("./SMSProvider");
+module.exports.SMSNumberResolver = require("./SMSNumberResolver");
 
 // Avoid
-module.exports.SMSProvider = require('./SMSProvider/SMSProvider.js');
-module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolver.js');
+module.exports.SMSProvider = require("./SMSProvider/SMSProvider.js");
+module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolver.js");
 ```
 
 <br/><br/>
@@ -391,18 +390,18 @@ module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolve
 ### 3.10 Przykład kodu
 
 ```javascript
-'' == '0'           // false
-0 == ''             // true
-0 == '0'            // true
+"" == "0"; // false
+0 == ""; // true
+0 == "0"; // true
 
-false == 'false'    // false
-false == '0'        // true
+false == "false"; // false
+false == "0"; // true
 
-false == undefined  // false
-false == null       // false
-null == undefined   // true
+false == undefined; // false
+false == null; // false
+null == undefined; // true
 
-' \t\r\n ' == 0     // true
+" \t\r\n " == 0; // true
 ```
 
 Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte z `===`
@@ -447,7 +446,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Wdrożenie właśnie nie powiodło się, test o nazwie „Dodaj produkt” nie powiódł się. Czy to mówi ci, co dokładnie działa nieprawidłowo?
 
-🔗 [**Czytaj więcej: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.polish.md)
+🔗 [**Czytaj więcej: Include 3 parts in each test name**](./sections/testingandquality/3-parts-in-name.polish.md)
 
 <br/><br/>
 
@@ -457,7 +456,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Nie tylko spędzasz długie codzienne godziny na zrozumieniu głównego kodu, ale także to, co powinno być prostą częścią dnia (testowanie) rozciąga Twój mózg
 
-🔗 [**Czytaj więcej: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.polish.md)
+🔗 [**Czytaj więcej: Structure tests by the AAA pattern**](./sections/testingandquality/aaa.polish.md)
 
 <br/><br/>
 
@@ -475,7 +474,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Rozważmy scenariusz, w którym wdrożenie zostało przerwane z powodu nieudanych testów, zespół zamierza teraz poświęcić cenny czas na dochodzenie, które kończy się smutnym wnioskiem: system działa dobrze, testy jednak przeszkadzają sobie nawzajem i przerywają kompilację
 
-🔗 [**Czytaj więcej: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.polish.md)
+🔗 [**Czytaj więcej: Avoid global test fixtures**](./sections/testingandquality/avoid-global-test-fixture.polish.md)
 
 <br/><br/>
 
@@ -525,7 +524,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Przy złej jakości kodu błędy i wydajność zawsze będą stanowić problem, którego nie będzie w stanie naprawić żadna nowa błyszcząca biblioteka ani najnowocześniejsze funkcje
 
-🔗 [**Czytaj więcej: Refactoring!**](/sections/testingandquality/refactoring.polish.md)
+🔗 [**Czytaj więcej: Refactoring!**](./sections/testingandquality/refactoring.polish.md)
 
 <br/><br/>
 
@@ -535,7 +534,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Wybranie jakiegoś niszowego dostawcy może spowodować zablokowanie użytkownika, gdy będzie potrzebne zaawansowane dostosowanie. Z drugiej strony pójście z Jenkinsem może skrócić cenny czas na konfigurację infrastruktury
 
-🔗 [**Czytaj więcej: Choosing CI platform**](/sections/testingandquality/citools.polish.md)
+🔗 [**Czytaj więcej: Choosing CI platform**](./sections/testingandquality/citools.polish.md)
 
 <br/><br/><br/>
 
@@ -549,7 +548,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Awaria === rozczarowani klienci. Proste
 
-🔗 [**Czytaj więcej: Monitoring!**](/sections/production/monitoring.polish.md)
+🔗 [**Czytaj więcej: Monitoring!**](./sections/production/monitoring.polish.md)
 
 <br/><br/>
 
@@ -559,7 +558,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** W rezultacie pojawia się czarna skrzynka, o której trudno uzasadnić, a następnie zaczynasz ponownie pisać wszystkie instrukcje rejestrowania, aby dodać dodatkowe informacje
 
-🔗 [**Czytaj więcej: Increase transparency using smart logging**](/sections/production/smartlogging.polish.md)
+🔗 [**Czytaj więcej: Increase transparency using smart logging**](./sections/production/smartlogging.polish.md)
 
 <br/><br/>
 
@@ -569,17 +568,17 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Twój słaby pojedynczy wątek pozostanie zajęty wykonywaniem zadań infrastrukturalnych zamiast zajmowania się rdzeniem aplikacji, a wydajność odpowiednio się obniży
 
-🔗 [**Czytaj więcej: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](/sections/production/delegatetoproxy.polish.md)
+🔗 [**Czytaj więcej: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](./sections/production/delegatetoproxy.polish.md)
 
 <br/><br/>
 
 ## ![✔] 5.4. Zablokuj zależności
 
-**TL;DR:** Twój kod musi być identyczny we wszystkich środowiskach, ale zadziwiająco npm pozwala domyślnie dryfować zależnościom między środowiskami - podczas instalowania pakietów w różnych środowiskach próbuje pobrać najnowszą wersję łatek. Aby temu zaradzić, użyj plików konfiguracyjnych npm, .npmrc, które każą każdemu środowisku zapisać dokładną (nie najnowszą) wersję każdego pakietu. Alternatywnie, dla dokładniejszej kontroli grained, użyj „npm shrinkwrap”. \ * Aktualizacja: od NPM5 zależności są domyślnie zablokowane. Nowy menedżer pakietów w mieście, Yarn, również domyślnie nas objął
+**TL;DR:** Twój kod musi być identyczny we wszystkich środowiskach, ale zadziwiająco npm pozwala domyślnie dryfować zależnościom między środowiskami - podczas instalowania pakietów w różnych środowiskach próbuje pobrać najnowszą wersję łatek. Aby temu zaradzić, użyj plików konfiguracyjnych npm, .npmrc, które każą każdemu środowisku zapisać dokładną (nie najnowszą) wersję każdego pakietu. Alternatywnie, dla dokładniejszej kontroli grained, użyj „npm shrinkwrap”. \ \* Aktualizacja: od NPM5 zależności są domyślnie zablokowane. Nowy menedżer pakietów w mieście, Yarn, również domyślnie nas objął
 
 **W przeciwnym razie:** Dział kontroli jakości dokładnie przetestuje kod i zatwierdzi wersję, która będzie zachowywać się inaczej w środowisku produkcyjnym. Co gorsza, różne serwery w tym samym klastrze produkcyjnym mogą uruchamiać inny kod
 
-🔗 [**Czytaj więcej: Lock dependencies**](/sections/production/lockdependencies.polish.md)
+🔗 [**Czytaj więcej: Lock dependencies**](./sections/production/lockdependencies.polish.md)
 
 <br/><br/>
 
@@ -589,7 +588,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Uruchomienie dziesiątek instancji bez jasnej strategii i zbyt wielu narzędzi razem (zarządzanie klastrami, okno dokowane, PM2) może doprowadzić do chaosu DevOps
 
-🔗 [**Czytaj więcej: Guard process uptime using the right tool**](/sections/production/guardprocess.polish.md)
+🔗 [**Czytaj więcej: Guard process uptime using the right tool**](./sections/production/guardprocess.polish.md)
 
 <br/><br/>
 
@@ -599,7 +598,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Twoja aplikacja prawdopodobnie wykorzysta tylko 25% dostępnych zasobów (!) lub nawet mniej. Zauważ, że typowy serwer ma 4 rdzenie procesora lub więcej, naiwne wdrożenie Node.js wykorzystuje tylko 1 (nawet przy użyciu usług PaaS, takich jak AWS beanstalk!)
 
-🔗 [**Czytaj więcej: Utilize all CPU cores**](/sections/production/utilizecpu.polish.md)
+🔗 [**Czytaj więcej: Utilize all CPU cores**](./sections/production/utilizecpu.polish.md)
 
 <br/><br/>
 
@@ -609,7 +608,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Przekonasz się, że wykonujesz wiele „wdrożeń diagnostycznych” - wysyłasz kod do produkcji tylko po to, aby wyodrębnić niektóre informacje do celów diagnostycznych
 
-🔗 [**Czytaj więcej: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.polish.md)
+🔗 [**Czytaj więcej: Create a ‘maintenance endpoint’**](./sections/production/createmaintenanceendpoint.polish.md)
 
 <br/><br/>
 
@@ -619,7 +618,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Możesz poświęcić wiele wysiłku na pomiar wydajności interfejsu API i przestojów, prawdopodobnie nigdy nie będziesz wiedział, jakie są twoje najwolniejsze części kodu w rzeczywistym scenariuszu i jak wpływają one na UX
 
-🔗 [**Czytaj więcej: Discover errors and downtime using APM products**](/sections/production/apmproducts.polish.md)
+🔗 [**Czytaj więcej: Discover errors and downtime using APM products**](./sections/production/apmproducts.polish.md)
 
 <br/><br/>
 
@@ -629,7 +628,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Mistrz świata IT / DevOps nie uratuje źle napisanego systemu
 
-🔗 [**Czytaj więcej: Make your code production-ready**](/sections/production/productioncode.polish.md)
+🔗 [**Czytaj więcej: Make your code production-ready**](./sections/production/productioncode.polish.md)
 
 <br/><br/>
 
@@ -639,7 +638,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Pamięć procesowa może przeciekać sto megabajtów dziennie, jak to się stało w [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
 
-🔗 [**Czytaj więcej: Measure and guard the memory usage**](/sections/production/measurememory.polish.md)
+🔗 [**Czytaj więcej: Measure and guard the memory usage**](./sections/production/measurememory.polish.md)
 
 <br/><br/>
 
@@ -649,7 +648,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Twój pojedynczy wątek Node'a będzie zajęty przesyłaniem strumieniowym setek plików HTML / images / Angular / React zamiast przydzielania wszystkich swoich zasobów do zadania, dla którego się urodził - udostępniania treści dynamicznych
 
-🔗 [**Czytaj więcej: Get your frontend assets out of Node**](/sections/production/frontendout.polish.md)
+🔗 [**Czytaj więcej: Get your frontend assets out of Node**](./sections/production/frontendout.polish.md)
 
 <br/><br/>
 
@@ -659,7 +658,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Awaria na danym serwerze spowoduje przestoje aplikacji, a nie tylko zabicie wadliwego komputera. Co więcej, elastyczność skalowania stanie się trudniejsza ze względu na zależność od konkretnego serwera
 
-🔗 [**Czytaj więcej: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.polish.md)
+🔗 [**Czytaj więcej: Be stateless, kill your Servers almost every day**](./sections/production/bestateless.polish.md)
 
 <br/><br/>
 
@@ -669,7 +668,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Utrzymanie kodu w czystości przed lukami bez dedykowanych narzędzi będzie wymagało ciągłego śledzenia publikacji online na temat nowych zagrożeń. Dość nudne
 
-🔗 [**Czytaj więcej: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.polish.md)
+🔗 [**Czytaj więcej: Use tools that automatically detect vulnerabilities**](./sections/production/detectvulnerabilities.polish.md)
 
 <br/><br/>
 
@@ -679,7 +678,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Patrzenie na dziennik błędów produkcyjnych bez kontekstu - co zdarzyło się wcześniej - sprawia, że znacznie trudniej i wolniej jest myśleć o problemie
 
-🔗 [**Czytaj więcej: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.polish.md)
+🔗 [**Czytaj więcej: Assign ‘TransactionId’ to each log statement**](./sections/production/assigntransactionid.polish.md)
 
 <br/><br/>
 
@@ -689,7 +688,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Pominięcie tej prostej właściwości może znacznie obniżyć wydajność. Na przykład, używając Express do renderowania po stronie serwera, pominięcie `NODE_ENV` powoduje spowolnienie trzykrotnie!
 
-🔗 [**Czytaj więcej: Set NODE_ENV=production**](/sections/production/setnodeenv.polish.md)
+🔗 [**Czytaj więcej: Set NODE_ENV=production**](./sections/production/setnodeenv.polish.md)
 
 <br/><br/>
 
@@ -707,7 +706,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Nowo odkryte błędy lub luki można wykorzystać do wykorzystania aplikacji działającej w środowisku produkcyjnym, a aplikacja może nie być obsługiwana przez różne moduły i trudniejsza do utrzymania
 
-🔗 [**Czytaj więcej: Use an LTS release of Node.js**](/sections/production/LTSrelease.polish.md)
+🔗 [**Czytaj więcej: Use an LTS release of Node.js**](./sections/production/LTSrelease.polish.md)
 
 <br/><br/>
 
@@ -717,7 +716,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Trasowanie dzienników obsługi aplikacji === trudne do skalowania, utrata dzienników, słaba separacja problemów
 
-🔗 [**Czytaj więcej: Log Routing**](/sections/production/logrouting.polish.md)
+🔗 [**Czytaj więcej: Log Routing**](./sections/production/logrouting.polish.md)
 
 <br/><br/><br/>
 
@@ -733,11 +732,11 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Skorzystaj z wtyczek liniowych związanych z bezpieczeństwem, takich jak [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security), aby wychwycić luki w zabezpieczeniach i problemy jak najwcześniej, najlepiej gdy są one  kodowane. Może to pomóc w wykrywaniu słabych punktów bezpieczeństwa, takich jak używanie eval, wywoływanie procesu potomnego lub importowanie modułu z literałem łańcucha (np. dane wejściowe użytkownika). Kliknij „Czytaj więcej” poniżej, aby zobaczyć przykłady kodu, które zostaną złapane przez linijkę bezpieczeństwa
+**TL;DR:** Skorzystaj z wtyczek liniowych związanych z bezpieczeństwem, takich jak [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security), aby wychwycić luki w zabezpieczeniach i problemy jak najwcześniej, najlepiej gdy są one kodowane. Może to pomóc w wykrywaniu słabych punktów bezpieczeństwa, takich jak używanie eval, wywoływanie procesu potomnego lub importowanie modułu z literałem łańcucha (np. dane wejściowe użytkownika). Kliknij „Czytaj więcej” poniżej, aby zobaczyć przykłady kodu, które zostaną złapane przez linijkę bezpieczeństwa
 
 **W przeciwnym razie:** To, co mogło być bezpośrednią słabością bezpieczeństwa podczas programowania, staje się poważnym problemem w produkcji. Ponadto projekt może nie być zgodny ze spójnymi praktykami bezpieczeństwa kodu, co prowadzi do wprowadzenia luk w zabezpieczeniach lub poufnych danych wrażliwych wrzuconych w zdalnych repozytoriach
 
-🔗 [**Czytaj więcej: Lint rules**](/sections/security/lintrules.polish.md)
+🔗 [**Czytaj więcej: Lint rules**](./sections/security/lintrules.polish.md)
 
 <br/><br/>
 
@@ -749,7 +748,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Aplikacja może zostać zaatakowana, co spowoduje odmowę usługi, w wyniku której prawdziwi użytkownicy otrzymają usługę o obniżonej jakości lub niedostępną.
 
-🔗 [**Czytaj więcej: Implement rate limiting**](/sections/security/limitrequests.polish.md)
+🔗 [**Czytaj więcej: Implement rate limiting**](./sections/security/limitrequests.polish.md)
 
 <br/><br/>
 
@@ -761,7 +760,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Kontrola źródła, nawet w przypadku prywatnych repozytoriów, może zostać omyłkowo upubliczniona, w którym to momencie ujawniane są wszystkie dane wrażliwe. Dostęp do kontroli źródła dla strony zewnętrznej nieumyślnie zapewni dostęp do powiązanych systemów (baz danych, API, usług itp.).
 
-🔗 [**Czytaj więcej: Secret management**](/sections/security/secretmanagement.polish.md)
+🔗 [**Czytaj więcej: Secret management**](./sections/security/secretmanagement.polish.md)
 
 <br/><br/>
 
@@ -773,7 +772,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Nieprawidłowe lub niezaangażowane dane wejściowe użytkownika mogą prowadzić do wstrzyknięcia przez operatora podczas pracy z MongoDB dla NoSQL, a niestosowanie odpowiedniego systemu odkażania lub ORM z łatwością pozwoli na ataki z zastrzykiem SQL, tworząc ogromną lukę.
 
-🔗 [**Czytaj więcej: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.polish.md)
+🔗 [**Czytaj więcej: Query injection prevention using ORM/ODM libraries**](./sections/security/ormodmusage.polish.md)
 
 <br/><br/>
 
@@ -781,7 +780,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **TL;DR:** Jest to zbiór porad bezpieczeństwa, które nie są bezpośrednio związane z Node.js - implementacja Node nie różni się niczym od żadnego innego języka. Kliknij Czytaj więcej, aby przejrzeć.
 
-🔗 [**Czytaj więcej: Common security best practices**](/sections/security/commonsecuritybestpractices.polish.md)
+🔗 [**Czytaj więcej: Common security best practices**](./sections/security/commonsecuritybestpractices.polish.md)
 
 <br/><br/>
 
@@ -793,7 +792,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Atakujący mogą wykonywać bezpośrednie ataki na użytkowników aplikacji, co prowadzi do ogromnych luk w zabezpieczeniach
 
-🔗 [**Czytaj więcej: Using secure headers in your application**](/sections/security/secureheaders.polish.md)
+🔗 [**Czytaj więcej: Using secure headers in your application**](./sections/security/secureheaders.polish.md)
 
 <br/><br/>
 
@@ -805,7 +804,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Osoba atakująca może wykryć strukturę sieci i zaatakować wszystkie znane luki w zabezpieczeniach.
 
-🔗 [**Czytaj więcej: Dependency security**](/sections/security/dependencysecurity.polish.md)
+🔗 [**Czytaj więcej: Dependency security**](./sections/security/dependencysecurity.polish.md)
 
 <br/><br/>
 
@@ -817,7 +816,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Hasła lub dane wrażliwe, które są utrwalane bez korzystania z bezpiecznej funkcji, są podatne na brute force i ataki słownikowe, które ostatecznie doprowadzą do ich ujawnienia.
 
-🔗 [**Czytaj więcej: Use Bcrypt**](/sections/security/bcryptpasswords.polish.md)
+🔗 [**Czytaj więcej: Use Bcrypt**](./sections/security/bcryptpasswords.polish.md)
 
 <br/><br/>
 
@@ -829,7 +828,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Osoba atakująca może przechowywać złośliwy kod JavaScript w bazie danych, który zostanie następnie wysłany „tak jak jest” do biednych klientów
 
-🔗 [**Czytaj więcej: Escape output**](/sections/security/escape-output.polish.md)
+🔗 [**Czytaj więcej: Escape output**](./sections/security/escape-output.polish.md)
 
 <br/><br/>
 
@@ -841,7 +840,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Twoja hojność i liberalne podejście znacznie zwiększa powierzchnię ataku i zachęca atakującego do wypróbowania wielu danych wejściowych, dopóki nie znajdzie kombinacji umożliwiającej zawieszenie aplikacji
 
-🔗 [**Czytaj więcej: Validate incoming JSON schemas**](/sections/security/validation.polish.md)
+🔗 [**Czytaj więcej: Validate incoming JSON schemas**](./sections/security/validation.polish.md)
 
 <br/><br/>
 
@@ -853,7 +852,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Wygasłe lub niewłaściwie umieszczone tokeny mogą być złośliwie wykorzystywane przez osoby trzecie do uzyskiwania dostępu do aplikacji i podszywania się pod właściciela tokena.
 
-🔗 [**Czytaj więcej: Blacklist JSON Web Tokens**](/sections/security/expirejwt.polish.md)
+🔗 [**Czytaj więcej: Blacklist JSON Web Tokens**](./sections/security/expirejwt.polish.md)
 
 <br/><br/>
 
@@ -868,7 +867,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Osoba atakująca może podejmować nieograniczoną liczbę zautomatyzowanych prób uzyskania hasła w celu uzyskania dostępu do uprzywilejowanych kont w aplikacji
 
-🔗 [**Czytaj więcej: Login rate limiting**](/sections/security/login-rate-limit.polish.md)
+🔗 [**Czytaj więcej: Login rate limiting**](./sections/security/login-rate-limit.polish.md)
 
 <br/><br/>
 
@@ -880,7 +879,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Atakujący, któremu uda się uruchomić skrypt na serwerze, uzyskuje nieograniczoną władzę nad maszyną lokalną (np. zmienia iptable i przekierowuje ruch do swojego serwera)
 
-🔗 [**Czytaj więcej: Run Node.js as non-root user**](/sections/security/non-root-user.polish.md)
+🔗 [**Czytaj więcej: Run Node.js as non-root user**](./sections/security/non-root-user.polish.md)
 
 <br/><br/>
 
@@ -892,7 +891,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Twoja aplikacja będzie musiała poradzić sobie z dużymi żądaniami, niezdolna do przetworzenia innej ważnej pracy, którą musi wykonać, co będzie miało wpływ na wydajność i podatność na ataki DOS
 
-🔗 [**Czytaj więcej: Limit payload size**](/sections/security/requestpayloadsizelimit.polish.md)
+🔗 [**Czytaj więcej: Limit payload size**](./sections/security/requestpayloadsizelimit.polish.md)
 
 <br/><br/>
 
@@ -904,7 +903,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Złośliwy kod JavaScript znajduje drogę do tekstu przekazywanego do `eval` lub innych funkcji języka JavaScript oceniających w czasie rzeczywistym, i uzyskuje pełny dostęp do uprawnień JavaScript na stronie. Luka ta często objawia się jako atak XSS.
 
-🔗 [**Czytaj więcej: Avoid JavaScript eval statements**](/sections/security/avoideval.polish.md)
+🔗 [**Czytaj więcej: Avoid JavaScript eval statements**](./sections/security/avoideval.polish.md)
 
 <br/><br/>
 
@@ -916,7 +915,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Źle napisane wyrażenia regularne mogą być podatne na ataki DoS wyrażeń regularnych, które całkowicie zablokują pętlę zdarzeń. Na przykład popularny pakiet `moment` został uznany za podatny na złośliwe użycie Regex w listopadzie 2017r.
 
-🔗 [**Czytaj więcej: Prevent malicious RegEx**](/sections/security/regex.polish.md)
+🔗 [**Czytaj więcej: Prevent malicious RegEx**](./sections/security/regex.polish.md)
 
 <br/><br/>
 
@@ -928,7 +927,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Złośliwe dane wejściowe użytkownika mogą znaleźć drogę do parametru wymaganego do zmodyfikowania plików, na przykład wcześniej przesłanego pliku do systemu plików lub uzyskania dostępu do już istniejących plików systemowych.
 
-🔗 [**Czytaj więcej: Safe module loading**](/sections/security/safemoduleloading.polish.md)
+🔗 [**Czytaj więcej: Safe module loading**](./sections/security/safemoduleloading.polish.md)
 
 <br/><br/>
 
@@ -940,7 +939,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Wtyczka może atakować poprzez nieskończoną różnorodność opcji, takich jak nieskończone pętle, przeciążenie pamięci i dostęp do wrażliwych zmiennych środowiskowych procesu
 
-🔗 [**Czytaj więcej: Run unsafe code in a sandbox**](/sections/security/sandbox.polish.md)
+🔗 [**Czytaj więcej: Run unsafe code in a sandbox**](./sections/security/sandbox.polish.md)
 
 <br/><br/>
 
@@ -952,7 +951,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Naiwne użycie procesów potomnych może spowodować zdalne wykonanie poleceń lub ataki polegające na wstrzyknięciu powłoki z powodu wprowadzenia złośliwego użytkownika do niezarządzanego polecenia systemowego.
 
-🔗 [**Czytaj więcej: Be cautious when working with child processes**](/sections/security/childprocesses.polish.md)
+🔗 [**Czytaj więcej: Be cautious when working with child processes**](./sections/security/childprocesses.polish.md)
 
 <br/><br/>
 
@@ -964,7 +963,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Wrażliwe szczegóły aplikacji, takie jak ścieżki plików serwera, używane moduły stron trzecich i inne wewnętrzne przepływy pracy aplikacji, które mogą zostać wykorzystane przez atakującego, mogą zostać wyciekły z informacji znalezionych w stack trace
 
-🔗 [**Czytaj więcej: Hide error details from client**](/sections/security/hideerrors.polish.md)
+🔗 [**Czytaj więcej: Hide error details from client**](./sections/security/hideerrors.polish.md)
 
 <br/><br/>
 
@@ -986,7 +985,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Pliki cookie mogą być przesyłane za pośrednictwem niezabezpieczonych połączeń, a osoba atakująca może użyć identyfikacji sesji w celu zidentyfikowania podstawowej struktury aplikacji internetowej, a także podatności na uszkodzenia specyficzne dla modułu
 
-🔗 [**Czytaj więcej: Cookie and session security**](/sections/security/sessions.polish.md)
+🔗 [**Czytaj więcej: Cookie and session security**](./sections/security/sessions.polish.md)
 
 <br/><br/>
 
@@ -1008,7 +1007,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Jeśli osoba atakująca odkryje, że nie weryfikujesz danych zewnętrznych dostarczonych przez użytkownika, może wykorzystać tę lukę, publikując specjalnie spreparowane łącza na forach, w mediach społecznościowych i innych miejscach publicznych, aby użytkownicy mogli ją kliknąć.
 
-🔗 [**Czytaj więcej: Prevent unsafe redirects**](/sections/security/saferedirects.polish.md)
+🔗 [**Czytaj więcej: Prevent unsafe redirects**](./sections/security/saferedirects.polish.md)
 
 <br/><br/>
 
@@ -1020,14 +1019,14 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Klucze API, hasła i inne dane wrażliwe twojego projektu są otwarte na wykorzystywanie przez każdego, kto je napotka, co może spowodować straty finansowe, podszywanie się pod inne osoby i inne ryzyko.
 
-🔗 [**Czytaj więcej: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.polish.md)
+🔗 [**Czytaj więcej: Avoid publishing secrets**](./sections/security/avoid_publishing_secrets.polish.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#spis-treści">⬆ Powrót na górę</a></p>
 
 # `7. Wersja robocza: Najlepsze praktyki dotyczące wydajności`
 
-## Nasi współpracownicy pracują nad tą sekcją. [Chciałbyś dołączyć?](https://github.com/i0natan/nodebestpractices/issues/256)
+## Nasi współpracownicy pracują nad tą sekcją. [Chciałbyś dołączyć?](https://github.com/goldbergyoni/nodebestpractices/issues/256)
 
 <br/><br/>
 
@@ -1037,26 +1036,24 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 **W przeciwnym razie:** Ponieważ pętla zdarzeń jest zablokowana, Node.js nie będzie w stanie obsłużyć innych żądań, co spowoduje opóźnienia dla równoczesnych użytkowników. **3000 użytkowników czeka na odpowiedź, treść jest gotowa do wyświetlenia, ale jedno pojedyncze żądanie blokuje serwerowi odesłanie wyników z powrotem**
 
-🔗 [**Czytaj więcej: Do not block the event loop**](/sections/performance/block-loop.polish.md)
+🔗 [**Czytaj więcej: Do not block the event loop**](./sections/performance/block-loop.polish.md)
 
 <br /><br /><br />
 
-
 ## ![✔] 7.2. Preferuj natywne metody JS, niż narzędzia ponad powierzchnią użytkownika, takie jak Lodash
 
- **TL;DR:** Korzystanie z bibliotek narzędziowych takich jak `lodash` i `underscore` w porównaniu z metodami natywnymi jest często bardziej karalne, ponieważ prowadzi do niepotrzebnych zależności i spowalnia działanie.
-  Należy pamiętać, że wraz z wprowadzeniem nowego silnika V8 wraz z nowymi standardami ES, natywne metody zostały ulepszone w taki sposób, że są teraz o około 50% wydajniejsze niż biblioteki narzędziowe.
+**TL;DR:** Korzystanie z bibliotek narzędziowych takich jak `lodash` i `underscore` w porównaniu z metodami natywnymi jest często bardziej karalne, ponieważ prowadzi do niepotrzebnych zależności i spowalnia działanie.
+Należy pamiętać, że wraz z wprowadzeniem nowego silnika V8 wraz z nowymi standardami ES, natywne metody zostały ulepszone w taki sposób, że są teraz o około 50% wydajniejsze niż biblioteki narzędziowe.
 
 **W przeciwnym razie:** Będziesz musiał utrzymywać mniej wydajne projekty, w których mógłbyś po prostu użyć tego, co było **już** dostępne lub zająć się kilkoma kolejnymi liniami w zamian za kilka dodatkowych plików.
 
-🔗 [**Czytaj więcej: Native over user land utils**](/sections/performance/nativeoverutil.polish.md)
+🔗 [**Czytaj więcej: Native over user land utils**](./sections/performance/nativeoverutil.polish.md)
 
 <br/><br/><br/>
 
-
 # Milestones
 
-Aby utrzymać ten przewodnik i aktualizować go, stale aktualizujemy i ulepszamy wytyczne i najlepsze praktyki z pomocą społeczności. Możesz śledzić nasze [kamienie milowe](https://github.com/i0natan/nodebestpractices/milestones) i dołączyć do grup roboczych, jeśli chcesz przyczynić się do tego projektu
+Aby utrzymać ten przewodnik i aktualizować go, stale aktualizujemy i ulepszamy wytyczne i najlepsze praktyki z pomocą społeczności. Możesz śledzić nasze [kamienie milowe](https://github.com/goldbergyoni/nodebestpractices/milestones) i dołączyć do grup roboczych, jeśli chcesz przyczynić się do tego projektu
 
 <br/>
 
@@ -1066,28 +1063,29 @@ Wszystkie tłumaczenia pochodzą od społeczności. Z przyjemnością uzyskamy w
 
 ### Ukończone tłumaczenia
 
-- ![BR](/assets/flags/BR.png) [Brazilian Portuguese](./README.brazilian-portuguese.md) - Dzięki uprzejmości [Marcelo Melo](https://github.com/marcelosdm)
-- ![CN](/assets/flags/CN.png) [Chinese](./README.chinese.md) - Dzięki uprzejmości [Matt Jin](https://github.com/mattjin)
-- ![RU](/assets/flags/RU.png) [Russian](./README.russian.md) - Dzięki uprzejmości [Alex Ivanov](https://github.com/contributorpw)
-- ![PL](/assets/flags/PL.png) [Polish](./README.polish.md) - Dzięki uprzejmości [Michal Biesiada](https://github.com/mbiesiad)
+- ![BR](./assets/flags/BR.png) [Brazilian Portuguese](./README.brazilian-portuguese.md) - Dzięki uprzejmości [Marcelo Melo](https://github.com/marcelosdm)
+- ![CN](./assets/flags/CN.png) [Chinese](./README.chinese.md) - Dzięki uprzejmości [Matt Jin](https://github.com/mattjin)
+- ![RU](./assets/flags/RU.png) [Russian](./README.russian.md) - Dzięki uprzejmości [Alex Ivanov](https://github.com/contributorpw)
+- ![PL](./assets/flags/PL.png) [Polish](./README.polish.md) - Dzięki uprzejmości [Michal Biesiada](https://github.com/mbiesiad)
+- ![EU](./assets/flags/EU.png) [Basque](README.basque.md) - Dzięki uprzejmości [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta
 
 ### Tłumaczenia w trakcie
 
-- ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/129))
-- ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/i0natan/nodebestpractices/issues/156))
-- ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Courtesy of [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/94))
-- ![ES](/assets/flags/ES.png) [Spanish](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/i0natan/nodebestpractices/issues/95))
-- ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/i0natan/nodebestpractices/issues/139))
+- ![FR](./assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/129))
+- ![HE](./assets/flags/HE.png) Hebrew ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/156))
+- ![KR](./assets/flags/KR.png) [Korean](README.korean.md) - Courtesy of [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94))
+- ![ES](./assets/flags/ES.png) [Spanish](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/95))
+- ![TR](./assets/flags/TR.png) Turkish ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/139))
 
 <br/><br/>
 
 ## Steering Committee
 
-Spotkaj się z członkami komitetu sterującego - ludźmi, którzy pracują razem, aby zapewnić wytyczne i przyszłe kierunki projektu. Ponadto każdy członek komitetu prowadzi projekt śledzony w ramach naszych [projektów GitHub](https://github.com/i0natan/nodebestpractices/projects).
+Spotkaj się z członkami komitetu sterującego - ludźmi, którzy pracują razem, aby zapewnić wytyczne i przyszłe kierunki projektu. Ponadto każdy członek komitetu prowadzi projekt śledzony w ramach naszych [projektów GitHub](https://github.com/goldbergyoni/nodebestpractices/projects).
 
-<img align="left" width="100" height="100" src="assets/images/members/yoni.png">
+<img align="left" width="100" height="100" src="assets/images/members/yoni.png"/>
 
-[Yoni Goldberg](https://github.com/i0natan)
+[Yoni Goldberg](https://github.com/goldbergyoni)
 <a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
 <a href="https://goldbergyoni.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
@@ -1095,7 +1093,7 @@ Niezależny konsultant Node.js, który współpracuje z klientami w USA, Europie
 
 <br/>
 
-<img align="left" width="100" height="100" src="assets/images/members/bruno.png">
+<img align="left" width="100" height="100" src="assets/images/members/bruno.png"/>
 
 [Bruno Scheufler](https://github.com/BrunoScheufler)
 <a href="https://brunoscheufler.com/"><img src="assets/images/www.png" width="16" height="16"></img></a>
@@ -1104,7 +1102,7 @@ Niezależny konsultant Node.js, który współpracuje z klientami w USA, Europie
 
 <br/>
 
-<img align="left" width="100" height="100" src="assets/images/members/kyle.png">
+<img align="left" width="100" height="100" src="assets/images/members/kyle.png"/>
 
 [Kyle Martin](https://github.com/js-kyle)
 <a href="https://twitter.com/kylemartin_93"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
@@ -1114,7 +1112,7 @@ Full Stack Developer & Site Reliability Engineer z siedzibą w Nowej Zelandii, z
 
 <br/>
 
-<img align="left" width="100" height="100" src="assets/images/members/sagir.png">
+<img align="left" width="100" height="100" src="assets/images/members/sagir.png"/>
 
 [Sagir Khan](https://github.com/sagirk)
 <a href="https://twitter.com/sagir_k"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
@@ -1129,21 +1127,21 @@ Doświadczony specjalista w JavaScript i jego ekosystemie - React, Node.js, Mong
 
 Dziękujemy wszystkim wpółpracownikom! 🙏
 
-Nasi współpracownicy są członkami, którzy regularnie współuczestniczą w repozytorium, sugerując nowe najlepsze praktyki, analizując problemy, sprawdzając pull requesty i wiele więcej. Jeśli chcesz pomóc nam poprowadzić tysiące ludzi do tworzenia lepszych aplikacji Node.js, przeczytaj nasze [wytyczne dla współpracowników](/.operations/CONTRIBUTING.md) 🎉
+Nasi współpracownicy są członkami, którzy regularnie współuczestniczą w repozytorium, sugerując nowe najlepsze praktyki, analizując problemy, sprawdzając pull requesty i wiele więcej. Jeśli chcesz pomóc nam poprowadzić tysiące ludzi do tworzenia lepszych aplikacji Node.js, przeczytaj nasze [wytyczne dla współpracowników](./.operations/CONTRIBUTING.md) 🎉
 
-| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
-| :--: | :--: |
-| [Ido Richter (Founder)](https://github.com/idori) | [Keith Holliday](https://github.com/TheHollidayInn) |
+| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"/></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"/></a> |
+| :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
+|                                    [Ido Richter (Founder)](https://github.com/idori)                                    |                                        [Keith Holliday](https://github.com/TheHollidayInn)                                         |
 
 ### Wcześniejsza współpraca
 
-| <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"></a> |
-| :--: |
-| [Refael Ackermann](https://github.com/refack) |
+| <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"/></a> |
+| :-------------------------------------------------------------------------------------------------------------------------: |
+|                                        [Refael Ackermann](https://github.com/refack)                                        |
 
 <br/>
 
 ## Dziękujemy za uwagi
 
-Doceniamy każdy wkład, od poprawki pojedynczego słowa, po nową najlepszą praktykę. Zobacz naszych autorów i [dokumentację CONTRIBUTORS tutaj!](CONTRIBUTORS.md)
+Doceniamy każdy wkład, od poprawki pojedynczego słowa, po nową najlepszą praktykę. Zobacz naszych autorów i [dokumentację CONTRIBUTORS tutaj!](./README.md#contributors-)
 <br/><br/><br/>

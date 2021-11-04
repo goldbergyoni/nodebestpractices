@@ -10,16 +10,16 @@ O APM (monitoramento de desempenho de aplicação) refere-se a uma família de p
 
 ### Exemplo de APM - um produto comercial que visualiza o desempenho de aplicações de serviço cruzado
 
-![Exemplo de APM](/assets/images/apm1.png "Exemplo de APM")
+![Exemplo de APM](../../assets/images/apm1.png "Exemplo de APM")
 
 <br/><br/>
 
 ### Exemplo de APM - um produto comercial que enfatiza a pontuação da experiência do usuário
 
-![Exemplo de APM](/assets/images/apm2.png "Exemplo de APM")
+![Exemplo de APM](../../assets/images/apm2.png "Exemplo de APM")
 
 <br/><br/>
 
 ### Exemplo de APM - um produto comercial que destaca caminhos de código lento
 
-![Exemplo de APM](/assets/images/apm3.png "Exemplo de APM")
+![Exemplo de APM](../../assets/images/apm3.png "Exemplo de APM")

@@ -36,7 +36,7 @@ const unsafe = new RegExp('/(x+x+)+y/)');
 
 Пример запуска `eslint-plugin-security` в проекте Node.js с использованием описанных выше методов небезопасного кода:
 
-![nsp check example](/assets/images/eslint-plugin-security.png)
+![nsp check example](../../assets/images/eslint-plugin-security.png)
 
 ### Что говорят другие блогеры
 

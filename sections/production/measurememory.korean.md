@@ -10,7 +10,7 @@ In a perfect world, a web developer shouldn’t deal with memory leaks. In reali
 
 ### What Other Bloggers Say
 
-* From the blog [Dyntrace](http://apmblog.dynatrace.com/):
+* From the blog [Dyntrace](https://www.dynatrace.com/news/blog/understanding-garbage-collection-and-hunting-memory-leaks-in-node-js/):
 > ... ”As we already learned, in Node.js JavaScript is compiled to native code by V8. The resulting native data structures don’t have much to do with their original representation and are solely managed by V8. This means that we cannot actively allocate or deallocate memory in JavaScript. V8 uses a well-known mechanism called garbage collection to address this problem.”
 
 * From the blog [Dyntrace](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load):
@@ -18,7 +18,7 @@ In a perfect world, a web developer shouldn’t deal with memory leaks. In reali
 Create heap dumps with some time and a fair amount of memory allocation in between
 Compare a few dumps to find out what’s growing”
 
-* From the blog [Dyntrace](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load):
+* From the blog [Rising Stack](https://blog.risingstack.com/finding-a-memory-leak-in-node-js/):
 > ... “fault, Node.js will try to use about 1.5GBs of memory, which has to be capped when running on systems with less memory. This is the expected behavior as garbage collection is a very costly operation.
 The solution for it was adding an extra parameter to the Node.js process:
 node –max_old_space_size=400 server.js –production ”

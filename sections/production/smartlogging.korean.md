@@ -16,13 +16,13 @@ Since you print out log statements anyway and you're obviously in a need of some
 
 ### Visualization Example: Kibana (part of the Elastic stack) facilitates advanced searching on log content
 
-![Kibana facilitates advanced searching on log content](/assets/images/smartlogging1.png "Kibana facilitates advanced searching on log content")
+![Kibana facilitates advanced searching on log content](../../assets/images/smartlogging1.png "Kibana facilitates advanced searching on log content")
 
 <br/><br/>
 
 ### Visualization Example: Kibana (part of the Elastic stack) visualizes data based on logs
 
-![Kibana visualizes data based on logs](/assets/images/smartlogging2.jpg "Kibana visualizes data based on logs")
+![Kibana visualizes data based on logs](../../assets/images/smartlogging2.jpg "Kibana visualizes data based on logs")
 
 <br/><br/>
 

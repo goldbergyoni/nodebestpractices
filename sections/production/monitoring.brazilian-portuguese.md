@@ -12,25 +12,25 @@ Atingir os recursos avançados exige uma configuração demorada ou a compra de 
 
 ### Exemplo de monitoramento: painel padrão do AWS cloudwatch. Difícil de extrair métricas na aplicação
 
-![Painel padrão do AWS cloudwatch. Difícil de extrair métricas na aplicação](/assets/images/monitoring1.png)
+![Painel padrão do AWS cloudwatch. Difícil de extrair métricas na aplicação](../../assets/images/monitoring1.png)
 
 <br/><br/>
 
 ### Exemplo de monitoramento: painel padrão do StackDriver. Difícil de extrair métricas na aplicação
 
-![Painel padrão do StackDriver. Difícil de extrair métricas na aplicação](/assets/images/monitoring2.jpg)
+![Painel padrão do StackDriver. Difícil de extrair métricas na aplicação](../../assets/images/monitoring2.jpg)
 
 <br/><br/>
 
 ### Exemplo de monitoramento: Grafana como camada de interface do usuário que visualiza dados brutos
 
-![Grafana como camada de interface do usuário que visualiza dados brutos](/assets/images/monitoring3.png)
+![Grafana como camada de interface do usuário que visualiza dados brutos](../../assets/images/monitoring3.png)
 
 <br/><br/>
 
 ### O que Outros Blogueiros Dizem
 
-Do blog [Rising Stack](http://mubaloo.com/best-practices-deploying-node-js-applications/):
+Do blog [Rising Stack](https://blog.risingstack.com/node-js-performance-monitoring-with-prometheus/):
 
 > …Recomendamos que você observe esses sinais para todos os seus serviços:
 > Taxa de erros: porque os erros são enfrentados pelo usuário e afetam imediatamente seus clientes.
