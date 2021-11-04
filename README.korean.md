@@ -275,9 +275,9 @@ function someFunction()
 
 당신이 문장 끝에 세미콜론을 붙이든 아니든, 제대로 문장을 끝내지 않거나 자동 세미콜론 삽입과 관련된 흔한 실수들을 알아두면 잦은 구문 오류 (syntax error)를 제거하는데 도움이 된다.
 
-**핵심요약:** ESLint를 써서 제대로 문장을 끝내고 있는지 경각심을 불러일으켜라. [Prettier](https://prettier.io/) or [Standardjs](https://standardjs.com/)는 자동으로 이 문제를 해결해준다.
+**핵심요약:** ESLint를 써서 제대로 문장을 끝내고 있는지 자각하라. [Prettier](https://prettier.io/) or [Standardjs](https://standardjs.com/)는 자동으로 이 문제를 해결해준다.
 
-**그렇게 하지 않을 경우:** 이전 섹션에서 본것처럼 자바스크립트의 인터프리터는 세미콜론이 없으면 자동으로 문장의 끝에 세미콜론을 붙이거나, 문장이 끝났어야 함에도 끝났다고 인지하지 못하여 의도되지 않은 결과를 야기할 수 있다. 대부분의 의도하지 않은 에러들은 assignment를 사용하고 imediate invoked function expression을 사용하는 것을 피함으로써 예방할 수 있다.
+**그렇게 하지 않을 경우:** 이전 섹션에서 본것처럼 자바스크립트의 인터프리터는 세미콜론이 없으면 자동으로 문장의 끝에 세미콜론을 붙이거나, 문장이 끝났어야 함에도 끝났다고 인지하지 못하여 의도되지 않은 결과를 야기할 수 있다. 대부분의 의도하지 않은 에러들은 assignment를 사용하고 즉시실행함수(imediately invoked function expression)을 사용하는 것을 피함으로써 이를 예방할 수 있다.
 
 ### 코드 예제
 
@@ -305,9 +305,9 @@ const a = [1,2,3]
 // 나쁜 예 — 예외 발생
 const count = 2 // 2()를 호출하려 하지만, 2는 함수가 아니다
 (function doSomething() {
-  // 이쁜짓
+  // 무엇이든 놀라운 것을 포함해보기
 }())
-// immediate invoked function 전에 세미콜론을 놓던나, const 정의 후에 놓거나, 익명함수의 반환값을 변수에 저장하던가, 아니면 아예 IIFE를 쓰지 마라
+// 즉시실행함수(immediately invoked function) 전에 세미콜론을 놓거나, const 정의 후에 놓거나, 익명함수의 반환값을 변수에 저장하던가, 아니면 아예 IIFE를 쓰지 마라
 ```
 
 🔗 [**Read more:** "Semi ESLint rule"](https://eslint.org/docs/rules/semi)
