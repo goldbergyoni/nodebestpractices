@@ -232,9 +232,9 @@
 
 ## ![✔] 3.1 ESLint를 사용하라
 
-**핵심요약:** [ESLint](https://eslint.org)는 발생 가능한 코드 에러를 체크하고 껄끄러운 간격(spacing)문제를 식별하는 것부터 프로그래머가 분별없이 에러를 던지는 것과 같은 코드의 심각한 안티 패턴을 감지하여 코드 스타일을 바꾸는 것에 대한 사실상의 표준이다. ESLint도 자동으로 코드스타일을 고칠 수 있지만 [prettier](https://www.npmjs.com/package/prettier)와 [beautify](https://www.npmjs.com/package/js-beautify)같은 수정 부분의 포맷을 맞춰주는 강력한 툴이 있고 ESLint와 함께 작동된다.
+**핵심요약:** [ESLint](https://eslint.org)는 발생 가능한 코드 에러를 체크하고 껄끄러운 간격(spacing)문제를 식별하는 것부터 프로그래머가 분별없이 에러를 던지는 것과 같은 코드의 심각한 안티 패턴을 감지하여 코드 스타일을 바꾸는 것에 대한 사실상의 표준이다. ESLint만으로도 자동으로 코드스타일을 고칠 수 있지만 [prettier](https://www.npmjs.com/package/prettier)와 [beautify](https://www.npmjs.com/package/js-beautify)같은 다른 툴들과 함께 사용될 경우 수정 부분을 포매팅함에 있어 더욱 더 강력한 힘을 발휘할 수 있다. 
 
-**그렇게 하지 않을 경우:** 프로그래머가 쓸데없이 간격과 각 줄의 길이(line-width) 문제에 집중하고 프로젝트의 코드스타일에 대해 과도하게 생각하느라 시간을 낭비하게 된다.
+**그렇게 하지 않을 경우:** 프로그래머가 간격과 각 줄의 길이(line-width)와 같은 쓸데없는 문제에 집중하게 되는 등 프로젝트의 코드스타일에 대해 집착으로 시간을 낭비하게 된다.
 
 <br/><br/>
 
