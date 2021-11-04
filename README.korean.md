@@ -1,6 +1,6 @@
 [✔]: assets/images/checkbox-small-blue.png
 
-# Node.js 모범 사례 dd
+# Node.js 모범 사례
 
 <h1 align="center">
   <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices">
@@ -128,7 +128,7 @@
 
 ## ![✔] 2.2 내장된 Error 객체만 사용하라
 
-**핵심요약:** 많은 사람들이 문자열이나 사용자가 임의로 정의한 타입으로 에러를 던지곤 하는데(throw), 이것은 에러 처리 로직과 모듈 사이의 상호운용성을 복잡하게 한다. 당신이 promise를 거부(reject)하든, 예외를 던지든, 에러를 내든, 내장된 Error 객체(혹은 내장된 Error 객체를 확장하는 객체)만 이용하는 것이 균일성을 향상하고 정보의 손실을 방지해준다. 엄격하게 확인하는 `no-throw-literal` ESLint 규칙이 있다.  (Typescript를 사용하고 `@typescript-eslint/no-throw-literal` 규칙을 설정할 때 해결할 수 있는 몇 가지 [제한 사항](https://eslint.org/docs/rules/no-throw-literal)이 있지만)
+**핵심요약:** 많은 사람들이 문자열이나 사용자가 임의로 정의한 타입으로 에러를 던지곤 하는데(throw), 이것은 에러 처리 로직과 모듈 사이의 상호운용성을 복잡하게 한다. 당신이 promise를 거부(reject)하든, 예외를 던지든, 에러를 내든, 내장된 Error 객체(혹은 내장된 Error 객체를 확장하는 객체)만 이용하는 것이 균일성을 향상하고 정보의 손실을 방지해준다. 이를 엄격하게 확인하는 `no-throw-literal` ESLint 규칙이 있다.  (Typescript를 사용하고 `@typescript-eslint/no-throw-literal` 규칙을 설정할 때 해결할 수 있는 몇 가지 [제한 사항](https://eslint.org/docs/rules/no-throw-literal)이 있지만)
 
 **그렇게 하지 않을 경우:** 일부 컴포넌트를 호출할 때, 어떤 에러의 타입이 반환되는지 불확실해져서 적절한 에러 처리가 매우 어려워진다. 게다가, 임의적인 타입으로 에러를 나타내는 것은 스택 정보(stack trace)와 같은 중요한 에러 관련 정보 손실을 일으킬 수 있다!
 
