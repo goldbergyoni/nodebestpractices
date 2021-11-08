@@ -15,19 +15,19 @@ doWork()
  .then(verify);
 ```
 
-### Anti pattern code example – callback style error handling
+### 안티 패턴 코드 예시 – 콜백 스타일 에러 처리
 
 ```javascript
 getData(someParameter, function(err, result) {
     if(err !== null) {
-        // do something like calling the given callback function and pass the error
+        // 주어진 콜백 함수를 호출하는 것과 같은 작업을 수행하고 오류를 전달한다.
         getMoreData(a, function(err, result) {
             if(err !== null) {
-                // do something like calling the given callback function and pass the error
+                // 주어진 콜백 함수를 호출하는 것과 같은 작업을 수행하고 오류를 전달한다.
                 getMoreData(b, function(c) {
                     getMoreData(d, function(e) {
                         if(err !== null ) {
-                            // you get the idea? 
+                            // 감이 잡히는가?
                         }
                     })
                 });
@@ -37,7 +37,7 @@ getData(someParameter, function(err, result) {
 });
 ```
 
-### 블로그 인용: "promise에 문제가 있다"
+### 블로그 인용: "promise에는 문제가 있다"
 
  pouchdb.com 블로그에서
  
@@ -58,5 +58,6 @@ getData(someParameter, function(err, result) {
 ### 블로그 인용문: "당신에게 익숙한 모든 일반 흐름 제어 구조는 완전히 망가졌다"
 
 Benno’s 블로그에서
+ 
+ > 비동기식 콜백 기반 프로그래밍의 가장 좋은 점 중 하나는 기본적으로 당신이 익숙한 모든 규칙적인 흐름 제어 구조가 완전히 무너졌다는 것이다. 하지만, 가장 무너진 것은 예외 처리이다. Javascript는 예외 처리하기 위한 꽤 익숙한 try...catch 구조를 제공한다. 예외가 있는 문제는 콜 스택에서 오류를 짧게 줄일 수 있는 좋은 방법을 제공하지만 다른 스택에서 오류가 발생할 경우 완전히 무용지물이 된다는 것이다.
 
- > ……One of the best things about asynchronous, callback-based programming is that basically all those regular flow control constructs you are used to are completely broken. However, the one I find most broken is the handling of exceptions. Javascript provides a fairly familiar try…catch construct for dealing with exceptions. The problem with exceptions is that they provide a great way of short-cutting errors up a call stack, but end up being completely useless if the error happens on a different stack…
