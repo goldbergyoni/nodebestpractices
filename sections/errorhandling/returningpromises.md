@@ -4,7 +4,7 @@
 
 ### One Paragraph Explainer
 
-When an error occurs, whether from a synchronous or asynchronous flow, it's imperative to have a full stacktrace of the error flow. Surprisingly, if an async function returns a promise (e.g., calls other async function)  without awaiting, should an error occur then the caller function won't appear in the stacktrace. This will leave the person who diagnoses the error with partial information - All the more if the error cause lies within that caller function. There is a feature v8 called "zero-cost async stacktraces" that allow stacktraces not to be cut on the most recent `await`. But due to non-trivial implementation details, it will not work if the return value of a function (sync or async) is a promise. So, to avoid holes in stacktraces when returned promises would be rejected, we must always explicitly resolve promises with `await` before returning them from functions
+When an error occurs, whether from a synchronous or asynchronous flow, it's imperative to have a full stacktrace of the error flow. Surprisingly, if an async function returns a promise (e.g. calls other async function) without awaiting, should an error occur then the caller function won't appear in the stacktrace. This will leave the person who diagnoses the error with partial information - All the more if the error cause lies within that caller function. There is a feature v8 called "zero-cost async stacktraces" that allow stacktraces not to be cut on the most recent `await`. But due to non-trivial implementation details, it will not work if the return value of a function (sync or async) is a promise. So, to avoid holes in stacktraces when returned promises would be rejected, we must always explicitly resolve promises with `await` before returning them from functions
 
 <br/>
 
@@ -15,16 +15,16 @@ When an error occurs, whether from a synchronous or asynchronous flow, it's impe
 
 ```javascript
 async function throwAsync(msg) {
-  await null // need to await at least something to be truly async (see note #2)
-  throw Error(msg)
+  await null; // need to await at least something to be truly async (see note #2)
+  throw Error(msg);
 }
 
-async function returnWithoutAwait () {
-  return throwAsync('missing returnWithoutAwait in the stacktrace')
+async function returnWithoutAwait() {
+  return throwAsync("missing returnWithoutAwait in the stacktrace");
 }
 
 // 👎 will NOT have returnWithoutAwait in the stacktrace
-returnWithoutAwait().catch(console.log)
+returnWithoutAwait().catch(console.log);
 ```
 
 would log
@@ -33,6 +33,7 @@ would log
 Error: missing returnWithoutAwait in the stacktrace
     at throwAsync ([...])
 ```
+
 </p>
 </details>
 
@@ -43,16 +44,16 @@ Error: missing returnWithoutAwait in the stacktrace
 
 ```javascript
 async function throwAsync(msg) {
-  await null // need to await at least something to be truly async (see note #2)
-  throw Error(msg)
+  await null; // need to await at least something to be truly async (see note #2)
+  throw Error(msg);
 }
 
 async function returnWithAwait() {
-  return await throwAsync('with all frames present')
+  return await throwAsync("with all frames present");
 }
 
 // 👍 will have returnWithAwait in the stacktrace
-returnWithAwait().catch(console.log)
+returnWithAwait().catch(console.log);
 ```
 
 would log
@@ -74,21 +75,21 @@ Error: with all frames present
 <p>
 
 ```javascript
-async function throwAsync () {
-  await null // need to await at least something to be truly async (see note #2)
-  throw Error('missing syncFn in the stacktrace')
+async function throwAsync() {
+  await null; // need to await at least something to be truly async (see note #2)
+  throw Error("missing syncFn in the stacktrace");
 }
 
-function syncFn () {
-  return throwAsync()
+function syncFn() {
+  return throwAsync();
 }
 
-async function asyncFn () {
-  return await syncFn()
+async function asyncFn() {
+  return await syncFn();
 }
 
 // 👎 syncFn would be missing in the stacktrace because it returns a promise while been sync
-asyncFn().catch(console.log)
+asyncFn().catch(console.log);
 ```
 
 would log
@@ -108,21 +109,21 @@ Error: missing syncFn in the stacktrace
 <p>
 
 ```javascript
-async function throwAsync () {
-  await null // need to await at least something to be truly async (see note #2)
-  throw Error('with all frames present')
+async function throwAsync() {
+  await null; // need to await at least something to be truly async (see note #2)
+  throw Error("with all frames present");
 }
 
-async function changedFromSyncToAsyncFn () {
-  return await throwAsync()
+async function changedFromSyncToAsyncFn() {
+  return await throwAsync();
 }
 
-async function asyncFn () {
-  return await changedFromSyncToAsyncFn()
+async function asyncFn() {
+  return await changedFromSyncToAsyncFn();
 }
 
 // 👍 now changedFromSyncToAsyncFn would present in the stacktrace
-asyncFn().catch(console.log)
+asyncFn().catch(console.log);
 ```
 
 would log
@@ -145,16 +146,19 @@ Error: with all frames present
 <p>
 
 ```javascript
-async function getUser (id) {
-  await null
-  if (!id) throw Error('stacktrace is missing the place where getUser has been called')
-  return {id}
+async function getUser(id) {
+  await null;
+  if (!id)
+    throw Error(
+      "stacktrace is missing the place where getUser has been called"
+    );
+  return { id };
 }
 
-const userIds = [1, 2, 0, 3]
+const userIds = [1, 2, 0, 3];
 
 // 👎 the stacktrace would include getUser function but would give no clue on where it has been called
-Promise.all(userIds.map(getUser)).catch(console.log)
+Promise.all(userIds.map(getUser)).catch(console.log);
 ```
 
 would log
@@ -165,7 +169,7 @@ Error: stacktrace is missing the place where getUser has been called
     at async Promise.all (index 2)
 ```
 
-*Side-note*: it may looks like `Promise.all (index 2)` can help understanding the place where `getUser` has been called,
+_Side-note_: it may looks like `Promise.all (index 2)` can help understanding the place where `getUser` has been called,
 but due to a [completely different bug in v8](https://bugs.chromium.org/p/v8/issues/detail?id=9023), `(index 2)` is
 a line from internals of v8
 
@@ -177,25 +181,25 @@ a line from internals of v8
 <details><summary>Javascript</summary>
 <p>
 
-*Note 1*: in case if you control the code of the function that would call the callback - just change that function to
+_Note 1_: in case if you control the code of the function that would call the callback - just change that function to
 async and add `await` before the callback call. Below I assume that you are not in charge of the code that is calling
 the callback (or it's change is unacceptable for example because of backward compatibility)
 
-*Note 2*: quite often usage of async callback in places where sync one is expected would not work at all. This is not about
+_Note 2_: quite often usage of async callback in places where sync one is expected would not work at all. This is not about
 how to fix the code that is not working - it's about how to fix stacktrace in case if code is already working as
 expected
 
 ```javascript
-async function getUser (id) {
-  await null
-  if (!id) throw Error('with all frames present')
-  return {id}
+async function getUser(id) {
+  await null;
+  if (!id) throw Error("with all frames present");
+  return { id };
 }
 
-const userIds = [1, 2, 0, 3]
+const userIds = [1, 2, 0, 3];
 
 // 👍 now the line below is in the stacktrace
-Promise.all(userIds.map(async id => await getUser(id))).catch(console.log)
+Promise.all(userIds.map(async (id) => await getUser(id))).catch(console.log);
 ```
 
 would log
@@ -210,7 +214,7 @@ Error: with all frames present
 where thanks to explicit `await` in `map`, the end of the line `at async ([...])` would point to the exact place where
 `getUser` has been called
 
-*Side-note*: if async function that wrap `getUser` would miss `await` before return (anti-pattern #1 + anti-pattern #3)
+_Side-note_: if async function that wrap `getUser` would miss `await` before return (anti-pattern #1 + anti-pattern #3)
 then only one frame would left in the stacktrace:
 
 ```javascript
@@ -253,7 +257,6 @@ development unless for a very hot code per request or command. So removing `awai
 `return await`s should be one of the last places to search for noticeable performance boost and
 definitely should never be done up-front
 
-
 ### Why return await was considered as anti-pattern in the past
 
 There is a number of [excellent articles](https://jakearchibald.com/2017/await-vs-return-vs-return-await/) explained
@@ -267,19 +270,18 @@ is why resolving promises before returning them is the best practice for Node.js
 ### Notes:
 
 1. One other reason why async stacktrace has such tricky implementation is the limitation that stacktrace
-must always be built synchronously, on the same tick of event loop <span id="a1">[¹](#1)</span>
+   must always be built synchronously, on the same tick of event loop <span id="a1">[¹](#1)</span>
 2. Without `await` in `throwAsync` the code would be executed in the same phase of event loop. This is a
-degenerated case when OS **stack** would not get empty and stacktrace be full even without explicitly
-awaiting the function result. Usually usage of promises include some async operations and so parts of
-the stacktrace would get lost
+   degenerated case when OS **stack** would not get empty and stacktrace be full even without explicitly
+   awaiting the function result. Usually usage of promises include some async operations and so parts of
+   the stacktrace would get lost
 3. Zero-cost async stacktraces still would not work for complicated promise usages e.g. single promise
-awaited many times in different places
+   awaited many times in different places
 
 ### References:
-  <span id="1">1. </span>[Blog post on zero-cost async stacktraces in v8](https://v8.dev/blog/fast-async)
-  <br/>
 
-  <span id="2">2. </span>[Document on zero-cost async stacktraces with mentioned here implementation details](
-    https://docs.google.com/document/d/13Sy_kBIJGP0XT34V1CV3nkWya4TwYx9L3Yv45LdGB6Q/edit
-  )
-  <br/>
+<span id="1">1. </span>[Blog post on zero-cost async stacktraces in v8](https://v8.dev/blog/fast-async)
+<br/>
+
+<span id="2">2. </span>[Document on zero-cost async stacktraces with mentioned here implementation details](https://docs.google.com/document/d/13Sy_kBIJGP0XT34V1CV3nkWya4TwYx9L3Yv45LdGB6Q/edit)
+<br/>
