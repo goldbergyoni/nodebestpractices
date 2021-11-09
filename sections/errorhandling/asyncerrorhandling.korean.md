@@ -1,10 +1,10 @@
-# Use Async-Await or promises for async error handling
+# 비동기 에러 처리시에는 async-await 혹은 promise를 사용하라
 
-### One Paragraph Explainer
+### 한문단 설명
 
-Callbacks don’t scale well since most programmers are not familiar with them. They force to check errors all over, deal with nasty code nesting and make it difficult to reason about the code flow. Promise libraries like BlueBird, async, and Q pack a standard code style using RETURN and THROW to control the program flow. Specifically, they support the favorite try-catch error handling style which allows freeing the main code path from dealing with errors in every function
+콜백은 대부분의 프로그래머와 친하지 않기 때문에 잘 확장되지 않는다. 그것들은 에러를 전체적으로 확인하게 하고, 복잡한 코드 중첩을 다루게 하고, 코드 흐름에 대해 추론하기 어렵게 만든다. BlueBird, async, Q와 같은 Promise 라이브러리는 RETURN과 THROW를 사용하여 프로그램 흐름을 제어하는 표준 코드 스타일을 가진다. 특히, 그것들은 main 코드 경로가 모든 함수마다 에러를 처리하는 것으로부터 자유롭게 해주는 try-catch 에러 처리 스타일을 제공한다. 
 
-### Code Example – using promises to catch errors
+### 코드 예시 - promise를 사용하여 에러 잡기
 
 ```javascript
 doWork()
@@ -15,19 +15,19 @@ doWork()
  .then(verify);
 ```
 
-### Anti pattern code example – callback style error handling
+### 안티 패턴 코드 예시 – 콜백 스타일 에러 처리
 
 ```javascript
 getData(someParameter, function(err, result) {
     if(err !== null) {
-        // do something like calling the given callback function and pass the error
+        // 주어진 콜백 함수를 호출하는 것과 같은 작업을 수행하고 오류를 전달한다.
         getMoreData(a, function(err, result) {
             if(err !== null) {
-                // do something like calling the given callback function and pass the error
+                // 주어진 콜백 함수를 호출하는 것과 같은 작업을 수행하고 오류를 전달한다.
                 getMoreData(b, function(c) {
                     getMoreData(d, function(e) {
                         if(err !== null ) {
-                            // you get the idea? 
+                            // 감이 잡히는가?
                         }
                     })
                 });
@@ -37,26 +37,26 @@ getData(someParameter, function(err, result) {
 });
 ```
 
-### Blog Quote: "We have a problem with promises"
+### 블로그 인용: "promise는 문제를 가지고 있다"
 
- From the blog pouchdb.com
+ pouchdb.com 블로그에서
+ 
+ > 사실 콜백은 훨씬 더 불길한 일을 한다: 콜백은 우리가 프로그래밍 언어에서 일반적으로 당연하게 여기는 스택을 허용하지 않는다. 스택 없이 코드를 작성하는 것은 브레이크 없이 자동차를 운전하는 것과 비슷하다: 당신이 그것을 위해 애를 쓰고 그것이 없을 때까지 그것이 얼마나 절실히 필요한지 깨닫지 못한다. Promise의 핵심은 우리가 비동기식으로 돌아갔을 때 잃었던 언어 기본 요소인 return, throw 및 스택을 다시 제공하는 것이다. 그러나 당신들이 promise를 활용하려면 올바르게 사용하는 방법을 알아야 한다.
 
- > ……And in fact, callbacks do something even more sinister: they deprive us of the stack, which is something we usually take for granted in programming languages. Writing code without a stack is a lot like driving a car without a brake pedal: you don’t realize how badly you need it until you reach for it and it’s not there. The whole point of promises is to give us back the language fundamentals we lost when we went async: return, throw, and the stack. But you have to know how to use promises correctly in order to take advantage of them.
+### 블로그 인용: "promise 방식이 훨씬 더 간결하다"
 
-### Blog Quote: "The promises method is much more compact"
+ gosquared.com 블로그에서
 
- From the blog gosquared.com
+ > promise 방식이 훨씬 더 간결하고 명확하며 빠르게 작성할 수 있다. 작업 내에서 에러나 예외가 발생하면 단일 .catch() 핸들러에 의해 처리된다. 모든 에러를 처리할 수 있는 단일 장소가 있다는 것은 작업의 각 단계에 대해 에러 검사를 할 필요가 없다는 것을 의미한다.
 
- > ………The promises method is much more compact, clearer and quicker to write. If an error or exception occurs within any of the ops it is handled by the single .catch() handler. Having this single place to handle all errors means you don’t need to write error checking for each stage of the work.
+### 블로그 인용: "promise는 네이티브 ES6이며, 생성자와 함께 사용할 수 있다"
 
-### Blog Quote: "Promises are native ES6, can be used with generators"
+ StrongLoop 블로그에서
 
- From the blog StrongLoop
+ > 콜백은 에러 처리가 엉망이다. promise가 더 좋다. Express에 내장된 에러 처리를 promise와 결합하면 잡을 수 없는 예외의 가능성을 크게 낮춘다. promise는 네이티브 ES6이며 생성자와 함께 사용할 수 있고, Babel 같은 컴파일러를 통해 async/await와 같은 ES7 제안이다. 
 
- > ….Callbacks have a lousy error-handling story. Promises are better. Marry the built-in error handling in Express with promises and significantly lower the chances of an uncaught exception. Promises are native ES6, can be used with generators, and ES7 proposals like async/await through compilers like Babel
+### 블로그 인용: "당신에게 익숙한 모든 일반 흐름 제어 구조는 완전히 무너졌다"
 
-### Blog Quote: "All those regular flow control constructs you are used to are completely broken"
-
-From the blog Benno’s
-
- > ……One of the best things about asynchronous, callback-based programming is that basically all those regular flow control constructs you are used to are completely broken. However, the one I find most broken is the handling of exceptions. Javascript provides a fairly familiar try…catch construct for dealing with exceptions. The problem with exceptions is that they provide a great way of short-cutting errors up a call stack, but end up being completely useless if the error happens on a different stack…
+Benno’s 블로그에서
+ 
+ > 비동기식 콜백 기반 프로그래밍의 가장 좋은 점 중 하나는 기본적으로 당신이 익숙한 모든 규칙적인 흐름 제어 구조가 완전히 무너졌다는 것이다. 하지만, 가장 무너진 것은 예외 처리이다. Javascript는 예외 처리하기 위한 꽤 익숙한 try...catch 구조를 제공한다. 예외가 있는 문제는 콜 스택에서 오류를 짧게 줄일 수 있는 좋은 방법을 제공하지만 다른 스택에서 오류가 발생할 경우 완전히 무용지물이 된다는 것이다.
