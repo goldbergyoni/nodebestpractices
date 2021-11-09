@@ -1,10 +1,10 @@
-# Exit the process gracefully when a stranger comes to town
+# 낯선이가 들어오면 프로세스를 적절하게 중단하라
 
-### One Paragraph Explainer
+### 한문단 설명
 
-Somewhere within your code, an error handler object is responsible for deciding how to proceed when an error is thrown – if the error is trusted (i.e. operational error, see further explanation within best practice #3) then writing to log file might be enough. Things get hairy if the error is not familiar – this means that some component might be in a faulty state and all future requests are subject to failure. For example, assuming a singleton, stateful token issuer service that threw an exception and lost its state – from now it might behave unexpectedly and cause all requests to fail. Under this scenario, kill the process and use a ‘Restarter tool’ (like Forever, PM2, etc) to start over with a clean state.
+코드 내의 어딘가에 에러가 발생했을 때 에러 처리 객체는 어떻게 처리할 것인가를 정하는 역할을 합니다. 에러를 신뢰한다면(즉, best practice #3 작동상의 오류 추가 설명 참조) 로그 파일을 작성하는 것만으로도 충분하다. 에러가 익숙하지 않으면 복잡해질 수 있다. 이는 일부 구성요소가 잘못된 상태가 될 수 있고 이후 모든 요청이 실패할 수 있음을 의미한다. 예를 들어, 예외가 발생하고 상태가 손실된 싱글톤의 상태 저장 토큰 발급자 서비스를 가정하면 지금부터 예기치 않게 동작하여 모든 요청이 실패할 수 있다. 이 시나리오에서는 프로세스를 종료하고 '재시작 도구'(Forever, PM2 등)를 사용하여 깨끗한 상태로 다시 시작한다.
 
-### Code example: deciding whether to crash
+### 코드 예시: 충돌 여부 결정
 
 ```javascript
 // Assuming developers mark known operational errors with error.isOperational=true, read best practice #3
