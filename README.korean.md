@@ -564,7 +564,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 오류 === 고객의 실망. 간단하다
 
-🔗 [**자세히 보기: 모니터링!**](/sections/production/monitoring.md)
+🔗 [**자세히 보기: 모니터링!**](/sections/production/monitoring.korean.md)
 
 <br/><br/>
 
