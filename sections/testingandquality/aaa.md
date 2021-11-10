@@ -37,7 +37,7 @@ describe.skip('Customer classifier', () => {
 
 <br/><br/>
 
-### Code Example – Anti Pattern: no separation, one bulk, harder to interpret
+### 코드 예시 – 좋지 않은 패턴: 분리가 없고, 부피가 크고, 해석하기 어렵다.
 ```javascript
 test('Should be classified as premium', () => {
         const customerToClassify = {spent:505, joined: new Date(), id:1}
@@ -50,15 +50,16 @@ test('Should be classified as premium', () => {
 
 <br/><br/>
 
-###  "Include 6 parts in each test"
+###  "각 테스트에 6가지 포함"
 
- [From the blog "30 Node.js testing best practices" by Yoni Goldberg](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347)
+ [Yoni Goldberg 블로그에서 "30 Node.js 테스트 모범 사례](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347)
 
  ![A test report example](/assets/images/6-parts-in-test.jpg "A test report example")
 
 <br/><br/>
 
-### "It is important for the test reader to be able to quickly determine what behavior the test is verifying"
+### "테스트를 읽는 사람이 테스트에서 확인하는 동작을 빠르게 판단할 수 있는 것이 중요하다"
+
 From the book [XUnit Patterns](http://xunitpatterns.com/Four%20Phase%20Test.html):
 
 > It is important for the test reader to be able to quickly determine what behavior the test is verifying. It can be very confusing when various behaviors of the system under test (SUT) are being invoked, some to set up the pre-test state (fixture) of the SUT, others to exercise the SUT and yet others to verify the post-test state of the SUT. Clearly identifying the four phases makes the intent of the test much easier to see.
