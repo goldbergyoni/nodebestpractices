@@ -35,17 +35,17 @@ Joyent 블로그에서
 
 > 프로그래머 에러를 회복하는 가장 좋은 방법은 즉시 중지하는 것이다. 중지된 경우 프로그램을 자동적으로 재실행시키는 restarter를 사용하여 프로그램을 실행해라. restarter를 사용하면 일시적인 프로그램 에러에 직면하여 중지하는 것이 안정적인 서비스로 복원시키는 가장 빠른 방법이다. 
 
-### Blog Quote: "There are three schools of thoughts on error handling"
+### 블로그 인용: "에러 처리에 대해 세 가지 견해가 있다"
 
-From the blog: JS Recipes
+JS Recipes 블로그에서
 
-> …There are primarily three schools of thoughts on error handling:
-1. Let the application crash and restart it.
-2. Handle all possible errors and never crash.
-3. A balanced approach between the two
+> 에러 처리에 대해 주로 세 가지 견해가 있다:
+1. 응용 프로그림을 중지시키고 재실행하게 해라.
+2. 가능한 모든 에러를 처리하고 중지시키지 마라.
+3. 두 가지 사이의 균형적인 접근
 
-### Blog Quote: "No safe way to leave without creating some undefined brittle state"
+### 블로그 인용: "일부 정의되지 않은 취약 상태를 생성하지 않고는 안전한 방법이 없다.
 
-From Node.js official documentation
+Node.js 공식 문서에서
 
-> …By the very nature of how throw works in JavaScript, there is almost never any way to safely “pick up where you left off”, without leaking references, or creating some other sort of undefined brittle state. The safest way to respond to a thrown error is to shut down the process. Of course, in a normal web server, you might have many connections open, and it is not reasonable to abruptly shut those down because an error was triggered by someone else. The better approach is to send an error response to the request that triggered the error while letting the others finish in their normal time, and stop listening for new requests in that worker.
+> 자바스크립트에서 throw가 작동하는 방법의 특성상, 참조의 누설이나 다른 종류의 정의되지 않은 취약 상태를 생성하지 않고는 안전하게 "중단한 부분부터 시작"하는 방법은 거의 없다. 던져진 오류를 가장 안전하게 응답하는 방법은 프로세스를 종료시키는 것이다. 물론, 일반 웹 서버에서 많은 연결이 열려있을 수 있고, 다른 사람이 오류가 발생시켰기 때문에 갑자기 연결을 종료하는 것은 합리적이지 않다. 더 나은 접근은 에러를 트리거한 요청에 에러를 응답하는 동안 다른 사용자가 정상적인 시간에 끝내도록 하고 해당 작업자의 새 요청에 대한 수신을 중지하는 것이다.
