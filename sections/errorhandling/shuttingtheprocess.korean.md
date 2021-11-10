@@ -29,11 +29,11 @@ function errorHandler() {
 }
 ```
 
-### Blog Quote: "The best way is to crash"
+### 블로그 인용: "가장 최선의 방법은 중지하는 것이다"
 
-From the blog Joyent
+Joyent 블로그에서
 
-> …The best way to recover from programmer errors is to crash immediately. You should run your programs using a restarter that will automatically restart the program in the event of a crash. With a restarter in place, crashing is the fastest way to restore reliable service in the face of a transient programmer error…
+> 프로그래머 에러를 회복하는 가장 좋은 방법은 즉시 중지하는 것이다. 중지된 경우 프로그램을 자동적으로 재실행시키는 restarter를 사용하여 프로그램을 실행해라. restarter를 사용하면 일시적인 프로그램 에러에 직면하여 중지하는 것이 안정적인 서비스로 복원시키는 가장 빠른 방법이다. 
 
 ### Blog Quote: "There are three schools of thoughts on error handling"
 
