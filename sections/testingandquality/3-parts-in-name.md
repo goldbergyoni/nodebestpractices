@@ -1,20 +1,20 @@
-# Include 3 parts in each test name
+# 테스트 이름에 이 3가지를 포함해라
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 한문단 설명
 
-A test report should tell whether the current application revision satisfies the requirements for the people who are not necessarily familiar with the code: the tester, the DevOps engineer who is deploying and the future you two years from now. This can be achieved best if the tests speak at the requirements level and include 3 parts:
+테스트 보고서는 현재 응용 프로그램 개정판에 익숙하지 않은 사용자(테스터, 배포중인 DevOps 엔지니어와 지금으로부터 2년 후의 미래)의 요구를 충족시키는지 아닌지를 알려야 한다. 이는 테스트가 요구 사항 수준에서 말하는 3가지를 포함할 경우 가장 잘 달성된다.
 
-(1) What is being tested? For example, the ProductsService.addNewProduct method
+(1) 무엇을 테스트하고 있는가? 예를 들어, ProductsService.addNewProduct 메소드
 
-(2) Under what circumstances and scenario? For example, no price is passed to the method
+(2) 어떤 상황과 시나리오인가? 예를 들어, 메소드에 가격이 전달되지 않는다.
 
-(3) What is the expected result? For example, the new product is not approved
+(3) 예상하는 결과는 무엇인가? 예를 들어, 새로운 제품이 승인되지 않았다.
 
 <br/><br/>
 
-### Code example: a test name that incluces 3 parts
+### 코드 예시: 3가지를 포함하는 테스트 이름
 ```javascript
 //1. unit under test
 describe('Products Service', () => {
@@ -30,7 +30,7 @@ describe('Products Service', () => {
 
 <br/><br/>
 
-### Code Example – Anti Pattern: one must read the entire test code to understand the intent 
+### 코드 예시 - 좋지 않은 패턴: 의도를 이해하려면 전체 테스트 코드를 읽어야 한다.
 ```javascript
 describe('Products Service', () => {
   describe('Add new product', () => {
@@ -45,10 +45,10 @@ describe('Products Service', () => {
 
 <br/><br/>
 
-###  "Doing It Right Example: The test report resembles the requirements document"
+###  "올바른 예시: 테스트 보고서는 요구 사항 문서와 비슷하다."
 
- [From the blog "30 Node.js testing best practices" by Yoni Goldberg](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347)
+ [Yoni Goldberg 블로그에서 "30 Node.js 테스트 모범 사례"](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347)
 
- ![A test report example](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/test-report-like-requirements.jpeg "A test report example")
+ ![테스트 보고서 예시](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/test-report-like-requirements.jpeg "A test report example")
 
 <br/><br/>
