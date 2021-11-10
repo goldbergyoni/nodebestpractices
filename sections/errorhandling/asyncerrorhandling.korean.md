@@ -15,7 +15,7 @@ doWork()
  .then(verify);
 ```
 
-### 안티 패턴 코드 예시 – 콜백 스타일 에러 처리
+### 좋지 않은 패턴 코드 예시 – 콜백 스타일 에러 처리
 
 ```javascript
 getData(someParameter, function(err, result) {
