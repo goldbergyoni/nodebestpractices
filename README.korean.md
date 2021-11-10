@@ -451,7 +451,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 배포에 실패하였습니다, “프로덕트 추가” 라는 테스트가 실패했습니다. 이런 메시지를 보고 정확히 뭐가 잘못되었는지 알 수 있는가?
 
-🔗 [**자세히 보기: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
+🔗 [**자세히 보기: 테스트 이름에 이 3가지를 포함해라**](/sections/testingandquality/3-parts-in-name.md)
 
 <br/><br/>
 
@@ -462,7 +462,7 @@ null == undefined   // true
 **그렇게 하지 않을 경우:** 매일 하루종일 주요 코드를 읽는데 시간을 오래 쓰는 것도 모자라 간단해야하는 테스트 부분에도 열심히 머리를 써야 할 것이다.
 
 
-🔗 [**Read More: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.md)
+🔗 [**Read More: AAA 패턴을 따라 테스트를 구축해라**](/sections/testingandquality/aaa.md)
 
 <br/><br/>
 
@@ -480,7 +480,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 실패하는 테스트때문에 전개(deployment)가 중단되었다고 가정해 보자. 이제 팀원들은 소중한 시간을 조사하는데 소모한 뒤 슬픈 결론을 내릴 것이다: 시스템은 잘 작동하지만, 테스트간의 상호 간섭으로 빌드 실패.
 
-🔗 [**자세히 보기: Avoid global test fixtures**](/sections/testingandquality/avoid-global-test-fixture.md)
+🔗 [**자세히 보기: 공용 테스트 데이터를 **](/sections/testingandquality/avoid-global-test-fixture.md)
 
 <br/><br/>
 
