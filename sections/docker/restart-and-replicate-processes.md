@@ -37,7 +37,7 @@ FROM node:12-slim
 
 # The build logic comes here
 
-CMD ["pm2-runtime", "indes.js"]
+CMD ["pm2-runtime", "index.js"]
 ```
 
 </details>
