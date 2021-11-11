@@ -60,6 +60,6 @@ test('Should be classified as premium', () => {
 
 ### "테스트를 읽는 사람이 테스트에서 확인하는 동작을 빠르게 판단할 수 있는 것이 중요하다"
 
-From the book [XUnit Patterns](http://xunitpatterns.com/Four%20Phase%20Test.html):
+[XUnit Patterns](http://xunitpatterns.com/Four%20Phase%20Test.html) 책에서
 
-> It is important for the test reader to be able to quickly determine what behavior the test is verifying. It can be very confusing when various behaviors of the system under test (SUT) are being invoked, some to set up the pre-test state (fixture) of the SUT, others to exercise the SUT and yet others to verify the post-test state of the SUT. Clearly identifying the four phases makes the intent of the test much easier to see.
+> 테스트 독자가 테스트를 검증하는 행동을 빠르게 결정하는 것이 중요하다. 시스템 대상 테스트(SUT)의 다양한 행동들이 적용될 때, 일부는 SUT의 사전 테스트 상태(데이터)를 설정하고, 다른 일부는 SUT를 실행시키고, 나머지는 SUT의 사후 테스트를 검증하기 위해 실행될 때 매우 혼란스러울 수 있다. 명확하게 식별된 4단계는 테스트의 의도를 쉽게 파악할 수 있게 한다.
