@@ -532,11 +532,11 @@ null == undefined   // true
 
 <br/><br/>
 
-## ![✔] 4.11 정적분석도구를 이용해서 refactor를 정기적으로 해라
+## ![✔] 4.11 정적 분석 도구를 이용해 주기적으로 리팩토링하라.
 
-**핵심요약:** 정적분석도구(static analysis tool)는 코드의 품질을 객관적으로 개선하고 코드 유지를 쉽게 해준다. 코드스멜을 감지하면 CI 빌드가 실패하도록 정적분석도구를 넣어주면 된다. 이게 단순한 린보팅다 나은 주된 이유로는 여러 파일에 걸친 맥락에서 품질을 점검할 수 있다는 점 (예: 중복된 코드 감지), 더 발달된 분석을 할 수 있다는 점 (예: 코드 복잡도), 코드 문제의 전적과 진전을 따라 볼 수 있다는 점이 있다. 쓸만한 도구의 예를 두가지를 들자면 [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) 와 [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate))가 있다.
+**핵심요약:** 정적인 분석 도구를 사용하는 것은 당신으로 하여금 코드 퀄리티를 발전시키고, 코드 유지를 할 수 있도록 객관적인 방법을 제시하여 도움을 준다. code smells(심오한 문제를 일으킬 가능성이 있는 코드)을 발견했을 때 실패할 수 있도록 정적 분석 도구를 CI 빌드에 추가할 수 있다. 정적 분석 도구의 단순한 lint를 넘어서는 주 장점은 바로 여러 파일들의 컨텍스트에서 퀄리티를 분석하고(예: 중복 분석), 발전된 분석을 수행하며 (예: 코드 복잡도), 코드 이슈들의 히스토리와 과정을 따라갈 수 있게 하는 능력이다. 당신이 사용할 수 있는 두 가지 도구 예제는 [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube))와 [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate))가 있다.
 
-**그렇게 하지 않을 경우:** 아무리 반짝이는 새로나온 라이브러리나 최첨단 기능을 써봤자 코드 품질이 불량하면 버그와 성능은 못고친다
+**그렇게 하지 않을 경우:** 아무리 반짝이는 새로나온 라이브러리나 최첨단 기능을 쓰더라도, 코드의 품질이 불량하다면 버그와 성능은 고칠 수 없다.
 
 🔗 [**자세히 보기: Refactoring!**](/sections/testingandquality/refactoring.md)
 
