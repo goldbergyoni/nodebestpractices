@@ -1550,6 +1550,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "e-e-e",
+      "name": "Benjamin Forster",
+      "avatar_url": "https://avatars.githubusercontent.com/u/12589522?v=4",
+      "profile": "http://www.benjaminforster.com",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
