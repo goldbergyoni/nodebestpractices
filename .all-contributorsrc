@@ -1559,6 +1559,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "DanieleFedeli",
+      "name": "Daniele Fedeli",
+      "avatar_url": "https://avatars.githubusercontent.com/u/37077048?v=4",
+      "profile": "https://github.com/DanieleFedeli",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
