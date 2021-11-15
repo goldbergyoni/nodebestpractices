@@ -232,7 +232,7 @@
 
 ## ![✔] 3.1 ESLint를 사용하라
 
-**핵심요약:** [ESLint](https://eslint.org)는 발생 가능한 코드 에러를 체크하고 껄끄러운 간격(spacing)문제를 식별하는 것부터 프로그래머가 분별없이 에러를 던지는 것과 같은 코드의 심각한 안티 패턴을 감지하여 코드 스타일을 바꾸는 것에 대한 사실상의 표준이다. ESLint만으로도 자동으로 코드스타일을 고칠 수 있지만 [prettier](https://www.npmjs.com/package/prettier)와 [beautify](https://www.npmjs.com/package/js-beautify)같은 다른 툴들과 함께 사용될 경우 수정 부분을 포매팅함에 있어 더욱 더 강력한 힘을 발휘할 수 있다. 
+**핵심요약:** [ESLint](https://eslint.org)는 발생 가능한 코드 에러를 체크하고 껄끄러운 간격(spacing)문제를 식별하는 것부터 프로그래머가 분별없이 에러를 던지는 것과 같은 코드의 심각한 안티 패턴을 감지하여 코드 스타일을 바꾸는 것에 대한 사실상의 표준이다. ESLint만으로도 자동으로 코드스타일을 고칠 수 있지만 [prettier](https://www.npmjs.com/package/prettier)와 [beautify](https://www.npmjs.com/package/js-beautify)같은 다른 툴들과 함께 사용될 경우 수정 부분을 포매팅함에 있어 더욱 더 강력한 힘을 발휘할 수 있다.
 
 **그렇게 하지 않을 경우:** 프로그래머가 간격과 각 줄의 길이(line-width)와 같은 쓸데없는 문제에 집중하게 되는 등 프로젝트의 코드스타일에 대해 집착으로 시간을 낭비하게 된다.
 
@@ -261,8 +261,7 @@ function someFunction() {
 }
 
 // 나쁜 예
-function someFunction()
-{
+function someFunction() {
   // 코드 블록
 }
 ```
@@ -339,11 +338,11 @@ class SomeClassExample {}
 
 // 상수명은 const 키워드와 lowerCamelCase 사용
 const config = {
-  key: 'value'
+  key: "value",
 };
 
 // 변수와 함수 이름은 lowerCamelCase 사용
-let someVariableExample = 'value';
+let someVariableExample = "value";
 function doSomething() {}
 ```
 
@@ -377,12 +376,12 @@ function doSomething() {}
 
 ```javascript
 // 좋은 예
-module.exports.SMSProvider = require('./SMSProvider');
-module.exports.SMSNumberResolver = require('./SMSNumberResolver');
+module.exports.SMSProvider = require("./SMSProvider");
+module.exports.SMSNumberResolver = require("./SMSNumberResolver");
 
 // 나쁜 예
-module.exports.SMSProvider = require('./SMSProvider/SMSProvider.js');
-module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolver.js');
+module.exports.SMSProvider = require("./SMSProvider/SMSProvider.js");
+module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolver.js");
 ```
 
 <br/><br/>
@@ -396,18 +395,18 @@ module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolve
 ### 코드 예제
 
 ```javascript
-'' == '0'           // false
-0 == ''             // true
-0 == '0'            // true
+"" == "0"; // false
+0 == ""; // true
+0 == "0"; // true
 
-false == 'false'    // false
-false == '0'        // true
+false == "false"; // false
+false == "0"; // true
 
-false == undefined  // false
-false == null       // false
-null == undefined   // true
+false == undefined; // false
+false == null; // false
+null == undefined; // true
 
-' \t\r\n ' == 0     // true
+" \t\r\n " == 0; // true
 ```
 
 위의 모든 문장은 `===`를 사용했다면 false를 반환 했을것이다.
@@ -450,7 +449,6 @@ null == undefined   // true
 
 **핵심요약:** 코드 내부에 익숙하지 않은 QA 엔지니어들과 개발자들에게 따로 설명이 필요 없도록 requirement 계층에서 이미 자명하도록 해라. 무엇을 (unit under test), 어떤 환경에서, 어떤 결과를 예상하고 테스트 하는 것인지 테스트 이름에 명시해라.
 
-
 **그렇게 하지 않을 경우:** 배포에 실패하였습니다, “프로덕트 추가” 라는 테스트가 실패했습니다. 이런 메시지를 보고 정확히 뭐가 잘못되었는지 알 수 있는가?
 
 🔗 [**자세히 보기: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
@@ -462,7 +460,6 @@ null == undefined   // true
 **핵심요약:** 테스트를 다음 세가지 부분으로 명확히 나누어라: 준비 (arrange), 실행 (act), 표명 (assert). 제일 먼저 테스트를 준비하고, 그 다음 테스트 단위(unit under test)를 실행하고, 마지막은 확인 단계다. 이 구조를 따르는 것은 읽는이가 힘들여 머리를 쓰지 않고도 테스트 설계를 이해할 수 있도록 보장한다.
 
 **그렇게 하지 않을 경우:** 매일 하루종일 주요 코드를 읽는데 시간을 오래 쓰는 것도 모자라 간단해야하는 테스트 부분에도 열심히 머리를 써야 할 것이다.
-
 
 🔗 [**Read More: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.md)
 
@@ -548,7 +545,7 @@ null == undefined   // true
 
 **핵심요약:** 여러 요청에 걸친 막대한 로직을 미들웨어가 수용하는 경우, 웹 프레임워크 전체를 깨우지 않고 격리 상태로 테스트 할만한 가치가 있다. {req, res, next} 객체들을 스텁(stub)하여 염탐(spy)하면 쉽게 달성할 수 있다.
 
-**그렇게 하지 않을 경우:**  Express 미들웨어의 버그 === 거의 모든 요청의 버그
+**그렇게 하지 않을 경우:** Express 미들웨어의 버그 === 거의 모든 요청의 버그
 
 🔗 [**자세히 보기: Test middlewares in isolation**](/sections/testingandquality/test-middlewares.md)
 
@@ -560,7 +557,7 @@ null == undefined   // true
 
 ## ![✔] 5.1. 모니터링
 
-**핵심요약:** 모니터링은 고객이 문제를 발견하기 전에 먼저 발견하는 게임이다. 모니터링에는 분명히 전례가없는 중요성을 부여해야한다. 솔루션에 너무 많은 기능들이 들어가 있을 가능성이 있으므로 확인해야만하는 기본 항목을 내부적으로 정의하고 나서 추가적인 기능들을 살펴보고 필요한 기능들이 모두 들어있는 솔루션을 선택하라. 아래의 'gist'를 클릭하면 솔루션 개요를 볼 수 있다.
+**핵심요약:** 모니터링은 고객이 문제를 발견하기 전에 먼저 발견하는 게임이다. 모니터링에는 분명히 전례가없는 중요성을 부여해야한다. 솔루션에 너무 많은 기능들이 들어가 있을 가능성이 있으므로 확인해야만하는 기본 항목을 내부적으로 정의하고 나서 추가적인 기능들을 살펴보고 필요한 기능들이 모두 들어있는 솔루션을 선택하라. 아래의 '요점'을 클릭하면 솔루션 개요를 볼 수 있다.
 
 **그렇게 하지 않을 경우:** 오류 === 고객의 실망. 간단하다
 
@@ -574,7 +571,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 이해하기 힘든 블랙박스가 되어버려서 필요한 정보를 추가하기 위해 모든 로그를 다시 작성하게 될것이다
 
-🔗 [**자세히 보기: Increase transparency using smart logging**](/sections/production/smartlogging.md)
+🔗 [**자세히 보기: Increase transparency using smart logging**](/sections/production/smartlogging.korean.md)
 
 <br/><br/>
 
@@ -584,17 +581,17 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 불쌍한 싱글 스레드가 어플리케이션의 코어를 처리하는 대신 인프라 작업을 수행하느라 바빠져서 성능이 저하될 것이다
 
-🔗 [**자세히 보기: 가능한 모든 것들(예: gzip, SSL)을 reverse proxy에 위임하라**](/sections/production/delegatetoproxy.md)
+🔗 [**자세히 보기: 가능한 모든 것들(예: gzip, SSL)을 reverse proxy에 위임하라**](/sections/production/delegatetoproxy.korean.md)
 
 <br/><br/>
 
 ## ![✔] 5.4. 의존성을 잠궈라(Lock dependencies)
 
-**핵심요약:** 코드는 모든 환경에서 동일해야하지만 놀랍게도 npm을 사용하면 기본적으로 환경간에 종속성이 달라질 수 있는데, 다양한 환경에서 패키지를 설치하면 패키지의 최신 패치 버전을 가져오기 때문이다. npm config 파일인 .npmrc를 사용하여이 문제를 극복해라. 각 환경에 각 패키지의 최신 버전이 아닌 정확한 버전을 저장하도록 알려준다. 또는 세밀하게 제어하려면 `npm shrinkwrap`을 사용하라. \* 업데이트 : NPM5부터는 종속성이  기본적으로 잠겨 있다. 새로운 패키지 관리자인 Yarn도 기본적으로 잠겨 있다.
+**핵심요약:** 코드는 모든 환경에서 동일해야하지만 놀랍게도 npm을 사용하면 기본적으로 환경간에 종속성이 달라질 수 있는데, 다양한 환경에서 패키지를 설치하면 패키지의 최신 패치 버전을 가져오기 때문이다. npm config 파일인 .npmrc를 사용하여이 문제를 극복해라. 각 환경에 각 패키지의 최신 버전이 아닌 정확한 버전을 저장하도록 알려준다. 또는 세밀하게 제어하려면 `npm shrinkwrap`을 사용하라. \* 업데이트 : NPM5부터는 종속성이 기본적으로 잠겨 있다. 새로운 패키지 관리자인 Yarn도 기본적으로 잠겨 있다.
 
 **그렇게 하지 않을 경우:** QA팀은 코드를 철저히 테스트 했음에도 테스트 환경과는 다르게 작동하는 버전을 승인할 것이다. 심지어 같은 프로덕션 클러스터의 여러 서버가 서로 다른 코드를 실행할 수도 있다.
 
-🔗 [**자세히 보기: Lock dependencies**](/sections/production/lockdependencies.md)
+🔗 [**자세히 보기: Lock dependencies**](/sections/production/lockdependencies.korean.md)
 
 <br/><br/>
 
@@ -604,7 +601,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 명확한 전략없이 수십 개의 인스턴스와 너무 많은 도구 (클러스터 관리, 도커, PM2)를 실행하면 데브옵스가 혼란을 겪을 수 있다
 
-🔗 [**자세히 보기: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
+🔗 [**자세히 보기: Guard process uptime using the right tool**](/sections/production/guardprocess.korean.md)
 
 <br/><br/>
 
@@ -614,7 +611,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 앱이 사용 가능한 리소스 중 25%(!)에도 못 미치게 활용할 것이다. 일반적인 서버는 CPU 코어가 4개 이상임에도 Node를 기본형으로 배포하면 그 중 단 1 개만 사용하게 될것이다 (AWS beanstalk과 같은 PaaS 서비스 사용해도 마찬가지)
 
-🔗 [**자세히 보기: 모든 CPU를 활용하라**](/sections/production/utilizecpu.md)
+🔗 [**자세히 보기: 모든 CPU를 활용하라**](/sections/production/utilizecpu.korean.md)
 
 <br/><br/>
 
@@ -624,7 +621,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 단지 서버 진단을 목적으로 일부 정보를 추출하기 위하여 상용서버에 코드를 배포하는 "진단용 배포"를 자주 수행하고 있게 될 것이다
 
-🔗 [**자세히 보기: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
+🔗 [**자세히 보기: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.korean.md)
 
 <br/><br/>
 
@@ -901,7 +898,7 @@ null == undefined   // true
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A5:Broken%20Access%20Access%20Control-green.svg" alt=""/></a>
 
-**핵심요약:** Node.js가 승인에 제한이 없는 루트 사용자로써 실행하는 일이 비일비재하다. 예를 들면, 도커 컨테이너 안에서는 이것이 기본적인 설정이다. 루트가 아닌 사용자를 만들어 도커 이미지에 구워넣거나 (아래예시) 프로세스를 "-u username" 플래그를 써서  이 사용자를 대신해서 실행하는것을 추천한다.
+**핵심요약:** Node.js가 승인에 제한이 없는 루트 사용자로써 실행하는 일이 비일비재하다. 예를 들면, 도커 컨테이너 안에서는 이것이 기본적인 설정이다. 루트가 아닌 사용자를 만들어 도커 이미지에 구워넣거나 (아래예시) 프로세스를 "-u username" 플래그를 써서 이 사용자를 대신해서 실행하는것을 추천한다.
 
 **그렇게 하지 않을 경우:** 공격자가 서버에 스크립트를 실행하는데 성공하면 로컬 머신을 마음대로 할 권리를 무제한으로 갖게 된다 (예: iptable을 바꾼다던가 트래픽 경로를 자기 서버로 변경 한다던가)
 
@@ -997,7 +994,7 @@ null == undefined   // true
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**핵심요약:** 개발 과정의 모든 단계는 다중인증(MFA: multi-factor authentication)을 사용해서 보호해야한다. npm이나 Yarn은 공격자들이 개발자 암호를 수집할 수 있는 절호의 기회다. 공격자들은 개발자의 크리덴셜을 사용하면 악의적인 코드를 다양한 프로젝트와 서비스에 널리 설치된 라이브러리에 주입할 수 있다. 공개 출판 되었다면  웹상에서도 가능하다. npm 이중인증을 활성화 해 두면 공격자들이 패키지 코드를 변경할 확률이 0에 가까워진다.
+**핵심요약:** 개발 과정의 모든 단계는 다중인증(MFA: multi-factor authentication)을 사용해서 보호해야한다. npm이나 Yarn은 공격자들이 개발자 암호를 수집할 수 있는 절호의 기회다. 공격자들은 개발자의 크리덴셜을 사용하면 악의적인 코드를 다양한 프로젝트와 서비스에 널리 설치된 라이브러리에 주입할 수 있다. 공개 출판 되었다면 웹상에서도 가능하다. npm 이중인증을 활성화 해 두면 공격자들이 패키지 코드를 변경할 확률이 0에 가까워진다.
 
 **그렇게 하지 않을 경우:** [암호를 하이재킹 당한 eslint 개발자에 대해 들어봤는가?](https://medium.com/@oprearocks/eslint-backdoor-what-it-is-and-how-to-fix-the-issue-221f58f1a8c8)
 
@@ -1154,8 +1151,8 @@ null == undefined   // true
 공동 저자들은 새로운 모범사례를 제안하거나, 사안을 분류하거나, 풀리퀘스트를 검토하는 등 리포지토리에 정기적으로 기여하는 일원들입니다. 수천명의 사람들이 더 나은 Node.js 애플리케이션을 만들 수 있도록 안내하며 돕는데 관심이 있으시다면 [기여자 지침서](/.operations/CONTRIBUTING.md)를 읽어주세요 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> | <a href="https://github.com/kevynb" target="_blank"><img src="assets/images/members/kevyn.png" width="59" height="59"></a> |
-| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-|        [이도 릭터 (창립주)](https://github.com/idori)        |      [키스 홀리데이](https://github.com/TheHollidayInn)      |          [케빈 브뤼예르](https://github.com/kevynb)          |
+| :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: |
+|                                     [이도 릭터 (창립주)](https://github.com/idori)                                      |                                         [키스 홀리데이](https://github.com/TheHollidayInn)                                         |                                         [케빈 브뤼예르](https://github.com/kevynb)                                         |
 
 ### 전 공동 저자
 
@@ -1166,6 +1163,7 @@ null == undefined   // true
 <br/>
 
 ## 기여하기
+
 오픈소스에 참여하고 싶으시다면 지금이 바로 기회! [기여자 지침서](.operations/CONTRIBUTING.md)에서 더 자세한 내용을 확인하세요.
 
 ## 기여자 ✨
@@ -1305,4 +1303,5 @@ null == undefined   // true
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
