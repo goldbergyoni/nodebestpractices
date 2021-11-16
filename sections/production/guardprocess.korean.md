@@ -14,5 +14,5 @@
 
   > ... 개발과정에서(in development), 너는 커맨드라인에서 간단히 node server.js 혹은 비슷한 커맨드로 서버를 실행했을 것이다. **그러나 프로덕션(in production)에서 똑같이하면 재앙과 같은 결과로 이어질 수 있다. 앱이 죽으면 너가 재시동할 때 까지 오프라인이 될 것이다.** 너의 앱이 죽었을 때 재시작을 보장하려면 프로세스 매니저를 사용하라. 프로세스 매니저는 애플리케이션의 전개를 가능하게 하고 높은 수준의 유효성을 제공하며 런타임에 애플리케이션을 관리할 수 있도록 해주는 애플리케이션을 위한 일종의 "컨테이너" 이다.
 
-- 다음 중간 블로그 포스트에서 [노드 클러스터링 이해하기](https://medium.com/@CodeAndBiscuits/understanding-nodejs-clustering-in-docker-land-64ce2306afef#.cssigr5z3):
+- 다음 블로그 포스트 중에서 [노드 클러스터링 이해하기](https://medium.com/@CodeAndBiscuits/understanding-nodejs-clustering-in-docker-land-64ce2306afef#.cssigr5z3):
   > ... Docker-Land 내 Node.js 클러스터링에 대해 이해하기 "도커 컨테이너는 간소화된, 가벼운 가상 환경이며 가능한 한 프로세스를 간소화하도록 디자인되어 있다. 그들 스스로의 자원을 관리하고 조정하는 프로세스는 더이상 가치있게 여겨지지 않는다. **대신, Kubernetes, Mesos 그리고 Cattle 과 같은 관리 스택들은 이러한 자원들이 infrastructure-wide하게 관리되어야 한다는 개념을 널리알렸다.** CPU와 메모리 자원은 "schedulers"에 의해 할당되며, 네트워크 자원들은 스택이 제공되는 로드 발란서에 의해 관리된다.

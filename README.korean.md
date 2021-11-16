@@ -244,7 +244,7 @@
 
 **핵심요약:** vanlla JS만 지원하는 ESLinst의 표준 규칙 위에 [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha), [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)와 같은 Node에 특화된 플러그인을 같이 사용하라.
 
-**그렇게 하지 않을 경우:** 많은 결함이 있는 Node.js 코드 패턴들이 안중에서 벗어날 수 있다. 예를 들어 프로그래머는 변수로된 파일경로를 이용해 require(파일경로변수)로 파일을 가져올수 있다. 이것은 공격자들이 어떤 JS script도 실행시킬 수 있게 한다. Node.js linter는 그러한 패턴을 감지하고 미리 알려준다.
+**그렇게 하지 않을 경우:** 많은 결함이 있는 Node.js 코드 패턴들이 안중에서 벗어날 수 있다. 예를 들어 프로그래머는 변수로된 파일경로를 이용해 require(variableAsPath)로 파일을 가져올수 있다. 이것은 공격자들이 어떤 JS script도 실행시킬 수 있게 한다. Node.js linter는 그러한 패턴을 감지하고 미리 알려준다.
 
 <br/><br/>
 
@@ -278,7 +278,7 @@ function someFunction() {
 
 **핵심요약:** ESLint를 써서 제대로 문장을 끝내고 있는지 자각하라. [Prettier](https://prettier.io/) or [Standardjs](https://standardjs.com/)는 자동으로 이 문제를 해결해준다.
 
-**그렇게 하지 않을 경우:** 이전 섹션에서 본것처럼 자바스크립트의 인터프리터는 세미콜론이 없으면 자동으로 문장의 끝에 세미콜론을 붙이거나, 문장이 끝났어야 함에도 끝났다고 인지하지 못하여 의도되지 않은 결과를 야기할 수 있다. 대부분의 의도하지 않은 에러들은 assignment를 사용하고 즉시실행함수(imediately invoked function expression)을 사용하는 것을 피함으로써 이를 예방할 수 있다.
+**그렇게 하지 않을 경우:** 이전 섹션에서 본것처럼 자바스크립트의 인터프리터는 세미콜론이 없으면 자동으로 문장의 끝에 세미콜론을 붙이거나, 문장이 끝났어야 함에도 끝났다고 인지하지 못하여 의도되지 않은 결과를 야기할 수 있다. 대부분의 의도하지 않은 에러들은 assignment를 사용하고 즉시실행함수(imediately invoked function expression)의 사용을 피함으로써 이를 예방할 수 있다.
 
 ### 코드 예제
 
@@ -306,7 +306,7 @@ const a = [1,2,3]
 // 나쁜 예 — 예외 발생
 const count = 2 // 2()를 호출하려 하지만, 2는 함수가 아니다
 (function doSomething() {
-  // 무엇이든 놀라운 것을 포함해보기
+  // 무엇이든 놀라운 것을 포함해 보아라
 }())
 // 즉시실행함수(immediately invoked function) 전에 세미콜론을 놓거나, const 정의 후에 놓거나, 익명함수의 반환값을 변수에 저장하던가, 아니면 아예 IIFE를 쓰지 마라
 ```
@@ -318,7 +318,7 @@ const count = 2 // 2()를 호출하려 하지만, 2는 함수가 아니다
 
 ## ![✔] 3.5 함수에 이름을 붙여라
 
-**핵심요약:** 클로저와 콜백을 포함한 모든 함수에 이름을 붙여라. 익명함수를 피해라. 이것은 노드 앱을 프로파일링 할때 특히 유용하다. 모든 함수를 명명하는 것은 당신이 메모리 스냅샷을 확인할때 당신이 보고있는 것이 무엇인지 쉽게 이해 할수있도록 해준다.
+**핵심요약:** 클로저와 콜백을 포함한 모든 함수에 이름을 붙여라. 익명함수 사용을 피해라. 이것은 노드 앱을 프로파일링 할때 특히 유용하다. 모든 함수를 명명하는 것은 당신이 메모리 스냅샷을 확인할때 당신이 보고있는 것이 무엇인지 쉽게 이해 할수있도록 해준다.
 
 **그렇게 하지 않을 경우:** 당신이 익명함수에서 메모리 소비가 많다는 것을 확인 했을 땐 코어 덤프(메모리 스냅샷)을 이용해 프로덕션 문제를 디버깅하는 것이 어려울 수도 있습니다.
 
@@ -571,7 +571,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 이해하기 힘든 블랙박스가 되어버려서 필요한 정보를 추가하기 위해 모든 로그를 다시 작성하게 될것이다
 
-🔗 [**자세히 보기: Increase transparency using smart logging**](/sections/production/smartlogging.korean.md)
+🔗 [**자세히 보기: 스마트 로깅으로 투명성을 높여라**](/sections/production/smartlogging.korean.md)
 
 <br/><br/>
 
@@ -591,7 +591,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** QA팀은 코드를 철저히 테스트 했음에도 테스트 환경과는 다르게 작동하는 버전을 승인할 것이다. 심지어 같은 프로덕션 클러스터의 여러 서버가 서로 다른 코드를 실행할 수도 있다.
 
-🔗 [**자세히 보기: Lock dependencies**](/sections/production/lockdependencies.korean.md)
+🔗 [**자세히 보기: 의존성 잠금**](/sections/production/lockdependencies.korean.md)
 
 <br/><br/>
 
@@ -601,7 +601,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 명확한 전략없이 수십 개의 인스턴스와 너무 많은 도구 (클러스터 관리, 도커, PM2)를 실행하면 데브옵스가 혼란을 겪을 수 있다
 
-🔗 [**자세히 보기: Guard process uptime using the right tool**](/sections/production/guardprocess.korean.md)
+🔗 [**자세히 보기: 올바른 툴을 사용하여 프로세스 가동시간을 지켜라**](/sections/production/guardprocess.korean.md)
 
 <br/><br/>
 
@@ -621,7 +621,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 단지 서버 진단을 목적으로 일부 정보를 추출하기 위하여 상용서버에 코드를 배포하는 "진단용 배포"를 자주 수행하고 있게 될 것이다
 
-🔗 [**자세히 보기: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.korean.md)
+🔗 [**자세히 보기: ‘유지 엔드포인트’를 생성하라**](/sections/production/createmaintenanceendpoint.korean.md)
 
 <br/><br/>
 
