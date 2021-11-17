@@ -859,7 +859,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Your generosity and permissive approach greatly increases the attack surface and encourages the attacker to try out many inputs until they find some combination to crash the application
 
-🔗 [**Read More: Validate incoming JSON schemas**](/sections/security/validation.md)
+🔗 [**Read More: Validate incoming JSON schemas**](/sections/security/validation.korean.md)
 
 <br/><br/>
 
