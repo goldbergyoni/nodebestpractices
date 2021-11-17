@@ -886,7 +886,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** An attacker can issue unlimited automated password attempts to gain access to privileged accounts on an application
 
-🔗 [**Read More: Login rate limiting**](/sections/security/login-rate-limit.md)
+🔗 [**Read More: Login rate limiting**](/sections/security/login-rate-limit.korean.md)
 
 <br/><br/>
 
