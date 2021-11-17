@@ -835,7 +835,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Passwords or secrets that are persisted without using a secure function are vulnerable to brute forcing and dictionary attacks that will lead to their disclosure eventually.
 
-🔗 [**Read More: Use Bcrypt**](/sections/security/bcryptpasswords.korean.md)
+🔗 [**Read More: Use Bcrypt**](/sections/security/bcryptpasswords.md)
 
 <br/><br/>
 
@@ -847,7 +847,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** An attacker might store malicious JavaScript code in your DB which will then be sent as-is to the poor clients
 
-🔗 [**Read More: Escape output**](/sections/security/escape-output.korean.md)
+🔗 [**Read More: Escape output**](/sections/security/escape-output.md)
 
 <br/><br/>
 
@@ -859,7 +859,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Your generosity and permissive approach greatly increases the attack surface and encourages the attacker to try out many inputs until they find some combination to crash the application
 
-🔗 [**Read More: Validate incoming JSON schemas**](/sections/security/validation.korean.md)
+🔗 [**Read More: Validate incoming JSON schemas**](/sections/security/validation.md)
 
 <br/><br/>
 
@@ -871,7 +871,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Expired, or misplaced tokens could be used maliciously by a third party to access an application and impersonate the owner of the token.
 
-🔗 [**Read More: Blacklist JSON Web Tokens**](/sections/security/expirejwt.korean.md)
+🔗 [**Read More: Blacklist JSON Web Tokens**](/sections/security/expirejwt.md)
 
 <br/><br/>
 
@@ -886,7 +886,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** An attacker can issue unlimited automated password attempts to gain access to privileged accounts on an application
 
-🔗 [**Read More: Login rate limiting**](/sections/security/login-rate-limit.korean.md)
+🔗 [**Read More: Login rate limiting**](/sections/security/login-rate-limit.md)
 
 <br/><br/>
 
@@ -898,7 +898,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** An attacker who manages to run a script on the server gets unlimited power over the local machine (e.g. change iptable and re-route traffic to his server)
 
-🔗 [**Read More: Run Node.js as non-root user**](/sections/security/non-root-user.korean.md)
+🔗 [**Read More: Run Node.js as non-root user**](/sections/security/non-root-user.md)
 
 <br/><br/>
 
