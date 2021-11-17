@@ -898,7 +898,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** An attacker who manages to run a script on the server gets unlimited power over the local machine (e.g. change iptable and re-route traffic to his server)
 
-🔗 [**Read More: Run Node.js as non-root user**](/sections/security/non-root-user.md)
+🔗 [**Read More: Run Node.js as non-root user**](/sections/security/non-root-user.korean.md)
 
 <br/><br/>
 
