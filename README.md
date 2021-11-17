@@ -847,7 +847,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** An attacker might store malicious JavaScript code in your DB which will then be sent as-is to the poor clients
 
-🔗 [**Read More: Escape output**](/sections/security/escape-output.md)
+🔗 [**Read More: Escape output**](/sections/security/escape-output.korean.md)
 
 <br/><br/>
 
