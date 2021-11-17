@@ -1,14 +1,14 @@
-# Assign ‘TransactionId’ to each log statement
+# 각 로그 문에 '트랜잭션 id'를 할당하라.
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 한문단 설명
 
-A typical log is a warehouse of entries from all components and requests. Upon detection of some suspicious line or error, it becomes hairy to match other lines that belong to the same specific flow (e.g. the user “John” tried to buy something). This becomes even more critical and challenging in a microservice environment when a request/transaction might span across multiple computers. Address this by assigning a unique transaction identifier value to all the entries from the same request so when detecting one line one can copy the id and search for every line that has similar transaction id. However, achieving this In Node is not straightforward as a single thread is used to serve all requests –consider using a library that that can group data on the request level – see code example on the next slide. When calling other microservices, pass the transaction id using an HTTP header like “x-transaction-id” to keep the same context.
+일반적인 로그는 모든 구성 요소 및 요청의 항목 창고이다. 일부 의심스러운 줄이나 에러가 감지되면, 동일한 특정 흐름에 속하는 다른 줄을 매치하기 어려워진다. (예: 유저 'John'이 무언가를 사려고 시도 했다.) 이는 요청/트랜잭션이 여러 컴퓨터에 걸쳐 있을 수 있는 마이크로서비스 환경에서 더 중요해지고 어려워지게 된다. 동일한 요청으로부터 모든 항목에 고유한 트랜잭션 식별자가 값을 할당해서 문제를 해결하여 한 줄을 감지할 때 id를 복사하고 유사한 트랜잭션 id를 가진 모든 줄을 검색할 수 있다. 그러나, 노드에서 이를 달성하는 것은 모든 요청을 처리하는데 사용되기 때문에 쉽지 않다. 요청 레벨에서 데이터를 그룹화할 수 있는 라이브러리를 사용하는 것을 고려해라. 다음 슬라이드 코드 예시를 참조해라. 다른 마이크로서비스를 호출할 때, 동일한 컨텍스트를 유지하기 위해 "x-transaction-id"와 같은 HTTP 헤더를 사용해서 트랜잭션 ID를 전달한다.
 
 <br/><br/>
 
-### Code example: typical Express configuration
+### 코드 예시: 일반적인 Express 구성
 
 ```javascript
 // when receiving a new request, start a new isolated context and set a transaction id. The following example is using the npm library continuation-local-storage to isolate requests
