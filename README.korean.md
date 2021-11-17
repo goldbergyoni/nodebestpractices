@@ -764,7 +764,7 @@ null == undefined   // true
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
 
-**핵심요약:** 보안 취약성 및 문제들을 잡기 위해서 코드가 작성될 때 [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) 같은 보안 관련 linter 플러그인들을 사용하라. 이것은 eval의 사용 또는 문자열 리터럴로 모듈을 가져오는 것, 자식 프로세스 호출 등과 같은 보안 취약점들을 잡을 수 있도록 돕는다. 아래 'Read more'을 클릭하여 보안 linter로 포착되는 경우의 코드 예제를 확인하라.
+**핵심요약:** 보안 취약성 및 문제들을 잡기 위해서 코드가 작성될 때 [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) 같은 보안 관련 linter 플러그인들을 사용하라. 이것은 eval의 사용 또는 문자열 리터럴로 모듈을 가져오는 것, 자식 프로세스 호출 등과 같은 보안 취약점을 잡을 수 있도록 돕는다. 아래 'Read more'을 클릭하여 보안 linter로 포착되는 경우의 코드 예제를 확인하라.
 
 **그렇게 하지 않을 경우:** 개발 과정에서 직접적인 보안 취약점이 될 수 있었던 부분이 상용에서도 큰 문제가 되어 다가올 수 있다. 또한 프로젝트는 일관된 코드 보안 사례를 따르지 않게 되어 취약점이 생기거나, 민감한 secrets들이 원격 repository로 커밋될 수 있다.
 
@@ -772,13 +772,13 @@ null == undefined   // true
 
 <br/><br/>
 
-## ![✔] 6.2. 미들웨어로 병행연산 (concurrent) 요청들을 제한해라
+## ![✔] 6.2. 미들웨어로 병행연산 (concurrent) 요청들을 제한하라.
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**핵심요약:** DOS 서비스 거부 공격은 흔하며 하기에도 비교적 쉽다. 클라우드 로드밸런서, 클라우드 방화벽, nginx, [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) 패키지나, (소규모의 덜 중요한 앱의 경우) 비율제한 미들웨어(예: [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))를 써서 비율제한을 시행해라.
+**핵심요약:** DOS 서비스 공격은 굉장히 대중적이고, 수행하기에 상대적으로 쉬운 편이다. 클라우드 로드밸런서, 클라우드 방화벽, nginx, [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) 패키지들이나 (작고 상대적으로 중요하지 않은 앱들에 대해) 속도 제한 미들웨어(예:[express-rate-limit](https://www.npmjs.com/package/express-rate-limit)) 같은 외부 서비스를 사용해서 속도 제한을 구현한다.
 
-**그렇게 하지 않을 경우:** 애플리케이션이 서비스 거부 공격을 받으면 실제 이용자들이 받는 서비스가 저하되거나 먹통이 된다.
+**그렇게 하지 않을 경우:** 애플리케이션을 사용하는 유저들이 사용이 불가능하거나 저하되는 서비스를 받게되는 문제를 초래할 수 있다.
 
 🔗 [**자세히 보기: Implement rate limiting**](/sections/security/limitrequests.md)
 
