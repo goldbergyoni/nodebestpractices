@@ -692,7 +692,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 이전에 어떤일이 일어났는지에 대한 컨텍스트 없이 에러 로그를 확인하는 것은 문제를 해결하는 것을 더 어렵고 느리게 만든다
 
-🔗 [**자세히 보기: Assign ‘TransactionId’ to each log statement**](/sections/production/assigntransactionid.md)
+🔗 [**자세히 보기: 각 로그 문에 '트랜잭션 id'를 할당하라.**](/sections/production/assigntransactionid.md)
 
 <br/><br/>
 
@@ -702,7 +702,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 이 단순한 속성을 빠뜨리면 성능이 크게 저하된다. 예를 들어 Express에서 서버 사이드 렌더링(Server Side Rendering, SSP)을 사용할때 `NODE_ENV`를 빠뜨리면 3배 느려진다
 
-🔗 [**자세히 보기: Set NODE_ENV=production**](/sections/production/setnodeenv.md)
+🔗 [**자세히 보기: NODE_ENV = production으로 설정하라**](/sections/production/setnodeenv.md)
 
 <br/><br/>
 
@@ -720,7 +720,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 새로 발견된 버그나 취약점이 상용에서 운영중인 어플리케이션을 악용하는데 사용될 수 있으며, 다양한 모듈들에서 지원을 하지 않게 되고 유지보수하는 것이 힘들어 지게될것이다
 
-🔗 [**자세히 보기: Use an LTS release of Node.js**](/sections/production/LTSrelease.md)
+🔗 [**자세히 보기: Node.js의 LTS 릴리즈 버전을 사용해라**](/sections/production/LTSrelease.md)
 
 <br/><br/>
 
@@ -730,7 +730,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 어플리케이션 로그 라우팅 처리 === 확장성 저하, 로그 유실, 관심사의 분리 실패(Separation of Concerns, SoC)
 
-🔗 [**자세히 보기: Log Routing**](/sections/production/logrouting.md)
+🔗 [**자세히 보기: 로그 라우팅**](/sections/production/logrouting.md)
 
 <br/><br/>
 
