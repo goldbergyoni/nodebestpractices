@@ -1586,6 +1586,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "jjy821",
+      "name": "정진영",
+      "avatar_url": "https://avatars.githubusercontent.com/u/88075341?v=4",
+      "profile": "https://jjy0821.tistory.com/",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
