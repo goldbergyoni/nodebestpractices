@@ -1,4 +1,4 @@
-# Limit payload size using a reverse-proxy or a middleware
+# リバースプロキシまたはミドルウェアを使用してペイロードのサイズを制限する
 
 ### 一段落説明
 
