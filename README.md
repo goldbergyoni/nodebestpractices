@@ -1628,6 +1628,9 @@ Thanks goes to these wonderful people who have contributed to this repository!
     <td align="center"><a href="https://github.com/djob195"><img src="https://avatars.githubusercontent.com/u/17146669?v=4?s=100" width="100px;" alt=""/><br /><sub><b>djob195</b></sub></a><br /><a href="#content-djob195" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/antspk"><img src="https://avatars.githubusercontent.com/u/78955792?v=4?s=100" width="100px;" alt=""/><br /><sub><b>antspk</b></sub></a><br /><a href="#content-antspk" title="Content">🖋</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://jjy0821.tistory.com/"><img src="https://avatars.githubusercontent.com/u/88075341?v=4?s=100" width="100px;" alt=""/><br /><sub><b>정진영</b></sub></a><br /><a href="#content-jjy821" title="Content">🖋</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-restore -->
