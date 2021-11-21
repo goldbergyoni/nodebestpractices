@@ -55,11 +55,11 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
     <a href="#1-project-structure-practices">1. Project Structure Practices (5)</a>
   </summary>
 
-&emsp;&emsp;<a href="#-11-structure-your-solution-by-components">1.1 Structure your solution by components</a></br>
+&emsp;&emsp;<a href="#-11-structure-your-solution-by-components">1.1 Structure your solution by components</a>🏷&nbsp; `#strategic`</br>
 &emsp;&emsp;<a href="#-12-layer-your-components-keep-the-web-layer-within-its-boundaries">1.2 Layer your components, keep the web layer within its boundaries</a></br>
-&emsp;&emsp;<a href="#-13-wrap-common-utilities-as-npm-packages">1.3 Wrap common utilities as npm packages</a></br>
+&emsp;&emsp;<a href="#-13-wrap-common-utilities-as-npm-packages">1.3 Wrap common utilities as npm packages</a>🏷&nbsp; `#new`</br>
 &emsp;&emsp;<a href="#-14-separate-express-app-and-server">1.4 Separate Express 'app' and 'server'</a></br>
-&emsp;&emsp;<a href="#-15-use-environment-aware-secure-and-hierarchical-config">1.5 Use environment aware, secure and hierarchical config</a></br>
+&emsp;&emsp;<a href="#-15-use-environment-aware-secure-and-hierarchical-config">1.5 Use environment aware, secure and hierarchical config</a>🏷&nbsp; `#advanced`</br>
 
 </details>
 
