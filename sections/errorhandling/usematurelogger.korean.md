@@ -1,13 +1,15 @@
-# Use a mature logger to increase errors visibility
+# 에러 가시성을 높이기 위해 안정된 로거를 사용하라.
 
-### One Paragraph Explainer
+### 한 문단 요약
 
-We all love console.log but obviously, a reputable and persistent logger like [Winston][winston] (highly popular) or [Pino][pino] (the new kid in town which is focused on performance) is mandatory for serious projects. A set of practices and tools will help to reason about errors much quicker – (1) log frequently using different levels (debug, info, error), (2) when logging, provide contextual information as JSON objects, see example below. (3) watch and filter logs using a log querying API (built-in in most loggers) or a log viewer software
-(4) Expose and curate log statement for the operation team using operational intelligence tools like Splunk
+우리 모두는 console.log를 매우 좋아하지만, 심각한 프로젝트에는 [Pino][pino](성능에 집중하는 새로운 옵션)같은 평판이 좋고 지속적인 로거가 필수적이다. 높은 성능의 로깅 도구는 에러와 가능한 문제들을 식별하는 데 도움을 준다. 로깅에 대한 권장사항은 다음과 같다.
 
-[winston]: https://www.npmjs.com/package/winston
-[bunyan]: https://www.npmjs.com/package/bunyan
 [pino]: https://www.npmjs.com/package/pino
+
+1. 다양한 수준(debug, info, error 등)으로 자주 로그하라.
+2. 로깅할 때, 컨텍스트에 대한 정보를 JSON 객체로 제공하라.
+3. (대부분의 로거들에 내장이 되어있는) 로그 조회 API 또는 로그 뷰어 소프트웨어로 로그를 모니터하고 필터링하라.
+4. Splunk와 같은 운영 인텔리전스 도구들로 로그 내용에 대해 노출시키고 관리하라.
 
 ### Code Example – Winston Logger in action
 
@@ -44,11 +46,11 @@ winston.query(options, function (err, results) {
 });
 ```
 
-### Blog Quote: "Logger Requirements"
+### 블로그 인용: "로거 권장사항"
 
- From the blog Strong Loop
+블로그 Strong Loop 로부터 발췌
 
-> Lets identify a few requirements (for a logger):
-1. Timestamp each log line. This one is pretty self-explanatory – you should be able to tell when each log entry occurred.
-2. Logging format should be easily digestible by humans as well as machines.
-3. Allows for multiple configurable destination streams. For example, you might be writing trace logs to one file but when an error is encountered, write to the same file, then into error file and send an email at the same time…
+> (로거를 위한) 몇 가지 권장사항을 확실히 하자.
+1. 각 로그 라인마다 타임스탬프를 남겨라. 이것은 하나의 자명한 일이다. — 당신은 각 로그 입력이 언제 발생했는지를 알 수 있어야만 한다.
+2. 로깅 형식은 기계만이 아니라 사람 역시 쉽게 이해가 가능하도록 해야한다.
+3. 여러 구상 가능한 대상 스트림들을 허용하라. 예를 들어, 당신은 하나의 파일에 대해서 추적 로그들을 작성할 수 있다. 하지만 오류가 발생하면, 같은 파일에 입력한 뒤 에러 파일로 보내고, 동시에 이메일도 보내라.
