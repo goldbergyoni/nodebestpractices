@@ -839,7 +839,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 보안함수(secure function)를 쓰지 않고 저장된 암호나 기밀사항들은 억지기법이나 사전공격에 취약해져 결국엔 다 뚫리게 된다.
 
-🔗 [**자세히 보기: Use Bcrypt**](/sections/security/bcryptpasswords.md)
+🔗 [**자세히 보기: Use Bcrypt**](/sections/security/bcryptpasswords.korean.md)
 
 <br/><br/>
 
@@ -851,7 +851,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 공격자가 악의적인 자바스크립트 코드를 당신 DB에 저장하면 불쌍한 클라이언트에게 그대로 보내질 수 있다
 
-🔗 [**자세히 보기: Escape output**](/sections/security/escape-output.md)
+🔗 [**자세히 보기: Escape output**](/sections/security/escape-output.korean.md)
 
 <br/><br/>
 
@@ -863,7 +863,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 입력에 대해 너그럽고 관대하면 공격 받을 수 있는 면적이 넓어지고, 공격자에게 애플리케이션을 끌어내리는 조합을 찾을때까지 다양한 입력값을 시도해보도록 장려하는 꼴이 된다.
 
-🔗 [**자세히 보기: Validate incoming JSON schemas**](/sections/security/validation.md)
+🔗 [**자세히 보기: Validate incoming JSON schemas**](/sections/security/validation.korean.md)
 
 <br/><br/>
 
@@ -875,7 +875,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 제삼자가 만료되었거나 부적절한 토큰을 악의적으로 사용하여 애플리케이션에 접근하거나 토큰 소유자인 척 가장할 수 있다.
 
-🔗 [**자세히 보기: Blacklist JSON Web Tokens**](/sections/security/expirejwt.md)
+🔗 [**자세히 보기: Blacklist JSON Web Tokens**](/sections/security/expirejwt.korean.md)
 
 <br/><br/>
 
@@ -890,7 +890,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 공격자가 무제한으로 암호를 시도해서 특권있는 계좌에 접근할 수 있다
 
-🔗 [**자세히 보기: Login rate limiting**](/sections/security/login-rate-limit.md)
+🔗 [**자세히 보기: Login rate limiting**](/sections/security/login-rate-limit.korean.md)
 
 <br/><br/>
 
@@ -902,7 +902,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 공격자가 서버에 스크립트를 실행하는데 성공하면 로컬 머신을 마음대로 할 권리를 무제한으로 갖게 된다 (예: iptable을 바꾼다던가 트래픽 경로를 자기 서버로 변경 한다던가)
 
-🔗 [**자세히 보기: Run Node.js as non-root user**](/sections/security/non-root-user.md)
+🔗 [**자세히 보기: Run Node.js as non-root user**](/sections/security/non-root-user.korean.md)
 
 <br/><br/>
 
