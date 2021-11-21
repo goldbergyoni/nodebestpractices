@@ -1577,6 +1577,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "antspk",
+      "name": "antspk",
+      "avatar_url": "https://avatars.githubusercontent.com/u/78955792?v=4",
+      "profile": "https://github.com/antspk",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
