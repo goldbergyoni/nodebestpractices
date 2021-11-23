@@ -20,7 +20,7 @@
 
 
 * [Dyntrace](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load)의 블로그:
-> ... “약간의 시간과 상당한 양의 메모리 할당으로 합덤프를 생성하여, 이러한 덤프들을 비교해보면 프로세스는 항상 동일하다는 명백한 결과로 이어진다.”
+> ... “약간의 시간과 상당한 양의 메모리 할당으로 힙덤프를 생성하여, 이러한 덤프들을 비교해보면 프로세스는 항상 동일하다는 명백한 결과로 이어진다.”
 
 
 * [Rising Stack](https://blog.risingstack.com/finding-a-memory-leak-in-node-js/)의 블로그:
