@@ -13,7 +13,7 @@
 ```javascript
 const heapdump = require('heapdump');
 
-// 요청이 인가된 것인지 확인하기
+// 인가된 사용자 확인/
 function isAuthorized(req) {
     // ...
 }
@@ -37,10 +37,10 @@ router.get('/ops/heapdump', (req, res, next) => {
 
 <br/><br/>
 
-### 추천 자료들
+### 권장 리소스
 
-[Getting your Node.js app production ready (Slides)](http://naugtur.pl/pres3/node2prod)
+[Node.js 앱 프로덕션 준비하기 (슬라이드)](http://naugtur.pl/pres3/node2prod)
 
-▶ [Getting your Node.js app production ready (Video)](https://www.youtube.com/watch?v=lUsNne-_VIk)
+▶ [Node.js 앱 프로덕션 준비하기 (비디오)](https://www.youtube.com/watch?v=lUsNne-_VIk)
 
-![Getting your Node.js app production ready](/assets/images/createmaintenanceendpoint1.png 'Getting your Node.js app production ready')
+![Node.js 앱 프로덕션 준비하기](../../assets/images/createmaintenanceendpoint1.png "Node.js 앱 프로덕션 준비하기")
