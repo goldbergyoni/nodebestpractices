@@ -1,118 +1,110 @@
 [✔]: ../../assets/images/checkbox-small-blue.png
 
-# 일반적인 Node.js 보안 모범 사례
+# 보편적인 Node.js 보안 모범 사례
 
-일반적인 보안 가이드라인 섹션에는 많은 프레임워크들과 규칙들에서 표준화된 모범 사례들이 포함되어있다. 예를 들어, SSL/TLS로 애플리케이션을 실행할 때 보안 이점을 얻기 위해서는 모든 설정에서 공통 지침 및 규칙을 따라야만 한다.
+공통 보안 지침 섹션에서는 다수의 프레임워크 및 컨벤션에서 표준화된 모범 사례들을 포함하고 있다. 예를 들어, SSL/TLS과 함께 어플리케이션을 구동하는 것은 더 좋은 보안 이점을 얻기 위해 모든 설정에서 따라오는 공통적인 지침 및 규칙이 되어야만 한다.
 
-## ![✔] Use SSL/TLS to encrypt the client-server connection
-## ![✔] 클라이언트-서버 연결을 암호화하기 위해 SSL/TLS를 사용하라.
+## ![✔] 클라이언트-서버 연결을 암호화하게 위해 SSL/TLS를 사용하라.
 
-**핵심 요약:** [무료 SSL/TLS 인증서](https://letsencrypt.org/) 및 쉬운 구성의 시대이므로 당신은 더 이상 보안 서버 사용에 대한 장단점을 저울질 할 필요가 없다. 순수 HTTP에 비해 최소한의 오버헤드와 같은 단점보다 보안, 지원 등의 장점 및 현대 기술에 대한 신뢰가 훨씬 더 크다.
+**핵심요약:** [무료 SSL/TLS 인증](https://letsencrypt.org/)과 그것에 대한 손쉬운 설정이 가능한 시대에서, 당신은 더 이상 보안 서버를 사용하는 데에 장점과 단점을 저울질을 할 필요가 없다. 왜냐하면 보안, 현대 기술에 대한 지원 및 믿음과 같은 장점들이 순수 HTTP에 비교되는 소규모 오버헤드와 같은 단점을 압도해버리기 때문이다.
 
-**그렇게 하지 않으면:** 공격자들이 메시지 가로채기(man-in-the-middle) 공격을 수행하거나 유저의 행동을 감시하고, 연결이 암호화되지 않은 경우에는 더욱 더 악의적인 작업을 수행할 수도 있다.
+**그렇게 하지 않으면:"** 공격하는 이들이 중간에 통신을 가로채는 공격을 수행하면서 유저들의 행동을 감시하고, 만약 연결이 암호화되지 않았다면 더 악질적으로 행동하게 된다.
 
-🔗 [**Read More: Running a secure Node.js server**](/sections/security/secureserver.md)
-
-<br/><br/>
-
-## ![✔] 기밀 값과 해시를 안전하게 비교하라.
-
-**TL;DR:** When comparing secret values or hashes like HMAC digests, you should use the [`crypto.timingSafeEqual(a, b)`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_timingsafeequal_a_b) function Node provides out of the box since Node.js v6.6.0. This method compares two given objects and keeps comparing even if data does not match. The default equality comparison methods would simply return after a character mismatch, allowing timing attacks based on the operation length.
-
-**핵심 요약:** HMAC digests 같은 해시와 기밀 값을 비교할 때, Node.js v6.6.0부터 제공되는 [`crypto.timingSafeEqual(a, b)`](https//nodejs.org/dist/latest-v9.x /docs/api/crypto.html#crypto_crypto_timingsafeequal_a_b) 기능을 사용하자. 이 방식은 주어진 두 객체를 비교하고, 데이터가 일치하지 않더라도 계속해서 비교한다. 기본적인 일치 비교 방식은 문자 불일치 후에 단순하게 값이 반환되기 때문에 작업 길이를 기반으로 한 시간 차 공격을 허용한다.
-
-**그렇게 하지 않으면:** 기본적인 일치 비교 연산자를 사용하면, 두 개체를 비교할 때 걸린 시간을 기반으로하여 중요한 정보가 노출될 수 있다.
+🔗 [**더 알아보기: 보안 Node.js 서버 실행**](/sections/security/secureserver.md)
 
 <br/><br/>
 
-## ![✔] Node.js를 사용해 임의의 문자열을 생성하라.
+## ![✔] 기밀 값들과 해시 값들을 안전하게 비교하라.
 
-**TL;DR:** Using a custom-built function generating pseudo-random strings for tokens and other security-sensitive use cases might actually not be as random as you think, rendering your application vulnerable to cryptographic attacks. When you have to generate secure random strings, use the [`crypto.RandomBytes(size, [callback])`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_randombytes_size_callback) function using available entropy provided by the system.
+**핵심요약:** HMAC digests같은 해시 값들과 기밀 값들을 비교할 때, Node.js v6.6.0 부터 지원되고 있는 [`crypto.timingSafeEqual(a, b)`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_timingsafeequal_a_b) 같은 함수를 사용하라. 해당 방식은 두 객체를 비교하고 만약 데이터가 일치하지 않더라도 계속해서 비교를 진행한다. 기본적인 일치 비교 방식들은 문자 불일치에 대한 간단한 반환만을 수행하기 때문에, 연산자 길이를 기반으로 시간차 공격을 허용할 수 있다.
 
-**Otherwise:** When generating pseudo-random strings without cryptographically secure methods, attackers might predict and reproduce the generated results, rendering your application insecure
-
-**핵심 요약:** 토큰과 여러 보안에 민감한 사용 사례에 대해서 의사 난수 문자열을 생성하는 사용자 정의 기능을 사용하면, 실제 결과가 당신의 생각만큼 무작위가 아닐 수 있기 때문에 애플리케이션이 암호화 공격에 취약해질 수 있다. 안전한 임의의 문자열을 생성해야 하는 경우 [`crypto.RandomBytes(size, [callback])`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html# crypto_crypto_randombytes_size_callback) 함수는 시스템에서 제공하는 사용 가능한 엔트로피를 사용합니다.
-
-**그렇게 하지 않으면:** 암호학적으로 안전한 방법 없이 의사 난수 문자열을 생성할 때 공격자가 생성된 결과를 예측하고 재현하여 애플리케이션을 불안정하게 만들 수 있습니다.
+**그렇게 하지 않으면:** 기본적인 동일 비교 연산자를 사용하는 것은 당신으로 하여금 두 객체를 비교하는 데에 걸리는 시간을 기반으로 결정적인 정보들에 대해 노출하게 만들 것이다.
 
 <br/><br/>
 
-Going on, below we've listed some important bits of advice from the OWASP project.
+## ![✔] Node.js 사용 시 임의의 문자열 생성
 
-## ![✔] OWASP A2: Broken Authentication
+**핵심요약:**  토큰 또는 다른 보안에 민감한 사용 사례들에 대해 맞춤형 기능의 함수를 사용해 의사 난수 문자열을 생성하면, 결과가 당신이 생각한 것 만큼 무작위가 아닐 수 있고 이에 따라 당신의 어플리케이션은 암호화 공격들에 대해 취약해질 수 있다. 만약 당신이 안전한 난수 문자열들을 생성해야 한다면, 시스템에서 제공받는 사용 가능한 엔트로피를 이용하는 [`crypto.RandomBytes(size, [callback])`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_randombytes_size_callback) 같은 함수를 써라.
 
-- Require MFA/2FA for important services and accounts
-- Rotate passwords and access keys frequently, including SSH keys
-- Apply strong password policies, both for ops and in-application user management ([🔗 OWASP password recommendation](https://www.owasp.org/index.php/Authentication_Cheat_Sheet#Implement_Proper_Password_Strength_Controls.22))
-- Do not ship or deploy your application with any default credentials, particularly for admin users or external services you depend on
-- Use only standard authentication methods like OAuth, OpenID, etc.  - **avoid** basic authentication
-- Auth rate limiting: Disallow more than _X_ login attempts (including password recovery, etc.) in a period of _Y_
-- On login failure, don't let the user know whether the username or password verification failed, just return a common auth error
-- Consider using a centralized user management system to avoid managing multiple accounts per employee (e.g. GitHub, AWS, Jenkins, etc) and to benefit from a battle-tested user management system
+**그렇게 하지 않으면:** 만약 암호화 보안 방식들을 사용하지 않고 의사 난수 문자열을 생성한다면, 공격하는 이들이 생성된 결과들을 예측하고 재생성하여 당신의 어플리케이션을 안전하지 않도록 만들 수 있다.
 
-## ![✔] OWASP A5:  Broken access control
+<br/><br/>
 
-- Respect the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)  -  every component and DevOps person should only have access to the necessary information and resources
-- **Never** work with the console/root (full-privilege) account except for account management
-- Run all instances/containers on behalf of a role/service account
-- Assign permissions to groups and not to users. This should make permission management easier and more transparent for most cases
-
-## ![✔] OWASP A6: Security Misconfiguration
-
-- Access to production environment internals is done through the internal network only, use SSH or other ways, but _never_ expose internal services
-- Restrict internal network access  - explicitly set which resource can access other resources (e.g. network policy or subnets)
-- If using cookies, configure it to "secured" mode where it's being sent over SSL only
-- If using cookies, configure it for "same site" only so only requests from same domain will get back the designated cookies
-- If using cookies, prefer "HttpOnly" configuration that prevent client-side JavaScript code from accessing the cookies
-- Protect each VPC with strict and restrictive access rules
-- Prioritize threats using any standard security threat modeling like STRIDE or DREAD
-- Protect against DDoS attacks using HTTP(S) and TCP load balancers
-- Perform periodic penetration tests by specialized agencies
-
-## ![✔] OWASP A3: Sensitive Data Exposure
-
-- Only accept SSL/TLS connections, enforce Strict-Transport-Security using headers
-- Separate the network into segments (i.e. subnets) and ensure each node has the least necessary networking access permissions
-- Group all services/instances that need no internet access and explicitly disallow any outgoing connection (a.k.a private subnet)
-- Store all secrets in a vault products like AWS KMS, HashiCorp Vault or Google Cloud KMS
-- Lockdown sensitive instance metadata using metadata
-- Encrypt data in transit when it leaves a physical boundary
-- Don't include secrets in log statements
-- Avoid showing plain passwords in the frontend, take necessary measures in the backend and never store sensitive information in plaintext
-
-## ![✔] OWASP A9: Using Components With Known Security Vulneraibilities
-
-- Scan docker images for known vulnerabilities (using Docker's and other vendors offer scanning services)
-- Enable automatic instance (machine) patching and upgrades to avoid running old OS versions that lack security patches
-- Provide the user with both 'id', 'access' and 'refresh' token so the access token is short-lived and renewed with the refresh token
-- Log and audit each API call to cloud and management services (e.g who deleted the S3 bucket?) using services like AWS CloudTrail
-- Run the security checker of your cloud provider (e.g. AWS security trust advisor)
+이어서, OWASP(The Open Web Application Security Project)에서 제시했던 몇 가지 중요한 조언들에 대해 정리해놓았다.
 
 
-## ![✔] OWASP A10: Insufficient Logging & Monitoring
+## ![✔] OWASP A2: 손상된 인증
 
-- Alert on remarkable or suspicious auditing events like user login, new user creation, permission change, etc
-- Alert on irregular amount of login failures (or equivelant actions like forgot password)
-- Include the time and username that initiated the update in each DB record
+- 중요한 서비스들이나 계정들에는 MFA/2FA(Multi-factor Authentication/Two-factor Authentication)을 요구하라.
+- SSH 키들을 포함해 암호들과 접근 키들을 자주 변경하라.
+- 운영 및 애플리케이션 내 유저 관리 모두에 강력한 암호 정책들을 적용하라. ([🔗 OWASP password recommendation](https://www.owasp.org/index.php/Authentication_Cheat_Sheet#Implement_Proper_Password_Strength_Controls.22))
+- 관리 사용자나 또는 의존하는 외부 서비스들은 특히 더 기본적인 자격증명을 사용한 전달 또는 배포가 이루어져서는 안된다.
+- Oauth, OpenId 등과 같은 표준 인증 방식만을 사용하라. - 기초적인 인증을 피하라.
+- 인증 속도 제한: _Y_ 기간 동안 _X_번 이상의 (암호 복구를 포함한) 로그인 시도들에 대해 허용하지 마라.
+- 로그인 실패에 대해서 유저가 유저명 또는 암호 검증이 실패했는지에 대해서 알게 하지 말고, 일반적인 auth 에러만을 반환하라.
+- 직원마다 다수의 계정들을 관리하는 것을 피하고, 전투적인 테스트들을 거친 사용 관리 시스템의 이점을 얻기 위해서 중앙화된 유저 관리 시스템을 사용할 것을 고려하라. (예: Github, AWS, Jenkins 등)
 
-## ![✔] OWASP A7: Cross-Site-Scripting (XSS)
+## ![✔] OWASP A5:  손상된 접근 제어
 
-- Use templating engines or frameworks that automatically escape XSS by design, such as EJS, Pug, React, or Angular. Learn the limitations of each mechanisms XSS protection and appropriately handle the use cases which are not covered
-- Escaping untrusted HTTP request data based on the context in the HTML output (body, attribute, JavaScript, CSS, or URL) will resolve Reflected and Stored XSS vulnerabilities
-- Applying context-sensitive encoding when modifying the browser document on the client-side acts against DOM XSS
-- Enabling a Content-Security Policy (CSP) as a defense-in-depth mitigating control against XSS
+- [최소 권한의 규칙](https://en.wikipedia.org/wiki/Principle_of_least_privilege)을 존중하자. - 모든 구성 요소들과 DevOps 담당자들은 오로지 필요한 정보와 리소스에만 접근할 수 있어야 한다.
+- 계정 관리 작업을 제외하고는 **절대** 콘솔/루트(전체 권한)으로 작업하지 마라.
+- 역할/서비스 계정을 대신하여 모든 인스턴스/컨테이너들을 실행하라.
+- 사용자들이 아니라, 그룹에 권한을 할당하라. 대부분에 경우에서 이러한 방식은 권한 관리를 쉽고 투명하게 만들어 준다.
 
-## ![✔] Protect Personally Identifyable Information (PII Data)
+## ![✔] OWASP A6: 보안 구성오류
 
-- Personally identifiable information (PII) is any data that can be used to identify a specific individual
-- Protect Personally Identifyable Information in the Applications by encrypting them
-- Follow the data privacy laws of the land
+- 상용 환경 내부에 대한 접근은 내부 네트워크만을 통해서만 이루어지고, SSH 또는 다른 방법들을 사용한다. 하지만 _절대_ 내부 서비스에 대해서는 노출하지 않는다. 
+- 엄격한 내부 네트워크 접근 - 다른 리소스(예: 네트워크 정책 또는 서브넷)들에 접근할 수 있는 리소스를 명시적으로 설정하라.
+- 만약 쿠키를 사용한다면, SSL을 통해서만 전송되는 "secured" 모드로 구성하라.
+- 만약 쿠키를 사용한다면, 같은 도메인에서 오는 요청에 대해서만 지정된 쿠키를 받을 수 있도록 "same site"로 옵션을 구성하라.
+- 만약 쿠키를 사용한다면, 클라이언트 측의 자바스크립트 코드가 쿠키들에 접근하지 못하도록 막아주는 "HttpOnly" 구성을 선호하라.
+- 엄격하고 제한적인 접근 규칙을 이용해 각 VPC를 보호하라.
+- STRIDE 또는 DREAD 같은 표준 보안 위협 모델링을 사용해 위협들에 대한 우선 순위를 지정하라. 
+- HTTP(S)와 TCP 로드밸런서들을 사용해 DDOS 공격을 방어하라.
+- 전문적인 기관에 의한 주기적인 침투 테스트를 수행하라.
 
+## ![✔] OWASP A3: 민감한 데이터 노출
 
-- Reference laws:
+- SSL/TLS 연결만을 수용하고, 헤더를 사용한 Strict-Transport-Security을 강제하라.
+- 네트워크를 각 세그먼트로 분리하고 (이는 서브넷을 말한다.) 각 노드들이 최소한의 네트워킹 접근 권한들을 가지는지 확인하라. 
+- 인터넷 접근이 필요하지 않은 모든 서비스/인스턴스들을 그룹화하고, 외부로 향하는 연결(예: 프라이빗 서브넷)에 대해서는 명시적으로 허용하지 않도록 한다.
+- 모든 기밀 값들은 AWS KMS, HashiCorp Vault 또는 Google Cloud KMS와 같은 컨텐츠 보안 프로덕션에 저장하라.
+- 메타 데이터를 사용해 민감한 인스턴스 메타 데이터들은 잠궈 놓아라.
+- 전송 중인 데이터가 물리적인 경계를 벗어날 때는 암호화하라.
+- 로그에 기밀 값들을 포함시키지 마라.
+- 프론트엔드에서 평문의 암호를 보이는 것을 피하고, 백엔드에서는 민감한 정보들을 평문으로 저장하지 않도록 반드시 조치를 취해야 한다.
 
-- European Union: GDPR - https://ec.europa.eu/info/law/law-topic/data-protection_en
-- India: https://meity.gov.in/writereaddata/files/Personal_Data_Protection_Bill,2018.pdf
-- Singapore: https://www.pdpc.gov.sg/Legislation-and-Guidelines/Personal-Data-Protection-Act-Overview
+## ![✔] OWASP A9: 알려진 보안 취약점들과 함께 구성 요소들을 사용하는 경우
+
+- 알려진 취약점들에 대해 도커 이미지들을 스캔하라. (Docker의 기능을 사용하거나, 다른 공급업체들에서 제공하는 스캔 서비스들이 있다.) 
+- 보안 패치에 해당하지 않는 이전 OS 버전의 실행을 막기 위해 자동 인스턴스 (머신) 패치와 업그레이드를 활성화하라.
+- 유저에게 'id'와 함께 'access', 'refresh' token을 모두 제공하여 access token이 짧은 수명을 유지하고 refresh token에 의해 재생성되게 하라.
+- AWS CloudTrail 같은 서비스들을 이용해 클라우드와 관리 시스템(예: 누가 S3 버킷을 삭제했는가)에 대한 각 API 호출을 기록하고 감사하라.
+- 클라우드 공급자의 보안 검사기를 실행하라. (예: AWS security trust advisor)
+
+## ![✔] OWASP A10: 불충분한 로깅 & 모니터링
+
+- 사용자 로그인, 새로운 사용자 생성, 권한 변경 등 확실하게 눈에 띄거나 의심스러운 감사 이벤트에 대해서는 반드시 주의하고 경고하라.
+- 로그인 실패의 불규칙적인 횟수에 대해 경고하라. (또는 암호 분실과 동등한 조치)
+- 각 DB 기록에 업데이트를 시작한 시간과 사용자 이름을 포함하라.
+
+## ![✔] OWASP A7: 사이트 간 스크립팅 (Cross-Site-Scripting: XSS)
+
+- EJS, Pug, React, Augulard와 같이 자동으로 XSS를 이스케이프 하도록 설계된 템플릿 엔진이나 프레임워크를 사용하라. 각 매커니즘 XSS 보호의 한계에 대해 배우고, 다뤄지지 않은 사용 사례들에 대해 적절하게 처리할 수 있다. 
+- HTML 속성 (body, attribute, Javascript, CSS, or URL) 내의 컨텍스트에 기반한 신뢰할 수 없는 HTTP 요청 데이터를 이스케이프하면 반영되고 저장된 XSS 취약점들을 해결할 수 있다. 
+- 클라이언트 측에서 브라우저 문서를 수정할 때, 상황에 맞는 인코딩을 적용하면 DOM XSS에 대해서 작동한다.
+- XSS에 대한 심층 방어 완화 제어로써 컨텐츠-보안 정책(CSP)를 활성화
+
+## ![✔] 개인 식별 정보(PII Data)에 대한 보호 
+
+- 개인 식별 정보(PII)는 특정한 개인을 식별하기 위해서 사용되어질 수 있는 모든 데이터이다.
+- 해당 정보들을 암호화함으로써 어플리케이션들에 존재하는 개인 식별 정보를 보호하라.
+- 국가의 데이터 개인 정보 보호법을 준수하라.
+
+- 인용 법률:
+
+- 유럽 연합: GDPR - https://ec.europa.eu/info/law/law-topic/data-protection_en
+- 인도: https://meity.gov.in/writereaddata/files/Personal_Data_Protection_Bill,2018.pdf
+- 싱가포르: https://www.pdpc.gov.sg/Legislation-and-Guidelines/Personal-Data-Protection-Act-Overview
 
 <br/><br/><br/>
