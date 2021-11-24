@@ -16,10 +16,10 @@
 
 ### 코드 예시: 3가지를 포함하는 테스트 이름
 ```javascript
-//1. unit under test
+//1. 테스트 중인 유닛(모듈)
 describe('Products Service', () => {
   describe('Add new product', () => {
-    //2. scenario and 3. expectation
+    //2. 시나리오와 and 3. 예상
     it('When no price is specified, then the product status is pending approval', () => {
       const newProduct = new ProductService().add(...);
       expect(newProduct.status).to.equal('pendingApproval');
@@ -35,7 +35,7 @@ describe('Products Service', () => {
 describe('Products Service', () => {
   describe('Add new product', () => {
     it('Should return the right status', () => {
-        //hmm, what is this test checking? what are the scenario and expectation?
+        // 이 테스트가 확인하려는 것은 무엇인가? 시나리오와 예상은?
       const newProduct = new ProductService().add(...);
       expect(newProduct.status).to.equal('pendingApproval');
     });
