@@ -338,11 +338,11 @@ class SomeClassExample {}
 
 // 상수명은 const 키워드와 lowerCamelCase 사용
 const config = {
-  key: "value",
+  key: 'value',
 };
 
 // 변수와 함수 이름은 lowerCamelCase 사용
-let someVariableExample = "value";
+let someVariableExample = 'value';
 function doSomething() {}
 ```
 
@@ -376,12 +376,12 @@ function doSomething() {}
 
 ```javascript
 // 좋은 예
-module.exports.SMSProvider = require("./SMSProvider");
-module.exports.SMSNumberResolver = require("./SMSNumberResolver");
+module.exports.SMSProvider = require('./SMSProvider');
+module.exports.SMSNumberResolver = require('./SMSNumberResolver');
 
 // 나쁜 예
-module.exports.SMSProvider = require("./SMSProvider/SMSProvider.js");
-module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolver.js");
+module.exports.SMSProvider = require('./SMSProvider/SMSProvider.js');
+module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolver.js');
 ```
 
 <br/><br/>
@@ -395,18 +395,18 @@ module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolve
 ### 코드 예제
 
 ```javascript
-"" == "0"; // false
-0 == ""; // true
-0 == "0"; // true
+'' == '0'; // false
+0 == ''; // true
+0 == '0'; // true
 
-false == "false"; // false
-false == "0"; // true
+false == 'false'; // false
+false == '0'; // true
 
 false == undefined; // false
 false == null; // false
 null == undefined; // true
 
-" \t\r\n " == 0; // true
+' \t\r\n ' == 0; // true
 ```
 
 위의 모든 문장은 `===`를 사용했다면 false를 반환 했을것이다.
@@ -1071,6 +1071,36 @@ null == undefined; // true
 **그렇게 하지 않을 경우:** 기본적으로 **이미** 내장된 코드를 쓰거나 코드를 몇줄 더 써서 파일을 몇개 더 써야 하는 것을 막을 수 있었음에도 불구하고 더 비능률적인 프로젝트를 유지해야 할 것이다.
 
 🔗 [**자세히 보기: Native over user land utils**](/sections/performance/nativeoverutil.md)
+
+<br/><br/><br/>
+
+## ![✔] 8.2. npm start 대신 node 커맨드를 이용한 부트스트랩
+
+**핵심요약:** 코드에 OS시그널을 전달하지 못하는 npm 스크립트 대신 `CMD ['node','server.js']를 사용해 앱을 실행하라. 이를 통해 자식-프로세스, 시그널 핸들링, graceful shutdown 그리고 좀비 프로세스를 갖는 등의 문제들을 예방할 수 있다.
+
+**그렇게 하지 않을 경우:** 아무런 시그널이 전달되지 않을경우, 너의 코드는 셧다운이 됐는지에 대해 알 길이 없다. 시그널이 없다면, 현재 요청 그리고/혹은 데이터를 유실함으로써 정상적으로 종료될 기회를 잃게된다.
+
+🔗 [**자세히 보기: npm start대신 node 커맨드를 사용한 부트스트랩 컨테이너**](./sections/docker/bootstrap-using-node.korean.md)
+
+<br/><br/><br/>
+
+## ![✔] 8.3. 도커 런타임에게 복제(replication)와 수행시간을 맡겨라
+
+**핵심 요약:** 도커 런타임 오케스트레이터(예. 쿠버네티스)를 사용할 때, Node.js프로세스를 중간 프로세스 매니저 혹은 프로세스를 복제하는 커스텀 코드(예. PM2, 클러스터 모듈)를 사용하는 대신 직접적으로 불러와라. 런타임 플랫폼은 배치 결정(placement decision)을 위한 엄청나게 많은 양의 데이터와 가시성(visibility)을 가지고 있기 때문 얼만큼 많은 프로세스가 필요한지, 어떻게 그들을 분산시켜야 하는지와 충돌 발생 시 어떻게 해야하는지에 대해 제일 잘 알고있다.
+
+**그렇게 하지 않을 경우:** 자원 부족으로 계속해서 충돌을 내는 컨테이너는 프로세스 매니저에 의해 불분명하게 재시작 될 것이다. 쿠버네티스가 이를 인지한다면, 이(컨테이너)의 위치를 다른 넓은 인스턴스로 재조정 할 수 있을것이다.
+
+🔗 [**자세히 보기: 도커 오케스트레이터가 재시작되고 프로세스를 복제할 수 있도록 해주어라**](./sections/docker/restart-and-replicate-processes.korean.md)
+
+<br/><br/><br/>
+
+## ![✔] 8.4. 보안 누수 방지를 위해 도커이그노어(.dockerignore)를 사용하라
+
+**핵심용약:** 일반 비밀 파일과 개발 아티팩트를 제외하는`.dockerignore` 파일을 포함하라. 그렇게 함으로써 비밀이 이미지로 유출되는 일을 방지할 수 있다. 빌드에 걸리는 시간이 줄어듦은 덤이다. 또한 모든 파일을 재귀적으로 복사하지말고 도커에 어떤 파일이 복사되어야 하는지 명확하게 선택하라.
+
+**그렇게 하지 않을 경우:** `.env`, `.aws` 그리고 `.npmrc`같은 일반적 개인의 비밀 파일들은(Common personal secret files) 이미지 엑세스를 가진 그 누구에게나 공유될 것이다 (예. 도커 저장소)
+
+🔗 [**자세히 보기: .dockerignore를 사용하라**](./sections/docker/docker-ignore.korean.md)
 
 <br/><br/><br/>
 
