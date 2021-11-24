@@ -629,7 +629,11 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 단지 서버 진단을 목적으로 일부 정보를 추출하기 위하여 상용서버에 코드를 배포하는 "진단용 배포"를 자주 수행하고 있게 될 것이다
 
+<<<<<<< HEAD
 🔗 [**자세히 보기: ‘유지 엔드포인트’를 생성하라**](/sections/production/createmaintenanceendpoint.korean.md)
+=======
+🔗 [**자세히 보기: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.korean.md)
+>>>>>>> eac1089d (Update README.korean.md link address)
 
 <br/><br/>
 
@@ -639,7 +643,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** API 성능 및 가동 중지 시간을 측정하는 데 많은 노력을 기울임에도 실전에서 가장 느린 코드 부분이 어느것인지, 그리고 이것이 UX에 미치는 영향을 알지 못할 것이다
 
-🔗 [**자세히 보기: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
+🔗 [**자세히 보기: Discover errors and downtime using APM products**](/sections/production/apmproducts.korean.md)
 
 <br/><br/>
 
@@ -649,7 +653,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 세계 최고의 IT/DevOps 전문가도 형편없이 쓰여진 코드로 이루어진 시스템은 구하지 못한다
 
-🔗 [**자세히 보기: Make your code production-ready**](/sections/production/productioncode.md)
+🔗 [**자세히 보기: Make your code production-ready**](/sections/production/productioncode.korean.md)
 
 <br/><br/>
 
@@ -669,7 +673,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 단일 노드 스레드는 수백 개의 html/이미지/angular/react 파일을 스트리밍 하느라 바빠서 정작 천직인 동적 컨텐츠를 전달하는 작업에는 신경쓸 겨를이 없을것이다.
 
-🔗 [**자세히 보기: Get your frontend assets out of Node**](/sections/production/frontendout.md)
+🔗 [**자세히 보기: Get your frontend assets out of Node**](/sections/production/frontendout.korean.md)
 
 <br/><br/>
 
@@ -679,7 +683,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 해당서버에 오류가 발생하면 해당 서버만 제거하면 되는 것이 아니라 어플리케이션의 다운타임이 발생하게된다. 게다가 특정 서버에 의존하기 때문에 수평적 확장이 힘들어질 것이다
 
-🔗 [**자세히 보기: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
+🔗 [**자세히 보기: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.korean.md)
 
 <br/><br/>
 
@@ -689,7 +693,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 전용 도구없이 취약점으로부터 코드를 깨끗하게 유지하려면 새로운 취약점에 대한 데이터를 지속적으로 확인해야 할것이다
 
-🔗 [**자세히 보기: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
+🔗 [**자세히 보기: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.korean.md)
 
 <br/><br/>
 
