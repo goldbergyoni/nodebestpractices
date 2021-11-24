@@ -11,7 +11,7 @@
 ### 코드 예시: 일반적인 Express 구성
 
 ```javascript
-// when receiving a new request, start a new isolated context and set a transaction id. The following example is using the npm library continuation-local-storage to isolate requests
+// 새로운 요청을 받을 때, 새로 분리된 맥락을 시작하고 트랜잭션 id를 설정해라. 다음 예제는 분리된 요청에서 npm 라이브러리 continuation-local-storage 를 사용하여 요청을 격리하는 것이다.
 
 const { createNamespace } = require('continuation-local-storage');
 const session = createNamespace('my session');
@@ -22,7 +22,7 @@ router.get('/:id', (req, res, next) => {
     logger.info('Starting now to get something by id');
 });
 
-// Now any other service or components can have access to the contextual, per-request, data
+// 이제 다른 서비스나 컴포넌트가 상황별, 요청별 데이터에 접근할 수 있다.
 class someService {
     getById(id) {
         logger.info('Starting to get something by id');
@@ -30,7 +30,7 @@ class someService {
     }
 }
 
-// The logger can now append the transaction id to each entry so that entries from the same request will have the same value
+// 이제 로거는 트랜잭션 id를 각 항목에 추가하여 같은 요청의 항목들에 동일한 값을 가지게 할 수 있다.
 class logger {
     info (message) {
         console.log(`${message} ${session.get('transactionId')}`);
