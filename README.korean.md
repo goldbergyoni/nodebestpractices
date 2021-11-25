@@ -768,7 +768,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 개발 과정에서 직접적인 보안 취약점이 될 수 있었던 부분이 상용에서도 큰 문제가 되어 다가올 수 있다. 또한 프로젝트는 일관된 코드 보안 사례를 따르지 않게 되어 취약점이 생기거나, 민감한 기밀 값들이 원격 레퍼지토리로 커밋될 수 있다.
 
-🔗 [**자세히 보기: Lint rules**](/sections/security/lintrules.md)
+🔗 [**자세히 보기: Lint rules**](/sections/security/lintrules.korean.md)
 
 <br/><br/>
 
@@ -780,7 +780,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 애플리케이션을 사용하는 유저들이 사용이 불가능하거나 저하되는 서비스를 받게되는 문제를 초래할 수 있다.
 
-🔗 [**자세히 보기: Implement rate limiting**](/sections/security/limitrequests.md)
+🔗 [**자세히 보기: Implement rate limiting**](/sections/security/limitrequests.korean.md)
 
 <br/><br/>
 
@@ -792,7 +792,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 만약 개인 레퍼지토리라 하더라도 만약 소스 컨트롤이 실수로 공개된다면 해당 시점에서 모든 기밀들이 노출되게 된다. 외부관계자가 소스제어에 접근이 가능해지게 하는 것은, 의도치 않아도 관련 시스템(데이터베이스, API, 서비스 등)에도 접근을 허락하는 것과 마찬가지다.
 
-🔗 [**자세히 보기: Secret management**](/sections/security/secretmanagement.md)
+🔗 [**자세히 보기: Secret management**](/sections/security/secretmanagement.korean.md)
 
 <br/><br/>
 
@@ -806,15 +806,15 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 확인되지 않거나 (unvalidated) 제거되지 않은 (unsanitized) 사용자 입력은 MongoDB for NoSQL를 쓸 때 operator injection를 초래할 수 있고, 제대로 된 위생처리 시스템이나 ORM을 쓰지 않는것은 SQL 주입 공격을 쉽게 만들어 엄청난 취약점을 만들어낼 수 있다.
 
-🔗 [**자세히 보기: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.md)
+🔗 [**자세히 보기: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.korean.md)
 
 <br/><br/>
 
 ## ![✔] 6.5. 일반적인 보안 모범사례 모음
 
-**핵심요약:** 이것은 Node.js와는 직접적으로 관련되지 않은 보안과 관련된 조언 모음집이지만, Node의 시행도 다른 언어들과 그닥 다르지 않다. 자세히 보기를 클릭해서 읽어봐라.
+**핵심요약:** 이것은 Node.js와는 직접적으로 관련되지 않은 보안과 관련된 조언 모음집이다. - Node의 시행도 다른 언어들과 그닥 다르지 않다. 아래 자세히 보기를 클릭하여 읽어보자.
 
-🔗 [**자세히 보기: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
+🔗 [**자세히 보기: Common security best practices**](/sections/security/commonsecuritybestpractices.korean.md)
 
 <br/><br/>
 
@@ -822,23 +822,23 @@ null == undefined   // true
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**핵심요약:** 보안 헤더를 사용해서 교차사이트 스트립팅 (XSS), 클릭재킹과 같이 자주 있는 악의적인 공격들을 막아라. [helmet](https://www.npmjs.com/package/helmet)과 같은 모듈을 사용하면 쉽게 설정할 수 있다.
+**핵심요약:** 보안 헤더를 사용해 어플리케이션이 교차사이트 스트립팅 (XSS), 클릭재킹과 같이 자주 있는 악의적인 공격들로부터 방어될 수 있도록 하라. [helmet](https://www.npmjs.com/package/helmet)과 같은 모듈을 사용하면 쉽게 설정할 수 있다.
 
-**그렇게 하지 않을 경우:** 공격자들이 애플리케이션 사용자들을 직접적으로 공격할 수 있게되면 엄청난 보안 취약점을 초래할 수 있다
+**그렇게 하지 않을 경우:** 공격자들이 어플리케이션 사용자들을 직접적으로 공격할 수 있게되며, 이는 엄청난 보안 취약점을 초래할 수 있다.
 
-🔗 [**자세히 보기: Using secure headers in your application**](/sections/security/secureheaders.md)
+🔗 [**자세히 보기: Using secure headers in your application**](/sections/security/secureheaders.korean.md)
 
 <br/><br/>
 
-## ![✔] 6.7. 끊임없이 자동적으로 취약한 의존성은 없는지 검사해라
+## ![✔] 6.7.  취약한 의존성은 없는지 지속적이고 자동적으로 검사 하라.
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Known%20Vulnerabilities%20-green.svg" alt=""/></a>
 
-**핵심요약:** npm 생태계의 프로젝트들은 의존성이 여럿 있는것이 보통이다. 의존성들은 새로운 취약점들이 발견 될 때마다 고쳐야 한다. [npm audit](https://docs.npmjs.com/cli/audit)이나 [snyk](https://snyk.io/) 같은 도구들을 이용해 취약한 의존성을 감시하고 패치해라. 이런 도구들을 CI 체재와 통합시켜 취약한 의존성이 상용버젼까지 새어 나가기 전에 잡아라
+**핵심요약:** npm 생태계의 프로젝트들은 보통 여러 의존성들을 가진다. 의존성들은 새로운 취약점들이 발견 될 때마다 고쳐져야만 한다. [npm audit](https://docs.npmjs.com/cli/audit)이나 [snyk](https://snyk.io/) 같은 도구들을 이용해 취약한 의존성을 감시하고 패치하라. 이런 도구들을 CI 설정과 통합시켜 취약한 의존성들이 상용버전에 적용되기 전에 잡아내라.
 
-**그렇게 하지 않을 경우:** 공격자가 당신의 웹 프레임워크를 감지하면 알려진 모든 취약점을 공격할 수 있다.
+**그렇게 하지 않을 경우:** 공격자가 당신의 웹 프레임워크를 감지하면, 알려진 모든 취약점들을 공격할 수 있다.
 
-🔗 [**자세히 보기: Dependency security**](/sections/security/dependencysecurity.md)
+🔗 [**자세히 보기: Dependency security**](/sections/security/dependencysecurity.korean.md)
 
 <br/><br/>
 
