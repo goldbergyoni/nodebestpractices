@@ -766,7 +766,7 @@ null == undefined   // true
 
 **핵심요약:** 보안 취약성 및 문제들을 잡기 위해서 코드가 작성될 때 [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) 같은 보안 관련 linter 플러그인들을 사용하라. 이것은 eval의 사용 또는 문자열 리터럴로 모듈을 가져오는 것, 자식 프로세스 호출 등과 같은 보안 취약점을 잡을 수 있도록 돕는다. 아래 'Read more'을 클릭하여 보안 linter로 포착되는 경우의 코드 예제를 확인하라.
 
-**그렇게 하지 않을 경우:** 개발 과정에서 직접적인 보안 취약점이 될 수 있었던 부분이 상용에서도 큰 문제가 되어 다가올 수 있다. 또한 프로젝트는 일관된 코드 보안 사례를 따르지 않게 되어 취약점이 생기거나, 민감한 secrets들이 원격 repository로 커밋될 수 있다.
+**그렇게 하지 않을 경우:** 개발 과정에서 직접적인 보안 취약점이 될 수 있었던 부분이 상용에서도 큰 문제가 되어 다가올 수 있다. 또한 프로젝트는 일관된 코드 보안 사례를 따르지 않게 되어 취약점이 생기거나, 민감한 기밀 값들이 원격 레퍼지토리로 커밋될 수 있다.
 
 🔗 [**자세히 보기: Lint rules**](/sections/security/lintrules.md)
 
@@ -788,7 +788,7 @@ null == undefined   // true
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A3:Sensitive%20Data%20Exposure%20-green.svg" alt=""/></a>
 
-**핵심요약:** 기밀사항은 절대 평문 형태로 설정 파일이나 소스코드에 저장하지 말아라. 그 대신 Vault나 Kubernetes/Docker Secrets나 환경변수 같은 기밀사항 관리 시스템을 써라. 부득이하게 소스 콘트롤에 기밀사항을 저장해야 하는 경우, 반드시 암호화하여 관리되어야 한다 (rolling keys, 만료, 감사 등). 실수로 기밀사항을 버젼 콘트롤에 커밋하는 것을 막기 위해 pre-commit/push hook을 사용하자.
+**핵심요약:** 기밀사항은 절대 평문 형태로 설정 파일이나 소스코드에 저장하지 말아라. 그 대신 Vault나 Kubernetes/Docker Secrets나 환경변수 같은 기밀사항 관리 시스템을 써라. 부득이하게 소스 제어에 기밀사항을 저장해야 하는 경우, 반드시 암호화하여 관리되어야 한다 (rolling keys, 만료, 감사 등). 실수로 기밀사항을 버젼 제어에 커밋하는 것을 막기 위해 pre-commit/push hook을 사용하자.
 
 **그렇게 하지 않을 경우:** 만약 개인 레퍼지토리라 하더라도 만약 소스 컨트롤이 실수로 공개된다면 해당 시점에서 모든 기밀들이 노출되게 된다. 외부관계자가 소스제어에 접근이 가능해지게 하는 것은, 의도치 않아도 관련 시스템(데이터베이스, API, 서비스 등)에도 접근을 허락하는 것과 마찬가지다.
 
@@ -800,9 +800,11 @@ null == undefined   // true
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
-**핵심요약:** SQL/NoSQL 주입과 같은 악의적인 공격을 막기 위해서는 ORM/ODM을 쓰거나, 데이터를 항상 이스케이프 처리 해 주거나 named or indexed parameterized queries를 지지하고, expected data type의 사용자 입력을 확인해주는 데이터베이스 라이브러리를 항상 활용해라. 자바스크립트 템플릿 문자열(template strings)이나 문자열 병합(string concatenation)으로 값을 주입하면 앱을 광범위한 취약점에 노출시키므로 절대 그대로 써서는 안된다. 평판이 좋은 Node.js 데이터 접근 라이브러리들(예: [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose))은 모두 주입 공격을 막아주는 보호대책이 내장되어있다.
+요약: SQL/NoSQL 주입 및 기타 악의적인 공격을 방지하려면 항상 데이터를 이스케이프하거나 명명되거나 인덱싱된 매개변수화된 쿼리를 지원하고 예상 유형에 대한 사용자 입력의 유효성을 검사하는 ORM/ODM 또는 데이터베이스 라이브러리를 사용하라. JavaScript 템플릿 문자열 또는 문자열 연결을 사용하여 쿼리에 값을 삽입하지 마라. 이렇게 하면 애플리케이션이 광범위한 취약점에 노출될 수 있습니다. 평판이 좋은 모든 Node.js 데이터 액세스 라이브러리(예: Sequelize, Knex, mongoose)에는 주입 공격에 대한 보호 기능이 내장되어 있다.
 
-**그렇게 하지 않을 경우:** 확인되지 않거나 (unvalidated) 살균되지 않은 (unsanitized) 사용자 입력은 MangoDB for NoSQL를 쓸 때 operator injection를 초래할 수 있고, 제대로 된 위생처리 시스템이나 ORM을 쓰지 않는것은 SQL 주입 공격을 쉽게 만들어 엄청난 취약점을 만들어낼 수 있다.
+**핵심요약:** SQL/NoSQL 주입과 같은 악의적인 공격을 막기 위해서는 ORM/ODM을 쓰거나, 데이터를 항상 이스케이프 해주거나 명명된 또는 인덱싱된 파타미터화 된 쿼리들을 지원하며 예상되는 데이터 타입에 따른 사용자 입력을 검증해주는 데이터베이스 라이브러리를 항상 활용해라. 자바스크립트 템플릿 문자열(template strings)이나 문자열 병합(string concatenation)으로 값을 주입하면 앱을 광범위한 취약점에 노출시키므로 절대 그대로 사용해서는 안된다. 평판이 좋은 Node.js 데이터 접근 라이브러리들(예: [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose))은 모두 주입 공격을 막아주는 보호대책이 내장되어있다.
+
+**그렇게 하지 않을 경우:** 확인되지 않거나 (unvalidated) 제거되지 않은 (unsanitized) 사용자 입력은 MongoDB for NoSQL를 쓸 때 operator injection를 초래할 수 있고, 제대로 된 위생처리 시스템이나 ORM을 쓰지 않는것은 SQL 주입 공격을 쉽게 만들어 엄청난 취약점을 만들어낼 수 있다.
 
 🔗 [**자세히 보기: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.md)
 
