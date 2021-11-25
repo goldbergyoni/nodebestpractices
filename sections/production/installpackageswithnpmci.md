@@ -4,7 +4,7 @@
 
 ### 한문단 설명
 
-[**Lock dependencies**](/sections/production/lockdependencies.md)에 따라 종속성을 고정했지만 이제는 프로덕션에서 정확한 패키지 버전이 사용되는지 확실하게 해야한다.
+[**Lock dependencies**](/sections/production/lockdependencies.md)에 따라 종속성을 고정했지만 이제는 상용에서 정확한 패키지 버전이 사용되는지 확실하게 해야한다.
 
 `npm ci`을 사용하여 패키지를 설치하면 그 이상을 정확하게 한다.
 * `package.json`과 `package-lock.json`이 일치하지 않거나(일치해야 함) lock 파일이 없으면 실패한다. 
@@ -12,7 +12,7 @@
 * [릴리즈 블로그 포스트](https://blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable)에 따르면 거의 2배나 더 빠르다!
 
 ### 언제 유용할까?
-CI 환경이나 QA가 나중에 프로덕션으로 보내는 것과 정확히 같은 패키지 버전으로 소프트웨어를 테스트할 수 있음을 보장한다. 또한, cli 명령어가 아닌 package.json이 어떠한 이유로 직접 편집하여 수동으로 변경하면, package.json과 package-lock.json 사이에 갭이 생기고 에러가 발생한다.
+CI 환경이나 QA가 나중에 상용으로 보내는 것과 정확히 같은 패키지 버전으로 소프트웨어를 테스트할 수 있음을 보장한다. 또한, cli 명령어가 아닌 package.json이 어떠한 이유로 직접 편집하여 수동으로 변경하면, package.json과 package-lock.json 사이에 갭이 생기고 에러가 발생한다.
 
 ### npm이 말하는 것
 
