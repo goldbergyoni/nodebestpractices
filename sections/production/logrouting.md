@@ -31,7 +31,7 @@ const logger = createLogger({
 // log to MongoDB, which the application now must be concerned with
 winston.add(winston.transports.MongoDB, options);
 ```
-Doing it this way, the application now handles both application/business logic AND log routing logic!
+이렇게 하면 애플리케이션이 이제 애플리케이션/비즈니스 로직과 로그 라우팅 로직을 모두 처리애햐 한다!
 
 <br/><br/>
 
