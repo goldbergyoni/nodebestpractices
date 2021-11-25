@@ -4,9 +4,9 @@
 
 ### 한문단 설명
 
-[**Lock dependencies**](/sections/production/lockdependencies.md)에 따라 종속성을 고정했지만 이제 프로덕션에서 정확한 패키지 버전이 사용되는지 확실하게 해야한다.
+[**Lock dependencies**](/sections/production/lockdependencies.md)에 따라 종속성을 고정했지만 이제는 프로덕션에서 정확한 패키지 버전이 사용되는지 확실하게 해야한다.
 
-`npm ci`을 사용히여 패키지를 설치하면 그 이상을 정확하게 한다.
+`npm ci`을 사용하여 패키지를 설치하면 그 이상을 정확하게 한다.
 * `package.json`과 `package-lock.json`이 일치하지 않거나(일치해야 함) lock 파일이 없으면 실패한다. 
 * `node_modules` 폴더가 있으면 설치하기 전에 자동으로 제거한다.
 * [릴리즈 블로그 포스트](https://blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable)에 따르면 거의 2배나 더 빠르다!
