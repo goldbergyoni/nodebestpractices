@@ -663,7 +663,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** [월마트](https://www.joyent.com/blog/walmart-node-js-memory-leak)에서 일어났던 것처럼 메모리가 하루에 수백 메가바이트씩 누수 될 수 있다
 
-🔗 [**자세히 보기: 메모리 사용량 측정 및 보호**](/sections/production/measurememory.md)
+🔗 [**자세히 보기: 메모리 사용량 측정 및 보호**](/sections/production/measurememory.korean.md)
 
 <br/><br/>
 
