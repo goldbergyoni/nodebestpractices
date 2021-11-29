@@ -18,9 +18,6 @@
 
 <br/>
 
-✨ 👨‍🏫 [Nodeconf 2021](https://www.nodeconfremote.com/#workshops) is just around the corner, and will **host a 5 hours advanced Node.js testing workshop with Yoni Goldberg**. [Register here](https://www.nodeconfremote.com/#workshops)
-
-<br/>
 
 Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md), [![FR](./assets/flags/FR.png)**FR**](./README.french.md), [![BR](./assets/flags/BR.png)**BR**](./README.brazilian-portuguese.md), [![RU](./assets/flags/RU.png)**RU**](./README.russian.md), [![PL](./assets/flags/PL.png)**PL**](./README.polish.md), [![JA](./assets/flags/JA.png)**JA**](./README.japanese.md), [![EU](./assets/flags/EU.png)**EU**](./README.basque.md) [(![ES](./assets/flags/ES.png)**ES**, ![HE](./assets/flags/HE.png)**HE**, ![KR](./assets/flags/KR.png)**KR** and ![TR](./assets/flags/TR.png)**TR** in progress! )](#translations)
 
@@ -55,11 +52,11 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
     <a href="#1-project-structure-practices">1. Project Structure Practices (5)</a>
   </summary>
 
-&emsp;&emsp;[1.1 Structure your solution by components](#-11-structure-your-solution-by-components)</br>
+&emsp;&emsp;[1.1 Structure your solution by components `strategic`](#-11-structure-your-solution-by-components)</br>
 &emsp;&emsp;[1.2 Layer your components, keep the web layer within its boundaries](#-12-layer-your-components-keep-the-web-layer-within-its-boundaries)</br>
 &emsp;&emsp;[1.3 Wrap common utilities as npm packages](#-13-wrap-common-utilities-as-npm-packages)</br>
 &emsp;&emsp;[1.4 Separate Express 'app' and 'server'](#-14-separate-express-app-and-server)</br>
-&emsp;&emsp;[1.5 Use environment aware, secure and hierarchical config](#-15-use-environment-aware-secure-and-hierarchical-config)</br>
+&emsp;&emsp;[1.5 Use environment aware, secure and hierarchical config `modified-recently`](#-15-use-environment-aware-secure-and-hierarchical-config)</br>
 
 </details>
 
@@ -69,17 +66,17 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
   </summary>
 
 &emsp;&emsp;[2.1 Use Async-Await or promises for async error handling](#-21-use-async-await-or-promises-for-async-error-handling)</br>
-&emsp;&emsp;[2.2 Use only the built-in Error object](#-22-use-only-the-built-in-error-object)</br>
+&emsp;&emsp;[2.2 Use only the built-in Error object `strategic`](#-22-use-only-the-built-in-error-object)</br>
 &emsp;&emsp;[2.3 Distinguish operational vs programmer errors](#-23-distinguish-operational-vs-programmer-errors)</br>
 &emsp;&emsp;[2.4 Handle errors centrally, not within a middleware](#-24-handle-errors-centrally-not-within-a-middleware)</br>
 &emsp;&emsp;[2.5 Document API errors using Swagger or GraphQL](#-25-document-api-errors-using-swagger-or-graphql)</br>
-&emsp;&emsp;[2.6 Exit the process gracefully when a stranger comes to town](#-26-exit-the-process-gracefully-when-a-stranger-comes-to-town)</br>
+&emsp;&emsp;[2.6 Exit the process gracefully when a stranger comes to town `strategic`](#-26-exit-the-process-gracefully-when-a-stranger-comes-to-town)</br>
 &emsp;&emsp;[2.7 Use a mature logger to increase error visibility](#-27-use-a-mature-logger-to-increase-error-visibility)</br>
 &emsp;&emsp;[2.8 Test error flows using your favorite test framework](#-28-test-error-flows-using-your-favorite-test-framework)</br>
 &emsp;&emsp;[2.9 Discover errors and downtime using APM products](#-29-discover-errors-and-downtime-using-apm-products)</br>
 &emsp;&emsp;[2.10 Catch unhandled promise rejections](#-210-catch-unhandled-promise-rejections)</br>
 &emsp;&emsp;[2.11 Fail fast, validate arguments using a dedicated library](#-211-fail-fast-validate-arguments-using-a-dedicated-library)</br>
-&emsp;&emsp;[2.12 Always await promises before returning to avoid a partial stacktrace](#-212-always-await-promises-before-returning-to-avoid-a-partial-stacktrace)</br>
+&emsp;&emsp;[2.12 Always await promises before returning to avoid a partial stacktrace `new`](#-212-always-await-promises-before-returning-to-avoid-a-partial-stacktrace)</br>
 
 </details>
 
