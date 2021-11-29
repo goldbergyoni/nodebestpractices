@@ -27,7 +27,7 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 # Latest Best Practices and News
 
-- **🔖 New menu and tags**: Our menu is collapsible now and include `#tags`. New visitors can read `#strategic` items first. Returning visitors can focus on `#new` content. Seniors can filter for `#advanced` items. Courtesy of the one and only @rubek-joshi
+- **🔖 New menu and tags**: Our menu is collapsible now and include `#tags`. New visitors can read `#strategic` items first. Returning visitors can focus on `#new` content. Seniors can filter for `#advanced` items. Courtesy of the one and only [Rubek Joshi](https://github.com/rubek-joshi@rubek-joshi)
 
 
 - **👨‍👩‍👧‍👦 New family member!**: A new repository joins our family - [Node.js Integration Tests Best Practices ✨](https://github.com/testjavascript/nodejs-integration-tests-best-practices). It includes 40+ best practices for writing awesome and performant Node.js component tests
