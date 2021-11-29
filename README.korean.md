@@ -1058,23 +1058,23 @@ null == undefined   // true
 
 <p align="right"><a href="#목차">⬆ Return to top</a></p>
 
-# `7. 초안: 성능`
+# `7. 초안: 성능 모범 사례`
 
 ## 협력자들이 현재 작업중입니다. [함께 하시겠습니까?](https://github.com/i0natan/nodebestpractices/issues/256)
 
 <br/><br/>
 
-## ![✔] 7.1. 이벤트 루프를 막지 말아라
+## ![✔] 7.1. 이벤트 루프를 차단하지 마라.
 
-**핵심요약:** CPU 집약적인 과제들은 거의 단일 스레드로 된 이벤드 루프를 블로킹하고 전용 스레드나 프로세스, 혹은 컨텍스트에 따라 그 외 다른 기술에 떠넘기므로 피하라.
+**핵심요약:** CPU 집약적인 과제들은 단일 스레드로 된 이벤드 루프를 대부분 차단하고 컨텍스트에 따라 전용 스레드나 프로세스, 또는 그 외 다른 기술에 떠넘기므로 피하라.
 
-**그렇게 하지 않을 경우:** 이벤트 루프가 블로킹되면 Node.js는 다른 요청을 처리할 수 없게 되어 동시성 (concurrent) 사용자들을 지체하게 한다. **사용자 3000명이 응답을 기다리고 있고, 콘텐츠도 제공될 준비가 되어있는데, 단 하나의 요청이 서버가 결과물을 발송하지 못하도록 블로킹 할 수 있다**
+**그렇게 하지 않을 경우:** 이벤트 루프가 차단되면 Node.js는 다른 요청을 처리할 수 없게 되어 동시(concurrent) 사용자들에게 지연이 발생하게 된다. **사용자 3000명이 응답을 기다리고 있고, 콘텐츠도 제공될 준비가 되어있는데, 단 하나의 요청이 서버가 결과물을 발송하지 못하도록 블로킹 할 수 있다.**
 
 🔗 [**자세히 보기: Do not block the event loop**](/sections/performance/block-loop.md)
 
 <br /><br /><br />
 
-## ![✔] 7.2. Lodash같은 user-land 유틸 대신 네이티브 자바스크립트 메소드를 택해라
+## ![✔] 7.2. Lodash와 같은 사용자 영역 유틸리티보다는 네이티브 자바스크립트 메소드를 사용하라.
 
 **핵심요약:** 네이티브 메소드 대신 `lodash` 나 `underscore` 같은 유틸 라이브러리를 쓰는 것은 불필요한 의존성이나 성능 저하를 야기할 수 있기에 보통 페날티가 붙는다.
 새로운 V8 엔진과 함께 새로운 ES 기준이 도입되고부터 네이티브 메소드가 유틸리티 라이브러리보다 50% 더 능률적이라는 것을 명심해라.
@@ -1083,7 +1083,43 @@ null == undefined   // true
 
 🔗 [**자세히 보기: Native over user land utils**](/sections/performance/nativeoverutil.md)
 
-<br/><br/><br/>
+<br/><br/><br />
+
+# `8. Docker 모범 사례`
+
+🏅 아래 이어지는 많은 사례들에 대해 배울 수 있었던 [Bret Fisher](https://github.com/BretFisher)에게 감사함을 전한다.
+
+<br/><br/>
+
+## ![✔] 8.1. 더 간결하고 안전한 Docker 이미지를 위해 여러 단계의 빌드를 사용하라.
+
+**핵심요약:** 필요한 프로덕션 아티팩트들만 복사하기 위해 여러 단계의 빌드를 사용하라. 어플리케이션을 실행하기 위해서 더 많은 빌드 시간 종속성 및 파일들은 필요하지 않다. 여러 단계의 빌드를 사용하면, 런타임 환경이 필요한 것들만 포함하는 동안 빌드 중에 해당 리소스를 사용할 수 있다. 여러 단계의 빌드는 보안 위협을 제거하고 이미지를 경량화하기 위한 손쉬운 방법이다.
+
+**그렇게 하지 않을 경우:** 더 큰 이미지는 빌드하고 전송하는 데 더 오랜 시간을 더 소요하고, 빌드 전용 툴에 취약점이 포함될 수 있으며, 빌드 단계에만 해당하는 기밀 값들이 유출될 수 있다.
+
+####  여러 단계의 빌드에 대한 dockerfile 예제
+
+```docker
+FROM node:14.4.0 AS build
+
+COPY . .
+RUN npm ci && npm run build
+
+
+FROM node:slim-14.4.0
+
+USER node
+EXPOSE 8080
+
+COPY --from=build /home/node/app/dist /home/node/app/package.json /home/node/app/package-lock.json ./
+RUN npm ci --production
+
+CMD [ "node", "dist/app.js" ]
+```
+
+🔗 [Read More: Use multi-stage builds](https://github.com/jjy821/nodebestpractices/blob/master/sections/docker/multi_stage_builds.md)
+
+<br/><br/><br />
 
 # 마일스톤
 
