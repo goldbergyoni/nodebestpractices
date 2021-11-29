@@ -52,11 +52,11 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
     <a href="#1-project-structure-practices">1. Project Structure Practices (5)</a>
   </summary>
 
-&emsp;&emsp;[1.1 Structure your solution by components `strategic`](#-11-structure-your-solution-by-components)</br>
+&emsp;&emsp;[1.1 Structure your solution by components `#strategic`](#-11-structure-your-solution-by-components)</br>
 &emsp;&emsp;[1.2 Layer your components, keep the web layer within its boundaries](#-12-layer-your-components-keep-the-web-layer-within-its-boundaries)</br>
 &emsp;&emsp;[1.3 Wrap common utilities as npm packages](#-13-wrap-common-utilities-as-npm-packages)</br>
 &emsp;&emsp;[1.4 Separate Express 'app' and 'server'](#-14-separate-express-app-and-server)</br>
-&emsp;&emsp;[1.5 Use environment aware, secure and hierarchical config `modified-recently`](#-15-use-environment-aware-secure-and-hierarchical-config)</br>
+&emsp;&emsp;[1.5 Use environment aware, secure and hierarchical config `#modified-recently`](#-15-use-environment-aware-secure-and-hierarchical-config)</br>
 
 </details>
 
@@ -66,7 +66,7 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
   </summary>
 
 &emsp;&emsp;[2.1 Use Async-Await or promises for async error handling](#-21-use-async-await-or-promises-for-async-error-handling)</br>
-&emsp;&emsp;[2.2 Use only the built-in Error object `strategic`](#-22-use-only-the-built-in-error-object)</br>
+&emsp;&emsp;[2.2 Use only the built-in Error object `#strategic`](#-22-use-only-the-built-in-error-object)</br>
 &emsp;&emsp;[2.3 Distinguish operational vs programmer errors](#-23-distinguish-operational-vs-programmer-errors)</br>
 &emsp;&emsp;[2.4 Handle errors centrally, not within a middleware](#-24-handle-errors-centrally-not-within-a-middleware)</br>
 &emsp;&emsp;[2.5 Document API errors using Swagger or GraphQL](#-25-document-api-errors-using-swagger-or-graphql)</br>
@@ -76,7 +76,7 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 &emsp;&emsp;[2.9 Discover errors and downtime using APM products](#-29-discover-errors-and-downtime-using-apm-products)</br>
 &emsp;&emsp;[2.10 Catch unhandled promise rejections](#-210-catch-unhandled-promise-rejections)</br>
 &emsp;&emsp;[2.11 Fail fast, validate arguments using a dedicated library](#-211-fail-fast-validate-arguments-using-a-dedicated-library)</br>
-&emsp;&emsp;[2.12 Always await promises before returning to avoid a partial stacktrace `new`](#-212-always-await-promises-before-returning-to-avoid-a-partial-stacktrace)</br>
+&emsp;&emsp;[2.12 Always await promises before returning to avoid a partial stacktrace `#new`](#-212-always-await-promises-before-returning-to-avoid-a-partial-stacktrace)</br>
 
 </details>
 
@@ -85,7 +85,7 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
     <a href="#3-code-style-practices">3. Code Style Practices (12)</a>
   </summary>
 
-&emsp;&emsp;[3.1 Use ESLint](#-31-use-eslint)</br>
+&emsp;&emsp;[3.1 Use ESLint `#strategic`](#-31-use-eslint)</br>
 &emsp;&emsp;[3.2 Node.js specific plugins](#-32-nodejs-specific-plugins)</br>
 &emsp;&emsp;[3.3 Start a Codeblock's Curly Braces on the Same Line](#-33-start-a-codeblocks-curly-braces-on-the-same-line)</br>
 &emsp;&emsp;[3.4 Separate your statements properly](#-34-separate-your-statements-properly)</br>
@@ -105,9 +105,9 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
     <a href="#4-testing-and-overall-quality-practices">4. Testing And Overall Quality Practices (13)</a>
   </summary>
 
-&emsp;&emsp;[4.1 At the very least, write API (component) testing](#-41-at-the-very-least-write-api-component-testing)</br>
-&emsp;&emsp;[4.2 Include 3 parts in each test name](#-42-include-3-parts-in-each-test-name)</br>
-&emsp;&emsp;[4.3 Structure tests by the AAA pattern](#-43-structure-tests-by-the-aaa-pattern)</br>
+&emsp;&emsp;[4.1 At the very least, write API (component) testing `#strategic`](#-41-at-the-very-least-write-api-component-testing)</br>
+&emsp;&emsp;[4.2 Include 3 parts in each test name `#new`](#-42-include-3-parts-in-each-test-name)</br>
+&emsp;&emsp;[4.3 Structure tests by the AAA pattern `#strategic`](#-43-structure-tests-by-the-aaa-pattern)</br>
 &emsp;&emsp;[4.4 Detect code issues with a linter](#-44-detect-code-issues-with-a-linter)</br>
 &emsp;&emsp;[4.5 Avoid global test fixtures and seeds, add data per-test](#-45-avoid-global-test-fixtures-and-seeds-add-data-per-test)</br>
 &emsp;&emsp;[4.6 Constantly inspect for vulnerable dependencies](#-46-constantly-inspect-for-vulnerable-dependencies)</br>
