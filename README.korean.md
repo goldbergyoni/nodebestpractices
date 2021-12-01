@@ -1081,7 +1081,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 기본적으로 **이미** 내장된 코드를 쓰거나 코드를 몇줄 더 써서 파일을 몇개 더 써야 하는 것을 막을 수 있었음에도 불구하고 더 비능률적인 프로젝트를 유지해야 할 것이다.
 
-🔗 [**자세히 보기: Native over user land utils**](/sections/performance/nativeoverutil.md)
+🔗 [**자세히 보기: Native over user land utils**](/sections/performance/nativeoverutil.korean.md)
 
 <br/><br/><br />
 
