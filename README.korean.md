@@ -926,7 +926,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 애플리케이션이 커다란 요청을 처리해야하면 다른 중요한 일을 완수할 수 없게 되어 성능이 영향을 받고 DOS 공격에 취약하게 된다
 
-🔗 [**자세히 보기: Limit payload size**](/sections/security/requestpayloadsizelimit.md)
+🔗 [**자세히 보기: Limit payload size**](/sections/security/requestpayloadsizelimit.korean.md)
 
 <br/><br/>
 
@@ -938,7 +938,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 악의적인 자바스크립트 코드가 `eval`같이 실시간으로 평가하는 자바스크립트 언어 함수에 넘어가면 페이지 안의 자바스크립트 승인을 완전히 장악하게 된다. 이 취약점은 XSS 공격 형태로 자주 나타난다.
 
-🔗 [**자세히 보기: Avoid JavaScript eval statements**](/sections/security/avoideval.md)
+🔗 [**자세히 보기: Avoid JavaScript eval statements**](/sections/security/avoideval.korean.md)
 
 <br/><br/>
 
@@ -950,7 +950,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 저조하게 쓰여진 정규표현들은 이벤트 루프를 완전히 정체시킬 수 있는 정규표현 DOS 공격에 취약해진다. 예를들면, 자주 쓰이는 `moment` 패키지 또한 2017년 11월에 악성 정규표현 사용에 취약하다는 것이 발견되었다
 
-🔗 [**자세히 보기: Prevent malicious RegEx**](/sections/security/regex.md)
+🔗 [**자세히 보기: Prevent malicious RegEx**](/sections/security/regex.korean.md)
 
 <br/><br/>
 
@@ -962,7 +962,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 악의적인 사용자 입력이 이전에 파일시스템에 업로드되었거나 이미 시스템에 존재하는 흑화된 파일을 require 하는데 쓰이는 매개변수로 들어가게 될 수 있다.
 
-🔗 [**자세히 보기: Safe module loading**](/sections/security/safemoduleloading.md)
+🔗 [**자세히 보기: Safe module loading**](/sections/security/safemoduleloading.korean.md)
 
 <br/><br/>
 
@@ -974,7 +974,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 플러그인이 무한 루프나, 메모리 과부화나, 민감한 프로세스 환경 변수로의 접근과 같이 무한히 가지각색으로 공격할 수 있다
 
-🔗 [**자세히 보기: Run unsafe code in a sandbox**](/sections/security/sandbox.md)
+🔗 [**자세히 보기: Run unsafe code in a sandbox**](/sections/security/sandbox.korean.md)
 
 <br/><br/>
 
@@ -986,7 +986,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 순진무구하게 자식 프로세스를 썼다가는 악의적인 사용자 입력이 무결처리 되지 않은 시스템 명령어로 인한 원격 커맨드 실행이나 쉘 주입 공격을 초래할 수 있다.
 
-🔗 [**자세히 보기: Be cautious when working with child processes**](/sections/security/childprocesses.md)
+🔗 [**자세히 보기: Be cautious when working with child processes**](/sections/security/childprocesses.korean.md)
 
 <br/><br/>
 
