@@ -32,3 +32,9 @@ From the blog [dynatrace](https://www.dynatrace.com/blog/the-drastic-effects-of-
 ![NODE_ENV=production](../../assets/images/setnodeenv1.png "NODE_ENV=production")
 
 <br/><br/>
+
+
+From the Synk blog [10 best practices to containerize Node.js web applications with Docker](https://snyk.io/blog/10-best-practices-to-containerize-nodejs-web-applications-with-docker/#:~:text=Some%20frameworks%20and,As%20an%20example):
+> ...Some frameworks and libraries may only turn on the optimized configuration that is suited to production if that NODE_ENV environment variable is set to production. Putting aside our opinion on whether this is a good or bad practice for frameworks to take, it is important to know this.
+
+<br/><br/>
