@@ -2,7 +2,7 @@
 
 ## 한 문단 설명
 
-우리는 포크들이 그들의 앱을 `CMD 'npm start'`를 이용해 시작하는 코드 예시들을 보는 것에 익숙하지만 이것은 악습이다. `npm` 바이너리는 우아한 종료(graceful shutdown)을 방지하는 시그널들을 너의 앱으로 전송하지 못할 것이다(참고 [/sections/docker/graceful-shutdown.md]). 너가 자식-프로세스를 사용하고 있다면 너의 호스트에 좀비프로세스를 남긴 채, 예기치 못한 종료의 경우에 그들은 올바르게 제거되지 않을 것이다. `npm start`는 또한 아무런 이익이 없는 잉여 프로세스를 가지게 될 것이다. 너의 앱을 시작하려면 `CMD ['noded', 'server.js']`를 사용하라. 너의 앱이 자식-프로세스를 낳는다면 또한 `TINI`를 앤트리포인트로 사용하여라.
+우리는 포크들이 그들의 앱을 `CMD 'npm start'`를 이용해 시작하는 코드 예시들을 보는 것에 익숙하지만 이것은 악습이다. `npm` 바이너리는 시그널들을 너의 앱으로 전송하지 못하여 우아한 종료(graceful shutdown)가 되지 않는다(참고 [/sections/docker/graceful-shutdown.md]). 너가 자식-프로세스를 사용한다면 예기치 못한 종료의 경우 이들은 너의 호스트에 좀비프로세스를 남긴 채 올바르게 제거되지 않을 것이다. `npm start`는 또한 아무런 이익이 없는 잉여 프로세스를 가지게 될 것이다. 너의 앱을 시작하려면 `CMD ['node', 'server.js']`를 사용하라. 또한 너의 앱이 자식-프로세스를 낳는다면 `TINI`를 앤트리포인트로 사용하여라.
 
 ### 코드 예시 - 노드를 이용한 부트스래핑
 
@@ -63,8 +63,7 @@ RUN npm ci --production && npm clean cache --force
 CMD "node server.js"
 ```
 
-npm으로 시작하여, 여기 프로세스 트리가 있다.
-Starting with npm, here’s the process tree:
+npm으로 시작하여, 여기 프로세스 트리가 있다:
 
 ```console
 $ ps falx
