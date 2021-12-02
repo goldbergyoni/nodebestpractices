@@ -1117,7 +1117,7 @@ RUN npm ci --production
 CMD [ "node", "dist/app.js" ]
 ```
 
-🔗 [Read More: Use multi-stage builds](https://github.com/jjy821/nodebestpractices/blob/master/sections/docker/multi_stage_builds.md)
+🔗 [**자세히 보기: Use multi-stage builds**](/sections/docker/multi_stage_builds.korean.md)
 
 <br/><br/><br />
 
