@@ -1213,7 +1213,7 @@ CMD [ "node", "dist/app.js" ]
 **핵심요약:** 프로세스 SIGTERM 이벤트를 처리하고 모든 기존의 연결 및 리소스를 정리해라. 이 작업은 진행중이 요청에 대해 응답하는 동안 수행해야 한다. 도커의 런파임에서는 컨테이너를 종료하는 것은 드문일이 아니라 자주 발생하는 작업이다. 이를 달성하기 위해 로드벨런서, 연결 유지 및 연결, HTTP서버 및 기타 리소스와 같은 몇가지 움직이는 부분을 원활하게 작업하기 위해서는 이를 고려한 코드가 필요하다.
 **그렇게 하지 않을 경우:** 여러가지 고려하지 않고 바로 컨테이너를 종료하는것은 수천 사용자의 실망을 의미한다.
 
-🔗 [**자세히 보기: Graceful shutdown**](./sections/docker/graceful-shutdown.md)
+🔗 [**자세히 보기: Graceful shutdown**](./sections/docker/graceful-shutdown.korean.md)
 
 <br /><br /><br />
 
@@ -1222,7 +1222,7 @@ CMD [ "node", "dist/app.js" ]
 **핵심요약:** 항상 도커 및 JS 런타임 플래그를 사용하여 메모리를 제한해라. 컨테이너 배치를 신중하게 하기위해 Docker 제한이 필요하며, V8엔진의 max-old-space 플래그는 정시에 GC를 시작하고 메모리 사용량 부족을 방지하는 데 필요하다. V8엔진의 메모리를 실제 컨테이너의 제한보다 약간 작게 설정해라.
 **그렇게 하지 않을 경우:** 도커의 메모리 제한은 확장을 결정하고, 다른 컨테이너를 굶주리게 하는것을 방지하기 위해 필요하다. V8엔진의 메모리를 제한하지 않으면 컨테이너 리소스를 충분히 활용하지 않는다. 명시적으로 정하지 않으면 리소스의 50~60%를 사용할 때 충돌이 발생한다.
 
-🔗 [**자세히 보기: Set memory limits using Docker only**](./sections/docker/memory-limit.md)
+🔗 [**자세히 보기: Set memory limits using Docker only**](./sections/docker/memory-limit.korean.md)
 
 <br /><br /><br />
 
