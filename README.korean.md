@@ -1204,7 +1204,7 @@ CMD [ "node", "dist/app.js" ]
 **핵심요약:** 빌드 및 생산주기동안 개발의존성이 필요할 때도 있지만, 결국 배포할 때에는 개발의존성은 없어져야 하고 이미지는 최소화 되어야 한다. 그렇게 되면 필요한 코드만 배포가 되고, 잠재적인 공격을 줄일 수 있다. 여러 단계의 빌드를 사용할 때 모든 종속성을 먼저 설치하고 마지막에 `npm ci --production`를 실행하여 원하는 바를 달성할 수 있다.
 **그렇게 하지 않을 경우:** 악명 높은 npm보안 침해중 다수가 발견된 패키지를 배포할 수 있다. ([eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes)와 같은)
 
-🔗 [**자세히 보기: Remove development dependencies**](./sections/docker/install-for-production.md)
+🔗 [**자세히 보기: Remove development dependencies**](./sections/docker/install-for-production.korean.md)
 
 <br /><br /><br />
 

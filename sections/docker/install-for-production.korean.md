@@ -21,7 +21,7 @@ WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm ci --production && npm cache clean --force
 
-# 나머지 코드는 여기서 부터 작성하면 된다.
+# 나머지 코드는 여기서 부터 작성하면 된다
 ```
 
 </details>
@@ -62,7 +62,7 @@ CMD [ "node", "dist/app.js" ]
 
 <br/><br/>
 
-### Code Example Anti-Pattern – Installing all dependencies in a single stage dockerfile
+### 안티 패턴 예시 코드 – 모든 의존성을 하나의 dockerfile로 설차
 
 <details>
 
@@ -73,18 +73,19 @@ FROM node:12-slim AS build
 
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
-# Two mistakes below: Installing dev dependencies, not deleting the cache after npm install
+# 두 가지 실수: 개발 의존성 설치, npm 설치 후 캐시 미삭제
 RUN npm install
 
-# The rest comes here
+# 나머지 코드는 여기서 부터 작성하면 된다
 ```
 
 </details>
 
 <br/><br/>
 
-### Blog Quote: "npm ci is also more strict than a regular install"
+### 블로그 인용: "npm ci 는 일반적인 설치보다 엄격하다"
 
-From [npm documentation](https://docs.npmjs.com/cli/ci.html)
+[npm 공식 문서](https://docs.npmjs.com/cli/ci.html)로 부터
 
-> This command is similar to npm-install, except it’s meant to be used in automated environments such as test platforms, continuous integration, and deployment – or any situation where you want to make sure you’re doing a clean install of your dependencies. It can be significantly faster than a regular npm install by skipping certain user-oriented features. It is also more strict than a regular install, which can help catch errors or inconsistencies caused by the incrementally-installed local environments of most npm users.
+> This command is similar to npm-install,
+테스트 플랫폼 또는 CI/CD와 같은 자동화된 환경에서 사용하는 것 또는 종속성을 새로 설치하고 있는지 확인하려는 상황을 제외하고. 이 명령어는 npm-install과 유사하다. 특정 사용자가 지향하는 기능을 건너뛰면 일반 npm 설치보다 훨씬 빠를 수 있다. 또한 일반적인 설치보다 더욱 엄격하므로 대부분의 npm 사용자가 로컬 환경에서 하는 설치로 인한 오류나 불일치를 포착하는데 도움이 된다.
