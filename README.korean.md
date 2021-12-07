@@ -1119,7 +1119,35 @@ CMD [ "node", "dist/app.js" ]
 
 🔗 [**자세히 보기: Use multi-stage builds**](/sections/docker/multi_stage_builds.korean.md)
 
-<br/><br/><br />
+<br/><br/>
+
+## ![✔] 8.11 빌드 시간 동안의 기밀 값들에 대해 삭제하고, 인수에 기밀값들을 넣는 것을 피하라.
+**핵심요약:** 도커 빌드 환경으로부터 기밀 값들이 유출되는 것을 피하라. 도커 이미지는 일반적으로 프로덕션처럼 악의적인 데이터들이 제거된 상태가 아닌 CI, 레지스트리와 같은 다양한 환경에서 공유된다. 하나의 예로는 docker에 일반적으로 인수로 전달되어지는 npm 토큰이다. 이 토큰은 이미지와 함께 오래 유지되며, 침입자들로 하여금 공개되지 않은 npm 레지스트리에 대한 정의되지 않은 접근을 허락한다. 이는 .npmrc 같은 기밀을 포함한 파일을 복사하고 이후 여러 단계의 빌드를 통해 해당 파일은 삭제해버리거나, 또는 흔적에 대해 전혀 남기지 않는 Docker build-kit 기밀 기능을 사용함으로써 막을 수 있다.
+
+**그렇게 하지 않을 경우:** CI와 도커 레지스트리에 대해 접근하는 모든 이들이 중요한 조직 기밀들에 대한 접근들 중 일부를 덤으로 얻어가게 될 것이다.
+
+🔗 [**자세히 보기: Clean-out build-time secrets**](/sections/docker/avoidbuildtimesecrets.korean.md)
+
+<br/><br/>
+
+## ![✔] 8.12. Scan images for multi layers of vulnerabilities
+TL;DR: Besides checking code dependencies vulnerabilities also scan the final image that is shipped to production. Docker image scanners check the code dependencies but also the OS binaries. This E2E security scan covers more ground and verifies that no bad guy injected bad things during the build. Consequently, it is recommended running this as the last step before deployment. There are a handful of free and commercial scanners that also provide CI/CD plugins
+
+Otherwise: Your code might be entirely free from vulnerabilities. However it might still get hacked due to vulnerable version of OS-level binaries (e.g. OpenSSL, TarBall) that are commonly being used by applications
+
+🔗 [Read More: Scan the entire image before production](https://github.com/goldbergyoni/nodebestpractices/blob/master/sections/docker/scan-images.md)
+
+
+<br/><br/>
+
+## ![✔] 8.13 Clean NODE_MODULE cache
+TL;DR: After installing dependencies in a container remove the local cache. It doesn't make any sense to duplicate the dependencies for faster future installs since there won't be any further installs - A Docker image is immutable. Using a single line of code tens of MB (typically 10-50% of the image size) are shaved off
+
+Otherwise: The image that will get shipped to production will weigh 30% more due to files that will never get used
+
+🔗 [Read More: Clean NODE_MODULE cache](https://github.com/goldbergyoni/nodebestpractices/blob/master/sections/docker/clean-cache.md)
+
+<br/><br/><br/>
 
 # 마일스톤
 
