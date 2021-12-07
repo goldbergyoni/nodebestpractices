@@ -1131,7 +1131,7 @@ CMD [ "node", "dist/app.js" ]
 <br/><br/>
 
 ## ![✔] 8.12. 취약점의 여러 계층에 대한 이미지 스캔
-**핵심 요약:** 코드 종속성 취약점을 확인하는 것은 단지 그것뿐만이 아니라 상용에 전달되는 최종 이미지 역시 스캔한다. 도커 이미지 스캐너들은 코드 종속성을 확인하지만, OS 바이너리들 역시 확인한다. 이 E2E 보안 스캔은 더 많은 근거들을 다루고, 빌드 중에 악의적인 사람들이 좋지 않은 것들을 주입시켰는지를 확인한다. 따라서, 이 과정은 배포 전 마지막 단계에서 실행되는 것이 권장되어진다. CI/CD 플러그인까지 제공하는 일부 무료 및 상업적 스캐너들이 존재하고 있다.
+**핵심요약:** 코드 종속성 취약점을 확인하는 것은 단지 그것뿐만이 아니라 상용에 전달되는 최종 이미지 역시 스캔한다. 도커 이미지 스캐너들은 코드 종속성을 확인하지만, OS 바이너리들 역시 확인한다. 이 E2E 보안 스캔은 더 많은 근거들을 다루고, 빌드 중에 악의적인 사람들이 좋지 않은 것들을 주입시켰는지를 확인한다. 따라서, 이 과정은 배포 전 마지막 단계에서 실행되는 것이 권장되어진다. CI/CD 플러그인까지 제공하는 일부 무료 및 상업적 스캐너들이 존재하고 있다.
 
 **그렇게 하지 않을 경우:** 당신의 코드가 취약점이 아예 없을 수도 있지만, 어플리케이션에서 일반적으로 사용되어지는 취약한 버전의 OS-레벨 바이너리(예: OpenSSL, TarBall)로 인해서 여전히 해킹될 수도 있다.
 
@@ -1140,12 +1140,13 @@ CMD [ "node", "dist/app.js" ]
 
 <br/><br/>
 
-## ![✔] 8.13 Clean NODE_MODULE cache
-TL;DR: After installing dependencies in a container remove the local cache. It doesn't make any sense to duplicate the dependencies for faster future installs since there won't be any further installs - A Docker image is immutable. Using a single line of code tens of MB (typically 10-50% of the image size) are shaved off
+## ![✔] 8.13 NODE_MODULE 캐시를 삭제하라.
 
-Otherwise: The image that will get shipped to production will weigh 30% more due to files that will never get used
+**핵심요약:** 컨테이너에서 종속성들을 설치한 후 로컬 캐시를 삭제하라. 추가적인 설치가 없기 때문에, 미래에 있을 설치를 위해서 종속성을 복사하는 것은 의미가 없다 - 도커 이미지는 변경할 수 없다. 한줄의 코드를 사용함으로써 수십 MB(일반적인 이미지 사이즈의 10-50% 정도에 해당한다.)정도가 줄어들게 된다.
 
-🔗 [Read More: Clean NODE_MODULE cache](https://github.com/goldbergyoni/nodebestpractices/blob/master/sections/docker/clean-cache.md)
+**그렇게 하지 않을 경우:** 상용으로 전달될 이미지가 절대로 사용되지 않을 파일들로 인해 30% 정도 더 무거워진 용량을 가지게 된다.
+
+🔗 [**자세히 보기: Clean NODE_MODULE cache**](https://github.com/goldbergyoni/nodebestpractices/blob/master/sections/docker/clean-cache.md)
 
 <br/><br/><br/>
 
