@@ -1130,12 +1130,12 @@ CMD [ "node", "dist/app.js" ]
 
 <br/><br/>
 
-## ![✔] 8.12. Scan images for multi layers of vulnerabilities
-TL;DR: Besides checking code dependencies vulnerabilities also scan the final image that is shipped to production. Docker image scanners check the code dependencies but also the OS binaries. This E2E security scan covers more ground and verifies that no bad guy injected bad things during the build. Consequently, it is recommended running this as the last step before deployment. There are a handful of free and commercial scanners that also provide CI/CD plugins
+## ![✔] 8.12. 취약점의 여러 계층에 대한 이미지 스캔
+**핵심 요약:** 코드 종속성 취약점을 확인하는 것은 단지 그것뿐만이 아니라 상용에 전달되는 최종 이미지 역시 스캔한다. 도커 이미지 스캐너들은 코드 종속성을 확인하지만, OS 바이너리들 역시 확인한다. 이 E2E 보안 스캔은 더 많은 근거들을 다루고, 빌드 중에 악의적인 사람들이 좋지 않은 것들을 주입시켰는지를 확인한다. 따라서, 이 과정은 배포 전 마지막 단계에서 실행되는 것이 권장되어진다. CI/CD 플러그인까지 제공하는 일부 무료 및 상업적 스캐너들이 존재하고 있다.
 
-Otherwise: Your code might be entirely free from vulnerabilities. However it might still get hacked due to vulnerable version of OS-level binaries (e.g. OpenSSL, TarBall) that are commonly being used by applications
+**그렇게 하지 않을 경우:** 당신의 코드가 취약점이 아예 없을 수도 있지만, 어플리케이션에서 일반적으로 사용되어지는 취약한 버전의 OS-레벨 바이너리(예: OpenSSL, TarBall)로 인해서 여전히 해킹될 수도 있다.
 
-🔗 [Read More: Scan the entire image before production](https://github.com/goldbergyoni/nodebestpractices/blob/master/sections/docker/scan-images.md)
+🔗 [**자세히 보기: Scan the entire image before production**](https://github.com/goldbergyoni/nodebestpractices/blob/master/sections/docker/scan-images.md)
 
 
 <br/><br/>
