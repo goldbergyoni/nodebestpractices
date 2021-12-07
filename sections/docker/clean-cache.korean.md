@@ -10,7 +10,7 @@ npm과 Yarn 등의 Node 패키지 매니저들을 설치된 패키지를 로컬�
 
 <br/><br/>
 
-### Code Example – Clean cache
+### 코드 예제 - 캐시 삭제
 
 <details>
 <summary><strong>Dockerfile</strong></summary>
