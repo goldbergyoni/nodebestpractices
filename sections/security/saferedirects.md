@@ -1,11 +1,10 @@
-# Prevent unsafe redirects
+# 안전하지 않은 리다이렉트를 막아라
 
-### One Paragraph Explainer
+### 한문단 설명
 
-When redirects are implemented in Node.js and/or Express, it's important to perform input validation on the server-side.
-If an attacker discovers that you are not validating external, user-supplied input, they may exploit this vulnerability by posting specially-crafted links on forums, social media, and other public places to get users to click it.
+리다이렉트가 Node.js나 Express에서 실행될 때, 서버-사이드에서 입력(input) 유효성 검사를 하는 것이 중요하다. 공격자들이 사용자가 제공한 입력 같은 외부의 유효성 검사를 하지않는 것을 발견한다면, 그들은 포럼, 소셜 미디어와 다른 공공 장소에서 유저들이 클릭할 수 있도록 특수하게 조작된 링크를 게시해서 이 취약성을 이용할 수 있다.
 
-Example: Unsafe express redirect using user input
+예시: 사용자 입력을 사용한 안전하지 않은 express 리다이렉트
 ```javascript
 const express = require('express');
 const app = express();
@@ -19,9 +18,9 @@ app.get('/login', (req, res, next) => {
 }); 
 ```
 
-The suggested fix to avoid unsafe redirects is to avoid relying on user input. If user input must be used, safe redirect whitelists can be used to avoid exposing the vulnerability.
+안전하지 않은 리다이렉트를 피하기 위해 제안된 해결책은 사용자 입력에 의존을 피하는 것이다. 사용자 입력이 사용되어야 한다면, 안전한 리다이렉트 whitelist들을 사용하여 취약성이 노출되는 것을 피할 수 있어야 한다.
 
-Example: Safe redirect whitelist
+예시: 안전한 리다이렉트 whitelist
 ```javascript
 const whitelist = { 
   'https://google.com': 1 
@@ -47,12 +46,9 @@ app.get('/login', (req, res, next) => {
 ```
 
 
-### What other bloggers say
+### 다른 블로거의 말 
 
-From the blog by [NodeSwat](https://blog.nodeswat.com/unvalidated-redirects-b0a2885720db):
-> Fortunately the mitigation methods for this vulnerability are quite straightforward — don’t use unvalidated user input as the basis for redirect. 
-
-From the blog by [Hailstone](https://blog.hailstone.io/how-to-prevent-unsafe-redirects-in-node-js/)
-> However, if the server-side redirect logic does not validate data entering the url parameter, your users may end up on a site that looks exactly like yours (examp1e.com), but ultimately serves the needs of criminal hackers!
-
-
+[NodeSwat](https://blog.nodeswat.com/unvalidated-redirects-b0a2885720db): 에서
+> 다행히도 이 취약성에 대한 완화 방법은 꽤 쉽다. 리다이렉트 기준으로 검증되지 않은 사용자 입력을 사용하지 마라.
+[Hailstone](https://blog.hailstone.io/how-to-prevent-unsafe-redirects-in-node-js/) 블로그에서
+> 그러나 서버-사이드 리다이렉트 로직이 url파라미터에 입력하는 데이터 유효성을 검사하지 못한다면, 사용자들이 정확하게 같은 사이트(examp1e.com)에 접속할 수 있으며, 궁극적으로 범죄 해커들의 요구를 제공한다.
