@@ -800,9 +800,7 @@ null == undefined   // true
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
-요약: SQL/NoSQL 주입 및 기타 악의적인 공격을 방지하려면 항상 데이터를 이스케이프하거나 명명되거나 인덱싱된 매개변수화된 쿼리를 지원하고 예상 유형에 대한 사용자 입력의 유효성을 검사하는 ORM/ODM 또는 데이터베이스 라이브러리를 사용하라. JavaScript 템플릿 문자열 또는 문자열 연결을 사용하여 쿼리에 값을 삽입하지 마라. 이렇게 하면 애플리케이션이 광범위한 취약점에 노출될 수 있습니다. 평판이 좋은 모든 Node.js 데이터 액세스 라이브러리(예: Sequelize, Knex, mongoose)에는 주입 공격에 대한 보호 기능이 내장되어 있다.
-
-**핵심요약:** SQL/NoSQL 주입과 같은 악의적인 공격을 막기 위해서는 ORM/ODM을 쓰거나, 데이터를 항상 이스케이프 해주거나 명명된 또는 인덱싱된 파타미터화 된 쿼리들을 지원하며 예상되는 데이터 타입에 따른 사용자 입력을 검증해주는 데이터베이스 라이브러리를 항상 활용해라. 자바스크립트 템플릿 문자열(template strings)이나 문자열 병합(string concatenation)으로 값을 주입하면 앱을 광범위한 취약점에 노출시키므로 절대 그대로 사용해서는 안된다. 평판이 좋은 Node.js 데이터 접근 라이브러리들(예: [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose))은 모두 주입 공격을 막아주는 보호대책이 내장되어있다.
+요약: SQL/NoSQL 주입 및 기타 악의적인 공격을 방지하려면 항상 데이터를 이스케이프하거나 명명되거나 인덱싱된 매개변수화된 쿼리를 지원하고 예상 유형에 대한 사용자 입력의 유효성을 검사하는 ORM/ODM 또는 데이터베이스 라이브러리를 사용하라. JavaScript 템플릿 문자열 또는 문자열 연결을 사용하여 쿼리에 값을 삽입하지 마라. 이렇게 하면 애플리케이션이 광범위한 취약점에 노출될 수 있습니다. 평판이 좋은 모든 Node.js 데이터 액세스 라이브러리(예: [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose))에는 주입 공격에 대한 보호 기능이 내장되어 있다.
 
 **그렇게 하지 않을 경우:** 확인되지 않거나 (unvalidated) 제거되지 않은 (unsanitized) 사용자 입력은 MongoDB for NoSQL를 쓸 때 operator injection를 초래할 수 있고, 제대로 된 위생처리 시스템이나 ORM을 쓰지 않는것은 SQL 주입 공격을 쉽게 만들어 엄청난 취약점을 만들어낼 수 있다.
 
@@ -812,7 +810,7 @@ null == undefined   // true
 
 ## ![✔] 6.5. 일반적인 보안 모범사례 모음
 
-**핵심요약:** 이것은 Node.js와는 직접적으로 관련되지 않은 보안과 관련된 조언 모음집이다. - Node의 시행도 다른 언어들과 그닥 다르지 않다. 아래 자세히 보기를 클릭하여 읽어보자.
+**핵심요약:** 이것은 Node.js와는 직접적으로 관련되지 않은 보안과 관련된 조언 모음집인데 Node의 구현도 다른 언어들과 그닥 다르지 않다. 아래 자세히 보기를 클릭하여 읽어보자.
 
 🔗 [**자세히 보기: Common security best practices**](/sections/security/commonsecuritybestpractices.korean.md)
 
@@ -1121,7 +1119,7 @@ CMD [ "node", "dist/app.js" ]
 
 <br/><br/>
 
-## ![✔] 8.11 빌드 시간 동안의 기밀 값들에 대해 삭제하고, 인수에 기밀값들을 넣는 것을 피하라.
+## ![✔] 8.11 빌드 시간 동안의 기밀 값들에 대해 삭제하고, 인자에 기밀값들을 넣는 것을 피하라.
 **핵심요약:** 도커 빌드 환경으로부터 기밀 값들이 유출되는 것을 피하라. 도커 이미지는 일반적으로 프로덕션처럼 악의적인 데이터들이 제거된 상태가 아닌 CI, 레지스트리와 같은 다양한 환경에서 공유된다. 하나의 예로는 docker에 일반적으로 인수로 전달되어지는 npm 토큰이다. 이 토큰은 이미지와 함께 오래 유지되며, 침입자들로 하여금 공개되지 않은 npm 레지스트리에 대한 정의되지 않은 접근을 허락한다. 이는 .npmrc 같은 기밀을 포함한 파일을 복사하고 이후 여러 단계의 빌드를 통해 해당 파일은 삭제해버리거나, 또는 흔적에 대해 전혀 남기지 않는 Docker build-kit 기밀 기능을 사용함으로써 막을 수 있다.
 
 **그렇게 하지 않을 경우:** CI와 도커 레지스트리에 대해 접근하는 모든 이들이 중요한 조직 기밀들에 대한 접근들 중 일부를 덤으로 얻어가게 될 것이다.
