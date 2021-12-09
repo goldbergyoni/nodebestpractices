@@ -800,7 +800,7 @@ null == undefined   // true
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
-요약: SQL/NoSQL 주입 및 기타 악의적인 공격을 방지하려면 항상 데이터를 이스케이프하거나 명명되거나 인덱싱된 매개변수화된 쿼리를 지원하고 예상 유형에 대한 사용자 입력의 유효성을 검사하는 ORM/ODM 또는 데이터베이스 라이브러리를 사용하라. JavaScript 템플릿 문자열 또는 문자열 연결을 사용하여 쿼리에 값을 삽입하지 마라. 이렇게 하면 애플리케이션이 광범위한 취약점에 노출될 수 있습니다. 평판이 좋은 모든 Node.js 데이터 액세스 라이브러리(예: [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose))에는 주입 공격에 대한 보호 기능이 내장되어 있다.
+**핵심요약:** SQL/NoSQL 주입 및 기타 악의적인 공격을 방지하려면 항상 데이터를 이스케이프하거나 명명되거나 인덱싱된 매개변수화된 쿼리를 지원하고 예상 유형에 대한 사용자 입력의 유효성을 검사하는 ORM/ODM 또는 데이터베이스 라이브러리를 사용하라. JavaScript 템플릿 문자열 또는 문자열 연결을 사용하여 쿼리에 값을 삽입하지 마라. 이렇게 하면 애플리케이션이 광범위한 취약점에 노출될 수 있습니다. 평판이 좋은 모든 Node.js 데이터 액세스 라이브러리(예: [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose))에는 주입 공격에 대한 보호 기능이 내장되어 있다.
 
 **그렇게 하지 않을 경우:** 확인되지 않거나 (unvalidated) 제거되지 않은 (unsanitized) 사용자 입력은 MongoDB for NoSQL를 쓸 때 operator injection를 초래할 수 있고, 제대로 된 위생처리 시스템이나 ORM을 쓰지 않는것은 SQL 주입 공격을 쉽게 만들어 엄청난 취약점을 만들어낼 수 있다.
 
