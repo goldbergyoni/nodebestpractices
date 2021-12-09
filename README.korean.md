@@ -1087,7 +1087,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 도커 빌드는 매우 길어지고 아주 작은 변화를 만들어도 많은 자원을 소모하게 될 것이다.
 
-🔗 [**자세히 보기: 빌드 시간 단축을 위한 캐시 활용**](./sections/docker/use-cache-for-shorter-build-time.md)
+🔗 [**자세히 보기: 빌드 시간 단축을 위한 캐시 활용**](./sections/docker/use-cache-for-shorter-build-time.korean.md)
 
 <br /><br /><br />
 
@@ -1099,7 +1099,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 기본 이미지의 새로운 버전이 변경 사항과 함께 상용에 배포되어 의도하지 않은 애플리케이션 동작이 발생할 수 있다.
 
-🔗 [**자세히 보기: 이미지 태그들을 이해하고 "latest" 태그를 주의하여 사용하라**](./sections/docker/image-tags.md)
+🔗 [**자세히 보기: 이미지 태그들을 이해하고 "latest" 태그를 주의하여 사용하라**](./sections/docker/image-tags.korean.md)
 
 <br /><br /><br />
 
@@ -1109,7 +1109,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 이미지 구축, 푸시, 풀하는데 더 오래 걸리고, 알 수 없는 공격 벡터들이 악성 행동자에 의해 사용될 수 있으며 더 많은 자원을 소비하게 된다.
 
-🔗 [**자세히 보기: 더 작은 이미지를 선호하라**](./sections/docker/smaller_base_images.md)
+🔗 [**자세히 보기: 더 작은 이미지를 선호하라**](./sections/docker/smaller_base_images.korean.md)
 
 <br /><br /><br />
 
