@@ -5,7 +5,7 @@
 ### 한문단 요약
 
 개발 종속성은 잠재적인 보안 취약점과 컨테이너의 크기를 크게 증가시킨다.
-예를들어, 가장 영햘도 있는 npm 보안 침해 중 일부는 [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes) 또는 [event-stream that was used by nodemon](https://snyk.io/blog/a-post-mortem-of-the-malicious-event-stream-backdoor/)과 같은 영향을 받는 패키지개발의존성에서 시작했다. 이러한 이유로 인해 최종적으로 배포되는 이미지는 안전하고 최소화 되어야 한다. `--production`플래그와 함께 `npm install`을 하는것이 가장 좋다. 그러나, 새로운 설치와 잠금 파일의 존재를 보장하는 `npm ci`를 실행하는 것이 훨씬 더 안전하다. 로컬 캐시를 제거하면 수십MB를 추가로 절약할 수 있다. 종종 개발의존성을 사용하여 컨테이너 내에서 테스트를 하거나 디버깅을 해야 할 필요가 있는데 [multi stage builds](./multi_stage_builds.md)가 서로 다른 종속성 세트와 배포용 종속성 세트를 갖는데 도움이 될 수 있다.
+예를들어, 가장 영향도 있는 npm 보안 침해 중 일부는 [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes) 또는 [event-stream that was used by nodemon](https://snyk.io/blog/a-post-mortem-of-the-malicious-event-stream-backdoor/)과 같은 영향을 받는 패키지 개발의존성에서 시작했다. 이러한 이유로 인해 최종적으로 배포되는 이미지는 안전하고 최소화 되어야 한다. `--production`플래그와 함께 `npm install`을 하는것이 가장 좋다. 그러나, 새로운 설치와 잠금 파일의 존재를 보장하는 `npm ci`를 실행하는 것이 훨씬 더 안전하다. 로컬 캐시를 제거하면 수십MB를 추가로 절약할 수 있다. 종종 개발의존성을 사용하여 컨테이너 내에서 테스트를 하거나 디버깅을 해야 할 필요가 있는데 [multi stage builds](./multi_stage_builds.md)가 서로 다른 종속성 세트와 배포용 종속성 세트를 갖는데 도움이 될 수 있다.
 <br/><br/>
 
 ### 예시 코드 – 배포를 위한 설치
@@ -62,7 +62,7 @@ CMD [ "node", "dist/app.js" ]
 
 <br/><br/>
 
-### 안티 패턴 예시 코드 – 모든 의존성을 하나의 dockerfile로 설차
+### 안티 패턴 예시 코드 – 모든 의존성을 하나의 dockerfile로 설치
 
 <details>
 
