@@ -28,4 +28,4 @@ foo(
 
 ### ESLint와 Prettier 결합하기
 
-ESLint와 Prettier는 코드 포맷 기능에서 겹치지만 [prettier-eslint](https://github.com/prettier/prettier-eslint), [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier), 그리고 [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)와 같은 다른 패키지들을 사용해 쉽게 결합시킬 수 있다. 그들의 차이점에 대해 더 많은 내용은 [here](https://stackoverflow.com/questions/44690308/whats-the-difference-between-prettier-eslint-eslint-plugin-prettier-and-eslint) 링크를 통해 확인할 수 있다.
+ESLint와 Prettier는 코드 포맷 기능에서 겹치지만 [prettier-eslint](https://github.com/prettier/prettier-eslint), [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier), 그리고 [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)와 같은 다른 패키지들을 사용해 쉽게 결합시킬 수 있다. 그들의 차이점에 대해 더 많은 내용은 [링크](https://stackoverflow.com/questions/44690308/whats-the-difference-between-prettier-eslint-eslint-plugin-prettier-and-eslint)를 통해 확인할 수 있다.

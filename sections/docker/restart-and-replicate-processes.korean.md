@@ -37,7 +37,7 @@ FROM node:12-slim
 
 # 빌드 로직이 오는 곳
 
-CMD ["pm2-runtime", "indes.js"]
+CMD ["pm2-runtime", "index.js"]
 ```
 
 </details>

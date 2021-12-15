@@ -1,4 +1,4 @@
-# 유지 endpoint를 만들어라
+# 유지관리용 endpoint를 만들어라
 
 <br/><br/>
 
@@ -15,7 +15,8 @@ const heapdump = require('heapdump');
 
 // 요청이 인가된 것인지 확인하기
 function isAuthorized(req) {
-  // ...
+    // ...
+}
 }
 
 router.get('/ops/heapdump', (req, res, next) => {
