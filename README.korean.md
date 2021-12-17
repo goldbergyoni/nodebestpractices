@@ -1009,7 +1009,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 쿠키가 insecure 연결로 송신되면 공격자가 세션 ID를 보고 웹 어플리케이션 프레임워크를 식별하고, 모듈관련 취약점도 찾아낼 수 있다
 
-🔗 [**자세히 보기: Cookie and session security**](/sections/security/sessions.md)
+🔗 [**자세히 보기: 쿠키와 세션 안전성**](/sections/security/sessions.korean.md)
 
 <br/><br/>
 
@@ -1031,7 +1031,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 공격자가 당신이 외부 유저로부터 조달된 입력을 검사하지 않는다는 것을 발견 할 경우, 특수 조작된 포럼 링크를 포럼이나 소셜 미디어, 그 외 공공 장소에 게재해서 유저들이 클릭하도록 해서 이 취약점을 악용할 수 있다.
 
-🔗 [**자세히 보기: Prevent unsafe redirects**](/sections/security/saferedirects.md)
+🔗 [**자세히 보기: 안전하지 않은 리다이렉트를 막아라**](/sections/security/saferedirects.korean.md)
 
 <br/><br/>
 
@@ -1043,7 +1043,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 프로젝트의 API key나, 암호나, 그 외 기밀사항들이 이것들을 우연히 발견한 이들 누구나에 의해 남용되면 재정적 손실이나 사칭과 같은 위험을 초래할 수 있다.
 
-🔗 [**자세히 보기: Avoid publishing secrets**](/sections/security/avoid_publishing_secrets.md)
+🔗 [**자세히 보기: 기밀 사항을 출판하는 것을 막아라**](/sections/security/avoid_publishing_secrets.korean.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#목차">⬆ Return to top</a></p>
