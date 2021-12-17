@@ -1,24 +1,24 @@
-# npm registry에 기밀사항이 출판되는 것을 막아라
+# Avoid publishing secrets to the npm registry
 
-### 한문단 설명
-예방책은 공공의 npm 저장소에 기밀사항을 실수로 출판하는 위험을 피할 수 있도록 조치를 취해야 한다. `.npmignore` 파일을 사용하여 특정한 파일이나 폴더를 블랙리스트로 올리도록 하거나 `package.json`에서 `files` 배열은 whitelist로 행동할 수 있다.
+### One Paragraph Explainer
+Precautions should be taken to avoid the risk of accidentally publishing secrets to public npm registries. An `.npmignore` file can be used to blacklist specific files or folders, or the `files` array in `package.json` can act as a whitelist.
 
-npm publish가 실제로 저장소에 게시한 내용을 얻으려면, `--dry-run` 플래그를 npm publish 명령어에 추가하여 생성된 tarbell 패키지의 상세보기를 제공할 수 있다.
+To gain a view of what npm publish will really publish to the registry, the `--dry-run` flag can be added the npm publish command to provide a verbose view of the tarbell package created.
 
-프로젝트가 `.npmignore`와 `.gitignore` 파일을 모두 작성하는 경우, `.npmignore`에 없는 모든 것이 저장소에 게시된다. (즉, `.npmignore`파일이 `.gitignore` 파일을 재정의한다.) 이 상태는 일반적인 혼란의 원인이고 기밀 사항이 누설로 이어질 수 있는 문제이다. 개발자들은 `.gitignore` 파일을 갱신하지만, `.npmignore` 파일 갱신은 잊을 수 있고, 이러한 것으로 인해 잠재적으로 민감한 파일이 소스 제어로 푸시되지 않고 npm 패키지에 포함될 수 있다.
+It is important to note that if a project is utilising both `.npmignore` and `.gitignore` files, everything which isn't in `.npmignore` is published to the registry(i.e. the `.npmignore` file overrides the `.gitignore`). This condition is a common source of confusion and is a problem that can lead to leaking secrets. Developers may end up updating the `.gitignore` file, but forget to update `.npmignore` as well, which can lead to a potentially sensitive file not being pushed to source control, but still being included in the npm package.
 
-### 코드 예시
+### Code example
 Example .npmignore file
 ```
-#tests
+# Tests
 test
 coverage
 
-#build tools
+# Build tools
 .travis.yml
 .jenkins.yml
 
-#environment
+# Environment
 .env
 .config
 
@@ -26,7 +26,7 @@ coverage
 
 Example use of files array in package.json
 
-```
+```json
 { 
   "files" : [
     "dist/moment.js",
@@ -35,10 +35,10 @@ Example use of files array in package.json
 }
 ```
 
-### 다른 블로거의 말
+### What other bloggers say
 
-[Liran Tal & Juan Picado at Snyk](https://snyk.io/blog/ten-npm-security-best-practices/): 블로그에서
-> 사용해야 할 다른 좋은 사례는 화이트리스트로 작동하고 생성 및 설치될 패키지에 포함될 파일 배열을 지정하는 package.json의 파일 속성을 사용하는 것이다. 파일 속성과 ignore파일은 패키지에서 명시적으로 포함할 파일을 결정하기 위해 함께 사용될 수 있다. 둘 다 사용할 경우, package.json의 이전 파일 속성이 ingore파일보다 우선시한다.
- 
-[npm blog](https://blog.npmjs.org/post/165769683050/publishing-what-you-mean-to-publish)에서
-> npm publish를 실행할 때, npm은 현재 디렉토리에 모든 파일들을 번들로 묶는다. 이는 무엇을 포함하고 무시해야 할지에 대해 몇 가지 결정을 내린다. 이러한 결정을 내리기 위해서, 프로젝트 디렉토리에서 여러 파일의 내용을 사용한다. 이 파일들은 .gitignore, .npmignore와 package.json의 파일 배열들을 포함한다. 또한, 항상 일부 파일들을 포함하고 다른 파일들은 무시한다.
+From the blog by [Liran Tal & Juan Picado at Snyk](https://snyk.io/blog/ten-npm-security-best-practices/):
+> ... Another good practice to adopt is making use of the files property in package.json, which works as a whitelist and specifies the array of files to be included in the package that is to be created and installed (while the ignore file functions as a blacklist). The files property and an ignore file can both be used together to determine which files should explicitly be included, as well as excluded, from the package. When using both, the former the files property in package.json takes precedence over the ignore file.
+
+From the [npm blog](https://blog.npmjs.org/post/165769683050/publishing-what-you-mean-to-publish)
+> ... When you run npm publish, npm bundles up all the files in the current directory. It makes a few decisions for you about what to include and what to ignore. To make these decisions, it uses the contents of several files in your project directory. These files include .gitignore, .npmignore, and the files array in the package.json. It also always includes certain files and ignores others.
