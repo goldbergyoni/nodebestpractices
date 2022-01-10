@@ -1550,6 +1550,78 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "e-e-e",
+      "name": "Benjamin Forster",
+      "avatar_url": "https://avatars.githubusercontent.com/u/12589522?v=4",
+      "profile": "http://www.benjaminforster.com",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "DanieleFedeli",
+      "name": "Daniele Fedeli",
+      "avatar_url": "https://avatars.githubusercontent.com/u/37077048?v=4",
+      "profile": "https://github.com/DanieleFedeli",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "djob195",
+      "name": "djob195",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17146669?v=4",
+      "profile": "https://github.com/djob195",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "antspk",
+      "name": "antspk",
+      "avatar_url": "https://avatars.githubusercontent.com/u/78955792?v=4",
+      "profile": "https://github.com/antspk",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "jjy821",
+      "name": "정진영",
+      "avatar_url": "https://avatars.githubusercontent.com/u/88075341?v=4",
+      "profile": "https://jjy0821.tistory.com/",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "kkk-cashwalk",
+      "name": "kkk-cashwalk",
+      "avatar_url": "https://avatars.githubusercontent.com/u/91455122?v=4",
+      "profile": "https://github.com/kkk-cashwalk",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "apainintheneck",
+      "name": "apainintheneck",
+      "avatar_url": "https://avatars.githubusercontent.com/u/42982186?v=4",
+      "profile": "https://github.com/apainintheneck",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "koyanyaroo",
+      "name": "Fajar Budhi Iswanda",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9715368?v=4",
+      "profile": "https://github.com/koyanyaroo",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",

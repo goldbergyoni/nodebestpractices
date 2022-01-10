@@ -14,7 +14,7 @@ A test report should tell whether the current application revision satisfies the
 
 <br/><br/>
 
-### Code example: a test name that incluces 3 parts
+### Code example: a test name that includes 3 parts
 ```javascript
 //1. unit under test
 describe('Products Service', () => {
