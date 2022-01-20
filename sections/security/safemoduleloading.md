@@ -2,7 +2,7 @@
 
 ### One Paragraph Explainer
 
-Avoid requiring/importing another file with a path that was given as parameter due to the concern that it could have originated from user input. This rule can be extended for accessing files in general (i.e. `fs.readFile()`) or other sensitive resources with dynamic variables originating from user input.
+파라메터를 이용해서 파일을 임포트 하는 방식을 피해야 한다. 유저의 인풋에 변수가 변경되어 파일이 임포트 될 수 있다. 이러한 방식을 `fs.readFile()`같은 함수를 사용할 떄에도 동일하게 적용되어야 한다.
 
 ### Code example
 

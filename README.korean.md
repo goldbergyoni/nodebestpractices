@@ -1,6 +1,6 @@
 [✔]: assets/images/checkbox-small-blue.png
 
-# Node.js 모범 사례
+# Node.js 모범 사례 for jeongdeoksoo
 
 <h1 align="center">
   <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices"/>
@@ -176,11 +176,11 @@
 
 <br/><br/>
 
-## ![✔] 2.7 에러 확인을 용이하게 해주는 안정된 로거를 사용하라
+## ![✔] 2.7 에러 가시성을 높이기 위해 안정된 로거를 사용하라.
 
-**핵심요약:** Winston, Bunyan 혹은 Log4J와 같이 자리를 잡은 로깅 도구들은 에러를 발견하고 이해하는 속도를 높여준다. 그러니 console.log은 쓰지 마라
+**핵심요약**: Pino나 Log4J와 같은 안정된 로깅 도구들은 에러 발견 및 이해 속도를 높여준다. 그러니 console.log에 대해서는 잊어버리도록 하자.
 
-**그렇게 하지 않을 경우:** 로그 검색 도구나 제대로 된 로그 뷰어 없이 console.log을 훑어보거나 복잡하게 꼬인 텍스트 파일을 일일이 읽어 보는 것은 야근을 부를 수 있다.
+**그렇지 않을 경우**: 로그 검색 도구 또는 적절한 로그 뷰어가 없이 모든 console.log를 대략적으로 훑어보거나, 복잡하게 꼬인 텍스트 파일을 일일이 읽는 것은 당신을 직장에서 야근하게 만들 수도 있다.
 
 🔗 [**자세히 보기: 발전된 로거를 사용하기**](./sections/errorhandling/usematurelogger.korean.md)
 
@@ -188,9 +188,9 @@
 
 ## ![✔] 2.8 당신이 선호하는 테스트 프레임워크로 에러 흐름을 테스트하라
 
-**핵심요약:** 전문적인 자동화 QA든 일반적인 수동 개발자 테스트든 당신의 코드가 긍정적인 상황에서 잘 동작할 뿐만 아니라 올바른 에러를 처리하고 반환하는지도 확실히 하라. Mocha & Chai와 같은 테스트 프레임워크를 쓰면 쉽게 처리할 수 있다 ("Gist popup"안의 코드 예제를 확인하라).
+**핵심요약:** 전문적인 자동화 QA든 일반적인 수동 개발자 테스트든, 당신의 코드가 긍정적인 상황에서 잘 동작하는 것만이 아니라 올바른 에러를 처리하고 반환하는지도 확실히 하라. Mocha & Chai와 같은 테스트 프레임워크를 쓰면 쉽게 처리할 수 있다. ("Gist popup"안의 코드 예제를 확인하라).
 
-**그렇게 하지 않을 경우:** 자동이든 수동이든 테스트가 없다면 당신은 당신의 코드가 올바른 에러를 반환하는지 믿지 못할 것이다. 의미 있는 에러가 없다면 에러 처리도 없는 것이다.
+**그렇게 하지 않을 경우:** 자동이든 수동이든 테스트가 없다면, 당신은 코드가 올바른 에러를 반환하는지 확신을 가질 수 없을 것이다. 의미 있는 에러가 없이는 에러 처리도 없는 것이다.
 
 🔗 [**자세히 보기: 에러 흐름 테스트하기**](./sections/errorhandling/testingerrorflows.korean.md)
 
@@ -198,7 +198,7 @@
 
 ## ![✔] 2.9 APM 제품을 사용하여 에러와 다운타임을 확인하라
 
-**핵심요약:** 모니터링 및 성능 제품(APM)은 미리 알아서 코드베이스와 API를 측정하고 자동적으로 당신이 놓친 에러, 충돌, 느린 부분을 강조 표시해준다.
+**핵심요약:** 모니터링 및 성능 제품(APM)은 코드베이스와 API를 사전에 측정하고 누락된 에러, 충돌, 느린 부분들을 자동으로 강조 표시해준다.
 
 **그렇게 하지 않을 경우:** API의 성능과 다운타임을 측정하기위해 많은 노력을 들여야 할지도 모른다. 아마 당신은 실제 상황에서 어떤 코드 부분이 가장 느린지, 그것이 UX에 어떻게 영향을 미칠지 절대 알수없을 것이다.
 
@@ -216,13 +216,21 @@
 
 <br/><br/>
 
-## ![✔] 2.11 전용 라이브러리를 이용해 인자값이 유효한지 검사하여 빠르게 실패하라(fail fast)
+## ![✔] 2.11 전용 라이브러리를 이용해 인자값이 유효한지 검사하여 빠르게 실패하라. (Fail fast)
 
-**핵심요약:** 나중에 처리하기가 더 힘들어지는 지저분한 버그를 피하기 위해 Assert API 입력은 당신의 Express 모범사례가 되어야 한다. 당신이 Joi와 같은 유용한 헬퍼 라이브러리를 사용하지 않는 이상 유효성 검사 코드는 일반적으로 손이 많이 간다.
+**핵심요약:** 나중에 처리하기가 더 힘들어지는 지저분한 버그를 피하기 위해서, API 입력을 확실하게 확인하라. 만약 당신이 ajv 또는 Joi와 같은 유용한 헬퍼 라이브러리를 사용하지 않는 이상 유효성 검사 코드는 일반적으로 손이 많이 간다.
 
-**그렇게 하지 않을 경우:** 이런 상황을 생각해보자. 당신의 함수가 "Discount"라는 숫자를 받아야하는데 요청하는 사람이 넘겨주는 것을 깜빡했다. 그 후에 당신의 코드는 Discount!=0인지 아닌지 체크한다(사실 허용된 Discount의 값은 0보다 커야 한다). 그러면 사용자가 할인을 받게될 것이다. 보이는가? 엄청나게 지저분한 버그이다.
+**그렇게 하지 않을 경우:** 이런 상황을 생각해보자. 당신의 함수가 "Discount"라는 숫자 타입의 인자를 받아야하는데, 요청하는 사람이 값을 넘겨주는 것을 깜빡했다. 그 후에 당신의 코드는 Discount!=0인지 아닌지 체크하고 (사실 허용된 Discount의 값은 0보다 커야 한다.), 사용자는 할인을 받게될 것이다. 보이는가? 엄청나게 지저분한 버그이다.
 
 🔗 [**자세히 보기: 빠르게 실패하기**](./sections/errorhandling/failfast.korean.md)
+
+<br /><br />
+
+## ![✔] 2.12 파편화된 스택 추적을 피하기 위해, promise들을 반환하기 전에 항상 await 시켜라.
+
+**핵심요약:** promise를 반환할 때는 전체적인 에러 스택 추적에 도움이 되도록 항상 return await을 수행하자. 만약 함수가 promise를 반환하는 경우라면 해당 함수를 'async' 함수로 선언하고, 반환하기 전에 promise를 명시적으로 await 해주어야 한다.
+
+**그렇게 하지 않을 경우:** await 하지 않고 promise를 반환하는 함수는 스택 추적에서 나타나지 않는다 이런 누락된 프레임들은, 특히 비정상적인 동작의 원인이 누락된 함수 내부에 있는 경우라면, 에러로 이어지는 흐름에 대한 이해를 복잡하게 만들 수 있다.
 
 <br/><br/><br/>
 
@@ -500,47 +508,47 @@ null == undefined; // true
 
 ## ![✔] 4.8 테스트 범위를 확인하여 안좋은 테스트 패턴을 잡아내라
 
-**핵심요약:** [이스탄불](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc)같은 코드 커버리지 도구가 좋은 이유는 세가지가 있다: 무료이고 (거져먹는거다), 테스트 범위가 줄어드는것을 잡아내주고, 마지막으로 테스트 부조화를 하이라이트한다: 색으로 나타낸 코드 커버리지 리포트를 보다보면 catch 절 같이 테스트 하지 않는 부분들을 알아채기 시작할것이다. (테스트는 보통 경로만 테스트하기에 앱이 에러가 날 경우에는 어떻게 반응하는지는...) 커버리지가 일정 기준 이하로 떨어지면 빌드가 자동으로 실패하게 해라.
+**핵심요약:** [이스탄불](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) 같은 코드 커버리지 도구가 좋은 이유는 세 가지가 있다. 우선 무료로 제공되고 (리포트들을 얻기 위한 노력이 필요하지 않음), 테스트 범위가 감소하는 것을 식별해주며, 마지막으로 가장 중요한 것은 테스트의 불일치를 강조해준다는 점이다. 색상으로 지정된 코드 범위 리포트들은 당신으로 하여금 catch절과 같이 테스트되지 않는 코드 영역을 알 수 있도록 만들어준다. (테스트들은 오류가 발생할 때가 아니라 가장 일반적인 경로로만 호출을 한다는 의미이다.) 커버리지가 일정 기준 이하로 떨어지면, 빌드가 자동으로 실패하게 해라.
 
-**그렇게 하지 않을 경우:** 코드의 상당한 범위가 테스트로 커버되지 않더라도 자동으로 측정되지 않으니 알 길이 없다.
+**그렇게 하지 않을 경우:** 코드에서 상당한 범위가 테스트에 포함되지 않더라도 자동으로 측정되지 않기 떄문에, 우리가 알 수 있는 길이 없다.
 
 <br/><br/>
 
 ## ![✔] 4.9 오래되어 뒤떨어진 패키지는 없는지 검사해라
 
-**핵심요약:** 설치된 패키지중 outdated 된 패키지는 없는지 선호하는 도구 (예: 'npm outdated'나 [npm-check-updates](https://www.npmjs.com/package/npm-check-updates))를 써서 확인하고, 심할 경우 빌드가 실패하도록 CI 경로에 이 체크를 주입해라. 이를테면 설치된 패키지가 패치 commit 5개 이상 뒤쳐졌거나 (예: 로컬은 1.3.1버젼인데 repository 버젼은 1.3.8이라던가) 제작자가 deprecated 되었다고 태그하면 빌드를 죽이고 이 버젼을 배포하지 못하게 막아라.
+**핵심요약:** 설치된 패키지들 중에서 오래된 패키지들이 없는지 당신이 선호하는 도구 (예: 'npm outdated'[npm-check-updates](https://www.npmjs.com/package/npm-check-updates)를 써서 확인하고, 이러한 검사를 CI 파이프라인에 주입해 심각한 경우에는 빌드를 실패하게 만들자. 예를 들어, 설치된 패키지의 패치 commit이 5개 이상 뒤쳐지거나 (예: 로컬 버전은 1.3.1인데 repository 버전은 1.3.8인 경우) 제작자가 deprecated 되었다고 태그했다면 빌드를 종료하고 배포를 방지하라.
 
-**그렇게 하지 않을 경우:** 제작자가 직접 불안정하다고 태그한 패키지가 프로덕션에서 놀아날 수 있다
+**그렇게 하지 않을 경우:** 제작자가 위험하다고 명시적으로 태그했던 패키지들이 당신의 프로덕션에서 실행되게 된다.
 
 <br/><br/>
 
-## ![✔] 4.10 프로덕션과 비슷한 환경에서 e2e 테스트를 실행해라
+## ![✔] 4.10 프로덕션과 비슷한 환경에서 e2e 테스트를 실행하라.
 
-**핵심요약:** 실제 데이터를 쓰는 end to end 테스트는 DB같은 여러 묵직한 서비스에 의존하기에 CI 프로세스의 취약점이었다. 가능한 한 프로덕션과는 최대한 동떨어진 환경을 써라.
+**핵심요약:** 실제 데이터를 사용하는 end tot end(e2e) 테스트는 DB와 가은 여러 무거운 서비스들에 의존하기에 CI 프로세스의 취약점이었다. 실제 프로덕션 환경과 최대한 유사한 환경을 사용하자.
 
 **그렇게 하지 않을 경우:** docker-compose 없이는 팀들이 테스트 환경별로 (각 개발자의 컴퓨터 포함) 테스트 DB를 유지하고, 환경에 따라 테스트 결과가 다르게 나오지 않도록 이 모든 DB들을 동기화해야한다.
 
 <br/><br/>
 
-## ![✔] 4.11 정적분석도구를 이용해서 refactor를 정기적으로 해라
+## ![✔] 4.11 정적 분석 도구를 이용해 주기적으로 리팩토링하라.
 
-**핵심요약:** 정적분석도구(static analysis tool)는 코드의 품질을 객관적으로 개선하고 코드 유지를 쉽게 해준다. 코드스멜을 감지하면 CI 빌드가 실패하도록 정적분석도구를 넣어주면 된다. 이게 단순한 린보팅다 나은 주된 이유로는 여러 파일에 걸친 맥락에서 품질을 점검할 수 있다는 점 (예: 중복된 코드 감지), 더 발달된 분석을 할 수 있다는 점 (예: 코드 복잡도), 코드 문제의 전적과 진전을 따라 볼 수 있다는 점이 있다. 쓸만한 도구의 예를 두가지를 들자면 [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) 와 [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate))가 있다.
+**핵심요약:** 정적인 분석 도구를 사용하는 것은 당신으로 하여금 코드 퀄리티를 발전시키고, 코드 유지를 할 수 있도록 객관적인 방법을 제시하여 도움을 준다. code smells(심오한 문제를 일으킬 가능성이 있는 코드)을 발견했을 때 실패할 수 있도록 정적 분석 도구를 CI 빌드에 추가할 수 있다. 정적 분석 도구의 단순한 lint를 넘어서는 주 장점은 바로 여러 파일들의 컨텍스트에서 퀄리티를 분석하고(예: 중복 분석), 발전된 분석을 수행하며 (예: 코드 복잡도), 코드 이슈들의 히스토리와 과정을 따라갈 수 있게 하는 능력이다. 당신이 사용할 수 있는 두 가지 도구 예제는 [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube))와 [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate))가 있다.
 
-**그렇게 하지 않을 경우:** 아무리 반짝이는 새로나온 라이브러리나 최첨단 기능을 써봤자 코드 품질이 불량하면 버그와 성능은 못고친다
+**그렇게 하지 않을 경우:** 아무리 반짝이는 새로나온 라이브러리나 최첨단 기능을 쓰더라도, 코드의 품질이 불량하다면 버그와 성능은 고칠 수 없다.
 
 🔗 [**자세히 보기: Refactoring!**](./sections/testingandquality/refactoring.md)
 
 <br/><br/>
 
-## ![✔] 4.12 CI 플랫폼은 신중하게 선택해라 (Jenkins vs CircleCI vs Travis vs 나머지)
+## ![✔] 4.12 CI 플랫폼은 신중하게 선택하라. (Jenkins vs CircleCI vs Travis vs 나머지)
 
-**핵심요약:** 지속적 통합 플랫폼(CICD)은 품질 관리 도구(예: 테스트, 린트)들을 돌릴 수 있게 플러그인 생태계가 활발해야 한다. 예전에는 대부분의 프로젝트들이 배우기는 어려워도 커뮤니티도 제일 크고 강력한 플랫폼을 가진 [Jenkins](https://jenkins.io/)를 기본으로 썼다. 요즘엔 [CircleCI](https://circleci.com)등의 SaaS 해결책을 쓰는게 훨씬 더 쉬워졌다. 이런 도구들은 인프라 전체를 관리하는 부담 없이도 유연한 CI 경로를 만들 수 있게 해준다. 결국에는 안전성과 빠름의 상호 절충이다 - 조심해서 선택해라.
+**핵심요약:** 지속적인 통합 플랫폼(CICD)은 모든 품질 관리 도구(예: test, lint)를 돌릴 수 있도록 플러그인 생태계가 활발해야만 한다. [Jenkins](https://jenkins.io/)는 배우기는 어렵지만 가장 크고 강력한 플랫폼을 가졌기 때문에 기본적으로 사용되었다. 요즘은  [CircleCI](https://circleci.com) 등과 같은 SaaS 도구를 사용하는 CI 솔루션 사용이 훨씬 더 쉬워졌다. 이러한 도구들은 우리가 인프라 전체를 관리할 부담이 없이 유연한 CI 파이프라인을 만들 수 있게 해준다. 결과적으로, 안정성과 빠름의 상호 절충이 되었다. — 주의해서 선택하도록 하자.
 
-**그렇게 하지 않을 경우:** 잘 알려지지 않은 중소 솔루션 업체를 쓰다간 흔치 않은 고급 설정을 커스터마이징 해야할 때 막혀버릴 수도 있다. 하지만 반대로, Jenkins를 택하면 인프라를 수축하는데 소중한 시간을 다 빼앗길 수도 있다.
+**그렇게 하지 않을 경우:**  알려지지 않은 중소 솔루션 업체를 쓰다간 흔치 않은 고급 설정을 커스터마이징 해야할 때 막혀버릴 수도 있다. 하지만 반대로, Jenkins를 택하면 인프라를 수축하는데 소중한 시간을 다 빼앗길 수도 있다.
 
 🔗 [**자세히 보기: Choosing CI platform**](./sections/testingandquality/citools.korean.md)
 
-## ![✔] 4.13 미들웨어들은 격리시켜 테스트해라
+## ![✔] 4.13 미들웨어들은 독립적으로 테스트하라.
 
 **핵심요약:** 여러 요청에 걸친 막대한 로직을 미들웨어가 수용하는 경우, 웹 프레임워크 전체를 깨우지 않고 격리 상태로 테스트 할만한 가치가 있다. {req, res, next} 객체들을 스텁(stub)하여 염탐(spy)하면 쉽게 달성할 수 있다.
 
@@ -754,39 +762,39 @@ null == undefined; // true
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
 
-**핵심요약:** [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security)와 같은 보안 관련 linter 플러그인을 사용하여 보안 취약점과 문제점을 가능한 한 빨리 잡아라. 이것은 eval 사용, 자식 프로세스 호출, string literal(예: 사용자 입력)을 쓰는 모듈 불러오기 같은 보안 취약점을 잡는데 도움이 될 수 있다. 보안 linter가 잡는 코드를 보려면, 아래의 '자세히 보기'을 클릭해라.
+**핵심요약:** 보안 취약성 및 문제들을 잡기 위해서 코드가 작성될 때 [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) 같은 보안 관련 linter 플러그인들을 사용하라. 이것은 eval의 사용 또는 문자열 리터럴로 모듈을 가져오는 것, 자식 프로세스 호출 등과 같은 보안 취약점을 잡을 수 있도록 돕는다. 아래 'Read more'을 클릭하여 보안 linter로 포착되는 경우의 코드 예제를 확인하라.
 
-**그렇게 하지 않을 경우:** 개발과정에서는 이해하기 쉬운 보안 약점이었음에도 상용환경에서는 주요쟁점이 된다. 또, 프로젝트가 일관된 보안 프렉티스를 따르지 않아, 취약점이 노출되거나 민감한 정보가 원격 저장소에 유출될 수 있다.
+**그렇게 하지 않을 경우:** 개발 과정에서 직접적인 보안 취약점이 될 수 있었던 부분이 상용에서도 큰 문제가 되어 다가올 수 있다. 또한 프로젝트는 일관된 코드 보안 사례를 따르지 않게 되어 취약점이 생기거나, 민감한 secrets들이 원격 repository로 커밋될 수 있다.
 
 🔗 [**자세히 보기: Lint rules**](./sections/security/lintrules.md)
 
 <br/><br/>
 
-## ![✔] 6.2. 미들웨어로 병행연산 (concurrent) 요청들을 제한해라
+## ![✔] 6.2. 미들웨어로 병행연산 (concurrent) 요청들을 제한하라.
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**핵심요약:** DOS 서비스 거부 공격은 흔하며 하기에도 비교적 쉽다. 클라우드 로드밸런서, 클라우드 방화벽, nginx, [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) 패키지나, (소규모의 덜 중요한 앱의 경우) 비율제한 미들웨어(예: [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))를 써서 비율제한을 시행해라.
+**핵심요약:** DOS 서비스 공격은 굉장히 대중적이고, 수행하기에 상대적으로 쉬운 편이다. 클라우드 로드밸런서, 클라우드 방화벽, nginx, [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) 패키지들이나 (작고 상대적으로 중요하지 않은 앱들에 대해) 속도 제한 미들웨어(예:[express-rate-limit](https://www.npmjs.com/package/express-rate-limit)) 같은 외부 서비스를 사용해서 속도 제한을 구현한다.
 
-**그렇게 하지 않을 경우:** 애플리케이션이 서비스 거부 공격을 받으면 실제 이용자들이 받는 서비스가 저하되거나 먹통이 된다.
+**그렇게 하지 않을 경우:** 애플리케이션을 사용하는 유저들이 사용이 불가능하거나 저하되는 서비스를 받게되는 문제를 초래할 수 있다.
 
 🔗 [**자세히 보기: Implement rate limiting**](./sections/security/limitrequests.md)
 
 <br/><br/>
 
-## ![✔] 6.3 기밀은 설정 파일에서 빼거나 패키지를 이용해서 암호화해라
+## ![✔] 6.3 기밀은 설정 파일에서 빼거나 패키지를 이용해서 암호화하라.
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A3:Sensitive%20Data%20Exposure%20-green.svg" alt=""/></a>
 
-**핵심요약:** 기밀사항은 절대 평문 형태로 설정 파일이나 소스코드에 저장하지 말아라. 그 대신 Vault나 Kubernetes/Docker Secrets나 환경변수 같은 기밀사항 관리 시스템을 써라. 부득이하게 소스 콘트롤에 기밀사항을 저장해야 하는 경우, 반드시 암호화해서 관리해라 (rolling keys, 만료, 감사 등). pre-commit/push hook을 사용해서 실수로 기밀사항을 버젼 콘트롤에 커밋하는 것을 막아라.
+**핵심요약:** 기밀사항은 절대 평문 형태로 설정 파일이나 소스코드에 저장하지 말아라. 그 대신 Vault나 Kubernetes/Docker Secrets나 환경변수 같은 기밀사항 관리 시스템을 써라. 부득이하게 소스 콘트롤에 기밀사항을 저장해야 하는 경우, 반드시 암호화하여 관리되어야 한다 (rolling keys, 만료, 감사 등). 실수로 기밀사항을 버젼 콘트롤에 커밋하는 것을 막기 위해 pre-commit/push hook을 사용하자.
 
-**그렇게 하지 않을 경우:** 비공개 저장소라 하여도 소스 제어가 실수로 공개되면 모든 기밀사항이 그대로 드러난다. 외부관계자가 소스제어에 접근이 가능해지면 의도치 않아도 관련 시스템(데이터베이스, API, 서비스 등)에도 접근을 허락하는것과 마찬가지다.
+**그렇게 하지 않을 경우:** 만약 개인 레퍼지토리라 하더라도 만약 소스 컨트롤이 실수로 공개된다면 해당 시점에서 모든 기밀들이 노출되게 된다. 외부관계자가 소스제어에 접근이 가능해지게 하는 것은, 의도치 않아도 관련 시스템(데이터베이스, API, 서비스 등)에도 접근을 허락하는 것과 마찬가지다.
 
 🔗 [**자세히 보기: Secret management**](./sections/security/secretmanagement.md)
 
 <br/><br/>
 
-## ![✔] 6.4. ORM/ODM 라이브러리를 사용해 쿼리 주입 공격을 막아라
+## ![✔] 6.4. ORM/ODM 라이브러리를 사용해 쿼리 주입 공격을 막아라.
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 

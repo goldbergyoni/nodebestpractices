@@ -2,13 +2,8 @@
 
 ### One Paragraph Explainer
 
-Parsing request bodies, for example JSON-encoded payloads, is a performance-heavy operation, especially with larger requests.
-When handling incoming requests in your web application, you should limit the size of their respective payloads. Incoming requests with
-unlimited body/payload sizes can lead to your application performing badly or crashing due to a denial-of-service outage or other unwanted side-effects.
-Many popular middleware-solutions for parsing request bodies, such as the already-included `body-parser` package for express, expose
-options to limit the sizes of request payloads, making it easy for developers to implement this functionality. You can also
-integrate a request body size limit in your reverse-proxy/web server software if supported. Below are examples for limiting request sizes using
-`express` and/or `nginx`.
+JSON-encoded payload와 같이 리퀘스트 바디를 파싱하는 것은 성능적으로 상당히 무거운 작업이다. 특히 대용량 요청의 경우 심해진다. 우리의 웹 어플리케이션을 관리할 때, 관리할 수 있는 payload의 크기를 제한해야 한다. 제한 없이 들어오는 요청의 경우, 우리의 서비스의 성능을 낮추거나 부셔버릴 수도 있다. 디도스 공격뿐만이 아니라 의도치 않은 사용에도 발생할 수 있는 것이다. 리퀘스크 바디를 파싱하는 유명한 미드웨어 솔루션들 중에, 이미 express패키지에 포함된 `body-parser`같은 모듈은 리퀘스트 페이로드의 크기를 제한할 수 있는 기능이 있다.
+또한 개발자는 리퀘스크 바디 크기를 제한하는 기능을 리버스 프록시나, 웹서버 소프트웨어에 추가할 수도 있다. 아래와 같은 예시들이 express나 nginx를 이용한 리퀘스트 크기를 제한하는 것들이다.
 
 ### Example code for `express`
 

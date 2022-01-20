@@ -1,14 +1,14 @@
-# Separate Express 'app' and 'server'
+# Express의 app과 server를 분리하라
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 한문단 설명
 
-The latest Express generator comes with a great practice that is worth to keep - the API declaration is separated from the network related configuration (port, protocol, etc). This allows testing the API in-process, without performing network calls, with all the benefits that it brings to the table: fast testing execution and getting coverage metrics of the code. It also allows deploying the same API under flexible and different network conditions. Bonus: better separation of concerns and cleaner code
+최신 Express generator에서 API 선언부는 네트워크 관련 구성(포트, 프로토콜 등)과 분리되어 있는데, 이는 따를만한 훌륭한 사례입니다. 이것은 네트워크 호출을 수행하지 않고도 진행 중인 API의 빠른 실행 테스트 및 코드 커버리지를 측정 할 수 있다는 이점을 제공합니다. 또한 변경사항이 많은 여러 네트워크 조건에서 동일한 API를 배포할 수 있게 해줍니다. 더 나은 관심사의 분리 및 더 깔끔한 코드는 보너스입니다.
 
 <br/><br/>
 
-### Code example: API declaration, should reside in app.js
+### Code example: API 선언은 app.js에 있어야 합니다.
 
 ```javascript
 var app = express();
@@ -19,7 +19,7 @@ app.use("/api/forms", forms);
 
 <br/><br/>
 
-### Code example: Server network declaration, should reside in /bin/www
+### Code example: 서버 네트워크 선언은 /bin/www에 있어야 합니다.
 
 ```javascript
 var app = require('../app');
@@ -39,7 +39,7 @@ app.set('port', port);
 var server = http.createServer(app);
 ```
 
-### Example: test your API in-process using supertest (popular testing package)
+### Example: 슈퍼테스트(인기 있는 테스트 패키지)를 사용하여 진행 중인 API 테스트
 
 ```javascript
 const app = express();
