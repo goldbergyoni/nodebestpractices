@@ -2,13 +2,11 @@
 
 ### One Paragraph Explainer
 
-As great as child processes are, they should be used with caution. Passing in user input must be sanitized, if not avoided at all.
-The dangers of unsanitized input executing system-level logic are unlimited, reaching from remote code execution to the exposure of
-sensitive system data and even data loss. A check list of preparations could look like this
+자식 프로세스가 커질수록, 더더욱 조심해야 한다. 인풋 값을 보낼때에는 무결한 값을 보내야 한다. 그렇지 않을 경우 시스템 수준의 로직의 제한이 사라지고, 원격 코드 주입으로 인해 시스템 테이터에 접근이 가능해 진다. 다음과 같은 사항을 주의해야 한다.
 
-- avoid user input in every case, otherwise validate and sanitize it
-- limit the privileges of the parent and child processes using user/group identities
-- run your process inside of an isolated environment to prevent unwanted side-effects if the other preparations fail
+- 무결성과 유효성을 거치더라도 유저 인풋을 자제해야 한다.
+- 유저와 그룹에 대한 아이디를 사용해서 부모와 자식 프로세스의 권한을 제어해야 한다.
+- 다른 예방책이 무너지더라도 부작용을 예방하기 위해 고립된 환경에서 프로세스를 실행시켜라.
 
 ### Code example: Dangers of unsanitized child process executions
 
@@ -28,4 +26,4 @@ exec('"/path/to/test file/someScript.sh" --someOption ' + input);
 
 From the Node.js child process [documentation](https://nodejs.org/dist/latest-v8.x/docs/api/child_process.html#child_process_child_process_exec_command_options_callback):
 
-> Never pass unsanitized user input to this function. Any input containing shell metacharacters may be used to trigger arbitrary command execution.
+> 무결성이 확실하지 않은 유저 인풋은 절대 넘기지 마라. 어떤 인풋이듯 쉘의 메타 데이터를 담고 있다면 추상 커맨드 인젝션이 가능하다.

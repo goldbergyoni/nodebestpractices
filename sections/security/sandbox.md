@@ -2,11 +2,13 @@
 
 ### One Paragraph Explainer
 
-As a rule of thumb, one should run his own JavaScript files only. Theories aside, real-world scenarios demand to execute JavaScript files that are being passed dynamically at run-time. For example, consider a dynamic framework like webpack that accepts custom loaders and execute those dynamically during build time. In the existence of some malicious plugin we wish to minimize the damage and maybe even let the flow terminate successfully - this requires to run the plugins in a sandbox environment that is fully isolated in terms of resources, crashes and the information we share with it. Three main options can help in achieving this isolation: 
+경험상, 자바스크립트는 별도로 실행시켜야 햔다. 이론을 벗어나서 실제로는 자바스크립트 파일은 다이나믹하게 실행된다. 예를들어 커스텀 로더와 실행기가 빌드 시간동안 다이나믹하게 실행되는 웹팩을 고려해보자. 악성 플러그인이 존재한다면 우리는 피해가 최소화되고 흐름이 성공적으로 종료되길 바란다. 플러그인을 실핸하기 위해서는 자원들을 완전히 고립시킨 샌드박스 환경에서 실행되어야 한다. 고립을 구현하기 위해서 다음과 같은 세가지 옵션이 있다.
 
-- a dedicated child process - this provides a quick information isolation but demand to tame the child process, limit its execution time and recover from errors
-- a cloud serverless framework ticks all the sandbox requirements but deployment and invoking a FaaS function dynamically is not a walk in the park
-- some npm libraries, like [sandbox](https://www.npmjs.com/package/sandbox) and [vm2](https://www.npmjs.com/package/vm2) allow execution of isolated code in 1 single line of code. Though this latter option wins in simplicity it provides a limited protection
+- 자식 프로세스 - 실행 시간을 제한하면서 빠르게 고립을 제공할 수 있다.
+
+- 클라우드 서버리스 프레임워크는 샌드박스를 제공할 수 있다. 그러나 Faas 함수를 다이나믹하게 배포하고 실행하는건 쉽진 않다.
+
+- npm 라이브러리 [sandbox](https://www.npmjs.com/package/sandbox) and [vm2](https://www.npmjs.com/package/vm2) 코드 한줄만으로 고립이 가능하다.
 
 ### Code example - Using Sandbox library to run code in isolation
 
