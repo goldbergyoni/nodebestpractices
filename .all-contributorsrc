@@ -1622,6 +1622,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "jutiger",
+      "name": "이주호",
+      "avatar_url": "https://avatars.githubusercontent.com/u/97490806?v=4",
+      "profile": "https://github.com/jutiger",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
