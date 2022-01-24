@@ -18,8 +18,7 @@
 
 <br/>
 
-
-Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md), [![FR](./assets/flags/FR.png)**FR**](./README.french.md), [![BR](./assets/flags/BR.png)**BR**](./README.brazilian-portuguese.md), [![RU](./assets/flags/RU.png)**RU**](./README.russian.md), [![PL](./assets/flags/PL.png)**PL**](./README.polish.md), [![JA](./assets/flags/JA.png)**JA**](./README.japanese.md), [![EU](./assets/flags/EU.png)**EU**](./README.basque.md) [(![ES](./assets/flags/ES.png)**ES**, ![HE](./assets/flags/HE.png)**HE**, ![KR](./assets/flags/KR.png)**KR** and ![TR](./assets/flags/TR.png)**TR** in progress! )](#translations)
+Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md), [![FR](./assets/flags/FR.png)**FR**](./README.french.md), [![BR](./assets/flags/BR.png)**BR**](./README.brazilian-portuguese.md), [![RU](./assets/flags/RU.png)**RU**](./README.russian.md), [![ID](./assets/flags/ID.png)**ID**](./README.indonesian.md), [![PL](./assets/flags/PL.png)**PL**](./README.polish.md), [![JA](./assets/flags/JA.png)**JA**](./README.japanese.md), [![EU](./assets/flags/EU.png)**EU**](./README.basque.md) [(![ES](./assets/flags/ES.png)**ES**, ![HE](./assets/flags/HE.png)**HE**, ![KR](./assets/flags/KR.png)**KR** and ![TR](./assets/flags/TR.png)**TR** in progress! )](#translations)
 
 <br/>
 
@@ -28,7 +27,6 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 # Latest Best Practices and News
 
 - **🔖 New menu and tags**: Our menu is collapsible now and include `#tags`. New visitors can read `#strategic` items first. Returning visitors can focus on `#new` content. Seniors can filter for `#advanced` items. Courtesy of the one and only [Rubek Joshi](https://github.com/rubek-joshi@rubek-joshi)
-
 
 - **👨‍👩‍👧‍👦 New family member!**: A new repository joins our family - [Node.js Integration Tests Best Practices ✨](https://github.com/testjavascript/nodejs-integration-tests-best-practices). It includes 40+ best practices for writing awesome and performant Node.js component tests
 
@@ -112,7 +110,7 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 &emsp;&emsp;[4.4 Detect code issues with a linter](#-44-detect-code-issues-with-a-linter)</br>
 &emsp;&emsp;[4.5 Avoid global test fixtures and seeds, add data per-test `#strategic`](#-45-avoid-global-test-fixtures-and-seeds-add-data-per-test)</br>
 &emsp;&emsp;[4.6 Constantly inspect for vulnerable dependencies](#-46-constantly-inspect-for-vulnerable-dependencies)</br>
-&emsp;&emsp;[4.7 Tag your tests  `#advanced`](#-47-tag-your-tests)</br>
+&emsp;&emsp;[4.7 Tag your tests `#advanced`](#-47-tag-your-tests)</br>
 &emsp;&emsp;[4.8 Check your test coverage, it helps to identify wrong test patterns](#-48-check-your-test-coverage-it-helps-to-identify-wrong-test-patterns)</br>
 &emsp;&emsp;[4.9 Inspect for outdated packages](#-49-inspect-for-outdated-packages)</br>
 &emsp;&emsp;[4.10 Use production-like environment for e2e testing](#-410-use-production-like-environment-for-e2e-testing)</br>
@@ -134,7 +132,7 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 &emsp;&emsp;[5.5. Guard process uptime using the right tool](#-55-guard-process-uptime-using-the-right-tool)</br>
 &emsp;&emsp;[5.6. Utilize all CPU cores](#-56-utilize-all-cpu-cores)</br>
 &emsp;&emsp;[5.7. Create a ‘maintenance endpoint’](#-57-create-a-maintenance-endpoint)</br>
-&emsp;&emsp;[5.8. Discover errors and downtime using APM products  `#advanced`](#-58-discover-errors-and-downtime-using-apm-products)</br>
+&emsp;&emsp;[5.8. Discover errors and downtime using APM products `#advanced`](#-58-discover-errors-and-downtime-using-apm-products)</br>
 &emsp;&emsp;[5.9. Make your code production-ready](#-59-make-your-code-production-ready)</br>
 &emsp;&emsp;[5.10. Measure and guard the memory usage `#advanced`](#-510-measure-and-guard-the-memory-usage)</br>
 &emsp;&emsp;[5.11. Get your frontend assets out of Node](#-511-get-your-frontend-assets-out-of-node)</br>
@@ -142,7 +140,7 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 &emsp;&emsp;[5.13. Use tools that automatically detect vulnerabilities](#-513-use-tools-that-automatically-detect-vulnerabilities)</br>
 &emsp;&emsp;[5.14. Assign a transaction id to each log statement `#advanced`](#-514-assign-a-transaction-id-to-each-log-statement)</br>
 &emsp;&emsp;[5.15. Set NODE_ENV=production](#-515-set-node_envproduction)</br>
-&emsp;&emsp;[5.16. Design automated, atomic and zero-downtime deployments  `#advanced`](#-516-design-automated-atomic-and-zero-downtime-deployments)</br>
+&emsp;&emsp;[5.16. Design automated, atomic and zero-downtime deployments `#advanced`](#-516-design-automated-atomic-and-zero-downtime-deployments)</br>
 &emsp;&emsp;[5.17. Use an LTS release of Node.js](#-517-use-an-lts-release-of-nodejs)</br>
 &emsp;&emsp;[5.18. Don't route logs within the app](#-518-dont-route-logs-within-the-app)</br>
 &emsp;&emsp;[5.19. Install your packages with npm ci `#new`](#-519-install-your-packages-with-npm-ci)</br>
@@ -156,7 +154,7 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 &emsp;&emsp;[6.1. Embrace linter security rules](#-61-embrace-linter-security-rules)</br>
 &emsp;&emsp;[6.2. Limit concurrent requests using a middleware](#-62-limit-concurrent-requests-using-a-middleware)</br>
-&emsp;&emsp;[6.3 Extract secrets from config files or use packages to encrypt them  `#strategic`](#-63-extract-secrets-from-config-files-or-use-packages-to-encrypt-them)</br>
+&emsp;&emsp;[6.3 Extract secrets from config files or use packages to encrypt them `#strategic`](#-63-extract-secrets-from-config-files-or-use-packages-to-encrypt-them)</br>
 &emsp;&emsp;[6.4. Prevent query injection vulnerabilities with ORM/ODM libraries `#strategic`](#-64-prevent-query-injection-vulnerabilities-with-ormodm-libraries)</br>
 &emsp;&emsp;[6.5. Collection of generic security best practices](#-65-collection-of-generic-security-best-practices)</br>
 &emsp;&emsp;[6.6. Adjust the HTTP response headers for enhanced security](#-66-adjust-the-http-response-headers-for-enhanced-security)</br>
@@ -172,11 +170,11 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 &emsp;&emsp;[6.16. Prevent evil RegEx from overloading your single thread execution](#-616-prevent-evil-regex-from-overloading-your-single-thread-execution)</br>
 &emsp;&emsp;[6.17. Avoid module loading using a variable](#-617-avoid-module-loading-using-a-variable)</br>
 &emsp;&emsp;[6.18. Run unsafe code in a sandbox](#-618-run-unsafe-code-in-a-sandbox)</br>
-&emsp;&emsp;[6.19. Take extra care when working with child processes  `#advanced`](#-619-take-extra-care-when-working-with-child-processes)</br>
+&emsp;&emsp;[6.19. Take extra care when working with child processes `#advanced`](#-619-take-extra-care-when-working-with-child-processes)</br>
 &emsp;&emsp;[6.20. Hide error details from clients](#-620-hide-error-details-from-clients)</br>
 &emsp;&emsp;[6.21. Configure 2FA for npm or Yarn `#strategic`](#-621-configure-2fa-for-npm-or-yarn)</br>
 &emsp;&emsp;[6.22. Modify session middleware settings](#-622-modify-session-middleware-settings)</br>
-&emsp;&emsp;[6.23. Avoid DOS attacks by explicitly setting when a process should crash  `#advanced`](#-623-avoid-dos-attacks-by-explicitly-setting-when-a-process-should-crash)</br>
+&emsp;&emsp;[6.23. Avoid DOS attacks by explicitly setting when a process should crash `#advanced`](#-623-avoid-dos-attacks-by-explicitly-setting-when-a-process-should-crash)</br>
 &emsp;&emsp;[6.24. Prevent unsafe redirects](#-624-prevent-unsafe-redirects)</br>
 &emsp;&emsp;[6.25. Avoid publishing secrets to the npm registry](#-625-avoid-publishing-secrets-to-the-npm-registry)</br>
 
@@ -202,16 +200,16 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 &emsp;&emsp;[8.3. Let the Docker runtime handle replication and uptime `#strategic`](#-83-let-the-docker-runtime-handle-replication-and-uptime)</br>
 &emsp;&emsp;[8.4. Use .dockerignore to prevent leaking secrets](#-84-use-dockerignore-to-prevent-leaking-secrets)</br>
 &emsp;&emsp;[8.5. Clean-up dependencies before production](#-85-clean-up-dependencies-before-production)</br>
-&emsp;&emsp;[8.6. Shutdown smartly and gracefully  `#advanced`](#-86-shutdown-smartly-and-gracefully)</br>
+&emsp;&emsp;[8.6. Shutdown smartly and gracefully `#advanced`](#-86-shutdown-smartly-and-gracefully)</br>
 &emsp;&emsp;[8.7. Set memory limits using both Docker and v8 `#advanced #strategic`](#-87-set-memory-limits-using-both-docker-and-v8)</br>
 &emsp;&emsp;[8.8. Plan for efficient caching](#-88-plan-for-efficient-caching)</br>
 &emsp;&emsp;[8.9. Use explicit image reference, avoid latest tag](#-89-use-explicit-image-reference-avoid-latest-tag)</br>
 &emsp;&emsp;[8.10. Prefer smaller Docker base images](#-810-prefer-smaller-docker-base-images)</br>
-&emsp;&emsp;[8.11. Clean-out build-time secrets, avoid secrets in args  `#strategic #new`](#-811-clean-out-build-time-secrets-avoid-secrets-in-args)</br>
-&emsp;&emsp;[8.12. Scan images for multi layers of vulnerabilities  `#advanced`](#-812-scan-images-for-multi-layers-of-vulnerabilities)</br>
+&emsp;&emsp;[8.11. Clean-out build-time secrets, avoid secrets in args `#strategic #new`](#-811-clean-out-build-time-secrets-avoid-secrets-in-args)</br>
+&emsp;&emsp;[8.12. Scan images for multi layers of vulnerabilities `#advanced`](#-812-scan-images-for-multi-layers-of-vulnerabilities)</br>
 &emsp;&emsp;[8.13 Clean NODE_MODULE cache](#-813-clean-node_module-cache)</br>
 &emsp;&emsp;[8.14. Generic Docker practices](#-814-generic-docker-practices)</br>
-&emsp;&emsp;[8.15. Lint your Dockerfile  `#new`](#-815-lint-your-dockerfile)</br>
+&emsp;&emsp;[8.15. Lint your Dockerfile `#new`](#-815-lint-your-dockerfile)</br>
 
 </details>
 
@@ -432,8 +430,7 @@ function someFunction() {
 }
 
 // Avoid
-function someFunction() 
-{
+function someFunction() {
   // code block
 }
 ```
@@ -506,10 +503,10 @@ const count = 2 // it tries to run 2(), but 2 is not a function
 
 ```javascript
 // for global variables names we use the const/let keyword and UPPER_SNAKE_CASE
-let MUTABLE_GLOBAL = "mutable value"
-const GLOBAL_CONSTANT = "immutable value";
+let MUTABLE_GLOBAL = 'mutable value';
+const GLOBAL_CONSTANT = 'immutable value';
 const CONFIG = {
-  key: "value",
+  key: 'value',
 };
 
 // examples of UPPER_SNAKE_CASE convetion in nodejs/javascript ecosystem
@@ -524,14 +521,14 @@ const HTTP_STATUS_CREATED = 201;
 // for class name we use UpperCamelCase
 class SomeClassExample {
   // for static class properties we use UPPER_SNAKE_CASE
-  static STATIC_PROPERTY = "value";
+  static STATIC_PROPERTY = 'value';
 }
 
 // for functions names we use lowerCamelCase
 function doSomething() {
   // for scoped variable names we use the const/let keyword and lowerCamelCase
-  const someConstExample = "immutable value";
-  let someMutableExample = "mutable value";
+  const someConstExample = 'immutable value';
+  let someMutableExample = 'mutable value';
 }
 ```
 
@@ -565,12 +562,12 @@ function doSomething() {
 
 ```javascript
 // Do
-module.exports.SMSProvider = require("./SMSProvider");
-module.exports.SMSNumberResolver = require("./SMSNumberResolver");
+module.exports.SMSProvider = require('./SMSProvider');
+module.exports.SMSNumberResolver = require('./SMSNumberResolver');
 
 // Avoid
-module.exports.SMSProvider = require("./SMSProvider/SMSProvider.js");
-module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolver.js");
+module.exports.SMSProvider = require('./SMSProvider/SMSProvider.js');
+module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolver.js');
 ```
 
 <br/><br/>
@@ -584,18 +581,18 @@ module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolve
 ### 3.10 Code example
 
 ```javascript
-"" == "0"; // false
-0 == ""; // true
-0 == "0"; // true
+'' == '0'; // false
+0 == ''; // true
+0 == '0'; // true
 
-false == "false"; // false
-false == "0"; // true
+false == 'false'; // false
+false == '0'; // true
 
 false == undefined; // false
 false == null; // false
 null == undefined; // true
 
-" \t\r\n " == 0; // true
+' \t\r\n ' == 0; // true
 ```
 
 All statements above will return false if used with `===`

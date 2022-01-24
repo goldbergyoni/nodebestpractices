@@ -18,7 +18,7 @@
 
 <br/>
 
-Baca dalam bahasa yang berbeda: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md), [![BR](./assets/flags/BR.png)**BR**](./README.brazilian-portuguese.md), [![RU](./assets/flags/RU.png)**RU**](./README.russian.md), [![PL](./assets/flags/PL.png)**PL**](./README.polish.md), [![EU](./assets/flags/EU.png)**EU**](./README.basque.md) [(![ES](./assets/flags/ES.png)**ES**, ![FR](./assets/flags/FR.png)**FR**, ![HE](./assets/flags/HE.png)**HE**, ![KR](./assets/flags/KR.png)**KR** dan ![TR](./assets/flags/TR.png)**TR** dalam proses!)](#translations)
+Baca dalam bahasa yang berbeda: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md), [![FR](./assets/flags/FR.png)**FR**](./README.french.md), [![BR](./assets/flags/BR.png)**BR**](./README.brazilian-portuguese.md), [![RU](./assets/flags/RU.png)**RU**](./README.russian.md), [![ID](./assets/flags/ID.png)**ID**](./README.indonesian.md), [![PL](./assets/flags/PL.png)**PL**](./README.polish.md), [![JA](./assets/flags/JA.png)**JA**](./README.japanese.md), [![EU](./assets/flags/EU.png)**EU**](./README.basque.md) [(![ES](./assets/flags/ES.png)**ES**, ![HE](./assets/flags/HE.png)**HE**, ![KR](./assets/flags/KR.png)**KR** and ![TR](./assets/flags/TR.png)**TR** in progress! )](#translations)
 
 <br/>
 
@@ -38,7 +38,7 @@ Baca dalam bahasa yang berbeda: [![CN](./assets/flags/CN.png)**CN**](./README.ch
 
 **1. Anda sedang membaca berbagai artikel Node.js terbaik -** repositori ini adalah ringkasan dan kurasi dari konten peringkat teratas dalam praktik terbaik Node.js, serta konten yang ditulis oleh kolaborator
 
-**2. Ini adalah kompilasi terbesar, dan berkembang tiap minggu -** saat ini, lebih dari 80 praktik terbaik, panduan gaya, dan tips arsitektural tersajikan. Issue baru dan pull request dibuat setiap hari agar kontennya tetap diperbarui. Kami senang melihat Anda berkontribusi di sini, maupun itu memperbaiki kesalahan kode, membantu dalam terjemahan, atau menyarankan ide cemerlang yang baru. Lihat [pedoman menulis](./.operations/writing-guidelines.md) kami
+**2. Ini adalah kompilasi terbesar, dan berkembang tiap minggu -** saat ini, lebih dari 80 praktik terbaik, panduan gaya, dan tips arsitektural tersajikan. Issue baru dan pull request dibuat setiap hari agar kontennya tetap diperbarui. Kami senang melihat Anda berkontribusi di sini, maupun itu memperbaiki kesalahan kode, membantu dalam terjemahan, atau menyarankan ide cemerlang yang baru. Lihat [pedoman menulis](./.operations/writing-guidelines.indonesia.md) kami
 
 **3. Praktik terbaik mempunyai informasi tambahan -** kebanyakan poin mempunyai tautan **🔗Baca selengkapnya** yang memperluas praktiknya dengan contoh kode, kutipan dari blog terpilih, dan informasi lebih lanjut
 
@@ -347,11 +347,11 @@ class SomeClassExample {}
 
 // untuk nama const kita gunakan kata kunci const dan lowerCamelCase
 const config = {
-  key: "value",
+  key: 'value',
 };
 
 // untuk nama variabel dan fungsi kita gunakan lowerCamelCase
-let someVariableExample = "value";
+let someVariableExample = 'value';
 function doSomething() {}
 ```
 
@@ -385,12 +385,12 @@ function doSomething() {}
 
 ```javascript
 // Lakukan
-module.exports.SMSProvider = require("./SMSProvider");
-module.exports.SMSNumberResolver = require("./SMSNumberResolver");
+module.exports.SMSProvider = require('./SMSProvider');
+module.exports.SMSNumberResolver = require('./SMSNumberResolver');
 
 // Hindari
-module.exports.SMSProvider = require("./SMSProvider/SMSProvider.js");
-module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolver.js");
+module.exports.SMSProvider = require('./SMSProvider/SMSProvider.js');
+module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolver.js');
 ```
 
 <br/><br/>
@@ -404,18 +404,18 @@ module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolve
 ### 3.10 Contoh kode
 
 ```javascript
-"" == "0"; // false
-0 == ""; // true
-0 == "0"; // true
+'' == '0'; // false
+0 == ''; // true
+0 == '0'; // true
 
-false == "false"; // false
-false == "0"; // true
+false == 'false'; // false
+false == '0'; // true
 
 false == undefined; // false
 false == null; // false
 null == undefined; // true
 
-" \t\r\n " == 0; // true
+' \t\r\n ' == 0; // true
 ```
 
 Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
@@ -1353,14 +1353,14 @@ Terima kasih untuk semua kolaborator kami! 🙏
 Kolaborator kami adalah anggota yang sering berkontribusi ke repositori ini, melalui menyarankan praktik terbaik baru, menyortir masalah, meninjau pull request dan banyak lagi. Jika Anda tertarik untuk membantu kami memandu ribuan orang untuk membuat aplikasi Node.js yang lebih baik, silakan baca [contributor guidelines](./.operations/CONTRIBUTING.md) 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"/></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"/></a> |
-| :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
-|                                    [Ido Richter (Founder)](https://github.com/idori)                                    |                                        [Keith Holliday](https://github.com/TheHollidayInn)                                         |
+| :----------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
+|                                    [Ido Richter (Founder)](https://github.com/idori)                                     |                                         [Keith Holliday](https://github.com/TheHollidayInn)                                         |
 
 ### Mantan Kolaborator
 
 | <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"/></a> |
-| :-------------------------------------------------------------------------------------------------------------------------: |
-|                                        [Refael Ackermann](https://github.com/refack)                                        |
+| :--------------------------------------------------------------------------------------------------------------------------: |
+|                                        [Refael Ackermann](https://github.com/refack)                                         |
 
 <br/>
 
