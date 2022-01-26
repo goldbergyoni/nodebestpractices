@@ -1,9 +1,19 @@
 {
   "files": [
-    "README.md"
+    "README.basque.md",
+    "README.brazilian-portuguese.md",
+    "README.chinese.md",
+    "README.french.md",
+    "README.indonesian.md",
+    "README.japanese.md",
+    "README.korean.md",
+    "README.md",
+    "README.polish.md",
+    "README.russian.md"
   ],
   "imageSize": 100,
-  "contributorsPerLine": 7,
+  "contributorsPerLine": 5,
+  "contributorTemplate": "<a href=\"<%= contributor.profile %>\"><img src=\"<%= contributor.avatar_url %>\" width=\"<%= options.imageSize %>px;\" alt=\"<%= contributor.name %>\"style=\"max-width:<%= options.imageSize %>px;min-width:<%= options.imageSize %>px;\" /><br /><sub style=\"white-space: nowrap;overflow: hidden;text-overflow: ellipsis;\"><b><%= contributor.name %></b></sub></a><br /><%= contributions %>",
   "badgeTemplate": "[![All Contributors](https://img.shields.io/badge/all_contributors-<%= contributors.length %>-orange.svg?style=flat-square)](#contributors)",
   "contributors": [
     {
