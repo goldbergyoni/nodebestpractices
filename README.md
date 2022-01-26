@@ -14,7 +14,7 @@
 
 <br/>
 
-[![nodepractices](./assets/images/twitter.svg)](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
+[<img src="assets/images/twitter.svg" width="16" height="16" alt="" />](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
 
 <br/>
 
@@ -1516,7 +1516,7 @@ Independent full-stack developer with a taste for Ops and automation.
 
 <br/>
 
-<a id="josh-hemphill" href="https://github.com/josh-hemphill" target="_blank"><img src="assets/images/members/jhemphill.jpg" align="left" width="100" height="100" alt="Josh Hemphill" loading="lazy"/></a>
+<a id="josh-hemphill" href="https://github.com/josh-hemphill" target="_blank"><img src="assets/images/members/josh-hemphill.png" align="left" width="100" height="100" alt="Josh Hemphill" loading="lazy"/></a>
 
 [Josh Hemphill](https://github.com/josh-hemphill)
 <a href="https://twitter.com/spooklogical"><img src="assets/images/twitter.svg" width="16" height="16"></img></a>
