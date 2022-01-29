@@ -12,7 +12,7 @@
     "README.russian.md"
   ],
   "imageSize": 100,
-  "contributorsPerLine": 5,
+  "contributorsPerLine": 7,
   "contributorTemplate": "<a href=\"<%= contributor.profile %>\"><img src=\"<%= contributor.avatar_url %>\" width=\"<%= options.imageSize %>px;\" alt=\"<%= contributor.name %>\"style=\"max-width:<%= options.imageSize %>px;min-width:<%= options.imageSize %>px;\" /><br /><sub style=\"white-space: nowrap;overflow: hidden;text-overflow: ellipsis;\"><b><%= contributor.name %></b></sub></a><br /><%= contributions %>",
   "badgeTemplate": "[![All Contributors](https://img.shields.io/badge/all_contributors-<%= contributors.length %>-orange.svg?style=flat-square)](#contributors)",
   "contributors": [

@@ -1,9 +1,0 @@
-<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-	<clipPath id="clipCircle">
-		<circle r="100" cx="100" cy="100" />
-	</clipPath>
-	<image clip-path="url(#clipCircle)" width="200" height="200"
-		href="https://avatars.githubusercontent.com/goldbergyoni">
-	</image>
-	<circle r="97" cx="100" cy="100" stroke="#0efeff" stroke-width="6" fill="none" />
-</svg>
