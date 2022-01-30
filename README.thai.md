@@ -67,7 +67,7 @@
   </summary>
 
 &emsp;&emsp;[2.1 ใช้ Async-Await หรือ promise ในการแก้ async error](#-21-use-async-await-or-promises-for-async-error-handling)</br>
-&emsp;&emsp;[2.2 ใช้แต่ built-in Error object `#strategic`](#-22-use-only-the-built-in-error-object)</br>
+&emsp;&emsp;[2.2 ให้ใช้แต่ built-in Error object `#strategic`](#-22-use-only-the-built-in-error-object)</br>
 &emsp;&emsp;[2.3 จำแนกระหว่าง operational กับ programmer errors `#strategic`](#-23-distinguish-operational-vs-programmer-errors)</br>
 &emsp;&emsp;[2.4 รับมือกับ errors ในส่วนกลาง, ไม่ใช่ข้างใน middleware `#strategic`](#-24-handle-errors-centrally-not-within-a-middleware)</br>
 &emsp;&emsp;[2.5 ทำเอกสาร API errors โดยใช้ Swagger หรือ GraphQL `#modified-recently`](#-25-document-api-errors-using-swagger-or-graphql)</br>
@@ -221,7 +221,7 @@
 
 ## ![✔] 1.1 วิธีการวาง Structure โดยใช้วิธีอิง components เป็นหลัก
 
-**ยาวไปไม่อ่าน:** ในการพัฒนา App ขนาดใหญ่มักมีหลุมพรางที่ใหญ่ที่สุดนั่นคือคือการ Maintain codebase ขนาดใหญ่ที่มี dependency นับร้อย ซึ่งมันเป็นอะไรที่ช้ามากสำหรับเหล่า dev ทั้งหลายเมื่อต้องการทำงานกับ feature ใหม่ๆ. กลับกันหากเราแบ่ง code ให้เป็น component แต่ละอันเข้าไปอยู่ใน folder หรือ dedicated codebase, และทำให้แต่ละชิ้นเล็ก และ เข้าใจง่าย. เข้าไป 'อ่านเพิ่มเติม' ข้างล่างเพื่อดูตัวอย่างของการวาง Project Structure ที่ถูกต้อง
+**ยาวไปไม่อ่าน:** ในการพัฒนา App ขนาดใหญ่มักมีหลุมพรางที่ใหญ่ที่สุดนั่นคือคือการ Maintain codebase ขนาดใหญ่ที่มี dependency นับร้อย - ซึ่งมันเป็นอะไรที่ช้ามากสำหรับเหล่า dev ทั้งหลายเมื่อต้องการทำงานกับ feature ใหม่ๆ. กลับกันหากเราแบ่ง code ให้เป็น component แต่ละอันเข้าไปอยู่ใน folder หรือ dedicated codebase, และทำให้แต่ละชิ้นเล็ก และ เข้าใจง่าย. เข้าไป 'อ่านเพิ่มเติม' ข้างล่างเพื่อดูตัวอย่างของการวาง Project Structure ที่ถูกต้อง
 
 **หรือไม่ก็:** เมื่อ developer พัฒนา feature ใหม่มา กลัวว่าจะมี impact จากการ code ของเขาว่าจะไปทำ component อื่นบึ้มหรือเปล่า - ทำให้การ deploy ช้าลงและเสี่ยงมากกว่าเดิม และยังทำให้ scale ยากกว่าเดิม เมื่อไม่ได้แยก business unit ออกจากกัน
 
@@ -229,77 +229,77 @@
 
 <br/><br/>
 
-## ![✔] 1.2 Layer your components, keep the web layer within its boundaries
+## ![✔] 1.2 วาง Layer ของ component ต่างๆ, สร้างขอบเขตให้กับ web layer
 
-**ยาวไปไม่อ่าน:** Each component should contain 'layers' - a dedicated object for the web, logic, and data access code. This not only draws a clean separation of concerns but also significantly eases mocking and testing the system. Though this is a very common pattern, API developers tend to mix layers by passing the web layer objects (e.g. Express req, res) to business logic and data layers - this makes your application dependent on and accessible only by specific web frameworks
+**ยาวไปไม่อ่าน:** ในแต่ละ component ควรมี 'layers' - ซึ่งเป็น object ไว้สำหรับเว็บ, ลอจิค, และ code สำหรับการเข้าถึงข้อมูล นอกจากจะทำให้โค้ดดูสะอาดและมีการทำ separation of concerns ที่ดี แต่ยังทำให้การทำ mock และ test ระบบง่ายขึ้นอีกด้วย แม้ว่านี่จะเป็น pattern ที่สามารถเห็นได้ทั่วไป แต่ผู้พัฒนา API มักจะรวม layers โดยการส่ง web layer objects (เช่น req, res ใน Express ) ไปหา business logic และ layer ข้อมูล - นี่จะทำให้ application ของคุณต้องพึ่งพาการเข้าถึงโดยใช้ web frameworks บางตัว
 
-**หรือไม่ก็:** App that mixes web objects with other layers cannot be accessed by testing code, CRON jobs, triggers from message queues, etc
+**หรือไม่ก็:** App ที่รวม web objects กับ layer อื่นทำให้ code ที่ใช้ test ไม่สามารถเข้าถึงได้, CRON jobs, ถูก triggers จาก message queues เป็นต้น
 
-🔗 [**Read More: layer your app**](./sections/projectstructre/createlayers.md)
-
-<br/><br/>
-
-## ![✔] 1.3 Wrap common utilities as npm packages
-
-**ยาวไปไม่อ่าน:** In a large app that constitutes a large codebase, cross-cutting-concern utilities like a logger, encryption and alike, should be wrapped by your code and exposed as private npm packages. This allows sharing them among multiple codebases and projects
-
-**หรือไม่ก็:** You'll have to invent your deployment and the dependency wheel
-
-🔗 [**Read More: Structure by feature**](./sections/projectstructre/wraputilities.md)
+🔗 [**อ่านเพิ่มเติม: การวาง Layer ให้ app**](./sections/projectstructre/createlayers.md)
 
 <br/><br/>
 
-## ![✔] 1.4 Separate Express 'app' and 'server'
+## ![✔] 1.3 รวบ utilities ที่ใช้บ่อยให้เป็น npm packages
 
-**ยาวไปไม่อ่าน:** Avoid the nasty habit of defining the entire [Express](https://expressjs.com/) app in a single huge file - separate your 'Express' definition to at least two files: the API declaration (app.js) and the networking concerns (WWW). For even better structure, locate your API declaration within components
+**ยาวไปไม่อ่าน:** ใน app ขนาดใหญ่และมี codebase ขนาดใหญ่, ที่มี cross-cutting-concern utilities เช่น logger, การเข้ารหัสและอะไรเทือกๆนั้น, ควรถูก wrap โดย code ของคุณและเปิดเผยออกไปในฐานะ npm packages แบบส่วนตัว. นี่จะทำให้มีความสามารถในการแบ่งปันเพื่อนำไปใช้ในส่วนต่างๆใน codebases และ projects
 
-**หรือไม่ก็:** Your API will be accessible for testing via HTTP calls only (slower and much harder to generate coverage reports). It probably won't be a big pleasure to maintain hundreds of lines of code in a single file
+**หรือไม่ก็:** ไปคิดค้นวิธี deploy และ dependency wheel มาใหม่ซะ
 
-🔗 [**Read More: separate Express 'app' and 'server'**](./sections/projectstructre/separateexpress.md)
+🔗 [**อ่านเพิ่มเติม: การวาง Structure โดยใช้หลัก feature**](./sections/projectstructre/wraputilities.md)
 
 <br/><br/>
 
-## ![✔] 1.5 Use environment aware, secure and hierarchical config
+## ![✔] 1.4 แบ่งแยก Express 'app' กับ 'server' ออกจากกัน
 
-**ยาวไปไม่อ่าน:** A perfect and flawless configuration setup should ensure (a) keys can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are a few packages that can help tick most of those boxes like [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config), and [convict](https://www.npmjs.com/package/convict).
+**ยาวไปไม่อ่าน:** เลี่ยงนิสัยแย่ๆ ในการ [Express](https://expressjs.com/) app ทั้งหมดในไฟล์ใหญ่ไฟล์เดียว - แยก 'Express' ให้ออกมาอย่างน้อยเป็นสองไฟล์ : การประกาศ API (app.js) และ ส่วนที่เกี่ยวข้องกับการทำ networking (WWW). เพื่อเป็นการวาง structure ที่ดีโดยประกาศ API ไว้ข้างใน components
 
-**หรือไม่ก็:** Failing to satisfy any of the config requirements will simply bog down the development or DevOps team. Probably both
+**หรือไม่ก็:** API สามารถถูก test โดยการเรียกใช้ผ่าน HTTP เท่านั้น (ช้ากว่าและ ยากกว่ามากๆในการทำรายงานความครอบคลุมในการ test). และมันก็คงไม่สนุกแน่ที่ต้องมานั่ง maintain code หลายร้อยบรรทัดในไฟล์เดียว
 
-🔗 [**Read More: configuration best practices**](./sections/projectstructre/configguide.md)
+🔗 [**อ่านเพิ่มเติม: แยก Express 'app' กับ 'server'**](./sections/projectstructre/separateexpress.md)
+
+<br/><br/>
+
+## ![✔] 1.5 คำนึงถึงการตั้งค่า environment, ความปลอดภัย และ hierarchy
+
+**ยาวไปไม่อ่าน:** การตั้งค่าที่เพอร์เฟคและไร้ที่ติควรคำนึงถึงว่า (a) keys สามารถอ่านได้จากไฟล์ file และจาก environment variable (b) secrets ถูกเก็บแยกจาก code ส่วนที่ commit (c) ตั้งค่าอย่างเป็นลำดับชั้นเพื่อความสะดวกในการหา มีเครื่องมือบางตัวที่มีความสามารถ"เกือบ"ครบตามข้างบนได้แก่. [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config), and [convict](https://www.npmjs.com/package/convict).
+
+**หรือไม่ก็:** ไม่สามารถทำตาม requirements ข้างบนซักอันจะทำให้ทีม dev หรือ DevOps ชะงักเอาได้ หรือไม่ก็ชะงักทั้งคู่
+
+🔗 [**อ่านเพิ่มเติม: การตั้งค่าแบบ best practices**](./sections/projectstructre/configguide.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ กลับขึ้นไปข้างบน</a></p>
 
-# `2. Error Handling Practices`
+# `2. การรับมือกับ Error`
 
-## ![✔] 2.1 Use Async-Await or promises for async error handling
+## ![✔] 2.1 ใช้ Async-Await หรือ promise ในการแก้ async error
 
-**ยาวไปไม่อ่าน:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using a reputable promise library or async-await instead which enables a much more compact and familiar code syntax like try-catch
+**ยาวไปไม่อ่าน:** การรับมือกับ async errors ในวิธี callback นั้นคงเป็นวิธีที่เร็วที่สุดในการตกนรกทั้งเป็น (หรือเรียกว่า ไอ้ต้าวปิรามิดแห่งความชิบหาย) สิ่งที่ดีที่สุดที่สามารถมอบให้โค้ดคุณได้คือการใช้งาน promise library ที่โด่งดัง หรือ ซุปตาร์ async-await แทนซึ่งสามารถทำให้ดูกระชับกว่าและมีความคุ้นหน้าคุ้นตากับ syntax อย่างพวก try-catch
 
-**หรือไม่ก็:** Node.js callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting, and awkward coding patterns
+**หรือไม่ก็:** สไตล์ callback ใน Node.js , function(err, response), ทำให้โค้ดไม่สามารถ maintain ได้เพราะมันรวมวิธีรับมือ error กับโค้ดปกติตัวอื่นมารวมกัน และยังมีการซ้อนกันทุกโคตรยุ่งเหยิงและทำให้เกิด pattern แบบพิศดารอีกด้วย
 
-🔗 [**Read More: avoiding callbacks**](./sections/errorhandling/asyncerrorhandling.md)
-
-<br/><br/>
-
-## ![✔] 2.2 Use only the built-in Error object
-
-**ยาวไปไม่อ่าน:** Many throw errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw an exception or emit an error – using only the built-in Error object (or an object that extends the built-in Error object) will increase uniformity and prevent loss of information. There is `no-throw-literal` ESLint rule that strictly checks that (although it have some [limitations](https://eslint.org/docs/rules/no-throw-literal) which can be solved when using TypeScript and setting the `@typescript-eslint/no-throw-literal` rule)
-
-**หรือไม่ก็:** When invoking some component, being uncertain which type of errors come in return – it makes proper error handling much harder. Even worse, using custom types to describe errors might lead to loss of critical error information like the stack trace!
-
-🔗 [**Read More: using the built-in error object**](./sections/errorhandling/useonlythebuiltinerror.md)
+🔗 [**อ่านเพิ่มเติม: อย่าใช้ callback**](./sections/errorhandling/asyncerrorhandling.md)
 
 <br/><br/>
 
-## ![✔] 2.3 Distinguish operational vs programmer errors
+## ![✔] 2.2 ให้ใช้แต่ built-in Error object
 
-**ยาวไปไม่อ่าน:** Operational errors (e.g. API received an invalid input) refer to known cases where the error impact is fully understood and can be handled thoughtfully. On the other hand, programmer error (e.g. trying to read an undefined variable) refers to unknown code failures that dictate to gracefully restart the application
+**ยาวไปไม่อ่าน:** หลายคน throw error ออกมาเป็น string บางคนก็ออกมาเป็น custom type บ้างล่ะ – นี่ทำให้วิธีการรับมือกับ error ดูยุ่งยากและวุ่นวายกว่าที่ควร  และ เกิดการทำงานร่วมกันระหว่าง modules. ไม่ว่าจะ reject promise หรือ throw exception หรือจะ emit error – ใช้แต่ built-in Error object (หรือ object ที่ใช้เสริมกับ built-in Error object) จะเพิ่มความสม่ำเสมอเป็นหนึ่งเดียวและป้องกันข้อมูลสูญหายระหว่างทางอีกด้วย. มันมี `no-throw-literal` ในกฎของ ESLint ที่ว่าด้วยการตรวจสอบอย่างเข้มงวด  (ถึงจะมี [ข้อจำกัด](https://eslint.org/docs/rules/no-throw-literal) ที่สามารถแก้ด้วยการใช้ TypeScript และตั้งค่ากฎ `@typescript-eslint/no-throw-literal`)
+
+**หรือไม่ก็:** เมื่อเรียกใช้ component บางตัว, จะไม่ชัวร์ว่าจะได้ errors แบบไหนกลับมา – ทำให้การรับมือกับ error ที่เหมาะสมยากยิ่งขึ้น และที่แย่ไปกว่านั้นการใช้ custom types เพื่ออธิบาย errors อาจทำให้ข้อมูล error ที่สำคัญสูญหายเช่น stack trace เป็นต้น!
+
+🔗 [**อ่านเพิ่มเติม: ใช้ built-in error object**](./sections/errorhandling/useonlythebuiltinerror.md)
+
+<br/><br/>
+
+## ![✔] 2.3 จำแนกระหว่าง operational กับ programmer errors
+
+**ยาวไปไม่อ่าน:** Operational errors (เช่น API รับข้อมูลผิดๆเข้ามา) refer to known cases where the error impact is fully understood and can be handled thoughtfully. ในทางกลับกัน, programmer error (เช่น พยายามอ่านค่าตัวแปร undefined) refers to unknown code failures that dictate to gracefully restart the application
 
 **หรือไม่ก็:** You may always restart the application when an error appears, but why let ~5000 online users down because of a minor, predicted, operational error? the opposite is also not ideal – keeping the application up when an unknown issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
 
-🔗 [**Read More: operational vs programmer error**](./sections/errorhandling/operationalvsprogrammererror.md)
+🔗 [**อ่านเพิ่มเติม: operational vs programmer error**](./sections/errorhandling/operationalvsprogrammererror.md)
 
 <br/><br/>
 
@@ -309,7 +309,7 @@
 
 **หรือไม่ก็:** Not handling errors within a single place will lead to code duplication and probably to improperly handled errors
 
-🔗 [**Read More: handling errors in a centralized place**](./sections/errorhandling/centralizedhandling.md)
+🔗 [**อ่านเพิ่มเติม: handling errors in a centralized place**](./sections/errorhandling/centralizedhandling.md)
 
 <br/><br/>
 
@@ -319,7 +319,7 @@
 
 **หรือไม่ก็:** An API client might decide to crash and restart only because it received back an error it couldn’t understand. Note: the caller of your API might be you (very typical in a microservice environment)
 
-🔗 [**Read More: documenting API errors in Swagger or GraphQL**](./sections/errorhandling/documentingusingswagger.md)
+🔗 [**อ่านเพิ่มเติม: documenting API errors in Swagger or GraphQL**](./sections/errorhandling/documentingusingswagger.md)
 
 <br/><br/>
 
@@ -329,7 +329,7 @@
 
 **หรือไม่ก็:** When an unfamiliar exception occurs, some object might be in a faulty state (e.g. an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
 
-🔗 [**Read More: shutting the process**](./sections/errorhandling/shuttingtheprocess.md)
+🔗 [**อ่านเพิ่มเติม: shutting the process**](./sections/errorhandling/shuttingtheprocess.md)
 
 <br/><br/>
 
@@ -339,7 +339,7 @@
 
 **หรือไม่ก็:** Skimming through console.logs or manually through messy text file without querying tools or a decent log viewer might keep you busy at work until late
 
-🔗 [**Read More: using a mature logger**](./sections/errorhandling/usematurelogger.md)
+🔗 [**อ่านเพิ่มเติม: using a mature logger**](./sections/errorhandling/usematurelogger.md)
 
 <br/><br/>
 
@@ -349,7 +349,7 @@
 
 **หรือไม่ก็:** Without testing, whether automatically or manually, you can’t rely on your code to return the right errors. Without meaningful errors – there’s no error handling
 
-🔗 [**Read More: testing error flows**](./sections/errorhandling/testingerrorflows.md)
+🔗 [**อ่านเพิ่มเติม: testing error flows**](./sections/errorhandling/testingerrorflows.md)
 
 <br/><br/>
 
@@ -359,7 +359,7 @@
 
 **หรือไม่ก็:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which are your slowest code parts under real-world scenario and how these affect the UX
 
-🔗 [**Read More: using APM products**](./sections/errorhandling/apmproducts.md)
+🔗 [**อ่านเพิ่มเติม: using APM products**](./sections/errorhandling/apmproducts.md)
 
 <br/><br/>
 
@@ -369,7 +369,7 @@
 
 **หรือไม่ก็:** Your errors will get swallowed and leave no trace. Nothing to worry about
 
-🔗 [**Read More: catching unhandled promise rejection**](./sections/errorhandling/catchunhandledpromiserejection.md)
+🔗 [**อ่านเพิ่มเติม: catching unhandled promise rejection**](./sections/errorhandling/catchunhandledpromiserejection.md)
 
 <br/><br/>
 
@@ -379,7 +379,7 @@
 
 **หรือไม่ก็:** Consider this – your function expects a numeric argument “Discount” which the caller forgets to pass, later on, your code checks if Discount!=0 (amount of allowed discount is greater than zero), then it will allow the user to enjoy a discount. OMG, what a nasty bug. Can you see it?
 
-🔗 [**Read More: failing fast**](./sections/errorhandling/failfast.md)
+🔗 [**อ่านเพิ่มเติม: failing fast**](./sections/errorhandling/failfast.md)
 
 <br/><br/>
 
@@ -393,7 +393,7 @@ function returns a promise, that function must be declared as `async` function a
 Such missing frames would probably complicate the understanding of the flow that leads to the error,
 especially if the cause of the abnormal behavior is inside of the missing function
 
-🔗 [**Read More: returning promises**](./sections/errorhandling/returningpromises.md)
+🔗 [**อ่านเพิ่มเติม: returning promises**](./sections/errorhandling/returningpromises.md)
 
 <br/><br/><br/>
 
@@ -407,7 +407,7 @@ especially if the cause of the abnormal behavior is inside of the missing functi
 
 **หรือไม่ก็:** Developers will focus on tedious spacing and line-width concerns and time might be wasted overthinking the project's code style
 
-🔗 [**Read More: Using ESLint and Prettier**](./sections/codestylepractices/eslint_prettier.md)
+🔗 [**อ่านเพิ่มเติม: Using ESLint and Prettier**](./sections/codestylepractices/eslint_prettier.md)
 
 <br/><br/>
 
@@ -440,7 +440,7 @@ function someFunction()
 
 **หรือไม่ก็:** Deferring from this best practice might lead to unexpected results, as seen in the StackOverflow thread below:
 
-🔗 [**Read more:** "Why do results vary based on curly brace placement?" (StackOverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
+🔗 [**อ่านเพิ่มเติม:** "Why do results vary based on curly brace placement?" (StackOverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
 <br/><br/>
 
@@ -483,8 +483,8 @@ const count = 2 // it tries to run 2(), but 2 is not a function
 // put a semicolon before the immediate invoked function, after the const definition, save the return value of the anonymous function to a variable or avoid IIFEs altogether
 ```
 
-🔗 [**Read more:** "Semi ESLint rule"](https://eslint.org/docs/rules/semi)
-🔗 [**Read more:** "No unexpected multiline ESLint rule"](https://eslint.org/docs/rules/no-unexpected-multiline)
+🔗 [**อ่านเพิ่มเติม:** "Semi ESLint rule"](https://eslint.org/docs/rules/semi)
+🔗 [**อ่านเพิ่มเติม:** "No unexpected multiline ESLint rule"](https://eslint.org/docs/rules/no-unexpected-multiline)
 
 <br/><br/>
 
@@ -543,7 +543,7 @@ function doSomething() {
 
 **หรือไม่ก็:** Debugging becomes way more cumbersome when following a variable that frequently changes
 
-🔗 [**Read more: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
+🔗 [**อ่านเพิ่มเติม: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
 
 <br/><br/>
 
@@ -608,7 +608,7 @@ All statements above will return false if used with `===`
 
 **หรือไม่ก็:** Handling async errors in callback style are probably the fastest way to hell - this style forces to check errors all over, deal with awkward code nesting, and makes it difficult to reason about the code flow
 
-🔗[**Read more:** Guide to async-await 1.0](https://github.com/yortus/asyncawait)
+🔗[**อ่านเพิ่มเติม:** Guide to async-await 1.0](https://github.com/yortus/asyncawait)
 
 <br/><br/>
 
@@ -618,7 +618,7 @@ All statements above will return false if used with `===`
 
 **หรือไม่ก็:** Longer code (in ES5 functions) is more prone to bugs and cumbersome to read
 
-🔗 [**Read more: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
+🔗 [**อ่านเพิ่มเติม: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
 
 <br/><br/><br/>
 
@@ -640,7 +640,7 @@ All statements above will return false if used with `===`
 
 **หรือไม่ก็:** A deployment just failed, a test named “Add product” failed. Does this tell you what exactly is malfunctioning?
 
-🔗 [**Read More: Include 3 parts in each test name**](./sections/testingandquality/3-parts-in-name.md)
+🔗 [**อ่านเพิ่มเติม: Include 3 parts in each test name**](./sections/testingandquality/3-parts-in-name.md)
 
 <br/><br/>
 
@@ -650,7 +650,7 @@ All statements above will return false if used with `===`
 
 **หรือไม่ก็:** Not only you spend long daily hours on understanding the main code, but now also what should have been the simple part of the day (testing) stretches your brain
 
-🔗 [**Read More: Structure tests by the AAA pattern**](./sections/testingandquality/aaa.md)
+🔗 [**อ่านเพิ่มเติม: Structure tests by the AAA pattern**](./sections/testingandquality/aaa.md)
 
 <br/><br/>
 
@@ -668,7 +668,7 @@ All statements above will return false if used with `===`
 
 **หรือไม่ก็:** Consider a scenario where deployment is aborted due to failing tests, team is now going to spend precious investigation time that ends in a sad conclusion: the system works well, the tests however interfere with each other and break the build
 
-🔗 [**Read More: Avoid global test fixtures**](./sections/testingandquality/avoid-global-test-fixture.md)
+🔗 [**อ่านเพิ่มเติม: Avoid global test fixtures**](./sections/testingandquality/avoid-global-test-fixture.md)
 
 <br/><br/>
 
@@ -718,7 +718,7 @@ All statements above will return false if used with `===`
 
 **หรือไม่ก็:** With poor code quality, bugs and performance will always be an issue that no shiny new library or state of the art features can fix
 
-🔗 [**Read More: Refactoring!**](./sections/testingandquality/refactoring.md)
+🔗 [**อ่านเพิ่มเติม: Refactoring!**](./sections/testingandquality/refactoring.md)
 
 <br/><br/>
 
@@ -728,7 +728,7 @@ All statements above will return false if used with `===`
 
 **หรือไม่ก็:** Choosing some niche vendor might get you blocked once you need some advanced customization. On the other hand, going with Jenkins might burn precious time on infrastructure setup
 
-🔗 [**Read More: Choosing CI platform**](./sections/testingandquality/citools.md)
+🔗 [**อ่านเพิ่มเติม: Choosing CI platform**](./sections/testingandquality/citools.md)
 
 ## ![✔] 4.13 Test your middlewares in isolation
 
@@ -736,7 +736,7 @@ All statements above will return false if used with `===`
 
 **หรือไม่ก็:** A bug in Express middleware === a bug in all or most requests
 
-🔗 [**Read More: Test middlewares in isolation**](./sections/testingandquality/test-middlewares.md)
+🔗 [**อ่านเพิ่มเติม: Test middlewares in isolation**](./sections/testingandquality/test-middlewares.md)
 
 <br/><br/><br/>
 
@@ -750,7 +750,7 @@ All statements above will return false if used with `===`
 
 **หรือไม่ก็:** Failure === disappointed customers. Simple
 
-🔗 [**Read More: Monitoring!**](./sections/production/monitoring.md)
+🔗 [**อ่านเพิ่มเติม: Monitoring!**](./sections/production/monitoring.md)
 
 <br/><br/>
 
@@ -760,7 +760,7 @@ All statements above will return false if used with `===`
 
 **หรือไม่ก็:** You end up with a black box that is hard to reason about, then you start re-writing all logging statements to add additional information
 
-🔗 [**Read More: Increase transparency using smart logging**](./sections/production/smartlogging.md)
+🔗 [**อ่านเพิ่มเติม: Increase transparency using smart logging**](./sections/production/smartlogging.md)
 
 <br/><br/>
 
@@ -770,7 +770,7 @@ All statements above will return false if used with `===`
 
 **หรือไม่ก็:** Your poor single thread will stay busy doing infrastructural tasks instead of dealing with your application core and performance will degrade accordingly
 
-🔗 [**Read More: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](./sections/production/delegatetoproxy.md)
+🔗 [**อ่านเพิ่มเติม: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](./sections/production/delegatetoproxy.md)
 
 <br/><br/>
 
@@ -780,7 +780,7 @@ All statements above will return false if used with `===`
 
 **หรือไม่ก็:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
 
-🔗 [**Read More: Lock dependencies**](./sections/production/lockdependencies.md)
+🔗 [**อ่านเพิ่มเติม: Lock dependencies**](./sections/production/lockdependencies.md)
 
 <br/><br/>
 
@@ -790,7 +790,7 @@ All statements above will return false if used with `===`
 
 **หรือไม่ก็:** Running dozens of instances without a clear strategy and too many tools together (cluster management, docker, PM2) might lead to DevOps chaos
 
-🔗 [**Read More: Guard process uptime using the right tool**](./sections/production/guardprocess.md)
+🔗 [**อ่านเพิ่มเติม: Guard process uptime using the right tool**](./sections/production/guardprocess.md)
 
 <br/><br/>
 
@@ -800,7 +800,7 @@ All statements above will return false if used with `===`
 
 **หรือไม่ก็:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.js utilizes only 1 (even using PaaS services like AWS beanstalk!)
 
-🔗 [**Read More: Utilize all CPU cores**](./sections/production/utilizecpu.md)
+🔗 [**อ่านเพิ่มเติม: Utilize all CPU cores**](./sections/production/utilizecpu.md)
 
 <br/><br/>
 
@@ -810,7 +810,7 @@ All statements above will return false if used with `===`
 
 **หรือไม่ก็:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
 
-🔗 [**Read More: Create a ‘maintenance endpoint’**](./sections/production/createmaintenanceendpoint.md)
+🔗 [**อ่านเพิ่มเติม: Create a ‘maintenance endpoint’**](./sections/production/createmaintenanceendpoint.md)
 
 <br/><br/>
 
@@ -820,7 +820,7 @@ All statements above will return false if used with `===`
 
 **หรือไม่ก็:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real-world scenario and how these affect the UX
 
-🔗 [**Read More: Discover errors and downtime using APM products**](./sections/production/apmproducts.md)
+🔗 [**อ่านเพิ่มเติม: Discover errors and downtime using APM products**](./sections/production/apmproducts.md)
 
 <br/><br/>
 
@@ -830,7 +830,7 @@ All statements above will return false if used with `===`
 
 **หรือไม่ก็:** A world champion IT/DevOps guy won’t save a system that is badly written
 
-🔗 [**Read More: Make your code production-ready**](./sections/production/productioncode.md)
+🔗 [**อ่านเพิ่มเติม: Make your code production-ready**](./sections/production/productioncode.md)
 
 <br/><br/>
 
@@ -840,7 +840,7 @@ All statements above will return false if used with `===`
 
 **หรือไม่ก็:** Your process memory might leak a hundred megabytes a day like how it happened at [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
 
-🔗 [**Read More: Measure and guard the memory usage**](./sections/production/measurememory.md)
+🔗 [**อ่านเพิ่มเติม: Measure and guard the memory usage**](./sections/production/measurememory.md)
 
 <br/><br/>
 
@@ -850,7 +850,7 @@ All statements above will return false if used with `===`
 
 **หรือไม่ก็:** Your single Node thread will be busy streaming hundreds of html/images/angular/react files instead of allocating all its resources for the task it was born for – serving dynamic content
 
-🔗 [**Read More: Get your frontend assets out of Node**](./sections/production/frontendout.md)
+🔗 [**อ่านเพิ่มเติม: Get your frontend assets out of Node**](./sections/production/frontendout.md)
 
 <br/><br/>
 
@@ -860,7 +860,7 @@ All statements above will return false if used with `===`
 
 **หรือไม่ก็:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
 
-🔗 [**Read More: Be stateless, kill your Servers almost every day**](./sections/production/bestateless.md)
+🔗 [**อ่านเพิ่มเติม: Be stateless, kill your Servers almost every day**](./sections/production/bestateless.md)
 
 <br/><br/>
 
@@ -870,7 +870,7 @@ All statements above will return false if used with `===`
 
 **หรือไม่ก็:** Keeping your code clean from vulnerabilities without dedicated tools will require you to constantly follow online publications about new threats. Quite tedious
 
-🔗 [**Read More: Use tools that automatically detect vulnerabilities**](./sections/production/detectvulnerabilities.md)
+🔗 [**อ่านเพิ่มเติม: Use tools that automatically detect vulnerabilities**](./sections/production/detectvulnerabilities.md)
 
 <br/><br/>
 
@@ -882,7 +882,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** Looking at a production error log without the context – what happened before – makes it much harder and slower to reason about the issue
 
-🔗 [**Read More: Assign ‘TransactionId’ to each log statement**](./sections/production/assigntransactionid.md)
+🔗 [**อ่านเพิ่มเติม: Assign ‘TransactionId’ to each log statement**](./sections/production/assigntransactionid.md)
 
 <br/><br/>
 
@@ -892,7 +892,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** Omitting this simple property might greatly degrade performance. For example, when using Express for server-side rendering omitting `NODE_ENV` makes it slower by a factor of three!
 
-🔗 [**Read More: Set NODE_ENV=production**](./sections/production/setnodeenv.md)
+🔗 [**อ่านเพิ่มเติม: Set NODE_ENV=production**](./sections/production/setnodeenv.md)
 
 <br/><br/>
 
@@ -910,7 +910,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** Newly discovered bugs or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain
 
-🔗 [**Read More: Use an LTS release of Node.js**](./sections/production/LTSrelease.md)
+🔗 [**อ่านเพิ่มเติม: Use an LTS release of Node.js**](./sections/production/LTSrelease.md)
 
 <br/><br/>
 
@@ -920,7 +920,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** Application handling log routing === hard to scale, loss of logs, poor separation of concerns
 
-🔗 [**Read More: Log Routing**](./sections/production/logrouting.md)
+🔗 [**อ่านเพิ่มเติม: Log Routing**](./sections/production/logrouting.md)
 
 <br/><br/>
 
@@ -930,7 +930,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code.
 
-🔗 [**Read More: Use npm ci**](./sections/production/installpackageswithnpmci.md)
+🔗 [**อ่านเพิ่มเติม: Use npm ci**](./sections/production/installpackageswithnpmci.md)
 
 <br/><br/><br/>
 
@@ -946,11 +946,11 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20XSS%20-green.svg" alt=""/></a>
 
-**ยาวไปไม่อ่าน:** Make use of security-related linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to catch security vulnerabilities and issues as early as possible, preferably while they're being coded. This can help catching security weaknesses like using eval, invoking a child process or importing a module with a string literal (e.g. user input). Click 'Read more' below to see code examples that will get caught by a security linter
+**ยาวไปไม่อ่าน:** Make use of security-related linter plugins such as [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) to catch security vulnerabilities and issues as early as possible, preferably while they're being coded. This can help catching security weaknesses like using eval, invoking a child process or importing a module with a string literal (e.g. user input). Click 'อ่านเพิ่มเติม' below to see code examples that will get caught by a security linter
 
 **หรือไม่ก็:** What could have been a straightforward security weakness during development becomes a major issue in production. Also, the project may not follow consistent code security practices, leading to vulnerabilities being introduced, or sensitive secrets committed into remote repositories
 
-🔗 [**Read More: Lint rules**](./sections/security/lintrules.md)
+🔗 [**อ่านเพิ่มเติม: Lint rules**](./sections/security/lintrules.md)
 
 <br/><br/>
 
@@ -962,7 +962,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** An application could be subject to an attack resulting in a denial of service where real users receive a degraded or unavailable service.
 
-🔗 [**Read More: Implement rate limiting**](./sections/security/limitrequests.md)
+🔗 [**อ่านเพิ่มเติม: Implement rate limiting**](./sections/security/limitrequests.md)
 
 <br/><br/>
 
@@ -974,7 +974,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** Source control, even for private repositories, can mistakenly be made public, at which point all secrets are exposed. Access to source control for an external party will inadvertently provide access to related systems (databases, apis, services, etc).
 
-🔗 [**Read More: Secret management**](./sections/security/secretmanagement.md)
+🔗 [**อ่านเพิ่มเติม: Secret management**](./sections/security/secretmanagement.md)
 
 <br/><br/>
 
@@ -986,15 +986,15 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** Unvalidated or unsanitized user input could lead to operator injection when working with MongoDB for NoSQL, and not using a proper sanitization system or ORM will easily allow SQL injection attacks, creating a giant vulnerability.
 
-🔗 [**Read More: Query injection prevention using ORM/ODM libraries**](./sections/security/ormodmusage.md)
+🔗 [**อ่านเพิ่มเติม: Query injection prevention using ORM/ODM libraries**](./sections/security/ormodmusage.md)
 
 <br/><br/>
 
 ## ![✔] 6.5. Collection of generic security best practices
 
-**ยาวไปไม่อ่าน:** This is a collection of security advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
+**ยาวไปไม่อ่าน:** This is a collection of security advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click อ่านเพิ่มเติม to skim through.
 
-🔗 [**Read More: Common security best practices**](./sections/security/commonsecuritybestpractices.md)
+🔗 [**อ่านเพิ่มเติม: Common security best practices**](./sections/security/commonsecuritybestpractices.md)
 
 <br/><br/>
 
@@ -1006,7 +1006,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** Attackers could perform direct attacks on your application's users, leading to huge security vulnerabilities
 
-🔗 [**Read More: Using secure headers in your application**](./sections/security/secureheaders.md)
+🔗 [**อ่านเพิ่มเติม: Using secure headers in your application**](./sections/security/secureheaders.md)
 
 <br/><br/>
 
@@ -1018,7 +1018,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** An attacker could detect your web framework and attack all its known vulnerabilities.
 
-🔗 [**Read More: Dependency security**](./sections/security/dependencysecurity.md)
+🔗 [**อ่านเพิ่มเติม: Dependency security**](./sections/security/dependencysecurity.md)
 
 <br/><br/>
 
@@ -1030,7 +1030,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** Passwords and secrets that are stored without using a secure function are vulnerable to brute forcing and dictionary attacks that will lead to their disclosure eventually.
 
-🔗 [**Read More: User Passwords**](./sections/security/userpasswords.md)
+🔗 [**อ่านเพิ่มเติม: User Passwords**](./sections/security/userpasswords.md)
 
 <br/><br/>
 
@@ -1042,7 +1042,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** An attacker might store malicious JavaScript code in your DB which will then be sent as-is to the poor clients
 
-🔗 [**Read More: Escape output**](./sections/security/escape-output.md)
+🔗 [**อ่านเพิ่มเติม: Escape output**](./sections/security/escape-output.md)
 
 <br/><br/>
 
@@ -1054,7 +1054,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** Your generosity and permissive approach greatly increases the attack surface and encourages the attacker to try out many inputs until they find some combination to crash the application
 
-🔗 [**Read More: Validate incoming JSON schemas**](./sections/security/validation.md)
+🔗 [**อ่านเพิ่มเติม: Validate incoming JSON schemas**](./sections/security/validation.md)
 
 <br/><br/>
 
@@ -1066,7 +1066,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** Expired, or misplaced tokens could be used maliciously by a third party to access an application and impersonate the owner of the token.
 
-🔗 [**Read More: Blocklist JSON Web Tokens**](./sections/security/expirejwt.md)
+🔗 [**อ่านเพิ่มเติม: Blocklist JSON Web Tokens**](./sections/security/expirejwt.md)
 
 <br/><br/>
 
@@ -1081,7 +1081,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** An attacker can issue unlimited automated password attempts to gain access to privileged accounts on an application
 
-🔗 [**Read More: Login rate limiting**](./sections/security/login-rate-limit.md)
+🔗 [**อ่านเพิ่มเติม: Login rate limiting**](./sections/security/login-rate-limit.md)
 
 <br/><br/>
 
@@ -1093,7 +1093,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** An attacker who manages to run a script on the server gets unlimited power over the local machine (e.g. change iptable and re-route traffic to their server)
 
-🔗 [**Read More: Run Node.js as non-root user**](./sections/security/non-root-user.md)
+🔗 [**อ่านเพิ่มเติม: Run Node.js as non-root user**](./sections/security/non-root-user.md)
 
 <br/><br/>
 
@@ -1105,7 +1105,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** Your application will have to deal with large requests, unable to process the other important work it has to accomplish, leading to performance implications and vulnerability towards DOS attacks
 
-🔗 [**Read More: Limit payload size**](./sections/security/requestpayloadsizelimit.md)
+🔗 [**อ่านเพิ่มเติม: Limit payload size**](./sections/security/requestpayloadsizelimit.md)
 
 <br/><br/>
 
@@ -1117,7 +1117,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** Malicious JavaScript code finds a way into text passed into `eval` or other real-time evaluating JavaScript language functions, and will gain complete access to JavaScript permissions on the page. This vulnerability is often manifested as an XSS attack.
 
-🔗 [**Read More: Avoid JavaScript eval statements**](./sections/security/avoideval.md)
+🔗 [**อ่านเพิ่มเติม: Avoid JavaScript eval statements**](./sections/security/avoideval.md)
 
 <br/><br/>
 
@@ -1129,7 +1129,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** Poorly written regexes could be susceptible to Regular Expression DoS attacks that will block the event loop completely. For example, the popular `moment` package was found vulnerable with malicious RegEx usage in November of 2017
 
-🔗 [**Read More: Prevent malicious RegEx**](./sections/security/regex.md)
+🔗 [**อ่านเพิ่มเติม: Prevent malicious RegEx**](./sections/security/regex.md)
 
 <br/><br/>
 
@@ -1141,7 +1141,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** Malicious user input could find its way to a parameter that is used to require tampered files, for example, a previously uploaded file on the file system, or access already existing system files.
 
-🔗 [**Read More: Safe module loading**](./sections/security/safemoduleloading.md)
+🔗 [**อ่านเพิ่มเติม: Safe module loading**](./sections/security/safemoduleloading.md)
 
 <br/><br/>
 
@@ -1153,7 +1153,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** A plugin can attack through an endless variety of options like infinite loops, memory overloading, and access to sensitive process environment variables
 
-🔗 [**Read More: Run unsafe code in a sandbox**](./sections/security/sandbox.md)
+🔗 [**อ่านเพิ่มเติม: Run unsafe code in a sandbox**](./sections/security/sandbox.md)
 
 <br/><br/>
 
@@ -1165,7 +1165,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** Naive use of child processes could result in remote command execution or shell injection attacks due to malicious user input passed to an unsanitized system command.
 
-🔗 [**Read More: Be cautious when working with child processes**](./sections/security/childprocesses.md)
+🔗 [**อ่านเพิ่มเติม: Be cautious when working with child processes**](./sections/security/childprocesses.md)
 
 <br/><br/>
 
@@ -1177,7 +1177,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** Sensitive application details such as server file paths, third party modules in use, and other internal workflows of the application which could be exploited by an attacker, could be leaked from information found in a stack trace
 
-🔗 [**Read More: Hide error details from client**](./sections/security/hideerrors.md)
+🔗 [**อ่านเพิ่มเติม: Hide error details from client**](./sections/security/hideerrors.md)
 
 <br/><br/>
 
@@ -1199,7 +1199,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** Cookies could be sent over insecure connections, and an attacker might use session identification to identify the underlying framework of the web application, as well as module-specific vulnerabilities
 
-🔗 [**Read More: Cookie and session security**](./sections/security/sessions.md)
+🔗 [**อ่านเพิ่มเติม: Cookie and session security**](./sections/security/sessions.md)
 
 <br/><br/>
 
@@ -1221,7 +1221,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** If an attacker discovers that you are not validating external, user-supplied input, they may exploit this vulnerability by posting specially-crafted links on forums, social media, and other public places to get users to click it.
 
-🔗 [**Read More: Prevent unsafe redirects**](./sections/security/saferedirects.md)
+🔗 [**อ่านเพิ่มเติม: Prevent unsafe redirects**](./sections/security/saferedirects.md)
 
 <br/><br/>
 
@@ -1233,7 +1233,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** Your project's API keys, passwords or other secrets are open to be abused by anyone who comes across them, which may result in financial loss, impersonation, and other risks.
 
-🔗 [**Read More: Avoid publishing secrets**](./sections/security/avoid_publishing_secrets.md)
+🔗 [**อ่านเพิ่มเติม: Avoid publishing secrets**](./sections/security/avoid_publishing_secrets.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
@@ -1250,7 +1250,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 **หรือไม่ก็:** As the Event Loop is blocked, Node.js will be unable to handle other request thus causing delays for concurrent users. **3000 users are waiting for a response, the content is ready to be served, but one single request blocks the server from dispatching the results back**
 
-🔗 [**Read More: Do not block the event loop**](./sections/performance/block-loop.md)
+🔗 [**อ่านเพิ่มเติม: Do not block the event loop**](./sections/performance/block-loop.md)
 
 <br /><br /><br />
 
@@ -1261,7 +1261,7 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 **หรือไม่ก็:** You'll have to maintain less performant projects where you could have simply used what was **already** available or dealt with a few more lines in exchange of a few more files.
 
-🔗 [**Read More: Native over user land utils**](./sections/performance/nativeoverutil.md)
+🔗 [**อ่านเพิ่มเติม: Native over user land utils**](./sections/performance/nativeoverutil.md)
 
 <br/><br/><br/>
 
@@ -1299,7 +1299,7 @@ RUN npm ci --production
 CMD [ "node", "dist/app.js" ]
 ```
 
-🔗 [**Read More: Use multi-stage builds**](./sections/docker/multi_stage_builds.md)
+🔗 [**อ่านเพิ่มเติม: Use multi-stage builds**](./sections/docker/multi_stage_builds.md)
 
 <br /><br /><br />
 
@@ -1309,7 +1309,7 @@ CMD [ "node", "dist/app.js" ]
 
 **หรือไม่ก็:** When no signals are passed, your code will never be notified about shutdowns. Without this, it will lose its chance to close properly possibly losing current requests and/or data.
 
-[**Read More: Bootstrap container using node command, avoid npm start**](./sections/docker/bootstrap-using-node.md)
+[**อ่านเพิ่มเติม: Bootstrap container using node command, avoid npm start**](./sections/docker/bootstrap-using-node.md)
 
 <br /><br /><br />
 
@@ -1319,7 +1319,7 @@ CMD [ "node", "dist/app.js" ]
 
 **หรือไม่ก็:** Container keeps crashing due to lack of resources will get restarted indefinitely by the process manager. Should Kubernetes be aware of that, it could relocate it to a different roomy instance
 
-🔗 [**Read More: Let the Docker orchestrator restart and replicate processes**](./sections/docker/restart-and-replicate-processes.md)
+🔗 [**อ่านเพิ่มเติม: Let the Docker orchestrator restart and replicate processes**](./sections/docker/restart-and-replicate-processes.md)
 
 <br/><br /><br />
 
@@ -1329,7 +1329,7 @@ CMD [ "node", "dist/app.js" ]
 
 **หรือไม่ก็**: Common personal secret files like `.env`, `.aws` and `.npmrc` will be shared with anybody with access to the image (e.g. Docker repository)
 
-🔗 [**Read More: Use .dockerignore**](./sections/docker/docker-ignore.md)
+🔗 [**อ่านเพิ่มเติม: Use .dockerignore**](./sections/docker/docker-ignore.md)
 
 <br /><br /><br />
 
@@ -1339,7 +1339,7 @@ CMD [ "node", "dist/app.js" ]
 
 **หรือไม่ก็:** Many of the infamous npm security breaches were found within development packages (e.g. [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes))
 
-🔗 Read More: [Remove development dependencies](./sections/docker/install-for-production.md)
+🔗 อ่านเพิ่มเติม: [Remove development dependencies](./sections/docker/install-for-production.md)
 
 <br /><br /><br />
 
@@ -1349,7 +1349,7 @@ CMD [ "node", "dist/app.js" ]
 
 **หรือไม่ก็:** Dying immediately means not responding to thousands of disappointed users
 
-🔗 [**Read More: Graceful shutdown**](./sections/docker/graceful-shutdown.md)
+🔗 [**อ่านเพิ่มเติม: Graceful shutdown**](./sections/docker/graceful-shutdown.md)
 
 <br /><br /><br />
 
@@ -1359,7 +1359,7 @@ CMD [ "node", "dist/app.js" ]
 
 **หรือไม่ก็:** The docker definition is needed to perform thoughtful scaling decision and prevent starving other citizens. Without also defining the v8's limits, it will under utilize the container resources - Without explicit instructions it crashes when utilizing ~50-60% of its host resources
 
-🔗 [**Read More: Set memory limits using Docker only**](./sections/docker/memory-limit.md)
+🔗 [**อ่านเพิ่มเติม: Set memory limits using Docker only**](./sections/docker/memory-limit.md)
 
 <br /><br /><br />
 
@@ -1369,7 +1369,7 @@ CMD [ "node", "dist/app.js" ]
 
 **หรือไม่ก็:** Docker build will be very long and consume lot of resources even when making tiny changes
 
-🔗 [**Read More: Leverage caching to reduce build times**](./sections/docker/use-cache-for-shorter-build-time.md)
+🔗 [**อ่านเพิ่มเติม: Leverage caching to reduce build times**](./sections/docker/use-cache-for-shorter-build-time.md)
 
 <br /><br /><br />
 
@@ -1381,7 +1381,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 **หรือไม่ก็:** A new version of a base image could be deployed into production with breaking changes, causing unintended application behaviour.
 
-🔗 [**Read More: Understand image tags and use the "latest" tag with caution**](./sections/docker/image-tags.md)
+🔗 [**อ่านเพิ่มเติม: Understand image tags and use the "latest" tag with caution**](./sections/docker/image-tags.md)
 
 <br /><br /><br />
 
@@ -1391,7 +1391,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 **หรือไม่ก็:** Building, pushing, and pulling images will take longer, unknown attack vectors can be used by malicious actors and more resources are consumed.
 
-🔗 [**Read More: Prefer smaller images**](./sections/docker/smaller_base_images.md)
+🔗 [**อ่านเพิ่มเติม: Prefer smaller images**](./sections/docker/smaller_base_images.md)
 
 <br /><br /><br />
 
@@ -1401,7 +1401,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 **หรือไม่ก็:** Everyone with access to the CI and docker registry will also get access to some precious organization secrets as a bonus
 
-🔗 [**Read More: Clean-out build-time secrets**](./sections/docker/avoid-build-time-secrets.md)
+🔗 [**อ่านเพิ่มเติม: Clean-out build-time secrets**](./sections/docker/avoid-build-time-secrets.md)
 
 <br /><br /><br />
 
@@ -1411,7 +1411,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 **หรือไม่ก็:** Your code might be entirely free from vulnerabilities. However it might still get hacked due to vulnerable version of OS-level binaries (e.g. OpenSSL, TarBall) that are commonly being used by applications
 
-🔗 [**Read More: Scan the entire image before production**](./sections/docker/scan-images.md)
+🔗 [**อ่านเพิ่มเติม: Scan the entire image before production**](./sections/docker/scan-images.md)
 
 <br /><br /><br />
 
@@ -1421,15 +1421,15 @@ In addition, referring to an image tag means that the base image is subject to c
 
 **หรือไม่ก็:** The image that will get shipped to production will weigh 30% more due to files that will never get used
 
-🔗 [**Read More: Clean NODE_MODULE cache**](./sections/docker/clean-cache.md)
+🔗 [**อ่านเพิ่มเติม: Clean NODE_MODULE cache**](./sections/docker/clean-cache.md)
 
 <br /><br /><br />
 
 ## ![✔] 8.14. Generic Docker practices
 
-**ยาวไปไม่อ่าน:** This is a collection of Docker advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click read more to skim through.
+**ยาวไปไม่อ่าน:** This is a collection of Docker advice that is not related directly to Node.js - the Node implementation is not much different than any other language. Click อ่านเพิ่มเติม to skim through.
 
-🔗 [**Read More: Generic Docker practices**](./sections/docker/generic-tips.md)
+🔗 [**อ่านเพิ่มเติม: Generic Docker practices**](./sections/docker/generic-tips.md)
 
 <br/><br /><br />
 
@@ -1439,7 +1439,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 **หรือไม่ก็:** Mistakenly the Dockerfile creator left Root as the production user, and also used an image from unknown source repository. This could be avoided with with just a simple linter.
 
-🔗 [**Read More: Lint your Dockerfile**](./sections/docker/lint-dockerfile.md)
+🔗 [**อ่านเพิ่มเติม: Lint your Dockerfile**](./sections/docker/lint-dockerfile.md)
 
 <br/><br /><br />
 
