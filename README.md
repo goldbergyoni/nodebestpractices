@@ -1533,7 +1533,7 @@ Full Stack Software Engineer / Developer specializing in Security, DevOps/DevSec
 <a href="https://twitter.com/rluvaton"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
 <a href="https://www.linkedin.com/in/rluvaton/"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
 
-Full Stack Developer who knows how to exit from Vim and loves Architecture, Virtualization, Security.
+Full Stack Developer who knows how to exit from Vim and loves Architecture, Virtualization and Security.
 
 <br/>
 
