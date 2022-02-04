@@ -267,8 +267,7 @@ function someFunction() {
 }
 
 // 나쁜 예
-function someFunction()
-{
+function someFunction() {
   // 코드 블록
 }
 ```
@@ -542,9 +541,9 @@ null == undefined; // true
 
 ## ![✔] 4.12 CI 플랫폼은 신중하게 선택하라. (Jenkins vs CircleCI vs Travis vs 나머지)
 
-**핵심요약:** 지속적인 통합 플랫폼(CICD)은 모든 품질 관리 도구(예: test, lint)를 돌릴 수 있도록 플러그인 생태계가 활발해야만 한다. [Jenkins](https://jenkins.io/)는 배우기는 어렵지만 가장 크고 강력한 플랫폼을 가졌기 때문에 기본적으로 사용되었다. 요즘은  [CircleCI](https://circleci.com) 등과 같은 SaaS 도구를 사용하는 CI 솔루션 사용이 훨씬 더 쉬워졌다. 이러한 도구들은 우리가 인프라 전체를 관리할 부담이 없이 유연한 CI 파이프라인을 만들 수 있게 해준다. 결과적으로, 안정성과 빠름의 상호 절충이 되었다. — 주의해서 선택하도록 하자.
+**핵심요약:** 지속적인 통합 플랫폼(CICD)은 모든 품질 관리 도구(예: test, lint)를 돌릴 수 있도록 플러그인 생태계가 활발해야만 한다. [Jenkins](https://jenkins.io/)는 배우기는 어렵지만 가장 크고 강력한 플랫폼을 가졌기 때문에 기본적으로 사용되었다. 요즘은 [CircleCI](https://circleci.com) 등과 같은 SaaS 도구를 사용하는 CI 솔루션 사용이 훨씬 더 쉬워졌다. 이러한 도구들은 우리가 인프라 전체를 관리할 부담이 없이 유연한 CI 파이프라인을 만들 수 있게 해준다. 결과적으로, 안정성과 빠름의 상호 절충이 되었다. — 주의해서 선택하도록 하자.
 
-**그렇게 하지 않을 경우:**  알려지지 않은 중소 솔루션 업체를 쓰다간 흔치 않은 고급 설정을 커스터마이징 해야할 때 막혀버릴 수도 있다. 하지만 반대로, Jenkins를 택하면 인프라를 수축하는데 소중한 시간을 다 빼앗길 수도 있다.
+**그렇게 하지 않을 경우:** 알려지지 않은 중소 솔루션 업체를 쓰다간 흔치 않은 고급 설정을 커스터마이징 해야할 때 막혀버릴 수도 있다. 하지만 반대로, Jenkins를 택하면 인프라를 수축하는데 소중한 시간을 다 빼앗길 수도 있다.
 
 🔗 [**자세히 보기: Choosing CI platform**](./sections/testingandquality/citools.korean.md)
 
@@ -1081,6 +1080,38 @@ null == undefined; // true
 
 <br/><br/><br/>
 
+## ![✔] 8.6. Shutdown smartly and gracefully
+
+**핵심요약:** SIGTERM(프로세스 종료 신호)이벤트와 모든 연결 및 리소스를 청소 과정을 관리해야 한다. 이 과정은 반드시 계속되는 요청에 대한 처리를 진행하는 중간에 이루어 져야 한다.
+도커화된 런타임에서는 컨테이너가 종료되는 것은 보기 드믄 현상이 아니다. 오히려 일상화된 작업에서 빈번하게 발생한다.
+이를 달성하기 위해 아주 잘 자여진 코드가 다음의 과정을 잘 조율해야 한다: 로드 밸런싱, 연결을 유지하기, http서버와 다른 리소스들
+
+**그렇게 하지 않을 경우:** 서버가 죽는 것은 곹 수천의 실망한 사용자에게 응답하지 않는 것이다.
+
+ㄴ🔗 [**Read More: Graceful shutdown**](./sections/docker/graceful-shutdown.korean.md)
+
+<br /><br /><br />
+
+## ![✔] 8.7. Set memory limits using both Docker and v8
+
+**핵심요약:** 항상 메모리 한계치를 토커와 자바스크림트 런타임 플래그를 통해 관리해라. 도커의 한계치는 컨테이너 배치 의사결정을 위해 필요하다. v8엔진에서는 Old space라는 garbage collection을 관리하는 부분이 존재한다. --max-old-space-size란 관리 가능한 최대 크기를 나타내는 플래그다. max-old-space는 메모리의 사용치 밑에서 가비지 컬렉션을 진행해야 한다. 실제로는 v8의 old space 메모리는 컨테이너 한계보다 약간 적게 되어 있다.
+
+**그렇지 않으면:** 도커의 정의는 다른 컨테이너들이 고자원 고갈 상태에 이르지 않게 하기 위해 스케일링 의사결정을 내리는 것이다. v8엔진의 제한이 없게 된다면 컨테이너 자원의 효율성을 낮출 겟이다. 명확한 제한 없이는 유틸정도가 50%만 넘어도 문제가 발생한다.
+
+🔗 [**Read More: Set memory limits using Docker only**](./sections/docker/memory-limit.korean.md)
+
+<br /><br /><br />
+
+## ![✔] 8.8. Plan for efficient caching
+
+**핵심요약:** 효과적으로 캐싱된다면 도커 이미지가 거의 즉각적으로 재실행 될 수 있다. 최신 업데이트 사항은 도커파일 하단에, 위로 올라갈수록 이전 업데이트 사항이 있어야 한다.
+
+**Otherwise:** 작은 변경사항에도 도커 빌드에 오랜 시간이 필요하게 될 수도 있다.
+
+🔗 [**Read More: Leverage caching to reduce build times**](./sections/docker/use-cache-for-shorter-build-time.korean.md)
+
+<br /><br /><br />
+
 # 마일스톤
 
 이 가이드를 관리하고 최신 버전을 유지하기 위해, 우리는 지속해서 가이드라인과 모범 사례들을 커뮤니티의 도움으로 업데이트하고 개선해 나가고 있습니다. [마일스톤](https://github.com/goldbergyoni/nodebestpractices/milestones)을 확인하시고 이 프로젝트에 기여하고 싶다면 작업중인 그룹에 참여하세요!
@@ -1158,14 +1189,14 @@ null == undefined; // true
 공동 저자들은 새로운 모범사례를 제안하거나, 사안을 분류하거나, 풀리퀘스트를 검토하는 등 리포지토리에 정기적으로 기여하는 일원들입니다. 수천명의 사람들이 더 나은 Node.js 애플리케이션을 만들 수 있도록 안내하며 돕는데 관심이 있으시다면 [기여자 지침서](./.operations/CONTRIBUTING.md)를 읽어주세요 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"/></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"/></a> | <a href="https://github.com/kevynb" target="_blank"><img src="assets/images/members/kevyn.png" width="59" height="59"/></a> |
-| :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: |
-|                                     [이도 릭터 (창립주)](https://github.com/idori)                                      |                                         [키스 홀리데이](https://github.com/TheHollidayInn)                                         |                                         [케빈 브뤼예르](https://github.com/kevynb)                                         |
+| :----------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------: |
+|                                      [이도 릭터 (창립주)](https://github.com/idori)                                      |                                         [키스 홀리데이](https://github.com/TheHollidayInn)                                          |                                         [케빈 브뤼예르](https://github.com/kevynb)                                          |
 
 ### 전 공동 저자
 
 | <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"/></a> |
-| :-------------------------------------------------------------------------------------------------------------------------: |
-|                                        [Refael Ackermann](https://github.com/refack)                                        |
+| :--------------------------------------------------------------------------------------------------------------------------: |
+|                                        [Refael Ackermann](https://github.com/refack)                                         |
 
 <br/>
 
