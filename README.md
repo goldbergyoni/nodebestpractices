@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%20102%20Best%20Practices-blue.svg" alt="102 items"/> <img id="last-update-badge" src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20January%2024%2C%202022-green.svg" alt="Last update: January 24, 2022" /> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2014.0.0-brightgreen.svg" alt="Updated for Node 14.0.0"/>
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%20102%20Best%20Practices-blue.svg" alt="102 items"/> <img id="last-update-badge" src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20February%2007%2C%202022-green.svg" alt="Last update: February 07, 2022" /> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2014.0.0-brightgreen.svg" alt="Updated for Node 14.0.0"/>
 </div>
 
 <br/>
@@ -17,7 +17,6 @@
 [<img src="assets/images/twitter.svg" width="16" height="16" alt="" />](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
 
 <br/>
-
 
 Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md), [![FR](./assets/flags/FR.png)**FR**](./README.french.md), [![BR](./assets/flags/BR.png)**BR**](./README.brazilian-portuguese.md), [![RU](./assets/flags/RU.png)**RU**](./README.russian.md), [![PL](./assets/flags/PL.png)**PL**](./README.polish.md), [![JA](./assets/flags/JA.png)**JA**](./README.japanese.md), [![EU](./assets/flags/EU.png)**EU**](./README.basque.md) [(![ES](./assets/flags/ES.png)**ES**, ![HE](./assets/flags/HE.png)**HE**, ![KR](./assets/flags/KR.png)**KR** and ![TR](./assets/flags/TR.png)**TR** in progress! )](#translations)
 
@@ -28,7 +27,6 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 # Latest Best Practices and News
 
 - **🔖 New menu and tags**: Our menu is collapsible now and include `#tags`. New visitors can read `#strategic` items first. Returning visitors can focus on `#new` content. Seniors can filter for `#advanced` items. Courtesy of the one and only [Rubek Joshi](https://github.com/rubek-joshi@rubek-joshi)
-
 
 - **👨‍👩‍👧‍👦 New family member!**: A new repository joins our family - [Node.js Integration Tests Best Practices ✨](https://github.com/testjavascript/nodejs-integration-tests-best-practices). It includes 40+ best practices for writing awesome and performant Node.js component tests
 
@@ -432,7 +430,7 @@ function someFunction() {
 }
 
 // Avoid
-function someFunction() 
+function someFunction()
 {
   // code block
 }
@@ -1527,6 +1525,16 @@ Full Stack Software Engineer / Developer specializing in Security, DevOps/DevSec
 
 <br/>
 
+<a id="raz-luvaton" href="https://github.com/rluvaton" target="_blank"><img src="assets/images/members/raz-luvaton.jpg" align="left" width="100" height="100" alt="Raz Luvaton" loading="lazy"/></a>
+
+[Raz Luvaton](https://github.com/rluvaton)
+<a href="https://twitter.com/rluvaton"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
+<a href="https://www.linkedin.com/in/rluvaton/"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
+
+Full Stack Developer who knows how to exit from Vim and loves Architecture, Virtualization and Security.
+
+<br/>
+
 ### Steering Committee Emeriti
 
 <img align="left" width="100" height="100" src="assets/images/members/sagir.png"/>
@@ -1546,9 +1554,9 @@ Thank you to all our collaborators! 🙏
 
 Our collaborators are members who are contributing to the repository on a regular basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in helping us guide thousands of people to craft better Node.js applications, please read our [contributor guidelines](./.operations/CONTRIBUTING.md) 🎉
 
-| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"/></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"/></a> | <a href="https://github.com/rluvaton" target="_blank"><img src="assets/images/members/raz-luvaton.jpg" width="75" height="75" alt="Raz Luvaton" loading="lazy"/></a> |
-| :----------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                    [Ido Richter (Founder)](https://github.com/idori)                                     |                                         [Keith Holliday](https://github.com/TheHollidayInn)                                         |                                                              [Raz Luvaton](https://github.com/rluvaton)                                                              |
+| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"/></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"/></a> |
+| :----------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
+|                                    [Ido Richter (Founder)](https://github.com/idori)                                     |                                         [Keith Holliday](https://github.com/TheHollidayInn)                                         |
 
 ### Collaborator Emeriti
 
@@ -1801,6 +1809,7 @@ Thanks goes to these wonderful people who have contributed to this repository!
     <td align="center"><a href="https://github.com/apainintheneck"><img src="https://avatars.githubusercontent.com/u/42982186?v=4?s=100" width="100px;" alt=""/><br /><sub><b>apainintheneck</b></sub></a><br /><a href="#content-apainintheneck" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/koyanyaroo"><img src="https://avatars.githubusercontent.com/u/9715368?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Fajar Budhi Iswanda</b></sub></a><br /><a href="#content-koyanyaroo" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/jutiger"><img src="https://avatars.githubusercontent.com/u/97490806?v=4?s=100" width="100px;" alt=""/><br /><sub><b>이주호</b></sub></a><br /><a href="#content-jutiger" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/MisterSingh"><img src="https://avatars.githubusercontent.com/u/44462019?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Singh</b></sub></a><br /><a href="#content-MisterSingh" title="Content">🖋</a></td>
   </tr>
 </table>
 
