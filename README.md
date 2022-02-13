@@ -1810,6 +1810,7 @@ Thanks goes to these wonderful people who have contributed to this repository!
     <td align="center"><a href="https://github.com/koyanyaroo"><img src="https://avatars.githubusercontent.com/u/9715368?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Fajar Budhi Iswanda</b></sub></a><br /><a href="#content-koyanyaroo" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/jutiger"><img src="https://avatars.githubusercontent.com/u/97490806?v=4?s=100" width="100px;" alt=""/><br /><sub><b>이주호</b></sub></a><br /><a href="#content-jutiger" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/MisterSingh"><img src="https://avatars.githubusercontent.com/u/44462019?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Singh</b></sub></a><br /><a href="#content-MisterSingh" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/Alex-Dumitru"><img src="https://avatars.githubusercontent.com/u/43738450?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alex Dumitru</b></sub></a><br /><a href="#content-Alex-Dumitru" title="Content">🖋</a></td>
   </tr>
 </table>
 
