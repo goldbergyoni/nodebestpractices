@@ -1528,8 +1528,8 @@ Full Stack Software Engineer / Developer specializing in Security, DevOps/DevSec
 <a id="raz-luvaton" href="https://github.com/rluvaton" target="_blank"><img src="assets/images/members/raz-luvaton.jpg" align="left" width="100" height="100" alt="Raz Luvaton" loading="lazy"/></a>
 
 [Raz Luvaton](https://github.com/rluvaton)
-<a href="https://twitter.com/rluvaton"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
-<a href="https://www.linkedin.com/in/rluvaton/"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
+<a href="https://twitter.com/rluvaton"><img src="assets/images/twitter.svg" width="16" height="16"></img></a>
+<a href="https://www.linkedin.com/in/rluvaton/"><img src="assets/images/linkedin.svg" width="16" height="16"></img></a>
 
 Full Stack Developer who knows how to exit from Vim and loves Architecture, Virtualization and Security.
 
