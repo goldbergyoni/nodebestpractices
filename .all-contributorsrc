@@ -1650,6 +1650,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "Alex-Dumitru",
+      "name": "Alex Dumitru",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43738450?v=4",
+      "profile": "https://github.com/Alex-Dumitru",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
