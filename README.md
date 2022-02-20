@@ -14,7 +14,7 @@
 
 <br/>
 
-[![nodepractices](./assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
+[<img src="assets/images/twitter.svg" width="16" height="16" alt="" />](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
 
 <br/>
 
@@ -1481,8 +1481,8 @@ Meet the steering committee members - the people who work together to provide gu
 <img align="left" width="100" height="100" src="assets/images/members/yoni.png"/>
 
 [Yoni Goldberg](https://github.com/goldbergyoni)
-<a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
-<a href="https://goldbergyoni.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
+<a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter.svg" width="16" height="16"></img></a>
+<a href="https://goldbergyoni.com"><img src="assets/images/web.svg" width="16" height="16"></img></a>
 
 Independent Node.js consultant who works with customers in the USA, Europe, and Israel on building large-scale Node.js applications. Many of the best practices above were first published at [goldbergyoni.com](https://goldbergyoni.com). Reach Yoni at [@goldbergyoni](https://github.com/goldbergyoni) or [me@goldbergyoni.com](mailto:me@goldbergyoni.com)
 
@@ -1491,7 +1491,7 @@ Independent Node.js consultant who works with customers in the USA, Europe, and 
 <img align="left" width="100" height="100" src="assets/images/members/bruno.png"/>
 
 [Bruno Scheufler](https://github.com/BrunoScheufler)
-<a href="https://brunoscheufler.com/"><img src="assets/images/www.png" width="16" height="16"></img></a>
+<a href="https://brunoscheufler.com/"><img src="assets/images/web.svg" width="16" height="16"></img></a>
 
 💻 full-stack web engineer, Node.js & GraphQL enthusiast
 
@@ -1500,8 +1500,8 @@ Independent Node.js consultant who works with customers in the USA, Europe, and 
 <img align="left" width="100" height="100" src="assets/images/members/kyle.png"/>
 
 [Kyle Martin](https://github.com/js-kyle)
-<a href="https://twitter.com/kylemartin_93"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
-<a href="https://www.linkedin.com/in/kylemartinnz"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
+<a href="https://twitter.com/kylemartin_93"><img src="assets/images/twitter.svg" width="16" height="16"></img></a>
+<a href="https://www.linkedin.com/in/kylemartinnz"><img src="assets/images/linkedin.svg" width="16" height="16"></img></a>
 
 Full Stack Developer & Site Reliability Engineer based in New Zealand, interested in web application security, and architecting and building Node.js applications to perform at global scale.
 
@@ -1510,18 +1510,18 @@ Full Stack Developer & Site Reliability Engineer based in New Zealand, intereste
 <img align="left" width="100" height="100" src="assets/images/members/kevyn.png"/>
 
 [Kevyn Bruyere](https://github.com/kevynb)
-<a href="https://www.linkedin.com/in/kevynbruyere/"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
+<a href="https://www.linkedin.com/in/kevynbruyere/"><img src="assets/images/linkedin.svg" width="16" height="16"></img></a>
 
 Independent full-stack developer with a taste for Ops and automation.
 
 <br/>
 
-<a id="josh-hemphill" href="https://github.com/josh-hemphill" target="_blank"><img src="assets/images/members/jhemphill.jpg" align="left" width="100" height="100" alt="Josh Hemphill" loading="lazy"/></a>
+<a id="josh-hemphill" href="https://github.com/josh-hemphill" target="_blank"><img src="assets/images/members/josh-hemphill.png" align="left" width="100" height="100" alt="Josh Hemphill" loading="lazy"/></a>
 
 [Josh Hemphill](https://github.com/josh-hemphill)
-<a href="https://twitter.com/spooklogical"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
-<a href="https://www.linkedin.com/in/joshuahemphill/"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
-<a href="https://joshuahemphill.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
+<a href="https://twitter.com/spooklogical"><img src="assets/images/twitter.svg" width="16" height="16"></img></a>
+<a href="https://www.linkedin.com/in/joshuahemphill/"><img src="assets/images/linkedin.svg" width="16" height="16"></img></a>
+<a href="https://joshuahemphill.com"><img src="assets/images/web.svg" width="16" height="16"></img></a>
 
 Full Stack Software Engineer / Developer specializing in Security, DevOps/DevSecOps, and ERP Integrations.
 
@@ -1530,8 +1530,8 @@ Full Stack Software Engineer / Developer specializing in Security, DevOps/DevSec
 <a id="raz-luvaton" href="https://github.com/rluvaton" target="_blank"><img src="assets/images/members/raz-luvaton.jpg" align="left" width="100" height="100" alt="Raz Luvaton" loading="lazy"/></a>
 
 [Raz Luvaton](https://github.com/rluvaton)
-<a href="https://twitter.com/rluvaton"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
-<a href="https://www.linkedin.com/in/rluvaton/"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
+<a href="https://twitter.com/rluvaton"><img src="assets/images/twitter.svg" width="16" height="16"></img></a>
+<a href="https://www.linkedin.com/in/rluvaton/"><img src="assets/images/linkedin.svg" width="16" height="16"></img></a>
 
 Full Stack Developer who knows how to exit from Vim and loves Architecture, Virtualization and Security.
 
@@ -1542,9 +1542,9 @@ Full Stack Developer who knows how to exit from Vim and loves Architecture, Virt
 <img align="left" width="100" height="100" src="assets/images/members/sagir.png"/>
 
 [Sagir Khan](https://github.com/sagirk)
-<a href="https://twitter.com/sagir_k"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
-<a href="https://linkedin.com/in/sagirk"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
-<a href="https://sagirk.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
+<a href="https://twitter.com/sagir_k"><img src="assets/images/twitter.svg" width="16" height="16"></img></a>
+<a href="https://linkedin.com/in/sagirk"><img src="assets/images/linkedin.svg" width="16" height="16"></img></a>
+<a href="https://sagirk.com"><img src="assets/images/web.svg" width="16" height="16"></img></a>
 
 Deep specialist in JavaScript and its ecosystem — React, Node.js, TypeScript, GraphQL, MongoDB, pretty much anything that involves JS/JSON in any layer of the system — building products using the web platform for the world’s most recognized brands. Individual Member of the Node.js Foundation.
 
