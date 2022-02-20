@@ -1814,6 +1814,7 @@ Thanks goes to these wonderful people who have contributed to this repository!
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/lykhatskyi"><img src="https://avatars.githubusercontent.com/u/18104686?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Anton Lykhatskyi</b></sub></a><br /><a href="#content-lykhatskyi" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/EverythingAvailable"><img src="https://avatars.githubusercontent.com/u/81002379?v=4?s=100" width="100px;" alt=""/><br /><sub><b>sangwonlee</b></sub></a><br /><a href="#content-EverythingAvailable" title="Content">🖋</a></td>
   </tr>
 </table>
 
