@@ -766,9 +766,9 @@ null == undefined   // true
 
 **핵심요약:** 보안 취약성 및 문제들을 잡기 위해서 코드가 작성될 때 [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security) 같은 보안 관련 linter 플러그인들을 사용하라. 이것은 eval의 사용 또는 문자열 리터럴로 모듈을 가져오는 것, 자식 프로세스 호출 등과 같은 보안 취약점을 잡을 수 있도록 돕는다. 아래 'Read more'을 클릭하여 보안 linter로 포착되는 경우의 코드 예제를 확인하라.
 
-**그렇게 하지 않을 경우:** 개발 과정에서 직접적인 보안 취약점이 될 수 있었던 부분이 상용에서도 큰 문제가 되어 다가올 수 있다. 또한 프로젝트는 일관된 코드 보안 사례를 따르지 않게 되어 취약점이 생기거나, 민감한 secrets들이 원격 repository로 커밋될 수 있다.
+**그렇게 하지 않을 경우:** 개발 과정에서 직접적인 보안 취약점이 될 수 있었던 부분이 상용에서도 큰 문제가 되어 다가올 수 있다. 또한 프로젝트는 일관된 코드 보안 사례를 따르지 않게 되어 취약점이 생기거나, 민감한 기밀 값들이 원격 레퍼지토리로 커밋될 수 있다.
 
-🔗 [**자세히 보기: Lint rules**](/sections/security/lintrules.md)
+🔗 [**자세히 보기: Lint rules**](/sections/security/lintrules.korean.md)
 
 <br/><br/>
 
@@ -780,7 +780,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 애플리케이션을 사용하는 유저들이 사용이 불가능하거나 저하되는 서비스를 받게되는 문제를 초래할 수 있다.
 
-🔗 [**자세히 보기: Implement rate limiting**](/sections/security/limitrequests.md)
+🔗 [**자세히 보기: Implement rate limiting**](/sections/security/limitrequests.korean.md)
 
 <br/><br/>
 
@@ -788,11 +788,11 @@ null == undefined   // true
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A3:Sensitive%20Data%20Exposure%20-green.svg" alt=""/></a>
 
-**핵심요약:** 기밀사항은 절대 평문 형태로 설정 파일이나 소스코드에 저장하지 말아라. 그 대신 Vault나 Kubernetes/Docker Secrets나 환경변수 같은 기밀사항 관리 시스템을 써라. 부득이하게 소스 콘트롤에 기밀사항을 저장해야 하는 경우, 반드시 암호화하여 관리되어야 한다 (rolling keys, 만료, 감사 등). 실수로 기밀사항을 버젼 콘트롤에 커밋하는 것을 막기 위해 pre-commit/push hook을 사용하자.
+**핵심요약:** 기밀사항은 절대 평문 형태로 설정 파일이나 소스코드에 저장하지 말아라. 그 대신 Vault나 Kubernetes/Docker Secrets나 환경변수 같은 기밀사항 관리 시스템을 써라. 부득이하게 소스 제어에 기밀사항을 저장해야 하는 경우, 반드시 암호화하여 관리되어야 한다 (rolling keys, 만료, 감사 등). 실수로 기밀사항을 버젼 제어에 커밋하는 것을 막기 위해 pre-commit/push hook을 사용하자.
 
 **그렇게 하지 않을 경우:** 만약 개인 레퍼지토리라 하더라도 만약 소스 컨트롤이 실수로 공개된다면 해당 시점에서 모든 기밀들이 노출되게 된다. 외부관계자가 소스제어에 접근이 가능해지게 하는 것은, 의도치 않아도 관련 시스템(데이터베이스, API, 서비스 등)에도 접근을 허락하는 것과 마찬가지다.
 
-🔗 [**자세히 보기: Secret management**](/sections/security/secretmanagement.md)
+🔗 [**자세히 보기: Secret management**](/sections/security/secretmanagement.korean.md)
 
 <br/><br/>
 
@@ -800,19 +800,19 @@ null == undefined   // true
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
-**핵심요약:** SQL/NoSQL 주입과 같은 악의적인 공격을 막기 위해서는 ORM/ODM을 쓰거나, 데이터를 항상 이스케이프 처리 해 주거나 named or indexed parameterized queries를 지지하고, expected data type의 사용자 입력을 확인해주는 데이터베이스 라이브러리를 항상 활용해라. 자바스크립트 템플릿 문자열(template strings)이나 문자열 병합(string concatenation)으로 값을 주입하면 앱을 광범위한 취약점에 노출시키므로 절대 그대로 써서는 안된다. 평판이 좋은 Node.js 데이터 접근 라이브러리들(예: [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose))은 모두 주입 공격을 막아주는 보호대책이 내장되어있다.
+**핵심요약:** SQL/NoSQL 주입 및 기타 악의적인 공격을 방지하려면 항상 데이터를 이스케이프하거나 명명되거나 인덱싱된 매개변수화된 쿼리를 지원하고 예상 유형에 대한 사용자 입력의 유효성을 검사하는 ORM/ODM 또는 데이터베이스 라이브러리를 사용하라. JavaScript 템플릿 문자열 또는 문자열 연결을 사용하여 쿼리에 값을 삽입하지 마라. 이렇게 하면 애플리케이션이 광범위한 취약점에 노출될 수 있습니다. 평판이 좋은 모든 Node.js 데이터 액세스 라이브러리(예: [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose))에는 주입 공격에 대한 보호 기능이 내장되어 있다.
 
-**그렇게 하지 않을 경우:** 확인되지 않거나 (unvalidated) 살균되지 않은 (unsanitized) 사용자 입력은 MangoDB for NoSQL를 쓸 때 operator injection를 초래할 수 있고, 제대로 된 위생처리 시스템이나 ORM을 쓰지 않는것은 SQL 주입 공격을 쉽게 만들어 엄청난 취약점을 만들어낼 수 있다.
+**그렇게 하지 않을 경우:** 확인되지 않거나 (unvalidated) 제거되지 않은 (unsanitized) 사용자 입력은 MongoDB for NoSQL를 쓸 때 operator injection를 초래할 수 있고, 제대로 된 위생처리 시스템이나 ORM을 쓰지 않는것은 SQL 주입 공격을 쉽게 만들어 엄청난 취약점을 만들어낼 수 있다.
 
-🔗 [**자세히 보기: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.md)
+🔗 [**자세히 보기: Query injection prevention using ORM/ODM libraries**](/sections/security/ormodmusage.korean.md)
 
 <br/><br/>
 
 ## ![✔] 6.5. 일반적인 보안 모범사례 모음
 
-**핵심요약:** 이것은 Node.js와는 직접적으로 관련되지 않은 보안과 관련된 조언 모음집이지만, Node의 시행도 다른 언어들과 그닥 다르지 않다. 자세히 보기를 클릭해서 읽어봐라.
+**핵심요약:** 이것은 Node.js와는 직접적으로 관련되지 않은 보안과 관련된 조언 모음집인데 Node의 구현도 다른 언어들과 그닥 다르지 않다. 아래 자세히 보기를 클릭하여 읽어보자.
 
-🔗 [**자세히 보기: Common security best practices**](/sections/security/commonsecuritybestpractices.md)
+🔗 [**자세히 보기: Common security best practices**](/sections/security/commonsecuritybestpractices.korean.md)
 
 <br/><br/>
 
@@ -820,23 +820,23 @@ null == undefined   // true
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**핵심요약:** 보안 헤더를 사용해서 교차사이트 스트립팅 (XSS), 클릭재킹과 같이 자주 있는 악의적인 공격들을 막아라. [helmet](https://www.npmjs.com/package/helmet)과 같은 모듈을 사용하면 쉽게 설정할 수 있다.
+**핵심요약:** 보안 헤더를 사용해 어플리케이션이 교차사이트 스트립팅 (XSS), 클릭재킹과 같이 자주 있는 악의적인 공격들로부터 방어될 수 있도록 하라. [helmet](https://www.npmjs.com/package/helmet)과 같은 모듈을 사용하면 쉽게 설정할 수 있다.
 
-**그렇게 하지 않을 경우:** 공격자들이 애플리케이션 사용자들을 직접적으로 공격할 수 있게되면 엄청난 보안 취약점을 초래할 수 있다
+**그렇게 하지 않을 경우:** 공격자들이 어플리케이션 사용자들을 직접적으로 공격할 수 있게되며, 이는 엄청난 보안 취약점을 초래할 수 있다.
 
-🔗 [**자세히 보기: Using secure headers in your application**](/sections/security/secureheaders.md)
+🔗 [**자세히 보기: Using secure headers in your application**](/sections/security/secureheaders.korean.md)
 
 <br/><br/>
 
-## ![✔] 6.7. 끊임없이 자동적으로 취약한 의존성은 없는지 검사해라
+## ![✔] 6.7.  취약한 의존성은 없는지 지속적이고 자동적으로 검사 하라.
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Known%20Vulnerabilities%20-green.svg" alt=""/></a>
 
-**핵심요약:** npm 생태계의 프로젝트들은 의존성이 여럿 있는것이 보통이다. 의존성들은 새로운 취약점들이 발견 될 때마다 고쳐야 한다. [npm audit](https://docs.npmjs.com/cli/audit)이나 [snyk](https://snyk.io/) 같은 도구들을 이용해 취약한 의존성을 감시하고 패치해라. 이런 도구들을 CI 체재와 통합시켜 취약한 의존성이 상용버젼까지 새어 나가기 전에 잡아라
+**핵심요약:** npm 생태계의 프로젝트들은 보통 여러 의존성들을 가진다. 의존성들은 새로운 취약점들이 발견 될 때마다 고쳐져야만 한다. [npm audit](https://docs.npmjs.com/cli/audit)이나 [snyk](https://snyk.io/) 같은 도구들을 이용해 취약한 의존성을 감시하고 패치하라. 이런 도구들을 CI 설정과 통합시켜 취약한 의존성들이 상용버전에 적용되기 전에 잡아내라.
 
-**그렇게 하지 않을 경우:** 공격자가 당신의 웹 프레임워크를 감지하면 알려진 모든 취약점을 공격할 수 있다.
+**그렇게 하지 않을 경우:** 공격자가 당신의 웹 프레임워크를 감지하면, 알려진 모든 취약점들을 공격할 수 있다.
 
-🔗 [**자세히 보기: Dependency security**](/sections/security/dependencysecurity.md)
+🔗 [**자세히 보기: Dependency security**](/sections/security/dependencysecurity.korean.md)
 
 <br/><br/>
 
@@ -1056,30 +1056,95 @@ null == undefined   // true
 
 <p align="right"><a href="#목차">⬆ Return to top</a></p>
 
-# `7. 초안: 성능`
+# `7. 초안: 성능 모범 사례`
 
 ## 협력자들이 현재 작업중입니다. [함께 하시겠습니까?](https://github.com/i0natan/nodebestpractices/issues/256)
 
 <br/><br/>
 
-## ![✔] 7.1. 이벤트 루프를 막지 말아라
+## ![✔] 7.1. 이벤트 루프를 차단하지 마라.
 
-**핵심요약:** CPU 집약적인 과제들은 거의 단일 스레드로 된 이벤드 루프를 블로킹하고 전용 스레드나 프로세스, 혹은 컨텍스트에 따라 그 외 다른 기술에 떠넘기므로 피하라.
+**핵심요약:** CPU 집약적인 과제들은 단일 스레드로 된 이벤드 루프를 대부분 차단하고 컨텍스트에 따라 전용 스레드나 프로세스, 또는 그 외 다른 기술에 떠넘기므로 피하라.
 
-**그렇게 하지 않을 경우:** 이벤트 루프가 블로킹되면 Node.js는 다른 요청을 처리할 수 없게 되어 동시성 (concurrent) 사용자들을 지체하게 한다. **사용자 3000명이 응답을 기다리고 있고, 콘텐츠도 제공될 준비가 되어있는데, 단 하나의 요청이 서버가 결과물을 발송하지 못하도록 블로킹 할 수 있다**
+**그렇게 하지 않을 경우:** 이벤트 루프가 차단되면 Node.js는 다른 요청을 처리할 수 없게 되어 동시(concurrent) 사용자들에게 지연이 발생하게 된다. **사용자 3000명이 응답을 기다리고 있고, 콘텐츠도 제공될 준비가 되어있는데, 단 하나의 요청이 서버가 결과물을 발송하지 못하도록 블로킹 할 수 있다.**
 
-🔗 [**자세히 보기: Do not block the event loop**](/sections/performance/block-loop.md)
+🔗 [**자세히 보기: Do not block the event loop**](/sections/performance/block-loop.korean.md)
 
 <br /><br /><br />
 
-## ![✔] 7.2. Lodash같은 user-land 유틸 대신 네이티브 자바스크립트 메소드를 택해라
+## ![✔] 7.2. Lodash와 같은 사용자 영역 유틸리티보다는 네이티브 자바스크립트 메소드를 사용하라.
 
 **핵심요약:** 네이티브 메소드 대신 `lodash` 나 `underscore` 같은 유틸 라이브러리를 쓰는 것은 불필요한 의존성이나 성능 저하를 야기할 수 있기에 보통 페날티가 붙는다.
 새로운 V8 엔진과 함께 새로운 ES 기준이 도입되고부터 네이티브 메소드가 유틸리티 라이브러리보다 50% 더 능률적이라는 것을 명심해라.
 
 **그렇게 하지 않을 경우:** 기본적으로 **이미** 내장된 코드를 쓰거나 코드를 몇줄 더 써서 파일을 몇개 더 써야 하는 것을 막을 수 있었음에도 불구하고 더 비능률적인 프로젝트를 유지해야 할 것이다.
 
-🔗 [**자세히 보기: Native over user land utils**](/sections/performance/nativeoverutil.md)
+🔗 [**자세히 보기: Native over user land utils**](/sections/performance/nativeoverutil.korean.md)
+
+<br/><br/><br />
+
+# `8. Docker 모범 사례`
+
+🏅 아래 이어지는 많은 사례들에 대해 배울 수 있었던 [Bret Fisher](https://github.com/BretFisher)에게 감사함을 전한다.
+
+<br/><br/>
+
+## ![✔] 8.1. 더 간결하고 안전한 Docker 이미지를 위해 여러 단계의 빌드를 사용하라.
+
+**핵심요약:** 필요한 프로덕션 아티팩트들만 복사하기 위해 여러 단계의 빌드를 사용하라. 어플리케이션을 실행하기 위해서 더 많은 빌드 시간 종속성 및 파일들은 필요하지 않다. 여러 단계의 빌드를 사용하면, 런타임 환경이 필요한 것들만 포함하는 동안 빌드 중에 해당 리소스를 사용할 수 있다. 여러 단계의 빌드는 보안 위협을 제거하고 이미지를 경량화하기 위한 손쉬운 방법이다.
+
+**그렇게 하지 않을 경우:** 더 큰 이미지는 빌드하고 전송하는 데 더 오랜 시간을 더 소요하고, 빌드 전용 툴에 취약점이 포함될 수 있으며, 빌드 단계에만 해당하는 기밀 값들이 유출될 수 있다.
+
+####  여러 단계의 빌드에 대한 dockerfile 예제
+
+```docker
+FROM node:14.4.0 AS build
+
+COPY . .
+RUN npm ci && npm run build
+
+
+FROM node:slim-14.4.0
+
+USER node
+EXPOSE 8080
+
+COPY --from=build /home/node/app/dist /home/node/app/package.json /home/node/app/package-lock.json ./
+RUN npm ci --production
+
+CMD [ "node", "dist/app.js" ]
+```
+
+🔗 [**자세히 보기: Use multi-stage builds**](/sections/docker/multi_stage_builds.korean.md)
+
+<br/><br/>
+
+## ![✔] 8.11 빌드 시간 동안의 기밀 값들에 대해 삭제하고, 인자에 기밀값들을 넣는 것을 피하라.
+**핵심요약:** 도커 빌드 환경으로부터 기밀 값들이 유출되는 것을 피하라. 도커 이미지는 일반적으로 프로덕션처럼 악의적인 데이터들이 제거된 상태가 아닌 CI, 레지스트리와 같은 다양한 환경에서 공유된다. 하나의 예로는 docker에 일반적으로 인수로 전달되어지는 npm 토큰이다. 이 토큰은 이미지와 함께 오래 유지되며, 침입자들로 하여금 공개되지 않은 npm 레지스트리에 대한 정의되지 않은 접근을 허락한다. 이는 .npmrc 같은 기밀을 포함한 파일을 복사하고 이후 여러 단계의 빌드를 통해 해당 파일은 삭제해버리거나, 또는 흔적에 대해 전혀 남기지 않는 Docker build-kit 기밀 기능을 사용함으로써 막을 수 있다.
+
+**그렇게 하지 않을 경우:** CI와 도커 레지스트리에 대해 접근하는 모든 이들이 중요한 조직 기밀들에 대한 접근들 중 일부를 덤으로 얻어가게 될 것이다.
+
+🔗 [**자세히 보기: Clean-out build-time secrets**](/sections/docker/avoid-build-time-secrets.korean.md)
+
+<br/><br/>
+
+## ![✔] 8.12. 취약점의 여러 계층에 대한 이미지 스캔
+**핵심요약:** 코드 종속성 취약점을 확인하는 것은 단지 그것뿐만이 아니라 상용에 전달되는 최종 이미지 역시 스캔한다. 도커 이미지 스캐너들은 코드 종속성을 확인하지만, OS 바이너리들 역시 확인한다. 이 E2E 보안 스캔은 더 많은 근거들을 다루고, 빌드 중에 악의적인 사람들이 좋지 않은 것들을 주입시켰는지를 확인한다. 따라서, 이 과정은 배포 전 마지막 단계에서 실행되는 것이 권장되어진다. CI/CD 플러그인까지 제공하는 일부 무료 및 상업적 스캐너들이 존재하고 있다.
+
+**그렇게 하지 않을 경우:** 당신의 코드가 취약점이 아예 없을 수도 있지만, 어플리케이션에서 일반적으로 사용되어지는 취약한 버전의 OS-레벨 바이너리(예: OpenSSL, TarBall)로 인해서 여전히 해킹될 수도 있다.
+
+🔗 [**자세히 보기: Scan the entire image before production**](/sections/docker/scan-images.korean.md)
+
+
+<br/><br/>
+
+## ![✔] 8.13 NODE_MODULE 캐시를 삭제하라.
+
+**핵심요약:** 컨테이너에서 종속성들을 설치한 후 로컬 캐시를 삭제하라. 추가적인 설치가 없기 때문에, 미래에 있을 설치를 위해서 종속성을 복사하는 것은 의미가 없다 - 도커 이미지는 변경할 수 없다. 한줄의 코드를 사용함으로써 수십 MB(일반적 이미지 사이즈의 10-50% 정도에 해당한다.)정도가 줄어들게 된다.
+
+**그렇게 하지 않을 경우:** 상용으로 전달될 이미지가 절대로 사용되지 않을 파일들로 인해 30% 정도 더 무거워진 용량을 가지게 된다.
+
+🔗 [**자세히 보기: Clean NODE_MODULE cache**](/sections/docker/clean-cache.korean.md)
 
 <br/><br/><br/>
 
