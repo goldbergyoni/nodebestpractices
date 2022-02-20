@@ -26,7 +26,7 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 # Latest Best Practices and News
 
-- ** 🌟🌟🌟🌟🌟 75,000 stars**: Blushing, surprised and proud!
+- **✨ 75,000 stars**: Blushing, surprised and proud!
 
 - **🔖 New menu and tags**: Our menu is collapsible now and include `#tags`. New visitors can read `#strategic` items first. Returning visitors can focus on `#new` content. Seniors can filter for `#advanced` items. Courtesy of the one and only [Rubek Joshi](https://github.com/rubek-joshi@rubek-joshi)
 
