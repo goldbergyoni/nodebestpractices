@@ -240,9 +240,11 @@
 
 ## ![✔] 3.1 ESLint를 사용하라
 
-**핵심요약:** [ESLint](https://eslint.org)는 발생 가능한 코드 에러를 체크하고 껄끄러운 간격(spacing)문제를 식별하는 것부터 프로그래머가 분별없이 에러를 던지는 것과 같은 코드의 심각한 안티 패턴을 감지하여 코드 스타일을 바꾸는 것에 대한 사실상의 표준이다. ESLint도 자동으로 코드스타일을 고칠 수 있지만 [prettier](https://www.npmjs.com/package/prettier)와 [beautify](https://www.npmjs.com/package/js-beautify)같은 수정 부분의 포맷을 맞춰주는 강력한 툴이 있고 ESLint와 함께 작동된다.
+**핵심요약:** [ESLint](https://eslint.org)는 발생 가능한 코드 에러를 체크하고 껄끄러운 간격(spacing)문제를 식별하는 것부터 프로그래머가 분별없이 에러를 던지는 것과 같은 코드의 심각한 안티 패턴을 감지하여 코드 스타일을 바꾸는 것에 대한 사실상의 표준이다. ESLint만으로도 자동으로 코드스타일을 고칠 수 있지만 [prettier](https://www.npmjs.com/package/prettier)와 [beautify](https://www.npmjs.com/package/js-beautify)같은 다른 툴들과 함께 사용될 경우 수정 부분을 포매팅함에 있어 더욱 더 강력한 힘을 발휘할 수 있다.
 
-**그렇게 하지 않을 경우:** 프로그래머가 쓸데없이 간격과 각 줄의 길이(line-width) 문제에 집중하고 프로젝트의 코드스타일에 대해 과도하게 생각하느라 시간을 낭비하게 된다.
+**그렇게 하지 않을 경우:** 프로그래머가 간격과 각 줄의 길이(line-width)와 같은 쓸데없는 문제에 집중하게 되는 등 프로젝트의 코드스타일에 대해 집착으로 시간을 낭비하게 된다.
+
+🔗 [**Read More: Using ESLint and Prettier**](/sections/codestylepractices/eslint_prettier.korean.md)
 
 <br/><br/>
 
@@ -250,13 +252,13 @@
 
 **핵심요약:** vanlla JS만 지원하는 ESLinst의 표준 규칙 위에 [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha), [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)와 같은 Node에 특화된 플러그인을 같이 사용하라.
 
-**그렇게 하지 않을 경우:** 많은 결함이 있는 Node.js 코드 패턴들이 안중에서 벗어날 수 있다. 예를 들어 프로그래머는 변수로된 파일경로를 이용해 require(파일경로변수)로 파일을 가져올수 있다. 이것은 공격자들이 어떤 JS script도 실행시킬 수 있게 한다. Node.js linter는 그러한 패턴을 감지하고 미리 알려준다.
+**그렇게 하지 않을 경우:** 많은 결함이 있는 Node.js 코드 패턴들이 안중에서 벗어날 수 있다. 예를 들어 프로그래머는 변수로된 파일경로를 이용해 require(variableAsPath)로 파일을 가져올수 있다. 이것은 공격자들이 어떤 JS script도 실행시킬 수 있게 한다. Node.js linter는 그러한 패턴을 감지하고 미리 알려준다.
 
 <br/><br/>
 
 ## ![✔] 3.3 코드 블록의 중괄호를 같은 줄에서 시작하라
 
-**핵심요약:** 블록에서 중괄호를 여는 부분은 코드를 여는 문장과 같은 줄에 있어야 한다.
+**핵심요약:** 코드블록에서 중괄호를 여는 부분은 코드를 여는 문장과 같은 줄에 있어야 한다.
 
 ### 코드 예제
 
@@ -267,8 +269,7 @@ function someFunction() {
 }
 
 // 나쁜 예
-function someFunction()
-{
+function someFunction() {
   // 코드 블록
 }
 ```
@@ -283,9 +284,9 @@ function someFunction()
 
 당신이 문장 끝에 세미콜론을 붙이든 아니든, 제대로 문장을 끝내지 않거나 자동 세미콜론 삽입과 관련된 흔한 실수들을 알아두면 잦은 구문 오류 (syntax error)를 제거하는데 도움이 된다.
 
-**핵심요약:** ESLint를 써서 제대로 문장을 끝내고 있는지 경각심을 불러일으켜라. [Prettier](https://prettier.io/) or [Standardjs](https://standardjs.com/)는 자동으로 이 문제를 해결해준다.
+**핵심요약:** ESLint를 써서 제대로 문장을 끝내고 있는지 자각하라. [Prettier](https://prettier.io/) or [Standardjs](https://standardjs.com/)는 자동으로 이 문제를 해결해준다.
 
-**그렇게 하지 않을 경우:** 이전 섹션에서 본것처럼 자바스크립트의 인터프리터는 세미콜론이 없으면 자동으로 문장의 끝에 세미콜론을 붙이거나, 문장이 끝났어야 함에도 끝났다고 인지하지 못하여 의도되지 않은 결과를 야기할 수 있다. 대부분의 의도하지 않은 에러들은 assignment를 사용하고 imediate invoked function expression을 사용하는 것을 피함으로써 예방할 수 있다.
+**그렇게 하지 않을 경우:** 이전 섹션에서 본것처럼 자바스크립트의 인터프리터는 세미콜론이 없으면 자동으로 문장의 끝에 세미콜론을 붙이거나, 문장이 끝났어야 함에도 끝났다고 인지하지 못하여 의도되지 않은 결과를 야기할 수 있다. 대부분의 의도하지 않은 에러들은 assignment를 사용하고 즉시실행함수(imediately invoked function expression)의 사용을 피함으로써 이를 예방할 수 있다.
 
 ### 코드 예제
 
@@ -313,9 +314,9 @@ const a = [1,2,3]
 // 나쁜 예 — 예외 발생
 const count = 2 // 2()를 호출하려 하지만, 2는 함수가 아니다
 (function doSomething() {
-  // 이쁜짓
+  // 무엇이든 놀라운 것을 포함해 보아라
 }())
-// immediate invoked function 전에 세미콜론을 놓던나, const 정의 후에 놓거나, 익명함수의 반환값을 변수에 저장하던가, 아니면 아예 IIFE를 쓰지 마라
+// 즉시실행함수(immediately invoked function) 전에 세미콜론을 놓거나, const 정의 후에 놓거나, 익명함수의 반환값을 변수에 저장하던가, 아니면 아예 IIFE를 쓰지 마라
 ```
 
 🔗 [**Read more:** "Semi ESLint rule"](https://eslint.org/docs/rules/semi)
@@ -325,15 +326,15 @@ const count = 2 // 2()를 호출하려 하지만, 2는 함수가 아니다
 
 ## ![✔] 3.5 함수에 이름을 붙여라
 
-**핵심요약:** 클로저와 콜백을 포함한 모든 함수에 이름을 붙여라. 익명함수를 피해라. 이것은 노드 앱을 프로파일링 할때 특히 유용하다. 모든 함수를 명명하는 것은 당신이 메모리 스냅샷을 확인할때 당신이 보고있는 것이 무엇인지 쉽게 이해 할수있도록 해준다.
+**핵심요약:** 클로저와 콜백을 포함한 모든 함수에 이름을 붙여라. 익명함수 사용을 피해라. 이것은 노드 앱을 프로파일링 할때 특히 유용하다. 모든 함수를 명명하는 것은 당신이 메모리 스냅샷을 확인할때 당신이 보고있는 것이 무엇인지 쉽게 이해 할수있도록 해준다.
 
-**그렇게 하지 않을 경우:** 당신이 익명함수에서 메모리 소비가 많다는 것을 확인 했을 때 코어 덤프(메모리 스냅샷)을 이용해 프로덕션 문제를 디버깅하는 것이 어려울 수도 있습니다.
+**그렇게 하지 않을 경우:** 당신이 익명함수에서 메모리 소비가 많다는 것을 확인 했을 땐 코어 덤프(메모리 스냅샷)을 이용해 프로덕션 문제를 디버깅하는 것이 어려울 수도 있습니다.
 
 <br/><br/>
 
 ## ![✔] 3.6 변수, 상수, 함수, 클래스의 명명 규칙(naming convention)
 
-**핵심요약:** 상수와 변수 함수를 명명할때는 **_lowerCamelCase_** 를 사용하고 클래스를 명명 할때는 **_UpperCamelCase_**(첫 글자 대문자)를 사용하라. 이것은 일반 변수/함수와 인스턴스로 만들어야 하는 클래스를 구분하는데 도움을  것이다. 설명이 포함된 이름을 사용하되 이름을 짧게 유지하도록 해라.
+**핵심요약:** 상수와 변수 함수를 명명할때는 **_lowerCamelCase_** 를 사용하고 클래스를 명명 할때는 **_UpperCamelCase_**(첫 글자 대문자)를 사용하라. 이것은 일반 변수/함수와 인스턴스로 만들어야 하는 클래스를 구분하는데 도움을 줄것이다. 설명이 포함된 이름을 사용하되 이름을 짧게 유지하도록 해라.
 
 **그렇게 하지 않을 경우:** 자바스크립트는 먼저 인스턴스로 만들지 않고 직접 생성자("Class")를 호출할 수 있는 세계 유일의 언어이다. 그러므로 클래스와 함수생성자는 UpperCamelCase를 통해 구분된다.
 
@@ -345,7 +346,7 @@ class SomeClassExample {}
 
 // 상수명은 const 키워드와 lowerCamelCase 사용
 const config = {
-  key: 'value'
+  key: 'value',
 };
 
 // 변수와 함수 이름은 lowerCamelCase 사용
@@ -402,18 +403,18 @@ module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolve
 ### 코드 예제
 
 ```javascript
-'' == '0'           // false
-0 == ''             // true
-0 == '0'            // true
+'' == '0'; // false
+0 == ''; // true
+0 == '0'; // true
 
-false == 'false'    // false
-false == '0'        // true
+false == 'false'; // false
+false == '0'; // true
 
-false == undefined  // false
-false == null       // false
-null == undefined   // true
+false == undefined; // false
+false == null; // false
+null == undefined; // true
 
-' \t\r\n ' == 0     // true
+' \t\r\n ' == 0; // true
 ```
 
 위의 모든 문장은 `===`를 사용했다면 false를 반환 했을것이다.
@@ -456,7 +457,6 @@ null == undefined   // true
 
 **핵심요약:** 코드 내부에 익숙하지 않은 QA 엔지니어들과 개발자들에게 따로 설명이 필요 없도록 requirement 계층에서 이미 자명하도록 해라. 무엇을 (unit under test), 어떤 환경에서, 어떤 결과를 예상하고 테스트 하는 것인지 테스트 이름에 명시해라.
 
-
 **그렇게 하지 않을 경우:** 배포에 실패하였습니다, “프로덕트 추가” 라는 테스트가 실패했습니다. 이런 메시지를 보고 정확히 뭐가 잘못되었는지 알 수 있는가?
 
 🔗 [**자세히 보기: Include 3 parts in each test name**](/sections/testingandquality/3-parts-in-name.md)
@@ -468,7 +468,6 @@ null == undefined   // true
 **핵심요약:** 테스트를 다음 세가지 부분으로 명확히 나누어라: 준비 (arrange), 실행 (act), 표명 (assert). 제일 먼저 테스트를 준비하고, 그 다음 테스트 단위(unit under test)를 실행하고, 마지막은 확인 단계다. 이 구조를 따르는 것은 읽는이가 힘들여 머리를 쓰지 않고도 테스트 설계를 이해할 수 있도록 보장한다.
 
 **그렇게 하지 않을 경우:** 매일 하루종일 주요 코드를 읽는데 시간을 오래 쓰는 것도 모자라 간단해야하는 테스트 부분에도 열심히 머리를 써야 할 것이다.
-
 
 🔗 [**Read More: Structure tests by the AAA pattern**](/sections/testingandquality/aaa.md)
 
@@ -554,7 +553,7 @@ null == undefined   // true
 
 **핵심요약:** 여러 요청에 걸친 막대한 로직을 미들웨어가 수용하는 경우, 웹 프레임워크 전체를 깨우지 않고 격리 상태로 테스트 할만한 가치가 있다. {req, res, next} 객체들을 스텁(stub)하여 염탐(spy)하면 쉽게 달성할 수 있다.
 
-**그렇게 하지 않을 경우:**  Express 미들웨어의 버그 === 거의 모든 요청의 버그
+**그렇게 하지 않을 경우:** Express 미들웨어의 버그 === 거의 모든 요청의 버그
 
 🔗 [**자세히 보기: Test middlewares in isolation**](/sections/testingandquality/test-middlewares.md)
 
@@ -566,11 +565,11 @@ null == undefined   // true
 
 ## ![✔] 5.1. 모니터링
 
-**핵심요약:** 모니터링은 고객이 문제를 발견하기 전에 먼저 발견하는 게임이다. 모니터링에는 분명히 전례가없는 중요성을 부여해야한다. 솔루션에 너무 많은 기능들이 들어가 있을 가능성이 있으므로 확인해야만하는 기본 항목을 내부적으로 정의하고 나서 추가적인 기능들을 살펴보고 필요한 기능들이 모두 들어있는 솔루션을 선택하라. 아래의 'gist'를 클릭하면 솔루션 개요를 볼 수 있다
+**핵심요약:** 모니터링은 고객이 문제를 발견하기 전에 먼저 발견하는 게임이다. 모니터링에는 분명히 전례가없는 중요성을 부여해야한다. 솔루션에 너무 많은 기능들이 들어가 있을 가능성이 있으므로 확인해야만하는 기본 항목을 내부적으로 정의하고 나서 추가적인 기능들을 살펴보고 필요한 기능들이 모두 들어있는 솔루션을 선택하라. 아래의 '요점'을 클릭하면 솔루션 개요를 볼 수 있다.
 
 **그렇게 하지 않을 경우:** 오류 === 고객의 실망. 간단하다
 
-🔗 [**자세히 보기: 모니터링!**](/sections/production/monitoring.md)
+🔗 [**자세히 보기: 모니터링!**](/sections/production/monitoring.korean.md)
 
 <br/><br/>
 
@@ -580,7 +579,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 이해하기 힘든 블랙박스가 되어버려서 필요한 정보를 추가하기 위해 모든 로그를 다시 작성하게 될것이다
 
-🔗 [**자세히 보기: Increase transparency using smart logging**](/sections/production/smartlogging.md)
+🔗 [**자세히 보기: 스마트 로깅으로 투명성을 높여라**](/sections/production/smartlogging.korean.md)
 
 <br/><br/>
 
@@ -590,17 +589,17 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 불쌍한 싱글 스레드가 어플리케이션의 코어를 처리하는 대신 인프라 작업을 수행하느라 바빠져서 성능이 저하될 것이다
 
-🔗 [**자세히 보기: 가능한 모든 것들(예: gzip, SSL)을 reverse proxy에 위임하라**](/sections/production/delegatetoproxy.md)
+🔗 [**자세히 보기: 가능한 모든 것들(예: gzip, SSL)을 reverse proxy에 위임하라**](/sections/production/delegatetoproxy.korean.md)
 
 <br/><br/>
 
 ## ![✔] 5.4. 의존성을 잠궈라(Lock dependencies)
 
-**핵심요약:** 코드는 모든 환경에서 동일해야하지만 놀랍게도 npm을 사용하면 기본적으로 환경간에 종속성이 달라질 수 있는데, 다양한 환경에서 패키지를 설치하면 패키지의 최신 패치 버전을 가져오기 때문이다. npm config 파일인 .npmrc를 사용하여이 문제를 극복해라. 각 환경에 각 패키지의 최신 버전이 아닌 정확한 버전을 저장하도록 알려준다. 또는 세밀하게 제어하려면 `npm shrinkwrap`을 사용하라. \* 업데이트 : NPM5부터는 종속성이  기본적으로 잠겨 있다. 새로운 패키지 관리자인 Yarn도 기본적으로 잠겨 있다.
+**핵심요약:** 코드는 모든 환경에서 동일해야하지만 놀랍게도 npm을 사용하면 기본적으로 환경간에 종속성이 달라질 수 있는데, 다양한 환경에서 패키지를 설치하면 패키지의 최신 패치 버전을 가져오기 때문이다. npm config 파일인 .npmrc를 사용하여이 문제를 극복해라. 각 환경에 각 패키지의 최신 버전이 아닌 정확한 버전을 저장하도록 알려준다. 또는 세밀하게 제어하려면 `npm shrinkwrap`을 사용하라. \* 업데이트 : NPM5부터는 종속성이 기본적으로 잠겨 있다. 새로운 패키지 관리자인 Yarn도 기본적으로 잠겨 있다.
 
 **그렇게 하지 않을 경우:** QA팀은 코드를 철저히 테스트 했음에도 테스트 환경과는 다르게 작동하는 버전을 승인할 것이다. 심지어 같은 프로덕션 클러스터의 여러 서버가 서로 다른 코드를 실행할 수도 있다.
 
-🔗 [**자세히 보기: Lock dependencies**](/sections/production/lockdependencies.md)
+🔗 [**자세히 보기: 의존성 잠금**](/sections/production/lockdependencies.korean.md)
 
 <br/><br/>
 
@@ -610,7 +609,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 명확한 전략없이 수십 개의 인스턴스와 너무 많은 도구 (클러스터 관리, 도커, PM2)를 실행하면 데브옵스가 혼란을 겪을 수 있다
 
-🔗 [**자세히 보기: Guard process uptime using the right tool**](/sections/production/guardprocess.md)
+🔗 [**자세히 보기: 올바른 툴을 사용하여 프로세스 가동시간을 지켜라**](/sections/production/guardprocess.korean.md)
 
 <br/><br/>
 
@@ -620,7 +619,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 앱이 사용 가능한 리소스 중 25%(!)에도 못 미치게 활용할 것이다. 일반적인 서버는 CPU 코어가 4개 이상임에도 Node를 기본형으로 배포하면 그 중 단 1 개만 사용하게 될것이다 (AWS beanstalk과 같은 PaaS 서비스 사용해도 마찬가지)
 
-🔗 [**자세히 보기: 모든 CPU를 활용하라**](/sections/production/utilizecpu.md)
+🔗 [**자세히 보기: 모든 CPU를 활용하라**](/sections/production/utilizecpu.korean.md)
 
 <br/><br/>
 
@@ -630,7 +629,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 단지 서버 진단을 목적으로 일부 정보를 추출하기 위하여 상용서버에 코드를 배포하는 "진단용 배포"를 자주 수행하고 있게 될 것이다
 
-🔗 [**자세히 보기: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.md)
+🔗 [**자세히 보기: ‘유지 엔드포인트’를 생성하라**](/sections/production/createmaintenanceendpoint.korean.md)
 
 <br/><br/>
 
@@ -844,11 +843,11 @@ null == undefined   // true
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**핵심요약:** 암호나 기밀사항(API keys)들은 `bcrypt` 같은 보안 해시+솔트 함수를 쓰는것이 자바스크립트 implementation을 쓰는 것보다 보안이나 성능면에서 더 낫다.
+**핵심요약:** 암호나 기밀사항(API keys)들은 `bcrypt` 같은 보안 해시+솔트 함수를 쓰는것이 자바스크립트 구현하는것보다 보안이나 성능면에서 더 낫다.
 
 **그렇게 하지 않을 경우:** 보안함수(secure function)를 쓰지 않고 저장된 암호나 기밀사항들은 억지기법이나 사전공격에 취약해져 결국엔 다 뚫리게 된다.
 
-🔗 [**자세히 보기: Use Bcrypt**](/sections/security/bcryptpasswords.md)
+🔗 [**자세히 보기: Use Bcrypt**](/sections/security/bcryptpasswords.korean.md)
 
 <br/><br/>
 
@@ -860,7 +859,7 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 공격자가 악의적인 자바스크립트 코드를 당신 DB에 저장하면 불쌍한 클라이언트에게 그대로 보내질 수 있다
 
-🔗 [**자세히 보기: Escape output**](/sections/security/escape-output.md)
+🔗 [**자세히 보기: Escape output**](/sections/security/escape-output.korean.md)
 
 <br/><br/>
 
@@ -868,11 +867,11 @@ null == undefined   // true
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7: XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a>
 
-**핵심요약:** 들어오는 요청들의 body payload를 검사하여 기대에 부응하지는지 확인하고, 하지 않을경우 실패시켜버려라. [jsonschema](https://www.npmjs.com/package/jsonschema)나 [joi](https://www.npmjs.com/package/joi) 같은 JSON-기반의 경량의 validation schema를 쓰면 성가시게 매 경로마다 검사를 코딩해야 하는 일을 피할 수 있다.
+**핵심요약:** 들어오는 요청들의 body 페이로드를 검사하여 기대에 부응하지는지 확인하고, 하지 않을경우 실패시켜버려라. [jsonschema](https://www.npmjs.com/package/jsonschema)나 [joi](https://www.npmjs.com/package/joi) 같은 JSON기반의 경량의 validation schema를 쓰면 성가시게 매 경로마다 검사를 코딩해야 하는 일을 피할 수 있다.
 
 **그렇게 하지 않을 경우:** 입력에 대해 너그럽고 관대하면 공격 받을 수 있는 면적이 넓어지고, 공격자에게 애플리케이션을 끌어내리는 조합을 찾을때까지 다양한 입력값을 시도해보도록 장려하는 꼴이 된다.
 
-🔗 [**자세히 보기: Validate incoming JSON schemas**](/sections/security/validation.md)
+🔗 [**자세히 보기: Validate incoming JSON schemas**](/sections/security/validation.korean.md)
 
 <br/><br/>
 
@@ -880,15 +879,15 @@ null == undefined   // true
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**핵심요약:** JSON Web Token(이를테면 [Passport.js](https://github.com/jaredhanson/passport)같은)을 쓰는 경우, 기본적으로 발행된 토큰의 권한을 취소하는 메커니즘은 없다. 사용자가 악의적인 행동을 한다 해도 유효한 토큰이 있는한 막을 길이 없다. 신뢰할 수 없는 토큰 블랙리스트를 만들어 매 요청마다 검사해서 완화시켜라.
+**핵심요약:** JSON Web Token(이를테면 [Passport.js](https://github.com/jaredhanson/passport)같은)을 쓰는 경우, 기본적으로 발행된 토큰의 권한을 취소하는 메커니즘은 없다. 사용자가 악의적인 행동을 한다 해도 유효한 토큰이 있는한 막을 길이 없다. 신뢰할 수 없는 토큰 블랙리스트를 만들어 매 요청마다 검사해서 문제를 완화시켜라.
 
 **그렇게 하지 않을 경우:** 제삼자가 만료되었거나 부적절한 토큰을 악의적으로 사용하여 애플리케이션에 접근하거나 토큰 소유자인 척 가장할 수 있다.
 
-🔗 [**자세히 보기: Blacklist JSON Web Tokens**](/sections/security/expirejwt.md)
+🔗 [**자세히 보기: Blacklist JSON Web Tokens**](/sections/security/expirejwt.korean.md)
 
 <br/><br/>
 
-## ![✔] 6.12. 권한부여 억지기법 공격을 예방해라
+## ![✔] 6.12. 권한부여 무차별 대입 공격을 예방해라
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
@@ -899,19 +898,19 @@ null == undefined   // true
 
 **그렇게 하지 않을 경우:** 공격자가 무제한으로 암호를 시도해서 특권있는 계좌에 접근할 수 있다
 
-🔗 [**자세히 보기: Login rate limiting**](/sections/security/login-rate-limit.md)
+🔗 [**자세히 보기: Login rate limiting**](/sections/security/login-rate-limit.korean.md)
 
 <br/><br/>
 
-## ![✔] 6.13. Node.js를 루트가 아닌 사용자로써 실행하라
+## ![✔] 6.13. Node.js를 비-루트 사용자로써 실행하라
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A5:Broken%20Access%20Access%20Control-green.svg" alt=""/></a>
 
-**핵심요약:** Node.js가 승인에 제한이 없는 루트 사용자로써 실행하는 일이 비일비재하다. 예를 들면, 도커 컨테이너 안에서는 이것이 기본적인 설정이다. 루트가 아닌 사용자를 만들어 도커 이미지에 구워넣거나 (아래예시) 프로세스를 "-u username" 플래그를 써서  이 사용자를 대신해서 실행하는것을 추천한다.
+**핵심요약:** Node.js가 승인에 제한이 없는 루트 사용자로써 실행하는 일이 비일비재하다. 예를 들면, 도커 컨테이너 안에서는 이것이 기본적인 설정이다. 루트가 아닌 사용자를 만들어 도커 이미지에 구워넣거나 (아래예시) 프로세스를 "-u username" 플래그를 써서 이 사용자를 대신해서 실행하는것을 추천한다.
 
 **그렇게 하지 않을 경우:** 공격자가 서버에 스크립트를 실행하는데 성공하면 로컬 머신을 마음대로 할 권리를 무제한으로 갖게 된다 (예: iptable을 바꾼다던가 트래픽 경로를 자기 서버로 변경 한다던가)
 
-🔗 [**자세히 보기: Run Node.js as non-root user**](/sections/security/non-root-user.md)
+🔗 [**자세히 보기: Run Node.js as non-root user**](/sections/security/non-root-user.korean.md)
 
 <br/><br/>
 
@@ -1003,7 +1002,7 @@ null == undefined   // true
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**핵심요약:** 개발 과정의 모든 단계는 다중인증(MFA: multi-factor authentication)을 사용해서 보호해야한다. npm이나 Yarn은 공격자들이 개발자 암호를 수집할 수 있는 절호의 기회다. 공격자들은 개발자의 크리덴셜을 사용하면 악의적인 코드를 다양한 프로젝트와 서비스에 널리 설치된 라이브러리에 주입할 수 있다. 공개 출판 되었다면  웹상에서도 가능하다. npm 이중인증을 활성화 해 두면 공격자들이 패키지 코드를 변경할 확률이 0에 가까워진다.
+**핵심요약:** 개발 과정의 모든 단계는 다중인증(MFA: multi-factor authentication)을 사용해서 보호해야한다. npm이나 Yarn은 공격자들이 개발자 암호를 수집할 수 있는 절호의 기회다. 공격자들은 개발자의 크리덴셜을 사용하면 악의적인 코드를 다양한 프로젝트와 서비스에 널리 설치된 라이브러리에 주입할 수 있다. 공개 출판 되었다면 웹상에서도 가능하다. npm 이중인증을 활성화 해 두면 공격자들이 패키지 코드를 변경할 확률이 0에 가까워진다.
 
 **그렇게 하지 않을 경우:** [암호를 하이재킹 당한 eslint 개발자에 대해 들어봤는가?](https://medium.com/@oprearocks/eslint-backdoor-what-it-is-and-how-to-fix-the-issue-221f58f1a8c8)
 
@@ -1148,6 +1147,54 @@ CMD [ "node", "dist/app.js" ]
 
 <br/><br/><br/>
 
+## ![✔] 8.2. npm start 대신 node 커맨드를 이용한 부트스트랩
+
+**핵심요약:** 코드에 OS시그널을 전달하지 못하는 npm 스크립트 대신 `CMD ['node','server.js']`를 사용해 앱을 실행하라. 이를 통해 자식-프로세스, 시그널 핸들링, 우아한 끝내기(graceful shutdown) 그리고 좀비 프로세스를 갖는 등의 문제들을 예방할 수 있다.
+
+**그렇게 하지 않을 경우:** 아무런 시그널이 전달되지 않을경우, 너의 코드는 셧다운이 됐는지에 대해 알 길이 없다. 시그널이 없다면, 현재 요청 그리고/혹은 데이터를 유실함으로써 정상적으로 종료될 기회를 잃게된다.
+
+🔗 [**자세히 보기: npm start대신 node 커맨드를 사용한 부트스트랩 컨테이너**](./sections/docker/bootstrap-using-node.korean.md)
+
+<br/><br/><br/>
+
+## ![✔] 8.3. 도커 런타임에게 복제와 수행시간을 맡겨라
+
+**핵심 요약:** 도커 런타임 오케스트레이터(예. 쿠버네티스)를 사용할 때, Node.js프로세스를 중간 프로세스 매니저 혹은 프로세스를 복제하는 커스텀 코드(예. PM2, 클러스터 모듈)를 사용하는 대신 직접적으로 불러와라. 런타임 플랫폼은 배치 결정(placement decision)을 위한 엄청나게 많은 양의 데이터와 가시성 가지고 있기 때문에 얼만큼 많은 프로세스가 필요한지, 어떻게 그들을 분산시켜야 하는지와 충돌 발생 시 어떻게 해야하는지에 대해 제일 잘 알고있다.
+
+**그렇게 하지 않을 경우:** 자원 부족으로 계속해서 충돌을 내는 컨테이너는 프로세스 매니저에 의해 불분명하게 재시작 될 것이다. 이 경우 쿠버네티스는 스스로 이 컨테이너의 위치를 다른 넓은 인스턴스로 재조정해 버릴 수 있음을 조심해야한다.
+
+🔗 [**자세히 보기: 도커 오케스트레이터가 재시작되고 프로세스를 복제할 수 있도록 해주어라**](./sections/docker/restart-and-replicate-processes.korean.md)
+
+<br/><br/><br/>
+
+## ![✔] 8.4. 보안 누수 방지를 위해 도커이그노어(.dockerignore)를 사용하라
+
+**핵심요약:** 일반 시크릿 파일과 개발 아티팩트를 제외하는`.dockerignore` 파일을 포함하라. 그렇게 함으로써 비밀이 이미지로 유출되는 일을 방지할 수 있다. 빌드에 걸리는 시간이 줄어듦은 덤이다. 또한 모든 파일을 재귀적으로 복사하지말고 도커에 어떤 파일이 복사되어야 하는지 명확하게 선택하라.
+
+**그렇게 하지 않을 경우:** `.env`, `.aws` 그리고 `.npmrc`같은 일반적인 개인 시크릿 파일들(Common personal secret files)은 이미지 엑세스를 가진 그 누구에게나 공유될 것이다 (예. 도커 저장소)
+
+🔗 [**자세히 보기: .dockerignore를 사용하라**](./sections/docker/docker-ignore.korean.md)
+
+<br/><br/><br/>
+
+## ![✔] 8.14. 일반적인 도커 프랙티스
+
+**핵심요약:** 이것은 Node.js와 직접적 관련이 없는 도커 advice 모음이다 - Node의 구현은 여느 언어들과 크게 다르지 않다. 자세히 보기를 클릭하여 더 살펴보아라.
+
+🔗 [**자세히 보기: 일반적인 도커 프랙티스**](./sections/docker/generic-tips.korean.md)
+
+<br/><br/><br/>
+
+## ![✔] 8.15. 너의 도커파일은 린트하라
+
+**핵심 용약:** 너의 도커파일을 린팅하는 것은 best practice범위에서 벗어난 도커파일내의 이슈를 알아내는 데에 중요한 단계이다. 특화된 도커 린터를 사용하여 잠재적 결함을 확인함으로써, 셀 수 없이 낭비되는 시간을 아끼고 프로덕션 코드내 보안 이슈들을 줄이는 등의 퍼포먼스와 보안상 개선점이 어렵지않게 식별될 것이다.
+
+**그렇게 하지 않을경우:** 실수로 도커파일 생성자가 루트를 포르덕션 유저로 남겨두고, 알려지지 않은 소스 저장소로 부터 이미지를 사용할 수 있다. 이것은 간단한 린터를 사용함으로써 피할 수 있다.
+
+🔗 [**자세히 보기: 너의 도커파일을 린트하라**](./sections/docker/lint-dockerfile.korean.md)
+
+<br/><br/><br/>
+
 # 마일스톤
 
 이 가이드를 관리하고 최신 버전을 유지하기 위해, 우리는 지속해서 가이드라인과 모범 사례들을 커뮤니티의 도움으로 업데이트하고 개선해 나가고 있습니다. [마일스톤](https://github.com/i0natan/nodebestpractices/milestones)을 확인하시고 이 프로젝트에 기여하고 싶다면 작업중인 그룹에 참여하세요!
@@ -1225,8 +1272,8 @@ CMD [ "node", "dist/app.js" ]
 공동 저자들은 새로운 모범사례를 제안하거나, 사안을 분류하거나, 풀리퀘스트를 검토하는 등 리포지토리에 정기적으로 기여하는 일원들입니다. 수천명의 사람들이 더 나은 Node.js 애플리케이션을 만들 수 있도록 안내하며 돕는데 관심이 있으시다면 [기여자 지침서](/.operations/CONTRIBUTING.md)를 읽어주세요 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> | <a href="https://github.com/kevynb" target="_blank"><img src="assets/images/members/kevyn.png" width="59" height="59"></a> |
-| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-|        [이도 릭터 (창립주)](https://github.com/idori)        |      [키스 홀리데이](https://github.com/TheHollidayInn)      |          [케빈 브뤼예르](https://github.com/kevynb)          |
+| :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: |
+|                                     [이도 릭터 (창립주)](https://github.com/idori)                                      |                                         [키스 홀리데이](https://github.com/TheHollidayInn)                                         |                                         [케빈 브뤼예르](https://github.com/kevynb)                                         |
 
 ### 전 공동 저자
 
@@ -1237,6 +1284,7 @@ CMD [ "node", "dist/app.js" ]
 <br/>
 
 ## 기여하기
+
 오픈소스에 참여하고 싶으시다면 지금이 바로 기회! [기여자 지침서](.operations/CONTRIBUTING.md)에서 더 자세한 내용을 확인하세요.
 
 ## 기여자 ✨
@@ -1376,4 +1424,5 @@ CMD [ "node", "dist/app.js" ]
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->

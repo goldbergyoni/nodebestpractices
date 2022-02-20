@@ -1,39 +1,41 @@
-# Make your app transparent using smart logs
+# 스마트 로그를 사용해 앱 명확성을 제고하라.
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 한 문단 설명
 
-Since you print out log statements anyway and you're obviously in a need of some interface that wraps up production information where you can trace errors and core metrics (e.g. how many errors happen every hour and which is your slowest API end-point) why not invest some moderate effort in a robust logging framework that will tick all boxes? Achieving that requires a thoughtful decision on three steps:
+너가 로그문을 프린트한 이후부터 어찌됐든 너는 프로덕션 정보를 감쌀 수 있고 이를 통해 에러와 핵심 메트릭을 추적(예. 한 시간의 몇번정도의 에러가 발생하는가, 그리고 너의 가장 느린 API 엔드포인트는 무엇인가)할 수 있는 몇 인터페이스를 필요로 할 것이다.
+모든 것을 만족시키는 견고한 로깅 프레임워크(robust logging framework)에 일정 노력을 투자해 보는 것이 어떠한가? 목표를 달성하기 위해 신중한 결정이 요구되는 세 가지 단계들:
 
-**1. smart logging** – at the bare minimum you need to use a reputable logging library like [Winston](https://github.com/winstonjs/winston), [Bunyan](https://github.com/trentm/node-bunyan) and write meaningful information at each transaction start and end. Consider to also format log statements as JSON and provide all the contextual properties (e.g. user id, operation type, etc) so that the operations team can act on those fields. Include also a unique transaction ID at each log line, for more information refer to the bullet below “Write transaction-id to log”. One last point to consider is also including an agent that logs the system resource like memory and CPU like Elastic Beat.
+**1. 스마트 로깅** – 최소한 [Winston](https://github.com/winstonjs/winston), [Bunyan](https://github.com/trentm/node-bunyan)와 같이 평판 좋은 로깅 라이브러리(logging library)를 사용하여야 하며, 각 트랜젝션의 시작과 끝에 의미있는 정보를 써내려갈 필요가 있다. 또한 JSON처럼 로그문을 포맷하고 모든 문맥상의 속성들(예. 유저 아이디, 오퍼레이션 타입, 등)을 제공해 오퍼레이션팀이 이 필드에서 활동할 수 있도록 함을 고려해보아라. 각 로그 라인마다 유일한(unique) 트랜잭션 아이디를 포함하하고, 더 많은 정보를 원한다면 하기의 불릿을 참조해라. "트랜젝션-아이디를 로그에 적어라". 마지막, 추가적으로 고려해야할 점은 메모리와 Elastic Beat과 같은 CPU등 시스템 자원에 로그를 찍는 주체(agent) 또한 포함하는 것이다.
 
-**2. smart aggregation** – once you have comprehensive information on your servers file system, it’s time to periodically push these to a system that aggregates, facilities and visualizes this data. The Elastic stack, for example, is a popular and free choice that offers all the components to aggregate and visualize data. Many commercial products provide similar functionality only they greatly cut down the setup time and require no hosting.
+**2. 스마트 합산** – 서버 파일 시스템에 대한 종합적인 정보가 있다면 이제는 이들 정보를 합산하고, 기능하게 하며 시각화해주는 시스템에 정기적으로 올려(push)야 할 때이다. 예를들어 Elastic stack은 모든 컴포넌트들의 합산과 데이터 시각화를 제공하는 유명한 무료제품이다. 이와 비슷한 기능을 제공하는 유료제품또한 많이 있는데 상대적으로 셋업시간을 대폭 단축시켜주며 호스팅이 필요하지 않다.
 
-**3. smart visualization** – now the information is aggregated and searchable, one can be satisfied only with the power of easily searching the logs but this can go much further without coding or spending much effort. We can now show important operational metrics like error rate, average CPU throughout the day, how many new users opted-in in the last hour and any other metric that helps to govern and improve our app
-
-<br/><br/>
-
-### Visualization Example: Kibana (part of the Elastic stack) facilitates advanced searching on log content
-
-![Kibana facilitates advanced searching on log content](/assets/images/smartlogging1.png "Kibana facilitates advanced searching on log content")
+**3. 스마트 시각화** – 이제 정보가 합산되었고 검색가능하다면, 누군가는 로그를 쉽게 검색해 찾을 수 있는것 만으로 만족할테지만 이것(스마트 로깅)은 코딩이나 추가적인 노력 없이 더 많은 것들을 할 수 있다. 우리는 이제 오류율, 하루동안의 평균 CPU, 오퍼레이셔널 메트릭, 얼마나 많은 유저가 최근 한 시간동안 옵트인 했는가와 같은 우리의 앱을 관리하고 향상할 수 있는 여타 메트릭을 확인할 수 있다.
 
 <br/><br/>
 
-### Visualization Example: Kibana (part of the Elastic stack) visualizes data based on logs
+### 시각화 예시: Kibana(Elastic stack에서 발췌)는 로그에 대하여 고급 검색을 가능하게 한다.
 
-![Kibana visualizes data based on logs](/assets/images/smartlogging2.jpg "Kibana visualizes data based on logs")
+![Kibana는 로그에 대하여 고급 검색을 가능하게 한다.](/assets/images/smartlogging1.png "Kibana 는 로그에 대하여 고급 검색을 가능하게 한다.")
 
 <br/><br/>
 
-### Blog Quote: Logger Requirements
+### 시각화 예시: Kibana (Elastic stack에서 발췌)는 로그에 기반하여 데이터를 시각화할 수 있다.
 
-From the blog [Strong Loop](https://strongloop.com/strongblog/compare-node-js-logging-winston-bunyan/):
+![Kibana 로그에 기반하여 데이터를 시각화할 수 있다.](/assets/images/smartlogging2.jpg "Kibana는 로그에 기반하여 데이터를 시각화할 수 있다.")
 
-> Lets identify a few requirements (for a logger):
-> 1. Timestamp each log line. This one is pretty self-explanatory – you should be able to tell when each log entry occurred.
-> 2. Logging format should be easily digestible by humans as well as machines.
-> 3. Allows for multiple configurable destination streams. For example, you might be writing trace logs to one file but when an error is encountered, write to the same file, then into error file and send an email at the same time…
+<br/><br/>
+
+### 블로그 인용: 로거 요구사항
+
+다음의 블로그로 부터 [강력한 루프](https://strongloop.com/strongblog/compare-node-js-logging-winston-bunyan/):
+
+> 몇 요구사항들을 알아보자. (로거를 위한):
+>
+> 1. 각 로그 라인에 타임스탬프를 찍어라. 이유는 꽤나 자명하다 - 언제 각 로그 항목이0 발생했는지 식별 가능해야한다.
+> 2. 로깅 형식은(foramt) 머신 뿐 아니라 사람에게도 쉽게 받아들여져야 한다.
+> 3. 다수의 변경가능한 스트리밍 대상을 허용하라. 예를들어, 너가 파일에 추적 로그를 적겠지만 에러가 발견되면, 같은파일에 적고 나서 에러파일에 적고 동시에 이메일도 보내라…
 
 <br/><br/>
 
