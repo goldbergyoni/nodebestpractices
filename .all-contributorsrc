@@ -1649,6 +1649,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "lykhatskyi",
+      "name": "Anton Lykhatskyi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/18104686?v=4",
+      "profile": "https://github.com/lykhatskyi",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
