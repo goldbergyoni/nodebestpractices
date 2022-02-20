@@ -1649,6 +1649,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "p-lacerda",
+      "name": "Paulo de Tasso Oliveira de Lacerda",
+      "avatar_url": "https://avatars.githubusercontent.com/u/77417814?v=4",
+      "profile": "http://paulodetasso.me",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
