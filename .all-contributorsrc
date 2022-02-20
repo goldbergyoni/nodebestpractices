@@ -1659,6 +1659,24 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "lykhatskyi",
+      "name": "Anton Lykhatskyi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/18104686?v=4",
+      "profile": "https://github.com/lykhatskyi",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "EverythingAvailable",
+      "name": "sangwonlee",
+      "avatar_url": "https://avatars.githubusercontent.com/u/81002379?v=4",
+      "profile": "https://github.com/EverythingAvailable",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
