@@ -9,12 +9,12 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%20102%20Best%20Practices-blue.svg" alt="102 items"/> <img id="last-update-badge" src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20January%2009%2C%202022-green.svg" alt="Last update: January 09, 2022" /> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2014.0.0-brightgreen.svg" alt="Updated for Node 14.0.0"/>
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%20102%20Best%20Practices-blue.svg" alt="102 items"/> <img id="last-update-badge" src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20February%2013%2C%202022-green.svg" alt="Last update: February 13, 2022" /> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2014.0.0-brightgreen.svg" alt="Updated for Node 14.0.0"/>
 </div>
 
 <br/>
 
-[![nodepractices](./assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
+[<img src="assets/images/twitter.svg" width="16" height="16" alt="" />](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
 
 <br/>
 
@@ -25,6 +25,8 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 ###### Built and maintained by our [Steering Committee](#steering-committee) and [Collaborators](#collaborators)
 
 # Latest Best Practices and News
+
+- **✨ 75,000 stars**: Blushing, surprised and proud!
 
 - **🔖 New menu and tags**: Our menu is collapsible now and include `#tags`. New visitors can read `#strategic` items first. Returning visitors can focus on `#new` content. Seniors can filter for `#advanced` items. Courtesy of the one and only [Rubek Joshi](https://github.com/rubek-joshi@rubek-joshi)
 
@@ -1479,8 +1481,8 @@ Meet the steering committee members - the people who work together to provide gu
 <img align="left" width="100" height="100" src="assets/images/members/yoni.png"/>
 
 [Yoni Goldberg](https://github.com/goldbergyoni)
-<a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
-<a href="https://goldbergyoni.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
+<a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter.svg" width="16" height="16"></img></a>
+<a href="https://goldbergyoni.com"><img src="assets/images/web.svg" width="16" height="16"></img></a>
 
 Independent Node.js consultant who works with customers in the USA, Europe, and Israel on building large-scale Node.js applications. Many of the best practices above were first published at [goldbergyoni.com](https://goldbergyoni.com). Reach Yoni at [@goldbergyoni](https://github.com/goldbergyoni) or [me@goldbergyoni.com](mailto:me@goldbergyoni.com)
 
@@ -1489,7 +1491,7 @@ Independent Node.js consultant who works with customers in the USA, Europe, and 
 <img align="left" width="100" height="100" src="assets/images/members/bruno.png"/>
 
 [Bruno Scheufler](https://github.com/BrunoScheufler)
-<a href="https://brunoscheufler.com/"><img src="assets/images/www.png" width="16" height="16"></img></a>
+<a href="https://brunoscheufler.com/"><img src="assets/images/web.svg" width="16" height="16"></img></a>
 
 💻 full-stack web engineer, Node.js & GraphQL enthusiast
 
@@ -1498,8 +1500,8 @@ Independent Node.js consultant who works with customers in the USA, Europe, and 
 <img align="left" width="100" height="100" src="assets/images/members/kyle.png"/>
 
 [Kyle Martin](https://github.com/js-kyle)
-<a href="https://twitter.com/kylemartin_93"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
-<a href="https://www.linkedin.com/in/kylemartinnz"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
+<a href="https://twitter.com/kylemartin_93"><img src="assets/images/twitter.svg" width="16" height="16"></img></a>
+<a href="https://www.linkedin.com/in/kylemartinnz"><img src="assets/images/linkedin.svg" width="16" height="16"></img></a>
 
 Full Stack Developer & Site Reliability Engineer based in New Zealand, interested in web application security, and architecting and building Node.js applications to perform at global scale.
 
@@ -1508,9 +1510,30 @@ Full Stack Developer & Site Reliability Engineer based in New Zealand, intereste
 <img align="left" width="100" height="100" src="assets/images/members/kevyn.png"/>
 
 [Kevyn Bruyere](https://github.com/kevynb)
-<a href="https://www.linkedin.com/in/kevynbruyere/"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
+<a href="https://www.linkedin.com/in/kevynbruyere/"><img src="assets/images/linkedin.svg" width="16" height="16"></img></a>
 
 Independent full-stack developer with a taste for Ops and automation.
+
+<br/>
+
+<a id="josh-hemphill" href="https://github.com/josh-hemphill" target="_blank"><img src="assets/images/members/josh-hemphill.png" align="left" width="100" height="100" alt="Josh Hemphill" loading="lazy"/></a>
+
+[Josh Hemphill](https://github.com/josh-hemphill)
+<a href="https://twitter.com/spooklogical"><img src="assets/images/twitter.svg" width="16" height="16"></img></a>
+<a href="https://www.linkedin.com/in/joshuahemphill/"><img src="assets/images/linkedin.svg" width="16" height="16"></img></a>
+<a href="https://joshuahemphill.com"><img src="assets/images/web.svg" width="16" height="16"></img></a>
+
+Full Stack Software Engineer / Developer specializing in Security, DevOps/DevSecOps, and ERP Integrations.
+
+<br/>
+
+<a id="raz-luvaton" href="https://github.com/rluvaton" target="_blank"><img src="assets/images/members/raz-luvaton.jpg" align="left" width="100" height="100" alt="Raz Luvaton" loading="lazy"/></a>
+
+[Raz Luvaton](https://github.com/rluvaton)
+<a href="https://twitter.com/rluvaton"><img src="assets/images/twitter.svg" width="16" height="16"></img></a>
+<a href="https://www.linkedin.com/in/rluvaton/"><img src="assets/images/linkedin.svg" width="16" height="16"></img></a>
+
+Full Stack Developer who knows how to exit from Vim and loves Architecture, Virtualization and Security.
 
 <br/>
 
@@ -1519,9 +1542,9 @@ Independent full-stack developer with a taste for Ops and automation.
 <img align="left" width="100" height="100" src="assets/images/members/sagir.png"/>
 
 [Sagir Khan](https://github.com/sagirk)
-<a href="https://twitter.com/sagir_k"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
-<a href="https://linkedin.com/in/sagirk"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
-<a href="https://sagirk.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
+<a href="https://twitter.com/sagir_k"><img src="assets/images/twitter.svg" width="16" height="16"></img></a>
+<a href="https://linkedin.com/in/sagirk"><img src="assets/images/linkedin.svg" width="16" height="16"></img></a>
+<a href="https://sagirk.com"><img src="assets/images/web.svg" width="16" height="16"></img></a>
 
 Deep specialist in JavaScript and its ecosystem — React, Node.js, TypeScript, GraphQL, MongoDB, pretty much anything that involves JS/JSON in any layer of the system — building products using the web platform for the world’s most recognized brands. Individual Member of the Node.js Foundation.
 
@@ -1533,9 +1556,9 @@ Thank you to all our collaborators! 🙏
 
 Our collaborators are members who are contributing to the repository on a regular basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in helping us guide thousands of people to craft better Node.js applications, please read our [contributor guidelines](./.operations/CONTRIBUTING.md) 🎉
 
-| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"/></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"/></a> | <a href="https://github.com/rluvaton" target="_blank"><img src="assets/images/members/raz-luvaton.jpg" width="75" height="75" alt="Raz Luvaton" loading="lazy"/></a> | <a href="https://github.com/josh-hemphill" target="_blank"><img src="assets/images/members/jhemphill.jpg" width="75" height="75" alt="Josh Hemphill" loading="lazy"/></a> |
-| :----------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                    [Ido Richter (Founder)](https://github.com/idori)                                     |                                         [Keith Holliday](https://github.com/TheHollidayInn)                                         |                                                              [Raz Luvaton](https://github.com/rluvaton)                                                              |                                                             [Josh Hemphill](https://github.com/josh-hemphill)                                                             |
+| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"/></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"/></a> |
+| :----------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
+|                                    [Ido Richter (Founder)](https://github.com/idori)                                     |                                         [Keith Holliday](https://github.com/TheHollidayInn)                                         |
 
 ### Collaborator Emeriti
 
@@ -1787,6 +1810,13 @@ Thanks goes to these wonderful people who have contributed to this repository!
     <td align="center"><a href="https://github.com/kkk-cashwalk"><img src="https://avatars.githubusercontent.com/u/91455122?v=4?s=100" width="100px;" alt=""/><br /><sub><b>kkk-cashwalk</b></sub></a><br /><a href="#content-kkk-cashwalk" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/apainintheneck"><img src="https://avatars.githubusercontent.com/u/42982186?v=4?s=100" width="100px;" alt=""/><br /><sub><b>apainintheneck</b></sub></a><br /><a href="#content-apainintheneck" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/koyanyaroo"><img src="https://avatars.githubusercontent.com/u/9715368?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Fajar Budhi Iswanda</b></sub></a><br /><a href="#content-koyanyaroo" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/jutiger"><img src="https://avatars.githubusercontent.com/u/97490806?v=4?s=100" width="100px;" alt=""/><br /><sub><b>이주호</b></sub></a><br /><a href="#content-jutiger" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/MisterSingh"><img src="https://avatars.githubusercontent.com/u/44462019?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Singh</b></sub></a><br /><a href="#content-MisterSingh" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/Alex-Dumitru"><img src="https://avatars.githubusercontent.com/u/43738450?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alex Dumitru</b></sub></a><br /><a href="#content-Alex-Dumitru" title="Content">🖋</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/lykhatskyi"><img src="https://avatars.githubusercontent.com/u/18104686?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Anton Lykhatskyi</b></sub></a><br /><a href="#content-lykhatskyi" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/EverythingAvailable"><img src="https://avatars.githubusercontent.com/u/81002379?v=4?s=100" width="100px;" alt=""/><br /><sub><b>sangwonlee</b></sub></a><br /><a href="#content-EverythingAvailable" title="Content">🖋</a></td>
   </tr>
 </table>
 

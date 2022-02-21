@@ -1,9 +1,19 @@
 {
   "files": [
-    "README.md"
+    "README.basque.md",
+    "README.brazilian-portuguese.md",
+    "README.chinese.md",
+    "README.french.md",
+    "README.indonesian.md",
+    "README.japanese.md",
+    "README.korean.md",
+    "README.md",
+    "README.polish.md",
+    "README.russian.md"
   ],
   "imageSize": 100,
   "contributorsPerLine": 7,
+  "contributorTemplate": "<a href=\"<%= contributor.profile %>\"><img src=\"<%= contributor.avatar_url %>\" width=\"<%= options.imageSize %>px;\" alt=\"<%= contributor.name %>\"style=\"max-width:<%= options.imageSize %>px;min-width:<%= options.imageSize %>px;\" /><br /><sub style=\"white-space: nowrap;overflow: hidden;text-overflow: ellipsis;\"><b><%= contributor.name %></b></sub></a><br /><%= contributions %>",
   "badgeTemplate": "[![All Contributors](https://img.shields.io/badge/all_contributors-<%= contributors.length %>-orange.svg?style=flat-square)](#contributors)",
   "contributors": [
     {
@@ -1619,6 +1629,51 @@
       "name": "Fajar Budhi Iswanda",
       "avatar_url": "https://avatars.githubusercontent.com/u/9715368?v=4",
       "profile": "https://github.com/koyanyaroo",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "jutiger",
+      "name": "이주호",
+      "avatar_url": "https://avatars.githubusercontent.com/u/97490806?v=4",
+      "profile": "https://github.com/jutiger",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "MisterSingh",
+      "name": "Singh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/44462019?v=4",
+      "profile": "https://github.com/MisterSingh",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "Alex-Dumitru",
+      "name": "Alex Dumitru",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43738450?v=4",
+      "profile": "https://github.com/Alex-Dumitru",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "lykhatskyi",
+      "name": "Anton Lykhatskyi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/18104686?v=4",
+      "profile": "https://github.com/lykhatskyi",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "EverythingAvailable",
+      "name": "sangwonlee",
+      "avatar_url": "https://avatars.githubusercontent.com/u/81002379?v=4",
+      "profile": "https://github.com/EverythingAvailable",
       "contributions": [
         "content"
       ]
