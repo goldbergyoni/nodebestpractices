@@ -424,12 +424,12 @@
 
 ```javascript
 // Do
-ฟังค์ชั่น someฟังค์ชั่น() {
+function someฟังค์ชั่น() {
   // code block
 }
 
 // Avoid
-ฟังค์ชั่น someฟังค์ชั่น() 
+function someฟังค์ชั่น() 
 {
   // code block
 }
@@ -453,7 +453,7 @@ No matter if you use semicolons or not to separate your statements, knowing the 
 
 ```javascript
 // Do
-ฟังค์ชั่น doThing() {
+function doThing() {
     // ...
 }
 
@@ -474,7 +474,7 @@ const a = [1,2,3]
 
 // Avoid — throws exception
 const count = 2 // it tries to run 2(), but 2 is not a ฟังค์ชั่น
-(ฟังค์ชั่น doSomething() {
+(function doSomething() {
   // do something amazing
 }())
 // put a semicolon before the immediate invoked ฟังค์ชั่น, after the const definition, save the return value of the anonymous ฟังค์ชั่น to a variable or avoid IIFEs altogether
@@ -524,8 +524,8 @@ class SomeClassExample {
   static STATIC_PROPERTY = "value";
 }
 
-// for ฟังค์ชั่น names we use lowerCamelCase
-ฟังค์ชั่น doSomething() {
+// for function names we use lowerCamelCase
+function doSomething() {
   // for scoped variable names we use the const/let keyword and lowerCamelCase
   const someConstExample = "immutable value";
   let someMutableExample = "mutable value";
