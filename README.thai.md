@@ -69,7 +69,7 @@
 &emsp;&emsp;[2.1 ใช้ Async-Await หรือ promise ในการแก้ async error](#-21-use-async-await-or-promises-for-async-error-handling)</br>
 &emsp;&emsp;[2.2 ให้ใช้แต่ built-in Error object `#strategic`](#-22-use-only-the-built-in-error-object)</br>
 &emsp;&emsp;[2.3 จำแนกระหว่าง operational กับ programmer errors `#strategic`](#-23-distinguish-operational-vs-programmer-errors)</br>
-&emsp;&emsp;[2.4 รับมือกับ errors ในส่วนกลาง, ไม่ใช่ข้างใน middleware `#strategic`](#-24-handle-errors-centrally-not-within-a-middleware)</br>
+&emsp;&emsp;[2.4 รับมือกับ errors จากส่วนกลาง, ไม่ใช่ข้างใน middleware `#strategic`](#-24-handle-errors-centrally-not-within-a-middleware)</br>
 &emsp;&emsp;[2.5 ทำเอกสาร API errors โดยใช้ Swagger หรือ GraphQL `#modified-recently`](#-25-document-api-errors-using-swagger-or-graphql)</br>
 &emsp;&emsp;[2.6 ออกจาก process แบบ graceful เมื่อมีสิ่งแปลกปลอมเข้ามาเยือน `#strategic`](#-26-exit-the-process-gracefully-when-a-stranger-comes-to-town)</br>
 &emsp;&emsp;[2.7 ใช้เครื่องมือ Log ที่ mature แล้วเพื่อเพิ่มความชัดเจนของ error](#-27-use-a-mature-logger-to-increase-error-visibility)</br>
@@ -90,14 +90,14 @@
 &emsp;&emsp;[3.2 ใช้ Plugin เฉพาะทางของ Node.js](#-32-nodejs-specific-plugins)</br>
 &emsp;&emsp;[3.3 ใช้ปีกกาของ Codeblock ในบรรทัดเดียวกัน](#-33-start-a-codeblocks-curly-braces-on-the-same-line)</br>
 &emsp;&emsp;[3.4 แยก statements ให้ดี](#-34-separate-your-statements-properly)</br>
-&emsp;&emsp;[3.5 ตั้งชื่อให้ functions](#-35-name-your-functions)</br>
-&emsp;&emsp;[3.6 ใช้ naming conventions สำหรับ ตัวแปร, constants, functions และ classes](#-36-use-naming-conventions-for-variables-constants-functions-and-classes)</br>
+&emsp;&emsp;[3.5 ตั้งชื่อให้ ฟังค์ชั่น](#-35-name-your-ฟังค์ชั่น)</br>
+&emsp;&emsp;[3.6 ใช้ naming conventions สำหรับ ตัวแปร, constants, ฟังค์ชั่น และ classes](#-36-use-naming-conventions-for-variables-constants-ฟังค์ชั่น-and-classes)</br>
 &emsp;&emsp;[3.7 ใช้ const มากกว่า let. อย่าไปใช้ var](#-37-prefer-const-over-let-ditch-the-var)</br>
-&emsp;&emsp;[3.8 Require modules ก่อนตลอด, ไม่ใช่เรียกใช้ใน functions](#-38-require-modules-first-not-inside-functions)</br>
+&emsp;&emsp;[3.8 Require modules ก่อนตลอด, ไม่ใช่เรียกใช้ใน ฟังค์ชั่น](#-38-require-modules-first-not-inside-ฟังค์ชั่น)</br>
 &emsp;&emsp;[3.9 Require modules โดยใช้ folder ไม่ใช่เรียกจาก file ตรงๆ](#-39-require-modules-by-folders-as-opposed-to-the-files-directly)</br>
 &emsp;&emsp;[3.10 ใช้ === ](#-310-use-the--operator)</br>
 &emsp;&emsp;[3.11 ใช้ Async Await, อย่าใช้ callbacks `#strategic`](#-311-use-async-await-avoid-callbacks)</br>
-&emsp;&emsp;[3.12 ใช้ arrow function (=>)](#-312-use-arrow-function-expressions-)</br>
+&emsp;&emsp;[3.12 ใช้ arrow ฟังค์ชั่น (=>)](#-312-use-arrow-ฟังค์ชั่น-expressions-)</br>
 
 </details>
 
@@ -277,7 +277,7 @@
 
 **ยาวไปไม่อ่าน:** การรับมือกับ async errors ในวิธี callback นั้นคงเป็นวิธีที่เร็วที่สุดในการตกนรกทั้งเป็น (หรือเรียกว่า ไอ้ต้าวปิรามิดแห่งความชิบหาย) สิ่งที่ดีที่สุดที่สามารถมอบให้โค้ดคุณได้คือการใช้งาน promise library ที่โด่งดัง หรือ ซุปตาร์ async-await แทนซึ่งสามารถทำให้ดูกระชับกว่าและมีความคุ้นหน้าคุ้นตากับ syntax อย่างพวก try-catch
 
-**หรือไม่ก็:** สไตล์ callback ใน Node.js , function(err, response), ทำให้โค้ดไม่สามารถ maintain ได้เพราะมันรวมวิธีรับมือ error กับโค้ดปกติตัวอื่นมารวมกัน และยังมีการซ้อนกันทุกโคตรยุ่งเหยิงและทำให้เกิด pattern แบบพิศดารอีกด้วย
+**หรือไม่ก็:** สไตล์ callback ใน Node.js , ฟังค์ชั่น(err, response), ทำให้โค้ดไม่สามารถ maintain ได้เพราะมันรวมวิธีรับมือ error กับโค้ดปกติตัวอื่นมารวมกัน และยังมีการซ้อนกันทุกโคตรยุ่งเหยิงและทำให้เกิด pattern แบบพิศดารอีกด้วย
 
 🔗 [**อ่านเพิ่มเติม: อย่าใช้ callback**](./sections/errorhandling/asyncerrorhandling.md)
 
@@ -295,103 +295,100 @@
 
 ## ![✔] 2.3 จำแนกระหว่าง operational กับ programmer errors
 
-**ยาวไปไม่อ่าน:** Operational errors (เช่น API รับข้อมูลผิดๆเข้ามา) refer to known cases where the error impact is fully understood and can be handled thoughtfully. ในทางกลับกัน, programmer error (เช่น พยายามอ่านค่าตัวแปร undefined) refers to unknown code failures that dictate to gracefully restart the application
+**ยาวไปไม่อ่าน:** Operational errors (เช่น API รับข้อมูลผิดๆเข้ามา) จะสามารถอ้างอิงจาก Case ต่างๆและสามารถรู้ได้ว่าผลกระทบจาก Error นั้นๆจะเป็นยังไงและสามารถรับมือได้ยังไง ในทางกลับกัน Programmer error (เช่น พยายามอ่านค่าตัวแปร undefined) มาจากการไม่รู้ว่า Code ตัวไหนเจ๊ง ทำให้ต้อง Gracefully restart application
 
-**หรือไม่ก็:** You may always restart the application when an error appears, but why let ~5000 online users down because of a minor, predicted, operational error? the opposite is also not ideal – keeping the application up when an unknown issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
+**หรือไม่ก็:** คุณก็แค่รีแอปไปทุกครั้งที่เจอ Error แต่ทำไมต้องให้ผู้ใช้ออนไลน์ 5,000 กว่าคนในระบบหลุดเพราะ Error เล็กๆหรือที่ถูกคาดการณ์มาแล้วว่าจะเกิด ในส่วนของ operational error อะเหรอตรงข้ามเลยไม่ดีอย่างมาก รันแอปต่อไปเรื่อยๆถึงแม้จะรู้ว่าเกิดปัญหาอะไรไม่รู้ขึ้น (programmer error) อาจทำให้เกิดเหตุการณ์ที่ไม่คาดคิดได้ จำแนก Error ทั้งสองให้ดี จะทำให้รับมือกับปัญหาได้อย่างแนบเนียนและสมดุลแต่ก็ขึ้นอยู่กับบริบทด้วย
 
 🔗 [**อ่านเพิ่มเติม: operational vs programmer error**](./sections/errorhandling/operationalvsprogrammererror.md)
 
 <br/><br/>
 
-## ![✔] 2.4 Handle errors centrally, not within a middleware
+## ![✔] 2.4 รับมือจาก Error จากส่วนกลาง, ไม่ใช่ข้างใน middleware
 
-**ยาวไปไม่อ่าน:** Error handling logic such as mail to admin and logging should be encapsulated in a dedicated and centralized object that all endpoints (e.g. Express middleware, cron jobs, unit-testing) call when an error comes in
+**ยาวไปไม่อ่าน:** Logic การทำ Error handling เช่นส่งจดหมายให้แอดมิน และ logging ควรถูก encapsulate ใน object เฉพาะทางและเป็นส่วนกลางให้ endpoint ทั้งหมด (เช่น Express middleware, cron jobs, unit-testing) และเรียกใช้เวลาเกิด Error
 
-**หรือไม่ก็:** Not handling errors within a single place will lead to code duplication and probably to improperly handled errors
+**หรือไม่ก็:** ไม่รับมือ Error ในที่ๆเดียวทำให้โค้ดซ้ำและอาจจะรับมือแบบไม่ถูกต้องเท่าที่ควร นะจ๊ะ 
 
-🔗 [**อ่านเพิ่มเติม: handling errors in a centralized place**](./sections/errorhandling/centralizedhandling.md)
-
-<br/><br/>
-
-## ![✔] 2.5 Document API errors using Swagger or GraphQL
-
-**ยาวไปไม่อ่าน:** Let your API callers know which errors might come in return so they can handle these thoughtfully without crashing. For RESTful APIs, this is usually done with documentation frameworks like Swagger. If you're using GraphQL, you can utilize your schema and comments as well.
-
-**หรือไม่ก็:** An API client might decide to crash and restart only because it received back an error it couldn’t understand. Note: the caller of your API might be you (very typical in a microservice environment)
-
-🔗 [**อ่านเพิ่มเติม: documenting API errors in Swagger or GraphQL**](./sections/errorhandling/documentingusingswagger.md)
+🔗 [**อ่านเพิ่มเติม: รับมือกับ Error จากส่วนกลาง**](./sections/errorhandling/centralizedhandling.md)
 
 <br/><br/>
 
-## ![✔] 2.6 Exit the process gracefully when a stranger comes to town
+## ![✔] 2.5 ทำเอกสาร API errors โดยใช้ Swagger หรือ GraphQL
 
-**ยาวไปไม่อ่าน:** When an unknown error occurs (a developer error, see best practice 2.3) - there is uncertainty about the application healthiness. Common practice suggests restarting the process carefully using a process management tool like [Forever](https://www.npmjs.com/package/forever) or [PM2](http://pm2.keymetrics.io/)
+**ยาวไปไม่อ่าน:** ให้คนที่เรียกใช้ API รู้ว่าอาจจะมี Errors ไหนบ้างที่ถูกส่งกลับไปพวกเขาจะได้รับมือถูกและไม่บึ้ม. สำหรับ RESTful API ทั้งหลาย, ปกติจะใช้ documentation frameworks ทำเช่น Swagger. ถ้าคุณใช้ GraphQL, คุณสามารถใช้ schema และ comments ของคุณได้.
 
-**หรือไม่ก็:** When an unfamiliar exception occurs, some object might be in a faulty state (e.g. an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
+**หรือไม่ก็:** คนเรียกใช้ API อาจจะคิดว่าระบบบึ้มแล้วต้องรีเครื่องเพราะได้ Error แบบที่ไม่เข้าใจกลับมา Note: ซึ่งคนเรียก API ก็อาจจะเป็นคุณนั่นแหละ (ปกติมากในโลกของ microservice)
 
-🔗 [**อ่านเพิ่มเติม: shutting the process**](./sections/errorhandling/shuttingtheprocess.md)
-
-<br/><br/>
-
-## ![✔] 2.7 Use a mature logger to increase error visibility
-
-**ยาวไปไม่อ่าน:** A set of mature logging tools like [Pino](https://github.com/pinojs/pino) or [Log4js](https://www.npmjs.com/package/log4js), will speed-up error discovery and understanding. So forget about console.log
-
-**หรือไม่ก็:** Skimming through console.logs or manually through messy text file without querying tools or a decent log viewer might keep you busy at work until late
-
-🔗 [**อ่านเพิ่มเติม: using a mature logger**](./sections/errorhandling/usematurelogger.md)
+🔗 [**อ่านเพิ่มเติม: ทำ Document API errors โดยใช้ Swagger หรือ GraphQL**](./sections/errorhandling/documentingusingswagger.md)
 
 <br/><br/>
 
-## ![✔] 2.8 Test error flows using your favorite test framework
+## ![✔] 2.6 ออกจาก process แบบ graceful เมื่อมีสิ่งแปลกปลอมเข้ามาเยือน
 
-**ยาวไปไม่อ่าน:** Whether professional automated QA or plain manual developer testing – Ensure that your code not only satisfies positive scenarios but also handles and returns the right errors. Testing frameworks like Mocha & Chai can handle this easily (see code examples within the "Gist popup")
+**ยาวไปไม่อ่าน:** ตอนที่เกิด Error ที่ไม่รู้จัก (ถ้าเป็น Developer error, อ่าน best practice 2.3) - เมื่อมีความไม่มันใจเกี่ยวกับสุขภาพของแอปนั้นปกติที่ทำกันคือการ Restart process อย่างระมัดระวัง โดยใช้เครื่องมือในการจัดการ process เช่น [Forever](https://www.npmjs.com/package/forever) หรือ [PM2](http://pm2.keymetrics.io/)
 
-**หรือไม่ก็:** Without testing, whether automatically or manually, you can’t rely on your code to return the right errors. Without meaningful errors – there’s no error handling
+**หรือไม่ก็:** เมื่อมี exception ที่ไม่คุ้นตาเกิดขึ้น, object บางตัวอยู่ใน faulty state (เช่น event emitter ที่ถูกใช้แบบ global ไม่ส่ง events ต่อจากความผิดพลาดบางอย่างจากข้างใน) และ requests ทั้งหมดในอนาคตอาจบึ้มหรือทำตัวแปลกๆ
+
+🔗 [**อ่านเพิ่มเติม: การปิด process**](./sections/errorhandling/shuttingtheprocess.md)
+
+<br/><br/>
+
+## ![✔] 2.7 ใช้เครื่องมือ Log ที่ mature แล้วเพื่อเพิ่มความชัดเจนของ error
+
+**ยาวไปไม่อ่าน:** ไอ้ต้าวพวกเครื่องมือ logging ต่างๆเช่น [Pino](https://github.com/pinojs/pino) หรือ [Log4js](https://www.npmjs.com/package/log4js), จะทำให้หา error และเข้าใจมันได้ไวขึ้น เพราะงั้นก็ลืม console.log ไปได้เลย
+
+**หรือไม่ก็:** ก็หาไปดิจาก console.logs หรือ text file รกๆของคุณ ถ้าไม่มี querying tools ดีๆหรือ log viewer ดีๆนายอาจจะได้จ้องจอจนดึกก็ได้นะ
+
+🔗 [**อ่านเพิ่มเติม: การใช้ mature logger**](./sections/errorhandling/usematurelogger.md)
+
+<br/><br/>
+
+## ![✔] 2.8 ทดสอบ flow ของ error โดยใช้ test framework ที่คุณชอบ
+
+**ยาวไปไม่อ่าน:** ไม่ว่าคุณจะเป็น Automated QA ระดับเทพหรือคนเทสมือธรรมดา ต้องทำให้มั่นใจว่าโค้ดของคุณทำงานได้อย่างดี รับมือและ return error ให้ถูกต้อง ใช้ Testing frameworks เช่น Mocha และ Chai จะทำให้สามารถรับมือพวกนี้ได้อย่างง่ายดาย (ดูโค้ดตัวอย่างได้ใน "Gist popup")
+
+**หรือไม่ก็:** ไม่มีการเทสอะเหรอ, ไม่ว่าจะเป็นแบบ auto หรือ เทสมือ, คุณจะไม่สามารถพึ่งพาโค้ดของคุณให้ return errors ที่ถูกต้องได้ ถ้าไม่มี error ที่มีความหมาย = ไม่มีการรับมือกับ error นั่นเอง
 
 🔗 [**อ่านเพิ่มเติม: testing error flows**](./sections/errorhandling/testingerrorflows.md)
 
 <br/><br/>
 
-## ![✔] 2.9 Discover errors and downtime using APM products
+## ![✔] 2.9 หา errors และ downtime โดยใช้ APM
 
-**ยาวไปไม่อ่าน:** Monitoring and performance products (a.k.a APM) proactively gauge your codebase or API so they can automagically highlight errors, crashes, and slow parts that you were missing
+**ยาวไปไม่อ่าน:** Monitoring and performance products (หรือเรียกว่า APM) เป็นการประเมินคุณภาพ Codebase หรือ API ของคุณในเชิงรุกเพื่อที่จะทำให้สามารถ highlight errors, crashes, และจุดที่ทำงานช้าที่คุณหาไม่เจอได้อย่างอัตโนมัติ
 
-**หรือไม่ก็:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which are your slowest code parts under real-world scenario and how these affect the UX
+**หรือไม่ก็:** คุณก็ใช้แรงเยอะๆของคุณนั่งวัดประสิทธิภาพ API กับ Downtimes ที่คุณคงหาไม่เจอหรอกว่าโค้ดส่วนไหนทำงานช้าสุดในการทำงานจริง และมันจะกระทบต่อประสบการณ์ผู้ใช้อย่างไรบ้าง
 
-🔗 [**อ่านเพิ่มเติม: using APM products**](./sections/errorhandling/apmproducts.md)
-
-<br/><br/>
-
-## ![✔] 2.10 Catch unhandled promise rejections
-
-**ยาวไปไม่อ่าน:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explicitly handle it. Even if your code is subscribed to `process.uncaughtException`! Overcome this by registering to the event `process.unhandledRejection`
-
-**หรือไม่ก็:** Your errors will get swallowed and leave no trace. Nothing to worry about
-
-🔗 [**อ่านเพิ่มเติม: catching unhandled promise rejection**](./sections/errorhandling/catchunhandledpromiserejection.md)
+🔗 [**อ่านเพิ่มเติม: การใช้งานผลิตภัณฑ์ APM **](./sections/errorhandling/apmproducts.md)
 
 <br/><br/>
 
-## ![✔] 2.11 Fail fast, validate arguments using a dedicated library
+## ![✔] 2.10 Catch สิ่งที่ไม่ได้ handle ของ promise rejections
 
-**ยาวไปไม่อ่าน:** Assert API input to avoid nasty bugs that are much harder to track later. The validation code is usually tedious unless you are using a very cool helper library like [ajv](https://www.npmjs.com/package/ajv) and [Joi](https://www.npmjs.com/package/joi)
+**ยาวไปไม่อ่าน:** Exception ใดๆที่ถูก throw ออกมาจาก Promise จะถูกทิ้งไปนอกจาก ผู้พัฒนาไม่ได้ลืมที่จะรับมือกับมันอย่างชัดเจน ถึงแม้ว่าโค้ดของคุณจะ subscribe กับ `process.uncaughtException`! หรือข้ามมันโดยการ register event `process.unhandledRejection`
 
-**หรือไม่ก็:** Consider this – your function expects a numeric argument “Discount” which the caller forgets to pass, later on, your code checks if Discount!=0 (amount of allowed discount is greater than zero), then it will allow the user to enjoy a discount. OMG, what a nasty bug. Can you see it?
+**หรือไม่ก็:** Errors ของคุณโดนเขมือบไปอย่างไร้ร่องรอยไม่มีอะไรที่น่าเป็นห่วงหรอก...มั้ง?
+
+🔗 [**อ่านเพิ่มเติม: Catch สิ่งที่ไม่ได้ handle ของ promise rejections**](./sections/errorhandling/catchunhandledpromiserejection.md)
+
+<br/><br/>
+
+## ![✔] 2.11 Fail fast, ตรวจสอบ arguments โดยใช้ library เฉพาะทาง
+
+**ยาวไปไม่อ่าน:** Assert API input เพื่อเลี่ยงบั๊ก ที่น่าปวดหัวที่ยากต่อการหาหากเกิดขึ้นในภายหลัง การทำ validation ให้ Code นั้นปกติแล้วเป็นเรื่องที่น่าเบื่อเว้นแต่คุณจะใช้ helper library สุดคูลเช่น [ajv](https://www.npmjs.com/package/ajv) and [Joi](https://www.npmjs.com/package/joi)
+
+**หรือไม่ก็:** คิดงี้นะฟังค์ชั่นของคุณคิดว่าจะมี argument ที่เป็นเลขชื่อ “ส่วนลด” โยนเข้ามา แต่คนเรียกใช้ลืมใส่ให้แล้วต่อมาโค้ดคุณเช็คว่า Discount!=0 (จำนวนของส่วนลดมากกว่า 0) ทำให้ผู้ใช้งานกดส่วนลดเล่นได้อย่างสนุกสนาน. โอ้วหม่ายก้อดเป็นบั๊กที่น่าปวดหัวจริงๆ เห็นรึยัง?
 
 🔗 [**อ่านเพิ่มเติม: failing fast**](./sections/errorhandling/failfast.md)
 
 <br/><br/>
 
-## ![✔] 2.12 Always await promises before returning to avoid a partial stacktrace
+## ![✔] 2.12 ต้อง await promises ก่อน return ทุกครั้งเพื่อเลี่ยง partial stacktrace
 
-**ยาวไปไม่อ่าน:** Always do `return await` when returning a promise to benefit full error stacktrace. If a
-function returns a promise, that function must be declared as `async` function and explicitly
-`await` the promise before returning it
+**ยาวไปไม่อ่าน:** ต้อง `return await` ทุกครั้งเมื่อ return promise เพื่อที่คุณจะได้ error stacktrace แบบเต็มๆ. ถ้าฟังค์ชั่น returns promise มาฟังค์ชั่นนั้นต้องถูกประกาศเป็นแบบ `async` และ `await` promise ก่อน return
 
-**หรือไม่ก็:** The function that returns a promise without awaiting won't appear in the stacktrace.
-Such missing frames would probably complicate the understanding of the flow that leads to the error,
-especially if the cause of the abnormal behavior is inside of the missing function
+**หรือไม่ก็:** ฟังค์ชั่นที่ return promise โดยไม่ await จะไม่โผล่บน stacktrace.
+ข้อมูลที่หายไปอาจทำให้เกิดความยุ่งยากในการเข้าใจในการหา error โดยเฉพาะอย่างยิ่งหากต้นตอของปัญหานี้มาจากฟังค์ชั่นที่หายไป
 
 🔗 [**อ่านเพิ่มเติม: returning promises**](./sections/errorhandling/returningpromises.md)
 
@@ -401,13 +398,13 @@ especially if the cause of the abnormal behavior is inside of the missing functi
 
 # `3. Code Style Practices`
 
-## ![✔] 3.1 Use ESLint
+## ![✔] 3.1 ใช้ ESLint
 
-**ยาวไปไม่อ่าน:** [ESLint](https://eslint.org) is the de-facto standard for checking possible code errors and fixing code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Though ESLint can automatically fix code styles, other tools like [prettier](https://www.npmjs.com/package/prettier) and [beautify](https://www.npmjs.com/package/js-beautify) are more powerful in formatting the fix and work in conjunction with ESLint
+**ยาวไปไม่อ่าน:** [ESLint](https://eslint.org) นั้นเป็นมาตรฐานในการเช็คความเป็นไปได้ที่จะเกิด error และปรับสไตล์การโค้ดนอกจากการแก้ไขปัญหา spacing โง่ๆแล้วยังช่วยหาโค้ดที่มีการทำ anti-patterns แบบเลวร้ายได้อีกด้วยเช่น developer throw error โดยไม่มี classification. ด้วย ESLint คุณสามารถแก้ไข code style ได้อย่างอัตโนมัติหรือจะใช้เครื่องมืออื่น เช่น [prettier](https://www.npmjs.com/package/prettier) และ [beautify](https://www.npmjs.com/package/js-beautify) ซึ่งจะเทพกว่าในการแก้ไขต่างๆและยังใช้งานร่วมกับ ESLint อีกด้วย
 
-**หรือไม่ก็:** Developers will focus on tedious spacing and line-width concerns and time might be wasted overthinking the project's code style
+**หรือไม่ก็:** Developers จะโฟกัสกับการเคาะ space และ ความยาวบรรทัดเป็นปัญหาที่เสียเวลาและคิดมากจนเกิดไปเกี่ยวกับ code style ของโปรเจค
 
-🔗 [**อ่านเพิ่มเติม: Using ESLint and Prettier**](./sections/codestylepractices/eslint_prettier.md)
+🔗 [**อ่านเพิ่มเติม: การใช้งาน ESLint และ Prettier**](./sections/codestylepractices/eslint_prettier.md)
 
 <br/><br/>
 
@@ -427,12 +424,12 @@ especially if the cause of the abnormal behavior is inside of the missing functi
 
 ```javascript
 // Do
-function someFunction() {
+ฟังค์ชั่น someฟังค์ชั่น() {
   // code block
 }
 
 // Avoid
-function someFunction() 
+ฟังค์ชั่น someฟังค์ชั่น() 
 {
   // code block
 }
@@ -450,13 +447,13 @@ No matter if you use semicolons or not to separate your statements, knowing the 
 
 **ยาวไปไม่อ่าน:** Use ESLint to gain awareness about separation concerns. [Prettier](https://prettier.io/) or [Standardjs](https://standardjs.com/) can automatically resolve these issues.
 
-**หรือไม่ก็:** As seen in the previous section, JavaScript's interpreter automatically adds a semicolon at the end of a statement if there isn't one, or considers a statement as not ended where it should, which might lead to some undesired results. You can use assignments and avoid using immediately invoked function expressions to prevent most of the unexpected errors.
+**หรือไม่ก็:** As seen in the previous section, JavaScript's interpreter automatically adds a semicolon at the end of a statement if there isn't one, or considers a statement as not ended where it should, which might lead to some undesired results. You can use assignments and avoid using immediately invoked ฟังค์ชั่น expressions to prevent most of the unexpected errors.
 
 ### Code example
 
 ```javascript
 // Do
-function doThing() {
+ฟังค์ชั่น doThing() {
     // ...
 }
 
@@ -476,11 +473,11 @@ const a = [1,2,3]
 > SyntaxError: Unexpected token ...
 
 // Avoid — throws exception
-const count = 2 // it tries to run 2(), but 2 is not a function
-(function doSomething() {
+const count = 2 // it tries to run 2(), but 2 is not a ฟังค์ชั่น
+(ฟังค์ชั่น doSomething() {
   // do something amazing
 }())
-// put a semicolon before the immediate invoked function, after the const definition, save the return value of the anonymous function to a variable or avoid IIFEs altogether
+// put a semicolon before the immediate invoked ฟังค์ชั่น, after the const definition, save the return value of the anonymous ฟังค์ชั่น to a variable or avoid IIFEs altogether
 ```
 
 🔗 [**อ่านเพิ่มเติม:** "Semi ESLint rule"](https://eslint.org/docs/rules/semi)
@@ -488,19 +485,19 @@ const count = 2 // it tries to run 2(), but 2 is not a function
 
 <br/><br/>
 
-## ![✔] 3.5 Name your functions
+## ![✔] 3.5 Name your ฟังค์ชั่น
 
-**ยาวไปไม่อ่าน:** Name all functions, including closures and callbacks. Avoid anonymous functions. This is especially useful when profiling a node app. Naming all functions will allow you to easily understand what you're looking at when checking a memory snapshot
+**ยาวไปไม่อ่าน:** Name all ฟังค์ชั่น, including closures and callbacks. Avoid anonymous ฟังค์ชั่น. This is especially useful when profiling a node app. Naming all ฟังค์ชั่น will allow you to easily understand what you're looking at when checking a memory snapshot
 
-**หรือไม่ก็:** Debugging production issues using a core dump (memory snapshot) might become challenging as you notice significant memory consumption from anonymous functions
+**หรือไม่ก็:** Deบั๊กging production issues using a core dump (memory snapshot) might become challenging as you notice significant memory consumption from anonymous ฟังค์ชั่น
 
 <br/><br/>
 
-## ![✔] 3.6 Use naming conventions for variables, constants, functions and classes
+## ![✔] 3.6 Use naming conventions for variables, constants, ฟังค์ชั่น and classes
 
-**ยาวไปไม่อ่าน:** Use **_lowerCamelCase_** when naming constants, variables and functions, **_UpperCamelCase_** (capital first letter as well) when naming classes and **_UPPER_SNAKE_CASE_** when naming global or static variables. This will help you to easily distinguish between plain variables, functions, classes that require instantiation and variables declared at global module scope. Use descriptive names, but try to keep them short
+**ยาวไปไม่อ่าน:** Use **_lowerCamelCase_** when naming constants, variables and ฟังค์ชั่น, **_UpperCamelCase_** (capital first letter as well) when naming classes and **_UPPER_SNAKE_CASE_** when naming global or static variables. This will help you to easily distinguish between plain variables, ฟังค์ชั่น, classes that require instantiation and variables declared at global module scope. Use descriptive names, but try to keep them short
 
-**หรือไม่ก็:** JavaScript is the only language in the world that allows invoking a constructor ("Class") directly without instantiating it first. Consequently, Classes and function-constructors are differentiated by starting with UpperCamelCase
+**หรือไม่ก็:** JavaScript is the only language in the world that allows invoking a constructor ("Class") directly without instantiating it first. Consequently, Classes and ฟังค์ชั่น-constructors are differentiated by starting with UpperCamelCase
 
 ### 3.6 Code Example
 
@@ -527,8 +524,8 @@ class SomeClassExample {
   static STATIC_PROPERTY = "value";
 }
 
-// for functions names we use lowerCamelCase
-function doSomething() {
+// for ฟังค์ชั่น names we use lowerCamelCase
+ฟังค์ชั่น doSomething() {
   // for scoped variable names we use the const/let keyword and lowerCamelCase
   const someConstExample = "immutable value";
   let someMutableExample = "mutable value";
@@ -539,19 +536,19 @@ function doSomething() {
 
 ## ![✔] 3.7 Prefer const over let. Ditch the var
 
-**ยาวไปไม่อ่าน:** Using `const` means that once a variable is assigned, it cannot be reassigned. Preferring `const` will help you to not be tempted to use the same variable for different uses, and make your code clearer. If a variable needs to be reassigned, in a for loop, for example, use `let` to declare it. Another important aspect of `let` is that a variable declared using it is only available in the block scope in which it was defined. `var` is function scoped, not block-scoped, and [shouldn't be used in ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) now that you have `const` and `let` at your disposal
+**ยาวไปไม่อ่าน:** Using `const` means that once a variable is assigned, it cannot be reassigned. Preferring `const` will help you to not be tempted to use the same variable for different uses, and make your code clearer. If a variable needs to be reassigned, in a for loop, for example, use `let` to declare it. Another important aspect of `let` is that a variable declared using it is only available in the block scope in which it was defined. `var` is ฟังค์ชั่น scoped, not block-scoped, and [shouldn't be used in ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) now that you have `const` and `let` at your disposal
 
-**หรือไม่ก็:** Debugging becomes way more cumbersome when following a variable that frequently changes
+**หรือไม่ก็:** Deบั๊กging becomes way more cumbersome when following a variable that frequently changes
 
 🔗 [**อ่านเพิ่มเติม: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
 
 <br/><br/>
 
-## ![✔] 3.8 Require modules first, not inside functions
+## ![✔] 3.8 Require modules first, not inside ฟังค์ชั่น
 
-**ยาวไปไม่อ่าน:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top but also avoids a couple of potential problems
+**ยาวไปไม่อ่าน:** Require modules at the beginning of each file, before and outside of any ฟังค์ชั่น. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top but also avoids a couple of potential problems
 
-**หรือไม่ก็:** Requires are run synchronously by Node.js. If they are called from within a function, it may block other requests from being handled at a more critical time. Also, if a required module or any of its dependencies throw an error and crash the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function
+**หรือไม่ก็:** Requires are run synchronously by Node.js. If they are called from within a ฟังค์ชั่น, it may block other requests from being handled at a more critical time. Also, if a required module or any of its dependencies throw an error and crash the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a ฟังค์ชั่น
 
 <br/><br/>
 
@@ -612,13 +609,13 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 3.12 Use arrow function expressions (=>)
+## ![✔] 3.12 Use arrow ฟังค์ชั่น expressions (=>)
 
-**ยาวไปไม่อ่าน:** Though it's recommended to use async-await and avoid function parameters when dealing with older APIs that accept promises or callbacks - arrow functions make the code structure more compact and keep the lexical context of the root function (i.e. `this`)
+**ยาวไปไม่อ่าน:** Though it's recommended to use async-await and avoid ฟังค์ชั่น parameters when dealing with older APIs that accept promises or callbacks - arrow ฟังค์ชั่น make the code structure more compact and keep the lexical context of the root ฟังค์ชั่น (i.e. `this`)
 
-**หรือไม่ก็:** Longer code (in ES5 functions) is more prone to bugs and cumbersome to read
+**หรือไม่ก็:** Longer code (in ES5 ฟังค์ชั่น) is more prone to บั๊ก and cumbersome to read
 
-🔗 [**อ่านเพิ่มเติม: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
+🔗 [**อ่านเพิ่มเติม: It’s Time to Embrace Arrow ฟังค์ชั่น**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-ฟังค์ชั่น-3d37e1a9bb75)
 
 <br/><br/><br/>
 
@@ -638,7 +635,7 @@ All statements above will return false if used with `===`
 
 **ยาวไปไม่อ่าน:** Make the test speak at the requirements level so it's self-explanatory also to QA engineers and developers who are not familiar with the code internals. State in the test name what is being tested (unit under test), under what circumstances, and what is the expected result
 
-**หรือไม่ก็:** A deployment just failed, a test named “Add product” failed. Does this tell you what exactly is malfunctioning?
+**หรือไม่ก็:** A deployment just failed, a test named “Add product” failed. Does this tell you what exactly is malฟังค์ชั่นing?
 
 🔗 [**อ่านเพิ่มเติม: Include 3 parts in each test name**](./sections/testingandquality/3-parts-in-name.md)
 
@@ -716,7 +713,7 @@ All statements above will return false if used with `===`
 
 **ยาวไปไม่อ่าน:** Using static analysis tools helps by giving objective ways to improve code quality and keeps your code maintainable. You can add static analysis tools to your CI build to fail when it finds code smells. Its main selling points over plain linting are the ability to inspect quality in the context of multiple files (e.g. detect duplications), perform advanced analysis (e.g. code complexity), and follow the history and progress of code issues. Two examples of tools you can use are [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) and [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)).
 
-**หรือไม่ก็:** With poor code quality, bugs and performance will always be an issue that no shiny new library or state of the art features can fix
+**หรือไม่ก็:** With poor code quality, บั๊ก and performance will always be an issue that no shiny new library or state of the art features can fix
 
 🔗 [**อ่านเพิ่มเติม: Refactoring!**](./sections/testingandquality/refactoring.md)
 
@@ -734,7 +731,7 @@ All statements above will return false if used with `===`
 
 **ยาวไปไม่อ่าน:** When a middleware holds some immense logic that spans many requests, it is worth testing it in isolation without waking up the entire web framework. This can be easily achieved by stubbing and spying on the {req, res, next} objects
 
-**หรือไม่ก็:** A bug in Express middleware === a bug in all or most requests
+**หรือไม่ก็:** A บั๊ก in Express middleware === a บั๊ก in all or most requests
 
 🔗 [**อ่านเพิ่มเติม: Test middlewares in isolation**](./sections/testingandquality/test-middlewares.md)
 
@@ -756,7 +753,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 5.2. Increase transparency using smart logging
 
-**ยาวไปไม่อ่าน:** Logs can be a dumb warehouse of debug statements or the enabler of a beautiful dashboard that tells the story of your app. Plan your logging platform from day 1: how logs are collected, stored and analyzed to ensure that the desired information (e.g. error rate, following an entire transaction through services and servers, etc) can really be extracted
+**ยาวไปไม่อ่าน:** Logs can be a dumb warehouse of deบั๊ก statements or the enabler of a beautiful dashboard that tells the story of your app. Plan your logging platform from day 1: how logs are collected, stored and analyzed to ensure that the desired information (e.g. error rate, following an entire transaction through services and servers, etc) can really be extracted
 
 **หรือไม่ก็:** You end up with a black box that is hard to reason about, then you start re-writing all logging statements to add additional information
 
@@ -906,9 +903,9 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 ## ![✔] 5.17. Use an LTS release of Node.js
 
-**ยาวไปไม่อ่าน:** Ensure you are using an LTS version of Node.js to receive critical bug fixes, security updates and performance improvements
+**ยาวไปไม่อ่าน:** Ensure you are using an LTS version of Node.js to receive critical บั๊ก fixes, security updates and performance improvements
 
-**หรือไม่ก็:** Newly discovered bugs or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain
+**หรือไม่ก็:** Newly discovered บั๊ก or vulnerabilities could be used to exploit an application running in production, and your application may become unsupported by various modules and harder to maintain
 
 🔗 [**อ่านเพิ่มเติม: Use an LTS release of Node.js**](./sections/production/LTSrelease.md)
 
@@ -1026,9 +1023,9 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**ยาวไปไม่อ่าน:** Passwords or secrets (e.g. API keys) should be stored using a secure hash + salt function like `bcrypt`,`scrypt`, or worst case `pbkdf2`.
+**ยาวไปไม่อ่าน:** Passwords or secrets (e.g. API keys) should be stored using a secure hash + salt ฟังค์ชั่น like `bcrypt`,`scrypt`, or worst case `pbkdf2`.
 
-**หรือไม่ก็:** Passwords and secrets that are stored without using a secure function are vulnerable to brute forcing and dictionary attacks that will lead to their disclosure eventually.
+**หรือไม่ก็:** Passwords and secrets that are stored without using a secure ฟังค์ชั่น are vulnerable to brute forcing and dictionary attacks that will lead to their disclosure eventually.
 
 🔗 [**อ่านเพิ่มเติม: User Passwords**](./sections/security/userpasswords.md)
 
@@ -1113,9 +1110,9 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**ยาวไปไม่อ่าน:** `eval` is evil as it allows executing custom JavaScript code during run time. This is not just a performance concern but also an important security concern due to malicious JavaScript code that may be sourced from user input. Another language feature that should be avoided is `new Function` constructor. `setTimeout` and `setInterval` should never be passed dynamic JavaScript code either.
+**ยาวไปไม่อ่าน:** `eval` is evil as it allows executing custom JavaScript code during run time. This is not just a performance concern but also an important security concern due to malicious JavaScript code that may be sourced from user input. Another language feature that should be avoided is `new ฟังค์ชั่น` constructor. `setTimeout` and `setInterval` should never be passed dynamic JavaScript code either.
 
-**หรือไม่ก็:** Malicious JavaScript code finds a way into text passed into `eval` or other real-time evaluating JavaScript language functions, and will gain complete access to JavaScript permissions on the page. This vulnerability is often manifested as an XSS attack.
+**หรือไม่ก็:** Malicious JavaScript code finds a way into text passed into `eval` or other real-time evaluating JavaScript language ฟังค์ชั่น, and will gain complete access to JavaScript permissions on the page. This vulnerability is often manifested as an XSS attack.
 
 🔗 [**อ่านเพิ่มเติม: Avoid JavaScript eval statements**](./sections/security/avoideval.md)
 
