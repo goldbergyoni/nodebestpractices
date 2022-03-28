@@ -1677,6 +1677,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "euberdeveloper",
+      "name": "Eugenio Berretta",
+      "avatar_url": "https://avatars.githubusercontent.com/u/33126163?v=4",
+      "profile": "https://github.com/euberdeveloper",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
