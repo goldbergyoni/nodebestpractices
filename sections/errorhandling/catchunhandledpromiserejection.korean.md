@@ -25,7 +25,7 @@ DAL.getUserById(1).then((johnSnow) => {
 
 ```javascript
 process.on('unhandledRejection', (reason, p) => {
-  // I just caught an unhandled promise rejection, since we already have fallback handler for unhandled errors (see below), let throw and let him handle that
+  // I just caught an unhandled promise rejection, since we already have fallback handler for unhandled errors (see below), let throw and let them handle that
   throw reason;
 });
 process.on('uncaughtException', (error) => {

@@ -28,7 +28,7 @@ function addNewMember(newMember) {
 ### Anti-pattern: no validation yields nasty bugs
 
 ```javascript
-// if the discount is positive let's then redirect the user to print his discount coupons
+// if the discount is positive let's then redirect the user to print their discount coupons
 function redirectToPrintDiscount(httpResponse, member, discount) {
     if (discount != 0) {
         httpResponse.redirect(`/discountPrintView/${member.id}`);

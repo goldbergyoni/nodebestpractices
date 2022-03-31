@@ -2,7 +2,7 @@
 
 ### One Paragraph Explainer
 
-As a rule of thumb, one should run his own JavaScript files only. Theories aside, real-world scenarios demand to execute JavaScript files that are being passed dynamically at run-time. For example, consider a dynamic framework like webpack that accepts custom loaders and execute those dynamically during build time. In the existence of some malicious plugin we wish to minimize the damage and maybe even let the flow terminate successfully - this requires to run the plugins in a sandbox environment that is fully isolated in terms of resources, crashes and the information we share with it. Three main options can help in achieving this isolation: 
+As a rule of thumb, one should run their own JavaScript files only. Theories aside, real-world scenarios demand to execute JavaScript files that are being passed dynamically at run-time. For example, consider a dynamic framework like webpack that accepts custom loaders and execute those dynamically during build time. In the existence of some malicious plugin we wish to minimize the damage and maybe even let the flow terminate successfully - this requires to run the plugins in a sandbox environment that is fully isolated in terms of resources, crashes and the information we share with it. Three main options can help in achieving this isolation: 
 
 - a dedicated child process - this provides a quick information isolation but demand to tame the child process, limit its execution time and recover from errors
 - a cloud serverless framework ticks all the sandbox requirements but deployment and invoking a FaaS function dynamically is not a walk in the park
