@@ -9,7 +9,7 @@ Tamaina ertaineko nahiz handiko aplikazioetarako, monolitoak benetan kaltegarria
 
 ### Blog aipua: "Eskalatzeak aplikazio osoaren eskalatzea eskatzen du"
 
-MartinFowler.com bloga
+[MartinFowler.com](https://martinfowler.com/articles/microservices.html) bloga
 
 > Aplikazio monolitikoak arrakastatsuak izan daitezke, baina jendeak gero eta frustrazio gehiago ditu beraiekin, batez ere gero eta aplikazio gehiago inplementatzen direlako lainoan. Aldaketa zikloak elkarrekin lotuta daude: aplikazioaren zati txiki batean egindako aldaketak monolito osoa birsortzea eta inplementatzea eskatzen du. Askotan zaila da denbora aurrera joan ahala moduluzko egitura egokia mantentzea, modulu batean bakarrik eragina izango dituzten aldaketak mantentzea. Eskalatzeak aplikazio osoaren eskalatzea eskatzen du
 <br/><br/>

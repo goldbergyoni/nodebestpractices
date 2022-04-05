@@ -10,7 +10,7 @@ Pour les applications de taille moyenne et supérieure, les monolithes sont vrai
 
 ### Citation de blog : « La mise à l'échelle nécessite la mise à l'échelle de l'application entière »
 
- Extrait du blog de MartinFowler.com
+ Extrait du blog de [MartinFowler.com](https://martinfowler.com/articles/microservices.html)
 
 > Les applications monolithiques peuvent réussir, mais de plus en plus de personnes ressentent des frustrations à leur égard, d'autant plus que davantage d'applications sont déployées dans le cloud. Les cycles de changement sont liés les uns aux autres - une modification apportée à une petite partie de l'application nécessite la reconstruction et le déploiement du monolithe entier. Au fil du temps, il est souvent difficile de conserver une bonne structure modulaire, ce qui rend plus difficile la conservation des modifications qui ne devraient affecter qu'un module au sein de ce module. La mise à l'échelle nécessite la mise à l'échelle de l'application entière plutôt que les parties concernées, cela nécessitent donc plus de ressources.
 
