@@ -9,7 +9,7 @@ Para aplicações de tamanho médio e acima, os monólitos são muito ruins - te
 
 ### Citação de Blog: "O escalonamento requer escalonamento de todo o aplicativo"
 
- Do blog MartinFowler.com
+ Do blog [MartinFowler.com](https://martinfowler.com/articles/microservices.html)
 
 > Aplicações monolíticas podem ser bem-sucedidas, mas cada vez mais as pessoas estão sentindo frustrações com elas - especialmente à medida que mais aplicativos são implantados na nuvem. Os ciclos de mudança estão interligados - uma alteração feita em uma pequena parte do aplicativo requer que todo o monólito seja reconstruído e implantado. Ao longo do tempo, muitas vezes é difícil manter uma boa estrutura modular, tornando mais difícil manter as alterações que devem afetar apenas um módulo dentro desse módulo. O escalonamento requer escalonamento de todo o aplicativo, em vez de partes dele que exigem maior recurso.
 
