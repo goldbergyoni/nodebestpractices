@@ -22,7 +22,7 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 <br/>
 
-###### Built and maintained by our [Steering Committee](#steering-committee) and [Collaborators](#collaborators)
+## Special workshop in Verona next week 🇮🇹 - Node.js testing - beyond the basics. [Tickes and more info](https://2022.jsday.it/workshop/nodejs_testing.html)
 
 # Latest Best Practices and News
 
