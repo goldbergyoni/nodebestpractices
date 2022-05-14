@@ -1,6 +1,7 @@
 [✔]: assets/images/checkbox-small-blue.png
 
 <div style="text-align: right" dir="rtl">
+	
 # Node.js Best Practices
 
 <h1 align="center">
@@ -19,9 +20,9 @@
  <br/>
 
 # ברוך הבא! 3 דברים שממש כדאי לדעת לפני שגוללים למטה:
-**1. כאשר הינך קורא כאן, אתה למעשה קורא עשרות רבות של כתבות מוכרות -** בתוכן למטה תמצא סיכום, ציטוטים והפניות למאמרים המוכרים והמוצלחים ביותר בנושא נודג'
+**1. כאשר הנך קורא כאן, אתה למעשה קורא עשרות רבות של כתבות מוכרות -** בתוכן למטה תמצא סיכום, ציטוטים והפניות למאמרים המוכרים והמוצלחים ביותר בנושא Node.js
 
-**2. זהו המאגר הגדול ביותר של בסט פרקטיס והוא גדל בכל חודש -** כרגע מופיעים מעל 50 בסט פרקטיס, עיצות שונות ומדריך לתיכנון וארכיטקטורה של אפליקציות בנודג'. הקהילה מוסיפה באופן קבוע Issues & PR בכדי לשמור את התוכן עדכני. נשמח מאוד אם תוכל לתרום גם - בין אם מדובר ברעיונות משמעותיים או בתיקוני טקסט פשוטים - כל תרומה עוזרת לשפר את המדריך. תוכל לצפות [במיילסטונים הבאים כאן](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
+**2. זהו המאגר הגדול ביותר של בסט פרקטיס והוא גדל בכל חודש -** כרגע מופיעים מעל 50 בסט פרקטיס, עיצות שונות ומדריך לתיכנון וארכיטקטורה של אפליקציות בNode.js. הקהילה מוסיפה באופן קבוע Issues & PR בכדי לשמור את התוכן עדכני. נשמח מאוד אם תוכל לתרום גם - בין אם מדובר ברעיונות משמעותיים או בתיקוני טקסט פשוטים - כל תרומה עוזרת לשפר את המדריך. תוכל לצפות [באבני הדרך הבאות כאן](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
 
 **3. Most bullets have additional info -** nearby most best practice bullets you'll find **🔗Read More** link that will present you with code examples, quotes from selected blogs and more info
 
