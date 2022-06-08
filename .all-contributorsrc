@@ -1695,6 +1695,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "GuilhermePortella",
+      "name": "Guilherme Portella ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59876059?v=4",
+      "profile": "https://github.com/GuilhermePortella",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
