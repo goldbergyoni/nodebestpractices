@@ -629,7 +629,11 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 단지 서버 진단을 목적으로 일부 정보를 추출하기 위하여 상용서버에 코드를 배포하는 "진단용 배포"를 자주 수행하고 있게 될 것이다
 
+<<<<<<< HEAD
 🔗 [**자세히 보기: ‘유지 엔드포인트’를 생성하라**](/sections/production/createmaintenanceendpoint.korean.md)
+=======
+🔗 [**자세히 보기: Create a ‘maintenance endpoint’**](/sections/production/createmaintenanceendpoint.korean.md)
+>>>>>>> eac1089d (Update README.korean.md link address)
 
 <br/><br/>
 
@@ -639,7 +643,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** API 성능 및 가동 중지 시간을 측정하는 데 많은 노력을 기울임에도 실전에서 가장 느린 코드 부분이 어느것인지, 그리고 이것이 UX에 미치는 영향을 알지 못할 것이다
 
-🔗 [**자세히 보기: Discover errors and downtime using APM products**](/sections/production/apmproducts.md)
+🔗 [**자세히 보기: Discover errors and downtime using APM products**](/sections/production/apmproducts.korean.md)
 
 <br/><br/>
 
@@ -649,7 +653,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 세계 최고의 IT/DevOps 전문가도 형편없이 쓰여진 코드로 이루어진 시스템은 구하지 못한다
 
-🔗 [**자세히 보기: Make your code production-ready**](/sections/production/productioncode.md)
+🔗 [**자세히 보기: Make your code production-ready**](/sections/production/productioncode.korean.md)
 
 <br/><br/>
 
@@ -659,7 +663,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** [월마트](https://www.joyent.com/blog/walmart-node-js-memory-leak)에서 일어났던 것처럼 메모리가 하루에 수백 메가바이트씩 누수 될 수 있다
 
-🔗 [**자세히 보기: 메모리 사용량 측정 및 보호**](/sections/production/measurememory.md)
+🔗 [**자세히 보기: 메모리 사용량 측정 및 보호**](/sections/production/measurememory.korean.md)
 
 <br/><br/>
 
@@ -669,7 +673,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 단일 노드 스레드는 수백 개의 html/이미지/angular/react 파일을 스트리밍 하느라 바빠서 정작 천직인 동적 컨텐츠를 전달하는 작업에는 신경쓸 겨를이 없을것이다.
 
-🔗 [**자세히 보기: Get your frontend assets out of Node**](/sections/production/frontendout.md)
+🔗 [**자세히 보기: Get your frontend assets out of Node**](/sections/production/frontendout.korean.md)
 
 <br/><br/>
 
@@ -679,7 +683,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 해당서버에 오류가 발생하면 해당 서버만 제거하면 되는 것이 아니라 어플리케이션의 다운타임이 발생하게된다. 게다가 특정 서버에 의존하기 때문에 수평적 확장이 힘들어질 것이다
 
-🔗 [**자세히 보기: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.md)
+🔗 [**자세히 보기: Be stateless, kill your Servers almost every day**](/sections/production/bestateless.korean.md)
 
 <br/><br/>
 
@@ -689,7 +693,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 전용 도구없이 취약점으로부터 코드를 깨끗하게 유지하려면 새로운 취약점에 대한 데이터를 지속적으로 확인해야 할것이다
 
-🔗 [**자세히 보기: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.md)
+🔗 [**자세히 보기: Use tools that automatically detect vulnerabilities**](/sections/production/detectvulnerabilities.korean.md)
 
 <br/><br/>
 
@@ -922,7 +926,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 애플리케이션이 커다란 요청을 처리해야하면 다른 중요한 일을 완수할 수 없게 되어 성능이 영향을 받고 DOS 공격에 취약하게 된다
 
-🔗 [**자세히 보기: Limit payload size**](/sections/security/requestpayloadsizelimit.md)
+🔗 [**자세히 보기: Limit payload size**](/sections/security/requestpayloadsizelimit.korean.md)
 
 <br/><br/>
 
@@ -934,7 +938,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 악의적인 자바스크립트 코드가 `eval`같이 실시간으로 평가하는 자바스크립트 언어 함수에 넘어가면 페이지 안의 자바스크립트 승인을 완전히 장악하게 된다. 이 취약점은 XSS 공격 형태로 자주 나타난다.
 
-🔗 [**자세히 보기: Avoid JavaScript eval statements**](/sections/security/avoideval.md)
+🔗 [**자세히 보기: Avoid JavaScript eval statements**](/sections/security/avoideval.korean.md)
 
 <br/><br/>
 
@@ -946,7 +950,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 저조하게 쓰여진 정규표현들은 이벤트 루프를 완전히 정체시킬 수 있는 정규표현 DOS 공격에 취약해진다. 예를들면, 자주 쓰이는 `moment` 패키지 또한 2017년 11월에 악성 정규표현 사용에 취약하다는 것이 발견되었다
 
-🔗 [**자세히 보기: Prevent malicious RegEx**](/sections/security/regex.md)
+🔗 [**자세히 보기: Prevent malicious RegEx**](/sections/security/regex.korean.md)
 
 <br/><br/>
 
@@ -958,7 +962,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 악의적인 사용자 입력이 이전에 파일시스템에 업로드되었거나 이미 시스템에 존재하는 흑화된 파일을 require 하는데 쓰이는 매개변수로 들어가게 될 수 있다.
 
-🔗 [**자세히 보기: Safe module loading**](/sections/security/safemoduleloading.md)
+🔗 [**자세히 보기: Safe module loading**](/sections/security/safemoduleloading.korean.md)
 
 <br/><br/>
 
@@ -970,7 +974,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 플러그인이 무한 루프나, 메모리 과부화나, 민감한 프로세스 환경 변수로의 접근과 같이 무한히 가지각색으로 공격할 수 있다
 
-🔗 [**자세히 보기: Run unsafe code in a sandbox**](/sections/security/sandbox.md)
+🔗 [**자세히 보기: Run unsafe code in a sandbox**](/sections/security/sandbox.korean.md)
 
 <br/><br/>
 
@@ -982,7 +986,7 @@ null == undefined; // true
 
 **그렇게 하지 않을 경우:** 순진무구하게 자식 프로세스를 썼다가는 악의적인 사용자 입력이 무결처리 되지 않은 시스템 명령어로 인한 원격 커맨드 실행이나 쉘 주입 공격을 초래할 수 있다.
 
-🔗 [**자세히 보기: Be cautious when working with child processes**](/sections/security/childprocesses.md)
+🔗 [**자세히 보기: Be cautious when working with child processes**](/sections/security/childprocesses.korean.md)
 
 <br/><br/>
 
@@ -1194,6 +1198,33 @@ CMD [ "node", "dist/app.js" ]
 🔗 [**자세히 보기: 너의 도커파일을 린트하라**](./sections/docker/lint-dockerfile.korean.md)
 
 <br/><br/><br/>
+
+## ![✔] 8.5. 배포하기 전 종속성을 정리해라
+
+**핵심요약:** 빌드 및 생산주기동안 개발의존성이 필요할 때도 있지만, 결국 배포할 때에는 개발의존성은 없어져야 하고 이미지는 최소화 되어야 한다. 그렇게 되면 필요한 코드만 배포가 되고, 잠재적인 공격을 줄일 수 있다. 여러 단계의 빌드를 사용할 때 모든 종속성을 먼저 설치하고 마지막에 `npm ci --production`를 실행하여 원하는 바를 달성할 수 있다.
+**그렇게 하지 않을 경우:** 악명 높은 npm보안 침해중 다수가 발견된 패키지를 배포할 수 있다. ([eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes)와 같은)
+
+🔗 [**자세히 보기: Remove development dependencies**](./sections/docker/install-for-production.korean.md)
+
+<br /><br /><br />
+
+## ![✔] 8.6. 현명하고 우아하게 종료해라
+
+**핵심요약:** 프로세스 SIGTERM 이벤트를 처리하고 모든 기존의 연결 및 리소스를 정리해라. 이 작업은 진행중이 요청에 대해 응답하는 동안 수행해야 한다. 도커의 런파임에서는 컨테이너를 종료하는 것은 드문일이 아니라 자주 발생하는 작업이다. 이를 달성하기 위해 로드벨런서, 연결 유지 및 연결, HTTP서버 및 기타 리소스와 같은 몇가지 움직이는 부분을 원활하게 작업하기 위해서는 이를 고려한 코드가 필요하다.
+**그렇게 하지 않을 경우:** 여러가지 고려하지 않고 바로 컨테이너를 종료하는것은 수천 사용자의 실망을 의미한다.
+
+🔗 [**자세히 보기: Graceful shutdown**](./sections/docker/graceful-shutdown.korean.md)
+
+<br /><br /><br />
+
+## ![✔] 8.7. 도커와 V8엔진을 모두 사용하여 메모리를 제한해라
+
+**핵심요약:** 항상 도커 및 JS 런타임 플래그를 사용하여 메모리를 제한해라. 컨테이너 배치를 신중하게 하기위해 Docker 제한이 필요하며, V8엔진의 max-old-space 플래그는 정시에 GC를 시작하고 메모리 사용량 부족을 방지하는 데 필요하다. V8엔진의 메모리를 실제 컨테이너의 제한보다 약간 작게 설정해라.
+**그렇게 하지 않을 경우:** 도커의 메모리 제한은 확장을 결정하고, 다른 컨테이너를 굶주리게 하는것을 방지하기 위해 필요하다. V8엔진의 메모리를 제한하지 않으면 컨테이너 리소스를 충분히 활용하지 않는다. 명시적으로 정하지 않으면 리소스의 50~60%를 사용할 때 충돌이 발생한다.
+
+🔗 [**자세히 보기: Set memory limits using Docker only**](./sections/docker/memory-limit.korean.md)
+
+<br /><br /><br />
 
 # 마일스톤
 
