@@ -1489,34 +1489,6 @@ Independent Node.js consultant who works with customers in the USA, Europe, and 
 
 <br/>
 
-<img align="left" width="100" height="100" src="assets/images/members/bruno.png"/>
-
-[Bruno Scheufler](https://github.com/BrunoScheufler)
-<a href="https://brunoscheufler.com/"><img src="assets/images/web.svg" width="16" height="16"></img></a>
-
-💻 full-stack web engineer, Node.js & GraphQL enthusiast
-
-<br/>
-
-<img align="left" width="100" height="100" src="assets/images/members/kyle.png"/>
-
-[Kyle Martin](https://github.com/js-kyle)
-<a href="https://twitter.com/kylemartin_93"><img src="assets/images/twitter.svg" width="16" height="16"></img></a>
-<a href="https://www.linkedin.com/in/kylemartinnz"><img src="assets/images/linkedin.svg" width="16" height="16"></img></a>
-
-Full Stack Developer & Site Reliability Engineer based in New Zealand, interested in web application security, and architecting and building Node.js applications to perform at global scale.
-
-<br/>
-
-<img align="left" width="100" height="100" src="assets/images/members/kevyn.png"/>
-
-[Kevyn Bruyere](https://github.com/kevynb)
-<a href="https://www.linkedin.com/in/kevynbruyere/"><img src="assets/images/linkedin.svg" width="16" height="16"></img></a>
-
-Independent full-stack developer with a taste for Ops and automation.
-
-<br/>
-
 <a id="josh-hemphill" href="https://github.com/josh-hemphill" target="_blank"><img src="assets/images/members/josh-hemphill.png" align="left" width="100" height="100" alt="Josh Hemphill" loading="lazy"/></a>
 
 [Josh Hemphill](https://github.com/josh-hemphill)
@@ -1538,36 +1510,6 @@ Full Stack Developer who knows how to exit from Vim and loves Architecture, Virt
 
 <br/>
 
-### Steering Committee Emeriti
-
-<img align="left" width="100" height="100" src="assets/images/members/sagir.png"/>
-
-[Sagir Khan](https://github.com/sagirk)
-<a href="https://twitter.com/sagir_k"><img src="assets/images/twitter.svg" width="16" height="16"></img></a>
-<a href="https://linkedin.com/in/sagirk"><img src="assets/images/linkedin.svg" width="16" height="16"></img></a>
-<a href="https://sagirk.com"><img src="assets/images/web.svg" width="16" height="16"></img></a>
-
-Deep specialist in JavaScript and its ecosystem — React, Node.js, TypeScript, GraphQL, MongoDB, pretty much anything that involves JS/JSON in any layer of the system — building products using the web platform for the world’s most recognized brands. Individual Member of the Node.js Foundation.
-
-<br/>
-
-## Collaborators
-
-Thank you to all our collaborators! 🙏
-
-Our collaborators are members who are contributing to the repository on a regular basis, through suggesting new best practices, triaging issues, reviewing pull requests and more. If you are interested in helping us guide thousands of people to craft better Node.js applications, please read our [contributor guidelines](./.operations/CONTRIBUTING.md) 🎉
-
-| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"/></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"/></a> |
-| :----------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
-|                                    [Ido Richter (Founder)](https://github.com/idori)                                     |                                         [Keith Holliday](https://github.com/TheHollidayInn)                                         |
-
-### Collaborator Emeriti
-
-| <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"/></a> |
-| :--------------------------------------------------------------------------------------------------------------------------: |
-|                                        [Refael Ackermann](https://github.com/refack)                                         |
-
-<br/>
 
 ## Contributing
 
@@ -1828,3 +1770,44 @@ Thanks goes to these wonderful people who have contributed to this repository!
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
+
+### Steering Committee Emeriti
+
+
+[Bruno Scheufler](https://github.com/BrunoScheufler)
+<a href="https://brunoscheufler.com/"><img src="assets/images/web.svg" width="16" height="16"></img></a>
+
+💻 full-stack web engineer, Node.js & GraphQL enthusiast
+
+<br/>
+
+<img align="left" width="100" height="100" src="assets/images/members/kyle.png"/>
+
+[Kyle Martin](https://github.com/js-kyle)
+<a href="https://twitter.com/kylemartin_93"><img src="assets/images/twitter.svg" width="16" height="16"></img></a>
+<a href="https://www.linkedin.com/in/kylemartinnz"><img src="assets/images/linkedin.svg" width="16" height="16"></img></a>
+
+Full Stack Developer & Site Reliability Engineer based in New Zealand, interested in web application security, and architecting and building Node.js applications to perform at global scale.
+
+<br/>
+
+<img align="left" width="100" height="100" src="assets/images/members/kevyn.png"/>
+
+[Kevyn Bruyere](https://github.com/kevynb)
+<a href="https://www.linkedin.com/in/kevynbruyere/"><img src="assets/images/linkedin.svg" width="16" height="16"></img></a>
+
+Independent full-stack developer with a taste for Ops and automation.
+
+<br/>
+
+
+<img align="left" width="100" height="100" src="assets/images/members/sagir.png"/>
+
+[Sagir Khan](https://github.com/sagirk)
+<a href="https://twitter.com/sagir_k"><img src="assets/images/twitter.svg" width="16" height="16"></img></a>
+<a href="https://linkedin.com/in/sagirk"><img src="assets/images/linkedin.svg" width="16" height="16"></img></a>
+<a href="https://sagirk.com"><img src="assets/images/web.svg" width="16" height="16"></img></a>
+
+Deep specialist in JavaScript and its ecosystem — React, Node.js, TypeScript, GraphQL, MongoDB, pretty much anything that involves JS/JSON in any layer of the system — building products using the web platform for the world’s most recognized brands. Individual Member of the Node.js Foundation.
+
+<br/>
