@@ -1695,6 +1695,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "backend-joonyoung",
+      "name": "고준영",
+      "avatar_url": "https://avatars.githubusercontent.com/u/94430145?v=4",
+      "profile": "https://github.com/backend-joonyoung",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
