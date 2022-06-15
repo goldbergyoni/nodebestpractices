@@ -1,7 +1,5 @@
 # Contribution guidelines
 
-## What you should know first
-
 ## Lovely & friendly atmosphere
 
 Our code of conduct is 5 words long: we are all friends here
@@ -30,9 +28,10 @@ The specific PR/issue resolustion depends on its kind:
 **D. Dicussions and ideas -** When a technical discussion or just general conversation is brought into a new issue, apply your own judgements whether to tag other collaborators
 
 
-### Writing guidelines
+## Assets to be aware of
 
-Our content writing guidelines [can be found here](./writing-guidelines.md)
+- Our content writing guidelines [can be found here](./writing-guidelines.md)
+- Common questions and answers to issues/PRs [can be found here](./.common-answers.md)
 
 
 ## Contribution model
@@ -48,15 +47,3 @@ Collaborators are members who are contributing to the repository on a regular ba
 The role is in place to help the steering committee ensure that the content provided is of high standard, up-to-date with the industry, and available in many languages. Members who frequently participate in these activities will be invited to become a collaborator, based on the quality of their contributions.
 
 The steering committee periodically reviews the collaborator list to identify inactive collaborators. Inactive collaborators can choose to either continue in or step down from their role, in which case they are acknowledged as a past collaborator. They may later request that the steering committee restore them to active status.
-
-### Other contributions ✨
-
-This project follows the [All Contributors Specification](https://allcontributors.org/), which means we recognize all types of contributions, whether they are new suggested best practices/ideas, translations, or new content.
-
-If you have contributed to the project in some way and aren't listed, please add an entry for yourself by using the @all-contributors-bot in a Pull Request or issue. Examples:
-
-`@all-contributors-bot please add @js-kyle for code`
-
-`@all-contributors-bot please add @brunoscheufler for content`
-
-Contribution types are listed [here](https://allcontributors.org/docs/en/emoji-key).
