@@ -1,27 +1,37 @@
 # Contribution guidelines
 
-## What you should know first
-
-### Lovely & friendly atmosphere
+## Lovely & friendly atmosphere
 
 Our code of conduct is 5 words long: we are all friends here
 
 We recognize that being professional and kind are the same thing and strive to maximize our professionalism
 
-### Maintenance work
+## Handling issues and PRs
 
-Our operations manual [can be found here](./operations-manual.md)
+<br/>
+In a nutshell, every issue is an opprtunity to gain new knowledge and attract new contributor. Therefore we aim for vast response and welcoming words 💚
 
-### Writing guidelines
+When merging a new PR, add the contributor to our credits list using the all-contributors bot. Just include this text as a PR comment:
 
-Our content writing guidelines [can be found here](./writing-guidelines.md)
+`@all-contributors please add @username for content`
 
-### Handling issues and PRs
+The specific PR/issue resolustion depends on its kind:
 
-- Great the contributor with kindness
-- If a straightforward fix is suggested (e.g., TYPO, linting fix, grammar improvement, etc) - Approve and merge
-- When the proposed PR deals with a more opionionated topic - Encourage at least 2 reviewers, leave the PR open for a few days to allow more folks to chime-in
-- Add the contributor to the contributor credit list with this command: `@all-contributors please add @username for content`
+**A. New best practice or fundamental changes to existing content -** In that case, involve at least 1 other members to solicit enough feedback for this change. Start by greeting the contributor, ensure the formalities are fine, ensure it conforms to our [writing guidelines](./writing-guidelines.md), ensure enough information was provided and then get at least 1 more collaborators and allow at least a week for comments
+
+**B. Plain text change (e.g. Grammar correctness) -** When super-simple wording edits are proposed (i.e. not new content rather language correctness), one can just greet, approve and merge immediately
+
+**C. Translations to a new (not existing) language -** When offered to add new language, greet the person and paste our [translation guidelines](./common-answers.md)
+
+**D. Edits to existing translations -** If the change can be inferred by the reviewer (e.g., a change of a symbol, number or just date update) then feel free to merge alone. If familiarity with the language is needed, tag the original translator and ask for feedback. The translators name can be found in the home page under "Translations"
+
+**D. Dicussions and ideas -** When a technical discussion or just general conversation is brought into a new issue, apply your own judgements whether to tag other collaborators
+
+
+## Assets to be aware of
+
+- Our content writing guidelines [can be found here](./writing-guidelines.md)
+- Common questions and answers to issues/PRs [can be found here](./.common-answers.md)
 
 
 ## Contribution model
@@ -37,15 +47,3 @@ Collaborators are members who are contributing to the repository on a regular ba
 The role is in place to help the steering committee ensure that the content provided is of high standard, up-to-date with the industry, and available in many languages. Members who frequently participate in these activities will be invited to become a collaborator, based on the quality of their contributions.
 
 The steering committee periodically reviews the collaborator list to identify inactive collaborators. Inactive collaborators can choose to either continue in or step down from their role, in which case they are acknowledged as a past collaborator. They may later request that the steering committee restore them to active status.
-
-### Other contributions ✨
-
-This project follows the [All Contributors Specification](https://allcontributors.org/), which means we recognize all types of contributions, whether they are new suggested best practices/ideas, translations, or new content.
-
-If you have contributed to the project in some way and aren't listed, please add an entry for yourself by using the @all-contributors-bot in a Pull Request or issue. Examples:
-
-`@all-contributors-bot please add @js-kyle for code`
-
-`@all-contributors-bot please add @brunoscheufler for content`
-
-Contribution types are listed [here](https://allcontributors.org/docs/en/emoji-key).
