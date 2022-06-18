@@ -1704,6 +1704,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "Esser50K",
+      "name": "André Esser",
+      "avatar_url": "https://avatars.githubusercontent.com/u/18497570?v=4",
+      "profile": "https://www.youtube.com/channel/UCBxzOQd2v9wWfiMDrf_RQ7A",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
