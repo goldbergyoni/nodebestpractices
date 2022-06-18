@@ -513,7 +513,7 @@ const CONFIG = {
   key: "value",
 };
 
-// examples of UPPER_SNAKE_CASE convetion in nodejs/javascript ecosystem
+// examples of UPPER_SNAKE_CASE convention in nodejs/javascript ecosystem
 // in javascript Math.PI module
 const PI = 3.141592653589793;
 
@@ -629,7 +629,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 4.1 At the very least, write API (component) testing
 
-**TL;DR:** Most projects just don't have any automated testing due to short timetables or often the 'testing project' ran out of control and was abandoned. For that reason, prioritize and start with API testing which is the easiest way to write and provides more coverage than unit testing (you may even craft API tests without code using tools like [Postman](https://www.getpostman.com/)). Afterward, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc
+**TL;DR:** Most projects just don't have any automated testing due to short timetables or often the 'testing project' ran out of control and was abandoned. For that reason, prioritize and start with API testing which is the easiest way to write and provides more coverage than unit testing (you may even craft API tests without code using tools like [Postman](https://www.getpostman.com/)). Afterwards, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc
 
 **Otherwise:** You may spend long days on writing unit tests to find out that you got only 20% system coverage
 
@@ -1811,3 +1811,4 @@ Independent full-stack developer with a taste for Ops and automation.
 Deep specialist in JavaScript and its ecosystem — React, Node.js, TypeScript, GraphQL, MongoDB, pretty much anything that involves JS/JSON in any layer of the system — building products using the web platform for the world’s most recognized brands. Individual Member of the Node.js Foundation.
 
 <br/>
+
