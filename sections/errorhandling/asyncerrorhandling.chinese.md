@@ -1,4 +1,4 @@
-# 对于异步的错误处理，请使用 Async-Await 或者 promise
+# 对于异步的错误处理，请使用 Async-Await 或者 promises
 
 ### 一段解释
 由于大多数的程序员不熟悉回调，不能很好的掌控回调函数，导致被迫到处检测错误，处理让人不快的代码嵌套和难以理解的代码流程。Promise 的库，比如 BlueBird，async，和 Q 封装了一些代码，使用者可以使用 RETURN 和 THROW 的方式来控制程序的流程。具体来说，就是它们支持最受欢迎的 try-catch 错误处理风格，这使得主流程代码从在每一个方法中处理错误的方式中解放出来。
@@ -48,7 +48,7 @@ getData(someParameter, function(err, result){
           getMoreData(b, function(c){
             getMoreData(d, function(e){
               if(err != null)
-                //你有什么想法? 
+                //你有什么想法? 
     });
 });
 ```
