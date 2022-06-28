@@ -187,7 +187,13 @@
 
 ## ![✔] 1.1 با استفاده از کامپوننت ها پروژه خود را ساختار بندی کنید
 
-**TL;DR:** The worst large applications pitfall is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Instead, partition your code into components, each gets its folder or a dedicated codebase, and ensure that each unit is kept small and simple. Visit 'Read More' below to see examples of correct project structure
+**TL;DR:** یکی از بدترین اتفاقاتی که برای یک دولوپر ممکنه پیش بیاد اینکه مجبور باشه از یک کد بیس خیلی بزرگ با چند صد 
+افزونه نگهداری بکنه.
+همچین اپلیکیشن یکپارچه در کد باعث میشه که فرایند توسعه توسط برنامه نویس ها که بخوان ویژگی های جدید به اپلیکیشن اضافه کنن خیلی سخت میشه.
+به جای این کار که کدی یکپارچه داشته بشیم بهتره که کد رو به قسمت های کوچیک تر بشکنیم ، اینطوری هر بخش به یک فولدر مختص میشه و کدش داخل فایل های داخل اون فولدر قرار میگیره .
+در واقع با این کار ما مطمن میشیم که هر قسمت از کد به صورت خیلی کوچیک تر در اومده و ساده تر شده.
+
+
 
 **Otherwise:** When developers who code new features struggle to realize the impact of their change and fear to break other dependent components - deployments become slower and riskier. It's also considered harder to scale-out when all the business units are not separated
 
