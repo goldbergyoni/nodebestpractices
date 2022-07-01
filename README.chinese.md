@@ -648,6 +648,17 @@ null == undefined   // true
 
 **否则:** 长时间部署 -> 线上宕机 & 和人相关的错误 -> 团队部署时不自信 -> 更少的部署和需求
 
+<br/><br/>
+
+## ![✔] 5.17. 使用 Node.js 的 LTS 版本
+
+**TL;DR:** 确保您是使用LTS版本的Node.js来获取关键的错误修复、安全更新和性能改进。
+
+**否则:** 新发现的错误或漏洞可能会被用于生产环境中运行的应用程序，您的应用程序可能会变得难以维护且不受各种模块支持.
+
+
+🔗 [**更多: 使用node.js的LTS版本**](./sections/production/LTSrelease.chinese.md)
+
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
