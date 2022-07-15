@@ -60,7 +60,7 @@ Each month, a maintainer on call will open an issue for a maintenance work check
 | General Writing quality  | Typos, text clarify                                 | Bruno                              |
 | Javascript runtime       | JS runtime, syntax correctness                      | Sagir                              |
 | Devops                   | Monitoring, hardening a production site, deployment | Kyle                               |
-| Architetecture           | Project structure, microservices                    | Yoni                               |
+| Architecture           | Project structure, microservices                    | Yoni                               |
 | Testing                  | CI, linting, testing                                | Yoni                               |
 | Performance              | Efficient code, inspecting processes on fire        | Sagir                              |
 | Security                 | Security packages, secured code                     | Kyle                               |
