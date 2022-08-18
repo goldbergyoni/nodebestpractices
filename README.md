@@ -22,12 +22,12 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 <br/>
 
-## Special workshop in Verona next week 🇮🇹 - Node.js testing - beyond the basics. [Tickes and more info](https://2022.jsday.it/workshop/nodejs_testing.html)
+## 🚀 We have an [official Node.js starter - Practica.js](https://github.com/practicajs/practica). Use it to generate a new solution skeleton with all the practices baked inside. Or learn by example
 <br/>
 
 # Latest Best Practices and News
 
-- **✨ 75,000 stars**: Blushing, surprised and proud!
+- **✨ 80,000 stars**: Blushing, surprised and proud!
 
 - **🔖 New menu and tags**: Our menu is collapsible now and includes `#tags`. New visitors can read `#strategic` items first. Returning visitors can focus on `#new` content. Seniors can filter for `#advanced` items. Courtesy of the one and only [Rubek Joshi](https://github.com/rubek-joshi)
 
