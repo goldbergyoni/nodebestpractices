@@ -9,13 +9,13 @@ We recognize that being professional and kind are the same thing and strive to m
 ## Handling issues and PRs
 
 <br/>
-In a nutshell, every issue is an opprtunity to gain new knowledge and attract new contributor. Therefore we aim for vast response and welcoming words 💚
+In a nutshell, every issue is an opportunity to gain new knowledge and attract new contributor. Therefore we aim for vast response and welcoming words 💚
 
 When merging a new PR, add the contributor to our credits list using the all-contributors bot. Just include this text as a PR comment:
 
 `@all-contributors please add @username for content`
 
-The specific PR/issue resolustion depends on its kind:
+The specific PR/issue resolution depends on its kind:
 
 **A. New best practice or fundamental changes to existing content -** In that case, involve at least 1 other members to solicit enough feedback for this change. Start by greeting the contributor, ensure the formalities are fine, ensure it conforms to our [writing guidelines](./writing-guidelines.md), ensure enough information was provided and then get at least 1 more collaborators and allow at least a week for comments
 
@@ -25,7 +25,7 @@ The specific PR/issue resolustion depends on its kind:
 
 **D. Edits to existing translations -** If the change can be inferred by the reviewer (e.g., a change of a symbol, number or just date update) then feel free to merge alone. If familiarity with the language is needed, tag the original translator and ask for feedback. The translators name can be found in the home page under "Translations"
 
-**D. Dicussions and ideas -** When a technical discussion or just general conversation is brought into a new issue, apply your own judgements whether to tag other collaborators
+**D. Discussions and ideas -** When a technical discussion or just general conversation is brought into a new issue, apply your own judgements whether to tag other collaborators
 
 
 ## Assets to be aware of
