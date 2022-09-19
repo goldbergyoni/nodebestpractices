@@ -68,6 +68,6 @@ console.log(_.map([0, 1, 2, 4, 8, 16], (x) => `d${x}`));
 ```
 
 Hementxe dago ESLintek bistaratuko lukeena YDNLU plugina erabiliz.
-![irteera](../../assets/images/ydnlu.png)
+![output](../../assets/images/ydnlu.png)
 
 Noski, adibide horrek ez du errealista ematen egungo kodeek dutena kontutan hartuta, baina bai balio du ulertzeko.
