@@ -31,7 +31,7 @@ The specific PR/issue resolustion depends on its kind:
 ## Assets to be aware of
 
 - Our content writing guidelines [can be found here](./writing-guidelines.md)
-- Common questions and answers to issues/PRs [can be found here](./.common-answers.md)
+- Common questions and answers to issues/PRs [can be found here](./common-answers.md)
 
 
 ## Contribution model
