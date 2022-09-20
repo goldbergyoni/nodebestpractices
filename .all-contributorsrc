@@ -1732,6 +1732,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "mauroaccornero",
+      "name": "Mauro Accornero",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1875822?v=4",
+      "profile": "https://www.mauroaccornero.it",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
