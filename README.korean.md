@@ -38,7 +38,7 @@
 
 <br/><br/>
 
-# 어서오세요! 먼저 이 3가지를 알아두세요:
+# 어서오세요! 먼저 이 3가지를 알아두세요
 
 **1. 이 문서를 읽는 것은 베스트 Node.js 문서 수십개를 읽는 것과 같습니다. -** 이 문서는 Node.js 의 가장 일반적인 Best Practice 모범사례들을 모은 요약집 및 큐레이션입니다.
 
@@ -279,7 +279,7 @@ function someFunction()
 
 **그렇게 하지 않을 경우:** 이전 섹션에서 본것처럼 자바스크립트의 인터프리터는 세미콜론이 없으면 자동으로 문장의 끝에 세미콜론을 붙이거나, 문장이 끝났어야 함에도 끝났다고 인지하지 못하여 의도되지 않은 결과를 야기할 수 있다. 대부분의 의도하지 않은 에러들은 assignment를 사용하고 imediate invoked function expression을 사용하는 것을 피함으로써 예방할 수 있다.
 
-### 코드 예제
+### 3.4 코드 예제
 
 ```javascript
 // 좋은 예
@@ -371,7 +371,7 @@ function doSomething() {}
 
 **그렇게 하지 않을 경우:** 파일 내부의 구조 혹은 서명을 변경하면 클라이언트와의 인터페이스가 손상될 수 있다.
 
-### 코드 예제
+### 3.9 코드 예제
 
 ```javascript
 // 좋은 예
@@ -391,7 +391,7 @@ module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolve
 
 **그렇게 하지 않을 경우:** `==`으로 비교하는 경우 같지 않은 변수가 true로 반환 될 수있다.
 
-### 코드 예제
+### 3.10 코드 예제
 
 ```javascript
 "" == "0"; // false
