@@ -444,7 +444,7 @@ Semua pernyataan di atas akan mengembalikan nilai _false_ jika menggunakan `===`
 
 <p align="right"><a href="#daftar-isi">⬆ Kembali ke atas</a></p>
 
-# `4. Praktik Pengujian dan Kualitas Secara Keseluruhan `
+# `4. Praktik Pengujian dan Kualitas Secara Keseluruhan`
 
 ## ![✔] 4.1 Paling tidak, buat pengujian API (komponen)
 
