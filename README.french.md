@@ -849,7 +849,7 @@ Toutes les déclarations ci-dessus renverront false si elles sont utilisées ave
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;PL :** Les mots de passe ou les secrets (par exemple les clés API) doivent être stockés en utilisant une fonction de hachage sécurisée + un salt comme `bcrypt`,` scrypt`, ou dans le pire des cas `pbkdf2`.
+**TL;PL :** Les mots de passe ou les secrets (par exemple les clés API) doivent être stockés en utilisant une fonction de hachage sécurisée + un salt comme `bcrypt`,`scrypt`, ou dans le pire des cas `pbkdf2`.
 
 **Autrement :** Les mots de passe et les secrets qui sont stockés sans utiliser de fonction sécurisée sont vulnérables au brute-force et aux attaques de dictionnaire qui mèneront à leur divulgation.
 
@@ -1358,7 +1358,7 @@ Merci à tous nos collaborateurs ! 🙏
 
 Nos collaborateurs sont des membres qui contribuent régulièrement au dépôt, en suggérant de nouvelles bonnes pratiques, en triant les issues, en examinant les pull request et bien d'autres choses encore. Si vous souhaitez nous aider à guider des milliers de personnes à créer de meilleures applications Node.js, veuillez lire nos [directives pour les contributeurs](./.operations/CONTRIBUTING.md) 🎉
 
-| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"/></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"/></a> | <a href="https://github.com/rluvaton" target="_blank"><img src="assets/images/members/raz-luvaton.jpg" width="75" height="75" alt="Raz Luvaton" loading="lazy"/></a> | <a href="https://github.com/josh-hemphill" target="_blank"><img src="assets/images/members/jhemphill.jpg" width="75" height="75" alt="Josh Hemphill" loading="lazy"/></a> |
+| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"/></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"/></a> | <a href="https://github.com/rluvaton" target="_blank"><img src="assets/images/members/raz-luvaton.jpg" width="75" height="75" alt="Raz Luvaton" loading="lazy"/></a> | <a href="https://github.com/josh-hemphill" target="_blank"><img src="assets/images/members/josh-hemphill.png" width="75" height="75" alt="Josh Hemphill" loading="lazy"/></a> |
 | :--: | :--: | :--: | :--: |
 | [Ido Richter (Founder)](https://github.com/idori) | [Keith Holliday](https://github.com/TheHollidayInn) | [Raz Luvaton](https://github.com/rluvaton) | [Josh Hemphill](https://github.com/josh-hemphill) |
 

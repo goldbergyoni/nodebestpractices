@@ -6,7 +6,7 @@
   "scripts": {
     "build": "cd .. && node .operations/gen-html.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "markdownlint ../README.md"
+    "lint": "markdownlint ../READM*.md"
   },
   "repository": {
     "type": "git",

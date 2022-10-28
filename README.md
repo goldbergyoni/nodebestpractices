@@ -23,6 +23,7 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 <br/>
 
 ## 🚀 We have an [official Node.js starter - Practica.js](https://github.com/practicajs/practica). Use it to generate a new solution skeleton with all the practices baked inside. Or just it to learn by code examples
+
 <br/>
 
 # Latest Best Practices and News
@@ -1510,7 +1511,6 @@ Full Stack Developer who knows how to exit from Vim and loves Architecture, Virt
 
 <br/>
 
-
 ## Contributing
 
 If you've ever wanted to contribute to open source, now is your chance! See the [contributing docs](.operations/CONTRIBUTING.md) for more information.
@@ -1778,7 +1778,6 @@ Thanks goes to these wonderful people who have contributed to this repository!
 
 ### Steering Committee Emeriti
 
-
 [Bruno Scheufler](https://github.com/BrunoScheufler)
 <a href="https://brunoscheufler.com/"><img src="assets/images/web.svg" width="16" height="16"></img></a>
 
@@ -1805,7 +1804,6 @@ Independent full-stack developer with a taste for Ops and automation.
 
 <br/>
 
-
 <img align="left" width="100" height="100" src="assets/images/members/sagir.png"/>
 
 [Sagir Khan](https://github.com/sagirk)
@@ -1814,6 +1812,3 @@ Independent full-stack developer with a taste for Ops and automation.
 <a href="https://sagirk.com"><img src="assets/images/web.svg" width="16" height="16"></img></a>
 
 Deep specialist in JavaScript and its ecosystem — React, Node.js, TypeScript, GraphQL, MongoDB, pretty much anything that involves JS/JSON in any layer of the system — building products using the web platform for the world’s most recognized brands. Individual Member of the Node.js Foundation.
-
-<br/>
-
