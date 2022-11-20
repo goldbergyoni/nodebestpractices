@@ -18,7 +18,7 @@
 
 ### 블로그 인용: "그러니 당신의 어플리케이션의 설계를 보면 어떤 감이 오는가?"
 
-[uncle-bob](https://8thlight.com/blog/uncle-bob/2011/09/30/Screaming-Architecture.html) 블로그로부터
+[uncle-bob](https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html) 블로그로부터
 
 > ...도서관 설계도를 보면, 아마도 커다란 입구, 체크인/체크아웃 구역, 독서실, 소규모 회의실들, 도서관의 모든 책을 수용할 수 있게 책꽂이들을 놓을 만한 공간들이 보일 것이다. 설계도를 보면 도서관이라고 바로 감이 올 것이다.<br/>
 

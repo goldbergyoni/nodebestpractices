@@ -16,7 +16,7 @@ Tamaina ertaineko nahiz handiko aplikazioetarako, monolitoak benetan kaltegarria
 
 ### Blog aipua: "Zergatik egiten du garrasi zure aplikazioaren egiturak?"
 
-[uncle-bob](https://8thlight.com/blog/uncle-bob/2011/09/30/Screaming-Architecture.html) bloga
+[uncle-bob](https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html) bloga
 
 > ...Liburutegi baten egitura begiratuko bazenu, ziurrenik sarrera handi batekin aurkituko zinateke, erregistro bulego lekuekin, irakurketa lekuekin, biltzar toki txikiekin, eta liburutegiko liburu guztiak edukitzeko beste apal dituzten galeria ugarirekin. Egitura horrek honakoa oihukatu beharko luke: Liburutegia.<br/>
 

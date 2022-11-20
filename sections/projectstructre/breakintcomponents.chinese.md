@@ -18,7 +18,7 @@
  <br/><br/>
  
  ### 博客引用: "那么, 你的应用程序的架构声明了什么?"
- 摘自博客 [uncle-bob](https://8thlight.com/blog/uncle-bob/2011/09/30/Screaming-Architecture.html) 
+ 摘自博客 [uncle-bob](https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html) 
  
 > ...如果你正在寻找一个图书馆的建筑架构, 你可能会看到一个盛大的入口, 一个 check-in-out 的文员, 阅读区, 小会议室, 画廊, 画廊后面容纳了装载所有图书馆书籍的书架。建筑会声明: 图书馆.<br/>
 那么, 应用程序的体系架构会声明什么呢？ 当您查看顶级目录结构和最高级别包中的源文件时; 他们声明: 医疗保健系统, 或会计系统, 或库存管理系统？ 或者他们声明: Rails, 或Spring/Hibernate, 或 ASP？.

@@ -18,7 +18,7 @@ For medium sized apps and above, monoliths are really bad - having one big softw
 
 ### Blog Quote: "So what does the architecture of your application scream?"
 
- From the blog [uncle-bob](https://8thlight.com/blog/uncle-bob/2011/09/30/Screaming-Architecture.html) 
+ From the blog [uncle-bob](https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html) 
 
 > ...if you were looking at the architecture of a library, you’d likely see a grand entrance, an area for check-in-out clerks, reading areas, small conference rooms, and gallery after gallery capable of holding bookshelves for all the books in the library. That architecture would scream: Library.<br/>
 
