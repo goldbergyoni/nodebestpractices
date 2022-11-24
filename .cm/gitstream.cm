@@ -30,15 +30,6 @@ automations:
       - action: add-comment@v1
         args:
           comment: Welcome!
-  owner:
-    if:
-      - true
-    run:
-      - action: add-comment@v1
-        args:
-          comment: |
-            owners: {{ repo.blame | rankByGitBlame(gt=25) | dump | safe }}
-            blame: {{ repo.blame | dump | safe }}
 
 
  
