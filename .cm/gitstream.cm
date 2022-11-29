@@ -53,7 +53,7 @@ automations:
    run:
      - action: add-reviewers@v1
        args:
-         reviewers: {{ repo | rankByGitActivity(gt=20, weeks=52) | random }}
+         reviewers: {{ repo | rankByGitActivity(gt=10, weeks=6) }}
 
 
 
