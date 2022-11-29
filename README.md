@@ -12,7 +12,7 @@
 <div align="center">
   <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%20102%20Best%20Practices-blue.svg" alt="102 items"/> <img id="last-update-badge" src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20October%2028%2C%202022-green.svg" alt="Last update: October 28, 2022" /> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2014.0.0-brightgreen.svg" alt="Updated for Node 14.0.0"/>
 </div>
-
+[<img src="assets/images/twitter.svg" width="16" height="16" alt="" />](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
 <br/>
 
 [<img src="assets/images/twitter.svg" width="16" height="16" alt="" />](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
@@ -192,7 +192,7 @@ kjgfdkfgdhgfkdgjh
 
 &emsp;&emsp;[7.1. Don't block the event loop](#-71-dont-block-the-event-loop)</br>
 &emsp;&emsp;[7.2. Prefer native JS methods over user-land utils like Lodash](#-72-prefer-native-js-methods-over-user-land-utils-like-lodash)</br>
-
+[<img src="assets/images/twitter.svg" width="16" height="16" alt="" />](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)[<img src="assets/images/twitter.svg" width="16" height="16" alt="" />](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
 </details>
 
 <details>
@@ -256,6 +256,11 @@ kjgfdkfgdhgfkdgjh
 
 **TL;DR:** Avoid the nasty habit of defining the entire [Express](https://expressjs.com/) app in a single huge file - separate your 'Express' definition to at least two files: the API declaration (app.js) and the networking concerns (WWW). For even better structure, locate your API declaration within components
 
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+
+# `2. Error Handling Practices`
+
+## ![✔] 2.1 Use Async-Await or promises for async error handling
 **Otherwise:** Your API will be accessible for testing via HTTP calls only (slower and much harder to generate coverage reports). It probably won't be a big pleasure to maintain hundreds of lines of code in a single file
 
 🔗 [**Read More: separate Express 'app' and 'server'**](./sections/projectstructre/separateexpress.md)
@@ -281,7 +286,7 @@ kjgfdkfgdhgfkdgjh
 **TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using a reputable promise library or async-await instead which enables a much more compact and familiar code syntax like try-catch
 
 **Otherwise:** Node.js callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting, and awkward coding patterns
-
+[<img src="assets/images/twitter.svg" width="16" height="16" alt="" />](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)[<img src="assets/images/twitter.svg" width="16" height="16" alt="" />](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
 🔗 [**Read More: avoiding callbacks**](./sections/errorhandling/asyncerrorhandling.md)
 
 <br/><br/>
@@ -364,19 +369,7 @@ kjgfdkfgdhgfkdgjh
 
 🔗 [**Read More: using APM products**](./sections/errorhandling/apmproducts.md)
 
-<br/><br/>
 
-## ![✔] 2.10 Catch unhandled promise rejections
-
-**TL;DR:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explicitly handle it. Even if your code is subscribed to `process.uncaughtException`! Overcome this by registering to the event `process.unhandledRejection`
-
-**Otherwise:** Your errors will get swallowed and leave no trace. Nothing to worry about
-
-🔗 [**Read More: catching unhandled promise rejection**](./sections/errorhandling/catchunhandledpromiserejection.md)
-
-<br/><br/>
-
-## ![✔] 2.11 Fail fast, validate arguments using a dedicated library
 
 **TL;DR:** Assert API input to avoid nasty bugs that are much harder to track later. The validation code is usually tedious unless you are using a very cool helper library like [ajv](https://www.npmjs.com/package/ajv) and [Joi](https://www.npmjs.com/package/joi)
 
@@ -681,17 +674,7 @@ All statements above will return false if used with `===`
 
 **Otherwise:** Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
 
-<br/><br/>
-
-## ![✔] 4.7 Tag your tests
-
-**TL;DR:** Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/): mocha --grep 'sanity'
-
-**Otherwise:** Running all the tests, including tests that perform dozens of DB queries, any time a developer makes a small change can be extremely slow and keeps developers away from running tests
-
-<br/><br/>
-
-## ![✔] 4.8 Check your test coverage, it helps to identify wrong test patterns
+ identify wrong test patterns
 
 **TL;DR:** Code coverage tools like [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but not least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
 
@@ -818,7 +801,7 @@ All statements above will return false if used with `===`
 <br/><br/>
 
 ## ![✔] 5.8. Discover errors and downtime using APM products
-
+jhkgdfkjhdfsgkjhdfsgsdfkjh
 **TL;DR:** Application monitoring and performance products (a.k.a. APM) proactively gauge codebase and API so they can auto-magically go beyond traditional monitoring and measure the overall user-experience across services and tiers. For example, some APM products can highlight a transaction that loads too slow on the end-user's side while suggesting the root cause
 
 **Otherwise:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real-world scenario and how these affect the UX
@@ -916,6 +899,11 @@ Also known as correlation id / transit id / tracing id / request id / request co
 🔗 [**Read More: Use an LTS release of Node.js**](./sections/production/LTSrelease.md)
 
 <br/><br/>
+## ![✔] 5.18. Don't route logs within the app
+
+**TL;DR:** Log destinations should not be hard-coded by developers within the application code, but instead should be defined by the execution environment the application runs in. Developers should write logs to `stdout` using a logger utility and then let the execution environment (container, server, etc.) pipe the `stdout` stream to the appropriate destination (i.e. Splunk, Graylog, ElasticSearch, etc.).
+
+**Otherwise:** Application handling log routing === hard to scale, loss of logs, poor separation of concerns
 
 ## ![✔] 5.18. Don't route logs within the app
 
@@ -925,7 +913,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 🔗 [**Read More: Log Routing**](./sections/production/logrouting.md)
 
-<br/><br/>
+<br/><br/>dssdfsdfadfsa
 
 ## ![✔] 5.19. Install your packages with `npm ci`
 
@@ -1072,23 +1060,7 @@ Also known as correlation id / transit id / tracing id / request id / request co
 🔗 [**Read More: Blocklist JSON Web Tokens**](./sections/security/expirejwt.md)
 
 <br/><br/>
-
-## ![✔] 6.12. Prevent brute-force attacks against authorization
-
-<a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
-
-**TL;DR:** A simple and powerful technique is to limit authorization attempts using two metrics:
-
-1. The first is number of consecutive failed attempts by the same user unique ID/name and IP address.
-2. The second is number of failed attempts from an IP address over some long period of time. For example, block an IP address if it makes 100 failed attempts in one day.
-
-**Otherwise:** An attacker can issue unlimited automated password attempts to gain access to privileged accounts on an application
-
-🔗 [**Read More: Login rate limiting**](./sections/security/login-rate-limit.md)
-
-<br/><br/>
-
-## ![✔] 6.13. Run Node.js as non-root user
+ewer
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A5:Broken%20Access%20Access%20Control-green.svg" alt=""/></a>
 
