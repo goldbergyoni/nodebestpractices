@@ -23,7 +23,7 @@ automations:
       - action: add-comment@v1
         args:
           comment: |
-            activity result: {{ repo | rankByGitActivity(gt=50, weeks=12) | dump | safe }}
+            active_coders: {{ repo | rankByGitActivity(gt=50, weeks=12) | dump | safe }}
   is_first_commit:
     if: 
       - {{ repo.contributors | isFirstCommit(branch.author) }}
