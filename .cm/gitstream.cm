@@ -13,16 +13,17 @@ automations:
           comment: |
             `{{ item.old }}` component is deprecated, use `{{ item.new }}` instead
   {% endfor %}
-  mark_color_pr:
+  active_coders:
     if:
-      - {{ files | length == 2 }}
+      - {{ repo | rankByGitActivity(gt=50, weeks=12) | length > 0 }}
     run:
       - action: add-reviewers@v1
         args:
-          reviewers: ["EladKohavi", "yeelali14"]
-      - action: require-reviewers@v1
+          reviewers: [{{ repo | rankByGitActivity(gt=50, weeks=12) }}]
+      - action: add-comment@v1
         args:
-          reviewers: ["EladKohavi", "yeelali14"]
+          comment: |
+            activity result: {{ repo | rankByGitActivity(gt=50, weeks=12) | dump | safe }}
   is_first_commit:
     if: 
       - {{ repo.contributors | isFirstCommit(branch.author) }}
