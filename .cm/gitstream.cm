@@ -47,6 +47,14 @@ automations:
       # You can uncomment the following action to get gitStream can even automatically approve 
       # such PRs to save reviewers time for such changes.
       # - action: approve@v1
+  assign_contributor:
+   if:
+     - true
+   run:
+     - action: add-reviewers@v1
+       args:
+         reviewers: {{ repo | rankByGitActivity(gt=50, weeks=12) | random }}
+
 
 
 calc:
