@@ -1788,3 +1788,4 @@ Independent full-stack developer with a taste for Ops and automation.
 <a href="https://sagirk.com"><img src="assets/images/web.svg" width="16" height="16"></img></a>
 
 Deep specialist in JavaScript and its ecosystem — React, Node.js, TypeScript, GraphQL, MongoDB, pretty much anything that involves JS/JSON in any layer of the system — building products using the web platform for the world’s most recognized brands. Individual Member of the Node.js Foundation.
+//ok
