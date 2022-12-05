@@ -126,7 +126,7 @@ async function processMDFile(filePath = '/', templateHTML = null) {
     return outHtml;
 }
 
-const internalRefRegExp = /^((?!http)(?!#)(?!\/\/).)*$/; // Doesn't start with 'http', '//', or '#'
+const internalRefRegExp = /^((?!http)(?!data:)(?!#)(?!\/\/).)*$/; // Doesn't start with 'http', 'data:', '#', or '//'
 async function inlineLocalReferences(html, filePath = '/') {
     const $ = cheerio.load(html);
     const as = $('a');
