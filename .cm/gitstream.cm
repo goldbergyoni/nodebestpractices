@@ -1,65 +1,16 @@
-# -*- mode: yaml -*-
-
-manifest:
-  version: 1.0
-
-# The `automations` section includes a list of automation that applies 
-# to the repository in which gitStream is installed. Each automation has an 
-# `if` key with a list of the necessary assertions, as well as a `run` key with a
-# list of all actions. All the listed assertions need to pass in order 
-# for the following actions to be executed (there is AND relation between conditions).
-
-# Each automation under the `automations` section is independent of the others. 
-# Every time a PR is opened or changed, the automation's conditions are evaluated (the `if`). 
-# The actions under `run` are executed one by one if all the conditions pass. 
-
-# Conditions consists of an expression, which are wrapped with double curly braces, and 
-# includes a context variable like `files` and filter functions like `length`. Filters 
-# functions are essentially functions that can be applied to context variables. They are 
-# called with a pipe operator (|) and can take arguments. Read more on https://docs.gitstream.cm
-
 automations:
-  # This is the name of the review automation. You can use whatever name, a meaningful name 
-  # will help to identify it in the future. Each automation name in this file should be unique.
-  estimated_time_to_review:
+  double_review:
     if:
-      - true
+      - {{ files | reject(list=agent_ignore_files) | match(regex='agent\\/') | some }}
     run:
-      - action: add-label@v1
+      - action: set-required-approvals@v1
         args:
-          label: "{{ calc.etr }} min review"
-          color: {{ 'E94637' if (calc.etr >= 20) else ('FBBD10' if (calc.etr >= 5) else '36A853') }}
+          approvals: 2
 
-  safe_changes:
-    # The `if` key has a list of conditions, each condition is specified as a Jinja expression
-    # in a double curly braces. Expressions are evaluated by gitStream on a PR when triggered.
-    if:
-      # Given the PR code changes, check that only formatting changes were made 
-      - {{ is.formatting or is.docs or is.tests }}
-    # `run` key has a list of actions, which are executed one by one whenever the automation 
-    # conditions are met. 
-    run: 
-      # When the changes are validated as formatting only, you can help to speed up the review 
-      # by adding a label that marks it accordingly.
-      - action: add-label@v1
-        args:
-          label: 'safe-changes'
-      # You can uncomment the following action to get gitStream can even automatically approve 
-      # such PRs to save reviewers time for such changes.
-      # - action: approve@v1
-  assign_contributor:
-   if:
-     - true
-   run:
-     - action: add-reviewers@v1
-       args:
-         reviewers: {{ repo | rankByGitActivity(gt=10, weeks=6) }}
-
-
-
-calc:
-  etr: {{ branch | estimatedReviewTime }}
-is:
-  formatting: {{ source.diff.files | isFormattingChange }}
-  docs: {{ files | allDocs }}
-  tests: {{ files | allTests }}
+agent_ignore_files:
+  - README.md
+  - version.txt
+  - version_azure_plugin.txt
+  - Dockerfile
+  - tests
+  - .vscode
