@@ -1,16 +1,17 @@
 automations:
-  double_review:
+  estimated_time_to_review:
     if:
-      - {{ files | reject(list=agent_ignore_files) | match(regex='agent\\/') | some }}
+      - true
     run:
-      - action: set-required-approvals@v1
+      - action: add-label@v1
         args:
-          approvals: 2
+          label: "{{ calc.etr }} min review"
+          color: {{ 'E94637' if (calc.etr >= 20) else ('FBBD10' if (calc.etr >= 5) else '36A853') }}
 
-agent_ignore_files:
-  - README.md
-  - version.txt
-  - version_azure_plugin.txt
-  - Dockerfile
-  - tests
-  - .vscode
+
+
+# To simplify the automation, this calculation is placed under a unique YAML key.
+# The result is is assigned to `calc.etr` which is used in the automation above.
+# You can add as many keys as you like.
+calc:
+  etr: {{ branch | estimatedReviewTime }}
