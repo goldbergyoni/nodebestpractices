@@ -1770,6 +1770,7 @@ Thanks goes to these wonderful people who have contributed to this repository!
     <tr>
       <td align="center"><a href="https://github.com/ShiChenCong"><img src="https://avatars.githubusercontent.com/u/22486446?v=4" width="100px;" alt="Scc"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Scc</b></sub></a><br /><a href="#translation-ShiChenCong" title="Translation">🌍</a></td>
       <td align="center"><a href="https://www.mauroaccornero.it"><img src="https://avatars.githubusercontent.com/u/1875822?v=4" width="100px;" alt="Mauro Accornero"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Mauro Accornero</b></sub></a><br /><a href="#content-mauroaccornero" title="Content">🖋</a></td>
+      <td align="center"><a href="https://github.com/Kristories"><img src="https://avatars.githubusercontent.com/u/774338?v=4" width="100px;" alt="Wahyu Kristianto"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Wahyu Kristianto</b></sub></a><br /><a href="#content-Kristories" title="Content">🖋</a></td>
     </tr>
   </tbody>
 </table>
