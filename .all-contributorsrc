@@ -1741,11 +1741,21 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "Kristories",
+      "name": "Wahyu Kristianto",
+      "avatar_url": "https://avatars.githubusercontent.com/u/774338?v=4",
+      "profile": "https://github.com/Kristories",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
   "projectOwner": "goldbergyoni",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitConvention": "angular"
 }
