@@ -73,7 +73,7 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 - Don't include secrets in log statements
 - Avoid showing plain passwords in the frontend, take necessary measures in the backend and never store sensitive information in plaintext
 
-## ![✔] OWASP A9: Using Components With Known Security Vulneraibilities
+## ![✔] OWASP A9: Using Components With Known Security Vulnerabilities
 
 - Scan docker images for known vulnerabilities (using Docker's and other vendors' scanning services)
 - Enable automatic instance (machine) patching and upgrades to avoid running old OS versions that lack security patches
