@@ -1750,6 +1750,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "moosashah",
+      "name": "Moosa Shah",
+      "avatar_url": "https://avatars.githubusercontent.com/u/75198187?v=4",
+      "profile": "http://moosashah.com",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
