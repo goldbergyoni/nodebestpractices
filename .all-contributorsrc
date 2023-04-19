@@ -1741,11 +1741,21 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "no-yan",
+      "name": "no-yan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/63000297?v=4",
+      "profile": "https://github.com/no-yan",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
   "projectOwner": "goldbergyoni",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitConvention": "angular"
 }
