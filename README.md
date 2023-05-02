@@ -221,11 +221,23 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 # `1. Project Structure Practices`
 
-## ![✔] 1.1 Structure your solution by components
+## ![✔] 1.1 Structure your solution by business components
 
-**TL;DR:** The worst large applications pitfall is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Instead, partition your code into components, each gets its folder or a dedicated codebase, and ensure that each unit is kept small and simple. Visit 'Read More' below to see examples of correct project structure
+**TL;DR:** The root of a system should contain folders or repositories that represent reasonably sized business modules. Each component represents a product domain (i.e., bounded context), like user-component, order-component, etc. Each component has its own API, logic, and logical database. What is the significant merit? With an autonomous component, every change is performed over a more granular and smaller scope - the mental overload, development friction, and deployment fear are much smaller and better. As a result, developers can move much faster. This does not necessarily demand physical separation and can be achieved using a Monorepo or with a multi-repo
 
-**Otherwise:** When developers who code new features struggle to realize the impact of their change and fear to break other dependent components - deployments become slower and riskier. It's also considered harder to scale-out when all the business units are not separated
+```bash
+my-system
+├─ apps (components)
+│  ├─ orders
+│  ├─ users
+│  ├─ payments
+├─ libraries (generic cross-component functionality)
+│  ├─ logger
+│  ├─ authenticator
+```
+
+**Otherwise:** when artifacts from various modules/topics are mixed together, there are great chances of a tightly-coupled 'spaghetti' system. For example, when 'module-a' controller might call 'module-b service', every code change might affect any other module and file. With this approach,  developers who code new features struggle to realize the scope and impact of their change. Consequently, they fear breaking other modules, and each deployment becomes slower and riskier
+
 
 🔗 [**Read More: structure by components**](./sections/projectstructre/breakintcomponents.md)
 
