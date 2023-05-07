@@ -85,7 +85,7 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 <details>
   <summary>
-    <a href="#3-code-style-practices">3. Code Style Practices (12)</a>
+    <a href="#3-code-patterns-and-style-practices">3. Code Style Practices (12)</a>
   </summary>
 
 &emsp;&emsp;[3.1 Use ESLint `#strategic`](#-31-use-eslint)</br>
@@ -282,7 +282,15 @@ my-system
 
 🔗 [**Read More: configuration best practices**](./sections/projectstructre/configguide.md)
 
-## ![✔] 1.5 Use TypeScript sparingly and thoughtfully
+## ![✔] 1.5 Consider all the consequences when choosing the main framework
+
+**TL;DR:** When building apps and APIs using a framework is mandatory. It's easy to overlook alternative frameworks or important considerations and then finally land on a sub optimal option. As of 2023/2024, we believe that these four frameworks are worth considering: Nest.js, Fastify, express, and Koa. Click read more for a detailed pros/cons of each framework. Simplistically, we believe that Nest.js the best match for teams who wish to go OOP and/or build large-scale apps that can't get partitioned into smaller deployment units. Fastify is our recommendation for apps with reasonably-sized components that are built around simple Node.js mechanics. Read our [full considerations guide here](./sections/projectstructre/choose-framework.md)
+
+**Otherwise:** Due to the overwhelming amount of considerations, it's easy to make decisions based on partial information and compare apples with oranges. For example, it's believed that Fastify is a minimal web-server that should get compared with express only. In reality, it's a rich framework with many official plugins that cover many concerns
+
+🔗 [**Read More: configuration best practices**](./sections/projectstructre/choose-framework.md)
+
+## ![✔] 1.6 Use TypeScript sparingly and thoughtfully
 
 **TL;DR:** Coding without type safety is no longer an option, TypeScript is the most popular option for this mission. Use it to define variables and functions return types. With that, it is also a double edge sword that can greatly _encourage_ complexity with its additional ~ 50 keywords and sophisticated features. Consider using it sparingly for simple types only
 
@@ -422,7 +430,7 @@ especially if the cause of the abnormal behavior is inside of the missing functi
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `3. Code Style Practices`
+# `3. Code Patterns And Style Practices`
 
 ## ![✔] 3.1 Use ESLint
 
@@ -431,6 +439,12 @@ especially if the cause of the abnormal behavior is inside of the missing functi
 **Otherwise:** Developers will focus on tedious spacing and line-width concerns and time might be wasted overthinking the project's code style
 
 🔗 [**Read More: Using ESLint and Prettier**](./sections/codestylepractices/eslint_prettier.md)
+
+## ![✔] 3.2 Avoid effects outside of functions
+
+**TL;DR:** Avoid putting code with effects like network or DB calls outside of functions. Such a code will be executed immediately when another file requires the file. This 'floating' code might get executed when the underlying system is not ready yet. It also comes with a performance penalty even when this module's functions will finally not be used in runtime. Last, mocking these DB/network calls for testing is harder outside of functions. Instead, put this code with effects inside functions that should get called explicitly. If some DB/network code must get executed right when the module loads, consider using the factory or revealing module patterns
+
+**Otherwise:** A typical web framework sets error handler, environment variables and monitoring. When DB/network calls are made before the web framework is initialized, they won't be monitored and might fail due to a lack of configuration data
 
 <br/><br/>
 
@@ -681,6 +695,14 @@ All statements above will return false if used with `===`
 **TL;DR:** Use a code linter to check the basic quality and detect anti-patterns early. Run it before any test and add it as a pre-commit git-hook to minimize the time needed to review and correct any issue. Also check [Section 3](#3-code-style-practices) on Code Style Practices
 
 **Otherwise:** You may let pass some anti-pattern and possible vulnerable code to your production environment.
+
+<br/><br/>
+
+## ![✔] 4.5 Ensure Node.js version is unified
+
+**TL;DR:** Use tools that encourage or enforce the same Node.js version across different environments and developers. Tools like [nvm](https://github.com/nvm-sh/nvm), and [Volta](https://volta.sh/) allow specifying the project's version in a file so each team member can run a single command to conform with the project's version. Optionally, this definition can be replicated to CI and the production runtime (e.g., copy the specified value to .Dockerfile build and to the CI Node.js definition)
+
+**Otherwise:** A developer might face or miss an error because she uses a different Node.js version than her teammates. Even worse - the production runtime might be different than the environment where tests were executed
 
 <br/><br/>
 
