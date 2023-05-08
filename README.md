@@ -183,7 +183,8 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 &emsp;&emsp;[6.23. Avoid DOS attacks by explicitly setting when a process should crash `#advanced`](#-623-avoid-dos-attacks-by-explicitly-setting-when-a-process-should-crash)</br>
 &emsp;&emsp;[6.24. Prevent unsafe redirects](#-624-prevent-unsafe-redirects)</br>
 &emsp;&emsp;[6.25. Avoid publishing secrets to the npm registry](#-625-avoid-publishing-secrets-to-the-npm-registry)</br>
-&emsp;&emsp;[6.26. Import built-in modules using the 'node:' protocol #new](#-626-import-built-in-modules-using-the-'node:'-protocol)</br>
+&emsp;&emsp;[6.26. 6.26 Inspect for outdated packages](#-626-inspect-for-outdated-packages)</br>
+&emsp;&emsp;[6.27. Import built-in modules using the 'node:' protocol #new](#-627-import-built-in-modules-using-the-node-protocol)</br>
 
 </details>
 
