@@ -28,11 +28,11 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 # Latest Best Practices and News
 
-- **✨ 80,000 stars**: Blushing, surprised and proud!
+- **🛰 2023 edition is released soon**: We're now writing the next edition, stay tuned?
+
+- **✨ 89,000 stars**: Blushing, surprised and proud!
 
 - **🔖 New menu and tags**: Our menu is collapsible now and includes `#tags`. New visitors can read `#strategic` items first. Returning visitors can focus on `#new` content. Seniors can filter for `#advanced` items. Courtesy of the one and only [Rubek Joshi](https://github.com/rubek-joshi)
-
-- **👨‍👩‍👧‍👦 New family member!**: A new repository joins our family - [Node.js Integration Tests Best Practices ✨](https://github.com/testjavascript/nodejs-integration-tests-best-practices). It includes 40+ best practices for writing awesome and performant Node.js component tests
 
 - **![FR](./assets/flags/FR.png) French translation!1! :** The latest translation that joins our international guide is French. Bienvenue
 
@@ -55,11 +55,13 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
     <a href="#1-project-architecture-practices">1. Project Architecture Practices (5)</a>
   </summary>
 
-&emsp;&emsp;[1.1 Structure your solution by components `#strategic`](#-11-structure-your-solution-by-components)</br>
-&emsp;&emsp;[1.2 Layer your components, keep the web layer within its boundaries `#strategic`](#-12-layer-your-components-keep-the-web-layer-within-its-boundaries)</br>
+1.2 Layer your components with 3-tiers, keep the web layer within its boundaries
+&emsp;&emsp;[1.1 Structure your solution by components `#strategic`](#-11-structure-your-solution-by-business-components)</br>
+&emsp;&emsp;[1.2 Layer your components, keep the web layer within its boundaries `#strategic`](#-12-layer-your-components-with-3-tiers-keep-the-web-layer-within-its-boundaries)</br>
 &emsp;&emsp;[1.3 Wrap common utilities as npm packages](#-13-wrap-common-utilities-as-npm-packages)</br>
-&emsp;&emsp;[1.4 Separate Express 'app' and 'server'](#-14-separate-express-app-and-server)</br>
-&emsp;&emsp;[1.5 Use environment aware, secure and hierarchical config `#modified-recently`](#-15-use-environment-aware-secure-and-hierarchical-config)</br>
+&emsp;&emsp;[1.4 Use environment aware, secure and hierarchical config `#updated`](#-15-use-environment-aware-secure-and-hierarchical-config)</br>
+&emsp;&emsp;[1.5 Consider all the consequences when choosing the main framework `#new`](#-15-consider-all-the-consequences-when-choosing-the-main-framework)</br>
+&emsp;&emsp;[1.6 Use TypeScript sparingly and thoughtfully `#new`](#-16-use-typescript-sparingly-and-thoughtfully)</br>
 
 </details>
 
@@ -662,6 +664,12 @@ All statements above will return false if used with `===`
 
 # `4. Testing And Overall Quality Practices`
 
+\_We have a dedicated guides for testing, see below. The practices here are a brief summary of these guides
+
+a. [JavaScript testing best practices](https://github.com/goldbergyoni/javascript-testing-best-practices)
+b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodejs-integration-tests-best-practices)
+\_
+
 ## ![✔] 4.1 At the very least, write API (component) testing
 
 **TL;DR:** Most projects just don't have any automated testing due to short timetables or often the 'testing project' ran out of control and was abandoned. For that reason, prioritize and start with API testing which is the easiest way to write and provides more coverage than unit testing (you may even craft API tests without code using tools like [Postman](https://www.getpostman.com/)). Afterwards, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc
@@ -690,15 +698,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.4 Detect code issues with a linter
-
-**TL;DR:** Use a code linter to check the basic quality and detect anti-patterns early. Run it before any test and add it as a pre-commit git-hook to minimize the time needed to review and correct any issue. Also check [Section 3](#3-code-style-practices) on Code Style Practices
-
-**Otherwise:** You may let pass some anti-pattern and possible vulnerable code to your production environment.
-
-<br/><br/>
-
-## ![✔] 4.5 Ensure Node.js version is unified
+## ![✔] 4.4 Ensure Node.js version is unified
 
 **TL;DR:** Use tools that encourage or enforce the same Node.js version across different environments and developers. Tools like [nvm](https://github.com/nvm-sh/nvm), and [Volta](https://volta.sh/) allow specifying the project's version in a file so each team member can run a single command to conform with the project's version. Optionally, this definition can be replicated to CI and the production runtime (e.g., copy the specified value to .Dockerfile build and to the CI Node.js definition)
 
@@ -716,15 +716,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.6 Constantly inspect for vulnerable dependencies
-
-**TL;DR:** Even the most reputable dependencies such as Express have known vulnerabilities. This can get easily tamed using community and commercial tools such as 🔗 [npm audit](https://docs.npmjs.com/cli/audit) and 🔗 [snyk.io](https://snyk.io) that can be invoked from your CI on every build
-
-**Otherwise:** Keeping your code clean from vulnerabilities without dedicated tools will require to constantly follow online publications about new threats. Quite tedious
-
-<br/><br/>
-
-## ![✔] 4.7 Tag your tests
+## ![✔] 4.6 Tag your tests
 
 **TL;DR:** Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/): mocha --grep 'sanity'
 
@@ -732,7 +724,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.8 Check your test coverage, it helps to identify wrong test patterns
+## ![✔] 4.7 Check your test coverage, it helps to identify wrong test patterns
 
 **TL;DR:** Code coverage tools like [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but not least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
 
@@ -740,15 +732,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.9 Inspect for outdated packages
-
-**TL;DR:** Use your preferred tool (e.g. `npm outdated` or [npm-check-updates](https://www.npmjs.com/package/npm-check-updates)) to detect installed outdated packages, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a severe scenario might be when an installed package is 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
-
-**Otherwise:** Your production will run packages that have been explicitly tagged by their author as risky
-
-<br/><br/>
-
-## ![✔] 4.10 Use production-like environment for e2e testing
+## ![✔] 4.8 Use production-like environment for e2e testing
 
 **TL;DR:** End to end (e2e) testing which includes live data used to be the weakest link of the CI process as it depends on multiple heavy services like DB. Use an environment which is as close to your real production environment as possible like a-continue (Missed -continue here, needs content. Judging by the **Otherwise** clause, this should mention docker-compose)
 
@@ -756,7 +740,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.11 Refactor regularly using static analysis tools
+## ![✔] 4.9 Refactor regularly using static analysis tools
 
 **TL;DR:** Using static analysis tools helps by giving objective ways to improve code quality and keeps your code maintainable. You can add static analysis tools to your CI build to fail when it finds code smells. Its main selling points over plain linting are the ability to inspect quality in the context of multiple files (e.g. detect duplications), perform advanced analysis (e.g. code complexity), and follow the history and progress of code issues. Two examples of tools you can use are [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) and [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)).
 
@@ -766,7 +750,7 @@ All statements above will return false if used with `===`
 
 <br/><br/>
 
-## ![✔] 4.12 Mock responses of external HTTP services
+## ![✔] 4.10 Mock responses of external HTTP services
 
 **TL;DR:** Use network mocking tools to simulate responses of external collaborators' services that are approached over the network (e.g., REST, Graph). This is imperative not only to isolate the component under test but mostly to simulate non-happy path flows. Tools like [nock](https://github.com/nock/nock) (in-process) or [Mock-Server](https://www.mock-server.com/) allow defining a specific response of external service in a single line of code. Remember to simulate also errors, delays, timeouts, and any other event that is likely to happen in production
 
@@ -774,7 +758,7 @@ All statements above will return false if used with `===`
 
 🔗 [**Read More: Mock external services**](./sections/testingandquality/mock-external-services.md)
 
-## ![✔] 4.13 Test your middlewares in isolation
+## ![✔] 4.11 Test your middlewares in isolation
 
 **TL;DR:** When a middleware holds some immense logic that spans many requests, it is worth testing it in isolation without waking up the entire web framework. This can be easily achieved by stubbing and spying on the {req, res, next} objects
 
@@ -782,7 +766,7 @@ All statements above will return false if used with `===`
 
 🔗 [**Read More: Test middlewares in isolation**](./sections/testingandquality/test-middlewares.md)
 
-## ![✔] 4.14 Specify a port in production, randomize in testing
+## ![✔] 4.12 Specify a port in production, randomize in testing
 
 **TL;DR:** When testing against the API, it's common and desirable to initialize the web server inside the tests. Let the server randomize the web server port in testing to prevent collisions. If you're using Node.js http server (used by most frameworks), doing so demands nothing but passing a port number zero - this will randomize an available port
 
@@ -790,7 +774,7 @@ All statements above will return false if used with `===`
 
 🔗 [**Read More: Randomize a port for testing**](./sections/testingandquality/randomize-port.md)
 
-## ![✔] 4.15 Test the five possible outcomes
+## ![✔] 4.13 Test the five possible outcomes
 
 **TL;DR:** When testing a flow, ensure to cover the five potential categories. Any time some action is triggered (e.g., API call), a reaction occurs, a meaningful **outcome** is produced and calls for testing. There are five possible outcome types for every flow, consider writing a test for each: a response, a visible state change (e.g., DB), an outgoing API call, a new message in a queue, and an observability call (e.g., logging, metric). See a [checklist here](https://testjavascript.com/wp-content/uploads/2021/10/the-backend-checklist.pdf). Each type of outcome comes with unique challenges and techniques to mitigate those challenges - we have a dedicated guide about this topic: [Node.js testing - beyond the basics](https://github.com/testjavascript/nodejs-integration-tests-best-practices)
 
@@ -1295,7 +1279,17 @@ Also known as correlation id / transit id / tracing id / request id / request co
 
 🔗 [**Read More: Avoid publishing secrets**](./sections/security/avoid_publishing_secrets.md)
 
-## ![✔] 6.26. Import built-in modules using the 'node:' protocol
+<br/><br/>
+
+## ![✔] 6.26 Inspect for outdated packages
+
+**TL;DR:** Use your preferred tool (e.g. `npm outdated` or [npm-check-updates](https://www.npmjs.com/package/npm-check-updates)) to detect installed outdated packages, inject this check into your CI pipeline and even make a build fail in a severe scenario. For example, a severe scenario might be when an installed package is 5 patch commits behind (e.g. local version is 1.3.1 and repository version is 1.3.8) or it is tagged as deprecated by its author - kill the build and prevent deploying this version
+
+**Otherwise:** Your production will run packages that have been explicitly tagged by their author as risky
+
+<br/><br/>
+
+## ![✔] 6.27. Import built-in modules using the 'node:' protocol
 
 <a href="https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20A06:2021 – Vulnerable and Outdated Components-green.svg" alt=""/></a>
 
