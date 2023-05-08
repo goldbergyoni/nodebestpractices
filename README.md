@@ -54,12 +54,10 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
   <summary>
     <a href="#1-project-architecture-practices">1. Project Architecture Practices (5)</a>
   </summary>
-
-1.2 Layer your components with 3-tiers, keep the web layer within its boundaries
 &emsp;&emsp;[1.1 Structure your solution by components `#strategic`](#-11-structure-your-solution-by-business-components)</br>
 &emsp;&emsp;[1.2 Layer your components, keep the web layer within its boundaries `#strategic`](#-12-layer-your-components-with-3-tiers-keep-the-web-layer-within-its-boundaries)</br>
 &emsp;&emsp;[1.3 Wrap common utilities as npm packages](#-13-wrap-common-utilities-as-npm-packages)</br>
-&emsp;&emsp;[1.4 Use environment aware, secure and hierarchical config `#updated`](#-15-use-environment-aware-secure-and-hierarchical-config)</br>
+&emsp;&emsp;[1.4 Use environment aware, secure and hierarchical config `#updated`](#-14-use-environment-aware-secure-and-hierarchical-config)</br>
 &emsp;&emsp;[1.5 Consider all the consequences when choosing the main framework `#new`](#-15-consider-all-the-consequences-when-choosing-the-main-framework)</br>
 &emsp;&emsp;[1.6 Use TypeScript sparingly and thoughtfully `#new`](#-16-use-typescript-sparingly-and-thoughtfully)</br>
 
