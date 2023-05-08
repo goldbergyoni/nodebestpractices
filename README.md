@@ -52,8 +52,9 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 <details>
   <summary>
-    <a href="#1-project-architecture-practices">1. Project Architecture Practices (5)</a>
+    <a href="#1-project-architecture-practices">1. Project Architecture Practices (6)</a>
   </summary>
+  
 &emsp;&emsp;[1.1 Structure your solution by components `#strategic`](#-11-structure-your-solution-by-business-components)</br>
 &emsp;&emsp;[1.2 Layer your components, keep the web layer within its boundaries `#strategic`](#-12-layer-your-components-with-3-tiers-keep-the-web-layer-within-its-boundaries)</br>
 &emsp;&emsp;[1.3 Wrap common utilities as npm packages](#-13-wrap-common-utilities-as-npm-packages)</br>
