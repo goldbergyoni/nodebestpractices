@@ -782,6 +782,22 @@ All statements above will return false if used with `===`
 
 🔗 [**Read More: Test middlewares in isolation**](./sections/testingandquality/test-middlewares.md)
 
+## ![✔] 4.14 Specify a port in production, randomize in testing
+
+**TL;DR:** When testing against the API, it's common and desirable to initialize the web server inside the tests. Let the server randomize the web server port in testing to prevent collisions. If you're using Node.js http server (used by most frameworks), doing so demands nothing but passing a port number zero - this will randomize an available port
+
+**Otherwise:** Specifying a fixed port will prevent two testing processes from running at the same time. Most of the modern test runners run with multiple processes by default
+
+🔗 [**Read More: Randomize a port for testing**](./sections/testingandquality/randomize-port.md)
+
+## ![✔] 4.15 Test the five possible outcomes
+
+**TL;DR:** When testing a flow, ensure to cover the five potential categories. Any time some action is triggered (e.g., API call), a reaction occurs, a meaningful **outcome** is produced and calls for testing. There are five possible outcome types for every flow, consider writing a test for each: a response, a visible state change (e.g., DB), an outgoing API call, a new message in a queue, and an observability call (e.g., logging, metric). See a [checklist here](https://testjavascript.com/wp-content/uploads/2021/10/the-backend-checklist.pdf). Each type of outcome comes with unique challenges and techniques to mitigate those challenges - we have a dedicated guide about this topic: [Node.js testing - beyond the basics](https://github.com/testjavascript/nodejs-integration-tests-best-practices)
+
+**Otherwise:** Consider a case when testing the addition of a new product to the system. It's common to see tests that assert on a valid response only. What if the product was failed to persist regardless of the positive response? what if when adding a new product demands calling some external service, or putting a message in the queue? there are typically more outcomes to consider than what meets the eye
+
+🔗 [**Read More: Test five outcomes**](./sections/testingandquality/test-five-outcomes.md)
+
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
