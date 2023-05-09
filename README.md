@@ -227,7 +227,7 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 ## ![✔] 1.1 Structure your solution by business components
 
-**TL;DR:** The root of a system should contain folders or repositories that represent reasonably sized business modules. Each component represents a product domain (i.e., bounded context), like user-component, order-component, etc. Each component has its own API, logic, and logical database. What is the significant merit? With an autonomous component, every change is performed over a more granular and smaller scope - the mental overload, development friction, and deployment fear are much smaller and better. As a result, developers can move much faster. This does not necessarily demand physical separation and can be achieved using a Monorepo or with a multi-repo
+**TL;DR:** The root of a system should contain folders or repositories that represent reasonably sized business modules. Each component represents a product domain (i.e., bounded context), like 'user-component', 'order-component', etc. Each component has its own API, logic, and logical database. What is the significant merit? With an autonomous component, every change is performed over a granular and smaller scope - the mental overload, development friction, and deployment fear are much smaller and better. As a result, developers can move much faster. This does not necessarily demand physical separation and can be achieved using a Monorepo or with a multi-repo
 
 ```bash
 my-system
@@ -240,7 +240,7 @@ my-system
 │  ├─ authenticator
 ```
 
-**Otherwise:** when artifacts from various modules/topics are mixed together, there are great chances of a tightly-coupled 'spaghetti' system. For example, when 'module-a' controller might call 'module-b service', every code change might affect any other module and file. With this approach, developers who code new features struggle to realize the scope and impact of their change. Consequently, they fear breaking other modules, and each deployment becomes slower and riskier
+**Otherwise:** when artifacts from various modules/topics are mixed together, there are great chances of a tightly-coupled 'spaghetti' system. For example, in an architecture where 'module-a controller' might call 'module-b service', there are no clear modularity borders - every code change might affect anything else. With this approach, developers who code new features struggle to realize the scope and impact of their change. Consequently, they fear breaking other modules, and each deployment becomes slower and riskier
 
 🔗 [**Read More: structure by components**](./sections/projectstructre/breakintcomponents.md)
 
@@ -261,7 +261,7 @@ my-system
    │  ├─ data-access # DB calls w/o ORM
 ```
 
-**Otherwise:** It's often seen that developer pass web objects like request/response to functions in the domain/logic layer - this violates the separation principle and makes it harder to access the the logic by other clients like testing code, scheduled jobs, message queues, etc
+**Otherwise:** It's often seen that developer pass web objects like request/response to functions in the domain/logic layer - this violates the separation principle and makes it harder to access later the the logic code by other clients like testing code, scheduled jobs, message queues, etc
 
 🔗 [**Read More: layer your app**](./sections/projectstructre/createlayers.md)
 
@@ -287,7 +287,7 @@ my-system
 
 ## ![✔] 1.5 Consider all the consequences when choosing the main framework
 
-**TL;DR:** When building apps and APIs using a framework is mandatory. It's easy to overlook alternative frameworks or important considerations and then finally land on a sub optimal option. As of 2023/2024, we believe that these four frameworks are worth considering: Nest.js, Fastify, express, and Koa. Click read more for a detailed pros/cons of each framework. Simplistically, we believe that Nest.js the best match for teams who wish to go OOP and/or build large-scale apps that can't get partitioned into smaller deployment units. Fastify is our recommendation for apps with reasonably-sized components that are built around simple Node.js mechanics. Read our [full considerations guide here](./sections/projectstructre/choose-framework.md)
+**TL;DR:** When building apps and APIs, using a framework is mandatory. It's easy to overlook alternative frameworks or important considerations and then finally land on a sub optimal option. As of 2023/2024, we believe that these four frameworks are worth considering: [Nest.js](https://nestjs.com/), [Fastify](https://www.fastify.io/), [express](https://expressjs.com/), and [Koa](https://koajs.com/). Click read more below for a detailed pros/cons of each framework. Simplistically, we believe that Nest.js is the best match for teams who wish to go OOP and/or build large-scale apps that can't get partitioned into smaller _autonomous_ components. Fastify is our recommendation for apps with reasonably-sized components (e.g., Microservices) that are built around simple Node.js mechanics. Read our [full considerations guide here](./sections/projectstructre/choose-framework.md)
 
 **Otherwise:** Due to the overwhelming amount of considerations, it's easy to make decisions based on partial information and compare apples with oranges. For example, it's believed that Fastify is a minimal web-server that should get compared with express only. In reality, it's a rich framework with many official plugins that cover many concerns
 
@@ -295,7 +295,7 @@ my-system
 
 ## ![✔] 1.6 Use TypeScript sparingly and thoughtfully
 
-**TL;DR:** Coding without type safety is no longer an option, TypeScript is the most popular option for this mission. Use it to define variables and functions return types. With that, it is also a double edge sword that can greatly _encourage_ complexity with its additional ~ 50 keywords and sophisticated features. Consider using it sparingly for simple types only
+**TL;DR:** Coding without type safety is no longer an option, TypeScript is the most popular option for this mission. Use it to define variables and functions return types. With that, it is also a double edge sword that can greatly _encourage_ complexity with its additional ~ 50 keywords and sophisticated features. Consider using it sparingly, mostly with simple types, and utilize advanced features solely when absolutely necessary
 
 **Otherwise:** [Researches](https://earlbarr.com/publications/typestudy.pdf) show that using TypeScript can help in detecting ~20% bugs earlier. Without it, also the developer experience in the IDE is intolerable. On the flip side, 80% of other bugs were not discovered using types. Consequently, typed syntax is valuable but limited. Only efficient tests can discover the whole spectrum of bugs, including type-related bugs. It might also defeat its purpose: sophisticated code features are likely to increase the code complexity, which by itself increases both the amount of bugs and the average bug fix time
 
@@ -703,7 +703,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 4.4 Ensure Node version is unified
 
-**TL;DR:** Use tools that encourage or enforce the same Node.js version across different environments and developers. Tools like [nvm](https://github.com/nvm-sh/nvm), and [Volta](https://volta.sh/) allow specifying the project's version in a file so each team member can run a single command to conform with the project's version. Optionally, this definition can be replicated to CI and the production runtime (e.g., copy the specified value to .Dockerfile build and to the CI Node.js definition)
+**TL;DR:** Use tools that encourage or enforce the same Node.js version across different environments and developers. Tools like [nvm](https://github.com/nvm-sh/nvm), and [Volta](https://volta.sh/) allow specifying the project's version in a file so each team member can run a single command to conform with the project's version. Optionally, this definition can be replicated to CI and the production runtime (e.g., copy the specified value to .Dockerfile build and to the CI declaration file). 
 
 **Otherwise:** A developer might face or miss an error because she uses a different Node.js version than her teammates. Even worse - the production runtime might be different than the environment where tests were executed
 
@@ -779,9 +779,9 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 4.13 Test the five possible outcomes
 
-**TL;DR:** When testing a flow, ensure to cover the five potential categories. Any time some action is triggered (e.g., API call), a reaction occurs, a meaningful **outcome** is produced and calls for testing. There are five possible outcome types for every flow, consider writing a test for each: a response, a visible state change (e.g., DB), an outgoing API call, a new message in a queue, and an observability call (e.g., logging, metric). See a [checklist here](https://testjavascript.com/wp-content/uploads/2021/10/the-backend-checklist.pdf). Each type of outcome comes with unique challenges and techniques to mitigate those challenges - we have a dedicated guide about this topic: [Node.js testing - beyond the basics](https://github.com/testjavascript/nodejs-integration-tests-best-practices)
+**TL;DR:** When testing a flow, ensure to cover five potential categories. Any time some action is triggered (e.g., API call), a reaction occurs, a meaningful **outcome** is produced and calls for testing. There are five possible outcome types for every flow: a response, a visible state change (e.g., DB), an outgoing API call, a new message in a queue, and an observability call (e.g., logging, metric). See a [checklist here](https://testjavascript.com/wp-content/uploads/2021/10/the-backend-checklist.pdf). Each type of outcome comes with unique challenges and techniques to mitigate those challenges - we have a dedicated guide about this topic: [Node.js testing - beyond the basics](https://github.com/testjavascript/nodejs-integration-tests-best-practices)
 
-**Otherwise:** Consider a case when testing the addition of a new product to the system. It's common to see tests that assert on a valid response only. What if the product was failed to persist regardless of the positive response? what if when adding a new product demands calling some external service, or putting a message in the queue? there are typically more outcomes to consider than what meets the eye
+**Otherwise:** Consider a case when testing the addition of a new product to the system. It's common to see tests that assert on a valid response only. What if the product was failed to persist regardless of the positive response? what if when adding a new product demands calling some external service, or putting a message in the queue - shouldn't the test assert these outcomes as well? It's easy to overlook various paths, this is where a [checklist comes handy](https://testjavascript.com/wp-content/uploads/2021/10/the-backend-checklist.pdf)
 
 🔗 [**Read More: Test five outcomes**](./sections/testingandquality/test-five-outcomes.md)
 
@@ -1308,7 +1308,7 @@ For example:
 import { createServer } from "node:http";
 ```
 
-This style ensures that there is no ambiguity with global npm packages and makes it clear for the reader that the code refers to the official module. This style can be enforced with the eslint rule ['prefer-node-protocol'](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-node-protocol.md)
+This style ensures that there is no ambiguity with global npm packages and makes it clear for the reader that the code refers to a well-trusted official module. This style can be enforced with the eslint rule ['prefer-node-protocol'](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-node-protocol.md)
 
 **Otherwise:** Using the import syntax without 'node:' prefix opens the door for [typosquatting attacks](https://en.wikipedia.org/wiki/Typosquatting) where one could mistakenly mistype a module name (e.g., 'event' instead of 'events) and get a malicious package that was built only to trick users into installing them
 
