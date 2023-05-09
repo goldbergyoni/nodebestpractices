@@ -667,7 +667,7 @@ All statements above will return false if used with `===`
 
 # `4. Testing And Overall Quality Practices`
 
-\_We have a dedicated guides for testing, see below. The practices here are a brief summary of these guides
+\_We have dedicated guides for testing, see below. The practices here are a brief summary of these guides
 
 a. [JavaScript testing best practices](https://github.com/goldbergyoni/javascript-testing-best-practices)
 b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodejs-integration-tests-best-practices)
