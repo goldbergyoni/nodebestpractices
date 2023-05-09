@@ -14,7 +14,7 @@ When planning your tests, consider covering the five typical flow's outputs. Whe
 
 • Message queues - the outcome of a flow might be a message in a queue. In our example application, once a new order was saved, the app puts a message in some MQ product. Now other components can consume this message and continue the flow. This is very similar to testing integrations, only working with message queues is different technically and tricky. The 📗 section 'Message Queues' below delve into this topic.
 
-• Observability - Some things must be monitored, like errors or remarkable business events. When a transaction fails, not only we expect the right response but also correct error handling and proper logging/metrics. This information goes directly to a very important user - The ops user (i.e., production SRE/admin). Testing error handler is not very straighforward - Many types of errors might get thrown, some errors should lead to process crash, and there are many other corners to cover. We plan to write the 📗 section on 'Observability and errors' soon
+• Observability - some things must be monitored, like errors or remarkable business events. When a transaction fails, not only do we expect the right response but also the correct error handling and proper logging/metrics. This information goes directly to a very important user - the ops user (i.e., production SRE/admin). Testing error handlers isn't very straightforward because many types of errors might get thrown, where some errors should lead to process crashing, and there are many other details to cover. We plan to write the 📗 section on 'Observability and errors' soon.
 
 <br/><br/>
 
