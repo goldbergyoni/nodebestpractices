@@ -101,7 +101,7 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 &emsp;&emsp;[3.10 Use the === operator](#-310-use-the--operator)</br>
 &emsp;&emsp;[3.11 Use Async Await, avoid callbacks `#strategic`](#-311-use-async-await-avoid-callbacks)</br>
 &emsp;&emsp;[3.12 Use arrow function expressions (=>)](#-312-use-arrow-function-expressions-)</br>
-&emsp;&emsp;[3.13 Avoid effects outside of functions #new](#-313-avoid-effects-outside-of-functions)</br>
+&emsp;&emsp;[3.13 Avoid effects outside of functions `#new`](#-313-avoid-effects-outside-of-functions)</br>
 
 </details>
 
@@ -113,15 +113,15 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 &emsp;&emsp;[4.1 At the very least, write API (component) testing `#strategic`](#-41-at-the-very-least-write-api-component-testing)</br>
 &emsp;&emsp;[4.2 Include 3 parts in each test name `#new`](#-42-include-3-parts-in-each-test-name)</br>
 &emsp;&emsp;[4.3 Structure tests by the AAA pattern `#strategic`](#-43-structure-tests-by-the-aaa-pattern)</br>
-&emsp;&emsp;[4.4 Ensure Node version is unified #new](#-44-ensure-node-version-is-unified)</br>
+&emsp;&emsp;[4.4 Ensure Node version is unified `#new`](#-44-ensure-node-version-is-unified)</br>
 &emsp;&emsp;[4.5 Avoid global test fixtures and seeds, add data per-test `#strategic`](#-45-avoid-global-test-fixtures-and-seeds-add-data-per-test)</br>
 &emsp;&emsp;[4.6 Tag your tests `#advanced`](#-46-tag-your-tests)</br>
 &emsp;&emsp;[4.7 Check your test coverage, it helps to identify wrong test patterns](#-47-check-your-test-coverage-it-helps-to-identify-wrong-test-patterns)</br>
 &emsp;&emsp;[4.8 Use production-like environment for e2e testing](#-48-use-production-like-environment-for-e2e-testing)</br>
 &emsp;&emsp;[4.9 Refactor regularly using static analysis tools](#-49-refactor-regularly-using-static-analysis-tools)</br>
-&emsp;&emsp;[4.10 Mock responses of external HTTP services #advanced #new](#-410-mock-responses-of-external-http-services)</br>
+&emsp;&emsp;[4.10 Mock responses of external HTTP services #advanced `#new` `#advanced`](#-410-mock-responses-of-external-http-services)</br>
 &emsp;&emsp;[4.11 Test your middlewares in isolation](#-411-test-your-middlewares-in-isolation)</br>
-&emsp;&emsp;[4.12 Specify a port in production, randomize in testing #new](#-412-specify-a-port-in-production-randomize-in-testing)</br>
+&emsp;&emsp;[4.12 Specify a port in production, randomize in testing `#new`](#-412-specify-a-port-in-production-randomize-in-testing)</br>
 &emsp;&emsp;[4.13 Test the five possible outcomes #strategic #new](#-413-test-the-five-possible-outcomes)</br>
 
 </details>
@@ -437,7 +437,7 @@ especially if the cause of the abnormal behavior is inside of the missing functi
 
 ## ![✔] 3.1 Use ESLint
 
-**TL;DR:** [ESLint](https://eslint.org) is the de-facto standard for checking possible code errors and fixing code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Though ESLint can automatically fix code styles, other tools like [prettier](https://www.npmjs.com/package/prettier) and [beautify](https://www.npmjs.com/package/js-beautify) are more powerful in formatting the fix and work in conjunction with ESLint
+**TL;DR:** [ESLint](https://eslint.org) is the de-facto standard for checking possible code errors and fixing code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Though ESLint can automatically fix code styles, other tools like [prettier](https://www.npmjs.com/package/prettier) are more powerful in formatting the fix and work in conjunction with ESLint
 
 **Otherwise:** Developers will focus on tedious spacing and line-width concerns and time might be wasted overthinking the project's code style
 
@@ -445,9 +445,9 @@ especially if the cause of the abnormal behavior is inside of the missing functi
 
 <br/><br/>
 
-## ![✔] 3.2 Node.js specific plugins
+## ![✔] 3.2 Use Node.js eslint extension plugins
 
-**TL;DR:** On top of ESLint standard rules that cover vanilla JavaScript, add Node.js specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
+**TL;DR:** On top of ESLint standard rules that cover vanilla JavaScript, add Node.js specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security), [eslint-plugin-require](https://www.npmjs.com/package/eslint-plugin-require), [/eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest) and other useful rules
 
 **Otherwise:** Many faulty Node.js code patterns might escape under the radar. For example, developers might require(variableAsPath) files with a variable given as a path which allows attackers to execute any JS script. Node.js linters can detect such patterns and complain early
 
@@ -588,22 +588,27 @@ function doSomething() {
 
 <br/><br/>
 
-## ![✔] 3.9 Require modules by folders, as opposed to the files directly
+## ![✔] 3.9 Set an explicit entry point per module/folder
 
-**TL;DR:** When developing a module/library in a folder, place an index.js file that exposes the module's internals so every consumer will pass through it. This serves as an 'interface' to your module and eases future changes without breaking the contract
+**TL;DR:** When developing a module/library, set an explicit root file that exports the public and interesting code. Discourage the client code from importing deep files and becoming familiar with the internal structure. With commonjs (require), this can be done with an index.js file at the folder's root or the package.json.main field. With ESM (import), if a package.json exists on the root, the field "exports" allow specifying the module's root file. If no package.json exists, you may put an index.js file on the root which re-exports all the public functionality
 
-**Otherwise:** Changing the internal structure of files or the signature may break the interface with clients
+**Otherwise:** Having an explicit root file acts like a public 'interface' that encapsulates the internal, directs the caller to the public code and facilitates future changes without breaking the contract
 
-### 3.9 Code example
+### 3.9 Code example - avoid coupling the client to the module structure
 
 ```javascript
-// Do
-module.exports.SMSProvider = require("./SMSProvider");
-module.exports.SMSNumberResolver = require("./SMSNumberResolver");
+// Avoid: client has deep familiarity with the internals
 
-// Avoid
-module.exports.SMSProvider = require("./SMSProvider/SMSProvider.js");
-module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolver.js");
+// Client code
+const SMSWithMedia = require("./SMSProvider/providers/media/media-provider.js");
+
+// Better: explicitly export the public functions
+
+//index.js, module code
+module.exports.SMSWithMedia = require("./SMSProvider/providers/media/media-provider.js");
+
+// Client code
+const { SMSWithMedia } = require("./SMSProvider");
 ```
 
 <br/><br/>
@@ -667,7 +672,7 @@ All statements above will return false if used with `===`
 
 # `4. Testing And Overall Quality Practices`
 
-\_We have dedicated guides for testing, see below. The practices here are a brief summary of these guides
+\_We have dedicated guides for testing, see below. The best practices list here is a brief summary of these guides
 
 a. [JavaScript testing best practices](https://github.com/goldbergyoni/javascript-testing-best-practices)
 b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodejs-integration-tests-best-practices)
