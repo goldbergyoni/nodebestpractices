@@ -70,12 +70,12 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
   </summary>
 
 &emsp;&emsp;[2.1 Use Async-Await or promises for async error handling](#-21-use-async-await-or-promises-for-async-error-handling)</br>
-&emsp;&emsp;[2.2 Use only the built-in Error object `#strategic`](#-22-use-only-the-built-in-error-object)</br>
-&emsp;&emsp;[2.3 Distinguish operational vs programmer errors `#strategic`](#-23-distinguish-operational-vs-programmer-errors)</br>
+&emsp;&emsp;[2.2 Extend the built-in Error object `#strategic #updated`](#-22-extend-the-built-in-error-object)</br>
+&emsp;&emsp;[2.3 Distinguish operational vs programmer errors `#strategic` `#updated`](#-23-distinguish-catastrophic-errors-from-operational-errors)</br>
 &emsp;&emsp;[2.4 Handle errors centrally, not within a middleware `#strategic`](#-24-handle-errors-centrally-not-within-a-middleware)</br>
-&emsp;&emsp;[2.5 Document API errors using Swagger or GraphQL `#modified-recently`](#-25-document-api-errors-using-swagger-or-graphql)</br>
+&emsp;&emsp;[2.5 Document API errors using OpenAPI or GraphQL `#updated`](#-25-document-api-errors-using-openapi-or -graphql)</br>
 &emsp;&emsp;[2.6 Exit the process gracefully when a stranger comes to town `#strategic`](#-26-exit-the-process-gracefully-when-a-stranger-comes-to-town)</br>
-&emsp;&emsp;[2.7 Use a mature logger to increase error visibility](#-27-use-a-mature-logger-to-increase-error-visibility)</br>
+&emsp;&emsp;[2.7 Use a mature logger to increase errors visibility `#updated`](#-27-use-a-mature-logger-to-increase-errors-visibility)</br>
 &emsp;&emsp;[2.8 Test error flows using your favorite test framework](#-28-test-error-flows-using-your-favorite-test-framework)</br>
 &emsp;&emsp;[2.9 Discover errors and downtime using APM products](#-29-discover-errors-and-downtime-using-apm-products)</br>
 &emsp;&emsp;[2.10 Catch unhandled promise rejections `#modified-recently`](#-210-catch-unhandled-promise-rejections)</br>
@@ -309,7 +309,7 @@ my-system
 
 ## ![✔] 2.1 Use Async-Await or promises for async error handling
 
-**TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using a reputable promise library or async-await instead which enables a much more compact and familiar code syntax like try-catch
+**TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using Promises with async-await which enables a much more compact and familiar code syntax like try-catch
 
 **Otherwise:** Node.js callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting, and awkward coding patterns
 
@@ -317,9 +317,9 @@ my-system
 
 <br/><br/>
 
-## ![✔] 2.2 Use only the built-in Error object
+## ![✔] 2.2 Extend the built-in Error object
 
-**TL;DR:** Many throw errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw an exception or emit an error – using only the built-in Error object (or an object that extends the built-in Error object) will increase uniformity and prevent loss of information. There is `no-throw-literal` ESLint rule that strictly checks that (although it has some [limitations](https://eslint.org/docs/rules/no-throw-literal) which can be solved when using TypeScript and setting the `@typescript-eslint/no-throw-literal` rule)
+**TL;DR:** Some libraries throw errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Instead, create app error object/class that extends the built-in Error object and use it whenever rejecting, throwing or emitting an error. The app error should add useful imperative properties like the error name/code and isCatastrophic. By doing so, all errors have a unified structure and support better error handling .There is `no-throw-literal` ESLint rule that strictly checks that (although it has some [limitations](https://eslint.org/docs/rules/no-throw-literal) which can be solved when using TypeScript and setting the `@typescript-eslint/no-throw-literal` rule)
 
 **Otherwise:** When invoking some component, being uncertain which type of errors come in return – it makes proper error handling much harder. Even worse, using custom types to describe errors might lead to loss of critical error information like the stack trace!
 
@@ -327,11 +327,11 @@ my-system
 
 <br/><br/>
 
-## ![✔] 2.3 Distinguish operational vs programmer errors
+## ![✔] 2.3 Distinguish catastrophic errors from operational errors
 
-**TL;DR:** Operational errors (e.g. API received an invalid input) refer to known cases where the error impact is fully understood and can be handled thoughtfully. On the other hand, programmer error (e.g. trying to read an undefined variable) refers to unknown code failures that dictate to gracefully restart the application
+**TL;DR:** Operational errors (e.g. API received an invalid input) refer to known cases where the error impact is fully understood and can be handled thoughtfully. On the other hand, catastrophic error (also known as programmer errors) refers to unusual code failures that dictate to gracefully restart the application
 
-**Otherwise:** You may always restart the application when an error appears, but why let ~5000 online users down because of a minor, predicted, operational error? The opposite is also not ideal – keeping the application up when an unknown issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
+**Otherwise:** You may always restart the application when an error appears, but why let ~5000 online users down because of a minor, predicted, operational error? The opposite is also not ideal – keeping the application up when an unknown catastrophic issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
 
 🔗 [**Read More: operational vs programmer error**](./sections/errorhandling/operationalvsprogrammererror.md)
 
@@ -339,7 +339,7 @@ my-system
 
 ## ![✔] 2.4 Handle errors centrally, not within a middleware
 
-**TL;DR:** Error handling logic such as mail to admin and logging should be encapsulated in a dedicated and centralized object that all endpoints (e.g. Express middleware, cron jobs, unit-testing) call when an error comes in
+**TL;DR:** Error handling logic such as logging, deciding whether to crash and monitoring metrics should be encapsulated in a dedicated and centralized object that all entry-points (e.g. APIs, cron jobs, scheduled jobs) call when an error comes in
 
 **Otherwise:** Not handling errors within a single place will lead to code duplication and probably to improperly handled errors
 
@@ -347,9 +347,9 @@ my-system
 
 <br/><br/>
 
-## ![✔] 2.5 Document API errors using Swagger or GraphQL
+## ![✔] 2.5 Document API errors using OpenAPI or GraphQL
 
-**TL;DR:** Let your API callers know which errors might come in return so they can handle these thoughtfully without crashing. For RESTful APIs, this is usually done with documentation frameworks like Swagger. If you're using GraphQL, you can utilize your schema and comments as well.
+**TL;DR:** Let your API callers know which errors might come in return so they can handle these thoughtfully without crashing. For RESTful APIs, this is usually done with documentation frameworks like OpenAPI. If you're using GraphQL, you can utilize your schema and comments as well
 
 **Otherwise:** An API client might decide to crash and restart only because it received back an error it couldn’t understand. Note: the caller of your API might be you (very typical in a microservice environment)
 
@@ -359,7 +359,7 @@ my-system
 
 ## ![✔] 2.6 Exit the process gracefully when a stranger comes to town
 
-**TL;DR:** When an unknown error occurs (a developer error, see best practice 2.3) - there is uncertainty about the application healthiness. Common practice suggests restarting the process carefully using a process management tool like [Forever](https://www.npmjs.com/package/forever) or [PM2](http://pm2.keymetrics.io/)
+**TL;DR:** When an unknown error occurs (catastrophic error, see best practice 2.3) - there is uncertainty about the application healthiness. In this case, there is no escape from making the error observable, shutting off connections and exiting the process. Any reputable runtime framework like Dockerized services or cloud serverless solutions will take care to restart
 
 **Otherwise:** When an unfamiliar exception occurs, some object might be in a faulty state (e.g. an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
 
@@ -367,9 +367,9 @@ my-system
 
 <br/><br/>
 
-## ![✔] 2.7 Use a mature logger to increase error visibility
+## ![✔] 2.7 Use a mature logger to increase errors visibility
 
-**TL;DR:** A set of mature logging tools like [Pino](https://github.com/pinojs/pino) or [Log4js](https://www.npmjs.com/package/log4js), will speed-up error discovery and understanding. So forget about console.log
+**TL;DR:** A robust logging tools like [Pino](https://github.com/pinojs/pino) or [Winston](https://github.com/winstonjs/winston) increases the errors visibility using features like log-levels, pretty print coloring and more. Console.log lacks these imperative features and should be avoided. The best in class logger allows attaching custom useful properties to log entries with minimized serialization performance penalty. Developers should write logs to `stdout` and let the infrastructure pipe the stream to the appropriate log aggregator
 
 **Otherwise:** Skimming through console.logs or manually through messy text file without querying tools or a decent log viewer might keep you busy at work until late
 
@@ -379,7 +379,7 @@ my-system
 
 ## ![✔] 2.8 Test error flows using your favorite test framework
 
-**TL;DR:** Whether professional automated QA or plain manual developer testing – Ensure that your code not only satisfies positive scenarios but also handles and returns the right errors. Testing frameworks like Mocha & Chai can handle this easily (see code examples within the "Gist popup")
+**TL;DR:** Whether professional automated QA or plain manual developer testing – Ensure that your code not only satisfies positive scenarios but also handles and returns the right errors. On top of this, simulate deeper error flows like uncaught exceptions an ensure that the error handler treat these properly (see code examples within the "read more" section)
 
 **Otherwise:** Without testing, whether automatically or manually, you can’t rely on your code to return the right errors. Without meaningful errors – there’s no error handling
 
@@ -409,7 +409,7 @@ my-system
 
 ## ![✔] 2.11 Fail fast, validate arguments using a dedicated library
 
-**TL;DR:** Assert API input to avoid nasty bugs that are much harder to track later. The validation code is usually tedious unless you are using a very cool helper library like [ajv](https://www.npmjs.com/package/ajv) and [Joi](https://www.npmjs.com/package/joi)
+**TL;DR:** Assert API input to avoid nasty bugs that are much harder to track later. The validation code is usually tedious unless you are using a modern validation library like [ajv](https://www.npmjs.com/package/ajv), [zod](https://github.com/colinhacks/zod), or [typebox](https://github.com/sinclairzx81/typebox)
 
 **Otherwise:** Consider this – your function expects a numeric argument “Discount” which the caller forgets to pass, later on, your code checks if Discount!=0 (amount of allowed discount is greater than zero), then it will allow the user to enjoy a discount. OMG, what a nasty bug. Can you see it?
 
