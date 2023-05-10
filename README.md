@@ -184,7 +184,7 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 &emsp;&emsp;[6.24. Prevent unsafe redirects](#-624-prevent-unsafe-redirects)</br>
 &emsp;&emsp;[6.25. Avoid publishing secrets to the npm registry](#-625-avoid-publishing-secrets-to-the-npm-registry)</br>
 &emsp;&emsp;[6.26. 6.26 Inspect for outdated packages](#-626-inspect-for-outdated-packages)</br>
-&emsp;&emsp;[6.27. Import built-in modules using the 'node:' protocol #new](#-627-import-built-in-modules-using-the-node-protocol)</br>
+&emsp;&emsp;[6.27. Import built-in modules using the 'node:' protocol `#new`](#-627-import-built-in-modules-using-the-node-protocol)</br>
 
 </details>
 
@@ -267,11 +267,11 @@ my-system
 
 <br/><br/>
 
-## ![✔] 1.3 Wrap common utilities as npm packages
+## ![✔] 1.3 Wrap common utilities as packages, consider publishing
 
-**TL;DR:** In a large app that constitutes a large codebase, cross-cutting-concern utilities like a logger, encryption and alike, should be wrapped by your code and exposed as private npm packages. This allows sharing them among multiple codebases and projects
+**TL;DR:** Place all reusable modules in a dedicated folder, e.g., "libraries", and underneath each module in its own folder, e.g., "/libraries/logger". Make the module an independent package with its own package.json file to increases the module encapsulation, and allows future publishing to a repository. In a Monorepo setup, modules can be consumed by 'npm linking' to their physical paths, using ts-paths or by publishing and installing from a package manager repository like the npm registry
 
-**Otherwise:** You'll have to invent your deployment and the dependency wheel
+**Otherwise:** Clients of a module might import and get coupled to internal functionality of a module. With a package.json at the root, one can set a package.json.main or package.json.exports to explicitly tell which files and functions are part of the public interface
 
 🔗 [**Read More: Structure by feature**](./sections/projectstructre/wraputilities.md)
 
@@ -279,9 +279,9 @@ my-system
 
 ## ![✔] 1.4 Use environment aware, secure and hierarchical config
 
-**TL;DR:** A perfect and flawless configuration setup should ensure (a) keys can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are a few packages that can help tick most of those boxes like [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config), and [convict](https://www.npmjs.com/package/convict).
+**TL;DR:** A flawless configuration setup should ensure (a) keys can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability (d) typing support (e) validation for failing fast (f) Specify default for each key. There are a few packages that can help tick most of those boxes like [convict](https://www.npmjs.com/package/convict), [env-var](env-var), [zod](https://github.com/colinhacks/zod), and others
 
-**Otherwise:** Failing to satisfy any of the config requirements will simply bog down the development or DevOps team. Probably both
+**Otherwise:** Consider a mandatory environment variable that wasn't provided. The app starts successfully and serve requests, some information is already persisted to DB. Then, it's realized that without this mandatory key the request can't complete, leaving the app in a dirty state
 
 🔗 [**Read More: configuration best practices**](./sections/projectstructre/configguide.md)
 
@@ -798,7 +798,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 5.1. Monitoring
 
-**TL;DR:** Monitoring is a game of finding out issues before customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that ticks all boxes. Click ‘The Gist’ below for an overview of the solutions
+**TL;DR:** Monitoring is a game of finding out issues before customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that ticks all boxes. In any case, the 4 layers of observability must be covered: uptime, metrics with focus on user-facing symptoms and Node.js technical metrics like event loop lag, distributed flows measurement with Open Telemetry and logging. Click ‘Read More’ below for an overview of the solutions
 
 **Otherwise:** Failure === disappointed customers. Simple
 
@@ -1386,9 +1386,11 @@ CMD [ "node", "dist/app.js" ]
 
 ## ![✔] 8.2. Bootstrap using `node` command, avoid `npm start`
 
-**TL;DR:** use `CMD ['node','server.js']` to start your app, avoid using npm scripts which don't pass OS signals to the code. This prevents problems with child-processes, signal handling, graceful shutdown and having zombie processes.
+**TL;DR:** Use `CMD ['node','server.js']` to start your app, avoid using npm scripts which don't pass OS signals to the code. This prevents problems with child-processes, signal handling, graceful shutdown and having zombie processes
 
-**Otherwise:** When no signals are passed, your code will never be notified about shutdowns. Without this, it will lose its chance to close properly possibly losing current requests and/or data.
+Update: [Starting from npm 7, npm claim](https://docs.npmjs.com/cli/v7/using-npm/changelog#706-2020-10-27) to pass signals. We follow and will update accordingly
+
+**Otherwise:** When no signals are passed, your code will never be notified about shutdowns. Without this, it will lose its chance to close properly possibly losing current requests and/or data
 
 [**Read More: Bootstrap container using node command, avoid npm start**](./sections/docker/bootstrap-using-node.md)
 
@@ -1426,7 +1428,7 @@ CMD [ "node", "dist/app.js" ]
 
 ## ![✔] 8.6. Shutdown smartly and gracefully
 
-**TL;DR:** Handle the process SIGTERM event and clean-up all existing connection and resources. This should be done while responding to ongoing requests. In Dockerized runtimes shutting down containers is not a rare event, rather a frequent occurrence that happen as part of routine work. Achieving this demands some thoughtful code to orchestrate several moving parts: The load balancer, keep-alive connections, the HTTP server and other resources
+**TL;DR:** Handle the process SIGTERM event and clean-up all existing connection and resources. This should be done while responding to ongoing requests. In Dockerized runtimes, shutting down containers is not a rare event, rather a frequent occurrence that happen as part of routine work. Achieving this demands some thoughtful code to orchestrate several moving parts: The load balancer, keep-alive connections, the HTTP server and other resources
 
 **Otherwise:** Dying immediately means not responding to thousands of disappointed users
 
