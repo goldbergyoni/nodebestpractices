@@ -271,6 +271,18 @@ my-system
 
 **TL;DR:** Place all reusable modules in a dedicated folder, e.g., "libraries", and underneath each module in its own folder, e.g., "/libraries/logger". Make the module an independent package with its own package.json file to increases the module encapsulation, and allows future publishing to a repository. In a Monorepo setup, modules can be consumed by 'npm linking' to their physical paths, using ts-paths or by publishing and installing from a package manager repository like the npm registry
 
+```bash
+my-system
+├─ apps (components)
+  │  ├─ component-a
+├─ libraries (generic cross-component functionality)
+│  ├─ logger
+│  │  ├─ package.json
+│  │  ├─ src
+│  │  │ ├─ index.js
+
+```
+
 **Otherwise:** Clients of a module might import and get coupled to internal functionality of a module. With a package.json at the root, one can set a package.json.main or package.json.exports to explicitly tell which files and functions are part of the public interface
 
 🔗 [**Read More: Structure by feature**](./sections/projectstructre/wraputilities.md)
