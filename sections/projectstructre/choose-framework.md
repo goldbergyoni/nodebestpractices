@@ -1,4 +1,4 @@
-# Structure your solution by components
+# Consider all the consequences when choosing the main framework
 
 <br/><br/>
 
@@ -37,8 +37,3 @@ Cons: Covers a small subset of a typical application needs - leaves a handful of
 **Prefer Fastify when -** The app consists of reasonably-sized components/Microservices (i.e., not a huge monolith); for teams who have solid JavaScript & Node.js knowledge; when sticking to Node.js narratives and spirit is desirable
 
 **Prefer Nest.js when** - It's desirable to design and code in OOP style; when the team is highly experienced with Java/Spring/Angular or similar; for large size app that can't be broken down (i.e. monolith) to autonomous component; for a team that lacks fundamental JavaScript/Node.js skills (not exclusively, this yet another consideration); when the decision-making overhead should be minimized; when the time to the first delivery is a critical factor
-
-<br/><br/>
-
-
-Get lost with express; Nest.js with Fastify, Fastify covers a lot,
