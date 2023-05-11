@@ -55,9 +55,9 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
     <a href="#1-project-architecture-practices">1. Project Architecture Practices (6)</a>
   </summary>
 
-&emsp;&emsp;[1.1 Structure your solution by components `#strategic`](#-11-structure-your-solution-by-business-components)</br>
-&emsp;&emsp;[1.2 Layer your components, keep the web layer within its boundaries `#strategic`](#-12-layer-your-components-with-3-tiers-keep-the-web-layer-within-its-boundaries)</br>
-&emsp;&emsp;[1.3 Wrap common utilities as npm packages](#-13-wrap-common-utilities-as-npm-packages)</br>
+&emsp;&emsp;[1.1 Structure your solution by components `#strategic` `#updated`](#-11-structure-your-solution-by-business-components)</br>
+&emsp;&emsp;[1.2 Layer your components, keep the web layer within its boundaries `#strategic` `#updated`](#-12-layer-your-components-with-3-tiers-keep-the-web-layer-within-its-boundaries)</br>
+&emsp;&emsp;[1.3 Wrap common utilities as packages, consider publishing](#-13-wrap-common-utilities-as-packages-consider-publishing)</br>
 &emsp;&emsp;[1.4 Use environment aware, secure and hierarchical config `#updated`](#-14-use-environment-aware-secure-and-hierarchical-config)</br>
 &emsp;&emsp;[1.5 Consider all the consequences when choosing the main framework `#new`](#-15-consider-all-the-consequences-when-choosing-the-main-framework)</br>
 &emsp;&emsp;[1.6 Use TypeScript sparingly and thoughtfully `#new`](#-16-use-typescript-sparingly-and-thoughtfully)</br>
@@ -70,15 +70,15 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
   </summary>
 
 &emsp;&emsp;[2.1 Use Async-Await or promises for async error handling](#-21-use-async-await-or-promises-for-async-error-handling)</br>
-&emsp;&emsp;[2.2 Extend the built-in Error object `#strategic #updated`](#-22-extend-the-built-in-error-object)</br>
+&emsp;&emsp;[2.2 Extend the built-in Error object `#strategic` `#updated`](#-22-extend-the-built-in-error-object)</br>
 &emsp;&emsp;[2.3 Distinguish operational vs programmer errors `#strategic` `#updated`](#-23-distinguish-catastrophic-errors-from-operational-errors)</br>
 &emsp;&emsp;[2.4 Handle errors centrally, not within a middleware `#strategic`](#-24-handle-errors-centrally-not-within-a-middleware)</br>
-&emsp;&emsp;[2.5 Document API errors using OpenAPI or GraphQL `#updated`](#-25-document-api-errors-using-openapi-or -graphql)</br>
+&emsp;&emsp;[2.5 Document API errors using OpenAPI or GraphQL](#-25-document-api-errors-using-openapi-or -graphql)</br>
 &emsp;&emsp;[2.6 Exit the process gracefully when a stranger comes to town `#strategic`](#-26-exit-the-process-gracefully-when-a-stranger-comes-to-town)</br>
 &emsp;&emsp;[2.7 Use a mature logger to increase errors visibility `#updated`](#-27-use-a-mature-logger-to-increase-errors-visibility)</br>
-&emsp;&emsp;[2.8 Test error flows using your favorite test framework](#-28-test-error-flows-using-your-favorite-test-framework)</br>
+&emsp;&emsp;[2.8 Test error flows using your favorite test framework `#updated`](#-28-test-error-flows-using-your-favorite-test-framework)</br>
 &emsp;&emsp;[2.9 Discover errors and downtime using APM products](#-29-discover-errors-and-downtime-using-apm-products)</br>
-&emsp;&emsp;[2.10 Catch unhandled promise rejections `#modified-recently`](#-210-catch-unhandled-promise-rejections)</br>
+&emsp;&emsp;[2.10 Catch unhandled promise rejections `#updated`](#-210-catch-unhandled-promise-rejections)</br>
 &emsp;&emsp;[2.11 Fail fast, validate arguments using a dedicated library](#-211-fail-fast-validate-arguments-using-a-dedicated-library)</br>
 &emsp;&emsp;[2.12 Always await promises before returning to avoid a partial stacktrace `#new`](#-212-always-await-promises-before-returning-to-avoid-a-partial-stacktrace)</br>
 
@@ -90,14 +90,14 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
   </summary>
 
 &emsp;&emsp;[3.1 Use ESLint `#strategic`](#-31-use-eslint)</br>
-&emsp;&emsp;[3.2 Node.js specific plugins](#-32-nodejs-specific-plugins)</br>
+&emsp;&emsp;[3.2 Use Node.js eslint extension plugins `#updated`](#-32-use-nodejs-eslint-extension-plugins)</br>
 &emsp;&emsp;[3.3 Start a Codeblock's Curly Braces on the Same Line](#-33-start-a-codeblocks-curly-braces-on-the-same-line)</br>
 &emsp;&emsp;[3.4 Separate your statements properly](#-34-separate-your-statements-properly)</br>
 &emsp;&emsp;[3.5 Name your functions](#-35-name-your-functions)</br>
 &emsp;&emsp;[3.6 Use naming conventions for variables, constants, functions and classes](#-36-use-naming-conventions-for-variables-constants-functions-and-classes)</br>
 &emsp;&emsp;[3.7 Prefer const over let. Ditch the var](#-37-prefer-const-over-let-ditch-the-var)</br>
 &emsp;&emsp;[3.8 Require modules first, not inside functions](#-38-require-modules-first-not-inside-functions)</br>
-&emsp;&emsp;[3.9 Require modules by folders, as opposed to the files directly](#-39-require-modules-by-folders-as-opposed-to-the-files-directly)</br>
+&emsp;&emsp;[3.9 Set an explicit entry point to a module/folder `#updated`](#-39-set-an-explicit-entry-point-to-a-modulefolder)</br>
 &emsp;&emsp;[3.10 Use the === operator](#-310-use-the--operator)</br>
 &emsp;&emsp;[3.11 Use Async Await, avoid callbacks `#strategic`](#-311-use-async-await-avoid-callbacks)</br>
 &emsp;&emsp;[3.12 Use arrow function expressions (=>)](#-312-use-arrow-function-expressions-)</br>
@@ -122,7 +122,7 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 &emsp;&emsp;[4.10 Mock responses of external HTTP services #advanced `#new` `#advanced`](#-410-mock-responses-of-external-http-services)</br>
 &emsp;&emsp;[4.11 Test your middlewares in isolation](#-411-test-your-middlewares-in-isolation)</br>
 &emsp;&emsp;[4.12 Specify a port in production, randomize in testing `#new`](#-412-specify-a-port-in-production-randomize-in-testing)</br>
-&emsp;&emsp;[4.13 Test the five possible outcomes #strategic #new](#-413-test-the-five-possible-outcomes)</br>
+&emsp;&emsp;[4.13 Test the five possible outcomes #strategic `#new`](#-413-test-the-five-possible-outcomes)</br>
 
 </details>
 
@@ -132,23 +132,23 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
   </summary>
 
 &emsp;&emsp;[5.1. Monitoring `#strategic`](#-51-monitoring)</br>
-&emsp;&emsp;[5.2. Increase transparency using smart logging `#strategic`](#-52-increase-transparency-using-smart-logging)</br>
+&emsp;&emsp;[5.2. Increase the observability using smart logging `#strategic`](#-52-increase-the-observability-using-smart-logging)</br>
 &emsp;&emsp;[5.3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy `#strategic`](#-53-delegate-anything-possible-eg-gzip-ssl-to-a-reverse-proxy)</br>
 &emsp;&emsp;[5.4. Lock dependencies](#-54-lock-dependencies)</br>
 &emsp;&emsp;[5.5. Guard process uptime using the right tool](#-55-guard-process-uptime-using-the-right-tool)</br>
 &emsp;&emsp;[5.6. Utilize all CPU cores](#-56-utilize-all-cpu-cores)</br>
 &emsp;&emsp;[5.7. Create a ‘maintenance endpoint’](#-57-create-a-maintenance-endpoint)</br>
-&emsp;&emsp;[5.8. Discover errors and downtime using APM products `#advanced`](#-58-discover-errors-and-downtime-using-apm-products)</br>
+&emsp;&emsp;[5.8. Discover the unknowns using APM products `#advanced` `#updated`](#-58-discover-the-unknowns-using-apm-products)</br>
 &emsp;&emsp;[5.9. Make your code production-ready](#-59-make-your-code-production-ready)</br>
 &emsp;&emsp;[5.10. Measure and guard the memory usage `#advanced`](#-510-measure-and-guard-the-memory-usage)</br>
 &emsp;&emsp;[5.11. Get your frontend assets out of Node](#-511-get-your-frontend-assets-out-of-node)</br>
-&emsp;&emsp;[5.12. Be stateless, kill your servers almost every day](#-512-be-stateless-kill-your-servers-almost-every-day)</br>
+&emsp;&emsp;[5.12. Strive to be stateless `#strategic`](#-512-strive-to-be-stateless)</br>
 &emsp;&emsp;[5.13. Use tools that automatically detect vulnerabilities](#-513-use-tools-that-automatically-detect-vulnerabilities)</br>
 &emsp;&emsp;[5.14. Assign a transaction id to each log statement `#advanced`](#-514-assign-a-transaction-id-to-each-log-statement)</br>
 &emsp;&emsp;[5.15. Set NODE_ENV=production](#-515-set-node_envproduction)</br>
 &emsp;&emsp;[5.16. Design automated, atomic and zero-downtime deployments `#advanced`](#-516-design-automated-atomic-and-zero-downtime-deployments)</br>
 &emsp;&emsp;[5.17. Use an LTS release of Node.js](#-517-use-an-lts-release-of-nodejs)</br>
-&emsp;&emsp;[5.18. Don't route logs within the app](#-518-dont-route-logs-within-the-app)</br>
+&emsp;&emsp;[5.18. Log to stdout, avoid specifying log destination within the app](#-518-log-to-stdout-avoid-specifying-log-destination-within-the-app)</br>
 &emsp;&emsp;[5.19. Install your packages with npm ci `#new`](#-519-install-your-packages-with-npm-ci)</br>
 
 </details>
@@ -209,7 +209,7 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 &emsp;&emsp;[8.4. Use .dockerignore to prevent leaking secrets](#-84-use-dockerignore-to-prevent-leaking-secrets)</br>
 &emsp;&emsp;[8.5. Clean-up dependencies before production](#-85-clean-up-dependencies-before-production)</br>
 &emsp;&emsp;[8.6. Shutdown smartly and gracefully `#advanced`](#-86-shutdown-smartly-and-gracefully)</br>
-&emsp;&emsp;[8.7. Set memory limits using both Docker and v8 `#advanced #strategic`](#-87-set-memory-limits-using-both-docker-and-v8)</br>
+&emsp;&emsp;[8.7. Set memory limits using both Docker and v8 `#advanced` `#strategic`](#-87-set-memory-limits-using-both-docker-and-v8)</br>
 &emsp;&emsp;[8.8. Plan for efficient caching](#-88-plan-for-efficient-caching)</br>
 &emsp;&emsp;[8.9. Use explicit image reference, avoid latest tag](#-89-use-explicit-image-reference-avoid-latest-tag)</br>
 &emsp;&emsp;[8.10. Prefer smaller Docker base images](#-810-prefer-smaller-docker-base-images)</br>
@@ -307,7 +307,7 @@ my-system
 
 ## ![✔] 1.6 Use TypeScript sparingly and thoughtfully
 
-**TL;DR:** Coding without type safety is no longer an option, TypeScript is the most popular option for this mission. Use it to define variables and functions return types. With that, it is also a double edge sword that can greatly _encourage_ complexity with its additional ~ 50 keywords and sophisticated features. Consider using it sparingly, mostly with simple types, and utilize advanced features solely when absolutely necessary
+**TL;DR:** Coding without type safety is no longer an option, TypeScript is the most popular option for this mission. Use it to define variables and functions return types. With that, it is also a double edge sword that can greatly _encourage_ complexity with its additional ~ 50 keywords and sophisticated features. Consider using it sparingly, mostly with simple types, and utilize advanced features only when a real need arises
 
 **Otherwise:** [Researches](https://earlbarr.com/publications/typestudy.pdf) show that using TypeScript can help in detecting ~20% bugs earlier. Without it, also the developer experience in the IDE is intolerable. On the flip side, 80% of other bugs were not discovered using types. Consequently, typed syntax is valuable but limited. Only efficient tests can discover the whole spectrum of bugs, including type-related bugs. It might also defeat its purpose: sophisticated code features are likely to increase the code complexity, which by itself increases both the amount of bugs and the average bug fix time
 
@@ -600,7 +600,7 @@ function doSomething() {
 
 <br/><br/>
 
-## ![✔] 3.9 Set an explicit entry point per module/folder
+## ![✔] 3.9 Set an explicit entry point to a module/folder
 
 **TL;DR:** When developing a module/library, set an explicit root file that exports the public and interesting code. Discourage the client code from importing deep files and becoming familiar with the internal structure. With commonjs (require), this can be done with an index.js file at the folder's root or the package.json.main field. With ESM (import), if a package.json exists on the root, the field "exports" allow specifying the module's root file. If no package.json exists, you may put an index.js file on the root which re-exports all the public functionality
 
