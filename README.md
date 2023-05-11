@@ -305,7 +305,7 @@ my-system
 
 **Otherwise:** Due to the overwhelming amount of considerations, it's easy to make decisions based on partial information and compare apples with oranges. For example, it's believed that Fastify is a minimal web-server that should get compared with express only. In reality, it's a rich framework with many official plugins that cover many concerns
 
-🔗 [**Read More: configuration best practices**](./sections/projectstructre/choose-framework.md)
+🔗 [**Read More: Choosing the right framework**](./sections/projectstructre/choose-framework.md)
 
 ## ![✔] 1.6 Use TypeScript sparingly and thoughtfully
 

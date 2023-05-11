@@ -26,7 +26,7 @@ Cons: Younger than others and not as popular yet; smaller eco-system compared to
 
 **Koa**
 
-Pros When compared with express: it's Simpler and nimbler; modern API with async/await support; better performance
+Pros: When compared with express: it's Simpler and nimbler; modern API with async/await support; better performance
 
 Cons: Covers a small subset of a typical application needs - leaves a handful of app concerns uncovered; Not as popular as express and Nest.js
 
