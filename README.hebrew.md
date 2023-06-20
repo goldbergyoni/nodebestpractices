@@ -22,7 +22,7 @@
 
 <br/>
 
-## 🚀 יש לנו [Node.js starter רשמי - Practica.js](https://github.com/practicajs/practica). השתמשו בזה כדי לייצר שלד חדש לפרוייקט שמבוס על כל שיטות העבודה המומלצות כלולות בפנים. או רק כדי ללמוד על ידי דוגמאות קוד.
+## 🚀 יש לנו [Node.js starter רשמי - Practica.js](https://github.com/practicajs/practica). השתמשו בזה כדי לייצר שלד חדש לפרוייקט שמבוסס על כל שיטות העבודה המומלצות כלולות בפנים. או רק כדי ללמוד על ידי דוגמאות קוד.
 
 <br/>
 
