@@ -55,7 +55,7 @@
     <a href="#1-project-architecture-practices">1. מבנה הפרוייקט (6)</a>
   </summary>
 
-&emsp;&emsp;[1.1 Structure your solution by components `#strategic` `#updated`](#-11-structure-your-solution-by-business-components)</br>
+&emsp;&emsp;[1.1 בנה את הפרוייקט שלך לפי רכיבים עסקיים `#strategic` `#updated`](#-11-structure-your-solution-by-business-components)</br>
 &emsp;&emsp;[1.2 Layer your components, keep the web layer within its boundaries `#strategic` `#updated`](#-12-layer-your-components-with-3-tiers-keep-the-web-layer-within-its-boundaries)</br>
 &emsp;&emsp;[1.3 Wrap common utilities as packages, consider publishing](#-13-wrap-common-utilities-as-packages-consider-publishing)</br>
 &emsp;&emsp;[1.4 Use environment aware, secure and hierarchical config `#updated`](#-14-use-environment-aware-secure-and-hierarchical-config)</br>
@@ -227,7 +227,7 @@
 
 ## ![✔] 1.1 בנה את הפרוייקט שלך לפי רכיבים עסקיים
 
-**אמ;לק:** The root of a system should contain folders or repositories that represent reasonably sized business modules. Each component represents a product domain (i.e., bounded context), like 'user-component', 'order-component', etc. Each component has its own API, logic, and logical database. What is the significant merit? With an autonomous component, every change is performed over a granular and smaller scope - the mental overload, development friction, and deployment fear are much smaller and better. As a result, developers can move much faster. This does not necessarily demand physical separation and can be achieved using a Monorepo or with a multi-repo
+**אמ;לק:** בסיס המערכת צריך לכלול תיקיות או מאגרים שמייצג בצורה הגיונית את המידול העסקי. כל רכיב מייצג תחום מוצר (כלומר הקשר מוגבל), למשל 'משתמשים', 'הזמנות', וכולי... כל רכיב מכיל את ה API, לוגיקה ומסד הנתונים שלו. מה המטרה של זה? כאשר יש סביבה עצמאית כל שינוי משפיע אך ורק על החלק הרלוונטי - העומס הנפשי, סיבוכיות הפיתוח והחשש מפריסה חדשה של הרכיב הרבה יותר קטן. כתוצאה מכך, מתכנתים יכולים לפתח הרבה יותר מהר. זה לא דורש בהכרח הפרדה פיזית ויכול להיות מושג גם בMonorepo או multi-repo.
 
 ```bash
 my-system
@@ -240,9 +240,9 @@ my-system
 │  ├─ authenticator
 ```
 
-**Otherwise:** when artifacts from various modules/topics are mixed together, there are great chances of a tightly-coupled 'spaghetti' system. For example, in an architecture where 'module-a controller' might call 'module-b service', there are no clear modularity borders - every code change might affect anything else. With this approach, developers who code new features struggle to realize the scope and impact of their change. Consequently, they fear breaking other modules, and each deployment becomes slower and riskier
+**אחרת:** כאשר מוצרים של מודולים או נושאים שונים מעורבבים יחד, ישנו סיכוי גבוה שתיווצר מערכת ספגטי בעלת צימוד גבוה. לדוגמה, בארכיטקטורה שבה 'מודול א`' קורא לשירות מ'מודול ב;', אין הפרדה ברורהבין המודולים השונים - כל שינוי בקוד עלול להשפיע על משהו אחר. עם הגישה הזאת , מתכנתים שצריכים להוסיף מוצר חדש למערכת יאבקו בה בהבנה על מה השינוי שלהם יכול להשפיע. כתוצאה מכך, הם חששו לשבור מודולים אחרים, וכל פריסה נהייתה איטית יותר ומסוכנת יותר.
 
-🔗 [**Read More: structure by components**](./sections/projectstructre/breakintcomponents.md)
+🔗 [**לקריאה נוספת: בנייה לפי רכיבים**](./sections/projectstructre/breakintcomponents.md)
 
 <br/><br/>
 
