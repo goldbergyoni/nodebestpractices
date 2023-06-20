@@ -52,7 +52,7 @@
 
 <details>
   <summary>
-    <a href="#1-project-architecture-practices">1. Project Architecture Practices (6)</a>
+    <a href="#1-project-architecture-practices">1. מבנה הפרוייקט (6)</a>
   </summary>
 
 &emsp;&emsp;[1.1 Structure your solution by components `#strategic` `#updated`](#-11-structure-your-solution-by-business-components)</br>
@@ -66,7 +66,7 @@
 
 <details>
   <summary>
-    <a href="#2-error-handling-practices">2. Error Handling Practices (12)</a>
+    <a href="#2-error-handling-practices">2. ניהול שגיאות (12)</a>
   </summary>
 
 &emsp;&emsp;[2.1 Use Async-Await or promises for async error handling](#-21-use-async-await-or-promises-for-async-error-handling)</br>
@@ -86,7 +86,7 @@
 
 <details>
   <summary>
-    <a href="#3-code-patterns-and-style-practices">3. Code Style Practices (12)</a>
+    <a href="#3-code-patterns-and-style-practices">3. תבניות קוד וסגנון עיצוב (12)</a>
   </summary>
 
 &emsp;&emsp;[3.1 Use ESLint `#strategic`](#-31-use-eslint)</br>
@@ -107,7 +107,7 @@
 
 <details>
   <summary>
-    <a href="#4-testing-and-overall-quality-practices">4. Testing And Overall Quality Practices (13)</a>
+    <a href="#4-testing-and-overall-quality-practices">4. בדיקות ובקרת איכות (13)</a>
   </summary>
 
 &emsp;&emsp;[4.1 At the very least, write API (component) testing `#strategic`](#-41-at-the-very-least-write-api-component-testing)</br>
@@ -128,7 +128,7 @@
 
 <details>
   <summary>
-    <a href="#5-going-to-production-practices">5. Going To Production Practices (19)</a>
+    <a href="#5-going-to-production-practices">5. עלייה לאוויר (19)</a>
   </summary>
 
 &emsp;&emsp;[5.1. Monitoring `#strategic`](#-51-monitoring)</br>
@@ -155,7 +155,7 @@
 
 <details>
   <summary>
-    <a href="#6-security-best-practices">6. Security Practices (25)</a>
+    <a href="#6-security-best-practices">6. אבטחה (27)</a>
   </summary>
 
 &emsp;&emsp;[6.1. Embrace linter security rules](#-61-embrace-linter-security-rules)</br>
@@ -190,7 +190,7 @@
 
 <details>
   <summary>
-    <a href="#7-draft-performance-best-practices">7. Performance Practices (2) (Work In Progress️ ✍️)</a>
+    <a href="#7-draft-performance-best-practices">7. ביצועים (2) (בתהליך ✍️)</a>
   </summary>
 
 &emsp;&emsp;[7.1. Don't block the event loop](#-71-dont-block-the-event-loop)</br>
@@ -200,7 +200,7 @@
 
 <details>
   <summary>
-    <a href="#8-docker-best-practices">8. Docker Practices (15)</a>
+    <a href="#8-docker-best-practices">8. דוקר (15)</a>
   </summary>
 
 &emsp;&emsp;[8.1 Use multi-stage builds for leaner and more secure Docker images `#strategic`](#-81-use-multi-stage-builds-for-leaner-and-more-secure-docker-images)</br>
@@ -223,7 +223,7 @@
 
 <br/><br/>
 
-# `1. Project Architecture Practices`
+# `1. מבנה הפרוייקט`
 
 ## ![✔] 1.1 Structure your solution by business components
 
@@ -319,7 +319,7 @@ my-system
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `2. Error Handling Practices`
+# `2. ניהול שגיאות`
 
 ## ![✔] 2.1 Use Async-Await or promises for async error handling
 
@@ -447,7 +447,7 @@ especially if the cause of the abnormal behavior is inside of the missing functi
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `3. Code Patterns And Style Practices`
+# `3. תבניות קוד וסגנון עיצוב`
 
 ## ![✔] 3.1 Use ESLint
 
@@ -684,7 +684,7 @@ All statements above will return false if used with `===`
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `4. Testing And Overall Quality Practices`
+# `4. בדיקות ובקרת איכות`
 
 \_We have dedicated guides for testing, see below. The best practices list here is a brief summary of these guides
 
@@ -808,7 +808,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `5. Going To Production Practices`
+# `5. עלייה לאוויר`
 
 ## ![✔] 5.1. Monitoring
 
@@ -1000,7 +1000,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `6. Security Best Practices`
+# `6. אבטחה`
 
 <div align="center">
 <img src="https://img.shields.io/badge/OWASP%20Threats-Top%2010-green.svg" alt="54 items"/>
@@ -1333,7 +1333,7 @@ This style ensures that there is no ambiguity with global npm packages and makes
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `7. Draft: Performance Best Practices`
+# `7. טיוטה: ביצועים`
 
 ## Our contributors are working on this section. [Would you like to join?](https://github.com/goldbergyoni/nodebestpractices/issues/256)
 
@@ -1362,7 +1362,7 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `8. Docker Best Practices`
+# `8. דוקר`
 
 🏅 Many thanks to [Bret Fisher](https://github.com/BretFisher) from whom we learned many of the following practices
 
