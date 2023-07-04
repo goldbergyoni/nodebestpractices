@@ -59,7 +59,7 @@
 &emsp;&emsp;[1.2 חלוקת הרכיבים ל3 שכבות, שמירה על שכבת הווב בגבולותיה `#strategic` `#updated`](#-12-layer-your-components-with-3-tiers-keep-the-web-layer-within-its-boundaries)</br>
 &emsp;&emsp;[1.3 עטפו כלים משותפים בחבילות, שקלו את הפצתם](#-13-wrap-common-utilities-as-packages-consider-publishing)</br>
 &emsp;&emsp;[1.4 השתמשו בקונפיגורציה עם משתני סביבה באופן מודע, מאובטח והיררכי `#updated`](#-14-use-environment-aware-secure-and-hierarchical-config)</br>
-&emsp;&emsp;[1.5 Consider all the consequences when choosing the main framework `#new`](#-15-consider-all-the-consequences-when-choosing-the-main-framework)</br>
+&emsp;&emsp;[1.5 שקלו את כל ההשלכות בעת בחירת מסגרת `#new`](#-15-consider-all-the-consequences-when-choosing-the-main-framework)</br>
 &emsp;&emsp;[1.6 Use TypeScript sparingly and thoughtfully `#new`](#-16-use-typescript-sparingly-and-thoughtfully)</br>
 
 </details>
@@ -299,13 +299,13 @@ my-system
 
 <br/><br/>
 
-## ![✔] 1.5 Consider all the consequences when choosing the main framework
+## ![✔] 1.5 שקלו את כל ההשלכות בעת בחירת <abbr title="framework">מסגרת</abbr>
 
-**אמ;לק:** When building apps and APIs, using a framework is mandatory. It's easy to overlook alternative frameworks or important considerations and then finally land on a sub optimal option. As of 2023/2024, we believe that these four frameworks are worth considering: [Nest.js](https://nestjs.com/), [Fastify](https://www.fastify.io/), [express](https://expressjs.com/), and [Koa](https://koajs.com/). Click read more below for a detailed pros/cons of each framework. Simplistically, we believe that Nest.js is the best match for teams who wish to go OOP and/or build large-scale apps that can't get partitioned into smaller _autonomous_ components. Fastify is our recommendation for apps with reasonably-sized components (e.g., Microservices) that are built around simple Node.js mechanics. Read our [full considerations guide here](./sections/projectstructre/choose-framework.md)
+**אמ;לק:** כאשר בונים אפליקציות ו API-ים, שימוש בפריימוורק הוא חובה. קל להתעלם מהאפשרויות השונות שקיימות ומשיקולים חשובים ובסופו של דבר להשתמש באפשרות שפחות תואמת לדרישות של המוצר. נכון ל2023/2024 אנו מאמינים כי ארבעת הפריימוורקים הללו הם הכדאיים ביותר להשוואה: [Nest.js](https://nestjs.com/), [Fastify](https://www.fastify.io/), [express](https://expressjs.com/), ו [Koa](https://koajs.com/). לחצו על לקריאה נוספת בהמשך כדי לקרוא פרטים נוספים בעד ונגד כל אחת מהאפשרויות.  באופן פשטני, אנו מאמינים כי Node.js זאת ההתאמה הכי טובה לצוותים שרוצים לעבוד בשיטת OOP או לבנות מוצרים שמיועדים לגדול בצורה ניכרת ואי אפשר לחלק אותם לרכיבים קטנים _ועצמאיים_. ההמלצה שלנו היא Fastify עבור מערכות בגודל סבירents (כמו Microservices) שמושתתים על עקרונות פשוטים של Node.js.
 
-**אחרת:** Due to the overwhelming amount of considerations, it's easy to make decisions based on partial information and compare apples with oranges. For example, it's believed that Fastify is a minimal web-server that should get compared with express only. In reality, it's a rich framework with many official plugins that cover many concerns
+**אחרת:** בשל הכמות העצומה של השיקולים, קל לקבל החלטה על בסיס מידע חלקי ולהשוות תפוחים לתפוזים. למשל, ישנה הנחה רווחת שFastify הוא web-server מינימלי שראוי להשוות לexpress בלבד. בפועל, זהו פריימוורק עשיר עם הרבה הרחבות רשמיות שמכסות הרבה צרכים.
 
-🔗 [**Read More: Choosing the right framework**](./sections/projectstructre/choose-framework.md)
+🔗 [**לקריאה נוספת: בחירת הפריימוורק הנכון**](./sections/projectstructre/choose-framework.md)
 
 ## ![✔] 1.6 Use TypeScript sparingly and thoughtfully
 
