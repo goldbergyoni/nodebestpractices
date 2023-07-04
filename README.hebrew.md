@@ -56,7 +56,7 @@
   </summary>
 
 &emsp;&emsp;[1.1 בנה את הפרוייקט שלך לפי רכיבים עסקיים `#strategic` `#updated`](#-11-structure-your-solution-by-business-components)</br>
-&emsp;&emsp;[1.2 Layer your components, keep the web layer within its boundaries `#strategic` `#updated`](#-12-layer-your-components-with-3-tiers-keep-the-web-layer-within-its-boundaries)</br>
+&emsp;&emsp;[1.2 חלוקת הרכיבים ל3 שכבות, שמירה על שכבת הווב בגבולותיה `#strategic` `#updated`](#-12-layer-your-components-with-3-tiers-keep-the-web-layer-within-its-boundaries)</br>
 &emsp;&emsp;[1.3 Wrap common utilities as packages, consider publishing](#-13-wrap-common-utilities-as-packages-consider-publishing)</br>
 &emsp;&emsp;[1.4 Use environment aware, secure and hierarchical config `#updated`](#-14-use-environment-aware-secure-and-hierarchical-config)</br>
 &emsp;&emsp;[1.5 Consider all the consequences when choosing the main framework `#new`](#-15-consider-all-the-consequences-when-choosing-the-main-framework)</br>
@@ -246,9 +246,9 @@ my-system
 
 <br/><br/>
 
-## ![✔] 1.2 Layer your components with 3-tiers, keep the web layer within its boundaries
+## ![✔] 1.2 חלוקת הרכיבים ל3 שכבות, שמירה על שכבת הווב בגבולותיה
 
-**אמ;לק:** Each component should contain 'layers' - a dedicated folder for common concerns: 'entry-point' where controller lives, 'domain' where the logic lives, and 'data-access'. The primary principle of the most popular architectures is to separate the technical concerns (e.g., HTTP, DB, etc) from the pure logic of the app so a developer can code more features without worrying about infrastructural concerns. Putting each concern in a dedicated folder, also known as the [3-Tier pattern](https://en.wikipedia.org/wiki/Multitier_architecture), is the _simplest_ way to meet this goal
+**אמ;לק:** כל רכיב צריך לכלול 'שכבות' - תיקייה יעודית עם אחריות משותפת: 'entry-point' איפה שחלקי השליטה נמצאים, 'domain' איפה שהלוגיקה נמצאת ו 'data-access'. העיקרון המנחה של הארכיטקטורות המובילות בשוק הוא להפריד את האחריות הטכנית (למשל: HTTP, DB ועוד) מהלוגיקה היעודית של המוצר כך שהמתכנתים יוכלו לקודד יותר תכולות בלי לדאוג לגבי ניהול תשתיות. השמה של כל שכבה בתיקייה יעודית, שידועה גם כ-[מודל 3 השכבות](https://he.wikipedia.org/wiki/%D7%90%D7%A8%D7%9B%D7%99%D7%98%D7%A7%D7%98%D7%95%D7%A8%D7%94_%D7%A8%D7%91-%D7%A9%D7%9B%D7%91%D7%AA%D7%99%D7%AA#%D7%90%D7%A8%D7%9B%D7%99%D7%98%D7%A7%D7%98%D7%95%D7%A8%D7%AA_%D7%A9%D7%9C%D7%95%D7%A9_%D7%A9%D7%9B%D7%91%D7%95%D7%AA) ([באנגלית](https://en.wikipedia.org/wiki/Multitier_architecture#Three-tier_architecture)) זאת הדרך _הפשוטה_ להשיג את המטרה.
 
 ```bash
 my-system
@@ -261,9 +261,9 @@ my-system
    │  ├─ data-access # DB calls w/o ORM
 ```
 
-**:אחרת** It's often seen that developer pass web objects like request/response to functions in the domain/logic layer - this violates the separation principle and makes it harder to access later the the logic code by other clients like testing code, scheduled jobs, message queues, etc
+**:אחרת** לעתים דחופות נתקלים בכך שהמתכנתים מעבירים אובייקטי תקשורת כדוגמת request/reqponse לפונקציות בשכבות של הלוגיקה או ניהול המידע - דבר זה פוגע בעיקרון ההפרדה וגורם לכך שבעתיד יהיה קשה יותר להנגיש את הלוגיקה לסוגי קלינטים אחרים כדוגמת: בדיקות יחידה, משימות מתוזמנות וmessage queues.
 
-🔗 [**Read More: layer your app**](./sections/projectstructre/createlayers.md)
+🔗 [**לקריאה נוספת: חלק את המוצר לשכבות**](./sections/projectstructre/createlayers.md)
 
 <br/><br/>
 
