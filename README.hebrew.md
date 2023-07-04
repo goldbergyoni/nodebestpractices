@@ -58,7 +58,7 @@
 &emsp;&emsp;[1.1 בנו את הפרוייקט לפי רכיבים עסקיים `#strategic` `#updated`](#-11-structure-your-solution-by-business-components)</br>
 &emsp;&emsp;[1.2 חלוקת הרכיבים ל3 שכבות, שמירה על שכבת הווב בגבולותיה `#strategic` `#updated`](#-12-layer-your-components-with-3-tiers-keep-the-web-layer-within-its-boundaries)</br>
 &emsp;&emsp;[1.3 עטפו כלים משותפים בחבילות, שקלו את הפצתם](#-13-wrap-common-utilities-as-packages-consider-publishing)</br>
-&emsp;&emsp;[1.4 Use environment aware, secure and hierarchical config `#updated`](#-14-use-environment-aware-secure-and-hierarchical-config)</br>
+&emsp;&emsp;[1.4 השתמשו בקונפיגורציה עם משתני סביבה באופן מודע, מאובטח והיררכי `#updated`](#-14-use-environment-aware-secure-and-hierarchical-config)</br>
 &emsp;&emsp;[1.5 Consider all the consequences when choosing the main framework `#new`](#-15-consider-all-the-consequences-when-choosing-the-main-framework)</br>
 &emsp;&emsp;[1.6 Use TypeScript sparingly and thoughtfully `#new`](#-16-use-typescript-sparingly-and-thoughtfully)</br>
 
@@ -289,13 +289,13 @@ my-system
 
 <br/><br/>
 
-## ![✔] 1.4 Use environment aware, secure and hierarchical config
+## ![✔] 1.4 השתמשו בקונפיגורציה עם משתני סביבה באופן מודע, מאובטח והיררכי
 
-**אמ;לק:** A flawless configuration setup should ensure (a) keys can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability (d) typing support (e) validation for failing fast (f) Specify default for each key. There are a few packages that can help tick most of those boxes like [convict](https://www.npmjs.com/package/convict), [env-var](env-var), [zod](https://github.com/colinhacks/zod), and others
+**אמ;לק:** הגדרת סביבה מושלמת צריכה להבטיח כי (א) שמות משתנים יכולים להיקרא מקבצים כמו גם ממשתני סביבה (ב) סודות נשמרים מחוץ לקוד ששייך למאגר (ג) הקונפיגורציה היא היררכית לצורך חיפוש קל יותר (ד) תמיכה בסוגים שונים של משתנים (ה) וידוא מוקדם של משתנים לא תקינים (ו) הגדרת ברירת מחדל לכל שדה. ישנן מספר ספריות שעונות על רוב הדרישות הללו כמו [convict](https://www.npmjs.com/package/convict), [env-var](env-var), [zod](https://github.com/colinhacks/zod), ועוד...
 
-**אחרת:** Consider a mandatory environment variable that wasn't provided. The app starts successfully and serve requests, some information is already persisted to DB. Then, it's realized that without this mandatory key the request can't complete, leaving the app in a dirty state
+**אחרת:** נניח וישנו משתנה סביבה הכרחי שלא הוגדר, המערכת תתחיל לרוץ בהצלחה, תענה לבקשות, חלק מהמידע יעודכן במסד הנתונים, ולפתע יהיה חסר לה שדה הכרחי להמשך התהליך ושבלעדיו היא לא יכולה לסיים את הפעולה, מה שייצור מערכת במצב "מלוכלך".
 
-🔗 [**Read More: configuration best practices**](./sections/projectstructre/configguide.md)
+🔗 [**לקריאה נוספת: שיטות עבודה של קונפיגורציה**](./sections/projectstructre/configguide.md)
 
 <br/><br/>
 
