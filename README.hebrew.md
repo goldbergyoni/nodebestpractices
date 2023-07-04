@@ -55,9 +55,9 @@
     <a href="#1-project-architecture-practices">1. מבנה הפרוייקט (6)</a>
   </summary>
 
-&emsp;&emsp;[1.1 בנה את הפרוייקט שלך לפי רכיבים עסקיים `#strategic` `#updated`](#-11-structure-your-solution-by-business-components)</br>
+&emsp;&emsp;[1.1 בנו את הפרוייקט לפי רכיבים עסקיים `#strategic` `#updated`](#-11-structure-your-solution-by-business-components)</br>
 &emsp;&emsp;[1.2 חלוקת הרכיבים ל3 שכבות, שמירה על שכבת הווב בגבולותיה `#strategic` `#updated`](#-12-layer-your-components-with-3-tiers-keep-the-web-layer-within-its-boundaries)</br>
-&emsp;&emsp;[1.3 Wrap common utilities as packages, consider publishing](#-13-wrap-common-utilities-as-packages-consider-publishing)</br>
+&emsp;&emsp;[1.3 עטפו כלים משותפים בחבילות, שקלו את הפצתם](#-13-wrap-common-utilities-as-packages-consider-publishing)</br>
 &emsp;&emsp;[1.4 Use environment aware, secure and hierarchical config `#updated`](#-14-use-environment-aware-secure-and-hierarchical-config)</br>
 &emsp;&emsp;[1.5 Consider all the consequences when choosing the main framework `#new`](#-15-consider-all-the-consequences-when-choosing-the-main-framework)</br>
 &emsp;&emsp;[1.6 Use TypeScript sparingly and thoughtfully `#new`](#-16-use-typescript-sparingly-and-thoughtfully)</br>
@@ -225,7 +225,7 @@
 
 # `1. מבנה הפרוייקט`
 
-## ![✔] 1.1 בנה את הפרוייקט שלך לפי רכיבים עסקיים
+## ![✔] 1.1 בנו את הפרוייקט לפי רכיבים עסקיים
 
 **אמ;לק:** בסיס המערכת צריך לכלול תיקיות או מאגרים שמייצג בצורה הגיונית את המידול העסקי. כל רכיב מייצג תחום מוצר (כלומר הקשר מוגבל), למשל 'משתמשים', 'הזמנות', וכולי... כל רכיב מכיל את ה API, לוגיקה ומסד הנתונים שלו. מה המטרה של זה? כאשר יש סביבה עצמאית כל שינוי משפיע אך ורק על החלק הרלוונטי - העומס הנפשי, סיבוכיות הפיתוח והחשש מפריסה חדשה של הרכיב הרבה יותר קטן. כתוצאה מכך, מתכנתים יכולים לפתח הרבה יותר מהר. זה לא דורש בהכרח הפרדה פיזית ויכול להיות מושג גם בMonorepo או multi-repo.
 
@@ -261,15 +261,15 @@ my-system
    │  ├─ data-access # DB calls w/o ORM
 ```
 
-**:אחרת** לעתים דחופות נתקלים בכך שהמתכנתים מעבירים אובייקטי תקשורת כדוגמת request/reqponse לפונקציות בשכבות של הלוגיקה או ניהול המידע - דבר זה פוגע בעיקרון ההפרדה וגורם לכך שבעתיד יהיה קשה יותר להנגיש את הלוגיקה לסוגי קלינטים אחרים כדוגמת: בדיקות יחידה, משימות מתוזמנות וmessage queues.
+**אחרת:** לעתים דחופות נתקלים בכך שהמתכנתים מעבירים אובייקטי תקשורת כדוגמת request/reqponse לפונקציות בשכבות של הלוגיקה או ניהול המידע - דבר זה פוגע בעיקרון ההפרדה וגורם לכך שבעתיד יהיה קשה יותר להנגיש את הלוגיקה לסוגי קלינטים אחרים כדוגמת: בדיקות יחידה, משימות מתוזמנות וmessage queues.
 
 🔗 [**לקריאה נוספת: חלק את המוצר לשכבות**](./sections/projectstructre/createlayers.md)
 
 <br/><br/>
 
-## ![✔] 1.3 Wrap common utilities as packages, consider publishing
+## ![✔] 1.3 עטפו כלים משותפים בחבילות, שקלו את הפצתם
 
-**אמ;לק:** Place all reusable modules in a dedicated folder, e.g., "libraries", and underneath each module in its own folder, e.g., "/libraries/logger". Make the module an independent package with its own package.json file to increases the module encapsulation, and allows future publishing to a repository. In a Monorepo setup, modules can be consumed by 'npm linking' to their physical paths, using ts-paths or by publishing and installing from a package manager repository like the npm registry
+**אמ;לק:** מקמו את כל הכלים שאפשר לשתף אותם בתיקייה ייעודית, למשל 'libraries' וכל כלי בתיקייה פנימית נפרדת, למשל '/libraries/logger'. הפכו את הכלי לחבילה בלתי תלויה עם קובץ ה package.json שלו וזאת כדי להגדיל את הכימוס (encapsulation), ואפשרו הפצה עתידית למאגר. כאשר הפרוייקט שלכם בנוי בתצורת monorepo, כלים אלו יכולים להיות מוגדרים על ידי שימוש ב 'npm linking' לכתובת הפיזית שלהם על ידי שימוש ב ts-paths או על ידי הפצה והתקנה על ידימנהל חבילות כדוגמת 'npm registry'.
 
 ```bash
 my-system
@@ -283,9 +283,9 @@ my-system
 
 ```
 
-**:אחרת** Clients of a module might import and get coupled to internal functionality of a module. With a package.json at the root, one can set a package.json.main or package.json.exports to explicitly tell which files and functions are part of the public interface
+**אחרת:** צרכנים של כלי יהיו צמודים לפונקציונליות הפנימית שלו. על ידי הגדרה של package.json בשורש הכלי מישהו יכול להגדיר קובץ package.json.main או package.json.exports כדי להצהיר במפורש אילו קבצים ופונקציולניות היא חלק מהחלקים הנגישים של הכלי.
 
-🔗 [**Read More: Structure by feature**](./sections/projectstructre/wraputilities.md)
+🔗 [**לקריאה נוספת: בנייה לפי תכונה**](./sections/projectstructre/wraputilities.md)
 
 <br/><br/>
 
