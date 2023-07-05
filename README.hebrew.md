@@ -60,7 +60,7 @@
 &emsp;&emsp;[1.3 עטפו כלים משותפים בחבילות, שקלו את הפצתם](#-13-wrap-common-utilities-as-packages-consider-publishing)</br>
 &emsp;&emsp;[1.4 השתמשו בקונפיגורציה עם משתני סביבה באופן מודע, מאובטח והיררכי `#updated`](#-14-use-environment-aware-secure-and-hierarchical-config)</br>
 &emsp;&emsp;[1.5 שקלו את כל ההשלכות בעת בחירת מסגרת `#new`](#-15-consider-all-the-consequences-when-choosing-the-main-framework)</br>
-&emsp;&emsp;[1.6 Use TypeScript sparingly and thoughtfully `#new`](#-16-use-typescript-sparingly-and-thoughtfully)</br>
+&emsp;&emsp;[1.6 השתמשו ב-TypeScript במידה ובצורה מושכלת `#new`](#-16-use-typescript-sparingly-and-thoughtfully)</br>
 
 </details>
 
@@ -307,13 +307,13 @@ my-system
 
 🔗 [**לקריאה נוספת: בחירת הפריימוורק הנכון**](./sections/projectstructre/choose-framework.md)
 
-## ![✔] 1.6 Use TypeScript sparingly and thoughtfully
+## ![✔] 1.6 השתמשו ב-TypeScript במידה ובצורה מושכלת
 
-**אמ;לק:** Coding without type safety is no longer an option, TypeScript is the most popular option for this mission. Use it to define variables and functions return types. With that, it is also a double edge sword that can greatly _encourage_ complexity with its additional ~ 50 keywords and sophisticated features. Consider using it sparingly, mostly with simple types, and utilize advanced features only when a real need arises
+**אמ;לק:** קידוד ללא מקדמי בטיחות של סיווג משתנים הוא כבר לא אפשרות בת קיימא, TypeScript מהווה את האפשרות הפופולרית ביותר למשימה זו. משתמשים בה להגדרת סוגי משתנים וערכי החזרה של פונקציות. עם זאת, זוהי חרב פיפיות שיכולה בקלות ליצור מורכבות בשל בסביבות 50 מילות מפתח נוספות שיש לה ותכונות מתוחכמות שצריך לדעת להשתמש בהן. שימוש בה צריך להיעשות במידה, בעדיפות להגדרות פשוטות של משתנים, ושימוש ביכולות מתקדמות רק כאשר צורך הכרחי מופיע.
 
-**אחרת:** [Researches](https://earlbarr.com/publications/typestudy.pdf) show that using TypeScript can help in detecting ~20% bugs earlier. Without it, also the developer experience in the IDE is intolerable. On the flip side, 80% of other bugs were not discovered using types. Consequently, typed syntax is valuable but limited. Only efficient tests can discover the whole spectrum of bugs, including type-related bugs. It might also defeat its purpose: sophisticated code features are likely to increase the code complexity, which by itself increases both the amount of bugs and the average bug fix time
+**אחרת:** [מחקרים](https://earlbarr.com/publications/typestudy.pdf) מראים כי שימוש ב-TypeScript יכול לעזור בזיהוי כ20% מהבאגים בשלבים מוקדמים יותר. ללא TypeScript חווית הפיתוח ב IDE נהיית בלתי נסבלת. מהצד השני, 80% מהבאגים היא לא עוזרת לזהות. כתוצאה מכך, שימוש בTypeScript מוסיף ערך מוגבל. רק הוספה של בדיקות איכותיות יכולה לעזור לזהות את מגוון הבאגים הרחב, כולל כאלו שנגרמים מאפיון לאתקין של סוג המשתנה. שימוש לא טוב גם עלול להרוג את המטרה, תכונות מורכבות של קוד מעלות אתמורכבות הקוד מה שבאופן ישיר מעלה את מספר הבאגים וזמן התיקון של כל באג.
 
-🔗 [**Read More: TypeScript considerations**](./sections/projectstructre/typescript-considerations.md)
+🔗 [**לקריאה נוספת: שיקולים לשימוש ב-TypeScript**](./sections/projectstructre/typescript-considerations.md)
 
 <br/><br/><br/>
 
