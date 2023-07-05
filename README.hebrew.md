@@ -60,7 +60,7 @@
 &emsp;&emsp;[1.3 עטפו כלים משותפים בחבילות, שקלו את הפצתם](#-13-wrap-common-utilities-as-packages-consider-publishing)</br>
 &emsp;&emsp;[1.4 השתמשו בקונפיגורציה עם משתני סביבה באופן מודע, מאובטח והיררכי `#updated`](#-14-use-environment-aware-secure-and-hierarchical-config)</br>
 &emsp;&emsp;[1.5 שקלו את כל ההשלכות בעת בחירת מסגרת `#new`](#-15-consider-all-the-consequences-when-choosing-the-main-framework)</br>
-&emsp;&emsp;[1.6 השתמשו ב-TypeScript במידה ובצורה מושכלת `#new`](#-16-use-typescript-sparingly-and-thoughtfully)</br>
+&emsp;&emsp;[1.6 השתמשו ב-TypeScript במידתיות ובצורה מושכלת `#new`](#-16-use-typescript-sparingly-and-thoughtfully)</br>
 
 </details>
 
@@ -307,11 +307,11 @@ my-system
 
 🔗 [**לקריאה נוספת: בחירת הפריימוורק הנכון**](./sections/projectstructre/choose-framework.md)
 
-## ![✔] 1.6 השתמשו ב-TypeScript במידה ובצורה מושכלת
+## ![✔] 1.6 השתמשו ב-TypeScript במידתיות ובצורה מושכלת
 
 **אמ;לק:** קידוד ללא מקדמי בטיחות של סיווג משתנים הוא כבר לא אפשרות בת קיימא, TypeScript מהווה את האפשרות הפופולרית ביותר למשימה זו. משתמשים בה להגדרת סוגי משתנים וערכי החזרה של פונקציות. עם זאת, זוהי חרב פיפיות שיכולה בקלות ליצור מורכבות בשל בסביבות 50 מילות מפתח נוספות שיש לה ותכונות מתוחכמות שצריך לדעת להשתמש בהן. שימוש בה צריך להיעשות במידה, בעדיפות להגדרות פשוטות של משתנים, ושימוש ביכולות מתקדמות רק כאשר צורך הכרחי מופיע.
 
-**אחרת:** [מחקרים](https://earlbarr.com/publications/typestudy.pdf) מראים כי שימוש ב-TypeScript יכול לעזור בזיהוי כ20% מהבאגים בשלבים מוקדמים יותר. ללא TypeScript חווית הפיתוח ב IDE נהיית בלתי נסבלת. מהצד השני, 80% מהבאגים היא לא עוזרת לזהות. כתוצאה מכך, שימוש בTypeScript מוסיף ערך מוגבל. רק הוספה של בדיקות איכותיות יכולה לעזור לזהות את מגוון הבאגים הרחב, כולל כאלו שנגרמים מאפיון לאתקין של סוג המשתנה. שימוש לא טוב גם עלול להרוג את המטרה, תכונות מורכבות של קוד מעלות אתמורכבות הקוד מה שבאופן ישיר מעלה את מספר הבאגים וזמן התיקון של כל באג.
+**אחרת:** [מחקרים](https://earlbarr.com/publications/typestudy.pdf) מראים כי שימוש ב-TypeScript יכול לעזור בזיהוי כ20% מהבאגים בשלבים מוקדמים יותר. ללא TypeScript חווית הפיתוח ב IDE נהיית בלתי נסבלת. מהצד השני, 80% מהבאגים היא לא עוזרת לזהות. כתוצאה מכך, שימוש בTypeScript מוסיף ערך מוגבל. רק הוספה של בדיקות איכותיות יכולה לעזור לזהות את מגוון הבאגים הרחב, כולל כאלו שנגרמים מאפיון לא תקין של סוג המשתנה. שימוש לא טוב גם עלול להרוג את המטרה, תכונות מורכבות של קוד מעלות אתמורכבות הקוד מה שבאופן ישיר מעלה את מספר הבאגים וזמן התיקון של כל באג.
 
 🔗 [**לקריאה נוספת: שיקולים לשימוש ב-TypeScript**](./sections/projectstructre/typescript-considerations.md)
 
