@@ -317,7 +317,7 @@ my-system
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ חזרה למעלה</a></p>
 
 # `2. ניהול שגיאות`
 
@@ -445,7 +445,7 @@ especially if the cause of the abnormal behavior is inside of the missing functi
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ חזרה למעלה</a></p>
 
 # `3. תבניות קוד וסגנון עיצוב`
 
@@ -682,7 +682,7 @@ All statements above will return false if used with `===`
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ חזרה למעלה</a></p>
 
 # `4. בדיקות ובקרת איכות`
 
@@ -806,7 +806,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ חזרה למעלה</a></p>
 
 # `5. עלייה לאוויר`
 
@@ -998,7 +998,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ חזרה למעלה</a></p>
 
 # `6. אבטחה`
 
@@ -1331,7 +1331,7 @@ This style ensures that there is no ambiguity with global npm packages and makes
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ חזרה למעלה</a></p>
 
 # `7. טיוטה: ביצועים`
 
@@ -1360,7 +1360,7 @@ Bear in mind that with the introduction of the new V8 engine alongside the new E
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ חזרה למעלה</a></p>
 
 # `8. דוקר`
 
@@ -1540,7 +1540,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 <br/><br /><br />
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ חזרה למעלה</a></p>
 
 # Milestones
 
