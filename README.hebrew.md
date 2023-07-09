@@ -70,7 +70,7 @@
   </summary>
 
 &emsp;&emsp;[2.1 השתמשו ב Async-Await או הבטחות לניהול שגיאות אסינכרוניות](#-21-use-async-await-or-promises-for-async-error-handling)</br>
-&emsp;&emsp;[2.2 Extend the built-in Error object `#strategic` `#updated`](#-22-extend-the-built-in-error-object)</br>
+&emsp;&emsp;[2.2 הרחיבו את מבנה אוביקט השגיאה המובנה Error `#strategic` `#updated`](#-22-extend-the-built-in-error-object)</br>
 &emsp;&emsp;[2.3 Distinguish operational vs programmer errors `#strategic` `#updated`](#-23-distinguish-catastrophic-errors-from-operational-errors)</br>
 &emsp;&emsp;[2.4 Handle errors centrally, not within a middleware `#strategic`](#-24-handle-errors-centrally-not-within-a-middleware)</br>
 &emsp;&emsp;[2.5 Document API errors using OpenAPI or GraphQL](#-25-document-api-errors-using-openapi-or -graphql)</br>
@@ -331,13 +331,13 @@ my-system
 
 <br/><br/>
 
-## ![✔] 2.2 Extend the built-in Error object
+## ![✔] 2.2 הרחיבו את מבנה אוביקט השגיאה המובנה `Error`
 
-**אמ;לק:** Some libraries throw errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Instead, create app error object/class that extends the built-in Error object and use it whenever rejecting, throwing or emitting an error. The app error should add useful imperative properties like the error name/code and isCatastrophic. By doing so, all errors have a unified structure and support better error handling .There is `no-throw-literal` ESLint rule that strictly checks that (although it has some [limitations](https://eslint.org/docs/rules/no-throw-literal) which can be solved when using TypeScript and setting the `@typescript-eslint/no-throw-literal` rule)
+**אמ;לק:** ישנן ספריות שזורקות שגיאה כמחרוזת או כאובייקט פרי מחשבת כותבי הקוד של הספריה - דבר שיוצר מורכבות בניהול השגיאות וביצירת מכנה משותף בין מודולים שונים. במקום זאת, השקיעו ביצירת אובייקט או מחלקת (class) שגיאה שיורשת מאובייקט השגיאה המובנה של השפה והשתמשו בזה בכל פעם שצריך לדחות את המצב, לזרוק שגיאה או להפיץ שגיאה. השגיאה האפליקטיבית צריכה להוסיף שדות נוספים כדוגמת שם השגיאה ורמת החומרה שלה. על ידי כך, לכל השגיאות ישנו מבנה אחיד והן מאפשרות תמיכה טובה יותר בניהול שגיאות. ישנו כלל של `no-throw-literal` ESLint שבודק בצורה מיטבית את השימוש הזה (על אף שיש לזה קצת [מגבלות](https://eslint.org/docs/rules/no-throw-literal) שיכולות להסתדר על ידי שימוש ב-TypeScript והגדרת החוק `@typescript-eslint/no-throw-literal`)
 
-**אחרת:** When invoking some component, being uncertain which type of errors come in return – it makes proper error handling much harder. Even worse, using custom types to describe errors might lead to loss of critical error information like the stack trace!
+**אחרת:** כאשר מפעילים רכיב כלשהו, אם ישנה אי וודאות איזה סוג של שגיאה יגיע - זה גורם לכך שניהול השגיאות יהיה הרבה יותר מורכב. גרוע מכך, שימוש באובייקטים מומצאים לתיאור שגיאות עלול להוביל לאיבוד של שגיאות קריטיות בעלות מידע חשוב כמו מעקב אחר מקור השגיאה!
 
-🔗 [**Read More: using the built-in error object**](./sections/errorhandling/useonlythebuiltinerror.md)
+🔗 [**לקריאה נוספת: שימוש באובייקט השגיאה המובנה**](./sections/errorhandling/useonlythebuiltinerror.md)
 
 <br/><br/>
 
