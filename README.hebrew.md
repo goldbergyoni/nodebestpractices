@@ -69,7 +69,7 @@
     <a href="#2-error-handling-practices">2. ניהול שגיאות (12)</a>
   </summary>
 
-&emsp;&emsp;[2.1 Use Async-Await or promises for async error handling](#-21-use-async-await-or-promises-for-async-error-handling)</br>
+&emsp;&emsp;[2.1 השתמשו ב Async-Await או הבטחות לניהול שגיאות אסינכרוניות](#-21-use-async-await-or-promises-for-async-error-handling)</br>
 &emsp;&emsp;[2.2 Extend the built-in Error object `#strategic` `#updated`](#-22-extend-the-built-in-error-object)</br>
 &emsp;&emsp;[2.3 Distinguish operational vs programmer errors `#strategic` `#updated`](#-23-distinguish-catastrophic-errors-from-operational-errors)</br>
 &emsp;&emsp;[2.4 Handle errors centrally, not within a middleware `#strategic`](#-24-handle-errors-centrally-not-within-a-middleware)</br>
@@ -321,13 +321,13 @@ my-system
 
 # `2. ניהול שגיאות`
 
-## ![✔] 2.1 Use Async-Await or promises for async error handling
+## ![✔] 2.1 השתמשו ב Async-Await או <abbr title="promises">הבטחות</abbr> לניהול שגיאות אסינכרוניות
 
-**אמ;לק:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using Promises with async-await which enables a much more compact and familiar code syntax like try-catch
+**אמ;לק:** ניהול שגיאות אסינכרוניות על ידי שימוש ב-callbacks זו הדרך המהירה לגהינום (הידועה בשם [פירמידת דום](https://en.wikipedia.org/wiki/Pyramid_of_doom_(programming))). המתנה הטובה ביותר שאפשר לתת לקוד הוא שימוש ב-promises בסגנון async-await דבר שמאפשר קוד הרבה יותר נקי ומסודר וסינטקס דומה ל try-catch.
 
-**אחרת:** Node.js callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting, and awkward coding patterns
+**אחרת:** סגנון הכתיבה `function(err, response)` הכולל שימוש ב-callbacks של Node.js, סולל דרך בטוחה לקוד שאי אפשר לתחזק בשל הערבוב בין ניהול שגיאות לניהול התהליך התקני של המערכת, עם קינון מוגזם וסגנון קוד מוזר.
 
-🔗 [**Read More: avoiding callbacks**](./sections/errorhandling/asyncerrorhandling.md)
+🔗 [**לקריאה נוספת: הימנעות מ-callbacks**](./sections/errorhandling/asyncerrorhandling.md)
 
 <br/><br/>
 
