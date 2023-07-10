@@ -71,7 +71,7 @@
 
 &emsp;&emsp;[2.1 השתמשו ב Async-Await או הבטחות לניהול שגיאות אסינכרוניות](#-21-use-async-await-or-promises-for-async-error-handling)</br>
 &emsp;&emsp;[2.2 הרחיבו את מבנה אוביקט השגיאה המובנה Error `#strategic` `#updated`](#-22-extend-the-built-in-error-object)</br>
-&emsp;&emsp;[2.3 Distinguish operational vs programmer errors `#strategic` `#updated`](#-23-distinguish-catastrophic-errors-from-operational-errors)</br>
+&emsp;&emsp;[2.3 הבחינו בין שגיאות קטסטרופליות לבין שגיאות תפעוליות `#strategic` `#updated`](#-23-distinguish-catastrophic-errors-from-operational-errors)</br>
 &emsp;&emsp;[2.4 Handle errors centrally, not within a middleware `#strategic`](#-24-handle-errors-centrally-not-within-a-middleware)</br>
 &emsp;&emsp;[2.5 Document API errors using OpenAPI or GraphQL](#-25-document-api-errors-using-openapi-or -graphql)</br>
 &emsp;&emsp;[2.6 Exit the process gracefully when a stranger comes to town `#strategic`](#-26-exit-the-process-gracefully-when-a-stranger-comes-to-town)</br>
@@ -341,13 +341,13 @@ my-system
 
 <br/><br/>
 
-## ![✔] 2.3 Distinguish catastrophic errors from operational errors
+## ![✔] 2.3 הבחינו בין שגיאות קטסטרופליות לבין שגיאות תפעוליות
 
-**אמ;לק:** Operational errors (e.g. API received an invalid input) refer to known cases where the error impact is fully understood and can be handled thoughtfully. On the other hand, catastrophic error (also known as programmer errors) refers to unusual code failures that dictate to gracefully restart the application
+**אמ;לק:** שגיאות תפעוליות (למשל קלט לא תקין בפנייה ל-API) מתייחסות למקרים ידועים בהם ההשפעה של השגיאה מובנת לחלוטין ויכולה להיות מנוהלת בצורה מחושבת. מצד שני, שגיאות קטסטרופליות (ידועות גם כשגיאות תכנות) מתייחסות לשגיאות לא צפויות במערכת שדורשות אתחול בטוח שלה.
 
-**אחרת:** You may always restart the application when an error appears, but why let ~5000 online users down because of a minor, predicted, operational error? The opposite is also not ideal – keeping the application up when an unknown catastrophic issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
+**אחרת:** אתם עלולים לאתחל את המערכת בעקבות כל שגיאה. אבל למה לגרום לכ-5000 משתמשים לחוות התנתקות בגלל שגיאה תפעולית צפויה ושולית? ההיפך הוא גם לא אידיאלי - להשאיר את המערכת עובדת כאשר קטסטרופה לא צפויה קרתה בה והיא עלולה לגרור התנהגות בלתי צפויה. הבדלה בין שני המקרים מאפשרת התמודדות מושכלת ומאוזנת בהתאם להקשר.
 
-🔗 [**Read More: operational vs programmer error**](./sections/errorhandling/operationalvsprogrammererror.md)
+🔗 [**לקריאה נוספת: שגיאות תפעוליות מול שגיאות תכנות**](./sections/errorhandling/operationalvsprogrammererror.md)
 
 <br/><br/>
 
