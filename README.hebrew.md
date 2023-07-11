@@ -78,7 +78,7 @@
 &emsp;&emsp;[2.7 השתמשו ב-Logger מוכר ואמין כדי להגדיל את הקְרִיאוּת של השגיאות `#updated`](#-27-use-a-mature-logger-to-increase-errors-visibility)</br>
 &emsp;&emsp;[2.8 בידקו את תגובת המערכת לשגיאות על ידי שימוש בכלי הבדיקות האהוב עליכם `#updated`](#-28-test-error-flows-using-your-favorite-test-framework)</br>
 &emsp;&emsp;[2.9 גלו שגיאות וזמני השבתה על ידי שימוש בכלי APM](#-29-discover-errors-and-downtime-using-apm-products)</br>
-&emsp;&emsp;[2.10 Catch unhandled promise rejections `#updated`](#-210-catch-unhandled-promise-rejections)</br>
+&emsp;&emsp;[2.10 תפסו מקרים לא מטופלים של דחיות של הבטחות `#updated`](#-210-catch-unhandled-promise-rejections)</br>
 &emsp;&emsp;[2.11 Fail fast, validate arguments using a dedicated library](#-211-fail-fast-validate-arguments-using-a-dedicated-library)</br>
 &emsp;&emsp;[2.12 Always await promises before returning to avoid a partial stacktrace `#new`](#-212-always-await-promises-before-returning-to-avoid-a-partial-stacktrace)</br>
 
@@ -411,13 +411,13 @@ my-system
 
 <br/><br/>
 
-## ![✔] 2.10 Catch unhandled promise rejections
+## ![✔] 2.10 תפסו מקרים לא מטופלים של <abbr title="promises rejections">דחיות של הבטחות</abbr>
 
-**אמ;לק:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explicitly handle it. Even if your code is subscribed to `process.uncaughtException`! Overcome this by registering to the event `process.unhandledRejection`
+**אמ;לק:** כל שגיאה או דחייה שחוזרת מהבטחה תיבלע, אלא אם כן בשלב הפיתוח יטפלו בה כמו שצריך. אפילו אם יש בקוד האזנה ל `process.uncaughtException`! כדי להתגבר על זה צריך להאזין גם ל `process.unhandledRejection`.
 
-**אחרת:** Your errors will get swallowed and leave no trace. Nothing to worry about
+**אחרת:** השגיאות במערכת יבלעו ויעלמו ללא עקבות. לא משהו שצריך לדאוג ממנו...
 
-🔗 [**Read More: catching unhandled promise rejection**](./sections/errorhandling/catchunhandledpromiserejection.md)
+🔗 [**לקריאה נוספת: תפיסה של דחיות של הבטחות**](./sections/errorhandling/catchunhandledpromiserejection.md)
 
 <br/><br/>
 
