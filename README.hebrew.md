@@ -80,7 +80,7 @@
 &emsp;&emsp;[2.9 גלו שגיאות וזמני השבתה על ידי שימוש בכלי APM](#-29-discover-errors-and-downtime-using-apm-products)</br>
 &emsp;&emsp;[2.10 תפסו מקרים לא מטופלים של דחיות של הבטחות `#updated`](#-210-catch-unhandled-promise-rejections)</br>
 &emsp;&emsp;[2.11 היכשלו מהר, ודאו את משתני הקלט באמצעות ספריה יעודית](#-211-fail-fast-validate-arguments-using-a-dedicated-library)</br>
-&emsp;&emsp;[2.12 Always await promises before returning to avoid a partial stacktrace `#new`](#-212-always-await-promises-before-returning-to-avoid-a-partial-stacktrace)</br>
+&emsp;&emsp;[2.12 תמיד המתינו לתשובה מההבטחות לפני שאתם מעבירים את התשובה הלאה כדי להימנע ממעקב חלקי `#new`](#-212-always-await-promises-before-returning-to-avoid-a-partial-stacktrace)</br>
 
 </details>
 
@@ -431,17 +431,20 @@ my-system
 
 <br/><br/>
 
-## ![✔] 2.12 Always await promises before returning to avoid a partial stacktrace
+## ![✔] 2.12 תמיד המתינו לתשובה מההבטחות לפני שאתם מעבירים את התשובה הלאה כדי להימנע ממעקב חלקי
 
-**אמ;לק:** Always do `return await` when returning a promise to benefit full error stacktrace. If a
-function returns a promise, that function must be declared as `async` function and explicitly
-`await` the promise before returning it
+**אמ;לק:** תמיד כתבו `return await` כאשר מחזירים תוצאה של הבטחה וזאת כדי להשיג ערך מלא של מעקב אחר מקור השגיאה (stacktrace). אם פונקציה מחזירה הבטחה היא חייבת להיות מוגדרת כפונקציה אסינכרונית ובמפורש לחכות להבטחה שהיא מחזירה.
 
-**אחרת:** The function that returns a promise without awaiting won't appear in the stacktrace.
-Such missing frames would probably complicate the understanding of the flow that leads to the error,
-especially if the cause of the abnormal behavior is inside of the missing function
+```js
+async function promisifyFunction() {
+  // some logic
+  return await new Promise(...);
+}
+```
 
-🔗 [**Read More: returning promises**](./sections/errorhandling/returningpromises.md)
+**אחרת:** הפונקציה שמחזירה הבטחה ללא המתנה לא תופיע בנתיב המעקב אחרי השגיאה (stacktrace). חוסרים כאלו עלולים לסבך את ההבנה של זרימת המערכת שגרמה לשגיאה, במיוחד אם הגורם להתנהגות הלא צפויה קרה בפונקציה החסרה.
+
+🔗 [**לקריאה נוספת: החזרת הבטחות**](./sections/errorhandling/returningpromises.md)
 
 <br/><br/><br/>
 
