@@ -77,7 +77,7 @@
 &emsp;&emsp;[2.6 הורידו את התהליך בצורה מסודרת כאשר זר בא לבקר `#strategic`](#-26-exit-the-process-gracefully-when-a-stranger-comes-to-town)</br>
 &emsp;&emsp;[2.7 השתמשו ב-Logger מוכר ואמין כדי להגדיל את הקְרִיאוּת של השגיאות `#updated`](#-27-use-a-mature-logger-to-increase-errors-visibility)</br>
 &emsp;&emsp;[2.8 בידקו את תגובת המערכת לשגיאות על ידי שימוש בכלי הבדיקות האהוב עליכם `#updated`](#-28-test-error-flows-using-your-favorite-test-framework)</br>
-&emsp;&emsp;[2.9 Discover errors and downtime using APM products](#-29-discover-errors-and-downtime-using-apm-products)</br>
+&emsp;&emsp;[2.9 גלו שגיאות וזמני השבתה על ידי שימוש בכלי APM](#-29-discover-errors-and-downtime-using-apm-products)</br>
 &emsp;&emsp;[2.10 Catch unhandled promise rejections `#updated`](#-210-catch-unhandled-promise-rejections)</br>
 &emsp;&emsp;[2.11 Fail fast, validate arguments using a dedicated library](#-211-fail-fast-validate-arguments-using-a-dedicated-library)</br>
 &emsp;&emsp;[2.12 Always await promises before returning to avoid a partial stacktrace `#new`](#-212-always-await-promises-before-returning-to-avoid-a-partial-stacktrace)</br>
@@ -401,13 +401,13 @@ my-system
 
 <br/><br/>
 
-## ![✔] 2.9 Discover errors and downtime using APM products
+## ![✔] 2.9 גלו שגיאות וזמני השבתה על ידי שימוש בכלי APM
 
-**אמ;לק:** Monitoring and performance products (a.k.a APM) proactively gauge your codebase or API so they can automagically highlight errors, crashes, and slow parts that you were missing
+**אמ;לק:** כלי ניטור ובדיקת ביצועים (מוכרים כ-APM) מודדים באופן יזום את הקוד או ה-API כך שבאופן קסום הם מציגים שגיאות, התרסקויות וחלקים שעובדים לאט מהצפוי ואתם לא שמים לב אליהם.
 
-**אחרת:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which are your slowest code parts under real-world scenario and how these affect the UX
+**אחרת:** אתם עלולים להתאמץ רבות במדידה של בעיות ביצועים וזמני השבתה של המערכת, כנראה שלעולם לא תהיו מודעים לאיזה חלקים במערכת הם האיטיים ביותר ואיך זה משפיע על חווית המשתמש.
 
-🔗 [**Read More: using APM products**](./sections/errorhandling/apmproducts.md)
+🔗 [**לקריאה נוספת: שימוש ב-APM**](./sections/errorhandling/apmproducts.md)
 
 <br/><br/>
 
