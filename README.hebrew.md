@@ -73,7 +73,7 @@
 &emsp;&emsp;[2.2 הרחיבו את מבנה אוביקט השגיאה המובנה Error `#strategic` `#updated`](#-22-extend-the-built-in-error-object)</br>
 &emsp;&emsp;[2.3 הבחינו בין שגיאות קטסטרופליות לבין שגיאות תפעוליות `#strategic` `#updated`](#-23-distinguish-catastrophic-errors-from-operational-errors)</br>
 &emsp;&emsp;[2.4 נהלו את השגיאות במרוכז ולא באמצעות כלי ביניים `#strategic`](#-24-handle-errors-centrally-not-within-a-middleware)</br>
-&emsp;&emsp;[2.5 Document API errors using OpenAPI or GraphQL](#-25-document-api-errors-using-openapi-or -graphql)</br>
+&emsp;&emsp;[2.5 תעדו את שגיאות ה-API באמצעות OpenAPI או GraphQL](#-25-document-api-errors-using-openapi-or-graphql)</br>
 &emsp;&emsp;[2.6 Exit the process gracefully when a stranger comes to town `#strategic`](#-26-exit-the-process-gracefully-when-a-stranger-comes-to-town)</br>
 &emsp;&emsp;[2.7 Use a mature logger to increase errors visibility `#updated`](#-27-use-a-mature-logger-to-increase-errors-visibility)</br>
 &emsp;&emsp;[2.8 Test error flows using your favorite test framework `#updated`](#-28-test-error-flows-using-your-favorite-test-framework)</br>
@@ -361,13 +361,13 @@ my-system
 
 <br/><br/>
 
-## ![✔] 2.5 Document API errors using OpenAPI or GraphQL
+## ![✔] 2.5 תעדו את שגיאות ה-API באמצעות OpenAPI או GraphQL
 
-**אמ;לק:** Let your API callers know which errors might come in return so they can handle these thoughtfully without crashing. For RESTful APIs, this is usually done with documentation frameworks like OpenAPI. If you're using GraphQL, you can utilize your schema and comments as well
+**אמ;לק:** אפשרו למשתמשי ה-API שלכם לדעת אילו שגיאות עלולות להגיע כתשובה, כך שהם יוכלו להתמודד איתן בצורה מושכלת במקום לקרוס. ל-API מבוסס REST זה נעשה בדרך כלל באמצעות כלי תעוד כמו OpenAPI. אם אתם משתמשים ב-GraphQL, אתם יכולים להשתמש בסכמה ובהערות בשביל להשיג את המטרה.
 
-**אחרת:** An API client might decide to crash and restart only because it received back an error it couldn’t understand. Note: the caller of your API might be you (very typical in a microservice environment)
+**אחרת:** מי שמשתמש ב-API שלנו עלול להחליט לגרום למערכת שלו לקרוס ולאתחל את עצמה רק בגלל שהוא קיבל שגיאה שהוא לא הצליח להבין. שימו לב: המשתמש של ה-API שלכם יכול להיות אתם (מה שקורה הרבה כשמשתמשים במיקרוסרוויסים).
 
-🔗 [**Read More: documenting API errors in Swagger or GraphQL**](./sections/errorhandling/documentingusingswagger.md)
+🔗 [**לקריאה נוספת: תיעוד שגיאות ה-API באמצעות OpenAPI או GraphQL**](./sections/errorhandling/documentingusingswagger.md)
 
 <br/><br/>
 
