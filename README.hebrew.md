@@ -74,7 +74,7 @@
 &emsp;&emsp;[2.3 הבחינו בין שגיאות קטסטרופליות לבין שגיאות תפעוליות `#strategic` `#updated`](#-23-distinguish-catastrophic-errors-from-operational-errors)</br>
 &emsp;&emsp;[2.4 נהלו את השגיאות במרוכז ולא באמצעות כלי ביניים `#strategic`](#-24-handle-errors-centrally-not-within-a-middleware)</br>
 &emsp;&emsp;[2.5 תעדו את שגיאות ה-API באמצעות OpenAPI או GraphQL](#-25-document-api-errors-using-openapi-or-graphql)</br>
-&emsp;&emsp;[2.6 Exit the process gracefully when a stranger comes to town `#strategic`](#-26-exit-the-process-gracefully-when-a-stranger-comes-to-town)</br>
+&emsp;&emsp;[2.6 הורידו את התהליך בצורה מסודרת כאשר זר בא לבקר `#strategic`](#-26-exit-the-process-gracefully-when-a-stranger-comes-to-town)</br>
 &emsp;&emsp;[2.7 Use a mature logger to increase errors visibility `#updated`](#-27-use-a-mature-logger-to-increase-errors-visibility)</br>
 &emsp;&emsp;[2.8 Test error flows using your favorite test framework `#updated`](#-28-test-error-flows-using-your-favorite-test-framework)</br>
 &emsp;&emsp;[2.9 Discover errors and downtime using APM products](#-29-discover-errors-and-downtime-using-apm-products)</br>
@@ -371,13 +371,13 @@ my-system
 
 <br/><br/>
 
-## ![✔] 2.6 Exit the process gracefully when a stranger comes to town
+## ![✔] 2.6 הורידו את התהליך בצורה מסודרת כאשר זר בא לבקר
 
-**אמ;לק:** When an unknown error occurs (catastrophic error, see best practice 2.3) - there is uncertainty about the application healthiness. In this case, there is no escape from making the error observable, shutting off connections and exiting the process. Any reputable runtime framework like Dockerized services or cloud serverless solutions will take care to restart
+**אמ;לק:** כאשר שגיאה לא ידועה חלה (שגיאה קטסטרופלית, ראו תובנה 2.3) - ישנה חוסר ודאות לגבי הבריאות והיציבות של המערכת. במקרה כזה, אין דרך לברוח מלגרום לשגיאה להיות ברת צפייה, סגירת חיבוריות לרכיבים נוספים והורדה של התהליך. כל סביבת ריצה מהימנה כדוגמת שירותי Docker או שירותי ענן שמספקים פתרונות ללא שרת (serverless) יוודאו שהתהליך יעלה מחדש עבורכם.
 
-**אחרת:** When an unfamiliar exception occurs, some object might be in a faulty state (e.g. an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
+**אחרת:** כאשר שגיאה לא צפויה קורית, רכיב כלשהו עלול להיות במצב לא תקין (למשל event emitter גלובאלי שמפסיק להפיץ אירועים בשל כשלון פנימי) והחל מעכשיו שאר הבקשות שמשתמשות ברכיב זה עלולות להיכשל או להתנהג באופן ממש לא צפוי.
 
-🔗 [**Read More: shutting the process**](./sections/errorhandling/shuttingtheprocess.md)
+🔗 [**לקריאה נוספת: הורדת התהליך**](./sections/errorhandling/shuttingtheprocess.md)
 
 <br/><br/>
 
