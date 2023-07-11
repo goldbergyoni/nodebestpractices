@@ -76,7 +76,7 @@
 &emsp;&emsp;[2.5 תעדו את שגיאות ה-API באמצעות OpenAPI או GraphQL](#-25-document-api-errors-using-openapi-or-graphql)</br>
 &emsp;&emsp;[2.6 הורידו את התהליך בצורה מסודרת כאשר זר בא לבקר `#strategic`](#-26-exit-the-process-gracefully-when-a-stranger-comes-to-town)</br>
 &emsp;&emsp;[2.7 השתמשו ב-Logger מוכר ואמין כדי להגדיל את הקְרִיאוּת של השגיאות `#updated`](#-27-use-a-mature-logger-to-increase-errors-visibility)</br>
-&emsp;&emsp;[2.8 Test error flows using your favorite test framework `#updated`](#-28-test-error-flows-using-your-favorite-test-framework)</br>
+&emsp;&emsp;[2.8 בידקו את תגובת המערכת לשגיאות על ידי שימוש בכלי הבדיקות האהוב עליכם `#updated`](#-28-test-error-flows-using-your-favorite-test-framework)</br>
 &emsp;&emsp;[2.9 Discover errors and downtime using APM products](#-29-discover-errors-and-downtime-using-apm-products)</br>
 &emsp;&emsp;[2.10 Catch unhandled promise rejections `#updated`](#-210-catch-unhandled-promise-rejections)</br>
 &emsp;&emsp;[2.11 Fail fast, validate arguments using a dedicated library](#-211-fail-fast-validate-arguments-using-a-dedicated-library)</br>
@@ -391,13 +391,13 @@ my-system
 
 <br/><br/>
 
-## ![✔] 2.8 Test error flows using your favorite test framework
+## ![✔] 2.8 בידקו את תגובת המערכת לשגיאות על ידי שימוש בכלי הבדיקות האהוב עליכם
 
-**אמ;לק:** Whether professional automated QA or plain manual developer testing – Ensure that your code not only satisfies positive scenarios but also handles and returns the right errors. On top of this, simulate deeper error flows like uncaught exceptions an ensure that the error handler treat these properly (see code examples within the "read more" section)
+**אמ;לק:** בין אם יש לכם כלי QA אוטומטי ומקצועי ובין אם אחד המפתחים מבצע את הבדיקות - ודאו כי לא רק המסלול הבטוח של הקוד מכוסה, אלא גם ניהול השגיאות ושחוזרות השגיאות שאמורות לחזור במקרה של תקלה. נוסף על כך, בידקו מקרים מורכבים יותר של שגיאות, כמו למשל שגיאות בלתי צפויות, כדי לוודא שהרכיב שמטפל בשגיאות מבצע זאת כראוי (ראו דוגמאות קוד בקישור "לקריאה נוספת")
 
-**אחרת:** Without testing, whether automatically or manually, you can’t rely on your code to return the right errors. Without meaningful errors – there’s no error handling
+**אחרת:** ללא בדיקות כלל, לא ידניות ולא אוטומטיות, לא תוכלו לסמוך על הקוד שלכם שיחזיר את השגיאה הנכונה. ללא שגיאות משמעותיות לא תוכלו לטפל בשגיאות.
 
-🔗 [**Read More: testing error flows**](./sections/errorhandling/testingerrorflows.md)
+🔗 [**לקריאה נוספת: בדיקת התנהגות בעת שגיאה**](./sections/errorhandling/testingerrorflows.md)
 
 <br/><br/>
 
