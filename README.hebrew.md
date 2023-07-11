@@ -72,7 +72,7 @@
 &emsp;&emsp;[2.1 השתמשו ב Async-Await או הבטחות לניהול שגיאות אסינכרוניות](#-21-use-async-await-or-promises-for-async-error-handling)</br>
 &emsp;&emsp;[2.2 הרחיבו את מבנה אוביקט השגיאה המובנה Error `#strategic` `#updated`](#-22-extend-the-built-in-error-object)</br>
 &emsp;&emsp;[2.3 הבחינו בין שגיאות קטסטרופליות לבין שגיאות תפעוליות `#strategic` `#updated`](#-23-distinguish-catastrophic-errors-from-operational-errors)</br>
-&emsp;&emsp;[2.4 Handle errors centrally, not within a middleware `#strategic`](#-24-handle-errors-centrally-not-within-a-middleware)</br>
+&emsp;&emsp;[2.4 נהלו את השגיאות במרוכז ולא באמצעות כלי ביניים `#strategic`](#-24-handle-errors-centrally-not-within-a-middleware)</br>
 &emsp;&emsp;[2.5 Document API errors using OpenAPI or GraphQL](#-25-document-api-errors-using-openapi-or -graphql)</br>
 &emsp;&emsp;[2.6 Exit the process gracefully when a stranger comes to town `#strategic`](#-26-exit-the-process-gracefully-when-a-stranger-comes-to-town)</br>
 &emsp;&emsp;[2.7 Use a mature logger to increase errors visibility `#updated`](#-27-use-a-mature-logger-to-increase-errors-visibility)</br>
@@ -351,13 +351,13 @@ my-system
 
 <br/><br/>
 
-## ![✔] 2.4 Handle errors centrally, not within a middleware
+## ![✔] 2.4 נהלו את השגיאות במרוכז ולא באמצעות <abbr title="muddlewares">כלי ביניים</abbr>
 
-**אמ;לק:** Error handling logic such as logging, deciding whether to crash and monitoring metrics should be encapsulated in a dedicated and centralized object that all entry-points (e.g. APIs, cron jobs, scheduled jobs) call when an error comes in
+**אמ;לק:** מימוש הניהול של השגיאות כמו למשל תעוד השגיאה, החלטה אם לקרוס ואילו מדדים לנטר צריך להיות מרוכז במקום אחד שכל הכניסות למערכת (למשל APIs, cron jobs, scheduled jobs) משתמשות בו כאשר חלה בהן שגיאה.
 
-**אחרת:** Not handling errors within a single place will lead to code duplication and probably to improperly handled errors
+**אחרת:** אם לא מנהלים את השגיאות במקום אחד אז במהרה יהיה שכפול קוד וכנראה ניהול לא תקין של חלק מהשגיאות.
 
-🔗 [**Read More: handling errors in a centralized place**](./sections/errorhandling/centralizedhandling.md)
+🔗 [**לקריאה נוספת: ניהול השגיאות במקום מרוכז**](./sections/errorhandling/centralizedhandling.md)
 
 <br/><br/>
 
