@@ -75,7 +75,7 @@
 &emsp;&emsp;[2.4 נהלו את השגיאות במרוכז ולא באמצעות כלי ביניים `#strategic`](#-24-handle-errors-centrally-not-within-a-middleware)</br>
 &emsp;&emsp;[2.5 תעדו את שגיאות ה-API באמצעות OpenAPI או GraphQL](#-25-document-api-errors-using-openapi-or-graphql)</br>
 &emsp;&emsp;[2.6 הורידו את התהליך בצורה מסודרת כאשר זר בא לבקר `#strategic`](#-26-exit-the-process-gracefully-when-a-stranger-comes-to-town)</br>
-&emsp;&emsp;[2.7 Use a mature logger to increase errors visibility `#updated`](#-27-use-a-mature-logger-to-increase-errors-visibility)</br>
+&emsp;&emsp;[2.7 השתמשו ב-Logger מוכר ואמין כדי להגדיל את הקְרִיאוּת של השגיאות `#updated`](#-27-use-a-mature-logger-to-increase-errors-visibility)</br>
 &emsp;&emsp;[2.8 Test error flows using your favorite test framework `#updated`](#-28-test-error-flows-using-your-favorite-test-framework)</br>
 &emsp;&emsp;[2.9 Discover errors and downtime using APM products](#-29-discover-errors-and-downtime-using-apm-products)</br>
 &emsp;&emsp;[2.10 Catch unhandled promise rejections `#updated`](#-210-catch-unhandled-promise-rejections)</br>
@@ -381,13 +381,13 @@ my-system
 
 <br/><br/>
 
-## ![✔] 2.7 Use a mature logger to increase errors visibility
+## ![✔] 2.7 השתמשו ב-Logger מוכר ואמין כדי להגדיל את הקְרִיאוּת של השגיאות
 
-**אמ;לק:** A robust logging tools like [Pino](https://github.com/pinojs/pino) or [Winston](https://github.com/winstonjs/winston) increases the errors visibility using features like log-levels, pretty print coloring and more. Console.log lacks these imperative features and should be avoided. The best in class logger allows attaching custom useful properties to log entries with minimized serialization performance penalty. Developers should write logs to `stdout` and let the infrastructure pipe the stream to the appropriate log aggregator
+**אמ;לק:** כלי לוגים איכותי כדוגמת [Pino](https://github.com/pinojs/pino) או [Winston](https://github.com/winstonjs/winston) מגדיל את הקריאות וההבנה של הלוגים על ידי שימוש ברמת חומרה, עימוד, עיצוב, צבעים ועוד. ל-`console.log` אין את היכולות הללו וראוי להימנע משימוש בו. העיפרון החד ביותר בתחום מאפשר הוספה של שדות שימושיים נוספים ללא תקורה גבוהה של ביצועים. מפתחים צריכים לכתוב את הלוגים ל-`stdout` ולתת לתשתית להעביר את המידע לכלי המתאים עבור כל מקרה.
 
-**אחרת:** Skimming through console.logs or manually through messy text file without querying tools or a decent log viewer might keep you busy at work until late
+**אחרת:** רפרוף על שורות console.log או בצורה ידנית על קבצי טקסט עמוסים לעייפה ללא כלי חיפוש ותצוגה מותאמים עלולים להשאיר אתכם לעבוד עד השעות הקטנות של הלילה.
 
-🔗 [**Read More: using a mature logger**](./sections/errorhandling/usematurelogger.md)
+🔗 [**לקריאה נוספת: שימוש ב-Logger אמין**](./sections/errorhandling/usematurelogger.md)
 
 <br/><br/>
 
