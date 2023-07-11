@@ -79,7 +79,7 @@
 &emsp;&emsp;[2.8 בידקו את תגובת המערכת לשגיאות על ידי שימוש בכלי הבדיקות האהוב עליכם `#updated`](#-28-test-error-flows-using-your-favorite-test-framework)</br>
 &emsp;&emsp;[2.9 גלו שגיאות וזמני השבתה על ידי שימוש בכלי APM](#-29-discover-errors-and-downtime-using-apm-products)</br>
 &emsp;&emsp;[2.10 תפסו מקרים לא מטופלים של דחיות של הבטחות `#updated`](#-210-catch-unhandled-promise-rejections)</br>
-&emsp;&emsp;[2.11 Fail fast, validate arguments using a dedicated library](#-211-fail-fast-validate-arguments-using-a-dedicated-library)</br>
+&emsp;&emsp;[2.11 היכשלו מהר, ודאו את משתני הקלט באמצעות ספריה יעודית](#-211-fail-fast-validate-arguments-using-a-dedicated-library)</br>
 &emsp;&emsp;[2.12 Always await promises before returning to avoid a partial stacktrace `#new`](#-212-always-await-promises-before-returning-to-avoid-a-partial-stacktrace)</br>
 
 </details>
@@ -421,13 +421,13 @@ my-system
 
 <br/><br/>
 
-## ![✔] 2.11 Fail fast, validate arguments using a dedicated library
+## ![✔] 2.11 היכשלו מהר, ודאו את משתני הקלט באמצעות ספריה יעודית
 
-**אמ;לק:** Assert API input to avoid nasty bugs that are much harder to track later. The validation code is usually tedious unless you are using a modern validation library like [ajv](https://www.npmjs.com/package/ajv), [zod](https://github.com/colinhacks/zod), or [typebox](https://github.com/sinclairzx81/typebox)
+**אמ;לק:** הגדירו תבנית קלט קשיחה ל-API כדי להימנע מבאגים מלוכלכים שקשה הרבה יותר לעקוב אחריהם. כתיבת קוד האימות הוא תהליך מייגע, אלא אם כן תשתמשו באחת הספריות המוכרות כיום כמו [ajv](https://www.npmjs.com/package/ajv), [zod](https://github.com/colinhacks/zod), או [typebox](https://github.com/sinclairzx81/typebox).
 
-**אחרת:** Consider this – your function expects a numeric argument “Discount” which the caller forgets to pass, later on, your code checks if Discount!=0 (amount of allowed discount is greater than zero), then it will allow the user to enjoy a discount. OMG, what a nasty bug. Can you see it?
+**אחרת:** חשבו על זה - הפונקציה שלכם מצפה לקבל כקלט משתנה `discount` מספרי שמי שקרה לפונקציה שכח להעביר. בהמשך, הקוד בודק אם `discount != 0` (כמות ההנחה שאפשר לקבל גדולה מאפס), ואם כן אז המשתמש יהנה מההנחה. וואו, זה באג מלוכלך, ראיתם???
 
-🔗 [**Read More: failing fast**](./sections/errorhandling/failfast.md)
+🔗 [**לקריאה נוספת: כשלון מהיר**](./sections/errorhandling/failfast.md)
 
 <br/><br/>
 
