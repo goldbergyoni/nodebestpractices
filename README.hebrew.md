@@ -89,7 +89,7 @@
     <a href="#3-code-patterns-and-style-practices">3. תבניות קוד וסגנון עיצוב (12)</a>
   </summary>
 
-&emsp;&emsp;[3.1 Use ESLint `#strategic`](#-31-use-eslint)</br>
+&emsp;&emsp;[3.1 השתמשו ב-ESLint `#strategic`](#-31-use-eslint)</br>
 &emsp;&emsp;[3.2 Use Node.js eslint extension plugins `#updated`](#-32-use-nodejs-eslint-extension-plugins)</br>
 &emsp;&emsp;[3.3 Start a Codeblock's Curly Braces on the Same Line](#-33-start-a-codeblocks-curly-braces-on-the-same-line)</br>
 &emsp;&emsp;[3.4 Separate your statements properly](#-34-separate-your-statements-properly)</br>
@@ -452,13 +452,13 @@ async function promisifyFunction() {
 
 # `3. תבניות קוד וסגנון עיצוב`
 
-## ![✔] 3.1 Use ESLint
+## ![✔] 3.1 השתמשו ב-ESLint
 
-**אמ;לק:** [ESLint](https://eslint.org) is the de-facto standard for checking possible code errors and fixing code style, not only to identify nitty-gritty spacing issues but also to detect serious code anti-patterns like developers throwing errors without classification. Though ESLint can automatically fix code styles, other tools like [prettier](https://www.npmjs.com/package/prettier) are more powerful in formatting the fix and work in conjunction with ESLint
+**אמ;לק:** [ESLint](https://eslint.org) הוא הסטנדרט דה-פקטו למציאת שגיאות בקוד ותיקון של סגנונות קוד, לא רק זיהוי של רווח סורר שעלול ליצור תקלה אלא גם זיהוי של קוד שלא עומד בסטנדרטים (anti-pattern) כמו זריקת שגיאות ללא סיווג. אמנם ESLint יכול לתקן באופן אוטומטי סגנונות קוד, אך כלים אחרים כדוגמת [prettier](https://www.npmjs.com/package/prettier) טובים יותר בעיצוב וסגנון הקוד ועובדים בשילוב עם ESLint.
 
-**אחרת:** Developers will focus on tedious spacing and line-width concerns and time might be wasted overthinking the project's code style
+**אחרת:** מפתחים ישתעממו תוך כדי השקעת זמנם במציאת רווחים סוררים וידאגו לאורך השורה והזמן היקר שלהם יבוזבז על איך לשמור על סגנון הקוד של הפרוייקט.
 
-🔗 [**Read More: Using ESLint and Prettier**](./sections/codestylepractices/eslint_prettier.md)
+🔗 [**לקריאה נוספת: שימוש ב-ESLint ו-Prettier**](./sections/codestylepractices/eslint_prettier.md)
 
 <br/><br/>
 
