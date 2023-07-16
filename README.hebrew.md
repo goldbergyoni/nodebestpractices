@@ -90,7 +90,7 @@
   </summary>
 
 &emsp;&emsp;[3.1 השתמשו ב-ESLint `#strategic`](#-31-use-eslint)</br>
-&emsp;&emsp;[3.2 Use Node.js eslint extension plugins `#updated`](#-32-use-nodejs-eslint-extension-plugins)</br>
+&emsp;&emsp;[3.2 השתמשו בתוספים של Node.js שמרחיבים את ESLint `#updated`](#-32-use-nodejs-eslint-extension-plugins)</br>
 &emsp;&emsp;[3.3 Start a Codeblock's Curly Braces on the Same Line](#-33-start-a-codeblocks-curly-braces-on-the-same-line)</br>
 &emsp;&emsp;[3.4 Separate your statements properly](#-34-separate-your-statements-properly)</br>
 &emsp;&emsp;[3.5 Name your functions](#-35-name-your-functions)</br>
@@ -462,11 +462,11 @@ async function promisifyFunction() {
 
 <br/><br/>
 
-## ![✔] 3.2 Use Node.js eslint extension plugins
+## ![✔] 3.2 השתמשו בתוספים של Node.js שמרחיבים את ESLint
 
-**אמ;לק:** On top of ESLint standard rules that cover vanilla JavaScript, add Node.js specific plugins like [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) and [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security), [eslint-plugin-require](https://www.npmjs.com/package/eslint-plugin-require), [/eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest) and other useful rules
+**אמ;לק:** על גבי הסטנדרט של חוקי ESLint שמכסים את שפת JavaScript, הוסיפו את התוספים היעודיים של  Node.js כמו [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha), [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security), [eslint-plugin-require](https://www.npmjs.com/package/eslint-plugin-require), [eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest) ועוד תוספים שמממשים חוקים נוספים ומועילים.
 
-**אחרת:** Many faulty Node.js code patterns might escape under the radar. For example, developers might require(variableAsPath) files with a variable given as a path which allows attackers to execute any JS script. Node.js linters can detect such patterns and complain early
+**אחרת:** הרבה תבניות קוד לא תקינות שבשימוש ב-Node.js נעלמות מתחת לרדאד. לדוגמה, מפתחים יכתבו `require(variableAsPath)` עם משתנה שמאפשר גישה לתיקיה בקוד, דבר שמאפשר לתוקפים להריץ כל קוד JS. אם תשתמשו בחוקי Node.js תוכלו לזהות את הטעות הזאת ולקבל עליה התראה מבעוד מועד.
 
 <br/><br/>
 
