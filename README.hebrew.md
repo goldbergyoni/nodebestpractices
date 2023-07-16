@@ -470,11 +470,11 @@ async function promisifyFunction() {
 
 <br/><br/>
 
-## ![✔] 3.3 Start a Codeblock's Curly Braces on the Same Line
+## ![✔] 3.3 התחילו בלוק של קוד עם סוגריים מסולסלים באותה השורה
 
-**אמ;לק:** The opening curly braces of a code block should be on the same line as the opening statement
+**אמ;לק:** הסוגריים המסולסלים הפותחים של בלוק של קוד חייבים להיות באותה השורה יחד עם הקוד.
 
-### Code Example
+### קוד דוגמה
 
 ```javascript
 // Do
@@ -483,14 +483,15 @@ function someFunction() {
 }
 
 // Avoid
-function someFunction() {
+function someFunction()
+{
   // code block
 }
 ```
 
-**אחרת:** Deferring from this best practice might lead to unexpected results, as seen in the StackOverflow thread below:
+**אחרת:** התעלמות משיטת עבודה זאת עלולה להוביל לתוצאות לא צפויות, כמו שניתן לראות בשרשור בקישור מ StackOverflow:
 
-🔗 [**Read more:** "Why do results vary based on curly brace placement?" (StackOverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
+🔗 [**לקריאה נוספת:** "למה התוצאות משתנות בהתאם למיקום הסוגר המסולסל?" (StackOverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
 <br/><br/>
 
