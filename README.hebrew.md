@@ -91,7 +91,7 @@
 
 &emsp;&emsp;[3.1 השתמשו ב-ESLint `#strategic`](#-31-use-eslint)</br>
 &emsp;&emsp;[3.2 השתמשו בתוספים של Node.js שמרחיבים את ESLint `#updated`](#-32-use-nodejs-eslint-extension-plugins)</br>
-&emsp;&emsp;[3.3 Start a Codeblock's Curly Braces on the Same Line](#-33-start-a-codeblocks-curly-braces-on-the-same-line)</br>
+&emsp;&emsp;[3.3 התחילו בלוק של קוד עם סוגריים מסולסלים באותה השורה](#-33-start-a-codeblocks-curly-braces-on-the-same-line)</br>
 &emsp;&emsp;[3.4 Separate your statements properly](#-34-separate-your-statements-properly)</br>
 &emsp;&emsp;[3.5 Name your functions](#-35-name-your-functions)</br>
 &emsp;&emsp;[3.6 Use naming conventions for variables, constants, functions and classes](#-36-use-naming-conventions-for-variables-constants-functions-and-classes)</br>
@@ -472,9 +472,9 @@ async function promisifyFunction() {
 
 ## ![✔] 3.3 התחילו בלוק של קוד עם סוגריים מסולסלים באותה השורה
 
-**אמ;לק:** הסוגריים המסולסלים הפותחים של בלוק של קוד חייבים להיות באותה השורה יחד עם הקוד.
+**אמ;לק:** מומלץ שהסוגריים המסולסלים הפותחים של בלוק של קוד יהיו באותה השורה יחד עם הקוד.
 
-### קוד דוגמה
+### דוגמה
 
 ```javascript
 // Do
@@ -489,7 +489,7 @@ function someFunction()
 }
 ```
 
-**אחרת:** התעלמות משיטת עבודה זאת עלולה להוביל לתוצאות לא צפויות, כמו שניתן לראות בשרשור בקישור מ StackOverflow:
+**אחרת:** התעלמות משיטת עבודה זו עלולה להוביל לתוצאות לא צפויות, כמו שניתן לראות בשרשור בקישור מ StackOverflow:
 
 🔗 [**לקריאה נוספת:** "למה התוצאות משתנות בהתאם למיקום הסוגר המסולסל?" (StackOverflow)](https://stackoverflow.com/questions/3641519/why-does-a-results-vary-based-on-curly-brace-placement)
 
