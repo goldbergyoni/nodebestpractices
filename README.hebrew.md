@@ -95,7 +95,7 @@
 &emsp;&emsp;[3.4 הפרידו בין ההצהרות השונות בצורה תקנית](#-34-separate-your-statements-properly)</br>
 &emsp;&emsp;[3.5 תנו לפונקציה שם](#-35-name-your-functions)</br>
 &emsp;&emsp;[3.6 השתמשו במוסכמות קבועות במתן שמות למשתנים, לקבועים, לפונקציות ולמחלקות](#-36-use-naming-conventions-for-variables-constants-functions-and-classes)</br>
-&emsp;&emsp;[3.7 Prefer const over let. Ditch the var](#-37-prefer-const-over-let-ditch-the-var)</br>
+&emsp;&emsp;[3.7 העדיפו const על פני let. ניטשו את var](#-37-prefer-const-over-let-ditch-the-var)</br>
 &emsp;&emsp;[3.8 Require modules first, not inside functions](#-38-require-modules-first-not-inside-functions)</br>
 &emsp;&emsp;[3.9 Set an explicit entry point to a module/folder `#updated`](#-39-set-an-explicit-entry-point-to-a-modulefolder)</br>
 &emsp;&emsp;[3.10 Use the === operator](#-310-use-the--operator)</br>
@@ -589,13 +589,13 @@ function doSomething() {
 
 <br/><br/>
 
-## ![✔] 3.7 Prefer const over let. Ditch the var
+## ![✔] 3.7 העדיפו const על פני let. ניטשו את var
 
-**אמ;לק:** Using `const` means that once a variable is assigned, it cannot be reassigned. Preferring `const` will help you to not be tempted to use the same variable for different uses, and make your code clearer. If a variable needs to be reassigned, in a for loop, for example, use `let` to declare it. Another important aspect of `let` is that a variable declared using it is only available in the block scope in which it was defined. `var` is function scoped, not block-scoped, and [shouldn't be used in ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) now that you have `const` and `let` at your disposal
+**אמ;לק:** שימוש ב-`const` משמעותו היא שלאחר שהמשתנה מאותחל לראשונה הוא לא יכול להיות מאותחל שוב. העדפת שימוש ב-`const` תעזור לכם לא להתפתות ולהשתמש שוב באותו משתנה לצרכים שונים ותהפוך את הקוד שלכם לקריא יותר. אם משתנה צריך להיות מאותחל מחדש, למשל בתוך לולאת for, אז השתמשו ב-`let` לצורך כך. נקודה נוספת שחשוב לציין היא ששימוש ב-`let` אפשרית רק בתוך אותו הבלוק שהיא הוגדרה בו. `var` נצמד לscope של הפונקציה שהוא מוגדר בו ולא לבלוק ספציפי ולכן [צריך לא להשתמש בו ב-ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) כשאפשר להשתמש ב-`const` וב-`let`.
 
-**אחרת:** Debugging becomes way more cumbersome when following a variable that frequently changes
+**אחרת:** דיבוג הופך להיות מאוד מסורבל כאשר משתנה משתנה לעיתים דחופות.
 
-🔗 [**Read more: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
+🔗 [**לקריאה נוספת: JavaScript ES6+: var, let, or const?** ](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
 
 <br/><br/>
 
