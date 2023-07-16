@@ -96,7 +96,7 @@
 &emsp;&emsp;[3.5 תנו לפונקציה שם](#-35-name-your-functions)</br>
 &emsp;&emsp;[3.6 השתמשו במוסכמות קבועות במתן שמות למשתנים, לקבועים, לפונקציות ולמחלקות](#-36-use-naming-conventions-for-variables-constants-functions-and-classes)</br>
 &emsp;&emsp;[3.7 העדיפו const על פני let. ניטשו את var](#-37-prefer-const-over-let-ditch-the-var)</br>
-&emsp;&emsp;[3.8 Require modules first, not inside functions](#-38-require-modules-first-not-inside-functions)</br>
+&emsp;&emsp;[3.8 טענו מודולים בתחילה, ולא בקריאה לפונקציות](#-38-require-modules-first-not-inside-functions)</br>
 &emsp;&emsp;[3.9 Set an explicit entry point to a module/folder `#updated`](#-39-set-an-explicit-entry-point-to-a-modulefolder)</br>
 &emsp;&emsp;[3.10 Use the === operator](#-310-use-the--operator)</br>
 &emsp;&emsp;[3.11 Use Async Await, avoid callbacks `#strategic`](#-311-use-async-await-avoid-callbacks)</br>
@@ -599,11 +599,11 @@ function doSomething() {
 
 <br/><br/>
 
-## ![✔] 3.8 Require modules first, not inside functions
+## ![✔] 3.8 טענו מודולים בתחילה, ולא בקריאה לפונקציות
 
-**אמ;לק:** Require modules at the beginning of each file, before and outside of any functions. This simple best practice will not only help you easily and quickly tell the dependencies of a file right at the top but also avoids a couple of potential problems
+**אמ;לק:** טענו את המודולים (require...) בתחילת כל קובץ, לפני כל הפונקציות. שיטת עבודה פשוטה זו לא רק שתעזור לכם בקלות ובמהירות לזהות את התלויות של קובץ מסוים, אלא גם תמנע מספר בעיות אפשריות.
 
-**אחרת:** Requires are run synchronously by Node.js. If they are called from within a function, it may block other requests from being handled at a more critical time. Also, if a required module or any of its dependencies throw an error and crash the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function
+**אחרת:** טעינת מודולים היא תהליך סינכרוני ב-Node.js. אם הטעינה תתבצע מתוך פונקציה היא עלולה לחסום טיפול בבקשות אחרות בזמן קריטי. בנוסף לכך, אם מודול חיוני או מישהו שהוא תלוי בו יזרקו שגיאה ויפילו את השרת, מומלץ שזה יוודע כמה שיותר מוקדם, מה שלא בטוח יקרה במקרה שהמודול נטען מתוך פונקציה.
 
 <br/><br/>
 
