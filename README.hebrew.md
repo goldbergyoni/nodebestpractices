@@ -93,7 +93,7 @@
 &emsp;&emsp;[3.2 השתמשו בתוספים של Node.js שמרחיבים את ESLint `#updated`](#-32-use-nodejs-eslint-extension-plugins)</br>
 &emsp;&emsp;[3.3 התחילו בלוק של קוד עם סוגריים מסולסלים באותה השורה](#-33-start-a-codeblocks-curly-braces-on-the-same-line)</br>
 &emsp;&emsp;[3.4 הפרידו בין ההצהרות השונות בצורה תקנית](#-34-separate-your-statements-properly)</br>
-&emsp;&emsp;[3.5 Name your functions](#-35-name-your-functions)</br>
+&emsp;&emsp;[3.5 תנו לפונקציה שם](#-35-name-your-functions)</br>
 &emsp;&emsp;[3.6 Use naming conventions for variables, constants, functions and classes](#-36-use-naming-conventions-for-variables-constants-functions-and-classes)</br>
 &emsp;&emsp;[3.7 Prefer const over let. Ditch the var](#-37-prefer-const-over-let-ditch-the-var)</br>
 &emsp;&emsp;[3.8 Require modules first, not inside functions](#-38-require-modules-first-not-inside-functions)</br>
@@ -540,11 +540,11 @@ const count = 2 // it tries to run 2(), but 2 is not a function
 
 <br/><br/>
 
-## ![✔] 3.5 Name your functions
+## ![✔] 3.5 תנו לפונקציה שם
 
-**אמ;לק:** Name all functions, including closures and callbacks. Avoid anonymous functions. This is especially useful when profiling a node app. Naming all functions will allow you to easily understand what you're looking at when checking a memory snapshot
+**אמ;לק:** תנו שמות לכל הפונקציות, כולל closures ו-callbacks. הימנעו מפונקציות אנונימיות. זה מאוד שימושי כשבודקים אפליקציות Node.js. מתן שמות לכל הפונקציות יאפשר לכם להבין בקלות על מה אתם מסתכלים כשאתם צופים בתמונת מצב של הזיכרון של האפליקציה.
 
-**אחרת:** Debugging production issues using a core dump (memory snapshot) might become challenging as you notice significant memory consumption from anonymous functions
+**אחרת:** לדבג את גרסת היצור (production) על בסיס תמונת מצב של הזיכרון (core dump) עלול להיות מאתגר כשהבעיות של הזיכרון קורות בכל מיני פונקציות אנונימיות.
 
 <br/><br/>
 
