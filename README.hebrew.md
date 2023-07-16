@@ -92,7 +92,7 @@
 &emsp;&emsp;[3.1 השתמשו ב-ESLint `#strategic`](#-31-use-eslint)</br>
 &emsp;&emsp;[3.2 השתמשו בתוספים של Node.js שמרחיבים את ESLint `#updated`](#-32-use-nodejs-eslint-extension-plugins)</br>
 &emsp;&emsp;[3.3 התחילו בלוק של קוד עם סוגריים מסולסלים באותה השורה](#-33-start-a-codeblocks-curly-braces-on-the-same-line)</br>
-&emsp;&emsp;[3.4 Separate your statements properly](#-34-separate-your-statements-properly)</br>
+&emsp;&emsp;[3.4 הפרידו בין ההצהרות השונות בצורה תקנית](#-34-separate-your-statements-properly)</br>
 &emsp;&emsp;[3.5 Name your functions](#-35-name-your-functions)</br>
 &emsp;&emsp;[3.6 Use naming conventions for variables, constants, functions and classes](#-36-use-naming-conventions-for-variables-constants-functions-and-classes)</br>
 &emsp;&emsp;[3.7 Prefer const over let. Ditch the var](#-37-prefer-const-over-let-ditch-the-var)</br>
@@ -495,15 +495,15 @@ function someFunction()
 
 <br/><br/>
 
-## ![✔] 3.4 Separate your statements properly
+## ![✔] 3.4 הפרידו בין ההצהרות השונות בצורה תקנית
 
-No matter if you use semicolons or not to separate your statements, knowing the common pitfalls of improper linebreaks or automatic semicolon insertion, will help you to eliminate regular syntax errors.
+בין אם אתם משתמשים בנקודה-פסיק (;) בשביל להפריד בין ההצהרות על המשתנים ובין אם לא, עצם הידיעה על ההשלכות של ירידת שורה במקום הלא מתאים או של הוספה אוטומטית של נקודה-פסיק, יעזרו לכם לזהות שגיאות סינטקס רגילות.
 
-**אמ;לק:** Use ESLint to gain awareness about separation concerns. [Prettier](https://prettier.io/) or [Standardjs](https://standardjs.com/) can automatically resolve these issues.
+**אמ;לק:** שימוש ב-ESLint כדי להעלות את המודעות לגבי הסיכון הכרוך בזה. כלים כמו [Prettier](https://prettier.io/) או [Standardjs](https://standardjs.com/) יכולים באופן אוטומטי לפתור את הבעיות הללו.
 
-**אחרת:** As seen in the previous section, JavaScript's interpreter automatically adds a semicolon at the end of a statement if there isn't one, or considers a statement as not ended where it should, which might lead to some undesired results. You can use assignments and avoid using immediately invoked function expressions to prevent most of the unexpected errors.
+**אחרת:** כמו שראינו בסעיף הקודם, "המתורגמן" (interpreter) של JavaScript מוסיף אוטומטית נקודה-פסיק בסוף כל הצהרה במידה ואין, או שהוא מחליט כי ההצהרה מסתיימת במקום אחר מהמתוכנן על ידינו, דבר שעלול להוביל לתוצאות בלתי צפויות. אפשר להשתמש בהשמות ולהימנע מ [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) כדי להימנע מרוב ההתנהגויות הבלתי צפויות.
 
-### Code example
+### דוגמה
 
 ```javascript
 // Do
@@ -534,8 +534,9 @@ const count = 2 // it tries to run 2(), but 2 is not a function
 // put a semicolon before the immediate invoked function, after the const definition, save the return value of the anonymous function to a variable or avoid IIFEs altogether
 ```
 
-🔗 [**Read more:** "Semi ESLint rule"](https://eslint.org/docs/rules/semi)
-🔗 [**Read more:** "No unexpected multiline ESLint rule"](https://eslint.org/docs/rules/no-unexpected-multiline)
+🔗 [**לקריאה נוספת:** "Semi ESLint rule"](https://eslint.org/docs/rules/semi)
+<br>
+🔗 [**לקריאה נוספת:** "No unexpected multiline ESLint rule"](https://eslint.org/docs/rules/no-unexpected-multiline)
 
 <br/><br/>
 
