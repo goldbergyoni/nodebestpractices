@@ -94,7 +94,7 @@
 &emsp;&emsp;[3.3 התחילו בלוק של קוד עם סוגריים מסולסלים באותה השורה](#-33-start-a-codeblocks-curly-braces-on-the-same-line)</br>
 &emsp;&emsp;[3.4 הפרידו בין ההצהרות השונות בצורה תקנית](#-34-separate-your-statements-properly)</br>
 &emsp;&emsp;[3.5 תנו לפונקציה שם](#-35-name-your-functions)</br>
-&emsp;&emsp;[3.6 Use naming conventions for variables, constants, functions and classes](#-36-use-naming-conventions-for-variables-constants-functions-and-classes)</br>
+&emsp;&emsp;[3.6 השתמשו במוסכמות קבועות במתן שמות למשתנים, לקבועים, לפונקציות ולמחלקות](#-36-use-naming-conventions-for-variables-constants-functions-and-classes)</br>
 &emsp;&emsp;[3.7 Prefer const over let. Ditch the var](#-37-prefer-const-over-let-ditch-the-var)</br>
 &emsp;&emsp;[3.8 Require modules first, not inside functions](#-38-require-modules-first-not-inside-functions)</br>
 &emsp;&emsp;[3.9 Set an explicit entry point to a module/folder `#updated`](#-39-set-an-explicit-entry-point-to-a-modulefolder)</br>
@@ -548,13 +548,13 @@ const count = 2 // it tries to run 2(), but 2 is not a function
 
 <br/><br/>
 
-## ![✔] 3.6 Use naming conventions for variables, constants, functions and classes
+## ![✔] 3.6 השתמשו במוסכמות קבועות במתן שמות למשתנים, לקבועים, לפונקציות ולמחלקות
 
-**אמ;לק:** Use **_lowerCamelCase_** when naming constants, variables and functions, **_UpperCamelCase_** (capital first letter as well) when naming classes and **_UPPER_SNAKE_CASE_** when naming global or static variables. This will help you to easily distinguish between plain variables, functions, classes that require instantiation and variables declared at global module scope. Use descriptive names, but try to keep them short
+**אמ;לק:** השתמשו ב-**_lowerCamelCase_** כאשר אתם נותנים שמות לקבועים, משתנים ופונקציות, **_UpperCamelCase_** (גם האות הראשונה גדולה) כאשר אתם נותנים שמות למחלקות ו-**_UPPER_SNAKE_CASE_**  כאשר אתם נותנים שמות למשתנים גלובליים או סטטיים. סדר זה יאפשר לכם להבחין בקלות בין משתנים רגילים ופונקציות לבין מחלקות שדורשות אתחול ולבין משתנים גלובליים. השתמשו בשמות שמתארים היטב את משמעות המשתנה, אך שיהיה קצר.
 
-**אחרת:** JavaScript is the only language in the world that allows invoking a constructor ("Class") directly without instantiating it first. Consequently, Classes and function-constructors are differentiated by starting with UpperCamelCase
+**אחרת:** JavaScript היא השפה היחידה בעולם שתאפשר לכם לקרוא ל-constructor ("Class") ישירות ללא אתחול. לכן, חשוב מאוד להבדיל בין שמות מחלקות ושמות פונקציות על ידי שימוש ב-UpperCamelCase.
 
-### 3.6 Code Example
+### דוגמאות
 
 ```javascript
 // for global variables names we use the const/let keyword and UPPER_SNAKE_CASE
