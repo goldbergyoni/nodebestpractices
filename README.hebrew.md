@@ -100,7 +100,7 @@
 &emsp;&emsp;[3.9 הגדירו כניסה מסודרת לספריה שלכם `#updated`](#-39-set-an-explicit-entry-point-to-a-modulefolder)</br>
 &emsp;&emsp;[3.10 השתמשו באופרטור `===`](#-310-use-the--operator)</br>
 &emsp;&emsp;[3.11 Use Async Await, avoid callbacks `#strategic`](#-311-use-async-await-avoid-callbacks)</br>
-&emsp;&emsp;[3.12 Use arrow function expressions (=>)](#-312-use-arrow-function-expressions-)</br>
+&emsp;&emsp;[3.12 השתמשו בפונקציות חץ (=>)](#-312-use-arrow-function-expressions-)</br>
 &emsp;&emsp;[3.13 Avoid effects outside of functions `#new`](#-313-avoid-effects-outside-of-functions)</br>
 
 </details>
@@ -669,13 +669,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 3.12 Use arrow function expressions (=>)
+## ![✔] 3.12 השתמשו בפונקציות חץ (=>)
 
-**אמ;לק:** Though it's recommended to use async-await and avoid function parameters when dealing with older APIs that accept promises or callbacks - arrow functions make the code structure more compact and keep the lexical context of the root function (i.e. `this`)
+**אמ;לק:** אמנם מומלץ להשתמש ב async-await ולהימנע מהגדרת פרמטרים בפונקציות כאשר מתעסקים עם API ישן שתומך ב-callbacks או הבטחות - פונקציות חץ מאפשרות לארגן את הקוד קומפקטי יותר וכמובן ששומרות על הקונטקסט של פונקצית המעטפת (`this`).
 
-**אחרת:** Longer code (in ES5 functions) is more prone to bugs and cumbersome to read
+**אחרת:** קוד ארוך יותר (על בסיס פונקציות של ES5) חשוף ליותר באגים וקשה יותר לקריאה.
 
-🔗 [**Read more: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
+🔗 [**לקריאה נוספת: הגיע הזמן לאמץ את פונקציות החץ**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
 
 <br/><br/>
 
