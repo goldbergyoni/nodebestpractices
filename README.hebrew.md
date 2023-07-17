@@ -86,7 +86,7 @@
 
 <details>
   <summary>
-    <a href="#3-code-patterns-and-style-practices">3. תבניות קוד וסגנון עיצוב (12)</a>
+    <a href="#3-code-patterns-and-style-practices">3. תבניות קוד וסגנון עיצוב (13)</a>
   </summary>
 
 &emsp;&emsp;[3.1 השתמשו ב-ESLint `#strategic`](#-31-use-eslint)</br>
@@ -101,7 +101,7 @@
 &emsp;&emsp;[3.10 השתמשו באופרטור `===`](#-310-use-the--operator)</br>
 &emsp;&emsp;[3.11 Use Async Await, avoid callbacks `#strategic`](#-311-use-async-await-avoid-callbacks)</br>
 &emsp;&emsp;[3.12 השתמשו בפונקציות חץ (=>)](#-312-use-arrow-function-expressions-)</br>
-&emsp;&emsp;[3.13 Avoid effects outside of functions `#new`](#-313-avoid-effects-outside-of-functions)</br>
+&emsp;&emsp;[3.13 הימנעו מהשפעות צדדיות מחוץ לפונקציות `#new`](#-313-avoid-effects-outside-of-functions)</br>
 
 </details>
 
@@ -679,11 +679,11 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 3.13 Avoid effects outside of functions
+## ![✔] 3.13 הימנעו מהשפעות צדדיות מחוץ לפונקציות
 
-**אמ;לק:** Avoid putting code with effects like network or DB calls outside of functions. Such a code will be executed immediately when another file requires the file. This 'floating' code might get executed when the underlying system is not ready yet. It also comes with a performance penalty even when this module's functions will finally not be used in runtime. Last, mocking these DB/network calls for testing is harder outside of functions. Instead, put this code inside functions that should get called explicitly. If some DB/network code must get executed right when the module loads, consider using the factory or revealing module patterns
+**אמ;לק:** הימנעו מכתיבת קוד עם השפעות צדדיות כמו פעולת רשת או פניה למסד נתונים מחוץ לפונקציה. אם כן תכתבו קוד כזה הוא ירוץ מיד כאשר קובץ אחר פונה לקובץ הזה. הקוד 'הצף' הזה עלול לרוץ כאשר התשתית אותה הוא מבקש עוד לא זמינה עבורו. זה גם פוגע בביצועים אפילו אם אין צורך בפונקציה שעבורה מתבצעת הפעולה בזמן הריצה. דבר אחרון, כתיבת כיסוי לפעולה זו בשביל בדיקות הרבה יותר מורכבת כשהיא לא נעשית בפונקציה. במקום זאת, שימו את הקוד הזה בפונקציה שצריכה להיקרא במפורש. אם הקוד הזה צריך להיקרא ישר בעת עליית המערכת, שיקלו שימוש ב-factory או בתבנית אחרת שמתאימה לדרישה כזאת.
 
-**אחרת:** A typical web framework sets error handler, environment variables and monitoring. When DB/network calls are made before the web framework is initialized, they won't be monitored or fail due to a lack of configuration data
+**אחרת:** תשתיות סטנדרטיות בעולם הווב מגדירות ניהול שגיאות, משתני סביבה וניטור תקלות. אם הפעולה תתבצע לפני שהתשתית מאותחלת אז לא יהיה ניטור של המקרה או שהפעולה תיכשל בשל חוסר בהגדרות שטרם נטענו.
 
 <br/><br/><br/>
 
