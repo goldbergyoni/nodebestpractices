@@ -97,7 +97,7 @@
 &emsp;&emsp;[3.6 השתמשו במוסכמות קבועות במתן שמות למשתנים, לקבועים, לפונקציות ולמחלקות](#-36-use-naming-conventions-for-variables-constants-functions-and-classes)</br>
 &emsp;&emsp;[3.7 העדיפו const על פני let. ניטשו את var](#-37-prefer-const-over-let-ditch-the-var)</br>
 &emsp;&emsp;[3.8 טענו מודולים בתחילה, ולא בקריאה לפונקציות](#-38-require-modules-first-not-inside-functions)</br>
-&emsp;&emsp;[3.9 Set an explicit entry point to a module/folder `#updated`](#-39-set-an-explicit-entry-point-to-a-modulefolder)</br>
+&emsp;&emsp;[3.9 הגדירו כניסה מסודרת לספריה שלכם `#updated`](#-39-set-an-explicit-entry-point-to-a-modulefolder)</br>
 &emsp;&emsp;[3.10 Use the === operator](#-310-use-the--operator)</br>
 &emsp;&emsp;[3.11 Use Async Await, avoid callbacks `#strategic`](#-311-use-async-await-avoid-callbacks)</br>
 &emsp;&emsp;[3.12 Use arrow function expressions (=>)](#-312-use-arrow-function-expressions-)</br>
@@ -607,13 +607,13 @@ function doSomething() {
 
 <br/><br/>
 
-## ![✔] 3.9 Set an explicit entry point to a module/folder
+## ![✔] 3.9 הגדירו כניסה מסודרת לספריה שלכם
 
-**אמ;לק:** When developing a module/library, set an explicit root file that exports the public and interesting code. Discourage the client code from importing deep files and becoming familiar with the internal structure. With commonjs (require), this can be done with an index.js file at the folder's root or the package.json.main field. With ESM (import), if a package.json exists on the root, the field "exports" allow specifying the module's root file. If no package.json exists, you may put an index.js file on the root which re-exports all the public functionality
+**אמ;לק:** בעת פיתוח מודול או ספריה, הגדירו קובץ בסיס שמייצא את הקוד המיועד לשימוש חיצוני. מנעו מהמשתמשים של הקוד שלכם את הצורך לייבא קבצים שיושבים עמוק אצלכם ואת הצורך שלהם להבין את מבנה הקבצים שלכם. כאשר עובדים בשיטת commonjs (require), זה יכול להיעשות על ידי שימוש בקובץ index.js שיושב בתיקיה הראשית או בהגדרת השדה main בקובץ package.json. כאשר עובדים בשיטת ESM (import), אם קובץ package.json קיים בתיקיה הראשית, אז השדה "exports" מאפשר את הגדרת הקובץ הראשי. אך אם אין קובץ package.json, אז שימוש בקובץ index.js בתיקיה הראשית ייצא את כל הפונקציונליות שמיועדת לשימוש חיצוני.
 
-**אחרת:** Having an explicit root file acts like a public 'interface' that encapsulates the internal, directs the caller to the public code and facilitates future changes without breaking the contract
+**אחרת:** קיומו של קובץ ראשי רשמי משמש כממשק חיצוני שמסתיר את החלקים הפנימיים של הספריה, מקשר את המשתמש ישירות לקוד הזמין ומאפשר שינויים עתידיים ללא צורך לשבוראת החוזה.
 
-### 3.9 Code example - avoid coupling the client to the module structure
+### דוגמה
 
 ```javascript
 // Avoid: client has deep familiarity with the internals
