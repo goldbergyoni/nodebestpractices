@@ -98,7 +98,7 @@
 &emsp;&emsp;[3.7 העדיפו const על פני let. ניטשו את var](#-37-prefer-const-over-let-ditch-the-var)</br>
 &emsp;&emsp;[3.8 טענו מודולים בתחילה, ולא בקריאה לפונקציות](#-38-require-modules-first-not-inside-functions)</br>
 &emsp;&emsp;[3.9 הגדירו כניסה מסודרת לספריה שלכם `#updated`](#-39-set-an-explicit-entry-point-to-a-modulefolder)</br>
-&emsp;&emsp;[3.10 Use the === operator](#-310-use-the--operator)</br>
+&emsp;&emsp;[3.10 השתמשו באופרטור `===`](#-310-use-the--operator)</br>
 &emsp;&emsp;[3.11 Use Async Await, avoid callbacks `#strategic`](#-311-use-async-await-avoid-callbacks)</br>
 &emsp;&emsp;[3.12 Use arrow function expressions (=>)](#-312-use-arrow-function-expressions-)</br>
 &emsp;&emsp;[3.13 Avoid effects outside of functions `#new`](#-313-avoid-effects-outside-of-functions)</br>
@@ -632,13 +632,13 @@ const { SMSWithMedia } = require("./SMSProvider");
 
 <br/><br/>
 
-## ![✔] 3.10 Use the `===` operator
+## ![✔] 3.10 השתמשו באופרטור `===`
 
-**אמ;לק:** Prefer the strict equality operator `===` over the weaker abstract equality operator `==`. `==` will compare two variables after converting them to a common type. There is no type conversion in `===`, and both variables must be of the same type to be equal
+**אמ;לק:** העדיפו את ההשוואה הקפדנית באמצעות האופרטור `===` על פני ההשוואה החלשה יותר באמצעות האופרטור `==`. `==` משווה שני משתנים אחרי המרה של שניהם לסוג משתנה אחד. אין המרת סוגי משתנים באופרטור `===`, ושני המשתנים חייבים להיות מאותו סוג כדי שיוכלו להיות שווים.
 
-**אחרת:** Unequal variables might return true when compared with the `==` operator
+**אחרת:** משתנים בעלי ערכים שונים עלולים להחזיר `true` כאשר משווים ביניהם בעזרת האופרטור `==`.
 
-### 3.10 Code example
+### דוגמאות
 
 ```javascript
 "" == "0"; // false
@@ -655,7 +655,7 @@ null == undefined; // true
 " \t\r\n " == 0; // true
 ```
 
-All statements above will return false if used with `===`
+כל ההשוואות לעיל יחזירו `false` בעת השוואה עם `===`.
 
 <br/><br/>
 
