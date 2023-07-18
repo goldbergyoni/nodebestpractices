@@ -115,7 +115,7 @@
 &emsp;&emsp;[4.3 חלקו את הבדיקות לפי תבנית ה-AAA `#strategic`](#-43-structure-tests-by-the-aaa-pattern)</br>
 &emsp;&emsp;[4.4 וודאו כי גרסת ה-Node אחידה `#new`](#-44-ensure-node-version-is-unified)</br>
 &emsp;&emsp;[4.5 הימנעו מאתחול מידע גרעיני משותף, הגדירו לפי צורך של בדיקה `#strategic`](#-45-avoid-global-test-fixtures-and-seeds-add-data-per-test)</br>
-&emsp;&emsp;[4.6 Tag your tests `#advanced`](#-46-tag-your-tests)</br>
+&emsp;&emsp;[4.6 תייגו את הבדיקות `#advanced`](#-46-tag-your-tests)</br>
 &emsp;&emsp;[4.7 Check your test coverage, it helps to identify wrong test patterns](#-47-check-your-test-coverage-it-helps-to-identify-wrong-test-patterns)</br>
 &emsp;&emsp;[4.8 Use production-like environment for e2e testing](#-48-use-production-like-environment-for-e2e-testing)</br>
 &emsp;&emsp;[4.9 Refactor regularly using static analysis tools](#-49-refactor-regularly-using-static-analysis-tools)</br>
@@ -743,11 +743,11 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 4.6 Tag your tests
+## ![✔] 4.6 תייגו את הבדיקות
 
-**אמ;לק:** Different tests must run on different scenarios: quick smoke, IO-less, tests should run when a developer saves or commits a file, full end-to-end tests usually run when a new pull request is submitted, etc. This can be achieved by tagging tests with keywords like #cold #api #sanity so you can grep with your testing harness and invoke the desired subset. For example, this is how you would invoke only the sanity test group with [Mocha](https://mochajs.org/): mocha --grep 'sanity'
+**אמ;לק:** בדיקות שונות צריכות לרוץ בתרחישים שונים: בדיקות שפיות (quick smoke/sanity), IO-less, בדיקות בעת שמירת קובץ או commit, בדיקות מלאות מקצה לקצה (e2e) כאשר נפתח PR וכולי... התרחישים השונים יכולים להיות מוגדרים בעזרת תיוג בדיקות שונות עם מילות מפתח כמו #cold #api #sanity דבר המאפשר להגדיר קבוצת בדיקות בהתאם לצורך ולהריץ רק אותה. למשל, זאת השיטה להריץ רק את קבוצת בדיקות השפיות באמצעות [Mocha](https://mochajs.org/): `mocha --grep 'sanity'`.
 
-**אחרת:** Running all the tests, including tests that perform dozens of DB queries, any time a developer makes a small change can be extremely slow and keeps developers away from running tests
+**אחרת:** הרצה של כל הבדיקות כולל כאלו שמבצעות עשרות פניות למסד נתונים  בכל פעם שמפתח עושה שינוי קטן יאט את קצב הפיתוח בצורה ניכרת ותמנע מצוות הפיתוח להריץ בדיקות.
 
 <br/><br/>
 
