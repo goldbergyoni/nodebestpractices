@@ -113,7 +113,7 @@
 &emsp;&emsp;[4.1 לפחות, כיתבו בדיקות API לרכיבים השונים `#strategic`](#-41-at-the-very-least-write-api-component-testing)</br>
 &emsp;&emsp;[4.2 סווגו 3 חלקים במתן שם לכל בדיקה `#new`](#-42-include-3-parts-in-each-test-name)</br>
 &emsp;&emsp;[4.3 חלקו את הבדיקות לפי תבנית ה-AAA `#strategic`](#-43-structure-tests-by-the-aaa-pattern)</br>
-&emsp;&emsp;[4.4 Ensure Node version is unified `#new`](#-44-ensure-node-version-is-unified)</br>
+&emsp;&emsp;[4.4 וודאו כי גרסת ה-Node אחידה `#new`](#-44-ensure-node-version-is-unified)</br>
 &emsp;&emsp;[4.5 Avoid global test fixtures and seeds, add data per-test `#strategic`](#-45-avoid-global-test-fixtures-and-seeds-add-data-per-test)</br>
 &emsp;&emsp;[4.6 Tag your tests `#advanced`](#-46-tag-your-tests)</br>
 &emsp;&emsp;[4.7 Check your test coverage, it helps to identify wrong test patterns](#-47-check-your-test-coverage-it-helps-to-identify-wrong-test-patterns)</br>
@@ -725,11 +725,11 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 4.4 Ensure Node version is unified
+## ![✔] 4.4 וודאו כי גרסת ה-Node אחידה
 
-**אמ;לק:** Use tools that encourage or enforce the same Node.js version across different environments and developers. Tools like [nvm](https://github.com/nvm-sh/nvm), and [Volta](https://volta.sh/) allow specifying the project's version in a file so each team member can run a single command to conform with the project's version. Optionally, this definition can be replicated to CI and the production runtime (e.g., copy the specified value to .Dockerfile build and to the CI declaration file)
+**אמ;לק:** השתמשו בכלים המעודדים או אוכפים שימוש באותה גרסת Node.js בסביבות השונות ועל ידי שאר המפתחים. כלים כמו [nvm](https://github.com/nvm-sh/nvm), ו-[Volta](https://volta.sh/) מאפשרים להגדיר במפורש את הגרסה הנדרשת בפרויקט בקובץ כך שכל חברי הצוות יכולים על ידי הרצת פקודה אחת ליישר קו עם גרסת הפרויקט. ישנה אפשרות שגרסה זו גם תשתקף לתהליך ה-CI וסביבת היצור/לקוחות (לדוגמה על ידי העתקת מספר הגרסה המבוקש ל-`.Dockerfile` ולקבצי ההגדרות של תהליך ה-CI).
 
-**אחרת:** A developer might face or miss an error because she uses a different Node.js version than her teammates. Even worse - the production runtime might be different than the environment where tests were executed
+**אחרת:** מפתחת עלולה להיתקל או לפספס שגיאה מכיוון שהיא משתמשת בגרסת Node.js שונה משאר הצוות. או גרוע מכך, סביבת היצור רצה באמצעות גרסה שונה מזו שהורצו עליה הבדיקות.
 
 <br/><br/>
 
