@@ -114,7 +114,7 @@
 &emsp;&emsp;[4.2 סווגו 3 חלקים במתן שם לכל בדיקה `#new`](#-42-include-3-parts-in-each-test-name)</br>
 &emsp;&emsp;[4.3 חלקו את הבדיקות לפי תבנית ה-AAA `#strategic`](#-43-structure-tests-by-the-aaa-pattern)</br>
 &emsp;&emsp;[4.4 וודאו כי גרסת ה-Node אחידה `#new`](#-44-ensure-node-version-is-unified)</br>
-&emsp;&emsp;[4.5 Avoid global test fixtures and seeds, add data per-test `#strategic`](#-45-avoid-global-test-fixtures-and-seeds-add-data-per-test)</br>
+&emsp;&emsp;[4.5 הימנעו מאתחול מידע גרעיני משותף, הגדירו לפי צורך של בדיקה `#strategic`](#-45-avoid-global-test-fixtures-and-seeds-add-data-per-test)</br>
 &emsp;&emsp;[4.6 Tag your tests `#advanced`](#-46-tag-your-tests)</br>
 &emsp;&emsp;[4.7 Check your test coverage, it helps to identify wrong test patterns](#-47-check-your-test-coverage-it-helps-to-identify-wrong-test-patterns)</br>
 &emsp;&emsp;[4.8 Use production-like environment for e2e testing](#-48-use-production-like-environment-for-e2e-testing)</br>
@@ -733,13 +733,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 4.5 Avoid global test fixtures and seeds, add data per-test
+## ![✔] 4.5 הימנעו מאתחול מידע גרעיני משותף, הגדירו לפי צורך של בדיקה
 
-**אמ;לק:** To prevent test coupling and easily reason about the test flow, each test should add and act on its own set of DB rows. Whenever a test needs to pull or assume the existence of some DB data - it must explicitly add that data and avoid mutating any other records
+**אמ;לק:** כדי להימנע מצמידות ותלות בין בדיקות שונות וכדי שיהיה ברור יותר איך להסביר מה קורה בשלבים השונים של הבדיקה, ראוי שכל בדיקה תוסיף ותנהל את המידע העוטף שלה (למשל שורות בטבלה). במקרה ובדיקה צריכה לצרוך מידע מטבלה או להניח שהוא קיים שם - היא צריכה קודם לכן להוסיף את המידע במפורש ולהימנע משינוי מידע של בדיקה אחרת.
 
-**אחרת:** Consider a scenario where deployment is aborted due to failing tests, team is now going to spend precious investigation time that ends in a sad conclusion: the system works well, the tests however interfere with each other and break the build
+**אחרת:** תארו לכם מקרה בו הפצת גרסה נכשלה בשל שגיאה בבדיקות, הצוות משנס מותניים לחקור את הסיבה ומגיע אם התובנה העצובה שהמערכת עובדת תקין אבל הבדיקות דורסות מידע אחת לשניה ולכן נכשלו ועצרו את תהליך ההפצה.
 
-🔗 [**Read More: Avoid global test fixtures**](./sections/testingandquality/avoid-global-test-fixture.md)
+🔗 [**לקריאה נוספת: הימנעו מאתחול מידע גרעיני משותף**](./sections/testingandquality/avoid-global-test-fixture.md)
 
 <br/><br/>
 
