@@ -111,7 +111,7 @@
   </summary>
 
 &emsp;&emsp;[4.1 לפחות, כיתבו בדיקות API לרכיבים השונים `#strategic`](#-41-at-the-very-least-write-api-component-testing)</br>
-&emsp;&emsp;[4.2 Include 3 parts in each test name `#new`](#-42-include-3-parts-in-each-test-name)</br>
+&emsp;&emsp;[4.2 סווגו 3 חלקים במתן שם לכל בדיקה `#new`](#-42-include-3-parts-in-each-test-name)</br>
 &emsp;&emsp;[4.3 Structure tests by the AAA pattern `#strategic`](#-43-structure-tests-by-the-aaa-pattern)</br>
 &emsp;&emsp;[4.4 Ensure Node version is unified `#new`](#-44-ensure-node-version-is-unified)</br>
 &emsp;&emsp;[4.5 Avoid global test fixtures and seeds, add data per-test `#strategic`](#-45-avoid-global-test-fixtures-and-seeds-add-data-per-test)</br>
@@ -705,13 +705,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 4.2 Include 3 parts in each test name
+## ![✔] 4.2 סווגו 3 חלקים במתן שם לכל בדיקה
 
-**אמ;לק:** Make the test speak at the requirements level so it's self-explanatory also to QA engineers and developers who are not familiar with the code internals. State in the test name what is being tested (unit under test), under what circumstances, and what is the expected result
+**אמ;לק:** גירמו לבדיקה לתאר את שלב הדרישות כך שהיא תסביר את עצמה גם לQA או לאחרים (כולל אתכם בעתיד הלא רחוק) שלא בקיאים בחלקים הפנימיים של הקוד. ציינו בבדיקה (1) איזה חלק נבדק, (2) באילו תנאים (3) ומה התוצאה שמצפים שתחול.
 
-**אחרת:** A deployment just failed, a test named “Add product” failed. Does this tell you what exactly is malfunctioning?
+**אחרת:** ההתקנה בדיוק נכשלה, בדיקה בשם “Add product” נכשלה. האם זה מתאר מה בדיוק לא תיפקד?
 
-🔗 [**Read More: Include 3 parts in each test name**](./sections/testingandquality/3-parts-in-name.md)
+🔗 [**לקריאה נוספת: סווגו 3 חלקים במתן שם לכל בדיקה**](./sections/testingandquality/3-parts-in-name.md)
 
 <br/><br/>
 
