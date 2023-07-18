@@ -110,7 +110,7 @@
     <a href="#4-testing-and-overall-quality-practices">4. בדיקות ובקרת איכות (13)</a>
   </summary>
 
-&emsp;&emsp;[4.1 At the very least, write API (component) testing `#strategic`](#-41-at-the-very-least-write-api-component-testing)</br>
+&emsp;&emsp;[4.1 לפחות, כיתבו בדיקות API לרכיבים השונים `#strategic`](#-41-at-the-very-least-write-api-component-testing)</br>
 &emsp;&emsp;[4.2 Include 3 parts in each test name `#new`](#-42-include-3-parts-in-each-test-name)</br>
 &emsp;&emsp;[4.3 Structure tests by the AAA pattern `#strategic`](#-43-structure-tests-by-the-aaa-pattern)</br>
 &emsp;&emsp;[4.4 Ensure Node version is unified `#new`](#-44-ensure-node-version-is-unified)</br>
@@ -697,11 +697,11 @@ null == undefined; // true
 > ב. [בדיקות ב-Node.js - אחרי היסודות](https://github.com/testjavascript/nodejs-integration-tests-best-practices)
 
 
-## ![✔] 4.1 At the very least, write API (component) testing
+## ![✔] 4.1  לפחות, כיתבו בדיקות API לרכיבים השונים
 
-**אמ;לק:** Most projects just don't have any automated testing due to short timetables or often the 'testing project' ran out of control and was abandoned. For that reason, prioritize and start with API testing which is the easiest way to write and provides more coverage than unit testing (you may even craft API tests without code using tools like [Postman](https://www.getpostman.com/)). Afterwards, should you have more resources and time, continue with advanced test types like unit testing, DB testing, performance testing, etc
+**אמ;לק:** ברוב הפרויקטים אין בדיקות אוטומטיות כלל בשל לוח זמנים קצר, או שהתחילו לנסות להוסיף בדיקות בפרויקט נוסף אך זה יצא משליטה וננטש עם הזמן. לכן, לתעדף ולהתחיל בדיקות API שזאת הדרך הקלה לכתוב בדיקות ולספק כיסוי (בדיקות) של הקוד מאשר בבדיקות יחידה של פונקציות בודדות (אפשר להשתמש בשביל זה גם בכלים חיצוניים ללא כתיבת קוד, למשל שימוש ב-[Postman](https://www.getpostman.com/)). לאחר מכן, אם יש לכם יותר משאבים וזמן תמשיכו עם בדיקות מתקדמות יותר כגון בדיקות יחידה, בדיקות מול מסדי הנתונים בדיקות ביצועים ועוד.
 
-**אחרת:** You may spend long days on writing unit tests to find out that you got only 20% system coverage
+**אחרת:** אתם עלולים לבזבז ימים שלמים על כתיבת בדיקות יחידה בלבד ולגלות בסופו של דבר שכיסיתם רק 20% מהמערכת.
 
 <br/><br/>
 
