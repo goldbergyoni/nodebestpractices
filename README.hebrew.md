@@ -691,11 +691,11 @@ null == undefined; // true
 
 # `4. בדיקות ובקרת איכות`
 
-\_We have dedicated guides for testing, see below. The best practices list here is a brief summary of these guides
+> יש לנו מדריכים יעודיים לכתיבת בדיקות. רשימת שיטות העבודה המומלצות פה היא סיכום כללי של המדריכים הללו.
+>
+> א. [שיטות עבודה מומלצות בכתיבת בדיקות ל-JavaScript](https://github.com/goldbergyoni/javascript-testing-best-practices)<br/>
+> ב. [בדיקות ב-Node.js - אחרי היסודות](https://github.com/testjavascript/nodejs-integration-tests-best-practices)
 
-a. [JavaScript testing best practices](https://github.com/goldbergyoni/javascript-testing-best-practices)
-b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodejs-integration-tests-best-practices)
-\_
 
 ## ![✔] 4.1 At the very least, write API (component) testing
 
