@@ -116,7 +116,7 @@
 &emsp;&emsp;[4.4 וודאו כי גרסת ה-Node אחידה `#new`](#-44-ensure-node-version-is-unified)</br>
 &emsp;&emsp;[4.5 הימנעו מאתחול מידע גרעיני משותף, הגדירו לפי צורך של בדיקה `#strategic`](#-45-avoid-global-test-fixtures-and-seeds-add-data-per-test)</br>
 &emsp;&emsp;[4.6 תייגו את הבדיקות `#advanced`](#-46-tag-your-tests)</br>
-&emsp;&emsp;[4.7 Check your test coverage, it helps to identify wrong test patterns](#-47-check-your-test-coverage-it-helps-to-identify-wrong-test-patterns)</br>
+&emsp;&emsp;[4.7 בידקו את רמת כיסוי הבדיקות שלכם, זה יעזור לזהות דפוסי בדיקות שגויים](#-47-check-your-test-coverage-it-helps-to-identify-wrong-test-patterns)</br>
 &emsp;&emsp;[4.8 Use production-like environment for e2e testing](#-48-use-production-like-environment-for-e2e-testing)</br>
 &emsp;&emsp;[4.9 Refactor regularly using static analysis tools](#-49-refactor-regularly-using-static-analysis-tools)</br>
 &emsp;&emsp;[4.10 Mock responses of external HTTP services #advanced `#new` `#advanced`](#-410-mock-responses-of-external-http-services)</br>
@@ -751,11 +751,11 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 4.7 Check your test coverage, it helps to identify wrong test patterns
+## ![✔] 4.7 בידקו את רמת כיסוי הבדיקות שלכם, זה יעזור לזהות דפוסי בדיקות שגויים
 
-**אמ;לק:** Code coverage tools like [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) are great for 3 reasons: it comes for free (no effort is required to benefit this reports), it helps to identify a decrease in testing coverage, and last but not least it highlights testing mismatches: by looking at colored code coverage reports you may notice, for example, code areas that are never tested like catch clauses (meaning that tests only invoke the happy paths and not how the app behaves on errors). Set it to fail builds if the coverage falls under a certain threshold
+**אמ;לק:** כלים לבדיקת כיסוי הקוד על ידי בדיקות כמו [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) מצוינים בשל שלוש סיבות: הם בחינם (אין עלות לדו"חות שהם מספקים), הם עוזרים לזהות ירידה באחוזי הכיסוי, ואחרון חביב הם מדגישים מקרים של אי התאמה בבדיקות: על ידי צפייה בצבעים שהדוחות הללו מספקים אפשר לזהות למשל שיש קטעי קוד שלא נבדקים לעולם כמו הסתעפויות של `catch` (מה שאומר שיש בדיקות רק למסלול המצליח ולא למקרים של השגיאות). רצוי להגדיר את זה כך שזה יפיל את תהליכי יצירת הגרסאות במידה והכיסוי לא עובר סף מסוים.
 
-**אחרת:** There won't be any automated metric telling you when a large portion of your code is not covered by testing
+**אחרת:** לא יהיה שום אמצעי מדידה שידווח שקטעים נרחבים מהקוד לא נבדקים כלל.
 
 <br/><br/>
 
