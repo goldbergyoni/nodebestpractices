@@ -112,7 +112,7 @@
 
 &emsp;&emsp;[4.1 לפחות, כיתבו בדיקות API לרכיבים השונים `#strategic`](#-41-at-the-very-least-write-api-component-testing)</br>
 &emsp;&emsp;[4.2 סווגו 3 חלקים במתן שם לכל בדיקה `#new`](#-42-include-3-parts-in-each-test-name)</br>
-&emsp;&emsp;[4.3 Structure tests by the AAA pattern `#strategic`](#-43-structure-tests-by-the-aaa-pattern)</br>
+&emsp;&emsp;[4.3 חלקו את הבדיקות לפי תבנית ה-AAA `#strategic`](#-43-structure-tests-by-the-aaa-pattern)</br>
 &emsp;&emsp;[4.4 Ensure Node version is unified `#new`](#-44-ensure-node-version-is-unified)</br>
 &emsp;&emsp;[4.5 Avoid global test fixtures and seeds, add data per-test `#strategic`](#-45-avoid-global-test-fixtures-and-seeds-add-data-per-test)</br>
 &emsp;&emsp;[4.6 Tag your tests `#advanced`](#-46-tag-your-tests)</br>
@@ -715,13 +715,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 4.3 Structure tests by the AAA pattern
+## ![✔] 4.3 חלקו את הבדיקות לפי תבנית ה-AAA
 
-**אמ;לק:** Structure your tests with 3 well-separated sections: Arrange, Act & Assert (AAA). The first part includes the test setup, then the execution of the unit under test, and finally the assertion phase. Following this structure guarantees that the reader spends no brain CPU on understanding the test plan
+**אמ;לק:** חלקו את הבדיקות לשלושה חלקים נפרדים: Arrange (ארגן), Act (פעל) & Assert (ודא) (AAA). החלק הראשון כולל את ההכנה של הסביבה לבדיקה, החלק השני את ההרצה במצב בדיקות, ולבסוף החלק שמוודא שהתקבלה התוצאה הרצויה. שימוש במבנה זה בעקביות מבטיח שהקורא לא יבזבז זמן מחשבה של הבנת הבדיקה.
 
-**אחרת:** Not only you spend long daily hours on understanding the main code, but now also what should have been the simple part of the day (testing) stretches your brain
+**אחרת:** לא מספיק שיתבזבז זמן נרחב מהיום על הבנת הקוד, עכשיו גם החלק הקל ביום (הבנת הבדיקות) ישרוף את המוח.
 
-🔗 [**Read More: Structure tests by the AAA pattern**](./sections/testingandquality/aaa.md)
+🔗 [**לקריאה נוספת: חלקו את הבדיקות לפי תבנית ה-AAA**](./sections/testingandquality/aaa.md)
 
 <br/><br/>
 
