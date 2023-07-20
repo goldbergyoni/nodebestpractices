@@ -677,7 +677,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 3.11 Use Async Await, avoid callbacks
 
-**TL;DR:** Node 8 LTS now has full support for Async-await. This is a new way of dealing with asynchronous code which supersedes callbacks and promises. Async-await is non-blocking, and it makes asynchronous code look synchronous. The best gift you can give to your code is using async-await which provides a much more compact and familiar code syntax like try-catch
+**TL;DR:** Async-await is the simplest way to express an asynchronous flow as it makes asynchronous code look synchronous. Async-await will also result in much more compact code and support for try-catch. This technique now supersedes callbacks and promises in _most_ cases. Using it in your code is probably the best gift one can give to the code reader
 
 **Otherwise:** Handling async errors in callback style are probably the fastest way to hell - this style forces to check errors all over, deal with awkward code nesting, and makes it difficult to reason about the code flow
 
