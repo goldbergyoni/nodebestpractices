@@ -22,19 +22,14 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 <br/>
 
-## 🚀 We have an [official Node.js starter - Practica.js](https://github.com/practicajs/practica). Use it to generate a new solution skeleton with all the practices baked inside. Or just it to learn by code examples
+# 🎊 2023 edition is here!
 
-<br/>
+- **🛰 Modernized to 2023**: Tons of text edits, new recommended libraries, and some new best practices
 
-# Latest Best Practices and News
+- **✨ Easily focus on new content**: Already visited before? Search for `#new` or `#updated` tags for new content only
 
-- **🛰 2023 edition is released soon**: We're now writing the next edition, stay tuned?
+- **🔖 Curious to see examples? We have a starter**: Visit [Practica.js](https://github.com/practicajs/practica), our application example and boilerplate (beta) to see some practices in action
 
-- **✨ 89,000 stars**: Blushing, surprised and proud!
-
-- **🔖 New menu and tags**: Our menu is collapsible now and includes `#tags`. New visitors can read `#strategic` items first. Returning visitors can focus on `#new` content. Seniors can filter for `#advanced` items. Courtesy of the one and only [Rubek Joshi](https://github.com/rubek-joshi)
-
-- **![FR](./assets/flags/FR.png) French translation!1! :** The latest translation that joins our international guide is French. Bienvenue
 
 <br/><br/>
 
@@ -307,7 +302,7 @@ my-system
 
 ## ![✔] 1.5 Consider all the consequences when choosing the main framework
 
-### `🌟 New item`
+### `🌟 #new`
 
 **TL;DR:** When building apps and APIs, using a framework is mandatory. It's easy to overlook alternative frameworks or important considerations and then finally land on a sub optimal option. As of 2023/2024, we believe that these four frameworks are worth considering: [Nest.js](https://nestjs.com/), [Fastify](https://www.fastify.io/), [express](https://expressjs.com/), and [Koa](https://koajs.com/). Click read more below for a detailed pros/cons of each framework. Simplistically, we believe that Nest.js is the best match for teams who wish to go OOP and/or build large-scale apps that can't get partitioned into smaller _autonomous_ components. Fastify is our recommendation for apps with reasonably-sized components (e.g., Microservices) that are built around simple Node.js mechanics. Read our [full considerations guide here](./sections/projectstructre/choose-framework.md)
 
@@ -317,7 +312,7 @@ my-system
 
 ## ![✔] 1.6 Use TypeScript sparingly and thoughtfully
 
-### `🌟 New item`
+### `🌟 #new`
 
 **TL;DR:** Coding without type safety is no longer an option, TypeScript is the most popular option for this mission. Use it to define variables and functions return types. With that, it is also a double edge sword that can greatly _encourage_ complexity with its additional ~ 50 keywords and sophisticated features. Consider using it sparingly, mostly with simple types, and utilize advanced features only when a real need arises
 
@@ -453,7 +448,7 @@ my-system
 
 ## ![✔] 2.12 Always await promises before returning to avoid a partial stacktrace
 
-### `🌟 New item`
+### `🌟 #new`
 
 **TL;DR:** Always do `return await` when returning a promise to benefit full error stacktrace. If a
 function returns a promise, that function must be declared as `async` function and explicitly
@@ -702,7 +697,7 @@ All statements above will return false if used with `===`
 
 ## ![✔] 3.13 Avoid effects outside of functions
 
-### `🌟 New item`
+### `🌟 #new`
 
 **TL;DR:** Avoid putting code with effects like network or DB calls outside of functions. Such a code will be executed immediately when another file requires the file. This 'floating' code might get executed when the underlying system is not ready yet. It also comes with a performance penalty even when this module's functions will finally not be used in runtime. Last, mocking these DB/network calls for testing is harder outside of functions. Instead, put this code inside functions that should get called explicitly. If some DB/network code must get executed right when the module loads, consider using the factory or revealing module patterns
 
@@ -730,7 +725,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 4.2 Include 3 parts in each test name
 
- ### `🌟 New item`
+ ### `🌟 #new`
 
 **TL;DR:** Make the test speak at the requirements level so it's self-explanatory also to QA engineers and developers who are not familiar with the code internals. State in the test name what is being tested (unit under test), under what circumstances, and what is the expected result
 
@@ -742,7 +737,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 4.3 Structure tests by the AAA pattern
 
-### `🌟 New item`
+### `🌟 #new`
 
 **TL;DR:** Structure your tests with 3 well-separated sections: Arrange, Act & Assert (AAA). The first part includes the test setup, then the execution of the unit under test, and finally the assertion phase. Following this structure guarantees that the reader spends no brain CPU on understanding the test plan
 
@@ -754,7 +749,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 4.4 Ensure Node version is unified
 
-### `🌟 New item`
+### `🌟 #new`
 
 **TL;DR:** Use tools that encourage or enforce the same Node.js version across different environments and developers. Tools like [nvm](https://github.com/nvm-sh/nvm), and [Volta](https://volta.sh/) allow specifying the project's version in a file so each team member can run a single command to conform with the project's version. Optionally, this definition can be replicated to CI and the production runtime (e.g., copy the specified value to .Dockerfile build and to the CI declaration file)
 
@@ -808,7 +803,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 4.10 Mock responses of external HTTP services
 
-### `🌟 New item`
+### `🌟 #new`
 
 **TL;DR:** Use network mocking tools to simulate responses of external collaborators' services that are approached over the network (e.g., REST, Graph). This is imperative not only to isolate the component under test but mostly to simulate non-happy path flows. Tools like [nock](https://github.com/nock/nock) (in-process) or [Mock-Server](https://www.mock-server.com/) allow defining a specific response of external service in a single line of code. Remember to simulate also errors, delays, timeouts, and any other event that is likely to happen in production
 
@@ -826,7 +821,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 4.12 Specify a port in production, randomize in testing
 
-### `🌟 New item`
+### `🌟 #new`
 
 **TL;DR:** When testing against the API, it's common and desirable to initialize the web server inside the tests. Let the server randomize the web server port in testing to prevent collisions. If you're using Node.js http server (used by most frameworks), doing so demands nothing but passing a port number zero - this will randomize an available port
 
@@ -836,7 +831,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 4.13 Test the five possible outcomes
 
-### `🌟 New item`
+### `🌟 #new`
 
 **TL;DR:** When testing a flow, ensure to cover five potential categories. Any time some action is triggered (e.g., API call), a reaction occurs, a meaningful **outcome** is produced and calls for testing. There are five possible outcome types for every flow: a response, a visible state change (e.g., DB), an outgoing API call, a new message in a queue, and an observability call (e.g., logging, metric). See a [checklist here](https://testjavascript.com/wp-content/uploads/2021/10/the-backend-checklist.pdf). Each type of outcome comes with unique challenges and techniques to mitigate those challenges - we have a dedicated guide about this topic: [Node.js testing - beyond the basics](https://github.com/testjavascript/nodejs-integration-tests-best-practices)
 
@@ -1355,7 +1350,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 6.27. Import built-in modules using the 'node:' protocol
 
-### `🌟 New item`
+### `🌟 #new`
 
 <a href="https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20A06:2021 – Vulnerable and Outdated Components-green.svg" alt=""/></a>
 
@@ -1540,7 +1535,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 ## ![✔] 8.11. Clean-out build-time secrets, avoid secrets in args
 
-### `🌟 New item`
+### `🌟 #new`
 
 **TL;DR:** Avoid secrets leaking from the Docker build environment. A Docker image is typically shared in multiple environment like CI and a registry that are not as sanitized as production. A typical example is an npm token which is usually passed to a dockerfile as argument. This token stays within the image long after it is needed and allows the attacker indefinite access to a private npm registry. This can be avoided by coping a secret file like `.npmrc` and then removing it using multi-stage build (beware, build history should be deleted as well) or by using Docker build-kit secret feature which leaves zero traces
 
@@ -1580,7 +1575,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 ## ![✔] 8.15. Lint your Dockerfile
 
-### `🌟 New item`
+### `🌟 #new`
 
 **TL;DR:** Linting your Dockerfile is an important step to identify issues in your Dockerfile which differ from best practices. By checking for potential flaws using a specialised Docker linter, performance and security improvements can be easily identified, saving countless hours of wasted time or security issues in production code.
 
