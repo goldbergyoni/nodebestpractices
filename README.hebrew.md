@@ -120,7 +120,7 @@
 &emsp;&emsp;[4.8 Use production-like environment for e2e testing](#-48-use-production-like-environment-for-e2e-testing)</br>
 &emsp;&emsp;[4.9 שכתבו את הקוד באופן קבוע בעזרת כלי ניתוח סטטי](#-49-refactor-regularly-using-static-analysis-tools)</br>
 &emsp;&emsp;[4.10 הדמיית תשובות של שרתי HTTP חיצוניים `#new` `#advanced`](#-410-mock-responses-of-external-http-services)</br>
-&emsp;&emsp;[4.11 Test your middlewares in isolation](#-411-test-your-middlewares-in-isolation)</br>
+&emsp;&emsp;[4.11 בדקו את פונקציות הביניים בנפרד](#-411-test-your-middlewares-in-isolation)</br>
 &emsp;&emsp;[4.12 Specify a port in production, randomize in testing `#new`](#-412-specify-a-port-in-production-randomize-in-testing)</br>
 &emsp;&emsp;[4.13 Test the five possible outcomes #strategic `#new`](#-413-test-the-five-possible-outcomes)</br>
 
@@ -785,13 +785,13 @@ null == undefined; // true
 
 🔗 [**לקריאה נוספת: הדמיית שירותים חיצוניים**](./sections/testingandquality/mock-external-services.md)
 
-## ![✔] 4.11 Test your middlewares in isolation
+## ![✔] 4.11 בידקו את <abbr title="middlewares">פונקציות הביניים</abbr> בנפרד
 
-**אמ;לק:** When a middleware holds some immense logic that spans many requests, it is worth testing it in isolation without waking up the entire web framework. This can be easily achieved by stubbing and spying on the {req, res, next} objects
+**אמ;לק:** כאשר פונקציית ביניים (middleware) אוחזת נתח משמעותי של לוגיקה שמשתרעת על פני מספר עצום של בקשות, כדאי לבדוק אותה בצורה מבודדת ללא צורך לטעון את כל תשתית הפריימוורק. אפשר להשיג את הפעולה הזאת בקלות על ידי עטיפה או הדמיה של `{req, res, next}`.
 
-**אחרת:** A bug in Express middleware === a bug in all or most requests
+**אחרת:** באג בפונקציות ביניים ב-`express` === באג ברוב הקריטי של הבקשות.
 
-🔗 [**Read More: Test middlewares in isolation**](./sections/testingandquality/test-middlewares.md)
+🔗 [**לקריאה נוספת: לבדוק פונקציות ביניים בנפרד**](./sections/testingandquality/test-middlewares.md)
 
 ## ![✔] 4.12 Specify a port in production, randomize in testing
 
