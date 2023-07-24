@@ -121,7 +121,7 @@
 &emsp;&emsp;[4.9 שכתבו את הקוד באופן קבוע בעזרת כלי ניתוח סטטי](#-49-refactor-regularly-using-static-analysis-tools)</br>
 &emsp;&emsp;[4.10 הדמיית תשובות של שרתי HTTP חיצוניים `#new` `#advanced`](#-410-mock-responses-of-external-http-services)</br>
 &emsp;&emsp;[4.11 בדקו את פונקציות הביניים בנפרד](#-411-test-your-middlewares-in-isolation)</br>
-&emsp;&emsp;[4.12 Specify a port in production, randomize in testing `#new`](#-412-specify-a-port-in-production-randomize-in-testing)</br>
+&emsp;&emsp;[4.12 קבעו את הפורט בייצור, הגדירו אקראי לבדיקות `#new`](#-412-specify-a-port-in-production-randomize-in-testing)</br>
 &emsp;&emsp;[4.13 Test the five possible outcomes #strategic `#new`](#-413-test-the-five-possible-outcomes)</br>
 
 </details>
@@ -785,6 +785,8 @@ null == undefined; // true
 
 🔗 [**לקריאה נוספת: הדמיית שירותים חיצוניים**](./sections/testingandquality/mock-external-services.md)
 
+<br/><br/>
+
 ## ![✔] 4.11 בידקו את <abbr title="middlewares">פונקציות הביניים</abbr> בנפרד
 
 **אמ;לק:** כאשר פונקציית ביניים (middleware) אוחזת נתח משמעותי של לוגיקה שמשתרעת על פני מספר עצום של בקשות, כדאי לבדוק אותה בצורה מבודדת ללא צורך לטעון את כל תשתית הפריימוורק. אפשר להשיג את הפעולה הזאת בקלות על ידי עטיפה או הדמיה של `{req, res, next}`.
@@ -793,13 +795,17 @@ null == undefined; // true
 
 🔗 [**לקריאה נוספת: לבדוק פונקציות ביניים בנפרד**](./sections/testingandquality/test-middlewares.md)
 
-## ![✔] 4.12 Specify a port in production, randomize in testing
+<br/><br/>
 
-**אמ;לק:** When testing against the API, it's common and desirable to initialize the web server inside the tests. Let the server randomize the web server port in testing to prevent collisions. If you're using Node.js http server (used by most frameworks), doing so demands nothing but passing a port number zero - this will randomize an available port
+## ![✔] 4.12 קבעו את הפורט בייצור, הגדירו אקראי לבדיקות
 
-**אחרת:** Specifying a fixed port will prevent two testing processes from running at the same time. Most of the modern test runners run with multiple processes by default
+**אמ;לק:** כאשר מבצעים בדיקות מול API, זה רצוי ואף נהוג לאתחל את השרת בתוך הבדיקות. תנו לשרת לבחור פורט באופן אקראי כאשר מריצים בדיקות כדי למנוע התנגשויות. אם אתם משתמשים בשרת HTTP של Node.js (בשימוש על ידי רוב ספריות התשתית), כדי להשיג את היכולת הזאת אין צורך לעשות כלום מלבד להעביר port=0 - זה כבר יגרום להקצאה דינאמית של פורט.
 
-🔗 [**Read More: Randomize a port for testing**](./sections/testingandquality/randomize-port.md)
+**אחרת:** הגדרה של פורט ספציפי ימנע את האפשרות להריץ שני טסטים במקביל. רוב הכלים שמריצים כיום טסטים - מריצים במקביל כברירת מחדל.
+
+🔗 [**לקריאה נוספת: הגדירו פורט אקראי לבדיקות**](./sections/testingandquality/randomize-port.md)
+
+<br/><br/>
 
 ## ![✔] 4.13 Test the five possible outcomes
 
