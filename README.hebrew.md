@@ -122,7 +122,7 @@
 &emsp;&emsp;[4.10 הדמיית תשובות של שרתי HTTP חיצוניים `#new` `#advanced`](#-410-mock-responses-of-external-http-services)</br>
 &emsp;&emsp;[4.11 בדקו את פונקציות הביניים בנפרד](#-411-test-your-middlewares-in-isolation)</br>
 &emsp;&emsp;[4.12 קבעו את הפורט בייצור, הגדירו אקראי לבדיקות `#new`](#-412-specify-a-port-in-production-randomize-in-testing)</br>
-&emsp;&emsp;[4.13 Test the five possible outcomes #strategic `#new`](#-413-test-the-five-possible-outcomes)</br>
+&emsp;&emsp;[4.13 בידקו את חמשת התוצאות האפשריות `#strategic` `#new`](#-413-test-the-five-possible-outcomes)</br>
 
 </details>
 
@@ -694,7 +694,7 @@ null == undefined; // true
 > יש לנו מדריכים יעודיים לכתיבת בדיקות. רשימת שיטות העבודה המומלצות פה היא סיכום כללי של המדריכים הללו.
 >
 > א. [שיטות עבודה מומלצות בכתיבת בדיקות ל-JavaScript](https://github.com/goldbergyoni/javascript-testing-best-practices)<br/>
-> ב. [בדיקות ב-Node.js - אחרי היסודות](https://github.com/testjavascript/nodejs-integration-tests-best-practices)
+> ב. [בדיקות ב-Node.js - מעבר ליסודות](https://github.com/testjavascript/nodejs-integration-tests-best-practices)
 
 
 ## ![✔] 4.1  לפחות, כיתבו בדיקות API לרכיבים השונים
@@ -807,13 +807,14 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 4.13 Test the five possible outcomes
+## ![✔] 4.13 בידקו את חמשת התוצאות האפשריות
 
-**אמ;לק:** When testing a flow, ensure to cover five potential categories. Any time some action is triggered (e.g., API call), a reaction occurs, a meaningful **outcome** is produced and calls for testing. There are five possible outcome types for every flow: a response, a visible state change (e.g., DB), an outgoing API call, a new message in a queue, and an observability call (e.g., logging, metric). See a [checklist here](https://testjavascript.com/wp-content/uploads/2021/10/the-backend-checklist.pdf). Each type of outcome comes with unique challenges and techniques to mitigate those challenges - we have a dedicated guide about this topic: [Node.js testing - beyond the basics](https://github.com/testjavascript/nodejs-integration-tests-best-practices)
+**אמ;לק:** בעת בדיקת מקרה, ודאו שאתם מכסים את חמשת הקטגוריות האפשריות. בכל פעם שפעולה חלה (למשל קריאת API), מתחילה תגובה, **תוצאה** משמעותית נוצרת ומתבצעת קריאה לבדיקה. ישנן חמש סוגי תוצאות לכל מקרה: תגובה, שינוי נראה לעין (כמו עדכון במסד הנתונים), שליחת קריאה ל-
+API, הודעה חדשה נרשמת לתור, וקריאה לכלי צפיה במידע (כמו לוגר ואנליטיקות). [רשימת בדיקות בסיסיות](https://testjavascript.com/wp-content/uploads/2021/10/the-backend-checklist.pdf). כל סוג של תוצאה מגיע אם אתגרים יחודיים ושיטות להמתיק את האתגרים הללו - כתבנו מדריך יעודי על נושא זה [בדיקות ב-Node.js - מעבר ליסודות](https://github.com/testjavascript/nodejs-integration-tests-best-practices)
 
-**אחרת:** Consider a case when testing the addition of a new product to the system. It's common to see tests that assert on a valid response only. What if the product was failed to persist regardless of the positive response? what if when adding a new product demands calling some external service, or putting a message in the queue - shouldn't the test assert these outcomes as well? It's easy to overlook various paths, this is where a [checklist comes handy](https://testjavascript.com/wp-content/uploads/2021/10/the-backend-checklist.pdf)
+**אחרת:** תארו לעצמכם מקרה של בדיקת הוספה של מוצר חדש למערכת. נפוץ לראות בדיקות שמכסות אך ורק את המקרים של תשובה תקינה. מה יקרה אם המוצר לא יתווסף על אף התשובה החיובית? מה צריך להיעשות במידה ובעת הוספת מוצר יש גם קריאה לשירות חיצוני או הוספת הודעה לתור - האם הבדיקה לא צריכה להתייחס גם לזה? קל להתעלם ממגוון מקרים, ובנקודה זאת [רשימת הבדיקות](https://testjavascript.com/wp-content/uploads/2021/10/the-backend-checklist.pdf) עוזרת.
 
-🔗 [**Read More: Test five outcomes**](./sections/testingandquality/test-five-outcomes.md)
+🔗 [**לקריאה נוספת: בדיקת חמשת התוצאות**](./sections/testingandquality/test-five-outcomes.md)
 
 <br/><br/><br/>
 
