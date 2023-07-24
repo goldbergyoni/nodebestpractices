@@ -119,7 +119,7 @@
 &emsp;&emsp;[4.7 בידקו את רמת כיסוי הבדיקות שלכם, זה יעזור לזהות דפוסי בדיקות שגויים](#-47-check-your-test-coverage-it-helps-to-identify-wrong-test-patterns)</br>
 &emsp;&emsp;[4.8 Use production-like environment for e2e testing](#-48-use-production-like-environment-for-e2e-testing)</br>
 &emsp;&emsp;[4.9 שכתבו את הקוד באופן קבוע בעזרת כלי ניתוח סטטי](#-49-refactor-regularly-using-static-analysis-tools)</br>
-&emsp;&emsp;[4.10 Mock responses of external HTTP services #advanced `#new` `#advanced`](#-410-mock-responses-of-external-http-services)</br>
+&emsp;&emsp;[4.10 הדמיית תשובות של שרתי HTTP חיצוניים `#new` `#advanced`](#-410-mock-responses-of-external-http-services)</br>
 &emsp;&emsp;[4.11 Test your middlewares in isolation](#-411-test-your-middlewares-in-isolation)</br>
 &emsp;&emsp;[4.12 Specify a port in production, randomize in testing `#new`](#-412-specify-a-port-in-production-randomize-in-testing)</br>
 &emsp;&emsp;[4.13 Test the five possible outcomes #strategic `#new`](#-413-test-the-five-possible-outcomes)</br>
@@ -777,13 +777,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 4.10 Mock responses of external HTTP services
+## ![✔] 4.10 הדמיית תשובות של שרתי HTTP חיצוניים
 
-**אמ;לק:** Use network mocking tools to simulate responses of external collaborators' services that are approached over the network (e.g., REST, Graph). This is imperative not only to isolate the component under test but mostly to simulate non-happy path flows. Tools like [nock](https://github.com/nock/nock) (in-process) or [Mock-Server](https://www.mock-server.com/) allow defining a specific response of external service in a single line of code. Remember to simulate also errors, delays, timeouts, and any other event that is likely to happen in production
+**אמ;לק:** השתמשו בכלי הדמיה של המידע שמגיע מהרשת עבור תשובות שמגיעות משירותים חיצוניים (כמו בקשות REST ו GraphQL). זה הכרחי לא רק כדי לבודד את הרכיב שנבדק אלא בעיקר כדי לבדוק מצבים לא צפויים. כלים כמו [nock](https://github.com/nock/nock) או [Mock-Server](https://www.mock-server.com/) מאפשרים להגדיר תשובה מסוימת לבקשה לשירות חיצוני בשורת קוד בודדה. חשוב לא לשכוח לדמות גם שגיאות, עיכובים, timeouts, וכל אירוע אחר שכנראה יקרה בסביבת הייצור.
 
-**אחרת:** Allowing your component to reach real external services instances will likely result in naive tests that mostly cover happy paths. The tests might also be flaky and slow
+**אחרת:** לאפשר לרכיב לגשת למידע אמיתי משירותים חיצוניים בדרך כלל יסתיים בבדיקות פשוטות שמכסות בעיקר את המקרים שהכל טוב. בנוסף לכך הבדיקות לפעמים יכשלו ויהיו איטיות יותר.
 
-🔗 [**Read More: Mock external services**](./sections/testingandquality/mock-external-services.md)
+🔗 [**לקריאה נוספת: הדמיית שירותים חיצוניים**](./sections/testingandquality/mock-external-services.md)
 
 ## ![✔] 4.11 Test your middlewares in isolation
 
