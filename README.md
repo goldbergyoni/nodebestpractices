@@ -76,6 +76,7 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 &emsp;&emsp;[2.10 Catch unhandled promise rejections `#updated`](#-210-catch-unhandled-promise-rejections)</br>
 &emsp;&emsp;[2.11 Fail fast, validate arguments using a dedicated library](#-211-fail-fast-validate-arguments-using-a-dedicated-library)</br>
 &emsp;&emsp;[2.12 Always await promises before returning to avoid a partial stacktrace `#new`](#-212-always-await-promises-before-returning-to-avoid-a-partial-stacktrace)</br>
+&emsp;&emsp;[2.13 Subscribe to event emitters 'error' event `#new`](#-213-subscribe-to-event-emitters-and-streams-error-event)</br>
 
 </details>
 
@@ -459,6 +460,16 @@ Such missing frames would probably complicate the understanding of the flow that
 especially if the cause of the abnormal behavior is inside of the missing function
 
 🔗 [**Read More: returning promises**](./sections/errorhandling/returningpromises.md)
+
+<br/><br/>
+
+## ![✔] 2.13 Subscribe to event emitters and streams 'error' event
+
+### `🌟 #new`
+
+**TL;DR:** Unlike typical functions, a try-catch clause won't get errors that originate from Event Emitters and anything inherited from it (e.g., streams). Instead of try-catch, subscribe to an event emitter's 'error' event so your code can handle the error in context. When dealing with [EventTargets](https://nodejs.org/api/events.html#eventtarget-and-event-api) (the web standard version of Event Emitters) there are no 'error' event and all errors end in the process.on('error) global event - in this case, at least ensure that the process crash or not based on the desired context. Also, mind that error originating from _asynchronous_ event handlers are not get caught unless the event emitter is initialized with {captureRejections: true}
+
+**Otherwise:** Event emitters are commonly used for global and key application functionality such as DB or message queue connection. When this kind of crucial objects throw an error, at best the process will crash due to unhandled exception. Even worst, it will stay alive as a zombie while a key functionality is turned off
 
 <br/><br/><br/>
 
