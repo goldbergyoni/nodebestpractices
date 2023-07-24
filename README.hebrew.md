@@ -118,7 +118,7 @@
 &emsp;&emsp;[4.6 תייגו את הבדיקות `#advanced`](#-46-tag-your-tests)</br>
 &emsp;&emsp;[4.7 בידקו את רמת כיסוי הבדיקות שלכם, זה יעזור לזהות דפוסי בדיקות שגויים](#-47-check-your-test-coverage-it-helps-to-identify-wrong-test-patterns)</br>
 &emsp;&emsp;[4.8 Use production-like environment for e2e testing](#-48-use-production-like-environment-for-e2e-testing)</br>
-&emsp;&emsp;[4.9 Refactor regularly using static analysis tools](#-49-refactor-regularly-using-static-analysis-tools)</br>
+&emsp;&emsp;[4.9 שכתבו את הקוד באופן קבוע בעזרת כלי ניתוח סטטי](#-49-refactor-regularly-using-static-analysis-tools)</br>
 &emsp;&emsp;[4.10 Mock responses of external HTTP services #advanced `#new` `#advanced`](#-410-mock-responses-of-external-http-services)</br>
 &emsp;&emsp;[4.11 Test your middlewares in isolation](#-411-test-your-middlewares-in-isolation)</br>
 &emsp;&emsp;[4.12 Specify a port in production, randomize in testing `#new`](#-412-specify-a-port-in-production-randomize-in-testing)</br>
@@ -767,13 +767,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 4.9 Refactor regularly using static analysis tools
+## ![✔] 4.9 שכתבו את הקוד באופן קבוע בעזרת כלי ניתוח סטטי
 
-**אמ;לק:** Using static analysis tools helps by giving objective ways to improve code quality and keeps your code maintainable. You can add static analysis tools to your CI build to fail when it finds code smells. Its main selling points over plain linting are the ability to inspect quality in the context of multiple files (e.g. detect duplications), perform advanced analysis (e.g. code complexity), and follow the history and progress of code issues. Two examples of tools you can use are [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) and [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)).
+**אמ;לק:**  שימוש בכלי ניתוח סטטי (static analysis tools) עוזר בכך שהוא נותן דרכים מתאימות לשפר את איכות הקוד ולשמור על הקוד מתוחזק. אפשר להוסיף כלים כאלו לשלבי הבנייה ב-CI כך שיפילו את התהליך במידה והם מזהים ניחוחות בקוד. אחד היתרונות העיקריים שלהם על פני כלים פשוטים יותר הוא היכולת לזהות פגמים באיכות הקוד על פני מספר קבצים (כמו כפל קוד), מורכבות גבוהה של קוד ומעקב אחרי ההיסטוריה וההתקדמות של הקוד. שני כלים מומלצים לשימוש הם [Sonarqube](https://www.sonarqube.org/) (7,900+ [stars](https://github.com/SonarSource/sonarqube)) ו [Code Climate](https://codeclimate.com/) (2,400+ [stars](https://github.com/codeclimate/codeclimate)).
 
-**אחרת:** With poor code quality, bugs and performance will always be an issue that no shiny new library or state of the art features can fix
+**אחרת:** אם הקוד באיכות נמוכה, תקלות ובעיות ביצועים תמיד יהוו אתגר שאף ספריה חדשה ונוצצת או פתרון טכנולוגי חדיש יוכלו לפתור.
 
-🔗 [**Read More: Refactoring!**](./sections/testingandquality/refactoring.md)
+🔗 [**לקריאה נוספת: שכתוב!**](./sections/testingandquality/refactoring.md)
 
 <br/><br/>
 
