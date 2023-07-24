@@ -99,7 +99,7 @@
 &emsp;&emsp;[3.8 טענו מודולים בתחילה, ולא בקריאה לפונקציות](#-38-require-modules-first-not-inside-functions)</br>
 &emsp;&emsp;[3.9 הגדירו כניסה מסודרת לספריה שלכם `#updated`](#-39-set-an-explicit-entry-point-to-a-modulefolder)</br>
 &emsp;&emsp;[3.10 השתמשו באופרטור `===`](#-310-use-the--operator)</br>
-&emsp;&emsp;[3.11 Use Async Await, avoid callbacks `#strategic`](#-311-use-async-await-avoid-callbacks)</br>
+&emsp;&emsp;[3.11 השתמשו ב-Async Await, המנעו מ-callbacks `#strategic`](#-311-use-async-await-avoid-callbacks)</br>
 &emsp;&emsp;[3.12 השתמשו בפונקציות חץ (=>)](#-312-use-arrow-function-expressions-)</br>
 &emsp;&emsp;[3.13 הימנעו מהשפעות צדדיות מחוץ לפונקציות `#new`](#-313-avoid-effects-outside-of-functions)</br>
 
@@ -659,13 +659,13 @@ null == undefined; // true
 
 <br/><br/>
 
-## ![✔] 3.11 Use Async Await, avoid callbacks
+## ![✔] 3.11 השתמשו ב-Async Await, המנעו מ-callbacks
 
-**אמ;לק:** Node 8 LTS now has full support for Async-await. This is a new way of dealing with asynchronous code which supersedes callbacks and promises. Async-await is non-blocking, and it makes asynchronous code look synchronous. The best gift you can give to your code is using async-await which provides a much more compact and familiar code syntax like try-catch
+**אמ;לק:** async-await זו הדרך הפשוטה ביותר לכתוב קוד אסינכרוני שירגיש כמו קוד סינכרוני. הקוד שיכתב בשיטת async-await הוא גם הרבה יותר פשוט ותומך במנגנון ה-try-catch. שיטה זו מחליפה את הצורך ב-callbacks ו-promises ברוב המקרים. שימוש בשיטה זו בקוד היא כנראה אחת המתנות הטובות יותר שאפשר לתת למי שיקרא את הקוד.
 
-**אחרת:** Handling async errors in callback style are probably the fastest way to hell - this style forces to check errors all over, deal with awkward code nesting, and makes it difficult to reason about the code flow
+**אחרת:** טיפול בשגיאות אסינכרוניות בשיטת callback היא כנראה הדרך המהירה לגהנום - מכיוון ששיטה זו מחייבת בדיקת שגיאות בכל שלב, יוצרת קינון מוזר בקוד ומקשה על הבנת תהליך הזרימה של הקוד.
 
-🔗[**Read more:** Guide to async-await 1.0](https://github.com/yortus/asyncawait)
+🔗[**לקריאה נוספת:** מדריך ל-async-await](https://github.com/yortus/asyncawait)
 
 <br/><br/>
 
