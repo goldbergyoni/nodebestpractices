@@ -43,6 +43,12 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 <br/><br/>
 
+# By Yoni Goldberg
+
+## Learn with me: As a consultant, I engage with worldwide teams on various activities like workshops and code reviews. 🎉AND... Hold on, I've just launched my [beyond-the-basics testing course, which is on a 🎁 limited-time sale](https://testjavascript.com/) until August 7th
+
+<br/><br/>
+
 ## Table of Contents
 
 <details>
