@@ -25,7 +25,7 @@ Welcome to the biggest compilation of Node.js best practices, based on our check
 
 ## ![](../../assets/images/checkbox-sm.png) 1. Structure your solution by feature ('microservices')
 
-**TL&DR:** The worst large applications pitfal is a huge code base where hundreds of dependencies slow down developers as try to incorporate new features. Partioning into small units ensures that each unit is kept simple and very easy to maintain. This strategy pushes the complexity to the higher level - designing the cross-component interactions. 
+**TL&DR:** The worst large applications pitfal is a huge code base where hundreds of dependencies slow down developers as try to incorporate new features. Partitioning into small units ensures that each unit is kept simple and very easy to maintain. This strategy pushes the complexity to the higher level - designing the cross-component interactions. 
 
 **Otherwise:** Developing a new feature with a change to few objects demands to evaluate how this changes might affect dozends of dependants and ach deployment becomes a fear.
 
