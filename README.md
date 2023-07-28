@@ -30,7 +30,6 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 - **🔖 Curious to see examples? We have a starter**: Visit [Practica.js](https://github.com/practicajs/practica), our application example and boilerplate (beta) to see some practices in action
 
-
 <br/><br/>
 
 # Welcome! 3 Things You Ought To Know First
@@ -516,7 +515,8 @@ function someFunction() {
 }
 
 // Avoid
-function someFunction() {
+function someFunction()
+{
   // code block
 }
 ```
@@ -742,7 +742,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 4.2 Include 3 parts in each test name
 
- ### `🌟 #new`
+### `🌟 #new`
 
 **TL;DR:** Make the test speak at the requirements level so it's self-explanatory also to QA engineers and developers who are not familiar with the code internals. State in the test name what is being tested (unit under test), under what circumstances, and what is the expected result
 
