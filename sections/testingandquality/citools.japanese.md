@@ -42,10 +42,10 @@ jobs:
 
 ### Circle CI - ほぼ設定の必要ないクラウド CI
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/circleci.png "Circle CI")
+![alt text](../../assets/images/circleci.png "Circle CI")
 
 ### Jenkins - 洗練された、堅牢な CI
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/jenkins_dashboard.png "Jenkins")
+![alt text](../../assets/images/jenkins_dashboard.png "Jenkins")
 
 <br/><br/>

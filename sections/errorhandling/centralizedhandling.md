@@ -154,7 +154,7 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 </details>
 
  ### Illustration: The error handling actors and flow
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/error-handling-flow.png "Error handling flow")
+![alt text](../../assets/images/error-handling-flow.png "Error handling flow")
 
 
 ### Blog Quote: "Sometimes lower levels can’t do anything useful except propagate the error to their caller"

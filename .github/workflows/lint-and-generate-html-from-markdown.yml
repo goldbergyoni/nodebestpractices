@@ -18,32 +18,13 @@ jobs:
       NODE_ENV: test
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v1
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    - name: Setup Node.js environment
-      uses: actions/setup-node@v2.1.2
-      with:
-        node-version: '14'
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
 
-    - run: npm install
-    - run: npm run lint
-
-  build:
-    name: Build
-    runs-on: ubuntu-20.04
-
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v1
-
-    - name: Setup Node.js environment
-      uses: actions/setup-node@v2.1.2
-      with:
-        node-version: '14'
-
-    - run: npm install
-    - run: npm run build
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        IS_FORK: ${{ github.repository != 'goldbergyoni/nodebestpractices' }}
+      - run: npm install
+      - run: npm run lint

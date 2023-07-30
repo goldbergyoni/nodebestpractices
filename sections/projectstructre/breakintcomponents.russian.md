@@ -10,7 +10,7 @@
 
 ### Цитата из блога: "Масштабирование требует масштабирования всего приложения"
 
-Из блога MartinFowler.com
+Из блога [MartinFowler.com](https://martinfowler.com/articles/microservices.html)
 
 > Монолитные приложения могут быть успешными, но люди все чаще испытывают разочарование в связи с ними, особенно когда в облаке развертывается все бо̀льшие приложений. Циклы изменений связаны друг с другом - изменение, внесенное в небольшую часть приложения, требует перестройки и развертывания всего монолита. Со временем зачастую трудно сохранить хорошую модульную структуру, что усложняет сохранение изменений, которые должны затрагивать только один модуль в этом модуле. Масштабирование требует масштабирования всего приложения, а не его частей, которые требуют больших ресурсов.
 
@@ -18,7 +18,7 @@
 
 ### Цитата из блога: "Так что же кричит в архитектуре вашего приложения?"
 
-Из блога [uncle-bob](https://8thlight.com/blog/uncle-bob/2011/09/30/Screaming-Architecture.html) 
+Из блога [uncle-bob](https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html) 
 
 > ... если бы вы смотрели на архитектуру библиотеки, вы бы, скорее всего, увидели парадный вход, зону для клерков, места для чтения, небольшие конференц-залы и галерею за галереей, способную вместить книжные полки для все книги в библиотеке. Эта архитектура будет кричать: "Библиотека!".<br/>
 
@@ -28,10 +28,10 @@
 
 ### Хорошо: структурируйте свое решение по отдельным компонентам
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Structuring solution by components")
+![alt text](../../assets/images/structurebycomponents.PNG "Structuring solution by components")
 
 <br/><br/>
 
 ### Плохо: сгруппируйте файлы по техническим ролям
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebyroles.PNG "Structuring solution by technical roles")
+![alt text](../../assets/images/structurebyroles.PNG "Structuring solution by technical roles")

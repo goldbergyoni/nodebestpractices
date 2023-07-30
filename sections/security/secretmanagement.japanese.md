@@ -20,7 +20,7 @@ Node.js アプリケーションにキーやシークレットを渡すための
     const blobService = azure.createBlobService(apiKey);
 ```
 
-`cryptr` を死傷して暗号化されたシークレットを保存する:
+`cryptr` を使用して暗号化されたシークレットを保存する:
 
 ```javascript
 const Cryptr = require('cryptr');

@@ -4,9 +4,7 @@
   "description": "[✔]: assets/images/checkbox-small-blue.png",
   "main": "gen-html.js",
   "scripts": {
-    "build": "cd .. && node .operations/gen-html.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "markdownlint ../README.md"
+    "lint": "markdownlint ./README*.md"
   },
   "repository": {
     "type": "git",
@@ -19,15 +17,6 @@
   },
   "homepage": "https://github.com/goldbergyoni/nodebestpractices#readme",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.2",
-    "ci-info": "^3.1.1",
-    "github-api": "^3.0.0",
-    "graceful-fs": "^4.1.15",
-    "imagemin": "^6.0.0",
-    "imagemin-jpegtran": "^6.0.0",
-    "imagemin-pngquant": "^6.0.0",
-    "is-ci": "^3.0.0",
-    "markdownlint-cli": "^0.18.0",
-    "showdown": "^1.9.0"
+    "markdownlint-cli": "^0.18.0"
   }
 }

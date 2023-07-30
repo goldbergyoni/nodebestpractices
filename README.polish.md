@@ -256,7 +256,8 @@ function someFunction() {
 }
 
 // Avoid
-function someFunction() {
+function someFunction()
+{
   // code block
 }
 ```
@@ -275,7 +276,7 @@ Bez względu na to, czy używasz średników, czy też nie rozdzielasz swoich in
 
 **W przeciwnym razie:** Jak widać w poprzedniej sekcji, interpreter JavaScript automatycznie dodaje średnik na końcu instrukcji, jeśli nie istnieje, lub uważa instrukcję za niezakończoną tam, gdzie powinna, co może prowadzić do niepożądanych wyników. Możesz używać przypisań i unikać używania natychmiastowych wywoływanych wyrażeń funkcyjnych, aby zapobiec większości nieoczekiwanych błędów.
 
-### Przykład kodu
+### Przykład Kodu
 
 ```javascript
 // Do
@@ -899,7 +900,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** `eval` jest złe, ponieważ pozwala na wykonanie niestandardowego kodu JavaScript w czasie wykonywania. Jest to nie tylko kwestia wydajności, ale także ważna kwestia bezpieczeństwa ze względu na złośliwy kod JavaScript, który może pochodzić z danych wejściowych użytkownika. Inną cechą językową, której należy unikać, jest konstruktor `new Function`. `setTimeout` i` setInterval` nigdy nie powinny być przekazywane dynamicznemu kodowi JavaScript.
+**TL;DR:** `eval` jest złe, ponieważ pozwala na wykonanie niestandardowego kodu JavaScript w czasie wykonywania. Jest to nie tylko kwestia wydajności, ale także ważna kwestia bezpieczeństwa ze względu na złośliwy kod JavaScript, który może pochodzić z danych wejściowych użytkownika. Inną cechą językową, której należy unikać, jest konstruktor `new Function`. `setTimeout` i`setInterval` nigdy nie powinny być przekazywane dynamicznemu kodowi JavaScript.
 
 **W przeciwnym razie:** Złośliwy kod JavaScript znajduje drogę do tekstu przekazywanego do `eval` lub innych funkcji języka JavaScript oceniających w czasie rzeczywistym, i uzyskuje pełny dostęp do uprawnień JavaScript na stronie. Luka ta często objawia się jako atak XSS.
 
@@ -1015,7 +1016,7 @@ Wszystkie powyższe instrukcje zwrócą wartość false, jeśli zostaną użyte 
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Należy podjąć środki ostrożności, aby uniknąć ryzyka przypadkowego opublikowania danych wrażliwych w publicznych rejestrach npm. Plik `.npmignore` może być użyty do umieszczenia na czarnej liście określonych plików lub folderów, lub tablica` files` w `package.json` może działać jako biała lista.
+**TL;DR:** Należy podjąć środki ostrożności, aby uniknąć ryzyka przypadkowego opublikowania danych wrażliwych w publicznych rejestrach npm. Plik `.npmignore` może być użyty do umieszczenia na czarnej liście określonych plików lub folderów, lub tablica`files` w `package.json` może działać jako biała lista.
 
 **W przeciwnym razie:** Klucze API, hasła i inne dane wrażliwe twojego projektu są otwarte na wykorzystywanie przez każdego, kto je napotka, co może spowodować straty finansowe, podszywanie się pod inne osoby i inne ryzyko.
 
