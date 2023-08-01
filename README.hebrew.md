@@ -132,7 +132,7 @@
   </summary>
 
 &emsp;&emsp;[5.1. ניטור `#strategic`](#-51-monitoring)</br>
-&emsp;&emsp;[5.2. Increase the observability using smart logging `#strategic`](#-52-increase-the-observability-using-smart-logging)</br>
+&emsp;&emsp;[5.2. הגדילו את יכולת הצפייה בעזרת לוגים איכותיים `#strategic`](#-52-increase-the-observability-using-smart-logging)</br>
 &emsp;&emsp;[5.3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy `#strategic`](#-53-delegate-anything-possible-eg-gzip-ssl-to-a-reverse-proxy)</br>
 &emsp;&emsp;[5.4. Lock dependencies](#-54-lock-dependencies)</br>
 &emsp;&emsp;[5.5. Guard process uptime using the right tool](#-55-guard-process-uptime-using-the-right-tool)</br>
@@ -832,13 +832,13 @@ API, הודעה חדשה נרשמת לתור, וקריאה לכלי צפיה ב�
 
 <br/><br/>
 
-## ![✔] 5.2. Increase the observability using smart logging
+## ![✔] 5.2. הגדילו את יכולת הצפייה בעזרת לוגים איכותיים
 
-**אמ;לק:** Logs can be a dumb warehouse of debug statements or the enabler of a beautiful dashboard that tells the story of your app. Plan your logging platform from day 1: how logs are collected, stored and analyzed to ensure that the desired information (e.g. error rate, following an entire transaction through services and servers, etc) can really be extracted
+**אמ;לק:** לוגים יכולים להיות פח הזבל של שלל מצבים שהמפתחים רצו לדבג או לחלופין מסך מהמם שמתאר את המצב של המוצר. תכננו את הלוגים שלכם מהיום הראשון: איך הם נאספים, איפה הם נשמרים ואיך הם מנותחים כדי להבטיח שהמידע ההכרחי (אחוז שגיאות, מעקב אחר פעולה בין מספר שירותים וכו') באמת נגיש ובר שימוש.
 
-**אחרת:** You end up with a black box that is hard to reason about, then you start re-writing all logging statements to add additional information
+**אחרת:** יש לכם קופסה שחורה שקשה להבין למה היא מגיעה למצב הנוכחי, ורק עכשיו אתם מתחילים לשכתב את כל הלוגים שלכם כדי שיהיה מידע רלוונטי.
 
-🔗 [**Read More: Increase transparency using smart logging**](./sections/production/smartlogging.md)
+🔗 [**לקריאה נוספת: הגדלת השקיפות על ידי לוגים איכותיים**](./sections/production/smartlogging.md)
 
 <br/><br/>
 
