@@ -133,7 +133,7 @@
 
 &emsp;&emsp;[5.1. ניטור `#strategic`](#-51-monitoring)</br>
 &emsp;&emsp;[5.2. הגדילו את יכולת הצפייה בעזרת לוגים איכותיים `#strategic`](#-52-increase-the-observability-using-smart-logging)</br>
-&emsp;&emsp;[5.3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy `#strategic`](#-53-delegate-anything-possible-eg-gzip-ssl-to-a-reverse-proxy)</br>
+&emsp;&emsp;[5.3. האצילו כל מה שאפשר (לדוגמה gzip, SSL) לשירות נפרד `#strategic`](#-53-delegate-anything-possible-eg-gzip-ssl-to-a-reverse-proxy)</br>
 &emsp;&emsp;[5.4. Lock dependencies](#-54-lock-dependencies)</br>
 &emsp;&emsp;[5.5. Guard process uptime using the right tool](#-55-guard-process-uptime-using-the-right-tool)</br>
 &emsp;&emsp;[5.6. Utilize all CPU cores](#-56-utilize-all-cpu-cores)</br>
@@ -842,13 +842,13 @@ API, הודעה חדשה נרשמת לתור, וקריאה לכלי צפיה ב�
 
 <br/><br/>
 
-## ![✔] 5.3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy
+## ![✔] 5.3. האצילו כל מה שאפשר (לדוגמה gzip, SSL) לשירות נפרד
 
-**אמ;לק:** Node is quite bad at doing CPU intensive tasks like gzipping, SSL termination, etc. You should use specialized infrastructure like nginx, HAproxy or cloud vendor services instead
+**אמ;לק:** Node.js גרוע בלבצע פעולות שדורשות עוצמת חישוב גבוהה מה-CPU, כמו למשל דחיסה, סיום תהליך SSL, וכו'... כדאי שתשתמשו בתשתיות כמו nginx, HAproxy או שירותי ענן אחרים לשם כך.
 
-**אחרת:** Your poor single thread will stay busy doing infrastructural tasks instead of dealing with your application core and performance will degrade accordingly
+**אחרת:** הת'רד הבודד והמסכן שלכם יישאר עסוק במשימות תשתיתיות במקום להתעסק בלב המערכת שלכם והביצועים יישחקו בהתאם.
 
-🔗 [**Read More: Delegate anything possible (e.g. gzip, SSL) to a reverse proxy**](./sections/production/delegatetoproxy.md)
+🔗 [**לקריאה נוספת: האצלת כל מה שאפשר (לדוגמה gzip, SSL) לשירות נפרד**](./sections/production/delegatetoproxy.md)
 
 <br/><br/>
 
