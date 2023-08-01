@@ -134,7 +134,7 @@
 &emsp;&emsp;[5.1. ניטור `#strategic`](#-51-monitoring)</br>
 &emsp;&emsp;[5.2. הגדילו את יכולת הצפייה בעזרת לוגים איכותיים `#strategic`](#-52-increase-the-observability-using-smart-logging)</br>
 &emsp;&emsp;[5.3. האצילו כל מה שאפשר (לדוגמה gzip, SSL) לשירות נפרד `#strategic`](#-53-delegate-anything-possible-eg-gzip-ssl-to-a-reverse-proxy)</br>
-&emsp;&emsp;[5.4. Lock dependencies](#-54-lock-dependencies)</br>
+&emsp;&emsp;[5.4. קיבוע תלויות](#-54-lock-dependencies)</br>
 &emsp;&emsp;[5.5. Guard process uptime using the right tool](#-55-guard-process-uptime-using-the-right-tool)</br>
 &emsp;&emsp;[5.6. Utilize all CPU cores](#-56-utilize-all-cpu-cores)</br>
 &emsp;&emsp;[5.7. Create a ‘maintenance endpoint’](#-57-create-a-maintenance-endpoint)</br>
@@ -852,13 +852,13 @@ API, הודעה חדשה נרשמת לתור, וקריאה לכלי צפיה ב�
 
 <br/><br/>
 
-## ![✔] 5.4. Lock dependencies
+## ![✔] 5.4. קיבוע תלויות
 
-**אמ;לק:** Your code must be identical across all environments, but without a special lockfile npm lets dependencies drift across environments. Ensure to commit your package-lock.json so all the environments will be identical
+**אמ;לק:** הקוד שלכם צריך להיות זהה בכל הסביבות, אך ללא קובץ יעודי npm יאפשר שימוש בתלויות שונות בכל סביבה. ודאו כי יש לכם `package-lock.json` כך שכל הסביבות יהיו זהות.
 
-**אחרת:** QA will thoroughly test the code and approve a version that will behave differently in production. Even worse, different servers in the same production cluster might run different code
+**אחרת:** אנשי הבדיקות יאשרו גרסה שתתנהג אחרת בסביבת ייצור. גרוע מכך, שרתים שונים באותה סביבה יריצו קוד שונה.
 
-🔗 [**Read More: Lock dependencies**](./sections/production/lockdependencies.md)
+🔗 [**לקריאה נוספת: קיבוע תלויות**](./sections/production/lockdependencies.md)
 
 <br/><br/>
 
