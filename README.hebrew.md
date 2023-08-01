@@ -131,7 +131,7 @@
     <a href="#5-going-to-production-practices">5. עלייה לאוויר (19)</a>
   </summary>
 
-&emsp;&emsp;[5.1. Monitoring `#strategic`](#-51-monitoring)</br>
+&emsp;&emsp;[5.1. ניטור `#strategic`](#-51-monitoring)</br>
 &emsp;&emsp;[5.2. Increase the observability using smart logging `#strategic`](#-52-increase-the-observability-using-smart-logging)</br>
 &emsp;&emsp;[5.3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy `#strategic`](#-53-delegate-anything-possible-eg-gzip-ssl-to-a-reverse-proxy)</br>
 &emsp;&emsp;[5.4. Lock dependencies](#-54-lock-dependencies)</br>
@@ -822,13 +822,13 @@ API, הודעה חדשה נרשמת לתור, וקריאה לכלי צפיה ב�
 
 # `5. עלייה לאוויר`
 
-## ![✔] 5.1. Monitoring
+## ![✔] 5.1. ניטור
 
-**אמ;לק:** Monitoring is a game of finding out issues before customers do – obviously this should be assigned unprecedented importance. The market is overwhelmed with offers thus consider starting with defining the basic metrics you must follow (my suggestions inside), then go over additional fancy features and choose the solution that ticks all boxes. In any case, the 4 layers of observability must be covered: uptime, metrics with focus on user-facing symptoms and Node.js technical metrics like event loop lag, distributed flows measurement with Open Telemetry and logging. Click ‘Read More’ below for an overview of the solutions
+**אמ;לק:** ניטור הוא משחק של מציאת בעיות לפני שהמשתמשים מוצאים אותן - מובן מאליו שזה צריך להיות בראש סדר העדיפויות. השוק מוצף בהצעות להגדרות מה הם המדדים הבסיסיים שחייבים לעקוב אחריהם (ההמלצות שלנו בהמשך), לאחר מכן לעבור על כל היכולות המעניינות שכל מוצר מציע ולבחור את הפתרון המיטבי עבור הדרישות שלכם. בכל מקרה, ארבעת השכבות הניתנות לצפייה חייבות להימדד: (1) Uptime - מציינת האם המערכת זמינה, (2) Metrics - מציינת מהי ההתנהגות המצטברת של המערכת (האם 99% מהבקשות נענות), (3) Logging - בודקת אם בקשה מסויימת מסתיימת בהצלחה, (4) Distributed tracing - בודקת האם המערכת יציבה בין הרכיבים המבוזרים שלה.
 
-**אחרת:** Failure === disappointed customers. Simple
+**אחרת:** כשלון === לקוחות מאוכזבים. פשוט מאוד.
 
-🔗 [**Read More: Monitoring!**](./sections/production/monitoring.md)
+🔗 [**לקריאה נוספת: ניטור!**](./sections/production/monitoring.md)
 
 <br/><br/>
 
