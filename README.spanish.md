@@ -85,8 +85,27 @@ Leelo en otro idioma: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md),
 
 </details>
 
+<details>
+  <summary>
+    <a href="#3-prácticas-de-estilo-de-código">3. Prácticas de estilo de código (12)</a>
+  </summary>
 
-3. [Prácticas de estilo de código (12) ](#3-prácticas-de-estilo-de-código)
+&emsp;&emsp;[3.1 Utiliza ESLint `#strategic`](#-31-utiliza-eslint)</br>
+&emsp;&emsp;[3.2 Utiliza las extensiones de eslint para para Node.js `#updated`](#-32-utiliza-las-extensiones-de-eslint-para-para-nodejs)</br>
+&emsp;&emsp;[3.3 Inicia las llaves de un bloque de código en la misma línea](#-33-inicia-las-llaves-de-un-bloque-de-código-en-la-misma-línea)</br>
+&emsp;&emsp;[3.4 Separa tus sentencias correctamente](#-34-Separa tus sentencias correctamente)</br>
+&emsp;&emsp;[3.5 Nombra a tus funciones](#-35-nombra-a-tus-funciones)</br>
+&emsp;&emsp;[3.6 Usa convenciones de nombre para variables, constantes, funciones y clases](#-36-usa-convenciones-de-nombre-para-variables-constantes-funciones-y-clases)</br>
+&emsp;&emsp;[3.7 Prefiere const antes que let. No uses var](#-37-prefiere-const-antes-que-let-no-uses-var)</br>
+&emsp;&emsp;[3.8 Importa los módulos primero, no dentro de funciones](#-38-importa-los-módulos-primero-no-dentro-de-funciones)</br>
+&emsp;&emsp;[3.9 Establece un punto de entrada explícito a un módulo/carpeta `#updated`](#-39-establece-un-punto-de-entrada-explícito-a-un-módulocarpeta)</br>
+&emsp;&emsp;[3.10 Usa el operador ===](#-310-usa el-operador-)</br>
+&emsp;&emsp;[3.11 Usa Async Await, evita los callbacks `#strategic`](#-311-usa-async-await-evita-los-callbacks)</br>
+&emsp;&emsp;[3.12 Usa expresiones de funciones de flecha (=>)](#-312-usa-expresiones-de-funciones-de-flecha-)</br>
+&emsp;&emsp;[3.13 Evita efectos fuera de las funciones `#new`](#-313-evita-efectos-fuera-de-las-funciones)</br>
+
+</details>
+
 4. [Prácticas de prueba y calidad en general (13) ](#4-pruebas-y-prácticas-generales-de-calidad)
 5. [Prácticas de puesta en producción (19) ](#5-yendo-a-las-prácticas-de-producción)
 6. [Prácticas de seguridad (25)](#6-mejores-prácticas-de-seguridad)
@@ -277,7 +296,7 @@ Leelo en otro idioma: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md),
 
 # `3. Prácticas de estilo de código`
 
-## ![✔] 3.1 Utilizar ESLint
+## ![✔] 3.1 Utiliza ESLint
 
 **TL;DR:** [ESLint](https://eslint.org) es el estándar para verificar posibles errores de código y corregir el estilo del código, no solo para identificar problemas básicos, sino también para detectar anti-patrones de código graves, como los desarrolladores que arrojan errores sin clasificación. Aunque ESLint puede corregir automáticamente los estilos de código, otras herramientas como [prettier](https://www.npmjs.com/package/prettier) y [beautify](https://www.npmjs.com/package/js-beautify) son más potentes para formatear la solución y funcionan en conjunto con ESLint
 
@@ -287,7 +306,7 @@ Leelo en otro idioma: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md),
 
 <br/><br/>
 
-## ![✔] 3.2 Paquetes específicos para Node.js
+## ![✔] 3.2 Utiliza las extensiones de eslint para para Node.js
 
 **TL;DR:** Además de las reglas estándar de ESLint que cubre a JavaScript vainilla, es bueno agregar complementos específicos de Node.js como [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node), [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) y [eslint-plugin-node-security](https://www.npmjs.com/package/eslint-plugin-security)
 
@@ -319,7 +338,7 @@ function someFunction()
 
 <br/><br/>
 
-## ![✔] 3.4 Separa tus declaraciones correctamente
+## ![✔] 3.4 Separa tus sentencias correctamente
 
 No importa si usas punto y coma o no para separar tus declaraciones, conocer las trampas comunes de los saltos de línea inadecuados o la inserción automática de punto y coma, te ayudará a eliminar los errores de sintaxis habituales.
 
@@ -363,7 +382,7 @@ const count = 2 // intenta ejecutar 2(), pero 2 no es una función
 
 <br/><br/>
 
-## ![✔] 3.5 Pon nombre a tus funciones
+## ![✔] 3.5 Nombra a tus funciones
 
 **TL;DR:** Nombra todas las funciones, incluidos los cierres y las devoluciones de llamada. Evita funciones anónimas. Esto es especialmente útil cuando se perfila una aplicación de Node. Nombrar todas las funciones le permitirá comprender fácilmente lo que está viendo al revisar un registro de memoria
 
@@ -371,7 +390,7 @@ const count = 2 // intenta ejecutar 2(), pero 2 no es una función
 
 <br/><br/>
 
-## ![✔] 3.6 Usa convenciones de nomenclatura para variables, constantes, funciones y clases.
+## ![✔] 3.6 Usa convenciones de nombre para variables, constantes, funciones y clases
 
 **TL;DR:** Utiliza **_lowerCamelCase_** al nombrar constantes, variables y funciones y utiliza **_UpperCamelCase_** (la primera en mayúscula también) cuando nombres clases. Esto lo ayudará a distinguir fácilmente entre variables / funciones simples y clases que requieren instanciación. Use nombres descriptivos, pero trate de mantenerlos cortos
 
@@ -395,7 +414,7 @@ function doSomething() {}
 
 <br/><br/>
 
-## ![✔] 3.7 Escoge const antes que let. No uses var
+## ![✔] 3.7 Prefiere const antes que let. No uses var
 
 **TL;DR:** Usar `const` significa que una vez que se asigna una variable, no se puede reasignar. Prefiriendo `const` te ayudará a no sentirte tentado a usar la misma variable para diferentes usos y a aclarar tu código. Si una variable necesita ser reasignada, en un bucle for, por ejemplo, usa `let` para declararlo. Otro aspecto importante de `let`es que una variable declarada usando solo está disponible en el ámbito del bloque en el que se definió. `var` tiene ámbito de función, no ámbito de bloque, y [no debería ser usada en ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) ahora que tienes `const` y `let` a tu disposición
 
@@ -413,7 +432,7 @@ function doSomething() {}
 
 <br/><br/>
 
-## ![✔] 3.9 Importa los módulos por carpetas y no por archivos directamente
+## ![✔] 3.9 Establece un punto de entrada explícito a un módulo/carpeta
 
 **TL;DR:** Al desarrollar un módulo / biblioteca en una carpeta, coloca un archivo index.js que exponga los componentes internos del módulo para que todos los consumidores lo atraviesen. Esto sirve como una 'interfaz' para tu módulo y facilita los cambios futuros sin romper el contrato
 
@@ -470,7 +489,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <br/><br/>
 
-## ![✔] 3.12 Usar funciones de flecha (=>)
+## ![✔] 3.12 Usa expresiones de funciones de flecha (=>)
 
 **TL;DR:** Aunque se recomienda usar async-await y evitar parámetros de función cuando se trata de API más antiguas que aceptan promesas o callbacks. Las funciones de flecha hacen que la estructura del código sea más compacta y mantienen el contexto léxico de la función raíz (i.e. `this`)
 
