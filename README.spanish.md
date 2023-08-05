@@ -9,43 +9,83 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%20102%20Best%20Practices-blue.svg" alt="102 items"/> <img id="last-update-badge" src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20July%2004%2C%202021-green.svg" alt="Last update: July 04, 2021" /> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2014.0.0-brightgreen.svg" alt="Updated for Node 14.0.0"/>
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%20102%20Best%20Practices-blue.svg" alt="102 items"/> <img id="last-update-badge" src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20July%2019%2C%202023-green.svg" alt="Last update: July 19, 2023" /> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2019.0.0-brightgreen.svg" alt="Updated for Node 19.0.0"/>
 </div>
 
 <br/>
 
-[![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **¡Síguenos en** [**@nodepractices**](https://twitter.com/nodepractices/)
+[<img src="assets/images/twitter.svg" width="16" height="16" alt="" />]https://twitter.com/nodepractices/) **¡Síguenos en Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
 
 <br/>
 
-Lee en un idioma diferente: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![FR](/assets/flags/FR.png)**FR**](/README.french.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md), [![JA](/assets/flags/JA.png)**JA**](/README.japanese.md), [![EU](/assets/flags/EU.png)**EU**](/README.basque.md) [(![ES](/assets/flags/ES.png)**ES**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** and ![TR](/assets/flags/TR.png)**TR** ¡En proceso! )](#translations)
+Leelo en otro idioma: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md), [![FR](./assets/flags/FR.png)**FR**](./README.french.md), [![BR](./assets/flags/BR.png)**BR**](./README.brazilian-portuguese.md), [![RU](./assets/flags/RU.png)**RU**](./README.russian.md), [![PL](./assets/flags/PL.png)**PL**](./README.polish.md), [![JA](./assets/flags/JA.png)**JA**](./README.japanese.md), [![EU](./assets/flags/EU.png)**EU**](./README.basque.md) [(![ES](./assets/flags/ES.png)**ES**, ![HE](./assets/flags/HE.png)**HE**, ![KR](./assets/flags/KR.png)**KR** and ![TR](./assets/flags/TR.png)**TR** in progress! )](#translations)
 
 <br/>
 
-###### Built and maintained by our [Steering Committee](#steering-committee) and [Collaborators](#collaborators)
+# 🎊 ¡La edición 2023 está aquí!
 
-# Latest Best Practices and News
+- **🛰 Modernizado al 2023**: Montones de ediciones de texto, nuevas bibliotecas recomendadas y varias nuevas mejores prácticas 
 
-- **![FR](/assets/flags/FR.png) French translation!1! :** The latest translation that joins our international guide is French. Bienvenue
+- **✨ Enfocate facilmente en nuevo contenido**: ¿Ya lo has visitado? Busca las etiquetas `#new` o `#updated` exclusivas para contenido nuevo
 
-- **🇯🇵 Japanese translation:** Our guide is now also translated to Japanese! Courtesy of the amazing [YukiOta](https://github.com/YukiOta) and [Yuta Azumi](https://github.com/YA21)
-
-- **🎊 60,000 stars!**: Our repo was starred and trusted by 60,100 developers. We're speechless
+- **🔖 ¿Tienes curiosidad por ver ejemplos? Tenemos un Starter**: Visita [Practica.js](https://github.com/practicajs/practica), nuestro ejemplo de aplicación y plantilla (beta) para ver algunas prácticas en acción
 
 <br/><br/>
 
-# ¡Bienvenido! 3 cosas que deberías saber primero:
-**1. Aquí encontrarás docenas de los mejores artículos sobre Node.JS -** este es un resumen y conservación del contenido mejor clasificado de las mejores prácticas de NodeJS
+# ¡Bienvenido! 3 cosas que deberías saber primero
 
-**2. Es la compilación más grande y crece cada semana -** actualmente, se presentan más de 80 prácticas, guías de estilo y consejos arquitectónicos. Nuevos issues y pull request son creados cada día para mantener esta guía actualizada. Nos encantaría verte contribuyendo, ya sea arreglando errores en el código, ayudando en traducciones, o sugiriendo nuevas ideas. Ve las [Normas de contribución](./operations/writing-guidelines.spanish.md)
+**1. Está leyendo docenas de los mejores artículos de Node.js -** este repositorio es un resumen y curación del contenido mejor clasificado de las mejores prácticas de NodeJS, así como el contenido escrito aquí por colaboradores
 
-**3. La mayoría de los puntos tienen información adicional -** Encontrarás cerca de cada punto de mejores prácticas el enlace **🔗Leer más** que te dará algunos ejemplos de código, citas de blogs seleccionados y mas información
+**2. Es la compilación más grande y crece cada semana -** actualmente, se presentan más de 80 prácticas, guías de estilo y consejos arquitectónicos. Nuevos issues y pull request son creados cada día para mantener esta guía actualizada. Nos encantaría verte contribuyendo, ya sea arreglando errores en el código, ayudando en las traducciones, o sugiriendo brillantes nuevas ideas. Ve las [Normas de contribución](./.operations/writing-guidelines.spanish.md)
 
-<br/><br/><br/>
+**3. Las mejores prácticas tienen información adicional -** la mayoría de los puntos incluyen el enlace **🔗Leer más** que expanden la práctica con ejemplos de código, citas de blogs seleccionados y mas información
+
+<br/><br/>
+
+# By Yoni Goldberg
+
+### Aprenda conmigo: como consultor, participo con equipos de todo el mundo en diversas actividades, como talleres y revisiones de código. 🎉Y... Espera, acabo de lanzar mi [curso de pruebas más allá de lo básico, que está en oferta por tiempo limitado](https://testjavascript.com/) hasta el 7 de agosto
+
+<br/><br/>
 
 ## Tabla de contenidos
-1. [Prácticas para estructura del proyecto (5)](#1-prácticas-de-estructura-del-proyecto)
-2. [Prácticas en manejo de errores (12) ](#2-prácticas-en-manejo-de-errores)
+
+<details>
+  <summary>
+    <a href="#1-prácticas-de-estructura-del-proyecto">1. Prácticas para estructura del proyecto (6)</a>
+  </summary>
+
+&emsp;&emsp;[1.1 Estructura tu solución en componentes`#strategic` `#updated`](#-11-estructura-tu solución-en-componentes)</br>
+&emsp;&emsp;[1.2 Pon tus componentes en capas, mantén la capa web dentro de sus límites `#strategic` `#updated`](#-12-pon tus-componentes-en-capas-mantén-la-capa-web-dentro-de-sus-límites)</br>
+&emsp;&emsp;[1.3 Engloba utilidades comunes como paquetes, considera publicarlos](#-13-engloba-utilidades-comunes-como-paquetes-considera-publicarlos)</br>
+&emsp;&emsp;[1.4 Usa una configuración consciente del entorno,segura y jerárquica `#updated`](#-14-usa-una-configuración-consciente-del-entornosegura-y-jerárquica)</br>
+&emsp;&emsp;[1.5 Considera todas las consecuencias al elegir el framwork principal `#new`](#-15-considera-todas-las-consecuencias-al-elegir-el-framwork-principal)</br>
+&emsp;&emsp;[1.6 Usa TypeScript con moderación y consideración `#new`](#-16-usa-type-script-con-moderación-y-consideración)</br>
+
+</details>
+
+<details>
+  <summary>
+    <a href="#2-prácticas-en-manejo-de-errores">2. Prácticas en manejo de errores (12)</a>
+  </summary>
+
+&emsp;&emsp;[2.1 Usa Async-Await o promesas para el manejo de errores asíncronos](#-21-usa-async-await-o-promesas-para-el-manejo-de-errores-asíncronos)</br>
+&emsp;&emsp;[2.2 Extiende el objeto Error nativo `#strategic` `#updated`](#-22-extiende-el-objeto-error-nativo)</br>
+&emsp;&emsp;[2.3 Distingue errores catastróficos de errores operacionales `#strategic` `#updated`](#-23-distingue-errores-catastróficos-de-errores-operacionales)</br>
+&emsp;&emsp;[2.4 Maneja los errores centralmente, no dentro de un middleware `#strategic`](#-24-maneja-los-errores-centralmente-no-dentro-de-un-middleware)</br>
+&emsp;&emsp;[2.5 Documenta errores del API con OpenAPI o GraphQL](#-25-documenta-errores-del-api-con-open-api-o-graphql)</br>
+&emsp;&emsp;[2.6 Cierra el proceso elegantemente cuando un extraño llega a la ciudad `#strategic`](#-26-cierra-el-proceso-elegantemente-cuando-un-extraño-llega-a-la-ciudad)</br>
+&emsp;&emsp;[2.7 Usa un logger maduro para aumentar la visibilidad de los errores `#updated`](#-27-usa-un-logger-maduro-para-aumentar-la-visibilidad-de-los-errores)</br>
+&emsp;&emsp;[2.8 Pruebas los flujos de errores usando tu framework de prueba favorito `#updated`](#-28-pruebas-los-flujos-de-errores-usando-tu-framework-de-prueba-favorito)</br>
+&emsp;&emsp;[2.9 Descubre errores y tiempo de inactividad usando productos de APM](#-29-descubre-errores-y-tiempo-de-inactividad-usando-productos-de-apm)</br>
+&emsp;&emsp;[2.10 Captura los rechazos de promesas no controladas `#updated`](#-210-captura-los-rechazos-de-promesas-no-controladas)</br>
+&emsp;&emsp;[2.11 Falla rápidamente, valida los argumentos usando una biblioteca dedicada](#-211-falla-rápidamente-valida-los-argumentos-usando-una-biblioteca-dedicada)</br>
+&emsp;&emsp;[2.12 Siempre resuelve las promesas antes de retornarlas para evitar un stacktrace parcial `#new`](#-212-always-await-promises-before-returning-to-avoid-a-partial-stacktrace)</br>
+&emsp;&emsp;[2.13 Subscribete al evento 'error' de los emisores de eventos `#new`](#-213-subscribete-al-evento-'error'-de-los-emisores-de-eventos)</br>
+
+</details>
+
+
 3. [Prácticas de estilo de código (12) ](#3-prácticas-de-estilo-de-código)
 4. [Prácticas de prueba y calidad en general (13) ](#4-pruebas-y-prácticas-generales-de-calidad)
 5. [Prácticas de puesta en producción (19) ](#5-yendo-a-las-prácticas-de-producción)
@@ -87,7 +127,7 @@ Lee en un idioma diferente: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 <br/><br/>
 
-## ![✔] 1.4 Separar 'servidor' y 'aplicación' de express
+## ![✔] 1.x Separar 'servidor' y 'aplicación' de express
 
 **TL;DR:** Evite el desagradable hábito de definir toda la aplicación [Express](https://expressjs.com/) en un único archivo enorme; separa tú definición de 'Express' en al menos dos archivos: la declaración del API (app.js) y los características de red (WWW). Incluso para una mejor estructura, ubica tu declaración del API dentro de los componentes.
 
@@ -97,7 +137,7 @@ Lee en un idioma diferente: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 <br/><br/>
 
-## ![✔] 1.5 Usar una configuración segura, jerárquica y consciente del entorno
+## ![✔] 1.4 Usa una configuración consciente del entorno,segura y jerárquica  
 
 **TL;DR:** La configuración perfecta e impecable debe incluir (a) claves que se pueden leer desde el archivo Y desde la variable de entorno (b) los secretos se guardan fuera del código al que se ha hecho commit (c) config es jerárquica para facilitar la localización. Solo hay unos pocos paquetes que pueden ayudar a validar la mayoría de estos casos como [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config), y [convict](https://www.npmjs.com/package/convict)
 
@@ -112,7 +152,7 @@ Lee en un idioma diferente: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 # `2. Prácticas en manejo de errores`
 
-## ![✔] 2.1  Usa Async-Await o promesas para manejo de errores asíncronos
+## ![✔] 2.1  Usa Async-Await o promesas para el manejo de errores asíncronos
 
 **TL;DR:** El manejo de errores asíncronos en el estilo de callback es probablemente la manera más rápida de ir al infierno (a.k.a, pyramid of doom o pirámide de la perdición). El mejor regalo que le puedes dar a tu código es utilizar una biblioteca de promesas seria o async-await que proporciona una sintaxis de código muy compacta y similar al try-catch
 
@@ -123,7 +163,7 @@ Lee en un idioma diferente: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 <br/><br/>
 
 
-## ![✔] 2.2 Usa solo el objeto Error nativo
+## ![✔] 2.2 Extiende el objeto Error nativo
 
 **TL;DR:** Muchos arrojan errores como una cadena o como un tipo personalizado; esto complica la lógica de manejo de errores y la interoperatividad entre módulos. Ya sea que rechace una promesa, genere una excepción o emita un error, usar solo el objeto de Error nativo (o un objecto que herede del objeto Error nativo) aumentará la uniformidad y evitará la pérdida de información. Existe la regla `no-throw-literal` de ESLint que revisa esto (aunque tiene unas [limitaciones](http://eslint.org/docs/rules/no-throw-literal) que pueden ser solucionadas al usar TypeScript y configurando la regla `eslint/no-throw-literal`).
 
@@ -133,7 +173,7 @@ Lee en un idioma diferente: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 <br/><br/>
 
-## ![✔] 2.3 Distinguir errores operacionales contra errores del programador
+## ![✔] 2.3 Distingue errores catastróficos de errores operacionales
 
 **TL;DR:** Los errores operacionales (por ejemplo, el API recibió una entrada no válida) se refieren a casos conocidos en los que el impacto del error se entiende completamente y se pueden manejar con cuidado. Por otro lado, el error del programador (por ejemplo, tratar de leer la variable no definida) se refiere a fallas desconocidas del código que ordenan reiniciar correctamente la aplicación.
 
@@ -143,7 +183,7 @@ Lee en un idioma diferente: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 <br/><br/>
 
-## ![✔] 2.4 Manejar los errores centralmente, no dentro de un middleware Express
+## ![✔] 2.4 Maneja los errores centralmente, no dentro de un middleware
 
 **TL;DR:** La lógica de manejo de errores, como un correo al administrador y registro de logs, debe encapsularse en un objeto dedicado y centralizado al que todos los end-points (por ejemplo, Express middleware, cron jobs, unit-testing) llamen cuando se produce un error.
 
@@ -153,7 +193,7 @@ Lee en un idioma diferente: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 <br/><br/>
 
-## ![✔] 2.5 Errores del API Document con Swagger o GraphQL
+## ![✔] 2.5 Documenta errores del API con OpenAPI o GraphQL
 
 **TL;DR:** Deja que los clientes de tu API sepan qué errores podrían presentarse como respuesta, para que puedan manejarlos cuidadosamente sin fallar. Para API's RESTful esto se hace generalmente con frameworks de documentación REST API como Swagger. Si estás utilizando GraphQL, también puedes utilizar tus esquemas y comentarios.
 
@@ -163,7 +203,7 @@ Lee en un idioma diferente: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 <br/><br/>
 
-## ![✔] 2.6 Cerrar el proceso elegantemente cuando un extraño llega
+## ![✔] 2.6 Cerrar el proceso elegantemente cuando un extraño llega a la ciudad
 
 **TL; DR:** Cuando se produce un error desconocido (un error del desarrollador, consulta el número de práctica recomendada número 2.3): existe incertidumbre acerca del estado de la aplicación. Una práctica común sugiere reiniciar el proceso cuidadosamente usando una herramienta de gestión de procesos como [Forever](https://www.npmjs.com/package/forever) y [PM2](https://pm2.keymetrics.io/).
 
@@ -183,7 +223,7 @@ Lee en un idioma diferente: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 <br/><br/>
 
-## ![✔] 2.8 Flujos de errores de prueba usando su framework de prueba favorito
+## ![✔] 2.8 Pruebas los flujos de errores usando tu framework de prueba favorito
 
 **TL;DR:** Ya sea que se trate de un profesional de QA automatizado o de una prueba de desarrollador manual: asegúrate de que tu código no solo satisfaga un escenario positivo sino que también maneje y devuelva los errores correctos. Frameworks de prueba como Mocha & Chai pueden manejar esto fácilmente (vea ejemplos de código dentro del "Gist emergente").
 
@@ -193,7 +233,7 @@ Lee en un idioma diferente: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 <br/> <br/>
 
-## ![✔] 2.9 Descubre errores y tiempo de inactividad usando productos APM
+## ![✔] 2.9 Descubre errores y tiempo de inactividad usando productos de APM
 
 **TL;DR:** Los productos de monitoreo y rendimiento (a.k.a APM) miden de forma proactiva tu base de código o API para auto-mágicamente resaltar errores, bloqueos y ralentizar partes que no te das cuenta.
 
@@ -203,7 +243,7 @@ Lee en un idioma diferente: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 <br/><br/>
 
-## ![✔] 2.10 Captura rechazos de promesas no controladas
+## ![✔] 2.10 Captura los rechazos de promesas no controladas
 
 **TL;DR:** Cualquier excepción lanzada dentro de una promesa será tragada y descartada a menos que un desarrollador no se olvide de manejarla de manera explícita. ¡Incluso si su código está suscrito a `process.uncaughtException`! Supera esto registrándose en el proceso del evento `process.unhandledRejection`.
 
@@ -213,7 +253,7 @@ Lee en un idioma diferente: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 <br/><br/>
 
-## ![✔] 2.11 Falla rápidamente, valida argumentos usando una biblioteca dedicada
+## ![✔] 2.11 Falla rápidamente, valida los argumentos usando una biblioteca dedicada
 
 **TL; DR:** Valida los datos de entrada en la API para evitar bugs molestos que son difíciles de rastrear mas adelante. La validación de código suele ser tediosa amenos que tengas ona librería que pueda ayudar como [ajv](https://www.npmjs.com/package/ajv) y [Joi](https://www.npmjs.com/package/joi).
 
@@ -223,7 +263,7 @@ Lee en un idioma diferente: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 <br><br>
 
-## ![✔] 2.12 Siempre resuelve las promesas antes de retornarlas para evitar stacktrace parcial
+## ![✔] 2.12 Siempre resuelve las promesas antes de retornarlas para evitar un stacktrace parcial
 
 **TL;DR:** Siempre utiliza `return await` cuando regreses una promesa para tener un error stacktrace completo. Si la función regresa una promesa, esa función debe ser declarada como `async` y explícitamente esperar (`await`) la promesa antes de retornarla.
 
@@ -1357,14 +1397,14 @@ Gracias a todos nuestros colaboradores! 🙏
 Nuestros colaboradores son miembros que contribuyen regularmente al repositorio, sugiriendo nuevas mejores prácticas, problemas de evaluación, revisión de solicitudes de extracción y más. Si está interesado en ayudarnos a guiar a miles de personas para crear mejores aplicaciones de Node.js, lea nuestras [pautas para contribuyentes](/.operations/CONTRIBUTING.spanish.md) 🎉
 
 | <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
-| :--: | :--: |
-| [Ido Richter (Fundador)](https://github.com/idori) | [Keith Holliday](https://github.com/TheHollidayInn) |
+| :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
+|                                   [Ido Richter (Fundador)](https://github.com/idori)                                    |                                        [Keith Holliday](https://github.com/TheHollidayInn)                                         |
 
 ### Colaboradores anteriores
 
 | <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"></a> |
-| :--: |
-| [Refael Ackermann](https://github.com/refack) |
+| :-------------------------------------------------------------------------------------------------------------------------: |
+|                                        [Refael Ackermann](https://github.com/refack)                                        |
 
 <br/>
 
