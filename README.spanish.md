@@ -106,11 +106,31 @@ Leelo en otro idioma: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md),
 
 </details>
 
-4. [Prácticas de prueba y calidad en general (13) ](#4-pruebas-y-prácticas-generales-de-calidad)
-5. [Prácticas de puesta en producción (19) ](#5-yendo-a-las-prácticas-de-producción)
-6. [Prácticas de seguridad (25)](#6-mejores-prácticas-de-seguridad)
-7. [Prácticas de rendimiento (2) (En Progreso ✍️)](#7-borrador-mejores-prácticas-de-rendimiento)
-8. [Prácticas de Docker (15)](#8-mejores-prácticas-de-docker)
+<details>
+  <summary>
+    <a href="#4-pruebas-y-prácticas-generales-de-calidad">4. Prácticas de prueba y calidad en general (13)</a>
+  </summary>
+
+&emsp;&emsp;[4.1 Por lo menos, escribe las pruebas de la API (componente) `#strategic`](#-41-por-lo-menos,-escribe-las-pruebas-de-la-api-)</br>
+&emsp;&emsp;[4.2 Incluye 3 partes en cada nombre de prueba `#new`](#-42-incluye-3-partes-en-cada-nombre-de-prueba)</br>
+&emsp;&emsp;[4.3 Estructura las pruebas utilizando el patrón AAA `#strategic`](#-43-estructura-las-pruebas-utilizando-el-patrón-aaa)</br>
+&emsp;&emsp;[4.4 Asegura que la versión de Node esté unificada `#new`](#-44-asegura-que-la-versión-de-node-esté-unificada)</br>
+&emsp;&emsp;[4.5 Evita estados de prueba (fixtures) y semillas globales, agrega datos por prueba `#strategic`](#-45-evita-estados-de-prueba-fixtures-y-semillas-globales-agrega-datos-por-prueba)</br>
+&emsp;&emsp;[4.6 Etiqueta tus pruebas `#advanced`](#-4etiqueta-tus-pruebas)</br>
+&emsp;&emsp;[4.7 Verifica la cobertura de tus pruebas, ayuda a identificar patrones de prueba incorrectos](#-47-verifica-la-cobertura-de-tus-pruebas-ayuda-a-identificar-patrones-de-prueba-incorrectos)</br>
+&emsp;&emsp;[4.8 Usa un ambiente similar al de producción para pruebas e2e](#-48-usa-un-ambiente-similar-al-de-producción-para-pruebas-e2e)</br>
+&emsp;&emsp;[4.9 Refactoriza regularmente utilizando herramientas de análisis estático de código](#-49-refactor-regularly-using-static-analysis-tools)</br>
+&emsp;&emsp;[4.10 Simula las respuestas de servicios HTTP externos #advanced `#new` `#advanced`](#-410-simula-las-respuestas-de-servicios-http-externos)</br>
+&emsp;&emsp;[4.11 Prueba tus middlewares por separado](#-411-prueba-tus-middlewares-por-separado)</br>
+&emsp;&emsp;[4.12 Especifica un puerto en producción, aleatorizalo en las pruebas `#new`](#-412-especifica-un-puerto-en-producción-aleatorizalo-en-las-pruebas)</br>
+&emsp;&emsp;[4.13 Prueba los cinco posibles resultados #strategic `#new`](#-413-prueba-los-cinco-posibles-resultados)</br>
+
+</details>
+
+1. [Prácticas de puesta en producción (19) ](#5-yendo-a-las-prácticas-de-producción)
+2. [Prácticas de seguridad (25)](#6-mejores-prácticas-de-seguridad)
+3. [Prácticas de rendimiento (2) (En Progreso ✍️)](#7-borrador-mejores-prácticas-de-rendimiento)
+4. [Prácticas de Docker (15)](#8-mejores-prácticas-de-docker)
 
 
 <br/><br/><br/>
@@ -521,7 +541,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <br/><br/>
 
-## ![✔] 4.3 Pruebas de estructura por el patrón AAA
+## ![✔] 4.3 Estructura las pruebas utilizando el patrón AAA
 
 **TL;DR:** Estructura tus pruebas con 3 secciones bien separadas: Organizar, Actuar y Afirmar (AAA - Arrange, Act & Assert). La primera parte incluye la configuración de la prueba, luego la ejecución de la unidad bajo prueba y finalmente la fase de afirmación. Seguir esta estructura garantiza que el lector no gaste CPU cerebral en comprender el plan de prueba
 
@@ -539,7 +559,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <br/><br/>
 
-## ![✔] 4.5 Evita datos globales, agrega datos personalizados por prueba
+## ![✔] 4.5 Evita estados de prueba (fixtures) y semillas globales, agrega datos por prueba
 
 **TL;DR:** Para evitar el acoplamiento de pruebas y razonar fácilmente sobre el flujo de prueba, cada prueba debe agregar y actuar en su propio conjunto de filas de base de datos. Cada vez que una prueba necesita extraer o asumir la existencia de algunos datos de base de datos, debes agregar explícitamente esos datos y evitar la mutación de cualquier otro registro
 
@@ -549,7 +569,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <br/><br/>
 
-## ![✔] 4.6 Inspecciona constantemente las dependencias vulnerables.
+## ![✔] 4.x Inspecciona constantemente las dependencias vulnerables.
 
 **TL;DR:** Incluso las dependencias de mayor reputación como Express tienen vulnerabilidades conocidas. Esto se puede controlar fácilmente utilizando herramientas comunitarias y comerciales como 🔗 [npm audit](https://docs.npmjs.com/cli/audit) y 🔗 [snyk.io](https://snyk.io) que se puede invocar desde su CI en cada compilación
 
@@ -557,7 +577,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <br/><br/>
 
-## ![✔] 4.7 Etiqueta tus pruebas
+## ![✔] 4.6 Etiqueta tus pruebas
 
 **TL;DR:** Deben ejecutarse diferentes pruebas en diferentes escenarios: "quick smoke", "IO-less", pruebas que deben ejecutarse cuando un desarrollador guarda o hace commit a un archivo, pruebas completas de extremo a extremo generalmente se ejecutan cuando se envía una nueva solicitud de pull , etc. Esto se puede lograr etiquetando las pruebas con palabras clave como #cold #api #sanity para que pueda aprovechar su arnés de prueba e invocar el subconjunto deseado. Por ejemplo, así es como invocaría solo al grupo de prueba de sanidad con [Mocha](https://mochajs.org/): mocha --grep 'sanity'
 
@@ -565,7 +585,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <br/><br/>
 
-## ![✔] 4.8 Verifique su cobertura de prueba, ayuda a identificar patrones de prueba incorrectos
+## ![✔] 4.7 Verifica la cobertura de tus pruebas, ayuda a identificar patrones de prueba incorrectos
 
 **TL;DR:** Herramientas de cobertura de código como [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc) son excelentes por 3 razones: son gratis (no se requiere ningún esfuerzo para realizar estos informes), ayudan a identificar una disminución en la cobertura de las pruebas y, por último, pero no menos importante, resaltan los desajustes de las pruebas: al mirar los informes de cobertura de códigos de colores puede que veas, por ejemplo, áreas de código que nunca se prueban como cláusulas catch (lo que significa que las pruebas solo invocan las rutas felices y no cómo se comporta la aplicación ante los errores). Configúrelo para generar fallos si la cobertura cae por debajo de un cierto umbral
 
@@ -573,7 +593,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <br/><br/>
 
-## ![✔] 4.9 Inspecciona los paquetes obsoletos
+## ![✔] 4.x Inspecciona los paquetes obsoletos
 
 **TL;DR:** Usa tu herramienta preferida (e.g. 'npm outdated' o [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) para detectar paquetes instalados que están desactualizados, inyecte esta verificación en su canalización de CI e incluso haga que una compilación falle en un escenario grave. Por ejemplo, un escenario grave podría ser cuando un paquete instalado tiene 5 parches confirmados (por ejemplo, la versión local es 1.3.1 y la versión del repositorio es 1.3.8) o está etiquetado como obsoleto por su autor: elimine la compilación y evite implementar esto versión
 
@@ -581,7 +601,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <br/><br/>
 
-## ![✔] 4.10 Usa ambiente similar al de producción para pruebas e2e
+## ![✔] 4.8 Usa un ambiente similar al de producción para pruebas e2e
 
 **TL;DR:** La prueba de extremo a extremo (e2e) que incluye datos en vivo solía ser el eslabón más débil del proceso de CI, ya que depende de múltiples servicios pesados como DB. Usa un entorno que esté lo más cerca posible de su producción real como a-continue
 
@@ -589,7 +609,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <br/><br/>
 
-## ![✔] 4.11 Refactoriza regularmente utilizando herramientas de análisis estático
+## ![✔] 4.9 Refactoriza regularmente utilizando herramientas de análisis estático de código
 
 **TL;DR:** El uso de herramientas de análisis estático ayuda al proporcionar formas objetivas para mejorar la calidad del código y mantiene tu código mantenible. Puedes agregar herramientas de análisis estático a su compilación de CI para que falle cuando encuentre que el código huele. Sus principales puntos de venta sobre el revestimiento simple son la capacidad de inspeccionar la calidad en el contexto de múltiples archivos (por ejemplo, detectar duplicaciones), realizar análisis avanzados (por ejemplo, complejidad del código) y seguir el historial y el progreso de los problemas de código. Dos ejemplos de herramientas que puede usar son [Sonarqube](https://www.sonarqube.org/) (2,600+ [stars](https://github.com/SonarSource/sonarqube)) y [Code Climate](https://codeclimate.com/) (1,500+ [stars](https://github.com/codeclimate/codeclimate)).
 
@@ -609,7 +629,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <br><br>
 
-## ![✔] 4.13 Prueba tu middleware por separado
+## ![✔] 4.11 Prueba tus middlewares por separado
 
 **TL;DR:** Cuando tu middleware tiene una lógica inmensa que se extiende a muchas peticiones, vale la pena realizar pruebas por separado, sin necesidad de despertar todo el framework web. Esto puede hacerse fácilmente pisando y espiando en los objetos {req, res, next}.
 
