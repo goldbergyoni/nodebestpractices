@@ -135,7 +135,7 @@
 &emsp;&emsp;[5.2. הגדילו את יכולת הצפייה בעזרת לוגים איכותיים `#strategic`](#-52-increase-the-observability-using-smart-logging)</br>
 &emsp;&emsp;[5.3. האצילו כל מה שאפשר (לדוגמה gzip, SSL) לשירות נפרד `#strategic`](#-53-delegate-anything-possible-eg-gzip-ssl-to-a-reverse-proxy)</br>
 &emsp;&emsp;[5.4. קיבוע תלויות](#-54-lock-dependencies)</br>
-&emsp;&emsp;[5.5. Guard process uptime using the right tool](#-55-guard-process-uptime-using-the-right-tool)</br>
+&emsp;&emsp;[5.5. הבטיחו את זמינות המערכת בעזרת הכלי המתאים](#-55-guard-process-uptime-using-the-right-tool)</br>
 &emsp;&emsp;[5.6. Utilize all CPU cores](#-56-utilize-all-cpu-cores)</br>
 &emsp;&emsp;[5.7. Create a ‘maintenance endpoint’](#-57-create-a-maintenance-endpoint)</br>
 &emsp;&emsp;[5.8. Discover the unknowns using APM products `#advanced` `#updated`](#-58-discover-the-unknowns-using-apm-products)</br>
@@ -862,13 +862,13 @@ API, הודעה חדשה נרשמת לתור, וקריאה לכלי צפיה ב�
 
 <br/><br/>
 
-## ![✔] 5.5. Guard process uptime using the right tool
+## ![✔] 5.5. הבטיחו את זמינות המערכת בעזרת הכלי המתאים
 
-**אמ;לק:** The process must go on and get restarted upon failures. Modern runtime platforms like Docker-ized platforms (e.g. Kubernetes), and Serverless take care for this automatically. When the app is hosted on a bare metal server, one must take care for a process management tools like [systemd](https://systemd.io/). Avoid including a custom process management tool in a modern platform that monitor an app instance (e.g., Kubernetes) - doing so will hide failures from the infrastructure. When the underlying infrastructure is not aware of errors, it can't perform useful mitigation steps like re-placing the instance in a different location
+**אמ;לק:** המערכת צריכה להמשיך לעבוד ולהתאתחל במידה וקרתה שגיאה קריטית. סביבות ריצה חדשות כמו למשל כאלו המבוססות דוקר (כמו קוברנטיס), או Serverless מטפלות בזה בצורה אוטומטית. כאשר המוצר מותקן על שרת אמיתי פיזי, יש צורך לנהל את משאבי המערכת בעזרת כלי כמו [systemd](https://systemd.io/). אך יש להימנע מלעשות זאת כאשר משתמשים בתשתיות שכבר מבצעות את הניטור מכיוון שזה יגרום לבליעת שגיאות. כאשר לתשתית אין מודעות לשגיאות, אין לה יכולת של ביצוע שלבי פיחות משאבים כמו העברת האינסטנס של המערכת למקום אחר ברשת.
 
-**אחרת:** Running dozens of instances without a clear strategy and too many tools together (cluster management, docker, PM2) might lead to DevOps chaos
+**אחרת:** הרצה של עשרות אינסטנסים ללא סיבה ברורה ויותר מידי כלי תשתית יחד (cluster management, docker, PM2) עלול לגרום לכאוס עבור ה-DevOps.
 
-🔗 [**Read More: Guard process uptime using the right tool**](./sections/production/guardprocess.md)
+🔗 [**לקריאה נוספת: הבטיחו את זמינות המערכת בעזרת הכלי המתאים**](./sections/production/guardprocess.md)
 
 <br/><br/>
 
