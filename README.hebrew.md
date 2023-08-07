@@ -136,7 +136,7 @@
 &emsp;&emsp;[5.3. האצילו כל מה שאפשר (לדוגמה gzip, SSL) לשירות נפרד `#strategic`](#-53-delegate-anything-possible-eg-gzip-ssl-to-a-reverse-proxy)</br>
 &emsp;&emsp;[5.4. קיבוע תלויות](#-54-lock-dependencies)</br>
 &emsp;&emsp;[5.5. הבטיחו את זמינות המערכת בעזרת הכלי המתאים](#-55-guard-process-uptime-using-the-right-tool)</br>
-&emsp;&emsp;[5.6. Utilize all CPU cores](#-56-utilize-all-cpu-cores)</br>
+&emsp;&emsp;[5.6. השתמשו בכל מעבדי ה-CPU](#-56-utilize-all-cpu-cores)</br>
 &emsp;&emsp;[5.7. Create a ‘maintenance endpoint’](#-57-create-a-maintenance-endpoint)</br>
 &emsp;&emsp;[5.8. Discover the unknowns using APM products `#advanced` `#updated`](#-58-discover-the-unknowns-using-apm-products)</br>
 &emsp;&emsp;[5.9. Make your code production-ready](#-59-make-your-code-production-ready)</br>
@@ -872,13 +872,13 @@ API, הודעה חדשה נרשמת לתור, וקריאה לכלי צפיה ב�
 
 <br/><br/>
 
-## ![✔] 5.6. Utilize all CPU cores
+## ![✔] 5.6. השתמשו בכל מעבדי ה-CPU
 
-**אמ;לק:** At its basic form, a Node app runs on a single CPU core while all others are left idling. It’s your duty to replicate the Node process and utilize all CPUs. Most of the modern run-times platform (e.g., Kubernetes) allow replicating instances of the app but they won't verify that all cores are utilized - this is your duty. If the app is hosted on a bare server, it's also your duty to use some process replication solution (e.g. systemd)
+**אמ;לק:** בתצורה הבסיסית שלה, מערכת מבוססת Node.js תרוץ על מעבד CPU אחד ושאר המעבדים ינוחו. מחובתכם לשכפל את התהליך ולנהל את המערכת ככה שתרוץ על כל המעבדים. רוב תשתיות הריצה החדשות (כמו קוברנטיס) מאפשרות לשכפל את התהליכים למספר מעבדים, אך הן לא מבטיחות להשתמש בכל המעבדים - זאת האחריות שלכם! אם המוצר מותקן על שרת פיזי, אז כחלק מאחריותכם אתם צריכים גם להשתמש בפתרונות שיבצעו את השכפול של התהליך (כמו systemd).
 
-**אחרת:** Your app will likely utilize only 25% of its available resources(!) or even less. Note that a typical server has 4 CPU cores or more, naive deployment of Node.js utilizes only 1 (even using PaaS services like AWS beanstalk!)
+**אחרת:** המוצר שלכם ינצל לכל היותר 25% מהמשאבים הזמינים(!). זכרו שלשרת רגיל יש 4 מעבדי CPU או יותר, והתקנה סטנדרטית של תהליך Node.js משתמשת רק במעבד אחד (גם שירותים בשיטת PaaS כמו AWS beanstalk!).
 
-🔗 [**Read More: Utilize all CPU cores**](./sections/production/utilizecpu.md)
+🔗 [**לקריאה נוספת: השתמשו בכל מעבדי ה-CPU**](./sections/production/utilizecpu.md)
 
 <br/><br/>
 
