@@ -137,7 +137,7 @@
 &emsp;&emsp;[5.4. קיבוע תלויות](#-54-lock-dependencies)</br>
 &emsp;&emsp;[5.5. הבטיחו את זמינות המערכת בעזרת הכלי המתאים](#-55-guard-process-uptime-using-the-right-tool)</br>
 &emsp;&emsp;[5.6. השתמשו בכל מעבדי ה-CPU](#-56-utilize-all-cpu-cores)</br>
-&emsp;&emsp;[5.7. Create a ‘maintenance endpoint’](#-57-create-a-maintenance-endpoint)</br>
+&emsp;&emsp;[5.7. תיצרו ‘maintenance endpoint’](#-57-create-a-maintenance-endpoint)</br>
 &emsp;&emsp;[5.8. Discover the unknowns using APM products `#advanced` `#updated`](#-58-discover-the-unknowns-using-apm-products)</br>
 &emsp;&emsp;[5.9. Make your code production-ready](#-59-make-your-code-production-ready)</br>
 &emsp;&emsp;[5.10. Measure and guard the memory usage `#advanced`](#-510-measure-and-guard-the-memory-usage)</br>
@@ -882,13 +882,13 @@ API, הודעה חדשה נרשמת לתור, וקריאה לכלי צפיה ב�
 
 <br/><br/>
 
-## ![✔] 5.7. Create a ‘maintenance endpoint’
+## ![✔] 5.7. תיצרו ‘maintenance endpoint’
 
-**אמ;לק:** Expose a set of system-related information, like memory usage and REPL, etc in a secured API. Although it’s highly recommended to rely on standard and battle-tested tools, some valuable information and operations are easier done using code
+**אמ;לק:** חישפו מידע רלוונטי על המערכת, למשל מצב הזיכרון ו -[REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop), באמצעות API מאובטח. על אף שמומלץ להישען על כלים יעודיים לשם כך, את חלק מהמידע והפעולות יותר פשוט לבדוק באמצעות כתיבת קוד.
 
-**אחרת:** You’ll find that you’re performing many “diagnostic deploys” – shipping code to production only to extract some information for diagnostic purposes
+**אחרת:** תגלו שאתם מבצעים הרבה “diagnostic deploys” – העלאת קוד לסביבת הייצור רק כדי להשיג עוד קצת מידע אבחנתי על המערכת.
 
-🔗 [**Read More: Create a ‘maintenance endpoint’**](./sections/production/createmaintenanceendpoint.md)
+🔗 [**לקריאה נוספת: יצירת ‘maintenance endpoint’**](./sections/production/createmaintenanceendpoint.md)
 
 <br/><br/>
 
