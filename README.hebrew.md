@@ -139,7 +139,7 @@
 &emsp;&emsp;[5.6. השתמשו בכל מעבדי ה-CPU](#-56-utilize-all-cpu-cores)</br>
 &emsp;&emsp;[5.7. תיצרו ‘maintenance endpoint’](#-57-create-a-maintenance-endpoint)</br>
 &emsp;&emsp;[5.8. גלו את הלא ידוע בעזרת מוצרי APM `#advanced` `#updated`](#-58-discover-the-unknowns-using-apm-products)</br>
-&emsp;&emsp;[5.9. Make your code production-ready](#-59-make-your-code-production-ready)</br>
+&emsp;&emsp;[5.9. כתבו את הקוד מותאם להתקנה](#-59-make-your-code-production-ready)</br>
 &emsp;&emsp;[5.10. Measure and guard the memory usage `#advanced`](#-510-measure-and-guard-the-memory-usage)</br>
 &emsp;&emsp;[5.11. Get your frontend assets out of Node](#-511-get-your-frontend-assets-out-of-node)</br>
 &emsp;&emsp;[5.12. Strive to be stateless `#strategic`](#-512-strive-to-be-stateless)</br>
@@ -902,13 +902,13 @@ API, הודעה חדשה נרשמת לתור, וקריאה לכלי צפיה ב�
 
 <br/><br/>
 
-## ![✔] 5.9. Make your code production-ready
+## ![✔] 5.9. כתבו את הקוד מותאם להתקנה
 
-**אמ;לק:** Code with the end in mind, plan for production from day 1. This sounds a bit vague so I’ve compiled a few development tips that are closely related to production maintenance (click 'Read More')
+**אמ;לק:** קודדו כאשר התוצאה הסופית במחשבותיכם, התכוננו להתקנה בסביבת יצור כבר מהיום הראשון. זה אמנם נשמע קצת מעורפל ולכן בקישור ישנן מספר המלצות הקשורות לתמיכה במוצר שכבר הותקן.
 
-**אחרת:** A world champion IT/DevOps guy won’t save a system that is badly written
+**אחרת:** אלופי העולם של IT/DevOps לא ינסו להציל מערכת שכתובה גרוע.
 
-🔗 [**Read More: Make your code production-ready**](./sections/production/productioncode.md)
+🔗 [**לקריאה נוספת: כתבו את הקוד מותאם להתקנה**](./sections/production/productioncode.md)
 
 <br/><br/>
 
