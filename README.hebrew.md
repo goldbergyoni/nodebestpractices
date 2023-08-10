@@ -138,7 +138,7 @@
 &emsp;&emsp;[5.5. הבטיחו את זמינות המערכת בעזרת הכלי המתאים](#-55-guard-process-uptime-using-the-right-tool)</br>
 &emsp;&emsp;[5.6. השתמשו בכל מעבדי ה-CPU](#-56-utilize-all-cpu-cores)</br>
 &emsp;&emsp;[5.7. תיצרו ‘maintenance endpoint’](#-57-create-a-maintenance-endpoint)</br>
-&emsp;&emsp;[5.8. Discover the unknowns using APM products `#advanced` `#updated`](#-58-discover-the-unknowns-using-apm-products)</br>
+&emsp;&emsp;[5.8. גלו את הלא ידוע בעזרת מוצרי APM `#advanced` `#updated`](#-58-discover-the-unknowns-using-apm-products)</br>
 &emsp;&emsp;[5.9. Make your code production-ready](#-59-make-your-code-production-ready)</br>
 &emsp;&emsp;[5.10. Measure and guard the memory usage `#advanced`](#-510-measure-and-guard-the-memory-usage)</br>
 &emsp;&emsp;[5.11. Get your frontend assets out of Node](#-511-get-your-frontend-assets-out-of-node)</br>
@@ -892,13 +892,13 @@ API, הודעה חדשה נרשמת לתור, וקריאה לכלי צפיה ב�
 
 <br/><br/>
 
-## ![✔] 5.8. Discover the unknowns using APM products
+## ![✔] 5.8. גלו את הלא ידוע בעזרת מוצרי APM
 
-**אמ;לק:** Consider adding another safety layer to the production stack - APM. While the majority of symptoms and causes can be detected using traditional monitoring techniques, in a distributed system there is more than meets the eye. Application monitoring and performance products (a.k.a. APM) can auto-magically go beyond traditional monitoring and provide additional layer of discovery and developer-experience. For example, some APM products can highlight a transaction that loads too slow on the **end-user's side** while suggesting the root cause. APMs also provide more context for developers who try to troubleshoot a log error by showing what was the server busy with when the error occurred. To name a few example
+**אמ;לק:** שיקלו הוספת שכבה נוספת של בטיחות למוצר שלכם - [APM](https://en.wikipedia.org/wiki/Application_performance_management) (Application monitoring and performance products). אמנם רוב הסממנים והגורמים יכולים להימצא על ידי טכניקות ניטור סטנדרטיות, אך במערכות מבוזרות יש עוד רבדים סמויים מן העין. ניטור מערכות ובדיקת ביצועים (או בקיצור APM) יכולים באופן קסום להוסיף שכבה נוספת של חוויית פיתוח מעבר למה שמספקים הכלים הסטנדרטיים. לדוגמה, ישנם כלי APM שיכולים להדגיש טרנזקציה שטוענת לאט מידי את **צד הלקוח** ולהציע מה הסיבה לכך. כלים אלו גם מספקים יותר הקשר לצוות הפיתוח שמנסים לחקור שגיאה וזאת על ידי הצגה של העומסים שהיו בשרת בזמן שחלה השגיאה.
 
-**אחרת:** You might spend great effort on measuring API performance and downtimes, probably you’ll never be aware which is your slowest code parts under real-world scenario and how these affect the UX
+**אחרת:** אתם משקיעים זמן ניכר במדידת ביצועי API ואי זמינות של המערכת, כנראה שלעולם לא תהיו מודעים לאילו חלקים בקוד הם האיטיים ביותר בזמן אמת ואיך זה משפיע על חווית המשתמש.
 
-🔗 [**Read More: Discover errors and downtime using APM products**](./sections/production/apmproducts.md)
+🔗 [**לקריאה נוספת: גילוי שגיאות וזמני השבתה בעזרת מוצרי APM**](./sections/production/apmproducts.md)
 
 <br/><br/>
 
