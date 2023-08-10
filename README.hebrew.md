@@ -140,7 +140,7 @@
 &emsp;&emsp;[5.7. תיצרו ‘maintenance endpoint’](#-57-create-a-maintenance-endpoint)</br>
 &emsp;&emsp;[5.8. גלו את הלא ידוע בעזרת מוצרי APM `#advanced` `#updated`](#-58-discover-the-unknowns-using-apm-products)</br>
 &emsp;&emsp;[5.9. כתבו את הקוד מותאם להתקנה](#-59-make-your-code-production-ready)</br>
-&emsp;&emsp;[5.10. Measure and guard the memory usage `#advanced`](#-510-measure-and-guard-the-memory-usage)</br>
+&emsp;&emsp;[5.10. מדדו ושימרו את ניצול הזיכרון `#advanced`](#-510-measure-and-guard-the-memory-usage)</br>
 &emsp;&emsp;[5.11. Get your frontend assets out of Node](#-511-get-your-frontend-assets-out-of-node)</br>
 &emsp;&emsp;[5.12. Strive to be stateless `#strategic`](#-512-strive-to-be-stateless)</br>
 &emsp;&emsp;[5.13. Use tools that automatically detect vulnerabilities](#-513-use-tools-that-automatically-detect-vulnerabilities)</br>
@@ -912,13 +912,13 @@ API, הודעה חדשה נרשמת לתור, וקריאה לכלי צפיה ב�
 
 <br/><br/>
 
-## ![✔] 5.10. Measure and guard the memory usage
+## ![✔] 5.10. מדדו ושימרו את ניצול הזיכרון
 
-**אמ;לק:** Node.js has controversial relationships with memory: the v8 engine has soft limits on memory usage (1.4GB) and there are known paths to leak memory in Node’s code – thus watching Node’s process memory is a must. In small apps, you may gauge memory periodically using shell commands but in medium-large apps consider baking your memory watch into a robust monitoring system
+**אמ;לק:** ל-Node.js ישנה מערכת יחסים מורכבת עם ניהול הזיכרון: למנוע ה-v8 ישנם גבולות עדינים של צריכת זיכרון (1.4GB) וישנן דרכים ידועות איך לגרום לזליגת זיכרון בקוד של Node.js - ולכן מעקב אחר צריכת הזיכרון של תהליך Node.js הוא חובה. במוצרים קטנים, אפשר לאמוד את צריכת הזיכרון כל כמה זמן בעזרת פקודות shell, אבל במוצרים בינוניים-גדולים צריך לתעדף שימוש בכלים חזקים לניטור מצב הזיכרון.
 
-**אחרת:** Your process memory might leak a hundred megabytes a day like how it happened at [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
+**אחרת:** זולגים לכם מאות MB כל יום מהתהליך כמו שקרה ב[וולמארט](https://www.joyent.com/blog/walmart-node-js-memory-leak)
 
-🔗 [**Read More: Measure and guard the memory usage**](./sections/production/measurememory.md)
+🔗 [**לקריאה נוספת: מדידה ושמירה על ניצול הזיכרון**](./sections/production/measurememory.md)
 
 <br/><br/>
 
