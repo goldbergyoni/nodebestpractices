@@ -4,7 +4,7 @@
 
 ### One Paragraph Explainer
 
-When an error occurs, whether from a synchronous or asynchronous flow, it's imperative to have a full stacktrace of the error flow. Surprisingly, if an async function returns a promise (e.g. calls other async function)  without awaiting, should an error occur then the caller function won't appear in the stacktrace. This will leave the person who diagnoses the error with partial information - All the more if the error cause lies within that caller function. There is a feature v8 called "zero-cost async stacktraces" that allow stacktraces not to be cut on the most recent `await`. But due to non-trivial implementation details, it will not work if the return value of a function (sync or async) is a promise. So, to avoid holes in stacktraces when returned promises would be rejected, we must always explicitly resolve promises with `await` before returning them from functions
+When an error occurs, whether from a synchronous or asynchronous flow, it's imperative to have a full stacktrace of the error flow. Surprisingly, if an async function returns a promise (e.g. calls other async function) without awaiting, should an error occur then the caller function won't appear in the stacktrace. This will leave the person who diagnoses the error with partial information - All the more if the error cause lies within that caller function. There is a v8 feature called "zero-cost async stacktraces" that allows stacktraces to not be cut on the most recent `await`. But due to non-trivial implementation details, it will not work if the return value of a function (sync or async) is a promise. So, to avoid holes in stacktraces when returned promises would be rejected, we must always explicitly resolve promises with `await` before returning them from functions
 
 <br/>
 
@@ -87,7 +87,7 @@ async function asyncFn () {
   return await syncFn()
 }
 
-// 👎 syncFn would be missing in the stacktrace because it returns a promise while been sync
+// 👎 syncFn would be missing in the stacktrace because it returns a promise while being sync
 asyncFn().catch(console.log)
 ```
 
@@ -165,7 +165,7 @@ Error: stacktrace is missing the place where getUser has been called
     at async Promise.all (index 2)
 ```
 
-*Side-note*: it may looks like `Promise.all (index 2)` can help understanding the place where `getUser` has been called,
+*Side-note*: it may look like `Promise.all (index 2)` can help understanding the place where `getUser` has been called,
 but due to a [completely different bug in v8](https://bugs.chromium.org/p/v8/issues/detail?id=9023), `(index 2)` is
 a line from internals of v8
 
@@ -177,9 +177,9 @@ a line from internals of v8
 <details><summary>Javascript</summary>
 <p>
 
-*Note 1*: in case if you control the code of the function that would call the callback - just change that function to
-async and add `await` before the callback call. Below I assume that you are not in charge of the code that is calling
-the callback (or it's change is unacceptable for example because of backward compatibility)
+*Note 1*: if you control the code of the function that would call the callback - just change that function to
+`async` and add `await` before the callback call. Below I assume that you are not in charge of the code that is calling
+the callback (or its change is unacceptable for example because of backward compatibility)
 
 *Note 2*: quite often usage of async callback in places where sync one is expected would not work at all. This is not about
 how to fix the code that is not working - it's about how to fix stacktrace in case if code is already working as
@@ -210,8 +210,8 @@ Error: with all frames present
 where thanks to explicit `await` in `map`, the end of the line `at async ([...])` would point to the exact place where
 `getUser` has been called
 
-*Side-note*: if async function that wrap `getUser` would miss `await` before return (anti-pattern #1 + anti-pattern #3)
-then only one frame would left in the stacktrace:
+*Side-note*: if async function that wrap `getUser` lacks `await` before return (anti-pattern #1 + anti-pattern #3)
+then only one frame would be left in the stacktrace:
 
 ```javascript
 [...]
@@ -235,12 +235,12 @@ Error: [...]
 ## Advanced explanation
 
 The mechanisms behind sync functions stacktraces and async functions stacktraces in v8 implementation are quite different:
-sync stacktrace is based on **stack** provided by operating system Node.js is running on (just like in most programming
-languages). When an async function is executing, the **stack** of operating system is popping it out as soon as the
-function is getting to it's first `await`. So async stacktrace is a mix of operating system **stack** and a rejected
-**promise resolution chain**. Zero-cost async stacktraces implementation is extending the **promise resolution chain**
+sync stacktrace is based on **stack** provided by the operating system Node.js is running on (just like in most programming
+languages). When an async function is executing, the **stack** of the operating system is popping it out as soon as the
+function gets to its first `await`. So async stacktrace is a mix of operating system **stack** and a rejected
+**promise resolution chain**. Zero-cost async stacktraces implementation extends the **promise resolution chain**
 only when the promise is getting `awaited` <span>[¹](#1)</span>. Because only `async` functions may `await`,
-sync function would always be missed in async stacktrace if any async operation has been performed after the function
+sync function would always be missing from async stacktrace if any async operation has been performed after the function
 has been called <span>[²](#2)</span>
 
 ### The tradeoff
@@ -256,13 +256,13 @@ definitely should never be done up-front
 
 ### Why return await was considered as anti-pattern in the past
 
-There is a number of [excellent articles](https://jakearchibald.com/2017/await-vs-return-vs-return-await/) explained
+There is a number of [excellent articles](https://jakearchibald.com/2017/await-vs-return-vs-return-await/) explaining
 why `return await` should never be used outside of `try` block and even an
 [ESLint rule](https://eslint.org/docs/rules/no-return-await) that disallows it. The reason for that is the fact that
 since async/await become available with transpilers in Node.js 0.10 (and got native support in Node.js 7.6) and until
 "zero-cost async stacktraces" was introduced in Node.js 10 and unflagged in Node.js 12, `return await` was absolutely
 equivalent to `return` for any code outside of `try` block. It may still be the same for some other ES engines. This
-is why resolving promises before returning them is the best practice for Node.js and not for the EcmaScript in general
+is why resolving promises before returning them is the best practice for Node.js and not for ECMAScript in general
 
 ### Notes:
 
@@ -270,7 +270,7 @@ is why resolving promises before returning them is the best practice for Node.js
 must always be built synchronously, on the same tick of event loop <span id="a1">[¹](#1)</span>
 2. Without `await` in `throwAsync` the code would be executed in the same phase of event loop. This is a
 degenerated case when OS **stack** would not get empty and stacktrace be full even without explicitly
-awaiting the function result. Usually usage of promises include some async operations and so parts of
+awaiting the function result. Common usage of promises includes some async operations and so parts of
 the stacktrace would get lost
 3. Zero-cost async stacktraces still would not work for complicated promise usages e.g. single promise
 awaited many times in different places
