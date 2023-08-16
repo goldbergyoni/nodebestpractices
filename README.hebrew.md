@@ -15,14 +15,11 @@
 <br/>
 
 [<img src="assets/images/twitter.svg" width="16" height="16" alt="" />](https://twitter.com/nodepractices/) **עיקבו אחרינו בטוויטר!** [**@nodepractices**](https://twitter.com/nodepractices/)
-
+<br/>
+**:writing_hand:	תורגם על ידי [הוד בואר](https://github.com/hodbauer)**
 <br/>
 
 לקריאה בשפות נוספות: [![CN](./assets/flags/CN.png)**סינית**](./README.chinese.md), [![FR](./assets/flags/FR.png)**צרפתית**](./README.french.md), [![BR](./assets/flags/BR.png)**פורטוגזית**](./README.brazilian-portuguese.md), [![RU](./assets/flags/RU.png)**רוסית**](./README.russian.md), [![PL](./assets/flags/PL.png)**פולנית**](./README.polish.md), [![JA](./assets/flags/JA.png)**יפנית**](./README.japanese.md), [![EU](./assets/flags/EU.png)**באסקית**](./README.basque.md) [(![ES](./assets/flags/ES.png)**ספרדית**, ![HE](./assets/flags/HE.png)**עברית**, ![KR](./assets/flags/KR.png)**קוריאנית** ו ![TR](./assets/flags/TR.png)**טורקית** בתהליך! )](#translations)
-
-<br/>
-
-## 🚀 יש לנו [Node.js starter רשמי - Practica.js](https://github.com/practicajs/practica). השתמשו בזה כדי לייצר שלד חדש לפרוייקט שמבוסס על כל שיטות העבודה המומלצות כלולות בפנים. או רק כדי ללמוד על ידי דוגמאות קוד.
 
 <br/>
 
@@ -48,6 +45,11 @@
 
 <br/><br/>
 
+# מאת יוני גולדברג
+
+### לימדו איתי: כיועץ, אני נפגש עם קבוצות מכל העולם במגוון פעולות כמו סדנאות ומעבר על קוד. 🎉 לאחרונה פרסמתי את [הקורס המתקדם לכתיבת בדיקות](https://testjavascript.com/)
+
+<br/><br/>
 ## תוכן העניינים
 
 <details>
