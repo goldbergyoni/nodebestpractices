@@ -127,7 +127,33 @@ Leelo en otro idioma: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md),
 
 </details>
 
-1. [Prácticas de puesta en producción (19) ](#5-yendo-a-las-prácticas-de-producción)
+<details>
+  <summary>
+    <a href="#5-prácticas-de-puesta-en-producción">5. Prácticas de puesta en producción (19)</a>
+  </summary>
+
+&emsp;&emsp;[5.1. Monitoreo `#strategic`](#-51-monitoreo)</br>
+&emsp;&emsp;[5.2. Aumenta la observabilidad utilizando logging inteligente `#strategic`](#-52-aumenta-la-observabilidad-utilizando-logging-inteligente)</br>
+&emsp;&emsp;[5.3. Delega todo lo posible (por ejemplo, gzip, SSL) a un proxy inverso `#strategic`](#-53-delega-todo-lo-posible-por-ejemplo-gzip-ssl-a-un-proxy-inverso)</br>
+&emsp;&emsp;[5.4. Bloquea dependencias](#-54-bloquea-dependencias)</br>
+&emsp;&emsp;[5.5. Proteje la disponibilidad del proceso utilizando la herramienta adecuada](#-55-proteje-la-disponibilidad-del-proceso-utilizando-la-herramienta-adecuada)</br>
+&emsp;&emsp;[5.6. Utiliza todos los núcleos de la CPU](#-56-utiliza-todos-los-núcleos-de-la-cpu)</br>
+&emsp;&emsp;[5.7. Crea un "endpoint de mantenimiento"](#-57-crea-un-endpoint-de-mantenimiento)</br>
+&emsp;&emsp;[5.8. Descubre errores y tiempos de inactividad utilizando productos de APM `#advanced` `#updated`](#-58-descubre-errores-y-tiempos-de-inactividad-utilizando-productos-de-apm)</br>
+&emsp;&emsp;[5.9. Haz tu código listo para producción](#-59-haz-tu-código-listo-para-producción)</br>
+&emsp;&emsp;[5.10. Mide y protege el uso de la memoria `#advanced`](#-510-mide-y-protege-el-uso-de-la-memoria)</br>
+&emsp;&emsp;[5.11. Saca tus recursos frontend de Node](#-511-saca-tus-recursos-frontend-de-node)</br>
+&emsp;&emsp;[5.12. Esfuerzate por ser stateless `#strategic`](#-512-esfuerzate-por-ser-stateless)</br>
+&emsp;&emsp;[5.13. Usa herramientas que detecten automáticamente vulnerabilidades](#-513-usa-herramientas-que-detecten-automáticamente-vulnerabilidades)</br>
+&emsp;&emsp;[5.14. Asigna un id de transacción a cada registro del log `#advanced`](#-514-asigna-un-id-de-transacción-a-cada-registro-del-log)</br>
+&emsp;&emsp;[5.15. Establece `NODE_ENV=production`](#-515-establece-node_envproduction)</br>
+&emsp;&emsp;[5.16. Diseña despliegues automatizados, atómicos y sin tiempo de inactividad `#advanced`](#-516-diseña-despliegues-automatizados-atómicos-y-sin-tiempo-de-inactividad)</br>
+&emsp;&emsp;[5.17. Usa una versión LTS de Node.js](#-517-usa-una-version-lts-de-nodejs)</br>
+&emsp;&emsp;[5.18. Loguea hacia stdout, evita especificar un destino de log dentro de la aplicación `#updated`](#-518-loguea-hacia-stdout-evita-especificar-un-destino-de-log-dentro-de-la-aplicación)</br>
+&emsp;&emsp;[5.19. Instala tus paquetes con `npm ci`` `#new`](#-519-instala-tus-paquetess-con-npm-ci)</br>
+
+</details>
+
 2. [Prácticas de seguridad (25)](#6-mejores-prácticas-de-seguridad)
 3. [Prácticas de rendimiento (2) (En Progreso ✍️)](#7-borrador-mejores-prácticas-de-rendimiento)
 4. [Prácticas de Docker (15)](#8-mejores-prácticas-de-docker)
@@ -643,7 +669,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 # `5. Yendo a las prácticas de producción`
 
-## ![✔] 5.1. Monitorización
+## ![✔] 5.1. Monitoreo
 
 **TL;DR:** Monitorear es un juego para descubrir problemas antes de que lo hagan los clientes; obviamente, se le debe asignar una importancia sin precedentes. El mercado está abrumado por las ofertas, por lo tanto, considera empezar con la definición de las métricas básicas que debe seguir (mis sugerencias en el interior), luego repasar características sofisticadas adicionales y elegir la solución que cumple todos los requisitos. Haga clic en "Lo esencial" a continuación para obtener una descripción general de las soluciones
 
@@ -653,7 +679,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <br/><br/>
 
-## ![✔] 5.2. Aumenta la transparencia utilizando unos registros inteligentes
+## ![✔] 5.2. Aumenta la observabilidad utilizando logging inteligente
 
 **TL;DR:** Los registros pueden ser un almacén tonto de declaraciones de depuración o el habilitador de un hermoso tablero que cuenta la historia de tu aplicación. Planifica tu plataforma de registro desde el día 1: cómo se recopilan, almacenan y analizan los registros para garantizar que la información deseada (por ejemplo, tasa de error, seguir una transacción completa a través de servicios y servidores, etc.) realmente se pueda extraer
 
@@ -673,7 +699,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <br/><br/>
 
-## ![✔] 5.4. Bloquear dependencias
+## ![✔] 5.4. Bloquea dependencias
 
 **TL;DR:** Tu código debe ser idéntico en todos los entornos, pero sorprendentemente npm permite que las dependencias se desplacen entre los entornos de forma predeterminada: cuando instala paquetes en varios entornos, intenta obtener la última versión del parche de los paquetes. Evita esto utilizando archivos de configuración npm, .npmrc, que le indican a cada entorno que guarde la versión exacta (no la última) de cada paquete. Alternativamente, para un control más fino usa `npm shrinkwrap`. \ * Actualización: a partir de NPM5, las dependencias están bloqueadas de forma predeterminada. El nuevo administrador de paquetes, Yarn, también lo cubre por defecto
 
@@ -683,7 +709,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <br/><br/>
 
-## ![✔] 5.5. Proteja la disponibilidad del proceso utilizando la herramienta adecuada
+## ![✔] 5.5. Proteje la disponibilidad del proceso utilizando la herramienta adecuada
 
 **TL;DR:** El proceso debe continuar y reiniciarse si falla. Para escenarios simples, las herramientas de administración de procesos como PM2 pueden ser suficientes, pero en el mundo "dockerizado" de hoy en día, las herramientas de administración de clústeres también deben considerarse
 
@@ -703,7 +729,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <br/><br/>
 
-## ![✔] 5.7. Crear un "end point de mantenimiento"
+## ![✔] 5.7. Crea un "end point de mantenimiento"
 
 **TL;DR:** Descubre un conjunto de información relacionada con el sistema, como el uso de memoria y REPL, etc. en una API segura. Aunque es muy recomendable confiar en herramientas estándar y de pruebas de batalla, parte de la información y las operaciones valiosas se hacen más fácilmente usando código
 
@@ -713,7 +739,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <br/><br/>
 
-## ![✔] 5.8. Descubre errores y tiempos de inactividad utilizando productos APM
+## ![✔] 5.8. Descubre errores y tiempos de inactividad utilizando productos de APM
 
 **TL;DR:** Los productos de monitoreo y rendimiento de aplicaciones (también conocido como APM) miden proactivamente la base de código y la API para que puedan ir automáticamente más allá del monitoreo tradicional y medir la experiencia general del usuario en todos los servicios y niveles. Por ejemplo, algunos productos APM pueden resaltar una transacción que se carga demasiado lentamente en el lado de los usuarios finales al tiempo que sugiere lo que lo podría provocar
 
@@ -723,7 +749,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <br/><br/>
 
-## ![✔] 5.9. Prepara tu código para la producción
+## ![✔] 5.9. Haz tu código listo para producción
 
 **TL;DR:** Codifica con el fin en mente, planifica la producción desde el día 1. Esto suena un poco vago, así que he compilado algunos consejos de desarrollo que están estrechamente relacionados con el mantenimiento de la producción (haga clic en Gist a continuación)
 
@@ -733,7 +759,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <br/><br/>
 
-## ![✔] 5.10. Medir y proteger el uso de la memoria
+## ![✔] 5.10. Mide y protege el uso de la memoria
 
 **TL;DR:** Node.js tiene relaciones controversiales con la memoria: el motor v8 tiene límites suaves en el uso de la memoria (1,4 GB) y hay maneras conocidas para perder memoria en el código de Node, por lo que es imprescindible observar la memoria de proceso de Node. En aplicaciones pequeñas, puedes medir la memoria periódicamente utilizando comandos de shell, pero en aplicaciones medianas y grandes, considera convertir tu reloj de memoria en un sistema de monitoreo robusto
 
@@ -753,7 +779,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <br/><br/>
 
-## ![✔] 5.12. Se anti-estado, mata tus servidores casi todos los días
+## ![✔] 5.12. Esfuerzate por ser stateless
 
 **TL;DR:** Almacena cualquier tipo de datos (por ejemplo, sesiones de usuario, caché, archivos cargados) en almacenes de datos externos. Considera "matar" sus servidores periódicamente o utilice la plataforma "sin servidor" (por ejemplo, AWS Lambda) que aplica explícitamente un comportamiento sin estado
 
@@ -763,7 +789,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <br/><br/>
 
-## ![✔] 5.13. Usa herramientas que detecten vulnerabilidades automáticamente
+## ![✔] 5.13. Usa herramientas que detecten automáticamente vulnerabilidades
 
 **TL;DR:** Incluso las dependencias de mayor reputación como Express tienen vulnerabilidades conocidas (de vez en cuando) que pueden poner en riesgo un sistema. Esto se puede dominar fácilmente usando herramientas comunitarias y comerciales que constantemente verifican vulnerabilidades y advierten (localmente o en GitHub), algunos incluso pueden parchearlas de inmediato
 
@@ -773,7 +799,7 @@ Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
 
 <br/><br/>
 
-## ![✔] 5.14. Asigna un id de transacción a cada instrucción del registro
+## ![✔] 5.14. Asigna un id de transacción a cada registro del log
 
 También conocido como correlation id / transit id / tracing id / request id / request context / etc.
 
@@ -785,7 +811,7 @@ También conocido como correlation id / transit id / tracing id / request id / r
 
 <br/><br/>
 
-## ![✔] 5.15. Establecer `NODE_ENV=production`
+## ![✔] 5.15. Establece `NODE_ENV=production`
 
 **TL;DR:** Establece la variable de entorno NODE_ENV a "producción" o "desarrollo" para marcar si las optimizaciones de producción deben activarse; muchos paquetes npm determinan el entorno actual y optimizan su código para la producción
 
@@ -795,7 +821,7 @@ También conocido como correlation id / transit id / tracing id / request id / r
 
 <br/><br/>
 
-## ![✔] 5.16. Diseña implementaciones automatizadas, atómicas y sin tiempo de inactividad
+## ![✔] 5.16. Diseña despliegues automatizados, atómicos y sin tiempo de inactividad
 
 **TL;DR:** Las investigaciónes muestran que los equipos que realizan muchas implementaciones reducen la probabilidad de problemas graves de producción. Las implementaciones rápidas y automatizadas que no requieren pasos manuales riesgosos y el tiempo de inactividad del servicio mejoran significativamente el proceso de implementación. Deberías lograr esto usando Docker combinado con herramientas de CI, ya que se convirtieron en el estándar de la industria para la implementación simplificada
 
@@ -813,7 +839,7 @@ También conocido como correlation id / transit id / tracing id / request id / r
 
 <br/><br/>
 
-## ![✔] 5.18. No enrutes registros dentro de la aplicación
+## ![✔] 5.18. Loguea hacia stdout, evita especificar un destino de log dentro de la aplicación
 
 **TL;DR:** Los desarrolladores no deben codificar los destinos de registro dentro del código de la aplicación, sino que deben estar definidos por el entorno de ejecución en el que se ejecuta la aplicación. Los desarrolladores deben escribir registros en 'stdout' utilizando una utilidad de registro y luego dejar que el entorno de ejecución (contenedor, servidor, etc.) canalice la secuencia `stdout` al destino apropiado (es decir, Splunk, Graylog, ElasticSearch, etc.).
 
