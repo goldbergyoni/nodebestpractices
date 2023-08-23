@@ -922,13 +922,12 @@ API, הודעה חדשה נרשמת לתור, וקריאה לכלי צפיה ב�
 
 <br/><br/>
 
-## ![✔] 5.11. Get your frontend assets out of Node
+## ![✔] 5.11. הוציאו את קבצי צד הלקוח שלכם מחוץ ל-Node
 
-**אמ;לק:** Serve frontend content using a specialized infrastructure (nginx, S3, CDN) because Node performance gets hurt when dealing with many static files due to its single-threaded model. One exception to this guideline is when doing server-side rendering
+**אמ;לק:** שרתו את תוכן צד הלקוח באמצעות תשתית ייעודית (nginx, S3, CDN) מאחר שהביצועים של Node נפגעים מהתעסקות עם המון קבצים סטטים עקב מודל החוט היחיד. 
+**אחרת:** חוט ה-Node היחיד שלכם יהיה עסוק בהזרמת מאות קבצי html/תמונות/אנגולר/ריאקט במקום להקצות את כל המשאבים שלו עבור המשימה לשמה הוא נועד - לשרת תוכן דינמי.
 
-**אחרת:** Your single Node thread will be busy streaming hundreds of html/images/angular/react files instead of allocating all its resources for the task it was born for – serving dynamic content
-
-🔗 [**Read More: Get your frontend assets out of Node**](./sections/production/frontendout.md)
+🔗 [**לקריאה נוספת: הוציאו את קבצי צד הלקוח שלכם מחוץ ל-Node**](./sections/production/frontendout.md)
 
 <br/><br/>
 
