@@ -60,7 +60,7 @@ Leelo en otro idioma: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md),
 &emsp;&emsp;[1.3. Engloba utilidades comunes como paquetes, considera publicarlos](#-13-engloba-utilidades-comunes-como-paquetes-considera-publicarlos)</br>
 &emsp;&emsp;[1.4 Usa una configuración consciente del entorno,segura y jerárquica `#updated`](#-14-usa-una-configuración-consciente-del-entornosegura-y-jerárquica)</br>
 &emsp;&emsp;[1.5 Considera todas las consecuencias al elegir el framwork principal `#new`](#-15-considera-todas-las-consecuencias-al-elegir-el-framwork-principal)</br>
-&emsp;&emsp;[1.6 Usa TypeScript con moderación y consideración `#new`](#-16-usa-type-script-con-moderación-y-consideración)</br>
+&emsp;&emsp;[1.6 Utiliza TypeScript con moderación y consideración `#new`](#-16-utiliza-typescript-con-moderación-y-consideración)</br>
 
 </details>
 
@@ -309,14 +309,13 @@ my-system
 
 ### `🌟 #new`
 
-**TL;DR:** Al crear aplicaciones y APIs, utilizar un marco de trabajo es obligatorio. Es fácil pasar por alto marcos de trabajo alternativos o consideraciones importantes y finalmente elegir una opción subóptima. En 2023/2024, creemos que vale la pena considerar estos cuatro marcos de trabajo: [Nest.js](https://nestjs.com/), [Fastify](https://www.fastify.io/), [express ](https://expressjs.com/) y [Koa](https://koajs.com/). Haga clic en leer más a continuación para conocer los pros y los contras detallados de cada marco de trabajo. De manera simplista, creemos que Nest.js es la mejor opción para los equipos que desean utilizar programación orientada a objetos y/o crear aplicaciones a gran escala que no se pueden dividir en componentes _autónomos_ más pequeños. Fastify es nuestra recomendación para aplicaciones con componentes de tamaño razonable (por ejemplo, microservicios) que se basan en mecánicas simples de Node.js. Lea nuestra [guía de consideraciones completas aquí] (./sections/projectstructre/choose-framework.spanish.md).
+**TL;DR:** Al crear aplicaciones y APIs, utilizar un framwork es obligatorio. Es fácil pasar por alto framworks alternativos o consideraciones importantes y finalmente elegir una opción subóptima. En 2023/2024, creemos que vale la pena considerar estos cuatro framwork: [Nest.js](https://nestjs.com/), [Fastify](https://www.fastify.io/), [express ](https://expressjs.com/) y [Koa](https://koajs.com/). Haga clic en leer más a continuación para conocer los pros y los contras detallados de cada framwork. De manera simplista, creemos que Nest.js es la mejor opción para los equipos que desean utilizar programación orientada a objetos y/o crear aplicaciones a gran escala que no se pueden dividir en componentes _autónomos_ más pequeños. Fastify es nuestra recomendación para aplicaciones con componentes de tamaño razonable (por ejemplo, microservicios) que se basan en mecánicas simples de Node.js. Lea nuestra [guía de consideraciones completas aquí] (./sections/projectstructre/choose-framework.spanish.md).
 
-
-**De lo contrario:** Debido a la abrumadora cantidad de consideraciones, es fácil tomar decisiones basadas en información parcial y comparar peras con manzanas. Por ejemplo, se cree que Fastify es un servidor web mínimo que debería compararse únicamente con Express. En realidad, es un marco de trabajo rico con muchos complementos oficiales que cubren muchas problemáticas.
+**De lo contrario:** Debido a la abrumadora cantidad de consideraciones, es fácil tomar decisiones basadas en información parcial y comparar peras con manzanas. Por ejemplo, se cree que Fastify es un servidor web mínimo que debería compararse únicamente con Express. En realidad, es un framwork rico con muchos complementos oficiales que cubren muchas problemáticas.
 
 🔗 [**Read More: Choosing the right framework**](./sections/projectstructre/choose-framework.spanish.md)
 
-## ![✔] 1.6 Usa TypeScript con moderación y consideración 
+## ![✔] 1.6. Utiliza TypeScript con moderación y consideración
 
 ### `🌟 #new`
 
