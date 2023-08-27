@@ -297,9 +297,9 @@ my-system
 
 ### `📝 #updated`
 
-**TL;DR:** La configuración perfecta e impecable debe incluir (a) claves que se pueden leer desde el archivo Y desde la variable de entorno (b) los secretos se guardan fuera del código al que se ha hecho commit (c) config es jerárquica para facilitar la localización. Solo hay unos pocos paquetes que pueden ayudar a validar la mayoría de estos casos como [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config), y [convict](https://www.npmjs.com/package/convict)
+**TL;DR:** La configuración perfecta e impecable debe incluir: a) los entradas que se pueden leer desde el archivo Y desde la variable de entorno; b) los secretos se guardan fuera del código al que se ha hecho commit; c) la configuración es jerárquica para facilitar la localización; d) soporte al tipado; e) validación para fallar rápido; f) especificar un valor por defecto para cada entrada. Solo hay unos pocos paquetes que pueden ayudar a cumplir con la mayoría de estos casos como [convict](https://www.npmjs.com/package/convict), [env-var](https://github.com/evanshortiss/env-var), [zod](https://github.com/colinhacks/zod), otros.
 
-**De lo contrario:** No cumplir con ninguno de los requisitos de configuración simplemente frena al equipo de desarrollo o al equipo de devOps. Probablemente ambos
+**De lo contrario:** Considera una variable de entorno obligatoria que no se proporcionó. La aplicación se inicia correctamente y atiende solicitudes; parte de la información ya se conserva en la base de datos. Luego, se da cuenta de que sin esta clave obligatoria la solicitud no se puede completar, lo que deja la aplicación en un estado sucio.
 
 🔗 [**Leer más: buenas prácticas de configuración**](./sections/projectstructre/configguide.spanish.md)
 
