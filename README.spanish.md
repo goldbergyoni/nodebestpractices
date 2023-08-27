@@ -320,11 +320,12 @@ my-system
 
 ### `🌟 #new`
 
-**TL;DR:** Coding without type safety is no longer an option, TypeScript is the most popular option for this mission. Use it to define variables and functions return types. With that, it is also a double edge sword that can greatly _encourage_ complexity with its additional ~ 50 keywords and sophisticated features. Consider using it sparingly, mostly with simple types, and utilize advanced features only when a real need arises
+**TL;DR:** Programar sin seguridad de tipos ya no es una opción; TypeScript es la opción más popular para este objetivo. Úsalo para definir variables y tipos de retorno de funciones. Con eso, también es un arma de doble filo que puede _fomentar_ enormemente la complejidad con sus ~ 50 palabras clave adicionales y características sofisticadas. Considera usarlo con moderación, principalmente con tipos simples, y utiliza funciones avanzadas solo cuando surja una necesidad real.
 
-**Otherwise:** [Researches](https://earlbarr.com/publications/typestudy.pdf) show that using TypeScript can help in detecting ~20% bugs earlier. Without it, also the developer experience in the IDE is intolerable. On the flip side, 80% of other bugs were not discovered using types. Consequently, typed syntax is valuable but limited. Only efficient tests can discover the whole spectrum of bugs, including type-related bugs. It might also defeat its purpose: sophisticated code features are likely to increase the code complexity, which by itself increases both the amount of bugs and the average bug fix time
+**De lo contrario:** [Las investigaciones](https://earlbarr.com/publications/typestudy.pdf) muestran que el uso de TypeScript puede ayudar a detectar aproximadamente un 20% de errores antes. Sin él, la experiencia del desarrollador en el IDE también es intolerable. Por otro lado, el 80% de los otros errores no se descubrieron utilizando tipos. En consecuencia, la sintaxis tipada es valiosa pero limitada. Sólo las pruebas eficientes pueden descubrir todo un espectro de errores, incluidos los relacionados con el tipo. También podría frustrar su propósito: es probable que las características sofisticadas del código aumenten su complejidad, lo que por sí aumenta tanto la cantidad de errores como el tiempo promedio de corrección de los mismos.
 
-🔗 [**Read More: TypeScript considerations**](./sections/projectstructre/typescript-considerations.md)
+🔗 [**Read More: TypeScript considerations**](./sections/projectstructre/typescript-considerations.spanish.md)
+
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Volver arriba</a></p>
