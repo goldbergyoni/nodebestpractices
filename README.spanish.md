@@ -55,7 +55,7 @@ Leelo en otro idioma: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md),
     <a href="#1-prácticas-de-estructura-del-proyecto">1. Prácticas para estructura del proyecto (6)</a>
   </summary>
 
-&emsp;&emsp;[1.1 Estructura tu solución en componentes`#strategic` `#updated`](#-11-estructura-tu solución-en-componentes)</br>
+&emsp;&emsp;[1.1. Estructura tu solución en componentes `#strategic` `#updated`](#-11-estructura-tu-solución-en-componentes-de-negocio)</br>
 &emsp;&emsp;[1.2 Pon tus componentes en capas, mantén la capa web dentro de sus límites `#strategic` `#updated`](#-12-pon tus-componentes-en-capas-mantén-la-capa-web-dentro-de-sus-límites)</br>
 &emsp;&emsp;[1.3 Engloba utilidades comunes como paquetes, considera publicarlos](#-13-engloba-utilidades-comunes-como-paquetes-considera-publicarlos)</br>
 &emsp;&emsp;[1.4 Usa una configuración consciente del entorno,segura y jerárquica `#updated`](#-14-usa-una-configuración-consciente-del-entornosegura-y-jerárquica)</br>
@@ -226,11 +226,24 @@ Leelo en otro idioma: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md),
 
 # `1. Prácticas de estructura del proyecto`
 
-## ![✔] 1.1 Estructura tu solución en componentes
+## ![✔] 1.1. Estructura tu solución en componentes de negocio
 
-**TL;DR:** El peor inconveniente de las grandes aplicaciones es mantener una gran base de código con cientos de dependencias, un monolito que ralentiza a los desarrolladores que intentan incorporar nuevas características. En cambio, divide tu código en componentes, cada uno obtiene su propia carpeta o una base de código dedicada, y asegúrate de que cada unidad se mantenga pequeña y simple. Visita 'Leer más' a continuación para ver ejemplos de la estructura correcta del proyecto
+### `📝 #updated`
 
-**De lo contrario:** Cuando desarrolladores codifican nuevas características luchan por darse cuenta del impacto de su cambio y temen romper otros componentes dependientes - las implementaciones se vuelven más lentas y más riesgosas. También se considera más difícil escalar cuando todas las unidades de negocios no están separadas
+**TL;DR:** La raíz de un sistema debe contener carpetas o repositorios que representen módulos de negocio de tamaño razonable. Cada componente representa un dominio de producto (es decir, contexto limitado), como 'componente de usuario', 'componente de pedido', etc. Cada componente tiene su propia API, lógica y base de datos lógica. ¿Cuál es el mérito significativo? Con un componente autónomo, cada cambio se realiza en un alcance granular y más pequeño: la sobrecarga mental, la fricción en el desarrollo y el miedo al despliegue son mucho menores. Como resultado, los desarrolladores pueden avanzar mucho más rápido. Esto no necesariamente exige una separación física y se puede lograr usando un Monorepo o un multi-repo.
+
+```bash
+my-system
+├─ apps (componentes)
+│  ├─ orders
+│  ├─ users
+│  ├─ payments
+├─ libraries (funcionalidad genérica transversal a componentes)
+│  ├─ logger
+│  ├─ authenticator
+```
+
+**De lo contrario:** cuando se mezclan artefactos de varios módulos/temas, existen grandes posibilidades de que se forme un sistema 'espagueti' estrechamente acoplado. Por ejemplo, en una arquitectura donde el 'controlador del módulo a' puede llamar al 'servicio del módulo b', no hay límites claros de modularidad: cada cambio de código puede afectar cualquier otra cosa. Con este enfoque, sin límites claros entre módulos, los desarrolladores que codifican nuevas funcionalidades luchan por darse cuenta del alcance y el impacto de su cambio. En consecuencia, temen romper otros módulos y cada implementación se vuelve más lenta y riesgosa.
 
 🔗 [**Leer más: estructura en componentes**](./sections/projectstructre/breakintcomponents.spanish.md)
 
