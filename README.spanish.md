@@ -56,7 +56,7 @@ Leelo en otro idioma: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md),
   </summary>
 
 &emsp;&emsp;[1.1. Estructura tu solución en componentes `#strategic` `#updated`](#-11-estructura-tu-solución-en-componentes-de-negocio)</br>
-&emsp;&emsp;[1.2. Pon tus componentes en capas, mantén la capa web dentro de sus límites `#strategic` `#updated`](#-12-pon tus-componentes-en-capas-mantén-la-capa-web-dentro-de-sus-límites)</br>
+&emsp;&emsp;[1.2. Pon tus componentes en capas, mantén la capa web dentro de sus límites `#strategic` `#updated`](#-12-pon-tus-componentes-en-capas-mantén-la-capa-web-dentro-de-sus-límites)</br>
 &emsp;&emsp;[1.3 Engloba utilidades comunes como paquetes, considera publicarlos](#-13-engloba-utilidades-comunes-como-paquetes-considera-publicarlos)</br>
 &emsp;&emsp;[1.4 Usa una configuración consciente del entorno,segura y jerárquica `#updated`](#-14-usa-una-configuración-consciente-del-entornosegura-y-jerárquica)</br>
 &emsp;&emsp;[1.5 Considera todas las consecuencias al elegir el framwork principal `#new`](#-15-considera-todas-las-consecuencias-al-elegir-el-framwork-principal)</br>
