@@ -305,19 +305,26 @@ my-system
 
 <br/><br/>
 
-## ![✔] 1.x Separar 'servidor' y 'aplicación' de express
+## ![✔] 1.5. Considera todas las consecuencias al elegir el framwork principal 
 
-**TL;DR:** Evita el desagradable hábito de definir toda la aplicación [Express](https://expressjs.com/) en un único archivo enorme; separa tú definición de 'Express' en al menos dos archivos: la declaración del API (app.js) y los características de red (WWW). Incluso para una mejor estructura, ubica tu declaración del API dentro de los componentes.
+### `🌟 #new`
 
-**De lo contrario:** Se podrá acceder a tu API para realizar pruebas solo a través de llamadas HTTP (más lento y mucho más difícil para generar informes de cobertura). Probablemente tampoco sea un placer enorme mantener cientos de líneas de código en un solo archivo
-
-🔗 [**Leer más: separar 'servidor' y 'aplicación' de express**](./sections/projectstructre/separateexpress.spanish.md)
-
-<br/><br/>
+**TL;DR:** Al crear aplicaciones y APIs, utilizar un marco de trabajo es obligatorio. Es fácil pasar por alto marcos de trabajo alternativos o consideraciones importantes y finalmente elegir una opción subóptima. En 2023/2024, creemos que vale la pena considerar estos cuatro marcos de trabajo: [Nest.js](https://nestjs.com/), [Fastify](https://www.fastify.io/), [express ](https://expressjs.com/) y [Koa](https://koajs.com/). Haga clic en leer más a continuación para conocer los pros y los contras detallados de cada marco de trabajo. De manera simplista, creemos que Nest.js es la mejor opción para los equipos que desean utilizar programación orientada a objetos y/o crear aplicaciones a gran escala que no se pueden dividir en componentes _autónomos_ más pequeños. Fastify es nuestra recomendación para aplicaciones con componentes de tamaño razonable (por ejemplo, microservicios) que se basan en mecánicas simples de Node.js. Lea nuestra [guía de consideraciones completas aquí] (./sections/projectstructre/choose-framework.spanish.md).
 
 
+**De lo contrario:** Debido a la abrumadora cantidad de consideraciones, es fácil tomar decisiones basadas en información parcial y comparar peras con manzanas. Por ejemplo, se cree que Fastify es un servidor web mínimo que debería compararse únicamente con Express. En realidad, es un marco de trabajo rico con muchos complementos oficiales que cubren muchas problemáticas.
 
+🔗 [**Read More: Choosing the right framework**](./sections/projectstructre/choose-framework.spanish.md)
 
+## ![✔] 1.6 Usa TypeScript con moderación y consideración 
+
+### `🌟 #new`
+
+**TL;DR:** Coding without type safety is no longer an option, TypeScript is the most popular option for this mission. Use it to define variables and functions return types. With that, it is also a double edge sword that can greatly _encourage_ complexity with its additional ~ 50 keywords and sophisticated features. Consider using it sparingly, mostly with simple types, and utilize advanced features only when a real need arises
+
+**Otherwise:** [Researches](https://earlbarr.com/publications/typestudy.pdf) show that using TypeScript can help in detecting ~20% bugs earlier. Without it, also the developer experience in the IDE is intolerable. On the flip side, 80% of other bugs were not discovered using types. Consequently, typed syntax is valuable but limited. Only efficient tests can discover the whole spectrum of bugs, including type-related bugs. It might also defeat its purpose: sophisticated code features are likely to increase the code complexity, which by itself increases both the amount of bugs and the average bug fix time
+
+🔗 [**Read More: TypeScript considerations**](./sections/projectstructre/typescript-considerations.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Volver arriba</a></p>
