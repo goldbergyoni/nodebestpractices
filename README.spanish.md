@@ -56,7 +56,7 @@ Leelo en otro idioma: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md),
   </summary>
 
 &emsp;&emsp;[1.1. Estructura tu solución en componentes `#strategic` `#updated`](#-11-estructura-tu-solución-en-componentes-de-negocio)</br>
-&emsp;&emsp;[1.2 Pon tus componentes en capas, mantén la capa web dentro de sus límites `#strategic` `#updated`](#-12-pon tus-componentes-en-capas-mantén-la-capa-web-dentro-de-sus-límites)</br>
+&emsp;&emsp;[1.2. Pon tus componentes en capas, mantén la capa web dentro de sus límites `#strategic` `#updated`](#-12-pon tus-componentes-en-capas-mantén-la-capa-web-dentro-de-sus-límites)</br>
 &emsp;&emsp;[1.3 Engloba utilidades comunes como paquetes, considera publicarlos](#-13-engloba-utilidades-comunes-como-paquetes-considera-publicarlos)</br>
 &emsp;&emsp;[1.4 Usa una configuración consciente del entorno,segura y jerárquica `#updated`](#-14-usa-una-configuración-consciente-del-entornosegura-y-jerárquica)</br>
 &emsp;&emsp;[1.5 Considera todas las consecuencias al elegir el framwork principal `#new`](#-15-considera-todas-las-consecuencias-al-elegir-el-framwork-principal)</br>
@@ -249,11 +249,22 @@ my-system
 
 <br/><br/>
 
-## ![✔] 1.2 Aplicar capas para componentes, mantén Express dentro de sus límites
+## ![✔] 1.2. Pon tus componentes en capas, mantén la capa web dentro de sus límites
+### `📝 #updated`
 
-**TL;DR:** Cada componente debería contener 'capas'- un objeto dedicado para la web, la lógica y código para acceso a datos. Esto no solo genera una clara separación de conceptos sino que también facilita significativamente los mocks y la pruebas del sistema. Aunque este es un patrón muy común, los desarrolladores de APIs tienden a mezclar capas pasando los objetos de la capa web (Express req, res) a la lógica de negocios y capas de datos, esto hace que su aplicación dependa y solo sea accesible por Express.
+**TL;DR:** Cada componente debe contener "capas", una carpeta dedicada a inquietudes comunes: "punto de entrada" donde reside el controlador, "dominio" donde reside la lógica y "acceso a datos". El principio principal de las arquitecturas más populares es separar las cuestiones técnicas (por ejemplo, HTTP, DB, etc.) de la lógica pura de la aplicación para que un desarrollador pueda codificar más funciones sin preocuparse por cuestiones de infraestructura. Poner cada inquietud en una carpeta dedicada, también conocida como [patrón de 3 capas] (https://es.wikipedia.org/wiki/Arquitectura_multicapa), es la forma más sencilla de lograr este objetivo.
+```bash
+my-system
+├─ apps (componentes)
+│  ├─ component-a
+   │  ├─ entry-points (puntos de entrada)
+   │  │  ├─ api # el controlador va aquí
+   │  │  ├─ message-queue # el consumidor de mensaje va aqui
+   │  ├─ domain (dominio) # funcionalidades y flujos: DTO, servicios, lógica
+   │  ├─ data-access (acceso a datos) # Llamadas a DB sin ORM
+```
 
-**De lo contrario:** Una aplicación que mezcla objectos de web con otras capas no puede ser accedida por código de pruebas, CRON jobs, eventos de colas de mensajes, entre otros.
+**De lo contrario:** S menudo se ve que el desarrollador pasa objetos web como solicitud/respuesta a funciones en el dominio/capa lógica; esto viola el principio de separación y dificulta el acceso posterior al código lógico por parte de otros clientes, como código de prueba, tareas programadas, colas de mensajes. , etc.
 
 🔗 [**Leer más: Aplicar capas a tu aplicación**](./sections/projectstructre/createlayers.spanish.md)
 
