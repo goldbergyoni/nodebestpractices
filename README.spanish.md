@@ -313,7 +313,7 @@ my-system
 
 **De lo contrario:** Debido a la abrumadora cantidad de consideraciones, es fácil tomar decisiones basadas en información parcial y comparar peras con manzanas. Por ejemplo, se cree que Fastify es un servidor web mínimo que debería compararse únicamente con Express. En realidad, es un framwork rico con muchos complementos oficiales que cubren muchas problemáticas.
 
-🔗 [**Read More: Choosing the right framework**](./sections/projectstructre/choose-framework.spanish.md)
+🔗 [**Leer más: Eligiendo el framework correcto**](./sections/projectstructre/choose-framework.spanish.md)
 
 ## ![✔] 1.6. Utiliza TypeScript con moderación y consideración
 
@@ -323,7 +323,7 @@ my-system
 
 **De lo contrario:** [Las investigaciones](https://earlbarr.com/publications/typestudy.pdf) muestran que el uso de TypeScript puede ayudar a detectar aproximadamente un 20% de errores antes. Sin él, la experiencia del desarrollador en el IDE también es intolerable. Por otro lado, el 80% de los otros errores no se descubrieron utilizando tipos. En consecuencia, la sintaxis tipada es valiosa pero limitada. Sólo las pruebas eficientes pueden descubrir todo un espectro de errores, incluidos los relacionados con el tipo. También podría frustrar su propósito: es probable que las características sofisticadas del código aumenten su complejidad, lo que por sí aumenta tanto la cantidad de errores como el tiempo promedio de corrección de los mismos.
 
-🔗 [**Read More: TypeScript considerations**](./sections/projectstructre/typescript-considerations.spanish.md)
+🔗 [**Leer más: Consideraciones sobre TypeScript**](./sections/projectstructre/typescript-considerations.spanish.md)
 
 <br/><br/><br/>
 
