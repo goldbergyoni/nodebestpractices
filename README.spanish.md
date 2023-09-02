@@ -380,15 +380,15 @@ my-system
 
 **De lo contrario:** Un cliente de la API podría decidir bloquearse y reiniciarse solo porque recibió un error que no pudo entender. Nota: la persona que llama a tu API puedes ser tu (muy típico en un entorno de microservicios).
 
-🔗 [**Leer más: documentación de errores en OpenAPI o GraphQL**](./sections/errorhandling/documentingusingswagger.spanish.md)
+🔗 [**Leer más: documentación de errores en Swagger o GraphQL**](./sections/errorhandling/documentingusingswagger.spanish.md)
 
 <br/><br/>
 
-## ![✔] 2.6 Cerrar el proceso elegantemente cuando un extraño llega a la ciudad
+## ![✔] 2.6 Cierra el proceso elegantemente cuando un extraño llega a la ciudad
 
-**TL; DR:** Cuando se produce un error desconocido (un error del desarrollador, consulta el número de práctica recomendada número 2.3): existe incertidumbre acerca del estado de la aplicación. Una práctica común sugiere reiniciar el proceso cuidadosamente usando una herramienta de gestión de procesos como [Forever](https://www.npmjs.com/package/forever) y [PM2](https://pm2.keymetrics.io/).
+**TL; DR:** Cuando se produce un error desconocido (un error catastrófico, consulta la práctica 2.3): existe incertidumbre acerca del estado de salud de la aplicación. En este caso, no hay otra opción que hacer observable el error, cerrar las conexiones y terminar el proceso. Cualquier framework de ejecución confiable, como servicios Dockerizados o soluciones en la nube sin servidor, se encargarán de reiniciar
 
-**De lo contrario:** Cuando se detecta una excepción desconocida, algunos objetos pueden estar en un estado defectuoso (por ejemplo, un emisor de eventos que se usa globalmente y que ya no se activan debido a fallas internas) y todas las solicitudes futuras pueden fallar o comportarse de manera loca.
+**De lo contrario:** Cuando se detecta una excepción desconocida, algunos objetos pueden quedar en un estado defectuoso (por ejemplo, un emisor de eventos que se usa globalmente y que no envía más eventos debido a fallas internas) haciendo que las solicitudes futuras puedan fallar o comportarse de manera extraña.
 
 🔗 [**Leer más: cerrar el proceso**](./sections/errorhandling/shuttingtheprocess.spanish.md)
 
