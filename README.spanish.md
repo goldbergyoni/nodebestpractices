@@ -430,7 +430,9 @@ my-system
 
 ## ![✔] 2.10 Captura los rechazos de promesas no controladas
 
-**TL;DR:** Cualquier excepción lanzada dentro de una promesa será tragada y descartada a menos que un desarrollador no se olvide de manejarla de manera explícita. ¡Incluso si su código está suscrito a `process.uncaughtException`! Supera esto registrándose en el proceso del evento `process.unhandledRejection`.
+### `📝 #updated`
+
+**TL;DR:** Cualquier excepción lanzada dentro de una promesa será tragada y descartada a menos que un desarrollador no se olvide de manejarla de manera explícita. ¡Incluso si su código está suscrito a `process.uncaughtException`! Supera esto registrándote al evento `process.unhandledRejection`.
 
 **De lo contrario:** Tus errores serán tragados y no dejarán rastros. Nada de que preocuparse
 
