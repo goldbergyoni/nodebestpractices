@@ -354,9 +354,11 @@ my-system
 
 ## ![✔] 2.3 Distingue errores catastróficos de errores operacionales
 
-**TL;DR:** Los errores operacionales (por ejemplo, el API recibió una entrada no válida) se refieren a casos conocidos en los que el impacto del error se entiende completamente y se pueden manejar con cuidado. Por otro lado, el error del programador (por ejemplo, tratar de leer la variable no definida) se refiere a fallas desconocidas del código que ordenan reiniciar correctamente la aplicación.
+### `📝 #updated`
 
-**De lo contrario:** Siempre puedes reiniciar la aplicación cuando aparece un error, pero ¿Por qué dejar ~5000 usuarios en línea abajo debido a un error operacional menor, previsto? lo contrario tampoco es ideal: Mantener la aplicación activa cuando se produce un problema desconocido (error del programador) puede provocar un comportamiento imprevisto. La diferenciación de los dos permite actuar con tacto y aplicar un enfoque equilibrado basado en el contexto dado.
+**TL;DR:** Los errores operacionales (por ejemplo, el API recibió una entrada inválida) se refieren a casos conocidos en los que el impacto del error se entiende completamente y se pueden manejar con cuidado. Por otro lado, los errores catastróficos (también conocidos como errores del programador) se refiere a fallas desconocidas del código que obliga a reiniciar correctamente la aplicación.
+
+**De lo contrario:** Siempre puedes reiniciar la aplicación cuando aparece un error, pero ¿por qué dejar sin servicio ~5000 usuarios en línea debido a un error previsto, menor y operacional? Lo contrario tampoco es ideal: Mantener la aplicación activa cuando se produce un problema desconocido (error del programador) puede provocar un comportamiento impredecible. Diferenciar los dos permite actuar con tacto y aplicando un enfoque equilibrado basado en el contexto dado.
 
   🔗 [**Leer más: error operacional vs programador**](./sections/errorhandling/operationalvsprogrammererror.spanish.md)
 
