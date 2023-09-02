@@ -420,9 +420,9 @@ my-system
 
 ## ![✔] 2.9 Descubre errores y tiempo de inactividad usando productos de APM
 
-**TL;DR:** Los productos de monitoreo y rendimiento (a.k.a APM) miden de forma proactiva tu base de código o API para auto-mágicamente resaltar errores, bloqueos y ralentizar partes que no te das cuenta.
+**TL;DR:** Los productos de monitoreo y rendimiento (a.k.a APM) miden de forma proactiva tu base de código o API para auto-mágicamente resaltar errores, caídas y partes lentas que no has notado.
 
-**De lo contrario:** Es posible que dediques un gran esfuerzo a medir el rendimiento y los tiempos de inactividad de la API, probablemente nunca sabrás cuáles son las piezas de código más lentas en el escenario del mundo real y cómo afectan estas a la experiencia del usuario.
+**De lo contrario:** Es posible que dediques un gran esfuerzo en medir el rendimiento y los tiempos de caída de la API y probablemente nunca sabrás cuáles son las piezas de código más lentas en el escenario del mundo real y cómo afectan estas a la experiencia del usuario.
 
 🔗 [**Leer más: utilizando productos APM**](./sections/errorhandling/apmproducts.spanish.md)
 
