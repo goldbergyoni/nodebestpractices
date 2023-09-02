@@ -333,9 +333,9 @@ my-system
 
 ## ![✔] 2.1  Usa Async-Await o promesas para el manejo de errores asíncronos
 
-**TL;DR:** El manejo de errores asíncronos en el estilo de callback es probablemente la manera más rápida de ir al infierno (a.k.a, pyramid of doom o pirámide de la perdición). El mejor regalo que le puedes dar a tu código es utilizar una biblioteca de promesas seria o async-await que proporciona una sintaxis de código muy compacta y similar al try-catch
+**TL;DR:** El manejo de errores asíncronos en el estilo de callback es probablemente la manera más rápida de ir al infierno (a.k.a, pyramid of doom o pirámide de la perdición). El mejor regalo que le puedes dar a tu código es Promise con async-await que proporciona una sintaxis de código más compacta y similar al try-catch
 
-**De lo contrario:** El estilo de callback de Node.JS, function (err, response), es una forma prometedora de código no mantenible debido a la combinación de manejo de errores con código normal, anidación excesiva y patrones de codificación incómodos
+**De lo contrario:** El estilo de callback de Node.JS, function (err, response), es una forma prometedora de hacer código no mantenible debido a la combinación de manejo de errores con código normal, anidación excesiva y patrones de codificación incómodos
 
 🔗 [**Leer más: evitar callbacks**](./sections/errorhandling/asyncerrorhandling.spanish.md)
 
