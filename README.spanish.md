@@ -462,6 +462,16 @@ my-system
 
 🔗 [**Leer más: retornar promesas**](./sections/errorhandling/returningpromises.spanish.md)
 
+<br/><br/>
+
+## ![✔] 2.13 Subscribete al evento 'error' de los emisores de eventos
+
+## `🌟 #new`
+
+**TL;DR:** A diferencia de las funciones típicas, una cláusula try-catch no obtendrá errores que se originen en emisores de eventos (`Event Emitters`) ni en nada heredado de ellos (por ejemplo, `streams`). En lugar de try-catch, suscríbase al evento de 'error' de un emisor de eventos para que su código pueda manejar el error en contexto. Cuando se trata de [EventTargets](https://nodejs.org/api/events.html#eventtarget-and-event-api) (la versión web estándar de `Event Emitters``) no hay ningún evento de "error" y todos los errores terminan en el evento global Process.on('error) - en este caso, al menos asegúrese de que el proceso falle o no según el contexto deseado. Además, tenga en cuenta que los errores que se originan en los controladores de eventos _asincrónicos_ no se detectan a menos que el emisor del evento se inicialice con {captureRejections: true}.
+
+**Otherwise:** Los emisores de eventos se utilizan comúnmente para funciones de aplicaciones clave y globales, como conexiones de bases de datos o colas de mensajes. Cuando este tipo de objetos cruciales arrojan un error, en el mejor de los casos el proceso fallará debido a una excepción no controlada. Peor aún, permanecerá vivo como un zombi mientras una función clave esté desactivada.
+
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Volver arriba</a></p>
