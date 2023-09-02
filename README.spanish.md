@@ -396,11 +396,13 @@ my-system
 
 ## ![✔] 2.7 Usa un logger maduro para aumentar la visibilidad de los errores
 
-**TL;DR:** Un conjunto de herramientas de registro maduras como [Pino](https://github.com/pinojs/pino) o [Log4js](https:www.npmjs.com/package/log4js) acelerará el descubrimiento y la comprensión de errores. Así que olvídate de console.log.
+### `📝 #updated`
 
-**De lo contrario:** Navegando a través de console.logs o manualmente a través de un archivo de texto desordenado sin herramientas de consulta o un visor de registro decente puede mantenerte ocupado en el trabajo hasta tarde
+**TL;DR:** Una herramienta de logueo robusta como [Pino](https://github.com/pinojs/pino) o [Winston](https://github.com/winstonjs/winston) aumentan la visibilidad de los errores utilizando funcionalidades como niveles de log, visualización coloreada y más. Console.log carece de estas características y debe evitarse. Los mejores logger permiten adjuntar propiedades útiles personalizadas en los logs con una penalización mínima de performance en la serialización. Los desarrolladores deben escribir los logs a `stdout` y dejar que la infraestructura realice la transmisión al agregador de logs apropiado.
 
-🔗 [**Leer más: utilizando un registrador maduro**](./sections/errorhandling/usematurelogger.spanish.md)
+**De lo contrario:** Navegando a través de console.logs o manualmente a través de un archivo de texto desordenado sin herramientas de consulta o un visor de logs decente puede mantenerte ocupado hasta tarde en el trabajo.
+
+🔗 [**Leer más: utilizando un logger maduro**](./sections/errorhandling/usematurelogger.spanish.md)
 
 <br/><br/>
 
