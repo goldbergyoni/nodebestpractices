@@ -250,6 +250,7 @@ my-system
 <br/><br/>
 
 ## ![✔] 1.2. Pon tus componentes en capas, mantén la capa web dentro de sus límites
+
 ### `📝 #updated`
 
 **TL;DR:** Cada componente debe contener "capas", una carpeta dedicada a temas comunes: "punto de entrada" donde reside el controlador, "dominio" donde reside la lógica y "acceso a datos". El principio principal de las arquitecturas más populares es separar las cuestiones técnicas (por ejemplo, HTTP, DB, etc.) de la lógica pura de la aplicación para que un desarrollador pueda codificar más funciones sin preocuparse por cuestiones de infraestructura. Poner cada inquietud en una carpeta dedicada, también conocida como [patrón de 3 capas] (https://es.wikipedia.org/wiki/Arquitectura_multicapa), es la forma más sencilla de lograr este objetivo.
@@ -341,8 +342,9 @@ my-system
 
 <br/><br/>
 
-
 ## ![✔] 2.2 Extiende el objeto Error nativo
+
+### `📝 #updated`
 
 **TL;DR:** Varias bibliotecas arrojan errores como una cadena de caracteres o como un tipo personalizado; esto complica la lógica de manejo de errores y la interoperatividad entre módulos. En su lugar, crea un objeto/clase de error de aplicación que extienda el objeto Error y utilízalo siempre que rechaces, arrojes o emitas un error. El error de la aplicación debería agregar propiedades útiles como el nombre/código del error y isCatastrophic. Al hacerlo, todos los errores tendrán una estructura unificada y permitirán un mejor manejo de errores. Existe la regla `no-throw-literal` de ESLint que chequea esto (aunque tiene unas [limitaciones](http://eslint.org/docs/rules/no-throw-literal) que pueden ser solucionadas al usar TypeScript y configurando la regla `@typescript-eslint/no-throw-literal`).
 
@@ -442,9 +444,9 @@ my-system
 
 ## ![✔] 2.11 Falla rápidamente, valida los argumentos usando una biblioteca dedicada
 
-**TL; DR:** Valida los datos de entrada en la API para evitar bugs molestos que son difíciles de rastrear mas adelante. La validación de código suele ser tediosa amenos que tengas ona librería que pueda ayudar como [ajv](https://www.npmjs.com/package/ajv) y [Joi](https://www.npmjs.com/package/joi).
+**TL; DR:** Valida los datos de entrada a la API para evitar bugs molestos que son difíciles de rastrear luego. El código de validación suele ser tediosa amenos que utilices una biblioteca de validación moderna como [ajv](https://www.npmjs.com/package/ajv), [zod](https://github.com/colinhacks/zod) o [typebox](https://github.com/sinclairzx81/typebox)
 
-**De lo contrario:** Considera esto: tu función espera un argumento numérico "Descuento" que la persona que llama la función olvida pasar, más adelante su código comprueba si Descuento!= 0 (cantidad de descuento permitido es mayor que cero), entonces permitirás el usuario que disfrute de un descuento. Dios mío, qué desagradable error. ¿Puedes verlo?
+**De lo contrario:** Considera esto: tu función espera un argumento numérico "Descuento" que el invocador de la función olvida pasar, más adelante su código chequea si Descuento!= 0 (cantidad de descuento permitido es mayor que cero), entonces permitirá que el usuario que disfrute de un descuento. Dios mío, qué desagradable error. ¿Puedes verlo?
 
 🔗 [**Leer más: falla rápidamente**](./sections/errorhandling/failfast.spanish.md)
 
