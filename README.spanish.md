@@ -454,6 +454,8 @@ my-system
 
 ## ![✔] 2.12 Siempre resuelve las promesas antes de retornarlas para evitar un stacktrace parcial
 
+### `🌟 #new`
+
 **TL;DR:** Siempre utiliza `return await` cuando regreses una promesa para tener un error stacktrace completo. Si la función regresa una promesa, esa función debe ser declarada como `async` y explícitamente esperar (`await`) la promesa antes de retornarla.
 
 **De lo contrario** La función que regresa una promesa sin esperar no aparecerá en el stacktrace. Esas piezas faltantes probablemente complicarán el entendimiento del flujo que lleva al error, especialmente si la causa del comportamiento está en la función faltante.
