@@ -87,7 +87,7 @@ Leelo en otro idioma: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md),
 
 <details>
   <summary>
-    <a href="#3-prácticas-de-estilo-de-código">3. Prácticas de estilo de código (12)</a>
+    <a href="#3-prácticas-de-estilo-de-código">3. Prácticas de estilo de código (13)</a>
   </summary>
 
 &emsp;&emsp;[3.1 Utiliza ESLint `#strategic`](#-31-utiliza-eslint)</br>
@@ -376,11 +376,11 @@ my-system
 
 ## ![✔] 2.5 Documenta errores del API con OpenAPI o GraphQL
 
-**TL;DR:** Deja que los clientes de tu API sepan qué errores podrían presentarse como respuesta, para que puedan manejarlos cuidadosamente sin fallar. Para API's RESTful esto se hace generalmente con frameworks de documentación REST API como Swagger. Si estás utilizando GraphQL, también puedes utilizar tus esquemas y comentarios.
+**TL;DR:** Deja que los clientes de tu API sepan qué errores podrían presentarse como respuesta, para que puedan manejarlos cuidadosamente sin fallar. Para API's RESTful esto se hace generalmente con frameworks de documentación REST API como OpenAPI. Si estás utilizando GraphQL, también puedes utilizar tus esquemas y comentarios.
 
-**De lo contrario:** Un cliente del API podría decidir bloquearse y reiniciarse solo porque recibió un error que no pudo entender. Nota: la persona que llama de su API puede ser tu (muy típico en un entorno de microservicios).
+**De lo contrario:** Un cliente de la API podría decidir bloquearse y reiniciarse solo porque recibió un error que no pudo entender. Nota: la persona que llama a tu API puedes ser tu (muy típico en un entorno de microservicios).
 
-🔗 [**Leer más: documentación de errores en Swagger o GraphQL**](./sections/errorhandling/documentingusingswagger.spanish.md)
+🔗 [**Leer más: documentación de errores en OpenAPI o GraphQL**](./sections/errorhandling/documentingusingswagger.spanish.md)
 
 <br/><br/>
 
