@@ -408,9 +408,11 @@ my-system
 
 ## ![✔] 2.8 Pruebas los flujos de errores usando tu framework de prueba favorito
 
-**TL;DR:** Ya sea que se trate de un profesional de QA automatizado o de una prueba de desarrollador manual: asegúrate de que tu código no solo satisfaga un escenario positivo sino que también maneje y devuelva los errores correctos. Frameworks de prueba como Mocha & Chai pueden manejar esto fácilmente (vea ejemplos de código dentro del "Gist emergente").
+### `📝 #updated`
 
-**De lo contrario:** Sin pruebas, ya sea automática o manualmente, no puedes confiar en su código para devolver los errores correctos. Sin errores significativos, no hay manejo de errores.
+**TL;DR:** Ya sea que se trate de una prueba automatizada de QA profesional o de una de desarrollador manual: asegúrate de que tu código no solo satisfaga un escenario positivo sino que también maneje y devuelva los errores correctos. Además de esto, simule flujos de errores más profundos, como excepciones no capturadas, y asegúrese de que el controlador de errores los trate adecuadamente (vea ejemplos de código en la sección "leer más").
+
+**De lo contrario:** Sin pruebas, ya sean automáticas o manuales, no puedes confiar en tu código para devolver los errores correctos. Sin errores útiles, no hay manejo de errores.
 
 🔗 [**Leer más: probar los flujos de error**](./sections/errorhandling/testingerrorflows.spanish.md)
 
