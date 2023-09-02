@@ -344,9 +344,9 @@ my-system
 
 ## ![✔] 2.2 Extiende el objeto Error nativo
 
-**TL;DR:** Muchos arrojan errores como una cadena o como un tipo personalizado; esto complica la lógica de manejo de errores y la interoperatividad entre módulos. Ya sea que rechace una promesa, genere una excepción o emita un error, usar solo el objeto de Error nativo (o un objecto que herede del objeto Error nativo) aumentará la uniformidad y evitará la pérdida de información. Existe la regla `no-throw-literal` de ESLint que revisa esto (aunque tiene unas [limitaciones](http://eslint.org/docs/rules/no-throw-literal) que pueden ser solucionadas al usar TypeScript y configurando la regla `eslint/no-throw-literal`).
+**TL;DR:** Varias bibliotecas arrojan errores como una cadena de caracteres o como un tipo personalizado; esto complica la lógica de manejo de errores y la interoperatividad entre módulos. En su lugar, crea un objeto/clase de error de aplicación que extienda el objeto Error y utilízalo siempre que rechaces, arrojes o emitas un error. El error de la aplicación debería agregar propiedades útiles como el nombre/código del error y isCatastrophic. Al hacerlo, todos los errores tendrán una estructura unificada y permitirán un mejor manejo de errores. Existe la regla `no-throw-literal` de ESLint que chequea esto (aunque tiene unas [limitaciones](http://eslint.org/docs/rules/no-throw-literal) que pueden ser solucionadas al usar TypeScript y configurando la regla `@typescript-eslint/no-throw-literal`).
 
-**De lo contrario:** Al invocar algún componente, no estar seguro de qué tipo de errores son retornados, hace que sea mucho más difícil manejar los errores de forma adecuada. Peor aún, el uso de tipos personalizados para describir los errores puede conducir a la pérdida de información de error crítico como el seguimiento de la pila.
+**De lo contrario:** Cuando invoques algún compontente, al no estar seguro de qué tipo de errores son retornados, será mucho más difícil manejar los errores de forma adecuada. Peor aún, el uso de tipos personalizados para describir los errores puede conducir a la pérdida de información de crítica de los errores como el seguimiento de la pila.
 
 🔗 [**Leer más: utilizando el objeto de Error incorporado**](./sections/errorhandling/useonlythebuiltinerror.spanish.md)
 
