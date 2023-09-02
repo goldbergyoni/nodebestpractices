@@ -366,9 +366,9 @@ my-system
 
 ## ![✔] 2.4 Maneja los errores centralmente, no dentro de un middleware
 
-**TL;DR:** La lógica de manejo de errores, como un correo al administrador y registro de logs, debe encapsularse en un objeto dedicado y centralizado al que todos los end-points (por ejemplo, Express middleware, cron jobs, unit-testing) llamen cuando se produce un error.
+**TL;DR:** La lógica de manejo de errores como el registro en logs, dicidir cuando fallar y las métricas de monitoreo, deben encapsularse en un objeto dedicado y centralizado al que todos los puntos de entrada (por ejemplo, API, trabajos cron, trabajos programados) puedan llamar cuando se presente un error.
 
-**De lo contrario:** No manejar los errores dentro de un solo lugar dará lugar a la duplicación del código y, probablemente, a los errores que se manejan de forma incorrecta
+**De lo contrario:** No manejar los errores dentro de un solo lugar dará lugar a  duplicación de código y, probablemente, a manejo inapropiado de errores.
 
 🔗 [**Leer más: manejo de errores en un lugar centralizado**](./sections/errorhandling/centralizedhandling.spanish.md)
 
