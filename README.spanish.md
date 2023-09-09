@@ -408,7 +408,7 @@ my-system
 
 <br/><br/>
 
-## ![✔] 2.8 Pruebas los flujos de errores usando tu framework de prueba favorito
+## ![✔] 2.8 Prueba los flujos de errores usando tu framework de prueba favorito
 
 ### `📝 #updated`
 
@@ -478,11 +478,11 @@ my-system
 
 # `3. Prácticas de estilo de código`
 
-## ![✔] 3.1 Utiliza ESLint
+## ![✔] 3.1 Usa ESLint
 
-**TL;DR:** [ESLint](https://eslint.org) es el estándar para verificar posibles errores de código y corregir el estilo del código, no solo para identificar problemas básicos, sino también para detectar anti-patrones de código graves, como los desarrolladores que arrojan errores sin clasificación. Aunque ESLint puede corregir automáticamente los estilos de código, otras herramientas como [prettier](https://www.npmjs.com/package/prettier) y [beautify](https://www.npmjs.com/package/js-beautify) son más potentes para formatear la solución y funcionan en conjunto con ESLint
+**TL;DR:** [ESLint](https://eslint.org) es el estándar de-facto para detectar  errores de código y corregir estilo, no solo para identificar problemas básicos, sino también para detectar anti-patrones de código graves, como los desarrolladores lanzando errores sin clasificación. Aunque ESLint puede corregir automáticamente los estilos de código, otras herramientas como [prettier](https://www.npmjs.com/package/prettier) son más potentes para formatear la solución y funcionan en conjunto con ESLint-
 
-**De lo contrario:** Los desarrolladores podrían desperdiciar demasiado tiempo centrándose demasiado en el corregir los espacios y el ancho de línea del código
+**De lo contrario:** Los desarrolladores se centrarán en los espacios y el ancho de línea del código y desperdicierán tiempo sobrepensando el estilo de código del proyecto.
 
 🔗 [**Leer más: Usando ESLint y Prettier**](./sections/codestylepractices/eslint_prettier.spanish.md)
 
