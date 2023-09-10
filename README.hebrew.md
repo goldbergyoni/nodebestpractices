@@ -9,20 +9,17 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%20102%20Best%20Practices-blue.svg" alt="102 items"/> <img id="last-update-badge" src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20April%2019%2C%202023-green.svg" alt="Last update: April 19, 2023" /> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2014.0.0-brightgreen.svg" alt="Updated for Node 14.0.0"/>
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%20102%20Best%20Practices-blue.svg" alt="102 items"/> <img id="last-update-badge" src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20August%2016%2C%202023-green.svg" alt="Last update: August 16, 2023" /> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2014.0.0-brightgreen.svg" alt="Updated for Node 14.0.0"/>
 </div>
 
 <br/>
 
 [<img src="assets/images/twitter.svg" width="16" height="16" alt="" />](https://twitter.com/nodepractices/) **עיקבו אחרינו בטוויטר!** [**@nodepractices**](https://twitter.com/nodepractices/)
-
+<br/>
+**:writing_hand:	תורגם על ידי [הוד בואר](https://github.com/hodbauer)**
 <br/>
 
 לקריאה בשפות נוספות: [![CN](./assets/flags/CN.png)**סינית**](./README.chinese.md), [![FR](./assets/flags/FR.png)**צרפתית**](./README.french.md), [![BR](./assets/flags/BR.png)**פורטוגזית**](./README.brazilian-portuguese.md), [![RU](./assets/flags/RU.png)**רוסית**](./README.russian.md), [![PL](./assets/flags/PL.png)**פולנית**](./README.polish.md), [![JA](./assets/flags/JA.png)**יפנית**](./README.japanese.md), [![EU](./assets/flags/EU.png)**באסקית**](./README.basque.md) [(![ES](./assets/flags/ES.png)**ספרדית**, ![HE](./assets/flags/HE.png)**עברית**, ![KR](./assets/flags/KR.png)**קוריאנית** ו ![TR](./assets/flags/TR.png)**טורקית** בתהליך! )](#translations)
-
-<br/>
-
-## 🚀 יש לנו [Node.js starter רשמי - Practica.js](https://github.com/practicajs/practica). השתמשו בזה כדי לייצר שלד חדש לפרוייקט שמבוסס על כל שיטות העבודה המומלצות כלולות בפנים. או רק כדי ללמוד על ידי דוגמאות קוד.
 
 <br/>
 
@@ -48,6 +45,11 @@
 
 <br/><br/>
 
+# מאת יוני גולדברג
+
+### לימדו איתי: כיועץ, אני נפגש עם קבוצות מכל העולם במגוון פעולות כמו סדנאות ומעבר על קוד. 🎉 לאחרונה פרסמתי את [הקורס המתקדם לכתיבת בדיקות](https://testjavascript.com/)
+
+<br/><br/>
 ## תוכן העניינים
 
 <details>
