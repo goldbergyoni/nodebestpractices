@@ -41,7 +41,7 @@ while loop.
 ```
 
 ## Изображение цикла событий
-![Event Loop](/assets/images/event-loop.png "Event Loop")
+![Event Loop](../../assets/images/event-loop.png "Event Loop")
 
 Вот хорошее эмпирическое правило для поддержания скорости вашего Node-сервера: Node работает быстро, когда работа, связанная с каждым клиентом в любой момент времени, "мала".
 >[Don't Block the Event Loop (or the Worker Pool) | Node.js](https://nodejs.org/en/docs/guides/dont-block-the-event-loop/)

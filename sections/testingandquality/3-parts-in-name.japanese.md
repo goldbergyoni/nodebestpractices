@@ -49,6 +49,6 @@ describe('Products Service', () => {
 
  [Yoni Goldberg によるブログ記事 "30 Node.js testing best practices"](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347)
 
- ![テストレポートの例](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/test-report-like-requirements.jpeg "テストレポートの例")
+ ![テストレポートの例](../../assets/images/test-report-like-requirements.jpeg "テストレポートの例")
 
 <br/><br/>

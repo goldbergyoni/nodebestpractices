@@ -13,24 +13,24 @@
 
 ### 监控示例：AWS cloudwatch默认仪表板。很难提取应用内指标 
 
-![AWS cloudwatch default dashboard. Hard to extract in-app metrics](/assets/images/monitoring1.png)
+![AWS cloudwatch default dashboard. Hard to extract in-app metrics](../../assets/images/monitoring1.png)
 
 <br/><br/>
 
 ### 监控示例：StackDriver默认仪表板。很难提取应用内指标
 
-![StackDriver default dashboard. Hard to extract in-app metrics](/assets/images/monitoring2.jpg)
+![StackDriver default dashboard. Hard to extract in-app metrics](../../assets/images/monitoring2.jpg)
 
 <br/><br/>
 
 ### 监控示例：Grafana作为可视化原始数据的UI层
 
 
-![Grafana as the UI layer that visualizes raw data](/assets/images/monitoring3.png)
+![Grafana as the UI layer that visualizes raw data](../../assets/images/monitoring3.png)
 
 <br/><br/>
 ### 其他博主说了什么
-  摘自博客 [Rising Stack](http://mubaloo.com/best-practices-deploying-node-js-applications/):
+  摘自博客 [Rising Stack](https://blog.risingstack.com/node-js-performance-monitoring-with-prometheus/):
 
 > ...我们建议您为所有服务监听这些信号：
 > 错误率：因为错误是用户面对的，并立即会影响您的客户。

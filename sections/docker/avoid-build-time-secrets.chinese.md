@@ -14,10 +14,11 @@ Docker映像不仅仅是一堆文件，而是展示构建期间所发生的层�
 
 <summary><strong>Dockerfile</strong></summary>
 
-```
+```dockerfile
 # syntax = docker/dockerfile:1.0-experimental
 
 FROM node:12-slim
+
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN --mount=type=secret,id=npm,target=/root/.npmrc npm ci
@@ -35,19 +36,22 @@ RUN --mount=type=secret,id=npm,target=/root/.npmrc npm ci
 
 <summary><strong>Dockerfile</strong></summary>
 
-```
-
+```dockerfile
 FROM node:12-slim AS build
+
 ARG NPM_TOKEN
+
 WORKDIR /usr/src/app
 COPY . /dist
 RUN echo "//registry.npmjs.org/:\_authToken=\$NPM_TOKEN" > .npmrc && \
  npm ci --production && \
  rm -f .npmrc
 
+
 FROM build as prod
+
 COPY --from=build /dist /dist
-CMD ["node","index.js"]
+CMD ["node", "index.js"]
 
 # ARG和.npmrc在最终的镜像中不会出现，但会在Docker daemon的未打标签（un-tagged）镜像列表中找到它们 - 确保删除他们 
 ```
@@ -62,10 +66,11 @@ CMD ["node","index.js"]
 
 <summary><strong>Dockerfile</strong></summary>
 
-```
-
+```dockerfile
 FROM node:12-slim
+
 ARG NPM_TOKEN
+
 WORKDIR /usr/src/app
 COPY . /dist
 RUN echo "//registry.npmjs.org/:\_authToken=\$NPM_TOKEN" > .npmrc && \
@@ -74,7 +79,7 @@ RUN echo "//registry.npmjs.org/:\_authToken=\$NPM_TOKEN" > .npmrc && \
 
 # 在拷贝命令的同时删除.npmrc文件不会在layer里面保存它, 但在镜像历史里面还是会找到它
 
-CMD ["node","index.js"]
+CMD ["node", "index.js"]
 ```
 
 </details>

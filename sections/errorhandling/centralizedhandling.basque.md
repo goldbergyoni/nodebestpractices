@@ -1,8 +1,8 @@
 # Kudeatu erroreak gune bakar batean, Express middleware erabili partez
 
-### Azalpen paragrafoa
+### Azalpena
 
-Errore kudeaketarako ardura bakarreko objektu bat ez izateak, errore garrantzitsuak ezkutatzeko aukerak ugaritzen ditu kudeaketa ezegoki baten eraginpean. Errore kudeaketarako objektua, errorea begibistako bihurtzearen arduradun da, adibidez, egoki formateatutako erregistro batean idatziz, ebentuak [Sentry](https://sentry.io/), [Rollbar](https://rollbar.com/), edota [Raygun](https://raygun.com/) bezalako monitorizazio sistemaren batera bidaliz. [Express](http://expressjs.com/en/guide/error-handling.html#writing-error-handlers) bezalako web framework gehienak, errore kudeaketa middleware mekanismo bat proposatzen dute. Errore kudeaketa fluxu tipiko bat hau izan daiteke: moduluren batek errore bat jaurtitzen du -> API routerrak errorea harrapatzen du -> errorea middlewarera hedatzen du, (adibidez Express edo KOA), zeinek erroreak harrapatzeko ardura duen -> errore kudeatzaile zentralizatu bati deitzen zaio -> middlewareari esaten zaio ia errore hau konfiantzazkoa den (ez operazio errorea) aplikazioa dotoreki berrekiteko. Kontutan izan Express midelwarean erroreak kudeatzea praktika arrunta dela, okerra izan arren. Hau egiteak ez ditu kontutan hartzen weba ez diren bestelako interfazeetako erroreak.
+Erroreak kudeatzeko objektu dedikaturik gabe, handiagoak dira erroreak inkoherentziaz kudeatzeko aukerak: web eskaeren barruan izandako erroreak eta hasierako fasean planteatutakoen edo programatutako lanek sortutakoen desberdinak izan daitezke. Horrek eragina izan dezake oker kudeatzen ari diren errore mota batzuetan. Erroreak kudeatzen dituen objektu bakar horren ardura da erroreak begi bistan jartzea, adibidez ondo formateatutako erregistro batean idatziz edo monitorizazio produktu batzuk erabiliz ([Prometheus](https://prometheus.io/), [CloudWatch](https://aws.amazon.com/cloudwatch/), [DataDog](https://www.datadoghq.com/) eta [Sentry](https://sentry.io/) bezalakoak); eta, gainera, berak erabakitzen du prozesuak huts egin behar duen ala ez. Web plataforma gehienek erroreak atzemateko middleware mekanismoa eskaintzen dute. Errore tipikoa izaten da middlewarearen erroreen kudeaketa kodea jartzea. Horrela, ezin izango duzu kudeatzaile bera berrerabili eszenatoki desberdinetan atzemandako erroreetarako, hala nola, programatutako lanak, harpidedunen mezu ilarak eta atzeman gabeko salbuespenak. Ondorioz, errorearen middlewareak erroreak atzeman eta kudeatzailera bidali beharko lituzke. Hau izan liteke errore kudeaketaren fluxu tipikoa: moduluren batzuek errore bat jaurtitzen dute -> API bideratzaileak errorea atzematen du -> erroreak atzemateaz arduratzen den middlewarera bidaltzen du (edo eskaera mailako erroreak atzemateko beste mekanismo batera) -> errore kudeatzaile zentralizatu bati deitzen zaio
 
 ### Kode adibidea: ohiko errore fluxua
 
@@ -156,19 +156,19 @@ app.use((errorea: Error, req: Request, res: Response, next: NextFunction) => {
 
 </details>
 
-### Blogeko aipua: "Batzuetan maila baxuagoek beren deitzaileari errorea bidaltzea baino ezer praktikoagorik ezin dute egin"
+### Blog aipua: "Batzuetan maila baxuagoek beren deitzaileari errorea bidaltzea baino ezer praktikoagorik ezin dute egin"
 
 Joyent blogeko “Node.js errore kudeaketa" hitz gako bati esker sailkatua
 
 > …Errore bera pilaren maila askotan kudeatzen bukatuko duzu. Hau gertatzen da maila baxuenek beren deitzaileei (eta beste haiek beren deitzaileei, etab.) errorea bidaltzea baino beste ezer egokiagorik ezin dutenean egin. Askotan, soilik goi mailako deitzaileak daki zein den erantzun zuzena, ia ahalegin operazio berria den, erabiltzaileari errorearen berri eman behar dion, edo beste edozer. Baina horrek ez du esan nahi errore guztiak goi mailako callback bakar bati jakinarazi behar dizkiozunik, callback horrek ere errorea zein testuingurutan gertatu den ez daki eta…
 
-### Blogeko aipua: "Errore bakoitza bakarka kudeatzea bikoizte galanta izan daiteke"
+### Blog aipua: "Errore bakoitza bakarka kudeatzea bikoizte galanta izan daiteke"
 
 JS Recipes blogeko “Node.js errore kudeaketa" 17 hitz gakori esker sailkatua
 
 > ……Hackathoneko Starter api.js kontrolatzaile bakarrean, 79 errore objektu inguru daude. Errore bakoitza bakarka kudeatzeak kodea ikaragarri bikoiztea eragin dezake. Hurrengo egin dezakezun gauza hoberena da errore kudeaketa logika Express middleware bati uztea…
 
-### Blogeko aipua: "HTTP erroreak ezin dira zure datu basearen kodean egon"
+### Blog aipua: "HTTP erroreak ezin dira zure datu basearen kodean egon"
 
 Daily JS blogeko “Node.js errore kudeaketa" 14 hitz gakori esker sailkatua
 

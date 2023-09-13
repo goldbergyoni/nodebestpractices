@@ -1,0 +1,30 @@
+name: Lint & Generate HTML from Markdown
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+defaults:
+  run:
+    shell: bash
+    working-directory: .operations
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-20.04
+    env:
+      NODE_ENV: test
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - run: npm install
+      - run: npm run lint

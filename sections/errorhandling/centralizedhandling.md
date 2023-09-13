@@ -35,11 +35,11 @@ app.use(async (err, req, res, next) => {
 
 process.on("uncaughtException", error => {
   errorHandler.handleError(error);
-    });
+});
 
-    process.on("unhandledRejection", (reason) => {
-        errorHandler.handleError(reason);
-    });
+process.on("unhandledRejection", (reason) => {
+  errorHandler.handleError(reason);
+});
 ```
 </details>
 
@@ -67,16 +67,16 @@ catch (error) {
 
 // Error handling middleware, we delegate the handling to the centralized error handler
 app.use(async (err: Error, req: Request, res: Response, next: NextFunction) => {
-await errorHandler.handleError(err, res);
+  await errorHandler.handleError(err, res);
 });
 
 process.on("uncaughtException", (error:Error) => {
   errorHandler.handleError(error);
-    });
+});
 
-    process.on("unhandledRejection", (reason) => {
-        errorHandler.handleError(reason);
-    });
+process.on("unhandledRejection", (reason) => {
+  errorHandler.handleError(reason);
+});
 ```
 </details>
 
@@ -93,7 +93,7 @@ function errorHandler() {
   this.handleError = async (error, responseStream) => {
     await logger.logError(error);
     await fireMonitoringMetric(error);
-    await crashIfUntrustedErrorOrSendResponse(error, responseStream);    
+    await crashIfUntrustedErrorOrSendResponse(error, responseStream);
   };
 }
 ```
@@ -107,8 +107,8 @@ class ErrorHandler {
   public async handleError(error: Error, responseStream: Response): Promise<void> {
     await logger.logError(error);
     await fireMonitoringMetric(error);
-    await crashIfUntrustedErrorOrSendResponse(error, responseStream);      
-    };
+    await crashIfUntrustedErrorOrSendResponse(error, responseStream);
+  };
 }
 
 export const handler = new ErrorHandler();
@@ -154,7 +154,7 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 </details>
 
  ### Illustration: The error handling actors and flow
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/error-handling-flow.png "Error handling flow")
+![alt text](../../assets/images/error-handling-flow.png "Error handling flow")
 
 
 ### Blog Quote: "Sometimes lower levels can’t do anything useful except propagate the error to their caller"

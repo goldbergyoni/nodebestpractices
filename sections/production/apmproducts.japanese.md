@@ -10,16 +10,16 @@ APM（アプリケーション・パフォーマンス・モニタリング）�
 
 ### APM の例 – サービス間のアプリパフォーマンスを可視化する商用製品
 
-![APM の例](/assets/images/apm1.png "APM の例")
+![APM の例](../../assets/images/apm1.png "APM の例")
 
 <br/><br/>
 
 ### APM の例 – ユーザーエクスペリエンススコアを重視した市販品
 
-![APM の例](/assets/images/apm2.png "APM の例")
+![APM の例](../../assets/images/apm2.png "APM の例")
 
 <br/><br/>
 
 ### APM の例 – 遅いコードパスをハイライトする商用製品
 
-![APM の例](/assets/images/apm3.png "APM の例")
+![APM の例](../../assets/images/apm3.png "APM の例")

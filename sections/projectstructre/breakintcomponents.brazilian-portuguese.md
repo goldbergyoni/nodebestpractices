@@ -9,7 +9,7 @@ Para aplicações de tamanho médio e acima, os monólitos são muito ruins - te
 
 ### Citação de Blog: "O escalonamento requer escalonamento de todo o aplicativo"
 
- Do blog MartinFowler.com
+ Do blog [MartinFowler.com](https://martinfowler.com/articles/microservices.html)
 
 > Aplicações monolíticas podem ser bem-sucedidas, mas cada vez mais as pessoas estão sentindo frustrações com elas - especialmente à medida que mais aplicativos são implantados na nuvem. Os ciclos de mudança estão interligados - uma alteração feita em uma pequena parte do aplicativo requer que todo o monólito seja reconstruído e implantado. Ao longo do tempo, muitas vezes é difícil manter uma boa estrutura modular, tornando mais difícil manter as alterações que devem afetar apenas um módulo dentro desse módulo. O escalonamento requer escalonamento de todo o aplicativo, em vez de partes dele que exigem maior recurso.
 
@@ -17,7 +17,7 @@ Para aplicações de tamanho médio e acima, os monólitos são muito ruins - te
 
 ### Citação de Blog: "Então, o que a arquitetura do seu aplicativo grita?"
 
- Do blog [uncle-bob](https://8thlight.com/blog/uncle-bob/2011/09/30/Screaming-Architecture.html) 
+ Do blog [uncle-bob](https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html) 
 
 > ...se você estivesse olhando para a arquitetura de uma biblioteca, provavelmente veria uma grande entrada, uma área para funcionários de check-in-out, áreas de leitura, pequenas salas de conferência e galeria após galeria, capaz de guardar estantes de livros para todos os livros. a biblioteca. Essa arquitetura iria gritar: Biblioteca.<br/>
 
@@ -27,10 +27,10 @@ Então, o que a arquitetura da sua aplicação grita? Quando você olha para a e
 
 ### Bom: estruture sua solução por componentes independentes
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Solução de estruturação por componentes")
+![alt text](../../assets/images/structurebycomponents.PNG "Solução de estruturação por componentes")
 
 <br/><br/>
 
 ### Ruim: Agrupe seus arquivos por papel técnico
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebyroles.PNG "Solução de estruturação por funções técnicas")
+![alt text](../../assets/images/structurebyroles.PNG "Solução de estruturação por funções técnicas")

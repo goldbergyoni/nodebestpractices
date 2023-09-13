@@ -10,7 +10,7 @@
 
 ### Что говорят другие блоггеры
 
-* Из блога [Dyntrace](http://apmblog.dynatrace.com/):
+* Из блога [Dyntrace](https://www.dynatrace.com/news/blog/understanding-garbage-collection-and-hunting-memory-leaks-in-node-js/):
 > ... "Как мы уже узнали, в Node.js JavaScript компилируется в нативный код V8. Получающиеся в результате собственные структуры данных не имеют большого отношения к их исходному представлению и управляются исключительно V8. Это означает, что мы не можем активно выделять или освобождать память в JavaScript. V8 использует хорошо известный механизм сбора мусора для решения этой проблемы".
 
 * Из блога [Dyntrace](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load):
@@ -18,7 +18,7 @@
 Создайте дампы кучи с некоторым временем и достаточным количеством памяти, выделяемой между ними
 Сравните несколько свалок, чтобы узнать, что растет"
 
-* Из блога [Dyntrace](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load):
+* Из блога [Rising Stack](https://blog.risingstack.com/finding-a-memory-leak-in-node-js/):
 > ... "ошибка, Node.js попытается использовать около 1,5ГБ памяти, которая должна быть ограничена при работе в системах с меньшим объемом памяти. Это ожидаемое поведение, поскольку сборка мусора является очень дорогостоящей операцией.
 Решением для этого было добавление дополнительного параметра в процесс Node.js:
 node –max_old_space_size=400 server.js –production"

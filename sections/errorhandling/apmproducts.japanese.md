@@ -22,7 +22,7 @@ APM 製品は 3 つの主要なセグメントを構成しています:
 
 
  ### 例: UpTimeRobot.Com – ウェブサイトモニタリングダッシュボード
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/uptimerobot.jpg "ウェブサイトモニタリングダッシュボード")
+![alt text](../../assets/images/uptimerobot.jpg "ウェブサイトモニタリングダッシュボード")
 
  ### 例: AppDynamics.Com – コード計測が統合されたエンドツーエンドモニタリング
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/app-dynamics-dashboard.png "コード計測が統合されたエンドツーエンドモニタリング")
+![alt text](../../assets/images/app-dynamics-dashboard.png "コード計測が統合されたエンドツーエンドモニタリング")

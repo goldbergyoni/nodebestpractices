@@ -10,7 +10,7 @@
 
 ### Сравнение: балансировка с использованием кластера Node против nginx
 
-![Balancing using Node’s cluster vs nginx](/assets/images/utilizecpucores1.png "Balancing using Node’s cluster vs nginx")
+![Balancing using Node’s cluster vs nginx](../../assets/images/utilizecpucores1.png "Balancing using Node’s cluster vs nginx")
 
 <br/><br/>
 

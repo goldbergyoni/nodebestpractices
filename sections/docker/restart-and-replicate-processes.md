@@ -14,8 +14,7 @@ Docker runtime orchestrators like Kubernetes are really good at making container
 
 <summary><strong>Dockerfile</strong></summary>
 
-```
-
+```dockerfile
 FROM node:12-slim
 
 # The build logic comes here
@@ -33,12 +32,12 @@ CMD ["node", "index.js"]
 
 <summary><strong>Dockerfile</strong></summary>
 
-```
+```dockerfile
 FROM node:12-slim
 
 # The build logic comes here
 
-CMD ["pm2-runtime", "indes.js"]
+CMD ["pm2-runtime", "index.js"]
 ```
 
 </details>

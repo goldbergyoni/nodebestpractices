@@ -3,23 +3,22 @@
 # Node.js ベストプラクティス
 
 <h1 align="center">
-  <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices">
+  <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices"/>
 </h1>
 
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%20101%20Best%20Practices-blue.svg" alt="101 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20March%2012%202020-green.svg" alt="Last update: March, 2020"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.12.0-brightgreen.svg" alt="Updated for Node 13.1.0">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%20101%20Best%20Practices-blue.svg" alt="101 items"/> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20March%2012%202020-green.svg" alt="Last update: March, 2020"/> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.12.0-brightgreen.svg" alt="Updated for Node 13.1.0"/>
 </div>
 
 <br/>
 
-[![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **私たちの Twitter をフォローしましょう！** [**@nodepractices**](https://twitter.com/nodepractices/)
-
+[![nodepractices](./assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **私たちの Twitter をフォローしましょう！** [**@nodepractices**](https://twitter.com/nodepractices/)
 
 <br/>
 
-他の言語で読む: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md), [![RU](/assets/flags/RU.png)**RU**](/README.russian.md), [![PL](/assets/flags/PL.png)**PL**](/README.polish.md), [![JA](/assets/flags/JA.png)**JA**](/README.japanese.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR** and ![TR](/assets/flags/TR.png)**TR** in progress!)](#translations)
+他の言語で読む: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md), [![BR](./assets/flags/BR.png)**BR**](./README.brazilian-portuguese.md), [![RU](./assets/flags/RU.png)**RU**](./README.russian.md), [![PL](./assets/flags/PL.png)**PL**](./README.polish.md), [![JA](./assets/flags/JA.png)**JA**](./README.japanese.md), [![EU](./assets/flags/EU.png)**EU**](./README.basque.md) [(![ES](./assets/flags/ES.png)**ES**, ![FR](./assets/flags/FR.png)**FR**, ![HE](./assets/flags/HE.png)**HE**, ![KR](./assets/flags/KR.png)**KR** and ![TR](./assets/flags/TR.png)**TR** in progress!)](#translations)
 
 <br/>
 
@@ -41,7 +40,7 @@
 
 **1. 実際、あなたは何十もの Node.js の最高の記事を読んでいます -** このリポジトリは、Node.js のベストプラクティスに関するトップランクのコンテンツや、コラボレーターによって書かれたコンテンツをまとめたものです。
 
-**2. 最大の集大成であり、毎週のように増え続けています -** 現在、80 以上のベストプラクティスやスタイルガイド、アーキテクチャのヒントが記載されています。この「生きた本」がアップデートされた状態を保つために、新しいイシューやプルリクエストは毎日のように作成されています。私たちは、コードの修正や翻訳作業、素晴らしい新たなアイデアの提案に至るまで、あなたの貢献を心待ちにしています。詳しくは[ライティングガイドライン](/.operations/writing-guidelines.japanese.md)をご覧ください。
+**2. 最大の集大成であり、毎週のように増え続けています -** 現在、80 以上のベストプラクティスやスタイルガイド、アーキテクチャのヒントが記載されています。この「生きた本」がアップデートされた状態を保つために、新しいイシューやプルリクエストは毎日のように作成されています。私たちは、コードの修正や翻訳作業、素晴らしい新たなアイデアの提案に至るまで、あなたの貢献を心待ちにしています。詳しくは[ライティングガイドライン](./.operations/writing-guidelines.japanese.md)をご覧ください。
 
 **3. ほとんどのベストプラクティスには追加情報があります -** ほとんどの項目に **🔗 さらに読む** というリンクがあります。このリンクは、コード例や厳選されたブログからの引用、その他多くの情報など、プラクティスを発展させる内容を含んでいます。
 
@@ -68,7 +67,7 @@
 
 **さもないと:** 新しい機能をコーディングする開発者が、自分の変更の影響を理解するのに苦労したり、他の依存するコンポーネントを壊すことを恐れたりすると、デプロイが遅くなり、リスクが高くなります。また、すべてのビジネスユニットが分離されていない場合、スケールアウトするのは難しいと考えられています。
 
-🔗 [**さらに読む: コンポーネントで構成する**](/sections/projectstructre/breakintcomponents.japanese.md)
+🔗 [**さらに読む: コンポーネントで構成する**](./sections/projectstructre/breakintcomponents.japanese.md)
 
 <br/><br/>
 
@@ -78,7 +77,7 @@
 
 **さもないと:** Web オブジェクトと他のレイヤーが混在するアプリには、テストコードや CRON ジョブ、メッセージキューからのトリガーなどからアクセスすることはできません。
 
-🔗 [**さらに読む: アプリケーションを階層化する**](/sections/projectstructre/createlayers.japanese.md)
+🔗 [**さらに読む: アプリケーションを階層化する**](./sections/projectstructre/createlayers.japanese.md)
 
 <br/><br/>
 
@@ -88,17 +87,17 @@
 
 **さもないと:** デプロイと依存関係の車輪の作成をしなければいけなくなります
 
-🔗 [**さらに読む: 機能で構成する**](/sections/projectstructre/wraputilities.japanese.md)
+🔗 [**さらに読む: 機能で構成する**](./sections/projectstructre/wraputilities.japanese.md)
 
 <br/><br/>
 
 ## ![✔] 1.4 Express の「アプリ」と「サーバー」を分離する
 
-**TL;DR:** [Express](https://expressjs.com/) のアプリ全体を単一の巨大なファイルで定義するという厄介な習慣を回避します。- 「Express」の定義を、API 宣言( app.js )とネットワーク関連( WWW )の少なくとも2つのファイルに分離してください。より良い構造にするためには、API 宣言をコンポーネント内に配置してください。
+**TL;DR:** [Express](https://expressjs.com/) のアプリ全体を単一の巨大なファイルで定義するという厄介な習慣を回避します。- 「Express」の定義を、API 宣言( app.js )とネットワーク関連( WWW )の少なくとも 2 つのファイルに分離してください。より良い構造にするためには、API 宣言をコンポーネント内に配置してください。
 
 **さもないと:** API は HTTP 呼び出しのみでテストにアクセスできるようになります（カバレッジレポートを生成するのがより遅く、はるかに困難になります）。何百行ものコードを一つのファイルで管理するのは、おそらく大きな喜びではないでしょう。
 
-🔗 [**さらに読む: Express の「アプリ」と「サーバー」を分離する**](/sections/projectstructre/separateexpress.japanese.md)
+🔗 [**さらに読む: Express の「アプリ」と「サーバー」を分離する**](./sections/projectstructre/separateexpress.japanese.md)
 
 <br/><br/>
 
@@ -108,7 +107,7 @@
 
 **さもないと:** 設定要件のどれかを満たさないと、開発チームや DevOps チーム、おそらく両方ともの頭を悩ませてしまいます。
 
-🔗 [**さらに読む: 構成のベストプラクティス**](/sections/projectstructre/configguide.japanese.md)
+🔗 [**さらに読む: 構成のベストプラクティス**](./sections/projectstructre/configguide.japanese.md)
 
 <br/><br/><br/>
 
@@ -122,7 +121,7 @@
 
 **さもなければ:** Node.js のコールバックスタイル、つまり function(err, response) を利用することは、正常な処理を行うコードとエラーハンドリングの混同、過剰なネスト構造、そして厄介なコーディングパターンが原因となって、メンテナンス性の低いコードにつながります。
 
-🔗 [**さらに読む: コールバック関数の利用を避ける**](/sections/errorhandling/asyncerrorhandling.japanese.md)
+🔗 [**さらに読む: コールバック関数の利用を避ける**](./sections/errorhandling/asyncerrorhandling.japanese.md)
 
 <br/><br/>
 
@@ -132,7 +131,7 @@
 
 **さもないと:** ある要素を呼び出したとき、どの型のエラーが返ってくるか不確かである - といった状況は、適切なエラー処理をより難しいものにします。さらに悪いことに、エラーを表現するためにカスタム型を使うことは、スタックトレースのような重大なエラー情報を失うことに繋がるかもしれません。
 
-🔗 [**さらに読む: 組み込みのエラーオブジェクトのみを使用する**](/sections/errorhandling/useonlythebuiltinerror.japanese.md)
+🔗 [**さらに読む: 組み込みのエラーオブジェクトのみを使用する**](./sections/errorhandling/useonlythebuiltinerror.japanese.md)
 
 <br/><br/>
 
@@ -142,7 +141,7 @@
 
 **さもないと:** エラーが発生したときに毎回アプリケーションを再起動しているかもしれませんが、さほど重要でない、予測可能な、操作上のエラーを原因としてなぜ ~5000 人規模のオンラインユーザーをダウンさせるのでしょうか？ その逆もまた理想的ではありません ー 未知のエラー（プログラマーのエラー）が発生したときにアプリケーションをそのまま起動し続けることは、予想外の振る舞いに繋がるかもしれません。この２つを区別することで、機転の利いた振る舞いをさせ、与えられたコンテキストに基づいた適切なアプローチを適用させることができます。
 
-🔗 [**さらに読む: 操作上のエラーとプログラマーのエラーを区別する**](/sections/errorhandling/operationalvsprogrammererror.japanese.md)
+🔗 [**さらに読む: 操作上のエラーとプログラマーのエラーを区別する**](./sections/errorhandling/operationalvsprogrammererror.japanese.md)
 
 <br/><br/>
 
@@ -152,7 +151,7 @@
 
 **さもないと:** エラーを一箇所で処理しないと、コードの重複や、不適切に処理されたエラーの発生に繋がる可能性があります。
 
-🔗 [**さらに読む: エラー処理を一元化し、ミドウェア内で処理をしない**](/sections/errorhandling/centralizedhandling.japanese.md)
+🔗 [**さらに読む: エラー処理を一元化し、ミドウェア内で処理をしない**](./sections/errorhandling/centralizedhandling.japanese.md)
 
 <br/><br/>
 
@@ -162,7 +161,7 @@
 
 **さもないと:** API クライアントがクラッシュして再起動するのは、不明なエラーを受け取ったからかもしれません。注意: API の呼び出し元はあなた自身かもしれません（マイクロサービス構成では非常によくあることです）
 
-🔗 [**さらに読む: Swagger または GraphQL を利用して API のエラーをドキュメント化する**](/sections/errorhandling/documentingusingswagger.japanese.md)
+🔗 [**さらに読む: Swagger または GraphQL を利用して API のエラーをドキュメント化する**](./sections/errorhandling/documentingusingswagger.japanese.md)
 
 <br/><br/>
 
@@ -172,7 +171,7 @@
 
 **さもないと:** 不明な例外が発生した場合、一部のオブジェクトが不完全な状態（例えば、グローバルに使用されているイベントエミッタが内部的なエラーによりイベントを発火しなくなっている、など）になっている可能性があり、後に来るリクエストが失敗したり、予期せぬ挙動をしたりするかもしれません。
 
-🔗 [**さらに読む: 見ず知らずの事象が起きたら潔くプロセスを終了する**](/sections/errorhandling/shuttingtheprocess.japanese.md)
+🔗 [**さらに読む: 見ず知らずの事象が起きたら潔くプロセスを終了する**](./sections/errorhandling/shuttingtheprocess.japanese.md)
 
 <br/><br/>
 
@@ -182,7 +181,7 @@
 
 **さもないと:** console.log によるログに目を通したり、クエリツールやまともなログビューア無しで扱いにくいテキストファイルを手動で確認したりすると、遅くまで仕事をする羽目になるかもしれません。
 
-🔗 [**さらに読む: エラーの可視性を高めるために成熟したロガーを使用する**](/sections/errorhandling/usematurelogger.japanese.md)
+🔗 [**さらに読む: エラーの可視性を高めるために成熟したロガーを使用する**](./sections/errorhandling/usematurelogger.japanese.md)
 
 <br/><br/>
 
@@ -192,7 +191,7 @@
 
 **さもないと:** 自動であっても手動であっても、テストがなければ、コードが正しいエラーを返すと信用することはできません。意味のあるエラーがなければ、エラー処理はできません。
 
-🔗 [**さらに読む: お気に入りのテストフレームワークを使用してエラーフローをテストする**](/sections/errorhandling/testingerrorflows.japanese.md)
+🔗 [**さらに読む: お気に入りのテストフレームワークを使用してエラーフローをテストする**](./sections/errorhandling/testingerrorflows.japanese.md)
 
 <br/><br/>
 
@@ -202,7 +201,7 @@
 
 **さもないと:** API のパフォーマンスとダウンタイムの計測に多大な労力を費やしているかもしれませんが、現実のシナリオにおいてどの部分のコードが最も遅いのか、そしてそれらがどのように UX に影響を及ぼしているのか、あなたが気づくことは恐らくないでしょう。
 
-🔗 [**さらに読む: APM 製品を利用してエラーとダウンタイムを発見する**](/sections/errorhandling/apmproducts.japanese.md)
+🔗 [**さらに読む: APM 製品を利用してエラーとダウンタイムを発見する**](./sections/errorhandling/apmproducts.japanese.md)
 
 <br/><br/>
 
@@ -212,7 +211,7 @@
 
 **さもないと:** あなたのエラーは飲み込まれて、何のトレースも残しません。心配することは、何も残りません。
 
-🔗 [**さらに読む: 未処理の reject された promise を捕捉する**](/sections/errorhandling/catchunhandledpromiserejection.japanese.md)
+🔗 [**さらに読む: 未処理の reject された promise を捕捉する**](./sections/errorhandling/catchunhandledpromiserejection.japanese.md)
 
 <br/><br/>
 
@@ -222,7 +221,7 @@
 
 **さもないと:** 考えてみて下さい ー 関数は数値の引数「Discount」を受け取ることを期待していますが、呼び出し元が値を渡すのを忘れてしまいました。その後、コードが Discount!=0 (許容されたディスカウントの量が 0 よりも大きいことを想定) であるということをチェックし、そのチェックをクリアした場合にユーザーがディスカウントを受けられるようにしました。オーマイガー、なんて厄介なバグなんでしょう。わかりますか？（訳注：「さらに読む」に具体的なコード例が載っています）
 
-🔗 [**さらに読む: 専用のライブラリを利用して引数の検証を高速に行う**](/sections/errorhandling/failfast.japanese.md)
+🔗 [**さらに読む: 専用のライブラリを利用して引数の検証を高速に行う**](./sections/errorhandling/failfast.japanese.md)
 
 <br/><br/><br/>
 
@@ -236,7 +235,7 @@
 
 **さもないと:** 開発者は退屈な間隔や線幅の問題に集中し、プロジェクトのコードスタイルを考えすぎて時間を無駄にしてしまうかもしれません。
 
-🔗 [**さらに読む: ESLint と Prettier を使う**](/sections/codestylepractices/eslint_prettier.japanese.md)
+🔗 [**さらに読む: ESLint と Prettier を使う**](./sections/codestylepractices/eslint_prettier.japanese.md)
 
 <br/><br/>
 
@@ -280,7 +279,7 @@ function someFunction()
 
 **さもないと:** 前のセクションで見たように、JavaScript のインタプリタは、セミコロンがない場合は自動的に文の最後にセミコロンを追加したり、ステートメントが本来あるべき場所で終わっていないとみなしたりすることで、望まない結果になってしまう可能性があります。代入を使用し、即時に呼び出された関数式の使用を避けることで、予期せぬエラーのほとんどを防ぐことができます。
 
-### コード例
+### 3.4 コード例
 
 ```javascript
 // する
@@ -326,7 +325,7 @@ const count = 2 // 2() を実行しようとしますが、2 は関数ではあ�
 
 ## ![✔] 3.6 変数、定数、関数、クラスの命名規則を使用する
 
-**TL;DR:** 定数、変数、関数の命名をするときは **_lowerCamelCase_**  を使用し、クラスの命名をするときは**_UpperCamelCase_** (頭文字も大文字) を使用してください。これは、プレーンな変数/関数とインスタンス化を必要とするクラスを簡単に区別するのに役立ちます。記述的な名前を使用しますが、短くしてください。
+**TL;DR:** 定数、変数、関数の命名をするときは **_lowerCamelCase_** を使用し、クラスの命名をするときは**_UpperCamelCase_** (頭文字も大文字) を使用してください。これは、プレーンな変数/関数とインスタンス化を必要とするクラスを簡単に区別するのに役立ちます。記述的な名前を使用しますが、短くしてください。
 
 **さもないと:** JavaScript は、最初にインスタンスを作成せずにコンストラクタ（「クラス」）を直接呼び出すことができる世界で唯一の言語です。その結果、クラスと関数構造体は UpperCamelCase から始まることで区別されます。
 
@@ -338,7 +337,7 @@ class SomeClassExample {}
 
 // const 名には const キーワードと lowerCamelCase を使用します
 const config = {
-  key: "value"
+  key: "value",
 };
 
 // 変数や関数名には lowerCamelCase を使用します
@@ -348,9 +347,9 @@ function doSomething() {}
 
 <br/><br/>
 
-## ![✔] 3.7 let よりも const を優先してください。var はいりません。
+## ![✔] 3.7 let よりも const を優先してください。var はいりません
 
-**TL;DR:** `const` を使うということは、一度代入された変数は再代入できないということを意味します。`const` を優先することで、同じ変数を異なる用途に使いたくなることを防ぎ、コードをより明確にすることができます。変数を再割り当てする必要がある場合、例えば for ループの中などでは、`let` を使って宣言します。もう一つの重要な点は、`let` を使って宣言された変数は、それが定義されたブロックスコープ内でのみ利用可能であるということです。`var` はブロックスコープではなく関数スコープであり、[ES6では使うべきではない](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) ので、`const` と `let` がある以上必要ありません。
+**TL;DR:** `const` を使うということは、一度代入された変数は再代入できないということを意味します。`const` を優先することで、同じ変数を異なる用途に使いたくなることを防ぎ、コードをより明確にすることができます。変数を再割り当てする必要がある場合、例えば for ループの中などでは、`let` を使って宣言します。もう一つの重要な点は、`let` を使って宣言された変数は、それが定義されたブロックスコープ内でのみ利用可能であるということです。`var` はブロックスコープではなく関数スコープであり、[ES6 では使うべきではない](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) ので、`const` と `let` がある以上必要ありません。
 
 **さもないと:** 頻繁に変化する変数に従うと、デバッグが非常に面倒になります。
 
@@ -388,9 +387,9 @@ module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolve
 
 ## ![✔] 3.10 `===` 演算子を使用する
 
-**TL;DR:** 弱い抽象的な等号演算子 `==` よりも厳密な等号演算子 `===` を優先してください。`==` は2つの変数を共通の型に変換した後に比較します。`===` には型変換はなく、両方の変数が同じ型で等しくなければいけません。
+**TL;DR:** 弱い抽象的な等号演算子 `==` よりも厳密な等号演算子 `===` を優先してください。`==` は 2 つの変数を共通の型に変換した後に比較します。`===` には型変換はなく、両方の変数が同じ型で等しくなければいけません。
 
-**さもないと:**  `==` 演算子で比較すると、同じでない値でも真を返すかもしれません。
+**さもないと:** `==` 演算子で比較すると、同じでない値でも真を返すかもしれません。
 
 ### 3.10 Code example
 
@@ -451,7 +450,7 @@ null == undefined; // true
 
 **さもないと:** "Add product" という名付けられたテストが通らず、デプロイが失敗しました。これは、実際に何がうまく動作しなかったのかを示しているでしょうか？
 
-🔗 [**さらに読む: 各テスト名に 3 つの要素を含む**](/sections/testingandquality/3-parts-in-name.japanese.md)
+🔗 [**さらに読む: 各テスト名に 3 つの要素を含む**](./sections/testingandquality/3-parts-in-name.japanese.md)
 
 <br/><br/>
 
@@ -461,7 +460,7 @@ null == undefined; // true
 
 **さもないと:** メインコードを理解するのに長時間費やすだけでなく、今までシンプルな部分であったはずのもの（テスト）が、脳のリソースを奪います。
 
-🔗 [**さらに読む: AAA パターンを用いてテストを構成する**](/sections/testingandquality/aaa.japanese.md)
+🔗 [**さらに読む: AAA パターンを用いてテストを構成する**](./sections/testingandquality/aaa.japanese.md)
 
 <br/><br/>
 
@@ -479,7 +478,7 @@ null == undefined; // true
 
 **さもないと:** テストが失敗したことによってデプロイが中止されるというシナリオを考えてみましょう。チームは貴重な時間を調査に費やし、結果として悲しい結論にたどり着きます: システムは機能していますが、テスト同士が干渉しあって、ビルドを壊しているのです。
 
-🔗 [**さらに読む: グローバルなテストフィクスチャとシードを避け、テストごとにデータを追加する**](/sections/testingandquality/avoid-global-test-fixture.japanese.md)
+🔗 [**さらに読む: グローバルなテストフィクスチャとシードを避け、テストごとにデータを追加する**](./sections/testingandquality/avoid-global-test-fixture.japanese.md)
 
 <br/><br/>
 
@@ -529,7 +528,7 @@ null == undefined; // true
 
 **さもないと:** コードの品質が低いと、ピカピカの新しいライブラリや最新の機能では修正できない類のバグやパフォーマンスが常に問題となります。
 
-🔗 [**さらに読む: リファクタリング！**](/sections/testingandquality/refactoring.japanese.md)
+🔗 [**さらに読む: リファクタリング！**](./sections/testingandquality/refactoring.japanese.md)
 
 <br/><br/>
 
@@ -539,7 +538,7 @@ null == undefined; // true
 
 **さもないと:** ニッチなベンダーを選択すると、高度なカスタマイズが必要になった際に困るかもしれません。一方で、Jenkins を選択するとインフラのセットアップに貴重な時間を費やすことになる可能性があります。
 
-🔗 [**さらに読む: CI プラットフォームを選択する**](/sections/testingandquality/citools.japanese.md)
+🔗 [**さらに読む: CI プラットフォームを選択する**](./sections/testingandquality/citools.japanese.md)
 
 ## ![✔] 4.13 ミドルウェアを分離してテストする
 
@@ -547,7 +546,7 @@ null == undefined; // true
 
 **さもないと:** Express ミドルウェアにおけるバグ === ほぼ全てのリクエストにおけるバグ
 
-🔗 [**さらに読む: ミドルウェアを分離してテストする**](/sections/testingandquality/test-middlewares.japanese.md)
+🔗 [**さらに読む: ミドルウェアを分離してテストする**](./sections/testingandquality/test-middlewares.japanese.md)
 
 <br/><br/><br/>
 
@@ -561,17 +560,17 @@ null == undefined; // true
 
 **さもないと:** 失敗 === 失望したお客さん。シンプルです。
 
-🔗 [**さらに読む: モニタリング!**](/sections/production/monitoring.japanese.md)
+🔗 [**さらに読む: モニタリング!**](./sections/production/monitoring.japanese.md)
 
 <br/><br/>
 
 ## ![✔] 5.2. スマートロギングで透明性を高める
 
-**TL;DR:** ログは、デバッグ ステートメント用のゴミ倉庫にも、アプリのストーリーを伝える美しいダッシュボードのイネーブラーにもなり得ます。1日目からロギングプラットフォームを計画しましょう：ログをどのように収集、保存、分析するかで、必要な情報（エラー率、サービスやサーバーを介したトランザクション全体の追跡など）を実際に抽出できるようにします。
+**TL;DR:** ログは、デバッグ ステートメント用のゴミ倉庫にも、アプリのストーリーを伝える美しいダッシュボードのイネーブラーにもなり得ます。1 日目からロギングプラットフォームを計画しましょう：ログをどのように収集、保存、分析するかで、必要な情報（エラー率、サービスやサーバーを介したトランザクション全体の追跡など）を実際に抽出できるようにします。
 
 **さもないと:** 推論するのが難しいブラックボックスになってしまい、追加情報を追加するためにすべてのロギングステートメントを書き直します。
 
-🔗 [**さらに読む: スマートロギングで透明性を高める**](/sections/production/smartlogging.japanese.md)
+🔗 [**さらに読む: スマートロギングで透明性を高める**](./sections/production/smartlogging.japanese.md)
 
 <br/><br/>
 
@@ -581,7 +580,7 @@ null == undefined; // true
 
 **さもないと:** 貧弱なシングルスレッドは、アプリケーションコアを処理する代わりにインフラタスクを行うことに忙しくなり、パフォーマンスはそれに応じて低下します。
 
-🔗 [**さらに読む: 可能な限りのこと全て（ gzip、SSL など）をリバースプロキシに委譲する**](/sections/production/delegatetoproxy.japanese.md)
+🔗 [**さらに読む: 可能な限りのこと全て（ gzip、SSL など）をリバースプロキシに委譲する**](./sections/production/delegatetoproxy.japanese.md)
 
 <br/><br/>
 
@@ -591,7 +590,7 @@ null == undefined; // true
 
 **さもないと:** QA はコードを徹底的にテストし、本番環境では異なる挙動をするバージョンを承認します。さらに悪いことに、同じクラスタ内の異なるサーバが異なるコードを実行する可能性があります。
 
-🔗 [**さらに読む: 依存関係をロックする**](/sections/production/lockdependencies.japanese.md)
+🔗 [**さらに読む: 依存関係をロックする**](./sections/production/lockdependencies.japanese.md)
 
 <br/><br/>
 
@@ -601,17 +600,17 @@ null == undefined; // true
 
 **さもないと:** 明確な戦略を持たずに何十ものインスタンスを実行し、あまりにも多くのツール（クラスタ管理、docker、PM2）を一緒に使いすぎると、DevOps のカオスにつながる可能性があります。
 
-🔗 [**さらに読む: 適切なツールを使用してプロセスの稼働時間を守る**](/sections/production/guardprocess.japanese.md)
+🔗 [**さらに読む: 適切なツールを使用してプロセスの稼働時間を守る**](./sections/production/guardprocess.japanese.md)
 
 <br/><br/>
 
 ## ![✔] 5.6. すべての CPU コアを利用する
 
-**TL;DR:** 基本的な形として、Node アプリは他のすべてがアイドル状態のままで、単一のCPUコア上で動作します。 Node プロセスを複製し、すべての CPU を利用するのはあなたの義務です。 – 中小規模のアプリでは、Node クラスタや PM2 を使用することができます。大規模なアプリケーションでは、Docker クラスタ( K8S や ECS など)や Linux の init システム( systemd など)をベースにしたデプロイスクリプトを使用してプロセスを複製することを検討してください。
+**TL;DR:** 基本的な形として、Node アプリは他のすべてがアイドル状態のままで、単一の CPU コア上で動作します。 Node プロセスを複製し、すべての CPU を利用するのはあなたの義務です。 – 中小規模のアプリでは、Node クラスタや PM2 を使用することができます。大規模なアプリケーションでは、Docker クラスタ( K8S や ECS など)や Linux の init システム( systemd など)をベースにしたデプロイスクリプトを使用してプロセスを複製することを検討してください。
 
-**さもないと:** あなたのアプリは、利用可能なリソースの25％、もしくはそれ以下しか使用していない可能性が高いです(!)。一般的なサーバは4つ以上の CPU コアを持っていますが、 Node.js のナイーブなデプロイでは1つしか利用していないことに注意してください（ AWS beanstalk のような PaaS サービスを利用している場合でも!）。
+**さもないと:** あなたのアプリは、利用可能なリソースの 25％、もしくはそれ以下しか使用していない可能性が高いです(!)。一般的なサーバは 4 つ以上の CPU コアを持っていますが、 Node.js のナイーブなデプロイでは 1 つしか利用していないことに注意してください（ AWS beanstalk のような PaaS サービスを利用している場合でも!）。
 
-🔗 [**さらに読む: すべての CPU コアを利用する**](/sections/production/utilizecpu.japanese.md)
+🔗 [**さらに読む: すべての CPU コアを利用する**](./sections/production/utilizecpu.japanese.md)
 
 <br/><br/>
 
@@ -621,7 +620,7 @@ null == undefined; // true
 
 **さもないと:** 多くの「診断デプロイ」を実行していることがわかります。– 診断目的のための情報を抽出するためだけにコードを本番環境に出荷するなど
 
-🔗 [**さらに読む: 「メンテナンスエンドポイント」を作成する**](/sections/production/createmaintenanceendpoint.japanese.md)
+🔗 [**さらに読む: 「メンテナンスエンドポイント」を作成する**](./sections/production/createmaintenanceendpoint.japanese.md)
 
 <br/><br/>
 
@@ -631,17 +630,17 @@ null == undefined; // true
 
 **さもないと:** API のパフォーマンスやダウンタイムの測定に多大な労力を費やすことになるかもしれません。実世界のシナリオで最も遅いコード部分はどれか、それが UX にどのように影響するのか、おそらくあなたは意識することはないでしょう。
 
-🔗 [**さらに読む: APM 製品を使用してエラーやダウンタイムを発見する**](/sections/production/apmproducts.japanese.md)
+🔗 [**さらに読む: APM 製品を使用してエラーやダウンタイムを発見する**](./sections/production/apmproducts.japanese.md)
 
 <br/><br/>
 
 ## ![✔] 5.9. コードを本番に即したものにする
 
-**TL;DR:** ゴールを意識してコードを作成し、1日目から制作計画を立てます。ちょっと漠然としているように聞こえるので、生産保守と密接に関係する開発のヒントをいくつかまとめてみました(下の Gist をクリックしてください)。
+**TL;DR:** ゴールを意識してコードを作成し、1 日目から制作計画を立てます。ちょっと漠然としているように聞こえるので、生産保守と密接に関係する開発のヒントをいくつかまとめてみました(下の Gist をクリックしてください)。
 
 **さもないと:** 世界チャンピオンの IT/DevOps の男でも、下手に書かれたシステムを救うことはできません。
 
-🔗 [**さらに読む: コードを本番に即したものにする**](/sections/production/productioncode.japanese.md)
+🔗 [**さらに読む: コードを本番に即したものにする**](./sections/production/productioncode.japanese.md)
 
 <br/><br/>
 
@@ -649,9 +648,9 @@ null == undefined; // true
 
 **TL;DR:** Node.js はメモリとの関係で物議を醸しています: v8 エンジンはメモリ使用量にソフトな制限(1.4 GB )があり、Node のコードにはメモリリークの経路が知られています。– そのため、Node のプロセスメモリを監視することは必須です。小さなアプリでは、シェルコマンドを使って定期的にメモリを測定することができますが、中規模以上のアプリでは、メモリ監視を堅牢な監視システムに組み込むことを検討してください。
 
-**さもないと:** あなたのプロセスメモリは、[Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak) で起こったように、1日に10MBもリークするかもしれません。
+**さもないと:** あなたのプロセスメモリは、[Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak) で起こったように、1 日に 10MB もリークするかもしれません。
 
-🔗 [**さらに読む: メモリ使用量を測定してガードする**](/sections/production/measurememory.japanese.md)
+🔗 [**さらに読む: メモリ使用量を測定してガードする**](./sections/production/measurememory.japanese.md)
 
 <br/><br/>
 
@@ -661,7 +660,7 @@ null == undefined; // true
 
 **さもないと:** あなたの Node のシングルスレッドは、何百もの html/images/angular/react ファイルのストリーミングに忙殺され、本来の目的のために生まれたタスクにすべてのリソースを確保することができません。– 動的コンテンツの提供
 
-🔗 [**さらに読む: フロントエンドの資産を Node から取り出す**](/sections/production/frontendout.japanese.md)
+🔗 [**さらに読む: フロントエンドの資産を Node から取り出す**](./sections/production/frontendout.japanese.md)
 
 <br/><br/>
 
@@ -671,17 +670,17 @@ null == undefined; // true
 
 **Otherwise:** 特定のサーバーで障害が発生すると、障害のあるマシンを停止する代わりに、アプリケーションのダウンタイムが発生します。さらに、特定のサーバーに依存しているため、スケーリングアウトの弾力性はより困難になります。
 
-🔗 [**さらに読む: ステートレスのままで、ほぼ毎日サーバーを停止させる**](/sections/production/bestateless.japanese.md)
+🔗 [**さらに読む: ステートレスのままで、ほぼ毎日サーバーを停止させる**](./sections/production/bestateless.japanese.md)
 
 <br/><br/>
 
 ## ![✔] 5.13. 脆弱性を自動的に検出するツールを使用する
 
-**TL;DR:** Express のような最も評判の良い依存関係にも、(時折)システムを危険にさらす既知の脆弱性があります。脆弱性を常にチェックして警告するコミュニティや商用ツール（ローカルまたはGitHub）を使えば簡単に手なずけることができ、いくつかはすぐにパッチを当てることもできます。
+**TL;DR:** Express のような最も評判の良い依存関係にも、(時折)システムを危険にさらす既知の脆弱性があります。脆弱性を常にチェックして警告するコミュニティや商用ツール（ローカルまたは GitHub）を使えば簡単に手なずけることができ、いくつかはすぐにパッチを当てることもできます。
 
 **さもないと:** 専用のツールを使用せずに脆弱性からコードをクリーンに保つには、新しい脅威についてのオンライン出版物を常にフォローする必要があります。とても面倒です。
 
-🔗 [**さらに読む: 脆弱性を自動的に検出するツールを使用する**](/sections/production/detectvulnerabilities.japanese.md)
+🔗 [**さらに読む: 脆弱性を自動的に検出するツールを使用する**](./sections/production/detectvulnerabilities.japanese.md)
 
 <br/><br/>
 
@@ -691,7 +690,7 @@ null == undefined; // true
 
 **さもないと:** – 前に何が起こったのか – というコンテキストなしでプロダクションのエラーログを見ると、問題の原因を究明するのが非常に難しくなり、時間がかかります。
 
-🔗 [**さらに読む: 各ログ文に 'TransactionId' を割り当てる**](/sections/production/assigntransactionid.japanese.md)
+🔗 [**さらに読む: 各ログ文に 'TransactionId' を割り当てる**](./sections/production/assigntransactionid.japanese.md)
 
 <br/><br/>
 
@@ -699,9 +698,9 @@ null == undefined; // true
 
 **TL;DR:** 環境変数 NODE_ENV を「production」または「development」に設定して、本番環境での最適化を有効にするかどうかのフラグを立てます。– 多くの npm パッケージが現在の環境を判断し、本番用にコードを最適化します。
 
-**さもないと:** この単純なプロパティを省略すると、パフォーマンスが大きく低下する可能性があります。例えば、サーバサイドのレンダリングに Express を使用する場合、`NODE_ENV` を省略すると3倍も遅くなります。
+**さもないと:** この単純なプロパティを省略すると、パフォーマンスが大きく低下する可能性があります。例えば、サーバサイドのレンダリングに Express を使用する場合、`NODE_ENV` を省略すると 3 倍も遅くなります。
 
-🔗 [**さらに読む: NODE_ENV=production を設定する**](/sections/production/setnodeenv.japanese.md)
+🔗 [**さらに読む: NODE_ENV=production を設定する**](./sections/production/setnodeenv.japanese.md)
 
 <br/><br/>
 
@@ -719,7 +718,7 @@ null == undefined; // true
 
 **さもないと:** 新たに発見されたバグや脆弱性は、本番環境で運用中のアプリケーションを悪用するために使用される可能性があり、アプリケーションは様々なモジュールでサポートされておらず、保守が困難になる可能性があります。
 
-🔗 [**さらに読む: Node.js の LTS リリースを使用する**](/sections/production/LTSrelease.japanese.md)
+🔗 [**さらに読む: Node.js の LTS リリースを使用する**](./sections/production/LTSrelease.japanese.md)
 
 <br/><br/>
 
@@ -729,7 +728,7 @@ null == undefined; // true
 
 **さもないと:** アプリケーションがログのルーティングをハンドリングする === スケールアップが難しい、ログの損失、懸念事項の分離が悪い
 
-🔗 [**さらに読む: ログルーティング**](/sections/production/logrouting.japanese.md)
+🔗 [**さらに読む: ログルーティング**](./sections/production/logrouting.japanese.md)
 
 <br/><br/>
 
@@ -739,7 +738,7 @@ null == undefined; // true
 
 **さもないと:** QA はコードを徹底的にテストし、本番環境では異なる動作をするバージョンを承認します。さらに悪いことに、同じプロダクションクラスタ内の異なるサーバが異なるコードを実行する可能性があります。
 
-🔗 [**さらに読む: npm ci を使う**](/sections/production/installpackageswithnpmci.japanese.md)
+🔗 [**さらに読む: npm ci を使う**](./sections/production/installpackageswithnpmci.japanese.md)
 
 <br/><br/><br/>
 
@@ -759,7 +758,7 @@ null == undefined; // true
 
 **さもなければ:** 開発時には単純なセキュリティ上の弱点だったかもしれないものが、本番環境では大きな問題となります。同様に、プロジェクトが一貫したコードセキュリティプラクティスに従わない場合もあり、脆弱性が入り込んだり、リモートリポジトリに機密情報がコミットされたりする可能性があります。
 
-🔗 [**さらに読む: Lint ルール**](/sections/security/lintrules.japanese.md)
+🔗 [**さらに読む: Lint ルール**](./sections/security/lintrules.japanese.md)
 
 <br/><br/>
 
@@ -771,7 +770,7 @@ null == undefined; // true
 
 **さもないと:** アプリケーションは攻撃を受ける可能性があり、結果としてユーザーに不十分なサービスを提供したり、サービス停止をしなければならない状況に陥ります。
 
-🔗 [**さらに読む: レートリミットの実装**](/sections/security/limitrequests.japanese.md)
+🔗 [**さらに読む: レートリミットの実装**](./sections/security/limitrequests.japanese.md)
 
 <br/><br/>
 
@@ -783,19 +782,19 @@ null == undefined; // true
 
 **さもないと:** ソースコントロールは、たとえプライベートリポジトリであっても誤ってパブリックになる可能性があり、その時点で全てのシークレットが公開されてしまいます。外部サービスに与えられたソースコントロールへのアクセス権限は、関連するシステム（データベース、API、その他サービスなど）へのアクセス権限をうっかり与えてしまうことがあります。
 
-🔗 [**さらに読む: シークレット管理**](/sections/security/secretmanagement.japanese.md)
+🔗 [**さらに読む: シークレット管理**](./sections/security/secretmanagement.japanese.md)
 
 <br/><br/>
 
-## ![✔] 6.4. O/Rマッパ/ODM ライブラリを使用してクエリインジェクション脆弱性を防ぐ
+## ![✔] 6.4. O/R マッパ/ODM ライブラリを使用してクエリインジェクション脆弱性を防ぐ
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
-**TL;DR:** SQL/NoSQL インジェクションやその他の悪意ある攻撃を防ぐために、データをエスケープしたり、名前付きやインデックス付きのパラメータ化されたクエリをサポートしていたり、ユーザー入力が期待する型となっているか検証してくれる O/Rマッパ/ODM やデータベースライブラリを活用してください。JavaScript のテンプレート文字列や文字列の結合を使用して値をクエリに挿入してはいけません。これはアプリケーションに広範囲の脆弱性を与えます。全ての評判の良い Node.js データアクセスライブラリ（[Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose) など）はインジェクション攻撃に対してあらかじめ対策されています。
+**TL;DR:** SQL/NoSQL インジェクションやその他の悪意ある攻撃を防ぐために、データをエスケープしたり、名前付きやインデックス付きのパラメータ化されたクエリをサポートしていたり、ユーザー入力が期待する型となっているか検証してくれる O/R マッパ/ODM やデータベースライブラリを活用してください。JavaScript のテンプレート文字列や文字列の結合を使用して値をクエリに挿入してはいけません。これはアプリケーションに広範囲の脆弱性を与えます。全ての評判の良い Node.js データアクセスライブラリ（[Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose) など）はインジェクション攻撃に対してあらかじめ対策されています。
 
-**さもないと:** 未検証またはサニタイズされていないユーザー入力は、MongoDB のような NoSQL データベースで作業している際にオペレーターインジェクションを招きますし、適切なサニタイズシステムまたは O/Rマッパ を利用しないことは容易に SQL インジェクション攻撃を招き、多大な脆弱性を生みます。
+**さもないと:** 未検証またはサニタイズされていないユーザー入力は、MongoDB のような NoSQL データベースで作業している際にオペレーターインジェクションを招きますし、適切なサニタイズシステムまたは O/R マッパ を利用しないことは容易に SQL インジェクション攻撃を招き、多大な脆弱性を生みます。
 
-🔗 [**さらに読む: ORM/ODM ライブラリを使用してクエリインジェクション脆弱性を防ぐ**](/sections/security/ormodmusage.japanese.md)
+🔗 [**さらに読む: ORM/ODM ライブラリを使用してクエリインジェクション脆弱性を防ぐ**](./sections/security/ormodmusage.japanese.md)
 
 <br/><br/>
 
@@ -803,7 +802,7 @@ null == undefined; // true
 
 **TL;DR:** Node.js とは直接関係のないセキュリティに関するアドバイス集です ー Node における実装は他の言語とあまり違いはありません。さらに読むをクリックして、読み進めてください。
 
-🔗 [**さらに読む: 一般的なセキュリティベストプラクティス**](/sections/security/commonsecuritybestpractices.japanese.md)
+🔗 [**さらに読む: 一般的なセキュリティベストプラクティス**](./sections/security/commonsecuritybestpractices.japanese.md)
 
 <br/><br/>
 
@@ -815,7 +814,7 @@ null == undefined; // true
 
 **さもないと:** 攻撃者がアプリケーションユーザーに対して直接攻撃を行い、甚大なセキュリティ脆弱性につながる可能性があります。
 
-🔗 [**さらに読む: アプリケーションでセキュアなヘッダーを利用する**](/sections/security/secureheaders.japanese.md)
+🔗 [**さらに読む: アプリケーションでセキュアなヘッダーを利用する**](./sections/security/secureheaders.japanese.md)
 
 <br/><br/>
 
@@ -827,7 +826,7 @@ null == undefined; // true
 
 **さもないと:** 攻撃者がウェブフレームワークを特定して、全ての既知の脆弱性を突いてくる可能性があります。
 
-🔗 [**さらに読む: 依存性のセキュリティ**](/sections/security/dependencysecurity.japanese.md)
+🔗 [**さらに読む: 依存性のセキュリティ**](./sections/security/dependencysecurity.japanese.md)
 
 <br/><br/>
 
@@ -839,7 +838,7 @@ null == undefined; // true
 
 **さもないと:** セキュアな関数を使わずに永続化されたパスワードやシークレット情報は、ブルートフォース攻撃や辞書攻撃に弱く、結果として情報漏えいに繋がります。
 
-🔗 [**さらに読む: Bcrypt を使用する**](/sections/security/bcryptpasswords.japanese.md)
+🔗 [**さらに読む: Bcrypt を使用する**](./sections/security/bcryptpasswords.japanese.md)
 
 <br/><br/>
 
@@ -851,7 +850,7 @@ null == undefined; // true
 
 **さもないと:** 攻撃者は悪意のある JavaScript のコードを DB に保存し、それをそのまま脆弱なクライアントに送信する可能性があります。
 
-🔗 [**さらに読む: 出力をエスケープする**](/sections/security/escape-output.japanese.md)
+🔗 [**さらに読む: 出力をエスケープする**](./sections/security/escape-output.japanese.md)
 
 <br/><br/>
 
@@ -863,7 +862,7 @@ null == undefined; // true
 
 **さもないと:** あなたの寛大で寛容なアプローチは攻撃対象を大幅に拡大させ、攻撃者がアプリケーションをクラッシュさせるための組み合わせを見つけるまで、多くの入力を試してみるように促すことに繋がります。
 
-🔗 [**さらに読む: 受信した JSON スキーマを検証する**](/sections/security/validation.japanese.md)
+🔗 [**さらに読む: 受信した JSON スキーマを検証する**](./sections/security/validation.japanese.md)
 
 <br/><br/>
 
@@ -875,7 +874,7 @@ null == undefined; // true
 
 **さもないと:** 期限切れや、誤って配置されたトークンは、アプリケーションにアクセスしたり、トークンの所有者になりすますために、サードパーティによって悪意を持って利用される可能性があります。
 
-🔗 [**さらに読む: JSON Web Token のブラックリスト**](/sections/security/expirejwt.japanese.md)
+🔗 [**さらに読む: JSON Web Token のブラックリスト**](./sections/security/expirejwt.japanese.md)
 
 <br/><br/>
 
@@ -890,7 +889,7 @@ null == undefined; // true
 
 **さもないと:** 攻撃者が、アプリケーションの特権アカウントへのアクセス権を得るために、無制限の自動化されたパスワード試行を行うことができます。
 
-🔗 [**さらに読む: ログインレートリミット**](/sections/security/login-rate-limit.japanese.md)
+🔗 [**さらに読む: ログインレートリミット**](./sections/security/login-rate-limit.japanese.md)
 
 <br/><br/>
 
@@ -902,7 +901,7 @@ null == undefined; // true
 
 **さもないと:** サーバ上でスクリプトを実行することに成功した攻撃者が、ローカルマシンにおける無制限の権限を獲得してしまいます（例：iptable を変更して、攻撃者のサーバに再ルーティングする）。
 
-🔗 [**さらに読む: 非 root ユーザとして Node.js を実行する**](/sections/security/non-root-user.japanese.md)
+🔗 [**さらに読む: 非 root ユーザとして Node.js を実行する**](./sections/security/non-root-user.japanese.md)
 
 <br/><br/>
 
@@ -914,7 +913,7 @@ null == undefined; // true
 
 **さもないと:** アプリケーションは大きなリクエストを処理しなければなくなり、他の重要な仕事を完遂させることができず、パフォーマンスへの影響や DDoS 攻撃に対する脆弱性につながります。
 
-🔗 [**さらに読む: ペイロードサイズを制限する**](/sections/security/requestpayloadsizelimit.japanese.md)
+🔗 [**さらに読む: ペイロードサイズを制限する**](./sections/security/requestpayloadsizelimit.japanese.md)
 
 <br/><br/>
 
@@ -926,7 +925,7 @@ null == undefined; // true
 
 **さもないと:** 悪意のある JavaScript コードが `eval` やその他のリアルタイムに評価する JavaScript の関数に渡されるテキストへたどり着き、そのページにおける JavaScript の完全な権限を獲得してしまいます。この脆弱性はしばしば XSS 攻撃として顕在化します。
 
-🔗 [**さらに読む: JavaScript の eval 構文を避ける**](/sections/security/avoideval.japanese.md)
+🔗 [**さらに読む: JavaScript の eval 構文を避ける**](./sections/security/avoideval.japanese.md)
 
 <br/><br/>
 
@@ -934,11 +933,11 @@ null == undefined; // true
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** 正規表現（RegEx）は便利ですが、JavaScript アプリケーション全体、特に Node.js プラットフォームに対して真の脅威となります。テキストのユーザー入力をマッチさせることは、処理に大量の CPU サイクルを必要とするかもしれません。RegEx の処理は、10 Wordを検証する単一のリクエストが 6 秒間イベントループ全体をブロックし、CPU に 🔥 を点けるほどには非効率であるかもしれません。そのため、独自の RegExp パターンを記述する代わりに [validator.js](https://github.com/chriso/validator.js) のようなサードパーティ検証パッケージを利用するか、脆弱な正規表現パターンを検出するために [safe-regex](https://github.com/substack/safe-regex) を利用するようにしましょう。
+**TL;DR:** 正規表現（RegEx）は便利ですが、JavaScript アプリケーション全体、特に Node.js プラットフォームに対して真の脅威となります。テキストのユーザー入力をマッチさせることは、処理に大量の CPU サイクルを必要とするかもしれません。RegEx の処理は、10 Word を検証する単一のリクエストが 6 秒間イベントループ全体をブロックし、CPU に 🔥 を点けるほどには非効率であるかもしれません。そのため、独自の RegExp パターンを記述する代わりに [validator.js](https://github.com/chriso/validator.js) のようなサードパーティ検証パッケージを利用するか、脆弱な正規表現パターンを検出するために [safe-regex](https://github.com/substack/safe-regex) を利用するようにしましょう。
 
 **さもないと:** 下手な正規表現の記述は、イベントループを完全にブロックしてしまう正規表現 DoS 攻撃の影響を受ける可能性があります。例えば、人気のある `moment` パッケージでは、2017 年 11 月に悪意のある RegEx の使用による脆弱性が発見されています。
 
-🔗 [**さらに読む: 悪質な RegEx を防止する**](/sections/security/regex.japanese.md)
+🔗 [**さらに読む: 悪質な RegEx を防止する**](./sections/security/regex.japanese.md)
 
 <br/><br/>
 
@@ -950,7 +949,7 @@ null == undefined; // true
 
 **さもないと:** 悪意のあるユーザー入力は、既存のシステムファイルに、前にファイルシステムにアップロードされたファイルのような改変されたファイルを要求したり、既存のシステムファイルにアクセスするために利用されるパラメータを操作する可能性があります。
 
-🔗 [**さらに読む: 安全なモジュール読み込み**](/sections/security/safemoduleloading.japanese.md)
+🔗 [**さらに読む: 安全なモジュール読み込み**](./sections/security/safemoduleloading.japanese.md)
 
 <br/><br/>
 
@@ -962,7 +961,7 @@ null == undefined; // true
 
 **さもないと:** プラグインは、無限ループやメモリーオーバーロード、センシティブなプロセスの環境変数へのアクセスなど、あらゆる手段を通じて攻撃可能となります。
 
-🔗 [**さらに読む: サンドボックス内で安全でないコードを実行する**](/sections/security/sandbox.japanese.md)
+🔗 [**さらに読む: サンドボックス内で安全でないコードを実行する**](./sections/security/sandbox.japanese.md)
 
 <br/><br/>
 
@@ -974,7 +973,7 @@ null == undefined; // true
 
 **さもないと:** 子プロセスを愚直に利用することは、サニタイズされていないシステムコマンドに渡される悪意のあるユーザー入力が原因となって、結果としてリモートからのコマンド実行、またはシェルインジェクション攻撃を受けることにつながります。
 
-🔗 [**さらに読む: 子プロセスで処理を行う場合は注意する**](/sections/security/childprocesses.japanese.md)
+🔗 [**さらに読む: 子プロセスで処理を行う場合は注意する**](./sections/security/childprocesses.japanese.md)
 
 <br/><br/>
 
@@ -986,15 +985,15 @@ null == undefined; // true
 
 **さもないと:** 攻撃者によって悪用される可能性のある、サーバファイルのパス、使用中のサードパーティモジュール、アプリケーションのその他内部ワークフローなど、機密性の高いアプリケーションの詳細情報が、スタックトレース内に残された情報から漏洩する可能性があります。
 
-🔗 [**さらに読む: エラーの詳細をクライアントから隠す**](/sections/security/hideerrors.japanese.md)
+🔗 [**さらに読む: エラーの詳細をクライアントから隠す**](./sections/security/hideerrors.japanese.md)
 
 <br/><br/>
 
-## ![✔] 6.21. npm や Yarn に2要素認証（2FA）を設定する
+## ![✔] 6.21. npm や Yarn に 2 要素認証（2FA）を設定する
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** 開発におけるどのステップも、MFA（多要素認証）で保護されるべきです。npm/Yarn は開発者のパスワードに触れることができる攻撃者にとって絶好の機会となります。開発者の認証情報を利用して、プロジェクトやサービスにおいて広くインストールされている攻撃者は悪意のあるコードを注入することができます。もしパブリックに公開されている場合は、ウェブ全体にまで及ぶかもしれません。npm において2要素認証を設定することで、攻撃者がパッケージコードを改ざんする可能性はほぼゼロになります。
+**TL;DR:** 開発におけるどのステップも、MFA（多要素認証）で保護されるべきです。npm/Yarn は開発者のパスワードに触れることができる攻撃者にとって絶好の機会となります。開発者の認証情報を利用して、プロジェクトやサービスにおいて広くインストールされている攻撃者は悪意のあるコードを注入することができます。もしパブリックに公開されている場合は、ウェブ全体にまで及ぶかもしれません。npm において 2 要素認証を設定することで、攻撃者がパッケージコードを改ざんする可能性はほぼゼロになります。
 
 **さもないと:** [Have you heard about the eslint developer whose password was hijacked?（パスワードがハイジャックされた eslint 開発者の話を聞いたことがありますか？）](https://medium.com/@oprearocks/eslint-backdoor-what-it-is-and-how-to-fix-the-issue-221f58f1a8c8)
 
@@ -1006,9 +1005,9 @@ null == undefined; // true
 
 **TL;DR:** それぞれの Web フレームワークや技術には、既知の弱点があります - 攻撃者に対してどの Web フレームワークを利用しているかを伝えることは、攻撃者にとって大きな助けになることです。セッションミドルウェアのデフォルトの設定を利用することは、`X-Powered-By` ヘッダー同様に、アプリケーションをモジュールやフレームワーク固有のハイジャック攻撃にさらす可能性があります。技術スタック（例：Node.js、express など）を識別したり、明らかにするものは極力隠すようにしてください。
 
-**さもないと:** Cookieは安全でないコネクションを通じて送信される恐れがあり、攻撃者はセッション識別子を利用して背後にある Web アプリケーションフレームワークや、モジュール固有の脆弱性を特定する可能性があります。
+**さもないと:** Cookie は安全でないコネクションを通じて送信される恐れがあり、攻撃者はセッション識別子を利用して背後にある Web アプリケーションフレームワークや、モジュール固有の脆弱性を特定する可能性があります。
 
-🔗 [**さらに読む: クッキー（Cookie）とセッションの安全性**](/sections/security/sessions.japanese.md)
+🔗 [**さらに読む: クッキー（Cookie）とセッションの安全性**](./sections/security/sessions.japanese.md)
 
 <br/><br/>
 
@@ -1030,7 +1029,7 @@ null == undefined; // true
 
 **さもないと:** もし攻撃者が、外部のユーザーから与えられた入力を検証していないことを発見した場合、特別に作成されたリンクをフォーラムやソーシャルメディア、その他のパブリックな場所に投稿してユーザーにクリックさせることで、この脆弱性を悪用する恐れがあります。
 
-🔗 [**さらに読む: 安全でないリダイレクトを防ぐ**](/sections/security/saferedirects.japanese.md)
+🔗 [**さらに読む: 安全でないリダイレクトを防ぐ**](./sections/security/saferedirects.japanese.md)
 
 <br/><br/>
 
@@ -1042,7 +1041,7 @@ null == undefined; // true
 
 **さもないと:** プロジェクトの API キーやパスワード、その他のシークレットが公開され、その情報を目にしたすべての人に悪用されることで、結果として金銭的な損失、なりすまし、その他リスクに繋がってしまいます。
 
-🔗 [**さらに読む: シークレットの公開を避ける**](/sections/security/avoid_publishing_secrets.japanese.md)
+🔗 [**さらに読む: シークレットの公開を避ける**](./sections/security/avoid_publishing_secrets.japanese.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ トップに戻る</a></p>
@@ -1055,11 +1054,11 @@ null == undefined; // true
 
 ## ![✔] 7.1. イベントループをブロックしない
 
-**TL;DR:** CPU集約的なタスクは、主にシングルスレッドのイベントループをブロックし、専用のスレッド、プロセス、またはコンテキストに基づいて別の技術にそれらをオフロードするため、避けてください。
+**TL;DR:** CPU 集約的なタスクは、主にシングルスレッドのイベントループをブロックし、専用のスレッド、プロセス、またはコンテキストに基づいて別の技術にそれらをオフロードするため、避けてください。
 
-**さもないと:** イベントループがブロックされると、Node.js は他のリクエストを処理することができなくなり、同時接続ユーザーの遅延を引き起こします。**3000人のユーザーがレスポンスを待っていて、コンテンツを提供する準備ができていたとしても、1つのリクエストがサーバからの結果のディスパッチをブロックしていしまいます***
+**さもないと:** イベントループがブロックされると、Node.js は他のリクエストを処理することができなくなり、同時接続ユーザーの遅延を引き起こします。**3000 人のユーザーがレスポンスを待っていて、コンテンツを提供する準備ができていたとしても、1 つのリクエストがサーバからの結果のディスパッチをブロックしていしまいます**
 
-🔗 [**さらに読む: イベントループをブロックしない**](/sections/performance/block-loop.japanese.md)
+🔗 [**さらに読む: イベントループをブロックしない**](./sections/performance/block-loop.japanese.md)
 
 <br /><br /><br />
 
@@ -1070,7 +1069,7 @@ null == undefined; // true
 
 **さもないと:** **すでに**利用可能なものを単純に使用できたり、いくつかのファイルと引き換えに、数行で処理することができるような、パフォーマンスの低いプロジェクトを維持しなければならないでしょう。
 
-🔗 [**さらに読む: ユーザーランドなユーティリティよりもネイティブを使用する**](/sections/performance/nativeoverutil.japanese.md)
+🔗 [**さらに読む: ユーザーランドなユーティリティよりもネイティブを使用する**](./sections/performance/nativeoverutil.japanese.md)
 
 <br/><br/><br/>
 
@@ -1096,6 +1095,7 @@ FROM node:14.4.0 AS build
 COPY . .
 RUN npm ci && npm run build
 
+
 FROM node:slim-14.4.0
 
 USER node
@@ -1107,17 +1107,17 @@ RUN npm ci --production
 CMD [ "node", "dist/app.js" ]
 ```
 
-🔗 [**さらに読む: マルチステージビルドを使用する**](/sections/docker/multi_stage_builds.japanese.md)
+🔗 [**さらに読む: マルチステージビルドを使用する**](./sections/docker/multi_stage_builds.japanese.md)
 
 <br /><br /><br />
 
-## ![✔] 8.2. 'node' コマンドを使用して、npm start 避けた Bootstrap 
+## ![✔] 8.2. 'node' コマンドを使用して、npm start 避けた Bootstrap
 
 **TL;DR:** アプリの起動には `CMD ['node','server.js']` を使用し、OS のシグナルをコードに渡さない npm スクリプトの使用は避けてください。これにより、子プロセス、シグナル処理、グレースフルシャットダウン、ゾンビプロセスの問題を防ぐことができます。
 
 **さもないと:** シグナルが渡されない場合、あなたのコードはシャットダウンについて通知されることはありません。これがなければ、適切に閉じる機会を失い、現在のリクエストやデータを失う可能性があります。
 
-[**さらに読む: node コマンドを使用して 、npm の起動を避けた Bootstrap コンテナ**](/sections/docker/bootstrap-using-node.japanese.md)
+[**さらに読む: node コマンドを使用して 、npm の起動を避けた Bootstrap コンテナ**](./sections/docker/bootstrap-using-node.japanese.md)
 
 <br /><br /><br />
 
@@ -1127,7 +1127,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと:** リソース不足でクラッシュし続けるコンテナは、プロセスマネージャによって無期限に再起動されてしまいます。Kubernetes がそれを認識していれば、別の余裕のあるインスタンスに移すことができます。
 
-🔗 [**さらに読む: プロセスを再起動と複製をDocker オーケストレーターに任せる**](/sections/docker/restart-and-replicate-processes.japanese.md)
+🔗 [**さらに読む: プロセスを再起動と複製を Docker オーケストレーターに任せる**](./sections/docker/restart-and-replicate-processes.japanese.md)
 
 <br/><br /><br />
 
@@ -1137,7 +1137,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと**: `.env`, `.aws`, `.npmrc` のような共通の個人秘密ファイルは、イメージにアクセスできる人全員に共有されます (例: Docker リポジトリ)。
 
-🔗 [**さらに読む: .dockerignore を使用する**](/sections/docker/docker-ignore.japanese.md)
+🔗 [**さらに読む: .dockerignore を使用する**](./sections/docker/docker-ignore.japanese.md)
 
 <br /><br /><br />
 
@@ -1147,7 +1147,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと:** 悪名高い npm のセキュリティ侵害の多くは開発パッケージ内で発見されました (例: [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes)
 
-🔗 さらに読む: [開発依存性の除去](/sections/docker/install-for-production.japanese.md)
+🔗 さらに読む: [開発依存性の除去](./sections/docker/install-for-production.japanese.md)
 
 <br /><br /><br />
 
@@ -1157,7 +1157,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと:** 即座に kill してしまうことは、何千人もの失望したユーザーに対応しないことを意味します。
 
-🔗 [**さらに読む: グレースフルシャットダウン**](/sections/docker/graceful-shutdown.japanese.md)
+🔗 [**さらに読む: グレースフルシャットダウン**](./sections/docker/graceful-shutdown.japanese.md)
 
 <br /><br /><br />
 
@@ -1167,7 +1167,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと:** docker の定義は、思慮深いスケーリングの決定を行い、他の市民を飢えさせないようにするために必要です。v8 の制限を定義しないと、コンテナリソースを十分に利用できません。 - 明示的な指示がないと、ホストリソースの ~50-60％ を利用するときにクラッシュします。
 
-🔗 [**さらに読む: Docker のみを使用してメモリ制限を設定する**](/sections/docker/memory-limit.japanese.md)
+🔗 [**さらに読む: Docker のみを使用してメモリ制限を設定する**](./sections/docker/memory-limit.japanese.md)
 
 <br /><br /><br />
 
@@ -1177,7 +1177,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと:** Docker のビルドが非常に長くなり、小さな変更をした場合でも多くのリソースを消費することになります。
 
-🔗 [**さらに読む: キャッシュを活用してビルド時間を短縮する**](/sections/docker/use-cache-for-shorter-build-time.japanese.md)
+🔗 [**さらに読む: キャッシュを活用してビルド時間を短縮する**](./sections/docker/use-cache-for-shorter-build-time.japanese.md)
 
 <br /><br /><br />
 
@@ -1189,7 +1189,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと:** 破壊的変更を含むベースイメージの新しいバージョンが本番環境にデプロイされ、意図しないアプリケーションの挙動を引き起こす可能性があります。
 
-🔗 [**さらに読む: イメージタグを理解して「latest」タグを注意して使う**](/sections/docker/image-tags.japanese.md)
+🔗 [**さらに読む: イメージタグを理解して「latest」タグを注意して使う**](./sections/docker/image-tags.japanese.md)
 
 <br /><br /><br />
 
@@ -1199,7 +1199,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと:** イメージのビルド、プッシュ、プルに時間を要し、未知の攻撃の因子が悪意のあるアクターによって使用され、より多くのリソースが消費されます。
 
-🔗 [**さらに読む: 小さなイメージを優先する**](/sections/docker/smaller_base_images.japanese.md)
+🔗 [**さらに読む: 小さなイメージを優先する**](./sections/docker/smaller_base_images.japanese.md)
 
 <br /><br /><br />
 
@@ -1209,7 +1209,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと:** CI と docker レジストリへのアクセス権限を持っている人は誰でも、おまけとして貴重な組織の情報にアクセスできてしまいます。
 
-🔗 [**さらに読む: ビルド時のシークレットをクリーンアウトする**](/sections/docker/avoid-build-time-secrets.japanese.md)
+🔗 [**さらに読む: ビルド時のシークレットをクリーンアウトする**](./sections/docker/avoid-build-time-secrets.japanese.md)
 
 <br /><br /><br />
 
@@ -1219,7 +1219,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと:** コードは脆弱性から完全に脆弱性から解放されているかもしれませんが、アプリケーションで一般的に使用されている OS レベルのバイナリ（例：OpenSSL、TarBall）の脆弱性が原因となって、ハッキングされる可能性が依然としてあります。
 
-🔗 [**さらに読む: プロダクションの前にイメージ全体をスキャンする**](/sections/docker/scan-images.japanese.md)
+🔗 [**さらに読む: プロダクションの前にイメージ全体をスキャンする**](./sections/docker/scan-images.japanese.md)
 
 <br /><br /><br />
 
@@ -1229,7 +1229,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと:** 使用されないファイルが原因で、サイズが 3 割増のイメージがプロダクションにデプロイされることになります。
 
-🔗 [**さらに読む: NODE_MODULE キャッシュをクリーンアップする**](/sections/docker/clean-cache.japanese.md)
+🔗 [**さらに読む: NODE_MODULE キャッシュをクリーンアップする**](./sections/docker/clean-cache.japanese.md)
 
 <br /><br /><br />
 
@@ -1237,10 +1237,9 @@ CMD [ "node", "dist/app.js" ]
 
 **TL;DR:** Node.js とは直接関係の無い、Docker に関するアドバイス集です - Node における実装は他の言語とあまり変わりません。「さらに読む」から読み進めてください。
 
-🔗 [**さらに読む: 一般的な Docker のプラクティス**](/sections/docker/generic-tips.japanese.md)
+🔗 [**さらに読む: 一般的な Docker のプラクティス**](./sections/docker/generic-tips.japanese.md)
 
 <br/><br /><br />
-
 
 ## ![✔] 8.15. Dockerfile を lint する
 
@@ -1248,7 +1247,7 @@ CMD [ "node", "dist/app.js" ]
 
 **さもないと:** Dockerfile の作者が誤って root を本番ユーザーにしてしまい、不明なソースリポジトリからの Docker イメージを使用してしまう、といったことが起こり得ます。これは、シンプルな litner を利用することで回避することができます。
 
-🔗 [**さらに読む: Dockerfile を lint する**](/sections/docker/lint-dockerfile.japanese.md)
+🔗 [**さらに読む: Dockerfile を lint する**](./sections/docker/lint-dockerfile.japanese.md)
 
 <br/><br /><br />
 
@@ -1266,19 +1265,20 @@ CMD [ "node", "dist/app.js" ]
 
 ### 翻訳（完了済み）
 
-- ![BR](/assets/flags/BR.png) [Brazilian Portuguese](./README.brazilian-portuguese.md) - Courtesy of [Marcelo Melo](https://github.com/marcelosdm)
-- ![CN](/assets/flags/CN.png) [Chinese](./README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
-- ![RU](/assets/flags/RU.png) [Russian](./README.russian.md) - Courtesy of [Alex Ivanov](https://github.com/contributorpw)
-- ![PL](/assets/flags/PL.png) [Polish](./README.polish.md) - Courtesy of [Michal Biesiada](https://github.com/mbiesiad)
-- ![JA](/assets/flags/JA.png) [Japanese](./README.japanese.md) - Courtesy of [Yuki Ota](https://github.com/YukiOta), [Yuta Azumi](https://github.com/YA21)
+- ![BR](./assets/flags/BR.png) [Brazilian Portuguese](./README.brazilian-portuguese.md) - Courtesy of [Marcelo Melo](https://github.com/marcelosdm)
+- ![CN](./assets/flags/CN.png) [Chinese](./README.chinese.md) - Courtesy of [Matt Jin](https://github.com/mattjin)
+- ![RU](./assets/flags/RU.png) [Russian](./README.russian.md) - Courtesy of [Alex Ivanov](https://github.com/contributorpw)
+- ![PL](./assets/flags/PL.png) [Polish](./README.polish.md) - Courtesy of [Michal Biesiada](https://github.com/mbiesiad)
+- ![JA](./assets/flags/JA.png) [Japanese](./README.japanese.md) - Courtesy of [Yuki Ota](https://github.com/YukiOta), [Yuta Azumi](https://github.com/YA21)
+- ![EU](./assets/flags/EU.png) [Basque](README.basque.md) - Courtesy of [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta
 
 ### 翻訳（進行中）
 
-- ![FR](/assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/129))
-- ![HE](/assets/flags/HE.png) Hebrew ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/156))
-- ![KR](/assets/flags/KR.png) [Korean](README.korean.md) - Courtesy of [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94))
-- ![ES](/assets/flags/ES.png) [Spanish](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/95))
-- ![TR](/assets/flags/TR.png) Turkish ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/139))
+- ![FR](./assets/flags/FR.png) [French](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/129))
+- ![HE](./assets/flags/HE.png) Hebrew ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/156))
+- ![KR](./assets/flags/KR.png) [Korean](README.korean.md) - Courtesy of [Sangbeom Han](https://github.com/uronly14me) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/94))
+- ![ES](./assets/flags/ES.png) [Spanish](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/95))
+- ![TR](./assets/flags/TR.png) Turkish ([Discussion](https://github.com/goldbergyoni/nodebestpractices/issues/139))
 
 <br/><br/>
 
@@ -1286,7 +1286,7 @@ CMD [ "node", "dist/app.js" ]
 
 ステアリングコミッティーのメンバーをご紹介します。このプロジェクトのガイダンスと将来の方向性を提供するために協力してくださっている方々です。さらに、コミッティーの各メンバーは、[GitHub プロジェクト](https://github.com/goldbergyoni/nodebestpractices/projects)で管理されているプロジェクトをリードしています。
 
-<img align="left" width="100" height="100" src="assets/images/members/yoni.png">
+<img align="left" width="100" height="100" src="assets/images/members/yoni.png"/>
 
 [Yoni Goldberg](https://github.com/goldbergyoni)
 <a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
@@ -1296,7 +1296,7 @@ CMD [ "node", "dist/app.js" ]
 
 <br/>
 
-<img align="left" width="100" height="100" src="assets/images/members/bruno.png">
+<img align="left" width="100" height="100" src="assets/images/members/bruno.png"/>
 
 [Bruno Scheufler](https://github.com/BrunoScheufler)
 <a href="https://brunoscheufler.com/"><img src="assets/images/www.png" width="16" height="16"></img></a>
@@ -1305,7 +1305,7 @@ CMD [ "node", "dist/app.js" ]
 
 <br/>
 
-<img align="left" width="100" height="100" src="assets/images/members/kyle.png">
+<img align="left" width="100" height="100" src="assets/images/members/kyle.png"/>
 
 [Kyle Martin](https://github.com/js-kyle)
 <a href="https://twitter.com/kylemartin_93"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
@@ -1315,7 +1315,7 @@ CMD [ "node", "dist/app.js" ]
 
 <br/>
 
-<img align="left" width="100" height="100" src="assets/images/members/kevyn.png">
+<img align="left" width="100" height="100" src="assets/images/members/kevyn.png"/>
 
 [Kevyn Bruyere](https://github.com/kevynb)
 <a href="https://www.linkedin.com/in/kevynbruyere/"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
@@ -1326,14 +1326,14 @@ Ops や自動化に関心のあるフルスタックデベロッパー。
 
 ### ステアリングコミッティー・エメリティ
 
-<img align="left" width="100" height="100" src="assets/images/members/sagir.png">
+<img align="left" width="100" height="100" src="assets/images/members/sagir.png"/>
 
 [Sagir Khan](https://github.com/sagirk)
 <a href="https://twitter.com/sagir_k"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
 <a href="https://linkedin.com/in/sagirk"><img src="assets/images/linkedin.png" width="16" height="16"></img></a>
 <a href="https://sagirk.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
-JavaScript とそのエコシステム（React、Node.js、TypeScript、GraphQL、MongoDBなど、システムのあらゆるレイヤーで JS/JSON が関係するものであるなら何でも）の専門家。世界で最も認知されているブランドのために Web プラットフォームを利用してプロダクトを構築しています。Node.js ファウンデーションの個人メンバー。
+JavaScript とそのエコシステム（React、Node.js、TypeScript、GraphQL、MongoDB など、システムのあらゆるレイヤーで JS/JSON が関係するものであるなら何でも）の専門家。世界で最も認知されているブランドのために Web プラットフォームを利用してプロダクトを構築しています。Node.js ファウンデーションの個人メンバー。
 
 <br/>
 
@@ -1341,21 +1341,22 @@ JavaScript とそのエコシステム（React、Node.js、TypeScript、GraphQL�
 
 すべてのコラボレーターの方々に感謝いたします！ 🙏
 
-私たちのコラボレーターは、新たなベストプラクティスの提案やイシューの優先順位付け、プルリクエストのレビューなどその他多くのことを通じて、定期的にこのリポジトリに貢献してくださっているメンバーの方々です。多くの人々がより良い Node.js アプリケーションを構築できるように導く私たちをサポートすることにもし興味があるのであれば、[貢献ガイドライン](/.operations/CONTRIBUTING.md)をお読み下さい🎉
+私たちのコラボレーターは、新たなベストプラクティスの提案やイシューの優先順位付け、プルリクエストのレビューなどその他多くのことを通じて、定期的にこのリポジトリに貢献してくださっているメンバーの方々です。多くの人々がより良い Node.js アプリケーションを構築できるように導く私たちをサポートすることにもし興味があるのであれば、[貢献ガイドライン](./.operations/CONTRIBUTING.md)をお読み下さい 🎉
 
-| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
+| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"/></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"/></a> |
 | :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
 |                                    [Ido Richter (Founder)](https://github.com/idori)                                    |                                        [Keith Holliday](https://github.com/TheHollidayInn)                                         |
 
 ### コラボレーター・エメリティ
 
-| <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"></a> |
+| <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"/></a> |
 | :-------------------------------------------------------------------------------------------------------------------------: |
 |                                        [Refael Ackermann](https://github.com/refack)                                        |
 
 <br/>
 
 ## 貢献
+
 もしオープンソースに貢献したいと思ったことがあるのなら、いまがチャンスです！ 詳細は[貢献ドキュメント](.operations/CONTRIBUTING.md)を参照してください。
 
 ## 貢献メンバー ✨
@@ -1366,156 +1367,259 @@ JavaScript とそのエコシステム（React、Node.js、TypeScript、GraphQL�
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
-  <tr>
-    <td align="center"><a href="https://github.com/kevinrambaud"><img src="https://avatars1.githubusercontent.com/u/7501477?v=4" width="100px;" alt=""/><br /><sub><b>Kevin Rambaud</b></sub></a><br /><a href="#content-kevinrambaud" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/mfine15"><img src="https://avatars1.githubusercontent.com/u/1286554?v=4" width="100px;" alt=""/><br /><sub><b>Michael Fine</b></sub></a><br /><a href="#content-mfine15" title="Content">🖋</a></td>
-    <td align="center"><a href="http://squgeim.github.io"><img src="https://avatars0.githubusercontent.com/u/4996818?v=4" width="100px;" alt=""/><br /><sub><b>Shreya Dahal</b></sub></a><br /><a href="#content-squgeim" title="Content">🖋</a></td>
-    <td align="center"><a href="http://matheusrocha89.com"><img src="https://avatars1.githubusercontent.com/u/3718366?v=4" width="100px;" alt=""/><br /><sub><b>Matheus Cruz Rocha</b></sub></a><br /><a href="#content-matheusrocha89" title="Content">🖋</a></td>
-    <td align="center"><a href="https://bityog.github.io/Portfolio/"><img src="https://avatars2.githubusercontent.com/u/28219178?v=4" width="100px;" alt=""/><br /><sub><b>Yog Mehta</b></sub></a><br /><a href="#content-BitYog" title="Content">🖋</a></td>
-    <td align="center"><a href="http://kudapara.co.zw"><img src="https://avatars3.githubusercontent.com/u/13519184?v=4" width="100px;" alt=""/><br /><sub><b>Kudakwashe Paradzayi</b></sub></a><br /><a href="#content-kudapara" title="Content">🖋</a></td>
-    <td align="center"><a href="https://www.t1st3.com/"><img src="https://avatars1.githubusercontent.com/u/1469638?v=4" width="100px;" alt=""/><br /><sub><b>t1st3</b></sub></a><br /><a href="#content-t1st3" title="Content">🖋</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/mulijordan1976"><img src="https://avatars0.githubusercontent.com/u/33382022?v=4" width="100px;" alt=""/><br /><sub><b>mulijordan1976</b></sub></a><br /><a href="#content-mulijordan1976" title="Content">🖋</a></td>
-    <td align="center"><a href="https://twitter.com/matchai"><img src="https://avatars0.githubusercontent.com/u/4658208?v=4" width="100px;" alt=""/><br /><sub><b>Matan Kushner</b></sub></a><br /><a href="#content-matchai" title="Content">🖋</a></td>
-    <td align="center"><a href="https://fabiothiroki.github.io"><img src="https://avatars2.githubusercontent.com/u/670057?v=4" width="100px;" alt=""/><br /><sub><b>Fabio Hiroki</b></sub></a><br /><a href="#content-fabiothiroki" title="Content">🖋</a></td>
-    <td align="center"><a href="http://james.sumners.info/"><img src="https://avatars1.githubusercontent.com/u/321201?v=4" width="100px;" alt=""/><br /><sub><b>James Sumners</b></sub></a><br /><a href="#content-jsumners" title="Content">🖋</a></td>
-    <td align="center"><a href="https://twitter.com/_DanGamble"><img src="https://avatars2.githubusercontent.com/u/7152041?v=4" width="100px;" alt=""/><br /><sub><b>Dan Gamble</b></sub></a><br /><a href="#content-dan-gamble" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/trainorpj"><img src="https://avatars3.githubusercontent.com/u/13276704?v=4" width="100px;" alt=""/><br /><sub><b>PJ Trainor</b></sub></a><br /><a href="#content-trainorpj" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/reod"><img src="https://avatars0.githubusercontent.com/u/3164299?v=4" width="100px;" alt=""/><br /><sub><b>Remek Ambroziak</b></sub></a><br /><a href="#content-reod" title="Content">🖋</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://ca.non.co.il"><img src="https://avatars0.githubusercontent.com/u/1829789?v=4" width="100px;" alt=""/><br /><sub><b>Yoni Jah</b></sub></a><br /><a href="#content-yonjah" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/hazolsky"><img src="https://avatars1.githubusercontent.com/u/1270790?v=4" width="100px;" alt=""/><br /><sub><b>Misha Khokhlov</b></sub></a><br /><a href="#content-hazolsky" title="Content">🖋</a></td>
-    <td align="center"><a href="https://plus.google.com/+ЕвгенийОрехов/"><img src="https://avatars3.githubusercontent.com/u/8045060?v=4" width="100px;" alt=""/><br /><sub><b>Evgeny Orekhov</b></sub></a><br /><a href="#content-EvgenyOrekhov" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/gediminasml"><img src="https://avatars3.githubusercontent.com/u/19854105?v=4" width="100px;" alt=""/><br /><sub><b>-</b></sub></a><br /><a href="#content-gediminasml" title="Content">🖋</a></td>
-    <td align="center"><a href="http://hisaac.net"><img src="https://avatars3.githubusercontent.com/u/923876?v=4" width="100px;" alt=""/><br /><sub><b>Isaac Halvorson</b></sub></a><br /><a href="#content-hisaac" title="Content">🖋</a></td>
-    <td align="center"><a href="http://www.vedrankaracic.com"><img src="https://avatars3.githubusercontent.com/u/2808092?v=4" width="100px;" alt=""/><br /><sub><b>Vedran Karačić</b></sub></a><br /><a href="#content-vkaracic" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/lallenlowe"><img src="https://avatars3.githubusercontent.com/u/10761165?v=4" width="100px;" alt=""/><br /><sub><b>lallenlowe</b></sub></a><br /><a href="#content-lallenlowe" title="Content">🖋</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/nwwells"><img src="https://avatars2.githubusercontent.com/u/1039473?v=4" width="100px;" alt=""/><br /><sub><b>Nathan Wells</b></sub></a><br /><a href="#content-nwwells" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/paulovitin"><img src="https://avatars0.githubusercontent.com/u/125503?v=4" width="100px;" alt=""/><br /><sub><b>Paulo Reis</b></sub></a><br /><a href="#content-paulovitin" title="Content">🖋</a></td>
-    <td align="center"><a href="https://snap.simpego.ch"><img src="https://avatars2.githubusercontent.com/u/1989646?v=4" width="100px;" alt=""/><br /><sub><b>syzer</b></sub></a><br /><a href="#content-syzer" title="Content">🖋</a></td>
-    <td align="center"><a href="http://sancho.dev"><img src="https://avatars0.githubusercontent.com/u/3763599?v=4" width="100px;" alt=""/><br /><sub><b>David Sancho</b></sub></a><br /><a href="#content-davesnx" title="Content">🖋</a></td>
-    <td align="center"><a href="https://apiforge.it"><img src="https://avatars0.githubusercontent.com/u/4929965?v=4" width="100px;" alt=""/><br /><sub><b>Robert Manolea</b></sub></a><br /><a href="#content-pupix" title="Content">🖋</a></td>
-    <td align="center"><a href="https://jumptoglide.com"><img src="https://avatars2.githubusercontent.com/u/708395?v=4" width="100px;" alt=""/><br /><sub><b>Xavier Ho</b></sub></a><br /><a href="#content-spaxe" title="Content">🖋</a></td>
-    <td align="center"><a href="http://www.ocular-rhythm.io"><img src="https://avatars0.githubusercontent.com/u/2738518?v=4" width="100px;" alt=""/><br /><sub><b>Aaron</b></sub></a><br /><a href="#content-ocularrhythm" title="Content">🖋</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://septa97.me"><img src="https://avatars2.githubusercontent.com/u/13742634?v=4" width="100px;" alt=""/><br /><sub><b>Jan Charles Maghirang Adona</b></sub></a><br /><a href="#content-septa97" title="Content">🖋</a></td>
-    <td align="center"><a href="https://www.cakeresume.com/allenfang"><img src="https://avatars2.githubusercontent.com/u/5351390?v=4" width="100px;" alt=""/><br /><sub><b>Allen</b></sub></a><br /><a href="#content-AllenFang" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/leonardovillela"><img src="https://avatars3.githubusercontent.com/u/8650543?v=4" width="100px;" alt=""/><br /><sub><b>Leonardo Villela</b></sub></a><br /><a href="#content-leonardovillela" title="Content">🖋</a></td>
-    <td align="center"><a href="https://michalzalecki.com"><img src="https://avatars1.githubusercontent.com/u/3136577?v=4" width="100px;" alt=""/><br /><sub><b>Michał Załęcki</b></sub></a><br /><a href="#content-MichalZalecki" title="Content">🖋</a></td>
-    <td align="center"><a href="http://www.wealthbar.com"><img src="https://avatars1.githubusercontent.com/u/156449?v=4" width="100px;" alt=""/><br /><sub><b>Chris Nicola</b></sub></a><br /><a href="#content-chrisnicola" title="Content">🖋</a></td>
-    <td align="center"><a href="https://twitter.com/aecorredor"><img src="https://avatars3.githubusercontent.com/u/9114987?v=4" width="100px;" alt=""/><br /><sub><b>Alejandro Corredor</b></sub></a><br /><a href="#content-aecorredor" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/cwar"><img src="https://avatars3.githubusercontent.com/u/272843?v=4" width="100px;" alt=""/><br /><sub><b>cwar</b></sub></a><br /><a href="#content-cwar" title="Content">🖋</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/keyfoxth"><img src="https://avatars3.githubusercontent.com/u/10647132?v=4" width="100px;" alt=""/><br /><sub><b>Yuwei</b></sub></a><br /><a href="#content-keyfoxth" title="Content">🖋</a></td>
-    <td align="center"><a href="https://bigcodenerd.org"><img src="https://avatars3.githubusercontent.com/u/10895594?v=4" width="100px;" alt=""/><br /><sub><b>Utkarsh Bhatt</b></sub></a><br /><a href="#content-utkarshbhatt12" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/duartemendes"><img src="https://avatars2.githubusercontent.com/u/12852058?v=4" width="100px;" alt=""/><br /><sub><b>Duarte Mendes</b></sub></a><br /><a href="#content-duartemendes" title="Content">🖋</a></td>
-    <td align="center"><a href="http://jasonkim.ca"><img src="https://avatars2.githubusercontent.com/u/103456?v=4" width="100px;" alt=""/><br /><sub><b>Jason Kim</b></sub></a><br /><a href="#content-serv" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/Max101"><img src="https://avatars2.githubusercontent.com/u/2124249?v=4" width="100px;" alt=""/><br /><sub><b>Mitja O.</b></sub></a><br /><a href="#content-Max101" title="Content">🖋</a></td>
-    <td align="center"><a href="http://sandromiguel.com"><img src="https://avatars0.githubusercontent.com/u/6423157?v=4" width="100px;" alt=""/><br /><sub><b>Sandro Miguel Marques</b></sub></a><br /><a href="#content-SandroMiguel" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/GabeKuslansky"><img src="https://avatars3.githubusercontent.com/u/9855482?v=4" width="100px;" alt=""/><br /><sub><b>Gabe</b></sub></a><br /><a href="#content-GabeKuslansky" title="Content">🖋</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="http://ripper234.com/"><img src="https://avatars1.githubusercontent.com/u/172282?v=4" width="100px;" alt=""/><br /><sub><b>Ron Gross</b></sub></a><br /><a href="#content-ripper234" title="Content">🖋</a></td>
-    <td align="center"><a href="http://www.thecodebarbarian.com"><img src="https://avatars2.githubusercontent.com/u/1620265?v=4" width="100px;" alt=""/><br /><sub><b>Valeri Karpov</b></sub></a><br /><a href="#content-vkarpov15" title="Content">🖋</a></td>
-    <td align="center"><a href="https://sergiobernal.com"><img src="https://avatars3.githubusercontent.com/u/20087388?v=4" width="100px;" alt=""/><br /><sub><b>Sergio Bernal</b></sub></a><br /><a href="#content-imsergiobernal" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/ntelkedzhiev"><img src="https://avatars2.githubusercontent.com/u/7332371?v=4" width="100px;" alt=""/><br /><sub><b>Nikola Telkedzhiev</b></sub></a><br /><a href="#content-ntelkedzhiev" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/vitordagamagodoy"><img src="https://avatars0.githubusercontent.com/u/26370059?v=4" width="100px;" alt=""/><br /><sub><b>Vitor Godoy</b></sub></a><br /><a href="#content-vitordagamagodoy" title="Content">🖋</a></td>
-    <td align="center"><a href="https://www.manishsaraan.com/"><img src="https://avatars2.githubusercontent.com/u/19797340?v=4" width="100px;" alt=""/><br /><sub><b>Manish Saraan</b></sub></a><br /><a href="#content-manishsaraan" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/uronly14me"><img src="https://avatars2.githubusercontent.com/u/5186814?v=4" width="100px;" alt=""/><br /><sub><b>Sangbeom Han</b></sub></a><br /><a href="#content-uronly14me" title="Content">🖋</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://blackmatch.github.io"><img src="https://avatars3.githubusercontent.com/u/12443954?v=4" width="100px;" alt=""/><br /><sub><b>blackmatch</b></sub></a><br /><a href="#content-blackmatch" title="Content">🖋</a></td>
-    <td align="center"><a href="https://simmsreeve.com"><img src="https://avatars3.githubusercontent.com/u/5173131?v=4" width="100px;" alt=""/><br /><sub><b>Joe Reeve</b></sub></a><br /><a href="#content-ISNIT0" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/BusbyActual"><img src="https://avatars2.githubusercontent.com/u/14985016?v=4" width="100px;" alt=""/><br /><sub><b>Ryan Busby</b></sub></a><br /><a href="#content-BusbyActual" title="Content">🖋</a></td>
-    <td align="center"><a href="http://jsdecorator.com"><img src="https://avatars3.githubusercontent.com/u/4482199?v=4" width="100px;" alt=""/><br /><sub><b>Iman Mohamadi</b></sub></a><br /><a href="#content-ImanMh" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/HeeL"><img src="https://avatars1.githubusercontent.com/u/287769?v=4" width="100px;" alt=""/><br /><sub><b>Sergii Paryzhskyi</b></sub></a><br /><a href="#content-HeeL" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/kapilepatel"><img src="https://avatars3.githubusercontent.com/u/25738473?v=4" width="100px;" alt=""/><br /><sub><b>Kapil Patel</b></sub></a><br /><a href="#content-kapilepatel" title="Content">🖋</a></td>
-    <td align="center"><a href="https://twitter.com/justjavac"><img src="https://avatars1.githubusercontent.com/u/359395?v=4" width="100px;" alt=""/><br /><sub><b>迷渡</b></sub></a><br /><a href="#content-justjavac" title="Content">🖋</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/hozefaj"><img src="https://avatars1.githubusercontent.com/u/2084833?v=4" width="100px;" alt=""/><br /><sub><b>Hozefa</b></sub></a><br /><a href="#content-hozefaj" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/el-ethan"><img src="https://avatars3.githubusercontent.com/u/10249884?v=4" width="100px;" alt=""/><br /><sub><b>Ethan</b></sub></a><br /><a href="#content-el-ethan" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/milkdeliver"><img src="https://avatars2.githubusercontent.com/u/3108407?v=4" width="100px;" alt=""/><br /><sub><b>Sam</b></sub></a><br /><a href="#content-milkdeliver" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/ArlindXh"><img src="https://avatars0.githubusercontent.com/u/19508764?v=4" width="100px;" alt=""/><br /><sub><b>Arlind</b></sub></a><br /><a href="#content-ArlindXh" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/ttous"><img src="https://avatars0.githubusercontent.com/u/19815440?v=4" width="100px;" alt=""/><br /><sub><b>Teddy Toussaint</b></sub></a><br /><a href="#content-ttous" title="Content">🖋</a></td>
-    <td align="center"><a href="http://ardern.io"><img src="https://avatars2.githubusercontent.com/u/2419690?v=4" width="100px;" alt=""/><br /><sub><b>Lewis</b></sub></a><br /><a href="#content-LewisArdern" title="Content">🖋</a></td>
-    <td align="center"><a href="https://gabriellidenor.com/"><img src="https://avatars2.githubusercontent.com/u/765963?v=4" width="100px;" alt=""/><br /><sub><b>Gabriel Lidenor </b></sub></a><br /><a href="#content-GabrielLidenor" title="Content">🖋</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/animir"><img src="https://avatars3.githubusercontent.com/u/4623196?v=4" width="100px;" alt=""/><br /><sub><b>Roman</b></sub></a><br /><a href="#content-animir" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/Francozeira"><img src="https://avatars1.githubusercontent.com/u/47419763?v=4" width="100px;" alt=""/><br /><sub><b>Francozeira</b></sub></a><br /><a href="#content-Francozeira" title="Content">🖋</a></td>
-    <td align="center"><a href="https://twitter.com/invvard"><img src="https://avatars0.githubusercontent.com/u/7305493?v=4" width="100px;" alt=""/><br /><sub><b>Invvard</b></sub></a><br /><a href="#content-Invvard" title="Content">🖋</a></td>
-    <td align="center"><a href="https://romulogarofalo.github.io/"><img src="https://avatars1.githubusercontent.com/u/18492592?v=4" width="100px;" alt=""/><br /><sub><b>Rômulo Garofalo</b></sub></a><br /><a href="#content-romulogarofalo" title="Content">🖋</a></td>
-    <td align="center"><a href="http://thoqbk.github.io/"><img src="https://avatars0.githubusercontent.com/u/1491103?v=4" width="100px;" alt=""/><br /><sub><b>Tho Q Luong</b></sub></a><br /><a href="#content-thoqbk" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/Qeneke"><img src="https://avatars2.githubusercontent.com/u/20271568?v=4" width="100px;" alt=""/><br /><sub><b>Burak Shen</b></sub></a><br /><a href="#content-Qeneke" title="Content">🖋</a></td>
-    <td align="center"><a href="http://www.happy-css.com"><img src="https://avatars0.githubusercontent.com/u/2950505?v=4" width="100px;" alt=""/><br /><sub><b>Martin Muzatko</b></sub></a><br /><a href="#content-MartinMuzatko" title="Content">🖋</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/autoboxer"><img src="https://avatars3.githubusercontent.com/u/2757601?v=4" width="100px;" alt=""/><br /><sub><b>Jared Collier</b></sub></a><br /><a href="#content-autoboxer" title="Content">🖋</a></td>
-    <td align="center"><a href="http://hiltonmeyer.com"><img src="https://avatars3.githubusercontent.com/u/4545860?v=4" width="100px;" alt=""/><br /><sub><b>Hilton Meyer</b></sub></a><br /><a href="#content-bikingbadger" title="Content">🖋</a></td>
-    <td align="center"><a href="http://kr.vuejs.org"><img src="https://avatars0.githubusercontent.com/u/1451365?v=4" width="100px;" alt=""/><br /><sub><b>ChangJoo Park(박창주)</b></sub></a><br /><a href="#content-ChangJoo-Park" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/MasahiroSakaguchi"><img src="https://avatars0.githubusercontent.com/u/16427431?v=4" width="100px;" alt=""/><br /><sub><b>Masahiro Sakaguchi</b></sub></a><br /><a href="#content-MasahiroSakaguchi" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/TheHollidayInn"><img src="https://avatars1.githubusercontent.com/u/1253400?v=4" width="100px;" alt=""/><br /><sub><b>Keith Holliday</b></sub></a><br /><a href="#content-TheHollidayInn" title="Content">🖋</a></td>
-    <td align="center"><a href="https://www.coreycleary.me"><img src="https://avatars3.githubusercontent.com/u/1485356?v=4" width="100px;" alt=""/><br /><sub><b>coreyc</b></sub></a><br /><a href="#content-coreyc" title="Content">🖋</a></td>
-    <td align="center"><a href="http://maxcubing.wordpress.com"><img src="https://avatars0.githubusercontent.com/u/8260834?v=4" width="100px;" alt=""/><br /><sub><b>Maximilian Berkmann</b></sub></a><br /><a href="#content-Berkmann18" title="Content">🖋</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/DouglasMV"><img src="https://avatars3.githubusercontent.com/u/32845487?v=4" width="100px;" alt=""/><br /><sub><b>Douglas Mariano Valero</b></sub></a><br /><a href="#content-DouglasMV" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/marcelosdm"><img src="https://avatars0.githubusercontent.com/u/18266600?v=4" width="100px;" alt=""/><br /><sub><b>Marcelo Melo</b></sub></a><br /><a href="#content-marcelosdm" title="Content">🖋</a></td>
-    <td align="center"><a href="https://twitter.com/mperk_"><img src="https://avatars0.githubusercontent.com/u/3465794?v=4" width="100px;" alt=""/><br /><sub><b>Mehmet Perk</b></sub></a><br /><a href="#content-mperk" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/ryanouyang"><img src="https://avatars2.githubusercontent.com/u/360426?v=4" width="100px;" alt=""/><br /><sub><b>ryan ouyang</b></sub></a><br /><a href="#content-ryanouyang" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/shabeer-mdy"><img src="https://avatars0.githubusercontent.com/u/26842535?v=4" width="100px;" alt=""/><br /><sub><b>Shabeer</b></sub></a><br /><a href="#content-shabeer-mdy" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/halfzebra"><img src="https://avatars1.githubusercontent.com/u/3983879?v=4" width="100px;" alt=""/><br /><sub><b>Eduard Kyvenko</b></sub></a><br /><a href="#content-halfzebra" title="Content">🖋</a></td>
-    <td align="center"><a href="http://deyvisonrocha.com"><img src="https://avatars2.githubusercontent.com/u/686067?v=4" width="100px;" alt=""/><br /><sub><b>Deyvison Rocha</b></sub></a><br /><a href="#content-deyvisonrocha" title="Content">🖋</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="http://twitter.com/georgemamer"><img src="https://avatars1.githubusercontent.com/u/20108934?v=4" width="100px;" alt=""/><br /><sub><b>George Mamer</b></sub></a><br /><a href="#content-georgem3" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/leimonio"><img src="https://avatars0.githubusercontent.com/u/1969742?v=4" width="100px;" alt=""/><br /><sub><b>Konstantinos Leimonis</b></sub></a><br /><a href="#content-leimonio" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/Zybax"><img src="https://avatars3.githubusercontent.com/u/22094453?v=4" width="100px;" alt=""/><br /><sub><b>Oliver Lluberes</b></sub></a><br /><a href="#translation-Zybax" title="Translation">🌍</a></td>
-    <td align="center"><a href="https://stackoverflow.com/story/tiendq"><img src="https://avatars2.githubusercontent.com/u/815910?v=4" width="100px;" alt=""/><br /><sub><b>Tien Do</b></sub></a><br /><a href="#content-tiendq" title="Content">🖋</a></td>
-    <td align="center"><a href="http://singh1114.github.io/"><img src="https://avatars0.githubusercontent.com/u/11356398?v=4" width="100px;" alt=""/><br /><sub><b>Ranvir Singh</b></sub></a><br /><a href="#content-singh1114" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/collierrgbsitisfise"><img src="https://avatars3.githubusercontent.com/u/13496126?v=4" width="100px;" alt=""/><br /><sub><b>Vadim Nicolaev</b></sub></a><br /><a href="#content-collierrgbsitisfise" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/germangamboa95"><img src="https://avatars3.githubusercontent.com/u/28633849?v=4" width="100px;" alt=""/><br /><sub><b>German Gamboa Gonzalez</b></sub></a><br /><a href="#content-germangamboa95" title="Content">🖋</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/AbdelrahmanHafez"><img src="https://avatars3.githubusercontent.com/u/19984935?v=4" width="100px;" alt=""/><br /><sub><b>Hafez</b></sub></a><br /><a href="#content-AbdelrahmanHafez" title="Content">🖋</a></td>
-    <td align="center"><a href="http://linkedin.com/in/chandiran-dmc"><img src="https://avatars3.githubusercontent.com/u/42678579?v=4" width="100px;" alt=""/><br /><sub><b>Chandiran</b></sub></a><br /><a href="#content-chandiran-dmc" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/VinayaSathyanarayana"><img src="https://avatars2.githubusercontent.com/u/16976677?v=4" width="100px;" alt=""/><br /><sub><b>VinayaSathyanarayana</b></sub></a><br /><a href="#content-VinayaSathyanarayana" title="Content">🖋</a></td>
-    <td align="center"><a href="https://www.kimkern.de"><img src="https://avatars1.githubusercontent.com/u/2671139?v=4" width="100px;" alt=""/><br /><sub><b>Kim Kern</b></sub></a><br /><a href="#content-kiwikern" title="Content">🖋</a></td>
-    <td align="center"><a href="https://kennethfreitas.github.io/"><img src="https://avatars2.githubusercontent.com/u/55669043?v=4" width="100px;" alt=""/><br /><sub><b>Kenneth Freitas</b></sub></a><br /><a href="#content-kennethfreitas" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/songe"><img src="https://avatars2.githubusercontent.com/u/1531561?v=4" width="100px;" alt=""/><br /><sub><b>songe</b></sub></a><br /><a href="#content-songe" title="Content">🖋</a></td>
-    <td align="center"><a href="http://ksed.dev"><img src="https://avatars1.githubusercontent.com/u/30693707?v=4" width="100px;" alt=""/><br /><sub><b>Kirill Shekhovtsov</b></sub></a><br /><a href="#content-Ksedline" title="Content">🖋</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/SerzN1"><img src="https://avatars0.githubusercontent.com/u/2534649?v=4" width="100px;" alt=""/><br /><sub><b>Serge</b></sub></a><br /><a href="#content-SerzN1" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/keyrwinz"><img src="https://avatars3.githubusercontent.com/u/21241761?v=4" width="100px;" alt=""/><br /><sub><b>keyrwinz</b></sub></a><br /><a href="#content-keyrwinz" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/nDmitry"><img src="https://avatars0.githubusercontent.com/u/2134568?v=4" width="100px;" alt=""/><br /><sub><b>Dmitry Nikitenko</b></sub></a><br /><a href="#content-nDmitry" title="Content">🖋</a></td>
-    <td align="center"><a href="https://bushuai.cc"><img src="https://avatars0.githubusercontent.com/u/1875256?v=4" width="100px;" alt=""/><br /><sub><b>bushuai</b></sub></a><br /><a href="https://github.com/goldbergyoni/nodebestpractices/pulls?q=is%3Apr+reviewed-by%3Abushuai" title="Reviewed Pull Requests">👀</a> <a href="#content-bushuai" title="Content">🖋</a></td>
-    <td align="center"><a href="https://stackoverflow.com/users/1348195/benjamin-gruenbaum"><img src="https://avatars2.githubusercontent.com/u/1315533?v=4" width="100px;" alt=""/><br /><sub><b>Benjamin Gruenbaum</b></sub></a><br /><a href="#content-benjamingr" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/byeze"><img src="https://avatars1.githubusercontent.com/u/7424138?v=4" width="100px;" alt=""/><br /><sub><b>Ezequiel</b></sub></a><br /><a href="#translation-byeze" title="Translation">🌍</a></td>
-    <td align="center"><a href="https://github.com/juaoose"><img src="https://avatars3.githubusercontent.com/u/994594?v=4" width="100px;" alt=""/><br /><sub><b>Juan José Rodríguez</b></sub></a><br /><a href="#translation-juaoose" title="Translation">🌍</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/OrBin"><img src="https://avatars1.githubusercontent.com/u/6897234?v=4" width="100px;" alt=""/><br /><sub><b>Or Bin</b></sub></a><br /><a href="#content-OrBin" title="Content">🖋</a></td>
-    <td align="center"><a href="https://twitter.com/andreoav07"><img src="https://avatars2.githubusercontent.com/u/508827?v=4" width="100px;" alt=""/><br /><sub><b>Andreo Vieira</b></sub></a><br /><a href="#content-andreoav" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/mikicho"><img src="https://avatars1.githubusercontent.com/u/11459632?v=4" width="100px;" alt=""/><br /><sub><b>Michael Solomon</b></sub></a><br /><a href="#content-mikicho" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/jimmycallin"><img src="https://avatars0.githubusercontent.com/u/2225828?v=4" width="100px;" alt=""/><br /><sub><b>Jimmy Callin</b></sub></a><br /><a href="#content-jimmycallin" title="Content">🖋</a></td>
-    <td align="center"><a href="https://www.linkedin.com/in/siddharthofficial/"><img src="https://avatars2.githubusercontent.com/u/26025955?v=4" width="100px;" alt=""/><br /><sub><b>Siddharth</b></sub></a><br /><a href="#content-w01fS" title="Content">🖋</a></td>
-    <td align="center"><a href="https://ryansmith.tech/"><img src="https://avatars0.githubusercontent.com/u/1578766?v=4" width="100px;" alt=""/><br /><sub><b>Ryan Smith</b></sub></a><br /><a href="#content-ryan3E0" title="Content">🖋</a></td>
-    <td align="center"><a href="https://de.linkedin.com/in/tom-boettger"><img src="https://avatars2.githubusercontent.com/u/49961674?v=4" width="100px;" alt=""/><br /><sub><b>Tom Boettger</b></sub></a><br /><a href="#content-bttger" title="Content">🖋</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/jormaechea"><img src="https://avatars3.githubusercontent.com/u/5612500?v=4" width="100px;" alt=""/><br /><sub><b>Joaquín Ormaechea</b></sub></a><br /><a href="#translation-jormaechea" title="Translation">🌍</a></td>
-    <td align="center"><a href="https://github.com/dfrzuz"><img src="https://avatars3.githubusercontent.com/u/71859096?v=4" width="100px;" alt=""/><br /><sub><b>dfrzuz</b></sub></a><br /><a href="#translation-dfrzuz" title="Translation">🌍</a></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/kevinrambaud"><img src="https://avatars1.githubusercontent.com/u/7501477?v=4" width="100px;" alt="Kevin Rambaud"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Kevin Rambaud</b></sub></a><br /><a href="#content-kevinrambaud" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/mfine15"><img src="https://avatars1.githubusercontent.com/u/1286554?v=4" width="100px;" alt="Michael Fine"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Michael Fine</b></sub></a><br /><a href="#content-mfine15" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://squgeim.github.io"><img src="https://avatars0.githubusercontent.com/u/4996818?v=4" width="100px;" alt="Shreya Dahal"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Shreya Dahal</b></sub></a><br /><a href="#content-squgeim" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://matheusrocha89.com"><img src="https://avatars1.githubusercontent.com/u/3718366?v=4" width="100px;" alt="Matheus Cruz Rocha"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Matheus Cruz Rocha</b></sub></a><br /><a href="#content-matheusrocha89" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://bityog.github.io/Portfolio/"><img src="https://avatars2.githubusercontent.com/u/28219178?v=4" width="100px;" alt="Yog Mehta"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Yog Mehta</b></sub></a><br /><a href="#content-BitYog" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://kudapara.co.zw"><img src="https://avatars3.githubusercontent.com/u/13519184?v=4" width="100px;" alt="Kudakwashe Paradzayi"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Kudakwashe Paradzayi</b></sub></a><br /><a href="#content-kudapara" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.t1st3.com/"><img src="https://avatars1.githubusercontent.com/u/1469638?v=4" width="100px;" alt="t1st3"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>t1st3</b></sub></a><br /><a href="#content-t1st3" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/mulijordan1976"><img src="https://avatars0.githubusercontent.com/u/33382022?v=4" width="100px;" alt="mulijordan1976"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>mulijordan1976</b></sub></a><br /><a href="#content-mulijordan1976" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://twitter.com/matchai"><img src="https://avatars0.githubusercontent.com/u/4658208?v=4" width="100px;" alt="Matan Kushner"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Matan Kushner</b></sub></a><br /><a href="#content-matchai" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://fabiothiroki.github.io"><img src="https://avatars2.githubusercontent.com/u/670057?v=4" width="100px;" alt="Fabio Hiroki"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Fabio Hiroki</b></sub></a><br /><a href="#content-fabiothiroki" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://james.sumners.info/"><img src="https://avatars1.githubusercontent.com/u/321201?v=4" width="100px;" alt="James Sumners"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>James Sumners</b></sub></a><br /><a href="#content-jsumners" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://twitter.com/_DanGamble"><img src="https://avatars2.githubusercontent.com/u/7152041?v=4" width="100px;" alt="Dan Gamble"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Dan Gamble</b></sub></a><br /><a href="#content-dan-gamble" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/trainorpj"><img src="https://avatars3.githubusercontent.com/u/13276704?v=4" width="100px;" alt="PJ Trainor"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>PJ Trainor</b></sub></a><br /><a href="#content-trainorpj" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/reod"><img src="https://avatars0.githubusercontent.com/u/3164299?v=4" width="100px;" alt="Remek Ambroziak"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Remek Ambroziak</b></sub></a><br /><a href="#content-reod" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://ca.non.co.il"><img src="https://avatars0.githubusercontent.com/u/1829789?v=4" width="100px;" alt="Yoni Jah"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Yoni Jah</b></sub></a><br /><a href="#content-yonjah" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/hazolsky"><img src="https://avatars1.githubusercontent.com/u/1270790?v=4" width="100px;" alt="Misha Khokhlov"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Misha Khokhlov</b></sub></a><br /><a href="#content-hazolsky" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://plus.google.com/+ЕвгенийОрехов/"><img src="https://avatars3.githubusercontent.com/u/8045060?v=4" width="100px;" alt="Evgeny Orekhov"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Evgeny Orekhov</b></sub></a><br /><a href="#content-EvgenyOrekhov" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/gediminasml"><img src="https://avatars3.githubusercontent.com/u/19854105?v=4" width="100px;" alt="-"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>-</b></sub></a><br /><a href="#content-gediminasml" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://hisaac.net"><img src="https://avatars3.githubusercontent.com/u/923876?v=4" width="100px;" alt="Isaac Halvorson"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Isaac Halvorson</b></sub></a><br /><a href="#content-hisaac" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://www.vedrankaracic.com"><img src="https://avatars3.githubusercontent.com/u/2808092?v=4" width="100px;" alt="Vedran Karačić"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Vedran Karačić</b></sub></a><br /><a href="#content-vkaracic" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/lallenlowe"><img src="https://avatars3.githubusercontent.com/u/10761165?v=4" width="100px;" alt="lallenlowe"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>lallenlowe</b></sub></a><br /><a href="#content-lallenlowe" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/nwwells"><img src="https://avatars2.githubusercontent.com/u/1039473?v=4" width="100px;" alt="Nathan Wells"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Nathan Wells</b></sub></a><br /><a href="#content-nwwells" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/paulovitin"><img src="https://avatars0.githubusercontent.com/u/125503?v=4" width="100px;" alt="Paulo Reis"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Paulo Reis</b></sub></a><br /><a href="#content-paulovitin" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://snap.simpego.ch"><img src="https://avatars2.githubusercontent.com/u/1989646?v=4" width="100px;" alt="syzer"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>syzer</b></sub></a><br /><a href="#content-syzer" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://sancho.dev"><img src="https://avatars0.githubusercontent.com/u/3763599?v=4" width="100px;" alt="David Sancho"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>David Sancho</b></sub></a><br /><a href="#content-davesnx" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://apiforge.it"><img src="https://avatars0.githubusercontent.com/u/4929965?v=4" width="100px;" alt="Robert Manolea"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Robert Manolea</b></sub></a><br /><a href="#content-pupix" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://jumptoglide.com"><img src="https://avatars2.githubusercontent.com/u/708395?v=4" width="100px;" alt="Xavier Ho"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Xavier Ho</b></sub></a><br /><a href="#content-spaxe" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://www.ocular-rhythm.io"><img src="https://avatars0.githubusercontent.com/u/2738518?v=4" width="100px;" alt="Aaron"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Aaron</b></sub></a><br /><a href="#content-ocularrhythm" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://septa97.me"><img src="https://avatars2.githubusercontent.com/u/13742634?v=4" width="100px;" alt="Jan Charles Maghirang Adona"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Jan Charles Maghirang Adona</b></sub></a><br /><a href="#content-septa97" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.cakeresume.com/allenfang"><img src="https://avatars2.githubusercontent.com/u/5351390?v=4" width="100px;" alt="Allen"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Allen</b></sub></a><br /><a href="#content-AllenFang" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/leonardovillela"><img src="https://avatars3.githubusercontent.com/u/8650543?v=4" width="100px;" alt="Leonardo Villela"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Leonardo Villela</b></sub></a><br /><a href="#content-leonardovillela" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://michalzalecki.com"><img src="https://avatars1.githubusercontent.com/u/3136577?v=4" width="100px;" alt="Michał Załęcki"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Michał Załęcki</b></sub></a><br /><a href="#content-MichalZalecki" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://www.wealthbar.com"><img src="https://avatars1.githubusercontent.com/u/156449?v=4" width="100px;" alt="Chris Nicola"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Chris Nicola</b></sub></a><br /><a href="#content-chrisnicola" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://twitter.com/aecorredor"><img src="https://avatars3.githubusercontent.com/u/9114987?v=4" width="100px;" alt="Alejandro Corredor"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Alejandro Corredor</b></sub></a><br /><a href="#content-aecorredor" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/cwar"><img src="https://avatars3.githubusercontent.com/u/272843?v=4" width="100px;" alt="cwar"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>cwar</b></sub></a><br /><a href="#content-cwar" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/keyfoxth"><img src="https://avatars3.githubusercontent.com/u/10647132?v=4" width="100px;" alt="Yuwei"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Yuwei</b></sub></a><br /><a href="#content-keyfoxth" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://bigcodenerd.org"><img src="https://avatars3.githubusercontent.com/u/10895594?v=4" width="100px;" alt="Utkarsh Bhatt"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Utkarsh Bhatt</b></sub></a><br /><a href="#content-utkarshbhatt12" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/duartemendes"><img src="https://avatars2.githubusercontent.com/u/12852058?v=4" width="100px;" alt="Duarte Mendes"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Duarte Mendes</b></sub></a><br /><a href="#content-duartemendes" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://jasonkim.ca"><img src="https://avatars2.githubusercontent.com/u/103456?v=4" width="100px;" alt="Jason Kim"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Jason Kim</b></sub></a><br /><a href="#content-serv" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Max101"><img src="https://avatars2.githubusercontent.com/u/2124249?v=4" width="100px;" alt="Mitja O."style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Mitja O.</b></sub></a><br /><a href="#content-Max101" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://sandromiguel.com"><img src="https://avatars0.githubusercontent.com/u/6423157?v=4" width="100px;" alt="Sandro Miguel Marques"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Sandro Miguel Marques</b></sub></a><br /><a href="#content-SandroMiguel" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/GabeKuslansky"><img src="https://avatars3.githubusercontent.com/u/9855482?v=4" width="100px;" alt="Gabe"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Gabe</b></sub></a><br /><a href="#content-GabeKuslansky" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="http://ripper234.com/"><img src="https://avatars1.githubusercontent.com/u/172282?v=4" width="100px;" alt="Ron Gross"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Ron Gross</b></sub></a><br /><a href="#content-ripper234" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://www.thecodebarbarian.com"><img src="https://avatars2.githubusercontent.com/u/1620265?v=4" width="100px;" alt="Valeri Karpov"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Valeri Karpov</b></sub></a><br /><a href="#content-vkarpov15" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://sergiobernal.com"><img src="https://avatars3.githubusercontent.com/u/20087388?v=4" width="100px;" alt="Sergio Bernal"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Sergio Bernal</b></sub></a><br /><a href="#content-imsergiobernal" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ntelkedzhiev"><img src="https://avatars2.githubusercontent.com/u/7332371?v=4" width="100px;" alt="Nikola Telkedzhiev"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Nikola Telkedzhiev</b></sub></a><br /><a href="#content-ntelkedzhiev" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/vitordagamagodoy"><img src="https://avatars0.githubusercontent.com/u/26370059?v=4" width="100px;" alt="Vitor Godoy"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Vitor Godoy</b></sub></a><br /><a href="#content-vitordagamagodoy" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.manishsaraan.com/"><img src="https://avatars2.githubusercontent.com/u/19797340?v=4" width="100px;" alt="Manish Saraan"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Manish Saraan</b></sub></a><br /><a href="#content-manishsaraan" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/uronly14me"><img src="https://avatars2.githubusercontent.com/u/5186814?v=4" width="100px;" alt="Sangbeom Han"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Sangbeom Han</b></sub></a><br /><a href="#content-uronly14me" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://blackmatch.github.io"><img src="https://avatars3.githubusercontent.com/u/12443954?v=4" width="100px;" alt="blackmatch"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>blackmatch</b></sub></a><br /><a href="#content-blackmatch" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://simmsreeve.com"><img src="https://avatars3.githubusercontent.com/u/5173131?v=4" width="100px;" alt="Joe Reeve"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Joe Reeve</b></sub></a><br /><a href="#content-ISNIT0" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/BusbyActual"><img src="https://avatars2.githubusercontent.com/u/14985016?v=4" width="100px;" alt="Ryan Busby"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Ryan Busby</b></sub></a><br /><a href="#content-BusbyActual" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://jsdecorator.com"><img src="https://avatars3.githubusercontent.com/u/4482199?v=4" width="100px;" alt="Iman Mohamadi"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Iman Mohamadi</b></sub></a><br /><a href="#content-ImanMh" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/HeeL"><img src="https://avatars1.githubusercontent.com/u/287769?v=4" width="100px;" alt="Sergii Paryzhskyi"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Sergii Paryzhskyi</b></sub></a><br /><a href="#content-HeeL" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/kapilepatel"><img src="https://avatars3.githubusercontent.com/u/25738473?v=4" width="100px;" alt="Kapil Patel"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Kapil Patel</b></sub></a><br /><a href="#content-kapilepatel" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://twitter.com/justjavac"><img src="https://avatars1.githubusercontent.com/u/359395?v=4" width="100px;" alt="迷渡"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>迷渡</b></sub></a><br /><a href="#content-justjavac" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/hozefaj"><img src="https://avatars1.githubusercontent.com/u/2084833?v=4" width="100px;" alt="Hozefa"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Hozefa</b></sub></a><br /><a href="#content-hozefaj" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/el-ethan"><img src="https://avatars3.githubusercontent.com/u/10249884?v=4" width="100px;" alt="Ethan"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Ethan</b></sub></a><br /><a href="#content-el-ethan" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/milkdeliver"><img src="https://avatars2.githubusercontent.com/u/3108407?v=4" width="100px;" alt="Sam"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Sam</b></sub></a><br /><a href="#content-milkdeliver" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ArlindXh"><img src="https://avatars0.githubusercontent.com/u/19508764?v=4" width="100px;" alt="Arlind"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Arlind</b></sub></a><br /><a href="#content-ArlindXh" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ttous"><img src="https://avatars0.githubusercontent.com/u/19815440?v=4" width="100px;" alt="Teddy Toussaint"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Teddy Toussaint</b></sub></a><br /><a href="#content-ttous" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://ardern.io"><img src="https://avatars2.githubusercontent.com/u/2419690?v=4" width="100px;" alt="Lewis"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Lewis</b></sub></a><br /><a href="#content-LewisArdern" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://gabriellidenor.com/"><img src="https://avatars2.githubusercontent.com/u/765963?v=4" width="100px;" alt="Gabriel Lidenor "style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Gabriel Lidenor </b></sub></a><br /><a href="#content-GabrielLidenor" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/animir"><img src="https://avatars3.githubusercontent.com/u/4623196?v=4" width="100px;" alt="Roman"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Roman</b></sub></a><br /><a href="#content-animir" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Francozeira"><img src="https://avatars1.githubusercontent.com/u/47419763?v=4" width="100px;" alt="Francozeira"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Francozeira</b></sub></a><br /><a href="#content-Francozeira" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://twitter.com/invvard"><img src="https://avatars0.githubusercontent.com/u/7305493?v=4" width="100px;" alt="Invvard"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Invvard</b></sub></a><br /><a href="#content-Invvard" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://romulogarofalo.github.io/"><img src="https://avatars1.githubusercontent.com/u/18492592?v=4" width="100px;" alt="Rômulo Garofalo"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Rômulo Garofalo</b></sub></a><br /><a href="#content-romulogarofalo" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://thoqbk.github.io/"><img src="https://avatars0.githubusercontent.com/u/1491103?v=4" width="100px;" alt="Tho Q Luong"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Tho Q Luong</b></sub></a><br /><a href="#content-thoqbk" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Qeneke"><img src="https://avatars2.githubusercontent.com/u/20271568?v=4" width="100px;" alt="Burak Shen"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Burak Shen</b></sub></a><br /><a href="#content-Qeneke" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://www.happy-css.com"><img src="https://avatars0.githubusercontent.com/u/2950505?v=4" width="100px;" alt="Martin Muzatko"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Martin Muzatko</b></sub></a><br /><a href="#content-MartinMuzatko" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/autoboxer"><img src="https://avatars3.githubusercontent.com/u/2757601?v=4" width="100px;" alt="Jared Collier"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Jared Collier</b></sub></a><br /><a href="#content-autoboxer" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://hiltonmeyer.com"><img src="https://avatars3.githubusercontent.com/u/4545860?v=4" width="100px;" alt="Hilton Meyer"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Hilton Meyer</b></sub></a><br /><a href="#content-bikingbadger" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://kr.vuejs.org"><img src="https://avatars0.githubusercontent.com/u/1451365?v=4" width="100px;" alt="ChangJoo Park(박창주)"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>ChangJoo Park(박창주)</b></sub></a><br /><a href="#content-ChangJoo-Park" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/MasahiroSakaguchi"><img src="https://avatars0.githubusercontent.com/u/16427431?v=4" width="100px;" alt="Masahiro Sakaguchi"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Masahiro Sakaguchi</b></sub></a><br /><a href="#content-MasahiroSakaguchi" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/TheHollidayInn"><img src="https://avatars1.githubusercontent.com/u/1253400?v=4" width="100px;" alt="Keith Holliday"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Keith Holliday</b></sub></a><br /><a href="#content-TheHollidayInn" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.coreycleary.me"><img src="https://avatars3.githubusercontent.com/u/1485356?v=4" width="100px;" alt="coreyc"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>coreyc</b></sub></a><br /><a href="#content-coreyc" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://maxcubing.wordpress.com"><img src="https://avatars0.githubusercontent.com/u/8260834?v=4" width="100px;" alt="Maximilian Berkmann"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Maximilian Berkmann</b></sub></a><br /><a href="#content-Berkmann18" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/DouglasMV"><img src="https://avatars3.githubusercontent.com/u/32845487?v=4" width="100px;" alt="Douglas Mariano Valero"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Douglas Mariano Valero</b></sub></a><br /><a href="#content-DouglasMV" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/marcelosdm"><img src="https://avatars0.githubusercontent.com/u/18266600?v=4" width="100px;" alt="Marcelo Melo"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Marcelo Melo</b></sub></a><br /><a href="#content-marcelosdm" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://twitter.com/mperk_"><img src="https://avatars0.githubusercontent.com/u/3465794?v=4" width="100px;" alt="Mehmet Perk"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Mehmet Perk</b></sub></a><br /><a href="#content-mperk" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ryanouyang"><img src="https://avatars2.githubusercontent.com/u/360426?v=4" width="100px;" alt="ryan ouyang"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>ryan ouyang</b></sub></a><br /><a href="#content-ryanouyang" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/shabeer-mdy"><img src="https://avatars0.githubusercontent.com/u/26842535?v=4" width="100px;" alt="Shabeer"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Shabeer</b></sub></a><br /><a href="#content-shabeer-mdy" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/halfzebra"><img src="https://avatars1.githubusercontent.com/u/3983879?v=4" width="100px;" alt="Eduard Kyvenko"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Eduard Kyvenko</b></sub></a><br /><a href="#content-halfzebra" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://deyvisonrocha.com"><img src="https://avatars2.githubusercontent.com/u/686067?v=4" width="100px;" alt="Deyvison Rocha"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Deyvison Rocha</b></sub></a><br /><a href="#content-deyvisonrocha" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="http://twitter.com/georgemamer"><img src="https://avatars1.githubusercontent.com/u/20108934?v=4" width="100px;" alt="George Mamer"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>George Mamer</b></sub></a><br /><a href="#content-georgem3" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/leimonio"><img src="https://avatars0.githubusercontent.com/u/1969742?v=4" width="100px;" alt="Konstantinos Leimonis"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Konstantinos Leimonis</b></sub></a><br /><a href="#content-leimonio" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Zybax"><img src="https://avatars3.githubusercontent.com/u/22094453?v=4" width="100px;" alt="Oliver Lluberes"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Oliver Lluberes</b></sub></a><br /><a href="#translation-Zybax" title="Translation">🌍</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://stackoverflow.com/story/tiendq"><img src="https://avatars2.githubusercontent.com/u/815910?v=4" width="100px;" alt="Tien Do"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Tien Do</b></sub></a><br /><a href="#content-tiendq" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://singh1114.github.io/"><img src="https://avatars0.githubusercontent.com/u/11356398?v=4" width="100px;" alt="Ranvir Singh"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Ranvir Singh</b></sub></a><br /><a href="#content-singh1114" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/collierrgbsitisfise"><img src="https://avatars3.githubusercontent.com/u/13496126?v=4" width="100px;" alt="Vadim Nicolaev"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Vadim Nicolaev</b></sub></a><br /><a href="#content-collierrgbsitisfise" title="Content">🖋</a> <a href="#translation-collierrgbsitisfise" title="Translation">🌍</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/germangamboa95"><img src="https://avatars3.githubusercontent.com/u/28633849?v=4" width="100px;" alt="German Gamboa Gonzalez"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>German Gamboa Gonzalez</b></sub></a><br /><a href="#content-germangamboa95" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/AbdelrahmanHafez"><img src="https://avatars3.githubusercontent.com/u/19984935?v=4" width="100px;" alt="Hafez"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Hafez</b></sub></a><br /><a href="#content-AbdelrahmanHafez" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://linkedin.com/in/chandiran-dmc"><img src="https://avatars3.githubusercontent.com/u/42678579?v=4" width="100px;" alt="Chandiran"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Chandiran</b></sub></a><br /><a href="#content-chandiran-dmc" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/VinayaSathyanarayana"><img src="https://avatars2.githubusercontent.com/u/16976677?v=4" width="100px;" alt="VinayaSathyanarayana"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>VinayaSathyanarayana</b></sub></a><br /><a href="#content-VinayaSathyanarayana" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.kimkern.de"><img src="https://avatars1.githubusercontent.com/u/2671139?v=4" width="100px;" alt="Kim Kern"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Kim Kern</b></sub></a><br /><a href="#content-kiwikern" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://kennethfreitas.github.io/"><img src="https://avatars2.githubusercontent.com/u/55669043?v=4" width="100px;" alt="Kenneth Freitas"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Kenneth Freitas</b></sub></a><br /><a href="#content-kennethfreitas" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/songe"><img src="https://avatars2.githubusercontent.com/u/1531561?v=4" width="100px;" alt="songe"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>songe</b></sub></a><br /><a href="#content-songe" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://ksed.dev"><img src="https://avatars1.githubusercontent.com/u/30693707?v=4" width="100px;" alt="Kirill Shekhovtsov"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Kirill Shekhovtsov</b></sub></a><br /><a href="#content-Ksedline" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/SerzN1"><img src="https://avatars0.githubusercontent.com/u/2534649?v=4" width="100px;" alt="Serge"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Serge</b></sub></a><br /><a href="#content-SerzN1" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/keyrwinz"><img src="https://avatars3.githubusercontent.com/u/21241761?v=4" width="100px;" alt="keyrwinz"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>keyrwinz</b></sub></a><br /><a href="#content-keyrwinz" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/nDmitry"><img src="https://avatars0.githubusercontent.com/u/2134568?v=4" width="100px;" alt="Dmitry Nikitenko"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Dmitry Nikitenko</b></sub></a><br /><a href="#content-nDmitry" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://bushuai.cc"><img src="https://avatars0.githubusercontent.com/u/1875256?v=4" width="100px;" alt="bushuai"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>bushuai</b></sub></a><br /><a href="https://github.com/goldbergyoni/nodebestpractices/pulls?q=is%3Apr+reviewed-by%3Abushuai" title="Reviewed Pull Requests">👀</a> <a href="#content-bushuai" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://stackoverflow.com/users/1348195/benjamin-gruenbaum"><img src="https://avatars2.githubusercontent.com/u/1315533?v=4" width="100px;" alt="Benjamin Gruenbaum"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Benjamin Gruenbaum</b></sub></a><br /><a href="#content-benjamingr" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/byeze"><img src="https://avatars1.githubusercontent.com/u/7424138?v=4" width="100px;" alt="Ezequiel"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Ezequiel</b></sub></a><br /><a href="#translation-byeze" title="Translation">🌍</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/juaoose"><img src="https://avatars3.githubusercontent.com/u/994594?v=4" width="100px;" alt="Juan José Rodríguez"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Juan José Rodríguez</b></sub></a><br /><a href="#translation-juaoose" title="Translation">🌍</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/OrBin"><img src="https://avatars1.githubusercontent.com/u/6897234?v=4" width="100px;" alt="Or Bin"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Or Bin</b></sub></a><br /><a href="#content-OrBin" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://twitter.com/andreoav07"><img src="https://avatars2.githubusercontent.com/u/508827?v=4" width="100px;" alt="Andreo Vieira"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Andreo Vieira</b></sub></a><br /><a href="#content-andreoav" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/mikicho"><img src="https://avatars1.githubusercontent.com/u/11459632?v=4" width="100px;" alt="Michael Solomon"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Michael Solomon</b></sub></a><br /><a href="#content-mikicho" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/jimmycallin"><img src="https://avatars0.githubusercontent.com/u/2225828?v=4" width="100px;" alt="Jimmy Callin"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Jimmy Callin</b></sub></a><br /><a href="#content-jimmycallin" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.linkedin.com/in/siddharthofficial/"><img src="https://avatars2.githubusercontent.com/u/26025955?v=4" width="100px;" alt="Siddharth"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Siddharth</b></sub></a><br /><a href="#content-w01fS" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://ryansmith.tech/"><img src="https://avatars0.githubusercontent.com/u/1578766?v=4" width="100px;" alt="Ryan Smith"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Ryan Smith</b></sub></a><br /><a href="#content-ryan3E0" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://de.linkedin.com/in/tom-boettger"><img src="https://avatars2.githubusercontent.com/u/49961674?v=4" width="100px;" alt="Tom Boettger"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Tom Boettger</b></sub></a><br /><a href="#content-bttger" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/jormaechea"><img src="https://avatars3.githubusercontent.com/u/5612500?v=4" width="100px;" alt="Joaquín Ormaechea"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Joaquín Ormaechea</b></sub></a><br /><a href="#translation-jormaechea" title="Translation">🌍</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/dfrzuz"><img src="https://avatars3.githubusercontent.com/u/71859096?v=4" width="100px;" alt="dfrzuz"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>dfrzuz</b></sub></a><br /><a href="#translation-dfrzuz" title="Translation">🌍</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/victor-homyakov"><img src="https://avatars1.githubusercontent.com/u/121449?v=4" width="100px;" alt="Victor Homyakov"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Victor Homyakov</b></sub></a><br /><a href="#content-victor-homyakov" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://joshuahemphill.com"><img src="https://avatars3.githubusercontent.com/u/46608115?v=4" width="100px;" alt="Josh"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Josh</b></sub></a><br /><a href="#content-josh-hemphill" title="Content">🖋</a> <a href="#security-josh-hemphill" title="Security">🛡️</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/alec-francis"><img src="https://avatars2.githubusercontent.com/u/32949882?v=4" width="100px;" alt="Alec Francis"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Alec Francis</b></sub></a><br /><a href="#content-alec-francis" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/arjun6610"><img src="https://avatars1.githubusercontent.com/u/61268891?v=4" width="100px;" alt="arjun6610"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>arjun6610</b></sub></a><br /><a href="#content-arjun6610" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/jan-osch"><img src="https://avatars2.githubusercontent.com/u/11651780?v=4" width="100px;" alt="Jan Osch"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Jan Osch</b></sub></a><br /><a href="#content-jan-osch" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/thiagotrs"><img src="https://avatars2.githubusercontent.com/u/32005779?v=4" width="100px;" alt="Thiago Rotondo Sampaio"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Thiago Rotondo Sampaio</b></sub></a><br /><a href="#translation-thiagotrs" title="Translation">🌍</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Alexsey"><img src="https://avatars0.githubusercontent.com/u/6392013?v=4" width="100px;" alt="Alexsey"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Alexsey</b></sub></a><br /><a href="#content-Alexsey" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/13luismb"><img src="https://avatars1.githubusercontent.com/u/32210483?v=4" width="100px;" alt="Luis A. Acurero"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Luis A. Acurero</b></sub></a><br /><a href="#translation-13luismb" title="Translation">🌍</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://lromano97.github.io/"><img src="https://avatars1.githubusercontent.com/u/22394847?v=4" width="100px;" alt="Lucas Romano"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Lucas Romano</b></sub></a><br /><a href="#translation-lromano97" title="Translation">🌍</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/denisecase"><img src="https://avatars0.githubusercontent.com/u/13016516?v=4" width="100px;" alt="Denise Case"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Denise Case</b></sub></a><br /><a href="#content-denisecase" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://stackoverflow.com/story/elektronik"><img src="https://avatars3.githubusercontent.com/u/1078554?v=4" width="100px;" alt="Nick Ribal"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Nick Ribal</b></sub></a><br /><a href="#content-elektronik2k5" title="Content">🖋</a> <a href="https://github.com/goldbergyoni/nodebestpractices/pulls?q=is%3Apr+reviewed-by%3Aelektronik2k5" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/0xflotus"><img src="https://avatars3.githubusercontent.com/u/26602940?v=4" width="100px;" alt="0xflotus"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>0xflotus</b></sub></a><br /><a href="#content-0xflotus" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.dijonkitchen.org/"><img src="https://avatars3.githubusercontent.com/u/11434205?v=4" width="100px;" alt="Jonathan Chen"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Jonathan Chen</b></sub></a><br /><a href="#content-dijonkitchen" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/dilansri"><img src="https://avatars2.githubusercontent.com/u/5089728?v=4" width="100px;" alt="Dilan Srilal"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Dilan Srilal</b></sub></a><br /><a href="#content-dilansri" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://vectree.ru"><img src="https://avatars3.githubusercontent.com/u/4215285?v=4" width="100px;" alt="vladthelittleone"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>vladthelittleone</b></sub></a><br /><a href="#translation-vladthelittleone" title="Translation">🌍</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.nikolaso.com"><img src="https://avatars0.githubusercontent.com/u/60047271?v=4" width="100px;" alt="Nik Osvalds"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Nik Osvalds</b></sub></a><br /><a href="#content-nosvalds" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/kdaniel21"><img src="https://avatars0.githubusercontent.com/u/39854385?v=4" width="100px;" alt="Daniel Kiss"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Daniel Kiss</b></sub></a><br /><a href="https://github.com/goldbergyoni/nodebestpractices/commits?author=kdaniel21" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://twitter.com/forresst17"><img src="https://avatars2.githubusercontent.com/u/163352?v=4" width="100px;" alt="Forresst"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Forresst</b></sub></a><br /><a href="#content-forresst" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/svenheden"><img src="https://avatars1.githubusercontent.com/u/76098?v=4" width="100px;" alt="Jonathan Svenheden"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Jonathan Svenheden</b></sub></a><br /><a href="#content-svenheden" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/AustrisC"><img src="https://avatars2.githubusercontent.com/u/12381652?v=4" width="100px;" alt="AustrisC"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>AustrisC</b></sub></a><br /><a href="#content-AustrisC" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/cisco0808"><img src="https://avatars0.githubusercontent.com/u/60251188?v=4" width="100px;" alt="kyeongtae kim"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>kyeongtae kim</b></sub></a><br /><a href="#translation-cisco0808" title="Translation">🌍</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://keybase.io/651z9pz968v2accj"><img src="https://avatars.githubusercontent.com/u/65741741?v=4" width="100px;" alt="007"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>007</b></sub></a><br /><a href="#content-6gx7iycn53ioq2e8apk1j1ypwov4giui" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://www.anediaz.com"><img src="https://avatars.githubusercontent.com/u/17216937?v=4" width="100px;" alt="Ane Diaz de Tuesta"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Ane Diaz de Tuesta</b></sub></a><br /><a href="#translation-anediaz" title="Translation">🌍</a> <a href="#content-anediaz" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://yukioh.net"><img src="https://avatars.githubusercontent.com/u/23182489?v=4" width="100px;" alt="YukiOta"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>YukiOta</b></sub></a><br /><a href="#translation-YukiOta" title="Translation">🌍</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.yeovilhospital.co.uk/"><img src="https://avatars.githubusercontent.com/u/43814140?v=4" width="100px;" alt="Frazer Smith"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Frazer Smith</b></sub></a><br /><a href="#content-Fdawgs" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/rluvaton"><img src="https://avatars.githubusercontent.com/u/16746759?v=4" width="100px;" alt="Raz Luvaton"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Raz Luvaton</b></sub></a><br /><a href="#content-rluvaton" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/YA21"><img src="https://avatars.githubusercontent.com/u/37298463?v=4" width="100px;" alt="Yuta Azumi"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Yuta Azumi</b></sub></a><br /><a href="#content-YA21" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/andrewjbarbour"><img src="https://avatars.githubusercontent.com/u/77080074?v=4" width="100px;" alt="andrewjbarbour"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>andrewjbarbour</b></sub></a><br /><a href="#content-andrewjbarbour" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://MasujimaRyohei.jp"><img src="https://avatars.githubusercontent.com/u/17163541?v=4" width="100px;" alt="mr"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>mr</b></sub></a><br /><a href="#content-MasujimaRyohei" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/kubanac95"><img src="https://avatars.githubusercontent.com/u/16191931?v=4" width="100px;" alt="Aleksandar"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Aleksandar</b></sub></a><br /><a href="#content-kubanac95" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://vincentjonathan.com"><img src="https://avatars.githubusercontent.com/u/32597776?v=4" width="100px;" alt="Owl"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Owl</b></sub></a><br /><a href="#content-SuspiciousLookingOwl" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/yedidyas"><img src="https://avatars.githubusercontent.com/u/36074789?v=4" width="100px;" alt="Yedidya Schwartz"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Yedidya Schwartz</b></sub></a><br /><a href="#content-yedidyas" title="Content">🖋</a> <a href="#example-yedidyas" title="Examples">💡</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ariel-diaz"><img src="https://avatars.githubusercontent.com/u/20423540?v=4" width="100px;" alt="ari"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>ari</b></sub></a><br /><a href="#content-ariel-diaz" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="http://www.koenigthomas.de/"><img src="https://avatars.githubusercontent.com/u/7080389?v=4" width="100px;" alt="Thomas König"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Thomas König</b></sub></a><br /><a href="#content-Vispercept" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/coocos"><img src="https://avatars.githubusercontent.com/u/1397804?v=4" width="100px;" alt="Kalle Lämsä"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Kalle Lämsä</b></sub></a><br /><a href="#content-coocos" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://math.cat"><img src="https://avatars.githubusercontent.com/u/10328430?v=4" width="100px;" alt="Wyatt"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Wyatt</b></sub></a><br /><a href="#content-ZhyMC" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://libkhadir.fr"><img src="https://avatars.githubusercontent.com/u/45130488?v=4" width="100px;" alt="KHADIR Tayeb"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>KHADIR Tayeb</b></sub></a><br /><a href="#content-tkhadir" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/shankarregmi"><img src="https://avatars.githubusercontent.com/u/7703345?v=4" width="100px;" alt="Shankar Regmi"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Shankar Regmi</b></sub></a><br /><a href="#content-shankarregmi" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/codebyshubham"><img src="https://avatars.githubusercontent.com/u/10389723?v=4" width="100px;" alt="Shubham"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Shubham</b></sub></a><br /><a href="#content-codebyshubham" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://lucalves.me/"><img src="https://avatars.githubusercontent.com/u/17712401?v=4" width="100px;" alt="Lucas Alves"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Lucas Alves</b></sub></a><br /><a href="#content-lucalves" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/benjaminudoh10"><img src="https://avatars.githubusercontent.com/u/9018331?v=4" width="100px;" alt="Benjamin"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Benjamin</b></sub></a><br /><a href="#content-benjaminudoh10" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.yjoer.com"><img src="https://avatars.githubusercontent.com/u/47742486?v=4" width="100px;" alt="Yeoh Joer"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Yeoh Joer</b></sub></a><br /><a href="#content-yjoer" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://blog.miigon.net"><img src="https://avatars.githubusercontent.com/u/16161991?v=4" width="100px;" alt="Miigon"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Miigon</b></sub></a><br /><a href="#content-Miigon" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://brainstorage.me/Egregor2011"><img src="https://avatars.githubusercontent.com/u/3630318?v=4" width="100px;" alt="Rostislav Bogorad"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Rostislav Bogorad</b></sub></a><br /><a href="#content-Egregor2011" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Flouse"><img src="https://avatars.githubusercontent.com/u/1297478?v=4" width="100px;" alt="Flouse"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Flouse</b></sub></a><br /><a href="#content-Flouse" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://taranttini.com"><img src="https://avatars.githubusercontent.com/u/6922125?v=4" width="100px;" alt="Tarantini Pereira"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Tarantini Pereira</b></sub></a><br /><a href="#content-taranttini" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/kzmat"><img src="https://avatars.githubusercontent.com/u/34614358?v=4" width="100px;" alt="Kazuki Matsuo"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Kazuki Matsuo</b></sub></a><br /><a href="#content-kzmat" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/burkybang"><img src="https://avatars.githubusercontent.com/u/927886?v=4" width="100px;" alt="Adam Smith"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Adam Smith</b></sub></a><br /><a href="#content-burkybang" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://codekodo.tistory.com"><img src="https://avatars.githubusercontent.com/u/33795856?v=4" width="100px;" alt="Dohyeon Ko"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Dohyeon Ko</b></sub></a><br /><a href="#content-k906506" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/vlad99902"><img src="https://avatars.githubusercontent.com/u/67615003?v=4" width="100px;" alt="Vladislav Legkov"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Vladislav Legkov</b></sub></a><br /><a href="#content-vlad99902" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://kerolloz.github.io"><img src="https://avatars.githubusercontent.com/u/36763164?v=4" width="100px;" alt="Kerollos Magdy"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Kerollos Magdy</b></sub></a><br /><a href="#content-kerolloz" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.linkedin.com/in/erez-lieberman-b90b7219/"><img src="https://avatars.githubusercontent.com/u/3277260?v=4" width="100px;" alt="Erez Lieberman"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Erez Lieberman</b></sub></a><br /><a href="#content-erezLieberman" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.linkedin.com/in/breno-macedo-ernani-de-s%C3%A1-110223158/"><img src="https://avatars.githubusercontent.com/u/48841329?v=4" width="100px;" alt="Breno Macedo"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Breno Macedo</b></sub></a><br /><a href="#content-breno404" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/JFernando122"><img src="https://avatars.githubusercontent.com/u/40414805?v=4" width="100px;" alt="Fernando Flores"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Fernando Flores</b></sub></a><br /><a href="#translation-JFernando122" title="Translation">🌍</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.linkedin.com/in/rafaelconcept/"><img src="https://avatars.githubusercontent.com/u/43880669?v=4" width="100px;" alt="Rafael Brito"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Rafael Brito</b></sub></a><br /><a href="#translation-rafaelconcept" title="Translation">🌍</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://emiliano-peralta-portfolio.vercel.app/"><img src="https://avatars.githubusercontent.com/u/63617637?v=4" width="100px;" alt="Emiliano Peralta"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Emiliano Peralta</b></sub></a><br /><a href="#translation-emiperalta" title="Translation">🌍</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://lannex.github.io"><img src="https://avatars.githubusercontent.com/u/7369541?v=4" width="100px;" alt="Shin, SJ"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Shin, SJ</b></sub></a><br /><a href="#content-lannex" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://www.benjaminforster.com"><img src="https://avatars.githubusercontent.com/u/12589522?v=4" width="100px;" alt="Benjamin Forster"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Benjamin Forster</b></sub></a><br /><a href="#content-e-e-e" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/DanieleFedeli"><img src="https://avatars.githubusercontent.com/u/37077048?v=4" width="100px;" alt="Daniele Fedeli"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Daniele Fedeli</b></sub></a><br /><a href="#content-DanieleFedeli" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/djob195"><img src="https://avatars.githubusercontent.com/u/17146669?v=4" width="100px;" alt="djob195"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>djob195</b></sub></a><br /><a href="#content-djob195" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/antspk"><img src="https://avatars.githubusercontent.com/u/78955792?v=4" width="100px;" alt="antspk"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>antspk</b></sub></a><br /><a href="#content-antspk" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://jjy0821.tistory.com/"><img src="https://avatars.githubusercontent.com/u/88075341?v=4" width="100px;" alt="정진영"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>정진영</b></sub></a><br /><a href="#content-jjy821" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/kkk-cashwalk"><img src="https://avatars.githubusercontent.com/u/91455122?v=4" width="100px;" alt="kkk-cashwalk"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>kkk-cashwalk</b></sub></a><br /><a href="#content-kkk-cashwalk" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/apainintheneck"><img src="https://avatars.githubusercontent.com/u/42982186?v=4" width="100px;" alt="apainintheneck"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>apainintheneck</b></sub></a><br /><a href="#content-apainintheneck" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/koyanyaroo"><img src="https://avatars.githubusercontent.com/u/9715368?v=4" width="100px;" alt="Fajar Budhi Iswanda"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Fajar Budhi Iswanda</b></sub></a><br /><a href="#content-koyanyaroo" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/jutiger"><img src="https://avatars.githubusercontent.com/u/97490806?v=4" width="100px;" alt="이주호"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>이주호</b></sub></a><br /><a href="#content-jutiger" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/MisterSingh"><img src="https://avatars.githubusercontent.com/u/44462019?v=4" width="100px;" alt="Singh"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Singh</b></sub></a><br /><a href="#content-MisterSingh" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Alex-Dumitru"><img src="https://avatars.githubusercontent.com/u/43738450?v=4" width="100px;" alt="Alex Dumitru"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Alex Dumitru</b></sub></a><br /><a href="#content-Alex-Dumitru" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/lykhatskyi"><img src="https://avatars.githubusercontent.com/u/18104686?v=4" width="100px;" alt="Anton Lykhatskyi"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Anton Lykhatskyi</b></sub></a><br /><a href="#content-lykhatskyi" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/EverythingAvailable"><img src="https://avatars.githubusercontent.com/u/81002379?v=4" width="100px;" alt="sangwonlee"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>sangwonlee</b></sub></a><br /><a href="#content-EverythingAvailable" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/euberdeveloper"><img src="https://avatars.githubusercontent.com/u/33126163?v=4" width="100px;" alt="Eugenio Berretta"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Eugenio Berretta</b></sub></a><br /><a href="#content-euberdeveloper" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/soranakk"><img src="https://avatars.githubusercontent.com/u/3930307?v=4" width="100px;" alt="soranakk"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>soranakk</b></sub></a><br /><a href="#content-soranakk" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/backend-joonyoung"><img src="https://avatars.githubusercontent.com/u/94430145?v=4" width="100px;" alt="고준영"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>고준영</b></sub></a><br /><a href="#content-backend-joonyoung" title="Content">🖋</a> <a href="https://github.com/goldbergyoni/nodebestpractices/commits?author=backend-joonyoung" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/GuilhermePortella"><img src="https://avatars.githubusercontent.com/u/59876059?v=4" width="100px;" alt="Guilherme Portella "style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Guilherme Portella </b></sub></a><br /><a href="#content-GuilhermePortella" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.youtube.com/channel/UCBxzOQd2v9wWfiMDrf_RQ7A"><img src="https://avatars.githubusercontent.com/u/18497570?v=4" width="100px;" alt="André Esser"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>André Esser</b></sub></a><br /><a href="#content-Esser50K" title="Content">🖋</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ShiChenCong"><img src="https://avatars.githubusercontent.com/u/22486446?v=4" width="100px;" alt="Scc"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Scc</b></sub></a><br /><a href="#translation-ShiChenCong" title="Translation">🌍</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.mauroaccornero.it"><img src="https://avatars.githubusercontent.com/u/1875822?v=4" width="100px;" alt="Mauro Accornero"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>Mauro Accornero</b></sub></a><br /><a href="#content-mauroaccornero" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/no-yan"><img src="https://avatars.githubusercontent.com/u/63000297?v=4" width="100px;" alt="no-yan"style="max-width:100px;min-width:100px;" /><br /><sub style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><b>no-yan</b></sub></a><br /><a href="#content-no-yan" title="Content">🖋</a></td>
+    </tr>
+  </tbody>
 </table>
 
-<!-- markdownlint-enable -->
+<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->

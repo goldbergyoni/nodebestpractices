@@ -9,15 +9,16 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2082%20Best%20Practices-blue.svg" alt="82 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Jun%205%202019-green.svg" alt="Last update: June 5, 2019"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.4.0%20LTS-brightgreen.svg" alt="Updated for Node 12.4.0 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2082%20Best%20Practices-blue.svg" alt="82 items"/> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Jun%205%202019-green.svg" alt="Last update: June 5, 2019"/> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.4.0%20LTS-brightgreen.svg" alt="Updated for Node 12.4.0 LTS"/>
 </div>
 
 <br/>
 
- [![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
+ [![nodepractices](./assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Follow us on Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
  <br/>
 
-# 欢迎! 首先您应该知道的三件事情:
+# 欢迎! 首先您应该知道的三件事情
+
 **1. 当您读到这里，实际上您读了很多关于Node.js的优秀文章 -** 这是对Node.js最佳实践中排名最高的内容的总结和分享
 
 **2. 这里是最大的汇集，且每周都在增长 -** 当前，超过50个最佳实现，样式指南，架构建议已经呈现。每天都有新的issue和PR被创建，以使这本在线书籍不断更新。我们很乐于见到您能在这里做出贡献，不管是修复一些代码的错误，或是提出绝妙的新想法。请查看我们的[milestones](https://github.com/goldbergyoni/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
@@ -27,6 +28,7 @@
 <br/><br/><br/>
 
 ## [目录](#table-of-contents)
+
 1. [项目结构实践 (5) ](#1-project-structure-practices)
 2. [异常处理实践 (11) ](#2-error-handling-practices)
 3. [编码规范实践 (12) ](#3-code-style-practices)
@@ -34,7 +36,6 @@
 5. [进入生产实践 (16) ](#5-going-to-production-practices)
 6. :star: 新: [安全实践(23)](#6-security-best-practices)
 7. Performance Practices ([coming soon](https://github.com/goldbergyoni/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
-
 
 <br/><br/><br/>
 <h1 id="1-project-structure-practices"><code>1. 项目结构实践</code></h1>
@@ -45,7 +46,7 @@
 
 **否则:** 当编写新需求的开发人员逐步意识到他所做改变的影响，并担心会破坏其他的依赖模块 - 部署会变得更慢，风险更大。当所有业务逻辑没有被分开，这也会被认为很难扩展
 
-🔗 [**更多: 组件结构**](/sections/projectstructre/breakintcomponents.chinese.md)
+🔗 [**更多: 组件结构**](./sections/projectstructre/breakintcomponents.chinese.md)
 
 <br/><br/>
 
@@ -55,7 +56,7 @@
 
 **否则:** 对于混淆了网络层和其它层的应用，将不易于测试，执行CRON的任务，其它非-Express的调用者无法使用
 
-🔗 [**更多: 应用分层**](/sections/projectstructre/createlayers.chinese.md)
+🔗 [**更多: 应用分层**](./sections/projectstructre/createlayers.chinese.md)
 
 <br/><br/>
 
@@ -65,7 +66,7 @@
 
 **否则:** 您将不得不重造部署和依赖的轮子
 
-🔗 [**更多: 通过需求构建**](/sections/projectstructre/wraputilities.chinese.md)
+🔗 [**更多: 通过需求构建**](./sections/projectstructre/wraputilities.chinese.md)
 
 <br/><br/>
 
@@ -75,18 +76,17 @@
 
 **否则:** 您的API将只能通过HTTP的调用进行测试（慢，并且很难产生测试覆盖报告）。维护一个有着上百行代码的文件也不是一个令人开心的事情。
 
-🔗 [**更多: 分离 Express 'app' and 'server'**](/sections/projectstructre/separateexpress.chinese.md)
+🔗 [**更多: 分离 Express 'app' and 'server'**](./sections/projectstructre/separateexpress.chinese.md)
 
 <br/><br/>
 
 ## ![✔] 1.5 使用易于设置环境变量，安全和分级的配置
 
-
 **TL;DR:** 一个完美无瑕的配置安装应该确保 (a) 元素可以从文件中，也可以从环境变量中读取 (b) 密码排除在提交的代码之外 (c) 为了易于检索，配置是分级的。仅有几个包可以满足这样的条件，比如[rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config) 和 [convict](https://www.npmjs.com/package/convict)。
 
 **否则:** 不能满足任意的配置要求将会使开发，运维团队，或者两者，易于陷入泥潭。
 
-🔗 [**更多: 配置最佳实践**](/sections/projectstructre/configguide.chinese.md)
+🔗 [**更多: 配置最佳实践**](./sections/projectstructre/configguide.chinese.md)
 
 <br/><br/><br/>
 
@@ -100,7 +100,7 @@
 
 **否则:** Node.js回调特性, function(err, response), 是导致不可维护代码的一个必然的方式。究其原因，是由于混合了随意的错误处理代码，臃肿的内嵌，蹩脚的代码模式。
 
-🔗 [**更多: 避免回调**](/sections/errorhandling/asyncerrorhandling.chinese.md)
+🔗 [**更多: 避免回调**](./sections/errorhandling/asyncerrorhandling.chinese.md)
 
 <br/><br/>
 
@@ -108,10 +108,9 @@
 
 **TL;DR:** 很多人抛出异常使用字符串类型或一些自定义类型 - 这会导致错误处理逻辑和模块间的调用复杂化。是否您reject一个promise，抛出异常或发出(emit)错误 - 使用内建的错误对象将会增加设计一致性，并防止信息的丢失。
 
-
 **否则:** 调用某些模块，将不确定哪种错误类型会返回 - 这将会使恰当的错误处理更加困难。更坏的情况是，使用特定的类型描述错误，会导致重要的错误信息缺失，比如stack trace！
 
-🔗 [**更多: 使用内建错误对象**](/sections/errorhandling/useonlythebuiltinerror.chinese.md)
+🔗 [**更多: 使用内建错误对象**](./sections/errorhandling/useonlythebuiltinerror.chinese.md)
 
 <br/><br/>
 
@@ -121,7 +120,7 @@
 
 **否则:** 当一个错误产生的时候，您总是得重启应用，但为什么要让 ~5000 个在线用户不能访问，仅仅是因为一个细微的，可以预测的，运行时错误？相反的方案，也不完美 – 当未知的问题（程序问题）产生的时候，使应用依旧可以访问，可能导致不可预测行为。区分两者会使处理更有技巧，并在给定的上下文下给出一个平衡的对策。
 
-🔗 [**更多: 运行错误和程序设计错误**](/sections/errorhandling/operationalvsprogrammererror.chinese.md)
+🔗 [**更多: 运行错误和程序设计错误**](./sections/errorhandling/operationalvsprogrammererror.chinese.md)
 
 <br/><br/>
 
@@ -131,7 +130,7 @@
 
 **否则:** 错误处理的逻辑不放在一起将会导致代码重复和非常可能不恰当的错误处理。
 
-🔗 [**更多: 集中处理错误**](/sections/errorhandling/centralizedhandling.chinese.md)
+🔗 [**更多: 集中处理错误**](./sections/errorhandling/centralizedhandling.chinese.md)
 
 <br/><br/>
 
@@ -141,8 +140,7 @@
 
 **否则:** 任何API的客户端可能决定崩溃并重启，仅仅因为它收到一个不能处理的错误。注意：API的调用者可能是你（在微服务环境中非常典型）。
 
-
-🔗 [**更多: 使用Swagger记录错误**](/sections/errorhandling/documentingusingswagger.chinese.md)
+🔗 [**更多: 使用Swagger记录错误**](./sections/errorhandling/documentingusingswagger.chinese.md)
 
 <br/><br/>
 
@@ -152,11 +150,9 @@
 
 **否则:** 当一个未知的异常被抛出，意味着某些对象包含错误的状态（例如某个全局事件发生器由于某些内在的错误，不在产生事件），未来的请求可能失败或者行为异常。
 
-🔗 [**更多: 停掉服务**](/sections/errorhandling/shuttingtheprocess.chinese.md)
+🔗 [**更多: 停掉服务**](./sections/errorhandling/shuttingtheprocess.chinese.md)
 
 <br/><br/>
-
-
 
 ## ![✔] 2.7 使用一个成熟的日志工具提高错误的可见性
 
@@ -164,11 +160,9 @@
 
 **否则:** 浏览console的log，和不通过查询工具或者一个好的日志查看器，手动浏览繁琐的文本文件，会使你忙于工作到很晚。
 
-🔗 [**更多: 使用好用的日志工具**](/sections/errorhandling/usematurelogger.chinese.md)
-
+🔗 [**更多: 使用好用的日志工具**](./sections/errorhandling/usematurelogger.chinese.md)
 
 <br/><br/>
-
 
 ## ![✔] 2.8 使用你最喜欢的测试框架测试错误流
 
@@ -176,8 +170,7 @@
 
 **否则:** 没有测试，不管自动还是手动，您不可能依赖代码去返回正确的错误。而没有可以理解的错误，那将毫无错误处理可言。
 
-
-🔗 [**更多: 测试错误流向**](/sections/errorhandling/testingerrorflows.chinese.md)
+🔗 [**更多: 测试错误流向**](./sections/errorhandling/testingerrorflows.chinese.md)
 
 <br/><br/>
 
@@ -187,11 +180,9 @@
 
 **否则:** 您花了很多的力气在测量API的性能和错误，但可能您从来没有意识到真实场景下您最慢的代码块和他们对UX的影响。
 
-
-🔗 [**更多: 使用APM产品**](/sections/errorhandling/apmproducts.chinese.md)
+🔗 [**更多: 使用APM产品**](./sections/errorhandling/apmproducts.chinese.md)
 
 <br/><br/>
-
 
 ## ![✔] 2.10 捕获未处理的promise rejections
 
@@ -199,8 +190,7 @@
 
 **否则:** 您的错误将被回收，无踪迹可循。没有什么可以需要考虑。
 
-
-🔗 [**更多: 捕获未处理的promise rejection**](/sections/errorhandling/catchunhandledpromiserejection.chinese.md)
+🔗 [**更多: 捕获未处理的promise rejection**](./sections/errorhandling/catchunhandledpromiserejection.chinese.md)
 
 <br/><br/>
 
@@ -210,7 +200,7 @@
 
 **否则:** 考虑这种情况 – 您的功能期望一个数字参数 “Discount” ，然而调用者忘记传值，之后在您的代码中检查是否 Discount!=0 （允许的折扣值大于零），这样它将允许用户使用一个折扣。OMG，多么不爽的一个漏洞。你能明白吗？
 
-🔗 [**更多: 快速查错**](/sections/errorhandling/failfast.chinese.md)
+🔗 [**更多: 快速查错**](./sections/errorhandling/failfast.chinese.md)
 
 <br/><br/><br/>
 
@@ -239,6 +229,7 @@
 **TL;DR:** 代码块的第一个大括号应该和声明的起始保持在同一行中。
 
 ### 代码示例
+
 ```javascript
   // 建议
   function someFunction() {
@@ -280,7 +271,8 @@
 
 **否则:** JavaScript是世界上唯一一门不需要实例化，就可以直接调用构造函数（"Class"）的编码语言。因此，类和函数的构造函数由采用UpperCamelCase开始区分。
 
-### 代码示例 ###
+### 3.6 代码示例
+
 ```javascript
   // 使用UpperCamelCase命名类名
   class SomeClassExample () {
@@ -326,7 +318,8 @@
 
 **否则:** 更改文件内部结构或签名可能会破坏与客户端的接口。
 
-### 代码示例
+### 3.9 代码示例
+
 ```javascript
   // 建议
   module.exports.SMSProvider = require('./SMSProvider');
@@ -339,14 +332,14 @@
 
 <br/><br/>
 
-
 ## ![✔] 3.10 使用 `===` 操作符
 
 **TL;DR:** 对比弱等于 `==`，优先使用严格的全等于 `===` 。`==`将在它们转换为普通类型后比较两个变量。在 `===` 中没有类型转换，并且两个变量必须是相同的类型。
 
 **否则:** 与 `==` 操作符比较，不相等的变量可能会返回true。
 
-### 代码示例
+### 3.10 代码示例
+
 ```javascript
 '' == '0'           // false
 0 == ''             // true
@@ -361,6 +354,7 @@ null == undefined   // true
 
 ' \t\r\n ' == 0     // true
 ```
+
 如果使用`===`， 上面所有语句都将返回 false。
 
 <br/><br/>
@@ -383,11 +377,9 @@ null == undefined   // true
 
 🔗 [**更多: 这是拥抱箭头函数的时刻**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
 
-
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ 返回顶部</a></p>
-
 
 <h1 id="4-testing-and-overall-quality-practices"><code>4. 测试和总体的质量实践</code></h1>
 
@@ -405,7 +397,6 @@ null == undefined   // true
 
 **否则:** 您可能让一些反模式和易受攻击的代码传递到您的生产环境中。
 
-
 <br/><br/>
 
 ## ![✔] 4.3 仔细挑选您的持续集成（CI）平台
@@ -414,7 +405,7 @@ null == undefined   // true
 
 **否则:** 一旦您需要一些高级定制，选择一些细分市场供应商可能会让您停滞不前。另一方面，伴随着jenkins，可能会在基础设施设置上浪费宝贵的时间。
 
-🔗 [**更多: 挑选 CI 平台**](/sections/testingandquality/citools.chinese.md)
+🔗 [**更多: 挑选 CI 平台**](./sections/testingandquality/citools.chinese.md)
 
 <br/><br/>
 
@@ -440,8 +431,6 @@ null == undefined   // true
 
 **否则:** 当你的大部分代码没有被测试覆盖时，就不会有任何自动化的度量指标告诉你了。
 
-
-
 <br/><br/>
 
 ## ![✔] 4.7 检查过期的依赖包
@@ -456,9 +445,7 @@ null == undefined   // true
 
 **TL;DR:** 端对端(e2e)测试包含现场数据，由于它依赖于很多重型服务如数据库，习惯被认为是CI过程中最薄弱的环节。Docker-compose通过制定类似生产的环境，并使用一个简单的文本文件和简单的命令，轻松化解了这个问题。它为了e2e测试，允许制作所有相关服务，数据库和隔离网络。最后但并非最不重要的一点是，它可以保持一个无状态环境，该环境在每个测试套件之前被调用，然后立即消失。
 
-
 **否则:** 没有docker-compose，团队必须维护一个测试数据库在每一个测试环境上，包含开发机器，保持所有数据同步，这样测试结果不会因环境不同而不同。
-
 
 <br/><br/><br/>
 
@@ -466,14 +453,13 @@ null == undefined   // true
 
 <h1 id="5-going-to-production-practices"><code>5. 上线实践</code></h1>
 
-## ![✔] 5.1. 监控!
+## ![✔] 5.1. 监控
 
 **TL;DR:** 监控是一种在顾客之前发现问题的游戏 – 显然这应该被赋予前所未有的重要性。考虑从定义你必须遵循的基本度量标准开始（我的建议在里面），到检查附加的花哨特性并选择解决所有问题的解决方案。市场已经淹没其中。点击下面的 ‘The Gist’ ，了解解决方案的概述。
 
 **否则:** 错误 === 失望的客户. 非常简单.
 
-
-🔗 [**更多: 监控!**](/sections/production/monitoring.chinese.md)
+🔗 [**更多: 监控!**](./sections/production/monitoring.chinese.md)
 
 <br/><br/>
 
@@ -483,8 +469,7 @@ null == undefined   // true
 
 **否则:** 您最终像是面对一个黑盒，不知道发生了什么事情，然后你开始重新写日志语句添加额外的信息。
 
-
-🔗 [**更多: 使用智能日志增加透明度**](/sections/production/smartlogging.chinese.md)
+🔗 [**更多: 使用智能日志增加透明度**](./sections/production/smartlogging.chinese.md)
 
 <br/><br/>
 
@@ -494,8 +479,7 @@ null == undefined   // true
 
 **否则:** 可怜的单线程Node将不幸地忙于处理网络任务，而不是处理应用程序核心，性能会相应降低。
 
-
-🔗 [**更多: 委托可能的一切（例如：gzip，SSL）给反向代理**](/sections/production/delegatetoproxy.chinese.md)
+🔗 [**更多: 委托可能的一切（例如：gzip，SSL）给反向代理**](./sections/production/delegatetoproxy.chinese.md)
 
 <br/><br/>
 
@@ -505,8 +489,7 @@ null == undefined   // true
 
 **否则:** QA测试通过的代码和批准的版本，在生产中表现不一致。更糟糕的是，同一生产集群中的不同服务器可能运行不同的代码。
 
-
-🔗 [**更多: 锁住依赖**](/sections/production/lockdependencies.chinese.md)
+🔗 [**更多: 锁住依赖**](./sections/production/lockdependencies.chinese.md)
 
 <br/><br/>
 
@@ -516,9 +499,7 @@ null == undefined   // true
 
 **否则:** 运行几十个实例没有明确的战略和太多的工具（集群管理，docker，PM2）可能导致一个DevOps混乱
 
-
-🔗 [**更多: 使用正确的工具保护进程正常运行**](/sections/production/guardprocess.chinese.md)
-
+🔗 [**更多: 使用正确的工具保护进程正常运行**](./sections/production/guardprocess.chinese.md)
 
 <br/><br/>
 
@@ -528,8 +509,7 @@ null == undefined   // true
 
 **否则:** 您的应用可能只是使用了其可用资源中的25% (!)，甚至更少。注意，一台典型的服务器有4个或更多的CPU，默认的Node.js部署仅仅用了一个CPU（甚至使用PaaS服务，比如AWS beanstalk，也一样）。
 
-
-🔗 [**更多: 利用所有的CPU**](/sections/production/utilizecpu.chinese.md)
+🔗 [**更多: 利用所有的CPU**](./sections/production/utilizecpu.chinese.md)
 
 <br/><br/>
 
@@ -539,8 +519,7 @@ null == undefined   // true
 
 **否则:** 您会发现，您正在执行许多“诊断部署” – 将代码发送到生产中，仅仅只为了诊断目的提取一些信息。
 
-
-🔗 [**更多: 创建一个 '维护端点'**](/sections/production/createmaintenanceendpoint.chinese.md)
+🔗 [**更多: 创建一个 '维护端点'**](./sections/production/createmaintenanceendpoint.chinese.md)
 
 <br/><br/>
 
@@ -550,12 +529,9 @@ null == undefined   // true
 
 **否则:** 你可能会花大力气测量API性能和停机时间，也许你永远不会知道，真实场景下哪个是你最慢的代码部分，这些怎么影响用户体验。
 
-
-🔗 [**更多: 使用APM产品发现错误和宕机时间**](/sections/production/apmproducts.chinese.md)
-
+🔗 [**更多: 使用APM产品发现错误和宕机时间**](./sections/production/apmproducts.chinese.md)
 
 <br/><br/>
-
 
 ## ![✔] 5.9. 使您的代码保持生产环境就绪
 
@@ -563,8 +539,7 @@ null == undefined   // true
 
 **否则:** 一个世界冠军级别的IT/运维人员也不能拯救一个编码低劣的系统。
 
-
-🔗 [**更多: 使您的代码保持生产环境就绪**](/sections/production/productioncode.chinese.md)
+🔗 [**更多: 使您的代码保持生产环境就绪**](./sections/production/productioncode.chinese.md)
 
 <br/><br/>
 
@@ -574,11 +549,9 @@ null == undefined   // true
 
 **否则:** 您的内存可能一天泄漏一百兆，就像曾发生在沃尔玛的一样。
 
-
-🔗 [**更多: 测量和保护内存使用**](/sections/production/measurememory.chinese.md)
+🔗 [**更多: 测量和保护内存使用**](./sections/production/measurememory.chinese.md)
 
 <br/><br/>
-
 
 ## ![✔] 5.11. Node外管理您的前端资源
 
@@ -586,11 +559,9 @@ null == undefined   // true
 
 **否则:** 您的单个node线程将忙于传输成百上千的html/图片/angular/react文件，而不是分配其所有的资源为了其擅长的任务 – 服务动态内容
 
-
-🔗 [**更多: Node外管理您的前端资源**](/sections/production/frontendout.chinese.md)
+🔗 [**更多: Node外管理您的前端资源**](./sections/production/frontendout.chinese.md)
 
 <br/><br/>
-
 
 ## ![✔] 5.12. 保持无状态，几乎每天都要停下服务器
 
@@ -598,12 +569,9 @@ null == undefined   // true
 
 **否则:** 某个服务器上的故障将导致应用程序宕机，而不仅仅是停用故障机器。此外，由于依赖特定服务器，伸缩弹性会变得更具挑战性。
 
-
-🔗 [**更多: 保持无状态，几乎每天都要停下服务器**](/sections/production/bestateless.chinese.md)
-
+🔗 [**更多: 保持无状态，几乎每天都要停下服务器**](./sections/production/bestateless.chinese.md)
 
 <br/><br/>
-
 
 ## ![✔] 5.13. 使用自动检测漏洞的工具
 
@@ -611,11 +579,9 @@ null == undefined   // true
 
 **否则:** 否则: 在没有专用工具的情况下，使代码清除漏洞，需要不断地跟踪有关新威胁的在线出版物。相当繁琐。
 
-
-🔗 [**更多: 使用自动检测漏洞的工具**](/sections/production/detectvulnerabilities.chinese.md)
+🔗 [**更多: 使用自动检测漏洞的工具**](./sections/production/detectvulnerabilities.chinese.md)
 
 <br/><br/>
-
 
 ## ![✔] 5.14. 在每一个log语句中指明 ‘TransactionId’
 
@@ -623,11 +589,9 @@ null == undefined   // true
 
 **否则:** 在没有上下文的情况下查看生产错误日志，这会使问题变得更加困难和缓慢去解决。
 
-
-🔗 [**更多: 在每一个log语句中指明 ‘TransactionId’**](/sections/production/assigntransactionid.chinese.md)
+🔗 [**更多: 在每一个log语句中指明 ‘TransactionId’**](./sections/production/assigntransactionid.chinese.md)
 
 <br/><br/>
-
 
 ## ![✔] 5.15. 设置NODE_ENV=production
 
@@ -635,18 +599,25 @@ null == undefined   // true
 
 **否则:** 遗漏这个简单的属性可能大幅减弱性能。例如，在使用Express作为服务端渲染页面的时候，如果未设置NODE_ENV，性能将会减慢大概三分之一！
 
-
-🔗 [**更多: 设置NODE_ENV=production**](/sections/production/setnodeenv.chinese.md)
-
+🔗 [**更多: 设置NODE_ENV=production**](./sections/production/setnodeenv.chinese.md)
 
 <br/><br/>
-
 
 ## ![✔] 5.16. 设计自动化、原子化和零停机时间部署
 
 **TL;DR:** 研究表明，执行许多部署的团队降低了严重上线问题的可能性。不需要危险的手动步骤和服务停机时间的快速和自动化部署大大改善了部署过程。你应该达到使用Docker结合CI工具，使他们成为简化部署的行业标准。
 
 **否则:** 长时间部署 -> 线上宕机 & 和人相关的错误 -> 团队部署时不自信 -> 更少的部署和需求
+
+<br/><br/>
+
+## ![✔] 5.17. 使用 Node.js 的 LTS 版本
+
+**TL;DR:** 确保您是使用LTS版本的Node.js来获取关键的错误修复、安全更新和性能改进。
+
+**否则:** 新发现的错误或漏洞可能会被用于生产环境中运行的应用程序，您的应用程序可能会变得难以维护且不受各种模块支持.
+
+🔗 [**更多: 使用node.js的LTS版本**](./sections/production/LTSrelease.chinese.md)
 
 <br/><br/><br/>
 
@@ -666,7 +637,7 @@ null == undefined   // true
 
 **Otherwise:** 在开发过程中, 可能一个直白的安全隐患, 成为生产环境中一个严重问题。此外, 项目可能没有遵循一致的安全规范, 而导致引入漏洞, 或敏感信息被提交到远程仓库中。
 
-🔗 [**更多: Lint 规范**](/sections/security/lintrules.md)
+🔗 [**更多: Lint 规范**](./sections/security/lintrules.md)
 
 <br/><br/>
 
@@ -678,7 +649,7 @@ null == undefined   // true
 
 **否则:** 应用程序可能受到攻击, 导致拒绝服务, 在这种情况下, 真实用户会遭受服务降级或不可用。
 
-🔗 [**更多: 实施速率限制**](/sections/security/limitrequests.md)
+🔗 [**更多: 实施速率限制**](./sections/security/limitrequests.md)
 
 <br/><br/>
 
@@ -690,7 +661,7 @@ null == undefined   // true
 
 **否则:** 源代码管理, 即使对于私有仓库, 也可能会被错误地公开, 此时所有的秘密信息都会被公开。外部组织的源代码管理的访问权限将无意中提供对相关系统 (数据库、api、服务等) 的访问。
 
-🔗 [**更多: 安全管理**](/sections/security/secretmanagement.md)
+🔗 [**更多: 安全管理**](./sections/security/secretmanagement.md)
 
 <br/><br/>
 
@@ -702,15 +673,15 @@ null == undefined   // true
 
 **否则:** 未经验证或未脱敏处理的用户输入，可能会导致操作员在使用MongoDB进行NoSQL操作时进行注入, 而不使用适当的过滤系统或ORM很容易导致SQL注入攻击, 从而造成巨大的漏洞。
 
-🔗 [**更多: 使用 ORM/ODM 库防止查询注入**](/sections/security/ormodmusage.md)
+🔗 [**更多: 使用 ORM/ODM 库防止查询注入**](./sections/security/ormodmusage.md)
 
 <br/><br/>
 
-## ![✔] 6.5. 通用安全最佳实际集合
+## ![✔] 6.5. 通用安全最佳实践集合
 
 **TL;DR:** 这些是与Node.js不直接相关的安全建议的集合-Node的实现与任何其他语言没有太大的不同。单击 "阅读更多" 浏览。
 
-🔗 [**更多: 通用安全最佳实际**](/sections/security/commonsecuritybestpractices.md)
+🔗 [**更多: 通用安全最佳实践**](./sections/security/commonsecuritybestpractices.md)
 
 <br/><br/>
 
@@ -722,7 +693,7 @@ null == undefined   // true
 
 **否则:** 攻击者可以对应用程序的用户进行直接攻击, 导致巨大的安全漏洞
 
-🔗 [**更多: 在应用程序中使用安全的header**](/sections/security/secureheaders.md)
+🔗 [**更多: 在应用程序中使用安全的header**](./sections/security/secureheaders.md)
 
 <br/><br/>
 
@@ -734,7 +705,7 @@ null == undefined   // true
 
 **否则:** 攻击者可以检测到您的web框架并攻击其所有已知的漏洞。
 
-🔗 [**更多: 安全依赖**](/sections/security/dependencysecurity.md)
+🔗 [**更多: 安全依赖**](./sections/security/dependencysecurity.md)
 
 <br/><br/>
 
@@ -746,7 +717,7 @@ null == undefined   // true
 
 **否则:** 在不使用安全功能的情况下，保存的密码或秘密信息容易受到暴力破解和字典攻击, 最终会导致他们的泄露。
 
-🔗 [**更多: 使用Bcrypt**](/sections/security/bcryptpasswords.chinese.md)
+🔗 [**更多: 使用Bcrypt**](./sections/security/bcryptpasswords.chinese.md)
 
 <br/><br/>
 
@@ -758,7 +729,7 @@ null == undefined   // true
 
 **否则:** 攻击者可能会将恶意的JavaScript代码存储在您的DB中, 然后将其发送给可怜的客户端。
 
-🔗 [**更多: 转义输出**](/sections/security/escape-output.md)
+🔗 [**更多: 转义输出**](./sections/security/escape-output.md)
 
 <br/><br/>
 
@@ -770,7 +741,7 @@ null == undefined   // true
 
 **否则:** 您疏忽和宽松的方法大大增加了攻击面, 并鼓励攻击者尝试许多输入, 直到他们找到一些组合, 使应用程序崩溃。
 
-🔗 [**更多: 验证传入的JSON schemas**](/sections/security/validation.md)
+🔗 [**更多: 验证传入的JSON schemas**](./sections/security/validation.md)
 
 <br/><br/>
 
@@ -782,7 +753,7 @@ null == undefined   // true
 
 **否则:** 过期或错误的令牌可能被第三方恶意使用，以访问应用程序，并模拟令牌的所有者。
 
-🔗 [**更多: 为JSON Web Token添加黑名单**](/sections/security/expirejwt.md)
+🔗 [**更多: 为JSON Web Token添加黑名单**](./sections/security/expirejwt.md)
 
 <br/><br/>
 
@@ -794,7 +765,7 @@ null == undefined   // true
 
 **否则:** 攻击者可以发出无限制的密码匹配尝试, 以获取对应用程序中特权帐户的访问权限。
 
-🔗 [**更多: 限制登录频率**](/sections/security/login-rate-limit.md)
+🔗 [**更多: 限制登录频率**](./sections/security/login-rate-limit.md)
 
 <br/><br/>
 
@@ -806,7 +777,7 @@ null == undefined   // true
 
 **否则:** 在服务器上运行脚本的攻击者在本地计算机上获得无限制的权利 (例如，改变iptable，引流到他的服务器上)
 
-🔗 [**更多: 使用非root用户运行Node.js**](/sections/security/non-root-user.md)
+🔗 [**更多: 使用非root用户运行Node.js**](./sections/security/non-root-user.md)
 
 <br/><br/>
 
@@ -818,7 +789,7 @@ null == undefined   // true
 
 **否则:** 您的应用程序将不得不处理大的请求, 无法处理它必须完成的其他重要工作, 从而导致对DOS攻击的性能影响和脆弱性。
 
-🔗 [**更多: 限制负载大小**](/sections/security/requestpayloadsizelimit.md)
+🔗 [**更多: 限制负载大小**](./sections/security/requestpayloadsizelimit.md)
 
 <br/><br/>
 
@@ -830,7 +801,7 @@ null == undefined   // true
 
 **否则:** 恶意JavaScript代码查找传入 `eval` 或其他实时判断的JavaScript函数的文本的方法, 并将获得在该页面上javascript权限的完全访问权。此漏洞通常表现为XSS攻击。
 
-🔗 [**更多: 避免JavaScript的eval声明**](/sections/security/avoideval.chinese.md)
+🔗 [**更多: 避免JavaScript的eval声明**](./sections/security/avoideval.chinese.md)
 
 <br/><br/>
 
@@ -842,7 +813,7 @@ null == undefined   // true
 
 **否则:** 写得不好的正则表达式可能容易受到正则表达式DoS攻击的影响, 这将完全阻止event loop。例如，流行的`moment`包在2017年的11月，被发现使用了错误的RegEx用法而易受攻击。
 
-🔗 [**更多: 防止恶意正则**](/sections/security/regex.md)
+🔗 [**更多: 防止恶意正则**](./sections/security/regex.md)
 
 <br/><br/>
 
@@ -854,7 +825,7 @@ null == undefined   // true
 
 **否则:** 恶意用户输入可以找到用于获得篡改文件的参数, 例如, 文件系统上以前上载的文件, 或访问已有的系统文件。
 
-🔗 [**更多: 安全地加载模块**](/sections/security/safemoduleloading.chinese.md)
+🔗 [**更多: 安全地加载模块**](./sections/security/safemoduleloading.chinese.md)
 
 <br/><br/>
 
@@ -866,7 +837,7 @@ null == undefined   // true
 
 **否则:** 插件可以通过无限循环、内存超载和对敏感进程环境变量的访问等多种选项进行攻击
 
-🔗 [**更多: 在沙箱中运行不安全代码**](/sections/security/sandbox.chinese.md)
+🔗 [**更多: 在沙箱中运行不安全代码**](./sections/security/sandbox.chinese.md)
 
 <br/><br/>
 
@@ -878,7 +849,7 @@ null == undefined   // true
 
 **否则:** 由于将恶意用户输入传递给未脱敏处理的系统命令, 直接地使用子进程可能导致远程命令执行或shell注入攻击。
 
-🔗 [**更多: 处理子进程时要格外小心**](/sections/security/childprocesses.chinese.md)
+🔗 [**更多: 处理子进程时要格外小心**](./sections/security/childprocesses.chinese.md)
 
 <br/><br/>
 
@@ -890,7 +861,7 @@ null == undefined   // true
 
 **否则:** 敏感应用程序详细信息(如服务器文件路径、使用中的第三方模块和可能被攻击者利用的应用程序的其他内部工作流)可能会从stack trace发现的信息中泄露。
 
-🔗 [**更多: 隐藏客户端的错误详细信息**](/sections/security/hideerrors.md)
+🔗 [**更多: 隐藏客户端的错误详细信息**](./sections/security/hideerrors.md)
 
 <br/><br/>
 
@@ -912,7 +883,7 @@ null == undefined   // true
 
 **否则:** 可以通过不安全的连接发送cookie, 攻击者可能会使用会话标识来标识web应用程序的基础框架以及特定于模块的漏洞。
 
-🔗 [**更多: cookie和session安全**](/sections/security/sessions.md)
+🔗 [**更多: cookie和session安全**](./sections/security/sessions.md)
 
 <br/><br/>
 
@@ -934,50 +905,88 @@ null == undefined   // true
 
 **否则:** 当攻击者发现你没有校验用户提供的外部输入时，他们会在论坛、社交媒体以和其他公共场合发布他们精心制作的链接来诱使用户点击，以此达到漏洞利用的目的。
 
-🔗 [**阅读更多: 避免不安全的重定向**](/sections/security/saferedirects.chinese.md)
+🔗 [**阅读更多: 避免不安全的重定向**](./sections/security/saferedirects.chinese.md)
+
+<br/><br/><br/>
+
+## ![✔] 6.25. 避免将机密信息发布到NPM仓库
+
+<a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
+
+**TL;DR:** 您应该采取预防措施来避免偶然地将机密信息发布到npm仓库的风险。 一个 `.npmignore` 文件可以被用作忽略掉特定的文件或目录, 或者一个在 `package.json` 中的 `files` 数组可以起到一个白名单的作用.
+
+**否则:** 您项目的API密钥、密码或者其它机密信息很容易被任何碰到的人滥用，这可能会导致经济损失、身份冒充以及其它风险。
+
+🔗 [**阅读更多: 避免发布机密信息**](./sections/security/avoid_publishing_secrets.md)
 
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
-# `API Practices`
+# `7. 草稿: 有关性能的最佳实践`
 
-## Our contributors are working on this section. Would you like to join?
+## 我们的贡献者们正在努力完善这个章节。 [你想要加入吗?](https://github.com/goldbergyoni/nodebestpractices/issues/256)
 
-# `Performance Practices`
+<br/><br/>
 
-## Our contributors are working on this section. Would you like to join?
+## ![✔] 7.1. 不要阻塞事件循环
+
+**TL;DR:** 避免执行CPU密集型的任务，并将这些任务转移到基于上下文的专用线程中，因为它们会阻塞大多数单线程事件循环。
+
+**否则:** 由于事件循环被阻塞了，Node.js 将无法处理其它请求，从而导致同时请求的用户的延迟。 **3000 位用户正在等待响应，内容本身已经准备好了提供服务， 但是一个单独的请求阻止了服务器将结果分发回去。**
+
+🔗 [**阅读更多: 不要阻塞事件循环**](./sections/performance/block-loop.md)
+
+<br /><br /><br />
+
+## ![✔] 7.2. 优先使用原生的JS方法，而不是像 Lodash 这样的用户空间级别的实用工具
+
+**TL;DR:** 使用像 `lodash` 和 `underscore` 这样的实用库替代原生的JS方法，通常来说这么做更不好，因为它导致了一些不必要的依赖项以及更差的性能表现。
+请记住，随着新的V8引擎以及新的ES标准的引入，原生方法得到了改进，它们现在会比这些实用工具库高出大概 50% 的性能。
+
+**否则:** 你将不得不维护一些性能更低的项目，在这些项目中，你本可以很简单的使用那些已经可以用的东西，或者用几行代码来取代掉几个文件。
+
+🔗 [**阅读更多: 原生方法胜过实用工具**](./sections/performance/nativeoverutil.md)
+
+<br/><br/><br/>
+
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
 <br/><br/><br/>
 
 # Milestones
+
 To maintain this guide and keep it up to date, we are constantly updating and improving the guidelines and best practices with the help of the community. You can follow our [milestones](https://github.com/goldbergyoni/nodebestpractices/milestones) and join the working groups if you want to contribute to this project.
 
 <br/><br/>
 
 # Contributors
+
 ## `Yoni Goldberg`
+
 Independent Node.js consultant who works with customers at USA, Europe and Israel on building large-scale scalable Node applications. Many of the best practices above were first published on his blog post at [http://www.goldbergyoni.com](http://www.goldbergyoni.com). Reach Yoni at @goldbergyoni or me@goldbergyoni.com
 
 ## `Ido Richter`
+
 👨‍💻 Software engineer, 🌐 web developer, 🤖 emojis enthusiast.
 
 ## `Refael Ackermann` [@refack](https://github.com/refack) &lt;refack@gmail.com&gt; (he/him)
+
 Node.js Core Collaborator, been noding since 0.4, and have noded in multiple production sites. Founded `node4good` home of [`lodash-contrib`](https://github.com/node4good/lodash-contrib), [`formage`](https://github.com/node4good/formage), and [`asynctrace`](https://github.com/node4good/asynctrace).
 `refack` on freenode, Twitter, GitHub, GMail, and many other platforms. DMs are open, happy to help.
 
 ## `Bruno Scheufler`
+
 💻 full-stack web developer and Node.js enthusiast.
 
 ## `Kyle Martin` [@js-kyle](https://github.com/js-kyle)
-Full Stack Developer based in New Zealand, interested in architecting and building Node.js applications to perform at global scale. Keen contributor to open source software, including Node.js Core.
 
+Full Stack Developer based in New Zealand, interested in architecting and building Node.js applications to perform at global scale. Keen contributor to open source software, including Node.js Core.
 
 <br/><br/>
 
 ## Thank You Notes
 
-We appreciate any contribution, from a single word fix to a new best practice. View our contributors and [contributing documentation here!](CONTRIBUTORS.md)
+We appreciate any contribution, from a single word fix to a new best practice. View our contributors and [contributing documentation here!](./README.md#contributors-)
 
 <br/><br/><br/>
-

@@ -36,8 +36,9 @@ Docker ビルドコマンドは、仮想ネットワークを介してローカ�
 <details>
 <summary><strong>Dockerfile</strong></summary>
 
-```
+```dockerfile
 FROM node:12-slim AS build
+
 WORKDIR /usr/src/app
 # 次の行はすべてをコピーします
 COPY . .

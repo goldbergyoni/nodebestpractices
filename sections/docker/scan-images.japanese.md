@@ -14,11 +14,11 @@
 
 <summary><strong>Bash</strong></summary>
 
-```
-sudo apt-get install rpm
+```console
+$ sudo apt-get install rpm
 $ wget https://github.com/aquasecurity/trivy/releases/download/{TRIVY_VERSION}/trivy_{TRIVY_VERSION}_Linux-64bit.deb
 $ sudo dpkg -i trivy_{TRIVY_VERSION}_Linux-64bit.deb
-trivy image [YOUR_IMAGE_NAME]
+$ trivy image [YOUR_IMAGE_NAME]
 ```
 
 </details>
@@ -27,4 +27,4 @@ trivy image [YOUR_IMAGE_NAME]
 
 ### レポート例 – Docker スキャン結果 (Anchore)
 
-![Report examples](/assets/images/anchore-report.png "Docker scan report")
+![Report examples](../../assets/images/anchore-report.png "Docker scan report")

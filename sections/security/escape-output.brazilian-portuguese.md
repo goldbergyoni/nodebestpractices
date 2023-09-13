@@ -7,7 +7,7 @@ HTML e outras linguagens da Web combinam conteúdo com código executável - um 
 
 ### Exemplo de código: não coloque dados não confiáveis ​​no seu HTML
 
-```javascript
+```html
 <script>...NUNCA COLOQUE DADOS NÃO CONFIÁVEIS AQUI...</script>   direto em um script
  
  <!--...NUNCA COLOQUE DADOS NÃO CONFIÁVEIS AQUI...-->             dentro de um comentário HTML
@@ -22,7 +22,7 @@ HTML e outras linguagens da Web combinam conteúdo com código executável - um 
 
 ### Exemplo de código - Conteúdo mal-intencionado que pode ser injetado em um banco de dados
 
-```javascript
+```html
 <div>
   <b>A pseudo comment to the a post</b>
   <script>
@@ -39,11 +39,10 @@ HTML e outras linguagens da Web combinam conteúdo com código executável - um 
 Do Blog [benramsey.com](https://benramsey.com/articles/escape-output/)
 > Os dados podem deixar sua aplicação na forma de HTML enviado para um navegador da Web, SQL enviado para um banco de dados, XML enviado para um leitor de RSS, WML enviado para um dispositivo sem fio, etc. As possibilidades são ilimitadas. Cada um deles tem seu próprio conjunto de caracteres especiais que são interpretados de maneira diferente do resto do texto simples recebido. Às vezes queremos enviar esses caracteres especiais para que eles sejam interpretados (tags HTML enviadas para um navegador da Web, por exemplo), enquanto outras vezes (no caso de entrada de usuários ou alguma outra fonte), não queremos que os caracteres para ser interpretado, então precisamos escapar eles.
 
-> Escaping também é conhecido como codificação. Em suma, é o processo de representar dados de maneira que não sejam executados ou interpretados. Por exemplo, o HTML renderizará o texto a seguir em um navegador da Web como texto em negrito, porque as marcações <strong> têm um significado especial:
-<strong>Isso é um texto em negrito.</strong>
-Mas, suponha que eu queira renderizar as tags no navegador e evitar sua interpretação. Então, eu preciso escapar os colchetes, que têm um significado especial em HTML. A seguir ilustra-se o HTML com escape:
-
-&lt;strong&gt;Isso é um texto em negrito.&lt;/strong&gt;
+> Escaping também é conhecido como codificação. Em suma, é o processo de representar dados de maneira que não sejam executados ou interpretados. Por exemplo, o HTML renderizará o texto a seguir em um navegador da Web como texto em negrito, porque as marcações `<strong>` têm um significado especial:
+> ```html
+> <strong>Isso é um texto em negrito.</strong>
+> ```
 
 
 <br/><br/>
@@ -59,4 +58,4 @@ Do blog OWASP [Folha de Dicas de Prevenção de XSS (Cross Site Scripting)](http
 ### Citação de Blog: "Você DEVE usar a sintaxe de escape para a parte do HTML"
 
 Do blog OWASP [Folha de Dicas de Prevenção de XSS (Cross Site Scripting)](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet)
-> "Mas a codificação de entidade HTML não funciona se você estiver colocando dados não confiáveis ​​dentro de uma tag <script> em qualquer lugar, ou um atributo do manipulador de eventos, como onmouseover ou dentro de CSS, ou em uma URL. Portanto, mesmo se você usar um método de codificação de entidade HTML em todos os lugares, provavelmente ainda estará vulnerável ao XSS. Você DEVE usar a sintaxe de escape para a parte do documento HTML na qual você está colocando dados não confiáveis."
+> "Mas a codificação de entidade HTML não funciona se você estiver colocando dados não confiáveis ​​dentro de uma tag `<script>` em qualquer lugar, ou um atributo do manipulador de eventos, como onmouseover ou dentro de CSS, ou em uma URL. Portanto, mesmo se você usar um método de codificação de entidade HTML em todos os lugares, provavelmente ainda estará vulnerável ao XSS. Você DEVE usar a sintaxe de escape para a parte do documento HTML na qual você está colocando dados não confiáveis."
