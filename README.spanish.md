@@ -101,7 +101,7 @@ Leelo en otro idioma: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md),
 &emsp;&emsp;[3.9 Establece un punto de entrada explícito a un módulo/carpeta `#updated`](#-39-establece-un-punto-de-entrada-explícito-a-un-módulocarpeta)</br>
 &emsp;&emsp;[3.10 Usa el operador ===](#-310-usa el-operador-)</br>
 &emsp;&emsp;[3.11 Usa Async Await, evita los callbacks `#strategic`](#-311-usa-async-await-evita-los-callbacks)</br>
-&emsp;&emsp;[3.12 Usa expresiones de funciones de flecha (=>)](#-312-usa-expresiones-de-funciones-de-flecha-)</br>
+&emsp;&emsp;[3.12 Usa expresiones de función flecha (=>)](#-312-usa-expresiones-de-funcion-flecha-)</br>
 &emsp;&emsp;[3.13 Evita efectos fuera de las funciones `#new`](#-313-evita-efectos-fuera-de-las-funciones)</br>
 
 </details>
@@ -700,11 +700,11 @@ Todas las sentencias de arriba retornarían `false` si se hubiera usado `===`.
 
 <br/><br/>
 
-## ![✔] 3.12 Usa expresiones de funciones de flecha (=>)
+## ![✔] 3.12 Usa expresiones de función flecha (=>)
 
 **TL;DR:** Aunque se recomienda usar async-await y evitar parámetros de función cuando se trata de API más antiguas que aceptan promesas o callbacks. Las funciones de flecha hacen que la estructura del código sea más compacta y mantienen el contexto léxico de la función raíz (i.e. `this`)
 
-**De lo contrario:** El código más largo (en las funciones de ES5) es más propenso a errores y engorroso de leer
+**De lo contrario:** El código más largo (en las funciones ES5) es más propenso a errores y engorroso de leer.
 
 🔗 [**Leer más: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
 
