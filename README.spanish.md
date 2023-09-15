@@ -498,7 +498,7 @@ my-system
 
 <br/><br/>
 
-## ![✔] 3.3 Empieza con las llaves en la misma línea en el código
+## ![✔] 3.3 Inicia las llaves de un bloque de código en la misma línea
 
 **TL;DR:** Las llaves de apertura de un bloque de código deben estar en la misma línea que la declaración de apertura
 
@@ -577,7 +577,7 @@ const count = 2 // intenta ejecutar 2(), pero 2 no es una función
 
 ## ![✔] 3.6 Usa convenciones de nombre para variables, constantes, funciones y clases
 
-**TL;DR:** Utiliza **_lowerCamelCase_** al nombrar constantes, variables y funciones y utiliza **_UpperCamelCase_** (la primera en mayúscula también) cuando nombres clases. Esto lo ayudará a distinguir fácilmente entre variables / funciones simples y clases que requieren instanciación. Use nombres descriptivos, pero trate de mantenerlos cortos
+**TL;DR:** Usa **_lowerCamelCase_** al nombrar constantes, variables y funciones y utiliza **_UpperCamelCase_** (la primera en mayúscula también) cuando nombres clases. Esto lo ayudará a distinguir fácilmente entre variables / funciones simples y clases que requieren instanciación. Use nombres descriptivos, pero trate de mantenerlos cortos
 
 **De lo contrario:** Javascript es el único lenguaje en el mundo que permite invocar a un constructor ("Clase") directamente sin instanciarlo primero. En consecuencia, las clases y los constructores de funciones se diferencian comenzando con UpperCamelCase
 
