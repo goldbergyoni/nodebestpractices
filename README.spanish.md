@@ -708,6 +708,16 @@ Todas las sentencias de arriba retornarían `false` si se hubiera usado `===`.
 
 🔗 [**Leer más: It’s Time to Embrace Arrow Functions**](https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75)
 
+<br/><br/>
+
+## ![✔] 3.13 Evita efectos fuera de las funciones
+
+### `🌟 #new`
+
+**TL;DR:** Evita colocar código con efectos como llamadas de red o de base de datos fuera de las funciones. Dicho código se ejecutará inmediatamente cuando otro archivo requiera el archivo. Este código "flotante" podría ejecutarse cuando el sistema subyacente aún no esté listo. También viene con una penalización de rendimiento incluso cuando las funciones de ese módulo finalmente no se utilicen en tiempo de ejecución. Por último, mockear estas llamadas de red/DB para realizar pruebas es más difícil afuera de las funciones. En su lugar, coloque este código dentro de funciones que deban llamarse explícitamente. Si hay código de base de datos/red que deba ejecutarse justo cuando se carga el módulo, considera usar un factory o revelar los patrones del módulo.
+
+**De lo contrario:** Un típico framework web establece un controlador de errores, variables de entorno y monitoreo. Cuando se realizan llamadas a la base de datos/red antes de que se inicialice el framework web, estas no serán monitoreadas o fallarán debido a la falta de datos de configuración.
+
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Volver arriba</a></p>
