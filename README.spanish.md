@@ -577,24 +577,43 @@ const count = 2 // intenta ejecutar 2(), pero 2 no es una función
 
 ## ![✔] 3.6 Usa convenciones de nombre para variables, constantes, funciones y clases
 
-**TL;DR:** Usa **_lowerCamelCase_** al nombrar constantes, variables y funciones y utiliza **_UpperCamelCase_** (la primera en mayúscula también) cuando nombres clases. Esto lo ayudará a distinguir fácilmente entre variables / funciones simples y clases que requieren instanciación. Use nombres descriptivos, pero trate de mantenerlos cortos
+**TL;DR:** Usa **_lowerCamelCase_** al nombrar constantes, variables y funciones y utiliza **_UpperCamelCase_** (la primera en mayúscula también) cuando nombres clases y **_UPPER_SNAKE_CASE_** al nombrar variables globales o estáticas. Esto lo ayudará a distinguir fácilmente entre variables, funciones,  clases que requieren instanciación y variables declarardas en el scope global del módulo. Usa nombres descriptivos, pero trata de mantenerlos cortos.
 
-**De lo contrario:** Javascript es el único lenguaje en el mundo que permite invocar a un constructor ("Clase") directamente sin instanciarlo primero. En consecuencia, las clases y los constructores de funciones se diferencian comenzando con UpperCamelCase
+**De lo contrario:** Javascript es el único lenguaje en el mundo que permite invocar a un constructor ("Clase") directamente sin instanciarlo primero. En consecuencia, las clases y constructores de funciones se diferencian comenzando con UpperCamelCase
 
 ### 3.6 Ejemplo de código
 
 ```javascript
-// para una clase utilizamos UpperCamelCase
-class SomeClassExample {}
-
-// para las constantes utilizamos la palabra reservada const y lowerCamelCase
-const config = {
-  key: 'value'
+// para nombres de variables globales usamos el keyword const/let y UPPER_SNAKE_CASE
+let MUTABLE_GLOBAL = "mutable value";
+const GLOBAL_CONSTANT = "immutable value";
+const CONFIG = {
+  key: "value",
 };
 
-// para las variables y funciones utilizamos lowerCamelCase
-let someVariableExample = 'value';
-function doSomething() {}
+// ejemplos de la convención de UPPER_SNAKE_CASE en el ecosistema nodejs/javascript
+
+// en el moóulo Math.PI de JavaScript
+const PI = 3.141592653589793;
+
+// https://github.com/nodejs/node/blob/b9f36062d7b5c5039498e98d2f2c180dca2a7065/lib/internal/http2/core.js#L303
+// en el modulo http2 de NodeJS
+const HTTP_STATUS_OK = 200;
+const HTTP_STATUS_CREATED = 201;
+
+// para nombre de clases usamos UpperCamelCase
+class SomeClassExample {
+  // para propiedades estáticas de clase usamos UPPER_SNAKE_CASE
+  static STATIC_PROPERTY = "value";
+}
+
+// para funciones usamos lowerCamelCase
+function doSomething() {
+  // for scoped variable names we use the const/let keyword and lowerCamelCase
+  // para variables dentro de un scope usamos utilizamos la keyword const/let  y lowerCamelCase
+  const someConstExample = "immutable value";
+  let someMutableExample = "mutable value";
+}
 ```
 
 <br/><br/>
