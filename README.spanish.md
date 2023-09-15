@@ -665,28 +665,28 @@ const { SMSWithMedia } = require("./SMSProvider");
 
 ## ![✔] 3.10 Usa el operador `===`
 
-**TL;DR:** Prioriza el operador de igualdad estricto `===` sobre el operador de igualdad abstracto `==`. `==` comparará dos variables después de convertirlas a un tipo común. No hay conversión de tipo en `===`, y ambas variables deben ser del mismo tipo para ser iguales
+**TL;DR:** Prefiere el operador de igualdad estricto `===` por sobre el operador de igualdad abstracto `==`. `==` comparará dos variables después de convertirlas a un tipo común. Con `===` no hay conversión de tipo, y ambas variables deben ser del mismo tipo para ser iguales
 
 **De lo contrario:** Variables que no son iguales pueden devolver `true` con el operador `==` 
 
 ### 3.10 Ejemplo de código
 
 ```javascript
-'' == '0'           // false
-0 == ''             // true
-0 == '0'            // true
+"" == "0"; // false
+0 == ""; // true
+0 == "0"; // true
 
-false == 'false'    // false
-false == '0'        // true
+false == "false"; // false
+false == "0"; // true
 
-false == undefined  // false
-false == null       // false
-null == undefined   // true
+false == undefined; // false
+false == null; // false
+null == undefined; // true
 
-' \t\r\n ' == 0     // true
+" \t\r\n " == 0; // true
 ```
 
-Todo lo de encima hubiera devuelto `false` si se hubiera usado `===`
+Todas las sentencias de arriba retornarían `false` si se hubiera usado `===`.
 
 <br/><br/>
 
