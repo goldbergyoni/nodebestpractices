@@ -692,9 +692,9 @@ Todas las sentencias de arriba retornarían `false` si se hubiera usado `===`.
 
 ## ![✔] 3.11 Usa Async Await, evita callbacks
 
-**TL;DR:** Node 8 LTS ahora tiene soporte completo para Async-await. Esta es una nueva forma de lidiar con el código asíncrono que reemplaza las devoluciones de llamada y las promesas. Async-await no bloquea y hace que el código asíncrono se vea síncrono. El mejor regalo que puede dar a su código es usar async-await, que proporciona una sintaxis de código mucho más compacta y familiar a try-catch.
+**TL;DR:** Async-await es la forma más sencilla de expresar un flujo asincrónico, ya que hace que el código asincrónico parezca sincrónico. Async-await también dará como resultado un código mucho más compacto y soporte para try-catch. Esta técnica ahora reemplaza los callbacks y las promesas en la _mayoría_ de los casos. Usarlo en tu código es probablemente el mejor regalo que le puedas hacer al lector del código.
 
-**De lo contrario:** El manejo de errores asíncronos en el estilo de callback es probablemente la forma más rápida de ir al infierno: este estilo obliga a verificar los errores por todas partes, lidiar con la incómoda anidación de código y hace que sea difícil razonar sobre el flujo de código
+**De lo contrario:** Manejar errores asíncronos en el estilo de callback es probablemente el camino más rápido al infierno. Ese estilo obliga a verificar los errores por todas partes, lidiar con el anidamiento de código y dificulta razonar sobre el flujo de código.
 
 🔗[**Leer más:** Guide to async await 1.0](https://github.com/yortus/asyncawait)
 
