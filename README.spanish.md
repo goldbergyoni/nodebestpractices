@@ -620,7 +620,7 @@ function doSomething() {
 
 ## ![✔] 3.7 Prefiere const antes que let. No uses var
 
-**TL;DR:** Usar `const` significa que una vez que se asigna una variable, no se puede reasignar. Prefiriendo `const` te ayudará a no sentirte tentado a usar la misma variable para diferentes usos y a aclarar tu código. Si una variable necesita ser reasignada, en un bucle for, por ejemplo, usa `let` para declararlo. Otro aspecto importante de `let`es que una variable declarada usando solo está disponible en el ámbito del bloque en el que se definió. `var` tiene ámbito de función, no ámbito de bloque, y [no debería ser usada en ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) ahora que tienes `const` y `let` a tu disposición
+**TL;DR:** Usar `const` significa que una vez que se asigna una variable, no se puede reasignar. Prefiriendo `const` te ayudará a no sentirte tentado a usar la misma variable para diferentes usos y hace tu código más claro. Si una variable necesita ser reasignada, por ejemplo en un bucle for, usa `let` para declararla. Otro aspecto importante es que una variable declarada con `let` solo está disponible en el ámbito del bloque en la que se definió. `var` tiene ámbito de función, no de bloque, y [no debería ser usada en ES6](https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70) ahora que tienes `const` y `let` a tu disposición.
 
 **De lo contrario:** La depuración se vuelve mucho más engorrosa cuando se sigue una variable que cambia con frecuencia
 
