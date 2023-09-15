@@ -638,20 +638,27 @@ function doSomething() {
 
 ## ![✔] 3.9 Establece un punto de entrada explícito a un módulo/carpeta
 
-**TL;DR:** Al desarrollar un módulo / biblioteca en una carpeta, coloca un archivo index.js que exponga los componentes internos del módulo para que todos los consumidores lo atraviesen. Esto sirve como una 'interfaz' para tu módulo y facilita los cambios futuros sin romper el contrato
+### `📝 #updated`
 
-**De lo contrario:** Cambiar la estructura interna de los archivos o la firma puede romper la interfaz con los clientes
+**TL;DR:** Al desarrollar un módulo/biblioteca, establece un archivo raíz explícito que exporte el código público e interesante. Disuade al código del cliente de importar archivos profundos y de familiarizarse con la estructura interna. Con commonjs (require), esto se puede hacer con un archivo index.js en la raíz de la carpeta o en el campo package.json.main. Con ESM (import), si existe un paquete.json en la raíz, el campo "exportaciones" permite especificar el archivo raíz del módulo. Si no existe ningún paquete.json, puedes colocar un archivo index.js en la raíz que reexporte toda la funcionalidad pública.
 
-### 3.9 Ejemplo de código
+**De lo contrario:** Tener un archivo raíz explícito actúa como una "interfaz" pública que encapsula lo interno, dirige al invocador al código público y facilita cambios futuros sin romper el contrato.
+
+### 3.9 Ejemplo de código - evita el acoplamiento del cliente con la estructura del módulo
 
 ```javascript
-// Haz esto
-module.exports.SMSProvider = require('./SMSProvider');
-module.exports.SMSNumberResolver = require('./SMSNumberResolver');
+// Evita: el client tiene mucha familiaridad con lo interno
 
-// Evita esto
-module.exports.SMSProvider = require('./SMSProvider/SMSProvider.js');
-module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolver.js');
+// Código cliente
+const SMSWithMedia = require("./SMSProvider/providers/media/media-provider.js");
+
+// Mejor: exporta explícitamente la funciones públicas
+
+//index.js, código del módulo
+module.exports.SMSWithMedia = require("./SMSProvider/providers/media/media-provider.js");
+
+// Client code
+const { SMSWithMedia } = require("./SMSProvider");
 ```
 
 <br/><br/>
