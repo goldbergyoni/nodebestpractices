@@ -630,9 +630,9 @@ function doSomething() {
 
 ## ![✔] 3.8 Importa los módulos primero, no dentro de funciones
 
-**TL;DR:** Importa los módulos al comienzo de cada archivo, antes y fuera de cualquier función. Esta práctica recomendada simple no solo lo ayudará a identificar fácil y rápidamente las dependencias de un archivo en la parte superior, sino que también evitará un par de posibles problemas.
+**TL;DR:** Importa los módulos al comienzo de cada archivo, antes y fuera de cualquier función. Esta simple práctica recomendada no solo te ayudará a identificar fácil y rápidamente las dependencias de un archivo en la parte superior, sino que también evitará un par de posibles problemas.
 
-**De lo contrario:** Los requisitos se ejecutan de manera síncrona por Node.js. Si se los llama desde una función, puede bloquear el manejo de otras solicitudes en un momento más crítico. Además, si un módulo requerido o cualquiera de sus propias dependencias arroja un error y bloquea el servidor, es mejor averiguarlo lo antes posible, lo que podría no ser el caso si ese módulo se requiere desde una función
+**De lo contrario:** Los requisitos se ejecutan de manera síncrona por Node.js. Si se los llama desde una función, puede bloquear el manejo de otras solicitudes en un momentos críticos. Además, si un módulo requerido o cualquiera de sus propias dependencias arroja un error y tirar el servidor, es mejor averiguarlo lo antes posible, lo que podría no ser así si el módulo se requiere desde una función.
 
 <br/><br/>
 
