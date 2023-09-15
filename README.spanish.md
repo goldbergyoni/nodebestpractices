@@ -525,11 +525,11 @@ function someFunction()
 
 ## ![✔] 3.4 Separa tus sentencias correctamente
 
-No importa si usas punto y coma o no para separar tus declaraciones, conocer las trampas comunes de los saltos de línea inadecuados o la inserción automática de punto y coma, te ayudará a eliminar los errores de sintaxis habituales.
+No importa si usas punto y coma o no para separar tus sentencias, conocer las trampas comunes de los saltos de línea inadecuados o la inserción automática de punto y coma, te ayudará a eliminar los errores de sintaxis habituales.
 
-**TL;DR:** Utiliza ESLint para obtener conciencia sobre las preocupaciones de separación. [Prettier](https://prettier.io/) o [Standardjs](https://standardjs.com/) puede resolver automáticamente estos inconvenientes.
+**TL;DR:** Utiliza ESLint para ganar conciencia sobre la separación de intereses. [Prettier](https://prettier.io/) o [Standardjs](https://standardjs.com/) pueden resolver automáticamente estos inconvenientes.
 
-**De lo contrario:** Como se vio en la sección anterior, el intérprete de JavaScript agrega automáticamente un punto y coma al final de una declaración si no hay una, o considera que una declaración no terminó donde debería, lo que podría generar algunos resultados no deseados. Puedes usar asignaciones y evitar el uso de expresiones de funciones invocadas inmediatas para evitar la mayoría de los errores inesperados.
+**De lo contrario:** Como se vio en la sección anterior, el intérprete de JavaScript agrega automáticamente un punto y coma al final de una sentencia si no hay una, o considera que una declaración no terminó donde debería, lo que podría generar resultados inesperados. Puedes usar asignaciones y evitar el uso de expresiones de funciones invocadas inmediatamente para evitar la mayoría de los errores inesperados.
 
 ### Ejemplo de código
 
@@ -559,7 +559,7 @@ const count = 2 // intenta ejecutar 2(), pero 2 no es una función
 (function doSomething() {
   // do something amazing
 }())
-// Pon un punto y coma antes de la función invocada inmediata, después de la definición constante, guarda el valor de retorno de la función anónima en una variable o evite los IIFE por completo
+// Pon un punto y coma antes de la función invocada inmediatamente y después de la definición de una constante; guarda el valor de retorno de la función anónima en una variable o evita los IIFE por completo
 ```
 
 🔗 [**Leer más:** "Semi ESLint rule"](https://eslint.org/docs/rules/semi)
