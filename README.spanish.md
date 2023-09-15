@@ -569,9 +569,9 @@ const count = 2 // intenta ejecutar 2(), pero 2 no es una función
 
 ## ![✔] 3.5 Nombra a tus funciones
 
-**TL;DR:** Nombra todas las funciones, incluidos los cierres y las devoluciones de llamada. Evita funciones anónimas. Esto es especialmente útil cuando se perfila una aplicación de Node. Nombrar todas las funciones le permitirá comprender fácilmente lo que está viendo al revisar un registro de memoria
+**TL;DR:** Nombra todas las funciones, incluidos los closures y callbacks. Evita las funciones anónimas. Esto es especialmente útil cuando se perfila una aplicación Node. Nombrar todas las funciones le permitirá comprender fácilmente lo que está viendo al revisar una instantanea de la memoria.
 
-**De lo contrario:** La depuración de problemas de producción utilizando un registro de memoria (log) puede ser un desafío ya que observa un número significativo de funciones anónimas
+**De lo contrario:** La depuración de problemas de producción utilizando un volcado de memoria (instantenea de memoria) puede ser un desafío al observar un consumo significativo de memoria por parte de funciones anónimas.
 
 <br/><br/>
 
