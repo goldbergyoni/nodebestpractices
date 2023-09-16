@@ -207,7 +207,7 @@ Leelo en otro idioma: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md),
 &emsp;&emsp;[8.1. Usa compilaciones de múltiples etapas para obtener imágenes de Docker más sencillas y seguras `#strategic`](#-81-usa-compilaciones-de-múltiples-etapas-para-obtener-imágenes-de-docker-más-sencillas-y-seguras)</br>
 &emsp;&emsp;[8.2. Arranca usando el comando `node`, evita `npm start`](#-82-arranca-usando-el-comando-node-evita-npm-start)</br>
 &emsp;&emsp;[8.3. Permite a Docker maneje la replicación y el tiempo de ejecución `#strategic`](#-83-permite-a-docker-maneje-la-replicación-y-el-tiempo-de-ejecución)</br>
-&emsp;&emsp;[8.4. Utiliza .dockerignore para evitar la fuga de secretos](#-84-utiliza-dockerignore-para-evitar-la-fuga-de-secretos)</br>
+&emsp;&emsp;[8.4. Usa .dockerignore para evitar la fuga de secretos](#-84-usa-dockerignore-para-evitar-la-fuga-de-secretos)</br>
 &emsp;&emsp;[8.5. Limpia las dependencias antes de ir a producción](#-85-limpia-las-dependencias-antes-de-ir-a-producción)</br>
 &emsp;&emsp;[8.6. Apaga de manera inteligente y elegante `#advanced`](#-86-apaga-de-manera-inteligente-y-elegante)</br>
 &emsp;&emsp;[8.7. Establece límites de memoria utilizando Docker y v8 `#advanced` `#strategic`](#-87-establece-límites-de-memoria-utilizando-docker-y-v8)</br>
@@ -1478,13 +1478,13 @@ Update: [A partir de npm 7, npm afirma](https://docs.npmjs.com/cli/v7/using-npm/
 
 <br><br><br>
 
-## ![✔] 8.4. Utiliza .dockerignore para evitar la fuga de secretos
+## ![✔] 8.4. Usa .dockerignore para evitar la fuga de secretos
 
-**TL;DR:** Incluye un archivo `.dockerignore` que filtra todos los archivos con secretos comúnes y artefactos de desarrollo. Al hacer esto. Puede evitar que sus secretos salgan a la luz. Ademas el tiempo de compilación se va a reducir de manera significante. También asegúrese de no copiar todos los archivos recursivamente, mejor selecciones cuales deben ser copiados a docker de manera explícita.
+**TL;DR:** Incluye un archivo `.dockerignore` que filtre todos los archivos con secretos comúnes y artefactos de desarrollo. Al hacer esto, podrías evitar que tus secretos salgan a la luz. Adicionalmente, el tiempo de compilación se va a reducir  significavimanente. También asegúrese de no copiar todos los archivos recursivamente, mejor selecciones cuales deben ser copiados a docker de manera explícita.
 
-**De lo contrario** Archivos comúnes de secretos como `.env`, `.aws`, y `.npmrc` serán compartidos con cualquiera que tenga acceso a la imágen (Por ejemplo un repositorio Docker).
+**De lo contrario** Archivos comúnes de secretos como `.env`, `.aws`, y `.npmrc` serán compartidos con cualquiera que tenga acceso a la imágen (por ejemplo un repositorio Docker).
 
-🔗 [**Leer más: Utiliza .dockerignore**](./sections/docker/docker-ignore.spanish-md)
+🔗 [**Leer más: Usa .dockerignore**](./sections/docker/docker-ignore.spanish-md)
 
 <br><br><br>
 
