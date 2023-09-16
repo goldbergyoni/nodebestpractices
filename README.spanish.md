@@ -968,7 +968,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 5.11. Saca tus recursos frontend de Node
 
-**TL;DR:** Sirve el contenido frontend usando middleware dedicado (nginx, S3, CDN) porque el rendimiento de Node se ve  realmente afectado cuando se trata con muchos archivos estáticos debido a su modelo de subproceso único
+**TL;DR:** Sirve el contenido frontend usando middleware dedicado (nginx, S3, CDN) porque el rendimiento de Node se ve realmente afectado cuando se trata con muchos archivos estáticos debido a su modelo de único hilo. Una excepción a esta guía es cuando se hace server-side rendering.
 
 **De lo contrario:** Tu único hilo Node estará ocupado transmitiendo cientos de archivos html / images / angular / react en lugar de asignar todos sus recursos para la tarea para la que nació: servir contenido dinámico
 
