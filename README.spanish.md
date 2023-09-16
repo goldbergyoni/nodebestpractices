@@ -1490,11 +1490,11 @@ Update: [A partir de npm 7, npm afirma](https://docs.npmjs.com/cli/v7/using-npm/
 
 ## ![✔] 8.5. Limpia las dependencias antes de ir a producción
 
-**TL;DR:** Aunque algunas dependencias de desarrollo son necesarios durante los ciclos de compilación y prueba, eventualmente la imágen que será enviada a producción debe estar los mas limpia posible de dependencias de desarrollador. Haciendo esto garantiza que solo el código necesario es cargado y la cantidad de ataques potenciales (Por ejemplo. attack surface (ataque de superficie)) sea mínimo. Cuando se use compilación multi-pasos (Vea punto dedicado) esto puede ser logrado al instalar todas las dependencias primero y finalmente ejecutar `npm ci --production`.
+**TL;DR:** Aunque algunas dependencias de desarrollo son necesarios durante los ciclos de compilación y prueba, eventualmente la imágen que será enviada a producción debe estar los mas limpia posible de dependencias de desarrollador. Haciendo esto garantizas que solo el código necesario es cargado y la cantidad de ataques potenciales (es decir la superficie de ataque) sea mínimo. Cuando use scompilación multi-pasos (vea punto dedicado) esto se puede lograr instalando todas las dependencias primero y finalmente ejecutar `npm ci --production`.
 
-**De lo contrario** Muchas brechas de seguridad conocidas fueron encontradas dentro de paquetes de desarrollo (Por ejemplo. [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes)).
+**De lo contrario** Muchas violaciones de seguridad conocidas fueron encontradas dentro de paquetes de desarrollo (por ejemplo, [eslint-scope](https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes)).
 
-🔗 [**Leer más: Remueva dependencias de desarrollo**](./sections/docker/install-for-production.spanish.md)
+🔗 [**Leer más: Remueva las dependencias de desarrollo**](./sections/docker/install-for-production.spanish.md)
 
 <br><br><br>
 
