@@ -1321,7 +1321,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 **De lo contrario:** Las cookies podrían enviarse a través de conexiones inseguras, y un atacante podría usar la identificación de sesión para identificar el framework subyacente de la aplicación web, así como las vulnerabilidades específicas del módulo
 
-🔗 [**Leer más: Seguridad de Cookies y sesiones**](./sections/security/sessions.spanish.md)
+🔗 [**Leer más: Seguridad de cookies y sesiones**](./sections/security/sessions.spanish.md)
 
 <br/><br/>
 
