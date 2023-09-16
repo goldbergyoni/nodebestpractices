@@ -948,11 +948,11 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 5.9. Haz tu código listo para producción
 
-**TL;DR:** Codifica con el fin en mente, planifica la producción desde el día 1. Esto suena un poco vago, así que he compilado algunos consejos de desarrollo que están estrechamente relacionados con el mantenimiento de la producción (haga clic en Gist a continuación)
+**TL;DR:** Codifica con el fin en mente, planifica la producción desde el día 1. Esto suena un poco vago, así que he compilado algunos consejos de desarrollo que están estrechamente relacionados con el mantenimiento de la producción (haz clic en "Leer más")
 
-**De lo contrario:** Un campeón mundial de IT/DevOps no salvará un sistema mal escrito
+**De lo contrario:** Un campeón mundial de IT/DevOps no salvará un sistema que está mal escrito
 
-🔗 [**Leer más: Prepara tu código para la producción**](./sections/production/productioncode.spanish.md)
+🔗 [**Leer más: Has tu código listo para producción**](./sections/production/productioncode.spanish.md)
 
 <br/><br/>
 
