@@ -1018,7 +1018,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 5.16. Diseña despliegues automatizados, atómicos y sin tiempo de inactividad
 
-**TL;DR:** Las investigaciónes muestran que los equipos que realizan muchas implementaciones reducen la probabilidad de problemas graves de producción. Las implementaciones rápidas y automatizadas que no requieren pasos manuales riesgosos y el tiempo de inactividad del servicio mejoran significativamente el proceso de implementación. Deberías lograr esto usando Docker combinado con herramientas de CI, ya que se convirtieron en el estándar de la industria para la implementación simplificada
+**TL;DR:** Las investigaciónes muestran que los equipos que realizan muchas implementaciones reducen la probabilidad de problemas graves de producción. Las implementaciones rápidas y automatizadas que no requieren riesgos pasos manuales ni tiempo de inactividad del servicio mejoran significativamente el proceso de implementación. Deberías lograr esto usando Docker combinado con herramientas de CI, ya que se convirtieron en el estándar de la industria para la implementación optimizada
 
 **De lo contrario:** Implementaciones largas -> tiempo de inactividad de producción y error humano -> equipo desconfiado en la implementación -> menos implementaciones y características
 
