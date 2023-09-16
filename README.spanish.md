@@ -724,6 +724,12 @@ Todas las sentencias de arriba retornarían `false` si se hubiera usado `===`.
 
 # `4. Pruebas y prácticas generales de calidad`
 
+\_Tenemos guías dedicadas a las pruebas, ver más abajo. La lista de mejores prácticas aquí es un breve resumen de estas guías.
+
+a. [JavaScript testing best practices](https://github.com/goldbergyoni/javascript-testing-best-practices)
+b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodejs-integration-tests-best-practices)
+\_
+
 ## ![✔] 4.1 Por lo menos, escribe las pruebas de la API (componente)
 
 **TL;DR:** La mayoría de los proyectos simplemente no tienen pruebas automatizadas debido a los cortos horarios o, a menudo, el 'proyecto de prueba' se salió de control y fue abandonado. Por esa razón, priorice y comience con las pruebas API, que es la forma más fácil de escribir y proporciona más cobertura que las pruebas unitarias (incluso puede crear pruebas API sin código utilizando herramientas como [Postman](https://www.getpostman.com/). Luego, si tiene más recursos y tiempo, continúe con los tipos de pruebas avanzadas como pruebas unitarias, pruebas de base de datos, pruebas de rendimiento, etc.
