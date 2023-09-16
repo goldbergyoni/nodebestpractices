@@ -1564,9 +1564,9 @@ Además, hacer referencia a una etiqueta de imagen significa que la imagen base 
 
 ## ![✔] 8.12. Escanea las imágenes en busca de vulnerabilidades multi-capas
 
-**TL;DR:** Además de revisar vulnerabilidades de las dependencias, escanee la imágen final que será enviada a producción, Los escáneres de imágen de Docker revisan las dependencias del código, pero también los binarios del sistema operativo (OS binaries). Este escaneo de seguridad de punto a punto abarca mas espacio y verifica que nadie haya implantado cosas maliciosas durante la compilación. Consecuentemente, se recomienda hacer esto como último paso antes del despliegue. Hay una buena cantidad de escáneres gratuitos y de paga que también proporcionan extensiones CI/CD.
+**TL;DR:** Además de revisar vulnerabilidades en las dependencias también escanea la imágen final que será enviada a producción. Los escáneres de imágenes Docker revisan las dependencias del código, pero también los binarios del sistema operativo (OS binaries). Este escaneo de seguridad de punta a punta cubre más terreno y verifica que nadie haya implantado cosas maliciosas durante la compilación. Consecuentemente, se recomienda hacer esto como último paso antes del despliegue. Hay una buena cantidad de escáneres gratuitos y comerciales que también proporcionan extensiones para CI/CD.
 
-**De lo contrario** Su código puede estar completamente libre de vulnerabilidades. Pero puede llegar a ser hackeado debido a una version vulnerable de los binarios a nivel SO (Por ejemplo. OpenSSL, TarBall), los cuales son usados comúnmente por las aplicaciones.
+**De lo contrario** Tu código puede estar completamente libre de vulnerabilidades. Sin embardo puede aún ser hackeado debido a una version vulnerable de los binarios a nivel SO (por ejemplo: OpenSSL, TarBall) los cuales son usados comúnmente por las aplicaciones.
 
 🔗 [**Leer más: Escanea la imágen completa antes de producción**](./sections/docker/scan-images.spanish.md)
 
