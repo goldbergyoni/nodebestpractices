@@ -816,23 +816,31 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 <br/><br/>
 
-## ![✔] 4.10 Mock responses of external HTTP services
+## ![✔] 4.10 Simula las respuestas de servicios HTTP externos
 
 ### `🌟 #new`
 
-**TL;DR:** Use network mocking tools to simulate responses of external collaborators' services that are approached over the network (e.g., REST, Graph). This is imperative not only to isolate the component under test but mostly to simulate non-happy path flows. Tools like [nock](https://github.com/nock/nock) (in-process) or [Mock-Server](https://www.mock-server.com/) allow defining a specific response of external service in a single line of code. Remember to simulate also errors, delays, timeouts, and any other event that is likely to happen in production
+**TL;DR:** Utilice herramientas de mocking de red para simular las respuestas de servicios de colaboradores externos se accedan a través de la red (por ejemplo, REST, GraphQL). Es imperativo no sólo para aislar el componente bajo prueba sino principalmente para simular los caminos no felices. Herramientas como [nock](https://github.com/nock/nock) (en proceso) o [Mock-Server](https://www.mock-server.com/) permiten definir respuestas específicas de un servicio externo en una sola línea de código. Recuerda simular también los errores, retrasos, tiempos de espera agotados y cualquier otro evento que pueda ocurrir en producción.
 
-**Otherwise:** Allowing your component to reach real external services instances will likely result in naive tests that mostly cover happy paths. The tests might also be flaky and slow
+**De lo contrario:** Permitir que tu componente lleguen a instancias reales de servicios externos probablemente dará como resultado pruebas ingenuas que en su mayoría cubren solo los caminos felices. Las pruebas también pueden ser inestables y lentas.
 
-🔗 [**Read More: Mock external services**](./sections/testingandquality/mock-external-services.md)
+🔗 [**Read More: Mock external services**](./sections/testingandquality/mock-external-services.spanish.md)
 
 ## ![✔] 4.11 Prueba tus middlewares por separado
 
-**TL;DR:** Cuando tu middleware tiene una lógica inmensa que se extiende a muchas peticiones, vale la pena realizar pruebas por separado, sin necesidad de despertar todo el framework web. Esto puede hacerse fácilmente pisando y espiando en los objetos {req, res, next}.
+**TL;DR:** Cuando tu middleware tiene una lógica inmensa que se extiende a muchas peticiones, vale la pena realizar pruebas por separado, sin necesidad de levantar todo el framework web. Esto puede hacerse fácilmente simulando y espiando los objetos {req, res, next}.
 
 **De lo contrario** Un bug en un middleware de express === un bug en todas o casi todas las peticiones
 
 🔗 [**Leer más: Prueba tu middleware por separado**](./sections/testingandquality/test-middlewares.spanish.md)
+
+<br/><br/>
+
+
+
+
+
+
 
 <br/><br/><br/>
 
