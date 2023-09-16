@@ -1028,7 +1028,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 **TL;DR:** Asegúrate de estar utilizando una versión LTS (de soporte a largo plazo) de Node.js para recibir correcciones de errores críticos, actualizaciones de seguridad y mejoras de rendimiento.
 
-**De lo contrario:** Los errores o vulnerabilidades recientemente descubiertos podrían utilizarse para explotar una aplicación que se ejecuta en producción, y su aplicación puede dejar de ser compatible con varios módulos y ser más difícil de mantener
+**De lo contrario:** Los errores o vulnerabilidades recientemente descubiertos podrían utilizarse para explotar una aplicación que se ejecuta en producción, y tu aplicación puede dejar de ser compatible con varios módulos y ser más difícil de mantener.
 
 🔗 [**Leer más: Usa una versión LTS de Node.js**](./sections/production/LTSrelease.spanish.md)
 
@@ -1036,11 +1036,13 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 5.18. Loguea hacia stdout, evita especificar un destino de log dentro de la aplicación
 
-**TL;DR:** Los desarrolladores no deben codificar los destinos de registro dentro del código de la aplicación, sino que deben estar definidos por el entorno de ejecución en el que se ejecuta la aplicación. Los desarrolladores deben escribir registros en 'stdout' utilizando una utilidad de registro y luego dejar que el entorno de ejecución (contenedor, servidor, etc.) canalice la secuencia `stdout` al destino apropiado (es decir, Splunk, Graylog, ElasticSearch, etc.).
+### `📝 #updated`
 
-**De lo contrario** Aplicación de enrutamiento de registro de manejo === difícil de escalar, pérdida de registros, mala separación de preocupaciones
+**TL;DR:** Los desarrolladores no deben programar los destinos de los logs dentro del código de la aplicación, sino que deben definirlos según el entorno de ejecución en el que se corre la aplicación. Los desarrolladores deben escribir logs en `stdout` usando una utilidad de logueo y dejar que el entorno de ejecución (contenedor, servidor, etc.) canalize el flujo de `stdout` al destino apropiado (es decir, Splunk, Graylog, ElasticSearch, etc.).
 
-🔗 [**Leer más: Enrutamiento de registros**](./sections/production/logrouting.spanish.md)
+**De lo contrario** Si los desarrolladores establecen el enrutamiento de los logs, queda menos flexibilidad para el profesional de operaciones que desee personalizarlo. Más allá de esto, si la aplicación intenta iniciar sesión directamente en una ubicación remota (por ejemplo, Elastic Search), en caso de pánico o caída, no llegarán más registros que puedan explicar el problema.
+
+🔗 [**Leer más: Enrutamiento de logs**](./sections/production/logrouting.spanish.md)
 
 <br><br>
 
