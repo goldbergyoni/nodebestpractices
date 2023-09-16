@@ -926,9 +926,9 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 5.7. Crea un "end point de mantenimiento"
 
-**TL;DR:** Descubre un conjunto de información relacionada con el sistema, como el uso de memoria y REPL, etc. en una API segura. Aunque es muy recomendable confiar en herramientas estándar y de pruebas de batalla, parte de la información y las operaciones valiosas se hacen más fácilmente usando código
+**TL;DR:** Descubre un conjunto de información relacionada con el sistema, como el uso de memoria y REPL, etc. en una API segura. Aunque es muy recomendable confiar en herramientas estándar y probadas, parte de la información valiosa y de las operaciones se obtienen más fácilmente usando código
 
-**De lo contrario:** Descubrirás que estás realizando muchas "implementaciones de diagnóstico": envío de código a producción solo para extraer cierta información con fines de diagnóstico
+**De lo contrario:** Descubrirás que estás realizando muchas "implementaciones de diagnóstico", es decir, el envío de código a producción solo para extraer cierta información con fines de diagnóstico.
 
 🔗 [**Leer más: Crea un ‘endpoint de mantenimiento**](./sections/production/createmaintenanceendpoint.spanish.md)
 
