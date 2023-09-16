@@ -848,6 +848,15 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 <br/><br/>
 
+## ![✔] 4.13 Prueba los cinco posibles resultados
+
+### `🌟 #new`
+
+**TL;DR:** Al probar un flujo, asegúrate de cubrir las cinco categorías potenciales. Cada vez que se desencadena alguna acción (por ejemplo, una llamada a la API), ocurre una reacción, un **resultado** significativo es generado y se solicita una prueba. Hay cinco tipos de resultados posibles para cada flujo: una respuesta, un cambio de estado visible (por ejemplo, BDD), una llamada de API saliente, un nuevo mensaje en una cola y una llamada de observabilidad (por ejemplo, logging, métrica). Consulta una [lista aquí] (https://testjavascript.com/wp-content/uploads/2021/10/the-backend-checklist.pdf). Cada tipo de resultado presenta desafíos únicos y técnicas para mitigar esos desafíos; tenemos una guía dedicada a este tema: [Node.js testing - beyond the basics](https://github.com/testjavascript/nodejs-integration-tests-best-practices).
+
+**Otherwise:** Considera el caso de probar el agregar un nuevo producto al sistema. Es común ver pruebas que se basan únicamente en una respuesta válida. ¿Qué pasa si el producto no persiste a pesar de la respuesta positiva? ¿Qué pasa si al agregar un nuevo producto se requiere llamar a algún servicio externo o poner un mensaje en la cola? ¿No debería la prueba confirmar estos resultados también? Es fácil pasar por alto varios caminos, aquí es donde una [lista resulta útil] (https://testjavascript.com/wp-content/uploads/2021/10/the-backend-checklist.pdf).
+
+🔗 [**Leer más: Prueba cinco resultados**](./sections/testingandquality/test-five-outcomes.spanish.md)
 
 <br/><br/><br/>
 
