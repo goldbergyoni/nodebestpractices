@@ -1295,11 +1295,11 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A6:Security%20Misconfiguration%20-green.svg" alt=""/></a>
 
-**TL;DR:** Un controlador de error express integrado oculta los detalles del error de forma predeterminada. Sin embargo, son grandes las posibilidades de que implemente su propia lógica de manejo de errores con objetos de error personalizados (considerado por muchos como una práctica recomendada). Si lo haces, asegúrate de no devolver todo el objeto Error al cliente, que podría contener algunos detalles confidenciales de la aplicación
+**TL;DR:** Un manejador de error express integrado oculta por defecto los detalles de un error. Sin embargo, son grandes las posibilidades de que implementes tu propia lógica de manejo de errores con objetos de error personalizados (considerado por muchos como una práctica recomendada). Si lo haces, asegurate de no devolver todo el objeto Error al cliente, el cual podría contener algunos detalles confidenciales de la aplicación
 
-**De lo contrario:** Los detalles confidenciales de la aplicación, como las rutas de archivos del servidor, los módulos de terceros en uso y otros flujos de trabajo internos de la aplicación que podrían ser explotados por un atacante, podrían filtrarse de la información encontrada en un seguimiento de la pila.
+**De lo contrario:** Los detalles confidenciales de la aplicación, como las rutas de archivos del servidor, los módulos de terceros en uso y otros flujos de trabajo internos de la aplicación que podrían ser explotados por un atacante podrían filtrarse de la información encontrada en un stack trace.
 
-🔗 [**Leer más: Oculta detalles de error de los cliente**](./sections/security/hideerrors.spanish.md)
+🔗 [**Leer más: Oculta los detalles de error de los clientes**](./sections/security/hideerrors.spanish.md)
 
 <br/><br/>
 
