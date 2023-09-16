@@ -1201,7 +1201,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 1. El primero es el número de intentos fallidos consecutivos por el mismo ID / nombre único de usuario y dirección IP.
 2. El segundo es el número de intentos fallidos de una dirección IP durante un largo período de tiempo. Por ejemplo, bloquee una dirección IP si realiza 100 intentos fallidos en un día.
 
-**De lo contrario:** Un atacante puede enviar de manera automatizada ilimitados intentos de contraseña para obtener acceso a cuentas privilegiadas en una aplicación
+**De lo contrario:** Un atacante puede enviar de manera automatizada ilimitados intentos de contraseña para obtener acceso a cuentas privilegiadas en una aplicación.
 
 🔗 [**Leer más: Limita tasa de login**](./sections/security/login-rate-limit.spanish.md)
 
@@ -1211,9 +1211,9 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A5:Broken%20Access%20Access%20Control-green.svg" alt=""/></a>
 
-**TL;DR:** Hay un escenario común en el que Node.js se ejecuta como usuario root con permisos ilimitados. Por ejemplo, este es el comportamiento predeterminado en los contenedores Docker. Se recomienda crear un usuario no root y hornearlo en la imagen de Docker (ejemplos a continuación) o ejecutar el proceso en nombre de este usuario invocando el contenedor con la marca "-u username"
+**TL;DR:** Hay un escenario común en el que Node.js se ejecuta como usuario root con permisos ilimitados. Por ejemplo, este es el comportamiento predeterminado en los contenedores Docker. Se recomienda crear un usuario no root y utilizarlo en la imagen de Docker (ejemplos a continuación) o ejecutar el proceso en nombre de este usuario invocando el contenedor con el parámetro "-u username"
 
-**De lo contrario:** Un atacante que logra ejecutar un script en el servidor obtiene poder ilimitado sobre la máquina local (por ejemplo, cambiar iptable y redirigir el tráfico a su servidor)
+**De lo contrario:** Un atacante que logre ejecutar un script en el servidor obtendrá poder ilimitado sobre la máquina local (por ejemplo, cambiar iptable y redirigir el tráfico a su servidor)
 
 🔗 [**Leer más: Ejecuta Node.js como usuario no root**](./sections/security/non-root-user.spanish.md)
 
