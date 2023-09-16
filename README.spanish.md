@@ -1393,17 +1393,17 @@ Este estilo garantiza que no haya ambigüedad con los paquetes npm globales y de
 
 # `7. Borrador: Mejores prácticas de rendimiento`
 
-## Nuestros colaboradores están trabajando en esta sección. [¿Te gustaría unirte?](https://github.com/i0natan/nodebestpractices/issues/256)
+## Nuestros colaboradores están trabajando en esta sección. [¿Te gustaría unirte?](https://github.com/goldbergyoni/nodebestpractices/issues/256)
 
 <br/><br/>
 
 ## ![✔] 7.1. No bloquees el bucle de eventos
 
-**TL;DR:** Evita las tareas intensivas de la CPU, ya que bloquearán el bucle de eventos en su mayoría de un solo subproceso y descargalas en un subproceso dedicado, proceso o incluso una tecnología diferente según el contexto.
+**TL;DR:** Evita las tareas intensivas de la CPU ya que bloquearán el Event Loop mayormente de un único hilo y descargalas en un hilo o proceso dedicado o incluso a una tecnología diferente según el contexto.
 
-**De lo contrario:** A medida que se bloquea el bucle de eventos, Node.js no podrá manejar otra solicitud, lo que provocará demoras para los usuarios concurrentes. **3000 usuarios están esperando una respuesta, el contenido está listo para ser servido, pero una sola solicitud impide que el servidor envíe los resultados**
+**De lo contrario:** A medida que se bloquea el Event Loop Node.js no podrá manejar otra solicitud lo que provocará demoras para los usuarios concurrentes. **3000 usuarios están esperando una respuesta, el contenido está listo para ser servido, pero una sola solicitud impide que el servidor envíe los resultados**
 
-🔗 [**Leer más: No bloquees el bucle de eventos**](./sections/performance/block-loop.spanish.md)
+🔗 [**Leer más: No bloquees el Event Loop**](./sections/performance/block-loop.spanish.md)
 
 <br /><br /><br />
 
