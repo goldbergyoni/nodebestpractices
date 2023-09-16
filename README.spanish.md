@@ -316,6 +316,8 @@ my-system
 
 🔗 [**Leer más: Eligiendo el framework correcto**](./sections/projectstructre/choose-framework.spanish.md)
 
+<br/><br/>
+
 ## ![✔] 1.6. Utiliza TypeScript con moderación y consideración
 
 ### `🌟 #new`
@@ -825,6 +827,8 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 **De lo contrario:** Permitir que tu componente lleguen a instancias reales de servicios externos probablemente dará como resultado pruebas ingenuas que en su mayoría cubren solo los caminos felices. Las pruebas también pueden ser inestables y lentas.
 
 🔗 [**Read More: Mock external services**](./sections/testingandquality/mock-external-services.spanish.md)
+
+<br/><br/>
 
 ## ![✔] 4.11 Prueba tus middlewares por separado
 
@@ -1405,7 +1409,7 @@ Este estilo garantiza que no haya ambigüedad con los paquetes npm globales y de
 
 🔗 [**Leer más: No bloquees el Event Loop**](./sections/performance/block-loop.spanish.md)
 
-<br /><br /><br />
+<br/><br/>
 
 ## ![✔] 7.2. Prefiere los métodos nativos a los de utilidades de usuario como Lodash
 
@@ -1454,7 +1458,7 @@ CMD [ "node", "dist/app.js" ]
 
 🔗 [**Leer más: Utilice compilaciones de múltiples etapas**](./sections/docker/multi_stage_builds.spanish.md)
 
-<br /><br /><br />
+<br/><br/>
 
 ## ![✔] 8.2. Arranca usando el comando `node`, evita `npm start`
 
@@ -1466,7 +1470,7 @@ Update: [A partir de npm 7, npm afirma](https://docs.npmjs.com/cli/v7/using-npm/
 
 🔗 [**Leer más: Arranca el contenedor usando node, evita npm start**](./sections/docker/bootstrap-using-node.spanish.md)
 
-<br><br><br>
+<br/><br/>
 
 ## ![✔] 8.3. Permite al entorno de ejecución de Docker manejar la replicación y el tiempo de actividad
 
@@ -1476,7 +1480,7 @@ Update: [A partir de npm 7, npm afirma](https://docs.npmjs.com/cli/v7/using-npm/
 
 🔗 [**Leer más: Permita al orquestador de Docker reiniciar y replicar procesos**](./sections/docker/restart-and-replicate-processes.spanish.md)
 
-<br><br><br>
+<br/><br/>
 
 ## ![✔] 8.4. Usa .dockerignore para evitar la fuga de secretos
 
@@ -1486,7 +1490,7 @@ Update: [A partir de npm 7, npm afirma](https://docs.npmjs.com/cli/v7/using-npm/
 
 🔗 [**Leer más: Usa .dockerignore**](./sections/docker/docker-ignore.spanish-md)
 
-<br><br><br>
+<br/><br/>
 
 ## ![✔] 8.5. Limpia las dependencias antes de ir a producción
 
@@ -1496,7 +1500,7 @@ Update: [A partir de npm 7, npm afirma](https://docs.npmjs.com/cli/v7/using-npm/
 
 🔗 [**Leer más: Remueva las dependencias de desarrollo**](./sections/docker/install-for-production.spanish.md)
 
-<br><br><br>
+<br/><br/>
 
 ## ![✔] 8.6. Apaga de manera inteligente y elegante
 
@@ -1506,7 +1510,7 @@ Update: [A partir de npm 7, npm afirma](https://docs.npmjs.com/cli/v7/using-npm/
 
 🔗 [**Leer más: Apagado elegante**](./sections/docker/graceful-shutdown.spanish.md)
 
-<br><br><br>
+<br/><br/>
 
 ## ![✔] 8.7. Establece límites de memoria utilizando Docker y v8
 
@@ -1516,7 +1520,7 @@ Update: [A partir de npm 7, npm afirma](https://docs.npmjs.com/cli/v7/using-npm/
 
 🔗 [**Leer más: Establece límites de memoria utilizando solo Docker**](./sections/docker/memory-limit.spanish.md)
 
-<br><br><br>
+<br/><br/>
 
 ## ![✔] 8.8. Planifica un almacenamiento en caché eficiente
 
@@ -1526,7 +1530,7 @@ Update: [A partir de npm 7, npm afirma](https://docs.npmjs.com/cli/v7/using-npm/
 
 🔗 [**Leer más: Maneje el caché para reducir tiempos de compilación**](./sections/docker/use-cache-for-shorter-build-time.spanish.md)
 
-<br><br><br>
+<br/><br/>
 
 ## ![✔] 8.9. Utiliza una referencia de imagen explícita, evita la etiqueta `latest`
 
@@ -1538,7 +1542,7 @@ Además, hacer referencia a una etiqueta de imagen significa que la imagen base 
 
 🔗 [**Leer más: Entendiendo las etiquetas de imágen y usar la etiqueta "latest" con precaución**](./sections/docker/image-tags.spanish.md)
 
-<br><br><br>
+<br/><br/>
 
 ## ![✔] 8.10. Prefiere imágenes base de Docker pequeñas
 
@@ -1548,7 +1552,7 @@ Además, hacer referencia a una etiqueta de imagen significa que la imagen base 
 
 🔗 [**Leer más: Usa imágenes pequeñas**](./sections/docker/image-tags.spanish.md)
 
-<br><br><br>
+<br/><br/>
 
 ## ![✔] 8.11. Limpia los secretos de tiempo de compilación, evita los secretos en args
 
@@ -1560,7 +1564,7 @@ Además, hacer referencia a una etiqueta de imagen significa que la imagen base 
 
 🔗 [**Leer más: Limpia tus secretos de tiempo de compilación**](./sections/docker/avoid-build-time-secrets.spanish.md)
 
-<br><br><br>
+<br/><br/>
 
 ## ![✔] 8.12. Escanea las imágenes en busca de vulnerabilidades multi-capas
 
@@ -1570,7 +1574,7 @@ Además, hacer referencia a una etiqueta de imagen significa que la imagen base 
 
 🔗 [**Leer más: Escanea la imágen completa antes de producción**](./sections/docker/scan-images.spanish.md)
 
-<br><br><br>
+<br/><br/>
 
 ## ![✔] 8.13. Limpia la caché de NODE_MODULE
 
@@ -1580,7 +1584,7 @@ Además, hacer referencia a una etiqueta de imagen significa que la imagen base 
 
 🔗 [**Leer más: Limpia el caché de NODE_MODULE**](./sections/docker/clean-cache.spanish.md)
 
-<br><br><br>
+<br/><br/>
 
 ## ![✔] 8.14. Prácticas generales de Docker
 
@@ -1588,7 +1592,7 @@ Además, hacer referencia a una etiqueta de imagen significa que la imagen base 
 
 🔗 [**Leer más: Prácticas de Docker generales](./sections/docker/generic-tips.spanish.md)
 
-<br><br><br>
+<br/><br/>
 
 ## ![✔] 8.15. Usa un linter en tu Dockerfile
 
@@ -1600,7 +1604,7 @@ Además, hacer referencia a una etiqueta de imagen significa que la imagen base 
 
 🔗 [**Leer más: Usa un linter en tu Dockerfile**](./sections/docker/lint-dockerfile.spanish.md)
 
-<br/><br /><br />
+<br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Volver arriba</a></p>
 
