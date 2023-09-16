@@ -876,19 +876,19 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 5.2. Aumenta la observabilidad utilizando logging inteligente
 
-**TL;DR:** Los registros pueden ser un almacén tonto de declaraciones de depuración o el habilitador de un hermoso tablero que cuenta la historia de tu aplicación. Planifica tu plataforma de registro desde el día 1: cómo se recopilan, almacenan y analizan los registros para garantizar que la información deseada (por ejemplo, tasa de error, seguir una transacción completa a través de servicios y servidores, etc.) realmente se pueda extraer
+**TL;DR:** Los logs pueden ser un almacén tonto de sentencias de depuración o el habilitador de un hermoso tablero que cuenta la historia de tu aplicación. Planifica tu plataforma de logs desde el día 1: cómo se recopilan, almacenan y analizan los registros para garantizar que la información deseada realmente se pueda extraer (por ejemplo, la tasa de error, seguir una transacción completa a través de servicios y servidores, etc.).
 
-**De lo contrario:** Terminarás con un cuadro negro con el que es difícil razonar y luego empezaras a reescribir todas las declaraciones de registro para agregar información adicional
+**De lo contrario:** Terminarás con un caja negra con la que es difícil pensar y luego empezaras a reescribir todas las declaraciones de registro para agregar información adicional
 
-🔗 [**Leer mas: Aumenta la transparencia utilizando unos registros inteligentes**](./sections/production/smartlogging.spanish.md)
+🔗 [**Leer mas: Aumenta la transparencia utilizando logging inteligentes**](./sections/production/smartlogging.spanish.md)
 
 <br/><br/>
 
 ## ![✔] 5.3. Delega todo lo posible (por ejemplo, gzip, SSL) a un proxy inverso
 
-**TL;DR:** Node es terriblemente malo para realizar tareas intensivas de CPU como gzipping, terminación SSL, etc. En su lugar, debes usar servicios de middleware "reales" como nginx, HAproxy o servicios de proveedores en la nube
+**TL;DR:** Node es terriblemente malo para realizar tareas intensivas de CPU como compresión, terminación SSL, etc. En su lugar deberías usar servicios de infraestructura especializados como nginx, HAproxy o servicios de proveedores en la nube
 
-**De lo contrario:** Tu único subproceso se mantendrá ocupado haciendo tareas de infraestructura en lugar de ocuparse del núcleo de tu aplicación y el rendimiento se degradará en consecuencia
+**De lo contrario:** Tu pobre monohilo se mantendrá ocupado haciendo tareas de infraestructura en lugar de ocuparse del núcleo de tu aplicación y el rendimiento se degradará en consecuencia
 
 🔗 [**Leer más: Delega todo lo posible a un proxy inverso**](./sections/production/delegatetoproxy.spanish.md)
 
@@ -896,9 +896,9 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 5.4. Bloquea dependencias
 
-**TL;DR:** Tu código debe ser idéntico en todos los entornos, pero sorprendentemente npm permite que las dependencias se desplacen entre los entornos de forma predeterminada: cuando instala paquetes en varios entornos, intenta obtener la última versión del parche de los paquetes. Evita esto utilizando archivos de configuración npm, .npmrc, que le indican a cada entorno que guarde la versión exacta (no la última) de cada paquete. Alternativamente, para un control más fino usa `npm shrinkwrap`. \ * Actualización: a partir de NPM5, las dependencias están bloqueadas de forma predeterminada. El nuevo administrador de paquetes, Yarn, también lo cubre por defecto
+**TL;DR:** Tu código debe ser idéntico en todos los entornos, pero sin un archivo de bloqueo especial npm permite que las dependencias fluctúen entre los entornos. Asegúrese de agregar a su repositorio el archivo paquete-lock.json para que todos los entornos sean idénticos.
 
-**De lo contrario:** El control de calidad probará a fondo el código y aprobará una versión que se comportará de manera diferente cuando está en producción. Peor aún, diferentes servidores en el mismo clúster de producción pueden ejecutar código diferente
+**De lo contrario:** QA probará a fondo el código y aprobará una versión que se comportará de manera diferente cuando está en producción. Peor aún, diferentes servidores en el mismo clúster de producción podrían ejecutar código diferente
 
 🔗 [**Leer más: Bloquear dependencias**](./sections/production/lockdependencies.spanish.md)
 
