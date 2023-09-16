@@ -916,7 +916,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 5.6. Utiliza todos los núcleos de la CPU
 
-**TL;DR:** En su forma básica, una aplicación Node se ejecuta en un solo núcleo de CPU mientras que todas las demás quedan inactivas. Es tu deber replicar el proceso Node y utilizar todas las CPU: para aplicaciones pequeñas y medianas, puedes usar Node Cluster o PM2. Para una aplicación más grande, considera replicar el proceso utilizando algún clúster de Docker (por ejemplo, K8S, ECS) o scripts de implementación basados en el sistema de inicio Linux (ej. systemd)
+**TL;DR:** En su forma básica, una aplicación Node se ejecuta en un solo núcleo de CPU mientras que todas las demás quedan inactivas. Es tu deber replicar el proceso Node y utilizar todas las CPU. La mayoría de las plataformas de ejecución modernas (por ejemplo, Kubernetes) permiten replicar instancias de la aplicación, pero no verifican que se utilicen todos los núcleos; este es su deber. Si la aplicación está alojada en un servidor básico, también es su deber utilizar alguna solución de replicación de procesos (por ejemplo, systemd).
 
 **De lo contrario:** Es probable que tu aplicación utilice solo el 25% de sus recursos disponibles (!) O incluso menos. Ten en cuenta que un servidor típico tiene 4 núcleos de CPU o más, la implementación ingenua de Node.js utiliza solo 1 (¡incluso utilizando servicios PaaS como AWS beanstalk!)
 
