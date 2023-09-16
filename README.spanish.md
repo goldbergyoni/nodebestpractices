@@ -1365,6 +1365,28 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 **De lo contrario:** Su producción ejecutará paquetes que han sido etiquetados explícitamente por su autor como riesgosos
 <br/><br/>
 
+## ![✔] 6.27. Importa los módulos integrados utilizando el protocolo 'node:'
+
+### `🌟 #new`
+
+<a href="https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20A06:2021 – Vulnerable and Outdated Components-green.svg" alt=""/></a>
+
+**TL;DR:** Importe o requiere los módulos Node.js integrados utilizando la sintaxis de 'protocolo node':
+
+```javascript
+import { functionName } from "node:module"; // observa el prefijo 'node:'
+```
+
+Por ejemplo:
+
+```javascript
+import { createServer } from "node:http";
+```
+
+Este estilo garantiza que no haya ambigüedad con los paquetes npm globales y deja claro al lector que el código se refiere a un módulo oficial de confianza. Este estilo se puede aplicar con la regla de eslint ['prefer-node-protocol'](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-node-protocol.md).
+
+**De lo contrario:** El uso de la sintaxis de importación sin el prefijo 'node:' abre la puerta a [ataques de typosquatting](https://en.wikipedia.org/wiki/Typosquatting) donde uno podría escribir mal el nombre de un módulo (por ejemplo, 'event' en lugar de ' events) y obtener un paquete malicioso creado únicamente para engañar a los usuarios para que los instalen.
+
 <br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Volver arriba</a></p>
