@@ -752,9 +752,11 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 4.3 Estructura las pruebas utilizando el patrón AAA
 
-**TL;DR:** Estructura tus pruebas con 3 secciones bien separadas: Organizar, Actuar y Afirmar (AAA - Arrange, Act & Assert). La primera parte incluye la configuración de la prueba, luego la ejecución de la unidad bajo prueba y finalmente la fase de afirmación. Seguir esta estructura garantiza que el lector no gaste CPU cerebral en comprender el plan de prueba
+### `🌟 #new`
 
-**De lo contrario:** No solo pasa largas horas diarias entendiendo el código principal, ahora también lo que debería haber sido la parte simple del día (pruebas) ha ejercitado tu cerebro
+**TL;DR:** Estructura tus pruebas con 3 secciones bien separadas: Organizar, Actuar y Afirmar (AAA - Arrange, Act & Assert). La primera parte incluye la configuración de la prueba, la segunda la ejecución de la unidad bajo prueba y finalmente la fase de afirmaciones. Seguir esta estructura garantiza que el lector no gaste CPU cerebral en comprender el plan de prueba
+
+**De lo contrario:** No solo pasas largas horas diarias entendiendo el código principal, ahora también lo que debería haber sido la parte simple del día (pruebas)  ejercita tu cerebro
 
 🔗 [**Leer más: Pruebas de estructura por el patrón AAA**](./sections/testingandquality/aaa.spanish.md)
 
