@@ -1148,11 +1148,11 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
-**TL;DR:** Las contraseñas o los secretos (claves API) deben almacenarse utilizando una función segura hash + salt como `bcrypt`, o en le peor de los casos `pbkdf2`.
+**TL;DR:** Las contraseñas o los secretos (ej. claves API) deben almacenarse utilizando una función segura hash + salt como `bcrypt`,`scrypt`, o en el peor de los casos `pbkdf2`.
 
 **De lo contrario:** Las contraseñas o los secretos que se conservan sin utilizar una función segura son vulnerables a la fuerza bruta y los ataques de diccionario que eventualmente conducirán a su divulgación.
 
-🔗 [**Leer más: Usa Bcrypt**](./sections/security/bcryptpasswords.spanish.md)
+🔗 [**Leer más: Contraseñas de usuario**](./sections/security/userpasswords.spanish.md)
 
 <br/><br/>
 
