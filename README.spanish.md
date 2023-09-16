@@ -836,10 +836,17 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 <br/><br/>
 
+## ![✔] 4.12 Especifica un puerto en producción, aleatorizalo en las pruebas
 
+### `🌟 #new`
 
+**TL;DR:** Al realizar pruebas con la API, es común y deseable inicializar el servidor web dentro de las pruebas. Deje que el servidor aleatorice el puerto del servidor web durante las pruebas para evitar colisiones. Si está utilizando el servidor http de Node.js (utilizado por la mayoría de los fraweworks), hacerlo no exige nada más que pasar un número de puerto cero; esto aleatorizará un puerto disponible.
 
+**Otherwise:** Especificar un puerto fijo evitará que se ejecuten dos procesos de prueba al mismo tiempo. La mayoría de los ejecutores de pruebas modernos se ejecutan con múltiples procesos de forma predeterminada.
 
+🔗 [**Leer más: Aleatoriza un puerto para pruebas**](./sections/testingandquality/randomize-port.spanish.md)
+
+<br/><br/>
 
 
 <br/><br/><br/>
