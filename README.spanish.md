@@ -1542,11 +1542,11 @@ Además, hacer referencia a una etiqueta de imagen significa que la imagen base 
 
 ## ![✔] 8.10. Prefiere imágenes base de Docker pequeñas
 
-**TL;DR:** Imágenes grandes conducen a una mayor exposición de vulnerabilidades y a un aumento del uso de recursos. Usando imágenes mas apoyadas como Slim y Alpine Linux reduce este problema.
+**TL;DR:** Imágenes grandes conducen a una mayor exposición de vulnerabilidades y a un aumento en el uso de recursos. Usando imágenes mas livianas como Slim y Alpine Linux reduce este problema.
 
-**De lo contrario** Compilar, enviar y recibir cambios de imágenes va a tomar mas tiempo, terceros pueden utilizar ataques de vectores desconocidos y consumir mar recursos.
+**De lo contrario** Compilar, enviar y recibir cambios de imágenes va a tomar más tiempo, terceros maliciosos pueden utilizar vectores de ataque desconocidos y más recursos son consumidos.
 
-🔗 [**Leer más: Utilice imágenes pequeñas**](./sections/docker/image-tags.spanish.md)
+🔗 [**Leer más: Usa imágenes pequeñas**](./sections/docker/image-tags.spanish.md)
 
 <br><br><br>
 
