@@ -1584,7 +1584,7 @@ Además, hacer referencia a una etiqueta de imagen significa que la imagen base 
 
 ## ![✔] 8.14. Prácticas generales de Docker
 
-**TL;DR:** Esta es una colección de los consejos de Docker que no están relacionados directamente con Docker: La implementación de Docker no es muy diferente a cualquier otro lenguaje, Da click en leer más para mas información.
+**TL;DR:** Esta es una colección de consejos de Docker que no están relacionados directamente con Node.js. La implementación para Node no es muy diferente a la de cualquier otro lenguaje. Haz clic en "Leer más" para hojearlo.
 
 🔗 [**Leer más: Prácticas de Docker generales](./sections/docker/generic-tips.spanish.md)
 
