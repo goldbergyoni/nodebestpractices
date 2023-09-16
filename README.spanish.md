@@ -1552,7 +1552,9 @@ Además, hacer referencia a una etiqueta de imagen significa que la imagen base 
 
 ## ![✔] 8.11. Limpia los secretos de tiempo de compilación, evita los secretos en args
 
-**TL;DR:** Evita la fuga de secretos en el entorno compilación de Docker. Una imágen de Docker normalmente es compartida por multiples entornos como CI y un registro que no está tan limpio como producción. Un ejemplo común is un token npm que suele ser pasado a dockerfile como argumento. Este token permanece en la imágen después de ser utilizada y permite al atacante acceso indefinido a un registro npm privado. Esto puede ser evitado al copiar un archivo secreto como `.npmrc` y después removiéndolo usando la compilación multi-pasos (Cuidado, la historia de compilación debe ser borrada también) o usando el build-kit de Docker que no deja ningún rastro.
+### `🌟 #new`
+
+**TL;DR:** Evita la fuga de secretos en el entorno compilación de Docker. Una imágen de Docker normalmente es compartida por multiples entornos como CI y un registro que no está tan limpio como producción. Un ejemplo común es un token npm que suele ser pasado al dockerfile como argumento. Este token permanece en la imágen después de ser utilizada y permite al atacante acceso indefinido a un registro npm privado. Esto puede ser evitado copiando el secreto a un archivo como `.npmrc` y después removiéndolo con la compilación multi-pasos (cuidado, la historia de la compilación también debe ser borrada) o usando el Docker build-kit que no deja ningún rastro.
 
 **De lo contrario** Cualquiera con acceso al CI y al registro Docker también tendrá acceso a unos preciosos secretos de la empresa como regalo.
 
