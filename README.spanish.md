@@ -1080,7 +1080,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** Los ataques DOS son muy populares y relativamente fáciles de realizar. Implementa la limitación de velocidad utilizando un servicio externo como balanceadores de carga en la nube, firewalls en la nube, nginx, [rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) paquete, o (para aplicaciones más pequeñas y menos críticas) un middleware que limita la velocidad (e.j. [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
+**TL;DR:** Los ataques DOS son muy populares y relativamente fáciles de realizar. Implementa una limitación de tasa de solicitudes utilizando un servicio externo como balanceadores de carga en la nube, firewalls en la nube, nginx, el paquete[rate-limiter-flexible](https://www.npmjs.com/package/rate-limiter-flexible) o (para aplicaciones más pequeñas y menos críticas) un middleware que limite la tasa de solicitudes (e.j. [express-rate-limit](https://www.npmjs.com/package/express-rate-limit))
 
 **De lo contrario:** Una aplicación podría estar sujeta a un ataque que resulte en una denegación de servicio donde los usuarios reales reciban un servicio degradado o no disponible.
 
