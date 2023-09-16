@@ -998,13 +998,11 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 5.14. Asigna un id de transacción a cada registro del log
 
-También conocido como correlation id / transit id / tracing id / request id / request context / etc.
+**TL;DR:** Asigna el mismo identificador, id-transacción: uuid(), a cada entrada de registro dentro de una solicitud (también conocido como correlation id, tracing id, request context, etc.). Luego, al inspeccionar los errores en los logs, encontrarás fácilmente lo que sucedió antes y después. Node tiene un mecanismo incorporado, [AsyncLocalStorage](https://nodejs.org/api/async_context.html), para mantener el mismo contexto en llamadas asincrónicas. Ver los ejemplos de código dentro.
 
-**TL;DR:** Asigna el mismo identificador, id-transacción: {algún valor}, a cada entrada de registro dentro de una sola solicitud. Luego, al inspeccionar los errores en los registros, encontrarás fácilmente lo que sucedió antes y después. Antes de la version 14 de Node, esto no era fácil de hacer debido a la naturaleza asíncrona de Node, pero desde `AsyncLocalStorage` llegó, esto se volvió posible y mas fácil que nunca. Ver códigos de ejemplo adentro
+**De lo contrario:** Ver un log de error de producción sin el contexto, lo que sucedió antes, hace que sea mucho más difícil y lento razonar sobre el problema.
 
-**De lo contrario:** Ver un registro de errores de producción sin el contexto, lo que sucedió antes, hace que sea mucho más difícil y lento razonar sobre el problema
-
-🔗 [**Leer más: asigna un ‘Id de transacción’ a cada instrucción del registro**](./sections/production/assigntransactionid.spanish.md)
+🔗 [**Leer más: Asigna un ‘TransactionId’ a cada registro de log**](./sections/production/assigntransactionid.spanish.md)
 
 <br/><br/>
 
