@@ -1520,7 +1520,7 @@ Update: [A partir de npm 7, npm afirma](https://docs.npmjs.com/cli/v7/using-npm/
 
 ## ![✔] 8.8. Planifica un almacenamiento en caché eficiente
 
-**TL;DR:** Re-compilar toda la imágen de Docker mediante caché puede ser casi instantáneo si se hace correctamente. Las instrucciones que se actualizan con menor frecuencia deben estar hasta arriba en su Dockerfile y las que cambian constantemente (Como el código de la aplicación) deberían estar hasta abajo.
+**TL;DR:** Re-compilar toda la imágen de Docker mediante caché puede ser casi instantáneo si se hace correctamente. Las instrucciones que se actualizan con menor frecuencia deben estar en la parte superior de su Dockerfile y las que cambian constantemente (como el código de la aplicación) deberían estar en la parte inferior.
 
 **De lo contrario** La compilación de Docker va a ser muy larga y consumir demasiados recursos, incluso al hacer cambios menores.
 
