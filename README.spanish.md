@@ -1530,13 +1530,13 @@ Update: [A partir de npm 7, npm afirma](https://docs.npmjs.com/cli/v7/using-npm/
 
 ## ![✔] 8.9. Utiliza una referencia de imagen explícita, evita la etiqueta `latest`
 
-**TL;DR:** Especifíque la etiqueta de versión de la imágen de manera explícita, nunca utilice `latest`. Desarrolladores piensan que al especificar la etiqueta `latest` recibirán la imágen mas reciente del repositorio, Sin embargo, este no es el caso, Usando una explícita garantiza que cada instancia del servicio esta corriendo exactamente el mismo código.
+**TL;DR:** Especifíca la etiqueta de versión de la imágen de manera explícita, nunca utilices `latest`. Desarrolladores piensan que al especificar la etiqueta `latest` recibirán la imágen mas reciente del repositorio. Sin embargo, este no es el caso. Usando un digest garantiza que cada instancia del servicio ejecute exactamente el mismo código.
 
-Como extra, refiriéndose a una etiqueta de imágen significa que la imágen base esta sujeta a cambios, por ello las etiquetas de imágen no pueden ser confiables para una instalación determinista. En su lugar, si se espera un instalación determinista una SHA256 puede ser usada como referencia a la imágen exacta.
+Además, hacer referencia a una etiqueta de imagen significa que la imagen base está sujeta a cambios, ya que no se puede confiar en las etiquetas de imagen para una instalación determinista. En cambio, si se espera una instalación determinista, se puede utilizar un digest SHA256 para hacer referencia a una imagen exacta.
 
 **De lo contrario** Una nueva versión de la imágen base puede ser desplegada a producción con cambios severos, causando comportamiento anormal.
 
-🔗 [**Leer más: Entender las etiquetas de imágen y utilizar las etiqueta "lates" con precaución**](./sections/docker/image-tags.spanish.md)
+🔗 [**Leer más: Entendiendo las etiquetas de imágen y usar la etiqueta "latest" con precaución**](./sections/docker/image-tags.spanish.md)
 
 <br><br><br>
 
