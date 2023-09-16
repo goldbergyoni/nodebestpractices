@@ -139,7 +139,7 @@ Leelo en otro idioma: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md),
 &emsp;&emsp;[5.5. Proteje la disponibilidad del proceso utilizando la herramienta adecuada](#-55-proteje-la-disponibilidad-del-proceso-utilizando-la-herramienta-adecuada)</br>
 &emsp;&emsp;[5.6. Utiliza todos los núcleos de la CPU](#-56-utiliza-todos-los-núcleos-de-la-cpu)</br>
 &emsp;&emsp;[5.7. Crea un "endpoint de mantenimiento"](#-57-crea-un-endpoint-de-mantenimiento)</br>
-&emsp;&emsp;[5.8. Descubre errores y tiempos de inactividad utilizando productos de APM `#advanced` `#updated`](#-58-descubre-errores-y-tiempos-de-inactividad-utilizando-productos-de-apm)</br>
+&emsp;&emsp;[5.8. Descubre lo desconocido utilizando productos de APM `#advanced` `#updated`](#-58-descubre-lo-desconocido-utilizando-productos-de-apm)</br>
 &emsp;&emsp;[5.9. Haz tu código listo para producción](#-59-haz-tu-código-listo-para-producción)</br>
 &emsp;&emsp;[5.10. Mide y protege el uso de la memoria `#advanced`](#-510-mide-y-protege-el-uso-de-la-memoria)</br>
 &emsp;&emsp;[5.11. Saca tus recursos frontend de Node](#-511-saca-tus-recursos-frontend-de-node)</br>
@@ -934,9 +934,11 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 <br/><br/>
 
-## ![✔] 5.8. Descubre errores y tiempos de inactividad utilizando productos de APM
+## ![✔] 5.8. Descubre lo desconocido utilizando productos de APM
 
-**TL;DR:** Los productos de monitoreo y rendimiento de aplicaciones (también conocido como APM) miden proactivamente la base de código y la API para que puedan ir automáticamente más allá del monitoreo tradicional y medir la experiencia general del usuario en todos los servicios y niveles. Por ejemplo, algunos productos APM pueden resaltar una transacción que se carga demasiado lentamente en el lado de los usuarios finales al tiempo que sugiere lo que lo podría provocar
+### `📝 #updated`
+
+**TL;DR:** Considera agregar otra capa de seguridad a la pila de producción: APM. Si bien la mayoría de los síntomas y causas pueden detectarse mediante técnicas de monitoreo tradicionales, en un sistema distribuido hay más de lo que parece. Los productos de rendimiento y monitoreo de aplicaciones (también conocidos como APM) pueden ir automáticamente más allá del monitoreo tradicional y proporcionar una capa adicional de descubrimiento y experiencia para desarrolladores. Por ejemplo, algunos productos APM pueden resaltar una transacción que se carga demasiado lenta en el **lado del usuario final** y al mismo tiempo sugerir la causa raíz. Los APM también brindan más contexto para los desarrolladores que intentan solucionar un error de registro al mostrar en qué estaba ocupado el servidor cuando ocurrió el error. Por nombrar algunos ejemplos.
 
 **De lo contrario:** Es posible que dediques un gran esfuerzo a medir el rendimiento de la API y los tiempos de inactividad, probablemente nunca te darás cuenta de cuáles son tus partes de código más lentas en un escenario del mundo real y cómo afectan a la experiencia de usuario
 
