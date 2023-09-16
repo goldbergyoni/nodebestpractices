@@ -114,7 +114,7 @@ Leelo en otro idioma: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md),
 &emsp;&emsp;[4.1 Por lo menos, escribe las pruebas de la API (componente) `#strategic`](#-41-por-lo-menos,-escribe-las-pruebas-de-la-api-)</br>
 &emsp;&emsp;[4.2 Incluye 3 partes en cada nombre de prueba `#new`](#-42-incluye-3-partes-en-cada-nombre-de-prueba)</br>
 &emsp;&emsp;[4.3 Estructura las pruebas utilizando el patrón AAA `#strategic`](#-43-estructura-las-pruebas-utilizando-el-patrón-aaa)</br>
-&emsp;&emsp;[4.4 Asegura que la versión de Node esté unificada `#new`](#-44-asegura-que-la-versión-de-node-esté-unificada)</br>
+&emsp;&emsp;[4.4 Asegurate que la versión de Node esté unificada `#new`](#-44-asegurate-que-la-versión-de-node-esté-unificada)</br>
 &emsp;&emsp;[4.5 Evita estados de prueba (fixtures) y semillas globales, agrega datos por prueba `#strategic`](#-45-evita-estados-de-prueba-fixtures-y-semillas-globales-agrega-datos-por-prueba)</br>
 &emsp;&emsp;[4.6 Etiqueta tus pruebas `#advanced`](#-4etiqueta-tus-pruebas)</br>
 &emsp;&emsp;[4.7 Verifica la cobertura de tus pruebas, ayuda a identificar patrones de prueba incorrectos](#-47-verifica-la-cobertura-de-tus-pruebas-ayuda-a-identificar-patrones-de-prueba-incorrectos)</br>
@@ -762,11 +762,13 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 <br/><br/>
 
-## ![✔] 4.4 Detecta problemas de código con un linter
+## ![✔] 4.4 Asegurate que la versión de Node esté unificada
 
-**TL;DR:** Usa un código de interfaz para verificar la calidad básica y detectar anti-patrones temprano. Ejecútala antes de cualquier prueba y agrégalo como un git-hook previo al commit para minimizar el tiempo necesario para revisar y corregir cualquier problema. También verifica la [Sección 3](#3-code-style-practices) sobre las prácticas de estilo de código.
+### `🌟 #new`
 
-**De lo contrario:** Puede dejar pasar algún código anti-patrón y posible código vulnerable a su entorno de producción.
+**TL;DR:** Usa herramientas que fomenten o impongan la misma versión de Node.js en diferentes entornos y desarrolladores. Herramientas como [nvm](https://github.com/nvm-sh/nvm) y [Volta](https://volta.sh/) permiten especificar la versión del proyecto en un archivo para que cada miembro del equipo pueda ejecutar un comando único para ajustarse a la versión del proyecto. Opcionalmente, esta definición se puede replicar en CI y en el tiempo de ejecución de producción (por ejemplo, copiar el valor especificado en la compilación .Dockerfile y en el archivo de declaración de CI).
+
+**De lo contrario:** Un desarrollador puede enfrentar o pasar por alto un error porque usa una versión de Node.js diferente a la de sus compañeros de equipo. Peor aún: el tiempo de ejecución de producción puede ser diferente al entorno donde se ejecutaron las pruebas.
 
 <br/><br/>
 
