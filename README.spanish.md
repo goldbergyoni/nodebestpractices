@@ -798,17 +798,9 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 <br/><br/>
 
-## ![✔] 4.x Inspecciona los paquetes obsoletos
-
-**TL;DR:** Usa tu herramienta preferida (e.g. 'npm outdated' o [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) para detectar paquetes instalados que están desactualizados, inyecte esta verificación en su canalización de CI e incluso haga que una compilación falle en un escenario grave. Por ejemplo, un escenario grave podría ser cuando un paquete instalado tiene 5 parches confirmados (por ejemplo, la versión local es 1.3.1 y la versión del repositorio es 1.3.8) o está etiquetado como obsoleto por su autor: elimine la compilación y evite implementar esto versión
-
-**De lo contrario:** Su producción ejecutará paquetes que han sido etiquetados explícitamente por su autor como riesgosos
-
-<br/><br/>
-
 ## ![✔] 4.8 Usa un ambiente similar al de producción para pruebas e2e
 
-**TL;DR:** La prueba de extremo a extremo (e2e) que incluye datos en vivo solía ser el eslabón más débil del proceso de CI, ya que depende de múltiples servicios pesados como DB. Usa un entorno que esté lo más cerca posible de su producción real como a-continue
+**TL;DR:** La prueba de punta a punta (e2e) que incluye datos en vivo solía ser el eslabón más débil del proceso de CI, ya que depende de múltiples servicios pesados como la BDD. Usa un entorno que esté lo más cerca posible de su producción real como una continuación
 
 **De lo contrario:** Sin 'docker-compose',los equipos deben mantener una base de datos de prueba para cada entorno de prueba, incluidas las máquinas de los desarrolladores, mantener todas esas bases de datos sincronizadas para que los resultados de la prueba no varíen entre entornos.
 
