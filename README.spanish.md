@@ -1008,11 +1008,11 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 5.15. Establece `NODE_ENV=production`
 
-**TL;DR:** Establece la variable de entorno NODE_ENV a "producción" o "desarrollo" para marcar si las optimizaciones de producción deben activarse; muchos paquetes npm determinan el entorno actual y optimizan su código para la producción
+**TL;DR:** Establece la variable de entorno NODE_ENV a "producción" o "desarrollo" para marcar si las optimizaciones de producción deben activarse; varios paquetes npm determinan el entorno actual y optimizan su código para la producción
 
-**De lo contrario:** Omitir esta simple propiedad podría degradar en gran medida el rendimiento. Por ejemplo, cuando se usa Express para la representación del lado del servidor, omitir `NODE_ENV` lo hace un tercio más lento.
+**De lo contrario:** Omitir esta simple propiedad podría degradar en gran medida cuando se utilizand determinas bibliotecas como por ejemplo server-side rendering en Express.
 
-🔗 [**Leer más: Establecer NODE_ENV=production**](./sections/production/setnodeenv.spanish.md)
+🔗 [**Leer más: Establece NODE_ENV=production**](./sections/production/setnodeenv.spanish.md)
 
 <br/><br/>
 
