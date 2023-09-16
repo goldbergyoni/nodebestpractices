@@ -1470,11 +1470,11 @@ Update: [A partir de npm 7, npm afirma](https://docs.npmjs.com/cli/v7/using-npm/
 
 ## ![✔] 8.3. Permite a Docker maneje la replicación y el tiempo de ejecución
 
-**TL;DR:** Cuando se usa un manejador de tiempo de ejecución de Docker (Por ejemplo, Kubernetes), invoque el proceso de Node.js directamente, sin manejadores de proceso intermedios o código personalizado que replica el proceso (Por ejemplo, PM2, Cluster Module). La plataforma de tiempo de ejecución tiene la mayor cantidad de datos y visibilidad al hacer la decisión de posicionamiento: Sabe mejor que nadie cuantos procesos son necesarios, como distribuirlos y que hacer en caso de errores.
+**TL;DR:** Cuando se usa un orquestador de Docker en tiempo de ejecución (por ejemplo, Kubernetes), invoca el proceso de Node.js directamente intermediación de manejadores de proceso o código personalizado que replica el proceso (por ejemplo, PM2, Cluster Module). La plataforma de tiempo de ejecución tiene la mayor cantidad de datos y visibilidad para hacer la decisión de colocación. Sabe mejor que nadie cuantos procesos son necesarios, como distribuirlos y que hacer en caso de errores.
 
-**De lo contrario** El contenedor sigue cayendo debido a la escasez de recursos se estará reiniciando de manera indefinida por el manejador de procesos. Si Kubernetes supiera esto, lo podría redirreccionar a una instancia diferente.
+**De lo contrario** El contenedor seguirá cayendo debido a la escasez de recursos y  el manejador de procesos lo estará reiniciando de indefinidamente. Si Kubernetes supiera esto, lo podría redirreccionar a una instancia diferente.
 
-🔗 [**Leer más: Permita al manejador Docker reiniciar y replicar procesos**](./sections/docker/restart-and-replicate-processes.spanish.md)
+🔗 [**Leer más: Permita al orquestador de Docker reiniciar y replicar procesos**](./sections/docker/restart-and-replicate-processes.spanish.md)
 
 <br><br><br>
 
