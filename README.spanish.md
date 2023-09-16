@@ -1114,7 +1114,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 6.5. Colección de mejores prácticas de seguridad genéricas
 
-**TL;DR:** Esta es una colección de consejos de seguridad que no está relacionada directamente con Node.js: la implementación de Node no es muy diferente a la de cualquier otro idioma. Haz clic en leer más para mas información.
+**TL;DR:** Esta es una colección de consejos de seguridad que no está relacionada directamente con Node.js: la implementación de Node no es muy diferente a la de cualquier otro lenguaje. Haz clic en "Leer más" para mas información.
 
 🔗 [**Leer más: Common security best practices**](./sections/security/commonsecuritybestpractices.spanish.md)
 
