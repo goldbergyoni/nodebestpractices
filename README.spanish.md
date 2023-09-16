@@ -1510,11 +1510,11 @@ Update: [A partir de npm 7, npm afirma](https://docs.npmjs.com/cli/v7/using-npm/
 
 ## ![✔] 8.7. Establece límites de memoria utilizando Docker y v8
 
-**TL;DR:** Siempre configure un límite de memoria utilizando Docker y las marcas de tiempo de ejecución de JavaScript. El límite de Docker es necesario para hacer decisiones de posicionamiento bien pensadas, la marca --v8 max-old-space es necesaria para arrancar el GC a tiempo y prevenir desperdicio de recursos. En la práctica, asignale a la marca max-old-space de v8 un tamaño un poco menor al límite del contenedor.
+**TL;DR:** Siempre configura los límites de memoria utilizando tanto Docker como los parámetros de ejecución de JavaScript. El límite de Docker es necesario para hacer decisiones de colocación bien pensadas, el parámetro --v8 max-old-space es necesaria para arrancar el Garbage Collector a tiempo y prevenir subutilización de memoria. En la práctica, asignale al parámetro max-old-space de v8 un tamaño un poco menor al límite del contenedor.
 
-**De lo contrario** La definición de Docker es necesaria para realizar decisiones bien pensadas de escalación y prevenir la escasez para otros procesos. Si tampoco defines los límites de v8, no va a utilizar completamente los recursos de contenedor; Sin instrucciones explícitas, se colapsará cuando se use ~50-60% de los recursos del host
+**De lo contrario** La definición de Docker es necesaria para realizar decisiones bien pensadas de escalación y prevenir la escasez para otros procesos. Si tampoco defines los límites de v8, no va a utilizar completamente los recursos del contenedor. Sin instrucciones explícitas, se caerá cuando se use ~50-60% de los recursos del host.
 
-🔗 [**Leer más: Asigne límites de memoria en Docker**](./sections/docker/memory-limit.spanish.md)
+🔗 [**Leer más: Establece límites de memoria utilizando solo Docker**](./sections/docker/memory-limit.spanish.md)
 
 <br><br><br>
 
