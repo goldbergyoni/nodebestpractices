@@ -1201,7 +1201,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 1. El primero es el número de intentos fallidos consecutivos por el mismo ID / nombre único de usuario y dirección IP.
 2. El segundo es el número de intentos fallidos de una dirección IP durante un largo período de tiempo. Por ejemplo, bloquee una dirección IP si realiza 100 intentos fallidos en un día.
 
-**De lo contrario:** Un atacante puede emitir intentos de contraseña automatizados ilimitados para obtener acceso a cuentas privilegiadas en una aplicación
+**De lo contrario:** Un atacante puede enviar de manera automatizada ilimitados intentos de contraseña para obtener acceso a cuentas privilegiadas en una aplicación
 
 🔗 [**Leer más: Limita tasa de login**](./sections/security/login-rate-limit.spanish.md)
 
