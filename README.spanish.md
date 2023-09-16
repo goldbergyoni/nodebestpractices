@@ -862,11 +862,11 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 <p align="right"><a href="#table-of-contents">⬆ Volver arriba</a></p>
 
-# `5. Yendo a las prácticas de producción`
+# `5. Prácticas de puesta en producción`
 
 ## ![✔] 5.1. Monitoreo
 
-**TL;DR:** Monitorear es un juego para descubrir problemas antes de que lo hagan los clientes; obviamente, se le debe asignar una importancia sin precedentes. El mercado está abrumado por las ofertas, por lo tanto, considera empezar con la definición de las métricas básicas que debe seguir (mis sugerencias en el interior), luego repasar características sofisticadas adicionales y elegir la solución que cumple todos los requisitos. Haga clic en "Lo esencial" a continuación para obtener una descripción general de las soluciones
+**TL;DR:** Monitorear es un juego para descubrir problemas antes de que lo hagan los clientes; obviamente, se le debe asignar una importancia sin precedentes. El mercado está abrumado por las ofertas, por lo tanto, considera empezar con la definición de las métricas básicas que debe seguir (mis sugerencias dentro), luego vé por características sofisticadas adicionales y elige la solución que cumpla con todos los requisitos. En cualquier caso, se deben cubrir las 4 capas de observabilidad: tiempo de actividad, métricas centradas en los síntomas de cara al usuario y métricas técnicas de Node.js como la demora del Event Loop, medición de flujos distribuidos con Open Telemetry y logueo. Haga clic en "Leer más" debajo para una descripción general de las soluciones.
 
 **De lo contrario:** Fallar === clientes decepcionados. Simple
 
