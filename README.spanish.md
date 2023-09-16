@@ -206,7 +206,7 @@ Leelo en otro idioma: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md),
 
 &emsp;&emsp;[8.1. Usa compilaciones de múltiples etapas para obtener imágenes de Docker más sencillas y seguras `#strategic`](#-81-usa-compilaciones-de-múltiples-etapas-para-obtener-imágenes-de-docker-más-sencillas-y-seguras)</br>
 &emsp;&emsp;[8.2. Arranca usando el comando `node`, evita `npm start`](#-82-arranca-usando-el-comando-node-evita-npm-start)</br>
-&emsp;&emsp;[8.3. Permite a Docker maneje la replicación y el tiempo de ejecución `#strategic`](#-83-permite-a-docker-maneje-la-replicación-y-el-tiempo-de-ejecución)</br>
+&emsp;&emsp;[8.3. Permite al entorno de ejecución de Docker manejar la replicación y el tiempo de actividad `#strategic`](#-83-permite-al-entorno-de-ejecución-de-docker-manejar-la-replicación)</br>
 &emsp;&emsp;[8.4. Usa .dockerignore para evitar la fuga de secretos](#-84-usa-dockerignore-para-evitar-la-fuga-de-secretos)</br>
 &emsp;&emsp;[8.5. Limpia las dependencias antes de ir a producción](#-85-limpia-las-dependencias-antes-de-ir-a-producción)</br>
 &emsp;&emsp;[8.6. Apaga de manera inteligente y elegante `#advanced`](#-86-apaga-de-manera-inteligente-y-elegante)</br>
@@ -766,9 +766,9 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ### `🌟 #new`
 
-**TL;DR:** Usa herramientas que fomenten o impongan la misma versión de Node.js en diferentes entornos y desarrolladores. Herramientas como [nvm](https://github.com/nvm-sh/nvm) y [Volta](https://volta.sh/) permiten especificar la versión del proyecto en un archivo para que cada miembro del equipo pueda ejecutar un comando único para ajustarse a la versión del proyecto. Opcionalmente, esta definición se puede replicar en CI y en el tiempo de ejecución de producción (por ejemplo, copiar el valor especificado en la compilación .Dockerfile y en el archivo de declaración de CI).
+**TL;DR:** Usa herramientas que fomenten o impongan la misma versión de Node.js en diferentes entornos y desarrolladores. Herramientas como [nvm](https://github.com/nvm-sh/nvm) y [Volta](https://volta.sh/) permiten especificar la versión del proyecto en un archivo para que cada miembro del equipo pueda ejecutar un comando único para ajustarse a la versión del proyecto. Opcionalmente, esta definición se puede replicar en CI y en el entorno de ejecución de producción (por ejemplo, copiar el valor especificado en la compilación .Dockerfile y en el archivo de declaración de CI).
 
-**De lo contrario:** Un desarrollador puede enfrentar o pasar por alto un error porque usa una versión de Node.js diferente a la de sus compañeros de equipo. Peor aún: el tiempo de ejecución de producción puede ser diferente al entorno donde se ejecutaron las pruebas.
+**De lo contrario:** Un desarrollador puede enfrentar o pasar por alto un error porque usa una versión de Node.js diferente a la de sus compañeros de equipo. Peor aún: el entorno de ejecución de producción puede ser diferente al entorno donde se ejecutaron las pruebas.
 
 <br/><br/>
 
@@ -1428,7 +1428,7 @@ Ten en cuenta que con la introducción del nuevo motor V8 junto con los nuevos e
 
 ## ![✔] 8.1. Usa compilaciones de múltiples etapas para obtener imágenes de Docker más sencillas y seguras
 
-**TL;DR:** Utilice la compilación de múltiples etapas para copiar únicamente los artefactos de producción necesarios. Un montón de las dependencias y archivos de tiempo de compilación no son necesarios para ejecutar tu aplicación. Haciendo uso de compilaciones de múltiples etapas, estos recursos pueden ser utilizados durante la compilación mientras que el entorno de tiempo de ejecución sólo contiene lo necesario. Las compilaciones de múltiples etapas representan una forma sencilla de deshacerse del sobrepeso y las amenazas de seguridad.
+**TL;DR:** Utilice la compilación de múltiples etapas para copiar únicamente los artefactos de producción necesarios. Un montón de las dependencias y archivos de tiempo de compilación no son necesarios para ejecutar tu aplicación. Haciendo uso de compilaciones de múltiples etapas, estos recursos pueden ser utilizados durante la compilación mientras que el entorno de ejecución sólo contiene lo necesario. Las compilaciones de múltiples etapas representan una forma sencilla de deshacerse del sobrepeso y las amenazas de seguridad.
 
 **De lo contrario:** Las imágenes más grandes tomarán más tiempo en compilar y desplegarse, las herramientas de solo compilación pueden contener vulnerabilidades y secretos que solo están destinados a la fase de compilación y pueden ser filtrados.
 
@@ -1468,7 +1468,7 @@ Update: [A partir de npm 7, npm afirma](https://docs.npmjs.com/cli/v7/using-npm/
 
 <br><br><br>
 
-## ![✔] 8.3. Permite a Docker maneje la replicación y el tiempo de ejecución
+## ![✔] 8.3. Permite al entorno de ejecución de Docker manejar la replicación y el tiempo de actividad
 
 **TL;DR:** Cuando se usa un orquestador de Docker en tiempo de ejecución (por ejemplo, Kubernetes), invoca el proceso de Node.js directamente intermediación de manejadores de proceso o código personalizado que replica el proceso (por ejemplo, PM2, Cluster Module). La plataforma de tiempo de ejecución tiene la mayor cantidad de datos y visibilidad para hacer la decisión de colocación. Sabe mejor que nadie cuantos procesos son necesarios, como distribuirlos y que hacer en caso de errores.
 
@@ -1500,11 +1500,11 @@ Update: [A partir de npm 7, npm afirma](https://docs.npmjs.com/cli/v7/using-npm/
 
 ## ![✔] 8.6. Apaga de manera inteligente y elegante
 
-**TL;DR:** Maneje el evento de proceso SIGTERM y limpie todas las conexiones existentes y recursos. Esto debería hacerse mientra se responden a peticiones activas. En tiempos de ejecución de Docker, apagar contenedores no es un evento raro, sino un evento frecuente que es parte de una rutina de trabajo. Hacer esto requiere un código bien pensado para manejar muchas partes separadas: El balance de carga, mantener las conexiones, el servidor HTTP y otros recursos.
+**TL;DR:** Maneja el evento de proceso SIGTERM y limpia todas las conexiones existentes y recursos. Esto debería hacerse mientra se responden a peticiones activas. En entornos de ejecución de dockerizados, apagar contenedores no es un evento raro, sino un evento frecuente que es parte de una rutina de trabajo. Hacer esto requiere un código bien pensado para manejar muchas partes separadas: el balanceo de carga, mantener las conexiones, el servidor HTTP y otros recursos.
 
-**De lo contrario** Apagando de manera inmediata significa no responder a cientos de usuarios decepcionados.
+**De lo contrario** Apagar de manera inmediata significa no responder a cientos de usuarios decepcionados.
 
-🔗 [**Leer más: Apagado gentil**](./sections/docker/graceful-shutdown.spanish.md)
+🔗 [**Leer más: Apagado elegante**](./sections/docker/graceful-shutdown.spanish.md)
 
 <br><br><br>
 
