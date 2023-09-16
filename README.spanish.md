@@ -1458,12 +1458,13 @@ CMD [ "node", "dist/app.js" ]
 
 ## ![✔] 8.2. Arranca usando el comando `node`, evita `npm start`
 
-**TL;DR:** usa `CMD ['node', 'server.js']` para iniciar su aplicación, evita usar los scripts de npm, los cuales no pasan señales del sistema operativo (OS) al código. Para prevenir estos problemas en los procesos secundarios, manejo de señales y apagado simple sin tener procesos zombie.
+**TL;DR:** Usa `CMD ['node', 'server.js']` para iniciar su aplicación, evita usar los scripts de npm, los cuales no pasan señales del sistema operativo (OS) al código. Esto previene problemas en los procesos hijo, manejo de señales, apagado elegante y procesos zombie.
 
-**De lo contrario** Cuando no se pasan señales, su código nunca será notificado cuando se detenga el proceso, Sin esto, Se perderá la oportunidad de cerrar de manera apropiada, posiblemente perdiendo peticiones o datos actuales.
+Update: [A partir de npm 7, npm afirma](https://docs.npmjs.com/cli/v7/using-npm/changelog#706-2020-10-27) pasar señales. Lo seguiremos y actualizaremos consecuentemente.
 
-🔗 [**Leer más: Arranque usando node, evite npm start**](./sections/docker/bootstrap-using-node.spanish.md)
+**De lo contrario** Cuando no se pasan señales, su código nunca será notificado del apagado. Sin esto, se perderá la oportunidad de cerrar de manera apropiada, posiblemente perdiendo peticiones o datos actuales.
 
+🔗 [**Leer más: Arranca el contenedor usando node, evita npm start**](./sections/docker/bootstrap-using-node.spanish.md)
 
 <br><br><br>
 
