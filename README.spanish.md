@@ -978,11 +978,11 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 5.12. Esfuerzate por ser stateless
 
-**TL;DR:** Almacena cualquier tipo de datos (por ejemplo, sesiones de usuario, caché, archivos cargados) en almacenes de datos externos. Considera "matar" sus servidores periódicamente o utilice la plataforma "sin servidor" (por ejemplo, AWS Lambda) que aplica explícitamente un comportamiento sin estado
+**TL;DR:** Almacena cualquier tipo de _datos_ (por ejemplo, sesiones de usuario, caché, archivos cargados) en almacenes de datos externos. Cuando la aplicación mantiene datos en proceso, esto agrega una capa adicional de complejidad de mantenimiento, como enrutar a los usuarios a la misma instancia y un mayor costo de reiniciar un proceso. Para imponer y fomentar un enfoque sin estado, la mayoría de las plataformas de ejecución modernas permiten "reaplicar" instancias periódicamente.
 
 **De lo contrario:** Un fallo en un servidor dará como resultado el tiempo de inactividad de la aplicación en lugar de simplemente matar una máquina defectuosa. Además, la elasticidad de escalamiento será más difícil debido a la dependencia de un servidor específico
 
-🔗 [**Leer más: Se anti-estado, mata tus servidores casi todos los días**](./sections/production/bestateless.spanish.md)
+🔗 [**Leer más: Se stateless, mata tus servidores casi todos los días**](./sections/production/bestateless.spanish.md)
 
 <br/><br/>
 
