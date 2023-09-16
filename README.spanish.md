@@ -194,8 +194,8 @@ Leelo en otro idioma: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md),
     <a href="#7-borrador-mejores-prácticas-de-rendimiento">7. Prácticas de rendimiento (2) (En Progreso ✍️)</a>
   </summary>
 
-&emsp;&emsp;[7.1. No bloquees el bucle de eventos](#-71-no-bloquees-el-bucle-de-eventos)</br>
-&emsp;&emsp;[7.2. Prefiere los métodos nativos de a las utilidades de usuario como Lodash](#-72-prefiere-los-métodos-nativos-de-a-las-utilidades-de-usuario-como-lodash)</br>
+&emsp;&emsp;[7.1. No bloquees el Event Loop](#-71-no-bloquees-el-event-loop)</br>
+&emsp;&emsp;[7.2. Prefiere los métodos nativos a los de utilidades de usuario como Lodash](#-72-prefiere-los-métodos-nativos-a-los-de-utilidades-de-usuario-como-lodash)</br>
 
 </details>
 
@@ -1407,15 +1407,14 @@ Este estilo garantiza que no haya ambigüedad con los paquetes npm globales y de
 
 <br /><br /><br />
 
+## ![✔] 7.2. Prefiere los métodos nativos a los de utilidades de usuario como Lodash
 
-## ![✔] 7.2. Prefiere los métodos nativos de a las utilidades de usuario como Lodash
+**TL;DR:** A menudo penaliza más usar bibliotecas de utilidades como `lodash` y ` underscore` sobre los métodos nativos, ya que conduce a dependencias innecesarias y un rendimiento más lento.
+Ten en cuenta que con la introducción del nuevo motor V8 junto con los nuevos estándares ES, los métodos nativos se mejoraron de tal manera que ahora es aproximadamente un 50% más eficiente que las bibliotecas de utilidades.
 
-**TL;DR:** A menudo es más penalizador usar bibliotecas de utilidades como `lodash` y ` underscore` sobre los métodos nativos, ya que conduce a dependencias innecesarias y un rendimiento más lento.
-Ten en cuenta que con la introducción del nuevo motor V8 junto con los nuevos estándares ES, los métodos nativos se mejoraron de tal manera que ahora es aproximadamente un 50% más eficiente que las bibliotecas de servicios públicos.
+**De lo contrario:** Tendrás que mantener proyectos de menor rendimiento en los que simplemente podría haber usado lo que **ya estaba** disponible o haber lideado en tu código con algunas líneas más a cambio de algunos archivos más.
 
-**De lo contrario:** Tendrás que mantener proyectos de menor rendimiento en los que simplemente podría haber usado lo que **ya estaba** disponible o haber tratado algunas líneas más a cambio de algunos archivos más.
-
-🔗 [**Leer más: Nativo sobre implementaciones externas**](./sections/performance/nativeoverutil.spanish.md)
+🔗 [**Leer más: Nativo por sobre utilidades externas**](./sections/performance/nativeoverutil.spanish.md)
 
 <br/><br/><br/>
 
