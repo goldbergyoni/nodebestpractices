@@ -958,9 +958,9 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 5.10. Mide y protege el uso de la memoria
 
-**TL;DR:** Node.js tiene relaciones controversiales con la memoria: el motor v8 tiene límites suaves en el uso de la memoria (1,4 GB) y hay maneras conocidas para perder memoria en el código de Node, por lo que es imprescindible observar la memoria de proceso de Node. En aplicaciones pequeñas, puedes medir la memoria periódicamente utilizando comandos de shell, pero en aplicaciones medianas y grandes, considera convertir tu reloj de memoria en un sistema de monitoreo robusto
+**TL;DR:** Node.js tiene relaciones controversiales con la memoria: el motor v8 tiene límites suaves en el uso de la memoria (1,4 GB) y hay formas conocidas de perder memoria en el código de Node, por lo que es imprescindible observar la memoria de proceso de Node. En aplicaciones pequeñas, puedes medir la memoria periódicamente utilizando comandos de shell, pero en aplicaciones medianas y grandes, considera convertir tu observación de la memoria en un sistema de monitoreo robusto
 
-**De lo contrario:** Tu memoria de proceso podría perder cien megabytes por día, como sucedió a [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
+**De lo contrario:** Tu proceso podría perder memoria al ritmo de cien megabytes por día, como le sucedió a [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak)
 
 🔗 [**Leer más:  Medir y proteger el uso de la memoria**](./sections/production/measurememory.spanish.md)
 
