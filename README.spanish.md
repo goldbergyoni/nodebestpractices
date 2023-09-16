@@ -906,9 +906,9 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 5.5. Proteje la disponibilidad del proceso utilizando la herramienta adecuada
 
-**TL;DR:** El proceso debe continuar y reiniciarse si falla. Para escenarios simples, las herramientas de administración de procesos como PM2 pueden ser suficientes, pero en el mundo "dockerizado" de hoy en día, las herramientas de administración de clústeres también deben considerarse
+**TL;DR:** El proceso debe continuar y reiniciarse en caso de fallas. Las plataformas de ejecución modernas, como las plataformas dockerizadas (por ejemplo, Kubernetes) y Serverless, se encargan de esto automáticamente. Cuando la aplicación está alojada en un servidor básico, uno deben gestionar las herramientas de gestión de procesos como [systemd](https://systemd.io/). Evite incluir una herramienta de gestión de procesos personalizada en una plataforma moderna que monitoree una instancia de aplicación (por ejemplo, Kubernetes); al hacerlo, se ocultarán las fallas de la infraestructura. Cuando la infraestructura subyacente no reconoce los errores, no puede realizar medidas de mitigación útiles, como reemplazar la instancia en una ubicación diferente.
 
-**De lo contrario:** Ejecutar docenas de instancias sin una estrategia clara y demasiadas herramientas juntas (administración de clúster, docker, PM2) podría conducir al caos de DevOps
+**De lo contrario:** Ejecutar docenas de instancias sin una estrategia clara y demasiadas herramientas juntas (administración de clúster, docker, PM2) podría conducir al caos de DevOps.
 
 🔗 [**Leer más: Proteja la disponibilidad del proceso utilizando la herramienta adecuada**](./sections/production/guardprocess.spanish.md)
 
