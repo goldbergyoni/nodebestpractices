@@ -1188,7 +1188,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 **De lo contrario:** Los tokens caducados o extraviados pueden ser utilizados maliciosamente por un tercero para acceder a una aplicación y hacerse pasar por el propietario del token.
 
-🔗 [**Leer más: Bloquea JSON Web Tokens caducados**](./sections/security/expirejwt.spanish.md)
+🔗 [**Leer más: Bloquea JSON Web Tokens mediante listas**](./sections/security/expirejwt.spanish.md)
 
 <br/><br/>
 
