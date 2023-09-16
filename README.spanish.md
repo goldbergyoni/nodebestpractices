@@ -1343,7 +1343,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 **De lo contrario:** Si un atacante descubre que no está validando entradas externas proporcionadas por el usuario, puede aprovechar esta vulnerabilidad al publicar enlaces especialmente diseñados en foros, redes sociales y otros lugares públicos para que los usuarios hagan clic en él.
 
-🔗 [**Leer más: Evita redireccionamientos inseguros**](./sections/security/saferedirects.spanish.md)
+🔗 [**Leer más: Evita redirecciones inseguras**](./sections/security/saferedirects.spanish.md)
 
 <br/><br/>
 
