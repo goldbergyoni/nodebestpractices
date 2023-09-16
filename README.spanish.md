@@ -1225,7 +1225,7 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 **TL;DR:** Cuanto más grande el body de la petición, más difícil es para el único hilo trabajar en su procesamiento. Esta es una oportunidad para que los atacantes pongan a los servidores de rodillas sin una gran cantidad de solicitudes (ataques DOS / DDOS). Mitiga esto limitando el tamaño del body de las solicitudes entrantes en el perímetro (por ejemplo, firewall, ELB) o configurando [express body parser](https://github.com/expressjs/body-parser) para aceptar solo mensajes pequeños.
 
-**De lo contrario:** Tu aplicación tendrá que lidiar con solicitudes grandes, incapaz de procesar los trabajos importantes que tiene que realizar, lo que conlleva implicaciones de rendimiento y vulnerabilidad ante los ataques de DOS
+**De lo contrario:** Tu aplicación tendrá que lidiar con solicitudes grandes, incapaz de procesar los trabajos importantes que tiene que realizar, lo que conlleva implicaciones de rendimiento y vulnerabilidad ante los ataques de DOS.
 
 🔗 [**Leer más: Limita tamaño de carga**](./sections/security/requestpayloadsizelimit.spanish.md)
 
@@ -1235,11 +1235,11 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A7:XSS%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A4:External%20Entities%20-green.svg" alt=""/></a>
 
-**TL;DR:** `eval` es malo, ya que permite ejecutar código JavaScript personalizado durante el tiempo de ejecución. Esto no es solo un problema de rendimiento, sino también un problema de seguridad importante debido al código JavaScript malicioso que puede obtenerse de la entrada del usuario. Otra característica del lenguaje que debe evitarse es el constructor `new Function`. `setTimeout` y` setInterval` y nunca deberían pasar el código JavaScript dinámico tampoco.
+**TL;DR:** `eval` es malo, ya que permite ejecutar código JavaScript personalizado durante el tiempo de ejecución. Esto no es solo un problema de rendimiento, sino también un problema de seguridad importante debido al código JavaScript malicioso que puede obtenerse de la entrada del usuario. Otra característica del lenguaje que debe evitarse es el constructor `new Function`. Tampoco nunca debería pasarsele código JavaScript dinámico a `setTimeout` y `setInterval`.
 
-**De lo contrario:** El código JavaScript malicioso encuentra una forma en el texto pasado a `eval` u otras funciones del lenguaje JavaScript de evaluación en tiempo real, y obtendrá acceso completo a los permisos de JavaScript en la página. Esta vulnerabilidad a menudo se manifiesta como un ataque XSS.
+**De lo contrario:** Código malicioso JavaScript encuentrará una forma de texto enviado a `eval` u otras funciones del lenguaje JavaScript de evaluación en tiempo real, y obtendrá acceso completo a los permisos de JavaScript en la página. Esta vulnerabilidad a menudo se manifiesta como un ataque XSS.
 
-🔗 [**Leer más: Evita sentencias eval**](./sections/security/avoideval.spanish.md)
+🔗 [**Leer más: Evita sentencias eval de JavaScript**](./sections/security/avoideval.spanish.md)
 
 <br/><br/>
 
