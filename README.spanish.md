@@ -812,19 +812,19 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 **De lo contrario:** Con una mala calidad de código, los errores y el rendimiento siempre serán un problema que ninguna nueva y brillante biblioteca o características de última generación podrá solucionar
 
-🔗 [**Leer más: Refactoriza!**](./sections/testingandquality/refactoring.spanish.md)
+🔗 [**Leer más: Refactorización!**](./sections/testingandquality/refactoring.spanish.md)
 
 <br/><br/>
 
-## ![✔] 4.12 Elije con cuidado tu plataforma CI (Jenkins vs CircleCI vs Travis vs Resto del mundo)
+## ![✔] 4.10 Mock responses of external HTTP services
 
-**TL;DR:** Tu plataforma de integración continua (CI/CD) alojará todas las herramientas de calidad (por ejemplo, prueba, lint), por lo que debería venir con un ecosistema vibrante de complementos. [Jenkins](https://jenkins.io/) solía ser el valor predeterminado para muchos proyectos, ya que tiene la comunidad más grande junto con una plataforma muy poderosa al precio de una configuración compleja que exige una curva de aprendizaje empinada. Hoy en día, se ha vuelto mucho más fácil configurar una solución de CI utilizando herramientas SaaS como [CircleCI](https://circleci.com) y otros. Estas herramientas permiten crear una tubería de CI flexible sin la carga de administrar toda la infraestructura. Eventualmente, es una compensación entre robustez y velocidad: elije tu lado con cuidado
+### `🌟 #new`
 
-**De lo contrario:** Elegir un proveedor de nicho puede bloquearlo una vez que necesite una personalización avanzada. Por otro lado, ir con Jenkins podría quemar un tiempo precioso en la configuración de la infraestructura
+**TL;DR:** Use network mocking tools to simulate responses of external collaborators' services that are approached over the network (e.g., REST, Graph). This is imperative not only to isolate the component under test but mostly to simulate non-happy path flows. Tools like [nock](https://github.com/nock/nock) (in-process) or [Mock-Server](https://www.mock-server.com/) allow defining a specific response of external service in a single line of code. Remember to simulate also errors, delays, timeouts, and any other event that is likely to happen in production
 
-🔗 [**Leer más: Elige tu plataforma CI**](./sections/testingandquality/citools.spanish.md)
+**Otherwise:** Allowing your component to reach real external services instances will likely result in naive tests that mostly cover happy paths. The tests might also be flaky and slow
 
-<br><br>
+🔗 [**Read More: Mock external services**](./sections/testingandquality/mock-external-services.md)
 
 ## ![✔] 4.11 Prueba tus middlewares por separado
 
