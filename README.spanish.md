@@ -218,7 +218,7 @@ Leelo en otro idioma: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md),
 &emsp;&emsp;[8.12. Escanea las imágenes en busca de vulnerabilidades multi-capas `#advanced`](#-812-escanea-las-imágenes-en-busca-de-vulnerabilidades-multi-capas)</br>
 &emsp;&emsp;[8.13 Limpia la caché de NODE_MODULE](#-813-limpia-la-caché-de-node-module)</br>
 &emsp;&emsp;[8.14. Prácticas generales de Docker](#-814-prácticas-generales-de-docker)</br>
-&emsp;&emsp;[8.15. Utiliza un linter en tu Dockerfile `#new`](#-815-Utiliza un linter en tu Dockerfile)</br>
+&emsp;&emsp;[8.15. Usa un linter en tu Dockerfile `#new`](#-815-usa-un-linter-en tu-dockerfile)</br>
 
 </details>
 
@@ -1590,13 +1590,15 @@ Además, hacer referencia a una etiqueta de imagen significa que la imagen base 
 
 <br><br><br>
 
-## ![✔] 8.15. Utiliza un linter en tu Dockerfile
+## ![✔] 8.15. Usa un linter en tu Dockerfile
 
-**TL;DR:** Utilizar una herramienta de lint en su Dockerfile es un paso importante para identificar problemas en su Dockerfile que difieran de las mejores prácticas. Al escanear por fallas potenciales usando un linter especializado de a Docker, se pueden identificar fácilmente mejoras a la seguridad y rendimiento, salvando incontables horas de tiempo en problemas de seguridad en código de producción.
+### `🌟 #new`
+
+**TL;DR:** Utilizar una herramienta de lint en tu Dockerfile es un paso importante para identificar problemas en su Dockerfile que difieran de las mejores prácticas. Al escanear por fallas potenciales usando un linter especializado en Docker, se pueden identificar fácilmente mejoras a la seguridad y rendimiento, salvando incontables horas de tiempo perdido o problemas de seguridad en código productivo.
 
 **De lo contrario** Dejar por error a Root como el usuario de producción en el Dockerfile, y también usar una imágen de un repositorio de una fuente desconocida. Esto puede ser fácilmente evitado usando un linter.
 
-🔗 [**Leer más: Utilize Lint en su Dockerfile**](./sections/docker/lint-dockerfile.spanish.md)
+🔗 [**Leer más: Usa un linter en tu Dockerfile**](./sections/docker/lint-dockerfile.spanish.md)
 
 <br/><br /><br />
 
