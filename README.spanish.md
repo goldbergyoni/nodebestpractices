@@ -204,7 +204,7 @@ Leelo en otro idioma: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md),
     <a href="#8-mejores-prácticas-de-docker">8. Prácticas de Docker (15)</a>
   </summary>
 
-&emsp;&emsp;[8.1. Utiliza compilaciones de múltiples etapas para obtener imágenes de Docker más sencillas y seguras `#strategic`](#-81-utiliza-compilaciones-de-múltiples-etapas-para-obtener-imágenes-de-docker-más-sencillas-y-seguras)</br>
+&emsp;&emsp;[8.1. Usa compilaciones de múltiples etapas para obtener imágenes de Docker más sencillas y seguras `#strategic`](#-81-usa-compilaciones-de-múltiples-etapas-para-obtener-imágenes-de-docker-más-sencillas-y-seguras)</br>
 &emsp;&emsp;[8.2. Arranca usando el comando `node`, evita `npm start`](#-82-arranca-usando-el-comando-node-evita-npm-start)</br>
 &emsp;&emsp;[8.3. Permite a Docker maneje la replicación y el tiempo de ejecución `#strategic`](#-83-permite-a-docker-maneje-la-replicación-y-el-tiempo-de-ejecución)</br>
 &emsp;&emsp;[8.4. Utiliza .dockerignore para evitar la fuga de secretos](#-84-utiliza-dockerignore-para-evitar-la-fuga-de-secretos)</br>
@@ -1426,11 +1426,11 @@ Ten en cuenta que con la introducción del nuevo motor V8 junto con los nuevos e
 
 <br/><br/>
 
-## ![✔] 8.1. Utiliza compilaciones de múltiples etapas para obtener imágenes de Docker más sencillas y seguras
+## ![✔] 8.1. Usa compilaciones de múltiples etapas para obtener imágenes de Docker más sencillas y seguras
 
-**TL;DR:** Utilice la compilación de múltiples etapas para copiar únicamente los artefactos de producción necesarios. Un montón de dependencias y archivos de tiempo de compilación no son necesarios para ejecutar tu aplicación. Haciendo uso de compilaciones de múltiples etapas, estos recursos pueden ser utilizados durante la compilación mientras que el entorno de tiempo de ejecución sólo contiene lo necesario. Las compilaciones de múltiples etapas representan una forma sencilla de deshacerse del sobrepeso y las amenazas de seguridad.
+**TL;DR:** Utilice la compilación de múltiples etapas para copiar únicamente los artefactos de producción necesarios. Un montón de las dependencias y archivos de tiempo de compilación no son necesarios para ejecutar tu aplicación. Haciendo uso de compilaciones de múltiples etapas, estos recursos pueden ser utilizados durante la compilación mientras que el entorno de tiempo de ejecución sólo contiene lo necesario. Las compilaciones de múltiples etapas representan una forma sencilla de deshacerse del sobrepeso y las amenazas de seguridad.
 
-**De lo contrario:** Las imágenes más grandes tomarán más tiempo en compilar y desplegarse, las herramientas de solo compilación pueden contener vulnerabilidades y los secretos que solo están destinados a la fase de compilación pueden ser filtrados.
+**De lo contrario:** Las imágenes más grandes tomarán más tiempo en compilar y desplegarse, las herramientas de solo compilación pueden contener vulnerabilidades y secretos que solo están destinados a la fase de compilación y pueden ser filtrados.
 
 ### Dockerfile de ejemplo para compilaciones de múltiples etapas
 
@@ -1439,6 +1439,7 @@ FROM node:14.4.0 AS build
 
 COPY . .
 RUN npm ci && npm run build
+
 
 FROM node:slim-14.4.0
 
@@ -1451,7 +1452,7 @@ RUN npm ci --production
 CMD [ "node", "dist/app.js" ]
 ```
 
-🔗 [**Leer más: Utilice compilaciones múltiples**](./sections/docker/multi_stage_builds.spanish.md)
+🔗 [**Leer más: Utilice compilaciones de múltiples etapas**](./sections/docker/multi_stage_builds.spanish.md)
 
 <br /><br /><br />
 
