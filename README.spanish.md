@@ -740,9 +740,11 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 4.2 Incluye 3 partes en cada nombre de prueba
 
-**TL;DR:** Haga que la prueba hable a nivel de requisitos para que se explique por sí mismo también a los ingenieros y desarrolladores de control de calidad que no están familiarizados con el código interno. Indique en el nombre de la prueba qué se está probando (unidad bajo prueba), en qué circunstancias y cuál es el resultado esperado
+### `🌟 #new`
 
-**De lo contrario:** Una implementación simplemente falló, una prueba llamada "Agregar producto" falló. ¿Esto te dice exactamente qué está funcionando mal?
+**TL;DR:** Haga que las pruebas hablen a nivel de requisitos para que se expliquen por sí mismos también a los ingenieros de QA y desarrolladores que no están familiarizados con el detalle interno del código. Indique en el nombre de la prueba qué se está probando (unidad bajo prueba), en qué circunstancias y cuál es el resultado esperado
+
+**De lo contrario:** Una implementación acaba de fallar y una prueba llamada "Agregar producto" falló. ¿Esto te dice exactamente qué está funcionando mal?
 
 🔗 [**Leer más: Incluye 3 partes en cada nombre de prueba**](./sections/testingandquality/3-parts-in-name.spanish.md)
 
