@@ -1048,11 +1048,11 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 ## ![✔] 5.19. Instala tus paquetes con `npm ci`
 
-**TL;DR:** Tienes que asegurate que el código de producción utiliza la misma versión de los paquetes con los que realizaste pruebas. Corre `npm ci` para estrictamente instalar de manera limpia las dependencias que correspondan al package.json y package-lock.json. Usando este comando es recomendado en ambientes automatizados, como los canalizadores de integración contínua (continuos integration pipelines).
+**TL;DR:** Ejecuta `npm ci` para realizar estrictamente una instalación limpia de sus dependencias que coincidan con los archivos package.json y package-lock.json. Obviamente, el código de producción debe utilizar la versión exacta de los paquetes que se utilizaron para las pruebas. Si bien el archivo package-lock.json establece una versión estricta para las dependencias, en caso de que no coincida con el archivo package.json, el comando 'npm install' tratará a package.json como la fuente de la verdad. Por otro lado, el comando 'npm ci' terminará con error en caso de que estos archivos no coincidan.
 
 **De lo contrario** QA va probar exhaustivamente el código y aprobar una version que se va a comportar diferente en producción. Peor aún, servidores en el mismo cluster de producción podría correr distinto código.
 
-🔗 [**Leer más: Instala tus paquetes con npm ci**](./sections/production/installpackageswithnpmci.spanish.md)
+🔗 [**Leer más: Usa con npm ci**](./sections/production/installpackageswithnpmci.spanish.md)
 
 <br/><br/><br/>
 
