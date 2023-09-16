@@ -1574,11 +1574,11 @@ Además, hacer referencia a una etiqueta de imagen significa que la imagen base 
 
 ## ![✔] 8.13. Limpia la caché de NODE_MODULE
 
-**TL;DR:** Después de instalar dependencias en un contenedor remueva el caché local. No tiene sentido duplicar las dependencias para instalaciones mas rápidas futuras, debido a que no habrá instalaciones futuras. Una imágen de Docker is inmutable. Utilizando una sola línea de código decenas de MB (normalmente ~10-50% del tamaño de la imágen) son podados.
+**TL;DR:** Después de instalar dependencias en un contenedor remueve el caché local. No tiene sentido duplicar las dependencias para instalaciones mas rápidas futuras, debido a que no habrá instalaciones futuras. Una imágen de Docker es inmutable. Utilizando una sola línea de código decenas de MB (normalmente ~10-50% del tamaño de la imágen) son podados.
 
-**De lo contrario** La imágen que será enviada a producción pesara un 30% extra debido a archivos que no serán utilizados.
+**De lo contrario** La imágen que será enviada a producción pesará un 30% extra debido a archivos que jamás serán utilizados.
 
-🔗 [**Leer más: Limpie el caché de NODE_MODULE**](./sections/docker/clean-cache.spanish.md)
+🔗 [**Leer más: Limpia el caché de NODE_MODULE**](./sections/docker/clean-cache.spanish.md)
 
 <br><br><br>
 
