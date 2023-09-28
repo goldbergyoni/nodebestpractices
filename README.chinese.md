@@ -106,11 +106,13 @@
 
 ## ![✔] 2.2 仅使用内建的错误对象
 
-**TL;DR:** 很多人抛出异常使用字符串类型或一些自定义类型 - 这会导致错误处理逻辑和模块间的调用复杂化。是否您reject一个promise，抛出异常或发出(emit)错误 - 使用内建的错误对象将会增加设计一致性，并防止信息的丢失。
+**TL;DR:** 很多人抛出异常使用字符串类型或一些自定义类型 - 这会导致错误处理逻辑和模块间的调用复杂化。是否您reject一个promise，抛出异常或发出(emit)错误 - 使用内建的错误对象将会增加设计一致性，并防止信息的丢失。可以使用 ESLint 规则 `no-throw-literal` 做严格检查（该规则有一定的[限制](https://eslint.org/docs/latest/rules/no-throw-literal#known-limitations)，可以进一步使用 TypeScript 和 `@typescript-eslint/no-throw-literal` 规则来解决这个限制）。
 
 **否则:** 调用某些模块，将不确定哪种错误类型会返回 - 这将会使恰当的错误处理更加困难。更坏的情况是，使用特定的类型描述错误，会导致重要的错误信息缺失，比如stack trace！
 
 🔗 [**更多: 使用内建错误对象**](./sections/errorhandling/useonlythebuiltinerror.chinese.md)
+🔗 [**更多: no-throw-literal 规则**](https://eslint.org/docs/latest/rules/no-throw-literal)
+🔗 [**更多: @typescript-eslint/no-throw-literal 规则**](https://typescript-eslint.io/rules/no-throw-literal/)
 
 <br/><br/>
 
