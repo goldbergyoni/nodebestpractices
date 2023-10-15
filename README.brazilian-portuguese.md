@@ -467,7 +467,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.3 Estutura de testes padrão AAA
+## ![✔] 4.3 Estrutura de testes padrão AAA
 
 **TL;DR:** Estruture seus testes com 3 seções bem separadas: Arrange, Act & Assert (AAA). A primeira parte inclui a configuração do teste, depois a execução do teste unitário, e finalmente, a fase de asserção. Seguir esta estrutura garante que o leitor não gaste nenhuma CPU cerebral para entender o plano de teste
 
