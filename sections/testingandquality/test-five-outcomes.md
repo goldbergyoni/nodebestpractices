@@ -20,4 +20,4 @@ When planning your tests, consider covering the five typical flow's outputs. Whe
 
 ### Example: The backend testing checklist
 
-![The backend testing checklist](../../assets/images/backend-testing-checklist.png "The backend testing checklist")
+![The backend testing checklist](<../../assets/images/The backend testing checklist.png> "The backend testing checklist")
