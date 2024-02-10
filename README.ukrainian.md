@@ -218,15 +218,15 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 <br/><br/>
 
-# `1. Project Structure Practices`
+# `1. Практики структури проекту`
 
-## ![✔] 1.1 Structure your solution by components
+## ![✔] 1.1 Структуруйте своє рішення за компонентами
 
-**TL;DR:** The worst large applications pitfall is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Instead, partition your code into components, each gets its folder or a dedicated codebase, and ensure that each unit is kept small and simple. Visit 'Read More' below to see examples of correct project structure
+**TL;DR:** Найстрашнішою підводним каменем великих програм є підтримка величезної кодової бази із сотнями залежностей — такий моноліт уповільнює розробників, коли вони намагаються включити нові функції. Замість цього розділіть свій код на компоненти, кожен отримає свою папку або спеціальну кодову базу, і переконайтеся, що кожен блок залишається невеликим і простим. Відвідайте розділ «Детальніше» нижче, щоб побачити приклади правильної структури проекту
 
-**Otherwise:** When developers who code new features struggle to realize the impact of their change and fear to break other dependent components - deployments become slower and riskier. It's also considered harder to scale-out when all the business units are not separated
+**Інакше:** Коли розробники, які кодують нові функції, намагаються усвідомити вплив своїх змін і бояться зламати інші залежні компоненти, розгортання стає повільнішим і ризикованішим. Також вважається, що масштабування складніше, коли всі бізнес-одиниці не розділені
 
-🔗 [**Read More: structure by components**](./sections/projectstructre/breakintcomponents.md)
+🔗 [**Детальніше: структура за компонентами**](./sections/projectstructre/breakintcomponents.ukrainian.md)
 
 <br/><br/>
 
