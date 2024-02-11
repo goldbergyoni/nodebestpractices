@@ -240,13 +240,13 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 <br/><br/>
 
-## ![✔] 1.3 Wrap common utilities as npm packages
+## ![✔] 1.3 Оберніть загальні утиліти як пакети npm
 
-**TL;DR:** In a large app that constitutes a large codebase, cross-cutting-concern utilities like a logger, encryption and alike, should be wrapped by your code and exposed as private npm packages. This allows sharing them among multiple codebases and projects
+**TL;DR:** У великому додатку, який становить велику кодову базу, наскрізні утиліти, як-от реєстратор, шифрування тощо, мають бути обгорнуті вашим кодом і представлені як приватні пакети npm. Це дозволяє ділитися ними між кількома кодовими базами та проектами
 
-**Otherwise:** You'll have to invent your deployment and the dependency wheel
+**Інакше:** Вам доведеться винайти своє розгортання та колесо залежностей (dependency wheel)
 
-🔗 [**Read More: Structure by feature**](./sections/projectstructre/wraputilities.md)
+🔗 [**Детальніше: Структура за ознакою**](./sections/projectstructre/wraputilities.ukrainian.md)
 
 <br/><br/>
 
