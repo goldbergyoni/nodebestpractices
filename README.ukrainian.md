@@ -284,13 +284,13 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 <br/><br/>
 
-## ![✔] 2.2 Use only the built-in Error object
+## ![✔] 2.2 Використовуйте лише вбудований об’єкт помилки (Error)
 
-**TL;DR:** Many throw errors as a string or as some custom type – this complicates the error handling logic and the interoperability between modules. Whether you reject a promise, throw an exception or emit an error – using only the built-in Error object (or an object that extends the built-in Error object) will increase uniformity and prevent loss of information. There is `no-throw-literal` ESLint rule that strictly checks that (although it have some [limitations](https://eslint.org/docs/rules/no-throw-literal) which can be solved when using TypeScript and setting the `@typescript-eslint/no-throw-literal` rule)
+**TL;DR:** Багато викидають помилки як рядок або як якийсь власний тип – це ускладнює логіку обробки помилок і взаємодію між модулями. Незалежно від того, чи ви відхиляєте обіцянку, видаєте виняткову ситуацію чи видаєте помилку, використання лише вбудованого об’єкта Error (або об’єкта, який розширює вбудований об’єкт Error) збільшить уніфікованість і запобіжить втраті інформації. Існує правило `no-throw-literal` ESLint, яке суворо перевіряє це (хоча воно має деякі [обмеження](https://eslint.org/docs/rules/no-throw-literal), які можна вирішити за допомогою TypeScript і встановлення правила `@typescript-eslint/no-throw-literal`)
 
-**Otherwise:** When invoking some component, being uncertain which type of errors come in return – it makes proper error handling much harder. Even worse, using custom types to describe errors might lead to loss of critical error information like the stack trace!
+**Інакше:** Викликаючи якийсь компонент, ви не знаєте, який тип помилок приходить у відповідь – це значно ускладнює правильну обробку помилок. Навіть гірше, використання спеціальних типів для опису помилок може призвести до втрати інформації про критичну помилку, як-от трасування стека!
 
-🔗 [**Read More: using the built-in error object**](./sections/errorhandling/useonlythebuiltinerror.md)
+🔗 [**Детальнішe: Використовуйте лише вбудований об’єкт помилки**](./sections/errorhandling/useonlythebuiltinerror.ukrainian.md)
 
 <br/><br/>
 
