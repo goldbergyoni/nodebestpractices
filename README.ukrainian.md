@@ -272,15 +272,15 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 <p align="right"><a href="#table-of-contents">⬆ Повернутися до початку</a></p>
 
-# `2. Error Handling Practices`
+# `2. Практики обробки помилок`
 
-## ![✔] 2.1 Use Async-Await or promises for async error handling
+## ![✔] 2.1 Використовуйте Async-Await або promises для обробки асинхронних помилок
 
-**TL;DR:** Handling async errors in callback style is probably the fastest way to hell (a.k.a the pyramid of doom). The best gift you can give to your code is using a reputable promise library or async-await instead which enables a much more compact and familiar code syntax like try-catch
+**TL;DR:** Обробка асинхронних помилок у стилі зворотного виклику — це, ймовірно, найшвидший шлях до пекла (він же піраміда приреченості). Найкращий подарунок, який ви можете зробити своєму коду, — це використання надійної бібліотеки обіцянок (promises) або async-await замість цього, що забезпечує набагато більш компактний і звичний синтаксис коду, як-от try-catch
 
-**Otherwise:** Node.js callback style, function(err, response), is a promising way to un-maintainable code due to the mix of error handling with casual code, excessive nesting, and awkward coding patterns
+**Інакше:** Стиль зворотного виклику Node.js, function(err, response), є багатообіцяючим способом створення непідтримуваного коду через поєднання обробки помилок із випадковим кодом, надмірним вкладенням і незручними шаблонами кодування
 
-🔗 [**Read More: avoiding callbacks**](./sections/errorhandling/asyncerrorhandling.md)
+🔗 [**Детальніше: уникнення зворотних викликів**](./sections/errorhandling/asyncerrorhandling.ukrainian.md)
 
 <br/><br/>
 
