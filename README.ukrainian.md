@@ -250,13 +250,13 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 <br/><br/>
 
-## ![✔] 1.4 Separate Express 'app' and 'server'
+## ![✔] 1.4 Розділіть "додаток" і "сервер" Express
 
-**TL;DR:** Avoid the nasty habit of defining the entire [Express](https://expressjs.com/) app in a single huge file - separate your 'Express' definition to at least two files: the API declaration (app.js) and the networking concerns (WWW). For even better structure, locate your API declaration within components
+**TL;DR:** Уникайте поганої звички визначати всю програму [Express](https://expressjs.com/) в одному величезному файлі – розділіть своє визначення Express принаймні на два файли: декларацію API (app.js) і роботу з мережею (WWW). Щоб отримати ще кращу структуру, знайдіть свою декларацію API в компонентах
 
-**Otherwise:** Your API will be accessible for testing via HTTP calls only (slower and much harder to generate coverage reports). It probably won't be a big pleasure to maintain hundreds of lines of code in a single file
+**Інакше:** Ваш API буде доступний для тестування лише через HTTP-виклики (повільніше та набагато важче генерувати звіти про покриття). Ймовірно, не буде великим задоволенням зберігати сотні рядків коду в одному файлі
 
-🔗 [**Read More: separate Express 'app' and 'server'**](./sections/projectstructre/separateexpress.md)
+🔗 [**Детальніше: окремі Express "додаток" і "сервер"**](./sections/projectstructre/separateexpress.ukrainian.md)
 
 <br/><br/>
 
