@@ -260,17 +260,17 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 <br/><br/>
 
-## ![✔] 1.5 Use environment aware, secure and hierarchical config
+## ![✔] 1.5 Використовуйте конфігурацію з урахуванням середовища, безпечну та ієрархічну
 
-**TL;DR:** A perfect and flawless configuration setup should ensure (a) keys can be read from file AND from environment variable (b) secrets are kept outside committed code (c) config is hierarchical for easier findability. There are a few packages that can help tick most of those boxes like [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config), and [convict](https://www.npmjs.com/package/convict).
+**TL;DR:** Ідеальне й бездоганне налаштування конфігурації має забезпечувати (а) можливість читання ключів із файлу ТА зі змінної середовища (б) секрети зберігаються за межами зафіксованого коду (в) конфігурація є ієрархічною для легшого пошуку. Є кілька пакетів, які можуть допомогти встановити прапорці в більшості випадків, наприклад [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) ), [config](https://www.npmjs.com/package/config) і [convict](https://www.npmjs.com/package/convict).
 
-**Otherwise:** Failing to satisfy any of the config requirements will simply bog down the development or DevOps team. Probably both
+**Інакше:** Невиконання будь-якої вимоги до конфігурації просто завадить команді розробників або DevOps. Можливо, все разом
 
-🔗 [**Read More: configuration best practices**](./sections/projectstructre/configguide.md)
+🔗 [**Детальніше: найкращі методи конфігурації**](./sections/projectstructre/configguide.ukrainian.md)
 
 <br/><br/><br/>
 
-<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+<p align="right"><a href="#table-of-contents">⬆ Повернутися до початку</a></p>
 
 # `2. Error Handling Practices`
 
