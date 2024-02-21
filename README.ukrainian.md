@@ -294,13 +294,13 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 <br/><br/>
 
-## ![✔] 2.3 Distinguish operational vs programmer errors
+## ![✔] 2.3 Розрізняйте операційні та програмні помилки
 
-**TL;DR:** Operational errors (e.g. API received an invalid input) refer to known cases where the error impact is fully understood and can be handled thoughtfully. On the other hand, programmer error (e.g. trying to read an undefined variable) refers to unknown code failures that dictate to gracefully restart the application
+**TL;DR:** Операційні помилки (наприклад, API отримав недійсні данні на вхід) стосуються відомих випадків, коли вплив помилки повністю зрозумілий і з ним можна обдумано впоратися. З іншого боку, помилка програміста (наприклад, спроба прочитати невизначену змінну) відноситься до невідомих збоїв у коді, які наказують обережно (gracefully) перезапустити програму
 
-**Otherwise:** You may always restart the application when an error appears, but why let ~5000 online users down because of a minor, predicted, operational error? The opposite is also not ideal – keeping the application up when an unknown issue (programmer error) occurred might lead to an unpredicted behavior. Differentiating the two allows acting tactfully and applying a balanced approach based on the given context
+**Otherwise:** Ви завжди можете перезапустити програму, коли з’являється помилка, але навіщо підводити ~5000 онлайн-користувачів через незначну, передбачену, операційну помилку? Протилежне також не є ідеальним – утримання програми в робочому стані, коли сталася невідома проблема (помилка програміста), може призвести до непередбачуваної поведінки. Розмежування цих двох дій дозволяє діяти тактовно та застосовувати збалансований підхід на основі даного контексту
 
-🔗 [**Read More: operational vs programmer error**](./sections/errorhandling/operationalvsprogrammererror.md)
+🔗 [**Детальнішe: операційна помилка проти помилки програміста**](./sections/errorhandling/operationalvsprogrammererror.ukrainian.md)
 
 <br/><br/>
 
