@@ -314,13 +314,13 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 <br/><br/>
 
-## ![✔] 2.5 Document API errors using Swagger or GraphQL
+## ![✔] 2.5 Документуйте помилки API за допомогою Swagger або GraphQL
 
-**TL;DR:** Let your API callers know which errors might come in return so they can handle these thoughtfully without crashing. For RESTful APIs, this is usually done with documentation frameworks like Swagger. If you're using GraphQL, you can utilize your schema and comments as well.
+**TL;DR:** Повідомте своїм клієнтам API, які помилки можуть виникнути у відповідь, щоб вони могли вдумливо впоратися з ними без збоїв. Для RESTful API це зазвичай робиться за допомогою фреймворків документації, таких як Swagger. Якщо ви використовуєте GraphQL, ви також можете використовувати свою схему та коментарі.
 
-**Otherwise:** An API client might decide to crash and restart only because it received back an error it couldn’t understand. Note: the caller of your API might be you (very typical in a microservice environment)
+**Інакше:** Клієнт API може вирішити аварійно завершити роботу та перезапустити лише тому, що він отримав помилку, яку він не міг зрозуміти. Примітка: абонентом вашого API можете бути ви (дуже типово для мікросервісного середовища)
 
-🔗 [**Read More: documenting API errors in Swagger or GraphQL**](./sections/errorhandling/documentingusingswagger.md)
+🔗 [**Детальнішe: документування помилок API у Swagger або GraphQL**](./sections/errorhandling/documentingusingswagger.ukrainian.md)
 
 <br/><br/>
 
