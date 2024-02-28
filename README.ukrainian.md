@@ -324,13 +324,13 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 <br/><br/>
 
-## ![✔] 2.6 Exit the process gracefully when a stranger comes to town
+## ![✔] 2.6 Вихід із процесу граційно, коли з'являється незнайомець
 
-**TL;DR:** When an unknown error occurs (a developer error, see best practice 2.3) - there is uncertainty about the application healthiness. Common practice suggests restarting the process carefully using a process management tool like [Forever](https://www.npmjs.com/package/forever) or [PM2](http://pm2.keymetrics.io/)
+**TL;DR:** Коли виникає невідома помилка (помилка розробника, див. найкращу практику 2.3) - є невизначеність щодо здоров'я додатку. Загальноприйнятою практикою є обережний перезапуск процесу за допомогою інструменту управління процесами, такого як [Forever](https://www.npmjs.com/package/forever) або [PM2](http://pm2.keymetrics.io/)
 
-**Otherwise:** When an unfamiliar exception occurs, some object might be in a faulty state (e.g. an event emitter which is used globally and not firing events anymore due to some internal failure) and all future requests might fail or behave crazily
+**Інакше:** Коли виникає незнайомий виняток, деякий об'єкт може бути в неправильному стані (наприклад, емітер подій, який використовується глобально і більше не випускає події через якусь внутрішню несправність), і всі майбутні запити можуть не вдало виконатися або безглуздо поводитися.
 
-🔗 [**Read More: shutting the process**](./sections/errorhandling/shuttingtheprocess.md)
+🔗 [**Детальніше: завершення процесу**](./sections/errorhandling/shuttingtheprocess.ukrainian.md)
 
 <br/><br/>
 
