@@ -334,13 +334,13 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 <br/><br/>
 
-## ![✔] 2.7 Use a mature logger to increase error visibility
+## ![✔] 2.7 Використовуйте зрілу систему логування для підвищення видимості помилок
 
-**TL;DR:** A set of mature logging tools like [Pino](https://github.com/pinojs/pino) or [Log4js](https://www.npmjs.com/package/log4js), will speed-up error discovery and understanding. So forget about console.log
+**Коротко:** Набір зрілих інструментів для логування, як-от [Pino](https://github.com/pinojs/pino) або [Log4js](https://www.npmjs.com/package/log4js), прискорить виявлення та розуміння помилок. Тому забудьте про console.log
 
-**Otherwise:** Skimming through console.logs or manually through messy text file without querying tools or a decent log viewer might keep you busy at work until late
+**Інакше:** Перегляд console.logs або вручну через заплутаний текстовий файл без інструментів для запитів або прийнятного переглядача логів може змусити вас залишатися на роботі допізна
 
-🔗 [**Read More: using a mature logger**](./sections/errorhandling/usematurelogger.md)
+🔗 [**Читати більше: використання зрілої системи логування**](./sections/errorhandling/usematurelogger.ukrainian.md)
 
 <br/><br/>
 
