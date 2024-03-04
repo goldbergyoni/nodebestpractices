@@ -364,13 +364,13 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 <br/><br/>
 
-## ![✔] 2.10 Catch unhandled promise rejections
+## ![✔] 2.10 Перехоплення необроблених відхилень промісів
 
-**TL;DR:** Any exception thrown within a promise will get swallowed and discarded unless a developer didn’t forget to explicitly handle it. Even if your code is subscribed to `process.uncaughtException`! Overcome this by registering to the event `process.unhandledRejection`
+**Коротко:** Будь-яке виключення, кинуте у промісі, буде проігнороване і втрачене, якщо розробник не забуде явно його обробити. Навіть якщо ваш код підписаний на `process.uncaughtException`! Перемогти це можна, зареєструвавшись на подію `process.unhandledRejection`.
 
-**Otherwise:** Your errors will get swallowed and leave no trace. Nothing to worry about
+**В іншому випадку:** Ваші помилки будуть проігноровані та залишаться безслідними. Нічого страшного.
 
-🔗 [**Read More: catching unhandled promise rejection**](./sections/errorhandling/catchunhandledpromiserejection.md)
+🔗 [**Читати більше: перехоплення необроблених відхилень промісів**](./sections/errorhandling/catchunhandledpromiserejection.ukrainian.md)
 
 <br/><br/>
 
