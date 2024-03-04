@@ -374,13 +374,13 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 <br/><br/>
 
-## ![✔] 2.11 Fail fast, validate arguments using a dedicated library
+## ![✔] 2.11 Швидко виявляйте помилки, валідуйте аргументи за допомогою спеціальної бібліотеки
 
-**TL;DR:** Assert API input to avoid nasty bugs that are much harder to track later. The validation code is usually tedious unless you are using a very cool helper library like [ajv](https://www.npmjs.com/package/ajv) and [Joi](https://www.npmjs.com/package/joi)
+**Коротко:** Перевіряйте вхідні дані API, щоб уникнути неприємних помилок, які потім набагато важче відстежити. Код валідації зазвичай нудний, якщо ви не використовуєте дуже круту допоміжну бібліотеку, таку як [ajv](https://www.npmjs.com/package/ajv) та [Joi](https://www.npmjs.com/package/joi)
 
-**Otherwise:** Consider this – your function expects a numeric argument “Discount” which the caller forgets to pass, later on, your code checks if Discount!=0 (amount of allowed discount is greater than zero), then it will allow the user to enjoy a discount. OMG, what a nasty bug. Can you see it?
+**В іншому випадку:** Уявіть таку ситуацію – ваша функція очікує числовий аргумент "Знижка", який викликаюча сторона забуває передати, потім ваш код перевіряє, чи Знижка!=0 (розмір дозволеної знижки більший ніж нуль), тоді він дозволить користувачу отримати знижку. О боже, яка неприємна помилка. Бачите її?
 
-🔗 [**Read More: failing fast**](./sections/errorhandling/failfast.md)
+🔗 [**Читати більше: швидке виявлення помилок**](./sections/errorhandling/failfast.md)
 
 <br/><br/>
 
