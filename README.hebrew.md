@@ -145,7 +145,7 @@
 &emsp;&emsp;[5.10. מדדו ושימרו את ניצול הזיכרון `#advanced`](#-510-measure-and-guard-the-memory-usage)</br>
 &emsp;&emsp;[5.11. Get your frontend assets out of Node](#-511-get-your-frontend-assets-out-of-node)</br>
 &emsp;&emsp;[5.12. Strive to be stateless `#strategic`](#-512-strive-to-be-stateless)</br>
-&emsp;&emsp;[5.13. Use tools that automatically detect vulnerabilities](#-513-use-tools-that-automatically-detect-vulnerabilities)</br>
+&emsp;&emsp;[5.13. השתמשו בכלים שמזהים פגיעויות אוטומטית](#-513-use-tools-that-automatically-detect-vulnerabilities)</br>
 &emsp;&emsp;[5.14. Assign a transaction id to each log statement `#advanced`](#-514-assign-a-transaction-id-to-each-log-statement)</br>
 &emsp;&emsp;[5.15. Set NODE_ENV=production](#-515-set-node_envproduction)</br>
 &emsp;&emsp;[5.16. Design automated, atomic and zero-downtime deployments `#advanced`](#-516-design-automated-atomic-and-zero-downtime-deployments)</br>
@@ -944,13 +944,13 @@ API, הודעה חדשה נרשמת לתור, וקריאה לכלי צפיה ב�
 
 <br/><br/>
 
-## ![✔] 5.13. Use tools that automatically detect vulnerabilities
+## ![✔] 5.13. השתמשו בכלים שמזהים פגיעויות אוטומטית
 
-**אמ;לק:** Even the most reputable dependencies such as Express have known vulnerabilities (from time to time) that can put a system at risk. This can be easily be tamed using community and commercial tools that constantly check for vulnerabilities and warn (locally or at GitHub), some can even patch them immediately
+**אמ;לק:** גם לתלויות המכובדות ביותר כמו למשל Express יש פגיעויות ידועות (מפעם לפעם) שיכולות לסכן את המערכת שלכם. ניתן להתמודד עם כך בקלות ע״י שימוש בכלים קהילתיים או מסחריים שבודקים בקביעות הימצאות פגיעויות ולהזהיר (מקומית או בגיטהב), חלקם יכולים אפילו לתקן אותם מידית.
 
-**אחרת:** Keeping your code clean from vulnerabilities without dedicated tools will require you to constantly follow online publications about new threats. Quite tedious
+**אחרת:** שמירת הקוד שלכם נקי מפגיעויות ללא שימוש בכלים יעודיים יצריך מכם לעקוב בקביעות אחר פרסומים על איומים חדשים ברשת. די מתיש. 
 
-🔗 [**Read More: Use tools that automatically detect vulnerabilities**](./sections/production/detectvulnerabilities.md)
+🔗 [**קרא עוד: השתמשו בכלים שמזהים פגיעויות אוטומטית**](./sections/production/detectvulnerabilities.md)
 
 <br/><br/>
 
