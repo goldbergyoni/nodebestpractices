@@ -809,7 +809,7 @@ null == undefined   // true
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** 正则表达式，在方便的同时，对JavaScript应用构成了真正的威胁，特别是Node.js平台。匹配文本的用户输入需要大量的CPU周期来处理。在某种程度上，正则处理是效率低下的，比如验证10个单词的单个请求可能阻止整个event loop长达6秒，并让CPU引火烧身。由于这个原因，偏向第三方的验证包，比如[validator.js](https://github.com/chriso/validator.js)，而不是采用正则，或者使用[safe-regex](https://github.com/substack/safe-regex)来检测有问题的正则表达式。
+**TL;DR:** 正则表达式，在方便的同时，对JavaScript应用构成了真正的威胁，特别是Node.js平台。匹配文本的用户输入需要大量的CPU周期来处理。在某种程度上，正则处理是效率低下的，比如验证10个单词的单个请求可能阻止整个event loop长达6秒，并让CPU引火烧身。由于这个原因，偏向第三方的验证包，比如[validator.js](https://github.com/chriso/validator.js)，而不是采用正则，或者使用[safe-regex](https://github.com/davisjam/safe-regex)来检测有问题的正则表达式。
 
 **否则:** 写得不好的正则表达式可能容易受到正则表达式DoS攻击的影响, 这将完全阻止event loop。例如，流行的`moment`包在2017年的11月，被发现使用了错误的RegEx用法而易受攻击。
 
