@@ -107,3 +107,26 @@ getData(someParameter, function(err: Error | null, resultA: ResultA) {
 From the blog Benno’s
 
  > ……One of the best things about asynchronous, callback-based programming is that basically all those regular flow control constructs you are used to are completely broken. However, the one I find most broken is the handling of exceptions. Javascript provides a fairly familiar try…catch construct for dealing with exceptions. The problem with exceptions is that they provide a great way of short-cutting errors up a call stack, but end up being completely useless if the error happens on a different stack…
+
+
+
+### Get ride of try catch statement on every request or controll
+> ……we can create a centerlize function for managing try catch on every request or controll instead of add try and catch block on every request or controll
+For example we create a function tryCatch (name it as you like)
+
+
+module.exports = (fn) => {
+      return (req, res, next) => {
+        fn(req, res, next).catch(next);
+      };
+    };
+    
+    
+and here, How we can use it 
+Make your control as mention in these docs. I just want you a example
+
+
+exports.controller = catchAsync(async (req, res, next) => {
+     // it will call catch blocks
+      return next(new Errro())
+});
