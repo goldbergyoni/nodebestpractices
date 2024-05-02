@@ -10,4 +10,4 @@ Once you start growing and have different components on different servers which 
 
 ### Sharing your own common utilities across environments and components
 
-![alt text](../../assets/images/Privatenpm.png "Structuring solution by components")
+![alt text](../../assets/images/wraputilities/Logger.Wrapper.png "Structuring solution by components")
