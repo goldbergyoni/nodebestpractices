@@ -790,7 +790,7 @@ null == undefined; // true
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A1:Injection%20-green.svg" alt=""/></a>
 
-**핵심요약:** SQL/NoSQL 주입과 같은 악의적인 공격을 막기 위해서는 ORM/ODM을 쓰거나, 데이터를 항상 이스케이프 처리 해 주거나 named or indexed parameterized queries를 지지하고, expected data type의 사용자 입력을 확인해주는 데이터베이스 라이브러리를 항상 활용해라. 자바스크립트 템플릿 문자열(template strings)이나 문자열 병합(string concatenation)으로 값을 주입하면 앱을 광범위한 취약점에 노출시키므로 절대 그대로 써서는 안된다. 평판이 좋은 Node.js 데이터 접근 라이브러리들(예: [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose))은 모두 주입 공격을 막아주는 보호대책이 내장되어있다.
+**핵심요약:** SQL/NoSQL 주입과 같은 악의적인 공격을 막기 위해서는 ORM/ODM을 쓰거나, 데이터를 항상 이스케이프 처리 해 주거나 named or indexed parameterized queries를 지향향하고, expected data type의 사용자 입력을 확인해주는 데이터베이스 라이브러리를 항상 활용해라. 자바스크립트 템플릿 문자열(template strings)이나 문자열 병합(string concatenation)으로 값을 주입하면 앱을 광범위한 취약점에 노출시키므로 절대 그대로 써서는 안된다. 평판이 좋은 Node.js 데이터 접근 라이브러리들(예: [Sequelize](https://github.com/sequelize/sequelize), [Knex](https://github.com/tgriesser/knex), [mongoose](https://github.com/Automattic/mongoose))은 모두 주입 공격을 막아주는 보호대책이 내장되어있다.
 
 **그렇게 하지 않을 경우:** 확인되지 않거나 (unvalidated) 살균되지 않은 (unsanitized) 사용자 입력은 MangoDB for NoSQL를 쓸 때 operator injection를 초래할 수 있고, 제대로 된 위생처리 시스템이나 ORM을 쓰지 않는것은 SQL 주입 공격을 쉽게 만들어 엄청난 취약점을 만들어낼 수 있다.
 
@@ -909,9 +909,9 @@ null == undefined; // true
 
 <a href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A8:Insecured%20Deserialization%20-green.svg" alt=""/></a> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**핵심요약:** 페이로드 사이즈가 클수록, 단일 스레드가 이것을 처리하는데 더 열심히 일해야 한다. 이것은 공격자들이 엄청난 양의 요청(DOS/DDOS 공격)을 쓰지 않고도 서버를 끌어내릴 수 있는 기회를 제공한다. 가장자리(예: 방화벽, ELB)에서 들어오는 요청들의 바디 크기를 제한하거나, 소규모의 페이로드만 받아들이도록 [express body parser](https://github.com/expressjs/body-parser)를 설정해라
+**핵심요약:** 페이로드 사이즈가 클수록, 단일 스레드가 이것을 처리하는데 더 열심히 일해야 한다. 이것은 공격자들이 엄청난 양의 요청(DOS/DDOS 공격과 같은 서비스 거부 공격)을 쓰지 않고도 서버를 끌어내릴 수 있는 기회를 제공한다. 가장자리(예: 방화벽, ELB)에서 들어오는 요청들의 바디 크기를 제한하거나, 소규모의 페이로드만 받아들이도록 [express body parser](https://github.com/expressjs/body-parser)를 설정해라
 
-**그렇게 하지 않을 경우:** 애플리케이션이 커다란 요청을 처리해야하면 다른 중요한 일을 완수할 수 없게 되어 성능이 영향을 받고 DOS 공격에 취약하게 된다
+**그렇게 하지 않을 경우:** 애플리케이션이 커다란 요청을 처리해야하면 다른 중요한 일을 완수할 수 없게 되어 성능이 영향을 받고 서비스 거부 공격에 취약하게 된다
 
 🔗 [**자세히 보기: Limit payload size**](./sections/security/requestpayloadsizelimit.md)
 
