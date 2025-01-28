@@ -9,7 +9,7 @@ W przypadku średnich aplikacji i wyższych monolity są naprawdę złe - posiad
 
 ### Cytat z Bloga: "Skalowanie wymaga skalowania całej aplikacji"
 
- Z bloga MartinFowler.com
+ Z bloga [MartinFowler.com](https://martinfowler.com/articles/microservices.html)
 
 > Monolithic applications can be successful, but increasingly people are feeling frustrations with them - especially as more applications are being deployed to the cloud. Change cycles are tied together - a change made to a small part of the application requires the entire monolith to be rebuilt and deployed. Over time it's often hard to keep a good modular structure, making it harder to keep changes that ought to only affect one module within that module. Scaling requires scaling of the entire application rather than parts of it that require greater resource.
 
@@ -17,7 +17,7 @@ W przypadku średnich aplikacji i wyższych monolity są naprawdę złe - posiad
 
 ### Cytat z Bloga: "Więc co krzyczy architektura Twojej aplikacji?"
 
- Z bloga [uncle-bob](https://8thlight.com/blog/uncle-bob/2011/09/30/Screaming-Architecture.html) 
+ Z bloga [uncle-bob](https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html) 
 
 > ...if you were looking at the architecture of a library, you’d likely see a grand entrance, an area for check-in-out clerks, reading areas, small conference rooms, and gallery after gallery capable of holding bookshelves for all the books in the library. That architecture would scream: Library.<br/>
 
@@ -27,10 +27,10 @@ Więc co krzyczy architektura twojej aplikacji? Gdy spojrzysz na strukturę kata
 
 ### Dobre: Skonstruuj swoje rozwiązanie według samodzielnych komponentów
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Structuring solution by components")
+![alt text](../../assets/images/structurebycomponents.PNG "Structuring solution by components")
 
 <br/><br/>
 
 ### Złe: Pogrupuj pliki według roli technicznej
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebyroles.PNG "Structuring solution by technical roles")
+![alt text](../../assets/images/structurebyroles.PNG "Structuring solution by technical roles")

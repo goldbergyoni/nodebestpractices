@@ -8,12 +8,10 @@ Rate limiting should be implemented in your application to protect a Node.js app
  
   ```javascript
  const http = require('http');
- const redis = require('redis');
+ const IoRedis = require('ioredis');
  const { RateLimiterRedis } = require('rate-limiter-flexible');
  
- const redisClient = redis.createClient({
-   enable_offline_queue: false,
- });
+ const redisClient = new IoRedis({ enableOfflineQueue: false });
 
  // Maximum 20 requests per second
  const rateLimiter = new RateLimiterRedis({

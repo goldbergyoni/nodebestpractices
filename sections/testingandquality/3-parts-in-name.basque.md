@@ -50,6 +50,6 @@ describe('Produktu Zerbitzua', () => {
 
 ["30 Node.jsren proba jarraibide egokiak" blogetik hartua, Yoni Goldbergen eskutik](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347)
 
-![Proba txostenaren adibidea](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/test-report-like-requirements.jpeg "Proba txostenaren adibidea")
+![Proba txostenaren adibidea](../../assets/images/test-report-like-requirements.jpeg "Proba txostenaren adibidea")
 
 <br/><br/>

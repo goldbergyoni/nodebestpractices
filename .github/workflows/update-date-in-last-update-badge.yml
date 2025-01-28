@@ -14,7 +14,7 @@ jobs:
     
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Update last update badge
         run: |
@@ -24,7 +24,7 @@ jobs:
           "${GITHUB_WORKSPACE}/.github/workflows/update-last-update-badge.sh" "${GITHUB_WORKSPACE}/README.md"
 
       - name: Commit & Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v4
         with:
           commit-message: update the last update badge to today [skip ci]
           author: Update Last Update Badge Action <${{ github.actor }}@users.noreply.github.com>

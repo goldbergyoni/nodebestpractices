@@ -49,4 +49,4 @@ REST API は HTTP ステータスコードを利用して結果を返します�
 
 ### 便利ツール: Swagger Online Documentation Creator
 
-![Swagger API スキーマ](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/swaggerDoc.png "API エラー処理")
+![Swagger API スキーマ](../../assets/images/swaggerDoc.png "API エラー処理")

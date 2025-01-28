@@ -42,10 +42,10 @@ jobs:
 
 ### Circle CI: ia zero prestakuntzadun hodeieko IEa
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/circleci.png "API erroreen kudeaketa")
+![alt text](../../assets/images/circleci.png "API erroreen kudeaketa")
 
 ### Jenkins: IE sofistikatu eta sendoa
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/jenkins_dashboard.png "API erroreen kudeaketa")
+![alt text](../../assets/images/jenkins_dashboard.png "API erroreen kudeaketa")
 
 <br/><br/>

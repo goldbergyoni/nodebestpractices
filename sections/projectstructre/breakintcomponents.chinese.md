@@ -11,14 +11,14 @@
 
 
 ### 博客引用: "伸缩需要对整个应用程序进行伸缩设计"
- 摘自博客 MartinFowler.com
- 
+ 摘自博客 [MartinFowler.com](https://martinfowler.com/articles/microservices.html)
+
  > 单个应用程序可以成功, 但越来越多的人对它们感到失望 - 尤其是随着更多的应用程序被部署到云中。更改周期被捆绑在一起 - 对应用程序的一小部分进行更改, 需要重建和部署整个整体。随着时间的推移, 通常很难保持一个良好的模块化结构, 这使得更改哪怕只会影响该模块中的一个模块变得更加困难。伸缩设计需要扩展整个应用程序, 而不是它的部分，这往往需要更多资源。
 
  <br/><br/>
  
  ### 博客引用: "那么, 你的应用程序的架构声明了什么?"
- 摘自博客 [uncle-bob](https://8thlight.com/blog/uncle-bob/2011/09/30/Screaming-Architecture.html) 
+ 摘自博客 [uncle-bob](https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html) 
  
 > ...如果你正在寻找一个图书馆的建筑架构, 你可能会看到一个盛大的入口, 一个 check-in-out 的文员, 阅读区, 小会议室, 画廊, 画廊后面容纳了装载所有图书馆书籍的书架。建筑会声明: 图书馆.<br/>
 那么, 应用程序的体系架构会声明什么呢？ 当您查看顶级目录结构和最高级别包中的源文件时; 他们声明: 医疗保健系统, 或会计系统, 或库存管理系统？ 或者他们声明: Rails, 或Spring/Hibernate, 或 ASP？.
@@ -27,10 +27,10 @@
 <br/><br/>
 
  ### 推荐: 通过独立组件构建解决方案
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Structuring solution by components")
+![alt text](../../assets/images/structurebycomponents.PNG "Structuring solution by components")
 
 
  <br/><br/> 
 
 ### 避免: 按技术角色对文件进行分组
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebyroles.PNG "Structuring solution by technical roles")
+![alt text](../../assets/images/structurebyroles.PNG "Structuring solution by technical roles")

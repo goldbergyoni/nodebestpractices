@@ -29,15 +29,15 @@ Tresna horiek zure IE eraikuntzari gehitzeak kalitatea egiaztatzeko prozesua aut
 
  ### Adibidea: Funtzio konplexuen analisia CodeClimaterekin (komertziala)
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-climate-complex-methods.PNG "Funtzio konplexuen analisia")
+![alt text](../../assets/images/codeanalysis-climate-complex-methods.PNG "Funtzio konplexuen analisia")
 
 ### Adibidea: Kode analisiaren joerak eta CodeClimaterekin historia (komertziala)
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-climate-history.PNG "Kode analisiaren historia")
+![alt text](../../assets/images/codeanalysis-climate-history.PNG "Kode analisiaren historia")
 
 ### Adibidea: Kode analisiaren laburpena eta SonarQuberekin joerak (komertziala)
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/codeanalysis-sonarqube-dashboard.PNG "Kode analisiaren historia")
+![alt text](../../assets/images/codeanalysis-sonarqube-dashboard.PNG "Kode analisiaren historia")
 
 
 <br/><br/>

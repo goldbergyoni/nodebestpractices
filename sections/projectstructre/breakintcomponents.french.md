@@ -10,7 +10,7 @@ Pour les applications de taille moyenne et supérieure, les monolithes sont vrai
 
 ### Citation de blog : « La mise à l'échelle nécessite la mise à l'échelle de l'application entière »
 
- Extrait du blog de MartinFowler.com
+ Extrait du blog de [MartinFowler.com](https://martinfowler.com/articles/microservices.html)
 
 > Les applications monolithiques peuvent réussir, mais de plus en plus de personnes ressentent des frustrations à leur égard, d'autant plus que davantage d'applications sont déployées dans le cloud. Les cycles de changement sont liés les uns aux autres - une modification apportée à une petite partie de l'application nécessite la reconstruction et le déploiement du monolithe entier. Au fil du temps, il est souvent difficile de conserver une bonne structure modulaire, ce qui rend plus difficile la conservation des modifications qui ne devraient affecter qu'un module au sein de ce module. La mise à l'échelle nécessite la mise à l'échelle de l'application entière plutôt que les parties concernées, cela nécessitent donc plus de ressources.
 
@@ -18,7 +18,7 @@ Pour les applications de taille moyenne et supérieure, les monolithes sont vrai
 
 ### Citation de blog : « Alors, est-ce que est l'architecture de votre application parle d'elle-même ? »
 
- Extrait du blog de [uncle-bob](https://8thlight.com/blog/uncle-bob/2011/09/30/Screaming-Architecture.html)
+ Extrait du blog de [uncle-bob](https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html)
 
 > ...si vous regardiez l'architecture d'une bibliothèque, vous verriez probablement une grande entrée, un espace pour les préposés à l'enregistrement, des salles de lecture, de petites salles de conférence et des galeries pouvant accueillir tous les livres de la bibliothèque. Cette architecture parle d'elle-même : c'est une Bibliothèque.<br/>>
 
@@ -28,10 +28,10 @@ Alors, est-ce que est l'architecture de votre application parle d'elle-même ? Q
 
 ### Bon : Organisez votre solution avec des composants autonomes
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Solution d'organisation par composants")
+![alt text](../../assets/images/structurebycomponents.PNG "Solution d'organisation par composants")
 
 <br/><br/>
 
 ### Mauvais : Regroupez vos fichiers selon leur rôle technique
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebyroles.PNG "Solution d'organisation par rôles techniques")
+![alt text](../../assets/images/structurebyroles.PNG "Solution d'organisation par rôles techniques")

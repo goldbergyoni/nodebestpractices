@@ -4,10 +4,10 @@
 
  ### コンポーネントコードをウェブ、サービス、DAL のレイヤーに分ける
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "コンポーネントコードを階層化する")
+![alt text](../../assets/images/structurebycomponents.PNG "コンポーネントコードを階層化する")
 
  <br/><br/>
 
 ### 1分解説: レイヤーを混ぜることのデメリット
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/keepexpressinweb.gif "レイヤーを混ぜることのデメリット")
+![alt text](../../assets/images/keepexpressinweb.gif "レイヤーを混ぜることのデメリット")

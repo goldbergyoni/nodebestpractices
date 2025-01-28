@@ -47,4 +47,4 @@ Joyent blogeko “Node.js erregistratzea“ hitz gako bati esker sailkatua
 
 ### Tresna erabilgarria: Swagger Online Dokumentazio Sortzailea
 
-![Swagger API Eskema](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/swaggerDoc.png "APIen errore kudeaketa")
+![Swagger API Eskema](../../assets/images/swaggerDoc.png "APIen errore kudeaketa")

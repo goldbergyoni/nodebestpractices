@@ -9,14 +9,14 @@ Tamaina ertaineko nahiz handiko aplikazioetarako, monolitoak benetan kaltegarria
 
 ### Blog aipua: "Eskalatzeak aplikazio osoaren eskalatzea eskatzen du"
 
-MartinFowler.com bloga
+[MartinFowler.com](https://martinfowler.com/articles/microservices.html) bloga
 
 > Aplikazio monolitikoak arrakastatsuak izan daitezke, baina jendeak gero eta frustrazio gehiago ditu beraiekin, batez ere gero eta aplikazio gehiago inplementatzen direlako lainoan. Aldaketa zikloak elkarrekin lotuta daude: aplikazioaren zati txiki batean egindako aldaketak monolito osoa birsortzea eta inplementatzea eskatzen du. Askotan zaila da denbora aurrera joan ahala moduluzko egitura egokia mantentzea, modulu batean bakarrik eragina izango dituzten aldaketak mantentzea. Eskalatzeak aplikazio osoaren eskalatzea eskatzen du
 <br/><br/>
 
 ### Blog aipua: "Zergatik egiten du garrasi zure aplikazioaren egiturak?"
 
-[uncle-bob](https://8thlight.com/blog/uncle-bob/2011/09/30/Screaming-Architecture.html) bloga
+[uncle-bob](https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html) bloga
 
 > ...Liburutegi baten egitura begiratuko bazenu, ziurrenik sarrera handi batekin aurkituko zinateke, erregistro bulego lekuekin, irakurketa lekuekin, biltzar toki txikiekin, eta liburutegiko liburu guztiak edukitzeko beste apal dituzten galeria ugarirekin. Egitura horrek honakoa oihukatu beharko luke: Liburutegia.<br/>
 
@@ -26,10 +26,10 @@ Beraz, zer oihukatzen du zure aplikazioaren egiturak? Zure direktorioko egiturar
 
 ### Zuzena: antolatu zure proiektua aparteko osagaietan
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG "Antolatu proiektua osagaietan")
+![alt text](../../assets/images/structurebycomponents.PNG "Antolatu proiektua osagaietan")
 
 <br/><br/>
 
 ### Okerra: taldekatu zure fitxategiak rol teknikoen arabera
 
-![alt text](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebyroles.PNG "Antolatu proiektua rol teknikoen arabera")
+![alt text](../../assets/images/structurebyroles.PNG "Antolatu proiektua rol teknikoen arabera")

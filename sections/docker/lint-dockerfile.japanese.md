@@ -2,7 +2,7 @@
 
 ### 一段落説明
 
-コアアプリケーションのコードをベストプラクティスに従わせ、問題になる前にイシューやバグを取り除くために lint を利用するように、Dockerfile も同様に linting されるべきです。Dockerfile を linting することは、非常に軽い労力でプロダクションの問題をオンタイムで捕らえることができる可能性を高めることを意味します。例えば、存在しないステージからコピーを試みたり、不明なオンラインリポジトリからコピーしてきたり、パワーユーザー（SUDO）でアプリケーションを実行したりなど、DOckerfile に記述されたロジックや命令に構造的な問題が無いことを確認することができます。オープンソースの Dockerfile linter である [Hadolint](https://github.com/hadolint/hadolint) は、手動または CI プロセスの一部として利用することができます。Hadolint は、[Docker ベストプラクティス](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) に従うことを目的とした Dockerfile 専用の linter です。
+コアアプリケーションのコードをベストプラクティスに従わせ、問題になる前にイシューやバグを取り除くために lint を利用するように、Dockerfile も同様に linting されるべきです。Dockerfile を linting することは、非常に軽い労力でプロダクションの問題をオンタイムで捕らえることができる可能性を高めることを意味します。例えば、存在しないステージからコピーを試みたり、不明なオンラインリポジトリからコピーしてきたり、パワーユーザー（SUDO）でアプリケーションを実行したりなど、Dockerfile に記述されたロジックや命令に構造的な問題が無いことを確認することができます。オープンソースの Dockerfile linter である [Hadolint](https://github.com/hadolint/hadolint) は、手動または CI プロセスの一部として利用することができます。Hadolint は、[Docker ベストプラクティス](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) に従うことを目的とした Dockerfile 専用の linter です。
 
 
 <br/>

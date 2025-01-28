@@ -1,9 +1,19 @@
 {
   "files": [
-    "README.md"
+    "README.basque.md",
+    "README.brazilian-portuguese.md",
+    "README.chinese.md",
+    "README.french.md",
+    "README.indonesian.md",
+    "README.japanese.md",
+    "README.korean.md",
+    "README.md",
+    "README.polish.md",
+    "README.russian.md"
   ],
   "imageSize": 100,
   "contributorsPerLine": 7,
+  "contributorTemplate": "<a href=\"<%= contributor.profile %>\"><img src=\"<%= contributor.avatar_url %>\" width=\"<%= options.imageSize %>px;\" alt=\"<%= contributor.name %>\"style=\"max-width:<%= options.imageSize %>px;min-width:<%= options.imageSize %>px;\" /><br /><sub style=\"white-space: nowrap;overflow: hidden;text-overflow: ellipsis;\"><b><%= contributor.name %></b></sub></a><br /><%= contributions %>",
   "badgeTemplate": "[![All Contributors](https://img.shields.io/badge/all_contributors-<%= contributors.length %>-orange.svg?style=flat-square)](#contributors)",
   "contributors": [
     {
@@ -1505,11 +1515,247 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "breno404",
+      "name": "Breno Macedo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/48841329?v=4",
+      "profile": "https://www.linkedin.com/in/breno-macedo-ernani-de-s%C3%A1-110223158/",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "JFernando122",
+      "name": "Fernando Flores",
+      "avatar_url": "https://avatars.githubusercontent.com/u/40414805?v=4",
+      "profile": "https://github.com/JFernando122",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "rafaelconcept",
+      "name": "Rafael Brito",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43880669?v=4",
+      "profile": "https://www.linkedin.com/in/rafaelconcept/",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "emiperalta",
+      "name": "Emiliano Peralta",
+      "avatar_url": "https://avatars.githubusercontent.com/u/63617637?v=4",
+      "profile": "https://emiliano-peralta-portfolio.vercel.app/",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "lannex",
+      "name": "Shin, SJ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7369541?v=4",
+      "profile": "https://lannex.github.io",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "e-e-e",
+      "name": "Benjamin Forster",
+      "avatar_url": "https://avatars.githubusercontent.com/u/12589522?v=4",
+      "profile": "http://www.benjaminforster.com",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "DanieleFedeli",
+      "name": "Daniele Fedeli",
+      "avatar_url": "https://avatars.githubusercontent.com/u/37077048?v=4",
+      "profile": "https://github.com/DanieleFedeli",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "djob195",
+      "name": "djob195",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17146669?v=4",
+      "profile": "https://github.com/djob195",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "antspk",
+      "name": "antspk",
+      "avatar_url": "https://avatars.githubusercontent.com/u/78955792?v=4",
+      "profile": "https://github.com/antspk",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "jjy821",
+      "name": "정진영",
+      "avatar_url": "https://avatars.githubusercontent.com/u/88075341?v=4",
+      "profile": "https://jjy0821.tistory.com/",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "kkk-cashwalk",
+      "name": "kkk-cashwalk",
+      "avatar_url": "https://avatars.githubusercontent.com/u/91455122?v=4",
+      "profile": "https://github.com/kkk-cashwalk",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "apainintheneck",
+      "name": "apainintheneck",
+      "avatar_url": "https://avatars.githubusercontent.com/u/42982186?v=4",
+      "profile": "https://github.com/apainintheneck",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "koyanyaroo",
+      "name": "Fajar Budhi Iswanda",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9715368?v=4",
+      "profile": "https://github.com/koyanyaroo",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "jutiger",
+      "name": "이주호",
+      "avatar_url": "https://avatars.githubusercontent.com/u/97490806?v=4",
+      "profile": "https://github.com/jutiger",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "MisterSingh",
+      "name": "Singh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/44462019?v=4",
+      "profile": "https://github.com/MisterSingh",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "Alex-Dumitru",
+      "name": "Alex Dumitru",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43738450?v=4",
+      "profile": "https://github.com/Alex-Dumitru",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "lykhatskyi",
+      "name": "Anton Lykhatskyi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/18104686?v=4",
+      "profile": "https://github.com/lykhatskyi",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "EverythingAvailable",
+      "name": "sangwonlee",
+      "avatar_url": "https://avatars.githubusercontent.com/u/81002379?v=4",
+      "profile": "https://github.com/EverythingAvailable",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "euberdeveloper",
+      "name": "Eugenio Berretta",
+      "avatar_url": "https://avatars.githubusercontent.com/u/33126163?v=4",
+      "profile": "https://github.com/euberdeveloper",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "soranakk",
+      "name": "soranakk",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3930307?v=4",
+      "profile": "https://github.com/soranakk",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "backend-joonyoung",
+      "name": "고준영",
+      "avatar_url": "https://avatars.githubusercontent.com/u/94430145?v=4",
+      "profile": "https://github.com/backend-joonyoung",
+      "contributions": [
+        "content",
+        "code"
+      ]
+    },
+    {
+      "login": "GuilhermePortella",
+      "name": "Guilherme Portella ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59876059?v=4",
+      "profile": "https://github.com/GuilhermePortella",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "Esser50K",
+      "name": "André Esser",
+      "avatar_url": "https://avatars.githubusercontent.com/u/18497570?v=4",
+      "profile": "https://www.youtube.com/channel/UCBxzOQd2v9wWfiMDrf_RQ7A",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "ShiChenCong",
+      "name": "Scc",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22486446?v=4",
+      "profile": "https://github.com/ShiChenCong",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "mauroaccornero",
+      "name": "Mauro Accornero",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1875822?v=4",
+      "profile": "https://www.mauroaccornero.it",
+      "contributions": [
+        "content"
+      ]
+    },
+    {
+      "login": "no-yan",
+      "name": "no-yan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/63000297?v=4",
+      "profile": "https://github.com/no-yan",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
   "projectOwner": "goldbergyoni",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitConvention": "angular"
 }
