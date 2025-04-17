@@ -13,14 +13,26 @@
 ### 代码示例: 使用代码生产head dump
 
 ```javascript
-var heapdump = require('heapdump');
- 
-router.get('/ops/headump', (req, res, next) => {
-    logger.info(`About to generate headump`);
-    heapdump.writeSnapshot(function (err, filename) {
-        console.log('headump file is ready to be sent to the caller', filename);
-        fs.readFile(filename, "utf-8", function (err, data) {
+const fs = require("fs");
+
+// Check if request is authorized
+function isAuthorized(req) {
+    // ...
+}
+
+router.get('/ops/heapdump', (req, res, next) => {
+    if (!isAuthorized(req)) {
+        return res.status(403).send('You are not authorized!');
+    }
+
+    logger.info('About to generate heapdump');
+
+    const heapdump = require('heapdump');
+    heapdump.writeSnapshot((err, filename) => {
+        console.log('heapdump file is ready to be sent to the caller', filename);
+        fs.readFile(filename, 'utf-8', (err, data) => {
             res.end(data);
+            fs.unlinkSync(filename);
         });
     });
 });

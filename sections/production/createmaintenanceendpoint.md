@@ -11,7 +11,7 @@ A maintenance endpoint is a highly secure HTTP API that is part of the app code 
 ### Code example: generating a heap dump via code
 
 ```javascript
-const heapdump = require('heapdump');
+const fs = require("fs");
 
 // Check if request is authorized 
 function isAuthorized(req) {
@@ -25,10 +25,12 @@ router.get('/ops/heapdump', (req, res, next) => {
 
     logger.info('About to generate heapdump');
 
+    const heapdump = require('heapdump');
     heapdump.writeSnapshot((err, filename) => {
         console.log('heapdump file is ready to be sent to the caller', filename);
         fs.readFile(filename, 'utf-8', (err, data) => {
             res.end(data);
+            fs.unlinkSync(filename);
         });
     });
 });
