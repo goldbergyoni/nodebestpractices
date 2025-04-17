@@ -11,7 +11,7 @@ Um endpoint de manutenção é uma API HTTP altamente seguro que faz parte do c�
 ### Exemplo de código: gerando um despejo de heap via código
 
 ```javascript
-const heapdump = require('heapdump');
+const fs = require("fs");
 
 // Verifique se o pedido está autorizado
 function isAuthorized(req) {
@@ -25,10 +25,12 @@ router.get('/ops/heapdump', (req, res, next) => {
 
     logger.info('Prestes a gerar o heapdump');
 
+    const heapdump = require('heapdump');
     heapdump.writeSnapshot((err, filename) => {
         console.log('arquivo heapdump está pronto para ser enviado para o chamador', filename);
         fs.readFile(filename, "utf-8", (err, data) => {
             res.end(data);
+            fs.unlinkSync(filename);
         });
     });
 });
