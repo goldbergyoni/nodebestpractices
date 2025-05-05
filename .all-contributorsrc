@@ -1750,6 +1750,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "omahs",
+      "name": "omahs",
+      "avatar_url": "https://avatars.githubusercontent.com/u/73983677?v=4",
+      "profile": "https://github.com/omahs",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
@@ -1757,5 +1766,6 @@
   "repoType": "github",
   "repoHost": "https://github.com",
   "skipCi": true,
-  "commitConvention": "angular"
+  "commitConvention": "angular",
+  "commitType": "docs"
 }
