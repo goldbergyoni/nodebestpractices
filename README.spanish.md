@@ -215,7 +215,7 @@ Lee en un idioma diferente: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 ## ![✔] 2.11 Falla rápidamente, valida argumentos usando una biblioteca dedicada
 
-**TL; DR:** Valida los datos de entrada en la API para evitar bugs molestos que son difíciles de rastrear mas adelante. La validación de código suele ser tediosa amenos que tengas ona librería que pueda ayudar como [ajv](https://www.npmjs.com/package/ajv) y [Joi](https://www.npmjs.com/package/joi).
+**TL; DR:** Valida los datos de entrada en la API para evitar bugs molestos que son difíciles de rastrear mas adelante. La validación de código suele ser tediosa amenos que tengas una librería que pueda ayudar como [ajv](https://www.npmjs.com/package/ajv) y [Joi](https://www.npmjs.com/package/joi).
 
 **De lo contrario:** Considera esto: tu función espera un argumento numérico "Descuento" que la persona que llama la función olvida pasar, más adelante su código comprueba si Descuento!= 0 (cantidad de descuento permitido es mayor que cero), entonces permitirás el usuario que disfrute de un descuento. Dios mío, qué desagradable error. ¿Puedes verlo?
 
