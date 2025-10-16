@@ -37,7 +37,7 @@ Lee en un idioma diferente: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 # ¡Bienvenido! 3 cosas que deberías saber primero:
 **1. Aquí encontrarás docenas de los mejores artículos sobre Node.JS -** este es un resumen y conservación del contenido mejor clasificado de las mejores prácticas de NodeJS
 
-**2. Es la compilación más grande y crece cada semana -** actualmente, se presentan más de 80 prácticas, guías de estilo y consejos arquitectónicos. Nuevos issues y pull request son creados cada día para mantener esta guía actualizada. Nos encantaría verte contribuyendo, ya sea arreglando errores en el código, ayudando en traducciones, o sugiriendo nuevas ideas. Ve las [Normas de contribución](./operations/writing-guidelines.spanish.md)
+**2. Es la compilación más grande y crece cada semana -** actualmente, se presentan más de 80 prácticas, guías de estilo y consejos arquitectónicos. Nuevos issues y pull request son creados cada día para mantener esta guía actualizada. Nos encantaría verte contribuyendo, ya sea arreglando errores en el código, ayudando en traducciones, o sugiriendo nuevas ideas. Ve las [Normas de contribución](./.operations/writing-guidelines.spanish.md)
 
 **3. La mayoría de los puntos tienen información adicional -** Encontrarás cerca de cada punto de mejores prácticas el enlace **🔗Leer más** que te dará algunos ejemplos de código, citas de blogs seleccionados y mas información
 
