@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%20102%20Best%20Practices-blue.svg" alt="102 елементи"/> <img id="last-update-badge" src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20June%2018%2C%202022-green.svg" alt="Останнє Оновлення: June 18, 2022" /> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2014.0.0-brightgreen.svg" alt="Оновленно для Node 14.0.0"/>
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%20102%20Best%20Practices-blue.svg" alt="102 елементи"/> <img id="last-update-badge" src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20January%2024%2C%202023-green.svg" alt="Останнє оновлення: January 3rd, 2024" /> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2022.0.0-brightgreen.svg" alt="Оновлено для Node 22.0.0"/>
 </div>
 
 <br/>
@@ -18,22 +18,17 @@
 
 <br/>
 
-Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md), [![FR](./assets/flags/FR.png)**FR**](./README.french.md), [![BR](./assets/flags/BR.png)**BR**](./README.brazilian-portuguese.md), [![RU](./assets/flags/RU.png)**RU**](./README.russian.md), [![UKR(./assets/flags/RU.png)**RU**](./README.russian.md), [![PL](./assets/flags/PL.png)**PL**](./README.polish.md), [![JA](./assets/flags/JA.png)**JA**](./README.japanese.md), [![EU](./assets/flags/EU.png)**EU**](./README.basque.md) [(![ES](./assets/flags/ES.png)**ES**, ![HE](./assets/flags/HE.png)**HE**, ![KR](./assets/flags/KR.png)**KR** and ![TR](./assets/flags/TR.png)**TR** in progress! )](#translations)
+Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md), [![FR](./assets/flags/FR.png)**FR**](./README.french.md), [![BR](./assets/flags/BR.png)**BR**](./README.brazilian-portuguese.md), [![UA](./assets/flags/UA.png)**UA**](./README.ukrainian.md), [![RU](./assets/flags/RU.png)**RU**](./README.russian.md), [![PL](./assets/flags/PL.png)**PL**](./README.polish.md), [![JA](./assets/flags/JA.png)**JA**](./README.japanese.md), [![EU](./assets/flags/EU.png)**EU**](./README.basque.md) [(![ES](./assets/flags/ES.png)**ES**, ![HE](./assets/flags/HE.png)**HE**, ![KR](./assets/flags/KR.png)**KR** and ![TR](./assets/flags/TR.png)**TR** in progress! )](#translations)
 
 <br/>
 
-## Special workshop in Verona next week 🇮🇹 - Node.js testing - beyond the basics. [Tickes and more info](https://2022.jsday.it/workshop/nodejs_testing.html)
-<br/>
+# 🎊 Видання 2024 тут!
 
-# Latest Best Practices and News
+- **🛰 Модернізовано до 2024**: Безліч текстових правок, нові рекомендовані бібліотеки та деякі нові найкращі практики
 
-- **✨ 75,000 stars**: Blushing, surprised and proud!
+- **✨ Легко зосередьтесь на новому контенті**: Вже відвідували раніше? Шукайте теги `#new` або `#updated` лише для нового контенту
 
-- **🔖 New menu and tags**: Our menu is collapsible now and includes `#tags`. New visitors can read `#strategic` items first. Returning visitors can focus on `#new` content. Seniors can filter for `#advanced` items. Courtesy of the one and only [Rubek Joshi](https://github.com/rubek-joshi)
-
-- **👨‍👩‍👧‍👦 New family member!**: A new repository joins our family - [Node.js Integration Tests Best Practices ✨](https://github.com/testjavascript/nodejs-integration-tests-best-practices). It includes 40+ best practices for writing awesome and performant Node.js component tests
-
-- **![FR](./assets/flags/FR.png) French translation!1! :** The latest translation that joins our international guide is French. Bienvenue
+- **🔖 Цікаво побачити приклади? У нас є стартер**: Відвідайте [Practica.js](https://github.com/practicajs/practica), наш приклад застосунку та шаблон (бета), щоб побачити деякі практики в дії
 
 <br/><br/>
 
@@ -51,54 +46,57 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 <details>
   <summary>
-    <a href="#1-project-structure-practices">1. Project Structure Practices (5)</a>
+    <a href="#1-project-architecture-practices">1. Project Architecture Practices (6)</a>
   </summary>
 
-&emsp;&emsp;[1.1 Structure your solution by components `#strategic`](#-11-structure-your-solution-by-components)</br>
-&emsp;&emsp;[1.2 Layer your components, keep the web layer within its boundaries `#strategic`](#-12-layer-your-components-keep-the-web-layer-within-its-boundaries)</br>
-&emsp;&emsp;[1.3 Wrap common utilities as npm packages](#-13-wrap-common-utilities-as-npm-packages)</br>
-&emsp;&emsp;[1.4 Separate Express 'app' and 'server'](#-14-separate-express-app-and-server)</br>
-&emsp;&emsp;[1.5 Use environment aware, secure and hierarchical config `#modified-recently`](#-15-use-environment-aware-secure-and-hierarchical-config)</br>
+&emsp;&emsp;[1.1 Structure your solution by components `#strategic` `#updated`](#-11-structure-your-solution-by-business-components)</br>
+&emsp;&emsp;[1.2 Layer your components, keep the web layer within its boundaries `#strategic` `#updated`](#-12-layer-your-components-with-3-tiers-keep-the-web-layer-within-its-boundaries)</br>
+&emsp;&emsp;[1.3 Wrap common utilities as packages, consider publishing](#-13-wrap-common-utilities-as-packages-consider-publishing)</br>
+&emsp;&emsp;[1.4 Use environment aware, secure and hierarchical config `#updated`](#-14-use-environment-aware-secure-and-hierarchical-config)</br>
+&emsp;&emsp;[1.5 Consider all the consequences when choosing the main framework `#new`](#-15-consider-all-the-consequences-when-choosing-the-main-framework)</br>
+&emsp;&emsp;[1.6 Use TypeScript sparingly and thoughtfully `#new`](#-16-use-typescript-sparingly-and-thoughtfully)</br>
 
 </details>
 
 <details>
   <summary>
-    <a href="#2-error-handling-practices">2. Error Handling Practices (12)</a>
+    <a href="#2-error-handling-practices">2. Error Handling Practices (13)</a>
   </summary>
 
 &emsp;&emsp;[2.1 Use Async-Await or promises for async error handling](#-21-use-async-await-or-promises-for-async-error-handling)</br>
-&emsp;&emsp;[2.2 Use only the built-in Error object `#strategic`](#-22-use-only-the-built-in-error-object)</br>
-&emsp;&emsp;[2.3 Distinguish operational vs programmer errors `#strategic`](#-23-distinguish-operational-vs-programmer-errors)</br>
+&emsp;&emsp;[2.2 Extend the built-in Error object `#strategic` `#updated`](#-22-extend-the-built-in-error-object)</br>
+&emsp;&emsp;[2.3 Distinguish operational vs programmer errors `#strategic` `#updated`](#-23-distinguish-catastrophic-errors-from-operational-errors)</br>
 &emsp;&emsp;[2.4 Handle errors centrally, not within a middleware `#strategic`](#-24-handle-errors-centrally-not-within-a-middleware)</br>
-&emsp;&emsp;[2.5 Document API errors using Swagger or GraphQL `#modified-recently`](#-25-document-api-errors-using-swagger-or-graphql)</br>
+&emsp;&emsp;[2.5 Document API errors using OpenAPI or GraphQL](#-25-document-api-errors-using-openapi-or-graphql)</br>
 &emsp;&emsp;[2.6 Exit the process gracefully when a stranger comes to town `#strategic`](#-26-exit-the-process-gracefully-when-a-stranger-comes-to-town)</br>
-&emsp;&emsp;[2.7 Use a mature logger to increase error visibility](#-27-use-a-mature-logger-to-increase-error-visibility)</br>
-&emsp;&emsp;[2.8 Test error flows using your favorite test framework](#-28-test-error-flows-using-your-favorite-test-framework)</br>
+&emsp;&emsp;[2.7 Use a mature logger to increase errors visibility `#updated`](#-27-use-a-mature-logger-to-increase-errors-visibility)</br>
+&emsp;&emsp;[2.8 Test error flows using your favorite test framework `#updated`](#-28-test-error-flows-using-your-favorite-test-framework)</br>
 &emsp;&emsp;[2.9 Discover errors and downtime using APM products](#-29-discover-errors-and-downtime-using-apm-products)</br>
-&emsp;&emsp;[2.10 Catch unhandled promise rejections `#modified-recently`](#-210-catch-unhandled-promise-rejections)</br>
+&emsp;&emsp;[2.10 Catch unhandled promise rejections `#updated`](#-210-catch-unhandled-promise-rejections)</br>
 &emsp;&emsp;[2.11 Fail fast, validate arguments using a dedicated library](#-211-fail-fast-validate-arguments-using-a-dedicated-library)</br>
 &emsp;&emsp;[2.12 Always await promises before returning to avoid a partial stacktrace `#new`](#-212-always-await-promises-before-returning-to-avoid-a-partial-stacktrace)</br>
+&emsp;&emsp;[2.13 Subscribe to event emitters 'error' event `#new`](#-213-subscribe-to-event-emitters-and-streams-error-event)</br>
 
 </details>
 
 <details>
   <summary>
-    <a href="#3-code-style-practices">3. Code Style Practices (12)</a>
+    <a href="#3-code-patterns-and-style-practices">3. Code Style Practices (13)</a>
   </summary>
 
 &emsp;&emsp;[3.1 Use ESLint `#strategic`](#-31-use-eslint)</br>
-&emsp;&emsp;[3.2 Node.js specific plugins](#-32-nodejs-specific-plugins)</br>
+&emsp;&emsp;[3.2 Use Node.js eslint extension plugins `#updated`](#-32-use-nodejs-eslint-extension-plugins)</br>
 &emsp;&emsp;[3.3 Start a Codeblock's Curly Braces on the Same Line](#-33-start-a-codeblocks-curly-braces-on-the-same-line)</br>
 &emsp;&emsp;[3.4 Separate your statements properly](#-34-separate-your-statements-properly)</br>
 &emsp;&emsp;[3.5 Name your functions](#-35-name-your-functions)</br>
 &emsp;&emsp;[3.6 Use naming conventions for variables, constants, functions and classes](#-36-use-naming-conventions-for-variables-constants-functions-and-classes)</br>
 &emsp;&emsp;[3.7 Prefer const over let. Ditch the var](#-37-prefer-const-over-let-ditch-the-var)</br>
 &emsp;&emsp;[3.8 Require modules first, not inside functions](#-38-require-modules-first-not-inside-functions)</br>
-&emsp;&emsp;[3.9 Require modules by folders, as opposed to the files directly](#-39-require-modules-by-folders-as-opposed-to-the-files-directly)</br>
+&emsp;&emsp;[3.9 Set an explicit entry point to a module/folder `#updated`](#-39-set-an-explicit-entry-point-to-a-modulefolder)</br>
 &emsp;&emsp;[3.10 Use the === operator](#-310-use-the--operator)</br>
 &emsp;&emsp;[3.11 Use Async Await, avoid callbacks `#strategic`](#-311-use-async-await-avoid-callbacks)</br>
 &emsp;&emsp;[3.12 Use arrow function expressions (=>)](#-312-use-arrow-function-expressions-)</br>
+&emsp;&emsp;[3.13 Avoid effects outside of functions `#new`](#-313-avoid-effects-outside-of-functions)</br>
 
 </details>
 
@@ -110,16 +108,16 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 &emsp;&emsp;[4.1 At the very least, write API (component) testing `#strategic`](#-41-at-the-very-least-write-api-component-testing)</br>
 &emsp;&emsp;[4.2 Include 3 parts in each test name `#new`](#-42-include-3-parts-in-each-test-name)</br>
 &emsp;&emsp;[4.3 Structure tests by the AAA pattern `#strategic`](#-43-structure-tests-by-the-aaa-pattern)</br>
-&emsp;&emsp;[4.4 Detect code issues with a linter](#-44-detect-code-issues-with-a-linter)</br>
+&emsp;&emsp;[4.4 Ensure Node version is unified `#new`](#-44-ensure-node-version-is-unified)</br>
 &emsp;&emsp;[4.5 Avoid global test fixtures and seeds, add data per-test `#strategic`](#-45-avoid-global-test-fixtures-and-seeds-add-data-per-test)</br>
-&emsp;&emsp;[4.6 Constantly inspect for vulnerable dependencies](#-46-constantly-inspect-for-vulnerable-dependencies)</br>
-&emsp;&emsp;[4.7 Tag your tests  `#advanced`](#-47-tag-your-tests)</br>
-&emsp;&emsp;[4.8 Check your test coverage, it helps to identify wrong test patterns](#-48-check-your-test-coverage-it-helps-to-identify-wrong-test-patterns)</br>
-&emsp;&emsp;[4.9 Inspect for outdated packages](#-49-inspect-for-outdated-packages)</br>
-&emsp;&emsp;[4.10 Use production-like environment for e2e testing](#-410-use-production-like-environment-for-e2e-testing)</br>
-&emsp;&emsp;[4.11 Refactor regularly using static analysis tools](#-411-refactor-regularly-using-static-analysis-tools)</br>
-&emsp;&emsp;[4.12 Carefully choose your CI platform (Jenkins vs CircleCI vs Travis vs Rest of the world)](#-412-carefully-choose-your-ci-platform-jenkins-vs-circleci-vs-travis-vs-rest-of-the-world)</br>
-&emsp;&emsp;[4.13 Test your middlewares in isolation](#-413-test-your-middlewares-in-isolation)</br>
+&emsp;&emsp;[4.6 Tag your tests `#advanced`](#-46-tag-your-tests)</br>
+&emsp;&emsp;[4.7 Check your test coverage, it helps to identify wrong test patterns](#-47-check-your-test-coverage-it-helps-to-identify-wrong-test-patterns)</br>
+&emsp;&emsp;[4.8 Use production-like environment for e2e testing](#-48-use-production-like-environment-for-e2e-testing)</br>
+&emsp;&emsp;[4.9 Refactor regularly using static analysis tools](#-49-refactor-regularly-using-static-analysis-tools)</br>
+&emsp;&emsp;[4.10 Mock responses of external HTTP services `#new` `#advanced`](#-410-mock-responses-of-external-http-services)</br>
+&emsp;&emsp;[4.11 Test your middlewares in isolation](#-411-test-your-middlewares-in-isolation)</br>
+&emsp;&emsp;[4.12 Specify a port in production, randomize in testing `#new`](#-412-specify-a-port-in-production-randomize-in-testing)</br>
+&emsp;&emsp;[4.13 Test the five possible outcomes `#strategic` `#new`](#-413-test-the-five-possible-outcomes)</br>
 
 </details>
 
@@ -129,35 +127,35 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
   </summary>
 
 &emsp;&emsp;[5.1. Monitoring `#strategic`](#-51-monitoring)</br>
-&emsp;&emsp;[5.2. Increase transparency using smart logging `#strategic`](#-52-increase-transparency-using-smart-logging)</br>
+&emsp;&emsp;[5.2. Increase the observability using smart logging `#strategic`](#-52-increase-the-observability-using-smart-logging)</br>
 &emsp;&emsp;[5.3. Delegate anything possible (e.g. gzip, SSL) to a reverse proxy `#strategic`](#-53-delegate-anything-possible-eg-gzip-ssl-to-a-reverse-proxy)</br>
 &emsp;&emsp;[5.4. Lock dependencies](#-54-lock-dependencies)</br>
 &emsp;&emsp;[5.5. Guard process uptime using the right tool](#-55-guard-process-uptime-using-the-right-tool)</br>
 &emsp;&emsp;[5.6. Utilize all CPU cores](#-56-utilize-all-cpu-cores)</br>
-&emsp;&emsp;[5.7. Create a ‘maintenance endpoint’](#-57-create-a-maintenance-endpoint)</br>
-&emsp;&emsp;[5.8. Discover errors and downtime using APM products  `#advanced`](#-58-discover-errors-and-downtime-using-apm-products)</br>
+&emsp;&emsp;[5.7. Create a 'maintenance endpoint'](#-57-create-a-maintenance-endpoint)</br>
+&emsp;&emsp;[5.8. Discover the unknowns using APM products `#advanced` `#updated`](#-58-discover-the-unknowns-using-apm-products)</br>
 &emsp;&emsp;[5.9. Make your code production-ready](#-59-make-your-code-production-ready)</br>
 &emsp;&emsp;[5.10. Measure and guard the memory usage `#advanced`](#-510-measure-and-guard-the-memory-usage)</br>
 &emsp;&emsp;[5.11. Get your frontend assets out of Node](#-511-get-your-frontend-assets-out-of-node)</br>
-&emsp;&emsp;[5.12. Be stateless, kill your servers almost every day](#-512-be-stateless-kill-your-servers-almost-every-day)</br>
+&emsp;&emsp;[5.12. Strive to be stateless `#strategic`](#-512-strive-to-be-stateless)</br>
 &emsp;&emsp;[5.13. Use tools that automatically detect vulnerabilities](#-513-use-tools-that-automatically-detect-vulnerabilities)</br>
 &emsp;&emsp;[5.14. Assign a transaction id to each log statement `#advanced`](#-514-assign-a-transaction-id-to-each-log-statement)</br>
 &emsp;&emsp;[5.15. Set NODE_ENV=production](#-515-set-node_envproduction)</br>
-&emsp;&emsp;[5.16. Design automated, atomic and zero-downtime deployments  `#advanced`](#-516-design-automated-atomic-and-zero-downtime-deployments)</br>
+&emsp;&emsp;[5.16. Design automated, atomic and zero-downtime deployments `#advanced`](#-516-design-automated-atomic-and-zero-downtime-deployments)</br>
 &emsp;&emsp;[5.17. Use an LTS release of Node.js](#-517-use-an-lts-release-of-nodejs)</br>
-&emsp;&emsp;[5.18. Don't route logs within the app](#-518-dont-route-logs-within-the-app)</br>
+&emsp;&emsp;[5.18. Log to stdout, avoid specifying log destination within the app `#updated`](#-518-log-to-stdout-avoid-specifying-log-destination-within-the-app)</br>
 &emsp;&emsp;[5.19. Install your packages with npm ci `#new`](#-519-install-your-packages-with-npm-ci)</br>
 
 </details>
 
 <details>
   <summary>
-    <a href="#6-security-best-practices">6. Security Practices (25)</a>
+    <a href="#6-security-best-practices">6. Security Practices (27)</a>
   </summary>
 
 &emsp;&emsp;[6.1. Embrace linter security rules](#-61-embrace-linter-security-rules)</br>
 &emsp;&emsp;[6.2. Limit concurrent requests using a middleware](#-62-limit-concurrent-requests-using-a-middleware)</br>
-&emsp;&emsp;[6.3 Extract secrets from config files or use packages to encrypt them  `#strategic`](#-63-extract-secrets-from-config-files-or-use-packages-to-encrypt-them)</br>
+&emsp;&emsp;[6.3 Extract secrets from config files or use packages to encrypt them `#strategic`](#-63-extract-secrets-from-config-files-or-use-packages-to-encrypt-them)</br>
 &emsp;&emsp;[6.4. Prevent query injection vulnerabilities with ORM/ODM libraries `#strategic`](#-64-prevent-query-injection-vulnerabilities-with-ormodm-libraries)</br>
 &emsp;&emsp;[6.5. Collection of generic security best practices](#-65-collection-of-generic-security-best-practices)</br>
 &emsp;&emsp;[6.6. Adjust the HTTP response headers for enhanced security](#-66-adjust-the-http-response-headers-for-enhanced-security)</br>
@@ -173,13 +171,15 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 &emsp;&emsp;[6.16. Prevent evil RegEx from overloading your single thread execution](#-616-prevent-evil-regex-from-overloading-your-single-thread-execution)</br>
 &emsp;&emsp;[6.17. Avoid module loading using a variable](#-617-avoid-module-loading-using-a-variable)</br>
 &emsp;&emsp;[6.18. Run unsafe code in a sandbox](#-618-run-unsafe-code-in-a-sandbox)</br>
-&emsp;&emsp;[6.19. Take extra care when working with child processes  `#advanced`](#-619-take-extra-care-when-working-with-child-processes)</br>
+&emsp;&emsp;[6.19. Take extra care when working with child processes `#advanced`](#-619-take-extra-care-when-working-with-child-processes)</br>
 &emsp;&emsp;[6.20. Hide error details from clients](#-620-hide-error-details-from-clients)</br>
 &emsp;&emsp;[6.21. Configure 2FA for npm or Yarn `#strategic`](#-621-configure-2fa-for-npm-or-yarn)</br>
 &emsp;&emsp;[6.22. Modify session middleware settings](#-622-modify-session-middleware-settings)</br>
-&emsp;&emsp;[6.23. Avoid DOS attacks by explicitly setting when a process should crash  `#advanced`](#-623-avoid-dos-attacks-by-explicitly-setting-when-a-process-should-crash)</br>
+&emsp;&emsp;[6.23. Avoid DOS attacks by explicitly setting when a process should crash `#advanced`](#-623-avoid-dos-attacks-by-explicitly-setting-when-a-process-should-crash)</br>
 &emsp;&emsp;[6.24. Prevent unsafe redirects](#-624-prevent-unsafe-redirects)</br>
 &emsp;&emsp;[6.25. Avoid publishing secrets to the npm registry](#-625-avoid-publishing-secrets-to-the-npm-registry)</br>
+&emsp;&emsp;[6.26. Inspect for outdated packages](#-626-inspect-for-outdated-packages)</br>
+&emsp;&emsp;[6.27. Import built-in modules using the 'node:' protocol `#new`](#-627-import-built-in-modules-using-the-node-protocol)</br>
 
 </details>
 
@@ -218,7 +218,7 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 <br/><br/>
 
-# `1. Практики структури проекту`
+# `1. Практики архітектури проекту`
 
 ## ![✔] 1.1 Структуруйте своє рішення за компонентами
 
@@ -250,23 +250,33 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 <br/><br/>
 
-## ![✔] 1.4 Розділіть "додаток" і "сервер" Express
-
-**Коротко:** Уникайте поганої звички визначати всю програму [Express](https://expressjs.com/) в одному величезному файлі – розділіть своє визначення Express принаймні на два файли: декларацію API (app.js) і роботу з мережею (WWW). Щоб отримати ще кращу структуру, знайдіть свою декларацію API в компонентах
-
-**В іншому випадку:** Ваш API буде доступний для тестування лише через HTTP-виклики (повільніше та набагато важче генерувати звіти про покриття). Ймовірно, не буде великим задоволенням зберігати сотні рядків коду в одному файлі
-
-🔗 [**Читати більше: окремі Express "додаток" і "сервер"**](./sections/projectstructre/separateexpress.ukrainian.md)
-
-<br/><br/>
-
-## ![✔] 1.5 Використовуйте конфігурацію з урахуванням середовища, безпечну та ієрархічну
+## ![✔] 1.4 Використовуйте конфігурацію з урахуванням середовища, безпечну та ієрархічну
 
 **Коротко:** Ідеальне й бездоганне налаштування конфігурації має забезпечувати (а) можливість читання ключів із файлу ТА зі змінної середовища (б) секрети зберігаються за межами зафіксованого коду (в) конфігурація є ієрархічною для легшого пошуку. Є кілька пакетів, які можуть допомогти встановити прапорці в більшості випадків, наприклад [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) ), [config](https://www.npmjs.com/package/config) і [convict](https://www.npmjs.com/package/convict).
 
 **В іншому випадку:** Невиконання будь-якої вимоги до конфігурації просто завадить команді розробників або DevOps. Можливо, все разом
 
 🔗 [**Читати більше: найкращі методи конфігурації**](./sections/projectstructre/configguide.ukrainian.md)
+
+<br/><br/>
+
+## ![✔] 1.5 Враховуйте всі наслідки при виборі основного фреймворку
+
+**Коротко:** При виборі фреймворку враховуйте не лише функціональність, але й те, як він впливає на стиль розробки, кількість залежностей та загальну підтримуваність. Express простий та гнучкий, але залишає багато аспектів без покриття. Nest.js надає більше можливостей "з коробки", але має крутішу криву навчання. Fastify — сучасний та швидкий баланс. Вибір має відповідати досвіду команди та розміру проекту.
+
+**В іншому випадку:** Неправильний вибір фреймворку може призвести до надмірної складності або, навпаки, до необхідності самостійно вирішувати багато архітектурних питань.
+
+🔗 [**Читати більше: вибір фреймворку**](./sections/projectstructre/choose-framework.ukrainian.md)
+
+<br/><br/>
+
+## ![✔] 1.6 Використовуйте TypeScript обережно та вдумливо
+
+**Коротко:** TypeScript надає типобезпеку та покращує ергономіку розробки, але також пропонує просунуті конструкції ООП, такі як абстрактні класи та інтерфейси. Багато команд ненавмисно ускладнюють код, використовуючи ці можливості без чіткого плану. Розгляньте використання TypeScript лише для базової типізації, зберігаючи простоту JavaScript-підходу з функціями та об'єктами.
+
+**В іншому випадку:** Надмірне використання можливостей TypeScript може призвести до непропорційного збільшення складності коду порівняно з отриманими перевагами.
+
+🔗 [**Читати більше: використання TypeScript**](./sections/projectstructre/typescript-considerations.ukrainian.md)
 
 <br/><br/><br/>
 
