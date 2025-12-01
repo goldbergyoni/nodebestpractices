@@ -18,7 +18,7 @@ Pour les applications de taille moyenne et supérieure, les monolithes sont vrai
 
 ### Citation de blog : « Alors, est-ce que est l'architecture de votre application parle d'elle-même ? »
 
- Extrait du blog de [uncle-bob](https://8thlight.com/blog/uncle-bob/2011/09/30/Screaming-Architecture.html)
+ Extrait du blog de [uncle-bob](https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html)
 
 > ...si vous regardiez l'architecture d'une bibliothèque, vous verriez probablement une grande entrée, un espace pour les préposés à l'enregistrement, des salles de lecture, de petites salles de conférence et des galeries pouvant accueillir tous les livres de la bibliothèque. Cette architecture parle d'elle-même : c'est une Bibliothèque.<br/>>
 

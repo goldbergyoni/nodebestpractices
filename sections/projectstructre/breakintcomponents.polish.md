@@ -17,7 +17,7 @@ W przypadku średnich aplikacji i wyższych monolity są naprawdę złe - posiad
 
 ### Cytat z Bloga: "Więc co krzyczy architektura Twojej aplikacji?"
 
- Z bloga [uncle-bob](https://8thlight.com/blog/uncle-bob/2011/09/30/Screaming-Architecture.html) 
+ Z bloga [uncle-bob](https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html) 
 
 > ...if you were looking at the architecture of a library, you’d likely see a grand entrance, an area for check-in-out clerks, reading areas, small conference rooms, and gallery after gallery capable of holding bookshelves for all the books in the library. That architecture would scream: Library.<br/>
 

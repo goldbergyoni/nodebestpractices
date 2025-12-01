@@ -18,7 +18,7 @@
 
 ### ブログ引用: "So what does the architecture of your application scream?" (では、アプリケーションのアーキテクチャは何を叫んでいるのでしょうか?)
 
- ブログ [uncle-bob](https://8thlight.com/blog/uncle-bob/2011/09/30/Screaming-Architecture.html)  より
+ ブログ [uncle-bob](https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html)  より
 
 > ...図書館の建築を眺めていると、あなたはおそらく壮大な入り口、図書館員のためのエリア、読書エリア、小さな会議室、そしてギャラリーの奥には図書館の本をすべて収納した棚があるのが見えるだろう。その建築は悲鳴を上げるだろう。図書館と。<br/>
 

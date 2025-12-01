@@ -36,7 +36,7 @@ Leia em diferentes idiomas: [![CN](./assets/flags/CN.png)**CN**](./README.chines
 
 <br/><br/>
 
-# Bem-vindo! 3 Coisas Que Você Precisa Saber:
+# Bem-vindo! 3 Coisas Que Você Precisa Saber
 
 **1. Quando você lê aqui, na verdade você lê alguns dos melhores artigos de Node.js -** este é um resumo e curadoria dos mais bem ranqueados conteúdos sobre as melhores práticas do Node.js.
 
@@ -48,13 +48,13 @@ Leia em diferentes idiomas: [![CN](./assets/flags/CN.png)**CN**](./README.chines
 
 ## Índice
 
-1.  [Práticas de Estrutura de Projeto (5)](#1-práticas-de-estrutura-de-projeto)
-2.  [Práticas de Tratamento de Erros (12) ](#2-práticas-de-tratamento-de-erros)
-3.  [Práticas de Estilo de Código (13) ](#3-práticas-de-estilo-de-código)
-4.  [Práticas de Testes e Qualidade Geral (13) ](#4-práticas-de-testes-e-qualidade-geral)
-5.  [Práticas de Produção (19) ](#5-boas-práticas-de-produção)
-6.  [Práticas de Segurança (25)](#6-boas-práticas-em-segurança)
-7.  [Práticas de Performance (1) (Em Progresso ✍️)](#7-boas-práticas-em-performance)
+1. [Práticas de Estrutura de Projeto (5)](#1-práticas-de-estrutura-de-projeto)
+2. [Práticas de Tratamento de Erros (12) ](#2-práticas-de-tratamento-de-erros)
+3. [Práticas de Estilo de Código (13) ](#3-práticas-de-estilo-de-código)
+4. [Práticas de Testes e Qualidade Geral (13) ](#4-práticas-de-testes-e-qualidade-geral)
+5. [Práticas de Produção (19) ](#5-boas-práticas-de-produção)
+6. [Práticas de Segurança (25)](#6-boas-práticas-em-segurança)
+7. [Práticas de Performance (1) (Em Progresso ✍️)](#7-boas-práticas-em-performance)
 
 <br/><br/>
 
@@ -230,7 +230,7 @@ Leia em diferentes idiomas: [![CN](./assets/flags/CN.png)**CN**](./README.chines
 
 **Caso contrário:** Uma função que retorna uma `promise` sem o `await` não aparecerá na pilha de erro.
 A ausência dessas informações provavelmente complicariam a compreensão do fluxo que leva ao erro,
-especialmente se a causa do comportamento anormal estiver dentro da função ausente 
+especialmente se a causa do comportamento anormal estiver dentro da função ausente
 
 🔗 [**Leia Mais: retornando promises**](./sections/errorhandling/returningpromises.md)
 
@@ -291,7 +291,7 @@ Não importa se você usa ponto-e-vírgula ou não para separar suas declaraçõ
 
 **Caso contrário:** Como visto na seção anterior, o interpretador do JavaScript adiciona automaticamente um ponto-e-vírgula ao final de uma instrução, se não houver uma, ou considera uma instrução como não terminada onde deveria, o que pode levar a alguns resultados indesejáveis. Você pode usar atribuições e evitar o uso de expressões de função chamadas imediatas para evitar a maioria dos erros inesperados.
 
-### Exemplo de Código
+### Exemplo de código
 
 ```javascript
 // Faça
@@ -341,7 +341,7 @@ const count = 2 // tenta executar 2(), mas 2 não é uma função
 
 **Caso contrário:** O JavaScript é a única linguagem no mundo que permite invocar um construtor (“Class”) diretamente sem instanciá-lo primeiro. Consequentemente, Classes e construtores de funções são diferenciados começando com UpperCamelCase
 
-### Exemplo de Código
+### 3.6 Exemplo de Código
 
 ```javascript
 // para classes nós usamos UpperCamelCase
@@ -384,7 +384,7 @@ function doSomething() {}
 
 **Caso contrário:** Alterar a estrutura interna dos arquivos ou a assinatura pode quebrar a interface com clientes.
 
-### Exemplo de Código
+### 3.9 Exemplo de Código
 
 ```javascript
 // Do
@@ -404,7 +404,7 @@ module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolve
 
 **Caso contrário:** Variáveis diferentes podem retornar verdadeiro quando comparadas usando o operador `==`.
 
-### Exemplo de Código
+### 3.10 Exemplo de Código
 
 ```javascript
 "" == "0"; // false
@@ -467,11 +467,11 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.3 Estutura de testes padrão AAA 
+## ![✔] 4.3 Estutura de testes padrão AAA
 
-**TL;DR:** Estruture seus testes com 3 seções bem separadas: Arrange, Act & Assert (AAA). A primeira parte inclui a configuração do teste, depois a execução do teste unitário, e finalmente, a fase de asserção. Seguir esta estrutura garante que o leitor não gaste nenhuma CPU cerebral para entender o plano de teste 
+**TL;DR:** Estruture seus testes com 3 seções bem separadas: Arrange, Act & Assert (AAA). A primeira parte inclui a configuração do teste, depois a execução do teste unitário, e finalmente, a fase de asserção. Seguir esta estrutura garante que o leitor não gaste nenhuma CPU cerebral para entender o plano de teste
 
-**Caso contrário:** Você não somente passará várias horas do dia para entender o código principal, mas agora também gastará várias horas no que deveria ter sido uma simples parte do dia (testando) esticando seu cérebro. 
+**Caso contrário:** Você não somente passará várias horas do dia para entender o código principal, mas agora também gastará várias horas no que deveria ter sido uma simples parte do dia (testando) esticando seu cérebro.
 
 🔗 [**Leia Mais: Estutura de testes padrão AAA**](./sections/testingandquality/aaa.md)
 
@@ -557,9 +557,9 @@ Todas as declarações acima false se feitas com `===`.
 
 ## ![✔] 4.13 Teste seus 'middlewares' isoladamente
 
-**TL;DR:** quando um 'middleware' contém alguma lógica imensa que abrange muitas solicitações, vale a pena testá-lo isoladamente, sem ativar todo o framework. Isso pode ser facilmente alcançado por 'stubbing' e espionando os objetos {req, res, next} 
+**TL;DR:** quando um 'middleware' contém alguma lógica imensa que abrange muitas solicitações, vale a pena testá-lo isoladamente, sem ativar todo o framework. Isso pode ser facilmente alcançado por 'stubbing' e espionando os objetos {req, res, next}
 
-**Caso contrário:** Um bug no 'middleware Express' === um bug em todas ou na maioria das solicitações 
+**Caso contrário:** Um bug no 'middleware Express' === um bug em todas ou na maioria das solicitações
 
 🔗 [**Read More: Test middlewares in isolation**](./sections/testingandquality/test-middlewares.md)
 
@@ -569,7 +569,7 @@ Todas as declarações acima false se feitas com `===`.
 
 # `5. Boas Práticas de Produção`
 
-## ![✔] 5.1. Monitoramento!
+## ![✔] 5.1. Monitoramento
 
 **TL;DR:** O monitoramento é um jogo de descobrir problemas antes que os clientes os encontrem - obviamente deve ser atribuída muita importância para isto. O mercado está sobrecarregado de ofertas, portanto, considere começar com a definição das métricas básicas que você deve seguir (sugestões minhas dentro), depois passe por recursos extras e escolha a solução que marca todas as caixas. Acesse o ‘Gist’ abaixo para uma visão geral das soluções.
 
@@ -749,7 +749,7 @@ Todas as declarações acima false se feitas com `===`.
 
 ## ![✔] 5.19. Instale seus pacotes com `npm ci`
 
-**TL;DR:** Você precisa ter certeza de que o código de produção usa a versão exata dos pacotes que você realizou os testes. Execute `npm ci` para fazer estritamente uma instalação limpa de suas dependências correspondentes do package.json e do package-lock.json. O uso desse comando é recomendado em ambientes automatizados, como pipelines de integração contínua. 
+**TL;DR:** Você precisa ter certeza de que o código de produção usa a versão exata dos pacotes que você realizou os testes. Execute `npm ci` para fazer estritamente uma instalação limpa de suas dependências correspondentes do package.json e do package-lock.json. O uso desse comando é recomendado em ambientes automatizados, como pipelines de integração contínua.
 
 **Caso contrário:** o QA testará completamente o código e aprovará uma versão que se comportará de maneira diferente em produção. Pior ainda, diferentes servidores no mesmo cluster de produção podem executar códigos diferentes.
 
