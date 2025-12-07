@@ -1,14 +1,14 @@
-# Carefully choose your CI platform
+# CI 플랫폼을 신중하게 선택하라.
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 한 문단 요약
 
-CI 환경은 [Jenkins](https://jenkins.io/)의 유연성과 SaaS 공급업체의 단순성을 비교한 결과였습니다. 현재 [CircleCI](https://circleci.com/) 및 [Travis](https://travis-ci.org/))와 같은 SaaS 제공업체가 최소 설정 시간을 가진 도커 컨테이너를 포함한 강력한 솔루션을 제공하는 반면 Jenkins는 '유효성' 부문에서도 경쟁하려고 노력함에 따라 판도가 바뀌고 있다. 클라우드에서 풍부한 CI 솔루션을 설정할 수 있지만, 세부 정보를 제어해야 하는 경우 Jenkins가 여전히 선택하는 플랫폼입니다. 선택은 결국 CI 프로세스를 어느 정도까지 커스터마이징해야 하는지로 귀결됩니다. 무료 및 설치 클라우드 공급업체는 맞춤형 셸 명령, 사용자 지정 도커 이미지 실행, 워크플로우 조정, 매트릭스 빌드 실행 및 기타 다양한 기능을 사용할 수 있습니다. 그러나 인프라를 제어하거나 Java와 같은 공식 프로그래밍 언어를 사용하여 CI 로직을 프로그래밍하려는 경우에는 Jenkins를 선택할 수 있습니다. 그렇지 않으면 간편하고 무료 클라우드 설정 옵션을 선택하는 것이 좋습니다.
+CI 세계는 주로 적용성의 Jenkins와, 단순함의 SaaS 업체들로 나뉘어 사용되어져 왔다. Jenkins가 '단순함'의 부문에서도 경쟁하려고 시도하는 동안, CircleCI 와 Travis 같은 SaaS 공급자들이 최소한의 설치 시간을 가진 도커 컨테이너를 포함한 광범위하고 고성능을 가진 솔루션을 제공하면서 이제 게임이 변화하기 시작했다. 비록 클라우드에서 풍부한 CI 솔루션을 설치할 수 있지만, 정밀한 조절을 요하는 경우에는 여전히 Jenkins는 선택에 들어가게 되는 플랫폼이다. 결국 선택은 CI 프로세스를 커스터마이즈해야 하는 범위로 결정된다. 무료 및 설정 무료 클라우드 공급 업체들은 사용자 지정 shell 명령들, 사용자 지정 도커 이미지 실행, 워크플로우 조정, 매트릭스 빌드 등의 풍부한 기능 실행을 허용한다. 하지만, 만약 인프라를 컨트롤하거나 Java와 같은 일반적인 프로그래밍 언어를 사용해 CI 로직을 프로그래밍하는 것이 요구된다면, Jenkins가 선택지가 될 수 있다. 그렇지 않다면, 간단하고 설정이 자유로운 클라우드 옵션 선택에 대해 고려해보라.
 
 <br/><br/>
 
-### Code Example – a typical cloud CI configuration. Single .yml file and that's it
+### 코드 예제 - 전형적인 cloud CI configuration. 하나의 .yml 파일이다.
 
 ```javascript
 version: 2
@@ -40,11 +40,11 @@ jobs:
 
 ```
 
-### Circle CI - almost zero setup cloud CI
+### Circle CI - 사실상 설치가 없다시피 한 cloud CI
 
 ![alt text](../../assets/images/circleci.png "API error handling")
 
-### Jenkins - sophisticated and robust CI
+### Jenkins - 예리하고 광범위하며, 고성능을 가진 CI
 
 ![alt text](../../assets/images/jenkins_dashboard.png "API error handling")
 

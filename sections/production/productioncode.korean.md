@@ -1,16 +1,16 @@
-# Make your code production-ready
+# 상용에 사용될 수 있게 코드를 작성하라
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 한문단 설명
 
-Following is a list of development tips that greatly affect the production maintenance and stability:
+생산 유지 및 안정성에 큰 영향을 미치는 개발 팀 목록을 따라하라:
 
-* The twelve-factor guide – Get familiar with the [Twelve factors](https://12factor.net/) guide
-* Be stateless – Save no data locally on a specific web server (see separate bullet – ‘Be Stateless’)
-* Cache – Utilize cache heavily, yet never fail because of cache mismatch
-* Test memory – gauge memory usage and leaks as part your development flow, tools such as ‘memwatch’ can greatly facilitate this task
-* Name functions – Minimize the usage of anonymous functions (i.e. inline callback) as a typical memory profiler will provide memory usage per method name
-* Use CI tools – Use CI tool to detect failures before sending to production. For example, use ESLint to detect reference errors and undefined variables. Use –trace-sync-io to identify code that uses synchronous APIs (instead of the async version)
-* Log wisely – Include in each log statement contextual information, hopefully in JSON format so log aggregators tools such as Elastic can search upon those properties (see separate bullet – ‘Increase visibility using smart logs’). Also, include transaction-id that identifies each request and allows to correlate lines that describe the same transaction (see separate bullet – ‘Include Transaction-ID’)
-* Error management – Error handling is the Achilles’ heel of Node.js production sites – many Node processes are crashing because of minor errors while others hang on alive in a faulty state instead of crashing. Setting your error handling strategy is absolutely critical, read here my [error handling best practices](http://goldbergyoni.com/checklist-best-practices-of-node-js-error-handling/)
+* 12가지 가이드 요소 - [12가지 요소](https://12factor.net/) 가이드와 친해지기
+* 상태 갖고있지 않기 – 특정 웹 서버에 로컬로 데이터를 저장하지 말라 (‘Be Stateless’ 참조)
+* 캐시 - 캐시를 많이 활용하지만, 캐시의 불일치로 절대 실패를 만들지 말라
+* 메모리 측정 - 메모리 사용량과 누수를 개발의 일부분으로 측정하면 ‘memwatch’과 같은 도구가 큰 도움이 될 수 있다.
+* 이름이 있는 함수 - 일반적으로 메모리 프로파일러가 함수 이름당 메모리 사용량을 제공하므로 익명 함수(즉, 인라인 콜백함수)의 사용을 최소화 해라
+CI 도구를 사용해라 - 상용으로 사용하기 전에 오류를 감지하기 위하여 CI 도구를 사용해라. 예를들어, ESLint를 사용하여 에러와 정의되지 않은 변수를 찾는다. 비동기 버전을 사용하는 대신 동기 API를 사용하는 코드를 찾을 수 있는 --trace-sync-io를 사용해라.
+* 현명하게 기록해라 – 상태정보를 각 로그에 포함하는 대신에 Elastic과 같은 로그 수집 도구를 사용하여 해당 속성을 찾을 수 있도록 JSON 형식으로 제공되기를 원한다. ('Increase visibility using smart logs' 참조) 또한 각 요청을 식별하고 동일한 트랜잭션을 설명하는 행의 상관관계를 허용하는 transaction-id를 포함해라. (‘Include Transaction-ID’ 참조)
+* 오류 관리 – 오류 처리는 Node.js로 제공되는 사이트의 아킬레스건이다. 많은 노드 프로세스가 작은 오류로 인해 출돌하는 반면 다른 프로세스들은 충돌하는 대신 오류가 있는 상태로 살아있다. 오류 처리 전략을 설정하는것은 절대적으로 즁요하다. [오류 처리의 좋은 예](http://goldbergyoni.com/checklist-best-practices-of-node-js-error-handling/)를 참고해라.
