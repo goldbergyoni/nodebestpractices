@@ -12,25 +12,25 @@ Osiągnięcie zaawansowanych funkcji wymaga długiej konfiguracji lub zakupu kom
 
 ### Przykład monitorowania: domyślny pulpit nawigacyjny AWS Cloudwatch. Trudno wyodrębnić dane w aplikacji
 
-![AWS cloudwatch default dashboard. Hard to extract in-app metrics](/assets/images/monitoring1.png)
+![AWS cloudwatch default dashboard. Hard to extract in-app metrics](../../assets/images/monitoring1.png)
 
 <br/><br/>
 
 ### Przykład monitorowania: domyślny pulpit nawigacyjny StackDriver. Trudno wyodrębnić dane w aplikacji
 
-![StackDriver default dashboard. Hard to extract in-app metrics](/assets/images/monitoring2.jpg)
+![StackDriver default dashboard. Hard to extract in-app metrics](../../assets/images/monitoring2.jpg)
 
 <br/><br/>
 
 ### Przykład monitorowania: Grafana jako warstwa interfejsu użytkownika, która wizualizuje surowe dane
 
-![Grafana as the UI layer that visualizes raw data](/assets/images/monitoring3.png)
+![Grafana as the UI layer that visualizes raw data](../../assets/images/monitoring3.png)
 
 <br/><br/>
 
 ### Co mówią inni blogerzy
 
-Z bloga [Rising Stack](http://mubaloo.com/best-practices-deploying-node-js-applications/):
+Z bloga [Rising Stack](https://blog.risingstack.com/node-js-performance-monitoring-with-prometheus/):
 
 > …We recommend you to watch these signals for all of your services:
 > Error Rate: Because errors are user facing and immediately affect your customers.

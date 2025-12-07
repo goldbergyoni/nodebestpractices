@@ -1,10 +1,10 @@
-# Handle errors centrally. Not within middlewares
+# 에러를 미들웨어에서 처리하지 말고 한군데에서 집중적으로 처리해라
 
-### One Paragraph Explainer
+### 한문단 설명
 
-Without one dedicated object for error handling, greater are the chances of important errors hiding under the radar due to improper handling. The error handler object is responsible for making the error visible, for example by writing to a well-formatted logger, sending events to some monitoring product like [Sentry](https://sentry.io/), [Rollbar](https://rollbar.com/), or [Raygun](https://raygun.com/). Most web frameworks, like [Express](http://expressjs.com/en/guide/error-handling.html#writing-error-handlers), provide an error handling middleware mechanism. A typical error handling flow might be: Some module throws an error -> API router catches the error -> it propagates the error to the middleware (e.g. Express, KOA) who is responsible for catching errors -> a centralized error handler is called -> the middleware is being told whether this error is an untrusted error (not operational) so it can restart the app gracefully. Note that it’s a common, yet wrong, practice to handle errors within Express middleware – doing so will not cover errors that are thrown in non-web interfaces.
+에러 처리를 위한 전용 객체가 없으면 잘못된 처리로 인해 중요한 에러가 숨어있을 가능성이 더 커진다. 예를 들어, 에러 처리 객체는 [Sentry](https://sentry.io/), [Rollbar](https://rollbar.com/), 또는 [Raygun](https://raygun.com/))와 같은 모니터링 프로그램에 이벤트를 보내 에러를 가시적으로 만드는 역할을 한다. [Express](http://expressjs.com/en/guide/error-handling.html#writing-error-handlers),와 같은 대부분의 웹 프레임워크는 미들웨어 메커니즘 에러처리를 제공한다. 일반적인 에러 처리 흐름은 다음과 같다: 일부 모듈이 에러를 던진다 -> API 라우터가 에러를 잡는다 -> 에러를 에러 검출을 담당하는 미들웨어(예: Express, KOA)에 전달한다 -> 중앙 에러 처리기가 호출된다 -> 미들웨어는 이 에러가 신뢰할 수 없는 에러인지(작동하지 않음) 알려 앱을 정상적으로 재시작 할 수 있다. Express 미들웨어 내에서 오류를 처리하는 것이 일반적이지만 잘못된 관습이다 – 이렇게 하면 웹 이외의 인터페이스에 발생하는 에러를 해결 할 수 없다.
 
-### Code Example – a typical error flow
+### 코드 예시 – 일반적인 에러 흐름
 
 ```javascript
 // DAL layer, we don't handle errors here
@@ -34,7 +34,7 @@ app.use(async (err, req, res, next) => {
 });
 ```
 
-### Code example – handling errors within a dedicated object
+### 코드 예시 – 전용 객체에서 에러 처리
 
 ```javascript
 module.exports.handler = new errorHandler();
@@ -49,7 +49,7 @@ function errorHandler() {
 }
 ```
 
-### Code Example – Anti Pattern: handling errors within the middleware
+### 코드 예시 – 좋지않은 패턴: 미들웨어에서 에러 처리
 
 ```javascript
 // middleware handling the error directly, who will handle Cron jobs and testing errors?
@@ -64,20 +64,20 @@ app.use((err, req, res, next) => {
 });
 ```
 
-### Blog Quote: "Sometimes lower levels can’t do anything useful except propagate the error to their caller"
+### 블로그 인용: "때로 하위 레벨은 호출자에게 전달하는 것 외에 쓸모있는 일을 할 수 없다"
 
-From the blog Joyent, ranked 1 for the keywords “Node.js error handling”
+Joyent 블로그에서 "Node.js 에러 처리" 키워드 1위에 위치했다
 
-> …You may end up handling the same error at several levels of the stack. This happens when lower levels can’t do anything useful except propagate the error to their caller, which propagates the error to its caller, and so on. Often, only the top-level caller knows what the appropriate response is, whether that’s to retry the operation, report an error to the user, or something else. But that doesn’t mean you should try to report all errors to a single top-level callback, because that callback itself can’t know in what context the error occurred…
+> …스택의 여러 레벨에서 동일한 오류를 처리할 수 있다. 이는 하위 레벨 수준에서 에러를 호출자에게 전달하는 것 외에는 쓸모있는 작업을 수행 할 수 없을 때 발생한다. 종종, 최상위 레벨 호출자만이 적절한 응답, 작업을 재시도할지, 사용자에게 에러를 보고할지, 또는 다른 작업을 수행할지를 알 수 있다. 그러나 모든 에러를 최상위 레벨에 보고해야 한다는 의미는 아니다, 왜냐하면 콜백 자체는 어떤 맥락에서 에러가 발생했는지 알 수 없기 때문이다…
 
-### Blog Quote: "Handling each err individually would result in tremendous duplication"
+### 블로그 인용: "각 에러를 개별적으로 처리하면 엄청난 중복이 발생할 수 있다"
 
-From the blog JS Recipes ranked 17 for the keywords “Node.js error handling”
+JS Recipes 블로그에서 "Node.js 에러 처리" 키워드 17위에 위치했다
 
-> ……In Hackathon Starter api.js controller alone, there are over 79 occurrences of error objects. Handling each err individually would result in a tremendous amount of code duplication. The next best thing you can do is to delegate all error handling logic to an Express middleware…
+> ……Hackathon Starter api.js 컨트롤러에서만 79개 이상의 오류 객체가 있다. 각 에러를 개별적으로 처리하면 엄청난 중복이 발생할 수 있다. 다음으로 가장 좋은 방법은 모든 에러 처리 로직을 Express 미들웨어에 위임하는 것이다…
 
-### Blog Quote: "HTTP errors have no place in your database code"
+### 블로그 인용: "HTTP 에러는 데이터베이스 코드에 포함되지 않는다"
 
-From the blog Daily JS ranked 14 for the keywords “Node.js error handling”
+Daily JS 블로그에서 "Node.js 에러 처리" 키워드 14위에 위치했다
 
-> ……You should set useful properties in error objects, but use such properties consistently. And, don’t cross the streams: HTTP errors have no place in your database code. Or for browser developers, Ajax errors have a place in the code that talks to the server, but not code that processes Mustache templates…
+> ……에러 객체에 유용한 속성을 설정해야 하지만, 이런 속성은 일관되게 사용해야 한다. 그리고, 스트림을 넘지 마라: HTTP 에러는 데이터베이스 코드에 포함되지 않는다. 또한 브라우저 개발자의 경우, Ajax 에러는 서버와 통신하는 코드가 있지만, 머스테치(Mustache) 템플릿을 처리하는 코드는 아니다…

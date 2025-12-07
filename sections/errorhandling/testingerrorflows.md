@@ -10,72 +10,69 @@ Testing ‘happy’ paths is no better than testing failures. Good testing code 
 <summary><strong>Javascript</strong></summary>
 
 ```javascript
-describe('Facebook chat', () => {
-  it('Notifies on new chat message', () => {
+describe("Facebook chat", () => {
+  it("Notifies on new chat message", () => {
     const chatService = new chatService();
     chatService.participants = getDisconnectedParticipants();
-    expect(chatService.sendMessage.bind({ message: 'Hi' })).to.throw(ConnectionError);
+    expect(chatService.sendMessage.bind({ message: "Hi" })).to.throw(ConnectionError);
   });
 });
 ```
+
 </details>
 
-<details>
-<summary><strong>Typescript</strong></summary>
-
-```typescript
-describe('Facebook chat', () => {
-  it('Notifies on new chat message', () => {
-    const chatService = new chatService();
-    chatService.participants = getDisconnectedParticipants();
-    expect(chatService.sendMessage.bind({ message: 'Hi' })).to.throw(ConnectionError);
-  });
-});
-```
-</details>
-
-### Code example: ensuring API returns the right HTTP error code
+### Code example: ensuring API returns the right HTTP error code and log properly
 
 <details>
 <summary><strong>Javascript</strong></summary>
 
 ```javascript
-it('Creates new Facebook group', () => {
-  const invalidGroupInfo = {};
-  return httpRequest({
-    method: 'POST',
-    uri: 'facebook.com/api/groups',
-    resolveWithFullResponse: true,
-    body: invalidGroupInfo,
-    json: true
-  }).then((response) => {
-    expect.fail('if we were to execute the code in this block, no error was thrown in the operation above')
-  }).catch((response) => {
-    expect(400).to.equal(response.statusCode);
+test("When exception is throw during request, Then logger reports the mandatory fields", async () => {
+  //Arrange
+  const orderToAdd = {
+    userId: 1,
+    productId: 2,
+  };
+
+  sinon
+    .stub(OrderRepository.prototype, "addOrder")
+    .rejects(new AppError("saving-failed", "Order could not be saved", 500));
+  const loggerDouble = sinon.stub(logger, "error");
+
+  //Act
+  const receivedResponse = await axiosAPIClient.post("/order", orderToAdd);
+
+  //Assert
+  expect(receivedResponse.status).toBe(500);
+  expect(loggerDouble.lastCall.firstArg).toMatchObject({
+    name: "saving-failed",
+    status: 500,
+    stack: expect.any(String),
+    message: expect.any(String),
   });
 });
 ```
+
 </details>
 
-<details>
-<summary><strong>Typescript</strong></summary>
+### Code example: ensuring that are uncaught exceptions are handled as well
 
-```typescript
-it('Creates new Facebook group', async () => {
-  let invalidGroupInfo = {};
-  try {
-    const response = await httpRequest({
-      method: 'POST',
-      uri: 'facebook.com/api/groups',
-      resolveWithFullResponse: true,
-      body: invalidGroupInfo,
-      json: true
-    })
-    // if we were to execute the code in this block, no error was thrown in the operation above
-    expect.fail('The request should have failed')
-  } catch(response) {
-    expect(400).to.equal(response.statusCode);
-  }
+<details>
+<summary><strong>Javascript</strong></summary>
+
+```javascript
+test("When unhandled exception is throw, Then the logger reports correctly", async () => {
+  //Arrange
+  await api.startWebServer();
+  const loggerDouble = sinon.stub(logger, "error");
+  const errorToThrow = new Error("An error that wont be caught 😳");
+
+  //Act
+  process.emit("uncaughtException", errorToThrow);
+
+  // Assert
+  expect(loggerDouble.calledWith(errorToThrow));
 });
 ```
+
 </details>

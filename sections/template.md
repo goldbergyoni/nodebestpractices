@@ -1,14 +1,14 @@
-# Title here
+# 제목 입력
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 한 문단 설명(One Paragraph Explainer)
 
-Text
+텍스트 입력
 
 <br/><br/>
 
-### Code Example – explanation
+### 코드 예제 - 설명
 
 ```javascript
 code here
@@ -16,7 +16,7 @@ code here
 
 <br/><br/>
 
-### Code Example – another
+### 코드 예제 - 또 다른 예시
 
 ```javascript
 code here
@@ -24,25 +24,25 @@ code here
 
 <br/><br/>
 
-### Blog Quote: "Title"
+### 블로그 인용: "제목"
 
- From the blog, pouchdb.com ranked 11 for the keywords “Node Promises”
+pouchdb.com 블로그에서 발췌.
+"Node Promises" 키워드 기준 상위11위에 랭크됨.
 
- > …text here
+> …여기에 인용문 입력
 
 <br/><br/>
 
- ### Example: Complex methods analysis with CodeClimate (commercial)
+### 예시: CodeClimate(상용)을 활용한 복잡한 메서드 분석
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/codeanalysis-climate-complex-methods.PNG "Complex methods analysis")
+![alt text](../assets/images/codeanalysis-climate-complex-methods.PNG "복잡한 메서드 분석")
 
-### Example: Code analysis trends and history with CodeClimate (commercial)
+### 예시: CodeClimate(상용)을 활용한 코드 분석 동향 및 이력
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/codeanalysis-climate-history.PNG "Code analysis history")
+![alt text](../assets/images/codeanalysis-climate-history.PNG "코드 분석 기록")
 
-### Example: Code analysis summary and trends with SonarQube (commercial)
+### 예시: SonarQube(상용)을 활용한 코드 분석 요약 및 동향
 
-![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/codeanalysis-sonarqube-dashboard.PNG "Code analysis history")
-
+![alt text](../assets/images/codeanalysis-sonarqube-dashboard.PNG "코드 분석 기록")
 
 <br/><br/>

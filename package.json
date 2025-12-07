@@ -1,0 +1,22 @@
+{
+  "name": "nodebestpractices",
+  "version": "1.0.0",
+  "description": "[✔]: assets/images/checkbox-small-blue.png",
+  "main": "gen-html.js",
+  "scripts": {
+    "lint": "markdownlint ./README*.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goldbergyoni/nodebestpractices.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/goldbergyoni/nodebestpractices/issues"
+  },
+  "homepage": "https://github.com/goldbergyoni/nodebestpractices#readme",
+  "dependencies": {
+    "markdownlint-cli": "^0.18.0"
+  }
+}

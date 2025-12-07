@@ -16,13 +16,13 @@ Já que você imprime declarações de log de qualquer maneira e obviamente prec
 
 ### Exemplo de visualização: Kibana (parte do stack Elastic) facilita a pesquisa avançada no conteúdo do log
 
-![Kibana facilita a pesquisa avançada no conteúdo do log](/assets/images/smartlogging1.png "Kibana facilita a pesquisa avançada no conteúdo do log")
+![Kibana facilita a pesquisa avançada no conteúdo do log](../../assets/images/smartlogging1.png "Kibana facilita a pesquisa avançada no conteúdo do log")
 
 <br/><br/>
 
 ### Exemplo de visualização: Kibana (parte do stack Elastic) visualiza dados com base em logs
 
-![Kibana visualiza dados com base em logs](/assets/images/smartlogging2.jpg "Kibana visualiza dados com base em logs")
+![Kibana visualiza dados com base em logs](../../assets/images/smartlogging2.jpg "Kibana visualiza dados com base em logs")
 
 <br/><br/>
 

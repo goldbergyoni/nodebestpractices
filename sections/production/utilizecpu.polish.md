@@ -10,7 +10,7 @@ Nic dziwnego, że w swojej podstawowej formie Node działa na jednym wątku = po
 
 ### Porównanie: równoważenie za pomocą Node cluster vs nginx
 
-![Balancing using Node’s cluster vs nginx](/assets/images/utilizecpucores1.png "Balancing using Node’s cluster vs nginx")
+![Balancing using Node’s cluster vs nginx](../../assets/images/utilizecpucores1.png "Balancing using Node’s cluster vs nginx")
 
 <br/><br/>
 

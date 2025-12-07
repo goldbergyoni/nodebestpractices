@@ -42,4 +42,4 @@ router.get('/ops/heapdump', (req, res, next) => {
 
 ▶ [Preparando sua aplicação Node.js para produção (Video)](https://www.youtube.com/watch?v=lUsNne-_VIk)
 
-![Preparando sua aplicação Node.js para produção](/assets/images/createmaintenanceendpoint1.png "Preparando sua aplicação Node.js para produção")
+![Preparando sua aplicação Node.js para produção](../../assets/images/createmaintenanceendpoint1.png "Preparando sua aplicação Node.js para produção")

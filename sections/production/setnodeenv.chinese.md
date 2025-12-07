@@ -30,7 +30,7 @@ If(process.env.NODE_ENV === “production”)
 > ...在node.js中有一个约定， 它使用名为NODE_ENV的变量来设置当前工作模式。我们看到它实际上是读取NODE_ENV，如果它没有设置，则默认为“development”。我们清楚的看到，通过设置NODE_ENV为production，node.js可以处理请求的数量可以提高大约三分之二，而CPU的使用率会略有下降。 *让我强调一下:设置NODE_ENV为production可以让你的应用程序快3倍!*
 
 
-![NODE_ENV=production](/assets/images/setnodeenv1.png "NODE_ENV=production")
+![NODE_ENV=production](../../assets/images/setnodeenv1.png "NODE_ENV=production")
 
 
 <br/><br/>

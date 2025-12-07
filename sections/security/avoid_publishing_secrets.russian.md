@@ -10,15 +10,15 @@
 ### Пример кода
 Example .npmignore file
 ```
-#tests
+# Tests
 test
 coverage
 
-#build tools
+# Build tools
 .travis.yml
 .jenkins.yml
 
-#environment
+# Environment
 .env
 .config
 
@@ -26,7 +26,7 @@ coverage
 
 Пример использования массива файлов в package.json
 
-```
+```json
 { 
   "files" : [
     "dist/moment.js",

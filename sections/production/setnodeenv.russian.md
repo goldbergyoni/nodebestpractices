@@ -29,6 +29,6 @@ if (process.env.NODE_ENV === 'production')
 Из блога [dynatrace](https://www.dynatrace.com/blog/the-drastic-effects-of-omitting-node_env-in-your-express-js-applications/):
 > ... В Node.js существует соглашение об использовании переменной NODE_ENV для установки текущего режима. Мы видим, что на самом деле он читает NODE_ENV и по умолчанию принимает значение "development", если он не установлен. Мы ясно видим, что установив NODE_ENV в рабочее состояние, количество запросов Node.js может обрабатывать скачки примерно на две трети, в то время как загрузка ЦП даже немного падает. *Позвольте мне подчеркнуть это: установка NODE_ENV в рабочий режим делает ваше приложение в 3 раза быстрее!*
 
-![NODE_ENV=production](/assets/images/setnodeenv1.png "NODE_ENV=production")
+![NODE_ENV=production](../../assets/images/setnodeenv1.png "NODE_ENV=production")
 
 <br/><br/>

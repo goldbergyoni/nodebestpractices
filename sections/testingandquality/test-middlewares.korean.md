@@ -20,8 +20,8 @@ test("A request without authentication header, should return http status 403", (
     method: "GET",
     url: "/user/42",
     headers: {
-      authentication: ""
-    }
+      authentication: "",
+    },
   });
   const response = httpMocks.createResponse();
   unitUnderTest(request, response);

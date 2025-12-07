@@ -1,0 +1,17 @@
+# Protégez et redémarrez votre processus en cas d'échec (en utilisant le bon outil)
+
+<br/><br/>
+
+### Un paragraphe d'explication
+
+A la base, les processus de Node doivent être protégés et redémarrés en cas de défaillance. Autrement dit, pour les petites applications et celles qui n'utilisent pas de conteneurs - des outils comme [PM2](https://www.npmjs.com/package/pm2-docker) sont parfaits car ils apportent la simplicité, des capacités de redémarrage et également une intégration riche avec Node. D'autres personnes avec de solides compétences Linux peuvent utiliser systemd et exécuter Node en tant que service. Les choses deviennent plus intéressantes pour les applications qui utilisent Docker ou n'importe quelle technologie de conteneur, car ils sont généralement accompagnées d'outils de gestion et d'orchestration de cluster (par exemple [AWS ECS](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html), [Kubernetes](https://kubernetes.io/), etc.) qui déploient, surveillent et réparent les conteneurs. Avec toutes ces fonctionnalités riches de gestion de cluster, y compris le redémarrage des conteneurs, pourquoi jouer avec d'autres outils comme PM2 ? Il n'y a pas de réponse à toute épreuve. Il existe de bonnes raisons de conserver PM2 dans les conteneurs (principalement sa version spécifique aux conteneurs [pm2-docker](https://www.npmjs.com/package/pm2-docker)) comme premier niveau de protection - il est beaucoup plus rapide de redémarrer un processus et de fournir des fonctionnalités spécifiques de Node comme le marquage du code lorsque le conteneur d'hébergement demande de redémarrer correctement. D'autres pourraient choisir d'éviter les couches inutiles. Pour conclure cet article, aucune solution ne conviendra à tous et l'important est de connaître les options.
+
+<br/><br/>
+
+### Ce que disent les autres blogueurs
+
+* Extrait des [Bonnes pratiques d'Express en production](https://expressjs.com/en/advanced/best-practice-performance.html) :
+> ... Lors du développement, vous avez démarré votre application simplement à partir de la ligne de commande avec server.js de Node ou quelque chose de similaire. **Mais faire cela en production est une recette catastrophique. Si l'application se bloque, elle sera hors ligne** jusqu'à ce que vous la redémarriez. Pour vous assurer que votre application redémarre en cas de panne, utilisez un gestionnaire de processus. Un gestionnaire de processus est un « conteneur » pour les applications qui facilite le déploiement, offre une haute disponibilité et vous permet de gérer l'application au moment de l'exécution.
+
+* Extrait du blog Medium [Comprendre le clustering de Node](https://medium.com/@CodeAndBiscuits/understanding-nodejs-clustering-in-docker-land-64ce2306afef#.cssigr5z3) :
+> ... Comprendre le clustering de Node.js dans Docker-Land : « Les conteneurs Docker sont des environnements virtuels légers et rationalisés, conçus pour simplifier les processus au strict minimum. Les processus qui gèrent et coordonnent leurs propres ressources n'ont plus la même valeur. **Au lieu de cela, les couches de gestion comme Kubernetes, Mesos et Cattle ont popularisé le concept selon lequel ces ressources devraient être gérées au niveau de l'infrastructure**. Les ressources CPU et mémoire sont allouées par des « planificateurs » et les ressources réseau sont gérées par des équilibreurs de charge (NdT, « load balancers ») fournis par la couche.

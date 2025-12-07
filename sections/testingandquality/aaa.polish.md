@@ -51,7 +51,7 @@ test('Should be classified as premium', () => {
 
  [Z bloga "30 Node.js testing best practices" od Yoni Goldberg](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347)
 
- ![Przykład raportu testu](/assets/images/6-parts-in-test.jpg "A test report example")
+ ![Przykład raportu testu](../../assets/images/6-parts-in-test.jpg "A test report example")
 
 <br/><br/>
 

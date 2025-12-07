@@ -13,7 +13,7 @@
 
 ### 比较:使用Node的clustre vs nginx做负载均衡
 
-![Balancing using Node’s cluster vs nginx](/assets/images/utilizecpucores1.png "Balancing using Node’s cluster vs nginx")
+![Balancing using Node’s cluster vs nginx](../../assets/images/utilizecpucores1.png "Balancing using Node’s cluster vs nginx")
 
 <br/><br/>
 

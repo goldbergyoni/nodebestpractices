@@ -9,13 +9,17 @@
 <br/> <br/>
 
 ### Martin Fowler - Chief Scientist at ThoughtWorks
+
 "Refactoring - Improving the Design of Existing Code" 발췌.
+
 > 리팩토링은 존재하는 코드 베이스의 디자인을 발전시키기 위한 통제된 기술이다.
 
 <br/> <br/>
 
 ### Evan Burchard - Web Development Consultant and Author
+
 "Refactoring JavaScript: Turning Bad Code into Good Code" 발췌.
+
 > 당신이 어떤 프레임워크 또는 "JS로 컴파일되는" 언어나 라이브러리를 사용하더라도, 당신의 근본적인 자바스크립트 퀄리티가 별로라면 버그들과 퍼포먼스에 대한 우려는 항상 이슈가 될 수밖에 없다.
 
 <br/> <br/>
@@ -31,6 +35,5 @@
 ### 예제: SonarQube를 이용한 코드의 요약 및 트렌드 분석 (commercial)
 
 ![alt text](https://github.com/i0natan/nodebestpractices/blob/master/assets/images/codeanalysis-sonarqube-dashboard.PNG "Code analysis history")
-
 
 <br/><br/>

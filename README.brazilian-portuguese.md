@@ -3,22 +3,22 @@
 # Melhores Práticas em Node.js
 
 <h1 align="center">
-  <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices">
+  <img src="assets/images/banner-2.jpg" alt="Node.js Best Practices"/>
 </h1>
 
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Contagem%20de%20Items%20-%2083%20Boas%20Práticas-blue.svg" alt="83 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Última%20Atualização%20-%20Jun%205%202019-green.svg" alt="Última Atualização: June 5, 2019"> <img src="https://img.shields.io/badge/%E2%9C%94%20Atualizado%20Para%20Versão%20-%20Node%2012.4.0%20LTS-brightgreen.svg" alt="Atualizado para Node 12.4.0 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Contagem%20de%20Items%20-%2083%20Boas%20Práticas-blue.svg" alt="83 items"/> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Última%20Atualização%20-%20Jun%205%202019-green.svg" alt="Última Atualização: June 5, 2019"/> <img src="https://img.shields.io/badge/%E2%9C%94%20Atualizado%20Para%20Versão%20-%20Node%2012.4.0%20LTS-brightgreen.svg" alt="Atualizado para Node 12.4.0 LTS"/>
 </div>
 
 <br/>
 
-[![nodepractices](/assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Siga-nos no Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
+[![nodepractices](./assets/images/twitter-s.png)](https://twitter.com/nodepractices/) **Siga-nos no Twitter!** [**@nodepractices**](https://twitter.com/nodepractices/)
 
 <br/>
 
-Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.md), [![BR](/assets/flags/BR.png)**BR**](/README.brazilian-portuguese.md) [(![ES](/assets/flags/ES.png)**ES**, ![FR](/assets/flags/FR.png)**FR**, ![HE](/assets/flags/HE.png)**HE**, ![KR](/assets/flags/KR.png)**KR**, ![RU](/assets/flags/RU.png)**RU** e ![TR](/assets/flags/TR.png)**TR** em progresso!)](#translations)
+Leia em diferentes idiomas: [![CN](./assets/flags/CN.png)**CN**](./README.chinese.md), [![BR](./assets/flags/BR.png)**BR**](./README.brazilian-portuguese.md), [![RU](./assets/flags/RU.png)**RU**](./README.russian.md), [![PL](./assets/flags/PL.png)**PL**](./README.polish.md), [![JA](./assets/flags/JA.png)**JA**](./README.japanese.md), [![EU](./assets/flags/EU.png)**EU**](./README.basque.md) [(![ES](./assets/flags/ES.png)**ES**, ![FR](./assets/flags/FR.png)**FR**, ![HE](./assets/flags/HE.png)**HE**, ![KR](./assets/flags/KR.png)**KR** and ![TR](./assets/flags/TR.png)**TR** em progresso! )](#translations)
 
 <br/>
 
@@ -28,17 +28,19 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 - **Nova Boa Prática:** 4.4: [Evite dados fixos e sementes para teste, adicione os dados no teste](#4-práticas-de-testes-e-qualidade-geral)
 
-- **Nova Boa Prática:** 6.25: [Evite publicar segredos no registro do npm](/sections/security/avoid_publishing_secrets.brazilian-portuguese.md)
+- **Nova Boa Prática:** 6.25: [Evite publicar segredos no registro do npm](./sections/security/avoid_publishing_secrets.brazilian-portuguese.md)
 
-- **Nova tradução:** ![BR](/assets/flags/BR.png) [Português Brasileiro](/README.brazilian-portuguese.md) disponível agora, cortesia de [Marcelo Melo](https://github.com/marcelosdm)! ❤️
+- **Nova tradução:** ![BR](./assets/flags/BR.png) [Português Brasileiro](./README.brazilian-portuguese.md) disponível agora, cortesia de [Marcelo Melo](https://github.com/marcelosdm)! ❤️
+
+- **🎊 60,000 estrelas!**: Nosso repo recebeu estrela e a confiança de 60.100 desenvolvedores. Estamos sem palavras
 
 <br/><br/>
 
-# Bem-vindo! 3 Coisas Que Você Precisa Saber:
+# Bem-vindo! 3 Coisas Que Você Precisa Saber
 
 **1. Quando você lê aqui, na verdade você lê alguns dos melhores artigos de Node.js -** este é um resumo e curadoria dos mais bem ranqueados conteúdos sobre as melhores práticas do Node.js.
 
-**2. Esta é a maior coletânea, e está crescendo mais a cada semana -** atualmente, são apresentadas mais de 80 melhores práticas, guias de estilo e dicas de arquitetura. Novas issues e PR são criadas diariamente para manter este livro vivo atualizado. Gostaríamos muito de ver você contribuindo aqui, seja corrigindo algum erro de código ou sugerindo novas e brilhantes ideias. Veja nossas [conquistas aqui](https://github.com/i0natan/nodebestpractices/milestones?direction=asc&sort=due_date&state=open).
+**2. Esta é a maior coletânea, e está crescendo mais a cada semana -** atualmente, são apresentadas mais de 80 melhores práticas, guias de estilo e dicas de arquitetura. Novas issues e PR são criadas diariamente para manter este livro vivo atualizado. Gostaríamos muito de ver você contribuindo aqui, seja corrigindo algum erro de código ou sugerindo novas e brilhantes ideias. Veja nossas [conquistas aqui](https://github.com/goldbergyoni/nodebestpractices/milestones?direction=asc&sort=due_date&state=open).
 
 **3. A maioria dos tópicos possuem informações adicionais -** perto dos tópicos das melhores práticas, você encontrará o link **🔗Leia Mais** que irá apresentar exemplos de códigos, citações de blogs selecionados e mais informações.
 
@@ -46,13 +48,13 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 ## Índice
 
-1.  [Práticas de Estrutura de Projeto (5)](#1-práticas-de-estrutura-de-projeto)
-2.  [Práticas de Tratamento de Erros (11) ](#2-práticas-de-tratamento-de-erros)
-3.  [Práticas de Estilo de Código (12) ](#3-práticas-de-estilo-de-código)
-4.  [Práticas de Testes e Qualidade Geral (11) ](#4-práticas-de-testes-e-qualidade-geral)
-5.  [Práticas de Produção (18) ](#5-boas-práticas-de-produção)
-6.  [Práticas de Segurança (25)](#6-boas-práticas-em-segurança)
-7.  [Práticas de Performance (1) (Em Progresso ✍️)](#7-boas-práticas-em-performance)
+1. [Práticas de Estrutura de Projeto (5)](#1-práticas-de-estrutura-de-projeto)
+2. [Práticas de Tratamento de Erros (12) ](#2-práticas-de-tratamento-de-erros)
+3. [Práticas de Estilo de Código (13) ](#3-práticas-de-estilo-de-código)
+4. [Práticas de Testes e Qualidade Geral (13) ](#4-práticas-de-testes-e-qualidade-geral)
+5. [Práticas de Produção (19) ](#5-boas-práticas-de-produção)
+6. [Práticas de Segurança (25)](#6-boas-práticas-em-segurança)
+7. [Práticas de Performance (1) (Em Progresso ✍️)](#7-boas-práticas-em-performance)
 
 <br/><br/>
 
@@ -60,11 +62,11 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 ## ![✔] 1.1 Estruture sua solução por componentes
 
-**TL;DR:** A pior armadilha das grandes aplicações é manter uma enorme base de código com centenas de dependências - tal qual as monolíticas, que diminuem a velocidade dos desenvolvedores conforme eles tentam incorporar novos recursos. Em vez disso, particione seu código em componentes, cada um com sua própria pasta ou uma base de código dedicada, e garanta cada unidade seja mantida pequena e simples. Veja o link ‘Leia Mais’ abaixo, para ver exemplos de estrutura correta de projeto.
+**TL;DR:** A pior armadilha das grandes aplicações é manter uma enorme base de código com centenas de dependências - tal qual as monolíticas, que diminuem a velocidade dos desenvolvedores conforme eles tentam incorporar novos recursos. Em vez disso, particione seu código em componentes, cada um com sua própria pasta ou uma base de código dedicada, e garanta que cada unidade seja mantida pequena e simples. Veja o link ‘Leia Mais’ abaixo, para ver exemplos de estrutura correta de projeto.
 
 **Caso contrário:** Quando desenvolvendo novos recursos, desenvolvedores têm dificuldade para perceber o impacto de suas modificações e temem estragar outros componentes dependentes - deploys se tornam mais lentos e arriscados. Também é considerado mais difícil de escalar quando nenhuma unidade de negócio está separada.
 
-🔗 [**Leia mais: estruture por componentes**](/sections/projectstructre/breakintcomponents.brazilian-portuguese.md)
+🔗 [**Leia mais: estruture por componentes**](./sections/projectstructre/breakintcomponents.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -74,7 +76,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Uma aplicação que misture objetos WEB com outras camadas não podem ser acessadas por códigos de teste, CRON jobs e outras chamadas não oriundas do Express.
 
-🔗 [**Leia Mais: seu app em camadas**](/sections/projectstructre/createlayers.brazilian-portuguese.md)
+🔗 [**Leia Mais: seu app em camadas**](./sections/projectstructre/createlayers.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -84,7 +86,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Você deverá criar seu próprio ciclo de implantação e dependência.
 
-🔗 [**Leia Mais: estrutura por característica**](/sections/projectstructre/wraputilities.brazilian-portuguese.md)
+🔗 [**Leia Mais: estrutura por característica**](./sections/projectstructre/wraputilities.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -94,17 +96,17 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Sua API será acessível apenas para testes via chamadas HTTP (mais lentos e muito mais difíceis de gerar relatórios de cobertura). Provavelmente não será um grande prazer manter centenas de linhas de código em um único arquivo.
 
-🔗 [**Leia Mais: separe 'app' e 'server' no Express**](/sections/projectstructre/separateexpress.brazilian-portuguese.md)
+🔗 [**Leia Mais: separe 'app' e 'server' no Express**](./sections/projectstructre/separateexpress.brazilian-portuguese.md)
 
 <br/><br/>
 
 ## ![✔] 1.5 Use configuração consciente, segura e hierárquica do ambiente
 
-**TL;DR:** Uma definição de configuração perfeita e impecável deve garantir que (a) as chaves possam ser lidas a partir do arquivo E TAMBÉM da variável de ambiente (b) os segredos sejam mantidos fora do código consolidado (c) a configuração é hierárquica para facilitar a localização. Existem alguns pacotes que podem auxiliar na checagem destes tópicos, como [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf) e [config](https://www.npmjs.com/package/config)
+**TL;DR:** Uma definição de configuração perfeita e impecável deve garantir que (a) as chaves possam ser lidas a partir do arquivo E TAMBÉM da variável de ambiente (b) os segredos sejam mantidos fora do código consolidado (c) a configuração é hierárquica para facilitar a localização. Existem alguns pacotes que podem auxiliar na checagem destes tópicos, como [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config) e [convict](https://www.npmjs.com/package/convict)
 
 **Caso contrário:** Deixar de satisfazer qualquer um dos requisitos de configuração simplesmente atrapalhará a equipe de desenvolvimento ou devops. Provavelmente ambas.
 
-🔗 [**Leia Mais: melhores práticas de configuração**](/sections/projectstructre/configguide.brazilian-portuguese.md)
+🔗 [**Leia Mais: melhores práticas de configuração**](./sections/projectstructre/configguide.brazilian-portuguese.md)
 
 <br/><br/><br/>
 
@@ -118,7 +120,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** O estilo de callback do Node.js, function(err, response), é um caminho promissor para um código insustentável devido à combinação de manipulação de erro com código casual, aninhamento excessivo e padrões de codificação inadequados.
 
-🔗 [**Leia Mais: evitando callbacks**](/sections/errorhandling/asyncerrorhandling.brazilian-portuguese.md)
+🔗 [**Leia Mais: evitando callbacks**](./sections/errorhandling/asyncerrorhandling.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -128,7 +130,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Ao invocar algum componente, sendo incerto qual tipo de erro irá retornar - isso faz com que o tratamento de erros seja muito mais difícil. Até pior, usar tipos personalizados para descrever erros pode levar à perda de informações de erros críticos, como o stack trace!
 
-🔗 [**Leia Mais: usando o objeto interno de erro**](/sections/errorhandling/useonlythebuiltinerror.brazilian-portuguese.md)
+🔗 [**Leia Mais: usando o objeto interno de erro**](./sections/errorhandling/useonlythebuiltinerror.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -138,7 +140,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Você pode sempre reiniciar o aplicativo quando um erro aparecer, mas por que derrubar aproximadamente 5000 usuários que estavam online por causa de um pequeno erro operacional previsto? O contrário também não é ideal - manter a aplicação rodando quando um problema desconhecido (erro de programação) ocorreu, pode levar para um comportamento não esperado. Diferenciá-los, permite agir com tato e aplicar uma abordagem equilibrada baseada no dado contexto.
 
-🔗 [**Leia Mais: erros operacionais vs erros de programação**](/sections/errorhandling/operationalvsprogrammererror.brazilian-portuguese.md)
+🔗 [**Leia Mais: erros operacionais vs erros de programação**](./sections/errorhandling/operationalvsprogrammererror.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -148,7 +150,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Não tratar os erros em um mesmo lugar irá levar à duplicidade de código, e provavelmente, a erros tratados incorretamente.
 
-🔗 [**Leia Mais: tratando erros de forma centralizada**](/sections/errorhandling/centralizedhandling.brazilian-portuguese.md)
+🔗 [**Leia Mais: tratando erros de forma centralizada**](./sections/errorhandling/centralizedhandling.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -158,27 +160,27 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Um cliente de uma API pode decidir travar e reiniciar, apenas pelo motivo de ter recebido de volta um erro que não conseguiu entender. Nota: o visitante de sua API pode ser você (muito comum em um ambiente de microsserviço).
 
-🔗 [**Leia Mais: documentando erros de API no Swagger ou GraphQL**](/sections/errorhandling/documentingusingswagger.brazilian-portuguese.md)
+🔗 [**Leia Mais: documentando erros de API no Swagger ou GraphQL**](./sections/errorhandling/documentingusingswagger.brazilian-portuguese.md)
 
 <br/><br/>
 
 ## ![✔] 2.6 Finalize o processo quando um estranho chegar
 
-**TL;DR:** Quando ocorre um erro desconhecido (um erro de programação, veja a melhor prática #3) - há incerteza sobre a integridade da aplicação. Uma prática comum sugere reiniciar cuidadosamente o processo utilizando uma ferramenta de “reinicialização” como Forever e PM2.
+**TL;DR:** Quando ocorre um erro desconhecido (um erro de programação, veja a melhor prática #3) - há incerteza sobre a integridade da aplicação. Uma prática comum sugere reiniciar cuidadosamente o processo utilizando uma ferramenta de “reinicialização” como [Forever](https://www.npmjs.com/package/forever) e [PM2](http://pm2.keymetrics.io/).
 
 **Caso contrário:** Quando uma exceção desconhecida é lançada, algum objeto pode estar com defeito (por exemplo, um emissor de evento que é usado globalmente e não dispara mais eventos devido a alguma falha interna) e todas as requisições futuras podem falhar ou se comportar loucamente.
 
-🔗 [**Leia Mais: finalizando o processo**](/sections/errorhandling/shuttingtheprocess.brazilian-portuguese.md)
+🔗 [**Leia Mais: finalizando o processo**](./sections/errorhandling/shuttingtheprocess.brazilian-portuguese.md)
 
 <br/><br/>
 
 ## ![✔] 2.7 Use um agente de log maduro para aumentar a visibilidade de erros
 
-**TL;DR:** Um conjunto de ferramentas de registro maduras como Winston, Bunyan ou Log4j, irão acelerar a descoberta e entendimento de erros. Portanto, esqueça o console.log.
+**TL;DR:** Um conjunto de ferramentas de registro maduras como [Pino](https://www.npmjs.com/package/pino), [Winston](https://www.npmjs.com/package/winston), [Bunyan](https://www.npmjs.com/package/bunyan) ou [Log4js](https://www.npmjs.com/package/log4js), irão acelerar a descoberta e entendimento de erros. Portanto, esqueça o console.log.
 
 **Caso contrário:** Ficar procurando através de console.logs ou manualmente em arquivos de texto confusos sem utilizar ferramentas de consulta ou um visualizador de log decente, pode mantê-lo ocupado até tarde.
 
-🔗 [**Leia Mais: usando um logger maduro**](/sections/errorhandling/usematurelogger.brazilian-portuguese.md)
+🔗 [**Leia Mais: usando um logger maduro**](./sections/errorhandling/usematurelogger.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -188,7 +190,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Sem testes, seja automático ou manual, não podemos confiar em nosso código para retornar os erros certos. Sem erros significantes, não há tratamento de erros.
 
-🔗 [**Leia Mais: fluxos de testes de erros**](/sections/errorhandling/testingerrorflows.brazilian-portuguese.md)
+🔗 [**Leia Mais: fluxos de testes de erros**](./sections/errorhandling/testingerrorflows.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -198,7 +200,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Você pode gastar muito esforço medindo o desempenho e os tempos de inatividade (downtime) da API. Provavelmente, você nunca saberá quais são suas partes de código mais lentas no cenário real e como elas afetam o UX.
 
-🔗 [**Leia Mais: usando APM**](/sections/errorhandling/apmproducts.brazilian-portuguese.md)
+🔗 [**Leia Mais: usando APM**](./sections/errorhandling/apmproducts.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -208,7 +210,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Seus erros serão engolidos e não vão deixar rastros. Nada para se preocupar.
 
-🔗 [**Leia Mais: capturando rejeições de promises não tratadas**](/sections/errorhandling/catchunhandledpromiserejection.brazilian-portuguese.md)
+🔗 [**Leia Mais: capturando rejeições de promises não tratadas**](./sections/errorhandling/catchunhandledpromiserejection.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -218,7 +220,19 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Considere isto: sua função espera receber um “Desconto” como argumento numérico que foi esquecido de passar. Mais adiante, seu código verifica se Desconto!=0 (valor do desconto permitido é maior que zero). Depois, irá permitir que o usuário desfrute de um desconto. Meu Deus, que baita bug. Entendeu?
 
-🔗 [**Leia Mais: falhando rápido**](/sections/errorhandling/failfast.brazilian-portuguese.md)
+🔗 [**Leia Mais: falhando rápido**](./sections/errorhandling/failfast.brazilian-portuguese.md)
+
+<br/><br/>
+
+## ![✔] 2.12 Sempre use 'await' antes de retornar as 'promises' para evitar um rastreamento parcial da pilha de erro
+
+**TL;DR:** Sempre use `return await` quando retornar uma 'promise' para beneficiar o rastreamento completo da pilha de erro. Se um função retorna uma 'promise', essa função deve ser declarada como função `async` e  explicitamente `await` na `promise` antes de devolvê-la
+
+**Caso contrário:** Uma função que retorna uma `promise` sem o `await` não aparecerá na pilha de erro.
+A ausência dessas informações provavelmente complicariam a compreensão do fluxo que leva ao erro,
+especialmente se a causa do comportamento anormal estiver dentro da função ausente
+
+🔗 [**Leia Mais: retornando promises**](./sections/errorhandling/returningpromises.md)
 
 <br/><br/><br/>
 
@@ -232,7 +246,7 @@ Leia em diferentes idiomas: [![CN](/assets/flags/CN.png)**CN**](/README.chinese.
 
 **Caso contrário:** Desenvolvedores irão focar nas preocupações tediosas de espaçamento e largura de linha e o tempo poderá ser desperdiçado pensando sobre o estilo de código do projeto.
 
-🔗 [**Leia Mais: Usando ESLint e Prettier**](/sections/codestylepractices/eslint_prettier.brazilian-portuguese.md)
+🔗 [**Leia Mais: Usando ESLint e Prettier**](./sections/codestylepractices/eslint_prettier.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -275,9 +289,9 @@ Não importa se você usa ponto-e-vírgula ou não para separar suas declaraçõ
 
 **TL;DR:** Use o ESLint para obter conhecimento sobre as preocupações de separação. [Prettier](https://prettier.io/) ou [Standardjs](https://standardjs.com/) podem resolver automaticamente esses problemas.
 
-**Otherwise:** Como visto na seção anterior, o interpretador do JavaScript adiciona automaticamente um ponto-e-vírgula ao final de uma instrução, se não houver uma, ou considera uma instrução como não terminada onde deveria, o que pode levar a alguns resultados indesejáveis. Você pode usar atribuições e evitar o uso de expressões de função chamadas imediatas para evitar a maioria dos erros inesperados.
+**Caso contrário:** Como visto na seção anterior, o interpretador do JavaScript adiciona automaticamente um ponto-e-vírgula ao final de uma instrução, se não houver uma, ou considera uma instrução como não terminada onde deveria, o que pode levar a alguns resultados indesejáveis. Você pode usar atribuições e evitar o uso de expressões de função chamadas imediatas para evitar a maioria dos erros inesperados.
 
-### Exemplo de Código
+### Exemplo de código
 
 ```javascript
 // Faça
@@ -327,7 +341,7 @@ const count = 2 // tenta executar 2(), mas 2 não é uma função
 
 **Caso contrário:** O JavaScript é a única linguagem no mundo que permite invocar um construtor (“Class”) diretamente sem instanciá-lo primeiro. Consequentemente, Classes e construtores de funções são diferenciados começando com UpperCamelCase
 
-### Exemplo de Código
+### 3.6 Exemplo de Código
 
 ```javascript
 // para classes nós usamos UpperCamelCase
@@ -335,11 +349,11 @@ class SomeClassExample {}
 
 // para nomes de constantes nós usamos a palavra const e lowerCamelCase
 const config = {
-  key: 'value'
+  key: "value",
 };
 
 // para nomes de variáveis e funções nós usamos lowerCamelCase
-let someVariableExample = 'value';
+let someVariableExample = "value";
 function doSomething() {}
 ```
 
@@ -370,16 +384,16 @@ function doSomething() {}
 
 **Caso contrário:** Alterar a estrutura interna dos arquivos ou a assinatura pode quebrar a interface com clientes.
 
-### Exemplo de Código
+### 3.9 Exemplo de Código
 
 ```javascript
 // Do
-module.exports.SMSProvider = require('./SMSProvider');
-module.exports.SMSNumberResolver = require('./SMSNumberResolver');
+module.exports.SMSProvider = require("./SMSProvider");
+module.exports.SMSNumberResolver = require("./SMSNumberResolver");
 
 // Avoid
-module.exports.SMSProvider = require('./SMSProvider/SMSProvider.js');
-module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolver.js');
+module.exports.SMSProvider = require("./SMSProvider/SMSProvider.js");
+module.exports.SMSNumberResolver = require("./SMSNumberResolver/SMSNumberResolver.js");
 ```
 
 <br/><br/>
@@ -390,21 +404,21 @@ module.exports.SMSNumberResolver = require('./SMSNumberResolver/SMSNumberResolve
 
 **Caso contrário:** Variáveis diferentes podem retornar verdadeiro quando comparadas usando o operador `==`.
 
-### Exemplo de Código
+### 3.10 Exemplo de Código
 
 ```javascript
-'' == '0'           // false
-0 == ''             // true
-0 == '0'            // true
+"" == "0"; // false
+0 == ""; // true
+0 == "0"; // true
 
-false == 'false'    // false
-false == '0'        // true
+false == "false"; // false
+false == "0"; // true
 
-false == undefined  // false
-false == null       // false
-null == undefined   // true
+false == undefined; // false
+false == null; // false
+null == undefined; // true
 
-' \t\r\n ' == 0     // true
+" \t\r\n " == 0; // true
 ```
 
 Todas as declarações acima false se feitas com `===`.
@@ -449,29 +463,39 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Uma implantação falhou, um teste chamado "Adicionar produto" falhou. Isso lhe diz exatamente o que está errado?
 
-🔗 [**Leia Mais: Inclua 3 partes em cada nome de teste**](/sections/testingandquality/3-parts-in-name.brazilian-portuguese.md)
+🔗 [**Leia Mais: Inclua 3 partes em cada nome de teste**](./sections/testingandquality/3-parts-in-name.brazilian-portuguese.md)
 
 <br/><br/>
 
-## ![✔] 4.3 Detecte problemas de código com um linter
+## ![✔] 4.3 Estutura de testes padrão AAA
 
-**TL;DR:** Use um code linter para checar a qualidade básica e detectar antipadrões antecipadamente. Rode-o antes de qualquer teste e adicione-o como um pre-commit git-hook para minimizar o tempo necessário para revisar e corrigir qualquer problema. Veja também [Seção 3](https://github.com/i0natan/nodebestpractices#3-code-style-practices) no Prática de Estilo de Código.
+**TL;DR:** Estruture seus testes com 3 seções bem separadas: Arrange, Act & Assert (AAA). A primeira parte inclui a configuração do teste, depois a execução do teste unitário, e finalmente, a fase de asserção. Seguir esta estrutura garante que o leitor não gaste nenhuma CPU cerebral para entender o plano de teste
+
+**Caso contrário:** Você não somente passará várias horas do dia para entender o código principal, mas agora também gastará várias horas no que deveria ter sido uma simples parte do dia (testando) esticando seu cérebro.
+
+🔗 [**Leia Mais: Estutura de testes padrão AAA**](./sections/testingandquality/aaa.md)
+
+<br/><br/>
+
+## ![✔] 4.4 Detecte problemas de código com um linter
+
+**TL;DR:** Use um code linter para checar a qualidade básica e detectar antipadrões antecipadamente. Rode-o antes de qualquer teste e adicione-o como um pre-commit git-hook para minimizar o tempo necessário para revisar e corrigir qualquer problema. Veja também [Seção 3](https://github.com/goldbergyoni/nodebestpractices#3-code-style-practices) no Prática de Estilo de Código.
 
 **Caso contrário:** Você pode deixar passar algum antipadrão e possível código vulnerável para seu ambiente de produção.
 
 <br/><br/>
 
-## ![✔] 4.4 Evite dados fixos e sementes para teste, adicione os dados no teste
+## ![✔] 4.5 Evite dados fixos e sementes para teste, adicione os dados no teste
 
 **TL;DR:** Para evitar o acoplamento de testes e facilitar o entendimento do fluxo do teste, cada teste deve adicionar e atuar em seu próprio conjunto de linhas de banco de dados. Sempre que um teste precisar extrair ou assumir a existência de alguns dados do banco de dados - ele deve incluir explicitamente esses dados e evitar a mutação de outros registros
 
 **Caso contrário:** Considere um cenário em que a implementação é abortada devido a falhas nos testes. Agora, a equipe gastará um tempo precioso de investigação que termina em uma triste conclusão: o sistema funciona bem, mas os testes interferem uns nos outros e quebram a compilação
 
-🔗 [**Leia Mais: Evite dados fixos para teste**](/sections/testingandquality/avoid-global-test-fixture.brazilian-portuguese.md)
+🔗 [**Leia Mais: Evite dados fixos para teste**](./sections/testingandquality/avoid-global-test-fixture.brazilian-portuguese.md)
 
 <br/><br/>
 
-## ![✔] 4.5 Inspencione constantemente por dependências vulneráveis
+## ![✔] 4.6 Inspencione constantemente por dependências vulneráveis
 
 **TL;DR:** Até mesmo as dependências mais confiáveis, como o Express, têm vulnerabilidades conhecidas. Isso pode ser facilmente contornado usando ferramentas comunitárias e comerciais como 🔗 [nsp](https://github.com/nodesecurity/nsp) que pode ser invocado a partir do seu CI em cada build.
 
@@ -479,7 +503,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.6 Marque seus testes
+## ![✔] 4.7 Marque seus testes
 
 **TL;DR:** Diferentes testes devem rodar em diferentes cenários: testes de rápidos, sem IO, devem ser executados quando um desenvolvedor salva ou faz commit em um arquivo, testes completos de ponta a ponta geralmente são executados quando uma nova solicitação de request é enviada, etc. Isso pode ser conseguido através da marcação de testes com palavras-chave como #cold #api #sanity. Assim você pode invocar o subconjunto desejado. Por exemplo, é desta forma que você invocaria apenas o grupo de sanity test usando o [Mocha](https://mochajs.org/): mocha --grep 'sanity'
 
@@ -487,7 +511,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.7 Verifique a cobertura de seu teste, isso te ajuda a identificar padrões incorretos de teste
+## ![✔] 4.8 Verifique a cobertura de seu teste, isso te ajuda a identificar padrões incorretos de teste
 
 **TL;DR:** Ferramentas de cobertura de código como [Istanbul](https://github.com/istanbuljs/istanbuljs)/[NYC](https://github.com/istanbuljs/nyc), são ótimas por 3 motivos: elas são gratuitas (nenhum esforço é necessário para beneficiar esses relatórios), elas ajuda a identificar diminuição na cobertura de testes, e por último mas não menos importante, ela destacam a incompatibilidade de testes: olhando relatórios coloridos de cobertura de código, você pode notar, por exemplo, áreas de código que nunca são testadas como cláusulas catch (o que significa que os testes só invocam os caminhos felizes e não como o aplicativo se comporta em erros). Configure-o para falhas se a cobertura estiver abaixo de um certo limite.
 
@@ -495,7 +519,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.8 Inspecione pacotes desatualizados
+## ![✔] 4.9 Inspecione pacotes desatualizados
 
 **TL;DR:** Use sua ferramenta preferida (por exemplo, 'npm outdated' ou [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) para detectar pacotes instalados que estão desatualizados, injetar essa verificação em seu pipeline de CI e até mesmo fazer uma falha grave em um cenário grave. Por exemplo, um cenário grave pode ser quando um pacote instalado esteja há 5 commits atrás (por exemplo, a versão local é 1.3.1 e a versão no repositório é 1.3.8) ou está marcada como descontinuada pelo autor - mate o build e impeça a implantação desta versão.
 
@@ -503,7 +527,7 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.9 Use docker-compose para testes e2e
+## ![✔] 4.10 Use docker-compose para testes e2e
 
 **TL;DR:** Teste de ponta a ponta (end to end, ou e2e), que inclui dados ativos, costumava ser o elo mais fraco do processo de CI, já que depende de vários serviços pesados como o banco de dados. O docker-compose deixa isso mamão com açúcar, criando um ambiente de produção usando um arquivo de texto simples e comandos fáceis. Isto permite criar todos os serviços dependentes, banco de dados e rede isolada para teste e2e. Por último mas não menos importante, ele pode manter um ambiente sem estado que é invocado antes de cada suíte de testes e é encerrado logo após.
 
@@ -511,23 +535,33 @@ Todas as declarações acima false se feitas com `===`.
 
 <br/><br/>
 
-## ![✔] 4.10 Refatore regularmente usando ferramentas de análise estática
+## ![✔] 4.11 Refatore regularmente usando ferramentas de análise estática
 
 **TL;DR:** O uso de ferramentas de análise estática ajuda fornecendo maneiras objetivas de melhorar a qualidade do código e manter seu código sustentável. Você pode adicionar ferramentas de análise estática para seu build de Integração Contínua (CI) falhar quando encontre code smells. Seus principais pontos de vantagem sobre o linting são a abilidade de inspecionar a qualidade no contexto de múltiplos arquivos (por exemplo, detectar duplicidades), realizar análises avançadas (por exemplo, complexidade de código), e acompanhar histórico e progresso de problemas de código. Dois dexemplos de ferramentas que podem ser utilizadas são [Sonarqube](https://www.sonarqube.org/) (mais de 2.600 [stars](https://github.com/SonarSource/sonarqube)) e [Code Climate](https://codeclimate.com/) (mais de 1.500 [stars](https://github.com/codeclimate/codeclimate)).
 
 **Caso contrário:** Com qualidade de código ruim, bugs e desempenho sempre serão um problema que nenhuma nova biblioteca maravilhosa ou recursos de última geração podem corrigir.
 
-🔗 [**Leia Mais: Refatoração!**](/sections/testingandquality/refactoring.brazilian-portuguese.md)
+🔗 [**Leia Mais: Refatoração!**](./sections/testingandquality/refactoring.brazilian-portuguese.md)
 
 <br/><br/>
 
-## ![✔] 4.11 Escolha cuidadosamente sua plataforma de Integração Contínua - CI (Jenkins vs CircleCI vs Travis vs Resto do mundo)
+## ![✔] 4.12 Escolha cuidadosamente sua plataforma de Integração Contínua - CI (Jenkins vs CircleCI vs Travis vs Resto do mundo)
 
 **TL;DR:** Sua plataforma de integração contínua (CICD) irá hospedar todas as ferramentas de qualidade (por exemplo, teste, lint), então ela deve vir com um ecosistema de plugins arrebatador. O [Jenkins](https://jenkins.io/) costumava ser o padrão de muitos projetos, pois tem a maior comunidade, juntamente com uma poderosa plataforma, ao preço de configuração complexa que exige uma curva de aprendizado íngreme. Atualmente, ficou bem mais fácil para configurar uma solução de CI usando ferramentas SaaS como [CircleCI](https://circleci.com) e outras. Essas ferramentas permitem a criação de um pipeline de CI flexível sem o peso de gerenciar toda a infraestrutura. Eventualmente, é um perde e ganha entre robustez e velocidade - escolha seu lado com cuidado!
 
 **Caso contrário:** Escolher algum fornecedor de nicho pode fazer com que você fique engessado quando precisar de alguma personalização avançada. Por outro lado, escolher o Jenkins pode ser uma perda de tempo precioso na configuração da infraestrutura.
 
-🔗 [**Leia Mais: Escolhendo a plataforma de CI**](/sections/testingandquality/citools.brazilian-portuguese.md)
+🔗 [**Leia Mais: Escolhendo a plataforma de CI**](./sections/testingandquality/citools.brazilian-portuguese.md)
+
+<br/><br/>
+
+## ![✔] 4.13 Teste seus 'middlewares' isoladamente
+
+**TL;DR:** quando um 'middleware' contém alguma lógica imensa que abrange muitas solicitações, vale a pena testá-lo isoladamente, sem ativar todo o framework. Isso pode ser facilmente alcançado por 'stubbing' e espionando os objetos {req, res, next}
+
+**Caso contrário:** Um bug no 'middleware Express' === um bug em todas ou na maioria das solicitações
+
+🔗 [**Read More: Test middlewares in isolation**](./sections/testingandquality/test-middlewares.md)
 
 <br/><br/><br/>
 
@@ -535,13 +569,13 @@ Todas as declarações acima false se feitas com `===`.
 
 # `5. Boas Práticas de Produção`
 
-## ![✔] 5.1. Monitoramento!
+## ![✔] 5.1. Monitoramento
 
 **TL;DR:** O monitoramento é um jogo de descobrir problemas antes que os clientes os encontrem - obviamente deve ser atribuída muita importância para isto. O mercado está sobrecarregado de ofertas, portanto, considere começar com a definição das métricas básicas que você deve seguir (sugestões minhas dentro), depois passe por recursos extras e escolha a solução que marca todas as caixas. Acesse o ‘Gist’ abaixo para uma visão geral das soluções.
 
 **Caso contrário:** Falha === clientes desapontados. Simples
 
-🔗 [**Leia Mais: Monitoramento!**](/sections/production/monitoring.brazilian-portuguese.md)
+🔗 [**Leia Mais: Monitoramento!**](./sections/production/monitoring.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -551,7 +585,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Você acaba com uma caixa preta que é difícil de raciocinar, então você começa a reescrever todas as declarações de log para adicionar informações adicionais.
 
-🔗 [**Leia Mais: Aumente a transparência usando smart logging**](/sections/production/smartlogging.brazilian-portuguese.md)
+🔗 [**Leia Mais: Aumente a transparência usando smart logging**](./sections/production/smartlogging.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -561,7 +595,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Seu único e pobre thread permanecerá ocupado fazendo tarefas de infra-estrutura em vez de lidar com o núcleo da sua aplicação e o desempenho certamente será degradado.
 
-🔗 [**Leia Mais: Delegue tudo o que for possível (por exemplo, gzip, SSL) a um proxy reverso**](/sections/production/delegatetoproxy.brazilian-portuguese.md)
+🔗 [**Leia Mais: Delegue tudo o que for possível (por exemplo, gzip, SSL) a um proxy reverso**](./sections/production/delegatetoproxy.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -571,7 +605,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** O QA testará completamente o código e aprovará uma versão que se comportará de maneira diferente na produção. Pior ainda, servidores diferentes no mesmo cluster de produção podem executar código diferente.
 
-🔗 [**Leia Mais: Bloqueio de dependências**](/sections/production/lockdependencies.brazilian-portuguese.md)
+🔗 [**Leia Mais: Bloqueio de dependências**](./sections/production/lockdependencies.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -581,7 +615,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Rodar dezenas de instâncias sem uma estratégia clara e muitas ferramentas juntas (gerenciamento de cluster, docker, PM2) pode levar o DevOps ao caos.
 
-🔗 [**Leia Mais: Poupe tempo de atividade do processo usando a ferramenta certa**](/sections/production/guardprocess.brazilian-portuguese.md)
+🔗 [**Leia Mais: Poupe tempo de atividade do processo usando a ferramenta certa**](./sections/production/guardprocess.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -591,7 +625,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Sua aplicação vai utilizar apenas 25% dos recursos disponíveis(!) ou talvez até menos. Note que um servidor típico possui 4 núcleos de processamento ou mais, o deploy ingênuo do Node.js utiliza apenas 1 (mesmo usando serviços de PaaS como AWS Beanstalk!)
 
-🔗 [**Leia Mais: Utilize todos os núcleos do processador**](/sections/production/utilizecpu.brazilian-portuguese.md)
+🔗 [**Leia Mais: Utilize todos os núcleos do processador**](./sections/production/utilizecpu.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -601,7 +635,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Você perceberá que está realizando muitos “deploys de diagnóstico” - enviando código para produção apenas para extrair algumas informações para fins de diagnóstico.
 
-🔗 [**Leia Mais: Crie um ‘endpoint de manutenção’**](/sections/production/createmaintenanceendpoint.brazilian-portuguese.md)
+🔗 [**Leia Mais: Crie um ‘endpoint de manutenção’**](./sections/production/createmaintenanceendpoint.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -611,7 +645,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Você pode gastar muito esforço medindo o desempenho e os tempos de inatividade da API, provavelmente você nunca saberá quais são suas partes de código mais lentas no cenário do mundo real e como elas afetam o UX.
 
-🔗 [**Leia Mais: Descubra erros e tempo de inatividade usando produtos APM**](/sections/production/apmproducts.brazilian-portuguese.md)
+🔗 [**Leia Mais: Descubra erros e tempo de inatividade usando produtos APM**](./sections/production/apmproducts.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -621,7 +655,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Uma pessoa fera em TI/DevOps não salvará um sistema mal escrito.
 
-🔗 [**Leia Mais: Deixe seu código pronto para produção**](/sections/production/productioncode.brazilian-portuguese.md)
+🔗 [**Leia Mais: Deixe seu código pronto para produção**](./sections/production/productioncode.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -631,7 +665,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** A memória de seus processos pode vazar cem megabytes por dia, assim como aconteceu no [Walmart](https://www.joyent.com/blog/walmart-node-js-memory-leak).
 
-🔗 [**Leia Mais: Meça e proteja o uso de memória**](/sections/production/measurememory.brazilian-portuguese.md)
+🔗 [**Leia Mais: Meça e proteja o uso de memória**](./sections/production/measurememory.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -641,7 +675,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Seu único thread do Node ficará ocupado fazendo streaming the centenas de arquivos de html/imagens/angular/react ao invés de alocar todo seu recurso para a tarefa que ele foi designado - servir conteúdo dinâmico.
 
-🔗 [**Leia Mais: Deixe seus recursos de frontend fora do Node**](/sections/production/frontendout.brazilian-portuguese.md)
+🔗 [**Leia Mais: Deixe seus recursos de frontend fora do Node**](./sections/production/frontendout.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -651,7 +685,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Falha em um determinado servidor resultará em tempo de inatividade da aplicação, em vez de apenas matar uma máquina defeituosa. Além do mais, dimensionar a elasticidade será mais desafiador devido à dependência de um servidor específico.
 
-🔗 [**Leia Mais: Seja stateless, mate seus Servidores quase todos os dias**](/sections/production/bestateless.brazilian-portuguese.md)
+🔗 [**Leia Mais: Seja stateless, mate seus Servidores quase todos os dias**](./sections/production/bestateless.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -661,7 +695,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Manter seu código limpo com vulnerabilidades sem ferramentas dedicadas exigirá o acompanhamento constante de publicações online sobre novas ameaças. Bem entendiante.
 
-🔗 [**Leia Mais: Utilize ferramentas que detectam vulnerabilidades automaticamente**](/sections/production/detectvulnerabilities.brazilian-portuguese.md)
+🔗 [**Leia Mais: Utilize ferramentas que detectam vulnerabilidades automaticamente**](./sections/production/detectvulnerabilities.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -671,7 +705,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Observar um log de erros de produção sem o contexto - o que aconteceu antes - torna muito mais difícil e mais lento raciocinar sobre o problema.
 
-🔗 [**Leia Mais: Atribua ‘TransactionId’ para cada declaração de log**](/sections/production/assigntransactionid.brazilian-portuguese.md)
+🔗 [**Leia Mais: Atribua ‘TransactionId’ para cada declaração de log**](./sections/production/assigntransactionid.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -681,7 +715,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Omitir esta simples propriedade pode degradar muito o desempenho. Por exemplo, ao utilizar o Express para renderização do lado do servidor, omitir o NODE_ENV o torna mais lento!
 
-🔗 [**Leia Mais: Defina NODE_ENV=production**](/sections/production/setnodeenv.brazilian-portuguese.md)
+🔗 [**Leia Mais: Defina NODE_ENV=production**](./sections/production/setnodeenv.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -699,7 +733,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Bugs recentemente descobertos e vulnerabilidades podem ser usados para explorar uma aplicação em produção, e sua aplicação pode se tornar incompatível com vários módulos e mais difícil de manter.
 
-🔗 [**Leia Mais: Use uma versão LTS do Node.js**](/sections/production/LTSrelease.brazilian-portuguese.md)
+🔗 [**Leia Mais: Use uma versão LTS do Node.js**](./sections/production/LTSrelease.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -709,7 +743,17 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Aplicações manipulando o roteamento de log === difícil de dimensionar, perda de logs, separação ruim de preocupações.
 
-🔗 [**Leia Mais: Roteamento de Logs**](/sections/production/logrouting.brazilian-portuguese.md)
+🔗 [**Leia Mais: Roteamento de Logs**](./sections/production/logrouting.brazilian-portuguese.md)
+
+<br/><br/>
+
+## ![✔] 5.19. Instale seus pacotes com `npm ci`
+
+**TL;DR:** Você precisa ter certeza de que o código de produção usa a versão exata dos pacotes que você realizou os testes. Execute `npm ci` para fazer estritamente uma instalação limpa de suas dependências correspondentes do package.json e do package-lock.json. O uso desse comando é recomendado em ambientes automatizados, como pipelines de integração contínua.
+
+**Caso contrário:** o QA testará completamente o código e aprovará uma versão que se comportará de maneira diferente em produção. Pior ainda, diferentes servidores no mesmo cluster de produção podem executar códigos diferentes.
+
+🔗 [**Read More: Use npm ci**](./sections/production/installpackageswithnpmci.md)
 
 <br/><br/><br/>
 
@@ -765,7 +809,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** A entrada de usuários não validados pode levar à injeção do operador ao trabalhar com MongoDB para NoSQL e não usar um sistema próprio ou ORM irão permitir facilmente um ataque de SQL injection, criando uma grande vulnerabilidade.
 
-🔗 [**Leia Mais: Prevenção de query injection usando bibliotecas de ORM/ODM**](/sections/security/ormodmusage.brazilian-portuguese.md)
+🔗 [**Leia Mais: Prevenção de query injection usando bibliotecas de ORM/ODM**](./sections/security/ormodmusage.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -773,7 +817,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **TL;DR:** Esta é uma coleção de conselhos de segurança que não estão relacionadas diretamente com Node.js - a implementação do Node não é muito diferente comparado a outras linguagens. Clique em “leia mais” para dar uma olhada.
 
-🔗 [**Leia Mais: Boas práticas comuns de segurança**](/sections/security/commonsecuritybestpractices.brazilian-portuguese.md)
+🔗 [**Leia Mais: Boas práticas comuns de segurança**](./sections/security/commonsecuritybestpractices.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -785,7 +829,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Invasores podem realizar ataques diretos aos usuários de sua aplicação, levando a grandes vulnerabilidades de segurança.
 
-🔗 [**Leia Mais: Usando headers seguros em sua aplicação**](/sections/security/secureheaders.brazilian-portuguese.md)
+🔗 [**Leia Mais: Usando headers seguros em sua aplicação**](./sections/security/secureheaders.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -797,7 +841,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Um invasor pode detectar seu framework web e atacar todas suas vulnerabilidades.
 
-🔗 [**Leia Mais: Segurança de dependências**](/sections/security/dependencysecurity.brazilian-portuguese.md)
+🔗 [**Leia Mais: Segurança de dependências**](./sections/security/dependencysecurity.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -809,7 +853,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Senhas ou segredos que são persistidos sem o uso de uma função segura, são vulneráveis a força bruta e ataques de dicionário que levarão eventualmente à sua divulgação.
 
-🔗 [**Leia Mais: Use o Bcrypt**](/sections/security/bcryptpasswords.brazilian-portuguese.md)
+🔗 [**Leia Mais: Use o Bcrypt**](./sections/security/bcryptpasswords.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -821,7 +865,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Um invasor pode armazenar um código JavaScript malicioso em seu banco de dados, que será enviado para os clientes.
 
-🔗 [**Leia Mais: Evite saídas**](/sections/security/escape-output.brazilian-portuguese.md)
+🔗 [**Leia Mais: Evite saídas**](./sections/security/escape-output.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -833,7 +877,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Sua generosidade e abordagem permissiva aumentam muito a superfície de ataque e incentivam o invasor a experimentar muitas entradas até encontrar alguma combinação para travar a aplicação.
 
-🔗 [**Leia Mais: Valide os esquemas de entrada JSON**](/sections/security/validation.brazilian-portuguese.md)
+🔗 [**Leia Mais: Valide os esquemas de entrada JSON**](./sections/security/validation.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -845,7 +889,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Tokens expirados ou extraviados, podem ser usados maliciosamente por terceiros para acessar uma aplicação e para representar o proprietário do token.
 
-🔗 [**Leia Mais: Blacklist de JSON Web Tokens**](/sections/security/expirejwt.brazilian-portuguese.md)
+🔗 [**Leia Mais: Blacklist de JSON Web Tokens**](./sections/security/expirejwt.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -854,13 +898,13 @@ Todas as declarações acima false se feitas com `===`.
 <a href="https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A9:Broken%20Authentication%20-green.svg" alt=""/></a>
 
 **TL;DR:** Uma técnica simples e poderosa é limitar as tentativas de autorização usando duas métricas:
-           
+
 1. A primeiro é o número de tentativas consecutivas com falha do mesmo ID/nome e endereço IP exclusivos do usuário.
 2. A segundo é o número de tentativas malsucedidas de um endereço IP durante um longo período de tempo. Por exemplo, bloqueie um endereço IP se ele fizer 100 tentativas com falha em um dia.
 
 **Caso contrário:** Um invasor pode emitir tentativas ilimitadas de senha automatizada para obter acesso a contas com privilégios em uma aplicação.
 
-🔗 [**Leia Mais: Limitando a taxa de login**](/sections/security/login-rate-limit.brazilian-portuguese.md)
+🔗 [**Leia Mais: Limitando a taxa de login**](./sections/security/login-rate-limit.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -872,7 +916,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Um invasor que consiga executar um script no servidor obtém poder ilimitado sobre a máquina local (por exemplo, alterar o iptable e redirecionar o tráfego para seu servidor).
 
-🔗 [**Leia Mais: Rode o Node.js com um usuário não raiz**](/sections/security/non-root-user.brazilian-portuguese.md)
+🔗 [**Leia Mais: Rode o Node.js com um usuário não raiz**](./sections/security/non-root-user.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -884,7 +928,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Sua aplicação terá que lidar com solicitações grandes, incapazes de processar o outro trabalho importante que ele precisa realizar, o que leva a implicações de desempenho e vulnerabilidade em relação a ataques DOS.
 
-🔗 [**Leia Mais: Limite o tamanho dos payloads**](/sections/security/requestpayloadsizelimit.brazilian-portuguese.md)
+🔗 [**Leia Mais: Limite o tamanho dos payloads**](./sections/security/requestpayloadsizelimit.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -896,7 +940,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** o código JavaScript malicioso encontra um caminho para um texto passado para o eval ou outras funções de avaliação em tempo real da linguagem JavaScript, e terá acesso total às permissões do JavaScript na página. Essa vulnerabilidade geralmente se manifesta como um ataque XSS.
 
-🔗 [**Leia Mais: Evite instruções eval do JavaScript**](/sections/security/avoideval.brazilian-portuguese.md)
+🔗 [**Leia Mais: Evite instruções eval do JavaScript**](./sections/security/avoideval.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -908,7 +952,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Expressões regulares mal escritas podem ser suscetíveis a ataques de Regular Expresssion DoS, que irão bloquear completamente o loop de eventos. Por exemplo, o popular pacote `moment` foi encontrado com vulnerabilidades de uso de RegEx maliciosos em novembro de 2017.
 
-🔗 [**Leia Mais: Evite RegEx maliciosos**](/sections/security/regex.brazilian-portuguese.md)
+🔗 [**Leia Mais: Evite RegEx maliciosos**](./sections/security/regex.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -920,7 +964,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** A entrada de usuário mal-intencionada pode encontrar o caminho para um parâmetro usado para require de arquivos adulterados, por exemplo, um arquivo carregado anteriormente no sistema de arquivos ou para acessar arquivos de sistema já existentes.
 
-🔗 [**Leia Mais: Carregamento seguro de módulos**](/sections/security/safemoduleloading.brazilian-portuguese.md)
+🔗 [**Leia Mais: Carregamento seguro de módulos**](./sections/security/safemoduleloading.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -932,7 +976,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Um plugin pode atacar através de uma infinita variedade de opções, como loops infinitos, sobrecarga de memória e acesso a variáveis sensíveis do ambiente de processo.
 
-🔗 [**Leia Mais: Rode códigos não seguros em uma sandbox**](/sections/security/sandbox.brazilian-portuguese.md)
+🔗 [**Leia Mais: Rode códigos não seguros em uma sandbox**](./sections/security/sandbox.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -944,7 +988,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** O uso ingênuo de processos filhos pode resultar na execução de comandos remotos ou em ataques de shell injection, devido à entrada do usuário mal-intencionado passada para um comando do sistema não-autorizado.
 
-🔗 [**Leia Mais: Tenha cautela ao trabalhar com processos filhos**](/sections/security/childprocesses.brazilian-portuguese.md)
+🔗 [**Leia Mais: Tenha cautela ao trabalhar com processos filhos**](./sections/security/childprocesses.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -956,7 +1000,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Detalhes confidenciais da aplicação como caminhos e arquivos do servidor, módulos de terceiros em uso e outros workflows internos da aplicação poderiam ser explorados e expostos por um invasor.
 
-🔗 [**Leia Mais: Oculte detalhes de erros dos usuários**](/sections/security/hideerrors.brazilian-portuguese.md)
+🔗 [**Leia Mais: Oculte detalhes de erros dos usuários**](./sections/security/hideerrors.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -978,7 +1022,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Cookies podem ser enviados através de conexões não seguras, e um hacker pode usar a sessão do usuário para identificar o framework utilizado na aplicação, bem como vulnerabilidades específicas do módulo.
 
-🔗 [**Leia Mais: Segurança de cookies e sessões**](/sections/security/sessions.brazilian-portuguese.md)
+🔗 [**Leia Mais: Segurança de cookies e sessões**](./sections/security/sessions.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -1000,7 +1044,7 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** Se um invasor descobrir que você não está validando informações externas fornecidas pelo usuário, ele poderá explorar essa vulnerabilidade postando links especialmente em fóruns, mídias sociais e outros locais públicos para que os usuários cliquem.
 
-🔗 [**Leia Mais: Impeça redirecionamentos não seguros**](/sections/security/saferedirects.brazilian-portuguese.md)
+🔗 [**Leia Mais: Impeça redirecionamentos não seguros**](./sections/security/saferedirects.brazilian-portuguese.md)
 
 <br/><br/>
 
@@ -1012,14 +1056,14 @@ Todas as declarações acima false se feitas com `===`.
 
 **Caso contrário:** As chaves, as senhas ou outros segredos da API do seu projeto estão sujeitos a abusos por qualquer pessoa que os encontre, o que pode resultar em perda financeira, falsificação de identidade e outros riscos.
 
-🔗 [**Leia Mais: Evite publicar segredos**](/sections/security/avoid_publishing_secrets.brazilian-portuguese.md)
+🔗 [**Leia Mais: Evite publicar segredos**](./sections/security/avoid_publishing_secrets.brazilian-portuguese.md)
 <br/><br/><br/>
 
 <p align="right"><a href="#índice">⬆ Voltar ao topo</a></p>
 
 # `7. Boas Práticas em Performance`
 
-## Nossos colaboradores estão trabalhando nesta seção. [Gostaria de participar?](https://github.com/i0natan/nodebestpractices/issues/256)
+## Nossos colaboradores estão trabalhando nesta seção. [Gostaria de participar?](https://github.com/goldbergyoni/nodebestpractices/issues/256)
 
 ## ![✔] 7.1. Prefira métodos JS nativos ao invés de utilitários de usuário, como o Lodash
 
@@ -1028,13 +1072,13 @@ Tenha em mente que, com a introdução do novo motor V8 juntamente com os novos 
 
 **Caso contrário:** Você terá que manter projetos de menor desempenho onde você poderia simplesmente ter usado o que **já estava** disponível ou lidar com mais algumas linhas em troca de mais alguns arquivos.
 
-🔗 [**Leia Mais: Prefira métodos nativos ao invés de utilitários do usuário como Lodash**](/sections/performance/nativeoverutil.brazilian-portuguese.md)
+🔗 [**Leia Mais: Prefira métodos nativos ao invés de utilitários do usuário como Lodash**](./sections/performance/nativeoverutil.brazilian-portuguese.md)
 
 <br/><br/><br/>
 
 # Feitos
 
-Para manter este guia e deixá-lo atualizado, estamos constantemente atualizando e aprimorando as diretrizes e as práticas recomendadas com a ajuda da comunidade. Você pode acompanhar nossos [feitos](https://github.com/i0natan/nodebestpractices/milestones) e se juntar aos grupos de trabalho, caso queira contribuir com este projeto.
+Para manter este guia e deixá-lo atualizado, estamos constantemente atualizando e aprimorando as diretrizes e as práticas recomendadas com a ajuda da comunidade. Você pode acompanhar nossos [feitos](https://github.com/goldbergyoni/nodebestpractices/milestones) e se juntar aos grupos de trabalho, caso queira contribuir com este projeto.
 
 <br/>
 
@@ -1044,27 +1088,28 @@ Todas as traduções são contribuições da comunidade. Nós ficaremos felizes 
 
 ### Traduções concluídas
 
-- ![BR](/assets/flags/BR.png) [Português Brasileiro](/README.brazilian-portuguese.md) - Cortesia de [Marcelo Melo](https://github.com/marcelosdm)
-- ![CN](/assets/flags/CN.png) [Chinês](README.chinese.md) - Cortesia de [Matt Jin](https://github.com/mattjin)
+- ![BR](./assets/flags/BR.png) [Português Brasileiro](./README.brazilian-portuguese.md) - Cortesia de [Marcelo Melo](https://github.com/marcelosdm)
+- ![CN](./assets/flags/CN.png) [Chinês](README.chinese.md) - Cortesia de [Matt Jin](https://github.com/mattjin)
+- ![EU](./assets/flags/EU.png) [Vasco](README.basque.md) - Cortesia de [Ane Diaz de Tuesta](https://github.com/anediaz) & Joxefe Diaz de Tuesta
 
 ### Traduções em andamento
 
-- ![FR](/assets/flags/FR.png) [Francês](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/129))
-- ![HE](/assets/flags/HE.png) Hebraico ([Discussão](https://github.com/i0natan/nodebestpractices/issues/156))
-- ![KR](/assets/flags/KR.png) [Coreano](https://github.com/i0natan/nodebestpractices/blob/korean-translation/README.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/94))
-- ![RU](/assets/flags/RU.png) [Russo](https://github.com/i0natan/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/454))
-- ![ES](/assets/flags/ES.png) [Espanhol](https://github.com/i0natan/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussão](https://github.com/i0natan/nodebestpractices/issues/95))
-- ![TR](/assets/flags/TR.png) Turco ([Discussão](https://github.com/i0natan/nodebestpractices/issues/139))
+- ![FR](./assets/flags/FR.png) [Francês](https://github.com/gaspaonrocks/nodebestpractices/blob/french-translation/README.french.md) ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/129))
+- ![HE](./assets/flags/HE.png) Hebraico ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/156))
+- ![KR](./assets/flags/KR.png) [Coreano](https://github.com/goldbergyoni/nodebestpractices/blob/korean-translation/README.md) ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/94))
+- ![RU](./assets/flags/RU.png) [Russo](https://github.com/goldbergyoni/nodebestpractices/blob/russian-translation/README.russian.md) ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/454))
+- ![ES](./assets/flags/ES.png) [Espanhol](https://github.com/goldbergyoni/nodebestpractices/blob/spanish-translation/README.spanish.md) ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/95))
+- ![TR](./assets/flags/TR.png) Turco ([Discussão](https://github.com/goldbergyoni/nodebestpractices/issues/139))
 
 <br/><br/>
 
 ## Comitê Diretivo
 
-Conheça os membros do comitê diretivo - as pessoas que trabalham juntas para fornecer orientação e direção futura para o projeto. Além disso, cada membro do comitê lidera um projeto rastreado em nossos [projetos do Github](https://github.com/i0natan/nodebestpractices/projects).
+Conheça os membros do comitê diretivo - as pessoas que trabalham juntas para fornecer orientação e direção futura para o projeto. Além disso, cada membro do comitê lidera um projeto rastreado em nossos [projetos do Github](https://github.com/goldbergyoni/nodebestpractices/projects).
 
-<img align="left" width="100" height="100" src="assets/images/members/yoni.png">
+<img align="left" width="100" height="100" src="assets/images/members/yoni.png"/>
 
-[Yoni Goldberg](https://github.com/i0natan)
+[Yoni Goldberg](https://github.com/goldbergyoni)
 <a href="https://twitter.com/goldbergyoni"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
 <a href="https://goldbergyoni.com"><img src="assets/images/www.png" width="16" height="16"></img></a>
 
@@ -1072,7 +1117,7 @@ Consultor de Node.js independente, que trabalha com clientes nos EUA, Europa e I
 
 <br/>
 
-<img align="left" width="100" height="100" src="assets/images/members/bruno.png">
+<img align="left" width="100" height="100" src="assets/images/members/bruno.png"/>
 
 [Bruno Scheufler](https://github.com/BrunoScheufler)
 <a href="https://brunoscheufler.com/"><img src="assets/images/www.png" width="16" height="16"></img></a>
@@ -1081,7 +1126,7 @@ Consultor de Node.js independente, que trabalha com clientes nos EUA, Europa e I
 
 <br/>
 
-<img align="left" width="100" height="100" src="assets/images/members/kyle.png">
+<img align="left" width="100" height="100" src="assets/images/members/kyle.png"/>
 
 [Kyle Martin](https://github.com/js-kyle)
 <a href="https://twitter.com/kylemartin_93"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
@@ -1091,7 +1136,7 @@ Full Stack Developer e Engenheiro de Confiabilidade de Sites com sede na Nova Ze
 
 <br/>
 
-<img align="left" width="100" height="100" src="assets/images/members/sagir.png">
+<img align="left" width="100" height="100" src="assets/images/members/sagir.png"/>
 
 [Sagir Khan](https://github.com/sagirk)
 <a href="https://twitter.com/sagir_k"><img src="assets/images/twitter-s.png" width="16" height="16"></img></a>
@@ -1106,22 +1151,22 @@ Especialista profundo em JavaScript e seu ecossistema - React, Node.js, MongoDB,
 
 Obrigado a todos nossos colaboradores! 🙏
 
-Nossos colaboradores são membros que estão contribuindo com o repositório em base regular, sugerindo novas práticas recomendadas, triando problemas, analisando solicitações de pull e muito mais. Se você estiver interessado em nos ajudar a orientar milhares de pessoas a criar melhores aplicações Node.js, leia nossas [diretrizes de colaborador](/.operations/CONTRIBUTING.md) 🎉
+Nossos colaboradores são membros que estão contribuindo com o repositório em base regular, sugerindo novas práticas recomendadas, triando problemas, analisando solicitações de pull e muito mais. Se você estiver interessado em nos ajudar a orientar milhares de pessoas a criar melhores aplicações Node.js, leia nossas [diretrizes de colaborador](./.operations/CONTRIBUTING.md) 🎉
 
-| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"></a> |
-| :--: | :--: |
-| [Ido Richter (Founder)](https://github.com/idori) | [Keith Holliday](https://github.com/TheHollidayInn) |
+| <a href="https://github.com/idori" target="_blank"><img src="assets/images/members/ido.png" width="75" height="75"/></a> | <a href="https://github.com/TheHollidayInn" target="_blank"><img src="assets/images/members/keith.png" width="75" height="75"/></a> |
+| :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------: |
+|                                    [Ido Richter (Founder)](https://github.com/idori)                                    |                                        [Keith Holliday](https://github.com/TheHollidayInn)                                         |
 
 ### Colaboradores anteriores
 
-| <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"></a> |
-| :--: |
-| [Refael Ackermann](https://github.com/refack) |
+| <a href="https://github.com/refack" target="_blank"><img src="assets/images/members/refael.png" width="50" height="50"/></a> |
+| :-------------------------------------------------------------------------------------------------------------------------: |
+|                                        [Refael Ackermann](https://github.com/refack)                                        |
 
 <br/>
 
 ## Thank You Notes
 
-We appreciate any contribution, from a single word fix to a new best practice. View our contributors and [contributing documentation here!](CONTRIBUTORS.md)
+We appreciate any contribution, from a single word fix to a new best practice. View our contributors and [contributing documentation here!](./README.md#contributors-)
 
 <br/><br/><br/>

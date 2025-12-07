@@ -18,7 +18,7 @@ Dostępnych jest wiele narzędzi pomagających w identyfikacji pakietów stron t
 
 Uruchomienie `npm audit` wygeneruje raport o słabych punktach bezpieczeństwa wraz z nazwą pakietu, istotnością i opisem podatności, ścieżką i innymi informacjami oraz, jeśli są dostępne, polecenia zastosowania łat w celu usunięcia luk.
 
-![npm audit example](/assets/images/npm-audit.png)
+![npm audit example](../../assets/images/npm-audit.png)
 
 🔗 [Czytaj: NPM blog](https://docs.npmjs.com/getting-started/running-a-security-audit)
 
@@ -29,7 +29,7 @@ Snyk oferuje bogaty w funkcje interfejs CLI, a także integrację z GitHub. Snyk
 Bogata w funkcje strona internetowa Snyka pozwala również na ocenę ad-hoc zależności, jeśli jest dostarczana z repozytorium GitHub lub adresem URL modułu npm. Możesz także wyszukiwać pakiety npm, które mają luki bezpośrednio.
 
 Przykład danych wyjściowych integracji Synk GitHub automatycznie utworzony pull request:
-![synk GitHub example](/assets/images/snyk.png)
+![synk GitHub example](../../assets/images/snyk.png)
 
 🔗 [Czytaj: Snyk website](https://snyk.io/)
 
@@ -43,7 +43,7 @@ Greenkeeper śledzi zależności npm określone w pliku `package.json` repozytor
 
 Przykład danych wyjściowych integracji Greenkeeper GitHub tworzący automatycznie pull request:
 
-![synk github example](/assets/images/greenkeeper.png)
+![synk github example](../../assets/images/greenkeeper.png)
 🔗 [Czytaj: Greenkeeper website](https://greenkeeper.io/)
 
 ### Dodatkowe źródła

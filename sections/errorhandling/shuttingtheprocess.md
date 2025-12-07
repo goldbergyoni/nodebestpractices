@@ -88,9 +88,9 @@ From the blog Joyent
 From the blog: JS Recipes
 
 > …There are primarily three schools of thoughts on error handling:
-1. Let the application crash and restart it.
-2. Handle all possible errors and never crash.
-3. A balanced approach between the two
+>1. Let the application crash and restart it.
+>2. Handle all possible errors and never crash.
+>3. A balanced approach between the two
 
 ### Blog Quote: "No safe way to leave without creating some undefined brittle state"
 

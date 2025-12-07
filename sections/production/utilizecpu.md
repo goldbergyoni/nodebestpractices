@@ -10,7 +10,7 @@ It might not come as a surprise that in its basic form, Node runs over a single 
 
 ### Comparison: Balancing using Node’s cluster vs nginx
 
-![Balancing using Node’s cluster vs nginx](/assets/images/utilizecpucores1.png "Balancing using Node’s cluster vs nginx")
+![Balancing using Node’s cluster vs nginx](../../assets/images/utilizecpucores1.png "Balancing using Node’s cluster vs nginx")
 
 <br/><br/>
 

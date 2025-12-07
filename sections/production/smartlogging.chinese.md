@@ -17,12 +17,12 @@
 
 
 ### 可视化示例: Kibana(Elastic stack的一部分)促进了对日志内容的高级搜索
-![Kibana facilitates advanced searching on log content](/assets/images/smartlogging1.png "Kibana facilitates advanced searching on log content")
+![Kibana facilitates advanced searching on log content](../../assets/images/smartlogging1.png "Kibana facilitates advanced searching on log content")
 
 <br/><br/>
 
 ### 可视化示例: Kibana(Elastic stack的一部分)基于日志来可视化数据
-![Kibana visualizes data based on logs](/assets/images/smartlogging2.jpg "Kibana visualizes data based on logs")
+![Kibana visualizes data based on logs](../../assets/images/smartlogging2.jpg "Kibana visualizes data based on logs")
 
 <br/><br/>
 

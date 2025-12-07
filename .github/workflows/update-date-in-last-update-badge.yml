@@ -1,0 +1,39 @@
+name: Update date in last update badge
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  run:
+    name: Update the date in last update badge to today
+    runs-on: ubuntu-20.04
+
+    # Limit this action to only run on the main repo and not on forks
+    if: github.repository_owner == 'goldbergyoni'
+    
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Update last update badge
+        run: |
+          # Make file runnable
+          chmod +x "${GITHUB_WORKSPACE}/.github/workflows/update-last-update-badge.sh"
+          # Run script
+          "${GITHUB_WORKSPACE}/.github/workflows/update-last-update-badge.sh" "${GITHUB_WORKSPACE}/README.md"
+
+      - name: Commit & Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: update the last update badge to today [skip ci]
+          author: Update Last Update Badge Action <${{ github.actor }}@users.noreply.github.com>
+          branch: update-last-update-badge
+          delete-branch: true
+          title: 'Update last update badge to today [skip ci]'
+          labels: |
+            update-last-update-badge
+            auto-merge
+          
+          # Force empty body as the action have default body
+          body: ''

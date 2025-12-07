@@ -7,7 +7,7 @@ HTML и другие веб-языки смешивают контент с ис
 
 ### Пример кода - не помещайте ненадежные данные в ваш HTML
 
-```javascript
+```html
 <script>...NEVER PUT UNTRUSTED DATA HERE...</script>   directly in a script
  
  <!--...NEVER PUT UNTRUSTED DATA HERE...-->             inside an HTML comment
@@ -22,7 +22,7 @@ HTML и другие веб-языки смешивают контент с ис
 
 ### Пример кода - вредоносный контент, который может быть введен в БД
 
-```javascript
+```html
 <div>
   <b>A pseudo comment to the a post</b>
   <script>

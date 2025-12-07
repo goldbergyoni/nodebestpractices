@@ -16,7 +16,7 @@ Também em `express-session`, a opção `cookie.secure` é configurada para fals
 
 ### Exemplo de código: definindo configurações de cookies seguros
 
- ```javascript
+```javascript
 // usando o middleware de sessão do express
 app.use(session({  
   secret: 'youruniquesecret', // seqüência secreta usada na assinatura do ID da sessão que é armazenado no cookie

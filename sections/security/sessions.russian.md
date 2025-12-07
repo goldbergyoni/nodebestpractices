@@ -16,7 +16,7 @@
 
 ### Пример кода: настройка параметров безопасных cookie
 
- ```javascript
+```javascript
 // using the express session middleware
 app.use(session({  
   secret: 'youruniquesecret', // secret string used in the signing of the session ID that is stored in the cookie

@@ -46,7 +46,7 @@ Z [repozytorium na ten temat, które koncentruje się na Lodash i Underscore](ht
  > Lodash and Underscore are great modern JavaScript utility libraries, and they are widely used by Front-end developers. However, when you are targeting modern browsers, you may find out that there are many methods which are already supported natively thanks to ECMAScript5 [ES5] and ECMAScript2015 [ES6]. If you want your project to require fewer dependencies, and you know your target browser clearly, then you may not need Lodash/Underscore.
 
 ### Przykład: Linting for non-native methods usage
-Istnieje [wtyczka ESLint](https://www.npmjs.com/package/eslint-plugin-you-dont-need-lodash-underscore) która wykrywa, gdzie korzystasz z bibliotek, ale nie musisz, ostrzegając Cię sugestiami (porównaj z przykładem poniżej).<br>
+Istnieje [wtyczka ESLint](https://www.npmjs.com/package/eslint-plugin-you-dont-need-lodash-underscore) która wykrywa, gdzie korzystasz z bibliotek, ale nie musisz, ostrzegając Cię sugestiami (porównaj z przykładem poniżej).<br/>
 Sposób konfiguracji polega na dodaniu wtyczki `eslint-plugin-you-dont-need-lodash-underscore` do pliku konfiguracyjnego ESLint:
 ```json
 {

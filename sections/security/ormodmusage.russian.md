@@ -33,7 +33,7 @@ db.balances.find({
 
 ### Пример - SQL-инъекция
 
-```
+```sql
 SELECT username, firstname, lastname FROM users WHERE id = 'user input';
 
 SELECT username, firstname, lastname FROM users WHERE id = 'evil'input';

@@ -11,6 +11,7 @@ Zgodnie z „zasadą najmniejszych uprawnień” użytkownik / proces musi mieć
 
 ```dockerfile
 FROM node:latest
+
 COPY package.json .
 RUN npm install
 COPY . .
