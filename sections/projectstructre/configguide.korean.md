@@ -1,28 +1,29 @@
-# Use environment aware, secure and hierarchical config
+# 환경을 인지하고, 안전하며, 계층적인 설정을 사용하라.
 
 <br/><br/>
 
-### One Paragraph Explainer
+### 한 문단 설명
 
-When dealing with configuration data, many things can just annoy and slow down:
+환경 설정 데이터를 다룰 때, 많은 것들이 성가시게 만들고 속도를 늦춘다:
 
-1. setting all the keys using process environment variables becomes very tedious when in need to inject 100 keys (instead of just committing those in a config file), however when dealing with files only the DevOps admins cannot alter the behavior without changing the code. A reliable config solution must combine both configuration files + overrides from the process variables
+1. 프로세스 환경 변수를 사용해 모든 키를 설정하는 것은 100개의 키를 주입해야 할 때(단순히 설정 파일에 커밋하는 대신) 매우 번거로워진다.
+   그러나 오로지 설정 파일만 사용하는 방식이라면, DevOps 관리자는 코드를 변경하지 않고는 서비스 동작을 바꿀 수 없다. 신뢰할 수 있는 설정 방식은 설정 파일과 환경 변수의 오버라이드를 모두 결합해야 한다.
 
-2. when specifying all keys in a flat JSON, it becomes frustrating to find and modify entries when the list grows bigger. A hierarchical JSON file that is grouped into sections can overcome this issue + few config libraries allow to store the configuration in multiple files and take care to union all at runtime. See example below
+2. 모든 키를 flat JSON 구조에서 지정할 경우, 항목이 많아질수록 값을 찾거나 수정하기가 매우 불편해진다. 섹션별로 그룹화된 계층적 JSON 파일은 이 문제를 해결할 수 있다. 또한 일부 설정 라이브러리는 여러 파일에 저장할 수 있게 해주고 실행 시점에 모두 병합해준다. 아래 예시를 참조하라.
 
-3. storing sensitive information like DB password is obviously not recommended but no quick and handy solution exists for this challenge. Some configuration libraries allow to encrypt files, others encrypt those entries during GIT commits or simply don't store real values for those entries and specify the actual value during deployment via environment variables.
+3. DB 비밀번호처럼 민감한 정보를 저장하는 것은 분명 추천되지 않지만, 이 문제에 대해 빠르고 편리한 해결책은 존재하지 않는다. 일부 설정 라이브러리는 파일을 암호화할 수 있게 해주고, 다른 라이브러리들은 GIT 커밋 과정에서 해당 항목들을 암호화하거나 단순히 해당 항목의 실제 값을 저장하지 않고 배포 과정에서 환경 변수를 통해 실제 값을 지정하게 한다.
 
-4. some advanced configuration scenarios demand to inject configuration values via command line (vargs) or sync configuration info via a centralized cache like Redis so multiple servers will use the same configuration data.
+4. 일부 고급 설정 시나리오에서는 커맨드 라인(vargs)을 통해 설정 값을 주입하게 하거나 Redis와 같은 중앙 캐시를 이용해 설정 정보를 동기화하여 여러 서버가 동일한 설정 데이터를 사용하도록 하게 한다.
 
-Some configuration libraries can provide most of these features for free, have a look at npm libraries like [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config), and [convict](https://www.npmjs.com/package/convict) which tick many of these requirements.
+일부 설정 라이브러리는 이러한 기능 대부분을 무료로 제공한다. 예를 들어 [rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config), [convict](https://www.npmjs.com/package/convict)와 같은 npm 라이브러리는 위 요구사항의 상당수를 충족한다.
 
 <br/><br/>
 
-### Code Example – hierarchical config helps to find entries and maintain huge config files
+### 코드 예시 - 계층적 설정은 대규모 설정 파일을 쉽게 유지하고 원하는 항목을 쉽게 찾도록 도와준다.
 
 ```js
 {
-  // Customer module configs 
+  // Customer module configs
   "Customer": {
     "dbConfig": {
       "host": "localhost",
@@ -31,7 +32,7 @@ Some configuration libraries can provide most of these features for free, have a
     },
     "credit": {
       "initialLimit": 100,
-      // Set low for development 
+      // Set low for development
       "initialDays": 1
     }
   }
