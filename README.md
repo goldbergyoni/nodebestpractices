@@ -22,9 +22,9 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 <br/>
 
-# 🎊 2024 edition is here!
+# 🎊 2026 edition is here!
 
-- **🛰 Modernized to 2024**: Tons of text edits, new recommended libraries, and some new best practices
+- **🛰 Modernized to 2026**: Tons of text edits, new recommended libraries, and some new best practices
 
 - **✨ Easily focus on new content**: Already visited before? Search for `#new` or `#updated` tags for new content only
 
