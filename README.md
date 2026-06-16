@@ -1391,6 +1391,32 @@ This style ensures that there is no ambiguity with global npm packages and makes
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
+## ![✔] 6.28. Scan uploaded files for malware before storing them
+### `🌟 #new`
+
+<a href="https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20–%20Unrestricted%20File%20Upload-green.svg" alt=""/></a>
+
+**TL;DR:** Validate uploaded files server-side against a malware engine before writing them to disk or object storage. Filename and MIME type come from the client and are trivially spoofed — only inspecting the actual bytes is reliable. ClamAV is the standard open-source engine for this; wrap it at the route level so a clean verdict is required before any storage operation proceeds:
+
+```javascript
+const { scan, Verdict } = require('pompelmi'); // ClamAV wrapper for Node.js
+
+app.post('/upload', upload.single('file'), async (req, res) => {
+  const result = await scan(req.file.path);
+
+  if (result !== Verdict.Clean) {
+    await fs.unlink(req.file.path);
+    return res.status(422).json({ error: 'File rejected', verdict: result.description });
+  }
+
+  // safe to move to permanent storage
+});
+```
+
+**Otherwise:** Malicious files stored on your infrastructure can be served to other users, exploit vulnerabilities in downstream parsers (PDF renderers, image processors, archive extractors), or act as a staging point for further attacks
+
+<br/><br/>
+
 # `7. Draft: Performance Best Practices`
 
 ## Our contributors are working on this section. [Would you like to join?](https://github.com/goldbergyoni/nodebestpractices/issues/256)
