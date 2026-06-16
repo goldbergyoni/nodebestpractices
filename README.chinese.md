@@ -19,7 +19,7 @@
 
 # 欢迎! 首先您应该知道的三件事情
 
-**1. 当您读到这里，实际上您读了很多关于Node.js的优秀文章 -** 这是对Node.js最佳实践中排名最高的内容的总结和分享
+**1. 您正在阅读数十篇最好的 Node.js 文章 -** 这是对Node.js最佳实践中排名最高的内容的总结和分享
 
 **2. 这里是最大的汇集，且每周都在增长 -** 当前，超过50个最佳实现，样式指南，架构建议已经呈现。每天都有新的issue和PR被创建，以使这本在线书籍不断更新。我们很乐于见到您能在这里做出贡献，不管是修复一些代码的错误，或是提出绝妙的新想法。请查看我们的[milestones](https://github.com/goldbergyoni/nodebestpractices/milestones?direction=asc&sort=due_date&state=open)
 
@@ -29,7 +29,7 @@
 
 ## [目录](#table-of-contents)
 
-1. [项目结构实践 (5) ](#1-project-structure-practices)
+1. [项目架构实践 (5) ](#1-project-architecture-practices)
 2. [异常处理实践 (11) ](#2-error-handling-practices)
 3. [编码规范实践 (12) ](#3-code-style-practices)
 4. [测试和总体质量实践 (8) ](#4-testing-and-overall-quality-practices)
@@ -38,7 +38,7 @@
 7. Performance Practices ([coming soon](https://github.com/goldbergyoni/nodebestpractices/milestones?direction=asc&sort=due_date&state=open))
 
 <br/><br/><br/>
-<h1 id="1-project-structure-practices"><code>1. 项目结构实践</code></h1>
+<h1 id="1-project-architecture-practices"><code>1. 项目架构实践</code></h1>
 
 ## ![✔] 1.1 组件式构建你的解决方案
 
@@ -80,9 +80,9 @@
 
 <br/><br/>
 
-## ![✔] 1.5 使用易于设置环境变量，安全和分级的配置
+## ![✔] 1.5 使用环境感知，安全和分级的配置
 
-**TL;DR:** 一个完美无瑕的配置安装应该确保 (a) 元素可以从文件中，也可以从环境变量中读取 (b) 密码排除在提交的代码之外 (c) 为了易于检索，配置是分级的。仅有几个包可以满足这样的条件，比如[rc](https://www.npmjs.com/package/rc), [nconf](https://www.npmjs.com/package/nconf), [config](https://www.npmjs.com/package/config) 和 [convict](https://www.npmjs.com/package/convict)。
+**TL;DR:** 一个完美无瑕的配置安装应该确保 (a) 元素可以从文件中，也可以从环境变量中读取 (b) 密码排除在提交的代码之外 (c) 为了易于检索，配置是分级的 (d) 类型支持 (e) 快速失败验证 (f) 为每个键(key)指定默认值。仅有几个包可以满足这样的条件，比如rc, nconf, config, convict, env-var 和 zod。
 
 **否则:** 不能满足任意的配置要求将会使开发，运维团队，或者两者，易于陷入泥潭。
 
