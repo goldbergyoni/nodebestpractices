@@ -156,7 +156,7 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 <details>
   <summary>
-    <a href="#6-security-best-practices">6. Security Practices (25)</a>
+    <a href="#6-security-best-practices">6. Security Practices (26)</a>
   </summary>
 
 &emsp;&emsp;[6.1. Embrace linter security rules](#-61-embrace-linter-security-rules)</br>
@@ -186,6 +186,7 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 &emsp;&emsp;[6.25. Avoid publishing secrets to the npm registry](#-625-avoid-publishing-secrets-to-the-npm-registry)</br>
 &emsp;&emsp;[6.26. 6.26 Inspect for outdated packages](#-626-inspect-for-outdated-packages)</br>
 &emsp;&emsp;[6.27. Import built-in modules using the 'node:' protocol `#new`](#-627-import-built-in-modules-using-the-node-protocol)</br>
+&emsp;&emsp;[6.28. Prevent Server-Side Request Forgery (SSRF) `#new`](#-628-prevent-server-side-request-forgery-ssrf)</br>
 
 </details>
 
@@ -1386,6 +1387,20 @@ import { createServer } from "node:http";
 This style ensures that there is no ambiguity with global npm packages and makes it clear for the reader that the code refers to a well-trusted official module. This style can be enforced with the eslint rule ['prefer-node-protocol'](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-node-protocol.md)
 
 **Otherwise:** Using the import syntax without 'node:' prefix opens the door for [typosquatting attacks](https://en.wikipedia.org/wiki/Typosquatting) where one could mistakenly mistype a module name (e.g., 'event' instead of 'events) and get a malicious package that was built only to trick users into installing them
+
+<br/><br/><br/>
+
+## ![✔] 6.28. Prevent Server-Side Request Forgery (SSRF)
+
+### `🌟 #new`
+
+<a href="https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20A10:2021%20SSRF-green.svg" alt=""/></a>
+
+**TL;DR:** Validate all outbound URLs against an explicit allowlist of trusted domains and enforce `https:` only — never pass raw user input directly to `fetch()`, `axios`, or `http.request()`. Use the WHATWG `new URL()` parser (not the deprecated `url.parse()`), resolve the hostname to an IP address before connecting to block private/loopback ranges, and disable redirects or re-validate each hop to prevent redirect-based bypasses.
+
+**Otherwise:** An attacker can redirect the server to reach the AWS/GCP instance metadata endpoint (`http://169.254.169.254`), scan the internal network, exfiltrate IAM credentials, bypass host-based authentication, or force the server to impersonate itself against third-party services — all using a single crafted query parameter.
+
+🔗 [**Read More: Prevent Server-Side Request Forgery (SSRF)**](./sections/security/prevent-ssrf.md)
 
 <br/><br/><br/>
 
