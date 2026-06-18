@@ -1750,6 +1750,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "ShaiDemri",
+      "name": "Shai Demri",
+      "avatar_url": "https://avatars.githubusercontent.com/u/28008919?v=4",
+      "profile": "https://www.linkedin.com/in/shai-demri",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "projectName": "nodebestpractices",
@@ -1757,5 +1766,6 @@
   "repoType": "github",
   "repoHost": "https://github.com",
   "skipCi": true,
-  "commitConvention": "angular"
+  "commitConvention": "angular",
+  "commitType": "docs"
 }
