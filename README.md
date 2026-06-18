@@ -230,7 +230,7 @@ Read in a different language: [![CN](./assets/flags/CN.png)**CN**](./README.chin
 
 ### `📝 #updated`
 
-**TL;DR:** The root of a system should contain folders or repositories that represent reasonably sized business modules. Each component represents a product domain (i.e., bounded context), like 'user-component', 'order-component', etc. Each component has its own API, logic, and logical database. What is the significant merit? With an autonomous component, every change is performed over a granular and smaller scope - the mental overload, development friction, and deployment fear are much smaller and better. As a result, developers can move much faster. This does not necessarily demand physical separation and can be achieved using a Monorepo or with a multi-repo
+**TL;DR:** The root of a system should contain folders or repositories that represent reasonably sized business modules. Each component represents a product domain (i.e., bounded context), like 'user-component', 'order-component', etc. Each component has its own API, logic, and logical database. What is the significant merit? With an autonomous component, every change is performed over a granular and smaller scope—reducing mental overload, development friction, and the fear of deployment, making the process smoother. As a result, developers can move much faster. This does not necessarily demand physical separation and can be achieved using a Monorepo or with a multi-repo
 
 ```bash
 my-system
@@ -515,7 +515,7 @@ function someFunction() {
 }
 
 // Avoid
-function someFunction()
+function someFunction() 
 {
   // code block
 }
