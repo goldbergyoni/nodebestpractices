@@ -933,7 +933,7 @@ null == undefined; // true
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**TL;DR:** 正規表現（RegEx）は便利ですが、JavaScript アプリケーション全体、特に Node.js プラットフォームに対して真の脅威となります。テキストのユーザー入力をマッチさせることは、処理に大量の CPU サイクルを必要とするかもしれません。RegEx の処理は、10 Word を検証する単一のリクエストが 6 秒間イベントループ全体をブロックし、CPU に 🔥 を点けるほどには非効率であるかもしれません。そのため、独自の RegExp パターンを記述する代わりに [validator.js](https://github.com/chriso/validator.js) のようなサードパーティ検証パッケージを利用するか、脆弱な正規表現パターンを検出するために [safe-regex](https://github.com/substack/safe-regex) を利用するようにしましょう。
+**TL;DR:** 正規表現（RegEx）は便利ですが、JavaScript アプリケーション全体、特に Node.js プラットフォームに対して真の脅威となります。テキストのユーザー入力をマッチさせることは、処理に大量の CPU サイクルを必要とするかもしれません。RegEx の処理は、10 Word を検証する単一のリクエストが 6 秒間イベントループ全体をブロックし、CPU に 🔥 を点けるほどには非効率であるかもしれません。そのため、独自の RegExp パターンを記述する代わりに [validator.js](https://github.com/chriso/validator.js) のようなサードパーティ検証パッケージを利用するか、脆弱な正規表現パターンを検出するために [safe-regex](https://github.com/davisjam/safe-regex) を利用するようにしましょう。
 
 **さもないと:** 下手な正規表現の記述は、イベントループを完全にブロックしてしまう正規表現 DoS 攻撃の影響を受ける可能性があります。例えば、人気のある `moment` パッケージでは、2017 年 11 月に悪意のある RegEx の使用による脆弱性が発見されています。
 

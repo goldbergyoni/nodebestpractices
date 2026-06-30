@@ -933,7 +933,7 @@ null == undefined; // true
 
 <a href="https://www.owasp.org/index.php/Denial_of_Service" target="_blank"><img src="https://img.shields.io/badge/%E2%9C%94%20OWASP%20Threats%20-%20DDOS%20-green.svg" alt=""/></a>
 
-**핵심요약:** 정규표현은 유용하긴 하지만 자바스크립트 애플리케이션, 특히나 Node.js 플랫폼의 경우 전체적으로 위협을 가한다. 사용자 입력 텍스트를 비교하여 처리하는데는 엄청난 양의 CPU 사이클이 요구된다. 단어 10개를 검사하는 단 하나의 요청이 이벤트 루프 전체를 6초동안 정체시키고 CPU를 🔥지를 만큼 RegEx 처리는 비효율적이다. 이 때문에,직접 정규표현 패턴을 작성하기 보다는 [validator.js](https://github.com/chriso/validator.js) 같은 써드파티 검사 패키지를 쓰거나, [safe-regex](https://github.com/substack/safe-regex)를 써서 취약한 정규표한 패턴을 감지해라
+**핵심요약:** 정규표현은 유용하긴 하지만 자바스크립트 애플리케이션, 특히나 Node.js 플랫폼의 경우 전체적으로 위협을 가한다. 사용자 입력 텍스트를 비교하여 처리하는데는 엄청난 양의 CPU 사이클이 요구된다. 단어 10개를 검사하는 단 하나의 요청이 이벤트 루프 전체를 6초동안 정체시키고 CPU를 🔥지를 만큼 RegEx 처리는 비효율적이다. 이 때문에,직접 정규표현 패턴을 작성하기 보다는 [validator.js](https://github.com/chriso/validator.js) 같은 써드파티 검사 패키지를 쓰거나, [safe-regex](https://github.com/davisjam/safe-regex)를 써서 취약한 정규표한 패턴을 감지해라
 
 **그렇게 하지 않을 경우:** 저조하게 쓰여진 정규표현들은 이벤트 루프를 완전히 정체시킬 수 있는 정규표현 DOS 공격에 취약해진다. 예를들면, 자주 쓰이는 `moment` 패키지 또한 2017년 11월에 악성 정규표현 사용에 취약하다는 것이 발견되었다
 
