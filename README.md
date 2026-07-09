@@ -515,8 +515,7 @@ function someFunction() {
 }
 
 // Avoid
-function someFunction()
-{
+function someFunction() {
   // code block
 }
 ```
@@ -589,10 +588,10 @@ const count = 2 // it tries to run 2(), but 2 is not a function
 
 ```javascript
 // for global variables names we use the const/let keyword and UPPER_SNAKE_CASE
-let MUTABLE_GLOBAL = "mutable value";
-const GLOBAL_CONSTANT = "immutable value";
+let MUTABLE_GLOBAL = 'mutable value';
+const GLOBAL_CONSTANT = 'immutable value';
 const CONFIG = {
-  key: "value",
+  key: 'value',
 };
 
 // examples of UPPER_SNAKE_CASE convention in nodejs/javascript ecosystem
@@ -607,14 +606,14 @@ const HTTP_STATUS_CREATED = 201;
 // for class name we use UpperCamelCase
 class SomeClassExample {
   // for static class properties we use UPPER_SNAKE_CASE
-  static STATIC_PROPERTY = "value";
+  static STATIC_PROPERTY = 'value';
 }
 
 // for functions names we use lowerCamelCase
 function doSomething() {
   // for scoped variable names we use the const/let keyword and lowerCamelCase
-  const someConstExample = "immutable value";
-  let someMutableExample = "mutable value";
+  const someConstExample = 'immutable value';
+  let someMutableExample = 'mutable value';
 }
 ```
 
@@ -652,15 +651,15 @@ function doSomething() {
 // Avoid: client has deep familiarity with the internals
 
 // Client code
-const SMSWithMedia = require("./SMSProvider/providers/media/media-provider.js");
+const SMSWithMedia = require('./SMSProvider/providers/media/media-provider.js');
 
 // Better: explicitly export the public functions
 
 //index.js, module code
-module.exports.SMSWithMedia = require("./SMSProvider/providers/media/media-provider.js");
+module.exports.SMSWithMedia = require('./SMSProvider/providers/media/media-provider.js');
 
 // Client code
-const { SMSWithMedia } = require("./SMSProvider");
+const { SMSWithMedia } = require('./SMSProvider');
 ```
 
 <br/><br/>
@@ -674,18 +673,18 @@ const { SMSWithMedia } = require("./SMSProvider");
 ### 3.10 Code example
 
 ```javascript
-"" == "0"; // false
-0 == ""; // true
-0 == "0"; // true
+'' == '0'; // false
+0 == ''; // true
+0 == '0'; // true
 
-false == "false"; // false
-false == "0"; // true
+false == 'false'; // false
+false == '0'; // true
 
 false == undefined; // false
 false == null; // false
 null == undefined; // true
 
-" \t\r\n " == 0; // true
+' \t\r\n ' == 0; // true
 ```
 
 All statements above will return false if used with `===`
@@ -1374,13 +1373,13 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 **TL;DR:** Import or require built-in Node.js modules using the 'node protocol' syntax:
 
 ```javascript
-import { functionName } from "node:module"; // note that 'node:' prefix
+import { functionName } from 'node:module'; // note that 'node:' prefix
 ```
 
 For example:
 
 ```javascript
-import { createServer } from "node:http";
+import { createServer } from 'node:http';
 ```
 
 This style ensures that there is no ambiguity with global npm packages and makes it clear for the reader that the code refers to a well-trusted official module. This style can be enforced with the eslint rule ['prefer-node-protocol'](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-node-protocol.md)
@@ -1600,6 +1599,17 @@ In addition, referring to an image tag means that the base image is subject to c
 
 🔗 [**Read More: Lint your Dockerfile**](./sections/docker/lint-dockerfile.md)
 
+<br/><br /><br />
+
+## ![✔] 8.16. Docker Health Checks
+
+### `🌟 #new`
+
+**TL;DR:** Implement proper health check endpoints in your Node.js applications and configure Docker HEALTHCHECK instructions to enable container orchestrators to automatically detect unhealthy containers, restart failed services, and route traffic only to healthy instances.
+
+**Otherwise:** Without proper health checks, your Node.js containers become black boxes where orchestrators can only detect if the process is running, not if it's actually functioning correctly. This leads to several critical problems: traffic gets routed to containers that appear healthy but are actually unresponsive due to database connection failures, memory leaks, or dependency outages; failed deployments go undetected as new container versions start successfully but can't serve requests; cascading failures occur when unhealthy instances aren't automatically restarted, causing increased load on remaining healthy instances; and debugging becomes significantly harder since you lack visibility into which specific dependencies are failing. In production environments, this often manifests as intermittent 5xx errors, degraded user experience, and extended downtime during incidents because manual intervention is required to identify and restart problematic containers.
+
+🔗 [**Read More: Docker Health Checks**](./sections/docker/docker-health-checks.md)
 <br/><br /><br />
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
