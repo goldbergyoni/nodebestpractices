@@ -636,6 +636,25 @@ function doSomething() {
 
 **Otherwise:** Requires are run synchronously by Node.js. If they are called from within a function, it may block other requests from being handled at a more critical time. Also, if a required module or any of its dependencies throw an error and crash the server, it is best to find out about it as soon as possible, which might not be the case if that module is required from within a function
 
+### Example
+
+❌ Bad:
+
+```js
+    function getUserById(id) {
+    const db = require('./db'); // required inside function
+    return db.findUser(id);
+}
+```
+✅ good:
+
+```js
+    const db = require('./db'); // required at top
+    function getUserById(id) {
+        return db.findUser(id);
+    }
+```
+
 <br/><br/>
 
 ## ![✔] 3.9 Set an explicit entry point to a module/folder
