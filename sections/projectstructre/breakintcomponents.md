@@ -1,4 +1,4 @@
-# Structure your solution by components
+ # Structure your solution by components
 
 <br/><br/>
 
