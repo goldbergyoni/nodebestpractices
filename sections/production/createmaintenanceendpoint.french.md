@@ -11,7 +11,7 @@ Un point de terminaison de maintenance est une API HTTP hautement sécurisée qu
 ### Exemple de code : génération d'un vidage mémoire via du code
 
 ```javascript
-const heapdump = require('heapdump');
+const fs = require("fs");
 
 // Vérifie si la requête est autorisée
 function isAuthorized(req) {
@@ -25,10 +25,12 @@ router.get('/ops/heapdump', (req, res, next) => {
 
     logger.info('À propos de la génération du vidage mémoire');
 
+    const heapdump = require('heapdump');
     heapdump.writeSnapshot((err, filename) => {
         console.log('le fichier heapdump est prêt à être envoyé au demandeur', filename);
         fs.readFile(filename, 'utf-8', (err, data) => {
             res.end(data);
+            fs.unlinkSync(filename);
         });
     });
 });

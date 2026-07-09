@@ -11,7 +11,7 @@ Mantentze lanen amaiera puntua oso HTTP API segurua da, aplikazioaren kodearen p
 ### Kode adibidea: kodearen bidez pilaketa sorta sortzea
 
 ```javascript
-const heapdump = require("heapdump");
+const fs = require("fs");
 
 // Egiaztatu ia eskaera baimendua den
 function baimenaDu(req) {
@@ -25,6 +25,7 @@ router.get("/ops/heapdump", (req, res, next) => {
 
   logger.info("heapdump-a generatzen");
 
+  const heapdump = require("heapdump");
   heapdump.writeSnapshot((err, fitxategiarenIzena) => {
     console.log(
       "heapdump fitxategia prest dago eskariari bidaltzeko",
@@ -32,6 +33,7 @@ router.get("/ops/heapdump", (req, res, next) => {
     );
     fs.readFile(fitxategiarenIzena, "utf-8", (err, data) => {
       res.end(data);
+      fs.unlinkSync(filename);
     });
   });
 });
