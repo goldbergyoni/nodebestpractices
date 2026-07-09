@@ -4,7 +4,11 @@
 
 ### One Paragraph Explainer
 
-Typically, most of modern Node.js/Express application code runs within promises – whether within the .then handler, a function callback or in a catch block. Surprisingly, unless a developer remembered to add a .catch clause, errors thrown at these places are not handled by the uncaughtException event-handler and disappear.  Recent versions of Node added a warning message when an unhandled rejection pops, though this might help to notice when things go wrong but it's obviously not a proper error handling method. The straightforward solution is to never forget adding .catch clauses within each promise chain call and redirect to a centralized error handler. However, building your error handling strategy only on developer’s discipline is somewhat fragile. Consequently, it’s highly recommended using a graceful fallback and subscribe to `process.on('unhandledRejection', callback)` – this will ensure that any promise error, if not handled locally, will get its treatment.
+Typically, most of modern Node.js/Express application code runs within promises – whether within the .then handler, a function callback or in a catch block. Surprisingly, unless a developer remembered to add a .catch clause, errors thrown at these places are not handled by the uncaughtException event-handler. **Since Node.js 15, unhandled promise rejections crash the process with exit code 1 by default** — they no longer disappear silently. The straightforward solution is to never forget adding .catch clauses within each promise chain call and redirect to a centralized error handler. However, building your error handling strategy only on developer's discipline is somewhat fragile. Consequently, it's highly recommended to also subscribe to `process.on('unhandledRejection', callback)` – this will ensure that any promise error, if not handled locally, will get its treatment before the process exits.
+
+> **Node.js version behavior:**
+> - **Node.js < 15**: Unhandled rejections print a `DeprecationWarning (DEP0018)` but the process continues running.
+> - **Node.js 15+**: Unhandled rejections **crash the process** with exit code 1 (same behavior as uncaught exceptions).
 
 <br/><br/>
 
@@ -40,6 +44,7 @@ process.on('uncaughtException', (error) => {
     process.exit(1);
 });
 ```
+
 </details>
 
 <details>
@@ -60,15 +65,16 @@ process.on('uncaughtException', (error: Error) => {
     process.exit(1);
 });
 ```
+
 </details>
 
 <br/><br/>
 
 ### Blog Quote: "If you can make a mistake, at some point you will"
 
- From the blog James Nelson
+From the blog James Nelson
 
- > Let’s test your understanding. Which of the following would you expect to print an error to the console?
+> Let's test your understanding. Which of the following would you expect to print an error to the console?
 
 ```javascript
 Promise.resolve('promised value').then(() => {
@@ -84,4 +90,6 @@ new Promise((resolve, reject) => {
 });
 ```
 
-> I don’t know about you, but my answer is that I’d expect all of them to print an error. However, the reality is that a number of modern JavaScript environments won’t print errors for any of them.The problem with being human is that if you can make a mistake, at some point you will. Keeping this in mind, it seems obvious that we should design things in such a way that mistakes hurt as little as possible, and that means handling errors by default, not discarding them.
+> I don't know about you, but my answer is that I'd expect all of them to print an error. However, the reality is that a number of modern JavaScript environments won't print errors for any of them. The problem with being human is that if you can make a mistake, at some point you will. Keeping this in mind, it seems obvious that we should design things in such a way that mistakes hurt as little as possible, and that means handling errors by default, not discarding them.
+
+> **Note:** As of Node.js 15+, this behavior has changed — unhandled rejections in Node.js will now crash the process with exit code 1. The above quote remains relevant for browser environments and older Node.js versions.
