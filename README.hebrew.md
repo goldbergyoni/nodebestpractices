@@ -924,23 +924,24 @@ API, הודעה חדשה נרשמת לתור, וקריאה לכלי צפיה ב�
 
 <br/><br/>
 
-## ![✔] 5.11. Get your frontend assets out of Node
+## ![✔] 5.11. הוצא את נכסי צד הלקוח שלך מ-Node
 
-**אמ;לק:** Serve frontend content using a specialized infrastructure (nginx, S3, CDN) because Node performance gets hurt when dealing with many static files due to its single-threaded model. One exception to this guideline is when doing server-side rendering
+**אמ;לק:** כדאי להגיש תוכן צד לקוח באמצעות תשתית ייעודית (nginx, S3, CDN) מכיוון שהביצועים של Node נפגעים כאשר הוא צריך לטפל בהרבה קבצים סטטיים, עקב המודל החד-נימתי שלו. יוצא דופן להנחיה הזו הוא כאשר מבצעים רינדור בצד השרת.
 
-**אחרת:** Your single Node thread will be busy streaming hundreds of html/images/angular/react files instead of allocating all its resources for the task it was born for – serving dynamic content
+**אחרת:** thread יחיד ב-Node יהיה עסוק בהזרמת מאות קבצי html/תמונות/Angular/React במקום להקצות את כל המשאבים שלו למשימה שלשמה נועד – הגשת תוכן דינמי
 
-🔗 [**Read More: Get your frontend assets out of Node**](./sections/production/frontendout.md)
+
+🔗 [**קרא עוד: הוצא את נכסי צד הלקוח שלך מ-Node**](./sections/production/frontendout.md)
 
 <br/><br/>
 
-## ![✔] 5.12. Strive to be stateless
+## ![✔] 5.12. תשאף להיות להיות stateless
 
-**אמ;לק:** Store any type of _data_ (e.g. user sessions, cache, uploaded files) within external data stores. When the app holds data in-process this adds additional layer of maintenance complexity like routing users to the same instance and higher cost of restarting a process. To enforce and encourage a stateless approach, most modern runtime platforms allows 'reapp-ing' instances periodically
+**אמ;לק:** אחסנו כל סוג של נתונים (למשל סשנים של משתמשים, מטמון, קבצים שהועלו) בתוך מאגרי נתונים חיצוניים. כאשר האפליקציה מחזיקה נתונים בתהליך, הדבר מוסיף שכבת תחזוקה נוספת כמו ניתוב משתמשים לאותה מופע והגדלת העלות של הפעלת תהליך מחדש. כדי לאכוף ולעודד גישה חסרת-מצב, רוב פלטפורמות ההרצה המודרניות מאפשרות "להפעיל מחדש" מופעים באופן תקופתי.
 
-**אחרת:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
+**אחרת:** כשל בשרת מסוים יגרום להשבתה של האפליקציה במקום פשוט להרוג מכונה תקולה. בנוסף, גמישות הגדלת קנה המידה תהפוך למאתגרת יותר עקב התלות בשרת מסוים.
 
-🔗 [**Read More: Be stateless, kill your Servers almost every day**](./sections/production/bestateless.md)
+🔗 [**קרא עוד: תהיה stateless, הרוג את השרתים שלך כמעט כל יום**](./sections/production/bestateless.md)
 
 <br/><br/>
 
