@@ -316,6 +316,8 @@ my-system
 
 🔗 [**Read More: Choosing the right framework**](./sections/projectstructre/choose-framework.md)
 
+<br/><br/>
+
 ## ![✔] 1.6 Use TypeScript sparingly and thoughtfully
 
 ### `🌟 #new`
@@ -828,6 +830,8 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 
 🔗 [**Read More: Mock external services**](./sections/testingandquality/mock-external-services.md)
 
+<br/><br/>
+
 ## ![✔] 4.11 Test your middlewares in isolation
 
 **TL;DR:** When a middleware holds some immense logic that spans many requests, it is worth testing it in isolation without waking up the entire web framework. This can be easily achieved by stubbing and spying on the {req, res, next} objects
@@ -835,6 +839,8 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 **Otherwise:** A bug in Express middleware === a bug in all or most requests
 
 🔗 [**Read More: Test middlewares in isolation**](./sections/testingandquality/test-middlewares.md)
+
+<br/><br/>
 
 ## ![✔] 4.12 Specify a port in production, randomize in testing
 
@@ -845,6 +851,8 @@ b. [Node.js testing - beyond the basics](https://github.com/testjavascript/nodej
 **Otherwise:** Specifying a fixed port will prevent two testing processes from running at the same time. Most of the modern test runners run with multiple processes by default
 
 🔗 [**Read More: Randomize a port for testing**](./sections/testingandquality/randomize-port.md)
+
+<br/><br/>
 
 ## ![✔] 4.13 Test the five possible outcomes
 
@@ -1405,7 +1413,7 @@ This style ensures that there is no ambiguity with global npm packages and makes
 
 🔗 [**Read More: Do not block the event loop**](./sections/performance/block-loop.md)
 
-<br /><br /><br />
+<br/><br/>
 
 ## ![✔] 7.2. Prefer native JS methods over user-land utils like Lodash
 
@@ -1454,7 +1462,7 @@ CMD [ "node", "dist/app.js" ]
 
 🔗 [**Read More: Use multi-stage builds**](./sections/docker/multi_stage_builds.md)
 
-<br /><br /><br />
+<br/><br/>
 
 ## ![✔] 8.2. Bootstrap using `node` command, avoid `npm start`
 
@@ -1466,7 +1474,7 @@ Update: [Starting from npm 7, npm claim](https://docs.npmjs.com/cli/v7/using-npm
 
 [**Read More: Bootstrap container using node command, avoid npm start**](./sections/docker/bootstrap-using-node.md)
 
-<br /><br /><br />
+<br/><br/>
 
 ## ![✔] 8.3. Let the Docker runtime handle replication and uptime
 
@@ -1486,7 +1494,7 @@ Update: [Starting from npm 7, npm claim](https://docs.npmjs.com/cli/v7/using-npm
 
 🔗 [**Read More: Use .dockerignore**](./sections/docker/docker-ignore.md)
 
-<br /><br /><br />
+<br/><br/>
 
 ## ![✔] 8.5. Clean-up dependencies before production
 
@@ -1496,7 +1504,7 @@ Update: [Starting from npm 7, npm claim](https://docs.npmjs.com/cli/v7/using-npm
 
 🔗 Read More: [Remove development dependencies](./sections/docker/install-for-production.md)
 
-<br /><br /><br />
+<br/><br/>
 
 ## ![✔] 8.6. Shutdown smartly and gracefully
 
@@ -1506,7 +1514,7 @@ Update: [Starting from npm 7, npm claim](https://docs.npmjs.com/cli/v7/using-npm
 
 🔗 [**Read More: Graceful shutdown**](./sections/docker/graceful-shutdown.md)
 
-<br /><br /><br />
+<br/><br/>
 
 ## ![✔] 8.7. Set memory limits using both Docker and v8
 
@@ -1516,7 +1524,7 @@ Update: [Starting from npm 7, npm claim](https://docs.npmjs.com/cli/v7/using-npm
 
 🔗 [**Read More: Set memory limits using Docker only**](./sections/docker/memory-limit.md)
 
-<br /><br /><br />
+<br/><br/>
 
 ## ![✔] 8.8. Plan for efficient caching
 
@@ -1526,7 +1534,7 @@ Update: [Starting from npm 7, npm claim](https://docs.npmjs.com/cli/v7/using-npm
 
 🔗 [**Read More: Leverage caching to reduce build times**](./sections/docker/use-cache-for-shorter-build-time.md)
 
-<br /><br /><br />
+<br/><br/>
 
 ## ![✔] 8.9. Use explicit image reference, avoid `latest` tag
 
@@ -1538,7 +1546,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 🔗 [**Read More: Understand image tags and use the "latest" tag with caution**](./sections/docker/image-tags.md)
 
-<br /><br /><br />
+<br/><br/>
 
 ## ![✔] 8.10. Prefer smaller Docker base images
 
@@ -1548,7 +1556,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 🔗 [**Read More: Prefer smaller images**](./sections/docker/smaller_base_images.md)
 
-<br /><br /><br />
+<br/><br/>
 
 ## ![✔] 8.11. Clean-out build-time secrets, avoid secrets in args
 
@@ -1560,7 +1568,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 🔗 [**Read More: Clean-out build-time secrets**](./sections/docker/avoid-build-time-secrets.md)
 
-<br /><br /><br />
+<br/><br/>
 
 ## ![✔] 8.12. Scan images for multi layers of vulnerabilities
 
@@ -1570,7 +1578,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 🔗 [**Read More: Scan the entire image before production**](./sections/docker/scan-images.md)
 
-<br /><br /><br />
+<br/><br/>
 
 ## ![✔] 8.13 Clean NODE_MODULE cache
 
@@ -1580,7 +1588,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 🔗 [**Read More: Clean NODE_MODULE cache**](./sections/docker/clean-cache.md)
 
-<br /><br /><br />
+<br/><br/>
 
 ## ![✔] 8.14. Generic Docker practices
 
@@ -1588,7 +1596,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 🔗 [**Read More: Generic Docker practices**](./sections/docker/generic-tips.md)
 
-<br/><br /><br />
+<br/><br/>
 
 ## ![✔] 8.15. Lint your Dockerfile
 
@@ -1600,7 +1608,7 @@ In addition, referring to an image tag means that the base image is subject to c
 
 🔗 [**Read More: Lint your Dockerfile**](./sections/docker/lint-dockerfile.md)
 
-<br/><br /><br />
+<br/><br/><br/>
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
