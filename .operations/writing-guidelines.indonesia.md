@@ -20,7 +20,7 @@ Konten disajikan menggunakan templat tetap. Setiap konten di masa mendatang haru
 
 ## 5. Ini Tentang Node.js
 
-Setiap saran harus terkait langsung dengan Node.js dan tidak dengan pengembangan perangkat lunak secara umum. Saat kami menyarankan untuk menerapkan pola / aturan umum di Node.js, konten harus fokus pada implementasi Node. Misalnya, ketika kami menyarankan untuk membersihkan semua input permintaan untuk alasan keamanan, Node-lingo harus digunakan - ‘Gunakan middleware untuk membersihkan input permintaan’. Jika sebuah item tidak memiliki implementasi khusus di Node.js (misalnya, item tersebut terlihat sama di Python & Jaba) - sertakan di dalam item container umum, lihat item 6.5 misalnya.
+Setiap saran harus terkait langsung dengan Node.js dan tidak dengan pengembangan perangkat lunak secara umum. Saat kami menyarankan untuk menerapkan pola / aturan umum di Node.js, konten harus fokus pada implementasi Node. Misalnya, ketika kami menyarankan untuk membersihkan semua input permintaan untuk alasan keamanan, Node-lingo harus digunakan - ‘Gunakan middleware untuk membersihkan input permintaan’. Jika sebuah item tidak memiliki implementasi khusus di Node.js (misalnya, item tersebut terlihat sama di Python & Java) - sertakan di dalam item container umum, lihat item 6.5 misalnya.
 
 ## 6. Hanya vendor terkemuka
 
