@@ -144,7 +144,7 @@
 &emsp;&emsp;[5.9. כתבו את הקוד מותאם להתקנה](#-59-make-your-code-production-ready)</br>
 &emsp;&emsp;[5.10. מדדו ושימרו את ניצול הזיכרון `#advanced`](#-510-measure-and-guard-the-memory-usage)</br>
 &emsp;&emsp;[5.11. Get your frontend assets out of Node](#-511-get-your-frontend-assets-out-of-node)</br>
-&emsp;&emsp;[5.12. Strive to be stateless `#strategic`](#-512-strive-to-be-stateless)</br>
+&emsp;&emsp;[5.12. תשאפו להיות נטולי-מצב `#strategic`](#-512-strive-to-be-stateless)</br>
 &emsp;&emsp;[5.13. Use tools that automatically detect vulnerabilities](#-513-use-tools-that-automatically-detect-vulnerabilities)</br>
 &emsp;&emsp;[5.14. Assign a transaction id to each log statement `#advanced`](#-514-assign-a-transaction-id-to-each-log-statement)</br>
 &emsp;&emsp;[5.15. Set NODE_ENV=production](#-515-set-node_envproduction)</br>
@@ -934,13 +934,14 @@ API, הודעה חדשה נרשמת לתור, וקריאה לכלי צפיה ב�
 
 <br/><br/>
 
-## ![✔] 5.12. Strive to be stateless
+## ![✔] 5.12. תשאפו להיות נטולי-מצב
 
-**אמ;לק:** Store any type of _data_ (e.g. user sessions, cache, uploaded files) within external data stores. When the app holds data in-process this adds additional layer of maintenance complexity like routing users to the same instance and higher cost of restarting a process. To enforce and encourage a stateless approach, most modern runtime platforms allows 'reapp-ing' instances periodically
+**אמ;לק:** אחסנו כל סוג של מידע (לדוג׳ ביקור פעיל של משתמש, זכרון מטמון, קבצים שהועלו) באחסון נתונים חיצוני. שמירת נתונים בתוך תהליך התוכנה מוסיף עוד רובד של סיבוך בתחזוקה כמו ניתוב משתמשים לאותו מופע ועלות גבוהה יותר לאתחול מחדש של התהליך. על מנת לאכוף ולעודד תוכנה לנקוט בגישה נטולת-מצב, רוב פלטפורמות זמן הריצה מאפשרות לבצע 'reapp-ing' למופעים מעת לעת.
 
-**אחרת:** Failure at a given server will result in application downtime instead of just killing a faulty machine. Moreover, scaling-out elasticity will get more challenging due to the reliance on a specific server
+**אחרת** תקלה בשרת מסוים תגרור זמן בו התוכנה למטה במקום פשוט להרוג את השרת התקול. בנוסף, גמישות בהוספת עוד שרתים תהיה מאתגרת יותר עקב היסמכות על שרת ספציפי.
 
-🔗 [**Read More: Be stateless, kill your Servers almost every day**](./sections/production/bestateless.md)
+
+🔗 [**קרא עוד: היה נטול-מצב, הרוג את שרתך כמעט בכל יום**](./sections/production/bestateless.md)
 
 <br/><br/>
 
