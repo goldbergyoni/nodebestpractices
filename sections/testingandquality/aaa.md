@@ -11,6 +11,7 @@ The 2nd A - Act: Execute the unit under test. Usually 1 line of code
 
 The 3rd A - Assert: Ensure that the received value satisfies the expectation. Usually 1 line of code
 
+This pattern can be enforced with the ESLint rule ['aaa-comments'](https://github.com/MatanYadaev/eslint-plugin-testing/blob/main/docs/rules/aaa-comments.md).
 
 <br/><br/>
 
