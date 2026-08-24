@@ -28,6 +28,7 @@ async function executeAsyncTask () {
   }
   catch (err) {
     logger.error(err);
+    throw err; // propagate error to caller
   } finally {
     await alwaysExecuteThisFunction();
   }
